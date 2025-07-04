@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import { Emlite } from "https://unpkg.com/emlite";
+
+        window.onload = async () => {
+            const emlite = new Emlite();
+            const bytes = await emlite.readFile(new URL("./bin/examples/button.wasm", import.meta.url));
+            let wasm = await WebAssembly.compile(bytes);
+            let inst = await WebAssembly.instantiate(wasm, {
+                "env": {...emlite.env },
+            });
+            emlite.setExports(inst.exports);
+            inst.exports.main();
+        };
+    </script>
+</body>
+</html>

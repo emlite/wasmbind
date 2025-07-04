@@ -1,0 +1,31 @@
+#include <webbind/GPUQuerySet.hpp>
+
+
+GPUQuerySet GPUQuerySet::take_ownership(Handle h) noexcept {
+        return GPUQuerySet(h);
+    }
+GPUQuerySet GPUQuerySet::clone() const noexcept { return *this; }
+GPUQuerySet::GPUQuerySet(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+GPUQuerySet::GPUQuerySet(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+
+jsbind::Undefined GPUQuerySet::destroy() {
+    return emlite::Val::call("destroy").as<jsbind::Undefined>();
+}
+
+GPUQueryType GPUQuerySet::type() const {
+    return emlite::Val::get("type").as<GPUQueryType>();
+}
+
+jsbind::Any GPUQuerySet::count() const {
+    return emlite::Val::get("count").as<jsbind::Any>();
+}
+
+jsbind::USVString GPUQuerySet::label() const {
+    return emlite::Val::get("label").as<jsbind::USVString>();
+}
+
+void GPUQuerySet::label(const jsbind::USVString& value) {
+    emlite::Val::set("label", value);
+}
+

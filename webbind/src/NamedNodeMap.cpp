@@ -1,0 +1,44 @@
+#include <webbind/NamedNodeMap.hpp>
+#include <webbind/Attr.hpp>
+
+
+NamedNodeMap NamedNodeMap::take_ownership(Handle h) noexcept {
+        return NamedNodeMap(h);
+    }
+NamedNodeMap NamedNodeMap::clone() const noexcept { return *this; }
+NamedNodeMap::NamedNodeMap(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+NamedNodeMap::NamedNodeMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+
+unsigned long NamedNodeMap::length() const {
+    return emlite::Val::get("length").as<unsigned long>();
+}
+
+Attr NamedNodeMap::item(unsigned long index) {
+    return emlite::Val::call("item", index).as<Attr>();
+}
+
+Attr NamedNodeMap::getNamedItem(const jsbind::DOMString& qualifiedName) {
+    return emlite::Val::call("getNamedItem", qualifiedName).as<Attr>();
+}
+
+Attr NamedNodeMap::getNamedItemNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName) {
+    return emlite::Val::call("getNamedItemNS", namespace_, localName).as<Attr>();
+}
+
+Attr NamedNodeMap::setNamedItem(const Attr& attr) {
+    return emlite::Val::call("setNamedItem", attr).as<Attr>();
+}
+
+Attr NamedNodeMap::setNamedItemNS(const Attr& attr) {
+    return emlite::Val::call("setNamedItemNS", attr).as<Attr>();
+}
+
+Attr NamedNodeMap::removeNamedItem(const jsbind::DOMString& qualifiedName) {
+    return emlite::Val::call("removeNamedItem", qualifiedName).as<Attr>();
+}
+
+Attr NamedNodeMap::removeNamedItemNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName) {
+    return emlite::Val::call("removeNamedItemNS", namespace_, localName).as<Attr>();
+}
+

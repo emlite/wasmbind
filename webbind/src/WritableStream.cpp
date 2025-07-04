@@ -1,0 +1,30 @@
+#include <webbind/WritableStream.hpp>
+#include <webbind/WritableStreamDefaultWriter.hpp>
+
+
+WritableStream WritableStream::take_ownership(Handle h) noexcept {
+        return WritableStream(h);
+    }
+WritableStream WritableStream::clone() const noexcept { return *this; }
+WritableStream::WritableStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+WritableStream::WritableStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+
+WritableStream::WritableStream(const jsbind::Object& underlyingSink, const jsbind::Any& strategy): emlite::Val(emlite::Val::global("WritableStream").new_(underlyingSink, strategy)) {}
+
+bool WritableStream::locked() const {
+    return emlite::Val::get("locked").as<bool>();
+}
+
+jsbind::Promise WritableStream::abort(const jsbind::Any& reason) {
+    return emlite::Val::call("abort", reason).as<jsbind::Promise>();
+}
+
+jsbind::Promise WritableStream::close() {
+    return emlite::Val::call("close").as<jsbind::Promise>();
+}
+
+WritableStreamDefaultWriter WritableStream::getWriter() {
+    return emlite::Val::call("getWriter").as<WritableStreamDefaultWriter>();
+}
+

@@ -1,0 +1,28 @@
+{
+  "name": "webbind",
+  "version": "0.1.0",
+  "description": "Webbind is a C++ projects that offers bindngs to Web APIs for use with wasm.",
+  "main": "scripts/index.js",
+  "type": "module",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "cmake:config": "cmake -Bbin -GNinja -DCMAKE_BUILD_TYPE=MinSizeRel -DWASMBIND_BUILD_EXAMPLES=ON -DEMLITE_USE_DLMALLOC=ON -DCMAKE_TOOLCHAIN_FILE=./cmake/freestanding.cmake",
+    "cmake:build": "cmake --build bin",
+    "regen": "node scripts/index.js",
+    "test:all": "npm run regen && npm run cmake:config && npm run cmake:build",
+    "serve": "npx http-server"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@webref/idl": "^3.65.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "eslint": "^9.30.1",
+    "globals": "^16.3.0",
+    "http-server": "^14.1.1"
+  }
+}

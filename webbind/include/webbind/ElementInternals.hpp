@@ -1,0 +1,170 @@
+#pragma once
+
+#include <emlite/emlite.hpp>
+#include <jsbind/jsbind.hpp>
+#include "enums.hpp"
+
+class ShadowRoot;
+class HTMLFormElement;
+class ValidityStateFlags;
+class HTMLElement;
+class ValidityState;
+class NodeList;
+class CustomStateSet;
+class Element;
+
+
+class ValidityStateFlags : public emlite::Val {
+  explicit ValidityStateFlags(Handle h) noexcept;
+public:
+    static ValidityStateFlags take_ownership(Handle h) noexcept;
+    explicit ValidityStateFlags(const emlite::Val &val) noexcept;
+    ValidityStateFlags() noexcept;
+    ValidityStateFlags clone() const noexcept;
+    bool valueMissing() const;
+    void valueMissing(bool value);
+    bool typeMismatch() const;
+    void typeMismatch(bool value);
+    bool patternMismatch() const;
+    void patternMismatch(bool value);
+    bool tooLong() const;
+    void tooLong(bool value);
+    bool tooShort() const;
+    void tooShort(bool value);
+    bool rangeUnderflow() const;
+    void rangeUnderflow(bool value);
+    bool rangeOverflow() const;
+    void rangeOverflow(bool value);
+    bool stepMismatch() const;
+    void stepMismatch(bool value);
+    bool badInput() const;
+    void badInput(bool value);
+    bool customError() const;
+    void customError(bool value);
+};
+
+class ElementInternals : public emlite::Val {
+    explicit ElementInternals(Handle h) noexcept;
+
+public:
+    explicit ElementInternals(const emlite::Val &val) noexcept;
+    static ElementInternals take_ownership(Handle h) noexcept;
+
+    ElementInternals clone() const noexcept;
+    ShadowRoot shadowRoot() const;
+    jsbind::Undefined setFormValue(const jsbind::Any& value, const jsbind::Any& state);
+    HTMLFormElement form() const;
+    jsbind::Undefined setValidity(const ValidityStateFlags& flags, const jsbind::DOMString& message, const HTMLElement& anchor);
+    bool willValidate() const;
+    ValidityState validity() const;
+    jsbind::DOMString validationMessage() const;
+    bool checkValidity();
+    bool reportValidity();
+    NodeList labels() const;
+    CustomStateSet states() const;
+    jsbind::DOMString role() const;
+    void role(const jsbind::DOMString& value);
+    Element ariaActiveDescendantElement() const;
+    void ariaActiveDescendantElement(const Element& value);
+    jsbind::DOMString ariaAtomic() const;
+    void ariaAtomic(const jsbind::DOMString& value);
+    jsbind::DOMString ariaAutoComplete() const;
+    void ariaAutoComplete(const jsbind::DOMString& value);
+    jsbind::DOMString ariaBrailleLabel() const;
+    void ariaBrailleLabel(const jsbind::DOMString& value);
+    jsbind::DOMString ariaBrailleRoleDescription() const;
+    void ariaBrailleRoleDescription(const jsbind::DOMString& value);
+    jsbind::DOMString ariaBusy() const;
+    void ariaBusy(const jsbind::DOMString& value);
+    jsbind::DOMString ariaChecked() const;
+    void ariaChecked(const jsbind::DOMString& value);
+    jsbind::DOMString ariaColCount() const;
+    void ariaColCount(const jsbind::DOMString& value);
+    jsbind::DOMString ariaColIndex() const;
+    void ariaColIndex(const jsbind::DOMString& value);
+    jsbind::DOMString ariaColIndexText() const;
+    void ariaColIndexText(const jsbind::DOMString& value);
+    jsbind::DOMString ariaColSpan() const;
+    void ariaColSpan(const jsbind::DOMString& value);
+    jsbind::FrozenArray<Element> ariaControlsElements() const;
+    void ariaControlsElements(const jsbind::FrozenArray<Element>& value);
+    jsbind::DOMString ariaCurrent() const;
+    void ariaCurrent(const jsbind::DOMString& value);
+    jsbind::FrozenArray<Element> ariaDescribedByElements() const;
+    void ariaDescribedByElements(const jsbind::FrozenArray<Element>& value);
+    jsbind::DOMString ariaDescription() const;
+    void ariaDescription(const jsbind::DOMString& value);
+    jsbind::FrozenArray<Element> ariaDetailsElements() const;
+    void ariaDetailsElements(const jsbind::FrozenArray<Element>& value);
+    jsbind::DOMString ariaDisabled() const;
+    void ariaDisabled(const jsbind::DOMString& value);
+    jsbind::FrozenArray<Element> ariaErrorMessageElements() const;
+    void ariaErrorMessageElements(const jsbind::FrozenArray<Element>& value);
+    jsbind::DOMString ariaExpanded() const;
+    void ariaExpanded(const jsbind::DOMString& value);
+    jsbind::FrozenArray<Element> ariaFlowToElements() const;
+    void ariaFlowToElements(const jsbind::FrozenArray<Element>& value);
+    jsbind::DOMString ariaHasPopup() const;
+    void ariaHasPopup(const jsbind::DOMString& value);
+    jsbind::DOMString ariaHidden() const;
+    void ariaHidden(const jsbind::DOMString& value);
+    jsbind::DOMString ariaInvalid() const;
+    void ariaInvalid(const jsbind::DOMString& value);
+    jsbind::DOMString ariaKeyShortcuts() const;
+    void ariaKeyShortcuts(const jsbind::DOMString& value);
+    jsbind::DOMString ariaLabel() const;
+    void ariaLabel(const jsbind::DOMString& value);
+    jsbind::FrozenArray<Element> ariaLabelledByElements() const;
+    void ariaLabelledByElements(const jsbind::FrozenArray<Element>& value);
+    jsbind::DOMString ariaLevel() const;
+    void ariaLevel(const jsbind::DOMString& value);
+    jsbind::DOMString ariaLive() const;
+    void ariaLive(const jsbind::DOMString& value);
+    jsbind::DOMString ariaModal() const;
+    void ariaModal(const jsbind::DOMString& value);
+    jsbind::DOMString ariaMultiLine() const;
+    void ariaMultiLine(const jsbind::DOMString& value);
+    jsbind::DOMString ariaMultiSelectable() const;
+    void ariaMultiSelectable(const jsbind::DOMString& value);
+    jsbind::DOMString ariaOrientation() const;
+    void ariaOrientation(const jsbind::DOMString& value);
+    jsbind::FrozenArray<Element> ariaOwnsElements() const;
+    void ariaOwnsElements(const jsbind::FrozenArray<Element>& value);
+    jsbind::DOMString ariaPlaceholder() const;
+    void ariaPlaceholder(const jsbind::DOMString& value);
+    jsbind::DOMString ariaPosInSet() const;
+    void ariaPosInSet(const jsbind::DOMString& value);
+    jsbind::DOMString ariaPressed() const;
+    void ariaPressed(const jsbind::DOMString& value);
+    jsbind::DOMString ariaReadOnly() const;
+    void ariaReadOnly(const jsbind::DOMString& value);
+    jsbind::DOMString ariaRelevant() const;
+    void ariaRelevant(const jsbind::DOMString& value);
+    jsbind::DOMString ariaRequired() const;
+    void ariaRequired(const jsbind::DOMString& value);
+    jsbind::DOMString ariaRoleDescription() const;
+    void ariaRoleDescription(const jsbind::DOMString& value);
+    jsbind::DOMString ariaRowCount() const;
+    void ariaRowCount(const jsbind::DOMString& value);
+    jsbind::DOMString ariaRowIndex() const;
+    void ariaRowIndex(const jsbind::DOMString& value);
+    jsbind::DOMString ariaRowIndexText() const;
+    void ariaRowIndexText(const jsbind::DOMString& value);
+    jsbind::DOMString ariaRowSpan() const;
+    void ariaRowSpan(const jsbind::DOMString& value);
+    jsbind::DOMString ariaSelected() const;
+    void ariaSelected(const jsbind::DOMString& value);
+    jsbind::DOMString ariaSetSize() const;
+    void ariaSetSize(const jsbind::DOMString& value);
+    jsbind::DOMString ariaSort() const;
+    void ariaSort(const jsbind::DOMString& value);
+    jsbind::DOMString ariaValueMax() const;
+    void ariaValueMax(const jsbind::DOMString& value);
+    jsbind::DOMString ariaValueMin() const;
+    void ariaValueMin(const jsbind::DOMString& value);
+    jsbind::DOMString ariaValueNow() const;
+    void ariaValueNow(const jsbind::DOMString& value);
+    jsbind::DOMString ariaValueText() const;
+    void ariaValueText(const jsbind::DOMString& value);
+};
+

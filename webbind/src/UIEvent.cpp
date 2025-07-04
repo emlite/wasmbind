@@ -1,0 +1,35 @@
+#include <webbind/UIEvent.hpp>
+#include <webbind/Window.hpp>
+#include <webbind/InputDeviceCapabilities.hpp>
+
+
+UIEvent UIEvent::take_ownership(Handle h) noexcept {
+        return UIEvent(h);
+    }
+UIEvent UIEvent::clone() const noexcept { return *this; }
+UIEvent::UIEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+UIEvent::UIEvent(const emlite::Val &val) noexcept: Event(val) {}
+
+
+UIEvent::UIEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("UIEvent").new_(type, eventInitDict)) {}
+
+Window UIEvent::view() const {
+    return Event::get("view").as<Window>();
+}
+
+long UIEvent::detail() const {
+    return Event::get("detail").as<long>();
+}
+
+InputDeviceCapabilities UIEvent::sourceCapabilities() const {
+    return Event::get("sourceCapabilities").as<InputDeviceCapabilities>();
+}
+
+jsbind::Undefined UIEvent::initUIEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg) {
+    return Event::call("initUIEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg).as<jsbind::Undefined>();
+}
+
+unsigned long UIEvent::which() const {
+    return Event::get("which").as<unsigned long>();
+}
+

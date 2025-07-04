@@ -1,0 +1,28 @@
+#include <webbind/WindowControlsOverlay.hpp>
+#include <webbind/DOMRect.hpp>
+
+
+WindowControlsOverlay WindowControlsOverlay::take_ownership(Handle h) noexcept {
+        return WindowControlsOverlay(h);
+    }
+WindowControlsOverlay WindowControlsOverlay::clone() const noexcept { return *this; }
+WindowControlsOverlay::WindowControlsOverlay(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+WindowControlsOverlay::WindowControlsOverlay(const emlite::Val &val) noexcept: EventTarget(val) {}
+
+
+bool WindowControlsOverlay::visible() const {
+    return EventTarget::get("visible").as<bool>();
+}
+
+DOMRect WindowControlsOverlay::getTitlebarAreaRect() {
+    return EventTarget::call("getTitlebarAreaRect").as<DOMRect>();
+}
+
+jsbind::Any WindowControlsOverlay::ongeometrychange() const {
+    return EventTarget::get("ongeometrychange").as<jsbind::Any>();
+}
+
+void WindowControlsOverlay::ongeometrychange(const jsbind::Any& value) {
+    EventTarget::set("ongeometrychange", value);
+}
+

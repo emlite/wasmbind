@@ -1,0 +1,38 @@
+#include <webbind/DataTransferItem.hpp>
+#include <webbind/File.hpp>
+#include <webbind/FileSystemEntry.hpp>
+#include <webbind/FileSystemHandle.hpp>
+
+
+DataTransferItem DataTransferItem::take_ownership(Handle h) noexcept {
+        return DataTransferItem(h);
+    }
+DataTransferItem DataTransferItem::clone() const noexcept { return *this; }
+DataTransferItem::DataTransferItem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+DataTransferItem::DataTransferItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+
+jsbind::DOMString DataTransferItem::kind() const {
+    return emlite::Val::get("kind").as<jsbind::DOMString>();
+}
+
+jsbind::DOMString DataTransferItem::type() const {
+    return emlite::Val::get("type").as<jsbind::DOMString>();
+}
+
+jsbind::Undefined DataTransferItem::getAsString(const jsbind::Any& callback) {
+    return emlite::Val::call("getAsString", callback).as<jsbind::Undefined>();
+}
+
+File DataTransferItem::getAsFile() {
+    return emlite::Val::call("getAsFile").as<File>();
+}
+
+FileSystemEntry DataTransferItem::webkitGetAsEntry() {
+    return emlite::Val::call("webkitGetAsEntry").as<FileSystemEntry>();
+}
+
+jsbind::Promise DataTransferItem::getAsFileSystemHandle() {
+    return emlite::Val::call("getAsFileSystemHandle").as<jsbind::Promise>();
+}
+

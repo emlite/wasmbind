@@ -1,0 +1,45 @@
+#include <webbind/TextDecoder.hpp>
+
+
+TextDecodeOptions::TextDecodeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+TextDecodeOptions TextDecodeOptions::take_ownership(Handle h) noexcept {
+        return TextDecodeOptions(h);
+    }
+TextDecodeOptions::TextDecodeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+TextDecodeOptions::TextDecodeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+TextDecodeOptions TextDecodeOptions::clone() const noexcept { return *this; }
+
+bool TextDecodeOptions::stream() const {
+    return emlite::Val::get("stream").as<bool>();
+}
+
+void TextDecodeOptions::stream(bool value) {
+    emlite::Val::set("stream", value);
+}
+
+TextDecoder TextDecoder::take_ownership(Handle h) noexcept {
+        return TextDecoder(h);
+    }
+TextDecoder TextDecoder::clone() const noexcept { return *this; }
+TextDecoder::TextDecoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+TextDecoder::TextDecoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+
+TextDecoder::TextDecoder(const jsbind::DOMString& label, const jsbind::Any& options): emlite::Val(emlite::Val::global("TextDecoder").new_(label, options)) {}
+
+jsbind::USVString TextDecoder::decode(const jsbind::Any& input, const TextDecodeOptions& options) {
+    return emlite::Val::call("decode", input, options).as<jsbind::USVString>();
+}
+
+jsbind::DOMString TextDecoder::encoding() const {
+    return emlite::Val::get("encoding").as<jsbind::DOMString>();
+}
+
+bool TextDecoder::fatal() const {
+    return emlite::Val::get("fatal").as<bool>();
+}
+
+bool TextDecoder::ignoreBOM() const {
+    return emlite::Val::get("ignoreBOM").as<bool>();
+}
+

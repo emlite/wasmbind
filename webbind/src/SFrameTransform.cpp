@@ -1,0 +1,36 @@
+#include <webbind/SFrameTransform.hpp>
+#include <webbind/CryptoKey.hpp>
+#include <webbind/ReadableStream.hpp>
+#include <webbind/WritableStream.hpp>
+
+
+SFrameTransform SFrameTransform::take_ownership(Handle h) noexcept {
+        return SFrameTransform(h);
+    }
+SFrameTransform SFrameTransform::clone() const noexcept { return *this; }
+SFrameTransform::SFrameTransform(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+SFrameTransform::SFrameTransform(const emlite::Val &val) noexcept: EventTarget(val) {}
+
+
+SFrameTransform::SFrameTransform(const jsbind::Any& options): EventTarget(emlite::Val::global("SFrameTransform").new_(options)) {}
+
+jsbind::Promise SFrameTransform::setEncryptionKey(const CryptoKey& key, const jsbind::Any& keyID) {
+    return EventTarget::call("setEncryptionKey", key, keyID).as<jsbind::Promise>();
+}
+
+jsbind::Any SFrameTransform::onerror() const {
+    return EventTarget::get("onerror").as<jsbind::Any>();
+}
+
+void SFrameTransform::onerror(const jsbind::Any& value) {
+    EventTarget::set("onerror", value);
+}
+
+ReadableStream SFrameTransform::readable() const {
+    return EventTarget::get("readable").as<ReadableStream>();
+}
+
+WritableStream SFrameTransform::writable() const {
+    return EventTarget::get("writable").as<WritableStream>();
+}
+

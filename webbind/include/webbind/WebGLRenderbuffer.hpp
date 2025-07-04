@@ -1,0 +1,18 @@
+#pragma once
+
+#include <emlite/emlite.hpp>
+#include <jsbind/jsbind.hpp>
+#include "WebGLObject.hpp"
+#include "enums.hpp"
+
+
+class WebGLRenderbuffer : public WebGLObject {
+    explicit WebGLRenderbuffer(Handle h) noexcept;
+
+public:
+    explicit WebGLRenderbuffer(const emlite::Val &val) noexcept;
+    static WebGLRenderbuffer take_ownership(Handle h) noexcept;
+
+    WebGLRenderbuffer clone() const noexcept;
+};
+

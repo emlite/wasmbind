@@ -1,0 +1,39 @@
+#include <webbind/USBAlternateInterface.hpp>
+#include <webbind/USBEndpoint.hpp>
+#include <webbind/USBInterface.hpp>
+
+
+USBAlternateInterface USBAlternateInterface::take_ownership(Handle h) noexcept {
+        return USBAlternateInterface(h);
+    }
+USBAlternateInterface USBAlternateInterface::clone() const noexcept { return *this; }
+USBAlternateInterface::USBAlternateInterface(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+USBAlternateInterface::USBAlternateInterface(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+
+USBAlternateInterface::USBAlternateInterface(const USBInterface& deviceInterface, unsigned char alternateSetting): emlite::Val(emlite::Val::global("USBAlternateInterface").new_(deviceInterface, alternateSetting)) {}
+
+unsigned char USBAlternateInterface::alternateSetting() const {
+    return emlite::Val::get("alternateSetting").as<unsigned char>();
+}
+
+unsigned char USBAlternateInterface::interfaceClass() const {
+    return emlite::Val::get("interfaceClass").as<unsigned char>();
+}
+
+unsigned char USBAlternateInterface::interfaceSubclass() const {
+    return emlite::Val::get("interfaceSubclass").as<unsigned char>();
+}
+
+unsigned char USBAlternateInterface::interfaceProtocol() const {
+    return emlite::Val::get("interfaceProtocol").as<unsigned char>();
+}
+
+jsbind::DOMString USBAlternateInterface::interfaceName() const {
+    return emlite::Val::get("interfaceName").as<jsbind::DOMString>();
+}
+
+jsbind::FrozenArray<USBEndpoint> USBAlternateInterface::endpoints() const {
+    return emlite::Val::get("endpoints").as<jsbind::FrozenArray<USBEndpoint>>();
+}
+

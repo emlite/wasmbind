@@ -1,0 +1,13 @@
+#include <webbind/LinearAccelerationSensor.hpp>
+
+
+LinearAccelerationSensor LinearAccelerationSensor::take_ownership(Handle h) noexcept {
+        return LinearAccelerationSensor(h);
+    }
+LinearAccelerationSensor LinearAccelerationSensor::clone() const noexcept { return *this; }
+LinearAccelerationSensor::LinearAccelerationSensor(Handle h) noexcept : Accelerometer(emlite::Val::take_ownership(h)) {}
+LinearAccelerationSensor::LinearAccelerationSensor(const emlite::Val &val) noexcept: Accelerometer(val) {}
+
+
+LinearAccelerationSensor::LinearAccelerationSensor(const jsbind::Any& options): Accelerometer(emlite::Val::global("LinearAccelerationSensor").new_(options)) {}
+

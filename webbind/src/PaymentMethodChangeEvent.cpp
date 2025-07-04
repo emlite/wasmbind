@@ -1,0 +1,21 @@
+#include <webbind/PaymentMethodChangeEvent.hpp>
+
+
+PaymentMethodChangeEvent PaymentMethodChangeEvent::take_ownership(Handle h) noexcept {
+        return PaymentMethodChangeEvent(h);
+    }
+PaymentMethodChangeEvent PaymentMethodChangeEvent::clone() const noexcept { return *this; }
+PaymentMethodChangeEvent::PaymentMethodChangeEvent(Handle h) noexcept : PaymentRequestUpdateEvent(emlite::Val::take_ownership(h)) {}
+PaymentMethodChangeEvent::PaymentMethodChangeEvent(const emlite::Val &val) noexcept: PaymentRequestUpdateEvent(val) {}
+
+
+PaymentMethodChangeEvent::PaymentMethodChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): PaymentRequestUpdateEvent(emlite::Val::global("PaymentMethodChangeEvent").new_(type, eventInitDict)) {}
+
+jsbind::DOMString PaymentMethodChangeEvent::methodName() const {
+    return PaymentRequestUpdateEvent::get("methodName").as<jsbind::DOMString>();
+}
+
+jsbind::Object PaymentMethodChangeEvent::methodDetails() const {
+    return PaymentRequestUpdateEvent::get("methodDetails").as<jsbind::Object>();
+}
+

@@ -1,0 +1,40 @@
+#include <webbind/VideoTrack.hpp>
+#include <webbind/SourceBuffer.hpp>
+
+
+VideoTrack VideoTrack::take_ownership(Handle h) noexcept {
+        return VideoTrack(h);
+    }
+VideoTrack VideoTrack::clone() const noexcept { return *this; }
+VideoTrack::VideoTrack(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+VideoTrack::VideoTrack(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+
+jsbind::DOMString VideoTrack::id() const {
+    return emlite::Val::get("id").as<jsbind::DOMString>();
+}
+
+jsbind::DOMString VideoTrack::kind() const {
+    return emlite::Val::get("kind").as<jsbind::DOMString>();
+}
+
+jsbind::DOMString VideoTrack::label() const {
+    return emlite::Val::get("label").as<jsbind::DOMString>();
+}
+
+jsbind::DOMString VideoTrack::language() const {
+    return emlite::Val::get("language").as<jsbind::DOMString>();
+}
+
+bool VideoTrack::selected() const {
+    return emlite::Val::get("selected").as<bool>();
+}
+
+void VideoTrack::selected(bool value) {
+    emlite::Val::set("selected", value);
+}
+
+SourceBuffer VideoTrack::sourceBuffer() const {
+    return emlite::Val::get("sourceBuffer").as<SourceBuffer>();
+}
+

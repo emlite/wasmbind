@@ -1,0 +1,50 @@
+#include <webbind/DOMRect.hpp>
+#include <webbind/DOMRectReadOnly.hpp>
+
+
+DOMRect DOMRect::take_ownership(Handle h) noexcept {
+        return DOMRect(h);
+    }
+DOMRect DOMRect::clone() const noexcept { return *this; }
+DOMRect::DOMRect(Handle h) noexcept : DOMRectReadOnly(emlite::Val::take_ownership(h)) {}
+DOMRect::DOMRect(const emlite::Val &val) noexcept: DOMRectReadOnly(val) {}
+
+
+DOMRect::DOMRect(double x, double y, double width, double height): DOMRectReadOnly(emlite::Val::global("DOMRect").new_(x, y, width, height)) {}
+
+DOMRect DOMRect::fromRect(const DOMRectInit& other) {
+    return emlite::Val::global("domrect").call("fromRect", other).as<DOMRect>();
+}
+
+double DOMRect::x() const {
+    return DOMRectReadOnly::get("x").as<double>();
+}
+
+void DOMRect::x(double value) {
+    DOMRectReadOnly::set("x", value);
+}
+
+double DOMRect::y() const {
+    return DOMRectReadOnly::get("y").as<double>();
+}
+
+void DOMRect::y(double value) {
+    DOMRectReadOnly::set("y", value);
+}
+
+double DOMRect::width() const {
+    return DOMRectReadOnly::get("width").as<double>();
+}
+
+void DOMRect::width(double value) {
+    DOMRectReadOnly::set("width", value);
+}
+
+double DOMRect::height() const {
+    return DOMRectReadOnly::get("height").as<double>();
+}
+
+void DOMRect::height(double value) {
+    DOMRectReadOnly::set("height", value);
+}
+

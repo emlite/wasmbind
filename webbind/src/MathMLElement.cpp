@@ -1,0 +1,62 @@
+#include <webbind/MathMLElement.hpp>
+#include <webbind/CSSStyleDeclaration.hpp>
+#include <webbind/DOMStringMap.hpp>
+#include <webbind/SVGElement.hpp>
+
+
+MathMLElement MathMLElement::take_ownership(Handle h) noexcept {
+        return MathMLElement(h);
+    }
+MathMLElement MathMLElement::clone() const noexcept { return *this; }
+MathMLElement::MathMLElement(Handle h) noexcept : Element(emlite::Val::take_ownership(h)) {}
+MathMLElement::MathMLElement(const emlite::Val &val) noexcept: Element(val) {}
+
+
+CSSStyleDeclaration MathMLElement::style() const {
+    return Element::get("style").as<CSSStyleDeclaration>();
+}
+
+jsbind::Any MathMLElement::onbeforexrselect() const {
+    return Element::get("onbeforexrselect").as<jsbind::Any>();
+}
+
+void MathMLElement::onbeforexrselect(const jsbind::Any& value) {
+    Element::set("onbeforexrselect", value);
+}
+
+DOMStringMap MathMLElement::dataset() const {
+    return Element::get("dataset").as<DOMStringMap>();
+}
+
+jsbind::DOMString MathMLElement::nonce() const {
+    return Element::get("nonce").as<jsbind::DOMString>();
+}
+
+void MathMLElement::nonce(const jsbind::DOMString& value) {
+    Element::set("nonce", value);
+}
+
+bool MathMLElement::autofocus() const {
+    return Element::get("autofocus").as<bool>();
+}
+
+void MathMLElement::autofocus(bool value) {
+    Element::set("autofocus", value);
+}
+
+long MathMLElement::tabIndex() const {
+    return Element::get("tabIndex").as<long>();
+}
+
+void MathMLElement::tabIndex(long value) {
+    Element::set("tabIndex", value);
+}
+
+jsbind::Undefined MathMLElement::focus(const FocusOptions& options) {
+    return Element::call("focus", options).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MathMLElement::blur() {
+    return Element::call("blur").as<jsbind::Undefined>();
+}
+

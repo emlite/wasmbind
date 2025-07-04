@@ -1,0 +1,269 @@
+#pragma once
+
+#include <emlite/emlite.hpp>
+#include <jsbind/jsbind.hpp>
+#include "Node.hpp"
+#include "enums.hpp"
+
+class DOMImplementation;
+class DocumentType;
+class Element;
+class HTMLCollection;
+class DocumentFragment;
+class Text;
+class CDATASection;
+class Comment;
+class ProcessingInstruction;
+class Attr;
+class Event;
+class Range;
+class NodeIterator;
+class TreeWalker;
+class SVGSVGElement;
+class NamedFlowMap;
+class ViewTransition;
+class CaretPosition;
+class CaretPositionFromPointOptions;
+class FontMetrics;
+class StylePropertyMapReadOnly;
+class Document;
+class Location;
+class HTMLElement;
+class HTMLHeadElement;
+class NodeList;
+class HTMLAllCollection;
+class PermissionsPolicy;
+class FragmentDirective;
+class Selection;
+class DocumentTimeline;
+class FontFaceSet;
+class DOMQuad;
+class BoxQuadOptions;
+class DOMQuadInit;
+class ConvertCoordinateOptions;
+class DOMRectReadOnly;
+class DOMPoint;
+class Animation;
+class XPathExpression;
+class XPathResult;
+class ShadowRoot;
+class DOMPointInit;
+class DOMQuadInit;
+
+
+class CaretPositionFromPointOptions : public emlite::Val {
+  explicit CaretPositionFromPointOptions(Handle h) noexcept;
+public:
+    static CaretPositionFromPointOptions take_ownership(Handle h) noexcept;
+    explicit CaretPositionFromPointOptions(const emlite::Val &val) noexcept;
+    CaretPositionFromPointOptions() noexcept;
+    CaretPositionFromPointOptions clone() const noexcept;
+    jsbind::Sequence<ShadowRoot> shadowRoots() const;
+    void shadowRoots(const jsbind::Sequence<ShadowRoot>& value);
+};
+
+class BoxQuadOptions : public emlite::Val {
+  explicit BoxQuadOptions(Handle h) noexcept;
+public:
+    static BoxQuadOptions take_ownership(Handle h) noexcept;
+    explicit BoxQuadOptions(const emlite::Val &val) noexcept;
+    BoxQuadOptions() noexcept;
+    BoxQuadOptions clone() const noexcept;
+    CSSBoxType box() const;
+    void box(const CSSBoxType& value);
+    jsbind::Any relativeTo() const;
+    void relativeTo(const jsbind::Any& value);
+};
+
+class DOMQuadInit : public emlite::Val {
+  explicit DOMQuadInit(Handle h) noexcept;
+public:
+    static DOMQuadInit take_ownership(Handle h) noexcept;
+    explicit DOMQuadInit(const emlite::Val &val) noexcept;
+    DOMQuadInit() noexcept;
+    DOMQuadInit clone() const noexcept;
+    DOMPointInit p1() const;
+    void p1(const DOMPointInit& value);
+    DOMPointInit p2() const;
+    void p2(const DOMPointInit& value);
+    DOMPointInit p3() const;
+    void p3(const DOMPointInit& value);
+    DOMPointInit p4() const;
+    void p4(const DOMPointInit& value);
+};
+
+class ConvertCoordinateOptions : public emlite::Val {
+  explicit ConvertCoordinateOptions(Handle h) noexcept;
+public:
+    static ConvertCoordinateOptions take_ownership(Handle h) noexcept;
+    explicit ConvertCoordinateOptions(const emlite::Val &val) noexcept;
+    ConvertCoordinateOptions() noexcept;
+    ConvertCoordinateOptions clone() const noexcept;
+    CSSBoxType fromBox() const;
+    void fromBox(const CSSBoxType& value);
+    CSSBoxType toBox() const;
+    void toBox(const CSSBoxType& value);
+};
+
+class Document : public Node {
+    explicit Document(Handle h) noexcept;
+
+public:
+    explicit Document(const emlite::Val &val) noexcept;
+    static Document take_ownership(Handle h) noexcept;
+
+    Document clone() const noexcept;
+    Document();
+    DOMImplementation implementation() const;
+    jsbind::USVString URL() const;
+    jsbind::USVString documentURI() const;
+    jsbind::DOMString compatMode() const;
+    jsbind::DOMString characterSet() const;
+    jsbind::DOMString charset() const;
+    jsbind::DOMString inputEncoding() const;
+    jsbind::DOMString contentType() const;
+    DocumentType doctype() const;
+    Element documentElement() const;
+    HTMLCollection getElementsByTagName(const jsbind::DOMString& qualifiedName);
+    HTMLCollection getElementsByTagNameNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName);
+    HTMLCollection getElementsByClassName(const jsbind::DOMString& classNames);
+    Element createElement(const jsbind::DOMString& localName, const jsbind::Any& options);
+    Element createElementNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName, const jsbind::Any& options);
+    DocumentFragment createDocumentFragment();
+    Text createTextNode(const jsbind::DOMString& data);
+    CDATASection createCDATASection(const jsbind::DOMString& data);
+    Comment createComment(const jsbind::DOMString& data);
+    ProcessingInstruction createProcessingInstruction(const jsbind::DOMString& target, const jsbind::DOMString& data);
+    Node importNode(const Node& node, const jsbind::Any& options);
+    Node adoptNode(const Node& node);
+    Attr createAttribute(const jsbind::DOMString& localName);
+    Attr createAttributeNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName);
+    Event createEvent(const jsbind::DOMString& interface);
+    Range createRange();
+    NodeIterator createNodeIterator(const Node& root, unsigned long whatToShow, const jsbind::Function& filter);
+    TreeWalker createTreeWalker(const Node& root, unsigned long whatToShow, const jsbind::Function& filter);
+    SVGSVGElement rootElement() const;
+    NamedFlowMap namedFlows() const;
+    ViewTransition startViewTransition(const jsbind::Any& callbackOptions);
+    Element elementFromPoint(double x, double y);
+    jsbind::Sequence<Element> elementsFromPoint(double x, double y);
+    CaretPosition caretPositionFromPoint(double x, double y, const CaretPositionFromPointOptions& options);
+    Element scrollingElement() const;
+    FontMetrics measureElement(const Element& element);
+    FontMetrics measureText(const jsbind::DOMString& text, const StylePropertyMapReadOnly& styleMap);
+    bool fullscreenEnabled() const;
+    bool fullscreen() const;
+    jsbind::Promise exitFullscreen();
+    jsbind::Any onfullscreenchange() const;
+    void onfullscreenchange(const jsbind::Any& value);
+    jsbind::Any onfullscreenerror() const;
+    void onfullscreenerror(const jsbind::Any& value);
+    static Document parseHTMLUnsafe(const jsbind::Any& html);
+    jsbind::Any location() const;
+    jsbind::USVString domain() const;
+    void domain(const jsbind::USVString& value);
+    jsbind::USVString referrer() const;
+    jsbind::USVString cookie() const;
+    void cookie(const jsbind::USVString& value);
+    jsbind::DOMString lastModified() const;
+    DocumentReadyState readyState() const;
+    jsbind::DOMString title() const;
+    void title(const jsbind::DOMString& value);
+    jsbind::DOMString dir() const;
+    void dir(const jsbind::DOMString& value);
+    HTMLElement body() const;
+    void body(const HTMLElement& value);
+    HTMLHeadElement head() const;
+    HTMLCollection images() const;
+    HTMLCollection embeds() const;
+    HTMLCollection plugins() const;
+    HTMLCollection links() const;
+    HTMLCollection forms() const;
+    HTMLCollection scripts() const;
+    NodeList getElementsByName(const jsbind::DOMString& elementName);
+    jsbind::Any currentScript() const;
+    jsbind::Any open(const jsbind::USVString& url, const jsbind::DOMString& name, const jsbind::DOMString& features);
+    jsbind::Undefined close();
+    jsbind::Undefined write(const jsbind::Any& text);
+    jsbind::Undefined writeln(const jsbind::Any& text);
+    jsbind::Any defaultView() const;
+    bool hasFocus();
+    jsbind::DOMString designMode() const;
+    void designMode(const jsbind::DOMString& value);
+    bool execCommand(const jsbind::DOMString& commandId, bool showUI, const jsbind::DOMString& value);
+    bool queryCommandEnabled(const jsbind::DOMString& commandId);
+    bool queryCommandIndeterm(const jsbind::DOMString& commandId);
+    bool queryCommandState(const jsbind::DOMString& commandId);
+    bool queryCommandSupported(const jsbind::DOMString& commandId);
+    jsbind::DOMString queryCommandValue(const jsbind::DOMString& commandId);
+    bool hidden() const;
+    DocumentVisibilityState visibilityState() const;
+    jsbind::Any onreadystatechange() const;
+    void onreadystatechange(const jsbind::Any& value);
+    jsbind::Any onvisibilitychange() const;
+    void onvisibilitychange(const jsbind::Any& value);
+    jsbind::DOMString fgColor() const;
+    void fgColor(const jsbind::DOMString& value);
+    jsbind::DOMString linkColor() const;
+    void linkColor(const jsbind::DOMString& value);
+    jsbind::DOMString vlinkColor() const;
+    void vlinkColor(const jsbind::DOMString& value);
+    jsbind::DOMString alinkColor() const;
+    void alinkColor(const jsbind::DOMString& value);
+    jsbind::DOMString bgColor() const;
+    void bgColor(const jsbind::DOMString& value);
+    HTMLCollection anchors() const;
+    HTMLCollection applets() const;
+    jsbind::Undefined clear();
+    jsbind::Undefined captureEvents();
+    jsbind::Undefined releaseEvents();
+    HTMLAllCollection all() const;
+    jsbind::Any onfreeze() const;
+    void onfreeze(const jsbind::Any& value);
+    jsbind::Any onresume() const;
+    void onresume(const jsbind::Any& value);
+    bool wasDiscarded() const;
+    PermissionsPolicy permissionsPolicy() const;
+    bool pictureInPictureEnabled() const;
+    jsbind::Promise exitPictureInPicture();
+    jsbind::Any onpointerlockchange() const;
+    void onpointerlockchange(const jsbind::Any& value);
+    jsbind::Any onpointerlockerror() const;
+    void onpointerlockerror(const jsbind::Any& value);
+    jsbind::Undefined exitPointerLock();
+    bool prerendering() const;
+    jsbind::Any onprerenderingchange() const;
+    void onprerenderingchange(const jsbind::Any& value);
+    jsbind::Promise requestStorageAccessFor(const jsbind::USVString& requestedOrigin);
+    jsbind::Promise hasUnpartitionedCookieAccess();
+    FragmentDirective fragmentDirective() const;
+    Selection getSelection();
+    jsbind::Promise hasStorageAccess();
+    jsbind::Promise requestStorageAccess();
+    jsbind::Promise hasPrivateToken(const jsbind::USVString& issuer);
+    jsbind::Promise hasRedemptionRecord(const jsbind::USVString& issuer);
+    DocumentTimeline timeline() const;
+    FontFaceSet fonts() const;
+    jsbind::Sequence<DOMQuad> getBoxQuads(const BoxQuadOptions& options);
+    DOMQuad convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from, const ConvertCoordinateOptions& options);
+    DOMQuad convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from, const ConvertCoordinateOptions& options);
+    DOMPoint convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from, const ConvertCoordinateOptions& options);
+    Element getElementById(const jsbind::DOMString& elementId);
+    jsbind::Sequence<Animation> getAnimations();
+    HTMLCollection children() const;
+    Element firstElementChild() const;
+    Element lastElementChild() const;
+    unsigned long childElementCount() const;
+    jsbind::Undefined prepend(const jsbind::Any& nodes);
+    jsbind::Undefined append(const jsbind::Any& nodes);
+    jsbind::Undefined replaceChildren(const jsbind::Any& nodes);
+    jsbind::Undefined moveBefore(const Node& node, const Node& child);
+    Element querySelector(const jsbind::DOMString& selectors);
+    NodeList querySelectorAll(const jsbind::DOMString& selectors);
+    XPathExpression createExpression(const jsbind::DOMString& expression, const jsbind::Function& resolver);
+    Node createNSResolver(const Node& nodeResolver);
+    XPathResult evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result);
+    jsbind::Any onbeforexrselect() const;
+    void onbeforexrselect(const jsbind::Any& value);
+};
+

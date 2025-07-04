@@ -1,0 +1,19 @@
+#include <webbind/CSSViewTransitionRule.hpp>
+
+
+CSSViewTransitionRule CSSViewTransitionRule::take_ownership(Handle h) noexcept {
+        return CSSViewTransitionRule(h);
+    }
+CSSViewTransitionRule CSSViewTransitionRule::clone() const noexcept { return *this; }
+CSSViewTransitionRule::CSSViewTransitionRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
+CSSViewTransitionRule::CSSViewTransitionRule(const emlite::Val &val) noexcept: CSSRule(val) {}
+
+
+jsbind::CSSOMString CSSViewTransitionRule::navigation() const {
+    return CSSRule::get("navigation").as<jsbind::CSSOMString>();
+}
+
+jsbind::FrozenArray<jsbind::CSSOMString> CSSViewTransitionRule::types() const {
+    return CSSRule::get("types").as<jsbind::FrozenArray<jsbind::CSSOMString>>();
+}
+
