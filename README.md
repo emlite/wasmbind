@@ -89,7 +89,7 @@ Please also refer to the [README.browser.md](https://github.com/MoAlyousef/emlit
 
 You can then build your project using CMake.
 ```bash
-cmake -Bbin -DCMAKE_TOOLCHAIN_FILE=./cmake/freestanding.cmake -DWASMBIND_BUILD_EXAMPLES=ON -DEMLITE_USE_DLMALLOC=ON && cmake --build bin
+cmake -Bbin -DCMAKE_TOOLCHAIN_FILE=./cmake/freestanding.cmake && cmake --build bin
 ```
 Note that this repo contains a cmake toolchain files for wasm32-unknown-unknown (freestanding), and for wasi-libc and wasi-sysroot, which you're free to use as well. If you prefer to use emscripten or wasi-sdk, it's advisable to use the cmake toolchain file provided by them directly.
 
