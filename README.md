@@ -77,7 +77,7 @@ FetchContent_Declare(
 )
 
 # if targeting wasm32-unknown-unknown (freestanding)
-set(EMLITE_USE_DLMALLOC ON)
+set(EMLITE_USE_DLMALLOC ON CACHE BOOL " " FORCE)
 FetchContent_MakeAvailable(wasmbind)
 
 add_executable(main src/main.cpp)
