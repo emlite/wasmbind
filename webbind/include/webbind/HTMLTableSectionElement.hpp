@@ -19,6 +19,7 @@ public:
     HTMLTableSectionElement clone() const noexcept;
     HTMLTableSectionElement();
     HTMLCollection rows() const;
+    HTMLTableRowElement insertRow();
     HTMLTableRowElement insertRow(long index);
     jsbind::Undefined deleteRow(long index);
     jsbind::DOMString align() const;

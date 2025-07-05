@@ -16,6 +16,7 @@ public:
     static SharedWorker take_ownership(Handle h) noexcept;
 
     SharedWorker clone() const noexcept;
+    SharedWorker(const jsbind::Any& scriptURL);
     SharedWorker(const jsbind::Any& scriptURL, const jsbind::Any& options);
     jsbind::Any port() const;
     jsbind::Any onerror() const;

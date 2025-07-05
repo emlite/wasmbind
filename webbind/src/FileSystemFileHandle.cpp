@@ -32,6 +32,10 @@ jsbind::Promise FileSystemFileHandle::getFile() {
     return FileSystemHandle::call("getFile").as<jsbind::Promise>();
 }
 
+jsbind::Promise FileSystemFileHandle::createWritable() {
+    return FileSystemHandle::call("createWritable").as<jsbind::Promise>();
+}
+
 jsbind::Promise FileSystemFileHandle::createWritable(const FileSystemCreateWritableOptions& options) {
     return FileSystemHandle::call("createWritable", options).as<jsbind::Promise>();
 }

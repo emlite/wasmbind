@@ -9,7 +9,9 @@ ProximitySensor::ProximitySensor(Handle h) noexcept : Sensor(emlite::Val::take_o
 ProximitySensor::ProximitySensor(const emlite::Val &val) noexcept: Sensor(val) {}
 
 
-ProximitySensor::ProximitySensor(const jsbind::Any& sensorOptions): Sensor(emlite::Val::global("ProximitySensor").new_(sensorOptions)) {}
+ProximitySensor::ProximitySensor() : Sensor(emlite::Val::global("ProximitySensor").new_()) {}
+
+ProximitySensor::ProximitySensor(const jsbind::Any& sensorOptions) : Sensor(emlite::Val::global("ProximitySensor").new_(sensorOptions)) {}
 
 double ProximitySensor::distance() const {
     return Sensor::get("distance").as<double>();

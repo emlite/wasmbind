@@ -41,7 +41,11 @@ PerformanceObserver::PerformanceObserver(Handle h) noexcept : emlite::Val(emlite
 PerformanceObserver::PerformanceObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-PerformanceObserver::PerformanceObserver(const jsbind::Function& callback): emlite::Val(emlite::Val::global("PerformanceObserver").new_(callback)) {}
+PerformanceObserver::PerformanceObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("PerformanceObserver").new_(callback)) {}
+
+jsbind::Undefined PerformanceObserver::observe() {
+    return emlite::Val::call("observe").as<jsbind::Undefined>();
+}
 
 jsbind::Undefined PerformanceObserver::observe(const PerformanceObserverInit& options) {
     return emlite::Val::call("observe", options).as<jsbind::Undefined>();

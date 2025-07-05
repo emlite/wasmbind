@@ -14,6 +14,7 @@ public:
     static Gyroscope take_ownership(Handle h) noexcept;
 
     Gyroscope clone() const noexcept;
+    Gyroscope();
     Gyroscope(const jsbind::Any& sensorOptions);
     double x() const;
     double y() const;

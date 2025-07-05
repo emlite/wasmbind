@@ -10,7 +10,19 @@ DOMRect::DOMRect(Handle h) noexcept : DOMRectReadOnly(emlite::Val::take_ownershi
 DOMRect::DOMRect(const emlite::Val &val) noexcept: DOMRectReadOnly(val) {}
 
 
-DOMRect::DOMRect(double x, double y, double width, double height): DOMRectReadOnly(emlite::Val::global("DOMRect").new_(x, y, width, height)) {}
+DOMRect::DOMRect() : DOMRectReadOnly(emlite::Val::global("DOMRect").new_()) {}
+
+DOMRect::DOMRect(double x) : DOMRectReadOnly(emlite::Val::global("DOMRect").new_(x)) {}
+
+DOMRect::DOMRect(double x, double y) : DOMRectReadOnly(emlite::Val::global("DOMRect").new_(x, y)) {}
+
+DOMRect::DOMRect(double x, double y, double width) : DOMRectReadOnly(emlite::Val::global("DOMRect").new_(x, y, width)) {}
+
+DOMRect::DOMRect(double x, double y, double width, double height) : DOMRectReadOnly(emlite::Val::global("DOMRect").new_(x, y, width, height)) {}
+
+DOMRect DOMRect::fromRect() {
+    return emlite::Val::global("domrect").call("fromRect").as<DOMRect>();
+}
 
 DOMRect DOMRect::fromRect(const DOMRectInit& other) {
     return emlite::Val::global("domrect").call("fromRect", other).as<DOMRect>();

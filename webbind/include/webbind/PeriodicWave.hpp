@@ -15,6 +15,7 @@ public:
     static PeriodicWave take_ownership(Handle h) noexcept;
 
     PeriodicWave clone() const noexcept;
+    PeriodicWave(const BaseAudioContext& context);
     PeriodicWave(const BaseAudioContext& context, const jsbind::Any& options);
 };
 

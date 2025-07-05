@@ -27,7 +27,7 @@ HTMLSlotElement::HTMLSlotElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLSlotElement::HTMLSlotElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLSlotElement::HTMLSlotElement(): HTMLElement(emlite::Val::global("HTMLSlotElement").new_()) {}
+HTMLSlotElement::HTMLSlotElement() : HTMLElement(emlite::Val::global("HTMLSlotElement").new_()) {}
 
 jsbind::DOMString HTMLSlotElement::name() const {
     return HTMLElement::get("name").as<jsbind::DOMString>();
@@ -37,8 +37,16 @@ void HTMLSlotElement::name(const jsbind::DOMString& value) {
     HTMLElement::set("name", value);
 }
 
+jsbind::Sequence<Node> HTMLSlotElement::assignedNodes() {
+    return HTMLElement::call("assignedNodes").as<jsbind::Sequence<Node>>();
+}
+
 jsbind::Sequence<Node> HTMLSlotElement::assignedNodes(const AssignedNodesOptions& options) {
     return HTMLElement::call("assignedNodes", options).as<jsbind::Sequence<Node>>();
+}
+
+jsbind::Sequence<Element> HTMLSlotElement::assignedElements() {
+    return HTMLElement::call("assignedElements").as<jsbind::Sequence<Element>>();
 }
 
 jsbind::Sequence<Element> HTMLSlotElement::assignedElements(const AssignedNodesOptions& options) {

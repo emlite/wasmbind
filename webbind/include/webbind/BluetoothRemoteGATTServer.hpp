@@ -22,6 +22,7 @@ public:
     jsbind::Promise connect();
     jsbind::Undefined disconnect();
     jsbind::Promise getPrimaryService(const jsbind::Any& service);
+    jsbind::Promise getPrimaryServices();
     jsbind::Promise getPrimaryServices(const jsbind::Any& service);
 };
 

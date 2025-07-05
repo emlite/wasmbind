@@ -14,6 +14,7 @@ public:
     static RTCIceCandidate take_ownership(Handle h) noexcept;
 
     RTCIceCandidate clone() const noexcept;
+    RTCIceCandidate();
     RTCIceCandidate(const jsbind::Any& candidateInitDict);
     jsbind::DOMString candidate() const;
     jsbind::DOMString sdpMid() const;

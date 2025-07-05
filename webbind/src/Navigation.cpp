@@ -136,20 +136,40 @@ bool Navigation::canGoForward() const {
     return EventTarget::get("canGoForward").as<bool>();
 }
 
+NavigationResult Navigation::navigate(const jsbind::USVString& url) {
+    return EventTarget::call("navigate", url).as<NavigationResult>();
+}
+
 NavigationResult Navigation::navigate(const jsbind::USVString& url, const NavigationNavigateOptions& options) {
     return EventTarget::call("navigate", url, options).as<NavigationResult>();
+}
+
+NavigationResult Navigation::reload() {
+    return EventTarget::call("reload").as<NavigationResult>();
 }
 
 NavigationResult Navigation::reload(const NavigationReloadOptions& options) {
     return EventTarget::call("reload", options).as<NavigationResult>();
 }
 
+NavigationResult Navigation::traverseTo(const jsbind::DOMString& key) {
+    return EventTarget::call("traverseTo", key).as<NavigationResult>();
+}
+
 NavigationResult Navigation::traverseTo(const jsbind::DOMString& key, const NavigationOptions& options) {
     return EventTarget::call("traverseTo", key, options).as<NavigationResult>();
 }
 
+NavigationResult Navigation::back() {
+    return EventTarget::call("back").as<NavigationResult>();
+}
+
 NavigationResult Navigation::back(const NavigationOptions& options) {
     return EventTarget::call("back", options).as<NavigationResult>();
+}
+
+NavigationResult Navigation::forward() {
+    return EventTarget::call("forward").as<NavigationResult>();
 }
 
 NavigationResult Navigation::forward(const NavigationOptions& options) {

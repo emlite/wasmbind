@@ -75,7 +75,7 @@ XMLHttpRequest::XMLHttpRequest(Handle h) noexcept : XMLHttpRequestEventTarget(em
 XMLHttpRequest::XMLHttpRequest(const emlite::Val &val) noexcept: XMLHttpRequestEventTarget(val) {}
 
 
-XMLHttpRequest::XMLHttpRequest(): XMLHttpRequestEventTarget(emlite::Val::global("XMLHttpRequest").new_()) {}
+XMLHttpRequest::XMLHttpRequest() : XMLHttpRequestEventTarget(emlite::Val::global("XMLHttpRequest").new_()) {}
 
 jsbind::Any XMLHttpRequest::onreadystatechange() const {
     return XMLHttpRequestEventTarget::get("onreadystatechange").as<jsbind::Any>();
@@ -87,6 +87,14 @@ void XMLHttpRequest::onreadystatechange(const jsbind::Any& value) {
 
 unsigned short XMLHttpRequest::readyState() const {
     return XMLHttpRequestEventTarget::get("readyState").as<unsigned short>();
+}
+
+jsbind::Undefined XMLHttpRequest::open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async) {
+    return XMLHttpRequestEventTarget::call("open", method, url, async).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined XMLHttpRequest::open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username) {
+    return XMLHttpRequestEventTarget::call("open", method, url, async, username).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined XMLHttpRequest::open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username, const jsbind::USVString& password) {
@@ -115,6 +123,10 @@ void XMLHttpRequest::withCredentials(bool value) {
 
 XMLHttpRequestUpload XMLHttpRequest::upload() const {
     return XMLHttpRequestEventTarget::get("upload").as<XMLHttpRequestUpload>();
+}
+
+jsbind::Undefined XMLHttpRequest::send() {
+    return XMLHttpRequestEventTarget::call("send").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined XMLHttpRequest::send(const jsbind::Any& body) {

@@ -16,6 +16,7 @@ public:
     static BiquadFilterNode take_ownership(Handle h) noexcept;
 
     BiquadFilterNode clone() const noexcept;
+    BiquadFilterNode(const BaseAudioContext& context);
     BiquadFilterNode(const BaseAudioContext& context, const jsbind::Any& options);
     BiquadFilterType type() const;
     void type(const BiquadFilterType& value);

@@ -10,7 +10,7 @@ SpeechGrammarList::SpeechGrammarList(Handle h) noexcept : emlite::Val(emlite::Va
 SpeechGrammarList::SpeechGrammarList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-SpeechGrammarList::SpeechGrammarList(): emlite::Val(emlite::Val::global("SpeechGrammarList").new_()) {}
+SpeechGrammarList::SpeechGrammarList() : emlite::Val(emlite::Val::global("SpeechGrammarList").new_()) {}
 
 unsigned long SpeechGrammarList::length() const {
     return emlite::Val::get("length").as<unsigned long>();
@@ -20,8 +20,16 @@ SpeechGrammar SpeechGrammarList::item(unsigned long index) {
     return emlite::Val::call("item", index).as<SpeechGrammar>();
 }
 
+jsbind::Undefined SpeechGrammarList::addFromURI(const jsbind::DOMString& src) {
+    return emlite::Val::call("addFromURI", src).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined SpeechGrammarList::addFromURI(const jsbind::DOMString& src, float weight) {
     return emlite::Val::call("addFromURI", src, weight).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined SpeechGrammarList::addFromString(const jsbind::DOMString& string) {
+    return emlite::Val::call("addFromString", string).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined SpeechGrammarList::addFromString(const jsbind::DOMString& string, float weight) {

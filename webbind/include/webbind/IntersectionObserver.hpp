@@ -16,6 +16,7 @@ public:
     static IntersectionObserver take_ownership(Handle h) noexcept;
 
     IntersectionObserver clone() const noexcept;
+    IntersectionObserver(const jsbind::Function& callback);
     IntersectionObserver(const jsbind::Function& callback, const jsbind::Any& options);
     jsbind::Any root() const;
     jsbind::DOMString rootMargin() const;

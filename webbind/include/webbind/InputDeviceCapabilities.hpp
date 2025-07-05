@@ -13,6 +13,7 @@ public:
     static InputDeviceCapabilities take_ownership(Handle h) noexcept;
 
     InputDeviceCapabilities clone() const noexcept;
+    InputDeviceCapabilities();
     InputDeviceCapabilities(const jsbind::Any& deviceInitDict);
     bool firesTouchEvents() const;
     bool pointerMovementScrolls() const;

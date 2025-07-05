@@ -16,6 +16,7 @@ public:
     static PushSubscriptionChangeEvent take_ownership(Handle h) noexcept;
 
     PushSubscriptionChangeEvent clone() const noexcept;
+    PushSubscriptionChangeEvent(const jsbind::DOMString& type);
     PushSubscriptionChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     PushSubscription newSubscription() const;
     PushSubscription oldSubscription() const;

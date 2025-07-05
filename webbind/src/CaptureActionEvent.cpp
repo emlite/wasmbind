@@ -9,7 +9,9 @@ CaptureActionEvent::CaptureActionEvent(Handle h) noexcept : Event(emlite::Val::t
 CaptureActionEvent::CaptureActionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-CaptureActionEvent::CaptureActionEvent(const jsbind::Any& init): Event(emlite::Val::global("CaptureActionEvent").new_(init)) {}
+CaptureActionEvent::CaptureActionEvent() : Event(emlite::Val::global("CaptureActionEvent").new_()) {}
+
+CaptureActionEvent::CaptureActionEvent(const jsbind::Any& init) : Event(emlite::Val::global("CaptureActionEvent").new_(init)) {}
 
 CaptureAction CaptureActionEvent::action() const {
     return Event::get("action").as<CaptureAction>();

@@ -25,6 +25,10 @@ Clipboard::Clipboard(Handle h) noexcept : EventTarget(emlite::Val::take_ownershi
 Clipboard::Clipboard(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
+jsbind::Promise Clipboard::read() {
+    return EventTarget::call("read").as<jsbind::Promise>();
+}
+
 jsbind::Promise Clipboard::read(const ClipboardUnsanitizedFormats& formats) {
     return EventTarget::call("read", formats).as<jsbind::Promise>();
 }

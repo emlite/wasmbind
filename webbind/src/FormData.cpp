@@ -12,7 +12,15 @@ FormData::FormData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 FormData::FormData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-FormData::FormData(const HTMLFormElement& form, const HTMLElement& submitter): emlite::Val(emlite::Val::global("FormData").new_(form, submitter)) {}
+FormData::FormData() : emlite::Val(emlite::Val::global("FormData").new_()) {}
+
+FormData::FormData(const HTMLFormElement& form) : emlite::Val(emlite::Val::global("FormData").new_(form)) {}
+
+FormData::FormData(const HTMLFormElement& form, const HTMLElement& submitter) : emlite::Val(emlite::Val::global("FormData").new_(form, submitter)) {}
+
+jsbind::Undefined FormData::append(const jsbind::USVString& name, const Blob& blobValue) {
+    return emlite::Val::call("append", name, blobValue).as<jsbind::Undefined>();
+}
 
 jsbind::Undefined FormData::append(const jsbind::USVString& name, const Blob& blobValue, const jsbind::USVString& filename) {
     return emlite::Val::call("append", name, blobValue, filename).as<jsbind::Undefined>();
@@ -32,6 +40,10 @@ jsbind::Sequence<jsbind::Any> FormData::getAll(const jsbind::USVString& name) {
 
 bool FormData::has(const jsbind::USVString& name) {
     return emlite::Val::call("has", name).as<bool>();
+}
+
+jsbind::Undefined FormData::set(const jsbind::USVString& name, const Blob& blobValue) {
+    return emlite::Val::call("set", name, blobValue).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined FormData::set(const jsbind::USVString& name, const Blob& blobValue, const jsbind::USVString& filename) {

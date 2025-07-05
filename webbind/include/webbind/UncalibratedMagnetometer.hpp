@@ -14,6 +14,7 @@ public:
     static UncalibratedMagnetometer take_ownership(Handle h) noexcept;
 
     UncalibratedMagnetometer clone() const noexcept;
+    UncalibratedMagnetometer();
     UncalibratedMagnetometer(const jsbind::Any& sensorOptions);
     double x() const;
     double y() const;

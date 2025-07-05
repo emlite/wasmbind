@@ -10,7 +10,7 @@ HTMLProgressElement::HTMLProgressElement(Handle h) noexcept : HTMLElement(emlite
 HTMLProgressElement::HTMLProgressElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLProgressElement::HTMLProgressElement(): HTMLElement(emlite::Val::global("HTMLProgressElement").new_()) {}
+HTMLProgressElement::HTMLProgressElement() : HTMLElement(emlite::Val::global("HTMLProgressElement").new_()) {}
 
 double HTMLProgressElement::value() const {
     return HTMLElement::get("value").as<double>();

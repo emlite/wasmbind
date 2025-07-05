@@ -19,7 +19,9 @@ public:
     double duration() const;
     unsigned long numberOfChannels() const;
     jsbind::Float32Array getChannelData(unsigned long channel);
+    jsbind::Undefined copyFromChannel(const jsbind::Float32Array& destination, unsigned long channelNumber);
     jsbind::Undefined copyFromChannel(const jsbind::Float32Array& destination, unsigned long channelNumber, unsigned long bufferOffset);
+    jsbind::Undefined copyToChannel(const jsbind::Float32Array& source, unsigned long channelNumber);
     jsbind::Undefined copyToChannel(const jsbind::Float32Array& source, unsigned long channelNumber, unsigned long bufferOffset);
 };
 

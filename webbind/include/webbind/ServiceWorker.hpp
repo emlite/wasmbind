@@ -17,6 +17,7 @@ public:
     ServiceWorker clone() const noexcept;
     jsbind::USVString scriptURL() const;
     ServiceWorkerState state() const;
+    jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     jsbind::Any onstatechange() const;
     void onstatechange(const jsbind::Any& value);

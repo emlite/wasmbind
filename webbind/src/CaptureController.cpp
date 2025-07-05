@@ -10,7 +10,7 @@ CaptureController::CaptureController(Handle h) noexcept : EventTarget(emlite::Va
 CaptureController::CaptureController(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-CaptureController::CaptureController(): EventTarget(emlite::Val::global("CaptureController").new_()) {}
+CaptureController::CaptureController() : EventTarget(emlite::Val::global("CaptureController").new_()) {}
 
 jsbind::Undefined CaptureController::setFocusBehavior(const CaptureStartFocusBehavior& focusBehavior) {
     return EventTarget::call("setFocusBehavior", focusBehavior).as<jsbind::Undefined>();

@@ -10,7 +10,7 @@ RTCSessionDescription::RTCSessionDescription(Handle h) noexcept : emlite::Val(em
 RTCSessionDescription::RTCSessionDescription(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-RTCSessionDescription::RTCSessionDescription(const RTCSessionDescriptionInit& descriptionInitDict): emlite::Val(emlite::Val::global("RTCSessionDescription").new_(descriptionInitDict)) {}
+RTCSessionDescription::RTCSessionDescription(const RTCSessionDescriptionInit& descriptionInitDict) : emlite::Val(emlite::Val::global("RTCSessionDescription").new_(descriptionInitDict)) {}
 
 RTCSdpType RTCSessionDescription::type() const {
     return emlite::Val::get("type").as<RTCSdpType>();

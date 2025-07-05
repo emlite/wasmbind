@@ -16,6 +16,7 @@ public:
     static DynamicsCompressorNode take_ownership(Handle h) noexcept;
 
     DynamicsCompressorNode clone() const noexcept;
+    DynamicsCompressorNode(const BaseAudioContext& context);
     DynamicsCompressorNode(const BaseAudioContext& context, const jsbind::Any& options);
     AudioParam threshold() const;
     AudioParam knee() const;

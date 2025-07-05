@@ -10,7 +10,9 @@ CommandEvent::CommandEvent(Handle h) noexcept : Event(emlite::Val::take_ownershi
 CommandEvent::CommandEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-CommandEvent::CommandEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("CommandEvent").new_(type, eventInitDict)) {}
+CommandEvent::CommandEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("CommandEvent").new_(type)) {}
+
+CommandEvent::CommandEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("CommandEvent").new_(type, eventInitDict)) {}
 
 Element CommandEvent::source() const {
     return Event::get("source").as<Element>();

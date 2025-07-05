@@ -108,6 +108,14 @@ jsbind::Promise GPUQueue::onSubmittedWorkDone() {
     return emlite::Val::call("onSubmittedWorkDone").as<jsbind::Promise>();
 }
 
+jsbind::Undefined GPUQueue::writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data) {
+    return emlite::Val::call("writeBuffer", buffer, bufferOffset, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined GPUQueue::writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data, const jsbind::Any& dataOffset) {
+    return emlite::Val::call("writeBuffer", buffer, bufferOffset, data, dataOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined GPUQueue::writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data, const jsbind::Any& dataOffset, const jsbind::Any& size) {
     return emlite::Val::call("writeBuffer", buffer, bufferOffset, data, dataOffset, size).as<jsbind::Undefined>();
 }

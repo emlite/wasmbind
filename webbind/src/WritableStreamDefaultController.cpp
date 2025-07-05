@@ -14,6 +14,10 @@ AbortSignal WritableStreamDefaultController::signal() const {
     return emlite::Val::get("signal").as<AbortSignal>();
 }
 
+jsbind::Undefined WritableStreamDefaultController::error() {
+    return emlite::Val::call("error").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WritableStreamDefaultController::error(const jsbind::Any& e) {
     return emlite::Val::call("error", e).as<jsbind::Undefined>();
 }

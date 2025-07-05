@@ -19,6 +19,10 @@ jsbind::Any AnimationTimeline::duration() const {
     return emlite::Val::get("duration").as<jsbind::Any>();
 }
 
+Animation AnimationTimeline::play() {
+    return emlite::Val::call("play").as<Animation>();
+}
+
 Animation AnimationTimeline::play(const AnimationEffect& effect) {
     return emlite::Val::call("play", effect).as<Animation>();
 }

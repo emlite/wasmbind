@@ -38,6 +38,10 @@ jsbind::Promise XRSystem::isSessionSupported(const XRSessionMode& mode) {
     return EventTarget::call("isSessionSupported", mode).as<jsbind::Promise>();
 }
 
+jsbind::Promise XRSystem::requestSession(const XRSessionMode& mode) {
+    return EventTarget::call("requestSession", mode).as<jsbind::Promise>();
+}
+
 jsbind::Promise XRSystem::requestSession(const XRSessionMode& mode, const XRSessionInit& options) {
     return EventTarget::call("requestSession", mode, options).as<jsbind::Promise>();
 }

@@ -10,7 +10,7 @@ USBConnectionEvent::USBConnectionEvent(Handle h) noexcept : Event(emlite::Val::t
 USBConnectionEvent::USBConnectionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-USBConnectionEvent::USBConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("USBConnectionEvent").new_(type, eventInitDict)) {}
+USBConnectionEvent::USBConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("USBConnectionEvent").new_(type, eventInitDict)) {}
 
 USBDevice USBConnectionEvent::device() const {
     return Event::get("device").as<USBDevice>();

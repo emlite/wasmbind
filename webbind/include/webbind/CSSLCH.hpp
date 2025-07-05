@@ -14,6 +14,7 @@ public:
     static CSSLCH take_ownership(Handle h) noexcept;
 
     CSSLCH clone() const noexcept;
+    CSSLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h);
     CSSLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h, const jsbind::Any& alpha);
     jsbind::Any l() const;
     void l(const jsbind::Any& value);

@@ -10,7 +10,9 @@ PushSubscriptionChangeEvent::PushSubscriptionChangeEvent(Handle h) noexcept : Ex
 PushSubscriptionChangeEvent::PushSubscriptionChangeEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-PushSubscriptionChangeEvent::PushSubscriptionChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): ExtendableEvent(emlite::Val::global("PushSubscriptionChangeEvent").new_(type, eventInitDict)) {}
+PushSubscriptionChangeEvent::PushSubscriptionChangeEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("PushSubscriptionChangeEvent").new_(type)) {}
+
+PushSubscriptionChangeEvent::PushSubscriptionChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("PushSubscriptionChangeEvent").new_(type, eventInitDict)) {}
 
 PushSubscription PushSubscriptionChangeEvent::newSubscription() const {
     return ExtendableEvent::get("newSubscription").as<PushSubscription>();

@@ -13,6 +13,7 @@ public:
     static FragmentResult take_ownership(Handle h) noexcept;
 
     FragmentResult clone() const noexcept;
+    FragmentResult();
     FragmentResult(const jsbind::Any& options);
     double inlineSize() const;
     double blockSize() const;

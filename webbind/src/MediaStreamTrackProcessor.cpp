@@ -10,7 +10,7 @@ MediaStreamTrackProcessor::MediaStreamTrackProcessor(Handle h) noexcept : emlite
 MediaStreamTrackProcessor::MediaStreamTrackProcessor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-MediaStreamTrackProcessor::MediaStreamTrackProcessor(const jsbind::Any& init): emlite::Val(emlite::Val::global("MediaStreamTrackProcessor").new_(init)) {}
+MediaStreamTrackProcessor::MediaStreamTrackProcessor(const jsbind::Any& init) : emlite::Val(emlite::Val::global("MediaStreamTrackProcessor").new_(init)) {}
 
 ReadableStream MediaStreamTrackProcessor::readable() const {
     return emlite::Val::get("readable").as<ReadableStream>();

@@ -9,7 +9,7 @@ HTMLDetailsElement::HTMLDetailsElement(Handle h) noexcept : HTMLElement(emlite::
 HTMLDetailsElement::HTMLDetailsElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLDetailsElement::HTMLDetailsElement(): HTMLElement(emlite::Val::global("HTMLDetailsElement").new_()) {}
+HTMLDetailsElement::HTMLDetailsElement() : HTMLElement(emlite::Val::global("HTMLDetailsElement").new_()) {}
 
 jsbind::DOMString HTMLDetailsElement::name() const {
     return HTMLElement::get("name").as<jsbind::DOMString>();

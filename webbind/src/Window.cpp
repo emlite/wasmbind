@@ -266,6 +266,18 @@ Element Window::frameElement() const {
     return EventTarget::get("frameElement").as<Element>();
 }
 
+jsbind::Any Window::open() {
+    return EventTarget::call("open").as<jsbind::Any>();
+}
+
+jsbind::Any Window::open(const jsbind::USVString& url) {
+    return EventTarget::call("open", url).as<jsbind::Any>();
+}
+
+jsbind::Any Window::open(const jsbind::USVString& url, const jsbind::DOMString& target) {
+    return EventTarget::call("open", url, target).as<jsbind::Any>();
+}
+
 jsbind::Any Window::open(const jsbind::USVString& url, const jsbind::DOMString& target, const jsbind::DOMString& features) {
     return EventTarget::call("open", url, target, features).as<jsbind::Any>();
 }
@@ -286,8 +298,20 @@ jsbind::Undefined Window::alert(const jsbind::DOMString& message) {
     return EventTarget::call("alert", message).as<jsbind::Undefined>();
 }
 
+bool Window::confirm() {
+    return EventTarget::call("confirm").as<bool>();
+}
+
 bool Window::confirm(const jsbind::DOMString& message) {
     return EventTarget::call("confirm", message).as<bool>();
+}
+
+jsbind::DOMString Window::prompt() {
+    return EventTarget::call("prompt").as<jsbind::DOMString>();
+}
+
+jsbind::DOMString Window::prompt(const jsbind::DOMString& message) {
+    return EventTarget::call("prompt", message).as<jsbind::DOMString>();
 }
 
 jsbind::DOMString Window::prompt(const jsbind::DOMString& message, const jsbind::DOMString& default_) {
@@ -296,6 +320,10 @@ jsbind::DOMString Window::prompt(const jsbind::DOMString& message, const jsbind:
 
 jsbind::Undefined Window::print() {
     return EventTarget::call("print").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Window::postMessage(const jsbind::Any& message) {
+    return EventTarget::call("postMessage", message).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Window::postMessage(const jsbind::Any& message, const WindowPostMessageOptions& options) {
@@ -422,6 +450,10 @@ double Window::devicePixelRatio() const {
     return EventTarget::get("devicePixelRatio").as<double>();
 }
 
+CSSStyleDeclaration Window::getComputedStyle(const Element& elt) {
+    return EventTarget::call("getComputedStyle", elt).as<CSSStyleDeclaration>();
+}
+
 CSSStyleDeclaration Window::getComputedStyle(const Element& elt, const jsbind::CSSOMString& pseudoElt) {
     return EventTarget::call("getComputedStyle", elt, pseudoElt).as<CSSStyleDeclaration>();
 }
@@ -442,12 +474,24 @@ Fence Window::fence() const {
     return EventTarget::get("fence").as<Fence>();
 }
 
+jsbind::Promise Window::showOpenFilePicker() {
+    return EventTarget::call("showOpenFilePicker").as<jsbind::Promise>();
+}
+
 jsbind::Promise Window::showOpenFilePicker(const OpenFilePickerOptions& options) {
     return EventTarget::call("showOpenFilePicker", options).as<jsbind::Promise>();
 }
 
+jsbind::Promise Window::showSaveFilePicker() {
+    return EventTarget::call("showSaveFilePicker").as<jsbind::Promise>();
+}
+
 jsbind::Promise Window::showSaveFilePicker(const SaveFilePickerOptions& options) {
     return EventTarget::call("showSaveFilePicker", options).as<jsbind::Promise>();
+}
+
+jsbind::Promise Window::showDirectoryPicker() {
+    return EventTarget::call("showDirectoryPicker").as<jsbind::Promise>();
 }
 
 jsbind::Promise Window::showDirectoryPicker(const DirectoryPickerOptions& options) {
@@ -464,6 +508,10 @@ jsbind::Undefined Window::releaseEvents() {
 
 External Window::external() const {
     return EventTarget::get("external").as<External>();
+}
+
+jsbind::Promise Window::queryLocalFonts() {
+    return EventTarget::call("queryLocalFonts").as<jsbind::Promise>();
 }
 
 jsbind::Promise Window::queryLocalFonts(const QueryOptions& options) {
@@ -512,6 +560,10 @@ void Window::ondevicemotion(const jsbind::Any& value) {
 
 PortalHost Window::portalHost() const {
     return EventTarget::get("portalHost").as<PortalHost>();
+}
+
+unsigned long Window::requestIdleCallback(const jsbind::Function& callback) {
+    return EventTarget::call("requestIdleCallback", callback).as<unsigned long>();
 }
 
 unsigned long Window::requestIdleCallback(const jsbind::Function& callback, const IdleRequestOptions& options) {

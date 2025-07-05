@@ -14,6 +14,7 @@ public:
     static WebSocket take_ownership(Handle h) noexcept;
 
     WebSocket clone() const noexcept;
+    WebSocket(const jsbind::USVString& url);
     WebSocket(const jsbind::USVString& url, const jsbind::Any& protocols);
     jsbind::USVString url() const;
     unsigned short readyState() const;
@@ -26,6 +27,8 @@ public:
     void onclose(const jsbind::Any& value);
     jsbind::DOMString extensions() const;
     jsbind::DOMString protocol() const;
+    jsbind::Undefined close();
+    jsbind::Undefined close(unsigned short code);
     jsbind::Undefined close(unsigned short code, const jsbind::USVString& reason);
     jsbind::Any onmessage() const;
     void onmessage(const jsbind::Any& value);

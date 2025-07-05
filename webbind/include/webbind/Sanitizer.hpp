@@ -38,6 +38,7 @@ public:
     static Sanitizer take_ownership(Handle h) noexcept;
 
     Sanitizer clone() const noexcept;
+    Sanitizer();
     Sanitizer(const jsbind::Any& configuration);
     SanitizerConfig get();
     jsbind::Undefined allowElement(const jsbind::Any& element);

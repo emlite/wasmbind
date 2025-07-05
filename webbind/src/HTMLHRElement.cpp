@@ -9,7 +9,7 @@ HTMLHRElement::HTMLHRElement(Handle h) noexcept : HTMLElement(emlite::Val::take_
 HTMLHRElement::HTMLHRElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLHRElement::HTMLHRElement(): HTMLElement(emlite::Val::global("HTMLHRElement").new_()) {}
+HTMLHRElement::HTMLHRElement() : HTMLElement(emlite::Val::global("HTMLHRElement").new_()) {}
 
 jsbind::DOMString HTMLHRElement::align() const {
     return HTMLElement::get("align").as<jsbind::DOMString>();

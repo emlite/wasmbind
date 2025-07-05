@@ -57,6 +57,10 @@ GPUAdapterInfo GPUAdapter::info() const {
     return emlite::Val::get("info").as<GPUAdapterInfo>();
 }
 
+jsbind::Promise GPUAdapter::requestDevice() {
+    return emlite::Val::call("requestDevice").as<jsbind::Promise>();
+}
+
 jsbind::Promise GPUAdapter::requestDevice(const GPUDeviceDescriptor& descriptor) {
     return emlite::Val::call("requestDevice", descriptor).as<jsbind::Promise>();
 }

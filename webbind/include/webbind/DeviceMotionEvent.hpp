@@ -17,6 +17,7 @@ public:
     static DeviceMotionEvent take_ownership(Handle h) noexcept;
 
     DeviceMotionEvent clone() const noexcept;
+    DeviceMotionEvent(const jsbind::DOMString& type);
     DeviceMotionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     DeviceMotionEventAcceleration acceleration() const;
     DeviceMotionEventAcceleration accelerationIncludingGravity() const;

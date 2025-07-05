@@ -9,7 +9,9 @@ CSSScale::CSSScale(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_
 CSSScale::CSSScale(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
 
-CSSScale::CSSScale(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& z): CSSTransformComponent(emlite::Val::global("CSSScale").new_(x, y, z)) {}
+CSSScale::CSSScale(const jsbind::Any& x, const jsbind::Any& y) : CSSTransformComponent(emlite::Val::global("CSSScale").new_(x, y)) {}
+
+CSSScale::CSSScale(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& z) : CSSTransformComponent(emlite::Val::global("CSSScale").new_(x, y, z)) {}
 
 jsbind::Any CSSScale::x() const {
     return CSSTransformComponent::get("x").as<jsbind::Any>();

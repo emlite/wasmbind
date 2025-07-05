@@ -47,6 +47,7 @@ public:
     jsbind::Any info() const;
     bool hasUAVisualTransition() const;
     Element sourceElement() const;
+    jsbind::Undefined intercept();
     jsbind::Undefined intercept(const NavigationInterceptOptions& options);
     jsbind::Undefined scroll();
 };

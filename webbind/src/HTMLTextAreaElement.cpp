@@ -12,7 +12,7 @@ HTMLTextAreaElement::HTMLTextAreaElement(Handle h) noexcept : HTMLElement(emlite
 HTMLTextAreaElement::HTMLTextAreaElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTextAreaElement::HTMLTextAreaElement(): HTMLElement(emlite::Val::global("HTMLTextAreaElement").new_()) {}
+HTMLTextAreaElement::HTMLTextAreaElement() : HTMLElement(emlite::Val::global("HTMLTextAreaElement").new_()) {}
 
 jsbind::DOMString HTMLTextAreaElement::autocomplete() const {
     return HTMLElement::get("autocomplete").as<jsbind::DOMString>();
@@ -194,8 +194,16 @@ void HTMLTextAreaElement::selectionDirection(const jsbind::DOMString& value) {
     HTMLElement::set("selectionDirection", value);
 }
 
+jsbind::Undefined HTMLTextAreaElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end) {
+    return HTMLElement::call("setRangeText", replacement, start, end).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined HTMLTextAreaElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end, const SelectionMode& selectionMode) {
     return HTMLElement::call("setRangeText", replacement, start, end, selectionMode).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined HTMLTextAreaElement::setSelectionRange(unsigned long start, unsigned long end) {
+    return HTMLElement::call("setSelectionRange", start, end).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLTextAreaElement::setSelectionRange(unsigned long start, unsigned long end, const jsbind::DOMString& direction) {

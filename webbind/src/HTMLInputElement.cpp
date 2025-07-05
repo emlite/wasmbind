@@ -16,7 +16,7 @@ HTMLInputElement::HTMLInputElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLInputElement::HTMLInputElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLInputElement::HTMLInputElement(): HTMLElement(emlite::Val::global("HTMLInputElement").new_()) {}
+HTMLInputElement::HTMLInputElement() : HTMLElement(emlite::Val::global("HTMLInputElement").new_()) {}
 
 jsbind::DOMString HTMLInputElement::accept() const {
     return HTMLElement::get("accept").as<jsbind::DOMString>();
@@ -314,8 +314,16 @@ void HTMLInputElement::width(unsigned long value) {
     HTMLElement::set("width", value);
 }
 
+jsbind::Undefined HTMLInputElement::stepUp() {
+    return HTMLElement::call("stepUp").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined HTMLInputElement::stepUp(long n) {
     return HTMLElement::call("stepUp", n).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined HTMLInputElement::stepDown() {
+    return HTMLElement::call("stepDown").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLInputElement::stepDown(long n) {
@@ -378,8 +386,16 @@ void HTMLInputElement::selectionDirection(const jsbind::DOMString& value) {
     HTMLElement::set("selectionDirection", value);
 }
 
+jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end) {
+    return HTMLElement::call("setRangeText", replacement, start, end).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end, const SelectionMode& selectionMode) {
     return HTMLElement::call("setRangeText", replacement, start, end, selectionMode).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined HTMLInputElement::setSelectionRange(unsigned long start, unsigned long end) {
+    return HTMLElement::call("setSelectionRange", start, end).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLInputElement::setSelectionRange(unsigned long start, unsigned long end, const jsbind::DOMString& direction) {

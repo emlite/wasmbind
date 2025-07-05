@@ -10,5 +10,5 @@ MediaStreamTrackAudioSourceNode::MediaStreamTrackAudioSourceNode(Handle h) noexc
 MediaStreamTrackAudioSourceNode::MediaStreamTrackAudioSourceNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-MediaStreamTrackAudioSourceNode::MediaStreamTrackAudioSourceNode(const AudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("MediaStreamTrackAudioSourceNode").new_(context, options)) {}
+MediaStreamTrackAudioSourceNode::MediaStreamTrackAudioSourceNode(const AudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("MediaStreamTrackAudioSourceNode").new_(context, options)) {}
 

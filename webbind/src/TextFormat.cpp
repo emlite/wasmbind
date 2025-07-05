@@ -9,7 +9,9 @@ TextFormat::TextFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 TextFormat::TextFormat(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-TextFormat::TextFormat(const jsbind::Any& options): emlite::Val(emlite::Val::global("TextFormat").new_(options)) {}
+TextFormat::TextFormat() : emlite::Val(emlite::Val::global("TextFormat").new_()) {}
+
+TextFormat::TextFormat(const jsbind::Any& options) : emlite::Val(emlite::Val::global("TextFormat").new_(options)) {}
 
 unsigned long TextFormat::rangeStart() const {
     return emlite::Val::get("rangeStart").as<unsigned long>();

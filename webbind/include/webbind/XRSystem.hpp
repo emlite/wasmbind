@@ -31,6 +31,7 @@ public:
 
     XRSystem clone() const noexcept;
     jsbind::Promise isSessionSupported(const XRSessionMode& mode);
+    jsbind::Promise requestSession(const XRSessionMode& mode);
     jsbind::Promise requestSession(const XRSessionMode& mode, const XRSessionInit& options);
     jsbind::Any ondevicechange() const;
     void ondevicechange(const jsbind::Any& value);

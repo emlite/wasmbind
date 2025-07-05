@@ -10,7 +10,7 @@ HTMLTemplateElement::HTMLTemplateElement(Handle h) noexcept : HTMLElement(emlite
 HTMLTemplateElement::HTMLTemplateElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTemplateElement::HTMLTemplateElement(): HTMLElement(emlite::Val::global("HTMLTemplateElement").new_()) {}
+HTMLTemplateElement::HTMLTemplateElement() : HTMLElement(emlite::Val::global("HTMLTemplateElement").new_()) {}
 
 DocumentFragment HTMLTemplateElement::content() const {
     return HTMLElement::get("content").as<DocumentFragment>();

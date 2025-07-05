@@ -12,7 +12,7 @@ DocumentFragment::DocumentFragment(Handle h) noexcept : Node(emlite::Val::take_o
 DocumentFragment::DocumentFragment(const emlite::Val &val) noexcept: Node(val) {}
 
 
-DocumentFragment::DocumentFragment(): Node(emlite::Val::global("DocumentFragment").new_()) {}
+DocumentFragment::DocumentFragment() : Node(emlite::Val::global("DocumentFragment").new_()) {}
 
 Element DocumentFragment::getElementById(const jsbind::DOMString& elementId) {
     return Node::call("getElementById", elementId).as<Element>();

@@ -74,7 +74,9 @@ public:
     long long timestamp() const;
     VideoColorSpace colorSpace() const;
     VideoFrameMetadata metadata();
+    unsigned long allocationSize();
     unsigned long allocationSize(const VideoFrameCopyToOptions& options);
+    jsbind::Promise copyTo(const jsbind::Any& destination);
     jsbind::Promise copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options);
     VideoFrame clone();
     jsbind::Undefined close();

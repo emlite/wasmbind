@@ -9,7 +9,7 @@ FederatedCredential::FederatedCredential(Handle h) noexcept : Credential(emlite:
 FederatedCredential::FederatedCredential(const emlite::Val &val) noexcept: Credential(val) {}
 
 
-FederatedCredential::FederatedCredential(const jsbind::Any& data): Credential(emlite::Val::global("FederatedCredential").new_(data)) {}
+FederatedCredential::FederatedCredential(const jsbind::Any& data) : Credential(emlite::Val::global("FederatedCredential").new_(data)) {}
 
 jsbind::USVString FederatedCredential::provider() const {
     return Credential::get("provider").as<jsbind::USVString>();

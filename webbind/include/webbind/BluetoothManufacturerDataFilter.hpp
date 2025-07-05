@@ -13,6 +13,7 @@ public:
     static BluetoothManufacturerDataFilter take_ownership(Handle h) noexcept;
 
     BluetoothManufacturerDataFilter clone() const noexcept;
+    BluetoothManufacturerDataFilter();
     BluetoothManufacturerDataFilter(const jsbind::Object& init);
 };
 

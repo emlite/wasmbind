@@ -64,12 +64,24 @@ DOMStringList IDBDatabase::objectStoreNames() const {
     return EventTarget::get("objectStoreNames").as<DOMStringList>();
 }
 
+IDBTransaction IDBDatabase::transaction(const jsbind::Any& storeNames) {
+    return EventTarget::call("transaction", storeNames).as<IDBTransaction>();
+}
+
+IDBTransaction IDBDatabase::transaction(const jsbind::Any& storeNames, const IDBTransactionMode& mode) {
+    return EventTarget::call("transaction", storeNames, mode).as<IDBTransaction>();
+}
+
 IDBTransaction IDBDatabase::transaction(const jsbind::Any& storeNames, const IDBTransactionMode& mode, const IDBTransactionOptions& options) {
     return EventTarget::call("transaction", storeNames, mode, options).as<IDBTransaction>();
 }
 
 jsbind::Undefined IDBDatabase::close() {
     return EventTarget::call("close").as<jsbind::Undefined>();
+}
+
+IDBObjectStore IDBDatabase::createObjectStore(const jsbind::DOMString& name) {
+    return EventTarget::call("createObjectStore", name).as<IDBObjectStore>();
 }
 
 IDBObjectStore IDBDatabase::createObjectStore(const jsbind::DOMString& name, const IDBObjectStoreParameters& options) {

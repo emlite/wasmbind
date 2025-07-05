@@ -12,7 +12,9 @@ OscillatorNode::OscillatorNode(Handle h) noexcept : AudioScheduledSourceNode(eml
 OscillatorNode::OscillatorNode(const emlite::Val &val) noexcept: AudioScheduledSourceNode(val) {}
 
 
-OscillatorNode::OscillatorNode(const BaseAudioContext& context, const jsbind::Any& options): AudioScheduledSourceNode(emlite::Val::global("OscillatorNode").new_(context, options)) {}
+OscillatorNode::OscillatorNode(const BaseAudioContext& context) : AudioScheduledSourceNode(emlite::Val::global("OscillatorNode").new_(context)) {}
+
+OscillatorNode::OscillatorNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioScheduledSourceNode(emlite::Val::global("OscillatorNode").new_(context, options)) {}
 
 OscillatorType OscillatorNode::type() const {
     return AudioScheduledSourceNode::get("type").as<OscillatorType>();

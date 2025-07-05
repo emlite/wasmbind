@@ -14,8 +14,13 @@ public:
     static CompositionEvent take_ownership(Handle h) noexcept;
 
     CompositionEvent clone() const noexcept;
+    CompositionEvent(const jsbind::DOMString& type);
     CompositionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::USVString data() const;
+    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg);
+    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg);
+    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg);
+    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg);
     jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg, const jsbind::DOMString& dataArg);
 };
 

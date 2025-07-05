@@ -10,7 +10,7 @@ HTMLLabelElement::HTMLLabelElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLLabelElement::HTMLLabelElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLLabelElement::HTMLLabelElement(): HTMLElement(emlite::Val::global("HTMLLabelElement").new_()) {}
+HTMLLabelElement::HTMLLabelElement() : HTMLElement(emlite::Val::global("HTMLLabelElement").new_()) {}
 
 HTMLFormElement HTMLLabelElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();

@@ -17,6 +17,7 @@ public:
     static AudioBufferSourceNode take_ownership(Handle h) noexcept;
 
     AudioBufferSourceNode clone() const noexcept;
+    AudioBufferSourceNode(const BaseAudioContext& context);
     AudioBufferSourceNode(const BaseAudioContext& context, const jsbind::Any& options);
     AudioBuffer buffer() const;
     void buffer(const AudioBuffer& value);
@@ -28,6 +29,9 @@ public:
     void loopStart(double value);
     double loopEnd() const;
     void loopEnd(double value);
+    jsbind::Undefined start();
+    jsbind::Undefined start(double when);
+    jsbind::Undefined start(double when, double offset);
     jsbind::Undefined start(double when, double offset, double duration);
 };
 

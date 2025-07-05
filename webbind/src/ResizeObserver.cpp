@@ -26,7 +26,11 @@ ResizeObserver::ResizeObserver(Handle h) noexcept : emlite::Val(emlite::Val::tak
 ResizeObserver::ResizeObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ResizeObserver::ResizeObserver(const jsbind::Function& callback): emlite::Val(emlite::Val::global("ResizeObserver").new_(callback)) {}
+ResizeObserver::ResizeObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("ResizeObserver").new_(callback)) {}
+
+jsbind::Undefined ResizeObserver::observe(const Element& target) {
+    return emlite::Val::call("observe", target).as<jsbind::Undefined>();
+}
 
 jsbind::Undefined ResizeObserver::observe(const Element& target, const ResizeObserverOptions& options) {
     return emlite::Val::call("observe", target, options).as<jsbind::Undefined>();

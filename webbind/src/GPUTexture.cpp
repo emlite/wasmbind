@@ -82,6 +82,10 @@ GPUTexture::GPUTexture(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 GPUTexture::GPUTexture(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+GPUTextureView GPUTexture::createView() {
+    return emlite::Val::call("createView").as<GPUTextureView>();
+}
+
 GPUTextureView GPUTexture::createView(const GPUTextureViewDescriptor& descriptor) {
     return emlite::Val::call("createView", descriptor).as<GPUTextureView>();
 }

@@ -23,6 +23,10 @@ float SVGTransform::angle() const {
     return emlite::Val::get("angle").as<float>();
 }
 
+jsbind::Undefined SVGTransform::setMatrix() {
+    return emlite::Val::call("setMatrix").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined SVGTransform::setMatrix(const DOMMatrix2DInit& matrix) {
     return emlite::Val::call("setMatrix", matrix).as<jsbind::Undefined>();
 }

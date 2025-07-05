@@ -9,7 +9,7 @@ HTMLOptGroupElement::HTMLOptGroupElement(Handle h) noexcept : HTMLElement(emlite
 HTMLOptGroupElement::HTMLOptGroupElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLOptGroupElement::HTMLOptGroupElement(): HTMLElement(emlite::Val::global("HTMLOptGroupElement").new_()) {}
+HTMLOptGroupElement::HTMLOptGroupElement() : HTMLElement(emlite::Val::global("HTMLOptGroupElement").new_()) {}
 
 bool HTMLOptGroupElement::disabled() const {
     return HTMLElement::get("disabled").as<bool>();

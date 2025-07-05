@@ -26,6 +26,7 @@ public:
     static PeriodicSyncManager take_ownership(Handle h) noexcept;
 
     PeriodicSyncManager clone() const noexcept;
+    jsbind::Promise register_(const jsbind::DOMString& tag);
     jsbind::Promise register_(const jsbind::DOMString& tag, const BackgroundSyncOptions& options);
     jsbind::Promise getTags();
     jsbind::Promise unregister(const jsbind::DOMString& tag);

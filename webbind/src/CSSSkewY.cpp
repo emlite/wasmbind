@@ -10,7 +10,7 @@ CSSSkewY::CSSSkewY(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_
 CSSSkewY::CSSSkewY(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
 
-CSSSkewY::CSSSkewY(const CSSNumericValue& ay): CSSTransformComponent(emlite::Val::global("CSSSkewY").new_(ay)) {}
+CSSSkewY::CSSSkewY(const CSSNumericValue& ay) : CSSTransformComponent(emlite::Val::global("CSSSkewY").new_(ay)) {}
 
 CSSNumericValue CSSSkewY::ay() const {
     return CSSTransformComponent::get("ay").as<CSSNumericValue>();

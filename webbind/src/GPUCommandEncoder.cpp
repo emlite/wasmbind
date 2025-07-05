@@ -147,8 +147,16 @@ GPURenderPassEncoder GPUCommandEncoder::beginRenderPass(const GPURenderPassDescr
     return emlite::Val::call("beginRenderPass", descriptor).as<GPURenderPassEncoder>();
 }
 
+GPUComputePassEncoder GPUCommandEncoder::beginComputePass() {
+    return emlite::Val::call("beginComputePass").as<GPUComputePassEncoder>();
+}
+
 GPUComputePassEncoder GPUCommandEncoder::beginComputePass(const GPUComputePassDescriptor& descriptor) {
     return emlite::Val::call("beginComputePass", descriptor).as<GPUComputePassEncoder>();
+}
+
+jsbind::Undefined GPUCommandEncoder::copyBufferToBuffer(const GPUBuffer& source, const jsbind::Any& sourceOffset, const GPUBuffer& destination, const jsbind::Any& destinationOffset) {
+    return emlite::Val::call("copyBufferToBuffer", source, sourceOffset, destination, destinationOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined GPUCommandEncoder::copyBufferToBuffer(const GPUBuffer& source, const jsbind::Any& sourceOffset, const GPUBuffer& destination, const jsbind::Any& destinationOffset, const jsbind::Any& size) {
@@ -167,12 +175,24 @@ jsbind::Undefined GPUCommandEncoder::copyTextureToTexture(const GPUTexelCopyText
     return emlite::Val::call("copyTextureToTexture", source, destination, copySize).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined GPUCommandEncoder::clearBuffer(const GPUBuffer& buffer) {
+    return emlite::Val::call("clearBuffer", buffer).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined GPUCommandEncoder::clearBuffer(const GPUBuffer& buffer, const jsbind::Any& offset) {
+    return emlite::Val::call("clearBuffer", buffer, offset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined GPUCommandEncoder::clearBuffer(const GPUBuffer& buffer, const jsbind::Any& offset, const jsbind::Any& size) {
     return emlite::Val::call("clearBuffer", buffer, offset, size).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined GPUCommandEncoder::resolveQuerySet(const GPUQuerySet& querySet, const jsbind::Any& firstQuery, const jsbind::Any& queryCount, const GPUBuffer& destination, const jsbind::Any& destinationOffset) {
     return emlite::Val::call("resolveQuerySet", querySet, firstQuery, queryCount, destination, destinationOffset).as<jsbind::Undefined>();
+}
+
+GPUCommandBuffer GPUCommandEncoder::finish() {
+    return emlite::Val::call("finish").as<GPUCommandBuffer>();
 }
 
 GPUCommandBuffer GPUCommandEncoder::finish(const GPUCommandBufferDescriptor& descriptor) {

@@ -35,6 +35,7 @@ public:
     jsbind::Any ondisconnect() const;
     void ondisconnect(const jsbind::Any& value);
     jsbind::Promise getPorts();
+    jsbind::Promise requestPort();
     jsbind::Promise requestPort(const SerialPortRequestOptions& options);
 };
 

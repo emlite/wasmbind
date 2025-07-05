@@ -11,7 +11,11 @@ TextDecoderStream::TextDecoderStream(Handle h) noexcept : emlite::Val(emlite::Va
 TextDecoderStream::TextDecoderStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-TextDecoderStream::TextDecoderStream(const jsbind::DOMString& label, const jsbind::Any& options): emlite::Val(emlite::Val::global("TextDecoderStream").new_(label, options)) {}
+TextDecoderStream::TextDecoderStream() : emlite::Val(emlite::Val::global("TextDecoderStream").new_()) {}
+
+TextDecoderStream::TextDecoderStream(const jsbind::DOMString& label) : emlite::Val(emlite::Val::global("TextDecoderStream").new_(label)) {}
+
+TextDecoderStream::TextDecoderStream(const jsbind::DOMString& label, const jsbind::Any& options) : emlite::Val(emlite::Val::global("TextDecoderStream").new_(label, options)) {}
 
 jsbind::DOMString TextDecoderStream::encoding() const {
     return emlite::Val::get("encoding").as<jsbind::DOMString>();

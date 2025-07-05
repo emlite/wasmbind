@@ -9,7 +9,7 @@ HTMLOListElement::HTMLOListElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLOListElement::HTMLOListElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLOListElement::HTMLOListElement(): HTMLElement(emlite::Val::global("HTMLOListElement").new_()) {}
+HTMLOListElement::HTMLOListElement() : HTMLElement(emlite::Val::global("HTMLOListElement").new_()) {}
 
 bool HTMLOListElement::reversed() const {
     return HTMLElement::get("reversed").as<bool>();

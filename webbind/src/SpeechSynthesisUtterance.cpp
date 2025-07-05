@@ -10,7 +10,9 @@ SpeechSynthesisUtterance::SpeechSynthesisUtterance(Handle h) noexcept : EventTar
 SpeechSynthesisUtterance::SpeechSynthesisUtterance(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-SpeechSynthesisUtterance::SpeechSynthesisUtterance(const jsbind::DOMString& text): EventTarget(emlite::Val::global("SpeechSynthesisUtterance").new_(text)) {}
+SpeechSynthesisUtterance::SpeechSynthesisUtterance() : EventTarget(emlite::Val::global("SpeechSynthesisUtterance").new_()) {}
+
+SpeechSynthesisUtterance::SpeechSynthesisUtterance(const jsbind::DOMString& text) : EventTarget(emlite::Val::global("SpeechSynthesisUtterance").new_(text)) {}
 
 jsbind::DOMString SpeechSynthesisUtterance::text() const {
     return EventTarget::get("text").as<jsbind::DOMString>();

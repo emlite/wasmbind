@@ -11,7 +11,9 @@ ViewTimeline::ViewTimeline(Handle h) noexcept : ScrollTimeline(emlite::Val::take
 ViewTimeline::ViewTimeline(const emlite::Val &val) noexcept: ScrollTimeline(val) {}
 
 
-ViewTimeline::ViewTimeline(const jsbind::Any& options): ScrollTimeline(emlite::Val::global("ViewTimeline").new_(options)) {}
+ViewTimeline::ViewTimeline() : ScrollTimeline(emlite::Val::global("ViewTimeline").new_()) {}
+
+ViewTimeline::ViewTimeline(const jsbind::Any& options) : ScrollTimeline(emlite::Val::global("ViewTimeline").new_(options)) {}
 
 Element ViewTimeline::subject() const {
     return ScrollTimeline::get("subject").as<Element>();

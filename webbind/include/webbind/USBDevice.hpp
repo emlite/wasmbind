@@ -64,6 +64,7 @@ public:
     jsbind::Promise releaseInterface(unsigned char interfaceNumber);
     jsbind::Promise selectAlternateInterface(unsigned char interfaceNumber, unsigned char alternateSetting);
     jsbind::Promise controlTransferIn(const USBControlTransferParameters& setup, unsigned short length);
+    jsbind::Promise controlTransferOut(const USBControlTransferParameters& setup);
     jsbind::Promise controlTransferOut(const USBControlTransferParameters& setup, const jsbind::Any& data);
     jsbind::Promise clearHalt(const USBDirection& direction, unsigned char endpointNumber);
     jsbind::Promise transferIn(unsigned char endpointNumber, unsigned long length);

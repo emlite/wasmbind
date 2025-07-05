@@ -17,6 +17,7 @@ public:
     static EditContext take_ownership(Handle h) noexcept;
 
     EditContext clone() const noexcept;
+    EditContext();
     EditContext(const jsbind::Any& options);
     jsbind::Undefined updateText(unsigned long rangeStart, unsigned long rangeEnd, const jsbind::DOMString& text);
     jsbind::Undefined updateSelection(unsigned long start, unsigned long end);

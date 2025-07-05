@@ -16,6 +16,7 @@ public:
     static StereoPannerNode take_ownership(Handle h) noexcept;
 
     StereoPannerNode clone() const noexcept;
+    StereoPannerNode(const BaseAudioContext& context);
     StereoPannerNode(const BaseAudioContext& context, const jsbind::Any& options);
     AudioParam pan() const;
 };

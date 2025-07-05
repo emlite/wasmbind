@@ -9,7 +9,9 @@ CSSLab::CSSLab(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)
 CSSLab::CSSLab(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 
-CSSLab::CSSLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b, const jsbind::Any& alpha): CSSColorValue(emlite::Val::global("CSSLab").new_(l, a, b, alpha)) {}
+CSSLab::CSSLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b) : CSSColorValue(emlite::Val::global("CSSLab").new_(l, a, b)) {}
+
+CSSLab::CSSLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b, const jsbind::Any& alpha) : CSSColorValue(emlite::Val::global("CSSLab").new_(l, a, b, alpha)) {}
 
 jsbind::Any CSSLab::l() const {
     return CSSColorValue::get("l").as<jsbind::Any>();

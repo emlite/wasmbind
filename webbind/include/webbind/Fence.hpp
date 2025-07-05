@@ -38,7 +38,9 @@ public:
     static Fence take_ownership(Handle h) noexcept;
 
     Fence clone() const noexcept;
+    jsbind::Undefined reportEvent();
     jsbind::Undefined reportEvent(const jsbind::Any& event);
+    jsbind::Undefined setReportEventDataForAutomaticBeacons();
     jsbind::Undefined setReportEventDataForAutomaticBeacons(const FenceEvent& event);
     jsbind::Sequence<FencedFrameConfig> getNestedConfigs();
     jsbind::Promise disableUntrustedNetwork();

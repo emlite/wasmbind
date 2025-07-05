@@ -112,6 +112,7 @@ public:
     XRInputSourceArray trackedSources() const;
     jsbind::FrozenArray<jsbind::DOMString> enabledFeatures() const;
     bool isSystemKeyboardSupported() const;
+    jsbind::Undefined updateRenderState();
     jsbind::Undefined updateRenderState(const XRRenderStateInit& state);
     jsbind::Promise updateTargetFrameRate(float rate);
     jsbind::Promise requestReferenceSpace(const XRReferenceSpaceType& type);
@@ -152,6 +153,7 @@ public:
     XRDOMOverlayState domOverlayState() const;
     jsbind::Promise requestHitTestSource(const XRHitTestOptionsInit& options);
     jsbind::Promise requestHitTestSourceForTransientInput(const XRTransientInputHitTestOptionsInit& options);
+    jsbind::Promise requestLightProbe();
     jsbind::Promise requestLightProbe(const XRLightProbeInit& options);
     XRReflectionFormat preferredReflectionFormat() const;
     jsbind::Promise initiateRoomCapture();

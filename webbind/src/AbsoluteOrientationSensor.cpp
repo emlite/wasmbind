@@ -9,5 +9,7 @@ AbsoluteOrientationSensor::AbsoluteOrientationSensor(Handle h) noexcept : Orient
 AbsoluteOrientationSensor::AbsoluteOrientationSensor(const emlite::Val &val) noexcept: OrientationSensor(val) {}
 
 
-AbsoluteOrientationSensor::AbsoluteOrientationSensor(const jsbind::Any& sensorOptions): OrientationSensor(emlite::Val::global("AbsoluteOrientationSensor").new_(sensorOptions)) {}
+AbsoluteOrientationSensor::AbsoluteOrientationSensor() : OrientationSensor(emlite::Val::global("AbsoluteOrientationSensor").new_()) {}
+
+AbsoluteOrientationSensor::AbsoluteOrientationSensor(const jsbind::Any& sensorOptions) : OrientationSensor(emlite::Val::global("AbsoluteOrientationSensor").new_(sensorOptions)) {}
 

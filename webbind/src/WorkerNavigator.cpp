@@ -49,6 +49,10 @@ USB WorkerNavigator::usb() const {
     return emlite::Val::get("usb").as<USB>();
 }
 
+jsbind::Promise WorkerNavigator::setAppBadge() {
+    return emlite::Val::call("setAppBadge").as<jsbind::Promise>();
+}
+
 jsbind::Promise WorkerNavigator::setAppBadge(long long contents) {
     return emlite::Val::call("setAppBadge", contents).as<jsbind::Promise>();
 }

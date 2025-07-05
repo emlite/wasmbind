@@ -31,6 +31,10 @@ jsbind::Promise BluetoothRemoteGATTServer::getPrimaryService(const jsbind::Any& 
     return emlite::Val::call("getPrimaryService", service).as<jsbind::Promise>();
 }
 
+jsbind::Promise BluetoothRemoteGATTServer::getPrimaryServices() {
+    return emlite::Val::call("getPrimaryServices").as<jsbind::Promise>();
+}
+
 jsbind::Promise BluetoothRemoteGATTServer::getPrimaryServices(const jsbind::Any& service) {
     return emlite::Val::call("getPrimaryServices", service).as<jsbind::Promise>();
 }

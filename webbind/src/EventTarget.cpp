@@ -35,10 +35,18 @@ EventTarget::EventTarget(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 EventTarget::EventTarget(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-EventTarget::EventTarget(): emlite::Val(emlite::Val::global("EventTarget").new_()) {}
+EventTarget::EventTarget() : emlite::Val(emlite::Val::global("EventTarget").new_()) {}
+
+jsbind::Undefined EventTarget::addEventListener(const jsbind::DOMString& type, const jsbind::Function& callback) {
+    return emlite::Val::call("addEventListener", type, callback).as<jsbind::Undefined>();
+}
 
 jsbind::Undefined EventTarget::addEventListener(const jsbind::DOMString& type, const jsbind::Function& callback, const jsbind::Any& options) {
     return emlite::Val::call("addEventListener", type, callback, options).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined EventTarget::removeEventListener(const jsbind::DOMString& type, const jsbind::Function& callback) {
+    return emlite::Val::call("removeEventListener", type, callback).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined EventTarget::removeEventListener(const jsbind::DOMString& type, const jsbind::Function& callback, const jsbind::Any& options) {
@@ -47,6 +55,10 @@ jsbind::Undefined EventTarget::removeEventListener(const jsbind::DOMString& type
 
 bool EventTarget::dispatchEvent(const Event& event) {
     return emlite::Val::call("dispatchEvent", event).as<bool>();
+}
+
+Observable EventTarget::when(const jsbind::DOMString& type) {
+    return emlite::Val::call("when", type).as<Observable>();
 }
 
 Observable EventTarget::when(const jsbind::DOMString& type, const ObservableEventListenerOptions& options) {

@@ -10,5 +10,7 @@ ChannelMergerNode::ChannelMergerNode(Handle h) noexcept : AudioNode(emlite::Val:
 ChannelMergerNode::ChannelMergerNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-ChannelMergerNode::ChannelMergerNode(const BaseAudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("ChannelMergerNode").new_(context, options)) {}
+ChannelMergerNode::ChannelMergerNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("ChannelMergerNode").new_(context)) {}
+
+ChannelMergerNode::ChannelMergerNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("ChannelMergerNode").new_(context, options)) {}
 

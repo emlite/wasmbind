@@ -17,6 +17,7 @@ public:
     AbortController clone() const noexcept;
     AbortController();
     AbortSignal signal() const;
+    jsbind::Undefined abort();
     jsbind::Undefined abort(const jsbind::Any& reason);
 };
 

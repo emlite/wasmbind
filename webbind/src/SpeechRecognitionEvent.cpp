@@ -10,7 +10,7 @@ SpeechRecognitionEvent::SpeechRecognitionEvent(Handle h) noexcept : Event(emlite
 SpeechRecognitionEvent::SpeechRecognitionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SpeechRecognitionEvent::SpeechRecognitionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("SpeechRecognitionEvent").new_(type, eventInitDict)) {}
+SpeechRecognitionEvent::SpeechRecognitionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SpeechRecognitionEvent").new_(type, eventInitDict)) {}
 
 unsigned long SpeechRecognitionEvent::resultIndex() const {
     return Event::get("resultIndex").as<unsigned long>();

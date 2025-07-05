@@ -16,6 +16,7 @@ public:
     static SubmitEvent take_ownership(Handle h) noexcept;
 
     SubmitEvent clone() const noexcept;
+    SubmitEvent(const jsbind::DOMString& type);
     SubmitEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     HTMLElement submitter() const;
 };

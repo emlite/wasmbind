@@ -10,7 +10,9 @@ ToggleEvent::ToggleEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(
 ToggleEvent::ToggleEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-ToggleEvent::ToggleEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("ToggleEvent").new_(type, eventInitDict)) {}
+ToggleEvent::ToggleEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("ToggleEvent").new_(type)) {}
+
+ToggleEvent::ToggleEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ToggleEvent").new_(type, eventInitDict)) {}
 
 jsbind::DOMString ToggleEvent::oldState() const {
     return Event::get("oldState").as<jsbind::DOMString>();

@@ -10,7 +10,7 @@ CSSMathProduct::CSSMathProduct(Handle h) noexcept : CSSMathValue(emlite::Val::ta
 CSSMathProduct::CSSMathProduct(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 
 
-CSSMathProduct::CSSMathProduct(const jsbind::Any& args): CSSMathValue(emlite::Val::global("CSSMathProduct").new_(args)) {}
+CSSMathProduct::CSSMathProduct(const jsbind::Any& args) : CSSMathValue(emlite::Val::global("CSSMathProduct").new_(args)) {}
 
 CSSNumericArray CSSMathProduct::values() const {
     return CSSMathValue::get("values").as<CSSNumericArray>();

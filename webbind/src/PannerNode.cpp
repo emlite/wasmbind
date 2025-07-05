@@ -11,7 +11,9 @@ PannerNode::PannerNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownershi
 PannerNode::PannerNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-PannerNode::PannerNode(const BaseAudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("PannerNode").new_(context, options)) {}
+PannerNode::PannerNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("PannerNode").new_(context)) {}
+
+PannerNode::PannerNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("PannerNode").new_(context, options)) {}
 
 PanningModelType PannerNode::panningModel() const {
     return AudioNode::get("panningModel").as<PanningModelType>();

@@ -13,6 +13,10 @@ jsbind::Promise RemotePlayback::watchAvailability(const jsbind::Function& callba
     return EventTarget::call("watchAvailability", callback).as<jsbind::Promise>();
 }
 
+jsbind::Promise RemotePlayback::cancelWatchAvailability() {
+    return EventTarget::call("cancelWatchAvailability").as<jsbind::Promise>();
+}
+
 jsbind::Promise RemotePlayback::cancelWatchAvailability(long id) {
     return EventTarget::call("cancelWatchAvailability", id).as<jsbind::Promise>();
 }

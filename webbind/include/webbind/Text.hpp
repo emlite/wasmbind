@@ -21,12 +21,17 @@ public:
     static Text take_ownership(Handle h) noexcept;
 
     Text clone() const noexcept;
+    Text();
     Text(const jsbind::DOMString& data);
     Text splitText(unsigned long offset);
     jsbind::DOMString wholeText() const;
+    jsbind::Sequence<DOMQuad> getBoxQuads();
     jsbind::Sequence<DOMQuad> getBoxQuads(const BoxQuadOptions& options);
+    DOMQuad convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from);
     DOMQuad convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from, const ConvertCoordinateOptions& options);
+    DOMQuad convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from);
     DOMQuad convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from, const ConvertCoordinateOptions& options);
+    DOMPoint convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from);
     DOMPoint convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from, const ConvertCoordinateOptions& options);
     HTMLSlotElement assignedSlot() const;
 };

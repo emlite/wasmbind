@@ -28,6 +28,7 @@ public:
 
     PressureObserver clone() const noexcept;
     PressureObserver(const jsbind::Function& callback);
+    jsbind::Promise observe(const PressureSource& source);
     jsbind::Promise observe(const PressureSource& source, const PressureObserverOptions& options);
     jsbind::Undefined unobserve(const PressureSource& source);
     jsbind::Undefined disconnect();

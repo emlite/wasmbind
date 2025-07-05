@@ -10,7 +10,11 @@ XRRigidTransform::XRRigidTransform(Handle h) noexcept : emlite::Val(emlite::Val:
 XRRigidTransform::XRRigidTransform(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-XRRigidTransform::XRRigidTransform(const DOMPointInit& position, const DOMPointInit& orientation): emlite::Val(emlite::Val::global("XRRigidTransform").new_(position, orientation)) {}
+XRRigidTransform::XRRigidTransform() : emlite::Val(emlite::Val::global("XRRigidTransform").new_()) {}
+
+XRRigidTransform::XRRigidTransform(const DOMPointInit& position) : emlite::Val(emlite::Val::global("XRRigidTransform").new_(position)) {}
+
+XRRigidTransform::XRRigidTransform(const DOMPointInit& position, const DOMPointInit& orientation) : emlite::Val(emlite::Val::global("XRRigidTransform").new_(position, orientation)) {}
 
 DOMPointReadOnly XRRigidTransform::position() const {
     return emlite::Val::get("position").as<DOMPointReadOnly>();

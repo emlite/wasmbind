@@ -9,5 +9,5 @@ GPUInternalError::GPUInternalError(Handle h) noexcept : GPUError(emlite::Val::ta
 GPUInternalError::GPUInternalError(const emlite::Val &val) noexcept: GPUError(val) {}
 
 
-GPUInternalError::GPUInternalError(const jsbind::DOMString& message): GPUError(emlite::Val::global("GPUInternalError").new_(message)) {}
+GPUInternalError::GPUInternalError(const jsbind::DOMString& message) : GPUError(emlite::Val::global("GPUInternalError").new_(message)) {}
 

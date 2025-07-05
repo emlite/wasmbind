@@ -10,5 +10,7 @@ PeriodicWave::PeriodicWave(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 PeriodicWave::PeriodicWave(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-PeriodicWave::PeriodicWave(const BaseAudioContext& context, const jsbind::Any& options): emlite::Val(emlite::Val::global("PeriodicWave").new_(context, options)) {}
+PeriodicWave::PeriodicWave(const BaseAudioContext& context) : emlite::Val(emlite::Val::global("PeriodicWave").new_(context)) {}
+
+PeriodicWave::PeriodicWave(const BaseAudioContext& context, const jsbind::Any& options) : emlite::Val(emlite::Val::global("PeriodicWave").new_(context, options)) {}
 

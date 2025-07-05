@@ -11,6 +11,10 @@ AudioNode::AudioNode(Handle h) noexcept : EventTarget(emlite::Val::take_ownershi
 AudioNode::AudioNode(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
+jsbind::Undefined AudioNode::connect(const AudioParam& destinationParam) {
+    return EventTarget::call("connect", destinationParam).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined AudioNode::connect(const AudioParam& destinationParam, unsigned long output) {
     return EventTarget::call("connect", destinationParam, output).as<jsbind::Undefined>();
 }

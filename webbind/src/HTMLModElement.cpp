@@ -9,7 +9,7 @@ HTMLModElement::HTMLModElement(Handle h) noexcept : HTMLElement(emlite::Val::tak
 HTMLModElement::HTMLModElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLModElement::HTMLModElement(): HTMLElement(emlite::Val::global("HTMLModElement").new_()) {}
+HTMLModElement::HTMLModElement() : HTMLElement(emlite::Val::global("HTMLModElement").new_()) {}
 
 jsbind::USVString HTMLModElement::cite() const {
     return HTMLElement::get("cite").as<jsbind::USVString>();

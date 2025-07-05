@@ -14,6 +14,7 @@ public:
     static RelativeOrientationSensor take_ownership(Handle h) noexcept;
 
     RelativeOrientationSensor clone() const noexcept;
+    RelativeOrientationSensor();
     RelativeOrientationSensor(const jsbind::Any& sensorOptions);
 };
 

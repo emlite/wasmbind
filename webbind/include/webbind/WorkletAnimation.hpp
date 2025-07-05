@@ -14,6 +14,9 @@ public:
     static WorkletAnimation take_ownership(Handle h) noexcept;
 
     WorkletAnimation clone() const noexcept;
+    WorkletAnimation(const jsbind::DOMString& animatorName);
+    WorkletAnimation(const jsbind::DOMString& animatorName, const jsbind::Any& effects);
+    WorkletAnimation(const jsbind::DOMString& animatorName, const jsbind::Any& effects, const AnimationTimeline& timeline);
     WorkletAnimation(const jsbind::DOMString& animatorName, const jsbind::Any& effects, const AnimationTimeline& timeline, const jsbind::Any& options);
     jsbind::DOMString animatorName() const;
 };

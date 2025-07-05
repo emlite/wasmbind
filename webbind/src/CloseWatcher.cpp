@@ -9,7 +9,9 @@ CloseWatcher::CloseWatcher(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 CloseWatcher::CloseWatcher(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-CloseWatcher::CloseWatcher(const jsbind::Any& options): EventTarget(emlite::Val::global("CloseWatcher").new_(options)) {}
+CloseWatcher::CloseWatcher() : EventTarget(emlite::Val::global("CloseWatcher").new_()) {}
+
+CloseWatcher::CloseWatcher(const jsbind::Any& options) : EventTarget(emlite::Val::global("CloseWatcher").new_(options)) {}
 
 jsbind::Undefined CloseWatcher::requestClose() {
     return EventTarget::call("requestClose").as<jsbind::Undefined>();

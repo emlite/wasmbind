@@ -10,10 +10,18 @@ WritableStream::WritableStream(Handle h) noexcept : emlite::Val(emlite::Val::tak
 WritableStream::WritableStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-WritableStream::WritableStream(const jsbind::Object& underlyingSink, const jsbind::Any& strategy): emlite::Val(emlite::Val::global("WritableStream").new_(underlyingSink, strategy)) {}
+WritableStream::WritableStream() : emlite::Val(emlite::Val::global("WritableStream").new_()) {}
+
+WritableStream::WritableStream(const jsbind::Object& underlyingSink) : emlite::Val(emlite::Val::global("WritableStream").new_(underlyingSink)) {}
+
+WritableStream::WritableStream(const jsbind::Object& underlyingSink, const jsbind::Any& strategy) : emlite::Val(emlite::Val::global("WritableStream").new_(underlyingSink, strategy)) {}
 
 bool WritableStream::locked() const {
     return emlite::Val::get("locked").as<bool>();
+}
+
+jsbind::Promise WritableStream::abort() {
+    return emlite::Val::call("abort").as<jsbind::Promise>();
 }
 
 jsbind::Promise WritableStream::abort(const jsbind::Any& reason) {

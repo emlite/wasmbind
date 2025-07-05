@@ -9,7 +9,7 @@ HTMLHtmlElement::HTMLHtmlElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLHtmlElement::HTMLHtmlElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLHtmlElement::HTMLHtmlElement(): HTMLElement(emlite::Val::global("HTMLHtmlElement").new_()) {}
+HTMLHtmlElement::HTMLHtmlElement() : HTMLElement(emlite::Val::global("HTMLHtmlElement").new_()) {}
 
 jsbind::DOMString HTMLHtmlElement::version() const {
     return HTMLElement::get("version").as<jsbind::DOMString>();

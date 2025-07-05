@@ -10,7 +10,9 @@ ExtendableMessageEvent::ExtendableMessageEvent(Handle h) noexcept : ExtendableEv
 ExtendableMessageEvent::ExtendableMessageEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-ExtendableMessageEvent::ExtendableMessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): ExtendableEvent(emlite::Val::global("ExtendableMessageEvent").new_(type, eventInitDict)) {}
+ExtendableMessageEvent::ExtendableMessageEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("ExtendableMessageEvent").new_(type)) {}
+
+ExtendableMessageEvent::ExtendableMessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("ExtendableMessageEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any ExtendableMessageEvent::data() const {
     return ExtendableEvent::get("data").as<jsbind::Any>();

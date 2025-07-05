@@ -9,7 +9,7 @@ HTMLTableColElement::HTMLTableColElement(Handle h) noexcept : HTMLElement(emlite
 HTMLTableColElement::HTMLTableColElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTableColElement::HTMLTableColElement(): HTMLElement(emlite::Val::global("HTMLTableColElement").new_()) {}
+HTMLTableColElement::HTMLTableColElement() : HTMLElement(emlite::Val::global("HTMLTableColElement").new_()) {}
 
 unsigned long HTMLTableColElement::span() const {
     return HTMLElement::get("span").as<unsigned long>();

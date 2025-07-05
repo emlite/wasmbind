@@ -9,7 +9,9 @@ Accelerometer::Accelerometer(Handle h) noexcept : Sensor(emlite::Val::take_owner
 Accelerometer::Accelerometer(const emlite::Val &val) noexcept: Sensor(val) {}
 
 
-Accelerometer::Accelerometer(const jsbind::Any& options): Sensor(emlite::Val::global("Accelerometer").new_(options)) {}
+Accelerometer::Accelerometer() : Sensor(emlite::Val::global("Accelerometer").new_()) {}
+
+Accelerometer::Accelerometer(const jsbind::Any& options) : Sensor(emlite::Val::global("Accelerometer").new_(options)) {}
 
 double Accelerometer::x() const {
     return Sensor::get("x").as<double>();

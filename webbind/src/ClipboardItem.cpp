@@ -10,7 +10,9 @@ ClipboardItem::ClipboardItem(Handle h) noexcept : emlite::Val(emlite::Val::take_
 ClipboardItem::ClipboardItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ClipboardItem::ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items, const jsbind::Any& options): emlite::Val(emlite::Val::global("ClipboardItem").new_(items, options)) {}
+ClipboardItem::ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items) : emlite::Val(emlite::Val::global("ClipboardItem").new_(items)) {}
+
+ClipboardItem::ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items, const jsbind::Any& options) : emlite::Val(emlite::Val::global("ClipboardItem").new_(items, options)) {}
 
 PresentationStyle ClipboardItem::presentationStyle() const {
     return emlite::Val::get("presentationStyle").as<PresentationStyle>();

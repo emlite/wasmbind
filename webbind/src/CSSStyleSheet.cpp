@@ -11,7 +11,9 @@ CSSStyleSheet::CSSStyleSheet(Handle h) noexcept : StyleSheet(emlite::Val::take_o
 CSSStyleSheet::CSSStyleSheet(const emlite::Val &val) noexcept: StyleSheet(val) {}
 
 
-CSSStyleSheet::CSSStyleSheet(const jsbind::Any& options): StyleSheet(emlite::Val::global("CSSStyleSheet").new_(options)) {}
+CSSStyleSheet::CSSStyleSheet() : StyleSheet(emlite::Val::global("CSSStyleSheet").new_()) {}
+
+CSSStyleSheet::CSSStyleSheet(const jsbind::Any& options) : StyleSheet(emlite::Val::global("CSSStyleSheet").new_(options)) {}
 
 CSSRule CSSStyleSheet::ownerRule() const {
     return StyleSheet::get("ownerRule").as<CSSRule>();
@@ -19,6 +21,10 @@ CSSRule CSSStyleSheet::ownerRule() const {
 
 CSSRuleList CSSStyleSheet::cssRules() const {
     return StyleSheet::get("cssRules").as<CSSRuleList>();
+}
+
+unsigned long CSSStyleSheet::insertRule(const jsbind::CSSOMString& rule) {
+    return StyleSheet::call("insertRule", rule).as<unsigned long>();
 }
 
 unsigned long CSSStyleSheet::insertRule(const jsbind::CSSOMString& rule, unsigned long index) {
@@ -41,8 +47,24 @@ CSSRuleList CSSStyleSheet::rules() const {
     return StyleSheet::get("rules").as<CSSRuleList>();
 }
 
+long CSSStyleSheet::addRule() {
+    return StyleSheet::call("addRule").as<long>();
+}
+
+long CSSStyleSheet::addRule(const jsbind::DOMString& selector) {
+    return StyleSheet::call("addRule", selector).as<long>();
+}
+
+long CSSStyleSheet::addRule(const jsbind::DOMString& selector, const jsbind::DOMString& style) {
+    return StyleSheet::call("addRule", selector, style).as<long>();
+}
+
 long CSSStyleSheet::addRule(const jsbind::DOMString& selector, const jsbind::DOMString& style, unsigned long index) {
     return StyleSheet::call("addRule", selector, style, index).as<long>();
+}
+
+jsbind::Undefined CSSStyleSheet::removeRule() {
+    return StyleSheet::call("removeRule").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined CSSStyleSheet::removeRule(unsigned long index) {

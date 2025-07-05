@@ -11,7 +11,7 @@ HTMLFormElement::HTMLFormElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLFormElement::HTMLFormElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLFormElement::HTMLFormElement(): HTMLElement(emlite::Val::global("HTMLFormElement").new_()) {}
+HTMLFormElement::HTMLFormElement() : HTMLElement(emlite::Val::global("HTMLFormElement").new_()) {}
 
 jsbind::DOMString HTMLFormElement::acceptCharset() const {
     return HTMLElement::get("acceptCharset").as<jsbind::DOMString>();
@@ -107,6 +107,10 @@ unsigned long HTMLFormElement::length() const {
 
 jsbind::Undefined HTMLFormElement::submit() {
     return HTMLElement::call("submit").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined HTMLFormElement::requestSubmit() {
+    return HTMLElement::call("requestSubmit").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLFormElement::requestSubmit(const HTMLElement& submitter) {

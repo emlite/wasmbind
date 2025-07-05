@@ -43,20 +43,56 @@ IDBRequest IDBIndex::getKey(const jsbind::Any& query) {
     return emlite::Val::call("getKey", query).as<IDBRequest>();
 }
 
+IDBRequest IDBIndex::getAll() {
+    return emlite::Val::call("getAll").as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::getAll(const jsbind::Any& query) {
+    return emlite::Val::call("getAll", query).as<IDBRequest>();
+}
+
 IDBRequest IDBIndex::getAll(const jsbind::Any& query, unsigned long count) {
     return emlite::Val::call("getAll", query, count).as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::getAllKeys() {
+    return emlite::Val::call("getAllKeys").as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::getAllKeys(const jsbind::Any& query) {
+    return emlite::Val::call("getAllKeys", query).as<IDBRequest>();
 }
 
 IDBRequest IDBIndex::getAllKeys(const jsbind::Any& query, unsigned long count) {
     return emlite::Val::call("getAllKeys", query, count).as<IDBRequest>();
 }
 
+IDBRequest IDBIndex::count() {
+    return emlite::Val::call("count").as<IDBRequest>();
+}
+
 IDBRequest IDBIndex::count(const jsbind::Any& query) {
     return emlite::Val::call("count", query).as<IDBRequest>();
 }
 
+IDBRequest IDBIndex::openCursor() {
+    return emlite::Val::call("openCursor").as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::openCursor(const jsbind::Any& query) {
+    return emlite::Val::call("openCursor", query).as<IDBRequest>();
+}
+
 IDBRequest IDBIndex::openCursor(const jsbind::Any& query, const IDBCursorDirection& direction) {
     return emlite::Val::call("openCursor", query, direction).as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::openKeyCursor() {
+    return emlite::Val::call("openKeyCursor").as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::openKeyCursor(const jsbind::Any& query) {
+    return emlite::Val::call("openKeyCursor", query).as<IDBRequest>();
 }
 
 IDBRequest IDBIndex::openKeyCursor(const jsbind::Any& query, const IDBCursorDirection& direction) {

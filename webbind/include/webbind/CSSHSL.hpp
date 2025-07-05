@@ -14,6 +14,7 @@ public:
     static CSSHSL take_ownership(Handle h) noexcept;
 
     CSSHSL clone() const noexcept;
+    CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l);
     CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l, const jsbind::Any& alpha);
     jsbind::Any h() const;
     void h(const jsbind::Any& value);

@@ -29,6 +29,8 @@ public:
 
     Observable clone() const noexcept;
     Observable(const jsbind::Function& callback);
+    jsbind::Undefined subscribe();
+    jsbind::Undefined subscribe(const jsbind::Any& observer);
     jsbind::Undefined subscribe(const jsbind::Any& observer, const SubscribeOptions& options);
     static Observable from(const jsbind::Any& value);
     Observable takeUntil(const jsbind::Any& value);
@@ -38,16 +40,26 @@ public:
     Observable drop(long long amount);
     Observable flatMap(const jsbind::Function& mapper);
     Observable switchMap(const jsbind::Function& mapper);
+    Observable inspect();
     Observable inspect(const jsbind::Any& inspectorUnion);
     Observable catch_(const jsbind::Function& callback);
     Observable finally(const jsbind::Any& callback);
+    jsbind::Promise toArray();
     jsbind::Promise toArray(const SubscribeOptions& options);
+    jsbind::Promise forEach(const jsbind::Function& callback);
     jsbind::Promise forEach(const jsbind::Function& callback, const SubscribeOptions& options);
+    jsbind::Promise every(const jsbind::Function& predicate);
     jsbind::Promise every(const jsbind::Function& predicate, const SubscribeOptions& options);
+    jsbind::Promise first();
     jsbind::Promise first(const SubscribeOptions& options);
+    jsbind::Promise last();
     jsbind::Promise last(const SubscribeOptions& options);
+    jsbind::Promise find(const jsbind::Function& predicate);
     jsbind::Promise find(const jsbind::Function& predicate, const SubscribeOptions& options);
+    jsbind::Promise some(const jsbind::Function& predicate);
     jsbind::Promise some(const jsbind::Function& predicate, const SubscribeOptions& options);
+    jsbind::Promise reduce(const jsbind::Function& reducer);
+    jsbind::Promise reduce(const jsbind::Function& reducer, const jsbind::Any& initialValue);
     jsbind::Promise reduce(const jsbind::Function& reducer, const jsbind::Any& initialValue, const SubscribeOptions& options);
 };
 

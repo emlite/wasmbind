@@ -21,6 +21,7 @@ public:
     jsbind::CSSOMString item(unsigned long index);
     jsbind::CSSOMString getPropertyValue(const jsbind::CSSOMString& property);
     jsbind::CSSOMString getPropertyPriority(const jsbind::CSSOMString& property);
+    jsbind::Undefined setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value);
     jsbind::Undefined setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value, const jsbind::CSSOMString& priority);
     jsbind::CSSOMString removeProperty(const jsbind::CSSOMString& property);
     CSSRule parentRule() const;

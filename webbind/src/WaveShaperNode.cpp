@@ -10,7 +10,9 @@ WaveShaperNode::WaveShaperNode(Handle h) noexcept : AudioNode(emlite::Val::take_
 WaveShaperNode::WaveShaperNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-WaveShaperNode::WaveShaperNode(const BaseAudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("WaveShaperNode").new_(context, options)) {}
+WaveShaperNode::WaveShaperNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("WaveShaperNode").new_(context)) {}
+
+WaveShaperNode::WaveShaperNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("WaveShaperNode").new_(context, options)) {}
 
 jsbind::Float32Array WaveShaperNode::curve() const {
     return AudioNode::get("curve").as<jsbind::Float32Array>();

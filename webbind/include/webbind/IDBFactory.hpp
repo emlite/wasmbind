@@ -29,6 +29,7 @@ public:
     static IDBFactory take_ownership(Handle h) noexcept;
 
     IDBFactory clone() const noexcept;
+    IDBOpenDBRequest open(const jsbind::DOMString& name);
     IDBOpenDBRequest open(const jsbind::DOMString& name, long long version);
     IDBOpenDBRequest deleteDatabase(const jsbind::DOMString& name);
     jsbind::Promise databases();

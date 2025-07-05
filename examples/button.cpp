@@ -19,7 +19,7 @@ int main() {
     }
     auto body = bodies.item(0);
     auto button =
-        document.createElement("BUTTON", Undefined::value)
+        document.createElement("BUTTON")
             .as<HTMLButtonElement>();
     button.textContent("Click me");
     button.addEventListener(
@@ -28,12 +28,11 @@ int main() {
             auto [params, _len] = Function::params(h);
             console::log(params[0]);
             return Undefined::value.as_handle();
-        }),
-        Undefined::value
+        })
     );
     body.appendChild(button);
     auto style = button.style();
-    style.setProperty("color", "red", "");
-    style.setProperty("background-color", "#aaf", "");
-    style.setProperty("border", "solid", "");
+    style.setProperty("color", "red");
+    style.setProperty("background-color", "#aaf");
+    style.setProperty("border", "solid");
 }

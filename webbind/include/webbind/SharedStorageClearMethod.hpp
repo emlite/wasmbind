@@ -16,6 +16,7 @@ public:
     static SharedStorageClearMethod take_ownership(Handle h) noexcept;
 
     SharedStorageClearMethod clone() const noexcept;
+    SharedStorageClearMethod();
     SharedStorageClearMethod(const SharedStorageModifierMethodOptions& options);
 };
 

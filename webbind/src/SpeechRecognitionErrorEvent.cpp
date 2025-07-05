@@ -9,7 +9,7 @@ SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(Handle h) noexcept : Ev
 SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("SpeechRecognitionErrorEvent").new_(type, eventInitDict)) {}
+SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SpeechRecognitionErrorEvent").new_(type, eventInitDict)) {}
 
 SpeechRecognitionErrorCode SpeechRecognitionErrorEvent::error() const {
     return Event::get("error").as<SpeechRecognitionErrorCode>();

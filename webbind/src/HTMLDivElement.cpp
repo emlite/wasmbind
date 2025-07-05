@@ -9,7 +9,7 @@ HTMLDivElement::HTMLDivElement(Handle h) noexcept : HTMLElement(emlite::Val::tak
 HTMLDivElement::HTMLDivElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLDivElement::HTMLDivElement(): HTMLElement(emlite::Val::global("HTMLDivElement").new_()) {}
+HTMLDivElement::HTMLDivElement() : HTMLElement(emlite::Val::global("HTMLDivElement").new_()) {}
 
 jsbind::DOMString HTMLDivElement::align() const {
     return HTMLElement::get("align").as<jsbind::DOMString>();

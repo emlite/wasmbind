@@ -16,6 +16,7 @@ public:
     static AbortSignal take_ownership(Handle h) noexcept;
 
     AbortSignal clone() const noexcept;
+    static AbortSignal abort();
     static AbortSignal abort(const jsbind::Any& reason);
     static AbortSignal timeout(long long milliseconds);
     static AbortSignal any(const jsbind::Sequence<AbortSignal>& signals);

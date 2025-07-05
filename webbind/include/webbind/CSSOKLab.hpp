@@ -14,6 +14,7 @@ public:
     static CSSOKLab take_ownership(Handle h) noexcept;
 
     CSSOKLab clone() const noexcept;
+    CSSOKLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b);
     CSSOKLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b, const jsbind::Any& alpha);
     jsbind::Any l() const;
     void l(const jsbind::Any& value);

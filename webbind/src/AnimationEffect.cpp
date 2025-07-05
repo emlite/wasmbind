@@ -91,6 +91,10 @@ ComputedEffectTiming AnimationEffect::getComputedTiming() {
     return emlite::Val::call("getComputedTiming").as<ComputedEffectTiming>();
 }
 
+jsbind::Undefined AnimationEffect::updateTiming() {
+    return emlite::Val::call("updateTiming").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined AnimationEffect::updateTiming(const OptionalEffectTiming& timing) {
     return emlite::Val::call("updateTiming", timing).as<jsbind::Undefined>();
 }

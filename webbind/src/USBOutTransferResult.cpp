@@ -9,7 +9,9 @@ USBOutTransferResult::USBOutTransferResult(Handle h) noexcept : emlite::Val(emli
 USBOutTransferResult::USBOutTransferResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBOutTransferResult::USBOutTransferResult(const USBTransferStatus& status, unsigned long bytesWritten): emlite::Val(emlite::Val::global("USBOutTransferResult").new_(status, bytesWritten)) {}
+USBOutTransferResult::USBOutTransferResult(const USBTransferStatus& status) : emlite::Val(emlite::Val::global("USBOutTransferResult").new_(status)) {}
+
+USBOutTransferResult::USBOutTransferResult(const USBTransferStatus& status, unsigned long bytesWritten) : emlite::Val(emlite::Val::global("USBOutTransferResult").new_(status, bytesWritten)) {}
 
 unsigned long USBOutTransferResult::bytesWritten() const {
     return emlite::Val::get("bytesWritten").as<unsigned long>();

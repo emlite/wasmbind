@@ -49,7 +49,9 @@ public:
     static SharedStorageWorklet take_ownership(Handle h) noexcept;
 
     SharedStorageWorklet clone() const noexcept;
+    jsbind::Promise selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls);
     jsbind::Promise selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options);
+    jsbind::Promise run(const jsbind::DOMString& name);
     jsbind::Promise run(const jsbind::DOMString& name, const SharedStorageRunOperationMethodOptions& options);
 };
 

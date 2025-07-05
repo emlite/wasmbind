@@ -14,7 +14,9 @@ public:
 
     TransformStreamDefaultController clone() const noexcept;
     double desiredSize() const;
+    jsbind::Undefined enqueue();
     jsbind::Undefined enqueue(const jsbind::Any& chunk);
+    jsbind::Undefined error();
     jsbind::Undefined error(const jsbind::Any& reason);
     jsbind::Undefined terminate();
 };

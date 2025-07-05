@@ -18,6 +18,7 @@ public:
     static AudioNode take_ownership(Handle h) noexcept;
 
     AudioNode clone() const noexcept;
+    jsbind::Undefined connect(const AudioParam& destinationParam);
     jsbind::Undefined connect(const AudioParam& destinationParam, unsigned long output);
     jsbind::Undefined disconnect(const AudioParam& destinationParam, unsigned long output);
     BaseAudioContext context() const;

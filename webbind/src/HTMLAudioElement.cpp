@@ -9,5 +9,5 @@ HTMLAudioElement::HTMLAudioElement(Handle h) noexcept : HTMLMediaElement(emlite:
 HTMLAudioElement::HTMLAudioElement(const emlite::Val &val) noexcept: HTMLMediaElement(val) {}
 
 
-HTMLAudioElement::HTMLAudioElement(): HTMLMediaElement(emlite::Val::global("HTMLAudioElement").new_()) {}
+HTMLAudioElement::HTMLAudioElement() : HTMLMediaElement(emlite::Val::global("HTMLAudioElement").new_()) {}
 

@@ -9,6 +9,10 @@ AbortSignal::AbortSignal(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 AbortSignal::AbortSignal(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
+AbortSignal AbortSignal::abort() {
+    return emlite::Val::global("abortsignal").call("abort").as<AbortSignal>();
+}
+
 AbortSignal AbortSignal::abort(const jsbind::Any& reason) {
     return emlite::Val::global("abortsignal").call("abort", reason).as<AbortSignal>();
 }

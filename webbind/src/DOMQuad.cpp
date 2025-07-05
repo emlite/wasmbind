@@ -15,10 +15,26 @@ DOMQuad::DOMQuad(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)
 DOMQuad::DOMQuad(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DOMQuad::DOMQuad(const DOMPointInit& p1, const DOMPointInit& p2, const DOMPointInit& p3, const DOMPointInit& p4): emlite::Val(emlite::Val::global("DOMQuad").new_(p1, p2, p3, p4)) {}
+DOMQuad::DOMQuad() : emlite::Val(emlite::Val::global("DOMQuad").new_()) {}
+
+DOMQuad::DOMQuad(const DOMPointInit& p1) : emlite::Val(emlite::Val::global("DOMQuad").new_(p1)) {}
+
+DOMQuad::DOMQuad(const DOMPointInit& p1, const DOMPointInit& p2) : emlite::Val(emlite::Val::global("DOMQuad").new_(p1, p2)) {}
+
+DOMQuad::DOMQuad(const DOMPointInit& p1, const DOMPointInit& p2, const DOMPointInit& p3) : emlite::Val(emlite::Val::global("DOMQuad").new_(p1, p2, p3)) {}
+
+DOMQuad::DOMQuad(const DOMPointInit& p1, const DOMPointInit& p2, const DOMPointInit& p3, const DOMPointInit& p4) : emlite::Val(emlite::Val::global("DOMQuad").new_(p1, p2, p3, p4)) {}
+
+DOMQuad DOMQuad::fromRect() {
+    return emlite::Val::global("domquad").call("fromRect").as<DOMQuad>();
+}
 
 DOMQuad DOMQuad::fromRect(const DOMRectInit& other) {
     return emlite::Val::global("domquad").call("fromRect", other).as<DOMQuad>();
+}
+
+DOMQuad DOMQuad::fromQuad() {
+    return emlite::Val::global("domquad").call("fromQuad").as<DOMQuad>();
 }
 
 DOMQuad DOMQuad::fromQuad(const DOMQuadInit& other) {

@@ -34,7 +34,7 @@ ReadableStreamDefaultReader::ReadableStreamDefaultReader(Handle h) noexcept : em
 ReadableStreamDefaultReader::ReadableStreamDefaultReader(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ReadableStreamDefaultReader::ReadableStreamDefaultReader(const ReadableStream& stream): emlite::Val(emlite::Val::global("ReadableStreamDefaultReader").new_(stream)) {}
+ReadableStreamDefaultReader::ReadableStreamDefaultReader(const ReadableStream& stream) : emlite::Val(emlite::Val::global("ReadableStreamDefaultReader").new_(stream)) {}
 
 jsbind::Promise ReadableStreamDefaultReader::read() {
     return emlite::Val::call("read").as<jsbind::Promise>();
@@ -46,6 +46,10 @@ jsbind::Undefined ReadableStreamDefaultReader::releaseLock() {
 
 jsbind::Promise ReadableStreamDefaultReader::closed() const {
     return emlite::Val::get("closed").as<jsbind::Promise>();
+}
+
+jsbind::Promise ReadableStreamDefaultReader::cancel() {
+    return emlite::Val::call("cancel").as<jsbind::Promise>();
 }
 
 jsbind::Promise ReadableStreamDefaultReader::cancel(const jsbind::Any& reason) {

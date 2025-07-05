@@ -28,6 +28,7 @@ public:
     void autofocus(bool value);
     long tabIndex() const;
     void tabIndex(long value);
+    jsbind::Undefined focus();
     jsbind::Undefined focus(const FocusOptions& options);
     jsbind::Undefined blur();
 };

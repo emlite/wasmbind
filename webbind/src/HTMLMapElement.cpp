@@ -10,7 +10,7 @@ HTMLMapElement::HTMLMapElement(Handle h) noexcept : HTMLElement(emlite::Val::tak
 HTMLMapElement::HTMLMapElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLMapElement::HTMLMapElement(): HTMLElement(emlite::Val::global("HTMLMapElement").new_()) {}
+HTMLMapElement::HTMLMapElement() : HTMLElement(emlite::Val::global("HTMLMapElement").new_()) {}
 
 jsbind::DOMString HTMLMapElement::name() const {
     return HTMLElement::get("name").as<jsbind::DOMString>();

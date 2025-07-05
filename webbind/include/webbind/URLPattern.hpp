@@ -42,8 +42,14 @@ public:
     static URLPattern take_ownership(Handle h) noexcept;
 
     URLPattern clone() const noexcept;
+    URLPattern();
+    URLPattern(const jsbind::Any& input);
     URLPattern(const jsbind::Any& input, const jsbind::Any& options);
+    bool test();
+    bool test(const jsbind::Any& input);
     bool test(const jsbind::Any& input, const jsbind::USVString& baseURL);
+    URLPatternResult exec();
+    URLPatternResult exec(const jsbind::Any& input);
     URLPatternResult exec(const jsbind::Any& input, const jsbind::USVString& baseURL);
     jsbind::USVString protocol() const;
     jsbind::USVString username() const;

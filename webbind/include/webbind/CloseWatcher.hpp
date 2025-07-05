@@ -14,6 +14,7 @@ public:
     static CloseWatcher take_ownership(Handle h) noexcept;
 
     CloseWatcher clone() const noexcept;
+    CloseWatcher();
     CloseWatcher(const jsbind::Any& options);
     jsbind::Undefined requestClose();
     jsbind::Undefined close();

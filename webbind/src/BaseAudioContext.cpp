@@ -98,8 +98,16 @@ AudioBufferSourceNode BaseAudioContext::createBufferSource() {
     return EventTarget::call("createBufferSource").as<AudioBufferSourceNode>();
 }
 
+ChannelMergerNode BaseAudioContext::createChannelMerger() {
+    return EventTarget::call("createChannelMerger").as<ChannelMergerNode>();
+}
+
 ChannelMergerNode BaseAudioContext::createChannelMerger(unsigned long numberOfInputs) {
     return EventTarget::call("createChannelMerger", numberOfInputs).as<ChannelMergerNode>();
+}
+
+ChannelSplitterNode BaseAudioContext::createChannelSplitter() {
+    return EventTarget::call("createChannelSplitter").as<ChannelSplitterNode>();
 }
 
 ChannelSplitterNode BaseAudioContext::createChannelSplitter(unsigned long numberOfOutputs) {
@@ -112,6 +120,10 @@ ConstantSourceNode BaseAudioContext::createConstantSource() {
 
 ConvolverNode BaseAudioContext::createConvolver() {
     return EventTarget::call("createConvolver").as<ConvolverNode>();
+}
+
+DelayNode BaseAudioContext::createDelay() {
+    return EventTarget::call("createDelay").as<DelayNode>();
 }
 
 DelayNode BaseAudioContext::createDelay(double maxDelayTime) {
@@ -138,8 +150,24 @@ PannerNode BaseAudioContext::createPanner() {
     return EventTarget::call("createPanner").as<PannerNode>();
 }
 
+PeriodicWave BaseAudioContext::createPeriodicWave(jsbind::Sequence<float> real, jsbind::Sequence<float> imag) {
+    return EventTarget::call("createPeriodicWave", real, imag).as<PeriodicWave>();
+}
+
 PeriodicWave BaseAudioContext::createPeriodicWave(jsbind::Sequence<float> real, jsbind::Sequence<float> imag, const PeriodicWaveConstraints& constraints) {
     return EventTarget::call("createPeriodicWave", real, imag, constraints).as<PeriodicWave>();
+}
+
+ScriptProcessorNode BaseAudioContext::createScriptProcessor() {
+    return EventTarget::call("createScriptProcessor").as<ScriptProcessorNode>();
+}
+
+ScriptProcessorNode BaseAudioContext::createScriptProcessor(unsigned long bufferSize) {
+    return EventTarget::call("createScriptProcessor", bufferSize).as<ScriptProcessorNode>();
+}
+
+ScriptProcessorNode BaseAudioContext::createScriptProcessor(unsigned long bufferSize, unsigned long numberOfInputChannels) {
+    return EventTarget::call("createScriptProcessor", bufferSize, numberOfInputChannels).as<ScriptProcessorNode>();
 }
 
 ScriptProcessorNode BaseAudioContext::createScriptProcessor(unsigned long bufferSize, unsigned long numberOfInputChannels, unsigned long numberOfOutputChannels) {
@@ -152,6 +180,14 @@ StereoPannerNode BaseAudioContext::createStereoPanner() {
 
 WaveShaperNode BaseAudioContext::createWaveShaper() {
     return EventTarget::call("createWaveShaper").as<WaveShaperNode>();
+}
+
+jsbind::Promise BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData) {
+    return EventTarget::call("decodeAudioData", audioData).as<jsbind::Promise>();
+}
+
+jsbind::Promise BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback) {
+    return EventTarget::call("decodeAudioData", audioData, successCallback).as<jsbind::Promise>();
 }
 
 jsbind::Promise BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {

@@ -59,10 +59,13 @@ public:
     Translator clone() const noexcept;
     static jsbind::Promise create(const TranslatorCreateOptions& options);
     static jsbind::Promise availability(const TranslatorCreateCoreOptions& options);
+    jsbind::Promise translate(const jsbind::DOMString& input);
     jsbind::Promise translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
+    ReadableStream translateStreaming(const jsbind::DOMString& input);
     ReadableStream translateStreaming(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
     jsbind::DOMString sourceLanguage() const;
     jsbind::DOMString targetLanguage() const;
+    jsbind::Promise measureInputUsage(const jsbind::DOMString& input);
     jsbind::Promise measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();

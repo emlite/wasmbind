@@ -14,6 +14,7 @@ public:
     static ChannelMergerNode take_ownership(Handle h) noexcept;
 
     ChannelMergerNode clone() const noexcept;
+    ChannelMergerNode(const BaseAudioContext& context);
     ChannelMergerNode(const BaseAudioContext& context, const jsbind::Any& options);
 };
 

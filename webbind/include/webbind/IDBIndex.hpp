@@ -24,10 +24,19 @@ public:
     bool unique() const;
     IDBRequest get(const jsbind::Any& query);
     IDBRequest getKey(const jsbind::Any& query);
+    IDBRequest getAll();
+    IDBRequest getAll(const jsbind::Any& query);
     IDBRequest getAll(const jsbind::Any& query, unsigned long count);
+    IDBRequest getAllKeys();
+    IDBRequest getAllKeys(const jsbind::Any& query);
     IDBRequest getAllKeys(const jsbind::Any& query, unsigned long count);
+    IDBRequest count();
     IDBRequest count(const jsbind::Any& query);
+    IDBRequest openCursor();
+    IDBRequest openCursor(const jsbind::Any& query);
     IDBRequest openCursor(const jsbind::Any& query, const IDBCursorDirection& direction);
+    IDBRequest openKeyCursor();
+    IDBRequest openKeyCursor(const jsbind::Any& query);
     IDBRequest openKeyCursor(const jsbind::Any& query, const IDBCursorDirection& direction);
 };
 

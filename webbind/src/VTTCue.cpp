@@ -11,7 +11,7 @@ VTTCue::VTTCue(Handle h) noexcept : TextTrackCue(emlite::Val::take_ownership(h))
 VTTCue::VTTCue(const emlite::Val &val) noexcept: TextTrackCue(val) {}
 
 
-VTTCue::VTTCue(double startTime, double endTime, const jsbind::DOMString& text): TextTrackCue(emlite::Val::global("VTTCue").new_(startTime, endTime, text)) {}
+VTTCue::VTTCue(double startTime, double endTime, const jsbind::DOMString& text) : TextTrackCue(emlite::Val::global("VTTCue").new_(startTime, endTime, text)) {}
 
 VTTRegion VTTCue::region() const {
     return TextTrackCue::get("region").as<VTTRegion>();

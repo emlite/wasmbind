@@ -74,7 +74,7 @@ AudioDecoder::AudioDecoder(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 AudioDecoder::AudioDecoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-AudioDecoder::AudioDecoder(const jsbind::Any& init): EventTarget(emlite::Val::global("AudioDecoder").new_(init)) {}
+AudioDecoder::AudioDecoder(const jsbind::Any& init) : EventTarget(emlite::Val::global("AudioDecoder").new_(init)) {}
 
 CodecState AudioDecoder::state() const {
     return EventTarget::get("state").as<CodecState>();

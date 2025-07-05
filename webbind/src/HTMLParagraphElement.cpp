@@ -9,7 +9,7 @@ HTMLParagraphElement::HTMLParagraphElement(Handle h) noexcept : HTMLElement(emli
 HTMLParagraphElement::HTMLParagraphElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLParagraphElement::HTMLParagraphElement(): HTMLElement(emlite::Val::global("HTMLParagraphElement").new_()) {}
+HTMLParagraphElement::HTMLParagraphElement() : HTMLElement(emlite::Val::global("HTMLParagraphElement").new_()) {}
 
 jsbind::DOMString HTMLParagraphElement::align() const {
     return HTMLElement::get("align").as<jsbind::DOMString>();

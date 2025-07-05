@@ -34,6 +34,10 @@ jsbind::CSSOMString CSSStyleDeclaration::getPropertyPriority(const jsbind::CSSOM
     return emlite::Val::call("getPropertyPriority", property).as<jsbind::CSSOMString>();
 }
 
+jsbind::Undefined CSSStyleDeclaration::setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value) {
+    return emlite::Val::call("setProperty", property, value).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined CSSStyleDeclaration::setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value, const jsbind::CSSOMString& priority) {
     return emlite::Val::call("setProperty", property, value, priority).as<jsbind::Undefined>();
 }

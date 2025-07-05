@@ -11,7 +11,9 @@ CSSMatrixComponent::CSSMatrixComponent(Handle h) noexcept : CSSTransformComponen
 CSSMatrixComponent::CSSMatrixComponent(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
 
-CSSMatrixComponent::CSSMatrixComponent(const DOMMatrixReadOnly& matrix, const jsbind::Any& options): CSSTransformComponent(emlite::Val::global("CSSMatrixComponent").new_(matrix, options)) {}
+CSSMatrixComponent::CSSMatrixComponent(const DOMMatrixReadOnly& matrix) : CSSTransformComponent(emlite::Val::global("CSSMatrixComponent").new_(matrix)) {}
+
+CSSMatrixComponent::CSSMatrixComponent(const DOMMatrixReadOnly& matrix, const jsbind::Any& options) : CSSTransformComponent(emlite::Val::global("CSSMatrixComponent").new_(matrix, options)) {}
 
 DOMMatrix CSSMatrixComponent::matrix() const {
     return CSSTransformComponent::get("matrix").as<DOMMatrix>();

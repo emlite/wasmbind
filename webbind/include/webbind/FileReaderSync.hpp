@@ -18,6 +18,7 @@ public:
     FileReaderSync();
     jsbind::ArrayBuffer readAsArrayBuffer(const Blob& blob);
     jsbind::DOMString readAsBinaryString(const Blob& blob);
+    jsbind::DOMString readAsText(const Blob& blob);
     jsbind::DOMString readAsText(const Blob& blob, const jsbind::DOMString& encoding);
     jsbind::DOMString readAsDataURL(const Blob& blob);
 };

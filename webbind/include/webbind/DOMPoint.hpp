@@ -17,7 +17,12 @@ public:
     static DOMPoint take_ownership(Handle h) noexcept;
 
     DOMPoint clone() const noexcept;
+    DOMPoint();
+    DOMPoint(double x);
+    DOMPoint(double x, double y);
+    DOMPoint(double x, double y, double z);
     DOMPoint(double x, double y, double z, double w);
+    static DOMPoint fromPoint();
     static DOMPoint fromPoint(const DOMPointInit& other);
     double x() const;
     void x(double value);

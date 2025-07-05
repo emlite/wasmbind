@@ -36,6 +36,7 @@ public:
     MediaSessionPlaybackState playbackState() const;
     void playbackState(const MediaSessionPlaybackState& value);
     jsbind::Undefined setActionHandler(const MediaSessionAction& action, const jsbind::Function& handler);
+    jsbind::Undefined setPositionState();
     jsbind::Undefined setPositionState(const MediaPositionState& state);
     jsbind::Promise setMicrophoneActive(bool active);
     jsbind::Promise setCameraActive(bool active);

@@ -29,6 +29,10 @@ jsbind::Undefined DOMTokenList::remove(const jsbind::DOMString& tokens) {
     return emlite::Val::call("remove", tokens).as<jsbind::Undefined>();
 }
 
+bool DOMTokenList::toggle(const jsbind::DOMString& token) {
+    return emlite::Val::call("toggle", token).as<bool>();
+}
+
 bool DOMTokenList::toggle(const jsbind::DOMString& token, bool force) {
     return emlite::Val::call("toggle", token, force).as<bool>();
 }

@@ -247,6 +247,7 @@ public:
     jsbind::Undefined destroy();
     GPUBuffer createBuffer(const GPUBufferDescriptor& descriptor);
     GPUTexture createTexture(const GPUTextureDescriptor& descriptor);
+    GPUSampler createSampler();
     GPUSampler createSampler(const GPUSamplerDescriptor& descriptor);
     GPUExternalTexture importExternalTexture(const GPUExternalTextureDescriptor& descriptor);
     GPUBindGroupLayout createBindGroupLayout(const GPUBindGroupLayoutDescriptor& descriptor);
@@ -257,6 +258,7 @@ public:
     GPURenderPipeline createRenderPipeline(const GPURenderPipelineDescriptor& descriptor);
     jsbind::Promise createComputePipelineAsync(const GPUComputePipelineDescriptor& descriptor);
     jsbind::Promise createRenderPipelineAsync(const GPURenderPipelineDescriptor& descriptor);
+    GPUCommandEncoder createCommandEncoder();
     GPUCommandEncoder createCommandEncoder(const GPUCommandEncoderDescriptor& descriptor);
     GPURenderBundleEncoder createRenderBundleEncoder(const GPURenderBundleEncoderDescriptor& descriptor);
     GPUQuerySet createQuerySet(const GPUQuerySetDescriptor& descriptor);

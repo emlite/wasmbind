@@ -10,7 +10,9 @@ ScrollTimeline::ScrollTimeline(Handle h) noexcept : AnimationTimeline(emlite::Va
 ScrollTimeline::ScrollTimeline(const emlite::Val &val) noexcept: AnimationTimeline(val) {}
 
 
-ScrollTimeline::ScrollTimeline(const jsbind::Any& options): AnimationTimeline(emlite::Val::global("ScrollTimeline").new_(options)) {}
+ScrollTimeline::ScrollTimeline() : AnimationTimeline(emlite::Val::global("ScrollTimeline").new_()) {}
+
+ScrollTimeline::ScrollTimeline(const jsbind::Any& options) : AnimationTimeline(emlite::Val::global("ScrollTimeline").new_(options)) {}
 
 Element ScrollTimeline::source() const {
     return AnimationTimeline::get("source").as<Element>();

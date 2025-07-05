@@ -14,6 +14,7 @@ public:
     static WaveShaperNode take_ownership(Handle h) noexcept;
 
     WaveShaperNode clone() const noexcept;
+    WaveShaperNode(const BaseAudioContext& context);
     WaveShaperNode(const BaseAudioContext& context, const jsbind::Any& options);
     jsbind::Float32Array curve() const;
     void curve(const jsbind::Float32Array& value);

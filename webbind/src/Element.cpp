@@ -333,6 +333,10 @@ jsbind::Undefined Element::removeAttributeNS(const jsbind::DOMString& namespace_
     return Node::call("removeAttributeNS", namespace_, localName).as<jsbind::Undefined>();
 }
 
+bool Element::toggleAttribute(const jsbind::DOMString& qualifiedName) {
+    return Node::call("toggleAttribute", qualifiedName).as<bool>();
+}
+
 bool Element::toggleAttribute(const jsbind::DOMString& qualifiedName, bool force) {
     return Node::call("toggleAttribute", qualifiedName, force).as<bool>();
 }
@@ -413,8 +417,16 @@ Node Element::getSpatialNavigationContainer() {
     return Node::call("getSpatialNavigationContainer").as<Node>();
 }
 
+jsbind::Sequence<Node> Element::focusableAreas() {
+    return Node::call("focusableAreas").as<jsbind::Sequence<Node>>();
+}
+
 jsbind::Sequence<Node> Element::focusableAreas(const FocusableAreasOption& option) {
     return Node::call("focusableAreas", option).as<jsbind::Sequence<Node>>();
+}
+
+Node Element::spatialNavigationSearch(const SpatialNavigationDirection& dir) {
+    return Node::call("spatialNavigationSearch", dir).as<Node>();
 }
 
 Node Element::spatialNavigationSearch(const SpatialNavigationDirection& dir, const SpatialNavigationSearchOptions& options) {
@@ -441,8 +453,16 @@ DOMRect Element::getBoundingClientRect() {
     return Node::call("getBoundingClientRect").as<DOMRect>();
 }
 
+bool Element::checkVisibility() {
+    return Node::call("checkVisibility").as<bool>();
+}
+
 bool Element::checkVisibility(const CheckVisibilityOptions& options) {
     return Node::call("checkVisibility", options).as<bool>();
+}
+
+jsbind::Undefined Element::scrollIntoView() {
+    return Node::call("scrollIntoView").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Element::scrollIntoView(const jsbind::Any& arg) {
@@ -513,6 +533,10 @@ void Element::elementTiming(const jsbind::DOMString& value) {
     Node::set("elementTiming", value);
 }
 
+jsbind::Promise Element::requestFullscreen() {
+    return Node::call("requestFullscreen").as<jsbind::Promise>();
+}
+
 jsbind::Promise Element::requestFullscreen(const FullscreenOptions& options) {
     return Node::call("requestFullscreen", options).as<jsbind::Promise>();
 }
@@ -535,6 +559,10 @@ void Element::onfullscreenerror(const jsbind::Any& value) {
 
 jsbind::Undefined Element::setHTMLUnsafe(const jsbind::Any& html) {
     return Node::call("setHTMLUnsafe", html).as<jsbind::Undefined>();
+}
+
+jsbind::DOMString Element::getHTML() {
+    return Node::call("getHTML").as<jsbind::DOMString>();
 }
 
 jsbind::DOMString Element::getHTML(const GetHTMLOptions& options) {
@@ -573,6 +601,10 @@ bool Element::hasPointerCapture(long pointerId) {
     return Node::call("hasPointerCapture", pointerId).as<bool>();
 }
 
+jsbind::Promise Element::requestPointerLock() {
+    return Node::call("requestPointerLock").as<jsbind::Promise>();
+}
+
 jsbind::Promise Element::requestPointerLock(const PointerLockOptions& options) {
     return Node::call("requestPointerLock", options).as<jsbind::Promise>();
 }
@@ -585,16 +617,32 @@ jsbind::Sequence<Range> Element::getRegionFlowRanges() {
     return Node::call("getRegionFlowRanges").as<jsbind::Sequence<Range>>();
 }
 
+jsbind::Sequence<DOMQuad> Element::getBoxQuads() {
+    return Node::call("getBoxQuads").as<jsbind::Sequence<DOMQuad>>();
+}
+
 jsbind::Sequence<DOMQuad> Element::getBoxQuads(const BoxQuadOptions& options) {
     return Node::call("getBoxQuads", options).as<jsbind::Sequence<DOMQuad>>();
+}
+
+DOMQuad Element::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from) {
+    return Node::call("convertQuadFromNode", quad, from).as<DOMQuad>();
 }
 
 DOMQuad Element::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
     return Node::call("convertQuadFromNode", quad, from, options).as<DOMQuad>();
 }
 
+DOMQuad Element::convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from) {
+    return Node::call("convertRectFromNode", rect, from).as<DOMQuad>();
+}
+
 DOMQuad Element::convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
     return Node::call("convertRectFromNode", rect, from, options).as<DOMQuad>();
+}
+
+DOMPoint Element::convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from) {
+    return Node::call("convertPointFromNode", point, from).as<DOMPoint>();
 }
 
 DOMPoint Element::convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
@@ -1085,8 +1133,16 @@ void Element::ariaValueText(const jsbind::DOMString& value) {
     Node::set("ariaValueText", value);
 }
 
+Animation Element::animate(const jsbind::Object& keyframes) {
+    return Node::call("animate", keyframes).as<Animation>();
+}
+
 Animation Element::animate(const jsbind::Object& keyframes, const jsbind::Any& options) {
     return Node::call("animate", keyframes, options).as<Animation>();
+}
+
+jsbind::Sequence<Animation> Element::getAnimations() {
+    return Node::call("getAnimations").as<jsbind::Sequence<Animation>>();
 }
 
 jsbind::Sequence<Animation> Element::getAnimations(const GetAnimationsOptions& options) {

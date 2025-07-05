@@ -14,6 +14,7 @@ public:
     static GravitySensor take_ownership(Handle h) noexcept;
 
     GravitySensor clone() const noexcept;
+    GravitySensor();
     GravitySensor(const jsbind::Any& options);
 };
 

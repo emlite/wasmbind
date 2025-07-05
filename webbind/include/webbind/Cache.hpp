@@ -17,12 +17,18 @@ public:
     static Cache take_ownership(Handle h) noexcept;
 
     Cache clone() const noexcept;
+    jsbind::Promise match(const jsbind::Any& request);
     jsbind::Promise match(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise matchAll();
+    jsbind::Promise matchAll(const jsbind::Any& request);
     jsbind::Promise matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
     jsbind::Promise add(const jsbind::Any& request);
     jsbind::Promise addAll(const jsbind::Sequence<jsbind::Any>& requests);
     jsbind::Promise put(const jsbind::Any& request, const Response& response);
+    jsbind::Promise delete_(const jsbind::Any& request);
     jsbind::Promise delete_(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise keys();
+    jsbind::Promise keys(const jsbind::Any& request);
     jsbind::Promise keys(const jsbind::Any& request, const CacheQueryOptions& options);
 };
 

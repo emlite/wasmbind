@@ -13,6 +13,7 @@ public:
     static USBIsochronousInTransferPacket take_ownership(Handle h) noexcept;
 
     USBIsochronousInTransferPacket clone() const noexcept;
+    USBIsochronousInTransferPacket(const USBTransferStatus& status);
     USBIsochronousInTransferPacket(const USBTransferStatus& status, const jsbind::DataView& data);
     jsbind::DataView data() const;
     USBTransferStatus status() const;

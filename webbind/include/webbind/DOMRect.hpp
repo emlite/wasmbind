@@ -16,7 +16,12 @@ public:
     static DOMRect take_ownership(Handle h) noexcept;
 
     DOMRect clone() const noexcept;
+    DOMRect();
+    DOMRect(double x);
+    DOMRect(double x, double y);
+    DOMRect(double x, double y, double width);
     DOMRect(double x, double y, double width, double height);
+    static DOMRect fromRect();
     static DOMRect fromRect(const DOMRectInit& other);
     double x() const;
     void x(double value);

@@ -26,6 +26,10 @@ BackgroundFetchManager::BackgroundFetchManager(Handle h) noexcept : emlite::Val(
 BackgroundFetchManager::BackgroundFetchManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise BackgroundFetchManager::fetch(const jsbind::DOMString& id, const jsbind::Any& requests) {
+    return emlite::Val::call("fetch", id, requests).as<jsbind::Promise>();
+}
+
 jsbind::Promise BackgroundFetchManager::fetch(const jsbind::DOMString& id, const jsbind::Any& requests, const BackgroundFetchOptions& options) {
     return emlite::Val::call("fetch", id, requests, options).as<jsbind::Promise>();
 }

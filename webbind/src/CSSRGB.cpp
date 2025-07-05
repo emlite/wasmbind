@@ -9,7 +9,9 @@ CSSRGB::CSSRGB(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)
 CSSRGB::CSSRGB(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 
-CSSRGB::CSSRGB(const jsbind::Any& r, const jsbind::Any& g, const jsbind::Any& b, const jsbind::Any& alpha): CSSColorValue(emlite::Val::global("CSSRGB").new_(r, g, b, alpha)) {}
+CSSRGB::CSSRGB(const jsbind::Any& r, const jsbind::Any& g, const jsbind::Any& b) : CSSColorValue(emlite::Val::global("CSSRGB").new_(r, g, b)) {}
+
+CSSRGB::CSSRGB(const jsbind::Any& r, const jsbind::Any& g, const jsbind::Any& b, const jsbind::Any& alpha) : CSSColorValue(emlite::Val::global("CSSRGB").new_(r, g, b, alpha)) {}
 
 jsbind::Any CSSRGB::r() const {
     return CSSColorValue::get("r").as<jsbind::Any>();

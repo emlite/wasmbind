@@ -11,7 +11,9 @@ InputEvent::InputEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(
 InputEvent::InputEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-InputEvent::InputEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): UIEvent(emlite::Val::global("InputEvent").new_(type, eventInitDict)) {}
+InputEvent::InputEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("InputEvent").new_(type)) {}
+
+InputEvent::InputEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("InputEvent").new_(type, eventInitDict)) {}
 
 jsbind::USVString InputEvent::data() const {
     return UIEvent::get("data").as<jsbind::USVString>();

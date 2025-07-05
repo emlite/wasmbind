@@ -10,7 +10,13 @@ WorkletAnimation::WorkletAnimation(Handle h) noexcept : Animation(emlite::Val::t
 WorkletAnimation::WorkletAnimation(const emlite::Val &val) noexcept: Animation(val) {}
 
 
-WorkletAnimation::WorkletAnimation(const jsbind::DOMString& animatorName, const jsbind::Any& effects, const AnimationTimeline& timeline, const jsbind::Any& options): Animation(emlite::Val::global("WorkletAnimation").new_(animatorName, effects, timeline, options)) {}
+WorkletAnimation::WorkletAnimation(const jsbind::DOMString& animatorName) : Animation(emlite::Val::global("WorkletAnimation").new_(animatorName)) {}
+
+WorkletAnimation::WorkletAnimation(const jsbind::DOMString& animatorName, const jsbind::Any& effects) : Animation(emlite::Val::global("WorkletAnimation").new_(animatorName, effects)) {}
+
+WorkletAnimation::WorkletAnimation(const jsbind::DOMString& animatorName, const jsbind::Any& effects, const AnimationTimeline& timeline) : Animation(emlite::Val::global("WorkletAnimation").new_(animatorName, effects, timeline)) {}
+
+WorkletAnimation::WorkletAnimation(const jsbind::DOMString& animatorName, const jsbind::Any& effects, const AnimationTimeline& timeline, const jsbind::Any& options) : Animation(emlite::Val::global("WorkletAnimation").new_(animatorName, effects, timeline, options)) {}
 
 jsbind::DOMString WorkletAnimation::animatorName() const {
     return Animation::get("animatorName").as<jsbind::DOMString>();

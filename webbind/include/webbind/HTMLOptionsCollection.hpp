@@ -18,6 +18,7 @@ public:
     HTMLOptionsCollection clone() const noexcept;
     unsigned long length() const;
     void length(unsigned long value);
+    jsbind::Undefined add(const jsbind::Any& element);
     jsbind::Undefined add(const jsbind::Any& element, const jsbind::Any& before);
     jsbind::Undefined remove(long index);
     long selectedIndex() const;

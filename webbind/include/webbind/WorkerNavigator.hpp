@@ -33,6 +33,7 @@ public:
     ServiceWorkerContainer serviceWorker() const;
     HID hid() const;
     USB usb() const;
+    jsbind::Promise setAppBadge();
     jsbind::Promise setAppBadge(long long contents);
     jsbind::Promise clearAppBadge();
     double deviceMemory() const;

@@ -9,7 +9,7 @@ ByteLengthQueuingStrategy::ByteLengthQueuingStrategy(Handle h) noexcept : emlite
 ByteLengthQueuingStrategy::ByteLengthQueuingStrategy(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ByteLengthQueuingStrategy::ByteLengthQueuingStrategy(const jsbind::Any& init): emlite::Val(emlite::Val::global("ByteLengthQueuingStrategy").new_(init)) {}
+ByteLengthQueuingStrategy::ByteLengthQueuingStrategy(const jsbind::Any& init) : emlite::Val(emlite::Val::global("ByteLengthQueuingStrategy").new_(init)) {}
 
 double ByteLengthQueuingStrategy::highWaterMark() const {
     return emlite::Val::get("highWaterMark").as<double>();

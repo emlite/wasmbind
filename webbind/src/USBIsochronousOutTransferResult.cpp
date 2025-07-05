@@ -10,7 +10,7 @@ USBIsochronousOutTransferResult::USBIsochronousOutTransferResult(Handle h) noexc
 USBIsochronousOutTransferResult::USBIsochronousOutTransferResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBIsochronousOutTransferResult::USBIsochronousOutTransferResult(const jsbind::Sequence<USBIsochronousOutTransferPacket>& packets): emlite::Val(emlite::Val::global("USBIsochronousOutTransferResult").new_(packets)) {}
+USBIsochronousOutTransferResult::USBIsochronousOutTransferResult(const jsbind::Sequence<USBIsochronousOutTransferPacket>& packets) : emlite::Val(emlite::Val::global("USBIsochronousOutTransferResult").new_(packets)) {}
 
 jsbind::FrozenArray<USBIsochronousOutTransferPacket> USBIsochronousOutTransferResult::packets() const {
     return emlite::Val::get("packets").as<jsbind::FrozenArray<USBIsochronousOutTransferPacket>>();

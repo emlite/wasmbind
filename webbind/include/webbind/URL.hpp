@@ -16,8 +16,11 @@ public:
     static URL take_ownership(Handle h) noexcept;
 
     URL clone() const noexcept;
+    URL(const jsbind::USVString& url);
     URL(const jsbind::USVString& url, const jsbind::USVString& base);
+    static URL parse(const jsbind::USVString& url);
     static URL parse(const jsbind::USVString& url, const jsbind::USVString& base);
+    static bool canParse(const jsbind::USVString& url);
     static bool canParse(const jsbind::USVString& url, const jsbind::USVString& base);
     jsbind::USVString href() const;
     void href(const jsbind::USVString& value);

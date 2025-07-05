@@ -47,6 +47,10 @@ SVGTransform SVGTransformList::appendItem(const SVGTransform& newItem) {
     return emlite::Val::call("appendItem", newItem).as<SVGTransform>();
 }
 
+SVGTransform SVGTransformList::createSVGTransformFromMatrix() {
+    return emlite::Val::call("createSVGTransformFromMatrix").as<SVGTransform>();
+}
+
 SVGTransform SVGTransformList::createSVGTransformFromMatrix(const DOMMatrix2DInit& matrix) {
     return emlite::Val::call("createSVGTransformFromMatrix", matrix).as<SVGTransform>();
 }

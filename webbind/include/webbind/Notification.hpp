@@ -32,8 +32,10 @@ public:
     static Notification take_ownership(Handle h) noexcept;
 
     Notification clone() const noexcept;
+    Notification(const jsbind::DOMString& title);
     Notification(const jsbind::DOMString& title, const NotificationOptions& options);
     static NotificationPermission permission();
+    static jsbind::Promise requestPermission();
     static jsbind::Promise requestPermission(const jsbind::Function& deprecatedCallback);
     static unsigned long maxActions();
     jsbind::Any onclick() const;

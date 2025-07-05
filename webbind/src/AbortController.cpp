@@ -10,10 +10,14 @@ AbortController::AbortController(Handle h) noexcept : emlite::Val(emlite::Val::t
 AbortController::AbortController(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-AbortController::AbortController(): emlite::Val(emlite::Val::global("AbortController").new_()) {}
+AbortController::AbortController() : emlite::Val(emlite::Val::global("AbortController").new_()) {}
 
 AbortSignal AbortController::signal() const {
     return emlite::Val::get("signal").as<AbortSignal>();
+}
+
+jsbind::Undefined AbortController::abort() {
+    return emlite::Val::call("abort").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined AbortController::abort(const jsbind::Any& reason) {

@@ -32,6 +32,10 @@ jsbind::Promise BluetoothRemoteGATTCharacteristic::getDescriptor(const jsbind::A
     return EventTarget::call("getDescriptor", descriptor).as<jsbind::Promise>();
 }
 
+jsbind::Promise BluetoothRemoteGATTCharacteristic::getDescriptors() {
+    return EventTarget::call("getDescriptors").as<jsbind::Promise>();
+}
+
 jsbind::Promise BluetoothRemoteGATTCharacteristic::getDescriptors(const jsbind::Any& descriptor) {
     return EventTarget::call("getDescriptors", descriptor).as<jsbind::Promise>();
 }

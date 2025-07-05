@@ -13,6 +13,8 @@ public:
     static DOMException take_ownership(Handle h) noexcept;
 
     DOMException clone() const noexcept;
+    DOMException();
+    DOMException(const jsbind::DOMString& message);
     DOMException(const jsbind::DOMString& message, const jsbind::DOMString& name);
     jsbind::DOMString name() const;
     jsbind::DOMString message() const;

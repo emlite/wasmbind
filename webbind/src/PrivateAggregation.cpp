@@ -65,6 +65,10 @@ jsbind::Undefined PrivateAggregation::contributeToHistogramOnEvent(const jsbind:
     return emlite::Val::call("contributeToHistogramOnEvent", event, contribution).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined PrivateAggregation::enableDebugMode() {
+    return emlite::Val::call("enableDebugMode").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PrivateAggregation::enableDebugMode(const PADebugModeOptions& options) {
     return emlite::Val::call("enableDebugMode", options).as<jsbind::Undefined>();
 }

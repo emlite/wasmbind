@@ -97,7 +97,9 @@ public:
     void valueAsNumber(double value);
     unsigned long width() const;
     void width(unsigned long value);
+    jsbind::Undefined stepUp();
     jsbind::Undefined stepUp(long n);
+    jsbind::Undefined stepDown();
     jsbind::Undefined stepDown(long n);
     bool willValidate() const;
     ValidityState validity() const;
@@ -113,7 +115,9 @@ public:
     void selectionEnd(unsigned long value);
     jsbind::DOMString selectionDirection() const;
     void selectionDirection(const jsbind::DOMString& value);
+    jsbind::Undefined setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end);
     jsbind::Undefined setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end, const SelectionMode& selectionMode);
+    jsbind::Undefined setSelectionRange(unsigned long start, unsigned long end);
     jsbind::Undefined setSelectionRange(unsigned long start, unsigned long end, const jsbind::DOMString& direction);
     jsbind::Undefined showPicker();
     bool webkitdirectory() const;

@@ -43,6 +43,10 @@ jsbind::Promise BluetoothDevice::forget() {
     return EventTarget::call("forget").as<jsbind::Promise>();
 }
 
+jsbind::Promise BluetoothDevice::watchAdvertisements() {
+    return EventTarget::call("watchAdvertisements").as<jsbind::Promise>();
+}
+
 jsbind::Promise BluetoothDevice::watchAdvertisements(const WatchAdvertisementsOptions& options) {
     return EventTarget::call("watchAdvertisements", options).as<jsbind::Promise>();
 }

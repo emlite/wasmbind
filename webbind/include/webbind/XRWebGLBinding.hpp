@@ -125,11 +125,17 @@ public:
     XRWebGLBinding(const XRSession& session, const jsbind::Any& context);
     double nativeProjectionScaleFactor() const;
     bool usesDepthValues() const;
+    XRProjectionLayer createProjectionLayer();
     XRProjectionLayer createProjectionLayer(const XRProjectionLayerInit& init);
+    XRQuadLayer createQuadLayer();
     XRQuadLayer createQuadLayer(const XRQuadLayerInit& init);
+    XRCylinderLayer createCylinderLayer();
     XRCylinderLayer createCylinderLayer(const XRCylinderLayerInit& init);
+    XREquirectLayer createEquirectLayer();
     XREquirectLayer createEquirectLayer(const XREquirectLayerInit& init);
+    XRCubeLayer createCubeLayer();
     XRCubeLayer createCubeLayer(const XRCubeLayerInit& init);
+    XRWebGLSubImage getSubImage(const XRCompositionLayer& layer, const XRFrame& frame);
     XRWebGLSubImage getSubImage(const XRCompositionLayer& layer, const XRFrame& frame, const XREye& eye);
     XRWebGLSubImage getViewSubImage(const XRProjectionLayer& layer, const XRView& view);
     jsbind::Undefined foveateBoundTexture(const jsbind::Any& target, float fixed_foveation);

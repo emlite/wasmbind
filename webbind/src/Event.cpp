@@ -10,7 +10,9 @@ Event::Event(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Event::Event(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Event::Event(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): emlite::Val(emlite::Val::global("Event").new_(type, eventInitDict)) {}
+Event::Event(const jsbind::DOMString& type) : emlite::Val(emlite::Val::global("Event").new_(type)) {}
+
+Event::Event(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : emlite::Val(emlite::Val::global("Event").new_(type, eventInitDict)) {}
 
 jsbind::DOMString Event::type() const {
     return emlite::Val::get("type").as<jsbind::DOMString>();
@@ -86,6 +88,14 @@ bool Event::isTrusted() const {
 
 jsbind::Any Event::timeStamp() const {
     return emlite::Val::get("timeStamp").as<jsbind::Any>();
+}
+
+jsbind::Undefined Event::initEvent(const jsbind::DOMString& type) {
+    return emlite::Val::call("initEvent", type).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Event::initEvent(const jsbind::DOMString& type, bool bubbles) {
+    return emlite::Val::call("initEvent", type, bubbles).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Event::initEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable) {

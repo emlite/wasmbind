@@ -48,6 +48,10 @@ Document Node::ownerDocument() const {
     return EventTarget::get("ownerDocument").as<Document>();
 }
 
+Node Node::getRootNode() {
+    return EventTarget::call("getRootNode").as<Node>();
+}
+
 Node Node::getRootNode(const GetRootNodeOptions& options) {
     return EventTarget::call("getRootNode", options).as<Node>();
 }
@@ -102,6 +106,10 @@ void Node::textContent(const jsbind::DOMString& value) {
 
 jsbind::Undefined Node::normalize() {
     return EventTarget::call("normalize").as<jsbind::Undefined>();
+}
+
+Node Node::cloneNode() {
+    return EventTarget::call("cloneNode").as<Node>();
 }
 
 Node Node::cloneNode(bool subtree) {

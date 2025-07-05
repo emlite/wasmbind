@@ -17,6 +17,7 @@ public:
     static PageSwapEvent take_ownership(Handle h) noexcept;
 
     PageSwapEvent clone() const noexcept;
+    PageSwapEvent(const jsbind::DOMString& type);
     PageSwapEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     NavigationActivation activation() const;
     ViewTransition viewTransition() const;

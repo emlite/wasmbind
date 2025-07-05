@@ -42,10 +42,16 @@ Notification::Notification(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 Notification::Notification(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-Notification::Notification(const jsbind::DOMString& title, const NotificationOptions& options): EventTarget(emlite::Val::global("Notification").new_(title, options)) {}
+Notification::Notification(const jsbind::DOMString& title) : EventTarget(emlite::Val::global("Notification").new_(title)) {}
+
+Notification::Notification(const jsbind::DOMString& title, const NotificationOptions& options) : EventTarget(emlite::Val::global("Notification").new_(title, options)) {}
 
 NotificationPermission Notification::permission() {
     return emlite::Val::global("notification").get("permission").as<NotificationPermission>();
+}
+
+jsbind::Promise Notification::requestPermission() {
+    return emlite::Val::global("notification").call("requestPermission").as<jsbind::Promise>();
 }
 
 jsbind::Promise Notification::requestPermission(const jsbind::Function& deprecatedCallback) {

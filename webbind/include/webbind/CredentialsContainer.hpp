@@ -42,8 +42,10 @@ public:
     static CredentialsContainer take_ownership(Handle h) noexcept;
 
     CredentialsContainer clone() const noexcept;
+    jsbind::Promise get();
     jsbind::Promise get(const CredentialRequestOptions& options);
     jsbind::Promise store(const Credential& credential);
+    jsbind::Promise create();
     jsbind::Promise create(const CredentialCreationOptions& options);
     jsbind::Promise preventSilentAccess();
 };

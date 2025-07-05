@@ -159,10 +159,22 @@ void RTCIceTransport::onselectedcandidatepairchange(const jsbind::Any& value) {
     EventTarget::set("onselectedcandidatepairchange", value);
 }
 
-RTCIceTransport::RTCIceTransport(): EventTarget(emlite::Val::global("RTCIceTransport").new_()) {}
+RTCIceTransport::RTCIceTransport() : EventTarget(emlite::Val::global("RTCIceTransport").new_()) {}
+
+jsbind::Undefined RTCIceTransport::gather() {
+    return EventTarget::call("gather").as<jsbind::Undefined>();
+}
 
 jsbind::Undefined RTCIceTransport::gather(const RTCIceGatherOptions& options) {
     return EventTarget::call("gather", options).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined RTCIceTransport::start() {
+    return EventTarget::call("start").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined RTCIceTransport::start(const RTCIceParameters& remoteParameters) {
+    return EventTarget::call("start", remoteParameters).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined RTCIceTransport::start(const RTCIceParameters& remoteParameters, const RTCIceRole& role) {
@@ -171,6 +183,10 @@ jsbind::Undefined RTCIceTransport::start(const RTCIceParameters& remoteParameter
 
 jsbind::Undefined RTCIceTransport::stop() {
     return EventTarget::call("stop").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined RTCIceTransport::addRemoteCandidate() {
+    return EventTarget::call("addRemoteCandidate").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined RTCIceTransport::addRemoteCandidate(const RTCIceCandidateInit& remoteCandidate) {

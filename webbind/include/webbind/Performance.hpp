@@ -58,14 +58,20 @@ public:
     jsbind::Promise measureUserAgentSpecificMemory();
     jsbind::Any getEntries();
     jsbind::Any getEntriesByType(const jsbind::DOMString& type);
+    jsbind::Any getEntriesByName(const jsbind::DOMString& name);
     jsbind::Any getEntriesByName(const jsbind::DOMString& name, const jsbind::DOMString& type);
     jsbind::Undefined clearResourceTimings();
     jsbind::Undefined setResourceTimingBufferSize(unsigned long maxSize);
     jsbind::Any onresourcetimingbufferfull() const;
     void onresourcetimingbufferfull(const jsbind::Any& value);
+    PerformanceMark mark(const jsbind::DOMString& markName);
     PerformanceMark mark(const jsbind::DOMString& markName, const PerformanceMarkOptions& markOptions);
+    jsbind::Undefined clearMarks();
     jsbind::Undefined clearMarks(const jsbind::DOMString& markName);
+    PerformanceMeasure measure(const jsbind::DOMString& measureName);
+    PerformanceMeasure measure(const jsbind::DOMString& measureName, const jsbind::Any& startOrMeasureOptions);
     PerformanceMeasure measure(const jsbind::DOMString& measureName, const jsbind::Any& startOrMeasureOptions, const jsbind::DOMString& endMark);
+    jsbind::Undefined clearMeasures();
     jsbind::Undefined clearMeasures(const jsbind::DOMString& measureName);
 };
 

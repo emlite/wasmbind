@@ -9,7 +9,7 @@ HTMLFrameSetElement::HTMLFrameSetElement(Handle h) noexcept : HTMLElement(emlite
 HTMLFrameSetElement::HTMLFrameSetElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLFrameSetElement::HTMLFrameSetElement(): HTMLElement(emlite::Val::global("HTMLFrameSetElement").new_()) {}
+HTMLFrameSetElement::HTMLFrameSetElement() : HTMLElement(emlite::Val::global("HTMLFrameSetElement").new_()) {}
 
 jsbind::DOMString HTMLFrameSetElement::cols() const {
     return HTMLElement::get("cols").as<jsbind::DOMString>();

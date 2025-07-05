@@ -9,7 +9,9 @@ CSSOKLCH::CSSOKLCH(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownershi
 CSSOKLCH::CSSOKLCH(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 
-CSSOKLCH::CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h, const jsbind::Any& alpha): CSSColorValue(emlite::Val::global("CSSOKLCH").new_(l, c, h, alpha)) {}
+CSSOKLCH::CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h) : CSSColorValue(emlite::Val::global("CSSOKLCH").new_(l, c, h)) {}
+
+CSSOKLCH::CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h, const jsbind::Any& alpha) : CSSColorValue(emlite::Val::global("CSSOKLCH").new_(l, c, h, alpha)) {}
 
 jsbind::Any CSSOKLCH::l() const {
     return CSSColorValue::get("l").as<jsbind::Any>();

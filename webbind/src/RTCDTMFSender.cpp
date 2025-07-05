@@ -9,6 +9,14 @@ RTCDTMFSender::RTCDTMFSender(Handle h) noexcept : EventTarget(emlite::Val::take_
 RTCDTMFSender::RTCDTMFSender(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
+jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::DOMString& tones) {
+    return EventTarget::call("insertDTMF", tones).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::DOMString& tones, unsigned long duration) {
+    return EventTarget::call("insertDTMF", tones, duration).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::DOMString& tones, unsigned long duration, unsigned long interToneGap) {
     return EventTarget::call("insertDTMF", tones, duration, interToneGap).as<jsbind::Undefined>();
 }

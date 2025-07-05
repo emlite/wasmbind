@@ -51,8 +51,16 @@ jsbind::Promise ServiceWorkerContainer::ready() const {
     return EventTarget::get("ready").as<jsbind::Promise>();
 }
 
+jsbind::Promise ServiceWorkerContainer::register_(const jsbind::Any& scriptURL) {
+    return EventTarget::call("register", scriptURL).as<jsbind::Promise>();
+}
+
 jsbind::Promise ServiceWorkerContainer::register_(const jsbind::Any& scriptURL, const RegistrationOptions& options) {
     return EventTarget::call("register", scriptURL, options).as<jsbind::Promise>();
+}
+
+jsbind::Promise ServiceWorkerContainer::getRegistration() {
+    return EventTarget::call("getRegistration").as<jsbind::Promise>();
 }
 
 jsbind::Promise ServiceWorkerContainer::getRegistration(const jsbind::USVString& clientURL) {

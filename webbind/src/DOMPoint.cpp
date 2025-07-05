@@ -10,7 +10,19 @@ DOMPoint::DOMPoint(Handle h) noexcept : DOMPointReadOnly(emlite::Val::take_owner
 DOMPoint::DOMPoint(const emlite::Val &val) noexcept: DOMPointReadOnly(val) {}
 
 
-DOMPoint::DOMPoint(double x, double y, double z, double w): DOMPointReadOnly(emlite::Val::global("DOMPoint").new_(x, y, z, w)) {}
+DOMPoint::DOMPoint() : DOMPointReadOnly(emlite::Val::global("DOMPoint").new_()) {}
+
+DOMPoint::DOMPoint(double x) : DOMPointReadOnly(emlite::Val::global("DOMPoint").new_(x)) {}
+
+DOMPoint::DOMPoint(double x, double y) : DOMPointReadOnly(emlite::Val::global("DOMPoint").new_(x, y)) {}
+
+DOMPoint::DOMPoint(double x, double y, double z) : DOMPointReadOnly(emlite::Val::global("DOMPoint").new_(x, y, z)) {}
+
+DOMPoint::DOMPoint(double x, double y, double z, double w) : DOMPointReadOnly(emlite::Val::global("DOMPoint").new_(x, y, z, w)) {}
+
+DOMPoint DOMPoint::fromPoint() {
+    return emlite::Val::global("dompoint").call("fromPoint").as<DOMPoint>();
+}
 
 DOMPoint DOMPoint::fromPoint(const DOMPointInit& other) {
     return emlite::Val::global("dompoint").call("fromPoint", other).as<DOMPoint>();

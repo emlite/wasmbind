@@ -10,7 +10,7 @@ HTMLTrackElement::HTMLTrackElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLTrackElement::HTMLTrackElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTrackElement::HTMLTrackElement(): HTMLElement(emlite::Val::global("HTMLTrackElement").new_()) {}
+HTMLTrackElement::HTMLTrackElement() : HTMLElement(emlite::Val::global("HTMLTrackElement").new_()) {}
 
 jsbind::DOMString HTMLTrackElement::kind() const {
     return HTMLElement::get("kind").as<jsbind::DOMString>();

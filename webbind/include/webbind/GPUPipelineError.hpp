@@ -14,6 +14,8 @@ public:
     static GPUPipelineError take_ownership(Handle h) noexcept;
 
     GPUPipelineError clone() const noexcept;
+    GPUPipelineError();
+    GPUPipelineError(const jsbind::DOMString& message);
     GPUPipelineError(const jsbind::DOMString& message, const jsbind::Any& options);
     GPUPipelineErrorReason reason() const;
 };

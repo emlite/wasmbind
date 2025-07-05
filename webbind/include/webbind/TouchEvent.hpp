@@ -16,6 +16,7 @@ public:
     static TouchEvent take_ownership(Handle h) noexcept;
 
     TouchEvent clone() const noexcept;
+    TouchEvent(const jsbind::DOMString& type);
     TouchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     TouchList touches() const;
     TouchList targetTouches() const;

@@ -9,7 +9,9 @@ Magnetometer::Magnetometer(Handle h) noexcept : Sensor(emlite::Val::take_ownersh
 Magnetometer::Magnetometer(const emlite::Val &val) noexcept: Sensor(val) {}
 
 
-Magnetometer::Magnetometer(const jsbind::Any& sensorOptions): Sensor(emlite::Val::global("Magnetometer").new_(sensorOptions)) {}
+Magnetometer::Magnetometer() : Sensor(emlite::Val::global("Magnetometer").new_()) {}
+
+Magnetometer::Magnetometer(const jsbind::Any& sensorOptions) : Sensor(emlite::Val::global("Magnetometer").new_(sensorOptions)) {}
 
 double Magnetometer::x() const {
     return Sensor::get("x").as<double>();

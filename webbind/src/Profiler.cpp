@@ -57,7 +57,7 @@ bool Profiler::stopped() const {
     return EventTarget::get("stopped").as<bool>();
 }
 
-Profiler::Profiler(const jsbind::Any& options): EventTarget(emlite::Val::global("Profiler").new_(options)) {}
+Profiler::Profiler(const jsbind::Any& options) : EventTarget(emlite::Val::global("Profiler").new_(options)) {}
 
 jsbind::Promise Profiler::stop() {
     return EventTarget::call("stop").as<jsbind::Promise>();

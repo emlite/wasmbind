@@ -31,6 +31,7 @@ public:
     static WebTransportDatagramDuplexStream take_ownership(Handle h) noexcept;
 
     WebTransportDatagramDuplexStream clone() const noexcept;
+    WebTransportDatagramsWritable createWritable();
     WebTransportDatagramsWritable createWritable(const WebTransportSendOptions& options);
     ReadableStream readable() const;
     unsigned long maxDatagramSize() const;

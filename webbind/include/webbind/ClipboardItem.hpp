@@ -15,6 +15,7 @@ public:
     static ClipboardItem take_ownership(Handle h) noexcept;
 
     ClipboardItem clone() const noexcept;
+    ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items);
     ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items, const jsbind::Any& options);
     PresentationStyle presentationStyle() const;
     jsbind::FrozenArray<jsbind::DOMString> types() const;

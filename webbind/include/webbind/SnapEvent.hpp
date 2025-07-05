@@ -16,6 +16,7 @@ public:
     static SnapEvent take_ownership(Handle h) noexcept;
 
     SnapEvent clone() const noexcept;
+    SnapEvent(const jsbind::DOMString& type);
     SnapEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     Node snapTargetBlock() const;
     Node snapTargetInline() const;

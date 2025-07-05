@@ -10,7 +10,7 @@ HTMLMeterElement::HTMLMeterElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLMeterElement::HTMLMeterElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLMeterElement::HTMLMeterElement(): HTMLElement(emlite::Val::global("HTMLMeterElement").new_()) {}
+HTMLMeterElement::HTMLMeterElement() : HTMLElement(emlite::Val::global("HTMLMeterElement").new_()) {}
 
 double HTMLMeterElement::value() const {
     return HTMLElement::get("value").as<double>();

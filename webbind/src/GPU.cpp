@@ -51,6 +51,10 @@ GPU::GPU(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPU::GPU(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise GPU::requestAdapter() {
+    return emlite::Val::call("requestAdapter").as<jsbind::Promise>();
+}
+
 jsbind::Promise GPU::requestAdapter(const GPURequestAdapterOptions& options) {
     return emlite::Val::call("requestAdapter", options).as<jsbind::Promise>();
 }

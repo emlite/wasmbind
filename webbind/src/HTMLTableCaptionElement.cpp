@@ -9,7 +9,7 @@ HTMLTableCaptionElement::HTMLTableCaptionElement(Handle h) noexcept : HTMLElemen
 HTMLTableCaptionElement::HTMLTableCaptionElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTableCaptionElement::HTMLTableCaptionElement(): HTMLElement(emlite::Val::global("HTMLTableCaptionElement").new_()) {}
+HTMLTableCaptionElement::HTMLTableCaptionElement() : HTMLElement(emlite::Val::global("HTMLTableCaptionElement").new_()) {}
 
 jsbind::DOMString HTMLTableCaptionElement::align() const {
     return HTMLElement::get("align").as<jsbind::DOMString>();

@@ -13,6 +13,7 @@ public:
     static TextFormat take_ownership(Handle h) noexcept;
 
     TextFormat clone() const noexcept;
+    TextFormat();
     TextFormat(const jsbind::Any& options);
     unsigned long rangeStart() const;
     unsigned long rangeEnd() const;

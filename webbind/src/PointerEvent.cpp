@@ -9,7 +9,9 @@ PointerEvent::PointerEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_own
 PointerEvent::PointerEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
 
-PointerEvent::PointerEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): MouseEvent(emlite::Val::global("PointerEvent").new_(type, eventInitDict)) {}
+PointerEvent::PointerEvent(const jsbind::DOMString& type) : MouseEvent(emlite::Val::global("PointerEvent").new_(type)) {}
+
+PointerEvent::PointerEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : MouseEvent(emlite::Val::global("PointerEvent").new_(type, eventInitDict)) {}
 
 long PointerEvent::pointerId() const {
     return MouseEvent::get("pointerId").as<long>();

@@ -69,9 +69,13 @@ public:
     static Summarizer take_ownership(Handle h) noexcept;
 
     Summarizer clone() const noexcept;
+    static jsbind::Promise create();
     static jsbind::Promise create(const SummarizerCreateOptions& options);
+    static jsbind::Promise availability();
     static jsbind::Promise availability(const SummarizerCreateCoreOptions& options);
+    jsbind::Promise summarize(const jsbind::DOMString& input);
     jsbind::Promise summarize(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options);
+    ReadableStream summarizeStreaming(const jsbind::DOMString& input);
     ReadableStream summarizeStreaming(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options);
     jsbind::DOMString sharedContext() const;
     SummarizerType type() const;
@@ -80,6 +84,7 @@ public:
     jsbind::FrozenArray<jsbind::DOMString> expectedInputLanguages() const;
     jsbind::FrozenArray<jsbind::DOMString> expectedContextLanguages() const;
     jsbind::DOMString outputLanguage() const;
+    jsbind::Promise measureInputUsage(const jsbind::DOMString& input);
     jsbind::Promise measureInputUsage(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();

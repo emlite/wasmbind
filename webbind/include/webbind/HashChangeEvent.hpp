@@ -14,6 +14,7 @@ public:
     static HashChangeEvent take_ownership(Handle h) noexcept;
 
     HashChangeEvent clone() const noexcept;
+    HashChangeEvent(const jsbind::DOMString& type);
     HashChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::USVString oldURL() const;
     jsbind::USVString newURL() const;

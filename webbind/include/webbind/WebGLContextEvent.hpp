@@ -14,6 +14,7 @@ public:
     static WebGLContextEvent take_ownership(Handle h) noexcept;
 
     WebGLContextEvent clone() const noexcept;
+    WebGLContextEvent(const jsbind::DOMString& type);
     WebGLContextEvent(const jsbind::DOMString& type, const jsbind::Any& eventInit);
     jsbind::DOMString statusMessage() const;
 };

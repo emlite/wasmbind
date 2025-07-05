@@ -9,7 +9,7 @@ HTMLUListElement::HTMLUListElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLUListElement::HTMLUListElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLUListElement::HTMLUListElement(): HTMLElement(emlite::Val::global("HTMLUListElement").new_()) {}
+HTMLUListElement::HTMLUListElement() : HTMLElement(emlite::Val::global("HTMLUListElement").new_()) {}
 
 bool HTMLUListElement::compact() const {
     return HTMLElement::get("compact").as<bool>();

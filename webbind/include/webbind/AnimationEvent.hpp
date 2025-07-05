@@ -14,6 +14,7 @@ public:
     static AnimationEvent take_ownership(Handle h) noexcept;
 
     AnimationEvent clone() const noexcept;
+    AnimationEvent(const jsbind::CSSOMString& type);
     AnimationEvent(const jsbind::CSSOMString& type, const jsbind::Any& animationEventInitDict);
     jsbind::CSSOMString animationName() const;
     double elapsedTime() const;

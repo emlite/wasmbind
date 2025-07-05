@@ -9,7 +9,9 @@ SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(Handle h) noexcept : 
 SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type, eventInitDict)) {}
+SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type)) {}
+
+SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type, eventInitDict)) {}
 
 jsbind::USVString SecurityPolicyViolationEvent::documentURI() const {
     return Event::get("documentURI").as<jsbind::USVString>();

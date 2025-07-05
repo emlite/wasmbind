@@ -9,5 +9,5 @@ HTMLHeadElement::HTMLHeadElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLHeadElement::HTMLHeadElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLHeadElement::HTMLHeadElement(): HTMLElement(emlite::Val::global("HTMLHeadElement").new_()) {}
+HTMLHeadElement::HTMLHeadElement() : HTMLElement(emlite::Val::global("HTMLHeadElement").new_()) {}
 

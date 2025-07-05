@@ -41,6 +41,7 @@ public:
 
     MutationObserver clone() const noexcept;
     MutationObserver(const jsbind::Function& callback);
+    jsbind::Undefined observe(const Node& target);
     jsbind::Undefined observe(const Node& target, const MutationObserverInit& options);
     jsbind::Undefined disconnect();
     jsbind::Sequence<MutationRecord> takeRecords();

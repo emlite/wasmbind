@@ -31,6 +31,7 @@ public:
     static Scheduler take_ownership(Handle h) noexcept;
 
     Scheduler clone() const noexcept;
+    jsbind::Promise postTask(const jsbind::Function& callback);
     jsbind::Promise postTask(const jsbind::Function& callback, const SchedulerPostTaskOptions& options);
     jsbind::Promise yield();
 };

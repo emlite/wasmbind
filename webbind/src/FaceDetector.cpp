@@ -34,7 +34,9 @@ FaceDetector::FaceDetector(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 FaceDetector::FaceDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-FaceDetector::FaceDetector(const jsbind::Any& faceDetectorOptions): emlite::Val(emlite::Val::global("FaceDetector").new_(faceDetectorOptions)) {}
+FaceDetector::FaceDetector() : emlite::Val(emlite::Val::global("FaceDetector").new_()) {}
+
+FaceDetector::FaceDetector(const jsbind::Any& faceDetectorOptions) : emlite::Val(emlite::Val::global("FaceDetector").new_(faceDetectorOptions)) {}
 
 jsbind::Promise FaceDetector::detect(const jsbind::Any& image) {
     return emlite::Val::call("detect", image).as<jsbind::Promise>();

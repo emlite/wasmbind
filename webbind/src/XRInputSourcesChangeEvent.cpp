@@ -11,7 +11,7 @@ XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(Handle h) noexcept : Event(
 XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("XRInputSourcesChangeEvent").new_(type, eventInitDict)) {}
+XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRInputSourcesChangeEvent").new_(type, eventInitDict)) {}
 
 XRSession XRInputSourcesChangeEvent::session() const {
     return Event::get("session").as<XRSession>();

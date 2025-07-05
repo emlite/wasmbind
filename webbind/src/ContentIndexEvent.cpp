@@ -9,7 +9,7 @@ ContentIndexEvent::ContentIndexEvent(Handle h) noexcept : ExtendableEvent(emlite
 ContentIndexEvent::ContentIndexEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-ContentIndexEvent::ContentIndexEvent(const jsbind::DOMString& type, const jsbind::Any& init): ExtendableEvent(emlite::Val::global("ContentIndexEvent").new_(type, init)) {}
+ContentIndexEvent::ContentIndexEvent(const jsbind::DOMString& type, const jsbind::Any& init) : ExtendableEvent(emlite::Val::global("ContentIndexEvent").new_(type, init)) {}
 
 jsbind::DOMString ContentIndexEvent::id() const {
     return ExtendableEvent::get("id").as<jsbind::DOMString>();

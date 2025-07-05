@@ -9,7 +9,7 @@ PromiseRejectionEvent::PromiseRejectionEvent(Handle h) noexcept : Event(emlite::
 PromiseRejectionEvent::PromiseRejectionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-PromiseRejectionEvent::PromiseRejectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("PromiseRejectionEvent").new_(type, eventInitDict)) {}
+PromiseRejectionEvent::PromiseRejectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PromiseRejectionEvent").new_(type, eventInitDict)) {}
 
 jsbind::Object PromiseRejectionEvent::promise() const {
     return Event::get("promise").as<jsbind::Object>();

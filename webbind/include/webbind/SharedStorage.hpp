@@ -54,13 +54,21 @@ public:
 
     SharedStorage clone() const noexcept;
     jsbind::Promise get(const jsbind::DOMString& key);
+    jsbind::Promise set(const jsbind::DOMString& key, const jsbind::DOMString& value);
     jsbind::Promise set(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageSetMethodOptions& options);
+    jsbind::Promise append(const jsbind::DOMString& key, const jsbind::DOMString& value);
     jsbind::Promise append(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageModifierMethodOptions& options);
+    jsbind::Promise delete_(const jsbind::DOMString& key);
     jsbind::Promise delete_(const jsbind::DOMString& key, const SharedStorageModifierMethodOptions& options);
+    jsbind::Promise clear();
     jsbind::Promise clear(const SharedStorageModifierMethodOptions& options);
+    jsbind::Promise batchUpdate(const jsbind::Sequence<SharedStorageModifierMethod>& methods);
     jsbind::Promise batchUpdate(const jsbind::Sequence<SharedStorageModifierMethod>& methods, const SharedStorageModifierMethodOptions& options);
+    jsbind::Promise selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls);
     jsbind::Promise selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options);
+    jsbind::Promise run(const jsbind::DOMString& name);
     jsbind::Promise run(const jsbind::DOMString& name, const SharedStorageRunOperationMethodOptions& options);
+    jsbind::Promise createWorklet(const jsbind::USVString& moduleURL);
     jsbind::Promise createWorklet(const jsbind::USVString& moduleURL, const SharedStorageWorkletOptions& options);
     SharedStorageWorklet worklet() const;
     jsbind::Promise length();

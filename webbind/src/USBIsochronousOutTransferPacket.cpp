@@ -9,7 +9,9 @@ USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(Handle h) noexc
 USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(const USBTransferStatus& status, unsigned long bytesWritten): emlite::Val(emlite::Val::global("USBIsochronousOutTransferPacket").new_(status, bytesWritten)) {}
+USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(const USBTransferStatus& status) : emlite::Val(emlite::Val::global("USBIsochronousOutTransferPacket").new_(status)) {}
+
+USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(const USBTransferStatus& status, unsigned long bytesWritten) : emlite::Val(emlite::Val::global("USBIsochronousOutTransferPacket").new_(status, bytesWritten)) {}
 
 unsigned long USBIsochronousOutTransferPacket::bytesWritten() const {
     return emlite::Val::get("bytesWritten").as<unsigned long>();

@@ -13,6 +13,7 @@ public:
     static Headers take_ownership(Handle h) noexcept;
 
     Headers clone() const noexcept;
+    Headers();
     Headers(const jsbind::Any& init);
     jsbind::Undefined append(const jsbind::ByteString& name, const jsbind::ByteString& value);
     jsbind::Undefined delete_(const jsbind::ByteString& name);

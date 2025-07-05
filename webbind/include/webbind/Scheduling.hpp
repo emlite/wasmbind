@@ -26,6 +26,7 @@ public:
     static Scheduling take_ownership(Handle h) noexcept;
 
     Scheduling clone() const noexcept;
+    bool isInputPending();
     bool isInputPending(const IsInputPendingOptions& isInputPendingOptions);
 };
 

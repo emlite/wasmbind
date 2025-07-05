@@ -16,6 +16,7 @@ public:
     static SharedStorageAppendMethod take_ownership(Handle h) noexcept;
 
     SharedStorageAppendMethod clone() const noexcept;
+    SharedStorageAppendMethod(const jsbind::DOMString& key, const jsbind::DOMString& value);
     SharedStorageAppendMethod(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageModifierMethodOptions& options);
 };
 

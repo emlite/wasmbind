@@ -94,6 +94,10 @@ void SVGElement::tabIndex(long value) {
     Element::set("tabIndex", value);
 }
 
+jsbind::Undefined SVGElement::focus() {
+    return Element::call("focus").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined SVGElement::focus(const FocusOptions& options) {
     return Element::call("focus", options).as<jsbind::Undefined>();
 }

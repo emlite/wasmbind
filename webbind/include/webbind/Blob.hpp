@@ -16,9 +16,14 @@ public:
     static Blob take_ownership(Handle h) noexcept;
 
     Blob clone() const noexcept;
+    Blob();
+    Blob(const jsbind::Sequence<jsbind::Any>& blobParts);
     Blob(const jsbind::Sequence<jsbind::Any>& blobParts, const jsbind::Any& options);
     long long size() const;
     jsbind::DOMString type() const;
+    Blob slice();
+    Blob slice(long long start);
+    Blob slice(long long start, long long end);
     Blob slice(long long start, long long end, const jsbind::DOMString& contentType);
     ReadableStream stream();
     jsbind::Promise text();

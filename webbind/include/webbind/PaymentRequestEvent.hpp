@@ -142,6 +142,7 @@ public:
     static PaymentRequestEvent take_ownership(Handle h) noexcept;
 
     PaymentRequestEvent clone() const noexcept;
+    PaymentRequestEvent(const jsbind::DOMString& type);
     PaymentRequestEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::USVString topOrigin() const;
     jsbind::USVString paymentRequestOrigin() const;
@@ -152,7 +153,9 @@ public:
     jsbind::Object paymentOptions() const;
     jsbind::FrozenArray<PaymentShippingOption> shippingOptions() const;
     jsbind::Promise openWindow(const jsbind::USVString& url);
+    jsbind::Promise changePaymentMethod(const jsbind::DOMString& methodName);
     jsbind::Promise changePaymentMethod(const jsbind::DOMString& methodName, const jsbind::Object& methodDetails);
+    jsbind::Promise changeShippingAddress();
     jsbind::Promise changeShippingAddress(const AddressInit& shippingAddress);
     jsbind::Promise changeShippingOption(const jsbind::DOMString& shippingOption);
     jsbind::Undefined respondWith(const jsbind::Promise& handlerResponsePromise);

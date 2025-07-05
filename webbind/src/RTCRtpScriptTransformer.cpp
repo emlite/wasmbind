@@ -15,6 +15,10 @@ ReadableStream RTCRtpScriptTransformer::readable() const {
     return EventTarget::get("readable").as<ReadableStream>();
 }
 
+jsbind::Promise RTCRtpScriptTransformer::generateKeyFrame() {
+    return EventTarget::call("generateKeyFrame").as<jsbind::Promise>();
+}
+
 jsbind::Promise RTCRtpScriptTransformer::generateKeyFrame(const jsbind::DOMString& rid) {
     return EventTarget::call("generateKeyFrame", rid).as<jsbind::Promise>();
 }

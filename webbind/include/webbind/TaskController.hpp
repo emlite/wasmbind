@@ -14,6 +14,7 @@ public:
     static TaskController take_ownership(Handle h) noexcept;
 
     TaskController clone() const noexcept;
+    TaskController();
     TaskController(const jsbind::Any& init);
     jsbind::Undefined setPriority(const TaskPriority& priority);
 };

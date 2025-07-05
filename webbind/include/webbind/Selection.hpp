@@ -43,16 +43,24 @@ public:
     jsbind::Undefined removeRange(const Range& range);
     jsbind::Undefined removeAllRanges();
     jsbind::Undefined empty();
+    jsbind::Sequence<StaticRange> getComposedRanges();
     jsbind::Sequence<StaticRange> getComposedRanges(const GetComposedRangesOptions& options);
+    jsbind::Undefined collapse(const Node& node);
     jsbind::Undefined collapse(const Node& node, unsigned long offset);
+    jsbind::Undefined setPosition(const Node& node);
     jsbind::Undefined setPosition(const Node& node, unsigned long offset);
     jsbind::Undefined collapseToStart();
     jsbind::Undefined collapseToEnd();
+    jsbind::Undefined extend(const Node& node);
     jsbind::Undefined extend(const Node& node, unsigned long offset);
     jsbind::Undefined setBaseAndExtent(const Node& anchorNode, unsigned long anchorOffset, const Node& focusNode, unsigned long focusOffset);
     jsbind::Undefined selectAllChildren(const Node& node);
+    jsbind::Undefined modify();
+    jsbind::Undefined modify(const jsbind::DOMString& alter);
+    jsbind::Undefined modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction);
     jsbind::Undefined modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction, const jsbind::DOMString& granularity);
     jsbind::Undefined deleteFromDocument();
+    bool containsNode(const Node& node);
     bool containsNode(const Node& node, bool allowPartialContainment);
 };
 

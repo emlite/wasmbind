@@ -13,6 +13,7 @@ public:
     static USBInTransferResult take_ownership(Handle h) noexcept;
 
     USBInTransferResult clone() const noexcept;
+    USBInTransferResult(const USBTransferStatus& status);
     USBInTransferResult(const USBTransferStatus& status, const jsbind::DataView& data);
     jsbind::DataView data() const;
     USBTransferStatus status() const;

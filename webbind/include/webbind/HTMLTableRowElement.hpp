@@ -21,6 +21,7 @@ public:
     long rowIndex() const;
     long sectionRowIndex() const;
     HTMLCollection cells() const;
+    HTMLTableCellElement insertCell();
     HTMLTableCellElement insertCell(long index);
     jsbind::Undefined deleteCell(long index);
     jsbind::DOMString align() const;

@@ -10,7 +10,13 @@ Path2D::Path2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) 
 Path2D::Path2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Path2D::Path2D(const jsbind::Any& path): emlite::Val(emlite::Val::global("Path2D").new_(path)) {}
+Path2D::Path2D() : emlite::Val(emlite::Val::global("Path2D").new_()) {}
+
+Path2D::Path2D(const jsbind::Any& path) : emlite::Val(emlite::Val::global("Path2D").new_(path)) {}
+
+jsbind::Undefined Path2D::addPath(const Path2D& path) {
+    return emlite::Val::call("addPath", path).as<jsbind::Undefined>();
+}
 
 jsbind::Undefined Path2D::addPath(const Path2D& path, const DOMMatrix2DInit& transform) {
     return emlite::Val::call("addPath", path, transform).as<jsbind::Undefined>();
@@ -44,12 +50,24 @@ jsbind::Undefined Path2D::rect(double x, double y, double w, double h) {
     return emlite::Val::call("rect", x, y, w, h).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined Path2D::roundRect(double x, double y, double w, double h) {
+    return emlite::Val::call("roundRect", x, y, w, h).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Path2D::roundRect(double x, double y, double w, double h, const jsbind::Any& radii) {
     return emlite::Val::call("roundRect", x, y, w, h, radii).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined Path2D::arc(double x, double y, double radius, double startAngle, double endAngle) {
+    return emlite::Val::call("arc", x, y, radius, startAngle, endAngle).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Path2D::arc(double x, double y, double radius, double startAngle, double endAngle, bool counterclockwise) {
     return emlite::Val::call("arc", x, y, radius, startAngle, endAngle, counterclockwise).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Path2D::ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle) {
+    return emlite::Val::call("ellipse", x, y, radiusX, radiusY, rotation, startAngle, endAngle).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Path2D::ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle, bool counterclockwise) {

@@ -42,6 +42,10 @@ StorageBucketManager::StorageBucketManager(Handle h) noexcept : emlite::Val(emli
 StorageBucketManager::StorageBucketManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise StorageBucketManager::open(const jsbind::DOMString& name) {
+    return emlite::Val::call("open", name).as<jsbind::Promise>();
+}
+
 jsbind::Promise StorageBucketManager::open(const jsbind::DOMString& name, const StorageBucketOptions& options) {
     return emlite::Val::call("open", name, options).as<jsbind::Promise>();
 }

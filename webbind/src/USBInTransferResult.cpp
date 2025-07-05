@@ -9,7 +9,9 @@ USBInTransferResult::USBInTransferResult(Handle h) noexcept : emlite::Val(emlite
 USBInTransferResult::USBInTransferResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBInTransferResult::USBInTransferResult(const USBTransferStatus& status, const jsbind::DataView& data): emlite::Val(emlite::Val::global("USBInTransferResult").new_(status, data)) {}
+USBInTransferResult::USBInTransferResult(const USBTransferStatus& status) : emlite::Val(emlite::Val::global("USBInTransferResult").new_(status)) {}
+
+USBInTransferResult::USBInTransferResult(const USBTransferStatus& status, const jsbind::DataView& data) : emlite::Val(emlite::Val::global("USBInTransferResult").new_(status, data)) {}
 
 jsbind::DataView USBInTransferResult::data() const {
     return emlite::Val::get("data").as<jsbind::DataView>();

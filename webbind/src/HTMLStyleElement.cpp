@@ -11,7 +11,7 @@ HTMLStyleElement::HTMLStyleElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLStyleElement::HTMLStyleElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLStyleElement::HTMLStyleElement(): HTMLElement(emlite::Val::global("HTMLStyleElement").new_()) {}
+HTMLStyleElement::HTMLStyleElement() : HTMLElement(emlite::Val::global("HTMLStyleElement").new_()) {}
 
 bool HTMLStyleElement::disabled() const {
     return HTMLElement::get("disabled").as<bool>();

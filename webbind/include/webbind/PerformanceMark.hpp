@@ -16,6 +16,7 @@ public:
     static PerformanceMark take_ownership(Handle h) noexcept;
 
     PerformanceMark clone() const noexcept;
+    PerformanceMark(const jsbind::DOMString& markName);
     PerformanceMark(const jsbind::DOMString& markName, const PerformanceMarkOptions& markOptions);
     jsbind::Any detail() const;
 };

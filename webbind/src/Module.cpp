@@ -65,7 +65,7 @@ Module::Module(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) 
 Module::Module(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Module::Module(const jsbind::Any& bytes): emlite::Val(emlite::Val::global("Module").new_(bytes)) {}
+Module::Module(const jsbind::Any& bytes) : emlite::Val(emlite::Val::global("Module").new_(bytes)) {}
 
 jsbind::Sequence<ModuleExportDescriptor> Module::exports(const Module& moduleObject) {
     return emlite::Val::global("module").call("exports", moduleObject).as<jsbind::Sequence<ModuleExportDescriptor>>();

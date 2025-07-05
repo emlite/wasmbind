@@ -14,6 +14,7 @@ public:
     static Accelerometer take_ownership(Handle h) noexcept;
 
     Accelerometer clone() const noexcept;
+    Accelerometer();
     Accelerometer(const jsbind::Any& options);
     double x() const;
     double y() const;

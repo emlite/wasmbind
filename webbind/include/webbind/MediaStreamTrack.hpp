@@ -98,6 +98,7 @@ public:
     MediaTrackCapabilities getCapabilities();
     MediaTrackConstraints getConstraints();
     MediaTrackSettings getSettings();
+    jsbind::Promise applyConstraints();
     jsbind::Promise applyConstraints(const MediaTrackConstraints& constraints);
     CaptureHandle getCaptureHandle();
     jsbind::Any oncapturehandlechange() const;

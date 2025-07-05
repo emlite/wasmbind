@@ -9,7 +9,7 @@ HTMLBodyElement::HTMLBodyElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLBodyElement::HTMLBodyElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLBodyElement::HTMLBodyElement(): HTMLElement(emlite::Val::global("HTMLBodyElement").new_()) {}
+HTMLBodyElement::HTMLBodyElement() : HTMLElement(emlite::Val::global("HTMLBodyElement").new_()) {}
 
 jsbind::Any HTMLBodyElement::onorientationchange() const {
     return HTMLElement::get("onorientationchange").as<jsbind::Any>();

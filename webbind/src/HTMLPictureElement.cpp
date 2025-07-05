@@ -9,5 +9,5 @@ HTMLPictureElement::HTMLPictureElement(Handle h) noexcept : HTMLElement(emlite::
 HTMLPictureElement::HTMLPictureElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLPictureElement::HTMLPictureElement(): HTMLElement(emlite::Val::global("HTMLPictureElement").new_()) {}
+HTMLPictureElement::HTMLPictureElement() : HTMLElement(emlite::Val::global("HTMLPictureElement").new_()) {}
 

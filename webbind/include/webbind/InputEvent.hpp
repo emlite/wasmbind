@@ -17,6 +17,7 @@ public:
     static InputEvent take_ownership(Handle h) noexcept;
 
     InputEvent clone() const noexcept;
+    InputEvent(const jsbind::DOMString& type);
     InputEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::USVString data() const;
     bool isComposing() const;

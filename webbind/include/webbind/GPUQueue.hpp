@@ -65,6 +65,8 @@ public:
     GPUQueue clone() const noexcept;
     jsbind::Undefined submit(const jsbind::Sequence<GPUCommandBuffer>& commandBuffers);
     jsbind::Promise onSubmittedWorkDone();
+    jsbind::Undefined writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data);
+    jsbind::Undefined writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data, const jsbind::Any& dataOffset);
     jsbind::Undefined writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data, const jsbind::Any& dataOffset, const jsbind::Any& size);
     jsbind::Undefined writeTexture(const GPUTexelCopyTextureInfo& destination, const jsbind::Any& data, const GPUTexelCopyBufferLayout& dataLayout, const jsbind::Any& size);
     jsbind::Undefined copyExternalImageToTexture(const GPUCopyExternalImageSourceInfo& source, const GPUCopyExternalImageDestInfo& destination, const jsbind::Any& copySize);

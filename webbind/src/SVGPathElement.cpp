@@ -44,6 +44,10 @@ SVGPathSegment SVGPathElement::getPathSegmentAtLength(float distance) {
     return SVGGeometryElement::call("getPathSegmentAtLength", distance).as<SVGPathSegment>();
 }
 
+jsbind::Sequence<SVGPathSegment> SVGPathElement::getPathData() {
+    return SVGGeometryElement::call("getPathData").as<jsbind::Sequence<SVGPathSegment>>();
+}
+
 jsbind::Sequence<SVGPathSegment> SVGPathElement::getPathData(const SVGPathDataSettings& settings) {
     return SVGGeometryElement::call("getPathData", settings).as<jsbind::Sequence<SVGPathSegment>>();
 }

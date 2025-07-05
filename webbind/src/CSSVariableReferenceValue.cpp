@@ -10,7 +10,9 @@ CSSVariableReferenceValue::CSSVariableReferenceValue(Handle h) noexcept : emlite
 CSSVariableReferenceValue::CSSVariableReferenceValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::USVString& variable, const CSSUnparsedValue& fallback): emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable, fallback)) {}
+CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::USVString& variable) : emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable)) {}
+
+CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::USVString& variable, const CSSUnparsedValue& fallback) : emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable, fallback)) {}
 
 jsbind::USVString CSSVariableReferenceValue::variable() const {
     return emlite::Val::get("variable").as<jsbind::USVString>();

@@ -9,12 +9,20 @@ InterestGroupBiddingScriptRunnerGlobalScope::InterestGroupBiddingScriptRunnerGlo
 InterestGroupBiddingScriptRunnerGlobalScope::InterestGroupBiddingScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupBiddingAndScoringScriptRunnerGlobalScope(val) {}
 
 
+bool InterestGroupBiddingScriptRunnerGlobalScope::setBid() {
+    return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setBid").as<bool>();
+}
+
 bool InterestGroupBiddingScriptRunnerGlobalScope::setBid(const jsbind::Any& oneOrManyBids) {
     return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setBid", oneOrManyBids).as<bool>();
 }
 
 jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPriority(double priority) {
     return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setPriority", priority).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPrioritySignalsOverride(const jsbind::DOMString& key) {
+    return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setPrioritySignalsOverride", key).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPrioritySignalsOverride(const jsbind::DOMString& key, double priority) {

@@ -11,7 +11,7 @@ XRRay::XRRay(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRRay::XRRay(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-XRRay::XRRay(const XRRigidTransform& transform): emlite::Val(emlite::Val::global("XRRay").new_(transform)) {}
+XRRay::XRRay(const XRRigidTransform& transform) : emlite::Val(emlite::Val::global("XRRay").new_(transform)) {}
 
 DOMPointReadOnly XRRay::origin() const {
     return emlite::Val::get("origin").as<DOMPointReadOnly>();

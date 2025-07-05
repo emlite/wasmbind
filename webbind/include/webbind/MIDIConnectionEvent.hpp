@@ -16,6 +16,7 @@ public:
     static MIDIConnectionEvent take_ownership(Handle h) noexcept;
 
     MIDIConnectionEvent clone() const noexcept;
+    MIDIConnectionEvent(const jsbind::DOMString& type);
     MIDIConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     MIDIPort port() const;
 };

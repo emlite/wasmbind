@@ -269,7 +269,13 @@ RTCPeerConnection::RTCPeerConnection(Handle h) noexcept : EventTarget(emlite::Va
 RTCPeerConnection::RTCPeerConnection(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-RTCPeerConnection::RTCPeerConnection(const RTCConfiguration& configuration): EventTarget(emlite::Val::global("RTCPeerConnection").new_(configuration)) {}
+RTCPeerConnection::RTCPeerConnection() : EventTarget(emlite::Val::global("RTCPeerConnection").new_()) {}
+
+RTCPeerConnection::RTCPeerConnection(const RTCConfiguration& configuration) : EventTarget(emlite::Val::global("RTCPeerConnection").new_(configuration)) {}
+
+jsbind::Promise RTCPeerConnection::createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
+    return EventTarget::call("createOffer", successCallback, failureCallback).as<jsbind::Promise>();
+}
 
 jsbind::Promise RTCPeerConnection::createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback, const RTCOfferOptions& options) {
     return EventTarget::call("createOffer", successCallback, failureCallback, options).as<jsbind::Promise>();
@@ -343,6 +349,10 @@ RTCConfiguration RTCPeerConnection::getConfiguration() {
     return EventTarget::call("getConfiguration").as<RTCConfiguration>();
 }
 
+jsbind::Undefined RTCPeerConnection::setConfiguration() {
+    return EventTarget::call("setConfiguration").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined RTCPeerConnection::setConfiguration(const RTCConfiguration& configuration) {
     return EventTarget::call("setConfiguration", configuration).as<jsbind::Undefined>();
 }
@@ -407,6 +417,10 @@ void RTCPeerConnection::onconnectionstatechange(const jsbind::Any& value) {
     EventTarget::set("onconnectionstatechange", value);
 }
 
+jsbind::Undefined RTCPeerConnection::setIdentityProvider(const jsbind::DOMString& provider) {
+    return EventTarget::call("setIdentityProvider", provider).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined RTCPeerConnection::setIdentityProvider(const jsbind::DOMString& provider, const RTCIdentityProviderOptions& options) {
     return EventTarget::call("setIdentityProvider", provider, options).as<jsbind::Undefined>();
 }
@@ -451,6 +465,10 @@ jsbind::Undefined RTCPeerConnection::removeTrack(const RTCRtpSender& sender) {
     return EventTarget::call("removeTrack", sender).as<jsbind::Undefined>();
 }
 
+RTCRtpTransceiver RTCPeerConnection::addTransceiver(const jsbind::Any& trackOrKind) {
+    return EventTarget::call("addTransceiver", trackOrKind).as<RTCRtpTransceiver>();
+}
+
 RTCRtpTransceiver RTCPeerConnection::addTransceiver(const jsbind::Any& trackOrKind, const RTCRtpTransceiverInit& init) {
     return EventTarget::call("addTransceiver", trackOrKind, init).as<RTCRtpTransceiver>();
 }
@@ -467,6 +485,10 @@ RTCSctpTransport RTCPeerConnection::sctp() const {
     return EventTarget::get("sctp").as<RTCSctpTransport>();
 }
 
+RTCDataChannel RTCPeerConnection::createDataChannel(const jsbind::USVString& label) {
+    return EventTarget::call("createDataChannel", label).as<RTCDataChannel>();
+}
+
 RTCDataChannel RTCPeerConnection::createDataChannel(const jsbind::USVString& label, const RTCDataChannelInit& dataChannelDict) {
     return EventTarget::call("createDataChannel", label, dataChannelDict).as<RTCDataChannel>();
 }
@@ -477,6 +499,10 @@ jsbind::Any RTCPeerConnection::ondatachannel() const {
 
 void RTCPeerConnection::ondatachannel(const jsbind::Any& value) {
     EventTarget::set("ondatachannel", value);
+}
+
+jsbind::Promise RTCPeerConnection::getStats() {
+    return EventTarget::call("getStats").as<jsbind::Promise>();
 }
 
 jsbind::Promise RTCPeerConnection::getStats(const MediaStreamTrack& selector) {

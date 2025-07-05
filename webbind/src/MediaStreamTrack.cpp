@@ -209,6 +209,10 @@ MediaTrackSettings MediaStreamTrack::getSettings() {
     return EventTarget::call("getSettings").as<MediaTrackSettings>();
 }
 
+jsbind::Promise MediaStreamTrack::applyConstraints() {
+    return EventTarget::call("applyConstraints").as<jsbind::Promise>();
+}
+
 jsbind::Promise MediaStreamTrack::applyConstraints(const MediaTrackConstraints& constraints) {
     return EventTarget::call("applyConstraints", constraints).as<jsbind::Promise>();
 }

@@ -17,6 +17,7 @@ public:
     static CSSMatrixComponent take_ownership(Handle h) noexcept;
 
     CSSMatrixComponent clone() const noexcept;
+    CSSMatrixComponent(const DOMMatrixReadOnly& matrix);
     CSSMatrixComponent(const DOMMatrixReadOnly& matrix, const jsbind::Any& options);
     DOMMatrix matrix() const;
     void matrix(const DOMMatrix& value);

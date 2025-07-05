@@ -19,8 +19,11 @@ public:
     static Response take_ownership(Handle h) noexcept;
 
     Response clone() const noexcept;
+    Response();
+    Response(const jsbind::Any& body);
     Response(const jsbind::Any& body, const jsbind::Any& init);
     static Response error();
+    static Response redirect(const jsbind::USVString& url);
     static Response redirect(const jsbind::USVString& url, unsigned short status);
     jsbind::Promise json();
     ResponseType type() const;

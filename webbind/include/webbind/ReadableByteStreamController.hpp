@@ -19,6 +19,7 @@ public:
     double desiredSize() const;
     jsbind::Undefined close();
     jsbind::Undefined enqueue(const jsbind::Any& chunk);
+    jsbind::Undefined error();
     jsbind::Undefined error(const jsbind::Any& e);
 };
 

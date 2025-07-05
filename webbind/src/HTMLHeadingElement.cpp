@@ -9,7 +9,7 @@ HTMLHeadingElement::HTMLHeadingElement(Handle h) noexcept : HTMLElement(emlite::
 HTMLHeadingElement::HTMLHeadingElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLHeadingElement::HTMLHeadingElement(): HTMLElement(emlite::Val::global("HTMLHeadingElement").new_()) {}
+HTMLHeadingElement::HTMLHeadingElement() : HTMLElement(emlite::Val::global("HTMLHeadingElement").new_()) {}
 
 jsbind::DOMString HTMLHeadingElement::align() const {
     return HTMLElement::get("align").as<jsbind::DOMString>();

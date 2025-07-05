@@ -10,7 +10,7 @@ HTMLFrameElement::HTMLFrameElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLFrameElement::HTMLFrameElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLFrameElement::HTMLFrameElement(): HTMLElement(emlite::Val::global("HTMLFrameElement").new_()) {}
+HTMLFrameElement::HTMLFrameElement() : HTMLElement(emlite::Val::global("HTMLFrameElement").new_()) {}
 
 jsbind::DOMString HTMLFrameElement::name() const {
     return HTMLElement::get("name").as<jsbind::DOMString>();

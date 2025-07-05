@@ -28,6 +28,7 @@ public:
 
     CustomElementRegistry clone() const noexcept;
     CustomElementRegistry();
+    jsbind::Undefined define(const jsbind::DOMString& name, const jsbind::Function& constructor);
     jsbind::Undefined define(const jsbind::DOMString& name, const jsbind::Function& constructor, const ElementDefinitionOptions& options);
     jsbind::Any get(const jsbind::DOMString& name);
     jsbind::DOMString getName(const jsbind::Function& constructor);

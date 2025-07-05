@@ -10,7 +10,9 @@ MediaMetadata::MediaMetadata(Handle h) noexcept : emlite::Val(emlite::Val::take_
 MediaMetadata::MediaMetadata(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-MediaMetadata::MediaMetadata(const jsbind::Any& init): emlite::Val(emlite::Val::global("MediaMetadata").new_(init)) {}
+MediaMetadata::MediaMetadata() : emlite::Val(emlite::Val::global("MediaMetadata").new_()) {}
+
+MediaMetadata::MediaMetadata(const jsbind::Any& init) : emlite::Val(emlite::Val::global("MediaMetadata").new_(init)) {}
 
 jsbind::DOMString MediaMetadata::title() const {
     return emlite::Val::get("title").as<jsbind::DOMString>();

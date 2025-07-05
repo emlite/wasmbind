@@ -10,7 +10,7 @@ Touch::Touch(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Touch::Touch(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Touch::Touch(const jsbind::Any& touchInitDict): emlite::Val(emlite::Val::global("Touch").new_(touchInitDict)) {}
+Touch::Touch(const jsbind::Any& touchInitDict) : emlite::Val(emlite::Val::global("Touch").new_(touchInitDict)) {}
 
 long Touch::identifier() const {
     return emlite::Val::get("identifier").as<long>();

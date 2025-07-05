@@ -42,7 +42,7 @@ TextDetector::TextDetector(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 TextDetector::TextDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-TextDetector::TextDetector(): emlite::Val(emlite::Val::global("TextDetector").new_()) {}
+TextDetector::TextDetector() : emlite::Val(emlite::Val::global("TextDetector").new_()) {}
 
 jsbind::Promise TextDetector::detect(const jsbind::Any& image) {
     return emlite::Val::call("detect", image).as<jsbind::Promise>();

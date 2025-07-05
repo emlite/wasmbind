@@ -21,8 +21,24 @@ GPUBufferMapState GPUBuffer::mapState() const {
     return emlite::Val::get("mapState").as<GPUBufferMapState>();
 }
 
+jsbind::Promise GPUBuffer::mapAsync(const jsbind::Any& mode) {
+    return emlite::Val::call("mapAsync", mode).as<jsbind::Promise>();
+}
+
+jsbind::Promise GPUBuffer::mapAsync(const jsbind::Any& mode, const jsbind::Any& offset) {
+    return emlite::Val::call("mapAsync", mode, offset).as<jsbind::Promise>();
+}
+
 jsbind::Promise GPUBuffer::mapAsync(const jsbind::Any& mode, const jsbind::Any& offset, const jsbind::Any& size) {
     return emlite::Val::call("mapAsync", mode, offset, size).as<jsbind::Promise>();
+}
+
+jsbind::ArrayBuffer GPUBuffer::getMappedRange() {
+    return emlite::Val::call("getMappedRange").as<jsbind::ArrayBuffer>();
+}
+
+jsbind::ArrayBuffer GPUBuffer::getMappedRange(const jsbind::Any& offset) {
+    return emlite::Val::call("getMappedRange", offset).as<jsbind::ArrayBuffer>();
 }
 
 jsbind::ArrayBuffer GPUBuffer::getMappedRange(const jsbind::Any& offset, const jsbind::Any& size) {

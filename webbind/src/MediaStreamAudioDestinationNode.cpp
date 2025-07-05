@@ -11,7 +11,9 @@ MediaStreamAudioDestinationNode::MediaStreamAudioDestinationNode(Handle h) noexc
 MediaStreamAudioDestinationNode::MediaStreamAudioDestinationNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-MediaStreamAudioDestinationNode::MediaStreamAudioDestinationNode(const AudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("MediaStreamAudioDestinationNode").new_(context, options)) {}
+MediaStreamAudioDestinationNode::MediaStreamAudioDestinationNode(const AudioContext& context) : AudioNode(emlite::Val::global("MediaStreamAudioDestinationNode").new_(context)) {}
+
+MediaStreamAudioDestinationNode::MediaStreamAudioDestinationNode(const AudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("MediaStreamAudioDestinationNode").new_(context, options)) {}
 
 MediaStream MediaStreamAudioDestinationNode::stream() const {
     return AudioNode::get("stream").as<MediaStream>();

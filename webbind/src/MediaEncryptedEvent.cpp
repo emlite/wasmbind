@@ -9,7 +9,9 @@ MediaEncryptedEvent::MediaEncryptedEvent(Handle h) noexcept : Event(emlite::Val:
 MediaEncryptedEvent::MediaEncryptedEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-MediaEncryptedEvent::MediaEncryptedEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("MediaEncryptedEvent").new_(type, eventInitDict)) {}
+MediaEncryptedEvent::MediaEncryptedEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("MediaEncryptedEvent").new_(type)) {}
+
+MediaEncryptedEvent::MediaEncryptedEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MediaEncryptedEvent").new_(type, eventInitDict)) {}
 
 jsbind::DOMString MediaEncryptedEvent::initDataType() const {
     return Event::get("initDataType").as<jsbind::DOMString>();

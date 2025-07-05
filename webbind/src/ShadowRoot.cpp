@@ -47,6 +47,10 @@ jsbind::Undefined ShadowRoot::setHTMLUnsafe(const jsbind::Any& html) {
     return DocumentFragment::call("setHTMLUnsafe", html).as<jsbind::Undefined>();
 }
 
+jsbind::DOMString ShadowRoot::getHTML() {
+    return DocumentFragment::call("getHTML").as<jsbind::DOMString>();
+}
+
 jsbind::DOMString ShadowRoot::getHTML(const GetHTMLOptions& options) {
     return DocumentFragment::call("getHTML", options).as<jsbind::DOMString>();
 }

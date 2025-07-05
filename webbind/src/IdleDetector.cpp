@@ -34,7 +34,7 @@ IdleDetector::IdleDetector(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 IdleDetector::IdleDetector(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-IdleDetector::IdleDetector(): EventTarget(emlite::Val::global("IdleDetector").new_()) {}
+IdleDetector::IdleDetector() : EventTarget(emlite::Val::global("IdleDetector").new_()) {}
 
 UserIdleState IdleDetector::userState() const {
     return EventTarget::get("userState").as<UserIdleState>();
@@ -54,6 +54,10 @@ void IdleDetector::onchange(const jsbind::Any& value) {
 
 jsbind::Promise IdleDetector::requestPermission() {
     return emlite::Val::global("idledetector").call("requestPermission").as<jsbind::Promise>();
+}
+
+jsbind::Promise IdleDetector::start() {
+    return EventTarget::call("start").as<jsbind::Promise>();
 }
 
 jsbind::Promise IdleDetector::start(const IdleOptions& options) {

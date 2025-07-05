@@ -9,7 +9,9 @@ Global::Global(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) 
 Global::Global(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Global::Global(const jsbind::Any& descriptor, const jsbind::Any& v): emlite::Val(emlite::Val::global("Global").new_(descriptor, v)) {}
+Global::Global(const jsbind::Any& descriptor) : emlite::Val(emlite::Val::global("Global").new_(descriptor)) {}
+
+Global::Global(const jsbind::Any& descriptor, const jsbind::Any& v) : emlite::Val(emlite::Val::global("Global").new_(descriptor, v)) {}
 
 jsbind::Any Global::valueOf() {
     return emlite::Val::call("valueOf").as<jsbind::Any>();

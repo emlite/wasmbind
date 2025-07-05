@@ -97,7 +97,9 @@ public:
     static CookieStore take_ownership(Handle h) noexcept;
 
     CookieStore clone() const noexcept;
+    jsbind::Promise get();
     jsbind::Promise get(const CookieStoreGetOptions& options);
+    jsbind::Promise getAll();
     jsbind::Promise getAll(const CookieStoreGetOptions& options);
     jsbind::Promise set(const CookieInit& options);
     jsbind::Promise delete_(const CookieStoreDeleteOptions& options);

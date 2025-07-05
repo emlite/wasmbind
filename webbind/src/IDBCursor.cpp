@@ -34,6 +34,10 @@ jsbind::Undefined IDBCursor::advance(unsigned long count) {
     return emlite::Val::call("advance", count).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined IDBCursor::continue_() {
+    return emlite::Val::call("continue").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined IDBCursor::continue_(const jsbind::Any& key) {
     return emlite::Val::call("continue", key).as<jsbind::Undefined>();
 }

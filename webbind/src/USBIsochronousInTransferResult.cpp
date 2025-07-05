@@ -10,7 +10,9 @@ USBIsochronousInTransferResult::USBIsochronousInTransferResult(Handle h) noexcep
 USBIsochronousInTransferResult::USBIsochronousInTransferResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBIsochronousInTransferResult::USBIsochronousInTransferResult(const jsbind::Sequence<USBIsochronousInTransferPacket>& packets, const jsbind::DataView& data): emlite::Val(emlite::Val::global("USBIsochronousInTransferResult").new_(packets, data)) {}
+USBIsochronousInTransferResult::USBIsochronousInTransferResult(const jsbind::Sequence<USBIsochronousInTransferPacket>& packets) : emlite::Val(emlite::Val::global("USBIsochronousInTransferResult").new_(packets)) {}
+
+USBIsochronousInTransferResult::USBIsochronousInTransferResult(const jsbind::Sequence<USBIsochronousInTransferPacket>& packets, const jsbind::DataView& data) : emlite::Val(emlite::Val::global("USBIsochronousInTransferResult").new_(packets, data)) {}
 
 jsbind::DataView USBIsochronousInTransferResult::data() const {
     return emlite::Val::get("data").as<jsbind::DataView>();

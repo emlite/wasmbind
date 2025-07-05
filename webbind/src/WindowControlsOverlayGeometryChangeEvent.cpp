@@ -10,7 +10,7 @@ WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEve
 WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("WindowControlsOverlayGeometryChangeEvent").new_(type, eventInitDict)) {}
+WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("WindowControlsOverlayGeometryChangeEvent").new_(type, eventInitDict)) {}
 
 DOMRect WindowControlsOverlayGeometryChangeEvent::titlebarAreaRect() const {
     return Event::get("titlebarAreaRect").as<DOMRect>();

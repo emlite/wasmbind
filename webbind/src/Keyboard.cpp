@@ -10,6 +10,10 @@ Keyboard::Keyboard(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(
 Keyboard::Keyboard(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
+jsbind::Promise Keyboard::lock() {
+    return EventTarget::call("lock").as<jsbind::Promise>();
+}
+
 jsbind::Promise Keyboard::lock(const jsbind::Sequence<jsbind::DOMString>& keyCodes) {
     return EventTarget::call("lock", keyCodes).as<jsbind::Promise>();
 }

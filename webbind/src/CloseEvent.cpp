@@ -9,7 +9,9 @@ CloseEvent::CloseEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)
 CloseEvent::CloseEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-CloseEvent::CloseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("CloseEvent").new_(type, eventInitDict)) {}
+CloseEvent::CloseEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("CloseEvent").new_(type)) {}
+
+CloseEvent::CloseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("CloseEvent").new_(type, eventInitDict)) {}
 
 bool CloseEvent::wasClean() const {
     return Event::get("wasClean").as<bool>();

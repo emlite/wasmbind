@@ -16,8 +16,16 @@ DocumentType DOMImplementation::createDocumentType(const jsbind::DOMString& name
     return emlite::Val::call("createDocumentType", name, publicId, systemId).as<DocumentType>();
 }
 
+XMLDocument DOMImplementation::createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName) {
+    return emlite::Val::call("createDocument", namespace_, qualifiedName).as<XMLDocument>();
+}
+
 XMLDocument DOMImplementation::createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName, const DocumentType& doctype) {
     return emlite::Val::call("createDocument", namespace_, qualifiedName, doctype).as<XMLDocument>();
+}
+
+Document DOMImplementation::createHTMLDocument() {
+    return emlite::Val::call("createHTMLDocument").as<Document>();
 }
 
 Document DOMImplementation::createHTMLDocument(const jsbind::DOMString& title) {

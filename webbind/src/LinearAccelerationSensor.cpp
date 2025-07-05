@@ -9,5 +9,7 @@ LinearAccelerationSensor::LinearAccelerationSensor(Handle h) noexcept : Accelero
 LinearAccelerationSensor::LinearAccelerationSensor(const emlite::Val &val) noexcept: Accelerometer(val) {}
 
 
-LinearAccelerationSensor::LinearAccelerationSensor(const jsbind::Any& options): Accelerometer(emlite::Val::global("LinearAccelerationSensor").new_(options)) {}
+LinearAccelerationSensor::LinearAccelerationSensor() : Accelerometer(emlite::Val::global("LinearAccelerationSensor").new_()) {}
+
+LinearAccelerationSensor::LinearAccelerationSensor(const jsbind::Any& options) : Accelerometer(emlite::Val::global("LinearAccelerationSensor").new_(options)) {}
 

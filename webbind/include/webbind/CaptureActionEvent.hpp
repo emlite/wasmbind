@@ -14,6 +14,7 @@ public:
     static CaptureActionEvent take_ownership(Handle h) noexcept;
 
     CaptureActionEvent clone() const noexcept;
+    CaptureActionEvent();
     CaptureActionEvent(const jsbind::Any& init);
     CaptureAction action() const;
 };

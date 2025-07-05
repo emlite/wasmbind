@@ -15,8 +15,11 @@ public:
     static WritableStream take_ownership(Handle h) noexcept;
 
     WritableStream clone() const noexcept;
+    WritableStream();
+    WritableStream(const jsbind::Object& underlyingSink);
     WritableStream(const jsbind::Object& underlyingSink, const jsbind::Any& strategy);
     bool locked() const;
+    jsbind::Promise abort();
     jsbind::Promise abort(const jsbind::Any& reason);
     jsbind::Promise close();
     WritableStreamDefaultWriter getWriter();

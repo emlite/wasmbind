@@ -10,7 +10,7 @@ MessageChannel::MessageChannel(Handle h) noexcept : emlite::Val(emlite::Val::tak
 MessageChannel::MessageChannel(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-MessageChannel::MessageChannel(): emlite::Val(emlite::Val::global("MessageChannel").new_()) {}
+MessageChannel::MessageChannel() : emlite::Val(emlite::Val::global("MessageChannel").new_()) {}
 
 jsbind::Any MessageChannel::port1() const {
     return emlite::Val::get("port1").as<jsbind::Any>();

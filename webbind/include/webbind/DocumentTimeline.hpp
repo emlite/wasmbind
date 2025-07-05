@@ -14,6 +14,7 @@ public:
     static DocumentTimeline take_ownership(Handle h) noexcept;
 
     DocumentTimeline clone() const noexcept;
+    DocumentTimeline();
     DocumentTimeline(const jsbind::Any& options);
 };
 

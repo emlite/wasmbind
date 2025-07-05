@@ -14,6 +14,7 @@ public:
     static Magnetometer take_ownership(Handle h) noexcept;
 
     Magnetometer clone() const noexcept;
+    Magnetometer();
     Magnetometer(const jsbind::Any& sensorOptions);
     double x() const;
     double y() const;

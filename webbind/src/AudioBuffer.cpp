@@ -9,7 +9,7 @@ AudioBuffer::AudioBuffer(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 AudioBuffer::AudioBuffer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-AudioBuffer::AudioBuffer(const jsbind::Any& options): emlite::Val(emlite::Val::global("AudioBuffer").new_(options)) {}
+AudioBuffer::AudioBuffer(const jsbind::Any& options) : emlite::Val(emlite::Val::global("AudioBuffer").new_(options)) {}
 
 float AudioBuffer::sampleRate() const {
     return emlite::Val::get("sampleRate").as<float>();
@@ -31,8 +31,16 @@ jsbind::Float32Array AudioBuffer::getChannelData(unsigned long channel) {
     return emlite::Val::call("getChannelData", channel).as<jsbind::Float32Array>();
 }
 
+jsbind::Undefined AudioBuffer::copyFromChannel(const jsbind::Float32Array& destination, unsigned long channelNumber) {
+    return emlite::Val::call("copyFromChannel", destination, channelNumber).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined AudioBuffer::copyFromChannel(const jsbind::Float32Array& destination, unsigned long channelNumber, unsigned long bufferOffset) {
     return emlite::Val::call("copyFromChannel", destination, channelNumber, bufferOffset).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioBuffer::copyToChannel(const jsbind::Float32Array& source, unsigned long channelNumber) {
+    return emlite::Val::call("copyToChannel", source, channelNumber).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined AudioBuffer::copyToChannel(const jsbind::Float32Array& source, unsigned long channelNumber, unsigned long bufferOffset) {

@@ -16,6 +16,7 @@ public:
     static ClipboardEvent take_ownership(Handle h) noexcept;
 
     ClipboardEvent clone() const noexcept;
+    ClipboardEvent(const jsbind::DOMString& type);
     ClipboardEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     DataTransfer clipboardData() const;
 };

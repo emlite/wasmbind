@@ -21,6 +21,7 @@ public:
     jsbind::Any primaryKey() const;
     IDBRequest request() const;
     jsbind::Undefined advance(unsigned long count);
+    jsbind::Undefined continue_();
     jsbind::Undefined continue_(const jsbind::Any& key);
     jsbind::Undefined continuePrimaryKey(const jsbind::Any& key, const jsbind::Any& primaryKey);
     IDBRequest update(const jsbind::Any& value);

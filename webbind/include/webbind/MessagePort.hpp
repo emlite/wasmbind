@@ -27,6 +27,7 @@ public:
     static MessagePort take_ownership(Handle h) noexcept;
 
     MessagePort clone() const noexcept;
+    jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     jsbind::Undefined start();
     jsbind::Undefined close();

@@ -11,7 +11,9 @@ GroupEffect::GroupEffect(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 GroupEffect::GroupEffect(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-GroupEffect::GroupEffect(const jsbind::Sequence<AnimationEffect>& children, const jsbind::Any& timing): emlite::Val(emlite::Val::global("GroupEffect").new_(children, timing)) {}
+GroupEffect::GroupEffect(const jsbind::Sequence<AnimationEffect>& children) : emlite::Val(emlite::Val::global("GroupEffect").new_(children)) {}
+
+GroupEffect::GroupEffect(const jsbind::Sequence<AnimationEffect>& children, const jsbind::Any& timing) : emlite::Val(emlite::Val::global("GroupEffect").new_(children, timing)) {}
 
 AnimationNodeList GroupEffect::children() const {
     return emlite::Val::get("children").as<AnimationNodeList>();

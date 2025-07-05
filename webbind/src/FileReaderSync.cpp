@@ -10,7 +10,7 @@ FileReaderSync::FileReaderSync(Handle h) noexcept : emlite::Val(emlite::Val::tak
 FileReaderSync::FileReaderSync(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-FileReaderSync::FileReaderSync(): emlite::Val(emlite::Val::global("FileReaderSync").new_()) {}
+FileReaderSync::FileReaderSync() : emlite::Val(emlite::Val::global("FileReaderSync").new_()) {}
 
 jsbind::ArrayBuffer FileReaderSync::readAsArrayBuffer(const Blob& blob) {
     return emlite::Val::call("readAsArrayBuffer", blob).as<jsbind::ArrayBuffer>();
@@ -18,6 +18,10 @@ jsbind::ArrayBuffer FileReaderSync::readAsArrayBuffer(const Blob& blob) {
 
 jsbind::DOMString FileReaderSync::readAsBinaryString(const Blob& blob) {
     return emlite::Val::call("readAsBinaryString", blob).as<jsbind::DOMString>();
+}
+
+jsbind::DOMString FileReaderSync::readAsText(const Blob& blob) {
+    return emlite::Val::call("readAsText", blob).as<jsbind::DOMString>();
 }
 
 jsbind::DOMString FileReaderSync::readAsText(const Blob& blob, const jsbind::DOMString& encoding) {

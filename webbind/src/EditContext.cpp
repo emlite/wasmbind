@@ -11,7 +11,9 @@ EditContext::EditContext(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 EditContext::EditContext(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-EditContext::EditContext(const jsbind::Any& options): EventTarget(emlite::Val::global("EditContext").new_(options)) {}
+EditContext::EditContext() : EventTarget(emlite::Val::global("EditContext").new_()) {}
+
+EditContext::EditContext(const jsbind::Any& options) : EventTarget(emlite::Val::global("EditContext").new_(options)) {}
 
 jsbind::Undefined EditContext::updateText(unsigned long rangeStart, unsigned long rangeEnd, const jsbind::DOMString& text) {
     return EventTarget::call("updateText", rangeStart, rangeEnd, text).as<jsbind::Undefined>();

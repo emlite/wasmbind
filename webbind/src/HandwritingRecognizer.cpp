@@ -50,6 +50,10 @@ HandwritingRecognizer::HandwritingRecognizer(Handle h) noexcept : emlite::Val(em
 HandwritingRecognizer::HandwritingRecognizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+HandwritingDrawing HandwritingRecognizer::startDrawing() {
+    return emlite::Val::call("startDrawing").as<HandwritingDrawing>();
+}
+
 HandwritingDrawing HandwritingRecognizer::startDrawing(const HandwritingHints& hints) {
     return emlite::Val::call("startDrawing", hints).as<HandwritingDrawing>();
 }

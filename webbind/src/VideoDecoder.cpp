@@ -131,7 +131,7 @@ VideoDecoder::VideoDecoder(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 VideoDecoder::VideoDecoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-VideoDecoder::VideoDecoder(const jsbind::Any& init): EventTarget(emlite::Val::global("VideoDecoder").new_(init)) {}
+VideoDecoder::VideoDecoder(const jsbind::Any& init) : EventTarget(emlite::Val::global("VideoDecoder").new_(init)) {}
 
 CodecState VideoDecoder::state() const {
     return EventTarget::get("state").as<CodecState>();

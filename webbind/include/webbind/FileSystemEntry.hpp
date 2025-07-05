@@ -20,6 +20,8 @@ public:
     jsbind::USVString name() const;
     jsbind::USVString fullPath() const;
     FileSystem filesystem() const;
+    jsbind::Undefined getParent();
+    jsbind::Undefined getParent(const jsbind::Function& successCallback);
     jsbind::Undefined getParent(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

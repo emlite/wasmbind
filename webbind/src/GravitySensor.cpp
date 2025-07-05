@@ -9,5 +9,7 @@ GravitySensor::GravitySensor(Handle h) noexcept : Accelerometer(emlite::Val::tak
 GravitySensor::GravitySensor(const emlite::Val &val) noexcept: Accelerometer(val) {}
 
 
-GravitySensor::GravitySensor(const jsbind::Any& options): Accelerometer(emlite::Val::global("GravitySensor").new_(options)) {}
+GravitySensor::GravitySensor() : Accelerometer(emlite::Val::global("GravitySensor").new_()) {}
+
+GravitySensor::GravitySensor(const jsbind::Any& options) : Accelerometer(emlite::Val::global("GravitySensor").new_(options)) {}
 

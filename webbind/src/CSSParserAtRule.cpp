@@ -10,7 +10,9 @@ CSSParserAtRule::CSSParserAtRule(Handle h) noexcept : CSSParserRule(emlite::Val:
 CSSParserAtRule::CSSParserAtRule(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 
 
-CSSParserAtRule::CSSParserAtRule(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Any>& prelude, const jsbind::Sequence<CSSParserRule>& body): CSSParserRule(emlite::Val::global("CSSParserAtRule").new_(name, prelude, body)) {}
+CSSParserAtRule::CSSParserAtRule(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Any>& prelude) : CSSParserRule(emlite::Val::global("CSSParserAtRule").new_(name, prelude)) {}
+
+CSSParserAtRule::CSSParserAtRule(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Any>& prelude, const jsbind::Sequence<CSSParserRule>& body) : CSSParserRule(emlite::Val::global("CSSParserAtRule").new_(name, prelude, body)) {}
 
 jsbind::DOMString CSSParserAtRule::name() const {
     return CSSParserRule::get("name").as<jsbind::DOMString>();

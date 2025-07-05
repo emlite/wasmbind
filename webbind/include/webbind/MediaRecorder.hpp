@@ -16,6 +16,7 @@ public:
     static MediaRecorder take_ownership(Handle h) noexcept;
 
     MediaRecorder clone() const noexcept;
+    MediaRecorder(const MediaStream& stream);
     MediaRecorder(const MediaStream& stream, const jsbind::Any& options);
     MediaStream stream() const;
     jsbind::DOMString mimeType() const;
@@ -35,6 +36,7 @@ public:
     unsigned long videoBitsPerSecond() const;
     unsigned long audioBitsPerSecond() const;
     BitrateMode audioBitrateMode() const;
+    jsbind::Undefined start();
     jsbind::Undefined start(unsigned long timeslice);
     jsbind::Undefined stop();
     jsbind::Undefined pause();

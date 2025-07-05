@@ -11,7 +11,9 @@ MouseEvent::MouseEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(
 MouseEvent::MouseEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-MouseEvent::MouseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): UIEvent(emlite::Val::global("MouseEvent").new_(type, eventInitDict)) {}
+MouseEvent::MouseEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("MouseEvent").new_(type)) {}
+
+MouseEvent::MouseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("MouseEvent").new_(type, eventInitDict)) {}
 
 long MouseEvent::screenX() const {
     return UIEvent::get("screenX").as<long>();
@@ -99,6 +101,62 @@ double MouseEvent::movementX() const {
 
 double MouseEvent::movementY() const {
     return UIEvent::get("movementY").as<double>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg) {
+    return UIEvent::call("initMouseEvent", typeArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg, bool ctrlKeyArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg, bool ctrlKeyArg, bool altKeyArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg, bool ctrlKeyArg, bool altKeyArg, bool shiftKeyArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg, bool ctrlKeyArg, bool altKeyArg, bool shiftKeyArg, bool metaKeyArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg, bool ctrlKeyArg, bool altKeyArg, bool shiftKeyArg, bool metaKeyArg, short buttonArg) {
+    return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg, bool ctrlKeyArg, bool altKeyArg, bool shiftKeyArg, bool metaKeyArg, short buttonArg, const EventTarget& relatedTargetArg) {

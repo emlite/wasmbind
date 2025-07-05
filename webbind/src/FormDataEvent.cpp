@@ -10,7 +10,7 @@ FormDataEvent::FormDataEvent(Handle h) noexcept : Event(emlite::Val::take_owners
 FormDataEvent::FormDataEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-FormDataEvent::FormDataEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("FormDataEvent").new_(type, eventInitDict)) {}
+FormDataEvent::FormDataEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("FormDataEvent").new_(type, eventInitDict)) {}
 
 FormData FormDataEvent::formData() const {
     return Event::get("formData").as<FormData>();

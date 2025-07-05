@@ -26,8 +26,16 @@ MediaKeys::MediaKeys(Handle h) noexcept : emlite::Val(emlite::Val::take_ownershi
 MediaKeys::MediaKeys(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+MediaKeySession MediaKeys::createSession() {
+    return emlite::Val::call("createSession").as<MediaKeySession>();
+}
+
 MediaKeySession MediaKeys::createSession(const MediaKeySessionType& sessionType) {
     return emlite::Val::call("createSession", sessionType).as<MediaKeySession>();
+}
+
+jsbind::Promise MediaKeys::getStatusForPolicy() {
+    return emlite::Val::call("getStatusForPolicy").as<jsbind::Promise>();
 }
 
 jsbind::Promise MediaKeys::getStatusForPolicy(const MediaKeysPolicy& policy) {

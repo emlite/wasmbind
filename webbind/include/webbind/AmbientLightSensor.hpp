@@ -14,6 +14,7 @@ public:
     static AmbientLightSensor take_ownership(Handle h) noexcept;
 
     AmbientLightSensor clone() const noexcept;
+    AmbientLightSensor();
     AmbientLightSensor(const jsbind::Any& sensorOptions);
     double illuminance() const;
 };

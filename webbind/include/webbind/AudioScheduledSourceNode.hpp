@@ -16,7 +16,9 @@ public:
     AudioScheduledSourceNode clone() const noexcept;
     jsbind::Any onended() const;
     void onended(const jsbind::Any& value);
+    jsbind::Undefined start();
     jsbind::Undefined start(double when);
+    jsbind::Undefined stop();
     jsbind::Undefined stop(double when);
 };
 

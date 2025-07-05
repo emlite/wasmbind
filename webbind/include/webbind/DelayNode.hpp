@@ -16,6 +16,7 @@ public:
     static DelayNode take_ownership(Handle h) noexcept;
 
     DelayNode clone() const noexcept;
+    DelayNode(const BaseAudioContext& context);
     DelayNode(const BaseAudioContext& context, const jsbind::Any& options);
     AudioParam delayTime() const;
 };

@@ -14,6 +14,7 @@ public:
     static CapturedMouseEvent take_ownership(Handle h) noexcept;
 
     CapturedMouseEvent clone() const noexcept;
+    CapturedMouseEvent(const jsbind::DOMString& type);
     CapturedMouseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     long surfaceX() const;
     long surfaceY() const;

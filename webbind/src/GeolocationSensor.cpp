@@ -98,7 +98,13 @@ GeolocationSensor::GeolocationSensor(Handle h) noexcept : Sensor(emlite::Val::ta
 GeolocationSensor::GeolocationSensor(const emlite::Val &val) noexcept: Sensor(val) {}
 
 
-GeolocationSensor::GeolocationSensor(const jsbind::Any& options): Sensor(emlite::Val::global("GeolocationSensor").new_(options)) {}
+GeolocationSensor::GeolocationSensor() : Sensor(emlite::Val::global("GeolocationSensor").new_()) {}
+
+GeolocationSensor::GeolocationSensor(const jsbind::Any& options) : Sensor(emlite::Val::global("GeolocationSensor").new_(options)) {}
+
+jsbind::Promise GeolocationSensor::read() {
+    return emlite::Val::global("geolocationsensor").call("read").as<jsbind::Promise>();
+}
 
 jsbind::Promise GeolocationSensor::read(const ReadOptions& readOptions) {
     return emlite::Val::global("geolocationsensor").call("read", readOptions).as<jsbind::Promise>();

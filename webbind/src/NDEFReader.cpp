@@ -66,7 +66,7 @@ NDEFReader::NDEFReader(Handle h) noexcept : EventTarget(emlite::Val::take_owners
 NDEFReader::NDEFReader(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-NDEFReader::NDEFReader(): EventTarget(emlite::Val::global("NDEFReader").new_()) {}
+NDEFReader::NDEFReader() : EventTarget(emlite::Val::global("NDEFReader").new_()) {}
 
 jsbind::Any NDEFReader::onreading() const {
     return EventTarget::get("onreading").as<jsbind::Any>();
@@ -84,12 +84,24 @@ void NDEFReader::onreadingerror(const jsbind::Any& value) {
     EventTarget::set("onreadingerror", value);
 }
 
+jsbind::Promise NDEFReader::scan() {
+    return EventTarget::call("scan").as<jsbind::Promise>();
+}
+
 jsbind::Promise NDEFReader::scan(const NDEFScanOptions& options) {
     return EventTarget::call("scan", options).as<jsbind::Promise>();
 }
 
+jsbind::Promise NDEFReader::write(const jsbind::Any& message) {
+    return EventTarget::call("write", message).as<jsbind::Promise>();
+}
+
 jsbind::Promise NDEFReader::write(const jsbind::Any& message, const NDEFWriteOptions& options) {
     return EventTarget::call("write", message, options).as<jsbind::Promise>();
+}
+
+jsbind::Promise NDEFReader::makeReadOnly() {
+    return EventTarget::call("makeReadOnly").as<jsbind::Promise>();
 }
 
 jsbind::Promise NDEFReader::makeReadOnly(const NDEFMakeReadOnlyOptions& options) {

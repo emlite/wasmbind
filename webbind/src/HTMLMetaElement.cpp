@@ -9,7 +9,7 @@ HTMLMetaElement::HTMLMetaElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLMetaElement::HTMLMetaElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLMetaElement::HTMLMetaElement(): HTMLElement(emlite::Val::global("HTMLMetaElement").new_()) {}
+HTMLMetaElement::HTMLMetaElement() : HTMLElement(emlite::Val::global("HTMLMetaElement").new_()) {}
 
 jsbind::DOMString HTMLMetaElement::name() const {
     return HTMLElement::get("name").as<jsbind::DOMString>();

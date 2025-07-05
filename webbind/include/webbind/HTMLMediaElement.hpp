@@ -72,6 +72,8 @@ public:
     AudioTrackList audioTracks() const;
     VideoTrackList videoTracks() const;
     TextTrackList textTracks() const;
+    TextTrack addTextTrack(const TextTrackKind& kind);
+    TextTrack addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label);
     TextTrack addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label, const jsbind::DOMString& language);
     jsbind::DOMString sinkId() const;
     jsbind::Promise setSinkId(const jsbind::DOMString& sinkId);

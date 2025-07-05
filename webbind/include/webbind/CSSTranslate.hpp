@@ -16,6 +16,7 @@ public:
     static CSSTranslate take_ownership(Handle h) noexcept;
 
     CSSTranslate clone() const noexcept;
+    CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y);
     CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y, const CSSNumericValue& z);
     CSSNumericValue x() const;
     void x(const CSSNumericValue& value);

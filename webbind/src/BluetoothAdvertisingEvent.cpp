@@ -12,7 +12,7 @@ BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(Handle h) noexcept : Event(
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const jsbind::DOMString& type, const jsbind::Any& init): Event(emlite::Val::global("BluetoothAdvertisingEvent").new_(type, init)) {}
+BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const jsbind::DOMString& type, const jsbind::Any& init) : Event(emlite::Val::global("BluetoothAdvertisingEvent").new_(type, init)) {}
 
 BluetoothDevice BluetoothAdvertisingEvent::device() const {
     return Event::get("device").as<BluetoothDevice>();

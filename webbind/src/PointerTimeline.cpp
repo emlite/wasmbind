@@ -10,7 +10,9 @@ PointerTimeline::PointerTimeline(Handle h) noexcept : AnimationTimeline(emlite::
 PointerTimeline::PointerTimeline(const emlite::Val &val) noexcept: AnimationTimeline(val) {}
 
 
-PointerTimeline::PointerTimeline(const jsbind::Any& options): AnimationTimeline(emlite::Val::global("PointerTimeline").new_(options)) {}
+PointerTimeline::PointerTimeline() : AnimationTimeline(emlite::Val::global("PointerTimeline").new_()) {}
+
+PointerTimeline::PointerTimeline(const jsbind::Any& options) : AnimationTimeline(emlite::Val::global("PointerTimeline").new_(options)) {}
 
 Element PointerTimeline::source() const {
     return AnimationTimeline::get("source").as<Element>();

@@ -18,8 +18,12 @@ public:
 
     XPathEvaluator clone() const noexcept;
     XPathEvaluator();
+    XPathExpression createExpression(const jsbind::DOMString& expression);
     XPathExpression createExpression(const jsbind::DOMString& expression, const jsbind::Function& resolver);
     Node createNSResolver(const Node& nodeResolver);
+    XPathResult evaluate(const jsbind::DOMString& expression, const Node& contextNode);
+    XPathResult evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver);
+    XPathResult evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type);
     XPathResult evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result);
 };
 

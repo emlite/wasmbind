@@ -84,6 +84,7 @@ public:
     jsbind::Any ondequeue() const;
     void ondequeue(const jsbind::Any& value);
     jsbind::Undefined configure(const VideoEncoderConfig& config);
+    jsbind::Undefined encode(const VideoFrame& frame);
     jsbind::Undefined encode(const VideoFrame& frame, const VideoEncoderEncodeOptions& options);
     jsbind::Promise flush();
     jsbind::Undefined reset();

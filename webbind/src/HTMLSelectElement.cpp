@@ -15,7 +15,7 @@ HTMLSelectElement::HTMLSelectElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLSelectElement::HTMLSelectElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLSelectElement::HTMLSelectElement(): HTMLElement(emlite::Val::global("HTMLSelectElement").new_()) {}
+HTMLSelectElement::HTMLSelectElement() : HTMLElement(emlite::Val::global("HTMLSelectElement").new_()) {}
 
 jsbind::DOMString HTMLSelectElement::autocomplete() const {
     return HTMLElement::get("autocomplete").as<jsbind::DOMString>();
@@ -91,6 +91,10 @@ HTMLOptionElement HTMLSelectElement::item(unsigned long index) {
 
 HTMLOptionElement HTMLSelectElement::namedItem(const jsbind::DOMString& name) {
     return HTMLElement::call("namedItem", name).as<HTMLOptionElement>();
+}
+
+jsbind::Undefined HTMLSelectElement::add(const jsbind::Any& element) {
+    return HTMLElement::call("add", element).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLSelectElement::add(const jsbind::Any& element, const jsbind::Any& before) {

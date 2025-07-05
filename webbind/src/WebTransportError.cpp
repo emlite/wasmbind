@@ -9,7 +9,11 @@ WebTransportError::WebTransportError(Handle h) noexcept : DOMException(emlite::V
 WebTransportError::WebTransportError(const emlite::Val &val) noexcept: DOMException(val) {}
 
 
-WebTransportError::WebTransportError(const jsbind::DOMString& message, const jsbind::Any& options): DOMException(emlite::Val::global("WebTransportError").new_(message, options)) {}
+WebTransportError::WebTransportError() : DOMException(emlite::Val::global("WebTransportError").new_()) {}
+
+WebTransportError::WebTransportError(const jsbind::DOMString& message) : DOMException(emlite::Val::global("WebTransportError").new_(message)) {}
+
+WebTransportError::WebTransportError(const jsbind::DOMString& message, const jsbind::Any& options) : DOMException(emlite::Val::global("WebTransportError").new_(message, options)) {}
 
 WebTransportErrorSource WebTransportError::source() const {
     return DOMException::get("source").as<WebTransportErrorSource>();

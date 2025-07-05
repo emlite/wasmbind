@@ -14,6 +14,7 @@ public:
     static FileSystemFileEntry take_ownership(Handle h) noexcept;
 
     FileSystemFileEntry clone() const noexcept;
+    jsbind::Undefined file(const jsbind::Function& successCallback);
     jsbind::Undefined file(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

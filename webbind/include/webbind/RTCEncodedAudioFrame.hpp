@@ -28,6 +28,7 @@ public:
     static RTCEncodedAudioFrame take_ownership(Handle h) noexcept;
 
     RTCEncodedAudioFrame clone() const noexcept;
+    RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame);
     RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame, const jsbind::Any& options);
     jsbind::ArrayBuffer data() const;
     void data(const jsbind::ArrayBuffer& value);

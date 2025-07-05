@@ -20,8 +20,14 @@ public:
     static DOMQuad take_ownership(Handle h) noexcept;
 
     DOMQuad clone() const noexcept;
+    DOMQuad();
+    DOMQuad(const DOMPointInit& p1);
+    DOMQuad(const DOMPointInit& p1, const DOMPointInit& p2);
+    DOMQuad(const DOMPointInit& p1, const DOMPointInit& p2, const DOMPointInit& p3);
     DOMQuad(const DOMPointInit& p1, const DOMPointInit& p2, const DOMPointInit& p3, const DOMPointInit& p4);
+    static DOMQuad fromRect();
     static DOMQuad fromRect(const DOMRectInit& other);
+    static DOMQuad fromQuad();
     static DOMQuad fromQuad(const DOMQuadInit& other);
     DOMPoint p1() const;
     DOMPoint p2() const;

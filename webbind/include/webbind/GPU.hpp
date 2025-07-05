@@ -34,6 +34,7 @@ public:
     static GPU take_ownership(Handle h) noexcept;
 
     GPU clone() const noexcept;
+    jsbind::Promise requestAdapter();
     jsbind::Promise requestAdapter(const GPURequestAdapterOptions& options);
     GPUTextureFormat getPreferredCanvasFormat();
     WGSLLanguageFeatures wgslLanguageFeatures() const;

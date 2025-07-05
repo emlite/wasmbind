@@ -26,6 +26,10 @@ CacheStorage::CacheStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 CacheStorage::CacheStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise CacheStorage::match(const jsbind::Any& request) {
+    return emlite::Val::call("match", request).as<jsbind::Promise>();
+}
+
 jsbind::Promise CacheStorage::match(const jsbind::Any& request, const MultiCacheQueryOptions& options) {
     return emlite::Val::call("match", request, options).as<jsbind::Promise>();
 }

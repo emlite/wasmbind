@@ -36,6 +36,7 @@ public:
     static AudioContext take_ownership(Handle h) noexcept;
 
     AudioContext clone() const noexcept;
+    AudioContext();
     AudioContext(const jsbind::Any& contextOptions);
     double baseLatency() const;
     double outputLatency() const;

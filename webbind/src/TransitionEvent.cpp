@@ -9,7 +9,9 @@ TransitionEvent::TransitionEvent(Handle h) noexcept : Event(emlite::Val::take_ow
 TransitionEvent::TransitionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-TransitionEvent::TransitionEvent(const jsbind::CSSOMString& type, const jsbind::Any& transitionEventInitDict): Event(emlite::Val::global("TransitionEvent").new_(type, transitionEventInitDict)) {}
+TransitionEvent::TransitionEvent(const jsbind::CSSOMString& type) : Event(emlite::Val::global("TransitionEvent").new_(type)) {}
+
+TransitionEvent::TransitionEvent(const jsbind::CSSOMString& type, const jsbind::Any& transitionEventInitDict) : Event(emlite::Val::global("TransitionEvent").new_(type, transitionEventInitDict)) {}
 
 jsbind::CSSOMString TransitionEvent::propertyName() const {
     return Event::get("propertyName").as<jsbind::CSSOMString>();

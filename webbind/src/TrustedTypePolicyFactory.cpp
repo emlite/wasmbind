@@ -44,6 +44,10 @@ TrustedTypePolicyFactory::TrustedTypePolicyFactory(Handle h) noexcept : emlite::
 TrustedTypePolicyFactory::TrustedTypePolicyFactory(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+TrustedTypePolicy TrustedTypePolicyFactory::createPolicy(const jsbind::DOMString& policyName) {
+    return emlite::Val::call("createPolicy", policyName).as<TrustedTypePolicy>();
+}
+
 TrustedTypePolicy TrustedTypePolicyFactory::createPolicy(const jsbind::DOMString& policyName, const TrustedTypePolicyOptions& policyOptions) {
     return emlite::Val::call("createPolicy", policyName, policyOptions).as<TrustedTypePolicy>();
 }
@@ -68,8 +72,20 @@ TrustedScript TrustedTypePolicyFactory::emptyScript() const {
     return emlite::Val::get("emptyScript").as<TrustedScript>();
 }
 
+jsbind::DOMString TrustedTypePolicyFactory::getAttributeType(const jsbind::DOMString& tagName, const jsbind::DOMString& attribute) {
+    return emlite::Val::call("getAttributeType", tagName, attribute).as<jsbind::DOMString>();
+}
+
+jsbind::DOMString TrustedTypePolicyFactory::getAttributeType(const jsbind::DOMString& tagName, const jsbind::DOMString& attribute, const jsbind::DOMString& elementNs) {
+    return emlite::Val::call("getAttributeType", tagName, attribute, elementNs).as<jsbind::DOMString>();
+}
+
 jsbind::DOMString TrustedTypePolicyFactory::getAttributeType(const jsbind::DOMString& tagName, const jsbind::DOMString& attribute, const jsbind::DOMString& elementNs, const jsbind::DOMString& attrNs) {
     return emlite::Val::call("getAttributeType", tagName, attribute, elementNs, attrNs).as<jsbind::DOMString>();
+}
+
+jsbind::DOMString TrustedTypePolicyFactory::getPropertyType(const jsbind::DOMString& tagName, const jsbind::DOMString& property) {
+    return emlite::Val::call("getPropertyType", tagName, property).as<jsbind::DOMString>();
 }
 
 jsbind::DOMString TrustedTypePolicyFactory::getPropertyType(const jsbind::DOMString& tagName, const jsbind::DOMString& property, const jsbind::DOMString& elementNs) {

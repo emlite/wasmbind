@@ -50,6 +50,10 @@ float SVGTextContentElement::getRotationOfChar(unsigned long charnum) {
     return SVGGraphicsElement::call("getRotationOfChar", charnum).as<float>();
 }
 
+long SVGTextContentElement::getCharNumAtPosition() {
+    return SVGGraphicsElement::call("getCharNumAtPosition").as<long>();
+}
+
 long SVGTextContentElement::getCharNumAtPosition(const DOMPointInit& point) {
     return SVGGraphicsElement::call("getCharNumAtPosition", point).as<long>();
 }

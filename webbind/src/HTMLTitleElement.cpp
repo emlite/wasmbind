@@ -9,7 +9,7 @@ HTMLTitleElement::HTMLTitleElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLTitleElement::HTMLTitleElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTitleElement::HTMLTitleElement(): HTMLElement(emlite::Val::global("HTMLTitleElement").new_()) {}
+HTMLTitleElement::HTMLTitleElement() : HTMLElement(emlite::Val::global("HTMLTitleElement").new_()) {}
 
 jsbind::DOMString HTMLTitleElement::text() const {
     return HTMLElement::get("text").as<jsbind::DOMString>();

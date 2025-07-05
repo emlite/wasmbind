@@ -10,7 +10,7 @@ RTCDataChannelEvent::RTCDataChannelEvent(Handle h) noexcept : Event(emlite::Val:
 RTCDataChannelEvent::RTCDataChannelEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-RTCDataChannelEvent::RTCDataChannelEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("RTCDataChannelEvent").new_(type, eventInitDict)) {}
+RTCDataChannelEvent::RTCDataChannelEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCDataChannelEvent").new_(type, eventInitDict)) {}
 
 RTCDataChannel RTCDataChannelEvent::channel() const {
     return Event::get("channel").as<RTCDataChannel>();

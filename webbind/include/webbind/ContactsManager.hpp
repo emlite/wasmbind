@@ -49,6 +49,7 @@ public:
 
     ContactsManager clone() const noexcept;
     jsbind::Promise getProperties();
+    jsbind::Promise select(const jsbind::Sequence<ContactProperty>& properties);
     jsbind::Promise select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options);
 };
 

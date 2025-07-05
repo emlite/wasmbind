@@ -9,7 +9,7 @@ EncodedAudioChunk::EncodedAudioChunk(Handle h) noexcept : emlite::Val(emlite::Va
 EncodedAudioChunk::EncodedAudioChunk(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-EncodedAudioChunk::EncodedAudioChunk(const jsbind::Any& init): emlite::Val(emlite::Val::global("EncodedAudioChunk").new_(init)) {}
+EncodedAudioChunk::EncodedAudioChunk(const jsbind::Any& init) : emlite::Val(emlite::Val::global("EncodedAudioChunk").new_(init)) {}
 
 EncodedAudioChunkType EncodedAudioChunk::type() const {
     return emlite::Val::get("type").as<EncodedAudioChunkType>();

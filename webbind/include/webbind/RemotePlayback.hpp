@@ -15,6 +15,7 @@ public:
 
     RemotePlayback clone() const noexcept;
     jsbind::Promise watchAvailability(const jsbind::Function& callback);
+    jsbind::Promise cancelWatchAvailability();
     jsbind::Promise cancelWatchAvailability(long id);
     RemotePlaybackState state() const;
     jsbind::Any onconnecting() const;

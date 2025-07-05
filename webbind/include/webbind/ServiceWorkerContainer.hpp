@@ -35,7 +35,9 @@ public:
     ServiceWorkerContainer clone() const noexcept;
     ServiceWorker controller() const;
     jsbind::Promise ready() const;
+    jsbind::Promise register_(const jsbind::Any& scriptURL);
     jsbind::Promise register_(const jsbind::Any& scriptURL, const RegistrationOptions& options);
+    jsbind::Promise getRegistration();
     jsbind::Promise getRegistration(const jsbind::USVString& clientURL);
     jsbind::Promise getRegistrations();
     jsbind::Undefined startMessages();

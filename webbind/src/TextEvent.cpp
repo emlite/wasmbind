@@ -14,6 +14,22 @@ jsbind::DOMString TextEvent::data() const {
     return UIEvent::get("data").as<jsbind::DOMString>();
 }
 
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type) {
+    return UIEvent::call("initTextEvent", type).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles) {
+    return UIEvent::call("initTextEvent", type, bubbles).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable) {
+    return UIEvent::call("initTextEvent", type, bubbles, cancelable).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const Window& view) {
+    return UIEvent::call("initTextEvent", type, bubbles, cancelable, view).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const Window& view, const jsbind::DOMString& data) {
     return UIEvent::call("initTextEvent", type, bubbles, cancelable, view, data).as<jsbind::Undefined>();
 }

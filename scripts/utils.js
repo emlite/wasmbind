@@ -26,7 +26,7 @@ export function writePair(name, hdrLines, srcLines) {
   const { h, c } = pair(name);
   fs.appendFileSync(h, header + "\n", "utf8");
   fs.appendFileSync(c, srcLines.join("\n") + "\n", "utf8");
-//   console.log(`Parsed ${name}`);
+  //   console.log(`Parsed ${name}`);
 }
 
 export function flat(t) {
@@ -140,4 +140,21 @@ export function fixIdent(name) {
   let out = name.replace(/[/\-+]/g, "_");
   if (/^[0-9]/.test(out)) out = "_" + out;
   return out;
+}
+
+export function variantsOf(args) {
+  const firstOpt = args.findIndex((a) => a.optional || a.default != null);
+  if (firstOpt === -1) return [args];
+  const out = [args.slice(0, firstOpt)];
+  for (let i = firstOpt + 1; i <= args.length; ++i) out.push(args.slice(0, i));
+  return out;
+}
+
+export function argDecl(args, withNames = true) {
+  return args
+    .map((a) => {
+      const t = argtypeFix(cpp(a.idlType));
+      return withNames ? `${t} ${fixIdent(a.name)}` : t;
+    })
+    .join(", ");
 }

@@ -9,7 +9,9 @@ AmbientLightSensor::AmbientLightSensor(Handle h) noexcept : Sensor(emlite::Val::
 AmbientLightSensor::AmbientLightSensor(const emlite::Val &val) noexcept: Sensor(val) {}
 
 
-AmbientLightSensor::AmbientLightSensor(const jsbind::Any& sensorOptions): Sensor(emlite::Val::global("AmbientLightSensor").new_(sensorOptions)) {}
+AmbientLightSensor::AmbientLightSensor() : Sensor(emlite::Val::global("AmbientLightSensor").new_()) {}
+
+AmbientLightSensor::AmbientLightSensor(const jsbind::Any& sensorOptions) : Sensor(emlite::Val::global("AmbientLightSensor").new_(sensorOptions)) {}
 
 double AmbientLightSensor::illuminance() const {
     return Sensor::get("illuminance").as<double>();

@@ -46,8 +46,16 @@ void FontFaceSet::onloadingerror(const jsbind::Any& value) {
     EventTarget::set("onloadingerror", value);
 }
 
+jsbind::Promise FontFaceSet::load(const jsbind::CSSOMString& font) {
+    return EventTarget::call("load", font).as<jsbind::Promise>();
+}
+
 jsbind::Promise FontFaceSet::load(const jsbind::CSSOMString& font, const jsbind::CSSOMString& text) {
     return EventTarget::call("load", font, text).as<jsbind::Promise>();
+}
+
+bool FontFaceSet::check(const jsbind::CSSOMString& font) {
+    return EventTarget::call("check", font).as<bool>();
 }
 
 bool FontFaceSet::check(const jsbind::CSSOMString& font, const jsbind::CSSOMString& text) {

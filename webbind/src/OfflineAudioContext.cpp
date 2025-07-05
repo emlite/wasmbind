@@ -10,7 +10,7 @@ OfflineAudioContext::OfflineAudioContext(Handle h) noexcept : BaseAudioContext(e
 OfflineAudioContext::OfflineAudioContext(const emlite::Val &val) noexcept: BaseAudioContext(val) {}
 
 
-OfflineAudioContext::OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate): BaseAudioContext(emlite::Val::global("OfflineAudioContext").new_(numberOfChannels, length, sampleRate)) {}
+OfflineAudioContext::OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate) : BaseAudioContext(emlite::Val::global("OfflineAudioContext").new_(numberOfChannels, length, sampleRate)) {}
 
 jsbind::Promise OfflineAudioContext::startRendering() {
     return BaseAudioContext::call("startRendering").as<jsbind::Promise>();

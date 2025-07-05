@@ -10,7 +10,7 @@ HTMLEmbedElement::HTMLEmbedElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLEmbedElement::HTMLEmbedElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLEmbedElement::HTMLEmbedElement(): HTMLElement(emlite::Val::global("HTMLEmbedElement").new_()) {}
+HTMLEmbedElement::HTMLEmbedElement() : HTMLElement(emlite::Val::global("HTMLEmbedElement").new_()) {}
 
 jsbind::USVString HTMLEmbedElement::src() const {
     return HTMLElement::get("src").as<jsbind::USVString>();

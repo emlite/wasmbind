@@ -11,7 +11,7 @@ FetchEvent::FetchEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ow
 FetchEvent::FetchEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-FetchEvent::FetchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): ExtendableEvent(emlite::Val::global("FetchEvent").new_(type, eventInitDict)) {}
+FetchEvent::FetchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("FetchEvent").new_(type, eventInitDict)) {}
 
 Request FetchEvent::request() const {
     return ExtendableEvent::get("request").as<Request>();

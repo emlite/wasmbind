@@ -25,7 +25,19 @@ TextDecoder::TextDecoder(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 TextDecoder::TextDecoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-TextDecoder::TextDecoder(const jsbind::DOMString& label, const jsbind::Any& options): emlite::Val(emlite::Val::global("TextDecoder").new_(label, options)) {}
+TextDecoder::TextDecoder() : emlite::Val(emlite::Val::global("TextDecoder").new_()) {}
+
+TextDecoder::TextDecoder(const jsbind::DOMString& label) : emlite::Val(emlite::Val::global("TextDecoder").new_(label)) {}
+
+TextDecoder::TextDecoder(const jsbind::DOMString& label, const jsbind::Any& options) : emlite::Val(emlite::Val::global("TextDecoder").new_(label, options)) {}
+
+jsbind::USVString TextDecoder::decode() {
+    return emlite::Val::call("decode").as<jsbind::USVString>();
+}
+
+jsbind::USVString TextDecoder::decode(const jsbind::Any& input) {
+    return emlite::Val::call("decode", input).as<jsbind::USVString>();
+}
 
 jsbind::USVString TextDecoder::decode(const jsbind::Any& input, const TextDecodeOptions& options) {
     return emlite::Val::call("decode", input, options).as<jsbind::USVString>();

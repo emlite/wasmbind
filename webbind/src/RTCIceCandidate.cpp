@@ -10,7 +10,9 @@ RTCIceCandidate::RTCIceCandidate(Handle h) noexcept : emlite::Val(emlite::Val::t
 RTCIceCandidate::RTCIceCandidate(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-RTCIceCandidate::RTCIceCandidate(const jsbind::Any& candidateInitDict): emlite::Val(emlite::Val::global("RTCIceCandidate").new_(candidateInitDict)) {}
+RTCIceCandidate::RTCIceCandidate() : emlite::Val(emlite::Val::global("RTCIceCandidate").new_()) {}
+
+RTCIceCandidate::RTCIceCandidate(const jsbind::Any& candidateInitDict) : emlite::Val(emlite::Val::global("RTCIceCandidate").new_(candidateInitDict)) {}
 
 jsbind::DOMString RTCIceCandidate::candidate() const {
     return emlite::Val::get("candidate").as<jsbind::DOMString>();

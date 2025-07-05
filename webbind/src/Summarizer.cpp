@@ -123,16 +123,32 @@ Summarizer::Summarizer(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 Summarizer::Summarizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise Summarizer::create() {
+    return emlite::Val::global("summarizer").call("create").as<jsbind::Promise>();
+}
+
 jsbind::Promise Summarizer::create(const SummarizerCreateOptions& options) {
     return emlite::Val::global("summarizer").call("create", options).as<jsbind::Promise>();
+}
+
+jsbind::Promise Summarizer::availability() {
+    return emlite::Val::global("summarizer").call("availability").as<jsbind::Promise>();
 }
 
 jsbind::Promise Summarizer::availability(const SummarizerCreateCoreOptions& options) {
     return emlite::Val::global("summarizer").call("availability", options).as<jsbind::Promise>();
 }
 
+jsbind::Promise Summarizer::summarize(const jsbind::DOMString& input) {
+    return emlite::Val::call("summarize", input).as<jsbind::Promise>();
+}
+
 jsbind::Promise Summarizer::summarize(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
     return emlite::Val::call("summarize", input, options).as<jsbind::Promise>();
+}
+
+ReadableStream Summarizer::summarizeStreaming(const jsbind::DOMString& input) {
+    return emlite::Val::call("summarizeStreaming", input).as<ReadableStream>();
 }
 
 ReadableStream Summarizer::summarizeStreaming(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
@@ -165,6 +181,10 @@ jsbind::FrozenArray<jsbind::DOMString> Summarizer::expectedContextLanguages() co
 
 jsbind::DOMString Summarizer::outputLanguage() const {
     return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+}
+
+jsbind::Promise Summarizer::measureInputUsage(const jsbind::DOMString& input) {
+    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise>();
 }
 
 jsbind::Promise Summarizer::measureInputUsage(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {

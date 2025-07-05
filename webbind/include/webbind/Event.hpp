@@ -15,6 +15,7 @@ public:
     static Event take_ownership(Handle h) noexcept;
 
     Event clone() const noexcept;
+    Event(const jsbind::DOMString& type);
     Event(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::DOMString type() const;
     EventTarget target() const;
@@ -35,6 +36,8 @@ public:
     bool composed() const;
     bool isTrusted() const;
     jsbind::Any timeStamp() const;
+    jsbind::Undefined initEvent(const jsbind::DOMString& type);
+    jsbind::Undefined initEvent(const jsbind::DOMString& type, bool bubbles);
     jsbind::Undefined initEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable);
 };
 

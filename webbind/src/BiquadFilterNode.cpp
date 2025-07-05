@@ -11,7 +11,9 @@ BiquadFilterNode::BiquadFilterNode(Handle h) noexcept : AudioNode(emlite::Val::t
 BiquadFilterNode::BiquadFilterNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-BiquadFilterNode::BiquadFilterNode(const BaseAudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("BiquadFilterNode").new_(context, options)) {}
+BiquadFilterNode::BiquadFilterNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("BiquadFilterNode").new_(context)) {}
+
+BiquadFilterNode::BiquadFilterNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("BiquadFilterNode").new_(context, options)) {}
 
 BiquadFilterType BiquadFilterNode::type() const {
     return AudioNode::get("type").as<BiquadFilterType>();

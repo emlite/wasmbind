@@ -9,7 +9,7 @@ HTMLImageElement::HTMLImageElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLImageElement::HTMLImageElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLImageElement::HTMLImageElement(): HTMLElement(emlite::Val::global("HTMLImageElement").new_()) {}
+HTMLImageElement::HTMLImageElement() : HTMLElement(emlite::Val::global("HTMLImageElement").new_()) {}
 
 jsbind::DOMString HTMLImageElement::alt() const {
     return HTMLElement::get("alt").as<jsbind::DOMString>();

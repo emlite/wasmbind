@@ -29,6 +29,7 @@ public:
     DOMPoint getEndPositionOfChar(unsigned long charnum);
     DOMRect getExtentOfChar(unsigned long charnum);
     float getRotationOfChar(unsigned long charnum);
+    long getCharNumAtPosition();
     long getCharNumAtPosition(const DOMPointInit& point);
     jsbind::Undefined selectSubString(unsigned long charnum, unsigned long nchars);
 };

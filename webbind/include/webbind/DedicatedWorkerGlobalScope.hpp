@@ -16,6 +16,7 @@ public:
 
     DedicatedWorkerGlobalScope clone() const noexcept;
     jsbind::DOMString name() const;
+    jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     jsbind::Undefined close();
     jsbind::Any onrtctransform() const;

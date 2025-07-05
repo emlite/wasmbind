@@ -9,10 +9,28 @@ CompositionEvent::CompositionEvent(Handle h) noexcept : UIEvent(emlite::Val::tak
 CompositionEvent::CompositionEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-CompositionEvent::CompositionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): UIEvent(emlite::Val::global("CompositionEvent").new_(type, eventInitDict)) {}
+CompositionEvent::CompositionEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("CompositionEvent").new_(type)) {}
+
+CompositionEvent::CompositionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("CompositionEvent").new_(type, eventInitDict)) {}
 
 jsbind::USVString CompositionEvent::data() const {
     return UIEvent::get("data").as<jsbind::USVString>();
+}
+
+jsbind::Undefined CompositionEvent::initCompositionEvent(const jsbind::DOMString& typeArg) {
+    return UIEvent::call("initCompositionEvent", typeArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined CompositionEvent::initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg) {
+    return UIEvent::call("initCompositionEvent", typeArg, bubblesArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined CompositionEvent::initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg) {
+    return UIEvent::call("initCompositionEvent", typeArg, bubblesArg, cancelableArg).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined CompositionEvent::initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg) {
+    return UIEvent::call("initCompositionEvent", typeArg, bubblesArg, cancelableArg, viewArg).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined CompositionEvent::initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg, const jsbind::DOMString& dataArg) {

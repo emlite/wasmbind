@@ -14,6 +14,7 @@ public:
     static CSSColor take_ownership(Handle h) noexcept;
 
     CSSColor clone() const noexcept;
+    CSSColor(const jsbind::Any& colorSpace, const jsbind::Sequence<jsbind::Any>& channels);
     CSSColor(const jsbind::Any& colorSpace, const jsbind::Sequence<jsbind::Any>& channels, const jsbind::Any& alpha);
     jsbind::Any colorSpace() const;
     void colorSpace(const jsbind::Any& value);

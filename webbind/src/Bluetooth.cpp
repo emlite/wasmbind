@@ -111,8 +111,16 @@ jsbind::Promise Bluetooth::getDevices() {
     return EventTarget::call("getDevices").as<jsbind::Promise>();
 }
 
+jsbind::Promise Bluetooth::requestDevice() {
+    return EventTarget::call("requestDevice").as<jsbind::Promise>();
+}
+
 jsbind::Promise Bluetooth::requestDevice(const RequestDeviceOptions& options) {
     return EventTarget::call("requestDevice", options).as<jsbind::Promise>();
+}
+
+jsbind::Promise Bluetooth::requestLEScan() {
+    return EventTarget::call("requestLEScan").as<jsbind::Promise>();
 }
 
 jsbind::Promise Bluetooth::requestLEScan(const BluetoothLEScanOptions& options) {

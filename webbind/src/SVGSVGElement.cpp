@@ -204,6 +204,10 @@ SVGTransform SVGSVGElement::createSVGTransform() {
     return SVGGraphicsElement::call("createSVGTransform").as<SVGTransform>();
 }
 
+SVGTransform SVGSVGElement::createSVGTransformFromMatrix() {
+    return SVGGraphicsElement::call("createSVGTransformFromMatrix").as<SVGTransform>();
+}
+
 SVGTransform SVGSVGElement::createSVGTransformFromMatrix(const DOMMatrix2DInit& matrix) {
     return SVGGraphicsElement::call("createSVGTransformFromMatrix", matrix).as<SVGTransform>();
 }

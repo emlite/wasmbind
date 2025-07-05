@@ -9,7 +9,7 @@ HTMLParamElement::HTMLParamElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLParamElement::HTMLParamElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLParamElement::HTMLParamElement(): HTMLElement(emlite::Val::global("HTMLParamElement").new_()) {}
+HTMLParamElement::HTMLParamElement() : HTMLElement(emlite::Val::global("HTMLParamElement").new_()) {}
 
 jsbind::DOMString HTMLParamElement::name() const {
     return HTMLElement::get("name").as<jsbind::DOMString>();

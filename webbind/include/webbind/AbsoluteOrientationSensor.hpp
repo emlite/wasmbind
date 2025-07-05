@@ -14,6 +14,7 @@ public:
     static AbsoluteOrientationSensor take_ownership(Handle h) noexcept;
 
     AbsoluteOrientationSensor clone() const noexcept;
+    AbsoluteOrientationSensor();
     AbsoluteOrientationSensor(const jsbind::Any& sensorOptions);
 };
 

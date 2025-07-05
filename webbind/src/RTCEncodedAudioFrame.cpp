@@ -33,7 +33,9 @@ RTCEncodedAudioFrame::RTCEncodedAudioFrame(Handle h) noexcept : emlite::Val(emli
 RTCEncodedAudioFrame::RTCEncodedAudioFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-RTCEncodedAudioFrame::RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame, const jsbind::Any& options): emlite::Val(emlite::Val::global("RTCEncodedAudioFrame").new_(originalFrame, options)) {}
+RTCEncodedAudioFrame::RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame) : emlite::Val(emlite::Val::global("RTCEncodedAudioFrame").new_(originalFrame)) {}
+
+RTCEncodedAudioFrame::RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame, const jsbind::Any& options) : emlite::Val(emlite::Val::global("RTCEncodedAudioFrame").new_(originalFrame, options)) {}
 
 jsbind::ArrayBuffer RTCEncodedAudioFrame::data() const {
     return emlite::Val::get("data").as<jsbind::ArrayBuffer>();

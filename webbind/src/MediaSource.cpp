@@ -12,7 +12,7 @@ MediaSource::MediaSource(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 MediaSource::MediaSource(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-MediaSource::MediaSource(): EventTarget(emlite::Val::global("MediaSource").new_()) {}
+MediaSource::MediaSource() : EventTarget(emlite::Val::global("MediaSource").new_()) {}
 
 MediaSourceHandle MediaSource::handle() const {
     return EventTarget::get("handle").as<MediaSourceHandle>();
@@ -72,6 +72,10 @@ SourceBuffer MediaSource::addSourceBuffer(const jsbind::DOMString& type) {
 
 jsbind::Undefined MediaSource::removeSourceBuffer(const SourceBuffer& sourceBuffer) {
     return EventTarget::call("removeSourceBuffer", sourceBuffer).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MediaSource::endOfStream() {
+    return EventTarget::call("endOfStream").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined MediaSource::endOfStream(const EndOfStreamError& error) {

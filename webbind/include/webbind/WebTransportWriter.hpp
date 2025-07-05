@@ -14,6 +14,7 @@ public:
     static WebTransportWriter take_ownership(Handle h) noexcept;
 
     WebTransportWriter clone() const noexcept;
+    jsbind::Promise atomicWrite();
     jsbind::Promise atomicWrite(const jsbind::Any& chunk);
     jsbind::Undefined commit();
 };

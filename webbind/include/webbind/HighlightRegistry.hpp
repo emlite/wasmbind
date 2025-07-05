@@ -42,6 +42,7 @@ public:
     static HighlightRegistry take_ownership(Handle h) noexcept;
 
     HighlightRegistry clone() const noexcept;
+    jsbind::Sequence<HighlightHitResult> highlightsFromPoint(float x, float y);
     jsbind::Sequence<HighlightHitResult> highlightsFromPoint(float x, float y, const HighlightsFromPointOptions& options);
 };
 

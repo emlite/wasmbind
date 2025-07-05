@@ -13,7 +13,7 @@ HTMLButtonElement::HTMLButtonElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLButtonElement::HTMLButtonElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLButtonElement::HTMLButtonElement(): HTMLElement(emlite::Val::global("HTMLButtonElement").new_()) {}
+HTMLButtonElement::HTMLButtonElement() : HTMLElement(emlite::Val::global("HTMLButtonElement").new_()) {}
 
 jsbind::DOMString HTMLButtonElement::command() const {
     return HTMLElement::get("command").as<jsbind::DOMString>();

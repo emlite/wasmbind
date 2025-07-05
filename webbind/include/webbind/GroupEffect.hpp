@@ -17,6 +17,7 @@ public:
     static GroupEffect take_ownership(Handle h) noexcept;
 
     GroupEffect clone() const noexcept;
+    GroupEffect(const jsbind::Sequence<AnimationEffect>& children);
     GroupEffect(const jsbind::Sequence<AnimationEffect>& children, const jsbind::Any& timing);
     AnimationNodeList children() const;
     AnimationEffect firstChild() const;

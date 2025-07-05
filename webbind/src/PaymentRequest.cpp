@@ -60,7 +60,13 @@ PaymentRequest::PaymentRequest(Handle h) noexcept : EventTarget(emlite::Val::tak
 PaymentRequest::PaymentRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-PaymentRequest::PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options): EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details, options)) {}
+PaymentRequest::PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details) : EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details)) {}
+
+PaymentRequest::PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options) : EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details, options)) {}
+
+jsbind::Promise PaymentRequest::show() {
+    return EventTarget::call("show").as<jsbind::Promise>();
+}
 
 jsbind::Promise PaymentRequest::show(const jsbind::Promise& detailsPromise) {
     return EventTarget::call("show", detailsPromise).as<jsbind::Promise>();

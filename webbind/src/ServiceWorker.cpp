@@ -18,6 +18,10 @@ ServiceWorkerState ServiceWorker::state() const {
     return EventTarget::get("state").as<ServiceWorkerState>();
 }
 
+jsbind::Undefined ServiceWorker::postMessage(const jsbind::Any& message) {
+    return EventTarget::call("postMessage", message).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined ServiceWorker::postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options) {
     return EventTarget::call("postMessage", message, options).as<jsbind::Undefined>();
 }

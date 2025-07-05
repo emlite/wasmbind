@@ -11,7 +11,7 @@ TextEncoderStream::TextEncoderStream(Handle h) noexcept : emlite::Val(emlite::Va
 TextEncoderStream::TextEncoderStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-TextEncoderStream::TextEncoderStream(): emlite::Val(emlite::Val::global("TextEncoderStream").new_()) {}
+TextEncoderStream::TextEncoderStream() : emlite::Val(emlite::Val::global("TextEncoderStream").new_()) {}
 
 jsbind::DOMString TextEncoderStream::encoding() const {
     return emlite::Val::get("encoding").as<jsbind::DOMString>();

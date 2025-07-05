@@ -15,6 +15,7 @@ public:
     static Instance take_ownership(Handle h) noexcept;
 
     Instance clone() const noexcept;
+    Instance(const Module& module_);
     Instance(const Module& module_, const jsbind::Object& importObject);
     jsbind::Object exports() const;
 };

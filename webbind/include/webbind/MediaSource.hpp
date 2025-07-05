@@ -34,6 +34,7 @@ public:
     static bool canConstructInDedicatedWorker();
     SourceBuffer addSourceBuffer(const jsbind::DOMString& type);
     jsbind::Undefined removeSourceBuffer(const SourceBuffer& sourceBuffer);
+    jsbind::Undefined endOfStream();
     jsbind::Undefined endOfStream(const EndOfStreamError& error);
     jsbind::Undefined setLiveSeekableRange(double start, double end);
     jsbind::Undefined clearLiveSeekableRange();

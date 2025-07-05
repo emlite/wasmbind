@@ -81,12 +81,24 @@ jsbind::Undefined Selection::empty() {
     return emlite::Val::call("empty").as<jsbind::Undefined>();
 }
 
+jsbind::Sequence<StaticRange> Selection::getComposedRanges() {
+    return emlite::Val::call("getComposedRanges").as<jsbind::Sequence<StaticRange>>();
+}
+
 jsbind::Sequence<StaticRange> Selection::getComposedRanges(const GetComposedRangesOptions& options) {
     return emlite::Val::call("getComposedRanges", options).as<jsbind::Sequence<StaticRange>>();
 }
 
+jsbind::Undefined Selection::collapse(const Node& node) {
+    return emlite::Val::call("collapse", node).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Selection::collapse(const Node& node, unsigned long offset) {
     return emlite::Val::call("collapse", node, offset).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Selection::setPosition(const Node& node) {
+    return emlite::Val::call("setPosition", node).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Selection::setPosition(const Node& node, unsigned long offset) {
@@ -101,6 +113,10 @@ jsbind::Undefined Selection::collapseToEnd() {
     return emlite::Val::call("collapseToEnd").as<jsbind::Undefined>();
 }
 
+jsbind::Undefined Selection::extend(const Node& node) {
+    return emlite::Val::call("extend", node).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Selection::extend(const Node& node, unsigned long offset) {
     return emlite::Val::call("extend", node, offset).as<jsbind::Undefined>();
 }
@@ -113,12 +129,28 @@ jsbind::Undefined Selection::selectAllChildren(const Node& node) {
     return emlite::Val::call("selectAllChildren", node).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined Selection::modify() {
+    return emlite::Val::call("modify").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Selection::modify(const jsbind::DOMString& alter) {
+    return emlite::Val::call("modify", alter).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Selection::modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction) {
+    return emlite::Val::call("modify", alter, direction).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Selection::modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction, const jsbind::DOMString& granularity) {
     return emlite::Val::call("modify", alter, direction, granularity).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Selection::deleteFromDocument() {
     return emlite::Val::call("deleteFromDocument").as<jsbind::Undefined>();
+}
+
+bool Selection::containsNode(const Node& node) {
+    return emlite::Val::call("containsNode", node).as<bool>();
 }
 
 bool Selection::containsNode(const Node& node, bool allowPartialContainment) {

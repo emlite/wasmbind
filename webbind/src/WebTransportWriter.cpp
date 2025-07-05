@@ -9,6 +9,10 @@ WebTransportWriter::WebTransportWriter(Handle h) noexcept : WritableStreamDefaul
 WebTransportWriter::WebTransportWriter(const emlite::Val &val) noexcept: WritableStreamDefaultWriter(val) {}
 
 
+jsbind::Promise WebTransportWriter::atomicWrite() {
+    return WritableStreamDefaultWriter::call("atomicWrite").as<jsbind::Promise>();
+}
+
 jsbind::Promise WebTransportWriter::atomicWrite(const jsbind::Any& chunk) {
     return WritableStreamDefaultWriter::call("atomicWrite", chunk).as<jsbind::Promise>();
 }

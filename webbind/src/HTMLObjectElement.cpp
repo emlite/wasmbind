@@ -12,7 +12,7 @@ HTMLObjectElement::HTMLObjectElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLObjectElement::HTMLObjectElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLObjectElement::HTMLObjectElement(): HTMLElement(emlite::Val::global("HTMLObjectElement").new_()) {}
+HTMLObjectElement::HTMLObjectElement() : HTMLElement(emlite::Val::global("HTMLObjectElement").new_()) {}
 
 jsbind::USVString HTMLObjectElement::data() const {
     return HTMLElement::get("data").as<jsbind::USVString>();

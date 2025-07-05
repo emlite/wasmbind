@@ -11,7 +11,7 @@ CompressionStream::CompressionStream(Handle h) noexcept : emlite::Val(emlite::Va
 CompressionStream::CompressionStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-CompressionStream::CompressionStream(const CompressionFormat& format): emlite::Val(emlite::Val::global("CompressionStream").new_(format)) {}
+CompressionStream::CompressionStream(const CompressionFormat& format) : emlite::Val(emlite::Val::global("CompressionStream").new_(format)) {}
 
 ReadableStream CompressionStream::readable() const {
     return emlite::Val::get("readable").as<ReadableStream>();

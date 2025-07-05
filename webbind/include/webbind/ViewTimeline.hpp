@@ -17,6 +17,7 @@ public:
     static ViewTimeline take_ownership(Handle h) noexcept;
 
     ViewTimeline clone() const noexcept;
+    ViewTimeline();
     ViewTimeline(const jsbind::Any& options);
     Element subject() const;
     CSSNumericValue startOffset() const;

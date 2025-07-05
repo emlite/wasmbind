@@ -11,7 +11,9 @@ ConvolverNode::ConvolverNode(Handle h) noexcept : AudioNode(emlite::Val::take_ow
 ConvolverNode::ConvolverNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-ConvolverNode::ConvolverNode(const BaseAudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("ConvolverNode").new_(context, options)) {}
+ConvolverNode::ConvolverNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("ConvolverNode").new_(context)) {}
+
+ConvolverNode::ConvolverNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("ConvolverNode").new_(context, options)) {}
 
 AudioBuffer ConvolverNode::buffer() const {
     return AudioNode::get("buffer").as<AudioBuffer>();

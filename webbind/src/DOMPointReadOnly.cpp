@@ -107,7 +107,19 @@ DOMPointReadOnly::DOMPointReadOnly(Handle h) noexcept : emlite::Val(emlite::Val:
 DOMPointReadOnly::DOMPointReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DOMPointReadOnly::DOMPointReadOnly(double x, double y, double z, double w): emlite::Val(emlite::Val::global("DOMPointReadOnly").new_(x, y, z, w)) {}
+DOMPointReadOnly::DOMPointReadOnly() : emlite::Val(emlite::Val::global("DOMPointReadOnly").new_()) {}
+
+DOMPointReadOnly::DOMPointReadOnly(double x) : emlite::Val(emlite::Val::global("DOMPointReadOnly").new_(x)) {}
+
+DOMPointReadOnly::DOMPointReadOnly(double x, double y) : emlite::Val(emlite::Val::global("DOMPointReadOnly").new_(x, y)) {}
+
+DOMPointReadOnly::DOMPointReadOnly(double x, double y, double z) : emlite::Val(emlite::Val::global("DOMPointReadOnly").new_(x, y, z)) {}
+
+DOMPointReadOnly::DOMPointReadOnly(double x, double y, double z, double w) : emlite::Val(emlite::Val::global("DOMPointReadOnly").new_(x, y, z, w)) {}
+
+DOMPointReadOnly DOMPointReadOnly::fromPoint() {
+    return emlite::Val::global("dompointreadonly").call("fromPoint").as<DOMPointReadOnly>();
+}
 
 DOMPointReadOnly DOMPointReadOnly::fromPoint(const DOMPointInit& other) {
     return emlite::Val::global("dompointreadonly").call("fromPoint", other).as<DOMPointReadOnly>();
@@ -127,6 +139,10 @@ double DOMPointReadOnly::z() const {
 
 double DOMPointReadOnly::w() const {
     return emlite::Val::get("w").as<double>();
+}
+
+DOMPoint DOMPointReadOnly::matrixTransform() {
+    return emlite::Val::call("matrixTransform").as<DOMPoint>();
 }
 
 DOMPoint DOMPointReadOnly::matrixTransform(const DOMMatrixInit& matrix) {

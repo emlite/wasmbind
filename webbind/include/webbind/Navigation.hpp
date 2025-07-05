@@ -89,10 +89,15 @@ public:
     NavigationActivation activation() const;
     bool canGoBack() const;
     bool canGoForward() const;
+    NavigationResult navigate(const jsbind::USVString& url);
     NavigationResult navigate(const jsbind::USVString& url, const NavigationNavigateOptions& options);
+    NavigationResult reload();
     NavigationResult reload(const NavigationReloadOptions& options);
+    NavigationResult traverseTo(const jsbind::DOMString& key);
     NavigationResult traverseTo(const jsbind::DOMString& key, const NavigationOptions& options);
+    NavigationResult back();
     NavigationResult back(const NavigationOptions& options);
+    NavigationResult forward();
     NavigationResult forward(const NavigationOptions& options);
     jsbind::Any onnavigate() const;
     void onnavigate(const jsbind::Any& value);

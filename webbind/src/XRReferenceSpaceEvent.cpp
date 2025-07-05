@@ -11,7 +11,7 @@ XRReferenceSpaceEvent::XRReferenceSpaceEvent(Handle h) noexcept : Event(emlite::
 XRReferenceSpaceEvent::XRReferenceSpaceEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-XRReferenceSpaceEvent::XRReferenceSpaceEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("XRReferenceSpaceEvent").new_(type, eventInitDict)) {}
+XRReferenceSpaceEvent::XRReferenceSpaceEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRReferenceSpaceEvent").new_(type, eventInitDict)) {}
 
 XRReferenceSpace XRReferenceSpaceEvent::referenceSpace() const {
     return Event::get("referenceSpace").as<XRReferenceSpace>();

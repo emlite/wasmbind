@@ -10,7 +10,9 @@ FocusEvent::FocusEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(
 FocusEvent::FocusEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-FocusEvent::FocusEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): UIEvent(emlite::Val::global("FocusEvent").new_(type, eventInitDict)) {}
+FocusEvent::FocusEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("FocusEvent").new_(type)) {}
+
+FocusEvent::FocusEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("FocusEvent").new_(type, eventInitDict)) {}
 
 EventTarget FocusEvent::relatedTarget() const {
     return UIEvent::get("relatedTarget").as<EventTarget>();

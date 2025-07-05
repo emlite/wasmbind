@@ -45,6 +45,7 @@ public:
     AnimationEffect clone() const noexcept;
     EffectTiming getTiming();
     ComputedEffectTiming getComputedTiming();
+    jsbind::Undefined updateTiming();
     jsbind::Undefined updateTiming(const OptionalEffectTiming& timing);
     GroupEffect parent() const;
     AnimationEffect previousSibling() const;

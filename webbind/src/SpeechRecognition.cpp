@@ -36,7 +36,7 @@ SpeechRecognition::SpeechRecognition(Handle h) noexcept : EventTarget(emlite::Va
 SpeechRecognition::SpeechRecognition(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-SpeechRecognition::SpeechRecognition(): EventTarget(emlite::Val::global("SpeechRecognition").new_()) {}
+SpeechRecognition::SpeechRecognition() : EventTarget(emlite::Val::global("SpeechRecognition").new_()) {}
 
 SpeechGrammarList SpeechRecognition::grammars() const {
     return EventTarget::get("grammars").as<SpeechGrammarList>();

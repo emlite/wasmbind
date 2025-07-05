@@ -14,6 +14,10 @@ jsbind::DOMString DedicatedWorkerGlobalScope::name() const {
     return WorkerGlobalScope::get("name").as<jsbind::DOMString>();
 }
 
+jsbind::Undefined DedicatedWorkerGlobalScope::postMessage(const jsbind::Any& message) {
+    return WorkerGlobalScope::call("postMessage", message).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined DedicatedWorkerGlobalScope::postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options) {
     return WorkerGlobalScope::call("postMessage", message, options).as<jsbind::Undefined>();
 }

@@ -211,8 +211,16 @@ CookieStoreManager ServiceWorkerRegistration::cookies() const {
     return EventTarget::get("cookies").as<CookieStoreManager>();
 }
 
+jsbind::Promise ServiceWorkerRegistration::showNotification(const jsbind::DOMString& title) {
+    return EventTarget::call("showNotification", title).as<jsbind::Promise>();
+}
+
 jsbind::Promise ServiceWorkerRegistration::showNotification(const jsbind::DOMString& title, const NotificationOptions& options) {
     return EventTarget::call("showNotification", title, options).as<jsbind::Promise>();
+}
+
+jsbind::Promise ServiceWorkerRegistration::getNotifications() {
+    return EventTarget::call("getNotifications").as<jsbind::Promise>();
 }
 
 jsbind::Promise ServiceWorkerRegistration::getNotifications(const GetNotificationOptions& filter) {

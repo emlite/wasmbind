@@ -19,6 +19,8 @@ public:
     static Animation take_ownership(Handle h) noexcept;
 
     Animation clone() const noexcept;
+    Animation();
+    Animation(const AnimationEffect& effect);
     Animation(const AnimationEffect& effect, const AnimationTimeline& timeline);
     jsbind::DOMString id() const;
     void id(const jsbind::DOMString& value);

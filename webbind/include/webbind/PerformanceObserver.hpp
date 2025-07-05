@@ -31,6 +31,7 @@ public:
 
     PerformanceObserver clone() const noexcept;
     PerformanceObserver(const jsbind::Function& callback);
+    jsbind::Undefined observe();
     jsbind::Undefined observe(const PerformanceObserverInit& options);
     jsbind::Undefined disconnect();
     jsbind::Any takeRecords();

@@ -82,6 +82,10 @@ RTCRtpCapabilities RTCRtpSender::getCapabilities(const jsbind::DOMString& kind) 
     return emlite::Val::global("rtcrtpsender").call("getCapabilities", kind).as<RTCRtpCapabilities>();
 }
 
+jsbind::Promise RTCRtpSender::setParameters(const RTCRtpSendParameters& parameters) {
+    return emlite::Val::call("setParameters", parameters).as<jsbind::Promise>();
+}
+
 jsbind::Promise RTCRtpSender::setParameters(const RTCRtpSendParameters& parameters, const RTCSetParameterOptions& setParameterOptions) {
     return emlite::Val::call("setParameters", parameters, setParameterOptions).as<jsbind::Promise>();
 }
@@ -108,6 +112,10 @@ jsbind::Any RTCRtpSender::transform() const {
 
 void RTCRtpSender::transform(const jsbind::Any& value) {
     emlite::Val::set("transform", value);
+}
+
+jsbind::Promise RTCRtpSender::generateKeyFrame() {
+    return emlite::Val::call("generateKeyFrame").as<jsbind::Promise>();
 }
 
 jsbind::Promise RTCRtpSender::generateKeyFrame(const jsbind::Sequence<jsbind::DOMString>& rids) {

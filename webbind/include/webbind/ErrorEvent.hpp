@@ -14,6 +14,7 @@ public:
     static ErrorEvent take_ownership(Handle h) noexcept;
 
     ErrorEvent clone() const noexcept;
+    ErrorEvent(const jsbind::DOMString& type);
     ErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::DOMString message() const;
     jsbind::USVString filename() const;

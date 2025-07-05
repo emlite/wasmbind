@@ -14,7 +14,9 @@ Request::Request(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)
 Request::Request(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Request::Request(const jsbind::Any& input, const jsbind::Any& init): emlite::Val(emlite::Val::global("Request").new_(input, init)) {}
+Request::Request(const jsbind::Any& input) : emlite::Val(emlite::Val::global("Request").new_(input)) {}
+
+Request::Request(const jsbind::Any& input, const jsbind::Any& init) : emlite::Val(emlite::Val::global("Request").new_(input, init)) {}
 
 jsbind::ByteString Request::method() const {
     return emlite::Val::get("method").as<jsbind::ByteString>();

@@ -10,7 +10,9 @@ TouchEvent::TouchEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(
 TouchEvent::TouchEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-TouchEvent::TouchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): UIEvent(emlite::Val::global("TouchEvent").new_(type, eventInitDict)) {}
+TouchEvent::TouchEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("TouchEvent").new_(type)) {}
+
+TouchEvent::TouchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("TouchEvent").new_(type, eventInitDict)) {}
 
 TouchList TouchEvent::touches() const {
     return UIEvent::get("touches").as<TouchList>();

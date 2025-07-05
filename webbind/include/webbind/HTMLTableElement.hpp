@@ -35,6 +35,7 @@ public:
     HTMLCollection tBodies() const;
     HTMLTableSectionElement createTBody();
     HTMLCollection rows() const;
+    HTMLTableRowElement insertRow();
     HTMLTableRowElement insertRow(long index);
     jsbind::Undefined deleteRow(long index);
     jsbind::DOMString align() const;

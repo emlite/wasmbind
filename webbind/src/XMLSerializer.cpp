@@ -10,7 +10,7 @@ XMLSerializer::XMLSerializer(Handle h) noexcept : emlite::Val(emlite::Val::take_
 XMLSerializer::XMLSerializer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-XMLSerializer::XMLSerializer(): emlite::Val(emlite::Val::global("XMLSerializer").new_()) {}
+XMLSerializer::XMLSerializer() : emlite::Val(emlite::Val::global("XMLSerializer").new_()) {}
 
 jsbind::DOMString XMLSerializer::serializeToString(const Node& root) {
     return emlite::Val::call("serializeToString", root).as<jsbind::DOMString>();

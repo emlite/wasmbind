@@ -9,7 +9,9 @@ Headers::Headers(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)
 Headers::Headers(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Headers::Headers(const jsbind::Any& init): emlite::Val(emlite::Val::global("Headers").new_(init)) {}
+Headers::Headers() : emlite::Val(emlite::Val::global("Headers").new_()) {}
+
+Headers::Headers(const jsbind::Any& init) : emlite::Val(emlite::Val::global("Headers").new_(init)) {}
 
 jsbind::Undefined Headers::append(const jsbind::ByteString& name, const jsbind::ByteString& value) {
     return emlite::Val::call("append", name, value).as<jsbind::Undefined>();

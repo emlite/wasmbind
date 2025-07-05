@@ -207,6 +207,10 @@ jsbind::Promise SerialPort::open(const SerialOptions& options) {
     return EventTarget::call("open", options).as<jsbind::Promise>();
 }
 
+jsbind::Promise SerialPort::setSignals() {
+    return EventTarget::call("setSignals").as<jsbind::Promise>();
+}
+
 jsbind::Promise SerialPort::setSignals(const SerialOutputSignals& signals) {
     return EventTarget::call("setSignals", signals).as<jsbind::Promise>();
 }

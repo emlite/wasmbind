@@ -75,8 +75,11 @@ public:
 
     XRMediaBinding clone() const noexcept;
     XRMediaBinding(const XRSession& session);
+    XRQuadLayer createQuadLayer(const HTMLVideoElement& video);
     XRQuadLayer createQuadLayer(const HTMLVideoElement& video, const XRMediaQuadLayerInit& init);
+    XRCylinderLayer createCylinderLayer(const HTMLVideoElement& video);
     XRCylinderLayer createCylinderLayer(const HTMLVideoElement& video, const XRMediaCylinderLayerInit& init);
+    XREquirectLayer createEquirectLayer(const HTMLVideoElement& video);
     XREquirectLayer createEquirectLayer(const HTMLVideoElement& video, const XRMediaEquirectLayerInit& init);
 };
 

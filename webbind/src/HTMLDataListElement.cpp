@@ -10,7 +10,7 @@ HTMLDataListElement::HTMLDataListElement(Handle h) noexcept : HTMLElement(emlite
 HTMLDataListElement::HTMLDataListElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLDataListElement::HTMLDataListElement(): HTMLElement(emlite::Val::global("HTMLDataListElement").new_()) {}
+HTMLDataListElement::HTMLDataListElement() : HTMLElement(emlite::Val::global("HTMLDataListElement").new_()) {}
 
 HTMLCollection HTMLDataListElement::options() const {
     return HTMLElement::get("options").as<HTMLCollection>();

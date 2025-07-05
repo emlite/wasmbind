@@ -9,5 +9,7 @@ Comment::Comment(Handle h) noexcept : CharacterData(emlite::Val::take_ownership(
 Comment::Comment(const emlite::Val &val) noexcept: CharacterData(val) {}
 
 
-Comment::Comment(const jsbind::DOMString& data): CharacterData(emlite::Val::global("Comment").new_(data)) {}
+Comment::Comment() : CharacterData(emlite::Val::global("Comment").new_()) {}
+
+Comment::Comment(const jsbind::DOMString& data) : CharacterData(emlite::Val::global("Comment").new_(data)) {}
 

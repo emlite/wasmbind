@@ -10,7 +10,9 @@ CSSHWB::CSSHWB(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)
 CSSHWB::CSSHWB(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 
-CSSHWB::CSSHWB(const CSSNumericValue& h, const jsbind::Any& w, const jsbind::Any& b, const jsbind::Any& alpha): CSSColorValue(emlite::Val::global("CSSHWB").new_(h, w, b, alpha)) {}
+CSSHWB::CSSHWB(const CSSNumericValue& h, const jsbind::Any& w, const jsbind::Any& b) : CSSColorValue(emlite::Val::global("CSSHWB").new_(h, w, b)) {}
+
+CSSHWB::CSSHWB(const CSSNumericValue& h, const jsbind::Any& w, const jsbind::Any& b, const jsbind::Any& alpha) : CSSColorValue(emlite::Val::global("CSSHWB").new_(h, w, b, alpha)) {}
 
 CSSNumericValue CSSHWB::h() const {
     return CSSColorValue::get("h").as<CSSNumericValue>();

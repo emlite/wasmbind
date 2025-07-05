@@ -28,6 +28,7 @@ public:
     jsbind::Undefined translate(double x, double y);
     jsbind::Undefined transform(double a, double b, double c, double d, double e, double f);
     DOMMatrix getTransform();
+    jsbind::Undefined setTransform();
     jsbind::Undefined setTransform(const DOMMatrix2DInit& transform);
     jsbind::Undefined resetTransform();
     double globalAlpha() const;
@@ -58,9 +59,12 @@ public:
     jsbind::Undefined fillRect(double x, double y, double w, double h);
     jsbind::Undefined strokeRect(double x, double y, double w, double h);
     jsbind::Undefined beginPath();
+    jsbind::Undefined fill(const Path2D& path);
     jsbind::Undefined fill(const Path2D& path, const CanvasFillRule& fillRule);
     jsbind::Undefined stroke(const Path2D& path);
+    jsbind::Undefined clip(const Path2D& path);
     jsbind::Undefined clip(const Path2D& path, const CanvasFillRule& fillRule);
+    bool isPointInPath(const Path2D& path, double x, double y);
     bool isPointInPath(const Path2D& path, double x, double y, const CanvasFillRule& fillRule);
     bool isPointInStroke(const Path2D& path, double x, double y);
     jsbind::Undefined drawImage(const jsbind::Any& image, double sx, double sy, double sw, double sh, double dx, double dy, double dw, double dh);
@@ -83,8 +87,11 @@ public:
     jsbind::Undefined bezierCurveTo(double cp1x, double cp1y, double cp2x, double cp2y, double x, double y);
     jsbind::Undefined arcTo(double x1, double y1, double x2, double y2, double radius);
     jsbind::Undefined rect(double x, double y, double w, double h);
+    jsbind::Undefined roundRect(double x, double y, double w, double h);
     jsbind::Undefined roundRect(double x, double y, double w, double h, const jsbind::Any& radii);
+    jsbind::Undefined arc(double x, double y, double radius, double startAngle, double endAngle);
     jsbind::Undefined arc(double x, double y, double radius, double startAngle, double endAngle, bool counterclockwise);
+    jsbind::Undefined ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle);
     jsbind::Undefined ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle, bool counterclockwise);
 };
 

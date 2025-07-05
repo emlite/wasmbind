@@ -13,7 +13,7 @@ HTMLOutputElement::HTMLOutputElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLOutputElement::HTMLOutputElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLOutputElement::HTMLOutputElement(): HTMLElement(emlite::Val::global("HTMLOutputElement").new_()) {}
+HTMLOutputElement::HTMLOutputElement() : HTMLElement(emlite::Val::global("HTMLOutputElement").new_()) {}
 
 DOMTokenList HTMLOutputElement::htmlFor() const {
     return HTMLElement::get("htmlFor").as<DOMTokenList>();

@@ -10,7 +10,7 @@ USBEndpoint::USBEndpoint(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 USBEndpoint::USBEndpoint(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBEndpoint::USBEndpoint(const USBAlternateInterface& alternate, unsigned char endpointNumber, const USBDirection& direction): emlite::Val(emlite::Val::global("USBEndpoint").new_(alternate, endpointNumber, direction)) {}
+USBEndpoint::USBEndpoint(const USBAlternateInterface& alternate, unsigned char endpointNumber, const USBDirection& direction) : emlite::Val(emlite::Val::global("USBEndpoint").new_(alternate, endpointNumber, direction)) {}
 
 unsigned char USBEndpoint::endpointNumber() const {
     return emlite::Val::get("endpointNumber").as<unsigned char>();

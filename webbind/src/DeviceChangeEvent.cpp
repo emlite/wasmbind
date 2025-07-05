@@ -10,7 +10,9 @@ DeviceChangeEvent::DeviceChangeEvent(Handle h) noexcept : Event(emlite::Val::tak
 DeviceChangeEvent::DeviceChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-DeviceChangeEvent::DeviceChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("DeviceChangeEvent").new_(type, eventInitDict)) {}
+DeviceChangeEvent::DeviceChangeEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("DeviceChangeEvent").new_(type)) {}
+
+DeviceChangeEvent::DeviceChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DeviceChangeEvent").new_(type, eventInitDict)) {}
 
 jsbind::FrozenArray<MediaDeviceInfo> DeviceChangeEvent::devices() const {
     return Event::get("devices").as<jsbind::FrozenArray<MediaDeviceInfo>>();

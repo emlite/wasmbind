@@ -10,7 +10,7 @@ AudioWorkletProcessor::AudioWorkletProcessor(Handle h) noexcept : emlite::Val(em
 AudioWorkletProcessor::AudioWorkletProcessor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-AudioWorkletProcessor::AudioWorkletProcessor(): emlite::Val(emlite::Val::global("AudioWorkletProcessor").new_()) {}
+AudioWorkletProcessor::AudioWorkletProcessor() : emlite::Val(emlite::Val::global("AudioWorkletProcessor").new_()) {}
 
 jsbind::Any AudioWorkletProcessor::port() const {
     return emlite::Val::get("port").as<jsbind::Any>();

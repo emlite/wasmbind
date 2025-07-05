@@ -9,7 +9,7 @@ HTMLMenuElement::HTMLMenuElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLMenuElement::HTMLMenuElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLMenuElement::HTMLMenuElement(): HTMLElement(emlite::Val::global("HTMLMenuElement").new_()) {}
+HTMLMenuElement::HTMLMenuElement() : HTMLElement(emlite::Val::global("HTMLMenuElement").new_()) {}
 
 bool HTMLMenuElement::compact() const {
     return HTMLElement::get("compact").as<bool>();

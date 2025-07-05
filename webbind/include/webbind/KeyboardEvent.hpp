@@ -16,6 +16,7 @@ public:
     static KeyboardEvent take_ownership(Handle h) noexcept;
 
     KeyboardEvent clone() const noexcept;
+    KeyboardEvent(const jsbind::DOMString& type);
     KeyboardEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::DOMString key() const;
     jsbind::DOMString code() const;
@@ -27,6 +28,15 @@ public:
     bool repeat() const;
     bool isComposing() const;
     bool getModifierState(const jsbind::DOMString& keyArg);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey);
+    jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey, bool shiftKey);
     jsbind::Undefined initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey, bool shiftKey, bool metaKey);
     unsigned long charCode() const;
     unsigned long keyCode() const;

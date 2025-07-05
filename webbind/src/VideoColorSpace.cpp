@@ -49,7 +49,9 @@ VideoColorSpace::VideoColorSpace(Handle h) noexcept : emlite::Val(emlite::Val::t
 VideoColorSpace::VideoColorSpace(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-VideoColorSpace::VideoColorSpace(const VideoColorSpaceInit& init): emlite::Val(emlite::Val::global("VideoColorSpace").new_(init)) {}
+VideoColorSpace::VideoColorSpace() : emlite::Val(emlite::Val::global("VideoColorSpace").new_()) {}
+
+VideoColorSpace::VideoColorSpace(const VideoColorSpaceInit& init) : emlite::Val(emlite::Val::global("VideoColorSpace").new_(init)) {}
 
 VideoColorPrimaries VideoColorSpace::primaries() const {
     return emlite::Val::get("primaries").as<VideoColorPrimaries>();

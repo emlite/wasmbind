@@ -35,7 +35,7 @@ OffscreenCanvas::OffscreenCanvas(Handle h) noexcept : EventTarget(emlite::Val::t
 OffscreenCanvas::OffscreenCanvas(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-OffscreenCanvas::OffscreenCanvas(long long width, long long height): EventTarget(emlite::Val::global("OffscreenCanvas").new_(width, height)) {}
+OffscreenCanvas::OffscreenCanvas(long long width, long long height) : EventTarget(emlite::Val::global("OffscreenCanvas").new_(width, height)) {}
 
 long long OffscreenCanvas::width() const {
     return EventTarget::get("width").as<long long>();
@@ -53,12 +53,20 @@ void OffscreenCanvas::height(long long value) {
     EventTarget::set("height", value);
 }
 
+jsbind::Any OffscreenCanvas::getContext(const OffscreenRenderingContextId& contextId) {
+    return EventTarget::call("getContext", contextId).as<jsbind::Any>();
+}
+
 jsbind::Any OffscreenCanvas::getContext(const OffscreenRenderingContextId& contextId, const jsbind::Any& options) {
     return EventTarget::call("getContext", contextId, options).as<jsbind::Any>();
 }
 
 ImageBitmap OffscreenCanvas::transferToImageBitmap() {
     return EventTarget::call("transferToImageBitmap").as<ImageBitmap>();
+}
+
+jsbind::Promise OffscreenCanvas::convertToBlob() {
+    return EventTarget::call("convertToBlob").as<jsbind::Promise>();
 }
 
 jsbind::Promise OffscreenCanvas::convertToBlob(const ImageEncodeOptions& options) {

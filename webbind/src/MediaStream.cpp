@@ -10,7 +10,7 @@ MediaStream::MediaStream(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 MediaStream::MediaStream(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-MediaStream::MediaStream(const jsbind::Sequence<MediaStreamTrack>& tracks): EventTarget(emlite::Val::global("MediaStream").new_(tracks)) {}
+MediaStream::MediaStream(const jsbind::Sequence<MediaStreamTrack>& tracks) : EventTarget(emlite::Val::global("MediaStream").new_(tracks)) {}
 
 jsbind::DOMString MediaStream::id() const {
     return EventTarget::get("id").as<jsbind::DOMString>();

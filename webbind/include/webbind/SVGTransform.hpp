@@ -19,6 +19,7 @@ public:
     unsigned short type() const;
     DOMMatrix matrix() const;
     float angle() const;
+    jsbind::Undefined setMatrix();
     jsbind::Undefined setMatrix(const DOMMatrix2DInit& matrix);
     jsbind::Undefined setTranslate(float tx, float ty);
     jsbind::Undefined setScale(float sx, float sy);

@@ -69,6 +69,10 @@ jsbind::FrozenArray<GamepadHapticEffectType> GamepadHapticActuator::effects() co
     return emlite::Val::get("effects").as<jsbind::FrozenArray<GamepadHapticEffectType>>();
 }
 
+jsbind::Promise GamepadHapticActuator::playEffect(const GamepadHapticEffectType& type) {
+    return emlite::Val::call("playEffect", type).as<jsbind::Promise>();
+}
+
 jsbind::Promise GamepadHapticActuator::playEffect(const GamepadHapticEffectType& type, const GamepadEffectParameters& params) {
     return emlite::Val::call("playEffect", type, params).as<jsbind::Promise>();
 }

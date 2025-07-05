@@ -14,6 +14,7 @@ public:
     static PopStateEvent take_ownership(Handle h) noexcept;
 
     PopStateEvent clone() const noexcept;
+    PopStateEvent(const jsbind::DOMString& type);
     PopStateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::Any state() const;
     bool hasUAVisualTransition() const;

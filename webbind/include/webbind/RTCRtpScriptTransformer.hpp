@@ -18,6 +18,7 @@ public:
 
     RTCRtpScriptTransformer clone() const noexcept;
     ReadableStream readable() const;
+    jsbind::Promise generateKeyFrame();
     jsbind::Promise generateKeyFrame(const jsbind::DOMString& rid);
     jsbind::Promise sendKeyFrameRequest();
     WritableStream writable() const;

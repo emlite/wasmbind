@@ -36,8 +36,10 @@ public:
     void width(long long value);
     long long height() const;
     void height(long long value);
+    jsbind::Any getContext(const OffscreenRenderingContextId& contextId);
     jsbind::Any getContext(const OffscreenRenderingContextId& contextId, const jsbind::Any& options);
     ImageBitmap transferToImageBitmap();
+    jsbind::Promise convertToBlob();
     jsbind::Promise convertToBlob(const ImageEncodeOptions& options);
     jsbind::Any oncontextlost() const;
     void oncontextlost(const jsbind::Any& value);

@@ -50,7 +50,9 @@ BarcodeDetector::BarcodeDetector(Handle h) noexcept : emlite::Val(emlite::Val::t
 BarcodeDetector::BarcodeDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-BarcodeDetector::BarcodeDetector(const jsbind::Any& barcodeDetectorOptions): emlite::Val(emlite::Val::global("BarcodeDetector").new_(barcodeDetectorOptions)) {}
+BarcodeDetector::BarcodeDetector() : emlite::Val(emlite::Val::global("BarcodeDetector").new_()) {}
+
+BarcodeDetector::BarcodeDetector(const jsbind::Any& barcodeDetectorOptions) : emlite::Val(emlite::Val::global("BarcodeDetector").new_(barcodeDetectorOptions)) {}
 
 jsbind::Promise BarcodeDetector::getSupportedFormats() {
     return emlite::Val::global("barcodedetector").call("getSupportedFormats").as<jsbind::Promise>();

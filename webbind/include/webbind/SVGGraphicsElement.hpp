@@ -38,6 +38,7 @@ public:
 
     SVGGraphicsElement clone() const noexcept;
     SVGAnimatedTransformList transform() const;
+    DOMRect getBBox();
     DOMRect getBBox(const SVGBoundingBoxOptions& options);
     DOMMatrix getCTM();
     DOMMatrix getScreenCTM();

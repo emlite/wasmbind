@@ -27,6 +27,7 @@ public:
     static BackgroundFetchManager take_ownership(Handle h) noexcept;
 
     BackgroundFetchManager clone() const noexcept;
+    jsbind::Promise fetch(const jsbind::DOMString& id, const jsbind::Any& requests);
     jsbind::Promise fetch(const jsbind::DOMString& id, const jsbind::Any& requests, const BackgroundFetchOptions& options);
     jsbind::Promise get(const jsbind::DOMString& id);
     jsbind::Promise getIds();

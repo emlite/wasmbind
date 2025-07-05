@@ -31,16 +31,32 @@ CSSPseudoElement CSSPseudoElement::pseudo(const jsbind::CSSOMString& type) {
     return EventTarget::call("pseudo", type).as<CSSPseudoElement>();
 }
 
+jsbind::Sequence<DOMQuad> CSSPseudoElement::getBoxQuads() {
+    return EventTarget::call("getBoxQuads").as<jsbind::Sequence<DOMQuad>>();
+}
+
 jsbind::Sequence<DOMQuad> CSSPseudoElement::getBoxQuads(const BoxQuadOptions& options) {
     return EventTarget::call("getBoxQuads", options).as<jsbind::Sequence<DOMQuad>>();
+}
+
+DOMQuad CSSPseudoElement::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from) {
+    return EventTarget::call("convertQuadFromNode", quad, from).as<DOMQuad>();
 }
 
 DOMQuad CSSPseudoElement::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
     return EventTarget::call("convertQuadFromNode", quad, from, options).as<DOMQuad>();
 }
 
+DOMQuad CSSPseudoElement::convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from) {
+    return EventTarget::call("convertRectFromNode", rect, from).as<DOMQuad>();
+}
+
 DOMQuad CSSPseudoElement::convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
     return EventTarget::call("convertRectFromNode", rect, from, options).as<DOMQuad>();
+}
+
+DOMPoint CSSPseudoElement::convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from) {
+    return EventTarget::call("convertPointFromNode", point, from).as<DOMPoint>();
 }
 
 DOMPoint CSSPseudoElement::convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from, const ConvertCoordinateOptions& options) {

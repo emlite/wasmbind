@@ -49,7 +49,19 @@ DOMRectReadOnly::DOMRectReadOnly(Handle h) noexcept : emlite::Val(emlite::Val::t
 DOMRectReadOnly::DOMRectReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DOMRectReadOnly::DOMRectReadOnly(double x, double y, double width, double height): emlite::Val(emlite::Val::global("DOMRectReadOnly").new_(x, y, width, height)) {}
+DOMRectReadOnly::DOMRectReadOnly() : emlite::Val(emlite::Val::global("DOMRectReadOnly").new_()) {}
+
+DOMRectReadOnly::DOMRectReadOnly(double x) : emlite::Val(emlite::Val::global("DOMRectReadOnly").new_(x)) {}
+
+DOMRectReadOnly::DOMRectReadOnly(double x, double y) : emlite::Val(emlite::Val::global("DOMRectReadOnly").new_(x, y)) {}
+
+DOMRectReadOnly::DOMRectReadOnly(double x, double y, double width) : emlite::Val(emlite::Val::global("DOMRectReadOnly").new_(x, y, width)) {}
+
+DOMRectReadOnly::DOMRectReadOnly(double x, double y, double width, double height) : emlite::Val(emlite::Val::global("DOMRectReadOnly").new_(x, y, width, height)) {}
+
+DOMRectReadOnly DOMRectReadOnly::fromRect() {
+    return emlite::Val::global("domrectreadonly").call("fromRect").as<DOMRectReadOnly>();
+}
 
 DOMRectReadOnly DOMRectReadOnly::fromRect(const DOMRectInit& other) {
     return emlite::Val::global("domrectreadonly").call("fromRect", other).as<DOMRectReadOnly>();

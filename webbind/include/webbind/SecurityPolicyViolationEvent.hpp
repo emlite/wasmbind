@@ -14,6 +14,7 @@ public:
     static SecurityPolicyViolationEvent take_ownership(Handle h) noexcept;
 
     SecurityPolicyViolationEvent clone() const noexcept;
+    SecurityPolicyViolationEvent(const jsbind::DOMString& type);
     SecurityPolicyViolationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::USVString documentURI() const;
     jsbind::USVString referrer() const;

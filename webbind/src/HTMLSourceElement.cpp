@@ -9,7 +9,7 @@ HTMLSourceElement::HTMLSourceElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLSourceElement::HTMLSourceElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLSourceElement::HTMLSourceElement(): HTMLElement(emlite::Val::global("HTMLSourceElement").new_()) {}
+HTMLSourceElement::HTMLSourceElement() : HTMLElement(emlite::Val::global("HTMLSourceElement").new_()) {}
 
 jsbind::USVString HTMLSourceElement::src() const {
     return HTMLElement::get("src").as<jsbind::USVString>();

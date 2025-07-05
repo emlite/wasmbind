@@ -98,6 +98,7 @@ public:
     WritableStream writable() const;
     SerialPortInfo getInfo();
     jsbind::Promise open(const SerialOptions& options);
+    jsbind::Promise setSignals();
     jsbind::Promise setSignals(const SerialOutputSignals& signals);
     jsbind::Promise getSignals();
     jsbind::Promise close();

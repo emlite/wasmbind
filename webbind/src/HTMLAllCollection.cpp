@@ -18,6 +18,10 @@ jsbind::Any HTMLAllCollection::namedItem(const jsbind::DOMString& name) {
     return emlite::Val::call("namedItem", name).as<jsbind::Any>();
 }
 
+jsbind::Any HTMLAllCollection::item() {
+    return emlite::Val::call("item").as<jsbind::Any>();
+}
+
 jsbind::Any HTMLAllCollection::item(const jsbind::DOMString& nameOrIndex) {
     return emlite::Val::call("item", nameOrIndex).as<jsbind::Any>();
 }

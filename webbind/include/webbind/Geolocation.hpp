@@ -30,7 +30,11 @@ public:
     static Geolocation take_ownership(Handle h) noexcept;
 
     Geolocation clone() const noexcept;
+    jsbind::Undefined getCurrentPosition(const jsbind::Function& successCallback);
+    jsbind::Undefined getCurrentPosition(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
     jsbind::Undefined getCurrentPosition(const jsbind::Function& successCallback, const jsbind::Function& errorCallback, const PositionOptions& options);
+    long watchPosition(const jsbind::Function& successCallback);
+    long watchPosition(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
     long watchPosition(const jsbind::Function& successCallback, const jsbind::Function& errorCallback, const PositionOptions& options);
     jsbind::Undefined clearWatch(long watchId);
 };

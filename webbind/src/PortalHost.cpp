@@ -10,6 +10,10 @@ PortalHost::PortalHost(Handle h) noexcept : EventTarget(emlite::Val::take_owners
 PortalHost::PortalHost(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
+jsbind::Undefined PortalHost::postMessage(const jsbind::Any& message) {
+    return EventTarget::call("postMessage", message).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PortalHost::postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options) {
     return EventTarget::call("postMessage", message, options).as<jsbind::Undefined>();
 }

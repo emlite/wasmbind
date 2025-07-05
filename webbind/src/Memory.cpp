@@ -9,7 +9,7 @@ Memory::Memory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) 
 Memory::Memory(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Memory::Memory(const jsbind::Any& descriptor): emlite::Val(emlite::Val::global("Memory").new_(descriptor)) {}
+Memory::Memory(const jsbind::Any& descriptor) : emlite::Val(emlite::Val::global("Memory").new_(descriptor)) {}
 
 unsigned long Memory::grow(unsigned long delta) {
     return emlite::Val::call("grow", delta).as<unsigned long>();

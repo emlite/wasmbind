@@ -13,6 +13,7 @@ public:
     static BluetoothDataFilter take_ownership(Handle h) noexcept;
 
     BluetoothDataFilter clone() const noexcept;
+    BluetoothDataFilter();
     BluetoothDataFilter(const jsbind::Any& init);
     jsbind::ArrayBuffer dataPrefix() const;
     jsbind::ArrayBuffer mask() const;

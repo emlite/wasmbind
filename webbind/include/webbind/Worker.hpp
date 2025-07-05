@@ -15,8 +15,10 @@ public:
     static Worker take_ownership(Handle h) noexcept;
 
     Worker clone() const noexcept;
+    Worker(const jsbind::Any& scriptURL);
     Worker(const jsbind::Any& scriptURL, const jsbind::Any& options);
     jsbind::Undefined terminate();
+    jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     jsbind::Any onerror() const;
     void onerror(const jsbind::Any& value);

@@ -33,7 +33,12 @@ public:
     static DOMRectReadOnly take_ownership(Handle h) noexcept;
 
     DOMRectReadOnly clone() const noexcept;
+    DOMRectReadOnly();
+    DOMRectReadOnly(double x);
+    DOMRectReadOnly(double x, double y);
+    DOMRectReadOnly(double x, double y, double width);
     DOMRectReadOnly(double x, double y, double width, double height);
+    static DOMRectReadOnly fromRect();
     static DOMRectReadOnly fromRect(const DOMRectInit& other);
     double x() const;
     double y() const;

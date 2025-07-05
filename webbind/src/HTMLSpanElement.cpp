@@ -9,5 +9,5 @@ HTMLSpanElement::HTMLSpanElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLSpanElement::HTMLSpanElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLSpanElement::HTMLSpanElement(): HTMLElement(emlite::Val::global("HTMLSpanElement").new_()) {}
+HTMLSpanElement::HTMLSpanElement() : HTMLElement(emlite::Val::global("HTMLSpanElement").new_()) {}
 

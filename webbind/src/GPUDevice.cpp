@@ -464,6 +464,10 @@ GPUTexture GPUDevice::createTexture(const GPUTextureDescriptor& descriptor) {
     return EventTarget::call("createTexture", descriptor).as<GPUTexture>();
 }
 
+GPUSampler GPUDevice::createSampler() {
+    return EventTarget::call("createSampler").as<GPUSampler>();
+}
+
 GPUSampler GPUDevice::createSampler(const GPUSamplerDescriptor& descriptor) {
     return EventTarget::call("createSampler", descriptor).as<GPUSampler>();
 }
@@ -502,6 +506,10 @@ jsbind::Promise GPUDevice::createComputePipelineAsync(const GPUComputePipelineDe
 
 jsbind::Promise GPUDevice::createRenderPipelineAsync(const GPURenderPipelineDescriptor& descriptor) {
     return EventTarget::call("createRenderPipelineAsync", descriptor).as<jsbind::Promise>();
+}
+
+GPUCommandEncoder GPUDevice::createCommandEncoder() {
+    return EventTarget::call("createCommandEncoder").as<GPUCommandEncoder>();
 }
 
 GPUCommandEncoder GPUDevice::createCommandEncoder(const GPUCommandEncoderDescriptor& descriptor) {

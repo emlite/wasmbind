@@ -10,7 +10,7 @@ CSSMathSum::CSSMathSum(Handle h) noexcept : CSSMathValue(emlite::Val::take_owner
 CSSMathSum::CSSMathSum(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 
 
-CSSMathSum::CSSMathSum(const jsbind::Any& args): CSSMathValue(emlite::Val::global("CSSMathSum").new_(args)) {}
+CSSMathSum::CSSMathSum(const jsbind::Any& args) : CSSMathValue(emlite::Val::global("CSSMathSum").new_(args)) {}
 
 CSSNumericArray CSSMathSum::values() const {
     return CSSMathValue::get("values").as<CSSNumericArray>();

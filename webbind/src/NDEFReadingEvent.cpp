@@ -10,7 +10,7 @@ NDEFReadingEvent::NDEFReadingEvent(Handle h) noexcept : Event(emlite::Val::take_
 NDEFReadingEvent::NDEFReadingEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-NDEFReadingEvent::NDEFReadingEvent(const jsbind::DOMString& type, const jsbind::Any& readingEventInitDict): Event(emlite::Val::global("NDEFReadingEvent").new_(type, readingEventInitDict)) {}
+NDEFReadingEvent::NDEFReadingEvent(const jsbind::DOMString& type, const jsbind::Any& readingEventInitDict) : Event(emlite::Val::global("NDEFReadingEvent").new_(type, readingEventInitDict)) {}
 
 jsbind::DOMString NDEFReadingEvent::serialNumber() const {
     return Event::get("serialNumber").as<jsbind::DOMString>();

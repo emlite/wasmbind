@@ -10,7 +10,9 @@ SnapEvent::SnapEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) 
 SnapEvent::SnapEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SnapEvent::SnapEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("SnapEvent").new_(type, eventInitDict)) {}
+SnapEvent::SnapEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("SnapEvent").new_(type)) {}
+
+SnapEvent::SnapEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SnapEvent").new_(type, eventInitDict)) {}
 
 Node SnapEvent::snapTargetBlock() const {
     return Event::get("snapTargetBlock").as<Node>();

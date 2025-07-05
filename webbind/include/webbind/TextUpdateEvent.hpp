@@ -14,6 +14,7 @@ public:
     static TextUpdateEvent take_ownership(Handle h) noexcept;
 
     TextUpdateEvent clone() const noexcept;
+    TextUpdateEvent(const jsbind::DOMString& type);
     TextUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& options);
     unsigned long updateRangeStart() const;
     unsigned long updateRangeEnd() const;

@@ -12,7 +12,9 @@ AudioBufferSourceNode::AudioBufferSourceNode(Handle h) noexcept : AudioScheduled
 AudioBufferSourceNode::AudioBufferSourceNode(const emlite::Val &val) noexcept: AudioScheduledSourceNode(val) {}
 
 
-AudioBufferSourceNode::AudioBufferSourceNode(const BaseAudioContext& context, const jsbind::Any& options): AudioScheduledSourceNode(emlite::Val::global("AudioBufferSourceNode").new_(context, options)) {}
+AudioBufferSourceNode::AudioBufferSourceNode(const BaseAudioContext& context) : AudioScheduledSourceNode(emlite::Val::global("AudioBufferSourceNode").new_(context)) {}
+
+AudioBufferSourceNode::AudioBufferSourceNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioScheduledSourceNode(emlite::Val::global("AudioBufferSourceNode").new_(context, options)) {}
 
 AudioBuffer AudioBufferSourceNode::buffer() const {
     return AudioScheduledSourceNode::get("buffer").as<AudioBuffer>();
@@ -52,6 +54,18 @@ double AudioBufferSourceNode::loopEnd() const {
 
 void AudioBufferSourceNode::loopEnd(double value) {
     AudioScheduledSourceNode::set("loopEnd", value);
+}
+
+jsbind::Undefined AudioBufferSourceNode::start() {
+    return AudioScheduledSourceNode::call("start").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioBufferSourceNode::start(double when) {
+    return AudioScheduledSourceNode::call("start", when).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioBufferSourceNode::start(double when, double offset) {
+    return AudioScheduledSourceNode::call("start", when, offset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined AudioBufferSourceNode::start(double when, double offset, double duration) {

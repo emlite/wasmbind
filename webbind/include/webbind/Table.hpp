@@ -13,9 +13,12 @@ public:
     static Table take_ownership(Handle h) noexcept;
 
     Table clone() const noexcept;
+    Table(const jsbind::Any& descriptor);
     Table(const jsbind::Any& descriptor, const jsbind::Any& value);
+    unsigned long grow(unsigned long delta);
     unsigned long grow(unsigned long delta, const jsbind::Any& value);
     jsbind::Any get(unsigned long index);
+    jsbind::Undefined set(unsigned long index);
     jsbind::Undefined set(unsigned long index, const jsbind::Any& value);
     unsigned long length() const;
 };

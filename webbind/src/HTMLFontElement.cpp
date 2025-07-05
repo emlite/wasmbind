@@ -9,7 +9,7 @@ HTMLFontElement::HTMLFontElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLFontElement::HTMLFontElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLFontElement::HTMLFontElement(): HTMLElement(emlite::Val::global("HTMLFontElement").new_()) {}
+HTMLFontElement::HTMLFontElement() : HTMLElement(emlite::Val::global("HTMLFontElement").new_()) {}
 
 jsbind::DOMString HTMLFontElement::color() const {
     return HTMLElement::get("color").as<jsbind::DOMString>();

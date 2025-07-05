@@ -18,6 +18,7 @@ public:
     FrameType frameType() const;
     jsbind::DOMString id() const;
     ClientType type() const;
+    jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     ClientLifecycleState lifecycleState() const;
 };

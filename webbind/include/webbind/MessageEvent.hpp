@@ -16,12 +16,20 @@ public:
     static MessageEvent take_ownership(Handle h) noexcept;
 
     MessageEvent clone() const noexcept;
+    MessageEvent(const jsbind::DOMString& type);
     MessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::Any data() const;
     jsbind::USVString origin() const;
     jsbind::DOMString lastEventId() const;
     jsbind::Any source() const;
     jsbind::FrozenArray<jsbind::Any> ports() const;
+    jsbind::Undefined initMessageEvent(const jsbind::DOMString& type);
+    jsbind::Undefined initMessageEvent(const jsbind::DOMString& type, bool bubbles);
+    jsbind::Undefined initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable);
+    jsbind::Undefined initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data);
+    jsbind::Undefined initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin);
+    jsbind::Undefined initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin, const jsbind::DOMString& lastEventId);
+    jsbind::Undefined initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin, const jsbind::DOMString& lastEventId, const jsbind::Any& source);
     jsbind::Undefined initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin, const jsbind::DOMString& lastEventId, const jsbind::Any& source, const jsbind::Sequence<jsbind::Any>& ports);
 };
 

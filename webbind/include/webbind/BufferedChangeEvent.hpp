@@ -16,6 +16,7 @@ public:
     static BufferedChangeEvent take_ownership(Handle h) noexcept;
 
     BufferedChangeEvent clone() const noexcept;
+    BufferedChangeEvent(const jsbind::DOMString& type);
     BufferedChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     TimeRanges addedRanges() const;
     TimeRanges removedRanges() const;

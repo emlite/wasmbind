@@ -54,7 +54,9 @@ public:
     static GeolocationSensor take_ownership(Handle h) noexcept;
 
     GeolocationSensor clone() const noexcept;
+    GeolocationSensor();
     GeolocationSensor(const jsbind::Any& options);
+    static jsbind::Promise read();
     static jsbind::Promise read(const ReadOptions& readOptions);
     double latitude() const;
     double longitude() const;

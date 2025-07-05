@@ -12,7 +12,7 @@ XSLTProcessor::XSLTProcessor(Handle h) noexcept : emlite::Val(emlite::Val::take_
 XSLTProcessor::XSLTProcessor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-XSLTProcessor::XSLTProcessor(): emlite::Val(emlite::Val::global("XSLTProcessor").new_()) {}
+XSLTProcessor::XSLTProcessor() : emlite::Val(emlite::Val::global("XSLTProcessor").new_()) {}
 
 jsbind::Undefined XSLTProcessor::importStylesheet(const Node& style) {
     return emlite::Val::call("importStylesheet", style).as<jsbind::Undefined>();

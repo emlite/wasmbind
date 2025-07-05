@@ -14,6 +14,7 @@ public:
     static RTCError take_ownership(Handle h) noexcept;
 
     RTCError clone() const noexcept;
+    RTCError(const jsbind::Any& init);
     RTCError(const jsbind::Any& init, const jsbind::DOMString& message);
     RTCErrorDetailType errorDetail() const;
     long sdpLineNumber() const;

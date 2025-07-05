@@ -37,8 +37,16 @@ jsbind::Promise FileSystemHandle::isSameEntry(const FileSystemHandle& other) {
     return emlite::Val::call("isSameEntry", other).as<jsbind::Promise>();
 }
 
+jsbind::Promise FileSystemHandle::queryPermission() {
+    return emlite::Val::call("queryPermission").as<jsbind::Promise>();
+}
+
 jsbind::Promise FileSystemHandle::queryPermission(const FileSystemHandlePermissionDescriptor& descriptor) {
     return emlite::Val::call("queryPermission", descriptor).as<jsbind::Promise>();
+}
+
+jsbind::Promise FileSystemHandle::requestPermission() {
+    return emlite::Val::call("requestPermission").as<jsbind::Promise>();
 }
 
 jsbind::Promise FileSystemHandle::requestPermission(const FileSystemHandlePermissionDescriptor& descriptor) {

@@ -49,12 +49,18 @@ public:
     static DOMPointReadOnly take_ownership(Handle h) noexcept;
 
     DOMPointReadOnly clone() const noexcept;
+    DOMPointReadOnly();
+    DOMPointReadOnly(double x);
+    DOMPointReadOnly(double x, double y);
+    DOMPointReadOnly(double x, double y, double z);
     DOMPointReadOnly(double x, double y, double z, double w);
+    static DOMPointReadOnly fromPoint();
     static DOMPointReadOnly fromPoint(const DOMPointInit& other);
     double x() const;
     double y() const;
     double z() const;
     double w() const;
+    DOMPoint matrixTransform();
     DOMPoint matrixTransform(const DOMMatrixInit& matrix);
     jsbind::Object toJSON();
 };

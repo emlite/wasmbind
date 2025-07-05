@@ -16,6 +16,7 @@ public:
     static CSSHWB take_ownership(Handle h) noexcept;
 
     CSSHWB clone() const noexcept;
+    CSSHWB(const CSSNumericValue& h, const jsbind::Any& w, const jsbind::Any& b);
     CSSHWB(const CSSNumericValue& h, const jsbind::Any& w, const jsbind::Any& b, const jsbind::Any& alpha);
     CSSNumericValue h() const;
     void h(const CSSNumericValue& value);

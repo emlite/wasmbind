@@ -61,8 +61,16 @@ bool IDBObjectStore::autoIncrement() const {
     return emlite::Val::get("autoIncrement").as<bool>();
 }
 
+IDBRequest IDBObjectStore::put(const jsbind::Any& value) {
+    return emlite::Val::call("put", value).as<IDBRequest>();
+}
+
 IDBRequest IDBObjectStore::put(const jsbind::Any& value, const jsbind::Any& key) {
     return emlite::Val::call("put", value, key).as<IDBRequest>();
+}
+
+IDBRequest IDBObjectStore::add(const jsbind::Any& value) {
+    return emlite::Val::call("add", value).as<IDBRequest>();
 }
 
 IDBRequest IDBObjectStore::add(const jsbind::Any& value, const jsbind::Any& key) {
@@ -85,20 +93,56 @@ IDBRequest IDBObjectStore::getKey(const jsbind::Any& query) {
     return emlite::Val::call("getKey", query).as<IDBRequest>();
 }
 
+IDBRequest IDBObjectStore::getAll() {
+    return emlite::Val::call("getAll").as<IDBRequest>();
+}
+
+IDBRequest IDBObjectStore::getAll(const jsbind::Any& query) {
+    return emlite::Val::call("getAll", query).as<IDBRequest>();
+}
+
 IDBRequest IDBObjectStore::getAll(const jsbind::Any& query, unsigned long count) {
     return emlite::Val::call("getAll", query, count).as<IDBRequest>();
+}
+
+IDBRequest IDBObjectStore::getAllKeys() {
+    return emlite::Val::call("getAllKeys").as<IDBRequest>();
+}
+
+IDBRequest IDBObjectStore::getAllKeys(const jsbind::Any& query) {
+    return emlite::Val::call("getAllKeys", query).as<IDBRequest>();
 }
 
 IDBRequest IDBObjectStore::getAllKeys(const jsbind::Any& query, unsigned long count) {
     return emlite::Val::call("getAllKeys", query, count).as<IDBRequest>();
 }
 
+IDBRequest IDBObjectStore::count() {
+    return emlite::Val::call("count").as<IDBRequest>();
+}
+
 IDBRequest IDBObjectStore::count(const jsbind::Any& query) {
     return emlite::Val::call("count", query).as<IDBRequest>();
 }
 
+IDBRequest IDBObjectStore::openCursor() {
+    return emlite::Val::call("openCursor").as<IDBRequest>();
+}
+
+IDBRequest IDBObjectStore::openCursor(const jsbind::Any& query) {
+    return emlite::Val::call("openCursor", query).as<IDBRequest>();
+}
+
 IDBRequest IDBObjectStore::openCursor(const jsbind::Any& query, const IDBCursorDirection& direction) {
     return emlite::Val::call("openCursor", query, direction).as<IDBRequest>();
+}
+
+IDBRequest IDBObjectStore::openKeyCursor() {
+    return emlite::Val::call("openKeyCursor").as<IDBRequest>();
+}
+
+IDBRequest IDBObjectStore::openKeyCursor(const jsbind::Any& query) {
+    return emlite::Val::call("openKeyCursor", query).as<IDBRequest>();
 }
 
 IDBRequest IDBObjectStore::openKeyCursor(const jsbind::Any& query, const IDBCursorDirection& direction) {
@@ -107,6 +151,10 @@ IDBRequest IDBObjectStore::openKeyCursor(const jsbind::Any& query, const IDBCurs
 
 IDBIndex IDBObjectStore::index(const jsbind::DOMString& name) {
     return emlite::Val::call("index", name).as<IDBIndex>();
+}
+
+IDBIndex IDBObjectStore::createIndex(const jsbind::DOMString& name, const jsbind::Any& keyPath) {
+    return emlite::Val::call("createIndex", name, keyPath).as<IDBIndex>();
 }
 
 IDBIndex IDBObjectStore::createIndex(const jsbind::DOMString& name, const jsbind::Any& keyPath, const IDBIndexParameters& options) {

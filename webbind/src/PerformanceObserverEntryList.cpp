@@ -17,6 +17,10 @@ jsbind::Any PerformanceObserverEntryList::getEntriesByType(const jsbind::DOMStri
     return emlite::Val::call("getEntriesByType", type).as<jsbind::Any>();
 }
 
+jsbind::Any PerformanceObserverEntryList::getEntriesByName(const jsbind::DOMString& name) {
+    return emlite::Val::call("getEntriesByName", name).as<jsbind::Any>();
+}
+
 jsbind::Any PerformanceObserverEntryList::getEntriesByName(const jsbind::DOMString& name, const jsbind::DOMString& type) {
     return emlite::Val::call("getEntriesByName", name, type).as<jsbind::Any>();
 }

@@ -34,6 +34,10 @@ IDBFactory::IDBFactory(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 IDBFactory::IDBFactory(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+IDBOpenDBRequest IDBFactory::open(const jsbind::DOMString& name) {
+    return emlite::Val::call("open", name).as<IDBOpenDBRequest>();
+}
+
 IDBOpenDBRequest IDBFactory::open(const jsbind::DOMString& name, long long version) {
     return emlite::Val::call("open", name, version).as<IDBOpenDBRequest>();
 }

@@ -26,6 +26,10 @@ jsbind::Undefined ReadableByteStreamController::enqueue(const jsbind::Any& chunk
     return emlite::Val::call("enqueue", chunk).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined ReadableByteStreamController::error() {
+    return emlite::Val::call("error").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined ReadableByteStreamController::error(const jsbind::Any& e) {
     return emlite::Val::call("error", e).as<jsbind::Undefined>();
 }

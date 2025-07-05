@@ -209,8 +209,16 @@ CookieStore::CookieStore(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 CookieStore::CookieStore(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
+jsbind::Promise CookieStore::get() {
+    return EventTarget::call("get").as<jsbind::Promise>();
+}
+
 jsbind::Promise CookieStore::get(const CookieStoreGetOptions& options) {
     return EventTarget::call("get", options).as<jsbind::Promise>();
+}
+
+jsbind::Promise CookieStore::getAll() {
+    return EventTarget::call("getAll").as<jsbind::Promise>();
 }
 
 jsbind::Promise CookieStore::getAll(const CookieStoreGetOptions& options) {

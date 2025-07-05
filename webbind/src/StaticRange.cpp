@@ -9,5 +9,5 @@ StaticRange::StaticRange(Handle h) noexcept : AbstractRange(emlite::Val::take_ow
 StaticRange::StaticRange(const emlite::Val &val) noexcept: AbstractRange(val) {}
 
 
-StaticRange::StaticRange(const jsbind::Any& init): AbstractRange(emlite::Val::global("StaticRange").new_(init)) {}
+StaticRange::StaticRange(const jsbind::Any& init) : AbstractRange(emlite::Val::global("StaticRange").new_(init)) {}
 

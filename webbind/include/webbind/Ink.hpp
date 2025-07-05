@@ -28,6 +28,7 @@ public:
     static Ink take_ownership(Handle h) noexcept;
 
     Ink clone() const noexcept;
+    jsbind::Promise requestPresenter();
     jsbind::Promise requestPresenter(const InkPresenterParam& param);
 };
 

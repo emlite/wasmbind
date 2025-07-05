@@ -32,7 +32,9 @@ public:
     HTMLSlotElement();
     jsbind::DOMString name() const;
     void name(const jsbind::DOMString& value);
+    jsbind::Sequence<Node> assignedNodes();
     jsbind::Sequence<Node> assignedNodes(const AssignedNodesOptions& options);
+    jsbind::Sequence<Element> assignedElements();
     jsbind::Sequence<Element> assignedElements(const AssignedNodesOptions& options);
     jsbind::Undefined assign(const jsbind::Any& nodes);
 };

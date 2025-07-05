@@ -61,6 +61,7 @@ public:
     MediaStreamTrack track() const;
     RTCDtlsTransport transport() const;
     static RTCRtpCapabilities getCapabilities(const jsbind::DOMString& kind);
+    jsbind::Promise setParameters(const RTCRtpSendParameters& parameters);
     jsbind::Promise setParameters(const RTCRtpSendParameters& parameters, const RTCSetParameterOptions& setParameterOptions);
     RTCRtpSendParameters getParameters();
     jsbind::Promise replaceTrack(const MediaStreamTrack& withTrack);
@@ -68,6 +69,7 @@ public:
     jsbind::Promise getStats();
     jsbind::Any transform() const;
     void transform(const jsbind::Any& value);
+    jsbind::Promise generateKeyFrame();
     jsbind::Promise generateKeyFrame(const jsbind::Sequence<jsbind::DOMString>& rids);
     RTCDTMFSender dtmf() const;
 };

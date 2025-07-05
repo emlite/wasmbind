@@ -38,6 +38,10 @@ jsbind::Promise SubtleCrypto::deriveKey(const jsbind::Any& algorithm, const Cryp
     return emlite::Val::call("deriveKey", algorithm, baseKey, derivedKeyType, extractable, keyUsages).as<jsbind::Promise>();
 }
 
+jsbind::Promise SubtleCrypto::deriveBits(const jsbind::Any& algorithm, const CryptoKey& baseKey) {
+    return emlite::Val::call("deriveBits", algorithm, baseKey).as<jsbind::Promise>();
+}
+
 jsbind::Promise SubtleCrypto::deriveBits(const jsbind::Any& algorithm, const CryptoKey& baseKey, unsigned long length) {
     return emlite::Val::call("deriveBits", algorithm, baseKey, length).as<jsbind::Promise>();
 }

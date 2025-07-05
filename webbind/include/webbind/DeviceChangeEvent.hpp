@@ -16,6 +16,7 @@ public:
     static DeviceChangeEvent take_ownership(Handle h) noexcept;
 
     DeviceChangeEvent clone() const noexcept;
+    DeviceChangeEvent(const jsbind::DOMString& type);
     DeviceChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::FrozenArray<MediaDeviceInfo> devices() const;
     jsbind::FrozenArray<MediaDeviceInfo> userInsertedDevices() const;

@@ -83,7 +83,7 @@ VideoFrame::VideoFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 VideoFrame::VideoFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-VideoFrame::VideoFrame(const jsbind::Any& data, const jsbind::Any& init): emlite::Val(emlite::Val::global("VideoFrame").new_(data, init)) {}
+VideoFrame::VideoFrame(const jsbind::Any& data, const jsbind::Any& init) : emlite::Val(emlite::Val::global("VideoFrame").new_(data, init)) {}
 
 VideoPixelFormat VideoFrame::format() const {
     return emlite::Val::get("format").as<VideoPixelFormat>();
@@ -137,8 +137,16 @@ VideoFrameMetadata VideoFrame::metadata() {
     return emlite::Val::call("metadata").as<VideoFrameMetadata>();
 }
 
+unsigned long VideoFrame::allocationSize() {
+    return emlite::Val::call("allocationSize").as<unsigned long>();
+}
+
 unsigned long VideoFrame::allocationSize(const VideoFrameCopyToOptions& options) {
     return emlite::Val::call("allocationSize", options).as<unsigned long>();
+}
+
+jsbind::Promise VideoFrame::copyTo(const jsbind::Any& destination) {
+    return emlite::Val::call("copyTo", destination).as<jsbind::Promise>();
 }
 
 jsbind::Promise VideoFrame::copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options) {

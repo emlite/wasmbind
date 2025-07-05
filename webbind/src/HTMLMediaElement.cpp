@@ -210,6 +210,14 @@ TextTrackList HTMLMediaElement::textTracks() const {
     return HTMLElement::get("textTracks").as<TextTrackList>();
 }
 
+TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind) {
+    return HTMLElement::call("addTextTrack", kind).as<TextTrack>();
+}
+
+TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label) {
+    return HTMLElement::call("addTextTrack", kind, label).as<TextTrack>();
+}
+
 TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label, const jsbind::DOMString& language) {
     return HTMLElement::call("addTextTrack", kind, label, language).as<TextTrack>();
 }

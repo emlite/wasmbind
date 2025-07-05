@@ -65,8 +65,10 @@ public:
     jsbind::DOMString outerText() const;
     void outerText(const jsbind::DOMString& value);
     ElementInternals attachInternals();
+    jsbind::Undefined showPopover();
     jsbind::Undefined showPopover(const ShowPopoverOptions& options);
     jsbind::Undefined hidePopover();
+    bool togglePopover();
     bool togglePopover(const jsbind::Any& options);
     jsbind::DOMString popover() const;
     void popover(const jsbind::DOMString& value);
@@ -90,6 +92,7 @@ public:
     void autofocus(bool value);
     long tabIndex() const;
     void tabIndex(long value);
+    jsbind::Undefined focus();
     jsbind::Undefined focus(const FocusOptions& options);
     jsbind::Undefined blur();
 };

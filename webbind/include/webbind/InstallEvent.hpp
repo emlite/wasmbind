@@ -14,6 +14,7 @@ public:
     static InstallEvent take_ownership(Handle h) noexcept;
 
     InstallEvent clone() const noexcept;
+    InstallEvent(const jsbind::DOMString& type);
     InstallEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::Promise addRoutes(const jsbind::Any& rules);
 };

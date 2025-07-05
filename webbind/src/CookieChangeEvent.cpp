@@ -10,7 +10,9 @@ CookieChangeEvent::CookieChangeEvent(Handle h) noexcept : Event(emlite::Val::tak
 CookieChangeEvent::CookieChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-CookieChangeEvent::CookieChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("CookieChangeEvent").new_(type, eventInitDict)) {}
+CookieChangeEvent::CookieChangeEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("CookieChangeEvent").new_(type)) {}
+
+CookieChangeEvent::CookieChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("CookieChangeEvent").new_(type, eventInitDict)) {}
 
 jsbind::FrozenArray<CookieListItem> CookieChangeEvent::changed() const {
     return Event::get("changed").as<jsbind::FrozenArray<CookieListItem>>();

@@ -41,6 +41,7 @@ public:
     void length(unsigned long value);
     HTMLOptionElement item(unsigned long index);
     HTMLOptionElement namedItem(const jsbind::DOMString& name);
+    jsbind::Undefined add(const jsbind::Any& element);
     jsbind::Undefined add(const jsbind::Any& element, const jsbind::Any& before);
     jsbind::Undefined remove(long index);
     HTMLCollection selectedOptions() const;

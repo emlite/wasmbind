@@ -17,6 +17,10 @@ public:
 
     TextEvent clone() const noexcept;
     jsbind::DOMString data() const;
+    jsbind::Undefined initTextEvent(const jsbind::DOMString& type);
+    jsbind::Undefined initTextEvent(const jsbind::DOMString& type, bool bubbles);
+    jsbind::Undefined initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable);
+    jsbind::Undefined initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const Window& view);
     jsbind::Undefined initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const Window& view, const jsbind::DOMString& data);
 };
 

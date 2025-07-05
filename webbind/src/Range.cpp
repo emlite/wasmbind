@@ -13,7 +13,7 @@ Range::Range(Handle h) noexcept : AbstractRange(emlite::Val::take_ownership(h)) 
 Range::Range(const emlite::Val &val) noexcept: AbstractRange(val) {}
 
 
-Range::Range(): AbstractRange(emlite::Val::global("Range").new_()) {}
+Range::Range() : AbstractRange(emlite::Val::global("Range").new_()) {}
 
 Node Range::commonAncestorContainer() const {
     return AbstractRange::get("commonAncestorContainer").as<Node>();
@@ -41,6 +41,10 @@ jsbind::Undefined Range::setEndBefore(const Node& node) {
 
 jsbind::Undefined Range::setEndAfter(const Node& node) {
     return AbstractRange::call("setEndAfter", node).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Range::collapse() {
+    return AbstractRange::call("collapse").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Range::collapse(bool toStart) {

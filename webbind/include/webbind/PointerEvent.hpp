@@ -16,6 +16,7 @@ public:
     static PointerEvent take_ownership(Handle h) noexcept;
 
     PointerEvent clone() const noexcept;
+    PointerEvent(const jsbind::DOMString& type);
     PointerEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     long pointerId() const;
     double width() const;

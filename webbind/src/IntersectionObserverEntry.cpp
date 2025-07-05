@@ -11,7 +11,7 @@ IntersectionObserverEntry::IntersectionObserverEntry(Handle h) noexcept : emlite
 IntersectionObserverEntry::IntersectionObserverEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-IntersectionObserverEntry::IntersectionObserverEntry(const jsbind::Any& intersectionObserverEntryInit): emlite::Val(emlite::Val::global("IntersectionObserverEntry").new_(intersectionObserverEntryInit)) {}
+IntersectionObserverEntry::IntersectionObserverEntry(const jsbind::Any& intersectionObserverEntryInit) : emlite::Val(emlite::Val::global("IntersectionObserverEntry").new_(intersectionObserverEntryInit)) {}
 
 jsbind::Any IntersectionObserverEntry::time() const {
     return emlite::Val::get("time").as<jsbind::Any>();

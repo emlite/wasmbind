@@ -26,7 +26,11 @@ CustomElementRegistry::CustomElementRegistry(Handle h) noexcept : emlite::Val(em
 CustomElementRegistry::CustomElementRegistry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-CustomElementRegistry::CustomElementRegistry(): emlite::Val(emlite::Val::global("CustomElementRegistry").new_()) {}
+CustomElementRegistry::CustomElementRegistry() : emlite::Val(emlite::Val::global("CustomElementRegistry").new_()) {}
+
+jsbind::Undefined CustomElementRegistry::define(const jsbind::DOMString& name, const jsbind::Function& constructor) {
+    return emlite::Val::call("define", name, constructor).as<jsbind::Undefined>();
+}
 
 jsbind::Undefined CustomElementRegistry::define(const jsbind::DOMString& name, const jsbind::Function& constructor, const ElementDefinitionOptions& options) {
     return emlite::Val::call("define", name, constructor, options).as<jsbind::Undefined>();

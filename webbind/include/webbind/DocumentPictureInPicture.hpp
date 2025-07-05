@@ -34,6 +34,7 @@ public:
     static DocumentPictureInPicture take_ownership(Handle h) noexcept;
 
     DocumentPictureInPicture clone() const noexcept;
+    jsbind::Promise requestWindow();
     jsbind::Promise requestWindow(const DocumentPictureInPictureOptions& options);
     Window window() const;
     jsbind::Any onenter() const;

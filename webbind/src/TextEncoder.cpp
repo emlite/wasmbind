@@ -33,7 +33,11 @@ TextEncoder::TextEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 TextEncoder::TextEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-TextEncoder::TextEncoder(): emlite::Val(emlite::Val::global("TextEncoder").new_()) {}
+TextEncoder::TextEncoder() : emlite::Val(emlite::Val::global("TextEncoder").new_()) {}
+
+jsbind::Uint8Array TextEncoder::encode() {
+    return emlite::Val::call("encode").as<jsbind::Uint8Array>();
+}
 
 jsbind::Uint8Array TextEncoder::encode(const jsbind::USVString& input) {
     return emlite::Val::call("encode", input).as<jsbind::Uint8Array>();

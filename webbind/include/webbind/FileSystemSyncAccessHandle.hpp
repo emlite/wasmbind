@@ -26,7 +26,9 @@ public:
     static FileSystemSyncAccessHandle take_ownership(Handle h) noexcept;
 
     FileSystemSyncAccessHandle clone() const noexcept;
+    long long read(const jsbind::Any& buffer);
     long long read(const jsbind::Any& buffer, const FileSystemReadWriteOptions& options);
+    long long write(const jsbind::Any& buffer);
     long long write(const jsbind::Any& buffer, const FileSystemReadWriteOptions& options);
     jsbind::Undefined truncate(long long newSize);
     long long getSize();

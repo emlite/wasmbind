@@ -10,5 +10,9 @@ RTCRtpScriptTransform::RTCRtpScriptTransform(Handle h) noexcept : emlite::Val(em
 RTCRtpScriptTransform::RTCRtpScriptTransform(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options, const jsbind::Sequence<jsbind::Object>& transfer): emlite::Val(emlite::Val::global("RTCRtpScriptTransform").new_(worker, options, transfer)) {}
+RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker) : emlite::Val(emlite::Val::global("RTCRtpScriptTransform").new_(worker)) {}
+
+RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options) : emlite::Val(emlite::Val::global("RTCRtpScriptTransform").new_(worker, options)) {}
+
+RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options, const jsbind::Sequence<jsbind::Object>& transfer) : emlite::Val(emlite::Val::global("RTCRtpScriptTransform").new_(worker, options, transfer)) {}
 

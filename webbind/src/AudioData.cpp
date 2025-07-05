@@ -49,7 +49,7 @@ AudioData::AudioData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownershi
 AudioData::AudioData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-AudioData::AudioData(const jsbind::Any& init): emlite::Val(emlite::Val::global("AudioData").new_(init)) {}
+AudioData::AudioData(const jsbind::Any& init) : emlite::Val(emlite::Val::global("AudioData").new_(init)) {}
 
 AudioSampleFormat AudioData::format() const {
     return emlite::Val::get("format").as<AudioSampleFormat>();

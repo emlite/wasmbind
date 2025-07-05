@@ -18,6 +18,7 @@ public:
     static FontFace take_ownership(Handle h) noexcept;
 
     FontFace clone() const noexcept;
+    FontFace(const jsbind::CSSOMString& family, const jsbind::Any& source);
     FontFace(const jsbind::CSSOMString& family, const jsbind::Any& source, const jsbind::Any& descriptors);
     jsbind::CSSOMString family() const;
     void family(const jsbind::CSSOMString& value);

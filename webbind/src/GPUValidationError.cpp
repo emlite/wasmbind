@@ -9,5 +9,5 @@ GPUValidationError::GPUValidationError(Handle h) noexcept : GPUError(emlite::Val
 GPUValidationError::GPUValidationError(const emlite::Val &val) noexcept: GPUError(val) {}
 
 
-GPUValidationError::GPUValidationError(const jsbind::DOMString& message): GPUError(emlite::Val::global("GPUValidationError").new_(message)) {}
+GPUValidationError::GPUValidationError(const jsbind::DOMString& message) : GPUError(emlite::Val::global("GPUValidationError").new_(message)) {}
 

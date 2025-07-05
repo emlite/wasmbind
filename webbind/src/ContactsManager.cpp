@@ -79,6 +79,10 @@ jsbind::Promise ContactsManager::getProperties() {
     return emlite::Val::call("getProperties").as<jsbind::Promise>();
 }
 
+jsbind::Promise ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties) {
+    return emlite::Val::call("select", properties).as<jsbind::Promise>();
+}
+
 jsbind::Promise ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options) {
     return emlite::Val::call("select", properties, options).as<jsbind::Promise>();
 }

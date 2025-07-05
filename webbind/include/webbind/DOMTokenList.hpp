@@ -18,6 +18,7 @@ public:
     bool contains(const jsbind::DOMString& token);
     jsbind::Undefined add(const jsbind::DOMString& tokens);
     jsbind::Undefined remove(const jsbind::DOMString& tokens);
+    bool toggle(const jsbind::DOMString& token);
     bool toggle(const jsbind::DOMString& token, bool force);
     bool replace(const jsbind::DOMString& token, const jsbind::DOMString& newToken);
     bool supports(const jsbind::DOMString& token);

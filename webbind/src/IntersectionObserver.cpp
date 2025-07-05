@@ -11,7 +11,9 @@ IntersectionObserver::IntersectionObserver(Handle h) noexcept : emlite::Val(emli
 IntersectionObserver::IntersectionObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-IntersectionObserver::IntersectionObserver(const jsbind::Function& callback, const jsbind::Any& options): emlite::Val(emlite::Val::global("IntersectionObserver").new_(callback, options)) {}
+IntersectionObserver::IntersectionObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("IntersectionObserver").new_(callback)) {}
+
+IntersectionObserver::IntersectionObserver(const jsbind::Function& callback, const jsbind::Any& options) : emlite::Val(emlite::Val::global("IntersectionObserver").new_(callback, options)) {}
 
 jsbind::Any IntersectionObserver::root() const {
     return emlite::Val::get("root").as<jsbind::Any>();

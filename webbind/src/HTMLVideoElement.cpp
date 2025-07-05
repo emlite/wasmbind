@@ -11,7 +11,7 @@ HTMLVideoElement::HTMLVideoElement(Handle h) noexcept : HTMLMediaElement(emlite:
 HTMLVideoElement::HTMLVideoElement(const emlite::Val &val) noexcept: HTMLMediaElement(val) {}
 
 
-HTMLVideoElement::HTMLVideoElement(): HTMLMediaElement(emlite::Val::global("HTMLVideoElement").new_()) {}
+HTMLVideoElement::HTMLVideoElement() : HTMLMediaElement(emlite::Val::global("HTMLVideoElement").new_()) {}
 
 unsigned long HTMLVideoElement::width() const {
     return HTMLMediaElement::get("width").as<unsigned long>();

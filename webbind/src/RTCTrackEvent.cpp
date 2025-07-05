@@ -13,7 +13,7 @@ RTCTrackEvent::RTCTrackEvent(Handle h) noexcept : Event(emlite::Val::take_owners
 RTCTrackEvent::RTCTrackEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-RTCTrackEvent::RTCTrackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("RTCTrackEvent").new_(type, eventInitDict)) {}
+RTCTrackEvent::RTCTrackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCTrackEvent").new_(type, eventInitDict)) {}
 
 RTCRtpReceiver RTCTrackEvent::receiver() const {
     return Event::get("receiver").as<RTCRtpReceiver>();

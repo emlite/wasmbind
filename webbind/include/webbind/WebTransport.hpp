@@ -79,8 +79,10 @@ public:
     static WebTransport take_ownership(Handle h) noexcept;
 
     WebTransport clone() const noexcept;
+    WebTransport(const jsbind::USVString& url);
     WebTransport(const jsbind::USVString& url, const jsbind::Any& options);
     jsbind::Promise getStats();
+    jsbind::Promise exportKeyingMaterial(const jsbind::Any& label);
     jsbind::Promise exportKeyingMaterial(const jsbind::Any& label, const jsbind::Any& context);
     jsbind::Promise ready() const;
     WebTransportReliabilityMode reliability() const;
@@ -92,10 +94,13 @@ public:
     jsbind::DOMString protocol() const;
     jsbind::Promise closed() const;
     jsbind::Promise draining() const;
+    jsbind::Undefined close();
     jsbind::Undefined close(const WebTransportCloseInfo& closeInfo);
     WebTransportDatagramDuplexStream datagrams() const;
+    jsbind::Promise createBidirectionalStream();
     jsbind::Promise createBidirectionalStream(const WebTransportSendStreamOptions& options);
     ReadableStream incomingBidirectionalStreams() const;
+    jsbind::Promise createUnidirectionalStream();
     jsbind::Promise createUnidirectionalStream(const WebTransportSendStreamOptions& options);
     ReadableStream incomingUnidirectionalStreams() const;
     WebTransportSendGroup createSendGroup();

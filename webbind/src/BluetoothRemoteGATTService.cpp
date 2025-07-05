@@ -27,12 +27,20 @@ jsbind::Promise BluetoothRemoteGATTService::getCharacteristic(const jsbind::Any&
     return EventTarget::call("getCharacteristic", characteristic).as<jsbind::Promise>();
 }
 
+jsbind::Promise BluetoothRemoteGATTService::getCharacteristics() {
+    return EventTarget::call("getCharacteristics").as<jsbind::Promise>();
+}
+
 jsbind::Promise BluetoothRemoteGATTService::getCharacteristics(const jsbind::Any& characteristic) {
     return EventTarget::call("getCharacteristics", characteristic).as<jsbind::Promise>();
 }
 
 jsbind::Promise BluetoothRemoteGATTService::getIncludedService(const jsbind::Any& service) {
     return EventTarget::call("getIncludedService", service).as<jsbind::Promise>();
+}
+
+jsbind::Promise BluetoothRemoteGATTService::getIncludedServices() {
+    return EventTarget::call("getIncludedServices").as<jsbind::Promise>();
 }
 
 jsbind::Promise BluetoothRemoteGATTService::getIncludedServices(const jsbind::Any& service) {

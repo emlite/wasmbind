@@ -25,6 +25,10 @@ Worklet::Worklet(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)
 Worklet::Worklet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise Worklet::addModule(const jsbind::USVString& moduleURL) {
+    return emlite::Val::call("addModule", moduleURL).as<jsbind::Promise>();
+}
+
 jsbind::Promise Worklet::addModule(const jsbind::USVString& moduleURL, const WorkletOptions& options) {
     return emlite::Val::call("addModule", moduleURL, options).as<jsbind::Promise>();
 }

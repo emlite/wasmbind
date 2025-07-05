@@ -323,6 +323,7 @@ public:
     AudioSession audioSession() const;
     AutoplayPolicy getAutoplayPolicy(const AudioContext& context);
     jsbind::Promise getBattery();
+    bool sendBeacon(const jsbind::USVString& url);
     bool sendBeacon(const jsbind::USVString& url, const jsbind::Any& data);
     Clipboard clipboard() const;
     ContactsManager contacts() const;
@@ -330,6 +331,7 @@ public:
     DevicePosture devicePosture() const;
     jsbind::Promise requestMediaKeySystemAccess(const jsbind::DOMString& keySystem, const jsbind::Sequence<MediaKeySystemConfiguration>& supportedConfigurations);
     jsbind::Promise deprecatedReplaceInURN(const jsbind::Any& urnOrConfig, const jsbind::Record<jsbind::USVString, jsbind::USVString>& replacements);
+    jsbind::Promise deprecatedURNtoURL(const jsbind::Any& urnOrConfig);
     jsbind::Promise deprecatedURNtoURL(const jsbind::Any& urnOrConfig, bool send_reports);
     jsbind::Sequence<jsbind::USVString> adAuctionComponents(unsigned short numAdComponents);
     jsbind::Sequence<Gamepad> getGamepads();
@@ -355,11 +357,14 @@ public:
     Serial serial() const;
     ServiceWorkerContainer serviceWorker() const;
     jsbind::Promise joinAdInterestGroup(const AuctionAdInterestGroup& group);
+    jsbind::Promise leaveAdInterestGroup();
     jsbind::Promise leaveAdInterestGroup(const AuctionAdInterestGroupKey& group);
+    jsbind::Promise clearOriginJoinedAdInterestGroups(const jsbind::USVString& owner);
     jsbind::Promise clearOriginJoinedAdInterestGroups(const jsbind::USVString& owner, const jsbind::Sequence<jsbind::USVString>& interestGroupsToKeep);
     jsbind::Promise runAdAuction(const AuctionAdConfig& config);
     bool deprecatedRunAdAuctionEnforcesKAnonymity() const;
     bool canLoadAdAuctionFencedFrame();
+    jsbind::Promise getInterestGroupAdAuctionData();
     jsbind::Promise getInterestGroupAdAuctionData(const AdAuctionDataConfig& config);
     jsbind::Promise createAuctionNonce();
     jsbind::Undefined updateAdInterestGroups();
@@ -367,13 +372,17 @@ public:
     bool vibrate(const jsbind::Any& pattern);
     VirtualKeyboard virtualKeyboard() const;
     Bluetooth bluetooth() const;
+    jsbind::Promise share();
     jsbind::Promise share(const ShareData& data);
+    bool canShare();
     bool canShare(const ShareData& data);
     HID hid() const;
+    jsbind::Promise requestMIDIAccess();
     jsbind::Promise requestMIDIAccess(const MIDIOptions& options);
     USB usb() const;
     XRSystem xr() const;
     WindowControlsOverlay windowControlsOverlay() const;
+    jsbind::Promise setAppBadge();
     jsbind::Promise setAppBadge(long long contents);
     jsbind::Promise clearAppBadge();
     double deviceMemory() const;

@@ -16,6 +16,14 @@ jsbind::Undefined GPUComputePassEncoder::setPipeline(const GPUComputePipeline& p
     return emlite::Val::call("setPipeline", pipeline).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined GPUComputePassEncoder::dispatchWorkgroups(const jsbind::Any& workgroupCountX) {
+    return emlite::Val::call("dispatchWorkgroups", workgroupCountX).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined GPUComputePassEncoder::dispatchWorkgroups(const jsbind::Any& workgroupCountX, const jsbind::Any& workgroupCountY) {
+    return emlite::Val::call("dispatchWorkgroups", workgroupCountX, workgroupCountY).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined GPUComputePassEncoder::dispatchWorkgroups(const jsbind::Any& workgroupCountX, const jsbind::Any& workgroupCountY, const jsbind::Any& workgroupCountZ) {
     return emlite::Val::call("dispatchWorkgroups", workgroupCountX, workgroupCountY, workgroupCountZ).as<jsbind::Undefined>();
 }

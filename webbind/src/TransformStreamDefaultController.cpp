@@ -13,8 +13,16 @@ double TransformStreamDefaultController::desiredSize() const {
     return emlite::Val::get("desiredSize").as<double>();
 }
 
+jsbind::Undefined TransformStreamDefaultController::enqueue() {
+    return emlite::Val::call("enqueue").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined TransformStreamDefaultController::enqueue(const jsbind::Any& chunk) {
     return emlite::Val::call("enqueue", chunk).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined TransformStreamDefaultController::error() {
+    return emlite::Val::call("error").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined TransformStreamDefaultController::error(const jsbind::Any& reason) {

@@ -13,6 +13,7 @@ public:
     static ReportingObserver take_ownership(Handle h) noexcept;
 
     ReportingObserver clone() const noexcept;
+    ReportingObserver(const jsbind::Function& callback);
     ReportingObserver(const jsbind::Function& callback, const jsbind::Any& options);
     jsbind::Undefined observe();
     jsbind::Undefined disconnect();

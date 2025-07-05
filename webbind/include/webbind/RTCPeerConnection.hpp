@@ -145,7 +145,9 @@ public:
     static RTCPeerConnection take_ownership(Handle h) noexcept;
 
     RTCPeerConnection clone() const noexcept;
+    RTCPeerConnection();
     RTCPeerConnection(const RTCConfiguration& configuration);
+    jsbind::Promise createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
     jsbind::Promise createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback, const RTCOfferOptions& options);
     jsbind::Promise createAnswer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
     jsbind::Promise setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Any& successCallback, const jsbind::Function& failureCallback);
@@ -164,6 +166,7 @@ public:
     bool canTrickleIceCandidates() const;
     jsbind::Undefined restartIce();
     RTCConfiguration getConfiguration();
+    jsbind::Undefined setConfiguration();
     jsbind::Undefined setConfiguration(const RTCConfiguration& configuration);
     jsbind::Undefined close();
     jsbind::Any onnegotiationneeded() const;
@@ -180,6 +183,7 @@ public:
     void onicegatheringstatechange(const jsbind::Any& value);
     jsbind::Any onconnectionstatechange() const;
     void onconnectionstatechange(const jsbind::Any& value);
+    jsbind::Undefined setIdentityProvider(const jsbind::DOMString& provider);
     jsbind::Undefined setIdentityProvider(const jsbind::DOMString& provider, const RTCIdentityProviderOptions& options);
     jsbind::Promise getIdentityAssertion();
     jsbind::Promise peerIdentity() const;
@@ -191,13 +195,16 @@ public:
     jsbind::Sequence<RTCRtpTransceiver> getTransceivers();
     RTCRtpSender addTrack(const MediaStreamTrack& track, const MediaStream& streams);
     jsbind::Undefined removeTrack(const RTCRtpSender& sender);
+    RTCRtpTransceiver addTransceiver(const jsbind::Any& trackOrKind);
     RTCRtpTransceiver addTransceiver(const jsbind::Any& trackOrKind, const RTCRtpTransceiverInit& init);
     jsbind::Any ontrack() const;
     void ontrack(const jsbind::Any& value);
     RTCSctpTransport sctp() const;
+    RTCDataChannel createDataChannel(const jsbind::USVString& label);
     RTCDataChannel createDataChannel(const jsbind::USVString& label, const RTCDataChannelInit& dataChannelDict);
     jsbind::Any ondatachannel() const;
     void ondatachannel(const jsbind::Any& value);
+    jsbind::Promise getStats();
     jsbind::Promise getStats(const MediaStreamTrack& selector);
 };
 

@@ -38,6 +38,7 @@ public:
     static RTCEncodedVideoFrame take_ownership(Handle h) noexcept;
 
     RTCEncodedVideoFrame clone() const noexcept;
+    RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame);
     RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame, const jsbind::Any& options);
     RTCEncodedVideoFrameType type() const;
     jsbind::ArrayBuffer data() const;

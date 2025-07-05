@@ -52,8 +52,12 @@ public:
 
     ElementInternals clone() const noexcept;
     ShadowRoot shadowRoot() const;
+    jsbind::Undefined setFormValue(const jsbind::Any& value);
     jsbind::Undefined setFormValue(const jsbind::Any& value, const jsbind::Any& state);
     HTMLFormElement form() const;
+    jsbind::Undefined setValidity();
+    jsbind::Undefined setValidity(const ValidityStateFlags& flags);
+    jsbind::Undefined setValidity(const ValidityStateFlags& flags, const jsbind::DOMString& message);
     jsbind::Undefined setValidity(const ValidityStateFlags& flags, const jsbind::DOMString& message, const HTMLElement& anchor);
     bool willValidate() const;
     ValidityState validity() const;

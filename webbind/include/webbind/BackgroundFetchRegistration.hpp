@@ -43,7 +43,10 @@ public:
     jsbind::Any onprogress() const;
     void onprogress(const jsbind::Any& value);
     jsbind::Promise abort();
+    jsbind::Promise match(const jsbind::Any& request);
     jsbind::Promise match(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise matchAll();
+    jsbind::Promise matchAll(const jsbind::Any& request);
     jsbind::Promise matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
 };
 

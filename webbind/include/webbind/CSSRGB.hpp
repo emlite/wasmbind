@@ -14,6 +14,7 @@ public:
     static CSSRGB take_ownership(Handle h) noexcept;
 
     CSSRGB clone() const noexcept;
+    CSSRGB(const jsbind::Any& r, const jsbind::Any& g, const jsbind::Any& b);
     CSSRGB(const jsbind::Any& r, const jsbind::Any& g, const jsbind::Any& b, const jsbind::Any& alpha);
     jsbind::Any r() const;
     void r(const jsbind::Any& value);

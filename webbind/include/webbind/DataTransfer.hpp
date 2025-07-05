@@ -27,6 +27,7 @@ public:
     jsbind::FrozenArray<jsbind::DOMString> types() const;
     jsbind::DOMString getData(const jsbind::DOMString& format);
     jsbind::Undefined setData(const jsbind::DOMString& format, const jsbind::DOMString& data);
+    jsbind::Undefined clearData();
     jsbind::Undefined clearData(const jsbind::DOMString& format);
     FileList files() const;
 };

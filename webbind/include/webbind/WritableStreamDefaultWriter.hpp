@@ -19,9 +19,11 @@ public:
     jsbind::Promise closed() const;
     double desiredSize() const;
     jsbind::Promise ready() const;
+    jsbind::Promise abort();
     jsbind::Promise abort(const jsbind::Any& reason);
     jsbind::Promise close();
     jsbind::Undefined releaseLock();
+    jsbind::Promise write();
     jsbind::Promise write(const jsbind::Any& chunk);
 };
 

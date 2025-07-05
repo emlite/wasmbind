@@ -9,5 +9,7 @@ RelativeOrientationSensor::RelativeOrientationSensor(Handle h) noexcept : Orient
 RelativeOrientationSensor::RelativeOrientationSensor(const emlite::Val &val) noexcept: OrientationSensor(val) {}
 
 
-RelativeOrientationSensor::RelativeOrientationSensor(const jsbind::Any& sensorOptions): OrientationSensor(emlite::Val::global("RelativeOrientationSensor").new_(sensorOptions)) {}
+RelativeOrientationSensor::RelativeOrientationSensor() : OrientationSensor(emlite::Val::global("RelativeOrientationSensor").new_()) {}
+
+RelativeOrientationSensor::RelativeOrientationSensor(const jsbind::Any& sensorOptions) : OrientationSensor(emlite::Val::global("RelativeOrientationSensor").new_(sensorOptions)) {}
 

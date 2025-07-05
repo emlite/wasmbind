@@ -9,7 +9,7 @@ HTMLDListElement::HTMLDListElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLDListElement::HTMLDListElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLDListElement::HTMLDListElement(): HTMLElement(emlite::Val::global("HTMLDListElement").new_()) {}
+HTMLDListElement::HTMLDListElement() : HTMLElement(emlite::Val::global("HTMLDListElement").new_()) {}
 
 bool HTMLDListElement::compact() const {
     return HTMLElement::get("compact").as<bool>();

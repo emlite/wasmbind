@@ -10,6 +10,8 @@ public:
     static IdentityCredentialError take_ownership(Handle h) noexcept;
 
     IdentityCredentialError clone() const noexcept;
+    IdentityCredentialError();
+    IdentityCredentialError(const jsbind::DOMString& message);
     IdentityCredentialError(const jsbind::DOMString& message, const jsbind::Any& options);
     jsbind::DOMString error() const;
     jsbind::DOMString url() const;

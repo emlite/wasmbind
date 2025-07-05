@@ -11,7 +11,9 @@ BluetoothLEScanFilter::BluetoothLEScanFilter(Handle h) noexcept : emlite::Val(em
 BluetoothLEScanFilter::BluetoothLEScanFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-BluetoothLEScanFilter::BluetoothLEScanFilter(const jsbind::Any& init): emlite::Val(emlite::Val::global("BluetoothLEScanFilter").new_(init)) {}
+BluetoothLEScanFilter::BluetoothLEScanFilter() : emlite::Val(emlite::Val::global("BluetoothLEScanFilter").new_()) {}
+
+BluetoothLEScanFilter::BluetoothLEScanFilter(const jsbind::Any& init) : emlite::Val(emlite::Val::global("BluetoothLEScanFilter").new_(init)) {}
 
 jsbind::DOMString BluetoothLEScanFilter::name() const {
     return emlite::Val::get("name").as<jsbind::DOMString>();

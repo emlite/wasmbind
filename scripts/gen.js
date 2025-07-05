@@ -1,4 +1,12 @@
-import { flat, cpp, writePair, fixIdent, argtypeFix } from "./utils.js";
+import {
+  flat,
+  cpp,
+  writePair,
+  fixIdent,
+  argtypeFix,
+  variantsOf,
+  argDecl,
+} from "./utils.js";
 import {
   emittedDicts,
   dictOwner,
@@ -55,39 +63,48 @@ function emitOp(op, owner, isStatic = false, parent0) {
   if (!op.name) return { H, S };
   const ret = cpp(op.idlType || "undefined");
   const cppName = fixIdent(op.name);
-  const decl = op.arguments
-    .map((a) => `${argtypeFix(cpp(a.idlType))} ${fixIdent(a.name)}`)
-    .join(", ");
-  const args = op.arguments.map((a) => fixIdent(a.name)).join(", ");
-
+  const variants = variantsOf(op.arguments);
   const staticKw = isStatic ? "static " : "";
-  H.push(`    ${staticKw}${ret} ${cppName}(${decl});`);
-  const callExpr = isStatic
-    ? `emlite::Val::global("${owner.toLowerCase()}").call("${op.name}"${
-        args ? ", " + args : ""
-      })`
-    : `${parent}::call("${op.name}"${args ? ", " + args : ""})`;
-  S.push(
-    `${ret} ${owner}::${cppName}(${decl}) {`,
-    `    return ${callExpr}.as<${ret}>();`,
-    `}`,
-    ""
-  );
+
+  for (const v of variants) {
+    const declHdr = argDecl(v);
+    const declSrc = declHdr;
+    const callArgs = v.map((a) => fixIdent(a.name)).join(", ");
+    const callExpr = isStatic
+      ? `emlite::Val::global("${owner.toLowerCase()}").call("${op.name}"${
+          callArgs ? ", " + callArgs : ""
+        })`
+      : `${parent}::call("${op.name}"${callArgs ? ", " + callArgs : ""})`;
+
+    H.push(`    ${staticKw}${ret} ${cppName}(${declHdr});`);
+
+    S.push(
+      `${ret} ${owner}::${cppName}(${declSrc}) {`,
+      `    return ${callExpr}.as<${ret}>();`,
+      `}`,
+      ""
+    );
+  }
   return { H, S };
 }
 
 function emitCtor(ctor, owner, parent) {
-  const argsDecl = ctor.arguments
-    .map((a) => `${argtypeFix(cpp(a.idlType))} ${fixIdent(a.name)}`)
-    .join(", ");
-  const argsCall = ctor.arguments.map((a) => fixIdent(a.name)).join(", ");
+  const variants = variantsOf(ctor.arguments);
+  const H = [];
+  const S = [];
 
-  const H = [`    ${owner}(${argsDecl});`];
+  for (const v of variants) {
+    const declHdr = argDecl(v);
+    const declSrc = declHdr;
+    const callArgs = v.map((a) => fixIdent(a.name)).join(", ");
 
-  const S = [
-    `${owner}::${owner}(${argsDecl}): ${parent}(emlite::Val::global("${owner}").new_(${argsCall})) {}`,
-    ``,
-  ];
+    H.push(`    ${owner}(${declHdr});`);
+
+    S.push(
+      `${owner}::${owner}(${declSrc}) : ${parent}(emlite::Val::global("${owner}").new_(${callArgs})) {}`,
+      ""
+    );
+  }
   return { H, S };
 }
 
@@ -398,21 +415,25 @@ export function generate(specAst) {
       .forEach((op) => {
         const ret = cpp(op.idlType || "undefined");
         const cppName = fixIdent(op.name);
-        const decl = op.arguments
-          .map((a) => `${argtypeFix(cpp(a.idlType))} ${fixIdent(a.name)}`)
-          .join(", ");
-        const args = op.arguments.map((a) => fixIdent(a.name)).join(", ");
-        hdr.push(`    ${ret} ${cppName}(${decl});`);
+        for (const v of variantsOf(op.arguments)) {
+          const declHdr = argDecl(v);
+          const declSrc = declHdr;
+          const callArgs = v.map((a) => fixIdent(a.name)).join(", ");
 
-        const callExpr = `emlite::Val::global("${ns.name.toLowerCase()}").call("${
-          op.name
-        }"${args ? ", " + args : ""})`;
-        src.push(
-          `${ret} ${ns.name}::${cppName}(${decl}) {`,
-          `    return ${callExpr}.as<${ret}>();`,
-          `}`,
-          ""
-        );
+          hdr.push(`    ${ret} ${cppName}(${declHdr});`);
+
+          const callExpr =
+            `emlite::Val::global("${ns.name.toLowerCase()}").call("${
+              op.name
+            }"` + (callArgs ? `, ${callArgs})` : ")");
+
+          src.push(
+            `${ret} ${ns.name}::${cppName}(${declSrc}) {`,
+            `    return ${callExpr}.as<${ret}>();`,
+            `}`,
+            ""
+          );
+        }
       });
 
     hdr.push(`} // namespace ${ns.name}`, "");

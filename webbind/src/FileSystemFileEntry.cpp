@@ -9,6 +9,10 @@ FileSystemFileEntry::FileSystemFileEntry(Handle h) noexcept : FileSystemEntry(em
 FileSystemFileEntry::FileSystemFileEntry(const emlite::Val &val) noexcept: FileSystemEntry(val) {}
 
 
+jsbind::Undefined FileSystemFileEntry::file(const jsbind::Function& successCallback) {
+    return FileSystemEntry::call("file", successCallback).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined FileSystemFileEntry::file(const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
     return FileSystemEntry::call("file", successCallback, errorCallback).as<jsbind::Undefined>();
 }

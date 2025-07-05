@@ -16,6 +16,7 @@ public:
     static ConvolverNode take_ownership(Handle h) noexcept;
 
     ConvolverNode clone() const noexcept;
+    ConvolverNode(const BaseAudioContext& context);
     ConvolverNode(const BaseAudioContext& context, const jsbind::Any& options);
     AudioBuffer buffer() const;
     void buffer(const AudioBuffer& value);

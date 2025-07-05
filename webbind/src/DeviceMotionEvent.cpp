@@ -11,7 +11,9 @@ DeviceMotionEvent::DeviceMotionEvent(Handle h) noexcept : Event(emlite::Val::tak
 DeviceMotionEvent::DeviceMotionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-DeviceMotionEvent::DeviceMotionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("DeviceMotionEvent").new_(type, eventInitDict)) {}
+DeviceMotionEvent::DeviceMotionEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("DeviceMotionEvent").new_(type)) {}
+
+DeviceMotionEvent::DeviceMotionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DeviceMotionEvent").new_(type, eventInitDict)) {}
 
 DeviceMotionEventAcceleration DeviceMotionEvent::acceleration() const {
     return Event::get("acceleration").as<DeviceMotionEventAcceleration>();

@@ -36,6 +36,10 @@ WebTransportDatagramDuplexStream::WebTransportDatagramDuplexStream(Handle h) noe
 WebTransportDatagramDuplexStream::WebTransportDatagramDuplexStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+WebTransportDatagramsWritable WebTransportDatagramDuplexStream::createWritable() {
+    return emlite::Val::call("createWritable").as<WebTransportDatagramsWritable>();
+}
+
 WebTransportDatagramsWritable WebTransportDatagramDuplexStream::createWritable(const WebTransportSendOptions& options) {
     return emlite::Val::call("createWritable", options).as<WebTransportDatagramsWritable>();
 }

@@ -73,7 +73,9 @@ RTCEncodedVideoFrame::RTCEncodedVideoFrame(Handle h) noexcept : emlite::Val(emli
 RTCEncodedVideoFrame::RTCEncodedVideoFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-RTCEncodedVideoFrame::RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame, const jsbind::Any& options): emlite::Val(emlite::Val::global("RTCEncodedVideoFrame").new_(originalFrame, options)) {}
+RTCEncodedVideoFrame::RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame) : emlite::Val(emlite::Val::global("RTCEncodedVideoFrame").new_(originalFrame)) {}
+
+RTCEncodedVideoFrame::RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame, const jsbind::Any& options) : emlite::Val(emlite::Val::global("RTCEncodedVideoFrame").new_(originalFrame, options)) {}
 
 RTCEncodedVideoFrameType RTCEncodedVideoFrame::type() const {
     return emlite::Val::get("type").as<RTCEncodedVideoFrameType>();

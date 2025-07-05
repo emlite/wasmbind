@@ -9,7 +9,7 @@ RTCIdentityAssertion::RTCIdentityAssertion(Handle h) noexcept : emlite::Val(emli
 RTCIdentityAssertion::RTCIdentityAssertion(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-RTCIdentityAssertion::RTCIdentityAssertion(const jsbind::DOMString& idp, const jsbind::DOMString& name): emlite::Val(emlite::Val::global("RTCIdentityAssertion").new_(idp, name)) {}
+RTCIdentityAssertion::RTCIdentityAssertion(const jsbind::DOMString& idp, const jsbind::DOMString& name) : emlite::Val(emlite::Val::global("RTCIdentityAssertion").new_(idp, name)) {}
 
 jsbind::DOMString RTCIdentityAssertion::idp() const {
     return emlite::Val::get("idp").as<jsbind::DOMString>();

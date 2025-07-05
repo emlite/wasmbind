@@ -16,6 +16,8 @@ public:
     static XPathExpression take_ownership(Handle h) noexcept;
 
     XPathExpression clone() const noexcept;
+    XPathResult evaluate(const Node& contextNode);
+    XPathResult evaluate(const Node& contextNode, unsigned short type);
     XPathResult evaluate(const Node& contextNode, unsigned short type, const XPathResult& result);
 };
 

@@ -10,7 +10,11 @@ Blob::Blob(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Blob::Blob(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Blob::Blob(const jsbind::Sequence<jsbind::Any>& blobParts, const jsbind::Any& options): emlite::Val(emlite::Val::global("Blob").new_(blobParts, options)) {}
+Blob::Blob() : emlite::Val(emlite::Val::global("Blob").new_()) {}
+
+Blob::Blob(const jsbind::Sequence<jsbind::Any>& blobParts) : emlite::Val(emlite::Val::global("Blob").new_(blobParts)) {}
+
+Blob::Blob(const jsbind::Sequence<jsbind::Any>& blobParts, const jsbind::Any& options) : emlite::Val(emlite::Val::global("Blob").new_(blobParts, options)) {}
 
 long long Blob::size() const {
     return emlite::Val::get("size").as<long long>();
@@ -18,6 +22,18 @@ long long Blob::size() const {
 
 jsbind::DOMString Blob::type() const {
     return emlite::Val::get("type").as<jsbind::DOMString>();
+}
+
+Blob Blob::slice() {
+    return emlite::Val::call("slice").as<Blob>();
+}
+
+Blob Blob::slice(long long start) {
+    return emlite::Val::call("slice", start).as<Blob>();
+}
+
+Blob Blob::slice(long long start, long long end) {
+    return emlite::Val::call("slice", start, end).as<Blob>();
 }
 
 Blob Blob::slice(long long start, long long end, const jsbind::DOMString& contentType) {

@@ -9,7 +9,9 @@ AnimationEvent::AnimationEvent(Handle h) noexcept : Event(emlite::Val::take_owne
 AnimationEvent::AnimationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-AnimationEvent::AnimationEvent(const jsbind::CSSOMString& type, const jsbind::Any& animationEventInitDict): Event(emlite::Val::global("AnimationEvent").new_(type, animationEventInitDict)) {}
+AnimationEvent::AnimationEvent(const jsbind::CSSOMString& type) : Event(emlite::Val::global("AnimationEvent").new_(type)) {}
+
+AnimationEvent::AnimationEvent(const jsbind::CSSOMString& type, const jsbind::Any& animationEventInitDict) : Event(emlite::Val::global("AnimationEvent").new_(type, animationEventInitDict)) {}
 
 jsbind::CSSOMString AnimationEvent::animationName() const {
     return Event::get("animationName").as<jsbind::CSSOMString>();

@@ -9,7 +9,7 @@ EncodedVideoChunk::EncodedVideoChunk(Handle h) noexcept : emlite::Val(emlite::Va
 EncodedVideoChunk::EncodedVideoChunk(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-EncodedVideoChunk::EncodedVideoChunk(const jsbind::Any& init): emlite::Val(emlite::Val::global("EncodedVideoChunk").new_(init)) {}
+EncodedVideoChunk::EncodedVideoChunk(const jsbind::Any& init) : emlite::Val(emlite::Val::global("EncodedVideoChunk").new_(init)) {}
 
 EncodedVideoChunkType EncodedVideoChunk::type() const {
     return emlite::Val::get("type").as<EncodedVideoChunkType>();

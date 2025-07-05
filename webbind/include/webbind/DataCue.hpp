@@ -14,6 +14,7 @@ public:
     static DataCue take_ownership(Handle h) noexcept;
 
     DataCue clone() const noexcept;
+    DataCue(double startTime, double endTime, const jsbind::Any& value);
     DataCue(double startTime, double endTime, const jsbind::Any& value, const jsbind::DOMString& type);
     jsbind::Any value() const;
     void value(const jsbind::Any& value);

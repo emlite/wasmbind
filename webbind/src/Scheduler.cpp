@@ -42,6 +42,10 @@ Scheduler::Scheduler(Handle h) noexcept : emlite::Val(emlite::Val::take_ownershi
 Scheduler::Scheduler(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise Scheduler::postTask(const jsbind::Function& callback) {
+    return emlite::Val::call("postTask", callback).as<jsbind::Promise>();
+}
+
 jsbind::Promise Scheduler::postTask(const jsbind::Function& callback, const SchedulerPostTaskOptions& options) {
     return emlite::Val::call("postTask", callback, options).as<jsbind::Promise>();
 }

@@ -31,6 +31,7 @@ public:
 
     Clients clone() const noexcept;
     jsbind::Promise get(const jsbind::DOMString& id);
+    jsbind::Promise matchAll();
     jsbind::Promise matchAll(const ClientQueryOptions& options);
     jsbind::Promise openWindow(const jsbind::USVString& url);
     jsbind::Promise claim();

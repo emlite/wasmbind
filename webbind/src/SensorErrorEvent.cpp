@@ -10,7 +10,7 @@ SensorErrorEvent::SensorErrorEvent(Handle h) noexcept : Event(emlite::Val::take_
 SensorErrorEvent::SensorErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SensorErrorEvent::SensorErrorEvent(const jsbind::DOMString& type, const jsbind::Any& errorEventInitDict): Event(emlite::Val::global("SensorErrorEvent").new_(type, errorEventInitDict)) {}
+SensorErrorEvent::SensorErrorEvent(const jsbind::DOMString& type, const jsbind::Any& errorEventInitDict) : Event(emlite::Val::global("SensorErrorEvent").new_(type, errorEventInitDict)) {}
 
 DOMException SensorErrorEvent::error() const {
     return Event::get("error").as<DOMException>();

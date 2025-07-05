@@ -9,7 +9,7 @@ CSSPerspective::CSSPerspective(Handle h) noexcept : CSSTransformComponent(emlite
 CSSPerspective::CSSPerspective(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
 
-CSSPerspective::CSSPerspective(const jsbind::Any& length): CSSTransformComponent(emlite::Val::global("CSSPerspective").new_(length)) {}
+CSSPerspective::CSSPerspective(const jsbind::Any& length) : CSSTransformComponent(emlite::Val::global("CSSPerspective").new_(length)) {}
 
 jsbind::Any CSSPerspective::length() const {
     return CSSTransformComponent::get("length").as<jsbind::Any>();

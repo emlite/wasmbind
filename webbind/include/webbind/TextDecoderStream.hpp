@@ -16,6 +16,8 @@ public:
     static TextDecoderStream take_ownership(Handle h) noexcept;
 
     TextDecoderStream clone() const noexcept;
+    TextDecoderStream();
+    TextDecoderStream(const jsbind::DOMString& label);
     TextDecoderStream(const jsbind::DOMString& label, const jsbind::Any& options);
     jsbind::DOMString encoding() const;
     bool fatal() const;

@@ -9,7 +9,9 @@ DataCue::DataCue(Handle h) noexcept : TextTrackCue(emlite::Val::take_ownership(h
 DataCue::DataCue(const emlite::Val &val) noexcept: TextTrackCue(val) {}
 
 
-DataCue::DataCue(double startTime, double endTime, const jsbind::Any& value, const jsbind::DOMString& type): TextTrackCue(emlite::Val::global("DataCue").new_(startTime, endTime, value, type)) {}
+DataCue::DataCue(double startTime, double endTime, const jsbind::Any& value) : TextTrackCue(emlite::Val::global("DataCue").new_(startTime, endTime, value)) {}
+
+DataCue::DataCue(double startTime, double endTime, const jsbind::Any& value, const jsbind::DOMString& type) : TextTrackCue(emlite::Val::global("DataCue").new_(startTime, endTime, value, type)) {}
 
 jsbind::Any DataCue::value() const {
     return TextTrackCue::get("value").as<jsbind::Any>();

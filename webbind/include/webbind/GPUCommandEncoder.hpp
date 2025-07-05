@@ -93,13 +93,18 @@ public:
 
     GPUCommandEncoder clone() const noexcept;
     GPURenderPassEncoder beginRenderPass(const GPURenderPassDescriptor& descriptor);
+    GPUComputePassEncoder beginComputePass();
     GPUComputePassEncoder beginComputePass(const GPUComputePassDescriptor& descriptor);
+    jsbind::Undefined copyBufferToBuffer(const GPUBuffer& source, const jsbind::Any& sourceOffset, const GPUBuffer& destination, const jsbind::Any& destinationOffset);
     jsbind::Undefined copyBufferToBuffer(const GPUBuffer& source, const jsbind::Any& sourceOffset, const GPUBuffer& destination, const jsbind::Any& destinationOffset, const jsbind::Any& size);
     jsbind::Undefined copyBufferToTexture(const GPUTexelCopyBufferInfo& source, const GPUTexelCopyTextureInfo& destination, const jsbind::Any& copySize);
     jsbind::Undefined copyTextureToBuffer(const GPUTexelCopyTextureInfo& source, const GPUTexelCopyBufferInfo& destination, const jsbind::Any& copySize);
     jsbind::Undefined copyTextureToTexture(const GPUTexelCopyTextureInfo& source, const GPUTexelCopyTextureInfo& destination, const jsbind::Any& copySize);
+    jsbind::Undefined clearBuffer(const GPUBuffer& buffer);
+    jsbind::Undefined clearBuffer(const GPUBuffer& buffer, const jsbind::Any& offset);
     jsbind::Undefined clearBuffer(const GPUBuffer& buffer, const jsbind::Any& offset, const jsbind::Any& size);
     jsbind::Undefined resolveQuerySet(const GPUQuerySet& querySet, const jsbind::Any& firstQuery, const jsbind::Any& queryCount, const GPUBuffer& destination, const jsbind::Any& destinationOffset);
+    GPUCommandBuffer finish();
     GPUCommandBuffer finish(const GPUCommandBufferDescriptor& descriptor);
     jsbind::USVString label() const;
     void label(const jsbind::USVString& value);

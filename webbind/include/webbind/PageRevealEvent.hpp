@@ -16,6 +16,7 @@ public:
     static PageRevealEvent take_ownership(Handle h) noexcept;
 
     PageRevealEvent clone() const noexcept;
+    PageRevealEvent(const jsbind::DOMString& type);
     PageRevealEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     ViewTransition viewTransition() const;
 };

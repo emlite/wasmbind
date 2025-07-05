@@ -35,6 +35,7 @@ public:
     jsbind::USVString baseURI() const;
     bool isConnected() const;
     Document ownerDocument() const;
+    Node getRootNode();
     Node getRootNode(const GetRootNodeOptions& options);
     Node parentNode() const;
     Element parentElement() const;
@@ -49,6 +50,7 @@ public:
     jsbind::DOMString textContent() const;
     void textContent(const jsbind::DOMString& value);
     jsbind::Undefined normalize();
+    Node cloneNode();
     Node cloneNode(bool subtree);
     bool isEqualNode(const Node& otherNode);
     bool isSameNode(const Node& otherNode);

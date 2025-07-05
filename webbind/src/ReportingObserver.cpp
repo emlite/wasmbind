@@ -9,7 +9,9 @@ ReportingObserver::ReportingObserver(Handle h) noexcept : emlite::Val(emlite::Va
 ReportingObserver::ReportingObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ReportingObserver::ReportingObserver(const jsbind::Function& callback, const jsbind::Any& options): emlite::Val(emlite::Val::global("ReportingObserver").new_(callback, options)) {}
+ReportingObserver::ReportingObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("ReportingObserver").new_(callback)) {}
+
+ReportingObserver::ReportingObserver(const jsbind::Function& callback, const jsbind::Any& options) : emlite::Val(emlite::Val::global("ReportingObserver").new_(callback, options)) {}
 
 jsbind::Undefined ReportingObserver::observe() {
     return emlite::Val::call("observe").as<jsbind::Undefined>();

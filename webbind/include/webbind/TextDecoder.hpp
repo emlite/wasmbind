@@ -26,7 +26,11 @@ public:
     static TextDecoder take_ownership(Handle h) noexcept;
 
     TextDecoder clone() const noexcept;
+    TextDecoder();
+    TextDecoder(const jsbind::DOMString& label);
     TextDecoder(const jsbind::DOMString& label, const jsbind::Any& options);
+    jsbind::USVString decode();
+    jsbind::USVString decode(const jsbind::Any& input);
     jsbind::USVString decode(const jsbind::Any& input, const TextDecodeOptions& options);
     jsbind::DOMString encoding() const;
     bool fatal() const;

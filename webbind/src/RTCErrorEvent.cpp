@@ -10,7 +10,7 @@ RTCErrorEvent::RTCErrorEvent(Handle h) noexcept : Event(emlite::Val::take_owners
 RTCErrorEvent::RTCErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-RTCErrorEvent::RTCErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("RTCErrorEvent").new_(type, eventInitDict)) {}
+RTCErrorEvent::RTCErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCErrorEvent").new_(type, eventInitDict)) {}
 
 RTCError RTCErrorEvent::error() const {
     return Event::get("error").as<RTCError>();

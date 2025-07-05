@@ -33,6 +33,7 @@ public:
     static BarcodeDetector take_ownership(Handle h) noexcept;
 
     BarcodeDetector clone() const noexcept;
+    BarcodeDetector();
     BarcodeDetector(const jsbind::Any& barcodeDetectorOptions);
     static jsbind::Promise getSupportedFormats();
     jsbind::Promise detect(const jsbind::Any& image);

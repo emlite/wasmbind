@@ -17,8 +17,16 @@ jsbind::Undefined ReadableStreamDefaultController::close() {
     return emlite::Val::call("close").as<jsbind::Undefined>();
 }
 
+jsbind::Undefined ReadableStreamDefaultController::enqueue() {
+    return emlite::Val::call("enqueue").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined ReadableStreamDefaultController::enqueue(const jsbind::Any& chunk) {
     return emlite::Val::call("enqueue", chunk).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined ReadableStreamDefaultController::error() {
+    return emlite::Val::call("error").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined ReadableStreamDefaultController::error(const jsbind::Any& e) {

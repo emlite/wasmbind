@@ -10,7 +10,9 @@ AnimationTrigger::AnimationTrigger(Handle h) noexcept : emlite::Val(emlite::Val:
 AnimationTrigger::AnimationTrigger(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-AnimationTrigger::AnimationTrigger(const jsbind::Any& options): emlite::Val(emlite::Val::global("AnimationTrigger").new_(options)) {}
+AnimationTrigger::AnimationTrigger() : emlite::Val(emlite::Val::global("AnimationTrigger").new_()) {}
+
+AnimationTrigger::AnimationTrigger(const jsbind::Any& options) : emlite::Val(emlite::Val::global("AnimationTrigger").new_(options)) {}
 
 AnimationTimeline AnimationTrigger::timeline() const {
     return emlite::Val::get("timeline").as<AnimationTimeline>();

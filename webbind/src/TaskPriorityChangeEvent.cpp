@@ -9,7 +9,7 @@ TaskPriorityChangeEvent::TaskPriorityChangeEvent(Handle h) noexcept : Event(emli
 TaskPriorityChangeEvent::TaskPriorityChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-TaskPriorityChangeEvent::TaskPriorityChangeEvent(const jsbind::DOMString& type, const jsbind::Any& priorityChangeEventInitDict): Event(emlite::Val::global("TaskPriorityChangeEvent").new_(type, priorityChangeEventInitDict)) {}
+TaskPriorityChangeEvent::TaskPriorityChangeEvent(const jsbind::DOMString& type, const jsbind::Any& priorityChangeEventInitDict) : Event(emlite::Val::global("TaskPriorityChangeEvent").new_(type, priorityChangeEventInitDict)) {}
 
 TaskPriority TaskPriorityChangeEvent::previousPriority() const {
     return Event::get("previousPriority").as<TaskPriority>();

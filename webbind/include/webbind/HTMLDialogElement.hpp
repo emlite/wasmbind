@@ -23,7 +23,9 @@ public:
     void closedBy(const jsbind::DOMString& value);
     jsbind::Undefined show();
     jsbind::Undefined showModal();
+    jsbind::Undefined close();
     jsbind::Undefined close(const jsbind::DOMString& returnValue);
+    jsbind::Undefined requestClose();
     jsbind::Undefined requestClose(const jsbind::DOMString& returnValue);
 };
 

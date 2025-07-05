@@ -10,7 +10,7 @@ HTMLLegendElement::HTMLLegendElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLLegendElement::HTMLLegendElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLLegendElement::HTMLLegendElement(): HTMLElement(emlite::Val::global("HTMLLegendElement").new_()) {}
+HTMLLegendElement::HTMLLegendElement() : HTMLElement(emlite::Val::global("HTMLLegendElement").new_()) {}
 
 HTMLFormElement HTMLLegendElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();

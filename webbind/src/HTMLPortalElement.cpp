@@ -26,7 +26,7 @@ HTMLPortalElement::HTMLPortalElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLPortalElement::HTMLPortalElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLPortalElement::HTMLPortalElement(): HTMLElement(emlite::Val::global("HTMLPortalElement").new_()) {}
+HTMLPortalElement::HTMLPortalElement() : HTMLElement(emlite::Val::global("HTMLPortalElement").new_()) {}
 
 jsbind::USVString HTMLPortalElement::src() const {
     return HTMLElement::get("src").as<jsbind::USVString>();
@@ -44,8 +44,16 @@ void HTMLPortalElement::referrerPolicy(const jsbind::DOMString& value) {
     HTMLElement::set("referrerPolicy", value);
 }
 
+jsbind::Promise HTMLPortalElement::activate() {
+    return HTMLElement::call("activate").as<jsbind::Promise>();
+}
+
 jsbind::Promise HTMLPortalElement::activate(const PortalActivateOptions& options) {
     return HTMLElement::call("activate", options).as<jsbind::Promise>();
+}
+
+jsbind::Undefined HTMLPortalElement::postMessage(const jsbind::Any& message) {
+    return HTMLElement::call("postMessage", message).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLPortalElement::postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options) {

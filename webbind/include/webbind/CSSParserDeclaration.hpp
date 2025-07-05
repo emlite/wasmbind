@@ -16,6 +16,7 @@ public:
     static CSSParserDeclaration take_ownership(Handle h) noexcept;
 
     CSSParserDeclaration clone() const noexcept;
+    CSSParserDeclaration(const jsbind::DOMString& name);
     CSSParserDeclaration(const jsbind::DOMString& name, const jsbind::Sequence<CSSParserRule>& body);
     jsbind::DOMString name() const;
     jsbind::FrozenArray<CSSParserValue> body() const;

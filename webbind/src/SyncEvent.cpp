@@ -9,7 +9,7 @@ SyncEvent::SyncEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_owne
 SyncEvent::SyncEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-SyncEvent::SyncEvent(const jsbind::DOMString& type, const jsbind::Any& init): ExtendableEvent(emlite::Val::global("SyncEvent").new_(type, init)) {}
+SyncEvent::SyncEvent(const jsbind::DOMString& type, const jsbind::Any& init) : ExtendableEvent(emlite::Val::global("SyncEvent").new_(type, init)) {}
 
 jsbind::DOMString SyncEvent::tag() const {
     return ExtendableEvent::get("tag").as<jsbind::DOMString>();

@@ -10,7 +10,11 @@ ImageData::ImageData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownershi
 ImageData::ImageData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ImageData::ImageData(const jsbind::Any& data, unsigned long sw, unsigned long sh, const ImageDataSettings& settings): emlite::Val(emlite::Val::global("ImageData").new_(data, sw, sh, settings)) {}
+ImageData::ImageData(const jsbind::Any& data, unsigned long sw) : emlite::Val(emlite::Val::global("ImageData").new_(data, sw)) {}
+
+ImageData::ImageData(const jsbind::Any& data, unsigned long sw, unsigned long sh) : emlite::Val(emlite::Val::global("ImageData").new_(data, sw, sh)) {}
+
+ImageData::ImageData(const jsbind::Any& data, unsigned long sw, unsigned long sh, const ImageDataSettings& settings) : emlite::Val(emlite::Val::global("ImageData").new_(data, sw, sh, settings)) {}
 
 unsigned long ImageData::width() const {
     return emlite::Val::get("width").as<unsigned long>();

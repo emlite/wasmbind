@@ -26,7 +26,9 @@ public:
     void onloadingdone(const jsbind::Any& value);
     jsbind::Any onloadingerror() const;
     void onloadingerror(const jsbind::Any& value);
+    jsbind::Promise load(const jsbind::CSSOMString& font);
     jsbind::Promise load(const jsbind::CSSOMString& font, const jsbind::CSSOMString& text);
+    bool check(const jsbind::CSSOMString& font);
     bool check(const jsbind::CSSOMString& font, const jsbind::CSSOMString& text);
     jsbind::Promise ready() const;
     FontFaceSetLoadStatus status() const;

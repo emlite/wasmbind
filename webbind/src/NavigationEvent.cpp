@@ -10,7 +10,9 @@ NavigationEvent::NavigationEvent(Handle h) noexcept : UIEvent(emlite::Val::take_
 NavigationEvent::NavigationEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-NavigationEvent::NavigationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): UIEvent(emlite::Val::global("NavigationEvent").new_(type, eventInitDict)) {}
+NavigationEvent::NavigationEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("NavigationEvent").new_(type)) {}
+
+NavigationEvent::NavigationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("NavigationEvent").new_(type, eventInitDict)) {}
 
 SpatialNavigationDirection NavigationEvent::dir() const {
     return UIEvent::get("dir").as<SpatialNavigationDirection>();

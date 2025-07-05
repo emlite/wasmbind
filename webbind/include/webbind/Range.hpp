@@ -28,6 +28,7 @@ public:
     jsbind::Undefined setStartAfter(const Node& node);
     jsbind::Undefined setEndBefore(const Node& node);
     jsbind::Undefined setEndAfter(const Node& node);
+    jsbind::Undefined collapse();
     jsbind::Undefined collapse(bool toStart);
     jsbind::Undefined selectNode(const Node& node);
     jsbind::Undefined selectNodeContents(const Node& node);

@@ -10,7 +10,7 @@ NavigationCurrentEntryChangeEvent::NavigationCurrentEntryChangeEvent(Handle h) n
 NavigationCurrentEntryChangeEvent::NavigationCurrentEntryChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-NavigationCurrentEntryChangeEvent::NavigationCurrentEntryChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("NavigationCurrentEntryChangeEvent").new_(type, eventInitDict)) {}
+NavigationCurrentEntryChangeEvent::NavigationCurrentEntryChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("NavigationCurrentEntryChangeEvent").new_(type, eventInitDict)) {}
 
 NavigationType NavigationCurrentEntryChangeEvent::navigationType() const {
     return Event::get("navigationType").as<NavigationType>();

@@ -203,6 +203,10 @@ bool XRSession::isSystemKeyboardSupported() const {
     return EventTarget::get("isSystemKeyboardSupported").as<bool>();
 }
 
+jsbind::Undefined XRSession::updateRenderState() {
+    return EventTarget::call("updateRenderState").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined XRSession::updateRenderState(const XRRenderStateInit& state) {
     return EventTarget::call("updateRenderState", state).as<jsbind::Undefined>();
 }
@@ -361,6 +365,10 @@ jsbind::Promise XRSession::requestHitTestSource(const XRHitTestOptionsInit& opti
 
 jsbind::Promise XRSession::requestHitTestSourceForTransientInput(const XRTransientInputHitTestOptionsInit& options) {
     return EventTarget::call("requestHitTestSourceForTransientInput", options).as<jsbind::Promise>();
+}
+
+jsbind::Promise XRSession::requestLightProbe() {
+    return EventTarget::call("requestLightProbe").as<jsbind::Promise>();
 }
 
 jsbind::Promise XRSession::requestLightProbe(const XRLightProbeInit& options) {

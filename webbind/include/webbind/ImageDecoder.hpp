@@ -49,6 +49,7 @@ public:
     bool complete() const;
     jsbind::Promise completed() const;
     ImageTrackList tracks() const;
+    jsbind::Promise decode();
     jsbind::Promise decode(const ImageDecodeOptions& options);
     jsbind::Undefined reset();
     jsbind::Undefined close();

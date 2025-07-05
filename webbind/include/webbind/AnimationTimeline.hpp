@@ -18,6 +18,7 @@ public:
     AnimationTimeline clone() const noexcept;
     jsbind::Any currentTime() const;
     jsbind::Any duration() const;
+    Animation play();
     Animation play(const AnimationEffect& effect);
 };
 

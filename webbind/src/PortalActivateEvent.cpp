@@ -10,7 +10,9 @@ PortalActivateEvent::PortalActivateEvent(Handle h) noexcept : Event(emlite::Val:
 PortalActivateEvent::PortalActivateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-PortalActivateEvent::PortalActivateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("PortalActivateEvent").new_(type, eventInitDict)) {}
+PortalActivateEvent::PortalActivateEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("PortalActivateEvent").new_(type)) {}
+
+PortalActivateEvent::PortalActivateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PortalActivateEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any PortalActivateEvent::data() const {
     return Event::get("data").as<jsbind::Any>();

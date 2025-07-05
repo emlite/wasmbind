@@ -11,7 +11,7 @@ HTMLFencedFrameElement::HTMLFencedFrameElement(Handle h) noexcept : HTMLElement(
 HTMLFencedFrameElement::HTMLFencedFrameElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLFencedFrameElement::HTMLFencedFrameElement(): HTMLElement(emlite::Val::global("HTMLFencedFrameElement").new_()) {}
+HTMLFencedFrameElement::HTMLFencedFrameElement() : HTMLElement(emlite::Val::global("HTMLFencedFrameElement").new_()) {}
 
 FencedFrameConfig HTMLFencedFrameElement::config() const {
     return HTMLElement::get("config").as<FencedFrameConfig>();

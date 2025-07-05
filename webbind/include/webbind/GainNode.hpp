@@ -16,6 +16,7 @@ public:
     static GainNode take_ownership(Handle h) noexcept;
 
     GainNode clone() const noexcept;
+    GainNode(const BaseAudioContext& context);
     GainNode(const BaseAudioContext& context, const jsbind::Any& options);
     AudioParam gain() const;
 };

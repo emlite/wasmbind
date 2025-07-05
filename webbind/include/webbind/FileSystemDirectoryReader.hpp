@@ -13,6 +13,7 @@ public:
     static FileSystemDirectoryReader take_ownership(Handle h) noexcept;
 
     FileSystemDirectoryReader clone() const noexcept;
+    jsbind::Undefined readEntries(const jsbind::Function& successCallback);
     jsbind::Undefined readEntries(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

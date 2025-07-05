@@ -30,6 +30,14 @@ FileSystem FileSystemEntry::filesystem() const {
     return emlite::Val::get("filesystem").as<FileSystem>();
 }
 
+jsbind::Undefined FileSystemEntry::getParent() {
+    return emlite::Val::call("getParent").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemEntry::getParent(const jsbind::Function& successCallback) {
+    return emlite::Val::call("getParent", successCallback).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined FileSystemEntry::getParent(const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
     return emlite::Val::call("getParent", successCallback, errorCallback).as<jsbind::Undefined>();
 }

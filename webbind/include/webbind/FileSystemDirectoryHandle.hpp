@@ -53,8 +53,11 @@ public:
     static FileSystemDirectoryHandle take_ownership(Handle h) noexcept;
 
     FileSystemDirectoryHandle clone() const noexcept;
+    jsbind::Promise getFileHandle(const jsbind::USVString& name);
     jsbind::Promise getFileHandle(const jsbind::USVString& name, const FileSystemGetFileOptions& options);
+    jsbind::Promise getDirectoryHandle(const jsbind::USVString& name);
     jsbind::Promise getDirectoryHandle(const jsbind::USVString& name, const FileSystemGetDirectoryOptions& options);
+    jsbind::Promise removeEntry(const jsbind::USVString& name);
     jsbind::Promise removeEntry(const jsbind::USVString& name, const FileSystemRemoveOptions& options);
     jsbind::Promise resolve(const FileSystemHandle& possibleDescendant);
 };

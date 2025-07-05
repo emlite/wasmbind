@@ -26,7 +26,11 @@ PressureObserver::PressureObserver(Handle h) noexcept : emlite::Val(emlite::Val:
 PressureObserver::PressureObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-PressureObserver::PressureObserver(const jsbind::Function& callback): emlite::Val(emlite::Val::global("PressureObserver").new_(callback)) {}
+PressureObserver::PressureObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("PressureObserver").new_(callback)) {}
+
+jsbind::Promise PressureObserver::observe(const PressureSource& source) {
+    return emlite::Val::call("observe", source).as<jsbind::Promise>();
+}
 
 jsbind::Promise PressureObserver::observe(const PressureSource& source, const PressureObserverOptions& options) {
     return emlite::Val::call("observe", source, options).as<jsbind::Promise>();

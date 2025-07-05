@@ -13,6 +13,7 @@ public:
     static USBIsochronousOutTransferPacket take_ownership(Handle h) noexcept;
 
     USBIsochronousOutTransferPacket clone() const noexcept;
+    USBIsochronousOutTransferPacket(const USBTransferStatus& status);
     USBIsochronousOutTransferPacket(const USBTransferStatus& status, unsigned long bytesWritten);
     unsigned long bytesWritten() const;
     USBTransferStatus status() const;

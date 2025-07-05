@@ -41,10 +41,15 @@ namespace CSS {
 
 
 namespace CSS {
+    jsbind::Promise parseStylesheet(const jsbind::Any& css);
     jsbind::Promise parseStylesheet(const jsbind::Any& css, const jsbind::Any& options);
+    jsbind::Promise parseRuleList(const jsbind::Any& css);
     jsbind::Promise parseRuleList(const jsbind::Any& css, const jsbind::Any& options);
+    jsbind::Promise parseRule(const jsbind::Any& css);
     jsbind::Promise parseRule(const jsbind::Any& css, const jsbind::Any& options);
+    jsbind::Promise parseDeclarationList(const jsbind::Any& css);
     jsbind::Promise parseDeclarationList(const jsbind::Any& css, const jsbind::Any& options);
+    CSSParserDeclaration parseDeclaration(const jsbind::DOMString& css);
     CSSParserDeclaration parseDeclaration(const jsbind::DOMString& css, const jsbind::Any& options);
     jsbind::Any parseValue(const jsbind::DOMString& css);
     jsbind::Sequence<jsbind::Any> parseValueList(const jsbind::DOMString& css);

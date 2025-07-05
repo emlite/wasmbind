@@ -19,6 +19,7 @@ public:
     static XRWebGLLayer take_ownership(Handle h) noexcept;
 
     XRWebGLLayer clone() const noexcept;
+    XRWebGLLayer(const XRSession& session, const jsbind::Any& context);
     XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const jsbind::Any& layerInit);
     bool antialias() const;
     bool ignoreDepthValues() const;

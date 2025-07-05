@@ -27,6 +27,7 @@ public:
     static CacheStorage take_ownership(Handle h) noexcept;
 
     CacheStorage clone() const noexcept;
+    jsbind::Promise match(const jsbind::Any& request);
     jsbind::Promise match(const jsbind::Any& request, const MultiCacheQueryOptions& options);
     jsbind::Promise has(const jsbind::DOMString& cacheName);
     jsbind::Promise open(const jsbind::DOMString& cacheName);

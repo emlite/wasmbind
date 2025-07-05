@@ -16,6 +16,7 @@ public:
     static PointerTimeline take_ownership(Handle h) noexcept;
 
     PointerTimeline clone() const noexcept;
+    PointerTimeline();
     PointerTimeline(const jsbind::Any& options);
     Element source() const;
     PointerAxis axis() const;

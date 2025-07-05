@@ -36,7 +36,9 @@ public:
 
     SVGGeometryElement clone() const noexcept;
     SVGAnimatedNumber pathLength() const;
+    bool isPointInFill();
     bool isPointInFill(const DOMPointInit& point);
+    bool isPointInStroke();
     bool isPointInStroke(const DOMPointInit& point);
     float getTotalLength();
     DOMPoint getPointAtLength(float distance);

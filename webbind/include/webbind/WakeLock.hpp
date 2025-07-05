@@ -15,6 +15,7 @@ public:
     static WakeLock take_ownership(Handle h) noexcept;
 
     WakeLock clone() const noexcept;
+    jsbind::Promise request();
     jsbind::Promise request(const WakeLockType& type);
 };
 

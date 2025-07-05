@@ -10,7 +10,9 @@ StorageEvent::StorageEvent(Handle h) noexcept : Event(emlite::Val::take_ownershi
 StorageEvent::StorageEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-StorageEvent::StorageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("StorageEvent").new_(type, eventInitDict)) {}
+StorageEvent::StorageEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("StorageEvent").new_(type)) {}
+
+StorageEvent::StorageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("StorageEvent").new_(type, eventInitDict)) {}
 
 jsbind::DOMString StorageEvent::key() const {
     return Event::get("key").as<jsbind::DOMString>();
@@ -30,6 +32,34 @@ jsbind::USVString StorageEvent::url() const {
 
 Storage StorageEvent::storageArea() const {
     return Event::get("storageArea").as<Storage>();
+}
+
+jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type) {
+    return Event::call("initStorageEvent", type).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type, bool bubbles) {
+    return Event::call("initStorageEvent", type, bubbles).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable) {
+    return Event::call("initStorageEvent", type, bubbles, cancelable).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::DOMString& key) {
+    return Event::call("initStorageEvent", type, bubbles, cancelable, key).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::DOMString& key, const jsbind::DOMString& oldValue) {
+    return Event::call("initStorageEvent", type, bubbles, cancelable, key, oldValue).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::DOMString& key, const jsbind::DOMString& oldValue, const jsbind::DOMString& newValue) {
+    return Event::call("initStorageEvent", type, bubbles, cancelable, key, oldValue, newValue).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::DOMString& key, const jsbind::DOMString& oldValue, const jsbind::DOMString& newValue, const jsbind::USVString& url) {
+    return Event::call("initStorageEvent", type, bubbles, cancelable, key, oldValue, newValue, url).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::DOMString& key, const jsbind::DOMString& oldValue, const jsbind::DOMString& newValue, const jsbind::USVString& url, const Storage& storageArea) {

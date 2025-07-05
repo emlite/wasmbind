@@ -44,6 +44,7 @@ public:
     PrivateAggregation clone() const noexcept;
     jsbind::Undefined contributeToHistogram(const PAHistogramContribution& contribution);
     jsbind::Undefined contributeToHistogramOnEvent(const jsbind::DOMString& event, const jsbind::Record<jsbind::DOMString, jsbind::Any>& contribution);
+    jsbind::Undefined enableDebugMode();
     jsbind::Undefined enableDebugMode(const PADebugModeOptions& options);
 };
 

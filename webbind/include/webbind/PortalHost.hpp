@@ -15,6 +15,7 @@ public:
     static PortalHost take_ownership(Handle h) noexcept;
 
     PortalHost clone() const noexcept;
+    jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     jsbind::Any onmessage() const;
     void onmessage(const jsbind::Any& value);

@@ -73,7 +73,9 @@ Sanitizer::Sanitizer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownershi
 Sanitizer::Sanitizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Sanitizer::Sanitizer(const jsbind::Any& configuration): emlite::Val(emlite::Val::global("Sanitizer").new_(configuration)) {}
+Sanitizer::Sanitizer() : emlite::Val(emlite::Val::global("Sanitizer").new_()) {}
+
+Sanitizer::Sanitizer(const jsbind::Any& configuration) : emlite::Val(emlite::Val::global("Sanitizer").new_(configuration)) {}
 
 SanitizerConfig Sanitizer::get() {
     return emlite::Val::call("get").as<SanitizerConfig>();

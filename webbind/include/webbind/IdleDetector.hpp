@@ -36,6 +36,7 @@ public:
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);
     static jsbind::Promise requestPermission();
+    jsbind::Promise start();
     jsbind::Promise start(const IdleOptions& options);
 };
 

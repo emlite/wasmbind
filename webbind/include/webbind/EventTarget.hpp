@@ -31,9 +31,12 @@ public:
 
     EventTarget clone() const noexcept;
     EventTarget();
+    jsbind::Undefined addEventListener(const jsbind::DOMString& type, const jsbind::Function& callback);
     jsbind::Undefined addEventListener(const jsbind::DOMString& type, const jsbind::Function& callback, const jsbind::Any& options);
+    jsbind::Undefined removeEventListener(const jsbind::DOMString& type, const jsbind::Function& callback);
     jsbind::Undefined removeEventListener(const jsbind::DOMString& type, const jsbind::Function& callback, const jsbind::Any& options);
     bool dispatchEvent(const Event& event);
+    Observable when(const jsbind::DOMString& type);
     Observable when(const jsbind::DOMString& type, const ObservableEventListenerOptions& options);
 };
 

@@ -16,6 +16,7 @@ public:
     static NavigationEvent take_ownership(Handle h) noexcept;
 
     NavigationEvent clone() const noexcept;
+    NavigationEvent(const jsbind::DOMString& type);
     NavigationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     SpatialNavigationDirection dir() const;
     EventTarget relatedTarget() const;

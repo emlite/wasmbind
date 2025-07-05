@@ -16,6 +16,7 @@ public:
     static BluetoothLEScanFilter take_ownership(Handle h) noexcept;
 
     BluetoothLEScanFilter clone() const noexcept;
+    BluetoothLEScanFilter();
     BluetoothLEScanFilter(const jsbind::Any& init);
     jsbind::DOMString name() const;
     jsbind::DOMString namePrefix() const;

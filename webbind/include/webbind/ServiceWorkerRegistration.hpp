@@ -91,7 +91,9 @@ public:
     SyncManager sync() const;
     ContentIndex index() const;
     CookieStoreManager cookies() const;
+    jsbind::Promise showNotification(const jsbind::DOMString& title);
     jsbind::Promise showNotification(const jsbind::DOMString& title, const NotificationOptions& options);
+    jsbind::Promise getNotifications();
     jsbind::Promise getNotifications(const GetNotificationOptions& filter);
     PaymentManager paymentManager() const;
     PeriodicSyncManager periodicSync() const;

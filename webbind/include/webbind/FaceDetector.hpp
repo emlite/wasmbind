@@ -29,6 +29,7 @@ public:
     static FaceDetector take_ownership(Handle h) noexcept;
 
     FaceDetector clone() const noexcept;
+    FaceDetector();
     FaceDetector(const jsbind::Any& faceDetectorOptions);
     jsbind::Promise detect(const jsbind::Any& image);
 };

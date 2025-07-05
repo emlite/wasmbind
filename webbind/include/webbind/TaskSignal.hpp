@@ -28,6 +28,7 @@ public:
     static TaskSignal take_ownership(Handle h) noexcept;
 
     TaskSignal clone() const noexcept;
+    static TaskSignal any(const jsbind::Sequence<AbortSignal>& signals);
     static TaskSignal any(const jsbind::Sequence<AbortSignal>& signals, const TaskSignalAnyInit& init);
     TaskPriority priority() const;
     jsbind::Any onprioritychange() const;

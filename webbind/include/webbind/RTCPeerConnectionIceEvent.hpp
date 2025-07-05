@@ -16,6 +16,7 @@ public:
     static RTCPeerConnectionIceEvent take_ownership(Handle h) noexcept;
 
     RTCPeerConnectionIceEvent clone() const noexcept;
+    RTCPeerConnectionIceEvent(const jsbind::DOMString& type);
     RTCPeerConnectionIceEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     RTCIceCandidate candidate() const;
     jsbind::USVString url() const;

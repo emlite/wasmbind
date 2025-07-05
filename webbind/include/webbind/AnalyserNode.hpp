@@ -14,6 +14,7 @@ public:
     static AnalyserNode take_ownership(Handle h) noexcept;
 
     AnalyserNode clone() const noexcept;
+    AnalyserNode(const BaseAudioContext& context);
     AnalyserNode(const BaseAudioContext& context, const jsbind::Any& options);
     jsbind::Undefined getFloatFrequencyData(const jsbind::Float32Array& array);
     jsbind::Undefined getByteFrequencyData(const jsbind::Uint8Array& array);

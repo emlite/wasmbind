@@ -9,7 +9,7 @@ PeriodicSyncEvent::PeriodicSyncEvent(Handle h) noexcept : ExtendableEvent(emlite
 PeriodicSyncEvent::PeriodicSyncEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-PeriodicSyncEvent::PeriodicSyncEvent(const jsbind::DOMString& type, const jsbind::Any& init): ExtendableEvent(emlite::Val::global("PeriodicSyncEvent").new_(type, init)) {}
+PeriodicSyncEvent::PeriodicSyncEvent(const jsbind::DOMString& type, const jsbind::Any& init) : ExtendableEvent(emlite::Val::global("PeriodicSyncEvent").new_(type, init)) {}
 
 jsbind::DOMString PeriodicSyncEvent::tag() const {
     return ExtendableEvent::get("tag").as<jsbind::DOMString>();

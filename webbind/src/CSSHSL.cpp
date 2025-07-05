@@ -9,7 +9,9 @@ CSSHSL::CSSHSL(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)
 CSSHSL::CSSHSL(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 
-CSSHSL::CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l, const jsbind::Any& alpha): CSSColorValue(emlite::Val::global("CSSHSL").new_(h, s, l, alpha)) {}
+CSSHSL::CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l) : CSSColorValue(emlite::Val::global("CSSHSL").new_(h, s, l)) {}
+
+CSSHSL::CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l, const jsbind::Any& alpha) : CSSColorValue(emlite::Val::global("CSSHSL").new_(h, s, l, alpha)) {}
 
 jsbind::Any CSSHSL::h() const {
     return CSSColorValue::get("h").as<jsbind::Any>();

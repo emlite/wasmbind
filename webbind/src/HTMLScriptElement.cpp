@@ -10,7 +10,7 @@ HTMLScriptElement::HTMLScriptElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLScriptElement::HTMLScriptElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLScriptElement::HTMLScriptElement(): HTMLElement(emlite::Val::global("HTMLScriptElement").new_()) {}
+HTMLScriptElement::HTMLScriptElement() : HTMLElement(emlite::Val::global("HTMLScriptElement").new_()) {}
 
 jsbind::DOMString HTMLScriptElement::type() const {
     return HTMLElement::get("type").as<jsbind::DOMString>();

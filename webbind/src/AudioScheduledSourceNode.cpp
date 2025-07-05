@@ -17,8 +17,16 @@ void AudioScheduledSourceNode::onended(const jsbind::Any& value) {
     AudioNode::set("onended", value);
 }
 
+jsbind::Undefined AudioScheduledSourceNode::start() {
+    return AudioNode::call("start").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined AudioScheduledSourceNode::start(double when) {
     return AudioNode::call("start", when).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioScheduledSourceNode::stop() {
+    return AudioNode::call("stop").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined AudioScheduledSourceNode::stop(double when) {

@@ -17,6 +17,7 @@ public:
     static OscillatorNode take_ownership(Handle h) noexcept;
 
     OscillatorNode clone() const noexcept;
+    OscillatorNode(const BaseAudioContext& context);
     OscillatorNode(const BaseAudioContext& context, const jsbind::Any& options);
     OscillatorType type() const;
     void type(const OscillatorType& value);

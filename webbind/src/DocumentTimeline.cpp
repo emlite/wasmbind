@@ -9,5 +9,7 @@ DocumentTimeline::DocumentTimeline(Handle h) noexcept : AnimationTimeline(emlite
 DocumentTimeline::DocumentTimeline(const emlite::Val &val) noexcept: AnimationTimeline(val) {}
 
 
-DocumentTimeline::DocumentTimeline(const jsbind::Any& options): AnimationTimeline(emlite::Val::global("DocumentTimeline").new_(options)) {}
+DocumentTimeline::DocumentTimeline() : AnimationTimeline(emlite::Val::global("DocumentTimeline").new_()) {}
+
+DocumentTimeline::DocumentTimeline(const jsbind::Any& options) : AnimationTimeline(emlite::Val::global("DocumentTimeline").new_(options)) {}
 

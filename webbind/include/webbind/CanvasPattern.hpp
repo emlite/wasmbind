@@ -14,6 +14,7 @@ public:
     static CanvasPattern take_ownership(Handle h) noexcept;
 
     CanvasPattern clone() const noexcept;
+    jsbind::Undefined setTransform();
     jsbind::Undefined setTransform(const DOMMatrix2DInit& transform);
 };
 

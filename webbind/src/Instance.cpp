@@ -10,7 +10,9 @@ Instance::Instance(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 Instance::Instance(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Instance::Instance(const Module& module_, const jsbind::Object& importObject): emlite::Val(emlite::Val::global("Instance").new_(module_, importObject)) {}
+Instance::Instance(const Module& module_) : emlite::Val(emlite::Val::global("Instance").new_(module_)) {}
+
+Instance::Instance(const Module& module_, const jsbind::Object& importObject) : emlite::Val(emlite::Val::global("Instance").new_(module_, importObject)) {}
 
 jsbind::Object Instance::exports() const {
     return emlite::Val::get("exports").as<jsbind::Object>();

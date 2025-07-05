@@ -10,7 +10,9 @@ MessageEvent::MessageEvent(Handle h) noexcept : Event(emlite::Val::take_ownershi
 MessageEvent::MessageEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-MessageEvent::MessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("MessageEvent").new_(type, eventInitDict)) {}
+MessageEvent::MessageEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("MessageEvent").new_(type)) {}
+
+MessageEvent::MessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MessageEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any MessageEvent::data() const {
     return Event::get("data").as<jsbind::Any>();
@@ -30,6 +32,34 @@ jsbind::Any MessageEvent::source() const {
 
 jsbind::FrozenArray<jsbind::Any> MessageEvent::ports() const {
     return Event::get("ports").as<jsbind::FrozenArray<jsbind::Any>>();
+}
+
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type) {
+    return Event::call("initMessageEvent", type).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type, bool bubbles) {
+    return Event::call("initMessageEvent", type, bubbles).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable) {
+    return Event::call("initMessageEvent", type, bubbles, cancelable).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data) {
+    return Event::call("initMessageEvent", type, bubbles, cancelable, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin) {
+    return Event::call("initMessageEvent", type, bubbles, cancelable, data, origin).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin, const jsbind::DOMString& lastEventId) {
+    return Event::call("initMessageEvent", type, bubbles, cancelable, data, origin, lastEventId).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin, const jsbind::DOMString& lastEventId, const jsbind::Any& source) {
+    return Event::call("initMessageEvent", type, bubbles, cancelable, data, origin, lastEventId, source).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::USVString& origin, const jsbind::DOMString& lastEventId, const jsbind::Any& source, const jsbind::Sequence<jsbind::Any>& ports) {

@@ -62,6 +62,10 @@ jsbind::Undefined MediaSession::setActionHandler(const MediaSessionAction& actio
     return emlite::Val::call("setActionHandler", action, handler).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined MediaSession::setPositionState() {
+    return emlite::Val::call("setPositionState").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined MediaSession::setPositionState(const MediaPositionState& state) {
     return emlite::Val::call("setPositionState", state).as<jsbind::Undefined>();
 }

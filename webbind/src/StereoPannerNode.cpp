@@ -11,7 +11,9 @@ StereoPannerNode::StereoPannerNode(Handle h) noexcept : AudioNode(emlite::Val::t
 StereoPannerNode::StereoPannerNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-StereoPannerNode::StereoPannerNode(const BaseAudioContext& context, const jsbind::Any& options): AudioNode(emlite::Val::global("StereoPannerNode").new_(context, options)) {}
+StereoPannerNode::StereoPannerNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("StereoPannerNode").new_(context)) {}
+
+StereoPannerNode::StereoPannerNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("StereoPannerNode").new_(context, options)) {}
 
 AudioParam StereoPannerNode::pan() const {
     return AudioNode::get("pan").as<AudioParam>();

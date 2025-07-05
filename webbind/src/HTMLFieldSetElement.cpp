@@ -12,7 +12,7 @@ HTMLFieldSetElement::HTMLFieldSetElement(Handle h) noexcept : HTMLElement(emlite
 HTMLFieldSetElement::HTMLFieldSetElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLFieldSetElement::HTMLFieldSetElement(): HTMLElement(emlite::Val::global("HTMLFieldSetElement").new_()) {}
+HTMLFieldSetElement::HTMLFieldSetElement() : HTMLElement(emlite::Val::global("HTMLFieldSetElement").new_()) {}
 
 bool HTMLFieldSetElement::disabled() const {
     return HTMLElement::get("disabled").as<bool>();

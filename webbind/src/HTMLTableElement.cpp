@@ -13,7 +13,7 @@ HTMLTableElement::HTMLTableElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLTableElement::HTMLTableElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTableElement::HTMLTableElement(): HTMLElement(emlite::Val::global("HTMLTableElement").new_()) {}
+HTMLTableElement::HTMLTableElement() : HTMLElement(emlite::Val::global("HTMLTableElement").new_()) {}
 
 HTMLTableCaptionElement HTMLTableElement::caption() const {
     return HTMLElement::get("caption").as<HTMLTableCaptionElement>();
@@ -73,6 +73,10 @@ HTMLTableSectionElement HTMLTableElement::createTBody() {
 
 HTMLCollection HTMLTableElement::rows() const {
     return HTMLElement::get("rows").as<HTMLCollection>();
+}
+
+HTMLTableRowElement HTMLTableElement::insertRow() {
+    return HTMLElement::call("insertRow").as<HTMLTableRowElement>();
 }
 
 HTMLTableRowElement HTMLTableElement::insertRow(long index) {

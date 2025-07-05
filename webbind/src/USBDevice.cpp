@@ -162,6 +162,10 @@ jsbind::Promise USBDevice::controlTransferIn(const USBControlTransferParameters&
     return emlite::Val::call("controlTransferIn", setup, length).as<jsbind::Promise>();
 }
 
+jsbind::Promise USBDevice::controlTransferOut(const USBControlTransferParameters& setup) {
+    return emlite::Val::call("controlTransferOut", setup).as<jsbind::Promise>();
+}
+
 jsbind::Promise USBDevice::controlTransferOut(const USBControlTransferParameters& setup, const jsbind::Any& data) {
     return emlite::Val::call("controlTransferOut", setup, data).as<jsbind::Promise>();
 }

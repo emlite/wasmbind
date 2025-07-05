@@ -40,7 +40,9 @@ AudioContext::AudioContext(Handle h) noexcept : BaseAudioContext(emlite::Val::ta
 AudioContext::AudioContext(const emlite::Val &val) noexcept: BaseAudioContext(val) {}
 
 
-AudioContext::AudioContext(const jsbind::Any& contextOptions): BaseAudioContext(emlite::Val::global("AudioContext").new_(contextOptions)) {}
+AudioContext::AudioContext() : BaseAudioContext(emlite::Val::global("AudioContext").new_()) {}
+
+AudioContext::AudioContext(const jsbind::Any& contextOptions) : BaseAudioContext(emlite::Val::global("AudioContext").new_(contextOptions)) {}
 
 double AudioContext::baseLatency() const {
     return BaseAudioContext::get("baseLatency").as<double>();

@@ -11,7 +11,7 @@ USBInterface::USBInterface(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 USBInterface::USBInterface(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBInterface::USBInterface(const USBConfiguration& configuration, unsigned char interfaceNumber): emlite::Val(emlite::Val::global("USBInterface").new_(configuration, interfaceNumber)) {}
+USBInterface::USBInterface(const USBConfiguration& configuration, unsigned char interfaceNumber) : emlite::Val(emlite::Val::global("USBInterface").new_(configuration, interfaceNumber)) {}
 
 unsigned char USBInterface::interfaceNumber() const {
     return emlite::Val::get("interfaceNumber").as<unsigned char>();

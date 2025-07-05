@@ -10,7 +10,7 @@ HTMLAnchorElement::HTMLAnchorElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLAnchorElement::HTMLAnchorElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLAnchorElement::HTMLAnchorElement(): HTMLElement(emlite::Val::global("HTMLAnchorElement").new_()) {}
+HTMLAnchorElement::HTMLAnchorElement() : HTMLElement(emlite::Val::global("HTMLAnchorElement").new_()) {}
 
 jsbind::DOMString HTMLAnchorElement::target() const {
     return HTMLElement::get("target").as<jsbind::DOMString>();

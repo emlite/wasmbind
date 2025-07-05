@@ -33,6 +33,7 @@ public:
     jsbind::DOMString name() const;
     BluetoothRemoteGATTServer gatt() const;
     jsbind::Promise forget();
+    jsbind::Promise watchAdvertisements();
     jsbind::Promise watchAdvertisements(const WatchAdvertisementsOptions& options);
     bool watchingAdvertisements() const;
     jsbind::Any onadvertisementreceived() const;

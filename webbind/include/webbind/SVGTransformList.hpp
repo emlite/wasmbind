@@ -25,6 +25,7 @@ public:
     SVGTransform replaceItem(const SVGTransform& newItem, unsigned long index);
     SVGTransform removeItem(unsigned long index);
     SVGTransform appendItem(const SVGTransform& newItem);
+    SVGTransform createSVGTransformFromMatrix();
     SVGTransform createSVGTransformFromMatrix(const DOMMatrix2DInit& matrix);
     SVGTransform consolidate();
 };

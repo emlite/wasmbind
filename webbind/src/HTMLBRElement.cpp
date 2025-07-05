@@ -9,7 +9,7 @@ HTMLBRElement::HTMLBRElement(Handle h) noexcept : HTMLElement(emlite::Val::take_
 HTMLBRElement::HTMLBRElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLBRElement::HTMLBRElement(): HTMLElement(emlite::Val::global("HTMLBRElement").new_()) {}
+HTMLBRElement::HTMLBRElement() : HTMLElement(emlite::Val::global("HTMLBRElement").new_()) {}
 
 jsbind::DOMString HTMLBRElement::clear() const {
     return HTMLElement::get("clear").as<jsbind::DOMString>();

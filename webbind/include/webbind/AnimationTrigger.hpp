@@ -15,6 +15,7 @@ public:
     static AnimationTrigger take_ownership(Handle h) noexcept;
 
     AnimationTrigger clone() const noexcept;
+    AnimationTrigger();
     AnimationTrigger(const jsbind::Any& options);
     AnimationTimeline timeline() const;
     void timeline(const AnimationTimeline& value);

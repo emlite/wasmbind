@@ -10,7 +10,7 @@ CSSMathMax::CSSMathMax(Handle h) noexcept : CSSMathValue(emlite::Val::take_owner
 CSSMathMax::CSSMathMax(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 
 
-CSSMathMax::CSSMathMax(const jsbind::Any& args): CSSMathValue(emlite::Val::global("CSSMathMax").new_(args)) {}
+CSSMathMax::CSSMathMax(const jsbind::Any& args) : CSSMathValue(emlite::Val::global("CSSMathMax").new_(args)) {}
 
 CSSNumericArray CSSMathMax::values() const {
     return CSSMathValue::get("values").as<CSSNumericArray>();

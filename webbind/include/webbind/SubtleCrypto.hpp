@@ -22,6 +22,7 @@ public:
     jsbind::Promise digest(const jsbind::Any& algorithm, const jsbind::Any& data);
     jsbind::Promise generateKey(const jsbind::Any& algorithm, bool extractable, const jsbind::Sequence<KeyUsage>& keyUsages);
     jsbind::Promise deriveKey(const jsbind::Any& algorithm, const CryptoKey& baseKey, const jsbind::Any& derivedKeyType, bool extractable, const jsbind::Sequence<KeyUsage>& keyUsages);
+    jsbind::Promise deriveBits(const jsbind::Any& algorithm, const CryptoKey& baseKey);
     jsbind::Promise deriveBits(const jsbind::Any& algorithm, const CryptoKey& baseKey, unsigned long length);
     jsbind::Promise importKey(const KeyFormat& format, const jsbind::Any& keyData, const jsbind::Any& algorithm, bool extractable, const jsbind::Sequence<KeyUsage>& keyUsages);
     jsbind::Promise exportKey(const KeyFormat& format, const CryptoKey& key);

@@ -57,6 +57,10 @@ BroadcastChannel StorageAccessHandle::BroadcastChannel_(const jsbind::DOMString&
     return emlite::Val::call("BroadcastChannel", name).as<BroadcastChannel>();
 }
 
+SharedWorker StorageAccessHandle::SharedWorker_(const jsbind::USVString& scriptURL) {
+    return emlite::Val::call("SharedWorker", scriptURL).as<SharedWorker>();
+}
+
 SharedWorker StorageAccessHandle::SharedWorker_(const jsbind::USVString& scriptURL, const jsbind::Any& options) {
     return emlite::Val::call("SharedWorker", scriptURL, options).as<SharedWorker>();
 }

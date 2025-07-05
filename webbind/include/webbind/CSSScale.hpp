@@ -14,6 +14,7 @@ public:
     static CSSScale take_ownership(Handle h) noexcept;
 
     CSSScale clone() const noexcept;
+    CSSScale(const jsbind::Any& x, const jsbind::Any& y);
     CSSScale(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& z);
     jsbind::Any x() const;
     void x(const jsbind::Any& value);

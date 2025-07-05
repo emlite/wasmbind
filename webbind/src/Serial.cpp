@@ -54,6 +54,10 @@ jsbind::Promise Serial::getPorts() {
     return EventTarget::call("getPorts").as<jsbind::Promise>();
 }
 
+jsbind::Promise Serial::requestPort() {
+    return EventTarget::call("requestPort").as<jsbind::Promise>();
+}
+
 jsbind::Promise Serial::requestPort(const SerialPortRequestOptions& options) {
     return EventTarget::call("requestPort", options).as<jsbind::Promise>();
 }

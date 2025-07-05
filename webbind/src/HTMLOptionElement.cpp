@@ -10,7 +10,7 @@ HTMLOptionElement::HTMLOptionElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLOptionElement::HTMLOptionElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLOptionElement::HTMLOptionElement(): HTMLElement(emlite::Val::global("HTMLOptionElement").new_()) {}
+HTMLOptionElement::HTMLOptionElement() : HTMLElement(emlite::Val::global("HTMLOptionElement").new_()) {}
 
 bool HTMLOptionElement::disabled() const {
     return HTMLElement::get("disabled").as<bool>();

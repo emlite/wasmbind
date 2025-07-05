@@ -59,7 +59,7 @@ ImageDecoder::ImageDecoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 ImageDecoder::ImageDecoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ImageDecoder::ImageDecoder(const jsbind::Any& init): emlite::Val(emlite::Val::global("ImageDecoder").new_(init)) {}
+ImageDecoder::ImageDecoder(const jsbind::Any& init) : emlite::Val(emlite::Val::global("ImageDecoder").new_(init)) {}
 
 jsbind::DOMString ImageDecoder::type() const {
     return emlite::Val::get("type").as<jsbind::DOMString>();
@@ -75,6 +75,10 @@ jsbind::Promise ImageDecoder::completed() const {
 
 ImageTrackList ImageDecoder::tracks() const {
     return emlite::Val::get("tracks").as<ImageTrackList>();
+}
+
+jsbind::Promise ImageDecoder::decode() {
+    return emlite::Val::call("decode").as<jsbind::Promise>();
 }
 
 jsbind::Promise ImageDecoder::decode(const ImageDecodeOptions& options) {

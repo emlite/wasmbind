@@ -40,7 +40,7 @@ int main() {
     }
     auto body = bodies.item(0);
     auto button =
-        document.createElement("BUTTON", Undefined::value)
+        document.createElement("BUTTON")
             .as<HTMLButtonElement>();
     button.textContent("Click me");
     button.addEventListener(
@@ -49,14 +49,13 @@ int main() {
             auto [params, _len] = Function::params(h);
             console::log(params[0]);
             return Undefined::value.as_handle();
-        }),
-        Undefined::value
+        })
     );
     body.appendChild(button);
     auto style = button.style();
-    style.setProperty("color", "red", "");
-    style.setProperty("background-color", "#aaf", "");
-    style.setProperty("border", "solid", "");
+    style.setProperty("color", "red");
+    style.setProperty("background-color", "#aaf");
+    style.setProperty("border", "solid");
 }
 ```
 
@@ -132,6 +131,7 @@ This typically takes a few hours for someone familiar with the spec.
 
 As such, the current script just regenerates the corresponding C++ code while ignoring the headers and forward declarations.
 The presence of forward declarations means we can't enjoy default arguments!
+However to work around that, we use function overloading!
 To run the script if you wanted to, you will have to run:
 ```bash
 # after cloning this repo and cd'ing into it

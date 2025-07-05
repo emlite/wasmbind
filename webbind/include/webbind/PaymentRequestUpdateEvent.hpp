@@ -15,6 +15,7 @@ public:
     static PaymentRequestUpdateEvent take_ownership(Handle h) noexcept;
 
     PaymentRequestUpdateEvent clone() const noexcept;
+    PaymentRequestUpdateEvent(const jsbind::DOMString& type);
     PaymentRequestUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::Undefined updateWith(const jsbind::Promise& detailsPromise);
 };

@@ -9,7 +9,7 @@ HTMLPreElement::HTMLPreElement(Handle h) noexcept : HTMLElement(emlite::Val::tak
 HTMLPreElement::HTMLPreElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLPreElement::HTMLPreElement(): HTMLElement(emlite::Val::global("HTMLPreElement").new_()) {}
+HTMLPreElement::HTMLPreElement() : HTMLElement(emlite::Val::global("HTMLPreElement").new_()) {}
 
 long HTMLPreElement::width() const {
     return HTMLElement::get("width").as<long>();

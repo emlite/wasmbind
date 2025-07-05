@@ -13,6 +13,7 @@ public:
     static Global take_ownership(Handle h) noexcept;
 
     Global clone() const noexcept;
+    Global(const jsbind::Any& descriptor);
     Global(const jsbind::Any& descriptor, const jsbind::Any& v);
     jsbind::Any valueOf();
     jsbind::Any value() const;

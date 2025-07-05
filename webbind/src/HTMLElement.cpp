@@ -30,7 +30,7 @@ HTMLElement::HTMLElement(Handle h) noexcept : Element(emlite::Val::take_ownershi
 HTMLElement::HTMLElement(const emlite::Val &val) noexcept: Element(val) {}
 
 
-HTMLElement::HTMLElement(): Element(emlite::Val::global("HTMLElement").new_()) {}
+HTMLElement::HTMLElement() : Element(emlite::Val::global("HTMLElement").new_()) {}
 
 jsbind::DOMString HTMLElement::title() const {
     return Element::get("title").as<jsbind::DOMString>();
@@ -156,12 +156,20 @@ ElementInternals HTMLElement::attachInternals() {
     return Element::call("attachInternals").as<ElementInternals>();
 }
 
+jsbind::Undefined HTMLElement::showPopover() {
+    return Element::call("showPopover").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined HTMLElement::showPopover(const ShowPopoverOptions& options) {
     return Element::call("showPopover", options).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLElement::hidePopover() {
     return Element::call("hidePopover").as<jsbind::Undefined>();
+}
+
+bool HTMLElement::togglePopover() {
+    return Element::call("togglePopover").as<bool>();
 }
 
 bool HTMLElement::togglePopover(const jsbind::Any& options) {
@@ -254,6 +262,10 @@ long HTMLElement::tabIndex() const {
 
 void HTMLElement::tabIndex(long value) {
     Element::set("tabIndex", value);
+}
+
+jsbind::Undefined HTMLElement::focus() {
+    return Element::call("focus").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined HTMLElement::focus(const FocusOptions& options) {

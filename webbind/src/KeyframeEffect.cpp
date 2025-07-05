@@ -10,7 +10,7 @@ KeyframeEffect::KeyframeEffect(Handle h) noexcept : AnimationEffect(emlite::Val:
 KeyframeEffect::KeyframeEffect(const emlite::Val &val) noexcept: AnimationEffect(val) {}
 
 
-KeyframeEffect::KeyframeEffect(const KeyframeEffect& source): AnimationEffect(emlite::Val::global("KeyframeEffect").new_(source)) {}
+KeyframeEffect::KeyframeEffect(const KeyframeEffect& source) : AnimationEffect(emlite::Val::global("KeyframeEffect").new_(source)) {}
 
 Element KeyframeEffect::target() const {
     return AnimationEffect::get("target").as<Element>();

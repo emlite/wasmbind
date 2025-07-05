@@ -13,6 +13,7 @@ public:
     static USBOutTransferResult take_ownership(Handle h) noexcept;
 
     USBOutTransferResult clone() const noexcept;
+    USBOutTransferResult(const USBTransferStatus& status);
     USBOutTransferResult(const USBTransferStatus& status, unsigned long bytesWritten);
     unsigned long bytesWritten() const;
     USBTransferStatus status() const;

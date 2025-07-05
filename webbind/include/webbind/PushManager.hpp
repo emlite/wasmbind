@@ -30,8 +30,10 @@ public:
 
     PushManager clone() const noexcept;
     static jsbind::FrozenArray<jsbind::DOMString> supportedContentEncodings();
+    jsbind::Promise subscribe();
     jsbind::Promise subscribe(const PushSubscriptionOptionsInit& options);
     jsbind::Promise getSubscription();
+    jsbind::Promise permissionState();
     jsbind::Promise permissionState(const PushSubscriptionOptionsInit& options);
 };
 

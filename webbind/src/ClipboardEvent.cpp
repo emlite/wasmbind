@@ -10,7 +10,9 @@ ClipboardEvent::ClipboardEvent(Handle h) noexcept : Event(emlite::Val::take_owne
 ClipboardEvent::ClipboardEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-ClipboardEvent::ClipboardEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("ClipboardEvent").new_(type, eventInitDict)) {}
+ClipboardEvent::ClipboardEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("ClipboardEvent").new_(type)) {}
+
+ClipboardEvent::ClipboardEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ClipboardEvent").new_(type, eventInitDict)) {}
 
 DataTransfer ClipboardEvent::clipboardData() const {
     return Event::get("clipboardData").as<DataTransfer>();

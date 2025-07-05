@@ -27,6 +27,7 @@ public:
     static Clipboard take_ownership(Handle h) noexcept;
 
     Clipboard clone() const noexcept;
+    jsbind::Promise read();
     jsbind::Promise read(const ClipboardUnsanitizedFormats& formats);
     jsbind::Promise readText();
     jsbind::Promise write(const jsbind::Any& data);

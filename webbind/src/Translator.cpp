@@ -83,8 +83,16 @@ jsbind::Promise Translator::availability(const TranslatorCreateCoreOptions& opti
     return emlite::Val::global("translator").call("availability", options).as<jsbind::Promise>();
 }
 
+jsbind::Promise Translator::translate(const jsbind::DOMString& input) {
+    return emlite::Val::call("translate", input).as<jsbind::Promise>();
+}
+
 jsbind::Promise Translator::translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
     return emlite::Val::call("translate", input, options).as<jsbind::Promise>();
+}
+
+ReadableStream Translator::translateStreaming(const jsbind::DOMString& input) {
+    return emlite::Val::call("translateStreaming", input).as<ReadableStream>();
 }
 
 ReadableStream Translator::translateStreaming(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
@@ -97,6 +105,10 @@ jsbind::DOMString Translator::sourceLanguage() const {
 
 jsbind::DOMString Translator::targetLanguage() const {
     return emlite::Val::get("targetLanguage").as<jsbind::DOMString>();
+}
+
+jsbind::Promise Translator::measureInputUsage(const jsbind::DOMString& input) {
+    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise>();
 }
 
 jsbind::Promise Translator::measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {

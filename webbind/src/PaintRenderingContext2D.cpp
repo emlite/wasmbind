@@ -50,6 +50,10 @@ DOMMatrix PaintRenderingContext2D::getTransform() {
     return emlite::Val::call("getTransform").as<DOMMatrix>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::setTransform() {
+    return emlite::Val::call("setTransform").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::setTransform(const DOMMatrix2DInit& transform) {
     return emlite::Val::call("setTransform", transform).as<jsbind::Undefined>();
 }
@@ -170,6 +174,10 @@ jsbind::Undefined PaintRenderingContext2D::beginPath() {
     return emlite::Val::call("beginPath").as<jsbind::Undefined>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::fill(const Path2D& path) {
+    return emlite::Val::call("fill", path).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::fill(const Path2D& path, const CanvasFillRule& fillRule) {
     return emlite::Val::call("fill", path, fillRule).as<jsbind::Undefined>();
 }
@@ -178,8 +186,16 @@ jsbind::Undefined PaintRenderingContext2D::stroke(const Path2D& path) {
     return emlite::Val::call("stroke", path).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::clip(const Path2D& path) {
+    return emlite::Val::call("clip", path).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::clip(const Path2D& path, const CanvasFillRule& fillRule) {
     return emlite::Val::call("clip", path, fillRule).as<jsbind::Undefined>();
+}
+
+bool PaintRenderingContext2D::isPointInPath(const Path2D& path, double x, double y) {
+    return emlite::Val::call("isPointInPath", path, x, y).as<bool>();
 }
 
 bool PaintRenderingContext2D::isPointInPath(const Path2D& path, double x, double y, const CanvasFillRule& fillRule) {
@@ -270,12 +286,24 @@ jsbind::Undefined PaintRenderingContext2D::rect(double x, double y, double w, do
     return emlite::Val::call("rect", x, y, w, h).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::roundRect(double x, double y, double w, double h) {
+    return emlite::Val::call("roundRect", x, y, w, h).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::roundRect(double x, double y, double w, double h, const jsbind::Any& radii) {
     return emlite::Val::call("roundRect", x, y, w, h, radii).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::arc(double x, double y, double radius, double startAngle, double endAngle) {
+    return emlite::Val::call("arc", x, y, radius, startAngle, endAngle).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::arc(double x, double y, double radius, double startAngle, double endAngle, bool counterclockwise) {
     return emlite::Val::call("arc", x, y, radius, startAngle, endAngle, counterclockwise).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PaintRenderingContext2D::ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle) {
+    return emlite::Val::call("ellipse", x, y, radiusX, radiusY, rotation, startAngle, endAngle).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined PaintRenderingContext2D::ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle, bool counterclockwise) {

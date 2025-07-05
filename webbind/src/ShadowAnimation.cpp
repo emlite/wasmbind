@@ -9,7 +9,7 @@ ShadowAnimation::ShadowAnimation(Handle h) noexcept : Animation(emlite::Val::tak
 ShadowAnimation::ShadowAnimation(const emlite::Val &val) noexcept: Animation(val) {}
 
 
-ShadowAnimation::ShadowAnimation(const Animation& source, const jsbind::Any& newTarget): Animation(emlite::Val::global("ShadowAnimation").new_(source, newTarget)) {}
+ShadowAnimation::ShadowAnimation(const Animation& source, const jsbind::Any& newTarget) : Animation(emlite::Val::global("ShadowAnimation").new_(source, newTarget)) {}
 
 Animation ShadowAnimation::sourceAnimation() const {
     return Animation::get("sourceAnimation").as<Animation>();

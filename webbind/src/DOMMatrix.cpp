@@ -10,7 +10,13 @@ DOMMatrix::DOMMatrix(Handle h) noexcept : DOMMatrixReadOnly(emlite::Val::take_ow
 DOMMatrix::DOMMatrix(const emlite::Val &val) noexcept: DOMMatrixReadOnly(val) {}
 
 
-DOMMatrix::DOMMatrix(const jsbind::Any& init): DOMMatrixReadOnly(emlite::Val::global("DOMMatrix").new_(init)) {}
+DOMMatrix::DOMMatrix() : DOMMatrixReadOnly(emlite::Val::global("DOMMatrix").new_()) {}
+
+DOMMatrix::DOMMatrix(const jsbind::Any& init) : DOMMatrixReadOnly(emlite::Val::global("DOMMatrix").new_(init)) {}
+
+DOMMatrix DOMMatrix::fromMatrix() {
+    return emlite::Val::global("dommatrix").call("fromMatrix").as<DOMMatrix>();
+}
 
 DOMMatrix DOMMatrix::fromMatrix(const DOMMatrixInit& other) {
     return emlite::Val::global("dommatrix").call("fromMatrix", other).as<DOMMatrix>();
@@ -200,40 +206,144 @@ void DOMMatrix::m44(double value) {
     DOMMatrixReadOnly::set("m44", value);
 }
 
+DOMMatrix DOMMatrix::multiplySelf() {
+    return DOMMatrixReadOnly::call("multiplySelf").as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrix::multiplySelf(const DOMMatrixInit& other) {
     return DOMMatrixReadOnly::call("multiplySelf", other).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::preMultiplySelf() {
+    return DOMMatrixReadOnly::call("preMultiplySelf").as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrix::preMultiplySelf(const DOMMatrixInit& other) {
     return DOMMatrixReadOnly::call("preMultiplySelf", other).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrix::translateSelf() {
+    return DOMMatrixReadOnly::call("translateSelf").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::translateSelf(double tx) {
+    return DOMMatrixReadOnly::call("translateSelf", tx).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::translateSelf(double tx, double ty) {
+    return DOMMatrixReadOnly::call("translateSelf", tx, ty).as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrix::translateSelf(double tx, double ty, double tz) {
     return DOMMatrixReadOnly::call("translateSelf", tx, ty, tz).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scaleSelf() {
+    return DOMMatrixReadOnly::call("scaleSelf").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scaleSelf(double scaleX) {
+    return DOMMatrixReadOnly::call("scaleSelf", scaleX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scaleSelf(double scaleX, double scaleY) {
+    return DOMMatrixReadOnly::call("scaleSelf", scaleX, scaleY).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scaleSelf(double scaleX, double scaleY, double scaleZ) {
+    return DOMMatrixReadOnly::call("scaleSelf", scaleX, scaleY, scaleZ).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scaleSelf(double scaleX, double scaleY, double scaleZ, double originX) {
+    return DOMMatrixReadOnly::call("scaleSelf", scaleX, scaleY, scaleZ, originX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scaleSelf(double scaleX, double scaleY, double scaleZ, double originX, double originY) {
+    return DOMMatrixReadOnly::call("scaleSelf", scaleX, scaleY, scaleZ, originX, originY).as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrix::scaleSelf(double scaleX, double scaleY, double scaleZ, double originX, double originY, double originZ) {
     return DOMMatrixReadOnly::call("scaleSelf", scaleX, scaleY, scaleZ, originX, originY, originZ).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrix::scale3dSelf() {
+    return DOMMatrixReadOnly::call("scale3dSelf").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scale3dSelf(double scale) {
+    return DOMMatrixReadOnly::call("scale3dSelf", scale).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scale3dSelf(double scale, double originX) {
+    return DOMMatrixReadOnly::call("scale3dSelf", scale, originX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::scale3dSelf(double scale, double originX, double originY) {
+    return DOMMatrixReadOnly::call("scale3dSelf", scale, originX, originY).as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrix::scale3dSelf(double scale, double originX, double originY, double originZ) {
     return DOMMatrixReadOnly::call("scale3dSelf", scale, originX, originY, originZ).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateSelf() {
+    return DOMMatrixReadOnly::call("rotateSelf").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateSelf(double rotX) {
+    return DOMMatrixReadOnly::call("rotateSelf", rotX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateSelf(double rotX, double rotY) {
+    return DOMMatrixReadOnly::call("rotateSelf", rotX, rotY).as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrix::rotateSelf(double rotX, double rotY, double rotZ) {
     return DOMMatrixReadOnly::call("rotateSelf", rotX, rotY, rotZ).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrix::rotateFromVectorSelf() {
+    return DOMMatrixReadOnly::call("rotateFromVectorSelf").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateFromVectorSelf(double x) {
+    return DOMMatrixReadOnly::call("rotateFromVectorSelf", x).as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrix::rotateFromVectorSelf(double x, double y) {
     return DOMMatrixReadOnly::call("rotateFromVectorSelf", x, y).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateAxisAngleSelf() {
+    return DOMMatrixReadOnly::call("rotateAxisAngleSelf").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateAxisAngleSelf(double x) {
+    return DOMMatrixReadOnly::call("rotateAxisAngleSelf", x).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateAxisAngleSelf(double x, double y) {
+    return DOMMatrixReadOnly::call("rotateAxisAngleSelf", x, y).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::rotateAxisAngleSelf(double x, double y, double z) {
+    return DOMMatrixReadOnly::call("rotateAxisAngleSelf", x, y, z).as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrix::rotateAxisAngleSelf(double x, double y, double z, double angle) {
     return DOMMatrixReadOnly::call("rotateAxisAngleSelf", x, y, z, angle).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrix::skewXSelf() {
+    return DOMMatrixReadOnly::call("skewXSelf").as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrix::skewXSelf(double sx) {
     return DOMMatrixReadOnly::call("skewXSelf", sx).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrix::skewYSelf() {
+    return DOMMatrixReadOnly::call("skewYSelf").as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrix::skewYSelf(double sy) {

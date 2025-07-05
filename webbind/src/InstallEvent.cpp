@@ -9,7 +9,9 @@ InstallEvent::InstallEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::tak
 InstallEvent::InstallEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-InstallEvent::InstallEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): ExtendableEvent(emlite::Val::global("InstallEvent").new_(type, eventInitDict)) {}
+InstallEvent::InstallEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("InstallEvent").new_(type)) {}
+
+InstallEvent::InstallEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("InstallEvent").new_(type, eventInitDict)) {}
 
 jsbind::Promise InstallEvent::addRoutes(const jsbind::Any& rules) {
     return ExtendableEvent::call("addRoutes", rules).as<jsbind::Promise>();

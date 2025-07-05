@@ -18,6 +18,10 @@ void HTMLOptionsCollection::length(unsigned long value) {
     HTMLCollection::set("length", value);
 }
 
+jsbind::Undefined HTMLOptionsCollection::add(const jsbind::Any& element) {
+    return HTMLCollection::call("add", element).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined HTMLOptionsCollection::add(const jsbind::Any& element, const jsbind::Any& before) {
     return HTMLCollection::call("add", element, before).as<jsbind::Undefined>();
 }

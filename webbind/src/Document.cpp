@@ -150,7 +150,7 @@ Document::Document(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Document::Document(const emlite::Val &val) noexcept: Node(val) {}
 
 
-Document::Document(): Node(emlite::Val::global("Document").new_()) {}
+Document::Document() : Node(emlite::Val::global("Document").new_()) {}
 
 DOMImplementation Document::implementation() const {
     return Node::get("implementation").as<DOMImplementation>();
@@ -204,8 +204,16 @@ HTMLCollection Document::getElementsByClassName(const jsbind::DOMString& classNa
     return Node::call("getElementsByClassName", classNames).as<HTMLCollection>();
 }
 
+Element Document::createElement(const jsbind::DOMString& localName) {
+    return Node::call("createElement", localName).as<Element>();
+}
+
 Element Document::createElement(const jsbind::DOMString& localName, const jsbind::Any& options) {
     return Node::call("createElement", localName, options).as<Element>();
+}
+
+Element Document::createElementNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName) {
+    return Node::call("createElementNS", namespace_, qualifiedName).as<Element>();
 }
 
 Element Document::createElementNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName, const jsbind::Any& options) {
@@ -232,6 +240,10 @@ ProcessingInstruction Document::createProcessingInstruction(const jsbind::DOMStr
     return Node::call("createProcessingInstruction", target, data).as<ProcessingInstruction>();
 }
 
+Node Document::importNode(const Node& node) {
+    return Node::call("importNode", node).as<Node>();
+}
+
 Node Document::importNode(const Node& node, const jsbind::Any& options) {
     return Node::call("importNode", node, options).as<Node>();
 }
@@ -256,8 +268,24 @@ Range Document::createRange() {
     return Node::call("createRange").as<Range>();
 }
 
+NodeIterator Document::createNodeIterator(const Node& root) {
+    return Node::call("createNodeIterator", root).as<NodeIterator>();
+}
+
+NodeIterator Document::createNodeIterator(const Node& root, unsigned long whatToShow) {
+    return Node::call("createNodeIterator", root, whatToShow).as<NodeIterator>();
+}
+
 NodeIterator Document::createNodeIterator(const Node& root, unsigned long whatToShow, const jsbind::Function& filter) {
     return Node::call("createNodeIterator", root, whatToShow, filter).as<NodeIterator>();
+}
+
+TreeWalker Document::createTreeWalker(const Node& root) {
+    return Node::call("createTreeWalker", root).as<TreeWalker>();
+}
+
+TreeWalker Document::createTreeWalker(const Node& root, unsigned long whatToShow) {
+    return Node::call("createTreeWalker", root, whatToShow).as<TreeWalker>();
 }
 
 TreeWalker Document::createTreeWalker(const Node& root, unsigned long whatToShow, const jsbind::Function& filter) {
@@ -272,6 +300,10 @@ NamedFlowMap Document::namedFlows() const {
     return Node::get("namedFlows").as<NamedFlowMap>();
 }
 
+ViewTransition Document::startViewTransition() {
+    return Node::call("startViewTransition").as<ViewTransition>();
+}
+
 ViewTransition Document::startViewTransition(const jsbind::Any& callbackOptions) {
     return Node::call("startViewTransition", callbackOptions).as<ViewTransition>();
 }
@@ -282,6 +314,10 @@ Element Document::elementFromPoint(double x, double y) {
 
 jsbind::Sequence<Element> Document::elementsFromPoint(double x, double y) {
     return Node::call("elementsFromPoint", x, y).as<jsbind::Sequence<Element>>();
+}
+
+CaretPosition Document::caretPositionFromPoint(double x, double y) {
+    return Node::call("caretPositionFromPoint", x, y).as<CaretPosition>();
 }
 
 CaretPosition Document::caretPositionFromPoint(double x, double y, const CaretPositionFromPointOptions& options) {
@@ -454,6 +490,14 @@ jsbind::DOMString Document::designMode() const {
 
 void Document::designMode(const jsbind::DOMString& value) {
     Node::set("designMode", value);
+}
+
+bool Document::execCommand(const jsbind::DOMString& commandId) {
+    return Node::call("execCommand", commandId).as<bool>();
+}
+
+bool Document::execCommand(const jsbind::DOMString& commandId, bool showUI) {
+    return Node::call("execCommand", commandId, showUI).as<bool>();
 }
 
 bool Document::execCommand(const jsbind::DOMString& commandId, bool showUI, const jsbind::DOMString& value) {
@@ -672,16 +716,32 @@ FontFaceSet Document::fonts() const {
     return Node::get("fonts").as<FontFaceSet>();
 }
 
+jsbind::Sequence<DOMQuad> Document::getBoxQuads() {
+    return Node::call("getBoxQuads").as<jsbind::Sequence<DOMQuad>>();
+}
+
 jsbind::Sequence<DOMQuad> Document::getBoxQuads(const BoxQuadOptions& options) {
     return Node::call("getBoxQuads", options).as<jsbind::Sequence<DOMQuad>>();
+}
+
+DOMQuad Document::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from) {
+    return Node::call("convertQuadFromNode", quad, from).as<DOMQuad>();
 }
 
 DOMQuad Document::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
     return Node::call("convertQuadFromNode", quad, from, options).as<DOMQuad>();
 }
 
+DOMQuad Document::convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from) {
+    return Node::call("convertRectFromNode", rect, from).as<DOMQuad>();
+}
+
 DOMQuad Document::convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
     return Node::call("convertRectFromNode", rect, from, options).as<DOMQuad>();
+}
+
+DOMPoint Document::convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from) {
+    return Node::call("convertPointFromNode", point, from).as<DOMPoint>();
 }
 
 DOMPoint Document::convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from, const ConvertCoordinateOptions& options) {
@@ -736,12 +796,28 @@ NodeList Document::querySelectorAll(const jsbind::DOMString& selectors) {
     return Node::call("querySelectorAll", selectors).as<NodeList>();
 }
 
+XPathExpression Document::createExpression(const jsbind::DOMString& expression) {
+    return Node::call("createExpression", expression).as<XPathExpression>();
+}
+
 XPathExpression Document::createExpression(const jsbind::DOMString& expression, const jsbind::Function& resolver) {
     return Node::call("createExpression", expression, resolver).as<XPathExpression>();
 }
 
 Node Document::createNSResolver(const Node& nodeResolver) {
     return Node::call("createNSResolver", nodeResolver).as<Node>();
+}
+
+XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode) {
+    return Node::call("evaluate", expression, contextNode).as<XPathResult>();
+}
+
+XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver) {
+    return Node::call("evaluate", expression, contextNode, resolver).as<XPathResult>();
+}
+
+XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type) {
+    return Node::call("evaluate", expression, contextNode, resolver, type).as<XPathResult>();
 }
 
 XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result) {

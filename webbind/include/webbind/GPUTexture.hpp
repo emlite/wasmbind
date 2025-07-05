@@ -41,6 +41,7 @@ public:
     static GPUTexture take_ownership(Handle h) noexcept;
 
     GPUTexture clone() const noexcept;
+    GPUTextureView createView();
     GPUTextureView createView(const GPUTextureViewDescriptor& descriptor);
     jsbind::Undefined destroy();
     jsbind::Any width() const;

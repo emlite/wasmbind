@@ -38,7 +38,9 @@ public:
     static PaymentRequest take_ownership(Handle h) noexcept;
 
     PaymentRequest clone() const noexcept;
+    PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details);
     PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options);
+    jsbind::Promise show();
     jsbind::Promise show(const jsbind::Promise& detailsPromise);
     jsbind::Promise abort();
     jsbind::Promise canMakePayment();

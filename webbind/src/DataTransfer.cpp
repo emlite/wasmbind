@@ -12,7 +12,7 @@ DataTransfer::DataTransfer(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 DataTransfer::DataTransfer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DataTransfer::DataTransfer(): emlite::Val(emlite::Val::global("DataTransfer").new_()) {}
+DataTransfer::DataTransfer() : emlite::Val(emlite::Val::global("DataTransfer").new_()) {}
 
 jsbind::DOMString DataTransfer::dropEffect() const {
     return emlite::Val::get("dropEffect").as<jsbind::DOMString>();
@@ -48,6 +48,10 @@ jsbind::DOMString DataTransfer::getData(const jsbind::DOMString& format) {
 
 jsbind::Undefined DataTransfer::setData(const jsbind::DOMString& format, const jsbind::DOMString& data) {
     return emlite::Val::call("setData", format, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined DataTransfer::clearData() {
+    return emlite::Val::call("clearData").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined DataTransfer::clearData(const jsbind::DOMString& format) {

@@ -9,7 +9,7 @@ CSSParserFunction::CSSParserFunction(Handle h) noexcept : CSSParserValue(emlite:
 CSSParserFunction::CSSParserFunction(const emlite::Val &val) noexcept: CSSParserValue(val) {}
 
 
-CSSParserFunction::CSSParserFunction(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Sequence<CSSParserValue>>& args): CSSParserValue(emlite::Val::global("CSSParserFunction").new_(name, args)) {}
+CSSParserFunction::CSSParserFunction(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Sequence<CSSParserValue>>& args) : CSSParserValue(emlite::Val::global("CSSParserFunction").new_(name, args)) {}
 
 jsbind::DOMString CSSParserFunction::name() const {
     return CSSParserValue::get("name").as<jsbind::DOMString>();

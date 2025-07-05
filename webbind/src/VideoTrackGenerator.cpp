@@ -11,7 +11,7 @@ VideoTrackGenerator::VideoTrackGenerator(Handle h) noexcept : emlite::Val(emlite
 VideoTrackGenerator::VideoTrackGenerator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-VideoTrackGenerator::VideoTrackGenerator(): emlite::Val(emlite::Val::global("VideoTrackGenerator").new_()) {}
+VideoTrackGenerator::VideoTrackGenerator() : emlite::Val(emlite::Val::global("VideoTrackGenerator").new_()) {}
 
 WritableStream VideoTrackGenerator::writable() const {
     return emlite::Val::get("writable").as<WritableStream>();

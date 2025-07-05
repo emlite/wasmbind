@@ -9,7 +9,9 @@ UncalibratedMagnetometer::UncalibratedMagnetometer(Handle h) noexcept : Sensor(e
 UncalibratedMagnetometer::UncalibratedMagnetometer(const emlite::Val &val) noexcept: Sensor(val) {}
 
 
-UncalibratedMagnetometer::UncalibratedMagnetometer(const jsbind::Any& sensorOptions): Sensor(emlite::Val::global("UncalibratedMagnetometer").new_(sensorOptions)) {}
+UncalibratedMagnetometer::UncalibratedMagnetometer() : Sensor(emlite::Val::global("UncalibratedMagnetometer").new_()) {}
+
+UncalibratedMagnetometer::UncalibratedMagnetometer(const jsbind::Any& sensorOptions) : Sensor(emlite::Val::global("UncalibratedMagnetometer").new_(sensorOptions)) {}
 
 double UncalibratedMagnetometer::x() const {
     return Sensor::get("x").as<double>();

@@ -15,6 +15,7 @@ public:
     static MediaMetadata take_ownership(Handle h) noexcept;
 
     MediaMetadata clone() const noexcept;
+    MediaMetadata();
     MediaMetadata(const jsbind::Any& init);
     jsbind::DOMString title() const;
     void title(const jsbind::DOMString& value);

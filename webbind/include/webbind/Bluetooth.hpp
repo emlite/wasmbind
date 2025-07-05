@@ -58,7 +58,9 @@ public:
     void onavailabilitychanged(const jsbind::Any& value);
     BluetoothDevice referringDevice() const;
     jsbind::Promise getDevices();
+    jsbind::Promise requestDevice();
     jsbind::Promise requestDevice(const RequestDeviceOptions& options);
+    jsbind::Promise requestLEScan();
     jsbind::Promise requestLEScan(const BluetoothLEScanOptions& options);
     jsbind::Any onadvertisementreceived() const;
     void onadvertisementreceived(const jsbind::Any& value);

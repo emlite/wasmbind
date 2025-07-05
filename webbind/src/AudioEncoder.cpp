@@ -82,7 +82,7 @@ AudioEncoder::AudioEncoder(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 AudioEncoder::AudioEncoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-AudioEncoder::AudioEncoder(const jsbind::Any& init): EventTarget(emlite::Val::global("AudioEncoder").new_(init)) {}
+AudioEncoder::AudioEncoder(const jsbind::Any& init) : EventTarget(emlite::Val::global("AudioEncoder").new_(init)) {}
 
 CodecState AudioEncoder::state() const {
     return EventTarget::get("state").as<CodecState>();

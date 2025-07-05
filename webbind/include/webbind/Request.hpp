@@ -20,6 +20,7 @@ public:
     static Request take_ownership(Handle h) noexcept;
 
     Request clone() const noexcept;
+    Request(const jsbind::Any& input);
     Request(const jsbind::Any& input, const jsbind::Any& init);
     jsbind::ByteString method() const;
     jsbind::USVString url() const;

@@ -42,6 +42,7 @@ public:
     HTMLFormControlsCollection elements() const;
     unsigned long length() const;
     jsbind::Undefined submit();
+    jsbind::Undefined requestSubmit();
     jsbind::Undefined requestSubmit(const HTMLElement& submitter);
     jsbind::Undefined reset();
     bool checkValidity();

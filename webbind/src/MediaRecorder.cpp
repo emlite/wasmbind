@@ -10,7 +10,9 @@ MediaRecorder::MediaRecorder(Handle h) noexcept : EventTarget(emlite::Val::take_
 MediaRecorder::MediaRecorder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-MediaRecorder::MediaRecorder(const MediaStream& stream, const jsbind::Any& options): EventTarget(emlite::Val::global("MediaRecorder").new_(stream, options)) {}
+MediaRecorder::MediaRecorder(const MediaStream& stream) : EventTarget(emlite::Val::global("MediaRecorder").new_(stream)) {}
+
+MediaRecorder::MediaRecorder(const MediaStream& stream, const jsbind::Any& options) : EventTarget(emlite::Val::global("MediaRecorder").new_(stream, options)) {}
 
 MediaStream MediaRecorder::stream() const {
     return EventTarget::get("stream").as<MediaStream>();
@@ -82,6 +84,10 @@ unsigned long MediaRecorder::audioBitsPerSecond() const {
 
 BitrateMode MediaRecorder::audioBitrateMode() const {
     return EventTarget::get("audioBitrateMode").as<BitrateMode>();
+}
+
+jsbind::Undefined MediaRecorder::start() {
+    return EventTarget::call("start").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined MediaRecorder::start(unsigned long timeslice) {

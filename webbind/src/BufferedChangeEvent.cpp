@@ -10,7 +10,9 @@ BufferedChangeEvent::BufferedChangeEvent(Handle h) noexcept : Event(emlite::Val:
 BufferedChangeEvent::BufferedChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-BufferedChangeEvent::BufferedChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("BufferedChangeEvent").new_(type, eventInitDict)) {}
+BufferedChangeEvent::BufferedChangeEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("BufferedChangeEvent").new_(type)) {}
+
+BufferedChangeEvent::BufferedChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("BufferedChangeEvent").new_(type, eventInitDict)) {}
 
 TimeRanges BufferedChangeEvent::addedRanges() const {
     return Event::get("addedRanges").as<TimeRanges>();

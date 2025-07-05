@@ -208,8 +208,16 @@ jsbind::Promise MediaDevices::enumerateDevices() {
     return EventTarget::call("enumerateDevices").as<jsbind::Promise>();
 }
 
+jsbind::Promise MediaDevices::selectAudioOutput() {
+    return EventTarget::call("selectAudioOutput").as<jsbind::Promise>();
+}
+
 jsbind::Promise MediaDevices::selectAudioOutput(const AudioOutputOptions& options) {
     return EventTarget::call("selectAudioOutput", options).as<jsbind::Promise>();
+}
+
+jsbind::Undefined MediaDevices::setCaptureHandleConfig() {
+    return EventTarget::call("setCaptureHandleConfig").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined MediaDevices::setCaptureHandleConfig(const CaptureHandleConfig& config) {
@@ -232,12 +240,24 @@ MediaTrackSupportedConstraints MediaDevices::getSupportedConstraints() {
     return EventTarget::call("getSupportedConstraints").as<MediaTrackSupportedConstraints>();
 }
 
+jsbind::Promise MediaDevices::getUserMedia() {
+    return EventTarget::call("getUserMedia").as<jsbind::Promise>();
+}
+
 jsbind::Promise MediaDevices::getUserMedia(const MediaStreamConstraints& constraints) {
     return EventTarget::call("getUserMedia", constraints).as<jsbind::Promise>();
 }
 
+jsbind::Promise MediaDevices::getViewportMedia() {
+    return EventTarget::call("getViewportMedia").as<jsbind::Promise>();
+}
+
 jsbind::Promise MediaDevices::getViewportMedia(const DisplayMediaStreamOptions& options) {
     return EventTarget::call("getViewportMedia", options).as<jsbind::Promise>();
+}
+
+jsbind::Promise MediaDevices::getDisplayMedia() {
+    return EventTarget::call("getDisplayMedia").as<jsbind::Promise>();
 }
 
 jsbind::Promise MediaDevices::getDisplayMedia(const DisplayMediaStreamOptions& options) {

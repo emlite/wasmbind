@@ -108,12 +108,28 @@ ShadowRoot ElementInternals::shadowRoot() const {
     return emlite::Val::get("shadowRoot").as<ShadowRoot>();
 }
 
+jsbind::Undefined ElementInternals::setFormValue(const jsbind::Any& value) {
+    return emlite::Val::call("setFormValue", value).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined ElementInternals::setFormValue(const jsbind::Any& value, const jsbind::Any& state) {
     return emlite::Val::call("setFormValue", value, state).as<jsbind::Undefined>();
 }
 
 HTMLFormElement ElementInternals::form() const {
     return emlite::Val::get("form").as<HTMLFormElement>();
+}
+
+jsbind::Undefined ElementInternals::setValidity() {
+    return emlite::Val::call("setValidity").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags) {
+    return emlite::Val::call("setValidity", flags).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags, const jsbind::DOMString& message) {
+    return emlite::Val::call("setValidity", flags, message).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags, const jsbind::DOMString& message, const HTMLElement& anchor) {

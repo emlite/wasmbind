@@ -28,6 +28,7 @@ public:
 
     ResizeObserver clone() const noexcept;
     ResizeObserver(const jsbind::Function& callback);
+    jsbind::Undefined observe(const Element& target);
     jsbind::Undefined observe(const Element& target, const ResizeObserverOptions& options);
     jsbind::Undefined unobserve(const Element& target);
     jsbind::Undefined disconnect();

@@ -18,6 +18,8 @@ public:
 
     GPUComputePassEncoder clone() const noexcept;
     jsbind::Undefined setPipeline(const GPUComputePipeline& pipeline);
+    jsbind::Undefined dispatchWorkgroups(const jsbind::Any& workgroupCountX);
+    jsbind::Undefined dispatchWorkgroups(const jsbind::Any& workgroupCountX, const jsbind::Any& workgroupCountY);
     jsbind::Undefined dispatchWorkgroups(const jsbind::Any& workgroupCountX, const jsbind::Any& workgroupCountY, const jsbind::Any& workgroupCountZ);
     jsbind::Undefined dispatchWorkgroupsIndirect(const GPUBuffer& indirectBuffer, const jsbind::Any& indirectOffset);
     jsbind::Undefined end();

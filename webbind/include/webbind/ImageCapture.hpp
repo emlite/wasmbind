@@ -54,6 +54,7 @@ public:
 
     ImageCapture clone() const noexcept;
     ImageCapture(const MediaStreamTrack& videoTrack);
+    jsbind::Promise takePhoto();
     jsbind::Promise takePhoto(const PhotoSettings& photoSettings);
     jsbind::Promise getPhotoCapabilities();
     jsbind::Promise getPhotoSettings();

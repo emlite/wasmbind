@@ -9,7 +9,7 @@ ManagedMediaSource::ManagedMediaSource(Handle h) noexcept : MediaSource(emlite::
 ManagedMediaSource::ManagedMediaSource(const emlite::Val &val) noexcept: MediaSource(val) {}
 
 
-ManagedMediaSource::ManagedMediaSource(): MediaSource(emlite::Val::global("ManagedMediaSource").new_()) {}
+ManagedMediaSource::ManagedMediaSource() : MediaSource(emlite::Val::global("ManagedMediaSource").new_()) {}
 
 bool ManagedMediaSource::streaming() const {
     return MediaSource::get("streaming").as<bool>();

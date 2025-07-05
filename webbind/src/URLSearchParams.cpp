@@ -9,7 +9,9 @@ URLSearchParams::URLSearchParams(Handle h) noexcept : emlite::Val(emlite::Val::t
 URLSearchParams::URLSearchParams(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-URLSearchParams::URLSearchParams(const jsbind::Any& init): emlite::Val(emlite::Val::global("URLSearchParams").new_(init)) {}
+URLSearchParams::URLSearchParams() : emlite::Val(emlite::Val::global("URLSearchParams").new_()) {}
+
+URLSearchParams::URLSearchParams(const jsbind::Any& init) : emlite::Val(emlite::Val::global("URLSearchParams").new_(init)) {}
 
 unsigned long URLSearchParams::size() const {
     return emlite::Val::get("size").as<unsigned long>();
@@ -17,6 +19,10 @@ unsigned long URLSearchParams::size() const {
 
 jsbind::Undefined URLSearchParams::append(const jsbind::USVString& name, const jsbind::USVString& value) {
     return emlite::Val::call("append", name, value).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined URLSearchParams::delete_(const jsbind::USVString& name) {
+    return emlite::Val::call("delete", name).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined URLSearchParams::delete_(const jsbind::USVString& name, const jsbind::USVString& value) {
@@ -29,6 +35,10 @@ jsbind::USVString URLSearchParams::get(const jsbind::USVString& name) {
 
 jsbind::Sequence<jsbind::USVString> URLSearchParams::getAll(const jsbind::USVString& name) {
     return emlite::Val::call("getAll", name).as<jsbind::Sequence<jsbind::USVString>>();
+}
+
+bool URLSearchParams::has(const jsbind::USVString& name) {
+    return emlite::Val::call("has", name).as<bool>();
 }
 
 bool URLSearchParams::has(const jsbind::USVString& name, const jsbind::USVString& value) {

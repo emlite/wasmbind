@@ -16,6 +16,7 @@ public:
     static PushEvent take_ownership(Handle h) noexcept;
 
     PushEvent clone() const noexcept;
+    PushEvent(const jsbind::DOMString& type);
     PushEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     PushMessageData data() const;
 };

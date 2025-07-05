@@ -754,6 +754,10 @@ jsbind::Promise Navigator::getBattery() {
     return emlite::Val::call("getBattery").as<jsbind::Promise>();
 }
 
+bool Navigator::sendBeacon(const jsbind::USVString& url) {
+    return emlite::Val::call("sendBeacon", url).as<bool>();
+}
+
 bool Navigator::sendBeacon(const jsbind::USVString& url, const jsbind::Any& data) {
     return emlite::Val::call("sendBeacon", url, data).as<bool>();
 }
@@ -780,6 +784,10 @@ jsbind::Promise Navigator::requestMediaKeySystemAccess(const jsbind::DOMString& 
 
 jsbind::Promise Navigator::deprecatedReplaceInURN(const jsbind::Any& urnOrConfig, const jsbind::Record<jsbind::USVString, jsbind::USVString>& replacements) {
     return emlite::Val::call("deprecatedReplaceInURN", urnOrConfig, replacements).as<jsbind::Promise>();
+}
+
+jsbind::Promise Navigator::deprecatedURNtoURL(const jsbind::Any& urnOrConfig) {
+    return emlite::Val::call("deprecatedURNtoURL", urnOrConfig).as<jsbind::Promise>();
 }
 
 jsbind::Promise Navigator::deprecatedURNtoURL(const jsbind::Any& urnOrConfig, bool send_reports) {
@@ -882,8 +890,16 @@ jsbind::Promise Navigator::joinAdInterestGroup(const AuctionAdInterestGroup& gro
     return emlite::Val::call("joinAdInterestGroup", group).as<jsbind::Promise>();
 }
 
+jsbind::Promise Navigator::leaveAdInterestGroup() {
+    return emlite::Val::call("leaveAdInterestGroup").as<jsbind::Promise>();
+}
+
 jsbind::Promise Navigator::leaveAdInterestGroup(const AuctionAdInterestGroupKey& group) {
     return emlite::Val::call("leaveAdInterestGroup", group).as<jsbind::Promise>();
+}
+
+jsbind::Promise Navigator::clearOriginJoinedAdInterestGroups(const jsbind::USVString& owner) {
+    return emlite::Val::call("clearOriginJoinedAdInterestGroups", owner).as<jsbind::Promise>();
 }
 
 jsbind::Promise Navigator::clearOriginJoinedAdInterestGroups(const jsbind::USVString& owner, const jsbind::Sequence<jsbind::USVString>& interestGroupsToKeep) {
@@ -900,6 +916,10 @@ bool Navigator::deprecatedRunAdAuctionEnforcesKAnonymity() const {
 
 bool Navigator::canLoadAdAuctionFencedFrame() {
     return emlite::Val::call("canLoadAdAuctionFencedFrame").as<bool>();
+}
+
+jsbind::Promise Navigator::getInterestGroupAdAuctionData() {
+    return emlite::Val::call("getInterestGroupAdAuctionData").as<jsbind::Promise>();
 }
 
 jsbind::Promise Navigator::getInterestGroupAdAuctionData(const AdAuctionDataConfig& config) {
@@ -930,8 +950,16 @@ Bluetooth Navigator::bluetooth() const {
     return emlite::Val::get("bluetooth").as<Bluetooth>();
 }
 
+jsbind::Promise Navigator::share() {
+    return emlite::Val::call("share").as<jsbind::Promise>();
+}
+
 jsbind::Promise Navigator::share(const ShareData& data) {
     return emlite::Val::call("share", data).as<jsbind::Promise>();
+}
+
+bool Navigator::canShare() {
+    return emlite::Val::call("canShare").as<bool>();
 }
 
 bool Navigator::canShare(const ShareData& data) {
@@ -940,6 +968,10 @@ bool Navigator::canShare(const ShareData& data) {
 
 HID Navigator::hid() const {
     return emlite::Val::get("hid").as<HID>();
+}
+
+jsbind::Promise Navigator::requestMIDIAccess() {
+    return emlite::Val::call("requestMIDIAccess").as<jsbind::Promise>();
 }
 
 jsbind::Promise Navigator::requestMIDIAccess(const MIDIOptions& options) {
@@ -956,6 +988,10 @@ XRSystem Navigator::xr() const {
 
 WindowControlsOverlay Navigator::windowControlsOverlay() const {
     return emlite::Val::get("windowControlsOverlay").as<WindowControlsOverlay>();
+}
+
+jsbind::Promise Navigator::setAppBadge() {
+    return emlite::Val::call("setAppBadge").as<jsbind::Promise>();
 }
 
 jsbind::Promise Navigator::setAppBadge(long long contents) {

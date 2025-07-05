@@ -16,6 +16,7 @@ public:
     static ConstantSourceNode take_ownership(Handle h) noexcept;
 
     ConstantSourceNode clone() const noexcept;
+    ConstantSourceNode(const BaseAudioContext& context);
     ConstantSourceNode(const BaseAudioContext& context, const jsbind::Any& options);
     AudioParam offset() const;
 };

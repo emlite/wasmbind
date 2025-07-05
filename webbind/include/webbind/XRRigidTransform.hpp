@@ -17,6 +17,8 @@ public:
     static XRRigidTransform take_ownership(Handle h) noexcept;
 
     XRRigidTransform clone() const noexcept;
+    XRRigidTransform();
+    XRRigidTransform(const DOMPointInit& position);
     XRRigidTransform(const DOMPointInit& position, const DOMPointInit& orientation);
     DOMPointReadOnly position() const;
     DOMPointReadOnly orientation() const;

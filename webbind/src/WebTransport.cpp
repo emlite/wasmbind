@@ -158,10 +158,16 @@ WebTransport::WebTransport(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 WebTransport::WebTransport(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-WebTransport::WebTransport(const jsbind::USVString& url, const jsbind::Any& options): emlite::Val(emlite::Val::global("WebTransport").new_(url, options)) {}
+WebTransport::WebTransport(const jsbind::USVString& url) : emlite::Val(emlite::Val::global("WebTransport").new_(url)) {}
+
+WebTransport::WebTransport(const jsbind::USVString& url, const jsbind::Any& options) : emlite::Val(emlite::Val::global("WebTransport").new_(url, options)) {}
 
 jsbind::Promise WebTransport::getStats() {
     return emlite::Val::call("getStats").as<jsbind::Promise>();
+}
+
+jsbind::Promise WebTransport::exportKeyingMaterial(const jsbind::Any& label) {
+    return emlite::Val::call("exportKeyingMaterial", label).as<jsbind::Promise>();
 }
 
 jsbind::Promise WebTransport::exportKeyingMaterial(const jsbind::Any& label, const jsbind::Any& context) {
@@ -208,6 +214,10 @@ jsbind::Promise WebTransport::draining() const {
     return emlite::Val::get("draining").as<jsbind::Promise>();
 }
 
+jsbind::Undefined WebTransport::close() {
+    return emlite::Val::call("close").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebTransport::close(const WebTransportCloseInfo& closeInfo) {
     return emlite::Val::call("close", closeInfo).as<jsbind::Undefined>();
 }
@@ -216,12 +226,20 @@ WebTransportDatagramDuplexStream WebTransport::datagrams() const {
     return emlite::Val::get("datagrams").as<WebTransportDatagramDuplexStream>();
 }
 
+jsbind::Promise WebTransport::createBidirectionalStream() {
+    return emlite::Val::call("createBidirectionalStream").as<jsbind::Promise>();
+}
+
 jsbind::Promise WebTransport::createBidirectionalStream(const WebTransportSendStreamOptions& options) {
     return emlite::Val::call("createBidirectionalStream", options).as<jsbind::Promise>();
 }
 
 ReadableStream WebTransport::incomingBidirectionalStreams() const {
     return emlite::Val::get("incomingBidirectionalStreams").as<ReadableStream>();
+}
+
+jsbind::Promise WebTransport::createUnidirectionalStream() {
+    return emlite::Val::call("createUnidirectionalStream").as<jsbind::Promise>();
 }
 
 jsbind::Promise WebTransport::createUnidirectionalStream(const WebTransportSendStreamOptions& options) {

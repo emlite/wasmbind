@@ -16,6 +16,9 @@ public:
     static TransformStream take_ownership(Handle h) noexcept;
 
     TransformStream clone() const noexcept;
+    TransformStream();
+    TransformStream(const jsbind::Object& transformer);
+    TransformStream(const jsbind::Object& transformer, const jsbind::Any& writableStrategy);
     TransformStream(const jsbind::Object& transformer, const jsbind::Any& writableStrategy, const jsbind::Any& readableStrategy);
     ReadableStream readable() const;
     WritableStream writable() const;

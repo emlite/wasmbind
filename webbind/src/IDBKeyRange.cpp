@@ -29,12 +29,28 @@ IDBKeyRange IDBKeyRange::only(const jsbind::Any& value) {
     return emlite::Val::global("idbkeyrange").call("only", value).as<IDBKeyRange>();
 }
 
+IDBKeyRange IDBKeyRange::lowerBound(const jsbind::Any& lower) {
+    return emlite::Val::global("idbkeyrange").call("lowerBound", lower).as<IDBKeyRange>();
+}
+
 IDBKeyRange IDBKeyRange::lowerBound(const jsbind::Any& lower, bool open) {
     return emlite::Val::global("idbkeyrange").call("lowerBound", lower, open).as<IDBKeyRange>();
 }
 
+IDBKeyRange IDBKeyRange::upperBound(const jsbind::Any& upper) {
+    return emlite::Val::global("idbkeyrange").call("upperBound", upper).as<IDBKeyRange>();
+}
+
 IDBKeyRange IDBKeyRange::upperBound(const jsbind::Any& upper, bool open) {
     return emlite::Val::global("idbkeyrange").call("upperBound", upper, open).as<IDBKeyRange>();
+}
+
+IDBKeyRange IDBKeyRange::bound(const jsbind::Any& lower, const jsbind::Any& upper) {
+    return emlite::Val::global("idbkeyrange").call("bound", lower, upper).as<IDBKeyRange>();
+}
+
+IDBKeyRange IDBKeyRange::bound(const jsbind::Any& lower, const jsbind::Any& upper, bool lowerOpen) {
+    return emlite::Val::global("idbkeyrange").call("bound", lower, upper, lowerOpen).as<IDBKeyRange>();
 }
 
 IDBKeyRange IDBKeyRange::bound(const jsbind::Any& lower, const jsbind::Any& upper, bool lowerOpen, bool upperOpen) {

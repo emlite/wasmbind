@@ -39,6 +39,10 @@ jsbind::Promise Clients::get(const jsbind::DOMString& id) {
     return emlite::Val::call("get", id).as<jsbind::Promise>();
 }
 
+jsbind::Promise Clients::matchAll() {
+    return emlite::Val::call("matchAll").as<jsbind::Promise>();
+}
+
 jsbind::Promise Clients::matchAll(const ClientQueryOptions& options) {
     return emlite::Val::call("matchAll", options).as<jsbind::Promise>();
 }

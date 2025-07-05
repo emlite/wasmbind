@@ -162,7 +162,7 @@ VideoEncoder::VideoEncoder(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 VideoEncoder::VideoEncoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-VideoEncoder::VideoEncoder(const jsbind::Any& init): EventTarget(emlite::Val::global("VideoEncoder").new_(init)) {}
+VideoEncoder::VideoEncoder(const jsbind::Any& init) : EventTarget(emlite::Val::global("VideoEncoder").new_(init)) {}
 
 CodecState VideoEncoder::state() const {
     return EventTarget::get("state").as<CodecState>();
@@ -182,6 +182,10 @@ void VideoEncoder::ondequeue(const jsbind::Any& value) {
 
 jsbind::Undefined VideoEncoder::configure(const VideoEncoderConfig& config) {
     return EventTarget::call("configure", config).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined VideoEncoder::encode(const VideoFrame& frame) {
+    return EventTarget::call("encode", frame).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined VideoEncoder::encode(const VideoFrame& frame, const VideoEncoderEncodeOptions& options) {

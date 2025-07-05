@@ -16,6 +16,7 @@ public:
     static ScrollTimeline take_ownership(Handle h) noexcept;
 
     ScrollTimeline clone() const noexcept;
+    ScrollTimeline();
     ScrollTimeline(const jsbind::Any& options);
     Element source() const;
     ScrollAxis axis() const;

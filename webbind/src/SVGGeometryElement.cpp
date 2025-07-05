@@ -55,8 +55,16 @@ SVGAnimatedNumber SVGGeometryElement::pathLength() const {
     return SVGGraphicsElement::get("pathLength").as<SVGAnimatedNumber>();
 }
 
+bool SVGGeometryElement::isPointInFill() {
+    return SVGGraphicsElement::call("isPointInFill").as<bool>();
+}
+
 bool SVGGeometryElement::isPointInFill(const DOMPointInit& point) {
     return SVGGraphicsElement::call("isPointInFill", point).as<bool>();
+}
+
+bool SVGGeometryElement::isPointInStroke() {
+    return SVGGraphicsElement::call("isPointInStroke").as<bool>();
 }
 
 bool SVGGeometryElement::isPointInStroke(const DOMPointInit& point) {

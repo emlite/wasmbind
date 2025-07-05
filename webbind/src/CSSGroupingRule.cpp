@@ -14,6 +14,10 @@ CSSRuleList CSSGroupingRule::cssRules() const {
     return CSSRule::get("cssRules").as<CSSRuleList>();
 }
 
+unsigned long CSSGroupingRule::insertRule(const jsbind::CSSOMString& rule) {
+    return CSSRule::call("insertRule", rule).as<unsigned long>();
+}
+
 unsigned long CSSGroupingRule::insertRule(const jsbind::CSSOMString& rule, unsigned long index) {
     return CSSRule::call("insertRule", rule, index).as<unsigned long>();
 }

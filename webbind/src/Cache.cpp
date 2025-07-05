@@ -12,8 +12,20 @@ Cache::Cache(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Cache::Cache(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise Cache::match(const jsbind::Any& request) {
+    return emlite::Val::call("match", request).as<jsbind::Promise>();
+}
+
 jsbind::Promise Cache::match(const jsbind::Any& request, const CacheQueryOptions& options) {
     return emlite::Val::call("match", request, options).as<jsbind::Promise>();
+}
+
+jsbind::Promise Cache::matchAll() {
+    return emlite::Val::call("matchAll").as<jsbind::Promise>();
+}
+
+jsbind::Promise Cache::matchAll(const jsbind::Any& request) {
+    return emlite::Val::call("matchAll", request).as<jsbind::Promise>();
 }
 
 jsbind::Promise Cache::matchAll(const jsbind::Any& request, const CacheQueryOptions& options) {
@@ -32,8 +44,20 @@ jsbind::Promise Cache::put(const jsbind::Any& request, const Response& response)
     return emlite::Val::call("put", request, response).as<jsbind::Promise>();
 }
 
+jsbind::Promise Cache::delete_(const jsbind::Any& request) {
+    return emlite::Val::call("delete", request).as<jsbind::Promise>();
+}
+
 jsbind::Promise Cache::delete_(const jsbind::Any& request, const CacheQueryOptions& options) {
     return emlite::Val::call("delete", request, options).as<jsbind::Promise>();
+}
+
+jsbind::Promise Cache::keys() {
+    return emlite::Val::call("keys").as<jsbind::Promise>();
+}
+
+jsbind::Promise Cache::keys(const jsbind::Any& request) {
+    return emlite::Val::call("keys", request).as<jsbind::Promise>();
 }
 
 jsbind::Promise Cache::keys(const jsbind::Any& request, const CacheQueryOptions& options) {

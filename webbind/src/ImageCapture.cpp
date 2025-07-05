@@ -92,7 +92,11 @@ ImageCapture::ImageCapture(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 ImageCapture::ImageCapture(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ImageCapture::ImageCapture(const MediaStreamTrack& videoTrack): emlite::Val(emlite::Val::global("ImageCapture").new_(videoTrack)) {}
+ImageCapture::ImageCapture(const MediaStreamTrack& videoTrack) : emlite::Val(emlite::Val::global("ImageCapture").new_(videoTrack)) {}
+
+jsbind::Promise ImageCapture::takePhoto() {
+    return emlite::Val::call("takePhoto").as<jsbind::Promise>();
+}
 
 jsbind::Promise ImageCapture::takePhoto(const PhotoSettings& photoSettings) {
     return emlite::Val::call("takePhoto", photoSettings).as<jsbind::Promise>();

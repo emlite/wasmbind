@@ -38,8 +38,40 @@ FileSystemDirectoryReader FileSystemDirectoryEntry::createReader() {
     return FileSystemEntry::call("createReader").as<FileSystemDirectoryReader>();
 }
 
+jsbind::Undefined FileSystemDirectoryEntry::getFile() {
+    return FileSystemEntry::call("getFile").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path) {
+    return FileSystemEntry::call("getFile", path).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path, const FileSystemFlags& options) {
+    return FileSystemEntry::call("getFile", path, options).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback) {
+    return FileSystemEntry::call("getFile", path, options, successCallback).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
     return FileSystemEntry::call("getFile", path, options, successCallback, errorCallback).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory() {
+    return FileSystemEntry::call("getDirectory").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path) {
+    return FileSystemEntry::call("getDirectory", path).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path, const FileSystemFlags& options) {
+    return FileSystemEntry::call("getDirectory", path, options).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback) {
+    return FileSystemEntry::call("getDirectory", path, options, successCallback).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {

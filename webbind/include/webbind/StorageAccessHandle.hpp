@@ -32,6 +32,7 @@ public:
     jsbind::DOMString createObjectURL(const jsbind::Any& obj);
     jsbind::Undefined revokeObjectURL(const jsbind::DOMString& url);
     BroadcastChannel BroadcastChannel_(const jsbind::DOMString& name);
+    SharedWorker SharedWorker_(const jsbind::USVString& scriptURL);
     SharedWorker SharedWorker_(const jsbind::USVString& scriptURL, const jsbind::Any& options);
 };
 

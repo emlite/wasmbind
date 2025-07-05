@@ -79,9 +79,13 @@ public:
     jsbind::Any onselectedcandidatepairchange() const;
     void onselectedcandidatepairchange(const jsbind::Any& value);
     RTCIceTransport();
+    jsbind::Undefined gather();
     jsbind::Undefined gather(const RTCIceGatherOptions& options);
+    jsbind::Undefined start();
+    jsbind::Undefined start(const RTCIceParameters& remoteParameters);
     jsbind::Undefined start(const RTCIceParameters& remoteParameters, const RTCIceRole& role);
     jsbind::Undefined stop();
+    jsbind::Undefined addRemoteCandidate();
     jsbind::Undefined addRemoteCandidate(const RTCIceCandidateInit& remoteCandidate);
     jsbind::Any onerror() const;
     void onerror(const jsbind::Any& value);

@@ -28,9 +28,11 @@ public:
 
     ReadableStreamBYOBReader clone() const noexcept;
     ReadableStreamBYOBReader(const ReadableStream& stream);
+    jsbind::Promise read(const jsbind::Any& view);
     jsbind::Promise read(const jsbind::Any& view, const ReadableStreamBYOBReaderReadOptions& options);
     jsbind::Undefined releaseLock();
     jsbind::Promise closed() const;
+    jsbind::Promise cancel();
     jsbind::Promise cancel(const jsbind::Any& reason);
 };
 

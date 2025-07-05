@@ -27,7 +27,9 @@ public:
     static MediaKeys take_ownership(Handle h) noexcept;
 
     MediaKeys clone() const noexcept;
+    MediaKeySession createSession();
     MediaKeySession createSession(const MediaKeySessionType& sessionType);
+    jsbind::Promise getStatusForPolicy();
     jsbind::Promise getStatusForPolicy(const MediaKeysPolicy& policy);
     jsbind::Promise setServerCertificate(const jsbind::Any& serverCertificate);
 };

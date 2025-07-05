@@ -13,7 +13,13 @@ DOMMatrixReadOnly::DOMMatrixReadOnly(Handle h) noexcept : emlite::Val(emlite::Va
 DOMMatrixReadOnly::DOMMatrixReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DOMMatrixReadOnly::DOMMatrixReadOnly(const jsbind::Any& init): emlite::Val(emlite::Val::global("DOMMatrixReadOnly").new_(init)) {}
+DOMMatrixReadOnly::DOMMatrixReadOnly() : emlite::Val(emlite::Val::global("DOMMatrixReadOnly").new_()) {}
+
+DOMMatrixReadOnly::DOMMatrixReadOnly(const jsbind::Any& init) : emlite::Val(emlite::Val::global("DOMMatrixReadOnly").new_(init)) {}
+
+DOMMatrixReadOnly DOMMatrixReadOnly::fromMatrix() {
+    return emlite::Val::global("dommatrixreadonly").call("fromMatrix").as<DOMMatrixReadOnly>();
+}
 
 DOMMatrixReadOnly DOMMatrixReadOnly::fromMatrix(const DOMMatrixInit& other) {
     return emlite::Val::global("dommatrixreadonly").call("fromMatrix", other).as<DOMMatrixReadOnly>();
@@ -123,40 +129,148 @@ bool DOMMatrixReadOnly::isIdentity() const {
     return emlite::Val::get("isIdentity").as<bool>();
 }
 
+DOMMatrix DOMMatrixReadOnly::translate() {
+    return emlite::Val::call("translate").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::translate(double tx) {
+    return emlite::Val::call("translate", tx).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::translate(double tx, double ty) {
+    return emlite::Val::call("translate", tx, ty).as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrixReadOnly::translate(double tx, double ty, double tz) {
     return emlite::Val::call("translate", tx, ty, tz).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale() {
+    return emlite::Val::call("scale").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale(double scaleX) {
+    return emlite::Val::call("scale", scaleX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale(double scaleX, double scaleY) {
+    return emlite::Val::call("scale", scaleX, scaleY).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale(double scaleX, double scaleY, double scaleZ) {
+    return emlite::Val::call("scale", scaleX, scaleY, scaleZ).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale(double scaleX, double scaleY, double scaleZ, double originX) {
+    return emlite::Val::call("scale", scaleX, scaleY, scaleZ, originX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale(double scaleX, double scaleY, double scaleZ, double originX, double originY) {
+    return emlite::Val::call("scale", scaleX, scaleY, scaleZ, originX, originY).as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrixReadOnly::scale(double scaleX, double scaleY, double scaleZ, double originX, double originY, double originZ) {
     return emlite::Val::call("scale", scaleX, scaleY, scaleZ, originX, originY, originZ).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrixReadOnly::scaleNonUniform() {
+    return emlite::Val::call("scaleNonUniform").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scaleNonUniform(double scaleX) {
+    return emlite::Val::call("scaleNonUniform", scaleX).as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrixReadOnly::scaleNonUniform(double scaleX, double scaleY) {
     return emlite::Val::call("scaleNonUniform", scaleX, scaleY).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale3d() {
+    return emlite::Val::call("scale3d").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale3d(double scale) {
+    return emlite::Val::call("scale3d", scale).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale3d(double scale, double originX) {
+    return emlite::Val::call("scale3d", scale, originX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::scale3d(double scale, double originX, double originY) {
+    return emlite::Val::call("scale3d", scale, originX, originY).as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrixReadOnly::scale3d(double scale, double originX, double originY, double originZ) {
     return emlite::Val::call("scale3d", scale, originX, originY, originZ).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrixReadOnly::rotate() {
+    return emlite::Val::call("rotate").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::rotate(double rotX) {
+    return emlite::Val::call("rotate", rotX).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::rotate(double rotX, double rotY) {
+    return emlite::Val::call("rotate", rotX, rotY).as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrixReadOnly::rotate(double rotX, double rotY, double rotZ) {
     return emlite::Val::call("rotate", rotX, rotY, rotZ).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::rotateFromVector() {
+    return emlite::Val::call("rotateFromVector").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::rotateFromVector(double x) {
+    return emlite::Val::call("rotateFromVector", x).as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrixReadOnly::rotateFromVector(double x, double y) {
     return emlite::Val::call("rotateFromVector", x, y).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrixReadOnly::rotateAxisAngle() {
+    return emlite::Val::call("rotateAxisAngle").as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::rotateAxisAngle(double x) {
+    return emlite::Val::call("rotateAxisAngle", x).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::rotateAxisAngle(double x, double y) {
+    return emlite::Val::call("rotateAxisAngle", x, y).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::rotateAxisAngle(double x, double y, double z) {
+    return emlite::Val::call("rotateAxisAngle", x, y, z).as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrixReadOnly::rotateAxisAngle(double x, double y, double z, double angle) {
     return emlite::Val::call("rotateAxisAngle", x, y, z, angle).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::skewX() {
+    return emlite::Val::call("skewX").as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrixReadOnly::skewX(double sx) {
     return emlite::Val::call("skewX", sx).as<DOMMatrix>();
 }
 
+DOMMatrix DOMMatrixReadOnly::skewY() {
+    return emlite::Val::call("skewY").as<DOMMatrix>();
+}
+
 DOMMatrix DOMMatrixReadOnly::skewY(double sy) {
     return emlite::Val::call("skewY", sy).as<DOMMatrix>();
+}
+
+DOMMatrix DOMMatrixReadOnly::multiply() {
+    return emlite::Val::call("multiply").as<DOMMatrix>();
 }
 
 DOMMatrix DOMMatrixReadOnly::multiply(const DOMMatrixInit& other) {
@@ -173,6 +287,10 @@ DOMMatrix DOMMatrixReadOnly::flipY() {
 
 DOMMatrix DOMMatrixReadOnly::inverse() {
     return emlite::Val::call("inverse").as<DOMMatrix>();
+}
+
+DOMPoint DOMMatrixReadOnly::transformPoint() {
+    return emlite::Val::call("transformPoint").as<DOMPoint>();
 }
 
 DOMPoint DOMMatrixReadOnly::transformPoint(const DOMPointInit& point) {

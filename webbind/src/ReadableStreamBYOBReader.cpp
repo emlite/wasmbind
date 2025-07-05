@@ -27,7 +27,11 @@ ReadableStreamBYOBReader::ReadableStreamBYOBReader(Handle h) noexcept : emlite::
 ReadableStreamBYOBReader::ReadableStreamBYOBReader(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ReadableStreamBYOBReader::ReadableStreamBYOBReader(const ReadableStream& stream): emlite::Val(emlite::Val::global("ReadableStreamBYOBReader").new_(stream)) {}
+ReadableStreamBYOBReader::ReadableStreamBYOBReader(const ReadableStream& stream) : emlite::Val(emlite::Val::global("ReadableStreamBYOBReader").new_(stream)) {}
+
+jsbind::Promise ReadableStreamBYOBReader::read(const jsbind::Any& view) {
+    return emlite::Val::call("read", view).as<jsbind::Promise>();
+}
 
 jsbind::Promise ReadableStreamBYOBReader::read(const jsbind::Any& view, const ReadableStreamBYOBReaderReadOptions& options) {
     return emlite::Val::call("read", view, options).as<jsbind::Promise>();
@@ -39,6 +43,10 @@ jsbind::Undefined ReadableStreamBYOBReader::releaseLock() {
 
 jsbind::Promise ReadableStreamBYOBReader::closed() const {
     return emlite::Val::get("closed").as<jsbind::Promise>();
+}
+
+jsbind::Promise ReadableStreamBYOBReader::cancel() {
+    return emlite::Val::call("cancel").as<jsbind::Promise>();
 }
 
 jsbind::Promise ReadableStreamBYOBReader::cancel(const jsbind::Any& reason) {

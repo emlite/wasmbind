@@ -9,6 +9,10 @@ PermissionsPolicy::PermissionsPolicy(Handle h) noexcept : emlite::Val(emlite::Va
 PermissionsPolicy::PermissionsPolicy(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+bool PermissionsPolicy::allowsFeature(const jsbind::DOMString& feature) {
+    return emlite::Val::call("allowsFeature", feature).as<bool>();
+}
+
 bool PermissionsPolicy::allowsFeature(const jsbind::DOMString& feature, const jsbind::DOMString& origin) {
     return emlite::Val::call("allowsFeature", feature, origin).as<bool>();
 }

@@ -11,7 +11,7 @@ HTMLLinkElement::HTMLLinkElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLLinkElement::HTMLLinkElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLLinkElement::HTMLLinkElement(): HTMLElement(emlite::Val::global("HTMLLinkElement").new_()) {}
+HTMLLinkElement::HTMLLinkElement() : HTMLElement(emlite::Val::global("HTMLLinkElement").new_()) {}
 
 jsbind::USVString HTMLLinkElement::href() const {
     return HTMLElement::get("href").as<jsbind::USVString>();

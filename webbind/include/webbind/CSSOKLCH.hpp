@@ -14,6 +14,7 @@ public:
     static CSSOKLCH take_ownership(Handle h) noexcept;
 
     CSSOKLCH clone() const noexcept;
+    CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h);
     CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h, const jsbind::Any& alpha);
     jsbind::Any l() const;
     void l(const jsbind::Any& value);

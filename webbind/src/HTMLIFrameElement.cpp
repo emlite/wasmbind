@@ -12,7 +12,7 @@ HTMLIFrameElement::HTMLIFrameElement(Handle h) noexcept : HTMLElement(emlite::Va
 HTMLIFrameElement::HTMLIFrameElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLIFrameElement::HTMLIFrameElement(): HTMLElement(emlite::Val::global("HTMLIFrameElement").new_()) {}
+HTMLIFrameElement::HTMLIFrameElement() : HTMLElement(emlite::Val::global("HTMLIFrameElement").new_()) {}
 
 jsbind::USVString HTMLIFrameElement::src() const {
     return HTMLElement::get("src").as<jsbind::USVString>();

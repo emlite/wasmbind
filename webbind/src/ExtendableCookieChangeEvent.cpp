@@ -10,7 +10,9 @@ ExtendableCookieChangeEvent::ExtendableCookieChangeEvent(Handle h) noexcept : Ex
 ExtendableCookieChangeEvent::ExtendableCookieChangeEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-ExtendableCookieChangeEvent::ExtendableCookieChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): ExtendableEvent(emlite::Val::global("ExtendableCookieChangeEvent").new_(type, eventInitDict)) {}
+ExtendableCookieChangeEvent::ExtendableCookieChangeEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("ExtendableCookieChangeEvent").new_(type)) {}
+
+ExtendableCookieChangeEvent::ExtendableCookieChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("ExtendableCookieChangeEvent").new_(type, eventInitDict)) {}
 
 jsbind::FrozenArray<CookieListItem> ExtendableCookieChangeEvent::changed() const {
     return ExtendableEvent::get("changed").as<jsbind::FrozenArray<CookieListItem>>();

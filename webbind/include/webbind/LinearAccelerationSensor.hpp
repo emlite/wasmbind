@@ -14,6 +14,7 @@ public:
     static LinearAccelerationSensor take_ownership(Handle h) noexcept;
 
     LinearAccelerationSensor clone() const noexcept;
+    LinearAccelerationSensor();
     LinearAccelerationSensor(const jsbind::Any& options);
 };
 

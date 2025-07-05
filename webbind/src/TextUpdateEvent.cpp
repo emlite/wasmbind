@@ -9,7 +9,9 @@ TextUpdateEvent::TextUpdateEvent(Handle h) noexcept : Event(emlite::Val::take_ow
 TextUpdateEvent::TextUpdateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-TextUpdateEvent::TextUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& options): Event(emlite::Val::global("TextUpdateEvent").new_(type, options)) {}
+TextUpdateEvent::TextUpdateEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("TextUpdateEvent").new_(type)) {}
+
+TextUpdateEvent::TextUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& options) : Event(emlite::Val::global("TextUpdateEvent").new_(type, options)) {}
 
 unsigned long TextUpdateEvent::updateRangeStart() const {
     return Event::get("updateRangeStart").as<unsigned long>();

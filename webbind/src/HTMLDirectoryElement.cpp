@@ -9,7 +9,7 @@ HTMLDirectoryElement::HTMLDirectoryElement(Handle h) noexcept : HTMLElement(emli
 HTMLDirectoryElement::HTMLDirectoryElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLDirectoryElement::HTMLDirectoryElement(): HTMLElement(emlite::Val::global("HTMLDirectoryElement").new_()) {}
+HTMLDirectoryElement::HTMLDirectoryElement() : HTMLElement(emlite::Val::global("HTMLDirectoryElement").new_()) {}
 
 bool HTMLDirectoryElement::compact() const {
     return HTMLElement::get("compact").as<bool>();

@@ -10,7 +10,7 @@ CSSMathMin::CSSMathMin(Handle h) noexcept : CSSMathValue(emlite::Val::take_owner
 CSSMathMin::CSSMathMin(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 
 
-CSSMathMin::CSSMathMin(const jsbind::Any& args): CSSMathValue(emlite::Val::global("CSSMathMin").new_(args)) {}
+CSSMathMin::CSSMathMin(const jsbind::Any& args) : CSSMathValue(emlite::Val::global("CSSMathMin").new_(args)) {}
 
 CSSNumericArray CSSMathMin::values() const {
     return CSSMathValue::get("values").as<CSSNumericArray>();

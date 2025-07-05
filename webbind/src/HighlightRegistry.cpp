@@ -52,6 +52,10 @@ HighlightRegistry::HighlightRegistry(Handle h) noexcept : emlite::Val(emlite::Va
 HighlightRegistry::HighlightRegistry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Sequence<HighlightHitResult> HighlightRegistry::highlightsFromPoint(float x, float y) {
+    return emlite::Val::call("highlightsFromPoint", x, y).as<jsbind::Sequence<HighlightHitResult>>();
+}
+
 jsbind::Sequence<HighlightHitResult> HighlightRegistry::highlightsFromPoint(float x, float y, const HighlightsFromPointOptions& options) {
     return emlite::Val::call("highlightsFromPoint", x, y, options).as<jsbind::Sequence<HighlightHitResult>>();
 }

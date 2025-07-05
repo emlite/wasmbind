@@ -91,7 +91,11 @@ ReadableStream::ReadableStream(Handle h) noexcept : emlite::Val(emlite::Val::tak
 ReadableStream::ReadableStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ReadableStream::ReadableStream(const jsbind::Object& underlyingSource, const jsbind::Any& strategy): emlite::Val(emlite::Val::global("ReadableStream").new_(underlyingSource, strategy)) {}
+ReadableStream::ReadableStream() : emlite::Val(emlite::Val::global("ReadableStream").new_()) {}
+
+ReadableStream::ReadableStream(const jsbind::Object& underlyingSource) : emlite::Val(emlite::Val::global("ReadableStream").new_(underlyingSource)) {}
+
+ReadableStream::ReadableStream(const jsbind::Object& underlyingSource, const jsbind::Any& strategy) : emlite::Val(emlite::Val::global("ReadableStream").new_(underlyingSource, strategy)) {}
 
 ReadableStream ReadableStream::from(const jsbind::Any& asyncIterable) {
     return emlite::Val::global("readablestream").call("from", asyncIterable).as<ReadableStream>();
@@ -101,16 +105,32 @@ bool ReadableStream::locked() const {
     return emlite::Val::get("locked").as<bool>();
 }
 
+jsbind::Promise ReadableStream::cancel() {
+    return emlite::Val::call("cancel").as<jsbind::Promise>();
+}
+
 jsbind::Promise ReadableStream::cancel(const jsbind::Any& reason) {
     return emlite::Val::call("cancel", reason).as<jsbind::Promise>();
+}
+
+jsbind::Any ReadableStream::getReader() {
+    return emlite::Val::call("getReader").as<jsbind::Any>();
 }
 
 jsbind::Any ReadableStream::getReader(const ReadableStreamGetReaderOptions& options) {
     return emlite::Val::call("getReader", options).as<jsbind::Any>();
 }
 
+ReadableStream ReadableStream::pipeThrough(const ReadableWritablePair& transform) {
+    return emlite::Val::call("pipeThrough", transform).as<ReadableStream>();
+}
+
 ReadableStream ReadableStream::pipeThrough(const ReadableWritablePair& transform, const StreamPipeOptions& options) {
     return emlite::Val::call("pipeThrough", transform, options).as<ReadableStream>();
+}
+
+jsbind::Promise ReadableStream::pipeTo(const WritableStream& destination) {
+    return emlite::Val::call("pipeTo", destination).as<jsbind::Promise>();
 }
 
 jsbind::Promise ReadableStream::pipeTo(const WritableStream& destination, const StreamPipeOptions& options) {

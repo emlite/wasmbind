@@ -10,7 +10,9 @@ CSSParserQualifiedRule::CSSParserQualifiedRule(Handle h) noexcept : CSSParserRul
 CSSParserQualifiedRule::CSSParserQualifiedRule(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 
 
-CSSParserQualifiedRule::CSSParserQualifiedRule(const jsbind::Sequence<jsbind::Any>& prelude, const jsbind::Sequence<CSSParserRule>& body): CSSParserRule(emlite::Val::global("CSSParserQualifiedRule").new_(prelude, body)) {}
+CSSParserQualifiedRule::CSSParserQualifiedRule(const jsbind::Sequence<jsbind::Any>& prelude) : CSSParserRule(emlite::Val::global("CSSParserQualifiedRule").new_(prelude)) {}
+
+CSSParserQualifiedRule::CSSParserQualifiedRule(const jsbind::Sequence<jsbind::Any>& prelude, const jsbind::Sequence<CSSParserRule>& body) : CSSParserRule(emlite::Val::global("CSSParserQualifiedRule").new_(prelude, body)) {}
 
 jsbind::FrozenArray<CSSParserValue> CSSParserQualifiedRule::prelude() const {
     return CSSParserRule::get("prelude").as<jsbind::FrozenArray<CSSParserValue>>();

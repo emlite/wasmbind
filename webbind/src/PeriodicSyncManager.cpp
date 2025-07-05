@@ -25,6 +25,10 @@ PeriodicSyncManager::PeriodicSyncManager(Handle h) noexcept : emlite::Val(emlite
 PeriodicSyncManager::PeriodicSyncManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise PeriodicSyncManager::register_(const jsbind::DOMString& tag) {
+    return emlite::Val::call("register", tag).as<jsbind::Promise>();
+}
+
 jsbind::Promise PeriodicSyncManager::register_(const jsbind::DOMString& tag, const BackgroundSyncOptions& options) {
     return emlite::Val::call("register", tag, options).as<jsbind::Promise>();
 }

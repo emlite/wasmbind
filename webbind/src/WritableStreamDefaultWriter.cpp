@@ -11,7 +11,7 @@ WritableStreamDefaultWriter::WritableStreamDefaultWriter(Handle h) noexcept : em
 WritableStreamDefaultWriter::WritableStreamDefaultWriter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-WritableStreamDefaultWriter::WritableStreamDefaultWriter(const WritableStream& stream): emlite::Val(emlite::Val::global("WritableStreamDefaultWriter").new_(stream)) {}
+WritableStreamDefaultWriter::WritableStreamDefaultWriter(const WritableStream& stream) : emlite::Val(emlite::Val::global("WritableStreamDefaultWriter").new_(stream)) {}
 
 jsbind::Promise WritableStreamDefaultWriter::closed() const {
     return emlite::Val::get("closed").as<jsbind::Promise>();
@@ -25,6 +25,10 @@ jsbind::Promise WritableStreamDefaultWriter::ready() const {
     return emlite::Val::get("ready").as<jsbind::Promise>();
 }
 
+jsbind::Promise WritableStreamDefaultWriter::abort() {
+    return emlite::Val::call("abort").as<jsbind::Promise>();
+}
+
 jsbind::Promise WritableStreamDefaultWriter::abort(const jsbind::Any& reason) {
     return emlite::Val::call("abort", reason).as<jsbind::Promise>();
 }
@@ -35,6 +39,10 @@ jsbind::Promise WritableStreamDefaultWriter::close() {
 
 jsbind::Undefined WritableStreamDefaultWriter::releaseLock() {
     return emlite::Val::call("releaseLock").as<jsbind::Undefined>();
+}
+
+jsbind::Promise WritableStreamDefaultWriter::write() {
+    return emlite::Val::call("write").as<jsbind::Promise>();
 }
 
 jsbind::Promise WritableStreamDefaultWriter::write(const jsbind::Any& chunk) {

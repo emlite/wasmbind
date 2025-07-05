@@ -38,12 +38,20 @@ jsbind::FrozenArray<jsbind::DOMString> PushManager::supportedContentEncodings() 
     return emlite::Val::global("pushmanager").get("supportedContentEncodings").as<jsbind::FrozenArray<jsbind::DOMString>>();
 }
 
+jsbind::Promise PushManager::subscribe() {
+    return emlite::Val::call("subscribe").as<jsbind::Promise>();
+}
+
 jsbind::Promise PushManager::subscribe(const PushSubscriptionOptionsInit& options) {
     return emlite::Val::call("subscribe", options).as<jsbind::Promise>();
 }
 
 jsbind::Promise PushManager::getSubscription() {
     return emlite::Val::call("getSubscription").as<jsbind::Promise>();
+}
+
+jsbind::Promise PushManager::permissionState() {
+    return emlite::Val::call("permissionState").as<jsbind::Promise>();
 }
 
 jsbind::Promise PushManager::permissionState(const PushSubscriptionOptionsInit& options) {

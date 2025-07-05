@@ -14,6 +14,7 @@ public:
     static Comment take_ownership(Handle h) noexcept;
 
     Comment clone() const noexcept;
+    Comment();
     Comment(const jsbind::DOMString& data);
 };
 

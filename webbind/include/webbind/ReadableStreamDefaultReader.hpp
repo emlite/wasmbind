@@ -32,6 +32,7 @@ public:
     jsbind::Promise read();
     jsbind::Undefined releaseLock();
     jsbind::Promise closed() const;
+    jsbind::Promise cancel();
     jsbind::Promise cancel(const jsbind::Any& reason);
 };
 

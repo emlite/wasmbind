@@ -13,7 +13,9 @@ XRWebGLLayer::XRWebGLLayer(Handle h) noexcept : XRLayer(emlite::Val::take_owners
 XRWebGLLayer::XRWebGLLayer(const emlite::Val &val) noexcept: XRLayer(val) {}
 
 
-XRWebGLLayer::XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const jsbind::Any& layerInit): XRLayer(emlite::Val::global("XRWebGLLayer").new_(session, context, layerInit)) {}
+XRWebGLLayer::XRWebGLLayer(const XRSession& session, const jsbind::Any& context) : XRLayer(emlite::Val::global("XRWebGLLayer").new_(session, context)) {}
+
+XRWebGLLayer::XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const jsbind::Any& layerInit) : XRLayer(emlite::Val::global("XRWebGLLayer").new_(session, context, layerInit)) {}
 
 bool XRWebGLLayer::antialias() const {
     return XRLayer::get("antialias").as<bool>();

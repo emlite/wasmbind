@@ -123,16 +123,32 @@ Rewriter::Rewriter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 Rewriter::Rewriter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise Rewriter::create() {
+    return emlite::Val::global("rewriter").call("create").as<jsbind::Promise>();
+}
+
 jsbind::Promise Rewriter::create(const RewriterCreateOptions& options) {
     return emlite::Val::global("rewriter").call("create", options).as<jsbind::Promise>();
+}
+
+jsbind::Promise Rewriter::availability() {
+    return emlite::Val::global("rewriter").call("availability").as<jsbind::Promise>();
 }
 
 jsbind::Promise Rewriter::availability(const RewriterCreateCoreOptions& options) {
     return emlite::Val::global("rewriter").call("availability", options).as<jsbind::Promise>();
 }
 
+jsbind::Promise Rewriter::rewrite(const jsbind::DOMString& input) {
+    return emlite::Val::call("rewrite", input).as<jsbind::Promise>();
+}
+
 jsbind::Promise Rewriter::rewrite(const jsbind::DOMString& input, const RewriterRewriteOptions& options) {
     return emlite::Val::call("rewrite", input, options).as<jsbind::Promise>();
+}
+
+ReadableStream Rewriter::rewriteStreaming(const jsbind::DOMString& input) {
+    return emlite::Val::call("rewriteStreaming", input).as<ReadableStream>();
 }
 
 ReadableStream Rewriter::rewriteStreaming(const jsbind::DOMString& input, const RewriterRewriteOptions& options) {
@@ -165,6 +181,10 @@ jsbind::FrozenArray<jsbind::DOMString> Rewriter::expectedContextLanguages() cons
 
 jsbind::DOMString Rewriter::outputLanguage() const {
     return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+}
+
+jsbind::Promise Rewriter::measureInputUsage(const jsbind::DOMString& input) {
+    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise>();
 }
 
 jsbind::Promise Rewriter::measureInputUsage(const jsbind::DOMString& input, const RewriterRewriteOptions& options) {

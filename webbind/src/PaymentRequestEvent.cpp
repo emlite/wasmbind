@@ -322,7 +322,9 @@ PaymentRequestEvent::PaymentRequestEvent(Handle h) noexcept : ExtendableEvent(em
 PaymentRequestEvent::PaymentRequestEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-PaymentRequestEvent::PaymentRequestEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): ExtendableEvent(emlite::Val::global("PaymentRequestEvent").new_(type, eventInitDict)) {}
+PaymentRequestEvent::PaymentRequestEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("PaymentRequestEvent").new_(type)) {}
+
+PaymentRequestEvent::PaymentRequestEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("PaymentRequestEvent").new_(type, eventInitDict)) {}
 
 jsbind::USVString PaymentRequestEvent::topOrigin() const {
     return ExtendableEvent::get("topOrigin").as<jsbind::USVString>();
@@ -360,8 +362,16 @@ jsbind::Promise PaymentRequestEvent::openWindow(const jsbind::USVString& url) {
     return ExtendableEvent::call("openWindow", url).as<jsbind::Promise>();
 }
 
+jsbind::Promise PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName) {
+    return ExtendableEvent::call("changePaymentMethod", methodName).as<jsbind::Promise>();
+}
+
 jsbind::Promise PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName, const jsbind::Object& methodDetails) {
     return ExtendableEvent::call("changePaymentMethod", methodName, methodDetails).as<jsbind::Promise>();
+}
+
+jsbind::Promise PaymentRequestEvent::changeShippingAddress() {
+    return ExtendableEvent::call("changeShippingAddress").as<jsbind::Promise>();
 }
 
 jsbind::Promise PaymentRequestEvent::changeShippingAddress(const AddressInit& shippingAddress) {

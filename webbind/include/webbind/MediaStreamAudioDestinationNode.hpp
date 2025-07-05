@@ -16,6 +16,7 @@ public:
     static MediaStreamAudioDestinationNode take_ownership(Handle h) noexcept;
 
     MediaStreamAudioDestinationNode clone() const noexcept;
+    MediaStreamAudioDestinationNode(const AudioContext& context);
     MediaStreamAudioDestinationNode(const AudioContext& context, const jsbind::Any& options);
     MediaStream stream() const;
 };

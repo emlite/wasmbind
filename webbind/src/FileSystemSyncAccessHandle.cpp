@@ -25,8 +25,16 @@ FileSystemSyncAccessHandle::FileSystemSyncAccessHandle(Handle h) noexcept : emli
 FileSystemSyncAccessHandle::FileSystemSyncAccessHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+long long FileSystemSyncAccessHandle::read(const jsbind::Any& buffer) {
+    return emlite::Val::call("read", buffer).as<long long>();
+}
+
 long long FileSystemSyncAccessHandle::read(const jsbind::Any& buffer, const FileSystemReadWriteOptions& options) {
     return emlite::Val::call("read", buffer, options).as<long long>();
+}
+
+long long FileSystemSyncAccessHandle::write(const jsbind::Any& buffer) {
+    return emlite::Val::call("write", buffer).as<long long>();
 }
 
 long long FileSystemSyncAccessHandle::write(const jsbind::Any& buffer, const FileSystemReadWriteOptions& options) {

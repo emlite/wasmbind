@@ -27,6 +27,14 @@ jsbind::Undefined WebGL2RenderingContext::copyBufferSubData(const jsbind::Any& r
     return emlite::Val::call("copyBufferSubData", readTarget, writeTarget, readOffset, writeOffset, size).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::getBufferSubData(const jsbind::Any& target, const jsbind::Any& srcByteOffset, const jsbind::Any& dstBuffer) {
+    return emlite::Val::call("getBufferSubData", target, srcByteOffset, dstBuffer).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::getBufferSubData(const jsbind::Any& target, const jsbind::Any& srcByteOffset, const jsbind::Any& dstBuffer, long long dstOffset) {
+    return emlite::Val::call("getBufferSubData", target, srcByteOffset, dstBuffer, dstOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::getBufferSubData(const jsbind::Any& target, const jsbind::Any& srcByteOffset, const jsbind::Any& dstBuffer, long long dstOffset, const jsbind::Any& length) {
     return emlite::Val::call("getBufferSubData", target, srcByteOffset, dstBuffer, dstOffset, length).as<jsbind::Undefined>();
 }
@@ -71,6 +79,10 @@ jsbind::Undefined WebGL2RenderingContext::texImage3D(const jsbind::Any& target, 
     return emlite::Val::call("texImage3D", target, level, internalformat, width, height, depth, border, format, type, srcData, srcOffset).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::texSubImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& zoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& format, const jsbind::Any& type, const jsbind::Any& srcData) {
+    return emlite::Val::call("texSubImage3D", target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, srcData).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::texSubImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& zoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& format, const jsbind::Any& type, const jsbind::Any& srcData, long long srcOffset) {
     return emlite::Val::call("texSubImage3D", target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, srcData, srcOffset).as<jsbind::Undefined>();
 }
@@ -79,8 +91,24 @@ jsbind::Undefined WebGL2RenderingContext::copyTexSubImage3D(const jsbind::Any& t
     return emlite::Val::call("copyTexSubImage3D", target, level, xoffset, yoffset, zoffset, x, y, width, height).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::compressedTexImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& internalformat, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& border, const jsbind::Any& srcData) {
+    return emlite::Val::call("compressedTexImage3D", target, level, internalformat, width, height, depth, border, srcData).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::compressedTexImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& internalformat, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& border, const jsbind::Any& srcData, long long srcOffset) {
+    return emlite::Val::call("compressedTexImage3D", target, level, internalformat, width, height, depth, border, srcData, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::compressedTexImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& internalformat, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& border, const jsbind::Any& srcData, long long srcOffset, const jsbind::Any& srcLengthOverride) {
     return emlite::Val::call("compressedTexImage3D", target, level, internalformat, width, height, depth, border, srcData, srcOffset, srcLengthOverride).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::compressedTexSubImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& zoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& format, const jsbind::Any& srcData) {
+    return emlite::Val::call("compressedTexSubImage3D", target, level, xoffset, yoffset, zoffset, width, height, depth, format, srcData).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::compressedTexSubImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& zoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& format, const jsbind::Any& srcData, long long srcOffset) {
+    return emlite::Val::call("compressedTexSubImage3D", target, level, xoffset, yoffset, zoffset, width, height, depth, format, srcData, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::compressedTexSubImage3D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& zoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& depth, const jsbind::Any& format, const jsbind::Any& srcData, long long srcOffset, const jsbind::Any& srcLengthOverride) {
@@ -107,40 +135,120 @@ jsbind::Undefined WebGL2RenderingContext::uniform4ui(const WebGLUniformLocation&
     return emlite::Val::call("uniform4ui", location, v0, v1, v2, v3).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniform1uiv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform1uiv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform1uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform1uiv", location, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniform1uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform1uiv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform2uiv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform2uiv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform2uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform2uiv", location, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniform2uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform2uiv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniform3uiv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform3uiv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform3uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform3uiv", location, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniform3uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform3uiv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform4uiv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform4uiv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform4uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform4uiv", location, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniform4uiv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform4uiv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix3x2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix3x2fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix3x2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix3x2fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix3x2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniformMatrix3x2fv", location, transpose, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix4x2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix4x2fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix4x2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix4x2fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix4x2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniformMatrix4x2fv", location, transpose, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix2x3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix2x3fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix2x3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix2x3fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix2x3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniformMatrix2x3fv", location, transpose, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix4x3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix4x3fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix4x3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix4x3fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix4x3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniformMatrix4x3fv", location, transpose, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix2x4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix2x4fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix2x4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix2x4fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix2x4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniformMatrix2x4fv", location, transpose, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix3x4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix3x4fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix3x4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix3x4fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix3x4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
@@ -187,12 +295,24 @@ jsbind::Undefined WebGL2RenderingContext::drawBuffers(const jsbind::Sequence<jsb
     return emlite::Val::call("drawBuffers", buffers).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::clearBufferfv(const jsbind::Any& buffer, const jsbind::Any& drawbuffer, const jsbind::Any& values) {
+    return emlite::Val::call("clearBufferfv", buffer, drawbuffer, values).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::clearBufferfv(const jsbind::Any& buffer, const jsbind::Any& drawbuffer, const jsbind::Any& values, long long srcOffset) {
     return emlite::Val::call("clearBufferfv", buffer, drawbuffer, values, srcOffset).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::clearBufferiv(const jsbind::Any& buffer, const jsbind::Any& drawbuffer, const jsbind::Any& values) {
+    return emlite::Val::call("clearBufferiv", buffer, drawbuffer, values).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::clearBufferiv(const jsbind::Any& buffer, const jsbind::Any& drawbuffer, const jsbind::Any& values, long long srcOffset) {
     return emlite::Val::call("clearBufferiv", buffer, drawbuffer, values, srcOffset).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::clearBufferuiv(const jsbind::Any& buffer, const jsbind::Any& drawbuffer, const jsbind::Any& values) {
+    return emlite::Val::call("clearBufferuiv", buffer, drawbuffer, values).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::clearBufferuiv(const jsbind::Any& buffer, const jsbind::Any& drawbuffer, const jsbind::Any& values, long long srcOffset) {
@@ -375,8 +495,16 @@ jsbind::Undefined WebGL2RenderingContext::bindVertexArray(const WebGLVertexArray
     return emlite::Val::call("bindVertexArray", array).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::bufferData(const jsbind::Any& target, const jsbind::Any& srcData, const jsbind::Any& usage, long long srcOffset) {
+    return emlite::Val::call("bufferData", target, srcData, usage, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::bufferData(const jsbind::Any& target, const jsbind::Any& srcData, const jsbind::Any& usage, long long srcOffset, const jsbind::Any& length) {
     return emlite::Val::call("bufferData", target, srcData, usage, srcOffset, length).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::bufferSubData(const jsbind::Any& target, const jsbind::Any& dstByteOffset, const jsbind::Any& srcData, long long srcOffset) {
+    return emlite::Val::call("bufferSubData", target, dstByteOffset, srcData, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::bufferSubData(const jsbind::Any& target, const jsbind::Any& dstByteOffset, const jsbind::Any& srcData, long long srcOffset, const jsbind::Any& length) {
@@ -391,52 +519,156 @@ jsbind::Undefined WebGL2RenderingContext::texSubImage2D(const jsbind::Any& targe
     return emlite::Val::call("texSubImage2D", target, level, xoffset, yoffset, width, height, format, type, srcData, srcOffset).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::compressedTexImage2D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& internalformat, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& border, const jsbind::Any& srcData) {
+    return emlite::Val::call("compressedTexImage2D", target, level, internalformat, width, height, border, srcData).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::compressedTexImage2D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& internalformat, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& border, const jsbind::Any& srcData, long long srcOffset) {
+    return emlite::Val::call("compressedTexImage2D", target, level, internalformat, width, height, border, srcData, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::compressedTexImage2D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& internalformat, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& border, const jsbind::Any& srcData, long long srcOffset, const jsbind::Any& srcLengthOverride) {
     return emlite::Val::call("compressedTexImage2D", target, level, internalformat, width, height, border, srcData, srcOffset, srcLengthOverride).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::compressedTexSubImage2D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& format, const jsbind::Any& srcData) {
+    return emlite::Val::call("compressedTexSubImage2D", target, level, xoffset, yoffset, width, height, format, srcData).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::compressedTexSubImage2D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& format, const jsbind::Any& srcData, long long srcOffset) {
+    return emlite::Val::call("compressedTexSubImage2D", target, level, xoffset, yoffset, width, height, format, srcData, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::compressedTexSubImage2D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& xoffset, const jsbind::Any& yoffset, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& format, const jsbind::Any& srcData, long long srcOffset, const jsbind::Any& srcLengthOverride) {
     return emlite::Val::call("compressedTexSubImage2D", target, level, xoffset, yoffset, width, height, format, srcData, srcOffset, srcLengthOverride).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniform1fv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform1fv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform1fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform1fv", location, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniform1fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform1fv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform2fv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform2fv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform2fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform2fv", location, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniform2fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform2fv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniform3fv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform3fv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform3fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform3fv", location, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniform3fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform3fv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform4fv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform4fv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform4fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform4fv", location, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniform4fv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform4fv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniform1iv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform1iv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform1iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform1iv", location, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniform1iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform1iv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform2iv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform2iv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform2iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform2iv", location, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniform2iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform2iv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniform3iv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform3iv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform3iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform3iv", location, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniform3iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform3iv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform4iv(const WebGLUniformLocation& location, const jsbind::Any& data) {
+    return emlite::Val::call("uniform4iv", location, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniform4iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniform4iv", location, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniform4iv(const WebGLUniformLocation& location, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniform4iv", location, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix2fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix2fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix2fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniformMatrix2fv", location, transpose, data, srcOffset, srcLength).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix3fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix3fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix3fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {
     return emlite::Val::call("uniformMatrix3fv", location, transpose, data, srcOffset, srcLength).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data) {
+    return emlite::Val::call("uniformMatrix4fv", location, transpose, data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined WebGL2RenderingContext::uniformMatrix4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset) {
+    return emlite::Val::call("uniformMatrix4fv", location, transpose, data, srcOffset).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniformMatrix4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& data, long long srcOffset, const jsbind::Any& srcLength) {

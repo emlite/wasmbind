@@ -107,14 +107,19 @@ public:
     jsbind::Any ondevicechange() const;
     void ondevicechange(const jsbind::Any& value);
     jsbind::Promise enumerateDevices();
+    jsbind::Promise selectAudioOutput();
     jsbind::Promise selectAudioOutput(const AudioOutputOptions& options);
+    jsbind::Undefined setCaptureHandleConfig();
     jsbind::Undefined setCaptureHandleConfig(const CaptureHandleConfig& config);
     jsbind::Undefined setSupportedCaptureActions(const jsbind::Sequence<jsbind::DOMString>& actions);
     jsbind::Any oncaptureaction() const;
     void oncaptureaction(const jsbind::Any& value);
     MediaTrackSupportedConstraints getSupportedConstraints();
+    jsbind::Promise getUserMedia();
     jsbind::Promise getUserMedia(const MediaStreamConstraints& constraints);
+    jsbind::Promise getViewportMedia();
     jsbind::Promise getViewportMedia(const DisplayMediaStreamOptions& options);
+    jsbind::Promise getDisplayMedia();
     jsbind::Promise getDisplayMedia(const DisplayMediaStreamOptions& options);
 };
 

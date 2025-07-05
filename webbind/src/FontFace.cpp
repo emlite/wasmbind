@@ -12,7 +12,9 @@ FontFace::FontFace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 FontFace::FontFace(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-FontFace::FontFace(const jsbind::CSSOMString& family, const jsbind::Any& source, const jsbind::Any& descriptors): emlite::Val(emlite::Val::global("FontFace").new_(family, source, descriptors)) {}
+FontFace::FontFace(const jsbind::CSSOMString& family, const jsbind::Any& source) : emlite::Val(emlite::Val::global("FontFace").new_(family, source)) {}
+
+FontFace::FontFace(const jsbind::CSSOMString& family, const jsbind::Any& source, const jsbind::Any& descriptors) : emlite::Val(emlite::Val::global("FontFace").new_(family, source, descriptors)) {}
 
 jsbind::CSSOMString FontFace::family() const {
     return emlite::Val::get("family").as<jsbind::CSSOMString>();

@@ -14,6 +14,7 @@ public:
     static CloseEvent take_ownership(Handle h) noexcept;
 
     CloseEvent clone() const noexcept;
+    CloseEvent(const jsbind::DOMString& type);
     CloseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     bool wasClean() const;
     unsigned short code() const;

@@ -67,8 +67,16 @@ Fence::Fence(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Fence::Fence(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Undefined Fence::reportEvent() {
+    return emlite::Val::call("reportEvent").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Fence::reportEvent(const jsbind::Any& event) {
     return emlite::Val::call("reportEvent", event).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Fence::setReportEventDataForAutomaticBeacons() {
+    return emlite::Val::call("setReportEventDataForAutomaticBeacons").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Fence::setReportEventDataForAutomaticBeacons(const FenceEvent& event) {

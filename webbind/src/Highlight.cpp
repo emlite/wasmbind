@@ -10,7 +10,7 @@ Highlight::Highlight(Handle h) noexcept : emlite::Val(emlite::Val::take_ownershi
 Highlight::Highlight(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Highlight::Highlight(const AbstractRange& initialRanges): emlite::Val(emlite::Val::global("Highlight").new_(initialRanges)) {}
+Highlight::Highlight(const AbstractRange& initialRanges) : emlite::Val(emlite::Val::global("Highlight").new_(initialRanges)) {}
 
 long Highlight::priority() const {
     return emlite::Val::get("priority").as<long>();

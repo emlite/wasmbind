@@ -13,10 +13,18 @@ Response::Response(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 Response::Response(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Response::Response(const jsbind::Any& body, const jsbind::Any& init): emlite::Val(emlite::Val::global("Response").new_(body, init)) {}
+Response::Response() : emlite::Val(emlite::Val::global("Response").new_()) {}
+
+Response::Response(const jsbind::Any& body) : emlite::Val(emlite::Val::global("Response").new_(body)) {}
+
+Response::Response(const jsbind::Any& body, const jsbind::Any& init) : emlite::Val(emlite::Val::global("Response").new_(body, init)) {}
 
 Response Response::error() {
     return emlite::Val::global("response").call("error").as<Response>();
+}
+
+Response Response::redirect(const jsbind::USVString& url) {
+    return emlite::Val::global("response").call("redirect", url).as<Response>();
 }
 
 Response Response::redirect(const jsbind::USVString& url, unsigned short status) {

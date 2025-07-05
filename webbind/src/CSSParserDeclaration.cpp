@@ -10,7 +10,9 @@ CSSParserDeclaration::CSSParserDeclaration(Handle h) noexcept : CSSParserRule(em
 CSSParserDeclaration::CSSParserDeclaration(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 
 
-CSSParserDeclaration::CSSParserDeclaration(const jsbind::DOMString& name, const jsbind::Sequence<CSSParserRule>& body): CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name, body)) {}
+CSSParserDeclaration::CSSParserDeclaration(const jsbind::DOMString& name) : CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name)) {}
+
+CSSParserDeclaration::CSSParserDeclaration(const jsbind::DOMString& name, const jsbind::Sequence<CSSParserRule>& body) : CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name, body)) {}
 
 jsbind::DOMString CSSParserDeclaration::name() const {
     return CSSParserRule::get("name").as<jsbind::DOMString>();

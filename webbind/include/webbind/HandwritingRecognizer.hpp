@@ -33,6 +33,7 @@ public:
     static HandwritingRecognizer take_ownership(Handle h) noexcept;
 
     HandwritingRecognizer clone() const noexcept;
+    HandwritingDrawing startDrawing();
     HandwritingDrawing startDrawing(const HandwritingHints& hints);
     jsbind::Undefined finish();
 };

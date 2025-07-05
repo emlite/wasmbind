@@ -18,6 +18,7 @@ public:
     static AudioWorkletNode take_ownership(Handle h) noexcept;
 
     AudioWorkletNode clone() const noexcept;
+    AudioWorkletNode(const BaseAudioContext& context, const jsbind::DOMString& name);
     AudioWorkletNode(const BaseAudioContext& context, const jsbind::DOMString& name, const jsbind::Any& options);
     AudioParamMap parameters() const;
     jsbind::Any port() const;

@@ -32,6 +32,7 @@ public:
     static VideoColorSpace take_ownership(Handle h) noexcept;
 
     VideoColorSpace clone() const noexcept;
+    VideoColorSpace();
     VideoColorSpace(const VideoColorSpaceInit& init);
     VideoColorPrimaries primaries() const;
     VideoTransferCharacteristics transfer() const;

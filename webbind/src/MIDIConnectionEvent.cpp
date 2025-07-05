@@ -10,7 +10,9 @@ MIDIConnectionEvent::MIDIConnectionEvent(Handle h) noexcept : Event(emlite::Val:
 MIDIConnectionEvent::MIDIConnectionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-MIDIConnectionEvent::MIDIConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("MIDIConnectionEvent").new_(type, eventInitDict)) {}
+MIDIConnectionEvent::MIDIConnectionEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("MIDIConnectionEvent").new_(type)) {}
+
+MIDIConnectionEvent::MIDIConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MIDIConnectionEvent").new_(type, eventInitDict)) {}
 
 MIDIPort MIDIConnectionEvent::port() const {
     return Event::get("port").as<MIDIPort>();

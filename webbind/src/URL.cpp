@@ -10,10 +10,20 @@ URL::URL(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 URL::URL(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-URL::URL(const jsbind::USVString& url, const jsbind::USVString& base): emlite::Val(emlite::Val::global("URL").new_(url, base)) {}
+URL::URL(const jsbind::USVString& url) : emlite::Val(emlite::Val::global("URL").new_(url)) {}
+
+URL::URL(const jsbind::USVString& url, const jsbind::USVString& base) : emlite::Val(emlite::Val::global("URL").new_(url, base)) {}
+
+URL URL::parse(const jsbind::USVString& url) {
+    return emlite::Val::global("url").call("parse", url).as<URL>();
+}
 
 URL URL::parse(const jsbind::USVString& url, const jsbind::USVString& base) {
     return emlite::Val::global("url").call("parse", url, base).as<URL>();
+}
+
+bool URL::canParse(const jsbind::USVString& url) {
+    return emlite::Val::global("url").call("canParse", url).as<bool>();
 }
 
 bool URL::canParse(const jsbind::USVString& url, const jsbind::USVString& base) {

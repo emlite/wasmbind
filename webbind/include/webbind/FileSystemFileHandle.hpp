@@ -31,6 +31,7 @@ public:
 
     FileSystemFileHandle clone() const noexcept;
     jsbind::Promise getFile();
+    jsbind::Promise createWritable();
     jsbind::Promise createWritable(const FileSystemCreateWritableOptions& options);
     jsbind::Promise createSyncAccessHandle();
 };

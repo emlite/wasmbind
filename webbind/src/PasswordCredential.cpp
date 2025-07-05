@@ -9,7 +9,7 @@ PasswordCredential::PasswordCredential(Handle h) noexcept : Credential(emlite::V
 PasswordCredential::PasswordCredential(const emlite::Val &val) noexcept: Credential(val) {}
 
 
-PasswordCredential::PasswordCredential(const jsbind::Any& data): Credential(emlite::Val::global("PasswordCredential").new_(data)) {}
+PasswordCredential::PasswordCredential(const jsbind::Any& data) : Credential(emlite::Val::global("PasswordCredential").new_(data)) {}
 
 jsbind::USVString PasswordCredential::password() const {
     return Credential::get("password").as<jsbind::USVString>();

@@ -33,7 +33,11 @@ BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(Handle h) noexcept : 
 BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(const emlite::Val &val) noexcept: BackgroundFetchEvent(val) {}
 
 
-BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(const jsbind::DOMString& type, const jsbind::Any& init): BackgroundFetchEvent(emlite::Val::global("BackgroundFetchUpdateUIEvent").new_(type, init)) {}
+BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(const jsbind::DOMString& type, const jsbind::Any& init) : BackgroundFetchEvent(emlite::Val::global("BackgroundFetchUpdateUIEvent").new_(type, init)) {}
+
+jsbind::Promise BackgroundFetchUpdateUIEvent::updateUI() {
+    return BackgroundFetchEvent::call("updateUI").as<jsbind::Promise>();
+}
 
 jsbind::Promise BackgroundFetchUpdateUIEvent::updateUI(const BackgroundFetchUIOptions& options) {
     return BackgroundFetchEvent::call("updateUI", options).as<jsbind::Promise>();

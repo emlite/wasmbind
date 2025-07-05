@@ -10,7 +10,9 @@ SharedWorker::SharedWorker(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 SharedWorker::SharedWorker(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-SharedWorker::SharedWorker(const jsbind::Any& scriptURL, const jsbind::Any& options): EventTarget(emlite::Val::global("SharedWorker").new_(scriptURL, options)) {}
+SharedWorker::SharedWorker(const jsbind::Any& scriptURL) : EventTarget(emlite::Val::global("SharedWorker").new_(scriptURL)) {}
+
+SharedWorker::SharedWorker(const jsbind::Any& scriptURL, const jsbind::Any& options) : EventTarget(emlite::Val::global("SharedWorker").new_(scriptURL, options)) {}
 
 jsbind::Any SharedWorker::port() const {
     return EventTarget::get("port").as<jsbind::Any>();

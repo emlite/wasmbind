@@ -9,7 +9,11 @@ DOMException::DOMException(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 DOMException::DOMException(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DOMException::DOMException(const jsbind::DOMString& message, const jsbind::DOMString& name): emlite::Val(emlite::Val::global("DOMException").new_(message, name)) {}
+DOMException::DOMException() : emlite::Val(emlite::Val::global("DOMException").new_()) {}
+
+DOMException::DOMException(const jsbind::DOMString& message) : emlite::Val(emlite::Val::global("DOMException").new_(message)) {}
+
+DOMException::DOMException(const jsbind::DOMString& message, const jsbind::DOMString& name) : emlite::Val(emlite::Val::global("DOMException").new_(message, name)) {}
 
 jsbind::DOMString DOMException::name() const {
     return emlite::Val::get("name").as<jsbind::DOMString>();

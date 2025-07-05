@@ -16,6 +16,7 @@ public:
     static PannerNode take_ownership(Handle h) noexcept;
 
     PannerNode clone() const noexcept;
+    PannerNode(const BaseAudioContext& context);
     PannerNode(const BaseAudioContext& context, const jsbind::Any& options);
     PanningModelType panningModel() const;
     void panningModel(const PanningModelType& value);

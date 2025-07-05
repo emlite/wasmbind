@@ -47,8 +47,11 @@ public:
     jsbind::DOMString name() const;
     long long version() const;
     DOMStringList objectStoreNames() const;
+    IDBTransaction transaction(const jsbind::Any& storeNames);
+    IDBTransaction transaction(const jsbind::Any& storeNames, const IDBTransactionMode& mode);
     IDBTransaction transaction(const jsbind::Any& storeNames, const IDBTransactionMode& mode, const IDBTransactionOptions& options);
     jsbind::Undefined close();
+    IDBObjectStore createObjectStore(const jsbind::DOMString& name);
     IDBObjectStore createObjectStore(const jsbind::DOMString& name, const IDBObjectStoreParameters& options);
     jsbind::Undefined deleteObjectStore(const jsbind::DOMString& name);
     jsbind::Any onabort() const;

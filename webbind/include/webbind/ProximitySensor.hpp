@@ -14,6 +14,7 @@ public:
     static ProximitySensor take_ownership(Handle h) noexcept;
 
     ProximitySensor clone() const noexcept;
+    ProximitySensor();
     ProximitySensor(const jsbind::Any& sensorOptions);
     double distance() const;
     double max() const;

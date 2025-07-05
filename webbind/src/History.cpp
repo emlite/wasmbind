@@ -25,6 +25,10 @@ jsbind::Any History::state() const {
     return emlite::Val::get("state").as<jsbind::Any>();
 }
 
+jsbind::Undefined History::go() {
+    return emlite::Val::call("go").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined History::go(long delta) {
     return emlite::Val::call("go", delta).as<jsbind::Undefined>();
 }
@@ -37,8 +41,16 @@ jsbind::Undefined History::forward() {
     return emlite::Val::call("forward").as<jsbind::Undefined>();
 }
 
+jsbind::Undefined History::pushState(const jsbind::Any& data, const jsbind::DOMString& unused) {
+    return emlite::Val::call("pushState", data, unused).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined History::pushState(const jsbind::Any& data, const jsbind::DOMString& unused, const jsbind::USVString& url) {
     return emlite::Val::call("pushState", data, unused, url).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined History::replaceState(const jsbind::Any& data, const jsbind::DOMString& unused) {
+    return emlite::Val::call("replaceState", data, unused).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined History::replaceState(const jsbind::Any& data, const jsbind::DOMString& unused, const jsbind::USVString& url) {

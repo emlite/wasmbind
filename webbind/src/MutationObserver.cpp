@@ -75,7 +75,11 @@ MutationObserver::MutationObserver(Handle h) noexcept : emlite::Val(emlite::Val:
 MutationObserver::MutationObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-MutationObserver::MutationObserver(const jsbind::Function& callback): emlite::Val(emlite::Val::global("MutationObserver").new_(callback)) {}
+MutationObserver::MutationObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("MutationObserver").new_(callback)) {}
+
+jsbind::Undefined MutationObserver::observe(const Node& target) {
+    return emlite::Val::call("observe", target).as<jsbind::Undefined>();
+}
 
 jsbind::Undefined MutationObserver::observe(const Node& target, const MutationObserverInit& options) {
     return emlite::Val::call("observe", target, options).as<jsbind::Undefined>();

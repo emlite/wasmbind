@@ -9,7 +9,9 @@ InputDeviceCapabilities::InputDeviceCapabilities(Handle h) noexcept : emlite::Va
 InputDeviceCapabilities::InputDeviceCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-InputDeviceCapabilities::InputDeviceCapabilities(const jsbind::Any& deviceInitDict): emlite::Val(emlite::Val::global("InputDeviceCapabilities").new_(deviceInitDict)) {}
+InputDeviceCapabilities::InputDeviceCapabilities() : emlite::Val(emlite::Val::global("InputDeviceCapabilities").new_()) {}
+
+InputDeviceCapabilities::InputDeviceCapabilities(const jsbind::Any& deviceInitDict) : emlite::Val(emlite::Val::global("InputDeviceCapabilities").new_(deviceInitDict)) {}
 
 bool InputDeviceCapabilities::firesTouchEvents() const {
     return emlite::Val::get("firesTouchEvents").as<bool>();

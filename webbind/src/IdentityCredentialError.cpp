@@ -9,7 +9,11 @@ IdentityCredentialError::IdentityCredentialError(Handle h) noexcept : DOMExcepti
 IdentityCredentialError::IdentityCredentialError(const emlite::Val &val) noexcept: DOMException(val) {}
 
 
-IdentityCredentialError::IdentityCredentialError(const jsbind::DOMString& message, const jsbind::Any& options): DOMException(emlite::Val::global("IdentityCredentialError").new_(message, options)) {}
+IdentityCredentialError::IdentityCredentialError() : DOMException(emlite::Val::global("IdentityCredentialError").new_()) {}
+
+IdentityCredentialError::IdentityCredentialError(const jsbind::DOMString& message) : DOMException(emlite::Val::global("IdentityCredentialError").new_(message)) {}
+
+IdentityCredentialError::IdentityCredentialError(const jsbind::DOMString& message, const jsbind::Any& options) : DOMException(emlite::Val::global("IdentityCredentialError").new_(message, options)) {}
 
 jsbind::DOMString IdentityCredentialError::error() const {
     return DOMException::get("error").as<jsbind::DOMString>();

@@ -14,6 +14,7 @@ public:
     static ContentVisibilityAutoStateChangeEvent take_ownership(Handle h) noexcept;
 
     ContentVisibilityAutoStateChangeEvent clone() const noexcept;
+    ContentVisibilityAutoStateChangeEvent(const jsbind::DOMString& type);
     ContentVisibilityAutoStateChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     bool skipped() const;
 };

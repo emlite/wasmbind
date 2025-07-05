@@ -9,7 +9,9 @@ SpeechRecognitionPhrase::SpeechRecognitionPhrase(Handle h) noexcept : emlite::Va
 SpeechRecognitionPhrase::SpeechRecognitionPhrase(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-SpeechRecognitionPhrase::SpeechRecognitionPhrase(const jsbind::DOMString& phrase, float boost): emlite::Val(emlite::Val::global("SpeechRecognitionPhrase").new_(phrase, boost)) {}
+SpeechRecognitionPhrase::SpeechRecognitionPhrase(const jsbind::DOMString& phrase) : emlite::Val(emlite::Val::global("SpeechRecognitionPhrase").new_(phrase)) {}
+
+SpeechRecognitionPhrase::SpeechRecognitionPhrase(const jsbind::DOMString& phrase, float boost) : emlite::Val(emlite::Val::global("SpeechRecognitionPhrase").new_(phrase, boost)) {}
 
 jsbind::DOMString SpeechRecognitionPhrase::phrase() const {
     return emlite::Val::get("phrase").as<jsbind::DOMString>();

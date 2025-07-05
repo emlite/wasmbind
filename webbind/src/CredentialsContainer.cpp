@@ -43,12 +43,20 @@ CredentialsContainer::CredentialsContainer(Handle h) noexcept : emlite::Val(emli
 CredentialsContainer::CredentialsContainer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+jsbind::Promise CredentialsContainer::get() {
+    return emlite::Val::call("get").as<jsbind::Promise>();
+}
+
 jsbind::Promise CredentialsContainer::get(const CredentialRequestOptions& options) {
     return emlite::Val::call("get", options).as<jsbind::Promise>();
 }
 
 jsbind::Promise CredentialsContainer::store(const Credential& credential) {
     return emlite::Val::call("store", credential).as<jsbind::Promise>();
+}
+
+jsbind::Promise CredentialsContainer::create() {
+    return emlite::Val::call("create").as<jsbind::Promise>();
 }
 
 jsbind::Promise CredentialsContainer::create(const CredentialCreationOptions& options) {

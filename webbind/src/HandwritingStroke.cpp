@@ -41,7 +41,7 @@ HandwritingStroke::HandwritingStroke(Handle h) noexcept : emlite::Val(emlite::Va
 HandwritingStroke::HandwritingStroke(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-HandwritingStroke::HandwritingStroke(): emlite::Val(emlite::Val::global("HandwritingStroke").new_()) {}
+HandwritingStroke::HandwritingStroke() : emlite::Val(emlite::Val::global("HandwritingStroke").new_()) {}
 
 jsbind::Undefined HandwritingStroke::addPoint(const HandwritingPoint& point) {
     return emlite::Val::call("addPoint", point).as<jsbind::Undefined>();

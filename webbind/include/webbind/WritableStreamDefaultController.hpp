@@ -16,6 +16,7 @@ public:
 
     WritableStreamDefaultController clone() const noexcept;
     AbortSignal signal() const;
+    jsbind::Undefined error();
     jsbind::Undefined error(const jsbind::Any& e);
 };
 

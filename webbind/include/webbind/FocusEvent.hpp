@@ -16,6 +16,7 @@ public:
     static FocusEvent take_ownership(Handle h) noexcept;
 
     FocusEvent clone() const noexcept;
+    FocusEvent(const jsbind::DOMString& type);
     FocusEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     EventTarget relatedTarget() const;
 };

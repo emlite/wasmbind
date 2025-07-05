@@ -52,6 +52,10 @@ void MathMLElement::tabIndex(long value) {
     Element::set("tabIndex", value);
 }
 
+jsbind::Undefined MathMLElement::focus() {
+    return Element::call("focus").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined MathMLElement::focus(const FocusOptions& options) {
     return Element::call("focus", options).as<jsbind::Undefined>();
 }

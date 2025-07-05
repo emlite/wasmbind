@@ -16,6 +16,7 @@ public:
     static SpeechSynthesisUtterance take_ownership(Handle h) noexcept;
 
     SpeechSynthesisUtterance clone() const noexcept;
+    SpeechSynthesisUtterance();
     SpeechSynthesisUtterance(const jsbind::DOMString& text);
     jsbind::DOMString text() const;
     void text(const jsbind::DOMString& value);

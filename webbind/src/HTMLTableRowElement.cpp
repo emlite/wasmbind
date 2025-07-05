@@ -11,7 +11,7 @@ HTMLTableRowElement::HTMLTableRowElement(Handle h) noexcept : HTMLElement(emlite
 HTMLTableRowElement::HTMLTableRowElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTableRowElement::HTMLTableRowElement(): HTMLElement(emlite::Val::global("HTMLTableRowElement").new_()) {}
+HTMLTableRowElement::HTMLTableRowElement() : HTMLElement(emlite::Val::global("HTMLTableRowElement").new_()) {}
 
 long HTMLTableRowElement::rowIndex() const {
     return HTMLElement::get("rowIndex").as<long>();
@@ -23,6 +23,10 @@ long HTMLTableRowElement::sectionRowIndex() const {
 
 HTMLCollection HTMLTableRowElement::cells() const {
     return HTMLElement::get("cells").as<HTMLCollection>();
+}
+
+HTMLTableCellElement HTMLTableRowElement::insertCell() {
+    return HTMLElement::call("insertCell").as<HTMLTableCellElement>();
 }
 
 HTMLTableCellElement HTMLTableRowElement::insertCell(long index) {

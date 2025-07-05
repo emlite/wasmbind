@@ -14,6 +14,7 @@ public:
     static MIDIOutput take_ownership(Handle h) noexcept;
 
     MIDIOutput clone() const noexcept;
+    jsbind::Undefined send(jsbind::Sequence<unsigned char> data);
     jsbind::Undefined send(jsbind::Sequence<unsigned char> data, const jsbind::Any& timestamp);
     jsbind::Undefined clear();
 };

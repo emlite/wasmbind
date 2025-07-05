@@ -53,6 +53,8 @@ public:
     jsbind::Any onreadystatechange() const;
     void onreadystatechange(const jsbind::Any& value);
     unsigned short readyState() const;
+    jsbind::Undefined open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async);
+    jsbind::Undefined open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username);
     jsbind::Undefined open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username, const jsbind::USVString& password);
     jsbind::Undefined setRequestHeader(const jsbind::ByteString& name, const jsbind::ByteString& value);
     unsigned long timeout() const;
@@ -60,6 +62,7 @@ public:
     bool withCredentials() const;
     void withCredentials(bool value);
     XMLHttpRequestUpload upload() const;
+    jsbind::Undefined send();
     jsbind::Undefined send(const jsbind::Any& body);
     jsbind::Undefined abort();
     jsbind::USVString responseURL() const;

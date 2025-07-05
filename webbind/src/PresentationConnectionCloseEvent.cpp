@@ -9,7 +9,7 @@ PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(Handle h) noe
 PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("PresentationConnectionCloseEvent").new_(type, eventInitDict)) {}
+PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PresentationConnectionCloseEvent").new_(type, eventInitDict)) {}
 
 PresentationConnectionCloseReason PresentationConnectionCloseEvent::reason() const {
     return Event::get("reason").as<PresentationConnectionCloseReason>();

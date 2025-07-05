@@ -45,7 +45,7 @@ NavigateEvent::NavigateEvent(Handle h) noexcept : Event(emlite::Val::take_owners
 NavigateEvent::NavigateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-NavigateEvent::NavigateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("NavigateEvent").new_(type, eventInitDict)) {}
+NavigateEvent::NavigateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("NavigateEvent").new_(type, eventInitDict)) {}
 
 NavigationType NavigateEvent::navigationType() const {
     return Event::get("navigationType").as<NavigationType>();
@@ -89,6 +89,10 @@ bool NavigateEvent::hasUAVisualTransition() const {
 
 Element NavigateEvent::sourceElement() const {
     return Event::get("sourceElement").as<Element>();
+}
+
+jsbind::Undefined NavigateEvent::intercept() {
+    return Event::call("intercept").as<jsbind::Undefined>();
 }
 
 jsbind::Undefined NavigateEvent::intercept(const NavigationInterceptOptions& options) {

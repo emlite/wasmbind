@@ -11,10 +11,14 @@ HTMLTableSectionElement::HTMLTableSectionElement(Handle h) noexcept : HTMLElemen
 HTMLTableSectionElement::HTMLTableSectionElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTableSectionElement::HTMLTableSectionElement(): HTMLElement(emlite::Val::global("HTMLTableSectionElement").new_()) {}
+HTMLTableSectionElement::HTMLTableSectionElement() : HTMLElement(emlite::Val::global("HTMLTableSectionElement").new_()) {}
 
 HTMLCollection HTMLTableSectionElement::rows() const {
     return HTMLElement::get("rows").as<HTMLCollection>();
+}
+
+HTMLTableRowElement HTMLTableSectionElement::insertRow() {
+    return HTMLElement::call("insertRow").as<HTMLTableRowElement>();
 }
 
 HTMLTableRowElement HTMLTableSectionElement::insertRow(long index) {

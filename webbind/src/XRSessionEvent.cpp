@@ -10,7 +10,7 @@ XRSessionEvent::XRSessionEvent(Handle h) noexcept : Event(emlite::Val::take_owne
 XRSessionEvent::XRSessionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-XRSessionEvent::XRSessionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("XRSessionEvent").new_(type, eventInitDict)) {}
+XRSessionEvent::XRSessionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRSessionEvent").new_(type, eventInitDict)) {}
 
 XRSession XRSessionEvent::session() const {
     return Event::get("session").as<XRSession>();

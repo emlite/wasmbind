@@ -9,7 +9,7 @@ RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(Handle h) noexcep
 RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("RTCPeerConnectionIceErrorEvent").new_(type, eventInitDict)) {}
+RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCPeerConnectionIceErrorEvent").new_(type, eventInitDict)) {}
 
 jsbind::DOMString RTCPeerConnectionIceErrorEvent::address() const {
     return Event::get("address").as<jsbind::DOMString>();

@@ -10,7 +10,7 @@ OfflineAudioCompletionEvent::OfflineAudioCompletionEvent(Handle h) noexcept : Ev
 OfflineAudioCompletionEvent::OfflineAudioCompletionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-OfflineAudioCompletionEvent::OfflineAudioCompletionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict): Event(emlite::Val::global("OfflineAudioCompletionEvent").new_(type, eventInitDict)) {}
+OfflineAudioCompletionEvent::OfflineAudioCompletionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("OfflineAudioCompletionEvent").new_(type, eventInitDict)) {}
 
 AudioBuffer OfflineAudioCompletionEvent::renderedBuffer() const {
     return Event::get("renderedBuffer").as<AudioBuffer>();

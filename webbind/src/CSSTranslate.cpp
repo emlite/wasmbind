@@ -10,7 +10,9 @@ CSSTranslate::CSSTranslate(Handle h) noexcept : CSSTransformComponent(emlite::Va
 CSSTranslate::CSSTranslate(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
 
-CSSTranslate::CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y, const CSSNumericValue& z): CSSTransformComponent(emlite::Val::global("CSSTranslate").new_(x, y, z)) {}
+CSSTranslate::CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y) : CSSTransformComponent(emlite::Val::global("CSSTranslate").new_(x, y)) {}
+
+CSSTranslate::CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y, const CSSNumericValue& z) : CSSTransformComponent(emlite::Val::global("CSSTranslate").new_(x, y, z)) {}
 
 CSSNumericValue CSSTranslate::x() const {
     return CSSTransformComponent::get("x").as<CSSNumericValue>();

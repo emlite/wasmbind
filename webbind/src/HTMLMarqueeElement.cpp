@@ -9,7 +9,7 @@ HTMLMarqueeElement::HTMLMarqueeElement(Handle h) noexcept : HTMLElement(emlite::
 HTMLMarqueeElement::HTMLMarqueeElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLMarqueeElement::HTMLMarqueeElement(): HTMLElement(emlite::Val::global("HTMLMarqueeElement").new_()) {}
+HTMLMarqueeElement::HTMLMarqueeElement() : HTMLElement(emlite::Val::global("HTMLMarqueeElement").new_()) {}
 
 jsbind::DOMString HTMLMarqueeElement::behavior() const {
     return HTMLElement::get("behavior").as<jsbind::DOMString>();

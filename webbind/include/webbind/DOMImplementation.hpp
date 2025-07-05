@@ -18,7 +18,9 @@ public:
 
     DOMImplementation clone() const noexcept;
     DocumentType createDocumentType(const jsbind::DOMString& name, const jsbind::DOMString& publicId, const jsbind::DOMString& systemId);
+    XMLDocument createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName);
     XMLDocument createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName, const DocumentType& doctype);
+    Document createHTMLDocument();
     Document createHTMLDocument(const jsbind::DOMString& title);
     bool hasFeature();
 };

@@ -10,7 +10,7 @@ CSSSkewX::CSSSkewX(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_
 CSSSkewX::CSSSkewX(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
 
-CSSSkewX::CSSSkewX(const CSSNumericValue& ax): CSSTransformComponent(emlite::Val::global("CSSSkewX").new_(ax)) {}
+CSSSkewX::CSSSkewX(const CSSNumericValue& ax) : CSSTransformComponent(emlite::Val::global("CSSSkewX").new_(ax)) {}
 
 CSSNumericValue CSSSkewX::ax() const {
     return CSSTransformComponent::get("ax").as<CSSNumericValue>();

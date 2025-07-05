@@ -10,5 +10,7 @@ SharedStorageClearMethod::SharedStorageClearMethod(Handle h) noexcept : SharedSt
 SharedStorageClearMethod::SharedStorageClearMethod(const emlite::Val &val) noexcept: SharedStorageModifierMethod(val) {}
 
 
-SharedStorageClearMethod::SharedStorageClearMethod(const SharedStorageModifierMethodOptions& options): SharedStorageModifierMethod(emlite::Val::global("SharedStorageClearMethod").new_(options)) {}
+SharedStorageClearMethod::SharedStorageClearMethod() : SharedStorageModifierMethod(emlite::Val::global("SharedStorageClearMethod").new_()) {}
+
+SharedStorageClearMethod::SharedStorageClearMethod(const SharedStorageModifierMethodOptions& options) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageClearMethod").new_(options)) {}
 

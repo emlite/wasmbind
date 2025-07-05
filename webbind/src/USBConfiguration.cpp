@@ -11,7 +11,7 @@ USBConfiguration::USBConfiguration(Handle h) noexcept : emlite::Val(emlite::Val:
 USBConfiguration::USBConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBConfiguration::USBConfiguration(const USBDevice& device, unsigned char configurationValue): emlite::Val(emlite::Val::global("USBConfiguration").new_(device, configurationValue)) {}
+USBConfiguration::USBConfiguration(const USBDevice& device, unsigned char configurationValue) : emlite::Val(emlite::Val::global("USBConfiguration").new_(device, configurationValue)) {}
 
 unsigned char USBConfiguration::configurationValue() const {
     return emlite::Val::get("configurationValue").as<unsigned char>();

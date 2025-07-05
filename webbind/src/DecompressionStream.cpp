@@ -11,7 +11,7 @@ DecompressionStream::DecompressionStream(Handle h) noexcept : emlite::Val(emlite
 DecompressionStream::DecompressionStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DecompressionStream::DecompressionStream(const CompressionFormat& format): emlite::Val(emlite::Val::global("DecompressionStream").new_(format)) {}
+DecompressionStream::DecompressionStream(const CompressionFormat& format) : emlite::Val(emlite::Val::global("DecompressionStream").new_(format)) {}
 
 ReadableStream DecompressionStream::readable() const {
     return emlite::Val::get("readable").as<ReadableStream>();

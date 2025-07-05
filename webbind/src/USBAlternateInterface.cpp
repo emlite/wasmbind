@@ -11,7 +11,7 @@ USBAlternateInterface::USBAlternateInterface(Handle h) noexcept : emlite::Val(em
 USBAlternateInterface::USBAlternateInterface(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-USBAlternateInterface::USBAlternateInterface(const USBInterface& deviceInterface, unsigned char alternateSetting): emlite::Val(emlite::Val::global("USBAlternateInterface").new_(deviceInterface, alternateSetting)) {}
+USBAlternateInterface::USBAlternateInterface(const USBInterface& deviceInterface, unsigned char alternateSetting) : emlite::Val(emlite::Val::global("USBAlternateInterface").new_(deviceInterface, alternateSetting)) {}
 
 unsigned char USBAlternateInterface::alternateSetting() const {
     return emlite::Val::get("alternateSetting").as<unsigned char>();

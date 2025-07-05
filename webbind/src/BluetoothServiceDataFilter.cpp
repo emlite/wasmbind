@@ -9,5 +9,7 @@ BluetoothServiceDataFilter::BluetoothServiceDataFilter(Handle h) noexcept : emli
 BluetoothServiceDataFilter::BluetoothServiceDataFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-BluetoothServiceDataFilter::BluetoothServiceDataFilter(const jsbind::Object& init): emlite::Val(emlite::Val::global("BluetoothServiceDataFilter").new_(init)) {}
+BluetoothServiceDataFilter::BluetoothServiceDataFilter() : emlite::Val(emlite::Val::global("BluetoothServiceDataFilter").new_()) {}
+
+BluetoothServiceDataFilter::BluetoothServiceDataFilter(const jsbind::Object& init) : emlite::Val(emlite::Val::global("BluetoothServiceDataFilter").new_(init)) {}
 

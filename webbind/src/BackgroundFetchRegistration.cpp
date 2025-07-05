@@ -86,8 +86,20 @@ jsbind::Promise BackgroundFetchRegistration::abort() {
     return EventTarget::call("abort").as<jsbind::Promise>();
 }
 
+jsbind::Promise BackgroundFetchRegistration::match(const jsbind::Any& request) {
+    return EventTarget::call("match", request).as<jsbind::Promise>();
+}
+
 jsbind::Promise BackgroundFetchRegistration::match(const jsbind::Any& request, const CacheQueryOptions& options) {
     return EventTarget::call("match", request, options).as<jsbind::Promise>();
+}
+
+jsbind::Promise BackgroundFetchRegistration::matchAll() {
+    return EventTarget::call("matchAll").as<jsbind::Promise>();
+}
+
+jsbind::Promise BackgroundFetchRegistration::matchAll(const jsbind::Any& request) {
+    return EventTarget::call("matchAll", request).as<jsbind::Promise>();
 }
 
 jsbind::Promise BackgroundFetchRegistration::matchAll(const jsbind::Any& request, const CacheQueryOptions& options) {

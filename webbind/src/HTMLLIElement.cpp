@@ -9,7 +9,7 @@ HTMLLIElement::HTMLLIElement(Handle h) noexcept : HTMLElement(emlite::Val::take_
 HTMLLIElement::HTMLLIElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLLIElement::HTMLLIElement(): HTMLElement(emlite::Val::global("HTMLLIElement").new_()) {}
+HTMLLIElement::HTMLLIElement() : HTMLElement(emlite::Val::global("HTMLLIElement").new_()) {}
 
 long HTMLLIElement::value() const {
     return HTMLElement::get("value").as<long>();

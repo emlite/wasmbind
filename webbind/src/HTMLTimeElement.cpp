@@ -9,7 +9,7 @@ HTMLTimeElement::HTMLTimeElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLTimeElement::HTMLTimeElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLTimeElement::HTMLTimeElement(): HTMLElement(emlite::Val::global("HTMLTimeElement").new_()) {}
+HTMLTimeElement::HTMLTimeElement() : HTMLElement(emlite::Val::global("HTMLTimeElement").new_()) {}
 
 jsbind::DOMString HTMLTimeElement::dateTime() const {
     return HTMLElement::get("dateTime").as<jsbind::DOMString>();

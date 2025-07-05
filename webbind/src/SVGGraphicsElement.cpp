@@ -57,6 +57,10 @@ SVGAnimatedTransformList SVGGraphicsElement::transform() const {
     return SVGElement::get("transform").as<SVGAnimatedTransformList>();
 }
 
+DOMRect SVGGraphicsElement::getBBox() {
+    return SVGElement::call("getBBox").as<DOMRect>();
+}
+
 DOMRect SVGGraphicsElement::getBBox(const SVGBoundingBoxOptions& options) {
     return SVGElement::call("getBBox", options).as<DOMRect>();
 }

@@ -14,6 +14,7 @@ public:
     static ChannelSplitterNode take_ownership(Handle h) noexcept;
 
     ChannelSplitterNode clone() const noexcept;
+    ChannelSplitterNode(const BaseAudioContext& context);
     ChannelSplitterNode(const BaseAudioContext& context, const jsbind::Any& options);
 };
 

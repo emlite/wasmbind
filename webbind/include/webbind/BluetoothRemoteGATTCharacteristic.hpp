@@ -24,6 +24,7 @@ public:
     BluetoothCharacteristicProperties properties() const;
     jsbind::DataView value() const;
     jsbind::Promise getDescriptor(const jsbind::Any& descriptor);
+    jsbind::Promise getDescriptors();
     jsbind::Promise getDescriptors(const jsbind::Any& descriptor);
     jsbind::Promise readValue();
     jsbind::Promise writeValue(const jsbind::Any& value);

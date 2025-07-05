@@ -30,7 +30,9 @@ public:
     FileSystemHandleKind kind() const;
     jsbind::USVString name() const;
     jsbind::Promise isSameEntry(const FileSystemHandle& other);
+    jsbind::Promise queryPermission();
     jsbind::Promise queryPermission(const FileSystemHandlePermissionDescriptor& descriptor);
+    jsbind::Promise requestPermission();
     jsbind::Promise requestPermission(const FileSystemHandlePermissionDescriptor& descriptor);
 };
 

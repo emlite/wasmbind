@@ -9,7 +9,7 @@ NDEFRecord::NDEFRecord(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 NDEFRecord::NDEFRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-NDEFRecord::NDEFRecord(const jsbind::Any& recordInit): emlite::Val(emlite::Val::global("NDEFRecord").new_(recordInit)) {}
+NDEFRecord::NDEFRecord(const jsbind::Any& recordInit) : emlite::Val(emlite::Val::global("NDEFRecord").new_(recordInit)) {}
 
 jsbind::USVString NDEFRecord::recordType() const {
     return emlite::Val::get("recordType").as<jsbind::USVString>();

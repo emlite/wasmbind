@@ -10,7 +10,7 @@ HTMLAreaElement::HTMLAreaElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLAreaElement::HTMLAreaElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLAreaElement::HTMLAreaElement(): HTMLElement(emlite::Val::global("HTMLAreaElement").new_()) {}
+HTMLAreaElement::HTMLAreaElement() : HTMLElement(emlite::Val::global("HTMLAreaElement").new_()) {}
 
 jsbind::DOMString HTMLAreaElement::alt() const {
     return HTMLElement::get("alt").as<jsbind::DOMString>();

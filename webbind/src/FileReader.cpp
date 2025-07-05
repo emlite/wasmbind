@@ -11,7 +11,7 @@ FileReader::FileReader(Handle h) noexcept : EventTarget(emlite::Val::take_owners
 FileReader::FileReader(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-FileReader::FileReader(): EventTarget(emlite::Val::global("FileReader").new_()) {}
+FileReader::FileReader() : EventTarget(emlite::Val::global("FileReader").new_()) {}
 
 jsbind::Undefined FileReader::readAsArrayBuffer(const Blob& blob) {
     return EventTarget::call("readAsArrayBuffer", blob).as<jsbind::Undefined>();
@@ -19,6 +19,10 @@ jsbind::Undefined FileReader::readAsArrayBuffer(const Blob& blob) {
 
 jsbind::Undefined FileReader::readAsBinaryString(const Blob& blob) {
     return EventTarget::call("readAsBinaryString", blob).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined FileReader::readAsText(const Blob& blob) {
+    return EventTarget::call("readAsText", blob).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined FileReader::readAsText(const Blob& blob, const jsbind::DOMString& encoding) {

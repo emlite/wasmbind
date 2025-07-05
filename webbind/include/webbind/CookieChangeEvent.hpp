@@ -15,6 +15,7 @@ public:
     static CookieChangeEvent take_ownership(Handle h) noexcept;
 
     CookieChangeEvent clone() const noexcept;
+    CookieChangeEvent(const jsbind::DOMString& type);
     CookieChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::FrozenArray<CookieListItem> changed() const;
     jsbind::FrozenArray<CookieListItem> deleted() const;

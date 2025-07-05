@@ -9,7 +9,7 @@ HTMLBaseElement::HTMLBaseElement(Handle h) noexcept : HTMLElement(emlite::Val::t
 HTMLBaseElement::HTMLBaseElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
-HTMLBaseElement::HTMLBaseElement(): HTMLElement(emlite::Val::global("HTMLBaseElement").new_()) {}
+HTMLBaseElement::HTMLBaseElement() : HTMLElement(emlite::Val::global("HTMLBaseElement").new_()) {}
 
 jsbind::USVString HTMLBaseElement::href() const {
     return HTMLElement::get("href").as<jsbind::USVString>();

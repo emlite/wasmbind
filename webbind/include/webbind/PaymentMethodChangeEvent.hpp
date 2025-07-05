@@ -14,6 +14,7 @@ public:
     static PaymentMethodChangeEvent take_ownership(Handle h) noexcept;
 
     PaymentMethodChangeEvent clone() const noexcept;
+    PaymentMethodChangeEvent(const jsbind::DOMString& type);
     PaymentMethodChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     jsbind::DOMString methodName() const;
     jsbind::Object methodDetails() const;

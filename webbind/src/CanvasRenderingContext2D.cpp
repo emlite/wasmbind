@@ -134,6 +134,10 @@ DOMMatrix CanvasRenderingContext2D::getTransform() {
     return emlite::Val::call("getTransform").as<DOMMatrix>();
 }
 
+jsbind::Undefined CanvasRenderingContext2D::setTransform() {
+    return emlite::Val::call("setTransform").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined CanvasRenderingContext2D::setTransform(const DOMMatrix2DInit& transform) {
     return emlite::Val::call("setTransform", transform).as<jsbind::Undefined>();
 }
@@ -262,6 +266,10 @@ jsbind::Undefined CanvasRenderingContext2D::beginPath() {
     return emlite::Val::call("beginPath").as<jsbind::Undefined>();
 }
 
+jsbind::Undefined CanvasRenderingContext2D::fill(const Path2D& path) {
+    return emlite::Val::call("fill", path).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined CanvasRenderingContext2D::fill(const Path2D& path, const CanvasFillRule& fillRule) {
     return emlite::Val::call("fill", path, fillRule).as<jsbind::Undefined>();
 }
@@ -270,8 +278,16 @@ jsbind::Undefined CanvasRenderingContext2D::stroke(const Path2D& path) {
     return emlite::Val::call("stroke", path).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined CanvasRenderingContext2D::clip(const Path2D& path) {
+    return emlite::Val::call("clip", path).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined CanvasRenderingContext2D::clip(const Path2D& path, const CanvasFillRule& fillRule) {
     return emlite::Val::call("clip", path, fillRule).as<jsbind::Undefined>();
+}
+
+bool CanvasRenderingContext2D::isPointInPath(const Path2D& path, double x, double y) {
+    return emlite::Val::call("isPointInPath", path, x, y).as<bool>();
 }
 
 bool CanvasRenderingContext2D::isPointInPath(const Path2D& path, double x, double y, const CanvasFillRule& fillRule) {
@@ -286,8 +302,16 @@ jsbind::Undefined CanvasRenderingContext2D::drawFocusIfNeeded(const Path2D& path
     return emlite::Val::call("drawFocusIfNeeded", path, element).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined CanvasRenderingContext2D::fillText(const jsbind::DOMString& text, double x, double y) {
+    return emlite::Val::call("fillText", text, x, y).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined CanvasRenderingContext2D::fillText(const jsbind::DOMString& text, double x, double y, double maxWidth) {
     return emlite::Val::call("fillText", text, x, y, maxWidth).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined CanvasRenderingContext2D::strokeText(const jsbind::DOMString& text, double x, double y) {
+    return emlite::Val::call("strokeText", text, x, y).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined CanvasRenderingContext2D::strokeText(const jsbind::DOMString& text, double x, double y, double maxWidth) {
@@ -304,6 +328,10 @@ jsbind::Undefined CanvasRenderingContext2D::drawImage(const jsbind::Any& image, 
 
 ImageData CanvasRenderingContext2D::createImageData(const ImageData& imageData) {
     return emlite::Val::call("createImageData", imageData).as<ImageData>();
+}
+
+ImageData CanvasRenderingContext2D::getImageData(long sx, long sy, long sw, long sh) {
+    return emlite::Val::call("getImageData", sx, sy, sw, sh).as<ImageData>();
 }
 
 ImageData CanvasRenderingContext2D::getImageData(long sx, long sy, long sw, long sh, const ImageDataSettings& settings) {
@@ -478,12 +506,24 @@ jsbind::Undefined CanvasRenderingContext2D::rect(double x, double y, double w, d
     return emlite::Val::call("rect", x, y, w, h).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined CanvasRenderingContext2D::roundRect(double x, double y, double w, double h) {
+    return emlite::Val::call("roundRect", x, y, w, h).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined CanvasRenderingContext2D::roundRect(double x, double y, double w, double h, const jsbind::Any& radii) {
     return emlite::Val::call("roundRect", x, y, w, h, radii).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined CanvasRenderingContext2D::arc(double x, double y, double radius, double startAngle, double endAngle) {
+    return emlite::Val::call("arc", x, y, radius, startAngle, endAngle).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined CanvasRenderingContext2D::arc(double x, double y, double radius, double startAngle, double endAngle, bool counterclockwise) {
     return emlite::Val::call("arc", x, y, radius, startAngle, endAngle, counterclockwise).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined CanvasRenderingContext2D::ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle) {
+    return emlite::Val::call("ellipse", x, y, radiusX, radiusY, rotation, startAngle, endAngle).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined CanvasRenderingContext2D::ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle, bool counterclockwise) {

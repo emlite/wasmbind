@@ -11,6 +11,14 @@ XPathExpression::XPathExpression(Handle h) noexcept : emlite::Val(emlite::Val::t
 XPathExpression::XPathExpression(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+XPathResult XPathExpression::evaluate(const Node& contextNode) {
+    return emlite::Val::call("evaluate", contextNode).as<XPathResult>();
+}
+
+XPathResult XPathExpression::evaluate(const Node& contextNode, unsigned short type) {
+    return emlite::Val::call("evaluate", contextNode, type).as<XPathResult>();
+}
+
 XPathResult XPathExpression::evaluate(const Node& contextNode, unsigned short type, const XPathResult& result) {
     return emlite::Val::call("evaluate", contextNode, type, result).as<XPathResult>();
 }
