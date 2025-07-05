@@ -121,16 +121,16 @@ To be able to view the resulting wasm in your browser, you will need the [emlite
 </html>
 ```
 This grabs emlite via unpkg. It's advisable however to use a bundler for the web, something like webpack for example. Please refer to the emlite readme on how to integrate it in a node-based project. You could also just vendor the emlite.js file in your project if you prefer.
-Also note that loading wasm in the browser requires an http server. You can use python's http.server `python3 -m http.server`, or you can the npm http-server package.
+Also note that loading wasm in the browser requires an http server. You can use python's http.server `python3 -m http.server`, or you can use the npm http-server package.
 
 ## Development
-The C++ code which binds the DOM is generated from webidl definitions via the @webref/idl npm package. This happens in the scripts/parser.js script.
-The initial generation wasn't parfet as the webidl code itself has cyclic dependencies, which means that the generated C++ code required extra-handling post-generation.
+The C++ code which binds the DOM is generated from webidl definitions via the @webref/idl npm package. This happens in the scripts subdirectory.
+The initial generation wasn't perfect as the webidl code itself has cyclic dependencies, which means that the generated C++ code required extra-handling post-generation.
 Hopefully the webidl spec isn't as fast-moving, as such not much changing needs to happen there.
 The extra-handling consists of providing forward-declarations in the headers, and the proper includes in the source files.
 This typically takes a few hours for someone familiar with the spec.
 
-As such, the current parser script just generates the corresponding C++ code while ignoring the headers and forward declarations.
+As such, the current script just regenerates the corresponding C++ code while ignoring the headers and forward declarations.
 The presence of forward declarations means we can't enjoy default arguments!
 To run the script if you wanted to, you will have to run:
 ```bash
