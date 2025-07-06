@@ -12,18 +12,15 @@ Function Function::take_ownership(Handle h) noexcept {
 Function::Function(const emlite::Val &val) noexcept
     : emlite::Val(val) {}
 
-Function::Function(Callback f) noexcept
-    : emlite::Val(emlite::Val::make_fn(f)) {}
+Function::Function(
+    Callback f, const emlite::Val &data
+) noexcept
+    : emlite::Val(emlite::Val::make_fn(f, data)) {}
 
-Params Function::params(Handle h) {
-    size_t len = 0;
-    auto params =
-        emlite::Val::vec_from_js_array<emlite::Val>(
-            emlite::Val::take_ownership(h), len
-        );
-    auto ret =
-        Params{(emlite::Uniq<emlite::Val[]> &&)params, len};
-    return ret;
-}
+Function::Function(emlite::Closure<Val(emlite::Params)> &&f
+) noexcept
+    : emlite::Val(emlite::Val::make_fn(
+          (emlite::Closure<Val(emlite::Params)> &&)f
+      )) {}
 
 DEFINE_CLONE(Function)

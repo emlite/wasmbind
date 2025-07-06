@@ -45,10 +45,10 @@ int main() {
     button.textContent("Click me");
     button.addEventListener(
         "click",
-        Function([](Handle h) -> Handle {
-            auto [params, _len] = Function::params(h);
+        Function([](auto p) -> emlite::Val {
+            auto [params, _len] = p;
             console::log(params[0]);
-            return Undefined::value.as_handle();
+            return Undefined::value;
         })
     );
     body.appendChild(button);
