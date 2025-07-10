@@ -45,7 +45,7 @@ int main() {
     button.textContent("Click me");
     button.addEventListener(
         "click",
-        Function([](auto p) -> emlite::Val {
+        Function::Fn([](auto p) -> emlite::Val {
             auto [params, _len] = p;
             console::log(params[0]);
             return Undefined::value;
@@ -54,10 +54,9 @@ int main() {
     // or
     // button.addEventListener(
     //     "click",
-    //     Function::from<jsbind::Undefined, Event>(
-    //         [](Event e) -> jsbind::Undefined {
+    //     Function::Fn<void(Event)>(
+    //         [](Event e) {
     //             console::log(e);
-    //             return jsbind::Undefined::value;
     //         }
     //     )
     // );

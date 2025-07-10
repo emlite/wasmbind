@@ -24,10 +24,9 @@ int main() {
     button.textContent("Click me");
     button.addEventListener(
         "click",
-        Function::from<jsbind::Undefined, Event>(
-            [](Event e) -> jsbind::Undefined {
+        Function::Fn<void(Event)>(
+            [](Event e) {
                 console::log(e);
-                return jsbind::Undefined::value;
             }
         )
     );
