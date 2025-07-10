@@ -2,6 +2,7 @@
 #include <webbind/CSSStyleDeclaration.hpp>
 #include <webbind/Document.hpp>
 #include <webbind/Element.hpp>
+#include <webbind/Event.hpp>
 #include <webbind/HTMLButtonElement.hpp>
 #include <webbind/HTMLCollection.hpp>
 #include <webbind/Window.hpp>
@@ -17,18 +18,18 @@ int main() {
         console::log("I Ain't got Nobody!");
         return -1;
     }
-    auto body = bodies.item(0);
-    auto button =
-        document.createElement("BUTTON")
-            .as<HTMLButtonElement>();
+    auto body   = bodies.item(0);
+    auto button = document.createElement("BUTTON")
+                      .as<HTMLButtonElement>();
     button.textContent("Click me");
     button.addEventListener(
         "click",
-        Function([](auto p) -> emlite::Val {
-            auto [params, _len] = p;
-            console::log(params[0]);
-            return Undefined::value;
-        })
+        Function::from<jsbind::Undefined, Event>(
+            [](Event e) -> jsbind::Undefined {
+                console::log(e);
+                return jsbind::Undefined::value;
+            }
+        )
     );
     body.appendChild(button);
     auto style = button.style();

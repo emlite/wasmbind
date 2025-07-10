@@ -51,10 +51,6 @@ DataView DataView::take_ownership(Handle h) noexcept {
 DataView::DataView(const emlite::Val &v) noexcept
     : emlite::Val(v) {}
 
-DataView::DataView() noexcept
-    : emlite::Val(emlite::Val::global("DataView")
-                      .new_(ArrayBuffer().as_handle())) {}
-
 DataView::DataView(
     const ArrayBuffer &buf,
     size_t byteOffset,

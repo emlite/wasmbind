@@ -13,7 +13,6 @@ class ArrayBuffer : public emlite::Val {
   public:
     static ArrayBuffer take_ownership(Handle h) noexcept;
     explicit ArrayBuffer(const emlite::Val &v) noexcept;
-    ArrayBuffer() noexcept;
     explicit ArrayBuffer(size_t byteLen);
 
     static bool isView(const emlite::Val &v);
@@ -116,7 +115,6 @@ class DataView : public emlite::Val {
   public:
     static DataView take_ownership(Handle h) noexcept;
     explicit DataView(const emlite::Val &v) noexcept;
-    DataView() noexcept;
     DataView(
         const ArrayBuffer &buf,
         size_t byteOffset = 0,

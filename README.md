@@ -51,6 +51,16 @@ int main() {
             return Undefined::value;
         })
     );
+    // or
+    // button.addEventListener(
+    //     "click",
+    //     Function::from<jsbind::Undefined, Event>(
+    //         [](Event e) -> jsbind::Undefined {
+    //             console::log(e);
+    //             return jsbind::Undefined::value;
+    //         }
+    //     )
+    // );
     body.appendChild(button);
     auto style = button.style();
     style.setProperty("color", "red");

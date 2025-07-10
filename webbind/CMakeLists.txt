@@ -13,6 +13,7 @@ set(WEBBIND_HTMLSOURCES
     src/Window.cpp
     src/console.cpp
     src/enums.cpp
+    src/Event.cpp
     src/CSSStyleDeclaration.cpp
     src/window.cpp
 )
