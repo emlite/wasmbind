@@ -26,6 +26,7 @@ set(JSBIND_HEADERS
     include/jsbind/String.hpp
     include/jsbind/Reflect.hpp
     include/jsbind/Null.hpp
+    include/jsbind/Console.hpp
     include/jsbind/utils.hpp
 )
 

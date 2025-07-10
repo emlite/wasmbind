@@ -21,3 +21,5 @@
 #include "String.hpp"
 
 #include "Null.hpp"
+
+#include "Console.hpp"

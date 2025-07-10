@@ -14,6 +14,9 @@ set(WEBBIND_HTMLSOURCES
     src/console.cpp
     src/enums.cpp
     src/Event.cpp
+    src/UIEvent.cpp
+    src/MouseEvent.cpp
+    src/PointerEvent.cpp
     src/CSSStyleDeclaration.cpp
     src/window.cpp
 )

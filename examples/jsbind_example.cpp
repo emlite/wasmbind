@@ -1,8 +1,6 @@
 #include <jsbind/jsbind.hpp>
-#include <emlite/emlite.hpp>
 
 using namespace jsbind;
-using emlite::Console;
 
 int main() {
     Console console;
