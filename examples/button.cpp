@@ -9,7 +9,6 @@
 
 using jsbind::Console;
 using jsbind::Function;
-using jsbind::Undefined;
 
 int main() {
     Console con;
