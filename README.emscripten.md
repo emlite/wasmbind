@@ -19,7 +19,7 @@ FetchContent_Declare(
 set(EMLITE_USE_EMSCRIPTEN_JS_GLUE ON CACHE BOOL " " FORCE)
 FetchContent_MakeAvailable(wasmbind)
 
-set(DEFAULT_LINK_FLAGS "-sLINKABLE=1 -sERROR_ON_UNDEFINED_SYMBOLS=0")
+set(DEFAULT_LINK_FLAGS "-sERROR_ON_UNDEFINED_SYMBOLS=0 -sEXPORTED_RUNTIME_METHODS=wasmTable")
 add_executable(button button.cpp)
 target_link_libraries(button PRIVATE webbind::webbind)
 set_target_properties(button PROPERTIES LINKER_LANGUAGE CXX SUFFIX .mjs LINK_FLAGS ${DEFAULT_LINK_FLAGS})
