@@ -1,6 +1,6 @@
 # Wasmbind
 
-Wasmbind is a C++ projects that offers bindngs to Web APIs for use with wasm. It's backend agnostic, and should work with wasm32-unknown-unknown, wasm32-wasi, wasm32-wasip1 and emscripten. It depends on the [emlite](https://github.com/MoAlyousef/emlite) library to make this happen.
+Wasmbind is a C++ projects that offers bindngs to Web APIs for use with wasm. It's backend agnostic, and should work with wasm32-unknown-unknown, wasm32-wasi, wasm32-wasip1 and emscripten. It depends on the [emlite](https://github.com/emlite/emlite-cpp) library to make this happen.
 Wasmbind consists of 2 sub-libraries:
 - jsbind
 - webbind
@@ -68,7 +68,7 @@ include(FetchContent)
 
 FetchContent_Declare(
     wasmbind
-    GIT_REPOSITORY https://github.com/MoAlyousef/wasmbind.git
+    GIT_REPOSITORY https://github.com/emlite/wasmbind.git
     GIT_TAG main
     GIT_SHALLOW True
 )
@@ -82,7 +82,7 @@ target_link_libraries(main PRIVATE webbind::webbind)
 set_target_properties(main PROPERTIES LINKER_LANGUAGE CXX SUFFIX .wasm LINK_FLAGS "-Wl,--no-entry,--allow-undefined,--export=main,--export-table,--import-memory,--export-memory,--strip-all")
 ```
 
-Please also refer to the [README.browser.md](https://github.com/MoAlyousef/emlite/blob/main/README.browser.md) in the emlite repo on how to integrate with a web bundler (webpack).
+Please also refer to the [README.browser.md](https://github.com/emlite/emlite-cpp/blob/main/README.browser.md) in the emlite-cpp repo on how to integrate with a web bundler (webpack).
 
 You can then build your project using CMake.
 ```bash
@@ -90,7 +90,7 @@ cmake -Bbin -DCMAKE_TOOLCHAIN_FILE=./cmake/freestanding.cmake && cmake --build b
 ```
 Note that this repo contains a cmake toolchain files for wasm32-unknown-unknown (freestanding), and for wasi-libc and wasi-sysroot, which you're free to use as well. If you prefer to use emscripten or wasi-sdk, it's advisable to use the cmake toolchain file provided by them directly.
 
-To be able to view the resulting wasm in your browser, you will need the [emlite](https://github.com/MoAlyousef/emlite) package. You can try it quickly using the unpkg cdn:
+To be able to view the resulting wasm in your browser, you will need the [emlite](https://github.com/emlite/emlite-js) package. You can try it quickly using the unpkg cdn:
 ```html
 <!DOCTYPE html>
 <html lang="en">

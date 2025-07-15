@@ -5,7 +5,7 @@ include(FetchContent)
 
 FetchContent_Declare(
     emlite
-    GIT_REPOSITORY https://github.com/MoAlyousef/emlite.git
+    GIT_REPOSITORY https://github.com/emlite/emlite-cpp.git
     GIT_TAG main
     GIT_SHALLOW True
 )

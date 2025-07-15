@@ -11,7 +11,7 @@ include(FetchContent)
 
 FetchContent_Declare(
     wasmbind
-    GIT_REPOSITORY https://github.com/MoAlyousef/wasmbind.git
+    GIT_REPOSITORY https://github.com/emlite/wasmbind.git
     GIT_TAG main
     GIT_SHALLOW True
 )
@@ -60,7 +60,7 @@ include(FetchContent)
 
 FetchContent_Declare(
     wasmbind
-    GIT_REPOSITORY https://github.com/MoAlyousef/wasmbind.git
+    GIT_REPOSITORY https://github.com/emlite/wasmbind.git
     GIT_TAG main
     GIT_SHALLOW True
 )
