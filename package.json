@@ -1,7 +1,7 @@
 {
-  "name": "webbind",
+  "name": "wasmbind",
   "version": "0.1.0",
-  "description": "Webbind is a C++ projects that offers bindngs to Web APIs for use with wasm.",
+  "description": "wasmbind is a C++ project that offers bindngs to Web APIs for use with wasm.",
   "main": "scripts/index.js",
   "type": "module",
   "directories": {
