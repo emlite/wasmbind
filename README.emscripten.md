@@ -16,16 +16,15 @@ FetchContent_Declare(
     GIT_SHALLOW True
 )
 
-set(EMLITE_USE_EMSCRIPTEN_JS_GLUE ON CACHE BOOL " " FORCE)
 FetchContent_MakeAvailable(wasmbind)
 
-set(DEFAULT_LINK_FLAGS "-sERROR_ON_UNDEFINED_SYMBOLS=0 -sEXPORTED_RUNTIME_METHODS=wasmTable")
+set(DEFAULT_LINK_FLAGS "-sERROR_ON_UNDEFINED_SYMBOLS=0 -sEXPORTED_RUNTIME_METHODS=wasmTable,UTF8ToString,lengthBytesUTF8,stringToUTF8 -sEXPORTED_FUNCTIONS=_malloc,_main -Wl,--strip-all")
 add_executable(button button.cpp)
 target_link_libraries(button PRIVATE webbind::webbind)
 set_target_properties(button PROPERTIES LINKER_LANGUAGE CXX SUFFIX .mjs LINK_FLAGS ${DEFAULT_LINK_FLAGS})
 ```
 
-Notice we specify the suffix to .mjs, we enable EMLITE_USE_EMSCRIPTEN_JS_GLUE and specify that our binary is LINKABLE.
+Notice we specify the suffix to .mjs.
 
 You would then invoke the build with emcmake or by passing the Emscripten.cmake toolchain file that's distributed with emscripten (usually at $EMSCRIPTEN_ROOT/cmake/Modules/Platform/Emscripten.cmake).
 
@@ -40,10 +39,8 @@ Then in your html file:
 </head>
 <body>
     <script type="module">
-        import { Emlite } from "./src/emlite.js";
         import initModule from "./bin/examples/button.mjs";
         window.onload = async () => {
-            const emlite = new Emlite();
             const mymain = await initModule();
         };
     </script>
@@ -65,7 +62,7 @@ FetchContent_Declare(
     GIT_SHALLOW True
 )
 
-set(EMLITE_USE_EMSCRIPTEN_JS_GLUE ON CACHE BOOL " " FORCE)
+set(EMSCRIPTEN_STANDALONE_WASM ON CACHE BOOL " " FORCE)
 FetchContent_MakeAvailable(wasmbind)
 
 set(DEFAULT_LINK_FLAGS "-sERROR_ON_UNDEFINED_SYMBOLS=0 -Wl,--no-entry,--allow-undefined,--export-dynamic,--export=main,--export-table,--export-memory,--import-memory,--strip-all")
