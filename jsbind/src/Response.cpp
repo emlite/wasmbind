@@ -39,25 +39,23 @@ Promise Response::array_buffer() const {
 }
 
 Promise fetch(const char *input) {
-    return emlite::Val::global("fetch")
-        .call("", emlite::Val(input))
+    return emlite::Val::global("fetch")(emlite::Val(input))
         .template as<Promise>();
 }
 
 Promise fetch(const char *input, const Any &init) {
-    return emlite::Val::global("fetch")
-        .call("", emlite::Val(input), init)
+    return emlite::Val::global("fetch")(
+               emlite::Val(input), init
+    )
         .template as<Promise>();
 }
 
 Promise fetch_val(const Any &input) {
-    return emlite::Val::global("fetch")
-        .call("", input)
+    return emlite::Val::global("fetch")(input)
         .template as<Promise>();
 }
 
 Promise fetch_val(const Any &input, const Any &init) {
-    return emlite::Val::global("fetch")
-        .call("", input, init)
+    return emlite::Val::global("fetch")(input, init)
         .template as<Promise>();
 }
