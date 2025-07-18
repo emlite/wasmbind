@@ -23,3 +23,25 @@
 #include "Null.hpp"
 
 #include "Console.hpp"
+
+#include "Set.hpp"
+
+#include "Map.hpp"
+
+#include "Math.hpp"
+
+#include "Date.hpp"
+
+#include "JSON.hpp"
+
+#include "Error.hpp"
+
+#include "time.hpp"
+
+#include "Response.hpp"
+
+int32_t parse_int(const char *src);
+
+int32_t parse_int(const char *src, int32_t radix);
+
+double parse_float(const char *src);

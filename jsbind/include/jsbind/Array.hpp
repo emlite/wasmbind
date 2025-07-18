@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Any.hpp"
 #include "Sequence.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
@@ -55,6 +56,8 @@ class TypedArray : public Sequence<T> {
         return *this;
     }
 };
+
+DECLARE_ARRAY(Array, Any);
 
 DECLARE_ARRAY(Uint8Array, uint8_t)
 

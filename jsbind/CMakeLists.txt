@@ -11,6 +11,14 @@ set(JSBIND_SOURCES
     src/String.cpp
     src/Reflect.cpp
     src/Null.cpp
+    src/Date.cpp
+    src/JSON.cpp
+    src/Error.cpp
+    src/time.cpp
+    src/Response.cpp
+    src/url.cpp
+    src/Math.cpp
+    src/text.cpp
 )
 
 set(JSBIND_HEADERS
@@ -28,6 +36,16 @@ set(JSBIND_HEADERS
     include/jsbind/Null.hpp
     include/jsbind/Console.hpp
     include/jsbind/utils.hpp
+    include/jsbind/Set.hpp
+    include/jsbind/Map.hpp
+    include/jsbind/Math.hpp
+    include/jsbind/Date.hpp
+    include/jsbind/JSON.hpp
+    include/jsbind/Error.hpp
+    include/jsbind/time.hpp
+    include/jsbind/Response.hpp
+    include/jsbind/url.hpp
+    include/jsbind/text.hpp
 )
 
 target_sources(jsbind 

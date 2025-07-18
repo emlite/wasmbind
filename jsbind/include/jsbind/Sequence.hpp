@@ -26,7 +26,8 @@ class Sequence : public emlite::Val {
     }
 
     [[nodiscard]] size_t size() const {
-        return emlite::Val::get("length").template as<size_t>();
+        return emlite::Val::get("length")
+            .template as<size_t>();
     }
 
     [[nodiscard]] bool empty() const { return size() == 0; }
@@ -35,6 +36,14 @@ class Sequence : public emlite::Val {
 
     T operator[](size_t i) const {
         return emlite::Val::operator[](i).template as<T>();
+    }
+
+    void set(size_t idx, const T &val) noexcept {
+        this->set(idx, val);
+    }
+
+    bool has(const T &val) const noexcept {
+        return this->has(val);
     }
 
     struct iterator {
@@ -47,7 +56,8 @@ class Sequence : public emlite::Val {
         using pointer         = void;
 
         reference operator*() const {
-            return parent->get(idx).template as<reference>();
+            return parent->get(idx).template as<reference>(
+            );
         }
         iterator &operator++() {
             ++idx;
@@ -77,7 +87,8 @@ class Sequence : public emlite::Val {
     struct const_iterator : iterator {
         using iterator::iterator;
         T operator*() const {
-            return this->parent->get(this->idx).template as<T>();
+            return this->parent->get(this->idx)
+                .template as<T>();
         }
     };
     const_iterator begin() const {

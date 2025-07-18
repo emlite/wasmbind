@@ -9,10 +9,25 @@ class Record : public emlite::Val {
 
   public:
     static Record take_ownership(Handle h) noexcept;
-    explicit Record(const emlite::Val &val): emlite::Val(val) {}
+    explicit Record(const emlite::Val &val)
+        : emlite::Val(val) {}
 
     [[nodiscard]] Record clone() const noexcept {
         return *this;
+    }
+
+    void set(const K &prop, const V &val) noexcept {
+        this->set(prop, val);
+    }
+
+    V get(const V &prop) noexcept { this->get(prop); }
+
+    bool has(const K &prop) const noexcept {
+        return this->has(prop);
+    }
+
+    [[nodiscard]] size_t size() const {
+        return get("size").template as<size_t>();
     }
 };
 

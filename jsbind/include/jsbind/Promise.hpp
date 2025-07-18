@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Any.hpp"
 #include "Function.hpp"
 #include "utils.hpp"
@@ -23,6 +24,11 @@ class Promise : public emlite::Val {
 
     static Promise resolve(const Any &value = undefined());
     static Promise reject(const Any &reason = undefined());
+
+    template <typename T>
+    T await() const {
+        return emlite::Val::await().as<T>();
+    }
 
     DECLARE_CLONE(Promise)
 };
