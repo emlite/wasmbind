@@ -1,11 +1,5 @@
 #include <jsbind/jsbind.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
-#include <webbind/Document.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/HTMLButtonElement.hpp>
-#include <webbind/HTMLCollection.hpp>
-#include <webbind/PointerEvent.hpp>
-#include <webbind/Window.hpp>
+#include <webbind/webbind.hpp>
 
 using jsbind::Console;
 using jsbind::Function;
