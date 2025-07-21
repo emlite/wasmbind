@@ -6,7 +6,7 @@
 
 namespace jsbind {
 
-class Reflect: public emlite::Val {
+class Reflect : public emlite::Val {
     static Any apply(
         const Function &target,
         const Any &thisArg,

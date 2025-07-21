@@ -21,13 +21,13 @@ class TypedSet : public emlite::Val {
     }
 
     void set(size_t idx, const T &val) noexcept {
-        this->set(idx, val);
+        emlite::Val::set(idx, val);
     }
 
-    T get(size_t idx) noexcept { this->get(idx); }
+    T get(size_t idx) noexcept { return emlite::Val::get(idx).template as<T>(); }
 
     bool has(const T &val) const noexcept {
-        return this->has(val);
+        return emlite::Val::has(val);
     }
 
     TypedSet()

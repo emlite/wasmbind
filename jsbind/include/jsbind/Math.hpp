@@ -7,9 +7,6 @@ namespace jsbind::Math {
 
 emlite::Val MATHOBJ();
 
-/*----------------------------------------------------------*
- * Numeric constants *
- *----------------------------------------------------------*/
 static constexpr double E      = 2.71828182845904523536;
 static constexpr double LN2    = 0.69314718055994530942;
 static constexpr double LN10   = 2.30258509299404568402;
@@ -20,9 +17,6 @@ static constexpr double SQRT1_2 =
     0.70710678118654752440; // 1/√2
 static constexpr double SQRT2 = 1.41421356237309504880;
 
-/*----------------------------------------------------------*
- * 1-argument Math.* wrappers *
- *----------------------------------------------------------*/
 #define DECL_MATH_UNARY(cpp, js) double cpp(double x);
 
 /// `Math.abs`

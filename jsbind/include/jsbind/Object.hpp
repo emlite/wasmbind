@@ -10,21 +10,22 @@ class Object : public emlite::Val {
   public:
     static Object take_ownership(Handle h) noexcept;
     explicit Object(const emlite::Val &val) noexcept;
+    Object() noexcept;
     bool hasOwnProperty(const char *prop) noexcept;
 
     template <typename K, typename V>
     void set(const K &prop, const V &val) noexcept {
-        this->set(prop, val);
+        emlite::Val::set(prop, val);
     }
 
-    template <typename V>
-    V get(const V &prop) noexcept {
-        this->get(prop);
+    template <typename K, typename V = Any>
+    V get(const K &prop) noexcept {
+        return emlite::Val::get(prop).template as<V>();
     }
 
     template <typename K>
     bool has(const K &prop) const noexcept {
-        return this->has(prop);
+        return emlite::Val::has(prop);
     }
 
     DECLARE_CLONE(Object)

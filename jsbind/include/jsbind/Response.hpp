@@ -37,6 +37,8 @@ Promise<Response> fetch(const char *input, const Any &init);
 /* fetch_val(Any requestLike [, init]) */
 Promise<Response> fetch_val(const Any &input);
 
-Promise<Response> fetch_val(const Any &input, const Any &init);
+Promise<Response> fetch_val(
+    const Any &input, const Any &init
+);
 
 } // namespace jsbind

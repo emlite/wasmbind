@@ -21,13 +21,15 @@ class TypedMap : public emlite::Val {
     }
 
     void set(const K &prop, const V &val) noexcept {
-        this->set(prop, val);
+        emlite::Val::set(prop, val);
     }
 
-    V get(const V &prop) noexcept { this->get(prop); }
+    V get(const K &prop) noexcept {
+        return emlite::Val::get(prop).template as<V>();
+    }
 
     bool has(const K &prop) const noexcept {
-        return this->has(prop);
+        return emlite::Val::has(prop);
     }
 
     TypedMap()

@@ -32,6 +32,7 @@
                                                            \
       public:                                              \
         using TypedArray<int_ty>::call;                    \
+        name() noexcept;                                   \
         static name take_ownership(Handle h) noexcept;     \
         explicit name(const emlite::Val &val) noexcept;    \
         [[nodiscard]] name subarray(                       \
@@ -45,6 +46,8 @@
     name::name(Handle h) noexcept                          \
         : TypedArray(TypedArray<int_ty>::take_ownership(h) \
           ) {}                                             \
+    name::name() noexcept                                  \
+        : TypedArray<int_ty>(emlite::Val::array()) {}      \
     name name::take_ownership(Handle h) noexcept {         \
         return name(h);                                    \
     }                                                      \

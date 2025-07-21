@@ -18,7 +18,8 @@ Function::Function(const char *name)
 Any Function::apply(
     const Any &this_arg, const Array &args_array
 ) {
-    return emlite::Val::call("apply", this_arg, args_array).as<Any>();
+    return emlite::Val::call("apply", this_arg, args_array)
+        .as<Any>();
 }
 
 DEFINE_CLONE(Function)

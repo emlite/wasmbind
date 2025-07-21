@@ -39,11 +39,11 @@ class Sequence : public emlite::Val {
     }
 
     void set(size_t idx, const T &val) noexcept {
-        this->set(idx, val);
+        emlite::Val::set(idx, val);
     }
 
     bool has(const T &val) const noexcept {
-        return this->has(val);
+        return emlite::Val::has(val);
     }
 
     struct iterator {

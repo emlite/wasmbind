@@ -12,6 +12,9 @@ Object Object::take_ownership(Handle h) noexcept {
 Object::Object(const emlite::Val &val) noexcept
     : emlite::Val(val) {}
 
+Object::Object() noexcept
+    : emlite::Val(emlite::Val::object()) {}
+
 bool Object::hasOwnProperty(const char *prop) noexcept {
     return has_own_property(prop);
 }

@@ -39,9 +39,8 @@ class Function : public emlite::Val {
     template <class = void>
     struct Fn {
         emlite::Val f;
-        Fn(
-            Callback f,
-            const emlite::Val &data = emlite::Val::null()
+        Fn(Callback f,
+           const emlite::Val &data = emlite::Val::null()
         ) noexcept
             : f(emlite::Val::make_fn(f, data)) {}
         Fn(emlite::Closure<Val(emlite::Params)> &&f
@@ -56,7 +55,9 @@ class Function : public emlite::Val {
         emlite::Val f;
         template <typename F>
         Fn(F &&f) noexcept
-            : f(emlite::Val::make_fn<Ret, Args...>(f)) {}
+            : f(emlite::Val::make_fn<Ret, Args...>(
+                  emlite::detail::forward<F>(f)
+              )) {}
         operator Function() const { return Function(f); }
     };
 

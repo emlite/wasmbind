@@ -37,6 +37,9 @@ class TypedArray : public Sequence<T> {
     explicit TypedArray(const emlite::Val &val) noexcept
         : Sequence<T>(val) {}
 
+    TypedArray() noexcept
+        : emlite::Val(emlite::Val(emlite::Val::array())) {}
+
     [[nodiscard]] size_t byteLength() const {
         return Sequence<T>::get("byteLength")
             .template as<size_t>();

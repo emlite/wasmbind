@@ -76,3 +76,10 @@ URLSearchParams URL::search_params() const {
     return get("searchParams")
         .template as<URLSearchParams>();
 }
+
+[[nodiscard]] String URL::search() const {
+    return get("search").template as<String>();
+}
+void URL::search(const String &value) {
+    set("search", value);
+}

@@ -53,6 +53,7 @@ class TextDecoder : public emlite::Val {
     TextDecoder(const char *label, const Any &opts);
 
     /* decoder.decode(bytes) -> String (UTF-8) */
-    [[nodiscard]] String decode(const Uint8Array &bytes) const;
+    [[nodiscard]] String decode(const Uint8Array &bytes
+    ) const;
 };
 } // namespace jsbind

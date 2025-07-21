@@ -4,7 +4,7 @@ import { OUT_INC, OUT_SRC } from "./utils.js";
 
 const reHeaderLine = /^\s*(#|class\s+\w+\s*;)/; // for preprocessor directives and forward decls
 
-const ignore = new Set(["window.cpp", "window.hpp", ".clangd"]);
+const ignore = new Set(["window.cpp", "window.hpp", ".clangd", "webbind.hpp"]);
 
 async function* walk(dir) {
   for (const dirent of await fs.readdir(dir, { withFileTypes: true })) {

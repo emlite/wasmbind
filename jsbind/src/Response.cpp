@@ -35,7 +35,8 @@ Promise<Any> Response::json() const {
 }
 
 Promise<ArrayBuffer> Response::array_buffer() const {
-    return call("arrayBuffer").template as<Promise<ArrayBuffer>>();
+    return call("arrayBuffer")
+        .template as<Promise<ArrayBuffer>>();
 }
 
 Promise<Response> fetch(const char *input) {
@@ -43,7 +44,9 @@ Promise<Response> fetch(const char *input) {
         .template as<Promise<Response>>();
 }
 
-Promise<Response> fetch(const char *input, const Any &init) {
+Promise<Response> fetch(
+    const char *input, const Any &init
+) {
     return emlite::Val::global("fetch")(
                emlite::Val(input), init
     )
@@ -55,7 +58,9 @@ Promise<Response> fetch_val(const Any &input) {
         .template as<Promise<Response>>();
 }
 
-Promise<Response> fetch_val(const Any &input, const Any &init) {
+Promise<Response> fetch_val(
+    const Any &input, const Any &init
+) {
     return emlite::Val::global("fetch")(input, init)
         .template as<Promise<Response>>();
 }
