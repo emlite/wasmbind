@@ -97,11 +97,11 @@ public:
     ReadableStream readable() const;
     WritableStream writable() const;
     SerialPortInfo getInfo();
-    jsbind::Promise open(const SerialOptions& options);
-    jsbind::Promise setSignals();
-    jsbind::Promise setSignals(const SerialOutputSignals& signals);
-    jsbind::Promise getSignals();
-    jsbind::Promise close();
-    jsbind::Promise forget();
+    jsbind::Promise<jsbind::Undefined> open(const SerialOptions& options);
+    jsbind::Promise<jsbind::Undefined> setSignals();
+    jsbind::Promise<jsbind::Undefined> setSignals(const SerialOutputSignals& signals);
+    jsbind::Promise<SerialInputSignals> getSignals();
+    jsbind::Promise<jsbind::Undefined> close();
+    jsbind::Promise<jsbind::Undefined> forget();
 };
 

@@ -13,7 +13,7 @@ InstallEvent::InstallEvent(const jsbind::DOMString& type) : ExtendableEvent(emli
 
 InstallEvent::InstallEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("InstallEvent").new_(type, eventInitDict)) {}
 
-jsbind::Promise InstallEvent::addRoutes(const jsbind::Any& rules) {
-    return ExtendableEvent::call("addRoutes", rules).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> InstallEvent::addRoutes(const jsbind::Any& rules) {
+    return ExtendableEvent::call("addRoutes", rules).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

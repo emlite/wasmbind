@@ -15,7 +15,7 @@ public:
     static GPUShaderModule take_ownership(Handle h) noexcept;
 
     GPUShaderModule clone() const noexcept;
-    jsbind::Promise getCompilationInfo();
+    jsbind::Promise<GPUCompilationInfo> getCompilationInfo();
     jsbind::USVString label() const;
     void label(const jsbind::USVString& value);
 };

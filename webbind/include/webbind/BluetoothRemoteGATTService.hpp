@@ -21,12 +21,12 @@ public:
     BluetoothDevice device() const;
     jsbind::Any uuid() const;
     bool isPrimary() const;
-    jsbind::Promise getCharacteristic(const jsbind::Any& characteristic);
-    jsbind::Promise getCharacteristics();
-    jsbind::Promise getCharacteristics(const jsbind::Any& characteristic);
-    jsbind::Promise getIncludedService(const jsbind::Any& service);
-    jsbind::Promise getIncludedServices();
-    jsbind::Promise getIncludedServices(const jsbind::Any& service);
+    jsbind::Promise<BluetoothRemoteGATTCharacteristic> getCharacteristic(const jsbind::Any& characteristic);
+    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTCharacteristic>> getCharacteristics();
+    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTCharacteristic>> getCharacteristics(const jsbind::Any& characteristic);
+    jsbind::Promise<BluetoothRemoteGATTService> getIncludedService(const jsbind::Any& service);
+    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> getIncludedServices();
+    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> getIncludedServices(const jsbind::Any& service);
     jsbind::Any oncharacteristicvaluechanged() const;
     void oncharacteristicvaluechanged(const jsbind::Any& value);
     jsbind::Any onserviceadded() const;

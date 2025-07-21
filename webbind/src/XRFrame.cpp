@@ -45,8 +45,8 @@ XRPose XRFrame::getPose(const XRSpace& space, const XRSpace& baseSpace) {
     return emlite::Val::call("getPose", space, baseSpace).as<XRPose>();
 }
 
-jsbind::Promise XRFrame::createAnchor(const XRRigidTransform& pose, const XRSpace& space) {
-    return emlite::Val::call("createAnchor", pose, space).as<jsbind::Promise>();
+jsbind::Promise<XRAnchor> XRFrame::createAnchor(const XRRigidTransform& pose, const XRSpace& space) {
+    return emlite::Val::call("createAnchor", pose, space).as<jsbind::Promise<XRAnchor>>();
 }
 
 XRAnchorSet XRFrame::trackedAnchors() const {

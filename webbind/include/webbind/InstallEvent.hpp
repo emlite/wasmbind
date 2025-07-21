@@ -16,6 +16,6 @@ public:
     InstallEvent clone() const noexcept;
     InstallEvent(const jsbind::DOMString& type);
     InstallEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::Promise addRoutes(const jsbind::Any& rules);
+    jsbind::Promise<jsbind::Undefined> addRoutes(const jsbind::Any& rules);
 };
 

@@ -28,19 +28,19 @@ FileSystemFileHandle::FileSystemFileHandle(Handle h) noexcept : FileSystemHandle
 FileSystemFileHandle::FileSystemFileHandle(const emlite::Val &val) noexcept: FileSystemHandle(val) {}
 
 
-jsbind::Promise FileSystemFileHandle::getFile() {
-    return FileSystemHandle::call("getFile").as<jsbind::Promise>();
+jsbind::Promise<File> FileSystemFileHandle::getFile() {
+    return FileSystemHandle::call("getFile").as<jsbind::Promise<File>>();
 }
 
-jsbind::Promise FileSystemFileHandle::createWritable() {
-    return FileSystemHandle::call("createWritable").as<jsbind::Promise>();
+jsbind::Promise<FileSystemWritableFileStream> FileSystemFileHandle::createWritable() {
+    return FileSystemHandle::call("createWritable").as<jsbind::Promise<FileSystemWritableFileStream>>();
 }
 
-jsbind::Promise FileSystemFileHandle::createWritable(const FileSystemCreateWritableOptions& options) {
-    return FileSystemHandle::call("createWritable", options).as<jsbind::Promise>();
+jsbind::Promise<FileSystemWritableFileStream> FileSystemFileHandle::createWritable(const FileSystemCreateWritableOptions& options) {
+    return FileSystemHandle::call("createWritable", options).as<jsbind::Promise<FileSystemWritableFileStream>>();
 }
 
-jsbind::Promise FileSystemFileHandle::createSyncAccessHandle() {
-    return FileSystemHandle::call("createSyncAccessHandle").as<jsbind::Promise>();
+jsbind::Promise<FileSystemSyncAccessHandle> FileSystemFileHandle::createSyncAccessHandle() {
+    return FileSystemHandle::call("createSyncAccessHandle").as<jsbind::Promise<FileSystemSyncAccessHandle>>();
 }
 

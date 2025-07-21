@@ -44,15 +44,15 @@ ReadableStream Blob::stream() {
     return emlite::Val::call("stream").as<ReadableStream>();
 }
 
-jsbind::Promise Blob::text() {
-    return emlite::Val::call("text").as<jsbind::Promise>();
+jsbind::Promise<jsbind::USVString> Blob::text() {
+    return emlite::Val::call("text").as<jsbind::Promise<jsbind::USVString>>();
 }
 
-jsbind::Promise Blob::arrayBuffer() {
-    return emlite::Val::call("arrayBuffer").as<jsbind::Promise>();
+jsbind::Promise<jsbind::ArrayBuffer> Blob::arrayBuffer() {
+    return emlite::Val::call("arrayBuffer").as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise Blob::bytes() {
-    return emlite::Val::call("bytes").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Uint8Array> Blob::bytes() {
+    return emlite::Val::call("bytes").as<jsbind::Promise<jsbind::Uint8Array>>();
 }
 

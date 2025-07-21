@@ -82,28 +82,28 @@ RTCRtpCapabilities RTCRtpSender::getCapabilities(const jsbind::DOMString& kind) 
     return emlite::Val::global("rtcrtpsender").call("getCapabilities", kind).as<RTCRtpCapabilities>();
 }
 
-jsbind::Promise RTCRtpSender::setParameters(const RTCRtpSendParameters& parameters) {
-    return emlite::Val::call("setParameters", parameters).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RTCRtpSender::setParameters(const RTCRtpSendParameters& parameters) {
+    return emlite::Val::call("setParameters", parameters).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise RTCRtpSender::setParameters(const RTCRtpSendParameters& parameters, const RTCSetParameterOptions& setParameterOptions) {
-    return emlite::Val::call("setParameters", parameters, setParameterOptions).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RTCRtpSender::setParameters(const RTCRtpSendParameters& parameters, const RTCSetParameterOptions& setParameterOptions) {
+    return emlite::Val::call("setParameters", parameters, setParameterOptions).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 RTCRtpSendParameters RTCRtpSender::getParameters() {
     return emlite::Val::call("getParameters").as<RTCRtpSendParameters>();
 }
 
-jsbind::Promise RTCRtpSender::replaceTrack(const MediaStreamTrack& withTrack) {
-    return emlite::Val::call("replaceTrack", withTrack).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RTCRtpSender::replaceTrack(const MediaStreamTrack& withTrack) {
+    return emlite::Val::call("replaceTrack", withTrack).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined RTCRtpSender::setStreams(const MediaStream& streams) {
     return emlite::Val::call("setStreams", streams).as<jsbind::Undefined>();
 }
 
-jsbind::Promise RTCRtpSender::getStats() {
-    return emlite::Val::call("getStats").as<jsbind::Promise>();
+jsbind::Promise<RTCStatsReport> RTCRtpSender::getStats() {
+    return emlite::Val::call("getStats").as<jsbind::Promise<RTCStatsReport>>();
 }
 
 jsbind::Any RTCRtpSender::transform() const {
@@ -114,12 +114,12 @@ void RTCRtpSender::transform(const jsbind::Any& value) {
     emlite::Val::set("transform", value);
 }
 
-jsbind::Promise RTCRtpSender::generateKeyFrame() {
-    return emlite::Val::call("generateKeyFrame").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RTCRtpSender::generateKeyFrame() {
+    return emlite::Val::call("generateKeyFrame").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise RTCRtpSender::generateKeyFrame(const jsbind::Sequence<jsbind::DOMString>& rids) {
-    return emlite::Val::call("generateKeyFrame", rids).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RTCRtpSender::generateKeyFrame(const jsbind::Sequence<jsbind::DOMString>& rids) {
+    return emlite::Val::call("generateKeyFrame", rids).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 RTCDTMFSender RTCRtpSender::dtmf() const {

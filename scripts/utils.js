@@ -71,7 +71,6 @@ export function cpp(idlType) {
     USVString: "jsbind::USVString",
     ByteString: "jsbind::ByteString",
     CSSOMString: "jsbind::CSSOMString",
-    Promise: "jsbind::Promise",
     object: "jsbind::Object",
     any: "jsbind::Any",
     Uint8Array: "jsbind::Uint8Array",
@@ -97,6 +96,10 @@ export function cpp(idlType) {
 
     if (idlType.generic === "sequence") {
       return `jsbind::Sequence<${cpp(elem)}>`;
+    }
+
+    if (idlType.generic === "Promise") {
+      return `jsbind::Promise<${cpp(elem)}>`;
     }
 
     if (idlType.generic === "FrozenArray") {

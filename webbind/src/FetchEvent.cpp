@@ -17,8 +17,8 @@ Request FetchEvent::request() const {
     return ExtendableEvent::get("request").as<Request>();
 }
 
-jsbind::Promise FetchEvent::preloadResponse() const {
-    return ExtendableEvent::get("preloadResponse").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> FetchEvent::preloadResponse() const {
+    return ExtendableEvent::get("preloadResponse").as<jsbind::Promise<jsbind::Any>>();
 }
 
 jsbind::DOMString FetchEvent::clientId() const {
@@ -33,11 +33,11 @@ jsbind::DOMString FetchEvent::replacesClientId() const {
     return ExtendableEvent::get("replacesClientId").as<jsbind::DOMString>();
 }
 
-jsbind::Promise FetchEvent::handled() const {
-    return ExtendableEvent::get("handled").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> FetchEvent::handled() const {
+    return ExtendableEvent::get("handled").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Undefined FetchEvent::respondWith(const jsbind::Promise& r) {
+jsbind::Undefined FetchEvent::respondWith(const jsbind::Promise<Response>& r) {
     return ExtendableEvent::call("respondWith", r).as<jsbind::Undefined>();
 }
 

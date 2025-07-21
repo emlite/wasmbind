@@ -102,12 +102,12 @@ GeolocationSensor::GeolocationSensor() : Sensor(emlite::Val::global("Geolocation
 
 GeolocationSensor::GeolocationSensor(const jsbind::Any& options) : Sensor(emlite::Val::global("GeolocationSensor").new_(options)) {}
 
-jsbind::Promise GeolocationSensor::read() {
-    return emlite::Val::global("geolocationsensor").call("read").as<jsbind::Promise>();
+jsbind::Promise<GeolocationSensorReading> GeolocationSensor::read() {
+    return emlite::Val::global("geolocationsensor").call("read").as<jsbind::Promise<GeolocationSensorReading>>();
 }
 
-jsbind::Promise GeolocationSensor::read(const ReadOptions& readOptions) {
-    return emlite::Val::global("geolocationsensor").call("read", readOptions).as<jsbind::Promise>();
+jsbind::Promise<GeolocationSensorReading> GeolocationSensor::read(const ReadOptions& readOptions) {
+    return emlite::Val::global("geolocationsensor").call("read", readOptions).as<jsbind::Promise<GeolocationSensorReading>>();
 }
 
 double GeolocationSensor::latitude() const {

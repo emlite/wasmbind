@@ -10,8 +10,8 @@ GPUShaderModule::GPUShaderModule(Handle h) noexcept : emlite::Val(emlite::Val::t
 GPUShaderModule::GPUShaderModule(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise GPUShaderModule::getCompilationInfo() {
-    return emlite::Val::call("getCompilationInfo").as<jsbind::Promise>();
+jsbind::Promise<GPUCompilationInfo> GPUShaderModule::getCompilationInfo() {
+    return emlite::Val::call("getCompilationInfo").as<jsbind::Promise<GPUCompilationInfo>>();
 }
 
 jsbind::USVString GPUShaderModule::label() const {

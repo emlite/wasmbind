@@ -26,7 +26,7 @@ public:
     static Worklet take_ownership(Handle h) noexcept;
 
     Worklet clone() const noexcept;
-    jsbind::Promise addModule(const jsbind::USVString& moduleURL);
-    jsbind::Promise addModule(const jsbind::USVString& moduleURL, const WorkletOptions& options);
+    jsbind::Promise<jsbind::Undefined> addModule(const jsbind::USVString& moduleURL);
+    jsbind::Promise<jsbind::Undefined> addModule(const jsbind::USVString& moduleURL, const WorkletOptions& options);
 };
 

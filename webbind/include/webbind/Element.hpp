@@ -227,8 +227,8 @@ public:
     double currentCSSZoom() const;
     jsbind::DOMString elementTiming() const;
     void elementTiming(const jsbind::DOMString& value);
-    jsbind::Promise requestFullscreen();
-    jsbind::Promise requestFullscreen(const FullscreenOptions& options);
+    jsbind::Promise<jsbind::Undefined> requestFullscreen();
+    jsbind::Promise<jsbind::Undefined> requestFullscreen(const FullscreenOptions& options);
     jsbind::Any onfullscreenchange() const;
     void onfullscreenchange(const jsbind::Any& value);
     jsbind::Any onfullscreenerror() const;
@@ -244,8 +244,8 @@ public:
     jsbind::Undefined setPointerCapture(long pointerId);
     jsbind::Undefined releasePointerCapture(long pointerId);
     bool hasPointerCapture(long pointerId);
-    jsbind::Promise requestPointerLock();
-    jsbind::Promise requestPointerLock(const PointerLockOptions& options);
+    jsbind::Promise<jsbind::Undefined> requestPointerLock();
+    jsbind::Promise<jsbind::Undefined> requestPointerLock(const PointerLockOptions& options);
     jsbind::CSSOMString regionOverset() const;
     jsbind::Sequence<Range> getRegionFlowRanges();
     jsbind::Sequence<DOMQuad> getBoxQuads();

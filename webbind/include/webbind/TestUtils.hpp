@@ -6,6 +6,6 @@
 
 
 namespace TestUtils {
-    jsbind::Promise gc();
+    jsbind::Promise<jsbind::Undefined> gc();
 } // namespace TestUtils
 

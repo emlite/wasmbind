@@ -11,7 +11,7 @@ ML::ML(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ML::ML(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise ML::createContext(const GPUDevice& gpuDevice) {
-    return emlite::Val::call("createContext", gpuDevice).as<jsbind::Promise>();
+jsbind::Promise<MLContext> ML::createContext(const GPUDevice& gpuDevice) {
+    return emlite::Val::call("createContext", gpuDevice).as<jsbind::Promise<MLContext>>();
 }
 

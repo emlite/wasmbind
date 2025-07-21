@@ -40,10 +40,10 @@ public:
     PaymentRequest clone() const noexcept;
     PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details);
     PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options);
-    jsbind::Promise show();
-    jsbind::Promise show(const jsbind::Promise& detailsPromise);
-    jsbind::Promise abort();
-    jsbind::Promise canMakePayment();
+    jsbind::Promise<PaymentResponse> show();
+    jsbind::Promise<PaymentResponse> show(const jsbind::Promise<PaymentDetailsUpdate>& detailsPromise);
+    jsbind::Promise<jsbind::Undefined> abort();
+    jsbind::Promise<bool> canMakePayment();
     jsbind::DOMString id() const;
     ContactAddress shippingAddress() const;
     jsbind::DOMString shippingOption() const;
@@ -54,6 +54,6 @@ public:
     void onshippingoptionchange(const jsbind::Any& value);
     jsbind::Any onpaymentmethodchange() const;
     void onpaymentmethodchange(const jsbind::Any& value);
-    static jsbind::Promise securePaymentConfirmationAvailability();
+    static jsbind::Promise<SecurePaymentConfirmationAvailability> securePaymentConfirmationAvailability();
 };
 

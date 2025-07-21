@@ -59,8 +59,8 @@ void WebTransportSendStream::sendOrder(long long value) {
     WritableStream::set("sendOrder", value);
 }
 
-jsbind::Promise WebTransportSendStream::getStats() {
-    return WritableStream::call("getStats").as<jsbind::Promise>();
+jsbind::Promise<WebTransportSendStreamStats> WebTransportSendStream::getStats() {
+    return WritableStream::call("getStats").as<jsbind::Promise<WebTransportSendStreamStats>>();
 }
 
 WebTransportWriter WebTransportSendStream::getWriter() {

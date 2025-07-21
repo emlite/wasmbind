@@ -29,7 +29,7 @@ public:
     bool playsInline() const;
     void playsInline(bool value);
     VideoPlaybackQuality getVideoPlaybackQuality();
-    jsbind::Promise requestPictureInPicture();
+    jsbind::Promise<PictureInPictureWindow> requestPictureInPicture();
     jsbind::Any onenterpictureinpicture() const;
     void onenterpictureinpicture(const jsbind::Any& value);
     jsbind::Any onleavepictureinpicture() const;

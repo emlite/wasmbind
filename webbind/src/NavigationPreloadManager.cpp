@@ -33,19 +33,19 @@ NavigationPreloadManager::NavigationPreloadManager(Handle h) noexcept : emlite::
 NavigationPreloadManager::NavigationPreloadManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise NavigationPreloadManager::enable() {
-    return emlite::Val::call("enable").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NavigationPreloadManager::enable() {
+    return emlite::Val::call("enable").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NavigationPreloadManager::disable() {
-    return emlite::Val::call("disable").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NavigationPreloadManager::disable() {
+    return emlite::Val::call("disable").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NavigationPreloadManager::setHeaderValue(const jsbind::ByteString& value) {
-    return emlite::Val::call("setHeaderValue", value).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NavigationPreloadManager::setHeaderValue(const jsbind::ByteString& value) {
+    return emlite::Val::call("setHeaderValue", value).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NavigationPreloadManager::getState() {
-    return emlite::Val::call("getState").as<jsbind::Promise>();
+jsbind::Promise<NavigationPreloadState> NavigationPreloadManager::getState() {
+    return emlite::Val::call("getState").as<jsbind::Promise<NavigationPreloadState>>();
 }
 

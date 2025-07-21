@@ -23,6 +23,6 @@ public:
     DeviceMotionEventAcceleration accelerationIncludingGravity() const;
     DeviceMotionEventRotationRate rotationRate() const;
     double interval() const;
-    static jsbind::Promise requestPermission();
+    static jsbind::Promise<PermissionState> requestPermission();
 };
 

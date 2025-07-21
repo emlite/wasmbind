@@ -209,12 +209,12 @@ MediaTrackSettings MediaStreamTrack::getSettings() {
     return EventTarget::call("getSettings").as<MediaTrackSettings>();
 }
 
-jsbind::Promise MediaStreamTrack::applyConstraints() {
-    return EventTarget::call("applyConstraints").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaStreamTrack::applyConstraints() {
+    return EventTarget::call("applyConstraints").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise MediaStreamTrack::applyConstraints(const MediaTrackConstraints& constraints) {
-    return EventTarget::call("applyConstraints", constraints).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaStreamTrack::applyConstraints(const MediaTrackConstraints& constraints) {
+    return EventTarget::call("applyConstraints", constraints).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 CaptureHandle MediaStreamTrack::getCaptureHandle() {
@@ -233,8 +233,8 @@ jsbind::Sequence<jsbind::DOMString> MediaStreamTrack::getSupportedCaptureActions
     return EventTarget::call("getSupportedCaptureActions").as<jsbind::Sequence<jsbind::DOMString>>();
 }
 
-jsbind::Promise MediaStreamTrack::sendCaptureAction(const CaptureAction& action) {
-    return EventTarget::call("sendCaptureAction", action).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaStreamTrack::sendCaptureAction(const CaptureAction& action) {
+    return EventTarget::call("sendCaptureAction", action).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::DOMString MediaStreamTrack::contentHint() const {

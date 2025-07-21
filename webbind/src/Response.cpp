@@ -31,8 +31,8 @@ Response Response::redirect(const jsbind::USVString& url, unsigned short status)
     return emlite::Val::global("response").call("redirect", url, status).as<Response>();
 }
 
-jsbind::Promise Response::json() {
-    return emlite::Val::call("json").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> Response::json() {
+    return emlite::Val::call("json").as<jsbind::Promise<jsbind::Any>>();
 }
 
 ResponseType Response::type() const {
@@ -75,23 +75,23 @@ bool Response::bodyUsed() const {
     return emlite::Val::get("bodyUsed").as<bool>();
 }
 
-jsbind::Promise Response::arrayBuffer() {
-    return emlite::Val::call("arrayBuffer").as<jsbind::Promise>();
+jsbind::Promise<jsbind::ArrayBuffer> Response::arrayBuffer() {
+    return emlite::Val::call("arrayBuffer").as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise Response::blob() {
-    return emlite::Val::call("blob").as<jsbind::Promise>();
+jsbind::Promise<Blob> Response::blob() {
+    return emlite::Val::call("blob").as<jsbind::Promise<Blob>>();
 }
 
-jsbind::Promise Response::bytes() {
-    return emlite::Val::call("bytes").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Uint8Array> Response::bytes() {
+    return emlite::Val::call("bytes").as<jsbind::Promise<jsbind::Uint8Array>>();
 }
 
-jsbind::Promise Response::formData() {
-    return emlite::Val::call("formData").as<jsbind::Promise>();
+jsbind::Promise<FormData> Response::formData() {
+    return emlite::Val::call("formData").as<jsbind::Promise<FormData>>();
 }
 
-jsbind::Promise Response::text() {
-    return emlite::Val::call("text").as<jsbind::Promise>();
+jsbind::Promise<jsbind::USVString> Response::text() {
+    return emlite::Val::call("text").as<jsbind::Promise<jsbind::USVString>>();
 }
 

@@ -14,7 +14,7 @@ PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(const jsbind::DOMString& ty
 
 PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PaymentRequestUpdateEvent").new_(type, eventInitDict)) {}
 
-jsbind::Undefined PaymentRequestUpdateEvent::updateWith(const jsbind::Promise& detailsPromise) {
+jsbind::Undefined PaymentRequestUpdateEvent::updateWith(const jsbind::Promise<PaymentDetailsUpdate>& detailsPromise) {
     return Event::call("updateWith", detailsPromise).as<jsbind::Undefined>();
 }
 

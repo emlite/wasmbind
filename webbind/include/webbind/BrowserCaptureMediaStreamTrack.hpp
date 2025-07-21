@@ -18,8 +18,8 @@ public:
     static BrowserCaptureMediaStreamTrack take_ownership(Handle h) noexcept;
 
     BrowserCaptureMediaStreamTrack clone() const noexcept;
-    jsbind::Promise cropTo(const CropTarget& cropTarget);
+    jsbind::Promise<jsbind::Undefined> cropTo(const CropTarget& cropTarget);
     BrowserCaptureMediaStreamTrack clone();
-    jsbind::Promise restrictTo(const RestrictionTarget& RestrictionTarget);
+    jsbind::Promise<jsbind::Undefined> restrictTo(const RestrictionTarget& RestrictionTarget);
 };
 

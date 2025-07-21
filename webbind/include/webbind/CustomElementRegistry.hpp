@@ -32,7 +32,7 @@ public:
     jsbind::Undefined define(const jsbind::DOMString& name, const jsbind::Function& constructor, const ElementDefinitionOptions& options);
     jsbind::Any get(const jsbind::DOMString& name);
     jsbind::DOMString getName(const jsbind::Function& constructor);
-    jsbind::Promise whenDefined(const jsbind::DOMString& name);
+    jsbind::Promise<jsbind::Function> whenDefined(const jsbind::DOMString& name);
     jsbind::Undefined upgrade(const Node& root);
     jsbind::Undefined initialize(const Node& root);
 };

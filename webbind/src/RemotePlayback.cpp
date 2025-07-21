@@ -9,16 +9,16 @@ RemotePlayback::RemotePlayback(Handle h) noexcept : EventTarget(emlite::Val::tak
 RemotePlayback::RemotePlayback(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise RemotePlayback::watchAvailability(const jsbind::Function& callback) {
-    return EventTarget::call("watchAvailability", callback).as<jsbind::Promise>();
+jsbind::Promise<long> RemotePlayback::watchAvailability(const jsbind::Function& callback) {
+    return EventTarget::call("watchAvailability", callback).as<jsbind::Promise<long>>();
 }
 
-jsbind::Promise RemotePlayback::cancelWatchAvailability() {
-    return EventTarget::call("cancelWatchAvailability").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RemotePlayback::cancelWatchAvailability() {
+    return EventTarget::call("cancelWatchAvailability").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise RemotePlayback::cancelWatchAvailability(long id) {
-    return EventTarget::call("cancelWatchAvailability", id).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RemotePlayback::cancelWatchAvailability(long id) {
+    return EventTarget::call("cancelWatchAvailability", id).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 RemotePlaybackState RemotePlayback::state() const {
@@ -49,7 +49,7 @@ void RemotePlayback::ondisconnect(const jsbind::Any& value) {
     EventTarget::set("ondisconnect", value);
 }
 
-jsbind::Promise RemotePlayback::prompt() {
-    return EventTarget::call("prompt").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RemotePlayback::prompt() {
+    return EventTarget::call("prompt").as<jsbind::Promise<jsbind::Undefined>>();
 }
 

@@ -29,6 +29,6 @@ public:
     static WebTransportReceiveStream take_ownership(Handle h) noexcept;
 
     WebTransportReceiveStream clone() const noexcept;
-    jsbind::Promise getStats();
+    jsbind::Promise<WebTransportReceiveStreamStats> getStats();
 };
 

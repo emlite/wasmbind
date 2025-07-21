@@ -34,19 +34,19 @@ StorageManager::StorageManager(Handle h) noexcept : emlite::Val(emlite::Val::tak
 StorageManager::StorageManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise StorageManager::persisted() {
-    return emlite::Val::call("persisted").as<jsbind::Promise>();
+jsbind::Promise<bool> StorageManager::persisted() {
+    return emlite::Val::call("persisted").as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise StorageManager::persist() {
-    return emlite::Val::call("persist").as<jsbind::Promise>();
+jsbind::Promise<bool> StorageManager::persist() {
+    return emlite::Val::call("persist").as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise StorageManager::estimate() {
-    return emlite::Val::call("estimate").as<jsbind::Promise>();
+jsbind::Promise<StorageEstimate> StorageManager::estimate() {
+    return emlite::Val::call("estimate").as<jsbind::Promise<StorageEstimate>>();
 }
 
-jsbind::Promise StorageManager::getDirectory() {
-    return emlite::Val::call("getDirectory").as<jsbind::Promise>();
+jsbind::Promise<FileSystemDirectoryHandle> StorageManager::getDirectory() {
+    return emlite::Val::call("getDirectory").as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 

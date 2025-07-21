@@ -14,8 +14,8 @@ public:
     static FileSystemWritableFileStream take_ownership(Handle h) noexcept;
 
     FileSystemWritableFileStream clone() const noexcept;
-    jsbind::Promise write(const jsbind::Any& data);
-    jsbind::Promise seek(long long position);
-    jsbind::Promise truncate(long long size);
+    jsbind::Promise<jsbind::Undefined> write(const jsbind::Any& data);
+    jsbind::Promise<jsbind::Undefined> seek(long long position);
+    jsbind::Promise<jsbind::Undefined> truncate(long long size);
 };
 

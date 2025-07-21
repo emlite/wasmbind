@@ -50,11 +50,11 @@ void USB::ondisconnect(const jsbind::Any& value) {
     EventTarget::set("ondisconnect", value);
 }
 
-jsbind::Promise USB::getDevices() {
-    return EventTarget::call("getDevices").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<USBDevice>> USB::getDevices() {
+    return EventTarget::call("getDevices").as<jsbind::Promise<jsbind::Sequence<USBDevice>>>();
 }
 
-jsbind::Promise USB::requestDevice(const USBDeviceRequestOptions& options) {
-    return EventTarget::call("requestDevice", options).as<jsbind::Promise>();
+jsbind::Promise<USBDevice> USB::requestDevice(const USBDeviceRequestOptions& options) {
+    return EventTarget::call("requestDevice", options).as<jsbind::Promise<USBDevice>>();
 }
 

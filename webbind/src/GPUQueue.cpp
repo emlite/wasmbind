@@ -104,8 +104,8 @@ jsbind::Undefined GPUQueue::submit(const jsbind::Sequence<GPUCommandBuffer>& com
     return emlite::Val::call("submit", commandBuffers).as<jsbind::Undefined>();
 }
 
-jsbind::Promise GPUQueue::onSubmittedWorkDone() {
-    return emlite::Val::call("onSubmittedWorkDone").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> GPUQueue::onSubmittedWorkDone() {
+    return emlite::Val::call("onSubmittedWorkDone").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined GPUQueue::writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data) {

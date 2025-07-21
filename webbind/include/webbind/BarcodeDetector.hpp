@@ -35,7 +35,7 @@ public:
     BarcodeDetector clone() const noexcept;
     BarcodeDetector();
     BarcodeDetector(const jsbind::Any& barcodeDetectorOptions);
-    static jsbind::Promise getSupportedFormats();
-    jsbind::Promise detect(const jsbind::Any& image);
+    static jsbind::Promise<jsbind::Sequence<BarcodeFormat>> getSupportedFormats();
+    jsbind::Promise<jsbind::Sequence<DetectedBarcode>> detect(const jsbind::Any& image);
 };
 

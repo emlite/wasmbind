@@ -70,9 +70,9 @@ public:
     void ondequeue(const jsbind::Any& value);
     jsbind::Undefined configure(const VideoDecoderConfig& config);
     jsbind::Undefined decode(const EncodedVideoChunk& chunk);
-    jsbind::Promise flush();
+    jsbind::Promise<jsbind::Undefined> flush();
     jsbind::Undefined reset();
     jsbind::Undefined close();
-    static jsbind::Promise isConfigSupported(const VideoDecoderConfig& config);
+    static jsbind::Promise<VideoDecoderSupport> isConfigSupported(const VideoDecoderConfig& config);
 };
 

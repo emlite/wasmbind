@@ -203,27 +203,27 @@ SerialPortInfo SerialPort::getInfo() {
     return EventTarget::call("getInfo").as<SerialPortInfo>();
 }
 
-jsbind::Promise SerialPort::open(const SerialOptions& options) {
-    return EventTarget::call("open", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> SerialPort::open(const SerialOptions& options) {
+    return EventTarget::call("open", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise SerialPort::setSignals() {
-    return EventTarget::call("setSignals").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> SerialPort::setSignals() {
+    return EventTarget::call("setSignals").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise SerialPort::setSignals(const SerialOutputSignals& signals) {
-    return EventTarget::call("setSignals", signals).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> SerialPort::setSignals(const SerialOutputSignals& signals) {
+    return EventTarget::call("setSignals", signals).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise SerialPort::getSignals() {
-    return EventTarget::call("getSignals").as<jsbind::Promise>();
+jsbind::Promise<SerialInputSignals> SerialPort::getSignals() {
+    return EventTarget::call("getSignals").as<jsbind::Promise<SerialInputSignals>>();
 }
 
-jsbind::Promise SerialPort::close() {
-    return EventTarget::call("close").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> SerialPort::close() {
+    return EventTarget::call("close").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise SerialPort::forget() {
-    return EventTarget::call("forget").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> SerialPort::forget() {
+    return EventTarget::call("forget").as<jsbind::Promise<jsbind::Undefined>>();
 }
 

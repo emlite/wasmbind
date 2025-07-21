@@ -18,7 +18,7 @@ public:
     jsbind::DOMString value() const;
     jsbind::FrozenArray<jsbind::DOMString> validValues() const;
     jsbind::Undefined clearOverride();
-    jsbind::Promise requestOverride(const jsbind::DOMString& value);
+    jsbind::Promise<jsbind::Undefined> requestOverride(const jsbind::DOMString& value);
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);
 };

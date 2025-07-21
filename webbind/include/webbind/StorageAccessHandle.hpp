@@ -27,8 +27,8 @@ public:
     IDBFactory indexedDB() const;
     LockManager locks() const;
     CacheStorage caches() const;
-    jsbind::Promise getDirectory();
-    jsbind::Promise estimate();
+    jsbind::Promise<FileSystemDirectoryHandle> getDirectory();
+    jsbind::Promise<StorageEstimate> estimate();
     jsbind::DOMString createObjectURL(const jsbind::Any& obj);
     jsbind::Undefined revokeObjectURL(const jsbind::DOMString& url);
     BroadcastChannel BroadcastChannel_(const jsbind::DOMString& name);

@@ -98,27 +98,27 @@ bool Request::bodyUsed() const {
     return emlite::Val::get("bodyUsed").as<bool>();
 }
 
-jsbind::Promise Request::arrayBuffer() {
-    return emlite::Val::call("arrayBuffer").as<jsbind::Promise>();
+jsbind::Promise<jsbind::ArrayBuffer> Request::arrayBuffer() {
+    return emlite::Val::call("arrayBuffer").as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise Request::blob() {
-    return emlite::Val::call("blob").as<jsbind::Promise>();
+jsbind::Promise<Blob> Request::blob() {
+    return emlite::Val::call("blob").as<jsbind::Promise<Blob>>();
 }
 
-jsbind::Promise Request::bytes() {
-    return emlite::Val::call("bytes").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Uint8Array> Request::bytes() {
+    return emlite::Val::call("bytes").as<jsbind::Promise<jsbind::Uint8Array>>();
 }
 
-jsbind::Promise Request::formData() {
-    return emlite::Val::call("formData").as<jsbind::Promise>();
+jsbind::Promise<FormData> Request::formData() {
+    return emlite::Val::call("formData").as<jsbind::Promise<FormData>>();
 }
 
-jsbind::Promise Request::json() {
-    return emlite::Val::call("json").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> Request::json() {
+    return emlite::Val::call("json").as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise Request::text() {
-    return emlite::Val::call("text").as<jsbind::Promise>();
+jsbind::Promise<jsbind::USVString> Request::text() {
+    return emlite::Val::call("text").as<jsbind::Promise<jsbind::USVString>>();
 }
 

@@ -24,7 +24,7 @@ public:
     static WebGL2RenderingContext take_ownership(Handle h) noexcept;
 
     WebGL2RenderingContext clone() const noexcept;
-    jsbind::Promise makeXRCompatible();
+    jsbind::Promise<jsbind::Undefined> makeXRCompatible();
     jsbind::Undefined copyBufferSubData(const jsbind::Any& readTarget, const jsbind::Any& writeTarget, const jsbind::Any& readOffset, const jsbind::Any& writeOffset, const jsbind::Any& size);
     jsbind::Undefined getBufferSubData(const jsbind::Any& target, const jsbind::Any& srcByteOffset, const jsbind::Any& dstBuffer);
     jsbind::Undefined getBufferSubData(const jsbind::Any& target, const jsbind::Any& srcByteOffset, const jsbind::Any& dstBuffer, long long dstOffset);

@@ -11,15 +11,15 @@ BrowserCaptureMediaStreamTrack::BrowserCaptureMediaStreamTrack(Handle h) noexcep
 BrowserCaptureMediaStreamTrack::BrowserCaptureMediaStreamTrack(const emlite::Val &val) noexcept: MediaStreamTrack(val) {}
 
 
-jsbind::Promise BrowserCaptureMediaStreamTrack::cropTo(const CropTarget& cropTarget) {
-    return MediaStreamTrack::call("cropTo", cropTarget).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BrowserCaptureMediaStreamTrack::cropTo(const CropTarget& cropTarget) {
+    return MediaStreamTrack::call("cropTo", cropTarget).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 BrowserCaptureMediaStreamTrack BrowserCaptureMediaStreamTrack::clone() {
     return MediaStreamTrack::call("clone").as<BrowserCaptureMediaStreamTrack>();
 }
 
-jsbind::Promise BrowserCaptureMediaStreamTrack::restrictTo(const RestrictionTarget& RestrictionTarget) {
-    return MediaStreamTrack::call("restrictTo", RestrictionTarget).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BrowserCaptureMediaStreamTrack::restrictTo(const RestrictionTarget& RestrictionTarget) {
+    return MediaStreamTrack::call("restrictTo", RestrictionTarget).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

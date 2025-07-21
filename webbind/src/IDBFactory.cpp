@@ -46,8 +46,8 @@ IDBOpenDBRequest IDBFactory::deleteDatabase(const jsbind::DOMString& name) {
     return emlite::Val::call("deleteDatabase", name).as<IDBOpenDBRequest>();
 }
 
-jsbind::Promise IDBFactory::databases() {
-    return emlite::Val::call("databases").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<IDBDatabaseInfo>> IDBFactory::databases() {
+    return emlite::Val::call("databases").as<jsbind::Promise<jsbind::Sequence<IDBDatabaseInfo>>>();
 }
 
 short IDBFactory::cmp(const jsbind::Any& first, const jsbind::Any& second) {

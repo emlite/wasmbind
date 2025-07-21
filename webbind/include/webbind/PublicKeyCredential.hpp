@@ -192,14 +192,14 @@ public:
     AuthenticatorResponse response() const;
     jsbind::DOMString authenticatorAttachment() const;
     AuthenticationExtensionsClientOutputs getClientExtensionResults();
-    static jsbind::Promise isConditionalMediationAvailable();
+    static jsbind::Promise<bool> isConditionalMediationAvailable();
     jsbind::Any toJSON();
-    static jsbind::Promise isUserVerifyingPlatformAuthenticatorAvailable();
-    static jsbind::Promise getClientCapabilities();
+    static jsbind::Promise<bool> isUserVerifyingPlatformAuthenticatorAvailable();
+    static jsbind::Promise<jsbind::Any> getClientCapabilities();
     static PublicKeyCredentialCreationOptions parseCreationOptionsFromJSON(const PublicKeyCredentialCreationOptionsJSON& options);
     static PublicKeyCredentialRequestOptions parseRequestOptionsFromJSON(const PublicKeyCredentialRequestOptionsJSON& options);
-    static jsbind::Promise signalUnknownCredential(const UnknownCredentialOptions& options);
-    static jsbind::Promise signalAllAcceptedCredentials(const AllAcceptedCredentialsOptions& options);
-    static jsbind::Promise signalCurrentUserDetails(const CurrentUserDetailsOptions& options);
+    static jsbind::Promise<jsbind::Undefined> signalUnknownCredential(const UnknownCredentialOptions& options);
+    static jsbind::Promise<jsbind::Undefined> signalAllAcceptedCredentials(const AllAcceptedCredentialsOptions& options);
+    static jsbind::Promise<jsbind::Undefined> signalCurrentUserDetails(const CurrentUserDetailsOptions& options);
 };
 

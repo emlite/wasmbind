@@ -44,12 +44,12 @@ void HTMLPortalElement::referrerPolicy(const jsbind::DOMString& value) {
     HTMLElement::set("referrerPolicy", value);
 }
 
-jsbind::Promise HTMLPortalElement::activate() {
-    return HTMLElement::call("activate").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HTMLPortalElement::activate() {
+    return HTMLElement::call("activate").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise HTMLPortalElement::activate(const PortalActivateOptions& options) {
-    return HTMLElement::call("activate", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HTMLPortalElement::activate(const PortalActivateOptions& options) {
+    return HTMLElement::call("activate", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined HTMLPortalElement::postMessage(const jsbind::Any& message) {

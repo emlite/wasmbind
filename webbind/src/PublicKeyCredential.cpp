@@ -458,20 +458,20 @@ AuthenticationExtensionsClientOutputs PublicKeyCredential::getClientExtensionRes
     return Credential::call("getClientExtensionResults").as<AuthenticationExtensionsClientOutputs>();
 }
 
-jsbind::Promise PublicKeyCredential::isConditionalMediationAvailable() {
-    return emlite::Val::global("publickeycredential").call("isConditionalMediationAvailable").as<jsbind::Promise>();
+jsbind::Promise<bool> PublicKeyCredential::isConditionalMediationAvailable() {
+    return emlite::Val::global("publickeycredential").call("isConditionalMediationAvailable").as<jsbind::Promise<bool>>();
 }
 
 jsbind::Any PublicKeyCredential::toJSON() {
     return Credential::call("toJSON").as<jsbind::Any>();
 }
 
-jsbind::Promise PublicKeyCredential::isUserVerifyingPlatformAuthenticatorAvailable() {
-    return emlite::Val::global("publickeycredential").call("isUserVerifyingPlatformAuthenticatorAvailable").as<jsbind::Promise>();
+jsbind::Promise<bool> PublicKeyCredential::isUserVerifyingPlatformAuthenticatorAvailable() {
+    return emlite::Val::global("publickeycredential").call("isUserVerifyingPlatformAuthenticatorAvailable").as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise PublicKeyCredential::getClientCapabilities() {
-    return emlite::Val::global("publickeycredential").call("getClientCapabilities").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> PublicKeyCredential::getClientCapabilities() {
+    return emlite::Val::global("publickeycredential").call("getClientCapabilities").as<jsbind::Promise<jsbind::Any>>();
 }
 
 PublicKeyCredentialCreationOptions PublicKeyCredential::parseCreationOptionsFromJSON(const PublicKeyCredentialCreationOptionsJSON& options) {
@@ -482,15 +482,15 @@ PublicKeyCredentialRequestOptions PublicKeyCredential::parseRequestOptionsFromJS
     return emlite::Val::global("publickeycredential").call("parseRequestOptionsFromJSON", options).as<PublicKeyCredentialRequestOptions>();
 }
 
-jsbind::Promise PublicKeyCredential::signalUnknownCredential(const UnknownCredentialOptions& options) {
-    return emlite::Val::global("publickeycredential").call("signalUnknownCredential", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PublicKeyCredential::signalUnknownCredential(const UnknownCredentialOptions& options) {
+    return emlite::Val::global("publickeycredential").call("signalUnknownCredential", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise PublicKeyCredential::signalAllAcceptedCredentials(const AllAcceptedCredentialsOptions& options) {
-    return emlite::Val::global("publickeycredential").call("signalAllAcceptedCredentials", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PublicKeyCredential::signalAllAcceptedCredentials(const AllAcceptedCredentialsOptions& options) {
+    return emlite::Val::global("publickeycredential").call("signalAllAcceptedCredentials", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise PublicKeyCredential::signalCurrentUserDetails(const CurrentUserDetailsOptions& options) {
-    return emlite::Val::global("publickeycredential").call("signalCurrentUserDetails", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PublicKeyCredential::signalCurrentUserDetails(const CurrentUserDetailsOptions& options) {
+    return emlite::Val::global("publickeycredential").call("signalCurrentUserDetails", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

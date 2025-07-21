@@ -37,7 +37,7 @@ public:
     GPUSupportedFeatures features() const;
     GPUSupportedLimits limits() const;
     GPUAdapterInfo info() const;
-    jsbind::Promise requestDevice();
-    jsbind::Promise requestDevice(const GPUDeviceDescriptor& descriptor);
+    jsbind::Promise<GPUDevice> requestDevice();
+    jsbind::Promise<GPUDevice> requestDevice(const GPUDeviceDescriptor& descriptor);
 };
 

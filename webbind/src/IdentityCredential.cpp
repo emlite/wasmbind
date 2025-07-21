@@ -25,8 +25,8 @@ IdentityCredential::IdentityCredential(Handle h) noexcept : Credential(emlite::V
 IdentityCredential::IdentityCredential(const emlite::Val &val) noexcept: Credential(val) {}
 
 
-jsbind::Promise IdentityCredential::disconnect(const IdentityCredentialDisconnectOptions& options) {
-    return emlite::Val::global("identitycredential").call("disconnect", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> IdentityCredential::disconnect(const IdentityCredentialDisconnectOptions& options) {
+    return emlite::Val::global("identitycredential").call("disconnect", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::USVString IdentityCredential::token() const {

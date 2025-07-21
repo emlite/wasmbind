@@ -69,12 +69,12 @@ public:
     static Rewriter take_ownership(Handle h) noexcept;
 
     Rewriter clone() const noexcept;
-    static jsbind::Promise create();
-    static jsbind::Promise create(const RewriterCreateOptions& options);
-    static jsbind::Promise availability();
-    static jsbind::Promise availability(const RewriterCreateCoreOptions& options);
-    jsbind::Promise rewrite(const jsbind::DOMString& input);
-    jsbind::Promise rewrite(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
+    static jsbind::Promise<Rewriter> create();
+    static jsbind::Promise<Rewriter> create(const RewriterCreateOptions& options);
+    static jsbind::Promise<Availability> availability();
+    static jsbind::Promise<Availability> availability(const RewriterCreateCoreOptions& options);
+    jsbind::Promise<jsbind::DOMString> rewrite(const jsbind::DOMString& input);
+    jsbind::Promise<jsbind::DOMString> rewrite(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
     ReadableStream rewriteStreaming(const jsbind::DOMString& input);
     ReadableStream rewriteStreaming(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
     jsbind::DOMString sharedContext() const;
@@ -84,8 +84,8 @@ public:
     jsbind::FrozenArray<jsbind::DOMString> expectedInputLanguages() const;
     jsbind::FrozenArray<jsbind::DOMString> expectedContextLanguages() const;
     jsbind::DOMString outputLanguage() const;
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };

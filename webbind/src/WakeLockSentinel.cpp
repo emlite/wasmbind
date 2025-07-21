@@ -17,8 +17,8 @@ WakeLockType WakeLockSentinel::type() const {
     return EventTarget::get("type").as<WakeLockType>();
 }
 
-jsbind::Promise WakeLockSentinel::release() {
-    return EventTarget::call("release").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WakeLockSentinel::release() {
+    return EventTarget::call("release").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any WakeLockSentinel::onrelease() const {

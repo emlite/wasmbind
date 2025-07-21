@@ -10,15 +10,15 @@ Permissions::Permissions(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 Permissions::Permissions(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise Permissions::query(const jsbind::Object& permissionDesc) {
-    return emlite::Val::call("query", permissionDesc).as<jsbind::Promise>();
+jsbind::Promise<PermissionStatus> Permissions::query(const jsbind::Object& permissionDesc) {
+    return emlite::Val::call("query", permissionDesc).as<jsbind::Promise<PermissionStatus>>();
 }
 
-jsbind::Promise Permissions::request(const jsbind::Object& permissionDesc) {
-    return emlite::Val::call("request", permissionDesc).as<jsbind::Promise>();
+jsbind::Promise<PermissionStatus> Permissions::request(const jsbind::Object& permissionDesc) {
+    return emlite::Val::call("request", permissionDesc).as<jsbind::Promise<PermissionStatus>>();
 }
 
-jsbind::Promise Permissions::revoke(const jsbind::Object& permissionDesc) {
-    return emlite::Val::call("revoke", permissionDesc).as<jsbind::Promise>();
+jsbind::Promise<PermissionStatus> Permissions::revoke(const jsbind::Object& permissionDesc) {
+    return emlite::Val::call("revoke", permissionDesc).as<jsbind::Promise<PermissionStatus>>();
 }
 

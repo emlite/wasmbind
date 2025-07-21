@@ -32,16 +32,16 @@ long CaptureController::zoomLevel() const {
     return EventTarget::get("zoomLevel").as<long>();
 }
 
-jsbind::Promise CaptureController::increaseZoomLevel() {
-    return EventTarget::call("increaseZoomLevel").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> CaptureController::increaseZoomLevel() {
+    return EventTarget::call("increaseZoomLevel").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise CaptureController::decreaseZoomLevel() {
-    return EventTarget::call("decreaseZoomLevel").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> CaptureController::decreaseZoomLevel() {
+    return EventTarget::call("decreaseZoomLevel").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise CaptureController::resetZoomLevel() {
-    return EventTarget::call("resetZoomLevel").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> CaptureController::resetZoomLevel() {
+    return EventTarget::call("resetZoomLevel").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any CaptureController::onzoomlevelchange() const {
@@ -52,7 +52,7 @@ void CaptureController::onzoomlevelchange(const jsbind::Any& value) {
     EventTarget::set("onzoomlevelchange", value);
 }
 
-jsbind::Promise CaptureController::forwardWheel(const HTMLElement& element) {
-    return EventTarget::call("forwardWheel", element).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> CaptureController::forwardWheel(const HTMLElement& element) {
+    return EventTarget::call("forwardWheel", element).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

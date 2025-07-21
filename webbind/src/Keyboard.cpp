@@ -10,20 +10,20 @@ Keyboard::Keyboard(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(
 Keyboard::Keyboard(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise Keyboard::lock() {
-    return EventTarget::call("lock").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Keyboard::lock() {
+    return EventTarget::call("lock").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise Keyboard::lock(const jsbind::Sequence<jsbind::DOMString>& keyCodes) {
-    return EventTarget::call("lock", keyCodes).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Keyboard::lock(const jsbind::Sequence<jsbind::DOMString>& keyCodes) {
+    return EventTarget::call("lock", keyCodes).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined Keyboard::unlock() {
     return EventTarget::call("unlock").as<jsbind::Undefined>();
 }
 
-jsbind::Promise Keyboard::getLayoutMap() {
-    return EventTarget::call("getLayoutMap").as<jsbind::Promise>();
+jsbind::Promise<KeyboardLayoutMap> Keyboard::getLayoutMap() {
+    return EventTarget::call("getLayoutMap").as<jsbind::Promise<KeyboardLayoutMap>>();
 }
 
 jsbind::Any Keyboard::onlayoutchange() const {

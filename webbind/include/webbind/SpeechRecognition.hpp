@@ -50,8 +50,8 @@ public:
     jsbind::Undefined start(const MediaStreamTrack& audioTrack);
     jsbind::Undefined stop();
     jsbind::Undefined abort();
-    static jsbind::Promise available(const SpeechRecognitionOptions& options);
-    static jsbind::Promise install(const SpeechRecognitionOptions& options);
+    static jsbind::Promise<AvailabilityStatus> available(const SpeechRecognitionOptions& options);
+    static jsbind::Promise<bool> install(const SpeechRecognitionOptions& options);
     jsbind::Any onaudiostart() const;
     void onaudiostart(const jsbind::Any& value);
     jsbind::Any onsoundstart() const;

@@ -102,24 +102,24 @@ jsbind::DOMString PaymentResponse::payerPhone() const {
     return EventTarget::get("payerPhone").as<jsbind::DOMString>();
 }
 
-jsbind::Promise PaymentResponse::complete() {
-    return EventTarget::call("complete").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PaymentResponse::complete() {
+    return EventTarget::call("complete").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise PaymentResponse::complete(const PaymentComplete& result) {
-    return EventTarget::call("complete", result).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PaymentResponse::complete(const PaymentComplete& result) {
+    return EventTarget::call("complete", result).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise PaymentResponse::complete(const PaymentComplete& result, const PaymentCompleteDetails& details) {
-    return EventTarget::call("complete", result, details).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PaymentResponse::complete(const PaymentComplete& result, const PaymentCompleteDetails& details) {
+    return EventTarget::call("complete", result, details).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise PaymentResponse::retry() {
-    return EventTarget::call("retry").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PaymentResponse::retry() {
+    return EventTarget::call("retry").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise PaymentResponse::retry(const PaymentValidationErrors& errorFields) {
-    return EventTarget::call("retry", errorFields).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PaymentResponse::retry(const PaymentValidationErrors& errorFields) {
+    return EventTarget::call("retry", errorFields).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any PaymentResponse::onpayerdetailchange() const {

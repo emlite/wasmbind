@@ -27,7 +27,7 @@ public:
     static IdentityCredential take_ownership(Handle h) noexcept;
 
     IdentityCredential clone() const noexcept;
-    static jsbind::Promise disconnect(const IdentityCredentialDisconnectOptions& options);
+    static jsbind::Promise<jsbind::Undefined> disconnect(const IdentityCredentialDisconnectOptions& options);
     jsbind::USVString token() const;
     bool isAutoSelected() const;
     jsbind::USVString configURL() const;

@@ -34,7 +34,7 @@ public:
     void onconnect(const jsbind::Any& value);
     jsbind::Any ondisconnect() const;
     void ondisconnect(const jsbind::Any& value);
-    jsbind::Promise getDevices();
-    jsbind::Promise requestDevice(const USBDeviceRequestOptions& options);
+    jsbind::Promise<jsbind::Sequence<USBDevice>> getDevices();
+    jsbind::Promise<USBDevice> requestDevice(const USBDeviceRequestOptions& options);
 };
 

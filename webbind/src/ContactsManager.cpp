@@ -75,15 +75,15 @@ ContactsManager::ContactsManager(Handle h) noexcept : emlite::Val(emlite::Val::t
 ContactsManager::ContactsManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise ContactsManager::getProperties() {
-    return emlite::Val::call("getProperties").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<ContactProperty>> ContactsManager::getProperties() {
+    return emlite::Val::call("getProperties").as<jsbind::Promise<jsbind::Sequence<ContactProperty>>>();
 }
 
-jsbind::Promise ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties) {
-    return emlite::Val::call("select", properties).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<ContactInfo>> ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties) {
+    return emlite::Val::call("select", properties).as<jsbind::Promise<jsbind::Sequence<ContactInfo>>>();
 }
 
-jsbind::Promise ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options) {
-    return emlite::Val::call("select", properties, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<ContactInfo>> ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options) {
+    return emlite::Val::call("select", properties, options).as<jsbind::Promise<jsbind::Sequence<ContactInfo>>>();
 }
 

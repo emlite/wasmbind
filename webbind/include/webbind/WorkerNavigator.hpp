@@ -33,9 +33,9 @@ public:
     ServiceWorkerContainer serviceWorker() const;
     HID hid() const;
     USB usb() const;
-    jsbind::Promise setAppBadge();
-    jsbind::Promise setAppBadge(long long contents);
-    jsbind::Promise clearAppBadge();
+    jsbind::Promise<jsbind::Undefined> setAppBadge();
+    jsbind::Promise<jsbind::Undefined> setAppBadge(long long contents);
+    jsbind::Promise<jsbind::Undefined> clearAppBadge();
     double deviceMemory() const;
     bool globalPrivacyControl() const;
     bool taintEnabled();

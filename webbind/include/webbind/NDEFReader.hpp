@@ -59,11 +59,11 @@ public:
     void onreading(const jsbind::Any& value);
     jsbind::Any onreadingerror() const;
     void onreadingerror(const jsbind::Any& value);
-    jsbind::Promise scan();
-    jsbind::Promise scan(const NDEFScanOptions& options);
-    jsbind::Promise write(const jsbind::Any& message);
-    jsbind::Promise write(const jsbind::Any& message, const NDEFWriteOptions& options);
-    jsbind::Promise makeReadOnly();
-    jsbind::Promise makeReadOnly(const NDEFMakeReadOnlyOptions& options);
+    jsbind::Promise<jsbind::Undefined> scan();
+    jsbind::Promise<jsbind::Undefined> scan(const NDEFScanOptions& options);
+    jsbind::Promise<jsbind::Undefined> write(const jsbind::Any& message);
+    jsbind::Promise<jsbind::Undefined> write(const jsbind::Any& message, const NDEFWriteOptions& options);
+    jsbind::Promise<jsbind::Undefined> makeReadOnly();
+    jsbind::Promise<jsbind::Undefined> makeReadOnly(const NDEFMakeReadOnlyOptions& options);
 };
 

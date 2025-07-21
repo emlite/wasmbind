@@ -36,8 +36,8 @@ public:
     static ContentIndex take_ownership(Handle h) noexcept;
 
     ContentIndex clone() const noexcept;
-    jsbind::Promise add(const ContentDescription& description);
-    jsbind::Promise delete_(const jsbind::DOMString& id);
-    jsbind::Promise getAll();
+    jsbind::Promise<jsbind::Undefined> add(const ContentDescription& description);
+    jsbind::Promise<jsbind::Undefined> delete_(const jsbind::DOMString& id);
+    jsbind::Promise<jsbind::Sequence<ContentDescription>> getAll();
 };
 

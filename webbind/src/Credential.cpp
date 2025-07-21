@@ -17,11 +17,11 @@ jsbind::DOMString Credential::type() const {
     return emlite::Val::get("type").as<jsbind::DOMString>();
 }
 
-jsbind::Promise Credential::isConditionalMediationAvailable() {
-    return emlite::Val::global("credential").call("isConditionalMediationAvailable").as<jsbind::Promise>();
+jsbind::Promise<bool> Credential::isConditionalMediationAvailable() {
+    return emlite::Val::global("credential").call("isConditionalMediationAvailable").as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise Credential::willRequestConditionalCreation() {
-    return emlite::Val::global("credential").call("willRequestConditionalCreation").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Credential::willRequestConditionalCreation() {
+    return emlite::Val::global("credential").call("willRequestConditionalCreation").as<jsbind::Promise<jsbind::Undefined>>();
 }
 

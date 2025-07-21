@@ -75,20 +75,20 @@ Translator::Translator(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 Translator::Translator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise Translator::create(const TranslatorCreateOptions& options) {
-    return emlite::Val::global("translator").call("create", options).as<jsbind::Promise>();
+jsbind::Promise<Translator> Translator::create(const TranslatorCreateOptions& options) {
+    return emlite::Val::global("translator").call("create", options).as<jsbind::Promise<Translator>>();
 }
 
-jsbind::Promise Translator::availability(const TranslatorCreateCoreOptions& options) {
-    return emlite::Val::global("translator").call("availability", options).as<jsbind::Promise>();
+jsbind::Promise<Availability> Translator::availability(const TranslatorCreateCoreOptions& options) {
+    return emlite::Val::global("translator").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise Translator::translate(const jsbind::DOMString& input) {
-    return emlite::Val::call("translate", input).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> Translator::translate(const jsbind::DOMString& input) {
+    return emlite::Val::call("translate", input).as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise Translator::translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
-    return emlite::Val::call("translate", input, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> Translator::translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
+    return emlite::Val::call("translate", input, options).as<jsbind::Promise<jsbind::DOMString>>();
 }
 
 ReadableStream Translator::translateStreaming(const jsbind::DOMString& input) {
@@ -107,12 +107,12 @@ jsbind::DOMString Translator::targetLanguage() const {
     return emlite::Val::get("targetLanguage").as<jsbind::DOMString>();
 }
 
-jsbind::Promise Translator::measureInputUsage(const jsbind::DOMString& input) {
-    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise>();
+jsbind::Promise<double> Translator::measureInputUsage(const jsbind::DOMString& input) {
+    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise Translator::measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
-    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise>();
+jsbind::Promise<double> Translator::measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
+    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 
 double Translator::inputQuota() const {

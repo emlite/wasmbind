@@ -13,6 +13,6 @@ public:
     static NavigatorLogin take_ownership(Handle h) noexcept;
 
     NavigatorLogin clone() const noexcept;
-    jsbind::Promise setStatus(const LoginStatus& status);
+    jsbind::Promise<jsbind::Undefined> setStatus(const LoginStatus& status);
 };
 

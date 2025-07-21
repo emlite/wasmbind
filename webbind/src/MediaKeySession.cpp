@@ -18,8 +18,8 @@ double MediaKeySession::expiration() const {
     return EventTarget::get("expiration").as<double>();
 }
 
-jsbind::Promise MediaKeySession::closed() const {
-    return EventTarget::get("closed").as<jsbind::Promise>();
+jsbind::Promise<MediaKeySessionClosedReason> MediaKeySession::closed() const {
+    return EventTarget::get("closed").as<jsbind::Promise<MediaKeySessionClosedReason>>();
 }
 
 MediaKeyStatusMap MediaKeySession::keyStatuses() const {
@@ -42,23 +42,23 @@ void MediaKeySession::onmessage(const jsbind::Any& value) {
     EventTarget::set("onmessage", value);
 }
 
-jsbind::Promise MediaKeySession::generateRequest(const jsbind::DOMString& initDataType, const jsbind::Any& initData) {
-    return EventTarget::call("generateRequest", initDataType, initData).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaKeySession::generateRequest(const jsbind::DOMString& initDataType, const jsbind::Any& initData) {
+    return EventTarget::call("generateRequest", initDataType, initData).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise MediaKeySession::load(const jsbind::DOMString& sessionId) {
-    return EventTarget::call("load", sessionId).as<jsbind::Promise>();
+jsbind::Promise<bool> MediaKeySession::load(const jsbind::DOMString& sessionId) {
+    return EventTarget::call("load", sessionId).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise MediaKeySession::update(const jsbind::Any& response) {
-    return EventTarget::call("update", response).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaKeySession::update(const jsbind::Any& response) {
+    return EventTarget::call("update", response).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise MediaKeySession::close() {
-    return EventTarget::call("close").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaKeySession::close() {
+    return EventTarget::call("close").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise MediaKeySession::remove() {
-    return EventTarget::call("remove").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaKeySession::remove() {
+    return EventTarget::call("remove").as<jsbind::Promise<jsbind::Undefined>>();
 }
 

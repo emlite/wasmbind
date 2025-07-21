@@ -37,9 +37,9 @@ public:
 
     GamepadHapticActuator clone() const noexcept;
     jsbind::FrozenArray<GamepadHapticEffectType> effects() const;
-    jsbind::Promise playEffect(const GamepadHapticEffectType& type);
-    jsbind::Promise playEffect(const GamepadHapticEffectType& type, const GamepadEffectParameters& params);
-    jsbind::Promise reset();
-    jsbind::Promise pulse(double value, double duration);
+    jsbind::Promise<GamepadHapticsResult> playEffect(const GamepadHapticEffectType& type);
+    jsbind::Promise<GamepadHapticsResult> playEffect(const GamepadHapticEffectType& type, const GamepadEffectParameters& params);
+    jsbind::Promise<GamepadHapticsResult> reset();
+    jsbind::Promise<bool> pulse(double value, double duration);
 };
 

@@ -52,15 +52,15 @@ void IdleDetector::onchange(const jsbind::Any& value) {
     EventTarget::set("onchange", value);
 }
 
-jsbind::Promise IdleDetector::requestPermission() {
-    return emlite::Val::global("idledetector").call("requestPermission").as<jsbind::Promise>();
+jsbind::Promise<PermissionState> IdleDetector::requestPermission() {
+    return emlite::Val::global("idledetector").call("requestPermission").as<jsbind::Promise<PermissionState>>();
 }
 
-jsbind::Promise IdleDetector::start() {
-    return EventTarget::call("start").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> IdleDetector::start() {
+    return EventTarget::call("start").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise IdleDetector::start(const IdleOptions& options) {
-    return EventTarget::call("start", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> IdleDetector::start(const IdleOptions& options) {
+    return EventTarget::call("start", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

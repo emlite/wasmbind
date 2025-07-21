@@ -458,8 +458,8 @@ CSSStyleDeclaration Window::getComputedStyle(const Element& elt, const jsbind::C
     return EventTarget::call("getComputedStyle", elt, pseudoElt).as<CSSStyleDeclaration>();
 }
 
-jsbind::Promise Window::getDigitalGoodsService(const jsbind::DOMString& serviceProvider) {
-    return EventTarget::call("getDigitalGoodsService", serviceProvider).as<jsbind::Promise>();
+jsbind::Promise<DigitalGoodsService> Window::getDigitalGoodsService(const jsbind::DOMString& serviceProvider) {
+    return EventTarget::call("getDigitalGoodsService", serviceProvider).as<jsbind::Promise<DigitalGoodsService>>();
 }
 
 DocumentPictureInPicture Window::documentPictureInPicture() const {
@@ -474,28 +474,28 @@ Fence Window::fence() const {
     return EventTarget::get("fence").as<Fence>();
 }
 
-jsbind::Promise Window::showOpenFilePicker() {
-    return EventTarget::call("showOpenFilePicker").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>> Window::showOpenFilePicker() {
+    return EventTarget::call("showOpenFilePicker").as<jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>>>();
 }
 
-jsbind::Promise Window::showOpenFilePicker(const OpenFilePickerOptions& options) {
-    return EventTarget::call("showOpenFilePicker", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>> Window::showOpenFilePicker(const OpenFilePickerOptions& options) {
+    return EventTarget::call("showOpenFilePicker", options).as<jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>>>();
 }
 
-jsbind::Promise Window::showSaveFilePicker() {
-    return EventTarget::call("showSaveFilePicker").as<jsbind::Promise>();
+jsbind::Promise<FileSystemFileHandle> Window::showSaveFilePicker() {
+    return EventTarget::call("showSaveFilePicker").as<jsbind::Promise<FileSystemFileHandle>>();
 }
 
-jsbind::Promise Window::showSaveFilePicker(const SaveFilePickerOptions& options) {
-    return EventTarget::call("showSaveFilePicker", options).as<jsbind::Promise>();
+jsbind::Promise<FileSystemFileHandle> Window::showSaveFilePicker(const SaveFilePickerOptions& options) {
+    return EventTarget::call("showSaveFilePicker", options).as<jsbind::Promise<FileSystemFileHandle>>();
 }
 
-jsbind::Promise Window::showDirectoryPicker() {
-    return EventTarget::call("showDirectoryPicker").as<jsbind::Promise>();
+jsbind::Promise<FileSystemDirectoryHandle> Window::showDirectoryPicker() {
+    return EventTarget::call("showDirectoryPicker").as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 
-jsbind::Promise Window::showDirectoryPicker(const DirectoryPickerOptions& options) {
-    return EventTarget::call("showDirectoryPicker", options).as<jsbind::Promise>();
+jsbind::Promise<FileSystemDirectoryHandle> Window::showDirectoryPicker(const DirectoryPickerOptions& options) {
+    return EventTarget::call("showDirectoryPicker", options).as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 
 jsbind::Undefined Window::captureEvents() {
@@ -510,12 +510,12 @@ External Window::external() const {
     return EventTarget::get("external").as<External>();
 }
 
-jsbind::Promise Window::queryLocalFonts() {
-    return EventTarget::call("queryLocalFonts").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<FontData>> Window::queryLocalFonts() {
+    return EventTarget::call("queryLocalFonts").as<jsbind::Promise<jsbind::Sequence<FontData>>>();
 }
 
-jsbind::Promise Window::queryLocalFonts(const QueryOptions& options) {
-    return EventTarget::call("queryLocalFonts", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<FontData>> Window::queryLocalFonts(const QueryOptions& options) {
+    return EventTarget::call("queryLocalFonts", options).as<jsbind::Promise<jsbind::Sequence<FontData>>>();
 }
 
 jsbind::Any Window::onappinstalled() const {
@@ -590,8 +590,8 @@ LaunchQueue Window::launchQueue() const {
     return EventTarget::get("launchQueue").as<LaunchQueue>();
 }
 
-jsbind::Promise Window::getScreenDetails() {
-    return EventTarget::call("getScreenDetails").as<jsbind::Promise>();
+jsbind::Promise<ScreenDetails> Window::getScreenDetails() {
+    return EventTarget::call("getScreenDetails").as<jsbind::Promise<ScreenDetails>>();
 }
 
 jsbind::Any Window::onbeforexrselect() const {

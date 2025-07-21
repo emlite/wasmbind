@@ -90,8 +90,8 @@ PerformanceNavigation Performance::navigation() const {
     return EventTarget::get("navigation").as<PerformanceNavigation>();
 }
 
-jsbind::Promise Performance::measureUserAgentSpecificMemory() {
-    return EventTarget::call("measureUserAgentSpecificMemory").as<jsbind::Promise>();
+jsbind::Promise<MemoryMeasurement> Performance::measureUserAgentSpecificMemory() {
+    return EventTarget::call("measureUserAgentSpecificMemory").as<jsbind::Promise<MemoryMeasurement>>();
 }
 
 jsbind::Any Performance::getEntries() {

@@ -95,16 +95,16 @@ jsbind::Undefined MLContext::dispatch(const MLGraph& graph, const jsbind::Any& i
     return emlite::Val::call("dispatch", graph, inputs, outputs).as<jsbind::Undefined>();
 }
 
-jsbind::Promise MLContext::createTensor(const MLTensorDescriptor& descriptor) {
-    return emlite::Val::call("createTensor", descriptor).as<jsbind::Promise>();
+jsbind::Promise<MLTensor> MLContext::createTensor(const MLTensorDescriptor& descriptor) {
+    return emlite::Val::call("createTensor", descriptor).as<jsbind::Promise<MLTensor>>();
 }
 
-jsbind::Promise MLContext::createConstantTensor(const MLOperandDescriptor& descriptor, const jsbind::Any& inputData) {
-    return emlite::Val::call("createConstantTensor", descriptor, inputData).as<jsbind::Promise>();
+jsbind::Promise<MLTensor> MLContext::createConstantTensor(const MLOperandDescriptor& descriptor, const jsbind::Any& inputData) {
+    return emlite::Val::call("createConstantTensor", descriptor, inputData).as<jsbind::Promise<MLTensor>>();
 }
 
-jsbind::Promise MLContext::readTensor(const MLTensor& tensor, const jsbind::Any& outputData) {
-    return emlite::Val::call("readTensor", tensor, outputData).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MLContext::readTensor(const MLTensor& tensor, const jsbind::Any& outputData) {
+    return emlite::Val::call("readTensor", tensor, outputData).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined MLContext::writeTensor(const MLTensor& tensor, const jsbind::Any& inputData) {
@@ -119,7 +119,7 @@ jsbind::Undefined MLContext::destroy() {
     return emlite::Val::call("destroy").as<jsbind::Undefined>();
 }
 
-jsbind::Promise MLContext::lost() const {
-    return emlite::Val::get("lost").as<jsbind::Promise>();
+jsbind::Promise<MLContextLostInfo> MLContext::lost() const {
+    return emlite::Val::get("lost").as<jsbind::Promise<MLContextLostInfo>>();
 }
 

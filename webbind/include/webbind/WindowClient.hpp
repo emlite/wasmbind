@@ -19,7 +19,7 @@ public:
     DocumentVisibilityState visibilityState() const;
     bool focused() const;
     jsbind::FrozenArray<jsbind::USVString> ancestorOrigins() const;
-    jsbind::Promise focus();
-    jsbind::Promise navigate(const jsbind::USVString& url);
+    jsbind::Promise<WindowClient> focus();
+    jsbind::Promise<WindowClient> navigate(const jsbind::USVString& url);
 };
 

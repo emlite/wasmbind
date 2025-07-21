@@ -34,15 +34,15 @@ MediaKeySession MediaKeys::createSession(const MediaKeySessionType& sessionType)
     return emlite::Val::call("createSession", sessionType).as<MediaKeySession>();
 }
 
-jsbind::Promise MediaKeys::getStatusForPolicy() {
-    return emlite::Val::call("getStatusForPolicy").as<jsbind::Promise>();
+jsbind::Promise<MediaKeyStatus> MediaKeys::getStatusForPolicy() {
+    return emlite::Val::call("getStatusForPolicy").as<jsbind::Promise<MediaKeyStatus>>();
 }
 
-jsbind::Promise MediaKeys::getStatusForPolicy(const MediaKeysPolicy& policy) {
-    return emlite::Val::call("getStatusForPolicy", policy).as<jsbind::Promise>();
+jsbind::Promise<MediaKeyStatus> MediaKeys::getStatusForPolicy(const MediaKeysPolicy& policy) {
+    return emlite::Val::call("getStatusForPolicy", policy).as<jsbind::Promise<MediaKeyStatus>>();
 }
 
-jsbind::Promise MediaKeys::setServerCertificate(const jsbind::Any& serverCertificate) {
-    return emlite::Val::call("setServerCertificate", serverCertificate).as<jsbind::Promise>();
+jsbind::Promise<bool> MediaKeys::setServerCertificate(const jsbind::Any& serverCertificate) {
+    return emlite::Val::call("setServerCertificate", serverCertificate).as<jsbind::Promise<bool>>();
 }
 

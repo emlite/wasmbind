@@ -22,6 +22,6 @@ public:
     jsbind::Undefined getAsString(const jsbind::Any& callback);
     File getAsFile();
     FileSystemEntry webkitGetAsEntry();
-    jsbind::Promise getAsFileSystemHandle();
+    jsbind::Promise<FileSystemHandle> getAsFileSystemHandle();
 };
 

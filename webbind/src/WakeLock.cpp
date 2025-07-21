@@ -10,11 +10,11 @@ WakeLock::WakeLock(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 WakeLock::WakeLock(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise WakeLock::request() {
-    return emlite::Val::call("request").as<jsbind::Promise>();
+jsbind::Promise<WakeLockSentinel> WakeLock::request() {
+    return emlite::Val::call("request").as<jsbind::Promise<WakeLockSentinel>>();
 }
 
-jsbind::Promise WakeLock::request(const WakeLockType& type) {
-    return emlite::Val::call("request", type).as<jsbind::Promise>();
+jsbind::Promise<WakeLockSentinel> WakeLock::request(const WakeLockType& type) {
+    return emlite::Val::call("request", type).as<jsbind::Promise<WakeLockSentinel>>();
 }
 

@@ -15,6 +15,6 @@ public:
     PaymentManager clone() const noexcept;
     jsbind::DOMString userHint() const;
     void userHint(const jsbind::DOMString& value);
-    jsbind::Promise enableDelegations(const jsbind::Sequence<PaymentDelegation>& delegations);
+    jsbind::Promise<jsbind::Undefined> enableDelegations(const jsbind::Sequence<PaymentDelegation>& delegations);
 };
 

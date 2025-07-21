@@ -55,11 +55,11 @@ public:
     jsbind::DOMString payerName() const;
     jsbind::DOMString payerEmail() const;
     jsbind::DOMString payerPhone() const;
-    jsbind::Promise complete();
-    jsbind::Promise complete(const PaymentComplete& result);
-    jsbind::Promise complete(const PaymentComplete& result, const PaymentCompleteDetails& details);
-    jsbind::Promise retry();
-    jsbind::Promise retry(const PaymentValidationErrors& errorFields);
+    jsbind::Promise<jsbind::Undefined> complete();
+    jsbind::Promise<jsbind::Undefined> complete(const PaymentComplete& result);
+    jsbind::Promise<jsbind::Undefined> complete(const PaymentComplete& result, const PaymentCompleteDetails& details);
+    jsbind::Promise<jsbind::Undefined> retry();
+    jsbind::Promise<jsbind::Undefined> retry(const PaymentValidationErrors& errorFields);
     jsbind::Any onpayerdetailchange() const;
     void onpayerdetailchange(const jsbind::Any& value);
 };

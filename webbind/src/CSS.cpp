@@ -23,36 +23,36 @@ bool CSS::supports(const jsbind::CSSOMString& conditionText) {
 
 
 
-jsbind::Promise CSS::parseStylesheet(const jsbind::Any& css) {
-    return emlite::Val::global("css").call("parseStylesheet", css).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseStylesheet(const jsbind::Any& css) {
+    return emlite::Val::global("css").call("parseStylesheet", css).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
 }
 
-jsbind::Promise CSS::parseStylesheet(const jsbind::Any& css, const jsbind::Any& options) {
-    return emlite::Val::global("css").call("parseStylesheet", css, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseStylesheet(const jsbind::Any& css, const jsbind::Any& options) {
+    return emlite::Val::global("css").call("parseStylesheet", css, options).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
 }
 
-jsbind::Promise CSS::parseRuleList(const jsbind::Any& css) {
-    return emlite::Val::global("css").call("parseRuleList", css).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseRuleList(const jsbind::Any& css) {
+    return emlite::Val::global("css").call("parseRuleList", css).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
 }
 
-jsbind::Promise CSS::parseRuleList(const jsbind::Any& css, const jsbind::Any& options) {
-    return emlite::Val::global("css").call("parseRuleList", css, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseRuleList(const jsbind::Any& css, const jsbind::Any& options) {
+    return emlite::Val::global("css").call("parseRuleList", css, options).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
 }
 
-jsbind::Promise CSS::parseRule(const jsbind::Any& css) {
-    return emlite::Val::global("css").call("parseRule", css).as<jsbind::Promise>();
+jsbind::Promise<CSSParserRule> CSS::parseRule(const jsbind::Any& css) {
+    return emlite::Val::global("css").call("parseRule", css).as<jsbind::Promise<CSSParserRule>>();
 }
 
-jsbind::Promise CSS::parseRule(const jsbind::Any& css, const jsbind::Any& options) {
-    return emlite::Val::global("css").call("parseRule", css, options).as<jsbind::Promise>();
+jsbind::Promise<CSSParserRule> CSS::parseRule(const jsbind::Any& css, const jsbind::Any& options) {
+    return emlite::Val::global("css").call("parseRule", css, options).as<jsbind::Promise<CSSParserRule>>();
 }
 
-jsbind::Promise CSS::parseDeclarationList(const jsbind::Any& css) {
-    return emlite::Val::global("css").call("parseDeclarationList", css).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseDeclarationList(const jsbind::Any& css) {
+    return emlite::Val::global("css").call("parseDeclarationList", css).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
 }
 
-jsbind::Promise CSS::parseDeclarationList(const jsbind::Any& css, const jsbind::Any& options) {
-    return emlite::Val::global("css").call("parseDeclarationList", css, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseDeclarationList(const jsbind::Any& css, const jsbind::Any& options) {
+    return emlite::Val::global("css").call("parseDeclarationList", css, options).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
 }
 
 CSSParserDeclaration CSS::parseDeclaration(const jsbind::DOMString& css) {

@@ -31,7 +31,7 @@ double DeviceMotionEvent::interval() const {
     return Event::get("interval").as<double>();
 }
 
-jsbind::Promise DeviceMotionEvent::requestPermission() {
-    return emlite::Val::global("devicemotionevent").call("requestPermission").as<jsbind::Promise>();
+jsbind::Promise<PermissionState> DeviceMotionEvent::requestPermission() {
+    return emlite::Val::global("devicemotionevent").call("requestPermission").as<jsbind::Promise<PermissionState>>();
 }
 

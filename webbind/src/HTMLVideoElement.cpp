@@ -57,8 +57,8 @@ VideoPlaybackQuality HTMLVideoElement::getVideoPlaybackQuality() {
     return HTMLMediaElement::call("getVideoPlaybackQuality").as<VideoPlaybackQuality>();
 }
 
-jsbind::Promise HTMLVideoElement::requestPictureInPicture() {
-    return HTMLMediaElement::call("requestPictureInPicture").as<jsbind::Promise>();
+jsbind::Promise<PictureInPictureWindow> HTMLVideoElement::requestPictureInPicture() {
+    return HTMLMediaElement::call("requestPictureInPicture").as<jsbind::Promise<PictureInPictureWindow>>();
 }
 
 jsbind::Any HTMLVideoElement::onenterpictureinpicture() const {

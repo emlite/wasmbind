@@ -47,28 +47,28 @@ ServiceWorker ServiceWorkerContainer::controller() const {
     return EventTarget::get("controller").as<ServiceWorker>();
 }
 
-jsbind::Promise ServiceWorkerContainer::ready() const {
-    return EventTarget::get("ready").as<jsbind::Promise>();
+jsbind::Promise<ServiceWorkerRegistration> ServiceWorkerContainer::ready() const {
+    return EventTarget::get("ready").as<jsbind::Promise<ServiceWorkerRegistration>>();
 }
 
-jsbind::Promise ServiceWorkerContainer::register_(const jsbind::Any& scriptURL) {
-    return EventTarget::call("register", scriptURL).as<jsbind::Promise>();
+jsbind::Promise<ServiceWorkerRegistration> ServiceWorkerContainer::register_(const jsbind::Any& scriptURL) {
+    return EventTarget::call("register", scriptURL).as<jsbind::Promise<ServiceWorkerRegistration>>();
 }
 
-jsbind::Promise ServiceWorkerContainer::register_(const jsbind::Any& scriptURL, const RegistrationOptions& options) {
-    return EventTarget::call("register", scriptURL, options).as<jsbind::Promise>();
+jsbind::Promise<ServiceWorkerRegistration> ServiceWorkerContainer::register_(const jsbind::Any& scriptURL, const RegistrationOptions& options) {
+    return EventTarget::call("register", scriptURL, options).as<jsbind::Promise<ServiceWorkerRegistration>>();
 }
 
-jsbind::Promise ServiceWorkerContainer::getRegistration() {
-    return EventTarget::call("getRegistration").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> ServiceWorkerContainer::getRegistration() {
+    return EventTarget::call("getRegistration").as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise ServiceWorkerContainer::getRegistration(const jsbind::USVString& clientURL) {
-    return EventTarget::call("getRegistration", clientURL).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> ServiceWorkerContainer::getRegistration(const jsbind::USVString& clientURL) {
+    return EventTarget::call("getRegistration", clientURL).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise ServiceWorkerContainer::getRegistrations() {
-    return EventTarget::call("getRegistrations").as<jsbind::Promise>();
+jsbind::Promise<jsbind::FrozenArray<ServiceWorkerRegistration>> ServiceWorkerContainer::getRegistrations() {
+    return EventTarget::call("getRegistrations").as<jsbind::Promise<jsbind::FrozenArray<ServiceWorkerRegistration>>>();
 }
 
 jsbind::Undefined ServiceWorkerContainer::startMessages() {

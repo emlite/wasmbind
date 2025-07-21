@@ -25,7 +25,7 @@ public:
     static Response error();
     static Response redirect(const jsbind::USVString& url);
     static Response redirect(const jsbind::USVString& url, unsigned short status);
-    jsbind::Promise json();
+    jsbind::Promise<jsbind::Any> json();
     ResponseType type() const;
     jsbind::USVString url() const;
     bool redirected() const;
@@ -36,10 +36,10 @@ public:
     Response clone();
     ReadableStream body() const;
     bool bodyUsed() const;
-    jsbind::Promise arrayBuffer();
-    jsbind::Promise blob();
-    jsbind::Promise bytes();
-    jsbind::Promise formData();
-    jsbind::Promise text();
+    jsbind::Promise<jsbind::ArrayBuffer> arrayBuffer();
+    jsbind::Promise<Blob> blob();
+    jsbind::Promise<jsbind::Uint8Array> bytes();
+    jsbind::Promise<FormData> formData();
+    jsbind::Promise<jsbind::USVString> text();
 };
 

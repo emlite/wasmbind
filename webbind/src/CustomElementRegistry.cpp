@@ -44,8 +44,8 @@ jsbind::DOMString CustomElementRegistry::getName(const jsbind::Function& constru
     return emlite::Val::call("getName", constructor).as<jsbind::DOMString>();
 }
 
-jsbind::Promise CustomElementRegistry::whenDefined(const jsbind::DOMString& name) {
-    return emlite::Val::call("whenDefined", name).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Function> CustomElementRegistry::whenDefined(const jsbind::DOMString& name) {
+    return emlite::Val::call("whenDefined", name).as<jsbind::Promise<jsbind::Function>>();
 }
 
 jsbind::Undefined CustomElementRegistry::upgrade(const Node& root) {

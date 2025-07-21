@@ -39,16 +39,16 @@ BluetoothRemoteGATTServer BluetoothDevice::gatt() const {
     return EventTarget::get("gatt").as<BluetoothRemoteGATTServer>();
 }
 
-jsbind::Promise BluetoothDevice::forget() {
-    return EventTarget::call("forget").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BluetoothDevice::forget() {
+    return EventTarget::call("forget").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise BluetoothDevice::watchAdvertisements() {
-    return EventTarget::call("watchAdvertisements").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BluetoothDevice::watchAdvertisements() {
+    return EventTarget::call("watchAdvertisements").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise BluetoothDevice::watchAdvertisements(const WatchAdvertisementsOptions& options) {
-    return EventTarget::call("watchAdvertisements", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BluetoothDevice::watchAdvertisements(const WatchAdvertisementsOptions& options) {
+    return EventTarget::call("watchAdvertisements", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 bool BluetoothDevice::watchingAdvertisements() const {

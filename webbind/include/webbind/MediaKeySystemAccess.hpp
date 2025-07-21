@@ -18,6 +18,6 @@ public:
     MediaKeySystemAccess clone() const noexcept;
     jsbind::DOMString keySystem() const;
     MediaKeySystemConfiguration getConfiguration();
-    jsbind::Promise createMediaKeys();
+    jsbind::Promise<MediaKeys> createMediaKeys();
 };
 

@@ -173,8 +173,8 @@ jsbind::DOMString NavigatorUAData::platform() const {
     return emlite::Val::get("platform").as<jsbind::DOMString>();
 }
 
-jsbind::Promise NavigatorUAData::getHighEntropyValues(const jsbind::Sequence<jsbind::DOMString>& hints) {
-    return emlite::Val::call("getHighEntropyValues", hints).as<jsbind::Promise>();
+jsbind::Promise<UADataValues> NavigatorUAData::getHighEntropyValues(const jsbind::Sequence<jsbind::DOMString>& hints) {
+    return emlite::Val::call("getHighEntropyValues", hints).as<jsbind::Promise<UADataValues>>();
 }
 
 UALowEntropyJSON NavigatorUAData::toJSON() {

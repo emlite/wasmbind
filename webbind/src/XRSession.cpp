@@ -211,12 +211,12 @@ jsbind::Undefined XRSession::updateRenderState(const XRRenderStateInit& state) {
     return EventTarget::call("updateRenderState", state).as<jsbind::Undefined>();
 }
 
-jsbind::Promise XRSession::updateTargetFrameRate(float rate) {
-    return EventTarget::call("updateTargetFrameRate", rate).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> XRSession::updateTargetFrameRate(float rate) {
+    return EventTarget::call("updateTargetFrameRate", rate).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise XRSession::requestReferenceSpace(const XRReferenceSpaceType& type) {
-    return EventTarget::call("requestReferenceSpace", type).as<jsbind::Promise>();
+jsbind::Promise<XRReferenceSpace> XRSession::requestReferenceSpace(const XRReferenceSpaceType& type) {
+    return EventTarget::call("requestReferenceSpace", type).as<jsbind::Promise<XRReferenceSpace>>();
 }
 
 unsigned long XRSession::requestAnimationFrame(const jsbind::Function& callback) {
@@ -227,8 +227,8 @@ jsbind::Undefined XRSession::cancelAnimationFrame(unsigned long handle) {
     return EventTarget::call("cancelAnimationFrame", handle).as<jsbind::Undefined>();
 }
 
-jsbind::Promise XRSession::end() {
-    return EventTarget::call("end").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> XRSession::end() {
+    return EventTarget::call("end").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any XRSession::onend() const {
@@ -315,12 +315,12 @@ jsbind::FrozenArray<jsbind::DOMString> XRSession::persistentAnchors() const {
     return EventTarget::get("persistentAnchors").as<jsbind::FrozenArray<jsbind::DOMString>>();
 }
 
-jsbind::Promise XRSession::restorePersistentAnchor(const jsbind::DOMString& uuid) {
-    return EventTarget::call("restorePersistentAnchor", uuid).as<jsbind::Promise>();
+jsbind::Promise<XRAnchor> XRSession::restorePersistentAnchor(const jsbind::DOMString& uuid) {
+    return EventTarget::call("restorePersistentAnchor", uuid).as<jsbind::Promise<XRAnchor>>();
 }
 
-jsbind::Promise XRSession::deletePersistentAnchor(const jsbind::DOMString& uuid) {
-    return EventTarget::call("deletePersistentAnchor", uuid).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> XRSession::deletePersistentAnchor(const jsbind::DOMString& uuid) {
+    return EventTarget::call("deletePersistentAnchor", uuid).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 XREnvironmentBlendMode XRSession::environmentBlendMode() const {
@@ -359,27 +359,27 @@ XRDOMOverlayState XRSession::domOverlayState() const {
     return EventTarget::get("domOverlayState").as<XRDOMOverlayState>();
 }
 
-jsbind::Promise XRSession::requestHitTestSource(const XRHitTestOptionsInit& options) {
-    return EventTarget::call("requestHitTestSource", options).as<jsbind::Promise>();
+jsbind::Promise<XRHitTestSource> XRSession::requestHitTestSource(const XRHitTestOptionsInit& options) {
+    return EventTarget::call("requestHitTestSource", options).as<jsbind::Promise<XRHitTestSource>>();
 }
 
-jsbind::Promise XRSession::requestHitTestSourceForTransientInput(const XRTransientInputHitTestOptionsInit& options) {
-    return EventTarget::call("requestHitTestSourceForTransientInput", options).as<jsbind::Promise>();
+jsbind::Promise<XRTransientInputHitTestSource> XRSession::requestHitTestSourceForTransientInput(const XRTransientInputHitTestOptionsInit& options) {
+    return EventTarget::call("requestHitTestSourceForTransientInput", options).as<jsbind::Promise<XRTransientInputHitTestSource>>();
 }
 
-jsbind::Promise XRSession::requestLightProbe() {
-    return EventTarget::call("requestLightProbe").as<jsbind::Promise>();
+jsbind::Promise<XRLightProbe> XRSession::requestLightProbe() {
+    return EventTarget::call("requestLightProbe").as<jsbind::Promise<XRLightProbe>>();
 }
 
-jsbind::Promise XRSession::requestLightProbe(const XRLightProbeInit& options) {
-    return EventTarget::call("requestLightProbe", options).as<jsbind::Promise>();
+jsbind::Promise<XRLightProbe> XRSession::requestLightProbe(const XRLightProbeInit& options) {
+    return EventTarget::call("requestLightProbe", options).as<jsbind::Promise<XRLightProbe>>();
 }
 
 XRReflectionFormat XRSession::preferredReflectionFormat() const {
     return EventTarget::get("preferredReflectionFormat").as<XRReflectionFormat>();
 }
 
-jsbind::Promise XRSession::initiateRoomCapture() {
-    return EventTarget::call("initiateRoomCapture").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> XRSession::initiateRoomCapture() {
+    return EventTarget::call("initiateRoomCapture").as<jsbind::Promise<jsbind::Undefined>>();
 }
 

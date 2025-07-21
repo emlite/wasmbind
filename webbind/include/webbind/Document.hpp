@@ -162,7 +162,7 @@ public:
     FontMetrics measureText(const jsbind::DOMString& text, const StylePropertyMapReadOnly& styleMap);
     bool fullscreenEnabled() const;
     bool fullscreen() const;
-    jsbind::Promise exitFullscreen();
+    jsbind::Promise<jsbind::Undefined> exitFullscreen();
     jsbind::Any onfullscreenchange() const;
     void onfullscreenchange(const jsbind::Any& value);
     jsbind::Any onfullscreenerror() const;
@@ -236,7 +236,7 @@ public:
     bool wasDiscarded() const;
     PermissionsPolicy permissionsPolicy() const;
     bool pictureInPictureEnabled() const;
-    jsbind::Promise exitPictureInPicture();
+    jsbind::Promise<jsbind::Undefined> exitPictureInPicture();
     jsbind::Any onpointerlockchange() const;
     void onpointerlockchange(const jsbind::Any& value);
     jsbind::Any onpointerlockerror() const;
@@ -245,14 +245,14 @@ public:
     bool prerendering() const;
     jsbind::Any onprerenderingchange() const;
     void onprerenderingchange(const jsbind::Any& value);
-    jsbind::Promise requestStorageAccessFor(const jsbind::USVString& requestedOrigin);
-    jsbind::Promise hasUnpartitionedCookieAccess();
+    jsbind::Promise<jsbind::Undefined> requestStorageAccessFor(const jsbind::USVString& requestedOrigin);
+    jsbind::Promise<bool> hasUnpartitionedCookieAccess();
     FragmentDirective fragmentDirective() const;
     Selection getSelection();
-    jsbind::Promise hasStorageAccess();
-    jsbind::Promise requestStorageAccess();
-    jsbind::Promise hasPrivateToken(const jsbind::USVString& issuer);
-    jsbind::Promise hasRedemptionRecord(const jsbind::USVString& issuer);
+    jsbind::Promise<bool> hasStorageAccess();
+    jsbind::Promise<jsbind::Undefined> requestStorageAccess();
+    jsbind::Promise<bool> hasPrivateToken(const jsbind::USVString& issuer);
+    jsbind::Promise<bool> hasRedemptionRecord(const jsbind::USVString& issuer);
     DocumentTimeline timeline() const;
     FontFaceSet fonts() const;
     jsbind::Sequence<DOMQuad> getBoxQuads();

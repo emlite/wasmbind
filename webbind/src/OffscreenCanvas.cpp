@@ -65,12 +65,12 @@ ImageBitmap OffscreenCanvas::transferToImageBitmap() {
     return EventTarget::call("transferToImageBitmap").as<ImageBitmap>();
 }
 
-jsbind::Promise OffscreenCanvas::convertToBlob() {
-    return EventTarget::call("convertToBlob").as<jsbind::Promise>();
+jsbind::Promise<Blob> OffscreenCanvas::convertToBlob() {
+    return EventTarget::call("convertToBlob").as<jsbind::Promise<Blob>>();
 }
 
-jsbind::Promise OffscreenCanvas::convertToBlob(const ImageEncodeOptions& options) {
-    return EventTarget::call("convertToBlob", options).as<jsbind::Promise>();
+jsbind::Promise<Blob> OffscreenCanvas::convertToBlob(const ImageEncodeOptions& options) {
+    return EventTarget::call("convertToBlob", options).as<jsbind::Promise<Blob>>();
 }
 
 jsbind::Any OffscreenCanvas::oncontextlost() const {

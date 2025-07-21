@@ -79,7 +79,7 @@ public:
     jsbind::FrozenArray<NavigatorUABrandVersion> brands() const;
     bool mobile() const;
     jsbind::DOMString platform() const;
-    jsbind::Promise getHighEntropyValues(const jsbind::Sequence<jsbind::DOMString>& hints);
+    jsbind::Promise<UADataValues> getHighEntropyValues(const jsbind::Sequence<jsbind::DOMString>& hints);
     UALowEntropyJSON toJSON();
 };
 

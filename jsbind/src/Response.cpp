@@ -27,35 +27,35 @@ Any Response::headers_raw() const {
     return get("headers").template as<Any>();
 }
 
-Promise Response::text() const {
-    return call("text").template as<Promise>();
+Promise<DOMString> Response::text() const {
+    return call("text").template as<Promise<DOMString>>();
 }
-Promise Response::json() const {
-    return call("json").template as<Promise>();
-}
-
-Promise Response::array_buffer() const {
-    return call("arrayBuffer").template as<Promise>();
+Promise<Any> Response::json() const {
+    return call("json").template as<Promise<Any>>();
 }
 
-Promise fetch(const char *input) {
+Promise<ArrayBuffer> Response::array_buffer() const {
+    return call("arrayBuffer").template as<Promise<ArrayBuffer>>();
+}
+
+Promise<Response> fetch(const char *input) {
     return emlite::Val::global("fetch")(emlite::Val(input))
-        .template as<Promise>();
+        .template as<Promise<Response>>();
 }
 
-Promise fetch(const char *input, const Any &init) {
+Promise<Response> fetch(const char *input, const Any &init) {
     return emlite::Val::global("fetch")(
                emlite::Val(input), init
     )
-        .template as<Promise>();
+        .template as<Promise<Response>>();
 }
 
-Promise fetch_val(const Any &input) {
+Promise<Response> fetch_val(const Any &input) {
     return emlite::Val::global("fetch")(input)
-        .template as<Promise>();
+        .template as<Promise<Response>>();
 }
 
-Promise fetch_val(const Any &input, const Any &init) {
+Promise<Response> fetch_val(const Any &input, const Any &init) {
     return emlite::Val::global("fetch")(input, init)
-        .template as<Promise>();
+        .template as<Promise<Response>>();
 }

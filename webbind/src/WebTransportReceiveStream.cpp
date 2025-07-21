@@ -33,7 +33,7 @@ WebTransportReceiveStream::WebTransportReceiveStream(Handle h) noexcept : Readab
 WebTransportReceiveStream::WebTransportReceiveStream(const emlite::Val &val) noexcept: ReadableStream(val) {}
 
 
-jsbind::Promise WebTransportReceiveStream::getStats() {
-    return ReadableStream::call("getStats").as<jsbind::Promise>();
+jsbind::Promise<WebTransportReceiveStreamStats> WebTransportReceiveStream::getStats() {
+    return ReadableStream::call("getStats").as<jsbind::Promise<WebTransportReceiveStreamStats>>();
 }
 

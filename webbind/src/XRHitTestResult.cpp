@@ -16,7 +16,7 @@ XRPose XRHitTestResult::getPose(const XRSpace& baseSpace) {
     return emlite::Val::call("getPose", baseSpace).as<XRPose>();
 }
 
-jsbind::Promise XRHitTestResult::createAnchor() {
-    return emlite::Val::call("createAnchor").as<jsbind::Promise>();
+jsbind::Promise<XRAnchor> XRHitTestResult::createAnchor() {
+    return emlite::Val::call("createAnchor").as<jsbind::Promise<XRAnchor>>();
 }
 

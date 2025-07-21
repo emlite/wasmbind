@@ -11,7 +11,7 @@ CanMakePaymentEvent::CanMakePaymentEvent(const emlite::Val &val) noexcept: Exten
 
 CanMakePaymentEvent::CanMakePaymentEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("CanMakePaymentEvent").new_(type)) {}
 
-jsbind::Undefined CanMakePaymentEvent::respondWith(const jsbind::Promise& canMakePaymentResponse) {
+jsbind::Undefined CanMakePaymentEvent::respondWith(jsbind::Promise<bool> canMakePaymentResponse) {
     return ExtendableEvent::call("respondWith", canMakePaymentResponse).as<jsbind::Undefined>();
 }
 

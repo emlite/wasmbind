@@ -26,27 +26,27 @@ CacheStorage::CacheStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 CacheStorage::CacheStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise CacheStorage::match(const jsbind::Any& request) {
-    return emlite::Val::call("match", request).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> CacheStorage::match(const jsbind::Any& request) {
+    return emlite::Val::call("match", request).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise CacheStorage::match(const jsbind::Any& request, const MultiCacheQueryOptions& options) {
-    return emlite::Val::call("match", request, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> CacheStorage::match(const jsbind::Any& request, const MultiCacheQueryOptions& options) {
+    return emlite::Val::call("match", request, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise CacheStorage::has(const jsbind::DOMString& cacheName) {
-    return emlite::Val::call("has", cacheName).as<jsbind::Promise>();
+jsbind::Promise<bool> CacheStorage::has(const jsbind::DOMString& cacheName) {
+    return emlite::Val::call("has", cacheName).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise CacheStorage::open(const jsbind::DOMString& cacheName) {
-    return emlite::Val::call("open", cacheName).as<jsbind::Promise>();
+jsbind::Promise<Cache> CacheStorage::open(const jsbind::DOMString& cacheName) {
+    return emlite::Val::call("open", cacheName).as<jsbind::Promise<Cache>>();
 }
 
-jsbind::Promise CacheStorage::delete_(const jsbind::DOMString& cacheName) {
-    return emlite::Val::call("delete", cacheName).as<jsbind::Promise>();
+jsbind::Promise<bool> CacheStorage::delete_(const jsbind::DOMString& cacheName) {
+    return emlite::Val::call("delete", cacheName).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise CacheStorage::keys() {
-    return emlite::Val::call("keys").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> CacheStorage::keys() {
+    return emlite::Val::call("keys").as<jsbind::Promise<jsbind::Sequence<jsbind::DOMString>>>();
 }
 

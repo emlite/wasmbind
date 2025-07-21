@@ -21,16 +21,16 @@ GPUBufferMapState GPUBuffer::mapState() const {
     return emlite::Val::get("mapState").as<GPUBufferMapState>();
 }
 
-jsbind::Promise GPUBuffer::mapAsync(const jsbind::Any& mode) {
-    return emlite::Val::call("mapAsync", mode).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> GPUBuffer::mapAsync(const jsbind::Any& mode) {
+    return emlite::Val::call("mapAsync", mode).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise GPUBuffer::mapAsync(const jsbind::Any& mode, const jsbind::Any& offset) {
-    return emlite::Val::call("mapAsync", mode, offset).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> GPUBuffer::mapAsync(const jsbind::Any& mode, const jsbind::Any& offset) {
+    return emlite::Val::call("mapAsync", mode, offset).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise GPUBuffer::mapAsync(const jsbind::Any& mode, const jsbind::Any& offset, const jsbind::Any& size) {
-    return emlite::Val::call("mapAsync", mode, offset, size).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> GPUBuffer::mapAsync(const jsbind::Any& mode, const jsbind::Any& offset, const jsbind::Any& size) {
+    return emlite::Val::call("mapAsync", mode, offset, size).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::ArrayBuffer GPUBuffer::getMappedRange() {

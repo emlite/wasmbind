@@ -31,6 +31,6 @@ public:
     FaceDetector clone() const noexcept;
     FaceDetector();
     FaceDetector(const jsbind::Any& faceDetectorOptions);
-    jsbind::Promise detect(const jsbind::Any& image);
+    jsbind::Promise<jsbind::Sequence<DetectedFace>> detect(const jsbind::Any& image);
 };
 

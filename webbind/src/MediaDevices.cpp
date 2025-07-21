@@ -204,16 +204,16 @@ void MediaDevices::ondevicechange(const jsbind::Any& value) {
     EventTarget::set("ondevicechange", value);
 }
 
-jsbind::Promise MediaDevices::enumerateDevices() {
-    return EventTarget::call("enumerateDevices").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<MediaDeviceInfo>> MediaDevices::enumerateDevices() {
+    return EventTarget::call("enumerateDevices").as<jsbind::Promise<jsbind::Sequence<MediaDeviceInfo>>>();
 }
 
-jsbind::Promise MediaDevices::selectAudioOutput() {
-    return EventTarget::call("selectAudioOutput").as<jsbind::Promise>();
+jsbind::Promise<MediaDeviceInfo> MediaDevices::selectAudioOutput() {
+    return EventTarget::call("selectAudioOutput").as<jsbind::Promise<MediaDeviceInfo>>();
 }
 
-jsbind::Promise MediaDevices::selectAudioOutput(const AudioOutputOptions& options) {
-    return EventTarget::call("selectAudioOutput", options).as<jsbind::Promise>();
+jsbind::Promise<MediaDeviceInfo> MediaDevices::selectAudioOutput(const AudioOutputOptions& options) {
+    return EventTarget::call("selectAudioOutput", options).as<jsbind::Promise<MediaDeviceInfo>>();
 }
 
 jsbind::Undefined MediaDevices::setCaptureHandleConfig() {
@@ -240,27 +240,27 @@ MediaTrackSupportedConstraints MediaDevices::getSupportedConstraints() {
     return EventTarget::call("getSupportedConstraints").as<MediaTrackSupportedConstraints>();
 }
 
-jsbind::Promise MediaDevices::getUserMedia() {
-    return EventTarget::call("getUserMedia").as<jsbind::Promise>();
+jsbind::Promise<MediaStream> MediaDevices::getUserMedia() {
+    return EventTarget::call("getUserMedia").as<jsbind::Promise<MediaStream>>();
 }
 
-jsbind::Promise MediaDevices::getUserMedia(const MediaStreamConstraints& constraints) {
-    return EventTarget::call("getUserMedia", constraints).as<jsbind::Promise>();
+jsbind::Promise<MediaStream> MediaDevices::getUserMedia(const MediaStreamConstraints& constraints) {
+    return EventTarget::call("getUserMedia", constraints).as<jsbind::Promise<MediaStream>>();
 }
 
-jsbind::Promise MediaDevices::getViewportMedia() {
-    return EventTarget::call("getViewportMedia").as<jsbind::Promise>();
+jsbind::Promise<MediaStream> MediaDevices::getViewportMedia() {
+    return EventTarget::call("getViewportMedia").as<jsbind::Promise<MediaStream>>();
 }
 
-jsbind::Promise MediaDevices::getViewportMedia(const DisplayMediaStreamOptions& options) {
-    return EventTarget::call("getViewportMedia", options).as<jsbind::Promise>();
+jsbind::Promise<MediaStream> MediaDevices::getViewportMedia(const DisplayMediaStreamOptions& options) {
+    return EventTarget::call("getViewportMedia", options).as<jsbind::Promise<MediaStream>>();
 }
 
-jsbind::Promise MediaDevices::getDisplayMedia() {
-    return EventTarget::call("getDisplayMedia").as<jsbind::Promise>();
+jsbind::Promise<MediaStream> MediaDevices::getDisplayMedia() {
+    return EventTarget::call("getDisplayMedia").as<jsbind::Promise<MediaStream>>();
 }
 
-jsbind::Promise MediaDevices::getDisplayMedia(const DisplayMediaStreamOptions& options) {
-    return EventTarget::call("getDisplayMedia", options).as<jsbind::Promise>();
+jsbind::Promise<MediaStream> MediaDevices::getDisplayMedia(const DisplayMediaStreamOptions& options) {
+    return EventTarget::call("getDisplayMedia", options).as<jsbind::Promise<MediaStream>>();
 }
 

@@ -14,7 +14,7 @@ public:
     static ScreenOrientation take_ownership(Handle h) noexcept;
 
     ScreenOrientation clone() const noexcept;
-    jsbind::Promise lock(const OrientationLockType& orientation);
+    jsbind::Promise<jsbind::Undefined> lock(const OrientationLockType& orientation);
     jsbind::Undefined unlock();
     OrientationType type() const;
     unsigned short angle() const;

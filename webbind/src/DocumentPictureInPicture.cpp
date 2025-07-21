@@ -50,12 +50,12 @@ DocumentPictureInPicture::DocumentPictureInPicture(Handle h) noexcept : EventTar
 DocumentPictureInPicture::DocumentPictureInPicture(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise DocumentPictureInPicture::requestWindow() {
-    return EventTarget::call("requestWindow").as<jsbind::Promise>();
+jsbind::Promise<Window> DocumentPictureInPicture::requestWindow() {
+    return EventTarget::call("requestWindow").as<jsbind::Promise<Window>>();
 }
 
-jsbind::Promise DocumentPictureInPicture::requestWindow(const DocumentPictureInPictureOptions& options) {
-    return EventTarget::call("requestWindow", options).as<jsbind::Promise>();
+jsbind::Promise<Window> DocumentPictureInPicture::requestWindow(const DocumentPictureInPictureOptions& options) {
+    return EventTarget::call("requestWindow", options).as<jsbind::Promise<Window>>();
 }
 
 Window DocumentPictureInPicture::window() const {

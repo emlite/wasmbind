@@ -131,8 +131,8 @@ void HTMLImageElement::fetchPriority(const jsbind::DOMString& value) {
     HTMLElement::set("fetchPriority", value);
 }
 
-jsbind::Promise HTMLImageElement::decode() {
-    return HTMLElement::call("decode").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HTMLImageElement::decode() {
+    return HTMLElement::call("decode").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 long HTMLImageElement::x() const {

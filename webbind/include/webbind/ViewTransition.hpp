@@ -15,9 +15,9 @@ public:
     static ViewTransition take_ownership(Handle h) noexcept;
 
     ViewTransition clone() const noexcept;
-    jsbind::Promise updateCallbackDone() const;
-    jsbind::Promise ready() const;
-    jsbind::Promise finished() const;
+    jsbind::Promise<jsbind::Undefined> updateCallbackDone() const;
+    jsbind::Promise<jsbind::Undefined> ready() const;
+    jsbind::Promise<jsbind::Undefined> finished() const;
     jsbind::Undefined skipTransition();
     ViewTransitionTypeSet types() const;
     void types(const ViewTransitionTypeSet& value);

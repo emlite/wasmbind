@@ -152,12 +152,12 @@ public:
     jsbind::FrozenArray<PaymentDetailsModifier> modifiers() const;
     jsbind::Object paymentOptions() const;
     jsbind::FrozenArray<PaymentShippingOption> shippingOptions() const;
-    jsbind::Promise openWindow(const jsbind::USVString& url);
-    jsbind::Promise changePaymentMethod(const jsbind::DOMString& methodName);
-    jsbind::Promise changePaymentMethod(const jsbind::DOMString& methodName, const jsbind::Object& methodDetails);
-    jsbind::Promise changeShippingAddress();
-    jsbind::Promise changeShippingAddress(const AddressInit& shippingAddress);
-    jsbind::Promise changeShippingOption(const jsbind::DOMString& shippingOption);
-    jsbind::Undefined respondWith(const jsbind::Promise& handlerResponsePromise);
+    jsbind::Promise<WindowClient> openWindow(const jsbind::USVString& url);
+    jsbind::Promise<PaymentRequestDetailsUpdate> changePaymentMethod(const jsbind::DOMString& methodName);
+    jsbind::Promise<PaymentRequestDetailsUpdate> changePaymentMethod(const jsbind::DOMString& methodName, const jsbind::Object& methodDetails);
+    jsbind::Promise<PaymentRequestDetailsUpdate> changeShippingAddress();
+    jsbind::Promise<PaymentRequestDetailsUpdate> changeShippingAddress(const AddressInit& shippingAddress);
+    jsbind::Promise<PaymentRequestDetailsUpdate> changeShippingOption(const jsbind::DOMString& shippingOption);
+    jsbind::Undefined respondWith(const jsbind::Promise<PaymentHandlerResponse>& handlerResponsePromise);
 };
 

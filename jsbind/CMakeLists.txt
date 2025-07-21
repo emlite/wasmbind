@@ -2,7 +2,6 @@ add_library(jsbind)
 
 set(JSBIND_SOURCES
     src/Function.cpp 
-    src/Promise.cpp 
     src/Any.cpp 
     src/lib.cpp 
     src/Object.cpp 

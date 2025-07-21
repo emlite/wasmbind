@@ -105,12 +105,12 @@ bool ReadableStream::locked() const {
     return emlite::Val::get("locked").as<bool>();
 }
 
-jsbind::Promise ReadableStream::cancel() {
-    return emlite::Val::call("cancel").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ReadableStream::cancel() {
+    return emlite::Val::call("cancel").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ReadableStream::cancel(const jsbind::Any& reason) {
-    return emlite::Val::call("cancel", reason).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ReadableStream::cancel(const jsbind::Any& reason) {
+    return emlite::Val::call("cancel", reason).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any ReadableStream::getReader() {
@@ -129,12 +129,12 @@ ReadableStream ReadableStream::pipeThrough(const ReadableWritablePair& transform
     return emlite::Val::call("pipeThrough", transform, options).as<ReadableStream>();
 }
 
-jsbind::Promise ReadableStream::pipeTo(const WritableStream& destination) {
-    return emlite::Val::call("pipeTo", destination).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ReadableStream::pipeTo(const WritableStream& destination) {
+    return emlite::Val::call("pipeTo", destination).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ReadableStream::pipeTo(const WritableStream& destination, const StreamPipeOptions& options) {
-    return emlite::Val::call("pipeTo", destination, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ReadableStream::pipeTo(const WritableStream& destination, const StreamPipeOptions& options) {
+    return emlite::Val::call("pipeTo", destination, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Sequence<ReadableStream> ReadableStream::tee() {

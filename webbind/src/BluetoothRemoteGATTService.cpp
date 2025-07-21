@@ -23,28 +23,28 @@ bool BluetoothRemoteGATTService::isPrimary() const {
     return EventTarget::get("isPrimary").as<bool>();
 }
 
-jsbind::Promise BluetoothRemoteGATTService::getCharacteristic(const jsbind::Any& characteristic) {
-    return EventTarget::call("getCharacteristic", characteristic).as<jsbind::Promise>();
+jsbind::Promise<BluetoothRemoteGATTCharacteristic> BluetoothRemoteGATTService::getCharacteristic(const jsbind::Any& characteristic) {
+    return EventTarget::call("getCharacteristic", characteristic).as<jsbind::Promise<BluetoothRemoteGATTCharacteristic>>();
 }
 
-jsbind::Promise BluetoothRemoteGATTService::getCharacteristics() {
-    return EventTarget::call("getCharacteristics").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTCharacteristic>> BluetoothRemoteGATTService::getCharacteristics() {
+    return EventTarget::call("getCharacteristics").as<jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTCharacteristic>>>();
 }
 
-jsbind::Promise BluetoothRemoteGATTService::getCharacteristics(const jsbind::Any& characteristic) {
-    return EventTarget::call("getCharacteristics", characteristic).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTCharacteristic>> BluetoothRemoteGATTService::getCharacteristics(const jsbind::Any& characteristic) {
+    return EventTarget::call("getCharacteristics", characteristic).as<jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTCharacteristic>>>();
 }
 
-jsbind::Promise BluetoothRemoteGATTService::getIncludedService(const jsbind::Any& service) {
-    return EventTarget::call("getIncludedService", service).as<jsbind::Promise>();
+jsbind::Promise<BluetoothRemoteGATTService> BluetoothRemoteGATTService::getIncludedService(const jsbind::Any& service) {
+    return EventTarget::call("getIncludedService", service).as<jsbind::Promise<BluetoothRemoteGATTService>>();
 }
 
-jsbind::Promise BluetoothRemoteGATTService::getIncludedServices() {
-    return EventTarget::call("getIncludedServices").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> BluetoothRemoteGATTService::getIncludedServices() {
+    return EventTarget::call("getIncludedServices").as<jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>>>();
 }
 
-jsbind::Promise BluetoothRemoteGATTService::getIncludedServices(const jsbind::Any& service) {
-    return EventTarget::call("getIncludedServices", service).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> BluetoothRemoteGATTService::getIncludedServices(const jsbind::Any& service) {
+    return EventTarget::call("getIncludedServices", service).as<jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>>>();
 }
 
 jsbind::Any BluetoothRemoteGATTService::oncharacteristicvaluechanged() const {

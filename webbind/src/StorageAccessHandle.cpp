@@ -37,12 +37,12 @@ CacheStorage StorageAccessHandle::caches() const {
     return emlite::Val::get("caches").as<CacheStorage>();
 }
 
-jsbind::Promise StorageAccessHandle::getDirectory() {
-    return emlite::Val::call("getDirectory").as<jsbind::Promise>();
+jsbind::Promise<FileSystemDirectoryHandle> StorageAccessHandle::getDirectory() {
+    return emlite::Val::call("getDirectory").as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 
-jsbind::Promise StorageAccessHandle::estimate() {
-    return emlite::Val::call("estimate").as<jsbind::Promise>();
+jsbind::Promise<StorageEstimate> StorageAccessHandle::estimate() {
+    return emlite::Val::call("estimate").as<jsbind::Promise<StorageEstimate>>();
 }
 
 jsbind::DOMString StorageAccessHandle::createObjectURL(const jsbind::Any& obj) {

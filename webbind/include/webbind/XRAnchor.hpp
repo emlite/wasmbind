@@ -16,7 +16,7 @@ public:
 
     XRAnchor clone() const noexcept;
     XRSpace anchorSpace() const;
-    jsbind::Promise requestPersistentHandle();
+    jsbind::Promise<jsbind::DOMString> requestPersistentHandle();
     jsbind::Undefined delete_();
 };
 

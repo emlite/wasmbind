@@ -15,7 +15,7 @@ public:
     static FontData take_ownership(Handle h) noexcept;
 
     FontData clone() const noexcept;
-    jsbind::Promise blob();
+    jsbind::Promise<Blob> blob();
     jsbind::USVString postscriptName() const;
     jsbind::USVString fullName() const;
     jsbind::USVString family() const;

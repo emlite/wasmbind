@@ -53,15 +53,15 @@ public:
     static Bluetooth take_ownership(Handle h) noexcept;
 
     Bluetooth clone() const noexcept;
-    jsbind::Promise getAvailability();
+    jsbind::Promise<bool> getAvailability();
     jsbind::Any onavailabilitychanged() const;
     void onavailabilitychanged(const jsbind::Any& value);
     BluetoothDevice referringDevice() const;
-    jsbind::Promise getDevices();
-    jsbind::Promise requestDevice();
-    jsbind::Promise requestDevice(const RequestDeviceOptions& options);
-    jsbind::Promise requestLEScan();
-    jsbind::Promise requestLEScan(const BluetoothLEScanOptions& options);
+    jsbind::Promise<jsbind::Sequence<BluetoothDevice>> getDevices();
+    jsbind::Promise<BluetoothDevice> requestDevice();
+    jsbind::Promise<BluetoothDevice> requestDevice(const RequestDeviceOptions& options);
+    jsbind::Promise<BluetoothLEScan> requestLEScan();
+    jsbind::Promise<BluetoothLEScan> requestLEScan(const BluetoothLEScanOptions& options);
     jsbind::Any onadvertisementreceived() const;
     void onadvertisementreceived(const jsbind::Any& value);
     jsbind::Any ongattserverdisconnected() const;

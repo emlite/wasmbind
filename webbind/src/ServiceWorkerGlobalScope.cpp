@@ -25,8 +25,8 @@ ServiceWorker ServiceWorkerGlobalScope::serviceWorker() const {
     return WorkerGlobalScope::get("serviceWorker").as<ServiceWorker>();
 }
 
-jsbind::Promise ServiceWorkerGlobalScope::skipWaiting() {
-    return WorkerGlobalScope::call("skipWaiting").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ServiceWorkerGlobalScope::skipWaiting() {
+    return WorkerGlobalScope::call("skipWaiting").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any ServiceWorkerGlobalScope::oninstall() const {

@@ -29,10 +29,10 @@ public:
     FileSystemHandle clone() const noexcept;
     FileSystemHandleKind kind() const;
     jsbind::USVString name() const;
-    jsbind::Promise isSameEntry(const FileSystemHandle& other);
-    jsbind::Promise queryPermission();
-    jsbind::Promise queryPermission(const FileSystemHandlePermissionDescriptor& descriptor);
-    jsbind::Promise requestPermission();
-    jsbind::Promise requestPermission(const FileSystemHandlePermissionDescriptor& descriptor);
+    jsbind::Promise<bool> isSameEntry(const FileSystemHandle& other);
+    jsbind::Promise<PermissionState> queryPermission();
+    jsbind::Promise<PermissionState> queryPermission(const FileSystemHandlePermissionDescriptor& descriptor);
+    jsbind::Promise<PermissionState> requestPermission();
+    jsbind::Promise<PermissionState> requestPermission(const FileSystemHandlePermissionDescriptor& descriptor);
 };
 

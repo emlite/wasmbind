@@ -87,8 +87,8 @@ jsbind::Sequence<FencedFrameConfig> Fence::getNestedConfigs() {
     return emlite::Val::call("getNestedConfigs").as<jsbind::Sequence<FencedFrameConfig>>();
 }
 
-jsbind::Promise Fence::disableUntrustedNetwork() {
-    return emlite::Val::call("disableUntrustedNetwork").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Fence::disableUntrustedNetwork() {
+    return emlite::Val::call("disableUntrustedNetwork").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined Fence::notifyEvent(const Event& event) {

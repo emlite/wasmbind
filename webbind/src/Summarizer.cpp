@@ -123,28 +123,28 @@ Summarizer::Summarizer(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 Summarizer::Summarizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise Summarizer::create() {
-    return emlite::Val::global("summarizer").call("create").as<jsbind::Promise>();
+jsbind::Promise<Summarizer> Summarizer::create() {
+    return emlite::Val::global("summarizer").call("create").as<jsbind::Promise<Summarizer>>();
 }
 
-jsbind::Promise Summarizer::create(const SummarizerCreateOptions& options) {
-    return emlite::Val::global("summarizer").call("create", options).as<jsbind::Promise>();
+jsbind::Promise<Summarizer> Summarizer::create(const SummarizerCreateOptions& options) {
+    return emlite::Val::global("summarizer").call("create", options).as<jsbind::Promise<Summarizer>>();
 }
 
-jsbind::Promise Summarizer::availability() {
-    return emlite::Val::global("summarizer").call("availability").as<jsbind::Promise>();
+jsbind::Promise<Availability> Summarizer::availability() {
+    return emlite::Val::global("summarizer").call("availability").as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise Summarizer::availability(const SummarizerCreateCoreOptions& options) {
-    return emlite::Val::global("summarizer").call("availability", options).as<jsbind::Promise>();
+jsbind::Promise<Availability> Summarizer::availability(const SummarizerCreateCoreOptions& options) {
+    return emlite::Val::global("summarizer").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise Summarizer::summarize(const jsbind::DOMString& input) {
-    return emlite::Val::call("summarize", input).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> Summarizer::summarize(const jsbind::DOMString& input) {
+    return emlite::Val::call("summarize", input).as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise Summarizer::summarize(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
-    return emlite::Val::call("summarize", input, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> Summarizer::summarize(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
+    return emlite::Val::call("summarize", input, options).as<jsbind::Promise<jsbind::DOMString>>();
 }
 
 ReadableStream Summarizer::summarizeStreaming(const jsbind::DOMString& input) {
@@ -183,12 +183,12 @@ jsbind::DOMString Summarizer::outputLanguage() const {
     return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
 }
 
-jsbind::Promise Summarizer::measureInputUsage(const jsbind::DOMString& input) {
-    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise>();
+jsbind::Promise<double> Summarizer::measureInputUsage(const jsbind::DOMString& input) {
+    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise Summarizer::measureInputUsage(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
-    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise>();
+jsbind::Promise<double> Summarizer::measureInputUsage(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
+    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 
 double Summarizer::inputQuota() const {

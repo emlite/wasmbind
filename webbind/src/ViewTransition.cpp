@@ -10,16 +10,16 @@ ViewTransition::ViewTransition(Handle h) noexcept : emlite::Val(emlite::Val::tak
 ViewTransition::ViewTransition(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise ViewTransition::updateCallbackDone() const {
-    return emlite::Val::get("updateCallbackDone").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ViewTransition::updateCallbackDone() const {
+    return emlite::Val::get("updateCallbackDone").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ViewTransition::ready() const {
-    return emlite::Val::get("ready").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ViewTransition::ready() const {
+    return emlite::Val::get("ready").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ViewTransition::finished() const {
-    return emlite::Val::get("finished").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ViewTransition::finished() const {
+    return emlite::Val::get("finished").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined ViewTransition::skipTransition() {

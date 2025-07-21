@@ -93,15 +93,15 @@ jsbind::Undefined IdentityProvider::close() {
     return emlite::Val::global("identityprovider").call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Promise IdentityProvider::resolve(const jsbind::DOMString& token) {
-    return emlite::Val::global("identityprovider").call("resolve", token).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::DOMString& token) {
+    return emlite::Val::global("identityprovider").call("resolve", token).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise IdentityProvider::resolve(const jsbind::DOMString& token, const IdentityResolveOptions& options) {
-    return emlite::Val::global("identityprovider").call("resolve", token, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::DOMString& token, const IdentityResolveOptions& options) {
+    return emlite::Val::global("identityprovider").call("resolve", token, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise IdentityProvider::getUserInfo(const IdentityProviderConfig& config) {
-    return emlite::Val::global("identityprovider").call("getUserInfo", config).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<IdentityUserInfo>> IdentityProvider::getUserInfo(const IdentityProviderConfig& config) {
+    return emlite::Val::global("identityprovider").call("getUserInfo", config).as<jsbind::Promise<jsbind::Sequence<IdentityUserInfo>>>();
 }
 

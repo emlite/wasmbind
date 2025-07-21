@@ -14,9 +14,9 @@ public:
     static RemotePlayback take_ownership(Handle h) noexcept;
 
     RemotePlayback clone() const noexcept;
-    jsbind::Promise watchAvailability(const jsbind::Function& callback);
-    jsbind::Promise cancelWatchAvailability();
-    jsbind::Promise cancelWatchAvailability(long id);
+    jsbind::Promise<long> watchAvailability(const jsbind::Function& callback);
+    jsbind::Promise<jsbind::Undefined> cancelWatchAvailability();
+    jsbind::Promise<jsbind::Undefined> cancelWatchAvailability(long id);
     RemotePlaybackState state() const;
     jsbind::Any onconnecting() const;
     void onconnecting(const jsbind::Any& value);
@@ -24,6 +24,6 @@ public:
     void onconnect(const jsbind::Any& value);
     jsbind::Any ondisconnect() const;
     void ondisconnect(const jsbind::Any& value);
-    jsbind::Promise prompt();
+    jsbind::Promise<jsbind::Undefined> prompt();
 };
 

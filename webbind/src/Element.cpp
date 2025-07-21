@@ -533,12 +533,12 @@ void Element::elementTiming(const jsbind::DOMString& value) {
     Node::set("elementTiming", value);
 }
 
-jsbind::Promise Element::requestFullscreen() {
-    return Node::call("requestFullscreen").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Element::requestFullscreen() {
+    return Node::call("requestFullscreen").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise Element::requestFullscreen(const FullscreenOptions& options) {
-    return Node::call("requestFullscreen", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Element::requestFullscreen(const FullscreenOptions& options) {
+    return Node::call("requestFullscreen", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any Element::onfullscreenchange() const {
@@ -601,12 +601,12 @@ bool Element::hasPointerCapture(long pointerId) {
     return Node::call("hasPointerCapture", pointerId).as<bool>();
 }
 
-jsbind::Promise Element::requestPointerLock() {
-    return Node::call("requestPointerLock").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Element::requestPointerLock() {
+    return Node::call("requestPointerLock").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise Element::requestPointerLock(const PointerLockOptions& options) {
-    return Node::call("requestPointerLock", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Element::requestPointerLock(const PointerLockOptions& options) {
+    return Node::call("requestPointerLock", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::CSSOMString Element::regionOverset() const {

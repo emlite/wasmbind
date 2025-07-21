@@ -10,8 +10,8 @@ WebGLRenderingContext::WebGLRenderingContext(Handle h) noexcept : emlite::Val(em
 WebGLRenderingContext::WebGLRenderingContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise WebGLRenderingContext::makeXRCompatible() {
-    return emlite::Val::call("makeXRCompatible").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WebGLRenderingContext::makeXRCompatible() {
+    return emlite::Val::call("makeXRCompatible").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined WebGLRenderingContext::bufferData(const jsbind::Any& target, const jsbind::Any& data, const jsbind::Any& usage) {

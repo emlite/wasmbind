@@ -22,11 +22,11 @@ public:
     void oncapturedmousechange(const jsbind::Any& value);
     jsbind::Sequence<long> getSupportedZoomLevels();
     long zoomLevel() const;
-    jsbind::Promise increaseZoomLevel();
-    jsbind::Promise decreaseZoomLevel();
-    jsbind::Promise resetZoomLevel();
+    jsbind::Promise<jsbind::Undefined> increaseZoomLevel();
+    jsbind::Promise<jsbind::Undefined> decreaseZoomLevel();
+    jsbind::Promise<jsbind::Undefined> resetZoomLevel();
     jsbind::Any onzoomlevelchange() const;
     void onzoomlevelchange(const jsbind::Any& value);
-    jsbind::Promise forwardWheel(const HTMLElement& element);
+    jsbind::Promise<jsbind::Undefined> forwardWheel(const HTMLElement& element);
 };
 

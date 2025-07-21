@@ -34,12 +34,12 @@ public:
 
     ServiceWorkerContainer clone() const noexcept;
     ServiceWorker controller() const;
-    jsbind::Promise ready() const;
-    jsbind::Promise register_(const jsbind::Any& scriptURL);
-    jsbind::Promise register_(const jsbind::Any& scriptURL, const RegistrationOptions& options);
-    jsbind::Promise getRegistration();
-    jsbind::Promise getRegistration(const jsbind::USVString& clientURL);
-    jsbind::Promise getRegistrations();
+    jsbind::Promise<ServiceWorkerRegistration> ready() const;
+    jsbind::Promise<ServiceWorkerRegistration> register_(const jsbind::Any& scriptURL);
+    jsbind::Promise<ServiceWorkerRegistration> register_(const jsbind::Any& scriptURL, const RegistrationOptions& options);
+    jsbind::Promise<jsbind::Any> getRegistration();
+    jsbind::Promise<jsbind::Any> getRegistration(const jsbind::USVString& clientURL);
+    jsbind::Promise<jsbind::FrozenArray<ServiceWorkerRegistration>> getRegistrations();
     jsbind::Undefined startMessages();
     jsbind::Any oncontrollerchange() const;
     void oncontrollerchange(const jsbind::Any& value);

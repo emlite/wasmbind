@@ -40,7 +40,7 @@ public:
 
     EyeDropper clone() const noexcept;
     EyeDropper();
-    jsbind::Promise open();
-    jsbind::Promise open(const ColorSelectionOptions& options);
+    jsbind::Promise<ColorSelectionResult> open();
+    jsbind::Promise<ColorSelectionResult> open(const ColorSelectionOptions& options);
 };
 

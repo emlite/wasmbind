@@ -49,16 +49,16 @@ USB WorkerNavigator::usb() const {
     return emlite::Val::get("usb").as<USB>();
 }
 
-jsbind::Promise WorkerNavigator::setAppBadge() {
-    return emlite::Val::call("setAppBadge").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WorkerNavigator::setAppBadge() {
+    return emlite::Val::call("setAppBadge").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise WorkerNavigator::setAppBadge(long long contents) {
-    return emlite::Val::call("setAppBadge", contents).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WorkerNavigator::setAppBadge(long long contents) {
+    return emlite::Val::call("setAppBadge", contents).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise WorkerNavigator::clearAppBadge() {
-    return emlite::Val::call("clearAppBadge").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WorkerNavigator::clearAppBadge() {
+    return emlite::Val::call("clearAppBadge").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 double WorkerNavigator::deviceMemory() const {

@@ -32,7 +32,7 @@ public:
     IDBOpenDBRequest open(const jsbind::DOMString& name);
     IDBOpenDBRequest open(const jsbind::DOMString& name, long long version);
     IDBOpenDBRequest deleteDatabase(const jsbind::DOMString& name);
-    jsbind::Promise databases();
+    jsbind::Promise<jsbind::Sequence<IDBDatabaseInfo>> databases();
     short cmp(const jsbind::Any& first, const jsbind::Any& second);
 };
 

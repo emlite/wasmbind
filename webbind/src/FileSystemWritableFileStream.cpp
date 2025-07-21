@@ -9,15 +9,15 @@ FileSystemWritableFileStream::FileSystemWritableFileStream(Handle h) noexcept : 
 FileSystemWritableFileStream::FileSystemWritableFileStream(const emlite::Val &val) noexcept: WritableStream(val) {}
 
 
-jsbind::Promise FileSystemWritableFileStream::write(const jsbind::Any& data) {
-    return WritableStream::call("write", data).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> FileSystemWritableFileStream::write(const jsbind::Any& data) {
+    return WritableStream::call("write", data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise FileSystemWritableFileStream::seek(long long position) {
-    return WritableStream::call("seek", position).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> FileSystemWritableFileStream::seek(long long position) {
+    return WritableStream::call("seek", position).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise FileSystemWritableFileStream::truncate(long long size) {
-    return WritableStream::call("truncate", size).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> FileSystemWritableFileStream::truncate(long long size) {
+    return WritableStream::call("truncate", size).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

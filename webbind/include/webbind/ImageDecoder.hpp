@@ -47,12 +47,12 @@ public:
     ImageDecoder(const jsbind::Any& init);
     jsbind::DOMString type() const;
     bool complete() const;
-    jsbind::Promise completed() const;
+    jsbind::Promise<jsbind::Undefined> completed() const;
     ImageTrackList tracks() const;
-    jsbind::Promise decode();
-    jsbind::Promise decode(const ImageDecodeOptions& options);
+    jsbind::Promise<ImageDecodeResult> decode();
+    jsbind::Promise<ImageDecodeResult> decode(const ImageDecodeOptions& options);
     jsbind::Undefined reset();
     jsbind::Undefined close();
-    static jsbind::Promise isTypeSupported(const jsbind::DOMString& type);
+    static jsbind::Promise<bool> isTypeSupported(const jsbind::DOMString& type);
 };
 

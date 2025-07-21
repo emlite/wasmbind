@@ -129,19 +129,19 @@ DigitalGoodsService::DigitalGoodsService(Handle h) noexcept : emlite::Val(emlite
 DigitalGoodsService::DigitalGoodsService(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise DigitalGoodsService::getDetails(const jsbind::Sequence<jsbind::DOMString>& itemIds) {
-    return emlite::Val::call("getDetails", itemIds).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<ItemDetails>> DigitalGoodsService::getDetails(const jsbind::Sequence<jsbind::DOMString>& itemIds) {
+    return emlite::Val::call("getDetails", itemIds).as<jsbind::Promise<jsbind::Sequence<ItemDetails>>>();
 }
 
-jsbind::Promise DigitalGoodsService::listPurchases() {
-    return emlite::Val::call("listPurchases").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<PurchaseDetails>> DigitalGoodsService::listPurchases() {
+    return emlite::Val::call("listPurchases").as<jsbind::Promise<jsbind::Sequence<PurchaseDetails>>>();
 }
 
-jsbind::Promise DigitalGoodsService::listPurchaseHistory() {
-    return emlite::Val::call("listPurchaseHistory").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<PurchaseDetails>> DigitalGoodsService::listPurchaseHistory() {
+    return emlite::Val::call("listPurchaseHistory").as<jsbind::Promise<jsbind::Sequence<PurchaseDetails>>>();
 }
 
-jsbind::Promise DigitalGoodsService::consume(const jsbind::DOMString& purchaseToken) {
-    return emlite::Val::call("consume", purchaseToken).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> DigitalGoodsService::consume(const jsbind::DOMString& purchaseToken) {
+    return emlite::Val::call("consume", purchaseToken).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

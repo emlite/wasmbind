@@ -10,7 +10,7 @@ RestrictionTarget::RestrictionTarget(Handle h) noexcept : emlite::Val(emlite::Va
 RestrictionTarget::RestrictionTarget(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise RestrictionTarget::fromElement(const Element& element) {
-    return emlite::Val::global("restrictiontarget").call("fromElement", element).as<jsbind::Promise>();
+jsbind::Promise<RestrictionTarget> RestrictionTarget::fromElement(const Element& element) {
+    return emlite::Val::global("restrictiontarget").call("fromElement", element).as<jsbind::Promise<RestrictionTarget>>();
 }
 

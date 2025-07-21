@@ -20,16 +20,16 @@ bool WritableStream::locked() const {
     return emlite::Val::get("locked").as<bool>();
 }
 
-jsbind::Promise WritableStream::abort() {
-    return emlite::Val::call("abort").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WritableStream::abort() {
+    return emlite::Val::call("abort").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise WritableStream::abort(const jsbind::Any& reason) {
-    return emlite::Val::call("abort", reason).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WritableStream::abort(const jsbind::Any& reason) {
+    return emlite::Val::call("abort", reason).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise WritableStream::close() {
-    return emlite::Val::call("close").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WritableStream::close() {
+    return emlite::Val::call("close").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 WritableStreamDefaultWriter WritableStream::getWriter() {

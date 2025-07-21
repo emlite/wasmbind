@@ -18,6 +18,6 @@ public:
 
     XRHitTestResult clone() const noexcept;
     XRPose getPose(const XRSpace& baseSpace);
-    jsbind::Promise createAnchor();
+    jsbind::Promise<XRAnchor> createAnchor();
 };
 

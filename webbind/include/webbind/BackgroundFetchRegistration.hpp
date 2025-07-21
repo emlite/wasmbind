@@ -42,11 +42,11 @@ public:
     bool recordsAvailable() const;
     jsbind::Any onprogress() const;
     void onprogress(const jsbind::Any& value);
-    jsbind::Promise abort();
-    jsbind::Promise match(const jsbind::Any& request);
-    jsbind::Promise match(const jsbind::Any& request, const CacheQueryOptions& options);
-    jsbind::Promise matchAll();
-    jsbind::Promise matchAll(const jsbind::Any& request);
-    jsbind::Promise matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise<bool> abort();
+    jsbind::Promise<BackgroundFetchRecord> match(const jsbind::Any& request);
+    jsbind::Promise<BackgroundFetchRecord> match(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> matchAll();
+    jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> matchAll(const jsbind::Any& request);
+    jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
 };
 

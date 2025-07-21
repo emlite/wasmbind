@@ -33,23 +33,23 @@ jsbind::USVString FileSystemHandle::name() const {
     return emlite::Val::get("name").as<jsbind::USVString>();
 }
 
-jsbind::Promise FileSystemHandle::isSameEntry(const FileSystemHandle& other) {
-    return emlite::Val::call("isSameEntry", other).as<jsbind::Promise>();
+jsbind::Promise<bool> FileSystemHandle::isSameEntry(const FileSystemHandle& other) {
+    return emlite::Val::call("isSameEntry", other).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise FileSystemHandle::queryPermission() {
-    return emlite::Val::call("queryPermission").as<jsbind::Promise>();
+jsbind::Promise<PermissionState> FileSystemHandle::queryPermission() {
+    return emlite::Val::call("queryPermission").as<jsbind::Promise<PermissionState>>();
 }
 
-jsbind::Promise FileSystemHandle::queryPermission(const FileSystemHandlePermissionDescriptor& descriptor) {
-    return emlite::Val::call("queryPermission", descriptor).as<jsbind::Promise>();
+jsbind::Promise<PermissionState> FileSystemHandle::queryPermission(const FileSystemHandlePermissionDescriptor& descriptor) {
+    return emlite::Val::call("queryPermission", descriptor).as<jsbind::Promise<PermissionState>>();
 }
 
-jsbind::Promise FileSystemHandle::requestPermission() {
-    return emlite::Val::call("requestPermission").as<jsbind::Promise>();
+jsbind::Promise<PermissionState> FileSystemHandle::requestPermission() {
+    return emlite::Val::call("requestPermission").as<jsbind::Promise<PermissionState>>();
 }
 
-jsbind::Promise FileSystemHandle::requestPermission(const FileSystemHandlePermissionDescriptor& descriptor) {
-    return emlite::Val::call("requestPermission", descriptor).as<jsbind::Promise>();
+jsbind::Promise<PermissionState> FileSystemHandle::requestPermission(const FileSystemHandlePermissionDescriptor& descriptor) {
+    return emlite::Val::call("requestPermission", descriptor).as<jsbind::Promise<PermissionState>>();
 }
 

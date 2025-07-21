@@ -76,20 +76,20 @@ AudioTimestamp AudioContext::getOutputTimestamp() {
     return BaseAudioContext::call("getOutputTimestamp").as<AudioTimestamp>();
 }
 
-jsbind::Promise AudioContext::resume() {
-    return BaseAudioContext::call("resume").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> AudioContext::resume() {
+    return BaseAudioContext::call("resume").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise AudioContext::suspend() {
-    return BaseAudioContext::call("suspend").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> AudioContext::suspend() {
+    return BaseAudioContext::call("suspend").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise AudioContext::close() {
-    return BaseAudioContext::call("close").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> AudioContext::close() {
+    return BaseAudioContext::call("close").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise AudioContext::setSinkId(const jsbind::Any& sinkId) {
-    return BaseAudioContext::call("setSinkId", sinkId).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> AudioContext::setSinkId(const jsbind::Any& sinkId) {
+    return BaseAudioContext::call("setSinkId", sinkId).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 MediaElementAudioSourceNode AudioContext::createMediaElementSource(const HTMLMediaElement& mediaElement) {

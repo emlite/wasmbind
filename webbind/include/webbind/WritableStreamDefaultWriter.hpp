@@ -16,14 +16,14 @@ public:
 
     WritableStreamDefaultWriter clone() const noexcept;
     WritableStreamDefaultWriter(const WritableStream& stream);
-    jsbind::Promise closed() const;
+    jsbind::Promise<jsbind::Undefined> closed() const;
     double desiredSize() const;
-    jsbind::Promise ready() const;
-    jsbind::Promise abort();
-    jsbind::Promise abort(const jsbind::Any& reason);
-    jsbind::Promise close();
+    jsbind::Promise<jsbind::Undefined> ready() const;
+    jsbind::Promise<jsbind::Undefined> abort();
+    jsbind::Promise<jsbind::Undefined> abort(const jsbind::Any& reason);
+    jsbind::Promise<jsbind::Undefined> close();
     jsbind::Undefined releaseLock();
-    jsbind::Promise write();
-    jsbind::Promise write(const jsbind::Any& chunk);
+    jsbind::Promise<jsbind::Undefined> write();
+    jsbind::Promise<jsbind::Undefined> write(const jsbind::Any& chunk);
 };
 

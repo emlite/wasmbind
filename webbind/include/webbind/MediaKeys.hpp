@@ -29,8 +29,8 @@ public:
     MediaKeys clone() const noexcept;
     MediaKeySession createSession();
     MediaKeySession createSession(const MediaKeySessionType& sessionType);
-    jsbind::Promise getStatusForPolicy();
-    jsbind::Promise getStatusForPolicy(const MediaKeysPolicy& policy);
-    jsbind::Promise setServerCertificate(const jsbind::Any& serverCertificate);
+    jsbind::Promise<MediaKeyStatus> getStatusForPolicy();
+    jsbind::Promise<MediaKeyStatus> getStatusForPolicy(const MediaKeysPolicy& policy);
+    jsbind::Promise<bool> setServerCertificate(const jsbind::Any& serverCertificate);
 };
 

@@ -69,12 +69,12 @@ public:
 
     MLContext clone() const noexcept;
     jsbind::Undefined dispatch(const MLGraph& graph, const jsbind::Any& inputs, const jsbind::Any& outputs);
-    jsbind::Promise createTensor(const MLTensorDescriptor& descriptor);
-    jsbind::Promise createConstantTensor(const MLOperandDescriptor& descriptor, const jsbind::Any& inputData);
-    jsbind::Promise readTensor(const MLTensor& tensor, const jsbind::Any& outputData);
+    jsbind::Promise<MLTensor> createTensor(const MLTensorDescriptor& descriptor);
+    jsbind::Promise<MLTensor> createConstantTensor(const MLOperandDescriptor& descriptor, const jsbind::Any& inputData);
+    jsbind::Promise<jsbind::Undefined> readTensor(const MLTensor& tensor, const jsbind::Any& outputData);
     jsbind::Undefined writeTensor(const MLTensor& tensor, const jsbind::Any& inputData);
     MLOpSupportLimits opSupportLimits();
     jsbind::Undefined destroy();
-    jsbind::Promise lost() const;
+    jsbind::Promise<MLContextLostInfo> lost() const;
 };
 

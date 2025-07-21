@@ -67,7 +67,7 @@ public:
     static MediaCapabilities take_ownership(Handle h) noexcept;
 
     MediaCapabilities clone() const noexcept;
-    jsbind::Promise decodingInfo(const MediaDecodingConfiguration& configuration);
-    jsbind::Promise encodingInfo(const MediaEncodingConfiguration& configuration);
+    jsbind::Promise<MediaCapabilitiesDecodingInfo> decodingInfo(const MediaDecodingConfiguration& configuration);
+    jsbind::Promise<MediaCapabilitiesEncodingInfo> encodingInfo(const MediaEncodingConfiguration& configuration);
 };
 

@@ -46,10 +46,10 @@ public:
     jsbind::Any onerror() const;
     void onerror(const jsbind::Any& value);
     AudioTimestamp getOutputTimestamp();
-    jsbind::Promise resume();
-    jsbind::Promise suspend();
-    jsbind::Promise close();
-    jsbind::Promise setSinkId(const jsbind::Any& sinkId);
+    jsbind::Promise<jsbind::Undefined> resume();
+    jsbind::Promise<jsbind::Undefined> suspend();
+    jsbind::Promise<jsbind::Undefined> close();
+    jsbind::Promise<jsbind::Undefined> setSinkId(const jsbind::Any& sinkId);
     MediaElementAudioSourceNode createMediaElementSource(const HTMLMediaElement& mediaElement);
     MediaStreamAudioSourceNode createMediaStreamSource(const MediaStream& mediaStream);
     MediaStreamTrackAudioSourceNode createMediaStreamTrackSource(const MediaStreamTrack& mediaStreamTrack);

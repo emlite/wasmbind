@@ -47,7 +47,7 @@ public:
 
     LayoutChild clone() const noexcept;
     StylePropertyMapReadOnly styleMap() const;
-    jsbind::Promise intrinsicSizes();
-    jsbind::Promise layoutNextFragment(const LayoutConstraintsOptions& constraints, const ChildBreakToken& breakToken);
+    jsbind::Promise<IntrinsicSizes> intrinsicSizes();
+    jsbind::Promise<LayoutFragment> layoutNextFragment(const LayoutConstraintsOptions& constraints, const ChildBreakToken& breakToken);
 };
 

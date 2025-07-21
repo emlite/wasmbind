@@ -9,8 +9,8 @@ ScreenOrientation::ScreenOrientation(Handle h) noexcept : EventTarget(emlite::Va
 ScreenOrientation::ScreenOrientation(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise ScreenOrientation::lock(const OrientationLockType& orientation) {
-    return EventTarget::call("lock", orientation).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ScreenOrientation::lock(const OrientationLockType& orientation) {
+    return EventTarget::call("lock", orientation).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined ScreenOrientation::unlock() {

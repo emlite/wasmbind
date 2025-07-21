@@ -162,20 +162,20 @@ WebTransport::WebTransport(const jsbind::USVString& url) : emlite::Val(emlite::V
 
 WebTransport::WebTransport(const jsbind::USVString& url, const jsbind::Any& options) : emlite::Val(emlite::Val::global("WebTransport").new_(url, options)) {}
 
-jsbind::Promise WebTransport::getStats() {
-    return emlite::Val::call("getStats").as<jsbind::Promise>();
+jsbind::Promise<WebTransportConnectionStats> WebTransport::getStats() {
+    return emlite::Val::call("getStats").as<jsbind::Promise<WebTransportConnectionStats>>();
 }
 
-jsbind::Promise WebTransport::exportKeyingMaterial(const jsbind::Any& label) {
-    return emlite::Val::call("exportKeyingMaterial", label).as<jsbind::Promise>();
+jsbind::Promise<jsbind::ArrayBuffer> WebTransport::exportKeyingMaterial(const jsbind::Any& label) {
+    return emlite::Val::call("exportKeyingMaterial", label).as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise WebTransport::exportKeyingMaterial(const jsbind::Any& label, const jsbind::Any& context) {
-    return emlite::Val::call("exportKeyingMaterial", label, context).as<jsbind::Promise>();
+jsbind::Promise<jsbind::ArrayBuffer> WebTransport::exportKeyingMaterial(const jsbind::Any& label, const jsbind::Any& context) {
+    return emlite::Val::call("exportKeyingMaterial", label, context).as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise WebTransport::ready() const {
-    return emlite::Val::get("ready").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WebTransport::ready() const {
+    return emlite::Val::get("ready").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 WebTransportReliabilityMode WebTransport::reliability() const {
@@ -206,12 +206,12 @@ jsbind::DOMString WebTransport::protocol() const {
     return emlite::Val::get("protocol").as<jsbind::DOMString>();
 }
 
-jsbind::Promise WebTransport::closed() const {
-    return emlite::Val::get("closed").as<jsbind::Promise>();
+jsbind::Promise<WebTransportCloseInfo> WebTransport::closed() const {
+    return emlite::Val::get("closed").as<jsbind::Promise<WebTransportCloseInfo>>();
 }
 
-jsbind::Promise WebTransport::draining() const {
-    return emlite::Val::get("draining").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WebTransport::draining() const {
+    return emlite::Val::get("draining").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined WebTransport::close() {
@@ -226,24 +226,24 @@ WebTransportDatagramDuplexStream WebTransport::datagrams() const {
     return emlite::Val::get("datagrams").as<WebTransportDatagramDuplexStream>();
 }
 
-jsbind::Promise WebTransport::createBidirectionalStream() {
-    return emlite::Val::call("createBidirectionalStream").as<jsbind::Promise>();
+jsbind::Promise<WebTransportBidirectionalStream> WebTransport::createBidirectionalStream() {
+    return emlite::Val::call("createBidirectionalStream").as<jsbind::Promise<WebTransportBidirectionalStream>>();
 }
 
-jsbind::Promise WebTransport::createBidirectionalStream(const WebTransportSendStreamOptions& options) {
-    return emlite::Val::call("createBidirectionalStream", options).as<jsbind::Promise>();
+jsbind::Promise<WebTransportBidirectionalStream> WebTransport::createBidirectionalStream(const WebTransportSendStreamOptions& options) {
+    return emlite::Val::call("createBidirectionalStream", options).as<jsbind::Promise<WebTransportBidirectionalStream>>();
 }
 
 ReadableStream WebTransport::incomingBidirectionalStreams() const {
     return emlite::Val::get("incomingBidirectionalStreams").as<ReadableStream>();
 }
 
-jsbind::Promise WebTransport::createUnidirectionalStream() {
-    return emlite::Val::call("createUnidirectionalStream").as<jsbind::Promise>();
+jsbind::Promise<WebTransportSendStream> WebTransport::createUnidirectionalStream() {
+    return emlite::Val::call("createUnidirectionalStream").as<jsbind::Promise<WebTransportSendStream>>();
 }
 
-jsbind::Promise WebTransport::createUnidirectionalStream(const WebTransportSendStreamOptions& options) {
-    return emlite::Val::call("createUnidirectionalStream", options).as<jsbind::Promise>();
+jsbind::Promise<WebTransportSendStream> WebTransport::createUnidirectionalStream(const WebTransportSendStreamOptions& options) {
+    return emlite::Val::call("createUnidirectionalStream", options).as<jsbind::Promise<WebTransportSendStream>>();
 }
 
 ReadableStream WebTransport::incomingUnidirectionalStreams() const {

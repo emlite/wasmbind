@@ -27,11 +27,11 @@ public:
     static CacheStorage take_ownership(Handle h) noexcept;
 
     CacheStorage clone() const noexcept;
-    jsbind::Promise match(const jsbind::Any& request);
-    jsbind::Promise match(const jsbind::Any& request, const MultiCacheQueryOptions& options);
-    jsbind::Promise has(const jsbind::DOMString& cacheName);
-    jsbind::Promise open(const jsbind::DOMString& cacheName);
-    jsbind::Promise delete_(const jsbind::DOMString& cacheName);
-    jsbind::Promise keys();
+    jsbind::Promise<jsbind::Any> match(const jsbind::Any& request);
+    jsbind::Promise<jsbind::Any> match(const jsbind::Any& request, const MultiCacheQueryOptions& options);
+    jsbind::Promise<bool> has(const jsbind::DOMString& cacheName);
+    jsbind::Promise<Cache> open(const jsbind::DOMString& cacheName);
+    jsbind::Promise<bool> delete_(const jsbind::DOMString& cacheName);
+    jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> keys();
 };
 

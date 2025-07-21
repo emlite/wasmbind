@@ -17,6 +17,6 @@ public:
 
     BackgroundFetchRecord clone() const noexcept;
     Request request() const;
-    jsbind::Promise responseReady() const;
+    jsbind::Promise<Response> responseReady() const;
 };
 

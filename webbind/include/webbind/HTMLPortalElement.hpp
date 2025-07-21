@@ -33,8 +33,8 @@ public:
     void src(const jsbind::USVString& value);
     jsbind::DOMString referrerPolicy() const;
     void referrerPolicy(const jsbind::DOMString& value);
-    jsbind::Promise activate();
-    jsbind::Promise activate(const PortalActivateOptions& options);
+    jsbind::Promise<jsbind::Undefined> activate();
+    jsbind::Promise<jsbind::Undefined> activate(const PortalActivateOptions& options);
     jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     jsbind::Any onmessage() const;

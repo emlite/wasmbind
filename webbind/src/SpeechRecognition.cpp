@@ -106,12 +106,12 @@ jsbind::Undefined SpeechRecognition::abort() {
     return EventTarget::call("abort").as<jsbind::Undefined>();
 }
 
-jsbind::Promise SpeechRecognition::available(const SpeechRecognitionOptions& options) {
-    return emlite::Val::global("speechrecognition").call("available", options).as<jsbind::Promise>();
+jsbind::Promise<AvailabilityStatus> SpeechRecognition::available(const SpeechRecognitionOptions& options) {
+    return emlite::Val::global("speechrecognition").call("available", options).as<jsbind::Promise<AvailabilityStatus>>();
 }
 
-jsbind::Promise SpeechRecognition::install(const SpeechRecognitionOptions& options) {
-    return emlite::Val::global("speechrecognition").call("install", options).as<jsbind::Promise>();
+jsbind::Promise<bool> SpeechRecognition::install(const SpeechRecognitionOptions& options) {
+    return emlite::Val::global("speechrecognition").call("install", options).as<jsbind::Promise<bool>>();
 }
 
 jsbind::Any SpeechRecognition::onaudiostart() const {

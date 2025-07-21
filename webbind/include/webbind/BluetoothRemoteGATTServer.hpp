@@ -19,10 +19,10 @@ public:
     BluetoothRemoteGATTServer clone() const noexcept;
     BluetoothDevice device() const;
     bool connected() const;
-    jsbind::Promise connect();
+    jsbind::Promise<BluetoothRemoteGATTServer> connect();
     jsbind::Undefined disconnect();
-    jsbind::Promise getPrimaryService(const jsbind::Any& service);
-    jsbind::Promise getPrimaryServices();
-    jsbind::Promise getPrimaryServices(const jsbind::Any& service);
+    jsbind::Promise<BluetoothRemoteGATTService> getPrimaryService(const jsbind::Any& service);
+    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> getPrimaryServices();
+    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> getPrimaryServices(const jsbind::Any& service);
 };
 

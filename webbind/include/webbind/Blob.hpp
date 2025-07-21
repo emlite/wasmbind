@@ -26,8 +26,8 @@ public:
     Blob slice(long long start, long long end);
     Blob slice(long long start, long long end, const jsbind::DOMString& contentType);
     ReadableStream stream();
-    jsbind::Promise text();
-    jsbind::Promise arrayBuffer();
-    jsbind::Promise bytes();
+    jsbind::Promise<jsbind::USVString> text();
+    jsbind::Promise<jsbind::ArrayBuffer> arrayBuffer();
+    jsbind::Promise<jsbind::Uint8Array> bytes();
 };
 

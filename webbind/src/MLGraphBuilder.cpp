@@ -1023,8 +1023,8 @@ MLOperand MLGraphBuilder::constant(const MLTensor& tensor) {
     return emlite::Val::call("constant", tensor).as<MLOperand>();
 }
 
-jsbind::Promise MLGraphBuilder::build(const jsbind::Any& outputs) {
-    return emlite::Val::call("build", outputs).as<jsbind::Promise>();
+jsbind::Promise<MLGraph> MLGraphBuilder::build(const jsbind::Any& outputs) {
+    return emlite::Val::call("build", outputs).as<jsbind::Promise<MLGraph>>();
 }
 
 MLOperand MLGraphBuilder::argMin(const MLOperand& input, unsigned long axis) {

@@ -70,15 +70,15 @@ jsbind::Undefined MediaSession::setPositionState(const MediaPositionState& state
     return emlite::Val::call("setPositionState", state).as<jsbind::Undefined>();
 }
 
-jsbind::Promise MediaSession::setMicrophoneActive(bool active) {
-    return emlite::Val::call("setMicrophoneActive", active).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaSession::setMicrophoneActive(bool active) {
+    return emlite::Val::call("setMicrophoneActive", active).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise MediaSession::setCameraActive(bool active) {
-    return emlite::Val::call("setCameraActive", active).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaSession::setCameraActive(bool active) {
+    return emlite::Val::call("setCameraActive", active).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise MediaSession::setScreenshareActive(bool active) {
-    return emlite::Val::call("setScreenshareActive", active).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> MediaSession::setScreenshareActive(bool active) {
+    return emlite::Val::call("setScreenshareActive", active).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

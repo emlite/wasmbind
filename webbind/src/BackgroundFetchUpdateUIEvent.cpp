@@ -35,11 +35,11 @@ BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(const emlite::Val &va
 
 BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(const jsbind::DOMString& type, const jsbind::Any& init) : BackgroundFetchEvent(emlite::Val::global("BackgroundFetchUpdateUIEvent").new_(type, init)) {}
 
-jsbind::Promise BackgroundFetchUpdateUIEvent::updateUI() {
-    return BackgroundFetchEvent::call("updateUI").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BackgroundFetchUpdateUIEvent::updateUI() {
+    return BackgroundFetchEvent::call("updateUI").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise BackgroundFetchUpdateUIEvent::updateUI(const BackgroundFetchUIOptions& options) {
-    return BackgroundFetchEvent::call("updateUI", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BackgroundFetchUpdateUIEvent::updateUI(const BackgroundFetchUIOptions& options) {
+    return BackgroundFetchEvent::call("updateUI", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

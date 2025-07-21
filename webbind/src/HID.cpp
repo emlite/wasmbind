@@ -50,11 +50,11 @@ void HID::ondisconnect(const jsbind::Any& value) {
     EventTarget::set("ondisconnect", value);
 }
 
-jsbind::Promise HID::getDevices() {
-    return EventTarget::call("getDevices").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<HIDDevice>> HID::getDevices() {
+    return EventTarget::call("getDevices").as<jsbind::Promise<jsbind::Sequence<HIDDevice>>>();
 }
 
-jsbind::Promise HID::requestDevice(const HIDDeviceRequestOptions& options) {
-    return EventTarget::call("requestDevice", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<HIDDevice>> HID::requestDevice(const HIDDeviceRequestOptions& options) {
+    return EventTarget::call("requestDevice", options).as<jsbind::Promise<jsbind::Sequence<HIDDevice>>>();
 }
 

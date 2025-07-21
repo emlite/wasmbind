@@ -158,8 +158,8 @@ void HTMLMediaElement::loop(bool value) {
     HTMLElement::set("loop", value);
 }
 
-jsbind::Promise HTMLMediaElement::play() {
-    return HTMLElement::call("play").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HTMLMediaElement::play() {
+    return HTMLElement::call("play").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined HTMLMediaElement::pause() {
@@ -226,8 +226,8 @@ jsbind::DOMString HTMLMediaElement::sinkId() const {
     return HTMLElement::get("sinkId").as<jsbind::DOMString>();
 }
 
-jsbind::Promise HTMLMediaElement::setSinkId(const jsbind::DOMString& sinkId) {
-    return HTMLElement::call("setSinkId", sinkId).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HTMLMediaElement::setSinkId(const jsbind::DOMString& sinkId) {
+    return HTMLElement::call("setSinkId", sinkId).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 MediaKeys HTMLMediaElement::mediaKeys() const {
@@ -250,8 +250,8 @@ void HTMLMediaElement::onwaitingforkey(const jsbind::Any& value) {
     HTMLElement::set("onwaitingforkey", value);
 }
 
-jsbind::Promise HTMLMediaElement::setMediaKeys(const MediaKeys& mediaKeys) {
-    return HTMLElement::call("setMediaKeys", mediaKeys).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HTMLMediaElement::setMediaKeys(const MediaKeys& mediaKeys) {
+    return HTMLElement::call("setMediaKeys", mediaKeys).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 MediaStream HTMLMediaElement::captureStream() {

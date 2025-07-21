@@ -44,11 +44,11 @@ EyeDropper::EyeDropper(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 EyeDropper::EyeDropper() : emlite::Val(emlite::Val::global("EyeDropper").new_()) {}
 
-jsbind::Promise EyeDropper::open() {
-    return emlite::Val::call("open").as<jsbind::Promise>();
+jsbind::Promise<ColorSelectionResult> EyeDropper::open() {
+    return emlite::Val::call("open").as<jsbind::Promise<ColorSelectionResult>>();
 }
 
-jsbind::Promise EyeDropper::open(const ColorSelectionOptions& options) {
-    return emlite::Val::call("open", options).as<jsbind::Promise>();
+jsbind::Promise<ColorSelectionResult> EyeDropper::open(const ColorSelectionOptions& options) {
+    return emlite::Val::call("open", options).as<jsbind::Promise<ColorSelectionResult>>();
 }
 

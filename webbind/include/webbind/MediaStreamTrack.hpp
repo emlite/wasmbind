@@ -98,13 +98,13 @@ public:
     MediaTrackCapabilities getCapabilities();
     MediaTrackConstraints getConstraints();
     MediaTrackSettings getSettings();
-    jsbind::Promise applyConstraints();
-    jsbind::Promise applyConstraints(const MediaTrackConstraints& constraints);
+    jsbind::Promise<jsbind::Undefined> applyConstraints();
+    jsbind::Promise<jsbind::Undefined> applyConstraints(const MediaTrackConstraints& constraints);
     CaptureHandle getCaptureHandle();
     jsbind::Any oncapturehandlechange() const;
     void oncapturehandlechange(const jsbind::Any& value);
     jsbind::Sequence<jsbind::DOMString> getSupportedCaptureActions();
-    jsbind::Promise sendCaptureAction(const CaptureAction& action);
+    jsbind::Promise<jsbind::Undefined> sendCaptureAction(const CaptureAction& action);
     jsbind::DOMString contentHint() const;
     void contentHint(const jsbind::DOMString& value);
     bool isolated() const;

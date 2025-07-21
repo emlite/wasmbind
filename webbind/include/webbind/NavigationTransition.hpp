@@ -17,6 +17,6 @@ public:
     NavigationTransition clone() const noexcept;
     NavigationType navigationType() const;
     NavigationHistoryEntry from() const;
-    jsbind::Promise finished() const;
+    jsbind::Promise<jsbind::Undefined> finished() const;
 };
 

@@ -43,8 +43,8 @@ public:
     jsbind::CSSOMString lineGapOverride() const;
     void lineGapOverride(const jsbind::CSSOMString& value);
     FontFaceLoadStatus status() const;
-    jsbind::Promise load();
-    jsbind::Promise loaded() const;
+    jsbind::Promise<FontFace> load();
+    jsbind::Promise<FontFace> loaded() const;
     FontFaceFeatures features() const;
     FontFaceVariations variations() const;
     FontFacePalettes palettes() const;

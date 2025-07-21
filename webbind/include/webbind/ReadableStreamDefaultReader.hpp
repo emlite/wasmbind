@@ -29,10 +29,10 @@ public:
 
     ReadableStreamDefaultReader clone() const noexcept;
     ReadableStreamDefaultReader(const ReadableStream& stream);
-    jsbind::Promise read();
+    jsbind::Promise<ReadableStreamReadResult> read();
     jsbind::Undefined releaseLock();
-    jsbind::Promise closed() const;
-    jsbind::Promise cancel();
-    jsbind::Promise cancel(const jsbind::Any& reason);
+    jsbind::Promise<jsbind::Undefined> closed() const;
+    jsbind::Promise<jsbind::Undefined> cancel();
+    jsbind::Promise<jsbind::Undefined> cancel(const jsbind::Any& reason);
 };
 

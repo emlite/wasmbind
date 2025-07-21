@@ -19,8 +19,8 @@ WebGL2RenderingContext::WebGL2RenderingContext(Handle h) noexcept : emlite::Val(
 WebGL2RenderingContext::WebGL2RenderingContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise WebGL2RenderingContext::makeXRCompatible() {
-    return emlite::Val::call("makeXRCompatible").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> WebGL2RenderingContext::makeXRCompatible() {
+    return emlite::Val::call("makeXRCompatible").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::copyBufferSubData(const jsbind::Any& readTarget, const jsbind::Any& writeTarget, const jsbind::Any& readOffset, const jsbind::Any& writeOffset, const jsbind::Any& size) {

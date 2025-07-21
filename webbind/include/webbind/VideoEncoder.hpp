@@ -86,9 +86,9 @@ public:
     jsbind::Undefined configure(const VideoEncoderConfig& config);
     jsbind::Undefined encode(const VideoFrame& frame);
     jsbind::Undefined encode(const VideoFrame& frame, const VideoEncoderEncodeOptions& options);
-    jsbind::Promise flush();
+    jsbind::Promise<jsbind::Undefined> flush();
     jsbind::Undefined reset();
     jsbind::Undefined close();
-    static jsbind::Promise isConfigSupported(const VideoEncoderConfig& config);
+    static jsbind::Promise<VideoEncoderSupport> isConfigSupported(const VideoEncoderConfig& config);
 };
 

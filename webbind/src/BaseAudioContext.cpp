@@ -182,15 +182,15 @@ WaveShaperNode BaseAudioContext::createWaveShaper() {
     return EventTarget::call("createWaveShaper").as<WaveShaperNode>();
 }
 
-jsbind::Promise BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData) {
-    return EventTarget::call("decodeAudioData", audioData).as<jsbind::Promise>();
+jsbind::Promise<AudioBuffer> BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData) {
+    return EventTarget::call("decodeAudioData", audioData).as<jsbind::Promise<AudioBuffer>>();
 }
 
-jsbind::Promise BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback) {
-    return EventTarget::call("decodeAudioData", audioData, successCallback).as<jsbind::Promise>();
+jsbind::Promise<AudioBuffer> BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback) {
+    return EventTarget::call("decodeAudioData", audioData, successCallback).as<jsbind::Promise<AudioBuffer>>();
 }
 
-jsbind::Promise BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
-    return EventTarget::call("decodeAudioData", audioData, successCallback, errorCallback).as<jsbind::Promise>();
+jsbind::Promise<AudioBuffer> BaseAudioContext::decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
+    return EventTarget::call("decodeAudioData", audioData, successCallback, errorCallback).as<jsbind::Promise<AudioBuffer>>();
 }
 

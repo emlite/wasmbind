@@ -91,8 +91,8 @@ Bluetooth::Bluetooth(Handle h) noexcept : EventTarget(emlite::Val::take_ownershi
 Bluetooth::Bluetooth(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise Bluetooth::getAvailability() {
-    return EventTarget::call("getAvailability").as<jsbind::Promise>();
+jsbind::Promise<bool> Bluetooth::getAvailability() {
+    return EventTarget::call("getAvailability").as<jsbind::Promise<bool>>();
 }
 
 jsbind::Any Bluetooth::onavailabilitychanged() const {
@@ -107,24 +107,24 @@ BluetoothDevice Bluetooth::referringDevice() const {
     return EventTarget::get("referringDevice").as<BluetoothDevice>();
 }
 
-jsbind::Promise Bluetooth::getDevices() {
-    return EventTarget::call("getDevices").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<BluetoothDevice>> Bluetooth::getDevices() {
+    return EventTarget::call("getDevices").as<jsbind::Promise<jsbind::Sequence<BluetoothDevice>>>();
 }
 
-jsbind::Promise Bluetooth::requestDevice() {
-    return EventTarget::call("requestDevice").as<jsbind::Promise>();
+jsbind::Promise<BluetoothDevice> Bluetooth::requestDevice() {
+    return EventTarget::call("requestDevice").as<jsbind::Promise<BluetoothDevice>>();
 }
 
-jsbind::Promise Bluetooth::requestDevice(const RequestDeviceOptions& options) {
-    return EventTarget::call("requestDevice", options).as<jsbind::Promise>();
+jsbind::Promise<BluetoothDevice> Bluetooth::requestDevice(const RequestDeviceOptions& options) {
+    return EventTarget::call("requestDevice", options).as<jsbind::Promise<BluetoothDevice>>();
 }
 
-jsbind::Promise Bluetooth::requestLEScan() {
-    return EventTarget::call("requestLEScan").as<jsbind::Promise>();
+jsbind::Promise<BluetoothLEScan> Bluetooth::requestLEScan() {
+    return EventTarget::call("requestLEScan").as<jsbind::Promise<BluetoothLEScan>>();
 }
 
-jsbind::Promise Bluetooth::requestLEScan(const BluetoothLEScanOptions& options) {
-    return EventTarget::call("requestLEScan", options).as<jsbind::Promise>();
+jsbind::Promise<BluetoothLEScan> Bluetooth::requestLEScan(const BluetoothLEScanOptions& options) {
+    return EventTarget::call("requestLEScan", options).as<jsbind::Promise<BluetoothLEScan>>();
 }
 
 jsbind::Any Bluetooth::onadvertisementreceived() const {

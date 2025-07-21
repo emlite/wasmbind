@@ -15,7 +15,7 @@ public:
     static ImageTrackList take_ownership(Handle h) noexcept;
 
     ImageTrackList clone() const noexcept;
-    jsbind::Promise ready() const;
+    jsbind::Promise<jsbind::Undefined> ready() const;
     unsigned long length() const;
     long selectedIndex() const;
     ImageTrack selectedTrack() const;

@@ -35,23 +35,23 @@ Clients::Clients(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)
 Clients::Clients(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise Clients::get(const jsbind::DOMString& id) {
-    return emlite::Val::call("get", id).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> Clients::get(const jsbind::DOMString& id) {
+    return emlite::Val::call("get", id).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise Clients::matchAll() {
-    return emlite::Val::call("matchAll").as<jsbind::Promise>();
+jsbind::Promise<jsbind::FrozenArray<Client>> Clients::matchAll() {
+    return emlite::Val::call("matchAll").as<jsbind::Promise<jsbind::FrozenArray<Client>>>();
 }
 
-jsbind::Promise Clients::matchAll(const ClientQueryOptions& options) {
-    return emlite::Val::call("matchAll", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::FrozenArray<Client>> Clients::matchAll(const ClientQueryOptions& options) {
+    return emlite::Val::call("matchAll", options).as<jsbind::Promise<jsbind::FrozenArray<Client>>>();
 }
 
-jsbind::Promise Clients::openWindow(const jsbind::USVString& url) {
-    return emlite::Val::call("openWindow", url).as<jsbind::Promise>();
+jsbind::Promise<WindowClient> Clients::openWindow(const jsbind::USVString& url) {
+    return emlite::Val::call("openWindow", url).as<jsbind::Promise<WindowClient>>();
 }
 
-jsbind::Promise Clients::claim() {
-    return emlite::Val::call("claim").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Clients::claim() {
+    return emlite::Val::call("claim").as<jsbind::Promise<jsbind::Undefined>>();
 }
 

@@ -29,27 +29,27 @@ ReadableStreamBYOBReader::ReadableStreamBYOBReader(const emlite::Val &val) noexc
 
 ReadableStreamBYOBReader::ReadableStreamBYOBReader(const ReadableStream& stream) : emlite::Val(emlite::Val::global("ReadableStreamBYOBReader").new_(stream)) {}
 
-jsbind::Promise ReadableStreamBYOBReader::read(const jsbind::Any& view) {
-    return emlite::Val::call("read", view).as<jsbind::Promise>();
+jsbind::Promise<ReadableStreamReadResult> ReadableStreamBYOBReader::read(const jsbind::Any& view) {
+    return emlite::Val::call("read", view).as<jsbind::Promise<ReadableStreamReadResult>>();
 }
 
-jsbind::Promise ReadableStreamBYOBReader::read(const jsbind::Any& view, const ReadableStreamBYOBReaderReadOptions& options) {
-    return emlite::Val::call("read", view, options).as<jsbind::Promise>();
+jsbind::Promise<ReadableStreamReadResult> ReadableStreamBYOBReader::read(const jsbind::Any& view, const ReadableStreamBYOBReaderReadOptions& options) {
+    return emlite::Val::call("read", view, options).as<jsbind::Promise<ReadableStreamReadResult>>();
 }
 
 jsbind::Undefined ReadableStreamBYOBReader::releaseLock() {
     return emlite::Val::call("releaseLock").as<jsbind::Undefined>();
 }
 
-jsbind::Promise ReadableStreamBYOBReader::closed() const {
-    return emlite::Val::get("closed").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ReadableStreamBYOBReader::closed() const {
+    return emlite::Val::get("closed").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ReadableStreamBYOBReader::cancel() {
-    return emlite::Val::call("cancel").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ReadableStreamBYOBReader::cancel() {
+    return emlite::Val::call("cancel").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ReadableStreamBYOBReader::cancel(const jsbind::Any& reason) {
-    return emlite::Val::call("cancel", reason).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ReadableStreamBYOBReader::cancel(const jsbind::Any& reason) {
+    return emlite::Val::call("cancel", reason).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

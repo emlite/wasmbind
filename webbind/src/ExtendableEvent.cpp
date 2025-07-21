@@ -13,7 +13,7 @@ ExtendableEvent::ExtendableEvent(const jsbind::DOMString& type) : Event(emlite::
 
 ExtendableEvent::ExtendableEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ExtendableEvent").new_(type, eventInitDict)) {}
 
-jsbind::Undefined ExtendableEvent::waitUntil(const jsbind::Promise& f) {
+jsbind::Undefined ExtendableEvent::waitUntil(const jsbind::Promise<jsbind::Any>& f) {
     return Event::call("waitUntil", f).as<jsbind::Undefined>();
 }
 

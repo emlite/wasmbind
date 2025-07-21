@@ -9,7 +9,7 @@ NavigatorLogin::NavigatorLogin(Handle h) noexcept : emlite::Val(emlite::Val::tak
 NavigatorLogin::NavigatorLogin(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise NavigatorLogin::setStatus(const LoginStatus& status) {
-    return emlite::Val::call("setStatus", status).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NavigatorLogin::setStatus(const LoginStatus& status) {
+    return emlite::Val::call("setStatus", status).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

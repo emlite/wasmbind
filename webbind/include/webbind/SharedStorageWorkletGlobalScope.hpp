@@ -49,7 +49,7 @@ public:
     jsbind::Undefined register_(const jsbind::DOMString& name, const jsbind::Function& operationCtor);
     SharedStorage sharedStorage() const;
     PrivateAggregation privateAggregation() const;
-    jsbind::Promise interestGroups();
+    jsbind::Promise<jsbind::Sequence<StorageInterestGroup>> interestGroups();
     SharedStorageWorkletNavigator navigator() const;
 };
 

@@ -69,19 +69,19 @@ jsbind::FrozenArray<GamepadHapticEffectType> GamepadHapticActuator::effects() co
     return emlite::Val::get("effects").as<jsbind::FrozenArray<GamepadHapticEffectType>>();
 }
 
-jsbind::Promise GamepadHapticActuator::playEffect(const GamepadHapticEffectType& type) {
-    return emlite::Val::call("playEffect", type).as<jsbind::Promise>();
+jsbind::Promise<GamepadHapticsResult> GamepadHapticActuator::playEffect(const GamepadHapticEffectType& type) {
+    return emlite::Val::call("playEffect", type).as<jsbind::Promise<GamepadHapticsResult>>();
 }
 
-jsbind::Promise GamepadHapticActuator::playEffect(const GamepadHapticEffectType& type, const GamepadEffectParameters& params) {
-    return emlite::Val::call("playEffect", type, params).as<jsbind::Promise>();
+jsbind::Promise<GamepadHapticsResult> GamepadHapticActuator::playEffect(const GamepadHapticEffectType& type, const GamepadEffectParameters& params) {
+    return emlite::Val::call("playEffect", type, params).as<jsbind::Promise<GamepadHapticsResult>>();
 }
 
-jsbind::Promise GamepadHapticActuator::reset() {
-    return emlite::Val::call("reset").as<jsbind::Promise>();
+jsbind::Promise<GamepadHapticsResult> GamepadHapticActuator::reset() {
+    return emlite::Val::call("reset").as<jsbind::Promise<GamepadHapticsResult>>();
 }
 
-jsbind::Promise GamepadHapticActuator::pulse(double value, double duration) {
-    return emlite::Val::call("pulse", value, duration).as<jsbind::Promise>();
+jsbind::Promise<bool> GamepadHapticActuator::pulse(double value, double duration) {
+    return emlite::Val::call("pulse", value, duration).as<jsbind::Promise<bool>>();
 }
 

@@ -17,24 +17,24 @@ jsbind::DOMString StorageBucket::name() const {
     return emlite::Val::get("name").as<jsbind::DOMString>();
 }
 
-jsbind::Promise StorageBucket::persist() {
-    return emlite::Val::call("persist").as<jsbind::Promise>();
+jsbind::Promise<bool> StorageBucket::persist() {
+    return emlite::Val::call("persist").as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise StorageBucket::persisted() {
-    return emlite::Val::call("persisted").as<jsbind::Promise>();
+jsbind::Promise<bool> StorageBucket::persisted() {
+    return emlite::Val::call("persisted").as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise StorageBucket::estimate() {
-    return emlite::Val::call("estimate").as<jsbind::Promise>();
+jsbind::Promise<StorageEstimate> StorageBucket::estimate() {
+    return emlite::Val::call("estimate").as<jsbind::Promise<StorageEstimate>>();
 }
 
-jsbind::Promise StorageBucket::setExpires(const jsbind::Any& expires) {
-    return emlite::Val::call("setExpires", expires).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> StorageBucket::setExpires(const jsbind::Any& expires) {
+    return emlite::Val::call("setExpires", expires).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise StorageBucket::expires() {
-    return emlite::Val::call("expires").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> StorageBucket::expires() {
+    return emlite::Val::call("expires").as<jsbind::Promise<jsbind::Any>>();
 }
 
 IDBFactory StorageBucket::indexedDB() const {
@@ -45,7 +45,7 @@ CacheStorage StorageBucket::caches() const {
     return emlite::Val::get("caches").as<CacheStorage>();
 }
 
-jsbind::Promise StorageBucket::getDirectory() {
-    return emlite::Val::call("getDirectory").as<jsbind::Promise>();
+jsbind::Promise<FileSystemDirectoryHandle> StorageBucket::getDirectory() {
+    return emlite::Val::call("getDirectory").as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 

@@ -33,8 +33,8 @@ public:
     AnimationPlayState playState() const;
     AnimationReplaceState replaceState() const;
     bool pending() const;
-    jsbind::Promise ready() const;
-    jsbind::Promise finished() const;
+    jsbind::Promise<Animation> ready() const;
+    jsbind::Promise<Animation> finished() const;
     jsbind::Any onfinish() const;
     void onfinish(const jsbind::Any& value);
     jsbind::Any oncancel() const;

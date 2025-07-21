@@ -10,7 +10,7 @@ PresentationReceiver::PresentationReceiver(Handle h) noexcept : emlite::Val(emli
 PresentationReceiver::PresentationReceiver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise PresentationReceiver::connectionList() const {
-    return emlite::Val::get("connectionList").as<jsbind::Promise>();
+jsbind::Promise<PresentationConnectionList> PresentationReceiver::connectionList() const {
+    return emlite::Val::get("connectionList").as<jsbind::Promise<PresentationConnectionList>>();
 }
 

@@ -5,22 +5,24 @@
 #include "enums.hpp"
 
 class Module;
+class Response;
+class Instance;
 
 
 namespace WebAssembly {
     bool validate(const jsbind::Any& bytes);
-    jsbind::Promise compile(const jsbind::Any& bytes);
-    jsbind::Promise instantiate(const jsbind::Any& bytes);
-    jsbind::Promise instantiate(const jsbind::Any& bytes, const jsbind::Object& importObject);
-    jsbind::Promise instantiate(const Module& moduleObject);
-    jsbind::Promise instantiate(const Module& moduleObject, const jsbind::Object& importObject);
+    jsbind::Promise<Module> compile(const jsbind::Any& bytes);
+    jsbind::Promise<jsbind::Any> instantiate(const jsbind::Any& bytes);
+    jsbind::Promise<jsbind::Any> instantiate(const jsbind::Any& bytes, const jsbind::Object& importObject);
+    jsbind::Promise<Instance> instantiate(const Module& moduleObject);
+    jsbind::Promise<Instance> instantiate(const Module& moduleObject, const jsbind::Object& importObject);
 } // namespace WebAssembly
 
 
 
 namespace WebAssembly {
-    jsbind::Promise compileStreaming(const jsbind::Promise& source);
-    jsbind::Promise instantiateStreaming(const jsbind::Promise& source);
-    jsbind::Promise instantiateStreaming(const jsbind::Promise& source, const jsbind::Object& importObject);
+    jsbind::Promise<Module> compileStreaming(const jsbind::Promise<Response>& source);
+    jsbind::Promise<jsbind::Any> instantiateStreaming(const jsbind::Promise<Response>& source);
+    jsbind::Promise<jsbind::Any> instantiateStreaming(const jsbind::Promise<Response>& source, const jsbind::Object& importObject);
 } // namespace WebAssembly
 

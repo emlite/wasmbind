@@ -30,9 +30,9 @@ public:
     static FileSystemFileHandle take_ownership(Handle h) noexcept;
 
     FileSystemFileHandle clone() const noexcept;
-    jsbind::Promise getFile();
-    jsbind::Promise createWritable();
-    jsbind::Promise createWritable(const FileSystemCreateWritableOptions& options);
-    jsbind::Promise createSyncAccessHandle();
+    jsbind::Promise<File> getFile();
+    jsbind::Promise<FileSystemWritableFileStream> createWritable();
+    jsbind::Promise<FileSystemWritableFileStream> createWritable(const FileSystemCreateWritableOptions& options);
+    jsbind::Promise<FileSystemSyncAccessHandle> createSyncAccessHandle();
 };
 

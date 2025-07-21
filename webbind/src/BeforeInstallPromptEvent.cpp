@@ -29,7 +29,7 @@ BeforeInstallPromptEvent::BeforeInstallPromptEvent(const jsbind::DOMString& type
 
 BeforeInstallPromptEvent::BeforeInstallPromptEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("BeforeInstallPromptEvent").new_(type, eventInitDict)) {}
 
-jsbind::Promise BeforeInstallPromptEvent::prompt() {
-    return Event::call("prompt").as<jsbind::Promise>();
+jsbind::Promise<PromptResponseObject> BeforeInstallPromptEvent::prompt() {
+    return Event::call("prompt").as<jsbind::Promise<PromptResponseObject>>();
 }
 

@@ -123,28 +123,28 @@ Writer::Writer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) 
 Writer::Writer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise Writer::create() {
-    return emlite::Val::global("writer").call("create").as<jsbind::Promise>();
+jsbind::Promise<Writer> Writer::create() {
+    return emlite::Val::global("writer").call("create").as<jsbind::Promise<Writer>>();
 }
 
-jsbind::Promise Writer::create(const WriterCreateOptions& options) {
-    return emlite::Val::global("writer").call("create", options).as<jsbind::Promise>();
+jsbind::Promise<Writer> Writer::create(const WriterCreateOptions& options) {
+    return emlite::Val::global("writer").call("create", options).as<jsbind::Promise<Writer>>();
 }
 
-jsbind::Promise Writer::availability() {
-    return emlite::Val::global("writer").call("availability").as<jsbind::Promise>();
+jsbind::Promise<Availability> Writer::availability() {
+    return emlite::Val::global("writer").call("availability").as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise Writer::availability(const WriterCreateCoreOptions& options) {
-    return emlite::Val::global("writer").call("availability", options).as<jsbind::Promise>();
+jsbind::Promise<Availability> Writer::availability(const WriterCreateCoreOptions& options) {
+    return emlite::Val::global("writer").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise Writer::write(const jsbind::DOMString& input) {
-    return emlite::Val::call("write", input).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> Writer::write(const jsbind::DOMString& input) {
+    return emlite::Val::call("write", input).as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise Writer::write(const jsbind::DOMString& input, const WriterWriteOptions& options) {
-    return emlite::Val::call("write", input, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> Writer::write(const jsbind::DOMString& input, const WriterWriteOptions& options) {
+    return emlite::Val::call("write", input, options).as<jsbind::Promise<jsbind::DOMString>>();
 }
 
 ReadableStream Writer::writeStreaming(const jsbind::DOMString& input) {
@@ -183,12 +183,12 @@ jsbind::DOMString Writer::outputLanguage() const {
     return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
 }
 
-jsbind::Promise Writer::measureInputUsage(const jsbind::DOMString& input) {
-    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise>();
+jsbind::Promise<double> Writer::measureInputUsage(const jsbind::DOMString& input) {
+    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise Writer::measureInputUsage(const jsbind::DOMString& input, const WriterWriteOptions& options) {
-    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise>();
+jsbind::Promise<double> Writer::measureInputUsage(const jsbind::DOMString& input, const WriterWriteOptions& options) {
+    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 
 double Writer::inputQuota() const {

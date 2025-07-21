@@ -50,7 +50,7 @@ jsbind::Sequence<HandwritingStroke> HandwritingDrawing::getStrokes() {
     return emlite::Val::call("getStrokes").as<jsbind::Sequence<HandwritingStroke>>();
 }
 
-jsbind::Promise HandwritingDrawing::getPrediction() {
-    return emlite::Val::call("getPrediction").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<HandwritingPrediction>> HandwritingDrawing::getPrediction() {
+    return emlite::Val::call("getPrediction").as<jsbind::Promise<jsbind::Sequence<HandwritingPrediction>>>();
 }
 

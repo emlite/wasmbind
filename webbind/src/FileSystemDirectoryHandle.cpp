@@ -58,31 +58,31 @@ FileSystemDirectoryHandle::FileSystemDirectoryHandle(Handle h) noexcept : FileSy
 FileSystemDirectoryHandle::FileSystemDirectoryHandle(const emlite::Val &val) noexcept: FileSystemHandle(val) {}
 
 
-jsbind::Promise FileSystemDirectoryHandle::getFileHandle(const jsbind::USVString& name) {
-    return FileSystemHandle::call("getFileHandle", name).as<jsbind::Promise>();
+jsbind::Promise<FileSystemFileHandle> FileSystemDirectoryHandle::getFileHandle(const jsbind::USVString& name) {
+    return FileSystemHandle::call("getFileHandle", name).as<jsbind::Promise<FileSystemFileHandle>>();
 }
 
-jsbind::Promise FileSystemDirectoryHandle::getFileHandle(const jsbind::USVString& name, const FileSystemGetFileOptions& options) {
-    return FileSystemHandle::call("getFileHandle", name, options).as<jsbind::Promise>();
+jsbind::Promise<FileSystemFileHandle> FileSystemDirectoryHandle::getFileHandle(const jsbind::USVString& name, const FileSystemGetFileOptions& options) {
+    return FileSystemHandle::call("getFileHandle", name, options).as<jsbind::Promise<FileSystemFileHandle>>();
 }
 
-jsbind::Promise FileSystemDirectoryHandle::getDirectoryHandle(const jsbind::USVString& name) {
-    return FileSystemHandle::call("getDirectoryHandle", name).as<jsbind::Promise>();
+jsbind::Promise<FileSystemDirectoryHandle> FileSystemDirectoryHandle::getDirectoryHandle(const jsbind::USVString& name) {
+    return FileSystemHandle::call("getDirectoryHandle", name).as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 
-jsbind::Promise FileSystemDirectoryHandle::getDirectoryHandle(const jsbind::USVString& name, const FileSystemGetDirectoryOptions& options) {
-    return FileSystemHandle::call("getDirectoryHandle", name, options).as<jsbind::Promise>();
+jsbind::Promise<FileSystemDirectoryHandle> FileSystemDirectoryHandle::getDirectoryHandle(const jsbind::USVString& name, const FileSystemGetDirectoryOptions& options) {
+    return FileSystemHandle::call("getDirectoryHandle", name, options).as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 
-jsbind::Promise FileSystemDirectoryHandle::removeEntry(const jsbind::USVString& name) {
-    return FileSystemHandle::call("removeEntry", name).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> FileSystemDirectoryHandle::removeEntry(const jsbind::USVString& name) {
+    return FileSystemHandle::call("removeEntry", name).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise FileSystemDirectoryHandle::removeEntry(const jsbind::USVString& name, const FileSystemRemoveOptions& options) {
-    return FileSystemHandle::call("removeEntry", name, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> FileSystemDirectoryHandle::removeEntry(const jsbind::USVString& name, const FileSystemRemoveOptions& options) {
+    return FileSystemHandle::call("removeEntry", name, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise FileSystemDirectoryHandle::resolve(const FileSystemHandle& possibleDescendant) {
-    return FileSystemHandle::call("resolve", possibleDescendant).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<jsbind::USVString>> FileSystemDirectoryHandle::resolve(const FileSystemHandle& possibleDescendant) {
+    return FileSystemHandle::call("resolve", possibleDescendant).as<jsbind::Promise<jsbind::Sequence<jsbind::USVString>>>();
 }
 

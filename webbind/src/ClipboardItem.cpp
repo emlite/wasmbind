@@ -22,8 +22,8 @@ jsbind::FrozenArray<jsbind::DOMString> ClipboardItem::types() const {
     return emlite::Val::get("types").as<jsbind::FrozenArray<jsbind::DOMString>>();
 }
 
-jsbind::Promise ClipboardItem::getType(const jsbind::DOMString& type) {
-    return emlite::Val::call("getType", type).as<jsbind::Promise>();
+jsbind::Promise<Blob> ClipboardItem::getType(const jsbind::DOMString& type) {
+    return emlite::Val::call("getType", type).as<jsbind::Promise<Blob>>();
 }
 
 bool ClipboardItem::supports(const jsbind::DOMString& type) {

@@ -38,7 +38,7 @@ public:
     jsbind::Any predictedDisplayTime() const;
     XRViewerPose getViewerPose(const XRReferenceSpace& referenceSpace);
     XRPose getPose(const XRSpace& space, const XRSpace& baseSpace);
-    jsbind::Promise createAnchor(const XRRigidTransform& pose, const XRSpace& space);
+    jsbind::Promise<XRAnchor> createAnchor(const XRRigidTransform& pose, const XRSpace& space);
     XRAnchorSet trackedAnchors() const;
     XRMeshSet detectedMeshes() const;
     XRCPUDepthInformation getDepthInformation(const XRView& view);

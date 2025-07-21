@@ -43,7 +43,7 @@ public:
     jsbind::Undefined setReportEventDataForAutomaticBeacons();
     jsbind::Undefined setReportEventDataForAutomaticBeacons(const FenceEvent& event);
     jsbind::Sequence<FencedFrameConfig> getNestedConfigs();
-    jsbind::Promise disableUntrustedNetwork();
+    jsbind::Promise<jsbind::Undefined> disableUntrustedNetwork();
     jsbind::Undefined notifyEvent(const Event& event);
 };
 

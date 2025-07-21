@@ -56,8 +56,8 @@ public:
     GeolocationSensor clone() const noexcept;
     GeolocationSensor();
     GeolocationSensor(const jsbind::Any& options);
-    static jsbind::Promise read();
-    static jsbind::Promise read(const ReadOptions& readOptions);
+    static jsbind::Promise<GeolocationSensorReading> read();
+    static jsbind::Promise<GeolocationSensorReading> read(const ReadOptions& readOptions);
     double latitude() const;
     double longitude() const;
     double altitude() const;

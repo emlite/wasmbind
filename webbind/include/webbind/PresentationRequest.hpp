@@ -18,9 +18,9 @@ public:
 
     PresentationRequest clone() const noexcept;
     PresentationRequest(const jsbind::Sequence<jsbind::USVString>& urls);
-    jsbind::Promise start();
-    jsbind::Promise reconnect(const jsbind::USVString& presentationId);
-    jsbind::Promise getAvailability();
+    jsbind::Promise<PresentationConnection> start();
+    jsbind::Promise<PresentationConnection> reconnect(const jsbind::USVString& presentationId);
+    jsbind::Promise<PresentationAvailability> getAvailability();
     jsbind::Any onconnectionavailable() const;
     void onconnectionavailable(const jsbind::Any& value);
 };

@@ -16,6 +16,6 @@ public:
     static CropTarget take_ownership(Handle h) noexcept;
 
     CropTarget clone() const noexcept;
-    static jsbind::Promise fromElement(const Element& element);
+    static jsbind::Promise<CropTarget> fromElement(const Element& element);
 };
 

@@ -59,83 +59,83 @@ SharedStorage::SharedStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_
 SharedStorage::SharedStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise SharedStorage::get(const jsbind::DOMString& key) {
-    return emlite::Val::call("get", key).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> SharedStorage::get(const jsbind::DOMString& key) {
+    return emlite::Val::call("get", key).as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise SharedStorage::set(const jsbind::DOMString& key, const jsbind::DOMString& value) {
-    return emlite::Val::call("set", key, value).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::set(const jsbind::DOMString& key, const jsbind::DOMString& value) {
+    return emlite::Val::call("set", key, value).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::set(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageSetMethodOptions& options) {
-    return emlite::Val::call("set", key, value, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::set(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageSetMethodOptions& options) {
+    return emlite::Val::call("set", key, value, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::append(const jsbind::DOMString& key, const jsbind::DOMString& value) {
-    return emlite::Val::call("append", key, value).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::append(const jsbind::DOMString& key, const jsbind::DOMString& value) {
+    return emlite::Val::call("append", key, value).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::append(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageModifierMethodOptions& options) {
-    return emlite::Val::call("append", key, value, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::append(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageModifierMethodOptions& options) {
+    return emlite::Val::call("append", key, value, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::delete_(const jsbind::DOMString& key) {
-    return emlite::Val::call("delete", key).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::delete_(const jsbind::DOMString& key) {
+    return emlite::Val::call("delete", key).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::delete_(const jsbind::DOMString& key, const SharedStorageModifierMethodOptions& options) {
-    return emlite::Val::call("delete", key, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::delete_(const jsbind::DOMString& key, const SharedStorageModifierMethodOptions& options) {
+    return emlite::Val::call("delete", key, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::clear() {
-    return emlite::Val::call("clear").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::clear() {
+    return emlite::Val::call("clear").as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::clear(const SharedStorageModifierMethodOptions& options) {
-    return emlite::Val::call("clear", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::clear(const SharedStorageModifierMethodOptions& options) {
+    return emlite::Val::call("clear", options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::batchUpdate(const jsbind::Sequence<SharedStorageModifierMethod>& methods) {
-    return emlite::Val::call("batchUpdate", methods).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::batchUpdate(const jsbind::Sequence<SharedStorageModifierMethod>& methods) {
+    return emlite::Val::call("batchUpdate", methods).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::batchUpdate(const jsbind::Sequence<SharedStorageModifierMethod>& methods, const SharedStorageModifierMethodOptions& options) {
-    return emlite::Val::call("batchUpdate", methods, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::batchUpdate(const jsbind::Sequence<SharedStorageModifierMethod>& methods, const SharedStorageModifierMethodOptions& options) {
+    return emlite::Val::call("batchUpdate", methods, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls) {
-    return emlite::Val::call("selectURL", name, urls).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls) {
+    return emlite::Val::call("selectURL", name, urls).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options) {
-    return emlite::Val::call("selectURL", name, urls, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options) {
+    return emlite::Val::call("selectURL", name, urls, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::run(const jsbind::DOMString& name) {
-    return emlite::Val::call("run", name).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::run(const jsbind::DOMString& name) {
+    return emlite::Val::call("run", name).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::run(const jsbind::DOMString& name, const SharedStorageRunOperationMethodOptions& options) {
-    return emlite::Val::call("run", name, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorage::run(const jsbind::DOMString& name, const SharedStorageRunOperationMethodOptions& options) {
+    return emlite::Val::call("run", name, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorage::createWorklet(const jsbind::USVString& moduleURL) {
-    return emlite::Val::call("createWorklet", moduleURL).as<jsbind::Promise>();
+jsbind::Promise<SharedStorageWorklet> SharedStorage::createWorklet(const jsbind::USVString& moduleURL) {
+    return emlite::Val::call("createWorklet", moduleURL).as<jsbind::Promise<SharedStorageWorklet>>();
 }
 
-jsbind::Promise SharedStorage::createWorklet(const jsbind::USVString& moduleURL, const SharedStorageWorkletOptions& options) {
-    return emlite::Val::call("createWorklet", moduleURL, options).as<jsbind::Promise>();
+jsbind::Promise<SharedStorageWorklet> SharedStorage::createWorklet(const jsbind::USVString& moduleURL, const SharedStorageWorkletOptions& options) {
+    return emlite::Val::call("createWorklet", moduleURL, options).as<jsbind::Promise<SharedStorageWorklet>>();
 }
 
 SharedStorageWorklet SharedStorage::worklet() const {
     return emlite::Val::get("worklet").as<SharedStorageWorklet>();
 }
 
-jsbind::Promise SharedStorage::length() {
-    return emlite::Val::call("length").as<jsbind::Promise>();
+jsbind::Promise<unsigned long> SharedStorage::length() {
+    return emlite::Val::call("length").as<jsbind::Promise<unsigned long>>();
 }
 
-jsbind::Promise SharedStorage::remainingBudget() {
-    return emlite::Val::call("remainingBudget").as<jsbind::Promise>();
+jsbind::Promise<double> SharedStorage::remainingBudget() {
+    return emlite::Val::call("remainingBudget").as<jsbind::Promise<double>>();
 }
 

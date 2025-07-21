@@ -68,15 +68,15 @@ public:
     static LanguageDetector take_ownership(Handle h) noexcept;
 
     LanguageDetector clone() const noexcept;
-    static jsbind::Promise create();
-    static jsbind::Promise create(const LanguageDetectorCreateOptions& options);
-    static jsbind::Promise availability();
-    static jsbind::Promise availability(const LanguageDetectorCreateCoreOptions& options);
-    jsbind::Promise detect(const jsbind::DOMString& input);
-    jsbind::Promise detect(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options);
+    static jsbind::Promise<LanguageDetector> create();
+    static jsbind::Promise<LanguageDetector> create(const LanguageDetectorCreateOptions& options);
+    static jsbind::Promise<Availability> availability();
+    static jsbind::Promise<Availability> availability(const LanguageDetectorCreateCoreOptions& options);
+    jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> detect(const jsbind::DOMString& input);
+    jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> detect(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options);
     jsbind::FrozenArray<jsbind::DOMString> expectedInputLanguages() const;
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };

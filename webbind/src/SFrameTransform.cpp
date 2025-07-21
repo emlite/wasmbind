@@ -16,12 +16,12 @@ SFrameTransform::SFrameTransform() : EventTarget(emlite::Val::global("SFrameTran
 
 SFrameTransform::SFrameTransform(const jsbind::Any& options) : EventTarget(emlite::Val::global("SFrameTransform").new_(options)) {}
 
-jsbind::Promise SFrameTransform::setEncryptionKey(const CryptoKey& key) {
-    return EventTarget::call("setEncryptionKey", key).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> SFrameTransform::setEncryptionKey(const CryptoKey& key) {
+    return EventTarget::call("setEncryptionKey", key).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise SFrameTransform::setEncryptionKey(const CryptoKey& key, const jsbind::Any& keyID) {
-    return EventTarget::call("setEncryptionKey", key, keyID).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> SFrameTransform::setEncryptionKey(const CryptoKey& key, const jsbind::Any& keyID) {
+    return EventTarget::call("setEncryptionKey", key, keyID).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any SFrameTransform::onerror() const {

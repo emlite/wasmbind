@@ -34,16 +34,16 @@ XRSystem::XRSystem(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(
 XRSystem::XRSystem(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise XRSystem::isSessionSupported(const XRSessionMode& mode) {
-    return EventTarget::call("isSessionSupported", mode).as<jsbind::Promise>();
+jsbind::Promise<bool> XRSystem::isSessionSupported(const XRSessionMode& mode) {
+    return EventTarget::call("isSessionSupported", mode).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise XRSystem::requestSession(const XRSessionMode& mode) {
-    return EventTarget::call("requestSession", mode).as<jsbind::Promise>();
+jsbind::Promise<XRSession> XRSystem::requestSession(const XRSessionMode& mode) {
+    return EventTarget::call("requestSession", mode).as<jsbind::Promise<XRSession>>();
 }
 
-jsbind::Promise XRSystem::requestSession(const XRSessionMode& mode, const XRSessionInit& options) {
-    return EventTarget::call("requestSession", mode, options).as<jsbind::Promise>();
+jsbind::Promise<XRSession> XRSystem::requestSession(const XRSessionMode& mode, const XRSessionInit& options) {
+    return EventTarget::call("requestSession", mode, options).as<jsbind::Promise<XRSession>>();
 }
 
 jsbind::Any XRSystem::ondevicechange() const {

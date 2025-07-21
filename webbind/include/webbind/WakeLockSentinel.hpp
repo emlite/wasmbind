@@ -16,7 +16,7 @@ public:
     WakeLockSentinel clone() const noexcept;
     bool released() const;
     WakeLockType type() const;
-    jsbind::Promise release();
+    jsbind::Promise<jsbind::Undefined> release();
     jsbind::Any onrelease() const;
     void onrelease(const jsbind::Any& value);
 };

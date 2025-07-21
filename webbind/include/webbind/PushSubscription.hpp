@@ -35,7 +35,7 @@ public:
     jsbind::Any expirationTime() const;
     PushSubscriptionOptions options() const;
     jsbind::ArrayBuffer getKey(const PushEncryptionKeyName& name);
-    jsbind::Promise unsubscribe();
+    jsbind::Promise<bool> unsubscribe();
     PushSubscriptionJSON toJSON();
 };
 

@@ -59,7 +59,7 @@ public:
     void autoplay(bool value);
     bool loop() const;
     void loop(bool value);
-    jsbind::Promise play();
+    jsbind::Promise<jsbind::Undefined> play();
     jsbind::Undefined pause();
     bool controls() const;
     void controls(bool value);
@@ -76,13 +76,13 @@ public:
     TextTrack addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label);
     TextTrack addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label, const jsbind::DOMString& language);
     jsbind::DOMString sinkId() const;
-    jsbind::Promise setSinkId(const jsbind::DOMString& sinkId);
+    jsbind::Promise<jsbind::Undefined> setSinkId(const jsbind::DOMString& sinkId);
     MediaKeys mediaKeys() const;
     jsbind::Any onencrypted() const;
     void onencrypted(const jsbind::Any& value);
     jsbind::Any onwaitingforkey() const;
     void onwaitingforkey(const jsbind::Any& value);
-    jsbind::Promise setMediaKeys(const MediaKeys& mediaKeys);
+    jsbind::Promise<jsbind::Undefined> setMediaKeys(const MediaKeys& mediaKeys);
     MediaStream captureStream();
     RemotePlayback remote() const;
     bool disableRemotePlayback() const;

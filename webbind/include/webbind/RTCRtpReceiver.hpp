@@ -62,7 +62,7 @@ public:
     RTCRtpReceiveParameters getParameters();
     jsbind::Sequence<RTCRtpContributingSource> getContributingSources();
     jsbind::Sequence<RTCRtpSynchronizationSource> getSynchronizationSources();
-    jsbind::Promise getStats();
+    jsbind::Promise<RTCStatsReport> getStats();
     jsbind::Any jitterBufferTarget() const;
     void jitterBufferTarget(const jsbind::Any& value);
     jsbind::Any transform() const;

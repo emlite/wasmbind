@@ -62,12 +62,12 @@ bool Animation::pending() const {
     return EventTarget::get("pending").as<bool>();
 }
 
-jsbind::Promise Animation::ready() const {
-    return EventTarget::get("ready").as<jsbind::Promise>();
+jsbind::Promise<Animation> Animation::ready() const {
+    return EventTarget::get("ready").as<jsbind::Promise<Animation>>();
 }
 
-jsbind::Promise Animation::finished() const {
-    return EventTarget::get("finished").as<jsbind::Promise>();
+jsbind::Promise<Animation> Animation::finished() const {
+    return EventTarget::get("finished").as<jsbind::Promise<Animation>>();
 }
 
 jsbind::Any Animation::onfinish() const {

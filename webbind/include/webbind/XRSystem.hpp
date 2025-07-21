@@ -30,9 +30,9 @@ public:
     static XRSystem take_ownership(Handle h) noexcept;
 
     XRSystem clone() const noexcept;
-    jsbind::Promise isSessionSupported(const XRSessionMode& mode);
-    jsbind::Promise requestSession(const XRSessionMode& mode);
-    jsbind::Promise requestSession(const XRSessionMode& mode, const XRSessionInit& options);
+    jsbind::Promise<bool> isSessionSupported(const XRSessionMode& mode);
+    jsbind::Promise<XRSession> requestSession(const XRSessionMode& mode);
+    jsbind::Promise<XRSession> requestSession(const XRSessionMode& mode, const XRSessionInit& options);
     jsbind::Any ondevicechange() const;
     void ondevicechange(const jsbind::Any& value);
 };

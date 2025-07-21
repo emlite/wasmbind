@@ -28,19 +28,19 @@ NavigationResult::NavigationResult(const emlite::Val &val) noexcept: emlite::Val
 NavigationResult::NavigationResult() noexcept: emlite::Val(emlite::Val::object()) {}
 NavigationResult NavigationResult::clone() const noexcept { return *this; }
 
-jsbind::Promise NavigationResult::committed() const {
-    return emlite::Val::get("committed").as<jsbind::Promise>();
+jsbind::Promise<NavigationHistoryEntry> NavigationResult::committed() const {
+    return emlite::Val::get("committed").as<jsbind::Promise<NavigationHistoryEntry>>();
 }
 
-void NavigationResult::committed(const jsbind::Promise& value) {
+void NavigationResult::committed(const jsbind::Promise<NavigationHistoryEntry>& value) {
     emlite::Val::set("committed", value);
 }
 
-jsbind::Promise NavigationResult::finished() const {
-    return emlite::Val::get("finished").as<jsbind::Promise>();
+jsbind::Promise<NavigationHistoryEntry> NavigationResult::finished() const {
+    return emlite::Val::get("finished").as<jsbind::Promise<NavigationHistoryEntry>>();
 }
 
-void NavigationResult::finished(const jsbind::Promise& value) {
+void NavigationResult::finished(const jsbind::Promise<NavigationHistoryEntry>& value) {
     emlite::Val::set("finished", value);
 }
 

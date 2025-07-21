@@ -33,10 +33,10 @@ public:
     explicit NavigationResult(const emlite::Val &val) noexcept;
     NavigationResult() noexcept;
     NavigationResult clone() const noexcept;
-    jsbind::Promise committed() const;
-    void committed(const jsbind::Promise& value);
-    jsbind::Promise finished() const;
-    void finished(const jsbind::Promise& value);
+    jsbind::Promise<NavigationHistoryEntry> committed() const;
+    void committed(const jsbind::Promise<NavigationHistoryEntry>& value);
+    jsbind::Promise<NavigationHistoryEntry> finished() const;
+    void finished(const jsbind::Promise<NavigationHistoryEntry>& value);
 };
 
 class NavigationNavigateOptions : public emlite::Val {

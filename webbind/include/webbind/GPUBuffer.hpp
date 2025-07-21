@@ -16,9 +16,9 @@ public:
     jsbind::Any size() const;
     jsbind::Any usage() const;
     GPUBufferMapState mapState() const;
-    jsbind::Promise mapAsync(const jsbind::Any& mode);
-    jsbind::Promise mapAsync(const jsbind::Any& mode, const jsbind::Any& offset);
-    jsbind::Promise mapAsync(const jsbind::Any& mode, const jsbind::Any& offset, const jsbind::Any& size);
+    jsbind::Promise<jsbind::Undefined> mapAsync(const jsbind::Any& mode);
+    jsbind::Promise<jsbind::Undefined> mapAsync(const jsbind::Any& mode, const jsbind::Any& offset);
+    jsbind::Promise<jsbind::Undefined> mapAsync(const jsbind::Any& mode, const jsbind::Any& offset, const jsbind::Any& size);
     jsbind::ArrayBuffer getMappedRange();
     jsbind::ArrayBuffer getMappedRange(const jsbind::Any& offset);
     jsbind::ArrayBuffer getMappedRange(const jsbind::Any& offset, const jsbind::Any& size);

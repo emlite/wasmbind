@@ -69,20 +69,20 @@ bool ImageDecoder::complete() const {
     return emlite::Val::get("complete").as<bool>();
 }
 
-jsbind::Promise ImageDecoder::completed() const {
-    return emlite::Val::get("completed").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ImageDecoder::completed() const {
+    return emlite::Val::get("completed").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 ImageTrackList ImageDecoder::tracks() const {
     return emlite::Val::get("tracks").as<ImageTrackList>();
 }
 
-jsbind::Promise ImageDecoder::decode() {
-    return emlite::Val::call("decode").as<jsbind::Promise>();
+jsbind::Promise<ImageDecodeResult> ImageDecoder::decode() {
+    return emlite::Val::call("decode").as<jsbind::Promise<ImageDecodeResult>>();
 }
 
-jsbind::Promise ImageDecoder::decode(const ImageDecodeOptions& options) {
-    return emlite::Val::call("decode", options).as<jsbind::Promise>();
+jsbind::Promise<ImageDecodeResult> ImageDecoder::decode(const ImageDecodeOptions& options) {
+    return emlite::Val::call("decode", options).as<jsbind::Promise<ImageDecodeResult>>();
 }
 
 jsbind::Undefined ImageDecoder::reset() {
@@ -93,7 +93,7 @@ jsbind::Undefined ImageDecoder::close() {
     return emlite::Val::call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Promise ImageDecoder::isTypeSupported(const jsbind::DOMString& type) {
-    return emlite::Val::global("imagedecoder").call("isTypeSupported", type).as<jsbind::Promise>();
+jsbind::Promise<bool> ImageDecoder::isTypeSupported(const jsbind::DOMString& type) {
+    return emlite::Val::global("imagedecoder").call("isTypeSupported", type).as<jsbind::Promise<bool>>();
 }
 

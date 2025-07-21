@@ -64,7 +64,7 @@ public:
 
     GPUQueue clone() const noexcept;
     jsbind::Undefined submit(const jsbind::Sequence<GPUCommandBuffer>& commandBuffers);
-    jsbind::Promise onSubmittedWorkDone();
+    jsbind::Promise<jsbind::Undefined> onSubmittedWorkDone();
     jsbind::Undefined writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data);
     jsbind::Undefined writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data, const jsbind::Any& dataOffset);
     jsbind::Undefined writeBuffer(const GPUBuffer& buffer, const jsbind::Any& bufferOffset, const jsbind::Any& data, const jsbind::Any& dataOffset, const jsbind::Any& size);

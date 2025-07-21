@@ -28,9 +28,9 @@ public:
     static NavigationPreloadManager take_ownership(Handle h) noexcept;
 
     NavigationPreloadManager clone() const noexcept;
-    jsbind::Promise enable();
-    jsbind::Promise disable();
-    jsbind::Promise setHeaderValue(const jsbind::ByteString& value);
-    jsbind::Promise getState();
+    jsbind::Promise<jsbind::Undefined> enable();
+    jsbind::Promise<jsbind::Undefined> disable();
+    jsbind::Promise<jsbind::Undefined> setHeaderValue(const jsbind::ByteString& value);
+    jsbind::Promise<NavigationPreloadState> getState();
 };
 

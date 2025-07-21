@@ -66,14 +66,14 @@ public:
     ReadableStream(const jsbind::Object& underlyingSource, const jsbind::Any& strategy);
     static ReadableStream from(const jsbind::Any& asyncIterable);
     bool locked() const;
-    jsbind::Promise cancel();
-    jsbind::Promise cancel(const jsbind::Any& reason);
+    jsbind::Promise<jsbind::Undefined> cancel();
+    jsbind::Promise<jsbind::Undefined> cancel(const jsbind::Any& reason);
     jsbind::Any getReader();
     jsbind::Any getReader(const ReadableStreamGetReaderOptions& options);
     ReadableStream pipeThrough(const ReadableWritablePair& transform);
     ReadableStream pipeThrough(const ReadableWritablePair& transform, const StreamPipeOptions& options);
-    jsbind::Promise pipeTo(const WritableStream& destination);
-    jsbind::Promise pipeTo(const WritableStream& destination, const StreamPipeOptions& options);
+    jsbind::Promise<jsbind::Undefined> pipeTo(const WritableStream& destination);
+    jsbind::Promise<jsbind::Undefined> pipeTo(const WritableStream& destination, const StreamPipeOptions& options);
     jsbind::Sequence<ReadableStream> tee();
 };
 

@@ -16,6 +16,6 @@ public:
     static ML take_ownership(Handle h) noexcept;
 
     ML clone() const noexcept;
-    jsbind::Promise createContext(const GPUDevice& gpuDevice);
+    jsbind::Promise<MLContext> createContext(const GPUDevice& gpuDevice);
 };
 

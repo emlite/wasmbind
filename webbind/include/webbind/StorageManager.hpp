@@ -29,9 +29,9 @@ public:
     static StorageManager take_ownership(Handle h) noexcept;
 
     StorageManager clone() const noexcept;
-    jsbind::Promise persisted();
-    jsbind::Promise persist();
-    jsbind::Promise estimate();
-    jsbind::Promise getDirectory();
+    jsbind::Promise<bool> persisted();
+    jsbind::Promise<bool> persist();
+    jsbind::Promise<StorageEstimate> estimate();
+    jsbind::Promise<FileSystemDirectoryHandle> getDirectory();
 };
 

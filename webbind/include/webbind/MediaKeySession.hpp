@@ -18,16 +18,16 @@ public:
     MediaKeySession clone() const noexcept;
     jsbind::DOMString sessionId() const;
     double expiration() const;
-    jsbind::Promise closed() const;
+    jsbind::Promise<MediaKeySessionClosedReason> closed() const;
     MediaKeyStatusMap keyStatuses() const;
     jsbind::Any onkeystatuseschange() const;
     void onkeystatuseschange(const jsbind::Any& value);
     jsbind::Any onmessage() const;
     void onmessage(const jsbind::Any& value);
-    jsbind::Promise generateRequest(const jsbind::DOMString& initDataType, const jsbind::Any& initData);
-    jsbind::Promise load(const jsbind::DOMString& sessionId);
-    jsbind::Promise update(const jsbind::Any& response);
-    jsbind::Promise close();
-    jsbind::Promise remove();
+    jsbind::Promise<jsbind::Undefined> generateRequest(const jsbind::DOMString& initDataType, const jsbind::Any& initData);
+    jsbind::Promise<bool> load(const jsbind::DOMString& sessionId);
+    jsbind::Promise<jsbind::Undefined> update(const jsbind::Any& response);
+    jsbind::Promise<jsbind::Undefined> close();
+    jsbind::Promise<jsbind::Undefined> remove();
 };
 

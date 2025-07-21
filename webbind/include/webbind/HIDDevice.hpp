@@ -46,11 +46,11 @@ public:
     unsigned short productId() const;
     jsbind::DOMString productName() const;
     jsbind::FrozenArray<HIDCollectionInfo> collections() const;
-    jsbind::Promise open();
-    jsbind::Promise close();
-    jsbind::Promise forget();
-    jsbind::Promise sendReport(unsigned char reportId, const jsbind::Any& data);
-    jsbind::Promise sendFeatureReport(unsigned char reportId, const jsbind::Any& data);
-    jsbind::Promise receiveFeatureReport(unsigned char reportId);
+    jsbind::Promise<jsbind::Undefined> open();
+    jsbind::Promise<jsbind::Undefined> close();
+    jsbind::Promise<jsbind::Undefined> forget();
+    jsbind::Promise<jsbind::Undefined> sendReport(unsigned char reportId, const jsbind::Any& data);
+    jsbind::Promise<jsbind::Undefined> sendFeatureReport(unsigned char reportId, const jsbind::Any& data);
+    jsbind::Promise<jsbind::DataView> receiveFeatureReport(unsigned char reportId);
 };
 

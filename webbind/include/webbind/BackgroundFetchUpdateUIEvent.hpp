@@ -30,7 +30,7 @@ public:
 
     BackgroundFetchUpdateUIEvent clone() const noexcept;
     BackgroundFetchUpdateUIEvent(const jsbind::DOMString& type, const jsbind::Any& init);
-    jsbind::Promise updateUI();
-    jsbind::Promise updateUI(const BackgroundFetchUIOptions& options);
+    jsbind::Promise<jsbind::Undefined> updateUI();
+    jsbind::Promise<jsbind::Undefined> updateUI(const BackgroundFetchUIOptions& options);
 };
 

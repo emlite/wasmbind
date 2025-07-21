@@ -7,6 +7,7 @@ export const builtinNominals = new Set([
   "Transferable",
   "VoidFunction",
   "FunctionStringCallback",
+  "WebAssemblyInstantiatedSource"
 ]);
 
 export const missingDictFallback = new Set([

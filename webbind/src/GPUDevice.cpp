@@ -500,12 +500,12 @@ GPURenderPipeline GPUDevice::createRenderPipeline(const GPURenderPipelineDescrip
     return EventTarget::call("createRenderPipeline", descriptor).as<GPURenderPipeline>();
 }
 
-jsbind::Promise GPUDevice::createComputePipelineAsync(const GPUComputePipelineDescriptor& descriptor) {
-    return EventTarget::call("createComputePipelineAsync", descriptor).as<jsbind::Promise>();
+jsbind::Promise<GPUComputePipeline> GPUDevice::createComputePipelineAsync(const GPUComputePipelineDescriptor& descriptor) {
+    return EventTarget::call("createComputePipelineAsync", descriptor).as<jsbind::Promise<GPUComputePipeline>>();
 }
 
-jsbind::Promise GPUDevice::createRenderPipelineAsync(const GPURenderPipelineDescriptor& descriptor) {
-    return EventTarget::call("createRenderPipelineAsync", descriptor).as<jsbind::Promise>();
+jsbind::Promise<GPURenderPipeline> GPUDevice::createRenderPipelineAsync(const GPURenderPipelineDescriptor& descriptor) {
+    return EventTarget::call("createRenderPipelineAsync", descriptor).as<jsbind::Promise<GPURenderPipeline>>();
 }
 
 GPUCommandEncoder GPUDevice::createCommandEncoder() {
@@ -524,16 +524,16 @@ GPUQuerySet GPUDevice::createQuerySet(const GPUQuerySetDescriptor& descriptor) {
     return EventTarget::call("createQuerySet", descriptor).as<GPUQuerySet>();
 }
 
-jsbind::Promise GPUDevice::lost() const {
-    return EventTarget::get("lost").as<jsbind::Promise>();
+jsbind::Promise<GPUDeviceLostInfo> GPUDevice::lost() const {
+    return EventTarget::get("lost").as<jsbind::Promise<GPUDeviceLostInfo>>();
 }
 
 jsbind::Undefined GPUDevice::pushErrorScope(const GPUErrorFilter& filter) {
     return EventTarget::call("pushErrorScope", filter).as<jsbind::Undefined>();
 }
 
-jsbind::Promise GPUDevice::popErrorScope() {
-    return EventTarget::call("popErrorScope").as<jsbind::Promise>();
+jsbind::Promise<GPUError> GPUDevice::popErrorScope() {
+    return EventTarget::call("popErrorScope").as<jsbind::Promise<GPUError>>();
 }
 
 jsbind::Any GPUDevice::onuncapturederror() const {

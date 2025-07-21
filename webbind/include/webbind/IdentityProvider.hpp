@@ -59,8 +59,8 @@ public:
 
     IdentityProvider clone() const noexcept;
     static jsbind::Undefined close();
-    static jsbind::Promise resolve(const jsbind::DOMString& token);
-    static jsbind::Promise resolve(const jsbind::DOMString& token, const IdentityResolveOptions& options);
-    static jsbind::Promise getUserInfo(const IdentityProviderConfig& config);
+    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::DOMString& token);
+    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::DOMString& token, const IdentityResolveOptions& options);
+    static jsbind::Promise<jsbind::Sequence<IdentityUserInfo>> getUserInfo(const IdentityProviderConfig& config);
 };
 

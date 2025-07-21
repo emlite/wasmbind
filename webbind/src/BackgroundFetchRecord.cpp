@@ -15,7 +15,7 @@ Request BackgroundFetchRecord::request() const {
     return emlite::Val::get("request").as<Request>();
 }
 
-jsbind::Promise BackgroundFetchRecord::responseReady() const {
-    return emlite::Val::get("responseReady").as<jsbind::Promise>();
+jsbind::Promise<Response> BackgroundFetchRecord::responseReady() const {
+    return emlite::Val::get("responseReady").as<jsbind::Promise<Response>>();
 }
 

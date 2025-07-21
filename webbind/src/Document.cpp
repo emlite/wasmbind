@@ -344,8 +344,8 @@ bool Document::fullscreen() const {
     return Node::get("fullscreen").as<bool>();
 }
 
-jsbind::Promise Document::exitFullscreen() {
-    return Node::call("exitFullscreen").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Document::exitFullscreen() {
+    return Node::call("exitFullscreen").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any Document::onfullscreenchange() const {
@@ -640,8 +640,8 @@ bool Document::pictureInPictureEnabled() const {
     return Node::get("pictureInPictureEnabled").as<bool>();
 }
 
-jsbind::Promise Document::exitPictureInPicture() {
-    return Node::call("exitPictureInPicture").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Document::exitPictureInPicture() {
+    return Node::call("exitPictureInPicture").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any Document::onpointerlockchange() const {
@@ -676,12 +676,12 @@ void Document::onprerenderingchange(const jsbind::Any& value) {
     Node::set("onprerenderingchange", value);
 }
 
-jsbind::Promise Document::requestStorageAccessFor(const jsbind::USVString& requestedOrigin) {
-    return Node::call("requestStorageAccessFor", requestedOrigin).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Document::requestStorageAccessFor(const jsbind::USVString& requestedOrigin) {
+    return Node::call("requestStorageAccessFor", requestedOrigin).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise Document::hasUnpartitionedCookieAccess() {
-    return Node::call("hasUnpartitionedCookieAccess").as<jsbind::Promise>();
+jsbind::Promise<bool> Document::hasUnpartitionedCookieAccess() {
+    return Node::call("hasUnpartitionedCookieAccess").as<jsbind::Promise<bool>>();
 }
 
 FragmentDirective Document::fragmentDirective() const {
@@ -692,20 +692,20 @@ Selection Document::getSelection() {
     return Node::call("getSelection").as<Selection>();
 }
 
-jsbind::Promise Document::hasStorageAccess() {
-    return Node::call("hasStorageAccess").as<jsbind::Promise>();
+jsbind::Promise<bool> Document::hasStorageAccess() {
+    return Node::call("hasStorageAccess").as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise Document::requestStorageAccess() {
-    return Node::call("requestStorageAccess").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Document::requestStorageAccess() {
+    return Node::call("requestStorageAccess").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise Document::hasPrivateToken(const jsbind::USVString& issuer) {
-    return Node::call("hasPrivateToken", issuer).as<jsbind::Promise>();
+jsbind::Promise<bool> Document::hasPrivateToken(const jsbind::USVString& issuer) {
+    return Node::call("hasPrivateToken", issuer).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise Document::hasRedemptionRecord(const jsbind::USVString& issuer) {
-    return Node::call("hasRedemptionRecord", issuer).as<jsbind::Promise>();
+jsbind::Promise<bool> Document::hasRedemptionRecord(const jsbind::USVString& issuer) {
+    return Node::call("hasRedemptionRecord", issuer).as<jsbind::Promise<bool>>();
 }
 
 DocumentTimeline Document::timeline() const {

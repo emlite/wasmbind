@@ -10,8 +10,8 @@ ImageTrackList::ImageTrackList(Handle h) noexcept : emlite::Val(emlite::Val::tak
 ImageTrackList::ImageTrackList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise ImageTrackList::ready() const {
-    return emlite::Val::get("ready").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ImageTrackList::ready() const {
+    return emlite::Val::get("ready").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 unsigned long ImageTrackList::length() const {

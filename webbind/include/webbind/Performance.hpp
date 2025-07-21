@@ -55,7 +55,7 @@ public:
     long long interactionCount() const;
     PerformanceTiming timing() const;
     PerformanceNavigation navigation() const;
-    jsbind::Promise measureUserAgentSpecificMemory();
+    jsbind::Promise<MemoryMeasurement> measureUserAgentSpecificMemory();
     jsbind::Any getEntries();
     jsbind::Any getEntriesByType(const jsbind::DOMString& type);
     jsbind::Any getEntriesByName(const jsbind::DOMString& name);

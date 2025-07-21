@@ -90,40 +90,40 @@ LanguageDetector::LanguageDetector(Handle h) noexcept : emlite::Val(emlite::Val:
 LanguageDetector::LanguageDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise LanguageDetector::create() {
-    return emlite::Val::global("languagedetector").call("create").as<jsbind::Promise>();
+jsbind::Promise<LanguageDetector> LanguageDetector::create() {
+    return emlite::Val::global("languagedetector").call("create").as<jsbind::Promise<LanguageDetector>>();
 }
 
-jsbind::Promise LanguageDetector::create(const LanguageDetectorCreateOptions& options) {
-    return emlite::Val::global("languagedetector").call("create", options).as<jsbind::Promise>();
+jsbind::Promise<LanguageDetector> LanguageDetector::create(const LanguageDetectorCreateOptions& options) {
+    return emlite::Val::global("languagedetector").call("create", options).as<jsbind::Promise<LanguageDetector>>();
 }
 
-jsbind::Promise LanguageDetector::availability() {
-    return emlite::Val::global("languagedetector").call("availability").as<jsbind::Promise>();
+jsbind::Promise<Availability> LanguageDetector::availability() {
+    return emlite::Val::global("languagedetector").call("availability").as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise LanguageDetector::availability(const LanguageDetectorCreateCoreOptions& options) {
-    return emlite::Val::global("languagedetector").call("availability", options).as<jsbind::Promise>();
+jsbind::Promise<Availability> LanguageDetector::availability(const LanguageDetectorCreateCoreOptions& options) {
+    return emlite::Val::global("languagedetector").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise LanguageDetector::detect(const jsbind::DOMString& input) {
-    return emlite::Val::call("detect", input).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> LanguageDetector::detect(const jsbind::DOMString& input) {
+    return emlite::Val::call("detect", input).as<jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>>>();
 }
 
-jsbind::Promise LanguageDetector::detect(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options) {
-    return emlite::Val::call("detect", input, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> LanguageDetector::detect(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options) {
+    return emlite::Val::call("detect", input, options).as<jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>>>();
 }
 
 jsbind::FrozenArray<jsbind::DOMString> LanguageDetector::expectedInputLanguages() const {
     return emlite::Val::get("expectedInputLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
 }
 
-jsbind::Promise LanguageDetector::measureInputUsage(const jsbind::DOMString& input) {
-    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise>();
+jsbind::Promise<double> LanguageDetector::measureInputUsage(const jsbind::DOMString& input) {
+    return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise LanguageDetector::measureInputUsage(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options) {
-    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise>();
+jsbind::Promise<double> LanguageDetector::measureInputUsage(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options) {
+    return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 
 double LanguageDetector::inputQuota() const {

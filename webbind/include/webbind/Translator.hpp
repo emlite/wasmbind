@@ -57,16 +57,16 @@ public:
     static Translator take_ownership(Handle h) noexcept;
 
     Translator clone() const noexcept;
-    static jsbind::Promise create(const TranslatorCreateOptions& options);
-    static jsbind::Promise availability(const TranslatorCreateCoreOptions& options);
-    jsbind::Promise translate(const jsbind::DOMString& input);
-    jsbind::Promise translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
+    static jsbind::Promise<Translator> create(const TranslatorCreateOptions& options);
+    static jsbind::Promise<Availability> availability(const TranslatorCreateCoreOptions& options);
+    jsbind::Promise<jsbind::DOMString> translate(const jsbind::DOMString& input);
+    jsbind::Promise<jsbind::DOMString> translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
     ReadableStream translateStreaming(const jsbind::DOMString& input);
     ReadableStream translateStreaming(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
     jsbind::DOMString sourceLanguage() const;
     jsbind::DOMString targetLanguage() const;
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };

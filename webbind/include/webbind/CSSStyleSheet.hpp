@@ -25,7 +25,7 @@ public:
     unsigned long insertRule(const jsbind::CSSOMString& rule);
     unsigned long insertRule(const jsbind::CSSOMString& rule, unsigned long index);
     jsbind::Undefined deleteRule(unsigned long index);
-    jsbind::Promise replace(const jsbind::USVString& text);
+    jsbind::Promise<CSSStyleSheet> replace(const jsbind::USVString& text);
     jsbind::Undefined replaceSync(const jsbind::USVString& text);
     CSSRuleList rules() const;
     long addRule();

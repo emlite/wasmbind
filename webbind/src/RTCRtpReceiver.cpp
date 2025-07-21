@@ -93,8 +93,8 @@ jsbind::Sequence<RTCRtpSynchronizationSource> RTCRtpReceiver::getSynchronization
     return emlite::Val::call("getSynchronizationSources").as<jsbind::Sequence<RTCRtpSynchronizationSource>>();
 }
 
-jsbind::Promise RTCRtpReceiver::getStats() {
-    return emlite::Val::call("getStats").as<jsbind::Promise>();
+jsbind::Promise<RTCStatsReport> RTCRtpReceiver::getStats() {
+    return emlite::Val::call("getStats").as<jsbind::Promise<RTCStatsReport>>();
 }
 
 jsbind::Any RTCRtpReceiver::jitterBufferTarget() const {

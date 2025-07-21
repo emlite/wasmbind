@@ -34,7 +34,7 @@ public:
     void onconnect(const jsbind::Any& value);
     jsbind::Any ondisconnect() const;
     void ondisconnect(const jsbind::Any& value);
-    jsbind::Promise getDevices();
-    jsbind::Promise requestDevice(const HIDDeviceRequestOptions& options);
+    jsbind::Promise<jsbind::Sequence<HIDDevice>> getDevices();
+    jsbind::Promise<jsbind::Sequence<HIDDevice>> requestDevice(const HIDDeviceRequestOptions& options);
 };
 

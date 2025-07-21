@@ -60,9 +60,9 @@ public:
     static DigitalGoodsService take_ownership(Handle h) noexcept;
 
     DigitalGoodsService clone() const noexcept;
-    jsbind::Promise getDetails(const jsbind::Sequence<jsbind::DOMString>& itemIds);
-    jsbind::Promise listPurchases();
-    jsbind::Promise listPurchaseHistory();
-    jsbind::Promise consume(const jsbind::DOMString& purchaseToken);
+    jsbind::Promise<jsbind::Sequence<ItemDetails>> getDetails(const jsbind::Sequence<jsbind::DOMString>& itemIds);
+    jsbind::Promise<jsbind::Sequence<PurchaseDetails>> listPurchases();
+    jsbind::Promise<jsbind::Sequence<PurchaseDetails>> listPurchaseHistory();
+    jsbind::Promise<jsbind::Undefined> consume(const jsbind::DOMString& purchaseToken);
 };
 

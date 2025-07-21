@@ -130,67 +130,67 @@ bool USBDevice::opened() const {
     return emlite::Val::get("opened").as<bool>();
 }
 
-jsbind::Promise USBDevice::open() {
-    return emlite::Val::call("open").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::open() {
+    return emlite::Val::call("open").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::close() {
-    return emlite::Val::call("close").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::close() {
+    return emlite::Val::call("close").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::forget() {
-    return emlite::Val::call("forget").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::forget() {
+    return emlite::Val::call("forget").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::selectConfiguration(unsigned char configurationValue) {
-    return emlite::Val::call("selectConfiguration", configurationValue).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::selectConfiguration(unsigned char configurationValue) {
+    return emlite::Val::call("selectConfiguration", configurationValue).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::claimInterface(unsigned char interfaceNumber) {
-    return emlite::Val::call("claimInterface", interfaceNumber).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::claimInterface(unsigned char interfaceNumber) {
+    return emlite::Val::call("claimInterface", interfaceNumber).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::releaseInterface(unsigned char interfaceNumber) {
-    return emlite::Val::call("releaseInterface", interfaceNumber).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::releaseInterface(unsigned char interfaceNumber) {
+    return emlite::Val::call("releaseInterface", interfaceNumber).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::selectAlternateInterface(unsigned char interfaceNumber, unsigned char alternateSetting) {
-    return emlite::Val::call("selectAlternateInterface", interfaceNumber, alternateSetting).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::selectAlternateInterface(unsigned char interfaceNumber, unsigned char alternateSetting) {
+    return emlite::Val::call("selectAlternateInterface", interfaceNumber, alternateSetting).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::controlTransferIn(const USBControlTransferParameters& setup, unsigned short length) {
-    return emlite::Val::call("controlTransferIn", setup, length).as<jsbind::Promise>();
+jsbind::Promise<USBInTransferResult> USBDevice::controlTransferIn(const USBControlTransferParameters& setup, unsigned short length) {
+    return emlite::Val::call("controlTransferIn", setup, length).as<jsbind::Promise<USBInTransferResult>>();
 }
 
-jsbind::Promise USBDevice::controlTransferOut(const USBControlTransferParameters& setup) {
-    return emlite::Val::call("controlTransferOut", setup).as<jsbind::Promise>();
+jsbind::Promise<USBOutTransferResult> USBDevice::controlTransferOut(const USBControlTransferParameters& setup) {
+    return emlite::Val::call("controlTransferOut", setup).as<jsbind::Promise<USBOutTransferResult>>();
 }
 
-jsbind::Promise USBDevice::controlTransferOut(const USBControlTransferParameters& setup, const jsbind::Any& data) {
-    return emlite::Val::call("controlTransferOut", setup, data).as<jsbind::Promise>();
+jsbind::Promise<USBOutTransferResult> USBDevice::controlTransferOut(const USBControlTransferParameters& setup, const jsbind::Any& data) {
+    return emlite::Val::call("controlTransferOut", setup, data).as<jsbind::Promise<USBOutTransferResult>>();
 }
 
-jsbind::Promise USBDevice::clearHalt(const USBDirection& direction, unsigned char endpointNumber) {
-    return emlite::Val::call("clearHalt", direction, endpointNumber).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::clearHalt(const USBDirection& direction, unsigned char endpointNumber) {
+    return emlite::Val::call("clearHalt", direction, endpointNumber).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise USBDevice::transferIn(unsigned char endpointNumber, unsigned long length) {
-    return emlite::Val::call("transferIn", endpointNumber, length).as<jsbind::Promise>();
+jsbind::Promise<USBInTransferResult> USBDevice::transferIn(unsigned char endpointNumber, unsigned long length) {
+    return emlite::Val::call("transferIn", endpointNumber, length).as<jsbind::Promise<USBInTransferResult>>();
 }
 
-jsbind::Promise USBDevice::transferOut(unsigned char endpointNumber, const jsbind::Any& data) {
-    return emlite::Val::call("transferOut", endpointNumber, data).as<jsbind::Promise>();
+jsbind::Promise<USBOutTransferResult> USBDevice::transferOut(unsigned char endpointNumber, const jsbind::Any& data) {
+    return emlite::Val::call("transferOut", endpointNumber, data).as<jsbind::Promise<USBOutTransferResult>>();
 }
 
-jsbind::Promise USBDevice::isochronousTransferIn(unsigned char endpointNumber, jsbind::Sequence<unsigned long> packetLengths) {
-    return emlite::Val::call("isochronousTransferIn", endpointNumber, packetLengths).as<jsbind::Promise>();
+jsbind::Promise<USBIsochronousInTransferResult> USBDevice::isochronousTransferIn(unsigned char endpointNumber, jsbind::Sequence<unsigned long> packetLengths) {
+    return emlite::Val::call("isochronousTransferIn", endpointNumber, packetLengths).as<jsbind::Promise<USBIsochronousInTransferResult>>();
 }
 
-jsbind::Promise USBDevice::isochronousTransferOut(unsigned char endpointNumber, const jsbind::Any& data, jsbind::Sequence<unsigned long> packetLengths) {
-    return emlite::Val::call("isochronousTransferOut", endpointNumber, data, packetLengths).as<jsbind::Promise>();
+jsbind::Promise<USBIsochronousOutTransferResult> USBDevice::isochronousTransferOut(unsigned char endpointNumber, const jsbind::Any& data, jsbind::Sequence<unsigned long> packetLengths) {
+    return emlite::Val::call("isochronousTransferOut", endpointNumber, data, packetLengths).as<jsbind::Promise<USBIsochronousOutTransferResult>>();
 }
 
-jsbind::Promise USBDevice::reset() {
-    return emlite::Val::call("reset").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> USBDevice::reset() {
+    return emlite::Val::call("reset").as<jsbind::Promise<jsbind::Undefined>>();
 }
 

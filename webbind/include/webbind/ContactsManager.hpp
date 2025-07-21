@@ -48,8 +48,8 @@ public:
     static ContactsManager take_ownership(Handle h) noexcept;
 
     ContactsManager clone() const noexcept;
-    jsbind::Promise getProperties();
-    jsbind::Promise select(const jsbind::Sequence<ContactProperty>& properties);
-    jsbind::Promise select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options);
+    jsbind::Promise<jsbind::Sequence<ContactProperty>> getProperties();
+    jsbind::Promise<jsbind::Sequence<ContactInfo>> select(const jsbind::Sequence<ContactProperty>& properties);
+    jsbind::Promise<jsbind::Sequence<ContactInfo>> select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options);
 };
 

@@ -503,7 +503,7 @@ public:
     MLGraphBuilder(const MLContext& context);
     MLOperand input(const jsbind::USVString& name, const MLOperandDescriptor& descriptor);
     MLOperand constant(const MLTensor& tensor);
-    jsbind::Promise build(const jsbind::Any& outputs);
+    jsbind::Promise<MLGraph> build(const jsbind::Any& outputs);
     MLOperand argMin(const MLOperand& input, unsigned long axis);
     MLOperand argMin(const MLOperand& input, unsigned long axis, const MLArgMinMaxOptions& options);
     MLOperand argMax(const MLOperand& input, unsigned long axis);

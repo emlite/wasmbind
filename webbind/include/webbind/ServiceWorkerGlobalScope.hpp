@@ -22,7 +22,7 @@ public:
     Clients clients() const;
     ServiceWorkerRegistration registration() const;
     ServiceWorker serviceWorker() const;
-    jsbind::Promise skipWaiting();
+    jsbind::Promise<jsbind::Undefined> skipWaiting();
     jsbind::Any oninstall() const;
     void oninstall(const jsbind::Any& value);
     jsbind::Any onactivate() const;

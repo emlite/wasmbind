@@ -97,11 +97,11 @@ StylePropertyMapReadOnly LayoutChild::styleMap() const {
     return emlite::Val::get("styleMap").as<StylePropertyMapReadOnly>();
 }
 
-jsbind::Promise LayoutChild::intrinsicSizes() {
-    return emlite::Val::call("intrinsicSizes").as<jsbind::Promise>();
+jsbind::Promise<IntrinsicSizes> LayoutChild::intrinsicSizes() {
+    return emlite::Val::call("intrinsicSizes").as<jsbind::Promise<IntrinsicSizes>>();
 }
 
-jsbind::Promise LayoutChild::layoutNextFragment(const LayoutConstraintsOptions& constraints, const ChildBreakToken& breakToken) {
-    return emlite::Val::call("layoutNextFragment", constraints, breakToken).as<jsbind::Promise>();
+jsbind::Promise<LayoutFragment> LayoutChild::layoutNextFragment(const LayoutConstraintsOptions& constraints, const ChildBreakToken& breakToken) {
+    return emlite::Val::call("layoutNextFragment", constraints, breakToken).as<jsbind::Promise<LayoutFragment>>();
 }
 

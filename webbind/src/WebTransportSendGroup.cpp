@@ -10,7 +10,7 @@ WebTransportSendGroup::WebTransportSendGroup(Handle h) noexcept : emlite::Val(em
 WebTransportSendGroup::WebTransportSendGroup(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise WebTransportSendGroup::getStats() {
-    return emlite::Val::call("getStats").as<jsbind::Promise>();
+jsbind::Promise<WebTransportSendStreamStats> WebTransportSendGroup::getStats() {
+    return emlite::Val::call("getStats").as<jsbind::Promise<WebTransportSendStreamStats>>();
 }
 

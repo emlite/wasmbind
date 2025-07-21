@@ -19,7 +19,7 @@ MediaKeySystemConfiguration MediaKeySystemAccess::getConfiguration() {
     return emlite::Val::call("getConfiguration").as<MediaKeySystemConfiguration>();
 }
 
-jsbind::Promise MediaKeySystemAccess::createMediaKeys() {
-    return emlite::Val::call("createMediaKeys").as<jsbind::Promise>();
+jsbind::Promise<MediaKeys> MediaKeySystemAccess::createMediaKeys() {
+    return emlite::Val::call("createMediaKeys").as<jsbind::Promise<MediaKeys>>();
 }
 

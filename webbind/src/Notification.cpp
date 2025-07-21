@@ -50,12 +50,12 @@ NotificationPermission Notification::permission() {
     return emlite::Val::global("notification").get("permission").as<NotificationPermission>();
 }
 
-jsbind::Promise Notification::requestPermission() {
-    return emlite::Val::global("notification").call("requestPermission").as<jsbind::Promise>();
+jsbind::Promise<NotificationPermission> Notification::requestPermission() {
+    return emlite::Val::global("notification").call("requestPermission").as<jsbind::Promise<NotificationPermission>>();
 }
 
-jsbind::Promise Notification::requestPermission(const jsbind::Function& deprecatedCallback) {
-    return emlite::Val::global("notification").call("requestPermission", deprecatedCallback).as<jsbind::Promise>();
+jsbind::Promise<NotificationPermission> Notification::requestPermission(const jsbind::Function& deprecatedCallback) {
+    return emlite::Val::global("notification").call("requestPermission", deprecatedCallback).as<jsbind::Promise<NotificationPermission>>();
 }
 
 unsigned long Notification::maxActions() {

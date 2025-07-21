@@ -25,8 +25,8 @@ jsbind::Undefined PreferenceObject::clearOverride() {
     return EventTarget::call("clearOverride").as<jsbind::Undefined>();
 }
 
-jsbind::Promise PreferenceObject::requestOverride(const jsbind::DOMString& value) {
-    return EventTarget::call("requestOverride", value).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PreferenceObject::requestOverride(const jsbind::DOMString& value) {
+    return EventTarget::call("requestOverride", value).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Any PreferenceObject::onchange() const {

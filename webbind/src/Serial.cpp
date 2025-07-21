@@ -50,15 +50,15 @@ void Serial::ondisconnect(const jsbind::Any& value) {
     EventTarget::set("ondisconnect", value);
 }
 
-jsbind::Promise Serial::getPorts() {
-    return EventTarget::call("getPorts").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<SerialPort>> Serial::getPorts() {
+    return EventTarget::call("getPorts").as<jsbind::Promise<jsbind::Sequence<SerialPort>>>();
 }
 
-jsbind::Promise Serial::requestPort() {
-    return EventTarget::call("requestPort").as<jsbind::Promise>();
+jsbind::Promise<SerialPort> Serial::requestPort() {
+    return EventTarget::call("requestPort").as<jsbind::Promise<SerialPort>>();
 }
 
-jsbind::Promise Serial::requestPort(const SerialPortRequestOptions& options) {
-    return EventTarget::call("requestPort", options).as<jsbind::Promise>();
+jsbind::Promise<SerialPort> Serial::requestPort(const SerialPortRequestOptions& options) {
+    return EventTarget::call("requestPort", options).as<jsbind::Promise<SerialPort>>();
 }
 

@@ -108,12 +108,12 @@ FontFaceLoadStatus FontFace::status() const {
     return emlite::Val::get("status").as<FontFaceLoadStatus>();
 }
 
-jsbind::Promise FontFace::load() {
-    return emlite::Val::call("load").as<jsbind::Promise>();
+jsbind::Promise<FontFace> FontFace::load() {
+    return emlite::Val::call("load").as<jsbind::Promise<FontFace>>();
 }
 
-jsbind::Promise FontFace::loaded() const {
-    return emlite::Val::get("loaded").as<jsbind::Promise>();
+jsbind::Promise<FontFace> FontFace::loaded() const {
+    return emlite::Val::get("loaded").as<jsbind::Promise<FontFace>>();
 }
 
 FontFaceFeatures FontFace::features() const {

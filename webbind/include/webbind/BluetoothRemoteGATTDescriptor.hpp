@@ -18,7 +18,7 @@ public:
     BluetoothRemoteGATTCharacteristic characteristic() const;
     jsbind::Any uuid() const;
     jsbind::DataView value() const;
-    jsbind::Promise readValue();
-    jsbind::Promise writeValue(const jsbind::Any& value);
+    jsbind::Promise<jsbind::DataView> readValue();
+    jsbind::Promise<jsbind::Undefined> writeValue(const jsbind::Any& value);
 };
 

@@ -54,11 +54,11 @@ BarcodeDetector::BarcodeDetector() : emlite::Val(emlite::Val::global("BarcodeDet
 
 BarcodeDetector::BarcodeDetector(const jsbind::Any& barcodeDetectorOptions) : emlite::Val(emlite::Val::global("BarcodeDetector").new_(barcodeDetectorOptions)) {}
 
-jsbind::Promise BarcodeDetector::getSupportedFormats() {
-    return emlite::Val::global("barcodedetector").call("getSupportedFormats").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<BarcodeFormat>> BarcodeDetector::getSupportedFormats() {
+    return emlite::Val::global("barcodedetector").call("getSupportedFormats").as<jsbind::Promise<jsbind::Sequence<BarcodeFormat>>>();
 }
 
-jsbind::Promise BarcodeDetector::detect(const jsbind::Any& image) {
-    return emlite::Val::call("detect", image).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<DetectedBarcode>> BarcodeDetector::detect(const jsbind::Any& image) {
+    return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::Sequence<DetectedBarcode>>>();
 }
 

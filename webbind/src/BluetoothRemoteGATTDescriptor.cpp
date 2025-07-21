@@ -22,11 +22,11 @@ jsbind::DataView BluetoothRemoteGATTDescriptor::value() const {
     return emlite::Val::get("value").as<jsbind::DataView>();
 }
 
-jsbind::Promise BluetoothRemoteGATTDescriptor::readValue() {
-    return emlite::Val::call("readValue").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DataView> BluetoothRemoteGATTDescriptor::readValue() {
+    return emlite::Val::call("readValue").as<jsbind::Promise<jsbind::DataView>>();
 }
 
-jsbind::Promise BluetoothRemoteGATTDescriptor::writeValue(const jsbind::Any& value) {
-    return emlite::Val::call("writeValue", value).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> BluetoothRemoteGATTDescriptor::writeValue(const jsbind::Any& value) {
+    return emlite::Val::call("writeValue", value).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

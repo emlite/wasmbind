@@ -15,6 +15,6 @@ public:
     static PresentationReceiver take_ownership(Handle h) noexcept;
 
     PresentationReceiver clone() const noexcept;
-    jsbind::Promise connectionList() const;
+    jsbind::Promise<PresentationConnectionList> connectionList() const;
 };
 

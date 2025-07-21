@@ -45,11 +45,11 @@ void MIDIPort::onstatechange(const jsbind::Any& value) {
     EventTarget::set("onstatechange", value);
 }
 
-jsbind::Promise MIDIPort::open() {
-    return EventTarget::call("open").as<jsbind::Promise>();
+jsbind::Promise<MIDIPort> MIDIPort::open() {
+    return EventTarget::call("open").as<jsbind::Promise<MIDIPort>>();
 }
 
-jsbind::Promise MIDIPort::close() {
-    return EventTarget::call("close").as<jsbind::Promise>();
+jsbind::Promise<MIDIPort> MIDIPort::close() {
+    return EventTarget::call("close").as<jsbind::Promise<MIDIPort>>();
 }
 

@@ -14,8 +14,8 @@ XRSpace XRAnchor::anchorSpace() const {
     return emlite::Val::get("anchorSpace").as<XRSpace>();
 }
 
-jsbind::Promise XRAnchor::requestPersistentHandle() {
-    return emlite::Val::call("requestPersistentHandle").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> XRAnchor::requestPersistentHandle() {
+    return emlite::Val::call("requestPersistentHandle").as<jsbind::Promise<jsbind::DOMString>>();
 }
 
 jsbind::Undefined XRAnchor::delete_() {

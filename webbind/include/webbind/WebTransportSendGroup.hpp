@@ -14,6 +14,6 @@ public:
     static WebTransportSendGroup take_ownership(Handle h) noexcept;
 
     WebTransportSendGroup clone() const noexcept;
-    jsbind::Promise getStats();
+    jsbind::Promise<WebTransportSendStreamStats> getStats();
 };
 

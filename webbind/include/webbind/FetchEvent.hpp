@@ -19,11 +19,11 @@ public:
     FetchEvent clone() const noexcept;
     FetchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
     Request request() const;
-    jsbind::Promise preloadResponse() const;
+    jsbind::Promise<jsbind::Any> preloadResponse() const;
     jsbind::DOMString clientId() const;
     jsbind::DOMString resultingClientId() const;
     jsbind::DOMString replacesClientId() const;
-    jsbind::Promise handled() const;
-    jsbind::Undefined respondWith(const jsbind::Promise& r);
+    jsbind::Promise<jsbind::Undefined> handled() const;
+    jsbind::Undefined respondWith(const jsbind::Promise<Response>& r);
 };
 

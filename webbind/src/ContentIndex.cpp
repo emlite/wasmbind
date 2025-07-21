@@ -65,15 +65,15 @@ ContentIndex::ContentIndex(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 ContentIndex::ContentIndex(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise ContentIndex::add(const ContentDescription& description) {
-    return emlite::Val::call("add", description).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ContentIndex::add(const ContentDescription& description) {
+    return emlite::Val::call("add", description).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ContentIndex::delete_(const jsbind::DOMString& id) {
-    return emlite::Val::call("delete", id).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> ContentIndex::delete_(const jsbind::DOMString& id) {
+    return emlite::Val::call("delete", id).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise ContentIndex::getAll() {
-    return emlite::Val::call("getAll").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<ContentDescription>> ContentIndex::getAll() {
+    return emlite::Val::call("getAll").as<jsbind::Promise<jsbind::Sequence<ContentDescription>>>();
 }
 

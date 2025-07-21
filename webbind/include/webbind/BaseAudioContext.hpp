@@ -82,8 +82,8 @@ public:
     ScriptProcessorNode createScriptProcessor(unsigned long bufferSize, unsigned long numberOfInputChannels, unsigned long numberOfOutputChannels);
     StereoPannerNode createStereoPanner();
     WaveShaperNode createWaveShaper();
-    jsbind::Promise decodeAudioData(const jsbind::ArrayBuffer& audioData);
-    jsbind::Promise decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback);
-    jsbind::Promise decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
+    jsbind::Promise<AudioBuffer> decodeAudioData(const jsbind::ArrayBuffer& audioData);
+    jsbind::Promise<AudioBuffer> decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback);
+    jsbind::Promise<AudioBuffer> decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

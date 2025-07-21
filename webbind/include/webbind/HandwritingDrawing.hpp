@@ -33,6 +33,6 @@ public:
     jsbind::Undefined removeStroke(const HandwritingStroke& stroke);
     jsbind::Undefined clear();
     jsbind::Sequence<HandwritingStroke> getStrokes();
-    jsbind::Promise getPrediction();
+    jsbind::Promise<jsbind::Sequence<HandwritingPrediction>> getPrediction();
 };
 

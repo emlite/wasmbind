@@ -13,16 +13,16 @@ PresentationRequest::PresentationRequest(const emlite::Val &val) noexcept: Event
 
 PresentationRequest::PresentationRequest(const jsbind::Sequence<jsbind::USVString>& urls) : EventTarget(emlite::Val::global("PresentationRequest").new_(urls)) {}
 
-jsbind::Promise PresentationRequest::start() {
-    return EventTarget::call("start").as<jsbind::Promise>();
+jsbind::Promise<PresentationConnection> PresentationRequest::start() {
+    return EventTarget::call("start").as<jsbind::Promise<PresentationConnection>>();
 }
 
-jsbind::Promise PresentationRequest::reconnect(const jsbind::USVString& presentationId) {
-    return EventTarget::call("reconnect", presentationId).as<jsbind::Promise>();
+jsbind::Promise<PresentationConnection> PresentationRequest::reconnect(const jsbind::USVString& presentationId) {
+    return EventTarget::call("reconnect", presentationId).as<jsbind::Promise<PresentationConnection>>();
 }
 
-jsbind::Promise PresentationRequest::getAvailability() {
-    return EventTarget::call("getAvailability").as<jsbind::Promise>();
+jsbind::Promise<PresentationAvailability> PresentationRequest::getAvailability() {
+    return EventTarget::call("getAvailability").as<jsbind::Promise<PresentationAvailability>>();
 }
 
 jsbind::Any PresentationRequest::onconnectionavailable() const {

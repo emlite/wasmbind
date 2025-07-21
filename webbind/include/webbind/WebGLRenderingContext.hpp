@@ -15,7 +15,7 @@ public:
     static WebGLRenderingContext take_ownership(Handle h) noexcept;
 
     WebGLRenderingContext clone() const noexcept;
-    jsbind::Promise makeXRCompatible();
+    jsbind::Promise<jsbind::Undefined> makeXRCompatible();
     jsbind::Undefined bufferData(const jsbind::Any& target, const jsbind::Any& data, const jsbind::Any& usage);
     jsbind::Undefined bufferSubData(const jsbind::Any& target, const jsbind::Any& offset, const jsbind::Any& data);
     jsbind::Undefined compressedTexImage2D(const jsbind::Any& target, const jsbind::Any& level, const jsbind::Any& internalformat, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& border, const jsbind::Any& data);

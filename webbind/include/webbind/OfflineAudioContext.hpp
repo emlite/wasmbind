@@ -17,9 +17,9 @@ public:
 
     OfflineAudioContext clone() const noexcept;
     OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate);
-    jsbind::Promise startRendering();
-    jsbind::Promise resume();
-    jsbind::Promise suspend(double suspendTime);
+    jsbind::Promise<AudioBuffer> startRendering();
+    jsbind::Promise<jsbind::Undefined> resume();
+    jsbind::Promise<jsbind::Undefined> suspend(double suspendTime);
     unsigned long length() const;
     jsbind::Any oncomplete() const;
     void oncomplete(const jsbind::Any& value);

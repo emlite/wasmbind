@@ -104,8 +104,8 @@ PrivateAggregation SharedStorageWorkletGlobalScope::privateAggregation() const {
     return WorkletGlobalScope::get("privateAggregation").as<PrivateAggregation>();
 }
 
-jsbind::Promise SharedStorageWorkletGlobalScope::interestGroups() {
-    return WorkletGlobalScope::call("interestGroups").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<StorageInterestGroup>> SharedStorageWorkletGlobalScope::interestGroups() {
+    return WorkletGlobalScope::call("interestGroups").as<jsbind::Promise<jsbind::Sequence<StorageInterestGroup>>>();
 }
 
 SharedStorageWorkletNavigator SharedStorageWorkletGlobalScope::navigator() const {

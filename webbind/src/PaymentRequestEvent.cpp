@@ -358,31 +358,31 @@ jsbind::FrozenArray<PaymentShippingOption> PaymentRequestEvent::shippingOptions(
     return ExtendableEvent::get("shippingOptions").as<jsbind::FrozenArray<PaymentShippingOption>>();
 }
 
-jsbind::Promise PaymentRequestEvent::openWindow(const jsbind::USVString& url) {
-    return ExtendableEvent::call("openWindow", url).as<jsbind::Promise>();
+jsbind::Promise<WindowClient> PaymentRequestEvent::openWindow(const jsbind::USVString& url) {
+    return ExtendableEvent::call("openWindow", url).as<jsbind::Promise<WindowClient>>();
 }
 
-jsbind::Promise PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName) {
-    return ExtendableEvent::call("changePaymentMethod", methodName).as<jsbind::Promise>();
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName) {
+    return ExtendableEvent::call("changePaymentMethod", methodName).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
-jsbind::Promise PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName, const jsbind::Object& methodDetails) {
-    return ExtendableEvent::call("changePaymentMethod", methodName, methodDetails).as<jsbind::Promise>();
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName, const jsbind::Object& methodDetails) {
+    return ExtendableEvent::call("changePaymentMethod", methodName, methodDetails).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
-jsbind::Promise PaymentRequestEvent::changeShippingAddress() {
-    return ExtendableEvent::call("changeShippingAddress").as<jsbind::Promise>();
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changeShippingAddress() {
+    return ExtendableEvent::call("changeShippingAddress").as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
-jsbind::Promise PaymentRequestEvent::changeShippingAddress(const AddressInit& shippingAddress) {
-    return ExtendableEvent::call("changeShippingAddress", shippingAddress).as<jsbind::Promise>();
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changeShippingAddress(const AddressInit& shippingAddress) {
+    return ExtendableEvent::call("changeShippingAddress", shippingAddress).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
-jsbind::Promise PaymentRequestEvent::changeShippingOption(const jsbind::DOMString& shippingOption) {
-    return ExtendableEvent::call("changeShippingOption", shippingOption).as<jsbind::Promise>();
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changeShippingOption(const jsbind::DOMString& shippingOption) {
+    return ExtendableEvent::call("changeShippingOption", shippingOption).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
-jsbind::Undefined PaymentRequestEvent::respondWith(const jsbind::Promise& handlerResponsePromise) {
+jsbind::Undefined PaymentRequestEvent::respondWith(const jsbind::Promise<PaymentHandlerResponse>& handlerResponsePromise) {
     return ExtendableEvent::call("respondWith", handlerResponsePromise).as<jsbind::Undefined>();
 }
 

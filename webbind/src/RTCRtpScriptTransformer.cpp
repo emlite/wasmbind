@@ -15,16 +15,16 @@ ReadableStream RTCRtpScriptTransformer::readable() const {
     return EventTarget::get("readable").as<ReadableStream>();
 }
 
-jsbind::Promise RTCRtpScriptTransformer::generateKeyFrame() {
-    return EventTarget::call("generateKeyFrame").as<jsbind::Promise>();
+jsbind::Promise<long long> RTCRtpScriptTransformer::generateKeyFrame() {
+    return EventTarget::call("generateKeyFrame").as<jsbind::Promise<long long>>();
 }
 
-jsbind::Promise RTCRtpScriptTransformer::generateKeyFrame(const jsbind::DOMString& rid) {
-    return EventTarget::call("generateKeyFrame", rid).as<jsbind::Promise>();
+jsbind::Promise<long long> RTCRtpScriptTransformer::generateKeyFrame(const jsbind::DOMString& rid) {
+    return EventTarget::call("generateKeyFrame", rid).as<jsbind::Promise<long long>>();
 }
 
-jsbind::Promise RTCRtpScriptTransformer::sendKeyFrameRequest() {
-    return EventTarget::call("sendKeyFrameRequest").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> RTCRtpScriptTransformer::sendKeyFrameRequest() {
+    return EventTarget::call("sendKeyFrameRequest").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 WritableStream RTCRtpScriptTransformer::writable() const {

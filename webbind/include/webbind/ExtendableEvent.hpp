@@ -16,6 +16,6 @@ public:
     ExtendableEvent clone() const noexcept;
     ExtendableEvent(const jsbind::DOMString& type);
     ExtendableEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::Undefined waitUntil(const jsbind::Promise& f);
+    jsbind::Undefined waitUntil(const jsbind::Promise<jsbind::Any>& f);
 };
 

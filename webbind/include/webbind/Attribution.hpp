@@ -88,7 +88,7 @@ public:
 
     Attribution clone() const noexcept;
     AttributionAggregationServices aggregationServices() const;
-    jsbind::Promise saveImpression(const AttributionImpressionOptions& options);
-    jsbind::Promise measureConversion(const AttributionConversionOptions& options);
+    jsbind::Promise<AttributionImpressionResult> saveImpression(const AttributionImpressionOptions& options);
+    jsbind::Promise<AttributionConversionResult> measureConversion(const AttributionConversionOptions& options);
 };
 

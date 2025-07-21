@@ -84,27 +84,27 @@ void NDEFReader::onreadingerror(const jsbind::Any& value) {
     EventTarget::set("onreadingerror", value);
 }
 
-jsbind::Promise NDEFReader::scan() {
-    return EventTarget::call("scan").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NDEFReader::scan() {
+    return EventTarget::call("scan").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NDEFReader::scan(const NDEFScanOptions& options) {
-    return EventTarget::call("scan", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NDEFReader::scan(const NDEFScanOptions& options) {
+    return EventTarget::call("scan", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NDEFReader::write(const jsbind::Any& message) {
-    return EventTarget::call("write", message).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NDEFReader::write(const jsbind::Any& message) {
+    return EventTarget::call("write", message).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NDEFReader::write(const jsbind::Any& message, const NDEFWriteOptions& options) {
-    return EventTarget::call("write", message, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NDEFReader::write(const jsbind::Any& message, const NDEFWriteOptions& options) {
+    return EventTarget::call("write", message, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NDEFReader::makeReadOnly() {
-    return EventTarget::call("makeReadOnly").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NDEFReader::makeReadOnly() {
+    return EventTarget::call("makeReadOnly").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise NDEFReader::makeReadOnly(const NDEFMakeReadOnlyOptions& options) {
-    return EventTarget::call("makeReadOnly", options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> NDEFReader::makeReadOnly(const NDEFMakeReadOnlyOptions& options) {
+    return EventTarget::call("makeReadOnly", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

@@ -36,6 +36,6 @@ public:
     jsbind::Any sampleInterval() const;
     bool stopped() const;
     Profiler(const jsbind::Any& options);
-    jsbind::Promise stop();
+    jsbind::Promise<ProfilerTrace> stop();
 };
 

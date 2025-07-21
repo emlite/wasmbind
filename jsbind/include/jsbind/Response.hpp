@@ -1,6 +1,8 @@
 #pragma once
 
+#include "Array.hpp"
 #include "Promise.hpp"
+#include "String.hpp"
 #include <emlite/emlite.hpp>
 #include <stdint.h>
 
@@ -20,21 +22,21 @@ class Response : public emlite::Val {
     /* response.headers   (raw; wrap later if you need) */
     [[nodiscard]] Any headers_raw() const;
 
-    [[nodiscard]] Promise text() const;
-    [[nodiscard]] Promise json() const;
+    [[nodiscard]] Promise<DOMString> text() const;
+    [[nodiscard]] Promise<Any> json() const;
     /* arrayBuffer() → we map to Uint8Array like Rust code
      */
-    [[nodiscard]] Promise array_buffer() const;
+    [[nodiscard]] Promise<ArrayBuffer> array_buffer() const;
 };
 
 /* fetch(char const* url [, init]) */
-Promise fetch(const char *input);
+Promise<Response> fetch(const char *input);
 
-Promise fetch(const char *input, const Any &init);
+Promise<Response> fetch(const char *input, const Any &init);
 
 /* fetch_val(Any requestLike [, init]) */
-Promise fetch_val(const Any &input);
+Promise<Response> fetch_val(const Any &input);
 
-Promise fetch_val(const Any &input, const Any &init);
+Promise<Response> fetch_val(const Any &input, const Any &init);
 
 } // namespace jsbind

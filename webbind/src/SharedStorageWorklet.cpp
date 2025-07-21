@@ -81,19 +81,19 @@ SharedStorageWorklet::SharedStorageWorklet(Handle h) noexcept : Worklet(emlite::
 SharedStorageWorklet::SharedStorageWorklet(const emlite::Val &val) noexcept: Worklet(val) {}
 
 
-jsbind::Promise SharedStorageWorklet::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls) {
-    return Worklet::call("selectURL", name, urls).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorageWorklet::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls) {
+    return Worklet::call("selectURL", name, urls).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorageWorklet::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options) {
-    return Worklet::call("selectURL", name, urls, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorageWorklet::selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options) {
+    return Worklet::call("selectURL", name, urls, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorageWorklet::run(const jsbind::DOMString& name) {
-    return Worklet::call("run", name).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorageWorklet::run(const jsbind::DOMString& name) {
+    return Worklet::call("run", name).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise SharedStorageWorklet::run(const jsbind::DOMString& name, const SharedStorageRunOperationMethodOptions& options) {
-    return Worklet::call("run", name, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> SharedStorageWorklet::run(const jsbind::DOMString& name, const SharedStorageRunOperationMethodOptions& options) {
+    return Worklet::call("run", name, options).as<jsbind::Promise<jsbind::Any>>();
 }
 

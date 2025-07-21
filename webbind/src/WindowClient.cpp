@@ -21,11 +21,11 @@ jsbind::FrozenArray<jsbind::USVString> WindowClient::ancestorOrigins() const {
     return Client::get("ancestorOrigins").as<jsbind::FrozenArray<jsbind::USVString>>();
 }
 
-jsbind::Promise WindowClient::focus() {
-    return Client::call("focus").as<jsbind::Promise>();
+jsbind::Promise<WindowClient> WindowClient::focus() {
+    return Client::call("focus").as<jsbind::Promise<WindowClient>>();
 }
 
-jsbind::Promise WindowClient::navigate(const jsbind::USVString& url) {
-    return Client::call("navigate", url).as<jsbind::Promise>();
+jsbind::Promise<WindowClient> WindowClient::navigate(const jsbind::USVString& url) {
+    return Client::call("navigate", url).as<jsbind::Promise<WindowClient>>();
 }
 

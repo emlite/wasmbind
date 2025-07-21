@@ -13,7 +13,7 @@ public:
     static SyncManager take_ownership(Handle h) noexcept;
 
     SyncManager clone() const noexcept;
-    jsbind::Promise register_(const jsbind::DOMString& tag);
-    jsbind::Promise getTags();
+    jsbind::Promise<jsbind::Undefined> register_(const jsbind::DOMString& tag);
+    jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> getTags();
 };
 

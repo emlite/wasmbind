@@ -101,27 +101,27 @@ jsbind::FrozenArray<HIDCollectionInfo> HIDDevice::collections() const {
     return EventTarget::get("collections").as<jsbind::FrozenArray<HIDCollectionInfo>>();
 }
 
-jsbind::Promise HIDDevice::open() {
-    return EventTarget::call("open").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HIDDevice::open() {
+    return EventTarget::call("open").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise HIDDevice::close() {
-    return EventTarget::call("close").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HIDDevice::close() {
+    return EventTarget::call("close").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise HIDDevice::forget() {
-    return EventTarget::call("forget").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HIDDevice::forget() {
+    return EventTarget::call("forget").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise HIDDevice::sendReport(unsigned char reportId, const jsbind::Any& data) {
-    return EventTarget::call("sendReport", reportId, data).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HIDDevice::sendReport(unsigned char reportId, const jsbind::Any& data) {
+    return EventTarget::call("sendReport", reportId, data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise HIDDevice::sendFeatureReport(unsigned char reportId, const jsbind::Any& data) {
-    return EventTarget::call("sendFeatureReport", reportId, data).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> HIDDevice::sendFeatureReport(unsigned char reportId, const jsbind::Any& data) {
+    return EventTarget::call("sendFeatureReport", reportId, data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise HIDDevice::receiveFeatureReport(unsigned char reportId) {
-    return EventTarget::call("receiveFeatureReport", reportId).as<jsbind::Promise>();
+jsbind::Promise<jsbind::DataView> HIDDevice::receiveFeatureReport(unsigned char reportId) {
+    return EventTarget::call("receiveFeatureReport", reportId).as<jsbind::Promise<jsbind::DataView>>();
 }
 

@@ -47,7 +47,7 @@ public:
     static LockManager take_ownership(Handle h) noexcept;
 
     LockManager clone() const noexcept;
-    jsbind::Promise request(const jsbind::DOMString& name, const LockOptions& options, const jsbind::Function& callback);
-    jsbind::Promise query();
+    jsbind::Promise<jsbind::Any> request(const jsbind::DOMString& name, const LockOptions& options, const jsbind::Function& callback);
+    jsbind::Promise<LockManagerSnapshot> query();
 };
 

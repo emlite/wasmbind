@@ -192,8 +192,8 @@ jsbind::Undefined VideoEncoder::encode(const VideoFrame& frame, const VideoEncod
     return EventTarget::call("encode", frame, options).as<jsbind::Undefined>();
 }
 
-jsbind::Promise VideoEncoder::flush() {
-    return EventTarget::call("flush").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> VideoEncoder::flush() {
+    return EventTarget::call("flush").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined VideoEncoder::reset() {
@@ -204,7 +204,7 @@ jsbind::Undefined VideoEncoder::close() {
     return EventTarget::call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Promise VideoEncoder::isConfigSupported(const VideoEncoderConfig& config) {
-    return emlite::Val::global("videoencoder").call("isConfigSupported", config).as<jsbind::Promise>();
+jsbind::Promise<VideoEncoderSupport> VideoEncoder::isConfigSupported(const VideoEncoderConfig& config) {
+    return emlite::Val::global("videoencoder").call("isConfigSupported", config).as<jsbind::Promise<VideoEncoderSupport>>();
 }
 

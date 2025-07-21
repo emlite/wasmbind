@@ -32,6 +32,6 @@ public:
 
     TextDetector clone() const noexcept;
     TextDetector();
-    jsbind::Promise detect(const jsbind::Any& image);
+    jsbind::Promise<jsbind::Sequence<DetectedText>> detect(const jsbind::Any& image);
 };
 

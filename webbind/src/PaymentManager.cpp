@@ -17,7 +17,7 @@ void PaymentManager::userHint(const jsbind::DOMString& value) {
     emlite::Val::set("userHint", value);
 }
 
-jsbind::Promise PaymentManager::enableDelegations(const jsbind::Sequence<PaymentDelegation>& delegations) {
-    return emlite::Val::call("enableDelegations", delegations).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PaymentManager::enableDelegations(const jsbind::Sequence<PaymentDelegation>& delegations) {
+    return emlite::Val::call("enableDelegations", delegations).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

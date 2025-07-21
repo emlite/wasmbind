@@ -90,11 +90,11 @@ MediaCapabilities::MediaCapabilities(Handle h) noexcept : emlite::Val(emlite::Va
 MediaCapabilities::MediaCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise MediaCapabilities::decodingInfo(const MediaDecodingConfiguration& configuration) {
-    return emlite::Val::call("decodingInfo", configuration).as<jsbind::Promise>();
+jsbind::Promise<MediaCapabilitiesDecodingInfo> MediaCapabilities::decodingInfo(const MediaDecodingConfiguration& configuration) {
+    return emlite::Val::call("decodingInfo", configuration).as<jsbind::Promise<MediaCapabilitiesDecodingInfo>>();
 }
 
-jsbind::Promise MediaCapabilities::encodingInfo(const MediaEncodingConfiguration& configuration) {
-    return emlite::Val::call("encodingInfo", configuration).as<jsbind::Promise>();
+jsbind::Promise<MediaCapabilitiesEncodingInfo> MediaCapabilities::encodingInfo(const MediaEncodingConfiguration& configuration) {
+    return emlite::Val::call("encodingInfo", configuration).as<jsbind::Promise<MediaCapabilitiesEncodingInfo>>();
 }
 

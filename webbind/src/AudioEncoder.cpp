@@ -108,8 +108,8 @@ jsbind::Undefined AudioEncoder::encode(const AudioData& data) {
     return EventTarget::call("encode", data).as<jsbind::Undefined>();
 }
 
-jsbind::Promise AudioEncoder::flush() {
-    return EventTarget::call("flush").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> AudioEncoder::flush() {
+    return EventTarget::call("flush").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined AudioEncoder::reset() {
@@ -120,7 +120,7 @@ jsbind::Undefined AudioEncoder::close() {
     return EventTarget::call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Promise AudioEncoder::isConfigSupported(const AudioEncoderConfig& config) {
-    return emlite::Val::global("audioencoder").call("isConfigSupported", config).as<jsbind::Promise>();
+jsbind::Promise<AudioEncoderSupport> AudioEncoder::isConfigSupported(const AudioEncoderConfig& config) {
+    return emlite::Val::global("audioencoder").call("isConfigSupported", config).as<jsbind::Promise<AudioEncoderSupport>>();
 }
 

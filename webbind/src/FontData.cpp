@@ -10,8 +10,8 @@ FontData::FontData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 FontData::FontData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise FontData::blob() {
-    return emlite::Val::call("blob").as<jsbind::Promise>();
+jsbind::Promise<Blob> FontData::blob() {
+    return emlite::Val::call("blob").as<jsbind::Promise<Blob>>();
 }
 
 jsbind::USVString FontData::postscriptName() const {

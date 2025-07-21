@@ -19,13 +19,13 @@ public:
 
     StorageBucket clone() const noexcept;
     jsbind::DOMString name() const;
-    jsbind::Promise persist();
-    jsbind::Promise persisted();
-    jsbind::Promise estimate();
-    jsbind::Promise setExpires(const jsbind::Any& expires);
-    jsbind::Promise expires();
+    jsbind::Promise<bool> persist();
+    jsbind::Promise<bool> persisted();
+    jsbind::Promise<StorageEstimate> estimate();
+    jsbind::Promise<jsbind::Undefined> setExpires(const jsbind::Any& expires);
+    jsbind::Promise<jsbind::Any> expires();
     IDBFactory indexedDB() const;
     CacheStorage caches() const;
-    jsbind::Promise getDirectory();
+    jsbind::Promise<FileSystemDirectoryHandle> getDirectory();
 };
 

@@ -25,23 +25,23 @@ Clipboard::Clipboard(Handle h) noexcept : EventTarget(emlite::Val::take_ownershi
 Clipboard::Clipboard(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise Clipboard::read() {
-    return EventTarget::call("read").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> Clipboard::read() {
+    return EventTarget::call("read").as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise Clipboard::read(const ClipboardUnsanitizedFormats& formats) {
-    return EventTarget::call("read", formats).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Any> Clipboard::read(const ClipboardUnsanitizedFormats& formats) {
+    return EventTarget::call("read", formats).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise Clipboard::readText() {
-    return EventTarget::call("readText").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> Clipboard::readText() {
+    return EventTarget::call("readText").as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise Clipboard::write(const jsbind::Any& data) {
-    return EventTarget::call("write", data).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Clipboard::write(const jsbind::Any& data) {
+    return EventTarget::call("write", data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise Clipboard::writeText(const jsbind::DOMString& data) {
-    return EventTarget::call("writeText", data).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> Clipboard::writeText(const jsbind::DOMString& data) {
+    return EventTarget::call("writeText", data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

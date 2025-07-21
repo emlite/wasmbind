@@ -19,9 +19,9 @@ public:
     WritableStream(const jsbind::Object& underlyingSink);
     WritableStream(const jsbind::Object& underlyingSink, const jsbind::Any& strategy);
     bool locked() const;
-    jsbind::Promise abort();
-    jsbind::Promise abort(const jsbind::Any& reason);
-    jsbind::Promise close();
+    jsbind::Promise<jsbind::Undefined> abort();
+    jsbind::Promise<jsbind::Undefined> abort(const jsbind::Any& reason);
+    jsbind::Promise<jsbind::Undefined> close();
     WritableStreamDefaultWriter getWriter();
 };
 

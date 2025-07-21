@@ -114,11 +114,11 @@ public:
     bool isSystemKeyboardSupported() const;
     jsbind::Undefined updateRenderState();
     jsbind::Undefined updateRenderState(const XRRenderStateInit& state);
-    jsbind::Promise updateTargetFrameRate(float rate);
-    jsbind::Promise requestReferenceSpace(const XRReferenceSpaceType& type);
+    jsbind::Promise<jsbind::Undefined> updateTargetFrameRate(float rate);
+    jsbind::Promise<XRReferenceSpace> requestReferenceSpace(const XRReferenceSpaceType& type);
     unsigned long requestAnimationFrame(const jsbind::Function& callback);
     jsbind::Undefined cancelAnimationFrame(unsigned long handle);
-    jsbind::Promise end();
+    jsbind::Promise<jsbind::Undefined> end();
     jsbind::Any onend() const;
     void onend(const jsbind::Any& value);
     jsbind::Any oninputsourceschange() const;
@@ -140,8 +140,8 @@ public:
     jsbind::Any onframeratechange() const;
     void onframeratechange(const jsbind::Any& value);
     jsbind::FrozenArray<jsbind::DOMString> persistentAnchors() const;
-    jsbind::Promise restorePersistentAnchor(const jsbind::DOMString& uuid);
-    jsbind::Promise deletePersistentAnchor(const jsbind::DOMString& uuid);
+    jsbind::Promise<XRAnchor> restorePersistentAnchor(const jsbind::DOMString& uuid);
+    jsbind::Promise<jsbind::Undefined> deletePersistentAnchor(const jsbind::DOMString& uuid);
     XREnvironmentBlendMode environmentBlendMode() const;
     XRInteractionMode interactionMode() const;
     XRDepthUsage depthUsage() const;
@@ -151,11 +151,11 @@ public:
     jsbind::Undefined pauseDepthSensing();
     jsbind::Undefined resumeDepthSensing();
     XRDOMOverlayState domOverlayState() const;
-    jsbind::Promise requestHitTestSource(const XRHitTestOptionsInit& options);
-    jsbind::Promise requestHitTestSourceForTransientInput(const XRTransientInputHitTestOptionsInit& options);
-    jsbind::Promise requestLightProbe();
-    jsbind::Promise requestLightProbe(const XRLightProbeInit& options);
+    jsbind::Promise<XRHitTestSource> requestHitTestSource(const XRHitTestOptionsInit& options);
+    jsbind::Promise<XRTransientInputHitTestSource> requestHitTestSourceForTransientInput(const XRTransientInputHitTestOptionsInit& options);
+    jsbind::Promise<XRLightProbe> requestLightProbe();
+    jsbind::Promise<XRLightProbe> requestLightProbe(const XRLightProbeInit& options);
     XRReflectionFormat preferredReflectionFormat() const;
-    jsbind::Promise initiateRoomCapture();
+    jsbind::Promise<jsbind::Undefined> initiateRoomCapture();
 };
 

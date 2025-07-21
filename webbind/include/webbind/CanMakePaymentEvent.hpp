@@ -15,6 +15,6 @@ public:
 
     CanMakePaymentEvent clone() const noexcept;
     CanMakePaymentEvent(const jsbind::DOMString& type);
-    jsbind::Undefined respondWith(const jsbind::Promise& canMakePaymentResponse);
+    jsbind::Undefined respondWith(jsbind::Promise<bool> canMakePaymentResponse);
 };
 

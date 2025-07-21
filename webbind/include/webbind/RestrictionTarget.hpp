@@ -16,6 +16,6 @@ public:
     static RestrictionTarget take_ownership(Handle h) noexcept;
 
     RestrictionTarget clone() const noexcept;
-    static jsbind::Promise fromElement(const Element& element);
+    static jsbind::Promise<RestrictionTarget> fromElement(const Element& element);
 };
 

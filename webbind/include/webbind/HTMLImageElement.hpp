@@ -45,7 +45,7 @@ public:
     void loading(const jsbind::DOMString& value);
     jsbind::DOMString fetchPriority() const;
     void fetchPriority(const jsbind::DOMString& value);
-    jsbind::Promise decode();
+    jsbind::Promise<jsbind::Undefined> decode();
     long x() const;
     long y() const;
     jsbind::DOMString name() const;

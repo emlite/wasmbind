@@ -35,8 +35,8 @@ public:
     Notification(const jsbind::DOMString& title);
     Notification(const jsbind::DOMString& title, const NotificationOptions& options);
     static NotificationPermission permission();
-    static jsbind::Promise requestPermission();
-    static jsbind::Promise requestPermission(const jsbind::Function& deprecatedCallback);
+    static jsbind::Promise<NotificationPermission> requestPermission();
+    static jsbind::Promise<NotificationPermission> requestPermission(const jsbind::Function& deprecatedCallback);
     static unsigned long maxActions();
     jsbind::Any onclick() const;
     void onclick(const jsbind::Any& value);

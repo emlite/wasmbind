@@ -64,20 +64,20 @@ PaymentRequest::PaymentRequest(const jsbind::Sequence<PaymentMethodData>& method
 
 PaymentRequest::PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options) : EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details, options)) {}
 
-jsbind::Promise PaymentRequest::show() {
-    return EventTarget::call("show").as<jsbind::Promise>();
+jsbind::Promise<PaymentResponse> PaymentRequest::show() {
+    return EventTarget::call("show").as<jsbind::Promise<PaymentResponse>>();
 }
 
-jsbind::Promise PaymentRequest::show(const jsbind::Promise& detailsPromise) {
-    return EventTarget::call("show", detailsPromise).as<jsbind::Promise>();
+jsbind::Promise<PaymentResponse> PaymentRequest::show(const jsbind::Promise<PaymentDetailsUpdate>& detailsPromise) {
+    return EventTarget::call("show", detailsPromise).as<jsbind::Promise<PaymentResponse>>();
 }
 
-jsbind::Promise PaymentRequest::abort() {
-    return EventTarget::call("abort").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> PaymentRequest::abort() {
+    return EventTarget::call("abort").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise PaymentRequest::canMakePayment() {
-    return EventTarget::call("canMakePayment").as<jsbind::Promise>();
+jsbind::Promise<bool> PaymentRequest::canMakePayment() {
+    return EventTarget::call("canMakePayment").as<jsbind::Promise<bool>>();
 }
 
 jsbind::DOMString PaymentRequest::id() const {
@@ -120,7 +120,7 @@ void PaymentRequest::onpaymentmethodchange(const jsbind::Any& value) {
     EventTarget::set("onpaymentmethodchange", value);
 }
 
-jsbind::Promise PaymentRequest::securePaymentConfirmationAvailability() {
-    return emlite::Val::global("paymentrequest").call("securePaymentConfirmationAvailability").as<jsbind::Promise>();
+jsbind::Promise<SecurePaymentConfirmationAvailability> PaymentRequest::securePaymentConfirmationAvailability() {
+    return emlite::Val::global("paymentrequest").call("securePaymentConfirmationAvailability").as<jsbind::Promise<SecurePaymentConfirmationAvailability>>();
 }
 

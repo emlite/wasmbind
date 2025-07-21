@@ -15,7 +15,7 @@ public:
     Credential clone() const noexcept;
     jsbind::USVString id() const;
     jsbind::DOMString type() const;
-    static jsbind::Promise isConditionalMediationAvailable();
-    static jsbind::Promise willRequestConditionalCreation();
+    static jsbind::Promise<bool> isConditionalMediationAvailable();
+    static jsbind::Promise<jsbind::Undefined> willRequestConditionalCreation();
 };
 

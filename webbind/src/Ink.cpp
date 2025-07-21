@@ -27,11 +27,11 @@ Ink::Ink(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Ink::Ink(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise Ink::requestPresenter() {
-    return emlite::Val::call("requestPresenter").as<jsbind::Promise>();
+jsbind::Promise<DelegatedInkTrailPresenter> Ink::requestPresenter() {
+    return emlite::Val::call("requestPresenter").as<jsbind::Promise<DelegatedInkTrailPresenter>>();
 }
 
-jsbind::Promise Ink::requestPresenter(const InkPresenterParam& param) {
-    return emlite::Val::call("requestPresenter", param).as<jsbind::Promise>();
+jsbind::Promise<DelegatedInkTrailPresenter> Ink::requestPresenter(const InkPresenterParam& param) {
+    return emlite::Val::call("requestPresenter", param).as<jsbind::Promise<DelegatedInkTrailPresenter>>();
 }
 

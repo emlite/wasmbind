@@ -32,7 +32,7 @@ FileSystemEntry DataTransferItem::webkitGetAsEntry() {
     return emlite::Val::call("webkitGetAsEntry").as<FileSystemEntry>();
 }
 
-jsbind::Promise DataTransferItem::getAsFileSystemHandle() {
-    return emlite::Val::call("getAsFileSystemHandle").as<jsbind::Promise>();
+jsbind::Promise<FileSystemHandle> DataTransferItem::getAsFileSystemHandle() {
+    return emlite::Val::call("getAsFileSystemHandle").as<jsbind::Promise<FileSystemHandle>>();
 }
 

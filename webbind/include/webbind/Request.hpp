@@ -42,11 +42,11 @@ public:
     IPAddressSpace targetAddressSpace() const;
     ReadableStream body() const;
     bool bodyUsed() const;
-    jsbind::Promise arrayBuffer();
-    jsbind::Promise blob();
-    jsbind::Promise bytes();
-    jsbind::Promise formData();
-    jsbind::Promise json();
-    jsbind::Promise text();
+    jsbind::Promise<jsbind::ArrayBuffer> arrayBuffer();
+    jsbind::Promise<Blob> blob();
+    jsbind::Promise<jsbind::Uint8Array> bytes();
+    jsbind::Promise<FormData> formData();
+    jsbind::Promise<jsbind::Any> json();
+    jsbind::Promise<jsbind::USVString> text();
 };
 

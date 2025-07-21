@@ -174,11 +174,11 @@ AttributionAggregationServices Attribution::aggregationServices() const {
     return emlite::Val::get("aggregationServices").as<AttributionAggregationServices>();
 }
 
-jsbind::Promise Attribution::saveImpression(const AttributionImpressionOptions& options) {
-    return emlite::Val::call("saveImpression", options).as<jsbind::Promise>();
+jsbind::Promise<AttributionImpressionResult> Attribution::saveImpression(const AttributionImpressionOptions& options) {
+    return emlite::Val::call("saveImpression", options).as<jsbind::Promise<AttributionImpressionResult>>();
 }
 
-jsbind::Promise Attribution::measureConversion(const AttributionConversionOptions& options) {
-    return emlite::Val::call("measureConversion", options).as<jsbind::Promise>();
+jsbind::Promise<AttributionConversionResult> Attribution::measureConversion(const AttributionConversionOptions& options) {
+    return emlite::Val::call("measureConversion", options).as<jsbind::Promise<AttributionConversionResult>>();
 }
 

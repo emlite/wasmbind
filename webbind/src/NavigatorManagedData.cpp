@@ -9,8 +9,8 @@ NavigatorManagedData::NavigatorManagedData(Handle h) noexcept : EventTarget(emli
 NavigatorManagedData::NavigatorManagedData(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Promise NavigatorManagedData::getManagedConfiguration(const jsbind::Sequence<jsbind::DOMString>& keys) {
-    return EventTarget::call("getManagedConfiguration", keys).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Record<jsbind::DOMString, jsbind::Object>> NavigatorManagedData::getManagedConfiguration(const jsbind::Sequence<jsbind::DOMString>& keys) {
+    return EventTarget::call("getManagedConfiguration", keys).as<jsbind::Promise<jsbind::Record<jsbind::DOMString, jsbind::Object>>>();
 }
 
 jsbind::Any NavigatorManagedData::onmanagedconfigurationchange() const {
@@ -21,23 +21,23 @@ void NavigatorManagedData::onmanagedconfigurationchange(const jsbind::Any& value
     EventTarget::set("onmanagedconfigurationchange", value);
 }
 
-jsbind::Promise NavigatorManagedData::getAnnotatedAssetId() {
-    return EventTarget::call("getAnnotatedAssetId").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> NavigatorManagedData::getAnnotatedAssetId() {
+    return EventTarget::call("getAnnotatedAssetId").as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise NavigatorManagedData::getAnnotatedLocation() {
-    return EventTarget::call("getAnnotatedLocation").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> NavigatorManagedData::getAnnotatedLocation() {
+    return EventTarget::call("getAnnotatedLocation").as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise NavigatorManagedData::getDirectoryId() {
-    return EventTarget::call("getDirectoryId").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> NavigatorManagedData::getDirectoryId() {
+    return EventTarget::call("getDirectoryId").as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise NavigatorManagedData::getHostname() {
-    return EventTarget::call("getHostname").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> NavigatorManagedData::getHostname() {
+    return EventTarget::call("getHostname").as<jsbind::Promise<jsbind::DOMString>>();
 }
 
-jsbind::Promise NavigatorManagedData::getSerialNumber() {
-    return EventTarget::call("getSerialNumber").as<jsbind::Promise>();
+jsbind::Promise<jsbind::DOMString> NavigatorManagedData::getSerialNumber() {
+    return EventTarget::call("getSerialNumber").as<jsbind::Promise<jsbind::DOMString>>();
 }
 

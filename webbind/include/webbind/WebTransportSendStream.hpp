@@ -37,7 +37,7 @@ public:
     void sendGroup(const WebTransportSendGroup& value);
     long long sendOrder() const;
     void sendOrder(long long value);
-    jsbind::Promise getStats();
+    jsbind::Promise<WebTransportSendStreamStats> getStats();
     WebTransportWriter getWriter();
 };
 

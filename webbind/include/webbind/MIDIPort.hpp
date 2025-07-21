@@ -25,7 +25,7 @@ public:
     MIDIPortConnectionState connection() const;
     jsbind::Any onstatechange() const;
     void onstatechange(const jsbind::Any& value);
-    jsbind::Promise open();
-    jsbind::Promise close();
+    jsbind::Promise<MIDIPort> open();
+    jsbind::Promise<MIDIPort> close();
 };
 

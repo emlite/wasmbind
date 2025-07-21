@@ -10,15 +10,15 @@ CookieStoreManager::CookieStoreManager(Handle h) noexcept : emlite::Val(emlite::
 CookieStoreManager::CookieStoreManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise CookieStoreManager::subscribe(const jsbind::Sequence<CookieStoreGetOptions>& subscriptions) {
-    return emlite::Val::call("subscribe", subscriptions).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> CookieStoreManager::subscribe(const jsbind::Sequence<CookieStoreGetOptions>& subscriptions) {
+    return emlite::Val::call("subscribe", subscriptions).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise CookieStoreManager::getSubscriptions() {
-    return emlite::Val::call("getSubscriptions").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<CookieStoreGetOptions>> CookieStoreManager::getSubscriptions() {
+    return emlite::Val::call("getSubscriptions").as<jsbind::Promise<jsbind::Sequence<CookieStoreGetOptions>>>();
 }
 
-jsbind::Promise CookieStoreManager::unsubscribe(const jsbind::Sequence<CookieStoreGetOptions>& subscriptions) {
-    return emlite::Val::call("unsubscribe", subscriptions).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> CookieStoreManager::unsubscribe(const jsbind::Sequence<CookieStoreGetOptions>& subscriptions) {
+    return emlite::Val::call("unsubscribe", subscriptions).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

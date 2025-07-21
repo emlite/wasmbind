@@ -58,8 +58,8 @@ jsbind::ArrayBuffer PushSubscription::getKey(const PushEncryptionKeyName& name) 
     return emlite::Val::call("getKey", name).as<jsbind::ArrayBuffer>();
 }
 
-jsbind::Promise PushSubscription::unsubscribe() {
-    return emlite::Val::call("unsubscribe").as<jsbind::Promise>();
+jsbind::Promise<bool> PushSubscription::unsubscribe() {
+    return emlite::Val::call("unsubscribe").as<jsbind::Promise<bool>>();
 }
 
 PushSubscriptionJSON PushSubscription::toJSON() {

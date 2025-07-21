@@ -35,8 +35,8 @@ public:
     ScreenIdleState screenState() const;
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);
-    static jsbind::Promise requestPermission();
-    jsbind::Promise start();
-    jsbind::Promise start(const IdleOptions& options);
+    static jsbind::Promise<PermissionState> requestPermission();
+    jsbind::Promise<jsbind::Undefined> start();
+    jsbind::Promise<jsbind::Undefined> start(const IdleOptions& options);
 };
 

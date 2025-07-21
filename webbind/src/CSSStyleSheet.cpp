@@ -35,8 +35,8 @@ jsbind::Undefined CSSStyleSheet::deleteRule(unsigned long index) {
     return StyleSheet::call("deleteRule", index).as<jsbind::Undefined>();
 }
 
-jsbind::Promise CSSStyleSheet::replace(const jsbind::USVString& text) {
-    return StyleSheet::call("replace", text).as<jsbind::Promise>();
+jsbind::Promise<CSSStyleSheet> CSSStyleSheet::replace(const jsbind::USVString& text) {
+    return StyleSheet::call("replace", text).as<jsbind::Promise<CSSStyleSheet>>();
 }
 
 jsbind::Undefined CSSStyleSheet::replaceSync(const jsbind::USVString& text) {

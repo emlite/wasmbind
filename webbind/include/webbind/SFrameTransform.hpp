@@ -20,8 +20,8 @@ public:
     SFrameTransform clone() const noexcept;
     SFrameTransform();
     SFrameTransform(const jsbind::Any& options);
-    jsbind::Promise setEncryptionKey(const CryptoKey& key);
-    jsbind::Promise setEncryptionKey(const CryptoKey& key, const jsbind::Any& keyID);
+    jsbind::Promise<jsbind::Undefined> setEncryptionKey(const CryptoKey& key);
+    jsbind::Promise<jsbind::Undefined> setEncryptionKey(const CryptoKey& key, const jsbind::Any& keyID);
     jsbind::Any onerror() const;
     void onerror(const jsbind::Any& value);
     ReadableStream readable() const;

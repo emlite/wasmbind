@@ -29,6 +29,6 @@ public:
     BeforeInstallPromptEvent clone() const noexcept;
     BeforeInstallPromptEvent(const jsbind::DOMString& type);
     BeforeInstallPromptEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::Promise prompt();
+    jsbind::Promise<PromptResponseObject> prompt();
 };
 

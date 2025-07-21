@@ -15,8 +15,8 @@ public:
     static Permissions take_ownership(Handle h) noexcept;
 
     Permissions clone() const noexcept;
-    jsbind::Promise query(const jsbind::Object& permissionDesc);
-    jsbind::Promise request(const jsbind::Object& permissionDesc);
-    jsbind::Promise revoke(const jsbind::Object& permissionDesc);
+    jsbind::Promise<PermissionStatus> query(const jsbind::Object& permissionDesc);
+    jsbind::Promise<PermissionStatus> request(const jsbind::Object& permissionDesc);
+    jsbind::Promise<PermissionStatus> revoke(const jsbind::Object& permissionDesc);
 };
 

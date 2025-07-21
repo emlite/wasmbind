@@ -12,16 +12,16 @@ OfflineAudioContext::OfflineAudioContext(const emlite::Val &val) noexcept: BaseA
 
 OfflineAudioContext::OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate) : BaseAudioContext(emlite::Val::global("OfflineAudioContext").new_(numberOfChannels, length, sampleRate)) {}
 
-jsbind::Promise OfflineAudioContext::startRendering() {
-    return BaseAudioContext::call("startRendering").as<jsbind::Promise>();
+jsbind::Promise<AudioBuffer> OfflineAudioContext::startRendering() {
+    return BaseAudioContext::call("startRendering").as<jsbind::Promise<AudioBuffer>>();
 }
 
-jsbind::Promise OfflineAudioContext::resume() {
-    return BaseAudioContext::call("resume").as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> OfflineAudioContext::resume() {
+    return BaseAudioContext::call("resume").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise OfflineAudioContext::suspend(double suspendTime) {
-    return BaseAudioContext::call("suspend", suspendTime).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Undefined> OfflineAudioContext::suspend(double suspendTime) {
+    return BaseAudioContext::call("suspend", suspendTime).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 unsigned long OfflineAudioContext::length() const {

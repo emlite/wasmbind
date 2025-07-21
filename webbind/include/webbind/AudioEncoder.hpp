@@ -57,9 +57,9 @@ public:
     void ondequeue(const jsbind::Any& value);
     jsbind::Undefined configure(const AudioEncoderConfig& config);
     jsbind::Undefined encode(const AudioData& data);
-    jsbind::Promise flush();
+    jsbind::Promise<jsbind::Undefined> flush();
     jsbind::Undefined reset();
     jsbind::Undefined close();
-    static jsbind::Promise isConfigSupported(const AudioEncoderConfig& config);
+    static jsbind::Promise<AudioEncoderSupport> isConfigSupported(const AudioEncoderConfig& config);
 };
 

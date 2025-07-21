@@ -76,8 +76,8 @@ public:
     VideoFrameMetadata metadata();
     unsigned long allocationSize();
     unsigned long allocationSize(const VideoFrameCopyToOptions& options);
-    jsbind::Promise copyTo(const jsbind::Any& destination);
-    jsbind::Promise copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options);
+    jsbind::Promise<jsbind::Sequence<PlaneLayout>> copyTo(const jsbind::Any& destination);
+    jsbind::Promise<jsbind::Sequence<PlaneLayout>> copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options);
     VideoFrame clone();
     jsbind::Undefined close();
 };

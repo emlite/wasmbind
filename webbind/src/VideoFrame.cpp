@@ -145,12 +145,12 @@ unsigned long VideoFrame::allocationSize(const VideoFrameCopyToOptions& options)
     return emlite::Val::call("allocationSize", options).as<unsigned long>();
 }
 
-jsbind::Promise VideoFrame::copyTo(const jsbind::Any& destination) {
-    return emlite::Val::call("copyTo", destination).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<PlaneLayout>> VideoFrame::copyTo(const jsbind::Any& destination) {
+    return emlite::Val::call("copyTo", destination).as<jsbind::Promise<jsbind::Sequence<PlaneLayout>>>();
 }
 
-jsbind::Promise VideoFrame::copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options) {
-    return emlite::Val::call("copyTo", destination, options).as<jsbind::Promise>();
+jsbind::Promise<jsbind::Sequence<PlaneLayout>> VideoFrame::copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options) {
+    return emlite::Val::call("copyTo", destination, options).as<jsbind::Promise<jsbind::Sequence<PlaneLayout>>>();
 }
 
 VideoFrame VideoFrame::clone() {

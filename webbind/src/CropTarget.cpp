@@ -10,7 +10,7 @@ CropTarget::CropTarget(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 CropTarget::CropTarget(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise CropTarget::fromElement(const Element& element) {
-    return emlite::Val::global("croptarget").call("fromElement", element).as<jsbind::Promise>();
+jsbind::Promise<CropTarget> CropTarget::fromElement(const Element& element) {
+    return emlite::Val::global("croptarget").call("fromElement", element).as<jsbind::Promise<CropTarget>>();
 }
 

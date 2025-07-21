@@ -20,7 +20,7 @@ public:
     double beta() const;
     double gamma() const;
     bool absolute() const;
-    static jsbind::Promise requestPermission();
-    static jsbind::Promise requestPermission(bool absolute);
+    static jsbind::Promise<PermissionState> requestPermission();
+    static jsbind::Promise<PermissionState> requestPermission(bool absolute);
 };
 

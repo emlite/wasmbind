@@ -29,11 +29,11 @@ bool DeviceOrientationEvent::absolute() const {
     return Event::get("absolute").as<bool>();
 }
 
-jsbind::Promise DeviceOrientationEvent::requestPermission() {
-    return emlite::Val::global("deviceorientationevent").call("requestPermission").as<jsbind::Promise>();
+jsbind::Promise<PermissionState> DeviceOrientationEvent::requestPermission() {
+    return emlite::Val::global("deviceorientationevent").call("requestPermission").as<jsbind::Promise<PermissionState>>();
 }
 
-jsbind::Promise DeviceOrientationEvent::requestPermission(bool absolute) {
-    return emlite::Val::global("deviceorientationevent").call("requestPermission", absolute).as<jsbind::Promise>();
+jsbind::Promise<PermissionState> DeviceOrientationEvent::requestPermission(bool absolute) {
+    return emlite::Val::global("deviceorientationevent").call("requestPermission", absolute).as<jsbind::Promise<PermissionState>>();
 }
 

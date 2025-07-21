@@ -69,12 +69,12 @@ public:
     static Writer take_ownership(Handle h) noexcept;
 
     Writer clone() const noexcept;
-    static jsbind::Promise create();
-    static jsbind::Promise create(const WriterCreateOptions& options);
-    static jsbind::Promise availability();
-    static jsbind::Promise availability(const WriterCreateCoreOptions& options);
-    jsbind::Promise write(const jsbind::DOMString& input);
-    jsbind::Promise write(const jsbind::DOMString& input, const WriterWriteOptions& options);
+    static jsbind::Promise<Writer> create();
+    static jsbind::Promise<Writer> create(const WriterCreateOptions& options);
+    static jsbind::Promise<Availability> availability();
+    static jsbind::Promise<Availability> availability(const WriterCreateCoreOptions& options);
+    jsbind::Promise<jsbind::DOMString> write(const jsbind::DOMString& input);
+    jsbind::Promise<jsbind::DOMString> write(const jsbind::DOMString& input, const WriterWriteOptions& options);
     ReadableStream writeStreaming(const jsbind::DOMString& input);
     ReadableStream writeStreaming(const jsbind::DOMString& input, const WriterWriteOptions& options);
     jsbind::DOMString sharedContext() const;
@@ -84,8 +84,8 @@ public:
     jsbind::FrozenArray<jsbind::DOMString> expectedInputLanguages() const;
     jsbind::FrozenArray<jsbind::DOMString> expectedContextLanguages() const;
     jsbind::DOMString outputLanguage() const;
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise measureInputUsage(const jsbind::DOMString& input, const WriterWriteOptions& options);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const WriterWriteOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };
