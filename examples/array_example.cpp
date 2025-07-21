@@ -13,5 +13,9 @@ int main() {
     for (size_t i = 0; i < arr.size(); ++i) {
         console.log(arr[i]);
     }
+    jsbind::Array arr2; // Default constructed
+    arr2.push(1);
+    arr2.push(2);
+    arr2.push(3);
     return 0;
 }
