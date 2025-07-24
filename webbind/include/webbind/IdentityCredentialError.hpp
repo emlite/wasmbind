@@ -1,3 +1,5 @@
+#pragma once
+
 #include <jsbind/jsbind.hpp>
 #include "DOMException.hpp"
 
