@@ -1,16 +1,18 @@
 # -DWEBBIND_FEATURES=HTMLFormElement,HTMLDivElement,SVGElement or ALL
 set(WEBBIND_FEATURES "" CACHE STRING
     "Comma/semicolon separated list of feature file stems (e.g. HTMLFormElement,HTMLDivElement). \
-Empty => build only the baseline. Use ALL to build everything.")
+Empty => build only the passed features. Use ALL to build everything.")
 
 file(GLOB WEBBIND_HEADERS CONFIGURE_DEPENDS "include/webbind/*.hpp")
 file(GLOB WEBBIND_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 
-set(WEBBIND_BASELINE_SOURCES
+# This is here for testing purposes!
+set(WEBBIND_HTMLSOURCES
     src/EventTarget.cpp
     src/Node.cpp
     src/Element.cpp
     src/HTMLElement.cpp
+    src/HTMLButtonElement.cpp
     src/HTMLCollection.cpp
     src/Document.cpp
     src/Window.cpp
@@ -27,17 +29,10 @@ set(WEBBIND_BASELINE_SOURCES
 
 set(_webbind_sources_to_build "")
 
-if(NOT WEBBIND_FEATURES OR WEBBIND_FEATURES STREQUAL "")
-    # Default: All
-    set(_webbind_sources_to_build "${WEBBIND_SOURCES}")
-    message(STATUS "webbind: WEBBIND_FEATURES not set -> building baseline only.")
-elseif(WEBBIND_FEATURES STREQUAL "ALL")
-    # Build everything
-    set(_webbind_sources_to_build "${WEBBIND_SOURCES}")
-    message(STATUS "webbind: WEBBIND_FEATURES=ALL -> building all sources (${CMAKE_CURRENT_LIST_DIR}/src/*.cpp).")
+if(NOT WEBBIND_FEATURES OR WEBBIND_FEATURES STREQUAL "" OR WEBBIND_FEATURES STREQUAL "ALL")
+    list(APPEND _webbind_sources_to_build ${WEBBIND_SOURCES})
 else()
     string(REPLACE "," ";" WEBBIND_FEATURES_LIST "${WEBBIND_FEATURES}")
-    set(_webbind_sources_to_build "${WEBBIND_BASELINE_SOURCES}")
 
     foreach(stem IN LISTS WEBBIND_FEATURES_LIST)
         string(STRIP "${stem}" stem)
@@ -55,13 +50,7 @@ else()
     endforeach()
 
     list(REMOVE_DUPLICATES _webbind_sources_to_build)
-    message(STATUS "webbind: building baseline + requested features (${WEBBIND_FEATURES}):")
-endif()
-
-if(CMAKE_VERBOSE_MAKEFILE)
-    foreach(f IN LISTS _webbind_sources_to_build)
-        message(STATUS "  ${f}")
-    endforeach()
+    message(STATUS "webbind: building requested features (${WEBBIND_FEATURES}).")
 endif()
 
 add_library(webbind)
