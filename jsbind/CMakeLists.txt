@@ -56,7 +56,7 @@ target_sources(jsbind
         FILES ${JSBIND_HEADERS}
 )
 
-target_compile_features(jsbind PUBLIC cxx_std_17)
+target_compile_features(jsbind PUBLIC cxx_std_20)
 target_link_libraries(jsbind PUBLIC emlite::emlite)
 
 add_library(jsbind::jsbind ALIAS jsbind)

@@ -4,6 +4,11 @@
 #include "Sequence.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
+#if __has_include(<string>)
+#define JSBIND_HAS_STD_STRING 1
+#include <string>
+#include <string_view>
+#endif
 
 namespace jsbind {
 
@@ -16,7 +21,11 @@ class String : public emlite::Val {
     String() noexcept;
 
     explicit String(const char *utf8);
-
+#if JSBIND_HAS_STD_STRING
+    explicit String(const std::string &utf8);
+    explicit String(std::string_view utf8);
+    [[nodiscard]] std::string to_std_string() const;
+#endif
     [[nodiscard]] size_t size() const;
     [[nodiscard]] bool empty() const;
 

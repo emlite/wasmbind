@@ -7,6 +7,20 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#if __has_include(<span>)
+#include <span>
+#include <vector>
+#define EM_HAVE_STD_SPAN 1
+#else
+#define EM_HAVE_STD_SPAN 0
+#endif
+
+#if EM_HAVE_STD_SPAN
+#define EM_IF_STD_SPAN(code) code
+#else
+#define EM_IF_STD_SPAN(code)
+#endif
+
 namespace jsbind {
 class ArrayBuffer : public emlite::Val {
     explicit ArrayBuffer(Handle h) noexcept;

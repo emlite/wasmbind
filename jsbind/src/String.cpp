@@ -1,3 +1,4 @@
+#include <emlite/emlite.hpp>
 #include <jsbind/String.hpp>
 
 using namespace jsbind;
@@ -14,6 +15,21 @@ String::String(const emlite::Val &v) noexcept
 String::String() noexcept : emlite::Val("") {}
 
 String::String(const char *s) : emlite::Val(s) {}
+
+#if JSBIND_HAS_STD_STRING
+String::String(const std::string &utf8)
+    : emlite::Val(utf8.c_str()) {}
+
+String::String(std::string_view utf8)
+    : emlite::Val(emlite::Val::take_ownership(
+          emlite_val_make_str(utf8.data(), utf8.size())
+      )) {}
+
+std::string String::to_std_string() const {
+    return as<Uniq<char[]>>().get();
+}
+#endif
+
 size_t String::size() const {
     return strlen(as<Uniq<char[]>>().get());
 }

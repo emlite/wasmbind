@@ -39,6 +39,11 @@
             size_t begin, size_t end = SIZE_MAX            \
         ) const;                                           \
         static name from(int_ty *arr, size_t len);         \
+        EM_IF_STD_SPAN(                                    \
+            static name from(std::span<int_ty> s);         \
+        )                                                  \
+        EM_IF_STD_SPAN(std::vector<int_ty> to_vector()     \
+                           const;)                         \
         DECLARE_CLONE(name)                                \
     };
 
@@ -69,4 +74,15 @@
             emlite::Val::global(#name).call("from", temp)  \
         );                                                 \
     }                                                      \
+    EM_IF_STD_SPAN(name name::from(std::span<int_ty> s) {  \
+        return from(s.data(), s.size());                   \
+    })                                                     \
+    EM_IF_STD_SPAN(std::vector<int_ty> name::to_vector(    \
+    ) const {                                              \
+        std::vector<int_ty> vec;                           \
+        for (size_t i = 0; i < this->size(); i++) {        \
+            vec.push_back(this->get(i).as<int_ty>());      \
+        }                                                  \
+        return vec;                                        \
+    })                                                     \
     DEFINE_CLONE(name)

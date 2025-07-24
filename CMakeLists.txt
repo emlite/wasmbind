@@ -1,19 +1,27 @@
 cmake_minimum_required(VERSION 3.20)
 project(wasmbind)
 
-include(FetchContent)
+find_package(emlite QUIET CONFIG)
 
-FetchContent_Declare(
+if (NOT emlite_FOUND)
+  include(FetchContent)
+  FetchContent_Declare(
     emlite
     GIT_REPOSITORY https://github.com/emlite/emlite-cpp.git
     GIT_TAG main
-    GIT_SHALLOW True
-)
+    GIT_SHALLOW TRUE
+  )
+  FetchContent_MakeAvailable(emlite)
+endif()
 
-FetchContent_MakeAvailable(emlite)
+option(WASMBIND_BUILD_WEBBIND  "Build webbind library"  ON)
+option(WASMBIND_BUILD_EXAMPLES "Build examples"        OFF)
 
 add_subdirectory(jsbind)
-add_subdirectory(webbind)
+
+if (WASMBIND_BUILD_WEBBIND)
+    add_subdirectory(webbind)
+endif()
 
 if (WASMBIND_BUILD_EXAMPLES)
     add_subdirectory(examples)
