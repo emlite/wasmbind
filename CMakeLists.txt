@@ -15,7 +15,10 @@ if (NOT emlite_FOUND)
 endif()
 
 option(WASMBIND_BUILD_WEBBIND  "Build webbind library"  ON)
-option(WASMBIND_BUILD_EXAMPLES "Build examples"        OFF)
+
+if (PROJECT_IS_TOP_LEVEL)
+  option(WASMBIND_BUILD_EXAMPLES "Build examples" OFF)
+endif()
 
 add_subdirectory(jsbind)
 

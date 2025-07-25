@@ -27,11 +27,54 @@ set(WEBBIND_HTMLSOURCES
     src/window.cpp
 )
 
-set(_webbind_sources_to_build "")
+set(WEBBIND_BASELINE_SOURCES src/enums.cpp)
+
+include("${CMAKE_CURRENT_LIST_DIR}/cmake/feature_map.cmake")
+
+# Look up a feature 'stem' in WEBBIND_FEATURE_MAP, else fallback to src/<stem>.cpp
+function(webbind_feature_files stem out_var)
+    set(found FALSE)
+    list(LENGTH WEBBIND_FEATURE_MAP _len)
+    math(EXPR _last "${_len} - 1")
+    foreach(i RANGE 0 ${_last} 2)
+        list(GET WEBBIND_FEATURE_MAP ${i}     key)
+        list(GET WEBBIND_FEATURE_MAP ${i + 1} val)
+        if(key STREQUAL "${stem}")
+            # val is already a ';'-separated list
+            set(files)
+            foreach(v IN LISTS val)
+                if(IS_ABSOLUTE "${v}")
+                    list(APPEND files "${v}")
+                else()
+                    list(APPEND files "${CMAKE_CURRENT_LIST_DIR}/src/${v}")
+                endif()
+            endforeach()
+            set(found TRUE)
+            break()
+        endif()
+    endforeach()
+
+    if(NOT found)
+        set(candidate "${CMAKE_CURRENT_LIST_DIR}/src/${stem}.cpp")
+        if(EXISTS "${candidate}")
+            set(files "${candidate}")
+        else()
+            message(FATAL_ERROR
+                "Feature '${stem}' not in WEBBIND_FEATURE_MAP and file '${candidate}' does not exist")
+        endif()
+    endif()
+
+    list(REMOVE_DUPLICATES files)
+    set(${out_var} "${files}" PARENT_SCOPE)
+endfunction()
+
+set(WEBBIND_FINAL_SOURCES)
 
 if(NOT WEBBIND_FEATURES OR WEBBIND_FEATURES STREQUAL "" OR WEBBIND_FEATURES STREQUAL "ALL")
-    list(APPEND _webbind_sources_to_build ${WEBBIND_SOURCES})
+    list(APPEND WEBBIND_FINAL_SOURCES ${WEBBIND_SOURCES})
+    message(STATUS "webbind: WEBBIND_FEATURES empty/ALL -> building all sources.")
 else()
+    list(APPEND WEBBIND_FINAL_SOURCES ${WEBBIND_BASELINE_SOURCES})
     string(REPLACE "," ";" WEBBIND_FEATURES_LIST "${WEBBIND_FEATURES}")
 
     foreach(stem IN LISTS WEBBIND_FEATURES_LIST)
@@ -40,24 +83,25 @@ else()
             continue()
         endif()
 
-        set(file "${CMAKE_CURRENT_LIST_DIR}/src/${stem}.cpp")
-        if(EXISTS "${file}")
-            list(APPEND _webbind_sources_to_build "${file}")
-        else()
-            message(FATAL_ERROR
-                "WEBBIND_FEATURES requested '${stem}', but file '${file}' does not exist")
-        endif()
+        webbind_feature_files("${stem}" files)
+        list(APPEND WEBBIND_FINAL_SOURCES ${files})
     endforeach()
 
-    list(REMOVE_DUPLICATES _webbind_sources_to_build)
-    message(STATUS "webbind: building requested features (${WEBBIND_FEATURES}).")
+    list(REMOVE_DUPLICATES WEBBIND_FINAL_SOURCES)
+    message(STATUS "webbind: building baseline + requested features (${WEBBIND_FEATURES}).")
+endif()
+
+if(CMAKE_VERBOSE_MAKEFILE)
+    foreach(f IN LISTS WEBBIND_FINAL_SOURCES)
+        message(STATUS "  ${f}")
+    endforeach()
 endif()
 
 add_library(webbind)
 
 target_sources(webbind 
     PRIVATE 
-       ${_webbind_sources_to_build}
+       ${WEBBIND_BASELINE_SOURCES}
     PUBLIC 
         FILE_SET HEADERS
         BASE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include
