@@ -98,7 +98,7 @@ add_library(webbind)
 
 target_sources(webbind 
     PRIVATE 
-       ${WEBBIND_BASELINE_SOURCES}
+       ${WEBBIND_FINAL_SOURCES}
     PUBLIC 
         FILE_SET HEADERS
         BASE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include
