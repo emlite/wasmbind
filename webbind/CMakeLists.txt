@@ -29,7 +29,7 @@ set(WEBBIND_HTMLSOURCES
 
 set(WEBBIND_BASELINE_SOURCES src/enums.cpp)
 
-include("${CMAKE_CURRENT_LIST_DIR}/cmake/feature_map.cmake")
+include(cmake/feature_map.cmake)
 
 # Look up a feature 'stem' in WEBBIND_FEATURE_MAP, else fallback to src/<stem>.cpp
 function(webbind_feature_files stem out_var)
@@ -38,16 +38,13 @@ function(webbind_feature_files stem out_var)
     math(EXPR _last "${_len} - 1")
     foreach(i RANGE 0 ${_last} 2)
         list(GET WEBBIND_FEATURE_MAP ${i}     key)
-        list(GET WEBBIND_FEATURE_MAP ${i + 1} val)
+        math(EXPR j "${idx} + 1")
+        list(GET WEBBIND_FEATURE_MAP ${j}   val)
         if(key STREQUAL "${stem}")
             # val is already a ';'-separated list
             set(files)
             foreach(v IN LISTS val)
-                if(IS_ABSOLUTE "${v}")
-                    list(APPEND files "${v}")
-                else()
-                    list(APPEND files "${CMAKE_CURRENT_LIST_DIR}/src/${v}")
-                endif()
+                list(APPEND files "${CMAKE_CURRENT_LIST_DIR}/src/${v}")
             endforeach()
             set(found TRUE)
             break()
