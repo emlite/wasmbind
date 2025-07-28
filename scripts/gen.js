@@ -244,7 +244,7 @@ export function generate(specAst) {
       );
       src.push(`${e.name} ${e.name}::clone() const noexcept { return *this; }`);
       for (const v of e.values) {
-        hdr.push(`  static const ${e.name} ${fixIdent(v.value)};`);
+        hdr.push(`  static const ${e.name} ${fixIdent(v.value)}();`);
       }
       hdr.push("};", "");
     }
@@ -252,9 +252,9 @@ export function generate(specAst) {
     for (const e of enums.values()) {
       for (const v of e.values) {
         src.push(
-          `const ${e.name} ${e.name}::${fixIdent(v.value)}{ emlite::Val("${
+          `const ${e.name} ${e.name}::${fixIdent(v.value)}(){ return ${e.name}(emlite::Val("${
             v.value
-          }") };`
+          }")); };`
         );
       }
     }

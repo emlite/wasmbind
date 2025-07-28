@@ -6,7 +6,7 @@ using jsbind::Function;
 int main() {
     AudioContext context;
     OscillatorNode oscillator(context);
-    oscillator.type(OscillatorType::triangle);
+    oscillator.type(OscillatorType::triangle());
     oscillator.frequency().value(261.63); // Middle C
 
     auto document = window().document();
