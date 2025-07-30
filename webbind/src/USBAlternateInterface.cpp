@@ -29,11 +29,11 @@ unsigned char USBAlternateInterface::interfaceProtocol() const {
     return emlite::Val::get("interfaceProtocol").as<unsigned char>();
 }
 
-jsbind::DOMString USBAlternateInterface::interfaceName() const {
-    return emlite::Val::get("interfaceName").as<jsbind::DOMString>();
+jsbind::String USBAlternateInterface::interfaceName() const {
+    return emlite::Val::get("interfaceName").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<USBEndpoint> USBAlternateInterface::endpoints() const {
-    return emlite::Val::get("endpoints").as<jsbind::FrozenArray<USBEndpoint>>();
+jsbind::TypedArray<USBEndpoint> USBAlternateInterface::endpoints() const {
+    return emlite::Val::get("endpoints").as<jsbind::TypedArray<USBEndpoint>>();
 }
 

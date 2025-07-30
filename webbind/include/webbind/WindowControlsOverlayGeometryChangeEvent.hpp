@@ -16,7 +16,7 @@ public:
     static WindowControlsOverlayGeometryChangeEvent take_ownership(Handle h) noexcept;
 
     WindowControlsOverlayGeometryChangeEvent clone() const noexcept;
-    WindowControlsOverlayGeometryChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    WindowControlsOverlayGeometryChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     DOMRect titlebarAreaRect() const;
     bool visible() const;
 };

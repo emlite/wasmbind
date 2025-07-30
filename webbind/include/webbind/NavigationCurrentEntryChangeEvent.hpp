@@ -16,7 +16,7 @@ public:
     static NavigationCurrentEntryChangeEvent take_ownership(Handle h) noexcept;
 
     NavigationCurrentEntryChangeEvent clone() const noexcept;
-    NavigationCurrentEntryChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    NavigationCurrentEntryChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     NavigationType navigationType() const;
     NavigationHistoryEntry from() const;
 };

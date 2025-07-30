@@ -15,8 +15,8 @@ public:
 
     HTMLDetailsElement clone() const noexcept;
     HTMLDetailsElement();
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
     bool open() const;
     void open(bool value);
 };

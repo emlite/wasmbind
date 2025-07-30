@@ -19,8 +19,8 @@ public:
     HighlightHitResult clone() const noexcept;
     Highlight highlight() const;
     void highlight(const Highlight& value);
-    jsbind::Sequence<AbstractRange> ranges() const;
-    void ranges(const jsbind::Sequence<AbstractRange>& value);
+    jsbind::TypedArray<AbstractRange> ranges() const;
+    void ranges(const jsbind::TypedArray<AbstractRange>& value);
 };
 
 class HighlightsFromPointOptions : public emlite::Val {
@@ -30,8 +30,8 @@ public:
     explicit HighlightsFromPointOptions(const emlite::Val &val) noexcept;
     HighlightsFromPointOptions() noexcept;
     HighlightsFromPointOptions clone() const noexcept;
-    jsbind::Sequence<ShadowRoot> shadowRoots() const;
-    void shadowRoots(const jsbind::Sequence<ShadowRoot>& value);
+    jsbind::TypedArray<ShadowRoot> shadowRoots() const;
+    void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
 };
 
 class HighlightRegistry : public emlite::Val {
@@ -42,7 +42,7 @@ public:
     static HighlightRegistry take_ownership(Handle h) noexcept;
 
     HighlightRegistry clone() const noexcept;
-    jsbind::Sequence<HighlightHitResult> highlightsFromPoint(float x, float y);
-    jsbind::Sequence<HighlightHitResult> highlightsFromPoint(float x, float y, const HighlightsFromPointOptions& options);
+    jsbind::TypedArray<HighlightHitResult> highlightsFromPoint(float x, float y);
+    jsbind::TypedArray<HighlightHitResult> highlightsFromPoint(float x, float y, const HighlightsFromPointOptions& options);
 };
 

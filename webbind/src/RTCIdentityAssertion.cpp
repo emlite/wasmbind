@@ -9,21 +9,21 @@ RTCIdentityAssertion::RTCIdentityAssertion(Handle h) noexcept : emlite::Val(emli
 RTCIdentityAssertion::RTCIdentityAssertion(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-RTCIdentityAssertion::RTCIdentityAssertion(const jsbind::DOMString& idp, const jsbind::DOMString& name) : emlite::Val(emlite::Val::global("RTCIdentityAssertion").new_(idp, name)) {}
+RTCIdentityAssertion::RTCIdentityAssertion(const jsbind::String& idp, const jsbind::String& name) : emlite::Val(emlite::Val::global("RTCIdentityAssertion").new_(idp, name)) {}
 
-jsbind::DOMString RTCIdentityAssertion::idp() const {
-    return emlite::Val::get("idp").as<jsbind::DOMString>();
+jsbind::String RTCIdentityAssertion::idp() const {
+    return emlite::Val::get("idp").as<jsbind::String>();
 }
 
-void RTCIdentityAssertion::idp(const jsbind::DOMString& value) {
+void RTCIdentityAssertion::idp(const jsbind::String& value) {
     emlite::Val::set("idp", value);
 }
 
-jsbind::DOMString RTCIdentityAssertion::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String RTCIdentityAssertion::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void RTCIdentityAssertion::name(const jsbind::DOMString& value) {
+void RTCIdentityAssertion::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 

@@ -9,7 +9,7 @@ TrustedHTML::TrustedHTML(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 TrustedHTML::TrustedHTML(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString TrustedHTML::toJSON() {
-    return emlite::Val::call("toJSON").as<jsbind::DOMString>();
+jsbind::String TrustedHTML::toJSON() {
+    return emlite::Val::call("toJSON").as<jsbind::String>();
 }
 

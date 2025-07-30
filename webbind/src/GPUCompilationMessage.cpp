@@ -9,8 +9,8 @@ GPUCompilationMessage::GPUCompilationMessage(Handle h) noexcept : emlite::Val(em
 GPUCompilationMessage::GPUCompilationMessage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString GPUCompilationMessage::message() const {
-    return emlite::Val::get("message").as<jsbind::DOMString>();
+jsbind::String GPUCompilationMessage::message() const {
+    return emlite::Val::get("message").as<jsbind::String>();
 }
 
 GPUCompilationMessageType GPUCompilationMessage::type() const {

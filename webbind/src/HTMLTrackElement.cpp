@@ -12,35 +12,35 @@ HTMLTrackElement::HTMLTrackElement(const emlite::Val &val) noexcept: HTMLElement
 
 HTMLTrackElement::HTMLTrackElement() : HTMLElement(emlite::Val::global("HTMLTrackElement").new_()) {}
 
-jsbind::DOMString HTMLTrackElement::kind() const {
-    return HTMLElement::get("kind").as<jsbind::DOMString>();
+jsbind::String HTMLTrackElement::kind() const {
+    return HTMLElement::get("kind").as<jsbind::String>();
 }
 
-void HTMLTrackElement::kind(const jsbind::DOMString& value) {
+void HTMLTrackElement::kind(const jsbind::String& value) {
     HTMLElement::set("kind", value);
 }
 
-jsbind::USVString HTMLTrackElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLTrackElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLTrackElement::src(const jsbind::USVString& value) {
+void HTMLTrackElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
-jsbind::DOMString HTMLTrackElement::srclang() const {
-    return HTMLElement::get("srclang").as<jsbind::DOMString>();
+jsbind::String HTMLTrackElement::srclang() const {
+    return HTMLElement::get("srclang").as<jsbind::String>();
 }
 
-void HTMLTrackElement::srclang(const jsbind::DOMString& value) {
+void HTMLTrackElement::srclang(const jsbind::String& value) {
     HTMLElement::set("srclang", value);
 }
 
-jsbind::DOMString HTMLTrackElement::label() const {
-    return HTMLElement::get("label").as<jsbind::DOMString>();
+jsbind::String HTMLTrackElement::label() const {
+    return HTMLElement::get("label").as<jsbind::String>();
 }
 
-void HTMLTrackElement::label(const jsbind::DOMString& value) {
+void HTMLTrackElement::label(const jsbind::String& value) {
     HTMLElement::set("label", value);
 }
 

@@ -14,6 +14,6 @@ public:
     static CSSAnimation take_ownership(Handle h) noexcept;
 
     CSSAnimation clone() const noexcept;
-    jsbind::CSSOMString animationName() const;
+    jsbind::String animationName() const;
 };
 

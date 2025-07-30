@@ -17,22 +17,22 @@ Text::Text(const emlite::Val &val) noexcept: CharacterData(val) {}
 
 Text::Text() : CharacterData(emlite::Val::global("Text").new_()) {}
 
-Text::Text(const jsbind::DOMString& data) : CharacterData(emlite::Val::global("Text").new_(data)) {}
+Text::Text(const jsbind::String& data) : CharacterData(emlite::Val::global("Text").new_(data)) {}
 
 Text Text::splitText(unsigned long offset) {
     return CharacterData::call("splitText", offset).as<Text>();
 }
 
-jsbind::DOMString Text::wholeText() const {
-    return CharacterData::get("wholeText").as<jsbind::DOMString>();
+jsbind::String Text::wholeText() const {
+    return CharacterData::get("wholeText").as<jsbind::String>();
 }
 
-jsbind::Sequence<DOMQuad> Text::getBoxQuads() {
-    return CharacterData::call("getBoxQuads").as<jsbind::Sequence<DOMQuad>>();
+jsbind::TypedArray<DOMQuad> Text::getBoxQuads() {
+    return CharacterData::call("getBoxQuads").as<jsbind::TypedArray<DOMQuad>>();
 }
 
-jsbind::Sequence<DOMQuad> Text::getBoxQuads(const BoxQuadOptions& options) {
-    return CharacterData::call("getBoxQuads", options).as<jsbind::Sequence<DOMQuad>>();
+jsbind::TypedArray<DOMQuad> Text::getBoxQuads(const BoxQuadOptions& options) {
+    return CharacterData::call("getBoxQuads", options).as<jsbind::TypedArray<DOMQuad>>();
 }
 
 DOMQuad Text::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from) {

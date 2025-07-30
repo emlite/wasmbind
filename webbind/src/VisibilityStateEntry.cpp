@@ -9,12 +9,12 @@ VisibilityStateEntry::VisibilityStateEntry(Handle h) noexcept : PerformanceEntry
 VisibilityStateEntry::VisibilityStateEntry(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 
 
-jsbind::DOMString VisibilityStateEntry::name() const {
-    return PerformanceEntry::get("name").as<jsbind::DOMString>();
+jsbind::String VisibilityStateEntry::name() const {
+    return PerformanceEntry::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString VisibilityStateEntry::entryType() const {
-    return PerformanceEntry::get("entryType").as<jsbind::DOMString>();
+jsbind::String VisibilityStateEntry::entryType() const {
+    return PerformanceEntry::get("entryType").as<jsbind::String>();
 }
 
 jsbind::Any VisibilityStateEntry::startTime() const {

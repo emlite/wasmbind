@@ -137,7 +137,7 @@ jsbind::Promise<jsbind::Undefined> ReadableStream::pipeTo(const WritableStream& 
     return emlite::Val::call("pipeTo", destination, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Sequence<ReadableStream> ReadableStream::tee() {
-    return emlite::Val::call("tee").as<jsbind::Sequence<ReadableStream>>();
+jsbind::TypedArray<ReadableStream> ReadableStream::tee() {
+    return emlite::Val::call("tee").as<jsbind::TypedArray<ReadableStream>>();
 }
 

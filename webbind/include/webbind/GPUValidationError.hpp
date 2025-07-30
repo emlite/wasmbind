@@ -14,6 +14,6 @@ public:
     static GPUValidationError take_ownership(Handle h) noexcept;
 
     GPUValidationError clone() const noexcept;
-    GPUValidationError(const jsbind::DOMString& message);
+    GPUValidationError(const jsbind::String& message);
 };
 

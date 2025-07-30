@@ -16,7 +16,7 @@ public:
     static GamepadEvent take_ownership(Handle h) noexcept;
 
     GamepadEvent clone() const noexcept;
-    GamepadEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    GamepadEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     Gamepad gamepad() const;
 };
 

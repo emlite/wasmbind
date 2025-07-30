@@ -16,10 +16,10 @@ public:
     explicit SerialPortRequestOptions(const emlite::Val &val) noexcept;
     SerialPortRequestOptions() noexcept;
     SerialPortRequestOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> filters() const;
-    void filters(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::Sequence<jsbind::Any> allowedBluetoothServiceClassIds() const;
-    void allowedBluetoothServiceClassIds(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> filters() const;
+    void filters(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> allowedBluetoothServiceClassIds() const;
+    void allowedBluetoothServiceClassIds(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class Serial : public EventTarget {
@@ -34,7 +34,7 @@ public:
     void onconnect(const jsbind::Any& value);
     jsbind::Any ondisconnect() const;
     void ondisconnect(const jsbind::Any& value);
-    jsbind::Promise<jsbind::Sequence<SerialPort>> getPorts();
+    jsbind::Promise<jsbind::TypedArray<SerialPort>> getPorts();
     jsbind::Promise<SerialPort> requestPort();
     jsbind::Promise<SerialPort> requestPort(const SerialPortRequestOptions& options);
 };

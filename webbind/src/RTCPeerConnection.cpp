@@ -53,11 +53,11 @@ void RTCLocalSessionDescriptionInit::type(const RTCSdpType& value) {
     emlite::Val::set("type", value);
 }
 
-jsbind::DOMString RTCLocalSessionDescriptionInit::sdp() const {
-    return emlite::Val::get("sdp").as<jsbind::DOMString>();
+jsbind::String RTCLocalSessionDescriptionInit::sdp() const {
+    return emlite::Val::get("sdp").as<jsbind::String>();
 }
 
-void RTCLocalSessionDescriptionInit::sdp(const jsbind::DOMString& value) {
+void RTCLocalSessionDescriptionInit::sdp(const jsbind::String& value) {
     emlite::Val::set("sdp", value);
 }
 
@@ -77,11 +77,11 @@ void RTCSessionDescriptionInit::type(const RTCSdpType& value) {
     emlite::Val::set("type", value);
 }
 
-jsbind::DOMString RTCSessionDescriptionInit::sdp() const {
-    return emlite::Val::get("sdp").as<jsbind::DOMString>();
+jsbind::String RTCSessionDescriptionInit::sdp() const {
+    return emlite::Val::get("sdp").as<jsbind::String>();
 }
 
-void RTCSessionDescriptionInit::sdp(const jsbind::DOMString& value) {
+void RTCSessionDescriptionInit::sdp(const jsbind::String& value) {
     emlite::Val::set("sdp", value);
 }
 
@@ -93,11 +93,11 @@ RTCConfiguration::RTCConfiguration(const emlite::Val &val) noexcept: emlite::Val
 RTCConfiguration::RTCConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
 RTCConfiguration RTCConfiguration::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> RTCConfiguration::iceServers() const {
-    return emlite::Val::get("iceServers").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RTCConfiguration::iceServers() const {
+    return emlite::Val::get("iceServers").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RTCConfiguration::iceServers(const jsbind::Sequence<jsbind::Any>& value) {
+void RTCConfiguration::iceServers(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("iceServers", value);
 }
 
@@ -125,11 +125,11 @@ void RTCConfiguration::rtcpMuxPolicy(const RTCRtcpMuxPolicy& value) {
     emlite::Val::set("rtcpMuxPolicy", value);
 }
 
-jsbind::Sequence<RTCCertificate> RTCConfiguration::certificates() const {
-    return emlite::Val::get("certificates").as<jsbind::Sequence<RTCCertificate>>();
+jsbind::TypedArray<RTCCertificate> RTCConfiguration::certificates() const {
+    return emlite::Val::get("certificates").as<jsbind::TypedArray<RTCCertificate>>();
 }
 
-void RTCConfiguration::certificates(const jsbind::Sequence<RTCCertificate>& value) {
+void RTCConfiguration::certificates(const jsbind::TypedArray<RTCCertificate>& value) {
     emlite::Val::set("certificates", value);
 }
 
@@ -149,27 +149,27 @@ RTCIdentityProviderOptions::RTCIdentityProviderOptions(const emlite::Val &val) n
 RTCIdentityProviderOptions::RTCIdentityProviderOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 RTCIdentityProviderOptions RTCIdentityProviderOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString RTCIdentityProviderOptions::protocol() const {
-    return emlite::Val::get("protocol").as<jsbind::DOMString>();
+jsbind::String RTCIdentityProviderOptions::protocol() const {
+    return emlite::Val::get("protocol").as<jsbind::String>();
 }
 
-void RTCIdentityProviderOptions::protocol(const jsbind::DOMString& value) {
+void RTCIdentityProviderOptions::protocol(const jsbind::String& value) {
     emlite::Val::set("protocol", value);
 }
 
-jsbind::DOMString RTCIdentityProviderOptions::usernameHint() const {
-    return emlite::Val::get("usernameHint").as<jsbind::DOMString>();
+jsbind::String RTCIdentityProviderOptions::usernameHint() const {
+    return emlite::Val::get("usernameHint").as<jsbind::String>();
 }
 
-void RTCIdentityProviderOptions::usernameHint(const jsbind::DOMString& value) {
+void RTCIdentityProviderOptions::usernameHint(const jsbind::String& value) {
     emlite::Val::set("usernameHint", value);
 }
 
-jsbind::DOMString RTCIdentityProviderOptions::peerIdentity() const {
-    return emlite::Val::get("peerIdentity").as<jsbind::DOMString>();
+jsbind::String RTCIdentityProviderOptions::peerIdentity() const {
+    return emlite::Val::get("peerIdentity").as<jsbind::String>();
 }
 
-void RTCIdentityProviderOptions::peerIdentity(const jsbind::DOMString& value) {
+void RTCIdentityProviderOptions::peerIdentity(const jsbind::String& value) {
     emlite::Val::set("peerIdentity", value);
 }
 
@@ -189,19 +189,19 @@ void RTCRtpTransceiverInit::direction(const RTCRtpTransceiverDirection& value) {
     emlite::Val::set("direction", value);
 }
 
-jsbind::Sequence<MediaStream> RTCRtpTransceiverInit::streams() const {
-    return emlite::Val::get("streams").as<jsbind::Sequence<MediaStream>>();
+jsbind::TypedArray<MediaStream> RTCRtpTransceiverInit::streams() const {
+    return emlite::Val::get("streams").as<jsbind::TypedArray<MediaStream>>();
 }
 
-void RTCRtpTransceiverInit::streams(const jsbind::Sequence<MediaStream>& value) {
+void RTCRtpTransceiverInit::streams(const jsbind::TypedArray<MediaStream>& value) {
     emlite::Val::set("streams", value);
 }
 
-jsbind::Sequence<jsbind::Any> RTCRtpTransceiverInit::sendEncodings() const {
-    return emlite::Val::get("sendEncodings").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RTCRtpTransceiverInit::sendEncodings() const {
+    return emlite::Val::get("sendEncodings").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RTCRtpTransceiverInit::sendEncodings(const jsbind::Sequence<jsbind::Any>& value) {
+void RTCRtpTransceiverInit::sendEncodings(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("sendEncodings", value);
 }
 
@@ -237,11 +237,11 @@ void RTCDataChannelInit::maxRetransmits(unsigned short value) {
     emlite::Val::set("maxRetransmits", value);
 }
 
-jsbind::USVString RTCDataChannelInit::protocol() const {
-    return emlite::Val::get("protocol").as<jsbind::USVString>();
+jsbind::String RTCDataChannelInit::protocol() const {
+    return emlite::Val::get("protocol").as<jsbind::String>();
 }
 
-void RTCDataChannelInit::protocol(const jsbind::USVString& value) {
+void RTCDataChannelInit::protocol(const jsbind::String& value) {
     emlite::Val::set("protocol", value);
 }
 
@@ -417,44 +417,44 @@ void RTCPeerConnection::onconnectionstatechange(const jsbind::Any& value) {
     EventTarget::set("onconnectionstatechange", value);
 }
 
-jsbind::Undefined RTCPeerConnection::setIdentityProvider(const jsbind::DOMString& provider) {
+jsbind::Undefined RTCPeerConnection::setIdentityProvider(const jsbind::String& provider) {
     return EventTarget::call("setIdentityProvider", provider).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined RTCPeerConnection::setIdentityProvider(const jsbind::DOMString& provider, const RTCIdentityProviderOptions& options) {
+jsbind::Undefined RTCPeerConnection::setIdentityProvider(const jsbind::String& provider, const RTCIdentityProviderOptions& options) {
     return EventTarget::call("setIdentityProvider", provider, options).as<jsbind::Undefined>();
 }
 
-jsbind::Promise<jsbind::DOMString> RTCPeerConnection::getIdentityAssertion() {
-    return EventTarget::call("getIdentityAssertion").as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> RTCPeerConnection::getIdentityAssertion() {
+    return EventTarget::call("getIdentityAssertion").as<jsbind::Promise<jsbind::String>>();
 }
 
 jsbind::Promise<RTCIdentityAssertion> RTCPeerConnection::peerIdentity() const {
     return EventTarget::get("peerIdentity").as<jsbind::Promise<RTCIdentityAssertion>>();
 }
 
-jsbind::DOMString RTCPeerConnection::idpLoginUrl() const {
-    return EventTarget::get("idpLoginUrl").as<jsbind::DOMString>();
+jsbind::String RTCPeerConnection::idpLoginUrl() const {
+    return EventTarget::get("idpLoginUrl").as<jsbind::String>();
 }
 
-jsbind::DOMString RTCPeerConnection::idpErrorInfo() const {
-    return EventTarget::get("idpErrorInfo").as<jsbind::DOMString>();
+jsbind::String RTCPeerConnection::idpErrorInfo() const {
+    return EventTarget::get("idpErrorInfo").as<jsbind::String>();
 }
 
 jsbind::Promise<RTCCertificate> RTCPeerConnection::generateCertificate(const jsbind::Any& keygenAlgorithm) {
     return emlite::Val::global("rtcpeerconnection").call("generateCertificate", keygenAlgorithm).as<jsbind::Promise<RTCCertificate>>();
 }
 
-jsbind::Sequence<RTCRtpSender> RTCPeerConnection::getSenders() {
-    return EventTarget::call("getSenders").as<jsbind::Sequence<RTCRtpSender>>();
+jsbind::TypedArray<RTCRtpSender> RTCPeerConnection::getSenders() {
+    return EventTarget::call("getSenders").as<jsbind::TypedArray<RTCRtpSender>>();
 }
 
-jsbind::Sequence<RTCRtpReceiver> RTCPeerConnection::getReceivers() {
-    return EventTarget::call("getReceivers").as<jsbind::Sequence<RTCRtpReceiver>>();
+jsbind::TypedArray<RTCRtpReceiver> RTCPeerConnection::getReceivers() {
+    return EventTarget::call("getReceivers").as<jsbind::TypedArray<RTCRtpReceiver>>();
 }
 
-jsbind::Sequence<RTCRtpTransceiver> RTCPeerConnection::getTransceivers() {
-    return EventTarget::call("getTransceivers").as<jsbind::Sequence<RTCRtpTransceiver>>();
+jsbind::TypedArray<RTCRtpTransceiver> RTCPeerConnection::getTransceivers() {
+    return EventTarget::call("getTransceivers").as<jsbind::TypedArray<RTCRtpTransceiver>>();
 }
 
 RTCRtpSender RTCPeerConnection::addTrack(const MediaStreamTrack& track, const MediaStream& streams) {
@@ -485,11 +485,11 @@ RTCSctpTransport RTCPeerConnection::sctp() const {
     return EventTarget::get("sctp").as<RTCSctpTransport>();
 }
 
-RTCDataChannel RTCPeerConnection::createDataChannel(const jsbind::USVString& label) {
+RTCDataChannel RTCPeerConnection::createDataChannel(const jsbind::String& label) {
     return EventTarget::call("createDataChannel", label).as<RTCDataChannel>();
 }
 
-RTCDataChannel RTCPeerConnection::createDataChannel(const jsbind::USVString& label, const RTCDataChannelInit& dataChannelDict) {
+RTCDataChannel RTCPeerConnection::createDataChannel(const jsbind::String& label, const RTCDataChannelInit& dataChannelDict) {
     return EventTarget::call("createDataChannel", label, dataChannelDict).as<RTCDataChannel>();
 }
 

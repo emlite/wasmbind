@@ -16,9 +16,9 @@ public:
 
     FontData clone() const noexcept;
     jsbind::Promise<Blob> blob();
-    jsbind::USVString postscriptName() const;
-    jsbind::USVString fullName() const;
-    jsbind::USVString family() const;
-    jsbind::USVString style() const;
+    jsbind::String postscriptName() const;
+    jsbind::String fullName() const;
+    jsbind::String family() const;
+    jsbind::String style() const;
 };
 

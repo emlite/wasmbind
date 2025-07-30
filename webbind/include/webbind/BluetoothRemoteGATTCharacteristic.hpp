@@ -24,8 +24,8 @@ public:
     BluetoothCharacteristicProperties properties() const;
     jsbind::DataView value() const;
     jsbind::Promise<BluetoothRemoteGATTDescriptor> getDescriptor(const jsbind::Any& descriptor);
-    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTDescriptor>> getDescriptors();
-    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTDescriptor>> getDescriptors(const jsbind::Any& descriptor);
+    jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTDescriptor>> getDescriptors();
+    jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTDescriptor>> getDescriptors(const jsbind::Any& descriptor);
     jsbind::Promise<jsbind::DataView> readValue();
     jsbind::Promise<jsbind::Undefined> writeValue(const jsbind::Any& value);
     jsbind::Promise<jsbind::Undefined> writeValueWithResponse(const jsbind::Any& value);

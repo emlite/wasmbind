@@ -9,39 +9,39 @@ WorkerLocation::WorkerLocation(Handle h) noexcept : emlite::Val(emlite::Val::tak
 WorkerLocation::WorkerLocation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString WorkerLocation::href() const {
-    return emlite::Val::get("href").as<jsbind::USVString>();
+jsbind::String WorkerLocation::href() const {
+    return emlite::Val::get("href").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::origin() const {
-    return emlite::Val::get("origin").as<jsbind::USVString>();
+jsbind::String WorkerLocation::origin() const {
+    return emlite::Val::get("origin").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::protocol() const {
-    return emlite::Val::get("protocol").as<jsbind::USVString>();
+jsbind::String WorkerLocation::protocol() const {
+    return emlite::Val::get("protocol").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::host() const {
-    return emlite::Val::get("host").as<jsbind::USVString>();
+jsbind::String WorkerLocation::host() const {
+    return emlite::Val::get("host").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::hostname() const {
-    return emlite::Val::get("hostname").as<jsbind::USVString>();
+jsbind::String WorkerLocation::hostname() const {
+    return emlite::Val::get("hostname").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::port() const {
-    return emlite::Val::get("port").as<jsbind::USVString>();
+jsbind::String WorkerLocation::port() const {
+    return emlite::Val::get("port").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::pathname() const {
-    return emlite::Val::get("pathname").as<jsbind::USVString>();
+jsbind::String WorkerLocation::pathname() const {
+    return emlite::Val::get("pathname").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::search() const {
-    return emlite::Val::get("search").as<jsbind::USVString>();
+jsbind::String WorkerLocation::search() const {
+    return emlite::Val::get("search").as<jsbind::String>();
 }
 
-jsbind::USVString WorkerLocation::hash() const {
-    return emlite::Val::get("hash").as<jsbind::USVString>();
+jsbind::String WorkerLocation::hash() const {
+    return emlite::Val::get("hash").as<jsbind::String>();
 }
 

@@ -10,11 +10,11 @@ GPUComputePipeline::GPUComputePipeline(Handle h) noexcept : emlite::Val(emlite::
 GPUComputePipeline::GPUComputePipeline(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPUComputePipeline::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUComputePipeline::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUComputePipeline::label(const jsbind::USVString& value) {
+void GPUComputePipeline::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

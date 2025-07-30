@@ -113,7 +113,7 @@ jsbind::Undefined SourceBuffer::abort() {
     return EventTarget::call("abort").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined SourceBuffer::changeType(const jsbind::DOMString& type) {
+jsbind::Undefined SourceBuffer::changeType(const jsbind::String& type) {
     return EventTarget::call("changeType", type).as<jsbind::Undefined>();
 }
 

@@ -52,7 +52,7 @@ public:
     GPUTextureDimension dimension() const;
     GPUTextureFormat format() const;
     jsbind::Any usage() const;
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

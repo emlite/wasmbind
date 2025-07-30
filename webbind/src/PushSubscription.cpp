@@ -10,11 +10,11 @@ PushSubscriptionJSON::PushSubscriptionJSON(const emlite::Val &val) noexcept: eml
 PushSubscriptionJSON::PushSubscriptionJSON() noexcept: emlite::Val(emlite::Val::object()) {}
 PushSubscriptionJSON PushSubscriptionJSON::clone() const noexcept { return *this; }
 
-jsbind::USVString PushSubscriptionJSON::endpoint() const {
-    return emlite::Val::get("endpoint").as<jsbind::USVString>();
+jsbind::String PushSubscriptionJSON::endpoint() const {
+    return emlite::Val::get("endpoint").as<jsbind::String>();
 }
 
-void PushSubscriptionJSON::endpoint(const jsbind::USVString& value) {
+void PushSubscriptionJSON::endpoint(const jsbind::String& value) {
     emlite::Val::set("endpoint", value);
 }
 
@@ -26,11 +26,11 @@ void PushSubscriptionJSON::expirationTime(const jsbind::Any& value) {
     emlite::Val::set("expirationTime", value);
 }
 
-jsbind::Record<jsbind::DOMString, jsbind::USVString> PushSubscriptionJSON::keys() const {
-    return emlite::Val::get("keys").as<jsbind::Record<jsbind::DOMString, jsbind::USVString>>();
+jsbind::Record<jsbind::String, jsbind::String> PushSubscriptionJSON::keys() const {
+    return emlite::Val::get("keys").as<jsbind::Record<jsbind::String, jsbind::String>>();
 }
 
-void PushSubscriptionJSON::keys(const jsbind::Record<jsbind::DOMString, jsbind::USVString>& value) {
+void PushSubscriptionJSON::keys(const jsbind::Record<jsbind::String, jsbind::String>& value) {
     emlite::Val::set("keys", value);
 }
 
@@ -42,8 +42,8 @@ PushSubscription::PushSubscription(Handle h) noexcept : emlite::Val(emlite::Val:
 PushSubscription::PushSubscription(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString PushSubscription::endpoint() const {
-    return emlite::Val::get("endpoint").as<jsbind::USVString>();
+jsbind::String PushSubscription::endpoint() const {
+    return emlite::Val::get("endpoint").as<jsbind::String>();
 }
 
 jsbind::Any PushSubscription::expirationTime() const {

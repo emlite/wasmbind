@@ -19,7 +19,7 @@ public:
     double value() const;
     bool hadRecentInput() const;
     jsbind::Any lastInputTime() const;
-    jsbind::FrozenArray<LayoutShiftAttribution> sources() const;
+    jsbind::TypedArray<LayoutShiftAttribution> sources() const;
     jsbind::Object toJSON();
 };
 

@@ -11,11 +11,11 @@ HTMLDetailsElement::HTMLDetailsElement(const emlite::Val &val) noexcept: HTMLEle
 
 HTMLDetailsElement::HTMLDetailsElement() : HTMLElement(emlite::Val::global("HTMLDetailsElement").new_()) {}
 
-jsbind::DOMString HTMLDetailsElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLDetailsElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLDetailsElement::name(const jsbind::DOMString& value) {
+void HTMLDetailsElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 

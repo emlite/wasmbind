@@ -9,11 +9,11 @@ IdentityResolveOptions::IdentityResolveOptions(const emlite::Val &val) noexcept:
 IdentityResolveOptions::IdentityResolveOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 IdentityResolveOptions IdentityResolveOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString IdentityResolveOptions::accountId() const {
-    return emlite::Val::get("accountId").as<jsbind::USVString>();
+jsbind::String IdentityResolveOptions::accountId() const {
+    return emlite::Val::get("accountId").as<jsbind::String>();
 }
 
-void IdentityResolveOptions::accountId(const jsbind::USVString& value) {
+void IdentityResolveOptions::accountId(const jsbind::String& value) {
     emlite::Val::set("accountId", value);
 }
 
@@ -25,35 +25,35 @@ IdentityUserInfo::IdentityUserInfo(const emlite::Val &val) noexcept: emlite::Val
 IdentityUserInfo::IdentityUserInfo() noexcept: emlite::Val(emlite::Val::object()) {}
 IdentityUserInfo IdentityUserInfo::clone() const noexcept { return *this; }
 
-jsbind::USVString IdentityUserInfo::email() const {
-    return emlite::Val::get("email").as<jsbind::USVString>();
+jsbind::String IdentityUserInfo::email() const {
+    return emlite::Val::get("email").as<jsbind::String>();
 }
 
-void IdentityUserInfo::email(const jsbind::USVString& value) {
+void IdentityUserInfo::email(const jsbind::String& value) {
     emlite::Val::set("email", value);
 }
 
-jsbind::USVString IdentityUserInfo::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String IdentityUserInfo::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void IdentityUserInfo::name(const jsbind::USVString& value) {
+void IdentityUserInfo::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::USVString IdentityUserInfo::givenName() const {
-    return emlite::Val::get("givenName").as<jsbind::USVString>();
+jsbind::String IdentityUserInfo::givenName() const {
+    return emlite::Val::get("givenName").as<jsbind::String>();
 }
 
-void IdentityUserInfo::givenName(const jsbind::USVString& value) {
+void IdentityUserInfo::givenName(const jsbind::String& value) {
     emlite::Val::set("givenName", value);
 }
 
-jsbind::USVString IdentityUserInfo::picture() const {
-    return emlite::Val::get("picture").as<jsbind::USVString>();
+jsbind::String IdentityUserInfo::picture() const {
+    return emlite::Val::get("picture").as<jsbind::String>();
 }
 
-void IdentityUserInfo::picture(const jsbind::USVString& value) {
+void IdentityUserInfo::picture(const jsbind::String& value) {
     emlite::Val::set("picture", value);
 }
 
@@ -65,19 +65,19 @@ IdentityProviderConfig::IdentityProviderConfig(const emlite::Val &val) noexcept:
 IdentityProviderConfig::IdentityProviderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
 IdentityProviderConfig IdentityProviderConfig::clone() const noexcept { return *this; }
 
-jsbind::USVString IdentityProviderConfig::configURL() const {
-    return emlite::Val::get("configURL").as<jsbind::USVString>();
+jsbind::String IdentityProviderConfig::configURL() const {
+    return emlite::Val::get("configURL").as<jsbind::String>();
 }
 
-void IdentityProviderConfig::configURL(const jsbind::USVString& value) {
+void IdentityProviderConfig::configURL(const jsbind::String& value) {
     emlite::Val::set("configURL", value);
 }
 
-jsbind::USVString IdentityProviderConfig::clientId() const {
-    return emlite::Val::get("clientId").as<jsbind::USVString>();
+jsbind::String IdentityProviderConfig::clientId() const {
+    return emlite::Val::get("clientId").as<jsbind::String>();
 }
 
-void IdentityProviderConfig::clientId(const jsbind::USVString& value) {
+void IdentityProviderConfig::clientId(const jsbind::String& value) {
     emlite::Val::set("clientId", value);
 }
 
@@ -93,15 +93,15 @@ jsbind::Undefined IdentityProvider::close() {
     return emlite::Val::global("identityprovider").call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::DOMString& token) {
+jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::String& token) {
     return emlite::Val::global("identityprovider").call("resolve", token).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::DOMString& token, const IdentityResolveOptions& options) {
+jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::String& token, const IdentityResolveOptions& options) {
     return emlite::Val::global("identityprovider").call("resolve", token, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Sequence<IdentityUserInfo>> IdentityProvider::getUserInfo(const IdentityProviderConfig& config) {
-    return emlite::Val::global("identityprovider").call("getUserInfo", config).as<jsbind::Promise<jsbind::Sequence<IdentityUserInfo>>>();
+jsbind::Promise<jsbind::TypedArray<IdentityUserInfo>> IdentityProvider::getUserInfo(const IdentityProviderConfig& config) {
+    return emlite::Val::global("identityprovider").call("getUserInfo", config).as<jsbind::Promise<jsbind::TypedArray<IdentityUserInfo>>>();
 }
 

@@ -23,8 +23,8 @@ public:
     void signal(const AbortSignal& value);
     jsbind::Function monitor() const;
     void monitor(const jsbind::Function& value);
-    jsbind::DOMString sharedContext() const;
-    void sharedContext(const jsbind::DOMString& value);
+    jsbind::String sharedContext() const;
+    void sharedContext(const jsbind::String& value);
 };
 
 class RewriterCreateCoreOptions : public emlite::Val {
@@ -40,12 +40,12 @@ public:
     void format(const RewriterFormat& value);
     RewriterLength length() const;
     void length(const RewriterLength& value);
-    jsbind::Sequence<jsbind::DOMString> expectedInputLanguages() const;
-    void expectedInputLanguages(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::Sequence<jsbind::DOMString> expectedContextLanguages() const;
-    void expectedContextLanguages(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::DOMString outputLanguage() const;
-    void outputLanguage(const jsbind::DOMString& value);
+    jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
+    void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
+    void expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::String outputLanguage() const;
+    void outputLanguage(const jsbind::String& value);
 };
 
 class RewriterRewriteOptions : public emlite::Val {
@@ -55,8 +55,8 @@ public:
     explicit RewriterRewriteOptions(const emlite::Val &val) noexcept;
     RewriterRewriteOptions() noexcept;
     RewriterRewriteOptions clone() const noexcept;
-    jsbind::DOMString context() const;
-    void context(const jsbind::DOMString& value);
+    jsbind::String context() const;
+    void context(const jsbind::String& value);
     AbortSignal signal() const;
     void signal(const AbortSignal& value);
 };
@@ -73,19 +73,19 @@ public:
     static jsbind::Promise<Rewriter> create(const RewriterCreateOptions& options);
     static jsbind::Promise<Availability> availability();
     static jsbind::Promise<Availability> availability(const RewriterCreateCoreOptions& options);
-    jsbind::Promise<jsbind::DOMString> rewrite(const jsbind::DOMString& input);
-    jsbind::Promise<jsbind::DOMString> rewrite(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
-    ReadableStream rewriteStreaming(const jsbind::DOMString& input);
-    ReadableStream rewriteStreaming(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
-    jsbind::DOMString sharedContext() const;
+    jsbind::Promise<jsbind::String> rewrite(const jsbind::String& input);
+    jsbind::Promise<jsbind::String> rewrite(const jsbind::String& input, const RewriterRewriteOptions& options);
+    ReadableStream rewriteStreaming(const jsbind::String& input);
+    ReadableStream rewriteStreaming(const jsbind::String& input, const RewriterRewriteOptions& options);
+    jsbind::String sharedContext() const;
     RewriterTone tone() const;
     RewriterFormat format() const;
     RewriterLength length() const;
-    jsbind::FrozenArray<jsbind::DOMString> expectedInputLanguages() const;
-    jsbind::FrozenArray<jsbind::DOMString> expectedContextLanguages() const;
-    jsbind::DOMString outputLanguage() const;
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const RewriterRewriteOptions& options);
+    jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
+    jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
+    jsbind::String outputLanguage() const;
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const RewriterRewriteOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };

@@ -19,8 +19,8 @@ public:
     ResizeObserverEntry clone() const noexcept;
     Element target() const;
     DOMRectReadOnly contentRect() const;
-    jsbind::FrozenArray<ResizeObserverSize> borderBoxSize() const;
-    jsbind::FrozenArray<ResizeObserverSize> contentBoxSize() const;
-    jsbind::FrozenArray<ResizeObserverSize> devicePixelContentBoxSize() const;
+    jsbind::TypedArray<ResizeObserverSize> borderBoxSize() const;
+    jsbind::TypedArray<ResizeObserverSize> contentBoxSize() const;
+    jsbind::TypedArray<ResizeObserverSize> devicePixelContentBoxSize() const;
 };
 

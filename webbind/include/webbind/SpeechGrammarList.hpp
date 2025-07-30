@@ -18,9 +18,9 @@ public:
     SpeechGrammarList();
     unsigned long length() const;
     SpeechGrammar item(unsigned long index);
-    jsbind::Undefined addFromURI(const jsbind::DOMString& src);
-    jsbind::Undefined addFromURI(const jsbind::DOMString& src, float weight);
-    jsbind::Undefined addFromString(const jsbind::DOMString& string);
-    jsbind::Undefined addFromString(const jsbind::DOMString& string, float weight);
+    jsbind::Undefined addFromURI(const jsbind::String& src);
+    jsbind::Undefined addFromURI(const jsbind::String& src, float weight);
+    jsbind::Undefined addFromString(const jsbind::String& string);
+    jsbind::Undefined addFromString(const jsbind::String& string, float weight);
 };
 

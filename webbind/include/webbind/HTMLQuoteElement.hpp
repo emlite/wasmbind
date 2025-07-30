@@ -15,7 +15,7 @@ public:
 
     HTMLQuoteElement clone() const noexcept;
     HTMLQuoteElement();
-    jsbind::USVString cite() const;
-    void cite(const jsbind::USVString& value);
+    jsbind::String cite() const;
+    void cite(const jsbind::String& value);
 };
 

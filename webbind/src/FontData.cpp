@@ -14,19 +14,19 @@ jsbind::Promise<Blob> FontData::blob() {
     return emlite::Val::call("blob").as<jsbind::Promise<Blob>>();
 }
 
-jsbind::USVString FontData::postscriptName() const {
-    return emlite::Val::get("postscriptName").as<jsbind::USVString>();
+jsbind::String FontData::postscriptName() const {
+    return emlite::Val::get("postscriptName").as<jsbind::String>();
 }
 
-jsbind::USVString FontData::fullName() const {
-    return emlite::Val::get("fullName").as<jsbind::USVString>();
+jsbind::String FontData::fullName() const {
+    return emlite::Val::get("fullName").as<jsbind::String>();
 }
 
-jsbind::USVString FontData::family() const {
-    return emlite::Val::get("family").as<jsbind::USVString>();
+jsbind::String FontData::family() const {
+    return emlite::Val::get("family").as<jsbind::String>();
 }
 
-jsbind::USVString FontData::style() const {
-    return emlite::Val::get("style").as<jsbind::USVString>();
+jsbind::String FontData::style() const {
+    return emlite::Val::get("style").as<jsbind::String>();
 }
 

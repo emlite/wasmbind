@@ -16,12 +16,12 @@ public:
     TaskAttributionTiming clone() const noexcept;
     jsbind::Any startTime() const;
     jsbind::Any duration() const;
-    jsbind::DOMString name() const;
-    jsbind::DOMString entryType() const;
-    jsbind::DOMString containerType() const;
-    jsbind::DOMString containerSrc() const;
-    jsbind::DOMString containerId() const;
-    jsbind::DOMString containerName() const;
+    jsbind::String name() const;
+    jsbind::String entryType() const;
+    jsbind::String containerType() const;
+    jsbind::String containerSrc() const;
+    jsbind::String containerId() const;
+    jsbind::String containerName() const;
     jsbind::Object toJSON();
 };
 

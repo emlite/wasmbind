@@ -17,11 +17,11 @@ unsigned char USBConfiguration::configurationValue() const {
     return emlite::Val::get("configurationValue").as<unsigned char>();
 }
 
-jsbind::DOMString USBConfiguration::configurationName() const {
-    return emlite::Val::get("configurationName").as<jsbind::DOMString>();
+jsbind::String USBConfiguration::configurationName() const {
+    return emlite::Val::get("configurationName").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<USBInterface> USBConfiguration::interfaces() const {
-    return emlite::Val::get("interfaces").as<jsbind::FrozenArray<USBInterface>>();
+jsbind::TypedArray<USBInterface> USBConfiguration::interfaces() const {
+    return emlite::Val::get("interfaces").as<jsbind::TypedArray<USBInterface>>();
 }
 

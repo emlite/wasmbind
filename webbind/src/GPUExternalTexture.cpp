@@ -9,11 +9,11 @@ GPUExternalTexture::GPUExternalTexture(Handle h) noexcept : emlite::Val(emlite::
 GPUExternalTexture::GPUExternalTexture(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPUExternalTexture::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUExternalTexture::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUExternalTexture::label(const jsbind::USVString& value) {
+void GPUExternalTexture::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

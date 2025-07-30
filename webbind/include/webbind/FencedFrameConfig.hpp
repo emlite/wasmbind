@@ -13,7 +13,7 @@ public:
     static FencedFrameConfig take_ownership(Handle h) noexcept;
 
     FencedFrameConfig clone() const noexcept;
-    FencedFrameConfig(const jsbind::USVString& url);
-    jsbind::Undefined setSharedStorageContext(const jsbind::DOMString& contextString);
+    FencedFrameConfig(const jsbind::String& url);
+    jsbind::Undefined setSharedStorageContext(const jsbind::String& contextString);
 };
 

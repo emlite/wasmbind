@@ -14,6 +14,6 @@ public:
 
     MLOperand clone() const noexcept;
     MLOperandDataType dataType() const;
-    jsbind::FrozenArray<unsigned long> shape() const;
+    jsbind::TypedArray<unsigned long> shape() const;
 };
 

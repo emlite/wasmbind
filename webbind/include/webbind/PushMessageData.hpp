@@ -19,6 +19,6 @@ public:
     Blob blob();
     jsbind::Uint8Array bytes();
     jsbind::Any json();
-    jsbind::USVString text();
+    jsbind::String text();
 };
 

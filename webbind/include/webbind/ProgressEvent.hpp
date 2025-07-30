@@ -14,8 +14,8 @@ public:
     static ProgressEvent take_ownership(Handle h) noexcept;
 
     ProgressEvent clone() const noexcept;
-    ProgressEvent(const jsbind::DOMString& type);
-    ProgressEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    ProgressEvent(const jsbind::String& type);
+    ProgressEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     bool lengthComputable() const;
     double loaded() const;
     double total() const;

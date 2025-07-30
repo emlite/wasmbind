@@ -9,7 +9,7 @@ TrustedScript::TrustedScript(Handle h) noexcept : emlite::Val(emlite::Val::take_
 TrustedScript::TrustedScript(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString TrustedScript::toJSON() {
-    return emlite::Val::call("toJSON").as<jsbind::DOMString>();
+jsbind::String TrustedScript::toJSON() {
+    return emlite::Val::call("toJSON").as<jsbind::String>();
 }
 

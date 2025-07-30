@@ -21,7 +21,7 @@ public:
     jsbind::Undefined readAsArrayBuffer(const Blob& blob);
     jsbind::Undefined readAsBinaryString(const Blob& blob);
     jsbind::Undefined readAsText(const Blob& blob);
-    jsbind::Undefined readAsText(const Blob& blob, const jsbind::DOMString& encoding);
+    jsbind::Undefined readAsText(const Blob& blob, const jsbind::String& encoding);
     jsbind::Undefined readAsDataURL(const Blob& blob);
     jsbind::Undefined abort();
     unsigned short readyState() const;

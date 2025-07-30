@@ -53,11 +53,11 @@ jsbind::Undefined GPUBuffer::destroy() {
     return emlite::Val::call("destroy").as<jsbind::Undefined>();
 }
 
-jsbind::USVString GPUBuffer::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUBuffer::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUBuffer::label(const jsbind::USVString& value) {
+void GPUBuffer::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

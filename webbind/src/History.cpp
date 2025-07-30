@@ -41,19 +41,19 @@ jsbind::Undefined History::forward() {
     return emlite::Val::call("forward").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined History::pushState(const jsbind::Any& data, const jsbind::DOMString& unused) {
+jsbind::Undefined History::pushState(const jsbind::Any& data, const jsbind::String& unused) {
     return emlite::Val::call("pushState", data, unused).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined History::pushState(const jsbind::Any& data, const jsbind::DOMString& unused, const jsbind::USVString& url) {
+jsbind::Undefined History::pushState(const jsbind::Any& data, const jsbind::String& unused, const jsbind::String& url) {
     return emlite::Val::call("pushState", data, unused, url).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined History::replaceState(const jsbind::Any& data, const jsbind::DOMString& unused) {
+jsbind::Undefined History::replaceState(const jsbind::Any& data, const jsbind::String& unused) {
     return emlite::Val::call("replaceState", data, unused).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined History::replaceState(const jsbind::Any& data, const jsbind::DOMString& unused, const jsbind::USVString& url) {
+jsbind::Undefined History::replaceState(const jsbind::Any& data, const jsbind::String& unused, const jsbind::String& url) {
     return emlite::Val::call("replaceState", data, unused, url).as<jsbind::Undefined>();
 }
 

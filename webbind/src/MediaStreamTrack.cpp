@@ -9,11 +9,11 @@ MediaTrackCapabilities::MediaTrackCapabilities(const emlite::Val &val) noexcept:
 MediaTrackCapabilities::MediaTrackCapabilities() noexcept: emlite::Val(emlite::Val::object()) {}
 MediaTrackCapabilities MediaTrackCapabilities::clone() const noexcept { return *this; }
 
-jsbind::DOMString MediaTrackCapabilities::displaySurface() const {
-    return emlite::Val::get("displaySurface").as<jsbind::DOMString>();
+jsbind::String MediaTrackCapabilities::displaySurface() const {
+    return emlite::Val::get("displaySurface").as<jsbind::String>();
 }
 
-void MediaTrackCapabilities::displaySurface(const jsbind::DOMString& value) {
+void MediaTrackCapabilities::displaySurface(const jsbind::String& value) {
     emlite::Val::set("displaySurface", value);
 }
 
@@ -25,11 +25,11 @@ void MediaTrackCapabilities::logicalSurface(bool value) {
     emlite::Val::set("logicalSurface", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> MediaTrackCapabilities::cursor() const {
-    return emlite::Val::get("cursor").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> MediaTrackCapabilities::cursor() const {
+    return emlite::Val::get("cursor").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void MediaTrackCapabilities::cursor(const jsbind::Sequence<jsbind::DOMString>& value) {
+void MediaTrackCapabilities::cursor(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("cursor", value);
 }
 
@@ -41,11 +41,11 @@ MediaTrackConstraints::MediaTrackConstraints(const emlite::Val &val) noexcept: e
 MediaTrackConstraints::MediaTrackConstraints() noexcept: emlite::Val(emlite::Val::object()) {}
 MediaTrackConstraints MediaTrackConstraints::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> MediaTrackConstraints::advanced() const {
-    return emlite::Val::get("advanced").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> MediaTrackConstraints::advanced() const {
+    return emlite::Val::get("advanced").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void MediaTrackConstraints::advanced(const jsbind::Sequence<jsbind::Any>& value) {
+void MediaTrackConstraints::advanced(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("advanced", value);
 }
 
@@ -57,11 +57,11 @@ MediaTrackSettings::MediaTrackSettings(const emlite::Val &val) noexcept: emlite:
 MediaTrackSettings::MediaTrackSettings() noexcept: emlite::Val(emlite::Val::object()) {}
 MediaTrackSettings MediaTrackSettings::clone() const noexcept { return *this; }
 
-jsbind::DOMString MediaTrackSettings::displaySurface() const {
-    return emlite::Val::get("displaySurface").as<jsbind::DOMString>();
+jsbind::String MediaTrackSettings::displaySurface() const {
+    return emlite::Val::get("displaySurface").as<jsbind::String>();
 }
 
-void MediaTrackSettings::displaySurface(const jsbind::DOMString& value) {
+void MediaTrackSettings::displaySurface(const jsbind::String& value) {
     emlite::Val::set("displaySurface", value);
 }
 
@@ -73,11 +73,11 @@ void MediaTrackSettings::logicalSurface(bool value) {
     emlite::Val::set("logicalSurface", value);
 }
 
-jsbind::DOMString MediaTrackSettings::cursor() const {
-    return emlite::Val::get("cursor").as<jsbind::DOMString>();
+jsbind::String MediaTrackSettings::cursor() const {
+    return emlite::Val::get("cursor").as<jsbind::String>();
 }
 
-void MediaTrackSettings::cursor(const jsbind::DOMString& value) {
+void MediaTrackSettings::cursor(const jsbind::String& value) {
     emlite::Val::set("cursor", value);
 }
 
@@ -113,19 +113,19 @@ CaptureHandle::CaptureHandle(const emlite::Val &val) noexcept: emlite::Val(val) 
 CaptureHandle::CaptureHandle() noexcept: emlite::Val(emlite::Val::object()) {}
 CaptureHandle CaptureHandle::clone() const noexcept { return *this; }
 
-jsbind::DOMString CaptureHandle::origin() const {
-    return emlite::Val::get("origin").as<jsbind::DOMString>();
+jsbind::String CaptureHandle::origin() const {
+    return emlite::Val::get("origin").as<jsbind::String>();
 }
 
-void CaptureHandle::origin(const jsbind::DOMString& value) {
+void CaptureHandle::origin(const jsbind::String& value) {
     emlite::Val::set("origin", value);
 }
 
-jsbind::DOMString CaptureHandle::handle() const {
-    return emlite::Val::get("handle").as<jsbind::DOMString>();
+jsbind::String CaptureHandle::handle() const {
+    return emlite::Val::get("handle").as<jsbind::String>();
 }
 
-void CaptureHandle::handle(const jsbind::DOMString& value) {
+void CaptureHandle::handle(const jsbind::String& value) {
     emlite::Val::set("handle", value);
 }
 
@@ -137,16 +137,16 @@ MediaStreamTrack::MediaStreamTrack(Handle h) noexcept : EventTarget(emlite::Val:
 MediaStreamTrack::MediaStreamTrack(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::DOMString MediaStreamTrack::kind() const {
-    return EventTarget::get("kind").as<jsbind::DOMString>();
+jsbind::String MediaStreamTrack::kind() const {
+    return EventTarget::get("kind").as<jsbind::String>();
 }
 
-jsbind::DOMString MediaStreamTrack::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String MediaStreamTrack::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString MediaStreamTrack::label() const {
-    return EventTarget::get("label").as<jsbind::DOMString>();
+jsbind::String MediaStreamTrack::label() const {
+    return EventTarget::get("label").as<jsbind::String>();
 }
 
 bool MediaStreamTrack::enabled() const {
@@ -229,19 +229,19 @@ void MediaStreamTrack::oncapturehandlechange(const jsbind::Any& value) {
     EventTarget::set("oncapturehandlechange", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> MediaStreamTrack::getSupportedCaptureActions() {
-    return EventTarget::call("getSupportedCaptureActions").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> MediaStreamTrack::getSupportedCaptureActions() {
+    return EventTarget::call("getSupportedCaptureActions").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 jsbind::Promise<jsbind::Undefined> MediaStreamTrack::sendCaptureAction(const CaptureAction& action) {
     return EventTarget::call("sendCaptureAction", action).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::DOMString MediaStreamTrack::contentHint() const {
-    return EventTarget::get("contentHint").as<jsbind::DOMString>();
+jsbind::String MediaStreamTrack::contentHint() const {
+    return EventTarget::get("contentHint").as<jsbind::String>();
 }
 
-void MediaStreamTrack::contentHint(const jsbind::DOMString& value) {
+void MediaStreamTrack::contentHint(const jsbind::String& value) {
     EventTarget::set("contentHint", value);
 }
 

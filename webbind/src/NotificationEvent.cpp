@@ -10,13 +10,13 @@ NotificationEvent::NotificationEvent(Handle h) noexcept : ExtendableEvent(emlite
 NotificationEvent::NotificationEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-NotificationEvent::NotificationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("NotificationEvent").new_(type, eventInitDict)) {}
+NotificationEvent::NotificationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("NotificationEvent").new_(type, eventInitDict)) {}
 
 Notification NotificationEvent::notification() const {
     return ExtendableEvent::get("notification").as<Notification>();
 }
 
-jsbind::DOMString NotificationEvent::action() const {
-    return ExtendableEvent::get("action").as<jsbind::DOMString>();
+jsbind::String NotificationEvent::action() const {
+    return ExtendableEvent::get("action").as<jsbind::String>();
 }
 

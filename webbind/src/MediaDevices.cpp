@@ -12,11 +12,11 @@ AudioOutputOptions::AudioOutputOptions(const emlite::Val &val) noexcept: emlite:
 AudioOutputOptions::AudioOutputOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 AudioOutputOptions AudioOutputOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString AudioOutputOptions::deviceId() const {
-    return emlite::Val::get("deviceId").as<jsbind::DOMString>();
+jsbind::String AudioOutputOptions::deviceId() const {
+    return emlite::Val::get("deviceId").as<jsbind::String>();
 }
 
-void AudioOutputOptions::deviceId(const jsbind::DOMString& value) {
+void AudioOutputOptions::deviceId(const jsbind::String& value) {
     emlite::Val::set("deviceId", value);
 }
 
@@ -36,19 +36,19 @@ void CaptureHandleConfig::exposeOrigin(bool value) {
     emlite::Val::set("exposeOrigin", value);
 }
 
-jsbind::DOMString CaptureHandleConfig::handle() const {
-    return emlite::Val::get("handle").as<jsbind::DOMString>();
+jsbind::String CaptureHandleConfig::handle() const {
+    return emlite::Val::get("handle").as<jsbind::String>();
 }
 
-void CaptureHandleConfig::handle(const jsbind::DOMString& value) {
+void CaptureHandleConfig::handle(const jsbind::String& value) {
     emlite::Val::set("handle", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> CaptureHandleConfig::permittedOrigins() const {
-    return emlite::Val::get("permittedOrigins").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> CaptureHandleConfig::permittedOrigins() const {
+    return emlite::Val::get("permittedOrigins").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void CaptureHandleConfig::permittedOrigins(const jsbind::Sequence<jsbind::DOMString>& value) {
+void CaptureHandleConfig::permittedOrigins(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("permittedOrigins", value);
 }
 
@@ -108,11 +108,11 @@ MediaStreamConstraints::MediaStreamConstraints(const emlite::Val &val) noexcept:
 MediaStreamConstraints::MediaStreamConstraints() noexcept: emlite::Val(emlite::Val::object()) {}
 MediaStreamConstraints MediaStreamConstraints::clone() const noexcept { return *this; }
 
-jsbind::DOMString MediaStreamConstraints::peerIdentity() const {
-    return emlite::Val::get("peerIdentity").as<jsbind::DOMString>();
+jsbind::String MediaStreamConstraints::peerIdentity() const {
+    return emlite::Val::get("peerIdentity").as<jsbind::String>();
 }
 
-void MediaStreamConstraints::peerIdentity(const jsbind::DOMString& value) {
+void MediaStreamConstraints::peerIdentity(const jsbind::String& value) {
     emlite::Val::set("peerIdentity", value);
 }
 
@@ -204,8 +204,8 @@ void MediaDevices::ondevicechange(const jsbind::Any& value) {
     EventTarget::set("ondevicechange", value);
 }
 
-jsbind::Promise<jsbind::Sequence<MediaDeviceInfo>> MediaDevices::enumerateDevices() {
-    return EventTarget::call("enumerateDevices").as<jsbind::Promise<jsbind::Sequence<MediaDeviceInfo>>>();
+jsbind::Promise<jsbind::TypedArray<MediaDeviceInfo>> MediaDevices::enumerateDevices() {
+    return EventTarget::call("enumerateDevices").as<jsbind::Promise<jsbind::TypedArray<MediaDeviceInfo>>>();
 }
 
 jsbind::Promise<MediaDeviceInfo> MediaDevices::selectAudioOutput() {
@@ -224,7 +224,7 @@ jsbind::Undefined MediaDevices::setCaptureHandleConfig(const CaptureHandleConfig
     return EventTarget::call("setCaptureHandleConfig", config).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined MediaDevices::setSupportedCaptureActions(const jsbind::Sequence<jsbind::DOMString>& actions) {
+jsbind::Undefined MediaDevices::setSupportedCaptureActions(const jsbind::TypedArray<jsbind::String>& actions) {
     return EventTarget::call("setSupportedCaptureActions", actions).as<jsbind::Undefined>();
 }
 

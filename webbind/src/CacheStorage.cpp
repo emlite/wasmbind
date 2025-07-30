@@ -10,11 +10,11 @@ MultiCacheQueryOptions::MultiCacheQueryOptions(const emlite::Val &val) noexcept:
 MultiCacheQueryOptions::MultiCacheQueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MultiCacheQueryOptions MultiCacheQueryOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString MultiCacheQueryOptions::cacheName() const {
-    return emlite::Val::get("cacheName").as<jsbind::DOMString>();
+jsbind::String MultiCacheQueryOptions::cacheName() const {
+    return emlite::Val::get("cacheName").as<jsbind::String>();
 }
 
-void MultiCacheQueryOptions::cacheName(const jsbind::DOMString& value) {
+void MultiCacheQueryOptions::cacheName(const jsbind::String& value) {
     emlite::Val::set("cacheName", value);
 }
 
@@ -34,19 +34,19 @@ jsbind::Promise<jsbind::Any> CacheStorage::match(const jsbind::Any& request, con
     return emlite::Val::call("match", request, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise<bool> CacheStorage::has(const jsbind::DOMString& cacheName) {
+jsbind::Promise<bool> CacheStorage::has(const jsbind::String& cacheName) {
     return emlite::Val::call("has", cacheName).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise<Cache> CacheStorage::open(const jsbind::DOMString& cacheName) {
+jsbind::Promise<Cache> CacheStorage::open(const jsbind::String& cacheName) {
     return emlite::Val::call("open", cacheName).as<jsbind::Promise<Cache>>();
 }
 
-jsbind::Promise<bool> CacheStorage::delete_(const jsbind::DOMString& cacheName) {
+jsbind::Promise<bool> CacheStorage::delete_(const jsbind::String& cacheName) {
     return emlite::Val::call("delete", cacheName).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> CacheStorage::keys() {
-    return emlite::Val::call("keys").as<jsbind::Promise<jsbind::Sequence<jsbind::DOMString>>>();
+jsbind::Promise<jsbind::TypedArray<jsbind::String>> CacheStorage::keys() {
+    return emlite::Val::call("keys").as<jsbind::Promise<jsbind::TypedArray<jsbind::String>>>();
 }
 

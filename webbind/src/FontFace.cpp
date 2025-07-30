@@ -12,95 +12,95 @@ FontFace::FontFace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 FontFace::FontFace(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-FontFace::FontFace(const jsbind::CSSOMString& family, const jsbind::Any& source) : emlite::Val(emlite::Val::global("FontFace").new_(family, source)) {}
+FontFace::FontFace(const jsbind::String& family, const jsbind::Any& source) : emlite::Val(emlite::Val::global("FontFace").new_(family, source)) {}
 
-FontFace::FontFace(const jsbind::CSSOMString& family, const jsbind::Any& source, const jsbind::Any& descriptors) : emlite::Val(emlite::Val::global("FontFace").new_(family, source, descriptors)) {}
+FontFace::FontFace(const jsbind::String& family, const jsbind::Any& source, const jsbind::Any& descriptors) : emlite::Val(emlite::Val::global("FontFace").new_(family, source, descriptors)) {}
 
-jsbind::CSSOMString FontFace::family() const {
-    return emlite::Val::get("family").as<jsbind::CSSOMString>();
+jsbind::String FontFace::family() const {
+    return emlite::Val::get("family").as<jsbind::String>();
 }
 
-void FontFace::family(const jsbind::CSSOMString& value) {
+void FontFace::family(const jsbind::String& value) {
     emlite::Val::set("family", value);
 }
 
-jsbind::CSSOMString FontFace::style() const {
-    return emlite::Val::get("style").as<jsbind::CSSOMString>();
+jsbind::String FontFace::style() const {
+    return emlite::Val::get("style").as<jsbind::String>();
 }
 
-void FontFace::style(const jsbind::CSSOMString& value) {
+void FontFace::style(const jsbind::String& value) {
     emlite::Val::set("style", value);
 }
 
-jsbind::CSSOMString FontFace::weight() const {
-    return emlite::Val::get("weight").as<jsbind::CSSOMString>();
+jsbind::String FontFace::weight() const {
+    return emlite::Val::get("weight").as<jsbind::String>();
 }
 
-void FontFace::weight(const jsbind::CSSOMString& value) {
+void FontFace::weight(const jsbind::String& value) {
     emlite::Val::set("weight", value);
 }
 
-jsbind::CSSOMString FontFace::stretch() const {
-    return emlite::Val::get("stretch").as<jsbind::CSSOMString>();
+jsbind::String FontFace::stretch() const {
+    return emlite::Val::get("stretch").as<jsbind::String>();
 }
 
-void FontFace::stretch(const jsbind::CSSOMString& value) {
+void FontFace::stretch(const jsbind::String& value) {
     emlite::Val::set("stretch", value);
 }
 
-jsbind::CSSOMString FontFace::unicodeRange() const {
-    return emlite::Val::get("unicodeRange").as<jsbind::CSSOMString>();
+jsbind::String FontFace::unicodeRange() const {
+    return emlite::Val::get("unicodeRange").as<jsbind::String>();
 }
 
-void FontFace::unicodeRange(const jsbind::CSSOMString& value) {
+void FontFace::unicodeRange(const jsbind::String& value) {
     emlite::Val::set("unicodeRange", value);
 }
 
-jsbind::CSSOMString FontFace::featureSettings() const {
-    return emlite::Val::get("featureSettings").as<jsbind::CSSOMString>();
+jsbind::String FontFace::featureSettings() const {
+    return emlite::Val::get("featureSettings").as<jsbind::String>();
 }
 
-void FontFace::featureSettings(const jsbind::CSSOMString& value) {
+void FontFace::featureSettings(const jsbind::String& value) {
     emlite::Val::set("featureSettings", value);
 }
 
-jsbind::CSSOMString FontFace::variationSettings() const {
-    return emlite::Val::get("variationSettings").as<jsbind::CSSOMString>();
+jsbind::String FontFace::variationSettings() const {
+    return emlite::Val::get("variationSettings").as<jsbind::String>();
 }
 
-void FontFace::variationSettings(const jsbind::CSSOMString& value) {
+void FontFace::variationSettings(const jsbind::String& value) {
     emlite::Val::set("variationSettings", value);
 }
 
-jsbind::CSSOMString FontFace::display() const {
-    return emlite::Val::get("display").as<jsbind::CSSOMString>();
+jsbind::String FontFace::display() const {
+    return emlite::Val::get("display").as<jsbind::String>();
 }
 
-void FontFace::display(const jsbind::CSSOMString& value) {
+void FontFace::display(const jsbind::String& value) {
     emlite::Val::set("display", value);
 }
 
-jsbind::CSSOMString FontFace::ascentOverride() const {
-    return emlite::Val::get("ascentOverride").as<jsbind::CSSOMString>();
+jsbind::String FontFace::ascentOverride() const {
+    return emlite::Val::get("ascentOverride").as<jsbind::String>();
 }
 
-void FontFace::ascentOverride(const jsbind::CSSOMString& value) {
+void FontFace::ascentOverride(const jsbind::String& value) {
     emlite::Val::set("ascentOverride", value);
 }
 
-jsbind::CSSOMString FontFace::descentOverride() const {
-    return emlite::Val::get("descentOverride").as<jsbind::CSSOMString>();
+jsbind::String FontFace::descentOverride() const {
+    return emlite::Val::get("descentOverride").as<jsbind::String>();
 }
 
-void FontFace::descentOverride(const jsbind::CSSOMString& value) {
+void FontFace::descentOverride(const jsbind::String& value) {
     emlite::Val::set("descentOverride", value);
 }
 
-jsbind::CSSOMString FontFace::lineGapOverride() const {
-    return emlite::Val::get("lineGapOverride").as<jsbind::CSSOMString>();
+jsbind::String FontFace::lineGapOverride() const {
+    return emlite::Val::get("lineGapOverride").as<jsbind::String>();
 }
 
-void FontFace::lineGapOverride(const jsbind::CSSOMString& value) {
+void FontFace::lineGapOverride(const jsbind::String& value) {
     emlite::Val::set("lineGapOverride", value);
 }
 

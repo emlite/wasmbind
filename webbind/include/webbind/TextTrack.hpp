@@ -19,10 +19,10 @@ public:
 
     TextTrack clone() const noexcept;
     TextTrackKind kind() const;
-    jsbind::DOMString label() const;
-    jsbind::DOMString language() const;
-    jsbind::DOMString id() const;
-    jsbind::DOMString inBandMetadataTrackDispatchType() const;
+    jsbind::String label() const;
+    jsbind::String language() const;
+    jsbind::String id() const;
+    jsbind::String inBandMetadataTrackDispatchType() const;
     TextTrackMode mode() const;
     void mode(const TextTrackMode& value);
     TextTrackCueList cues() const;

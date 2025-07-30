@@ -21,11 +21,11 @@ jsbind::Any GPUQuerySet::count() const {
     return emlite::Val::get("count").as<jsbind::Any>();
 }
 
-jsbind::USVString GPUQuerySet::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUQuerySet::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUQuerySet::label(const jsbind::USVString& value) {
+void GPUQuerySet::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

@@ -11,15 +11,15 @@ PasswordCredential::PasswordCredential(const emlite::Val &val) noexcept: Credent
 
 PasswordCredential::PasswordCredential(const jsbind::Any& data) : Credential(emlite::Val::global("PasswordCredential").new_(data)) {}
 
-jsbind::USVString PasswordCredential::password() const {
-    return Credential::get("password").as<jsbind::USVString>();
+jsbind::String PasswordCredential::password() const {
+    return Credential::get("password").as<jsbind::String>();
 }
 
-jsbind::USVString PasswordCredential::name() const {
-    return Credential::get("name").as<jsbind::USVString>();
+jsbind::String PasswordCredential::name() const {
+    return Credential::get("name").as<jsbind::String>();
 }
 
-jsbind::USVString PasswordCredential::iconURL() const {
-    return Credential::get("iconURL").as<jsbind::USVString>();
+jsbind::String PasswordCredential::iconURL() const {
+    return Credential::get("iconURL").as<jsbind::String>();
 }
 

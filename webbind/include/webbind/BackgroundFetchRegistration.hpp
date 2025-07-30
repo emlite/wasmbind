@@ -32,7 +32,7 @@ public:
     static BackgroundFetchRegistration take_ownership(Handle h) noexcept;
 
     BackgroundFetchRegistration clone() const noexcept;
-    jsbind::DOMString id() const;
+    jsbind::String id() const;
     long long uploadTotal() const;
     long long uploaded() const;
     long long downloadTotal() const;
@@ -45,8 +45,8 @@ public:
     jsbind::Promise<bool> abort();
     jsbind::Promise<BackgroundFetchRecord> match(const jsbind::Any& request);
     jsbind::Promise<BackgroundFetchRecord> match(const jsbind::Any& request, const CacheQueryOptions& options);
-    jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> matchAll();
-    jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> matchAll(const jsbind::Any& request);
-    jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> matchAll();
+    jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> matchAll(const jsbind::Any& request);
+    jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
 };
 

@@ -54,8 +54,8 @@ Gamepad::Gamepad(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)
 Gamepad::Gamepad(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString Gamepad::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String Gamepad::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
 long Gamepad::index() const {
@@ -74,16 +74,16 @@ GamepadMappingType Gamepad::mapping() const {
     return emlite::Val::get("mapping").as<GamepadMappingType>();
 }
 
-jsbind::FrozenArray<double> Gamepad::axes() const {
-    return emlite::Val::get("axes").as<jsbind::FrozenArray<double>>();
+jsbind::TypedArray<double> Gamepad::axes() const {
+    return emlite::Val::get("axes").as<jsbind::TypedArray<double>>();
 }
 
-jsbind::FrozenArray<GamepadButton> Gamepad::buttons() const {
-    return emlite::Val::get("buttons").as<jsbind::FrozenArray<GamepadButton>>();
+jsbind::TypedArray<GamepadButton> Gamepad::buttons() const {
+    return emlite::Val::get("buttons").as<jsbind::TypedArray<GamepadButton>>();
 }
 
-jsbind::FrozenArray<GamepadTouch> Gamepad::touches() const {
-    return emlite::Val::get("touches").as<jsbind::FrozenArray<GamepadTouch>>();
+jsbind::TypedArray<GamepadTouch> Gamepad::touches() const {
+    return emlite::Val::get("touches").as<jsbind::TypedArray<GamepadTouch>>();
 }
 
 GamepadHapticActuator Gamepad::vibrationActuator() const {
@@ -94,8 +94,8 @@ GamepadHand Gamepad::hand() const {
     return emlite::Val::get("hand").as<GamepadHand>();
 }
 
-jsbind::FrozenArray<GamepadHapticActuator> Gamepad::hapticActuators() const {
-    return emlite::Val::get("hapticActuators").as<jsbind::FrozenArray<GamepadHapticActuator>>();
+jsbind::TypedArray<GamepadHapticActuator> Gamepad::hapticActuators() const {
+    return emlite::Val::get("hapticActuators").as<jsbind::TypedArray<GamepadHapticActuator>>();
 }
 
 GamepadPose Gamepad::pose() const {

@@ -10,7 +10,7 @@ WorkletGroupEffect::WorkletGroupEffect(Handle h) noexcept : emlite::Val(emlite::
 WorkletGroupEffect::WorkletGroupEffect(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Sequence<WorkletAnimationEffect> WorkletGroupEffect::getChildren() {
-    return emlite::Val::call("getChildren").as<jsbind::Sequence<WorkletAnimationEffect>>();
+jsbind::TypedArray<WorkletAnimationEffect> WorkletGroupEffect::getChildren() {
+    return emlite::Val::call("getChildren").as<jsbind::TypedArray<WorkletAnimationEffect>>();
 }
 

@@ -13,11 +13,11 @@ unsigned long DOMStringList::length() const {
     return emlite::Val::get("length").as<unsigned long>();
 }
 
-jsbind::DOMString DOMStringList::item(unsigned long index) {
-    return emlite::Val::call("item", index).as<jsbind::DOMString>();
+jsbind::String DOMStringList::item(unsigned long index) {
+    return emlite::Val::call("item", index).as<jsbind::String>();
 }
 
-bool DOMStringList::contains(const jsbind::DOMString& string) {
+bool DOMStringList::contains(const jsbind::String& string) {
     return emlite::Val::call("contains", string).as<bool>();
 }
 

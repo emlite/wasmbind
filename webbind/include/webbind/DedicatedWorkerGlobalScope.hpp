@@ -15,7 +15,7 @@ public:
     static DedicatedWorkerGlobalScope take_ownership(Handle h) noexcept;
 
     DedicatedWorkerGlobalScope clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
     jsbind::Undefined close();

@@ -33,7 +33,7 @@ DOMException IDBTransaction::error() const {
     return EventTarget::get("error").as<DOMException>();
 }
 
-IDBObjectStore IDBTransaction::objectStore(const jsbind::DOMString& name) {
+IDBObjectStore IDBTransaction::objectStore(const jsbind::String& name) {
     return EventTarget::call("objectStore", name).as<IDBObjectStore>();
 }
 

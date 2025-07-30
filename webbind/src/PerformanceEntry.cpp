@@ -13,12 +13,12 @@ long long PerformanceEntry::id() const {
     return emlite::Val::get("id").as<long long>();
 }
 
-jsbind::DOMString PerformanceEntry::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String PerformanceEntry::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString PerformanceEntry::entryType() const {
-    return emlite::Val::get("entryType").as<jsbind::DOMString>();
+jsbind::String PerformanceEntry::entryType() const {
+    return emlite::Val::get("entryType").as<jsbind::String>();
 }
 
 jsbind::Any PerformanceEntry::startTime() const {

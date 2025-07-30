@@ -14,9 +14,9 @@ public:
     static MediaEncryptedEvent take_ownership(Handle h) noexcept;
 
     MediaEncryptedEvent clone() const noexcept;
-    MediaEncryptedEvent(const jsbind::DOMString& type);
-    MediaEncryptedEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::DOMString initDataType() const;
+    MediaEncryptedEvent(const jsbind::String& type);
+    MediaEncryptedEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String initDataType() const;
     jsbind::ArrayBuffer initData() const;
 };
 

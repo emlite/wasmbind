@@ -16,7 +16,7 @@ public:
     static XRLayerEvent take_ownership(Handle h) noexcept;
 
     XRLayerEvent clone() const noexcept;
-    XRLayerEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    XRLayerEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     XRLayer layer() const;
 };
 

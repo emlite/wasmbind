@@ -20,19 +20,19 @@ SpeechGrammar SpeechGrammarList::item(unsigned long index) {
     return emlite::Val::call("item", index).as<SpeechGrammar>();
 }
 
-jsbind::Undefined SpeechGrammarList::addFromURI(const jsbind::DOMString& src) {
+jsbind::Undefined SpeechGrammarList::addFromURI(const jsbind::String& src) {
     return emlite::Val::call("addFromURI", src).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined SpeechGrammarList::addFromURI(const jsbind::DOMString& src, float weight) {
+jsbind::Undefined SpeechGrammarList::addFromURI(const jsbind::String& src, float weight) {
     return emlite::Val::call("addFromURI", src, weight).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined SpeechGrammarList::addFromString(const jsbind::DOMString& string) {
+jsbind::Undefined SpeechGrammarList::addFromString(const jsbind::String& string) {
     return emlite::Val::call("addFromString", string).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined SpeechGrammarList::addFromString(const jsbind::DOMString& string, float weight) {
+jsbind::Undefined SpeechGrammarList::addFromString(const jsbind::String& string, float weight) {
     return emlite::Val::call("addFromString", string, weight).as<jsbind::Undefined>();
 }
 

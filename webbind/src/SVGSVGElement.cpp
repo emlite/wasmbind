@@ -212,7 +212,7 @@ SVGTransform SVGSVGElement::createSVGTransformFromMatrix(const DOMMatrix2DInit& 
     return SVGGraphicsElement::call("createSVGTransformFromMatrix", matrix).as<SVGTransform>();
 }
 
-Element SVGSVGElement::getElementById(const jsbind::DOMString& elementId) {
+Element SVGSVGElement::getElementById(const jsbind::String& elementId) {
     return SVGGraphicsElement::call("getElementById", elementId).as<Element>();
 }
 

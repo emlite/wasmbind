@@ -15,8 +15,8 @@ double FontMetrics::width() const {
     return emlite::Val::get("width").as<double>();
 }
 
-jsbind::FrozenArray<double> FontMetrics::advances() const {
-    return emlite::Val::get("advances").as<jsbind::FrozenArray<double>>();
+jsbind::TypedArray<double> FontMetrics::advances() const {
+    return emlite::Val::get("advances").as<jsbind::TypedArray<double>>();
 }
 
 double FontMetrics::boundingBoxLeft() const {
@@ -59,11 +59,11 @@ Baseline FontMetrics::dominantBaseline() const {
     return emlite::Val::get("dominantBaseline").as<Baseline>();
 }
 
-jsbind::FrozenArray<Baseline> FontMetrics::baselines() const {
-    return emlite::Val::get("baselines").as<jsbind::FrozenArray<Baseline>>();
+jsbind::TypedArray<Baseline> FontMetrics::baselines() const {
+    return emlite::Val::get("baselines").as<jsbind::TypedArray<Baseline>>();
 }
 
-jsbind::FrozenArray<Font> FontMetrics::fonts() const {
-    return emlite::Val::get("fonts").as<jsbind::FrozenArray<Font>>();
+jsbind::TypedArray<Font> FontMetrics::fonts() const {
+    return emlite::Val::get("fonts").as<jsbind::TypedArray<Font>>();
 }
 

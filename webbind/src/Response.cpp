@@ -23,11 +23,11 @@ Response Response::error() {
     return emlite::Val::global("response").call("error").as<Response>();
 }
 
-Response Response::redirect(const jsbind::USVString& url) {
+Response Response::redirect(const jsbind::String& url) {
     return emlite::Val::global("response").call("redirect", url).as<Response>();
 }
 
-Response Response::redirect(const jsbind::USVString& url, unsigned short status) {
+Response Response::redirect(const jsbind::String& url, unsigned short status) {
     return emlite::Val::global("response").call("redirect", url, status).as<Response>();
 }
 
@@ -39,8 +39,8 @@ ResponseType Response::type() const {
     return emlite::Val::get("type").as<ResponseType>();
 }
 
-jsbind::USVString Response::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String Response::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
 bool Response::redirected() const {
@@ -55,8 +55,8 @@ bool Response::ok() const {
     return emlite::Val::get("ok").as<bool>();
 }
 
-jsbind::ByteString Response::statusText() const {
-    return emlite::Val::get("statusText").as<jsbind::ByteString>();
+jsbind::String Response::statusText() const {
+    return emlite::Val::get("statusText").as<jsbind::String>();
 }
 
 Headers Response::headers() const {
@@ -91,7 +91,7 @@ jsbind::Promise<FormData> Response::formData() {
     return emlite::Val::call("formData").as<jsbind::Promise<FormData>>();
 }
 
-jsbind::Promise<jsbind::USVString> Response::text() {
-    return emlite::Val::call("text").as<jsbind::Promise<jsbind::USVString>>();
+jsbind::Promise<jsbind::String> Response::text() {
+    return emlite::Val::call("text").as<jsbind::Promise<jsbind::String>>();
 }
 

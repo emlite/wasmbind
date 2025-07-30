@@ -38,11 +38,11 @@ WindowPostMessageOptions::WindowPostMessageOptions(const emlite::Val &val) noexc
 WindowPostMessageOptions::WindowPostMessageOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 WindowPostMessageOptions WindowPostMessageOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString WindowPostMessageOptions::targetOrigin() const {
-    return emlite::Val::get("targetOrigin").as<jsbind::USVString>();
+jsbind::String WindowPostMessageOptions::targetOrigin() const {
+    return emlite::Val::get("targetOrigin").as<jsbind::String>();
 }
 
-void WindowPostMessageOptions::targetOrigin(const jsbind::USVString& value) {
+void WindowPostMessageOptions::targetOrigin(const jsbind::String& value) {
     emlite::Val::set("targetOrigin", value);
 }
 
@@ -70,11 +70,11 @@ SaveFilePickerOptions::SaveFilePickerOptions(const emlite::Val &val) noexcept: e
 SaveFilePickerOptions::SaveFilePickerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 SaveFilePickerOptions SaveFilePickerOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString SaveFilePickerOptions::suggestedName() const {
-    return emlite::Val::get("suggestedName").as<jsbind::USVString>();
+jsbind::String SaveFilePickerOptions::suggestedName() const {
+    return emlite::Val::get("suggestedName").as<jsbind::String>();
 }
 
-void SaveFilePickerOptions::suggestedName(const jsbind::USVString& value) {
+void SaveFilePickerOptions::suggestedName(const jsbind::String& value) {
     emlite::Val::set("suggestedName", value);
 }
 
@@ -86,11 +86,11 @@ DirectoryPickerOptions::DirectoryPickerOptions(const emlite::Val &val) noexcept:
 DirectoryPickerOptions::DirectoryPickerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 DirectoryPickerOptions DirectoryPickerOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString DirectoryPickerOptions::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String DirectoryPickerOptions::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-void DirectoryPickerOptions::id(const jsbind::DOMString& value) {
+void DirectoryPickerOptions::id(const jsbind::String& value) {
     emlite::Val::set("id", value);
 }
 
@@ -118,11 +118,11 @@ QueryOptions::QueryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
 QueryOptions::QueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 QueryOptions QueryOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::DOMString> QueryOptions::postscriptNames() const {
-    return emlite::Val::get("postscriptNames").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> QueryOptions::postscriptNames() const {
+    return emlite::Val::get("postscriptNames").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void QueryOptions::postscriptNames(const jsbind::Sequence<jsbind::DOMString>& value) {
+void QueryOptions::postscriptNames(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("postscriptNames", value);
 }
 
@@ -162,11 +162,11 @@ Document Window::document() const {
     return EventTarget::get("document").as<Document>();
 }
 
-jsbind::DOMString Window::name() const {
-    return EventTarget::get("name").as<jsbind::DOMString>();
+jsbind::String Window::name() const {
+    return EventTarget::get("name").as<jsbind::String>();
 }
 
-void Window::name(const jsbind::DOMString& value) {
+void Window::name(const jsbind::String& value) {
     EventTarget::set("name", value);
 }
 
@@ -210,11 +210,11 @@ BarProp Window::toolbar() const {
     return EventTarget::get("toolbar").as<BarProp>();
 }
 
-jsbind::DOMString Window::status() const {
-    return EventTarget::get("status").as<jsbind::DOMString>();
+jsbind::String Window::status() const {
+    return EventTarget::get("status").as<jsbind::String>();
 }
 
-void Window::status(const jsbind::DOMString& value) {
+void Window::status(const jsbind::String& value) {
     EventTarget::set("status", value);
 }
 
@@ -270,15 +270,15 @@ jsbind::Any Window::open() {
     return EventTarget::call("open").as<jsbind::Any>();
 }
 
-jsbind::Any Window::open(const jsbind::USVString& url) {
+jsbind::Any Window::open(const jsbind::String& url) {
     return EventTarget::call("open", url).as<jsbind::Any>();
 }
 
-jsbind::Any Window::open(const jsbind::USVString& url, const jsbind::DOMString& target) {
+jsbind::Any Window::open(const jsbind::String& url, const jsbind::String& target) {
     return EventTarget::call("open", url, target).as<jsbind::Any>();
 }
 
-jsbind::Any Window::open(const jsbind::USVString& url, const jsbind::DOMString& target, const jsbind::DOMString& features) {
+jsbind::Any Window::open(const jsbind::String& url, const jsbind::String& target, const jsbind::String& features) {
     return EventTarget::call("open", url, target, features).as<jsbind::Any>();
 }
 
@@ -294,7 +294,7 @@ bool Window::originAgentCluster() const {
     return EventTarget::get("originAgentCluster").as<bool>();
 }
 
-jsbind::Undefined Window::alert(const jsbind::DOMString& message) {
+jsbind::Undefined Window::alert(const jsbind::String& message) {
     return EventTarget::call("alert", message).as<jsbind::Undefined>();
 }
 
@@ -302,20 +302,20 @@ bool Window::confirm() {
     return EventTarget::call("confirm").as<bool>();
 }
 
-bool Window::confirm(const jsbind::DOMString& message) {
+bool Window::confirm(const jsbind::String& message) {
     return EventTarget::call("confirm", message).as<bool>();
 }
 
-jsbind::DOMString Window::prompt() {
-    return EventTarget::call("prompt").as<jsbind::DOMString>();
+jsbind::String Window::prompt() {
+    return EventTarget::call("prompt").as<jsbind::String>();
 }
 
-jsbind::DOMString Window::prompt(const jsbind::DOMString& message) {
-    return EventTarget::call("prompt", message).as<jsbind::DOMString>();
+jsbind::String Window::prompt(const jsbind::String& message) {
+    return EventTarget::call("prompt", message).as<jsbind::String>();
 }
 
-jsbind::DOMString Window::prompt(const jsbind::DOMString& message, const jsbind::DOMString& default_) {
-    return EventTarget::call("prompt", message, default_).as<jsbind::DOMString>();
+jsbind::String Window::prompt(const jsbind::String& message, const jsbind::String& default_) {
+    return EventTarget::call("prompt", message, default_).as<jsbind::String>();
 }
 
 jsbind::Undefined Window::print() {
@@ -358,7 +358,7 @@ Viewport Window::viewport() const {
     return EventTarget::get("viewport").as<Viewport>();
 }
 
-MediaQueryList Window::matchMedia(const jsbind::CSSOMString& query) {
+MediaQueryList Window::matchMedia(const jsbind::String& query) {
     return EventTarget::call("matchMedia", query).as<MediaQueryList>();
 }
 
@@ -454,11 +454,11 @@ CSSStyleDeclaration Window::getComputedStyle(const Element& elt) {
     return EventTarget::call("getComputedStyle", elt).as<CSSStyleDeclaration>();
 }
 
-CSSStyleDeclaration Window::getComputedStyle(const Element& elt, const jsbind::CSSOMString& pseudoElt) {
+CSSStyleDeclaration Window::getComputedStyle(const Element& elt, const jsbind::String& pseudoElt) {
     return EventTarget::call("getComputedStyle", elt, pseudoElt).as<CSSStyleDeclaration>();
 }
 
-jsbind::Promise<DigitalGoodsService> Window::getDigitalGoodsService(const jsbind::DOMString& serviceProvider) {
+jsbind::Promise<DigitalGoodsService> Window::getDigitalGoodsService(const jsbind::String& serviceProvider) {
     return EventTarget::call("getDigitalGoodsService", serviceProvider).as<jsbind::Promise<DigitalGoodsService>>();
 }
 
@@ -474,12 +474,12 @@ Fence Window::fence() const {
     return EventTarget::get("fence").as<Fence>();
 }
 
-jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>> Window::showOpenFilePicker() {
-    return EventTarget::call("showOpenFilePicker").as<jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>>>();
+jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>> Window::showOpenFilePicker() {
+    return EventTarget::call("showOpenFilePicker").as<jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>> Window::showOpenFilePicker(const OpenFilePickerOptions& options) {
-    return EventTarget::call("showOpenFilePicker", options).as<jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>>>();
+jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>> Window::showOpenFilePicker(const OpenFilePickerOptions& options) {
+    return EventTarget::call("showOpenFilePicker", options).as<jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>>>();
 }
 
 jsbind::Promise<FileSystemFileHandle> Window::showSaveFilePicker() {
@@ -510,12 +510,12 @@ External Window::external() const {
     return EventTarget::get("external").as<External>();
 }
 
-jsbind::Promise<jsbind::Sequence<FontData>> Window::queryLocalFonts() {
-    return EventTarget::call("queryLocalFonts").as<jsbind::Promise<jsbind::Sequence<FontData>>>();
+jsbind::Promise<jsbind::TypedArray<FontData>> Window::queryLocalFonts() {
+    return EventTarget::call("queryLocalFonts").as<jsbind::Promise<jsbind::TypedArray<FontData>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<FontData>> Window::queryLocalFonts(const QueryOptions& options) {
-    return EventTarget::call("queryLocalFonts", options).as<jsbind::Promise<jsbind::Sequence<FontData>>>();
+jsbind::Promise<jsbind::TypedArray<FontData>> Window::queryLocalFonts(const QueryOptions& options) {
+    return EventTarget::call("queryLocalFonts", options).as<jsbind::Promise<jsbind::TypedArray<FontData>>>();
 }
 
 jsbind::Any Window::onappinstalled() const {

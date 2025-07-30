@@ -17,7 +17,7 @@ public:
     HTMLOptGroupElement();
     bool disabled() const;
     void disabled(bool value);
-    jsbind::DOMString label() const;
-    void label(const jsbind::DOMString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

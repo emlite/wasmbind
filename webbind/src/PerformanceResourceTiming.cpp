@@ -10,16 +10,16 @@ PerformanceResourceTiming::PerformanceResourceTiming(Handle h) noexcept : Perfor
 PerformanceResourceTiming::PerformanceResourceTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 
 
-jsbind::DOMString PerformanceResourceTiming::initiatorType() const {
-    return PerformanceEntry::get("initiatorType").as<jsbind::DOMString>();
+jsbind::String PerformanceResourceTiming::initiatorType() const {
+    return PerformanceEntry::get("initiatorType").as<jsbind::String>();
 }
 
-jsbind::DOMString PerformanceResourceTiming::deliveryType() const {
-    return PerformanceEntry::get("deliveryType").as<jsbind::DOMString>();
+jsbind::String PerformanceResourceTiming::deliveryType() const {
+    return PerformanceEntry::get("deliveryType").as<jsbind::String>();
 }
 
-jsbind::ByteString PerformanceResourceTiming::nextHopProtocol() const {
-    return PerformanceEntry::get("nextHopProtocol").as<jsbind::ByteString>();
+jsbind::String PerformanceResourceTiming::nextHopProtocol() const {
+    return PerformanceEntry::get("nextHopProtocol").as<jsbind::String>();
 }
 
 jsbind::Any PerformanceResourceTiming::workerStart() const {
@@ -98,19 +98,19 @@ RenderBlockingStatusType PerformanceResourceTiming::renderBlockingStatus() const
     return PerformanceEntry::get("renderBlockingStatus").as<RenderBlockingStatusType>();
 }
 
-jsbind::DOMString PerformanceResourceTiming::contentType() const {
-    return PerformanceEntry::get("contentType").as<jsbind::DOMString>();
+jsbind::String PerformanceResourceTiming::contentType() const {
+    return PerformanceEntry::get("contentType").as<jsbind::String>();
 }
 
-jsbind::DOMString PerformanceResourceTiming::contentEncoding() const {
-    return PerformanceEntry::get("contentEncoding").as<jsbind::DOMString>();
+jsbind::String PerformanceResourceTiming::contentEncoding() const {
+    return PerformanceEntry::get("contentEncoding").as<jsbind::String>();
 }
 
 jsbind::Object PerformanceResourceTiming::toJSON() {
     return PerformanceEntry::call("toJSON").as<jsbind::Object>();
 }
 
-jsbind::FrozenArray<PerformanceServerTiming> PerformanceResourceTiming::serverTiming() const {
-    return PerformanceEntry::get("serverTiming").as<jsbind::FrozenArray<PerformanceServerTiming>>();
+jsbind::TypedArray<PerformanceServerTiming> PerformanceResourceTiming::serverTiming() const {
+    return PerformanceEntry::get("serverTiming").as<jsbind::TypedArray<PerformanceServerTiming>>();
 }
 

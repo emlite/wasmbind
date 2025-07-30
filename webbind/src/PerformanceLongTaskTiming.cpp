@@ -18,16 +18,16 @@ jsbind::Any PerformanceLongTaskTiming::duration() const {
     return PerformanceEntry::get("duration").as<jsbind::Any>();
 }
 
-jsbind::DOMString PerformanceLongTaskTiming::name() const {
-    return PerformanceEntry::get("name").as<jsbind::DOMString>();
+jsbind::String PerformanceLongTaskTiming::name() const {
+    return PerformanceEntry::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString PerformanceLongTaskTiming::entryType() const {
-    return PerformanceEntry::get("entryType").as<jsbind::DOMString>();
+jsbind::String PerformanceLongTaskTiming::entryType() const {
+    return PerformanceEntry::get("entryType").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<TaskAttributionTiming> PerformanceLongTaskTiming::attribution() const {
-    return PerformanceEntry::get("attribution").as<jsbind::FrozenArray<TaskAttributionTiming>>();
+jsbind::TypedArray<TaskAttributionTiming> PerformanceLongTaskTiming::attribution() const {
+    return PerformanceEntry::get("attribution").as<jsbind::TypedArray<TaskAttributionTiming>>();
 }
 
 jsbind::Object PerformanceLongTaskTiming::toJSON() {

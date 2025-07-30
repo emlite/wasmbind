@@ -16,7 +16,7 @@ public:
     static XRSessionEvent take_ownership(Handle h) noexcept;
 
     XRSessionEvent clone() const noexcept;
-    XRSessionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    XRSessionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     XRSession session() const;
 };
 

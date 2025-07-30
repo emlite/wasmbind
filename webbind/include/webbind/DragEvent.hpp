@@ -16,8 +16,8 @@ public:
     static DragEvent take_ownership(Handle h) noexcept;
 
     DragEvent clone() const noexcept;
-    DragEvent(const jsbind::DOMString& type);
-    DragEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    DragEvent(const jsbind::String& type);
+    DragEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     DataTransfer dataTransfer() const;
 };
 

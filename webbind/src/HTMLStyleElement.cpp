@@ -21,11 +21,11 @@ void HTMLStyleElement::disabled(bool value) {
     HTMLElement::set("disabled", value);
 }
 
-jsbind::DOMString HTMLStyleElement::media() const {
-    return HTMLElement::get("media").as<jsbind::DOMString>();
+jsbind::String HTMLStyleElement::media() const {
+    return HTMLElement::get("media").as<jsbind::String>();
 }
 
-void HTMLStyleElement::media(const jsbind::DOMString& value) {
+void HTMLStyleElement::media(const jsbind::String& value) {
     HTMLElement::set("media", value);
 }
 
@@ -33,11 +33,11 @@ DOMTokenList HTMLStyleElement::blocking() const {
     return HTMLElement::get("blocking").as<DOMTokenList>();
 }
 
-jsbind::DOMString HTMLStyleElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLStyleElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLStyleElement::type(const jsbind::DOMString& value) {
+void HTMLStyleElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 

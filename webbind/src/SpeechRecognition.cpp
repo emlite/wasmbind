@@ -12,11 +12,11 @@ SpeechRecognitionOptions::SpeechRecognitionOptions(const emlite::Val &val) noexc
 SpeechRecognitionOptions::SpeechRecognitionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 SpeechRecognitionOptions SpeechRecognitionOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::DOMString> SpeechRecognitionOptions::langs() const {
-    return emlite::Val::get("langs").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> SpeechRecognitionOptions::langs() const {
+    return emlite::Val::get("langs").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void SpeechRecognitionOptions::langs(const jsbind::Sequence<jsbind::DOMString>& value) {
+void SpeechRecognitionOptions::langs(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("langs", value);
 }
 
@@ -46,11 +46,11 @@ void SpeechRecognition::grammars(const SpeechGrammarList& value) {
     EventTarget::set("grammars", value);
 }
 
-jsbind::DOMString SpeechRecognition::lang() const {
-    return EventTarget::get("lang").as<jsbind::DOMString>();
+jsbind::String SpeechRecognition::lang() const {
+    return EventTarget::get("lang").as<jsbind::String>();
 }
 
-void SpeechRecognition::lang(const jsbind::DOMString& value) {
+void SpeechRecognition::lang(const jsbind::String& value) {
     EventTarget::set("lang", value);
 }
 

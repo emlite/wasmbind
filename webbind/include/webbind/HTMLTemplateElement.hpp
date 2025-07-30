@@ -18,15 +18,15 @@ public:
     HTMLTemplateElement clone() const noexcept;
     HTMLTemplateElement();
     DocumentFragment content() const;
-    jsbind::DOMString shadowRootMode() const;
-    void shadowRootMode(const jsbind::DOMString& value);
+    jsbind::String shadowRootMode() const;
+    void shadowRootMode(const jsbind::String& value);
     bool shadowRootDelegatesFocus() const;
     void shadowRootDelegatesFocus(bool value);
     bool shadowRootClonable() const;
     void shadowRootClonable(bool value);
     bool shadowRootSerializable() const;
     void shadowRootSerializable(bool value);
-    jsbind::DOMString shadowRootCustomElementRegistry() const;
-    void shadowRootCustomElementRegistry(const jsbind::DOMString& value);
+    jsbind::String shadowRootCustomElementRegistry() const;
+    void shadowRootCustomElementRegistry(const jsbind::String& value);
 };
 

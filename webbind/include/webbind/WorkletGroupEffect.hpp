@@ -15,6 +15,6 @@ public:
     static WorkletGroupEffect take_ownership(Handle h) noexcept;
 
     WorkletGroupEffect clone() const noexcept;
-    jsbind::Sequence<WorkletAnimationEffect> getChildren();
+    jsbind::TypedArray<WorkletAnimationEffect> getChildren();
 };
 

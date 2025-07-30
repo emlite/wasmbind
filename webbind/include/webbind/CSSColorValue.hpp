@@ -14,6 +14,6 @@ public:
     static CSSColorValue take_ownership(Handle h) noexcept;
 
     CSSColorValue clone() const noexcept;
-    static jsbind::Any parse(const jsbind::USVString& cssText);
+    static jsbind::Any parse(const jsbind::String& cssText);
 };
 

@@ -16,7 +16,7 @@ public:
     static PresentationConnectionList take_ownership(Handle h) noexcept;
 
     PresentationConnectionList clone() const noexcept;
-    jsbind::FrozenArray<PresentationConnection> connections() const;
+    jsbind::TypedArray<PresentationConnection> connections() const;
     jsbind::Any onconnectionavailable() const;
     void onconnectionavailable(const jsbind::Any& value);
 };

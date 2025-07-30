@@ -47,8 +47,8 @@ jsbind::Undefined HandwritingStroke::addPoint(const HandwritingPoint& point) {
     return emlite::Val::call("addPoint", point).as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<HandwritingPoint> HandwritingStroke::getPoints() {
-    return emlite::Val::call("getPoints").as<jsbind::Sequence<HandwritingPoint>>();
+jsbind::TypedArray<HandwritingPoint> HandwritingStroke::getPoints() {
+    return emlite::Val::call("getPoints").as<jsbind::TypedArray<HandwritingPoint>>();
 }
 
 jsbind::Undefined HandwritingStroke::clear() {

@@ -16,9 +16,9 @@ public:
     static CSSParserQualifiedRule take_ownership(Handle h) noexcept;
 
     CSSParserQualifiedRule clone() const noexcept;
-    CSSParserQualifiedRule(const jsbind::Sequence<jsbind::Any>& prelude);
-    CSSParserQualifiedRule(const jsbind::Sequence<jsbind::Any>& prelude, const jsbind::Sequence<CSSParserRule>& body);
-    jsbind::FrozenArray<CSSParserValue> prelude() const;
-    jsbind::FrozenArray<CSSParserRule> body() const;
+    CSSParserQualifiedRule(const jsbind::TypedArray<jsbind::Any>& prelude);
+    CSSParserQualifiedRule(const jsbind::TypedArray<jsbind::Any>& prelude, const jsbind::TypedArray<CSSParserRule>& body);
+    jsbind::TypedArray<CSSParserValue> prelude() const;
+    jsbind::TypedArray<CSSParserRule> body() const;
 };
 

@@ -22,8 +22,8 @@ jsbind::Any LayoutShift::lastInputTime() const {
     return PerformanceEntry::get("lastInputTime").as<jsbind::Any>();
 }
 
-jsbind::FrozenArray<LayoutShiftAttribution> LayoutShift::sources() const {
-    return PerformanceEntry::get("sources").as<jsbind::FrozenArray<LayoutShiftAttribution>>();
+jsbind::TypedArray<LayoutShiftAttribution> LayoutShift::sources() const {
+    return PerformanceEntry::get("sources").as<jsbind::TypedArray<LayoutShiftAttribution>>();
 }
 
 jsbind::Object LayoutShift::toJSON() {

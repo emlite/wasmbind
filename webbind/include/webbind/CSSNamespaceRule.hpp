@@ -14,7 +14,7 @@ public:
     static CSSNamespaceRule take_ownership(Handle h) noexcept;
 
     CSSNamespaceRule clone() const noexcept;
-    jsbind::CSSOMString namespaceURI() const;
-    jsbind::CSSOMString prefix() const;
+    jsbind::String namespaceURI() const;
+    jsbind::String prefix() const;
 };
 

@@ -9,27 +9,27 @@ FunctionParameter::FunctionParameter(const emlite::Val &val) noexcept: emlite::V
 FunctionParameter::FunctionParameter() noexcept: emlite::Val(emlite::Val::object()) {}
 FunctionParameter FunctionParameter::clone() const noexcept { return *this; }
 
-jsbind::CSSOMString FunctionParameter::name() const {
-    return emlite::Val::get("name").as<jsbind::CSSOMString>();
+jsbind::String FunctionParameter::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void FunctionParameter::name(const jsbind::CSSOMString& value) {
+void FunctionParameter::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::CSSOMString FunctionParameter::type() const {
-    return emlite::Val::get("type").as<jsbind::CSSOMString>();
+jsbind::String FunctionParameter::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-void FunctionParameter::type(const jsbind::CSSOMString& value) {
+void FunctionParameter::type(const jsbind::String& value) {
     emlite::Val::set("type", value);
 }
 
-jsbind::CSSOMString FunctionParameter::defaultValue() const {
-    return emlite::Val::get("defaultValue").as<jsbind::CSSOMString>();
+jsbind::String FunctionParameter::defaultValue() const {
+    return emlite::Val::get("defaultValue").as<jsbind::String>();
 }
 
-void FunctionParameter::defaultValue(const jsbind::CSSOMString& value) {
+void FunctionParameter::defaultValue(const jsbind::String& value) {
     emlite::Val::set("defaultValue", value);
 }
 
@@ -41,15 +41,15 @@ CSSFunctionRule::CSSFunctionRule(Handle h) noexcept : CSSGroupingRule(emlite::Va
 CSSFunctionRule::CSSFunctionRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 
-jsbind::CSSOMString CSSFunctionRule::name() const {
-    return CSSGroupingRule::get("name").as<jsbind::CSSOMString>();
+jsbind::String CSSFunctionRule::name() const {
+    return CSSGroupingRule::get("name").as<jsbind::String>();
 }
 
-jsbind::Sequence<FunctionParameter> CSSFunctionRule::getParameters() {
-    return CSSGroupingRule::call("getParameters").as<jsbind::Sequence<FunctionParameter>>();
+jsbind::TypedArray<FunctionParameter> CSSFunctionRule::getParameters() {
+    return CSSGroupingRule::call("getParameters").as<jsbind::TypedArray<FunctionParameter>>();
 }
 
-jsbind::CSSOMString CSSFunctionRule::returnType() const {
-    return CSSGroupingRule::get("returnType").as<jsbind::CSSOMString>();
+jsbind::String CSSFunctionRule::returnType() const {
+    return CSSGroupingRule::get("returnType").as<jsbind::String>();
 }
 

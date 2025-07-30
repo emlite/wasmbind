@@ -9,8 +9,8 @@ SpeechRecognitionAlternative::SpeechRecognitionAlternative(Handle h) noexcept : 
 SpeechRecognitionAlternative::SpeechRecognitionAlternative(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString SpeechRecognitionAlternative::transcript() const {
-    return emlite::Val::get("transcript").as<jsbind::DOMString>();
+jsbind::String SpeechRecognitionAlternative::transcript() const {
+    return emlite::Val::get("transcript").as<jsbind::String>();
 }
 
 float SpeechRecognitionAlternative::confidence() const {

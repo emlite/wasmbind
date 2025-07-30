@@ -13,7 +13,7 @@ unsigned short MediaError::code() const {
     return emlite::Val::get("code").as<unsigned short>();
 }
 
-jsbind::DOMString MediaError::message() const {
-    return emlite::Val::get("message").as<jsbind::DOMString>();
+jsbind::String MediaError::message() const {
+    return emlite::Val::get("message").as<jsbind::String>();
 }
 

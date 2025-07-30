@@ -9,9 +9,9 @@ PointerEvent::PointerEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_own
 PointerEvent::PointerEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
 
-PointerEvent::PointerEvent(const jsbind::DOMString& type) : MouseEvent(emlite::Val::global("PointerEvent").new_(type)) {}
+PointerEvent::PointerEvent(const jsbind::String& type) : MouseEvent(emlite::Val::global("PointerEvent").new_(type)) {}
 
-PointerEvent::PointerEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : MouseEvent(emlite::Val::global("PointerEvent").new_(type, eventInitDict)) {}
+PointerEvent::PointerEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : MouseEvent(emlite::Val::global("PointerEvent").new_(type, eventInitDict)) {}
 
 long PointerEvent::pointerId() const {
     return MouseEvent::get("pointerId").as<long>();
@@ -53,8 +53,8 @@ double PointerEvent::azimuthAngle() const {
     return MouseEvent::get("azimuthAngle").as<double>();
 }
 
-jsbind::DOMString PointerEvent::pointerType() const {
-    return MouseEvent::get("pointerType").as<jsbind::DOMString>();
+jsbind::String PointerEvent::pointerType() const {
+    return MouseEvent::get("pointerType").as<jsbind::String>();
 }
 
 bool PointerEvent::isPrimary() const {
@@ -65,11 +65,11 @@ long PointerEvent::persistentDeviceId() const {
     return MouseEvent::get("persistentDeviceId").as<long>();
 }
 
-jsbind::Sequence<PointerEvent> PointerEvent::getCoalescedEvents() {
-    return MouseEvent::call("getCoalescedEvents").as<jsbind::Sequence<PointerEvent>>();
+jsbind::TypedArray<PointerEvent> PointerEvent::getCoalescedEvents() {
+    return MouseEvent::call("getCoalescedEvents").as<jsbind::TypedArray<PointerEvent>>();
 }
 
-jsbind::Sequence<PointerEvent> PointerEvent::getPredictedEvents() {
-    return MouseEvent::call("getPredictedEvents").as<jsbind::Sequence<PointerEvent>>();
+jsbind::TypedArray<PointerEvent> PointerEvent::getPredictedEvents() {
+    return MouseEvent::call("getPredictedEvents").as<jsbind::TypedArray<PointerEvent>>();
 }
 

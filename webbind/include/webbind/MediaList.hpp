@@ -13,11 +13,11 @@ public:
     static MediaList take_ownership(Handle h) noexcept;
 
     MediaList clone() const noexcept;
-    jsbind::CSSOMString mediaText() const;
-    void mediaText(const jsbind::CSSOMString& value);
+    jsbind::String mediaText() const;
+    void mediaText(const jsbind::String& value);
     unsigned long length() const;
-    jsbind::CSSOMString item(unsigned long index);
-    jsbind::Undefined appendMedium(const jsbind::CSSOMString& medium);
-    jsbind::Undefined deleteMedium(const jsbind::CSSOMString& medium);
+    jsbind::String item(unsigned long index);
+    jsbind::Undefined appendMedium(const jsbind::String& medium);
+    jsbind::Undefined deleteMedium(const jsbind::String& medium);
 };
 

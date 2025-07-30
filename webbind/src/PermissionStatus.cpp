@@ -13,8 +13,8 @@ PermissionState PermissionStatus::state() const {
     return EventTarget::get("state").as<PermissionState>();
 }
 
-jsbind::DOMString PermissionStatus::name() const {
-    return EventTarget::get("name").as<jsbind::DOMString>();
+jsbind::String PermissionStatus::name() const {
+    return EventTarget::get("name").as<jsbind::String>();
 }
 
 jsbind::Any PermissionStatus::onchange() const {

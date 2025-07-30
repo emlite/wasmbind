@@ -9,19 +9,19 @@ CSSPropertyRule::CSSPropertyRule(Handle h) noexcept : CSSRule(emlite::Val::take_
 CSSPropertyRule::CSSPropertyRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSPropertyRule::name() const {
-    return CSSRule::get("name").as<jsbind::CSSOMString>();
+jsbind::String CSSPropertyRule::name() const {
+    return CSSRule::get("name").as<jsbind::String>();
 }
 
-jsbind::CSSOMString CSSPropertyRule::syntax() const {
-    return CSSRule::get("syntax").as<jsbind::CSSOMString>();
+jsbind::String CSSPropertyRule::syntax() const {
+    return CSSRule::get("syntax").as<jsbind::String>();
 }
 
 bool CSSPropertyRule::inherits() const {
     return CSSRule::get("inherits").as<bool>();
 }
 
-jsbind::CSSOMString CSSPropertyRule::initialValue() const {
-    return CSSRule::get("initialValue").as<jsbind::CSSOMString>();
+jsbind::String CSSPropertyRule::initialValue() const {
+    return CSSRule::get("initialValue").as<jsbind::String>();
 }
 

@@ -154,11 +154,11 @@ void CanvasRenderingContext2D::globalAlpha(double value) {
     emlite::Val::set("globalAlpha", value);
 }
 
-jsbind::DOMString CanvasRenderingContext2D::globalCompositeOperation() const {
-    return emlite::Val::get("globalCompositeOperation").as<jsbind::DOMString>();
+jsbind::String CanvasRenderingContext2D::globalCompositeOperation() const {
+    return emlite::Val::get("globalCompositeOperation").as<jsbind::String>();
 }
 
-void CanvasRenderingContext2D::globalCompositeOperation(const jsbind::DOMString& value) {
+void CanvasRenderingContext2D::globalCompositeOperation(const jsbind::String& value) {
     emlite::Val::set("globalCompositeOperation", value);
 }
 
@@ -206,7 +206,7 @@ CanvasGradient CanvasRenderingContext2D::createConicGradient(double startAngle, 
     return emlite::Val::call("createConicGradient", startAngle, x, y).as<CanvasGradient>();
 }
 
-CanvasPattern CanvasRenderingContext2D::createPattern(const jsbind::Any& image, const jsbind::DOMString& repetition) {
+CanvasPattern CanvasRenderingContext2D::createPattern(const jsbind::Any& image, const jsbind::String& repetition) {
     return emlite::Val::call("createPattern", image, repetition).as<CanvasPattern>();
 }
 
@@ -234,19 +234,19 @@ void CanvasRenderingContext2D::shadowBlur(double value) {
     emlite::Val::set("shadowBlur", value);
 }
 
-jsbind::DOMString CanvasRenderingContext2D::shadowColor() const {
-    return emlite::Val::get("shadowColor").as<jsbind::DOMString>();
+jsbind::String CanvasRenderingContext2D::shadowColor() const {
+    return emlite::Val::get("shadowColor").as<jsbind::String>();
 }
 
-void CanvasRenderingContext2D::shadowColor(const jsbind::DOMString& value) {
+void CanvasRenderingContext2D::shadowColor(const jsbind::String& value) {
     emlite::Val::set("shadowColor", value);
 }
 
-jsbind::DOMString CanvasRenderingContext2D::filter() const {
-    return emlite::Val::get("filter").as<jsbind::DOMString>();
+jsbind::String CanvasRenderingContext2D::filter() const {
+    return emlite::Val::get("filter").as<jsbind::String>();
 }
 
-void CanvasRenderingContext2D::filter(const jsbind::DOMString& value) {
+void CanvasRenderingContext2D::filter(const jsbind::String& value) {
     emlite::Val::set("filter", value);
 }
 
@@ -302,23 +302,23 @@ jsbind::Undefined CanvasRenderingContext2D::drawFocusIfNeeded(const Path2D& path
     return emlite::Val::call("drawFocusIfNeeded", path, element).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CanvasRenderingContext2D::fillText(const jsbind::DOMString& text, double x, double y) {
+jsbind::Undefined CanvasRenderingContext2D::fillText(const jsbind::String& text, double x, double y) {
     return emlite::Val::call("fillText", text, x, y).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CanvasRenderingContext2D::fillText(const jsbind::DOMString& text, double x, double y, double maxWidth) {
+jsbind::Undefined CanvasRenderingContext2D::fillText(const jsbind::String& text, double x, double y, double maxWidth) {
     return emlite::Val::call("fillText", text, x, y, maxWidth).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CanvasRenderingContext2D::strokeText(const jsbind::DOMString& text, double x, double y) {
+jsbind::Undefined CanvasRenderingContext2D::strokeText(const jsbind::String& text, double x, double y) {
     return emlite::Val::call("strokeText", text, x, y).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CanvasRenderingContext2D::strokeText(const jsbind::DOMString& text, double x, double y, double maxWidth) {
+jsbind::Undefined CanvasRenderingContext2D::strokeText(const jsbind::String& text, double x, double y, double maxWidth) {
     return emlite::Val::call("strokeText", text, x, y, maxWidth).as<jsbind::Undefined>();
 }
 
-TextMetrics CanvasRenderingContext2D::measureText(const jsbind::DOMString& text) {
+TextMetrics CanvasRenderingContext2D::measureText(const jsbind::String& text) {
     return emlite::Val::call("measureText", text).as<TextMetrics>();
 }
 
@@ -374,12 +374,12 @@ void CanvasRenderingContext2D::miterLimit(double value) {
     emlite::Val::set("miterLimit", value);
 }
 
-jsbind::Undefined CanvasRenderingContext2D::setLineDash(jsbind::Sequence<double> segments) {
+jsbind::Undefined CanvasRenderingContext2D::setLineDash(jsbind::TypedArray<double> segments) {
     return emlite::Val::call("setLineDash", segments).as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<double> CanvasRenderingContext2D::getLineDash() {
-    return emlite::Val::call("getLineDash").as<jsbind::Sequence<double>>();
+jsbind::TypedArray<double> CanvasRenderingContext2D::getLineDash() {
+    return emlite::Val::call("getLineDash").as<jsbind::TypedArray<double>>();
 }
 
 double CanvasRenderingContext2D::lineDashOffset() const {
@@ -390,19 +390,19 @@ void CanvasRenderingContext2D::lineDashOffset(double value) {
     emlite::Val::set("lineDashOffset", value);
 }
 
-jsbind::DOMString CanvasRenderingContext2D::lang() const {
-    return emlite::Val::get("lang").as<jsbind::DOMString>();
+jsbind::String CanvasRenderingContext2D::lang() const {
+    return emlite::Val::get("lang").as<jsbind::String>();
 }
 
-void CanvasRenderingContext2D::lang(const jsbind::DOMString& value) {
+void CanvasRenderingContext2D::lang(const jsbind::String& value) {
     emlite::Val::set("lang", value);
 }
 
-jsbind::DOMString CanvasRenderingContext2D::font() const {
-    return emlite::Val::get("font").as<jsbind::DOMString>();
+jsbind::String CanvasRenderingContext2D::font() const {
+    return emlite::Val::get("font").as<jsbind::String>();
 }
 
-void CanvasRenderingContext2D::font(const jsbind::DOMString& value) {
+void CanvasRenderingContext2D::font(const jsbind::String& value) {
     emlite::Val::set("font", value);
 }
 
@@ -430,11 +430,11 @@ void CanvasRenderingContext2D::direction(const CanvasDirection& value) {
     emlite::Val::set("direction", value);
 }
 
-jsbind::DOMString CanvasRenderingContext2D::letterSpacing() const {
-    return emlite::Val::get("letterSpacing").as<jsbind::DOMString>();
+jsbind::String CanvasRenderingContext2D::letterSpacing() const {
+    return emlite::Val::get("letterSpacing").as<jsbind::String>();
 }
 
-void CanvasRenderingContext2D::letterSpacing(const jsbind::DOMString& value) {
+void CanvasRenderingContext2D::letterSpacing(const jsbind::String& value) {
     emlite::Val::set("letterSpacing", value);
 }
 
@@ -470,11 +470,11 @@ void CanvasRenderingContext2D::textRendering(const CanvasTextRendering& value) {
     emlite::Val::set("textRendering", value);
 }
 
-jsbind::DOMString CanvasRenderingContext2D::wordSpacing() const {
-    return emlite::Val::get("wordSpacing").as<jsbind::DOMString>();
+jsbind::String CanvasRenderingContext2D::wordSpacing() const {
+    return emlite::Val::get("wordSpacing").as<jsbind::String>();
 }
 
-void CanvasRenderingContext2D::wordSpacing(const jsbind::DOMString& value) {
+void CanvasRenderingContext2D::wordSpacing(const jsbind::String& value) {
     emlite::Val::set("wordSpacing", value);
 }
 

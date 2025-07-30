@@ -18,12 +18,12 @@ unsigned long LargestContentfulPaint::size() const {
     return PerformanceEntry::get("size").as<unsigned long>();
 }
 
-jsbind::DOMString LargestContentfulPaint::id() const {
-    return PerformanceEntry::get("id").as<jsbind::DOMString>();
+jsbind::String LargestContentfulPaint::id() const {
+    return PerformanceEntry::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString LargestContentfulPaint::url() const {
-    return PerformanceEntry::get("url").as<jsbind::DOMString>();
+jsbind::String LargestContentfulPaint::url() const {
+    return PerformanceEntry::get("url").as<jsbind::String>();
 }
 
 Element LargestContentfulPaint::element() const {

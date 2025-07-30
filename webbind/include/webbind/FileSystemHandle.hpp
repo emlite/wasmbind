@@ -28,7 +28,7 @@ public:
 
     FileSystemHandle clone() const noexcept;
     FileSystemHandleKind kind() const;
-    jsbind::USVString name() const;
+    jsbind::String name() const;
     jsbind::Promise<bool> isSameEntry(const FileSystemHandle& other);
     jsbind::Promise<PermissionState> queryPermission();
     jsbind::Promise<PermissionState> queryPermission(const FileSystemHandlePermissionDescriptor& descriptor);

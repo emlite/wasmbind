@@ -10,7 +10,7 @@ WEBGL_debug_shaders::WEBGL_debug_shaders(Handle h) noexcept : emlite::Val(emlite
 WEBGL_debug_shaders::WEBGL_debug_shaders(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString WEBGL_debug_shaders::getTranslatedShaderSource(const WebGLShader& shader) {
-    return emlite::Val::call("getTranslatedShaderSource", shader).as<jsbind::DOMString>();
+jsbind::String WEBGL_debug_shaders::getTranslatedShaderSource(const WebGLShader& shader) {
+    return emlite::Val::call("getTranslatedShaderSource", shader).as<jsbind::String>();
 }
 

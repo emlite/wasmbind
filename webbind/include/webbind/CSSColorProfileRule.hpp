@@ -14,9 +14,9 @@ public:
     static CSSColorProfileRule take_ownership(Handle h) noexcept;
 
     CSSColorProfileRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
-    jsbind::CSSOMString src() const;
-    jsbind::CSSOMString renderingIntent() const;
-    jsbind::CSSOMString components() const;
+    jsbind::String name() const;
+    jsbind::String src() const;
+    jsbind::String renderingIntent() const;
+    jsbind::String components() const;
 };
 

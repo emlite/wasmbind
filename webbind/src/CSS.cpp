@@ -5,11 +5,11 @@
 
 
 
-bool CSS::supports(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value) {
+bool CSS::supports(const jsbind::String& property, const jsbind::String& value) {
     return emlite::Val::global("css").call("supports", property, value).as<bool>();
 }
 
-bool CSS::supports(const jsbind::CSSOMString& conditionText) {
+bool CSS::supports(const jsbind::String& conditionText) {
     return emlite::Val::global("css").call("supports", conditionText).as<bool>();
 }
 
@@ -23,20 +23,20 @@ bool CSS::supports(const jsbind::CSSOMString& conditionText) {
 
 
 
-jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseStylesheet(const jsbind::Any& css) {
-    return emlite::Val::global("css").call("parseStylesheet", css).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
+jsbind::Promise<jsbind::TypedArray<CSSParserRule>> CSS::parseStylesheet(const jsbind::Any& css) {
+    return emlite::Val::global("css").call("parseStylesheet", css).as<jsbind::Promise<jsbind::TypedArray<CSSParserRule>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseStylesheet(const jsbind::Any& css, const jsbind::Any& options) {
-    return emlite::Val::global("css").call("parseStylesheet", css, options).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
+jsbind::Promise<jsbind::TypedArray<CSSParserRule>> CSS::parseStylesheet(const jsbind::Any& css, const jsbind::Any& options) {
+    return emlite::Val::global("css").call("parseStylesheet", css, options).as<jsbind::Promise<jsbind::TypedArray<CSSParserRule>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseRuleList(const jsbind::Any& css) {
-    return emlite::Val::global("css").call("parseRuleList", css).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
+jsbind::Promise<jsbind::TypedArray<CSSParserRule>> CSS::parseRuleList(const jsbind::Any& css) {
+    return emlite::Val::global("css").call("parseRuleList", css).as<jsbind::Promise<jsbind::TypedArray<CSSParserRule>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseRuleList(const jsbind::Any& css, const jsbind::Any& options) {
-    return emlite::Val::global("css").call("parseRuleList", css, options).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
+jsbind::Promise<jsbind::TypedArray<CSSParserRule>> CSS::parseRuleList(const jsbind::Any& css, const jsbind::Any& options) {
+    return emlite::Val::global("css").call("parseRuleList", css, options).as<jsbind::Promise<jsbind::TypedArray<CSSParserRule>>>();
 }
 
 jsbind::Promise<CSSParserRule> CSS::parseRule(const jsbind::Any& css) {
@@ -47,32 +47,32 @@ jsbind::Promise<CSSParserRule> CSS::parseRule(const jsbind::Any& css, const jsbi
     return emlite::Val::global("css").call("parseRule", css, options).as<jsbind::Promise<CSSParserRule>>();
 }
 
-jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseDeclarationList(const jsbind::Any& css) {
-    return emlite::Val::global("css").call("parseDeclarationList", css).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
+jsbind::Promise<jsbind::TypedArray<CSSParserRule>> CSS::parseDeclarationList(const jsbind::Any& css) {
+    return emlite::Val::global("css").call("parseDeclarationList", css).as<jsbind::Promise<jsbind::TypedArray<CSSParserRule>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<CSSParserRule>> CSS::parseDeclarationList(const jsbind::Any& css, const jsbind::Any& options) {
-    return emlite::Val::global("css").call("parseDeclarationList", css, options).as<jsbind::Promise<jsbind::Sequence<CSSParserRule>>>();
+jsbind::Promise<jsbind::TypedArray<CSSParserRule>> CSS::parseDeclarationList(const jsbind::Any& css, const jsbind::Any& options) {
+    return emlite::Val::global("css").call("parseDeclarationList", css, options).as<jsbind::Promise<jsbind::TypedArray<CSSParserRule>>>();
 }
 
-CSSParserDeclaration CSS::parseDeclaration(const jsbind::DOMString& css) {
+CSSParserDeclaration CSS::parseDeclaration(const jsbind::String& css) {
     return emlite::Val::global("css").call("parseDeclaration", css).as<CSSParserDeclaration>();
 }
 
-CSSParserDeclaration CSS::parseDeclaration(const jsbind::DOMString& css, const jsbind::Any& options) {
+CSSParserDeclaration CSS::parseDeclaration(const jsbind::String& css, const jsbind::Any& options) {
     return emlite::Val::global("css").call("parseDeclaration", css, options).as<CSSParserDeclaration>();
 }
 
-jsbind::Any CSS::parseValue(const jsbind::DOMString& css) {
+jsbind::Any CSS::parseValue(const jsbind::String& css) {
     return emlite::Val::global("css").call("parseValue", css).as<jsbind::Any>();
 }
 
-jsbind::Sequence<jsbind::Any> CSS::parseValueList(const jsbind::DOMString& css) {
-    return emlite::Val::global("css").call("parseValueList", css).as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> CSS::parseValueList(const jsbind::String& css) {
+    return emlite::Val::global("css").call("parseValueList", css).as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-jsbind::Sequence<jsbind::Sequence<jsbind::Any>> CSS::parseCommaValueList(const jsbind::DOMString& css) {
-    return emlite::Val::global("css").call("parseCommaValueList", css).as<jsbind::Sequence<jsbind::Sequence<jsbind::Any>>>();
+jsbind::TypedArray<jsbind::TypedArray<jsbind::Any>> CSS::parseCommaValueList(const jsbind::String& css) {
+    return emlite::Val::global("css").call("parseCommaValueList", css).as<jsbind::TypedArray<jsbind::TypedArray<jsbind::Any>>>();
 }
 
 
@@ -337,7 +337,7 @@ CSSUnitValue CSS::fr(double value) {
 
 
 
-jsbind::CSSOMString CSS::escape(const jsbind::CSSOMString& ident) {
-    return emlite::Val::global("css").call("escape", ident).as<jsbind::CSSOMString>();
+jsbind::String CSS::escape(const jsbind::String& ident) {
+    return emlite::Val::global("css").call("escape", ident).as<jsbind::String>();
 }
 

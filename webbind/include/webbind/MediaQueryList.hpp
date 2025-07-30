@@ -14,7 +14,7 @@ public:
     static MediaQueryList take_ownership(Handle h) noexcept;
 
     MediaQueryList clone() const noexcept;
-    jsbind::CSSOMString media() const;
+    jsbind::String media() const;
     bool matches() const;
     jsbind::Undefined addListener(const jsbind::Function& callback);
     jsbind::Undefined removeListener(const jsbind::Function& callback);

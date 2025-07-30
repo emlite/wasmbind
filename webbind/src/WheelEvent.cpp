@@ -9,9 +9,9 @@ WheelEvent::WheelEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_ownersh
 WheelEvent::WheelEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
 
-WheelEvent::WheelEvent(const jsbind::DOMString& type) : MouseEvent(emlite::Val::global("WheelEvent").new_(type)) {}
+WheelEvent::WheelEvent(const jsbind::String& type) : MouseEvent(emlite::Val::global("WheelEvent").new_(type)) {}
 
-WheelEvent::WheelEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : MouseEvent(emlite::Val::global("WheelEvent").new_(type, eventInitDict)) {}
+WheelEvent::WheelEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : MouseEvent(emlite::Val::global("WheelEvent").new_(type, eventInitDict)) {}
 
 double WheelEvent::deltaX() const {
     return MouseEvent::get("deltaX").as<double>();

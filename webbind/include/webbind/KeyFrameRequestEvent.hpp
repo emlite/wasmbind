@@ -14,8 +14,8 @@ public:
     static KeyFrameRequestEvent take_ownership(Handle h) noexcept;
 
     KeyFrameRequestEvent clone() const noexcept;
-    KeyFrameRequestEvent(const jsbind::DOMString& type);
-    KeyFrameRequestEvent(const jsbind::DOMString& type, const jsbind::DOMString& rid);
-    jsbind::DOMString rid() const;
+    KeyFrameRequestEvent(const jsbind::String& type);
+    KeyFrameRequestEvent(const jsbind::String& type, const jsbind::String& rid);
+    jsbind::String rid() const;
 };
 

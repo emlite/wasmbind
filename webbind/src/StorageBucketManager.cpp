@@ -42,19 +42,19 @@ StorageBucketManager::StorageBucketManager(Handle h) noexcept : emlite::Val(emli
 StorageBucketManager::StorageBucketManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise<StorageBucket> StorageBucketManager::open(const jsbind::DOMString& name) {
+jsbind::Promise<StorageBucket> StorageBucketManager::open(const jsbind::String& name) {
     return emlite::Val::call("open", name).as<jsbind::Promise<StorageBucket>>();
 }
 
-jsbind::Promise<StorageBucket> StorageBucketManager::open(const jsbind::DOMString& name, const StorageBucketOptions& options) {
+jsbind::Promise<StorageBucket> StorageBucketManager::open(const jsbind::String& name, const StorageBucketOptions& options) {
     return emlite::Val::call("open", name, options).as<jsbind::Promise<StorageBucket>>();
 }
 
-jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> StorageBucketManager::keys() {
-    return emlite::Val::call("keys").as<jsbind::Promise<jsbind::Sequence<jsbind::DOMString>>>();
+jsbind::Promise<jsbind::TypedArray<jsbind::String>> StorageBucketManager::keys() {
+    return emlite::Val::call("keys").as<jsbind::Promise<jsbind::TypedArray<jsbind::String>>>();
 }
 
-jsbind::Promise<jsbind::Undefined> StorageBucketManager::delete_(const jsbind::DOMString& name) {
+jsbind::Promise<jsbind::Undefined> StorageBucketManager::delete_(const jsbind::String& name) {
     return emlite::Val::call("delete", name).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

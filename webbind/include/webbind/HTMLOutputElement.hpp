@@ -22,19 +22,19 @@ public:
     HTMLOutputElement();
     DOMTokenList htmlFor() const;
     HTMLFormElement form() const;
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
-    jsbind::DOMString type() const;
-    jsbind::DOMString defaultValue() const;
-    void defaultValue(const jsbind::DOMString& value);
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
+    jsbind::String type() const;
+    jsbind::String defaultValue() const;
+    void defaultValue(const jsbind::String& value);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
     bool willValidate() const;
     ValidityState validity() const;
-    jsbind::DOMString validationMessage() const;
+    jsbind::String validationMessage() const;
     bool checkValidity();
     bool reportValidity();
-    jsbind::Undefined setCustomValidity(const jsbind::DOMString& error);
+    jsbind::Undefined setCustomValidity(const jsbind::String& error);
     NodeList labels() const;
 };
 

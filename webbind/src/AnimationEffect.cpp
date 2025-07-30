@@ -67,11 +67,11 @@ void OptionalEffectTiming::direction(const PlaybackDirection& value) {
     emlite::Val::set("direction", value);
 }
 
-jsbind::DOMString OptionalEffectTiming::easing() const {
-    return emlite::Val::get("easing").as<jsbind::DOMString>();
+jsbind::String OptionalEffectTiming::easing() const {
+    return emlite::Val::get("easing").as<jsbind::String>();
 }
 
-void OptionalEffectTiming::easing(const jsbind::DOMString& value) {
+void OptionalEffectTiming::easing(const jsbind::String& value) {
     emlite::Val::set("easing", value);
 }
 

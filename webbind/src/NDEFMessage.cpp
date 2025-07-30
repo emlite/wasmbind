@@ -12,7 +12,7 @@ NDEFMessage::NDEFMessage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 NDEFMessage::NDEFMessage(const jsbind::Any& messageInit) : emlite::Val(emlite::Val::global("NDEFMessage").new_(messageInit)) {}
 
-jsbind::FrozenArray<NDEFRecord> NDEFMessage::records() const {
-    return emlite::Val::get("records").as<jsbind::FrozenArray<NDEFRecord>>();
+jsbind::TypedArray<NDEFRecord> NDEFMessage::records() const {
+    return emlite::Val::get("records").as<jsbind::TypedArray<NDEFRecord>>();
 }
 

@@ -24,7 +24,7 @@ public:
     IDBTransactionDurability durability() const;
     IDBDatabase db() const;
     DOMException error() const;
-    IDBObjectStore objectStore(const jsbind::DOMString& name);
+    IDBObjectStore objectStore(const jsbind::String& name);
     jsbind::Undefined commit();
     jsbind::Undefined abort();
     jsbind::Any onabort() const;

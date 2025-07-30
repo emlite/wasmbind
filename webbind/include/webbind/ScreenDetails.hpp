@@ -16,7 +16,7 @@ public:
     static ScreenDetails take_ownership(Handle h) noexcept;
 
     ScreenDetails clone() const noexcept;
-    jsbind::FrozenArray<ScreenDetailed> screens() const;
+    jsbind::TypedArray<ScreenDetailed> screens() const;
     ScreenDetailed currentScreen() const;
     jsbind::Any onscreenschange() const;
     void onscreenschange(const jsbind::Any& value);

@@ -13,10 +13,10 @@ public:
     static RTCIdentityAssertion take_ownership(Handle h) noexcept;
 
     RTCIdentityAssertion clone() const noexcept;
-    RTCIdentityAssertion(const jsbind::DOMString& idp, const jsbind::DOMString& name);
-    jsbind::DOMString idp() const;
-    void idp(const jsbind::DOMString& value);
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    RTCIdentityAssertion(const jsbind::String& idp, const jsbind::String& name);
+    jsbind::String idp() const;
+    void idp(const jsbind::String& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
 };
 

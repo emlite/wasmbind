@@ -88,12 +88,12 @@ Observable Observable::finally(const jsbind::Any& callback) {
     return emlite::Val::call("finally", callback).as<Observable>();
 }
 
-jsbind::Promise<jsbind::Sequence<jsbind::Any>> Observable::toArray() {
-    return emlite::Val::call("toArray").as<jsbind::Promise<jsbind::Sequence<jsbind::Any>>>();
+jsbind::Promise<jsbind::TypedArray<jsbind::Any>> Observable::toArray() {
+    return emlite::Val::call("toArray").as<jsbind::Promise<jsbind::TypedArray<jsbind::Any>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<jsbind::Any>> Observable::toArray(const SubscribeOptions& options) {
-    return emlite::Val::call("toArray", options).as<jsbind::Promise<jsbind::Sequence<jsbind::Any>>>();
+jsbind::Promise<jsbind::TypedArray<jsbind::Any>> Observable::toArray(const SubscribeOptions& options) {
+    return emlite::Val::call("toArray", options).as<jsbind::Promise<jsbind::TypedArray<jsbind::Any>>>();
 }
 
 jsbind::Promise<jsbind::Undefined> Observable::forEach(const jsbind::Function& callback) {

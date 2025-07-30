@@ -15,11 +15,11 @@ public:
     static ClipboardItem take_ownership(Handle h) noexcept;
 
     ClipboardItem clone() const noexcept;
-    ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items);
-    ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items, const jsbind::Any& options);
+    ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items);
+    ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items, const jsbind::Any& options);
     PresentationStyle presentationStyle() const;
-    jsbind::FrozenArray<jsbind::DOMString> types() const;
-    jsbind::Promise<Blob> getType(const jsbind::DOMString& type);
-    static bool supports(const jsbind::DOMString& type);
+    jsbind::TypedArray<jsbind::String> types() const;
+    jsbind::Promise<Blob> getType(const jsbind::String& type);
+    static bool supports(const jsbind::String& type);
 };
 

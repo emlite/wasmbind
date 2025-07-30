@@ -14,7 +14,7 @@ public:
     static CanMakePaymentEvent take_ownership(Handle h) noexcept;
 
     CanMakePaymentEvent clone() const noexcept;
-    CanMakePaymentEvent(const jsbind::DOMString& type);
+    CanMakePaymentEvent(const jsbind::String& type);
     jsbind::Undefined respondWith(jsbind::Promise<bool> canMakePaymentResponse);
 };
 

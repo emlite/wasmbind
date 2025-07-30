@@ -73,16 +73,16 @@ bool WorkerNavigator::taintEnabled() {
     return emlite::Val::call("taintEnabled").as<bool>();
 }
 
-jsbind::DOMString WorkerNavigator::oscpu() const {
-    return emlite::Val::get("oscpu").as<jsbind::DOMString>();
+jsbind::String WorkerNavigator::oscpu() const {
+    return emlite::Val::get("oscpu").as<jsbind::String>();
 }
 
-jsbind::DOMString WorkerNavigator::language() const {
-    return emlite::Val::get("language").as<jsbind::DOMString>();
+jsbind::String WorkerNavigator::language() const {
+    return emlite::Val::get("language").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> WorkerNavigator::languages() const {
-    return emlite::Val::get("languages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> WorkerNavigator::languages() const {
+    return emlite::Val::get("languages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 bool WorkerNavigator::onLine() const {

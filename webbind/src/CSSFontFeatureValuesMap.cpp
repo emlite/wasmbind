@@ -9,7 +9,7 @@ CSSFontFeatureValuesMap::CSSFontFeatureValuesMap(Handle h) noexcept : emlite::Va
 CSSFontFeatureValuesMap::CSSFontFeatureValuesMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Undefined CSSFontFeatureValuesMap::set(const jsbind::CSSOMString& featureValueName, const jsbind::Any& values) {
+jsbind::Undefined CSSFontFeatureValuesMap::set(const jsbind::String& featureValueName, const jsbind::Any& values) {
     return emlite::Val::call("set", featureValueName, values).as<jsbind::Undefined>();
 }
 

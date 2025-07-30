@@ -12,12 +12,12 @@ DataTransferItem::DataTransferItem(Handle h) noexcept : emlite::Val(emlite::Val:
 DataTransferItem::DataTransferItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString DataTransferItem::kind() const {
-    return emlite::Val::get("kind").as<jsbind::DOMString>();
+jsbind::String DataTransferItem::kind() const {
+    return emlite::Val::get("kind").as<jsbind::String>();
 }
 
-jsbind::DOMString DataTransferItem::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String DataTransferItem::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
 jsbind::Undefined DataTransferItem::getAsString(const jsbind::Any& callback) {

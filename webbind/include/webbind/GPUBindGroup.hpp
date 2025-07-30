@@ -13,7 +13,7 @@ public:
     static GPUBindGroup take_ownership(Handle h) noexcept;
 
     GPUBindGroup clone() const noexcept;
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

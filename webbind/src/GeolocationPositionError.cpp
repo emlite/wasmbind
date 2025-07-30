@@ -13,7 +13,7 @@ unsigned short GeolocationPositionError::code() const {
     return emlite::Val::get("code").as<unsigned short>();
 }
 
-jsbind::DOMString GeolocationPositionError::message() const {
-    return emlite::Val::get("message").as<jsbind::DOMString>();
+jsbind::String GeolocationPositionError::message() const {
+    return emlite::Val::get("message").as<jsbind::String>();
 }
 

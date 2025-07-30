@@ -16,7 +16,7 @@ public:
     static ProcessingInstruction take_ownership(Handle h) noexcept;
 
     ProcessingInstruction clone() const noexcept;
-    jsbind::DOMString target() const;
+    jsbind::String target() const;
     CSSStyleSheet sheet() const;
 };
 

@@ -17,7 +17,7 @@ public:
 
     AudioTrackList clone() const noexcept;
     unsigned long length() const;
-    AudioTrack getTrackById(const jsbind::DOMString& id);
+    AudioTrack getTrackById(const jsbind::String& id);
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);
     jsbind::Any onaddtrack() const;

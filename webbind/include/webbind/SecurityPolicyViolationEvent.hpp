@@ -14,16 +14,16 @@ public:
     static SecurityPolicyViolationEvent take_ownership(Handle h) noexcept;
 
     SecurityPolicyViolationEvent clone() const noexcept;
-    SecurityPolicyViolationEvent(const jsbind::DOMString& type);
-    SecurityPolicyViolationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::USVString documentURI() const;
-    jsbind::USVString referrer() const;
-    jsbind::USVString blockedURI() const;
-    jsbind::DOMString effectiveDirective() const;
-    jsbind::DOMString violatedDirective() const;
-    jsbind::DOMString originalPolicy() const;
-    jsbind::USVString sourceFile() const;
-    jsbind::DOMString sample() const;
+    SecurityPolicyViolationEvent(const jsbind::String& type);
+    SecurityPolicyViolationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String documentURI() const;
+    jsbind::String referrer() const;
+    jsbind::String blockedURI() const;
+    jsbind::String effectiveDirective() const;
+    jsbind::String violatedDirective() const;
+    jsbind::String originalPolicy() const;
+    jsbind::String sourceFile() const;
+    jsbind::String sample() const;
     SecurityPolicyViolationEventDisposition disposition() const;
     unsigned short statusCode() const;
     unsigned long lineNumber() const;

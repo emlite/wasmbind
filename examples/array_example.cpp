@@ -8,10 +8,13 @@ using namespace jsbind;
 int main() {
     Console console;
     int data[6] = {1, 2, 3, 4, 5, 6};
-    auto arr = Sequence<int>::new_(data, 6);
+    auto arr = TypedArray<int>::new_(data, 6);
     console.log(arr.size());
     for (size_t i = 0; i < arr.size(); ++i) {
         console.log(arr[i]);
+    }
+    for (auto i: arr) {
+        console.log(i);
     }
     jsbind::Array arr2; // Default constructed
     arr2.push(1);

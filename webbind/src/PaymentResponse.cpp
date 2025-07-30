@@ -42,11 +42,11 @@ void PaymentValidationErrors::shippingAddress(const jsbind::Any& value) {
     emlite::Val::set("shippingAddress", value);
 }
 
-jsbind::DOMString PaymentValidationErrors::error() const {
-    return emlite::Val::get("error").as<jsbind::DOMString>();
+jsbind::String PaymentValidationErrors::error() const {
+    return emlite::Val::get("error").as<jsbind::String>();
 }
 
-void PaymentValidationErrors::error(const jsbind::DOMString& value) {
+void PaymentValidationErrors::error(const jsbind::String& value) {
     emlite::Val::set("error", value);
 }
 
@@ -70,12 +70,12 @@ jsbind::Object PaymentResponse::toJSON() {
     return EventTarget::call("toJSON").as<jsbind::Object>();
 }
 
-jsbind::DOMString PaymentResponse::requestId() const {
-    return EventTarget::get("requestId").as<jsbind::DOMString>();
+jsbind::String PaymentResponse::requestId() const {
+    return EventTarget::get("requestId").as<jsbind::String>();
 }
 
-jsbind::DOMString PaymentResponse::methodName() const {
-    return EventTarget::get("methodName").as<jsbind::DOMString>();
+jsbind::String PaymentResponse::methodName() const {
+    return EventTarget::get("methodName").as<jsbind::String>();
 }
 
 jsbind::Object PaymentResponse::details() const {
@@ -86,20 +86,20 @@ ContactAddress PaymentResponse::shippingAddress() const {
     return EventTarget::get("shippingAddress").as<ContactAddress>();
 }
 
-jsbind::DOMString PaymentResponse::shippingOption() const {
-    return EventTarget::get("shippingOption").as<jsbind::DOMString>();
+jsbind::String PaymentResponse::shippingOption() const {
+    return EventTarget::get("shippingOption").as<jsbind::String>();
 }
 
-jsbind::DOMString PaymentResponse::payerName() const {
-    return EventTarget::get("payerName").as<jsbind::DOMString>();
+jsbind::String PaymentResponse::payerName() const {
+    return EventTarget::get("payerName").as<jsbind::String>();
 }
 
-jsbind::DOMString PaymentResponse::payerEmail() const {
-    return EventTarget::get("payerEmail").as<jsbind::DOMString>();
+jsbind::String PaymentResponse::payerEmail() const {
+    return EventTarget::get("payerEmail").as<jsbind::String>();
 }
 
-jsbind::DOMString PaymentResponse::payerPhone() const {
-    return EventTarget::get("payerPhone").as<jsbind::DOMString>();
+jsbind::String PaymentResponse::payerPhone() const {
+    return EventTarget::get("payerPhone").as<jsbind::String>();
 }
 
 jsbind::Promise<jsbind::Undefined> PaymentResponse::complete() {

@@ -53,12 +53,12 @@ public:
     static FileSystemDirectoryHandle take_ownership(Handle h) noexcept;
 
     FileSystemDirectoryHandle clone() const noexcept;
-    jsbind::Promise<FileSystemFileHandle> getFileHandle(const jsbind::USVString& name);
-    jsbind::Promise<FileSystemFileHandle> getFileHandle(const jsbind::USVString& name, const FileSystemGetFileOptions& options);
-    jsbind::Promise<FileSystemDirectoryHandle> getDirectoryHandle(const jsbind::USVString& name);
-    jsbind::Promise<FileSystemDirectoryHandle> getDirectoryHandle(const jsbind::USVString& name, const FileSystemGetDirectoryOptions& options);
-    jsbind::Promise<jsbind::Undefined> removeEntry(const jsbind::USVString& name);
-    jsbind::Promise<jsbind::Undefined> removeEntry(const jsbind::USVString& name, const FileSystemRemoveOptions& options);
-    jsbind::Promise<jsbind::Sequence<jsbind::USVString>> resolve(const FileSystemHandle& possibleDescendant);
+    jsbind::Promise<FileSystemFileHandle> getFileHandle(const jsbind::String& name);
+    jsbind::Promise<FileSystemFileHandle> getFileHandle(const jsbind::String& name, const FileSystemGetFileOptions& options);
+    jsbind::Promise<FileSystemDirectoryHandle> getDirectoryHandle(const jsbind::String& name);
+    jsbind::Promise<FileSystemDirectoryHandle> getDirectoryHandle(const jsbind::String& name, const FileSystemGetDirectoryOptions& options);
+    jsbind::Promise<jsbind::Undefined> removeEntry(const jsbind::String& name);
+    jsbind::Promise<jsbind::Undefined> removeEntry(const jsbind::String& name, const FileSystemRemoveOptions& options);
+    jsbind::Promise<jsbind::TypedArray<jsbind::String>> resolve(const FileSystemHandle& possibleDescendant);
 };
 

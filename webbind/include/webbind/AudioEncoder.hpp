@@ -17,8 +17,8 @@ public:
     explicit AudioEncoderConfig(const emlite::Val &val) noexcept;
     AudioEncoderConfig() noexcept;
     AudioEncoderConfig clone() const noexcept;
-    jsbind::DOMString codec() const;
-    void codec(const jsbind::DOMString& value);
+    jsbind::String codec() const;
+    void codec(const jsbind::String& value);
     unsigned long sampleRate() const;
     void sampleRate(unsigned long value);
     unsigned long numberOfChannels() const;

@@ -65,8 +65,8 @@ GamepadHapticActuator::GamepadHapticActuator(Handle h) noexcept : emlite::Val(em
 GamepadHapticActuator::GamepadHapticActuator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::FrozenArray<GamepadHapticEffectType> GamepadHapticActuator::effects() const {
-    return emlite::Val::get("effects").as<jsbind::FrozenArray<GamepadHapticEffectType>>();
+jsbind::TypedArray<GamepadHapticEffectType> GamepadHapticActuator::effects() const {
+    return emlite::Val::get("effects").as<jsbind::TypedArray<GamepadHapticEffectType>>();
 }
 
 jsbind::Promise<GamepadHapticsResult> GamepadHapticActuator::playEffect(const GamepadHapticEffectType& type) {

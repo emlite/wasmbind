@@ -16,7 +16,7 @@ public:
     static PresentationConnectionAvailableEvent take_ownership(Handle h) noexcept;
 
     PresentationConnectionAvailableEvent clone() const noexcept;
-    PresentationConnectionAvailableEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    PresentationConnectionAvailableEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     PresentationConnection connection() const;
 };
 

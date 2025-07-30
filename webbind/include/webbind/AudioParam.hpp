@@ -26,7 +26,7 @@ public:
     AudioParam linearRampToValueAtTime(float value, double endTime);
     AudioParam exponentialRampToValueAtTime(float value, double endTime);
     AudioParam setTargetAtTime(float target, double startTime, float timeConstant);
-    AudioParam setValueCurveAtTime(jsbind::Sequence<float> values, double startTime, double duration);
+    AudioParam setValueCurveAtTime(jsbind::TypedArray<float> values, double startTime, double duration);
     AudioParam cancelScheduledValues(double cancelTime);
     AudioParam cancelAndHoldAtTime(double cancelTime);
 };

@@ -17,12 +17,12 @@ public:
     DetectedBarcode clone() const noexcept;
     DOMRectReadOnly boundingBox() const;
     void boundingBox(const DOMRectReadOnly& value);
-    jsbind::DOMString rawValue() const;
-    void rawValue(const jsbind::DOMString& value);
+    jsbind::String rawValue() const;
+    void rawValue(const jsbind::String& value);
     BarcodeFormat format() const;
     void format(const BarcodeFormat& value);
-    jsbind::Sequence<jsbind::Any> cornerPoints() const;
-    void cornerPoints(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> cornerPoints() const;
+    void cornerPoints(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class BarcodeDetector : public emlite::Val {
@@ -35,7 +35,7 @@ public:
     BarcodeDetector clone() const noexcept;
     BarcodeDetector();
     BarcodeDetector(const jsbind::Any& barcodeDetectorOptions);
-    static jsbind::Promise<jsbind::Sequence<BarcodeFormat>> getSupportedFormats();
-    jsbind::Promise<jsbind::Sequence<DetectedBarcode>> detect(const jsbind::Any& image);
+    static jsbind::Promise<jsbind::TypedArray<BarcodeFormat>> getSupportedFormats();
+    jsbind::Promise<jsbind::TypedArray<DetectedBarcode>> detect(const jsbind::Any& image);
 };
 

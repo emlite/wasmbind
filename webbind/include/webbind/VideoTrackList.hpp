@@ -17,7 +17,7 @@ public:
 
     VideoTrackList clone() const noexcept;
     unsigned long length() const;
-    VideoTrack getTrackById(const jsbind::DOMString& id);
+    VideoTrack getTrackById(const jsbind::String& id);
     long selectedIndex() const;
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);

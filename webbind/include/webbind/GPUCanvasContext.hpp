@@ -22,8 +22,8 @@ public:
     void format(const GPUTextureFormat& value);
     jsbind::Any usage() const;
     void usage(const jsbind::Any& value);
-    jsbind::Sequence<GPUTextureFormat> viewFormats() const;
-    void viewFormats(const jsbind::Sequence<GPUTextureFormat>& value);
+    jsbind::TypedArray<GPUTextureFormat> viewFormats() const;
+    void viewFormats(const jsbind::TypedArray<GPUTextureFormat>& value);
     PredefinedColorSpace colorSpace() const;
     void colorSpace(const PredefinedColorSpace& value);
     jsbind::Any toneMapping() const;

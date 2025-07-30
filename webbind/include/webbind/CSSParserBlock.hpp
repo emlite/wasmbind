@@ -14,8 +14,8 @@ public:
     static CSSParserBlock take_ownership(Handle h) noexcept;
 
     CSSParserBlock clone() const noexcept;
-    CSSParserBlock(const jsbind::DOMString& name, const jsbind::Sequence<CSSParserValue>& body);
-    jsbind::DOMString name() const;
-    jsbind::FrozenArray<CSSParserValue> body() const;
+    CSSParserBlock(const jsbind::String& name, const jsbind::TypedArray<CSSParserValue>& body);
+    jsbind::String name() const;
+    jsbind::TypedArray<CSSParserValue> body() const;
 };
 

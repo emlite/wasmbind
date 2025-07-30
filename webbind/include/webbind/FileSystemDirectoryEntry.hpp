@@ -32,14 +32,14 @@ public:
     FileSystemDirectoryEntry clone() const noexcept;
     FileSystemDirectoryReader createReader();
     jsbind::Undefined getFile();
-    jsbind::Undefined getFile(const jsbind::USVString& path);
-    jsbind::Undefined getFile(const jsbind::USVString& path, const FileSystemFlags& options);
-    jsbind::Undefined getFile(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback);
-    jsbind::Undefined getFile(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
+    jsbind::Undefined getFile(const jsbind::String& path);
+    jsbind::Undefined getFile(const jsbind::String& path, const FileSystemFlags& options);
+    jsbind::Undefined getFile(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback);
+    jsbind::Undefined getFile(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
     jsbind::Undefined getDirectory();
-    jsbind::Undefined getDirectory(const jsbind::USVString& path);
-    jsbind::Undefined getDirectory(const jsbind::USVString& path, const FileSystemFlags& options);
-    jsbind::Undefined getDirectory(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback);
-    jsbind::Undefined getDirectory(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
+    jsbind::Undefined getDirectory(const jsbind::String& path);
+    jsbind::Undefined getDirectory(const jsbind::String& path, const FileSystemFlags& options);
+    jsbind::Undefined getDirectory(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback);
+    jsbind::Undefined getDirectory(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

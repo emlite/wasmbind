@@ -29,8 +29,8 @@ public:
     static BluetoothDevice take_ownership(Handle h) noexcept;
 
     BluetoothDevice clone() const noexcept;
-    jsbind::DOMString id() const;
-    jsbind::DOMString name() const;
+    jsbind::String id() const;
+    jsbind::String name() const;
     BluetoothRemoteGATTServer gatt() const;
     jsbind::Promise<jsbind::Undefined> forget();
     jsbind::Promise<jsbind::Undefined> watchAdvertisements();

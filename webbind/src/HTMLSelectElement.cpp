@@ -17,11 +17,11 @@ HTMLSelectElement::HTMLSelectElement(const emlite::Val &val) noexcept: HTMLEleme
 
 HTMLSelectElement::HTMLSelectElement() : HTMLElement(emlite::Val::global("HTMLSelectElement").new_()) {}
 
-jsbind::DOMString HTMLSelectElement::autocomplete() const {
-    return HTMLElement::get("autocomplete").as<jsbind::DOMString>();
+jsbind::String HTMLSelectElement::autocomplete() const {
+    return HTMLElement::get("autocomplete").as<jsbind::String>();
 }
 
-void HTMLSelectElement::autocomplete(const jsbind::DOMString& value) {
+void HTMLSelectElement::autocomplete(const jsbind::String& value) {
     HTMLElement::set("autocomplete", value);
 }
 
@@ -45,11 +45,11 @@ void HTMLSelectElement::multiple(bool value) {
     HTMLElement::set("multiple", value);
 }
 
-jsbind::DOMString HTMLSelectElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLSelectElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLSelectElement::name(const jsbind::DOMString& value) {
+void HTMLSelectElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
@@ -69,8 +69,8 @@ void HTMLSelectElement::size(unsigned long value) {
     HTMLElement::set("size", value);
 }
 
-jsbind::DOMString HTMLSelectElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLSelectElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
 HTMLOptionsCollection HTMLSelectElement::options() const {
@@ -89,7 +89,7 @@ HTMLOptionElement HTMLSelectElement::item(unsigned long index) {
     return HTMLElement::call("item", index).as<HTMLOptionElement>();
 }
 
-HTMLOptionElement HTMLSelectElement::namedItem(const jsbind::DOMString& name) {
+HTMLOptionElement HTMLSelectElement::namedItem(const jsbind::String& name) {
     return HTMLElement::call("namedItem", name).as<HTMLOptionElement>();
 }
 
@@ -117,11 +117,11 @@ void HTMLSelectElement::selectedIndex(long value) {
     HTMLElement::set("selectedIndex", value);
 }
 
-jsbind::DOMString HTMLSelectElement::value() const {
-    return HTMLElement::get("value").as<jsbind::DOMString>();
+jsbind::String HTMLSelectElement::value() const {
+    return HTMLElement::get("value").as<jsbind::String>();
 }
 
-void HTMLSelectElement::value(const jsbind::DOMString& value) {
+void HTMLSelectElement::value(const jsbind::String& value) {
     HTMLElement::set("value", value);
 }
 
@@ -133,8 +133,8 @@ ValidityState HTMLSelectElement::validity() const {
     return HTMLElement::get("validity").as<ValidityState>();
 }
 
-jsbind::DOMString HTMLSelectElement::validationMessage() const {
-    return HTMLElement::get("validationMessage").as<jsbind::DOMString>();
+jsbind::String HTMLSelectElement::validationMessage() const {
+    return HTMLElement::get("validationMessage").as<jsbind::String>();
 }
 
 bool HTMLSelectElement::checkValidity() {
@@ -145,7 +145,7 @@ bool HTMLSelectElement::reportValidity() {
     return HTMLElement::call("reportValidity").as<bool>();
 }
 
-jsbind::Undefined HTMLSelectElement::setCustomValidity(const jsbind::DOMString& error) {
+jsbind::Undefined HTMLSelectElement::setCustomValidity(const jsbind::String& error) {
     return HTMLElement::call("setCustomValidity", error).as<jsbind::Undefined>();
 }
 

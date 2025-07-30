@@ -14,9 +14,9 @@ public:
     static StylePropertyMap take_ownership(Handle h) noexcept;
 
     StylePropertyMap clone() const noexcept;
-    jsbind::Undefined set(const jsbind::USVString& property, const jsbind::Any& values);
-    jsbind::Undefined append(const jsbind::USVString& property, const jsbind::Any& values);
-    jsbind::Undefined delete_(const jsbind::USVString& property);
+    jsbind::Undefined set(const jsbind::String& property, const jsbind::Any& values);
+    jsbind::Undefined append(const jsbind::String& property, const jsbind::Any& values);
+    jsbind::Undefined delete_(const jsbind::String& property);
     jsbind::Undefined clear();
 };
 

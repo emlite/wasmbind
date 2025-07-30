@@ -9,11 +9,11 @@ ForDebuggingOnly::ForDebuggingOnly(Handle h) noexcept : emlite::Val(emlite::Val:
 ForDebuggingOnly::ForDebuggingOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Undefined ForDebuggingOnly::reportAdAuctionWin(const jsbind::USVString& url) {
+jsbind::Undefined ForDebuggingOnly::reportAdAuctionWin(const jsbind::String& url) {
     return emlite::Val::call("reportAdAuctionWin", url).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined ForDebuggingOnly::reportAdAuctionLoss(const jsbind::USVString& url) {
+jsbind::Undefined ForDebuggingOnly::reportAdAuctionLoss(const jsbind::String& url) {
     return emlite::Val::call("reportAdAuctionLoss", url).as<jsbind::Undefined>();
 }
 

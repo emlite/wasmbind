@@ -21,11 +21,11 @@ jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPriority(doubl
     return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setPriority", priority).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPrioritySignalsOverride(const jsbind::DOMString& key) {
+jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPrioritySignalsOverride(const jsbind::String& key) {
     return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setPrioritySignalsOverride", key).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPrioritySignalsOverride(const jsbind::DOMString& key, double priority) {
+jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPrioritySignalsOverride(const jsbind::String& key, double priority) {
     return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setPrioritySignalsOverride", key, priority).as<jsbind::Undefined>();
 }
 

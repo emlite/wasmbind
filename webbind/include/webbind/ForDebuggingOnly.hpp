@@ -13,7 +13,7 @@ public:
     static ForDebuggingOnly take_ownership(Handle h) noexcept;
 
     ForDebuggingOnly clone() const noexcept;
-    jsbind::Undefined reportAdAuctionWin(const jsbind::USVString& url);
-    jsbind::Undefined reportAdAuctionLoss(const jsbind::USVString& url);
+    jsbind::Undefined reportAdAuctionWin(const jsbind::String& url);
+    jsbind::Undefined reportAdAuctionLoss(const jsbind::String& url);
 };
 

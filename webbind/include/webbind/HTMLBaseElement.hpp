@@ -15,9 +15,9 @@ public:
 
     HTMLBaseElement clone() const noexcept;
     HTMLBaseElement();
-    jsbind::USVString href() const;
-    void href(const jsbind::USVString& value);
-    jsbind::DOMString target() const;
-    void target(const jsbind::DOMString& value);
+    jsbind::String href() const;
+    void href(const jsbind::String& value);
+    jsbind::String target() const;
+    void target(const jsbind::String& value);
 };
 

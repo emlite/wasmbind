@@ -9,19 +9,19 @@ SVGPathSegment::SVGPathSegment(Handle h) noexcept : emlite::Val(emlite::Val::tak
 SVGPathSegment::SVGPathSegment(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString SVGPathSegment::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String SVGPathSegment::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-void SVGPathSegment::type(const jsbind::DOMString& value) {
+void SVGPathSegment::type(const jsbind::String& value) {
     emlite::Val::set("type", value);
 }
 
-jsbind::FrozenArray<float> SVGPathSegment::values() const {
-    return emlite::Val::get("values").as<jsbind::FrozenArray<float>>();
+jsbind::TypedArray<float> SVGPathSegment::values() const {
+    return emlite::Val::get("values").as<jsbind::TypedArray<float>>();
 }
 
-void SVGPathSegment::values(jsbind::FrozenArray<float> value) {
+void SVGPathSegment::values(jsbind::TypedArray<float> value) {
     emlite::Val::set("values", value);
 }
 

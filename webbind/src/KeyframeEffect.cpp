@@ -20,11 +20,11 @@ void KeyframeEffect::target(const Element& value) {
     AnimationEffect::set("target", value);
 }
 
-jsbind::CSSOMString KeyframeEffect::pseudoElement() const {
-    return AnimationEffect::get("pseudoElement").as<jsbind::CSSOMString>();
+jsbind::String KeyframeEffect::pseudoElement() const {
+    return AnimationEffect::get("pseudoElement").as<jsbind::String>();
 }
 
-void KeyframeEffect::pseudoElement(const jsbind::CSSOMString& value) {
+void KeyframeEffect::pseudoElement(const jsbind::String& value) {
     AnimationEffect::set("pseudoElement", value);
 }
 
@@ -36,8 +36,8 @@ void KeyframeEffect::composite(const CompositeOperation& value) {
     AnimationEffect::set("composite", value);
 }
 
-jsbind::Sequence<jsbind::Object> KeyframeEffect::getKeyframes() {
-    return AnimationEffect::call("getKeyframes").as<jsbind::Sequence<jsbind::Object>>();
+jsbind::TypedArray<jsbind::Object> KeyframeEffect::getKeyframes() {
+    return AnimationEffect::call("getKeyframes").as<jsbind::TypedArray<jsbind::Object>>();
 }
 
 jsbind::Undefined KeyframeEffect::setKeyframes(const jsbind::Object& keyframes) {

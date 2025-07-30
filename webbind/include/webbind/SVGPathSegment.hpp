@@ -13,9 +13,9 @@ public:
     static SVGPathSegment take_ownership(Handle h) noexcept;
 
     SVGPathSegment clone() const noexcept;
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
-    jsbind::FrozenArray<float> values() const;
-    void values(jsbind::FrozenArray<float> value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
+    jsbind::TypedArray<float> values() const;
+    void values(jsbind::TypedArray<float> value);
 };
 

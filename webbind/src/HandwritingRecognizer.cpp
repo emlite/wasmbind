@@ -10,27 +10,27 @@ HandwritingHints::HandwritingHints(const emlite::Val &val) noexcept: emlite::Val
 HandwritingHints::HandwritingHints() noexcept: emlite::Val(emlite::Val::object()) {}
 HandwritingHints HandwritingHints::clone() const noexcept { return *this; }
 
-jsbind::DOMString HandwritingHints::recognitionType() const {
-    return emlite::Val::get("recognitionType").as<jsbind::DOMString>();
+jsbind::String HandwritingHints::recognitionType() const {
+    return emlite::Val::get("recognitionType").as<jsbind::String>();
 }
 
-void HandwritingHints::recognitionType(const jsbind::DOMString& value) {
+void HandwritingHints::recognitionType(const jsbind::String& value) {
     emlite::Val::set("recognitionType", value);
 }
 
-jsbind::DOMString HandwritingHints::inputType() const {
-    return emlite::Val::get("inputType").as<jsbind::DOMString>();
+jsbind::String HandwritingHints::inputType() const {
+    return emlite::Val::get("inputType").as<jsbind::String>();
 }
 
-void HandwritingHints::inputType(const jsbind::DOMString& value) {
+void HandwritingHints::inputType(const jsbind::String& value) {
     emlite::Val::set("inputType", value);
 }
 
-jsbind::DOMString HandwritingHints::textContext() const {
-    return emlite::Val::get("textContext").as<jsbind::DOMString>();
+jsbind::String HandwritingHints::textContext() const {
+    return emlite::Val::get("textContext").as<jsbind::String>();
 }
 
-void HandwritingHints::textContext(const jsbind::DOMString& value) {
+void HandwritingHints::textContext(const jsbind::String& value) {
     emlite::Val::set("textContext", value);
 }
 

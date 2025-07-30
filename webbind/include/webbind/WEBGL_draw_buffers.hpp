@@ -13,6 +13,6 @@ public:
     static WEBGL_draw_buffers take_ownership(Handle h) noexcept;
 
     WEBGL_draw_buffers clone() const noexcept;
-    jsbind::Undefined drawBuffersWEBGL(const jsbind::Sequence<jsbind::Any>& buffers);
+    jsbind::Undefined drawBuffersWEBGL(const jsbind::TypedArray<jsbind::Any>& buffers);
 };
 

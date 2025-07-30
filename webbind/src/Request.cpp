@@ -18,12 +18,12 @@ Request::Request(const jsbind::Any& input) : emlite::Val(emlite::Val::global("Re
 
 Request::Request(const jsbind::Any& input, const jsbind::Any& init) : emlite::Val(emlite::Val::global("Request").new_(input, init)) {}
 
-jsbind::ByteString Request::method() const {
-    return emlite::Val::get("method").as<jsbind::ByteString>();
+jsbind::String Request::method() const {
+    return emlite::Val::get("method").as<jsbind::String>();
 }
 
-jsbind::USVString Request::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String Request::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
 Headers Request::headers() const {
@@ -34,8 +34,8 @@ RequestDestination Request::destination() const {
     return emlite::Val::get("destination").as<RequestDestination>();
 }
 
-jsbind::USVString Request::referrer() const {
-    return emlite::Val::get("referrer").as<jsbind::USVString>();
+jsbind::String Request::referrer() const {
+    return emlite::Val::get("referrer").as<jsbind::String>();
 }
 
 ReferrerPolicy Request::referrerPolicy() const {
@@ -58,8 +58,8 @@ RequestRedirect Request::redirect() const {
     return emlite::Val::get("redirect").as<RequestRedirect>();
 }
 
-jsbind::DOMString Request::integrity() const {
-    return emlite::Val::get("integrity").as<jsbind::DOMString>();
+jsbind::String Request::integrity() const {
+    return emlite::Val::get("integrity").as<jsbind::String>();
 }
 
 bool Request::keepalive() const {
@@ -118,7 +118,7 @@ jsbind::Promise<jsbind::Any> Request::json() {
     return emlite::Val::call("json").as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise<jsbind::USVString> Request::text() {
-    return emlite::Val::call("text").as<jsbind::Promise<jsbind::USVString>>();
+jsbind::Promise<jsbind::String> Request::text() {
+    return emlite::Val::call("text").as<jsbind::Promise<jsbind::String>>();
 }
 

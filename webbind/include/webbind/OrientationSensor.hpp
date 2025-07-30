@@ -14,7 +14,7 @@ public:
     static OrientationSensor take_ownership(Handle h) noexcept;
 
     OrientationSensor clone() const noexcept;
-    jsbind::FrozenArray<double> quaternion() const;
+    jsbind::TypedArray<double> quaternion() const;
     jsbind::Undefined populateMatrix(const jsbind::Any& targetMatrix);
 };
 

@@ -18,11 +18,11 @@ Animation::Animation(const AnimationEffect& effect) : EventTarget(emlite::Val::g
 
 Animation::Animation(const AnimationEffect& effect, const AnimationTimeline& timeline) : EventTarget(emlite::Val::global("Animation").new_(effect, timeline)) {}
 
-jsbind::DOMString Animation::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String Animation::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-void Animation::id(const jsbind::DOMString& value) {
+void Animation::id(const jsbind::String& value) {
     EventTarget::set("id", value);
 }
 

@@ -18,8 +18,8 @@ public:
     void value(float value);
     float valueInSpecifiedUnits() const;
     void valueInSpecifiedUnits(float value);
-    jsbind::DOMString valueAsString() const;
-    void valueAsString(const jsbind::DOMString& value);
+    jsbind::String valueAsString() const;
+    void valueAsString(const jsbind::String& value);
     jsbind::Undefined newValueSpecifiedUnits(unsigned short unitType, float valueInSpecifiedUnits);
     jsbind::Undefined convertToSpecifiedUnits(unsigned short unitType);
 };

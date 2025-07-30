@@ -29,10 +29,10 @@ public:
     CacheStorage caches() const;
     jsbind::Promise<FileSystemDirectoryHandle> getDirectory();
     jsbind::Promise<StorageEstimate> estimate();
-    jsbind::DOMString createObjectURL(const jsbind::Any& obj);
-    jsbind::Undefined revokeObjectURL(const jsbind::DOMString& url);
-    BroadcastChannel BroadcastChannel_(const jsbind::DOMString& name);
-    SharedWorker SharedWorker_(const jsbind::USVString& scriptURL);
-    SharedWorker SharedWorker_(const jsbind::USVString& scriptURL, const jsbind::Any& options);
+    jsbind::String createObjectURL(const jsbind::Any& obj);
+    jsbind::Undefined revokeObjectURL(const jsbind::String& url);
+    BroadcastChannel BroadcastChannel_(const jsbind::String& name);
+    SharedWorker SharedWorker_(const jsbind::String& scriptURL);
+    SharedWorker SharedWorker_(const jsbind::String& scriptURL, const jsbind::Any& options);
 };
 

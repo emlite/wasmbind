@@ -14,7 +14,7 @@ public:
     static SpeechSynthesisErrorEvent take_ownership(Handle h) noexcept;
 
     SpeechSynthesisErrorEvent clone() const noexcept;
-    SpeechSynthesisErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    SpeechSynthesisErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     SpeechSynthesisErrorCode error() const;
 };
 

@@ -9,11 +9,11 @@ RadioNodeList::RadioNodeList(Handle h) noexcept : NodeList(emlite::Val::take_own
 RadioNodeList::RadioNodeList(const emlite::Val &val) noexcept: NodeList(val) {}
 
 
-jsbind::DOMString RadioNodeList::value() const {
-    return NodeList::get("value").as<jsbind::DOMString>();
+jsbind::String RadioNodeList::value() const {
+    return NodeList::get("value").as<jsbind::String>();
 }
 
-void RadioNodeList::value(const jsbind::DOMString& value) {
+void RadioNodeList::value(const jsbind::String& value) {
     NodeList::set("value", value);
 }
 

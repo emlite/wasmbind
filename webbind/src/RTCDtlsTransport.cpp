@@ -18,8 +18,8 @@ RTCDtlsTransportState RTCDtlsTransport::state() const {
     return EventTarget::get("state").as<RTCDtlsTransportState>();
 }
 
-jsbind::Sequence<jsbind::ArrayBuffer> RTCDtlsTransport::getRemoteCertificates() {
-    return EventTarget::call("getRemoteCertificates").as<jsbind::Sequence<jsbind::ArrayBuffer>>();
+jsbind::TypedArray<jsbind::ArrayBuffer> RTCDtlsTransport::getRemoteCertificates() {
+    return EventTarget::call("getRemoteCertificates").as<jsbind::TypedArray<jsbind::ArrayBuffer>>();
 }
 
 jsbind::Any RTCDtlsTransport::onstatechange() const {

@@ -17,7 +17,7 @@ public:
 
     TextEncoderStream clone() const noexcept;
     TextEncoderStream();
-    jsbind::DOMString encoding() const;
+    jsbind::String encoding() const;
     ReadableStream readable() const;
     WritableStream writable() const;
 };

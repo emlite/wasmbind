@@ -26,7 +26,7 @@ jsbind::Any PushMessageData::json() {
     return emlite::Val::call("json").as<jsbind::Any>();
 }
 
-jsbind::USVString PushMessageData::text() {
-    return emlite::Val::call("text").as<jsbind::USVString>();
+jsbind::String PushMessageData::text() {
+    return emlite::Val::call("text").as<jsbind::String>();
 }
 

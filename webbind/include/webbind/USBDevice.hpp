@@ -50,11 +50,11 @@ public:
     unsigned char deviceVersionMajor() const;
     unsigned char deviceVersionMinor() const;
     unsigned char deviceVersionSubminor() const;
-    jsbind::DOMString manufacturerName() const;
-    jsbind::DOMString productName() const;
-    jsbind::DOMString serialNumber() const;
+    jsbind::String manufacturerName() const;
+    jsbind::String productName() const;
+    jsbind::String serialNumber() const;
     USBConfiguration configuration() const;
-    jsbind::FrozenArray<USBConfiguration> configurations() const;
+    jsbind::TypedArray<USBConfiguration> configurations() const;
     bool opened() const;
     jsbind::Promise<jsbind::Undefined> open();
     jsbind::Promise<jsbind::Undefined> close();
@@ -69,8 +69,8 @@ public:
     jsbind::Promise<jsbind::Undefined> clearHalt(const USBDirection& direction, unsigned char endpointNumber);
     jsbind::Promise<USBInTransferResult> transferIn(unsigned char endpointNumber, unsigned long length);
     jsbind::Promise<USBOutTransferResult> transferOut(unsigned char endpointNumber, const jsbind::Any& data);
-    jsbind::Promise<USBIsochronousInTransferResult> isochronousTransferIn(unsigned char endpointNumber, jsbind::Sequence<unsigned long> packetLengths);
-    jsbind::Promise<USBIsochronousOutTransferResult> isochronousTransferOut(unsigned char endpointNumber, const jsbind::Any& data, jsbind::Sequence<unsigned long> packetLengths);
+    jsbind::Promise<USBIsochronousInTransferResult> isochronousTransferIn(unsigned char endpointNumber, jsbind::TypedArray<unsigned long> packetLengths);
+    jsbind::Promise<USBIsochronousOutTransferResult> isochronousTransferOut(unsigned char endpointNumber, const jsbind::Any& data, jsbind::TypedArray<unsigned long> packetLengths);
     jsbind::Promise<jsbind::Undefined> reset();
 };
 

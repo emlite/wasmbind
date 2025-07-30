@@ -20,11 +20,11 @@ void HighlightHitResult::highlight(const Highlight& value) {
     emlite::Val::set("highlight", value);
 }
 
-jsbind::Sequence<AbstractRange> HighlightHitResult::ranges() const {
-    return emlite::Val::get("ranges").as<jsbind::Sequence<AbstractRange>>();
+jsbind::TypedArray<AbstractRange> HighlightHitResult::ranges() const {
+    return emlite::Val::get("ranges").as<jsbind::TypedArray<AbstractRange>>();
 }
 
-void HighlightHitResult::ranges(const jsbind::Sequence<AbstractRange>& value) {
+void HighlightHitResult::ranges(const jsbind::TypedArray<AbstractRange>& value) {
     emlite::Val::set("ranges", value);
 }
 
@@ -36,11 +36,11 @@ HighlightsFromPointOptions::HighlightsFromPointOptions(const emlite::Val &val) n
 HighlightsFromPointOptions::HighlightsFromPointOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 HighlightsFromPointOptions HighlightsFromPointOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<ShadowRoot> HighlightsFromPointOptions::shadowRoots() const {
-    return emlite::Val::get("shadowRoots").as<jsbind::Sequence<ShadowRoot>>();
+jsbind::TypedArray<ShadowRoot> HighlightsFromPointOptions::shadowRoots() const {
+    return emlite::Val::get("shadowRoots").as<jsbind::TypedArray<ShadowRoot>>();
 }
 
-void HighlightsFromPointOptions::shadowRoots(const jsbind::Sequence<ShadowRoot>& value) {
+void HighlightsFromPointOptions::shadowRoots(const jsbind::TypedArray<ShadowRoot>& value) {
     emlite::Val::set("shadowRoots", value);
 }
 
@@ -52,11 +52,11 @@ HighlightRegistry::HighlightRegistry(Handle h) noexcept : emlite::Val(emlite::Va
 HighlightRegistry::HighlightRegistry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Sequence<HighlightHitResult> HighlightRegistry::highlightsFromPoint(float x, float y) {
-    return emlite::Val::call("highlightsFromPoint", x, y).as<jsbind::Sequence<HighlightHitResult>>();
+jsbind::TypedArray<HighlightHitResult> HighlightRegistry::highlightsFromPoint(float x, float y) {
+    return emlite::Val::call("highlightsFromPoint", x, y).as<jsbind::TypedArray<HighlightHitResult>>();
 }
 
-jsbind::Sequence<HighlightHitResult> HighlightRegistry::highlightsFromPoint(float x, float y, const HighlightsFromPointOptions& options) {
-    return emlite::Val::call("highlightsFromPoint", x, y, options).as<jsbind::Sequence<HighlightHitResult>>();
+jsbind::TypedArray<HighlightHitResult> HighlightRegistry::highlightsFromPoint(float x, float y, const HighlightsFromPointOptions& options) {
+    return emlite::Val::call("highlightsFromPoint", x, y, options).as<jsbind::TypedArray<HighlightHitResult>>();
 }
 

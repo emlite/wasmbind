@@ -10,7 +10,7 @@ SpeechRecognitionPhraseList::SpeechRecognitionPhraseList(Handle h) noexcept : em
 SpeechRecognitionPhraseList::SpeechRecognitionPhraseList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-SpeechRecognitionPhraseList::SpeechRecognitionPhraseList(const jsbind::Sequence<SpeechRecognitionPhrase>& phrases) : emlite::Val(emlite::Val::global("SpeechRecognitionPhraseList").new_(phrases)) {}
+SpeechRecognitionPhraseList::SpeechRecognitionPhraseList(const jsbind::TypedArray<SpeechRecognitionPhrase>& phrases) : emlite::Val(emlite::Val::global("SpeechRecognitionPhraseList").new_(phrases)) {}
 
 unsigned long SpeechRecognitionPhraseList::length() const {
     return emlite::Val::get("length").as<unsigned long>();

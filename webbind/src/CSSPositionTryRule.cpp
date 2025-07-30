@@ -10,8 +10,8 @@ CSSPositionTryRule::CSSPositionTryRule(Handle h) noexcept : CSSRule(emlite::Val:
 CSSPositionTryRule::CSSPositionTryRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSPositionTryRule::name() const {
-    return CSSRule::get("name").as<jsbind::CSSOMString>();
+jsbind::String CSSPositionTryRule::name() const {
+    return CSSRule::get("name").as<jsbind::String>();
 }
 
 CSSPositionTryDescriptors CSSPositionTryRule::style() const {

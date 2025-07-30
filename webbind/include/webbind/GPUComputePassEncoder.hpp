@@ -23,11 +23,11 @@ public:
     jsbind::Undefined dispatchWorkgroups(const jsbind::Any& workgroupCountX, const jsbind::Any& workgroupCountY, const jsbind::Any& workgroupCountZ);
     jsbind::Undefined dispatchWorkgroupsIndirect(const GPUBuffer& indirectBuffer, const jsbind::Any& indirectOffset);
     jsbind::Undefined end();
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
-    jsbind::Undefined pushDebugGroup(const jsbind::USVString& groupLabel);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
+    jsbind::Undefined pushDebugGroup(const jsbind::String& groupLabel);
     jsbind::Undefined popDebugGroup();
-    jsbind::Undefined insertDebugMarker(const jsbind::USVString& markerLabel);
+    jsbind::Undefined insertDebugMarker(const jsbind::String& markerLabel);
     jsbind::Undefined setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup, const jsbind::Uint32Array& dynamicOffsetsData, const jsbind::Any& dynamicOffsetsDataStart, const jsbind::Any& dynamicOffsetsDataLength);
 };
 

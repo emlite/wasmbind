@@ -9,8 +9,8 @@ SharedWorkerGlobalScope::SharedWorkerGlobalScope(Handle h) noexcept : WorkerGlob
 SharedWorkerGlobalScope::SharedWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
 
 
-jsbind::DOMString SharedWorkerGlobalScope::name() const {
-    return WorkerGlobalScope::get("name").as<jsbind::DOMString>();
+jsbind::String SharedWorkerGlobalScope::name() const {
+    return WorkerGlobalScope::get("name").as<jsbind::String>();
 }
 
 jsbind::Undefined SharedWorkerGlobalScope::close() {

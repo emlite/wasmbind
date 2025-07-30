@@ -13,9 +13,9 @@ public:
     static SpeechSynthesisVoice take_ownership(Handle h) noexcept;
 
     SpeechSynthesisVoice clone() const noexcept;
-    jsbind::DOMString voiceURI() const;
-    jsbind::DOMString name() const;
-    jsbind::DOMString lang() const;
+    jsbind::String voiceURI() const;
+    jsbind::String name() const;
+    jsbind::String lang() const;
     bool localService() const;
     bool default_() const;
 };

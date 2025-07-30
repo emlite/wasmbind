@@ -9,11 +9,11 @@ ModuleExportDescriptor::ModuleExportDescriptor(const emlite::Val &val) noexcept:
 ModuleExportDescriptor::ModuleExportDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
 ModuleExportDescriptor ModuleExportDescriptor::clone() const noexcept { return *this; }
 
-jsbind::USVString ModuleExportDescriptor::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String ModuleExportDescriptor::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void ModuleExportDescriptor::name(const jsbind::USVString& value) {
+void ModuleExportDescriptor::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
@@ -33,19 +33,19 @@ ModuleImportDescriptor::ModuleImportDescriptor(const emlite::Val &val) noexcept:
 ModuleImportDescriptor::ModuleImportDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
 ModuleImportDescriptor ModuleImportDescriptor::clone() const noexcept { return *this; }
 
-jsbind::USVString ModuleImportDescriptor::module_() const {
-    return emlite::Val::get("module").as<jsbind::USVString>();
+jsbind::String ModuleImportDescriptor::module_() const {
+    return emlite::Val::get("module").as<jsbind::String>();
 }
 
-void ModuleImportDescriptor::module_(const jsbind::USVString& value) {
+void ModuleImportDescriptor::module_(const jsbind::String& value) {
     emlite::Val::set("module", value);
 }
 
-jsbind::USVString ModuleImportDescriptor::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String ModuleImportDescriptor::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void ModuleImportDescriptor::name(const jsbind::USVString& value) {
+void ModuleImportDescriptor::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
@@ -67,15 +67,15 @@ Module::Module(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Module::Module(const jsbind::Any& bytes) : emlite::Val(emlite::Val::global("Module").new_(bytes)) {}
 
-jsbind::Sequence<ModuleExportDescriptor> Module::exports(const Module& moduleObject) {
-    return emlite::Val::global("module").call("exports", moduleObject).as<jsbind::Sequence<ModuleExportDescriptor>>();
+jsbind::TypedArray<ModuleExportDescriptor> Module::exports(const Module& moduleObject) {
+    return emlite::Val::global("module").call("exports", moduleObject).as<jsbind::TypedArray<ModuleExportDescriptor>>();
 }
 
-jsbind::Sequence<ModuleImportDescriptor> Module::imports(const Module& moduleObject) {
-    return emlite::Val::global("module").call("imports", moduleObject).as<jsbind::Sequence<ModuleImportDescriptor>>();
+jsbind::TypedArray<ModuleImportDescriptor> Module::imports(const Module& moduleObject) {
+    return emlite::Val::global("module").call("imports", moduleObject).as<jsbind::TypedArray<ModuleImportDescriptor>>();
 }
 
-jsbind::Sequence<jsbind::ArrayBuffer> Module::customSections(const Module& moduleObject, const jsbind::DOMString& sectionName) {
-    return emlite::Val::global("module").call("customSections", moduleObject, sectionName).as<jsbind::Sequence<jsbind::ArrayBuffer>>();
+jsbind::TypedArray<jsbind::ArrayBuffer> Module::customSections(const Module& moduleObject, const jsbind::String& sectionName) {
+    return emlite::Val::global("module").call("customSections", moduleObject, sectionName).as<jsbind::TypedArray<jsbind::ArrayBuffer>>();
 }
 

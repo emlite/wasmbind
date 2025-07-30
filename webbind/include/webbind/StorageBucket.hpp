@@ -18,7 +18,7 @@ public:
     static StorageBucket take_ownership(Handle h) noexcept;
 
     StorageBucket clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     jsbind::Promise<bool> persist();
     jsbind::Promise<bool> persisted();
     jsbind::Promise<StorageEstimate> estimate();

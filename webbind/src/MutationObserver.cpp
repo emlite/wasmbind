@@ -59,11 +59,11 @@ void MutationObserverInit::characterDataOldValue(bool value) {
     emlite::Val::set("characterDataOldValue", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> MutationObserverInit::attributeFilter() const {
-    return emlite::Val::get("attributeFilter").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> MutationObserverInit::attributeFilter() const {
+    return emlite::Val::get("attributeFilter").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void MutationObserverInit::attributeFilter(const jsbind::Sequence<jsbind::DOMString>& value) {
+void MutationObserverInit::attributeFilter(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("attributeFilter", value);
 }
 
@@ -89,7 +89,7 @@ jsbind::Undefined MutationObserver::disconnect() {
     return emlite::Val::call("disconnect").as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<MutationRecord> MutationObserver::takeRecords() {
-    return emlite::Val::call("takeRecords").as<jsbind::Sequence<MutationRecord>>();
+jsbind::TypedArray<MutationRecord> MutationObserver::takeRecords() {
+    return emlite::Val::call("takeRecords").as<jsbind::TypedArray<MutationRecord>>();
 }
 

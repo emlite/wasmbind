@@ -16,9 +16,9 @@ public:
     static CommandEvent take_ownership(Handle h) noexcept;
 
     CommandEvent clone() const noexcept;
-    CommandEvent(const jsbind::DOMString& type);
-    CommandEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    CommandEvent(const jsbind::String& type);
+    CommandEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     Element source() const;
-    jsbind::DOMString command() const;
+    jsbind::String command() const;
 };
 

@@ -15,7 +15,7 @@ public:
     static BreakToken take_ownership(Handle h) noexcept;
 
     BreakToken clone() const noexcept;
-    jsbind::FrozenArray<ChildBreakToken> childBreakTokens() const;
+    jsbind::TypedArray<ChildBreakToken> childBreakTokens() const;
     jsbind::Any data() const;
 };
 

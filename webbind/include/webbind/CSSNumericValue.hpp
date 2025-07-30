@@ -51,9 +51,9 @@ public:
     CSSNumericValue min(const jsbind::Any& values);
     CSSNumericValue max(const jsbind::Any& values);
     bool equals(const jsbind::Any& value);
-    CSSUnitValue to(const jsbind::USVString& unit);
-    CSSMathSum toSum(const jsbind::USVString& units);
+    CSSUnitValue to(const jsbind::String& unit);
+    CSSMathSum toSum(const jsbind::String& units);
     CSSNumericType type();
-    static CSSNumericValue parse(const jsbind::USVString& cssText);
+    static CSSNumericValue parse(const jsbind::String& cssText);
 };
 

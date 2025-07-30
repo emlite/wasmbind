@@ -14,7 +14,7 @@ unsigned long TextTrackList::length() const {
     return EventTarget::get("length").as<unsigned long>();
 }
 
-TextTrack TextTrackList::getTrackById(const jsbind::DOMString& id) {
+TextTrack TextTrackList::getTrackById(const jsbind::String& id) {
     return EventTarget::call("getTrackById", id).as<TextTrack>();
 }
 

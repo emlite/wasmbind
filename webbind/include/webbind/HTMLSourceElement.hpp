@@ -15,16 +15,16 @@ public:
 
     HTMLSourceElement clone() const noexcept;
     HTMLSourceElement();
-    jsbind::USVString src() const;
-    void src(const jsbind::USVString& value);
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
-    jsbind::USVString srcset() const;
-    void srcset(const jsbind::USVString& value);
-    jsbind::DOMString sizes() const;
-    void sizes(const jsbind::DOMString& value);
-    jsbind::DOMString media() const;
-    void media(const jsbind::DOMString& value);
+    jsbind::String src() const;
+    void src(const jsbind::String& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
+    jsbind::String srcset() const;
+    void srcset(const jsbind::String& value);
+    jsbind::String sizes() const;
+    void sizes(const jsbind::String& value);
+    jsbind::String media() const;
+    void media(const jsbind::String& value);
     unsigned long width() const;
     void width(unsigned long value);
     unsigned long height() const;

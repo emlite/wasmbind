@@ -14,8 +14,8 @@ public:
     static DeviceOrientationEvent take_ownership(Handle h) noexcept;
 
     DeviceOrientationEvent clone() const noexcept;
-    DeviceOrientationEvent(const jsbind::DOMString& type);
-    DeviceOrientationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    DeviceOrientationEvent(const jsbind::String& type);
+    DeviceOrientationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     double alpha() const;
     double beta() const;
     double gamma() const;

@@ -15,16 +15,16 @@ BluetoothLEScanFilter::BluetoothLEScanFilter() : emlite::Val(emlite::Val::global
 
 BluetoothLEScanFilter::BluetoothLEScanFilter(const jsbind::Any& init) : emlite::Val(emlite::Val::global("BluetoothLEScanFilter").new_(init)) {}
 
-jsbind::DOMString BluetoothLEScanFilter::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String BluetoothLEScanFilter::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString BluetoothLEScanFilter::namePrefix() const {
-    return emlite::Val::get("namePrefix").as<jsbind::DOMString>();
+jsbind::String BluetoothLEScanFilter::namePrefix() const {
+    return emlite::Val::get("namePrefix").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<jsbind::Any> BluetoothLEScanFilter::services() const {
-    return emlite::Val::get("services").as<jsbind::FrozenArray<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> BluetoothLEScanFilter::services() const {
+    return emlite::Val::get("services").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
 BluetoothManufacturerDataFilter BluetoothLEScanFilter::manufacturerData() const {

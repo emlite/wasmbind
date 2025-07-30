@@ -10,8 +10,8 @@ BluetoothLEScan::BluetoothLEScan(Handle h) noexcept : emlite::Val(emlite::Val::t
 BluetoothLEScan::BluetoothLEScan(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::FrozenArray<BluetoothLEScanFilter> BluetoothLEScan::filters() const {
-    return emlite::Val::get("filters").as<jsbind::FrozenArray<BluetoothLEScanFilter>>();
+jsbind::TypedArray<BluetoothLEScanFilter> BluetoothLEScan::filters() const {
+    return emlite::Val::get("filters").as<jsbind::TypedArray<BluetoothLEScanFilter>>();
 }
 
 bool BluetoothLEScan::keepRepeatedDevices() const {

@@ -17,11 +17,11 @@ void NavigationPreloadState::enabled(bool value) {
     emlite::Val::set("enabled", value);
 }
 
-jsbind::ByteString NavigationPreloadState::headerValue() const {
-    return emlite::Val::get("headerValue").as<jsbind::ByteString>();
+jsbind::String NavigationPreloadState::headerValue() const {
+    return emlite::Val::get("headerValue").as<jsbind::String>();
 }
 
-void NavigationPreloadState::headerValue(const jsbind::ByteString& value) {
+void NavigationPreloadState::headerValue(const jsbind::String& value) {
     emlite::Val::set("headerValue", value);
 }
 
@@ -41,7 +41,7 @@ jsbind::Promise<jsbind::Undefined> NavigationPreloadManager::disable() {
     return emlite::Val::call("disable").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> NavigationPreloadManager::setHeaderValue(const jsbind::ByteString& value) {
+jsbind::Promise<jsbind::Undefined> NavigationPreloadManager::setHeaderValue(const jsbind::String& value) {
     return emlite::Val::call("setHeaderValue", value).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

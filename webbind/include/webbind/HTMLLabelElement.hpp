@@ -18,8 +18,8 @@ public:
     HTMLLabelElement clone() const noexcept;
     HTMLLabelElement();
     HTMLFormElement form() const;
-    jsbind::DOMString htmlFor() const;
-    void htmlFor(const jsbind::DOMString& value);
+    jsbind::String htmlFor() const;
+    void htmlFor(const jsbind::String& value);
     HTMLElement control() const;
 };
 

@@ -15,7 +15,7 @@ public:
     static LaunchParams take_ownership(Handle h) noexcept;
 
     LaunchParams clone() const noexcept;
-    jsbind::DOMString targetURL() const;
-    jsbind::FrozenArray<FileSystemHandle> files() const;
+    jsbind::String targetURL() const;
+    jsbind::TypedArray<FileSystemHandle> files() const;
 };
 

@@ -32,8 +32,8 @@ public:
     void payer(const jsbind::Any& value);
     jsbind::Any shippingAddress() const;
     void shippingAddress(const jsbind::Any& value);
-    jsbind::DOMString error() const;
-    void error(const jsbind::DOMString& value);
+    jsbind::String error() const;
+    void error(const jsbind::String& value);
     jsbind::Object paymentMethod() const;
     void paymentMethod(const jsbind::Object& value);
 };
@@ -47,14 +47,14 @@ public:
 
     PaymentResponse clone() const noexcept;
     jsbind::Object toJSON();
-    jsbind::DOMString requestId() const;
-    jsbind::DOMString methodName() const;
+    jsbind::String requestId() const;
+    jsbind::String methodName() const;
     jsbind::Object details() const;
     ContactAddress shippingAddress() const;
-    jsbind::DOMString shippingOption() const;
-    jsbind::DOMString payerName() const;
-    jsbind::DOMString payerEmail() const;
-    jsbind::DOMString payerPhone() const;
+    jsbind::String shippingOption() const;
+    jsbind::String payerName() const;
+    jsbind::String payerEmail() const;
+    jsbind::String payerPhone() const;
     jsbind::Promise<jsbind::Undefined> complete();
     jsbind::Promise<jsbind::Undefined> complete(const PaymentComplete& result);
     jsbind::Promise<jsbind::Undefined> complete(const PaymentComplete& result, const PaymentCompleteDetails& details);

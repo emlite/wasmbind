@@ -13,7 +13,7 @@ public:
     static GPUCompilationMessage take_ownership(Handle h) noexcept;
 
     GPUCompilationMessage clone() const noexcept;
-    jsbind::DOMString message() const;
+    jsbind::String message() const;
     GPUCompilationMessageType type() const;
     long long lineNum() const;
     long long linePos() const;

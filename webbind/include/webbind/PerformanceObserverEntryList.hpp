@@ -14,8 +14,8 @@ public:
 
     PerformanceObserverEntryList clone() const noexcept;
     jsbind::Any getEntries();
-    jsbind::Any getEntriesByType(const jsbind::DOMString& type);
-    jsbind::Any getEntriesByName(const jsbind::DOMString& name);
-    jsbind::Any getEntriesByName(const jsbind::DOMString& name, const jsbind::DOMString& type);
+    jsbind::Any getEntriesByType(const jsbind::String& type);
+    jsbind::Any getEntriesByName(const jsbind::String& name);
+    jsbind::Any getEntriesByName(const jsbind::String& name, const jsbind::String& type);
 };
 

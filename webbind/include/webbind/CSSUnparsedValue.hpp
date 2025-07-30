@@ -14,7 +14,7 @@ public:
     static CSSUnparsedValue take_ownership(Handle h) noexcept;
 
     CSSUnparsedValue clone() const noexcept;
-    CSSUnparsedValue(const jsbind::Sequence<jsbind::Any>& members);
+    CSSUnparsedValue(const jsbind::TypedArray<jsbind::Any>& members);
     unsigned long length() const;
 };
 

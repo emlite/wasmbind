@@ -10,11 +10,11 @@ PaymentMethodData::PaymentMethodData(const emlite::Val &val) noexcept: emlite::V
 PaymentMethodData::PaymentMethodData() noexcept: emlite::Val(emlite::Val::object()) {}
 PaymentMethodData PaymentMethodData::clone() const noexcept { return *this; }
 
-jsbind::DOMString PaymentMethodData::supportedMethods() const {
-    return emlite::Val::get("supportedMethods").as<jsbind::DOMString>();
+jsbind::String PaymentMethodData::supportedMethods() const {
+    return emlite::Val::get("supportedMethods").as<jsbind::String>();
 }
 
-void PaymentMethodData::supportedMethods(const jsbind::DOMString& value) {
+void PaymentMethodData::supportedMethods(const jsbind::String& value) {
     emlite::Val::set("supportedMethods", value);
 }
 
@@ -34,11 +34,11 @@ PaymentDetailsModifier::PaymentDetailsModifier(const emlite::Val &val) noexcept:
 PaymentDetailsModifier::PaymentDetailsModifier() noexcept: emlite::Val(emlite::Val::object()) {}
 PaymentDetailsModifier PaymentDetailsModifier::clone() const noexcept { return *this; }
 
-jsbind::DOMString PaymentDetailsModifier::supportedMethods() const {
-    return emlite::Val::get("supportedMethods").as<jsbind::DOMString>();
+jsbind::String PaymentDetailsModifier::supportedMethods() const {
+    return emlite::Val::get("supportedMethods").as<jsbind::String>();
 }
 
-void PaymentDetailsModifier::supportedMethods(const jsbind::DOMString& value) {
+void PaymentDetailsModifier::supportedMethods(const jsbind::String& value) {
     emlite::Val::set("supportedMethods", value);
 }
 
@@ -50,11 +50,11 @@ void PaymentDetailsModifier::total(const jsbind::Any& value) {
     emlite::Val::set("total", value);
 }
 
-jsbind::Sequence<jsbind::Any> PaymentDetailsModifier::additionalDisplayItems() const {
-    return emlite::Val::get("additionalDisplayItems").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> PaymentDetailsModifier::additionalDisplayItems() const {
+    return emlite::Val::get("additionalDisplayItems").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void PaymentDetailsModifier::additionalDisplayItems(const jsbind::Sequence<jsbind::Any>& value) {
+void PaymentDetailsModifier::additionalDisplayItems(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("additionalDisplayItems", value);
 }
 
@@ -74,19 +74,19 @@ PaymentShippingOption::PaymentShippingOption(const emlite::Val &val) noexcept: e
 PaymentShippingOption::PaymentShippingOption() noexcept: emlite::Val(emlite::Val::object()) {}
 PaymentShippingOption PaymentShippingOption::clone() const noexcept { return *this; }
 
-jsbind::DOMString PaymentShippingOption::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String PaymentShippingOption::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-void PaymentShippingOption::id(const jsbind::DOMString& value) {
+void PaymentShippingOption::id(const jsbind::String& value) {
     emlite::Val::set("id", value);
 }
 
-jsbind::DOMString PaymentShippingOption::label() const {
-    return emlite::Val::get("label").as<jsbind::DOMString>();
+jsbind::String PaymentShippingOption::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void PaymentShippingOption::label(const jsbind::DOMString& value) {
+void PaymentShippingOption::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
@@ -114,11 +114,11 @@ PaymentRequestDetailsUpdate::PaymentRequestDetailsUpdate(const emlite::Val &val)
 PaymentRequestDetailsUpdate::PaymentRequestDetailsUpdate() noexcept: emlite::Val(emlite::Val::object()) {}
 PaymentRequestDetailsUpdate PaymentRequestDetailsUpdate::clone() const noexcept { return *this; }
 
-jsbind::DOMString PaymentRequestDetailsUpdate::error() const {
-    return emlite::Val::get("error").as<jsbind::DOMString>();
+jsbind::String PaymentRequestDetailsUpdate::error() const {
+    return emlite::Val::get("error").as<jsbind::String>();
 }
 
-void PaymentRequestDetailsUpdate::error(const jsbind::DOMString& value) {
+void PaymentRequestDetailsUpdate::error(const jsbind::String& value) {
     emlite::Val::set("error", value);
 }
 
@@ -130,19 +130,19 @@ void PaymentRequestDetailsUpdate::total(const jsbind::Any& value) {
     emlite::Val::set("total", value);
 }
 
-jsbind::Sequence<PaymentDetailsModifier> PaymentRequestDetailsUpdate::modifiers() const {
-    return emlite::Val::get("modifiers").as<jsbind::Sequence<PaymentDetailsModifier>>();
+jsbind::TypedArray<PaymentDetailsModifier> PaymentRequestDetailsUpdate::modifiers() const {
+    return emlite::Val::get("modifiers").as<jsbind::TypedArray<PaymentDetailsModifier>>();
 }
 
-void PaymentRequestDetailsUpdate::modifiers(const jsbind::Sequence<PaymentDetailsModifier>& value) {
+void PaymentRequestDetailsUpdate::modifiers(const jsbind::TypedArray<PaymentDetailsModifier>& value) {
     emlite::Val::set("modifiers", value);
 }
 
-jsbind::Sequence<PaymentShippingOption> PaymentRequestDetailsUpdate::shippingOptions() const {
-    return emlite::Val::get("shippingOptions").as<jsbind::Sequence<PaymentShippingOption>>();
+jsbind::TypedArray<PaymentShippingOption> PaymentRequestDetailsUpdate::shippingOptions() const {
+    return emlite::Val::get("shippingOptions").as<jsbind::TypedArray<PaymentShippingOption>>();
 }
 
-void PaymentRequestDetailsUpdate::shippingOptions(const jsbind::Sequence<PaymentShippingOption>& value) {
+void PaymentRequestDetailsUpdate::shippingOptions(const jsbind::TypedArray<PaymentShippingOption>& value) {
     emlite::Val::set("shippingOptions", value);
 }
 
@@ -170,83 +170,83 @@ AddressInit::AddressInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
 AddressInit::AddressInit() noexcept: emlite::Val(emlite::Val::object()) {}
 AddressInit AddressInit::clone() const noexcept { return *this; }
 
-jsbind::DOMString AddressInit::country() const {
-    return emlite::Val::get("country").as<jsbind::DOMString>();
+jsbind::String AddressInit::country() const {
+    return emlite::Val::get("country").as<jsbind::String>();
 }
 
-void AddressInit::country(const jsbind::DOMString& value) {
+void AddressInit::country(const jsbind::String& value) {
     emlite::Val::set("country", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> AddressInit::addressLine() const {
-    return emlite::Val::get("addressLine").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> AddressInit::addressLine() const {
+    return emlite::Val::get("addressLine").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void AddressInit::addressLine(const jsbind::Sequence<jsbind::DOMString>& value) {
+void AddressInit::addressLine(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("addressLine", value);
 }
 
-jsbind::DOMString AddressInit::region() const {
-    return emlite::Val::get("region").as<jsbind::DOMString>();
+jsbind::String AddressInit::region() const {
+    return emlite::Val::get("region").as<jsbind::String>();
 }
 
-void AddressInit::region(const jsbind::DOMString& value) {
+void AddressInit::region(const jsbind::String& value) {
     emlite::Val::set("region", value);
 }
 
-jsbind::DOMString AddressInit::city() const {
-    return emlite::Val::get("city").as<jsbind::DOMString>();
+jsbind::String AddressInit::city() const {
+    return emlite::Val::get("city").as<jsbind::String>();
 }
 
-void AddressInit::city(const jsbind::DOMString& value) {
+void AddressInit::city(const jsbind::String& value) {
     emlite::Val::set("city", value);
 }
 
-jsbind::DOMString AddressInit::dependentLocality() const {
-    return emlite::Val::get("dependentLocality").as<jsbind::DOMString>();
+jsbind::String AddressInit::dependentLocality() const {
+    return emlite::Val::get("dependentLocality").as<jsbind::String>();
 }
 
-void AddressInit::dependentLocality(const jsbind::DOMString& value) {
+void AddressInit::dependentLocality(const jsbind::String& value) {
     emlite::Val::set("dependentLocality", value);
 }
 
-jsbind::DOMString AddressInit::postalCode() const {
-    return emlite::Val::get("postalCode").as<jsbind::DOMString>();
+jsbind::String AddressInit::postalCode() const {
+    return emlite::Val::get("postalCode").as<jsbind::String>();
 }
 
-void AddressInit::postalCode(const jsbind::DOMString& value) {
+void AddressInit::postalCode(const jsbind::String& value) {
     emlite::Val::set("postalCode", value);
 }
 
-jsbind::DOMString AddressInit::sortingCode() const {
-    return emlite::Val::get("sortingCode").as<jsbind::DOMString>();
+jsbind::String AddressInit::sortingCode() const {
+    return emlite::Val::get("sortingCode").as<jsbind::String>();
 }
 
-void AddressInit::sortingCode(const jsbind::DOMString& value) {
+void AddressInit::sortingCode(const jsbind::String& value) {
     emlite::Val::set("sortingCode", value);
 }
 
-jsbind::DOMString AddressInit::organization() const {
-    return emlite::Val::get("organization").as<jsbind::DOMString>();
+jsbind::String AddressInit::organization() const {
+    return emlite::Val::get("organization").as<jsbind::String>();
 }
 
-void AddressInit::organization(const jsbind::DOMString& value) {
+void AddressInit::organization(const jsbind::String& value) {
     emlite::Val::set("organization", value);
 }
 
-jsbind::DOMString AddressInit::recipient() const {
-    return emlite::Val::get("recipient").as<jsbind::DOMString>();
+jsbind::String AddressInit::recipient() const {
+    return emlite::Val::get("recipient").as<jsbind::String>();
 }
 
-void AddressInit::recipient(const jsbind::DOMString& value) {
+void AddressInit::recipient(const jsbind::String& value) {
     emlite::Val::set("recipient", value);
 }
 
-jsbind::DOMString AddressInit::phone() const {
-    return emlite::Val::get("phone").as<jsbind::DOMString>();
+jsbind::String AddressInit::phone() const {
+    return emlite::Val::get("phone").as<jsbind::String>();
 }
 
-void AddressInit::phone(const jsbind::DOMString& value) {
+void AddressInit::phone(const jsbind::String& value) {
     emlite::Val::set("phone", value);
 }
 
@@ -258,11 +258,11 @@ PaymentHandlerResponse::PaymentHandlerResponse(const emlite::Val &val) noexcept:
 PaymentHandlerResponse::PaymentHandlerResponse() noexcept: emlite::Val(emlite::Val::object()) {}
 PaymentHandlerResponse PaymentHandlerResponse::clone() const noexcept { return *this; }
 
-jsbind::DOMString PaymentHandlerResponse::methodName() const {
-    return emlite::Val::get("methodName").as<jsbind::DOMString>();
+jsbind::String PaymentHandlerResponse::methodName() const {
+    return emlite::Val::get("methodName").as<jsbind::String>();
 }
 
-void PaymentHandlerResponse::methodName(const jsbind::DOMString& value) {
+void PaymentHandlerResponse::methodName(const jsbind::String& value) {
     emlite::Val::set("methodName", value);
 }
 
@@ -274,27 +274,27 @@ void PaymentHandlerResponse::details(const jsbind::Object& value) {
     emlite::Val::set("details", value);
 }
 
-jsbind::DOMString PaymentHandlerResponse::payerName() const {
-    return emlite::Val::get("payerName").as<jsbind::DOMString>();
+jsbind::String PaymentHandlerResponse::payerName() const {
+    return emlite::Val::get("payerName").as<jsbind::String>();
 }
 
-void PaymentHandlerResponse::payerName(const jsbind::DOMString& value) {
+void PaymentHandlerResponse::payerName(const jsbind::String& value) {
     emlite::Val::set("payerName", value);
 }
 
-jsbind::DOMString PaymentHandlerResponse::payerEmail() const {
-    return emlite::Val::get("payerEmail").as<jsbind::DOMString>();
+jsbind::String PaymentHandlerResponse::payerEmail() const {
+    return emlite::Val::get("payerEmail").as<jsbind::String>();
 }
 
-void PaymentHandlerResponse::payerEmail(const jsbind::DOMString& value) {
+void PaymentHandlerResponse::payerEmail(const jsbind::String& value) {
     emlite::Val::set("payerEmail", value);
 }
 
-jsbind::DOMString PaymentHandlerResponse::payerPhone() const {
-    return emlite::Val::get("payerPhone").as<jsbind::DOMString>();
+jsbind::String PaymentHandlerResponse::payerPhone() const {
+    return emlite::Val::get("payerPhone").as<jsbind::String>();
 }
 
-void PaymentHandlerResponse::payerPhone(const jsbind::DOMString& value) {
+void PaymentHandlerResponse::payerPhone(const jsbind::String& value) {
     emlite::Val::set("payerPhone", value);
 }
 
@@ -306,11 +306,11 @@ void PaymentHandlerResponse::shippingAddress(const AddressInit& value) {
     emlite::Val::set("shippingAddress", value);
 }
 
-jsbind::DOMString PaymentHandlerResponse::shippingOption() const {
-    return emlite::Val::get("shippingOption").as<jsbind::DOMString>();
+jsbind::String PaymentHandlerResponse::shippingOption() const {
+    return emlite::Val::get("shippingOption").as<jsbind::String>();
 }
 
-void PaymentHandlerResponse::shippingOption(const jsbind::DOMString& value) {
+void PaymentHandlerResponse::shippingOption(const jsbind::String& value) {
     emlite::Val::set("shippingOption", value);
 }
 
@@ -322,51 +322,51 @@ PaymentRequestEvent::PaymentRequestEvent(Handle h) noexcept : ExtendableEvent(em
 PaymentRequestEvent::PaymentRequestEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-PaymentRequestEvent::PaymentRequestEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("PaymentRequestEvent").new_(type)) {}
+PaymentRequestEvent::PaymentRequestEvent(const jsbind::String& type) : ExtendableEvent(emlite::Val::global("PaymentRequestEvent").new_(type)) {}
 
-PaymentRequestEvent::PaymentRequestEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("PaymentRequestEvent").new_(type, eventInitDict)) {}
+PaymentRequestEvent::PaymentRequestEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("PaymentRequestEvent").new_(type, eventInitDict)) {}
 
-jsbind::USVString PaymentRequestEvent::topOrigin() const {
-    return ExtendableEvent::get("topOrigin").as<jsbind::USVString>();
+jsbind::String PaymentRequestEvent::topOrigin() const {
+    return ExtendableEvent::get("topOrigin").as<jsbind::String>();
 }
 
-jsbind::USVString PaymentRequestEvent::paymentRequestOrigin() const {
-    return ExtendableEvent::get("paymentRequestOrigin").as<jsbind::USVString>();
+jsbind::String PaymentRequestEvent::paymentRequestOrigin() const {
+    return ExtendableEvent::get("paymentRequestOrigin").as<jsbind::String>();
 }
 
-jsbind::DOMString PaymentRequestEvent::paymentRequestId() const {
-    return ExtendableEvent::get("paymentRequestId").as<jsbind::DOMString>();
+jsbind::String PaymentRequestEvent::paymentRequestId() const {
+    return ExtendableEvent::get("paymentRequestId").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<PaymentMethodData> PaymentRequestEvent::methodData() const {
-    return ExtendableEvent::get("methodData").as<jsbind::FrozenArray<PaymentMethodData>>();
+jsbind::TypedArray<PaymentMethodData> PaymentRequestEvent::methodData() const {
+    return ExtendableEvent::get("methodData").as<jsbind::TypedArray<PaymentMethodData>>();
 }
 
 jsbind::Object PaymentRequestEvent::total() const {
     return ExtendableEvent::get("total").as<jsbind::Object>();
 }
 
-jsbind::FrozenArray<PaymentDetailsModifier> PaymentRequestEvent::modifiers() const {
-    return ExtendableEvent::get("modifiers").as<jsbind::FrozenArray<PaymentDetailsModifier>>();
+jsbind::TypedArray<PaymentDetailsModifier> PaymentRequestEvent::modifiers() const {
+    return ExtendableEvent::get("modifiers").as<jsbind::TypedArray<PaymentDetailsModifier>>();
 }
 
 jsbind::Object PaymentRequestEvent::paymentOptions() const {
     return ExtendableEvent::get("paymentOptions").as<jsbind::Object>();
 }
 
-jsbind::FrozenArray<PaymentShippingOption> PaymentRequestEvent::shippingOptions() const {
-    return ExtendableEvent::get("shippingOptions").as<jsbind::FrozenArray<PaymentShippingOption>>();
+jsbind::TypedArray<PaymentShippingOption> PaymentRequestEvent::shippingOptions() const {
+    return ExtendableEvent::get("shippingOptions").as<jsbind::TypedArray<PaymentShippingOption>>();
 }
 
-jsbind::Promise<WindowClient> PaymentRequestEvent::openWindow(const jsbind::USVString& url) {
+jsbind::Promise<WindowClient> PaymentRequestEvent::openWindow(const jsbind::String& url) {
     return ExtendableEvent::call("openWindow", url).as<jsbind::Promise<WindowClient>>();
 }
 
-jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName) {
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changePaymentMethod(const jsbind::String& methodName) {
     return ExtendableEvent::call("changePaymentMethod", methodName).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
-jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changePaymentMethod(const jsbind::DOMString& methodName, const jsbind::Object& methodDetails) {
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changePaymentMethod(const jsbind::String& methodName, const jsbind::Object& methodDetails) {
     return ExtendableEvent::call("changePaymentMethod", methodName, methodDetails).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
@@ -378,7 +378,7 @@ jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changeShipping
     return ExtendableEvent::call("changeShippingAddress", shippingAddress).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 
-jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changeShippingOption(const jsbind::DOMString& shippingOption) {
+jsbind::Promise<PaymentRequestDetailsUpdate> PaymentRequestEvent::changeShippingOption(const jsbind::String& shippingOption) {
     return ExtendableEvent::call("changeShippingOption", shippingOption).as<jsbind::Promise<PaymentRequestDetailsUpdate>>();
 }
 

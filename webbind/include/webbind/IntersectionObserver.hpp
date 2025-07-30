@@ -19,14 +19,14 @@ public:
     IntersectionObserver(const jsbind::Function& callback);
     IntersectionObserver(const jsbind::Function& callback, const jsbind::Any& options);
     jsbind::Any root() const;
-    jsbind::DOMString rootMargin() const;
-    jsbind::DOMString scrollMargin() const;
-    jsbind::FrozenArray<double> thresholds() const;
+    jsbind::String rootMargin() const;
+    jsbind::String scrollMargin() const;
+    jsbind::TypedArray<double> thresholds() const;
     long delay() const;
     bool trackVisibility() const;
     jsbind::Undefined observe(const Element& target);
     jsbind::Undefined unobserve(const Element& target);
     jsbind::Undefined disconnect();
-    jsbind::Sequence<IntersectionObserverEntry> takeRecords();
+    jsbind::TypedArray<IntersectionObserverEntry> takeRecords();
 };
 

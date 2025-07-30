@@ -14,6 +14,6 @@ public:
     static GPUInternalError take_ownership(Handle h) noexcept;
 
     GPUInternalError clone() const noexcept;
-    GPUInternalError(const jsbind::DOMString& message);
+    GPUInternalError(const jsbind::String& message);
 };
 

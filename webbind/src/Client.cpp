@@ -10,16 +10,16 @@ Client::Client(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) 
 Client::Client(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString Client::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String Client::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
 FrameType Client::frameType() const {
     return emlite::Val::get("frameType").as<FrameType>();
 }
 
-jsbind::DOMString Client::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String Client::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
 ClientType Client::type() const {

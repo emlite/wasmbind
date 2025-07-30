@@ -14,18 +14,18 @@ public:
     explicit ContentDescription(const emlite::Val &val) noexcept;
     ContentDescription() noexcept;
     ContentDescription clone() const noexcept;
-    jsbind::DOMString id() const;
-    void id(const jsbind::DOMString& value);
-    jsbind::DOMString title() const;
-    void title(const jsbind::DOMString& value);
-    jsbind::DOMString description() const;
-    void description(const jsbind::DOMString& value);
+    jsbind::String id() const;
+    void id(const jsbind::String& value);
+    jsbind::String title() const;
+    void title(const jsbind::String& value);
+    jsbind::String description() const;
+    void description(const jsbind::String& value);
     ContentCategory category() const;
     void category(const ContentCategory& value);
-    jsbind::Sequence<jsbind::Any> icons() const;
-    void icons(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::USVString url() const;
-    void url(const jsbind::USVString& value);
+    jsbind::TypedArray<jsbind::Any> icons() const;
+    void icons(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::String url() const;
+    void url(const jsbind::String& value);
 };
 
 class ContentIndex : public emlite::Val {
@@ -37,7 +37,7 @@ public:
 
     ContentIndex clone() const noexcept;
     jsbind::Promise<jsbind::Undefined> add(const ContentDescription& description);
-    jsbind::Promise<jsbind::Undefined> delete_(const jsbind::DOMString& id);
-    jsbind::Promise<jsbind::Sequence<ContentDescription>> getAll();
+    jsbind::Promise<jsbind::Undefined> delete_(const jsbind::String& id);
+    jsbind::Promise<jsbind::TypedArray<ContentDescription>> getAll();
 };
 

@@ -9,8 +9,8 @@ MediaQueryList::MediaQueryList(Handle h) noexcept : EventTarget(emlite::Val::tak
 MediaQueryList::MediaQueryList(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::CSSOMString MediaQueryList::media() const {
-    return EventTarget::get("media").as<jsbind::CSSOMString>();
+jsbind::String MediaQueryList::media() const {
+    return EventTarget::get("media").as<jsbind::String>();
 }
 
 bool MediaQueryList::matches() const {

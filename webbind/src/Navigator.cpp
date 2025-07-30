@@ -54,35 +54,35 @@ MediaKeySystemConfiguration::MediaKeySystemConfiguration(const emlite::Val &val)
 MediaKeySystemConfiguration::MediaKeySystemConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
 MediaKeySystemConfiguration MediaKeySystemConfiguration::clone() const noexcept { return *this; }
 
-jsbind::DOMString MediaKeySystemConfiguration::label() const {
-    return emlite::Val::get("label").as<jsbind::DOMString>();
+jsbind::String MediaKeySystemConfiguration::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void MediaKeySystemConfiguration::label(const jsbind::DOMString& value) {
+void MediaKeySystemConfiguration::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> MediaKeySystemConfiguration::initDataTypes() const {
-    return emlite::Val::get("initDataTypes").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> MediaKeySystemConfiguration::initDataTypes() const {
+    return emlite::Val::get("initDataTypes").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void MediaKeySystemConfiguration::initDataTypes(const jsbind::Sequence<jsbind::DOMString>& value) {
+void MediaKeySystemConfiguration::initDataTypes(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("initDataTypes", value);
 }
 
-jsbind::Sequence<jsbind::Any> MediaKeySystemConfiguration::audioCapabilities() const {
-    return emlite::Val::get("audioCapabilities").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> MediaKeySystemConfiguration::audioCapabilities() const {
+    return emlite::Val::get("audioCapabilities").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void MediaKeySystemConfiguration::audioCapabilities(const jsbind::Sequence<jsbind::Any>& value) {
+void MediaKeySystemConfiguration::audioCapabilities(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("audioCapabilities", value);
 }
 
-jsbind::Sequence<jsbind::Any> MediaKeySystemConfiguration::videoCapabilities() const {
-    return emlite::Val::get("videoCapabilities").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> MediaKeySystemConfiguration::videoCapabilities() const {
+    return emlite::Val::get("videoCapabilities").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void MediaKeySystemConfiguration::videoCapabilities(const jsbind::Sequence<jsbind::Any>& value) {
+void MediaKeySystemConfiguration::videoCapabilities(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("videoCapabilities", value);
 }
 
@@ -102,11 +102,11 @@ void MediaKeySystemConfiguration::persistentState(const MediaKeysRequirement& va
     emlite::Val::set("persistentState", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> MediaKeySystemConfiguration::sessionTypes() const {
-    return emlite::Val::get("sessionTypes").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> MediaKeySystemConfiguration::sessionTypes() const {
+    return emlite::Val::get("sessionTypes").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void MediaKeySystemConfiguration::sessionTypes(const jsbind::Sequence<jsbind::DOMString>& value) {
+void MediaKeySystemConfiguration::sessionTypes(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("sessionTypes", value);
 }
 
@@ -118,35 +118,35 @@ RelatedApplication::RelatedApplication(const emlite::Val &val) noexcept: emlite:
 RelatedApplication::RelatedApplication() noexcept: emlite::Val(emlite::Val::object()) {}
 RelatedApplication RelatedApplication::clone() const noexcept { return *this; }
 
-jsbind::USVString RelatedApplication::platform() const {
-    return emlite::Val::get("platform").as<jsbind::USVString>();
+jsbind::String RelatedApplication::platform() const {
+    return emlite::Val::get("platform").as<jsbind::String>();
 }
 
-void RelatedApplication::platform(const jsbind::USVString& value) {
+void RelatedApplication::platform(const jsbind::String& value) {
     emlite::Val::set("platform", value);
 }
 
-jsbind::USVString RelatedApplication::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String RelatedApplication::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
-void RelatedApplication::url(const jsbind::USVString& value) {
+void RelatedApplication::url(const jsbind::String& value) {
     emlite::Val::set("url", value);
 }
 
-jsbind::DOMString RelatedApplication::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String RelatedApplication::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-void RelatedApplication::id(const jsbind::DOMString& value) {
+void RelatedApplication::id(const jsbind::String& value) {
     emlite::Val::set("id", value);
 }
 
-jsbind::USVString RelatedApplication::version() const {
-    return emlite::Val::get("version").as<jsbind::USVString>();
+jsbind::String RelatedApplication::version() const {
+    return emlite::Val::get("version").as<jsbind::String>();
 }
 
-void RelatedApplication::version(const jsbind::USVString& value) {
+void RelatedApplication::version(const jsbind::String& value) {
     emlite::Val::set("version", value);
 }
 
@@ -190,11 +190,11 @@ HandwritingModelConstraint::HandwritingModelConstraint(const emlite::Val &val) n
 HandwritingModelConstraint::HandwritingModelConstraint() noexcept: emlite::Val(emlite::Val::object()) {}
 HandwritingModelConstraint HandwritingModelConstraint::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::DOMString> HandwritingModelConstraint::languages() const {
-    return emlite::Val::get("languages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> HandwritingModelConstraint::languages() const {
+    return emlite::Val::get("languages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void HandwritingModelConstraint::languages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void HandwritingModelConstraint::languages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("languages", value);
 }
 
@@ -214,11 +214,11 @@ void AuctionAdInterestGroup::priority(double value) {
     emlite::Val::set("priority", value);
 }
 
-jsbind::Record<jsbind::DOMString, double> AuctionAdInterestGroup::prioritySignalsOverrides() const {
-    return emlite::Val::get("prioritySignalsOverrides").as<jsbind::Record<jsbind::DOMString, double>>();
+jsbind::Record<jsbind::String, double> AuctionAdInterestGroup::prioritySignalsOverrides() const {
+    return emlite::Val::get("prioritySignalsOverrides").as<jsbind::Record<jsbind::String, double>>();
 }
 
-void AuctionAdInterestGroup::prioritySignalsOverrides(jsbind::Record<jsbind::DOMString, double> value) {
+void AuctionAdInterestGroup::prioritySignalsOverrides(jsbind::Record<jsbind::String, double> value) {
     emlite::Val::set("prioritySignalsOverrides", value);
 }
 
@@ -230,11 +230,11 @@ void AuctionAdInterestGroup::lifetimeMs(double value) {
     emlite::Val::set("lifetimeMs", value);
 }
 
-jsbind::DOMString AuctionAdInterestGroup::additionalBidKey() const {
-    return emlite::Val::get("additionalBidKey").as<jsbind::DOMString>();
+jsbind::String AuctionAdInterestGroup::additionalBidKey() const {
+    return emlite::Val::get("additionalBidKey").as<jsbind::String>();
 }
 
-void AuctionAdInterestGroup::additionalBidKey(const jsbind::DOMString& value) {
+void AuctionAdInterestGroup::additionalBidKey(const jsbind::String& value) {
     emlite::Val::set("additionalBidKey", value);
 }
 
@@ -254,19 +254,19 @@ AuctionAdInterestGroupKey::AuctionAdInterestGroupKey(const emlite::Val &val) noe
 AuctionAdInterestGroupKey::AuctionAdInterestGroupKey() noexcept: emlite::Val(emlite::Val::object()) {}
 AuctionAdInterestGroupKey AuctionAdInterestGroupKey::clone() const noexcept { return *this; }
 
-jsbind::USVString AuctionAdInterestGroupKey::owner() const {
-    return emlite::Val::get("owner").as<jsbind::USVString>();
+jsbind::String AuctionAdInterestGroupKey::owner() const {
+    return emlite::Val::get("owner").as<jsbind::String>();
 }
 
-void AuctionAdInterestGroupKey::owner(const jsbind::USVString& value) {
+void AuctionAdInterestGroupKey::owner(const jsbind::String& value) {
     emlite::Val::set("owner", value);
 }
 
-jsbind::USVString AuctionAdInterestGroupKey::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String AuctionAdInterestGroupKey::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void AuctionAdInterestGroupKey::name(const jsbind::USVString& value) {
+void AuctionAdInterestGroupKey::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
@@ -278,27 +278,27 @@ AuctionAdConfig::AuctionAdConfig(const emlite::Val &val) noexcept: emlite::Val(v
 AuctionAdConfig::AuctionAdConfig() noexcept: emlite::Val(emlite::Val::object()) {}
 AuctionAdConfig AuctionAdConfig::clone() const noexcept { return *this; }
 
-jsbind::USVString AuctionAdConfig::seller() const {
-    return emlite::Val::get("seller").as<jsbind::USVString>();
+jsbind::String AuctionAdConfig::seller() const {
+    return emlite::Val::get("seller").as<jsbind::String>();
 }
 
-void AuctionAdConfig::seller(const jsbind::USVString& value) {
+void AuctionAdConfig::seller(const jsbind::String& value) {
     emlite::Val::set("seller", value);
 }
 
-jsbind::USVString AuctionAdConfig::decisionLogicURL() const {
-    return emlite::Val::get("decisionLogicURL").as<jsbind::USVString>();
+jsbind::String AuctionAdConfig::decisionLogicURL() const {
+    return emlite::Val::get("decisionLogicURL").as<jsbind::String>();
 }
 
-void AuctionAdConfig::decisionLogicURL(const jsbind::USVString& value) {
+void AuctionAdConfig::decisionLogicURL(const jsbind::String& value) {
     emlite::Val::set("decisionLogicURL", value);
 }
 
-jsbind::USVString AuctionAdConfig::trustedScoringSignalsURL() const {
-    return emlite::Val::get("trustedScoringSignalsURL").as<jsbind::USVString>();
+jsbind::String AuctionAdConfig::trustedScoringSignalsURL() const {
+    return emlite::Val::get("trustedScoringSignalsURL").as<jsbind::String>();
 }
 
-void AuctionAdConfig::trustedScoringSignalsURL(const jsbind::USVString& value) {
+void AuctionAdConfig::trustedScoringSignalsURL(const jsbind::String& value) {
     emlite::Val::set("trustedScoringSignalsURL", value);
 }
 
@@ -310,11 +310,11 @@ void AuctionAdConfig::maxTrustedScoringSignalsURLLength(long value) {
     emlite::Val::set("maxTrustedScoringSignalsURLLength", value);
 }
 
-jsbind::USVString AuctionAdConfig::trustedScoringSignalsCoordinator() const {
-    return emlite::Val::get("trustedScoringSignalsCoordinator").as<jsbind::USVString>();
+jsbind::String AuctionAdConfig::trustedScoringSignalsCoordinator() const {
+    return emlite::Val::get("trustedScoringSignalsCoordinator").as<jsbind::String>();
 }
 
-void AuctionAdConfig::trustedScoringSignalsCoordinator(const jsbind::USVString& value) {
+void AuctionAdConfig::trustedScoringSignalsCoordinator(const jsbind::String& value) {
     emlite::Val::set("trustedScoringSignalsCoordinator", value);
 }
 
@@ -326,11 +326,11 @@ void AuctionAdConfig::sendCreativeScanningMetadata(bool value) {
     emlite::Val::set("sendCreativeScanningMetadata", value);
 }
 
-jsbind::Sequence<jsbind::USVString> AuctionAdConfig::interestGroupBuyers() const {
-    return emlite::Val::get("interestGroupBuyers").as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> AuctionAdConfig::interestGroupBuyers() const {
+    return emlite::Val::get("interestGroupBuyers").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void AuctionAdConfig::interestGroupBuyers(const jsbind::Sequence<jsbind::USVString>& value) {
+void AuctionAdConfig::interestGroupBuyers(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("interestGroupBuyers", value);
 }
 
@@ -350,19 +350,19 @@ void AuctionAdConfig::sellerSignals(const jsbind::Promise<jsbind::Any>& value) {
     emlite::Val::set("sellerSignals", value);
 }
 
-jsbind::Promise<jsbind::DOMString> AuctionAdConfig::directFromSellerSignalsHeaderAdSlot() const {
-    return emlite::Val::get("directFromSellerSignalsHeaderAdSlot").as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> AuctionAdConfig::directFromSellerSignalsHeaderAdSlot() const {
+    return emlite::Val::get("directFromSellerSignalsHeaderAdSlot").as<jsbind::Promise<jsbind::String>>();
 }
 
-void AuctionAdConfig::directFromSellerSignalsHeaderAdSlot(const jsbind::Promise<jsbind::DOMString>& value) {
+void AuctionAdConfig::directFromSellerSignalsHeaderAdSlot(const jsbind::Promise<jsbind::String>& value) {
     emlite::Val::set("directFromSellerSignalsHeaderAdSlot", value);
 }
 
-jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::USVString>> AuctionAdConfig::deprecatedRenderURLReplacements() const {
-    return emlite::Val::get("deprecatedRenderURLReplacements").as<jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::USVString>>>();
+jsbind::Promise<jsbind::Record<jsbind::String, jsbind::String>> AuctionAdConfig::deprecatedRenderURLReplacements() const {
+    return emlite::Val::get("deprecatedRenderURLReplacements").as<jsbind::Promise<jsbind::Record<jsbind::String, jsbind::String>>>();
 }
 
-void AuctionAdConfig::deprecatedRenderURLReplacements(const jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::USVString>>& value) {
+void AuctionAdConfig::deprecatedRenderURLReplacements(const jsbind::Promise<jsbind::Record<jsbind::String, jsbind::String>>& value) {
     emlite::Val::set("deprecatedRenderURLReplacements", value);
 }
 
@@ -382,27 +382,27 @@ void AuctionAdConfig::sellerExperimentGroupId(unsigned short value) {
     emlite::Val::set("sellerExperimentGroupId", value);
 }
 
-jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::Any>> AuctionAdConfig::perBuyerSignals() const {
-    return emlite::Val::get("perBuyerSignals").as<jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::Any>>>();
+jsbind::Promise<jsbind::Record<jsbind::String, jsbind::Any>> AuctionAdConfig::perBuyerSignals() const {
+    return emlite::Val::get("perBuyerSignals").as<jsbind::Promise<jsbind::Record<jsbind::String, jsbind::Any>>>();
 }
 
-void AuctionAdConfig::perBuyerSignals(const jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::Any>>& value) {
+void AuctionAdConfig::perBuyerSignals(const jsbind::Promise<jsbind::Record<jsbind::String, jsbind::Any>>& value) {
     emlite::Val::set("perBuyerSignals", value);
 }
 
-jsbind::Promise<jsbind::Record<jsbind::USVString, long long>> AuctionAdConfig::perBuyerTimeouts() const {
-    return emlite::Val::get("perBuyerTimeouts").as<jsbind::Promise<jsbind::Record<jsbind::USVString, long long>>>();
+jsbind::Promise<jsbind::Record<jsbind::String, long long>> AuctionAdConfig::perBuyerTimeouts() const {
+    return emlite::Val::get("perBuyerTimeouts").as<jsbind::Promise<jsbind::Record<jsbind::String, long long>>>();
 }
 
-void AuctionAdConfig::perBuyerTimeouts(jsbind::Promise<jsbind::Record<jsbind::USVString, long long>> value) {
+void AuctionAdConfig::perBuyerTimeouts(jsbind::Promise<jsbind::Record<jsbind::String, long long>> value) {
     emlite::Val::set("perBuyerTimeouts", value);
 }
 
-jsbind::Promise<jsbind::Record<jsbind::USVString, long long>> AuctionAdConfig::perBuyerCumulativeTimeouts() const {
-    return emlite::Val::get("perBuyerCumulativeTimeouts").as<jsbind::Promise<jsbind::Record<jsbind::USVString, long long>>>();
+jsbind::Promise<jsbind::Record<jsbind::String, long long>> AuctionAdConfig::perBuyerCumulativeTimeouts() const {
+    return emlite::Val::get("perBuyerCumulativeTimeouts").as<jsbind::Promise<jsbind::Record<jsbind::String, long long>>>();
 }
 
-void AuctionAdConfig::perBuyerCumulativeTimeouts(jsbind::Promise<jsbind::Record<jsbind::USVString, long long>> value) {
+void AuctionAdConfig::perBuyerCumulativeTimeouts(jsbind::Promise<jsbind::Record<jsbind::String, long long>> value) {
     emlite::Val::set("perBuyerCumulativeTimeouts", value);
 }
 
@@ -414,67 +414,67 @@ void AuctionAdConfig::reportingTimeout(long long value) {
     emlite::Val::set("reportingTimeout", value);
 }
 
-jsbind::USVString AuctionAdConfig::sellerCurrency() const {
-    return emlite::Val::get("sellerCurrency").as<jsbind::USVString>();
+jsbind::String AuctionAdConfig::sellerCurrency() const {
+    return emlite::Val::get("sellerCurrency").as<jsbind::String>();
 }
 
-void AuctionAdConfig::sellerCurrency(const jsbind::USVString& value) {
+void AuctionAdConfig::sellerCurrency(const jsbind::String& value) {
     emlite::Val::set("sellerCurrency", value);
 }
 
-jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::USVString>> AuctionAdConfig::perBuyerCurrencies() const {
-    return emlite::Val::get("perBuyerCurrencies").as<jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::USVString>>>();
+jsbind::Promise<jsbind::Record<jsbind::String, jsbind::String>> AuctionAdConfig::perBuyerCurrencies() const {
+    return emlite::Val::get("perBuyerCurrencies").as<jsbind::Promise<jsbind::Record<jsbind::String, jsbind::String>>>();
 }
 
-void AuctionAdConfig::perBuyerCurrencies(const jsbind::Promise<jsbind::Record<jsbind::USVString, jsbind::USVString>>& value) {
+void AuctionAdConfig::perBuyerCurrencies(const jsbind::Promise<jsbind::Record<jsbind::String, jsbind::String>>& value) {
     emlite::Val::set("perBuyerCurrencies", value);
 }
 
-jsbind::Record<jsbind::USVString, unsigned short> AuctionAdConfig::perBuyerMultiBidLimits() const {
-    return emlite::Val::get("perBuyerMultiBidLimits").as<jsbind::Record<jsbind::USVString, unsigned short>>();
+jsbind::Record<jsbind::String, unsigned short> AuctionAdConfig::perBuyerMultiBidLimits() const {
+    return emlite::Val::get("perBuyerMultiBidLimits").as<jsbind::Record<jsbind::String, unsigned short>>();
 }
 
-void AuctionAdConfig::perBuyerMultiBidLimits(jsbind::Record<jsbind::USVString, unsigned short> value) {
+void AuctionAdConfig::perBuyerMultiBidLimits(jsbind::Record<jsbind::String, unsigned short> value) {
     emlite::Val::set("perBuyerMultiBidLimits", value);
 }
 
-jsbind::Record<jsbind::USVString, unsigned short> AuctionAdConfig::perBuyerGroupLimits() const {
-    return emlite::Val::get("perBuyerGroupLimits").as<jsbind::Record<jsbind::USVString, unsigned short>>();
+jsbind::Record<jsbind::String, unsigned short> AuctionAdConfig::perBuyerGroupLimits() const {
+    return emlite::Val::get("perBuyerGroupLimits").as<jsbind::Record<jsbind::String, unsigned short>>();
 }
 
-void AuctionAdConfig::perBuyerGroupLimits(jsbind::Record<jsbind::USVString, unsigned short> value) {
+void AuctionAdConfig::perBuyerGroupLimits(jsbind::Record<jsbind::String, unsigned short> value) {
     emlite::Val::set("perBuyerGroupLimits", value);
 }
 
-jsbind::Record<jsbind::USVString, unsigned short> AuctionAdConfig::perBuyerExperimentGroupIds() const {
-    return emlite::Val::get("perBuyerExperimentGroupIds").as<jsbind::Record<jsbind::USVString, unsigned short>>();
+jsbind::Record<jsbind::String, unsigned short> AuctionAdConfig::perBuyerExperimentGroupIds() const {
+    return emlite::Val::get("perBuyerExperimentGroupIds").as<jsbind::Record<jsbind::String, unsigned short>>();
 }
 
-void AuctionAdConfig::perBuyerExperimentGroupIds(jsbind::Record<jsbind::USVString, unsigned short> value) {
+void AuctionAdConfig::perBuyerExperimentGroupIds(jsbind::Record<jsbind::String, unsigned short> value) {
     emlite::Val::set("perBuyerExperimentGroupIds", value);
 }
 
-jsbind::Record<jsbind::USVString, jsbind::Record<jsbind::USVString, double>> AuctionAdConfig::perBuyerPrioritySignals() const {
-    return emlite::Val::get("perBuyerPrioritySignals").as<jsbind::Record<jsbind::USVString, jsbind::Record<jsbind::USVString, double>>>();
+jsbind::Record<jsbind::String, jsbind::Record<jsbind::String, double>> AuctionAdConfig::perBuyerPrioritySignals() const {
+    return emlite::Val::get("perBuyerPrioritySignals").as<jsbind::Record<jsbind::String, jsbind::Record<jsbind::String, double>>>();
 }
 
-void AuctionAdConfig::perBuyerPrioritySignals(jsbind::Record<jsbind::USVString, jsbind::Record<jsbind::USVString, double>> value) {
+void AuctionAdConfig::perBuyerPrioritySignals(jsbind::Record<jsbind::String, jsbind::Record<jsbind::String, double>> value) {
     emlite::Val::set("perBuyerPrioritySignals", value);
 }
 
-jsbind::Sequence<long long> AuctionAdConfig::auctionReportBuyerKeys() const {
-    return emlite::Val::get("auctionReportBuyerKeys").as<jsbind::Sequence<long long>>();
+jsbind::TypedArray<long long> AuctionAdConfig::auctionReportBuyerKeys() const {
+    return emlite::Val::get("auctionReportBuyerKeys").as<jsbind::TypedArray<long long>>();
 }
 
-void AuctionAdConfig::auctionReportBuyerKeys(jsbind::Sequence<long long> value) {
+void AuctionAdConfig::auctionReportBuyerKeys(jsbind::TypedArray<long long> value) {
     emlite::Val::set("auctionReportBuyerKeys", value);
 }
 
-jsbind::Record<jsbind::DOMString, jsbind::Any> AuctionAdConfig::auctionReportBuyers() const {
-    return emlite::Val::get("auctionReportBuyers").as<jsbind::Record<jsbind::DOMString, jsbind::Any>>();
+jsbind::Record<jsbind::String, jsbind::Any> AuctionAdConfig::auctionReportBuyers() const {
+    return emlite::Val::get("auctionReportBuyers").as<jsbind::Record<jsbind::String, jsbind::Any>>();
 }
 
-void AuctionAdConfig::auctionReportBuyers(const jsbind::Record<jsbind::DOMString, jsbind::Any>& value) {
+void AuctionAdConfig::auctionReportBuyers(const jsbind::Record<jsbind::String, jsbind::Any>& value) {
     emlite::Val::set("auctionReportBuyers", value);
 }
 
@@ -486,11 +486,11 @@ void AuctionAdConfig::auctionReportBuyerDebugModeConfig(const jsbind::Any& value
     emlite::Val::set("auctionReportBuyerDebugModeConfig", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> AuctionAdConfig::requiredSellerCapabilities() const {
-    return emlite::Val::get("requiredSellerCapabilities").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> AuctionAdConfig::requiredSellerCapabilities() const {
+    return emlite::Val::get("requiredSellerCapabilities").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void AuctionAdConfig::requiredSellerCapabilities(const jsbind::Sequence<jsbind::DOMString>& value) {
+void AuctionAdConfig::requiredSellerCapabilities(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("requiredSellerCapabilities", value);
 }
 
@@ -502,19 +502,19 @@ void AuctionAdConfig::privateAggregationConfig(const jsbind::Any& value) {
     emlite::Val::set("privateAggregationConfig", value);
 }
 
-jsbind::Record<jsbind::DOMString, jsbind::DOMString> AuctionAdConfig::requestedSize() const {
-    return emlite::Val::get("requestedSize").as<jsbind::Record<jsbind::DOMString, jsbind::DOMString>>();
+jsbind::Record<jsbind::String, jsbind::String> AuctionAdConfig::requestedSize() const {
+    return emlite::Val::get("requestedSize").as<jsbind::Record<jsbind::String, jsbind::String>>();
 }
 
-void AuctionAdConfig::requestedSize(const jsbind::Record<jsbind::DOMString, jsbind::DOMString>& value) {
+void AuctionAdConfig::requestedSize(const jsbind::Record<jsbind::String, jsbind::String>& value) {
     emlite::Val::set("requestedSize", value);
 }
 
-jsbind::Sequence<jsbind::Record<jsbind::DOMString, jsbind::DOMString>> AuctionAdConfig::allSlotsRequestedSizes() const {
-    return emlite::Val::get("allSlotsRequestedSizes").as<jsbind::Sequence<jsbind::Record<jsbind::DOMString, jsbind::DOMString>>>();
+jsbind::TypedArray<jsbind::Record<jsbind::String, jsbind::String>> AuctionAdConfig::allSlotsRequestedSizes() const {
+    return emlite::Val::get("allSlotsRequestedSizes").as<jsbind::TypedArray<jsbind::Record<jsbind::String, jsbind::String>>>();
 }
 
-void AuctionAdConfig::allSlotsRequestedSizes(const jsbind::Sequence<jsbind::Record<jsbind::DOMString, jsbind::DOMString>>& value) {
+void AuctionAdConfig::allSlotsRequestedSizes(const jsbind::TypedArray<jsbind::Record<jsbind::String, jsbind::String>>& value) {
     emlite::Val::set("allSlotsRequestedSizes", value);
 }
 
@@ -526,11 +526,11 @@ void AuctionAdConfig::additionalBids(const jsbind::Promise<jsbind::Undefined>& v
     emlite::Val::set("additionalBids", value);
 }
 
-jsbind::DOMString AuctionAdConfig::auctionNonce() const {
-    return emlite::Val::get("auctionNonce").as<jsbind::DOMString>();
+jsbind::String AuctionAdConfig::auctionNonce() const {
+    return emlite::Val::get("auctionNonce").as<jsbind::String>();
 }
 
-void AuctionAdConfig::auctionNonce(const jsbind::DOMString& value) {
+void AuctionAdConfig::auctionNonce(const jsbind::String& value) {
     emlite::Val::set("auctionNonce", value);
 }
 
@@ -542,19 +542,19 @@ void AuctionAdConfig::sellerRealTimeReportingConfig(const jsbind::Any& value) {
     emlite::Val::set("sellerRealTimeReportingConfig", value);
 }
 
-jsbind::Record<jsbind::USVString, jsbind::Any> AuctionAdConfig::perBuyerRealTimeReportingConfig() const {
-    return emlite::Val::get("perBuyerRealTimeReportingConfig").as<jsbind::Record<jsbind::USVString, jsbind::Any>>();
+jsbind::Record<jsbind::String, jsbind::Any> AuctionAdConfig::perBuyerRealTimeReportingConfig() const {
+    return emlite::Val::get("perBuyerRealTimeReportingConfig").as<jsbind::Record<jsbind::String, jsbind::Any>>();
 }
 
-void AuctionAdConfig::perBuyerRealTimeReportingConfig(const jsbind::Record<jsbind::USVString, jsbind::Any>& value) {
+void AuctionAdConfig::perBuyerRealTimeReportingConfig(const jsbind::Record<jsbind::String, jsbind::Any>& value) {
     emlite::Val::set("perBuyerRealTimeReportingConfig", value);
 }
 
-jsbind::Sequence<AuctionAdConfig> AuctionAdConfig::componentAuctions() const {
-    return emlite::Val::get("componentAuctions").as<jsbind::Sequence<AuctionAdConfig>>();
+jsbind::TypedArray<AuctionAdConfig> AuctionAdConfig::componentAuctions() const {
+    return emlite::Val::get("componentAuctions").as<jsbind::TypedArray<AuctionAdConfig>>();
 }
 
-void AuctionAdConfig::componentAuctions(const jsbind::Sequence<AuctionAdConfig>& value) {
+void AuctionAdConfig::componentAuctions(const jsbind::TypedArray<AuctionAdConfig>& value) {
     emlite::Val::set("componentAuctions", value);
 }
 
@@ -582,11 +582,11 @@ void AuctionAdConfig::serverResponse(const jsbind::Promise<jsbind::Uint8Array>& 
     emlite::Val::set("serverResponse", value);
 }
 
-jsbind::USVString AuctionAdConfig::requestId() const {
-    return emlite::Val::get("requestId").as<jsbind::USVString>();
+jsbind::String AuctionAdConfig::requestId() const {
+    return emlite::Val::get("requestId").as<jsbind::String>();
 }
 
-void AuctionAdConfig::requestId(const jsbind::USVString& value) {
+void AuctionAdConfig::requestId(const jsbind::String& value) {
     emlite::Val::set("requestId", value);
 }
 
@@ -598,11 +598,11 @@ AdAuctionData::AdAuctionData(const emlite::Val &val) noexcept: emlite::Val(val) 
 AdAuctionData::AdAuctionData() noexcept: emlite::Val(emlite::Val::object()) {}
 AdAuctionData AdAuctionData::clone() const noexcept { return *this; }
 
-jsbind::USVString AdAuctionData::requestId() const {
-    return emlite::Val::get("requestId").as<jsbind::USVString>();
+jsbind::String AdAuctionData::requestId() const {
+    return emlite::Val::get("requestId").as<jsbind::String>();
 }
 
-void AdAuctionData::requestId(const jsbind::USVString& value) {
+void AdAuctionData::requestId(const jsbind::String& value) {
     emlite::Val::set("requestId", value);
 }
 
@@ -614,11 +614,11 @@ void AdAuctionData::request(const jsbind::Uint8Array& value) {
     emlite::Val::set("request", value);
 }
 
-jsbind::Sequence<jsbind::Any> AdAuctionData::requests() const {
-    return emlite::Val::get("requests").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> AdAuctionData::requests() const {
+    return emlite::Val::get("requests").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void AdAuctionData::requests(const jsbind::Sequence<jsbind::Any>& value) {
+void AdAuctionData::requests(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("requests", value);
 }
 
@@ -630,27 +630,27 @@ AdAuctionDataConfig::AdAuctionDataConfig(const emlite::Val &val) noexcept: emlit
 AdAuctionDataConfig::AdAuctionDataConfig() noexcept: emlite::Val(emlite::Val::object()) {}
 AdAuctionDataConfig AdAuctionDataConfig::clone() const noexcept { return *this; }
 
-jsbind::USVString AdAuctionDataConfig::seller() const {
-    return emlite::Val::get("seller").as<jsbind::USVString>();
+jsbind::String AdAuctionDataConfig::seller() const {
+    return emlite::Val::get("seller").as<jsbind::String>();
 }
 
-void AdAuctionDataConfig::seller(const jsbind::USVString& value) {
+void AdAuctionDataConfig::seller(const jsbind::String& value) {
     emlite::Val::set("seller", value);
 }
 
-jsbind::USVString AdAuctionDataConfig::coordinatorOrigin() const {
-    return emlite::Val::get("coordinatorOrigin").as<jsbind::USVString>();
+jsbind::String AdAuctionDataConfig::coordinatorOrigin() const {
+    return emlite::Val::get("coordinatorOrigin").as<jsbind::String>();
 }
 
-void AdAuctionDataConfig::coordinatorOrigin(const jsbind::USVString& value) {
+void AdAuctionDataConfig::coordinatorOrigin(const jsbind::String& value) {
     emlite::Val::set("coordinatorOrigin", value);
 }
 
-jsbind::Sequence<jsbind::Any> AdAuctionDataConfig::sellers() const {
-    return emlite::Val::get("sellers").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> AdAuctionDataConfig::sellers() const {
+    return emlite::Val::get("sellers").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void AdAuctionDataConfig::sellers(const jsbind::Sequence<jsbind::Any>& value) {
+void AdAuctionDataConfig::sellers(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("sellers", value);
 }
 
@@ -662,11 +662,11 @@ void AdAuctionDataConfig::requestSize(unsigned long value) {
     emlite::Val::set("requestSize", value);
 }
 
-jsbind::Record<jsbind::USVString, jsbind::Any> AdAuctionDataConfig::perBuyerConfig() const {
-    return emlite::Val::get("perBuyerConfig").as<jsbind::Record<jsbind::USVString, jsbind::Any>>();
+jsbind::Record<jsbind::String, jsbind::Any> AdAuctionDataConfig::perBuyerConfig() const {
+    return emlite::Val::get("perBuyerConfig").as<jsbind::Record<jsbind::String, jsbind::Any>>();
 }
 
-void AdAuctionDataConfig::perBuyerConfig(const jsbind::Record<jsbind::USVString, jsbind::Any>& value) {
+void AdAuctionDataConfig::perBuyerConfig(const jsbind::Record<jsbind::String, jsbind::Any>& value) {
     emlite::Val::set("perBuyerConfig", value);
 }
 
@@ -678,35 +678,35 @@ ShareData::ShareData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 ShareData::ShareData() noexcept: emlite::Val(emlite::Val::object()) {}
 ShareData ShareData::clone() const noexcept { return *this; }
 
-jsbind::Sequence<File> ShareData::files() const {
-    return emlite::Val::get("files").as<jsbind::Sequence<File>>();
+jsbind::TypedArray<File> ShareData::files() const {
+    return emlite::Val::get("files").as<jsbind::TypedArray<File>>();
 }
 
-void ShareData::files(const jsbind::Sequence<File>& value) {
+void ShareData::files(const jsbind::TypedArray<File>& value) {
     emlite::Val::set("files", value);
 }
 
-jsbind::USVString ShareData::title() const {
-    return emlite::Val::get("title").as<jsbind::USVString>();
+jsbind::String ShareData::title() const {
+    return emlite::Val::get("title").as<jsbind::String>();
 }
 
-void ShareData::title(const jsbind::USVString& value) {
+void ShareData::title(const jsbind::String& value) {
     emlite::Val::set("title", value);
 }
 
-jsbind::USVString ShareData::text() const {
-    return emlite::Val::get("text").as<jsbind::USVString>();
+jsbind::String ShareData::text() const {
+    return emlite::Val::get("text").as<jsbind::String>();
 }
 
-void ShareData::text(const jsbind::USVString& value) {
+void ShareData::text(const jsbind::String& value) {
     emlite::Val::set("text", value);
 }
 
-jsbind::USVString ShareData::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String ShareData::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
-void ShareData::url(const jsbind::USVString& value) {
+void ShareData::url(const jsbind::String& value) {
     emlite::Val::set("url", value);
 }
 
@@ -754,11 +754,11 @@ jsbind::Promise<BatteryManager> Navigator::getBattery() {
     return emlite::Val::call("getBattery").as<jsbind::Promise<BatteryManager>>();
 }
 
-bool Navigator::sendBeacon(const jsbind::USVString& url) {
+bool Navigator::sendBeacon(const jsbind::String& url) {
     return emlite::Val::call("sendBeacon", url).as<bool>();
 }
 
-bool Navigator::sendBeacon(const jsbind::USVString& url, const jsbind::Any& data) {
+bool Navigator::sendBeacon(const jsbind::String& url, const jsbind::Any& data) {
     return emlite::Val::call("sendBeacon", url, data).as<bool>();
 }
 
@@ -778,36 +778,36 @@ DevicePosture Navigator::devicePosture() const {
     return emlite::Val::get("devicePosture").as<DevicePosture>();
 }
 
-jsbind::Promise<MediaKeySystemAccess> Navigator::requestMediaKeySystemAccess(const jsbind::DOMString& keySystem, const jsbind::Sequence<MediaKeySystemConfiguration>& supportedConfigurations) {
+jsbind::Promise<MediaKeySystemAccess> Navigator::requestMediaKeySystemAccess(const jsbind::String& keySystem, const jsbind::TypedArray<MediaKeySystemConfiguration>& supportedConfigurations) {
     return emlite::Val::call("requestMediaKeySystemAccess", keySystem, supportedConfigurations).as<jsbind::Promise<MediaKeySystemAccess>>();
 }
 
-jsbind::Promise<jsbind::Undefined> Navigator::deprecatedReplaceInURN(const jsbind::Any& urnOrConfig, const jsbind::Record<jsbind::USVString, jsbind::USVString>& replacements) {
+jsbind::Promise<jsbind::Undefined> Navigator::deprecatedReplaceInURN(const jsbind::Any& urnOrConfig, const jsbind::Record<jsbind::String, jsbind::String>& replacements) {
     return emlite::Val::call("deprecatedReplaceInURN", urnOrConfig, replacements).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::USVString> Navigator::deprecatedURNtoURL(const jsbind::Any& urnOrConfig) {
-    return emlite::Val::call("deprecatedURNtoURL", urnOrConfig).as<jsbind::Promise<jsbind::USVString>>();
+jsbind::Promise<jsbind::String> Navigator::deprecatedURNtoURL(const jsbind::Any& urnOrConfig) {
+    return emlite::Val::call("deprecatedURNtoURL", urnOrConfig).as<jsbind::Promise<jsbind::String>>();
 }
 
-jsbind::Promise<jsbind::USVString> Navigator::deprecatedURNtoURL(const jsbind::Any& urnOrConfig, bool send_reports) {
-    return emlite::Val::call("deprecatedURNtoURL", urnOrConfig, send_reports).as<jsbind::Promise<jsbind::USVString>>();
+jsbind::Promise<jsbind::String> Navigator::deprecatedURNtoURL(const jsbind::Any& urnOrConfig, bool send_reports) {
+    return emlite::Val::call("deprecatedURNtoURL", urnOrConfig, send_reports).as<jsbind::Promise<jsbind::String>>();
 }
 
-jsbind::Sequence<jsbind::USVString> Navigator::adAuctionComponents(unsigned short numAdComponents) {
-    return emlite::Val::call("adAuctionComponents", numAdComponents).as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> Navigator::adAuctionComponents(unsigned short numAdComponents) {
+    return emlite::Val::call("adAuctionComponents", numAdComponents).as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::Sequence<Gamepad> Navigator::getGamepads() {
-    return emlite::Val::call("getGamepads").as<jsbind::Sequence<Gamepad>>();
+jsbind::TypedArray<Gamepad> Navigator::getGamepads() {
+    return emlite::Val::call("getGamepads").as<jsbind::TypedArray<Gamepad>>();
 }
 
 Geolocation Navigator::geolocation() const {
     return emlite::Val::get("geolocation").as<Geolocation>();
 }
 
-jsbind::Promise<jsbind::Sequence<RelatedApplication>> Navigator::getInstalledRelatedApps() {
-    return emlite::Val::call("getInstalledRelatedApps").as<jsbind::Promise<jsbind::Sequence<RelatedApplication>>>();
+jsbind::Promise<jsbind::TypedArray<RelatedApplication>> Navigator::getInstalledRelatedApps() {
+    return emlite::Val::call("getInstalledRelatedApps").as<jsbind::Promise<jsbind::TypedArray<RelatedApplication>>>();
 }
 
 jsbind::Promise<HandwritingRecognizerQueryResult> Navigator::queryHandwritingRecognizer(const HandwritingModelConstraint& constraint) {
@@ -898,11 +898,11 @@ jsbind::Promise<jsbind::Undefined> Navigator::leaveAdInterestGroup(const Auction
     return emlite::Val::call("leaveAdInterestGroup", group).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> Navigator::clearOriginJoinedAdInterestGroups(const jsbind::USVString& owner) {
+jsbind::Promise<jsbind::Undefined> Navigator::clearOriginJoinedAdInterestGroups(const jsbind::String& owner) {
     return emlite::Val::call("clearOriginJoinedAdInterestGroups", owner).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> Navigator::clearOriginJoinedAdInterestGroups(const jsbind::USVString& owner, const jsbind::Sequence<jsbind::USVString>& interestGroupsToKeep) {
+jsbind::Promise<jsbind::Undefined> Navigator::clearOriginJoinedAdInterestGroups(const jsbind::String& owner, const jsbind::TypedArray<jsbind::String>& interestGroupsToKeep) {
     return emlite::Val::call("clearOriginJoinedAdInterestGroups", owner, interestGroupsToKeep).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
@@ -926,8 +926,8 @@ jsbind::Promise<AdAuctionData> Navigator::getInterestGroupAdAuctionData(const Ad
     return emlite::Val::call("getInterestGroupAdAuctionData", config).as<jsbind::Promise<AdAuctionData>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Navigator::createAuctionNonce() {
-    return emlite::Val::call("createAuctionNonce").as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Navigator::createAuctionNonce() {
+    return emlite::Val::call("createAuctionNonce").as<jsbind::Promise<jsbind::String>>();
 }
 
 jsbind::Undefined Navigator::updateAdInterestGroups() {
@@ -1014,27 +1014,27 @@ bool Navigator::taintEnabled() {
     return emlite::Val::call("taintEnabled").as<bool>();
 }
 
-jsbind::DOMString Navigator::oscpu() const {
-    return emlite::Val::get("oscpu").as<jsbind::DOMString>();
+jsbind::String Navigator::oscpu() const {
+    return emlite::Val::get("oscpu").as<jsbind::String>();
 }
 
-jsbind::DOMString Navigator::language() const {
-    return emlite::Val::get("language").as<jsbind::DOMString>();
+jsbind::String Navigator::language() const {
+    return emlite::Val::get("language").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> Navigator::languages() const {
-    return emlite::Val::get("languages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> Navigator::languages() const {
+    return emlite::Val::get("languages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 bool Navigator::onLine() const {
     return emlite::Val::get("onLine").as<bool>();
 }
 
-jsbind::Undefined Navigator::registerProtocolHandler(const jsbind::DOMString& scheme, const jsbind::USVString& url) {
+jsbind::Undefined Navigator::registerProtocolHandler(const jsbind::String& scheme, const jsbind::String& url) {
     return emlite::Val::call("registerProtocolHandler", scheme, url).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Navigator::unregisterProtocolHandler(const jsbind::DOMString& scheme, const jsbind::USVString& url) {
+jsbind::Undefined Navigator::unregisterProtocolHandler(const jsbind::String& scheme, const jsbind::String& url) {
     return emlite::Val::call("unregisterProtocolHandler", scheme, url).as<jsbind::Undefined>();
 }
 

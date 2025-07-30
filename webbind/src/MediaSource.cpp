@@ -66,7 +66,7 @@ bool MediaSource::canConstructInDedicatedWorker() {
     return emlite::Val::global("mediasource").get("canConstructInDedicatedWorker").as<bool>();
 }
 
-SourceBuffer MediaSource::addSourceBuffer(const jsbind::DOMString& type) {
+SourceBuffer MediaSource::addSourceBuffer(const jsbind::String& type) {
     return EventTarget::call("addSourceBuffer", type).as<SourceBuffer>();
 }
 
@@ -90,7 +90,7 @@ jsbind::Undefined MediaSource::clearLiveSeekableRange() {
     return EventTarget::call("clearLiveSeekableRange").as<jsbind::Undefined>();
 }
 
-bool MediaSource::isTypeSupported(const jsbind::DOMString& type) {
+bool MediaSource::isTypeSupported(const jsbind::String& type) {
     return emlite::Val::global("mediasource").call("isTypeSupported", type).as<bool>();
 }
 

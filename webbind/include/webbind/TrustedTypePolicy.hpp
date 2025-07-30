@@ -17,9 +17,9 @@ public:
     static TrustedTypePolicy take_ownership(Handle h) noexcept;
 
     TrustedTypePolicy clone() const noexcept;
-    jsbind::DOMString name() const;
-    TrustedHTML createHTML(const jsbind::DOMString& input, const jsbind::Any& arguments);
-    TrustedScript createScript(const jsbind::DOMString& input, const jsbind::Any& arguments);
-    TrustedScriptURL createScriptURL(const jsbind::DOMString& input, const jsbind::Any& arguments);
+    jsbind::String name() const;
+    TrustedHTML createHTML(const jsbind::String& input, const jsbind::Any& arguments);
+    TrustedScript createScript(const jsbind::String& input, const jsbind::Any& arguments);
+    TrustedScriptURL createScriptURL(const jsbind::String& input, const jsbind::Any& arguments);
 };
 

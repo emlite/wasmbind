@@ -10,7 +10,7 @@ XRLayerEvent::XRLayerEvent(Handle h) noexcept : Event(emlite::Val::take_ownershi
 XRLayerEvent::XRLayerEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-XRLayerEvent::XRLayerEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRLayerEvent").new_(type, eventInitDict)) {}
+XRLayerEvent::XRLayerEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRLayerEvent").new_(type, eventInitDict)) {}
 
 XRLayer XRLayerEvent::layer() const {
     return Event::get("layer").as<XRLayer>();

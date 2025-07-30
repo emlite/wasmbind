@@ -22,7 +22,7 @@ public:
     jsbind::Promise<BluetoothRemoteGATTServer> connect();
     jsbind::Undefined disconnect();
     jsbind::Promise<BluetoothRemoteGATTService> getPrimaryService(const jsbind::Any& service);
-    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> getPrimaryServices();
-    jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTService>> getPrimaryServices(const jsbind::Any& service);
+    jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTService>> getPrimaryServices();
+    jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTService>> getPrimaryServices(const jsbind::Any& service);
 };
 

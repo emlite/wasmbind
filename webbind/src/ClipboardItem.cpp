@@ -10,23 +10,23 @@ ClipboardItem::ClipboardItem(Handle h) noexcept : emlite::Val(emlite::Val::take_
 ClipboardItem::ClipboardItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-ClipboardItem::ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items) : emlite::Val(emlite::Val::global("ClipboardItem").new_(items)) {}
+ClipboardItem::ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items) : emlite::Val(emlite::Val::global("ClipboardItem").new_(items)) {}
 
-ClipboardItem::ClipboardItem(const jsbind::Record<jsbind::DOMString, jsbind::Any>& items, const jsbind::Any& options) : emlite::Val(emlite::Val::global("ClipboardItem").new_(items, options)) {}
+ClipboardItem::ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items, const jsbind::Any& options) : emlite::Val(emlite::Val::global("ClipboardItem").new_(items, options)) {}
 
 PresentationStyle ClipboardItem::presentationStyle() const {
     return emlite::Val::get("presentationStyle").as<PresentationStyle>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> ClipboardItem::types() const {
-    return emlite::Val::get("types").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> ClipboardItem::types() const {
+    return emlite::Val::get("types").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::Promise<Blob> ClipboardItem::getType(const jsbind::DOMString& type) {
+jsbind::Promise<Blob> ClipboardItem::getType(const jsbind::String& type) {
     return emlite::Val::call("getType", type).as<jsbind::Promise<Blob>>();
 }
 
-bool ClipboardItem::supports(const jsbind::DOMString& type) {
+bool ClipboardItem::supports(const jsbind::String& type) {
     return emlite::Val::global("clipboarditem").call("supports", type).as<bool>();
 }
 

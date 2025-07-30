@@ -28,19 +28,19 @@ void StorageInterestGroup::bidCount(long long value) {
     emlite::Val::set("bidCount", value);
 }
 
-jsbind::Sequence<jsbind::Any> StorageInterestGroup::prevWinsMs() const {
-    return emlite::Val::get("prevWinsMs").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> StorageInterestGroup::prevWinsMs() const {
+    return emlite::Val::get("prevWinsMs").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void StorageInterestGroup::prevWinsMs(const jsbind::Sequence<jsbind::Any>& value) {
+void StorageInterestGroup::prevWinsMs(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("prevWinsMs", value);
 }
 
-jsbind::USVString StorageInterestGroup::joiningOrigin() const {
-    return emlite::Val::get("joiningOrigin").as<jsbind::USVString>();
+jsbind::String StorageInterestGroup::joiningOrigin() const {
+    return emlite::Val::get("joiningOrigin").as<jsbind::String>();
 }
 
-void StorageInterestGroup::joiningOrigin(const jsbind::USVString& value) {
+void StorageInterestGroup::joiningOrigin(const jsbind::String& value) {
     emlite::Val::set("joiningOrigin", value);
 }
 
@@ -92,7 +92,7 @@ SharedStorageWorkletGlobalScope::SharedStorageWorkletGlobalScope(Handle h) noexc
 SharedStorageWorkletGlobalScope::SharedStorageWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 
 
-jsbind::Undefined SharedStorageWorkletGlobalScope::register_(const jsbind::DOMString& name, const jsbind::Function& operationCtor) {
+jsbind::Undefined SharedStorageWorkletGlobalScope::register_(const jsbind::String& name, const jsbind::Function& operationCtor) {
     return WorkletGlobalScope::call("register", name, operationCtor).as<jsbind::Undefined>();
 }
 
@@ -104,8 +104,8 @@ PrivateAggregation SharedStorageWorkletGlobalScope::privateAggregation() const {
     return WorkletGlobalScope::get("privateAggregation").as<PrivateAggregation>();
 }
 
-jsbind::Promise<jsbind::Sequence<StorageInterestGroup>> SharedStorageWorkletGlobalScope::interestGroups() {
-    return WorkletGlobalScope::call("interestGroups").as<jsbind::Promise<jsbind::Sequence<StorageInterestGroup>>>();
+jsbind::Promise<jsbind::TypedArray<StorageInterestGroup>> SharedStorageWorkletGlobalScope::interestGroups() {
+    return WorkletGlobalScope::call("interestGroups").as<jsbind::Promise<jsbind::TypedArray<StorageInterestGroup>>>();
 }
 
 SharedStorageWorkletNavigator SharedStorageWorkletGlobalScope::navigator() const {

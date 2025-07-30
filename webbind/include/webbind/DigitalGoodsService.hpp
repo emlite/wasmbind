@@ -15,26 +15,26 @@ public:
     explicit ItemDetails(const emlite::Val &val) noexcept;
     ItemDetails() noexcept;
     ItemDetails clone() const noexcept;
-    jsbind::DOMString itemId() const;
-    void itemId(const jsbind::DOMString& value);
-    jsbind::DOMString title() const;
-    void title(const jsbind::DOMString& value);
+    jsbind::String itemId() const;
+    void itemId(const jsbind::String& value);
+    jsbind::String title() const;
+    void title(const jsbind::String& value);
     jsbind::Any price() const;
     void price(const jsbind::Any& value);
     ItemType type() const;
     void type(const ItemType& value);
-    jsbind::DOMString description() const;
-    void description(const jsbind::DOMString& value);
-    jsbind::Sequence<jsbind::DOMString> iconURLs() const;
-    void iconURLs(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::DOMString subscriptionPeriod() const;
-    void subscriptionPeriod(const jsbind::DOMString& value);
-    jsbind::DOMString freeTrialPeriod() const;
-    void freeTrialPeriod(const jsbind::DOMString& value);
+    jsbind::String description() const;
+    void description(const jsbind::String& value);
+    jsbind::TypedArray<jsbind::String> iconURLs() const;
+    void iconURLs(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::String subscriptionPeriod() const;
+    void subscriptionPeriod(const jsbind::String& value);
+    jsbind::String freeTrialPeriod() const;
+    void freeTrialPeriod(const jsbind::String& value);
     jsbind::Any introductoryPrice() const;
     void introductoryPrice(const jsbind::Any& value);
-    jsbind::DOMString introductoryPricePeriod() const;
-    void introductoryPricePeriod(const jsbind::DOMString& value);
+    jsbind::String introductoryPricePeriod() const;
+    void introductoryPricePeriod(const jsbind::String& value);
     long long introductoryPriceCycles() const;
     void introductoryPriceCycles(long long value);
 };
@@ -46,10 +46,10 @@ public:
     explicit PurchaseDetails(const emlite::Val &val) noexcept;
     PurchaseDetails() noexcept;
     PurchaseDetails clone() const noexcept;
-    jsbind::DOMString itemId() const;
-    void itemId(const jsbind::DOMString& value);
-    jsbind::DOMString purchaseToken() const;
-    void purchaseToken(const jsbind::DOMString& value);
+    jsbind::String itemId() const;
+    void itemId(const jsbind::String& value);
+    jsbind::String purchaseToken() const;
+    void purchaseToken(const jsbind::String& value);
 };
 
 class DigitalGoodsService : public emlite::Val {
@@ -60,9 +60,9 @@ public:
     static DigitalGoodsService take_ownership(Handle h) noexcept;
 
     DigitalGoodsService clone() const noexcept;
-    jsbind::Promise<jsbind::Sequence<ItemDetails>> getDetails(const jsbind::Sequence<jsbind::DOMString>& itemIds);
-    jsbind::Promise<jsbind::Sequence<PurchaseDetails>> listPurchases();
-    jsbind::Promise<jsbind::Sequence<PurchaseDetails>> listPurchaseHistory();
-    jsbind::Promise<jsbind::Undefined> consume(const jsbind::DOMString& purchaseToken);
+    jsbind::Promise<jsbind::TypedArray<ItemDetails>> getDetails(const jsbind::TypedArray<jsbind::String>& itemIds);
+    jsbind::Promise<jsbind::TypedArray<PurchaseDetails>> listPurchases();
+    jsbind::Promise<jsbind::TypedArray<PurchaseDetails>> listPurchaseHistory();
+    jsbind::Promise<jsbind::Undefined> consume(const jsbind::String& purchaseToken);
 };
 

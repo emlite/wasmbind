@@ -18,11 +18,11 @@ void DetectedBarcode::boundingBox(const DOMRectReadOnly& value) {
     emlite::Val::set("boundingBox", value);
 }
 
-jsbind::DOMString DetectedBarcode::rawValue() const {
-    return emlite::Val::get("rawValue").as<jsbind::DOMString>();
+jsbind::String DetectedBarcode::rawValue() const {
+    return emlite::Val::get("rawValue").as<jsbind::String>();
 }
 
-void DetectedBarcode::rawValue(const jsbind::DOMString& value) {
+void DetectedBarcode::rawValue(const jsbind::String& value) {
     emlite::Val::set("rawValue", value);
 }
 
@@ -34,11 +34,11 @@ void DetectedBarcode::format(const BarcodeFormat& value) {
     emlite::Val::set("format", value);
 }
 
-jsbind::Sequence<jsbind::Any> DetectedBarcode::cornerPoints() const {
-    return emlite::Val::get("cornerPoints").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> DetectedBarcode::cornerPoints() const {
+    return emlite::Val::get("cornerPoints").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void DetectedBarcode::cornerPoints(const jsbind::Sequence<jsbind::Any>& value) {
+void DetectedBarcode::cornerPoints(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("cornerPoints", value);
 }
 
@@ -54,11 +54,11 @@ BarcodeDetector::BarcodeDetector() : emlite::Val(emlite::Val::global("BarcodeDet
 
 BarcodeDetector::BarcodeDetector(const jsbind::Any& barcodeDetectorOptions) : emlite::Val(emlite::Val::global("BarcodeDetector").new_(barcodeDetectorOptions)) {}
 
-jsbind::Promise<jsbind::Sequence<BarcodeFormat>> BarcodeDetector::getSupportedFormats() {
-    return emlite::Val::global("barcodedetector").call("getSupportedFormats").as<jsbind::Promise<jsbind::Sequence<BarcodeFormat>>>();
+jsbind::Promise<jsbind::TypedArray<BarcodeFormat>> BarcodeDetector::getSupportedFormats() {
+    return emlite::Val::global("barcodedetector").call("getSupportedFormats").as<jsbind::Promise<jsbind::TypedArray<BarcodeFormat>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<DetectedBarcode>> BarcodeDetector::detect(const jsbind::Any& image) {
-    return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::Sequence<DetectedBarcode>>>();
+jsbind::Promise<jsbind::TypedArray<DetectedBarcode>> BarcodeDetector::detect(const jsbind::Any& image) {
+    return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::TypedArray<DetectedBarcode>>>();
 }
 

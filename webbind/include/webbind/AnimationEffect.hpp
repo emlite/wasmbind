@@ -31,8 +31,8 @@ public:
     void duration(const jsbind::Any& value);
     PlaybackDirection direction() const;
     void direction(const PlaybackDirection& value);
-    jsbind::DOMString easing() const;
-    void easing(const jsbind::DOMString& value);
+    jsbind::String easing() const;
+    void easing(const jsbind::String& value);
 };
 
 class AnimationEffect : public emlite::Val {

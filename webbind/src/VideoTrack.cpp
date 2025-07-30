@@ -10,20 +10,20 @@ VideoTrack::VideoTrack(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 VideoTrack::VideoTrack(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString VideoTrack::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String VideoTrack::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString VideoTrack::kind() const {
-    return emlite::Val::get("kind").as<jsbind::DOMString>();
+jsbind::String VideoTrack::kind() const {
+    return emlite::Val::get("kind").as<jsbind::String>();
 }
 
-jsbind::DOMString VideoTrack::label() const {
-    return emlite::Val::get("label").as<jsbind::DOMString>();
+jsbind::String VideoTrack::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-jsbind::DOMString VideoTrack::language() const {
-    return emlite::Val::get("language").as<jsbind::DOMString>();
+jsbind::String VideoTrack::language() const {
+    return emlite::Val::get("language").as<jsbind::String>();
 }
 
 bool VideoTrack::selected() const {

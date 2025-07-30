@@ -71,11 +71,11 @@ public:
     DelayNode createDelay(double maxDelayTime);
     DynamicsCompressorNode createDynamicsCompressor();
     GainNode createGain();
-    IIRFilterNode createIIRFilter(jsbind::Sequence<double> feedforward, jsbind::Sequence<double> feedback);
+    IIRFilterNode createIIRFilter(jsbind::TypedArray<double> feedforward, jsbind::TypedArray<double> feedback);
     OscillatorNode createOscillator();
     PannerNode createPanner();
-    PeriodicWave createPeriodicWave(jsbind::Sequence<float> real, jsbind::Sequence<float> imag);
-    PeriodicWave createPeriodicWave(jsbind::Sequence<float> real, jsbind::Sequence<float> imag, const PeriodicWaveConstraints& constraints);
+    PeriodicWave createPeriodicWave(jsbind::TypedArray<float> real, jsbind::TypedArray<float> imag);
+    PeriodicWave createPeriodicWave(jsbind::TypedArray<float> real, jsbind::TypedArray<float> imag, const PeriodicWaveConstraints& constraints);
     ScriptProcessorNode createScriptProcessor();
     ScriptProcessorNode createScriptProcessor(unsigned long bufferSize);
     ScriptProcessorNode createScriptProcessor(unsigned long bufferSize, unsigned long numberOfInputChannels);

@@ -11,35 +11,35 @@ HTMLMarqueeElement::HTMLMarqueeElement(const emlite::Val &val) noexcept: HTMLEle
 
 HTMLMarqueeElement::HTMLMarqueeElement() : HTMLElement(emlite::Val::global("HTMLMarqueeElement").new_()) {}
 
-jsbind::DOMString HTMLMarqueeElement::behavior() const {
-    return HTMLElement::get("behavior").as<jsbind::DOMString>();
+jsbind::String HTMLMarqueeElement::behavior() const {
+    return HTMLElement::get("behavior").as<jsbind::String>();
 }
 
-void HTMLMarqueeElement::behavior(const jsbind::DOMString& value) {
+void HTMLMarqueeElement::behavior(const jsbind::String& value) {
     HTMLElement::set("behavior", value);
 }
 
-jsbind::DOMString HTMLMarqueeElement::bgColor() const {
-    return HTMLElement::get("bgColor").as<jsbind::DOMString>();
+jsbind::String HTMLMarqueeElement::bgColor() const {
+    return HTMLElement::get("bgColor").as<jsbind::String>();
 }
 
-void HTMLMarqueeElement::bgColor(const jsbind::DOMString& value) {
+void HTMLMarqueeElement::bgColor(const jsbind::String& value) {
     HTMLElement::set("bgColor", value);
 }
 
-jsbind::DOMString HTMLMarqueeElement::direction() const {
-    return HTMLElement::get("direction").as<jsbind::DOMString>();
+jsbind::String HTMLMarqueeElement::direction() const {
+    return HTMLElement::get("direction").as<jsbind::String>();
 }
 
-void HTMLMarqueeElement::direction(const jsbind::DOMString& value) {
+void HTMLMarqueeElement::direction(const jsbind::String& value) {
     HTMLElement::set("direction", value);
 }
 
-jsbind::DOMString HTMLMarqueeElement::height() const {
-    return HTMLElement::get("height").as<jsbind::DOMString>();
+jsbind::String HTMLMarqueeElement::height() const {
+    return HTMLElement::get("height").as<jsbind::String>();
 }
 
-void HTMLMarqueeElement::height(const jsbind::DOMString& value) {
+void HTMLMarqueeElement::height(const jsbind::String& value) {
     HTMLElement::set("height", value);
 }
 
@@ -91,11 +91,11 @@ void HTMLMarqueeElement::vspace(unsigned long value) {
     HTMLElement::set("vspace", value);
 }
 
-jsbind::DOMString HTMLMarqueeElement::width() const {
-    return HTMLElement::get("width").as<jsbind::DOMString>();
+jsbind::String HTMLMarqueeElement::width() const {
+    return HTMLElement::get("width").as<jsbind::String>();
 }
 
-void HTMLMarqueeElement::width(const jsbind::DOMString& value) {
+void HTMLMarqueeElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 

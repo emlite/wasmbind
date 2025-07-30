@@ -21,27 +21,27 @@ jsbind::Undefined SVGStringList::clear() {
     return emlite::Val::call("clear").as<jsbind::Undefined>();
 }
 
-jsbind::DOMString SVGStringList::initialize(const jsbind::DOMString& newItem) {
-    return emlite::Val::call("initialize", newItem).as<jsbind::DOMString>();
+jsbind::String SVGStringList::initialize(const jsbind::String& newItem) {
+    return emlite::Val::call("initialize", newItem).as<jsbind::String>();
 }
 
-jsbind::DOMString SVGStringList::getItem(unsigned long index) {
-    return emlite::Val::call("getItem", index).as<jsbind::DOMString>();
+jsbind::String SVGStringList::getItem(unsigned long index) {
+    return emlite::Val::call("getItem", index).as<jsbind::String>();
 }
 
-jsbind::DOMString SVGStringList::insertItemBefore(const jsbind::DOMString& newItem, unsigned long index) {
-    return emlite::Val::call("insertItemBefore", newItem, index).as<jsbind::DOMString>();
+jsbind::String SVGStringList::insertItemBefore(const jsbind::String& newItem, unsigned long index) {
+    return emlite::Val::call("insertItemBefore", newItem, index).as<jsbind::String>();
 }
 
-jsbind::DOMString SVGStringList::replaceItem(const jsbind::DOMString& newItem, unsigned long index) {
-    return emlite::Val::call("replaceItem", newItem, index).as<jsbind::DOMString>();
+jsbind::String SVGStringList::replaceItem(const jsbind::String& newItem, unsigned long index) {
+    return emlite::Val::call("replaceItem", newItem, index).as<jsbind::String>();
 }
 
-jsbind::DOMString SVGStringList::removeItem(unsigned long index) {
-    return emlite::Val::call("removeItem", index).as<jsbind::DOMString>();
+jsbind::String SVGStringList::removeItem(unsigned long index) {
+    return emlite::Val::call("removeItem", index).as<jsbind::String>();
 }
 
-jsbind::DOMString SVGStringList::appendItem(const jsbind::DOMString& newItem) {
-    return emlite::Val::call("appendItem", newItem).as<jsbind::DOMString>();
+jsbind::String SVGStringList::appendItem(const jsbind::String& newItem) {
+    return emlite::Val::call("appendItem", newItem).as<jsbind::String>();
 }
 

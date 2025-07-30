@@ -11,11 +11,11 @@ CSSStyleRule::CSSStyleRule(Handle h) noexcept : CSSGroupingRule(emlite::Val::tak
 CSSStyleRule::CSSStyleRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 
-jsbind::CSSOMString CSSStyleRule::selectorText() const {
-    return CSSGroupingRule::get("selectorText").as<jsbind::CSSOMString>();
+jsbind::String CSSStyleRule::selectorText() const {
+    return CSSGroupingRule::get("selectorText").as<jsbind::String>();
 }
 
-void CSSStyleRule::selectorText(const jsbind::CSSOMString& value) {
+void CSSStyleRule::selectorText(const jsbind::String& value) {
     CSSGroupingRule::set("selectorText", value);
 }
 

@@ -111,11 +111,11 @@ bool CSSNumericValue::equals(const jsbind::Any& value) {
     return CSSStyleValue::call("equals", value).as<bool>();
 }
 
-CSSUnitValue CSSNumericValue::to(const jsbind::USVString& unit) {
+CSSUnitValue CSSNumericValue::to(const jsbind::String& unit) {
     return CSSStyleValue::call("to", unit).as<CSSUnitValue>();
 }
 
-CSSMathSum CSSNumericValue::toSum(const jsbind::USVString& units) {
+CSSMathSum CSSNumericValue::toSum(const jsbind::String& units) {
     return CSSStyleValue::call("toSum", units).as<CSSMathSum>();
 }
 
@@ -123,7 +123,7 @@ CSSNumericType CSSNumericValue::type() {
     return CSSStyleValue::call("type").as<CSSNumericType>();
 }
 
-CSSNumericValue CSSNumericValue::parse(const jsbind::USVString& cssText) {
+CSSNumericValue CSSNumericValue::parse(const jsbind::String& cssText) {
     return emlite::Val::global("cssnumericvalue").call("parse", cssText).as<CSSNumericValue>();
 }
 

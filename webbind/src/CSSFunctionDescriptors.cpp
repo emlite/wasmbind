@@ -9,11 +9,11 @@ CSSFunctionDescriptors::CSSFunctionDescriptors(Handle h) noexcept : CSSStyleDecl
 CSSFunctionDescriptors::CSSFunctionDescriptors(const emlite::Val &val) noexcept: CSSStyleDeclaration(val) {}
 
 
-jsbind::CSSOMString CSSFunctionDescriptors::result() const {
-    return CSSStyleDeclaration::get("result").as<jsbind::CSSOMString>();
+jsbind::String CSSFunctionDescriptors::result() const {
+    return CSSStyleDeclaration::get("result").as<jsbind::String>();
 }
 
-void CSSFunctionDescriptors::result(const jsbind::CSSOMString& value) {
+void CSSFunctionDescriptors::result(const jsbind::String& value) {
     CSSStyleDeclaration::set("result", value);
 }
 

@@ -15,7 +15,7 @@ public:
 
     HTMLBRElement clone() const noexcept;
     HTMLBRElement();
-    jsbind::DOMString clear() const;
-    void clear(const jsbind::DOMString& value);
+    jsbind::String clear() const;
+    void clear(const jsbind::String& value);
 };
 

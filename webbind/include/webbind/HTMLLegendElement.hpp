@@ -18,7 +18,7 @@ public:
     HTMLLegendElement clone() const noexcept;
     HTMLLegendElement();
     HTMLFormElement form() const;
-    jsbind::DOMString align() const;
-    void align(const jsbind::DOMString& value);
+    jsbind::String align() const;
+    void align(const jsbind::String& value);
 };
 

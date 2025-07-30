@@ -18,7 +18,7 @@ public:
     USBConfiguration clone() const noexcept;
     USBConfiguration(const USBDevice& device, unsigned char configurationValue);
     unsigned char configurationValue() const;
-    jsbind::DOMString configurationName() const;
-    jsbind::FrozenArray<USBInterface> interfaces() const;
+    jsbind::String configurationName() const;
+    jsbind::TypedArray<USBInterface> interfaces() const;
 };
 

@@ -14,9 +14,9 @@ public:
     static CSSFontPaletteValuesRule take_ownership(Handle h) noexcept;
 
     CSSFontPaletteValuesRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
-    jsbind::CSSOMString fontFamily() const;
-    jsbind::CSSOMString basePalette() const;
-    jsbind::CSSOMString overrideColors() const;
+    jsbind::String name() const;
+    jsbind::String fontFamily() const;
+    jsbind::String basePalette() const;
+    jsbind::String overrideColors() const;
 };
 

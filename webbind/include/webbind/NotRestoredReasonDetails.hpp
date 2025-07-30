@@ -13,7 +13,7 @@ public:
     static NotRestoredReasonDetails take_ownership(Handle h) noexcept;
 
     NotRestoredReasonDetails clone() const noexcept;
-    jsbind::DOMString reason() const;
+    jsbind::String reason() const;
     jsbind::Object toJSON();
 };
 

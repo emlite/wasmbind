@@ -13,8 +13,8 @@ public:
     static FontFaceVariationAxis take_ownership(Handle h) noexcept;
 
     FontFaceVariationAxis clone() const noexcept;
-    jsbind::DOMString name() const;
-    jsbind::DOMString axisTag() const;
+    jsbind::String name() const;
+    jsbind::String axisTag() const;
     double minimumValue() const;
     double maximumValue() const;
     double defaultValue() const;

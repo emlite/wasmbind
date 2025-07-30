@@ -16,7 +16,7 @@ public:
     static DocumentPictureInPictureEvent take_ownership(Handle h) noexcept;
 
     DocumentPictureInPictureEvent clone() const noexcept;
-    DocumentPictureInPictureEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    DocumentPictureInPictureEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     Window window() const;
 };
 

@@ -39,15 +39,15 @@ jsbind::Uint8Array TextEncoder::encode() {
     return emlite::Val::call("encode").as<jsbind::Uint8Array>();
 }
 
-jsbind::Uint8Array TextEncoder::encode(const jsbind::USVString& input) {
+jsbind::Uint8Array TextEncoder::encode(const jsbind::String& input) {
     return emlite::Val::call("encode", input).as<jsbind::Uint8Array>();
 }
 
-TextEncoderEncodeIntoResult TextEncoder::encodeInto(const jsbind::USVString& source, const jsbind::Uint8Array& destination) {
+TextEncoderEncodeIntoResult TextEncoder::encodeInto(const jsbind::String& source, const jsbind::Uint8Array& destination) {
     return emlite::Val::call("encodeInto", source, destination).as<TextEncoderEncodeIntoResult>();
 }
 
-jsbind::DOMString TextEncoder::encoding() const {
-    return emlite::Val::get("encoding").as<jsbind::DOMString>();
+jsbind::String TextEncoder::encoding() const {
+    return emlite::Val::get("encoding").as<jsbind::String>();
 }
 

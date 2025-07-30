@@ -59,11 +59,11 @@ void PrivateToken::refreshPolicy(const RefreshPolicy& value) {
     emlite::Val::set("refreshPolicy", value);
 }
 
-jsbind::Sequence<jsbind::USVString> PrivateToken::issuers() const {
-    return emlite::Val::get("issuers").as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> PrivateToken::issuers() const {
+    return emlite::Val::get("issuers").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PrivateToken::issuers(const jsbind::Sequence<jsbind::USVString>& value) {
+void PrivateToken::issuers(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("issuers", value);
 }
 
@@ -89,19 +89,19 @@ unsigned short XMLHttpRequest::readyState() const {
     return XMLHttpRequestEventTarget::get("readyState").as<unsigned short>();
 }
 
-jsbind::Undefined XMLHttpRequest::open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async) {
+jsbind::Undefined XMLHttpRequest::open(const jsbind::String& method, const jsbind::String& url, bool async) {
     return XMLHttpRequestEventTarget::call("open", method, url, async).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined XMLHttpRequest::open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username) {
+jsbind::Undefined XMLHttpRequest::open(const jsbind::String& method, const jsbind::String& url, bool async, const jsbind::String& username) {
     return XMLHttpRequestEventTarget::call("open", method, url, async, username).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined XMLHttpRequest::open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username, const jsbind::USVString& password) {
+jsbind::Undefined XMLHttpRequest::open(const jsbind::String& method, const jsbind::String& url, bool async, const jsbind::String& username, const jsbind::String& password) {
     return XMLHttpRequestEventTarget::call("open", method, url, async, username, password).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined XMLHttpRequest::setRequestHeader(const jsbind::ByteString& name, const jsbind::ByteString& value) {
+jsbind::Undefined XMLHttpRequest::setRequestHeader(const jsbind::String& name, const jsbind::String& value) {
     return XMLHttpRequestEventTarget::call("setRequestHeader", name, value).as<jsbind::Undefined>();
 }
 
@@ -137,27 +137,27 @@ jsbind::Undefined XMLHttpRequest::abort() {
     return XMLHttpRequestEventTarget::call("abort").as<jsbind::Undefined>();
 }
 
-jsbind::USVString XMLHttpRequest::responseURL() const {
-    return XMLHttpRequestEventTarget::get("responseURL").as<jsbind::USVString>();
+jsbind::String XMLHttpRequest::responseURL() const {
+    return XMLHttpRequestEventTarget::get("responseURL").as<jsbind::String>();
 }
 
 unsigned short XMLHttpRequest::status() const {
     return XMLHttpRequestEventTarget::get("status").as<unsigned short>();
 }
 
-jsbind::ByteString XMLHttpRequest::statusText() const {
-    return XMLHttpRequestEventTarget::get("statusText").as<jsbind::ByteString>();
+jsbind::String XMLHttpRequest::statusText() const {
+    return XMLHttpRequestEventTarget::get("statusText").as<jsbind::String>();
 }
 
-jsbind::ByteString XMLHttpRequest::getResponseHeader(const jsbind::ByteString& name) {
-    return XMLHttpRequestEventTarget::call("getResponseHeader", name).as<jsbind::ByteString>();
+jsbind::String XMLHttpRequest::getResponseHeader(const jsbind::String& name) {
+    return XMLHttpRequestEventTarget::call("getResponseHeader", name).as<jsbind::String>();
 }
 
-jsbind::ByteString XMLHttpRequest::getAllResponseHeaders() {
-    return XMLHttpRequestEventTarget::call("getAllResponseHeaders").as<jsbind::ByteString>();
+jsbind::String XMLHttpRequest::getAllResponseHeaders() {
+    return XMLHttpRequestEventTarget::call("getAllResponseHeaders").as<jsbind::String>();
 }
 
-jsbind::Undefined XMLHttpRequest::overrideMimeType(const jsbind::DOMString& mime) {
+jsbind::Undefined XMLHttpRequest::overrideMimeType(const jsbind::String& mime) {
     return XMLHttpRequestEventTarget::call("overrideMimeType", mime).as<jsbind::Undefined>();
 }
 
@@ -173,8 +173,8 @@ jsbind::Any XMLHttpRequest::response() const {
     return XMLHttpRequestEventTarget::get("response").as<jsbind::Any>();
 }
 
-jsbind::USVString XMLHttpRequest::responseText() const {
-    return XMLHttpRequestEventTarget::get("responseText").as<jsbind::USVString>();
+jsbind::String XMLHttpRequest::responseText() const {
+    return XMLHttpRequestEventTarget::get("responseText").as<jsbind::String>();
 }
 
 Document XMLHttpRequest::responseXML() const {

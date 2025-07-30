@@ -10,8 +10,8 @@ FileSystem::FileSystem(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 FileSystem::FileSystem(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString FileSystem::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String FileSystem::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
 FileSystemDirectoryEntry FileSystem::root() const {

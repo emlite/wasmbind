@@ -17,12 +17,12 @@ public:
     static FetchEvent take_ownership(Handle h) noexcept;
 
     FetchEvent clone() const noexcept;
-    FetchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    FetchEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     Request request() const;
     jsbind::Promise<jsbind::Any> preloadResponse() const;
-    jsbind::DOMString clientId() const;
-    jsbind::DOMString resultingClientId() const;
-    jsbind::DOMString replacesClientId() const;
+    jsbind::String clientId() const;
+    jsbind::String resultingClientId() const;
+    jsbind::String replacesClientId() const;
     jsbind::Promise<jsbind::Undefined> handled() const;
     jsbind::Undefined respondWith(const jsbind::Promise<Response>& r);
 };

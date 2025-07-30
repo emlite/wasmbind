@@ -37,17 +37,17 @@ public:
     static Gamepad take_ownership(Handle h) noexcept;
 
     Gamepad clone() const noexcept;
-    jsbind::DOMString id() const;
+    jsbind::String id() const;
     long index() const;
     bool connected() const;
     jsbind::Any timestamp() const;
     GamepadMappingType mapping() const;
-    jsbind::FrozenArray<double> axes() const;
-    jsbind::FrozenArray<GamepadButton> buttons() const;
-    jsbind::FrozenArray<GamepadTouch> touches() const;
+    jsbind::TypedArray<double> axes() const;
+    jsbind::TypedArray<GamepadButton> buttons() const;
+    jsbind::TypedArray<GamepadTouch> touches() const;
     GamepadHapticActuator vibrationActuator() const;
     GamepadHand hand() const;
-    jsbind::FrozenArray<GamepadHapticActuator> hapticActuators() const;
+    jsbind::TypedArray<GamepadHapticActuator> hapticActuators() const;
     GamepadPose pose() const;
 };
 

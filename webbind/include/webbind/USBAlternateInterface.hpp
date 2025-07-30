@@ -21,7 +21,7 @@ public:
     unsigned char interfaceClass() const;
     unsigned char interfaceSubclass() const;
     unsigned char interfaceProtocol() const;
-    jsbind::DOMString interfaceName() const;
-    jsbind::FrozenArray<USBEndpoint> endpoints() const;
+    jsbind::String interfaceName() const;
+    jsbind::TypedArray<USBEndpoint> endpoints() const;
 };
 

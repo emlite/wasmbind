@@ -15,10 +15,10 @@ public:
     static AudioTrack take_ownership(Handle h) noexcept;
 
     AudioTrack clone() const noexcept;
-    jsbind::DOMString id() const;
-    jsbind::DOMString kind() const;
-    jsbind::DOMString label() const;
-    jsbind::DOMString language() const;
+    jsbind::String id() const;
+    jsbind::String kind() const;
+    jsbind::String label() const;
+    jsbind::String language() const;
     bool enabled() const;
     void enabled(bool value);
     SourceBuffer sourceBuffer() const;

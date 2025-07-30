@@ -16,8 +16,8 @@ public:
     explicit IdentityResolveOptions(const emlite::Val &val) noexcept;
     IdentityResolveOptions() noexcept;
     IdentityResolveOptions clone() const noexcept;
-    jsbind::USVString accountId() const;
-    void accountId(const jsbind::USVString& value);
+    jsbind::String accountId() const;
+    void accountId(const jsbind::String& value);
 };
 
 class IdentityUserInfo : public emlite::Val {
@@ -27,14 +27,14 @@ public:
     explicit IdentityUserInfo(const emlite::Val &val) noexcept;
     IdentityUserInfo() noexcept;
     IdentityUserInfo clone() const noexcept;
-    jsbind::USVString email() const;
-    void email(const jsbind::USVString& value);
-    jsbind::USVString name() const;
-    void name(const jsbind::USVString& value);
-    jsbind::USVString givenName() const;
-    void givenName(const jsbind::USVString& value);
-    jsbind::USVString picture() const;
-    void picture(const jsbind::USVString& value);
+    jsbind::String email() const;
+    void email(const jsbind::String& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
+    jsbind::String givenName() const;
+    void givenName(const jsbind::String& value);
+    jsbind::String picture() const;
+    void picture(const jsbind::String& value);
 };
 
 class IdentityProviderConfig : public emlite::Val {
@@ -44,10 +44,10 @@ public:
     explicit IdentityProviderConfig(const emlite::Val &val) noexcept;
     IdentityProviderConfig() noexcept;
     IdentityProviderConfig clone() const noexcept;
-    jsbind::USVString configURL() const;
-    void configURL(const jsbind::USVString& value);
-    jsbind::USVString clientId() const;
-    void clientId(const jsbind::USVString& value);
+    jsbind::String configURL() const;
+    void configURL(const jsbind::String& value);
+    jsbind::String clientId() const;
+    void clientId(const jsbind::String& value);
 };
 
 class IdentityProvider : public emlite::Val {
@@ -59,8 +59,8 @@ public:
 
     IdentityProvider clone() const noexcept;
     static jsbind::Undefined close();
-    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::DOMString& token);
-    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::DOMString& token, const IdentityResolveOptions& options);
-    static jsbind::Promise<jsbind::Sequence<IdentityUserInfo>> getUserInfo(const IdentityProviderConfig& config);
+    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::String& token);
+    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::String& token, const IdentityResolveOptions& options);
+    static jsbind::Promise<jsbind::TypedArray<IdentityUserInfo>> getUserInfo(const IdentityProviderConfig& config);
 };
 

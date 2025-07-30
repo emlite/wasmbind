@@ -14,11 +14,11 @@ HTMLTextAreaElement::HTMLTextAreaElement(const emlite::Val &val) noexcept: HTMLE
 
 HTMLTextAreaElement::HTMLTextAreaElement() : HTMLElement(emlite::Val::global("HTMLTextAreaElement").new_()) {}
 
-jsbind::DOMString HTMLTextAreaElement::autocomplete() const {
-    return HTMLElement::get("autocomplete").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::autocomplete() const {
+    return HTMLElement::get("autocomplete").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::autocomplete(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::autocomplete(const jsbind::String& value) {
     HTMLElement::set("autocomplete", value);
 }
 
@@ -30,11 +30,11 @@ void HTMLTextAreaElement::cols(unsigned long value) {
     HTMLElement::set("cols", value);
 }
 
-jsbind::DOMString HTMLTextAreaElement::dirName() const {
-    return HTMLElement::get("dirName").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::dirName() const {
+    return HTMLElement::get("dirName").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::dirName(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::dirName(const jsbind::String& value) {
     HTMLElement::set("dirName", value);
 }
 
@@ -66,19 +66,19 @@ void HTMLTextAreaElement::minLength(long value) {
     HTMLElement::set("minLength", value);
 }
 
-jsbind::DOMString HTMLTextAreaElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::name(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::DOMString HTMLTextAreaElement::placeholder() const {
-    return HTMLElement::get("placeholder").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::placeholder() const {
+    return HTMLElement::get("placeholder").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::placeholder(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::placeholder(const jsbind::String& value) {
     HTMLElement::set("placeholder", value);
 }
 
@@ -106,31 +106,31 @@ void HTMLTextAreaElement::rows(unsigned long value) {
     HTMLElement::set("rows", value);
 }
 
-jsbind::DOMString HTMLTextAreaElement::wrap() const {
-    return HTMLElement::get("wrap").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::wrap() const {
+    return HTMLElement::get("wrap").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::wrap(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::wrap(const jsbind::String& value) {
     HTMLElement::set("wrap", value);
 }
 
-jsbind::DOMString HTMLTextAreaElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-jsbind::DOMString HTMLTextAreaElement::defaultValue() const {
-    return HTMLElement::get("defaultValue").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::defaultValue() const {
+    return HTMLElement::get("defaultValue").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::defaultValue(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::defaultValue(const jsbind::String& value) {
     HTMLElement::set("defaultValue", value);
 }
 
-jsbind::DOMString HTMLTextAreaElement::value() const {
-    return HTMLElement::get("value").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::value() const {
+    return HTMLElement::get("value").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::value(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::value(const jsbind::String& value) {
     HTMLElement::set("value", value);
 }
 
@@ -146,8 +146,8 @@ ValidityState HTMLTextAreaElement::validity() const {
     return HTMLElement::get("validity").as<ValidityState>();
 }
 
-jsbind::DOMString HTMLTextAreaElement::validationMessage() const {
-    return HTMLElement::get("validationMessage").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::validationMessage() const {
+    return HTMLElement::get("validationMessage").as<jsbind::String>();
 }
 
 bool HTMLTextAreaElement::checkValidity() {
@@ -158,7 +158,7 @@ bool HTMLTextAreaElement::reportValidity() {
     return HTMLElement::call("reportValidity").as<bool>();
 }
 
-jsbind::Undefined HTMLTextAreaElement::setCustomValidity(const jsbind::DOMString& error) {
+jsbind::Undefined HTMLTextAreaElement::setCustomValidity(const jsbind::String& error) {
     return HTMLElement::call("setCustomValidity", error).as<jsbind::Undefined>();
 }
 
@@ -186,19 +186,19 @@ void HTMLTextAreaElement::selectionEnd(unsigned long value) {
     HTMLElement::set("selectionEnd", value);
 }
 
-jsbind::DOMString HTMLTextAreaElement::selectionDirection() const {
-    return HTMLElement::get("selectionDirection").as<jsbind::DOMString>();
+jsbind::String HTMLTextAreaElement::selectionDirection() const {
+    return HTMLElement::get("selectionDirection").as<jsbind::String>();
 }
 
-void HTMLTextAreaElement::selectionDirection(const jsbind::DOMString& value) {
+void HTMLTextAreaElement::selectionDirection(const jsbind::String& value) {
     HTMLElement::set("selectionDirection", value);
 }
 
-jsbind::Undefined HTMLTextAreaElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end) {
+jsbind::Undefined HTMLTextAreaElement::setRangeText(const jsbind::String& replacement, unsigned long start, unsigned long end) {
     return HTMLElement::call("setRangeText", replacement, start, end).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLTextAreaElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end, const SelectionMode& selectionMode) {
+jsbind::Undefined HTMLTextAreaElement::setRangeText(const jsbind::String& replacement, unsigned long start, unsigned long end, const SelectionMode& selectionMode) {
     return HTMLElement::call("setRangeText", replacement, start, end, selectionMode).as<jsbind::Undefined>();
 }
 
@@ -206,7 +206,7 @@ jsbind::Undefined HTMLTextAreaElement::setSelectionRange(unsigned long start, un
     return HTMLElement::call("setSelectionRange", start, end).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLTextAreaElement::setSelectionRange(unsigned long start, unsigned long end, const jsbind::DOMString& direction) {
+jsbind::Undefined HTMLTextAreaElement::setSelectionRange(unsigned long start, unsigned long end, const jsbind::String& direction) {
     return HTMLElement::call("setSelectionRange", start, end, direction).as<jsbind::Undefined>();
 }
 

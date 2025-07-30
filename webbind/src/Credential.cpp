@@ -9,12 +9,12 @@ Credential::Credential(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 Credential::Credential(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString Credential::id() const {
-    return emlite::Val::get("id").as<jsbind::USVString>();
+jsbind::String Credential::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString Credential::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String Credential::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
 jsbind::Promise<bool> Credential::isConditionalMediationAvailable() {

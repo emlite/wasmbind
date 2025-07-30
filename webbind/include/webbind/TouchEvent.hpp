@@ -16,8 +16,8 @@ public:
     static TouchEvent take_ownership(Handle h) noexcept;
 
     TouchEvent clone() const noexcept;
-    TouchEvent(const jsbind::DOMString& type);
-    TouchEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    TouchEvent(const jsbind::String& type);
+    TouchEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     TouchList touches() const;
     TouchList targetTouches() const;
     TouchList changedTouches() const;
@@ -25,6 +25,6 @@ public:
     bool metaKey() const;
     bool ctrlKey() const;
     bool shiftKey() const;
-    bool getModifierState(const jsbind::DOMString& keyArg);
+    bool getModifierState(const jsbind::String& keyArg);
 };
 

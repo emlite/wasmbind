@@ -9,35 +9,35 @@ ProfilerTrace::ProfilerTrace(const emlite::Val &val) noexcept: emlite::Val(val) 
 ProfilerTrace::ProfilerTrace() noexcept: emlite::Val(emlite::Val::object()) {}
 ProfilerTrace ProfilerTrace::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> ProfilerTrace::resources() const {
-    return emlite::Val::get("resources").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> ProfilerTrace::resources() const {
+    return emlite::Val::get("resources").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void ProfilerTrace::resources(const jsbind::Sequence<jsbind::Any>& value) {
+void ProfilerTrace::resources(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("resources", value);
 }
 
-jsbind::Sequence<jsbind::Any> ProfilerTrace::frames() const {
-    return emlite::Val::get("frames").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> ProfilerTrace::frames() const {
+    return emlite::Val::get("frames").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void ProfilerTrace::frames(const jsbind::Sequence<jsbind::Any>& value) {
+void ProfilerTrace::frames(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("frames", value);
 }
 
-jsbind::Sequence<jsbind::Any> ProfilerTrace::stacks() const {
-    return emlite::Val::get("stacks").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> ProfilerTrace::stacks() const {
+    return emlite::Val::get("stacks").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void ProfilerTrace::stacks(const jsbind::Sequence<jsbind::Any>& value) {
+void ProfilerTrace::stacks(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("stacks", value);
 }
 
-jsbind::Sequence<jsbind::Any> ProfilerTrace::samples() const {
-    return emlite::Val::get("samples").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> ProfilerTrace::samples() const {
+    return emlite::Val::get("samples").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void ProfilerTrace::samples(const jsbind::Sequence<jsbind::Any>& value) {
+void ProfilerTrace::samples(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("samples", value);
 }
 

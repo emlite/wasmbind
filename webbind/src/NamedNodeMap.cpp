@@ -18,11 +18,11 @@ Attr NamedNodeMap::item(unsigned long index) {
     return emlite::Val::call("item", index).as<Attr>();
 }
 
-Attr NamedNodeMap::getNamedItem(const jsbind::DOMString& qualifiedName) {
+Attr NamedNodeMap::getNamedItem(const jsbind::String& qualifiedName) {
     return emlite::Val::call("getNamedItem", qualifiedName).as<Attr>();
 }
 
-Attr NamedNodeMap::getNamedItemNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName) {
+Attr NamedNodeMap::getNamedItemNS(const jsbind::String& namespace_, const jsbind::String& localName) {
     return emlite::Val::call("getNamedItemNS", namespace_, localName).as<Attr>();
 }
 
@@ -34,11 +34,11 @@ Attr NamedNodeMap::setNamedItemNS(const Attr& attr) {
     return emlite::Val::call("setNamedItemNS", attr).as<Attr>();
 }
 
-Attr NamedNodeMap::removeNamedItem(const jsbind::DOMString& qualifiedName) {
+Attr NamedNodeMap::removeNamedItem(const jsbind::String& qualifiedName) {
     return emlite::Val::call("removeNamedItem", qualifiedName).as<Attr>();
 }
 
-Attr NamedNodeMap::removeNamedItemNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName) {
+Attr NamedNodeMap::removeNamedItemNS(const jsbind::String& namespace_, const jsbind::String& localName) {
     return emlite::Val::call("removeNamedItemNS", namespace_, localName).as<Attr>();
 }
 

@@ -15,7 +15,7 @@ public:
 
     HTMLHtmlElement clone() const noexcept;
     HTMLHtmlElement();
-    jsbind::DOMString version() const;
-    void version(const jsbind::DOMString& value);
+    jsbind::String version() const;
+    void version(const jsbind::String& value);
 };
 

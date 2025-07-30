@@ -10,7 +10,7 @@ DocumentPictureInPictureEvent::DocumentPictureInPictureEvent(Handle h) noexcept 
 DocumentPictureInPictureEvent::DocumentPictureInPictureEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-DocumentPictureInPictureEvent::DocumentPictureInPictureEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DocumentPictureInPictureEvent").new_(type, eventInitDict)) {}
+DocumentPictureInPictureEvent::DocumentPictureInPictureEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DocumentPictureInPictureEvent").new_(type, eventInitDict)) {}
 
 Window DocumentPictureInPictureEvent::window() const {
     return Event::get("window").as<Window>();

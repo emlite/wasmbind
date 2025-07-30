@@ -26,6 +26,6 @@ public:
     jsbind::Undefined cancel();
     jsbind::Undefined pause();
     jsbind::Undefined resume();
-    jsbind::Sequence<SpeechSynthesisVoice> getVoices();
+    jsbind::TypedArray<SpeechSynthesisVoice> getVoices();
 };
 

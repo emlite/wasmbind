@@ -11,11 +11,11 @@ CSSKeyframesRule::CSSKeyframesRule(Handle h) noexcept : CSSRule(emlite::Val::tak
 CSSKeyframesRule::CSSKeyframesRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSKeyframesRule::name() const {
-    return CSSRule::get("name").as<jsbind::CSSOMString>();
+jsbind::String CSSKeyframesRule::name() const {
+    return CSSRule::get("name").as<jsbind::String>();
 }
 
-void CSSKeyframesRule::name(const jsbind::CSSOMString& value) {
+void CSSKeyframesRule::name(const jsbind::String& value) {
     CSSRule::set("name", value);
 }
 
@@ -27,15 +27,15 @@ unsigned long CSSKeyframesRule::length() const {
     return CSSRule::get("length").as<unsigned long>();
 }
 
-jsbind::Undefined CSSKeyframesRule::appendRule(const jsbind::CSSOMString& rule) {
+jsbind::Undefined CSSKeyframesRule::appendRule(const jsbind::String& rule) {
     return CSSRule::call("appendRule", rule).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CSSKeyframesRule::deleteRule(const jsbind::CSSOMString& select) {
+jsbind::Undefined CSSKeyframesRule::deleteRule(const jsbind::String& select) {
     return CSSRule::call("deleteRule", select).as<jsbind::Undefined>();
 }
 
-CSSKeyframeRule CSSKeyframesRule::findRule(const jsbind::CSSOMString& select) {
+CSSKeyframeRule CSSKeyframesRule::findRule(const jsbind::String& select) {
     return CSSRule::call("findRule", select).as<CSSKeyframeRule>();
 }
 

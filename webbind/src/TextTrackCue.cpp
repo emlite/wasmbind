@@ -14,11 +14,11 @@ TextTrack TextTrackCue::track() const {
     return EventTarget::get("track").as<TextTrack>();
 }
 
-jsbind::DOMString TextTrackCue::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String TextTrackCue::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-void TextTrackCue::id(const jsbind::DOMString& value) {
+void TextTrackCue::id(const jsbind::String& value) {
     EventTarget::set("id", value);
 }
 

@@ -28,8 +28,8 @@ XRSpace XRInputSource::gripSpace() const {
     return emlite::Val::get("gripSpace").as<XRSpace>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> XRInputSource::profiles() const {
-    return emlite::Val::get("profiles").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> XRInputSource::profiles() const {
+    return emlite::Val::get("profiles").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 bool XRInputSource::skipRendering() const {

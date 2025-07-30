@@ -15,8 +15,8 @@ public:
     explicit StructuredSerializeOptions(const emlite::Val &val) noexcept;
     StructuredSerializeOptions() noexcept;
     StructuredSerializeOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::Object> transfer() const;
-    void transfer(const jsbind::Sequence<jsbind::Object>& value);
+    jsbind::TypedArray<jsbind::Object> transfer() const;
+    void transfer(const jsbind::TypedArray<jsbind::Object>& value);
 };
 
 class MessagePort : public EventTarget {

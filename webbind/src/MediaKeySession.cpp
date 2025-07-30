@@ -10,8 +10,8 @@ MediaKeySession::MediaKeySession(Handle h) noexcept : EventTarget(emlite::Val::t
 MediaKeySession::MediaKeySession(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::DOMString MediaKeySession::sessionId() const {
-    return EventTarget::get("sessionId").as<jsbind::DOMString>();
+jsbind::String MediaKeySession::sessionId() const {
+    return EventTarget::get("sessionId").as<jsbind::String>();
 }
 
 double MediaKeySession::expiration() const {
@@ -42,11 +42,11 @@ void MediaKeySession::onmessage(const jsbind::Any& value) {
     EventTarget::set("onmessage", value);
 }
 
-jsbind::Promise<jsbind::Undefined> MediaKeySession::generateRequest(const jsbind::DOMString& initDataType, const jsbind::Any& initData) {
+jsbind::Promise<jsbind::Undefined> MediaKeySession::generateRequest(const jsbind::String& initDataType, const jsbind::Any& initData) {
     return EventTarget::call("generateRequest", initDataType, initData).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<bool> MediaKeySession::load(const jsbind::DOMString& sessionId) {
+jsbind::Promise<bool> MediaKeySession::load(const jsbind::String& sessionId) {
     return EventTarget::call("load", sessionId).as<jsbind::Promise<bool>>();
 }
 

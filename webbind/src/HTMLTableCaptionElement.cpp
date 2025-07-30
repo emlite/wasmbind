@@ -11,11 +11,11 @@ HTMLTableCaptionElement::HTMLTableCaptionElement(const emlite::Val &val) noexcep
 
 HTMLTableCaptionElement::HTMLTableCaptionElement() : HTMLElement(emlite::Val::global("HTMLTableCaptionElement").new_()) {}
 
-jsbind::DOMString HTMLTableCaptionElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLTableCaptionElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLTableCaptionElement::align(const jsbind::DOMString& value) {
+void HTMLTableCaptionElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 

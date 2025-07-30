@@ -29,8 +29,8 @@ FileSystemHandleKind FileSystemHandle::kind() const {
     return emlite::Val::get("kind").as<FileSystemHandleKind>();
 }
 
-jsbind::USVString FileSystemHandle::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String FileSystemHandle::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
 jsbind::Promise<bool> FileSystemHandle::isSameEntry(const FileSystemHandle& other) {

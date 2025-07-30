@@ -13,9 +13,9 @@ public:
     static PerformanceServerTiming take_ownership(Handle h) noexcept;
 
     PerformanceServerTiming clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     jsbind::Any duration() const;
-    jsbind::DOMString description() const;
+    jsbind::String description() const;
     jsbind::Object toJSON();
 };
 

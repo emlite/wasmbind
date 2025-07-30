@@ -17,10 +17,10 @@ public:
     static CSSImportRule take_ownership(Handle h) noexcept;
 
     CSSImportRule clone() const noexcept;
-    jsbind::USVString href() const;
+    jsbind::String href() const;
     MediaList media() const;
     CSSStyleSheet styleSheet() const;
-    jsbind::CSSOMString layerName() const;
-    jsbind::CSSOMString supportsText() const;
+    jsbind::String layerName() const;
+    jsbind::String supportsText() const;
 };
 

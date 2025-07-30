@@ -27,11 +27,11 @@ void WriterCreateOptions::monitor(const jsbind::Function& value) {
     emlite::Val::set("monitor", value);
 }
 
-jsbind::DOMString WriterCreateOptions::sharedContext() const {
-    return emlite::Val::get("sharedContext").as<jsbind::DOMString>();
+jsbind::String WriterCreateOptions::sharedContext() const {
+    return emlite::Val::get("sharedContext").as<jsbind::String>();
 }
 
-void WriterCreateOptions::sharedContext(const jsbind::DOMString& value) {
+void WriterCreateOptions::sharedContext(const jsbind::String& value) {
     emlite::Val::set("sharedContext", value);
 }
 
@@ -67,27 +67,27 @@ void WriterCreateCoreOptions::length(const WriterLength& value) {
     emlite::Val::set("length", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> WriterCreateCoreOptions::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> WriterCreateCoreOptions::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void WriterCreateCoreOptions::expectedInputLanguages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void WriterCreateCoreOptions::expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("expectedInputLanguages", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> WriterCreateCoreOptions::expectedContextLanguages() const {
-    return emlite::Val::get("expectedContextLanguages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> WriterCreateCoreOptions::expectedContextLanguages() const {
+    return emlite::Val::get("expectedContextLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void WriterCreateCoreOptions::expectedContextLanguages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void WriterCreateCoreOptions::expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("expectedContextLanguages", value);
 }
 
-jsbind::DOMString WriterCreateCoreOptions::outputLanguage() const {
-    return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+jsbind::String WriterCreateCoreOptions::outputLanguage() const {
+    return emlite::Val::get("outputLanguage").as<jsbind::String>();
 }
 
-void WriterCreateCoreOptions::outputLanguage(const jsbind::DOMString& value) {
+void WriterCreateCoreOptions::outputLanguage(const jsbind::String& value) {
     emlite::Val::set("outputLanguage", value);
 }
 
@@ -99,11 +99,11 @@ WriterWriteOptions::WriterWriteOptions(const emlite::Val &val) noexcept: emlite:
 WriterWriteOptions::WriterWriteOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 WriterWriteOptions WriterWriteOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString WriterWriteOptions::context() const {
-    return emlite::Val::get("context").as<jsbind::DOMString>();
+jsbind::String WriterWriteOptions::context() const {
+    return emlite::Val::get("context").as<jsbind::String>();
 }
 
-void WriterWriteOptions::context(const jsbind::DOMString& value) {
+void WriterWriteOptions::context(const jsbind::String& value) {
     emlite::Val::set("context", value);
 }
 
@@ -139,24 +139,24 @@ jsbind::Promise<Availability> Writer::availability(const WriterCreateCoreOptions
     return emlite::Val::global("writer").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Writer::write(const jsbind::DOMString& input) {
-    return emlite::Val::call("write", input).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Writer::write(const jsbind::String& input) {
+    return emlite::Val::call("write", input).as<jsbind::Promise<jsbind::String>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Writer::write(const jsbind::DOMString& input, const WriterWriteOptions& options) {
-    return emlite::Val::call("write", input, options).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Writer::write(const jsbind::String& input, const WriterWriteOptions& options) {
+    return emlite::Val::call("write", input, options).as<jsbind::Promise<jsbind::String>>();
 }
 
-ReadableStream Writer::writeStreaming(const jsbind::DOMString& input) {
+ReadableStream Writer::writeStreaming(const jsbind::String& input) {
     return emlite::Val::call("writeStreaming", input).as<ReadableStream>();
 }
 
-ReadableStream Writer::writeStreaming(const jsbind::DOMString& input, const WriterWriteOptions& options) {
+ReadableStream Writer::writeStreaming(const jsbind::String& input, const WriterWriteOptions& options) {
     return emlite::Val::call("writeStreaming", input, options).as<ReadableStream>();
 }
 
-jsbind::DOMString Writer::sharedContext() const {
-    return emlite::Val::get("sharedContext").as<jsbind::DOMString>();
+jsbind::String Writer::sharedContext() const {
+    return emlite::Val::get("sharedContext").as<jsbind::String>();
 }
 
 WriterTone Writer::tone() const {
@@ -171,23 +171,23 @@ WriterLength Writer::length() const {
     return emlite::Val::get("length").as<WriterLength>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> Writer::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> Writer::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> Writer::expectedContextLanguages() const {
-    return emlite::Val::get("expectedContextLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> Writer::expectedContextLanguages() const {
+    return emlite::Val::get("expectedContextLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::DOMString Writer::outputLanguage() const {
-    return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+jsbind::String Writer::outputLanguage() const {
+    return emlite::Val::get("outputLanguage").as<jsbind::String>();
 }
 
-jsbind::Promise<double> Writer::measureInputUsage(const jsbind::DOMString& input) {
+jsbind::Promise<double> Writer::measureInputUsage(const jsbind::String& input) {
     return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise<double> Writer::measureInputUsage(const jsbind::DOMString& input, const WriterWriteOptions& options) {
+jsbind::Promise<double> Writer::measureInputUsage(const jsbind::String& input, const WriterWriteOptions& options) {
     return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 

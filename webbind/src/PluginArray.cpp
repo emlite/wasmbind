@@ -22,7 +22,7 @@ Plugin PluginArray::item(unsigned long index) {
     return emlite::Val::call("item", index).as<Plugin>();
 }
 
-Plugin PluginArray::namedItem(const jsbind::DOMString& name) {
+Plugin PluginArray::namedItem(const jsbind::String& name) {
     return emlite::Val::call("namedItem", name).as<Plugin>();
 }
 

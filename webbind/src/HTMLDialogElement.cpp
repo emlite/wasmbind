@@ -19,19 +19,19 @@ void HTMLDialogElement::open(bool value) {
     HTMLElement::set("open", value);
 }
 
-jsbind::DOMString HTMLDialogElement::returnValue() const {
-    return HTMLElement::get("returnValue").as<jsbind::DOMString>();
+jsbind::String HTMLDialogElement::returnValue() const {
+    return HTMLElement::get("returnValue").as<jsbind::String>();
 }
 
-void HTMLDialogElement::returnValue(const jsbind::DOMString& value) {
+void HTMLDialogElement::returnValue(const jsbind::String& value) {
     HTMLElement::set("returnValue", value);
 }
 
-jsbind::DOMString HTMLDialogElement::closedBy() const {
-    return HTMLElement::get("closedBy").as<jsbind::DOMString>();
+jsbind::String HTMLDialogElement::closedBy() const {
+    return HTMLElement::get("closedBy").as<jsbind::String>();
 }
 
-void HTMLDialogElement::closedBy(const jsbind::DOMString& value) {
+void HTMLDialogElement::closedBy(const jsbind::String& value) {
     HTMLElement::set("closedBy", value);
 }
 
@@ -47,7 +47,7 @@ jsbind::Undefined HTMLDialogElement::close() {
     return HTMLElement::call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLDialogElement::close(const jsbind::DOMString& returnValue) {
+jsbind::Undefined HTMLDialogElement::close(const jsbind::String& returnValue) {
     return HTMLElement::call("close", returnValue).as<jsbind::Undefined>();
 }
 
@@ -55,7 +55,7 @@ jsbind::Undefined HTMLDialogElement::requestClose() {
     return HTMLElement::call("requestClose").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLDialogElement::requestClose(const jsbind::DOMString& returnValue) {
+jsbind::Undefined HTMLDialogElement::requestClose(const jsbind::String& returnValue) {
     return HTMLElement::call("requestClose", returnValue).as<jsbind::Undefined>();
 }
 

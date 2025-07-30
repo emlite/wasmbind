@@ -10,11 +10,11 @@ CSSPageRule::CSSPageRule(Handle h) noexcept : CSSGroupingRule(emlite::Val::take_
 CSSPageRule::CSSPageRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 
-jsbind::CSSOMString CSSPageRule::selectorText() const {
-    return CSSGroupingRule::get("selectorText").as<jsbind::CSSOMString>();
+jsbind::String CSSPageRule::selectorText() const {
+    return CSSGroupingRule::get("selectorText").as<jsbind::String>();
 }
 
-void CSSPageRule::selectorText(const jsbind::CSSOMString& value) {
+void CSSPageRule::selectorText(const jsbind::String& value) {
     CSSGroupingRule::set("selectorText", value);
 }
 

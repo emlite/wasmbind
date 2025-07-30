@@ -16,10 +16,10 @@ public:
     explicit HIDDeviceRequestOptions(const emlite::Val &val) noexcept;
     HIDDeviceRequestOptions() noexcept;
     HIDDeviceRequestOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> filters() const;
-    void filters(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::Sequence<jsbind::Any> exclusionFilters() const;
-    void exclusionFilters(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> filters() const;
+    void filters(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> exclusionFilters() const;
+    void exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class HID : public EventTarget {
@@ -34,7 +34,7 @@ public:
     void onconnect(const jsbind::Any& value);
     jsbind::Any ondisconnect() const;
     void ondisconnect(const jsbind::Any& value);
-    jsbind::Promise<jsbind::Sequence<HIDDevice>> getDevices();
-    jsbind::Promise<jsbind::Sequence<HIDDevice>> requestDevice(const HIDDeviceRequestOptions& options);
+    jsbind::Promise<jsbind::TypedArray<HIDDevice>> getDevices();
+    jsbind::Promise<jsbind::TypedArray<HIDDevice>> requestDevice(const HIDDeviceRequestOptions& options);
 };
 

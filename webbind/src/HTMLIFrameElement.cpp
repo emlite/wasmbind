@@ -14,11 +14,11 @@ HTMLIFrameElement::HTMLIFrameElement(const emlite::Val &val) noexcept: HTMLEleme
 
 HTMLIFrameElement::HTMLIFrameElement() : HTMLElement(emlite::Val::global("HTMLIFrameElement").new_()) {}
 
-jsbind::USVString HTMLIFrameElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLIFrameElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::src(const jsbind::USVString& value) {
+void HTMLIFrameElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
@@ -30,11 +30,11 @@ void HTMLIFrameElement::srcdoc(const jsbind::Any& value) {
     HTMLElement::set("srcdoc", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::name(const jsbind::DOMString& value) {
+void HTMLIFrameElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
@@ -42,11 +42,11 @@ DOMTokenList HTMLIFrameElement::sandbox() const {
     return HTMLElement::get("sandbox").as<DOMTokenList>();
 }
 
-jsbind::DOMString HTMLIFrameElement::allow() const {
-    return HTMLElement::get("allow").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::allow() const {
+    return HTMLElement::get("allow").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::allow(const jsbind::DOMString& value) {
+void HTMLIFrameElement::allow(const jsbind::String& value) {
     HTMLElement::set("allow", value);
 }
 
@@ -58,35 +58,35 @@ void HTMLIFrameElement::allowFullscreen(bool value) {
     HTMLElement::set("allowFullscreen", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::width() const {
-    return HTMLElement::get("width").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::width() const {
+    return HTMLElement::get("width").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::width(const jsbind::DOMString& value) {
+void HTMLIFrameElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::height() const {
-    return HTMLElement::get("height").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::height() const {
+    return HTMLElement::get("height").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::height(const jsbind::DOMString& value) {
+void HTMLIFrameElement::height(const jsbind::String& value) {
     HTMLElement::set("height", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::referrerPolicy() const {
-    return HTMLElement::get("referrerPolicy").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::referrerPolicy() const {
+    return HTMLElement::get("referrerPolicy").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::referrerPolicy(const jsbind::DOMString& value) {
+void HTMLIFrameElement::referrerPolicy(const jsbind::String& value) {
     HTMLElement::set("referrerPolicy", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::loading() const {
-    return HTMLElement::get("loading").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::loading() const {
+    return HTMLElement::get("loading").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::loading(const jsbind::DOMString& value) {
+void HTMLIFrameElement::loading(const jsbind::String& value) {
     HTMLElement::set("loading", value);
 }
 
@@ -110,59 +110,59 @@ void HTMLIFrameElement::credentialless(bool value) {
     HTMLElement::set("credentialless", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::csp() const {
-    return HTMLElement::get("csp").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::csp() const {
+    return HTMLElement::get("csp").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::csp(const jsbind::DOMString& value) {
+void HTMLIFrameElement::csp(const jsbind::String& value) {
     HTMLElement::set("csp", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::align(const jsbind::DOMString& value) {
+void HTMLIFrameElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::scrolling() const {
-    return HTMLElement::get("scrolling").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::scrolling() const {
+    return HTMLElement::get("scrolling").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::scrolling(const jsbind::DOMString& value) {
+void HTMLIFrameElement::scrolling(const jsbind::String& value) {
     HTMLElement::set("scrolling", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::frameBorder() const {
-    return HTMLElement::get("frameBorder").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::frameBorder() const {
+    return HTMLElement::get("frameBorder").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::frameBorder(const jsbind::DOMString& value) {
+void HTMLIFrameElement::frameBorder(const jsbind::String& value) {
     HTMLElement::set("frameBorder", value);
 }
 
-jsbind::USVString HTMLIFrameElement::longDesc() const {
-    return HTMLElement::get("longDesc").as<jsbind::USVString>();
+jsbind::String HTMLIFrameElement::longDesc() const {
+    return HTMLElement::get("longDesc").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::longDesc(const jsbind::USVString& value) {
+void HTMLIFrameElement::longDesc(const jsbind::String& value) {
     HTMLElement::set("longDesc", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::marginHeight() const {
-    return HTMLElement::get("marginHeight").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::marginHeight() const {
+    return HTMLElement::get("marginHeight").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::marginHeight(const jsbind::DOMString& value) {
+void HTMLIFrameElement::marginHeight(const jsbind::String& value) {
     HTMLElement::set("marginHeight", value);
 }
 
-jsbind::DOMString HTMLIFrameElement::marginWidth() const {
-    return HTMLElement::get("marginWidth").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::marginWidth() const {
+    return HTMLElement::get("marginWidth").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::marginWidth(const jsbind::DOMString& value) {
+void HTMLIFrameElement::marginWidth(const jsbind::String& value) {
     HTMLElement::set("marginWidth", value);
 }
 
@@ -170,11 +170,11 @@ PermissionsPolicy HTMLIFrameElement::permissionsPolicy() const {
     return HTMLElement::get("permissionsPolicy").as<PermissionsPolicy>();
 }
 
-jsbind::DOMString HTMLIFrameElement::privateToken() const {
-    return HTMLElement::get("privateToken").as<jsbind::DOMString>();
+jsbind::String HTMLIFrameElement::privateToken() const {
+    return HTMLElement::get("privateToken").as<jsbind::String>();
 }
 
-void HTMLIFrameElement::privateToken(const jsbind::DOMString& value) {
+void HTMLIFrameElement::privateToken(const jsbind::String& value) {
     HTMLElement::set("privateToken", value);
 }
 

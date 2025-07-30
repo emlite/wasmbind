@@ -11,11 +11,11 @@ HTMLTimeElement::HTMLTimeElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLTimeElement::HTMLTimeElement() : HTMLElement(emlite::Val::global("HTMLTimeElement").new_()) {}
 
-jsbind::DOMString HTMLTimeElement::dateTime() const {
-    return HTMLElement::get("dateTime").as<jsbind::DOMString>();
+jsbind::String HTMLTimeElement::dateTime() const {
+    return HTMLElement::get("dateTime").as<jsbind::String>();
 }
 
-void HTMLTimeElement::dateTime(const jsbind::DOMString& value) {
+void HTMLTimeElement::dateTime(const jsbind::String& value) {
     HTMLElement::set("dateTime", value);
 }
 

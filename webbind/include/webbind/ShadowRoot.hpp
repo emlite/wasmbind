@@ -27,10 +27,10 @@ public:
     jsbind::Any onslotchange() const;
     void onslotchange(const jsbind::Any& value);
     jsbind::Undefined setHTMLUnsafe(const jsbind::Any& html);
-    jsbind::DOMString getHTML();
-    jsbind::DOMString getHTML(const GetHTMLOptions& options);
+    jsbind::String getHTML();
+    jsbind::String getHTML(const GetHTMLOptions& options);
     jsbind::Any innerHTML() const;
     void innerHTML(const jsbind::Any& value);
-    jsbind::Sequence<Animation> getAnimations();
+    jsbind::TypedArray<Animation> getAnimations();
 };
 

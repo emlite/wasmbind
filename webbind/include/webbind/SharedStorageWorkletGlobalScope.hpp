@@ -22,10 +22,10 @@ public:
     void joinCount(long long value);
     long long bidCount() const;
     void bidCount(long long value);
-    jsbind::Sequence<jsbind::Any> prevWinsMs() const;
-    void prevWinsMs(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::USVString joiningOrigin() const;
-    void joiningOrigin(const jsbind::USVString& value);
+    jsbind::TypedArray<jsbind::Any> prevWinsMs() const;
+    void prevWinsMs(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::String joiningOrigin() const;
+    void joiningOrigin(const jsbind::String& value);
     long long timeSinceGroupJoinedMs() const;
     void timeSinceGroupJoinedMs(long long value);
     long long lifetimeRemainingMs() const;
@@ -46,10 +46,10 @@ public:
     static SharedStorageWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     SharedStorageWorkletGlobalScope clone() const noexcept;
-    jsbind::Undefined register_(const jsbind::DOMString& name, const jsbind::Function& operationCtor);
+    jsbind::Undefined register_(const jsbind::String& name, const jsbind::Function& operationCtor);
     SharedStorage sharedStorage() const;
     PrivateAggregation privateAggregation() const;
-    jsbind::Promise<jsbind::Sequence<StorageInterestGroup>> interestGroups();
+    jsbind::Promise<jsbind::TypedArray<StorageInterestGroup>> interestGroups();
     SharedStorageWorkletNavigator navigator() const;
 };
 

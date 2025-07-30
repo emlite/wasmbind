@@ -17,14 +17,14 @@ public:
 
     HTMLTrackElement clone() const noexcept;
     HTMLTrackElement();
-    jsbind::DOMString kind() const;
-    void kind(const jsbind::DOMString& value);
-    jsbind::USVString src() const;
-    void src(const jsbind::USVString& value);
-    jsbind::DOMString srclang() const;
-    void srclang(const jsbind::DOMString& value);
-    jsbind::DOMString label() const;
-    void label(const jsbind::DOMString& value);
+    jsbind::String kind() const;
+    void kind(const jsbind::String& value);
+    jsbind::String src() const;
+    void src(const jsbind::String& value);
+    jsbind::String srclang() const;
+    void srclang(const jsbind::String& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
     bool default_() const;
     void default_(bool value);
     unsigned short readyState() const;

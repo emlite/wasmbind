@@ -9,7 +9,7 @@ ProtectedAudience::ProtectedAudience(Handle h) noexcept : emlite::Val(emlite::Va
 ProtectedAudience::ProtectedAudience(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Any ProtectedAudience::queryFeatureSupport(const jsbind::DOMString& feature) {
+jsbind::Any ProtectedAudience::queryFeatureSupport(const jsbind::String& feature) {
     return emlite::Val::call("queryFeatureSupport", feature).as<jsbind::Any>();
 }
 

@@ -17,12 +17,12 @@ public:
     static MediaStream take_ownership(Handle h) noexcept;
 
     MediaStream clone() const noexcept;
-    MediaStream(const jsbind::Sequence<MediaStreamTrack>& tracks);
-    jsbind::DOMString id() const;
-    jsbind::Sequence<MediaStreamTrack> getAudioTracks();
-    jsbind::Sequence<MediaStreamTrack> getVideoTracks();
-    jsbind::Sequence<MediaStreamTrack> getTracks();
-    MediaStreamTrack getTrackById(const jsbind::DOMString& trackId);
+    MediaStream(const jsbind::TypedArray<MediaStreamTrack>& tracks);
+    jsbind::String id() const;
+    jsbind::TypedArray<MediaStreamTrack> getAudioTracks();
+    jsbind::TypedArray<MediaStreamTrack> getVideoTracks();
+    jsbind::TypedArray<MediaStreamTrack> getTracks();
+    MediaStreamTrack getTrackById(const jsbind::String& trackId);
     jsbind::Undefined addTrack(const MediaStreamTrack& track);
     jsbind::Undefined removeTrack(const MediaStreamTrack& track);
     MediaStream clone();

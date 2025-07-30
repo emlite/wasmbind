@@ -10,9 +10,9 @@ PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(Handle h) noexcept : Event(
 PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("PaymentRequestUpdateEvent").new_(type)) {}
+PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(const jsbind::String& type) : Event(emlite::Val::global("PaymentRequestUpdateEvent").new_(type)) {}
 
-PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PaymentRequestUpdateEvent").new_(type, eventInitDict)) {}
+PaymentRequestUpdateEvent::PaymentRequestUpdateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PaymentRequestUpdateEvent").new_(type, eventInitDict)) {}
 
 jsbind::Undefined PaymentRequestUpdateEvent::updateWith(const jsbind::Promise<PaymentDetailsUpdate>& detailsPromise) {
     return Event::call("updateWith", detailsPromise).as<jsbind::Undefined>();

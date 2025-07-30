@@ -10,11 +10,11 @@ CSSRule::CSSRule(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)
 CSSRule::CSSRule(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::CSSOMString CSSRule::cssText() const {
-    return emlite::Val::get("cssText").as<jsbind::CSSOMString>();
+jsbind::String CSSRule::cssText() const {
+    return emlite::Val::get("cssText").as<jsbind::String>();
 }
 
-void CSSRule::cssText(const jsbind::CSSOMString& value) {
+void CSSRule::cssText(const jsbind::String& value) {
     emlite::Val::set("cssText", value);
 }
 

@@ -13,8 +13,8 @@ public:
     static SVGAnimatedString take_ownership(Handle h) noexcept;
 
     SVGAnimatedString clone() const noexcept;
-    jsbind::DOMString baseVal() const;
-    void baseVal(const jsbind::DOMString& value);
-    jsbind::DOMString animVal() const;
+    jsbind::String baseVal() const;
+    void baseVal(const jsbind::String& value);
+    jsbind::String animVal() const;
 };
 

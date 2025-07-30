@@ -12,35 +12,35 @@ HTMLEmbedElement::HTMLEmbedElement(const emlite::Val &val) noexcept: HTMLElement
 
 HTMLEmbedElement::HTMLEmbedElement() : HTMLElement(emlite::Val::global("HTMLEmbedElement").new_()) {}
 
-jsbind::USVString HTMLEmbedElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLEmbedElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLEmbedElement::src(const jsbind::USVString& value) {
+void HTMLEmbedElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
-jsbind::DOMString HTMLEmbedElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLEmbedElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLEmbedElement::type(const jsbind::DOMString& value) {
+void HTMLEmbedElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 
-jsbind::DOMString HTMLEmbedElement::width() const {
-    return HTMLElement::get("width").as<jsbind::DOMString>();
+jsbind::String HTMLEmbedElement::width() const {
+    return HTMLElement::get("width").as<jsbind::String>();
 }
 
-void HTMLEmbedElement::width(const jsbind::DOMString& value) {
+void HTMLEmbedElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 
-jsbind::DOMString HTMLEmbedElement::height() const {
-    return HTMLElement::get("height").as<jsbind::DOMString>();
+jsbind::String HTMLEmbedElement::height() const {
+    return HTMLElement::get("height").as<jsbind::String>();
 }
 
-void HTMLEmbedElement::height(const jsbind::DOMString& value) {
+void HTMLEmbedElement::height(const jsbind::String& value) {
     HTMLElement::set("height", value);
 }
 
@@ -48,19 +48,19 @@ Document HTMLEmbedElement::getSVGDocument() {
     return HTMLElement::call("getSVGDocument").as<Document>();
 }
 
-jsbind::DOMString HTMLEmbedElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLEmbedElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLEmbedElement::align(const jsbind::DOMString& value) {
+void HTMLEmbedElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
-jsbind::DOMString HTMLEmbedElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLEmbedElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLEmbedElement::name(const jsbind::DOMString& value) {
+void HTMLEmbedElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 

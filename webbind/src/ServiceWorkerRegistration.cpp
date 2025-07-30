@@ -27,51 +27,51 @@ void NotificationOptions::dir(const NotificationDirection& value) {
     emlite::Val::set("dir", value);
 }
 
-jsbind::DOMString NotificationOptions::lang() const {
-    return emlite::Val::get("lang").as<jsbind::DOMString>();
+jsbind::String NotificationOptions::lang() const {
+    return emlite::Val::get("lang").as<jsbind::String>();
 }
 
-void NotificationOptions::lang(const jsbind::DOMString& value) {
+void NotificationOptions::lang(const jsbind::String& value) {
     emlite::Val::set("lang", value);
 }
 
-jsbind::DOMString NotificationOptions::body() const {
-    return emlite::Val::get("body").as<jsbind::DOMString>();
+jsbind::String NotificationOptions::body() const {
+    return emlite::Val::get("body").as<jsbind::String>();
 }
 
-void NotificationOptions::body(const jsbind::DOMString& value) {
+void NotificationOptions::body(const jsbind::String& value) {
     emlite::Val::set("body", value);
 }
 
-jsbind::DOMString NotificationOptions::tag() const {
-    return emlite::Val::get("tag").as<jsbind::DOMString>();
+jsbind::String NotificationOptions::tag() const {
+    return emlite::Val::get("tag").as<jsbind::String>();
 }
 
-void NotificationOptions::tag(const jsbind::DOMString& value) {
+void NotificationOptions::tag(const jsbind::String& value) {
     emlite::Val::set("tag", value);
 }
 
-jsbind::USVString NotificationOptions::image() const {
-    return emlite::Val::get("image").as<jsbind::USVString>();
+jsbind::String NotificationOptions::image() const {
+    return emlite::Val::get("image").as<jsbind::String>();
 }
 
-void NotificationOptions::image(const jsbind::USVString& value) {
+void NotificationOptions::image(const jsbind::String& value) {
     emlite::Val::set("image", value);
 }
 
-jsbind::USVString NotificationOptions::icon() const {
-    return emlite::Val::get("icon").as<jsbind::USVString>();
+jsbind::String NotificationOptions::icon() const {
+    return emlite::Val::get("icon").as<jsbind::String>();
 }
 
-void NotificationOptions::icon(const jsbind::USVString& value) {
+void NotificationOptions::icon(const jsbind::String& value) {
     emlite::Val::set("icon", value);
 }
 
-jsbind::USVString NotificationOptions::badge() const {
-    return emlite::Val::get("badge").as<jsbind::USVString>();
+jsbind::String NotificationOptions::badge() const {
+    return emlite::Val::get("badge").as<jsbind::String>();
 }
 
-void NotificationOptions::badge(const jsbind::USVString& value) {
+void NotificationOptions::badge(const jsbind::String& value) {
     emlite::Val::set("badge", value);
 }
 
@@ -123,11 +123,11 @@ void NotificationOptions::data(const jsbind::Any& value) {
     emlite::Val::set("data", value);
 }
 
-jsbind::Sequence<NotificationAction> NotificationOptions::actions() const {
-    return emlite::Val::get("actions").as<jsbind::Sequence<NotificationAction>>();
+jsbind::TypedArray<NotificationAction> NotificationOptions::actions() const {
+    return emlite::Val::get("actions").as<jsbind::TypedArray<NotificationAction>>();
 }
 
-void NotificationOptions::actions(const jsbind::Sequence<NotificationAction>& value) {
+void NotificationOptions::actions(const jsbind::TypedArray<NotificationAction>& value) {
     emlite::Val::set("actions", value);
 }
 
@@ -139,11 +139,11 @@ GetNotificationOptions::GetNotificationOptions(const emlite::Val &val) noexcept:
 GetNotificationOptions::GetNotificationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 GetNotificationOptions GetNotificationOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString GetNotificationOptions::tag() const {
-    return emlite::Val::get("tag").as<jsbind::DOMString>();
+jsbind::String GetNotificationOptions::tag() const {
+    return emlite::Val::get("tag").as<jsbind::String>();
 }
 
-void GetNotificationOptions::tag(const jsbind::DOMString& value) {
+void GetNotificationOptions::tag(const jsbind::String& value) {
     emlite::Val::set("tag", value);
 }
 
@@ -171,8 +171,8 @@ NavigationPreloadManager ServiceWorkerRegistration::navigationPreload() const {
     return EventTarget::get("navigationPreload").as<NavigationPreloadManager>();
 }
 
-jsbind::USVString ServiceWorkerRegistration::scope() const {
-    return EventTarget::get("scope").as<jsbind::USVString>();
+jsbind::String ServiceWorkerRegistration::scope() const {
+    return EventTarget::get("scope").as<jsbind::String>();
 }
 
 ServiceWorkerUpdateViaCache ServiceWorkerRegistration::updateViaCache() const {
@@ -211,20 +211,20 @@ CookieStoreManager ServiceWorkerRegistration::cookies() const {
     return EventTarget::get("cookies").as<CookieStoreManager>();
 }
 
-jsbind::Promise<jsbind::Undefined> ServiceWorkerRegistration::showNotification(const jsbind::DOMString& title) {
+jsbind::Promise<jsbind::Undefined> ServiceWorkerRegistration::showNotification(const jsbind::String& title) {
     return EventTarget::call("showNotification", title).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> ServiceWorkerRegistration::showNotification(const jsbind::DOMString& title, const NotificationOptions& options) {
+jsbind::Promise<jsbind::Undefined> ServiceWorkerRegistration::showNotification(const jsbind::String& title, const NotificationOptions& options) {
     return EventTarget::call("showNotification", title, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Sequence<Notification>> ServiceWorkerRegistration::getNotifications() {
-    return EventTarget::call("getNotifications").as<jsbind::Promise<jsbind::Sequence<Notification>>>();
+jsbind::Promise<jsbind::TypedArray<Notification>> ServiceWorkerRegistration::getNotifications() {
+    return EventTarget::call("getNotifications").as<jsbind::Promise<jsbind::TypedArray<Notification>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<Notification>> ServiceWorkerRegistration::getNotifications(const GetNotificationOptions& filter) {
-    return EventTarget::call("getNotifications", filter).as<jsbind::Promise<jsbind::Sequence<Notification>>>();
+jsbind::Promise<jsbind::TypedArray<Notification>> ServiceWorkerRegistration::getNotifications(const GetNotificationOptions& filter) {
+    return EventTarget::call("getNotifications", filter).as<jsbind::Promise<jsbind::TypedArray<Notification>>>();
 }
 
 PaymentManager ServiceWorkerRegistration::paymentManager() const {

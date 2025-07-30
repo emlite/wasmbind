@@ -34,8 +34,8 @@ public:
     float getTotalLength();
     DOMPoint getPointAtLength(float distance);
     SVGPathSegment getPathSegmentAtLength(float distance);
-    jsbind::Sequence<SVGPathSegment> getPathData();
-    jsbind::Sequence<SVGPathSegment> getPathData(const SVGPathDataSettings& settings);
-    jsbind::Undefined setPathData(const jsbind::Sequence<SVGPathSegment>& pathData);
+    jsbind::TypedArray<SVGPathSegment> getPathData();
+    jsbind::TypedArray<SVGPathSegment> getPathData(const SVGPathDataSettings& settings);
+    jsbind::Undefined setPathData(const jsbind::TypedArray<SVGPathSegment>& pathData);
 };
 

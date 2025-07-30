@@ -14,5 +14,5 @@ RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker) : emlite::Val
 
 RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options) : emlite::Val(emlite::Val::global("RTCRtpScriptTransform").new_(worker, options)) {}
 
-RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options, const jsbind::Sequence<jsbind::Object>& transfer) : emlite::Val(emlite::Val::global("RTCRtpScriptTransform").new_(worker, options, transfer)) {}
+RTCRtpScriptTransform::RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options, const jsbind::TypedArray<jsbind::Object>& transfer) : emlite::Val(emlite::Val::global("RTCRtpScriptTransform").new_(worker, options, transfer)) {}
 

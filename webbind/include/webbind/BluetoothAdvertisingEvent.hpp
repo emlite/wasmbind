@@ -18,10 +18,10 @@ public:
     static BluetoothAdvertisingEvent take_ownership(Handle h) noexcept;
 
     BluetoothAdvertisingEvent clone() const noexcept;
-    BluetoothAdvertisingEvent(const jsbind::DOMString& type, const jsbind::Any& init);
+    BluetoothAdvertisingEvent(const jsbind::String& type, const jsbind::Any& init);
     BluetoothDevice device() const;
-    jsbind::FrozenArray<jsbind::Any> uuids() const;
-    jsbind::DOMString name() const;
+    jsbind::TypedArray<jsbind::Any> uuids() const;
+    jsbind::String name() const;
     unsigned short appearance() const;
     char txPower() const;
     char rssi() const;

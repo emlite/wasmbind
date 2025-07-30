@@ -17,10 +17,10 @@ public:
     DetectedText clone() const noexcept;
     DOMRectReadOnly boundingBox() const;
     void boundingBox(const DOMRectReadOnly& value);
-    jsbind::DOMString rawValue() const;
-    void rawValue(const jsbind::DOMString& value);
-    jsbind::Sequence<jsbind::Any> cornerPoints() const;
-    void cornerPoints(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::String rawValue() const;
+    void rawValue(const jsbind::String& value);
+    jsbind::TypedArray<jsbind::Any> cornerPoints() const;
+    void cornerPoints(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class TextDetector : public emlite::Val {
@@ -32,6 +32,6 @@ public:
 
     TextDetector clone() const noexcept;
     TextDetector();
-    jsbind::Promise<jsbind::Sequence<DetectedText>> detect(const jsbind::Any& image);
+    jsbind::Promise<jsbind::TypedArray<DetectedText>> detect(const jsbind::Any& image);
 };
 

@@ -16,8 +16,8 @@ public:
     explicit InkTrailStyle(const emlite::Val &val) noexcept;
     InkTrailStyle() noexcept;
     InkTrailStyle clone() const noexcept;
-    jsbind::DOMString color() const;
-    void color(const jsbind::DOMString& value);
+    jsbind::String color() const;
+    void color(const jsbind::String& value);
     double diameter() const;
     void diameter(double value);
 };

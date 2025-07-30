@@ -16,7 +16,7 @@ public:
     static OfflineAudioCompletionEvent take_ownership(Handle h) noexcept;
 
     OfflineAudioCompletionEvent clone() const noexcept;
-    OfflineAudioCompletionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    OfflineAudioCompletionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     AudioBuffer renderedBuffer() const;
 };
 

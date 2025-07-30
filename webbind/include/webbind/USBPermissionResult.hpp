@@ -16,7 +16,7 @@ public:
     static USBPermissionResult take_ownership(Handle h) noexcept;
 
     USBPermissionResult clone() const noexcept;
-    jsbind::FrozenArray<USBDevice> devices() const;
-    void devices(const jsbind::FrozenArray<USBDevice>& value);
+    jsbind::TypedArray<USBDevice> devices() const;
+    void devices(const jsbind::TypedArray<USBDevice>& value);
 };
 

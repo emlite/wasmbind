@@ -9,20 +9,20 @@ MediaDeviceInfo::MediaDeviceInfo(Handle h) noexcept : emlite::Val(emlite::Val::t
 MediaDeviceInfo::MediaDeviceInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString MediaDeviceInfo::deviceId() const {
-    return emlite::Val::get("deviceId").as<jsbind::DOMString>();
+jsbind::String MediaDeviceInfo::deviceId() const {
+    return emlite::Val::get("deviceId").as<jsbind::String>();
 }
 
 MediaDeviceKind MediaDeviceInfo::kind() const {
     return emlite::Val::get("kind").as<MediaDeviceKind>();
 }
 
-jsbind::DOMString MediaDeviceInfo::label() const {
-    return emlite::Val::get("label").as<jsbind::DOMString>();
+jsbind::String MediaDeviceInfo::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-jsbind::DOMString MediaDeviceInfo::groupId() const {
-    return emlite::Val::get("groupId").as<jsbind::DOMString>();
+jsbind::String MediaDeviceInfo::groupId() const {
+    return emlite::Val::get("groupId").as<jsbind::String>();
 }
 
 jsbind::Object MediaDeviceInfo::toJSON() {

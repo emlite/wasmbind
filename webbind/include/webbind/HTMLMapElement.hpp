@@ -17,8 +17,8 @@ public:
 
     HTMLMapElement clone() const noexcept;
     HTMLMapElement();
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
     HTMLCollection areas() const;
 };
 

@@ -11,13 +11,13 @@ PresentationRequest::PresentationRequest(Handle h) noexcept : EventTarget(emlite
 PresentationRequest::PresentationRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-PresentationRequest::PresentationRequest(const jsbind::Sequence<jsbind::USVString>& urls) : EventTarget(emlite::Val::global("PresentationRequest").new_(urls)) {}
+PresentationRequest::PresentationRequest(const jsbind::TypedArray<jsbind::String>& urls) : EventTarget(emlite::Val::global("PresentationRequest").new_(urls)) {}
 
 jsbind::Promise<PresentationConnection> PresentationRequest::start() {
     return EventTarget::call("start").as<jsbind::Promise<PresentationConnection>>();
 }
 
-jsbind::Promise<PresentationConnection> PresentationRequest::reconnect(const jsbind::USVString& presentationId) {
+jsbind::Promise<PresentationConnection> PresentationRequest::reconnect(const jsbind::String& presentationId) {
     return EventTarget::call("reconnect", presentationId).as<jsbind::Promise<PresentationConnection>>();
 }
 

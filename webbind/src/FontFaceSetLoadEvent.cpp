@@ -10,11 +10,11 @@ FontFaceSetLoadEvent::FontFaceSetLoadEvent(Handle h) noexcept : Event(emlite::Va
 FontFaceSetLoadEvent::FontFaceSetLoadEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-FontFaceSetLoadEvent::FontFaceSetLoadEvent(const jsbind::CSSOMString& type) : Event(emlite::Val::global("FontFaceSetLoadEvent").new_(type)) {}
+FontFaceSetLoadEvent::FontFaceSetLoadEvent(const jsbind::String& type) : Event(emlite::Val::global("FontFaceSetLoadEvent").new_(type)) {}
 
-FontFaceSetLoadEvent::FontFaceSetLoadEvent(const jsbind::CSSOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("FontFaceSetLoadEvent").new_(type, eventInitDict)) {}
+FontFaceSetLoadEvent::FontFaceSetLoadEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("FontFaceSetLoadEvent").new_(type, eventInitDict)) {}
 
-jsbind::FrozenArray<FontFace> FontFaceSetLoadEvent::fontfaces() const {
-    return Event::get("fontfaces").as<jsbind::FrozenArray<FontFace>>();
+jsbind::TypedArray<FontFace> FontFaceSetLoadEvent::fontfaces() const {
+    return Event::get("fontfaces").as<jsbind::TypedArray<FontFace>>();
 }
 

@@ -13,15 +13,15 @@ jsbind::Object DigitalCredential::toJSON() {
     return Credential::call("toJSON").as<jsbind::Object>();
 }
 
-jsbind::DOMString DigitalCredential::protocol() const {
-    return Credential::get("protocol").as<jsbind::DOMString>();
+jsbind::String DigitalCredential::protocol() const {
+    return Credential::get("protocol").as<jsbind::String>();
 }
 
 jsbind::Object DigitalCredential::data() const {
     return Credential::get("data").as<jsbind::Object>();
 }
 
-bool DigitalCredential::userAgentAllowsProtocol(const jsbind::DOMString& protocol) {
+bool DigitalCredential::userAgentAllowsProtocol(const jsbind::String& protocol) {
     return emlite::Val::global("digitalcredential").call("userAgentAllowsProtocol", protocol).as<bool>();
 }
 

@@ -32,12 +32,12 @@ unsigned short Node::nodeType() const {
     return EventTarget::get("nodeType").as<unsigned short>();
 }
 
-jsbind::DOMString Node::nodeName() const {
-    return EventTarget::get("nodeName").as<jsbind::DOMString>();
+jsbind::String Node::nodeName() const {
+    return EventTarget::get("nodeName").as<jsbind::String>();
 }
 
-jsbind::USVString Node::baseURI() const {
-    return EventTarget::get("baseURI").as<jsbind::USVString>();
+jsbind::String Node::baseURI() const {
+    return EventTarget::get("baseURI").as<jsbind::String>();
 }
 
 bool Node::isConnected() const {
@@ -88,19 +88,19 @@ Node Node::nextSibling() const {
     return EventTarget::get("nextSibling").as<Node>();
 }
 
-jsbind::DOMString Node::nodeValue() const {
-    return EventTarget::get("nodeValue").as<jsbind::DOMString>();
+jsbind::String Node::nodeValue() const {
+    return EventTarget::get("nodeValue").as<jsbind::String>();
 }
 
-void Node::nodeValue(const jsbind::DOMString& value) {
+void Node::nodeValue(const jsbind::String& value) {
     EventTarget::set("nodeValue", value);
 }
 
-jsbind::DOMString Node::textContent() const {
-    return EventTarget::get("textContent").as<jsbind::DOMString>();
+jsbind::String Node::textContent() const {
+    return EventTarget::get("textContent").as<jsbind::String>();
 }
 
-void Node::textContent(const jsbind::DOMString& value) {
+void Node::textContent(const jsbind::String& value) {
     EventTarget::set("textContent", value);
 }
 
@@ -132,15 +132,15 @@ bool Node::contains(const Node& other) {
     return EventTarget::call("contains", other).as<bool>();
 }
 
-jsbind::DOMString Node::lookupPrefix(const jsbind::DOMString& namespace_) {
-    return EventTarget::call("lookupPrefix", namespace_).as<jsbind::DOMString>();
+jsbind::String Node::lookupPrefix(const jsbind::String& namespace_) {
+    return EventTarget::call("lookupPrefix", namespace_).as<jsbind::String>();
 }
 
-jsbind::DOMString Node::lookupNamespaceURI(const jsbind::DOMString& prefix) {
-    return EventTarget::call("lookupNamespaceURI", prefix).as<jsbind::DOMString>();
+jsbind::String Node::lookupNamespaceURI(const jsbind::String& prefix) {
+    return EventTarget::call("lookupNamespaceURI", prefix).as<jsbind::String>();
 }
 
-bool Node::isDefaultNamespace(const jsbind::DOMString& namespace_) {
+bool Node::isDefaultNamespace(const jsbind::String& namespace_) {
     return EventTarget::call("isDefaultNamespace", namespace_).as<bool>();
 }
 

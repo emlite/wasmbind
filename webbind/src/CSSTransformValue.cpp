@@ -11,7 +11,7 @@ CSSTransformValue::CSSTransformValue(Handle h) noexcept : CSSStyleValue(emlite::
 CSSTransformValue::CSSTransformValue(const emlite::Val &val) noexcept: CSSStyleValue(val) {}
 
 
-CSSTransformValue::CSSTransformValue(const jsbind::Sequence<CSSTransformComponent>& transforms) : CSSStyleValue(emlite::Val::global("CSSTransformValue").new_(transforms)) {}
+CSSTransformValue::CSSTransformValue(const jsbind::TypedArray<CSSTransformComponent>& transforms) : CSSStyleValue(emlite::Val::global("CSSTransformValue").new_(transforms)) {}
 
 unsigned long CSSTransformValue::length() const {
     return CSSStyleValue::get("length").as<unsigned long>();

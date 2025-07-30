@@ -9,9 +9,9 @@ AnimationPlaybackEvent::AnimationPlaybackEvent(Handle h) noexcept : Event(emlite
 AnimationPlaybackEvent::AnimationPlaybackEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-AnimationPlaybackEvent::AnimationPlaybackEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("AnimationPlaybackEvent").new_(type)) {}
+AnimationPlaybackEvent::AnimationPlaybackEvent(const jsbind::String& type) : Event(emlite::Val::global("AnimationPlaybackEvent").new_(type)) {}
 
-AnimationPlaybackEvent::AnimationPlaybackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("AnimationPlaybackEvent").new_(type, eventInitDict)) {}
+AnimationPlaybackEvent::AnimationPlaybackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("AnimationPlaybackEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any AnimationPlaybackEvent::currentTime() const {
     return Event::get("currentTime").as<jsbind::Any>();

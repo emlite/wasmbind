@@ -9,11 +9,11 @@ CSSStyleValue::CSSStyleValue(Handle h) noexcept : emlite::Val(emlite::Val::take_
 CSSStyleValue::CSSStyleValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-CSSStyleValue CSSStyleValue::parse(const jsbind::USVString& property, const jsbind::USVString& cssText) {
+CSSStyleValue CSSStyleValue::parse(const jsbind::String& property, const jsbind::String& cssText) {
     return emlite::Val::global("cssstylevalue").call("parse", property, cssText).as<CSSStyleValue>();
 }
 
-jsbind::Sequence<CSSStyleValue> CSSStyleValue::parseAll(const jsbind::USVString& property, const jsbind::USVString& cssText) {
-    return emlite::Val::global("cssstylevalue").call("parseAll", property, cssText).as<jsbind::Sequence<CSSStyleValue>>();
+jsbind::TypedArray<CSSStyleValue> CSSStyleValue::parseAll(const jsbind::String& property, const jsbind::String& cssText) {
+    return emlite::Val::global("cssstylevalue").call("parseAll", property, cssText).as<jsbind::TypedArray<CSSStyleValue>>();
 }
 

@@ -9,11 +9,11 @@ KeyFrameRequestEvent::KeyFrameRequestEvent(Handle h) noexcept : Event(emlite::Va
 KeyFrameRequestEvent::KeyFrameRequestEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-KeyFrameRequestEvent::KeyFrameRequestEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("KeyFrameRequestEvent").new_(type)) {}
+KeyFrameRequestEvent::KeyFrameRequestEvent(const jsbind::String& type) : Event(emlite::Val::global("KeyFrameRequestEvent").new_(type)) {}
 
-KeyFrameRequestEvent::KeyFrameRequestEvent(const jsbind::DOMString& type, const jsbind::DOMString& rid) : Event(emlite::Val::global("KeyFrameRequestEvent").new_(type, rid)) {}
+KeyFrameRequestEvent::KeyFrameRequestEvent(const jsbind::String& type, const jsbind::String& rid) : Event(emlite::Val::global("KeyFrameRequestEvent").new_(type, rid)) {}
 
-jsbind::DOMString KeyFrameRequestEvent::rid() const {
-    return Event::get("rid").as<jsbind::DOMString>();
+jsbind::String KeyFrameRequestEvent::rid() const {
+    return Event::get("rid").as<jsbind::String>();
 }
 

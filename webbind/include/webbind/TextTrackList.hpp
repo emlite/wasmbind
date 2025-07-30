@@ -17,7 +17,7 @@ public:
 
     TextTrackList clone() const noexcept;
     unsigned long length() const;
-    TextTrack getTrackById(const jsbind::DOMString& id);
+    TextTrack getTrackById(const jsbind::String& id);
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);
     jsbind::Any onaddtrack() const;

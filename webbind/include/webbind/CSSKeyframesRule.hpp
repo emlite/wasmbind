@@ -17,12 +17,12 @@ public:
     static CSSKeyframesRule take_ownership(Handle h) noexcept;
 
     CSSKeyframesRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
-    void name(const jsbind::CSSOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
     CSSRuleList cssRules() const;
     unsigned long length() const;
-    jsbind::Undefined appendRule(const jsbind::CSSOMString& rule);
-    jsbind::Undefined deleteRule(const jsbind::CSSOMString& select);
-    CSSKeyframeRule findRule(const jsbind::CSSOMString& select);
+    jsbind::Undefined appendRule(const jsbind::String& rule);
+    jsbind::Undefined deleteRule(const jsbind::String& select);
+    CSSKeyframeRule findRule(const jsbind::String& select);
 };
 

@@ -16,7 +16,7 @@ public:
     static BlobEvent take_ownership(Handle h) noexcept;
 
     BlobEvent clone() const noexcept;
-    BlobEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    BlobEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     Blob data() const;
     jsbind::Any timecode() const;
 };

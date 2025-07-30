@@ -16,8 +16,8 @@ public:
     explicit SharedStorageUrlWithMetadata(const emlite::Val &val) noexcept;
     SharedStorageUrlWithMetadata() noexcept;
     SharedStorageUrlWithMetadata clone() const noexcept;
-    jsbind::USVString url() const;
-    void url(const jsbind::USVString& value);
+    jsbind::String url() const;
+    void url(const jsbind::String& value);
     jsbind::Object reportingMetadata() const;
     void reportingMetadata(const jsbind::Object& value);
 };
@@ -37,8 +37,8 @@ public:
     void keepAlive(bool value);
     jsbind::Any privateAggregationConfig() const;
     void privateAggregationConfig(const jsbind::Any& value);
-    jsbind::DOMString savedQuery() const;
-    void savedQuery(const jsbind::DOMString& value);
+    jsbind::String savedQuery() const;
+    void savedQuery(const jsbind::String& value);
 };
 
 class SharedStorageWorklet : public Worklet {
@@ -49,9 +49,9 @@ public:
     static SharedStorageWorklet take_ownership(Handle h) noexcept;
 
     SharedStorageWorklet clone() const noexcept;
-    jsbind::Promise<jsbind::Any> selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls);
-    jsbind::Promise<jsbind::Any> selectURL(const jsbind::DOMString& name, const jsbind::Sequence<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options);
-    jsbind::Promise<jsbind::Any> run(const jsbind::DOMString& name);
-    jsbind::Promise<jsbind::Any> run(const jsbind::DOMString& name, const SharedStorageRunOperationMethodOptions& options);
+    jsbind::Promise<jsbind::Any> selectURL(const jsbind::String& name, const jsbind::TypedArray<SharedStorageUrlWithMetadata>& urls);
+    jsbind::Promise<jsbind::Any> selectURL(const jsbind::String& name, const jsbind::TypedArray<SharedStorageUrlWithMetadata>& urls, const SharedStorageRunOperationMethodOptions& options);
+    jsbind::Promise<jsbind::Any> run(const jsbind::String& name);
+    jsbind::Promise<jsbind::Any> run(const jsbind::String& name, const SharedStorageRunOperationMethodOptions& options);
 };
 

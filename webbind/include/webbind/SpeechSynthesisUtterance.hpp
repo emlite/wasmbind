@@ -17,11 +17,11 @@ public:
 
     SpeechSynthesisUtterance clone() const noexcept;
     SpeechSynthesisUtterance();
-    SpeechSynthesisUtterance(const jsbind::DOMString& text);
-    jsbind::DOMString text() const;
-    void text(const jsbind::DOMString& value);
-    jsbind::DOMString lang() const;
-    void lang(const jsbind::DOMString& value);
+    SpeechSynthesisUtterance(const jsbind::String& text);
+    jsbind::String text() const;
+    void text(const jsbind::String& value);
+    jsbind::String lang() const;
+    void lang(const jsbind::String& value);
     SpeechSynthesisVoice voice() const;
     void voice(const SpeechSynthesisVoice& value);
     float volume() const;

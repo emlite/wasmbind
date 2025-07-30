@@ -18,13 +18,13 @@ public:
     PerformanceScriptTiming clone() const noexcept;
     jsbind::Any startTime() const;
     jsbind::Any duration() const;
-    jsbind::DOMString name() const;
-    jsbind::DOMString entryType() const;
+    jsbind::String name() const;
+    jsbind::String entryType() const;
     ScriptInvokerType invokerType() const;
-    jsbind::DOMString invoker() const;
+    jsbind::String invoker() const;
     jsbind::Any executionStart() const;
-    jsbind::DOMString sourceURL() const;
-    jsbind::DOMString sourceFunctionName() const;
+    jsbind::String sourceURL() const;
+    jsbind::String sourceFunctionName() const;
     long long sourceCharPosition() const;
     jsbind::Any pauseDuration() const;
     jsbind::Any forcedStyleAndLayoutDuration() const;

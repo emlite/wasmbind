@@ -9,19 +9,19 @@ PerformanceObserverInit::PerformanceObserverInit(const emlite::Val &val) noexcep
 PerformanceObserverInit::PerformanceObserverInit() noexcept: emlite::Val(emlite::Val::object()) {}
 PerformanceObserverInit PerformanceObserverInit::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::DOMString> PerformanceObserverInit::entryTypes() const {
-    return emlite::Val::get("entryTypes").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PerformanceObserverInit::entryTypes() const {
+    return emlite::Val::get("entryTypes").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PerformanceObserverInit::entryTypes(const jsbind::Sequence<jsbind::DOMString>& value) {
+void PerformanceObserverInit::entryTypes(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("entryTypes", value);
 }
 
-jsbind::DOMString PerformanceObserverInit::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String PerformanceObserverInit::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-void PerformanceObserverInit::type(const jsbind::DOMString& value) {
+void PerformanceObserverInit::type(const jsbind::String& value) {
     emlite::Val::set("type", value);
 }
 
@@ -59,7 +59,7 @@ jsbind::Any PerformanceObserver::takeRecords() {
     return emlite::Val::call("takeRecords").as<jsbind::Any>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> PerformanceObserver::supportedEntryTypes() {
-    return emlite::Val::global("performanceobserver").get("supportedEntryTypes").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PerformanceObserver::supportedEntryTypes() {
+    return emlite::Val::global("performanceobserver").get("supportedEntryTypes").as<jsbind::TypedArray<jsbind::String>>();
 }
 

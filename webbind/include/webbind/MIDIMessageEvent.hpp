@@ -14,8 +14,8 @@ public:
     static MIDIMessageEvent take_ownership(Handle h) noexcept;
 
     MIDIMessageEvent clone() const noexcept;
-    MIDIMessageEvent(const jsbind::DOMString& type);
-    MIDIMessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    MIDIMessageEvent(const jsbind::String& type);
+    MIDIMessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     jsbind::Uint8Array data() const;
 };
 

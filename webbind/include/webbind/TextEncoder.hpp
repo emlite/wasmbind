@@ -30,8 +30,8 @@ public:
     TextEncoder clone() const noexcept;
     TextEncoder();
     jsbind::Uint8Array encode();
-    jsbind::Uint8Array encode(const jsbind::USVString& input);
-    TextEncoderEncodeIntoResult encodeInto(const jsbind::USVString& source, const jsbind::Uint8Array& destination);
-    jsbind::DOMString encoding() const;
+    jsbind::Uint8Array encode(const jsbind::String& input);
+    TextEncoderEncodeIntoResult encodeInto(const jsbind::String& source, const jsbind::Uint8Array& destination);
+    jsbind::String encoding() const;
 };
 

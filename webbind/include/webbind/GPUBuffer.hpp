@@ -24,7 +24,7 @@ public:
     jsbind::ArrayBuffer getMappedRange(const jsbind::Any& offset, const jsbind::Any& size);
     jsbind::Undefined unmap();
     jsbind::Undefined destroy();
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

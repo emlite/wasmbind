@@ -34,8 +34,8 @@ public:
     MLOperandDescriptor clone() const noexcept;
     MLOperandDataType dataType() const;
     void dataType(const MLOperandDataType& value);
-    jsbind::Sequence<unsigned long> shape() const;
-    void shape(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> shape() const;
+    void shape(jsbind::TypedArray<unsigned long> value);
 };
 
 class MLOpSupportLimits : public emlite::Val {
@@ -56,8 +56,8 @@ public:
     explicit MLContextLostInfo(const emlite::Val &val) noexcept;
     MLContextLostInfo() noexcept;
     MLContextLostInfo clone() const noexcept;
-    jsbind::DOMString message() const;
-    void message(const jsbind::DOMString& value);
+    jsbind::String message() const;
+    void message(const jsbind::String& value);
 };
 
 class MLContext : public emlite::Val {

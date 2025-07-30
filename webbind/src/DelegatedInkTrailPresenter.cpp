@@ -11,11 +11,11 @@ InkTrailStyle::InkTrailStyle(const emlite::Val &val) noexcept: emlite::Val(val) 
 InkTrailStyle::InkTrailStyle() noexcept: emlite::Val(emlite::Val::object()) {}
 InkTrailStyle InkTrailStyle::clone() const noexcept { return *this; }
 
-jsbind::DOMString InkTrailStyle::color() const {
-    return emlite::Val::get("color").as<jsbind::DOMString>();
+jsbind::String InkTrailStyle::color() const {
+    return emlite::Val::get("color").as<jsbind::String>();
 }
 
-void InkTrailStyle::color(const jsbind::DOMString& value) {
+void InkTrailStyle::color(const jsbind::String& value) {
     emlite::Val::set("color", value);
 }
 

@@ -15,9 +15,9 @@ public:
 
     DataCue clone() const noexcept;
     DataCue(double startTime, double endTime, const jsbind::Any& value);
-    DataCue(double startTime, double endTime, const jsbind::Any& value, const jsbind::DOMString& type);
+    DataCue(double startTime, double endTime, const jsbind::Any& value, const jsbind::String& type);
     jsbind::Any value() const;
     void value(const jsbind::Any& value);
-    jsbind::DOMString type() const;
+    jsbind::String type() const;
 };
 

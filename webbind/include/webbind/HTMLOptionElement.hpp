@@ -20,16 +20,16 @@ public:
     bool disabled() const;
     void disabled(bool value);
     HTMLFormElement form() const;
-    jsbind::DOMString label() const;
-    void label(const jsbind::DOMString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
     bool defaultSelected() const;
     void defaultSelected(bool value);
     bool selected() const;
     void selected(bool value);
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
-    jsbind::DOMString text() const;
-    void text(const jsbind::DOMString& value);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
+    jsbind::String text() const;
+    void text(const jsbind::String& value);
     long index() const;
 };
 

@@ -17,11 +17,11 @@ void RTCEncodedVideoFrameMetadata::frameId(long long value) {
     emlite::Val::set("frameId", value);
 }
 
-jsbind::Sequence<long long> RTCEncodedVideoFrameMetadata::dependencies() const {
-    return emlite::Val::get("dependencies").as<jsbind::Sequence<long long>>();
+jsbind::TypedArray<long long> RTCEncodedVideoFrameMetadata::dependencies() const {
+    return emlite::Val::get("dependencies").as<jsbind::TypedArray<long long>>();
 }
 
-void RTCEncodedVideoFrameMetadata::dependencies(jsbind::Sequence<long long> value) {
+void RTCEncodedVideoFrameMetadata::dependencies(jsbind::TypedArray<long long> value) {
     emlite::Val::set("dependencies", value);
 }
 

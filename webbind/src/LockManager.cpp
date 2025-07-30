@@ -50,19 +50,19 @@ LockManagerSnapshot::LockManagerSnapshot(const emlite::Val &val) noexcept: emlit
 LockManagerSnapshot::LockManagerSnapshot() noexcept: emlite::Val(emlite::Val::object()) {}
 LockManagerSnapshot LockManagerSnapshot::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> LockManagerSnapshot::held() const {
-    return emlite::Val::get("held").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> LockManagerSnapshot::held() const {
+    return emlite::Val::get("held").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void LockManagerSnapshot::held(const jsbind::Sequence<jsbind::Any>& value) {
+void LockManagerSnapshot::held(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("held", value);
 }
 
-jsbind::Sequence<jsbind::Any> LockManagerSnapshot::pending() const {
-    return emlite::Val::get("pending").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> LockManagerSnapshot::pending() const {
+    return emlite::Val::get("pending").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void LockManagerSnapshot::pending(const jsbind::Sequence<jsbind::Any>& value) {
+void LockManagerSnapshot::pending(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("pending", value);
 }
 
@@ -74,7 +74,7 @@ LockManager::LockManager(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 LockManager::LockManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise<jsbind::Any> LockManager::request(const jsbind::DOMString& name, const LockOptions& options, const jsbind::Function& callback) {
+jsbind::Promise<jsbind::Any> LockManager::request(const jsbind::String& name, const LockOptions& options, const jsbind::Function& callback) {
     return emlite::Val::call("request", name, options, callback).as<jsbind::Promise<jsbind::Any>>();
 }
 

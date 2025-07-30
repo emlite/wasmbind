@@ -14,12 +14,12 @@ public:
     static CSSColor take_ownership(Handle h) noexcept;
 
     CSSColor clone() const noexcept;
-    CSSColor(const jsbind::Any& colorSpace, const jsbind::Sequence<jsbind::Any>& channels);
-    CSSColor(const jsbind::Any& colorSpace, const jsbind::Sequence<jsbind::Any>& channels, const jsbind::Any& alpha);
+    CSSColor(const jsbind::Any& colorSpace, const jsbind::TypedArray<jsbind::Any>& channels);
+    CSSColor(const jsbind::Any& colorSpace, const jsbind::TypedArray<jsbind::Any>& channels, const jsbind::Any& alpha);
     jsbind::Any colorSpace() const;
     void colorSpace(const jsbind::Any& value);
-    jsbind::ObservableArray<jsbind::Any> channels() const;
-    void channels(const jsbind::ObservableArray<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> channels() const;
+    void channels(const jsbind::TypedArray<jsbind::Any>& value);
     jsbind::Any alpha() const;
     void alpha(const jsbind::Any& value);
 };

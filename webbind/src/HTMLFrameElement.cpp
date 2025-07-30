@@ -12,43 +12,43 @@ HTMLFrameElement::HTMLFrameElement(const emlite::Val &val) noexcept: HTMLElement
 
 HTMLFrameElement::HTMLFrameElement() : HTMLElement(emlite::Val::global("HTMLFrameElement").new_()) {}
 
-jsbind::DOMString HTMLFrameElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLFrameElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLFrameElement::name(const jsbind::DOMString& value) {
+void HTMLFrameElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::DOMString HTMLFrameElement::scrolling() const {
-    return HTMLElement::get("scrolling").as<jsbind::DOMString>();
+jsbind::String HTMLFrameElement::scrolling() const {
+    return HTMLElement::get("scrolling").as<jsbind::String>();
 }
 
-void HTMLFrameElement::scrolling(const jsbind::DOMString& value) {
+void HTMLFrameElement::scrolling(const jsbind::String& value) {
     HTMLElement::set("scrolling", value);
 }
 
-jsbind::USVString HTMLFrameElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLFrameElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLFrameElement::src(const jsbind::USVString& value) {
+void HTMLFrameElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
-jsbind::DOMString HTMLFrameElement::frameBorder() const {
-    return HTMLElement::get("frameBorder").as<jsbind::DOMString>();
+jsbind::String HTMLFrameElement::frameBorder() const {
+    return HTMLElement::get("frameBorder").as<jsbind::String>();
 }
 
-void HTMLFrameElement::frameBorder(const jsbind::DOMString& value) {
+void HTMLFrameElement::frameBorder(const jsbind::String& value) {
     HTMLElement::set("frameBorder", value);
 }
 
-jsbind::USVString HTMLFrameElement::longDesc() const {
-    return HTMLElement::get("longDesc").as<jsbind::USVString>();
+jsbind::String HTMLFrameElement::longDesc() const {
+    return HTMLElement::get("longDesc").as<jsbind::String>();
 }
 
-void HTMLFrameElement::longDesc(const jsbind::USVString& value) {
+void HTMLFrameElement::longDesc(const jsbind::String& value) {
     HTMLElement::set("longDesc", value);
 }
 
@@ -68,19 +68,19 @@ jsbind::Any HTMLFrameElement::contentWindow() const {
     return HTMLElement::get("contentWindow").as<jsbind::Any>();
 }
 
-jsbind::DOMString HTMLFrameElement::marginHeight() const {
-    return HTMLElement::get("marginHeight").as<jsbind::DOMString>();
+jsbind::String HTMLFrameElement::marginHeight() const {
+    return HTMLElement::get("marginHeight").as<jsbind::String>();
 }
 
-void HTMLFrameElement::marginHeight(const jsbind::DOMString& value) {
+void HTMLFrameElement::marginHeight(const jsbind::String& value) {
     HTMLElement::set("marginHeight", value);
 }
 
-jsbind::DOMString HTMLFrameElement::marginWidth() const {
-    return HTMLElement::get("marginWidth").as<jsbind::DOMString>();
+jsbind::String HTMLFrameElement::marginWidth() const {
+    return HTMLElement::get("marginWidth").as<jsbind::String>();
 }
 
-void HTMLFrameElement::marginWidth(const jsbind::DOMString& value) {
+void HTMLFrameElement::marginWidth(const jsbind::String& value) {
     HTMLElement::set("marginWidth", value);
 }
 

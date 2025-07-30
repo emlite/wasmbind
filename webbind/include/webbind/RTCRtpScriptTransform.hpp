@@ -17,6 +17,6 @@ public:
     RTCRtpScriptTransform clone() const noexcept;
     RTCRtpScriptTransform(const Worker& worker);
     RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options);
-    RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options, const jsbind::Sequence<jsbind::Object>& transfer);
+    RTCRtpScriptTransform(const Worker& worker, const jsbind::Any& options, const jsbind::TypedArray<jsbind::Object>& transfer);
 };
 

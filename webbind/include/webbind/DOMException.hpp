@@ -14,10 +14,10 @@ public:
 
     DOMException clone() const noexcept;
     DOMException();
-    DOMException(const jsbind::DOMString& message);
-    DOMException(const jsbind::DOMString& message, const jsbind::DOMString& name);
-    jsbind::DOMString name() const;
-    jsbind::DOMString message() const;
+    DOMException(const jsbind::String& message);
+    DOMException(const jsbind::String& message, const jsbind::String& name);
+    jsbind::String name() const;
+    jsbind::String message() const;
     unsigned short code() const;
 };
 

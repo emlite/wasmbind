@@ -17,15 +17,15 @@ public:
     HTMLDialogElement();
     bool open() const;
     void open(bool value);
-    jsbind::DOMString returnValue() const;
-    void returnValue(const jsbind::DOMString& value);
-    jsbind::DOMString closedBy() const;
-    void closedBy(const jsbind::DOMString& value);
+    jsbind::String returnValue() const;
+    void returnValue(const jsbind::String& value);
+    jsbind::String closedBy() const;
+    void closedBy(const jsbind::String& value);
     jsbind::Undefined show();
     jsbind::Undefined showModal();
     jsbind::Undefined close();
-    jsbind::Undefined close(const jsbind::DOMString& returnValue);
+    jsbind::Undefined close(const jsbind::String& returnValue);
     jsbind::Undefined requestClose();
-    jsbind::Undefined requestClose(const jsbind::DOMString& returnValue);
+    jsbind::Undefined requestClose(const jsbind::String& returnValue);
 };
 

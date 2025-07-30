@@ -18,7 +18,7 @@ public:
     RTCDtlsTransport clone() const noexcept;
     RTCIceTransport iceTransport() const;
     RTCDtlsTransportState state() const;
-    jsbind::Sequence<jsbind::ArrayBuffer> getRemoteCertificates();
+    jsbind::TypedArray<jsbind::ArrayBuffer> getRemoteCertificates();
     jsbind::Any onstatechange() const;
     void onstatechange(const jsbind::Any& value);
     jsbind::Any onerror() const;

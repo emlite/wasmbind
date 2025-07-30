@@ -15,10 +15,10 @@ public:
     static CSSVariableReferenceValue take_ownership(Handle h) noexcept;
 
     CSSVariableReferenceValue clone() const noexcept;
-    CSSVariableReferenceValue(const jsbind::USVString& variable);
-    CSSVariableReferenceValue(const jsbind::USVString& variable, const CSSUnparsedValue& fallback);
-    jsbind::USVString variable() const;
-    void variable(const jsbind::USVString& value);
+    CSSVariableReferenceValue(const jsbind::String& variable);
+    CSSVariableReferenceValue(const jsbind::String& variable, const CSSUnparsedValue& fallback);
+    jsbind::String variable() const;
+    void variable(const jsbind::String& value);
     CSSUnparsedValue fallback() const;
 };
 

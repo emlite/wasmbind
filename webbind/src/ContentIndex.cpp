@@ -9,27 +9,27 @@ ContentDescription::ContentDescription(const emlite::Val &val) noexcept: emlite:
 ContentDescription::ContentDescription() noexcept: emlite::Val(emlite::Val::object()) {}
 ContentDescription ContentDescription::clone() const noexcept { return *this; }
 
-jsbind::DOMString ContentDescription::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String ContentDescription::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-void ContentDescription::id(const jsbind::DOMString& value) {
+void ContentDescription::id(const jsbind::String& value) {
     emlite::Val::set("id", value);
 }
 
-jsbind::DOMString ContentDescription::title() const {
-    return emlite::Val::get("title").as<jsbind::DOMString>();
+jsbind::String ContentDescription::title() const {
+    return emlite::Val::get("title").as<jsbind::String>();
 }
 
-void ContentDescription::title(const jsbind::DOMString& value) {
+void ContentDescription::title(const jsbind::String& value) {
     emlite::Val::set("title", value);
 }
 
-jsbind::DOMString ContentDescription::description() const {
-    return emlite::Val::get("description").as<jsbind::DOMString>();
+jsbind::String ContentDescription::description() const {
+    return emlite::Val::get("description").as<jsbind::String>();
 }
 
-void ContentDescription::description(const jsbind::DOMString& value) {
+void ContentDescription::description(const jsbind::String& value) {
     emlite::Val::set("description", value);
 }
 
@@ -41,19 +41,19 @@ void ContentDescription::category(const ContentCategory& value) {
     emlite::Val::set("category", value);
 }
 
-jsbind::Sequence<jsbind::Any> ContentDescription::icons() const {
-    return emlite::Val::get("icons").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> ContentDescription::icons() const {
+    return emlite::Val::get("icons").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void ContentDescription::icons(const jsbind::Sequence<jsbind::Any>& value) {
+void ContentDescription::icons(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("icons", value);
 }
 
-jsbind::USVString ContentDescription::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String ContentDescription::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
-void ContentDescription::url(const jsbind::USVString& value) {
+void ContentDescription::url(const jsbind::String& value) {
     emlite::Val::set("url", value);
 }
 
@@ -69,11 +69,11 @@ jsbind::Promise<jsbind::Undefined> ContentIndex::add(const ContentDescription& d
     return emlite::Val::call("add", description).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> ContentIndex::delete_(const jsbind::DOMString& id) {
+jsbind::Promise<jsbind::Undefined> ContentIndex::delete_(const jsbind::String& id) {
     return emlite::Val::call("delete", id).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Sequence<ContentDescription>> ContentIndex::getAll() {
-    return emlite::Val::call("getAll").as<jsbind::Promise<jsbind::Sequence<ContentDescription>>>();
+jsbind::Promise<jsbind::TypedArray<ContentDescription>> ContentIndex::getAll() {
+    return emlite::Val::call("getAll").as<jsbind::Promise<jsbind::TypedArray<ContentDescription>>>();
 }
 

@@ -14,19 +14,19 @@ RTCRtpCapabilities::RTCRtpCapabilities(const emlite::Val &val) noexcept: emlite:
 RTCRtpCapabilities::RTCRtpCapabilities() noexcept: emlite::Val(emlite::Val::object()) {}
 RTCRtpCapabilities RTCRtpCapabilities::clone() const noexcept { return *this; }
 
-jsbind::Sequence<RTCRtpCodec> RTCRtpCapabilities::codecs() const {
-    return emlite::Val::get("codecs").as<jsbind::Sequence<RTCRtpCodec>>();
+jsbind::TypedArray<RTCRtpCodec> RTCRtpCapabilities::codecs() const {
+    return emlite::Val::get("codecs").as<jsbind::TypedArray<RTCRtpCodec>>();
 }
 
-void RTCRtpCapabilities::codecs(const jsbind::Sequence<RTCRtpCodec>& value) {
+void RTCRtpCapabilities::codecs(const jsbind::TypedArray<RTCRtpCodec>& value) {
     emlite::Val::set("codecs", value);
 }
 
-jsbind::Sequence<jsbind::Any> RTCRtpCapabilities::headerExtensions() const {
-    return emlite::Val::get("headerExtensions").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RTCRtpCapabilities::headerExtensions() const {
+    return emlite::Val::get("headerExtensions").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RTCRtpCapabilities::headerExtensions(const jsbind::Sequence<jsbind::Any>& value) {
+void RTCRtpCapabilities::headerExtensions(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("headerExtensions", value);
 }
 
@@ -38,19 +38,19 @@ RTCRtpSendParameters::RTCRtpSendParameters(const emlite::Val &val) noexcept: eml
 RTCRtpSendParameters::RTCRtpSendParameters() noexcept: emlite::Val(emlite::Val::object()) {}
 RTCRtpSendParameters RTCRtpSendParameters::clone() const noexcept { return *this; }
 
-jsbind::DOMString RTCRtpSendParameters::transactionId() const {
-    return emlite::Val::get("transactionId").as<jsbind::DOMString>();
+jsbind::String RTCRtpSendParameters::transactionId() const {
+    return emlite::Val::get("transactionId").as<jsbind::String>();
 }
 
-void RTCRtpSendParameters::transactionId(const jsbind::DOMString& value) {
+void RTCRtpSendParameters::transactionId(const jsbind::String& value) {
     emlite::Val::set("transactionId", value);
 }
 
-jsbind::Sequence<jsbind::Any> RTCRtpSendParameters::encodings() const {
-    return emlite::Val::get("encodings").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RTCRtpSendParameters::encodings() const {
+    return emlite::Val::get("encodings").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RTCRtpSendParameters::encodings(const jsbind::Sequence<jsbind::Any>& value) {
+void RTCRtpSendParameters::encodings(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("encodings", value);
 }
 
@@ -78,7 +78,7 @@ RTCDtlsTransport RTCRtpSender::transport() const {
     return emlite::Val::get("transport").as<RTCDtlsTransport>();
 }
 
-RTCRtpCapabilities RTCRtpSender::getCapabilities(const jsbind::DOMString& kind) {
+RTCRtpCapabilities RTCRtpSender::getCapabilities(const jsbind::String& kind) {
     return emlite::Val::global("rtcrtpsender").call("getCapabilities", kind).as<RTCRtpCapabilities>();
 }
 
@@ -118,7 +118,7 @@ jsbind::Promise<jsbind::Undefined> RTCRtpSender::generateKeyFrame() {
     return emlite::Val::call("generateKeyFrame").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCRtpSender::generateKeyFrame(const jsbind::Sequence<jsbind::DOMString>& rids) {
+jsbind::Promise<jsbind::Undefined> RTCRtpSender::generateKeyFrame(const jsbind::TypedArray<jsbind::String>& rids) {
     return emlite::Val::call("generateKeyFrame", rids).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

@@ -9,11 +9,11 @@ BeforeUnloadEvent::BeforeUnloadEvent(Handle h) noexcept : Event(emlite::Val::tak
 BeforeUnloadEvent::BeforeUnloadEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-jsbind::DOMString BeforeUnloadEvent::returnValue() const {
-    return Event::get("returnValue").as<jsbind::DOMString>();
+jsbind::String BeforeUnloadEvent::returnValue() const {
+    return Event::get("returnValue").as<jsbind::String>();
 }
 
-void BeforeUnloadEvent::returnValue(const jsbind::DOMString& value) {
+void BeforeUnloadEvent::returnValue(const jsbind::String& value) {
     Event::set("returnValue", value);
 }
 

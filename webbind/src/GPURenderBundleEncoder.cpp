@@ -29,15 +29,15 @@ GPURenderBundle GPURenderBundleEncoder::finish(const GPURenderBundleDescriptor& 
     return emlite::Val::call("finish", descriptor).as<GPURenderBundle>();
 }
 
-jsbind::USVString GPURenderBundleEncoder::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPURenderBundleEncoder::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPURenderBundleEncoder::label(const jsbind::USVString& value) {
+void GPURenderBundleEncoder::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
-jsbind::Undefined GPURenderBundleEncoder::pushDebugGroup(const jsbind::USVString& groupLabel) {
+jsbind::Undefined GPURenderBundleEncoder::pushDebugGroup(const jsbind::String& groupLabel) {
     return emlite::Val::call("pushDebugGroup", groupLabel).as<jsbind::Undefined>();
 }
 
@@ -45,7 +45,7 @@ jsbind::Undefined GPURenderBundleEncoder::popDebugGroup() {
     return emlite::Val::call("popDebugGroup").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined GPURenderBundleEncoder::insertDebugMarker(const jsbind::USVString& markerLabel) {
+jsbind::Undefined GPURenderBundleEncoder::insertDebugMarker(const jsbind::String& markerLabel) {
     return emlite::Val::call("insertDebugMarker", markerLabel).as<jsbind::Undefined>();
 }
 

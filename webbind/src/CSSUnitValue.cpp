@@ -9,7 +9,7 @@ CSSUnitValue::CSSUnitValue(Handle h) noexcept : CSSNumericValue(emlite::Val::tak
 CSSUnitValue::CSSUnitValue(const emlite::Val &val) noexcept: CSSNumericValue(val) {}
 
 
-CSSUnitValue::CSSUnitValue(double value, const jsbind::USVString& unit) : CSSNumericValue(emlite::Val::global("CSSUnitValue").new_(value, unit)) {}
+CSSUnitValue::CSSUnitValue(double value, const jsbind::String& unit) : CSSNumericValue(emlite::Val::global("CSSUnitValue").new_(value, unit)) {}
 
 double CSSUnitValue::value() const {
     return CSSNumericValue::get("value").as<double>();
@@ -19,7 +19,7 @@ void CSSUnitValue::value(double value) {
     CSSNumericValue::set("value", value);
 }
 
-jsbind::USVString CSSUnitValue::unit() const {
-    return CSSNumericValue::get("unit").as<jsbind::USVString>();
+jsbind::String CSSUnitValue::unit() const {
+    return CSSNumericValue::get("unit").as<jsbind::String>();
 }
 

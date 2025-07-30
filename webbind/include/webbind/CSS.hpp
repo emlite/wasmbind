@@ -15,8 +15,8 @@ namespace CSS {
 
 
 namespace CSS {
-    bool supports(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value);
-    bool supports(const jsbind::CSSOMString& conditionText);
+    bool supports(const jsbind::String& property, const jsbind::String& value);
+    bool supports(const jsbind::String& conditionText);
 } // namespace CSS
 
 
@@ -42,19 +42,19 @@ namespace CSS {
 
 
 namespace CSS {
-    jsbind::Promise<jsbind::Sequence<CSSParserRule>> parseStylesheet(const jsbind::Any& css);
-    jsbind::Promise<jsbind::Sequence<CSSParserRule>> parseStylesheet(const jsbind::Any& css, const jsbind::Any& options);
-    jsbind::Promise<jsbind::Sequence<CSSParserRule>> parseRuleList(const jsbind::Any& css);
-    jsbind::Promise<jsbind::Sequence<CSSParserRule>> parseRuleList(const jsbind::Any& css, const jsbind::Any& options);
+    jsbind::Promise<jsbind::TypedArray<CSSParserRule>> parseStylesheet(const jsbind::Any& css);
+    jsbind::Promise<jsbind::TypedArray<CSSParserRule>> parseStylesheet(const jsbind::Any& css, const jsbind::Any& options);
+    jsbind::Promise<jsbind::TypedArray<CSSParserRule>> parseRuleList(const jsbind::Any& css);
+    jsbind::Promise<jsbind::TypedArray<CSSParserRule>> parseRuleList(const jsbind::Any& css, const jsbind::Any& options);
     jsbind::Promise<CSSParserRule> parseRule(const jsbind::Any& css);
     jsbind::Promise<CSSParserRule> parseRule(const jsbind::Any& css, const jsbind::Any& options);
-    jsbind::Promise<jsbind::Sequence<CSSParserRule>> parseDeclarationList(const jsbind::Any& css);
-    jsbind::Promise<jsbind::Sequence<CSSParserRule>> parseDeclarationList(const jsbind::Any& css, const jsbind::Any& options);
-    CSSParserDeclaration parseDeclaration(const jsbind::DOMString& css);
-    CSSParserDeclaration parseDeclaration(const jsbind::DOMString& css, const jsbind::Any& options);
-    jsbind::Any parseValue(const jsbind::DOMString& css);
-    jsbind::Sequence<jsbind::Any> parseValueList(const jsbind::DOMString& css);
-    jsbind::Sequence<jsbind::Sequence<jsbind::Any>> parseCommaValueList(const jsbind::DOMString& css);
+    jsbind::Promise<jsbind::TypedArray<CSSParserRule>> parseDeclarationList(const jsbind::Any& css);
+    jsbind::Promise<jsbind::TypedArray<CSSParserRule>> parseDeclarationList(const jsbind::Any& css, const jsbind::Any& options);
+    CSSParserDeclaration parseDeclaration(const jsbind::String& css);
+    CSSParserDeclaration parseDeclaration(const jsbind::String& css, const jsbind::Any& options);
+    jsbind::Any parseValue(const jsbind::String& css);
+    jsbind::TypedArray<jsbind::Any> parseValueList(const jsbind::String& css);
+    jsbind::TypedArray<jsbind::TypedArray<jsbind::Any>> parseCommaValueList(const jsbind::String& css);
 } // namespace CSS
 
 
@@ -134,6 +134,6 @@ namespace CSS {
 
 
 namespace CSS {
-    jsbind::CSSOMString escape(const jsbind::CSSOMString& ident);
+    jsbind::String escape(const jsbind::String& ident);
 } // namespace CSS
 

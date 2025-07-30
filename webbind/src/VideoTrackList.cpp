@@ -14,7 +14,7 @@ unsigned long VideoTrackList::length() const {
     return EventTarget::get("length").as<unsigned long>();
 }
 
-VideoTrack VideoTrackList::getTrackById(const jsbind::DOMString& id) {
+VideoTrack VideoTrackList::getTrackById(const jsbind::String& id) {
     return EventTarget::call("getTrackById", id).as<VideoTrack>();
 }
 

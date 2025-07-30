@@ -16,7 +16,7 @@ public:
     static SharedStorageDeleteMethod take_ownership(Handle h) noexcept;
 
     SharedStorageDeleteMethod clone() const noexcept;
-    SharedStorageDeleteMethod(const jsbind::DOMString& key);
-    SharedStorageDeleteMethod(const jsbind::DOMString& key, const SharedStorageModifierMethodOptions& options);
+    SharedStorageDeleteMethod(const jsbind::String& key);
+    SharedStorageDeleteMethod(const jsbind::String& key, const SharedStorageModifierMethodOptions& options);
 };
 

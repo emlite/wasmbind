@@ -74,6 +74,6 @@ public:
     ReadableStream pipeThrough(const ReadableWritablePair& transform, const StreamPipeOptions& options);
     jsbind::Promise<jsbind::Undefined> pipeTo(const WritableStream& destination);
     jsbind::Promise<jsbind::Undefined> pipeTo(const WritableStream& destination, const StreamPipeOptions& options);
-    jsbind::Sequence<ReadableStream> tee();
+    jsbind::TypedArray<ReadableStream> tee();
 };
 

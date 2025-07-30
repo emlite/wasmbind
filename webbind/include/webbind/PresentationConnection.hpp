@@ -14,8 +14,8 @@ public:
     static PresentationConnection take_ownership(Handle h) noexcept;
 
     PresentationConnection clone() const noexcept;
-    jsbind::USVString id() const;
-    jsbind::USVString url() const;
+    jsbind::String id() const;
+    jsbind::String url() const;
     PresentationConnectionState state() const;
     jsbind::Undefined close();
     jsbind::Undefined terminate();

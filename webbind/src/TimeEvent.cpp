@@ -18,7 +18,7 @@ long TimeEvent::detail() const {
     return Event::get("detail").as<long>();
 }
 
-jsbind::Undefined TimeEvent::initTimeEvent(const jsbind::DOMString& typeArg, const Window& viewArg, long detailArg) {
+jsbind::Undefined TimeEvent::initTimeEvent(const jsbind::String& typeArg, const Window& viewArg, long detailArg) {
     return Event::call("initTimeEvent", typeArg, viewArg, detailArg).as<jsbind::Undefined>();
 }
 

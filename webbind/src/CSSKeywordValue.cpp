@@ -9,13 +9,13 @@ CSSKeywordValue::CSSKeywordValue(Handle h) noexcept : CSSStyleValue(emlite::Val:
 CSSKeywordValue::CSSKeywordValue(const emlite::Val &val) noexcept: CSSStyleValue(val) {}
 
 
-CSSKeywordValue::CSSKeywordValue(const jsbind::USVString& value) : CSSStyleValue(emlite::Val::global("CSSKeywordValue").new_(value)) {}
+CSSKeywordValue::CSSKeywordValue(const jsbind::String& value) : CSSStyleValue(emlite::Val::global("CSSKeywordValue").new_(value)) {}
 
-jsbind::USVString CSSKeywordValue::value() const {
-    return CSSStyleValue::get("value").as<jsbind::USVString>();
+jsbind::String CSSKeywordValue::value() const {
+    return CSSStyleValue::get("value").as<jsbind::String>();
 }
 
-void CSSKeywordValue::value(const jsbind::USVString& value) {
+void CSSKeywordValue::value(const jsbind::String& value) {
     CSSStyleValue::set("value", value);
 }
 

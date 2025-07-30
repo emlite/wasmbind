@@ -16,12 +16,12 @@ public:
     explicit NotificationAction(const emlite::Val &val) noexcept;
     NotificationAction() noexcept;
     NotificationAction clone() const noexcept;
-    jsbind::DOMString action() const;
-    void action(const jsbind::DOMString& value);
-    jsbind::DOMString title() const;
-    void title(const jsbind::DOMString& value);
-    jsbind::USVString icon() const;
-    void icon(const jsbind::USVString& value);
+    jsbind::String action() const;
+    void action(const jsbind::String& value);
+    jsbind::String title() const;
+    void title(const jsbind::String& value);
+    jsbind::String icon() const;
+    void icon(const jsbind::String& value);
 };
 
 class Notification : public EventTarget {
@@ -32,8 +32,8 @@ public:
     static Notification take_ownership(Handle h) noexcept;
 
     Notification clone() const noexcept;
-    Notification(const jsbind::DOMString& title);
-    Notification(const jsbind::DOMString& title, const NotificationOptions& options);
+    Notification(const jsbind::String& title);
+    Notification(const jsbind::String& title, const NotificationOptions& options);
     static NotificationPermission permission();
     static jsbind::Promise<NotificationPermission> requestPermission();
     static jsbind::Promise<NotificationPermission> requestPermission(const jsbind::Function& deprecatedCallback);
@@ -46,21 +46,21 @@ public:
     void onerror(const jsbind::Any& value);
     jsbind::Any onclose() const;
     void onclose(const jsbind::Any& value);
-    jsbind::DOMString title() const;
+    jsbind::String title() const;
     NotificationDirection dir() const;
-    jsbind::DOMString lang() const;
-    jsbind::DOMString body() const;
-    jsbind::DOMString tag() const;
-    jsbind::USVString image() const;
-    jsbind::USVString icon() const;
-    jsbind::USVString badge() const;
-    jsbind::FrozenArray<unsigned long> vibrate() const;
+    jsbind::String lang() const;
+    jsbind::String body() const;
+    jsbind::String tag() const;
+    jsbind::String image() const;
+    jsbind::String icon() const;
+    jsbind::String badge() const;
+    jsbind::TypedArray<unsigned long> vibrate() const;
     jsbind::Any timestamp() const;
     bool renotify() const;
     bool silent() const;
     bool requireInteraction() const;
     jsbind::Any data() const;
-    jsbind::FrozenArray<NotificationAction> actions() const;
+    jsbind::TypedArray<NotificationAction> actions() const;
     jsbind::Undefined close();
 };
 

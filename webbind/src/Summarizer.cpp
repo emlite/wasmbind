@@ -27,11 +27,11 @@ void SummarizerCreateOptions::monitor(const jsbind::Function& value) {
     emlite::Val::set("monitor", value);
 }
 
-jsbind::DOMString SummarizerCreateOptions::sharedContext() const {
-    return emlite::Val::get("sharedContext").as<jsbind::DOMString>();
+jsbind::String SummarizerCreateOptions::sharedContext() const {
+    return emlite::Val::get("sharedContext").as<jsbind::String>();
 }
 
-void SummarizerCreateOptions::sharedContext(const jsbind::DOMString& value) {
+void SummarizerCreateOptions::sharedContext(const jsbind::String& value) {
     emlite::Val::set("sharedContext", value);
 }
 
@@ -67,27 +67,27 @@ void SummarizerCreateCoreOptions::length(const SummarizerLength& value) {
     emlite::Val::set("length", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> SummarizerCreateCoreOptions::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> SummarizerCreateCoreOptions::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void SummarizerCreateCoreOptions::expectedInputLanguages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void SummarizerCreateCoreOptions::expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("expectedInputLanguages", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> SummarizerCreateCoreOptions::expectedContextLanguages() const {
-    return emlite::Val::get("expectedContextLanguages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> SummarizerCreateCoreOptions::expectedContextLanguages() const {
+    return emlite::Val::get("expectedContextLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void SummarizerCreateCoreOptions::expectedContextLanguages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void SummarizerCreateCoreOptions::expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("expectedContextLanguages", value);
 }
 
-jsbind::DOMString SummarizerCreateCoreOptions::outputLanguage() const {
-    return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+jsbind::String SummarizerCreateCoreOptions::outputLanguage() const {
+    return emlite::Val::get("outputLanguage").as<jsbind::String>();
 }
 
-void SummarizerCreateCoreOptions::outputLanguage(const jsbind::DOMString& value) {
+void SummarizerCreateCoreOptions::outputLanguage(const jsbind::String& value) {
     emlite::Val::set("outputLanguage", value);
 }
 
@@ -107,11 +107,11 @@ void SummarizerSummarizeOptions::signal(const AbortSignal& value) {
     emlite::Val::set("signal", value);
 }
 
-jsbind::DOMString SummarizerSummarizeOptions::context() const {
-    return emlite::Val::get("context").as<jsbind::DOMString>();
+jsbind::String SummarizerSummarizeOptions::context() const {
+    return emlite::Val::get("context").as<jsbind::String>();
 }
 
-void SummarizerSummarizeOptions::context(const jsbind::DOMString& value) {
+void SummarizerSummarizeOptions::context(const jsbind::String& value) {
     emlite::Val::set("context", value);
 }
 
@@ -139,24 +139,24 @@ jsbind::Promise<Availability> Summarizer::availability(const SummarizerCreateCor
     return emlite::Val::global("summarizer").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Summarizer::summarize(const jsbind::DOMString& input) {
-    return emlite::Val::call("summarize", input).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Summarizer::summarize(const jsbind::String& input) {
+    return emlite::Val::call("summarize", input).as<jsbind::Promise<jsbind::String>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Summarizer::summarize(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
-    return emlite::Val::call("summarize", input, options).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Summarizer::summarize(const jsbind::String& input, const SummarizerSummarizeOptions& options) {
+    return emlite::Val::call("summarize", input, options).as<jsbind::Promise<jsbind::String>>();
 }
 
-ReadableStream Summarizer::summarizeStreaming(const jsbind::DOMString& input) {
+ReadableStream Summarizer::summarizeStreaming(const jsbind::String& input) {
     return emlite::Val::call("summarizeStreaming", input).as<ReadableStream>();
 }
 
-ReadableStream Summarizer::summarizeStreaming(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
+ReadableStream Summarizer::summarizeStreaming(const jsbind::String& input, const SummarizerSummarizeOptions& options) {
     return emlite::Val::call("summarizeStreaming", input, options).as<ReadableStream>();
 }
 
-jsbind::DOMString Summarizer::sharedContext() const {
-    return emlite::Val::get("sharedContext").as<jsbind::DOMString>();
+jsbind::String Summarizer::sharedContext() const {
+    return emlite::Val::get("sharedContext").as<jsbind::String>();
 }
 
 SummarizerType Summarizer::type() const {
@@ -171,23 +171,23 @@ SummarizerLength Summarizer::length() const {
     return emlite::Val::get("length").as<SummarizerLength>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> Summarizer::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> Summarizer::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> Summarizer::expectedContextLanguages() const {
-    return emlite::Val::get("expectedContextLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> Summarizer::expectedContextLanguages() const {
+    return emlite::Val::get("expectedContextLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::DOMString Summarizer::outputLanguage() const {
-    return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+jsbind::String Summarizer::outputLanguage() const {
+    return emlite::Val::get("outputLanguage").as<jsbind::String>();
 }
 
-jsbind::Promise<double> Summarizer::measureInputUsage(const jsbind::DOMString& input) {
+jsbind::Promise<double> Summarizer::measureInputUsage(const jsbind::String& input) {
     return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise<double> Summarizer::measureInputUsage(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options) {
+jsbind::Promise<double> Summarizer::measureInputUsage(const jsbind::String& input, const SummarizerSummarizeOptions& options) {
     return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 

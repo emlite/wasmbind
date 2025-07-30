@@ -100,7 +100,7 @@ GPUQueue::GPUQueue(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 GPUQueue::GPUQueue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Undefined GPUQueue::submit(const jsbind::Sequence<GPUCommandBuffer>& commandBuffers) {
+jsbind::Undefined GPUQueue::submit(const jsbind::TypedArray<GPUCommandBuffer>& commandBuffers) {
     return emlite::Val::call("submit", commandBuffers).as<jsbind::Undefined>();
 }
 
@@ -128,11 +128,11 @@ jsbind::Undefined GPUQueue::copyExternalImageToTexture(const GPUCopyExternalImag
     return emlite::Val::call("copyExternalImageToTexture", source, destination, copySize).as<jsbind::Undefined>();
 }
 
-jsbind::USVString GPUQueue::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUQueue::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUQueue::label(const jsbind::USVString& value) {
+void GPUQueue::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

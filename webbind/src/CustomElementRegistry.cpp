@@ -10,11 +10,11 @@ ElementDefinitionOptions::ElementDefinitionOptions(const emlite::Val &val) noexc
 ElementDefinitionOptions::ElementDefinitionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 ElementDefinitionOptions ElementDefinitionOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString ElementDefinitionOptions::extends() const {
-    return emlite::Val::get("extends").as<jsbind::DOMString>();
+jsbind::String ElementDefinitionOptions::extends() const {
+    return emlite::Val::get("extends").as<jsbind::String>();
 }
 
-void ElementDefinitionOptions::extends(const jsbind::DOMString& value) {
+void ElementDefinitionOptions::extends(const jsbind::String& value) {
     emlite::Val::set("extends", value);
 }
 
@@ -28,23 +28,23 @@ CustomElementRegistry::CustomElementRegistry(const emlite::Val &val) noexcept: e
 
 CustomElementRegistry::CustomElementRegistry() : emlite::Val(emlite::Val::global("CustomElementRegistry").new_()) {}
 
-jsbind::Undefined CustomElementRegistry::define(const jsbind::DOMString& name, const jsbind::Function& constructor) {
+jsbind::Undefined CustomElementRegistry::define(const jsbind::String& name, const jsbind::Function& constructor) {
     return emlite::Val::call("define", name, constructor).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CustomElementRegistry::define(const jsbind::DOMString& name, const jsbind::Function& constructor, const ElementDefinitionOptions& options) {
+jsbind::Undefined CustomElementRegistry::define(const jsbind::String& name, const jsbind::Function& constructor, const ElementDefinitionOptions& options) {
     return emlite::Val::call("define", name, constructor, options).as<jsbind::Undefined>();
 }
 
-jsbind::Any CustomElementRegistry::get(const jsbind::DOMString& name) {
+jsbind::Any CustomElementRegistry::get(const jsbind::String& name) {
     return emlite::Val::call("get", name).as<jsbind::Any>();
 }
 
-jsbind::DOMString CustomElementRegistry::getName(const jsbind::Function& constructor) {
-    return emlite::Val::call("getName", constructor).as<jsbind::DOMString>();
+jsbind::String CustomElementRegistry::getName(const jsbind::Function& constructor) {
+    return emlite::Val::call("getName", constructor).as<jsbind::String>();
 }
 
-jsbind::Promise<jsbind::Function> CustomElementRegistry::whenDefined(const jsbind::DOMString& name) {
+jsbind::Promise<jsbind::Function> CustomElementRegistry::whenDefined(const jsbind::String& name) {
     return emlite::Val::call("whenDefined", name).as<jsbind::Promise<jsbind::Function>>();
 }
 

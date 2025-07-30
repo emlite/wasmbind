@@ -16,7 +16,7 @@ public:
     static RTCDataChannelEvent take_ownership(Handle h) noexcept;
 
     RTCDataChannelEvent clone() const noexcept;
-    RTCDataChannelEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    RTCDataChannelEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     RTCDataChannel channel() const;
 };
 

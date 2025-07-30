@@ -26,19 +26,19 @@ BackgroundFetchManager::BackgroundFetchManager(Handle h) noexcept : emlite::Val(
 BackgroundFetchManager::BackgroundFetchManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::fetch(const jsbind::DOMString& id, const jsbind::Any& requests) {
+jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::fetch(const jsbind::String& id, const jsbind::Any& requests) {
     return emlite::Val::call("fetch", id, requests).as<jsbind::Promise<BackgroundFetchRegistration>>();
 }
 
-jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::fetch(const jsbind::DOMString& id, const jsbind::Any& requests, const BackgroundFetchOptions& options) {
+jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::fetch(const jsbind::String& id, const jsbind::Any& requests, const BackgroundFetchOptions& options) {
     return emlite::Val::call("fetch", id, requests, options).as<jsbind::Promise<BackgroundFetchRegistration>>();
 }
 
-jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::get(const jsbind::DOMString& id) {
+jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::get(const jsbind::String& id) {
     return emlite::Val::call("get", id).as<jsbind::Promise<BackgroundFetchRegistration>>();
 }
 
-jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> BackgroundFetchManager::getIds() {
-    return emlite::Val::call("getIds").as<jsbind::Promise<jsbind::Sequence<jsbind::DOMString>>>();
+jsbind::Promise<jsbind::TypedArray<jsbind::String>> BackgroundFetchManager::getIds() {
+    return emlite::Val::call("getIds").as<jsbind::Promise<jsbind::TypedArray<jsbind::String>>>();
 }
 

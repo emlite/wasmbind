@@ -15,8 +15,8 @@ public:
     explicit ClipboardUnsanitizedFormats(const emlite::Val &val) noexcept;
     ClipboardUnsanitizedFormats() noexcept;
     ClipboardUnsanitizedFormats clone() const noexcept;
-    jsbind::Sequence<jsbind::DOMString> unsanitized() const;
-    void unsanitized(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<jsbind::String> unsanitized() const;
+    void unsanitized(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class Clipboard : public EventTarget {
@@ -29,8 +29,8 @@ public:
     Clipboard clone() const noexcept;
     jsbind::Promise<jsbind::Any> read();
     jsbind::Promise<jsbind::Any> read(const ClipboardUnsanitizedFormats& formats);
-    jsbind::Promise<jsbind::DOMString> readText();
+    jsbind::Promise<jsbind::String> readText();
     jsbind::Promise<jsbind::Undefined> write(const jsbind::Any& data);
-    jsbind::Promise<jsbind::Undefined> writeText(const jsbind::DOMString& data);
+    jsbind::Promise<jsbind::Undefined> writeText(const jsbind::String& data);
 };
 

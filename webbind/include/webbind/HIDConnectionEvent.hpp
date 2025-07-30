@@ -16,7 +16,7 @@ public:
     static HIDConnectionEvent take_ownership(Handle h) noexcept;
 
     HIDConnectionEvent clone() const noexcept;
-    HIDConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    HIDConnectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     HIDDevice device() const;
 };
 

@@ -18,13 +18,13 @@ public:
     PerformanceLongAnimationFrameTiming clone() const noexcept;
     jsbind::Any startTime() const;
     jsbind::Any duration() const;
-    jsbind::DOMString name() const;
-    jsbind::DOMString entryType() const;
+    jsbind::String name() const;
+    jsbind::String entryType() const;
     jsbind::Any renderStart() const;
     jsbind::Any styleAndLayoutStart() const;
     jsbind::Any blockingDuration() const;
     jsbind::Any firstUIEventTimestamp() const;
-    jsbind::FrozenArray<PerformanceScriptTiming> scripts() const;
+    jsbind::TypedArray<PerformanceScriptTiming> scripts() const;
     jsbind::Object toJSON();
     jsbind::Any paintTime() const;
     jsbind::Any presentationTime() const;

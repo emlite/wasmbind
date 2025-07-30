@@ -17,11 +17,11 @@ public:
     static NamedFlow take_ownership(Handle h) noexcept;
 
     NamedFlow clone() const noexcept;
-    jsbind::CSSOMString name() const;
+    jsbind::String name() const;
     bool overset() const;
-    jsbind::Sequence<Element> getRegions();
+    jsbind::TypedArray<Element> getRegions();
     short firstEmptyRegionIndex() const;
-    jsbind::Sequence<Node> getContent();
-    jsbind::Sequence<Element> getRegionsByContent(const Node& node);
+    jsbind::TypedArray<Node> getContent();
+    jsbind::TypedArray<Element> getRegionsByContent(const Node& node);
 };
 

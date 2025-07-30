@@ -15,10 +15,10 @@ public:
 
     HTMLFrameSetElement clone() const noexcept;
     HTMLFrameSetElement();
-    jsbind::DOMString cols() const;
-    void cols(const jsbind::DOMString& value);
-    jsbind::DOMString rows() const;
-    void rows(const jsbind::DOMString& value);
+    jsbind::String cols() const;
+    void cols(const jsbind::String& value);
+    jsbind::String rows() const;
+    void rows(const jsbind::String& value);
     jsbind::Any onportalactivate() const;
     void onportalactivate(const jsbind::Any& value);
 };

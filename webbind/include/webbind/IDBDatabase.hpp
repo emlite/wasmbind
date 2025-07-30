@@ -44,16 +44,16 @@ public:
     static IDBDatabase take_ownership(Handle h) noexcept;
 
     IDBDatabase clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     long long version() const;
     DOMStringList objectStoreNames() const;
     IDBTransaction transaction(const jsbind::Any& storeNames);
     IDBTransaction transaction(const jsbind::Any& storeNames, const IDBTransactionMode& mode);
     IDBTransaction transaction(const jsbind::Any& storeNames, const IDBTransactionMode& mode, const IDBTransactionOptions& options);
     jsbind::Undefined close();
-    IDBObjectStore createObjectStore(const jsbind::DOMString& name);
-    IDBObjectStore createObjectStore(const jsbind::DOMString& name, const IDBObjectStoreParameters& options);
-    jsbind::Undefined deleteObjectStore(const jsbind::DOMString& name);
+    IDBObjectStore createObjectStore(const jsbind::String& name);
+    IDBObjectStore createObjectStore(const jsbind::String& name, const IDBObjectStoreParameters& options);
+    jsbind::Undefined deleteObjectStore(const jsbind::String& name);
     jsbind::Any onabort() const;
     void onabort(const jsbind::Any& value);
     jsbind::Any onclose() const;

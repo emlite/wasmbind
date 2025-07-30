@@ -44,15 +44,15 @@ SVGPathSegment SVGPathElement::getPathSegmentAtLength(float distance) {
     return SVGGeometryElement::call("getPathSegmentAtLength", distance).as<SVGPathSegment>();
 }
 
-jsbind::Sequence<SVGPathSegment> SVGPathElement::getPathData() {
-    return SVGGeometryElement::call("getPathData").as<jsbind::Sequence<SVGPathSegment>>();
+jsbind::TypedArray<SVGPathSegment> SVGPathElement::getPathData() {
+    return SVGGeometryElement::call("getPathData").as<jsbind::TypedArray<SVGPathSegment>>();
 }
 
-jsbind::Sequence<SVGPathSegment> SVGPathElement::getPathData(const SVGPathDataSettings& settings) {
-    return SVGGeometryElement::call("getPathData", settings).as<jsbind::Sequence<SVGPathSegment>>();
+jsbind::TypedArray<SVGPathSegment> SVGPathElement::getPathData(const SVGPathDataSettings& settings) {
+    return SVGGeometryElement::call("getPathData", settings).as<jsbind::TypedArray<SVGPathSegment>>();
 }
 
-jsbind::Undefined SVGPathElement::setPathData(const jsbind::Sequence<SVGPathSegment>& pathData) {
+jsbind::Undefined SVGPathElement::setPathData(const jsbind::TypedArray<SVGPathSegment>& pathData) {
     return SVGGeometryElement::call("setPathData", pathData).as<jsbind::Undefined>();
 }
 

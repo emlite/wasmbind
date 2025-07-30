@@ -10,7 +10,7 @@ PresentationConnectionAvailableEvent::PresentationConnectionAvailableEvent(Handl
 PresentationConnectionAvailableEvent::PresentationConnectionAvailableEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-PresentationConnectionAvailableEvent::PresentationConnectionAvailableEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PresentationConnectionAvailableEvent").new_(type, eventInitDict)) {}
+PresentationConnectionAvailableEvent::PresentationConnectionAvailableEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PresentationConnectionAvailableEvent").new_(type, eventInitDict)) {}
 
 PresentationConnection PresentationConnectionAvailableEvent::connection() const {
     return Event::get("connection").as<PresentationConnection>();

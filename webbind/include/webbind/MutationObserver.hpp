@@ -28,8 +28,8 @@ public:
     void attributeOldValue(bool value);
     bool characterDataOldValue() const;
     void characterDataOldValue(bool value);
-    jsbind::Sequence<jsbind::DOMString> attributeFilter() const;
-    void attributeFilter(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<jsbind::String> attributeFilter() const;
+    void attributeFilter(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class MutationObserver : public emlite::Val {
@@ -44,6 +44,6 @@ public:
     jsbind::Undefined observe(const Node& target);
     jsbind::Undefined observe(const Node& target, const MutationObserverInit& options);
     jsbind::Undefined disconnect();
-    jsbind::Sequence<MutationRecord> takeRecords();
+    jsbind::TypedArray<MutationRecord> takeRecords();
 };
 

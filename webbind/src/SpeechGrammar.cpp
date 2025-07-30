@@ -9,11 +9,11 @@ SpeechGrammar::SpeechGrammar(Handle h) noexcept : emlite::Val(emlite::Val::take_
 SpeechGrammar::SpeechGrammar(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString SpeechGrammar::src() const {
-    return emlite::Val::get("src").as<jsbind::DOMString>();
+jsbind::String SpeechGrammar::src() const {
+    return emlite::Val::get("src").as<jsbind::String>();
 }
 
-void SpeechGrammar::src(const jsbind::DOMString& value) {
+void SpeechGrammar::src(const jsbind::String& value) {
     emlite::Val::set("src", value);
 }
 

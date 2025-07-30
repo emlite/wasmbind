@@ -10,9 +10,9 @@ PushEvent::PushEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_owne
 PushEvent::PushEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-PushEvent::PushEvent(const jsbind::DOMString& type) : ExtendableEvent(emlite::Val::global("PushEvent").new_(type)) {}
+PushEvent::PushEvent(const jsbind::String& type) : ExtendableEvent(emlite::Val::global("PushEvent").new_(type)) {}
 
-PushEvent::PushEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("PushEvent").new_(type, eventInitDict)) {}
+PushEvent::PushEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("PushEvent").new_(type, eventInitDict)) {}
 
 PushMessageData PushEvent::data() const {
     return ExtendableEvent::get("data").as<PushMessageData>();

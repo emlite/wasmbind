@@ -14,8 +14,8 @@ public:
     static ValueEvent take_ownership(Handle h) noexcept;
 
     ValueEvent clone() const noexcept;
-    ValueEvent(const jsbind::DOMString& type);
-    ValueEvent(const jsbind::DOMString& type, const jsbind::Any& initDict);
+    ValueEvent(const jsbind::String& type);
+    ValueEvent(const jsbind::String& type, const jsbind::Any& initDict);
     jsbind::Any value() const;
 };
 

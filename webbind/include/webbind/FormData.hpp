@@ -20,13 +20,13 @@ public:
     FormData();
     FormData(const HTMLFormElement& form);
     FormData(const HTMLFormElement& form, const HTMLElement& submitter);
-    jsbind::Undefined append(const jsbind::USVString& name, const Blob& blobValue);
-    jsbind::Undefined append(const jsbind::USVString& name, const Blob& blobValue, const jsbind::USVString& filename);
-    jsbind::Undefined delete_(const jsbind::USVString& name);
-    jsbind::Any get(const jsbind::USVString& name);
-    jsbind::Sequence<jsbind::Any> getAll(const jsbind::USVString& name);
-    bool has(const jsbind::USVString& name);
-    jsbind::Undefined set(const jsbind::USVString& name, const Blob& blobValue);
-    jsbind::Undefined set(const jsbind::USVString& name, const Blob& blobValue, const jsbind::USVString& filename);
+    jsbind::Undefined append(const jsbind::String& name, const Blob& blobValue);
+    jsbind::Undefined append(const jsbind::String& name, const Blob& blobValue, const jsbind::String& filename);
+    jsbind::Undefined delete_(const jsbind::String& name);
+    jsbind::Any get(const jsbind::String& name);
+    jsbind::TypedArray<jsbind::Any> getAll(const jsbind::String& name);
+    bool has(const jsbind::String& name);
+    jsbind::Undefined set(const jsbind::String& name, const Blob& blobValue);
+    jsbind::Undefined set(const jsbind::String& name, const Blob& blobValue, const jsbind::String& filename);
 };
 

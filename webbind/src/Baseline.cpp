@@ -9,8 +9,8 @@ Baseline::Baseline(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 Baseline::Baseline(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString Baseline::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String Baseline::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
 double Baseline::value() const {

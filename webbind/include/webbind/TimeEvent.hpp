@@ -18,6 +18,6 @@ public:
     TimeEvent clone() const noexcept;
     jsbind::Any view() const;
     long detail() const;
-    jsbind::Undefined initTimeEvent(const jsbind::DOMString& typeArg, const Window& viewArg, long detailArg);
+    jsbind::Undefined initTimeEvent(const jsbind::String& typeArg, const Window& viewArg, long detailArg);
 };
 

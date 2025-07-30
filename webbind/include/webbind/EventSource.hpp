@@ -14,9 +14,9 @@ public:
     static EventSource take_ownership(Handle h) noexcept;
 
     EventSource clone() const noexcept;
-    EventSource(const jsbind::USVString& url);
-    EventSource(const jsbind::USVString& url, const jsbind::Any& eventSourceInitDict);
-    jsbind::USVString url() const;
+    EventSource(const jsbind::String& url);
+    EventSource(const jsbind::String& url, const jsbind::Any& eventSourceInitDict);
+    jsbind::String url() const;
     bool withCredentials() const;
     unsigned short readyState() const;
     jsbind::Any onopen() const;

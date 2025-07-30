@@ -15,12 +15,12 @@ public:
     explicit HandwritingHints(const emlite::Val &val) noexcept;
     HandwritingHints() noexcept;
     HandwritingHints clone() const noexcept;
-    jsbind::DOMString recognitionType() const;
-    void recognitionType(const jsbind::DOMString& value);
-    jsbind::DOMString inputType() const;
-    void inputType(const jsbind::DOMString& value);
-    jsbind::DOMString textContext() const;
-    void textContext(const jsbind::DOMString& value);
+    jsbind::String recognitionType() const;
+    void recognitionType(const jsbind::String& value);
+    jsbind::String inputType() const;
+    void inputType(const jsbind::String& value);
+    jsbind::String textContext() const;
+    void textContext(const jsbind::String& value);
     unsigned long alternatives() const;
     void alternatives(unsigned long value);
 };

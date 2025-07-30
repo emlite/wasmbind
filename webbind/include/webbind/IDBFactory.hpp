@@ -15,8 +15,8 @@ public:
     explicit IDBDatabaseInfo(const emlite::Val &val) noexcept;
     IDBDatabaseInfo() noexcept;
     IDBDatabaseInfo clone() const noexcept;
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
     long long version() const;
     void version(long long value);
 };
@@ -29,10 +29,10 @@ public:
     static IDBFactory take_ownership(Handle h) noexcept;
 
     IDBFactory clone() const noexcept;
-    IDBOpenDBRequest open(const jsbind::DOMString& name);
-    IDBOpenDBRequest open(const jsbind::DOMString& name, long long version);
-    IDBOpenDBRequest deleteDatabase(const jsbind::DOMString& name);
-    jsbind::Promise<jsbind::Sequence<IDBDatabaseInfo>> databases();
+    IDBOpenDBRequest open(const jsbind::String& name);
+    IDBOpenDBRequest open(const jsbind::String& name, long long version);
+    IDBOpenDBRequest deleteDatabase(const jsbind::String& name);
+    jsbind::Promise<jsbind::TypedArray<IDBDatabaseInfo>> databases();
     short cmp(const jsbind::Any& first, const jsbind::Any& second);
 };
 

@@ -45,7 +45,7 @@ public:
 
     ImageDecoder clone() const noexcept;
     ImageDecoder(const jsbind::Any& init);
-    jsbind::DOMString type() const;
+    jsbind::String type() const;
     bool complete() const;
     jsbind::Promise<jsbind::Undefined> completed() const;
     ImageTrackList tracks() const;
@@ -53,6 +53,6 @@ public:
     jsbind::Promise<ImageDecodeResult> decode(const ImageDecodeOptions& options);
     jsbind::Undefined reset();
     jsbind::Undefined close();
-    static jsbind::Promise<bool> isTypeSupported(const jsbind::DOMString& type);
+    static jsbind::Promise<bool> isTypeSupported(const jsbind::String& type);
 };
 

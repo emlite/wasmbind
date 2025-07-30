@@ -17,9 +17,9 @@ public:
     static XRInputSourcesChangeEvent take_ownership(Handle h) noexcept;
 
     XRInputSourcesChangeEvent clone() const noexcept;
-    XRInputSourcesChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    XRInputSourcesChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     XRSession session() const;
-    jsbind::FrozenArray<XRInputSource> added() const;
-    jsbind::FrozenArray<XRInputSource> removed() const;
+    jsbind::TypedArray<XRInputSource> added() const;
+    jsbind::TypedArray<XRInputSource> removed() const;
 };
 

@@ -16,10 +16,10 @@ public:
     explicit XRSessionInit(const emlite::Val &val) noexcept;
     XRSessionInit() noexcept;
     XRSessionInit clone() const noexcept;
-    jsbind::Sequence<jsbind::DOMString> requiredFeatures() const;
-    void requiredFeatures(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::Sequence<jsbind::DOMString> optionalFeatures() const;
-    void optionalFeatures(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<jsbind::String> requiredFeatures() const;
+    void requiredFeatures(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::TypedArray<jsbind::String> optionalFeatures() const;
+    void optionalFeatures(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class XRSystem : public EventTarget {

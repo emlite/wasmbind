@@ -16,7 +16,7 @@ public:
     static USBConnectionEvent take_ownership(Handle h) noexcept;
 
     USBConnectionEvent clone() const noexcept;
-    USBConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    USBConnectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     USBDevice device() const;
 };
 

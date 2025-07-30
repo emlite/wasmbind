@@ -46,19 +46,19 @@ void FontFaceSet::onloadingerror(const jsbind::Any& value) {
     EventTarget::set("onloadingerror", value);
 }
 
-jsbind::Promise<jsbind::Sequence<FontFace>> FontFaceSet::load(const jsbind::CSSOMString& font) {
-    return EventTarget::call("load", font).as<jsbind::Promise<jsbind::Sequence<FontFace>>>();
+jsbind::Promise<jsbind::TypedArray<FontFace>> FontFaceSet::load(const jsbind::String& font) {
+    return EventTarget::call("load", font).as<jsbind::Promise<jsbind::TypedArray<FontFace>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<FontFace>> FontFaceSet::load(const jsbind::CSSOMString& font, const jsbind::CSSOMString& text) {
-    return EventTarget::call("load", font, text).as<jsbind::Promise<jsbind::Sequence<FontFace>>>();
+jsbind::Promise<jsbind::TypedArray<FontFace>> FontFaceSet::load(const jsbind::String& font, const jsbind::String& text) {
+    return EventTarget::call("load", font, text).as<jsbind::Promise<jsbind::TypedArray<FontFace>>>();
 }
 
-bool FontFaceSet::check(const jsbind::CSSOMString& font) {
+bool FontFaceSet::check(const jsbind::String& font) {
     return EventTarget::call("check", font).as<bool>();
 }
 
-bool FontFaceSet::check(const jsbind::CSSOMString& font, const jsbind::CSSOMString& text) {
+bool FontFaceSet::check(const jsbind::String& font, const jsbind::String& text) {
     return EventTarget::call("check", font, text).as<bool>();
 }
 

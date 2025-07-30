@@ -9,11 +9,11 @@ XRPermissionStatus::XRPermissionStatus(Handle h) noexcept : PermissionStatus(eml
 XRPermissionStatus::XRPermissionStatus(const emlite::Val &val) noexcept: PermissionStatus(val) {}
 
 
-jsbind::FrozenArray<jsbind::DOMString> XRPermissionStatus::granted() const {
-    return PermissionStatus::get("granted").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> XRPermissionStatus::granted() const {
+    return PermissionStatus::get("granted").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void XRPermissionStatus::granted(const jsbind::FrozenArray<jsbind::DOMString>& value) {
+void XRPermissionStatus::granted(const jsbind::TypedArray<jsbind::String>& value) {
     PermissionStatus::set("granted", value);
 }
 

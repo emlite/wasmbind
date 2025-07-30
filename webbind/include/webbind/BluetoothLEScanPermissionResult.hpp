@@ -16,7 +16,7 @@ public:
     static BluetoothLEScanPermissionResult take_ownership(Handle h) noexcept;
 
     BluetoothLEScanPermissionResult clone() const noexcept;
-    jsbind::FrozenArray<BluetoothLEScan> scans() const;
-    void scans(const jsbind::FrozenArray<BluetoothLEScan>& value);
+    jsbind::TypedArray<BluetoothLEScan> scans() const;
+    void scans(const jsbind::TypedArray<BluetoothLEScan>& value);
 };
 

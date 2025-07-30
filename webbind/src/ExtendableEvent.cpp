@@ -9,9 +9,9 @@ ExtendableEvent::ExtendableEvent(Handle h) noexcept : Event(emlite::Val::take_ow
 ExtendableEvent::ExtendableEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-ExtendableEvent::ExtendableEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("ExtendableEvent").new_(type)) {}
+ExtendableEvent::ExtendableEvent(const jsbind::String& type) : Event(emlite::Val::global("ExtendableEvent").new_(type)) {}
 
-ExtendableEvent::ExtendableEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ExtendableEvent").new_(type, eventInitDict)) {}
+ExtendableEvent::ExtendableEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ExtendableEvent").new_(type, eventInitDict)) {}
 
 jsbind::Undefined ExtendableEvent::waitUntil(const jsbind::Promise<jsbind::Any>& f) {
     return Event::call("waitUntil", f).as<jsbind::Undefined>();

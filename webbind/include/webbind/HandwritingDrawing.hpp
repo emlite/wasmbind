@@ -15,10 +15,10 @@ public:
     explicit HandwritingPrediction(const emlite::Val &val) noexcept;
     HandwritingPrediction() noexcept;
     HandwritingPrediction clone() const noexcept;
-    jsbind::DOMString text() const;
-    void text(const jsbind::DOMString& value);
-    jsbind::Sequence<jsbind::Any> segmentationResult() const;
-    void segmentationResult(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::String text() const;
+    void text(const jsbind::String& value);
+    jsbind::TypedArray<jsbind::Any> segmentationResult() const;
+    void segmentationResult(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class HandwritingDrawing : public emlite::Val {
@@ -32,7 +32,7 @@ public:
     jsbind::Undefined addStroke(const HandwritingStroke& stroke);
     jsbind::Undefined removeStroke(const HandwritingStroke& stroke);
     jsbind::Undefined clear();
-    jsbind::Sequence<HandwritingStroke> getStrokes();
-    jsbind::Promise<jsbind::Sequence<HandwritingPrediction>> getPrediction();
+    jsbind::TypedArray<HandwritingStroke> getStrokes();
+    jsbind::Promise<jsbind::TypedArray<HandwritingPrediction>> getPrediction();
 };
 

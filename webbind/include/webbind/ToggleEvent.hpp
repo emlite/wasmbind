@@ -16,10 +16,10 @@ public:
     static ToggleEvent take_ownership(Handle h) noexcept;
 
     ToggleEvent clone() const noexcept;
-    ToggleEvent(const jsbind::DOMString& type);
-    ToggleEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::DOMString oldState() const;
-    jsbind::DOMString newState() const;
+    ToggleEvent(const jsbind::String& type);
+    ToggleEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String oldState() const;
+    jsbind::String newState() const;
     Element source() const;
 };
 

@@ -37,11 +37,11 @@ unsigned long HTMLVideoElement::videoHeight() const {
     return HTMLMediaElement::get("videoHeight").as<unsigned long>();
 }
 
-jsbind::USVString HTMLVideoElement::poster() const {
-    return HTMLMediaElement::get("poster").as<jsbind::USVString>();
+jsbind::String HTMLVideoElement::poster() const {
+    return HTMLMediaElement::get("poster").as<jsbind::String>();
 }
 
-void HTMLVideoElement::poster(const jsbind::USVString& value) {
+void HTMLVideoElement::poster(const jsbind::String& value) {
     HTMLMediaElement::set("poster", value);
 }
 

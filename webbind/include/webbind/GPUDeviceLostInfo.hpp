@@ -14,6 +14,6 @@ public:
 
     GPUDeviceLostInfo clone() const noexcept;
     GPUDeviceLostReason reason() const;
-    jsbind::DOMString message() const;
+    jsbind::String message() const;
 };
 

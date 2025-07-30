@@ -17,6 +17,6 @@ public:
 
     XRTransientInputHitTestResult clone() const noexcept;
     XRInputSource inputSource() const;
-    jsbind::FrozenArray<XRHitTestResult> results() const;
+    jsbind::TypedArray<XRHitTestResult> results() const;
 };
 

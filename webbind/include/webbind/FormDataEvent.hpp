@@ -16,7 +16,7 @@ public:
     static FormDataEvent take_ownership(Handle h) noexcept;
 
     FormDataEvent clone() const noexcept;
-    FormDataEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    FormDataEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     FormData formData() const;
 };
 

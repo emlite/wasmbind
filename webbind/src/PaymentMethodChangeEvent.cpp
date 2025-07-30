@@ -9,12 +9,12 @@ PaymentMethodChangeEvent::PaymentMethodChangeEvent(Handle h) noexcept : PaymentR
 PaymentMethodChangeEvent::PaymentMethodChangeEvent(const emlite::Val &val) noexcept: PaymentRequestUpdateEvent(val) {}
 
 
-PaymentMethodChangeEvent::PaymentMethodChangeEvent(const jsbind::DOMString& type) : PaymentRequestUpdateEvent(emlite::Val::global("PaymentMethodChangeEvent").new_(type)) {}
+PaymentMethodChangeEvent::PaymentMethodChangeEvent(const jsbind::String& type) : PaymentRequestUpdateEvent(emlite::Val::global("PaymentMethodChangeEvent").new_(type)) {}
 
-PaymentMethodChangeEvent::PaymentMethodChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : PaymentRequestUpdateEvent(emlite::Val::global("PaymentMethodChangeEvent").new_(type, eventInitDict)) {}
+PaymentMethodChangeEvent::PaymentMethodChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : PaymentRequestUpdateEvent(emlite::Val::global("PaymentMethodChangeEvent").new_(type, eventInitDict)) {}
 
-jsbind::DOMString PaymentMethodChangeEvent::methodName() const {
-    return PaymentRequestUpdateEvent::get("methodName").as<jsbind::DOMString>();
+jsbind::String PaymentMethodChangeEvent::methodName() const {
+    return PaymentRequestUpdateEvent::get("methodName").as<jsbind::String>();
 }
 
 jsbind::Object PaymentMethodChangeEvent::methodDetails() const {

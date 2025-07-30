@@ -53,7 +53,7 @@ int main() {
     }
 
     // Multiple arguments
-    DOMString greeting = "Hello from jsbind 👋";
+    String greeting = "Hello from jsbind 👋";
     Any n = 12345;
     console.log(greeting, n);
     return 0;

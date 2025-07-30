@@ -16,18 +16,18 @@ public:
     explicit FenceEvent(const emlite::Val &val) noexcept;
     FenceEvent() noexcept;
     FenceEvent clone() const noexcept;
-    jsbind::DOMString eventType() const;
-    void eventType(const jsbind::DOMString& value);
-    jsbind::DOMString eventData() const;
-    void eventData(const jsbind::DOMString& value);
-    jsbind::Sequence<FenceReportingDestination> destination() const;
-    void destination(const jsbind::Sequence<FenceReportingDestination>& value);
+    jsbind::String eventType() const;
+    void eventType(const jsbind::String& value);
+    jsbind::String eventData() const;
+    void eventData(const jsbind::String& value);
+    jsbind::TypedArray<FenceReportingDestination> destination() const;
+    void destination(const jsbind::TypedArray<FenceReportingDestination>& value);
     bool crossOriginExposed() const;
     void crossOriginExposed(bool value);
     bool once() const;
     void once(bool value);
-    jsbind::USVString destinationURL() const;
-    void destinationURL(const jsbind::USVString& value);
+    jsbind::String destinationURL() const;
+    void destinationURL(const jsbind::String& value);
 };
 
 class Fence : public emlite::Val {
@@ -42,7 +42,7 @@ public:
     jsbind::Undefined reportEvent(const jsbind::Any& event);
     jsbind::Undefined setReportEventDataForAutomaticBeacons();
     jsbind::Undefined setReportEventDataForAutomaticBeacons(const FenceEvent& event);
-    jsbind::Sequence<FencedFrameConfig> getNestedConfigs();
+    jsbind::TypedArray<FencedFrameConfig> getNestedConfigs();
     jsbind::Promise<jsbind::Undefined> disableUntrustedNetwork();
     jsbind::Undefined notifyEvent(const Event& event);
 };

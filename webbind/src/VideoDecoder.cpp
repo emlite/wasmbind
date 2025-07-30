@@ -11,11 +11,11 @@ VideoDecoderConfig::VideoDecoderConfig(const emlite::Val &val) noexcept: emlite:
 VideoDecoderConfig::VideoDecoderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
 VideoDecoderConfig VideoDecoderConfig::clone() const noexcept { return *this; }
 
-jsbind::DOMString VideoDecoderConfig::codec() const {
-    return emlite::Val::get("codec").as<jsbind::DOMString>();
+jsbind::String VideoDecoderConfig::codec() const {
+    return emlite::Val::get("codec").as<jsbind::String>();
 }
 
-void VideoDecoderConfig::codec(const jsbind::DOMString& value) {
+void VideoDecoderConfig::codec(const jsbind::String& value) {
     emlite::Val::set("codec", value);
 }
 

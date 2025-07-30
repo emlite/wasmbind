@@ -9,10 +9,10 @@ BroadcastChannel::BroadcastChannel(Handle h) noexcept : EventTarget(emlite::Val:
 BroadcastChannel::BroadcastChannel(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-BroadcastChannel::BroadcastChannel(const jsbind::DOMString& name) : EventTarget(emlite::Val::global("BroadcastChannel").new_(name)) {}
+BroadcastChannel::BroadcastChannel(const jsbind::String& name) : EventTarget(emlite::Val::global("BroadcastChannel").new_(name)) {}
 
-jsbind::DOMString BroadcastChannel::name() const {
-    return EventTarget::get("name").as<jsbind::DOMString>();
+jsbind::String BroadcastChannel::name() const {
+    return EventTarget::get("name").as<jsbind::String>();
 }
 
 jsbind::Undefined BroadcastChannel::postMessage(const jsbind::Any& message) {

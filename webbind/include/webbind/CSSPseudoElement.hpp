@@ -21,12 +21,12 @@ public:
     static CSSPseudoElement take_ownership(Handle h) noexcept;
 
     CSSPseudoElement clone() const noexcept;
-    jsbind::CSSOMString type() const;
+    jsbind::String type() const;
     Element element() const;
     jsbind::Any parent() const;
-    CSSPseudoElement pseudo(const jsbind::CSSOMString& type);
-    jsbind::Sequence<DOMQuad> getBoxQuads();
-    jsbind::Sequence<DOMQuad> getBoxQuads(const BoxQuadOptions& options);
+    CSSPseudoElement pseudo(const jsbind::String& type);
+    jsbind::TypedArray<DOMQuad> getBoxQuads();
+    jsbind::TypedArray<DOMQuad> getBoxQuads(const BoxQuadOptions& options);
     DOMQuad convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from);
     DOMQuad convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from, const ConvertCoordinateOptions& options);
     DOMQuad convertRectFromNode(const DOMRectReadOnly& rect, const jsbind::Any& from);

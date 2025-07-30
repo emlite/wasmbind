@@ -16,7 +16,7 @@ public:
     static CSSMarginRule take_ownership(Handle h) noexcept;
 
     CSSMarginRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
+    jsbind::String name() const;
     CSSStyleDeclaration style() const;
 };
 

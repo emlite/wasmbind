@@ -82,19 +82,19 @@ public:
     static Navigation take_ownership(Handle h) noexcept;
 
     Navigation clone() const noexcept;
-    jsbind::Sequence<NavigationHistoryEntry> entries();
+    jsbind::TypedArray<NavigationHistoryEntry> entries();
     NavigationHistoryEntry currentEntry() const;
     jsbind::Undefined updateCurrentEntry(const NavigationUpdateCurrentEntryOptions& options);
     NavigationTransition transition() const;
     NavigationActivation activation() const;
     bool canGoBack() const;
     bool canGoForward() const;
-    NavigationResult navigate(const jsbind::USVString& url);
-    NavigationResult navigate(const jsbind::USVString& url, const NavigationNavigateOptions& options);
+    NavigationResult navigate(const jsbind::String& url);
+    NavigationResult navigate(const jsbind::String& url, const NavigationNavigateOptions& options);
     NavigationResult reload();
     NavigationResult reload(const NavigationReloadOptions& options);
-    NavigationResult traverseTo(const jsbind::DOMString& key);
-    NavigationResult traverseTo(const jsbind::DOMString& key, const NavigationOptions& options);
+    NavigationResult traverseTo(const jsbind::String& key);
+    NavigationResult traverseTo(const jsbind::String& key, const NavigationOptions& options);
     NavigationResult back();
     NavigationResult back(const NavigationOptions& options);
     NavigationResult forward();

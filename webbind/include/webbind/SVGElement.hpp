@@ -42,8 +42,8 @@ public:
     SVGElement correspondingElement() const;
     SVGUseElement correspondingUseElement() const;
     DOMStringMap dataset() const;
-    jsbind::DOMString nonce() const;
-    void nonce(const jsbind::DOMString& value);
+    jsbind::String nonce() const;
+    void nonce(const jsbind::String& value);
     bool autofocus() const;
     void autofocus(bool value);
     long tabIndex() const;

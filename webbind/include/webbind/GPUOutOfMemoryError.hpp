@@ -14,6 +14,6 @@ public:
     static GPUOutOfMemoryError take_ownership(Handle h) noexcept;
 
     GPUOutOfMemoryError clone() const noexcept;
-    GPUOutOfMemoryError(const jsbind::DOMString& message);
+    GPUOutOfMemoryError(const jsbind::String& message);
 };
 

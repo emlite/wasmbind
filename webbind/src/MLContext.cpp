@@ -43,11 +43,11 @@ void MLOperandDescriptor::dataType(const MLOperandDataType& value) {
     emlite::Val::set("dataType", value);
 }
 
-jsbind::Sequence<unsigned long> MLOperandDescriptor::shape() const {
-    return emlite::Val::get("shape").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLOperandDescriptor::shape() const {
+    return emlite::Val::get("shape").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLOperandDescriptor::shape(jsbind::Sequence<unsigned long> value) {
+void MLOperandDescriptor::shape(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("shape", value);
 }
 
@@ -75,11 +75,11 @@ MLContextLostInfo::MLContextLostInfo(const emlite::Val &val) noexcept: emlite::V
 MLContextLostInfo::MLContextLostInfo() noexcept: emlite::Val(emlite::Val::object()) {}
 MLContextLostInfo MLContextLostInfo::clone() const noexcept { return *this; }
 
-jsbind::DOMString MLContextLostInfo::message() const {
-    return emlite::Val::get("message").as<jsbind::DOMString>();
+jsbind::String MLContextLostInfo::message() const {
+    return emlite::Val::get("message").as<jsbind::String>();
 }
 
-void MLContextLostInfo::message(const jsbind::DOMString& value) {
+void MLContextLostInfo::message(const jsbind::String& value) {
     emlite::Val::set("message", value);
 }
 

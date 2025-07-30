@@ -27,24 +27,24 @@ TextDecoder::TextDecoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 TextDecoder::TextDecoder() : emlite::Val(emlite::Val::global("TextDecoder").new_()) {}
 
-TextDecoder::TextDecoder(const jsbind::DOMString& label) : emlite::Val(emlite::Val::global("TextDecoder").new_(label)) {}
+TextDecoder::TextDecoder(const jsbind::String& label) : emlite::Val(emlite::Val::global("TextDecoder").new_(label)) {}
 
-TextDecoder::TextDecoder(const jsbind::DOMString& label, const jsbind::Any& options) : emlite::Val(emlite::Val::global("TextDecoder").new_(label, options)) {}
+TextDecoder::TextDecoder(const jsbind::String& label, const jsbind::Any& options) : emlite::Val(emlite::Val::global("TextDecoder").new_(label, options)) {}
 
-jsbind::USVString TextDecoder::decode() {
-    return emlite::Val::call("decode").as<jsbind::USVString>();
+jsbind::String TextDecoder::decode() {
+    return emlite::Val::call("decode").as<jsbind::String>();
 }
 
-jsbind::USVString TextDecoder::decode(const jsbind::Any& input) {
-    return emlite::Val::call("decode", input).as<jsbind::USVString>();
+jsbind::String TextDecoder::decode(const jsbind::Any& input) {
+    return emlite::Val::call("decode", input).as<jsbind::String>();
 }
 
-jsbind::USVString TextDecoder::decode(const jsbind::Any& input, const TextDecodeOptions& options) {
-    return emlite::Val::call("decode", input, options).as<jsbind::USVString>();
+jsbind::String TextDecoder::decode(const jsbind::Any& input, const TextDecodeOptions& options) {
+    return emlite::Val::call("decode", input, options).as<jsbind::String>();
 }
 
-jsbind::DOMString TextDecoder::encoding() const {
-    return emlite::Val::get("encoding").as<jsbind::DOMString>();
+jsbind::String TextDecoder::encoding() const {
+    return emlite::Val::get("encoding").as<jsbind::String>();
 }
 
 bool TextDecoder::fatal() const {

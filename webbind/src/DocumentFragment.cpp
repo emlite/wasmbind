@@ -14,7 +14,7 @@ DocumentFragment::DocumentFragment(const emlite::Val &val) noexcept: Node(val) {
 
 DocumentFragment::DocumentFragment() : Node(emlite::Val::global("DocumentFragment").new_()) {}
 
-Element DocumentFragment::getElementById(const jsbind::DOMString& elementId) {
+Element DocumentFragment::getElementById(const jsbind::String& elementId) {
     return Node::call("getElementById", elementId).as<Element>();
 }
 
@@ -50,11 +50,11 @@ jsbind::Undefined DocumentFragment::moveBefore(const Node& node, const Node& chi
     return Node::call("moveBefore", node, child).as<jsbind::Undefined>();
 }
 
-Element DocumentFragment::querySelector(const jsbind::DOMString& selectors) {
+Element DocumentFragment::querySelector(const jsbind::String& selectors) {
     return Node::call("querySelector", selectors).as<Element>();
 }
 
-NodeList DocumentFragment::querySelectorAll(const jsbind::DOMString& selectors) {
+NodeList DocumentFragment::querySelectorAll(const jsbind::String& selectors) {
     return Node::call("querySelectorAll", selectors).as<NodeList>();
 }
 

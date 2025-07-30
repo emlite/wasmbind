@@ -21,6 +21,6 @@ public:
     bool passthroughFullyObscured() const;
     double inlineVerticalFieldOfView() const;
     XRWebGLLayer baseLayer() const;
-    jsbind::FrozenArray<XRLayer> layers() const;
+    jsbind::TypedArray<XRLayer> layers() const;
 };
 

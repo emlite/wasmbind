@@ -17,9 +17,9 @@ public:
     static PresentationRequest take_ownership(Handle h) noexcept;
 
     PresentationRequest clone() const noexcept;
-    PresentationRequest(const jsbind::Sequence<jsbind::USVString>& urls);
+    PresentationRequest(const jsbind::TypedArray<jsbind::String>& urls);
     jsbind::Promise<PresentationConnection> start();
-    jsbind::Promise<PresentationConnection> reconnect(const jsbind::USVString& presentationId);
+    jsbind::Promise<PresentationConnection> reconnect(const jsbind::String& presentationId);
     jsbind::Promise<PresentationAvailability> getAvailability();
     jsbind::Any onconnectionavailable() const;
     void onconnectionavailable(const jsbind::Any& value);

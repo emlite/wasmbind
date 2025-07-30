@@ -23,11 +23,11 @@ CSSRuleList CSSStyleSheet::cssRules() const {
     return StyleSheet::get("cssRules").as<CSSRuleList>();
 }
 
-unsigned long CSSStyleSheet::insertRule(const jsbind::CSSOMString& rule) {
+unsigned long CSSStyleSheet::insertRule(const jsbind::String& rule) {
     return StyleSheet::call("insertRule", rule).as<unsigned long>();
 }
 
-unsigned long CSSStyleSheet::insertRule(const jsbind::CSSOMString& rule, unsigned long index) {
+unsigned long CSSStyleSheet::insertRule(const jsbind::String& rule, unsigned long index) {
     return StyleSheet::call("insertRule", rule, index).as<unsigned long>();
 }
 
@@ -35,11 +35,11 @@ jsbind::Undefined CSSStyleSheet::deleteRule(unsigned long index) {
     return StyleSheet::call("deleteRule", index).as<jsbind::Undefined>();
 }
 
-jsbind::Promise<CSSStyleSheet> CSSStyleSheet::replace(const jsbind::USVString& text) {
+jsbind::Promise<CSSStyleSheet> CSSStyleSheet::replace(const jsbind::String& text) {
     return StyleSheet::call("replace", text).as<jsbind::Promise<CSSStyleSheet>>();
 }
 
-jsbind::Undefined CSSStyleSheet::replaceSync(const jsbind::USVString& text) {
+jsbind::Undefined CSSStyleSheet::replaceSync(const jsbind::String& text) {
     return StyleSheet::call("replaceSync", text).as<jsbind::Undefined>();
 }
 
@@ -51,15 +51,15 @@ long CSSStyleSheet::addRule() {
     return StyleSheet::call("addRule").as<long>();
 }
 
-long CSSStyleSheet::addRule(const jsbind::DOMString& selector) {
+long CSSStyleSheet::addRule(const jsbind::String& selector) {
     return StyleSheet::call("addRule", selector).as<long>();
 }
 
-long CSSStyleSheet::addRule(const jsbind::DOMString& selector, const jsbind::DOMString& style) {
+long CSSStyleSheet::addRule(const jsbind::String& selector, const jsbind::String& style) {
     return StyleSheet::call("addRule", selector, style).as<long>();
 }
 
-long CSSStyleSheet::addRule(const jsbind::DOMString& selector, const jsbind::DOMString& style, unsigned long index) {
+long CSSStyleSheet::addRule(const jsbind::String& selector, const jsbind::String& style, unsigned long index) {
     return StyleSheet::call("addRule", selector, style, index).as<long>();
 }
 

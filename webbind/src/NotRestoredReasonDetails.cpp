@@ -9,8 +9,8 @@ NotRestoredReasonDetails::NotRestoredReasonDetails(Handle h) noexcept : emlite::
 NotRestoredReasonDetails::NotRestoredReasonDetails(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString NotRestoredReasonDetails::reason() const {
-    return emlite::Val::get("reason").as<jsbind::DOMString>();
+jsbind::String NotRestoredReasonDetails::reason() const {
+    return emlite::Val::get("reason").as<jsbind::String>();
 }
 
 jsbind::Object NotRestoredReasonDetails::toJSON() {

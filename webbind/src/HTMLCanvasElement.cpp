@@ -29,35 +29,35 @@ void HTMLCanvasElement::height(unsigned long value) {
     HTMLElement::set("height", value);
 }
 
-jsbind::Any HTMLCanvasElement::getContext(const jsbind::DOMString& contextId) {
+jsbind::Any HTMLCanvasElement::getContext(const jsbind::String& contextId) {
     return HTMLElement::call("getContext", contextId).as<jsbind::Any>();
 }
 
-jsbind::Any HTMLCanvasElement::getContext(const jsbind::DOMString& contextId, const jsbind::Any& options) {
+jsbind::Any HTMLCanvasElement::getContext(const jsbind::String& contextId, const jsbind::Any& options) {
     return HTMLElement::call("getContext", contextId, options).as<jsbind::Any>();
 }
 
-jsbind::USVString HTMLCanvasElement::toDataURL() {
-    return HTMLElement::call("toDataURL").as<jsbind::USVString>();
+jsbind::String HTMLCanvasElement::toDataURL() {
+    return HTMLElement::call("toDataURL").as<jsbind::String>();
 }
 
-jsbind::USVString HTMLCanvasElement::toDataURL(const jsbind::DOMString& type) {
-    return HTMLElement::call("toDataURL", type).as<jsbind::USVString>();
+jsbind::String HTMLCanvasElement::toDataURL(const jsbind::String& type) {
+    return HTMLElement::call("toDataURL", type).as<jsbind::String>();
 }
 
-jsbind::USVString HTMLCanvasElement::toDataURL(const jsbind::DOMString& type, const jsbind::Any& quality) {
-    return HTMLElement::call("toDataURL", type, quality).as<jsbind::USVString>();
+jsbind::String HTMLCanvasElement::toDataURL(const jsbind::String& type, const jsbind::Any& quality) {
+    return HTMLElement::call("toDataURL", type, quality).as<jsbind::String>();
 }
 
 jsbind::Undefined HTMLCanvasElement::toBlob(const jsbind::Function& callback) {
     return HTMLElement::call("toBlob", callback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLCanvasElement::toBlob(const jsbind::Function& callback, const jsbind::DOMString& type) {
+jsbind::Undefined HTMLCanvasElement::toBlob(const jsbind::Function& callback, const jsbind::String& type) {
     return HTMLElement::call("toBlob", callback, type).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLCanvasElement::toBlob(const jsbind::Function& callback, const jsbind::DOMString& type, const jsbind::Any& quality) {
+jsbind::Undefined HTMLCanvasElement::toBlob(const jsbind::Function& callback, const jsbind::String& type, const jsbind::Any& quality) {
     return HTMLElement::call("toBlob", callback, type, quality).as<jsbind::Undefined>();
 }
 

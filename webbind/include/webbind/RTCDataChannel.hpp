@@ -14,11 +14,11 @@ public:
     static RTCDataChannel take_ownership(Handle h) noexcept;
 
     RTCDataChannel clone() const noexcept;
-    jsbind::USVString label() const;
+    jsbind::String label() const;
     bool ordered() const;
     unsigned short maxPacketLifeTime() const;
     unsigned short maxRetransmits() const;
-    jsbind::USVString protocol() const;
+    jsbind::String protocol() const;
     bool negotiated() const;
     unsigned short id() const;
     RTCDataChannelState readyState() const;

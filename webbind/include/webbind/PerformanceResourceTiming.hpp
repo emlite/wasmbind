@@ -16,9 +16,9 @@ public:
     static PerformanceResourceTiming take_ownership(Handle h) noexcept;
 
     PerformanceResourceTiming clone() const noexcept;
-    jsbind::DOMString initiatorType() const;
-    jsbind::DOMString deliveryType() const;
-    jsbind::ByteString nextHopProtocol() const;
+    jsbind::String initiatorType() const;
+    jsbind::String deliveryType() const;
+    jsbind::String nextHopProtocol() const;
     jsbind::Any workerStart() const;
     jsbind::Any redirectStart() const;
     jsbind::Any redirectEnd() const;
@@ -38,9 +38,9 @@ public:
     long long decodedBodySize() const;
     unsigned short responseStatus() const;
     RenderBlockingStatusType renderBlockingStatus() const;
-    jsbind::DOMString contentType() const;
-    jsbind::DOMString contentEncoding() const;
+    jsbind::String contentType() const;
+    jsbind::String contentEncoding() const;
     jsbind::Object toJSON();
-    jsbind::FrozenArray<PerformanceServerTiming> serverTiming() const;
+    jsbind::TypedArray<PerformanceServerTiming> serverTiming() const;
 };
 

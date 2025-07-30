@@ -15,7 +15,7 @@ public:
 
     HTMLTitleElement clone() const noexcept;
     HTMLTitleElement();
-    jsbind::DOMString text() const;
-    void text(const jsbind::DOMString& value);
+    jsbind::String text() const;
+    void text(const jsbind::String& value);
 };
 

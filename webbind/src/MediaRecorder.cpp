@@ -18,8 +18,8 @@ MediaStream MediaRecorder::stream() const {
     return EventTarget::get("stream").as<MediaStream>();
 }
 
-jsbind::DOMString MediaRecorder::mimeType() const {
-    return EventTarget::get("mimeType").as<jsbind::DOMString>();
+jsbind::String MediaRecorder::mimeType() const {
+    return EventTarget::get("mimeType").as<jsbind::String>();
 }
 
 RecordingState MediaRecorder::state() const {
@@ -110,7 +110,7 @@ jsbind::Undefined MediaRecorder::requestData() {
     return EventTarget::call("requestData").as<jsbind::Undefined>();
 }
 
-bool MediaRecorder::isTypeSupported(const jsbind::DOMString& type) {
+bool MediaRecorder::isTypeSupported(const jsbind::String& type) {
     return emlite::Val::global("mediarecorder").call("isTypeSupported", type).as<bool>();
 }
 

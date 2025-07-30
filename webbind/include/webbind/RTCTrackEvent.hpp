@@ -19,10 +19,10 @@ public:
     static RTCTrackEvent take_ownership(Handle h) noexcept;
 
     RTCTrackEvent clone() const noexcept;
-    RTCTrackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    RTCTrackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     RTCRtpReceiver receiver() const;
     MediaStreamTrack track() const;
-    jsbind::FrozenArray<MediaStream> streams() const;
+    jsbind::TypedArray<MediaStream> streams() const;
     RTCRtpTransceiver transceiver() const;
 };
 

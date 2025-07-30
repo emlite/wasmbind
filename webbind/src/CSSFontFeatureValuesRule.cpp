@@ -10,11 +10,11 @@ CSSFontFeatureValuesRule::CSSFontFeatureValuesRule(Handle h) noexcept : CSSRule(
 CSSFontFeatureValuesRule::CSSFontFeatureValuesRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSFontFeatureValuesRule::fontFamily() const {
-    return CSSRule::get("fontFamily").as<jsbind::CSSOMString>();
+jsbind::String CSSFontFeatureValuesRule::fontFamily() const {
+    return CSSRule::get("fontFamily").as<jsbind::String>();
 }
 
-void CSSFontFeatureValuesRule::fontFamily(const jsbind::CSSOMString& value) {
+void CSSFontFeatureValuesRule::fontFamily(const jsbind::String& value) {
     CSSRule::set("fontFamily", value);
 }
 

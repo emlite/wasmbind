@@ -14,7 +14,7 @@ public:
 
     MLTensor clone() const noexcept;
     MLOperandDataType dataType() const;
-    jsbind::FrozenArray<unsigned long> shape() const;
+    jsbind::TypedArray<unsigned long> shape() const;
     bool readable() const;
     bool writable() const;
     bool constant() const;

@@ -16,7 +16,7 @@ public:
     RTCSessionDescription clone() const noexcept;
     RTCSessionDescription(const RTCSessionDescriptionInit& descriptionInitDict);
     RTCSdpType type() const;
-    jsbind::DOMString sdp() const;
+    jsbind::String sdp() const;
     RTCSessionDescriptionInit toJSON();
 };
 

@@ -17,9 +17,9 @@ public:
     FileReaderSync clone() const noexcept;
     FileReaderSync();
     jsbind::ArrayBuffer readAsArrayBuffer(const Blob& blob);
-    jsbind::DOMString readAsBinaryString(const Blob& blob);
-    jsbind::DOMString readAsText(const Blob& blob);
-    jsbind::DOMString readAsText(const Blob& blob, const jsbind::DOMString& encoding);
-    jsbind::DOMString readAsDataURL(const Blob& blob);
+    jsbind::String readAsBinaryString(const Blob& blob);
+    jsbind::String readAsText(const Blob& blob);
+    jsbind::String readAsText(const Blob& blob, const jsbind::String& encoding);
+    jsbind::String readAsDataURL(const Blob& blob);
 };
 

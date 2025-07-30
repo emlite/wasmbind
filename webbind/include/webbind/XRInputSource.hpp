@@ -21,7 +21,7 @@ public:
     XRTargetRayMode targetRayMode() const;
     XRSpace targetRaySpace() const;
     XRSpace gripSpace() const;
-    jsbind::FrozenArray<jsbind::DOMString> profiles() const;
+    jsbind::TypedArray<jsbind::String> profiles() const;
     bool skipRendering() const;
     Gamepad gamepad() const;
     XRHand hand() const;

@@ -32,19 +32,19 @@ HTMLElement::HTMLElement(const emlite::Val &val) noexcept: Element(val) {}
 
 HTMLElement::HTMLElement() : Element(emlite::Val::global("HTMLElement").new_()) {}
 
-jsbind::DOMString HTMLElement::title() const {
-    return Element::get("title").as<jsbind::DOMString>();
+jsbind::String HTMLElement::title() const {
+    return Element::get("title").as<jsbind::String>();
 }
 
-void HTMLElement::title(const jsbind::DOMString& value) {
+void HTMLElement::title(const jsbind::String& value) {
     Element::set("title", value);
 }
 
-jsbind::DOMString HTMLElement::lang() const {
-    return Element::get("lang").as<jsbind::DOMString>();
+jsbind::String HTMLElement::lang() const {
+    return Element::get("lang").as<jsbind::String>();
 }
 
-void HTMLElement::lang(const jsbind::DOMString& value) {
+void HTMLElement::lang(const jsbind::String& value) {
     Element::set("lang", value);
 }
 
@@ -56,11 +56,11 @@ void HTMLElement::translate(bool value) {
     Element::set("translate", value);
 }
 
-jsbind::DOMString HTMLElement::dir() const {
-    return Element::get("dir").as<jsbind::DOMString>();
+jsbind::String HTMLElement::dir() const {
+    return Element::get("dir").as<jsbind::String>();
 }
 
-void HTMLElement::dir(const jsbind::DOMString& value) {
+void HTMLElement::dir(const jsbind::String& value) {
     Element::set("dir", value);
 }
 
@@ -84,16 +84,16 @@ jsbind::Undefined HTMLElement::click() {
     return Element::call("click").as<jsbind::Undefined>();
 }
 
-jsbind::DOMString HTMLElement::accessKey() const {
-    return Element::get("accessKey").as<jsbind::DOMString>();
+jsbind::String HTMLElement::accessKey() const {
+    return Element::get("accessKey").as<jsbind::String>();
 }
 
-void HTMLElement::accessKey(const jsbind::DOMString& value) {
+void HTMLElement::accessKey(const jsbind::String& value) {
     Element::set("accessKey", value);
 }
 
-jsbind::DOMString HTMLElement::accessKeyLabel() const {
-    return Element::get("accessKeyLabel").as<jsbind::DOMString>();
+jsbind::String HTMLElement::accessKeyLabel() const {
+    return Element::get("accessKeyLabel").as<jsbind::String>();
 }
 
 bool HTMLElement::draggable() const {
@@ -112,19 +112,19 @@ void HTMLElement::spellcheck(bool value) {
     Element::set("spellcheck", value);
 }
 
-jsbind::DOMString HTMLElement::writingSuggestions() const {
-    return Element::get("writingSuggestions").as<jsbind::DOMString>();
+jsbind::String HTMLElement::writingSuggestions() const {
+    return Element::get("writingSuggestions").as<jsbind::String>();
 }
 
-void HTMLElement::writingSuggestions(const jsbind::DOMString& value) {
+void HTMLElement::writingSuggestions(const jsbind::String& value) {
     Element::set("writingSuggestions", value);
 }
 
-jsbind::DOMString HTMLElement::autocapitalize() const {
-    return Element::get("autocapitalize").as<jsbind::DOMString>();
+jsbind::String HTMLElement::autocapitalize() const {
+    return Element::get("autocapitalize").as<jsbind::String>();
 }
 
-void HTMLElement::autocapitalize(const jsbind::DOMString& value) {
+void HTMLElement::autocapitalize(const jsbind::String& value) {
     Element::set("autocapitalize", value);
 }
 
@@ -136,19 +136,19 @@ void HTMLElement::autocorrect(bool value) {
     Element::set("autocorrect", value);
 }
 
-jsbind::DOMString HTMLElement::innerText() const {
-    return Element::get("innerText").as<jsbind::DOMString>();
+jsbind::String HTMLElement::innerText() const {
+    return Element::get("innerText").as<jsbind::String>();
 }
 
-void HTMLElement::innerText(const jsbind::DOMString& value) {
+void HTMLElement::innerText(const jsbind::String& value) {
     Element::set("innerText", value);
 }
 
-jsbind::DOMString HTMLElement::outerText() const {
-    return Element::get("outerText").as<jsbind::DOMString>();
+jsbind::String HTMLElement::outerText() const {
+    return Element::get("outerText").as<jsbind::String>();
 }
 
-void HTMLElement::outerText(const jsbind::DOMString& value) {
+void HTMLElement::outerText(const jsbind::String& value) {
     Element::set("outerText", value);
 }
 
@@ -176,11 +176,11 @@ bool HTMLElement::togglePopover(const jsbind::Any& options) {
     return Element::call("togglePopover", options).as<bool>();
 }
 
-jsbind::DOMString HTMLElement::popover() const {
-    return Element::get("popover").as<jsbind::DOMString>();
+jsbind::String HTMLElement::popover() const {
+    return Element::get("popover").as<jsbind::String>();
 }
 
-void HTMLElement::popover(const jsbind::DOMString& value) {
+void HTMLElement::popover(const jsbind::String& value) {
     Element::set("popover", value);
 }
 
@@ -228,11 +228,11 @@ void HTMLElement::onbeforexrselect(const jsbind::Any& value) {
     Element::set("onbeforexrselect", value);
 }
 
-jsbind::DOMString HTMLElement::virtualKeyboardPolicy() const {
-    return Element::get("virtualKeyboardPolicy").as<jsbind::DOMString>();
+jsbind::String HTMLElement::virtualKeyboardPolicy() const {
+    return Element::get("virtualKeyboardPolicy").as<jsbind::String>();
 }
 
-void HTMLElement::virtualKeyboardPolicy(const jsbind::DOMString& value) {
+void HTMLElement::virtualKeyboardPolicy(const jsbind::String& value) {
     Element::set("virtualKeyboardPolicy", value);
 }
 
@@ -240,11 +240,11 @@ DOMStringMap HTMLElement::dataset() const {
     return Element::get("dataset").as<DOMStringMap>();
 }
 
-jsbind::DOMString HTMLElement::nonce() const {
-    return Element::get("nonce").as<jsbind::DOMString>();
+jsbind::String HTMLElement::nonce() const {
+    return Element::get("nonce").as<jsbind::String>();
 }
 
-void HTMLElement::nonce(const jsbind::DOMString& value) {
+void HTMLElement::nonce(const jsbind::String& value) {
     Element::set("nonce", value);
 }
 

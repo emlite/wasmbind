@@ -47,11 +47,11 @@ jsbind::Undefined WebGL2RenderingContext::framebufferTextureLayer(const jsbind::
     return emlite::Val::call("framebufferTextureLayer", target, attachment, texture, level, layer).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined WebGL2RenderingContext::invalidateFramebuffer(const jsbind::Any& target, const jsbind::Sequence<jsbind::Any>& attachments) {
+jsbind::Undefined WebGL2RenderingContext::invalidateFramebuffer(const jsbind::Any& target, const jsbind::TypedArray<jsbind::Any>& attachments) {
     return emlite::Val::call("invalidateFramebuffer", target, attachments).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined WebGL2RenderingContext::invalidateSubFramebuffer(const jsbind::Any& target, const jsbind::Sequence<jsbind::Any>& attachments, const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& width, const jsbind::Any& height) {
+jsbind::Undefined WebGL2RenderingContext::invalidateSubFramebuffer(const jsbind::Any& target, const jsbind::TypedArray<jsbind::Any>& attachments, const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& width, const jsbind::Any& height) {
     return emlite::Val::call("invalidateSubFramebuffer", target, attachments, x, y, width, height).as<jsbind::Undefined>();
 }
 
@@ -115,7 +115,7 @@ jsbind::Undefined WebGL2RenderingContext::compressedTexSubImage3D(const jsbind::
     return emlite::Val::call("compressedTexSubImage3D", target, level, xoffset, yoffset, zoffset, width, height, depth, format, srcData, srcOffset, srcLengthOverride).as<jsbind::Undefined>();
 }
 
-jsbind::Any WebGL2RenderingContext::getFragDataLocation(const WebGLProgram& program, const jsbind::DOMString& name) {
+jsbind::Any WebGL2RenderingContext::getFragDataLocation(const WebGLProgram& program, const jsbind::String& name) {
     return emlite::Val::call("getFragDataLocation", program, name).as<jsbind::Any>();
 }
 
@@ -291,7 +291,7 @@ jsbind::Undefined WebGL2RenderingContext::drawRangeElements(const jsbind::Any& m
     return emlite::Val::call("drawRangeElements", mode, start, end, count, type, offset).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined WebGL2RenderingContext::drawBuffers(const jsbind::Sequence<jsbind::Any>& buffers) {
+jsbind::Undefined WebGL2RenderingContext::drawBuffers(const jsbind::TypedArray<jsbind::Any>& buffers) {
     return emlite::Val::call("drawBuffers", buffers).as<jsbind::Undefined>();
 }
 
@@ -427,7 +427,7 @@ jsbind::Undefined WebGL2RenderingContext::endTransformFeedback() {
     return emlite::Val::call("endTransformFeedback").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined WebGL2RenderingContext::transformFeedbackVaryings(const WebGLProgram& program, const jsbind::Sequence<jsbind::DOMString>& varyings, const jsbind::Any& bufferMode) {
+jsbind::Undefined WebGL2RenderingContext::transformFeedbackVaryings(const WebGLProgram& program, const jsbind::TypedArray<jsbind::String>& varyings, const jsbind::Any& bufferMode) {
     return emlite::Val::call("transformFeedbackVaryings", program, varyings, bufferMode).as<jsbind::Undefined>();
 }
 
@@ -455,15 +455,15 @@ jsbind::Any WebGL2RenderingContext::getIndexedParameter(const jsbind::Any& targe
     return emlite::Val::call("getIndexedParameter", target, index).as<jsbind::Any>();
 }
 
-jsbind::Sequence<jsbind::Any> WebGL2RenderingContext::getUniformIndices(const WebGLProgram& program, const jsbind::Sequence<jsbind::DOMString>& uniformNames) {
-    return emlite::Val::call("getUniformIndices", program, uniformNames).as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> WebGL2RenderingContext::getUniformIndices(const WebGLProgram& program, const jsbind::TypedArray<jsbind::String>& uniformNames) {
+    return emlite::Val::call("getUniformIndices", program, uniformNames).as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-jsbind::Any WebGL2RenderingContext::getActiveUniforms(const WebGLProgram& program, const jsbind::Sequence<jsbind::Any>& uniformIndices, const jsbind::Any& pname) {
+jsbind::Any WebGL2RenderingContext::getActiveUniforms(const WebGLProgram& program, const jsbind::TypedArray<jsbind::Any>& uniformIndices, const jsbind::Any& pname) {
     return emlite::Val::call("getActiveUniforms", program, uniformIndices, pname).as<jsbind::Any>();
 }
 
-jsbind::Any WebGL2RenderingContext::getUniformBlockIndex(const WebGLProgram& program, const jsbind::DOMString& uniformBlockName) {
+jsbind::Any WebGL2RenderingContext::getUniformBlockIndex(const WebGLProgram& program, const jsbind::String& uniformBlockName) {
     return emlite::Val::call("getUniformBlockIndex", program, uniformBlockName).as<jsbind::Any>();
 }
 
@@ -471,8 +471,8 @@ jsbind::Any WebGL2RenderingContext::getActiveUniformBlockParameter(const WebGLPr
     return emlite::Val::call("getActiveUniformBlockParameter", program, uniformBlockIndex, pname).as<jsbind::Any>();
 }
 
-jsbind::DOMString WebGL2RenderingContext::getActiveUniformBlockName(const WebGLProgram& program, const jsbind::Any& uniformBlockIndex) {
-    return emlite::Val::call("getActiveUniformBlockName", program, uniformBlockIndex).as<jsbind::DOMString>();
+jsbind::String WebGL2RenderingContext::getActiveUniformBlockName(const WebGLProgram& program, const jsbind::Any& uniformBlockIndex) {
+    return emlite::Val::call("getActiveUniformBlockName", program, uniformBlockIndex).as<jsbind::String>();
 }
 
 jsbind::Undefined WebGL2RenderingContext::uniformBlockBinding(const WebGLProgram& program, const jsbind::Any& uniformBlockIndex, const jsbind::Any& uniformBlockBinding) {

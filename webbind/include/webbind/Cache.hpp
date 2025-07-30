@@ -19,16 +19,16 @@ public:
     Cache clone() const noexcept;
     jsbind::Promise<jsbind::Any> match(const jsbind::Any& request);
     jsbind::Promise<jsbind::Any> match(const jsbind::Any& request, const CacheQueryOptions& options);
-    jsbind::Promise<jsbind::FrozenArray<Response>> matchAll();
-    jsbind::Promise<jsbind::FrozenArray<Response>> matchAll(const jsbind::Any& request);
-    jsbind::Promise<jsbind::FrozenArray<Response>> matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise<jsbind::TypedArray<Response>> matchAll();
+    jsbind::Promise<jsbind::TypedArray<Response>> matchAll(const jsbind::Any& request);
+    jsbind::Promise<jsbind::TypedArray<Response>> matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
     jsbind::Promise<jsbind::Undefined> add(const jsbind::Any& request);
-    jsbind::Promise<jsbind::Undefined> addAll(const jsbind::Sequence<jsbind::Any>& requests);
+    jsbind::Promise<jsbind::Undefined> addAll(const jsbind::TypedArray<jsbind::Any>& requests);
     jsbind::Promise<jsbind::Undefined> put(const jsbind::Any& request, const Response& response);
     jsbind::Promise<bool> delete_(const jsbind::Any& request);
     jsbind::Promise<bool> delete_(const jsbind::Any& request, const CacheQueryOptions& options);
-    jsbind::Promise<jsbind::FrozenArray<Request>> keys();
-    jsbind::Promise<jsbind::FrozenArray<Request>> keys(const jsbind::Any& request);
-    jsbind::Promise<jsbind::FrozenArray<Request>> keys(const jsbind::Any& request, const CacheQueryOptions& options);
+    jsbind::Promise<jsbind::TypedArray<Request>> keys();
+    jsbind::Promise<jsbind::TypedArray<Request>> keys(const jsbind::Any& request);
+    jsbind::Promise<jsbind::TypedArray<Request>> keys(const jsbind::Any& request, const CacheQueryOptions& options);
 };
 

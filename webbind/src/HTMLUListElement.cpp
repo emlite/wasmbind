@@ -19,11 +19,11 @@ void HTMLUListElement::compact(bool value) {
     HTMLElement::set("compact", value);
 }
 
-jsbind::DOMString HTMLUListElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLUListElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLUListElement::type(const jsbind::DOMString& value) {
+void HTMLUListElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 

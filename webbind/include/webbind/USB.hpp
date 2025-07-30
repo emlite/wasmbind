@@ -16,10 +16,10 @@ public:
     explicit USBDeviceRequestOptions(const emlite::Val &val) noexcept;
     USBDeviceRequestOptions() noexcept;
     USBDeviceRequestOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> filters() const;
-    void filters(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::Sequence<jsbind::Any> exclusionFilters() const;
-    void exclusionFilters(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> filters() const;
+    void filters(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> exclusionFilters() const;
+    void exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class USB : public EventTarget {
@@ -34,7 +34,7 @@ public:
     void onconnect(const jsbind::Any& value);
     jsbind::Any ondisconnect() const;
     void ondisconnect(const jsbind::Any& value);
-    jsbind::Promise<jsbind::Sequence<USBDevice>> getDevices();
+    jsbind::Promise<jsbind::TypedArray<USBDevice>> getDevices();
     jsbind::Promise<USBDevice> requestDevice(const USBDeviceRequestOptions& options);
 };
 

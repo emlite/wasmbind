@@ -19,10 +19,10 @@ public:
     explicit RTCIceParameters(const emlite::Val &val) noexcept;
     RTCIceParameters() noexcept;
     RTCIceParameters clone() const noexcept;
-    jsbind::DOMString usernameFragment() const;
-    void usernameFragment(const jsbind::DOMString& value);
-    jsbind::DOMString password() const;
-    void password(const jsbind::DOMString& value);
+    jsbind::String usernameFragment() const;
+    void usernameFragment(const jsbind::String& value);
+    jsbind::String password() const;
+    void password(const jsbind::String& value);
 };
 
 class RTCIceGatherOptions : public emlite::Val {
@@ -34,8 +34,8 @@ public:
     RTCIceGatherOptions clone() const noexcept;
     RTCIceTransportPolicy gatherPolicy() const;
     void gatherPolicy(const RTCIceTransportPolicy& value);
-    jsbind::Sequence<jsbind::Any> iceServers() const;
-    void iceServers(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> iceServers() const;
+    void iceServers(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class RTCIceCandidateInit : public emlite::Val {
@@ -45,14 +45,14 @@ public:
     explicit RTCIceCandidateInit(const emlite::Val &val) noexcept;
     RTCIceCandidateInit() noexcept;
     RTCIceCandidateInit clone() const noexcept;
-    jsbind::DOMString candidate() const;
-    void candidate(const jsbind::DOMString& value);
-    jsbind::DOMString sdpMid() const;
-    void sdpMid(const jsbind::DOMString& value);
+    jsbind::String candidate() const;
+    void candidate(const jsbind::String& value);
+    jsbind::String sdpMid() const;
+    void sdpMid(const jsbind::String& value);
     unsigned short sdpMLineIndex() const;
     void sdpMLineIndex(unsigned short value);
-    jsbind::DOMString usernameFragment() const;
-    void usernameFragment(const jsbind::DOMString& value);
+    jsbind::String usernameFragment() const;
+    void usernameFragment(const jsbind::String& value);
 };
 
 class RTCIceTransport : public EventTarget {
@@ -67,8 +67,8 @@ public:
     RTCIceComponent component() const;
     RTCIceTransportState state() const;
     RTCIceGathererState gatheringState() const;
-    jsbind::Sequence<RTCIceCandidate> getLocalCandidates();
-    jsbind::Sequence<RTCIceCandidate> getRemoteCandidates();
+    jsbind::TypedArray<RTCIceCandidate> getLocalCandidates();
+    jsbind::TypedArray<RTCIceCandidate> getRemoteCandidates();
     RTCIceCandidatePair getSelectedCandidatePair();
     RTCIceParameters getLocalParameters();
     RTCIceParameters getRemoteParameters();

@@ -9,12 +9,12 @@ EventSource::EventSource(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 EventSource::EventSource(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-EventSource::EventSource(const jsbind::USVString& url) : EventTarget(emlite::Val::global("EventSource").new_(url)) {}
+EventSource::EventSource(const jsbind::String& url) : EventTarget(emlite::Val::global("EventSource").new_(url)) {}
 
-EventSource::EventSource(const jsbind::USVString& url, const jsbind::Any& eventSourceInitDict) : EventTarget(emlite::Val::global("EventSource").new_(url, eventSourceInitDict)) {}
+EventSource::EventSource(const jsbind::String& url, const jsbind::Any& eventSourceInitDict) : EventTarget(emlite::Val::global("EventSource").new_(url, eventSourceInitDict)) {}
 
-jsbind::USVString EventSource::url() const {
-    return EventTarget::get("url").as<jsbind::USVString>();
+jsbind::String EventSource::url() const {
+    return EventTarget::get("url").as<jsbind::String>();
 }
 
 bool EventSource::withCredentials() const {

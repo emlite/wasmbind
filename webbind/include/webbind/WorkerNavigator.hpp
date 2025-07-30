@@ -39,9 +39,9 @@ public:
     double deviceMemory() const;
     bool globalPrivacyControl() const;
     bool taintEnabled();
-    jsbind::DOMString oscpu() const;
-    jsbind::DOMString language() const;
-    jsbind::FrozenArray<jsbind::DOMString> languages() const;
+    jsbind::String oscpu() const;
+    jsbind::String language() const;
+    jsbind::TypedArray<jsbind::String> languages() const;
     bool onLine() const;
     long long hardwareConcurrency() const;
     NetworkInformation connection() const;

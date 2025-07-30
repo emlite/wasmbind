@@ -16,6 +16,6 @@ public:
     static XRViewerPose take_ownership(Handle h) noexcept;
 
     XRViewerPose clone() const noexcept;
-    jsbind::FrozenArray<XRView> views() const;
+    jsbind::TypedArray<XRView> views() const;
 };
 

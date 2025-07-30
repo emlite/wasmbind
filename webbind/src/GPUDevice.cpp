@@ -108,11 +108,11 @@ void GPUTextureDescriptor::usage(const jsbind::Any& value) {
     emlite::Val::set("usage", value);
 }
 
-jsbind::Sequence<GPUTextureFormat> GPUTextureDescriptor::viewFormats() const {
-    return emlite::Val::get("viewFormats").as<jsbind::Sequence<GPUTextureFormat>>();
+jsbind::TypedArray<GPUTextureFormat> GPUTextureDescriptor::viewFormats() const {
+    return emlite::Val::get("viewFormats").as<jsbind::TypedArray<GPUTextureFormat>>();
 }
 
-void GPUTextureDescriptor::viewFormats(const jsbind::Sequence<GPUTextureFormat>& value) {
+void GPUTextureDescriptor::viewFormats(const jsbind::TypedArray<GPUTextureFormat>& value) {
     emlite::Val::set("viewFormats", value);
 }
 
@@ -236,11 +236,11 @@ GPUBindGroupLayoutDescriptor::GPUBindGroupLayoutDescriptor(const emlite::Val &va
 GPUBindGroupLayoutDescriptor::GPUBindGroupLayoutDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
 GPUBindGroupLayoutDescriptor GPUBindGroupLayoutDescriptor::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> GPUBindGroupLayoutDescriptor::entries() const {
-    return emlite::Val::get("entries").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> GPUBindGroupLayoutDescriptor::entries() const {
+    return emlite::Val::get("entries").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void GPUBindGroupLayoutDescriptor::entries(const jsbind::Sequence<jsbind::Any>& value) {
+void GPUBindGroupLayoutDescriptor::entries(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("entries", value);
 }
 
@@ -252,11 +252,11 @@ GPUPipelineLayoutDescriptor::GPUPipelineLayoutDescriptor(const emlite::Val &val)
 GPUPipelineLayoutDescriptor::GPUPipelineLayoutDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
 GPUPipelineLayoutDescriptor GPUPipelineLayoutDescriptor::clone() const noexcept { return *this; }
 
-jsbind::Sequence<GPUBindGroupLayout> GPUPipelineLayoutDescriptor::bindGroupLayouts() const {
-    return emlite::Val::get("bindGroupLayouts").as<jsbind::Sequence<GPUBindGroupLayout>>();
+jsbind::TypedArray<GPUBindGroupLayout> GPUPipelineLayoutDescriptor::bindGroupLayouts() const {
+    return emlite::Val::get("bindGroupLayouts").as<jsbind::TypedArray<GPUBindGroupLayout>>();
 }
 
-void GPUPipelineLayoutDescriptor::bindGroupLayouts(const jsbind::Sequence<GPUBindGroupLayout>& value) {
+void GPUPipelineLayoutDescriptor::bindGroupLayouts(const jsbind::TypedArray<GPUBindGroupLayout>& value) {
     emlite::Val::set("bindGroupLayouts", value);
 }
 
@@ -276,11 +276,11 @@ void GPUBindGroupDescriptor::layout(const GPUBindGroupLayout& value) {
     emlite::Val::set("layout", value);
 }
 
-jsbind::Sequence<jsbind::Any> GPUBindGroupDescriptor::entries() const {
-    return emlite::Val::get("entries").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> GPUBindGroupDescriptor::entries() const {
+    return emlite::Val::get("entries").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void GPUBindGroupDescriptor::entries(const jsbind::Sequence<jsbind::Any>& value) {
+void GPUBindGroupDescriptor::entries(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("entries", value);
 }
 
@@ -292,19 +292,19 @@ GPUShaderModuleDescriptor::GPUShaderModuleDescriptor(const emlite::Val &val) noe
 GPUShaderModuleDescriptor::GPUShaderModuleDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
 GPUShaderModuleDescriptor GPUShaderModuleDescriptor::clone() const noexcept { return *this; }
 
-jsbind::USVString GPUShaderModuleDescriptor::code() const {
-    return emlite::Val::get("code").as<jsbind::USVString>();
+jsbind::String GPUShaderModuleDescriptor::code() const {
+    return emlite::Val::get("code").as<jsbind::String>();
 }
 
-void GPUShaderModuleDescriptor::code(const jsbind::USVString& value) {
+void GPUShaderModuleDescriptor::code(const jsbind::String& value) {
     emlite::Val::set("code", value);
 }
 
-jsbind::Sequence<jsbind::Any> GPUShaderModuleDescriptor::compilationHints() const {
-    return emlite::Val::get("compilationHints").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> GPUShaderModuleDescriptor::compilationHints() const {
+    return emlite::Val::get("compilationHints").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void GPUShaderModuleDescriptor::compilationHints(const jsbind::Sequence<jsbind::Any>& value) {
+void GPUShaderModuleDescriptor::compilationHints(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("compilationHints", value);
 }
 
@@ -544,11 +544,11 @@ void GPUDevice::onuncapturederror(const jsbind::Any& value) {
     EventTarget::set("onuncapturederror", value);
 }
 
-jsbind::USVString GPUDevice::label() const {
-    return EventTarget::get("label").as<jsbind::USVString>();
+jsbind::String GPUDevice::label() const {
+    return EventTarget::get("label").as<jsbind::String>();
 }
 
-void GPUDevice::label(const jsbind::USVString& value) {
+void GPUDevice::label(const jsbind::String& value) {
     EventTarget::set("label", value);
 }
 

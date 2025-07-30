@@ -14,7 +14,7 @@ public:
     static PaintWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     PaintWorkletGlobalScope clone() const noexcept;
-    jsbind::Undefined registerPaint(const jsbind::DOMString& name, const jsbind::Any& paintCtor);
+    jsbind::Undefined registerPaint(const jsbind::String& name, const jsbind::Any& paintCtor);
     double devicePixelRatio() const;
 };
 

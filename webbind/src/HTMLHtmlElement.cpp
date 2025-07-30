@@ -11,11 +11,11 @@ HTMLHtmlElement::HTMLHtmlElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLHtmlElement::HTMLHtmlElement() : HTMLElement(emlite::Val::global("HTMLHtmlElement").new_()) {}
 
-jsbind::DOMString HTMLHtmlElement::version() const {
-    return HTMLElement::get("version").as<jsbind::DOMString>();
+jsbind::String HTMLHtmlElement::version() const {
+    return HTMLElement::get("version").as<jsbind::String>();
 }
 
-void HTMLHtmlElement::version(const jsbind::DOMString& value) {
+void HTMLHtmlElement::version(const jsbind::String& value) {
     HTMLElement::set("version", value);
 }
 

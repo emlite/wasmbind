@@ -9,11 +9,11 @@ URLPatternResult::URLPatternResult(const emlite::Val &val) noexcept: emlite::Val
 URLPatternResult::URLPatternResult() noexcept: emlite::Val(emlite::Val::object()) {}
 URLPatternResult URLPatternResult::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> URLPatternResult::inputs() const {
-    return emlite::Val::get("inputs").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> URLPatternResult::inputs() const {
+    return emlite::Val::get("inputs").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void URLPatternResult::inputs(const jsbind::Sequence<jsbind::Any>& value) {
+void URLPatternResult::inputs(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("inputs", value);
 }
 
@@ -103,7 +103,7 @@ bool URLPattern::test(const jsbind::Any& input) {
     return emlite::Val::call("test", input).as<bool>();
 }
 
-bool URLPattern::test(const jsbind::Any& input, const jsbind::USVString& baseURL) {
+bool URLPattern::test(const jsbind::Any& input, const jsbind::String& baseURL) {
     return emlite::Val::call("test", input, baseURL).as<bool>();
 }
 
@@ -115,40 +115,40 @@ URLPatternResult URLPattern::exec(const jsbind::Any& input) {
     return emlite::Val::call("exec", input).as<URLPatternResult>();
 }
 
-URLPatternResult URLPattern::exec(const jsbind::Any& input, const jsbind::USVString& baseURL) {
+URLPatternResult URLPattern::exec(const jsbind::Any& input, const jsbind::String& baseURL) {
     return emlite::Val::call("exec", input, baseURL).as<URLPatternResult>();
 }
 
-jsbind::USVString URLPattern::protocol() const {
-    return emlite::Val::get("protocol").as<jsbind::USVString>();
+jsbind::String URLPattern::protocol() const {
+    return emlite::Val::get("protocol").as<jsbind::String>();
 }
 
-jsbind::USVString URLPattern::username() const {
-    return emlite::Val::get("username").as<jsbind::USVString>();
+jsbind::String URLPattern::username() const {
+    return emlite::Val::get("username").as<jsbind::String>();
 }
 
-jsbind::USVString URLPattern::password() const {
-    return emlite::Val::get("password").as<jsbind::USVString>();
+jsbind::String URLPattern::password() const {
+    return emlite::Val::get("password").as<jsbind::String>();
 }
 
-jsbind::USVString URLPattern::hostname() const {
-    return emlite::Val::get("hostname").as<jsbind::USVString>();
+jsbind::String URLPattern::hostname() const {
+    return emlite::Val::get("hostname").as<jsbind::String>();
 }
 
-jsbind::USVString URLPattern::port() const {
-    return emlite::Val::get("port").as<jsbind::USVString>();
+jsbind::String URLPattern::port() const {
+    return emlite::Val::get("port").as<jsbind::String>();
 }
 
-jsbind::USVString URLPattern::pathname() const {
-    return emlite::Val::get("pathname").as<jsbind::USVString>();
+jsbind::String URLPattern::pathname() const {
+    return emlite::Val::get("pathname").as<jsbind::String>();
 }
 
-jsbind::USVString URLPattern::search() const {
-    return emlite::Val::get("search").as<jsbind::USVString>();
+jsbind::String URLPattern::search() const {
+    return emlite::Val::get("search").as<jsbind::String>();
 }
 
-jsbind::USVString URLPattern::hash() const {
-    return emlite::Val::get("hash").as<jsbind::USVString>();
+jsbind::String URLPattern::hash() const {
+    return emlite::Val::get("hash").as<jsbind::String>();
 }
 
 bool URLPattern::hasRegExpGroups() const {

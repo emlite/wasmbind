@@ -18,35 +18,35 @@ FormData::FormData(const HTMLFormElement& form) : emlite::Val(emlite::Val::globa
 
 FormData::FormData(const HTMLFormElement& form, const HTMLElement& submitter) : emlite::Val(emlite::Val::global("FormData").new_(form, submitter)) {}
 
-jsbind::Undefined FormData::append(const jsbind::USVString& name, const Blob& blobValue) {
+jsbind::Undefined FormData::append(const jsbind::String& name, const Blob& blobValue) {
     return emlite::Val::call("append", name, blobValue).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FormData::append(const jsbind::USVString& name, const Blob& blobValue, const jsbind::USVString& filename) {
+jsbind::Undefined FormData::append(const jsbind::String& name, const Blob& blobValue, const jsbind::String& filename) {
     return emlite::Val::call("append", name, blobValue, filename).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FormData::delete_(const jsbind::USVString& name) {
+jsbind::Undefined FormData::delete_(const jsbind::String& name) {
     return emlite::Val::call("delete", name).as<jsbind::Undefined>();
 }
 
-jsbind::Any FormData::get(const jsbind::USVString& name) {
+jsbind::Any FormData::get(const jsbind::String& name) {
     return emlite::Val::call("get", name).as<jsbind::Any>();
 }
 
-jsbind::Sequence<jsbind::Any> FormData::getAll(const jsbind::USVString& name) {
-    return emlite::Val::call("getAll", name).as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> FormData::getAll(const jsbind::String& name) {
+    return emlite::Val::call("getAll", name).as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-bool FormData::has(const jsbind::USVString& name) {
+bool FormData::has(const jsbind::String& name) {
     return emlite::Val::call("has", name).as<bool>();
 }
 
-jsbind::Undefined FormData::set(const jsbind::USVString& name, const Blob& blobValue) {
+jsbind::Undefined FormData::set(const jsbind::String& name, const Blob& blobValue) {
     return emlite::Val::call("set", name, blobValue).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FormData::set(const jsbind::USVString& name, const Blob& blobValue, const jsbind::USVString& filename) {
+jsbind::Undefined FormData::set(const jsbind::String& name, const Blob& blobValue, const jsbind::String& filename) {
     return emlite::Val::call("set", name, blobValue, filename).as<jsbind::Undefined>();
 }
 

@@ -24,8 +24,8 @@ public:
     explicit GPURenderPassDescriptor(const emlite::Val &val) noexcept;
     GPURenderPassDescriptor() noexcept;
     GPURenderPassDescriptor clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> colorAttachments() const;
-    void colorAttachments(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> colorAttachments() const;
+    void colorAttachments(const jsbind::TypedArray<jsbind::Any>& value);
     jsbind::Any depthStencilAttachment() const;
     void depthStencilAttachment(const jsbind::Any& value);
     GPUQuerySet occlusionQuerySet() const;
@@ -106,10 +106,10 @@ public:
     jsbind::Undefined resolveQuerySet(const GPUQuerySet& querySet, const jsbind::Any& firstQuery, const jsbind::Any& queryCount, const GPUBuffer& destination, const jsbind::Any& destinationOffset);
     GPUCommandBuffer finish();
     GPUCommandBuffer finish(const GPUCommandBufferDescriptor& descriptor);
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
-    jsbind::Undefined pushDebugGroup(const jsbind::USVString& groupLabel);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
+    jsbind::Undefined pushDebugGroup(const jsbind::String& groupLabel);
     jsbind::Undefined popDebugGroup();
-    jsbind::Undefined insertDebugMarker(const jsbind::USVString& markerLabel);
+    jsbind::Undefined insertDebugMarker(const jsbind::String& markerLabel);
 };
 

@@ -15,7 +15,7 @@ public:
 
     HTMLTimeElement clone() const noexcept;
     HTMLTimeElement();
-    jsbind::DOMString dateTime() const;
-    void dateTime(const jsbind::DOMString& value);
+    jsbind::String dateTime() const;
+    void dateTime(const jsbind::String& value);
 };
 

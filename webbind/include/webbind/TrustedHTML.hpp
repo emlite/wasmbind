@@ -13,6 +13,6 @@ public:
     static TrustedHTML take_ownership(Handle h) noexcept;
 
     TrustedHTML clone() const noexcept;
-    jsbind::DOMString toJSON();
+    jsbind::String toJSON();
 };
 

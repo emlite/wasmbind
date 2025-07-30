@@ -28,19 +28,19 @@ HTMLPortalElement::HTMLPortalElement(const emlite::Val &val) noexcept: HTMLEleme
 
 HTMLPortalElement::HTMLPortalElement() : HTMLElement(emlite::Val::global("HTMLPortalElement").new_()) {}
 
-jsbind::USVString HTMLPortalElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLPortalElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLPortalElement::src(const jsbind::USVString& value) {
+void HTMLPortalElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
-jsbind::DOMString HTMLPortalElement::referrerPolicy() const {
-    return HTMLElement::get("referrerPolicy").as<jsbind::DOMString>();
+jsbind::String HTMLPortalElement::referrerPolicy() const {
+    return HTMLElement::get("referrerPolicy").as<jsbind::String>();
 }
 
-void HTMLPortalElement::referrerPolicy(const jsbind::DOMString& value) {
+void HTMLPortalElement::referrerPolicy(const jsbind::String& value) {
     HTMLElement::set("referrerPolicy", value);
 }
 

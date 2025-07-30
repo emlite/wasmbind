@@ -13,6 +13,6 @@ public:
     static CanvasGradient take_ownership(Handle h) noexcept;
 
     CanvasGradient clone() const noexcept;
-    jsbind::Undefined addColorStop(double offset, const jsbind::DOMString& color);
+    jsbind::Undefined addColorStop(double offset, const jsbind::String& color);
 };
 

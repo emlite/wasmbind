@@ -14,13 +14,13 @@ public:
     static CompositionEvent take_ownership(Handle h) noexcept;
 
     CompositionEvent clone() const noexcept;
-    CompositionEvent(const jsbind::DOMString& type);
-    CompositionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::USVString data() const;
-    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg);
-    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg);
-    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg);
-    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg);
-    jsbind::Undefined initCompositionEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg, const jsbind::DOMString& dataArg);
+    CompositionEvent(const jsbind::String& type);
+    CompositionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String data() const;
+    jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg);
+    jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg);
+    jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg);
+    jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg);
+    jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg, const jsbind::String& dataArg);
 };
 

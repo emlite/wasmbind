@@ -18,6 +18,6 @@ public:
     jsbind::Undefined refresh();
     unsigned long length() const;
     Plugin item(unsigned long index);
-    Plugin namedItem(const jsbind::DOMString& name);
+    Plugin namedItem(const jsbind::String& name);
 };
 

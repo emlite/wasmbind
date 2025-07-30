@@ -16,10 +16,10 @@ public:
     static CSSParserAtRule take_ownership(Handle h) noexcept;
 
     CSSParserAtRule clone() const noexcept;
-    CSSParserAtRule(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Any>& prelude);
-    CSSParserAtRule(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Any>& prelude, const jsbind::Sequence<CSSParserRule>& body);
-    jsbind::DOMString name() const;
-    jsbind::FrozenArray<CSSParserValue> prelude() const;
-    jsbind::FrozenArray<CSSParserRule> body() const;
+    CSSParserAtRule(const jsbind::String& name, const jsbind::TypedArray<jsbind::Any>& prelude);
+    CSSParserAtRule(const jsbind::String& name, const jsbind::TypedArray<jsbind::Any>& prelude, const jsbind::TypedArray<CSSParserRule>& body);
+    jsbind::String name() const;
+    jsbind::TypedArray<CSSParserValue> prelude() const;
+    jsbind::TypedArray<CSSParserRule> body() const;
 };
 

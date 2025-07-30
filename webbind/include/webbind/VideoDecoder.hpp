@@ -18,8 +18,8 @@ public:
     explicit VideoDecoderConfig(const emlite::Val &val) noexcept;
     VideoDecoderConfig() noexcept;
     VideoDecoderConfig clone() const noexcept;
-    jsbind::DOMString codec() const;
-    void codec(const jsbind::DOMString& value);
+    jsbind::String codec() const;
+    void codec(const jsbind::String& value);
     jsbind::Any description() const;
     void description(const jsbind::Any& value);
     unsigned long codedWidth() const;

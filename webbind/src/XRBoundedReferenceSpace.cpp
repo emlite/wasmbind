@@ -10,7 +10,7 @@ XRBoundedReferenceSpace::XRBoundedReferenceSpace(Handle h) noexcept : XRReferenc
 XRBoundedReferenceSpace::XRBoundedReferenceSpace(const emlite::Val &val) noexcept: XRReferenceSpace(val) {}
 
 
-jsbind::FrozenArray<DOMPointReadOnly> XRBoundedReferenceSpace::boundsGeometry() const {
-    return XRReferenceSpace::get("boundsGeometry").as<jsbind::FrozenArray<DOMPointReadOnly>>();
+jsbind::TypedArray<DOMPointReadOnly> XRBoundedReferenceSpace::boundsGeometry() const {
+    return XRReferenceSpace::get("boundsGeometry").as<jsbind::TypedArray<DOMPointReadOnly>>();
 }
 

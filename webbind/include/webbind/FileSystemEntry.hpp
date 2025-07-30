@@ -17,8 +17,8 @@ public:
     FileSystemEntry clone() const noexcept;
     bool isFile() const;
     bool isDirectory() const;
-    jsbind::USVString name() const;
-    jsbind::USVString fullPath() const;
+    jsbind::String name() const;
+    jsbind::String fullPath() const;
     FileSystem filesystem() const;
     jsbind::Undefined getParent();
     jsbind::Undefined getParent(const jsbind::Function& successCallback);

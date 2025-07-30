@@ -17,7 +17,7 @@ public:
     HTMLLIElement();
     long value() const;
     void value(long value);
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
 };
 

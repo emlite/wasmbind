@@ -13,7 +13,7 @@ public:
     static GPUPipelineLayout take_ownership(Handle h) noexcept;
 
     GPUPipelineLayout clone() const noexcept;
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

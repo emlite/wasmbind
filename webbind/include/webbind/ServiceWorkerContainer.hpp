@@ -17,8 +17,8 @@ public:
     explicit RegistrationOptions(const emlite::Val &val) noexcept;
     RegistrationOptions() noexcept;
     RegistrationOptions clone() const noexcept;
-    jsbind::USVString scope() const;
-    void scope(const jsbind::USVString& value);
+    jsbind::String scope() const;
+    void scope(const jsbind::String& value);
     WorkerType type() const;
     void type(const WorkerType& value);
     ServiceWorkerUpdateViaCache updateViaCache() const;
@@ -38,8 +38,8 @@ public:
     jsbind::Promise<ServiceWorkerRegistration> register_(const jsbind::Any& scriptURL);
     jsbind::Promise<ServiceWorkerRegistration> register_(const jsbind::Any& scriptURL, const RegistrationOptions& options);
     jsbind::Promise<jsbind::Any> getRegistration();
-    jsbind::Promise<jsbind::Any> getRegistration(const jsbind::USVString& clientURL);
-    jsbind::Promise<jsbind::FrozenArray<ServiceWorkerRegistration>> getRegistrations();
+    jsbind::Promise<jsbind::Any> getRegistration(const jsbind::String& clientURL);
+    jsbind::Promise<jsbind::TypedArray<ServiceWorkerRegistration>> getRegistrations();
     jsbind::Undefined startMessages();
     jsbind::Any oncontrollerchange() const;
     void oncontrollerchange(const jsbind::Any& value);

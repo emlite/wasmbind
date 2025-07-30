@@ -17,12 +17,12 @@ public:
     static InputEvent take_ownership(Handle h) noexcept;
 
     InputEvent clone() const noexcept;
-    InputEvent(const jsbind::DOMString& type);
-    InputEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::USVString data() const;
+    InputEvent(const jsbind::String& type);
+    InputEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String data() const;
     bool isComposing() const;
-    jsbind::DOMString inputType() const;
+    jsbind::String inputType() const;
     DataTransfer dataTransfer() const;
-    jsbind::Sequence<StaticRange> getTargetRanges();
+    jsbind::TypedArray<StaticRange> getTargetRanges();
 };
 

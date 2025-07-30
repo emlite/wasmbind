@@ -108,8 +108,8 @@ Navigation::Navigation(Handle h) noexcept : EventTarget(emlite::Val::take_owners
 Navigation::Navigation(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Sequence<NavigationHistoryEntry> Navigation::entries() {
-    return EventTarget::call("entries").as<jsbind::Sequence<NavigationHistoryEntry>>();
+jsbind::TypedArray<NavigationHistoryEntry> Navigation::entries() {
+    return EventTarget::call("entries").as<jsbind::TypedArray<NavigationHistoryEntry>>();
 }
 
 NavigationHistoryEntry Navigation::currentEntry() const {
@@ -136,11 +136,11 @@ bool Navigation::canGoForward() const {
     return EventTarget::get("canGoForward").as<bool>();
 }
 
-NavigationResult Navigation::navigate(const jsbind::USVString& url) {
+NavigationResult Navigation::navigate(const jsbind::String& url) {
     return EventTarget::call("navigate", url).as<NavigationResult>();
 }
 
-NavigationResult Navigation::navigate(const jsbind::USVString& url, const NavigationNavigateOptions& options) {
+NavigationResult Navigation::navigate(const jsbind::String& url, const NavigationNavigateOptions& options) {
     return EventTarget::call("navigate", url, options).as<NavigationResult>();
 }
 
@@ -152,11 +152,11 @@ NavigationResult Navigation::reload(const NavigationReloadOptions& options) {
     return EventTarget::call("reload", options).as<NavigationResult>();
 }
 
-NavigationResult Navigation::traverseTo(const jsbind::DOMString& key) {
+NavigationResult Navigation::traverseTo(const jsbind::String& key) {
     return EventTarget::call("traverseTo", key).as<NavigationResult>();
 }
 
-NavigationResult Navigation::traverseTo(const jsbind::DOMString& key, const NavigationOptions& options) {
+NavigationResult Navigation::traverseTo(const jsbind::String& key, const NavigationOptions& options) {
     return EventTarget::call("traverseTo", key, options).as<NavigationResult>();
 }
 

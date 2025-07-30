@@ -9,7 +9,7 @@ AnimationWorkletGlobalScope::AnimationWorkletGlobalScope(Handle h) noexcept : Wo
 AnimationWorkletGlobalScope::AnimationWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 
 
-jsbind::Undefined AnimationWorkletGlobalScope::registerAnimator(const jsbind::DOMString& name, const jsbind::Function& animatorCtor) {
+jsbind::Undefined AnimationWorkletGlobalScope::registerAnimator(const jsbind::String& name, const jsbind::Function& animatorCtor) {
     return WorkletGlobalScope::call("registerAnimator", name, animatorCtor).as<jsbind::Undefined>();
 }
 

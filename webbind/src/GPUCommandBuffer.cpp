@@ -9,11 +9,11 @@ GPUCommandBuffer::GPUCommandBuffer(Handle h) noexcept : emlite::Val(emlite::Val:
 GPUCommandBuffer::GPUCommandBuffer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPUCommandBuffer::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUCommandBuffer::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUCommandBuffer::label(const jsbind::USVString& value) {
+void GPUCommandBuffer::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

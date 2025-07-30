@@ -11,19 +11,19 @@ HTMLFrameSetElement::HTMLFrameSetElement(const emlite::Val &val) noexcept: HTMLE
 
 HTMLFrameSetElement::HTMLFrameSetElement() : HTMLElement(emlite::Val::global("HTMLFrameSetElement").new_()) {}
 
-jsbind::DOMString HTMLFrameSetElement::cols() const {
-    return HTMLElement::get("cols").as<jsbind::DOMString>();
+jsbind::String HTMLFrameSetElement::cols() const {
+    return HTMLElement::get("cols").as<jsbind::String>();
 }
 
-void HTMLFrameSetElement::cols(const jsbind::DOMString& value) {
+void HTMLFrameSetElement::cols(const jsbind::String& value) {
     HTMLElement::set("cols", value);
 }
 
-jsbind::DOMString HTMLFrameSetElement::rows() const {
-    return HTMLElement::get("rows").as<jsbind::DOMString>();
+jsbind::String HTMLFrameSetElement::rows() const {
+    return HTMLElement::get("rows").as<jsbind::String>();
 }
 
-void HTMLFrameSetElement::rows(const jsbind::DOMString& value) {
+void HTMLFrameSetElement::rows(const jsbind::String& value) {
     HTMLElement::set("rows", value);
 }
 

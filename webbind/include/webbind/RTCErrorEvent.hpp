@@ -16,7 +16,7 @@ public:
     static RTCErrorEvent take_ownership(Handle h) noexcept;
 
     RTCErrorEvent clone() const noexcept;
-    RTCErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    RTCErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     RTCError error() const;
 };
 

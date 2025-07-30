@@ -10,15 +10,15 @@ CSSVariableReferenceValue::CSSVariableReferenceValue(Handle h) noexcept : emlite
 CSSVariableReferenceValue::CSSVariableReferenceValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::USVString& variable) : emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable)) {}
+CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::String& variable) : emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable)) {}
 
-CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::USVString& variable, const CSSUnparsedValue& fallback) : emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable, fallback)) {}
+CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::String& variable, const CSSUnparsedValue& fallback) : emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable, fallback)) {}
 
-jsbind::USVString CSSVariableReferenceValue::variable() const {
-    return emlite::Val::get("variable").as<jsbind::USVString>();
+jsbind::String CSSVariableReferenceValue::variable() const {
+    return emlite::Val::get("variable").as<jsbind::String>();
 }
 
-void CSSVariableReferenceValue::variable(const jsbind::USVString& value) {
+void CSSVariableReferenceValue::variable(const jsbind::String& value) {
     emlite::Val::set("variable", value);
 }
 

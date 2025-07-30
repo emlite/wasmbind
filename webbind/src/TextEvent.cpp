@@ -10,27 +10,27 @@ TextEvent::TextEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)
 TextEvent::TextEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-jsbind::DOMString TextEvent::data() const {
-    return UIEvent::get("data").as<jsbind::DOMString>();
+jsbind::String TextEvent::data() const {
+    return UIEvent::get("data").as<jsbind::String>();
 }
 
-jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type) {
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::String& type) {
     return UIEvent::call("initTextEvent", type).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles) {
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::String& type, bool bubbles) {
     return UIEvent::call("initTextEvent", type, bubbles).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable) {
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::String& type, bool bubbles, bool cancelable) {
     return UIEvent::call("initTextEvent", type, bubbles, cancelable).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const Window& view) {
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::String& type, bool bubbles, bool cancelable, const Window& view) {
     return UIEvent::call("initTextEvent", type, bubbles, cancelable, view).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined TextEvent::initTextEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable, const Window& view, const jsbind::DOMString& data) {
+jsbind::Undefined TextEvent::initTextEvent(const jsbind::String& type, bool bubbles, bool cancelable, const Window& view, const jsbind::String& data) {
     return UIEvent::call("initTextEvent", type, bubbles, cancelable, view, data).as<jsbind::Undefined>();
 }
 

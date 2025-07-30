@@ -15,27 +15,27 @@ SVGAnimatedString SVGAElement::target() const {
     return SVGGraphicsElement::get("target").as<SVGAnimatedString>();
 }
 
-jsbind::DOMString SVGAElement::download() const {
-    return SVGGraphicsElement::get("download").as<jsbind::DOMString>();
+jsbind::String SVGAElement::download() const {
+    return SVGGraphicsElement::get("download").as<jsbind::String>();
 }
 
-void SVGAElement::download(const jsbind::DOMString& value) {
+void SVGAElement::download(const jsbind::String& value) {
     SVGGraphicsElement::set("download", value);
 }
 
-jsbind::USVString SVGAElement::ping() const {
-    return SVGGraphicsElement::get("ping").as<jsbind::USVString>();
+jsbind::String SVGAElement::ping() const {
+    return SVGGraphicsElement::get("ping").as<jsbind::String>();
 }
 
-void SVGAElement::ping(const jsbind::USVString& value) {
+void SVGAElement::ping(const jsbind::String& value) {
     SVGGraphicsElement::set("ping", value);
 }
 
-jsbind::DOMString SVGAElement::rel() const {
-    return SVGGraphicsElement::get("rel").as<jsbind::DOMString>();
+jsbind::String SVGAElement::rel() const {
+    return SVGGraphicsElement::get("rel").as<jsbind::String>();
 }
 
-void SVGAElement::rel(const jsbind::DOMString& value) {
+void SVGAElement::rel(const jsbind::String& value) {
     SVGGraphicsElement::set("rel", value);
 }
 
@@ -43,111 +43,111 @@ DOMTokenList SVGAElement::relList() const {
     return SVGGraphicsElement::get("relList").as<DOMTokenList>();
 }
 
-jsbind::DOMString SVGAElement::hreflang() const {
-    return SVGGraphicsElement::get("hreflang").as<jsbind::DOMString>();
+jsbind::String SVGAElement::hreflang() const {
+    return SVGGraphicsElement::get("hreflang").as<jsbind::String>();
 }
 
-void SVGAElement::hreflang(const jsbind::DOMString& value) {
+void SVGAElement::hreflang(const jsbind::String& value) {
     SVGGraphicsElement::set("hreflang", value);
 }
 
-jsbind::DOMString SVGAElement::type() const {
-    return SVGGraphicsElement::get("type").as<jsbind::DOMString>();
+jsbind::String SVGAElement::type() const {
+    return SVGGraphicsElement::get("type").as<jsbind::String>();
 }
 
-void SVGAElement::type(const jsbind::DOMString& value) {
+void SVGAElement::type(const jsbind::String& value) {
     SVGGraphicsElement::set("type", value);
 }
 
-jsbind::DOMString SVGAElement::text() const {
-    return SVGGraphicsElement::get("text").as<jsbind::DOMString>();
+jsbind::String SVGAElement::text() const {
+    return SVGGraphicsElement::get("text").as<jsbind::String>();
 }
 
-void SVGAElement::text(const jsbind::DOMString& value) {
+void SVGAElement::text(const jsbind::String& value) {
     SVGGraphicsElement::set("text", value);
 }
 
-jsbind::DOMString SVGAElement::referrerPolicy() const {
-    return SVGGraphicsElement::get("referrerPolicy").as<jsbind::DOMString>();
+jsbind::String SVGAElement::referrerPolicy() const {
+    return SVGGraphicsElement::get("referrerPolicy").as<jsbind::String>();
 }
 
-void SVGAElement::referrerPolicy(const jsbind::DOMString& value) {
+void SVGAElement::referrerPolicy(const jsbind::String& value) {
     SVGGraphicsElement::set("referrerPolicy", value);
 }
 
-jsbind::USVString SVGAElement::origin() const {
-    return SVGGraphicsElement::get("origin").as<jsbind::USVString>();
+jsbind::String SVGAElement::origin() const {
+    return SVGGraphicsElement::get("origin").as<jsbind::String>();
 }
 
-jsbind::USVString SVGAElement::protocol() const {
-    return SVGGraphicsElement::get("protocol").as<jsbind::USVString>();
+jsbind::String SVGAElement::protocol() const {
+    return SVGGraphicsElement::get("protocol").as<jsbind::String>();
 }
 
-void SVGAElement::protocol(const jsbind::USVString& value) {
+void SVGAElement::protocol(const jsbind::String& value) {
     SVGGraphicsElement::set("protocol", value);
 }
 
-jsbind::USVString SVGAElement::username() const {
-    return SVGGraphicsElement::get("username").as<jsbind::USVString>();
+jsbind::String SVGAElement::username() const {
+    return SVGGraphicsElement::get("username").as<jsbind::String>();
 }
 
-void SVGAElement::username(const jsbind::USVString& value) {
+void SVGAElement::username(const jsbind::String& value) {
     SVGGraphicsElement::set("username", value);
 }
 
-jsbind::USVString SVGAElement::password() const {
-    return SVGGraphicsElement::get("password").as<jsbind::USVString>();
+jsbind::String SVGAElement::password() const {
+    return SVGGraphicsElement::get("password").as<jsbind::String>();
 }
 
-void SVGAElement::password(const jsbind::USVString& value) {
+void SVGAElement::password(const jsbind::String& value) {
     SVGGraphicsElement::set("password", value);
 }
 
-jsbind::USVString SVGAElement::host() const {
-    return SVGGraphicsElement::get("host").as<jsbind::USVString>();
+jsbind::String SVGAElement::host() const {
+    return SVGGraphicsElement::get("host").as<jsbind::String>();
 }
 
-void SVGAElement::host(const jsbind::USVString& value) {
+void SVGAElement::host(const jsbind::String& value) {
     SVGGraphicsElement::set("host", value);
 }
 
-jsbind::USVString SVGAElement::hostname() const {
-    return SVGGraphicsElement::get("hostname").as<jsbind::USVString>();
+jsbind::String SVGAElement::hostname() const {
+    return SVGGraphicsElement::get("hostname").as<jsbind::String>();
 }
 
-void SVGAElement::hostname(const jsbind::USVString& value) {
+void SVGAElement::hostname(const jsbind::String& value) {
     SVGGraphicsElement::set("hostname", value);
 }
 
-jsbind::USVString SVGAElement::port() const {
-    return SVGGraphicsElement::get("port").as<jsbind::USVString>();
+jsbind::String SVGAElement::port() const {
+    return SVGGraphicsElement::get("port").as<jsbind::String>();
 }
 
-void SVGAElement::port(const jsbind::USVString& value) {
+void SVGAElement::port(const jsbind::String& value) {
     SVGGraphicsElement::set("port", value);
 }
 
-jsbind::USVString SVGAElement::pathname() const {
-    return SVGGraphicsElement::get("pathname").as<jsbind::USVString>();
+jsbind::String SVGAElement::pathname() const {
+    return SVGGraphicsElement::get("pathname").as<jsbind::String>();
 }
 
-void SVGAElement::pathname(const jsbind::USVString& value) {
+void SVGAElement::pathname(const jsbind::String& value) {
     SVGGraphicsElement::set("pathname", value);
 }
 
-jsbind::USVString SVGAElement::search() const {
-    return SVGGraphicsElement::get("search").as<jsbind::USVString>();
+jsbind::String SVGAElement::search() const {
+    return SVGGraphicsElement::get("search").as<jsbind::String>();
 }
 
-void SVGAElement::search(const jsbind::USVString& value) {
+void SVGAElement::search(const jsbind::String& value) {
     SVGGraphicsElement::set("search", value);
 }
 
-jsbind::USVString SVGAElement::hash() const {
-    return SVGGraphicsElement::get("hash").as<jsbind::USVString>();
+jsbind::String SVGAElement::hash() const {
+    return SVGGraphicsElement::get("hash").as<jsbind::String>();
 }
 
-void SVGAElement::hash(const jsbind::USVString& value) {
+void SVGAElement::hash(const jsbind::String& value) {
     SVGGraphicsElement::set("hash", value);
 }
 

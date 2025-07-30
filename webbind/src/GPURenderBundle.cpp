@@ -9,11 +9,11 @@ GPURenderBundle::GPURenderBundle(Handle h) noexcept : emlite::Val(emlite::Val::t
 GPURenderBundle::GPURenderBundle(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPURenderBundle::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPURenderBundle::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPURenderBundle::label(const jsbind::USVString& value) {
+void GPURenderBundle::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

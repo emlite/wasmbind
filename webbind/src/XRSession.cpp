@@ -59,11 +59,11 @@ void XRRenderStateInit::baseLayer(const XRWebGLLayer& value) {
     emlite::Val::set("baseLayer", value);
 }
 
-jsbind::Sequence<XRLayer> XRRenderStateInit::layers() const {
-    return emlite::Val::get("layers").as<jsbind::Sequence<XRLayer>>();
+jsbind::TypedArray<XRLayer> XRRenderStateInit::layers() const {
+    return emlite::Val::get("layers").as<jsbind::TypedArray<XRLayer>>();
 }
 
-void XRRenderStateInit::layers(const jsbind::Sequence<XRLayer>& value) {
+void XRRenderStateInit::layers(const jsbind::TypedArray<XRLayer>& value) {
     emlite::Val::set("layers", value);
 }
 
@@ -99,11 +99,11 @@ void XRHitTestOptionsInit::space(const XRSpace& value) {
     emlite::Val::set("space", value);
 }
 
-jsbind::Sequence<XRHitTestTrackableType> XRHitTestOptionsInit::entityTypes() const {
-    return emlite::Val::get("entityTypes").as<jsbind::Sequence<XRHitTestTrackableType>>();
+jsbind::TypedArray<XRHitTestTrackableType> XRHitTestOptionsInit::entityTypes() const {
+    return emlite::Val::get("entityTypes").as<jsbind::TypedArray<XRHitTestTrackableType>>();
 }
 
-void XRHitTestOptionsInit::entityTypes(const jsbind::Sequence<XRHitTestTrackableType>& value) {
+void XRHitTestOptionsInit::entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value) {
     emlite::Val::set("entityTypes", value);
 }
 
@@ -123,19 +123,19 @@ XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit(const eml
 XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit() noexcept: emlite::Val(emlite::Val::object()) {}
 XRTransientInputHitTestOptionsInit XRTransientInputHitTestOptionsInit::clone() const noexcept { return *this; }
 
-jsbind::DOMString XRTransientInputHitTestOptionsInit::profile() const {
-    return emlite::Val::get("profile").as<jsbind::DOMString>();
+jsbind::String XRTransientInputHitTestOptionsInit::profile() const {
+    return emlite::Val::get("profile").as<jsbind::String>();
 }
 
-void XRTransientInputHitTestOptionsInit::profile(const jsbind::DOMString& value) {
+void XRTransientInputHitTestOptionsInit::profile(const jsbind::String& value) {
     emlite::Val::set("profile", value);
 }
 
-jsbind::Sequence<XRHitTestTrackableType> XRTransientInputHitTestOptionsInit::entityTypes() const {
-    return emlite::Val::get("entityTypes").as<jsbind::Sequence<XRHitTestTrackableType>>();
+jsbind::TypedArray<XRHitTestTrackableType> XRTransientInputHitTestOptionsInit::entityTypes() const {
+    return emlite::Val::get("entityTypes").as<jsbind::TypedArray<XRHitTestTrackableType>>();
 }
 
-void XRTransientInputHitTestOptionsInit::entityTypes(const jsbind::Sequence<XRHitTestTrackableType>& value) {
+void XRTransientInputHitTestOptionsInit::entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value) {
     emlite::Val::set("entityTypes", value);
 }
 
@@ -195,8 +195,8 @@ XRInputSourceArray XRSession::trackedSources() const {
     return EventTarget::get("trackedSources").as<XRInputSourceArray>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> XRSession::enabledFeatures() const {
-    return EventTarget::get("enabledFeatures").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> XRSession::enabledFeatures() const {
+    return EventTarget::get("enabledFeatures").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 bool XRSession::isSystemKeyboardSupported() const {
@@ -311,15 +311,15 @@ void XRSession::onframeratechange(const jsbind::Any& value) {
     EventTarget::set("onframeratechange", value);
 }
 
-jsbind::FrozenArray<jsbind::DOMString> XRSession::persistentAnchors() const {
-    return EventTarget::get("persistentAnchors").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> XRSession::persistentAnchors() const {
+    return EventTarget::get("persistentAnchors").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::Promise<XRAnchor> XRSession::restorePersistentAnchor(const jsbind::DOMString& uuid) {
+jsbind::Promise<XRAnchor> XRSession::restorePersistentAnchor(const jsbind::String& uuid) {
     return EventTarget::call("restorePersistentAnchor", uuid).as<jsbind::Promise<XRAnchor>>();
 }
 
-jsbind::Promise<jsbind::Undefined> XRSession::deletePersistentAnchor(const jsbind::DOMString& uuid) {
+jsbind::Promise<jsbind::Undefined> XRSession::deletePersistentAnchor(const jsbind::String& uuid) {
     return EventTarget::call("deletePersistentAnchor", uuid).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

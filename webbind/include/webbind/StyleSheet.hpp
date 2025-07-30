@@ -16,11 +16,11 @@ public:
     static StyleSheet take_ownership(Handle h) noexcept;
 
     StyleSheet clone() const noexcept;
-    jsbind::CSSOMString type() const;
-    jsbind::USVString href() const;
+    jsbind::String type() const;
+    jsbind::String href() const;
     jsbind::Any ownerNode() const;
     CSSStyleSheet parentStyleSheet() const;
-    jsbind::DOMString title() const;
+    jsbind::String title() const;
     MediaList media() const;
     bool disabled() const;
     void disabled(bool value);

@@ -32,8 +32,8 @@ public:
     explicit LanguageDetectorCreateCoreOptions(const emlite::Val &val) noexcept;
     LanguageDetectorCreateCoreOptions() noexcept;
     LanguageDetectorCreateCoreOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::DOMString> expectedInputLanguages() const;
-    void expectedInputLanguages(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
+    void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class LanguageDetectionResult : public emlite::Val {
@@ -43,8 +43,8 @@ public:
     explicit LanguageDetectionResult(const emlite::Val &val) noexcept;
     LanguageDetectionResult() noexcept;
     LanguageDetectionResult clone() const noexcept;
-    jsbind::DOMString detectedLanguage() const;
-    void detectedLanguage(const jsbind::DOMString& value);
+    jsbind::String detectedLanguage() const;
+    void detectedLanguage(const jsbind::String& value);
     double confidence() const;
     void confidence(double value);
 };
@@ -72,11 +72,11 @@ public:
     static jsbind::Promise<LanguageDetector> create(const LanguageDetectorCreateOptions& options);
     static jsbind::Promise<Availability> availability();
     static jsbind::Promise<Availability> availability(const LanguageDetectorCreateCoreOptions& options);
-    jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> detect(const jsbind::DOMString& input);
-    jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> detect(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options);
-    jsbind::FrozenArray<jsbind::DOMString> expectedInputLanguages() const;
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options);
+    jsbind::Promise<jsbind::TypedArray<LanguageDetectionResult>> detect(const jsbind::String& input);
+    jsbind::Promise<jsbind::TypedArray<LanguageDetectionResult>> detect(const jsbind::String& input, const LanguageDetectorDetectOptions& options);
+    jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const LanguageDetectorDetectOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };

@@ -11,19 +11,19 @@ FederatedCredential::FederatedCredential(const emlite::Val &val) noexcept: Crede
 
 FederatedCredential::FederatedCredential(const jsbind::Any& data) : Credential(emlite::Val::global("FederatedCredential").new_(data)) {}
 
-jsbind::USVString FederatedCredential::provider() const {
-    return Credential::get("provider").as<jsbind::USVString>();
+jsbind::String FederatedCredential::provider() const {
+    return Credential::get("provider").as<jsbind::String>();
 }
 
-jsbind::DOMString FederatedCredential::protocol() const {
-    return Credential::get("protocol").as<jsbind::DOMString>();
+jsbind::String FederatedCredential::protocol() const {
+    return Credential::get("protocol").as<jsbind::String>();
 }
 
-jsbind::USVString FederatedCredential::name() const {
-    return Credential::get("name").as<jsbind::USVString>();
+jsbind::String FederatedCredential::name() const {
+    return Credential::get("name").as<jsbind::String>();
 }
 
-jsbind::USVString FederatedCredential::iconURL() const {
-    return Credential::get("iconURL").as<jsbind::USVString>();
+jsbind::String FederatedCredential::iconURL() const {
+    return Credential::get("iconURL").as<jsbind::String>();
 }
 

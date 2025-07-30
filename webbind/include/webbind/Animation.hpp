@@ -22,8 +22,8 @@ public:
     Animation();
     Animation(const AnimationEffect& effect);
     Animation(const AnimationEffect& effect, const AnimationTimeline& timeline);
-    jsbind::DOMString id() const;
-    void id(const jsbind::DOMString& value);
+    jsbind::String id() const;
+    void id(const jsbind::String& value);
     AnimationEffect effect() const;
     void effect(const AnimationEffect& value);
     AnimationTimeline timeline() const;

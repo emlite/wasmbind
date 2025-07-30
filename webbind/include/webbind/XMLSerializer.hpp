@@ -16,6 +16,6 @@ public:
 
     XMLSerializer clone() const noexcept;
     XMLSerializer();
-    jsbind::DOMString serializeToString(const Node& root);
+    jsbind::String serializeToString(const Node& root);
 };
 

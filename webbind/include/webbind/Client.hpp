@@ -14,9 +14,9 @@ public:
     static Client take_ownership(Handle h) noexcept;
 
     Client clone() const noexcept;
-    jsbind::USVString url() const;
+    jsbind::String url() const;
     FrameType frameType() const;
-    jsbind::DOMString id() const;
+    jsbind::String id() const;
     ClientType type() const;
     jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);

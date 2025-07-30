@@ -15,12 +15,12 @@ public:
     explicit FunctionParameter(const emlite::Val &val) noexcept;
     FunctionParameter() noexcept;
     FunctionParameter clone() const noexcept;
-    jsbind::CSSOMString name() const;
-    void name(const jsbind::CSSOMString& value);
-    jsbind::CSSOMString type() const;
-    void type(const jsbind::CSSOMString& value);
-    jsbind::CSSOMString defaultValue() const;
-    void defaultValue(const jsbind::CSSOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
+    jsbind::String defaultValue() const;
+    void defaultValue(const jsbind::String& value);
 };
 
 class CSSFunctionRule : public CSSGroupingRule {
@@ -31,8 +31,8 @@ public:
     static CSSFunctionRule take_ownership(Handle h) noexcept;
 
     CSSFunctionRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
-    jsbind::Sequence<FunctionParameter> getParameters();
-    jsbind::CSSOMString returnType() const;
+    jsbind::String name() const;
+    jsbind::TypedArray<FunctionParameter> getParameters();
+    jsbind::String returnType() const;
 };
 

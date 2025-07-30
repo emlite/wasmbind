@@ -13,10 +13,10 @@ public:
     static MediaDeviceInfo take_ownership(Handle h) noexcept;
 
     MediaDeviceInfo clone() const noexcept;
-    jsbind::DOMString deviceId() const;
+    jsbind::String deviceId() const;
     MediaDeviceKind kind() const;
-    jsbind::DOMString label() const;
-    jsbind::DOMString groupId() const;
+    jsbind::String label() const;
+    jsbind::String groupId() const;
     jsbind::Object toJSON();
 };
 

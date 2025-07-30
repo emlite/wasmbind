@@ -16,14 +16,14 @@ public:
     explicit RTCRtpCodec(const emlite::Val &val) noexcept;
     RTCRtpCodec() noexcept;
     RTCRtpCodec clone() const noexcept;
-    jsbind::DOMString mimeType() const;
-    void mimeType(const jsbind::DOMString& value);
+    jsbind::String mimeType() const;
+    void mimeType(const jsbind::String& value);
     unsigned long clockRate() const;
     void clockRate(unsigned long value);
     unsigned short channels() const;
     void channels(unsigned short value);
-    jsbind::DOMString sdpFmtpLine() const;
-    void sdpFmtpLine(const jsbind::DOMString& value);
+    jsbind::String sdpFmtpLine() const;
+    void sdpFmtpLine(const jsbind::String& value);
 };
 
 class RTCRtpTransceiver : public emlite::Val {
@@ -34,13 +34,13 @@ public:
     static RTCRtpTransceiver take_ownership(Handle h) noexcept;
 
     RTCRtpTransceiver clone() const noexcept;
-    jsbind::DOMString mid() const;
+    jsbind::String mid() const;
     RTCRtpSender sender() const;
     RTCRtpReceiver receiver() const;
     RTCRtpTransceiverDirection direction() const;
     void direction(const RTCRtpTransceiverDirection& value);
     RTCRtpTransceiverDirection currentDirection() const;
     jsbind::Undefined stop();
-    jsbind::Undefined setCodecPreferences(const jsbind::Sequence<RTCRtpCodec>& codecs);
+    jsbind::Undefined setCodecPreferences(const jsbind::TypedArray<RTCRtpCodec>& codecs);
 };
 

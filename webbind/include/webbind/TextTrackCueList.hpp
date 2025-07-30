@@ -16,6 +16,6 @@ public:
 
     TextTrackCueList clone() const noexcept;
     unsigned long length() const;
-    TextTrackCue getCueById(const jsbind::DOMString& id);
+    TextTrackCue getCueById(const jsbind::String& id);
 };
 

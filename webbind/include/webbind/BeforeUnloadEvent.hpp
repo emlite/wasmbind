@@ -14,7 +14,7 @@ public:
     static BeforeUnloadEvent take_ownership(Handle h) noexcept;
 
     BeforeUnloadEvent clone() const noexcept;
-    jsbind::DOMString returnValue() const;
-    void returnValue(const jsbind::DOMString& value);
+    jsbind::String returnValue() const;
+    void returnValue(const jsbind::String& value);
 };
 

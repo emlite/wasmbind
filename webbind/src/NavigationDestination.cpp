@@ -9,16 +9,16 @@ NavigationDestination::NavigationDestination(Handle h) noexcept : emlite::Val(em
 NavigationDestination::NavigationDestination(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString NavigationDestination::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String NavigationDestination::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
-jsbind::DOMString NavigationDestination::key() const {
-    return emlite::Val::get("key").as<jsbind::DOMString>();
+jsbind::String NavigationDestination::key() const {
+    return emlite::Val::get("key").as<jsbind::String>();
 }
 
-jsbind::DOMString NavigationDestination::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String NavigationDestination::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
 long long NavigationDestination::index() const {

@@ -14,20 +14,20 @@ RTCIceCandidate::RTCIceCandidate() : emlite::Val(emlite::Val::global("RTCIceCand
 
 RTCIceCandidate::RTCIceCandidate(const jsbind::Any& candidateInitDict) : emlite::Val(emlite::Val::global("RTCIceCandidate").new_(candidateInitDict)) {}
 
-jsbind::DOMString RTCIceCandidate::candidate() const {
-    return emlite::Val::get("candidate").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidate::candidate() const {
+    return emlite::Val::get("candidate").as<jsbind::String>();
 }
 
-jsbind::DOMString RTCIceCandidate::sdpMid() const {
-    return emlite::Val::get("sdpMid").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidate::sdpMid() const {
+    return emlite::Val::get("sdpMid").as<jsbind::String>();
 }
 
 unsigned short RTCIceCandidate::sdpMLineIndex() const {
     return emlite::Val::get("sdpMLineIndex").as<unsigned short>();
 }
 
-jsbind::DOMString RTCIceCandidate::foundation() const {
-    return emlite::Val::get("foundation").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidate::foundation() const {
+    return emlite::Val::get("foundation").as<jsbind::String>();
 }
 
 RTCIceComponent RTCIceCandidate::component() const {
@@ -38,8 +38,8 @@ unsigned long RTCIceCandidate::priority() const {
     return emlite::Val::get("priority").as<unsigned long>();
 }
 
-jsbind::DOMString RTCIceCandidate::address() const {
-    return emlite::Val::get("address").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidate::address() const {
+    return emlite::Val::get("address").as<jsbind::String>();
 }
 
 RTCIceProtocol RTCIceCandidate::protocol() const {
@@ -58,24 +58,24 @@ RTCIceTcpCandidateType RTCIceCandidate::tcpType() const {
     return emlite::Val::get("tcpType").as<RTCIceTcpCandidateType>();
 }
 
-jsbind::DOMString RTCIceCandidate::relatedAddress() const {
-    return emlite::Val::get("relatedAddress").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidate::relatedAddress() const {
+    return emlite::Val::get("relatedAddress").as<jsbind::String>();
 }
 
 unsigned short RTCIceCandidate::relatedPort() const {
     return emlite::Val::get("relatedPort").as<unsigned short>();
 }
 
-jsbind::DOMString RTCIceCandidate::usernameFragment() const {
-    return emlite::Val::get("usernameFragment").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidate::usernameFragment() const {
+    return emlite::Val::get("usernameFragment").as<jsbind::String>();
 }
 
 RTCIceServerTransportProtocol RTCIceCandidate::relayProtocol() const {
     return emlite::Val::get("relayProtocol").as<RTCIceServerTransportProtocol>();
 }
 
-jsbind::USVString RTCIceCandidate::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String RTCIceCandidate::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
 RTCIceCandidateInit RTCIceCandidate::toJSON() {

@@ -27,11 +27,11 @@ void HTMLOListElement::start(long value) {
     HTMLElement::set("start", value);
 }
 
-jsbind::DOMString HTMLOListElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLOListElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLOListElement::type(const jsbind::DOMString& value) {
+void HTMLOListElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 

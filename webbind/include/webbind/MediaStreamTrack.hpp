@@ -19,12 +19,12 @@ public:
     explicit MediaTrackCapabilities(const emlite::Val &val) noexcept;
     MediaTrackCapabilities() noexcept;
     MediaTrackCapabilities clone() const noexcept;
-    jsbind::DOMString displaySurface() const;
-    void displaySurface(const jsbind::DOMString& value);
+    jsbind::String displaySurface() const;
+    void displaySurface(const jsbind::String& value);
     bool logicalSurface() const;
     void logicalSurface(bool value);
-    jsbind::Sequence<jsbind::DOMString> cursor() const;
-    void cursor(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<jsbind::String> cursor() const;
+    void cursor(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class MediaTrackConstraints : public emlite::Val {
@@ -34,8 +34,8 @@ public:
     explicit MediaTrackConstraints(const emlite::Val &val) noexcept;
     MediaTrackConstraints() noexcept;
     MediaTrackConstraints clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> advanced() const;
-    void advanced(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> advanced() const;
+    void advanced(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class MediaTrackSettings : public emlite::Val {
@@ -45,12 +45,12 @@ public:
     explicit MediaTrackSettings(const emlite::Val &val) noexcept;
     MediaTrackSettings() noexcept;
     MediaTrackSettings clone() const noexcept;
-    jsbind::DOMString displaySurface() const;
-    void displaySurface(const jsbind::DOMString& value);
+    jsbind::String displaySurface() const;
+    void displaySurface(const jsbind::String& value);
     bool logicalSurface() const;
     void logicalSurface(bool value);
-    jsbind::DOMString cursor() const;
-    void cursor(const jsbind::DOMString& value);
+    jsbind::String cursor() const;
+    void cursor(const jsbind::String& value);
     bool restrictOwnAudio() const;
     void restrictOwnAudio(bool value);
     bool suppressLocalAudioPlayback() const;
@@ -66,10 +66,10 @@ public:
     explicit CaptureHandle(const emlite::Val &val) noexcept;
     CaptureHandle() noexcept;
     CaptureHandle clone() const noexcept;
-    jsbind::DOMString origin() const;
-    void origin(const jsbind::DOMString& value);
-    jsbind::DOMString handle() const;
-    void handle(const jsbind::DOMString& value);
+    jsbind::String origin() const;
+    void origin(const jsbind::String& value);
+    jsbind::String handle() const;
+    void handle(const jsbind::String& value);
 };
 
 class MediaStreamTrack : public EventTarget {
@@ -80,9 +80,9 @@ public:
     static MediaStreamTrack take_ownership(Handle h) noexcept;
 
     MediaStreamTrack clone() const noexcept;
-    jsbind::DOMString kind() const;
-    jsbind::DOMString id() const;
-    jsbind::DOMString label() const;
+    jsbind::String kind() const;
+    jsbind::String id() const;
+    jsbind::String label() const;
     bool enabled() const;
     void enabled(bool value);
     bool muted() const;
@@ -103,10 +103,10 @@ public:
     CaptureHandle getCaptureHandle();
     jsbind::Any oncapturehandlechange() const;
     void oncapturehandlechange(const jsbind::Any& value);
-    jsbind::Sequence<jsbind::DOMString> getSupportedCaptureActions();
+    jsbind::TypedArray<jsbind::String> getSupportedCaptureActions();
     jsbind::Promise<jsbind::Undefined> sendCaptureAction(const CaptureAction& action);
-    jsbind::DOMString contentHint() const;
-    void contentHint(const jsbind::DOMString& value);
+    jsbind::String contentHint() const;
+    void contentHint(const jsbind::String& value);
     bool isolated() const;
     jsbind::Any onisolationchange() const;
     void onisolationchange(const jsbind::Any& value);

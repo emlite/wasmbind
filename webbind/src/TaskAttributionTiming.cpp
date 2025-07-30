@@ -17,28 +17,28 @@ jsbind::Any TaskAttributionTiming::duration() const {
     return PerformanceEntry::get("duration").as<jsbind::Any>();
 }
 
-jsbind::DOMString TaskAttributionTiming::name() const {
-    return PerformanceEntry::get("name").as<jsbind::DOMString>();
+jsbind::String TaskAttributionTiming::name() const {
+    return PerformanceEntry::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString TaskAttributionTiming::entryType() const {
-    return PerformanceEntry::get("entryType").as<jsbind::DOMString>();
+jsbind::String TaskAttributionTiming::entryType() const {
+    return PerformanceEntry::get("entryType").as<jsbind::String>();
 }
 
-jsbind::DOMString TaskAttributionTiming::containerType() const {
-    return PerformanceEntry::get("containerType").as<jsbind::DOMString>();
+jsbind::String TaskAttributionTiming::containerType() const {
+    return PerformanceEntry::get("containerType").as<jsbind::String>();
 }
 
-jsbind::DOMString TaskAttributionTiming::containerSrc() const {
-    return PerformanceEntry::get("containerSrc").as<jsbind::DOMString>();
+jsbind::String TaskAttributionTiming::containerSrc() const {
+    return PerformanceEntry::get("containerSrc").as<jsbind::String>();
 }
 
-jsbind::DOMString TaskAttributionTiming::containerId() const {
-    return PerformanceEntry::get("containerId").as<jsbind::DOMString>();
+jsbind::String TaskAttributionTiming::containerId() const {
+    return PerformanceEntry::get("containerId").as<jsbind::String>();
 }
 
-jsbind::DOMString TaskAttributionTiming::containerName() const {
-    return PerformanceEntry::get("containerName").as<jsbind::DOMString>();
+jsbind::String TaskAttributionTiming::containerName() const {
+    return PerformanceEntry::get("containerName").as<jsbind::String>();
 }
 
 jsbind::Object TaskAttributionTiming::toJSON() {

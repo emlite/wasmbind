@@ -14,7 +14,7 @@ public:
     static CSSContainerRule take_ownership(Handle h) noexcept;
 
     CSSContainerRule clone() const noexcept;
-    jsbind::CSSOMString containerName() const;
-    jsbind::CSSOMString containerQuery() const;
+    jsbind::String containerName() const;
+    jsbind::String containerQuery() const;
 };
 

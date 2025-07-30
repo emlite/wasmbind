@@ -15,15 +15,15 @@ public:
 
     HTMLMetaElement clone() const noexcept;
     HTMLMetaElement();
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
-    jsbind::DOMString httpEquiv() const;
-    void httpEquiv(const jsbind::DOMString& value);
-    jsbind::DOMString content() const;
-    void content(const jsbind::DOMString& value);
-    jsbind::DOMString media() const;
-    void media(const jsbind::DOMString& value);
-    jsbind::DOMString scheme() const;
-    void scheme(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
+    jsbind::String httpEquiv() const;
+    void httpEquiv(const jsbind::String& value);
+    jsbind::String content() const;
+    void content(const jsbind::String& value);
+    jsbind::String media() const;
+    void media(const jsbind::String& value);
+    jsbind::String scheme() const;
+    void scheme(const jsbind::String& value);
 };
 

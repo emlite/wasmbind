@@ -10,12 +10,12 @@ Event::Event(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Event::Event(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-Event::Event(const jsbind::DOMString& type) : emlite::Val(emlite::Val::global("Event").new_(type)) {}
+Event::Event(const jsbind::String& type) : emlite::Val(emlite::Val::global("Event").new_(type)) {}
 
-Event::Event(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : emlite::Val(emlite::Val::global("Event").new_(type, eventInitDict)) {}
+Event::Event(const jsbind::String& type, const jsbind::Any& eventInitDict) : emlite::Val(emlite::Val::global("Event").new_(type, eventInitDict)) {}
 
-jsbind::DOMString Event::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String Event::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
 EventTarget Event::target() const {
@@ -30,8 +30,8 @@ EventTarget Event::currentTarget() const {
     return emlite::Val::get("currentTarget").as<EventTarget>();
 }
 
-jsbind::Sequence<EventTarget> Event::composedPath() {
-    return emlite::Val::call("composedPath").as<jsbind::Sequence<EventTarget>>();
+jsbind::TypedArray<EventTarget> Event::composedPath() {
+    return emlite::Val::call("composedPath").as<jsbind::TypedArray<EventTarget>>();
 }
 
 unsigned short Event::eventPhase() const {
@@ -90,15 +90,15 @@ jsbind::Any Event::timeStamp() const {
     return emlite::Val::get("timeStamp").as<jsbind::Any>();
 }
 
-jsbind::Undefined Event::initEvent(const jsbind::DOMString& type) {
+jsbind::Undefined Event::initEvent(const jsbind::String& type) {
     return emlite::Val::call("initEvent", type).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Event::initEvent(const jsbind::DOMString& type, bool bubbles) {
+jsbind::Undefined Event::initEvent(const jsbind::String& type, bool bubbles) {
     return emlite::Val::call("initEvent", type, bubbles).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Event::initEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable) {
+jsbind::Undefined Event::initEvent(const jsbind::String& type, bool bubbles, bool cancelable) {
     return emlite::Val::call("initEvent", type, bubbles, cancelable).as<jsbind::Undefined>();
 }
 

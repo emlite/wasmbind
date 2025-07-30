@@ -14,8 +14,8 @@ public:
     static VisibilityStateEntry take_ownership(Handle h) noexcept;
 
     VisibilityStateEntry clone() const noexcept;
-    jsbind::DOMString name() const;
-    jsbind::DOMString entryType() const;
+    jsbind::String name() const;
+    jsbind::String entryType() const;
     jsbind::Any startTime() const;
     unsigned long duration() const;
 };

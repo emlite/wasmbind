@@ -15,9 +15,9 @@ public:
 
     HTMLModElement clone() const noexcept;
     HTMLModElement();
-    jsbind::USVString cite() const;
-    void cite(const jsbind::USVString& value);
-    jsbind::DOMString dateTime() const;
-    void dateTime(const jsbind::DOMString& value);
+    jsbind::String cite() const;
+    void cite(const jsbind::String& value);
+    jsbind::String dateTime() const;
+    void dateTime(const jsbind::String& value);
 };
 

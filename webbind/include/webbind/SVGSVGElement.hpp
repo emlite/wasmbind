@@ -85,7 +85,7 @@ public:
     SVGTransform createSVGTransform();
     SVGTransform createSVGTransformFromMatrix();
     SVGTransform createSVGTransformFromMatrix(const DOMMatrix2DInit& matrix);
-    Element getElementById(const jsbind::DOMString& elementId);
+    Element getElementById(const jsbind::String& elementId);
     unsigned long suspendRedraw(unsigned long maxWaitMilliseconds);
     jsbind::Undefined unsuspendRedraw(unsigned long suspendHandleID);
     jsbind::Undefined unsuspendRedrawAll();

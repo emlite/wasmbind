@@ -14,7 +14,7 @@ public:
     static TaskPriorityChangeEvent take_ownership(Handle h) noexcept;
 
     TaskPriorityChangeEvent clone() const noexcept;
-    TaskPriorityChangeEvent(const jsbind::DOMString& type, const jsbind::Any& priorityChangeEventInitDict);
+    TaskPriorityChangeEvent(const jsbind::String& type, const jsbind::Any& priorityChangeEventInitDict);
     TaskPriority previousPriority() const;
 };
 

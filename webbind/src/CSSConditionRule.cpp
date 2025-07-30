@@ -9,7 +9,7 @@ CSSConditionRule::CSSConditionRule(Handle h) noexcept : CSSGroupingRule(emlite::
 CSSConditionRule::CSSConditionRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 
-jsbind::CSSOMString CSSConditionRule::conditionText() const {
-    return CSSGroupingRule::get("conditionText").as<jsbind::CSSOMString>();
+jsbind::String CSSConditionRule::conditionText() const {
+    return CSSGroupingRule::get("conditionText").as<jsbind::String>();
 }
 

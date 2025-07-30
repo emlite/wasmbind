@@ -9,7 +9,7 @@ CanvasGradient::CanvasGradient(Handle h) noexcept : emlite::Val(emlite::Val::tak
 CanvasGradient::CanvasGradient(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Undefined CanvasGradient::addColorStop(double offset, const jsbind::DOMString& color) {
+jsbind::Undefined CanvasGradient::addColorStop(double offset, const jsbind::String& color) {
     return emlite::Val::call("addColorStop", offset, color).as<jsbind::Undefined>();
 }
 

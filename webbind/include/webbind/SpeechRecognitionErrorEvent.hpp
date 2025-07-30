@@ -14,8 +14,8 @@ public:
     static SpeechRecognitionErrorEvent take_ownership(Handle h) noexcept;
 
     SpeechRecognitionErrorEvent clone() const noexcept;
-    SpeechRecognitionErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    SpeechRecognitionErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     SpeechRecognitionErrorCode error() const;
-    jsbind::DOMString message() const;
+    jsbind::String message() const;
 };
 

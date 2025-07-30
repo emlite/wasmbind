@@ -13,9 +13,9 @@ public:
     static SpeechRecognitionPhrase take_ownership(Handle h) noexcept;
 
     SpeechRecognitionPhrase clone() const noexcept;
-    SpeechRecognitionPhrase(const jsbind::DOMString& phrase);
-    SpeechRecognitionPhrase(const jsbind::DOMString& phrase, float boost);
-    jsbind::DOMString phrase() const;
+    SpeechRecognitionPhrase(const jsbind::String& phrase);
+    SpeechRecognitionPhrase(const jsbind::String& phrase, float boost);
+    jsbind::String phrase() const;
     float boost() const;
 };
 

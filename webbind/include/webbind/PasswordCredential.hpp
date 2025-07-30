@@ -15,8 +15,8 @@ public:
 
     PasswordCredential clone() const noexcept;
     PasswordCredential(const jsbind::Any& data);
-    jsbind::USVString password() const;
-    jsbind::USVString name() const;
-    jsbind::USVString iconURL() const;
+    jsbind::String password() const;
+    jsbind::String name() const;
+    jsbind::String iconURL() const;
 };
 

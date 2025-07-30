@@ -19,51 +19,51 @@ void HTMLBodyElement::onorientationchange(const jsbind::Any& value) {
     HTMLElement::set("onorientationchange", value);
 }
 
-jsbind::DOMString HTMLBodyElement::text() const {
-    return HTMLElement::get("text").as<jsbind::DOMString>();
+jsbind::String HTMLBodyElement::text() const {
+    return HTMLElement::get("text").as<jsbind::String>();
 }
 
-void HTMLBodyElement::text(const jsbind::DOMString& value) {
+void HTMLBodyElement::text(const jsbind::String& value) {
     HTMLElement::set("text", value);
 }
 
-jsbind::DOMString HTMLBodyElement::link() const {
-    return HTMLElement::get("link").as<jsbind::DOMString>();
+jsbind::String HTMLBodyElement::link() const {
+    return HTMLElement::get("link").as<jsbind::String>();
 }
 
-void HTMLBodyElement::link(const jsbind::DOMString& value) {
+void HTMLBodyElement::link(const jsbind::String& value) {
     HTMLElement::set("link", value);
 }
 
-jsbind::DOMString HTMLBodyElement::vLink() const {
-    return HTMLElement::get("vLink").as<jsbind::DOMString>();
+jsbind::String HTMLBodyElement::vLink() const {
+    return HTMLElement::get("vLink").as<jsbind::String>();
 }
 
-void HTMLBodyElement::vLink(const jsbind::DOMString& value) {
+void HTMLBodyElement::vLink(const jsbind::String& value) {
     HTMLElement::set("vLink", value);
 }
 
-jsbind::DOMString HTMLBodyElement::aLink() const {
-    return HTMLElement::get("aLink").as<jsbind::DOMString>();
+jsbind::String HTMLBodyElement::aLink() const {
+    return HTMLElement::get("aLink").as<jsbind::String>();
 }
 
-void HTMLBodyElement::aLink(const jsbind::DOMString& value) {
+void HTMLBodyElement::aLink(const jsbind::String& value) {
     HTMLElement::set("aLink", value);
 }
 
-jsbind::DOMString HTMLBodyElement::bgColor() const {
-    return HTMLElement::get("bgColor").as<jsbind::DOMString>();
+jsbind::String HTMLBodyElement::bgColor() const {
+    return HTMLElement::get("bgColor").as<jsbind::String>();
 }
 
-void HTMLBodyElement::bgColor(const jsbind::DOMString& value) {
+void HTMLBodyElement::bgColor(const jsbind::String& value) {
     HTMLElement::set("bgColor", value);
 }
 
-jsbind::DOMString HTMLBodyElement::background() const {
-    return HTMLElement::get("background").as<jsbind::DOMString>();
+jsbind::String HTMLBodyElement::background() const {
+    return HTMLElement::get("background").as<jsbind::String>();
 }
 
-void HTMLBodyElement::background(const jsbind::DOMString& value) {
+void HTMLBodyElement::background(const jsbind::String& value) {
     HTMLElement::set("background", value);
 }
 

@@ -27,11 +27,11 @@ void VideoFrameCopyToOptions::rect(const DOMRectInit& value) {
     emlite::Val::set("rect", value);
 }
 
-jsbind::Sequence<PlaneLayout> VideoFrameCopyToOptions::layout() const {
-    return emlite::Val::get("layout").as<jsbind::Sequence<PlaneLayout>>();
+jsbind::TypedArray<PlaneLayout> VideoFrameCopyToOptions::layout() const {
+    return emlite::Val::get("layout").as<jsbind::TypedArray<PlaneLayout>>();
 }
 
-void VideoFrameCopyToOptions::layout(const jsbind::Sequence<PlaneLayout>& value) {
+void VideoFrameCopyToOptions::layout(const jsbind::TypedArray<PlaneLayout>& value) {
     emlite::Val::set("layout", value);
 }
 
@@ -145,12 +145,12 @@ unsigned long VideoFrame::allocationSize(const VideoFrameCopyToOptions& options)
     return emlite::Val::call("allocationSize", options).as<unsigned long>();
 }
 
-jsbind::Promise<jsbind::Sequence<PlaneLayout>> VideoFrame::copyTo(const jsbind::Any& destination) {
-    return emlite::Val::call("copyTo", destination).as<jsbind::Promise<jsbind::Sequence<PlaneLayout>>>();
+jsbind::Promise<jsbind::TypedArray<PlaneLayout>> VideoFrame::copyTo(const jsbind::Any& destination) {
+    return emlite::Val::call("copyTo", destination).as<jsbind::Promise<jsbind::TypedArray<PlaneLayout>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<PlaneLayout>> VideoFrame::copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options) {
-    return emlite::Val::call("copyTo", destination, options).as<jsbind::Promise<jsbind::Sequence<PlaneLayout>>>();
+jsbind::Promise<jsbind::TypedArray<PlaneLayout>> VideoFrame::copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options) {
+    return emlite::Val::call("copyTo", destination, options).as<jsbind::Promise<jsbind::TypedArray<PlaneLayout>>>();
 }
 
 VideoFrame VideoFrame::clone() {

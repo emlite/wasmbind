@@ -14,19 +14,19 @@ DataTransfer::DataTransfer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 DataTransfer::DataTransfer() : emlite::Val(emlite::Val::global("DataTransfer").new_()) {}
 
-jsbind::DOMString DataTransfer::dropEffect() const {
-    return emlite::Val::get("dropEffect").as<jsbind::DOMString>();
+jsbind::String DataTransfer::dropEffect() const {
+    return emlite::Val::get("dropEffect").as<jsbind::String>();
 }
 
-void DataTransfer::dropEffect(const jsbind::DOMString& value) {
+void DataTransfer::dropEffect(const jsbind::String& value) {
     emlite::Val::set("dropEffect", value);
 }
 
-jsbind::DOMString DataTransfer::effectAllowed() const {
-    return emlite::Val::get("effectAllowed").as<jsbind::DOMString>();
+jsbind::String DataTransfer::effectAllowed() const {
+    return emlite::Val::get("effectAllowed").as<jsbind::String>();
 }
 
-void DataTransfer::effectAllowed(const jsbind::DOMString& value) {
+void DataTransfer::effectAllowed(const jsbind::String& value) {
     emlite::Val::set("effectAllowed", value);
 }
 
@@ -38,15 +38,15 @@ jsbind::Undefined DataTransfer::setDragImage(const Element& image, long x, long 
     return emlite::Val::call("setDragImage", image, x, y).as<jsbind::Undefined>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> DataTransfer::types() const {
-    return emlite::Val::get("types").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> DataTransfer::types() const {
+    return emlite::Val::get("types").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::DOMString DataTransfer::getData(const jsbind::DOMString& format) {
-    return emlite::Val::call("getData", format).as<jsbind::DOMString>();
+jsbind::String DataTransfer::getData(const jsbind::String& format) {
+    return emlite::Val::call("getData", format).as<jsbind::String>();
 }
 
-jsbind::Undefined DataTransfer::setData(const jsbind::DOMString& format, const jsbind::DOMString& data) {
+jsbind::Undefined DataTransfer::setData(const jsbind::String& format, const jsbind::String& data) {
     return emlite::Val::call("setData", format, data).as<jsbind::Undefined>();
 }
 
@@ -54,7 +54,7 @@ jsbind::Undefined DataTransfer::clearData() {
     return emlite::Val::call("clearData").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined DataTransfer::clearData(const jsbind::DOMString& format) {
+jsbind::Undefined DataTransfer::clearData(const jsbind::String& format) {
     return emlite::Val::call("clearData", format).as<jsbind::Undefined>();
 }
 

@@ -10,11 +10,11 @@ LaunchParams::LaunchParams(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 LaunchParams::LaunchParams(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString LaunchParams::targetURL() const {
-    return emlite::Val::get("targetURL").as<jsbind::DOMString>();
+jsbind::String LaunchParams::targetURL() const {
+    return emlite::Val::get("targetURL").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<FileSystemHandle> LaunchParams::files() const {
-    return emlite::Val::get("files").as<jsbind::FrozenArray<FileSystemHandle>>();
+jsbind::TypedArray<FileSystemHandle> LaunchParams::files() const {
+    return emlite::Val::get("files").as<jsbind::TypedArray<FileSystemHandle>>();
 }
 

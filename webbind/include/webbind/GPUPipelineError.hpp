@@ -15,8 +15,8 @@ public:
 
     GPUPipelineError clone() const noexcept;
     GPUPipelineError();
-    GPUPipelineError(const jsbind::DOMString& message);
-    GPUPipelineError(const jsbind::DOMString& message, const jsbind::Any& options);
+    GPUPipelineError(const jsbind::String& message);
+    GPUPipelineError(const jsbind::String& message, const jsbind::Any& options);
     GPUPipelineErrorReason reason() const;
 };
 

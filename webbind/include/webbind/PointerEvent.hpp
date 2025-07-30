@@ -16,8 +16,8 @@ public:
     static PointerEvent take_ownership(Handle h) noexcept;
 
     PointerEvent clone() const noexcept;
-    PointerEvent(const jsbind::DOMString& type);
-    PointerEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    PointerEvent(const jsbind::String& type);
+    PointerEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     long pointerId() const;
     double width() const;
     double height() const;
@@ -28,10 +28,10 @@ public:
     long twist() const;
     double altitudeAngle() const;
     double azimuthAngle() const;
-    jsbind::DOMString pointerType() const;
+    jsbind::String pointerType() const;
     bool isPrimary() const;
     long persistentDeviceId() const;
-    jsbind::Sequence<PointerEvent> getCoalescedEvents();
-    jsbind::Sequence<PointerEvent> getPredictedEvents();
+    jsbind::TypedArray<PointerEvent> getCoalescedEvents();
+    jsbind::TypedArray<PointerEvent> getPredictedEvents();
 };
 

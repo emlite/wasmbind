@@ -14,10 +14,10 @@ public:
 
     Storage clone() const noexcept;
     unsigned long length() const;
-    jsbind::DOMString key(unsigned long index);
-    jsbind::DOMString getItem(const jsbind::DOMString& key);
-    jsbind::Undefined setItem(const jsbind::DOMString& key, const jsbind::DOMString& value);
-    jsbind::Undefined removeItem(const jsbind::DOMString& key);
+    jsbind::String key(unsigned long index);
+    jsbind::String getItem(const jsbind::String& key);
+    jsbind::Undefined setItem(const jsbind::String& key, const jsbind::String& value);
+    jsbind::Undefined removeItem(const jsbind::String& key);
     jsbind::Undefined clear();
 };
 

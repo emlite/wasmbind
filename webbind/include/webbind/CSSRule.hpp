@@ -16,8 +16,8 @@ public:
     static CSSRule take_ownership(Handle h) noexcept;
 
     CSSRule clone() const noexcept;
-    jsbind::CSSOMString cssText() const;
-    void cssText(const jsbind::CSSOMString& value);
+    jsbind::String cssText() const;
+    void cssText(const jsbind::String& value);
     CSSRule parentRule() const;
     CSSStyleSheet parentStyleSheet() const;
     unsigned short type() const;

@@ -17,9 +17,9 @@ public:
 
     XRPlane clone() const noexcept;
     XRSpace planeSpace() const;
-    jsbind::FrozenArray<DOMPointReadOnly> polygon() const;
+    jsbind::TypedArray<DOMPointReadOnly> polygon() const;
     XRPlaneOrientation orientation() const;
     jsbind::Any lastChangedTime() const;
-    jsbind::DOMString semanticLabel() const;
+    jsbind::String semanticLabel() const;
 };
 

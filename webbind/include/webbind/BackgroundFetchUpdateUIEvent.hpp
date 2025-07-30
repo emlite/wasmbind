@@ -15,10 +15,10 @@ public:
     explicit BackgroundFetchUIOptions(const emlite::Val &val) noexcept;
     BackgroundFetchUIOptions() noexcept;
     BackgroundFetchUIOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> icons() const;
-    void icons(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::DOMString title() const;
-    void title(const jsbind::DOMString& value);
+    jsbind::TypedArray<jsbind::Any> icons() const;
+    void icons(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::String title() const;
+    void title(const jsbind::String& value);
 };
 
 class BackgroundFetchUpdateUIEvent : public BackgroundFetchEvent {
@@ -29,7 +29,7 @@ public:
     static BackgroundFetchUpdateUIEvent take_ownership(Handle h) noexcept;
 
     BackgroundFetchUpdateUIEvent clone() const noexcept;
-    BackgroundFetchUpdateUIEvent(const jsbind::DOMString& type, const jsbind::Any& init);
+    BackgroundFetchUpdateUIEvent(const jsbind::String& type, const jsbind::Any& init);
     jsbind::Promise<jsbind::Undefined> updateUI();
     jsbind::Promise<jsbind::Undefined> updateUI(const BackgroundFetchUIOptions& options);
 };

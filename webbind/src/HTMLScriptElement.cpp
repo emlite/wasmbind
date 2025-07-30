@@ -12,19 +12,19 @@ HTMLScriptElement::HTMLScriptElement(const emlite::Val &val) noexcept: HTMLEleme
 
 HTMLScriptElement::HTMLScriptElement() : HTMLElement(emlite::Val::global("HTMLScriptElement").new_()) {}
 
-jsbind::DOMString HTMLScriptElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLScriptElement::type(const jsbind::DOMString& value) {
+void HTMLScriptElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 
-jsbind::USVString HTMLScriptElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLScriptElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLScriptElement::src(const jsbind::USVString& value) {
+void HTMLScriptElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
@@ -56,79 +56,79 @@ DOMTokenList HTMLScriptElement::blocking() const {
     return HTMLElement::get("blocking").as<DOMTokenList>();
 }
 
-jsbind::DOMString HTMLScriptElement::crossOrigin() const {
-    return HTMLElement::get("crossOrigin").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::crossOrigin() const {
+    return HTMLElement::get("crossOrigin").as<jsbind::String>();
 }
 
-void HTMLScriptElement::crossOrigin(const jsbind::DOMString& value) {
+void HTMLScriptElement::crossOrigin(const jsbind::String& value) {
     HTMLElement::set("crossOrigin", value);
 }
 
-jsbind::DOMString HTMLScriptElement::referrerPolicy() const {
-    return HTMLElement::get("referrerPolicy").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::referrerPolicy() const {
+    return HTMLElement::get("referrerPolicy").as<jsbind::String>();
 }
 
-void HTMLScriptElement::referrerPolicy(const jsbind::DOMString& value) {
+void HTMLScriptElement::referrerPolicy(const jsbind::String& value) {
     HTMLElement::set("referrerPolicy", value);
 }
 
-jsbind::DOMString HTMLScriptElement::integrity() const {
-    return HTMLElement::get("integrity").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::integrity() const {
+    return HTMLElement::get("integrity").as<jsbind::String>();
 }
 
-void HTMLScriptElement::integrity(const jsbind::DOMString& value) {
+void HTMLScriptElement::integrity(const jsbind::String& value) {
     HTMLElement::set("integrity", value);
 }
 
-jsbind::DOMString HTMLScriptElement::fetchPriority() const {
-    return HTMLElement::get("fetchPriority").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::fetchPriority() const {
+    return HTMLElement::get("fetchPriority").as<jsbind::String>();
 }
 
-void HTMLScriptElement::fetchPriority(const jsbind::DOMString& value) {
+void HTMLScriptElement::fetchPriority(const jsbind::String& value) {
     HTMLElement::set("fetchPriority", value);
 }
 
-jsbind::DOMString HTMLScriptElement::text() const {
-    return HTMLElement::get("text").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::text() const {
+    return HTMLElement::get("text").as<jsbind::String>();
 }
 
-void HTMLScriptElement::text(const jsbind::DOMString& value) {
+void HTMLScriptElement::text(const jsbind::String& value) {
     HTMLElement::set("text", value);
 }
 
-bool HTMLScriptElement::supports(const jsbind::DOMString& type) {
+bool HTMLScriptElement::supports(const jsbind::String& type) {
     return emlite::Val::global("htmlscriptelement").call("supports", type).as<bool>();
 }
 
-jsbind::DOMString HTMLScriptElement::charset() const {
-    return HTMLElement::get("charset").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::charset() const {
+    return HTMLElement::get("charset").as<jsbind::String>();
 }
 
-void HTMLScriptElement::charset(const jsbind::DOMString& value) {
+void HTMLScriptElement::charset(const jsbind::String& value) {
     HTMLElement::set("charset", value);
 }
 
-jsbind::DOMString HTMLScriptElement::event() const {
-    return HTMLElement::get("event").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::event() const {
+    return HTMLElement::get("event").as<jsbind::String>();
 }
 
-void HTMLScriptElement::event(const jsbind::DOMString& value) {
+void HTMLScriptElement::event(const jsbind::String& value) {
     HTMLElement::set("event", value);
 }
 
-jsbind::DOMString HTMLScriptElement::htmlFor() const {
-    return HTMLElement::get("htmlFor").as<jsbind::DOMString>();
+jsbind::String HTMLScriptElement::htmlFor() const {
+    return HTMLElement::get("htmlFor").as<jsbind::String>();
 }
 
-void HTMLScriptElement::htmlFor(const jsbind::DOMString& value) {
+void HTMLScriptElement::htmlFor(const jsbind::String& value) {
     HTMLElement::set("htmlFor", value);
 }
 
-jsbind::USVString HTMLScriptElement::attributionSrc() const {
-    return HTMLElement::get("attributionSrc").as<jsbind::USVString>();
+jsbind::String HTMLScriptElement::attributionSrc() const {
+    return HTMLElement::get("attributionSrc").as<jsbind::String>();
 }
 
-void HTMLScriptElement::attributionSrc(const jsbind::USVString& value) {
+void HTMLScriptElement::attributionSrc(const jsbind::String& value) {
     HTMLElement::set("attributionSrc", value);
 }
 

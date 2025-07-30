@@ -9,8 +9,8 @@ RTCDataChannel::RTCDataChannel(Handle h) noexcept : EventTarget(emlite::Val::tak
 RTCDataChannel::RTCDataChannel(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::USVString RTCDataChannel::label() const {
-    return EventTarget::get("label").as<jsbind::USVString>();
+jsbind::String RTCDataChannel::label() const {
+    return EventTarget::get("label").as<jsbind::String>();
 }
 
 bool RTCDataChannel::ordered() const {
@@ -25,8 +25,8 @@ unsigned short RTCDataChannel::maxRetransmits() const {
     return EventTarget::get("maxRetransmits").as<unsigned short>();
 }
 
-jsbind::USVString RTCDataChannel::protocol() const {
-    return EventTarget::get("protocol").as<jsbind::USVString>();
+jsbind::String RTCDataChannel::protocol() const {
+    return EventTarget::get("protocol").as<jsbind::String>();
 }
 
 bool RTCDataChannel::negotiated() const {

@@ -13,43 +13,43 @@ jsbind::Object ContactAddress::toJSON() {
     return emlite::Val::call("toJSON").as<jsbind::Object>();
 }
 
-jsbind::DOMString ContactAddress::city() const {
-    return emlite::Val::get("city").as<jsbind::DOMString>();
+jsbind::String ContactAddress::city() const {
+    return emlite::Val::get("city").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::country() const {
-    return emlite::Val::get("country").as<jsbind::DOMString>();
+jsbind::String ContactAddress::country() const {
+    return emlite::Val::get("country").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::dependentLocality() const {
-    return emlite::Val::get("dependentLocality").as<jsbind::DOMString>();
+jsbind::String ContactAddress::dependentLocality() const {
+    return emlite::Val::get("dependentLocality").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::organization() const {
-    return emlite::Val::get("organization").as<jsbind::DOMString>();
+jsbind::String ContactAddress::organization() const {
+    return emlite::Val::get("organization").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::phone() const {
-    return emlite::Val::get("phone").as<jsbind::DOMString>();
+jsbind::String ContactAddress::phone() const {
+    return emlite::Val::get("phone").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::postalCode() const {
-    return emlite::Val::get("postalCode").as<jsbind::DOMString>();
+jsbind::String ContactAddress::postalCode() const {
+    return emlite::Val::get("postalCode").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::recipient() const {
-    return emlite::Val::get("recipient").as<jsbind::DOMString>();
+jsbind::String ContactAddress::recipient() const {
+    return emlite::Val::get("recipient").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::region() const {
-    return emlite::Val::get("region").as<jsbind::DOMString>();
+jsbind::String ContactAddress::region() const {
+    return emlite::Val::get("region").as<jsbind::String>();
 }
 
-jsbind::DOMString ContactAddress::sortingCode() const {
-    return emlite::Val::get("sortingCode").as<jsbind::DOMString>();
+jsbind::String ContactAddress::sortingCode() const {
+    return emlite::Val::get("sortingCode").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> ContactAddress::addressLine() const {
-    return emlite::Val::get("addressLine").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> ContactAddress::addressLine() const {
+    return emlite::Val::get("addressLine").as<jsbind::TypedArray<jsbind::String>>();
 }
 

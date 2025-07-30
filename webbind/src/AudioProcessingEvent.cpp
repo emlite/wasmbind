@@ -10,7 +10,7 @@ AudioProcessingEvent::AudioProcessingEvent(Handle h) noexcept : Event(emlite::Va
 AudioProcessingEvent::AudioProcessingEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-AudioProcessingEvent::AudioProcessingEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("AudioProcessingEvent").new_(type, eventInitDict)) {}
+AudioProcessingEvent::AudioProcessingEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("AudioProcessingEvent").new_(type, eventInitDict)) {}
 
 double AudioProcessingEvent::playbackTime() const {
     return Event::get("playbackTime").as<double>();

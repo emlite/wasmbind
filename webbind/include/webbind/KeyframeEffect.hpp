@@ -19,11 +19,11 @@ public:
     KeyframeEffect(const KeyframeEffect& source);
     Element target() const;
     void target(const Element& value);
-    jsbind::CSSOMString pseudoElement() const;
-    void pseudoElement(const jsbind::CSSOMString& value);
+    jsbind::String pseudoElement() const;
+    void pseudoElement(const jsbind::String& value);
     CompositeOperation composite() const;
     void composite(const CompositeOperation& value);
-    jsbind::Sequence<jsbind::Object> getKeyframes();
+    jsbind::TypedArray<jsbind::Object> getKeyframes();
     jsbind::Undefined setKeyframes(const jsbind::Object& keyframes);
     IterationCompositeOperation iterationComposite() const;
     void iterationComposite(const IterationCompositeOperation& value);

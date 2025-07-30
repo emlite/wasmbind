@@ -29,10 +29,10 @@ public:
 
     HTMLPortalElement clone() const noexcept;
     HTMLPortalElement();
-    jsbind::USVString src() const;
-    void src(const jsbind::USVString& value);
-    jsbind::DOMString referrerPolicy() const;
-    void referrerPolicy(const jsbind::DOMString& value);
+    jsbind::String src() const;
+    void src(const jsbind::String& value);
+    jsbind::String referrerPolicy() const;
+    void referrerPolicy(const jsbind::String& value);
     jsbind::Promise<jsbind::Undefined> activate();
     jsbind::Promise<jsbind::Undefined> activate(const PortalActivateOptions& options);
     jsbind::Undefined postMessage(const jsbind::Any& message);

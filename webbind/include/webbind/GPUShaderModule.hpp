@@ -16,7 +16,7 @@ public:
 
     GPUShaderModule clone() const noexcept;
     jsbind::Promise<GPUCompilationInfo> getCompilationInfo();
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

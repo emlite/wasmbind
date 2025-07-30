@@ -9,16 +9,16 @@ PerformanceServerTiming::PerformanceServerTiming(Handle h) noexcept : emlite::Va
 PerformanceServerTiming::PerformanceServerTiming(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString PerformanceServerTiming::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String PerformanceServerTiming::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
 jsbind::Any PerformanceServerTiming::duration() const {
     return emlite::Val::get("duration").as<jsbind::Any>();
 }
 
-jsbind::DOMString PerformanceServerTiming::description() const {
-    return emlite::Val::get("description").as<jsbind::DOMString>();
+jsbind::String PerformanceServerTiming::description() const {
+    return emlite::Val::get("description").as<jsbind::String>();
 }
 
 jsbind::Object PerformanceServerTiming::toJSON() {

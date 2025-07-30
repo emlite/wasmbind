@@ -9,16 +9,16 @@ SpeechSynthesisVoice::SpeechSynthesisVoice(Handle h) noexcept : emlite::Val(emli
 SpeechSynthesisVoice::SpeechSynthesisVoice(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString SpeechSynthesisVoice::voiceURI() const {
-    return emlite::Val::get("voiceURI").as<jsbind::DOMString>();
+jsbind::String SpeechSynthesisVoice::voiceURI() const {
+    return emlite::Val::get("voiceURI").as<jsbind::String>();
 }
 
-jsbind::DOMString SpeechSynthesisVoice::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String SpeechSynthesisVoice::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString SpeechSynthesisVoice::lang() const {
-    return emlite::Val::get("lang").as<jsbind::DOMString>();
+jsbind::String SpeechSynthesisVoice::lang() const {
+    return emlite::Val::get("lang").as<jsbind::String>();
 }
 
 bool SpeechSynthesisVoice::localService() const {

@@ -15,7 +15,7 @@ public:
     static SpeechRecognitionPhraseList take_ownership(Handle h) noexcept;
 
     SpeechRecognitionPhraseList clone() const noexcept;
-    SpeechRecognitionPhraseList(const jsbind::Sequence<SpeechRecognitionPhrase>& phrases);
+    SpeechRecognitionPhraseList(const jsbind::TypedArray<SpeechRecognitionPhrase>& phrases);
     unsigned long length() const;
     SpeechRecognitionPhrase item(unsigned long index);
     jsbind::Undefined addItem(const SpeechRecognitionPhrase& item);

@@ -9,11 +9,11 @@ CSSViewTransitionRule::CSSViewTransitionRule(Handle h) noexcept : CSSRule(emlite
 CSSViewTransitionRule::CSSViewTransitionRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSViewTransitionRule::navigation() const {
-    return CSSRule::get("navigation").as<jsbind::CSSOMString>();
+jsbind::String CSSViewTransitionRule::navigation() const {
+    return CSSRule::get("navigation").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<jsbind::CSSOMString> CSSViewTransitionRule::types() const {
-    return CSSRule::get("types").as<jsbind::FrozenArray<jsbind::CSSOMString>>();
+jsbind::TypedArray<jsbind::String> CSSViewTransitionRule::types() const {
+    return CSSRule::get("types").as<jsbind::TypedArray<jsbind::String>>();
 }
 

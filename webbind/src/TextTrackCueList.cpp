@@ -14,7 +14,7 @@ unsigned long TextTrackCueList::length() const {
     return emlite::Val::get("length").as<unsigned long>();
 }
 
-TextTrackCue TextTrackCueList::getCueById(const jsbind::DOMString& id) {
+TextTrackCue TextTrackCueList::getCueById(const jsbind::String& id) {
     return emlite::Val::call("getCueById", id).as<TextTrackCue>();
 }
 

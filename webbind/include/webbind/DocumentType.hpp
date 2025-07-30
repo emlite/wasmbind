@@ -14,9 +14,9 @@ public:
     static DocumentType take_ownership(Handle h) noexcept;
 
     DocumentType clone() const noexcept;
-    jsbind::DOMString name() const;
-    jsbind::DOMString publicId() const;
-    jsbind::DOMString systemId() const;
+    jsbind::String name() const;
+    jsbind::String publicId() const;
+    jsbind::String systemId() const;
     jsbind::Undefined before(const jsbind::Any& nodes);
     jsbind::Undefined after(const jsbind::Any& nodes);
     jsbind::Undefined replaceWith(const jsbind::Any& nodes);

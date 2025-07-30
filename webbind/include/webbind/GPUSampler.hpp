@@ -13,7 +13,7 @@ public:
     static GPUSampler take_ownership(Handle h) noexcept;
 
     GPUSampler clone() const noexcept;
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

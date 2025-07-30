@@ -27,11 +27,11 @@ void RewriterCreateOptions::monitor(const jsbind::Function& value) {
     emlite::Val::set("monitor", value);
 }
 
-jsbind::DOMString RewriterCreateOptions::sharedContext() const {
-    return emlite::Val::get("sharedContext").as<jsbind::DOMString>();
+jsbind::String RewriterCreateOptions::sharedContext() const {
+    return emlite::Val::get("sharedContext").as<jsbind::String>();
 }
 
-void RewriterCreateOptions::sharedContext(const jsbind::DOMString& value) {
+void RewriterCreateOptions::sharedContext(const jsbind::String& value) {
     emlite::Val::set("sharedContext", value);
 }
 
@@ -67,27 +67,27 @@ void RewriterCreateCoreOptions::length(const RewriterLength& value) {
     emlite::Val::set("length", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> RewriterCreateCoreOptions::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> RewriterCreateCoreOptions::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void RewriterCreateCoreOptions::expectedInputLanguages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void RewriterCreateCoreOptions::expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("expectedInputLanguages", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> RewriterCreateCoreOptions::expectedContextLanguages() const {
-    return emlite::Val::get("expectedContextLanguages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> RewriterCreateCoreOptions::expectedContextLanguages() const {
+    return emlite::Val::get("expectedContextLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void RewriterCreateCoreOptions::expectedContextLanguages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void RewriterCreateCoreOptions::expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("expectedContextLanguages", value);
 }
 
-jsbind::DOMString RewriterCreateCoreOptions::outputLanguage() const {
-    return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+jsbind::String RewriterCreateCoreOptions::outputLanguage() const {
+    return emlite::Val::get("outputLanguage").as<jsbind::String>();
 }
 
-void RewriterCreateCoreOptions::outputLanguage(const jsbind::DOMString& value) {
+void RewriterCreateCoreOptions::outputLanguage(const jsbind::String& value) {
     emlite::Val::set("outputLanguage", value);
 }
 
@@ -99,11 +99,11 @@ RewriterRewriteOptions::RewriterRewriteOptions(const emlite::Val &val) noexcept:
 RewriterRewriteOptions::RewriterRewriteOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 RewriterRewriteOptions RewriterRewriteOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString RewriterRewriteOptions::context() const {
-    return emlite::Val::get("context").as<jsbind::DOMString>();
+jsbind::String RewriterRewriteOptions::context() const {
+    return emlite::Val::get("context").as<jsbind::String>();
 }
 
-void RewriterRewriteOptions::context(const jsbind::DOMString& value) {
+void RewriterRewriteOptions::context(const jsbind::String& value) {
     emlite::Val::set("context", value);
 }
 
@@ -139,24 +139,24 @@ jsbind::Promise<Availability> Rewriter::availability(const RewriterCreateCoreOpt
     return emlite::Val::global("rewriter").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Rewriter::rewrite(const jsbind::DOMString& input) {
-    return emlite::Val::call("rewrite", input).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Rewriter::rewrite(const jsbind::String& input) {
+    return emlite::Val::call("rewrite", input).as<jsbind::Promise<jsbind::String>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Rewriter::rewrite(const jsbind::DOMString& input, const RewriterRewriteOptions& options) {
-    return emlite::Val::call("rewrite", input, options).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Rewriter::rewrite(const jsbind::String& input, const RewriterRewriteOptions& options) {
+    return emlite::Val::call("rewrite", input, options).as<jsbind::Promise<jsbind::String>>();
 }
 
-ReadableStream Rewriter::rewriteStreaming(const jsbind::DOMString& input) {
+ReadableStream Rewriter::rewriteStreaming(const jsbind::String& input) {
     return emlite::Val::call("rewriteStreaming", input).as<ReadableStream>();
 }
 
-ReadableStream Rewriter::rewriteStreaming(const jsbind::DOMString& input, const RewriterRewriteOptions& options) {
+ReadableStream Rewriter::rewriteStreaming(const jsbind::String& input, const RewriterRewriteOptions& options) {
     return emlite::Val::call("rewriteStreaming", input, options).as<ReadableStream>();
 }
 
-jsbind::DOMString Rewriter::sharedContext() const {
-    return emlite::Val::get("sharedContext").as<jsbind::DOMString>();
+jsbind::String Rewriter::sharedContext() const {
+    return emlite::Val::get("sharedContext").as<jsbind::String>();
 }
 
 RewriterTone Rewriter::tone() const {
@@ -171,23 +171,23 @@ RewriterLength Rewriter::length() const {
     return emlite::Val::get("length").as<RewriterLength>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> Rewriter::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> Rewriter::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> Rewriter::expectedContextLanguages() const {
-    return emlite::Val::get("expectedContextLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> Rewriter::expectedContextLanguages() const {
+    return emlite::Val::get("expectedContextLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::DOMString Rewriter::outputLanguage() const {
-    return emlite::Val::get("outputLanguage").as<jsbind::DOMString>();
+jsbind::String Rewriter::outputLanguage() const {
+    return emlite::Val::get("outputLanguage").as<jsbind::String>();
 }
 
-jsbind::Promise<double> Rewriter::measureInputUsage(const jsbind::DOMString& input) {
+jsbind::Promise<double> Rewriter::measureInputUsage(const jsbind::String& input) {
     return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise<double> Rewriter::measureInputUsage(const jsbind::DOMString& input, const RewriterRewriteOptions& options) {
+jsbind::Promise<double> Rewriter::measureInputUsage(const jsbind::String& input, const RewriterRewriteOptions& options) {
     return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 

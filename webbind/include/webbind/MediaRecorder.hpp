@@ -19,7 +19,7 @@ public:
     MediaRecorder(const MediaStream& stream);
     MediaRecorder(const MediaStream& stream, const jsbind::Any& options);
     MediaStream stream() const;
-    jsbind::DOMString mimeType() const;
+    jsbind::String mimeType() const;
     RecordingState state() const;
     jsbind::Any onstart() const;
     void onstart(const jsbind::Any& value);
@@ -42,6 +42,6 @@ public:
     jsbind::Undefined pause();
     jsbind::Undefined resume();
     jsbind::Undefined requestData();
-    static bool isTypeSupported(const jsbind::DOMString& type);
+    static bool isTypeSupported(const jsbind::String& type);
 };
 

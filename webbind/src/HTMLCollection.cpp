@@ -18,7 +18,7 @@ Element HTMLCollection::item(unsigned long index) {
     return emlite::Val::call("item", index).as<Element>();
 }
 
-Element HTMLCollection::namedItem(const jsbind::DOMString& name) {
+Element HTMLCollection::namedItem(const jsbind::String& name) {
     return emlite::Val::call("namedItem", name).as<Element>();
 }
 

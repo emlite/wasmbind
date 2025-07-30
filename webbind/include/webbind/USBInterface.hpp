@@ -19,7 +19,7 @@ public:
     USBInterface(const USBConfiguration& configuration, unsigned char interfaceNumber);
     unsigned char interfaceNumber() const;
     USBAlternateInterface alternate() const;
-    jsbind::FrozenArray<USBAlternateInterface> alternates() const;
+    jsbind::TypedArray<USBAlternateInterface> alternates() const;
     bool claimed() const;
 };
 

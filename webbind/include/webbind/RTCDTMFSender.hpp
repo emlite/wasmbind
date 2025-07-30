@@ -14,12 +14,12 @@ public:
     static RTCDTMFSender take_ownership(Handle h) noexcept;
 
     RTCDTMFSender clone() const noexcept;
-    jsbind::Undefined insertDTMF(const jsbind::DOMString& tones);
-    jsbind::Undefined insertDTMF(const jsbind::DOMString& tones, unsigned long duration);
-    jsbind::Undefined insertDTMF(const jsbind::DOMString& tones, unsigned long duration, unsigned long interToneGap);
+    jsbind::Undefined insertDTMF(const jsbind::String& tones);
+    jsbind::Undefined insertDTMF(const jsbind::String& tones, unsigned long duration);
+    jsbind::Undefined insertDTMF(const jsbind::String& tones, unsigned long duration, unsigned long interToneGap);
     jsbind::Any ontonechange() const;
     void ontonechange(const jsbind::Any& value);
     bool canInsertDTMF() const;
-    jsbind::DOMString toneBuffer() const;
+    jsbind::String toneBuffer() const;
 };
 

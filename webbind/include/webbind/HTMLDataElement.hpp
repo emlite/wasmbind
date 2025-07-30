@@ -15,7 +15,7 @@ public:
 
     HTMLDataElement clone() const noexcept;
     HTMLDataElement();
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
 };
 

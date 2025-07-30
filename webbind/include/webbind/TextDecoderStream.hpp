@@ -17,9 +17,9 @@ public:
 
     TextDecoderStream clone() const noexcept;
     TextDecoderStream();
-    TextDecoderStream(const jsbind::DOMString& label);
-    TextDecoderStream(const jsbind::DOMString& label, const jsbind::Any& options);
-    jsbind::DOMString encoding() const;
+    TextDecoderStream(const jsbind::String& label);
+    TextDecoderStream(const jsbind::String& label, const jsbind::Any& options);
+    jsbind::String encoding() const;
     bool fatal() const;
     bool ignoreBOM() const;
     ReadableStream readable() const;

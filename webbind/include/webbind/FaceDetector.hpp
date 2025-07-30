@@ -17,8 +17,8 @@ public:
     DetectedFace clone() const noexcept;
     DOMRectReadOnly boundingBox() const;
     void boundingBox(const DOMRectReadOnly& value);
-    jsbind::Sequence<jsbind::Any> landmarks() const;
-    void landmarks(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> landmarks() const;
+    void landmarks(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class FaceDetector : public emlite::Val {
@@ -31,6 +31,6 @@ public:
     FaceDetector clone() const noexcept;
     FaceDetector();
     FaceDetector(const jsbind::Any& faceDetectorOptions);
-    jsbind::Promise<jsbind::Sequence<DetectedFace>> detect(const jsbind::Any& image);
+    jsbind::Promise<jsbind::TypedArray<DetectedFace>> detect(const jsbind::Any& image);
 };
 

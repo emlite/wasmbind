@@ -9,11 +9,11 @@ CSSNamespaceRule::CSSNamespaceRule(Handle h) noexcept : CSSRule(emlite::Val::tak
 CSSNamespaceRule::CSSNamespaceRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSNamespaceRule::namespaceURI() const {
-    return CSSRule::get("namespaceURI").as<jsbind::CSSOMString>();
+jsbind::String CSSNamespaceRule::namespaceURI() const {
+    return CSSRule::get("namespaceURI").as<jsbind::String>();
 }
 
-jsbind::CSSOMString CSSNamespaceRule::prefix() const {
-    return CSSRule::get("prefix").as<jsbind::CSSOMString>();
+jsbind::String CSSNamespaceRule::prefix() const {
+    return CSSRule::get("prefix").as<jsbind::String>();
 }
 

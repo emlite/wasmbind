@@ -43,11 +43,11 @@ SVGAnimatedAngle SVGMarkerElement::orientAngle() const {
     return SVGElement::get("orientAngle").as<SVGAnimatedAngle>();
 }
 
-jsbind::DOMString SVGMarkerElement::orient() const {
-    return SVGElement::get("orient").as<jsbind::DOMString>();
+jsbind::String SVGMarkerElement::orient() const {
+    return SVGElement::get("orient").as<jsbind::String>();
 }
 
-void SVGMarkerElement::orient(const jsbind::DOMString& value) {
+void SVGMarkerElement::orient(const jsbind::String& value) {
     SVGElement::set("orient", value);
 }
 

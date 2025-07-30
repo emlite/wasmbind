@@ -14,8 +14,8 @@ public:
     static CSSParserFunction take_ownership(Handle h) noexcept;
 
     CSSParserFunction clone() const noexcept;
-    CSSParserFunction(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Sequence<CSSParserValue>>& args);
-    jsbind::DOMString name() const;
-    jsbind::FrozenArray<jsbind::FrozenArray<CSSParserValue>> args() const;
+    CSSParserFunction(const jsbind::String& name, const jsbind::TypedArray<jsbind::TypedArray<CSSParserValue>>& args);
+    jsbind::String name() const;
+    jsbind::TypedArray<jsbind::TypedArray<CSSParserValue>> args() const;
 };
 

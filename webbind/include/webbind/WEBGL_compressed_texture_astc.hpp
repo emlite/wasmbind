@@ -13,6 +13,6 @@ public:
     static WEBGL_compressed_texture_astc take_ownership(Handle h) noexcept;
 
     WEBGL_compressed_texture_astc clone() const noexcept;
-    jsbind::Sequence<jsbind::DOMString> getSupportedProfiles();
+    jsbind::TypedArray<jsbind::String> getSupportedProfiles();
 };
 

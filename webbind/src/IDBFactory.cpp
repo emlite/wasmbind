@@ -10,11 +10,11 @@ IDBDatabaseInfo::IDBDatabaseInfo(const emlite::Val &val) noexcept: emlite::Val(v
 IDBDatabaseInfo::IDBDatabaseInfo() noexcept: emlite::Val(emlite::Val::object()) {}
 IDBDatabaseInfo IDBDatabaseInfo::clone() const noexcept { return *this; }
 
-jsbind::DOMString IDBDatabaseInfo::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String IDBDatabaseInfo::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void IDBDatabaseInfo::name(const jsbind::DOMString& value) {
+void IDBDatabaseInfo::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
@@ -34,20 +34,20 @@ IDBFactory::IDBFactory(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 IDBFactory::IDBFactory(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-IDBOpenDBRequest IDBFactory::open(const jsbind::DOMString& name) {
+IDBOpenDBRequest IDBFactory::open(const jsbind::String& name) {
     return emlite::Val::call("open", name).as<IDBOpenDBRequest>();
 }
 
-IDBOpenDBRequest IDBFactory::open(const jsbind::DOMString& name, long long version) {
+IDBOpenDBRequest IDBFactory::open(const jsbind::String& name, long long version) {
     return emlite::Val::call("open", name, version).as<IDBOpenDBRequest>();
 }
 
-IDBOpenDBRequest IDBFactory::deleteDatabase(const jsbind::DOMString& name) {
+IDBOpenDBRequest IDBFactory::deleteDatabase(const jsbind::String& name) {
     return emlite::Val::call("deleteDatabase", name).as<IDBOpenDBRequest>();
 }
 
-jsbind::Promise<jsbind::Sequence<IDBDatabaseInfo>> IDBFactory::databases() {
-    return emlite::Val::call("databases").as<jsbind::Promise<jsbind::Sequence<IDBDatabaseInfo>>>();
+jsbind::Promise<jsbind::TypedArray<IDBDatabaseInfo>> IDBFactory::databases() {
+    return emlite::Val::call("databases").as<jsbind::Promise<jsbind::TypedArray<IDBDatabaseInfo>>>();
 }
 
 short IDBFactory::cmp(const jsbind::Any& first, const jsbind::Any& second) {

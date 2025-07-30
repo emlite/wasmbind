@@ -42,8 +42,8 @@ BackgroundFetchRegistration::BackgroundFetchRegistration(Handle h) noexcept : Ev
 BackgroundFetchRegistration::BackgroundFetchRegistration(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::DOMString BackgroundFetchRegistration::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String BackgroundFetchRegistration::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
 long long BackgroundFetchRegistration::uploadTotal() const {
@@ -94,15 +94,15 @@ jsbind::Promise<BackgroundFetchRecord> BackgroundFetchRegistration::match(const 
     return EventTarget::call("match", request, options).as<jsbind::Promise<BackgroundFetchRecord>>();
 }
 
-jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> BackgroundFetchRegistration::matchAll() {
-    return EventTarget::call("matchAll").as<jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>>>();
+jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> BackgroundFetchRegistration::matchAll() {
+    return EventTarget::call("matchAll").as<jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> BackgroundFetchRegistration::matchAll(const jsbind::Any& request) {
-    return EventTarget::call("matchAll", request).as<jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>>>();
+jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> BackgroundFetchRegistration::matchAll(const jsbind::Any& request) {
+    return EventTarget::call("matchAll", request).as<jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>> BackgroundFetchRegistration::matchAll(const jsbind::Any& request, const CacheQueryOptions& options) {
-    return EventTarget::call("matchAll", request, options).as<jsbind::Promise<jsbind::Sequence<BackgroundFetchRecord>>>();
+jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> BackgroundFetchRegistration::matchAll(const jsbind::Any& request, const CacheQueryOptions& options) {
+    return EventTarget::call("matchAll", request, options).as<jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>>>();
 }
 

@@ -29,28 +29,28 @@ HTMLSlotElement::HTMLSlotElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLSlotElement::HTMLSlotElement() : HTMLElement(emlite::Val::global("HTMLSlotElement").new_()) {}
 
-jsbind::DOMString HTMLSlotElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLSlotElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLSlotElement::name(const jsbind::DOMString& value) {
+void HTMLSlotElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::Sequence<Node> HTMLSlotElement::assignedNodes() {
-    return HTMLElement::call("assignedNodes").as<jsbind::Sequence<Node>>();
+jsbind::TypedArray<Node> HTMLSlotElement::assignedNodes() {
+    return HTMLElement::call("assignedNodes").as<jsbind::TypedArray<Node>>();
 }
 
-jsbind::Sequence<Node> HTMLSlotElement::assignedNodes(const AssignedNodesOptions& options) {
-    return HTMLElement::call("assignedNodes", options).as<jsbind::Sequence<Node>>();
+jsbind::TypedArray<Node> HTMLSlotElement::assignedNodes(const AssignedNodesOptions& options) {
+    return HTMLElement::call("assignedNodes", options).as<jsbind::TypedArray<Node>>();
 }
 
-jsbind::Sequence<Element> HTMLSlotElement::assignedElements() {
-    return HTMLElement::call("assignedElements").as<jsbind::Sequence<Element>>();
+jsbind::TypedArray<Element> HTMLSlotElement::assignedElements() {
+    return HTMLElement::call("assignedElements").as<jsbind::TypedArray<Element>>();
 }
 
-jsbind::Sequence<Element> HTMLSlotElement::assignedElements(const AssignedNodesOptions& options) {
-    return HTMLElement::call("assignedElements", options).as<jsbind::Sequence<Element>>();
+jsbind::TypedArray<Element> HTMLSlotElement::assignedElements(const AssignedNodesOptions& options) {
+    return HTMLElement::call("assignedElements", options).as<jsbind::TypedArray<Element>>();
 }
 
 jsbind::Undefined HTMLSlotElement::assign(const jsbind::Any& nodes) {

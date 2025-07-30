@@ -45,7 +45,7 @@ NavigateEvent::NavigateEvent(Handle h) noexcept : Event(emlite::Val::take_owners
 NavigateEvent::NavigateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-NavigateEvent::NavigateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("NavigateEvent").new_(type, eventInitDict)) {}
+NavigateEvent::NavigateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("NavigateEvent").new_(type, eventInitDict)) {}
 
 NavigationType NavigateEvent::navigationType() const {
     return Event::get("navigationType").as<NavigationType>();
@@ -75,8 +75,8 @@ FormData NavigateEvent::formData() const {
     return Event::get("formData").as<FormData>();
 }
 
-jsbind::DOMString NavigateEvent::downloadRequest() const {
-    return Event::get("downloadRequest").as<jsbind::DOMString>();
+jsbind::String NavigateEvent::downloadRequest() const {
+    return Event::get("downloadRequest").as<jsbind::String>();
 }
 
 jsbind::Any NavigateEvent::info() const {

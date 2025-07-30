@@ -15,7 +15,7 @@ int main() {
             Console().log("Response ok:");
             Console().log(resp.ok());
             resp.text().then(
-                Function::Fn<void(DOMString)>([](DOMString txt) {
+                Function::Fn<void(String)>([](auto txt) {
                     Console().log("Response text:");
                     Console().log(txt);
                 }),

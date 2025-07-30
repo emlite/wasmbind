@@ -14,8 +14,8 @@ public:
     static CharacterBoundsUpdateEvent take_ownership(Handle h) noexcept;
 
     CharacterBoundsUpdateEvent clone() const noexcept;
-    CharacterBoundsUpdateEvent(const jsbind::DOMString& type);
-    CharacterBoundsUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& options);
+    CharacterBoundsUpdateEvent(const jsbind::String& type);
+    CharacterBoundsUpdateEvent(const jsbind::String& type, const jsbind::Any& options);
     unsigned long rangeStart() const;
     unsigned long rangeEnd() const;
 };

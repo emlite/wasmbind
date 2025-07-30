@@ -9,7 +9,7 @@ CSSColorValue::CSSColorValue(Handle h) noexcept : CSSStyleValue(emlite::Val::tak
 CSSColorValue::CSSColorValue(const emlite::Val &val) noexcept: CSSStyleValue(val) {}
 
 
-jsbind::Any CSSColorValue::parse(const jsbind::USVString& cssText) {
+jsbind::Any CSSColorValue::parse(const jsbind::String& cssText) {
     return emlite::Val::global("csscolorvalue").call("parse", cssText).as<jsbind::Any>();
 }
 

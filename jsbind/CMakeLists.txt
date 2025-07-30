@@ -4,7 +4,6 @@ set(JSBIND_SOURCES
     src/Function.cpp 
     src/Any.cpp 
     src/lib.cpp 
-    src/Object.cpp 
     src/Undefined.cpp
     src/Array.cpp
     src/String.cpp
@@ -26,8 +25,6 @@ set(JSBIND_HEADERS
     include/jsbind/Any.hpp 
     include/jsbind/jsbind.hpp 
     include/jsbind/Object.hpp 
-    include/jsbind/Sequence.hpp 
-    include/jsbind/Record.hpp 
     include/jsbind/Undefined.hpp
     include/jsbind/Array.hpp
     include/jsbind/String.hpp

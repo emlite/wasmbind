@@ -11,7 +11,7 @@ XRInputSourceEvent::XRInputSourceEvent(Handle h) noexcept : Event(emlite::Val::t
 XRInputSourceEvent::XRInputSourceEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-XRInputSourceEvent::XRInputSourceEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRInputSourceEvent").new_(type, eventInitDict)) {}
+XRInputSourceEvent::XRInputSourceEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRInputSourceEvent").new_(type, eventInitDict)) {}
 
 XRFrame XRInputSourceEvent::frame() const {
     return Event::get("frame").as<XRFrame>();

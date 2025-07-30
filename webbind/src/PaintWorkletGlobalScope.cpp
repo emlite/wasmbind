@@ -9,7 +9,7 @@ PaintWorkletGlobalScope::PaintWorkletGlobalScope(Handle h) noexcept : WorkletGlo
 PaintWorkletGlobalScope::PaintWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 
 
-jsbind::Undefined PaintWorkletGlobalScope::registerPaint(const jsbind::DOMString& name, const jsbind::Any& paintCtor) {
+jsbind::Undefined PaintWorkletGlobalScope::registerPaint(const jsbind::String& name, const jsbind::Any& paintCtor) {
     return WorkletGlobalScope::call("registerPaint", name, paintCtor).as<jsbind::Undefined>();
 }
 

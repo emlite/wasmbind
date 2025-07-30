@@ -1,7 +1,7 @@
 #pragma once
 #include "Any.hpp"
+#include "Array.hpp"
 #include "Function.hpp"
-#include "Sequence.hpp"
 #include <emlite/emlite.hpp>
 
 namespace jsbind {
@@ -10,12 +10,12 @@ class Reflect : public emlite::Val {
     static Any apply(
         const Function &target,
         const Any &thisArg,
-        const Sequence<Any> &argumentsList
+        const TypedArray<Any> &argumentsList
     );
 
     static Any construct(
         const Function &target,
-        const Sequence<Any> &args,
+        const TypedArray<Any> &args,
         const Any &newTarget = Any()
     );
 
@@ -45,7 +45,7 @@ class Reflect : public emlite::Val {
 
     static bool isExtensible(const Any &target);
 
-    static Sequence<Any> ownKeys(const Any &target);
+    static TypedArray<Any> ownKeys(const Any &target);
 
     static bool preventExtensions(const Any &target);
 

@@ -16,7 +16,7 @@ namespace console {
     jsbind::Undefined log(const jsbind::Any& data);
     jsbind::Undefined table();
     jsbind::Undefined table(const jsbind::Any& tabularData);
-    jsbind::Undefined table(const jsbind::Any& tabularData, const jsbind::Sequence<jsbind::DOMString>& properties);
+    jsbind::Undefined table(const jsbind::Any& tabularData, const jsbind::TypedArray<jsbind::String>& properties);
     jsbind::Undefined trace(const jsbind::Any& data);
     jsbind::Undefined warn(const jsbind::Any& data);
     jsbind::Undefined dir();
@@ -24,18 +24,18 @@ namespace console {
     jsbind::Undefined dir(const jsbind::Any& item, const jsbind::Object& options);
     jsbind::Undefined dirxml(const jsbind::Any& data);
     jsbind::Undefined count();
-    jsbind::Undefined count(const jsbind::DOMString& label);
+    jsbind::Undefined count(const jsbind::String& label);
     jsbind::Undefined countReset();
-    jsbind::Undefined countReset(const jsbind::DOMString& label);
+    jsbind::Undefined countReset(const jsbind::String& label);
     jsbind::Undefined group(const jsbind::Any& data);
     jsbind::Undefined groupCollapsed(const jsbind::Any& data);
     jsbind::Undefined groupEnd();
     jsbind::Undefined time();
-    jsbind::Undefined time(const jsbind::DOMString& label);
+    jsbind::Undefined time(const jsbind::String& label);
     jsbind::Undefined timeLog();
-    jsbind::Undefined timeLog(const jsbind::DOMString& label);
-    jsbind::Undefined timeLog(const jsbind::DOMString& label, const jsbind::Any& data);
+    jsbind::Undefined timeLog(const jsbind::String& label);
+    jsbind::Undefined timeLog(const jsbind::String& label, const jsbind::Any& data);
     jsbind::Undefined timeEnd();
-    jsbind::Undefined timeEnd(const jsbind::DOMString& label);
+    jsbind::Undefined timeEnd(const jsbind::String& label);
 } // namespace console
 

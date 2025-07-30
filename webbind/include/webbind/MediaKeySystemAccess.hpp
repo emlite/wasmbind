@@ -16,7 +16,7 @@ public:
     static MediaKeySystemAccess take_ownership(Handle h) noexcept;
 
     MediaKeySystemAccess clone() const noexcept;
-    jsbind::DOMString keySystem() const;
+    jsbind::String keySystem() const;
     MediaKeySystemConfiguration getConfiguration();
     jsbind::Promise<MediaKeys> createMediaKeys();
 };

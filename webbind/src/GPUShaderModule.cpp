@@ -14,11 +14,11 @@ jsbind::Promise<GPUCompilationInfo> GPUShaderModule::getCompilationInfo() {
     return emlite::Val::call("getCompilationInfo").as<jsbind::Promise<GPUCompilationInfo>>();
 }
 
-jsbind::USVString GPUShaderModule::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUShaderModule::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUShaderModule::label(const jsbind::USVString& value) {
+void GPUShaderModule::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

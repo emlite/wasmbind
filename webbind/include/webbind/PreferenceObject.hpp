@@ -14,11 +14,11 @@ public:
     static PreferenceObject take_ownership(Handle h) noexcept;
 
     PreferenceObject clone() const noexcept;
-    jsbind::DOMString override() const;
-    jsbind::DOMString value() const;
-    jsbind::FrozenArray<jsbind::DOMString> validValues() const;
+    jsbind::String override() const;
+    jsbind::String value() const;
+    jsbind::TypedArray<jsbind::String> validValues() const;
     jsbind::Undefined clearOverride();
-    jsbind::Promise<jsbind::Undefined> requestOverride(const jsbind::DOMString& value);
+    jsbind::Promise<jsbind::Undefined> requestOverride(const jsbind::String& value);
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);
 };

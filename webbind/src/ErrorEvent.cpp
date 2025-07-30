@@ -9,16 +9,16 @@ ErrorEvent::ErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)
 ErrorEvent::ErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-ErrorEvent::ErrorEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("ErrorEvent").new_(type)) {}
+ErrorEvent::ErrorEvent(const jsbind::String& type) : Event(emlite::Val::global("ErrorEvent").new_(type)) {}
 
-ErrorEvent::ErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ErrorEvent").new_(type, eventInitDict)) {}
+ErrorEvent::ErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ErrorEvent").new_(type, eventInitDict)) {}
 
-jsbind::DOMString ErrorEvent::message() const {
-    return Event::get("message").as<jsbind::DOMString>();
+jsbind::String ErrorEvent::message() const {
+    return Event::get("message").as<jsbind::String>();
 }
 
-jsbind::USVString ErrorEvent::filename() const {
-    return Event::get("filename").as<jsbind::USVString>();
+jsbind::String ErrorEvent::filename() const {
+    return Event::get("filename").as<jsbind::String>();
 }
 
 unsigned long ErrorEvent::lineno() const {

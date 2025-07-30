@@ -15,9 +15,9 @@ public:
     static MimeType take_ownership(Handle h) noexcept;
 
     MimeType clone() const noexcept;
-    jsbind::DOMString type() const;
-    jsbind::DOMString description() const;
-    jsbind::DOMString suffixes() const;
+    jsbind::String type() const;
+    jsbind::String description() const;
+    jsbind::String suffixes() const;
     Plugin enabledPlugin() const;
 };
 

@@ -11,11 +11,11 @@ RegistrationOptions::RegistrationOptions(const emlite::Val &val) noexcept: emlit
 RegistrationOptions::RegistrationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 RegistrationOptions RegistrationOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString RegistrationOptions::scope() const {
-    return emlite::Val::get("scope").as<jsbind::USVString>();
+jsbind::String RegistrationOptions::scope() const {
+    return emlite::Val::get("scope").as<jsbind::String>();
 }
 
-void RegistrationOptions::scope(const jsbind::USVString& value) {
+void RegistrationOptions::scope(const jsbind::String& value) {
     emlite::Val::set("scope", value);
 }
 
@@ -63,12 +63,12 @@ jsbind::Promise<jsbind::Any> ServiceWorkerContainer::getRegistration() {
     return EventTarget::call("getRegistration").as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise<jsbind::Any> ServiceWorkerContainer::getRegistration(const jsbind::USVString& clientURL) {
+jsbind::Promise<jsbind::Any> ServiceWorkerContainer::getRegistration(const jsbind::String& clientURL) {
     return EventTarget::call("getRegistration", clientURL).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise<jsbind::FrozenArray<ServiceWorkerRegistration>> ServiceWorkerContainer::getRegistrations() {
-    return EventTarget::call("getRegistrations").as<jsbind::Promise<jsbind::FrozenArray<ServiceWorkerRegistration>>>();
+jsbind::Promise<jsbind::TypedArray<ServiceWorkerRegistration>> ServiceWorkerContainer::getRegistrations() {
+    return EventTarget::call("getRegistrations").as<jsbind::Promise<jsbind::TypedArray<ServiceWorkerRegistration>>>();
 }
 
 jsbind::Undefined ServiceWorkerContainer::startMessages() {

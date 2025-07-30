@@ -21,9 +21,9 @@ public:
     jsbind::Undefined importStylesheet(const Node& style);
     DocumentFragment transformToFragment(const Node& source, const Document& output);
     Document transformToDocument(const Node& source);
-    jsbind::Undefined setParameter(const jsbind::DOMString& namespaceURI, const jsbind::DOMString& localName, const jsbind::Any& value);
-    jsbind::Any getParameter(const jsbind::DOMString& namespaceURI, const jsbind::DOMString& localName);
-    jsbind::Undefined removeParameter(const jsbind::DOMString& namespaceURI, const jsbind::DOMString& localName);
+    jsbind::Undefined setParameter(const jsbind::String& namespaceURI, const jsbind::String& localName, const jsbind::Any& value);
+    jsbind::Any getParameter(const jsbind::String& namespaceURI, const jsbind::String& localName);
+    jsbind::Undefined removeParameter(const jsbind::String& namespaceURI, const jsbind::String& localName);
     jsbind::Undefined clearParameters();
     jsbind::Undefined reset();
 };

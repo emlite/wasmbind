@@ -15,10 +15,10 @@ public:
     static VideoTrack take_ownership(Handle h) noexcept;
 
     VideoTrack clone() const noexcept;
-    jsbind::DOMString id() const;
-    jsbind::DOMString kind() const;
-    jsbind::DOMString label() const;
-    jsbind::DOMString language() const;
+    jsbind::String id() const;
+    jsbind::String kind() const;
+    jsbind::String label() const;
+    jsbind::String language() const;
     bool selected() const;
     void selected(bool value);
     SourceBuffer sourceBuffer() const;

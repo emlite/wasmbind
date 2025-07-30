@@ -17,11 +17,11 @@ public:
     NamedNodeMap clone() const noexcept;
     unsigned long length() const;
     Attr item(unsigned long index);
-    Attr getNamedItem(const jsbind::DOMString& qualifiedName);
-    Attr getNamedItemNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName);
+    Attr getNamedItem(const jsbind::String& qualifiedName);
+    Attr getNamedItemNS(const jsbind::String& namespace_, const jsbind::String& localName);
     Attr setNamedItem(const Attr& attr);
     Attr setNamedItemNS(const Attr& attr);
-    Attr removeNamedItem(const jsbind::DOMString& qualifiedName);
-    Attr removeNamedItemNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName);
+    Attr removeNamedItem(const jsbind::String& qualifiedName);
+    Attr removeNamedItemNS(const jsbind::String& namespace_, const jsbind::String& localName);
 };
 

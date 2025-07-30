@@ -14,7 +14,7 @@ public:
     static RadioNodeList take_ownership(Handle h) noexcept;
 
     RadioNodeList clone() const noexcept;
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
 };
 

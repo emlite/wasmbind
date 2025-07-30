@@ -16,8 +16,8 @@ public:
     static PortalActivateEvent take_ownership(Handle h) noexcept;
 
     PortalActivateEvent clone() const noexcept;
-    PortalActivateEvent(const jsbind::DOMString& type);
-    PortalActivateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    PortalActivateEvent(const jsbind::String& type);
+    PortalActivateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     jsbind::Any data() const;
     HTMLPortalElement adoptPredecessor();
 };

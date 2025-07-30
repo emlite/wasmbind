@@ -10,19 +10,19 @@ SVGScriptElement::SVGScriptElement(Handle h) noexcept : SVGElement(emlite::Val::
 SVGScriptElement::SVGScriptElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 
-jsbind::DOMString SVGScriptElement::type() const {
-    return SVGElement::get("type").as<jsbind::DOMString>();
+jsbind::String SVGScriptElement::type() const {
+    return SVGElement::get("type").as<jsbind::String>();
 }
 
-void SVGScriptElement::type(const jsbind::DOMString& value) {
+void SVGScriptElement::type(const jsbind::String& value) {
     SVGElement::set("type", value);
 }
 
-jsbind::DOMString SVGScriptElement::crossOrigin() const {
-    return SVGElement::get("crossOrigin").as<jsbind::DOMString>();
+jsbind::String SVGScriptElement::crossOrigin() const {
+    return SVGElement::get("crossOrigin").as<jsbind::String>();
 }
 
-void SVGScriptElement::crossOrigin(const jsbind::DOMString& value) {
+void SVGScriptElement::crossOrigin(const jsbind::String& value) {
     SVGElement::set("crossOrigin", value);
 }
 

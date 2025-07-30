@@ -16,8 +16,8 @@ public:
     explicit ColorSelectionResult(const emlite::Val &val) noexcept;
     ColorSelectionResult() noexcept;
     ColorSelectionResult clone() const noexcept;
-    jsbind::DOMString sRGBHex() const;
-    void sRGBHex(const jsbind::DOMString& value);
+    jsbind::String sRGBHex() const;
+    void sRGBHex(const jsbind::String& value);
 };
 
 class ColorSelectionOptions : public emlite::Val {

@@ -9,7 +9,7 @@ GPUError::GPUError(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 GPUError::GPUError(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString GPUError::message() const {
-    return emlite::Val::get("message").as<jsbind::DOMString>();
+jsbind::String GPUError::message() const {
+    return emlite::Val::get("message").as<jsbind::String>();
 }
 

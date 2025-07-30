@@ -25,11 +25,11 @@ TaskSignal::TaskSignal(Handle h) noexcept : AbortSignal(emlite::Val::take_owners
 TaskSignal::TaskSignal(const emlite::Val &val) noexcept: AbortSignal(val) {}
 
 
-TaskSignal TaskSignal::any(const jsbind::Sequence<AbortSignal>& signals) {
+TaskSignal TaskSignal::any(const jsbind::TypedArray<AbortSignal>& signals) {
     return emlite::Val::global("tasksignal").call("any", signals).as<TaskSignal>();
 }
 
-TaskSignal TaskSignal::any(const jsbind::Sequence<AbortSignal>& signals, const TaskSignalAnyInit& init) {
+TaskSignal TaskSignal::any(const jsbind::TypedArray<AbortSignal>& signals, const TaskSignalAnyInit& init) {
     return emlite::Val::global("tasksignal").call("any", signals, init).as<TaskSignal>();
 }
 

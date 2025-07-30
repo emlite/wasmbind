@@ -16,8 +16,8 @@ public:
     static NotificationEvent take_ownership(Handle h) noexcept;
 
     NotificationEvent clone() const noexcept;
-    NotificationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    NotificationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     Notification notification() const;
-    jsbind::DOMString action() const;
+    jsbind::String action() const;
 };
 

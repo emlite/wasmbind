@@ -18,12 +18,12 @@ jsbind::Any PerformanceLongAnimationFrameTiming::duration() const {
     return PerformanceEntry::get("duration").as<jsbind::Any>();
 }
 
-jsbind::DOMString PerformanceLongAnimationFrameTiming::name() const {
-    return PerformanceEntry::get("name").as<jsbind::DOMString>();
+jsbind::String PerformanceLongAnimationFrameTiming::name() const {
+    return PerformanceEntry::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString PerformanceLongAnimationFrameTiming::entryType() const {
-    return PerformanceEntry::get("entryType").as<jsbind::DOMString>();
+jsbind::String PerformanceLongAnimationFrameTiming::entryType() const {
+    return PerformanceEntry::get("entryType").as<jsbind::String>();
 }
 
 jsbind::Any PerformanceLongAnimationFrameTiming::renderStart() const {
@@ -42,8 +42,8 @@ jsbind::Any PerformanceLongAnimationFrameTiming::firstUIEventTimestamp() const {
     return PerformanceEntry::get("firstUIEventTimestamp").as<jsbind::Any>();
 }
 
-jsbind::FrozenArray<PerformanceScriptTiming> PerformanceLongAnimationFrameTiming::scripts() const {
-    return PerformanceEntry::get("scripts").as<jsbind::FrozenArray<PerformanceScriptTiming>>();
+jsbind::TypedArray<PerformanceScriptTiming> PerformanceLongAnimationFrameTiming::scripts() const {
+    return PerformanceEntry::get("scripts").as<jsbind::TypedArray<PerformanceScriptTiming>>();
 }
 
 jsbind::Object PerformanceLongAnimationFrameTiming::toJSON() {

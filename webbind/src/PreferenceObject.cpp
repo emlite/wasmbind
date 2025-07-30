@@ -9,23 +9,23 @@ PreferenceObject::PreferenceObject(Handle h) noexcept : EventTarget(emlite::Val:
 PreferenceObject::PreferenceObject(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::DOMString PreferenceObject::override() const {
-    return EventTarget::get("override").as<jsbind::DOMString>();
+jsbind::String PreferenceObject::override() const {
+    return EventTarget::get("override").as<jsbind::String>();
 }
 
-jsbind::DOMString PreferenceObject::value() const {
-    return EventTarget::get("value").as<jsbind::DOMString>();
+jsbind::String PreferenceObject::value() const {
+    return EventTarget::get("value").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> PreferenceObject::validValues() const {
-    return EventTarget::get("validValues").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PreferenceObject::validValues() const {
+    return EventTarget::get("validValues").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 jsbind::Undefined PreferenceObject::clearOverride() {
     return EventTarget::call("clearOverride").as<jsbind::Undefined>();
 }
 
-jsbind::Promise<jsbind::Undefined> PreferenceObject::requestOverride(const jsbind::DOMString& value) {
+jsbind::Promise<jsbind::Undefined> PreferenceObject::requestOverride(const jsbind::String& value) {
     return EventTarget::call("requestOverride", value).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

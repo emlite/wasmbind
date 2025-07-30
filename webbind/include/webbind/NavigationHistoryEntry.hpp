@@ -14,9 +14,9 @@ public:
     static NavigationHistoryEntry take_ownership(Handle h) noexcept;
 
     NavigationHistoryEntry clone() const noexcept;
-    jsbind::USVString url() const;
-    jsbind::DOMString key() const;
-    jsbind::DOMString id() const;
+    jsbind::String url() const;
+    jsbind::String key() const;
+    jsbind::String id() const;
     long long index() const;
     bool sameDocument() const;
     jsbind::Any getState();

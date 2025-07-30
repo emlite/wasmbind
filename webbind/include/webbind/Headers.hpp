@@ -15,11 +15,11 @@ public:
     Headers clone() const noexcept;
     Headers();
     Headers(const jsbind::Any& init);
-    jsbind::Undefined append(const jsbind::ByteString& name, const jsbind::ByteString& value);
-    jsbind::Undefined delete_(const jsbind::ByteString& name);
-    jsbind::ByteString get(const jsbind::ByteString& name);
-    jsbind::Sequence<jsbind::ByteString> getSetCookie();
-    bool has(const jsbind::ByteString& name);
-    jsbind::Undefined set(const jsbind::ByteString& name, const jsbind::ByteString& value);
+    jsbind::Undefined append(const jsbind::String& name, const jsbind::String& value);
+    jsbind::Undefined delete_(const jsbind::String& name);
+    jsbind::String get(const jsbind::String& name);
+    jsbind::TypedArray<jsbind::String> getSetCookie();
+    bool has(const jsbind::String& name);
+    jsbind::Undefined set(const jsbind::String& name, const jsbind::String& value);
 };
 

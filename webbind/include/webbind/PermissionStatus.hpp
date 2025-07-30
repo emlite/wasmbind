@@ -15,7 +15,7 @@ public:
 
     PermissionStatus clone() const noexcept;
     PermissionState state() const;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     jsbind::Any onchange() const;
     void onchange(const jsbind::Any& value);
 };

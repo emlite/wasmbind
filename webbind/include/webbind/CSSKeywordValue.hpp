@@ -14,8 +14,8 @@ public:
     static CSSKeywordValue take_ownership(Handle h) noexcept;
 
     CSSKeywordValue clone() const noexcept;
-    CSSKeywordValue(const jsbind::USVString& value);
-    jsbind::USVString value() const;
-    void value(const jsbind::USVString& value);
+    CSSKeywordValue(const jsbind::String& value);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
 };
 

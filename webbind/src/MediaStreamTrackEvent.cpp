@@ -10,7 +10,7 @@ MediaStreamTrackEvent::MediaStreamTrackEvent(Handle h) noexcept : Event(emlite::
 MediaStreamTrackEvent::MediaStreamTrackEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-MediaStreamTrackEvent::MediaStreamTrackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MediaStreamTrackEvent").new_(type, eventInitDict)) {}
+MediaStreamTrackEvent::MediaStreamTrackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MediaStreamTrackEvent").new_(type, eventInitDict)) {}
 
 MediaStreamTrack MediaStreamTrackEvent::track() const {
     return Event::get("track").as<MediaStreamTrack>();

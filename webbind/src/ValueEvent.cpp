@@ -9,9 +9,9 @@ ValueEvent::ValueEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)
 ValueEvent::ValueEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-ValueEvent::ValueEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("ValueEvent").new_(type)) {}
+ValueEvent::ValueEvent(const jsbind::String& type) : Event(emlite::Val::global("ValueEvent").new_(type)) {}
 
-ValueEvent::ValueEvent(const jsbind::DOMString& type, const jsbind::Any& initDict) : Event(emlite::Val::global("ValueEvent").new_(type, initDict)) {}
+ValueEvent::ValueEvent(const jsbind::String& type, const jsbind::Any& initDict) : Event(emlite::Val::global("ValueEvent").new_(type, initDict)) {}
 
 jsbind::Any ValueEvent::value() const {
     return Event::get("value").as<jsbind::Any>();

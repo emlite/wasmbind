@@ -11,11 +11,11 @@ GPURequestAdapterOptions::GPURequestAdapterOptions(const emlite::Val &val) noexc
 GPURequestAdapterOptions::GPURequestAdapterOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 GPURequestAdapterOptions GPURequestAdapterOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString GPURequestAdapterOptions::featureLevel() const {
-    return emlite::Val::get("featureLevel").as<jsbind::DOMString>();
+jsbind::String GPURequestAdapterOptions::featureLevel() const {
+    return emlite::Val::get("featureLevel").as<jsbind::String>();
 }
 
-void GPURequestAdapterOptions::featureLevel(const jsbind::DOMString& value) {
+void GPURequestAdapterOptions::featureLevel(const jsbind::String& value) {
     emlite::Val::set("featureLevel", value);
 }
 

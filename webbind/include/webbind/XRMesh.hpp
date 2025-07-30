@@ -16,9 +16,9 @@ public:
 
     XRMesh clone() const noexcept;
     XRSpace meshSpace() const;
-    jsbind::FrozenArray<jsbind::Float32Array> vertices() const;
+    jsbind::TypedArray<jsbind::Float32Array> vertices() const;
     jsbind::Uint32Array indices() const;
     jsbind::Any lastChangedTime() const;
-    jsbind::DOMString semanticLabel() const;
+    jsbind::String semanticLabel() const;
 };
 

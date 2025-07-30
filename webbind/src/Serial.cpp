@@ -10,19 +10,19 @@ SerialPortRequestOptions::SerialPortRequestOptions(const emlite::Val &val) noexc
 SerialPortRequestOptions::SerialPortRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 SerialPortRequestOptions SerialPortRequestOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> SerialPortRequestOptions::filters() const {
-    return emlite::Val::get("filters").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> SerialPortRequestOptions::filters() const {
+    return emlite::Val::get("filters").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void SerialPortRequestOptions::filters(const jsbind::Sequence<jsbind::Any>& value) {
+void SerialPortRequestOptions::filters(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("filters", value);
 }
 
-jsbind::Sequence<jsbind::Any> SerialPortRequestOptions::allowedBluetoothServiceClassIds() const {
-    return emlite::Val::get("allowedBluetoothServiceClassIds").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> SerialPortRequestOptions::allowedBluetoothServiceClassIds() const {
+    return emlite::Val::get("allowedBluetoothServiceClassIds").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void SerialPortRequestOptions::allowedBluetoothServiceClassIds(const jsbind::Sequence<jsbind::Any>& value) {
+void SerialPortRequestOptions::allowedBluetoothServiceClassIds(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("allowedBluetoothServiceClassIds", value);
 }
 
@@ -50,8 +50,8 @@ void Serial::ondisconnect(const jsbind::Any& value) {
     EventTarget::set("ondisconnect", value);
 }
 
-jsbind::Promise<jsbind::Sequence<SerialPort>> Serial::getPorts() {
-    return EventTarget::call("getPorts").as<jsbind::Promise<jsbind::Sequence<SerialPort>>>();
+jsbind::Promise<jsbind::TypedArray<SerialPort>> Serial::getPorts() {
+    return EventTarget::call("getPorts").as<jsbind::Promise<jsbind::TypedArray<SerialPort>>>();
 }
 
 jsbind::Promise<SerialPort> Serial::requestPort() {

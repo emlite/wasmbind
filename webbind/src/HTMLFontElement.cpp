@@ -11,27 +11,27 @@ HTMLFontElement::HTMLFontElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLFontElement::HTMLFontElement() : HTMLElement(emlite::Val::global("HTMLFontElement").new_()) {}
 
-jsbind::DOMString HTMLFontElement::color() const {
-    return HTMLElement::get("color").as<jsbind::DOMString>();
+jsbind::String HTMLFontElement::color() const {
+    return HTMLElement::get("color").as<jsbind::String>();
 }
 
-void HTMLFontElement::color(const jsbind::DOMString& value) {
+void HTMLFontElement::color(const jsbind::String& value) {
     HTMLElement::set("color", value);
 }
 
-jsbind::DOMString HTMLFontElement::face() const {
-    return HTMLElement::get("face").as<jsbind::DOMString>();
+jsbind::String HTMLFontElement::face() const {
+    return HTMLElement::get("face").as<jsbind::String>();
 }
 
-void HTMLFontElement::face(const jsbind::DOMString& value) {
+void HTMLFontElement::face(const jsbind::String& value) {
     HTMLElement::set("face", value);
 }
 
-jsbind::DOMString HTMLFontElement::size() const {
-    return HTMLElement::get("size").as<jsbind::DOMString>();
+jsbind::String HTMLFontElement::size() const {
+    return HTMLElement::get("size").as<jsbind::String>();
 }
 
-void HTMLFontElement::size(const jsbind::DOMString& value) {
+void HTMLFontElement::size(const jsbind::String& value) {
     HTMLElement::set("size", value);
 }
 

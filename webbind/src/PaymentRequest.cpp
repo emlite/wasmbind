@@ -12,11 +12,11 @@ PaymentDetailsUpdate::PaymentDetailsUpdate(const emlite::Val &val) noexcept: eml
 PaymentDetailsUpdate::PaymentDetailsUpdate() noexcept: emlite::Val(emlite::Val::object()) {}
 PaymentDetailsUpdate PaymentDetailsUpdate::clone() const noexcept { return *this; }
 
-jsbind::DOMString PaymentDetailsUpdate::error() const {
-    return emlite::Val::get("error").as<jsbind::DOMString>();
+jsbind::String PaymentDetailsUpdate::error() const {
+    return emlite::Val::get("error").as<jsbind::String>();
 }
 
-void PaymentDetailsUpdate::error(const jsbind::DOMString& value) {
+void PaymentDetailsUpdate::error(const jsbind::String& value) {
     emlite::Val::set("error", value);
 }
 
@@ -60,9 +60,9 @@ PaymentRequest::PaymentRequest(Handle h) noexcept : EventTarget(emlite::Val::tak
 PaymentRequest::PaymentRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-PaymentRequest::PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details) : EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details)) {}
+PaymentRequest::PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const jsbind::Any& details) : EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details)) {}
 
-PaymentRequest::PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options) : EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details, options)) {}
+PaymentRequest::PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options) : EventTarget(emlite::Val::global("PaymentRequest").new_(methodData, details, options)) {}
 
 jsbind::Promise<PaymentResponse> PaymentRequest::show() {
     return EventTarget::call("show").as<jsbind::Promise<PaymentResponse>>();
@@ -80,16 +80,16 @@ jsbind::Promise<bool> PaymentRequest::canMakePayment() {
     return EventTarget::call("canMakePayment").as<jsbind::Promise<bool>>();
 }
 
-jsbind::DOMString PaymentRequest::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String PaymentRequest::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
 ContactAddress PaymentRequest::shippingAddress() const {
     return EventTarget::get("shippingAddress").as<ContactAddress>();
 }
 
-jsbind::DOMString PaymentRequest::shippingOption() const {
-    return EventTarget::get("shippingOption").as<jsbind::DOMString>();
+jsbind::String PaymentRequest::shippingOption() const {
+    return EventTarget::get("shippingOption").as<jsbind::String>();
 }
 
 PaymentShippingType PaymentRequest::shippingType() const {

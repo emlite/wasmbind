@@ -17,35 +17,35 @@ unsigned long URLSearchParams::size() const {
     return emlite::Val::get("size").as<unsigned long>();
 }
 
-jsbind::Undefined URLSearchParams::append(const jsbind::USVString& name, const jsbind::USVString& value) {
+jsbind::Undefined URLSearchParams::append(const jsbind::String& name, const jsbind::String& value) {
     return emlite::Val::call("append", name, value).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined URLSearchParams::delete_(const jsbind::USVString& name) {
+jsbind::Undefined URLSearchParams::delete_(const jsbind::String& name) {
     return emlite::Val::call("delete", name).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined URLSearchParams::delete_(const jsbind::USVString& name, const jsbind::USVString& value) {
+jsbind::Undefined URLSearchParams::delete_(const jsbind::String& name, const jsbind::String& value) {
     return emlite::Val::call("delete", name, value).as<jsbind::Undefined>();
 }
 
-jsbind::USVString URLSearchParams::get(const jsbind::USVString& name) {
-    return emlite::Val::call("get", name).as<jsbind::USVString>();
+jsbind::String URLSearchParams::get(const jsbind::String& name) {
+    return emlite::Val::call("get", name).as<jsbind::String>();
 }
 
-jsbind::Sequence<jsbind::USVString> URLSearchParams::getAll(const jsbind::USVString& name) {
-    return emlite::Val::call("getAll", name).as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> URLSearchParams::getAll(const jsbind::String& name) {
+    return emlite::Val::call("getAll", name).as<jsbind::TypedArray<jsbind::String>>();
 }
 
-bool URLSearchParams::has(const jsbind::USVString& name) {
+bool URLSearchParams::has(const jsbind::String& name) {
     return emlite::Val::call("has", name).as<bool>();
 }
 
-bool URLSearchParams::has(const jsbind::USVString& name, const jsbind::USVString& value) {
+bool URLSearchParams::has(const jsbind::String& name, const jsbind::String& value) {
     return emlite::Val::call("has", name, value).as<bool>();
 }
 
-jsbind::Undefined URLSearchParams::set(const jsbind::USVString& name, const jsbind::USVString& value) {
+jsbind::Undefined URLSearchParams::set(const jsbind::String& name, const jsbind::String& value) {
     return emlite::Val::call("set", name, value).as<jsbind::Undefined>();
 }
 

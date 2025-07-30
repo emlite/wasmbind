@@ -24,11 +24,11 @@ HTMLFormElement HTMLOptionElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();
 }
 
-jsbind::DOMString HTMLOptionElement::label() const {
-    return HTMLElement::get("label").as<jsbind::DOMString>();
+jsbind::String HTMLOptionElement::label() const {
+    return HTMLElement::get("label").as<jsbind::String>();
 }
 
-void HTMLOptionElement::label(const jsbind::DOMString& value) {
+void HTMLOptionElement::label(const jsbind::String& value) {
     HTMLElement::set("label", value);
 }
 
@@ -48,19 +48,19 @@ void HTMLOptionElement::selected(bool value) {
     HTMLElement::set("selected", value);
 }
 
-jsbind::DOMString HTMLOptionElement::value() const {
-    return HTMLElement::get("value").as<jsbind::DOMString>();
+jsbind::String HTMLOptionElement::value() const {
+    return HTMLElement::get("value").as<jsbind::String>();
 }
 
-void HTMLOptionElement::value(const jsbind::DOMString& value) {
+void HTMLOptionElement::value(const jsbind::String& value) {
     HTMLElement::set("value", value);
 }
 
-jsbind::DOMString HTMLOptionElement::text() const {
-    return HTMLElement::get("text").as<jsbind::DOMString>();
+jsbind::String HTMLOptionElement::text() const {
+    return HTMLElement::get("text").as<jsbind::String>();
 }
 
-void HTMLOptionElement::text(const jsbind::DOMString& value) {
+void HTMLOptionElement::text(const jsbind::String& value) {
     HTMLElement::set("text", value);
 }
 

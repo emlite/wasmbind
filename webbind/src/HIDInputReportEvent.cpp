@@ -10,7 +10,7 @@ HIDInputReportEvent::HIDInputReportEvent(Handle h) noexcept : Event(emlite::Val:
 HIDInputReportEvent::HIDInputReportEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-HIDInputReportEvent::HIDInputReportEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("HIDInputReportEvent").new_(type, eventInitDict)) {}
+HIDInputReportEvent::HIDInputReportEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("HIDInputReportEvent").new_(type, eventInitDict)) {}
 
 HIDDevice HIDInputReportEvent::device() const {
     return Event::get("device").as<HIDDevice>();

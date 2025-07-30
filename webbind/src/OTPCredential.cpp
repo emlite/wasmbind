@@ -9,7 +9,7 @@ OTPCredential::OTPCredential(Handle h) noexcept : Credential(emlite::Val::take_o
 OTPCredential::OTPCredential(const emlite::Val &val) noexcept: Credential(val) {}
 
 
-jsbind::DOMString OTPCredential::code() const {
-    return Credential::get("code").as<jsbind::DOMString>();
+jsbind::String OTPCredential::code() const {
+    return Credential::get("code").as<jsbind::String>();
 }
 

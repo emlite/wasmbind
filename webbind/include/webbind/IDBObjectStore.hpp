@@ -32,8 +32,8 @@ public:
     static IDBObjectStore take_ownership(Handle h) noexcept;
 
     IDBObjectStore clone() const noexcept;
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
     jsbind::Any keyPath() const;
     DOMStringList indexNames() const;
     IDBTransaction transaction() const;
@@ -60,9 +60,9 @@ public:
     IDBRequest openKeyCursor();
     IDBRequest openKeyCursor(const jsbind::Any& query);
     IDBRequest openKeyCursor(const jsbind::Any& query, const IDBCursorDirection& direction);
-    IDBIndex index(const jsbind::DOMString& name);
-    IDBIndex createIndex(const jsbind::DOMString& name, const jsbind::Any& keyPath);
-    IDBIndex createIndex(const jsbind::DOMString& name, const jsbind::Any& keyPath, const IDBIndexParameters& options);
-    jsbind::Undefined deleteIndex(const jsbind::DOMString& name);
+    IDBIndex index(const jsbind::String& name);
+    IDBIndex createIndex(const jsbind::String& name, const jsbind::Any& keyPath);
+    IDBIndex createIndex(const jsbind::String& name, const jsbind::Any& keyPath, const IDBIndexParameters& options);
+    jsbind::Undefined deleteIndex(const jsbind::String& name);
 };
 

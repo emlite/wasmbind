@@ -26,15 +26,15 @@ Document XSLTProcessor::transformToDocument(const Node& source) {
     return emlite::Val::call("transformToDocument", source).as<Document>();
 }
 
-jsbind::Undefined XSLTProcessor::setParameter(const jsbind::DOMString& namespaceURI, const jsbind::DOMString& localName, const jsbind::Any& value) {
+jsbind::Undefined XSLTProcessor::setParameter(const jsbind::String& namespaceURI, const jsbind::String& localName, const jsbind::Any& value) {
     return emlite::Val::call("setParameter", namespaceURI, localName, value).as<jsbind::Undefined>();
 }
 
-jsbind::Any XSLTProcessor::getParameter(const jsbind::DOMString& namespaceURI, const jsbind::DOMString& localName) {
+jsbind::Any XSLTProcessor::getParameter(const jsbind::String& namespaceURI, const jsbind::String& localName) {
     return emlite::Val::call("getParameter", namespaceURI, localName).as<jsbind::Any>();
 }
 
-jsbind::Undefined XSLTProcessor::removeParameter(const jsbind::DOMString& namespaceURI, const jsbind::DOMString& localName) {
+jsbind::Undefined XSLTProcessor::removeParameter(const jsbind::String& namespaceURI, const jsbind::String& localName) {
     return emlite::Val::call("removeParameter", namespaceURI, localName).as<jsbind::Undefined>();
 }
 

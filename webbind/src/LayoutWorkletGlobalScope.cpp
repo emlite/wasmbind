@@ -9,7 +9,7 @@ LayoutWorkletGlobalScope::LayoutWorkletGlobalScope(Handle h) noexcept : WorkletG
 LayoutWorkletGlobalScope::LayoutWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 
 
-jsbind::Undefined LayoutWorkletGlobalScope::registerLayout(const jsbind::DOMString& name, const jsbind::Any& layoutCtor) {
+jsbind::Undefined LayoutWorkletGlobalScope::registerLayout(const jsbind::String& name, const jsbind::Any& layoutCtor) {
     return WorkletGlobalScope::call("registerLayout", name, layoutCtor).as<jsbind::Undefined>();
 }
 

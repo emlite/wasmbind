@@ -16,11 +16,11 @@ HTMLFormElement HTMLLabelElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();
 }
 
-jsbind::DOMString HTMLLabelElement::htmlFor() const {
-    return HTMLElement::get("htmlFor").as<jsbind::DOMString>();
+jsbind::String HTMLLabelElement::htmlFor() const {
+    return HTMLElement::get("htmlFor").as<jsbind::String>();
 }
 
-void HTMLLabelElement::htmlFor(const jsbind::DOMString& value) {
+void HTMLLabelElement::htmlFor(const jsbind::String& value) {
     HTMLElement::set("htmlFor", value);
 }
 

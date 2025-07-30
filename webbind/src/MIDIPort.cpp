@@ -9,24 +9,24 @@ MIDIPort::MIDIPort(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(
 MIDIPort::MIDIPort(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::DOMString MIDIPort::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String MIDIPort::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString MIDIPort::manufacturer() const {
-    return EventTarget::get("manufacturer").as<jsbind::DOMString>();
+jsbind::String MIDIPort::manufacturer() const {
+    return EventTarget::get("manufacturer").as<jsbind::String>();
 }
 
-jsbind::DOMString MIDIPort::name() const {
-    return EventTarget::get("name").as<jsbind::DOMString>();
+jsbind::String MIDIPort::name() const {
+    return EventTarget::get("name").as<jsbind::String>();
 }
 
 MIDIPortType MIDIPort::type() const {
     return EventTarget::get("type").as<MIDIPortType>();
 }
 
-jsbind::DOMString MIDIPort::version() const {
-    return EventTarget::get("version").as<jsbind::DOMString>();
+jsbind::String MIDIPort::version() const {
+    return EventTarget::get("version").as<jsbind::String>();
 }
 
 MIDIPortDeviceState MIDIPort::state() const {

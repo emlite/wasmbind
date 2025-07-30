@@ -11,11 +11,11 @@ HTMLQuoteElement::HTMLQuoteElement(const emlite::Val &val) noexcept: HTMLElement
 
 HTMLQuoteElement::HTMLQuoteElement() : HTMLElement(emlite::Val::global("HTMLQuoteElement").new_()) {}
 
-jsbind::USVString HTMLQuoteElement::cite() const {
-    return HTMLElement::get("cite").as<jsbind::USVString>();
+jsbind::String HTMLQuoteElement::cite() const {
+    return HTMLElement::get("cite").as<jsbind::String>();
 }
 
-void HTMLQuoteElement::cite(const jsbind::USVString& value) {
+void HTMLQuoteElement::cite(const jsbind::String& value) {
     HTMLElement::set("cite", value);
 }
 

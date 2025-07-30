@@ -18,10 +18,10 @@ public:
     explicit GPUDeviceDescriptor(const emlite::Val &val) noexcept;
     GPUDeviceDescriptor() noexcept;
     GPUDeviceDescriptor clone() const noexcept;
-    jsbind::Sequence<GPUFeatureName> requiredFeatures() const;
-    void requiredFeatures(const jsbind::Sequence<GPUFeatureName>& value);
-    jsbind::Record<jsbind::DOMString, jsbind::Any> requiredLimits() const;
-    void requiredLimits(const jsbind::Record<jsbind::DOMString, jsbind::Any>& value);
+    jsbind::TypedArray<GPUFeatureName> requiredFeatures() const;
+    void requiredFeatures(const jsbind::TypedArray<GPUFeatureName>& value);
+    jsbind::Record<jsbind::String, jsbind::Any> requiredLimits() const;
+    void requiredLimits(const jsbind::Record<jsbind::String, jsbind::Any>& value);
     jsbind::Any defaultQueue() const;
     void defaultQueue(const jsbind::Any& value);
 };

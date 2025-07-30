@@ -20,11 +20,11 @@ public:
     HTMLStyleElement();
     bool disabled() const;
     void disabled(bool value);
-    jsbind::DOMString media() const;
-    void media(const jsbind::DOMString& value);
+    jsbind::String media() const;
+    void media(const jsbind::String& value);
     DOMTokenList blocking() const;
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
     CSSStyleSheet sheet() const;
 };
 

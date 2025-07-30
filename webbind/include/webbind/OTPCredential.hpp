@@ -14,6 +14,6 @@ public:
     static OTPCredential take_ownership(Handle h) noexcept;
 
     OTPCredential clone() const noexcept;
-    jsbind::DOMString code() const;
+    jsbind::String code() const;
 };
 

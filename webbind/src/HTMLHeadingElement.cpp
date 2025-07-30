@@ -11,11 +11,11 @@ HTMLHeadingElement::HTMLHeadingElement(const emlite::Val &val) noexcept: HTMLEle
 
 HTMLHeadingElement::HTMLHeadingElement() : HTMLElement(emlite::Val::global("HTMLHeadingElement").new_()) {}
 
-jsbind::DOMString HTMLHeadingElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLHeadingElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLHeadingElement::align(const jsbind::DOMString& value) {
+void HTMLHeadingElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 

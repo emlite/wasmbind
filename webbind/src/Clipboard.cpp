@@ -9,11 +9,11 @@ ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats(const emlite::Val &val)
 ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats() noexcept: emlite::Val(emlite::Val::object()) {}
 ClipboardUnsanitizedFormats ClipboardUnsanitizedFormats::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::DOMString> ClipboardUnsanitizedFormats::unsanitized() const {
-    return emlite::Val::get("unsanitized").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> ClipboardUnsanitizedFormats::unsanitized() const {
+    return emlite::Val::get("unsanitized").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void ClipboardUnsanitizedFormats::unsanitized(const jsbind::Sequence<jsbind::DOMString>& value) {
+void ClipboardUnsanitizedFormats::unsanitized(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("unsanitized", value);
 }
 
@@ -33,15 +33,15 @@ jsbind::Promise<jsbind::Any> Clipboard::read(const ClipboardUnsanitizedFormats& 
     return EventTarget::call("read", formats).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Clipboard::readText() {
-    return EventTarget::call("readText").as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Clipboard::readText() {
+    return EventTarget::call("readText").as<jsbind::Promise<jsbind::String>>();
 }
 
 jsbind::Promise<jsbind::Undefined> Clipboard::write(const jsbind::Any& data) {
     return EventTarget::call("write", data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> Clipboard::writeText(const jsbind::DOMString& data) {
+jsbind::Promise<jsbind::Undefined> Clipboard::writeText(const jsbind::String& data) {
     return EventTarget::call("writeText", data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

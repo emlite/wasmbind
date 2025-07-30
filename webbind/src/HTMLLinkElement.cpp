@@ -13,35 +13,35 @@ HTMLLinkElement::HTMLLinkElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLLinkElement::HTMLLinkElement() : HTMLElement(emlite::Val::global("HTMLLinkElement").new_()) {}
 
-jsbind::USVString HTMLLinkElement::href() const {
-    return HTMLElement::get("href").as<jsbind::USVString>();
+jsbind::String HTMLLinkElement::href() const {
+    return HTMLElement::get("href").as<jsbind::String>();
 }
 
-void HTMLLinkElement::href(const jsbind::USVString& value) {
+void HTMLLinkElement::href(const jsbind::String& value) {
     HTMLElement::set("href", value);
 }
 
-jsbind::DOMString HTMLLinkElement::crossOrigin() const {
-    return HTMLElement::get("crossOrigin").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::crossOrigin() const {
+    return HTMLElement::get("crossOrigin").as<jsbind::String>();
 }
 
-void HTMLLinkElement::crossOrigin(const jsbind::DOMString& value) {
+void HTMLLinkElement::crossOrigin(const jsbind::String& value) {
     HTMLElement::set("crossOrigin", value);
 }
 
-jsbind::DOMString HTMLLinkElement::rel() const {
-    return HTMLElement::get("rel").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::rel() const {
+    return HTMLElement::get("rel").as<jsbind::String>();
 }
 
-void HTMLLinkElement::rel(const jsbind::DOMString& value) {
+void HTMLLinkElement::rel(const jsbind::String& value) {
     HTMLElement::set("rel", value);
 }
 
-jsbind::DOMString HTMLLinkElement::as() const {
-    return HTMLElement::get("as").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::as() const {
+    return HTMLElement::get("as").as<jsbind::String>();
 }
 
-void HTMLLinkElement::as(const jsbind::DOMString& value) {
+void HTMLLinkElement::as(const jsbind::String& value) {
     HTMLElement::set("as", value);
 }
 
@@ -49,35 +49,35 @@ DOMTokenList HTMLLinkElement::relList() const {
     return HTMLElement::get("relList").as<DOMTokenList>();
 }
 
-jsbind::DOMString HTMLLinkElement::media() const {
-    return HTMLElement::get("media").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::media() const {
+    return HTMLElement::get("media").as<jsbind::String>();
 }
 
-void HTMLLinkElement::media(const jsbind::DOMString& value) {
+void HTMLLinkElement::media(const jsbind::String& value) {
     HTMLElement::set("media", value);
 }
 
-jsbind::DOMString HTMLLinkElement::integrity() const {
-    return HTMLElement::get("integrity").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::integrity() const {
+    return HTMLElement::get("integrity").as<jsbind::String>();
 }
 
-void HTMLLinkElement::integrity(const jsbind::DOMString& value) {
+void HTMLLinkElement::integrity(const jsbind::String& value) {
     HTMLElement::set("integrity", value);
 }
 
-jsbind::DOMString HTMLLinkElement::hreflang() const {
-    return HTMLElement::get("hreflang").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::hreflang() const {
+    return HTMLElement::get("hreflang").as<jsbind::String>();
 }
 
-void HTMLLinkElement::hreflang(const jsbind::DOMString& value) {
+void HTMLLinkElement::hreflang(const jsbind::String& value) {
     HTMLElement::set("hreflang", value);
 }
 
-jsbind::DOMString HTMLLinkElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLLinkElement::type(const jsbind::DOMString& value) {
+void HTMLLinkElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 
@@ -85,27 +85,27 @@ DOMTokenList HTMLLinkElement::sizes() const {
     return HTMLElement::get("sizes").as<DOMTokenList>();
 }
 
-jsbind::USVString HTMLLinkElement::imageSrcset() const {
-    return HTMLElement::get("imageSrcset").as<jsbind::USVString>();
+jsbind::String HTMLLinkElement::imageSrcset() const {
+    return HTMLElement::get("imageSrcset").as<jsbind::String>();
 }
 
-void HTMLLinkElement::imageSrcset(const jsbind::USVString& value) {
+void HTMLLinkElement::imageSrcset(const jsbind::String& value) {
     HTMLElement::set("imageSrcset", value);
 }
 
-jsbind::DOMString HTMLLinkElement::imageSizes() const {
-    return HTMLElement::get("imageSizes").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::imageSizes() const {
+    return HTMLElement::get("imageSizes").as<jsbind::String>();
 }
 
-void HTMLLinkElement::imageSizes(const jsbind::DOMString& value) {
+void HTMLLinkElement::imageSizes(const jsbind::String& value) {
     HTMLElement::set("imageSizes", value);
 }
 
-jsbind::DOMString HTMLLinkElement::referrerPolicy() const {
-    return HTMLElement::get("referrerPolicy").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::referrerPolicy() const {
+    return HTMLElement::get("referrerPolicy").as<jsbind::String>();
 }
 
-void HTMLLinkElement::referrerPolicy(const jsbind::DOMString& value) {
+void HTMLLinkElement::referrerPolicy(const jsbind::String& value) {
     HTMLElement::set("referrerPolicy", value);
 }
 
@@ -121,35 +121,35 @@ void HTMLLinkElement::disabled(bool value) {
     HTMLElement::set("disabled", value);
 }
 
-jsbind::DOMString HTMLLinkElement::fetchPriority() const {
-    return HTMLElement::get("fetchPriority").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::fetchPriority() const {
+    return HTMLElement::get("fetchPriority").as<jsbind::String>();
 }
 
-void HTMLLinkElement::fetchPriority(const jsbind::DOMString& value) {
+void HTMLLinkElement::fetchPriority(const jsbind::String& value) {
     HTMLElement::set("fetchPriority", value);
 }
 
-jsbind::DOMString HTMLLinkElement::charset() const {
-    return HTMLElement::get("charset").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::charset() const {
+    return HTMLElement::get("charset").as<jsbind::String>();
 }
 
-void HTMLLinkElement::charset(const jsbind::DOMString& value) {
+void HTMLLinkElement::charset(const jsbind::String& value) {
     HTMLElement::set("charset", value);
 }
 
-jsbind::DOMString HTMLLinkElement::rev() const {
-    return HTMLElement::get("rev").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::rev() const {
+    return HTMLElement::get("rev").as<jsbind::String>();
 }
 
-void HTMLLinkElement::rev(const jsbind::DOMString& value) {
+void HTMLLinkElement::rev(const jsbind::String& value) {
     HTMLElement::set("rev", value);
 }
 
-jsbind::DOMString HTMLLinkElement::target() const {
-    return HTMLElement::get("target").as<jsbind::DOMString>();
+jsbind::String HTMLLinkElement::target() const {
+    return HTMLElement::get("target").as<jsbind::String>();
 }
 
-void HTMLLinkElement::target(const jsbind::DOMString& value) {
+void HTMLLinkElement::target(const jsbind::String& value) {
     HTMLElement::set("target", value);
 }
 

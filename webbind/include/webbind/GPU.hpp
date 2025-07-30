@@ -16,8 +16,8 @@ public:
     explicit GPURequestAdapterOptions(const emlite::Val &val) noexcept;
     GPURequestAdapterOptions() noexcept;
     GPURequestAdapterOptions clone() const noexcept;
-    jsbind::DOMString featureLevel() const;
-    void featureLevel(const jsbind::DOMString& value);
+    jsbind::String featureLevel() const;
+    void featureLevel(const jsbind::String& value);
     GPUPowerPreference powerPreference() const;
     void powerPreference(const GPUPowerPreference& value);
     bool forceFallbackAdapter() const;

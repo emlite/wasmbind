@@ -18,11 +18,11 @@ HTMLInputElement::HTMLInputElement(const emlite::Val &val) noexcept: HTMLElement
 
 HTMLInputElement::HTMLInputElement() : HTMLElement(emlite::Val::global("HTMLInputElement").new_()) {}
 
-jsbind::DOMString HTMLInputElement::accept() const {
-    return HTMLElement::get("accept").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::accept() const {
+    return HTMLElement::get("accept").as<jsbind::String>();
 }
 
-void HTMLInputElement::accept(const jsbind::DOMString& value) {
+void HTMLInputElement::accept(const jsbind::String& value) {
     HTMLElement::set("accept", value);
 }
 
@@ -34,19 +34,19 @@ void HTMLInputElement::alpha(bool value) {
     HTMLElement::set("alpha", value);
 }
 
-jsbind::DOMString HTMLInputElement::alt() const {
-    return HTMLElement::get("alt").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::alt() const {
+    return HTMLElement::get("alt").as<jsbind::String>();
 }
 
-void HTMLInputElement::alt(const jsbind::DOMString& value) {
+void HTMLInputElement::alt(const jsbind::String& value) {
     HTMLElement::set("alt", value);
 }
 
-jsbind::DOMString HTMLInputElement::autocomplete() const {
-    return HTMLElement::get("autocomplete").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::autocomplete() const {
+    return HTMLElement::get("autocomplete").as<jsbind::String>();
 }
 
-void HTMLInputElement::autocomplete(const jsbind::DOMString& value) {
+void HTMLInputElement::autocomplete(const jsbind::String& value) {
     HTMLElement::set("autocomplete", value);
 }
 
@@ -66,19 +66,19 @@ void HTMLInputElement::checked(bool value) {
     HTMLElement::set("checked", value);
 }
 
-jsbind::DOMString HTMLInputElement::colorSpace() const {
-    return HTMLElement::get("colorSpace").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::colorSpace() const {
+    return HTMLElement::get("colorSpace").as<jsbind::String>();
 }
 
-void HTMLInputElement::colorSpace(const jsbind::DOMString& value) {
+void HTMLInputElement::colorSpace(const jsbind::String& value) {
     HTMLElement::set("colorSpace", value);
 }
 
-jsbind::DOMString HTMLInputElement::dirName() const {
-    return HTMLElement::get("dirName").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::dirName() const {
+    return HTMLElement::get("dirName").as<jsbind::String>();
 }
 
-void HTMLInputElement::dirName(const jsbind::DOMString& value) {
+void HTMLInputElement::dirName(const jsbind::String& value) {
     HTMLElement::set("dirName", value);
 }
 
@@ -102,27 +102,27 @@ void HTMLInputElement::files(const FileList& value) {
     HTMLElement::set("files", value);
 }
 
-jsbind::USVString HTMLInputElement::formAction() const {
-    return HTMLElement::get("formAction").as<jsbind::USVString>();
+jsbind::String HTMLInputElement::formAction() const {
+    return HTMLElement::get("formAction").as<jsbind::String>();
 }
 
-void HTMLInputElement::formAction(const jsbind::USVString& value) {
+void HTMLInputElement::formAction(const jsbind::String& value) {
     HTMLElement::set("formAction", value);
 }
 
-jsbind::DOMString HTMLInputElement::formEnctype() const {
-    return HTMLElement::get("formEnctype").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::formEnctype() const {
+    return HTMLElement::get("formEnctype").as<jsbind::String>();
 }
 
-void HTMLInputElement::formEnctype(const jsbind::DOMString& value) {
+void HTMLInputElement::formEnctype(const jsbind::String& value) {
     HTMLElement::set("formEnctype", value);
 }
 
-jsbind::DOMString HTMLInputElement::formMethod() const {
-    return HTMLElement::get("formMethod").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::formMethod() const {
+    return HTMLElement::get("formMethod").as<jsbind::String>();
 }
 
-void HTMLInputElement::formMethod(const jsbind::DOMString& value) {
+void HTMLInputElement::formMethod(const jsbind::String& value) {
     HTMLElement::set("formMethod", value);
 }
 
@@ -134,11 +134,11 @@ void HTMLInputElement::formNoValidate(bool value) {
     HTMLElement::set("formNoValidate", value);
 }
 
-jsbind::DOMString HTMLInputElement::formTarget() const {
-    return HTMLElement::get("formTarget").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::formTarget() const {
+    return HTMLElement::get("formTarget").as<jsbind::String>();
 }
 
-void HTMLInputElement::formTarget(const jsbind::DOMString& value) {
+void HTMLInputElement::formTarget(const jsbind::String& value) {
     HTMLElement::set("formTarget", value);
 }
 
@@ -162,11 +162,11 @@ HTMLDataListElement HTMLInputElement::list() const {
     return HTMLElement::get("list").as<HTMLDataListElement>();
 }
 
-jsbind::DOMString HTMLInputElement::max() const {
-    return HTMLElement::get("max").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::max() const {
+    return HTMLElement::get("max").as<jsbind::String>();
 }
 
-void HTMLInputElement::max(const jsbind::DOMString& value) {
+void HTMLInputElement::max(const jsbind::String& value) {
     HTMLElement::set("max", value);
 }
 
@@ -178,11 +178,11 @@ void HTMLInputElement::maxLength(long value) {
     HTMLElement::set("maxLength", value);
 }
 
-jsbind::DOMString HTMLInputElement::min() const {
-    return HTMLElement::get("min").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::min() const {
+    return HTMLElement::get("min").as<jsbind::String>();
 }
 
-void HTMLInputElement::min(const jsbind::DOMString& value) {
+void HTMLInputElement::min(const jsbind::String& value) {
     HTMLElement::set("min", value);
 }
 
@@ -202,27 +202,27 @@ void HTMLInputElement::multiple(bool value) {
     HTMLElement::set("multiple", value);
 }
 
-jsbind::DOMString HTMLInputElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLInputElement::name(const jsbind::DOMString& value) {
+void HTMLInputElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::DOMString HTMLInputElement::pattern() const {
-    return HTMLElement::get("pattern").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::pattern() const {
+    return HTMLElement::get("pattern").as<jsbind::String>();
 }
 
-void HTMLInputElement::pattern(const jsbind::DOMString& value) {
+void HTMLInputElement::pattern(const jsbind::String& value) {
     HTMLElement::set("pattern", value);
 }
 
-jsbind::DOMString HTMLInputElement::placeholder() const {
-    return HTMLElement::get("placeholder").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::placeholder() const {
+    return HTMLElement::get("placeholder").as<jsbind::String>();
 }
 
-void HTMLInputElement::placeholder(const jsbind::DOMString& value) {
+void HTMLInputElement::placeholder(const jsbind::String& value) {
     HTMLElement::set("placeholder", value);
 }
 
@@ -250,43 +250,43 @@ void HTMLInputElement::size(unsigned long value) {
     HTMLElement::set("size", value);
 }
 
-jsbind::USVString HTMLInputElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLInputElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLInputElement::src(const jsbind::USVString& value) {
+void HTMLInputElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
-jsbind::DOMString HTMLInputElement::step() const {
-    return HTMLElement::get("step").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::step() const {
+    return HTMLElement::get("step").as<jsbind::String>();
 }
 
-void HTMLInputElement::step(const jsbind::DOMString& value) {
+void HTMLInputElement::step(const jsbind::String& value) {
     HTMLElement::set("step", value);
 }
 
-jsbind::DOMString HTMLInputElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLInputElement::type(const jsbind::DOMString& value) {
+void HTMLInputElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 
-jsbind::DOMString HTMLInputElement::defaultValue() const {
-    return HTMLElement::get("defaultValue").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::defaultValue() const {
+    return HTMLElement::get("defaultValue").as<jsbind::String>();
 }
 
-void HTMLInputElement::defaultValue(const jsbind::DOMString& value) {
+void HTMLInputElement::defaultValue(const jsbind::String& value) {
     HTMLElement::set("defaultValue", value);
 }
 
-jsbind::DOMString HTMLInputElement::value() const {
-    return HTMLElement::get("value").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::value() const {
+    return HTMLElement::get("value").as<jsbind::String>();
 }
 
-void HTMLInputElement::value(const jsbind::DOMString& value) {
+void HTMLInputElement::value(const jsbind::String& value) {
     HTMLElement::set("value", value);
 }
 
@@ -338,8 +338,8 @@ ValidityState HTMLInputElement::validity() const {
     return HTMLElement::get("validity").as<ValidityState>();
 }
 
-jsbind::DOMString HTMLInputElement::validationMessage() const {
-    return HTMLElement::get("validationMessage").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::validationMessage() const {
+    return HTMLElement::get("validationMessage").as<jsbind::String>();
 }
 
 bool HTMLInputElement::checkValidity() {
@@ -350,7 +350,7 @@ bool HTMLInputElement::reportValidity() {
     return HTMLElement::call("reportValidity").as<bool>();
 }
 
-jsbind::Undefined HTMLInputElement::setCustomValidity(const jsbind::DOMString& error) {
+jsbind::Undefined HTMLInputElement::setCustomValidity(const jsbind::String& error) {
     return HTMLElement::call("setCustomValidity", error).as<jsbind::Undefined>();
 }
 
@@ -378,19 +378,19 @@ void HTMLInputElement::selectionEnd(unsigned long value) {
     HTMLElement::set("selectionEnd", value);
 }
 
-jsbind::DOMString HTMLInputElement::selectionDirection() const {
-    return HTMLElement::get("selectionDirection").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::selectionDirection() const {
+    return HTMLElement::get("selectionDirection").as<jsbind::String>();
 }
 
-void HTMLInputElement::selectionDirection(const jsbind::DOMString& value) {
+void HTMLInputElement::selectionDirection(const jsbind::String& value) {
     HTMLElement::set("selectionDirection", value);
 }
 
-jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end) {
+jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::String& replacement, unsigned long start, unsigned long end) {
     return HTMLElement::call("setRangeText", replacement, start, end).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::DOMString& replacement, unsigned long start, unsigned long end, const SelectionMode& selectionMode) {
+jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::String& replacement, unsigned long start, unsigned long end, const SelectionMode& selectionMode) {
     return HTMLElement::call("setRangeText", replacement, start, end, selectionMode).as<jsbind::Undefined>();
 }
 
@@ -398,7 +398,7 @@ jsbind::Undefined HTMLInputElement::setSelectionRange(unsigned long start, unsig
     return HTMLElement::call("setSelectionRange", start, end).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined HTMLInputElement::setSelectionRange(unsigned long start, unsigned long end, const jsbind::DOMString& direction) {
+jsbind::Undefined HTMLInputElement::setSelectionRange(unsigned long start, unsigned long end, const jsbind::String& direction) {
     return HTMLElement::call("setSelectionRange", start, end, direction).as<jsbind::Undefined>();
 }
 
@@ -414,31 +414,31 @@ void HTMLInputElement::webkitdirectory(bool value) {
     HTMLElement::set("webkitdirectory", value);
 }
 
-jsbind::FrozenArray<FileSystemEntry> HTMLInputElement::webkitEntries() const {
-    return HTMLElement::get("webkitEntries").as<jsbind::FrozenArray<FileSystemEntry>>();
+jsbind::TypedArray<FileSystemEntry> HTMLInputElement::webkitEntries() const {
+    return HTMLElement::get("webkitEntries").as<jsbind::TypedArray<FileSystemEntry>>();
 }
 
-jsbind::DOMString HTMLInputElement::capture() const {
-    return HTMLElement::get("capture").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::capture() const {
+    return HTMLElement::get("capture").as<jsbind::String>();
 }
 
-void HTMLInputElement::capture(const jsbind::DOMString& value) {
+void HTMLInputElement::capture(const jsbind::String& value) {
     HTMLElement::set("capture", value);
 }
 
-jsbind::DOMString HTMLInputElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLInputElement::align(const jsbind::DOMString& value) {
+void HTMLInputElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
-jsbind::DOMString HTMLInputElement::useMap() const {
-    return HTMLElement::get("useMap").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::useMap() const {
+    return HTMLElement::get("useMap").as<jsbind::String>();
 }
 
-void HTMLInputElement::useMap(const jsbind::DOMString& value) {
+void HTMLInputElement::useMap(const jsbind::String& value) {
     HTMLElement::set("useMap", value);
 }
 
@@ -450,11 +450,11 @@ void HTMLInputElement::popoverTargetElement(const Element& value) {
     HTMLElement::set("popoverTargetElement", value);
 }
 
-jsbind::DOMString HTMLInputElement::popoverTargetAction() const {
-    return HTMLElement::get("popoverTargetAction").as<jsbind::DOMString>();
+jsbind::String HTMLInputElement::popoverTargetAction() const {
+    return HTMLElement::get("popoverTargetAction").as<jsbind::String>();
 }
 
-void HTMLInputElement::popoverTargetAction(const jsbind::DOMString& value) {
+void HTMLInputElement::popoverTargetAction(const jsbind::String& value) {
     HTMLElement::set("popoverTargetAction", value);
 }
 

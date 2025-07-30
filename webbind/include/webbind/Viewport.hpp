@@ -15,6 +15,6 @@ public:
     static Viewport take_ownership(Handle h) noexcept;
 
     Viewport clone() const noexcept;
-    jsbind::FrozenArray<DOMRect> segments() const;
+    jsbind::TypedArray<DOMRect> segments() const;
 };
 

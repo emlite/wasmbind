@@ -14,6 +14,6 @@ public:
     static LayoutWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     LayoutWorkletGlobalScope clone() const noexcept;
-    jsbind::Undefined registerLayout(const jsbind::DOMString& name, const jsbind::Any& layoutCtor);
+    jsbind::Undefined registerLayout(const jsbind::String& name, const jsbind::Any& layoutCtor);
 };
 

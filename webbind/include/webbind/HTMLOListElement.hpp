@@ -19,8 +19,8 @@ public:
     void reversed(bool value);
     long start() const;
     void start(long value);
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
     bool compact() const;
     void compact(bool value);
 };

@@ -27,12 +27,12 @@ public:
 
     TextDecoder clone() const noexcept;
     TextDecoder();
-    TextDecoder(const jsbind::DOMString& label);
-    TextDecoder(const jsbind::DOMString& label, const jsbind::Any& options);
-    jsbind::USVString decode();
-    jsbind::USVString decode(const jsbind::Any& input);
-    jsbind::USVString decode(const jsbind::Any& input, const TextDecodeOptions& options);
-    jsbind::DOMString encoding() const;
+    TextDecoder(const jsbind::String& label);
+    TextDecoder(const jsbind::String& label, const jsbind::Any& options);
+    jsbind::String decode();
+    jsbind::String decode(const jsbind::Any& input);
+    jsbind::String decode(const jsbind::Any& input, const TextDecodeOptions& options);
+    jsbind::String encoding() const;
     bool fatal() const;
     bool ignoreBOM() const;
 };

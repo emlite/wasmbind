@@ -26,16 +26,16 @@ HTMLFormElement HTMLFieldSetElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();
 }
 
-jsbind::DOMString HTMLFieldSetElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLFieldSetElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLFieldSetElement::name(const jsbind::DOMString& value) {
+void HTMLFieldSetElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::DOMString HTMLFieldSetElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLFieldSetElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
 HTMLCollection HTMLFieldSetElement::elements() const {
@@ -50,8 +50,8 @@ ValidityState HTMLFieldSetElement::validity() const {
     return HTMLElement::get("validity").as<ValidityState>();
 }
 
-jsbind::DOMString HTMLFieldSetElement::validationMessage() const {
-    return HTMLElement::get("validationMessage").as<jsbind::DOMString>();
+jsbind::String HTMLFieldSetElement::validationMessage() const {
+    return HTMLElement::get("validationMessage").as<jsbind::String>();
 }
 
 bool HTMLFieldSetElement::checkValidity() {
@@ -62,7 +62,7 @@ bool HTMLFieldSetElement::reportValidity() {
     return HTMLElement::call("reportValidity").as<bool>();
 }
 
-jsbind::Undefined HTMLFieldSetElement::setCustomValidity(const jsbind::DOMString& error) {
+jsbind::Undefined HTMLFieldSetElement::setCustomValidity(const jsbind::String& error) {
     return HTMLElement::call("setCustomValidity", error).as<jsbind::Undefined>();
 }
 

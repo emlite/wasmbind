@@ -11,31 +11,31 @@ NDEFRecord::NDEFRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 NDEFRecord::NDEFRecord(const jsbind::Any& recordInit) : emlite::Val(emlite::Val::global("NDEFRecord").new_(recordInit)) {}
 
-jsbind::USVString NDEFRecord::recordType() const {
-    return emlite::Val::get("recordType").as<jsbind::USVString>();
+jsbind::String NDEFRecord::recordType() const {
+    return emlite::Val::get("recordType").as<jsbind::String>();
 }
 
-jsbind::USVString NDEFRecord::mediaType() const {
-    return emlite::Val::get("mediaType").as<jsbind::USVString>();
+jsbind::String NDEFRecord::mediaType() const {
+    return emlite::Val::get("mediaType").as<jsbind::String>();
 }
 
-jsbind::USVString NDEFRecord::id() const {
-    return emlite::Val::get("id").as<jsbind::USVString>();
+jsbind::String NDEFRecord::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
 jsbind::DataView NDEFRecord::data() const {
     return emlite::Val::get("data").as<jsbind::DataView>();
 }
 
-jsbind::USVString NDEFRecord::encoding() const {
-    return emlite::Val::get("encoding").as<jsbind::USVString>();
+jsbind::String NDEFRecord::encoding() const {
+    return emlite::Val::get("encoding").as<jsbind::String>();
 }
 
-jsbind::USVString NDEFRecord::lang() const {
-    return emlite::Val::get("lang").as<jsbind::USVString>();
+jsbind::String NDEFRecord::lang() const {
+    return emlite::Val::get("lang").as<jsbind::String>();
 }
 
-jsbind::Sequence<NDEFRecord> NDEFRecord::toRecords() {
-    return emlite::Val::call("toRecords").as<jsbind::Sequence<NDEFRecord>>();
+jsbind::TypedArray<NDEFRecord> NDEFRecord::toRecords() {
+    return emlite::Val::call("toRecords").as<jsbind::TypedArray<NDEFRecord>>();
 }
 

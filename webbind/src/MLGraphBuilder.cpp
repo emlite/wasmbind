@@ -77,11 +77,11 @@ MLOperatorOptions::MLOperatorOptions(const emlite::Val &val) noexcept: emlite::V
 MLOperatorOptions::MLOperatorOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLOperatorOptions MLOperatorOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString MLOperatorOptions::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String MLOperatorOptions::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void MLOperatorOptions::label(const jsbind::USVString& value) {
+void MLOperatorOptions::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
@@ -117,27 +117,27 @@ MLConv2dOptions::MLConv2dOptions(const emlite::Val &val) noexcept: emlite::Val(v
 MLConv2dOptions::MLConv2dOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLConv2dOptions MLConv2dOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<unsigned long> MLConv2dOptions::padding() const {
-    return emlite::Val::get("padding").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConv2dOptions::padding() const {
+    return emlite::Val::get("padding").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConv2dOptions::padding(jsbind::Sequence<unsigned long> value) {
+void MLConv2dOptions::padding(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("padding", value);
 }
 
-jsbind::Sequence<unsigned long> MLConv2dOptions::strides() const {
-    return emlite::Val::get("strides").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConv2dOptions::strides() const {
+    return emlite::Val::get("strides").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConv2dOptions::strides(jsbind::Sequence<unsigned long> value) {
+void MLConv2dOptions::strides(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("strides", value);
 }
 
-jsbind::Sequence<unsigned long> MLConv2dOptions::dilations() const {
-    return emlite::Val::get("dilations").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConv2dOptions::dilations() const {
+    return emlite::Val::get("dilations").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConv2dOptions::dilations(jsbind::Sequence<unsigned long> value) {
+void MLConv2dOptions::dilations(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("dilations", value);
 }
 
@@ -181,43 +181,43 @@ MLConvTranspose2dOptions::MLConvTranspose2dOptions(const emlite::Val &val) noexc
 MLConvTranspose2dOptions::MLConvTranspose2dOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLConvTranspose2dOptions MLConvTranspose2dOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<unsigned long> MLConvTranspose2dOptions::padding() const {
-    return emlite::Val::get("padding").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConvTranspose2dOptions::padding() const {
+    return emlite::Val::get("padding").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConvTranspose2dOptions::padding(jsbind::Sequence<unsigned long> value) {
+void MLConvTranspose2dOptions::padding(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("padding", value);
 }
 
-jsbind::Sequence<unsigned long> MLConvTranspose2dOptions::strides() const {
-    return emlite::Val::get("strides").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConvTranspose2dOptions::strides() const {
+    return emlite::Val::get("strides").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConvTranspose2dOptions::strides(jsbind::Sequence<unsigned long> value) {
+void MLConvTranspose2dOptions::strides(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("strides", value);
 }
 
-jsbind::Sequence<unsigned long> MLConvTranspose2dOptions::dilations() const {
-    return emlite::Val::get("dilations").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConvTranspose2dOptions::dilations() const {
+    return emlite::Val::get("dilations").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConvTranspose2dOptions::dilations(jsbind::Sequence<unsigned long> value) {
+void MLConvTranspose2dOptions::dilations(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("dilations", value);
 }
 
-jsbind::Sequence<unsigned long> MLConvTranspose2dOptions::outputPadding() const {
-    return emlite::Val::get("outputPadding").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConvTranspose2dOptions::outputPadding() const {
+    return emlite::Val::get("outputPadding").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConvTranspose2dOptions::outputPadding(jsbind::Sequence<unsigned long> value) {
+void MLConvTranspose2dOptions::outputPadding(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("outputPadding", value);
 }
 
-jsbind::Sequence<unsigned long> MLConvTranspose2dOptions::outputSizes() const {
-    return emlite::Val::get("outputSizes").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLConvTranspose2dOptions::outputSizes() const {
+    return emlite::Val::get("outputSizes").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLConvTranspose2dOptions::outputSizes(jsbind::Sequence<unsigned long> value) {
+void MLConvTranspose2dOptions::outputSizes(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("outputSizes", value);
 }
 
@@ -421,11 +421,11 @@ void MLGruOptions::layout(const MLGruWeightLayout& value) {
     emlite::Val::set("layout", value);
 }
 
-jsbind::Sequence<MLRecurrentNetworkActivation> MLGruOptions::activations() const {
-    return emlite::Val::get("activations").as<jsbind::Sequence<MLRecurrentNetworkActivation>>();
+jsbind::TypedArray<MLRecurrentNetworkActivation> MLGruOptions::activations() const {
+    return emlite::Val::get("activations").as<jsbind::TypedArray<MLRecurrentNetworkActivation>>();
 }
 
-void MLGruOptions::activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value) {
+void MLGruOptions::activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value) {
     emlite::Val::set("activations", value);
 }
 
@@ -469,11 +469,11 @@ void MLGruCellOptions::layout(const MLGruWeightLayout& value) {
     emlite::Val::set("layout", value);
 }
 
-jsbind::Sequence<MLRecurrentNetworkActivation> MLGruCellOptions::activations() const {
-    return emlite::Val::get("activations").as<jsbind::Sequence<MLRecurrentNetworkActivation>>();
+jsbind::TypedArray<MLRecurrentNetworkActivation> MLGruCellOptions::activations() const {
+    return emlite::Val::get("activations").as<jsbind::TypedArray<MLRecurrentNetworkActivation>>();
 }
 
-void MLGruCellOptions::activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value) {
+void MLGruCellOptions::activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value) {
     emlite::Val::set("activations", value);
 }
 
@@ -565,11 +565,11 @@ void MLLayerNormalizationOptions::bias(const MLOperand& value) {
     emlite::Val::set("bias", value);
 }
 
-jsbind::Sequence<unsigned long> MLLayerNormalizationOptions::axes() const {
-    return emlite::Val::get("axes").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLLayerNormalizationOptions::axes() const {
+    return emlite::Val::get("axes").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLLayerNormalizationOptions::axes(jsbind::Sequence<unsigned long> value) {
+void MLLayerNormalizationOptions::axes(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("axes", value);
 }
 
@@ -693,11 +693,11 @@ void MLLstmOptions::layout(const MLLstmWeightLayout& value) {
     emlite::Val::set("layout", value);
 }
 
-jsbind::Sequence<MLRecurrentNetworkActivation> MLLstmOptions::activations() const {
-    return emlite::Val::get("activations").as<jsbind::Sequence<MLRecurrentNetworkActivation>>();
+jsbind::TypedArray<MLRecurrentNetworkActivation> MLLstmOptions::activations() const {
+    return emlite::Val::get("activations").as<jsbind::TypedArray<MLRecurrentNetworkActivation>>();
 }
 
-void MLLstmOptions::activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value) {
+void MLLstmOptions::activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value) {
     emlite::Val::set("activations", value);
 }
 
@@ -741,11 +741,11 @@ void MLLstmCellOptions::layout(const MLLstmWeightLayout& value) {
     emlite::Val::set("layout", value);
 }
 
-jsbind::Sequence<MLRecurrentNetworkActivation> MLLstmCellOptions::activations() const {
-    return emlite::Val::get("activations").as<jsbind::Sequence<MLRecurrentNetworkActivation>>();
+jsbind::TypedArray<MLRecurrentNetworkActivation> MLLstmCellOptions::activations() const {
+    return emlite::Val::get("activations").as<jsbind::TypedArray<MLRecurrentNetworkActivation>>();
 }
 
-void MLLstmCellOptions::activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value) {
+void MLLstmCellOptions::activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value) {
     emlite::Val::set("activations", value);
 }
 
@@ -781,35 +781,35 @@ MLPool2dOptions::MLPool2dOptions(const emlite::Val &val) noexcept: emlite::Val(v
 MLPool2dOptions::MLPool2dOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLPool2dOptions MLPool2dOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<unsigned long> MLPool2dOptions::windowDimensions() const {
-    return emlite::Val::get("windowDimensions").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLPool2dOptions::windowDimensions() const {
+    return emlite::Val::get("windowDimensions").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLPool2dOptions::windowDimensions(jsbind::Sequence<unsigned long> value) {
+void MLPool2dOptions::windowDimensions(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("windowDimensions", value);
 }
 
-jsbind::Sequence<unsigned long> MLPool2dOptions::padding() const {
-    return emlite::Val::get("padding").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLPool2dOptions::padding() const {
+    return emlite::Val::get("padding").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLPool2dOptions::padding(jsbind::Sequence<unsigned long> value) {
+void MLPool2dOptions::padding(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("padding", value);
 }
 
-jsbind::Sequence<unsigned long> MLPool2dOptions::strides() const {
-    return emlite::Val::get("strides").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLPool2dOptions::strides() const {
+    return emlite::Val::get("strides").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLPool2dOptions::strides(jsbind::Sequence<unsigned long> value) {
+void MLPool2dOptions::strides(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("strides", value);
 }
 
-jsbind::Sequence<unsigned long> MLPool2dOptions::dilations() const {
-    return emlite::Val::get("dilations").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLPool2dOptions::dilations() const {
+    return emlite::Val::get("dilations").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLPool2dOptions::dilations(jsbind::Sequence<unsigned long> value) {
+void MLPool2dOptions::dilations(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("dilations", value);
 }
 
@@ -829,11 +829,11 @@ void MLPool2dOptions::roundingType(const MLRoundingType& value) {
     emlite::Val::set("roundingType", value);
 }
 
-jsbind::Sequence<unsigned long> MLPool2dOptions::outputSizes() const {
-    return emlite::Val::get("outputSizes").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLPool2dOptions::outputSizes() const {
+    return emlite::Val::get("outputSizes").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLPool2dOptions::outputSizes(jsbind::Sequence<unsigned long> value) {
+void MLPool2dOptions::outputSizes(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("outputSizes", value);
 }
 
@@ -845,11 +845,11 @@ MLReduceOptions::MLReduceOptions(const emlite::Val &val) noexcept: emlite::Val(v
 MLReduceOptions::MLReduceOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLReduceOptions MLReduceOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<unsigned long> MLReduceOptions::axes() const {
-    return emlite::Val::get("axes").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLReduceOptions::axes() const {
+    return emlite::Val::get("axes").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLReduceOptions::axes(jsbind::Sequence<unsigned long> value) {
+void MLReduceOptions::axes(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("axes", value);
 }
 
@@ -877,27 +877,27 @@ void MLResample2dOptions::mode(const MLInterpolationMode& value) {
     emlite::Val::set("mode", value);
 }
 
-jsbind::Sequence<float> MLResample2dOptions::scales() const {
-    return emlite::Val::get("scales").as<jsbind::Sequence<float>>();
+jsbind::TypedArray<float> MLResample2dOptions::scales() const {
+    return emlite::Val::get("scales").as<jsbind::TypedArray<float>>();
 }
 
-void MLResample2dOptions::scales(jsbind::Sequence<float> value) {
+void MLResample2dOptions::scales(jsbind::TypedArray<float> value) {
     emlite::Val::set("scales", value);
 }
 
-jsbind::Sequence<unsigned long> MLResample2dOptions::sizes() const {
-    return emlite::Val::get("sizes").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLResample2dOptions::sizes() const {
+    return emlite::Val::get("sizes").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLResample2dOptions::sizes(jsbind::Sequence<unsigned long> value) {
+void MLResample2dOptions::sizes(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("sizes", value);
 }
 
-jsbind::Sequence<unsigned long> MLResample2dOptions::axes() const {
-    return emlite::Val::get("axes").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLResample2dOptions::axes() const {
+    return emlite::Val::get("axes").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLResample2dOptions::axes(jsbind::Sequence<unsigned long> value) {
+void MLResample2dOptions::axes(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("axes", value);
 }
 
@@ -909,11 +909,11 @@ MLReverseOptions::MLReverseOptions(const emlite::Val &val) noexcept: emlite::Val
 MLReverseOptions::MLReverseOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLReverseOptions MLReverseOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<unsigned long> MLReverseOptions::axes() const {
-    return emlite::Val::get("axes").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLReverseOptions::axes() const {
+    return emlite::Val::get("axes").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLReverseOptions::axes(jsbind::Sequence<unsigned long> value) {
+void MLReverseOptions::axes(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("axes", value);
 }
 
@@ -941,11 +941,11 @@ MLSliceOptions::MLSliceOptions(const emlite::Val &val) noexcept: emlite::Val(val
 MLSliceOptions::MLSliceOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLSliceOptions MLSliceOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<unsigned long> MLSliceOptions::strides() const {
-    return emlite::Val::get("strides").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLSliceOptions::strides() const {
+    return emlite::Val::get("strides").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLSliceOptions::strides(jsbind::Sequence<unsigned long> value) {
+void MLSliceOptions::strides(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("strides", value);
 }
 
@@ -973,11 +973,11 @@ MLTransposeOptions::MLTransposeOptions(const emlite::Val &val) noexcept: emlite:
 MLTransposeOptions::MLTransposeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 MLTransposeOptions MLTransposeOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<unsigned long> MLTransposeOptions::permutation() const {
-    return emlite::Val::get("permutation").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLTransposeOptions::permutation() const {
+    return emlite::Val::get("permutation").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void MLTransposeOptions::permutation(jsbind::Sequence<unsigned long> value) {
+void MLTransposeOptions::permutation(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("permutation", value);
 }
 
@@ -1015,7 +1015,7 @@ MLGraphBuilder::MLGraphBuilder(const emlite::Val &val) noexcept: emlite::Val(val
 
 MLGraphBuilder::MLGraphBuilder(const MLContext& context) : emlite::Val(emlite::Val::global("MLGraphBuilder").new_(context)) {}
 
-MLOperand MLGraphBuilder::input(const jsbind::USVString& name, const MLOperandDescriptor& descriptor) {
+MLOperand MLGraphBuilder::input(const jsbind::String& name, const MLOperandDescriptor& descriptor) {
     return emlite::Val::call("input", name, descriptor).as<MLOperand>();
 }
 
@@ -1067,11 +1067,11 @@ MLOperand MLGraphBuilder::clamp(const MLOperand& input, const MLClampOptions& op
     return emlite::Val::call("clamp", input, options).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::concat(const jsbind::Sequence<MLOperand>& inputs, unsigned long axis) {
+MLOperand MLGraphBuilder::concat(const jsbind::TypedArray<MLOperand>& inputs, unsigned long axis) {
     return emlite::Val::call("concat", inputs, axis).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::concat(const jsbind::Sequence<MLOperand>& inputs, unsigned long axis, const MLOperatorOptions& options) {
+MLOperand MLGraphBuilder::concat(const jsbind::TypedArray<MLOperand>& inputs, unsigned long axis, const MLOperatorOptions& options) {
     return emlite::Val::call("concat", inputs, axis, options).as<MLOperand>();
 }
 
@@ -1371,11 +1371,11 @@ MLOperand MLGraphBuilder::elu(const MLOperand& input, const MLEluOptions& option
     return emlite::Val::call("elu", input, options).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::expand(const MLOperand& input, jsbind::Sequence<unsigned long> newShape) {
+MLOperand MLGraphBuilder::expand(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape) {
     return emlite::Val::call("expand", input, newShape).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::expand(const MLOperand& input, jsbind::Sequence<unsigned long> newShape, const MLOperatorOptions& options) {
+MLOperand MLGraphBuilder::expand(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape, const MLOperatorOptions& options) {
     return emlite::Val::call("expand", input, newShape, options).as<MLOperand>();
 }
 
@@ -1419,12 +1419,12 @@ MLOperand MLGraphBuilder::gemm(const MLOperand& a, const MLOperand& b, const MLG
     return emlite::Val::call("gemm", a, b, options).as<MLOperand>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize) {
-    return emlite::Val::call("gru", input, weight, recurrentWeight, steps, hiddenSize).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize) {
+    return emlite::Val::call("gru", input, weight, recurrentWeight, steps, hiddenSize).as<jsbind::TypedArray<MLOperand>>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLGruOptions& options) {
-    return emlite::Val::call("gru", input, weight, recurrentWeight, steps, hiddenSize, options).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLGruOptions& options) {
+    return emlite::Val::call("gru", input, weight, recurrentWeight, steps, hiddenSize, options).as<jsbind::TypedArray<MLOperand>>();
 }
 
 MLOperand MLGraphBuilder::gruCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, unsigned long hiddenSize) {
@@ -1483,20 +1483,20 @@ MLOperand MLGraphBuilder::linear(const MLOperand& input, const MLLinearOptions& 
     return emlite::Val::call("linear", input, options).as<MLOperand>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize) {
-    return emlite::Val::call("lstm", input, weight, recurrentWeight, steps, hiddenSize).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize) {
+    return emlite::Val::call("lstm", input, weight, recurrentWeight, steps, hiddenSize).as<jsbind::TypedArray<MLOperand>>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLLstmOptions& options) {
-    return emlite::Val::call("lstm", input, weight, recurrentWeight, steps, hiddenSize, options).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLLstmOptions& options) {
+    return emlite::Val::call("lstm", input, weight, recurrentWeight, steps, hiddenSize, options).as<jsbind::TypedArray<MLOperand>>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize) {
-    return emlite::Val::call("lstmCell", input, weight, recurrentWeight, hiddenState, cellState, hiddenSize).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize) {
+    return emlite::Val::call("lstmCell", input, weight, recurrentWeight, hiddenState, cellState, hiddenSize).as<jsbind::TypedArray<MLOperand>>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize, const MLLstmCellOptions& options) {
-    return emlite::Val::call("lstmCell", input, weight, recurrentWeight, hiddenState, cellState, hiddenSize, options).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize, const MLLstmCellOptions& options) {
+    return emlite::Val::call("lstmCell", input, weight, recurrentWeight, hiddenState, cellState, hiddenSize, options).as<jsbind::TypedArray<MLOperand>>();
 }
 
 MLOperand MLGraphBuilder::matmul(const MLOperand& a, const MLOperand& b) {
@@ -1507,11 +1507,11 @@ MLOperand MLGraphBuilder::matmul(const MLOperand& a, const MLOperand& b, const M
     return emlite::Val::call("matmul", a, b, options).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::pad(const MLOperand& input, jsbind::Sequence<unsigned long> beginningPadding, jsbind::Sequence<unsigned long> endingPadding) {
+MLOperand MLGraphBuilder::pad(const MLOperand& input, jsbind::TypedArray<unsigned long> beginningPadding, jsbind::TypedArray<unsigned long> endingPadding) {
     return emlite::Val::call("pad", input, beginningPadding, endingPadding).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::pad(const MLOperand& input, jsbind::Sequence<unsigned long> beginningPadding, jsbind::Sequence<unsigned long> endingPadding, const MLPadOptions& options) {
+MLOperand MLGraphBuilder::pad(const MLOperand& input, jsbind::TypedArray<unsigned long> beginningPadding, jsbind::TypedArray<unsigned long> endingPadding, const MLPadOptions& options) {
     return emlite::Val::call("pad", input, beginningPadding, endingPadding, options).as<MLOperand>();
 }
 
@@ -1643,11 +1643,11 @@ MLOperand MLGraphBuilder::resample2d(const MLOperand& input, const MLResample2dO
     return emlite::Val::call("resample2d", input, options).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::reshape(const MLOperand& input, jsbind::Sequence<unsigned long> newShape) {
+MLOperand MLGraphBuilder::reshape(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape) {
     return emlite::Val::call("reshape", input, newShape).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::reshape(const MLOperand& input, jsbind::Sequence<unsigned long> newShape, const MLOperatorOptions& options) {
+MLOperand MLGraphBuilder::reshape(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape, const MLOperatorOptions& options) {
     return emlite::Val::call("reshape", input, newShape, options).as<MLOperand>();
 }
 
@@ -1683,11 +1683,11 @@ MLOperand MLGraphBuilder::sigmoid(const MLOperand& input, const MLOperatorOption
     return emlite::Val::call("sigmoid", input, options).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::slice(const MLOperand& input, jsbind::Sequence<unsigned long> starts, jsbind::Sequence<unsigned long> sizes) {
+MLOperand MLGraphBuilder::slice(const MLOperand& input, jsbind::TypedArray<unsigned long> starts, jsbind::TypedArray<unsigned long> sizes) {
     return emlite::Val::call("slice", input, starts, sizes).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::slice(const MLOperand& input, jsbind::Sequence<unsigned long> starts, jsbind::Sequence<unsigned long> sizes, const MLSliceOptions& options) {
+MLOperand MLGraphBuilder::slice(const MLOperand& input, jsbind::TypedArray<unsigned long> starts, jsbind::TypedArray<unsigned long> sizes, const MLSliceOptions& options) {
     return emlite::Val::call("slice", input, starts, sizes, options).as<MLOperand>();
 }
 
@@ -1715,12 +1715,12 @@ MLOperand MLGraphBuilder::softsign(const MLOperand& input, const MLOperatorOptio
     return emlite::Val::call("softsign", input, options).as<MLOperand>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::split(const MLOperand& input, const jsbind::Any& splits) {
-    return emlite::Val::call("split", input, splits).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::split(const MLOperand& input, const jsbind::Any& splits) {
+    return emlite::Val::call("split", input, splits).as<jsbind::TypedArray<MLOperand>>();
 }
 
-jsbind::Sequence<MLOperand> MLGraphBuilder::split(const MLOperand& input, const jsbind::Any& splits, const MLSplitOptions& options) {
-    return emlite::Val::call("split", input, splits, options).as<jsbind::Sequence<MLOperand>>();
+jsbind::TypedArray<MLOperand> MLGraphBuilder::split(const MLOperand& input, const jsbind::Any& splits, const MLSplitOptions& options) {
+    return emlite::Val::call("split", input, splits, options).as<jsbind::TypedArray<MLOperand>>();
 }
 
 MLOperand MLGraphBuilder::tanh(const MLOperand& input) {
@@ -1731,11 +1731,11 @@ MLOperand MLGraphBuilder::tanh(const MLOperand& input, const MLOperatorOptions& 
     return emlite::Val::call("tanh", input, options).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::tile(const MLOperand& input, jsbind::Sequence<unsigned long> repetitions) {
+MLOperand MLGraphBuilder::tile(const MLOperand& input, jsbind::TypedArray<unsigned long> repetitions) {
     return emlite::Val::call("tile", input, repetitions).as<MLOperand>();
 }
 
-MLOperand MLGraphBuilder::tile(const MLOperand& input, jsbind::Sequence<unsigned long> repetitions, const MLOperatorOptions& options) {
+MLOperand MLGraphBuilder::tile(const MLOperand& input, jsbind::TypedArray<unsigned long> repetitions, const MLOperatorOptions& options) {
     return emlite::Val::call("tile", input, repetitions, options).as<MLOperand>();
 }
 

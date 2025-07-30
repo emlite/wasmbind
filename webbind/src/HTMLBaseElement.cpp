@@ -11,19 +11,19 @@ HTMLBaseElement::HTMLBaseElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLBaseElement::HTMLBaseElement() : HTMLElement(emlite::Val::global("HTMLBaseElement").new_()) {}
 
-jsbind::USVString HTMLBaseElement::href() const {
-    return HTMLElement::get("href").as<jsbind::USVString>();
+jsbind::String HTMLBaseElement::href() const {
+    return HTMLElement::get("href").as<jsbind::String>();
 }
 
-void HTMLBaseElement::href(const jsbind::USVString& value) {
+void HTMLBaseElement::href(const jsbind::String& value) {
     HTMLElement::set("href", value);
 }
 
-jsbind::DOMString HTMLBaseElement::target() const {
-    return HTMLElement::get("target").as<jsbind::DOMString>();
+jsbind::String HTMLBaseElement::target() const {
+    return HTMLElement::get("target").as<jsbind::String>();
 }
 
-void HTMLBaseElement::target(const jsbind::DOMString& value) {
+void HTMLBaseElement::target(const jsbind::String& value) {
     HTMLElement::set("target", value);
 }
 

@@ -37,7 +37,7 @@ jsbind::Undefined GPURenderPassEncoder::endOcclusionQuery() {
     return emlite::Val::call("endOcclusionQuery").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined GPURenderPassEncoder::executeBundles(const jsbind::Sequence<GPURenderBundle>& bundles) {
+jsbind::Undefined GPURenderPassEncoder::executeBundles(const jsbind::TypedArray<GPURenderBundle>& bundles) {
     return emlite::Val::call("executeBundles", bundles).as<jsbind::Undefined>();
 }
 
@@ -45,15 +45,15 @@ jsbind::Undefined GPURenderPassEncoder::end() {
     return emlite::Val::call("end").as<jsbind::Undefined>();
 }
 
-jsbind::USVString GPURenderPassEncoder::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPURenderPassEncoder::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPURenderPassEncoder::label(const jsbind::USVString& value) {
+void GPURenderPassEncoder::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
-jsbind::Undefined GPURenderPassEncoder::pushDebugGroup(const jsbind::USVString& groupLabel) {
+jsbind::Undefined GPURenderPassEncoder::pushDebugGroup(const jsbind::String& groupLabel) {
     return emlite::Val::call("pushDebugGroup", groupLabel).as<jsbind::Undefined>();
 }
 
@@ -61,7 +61,7 @@ jsbind::Undefined GPURenderPassEncoder::popDebugGroup() {
     return emlite::Val::call("popDebugGroup").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined GPURenderPassEncoder::insertDebugMarker(const jsbind::USVString& markerLabel) {
+jsbind::Undefined GPURenderPassEncoder::insertDebugMarker(const jsbind::String& markerLabel) {
     return emlite::Val::call("insertDebugMarker", markerLabel).as<jsbind::Undefined>();
 }
 

@@ -11,43 +11,43 @@ HTMLSourceElement::HTMLSourceElement(const emlite::Val &val) noexcept: HTMLEleme
 
 HTMLSourceElement::HTMLSourceElement() : HTMLElement(emlite::Val::global("HTMLSourceElement").new_()) {}
 
-jsbind::USVString HTMLSourceElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLSourceElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLSourceElement::src(const jsbind::USVString& value) {
+void HTMLSourceElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
-jsbind::DOMString HTMLSourceElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLSourceElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLSourceElement::type(const jsbind::DOMString& value) {
+void HTMLSourceElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 
-jsbind::USVString HTMLSourceElement::srcset() const {
-    return HTMLElement::get("srcset").as<jsbind::USVString>();
+jsbind::String HTMLSourceElement::srcset() const {
+    return HTMLElement::get("srcset").as<jsbind::String>();
 }
 
-void HTMLSourceElement::srcset(const jsbind::USVString& value) {
+void HTMLSourceElement::srcset(const jsbind::String& value) {
     HTMLElement::set("srcset", value);
 }
 
-jsbind::DOMString HTMLSourceElement::sizes() const {
-    return HTMLElement::get("sizes").as<jsbind::DOMString>();
+jsbind::String HTMLSourceElement::sizes() const {
+    return HTMLElement::get("sizes").as<jsbind::String>();
 }
 
-void HTMLSourceElement::sizes(const jsbind::DOMString& value) {
+void HTMLSourceElement::sizes(const jsbind::String& value) {
     HTMLElement::set("sizes", value);
 }
 
-jsbind::DOMString HTMLSourceElement::media() const {
-    return HTMLElement::get("media").as<jsbind::DOMString>();
+jsbind::String HTMLSourceElement::media() const {
+    return HTMLElement::get("media").as<jsbind::String>();
 }
 
-void HTMLSourceElement::media(const jsbind::DOMString& value) {
+void HTMLSourceElement::media(const jsbind::String& value) {
     HTMLElement::set("media", value);
 }
 

@@ -33,18 +33,18 @@ public:
     static TrustedTypePolicyFactory take_ownership(Handle h) noexcept;
 
     TrustedTypePolicyFactory clone() const noexcept;
-    TrustedTypePolicy createPolicy(const jsbind::DOMString& policyName);
-    TrustedTypePolicy createPolicy(const jsbind::DOMString& policyName, const TrustedTypePolicyOptions& policyOptions);
+    TrustedTypePolicy createPolicy(const jsbind::String& policyName);
+    TrustedTypePolicy createPolicy(const jsbind::String& policyName, const TrustedTypePolicyOptions& policyOptions);
     bool isHTML(const jsbind::Any& value);
     bool isScript(const jsbind::Any& value);
     bool isScriptURL(const jsbind::Any& value);
     TrustedHTML emptyHTML() const;
     TrustedScript emptyScript() const;
-    jsbind::DOMString getAttributeType(const jsbind::DOMString& tagName, const jsbind::DOMString& attribute);
-    jsbind::DOMString getAttributeType(const jsbind::DOMString& tagName, const jsbind::DOMString& attribute, const jsbind::DOMString& elementNs);
-    jsbind::DOMString getAttributeType(const jsbind::DOMString& tagName, const jsbind::DOMString& attribute, const jsbind::DOMString& elementNs, const jsbind::DOMString& attrNs);
-    jsbind::DOMString getPropertyType(const jsbind::DOMString& tagName, const jsbind::DOMString& property);
-    jsbind::DOMString getPropertyType(const jsbind::DOMString& tagName, const jsbind::DOMString& property, const jsbind::DOMString& elementNs);
+    jsbind::String getAttributeType(const jsbind::String& tagName, const jsbind::String& attribute);
+    jsbind::String getAttributeType(const jsbind::String& tagName, const jsbind::String& attribute, const jsbind::String& elementNs);
+    jsbind::String getAttributeType(const jsbind::String& tagName, const jsbind::String& attribute, const jsbind::String& elementNs, const jsbind::String& attrNs);
+    jsbind::String getPropertyType(const jsbind::String& tagName, const jsbind::String& property);
+    jsbind::String getPropertyType(const jsbind::String& tagName, const jsbind::String& property, const jsbind::String& elementNs);
     TrustedTypePolicy defaultPolicy() const;
 };
 

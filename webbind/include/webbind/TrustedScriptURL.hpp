@@ -13,6 +13,6 @@ public:
     static TrustedScriptURL take_ownership(Handle h) noexcept;
 
     TrustedScriptURL clone() const noexcept;
-    jsbind::USVString toJSON();
+    jsbind::String toJSON();
 };
 

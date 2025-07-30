@@ -28,11 +28,11 @@ DOMStringMap MathMLElement::dataset() const {
     return Element::get("dataset").as<DOMStringMap>();
 }
 
-jsbind::DOMString MathMLElement::nonce() const {
-    return Element::get("nonce").as<jsbind::DOMString>();
+jsbind::String MathMLElement::nonce() const {
+    return Element::get("nonce").as<jsbind::String>();
 }
 
-void MathMLElement::nonce(const jsbind::DOMString& value) {
+void MathMLElement::nonce(const jsbind::String& value) {
     Element::set("nonce", value);
 }
 

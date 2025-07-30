@@ -9,7 +9,7 @@ WEBGL_draw_buffers::WEBGL_draw_buffers(Handle h) noexcept : emlite::Val(emlite::
 WEBGL_draw_buffers::WEBGL_draw_buffers(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Undefined WEBGL_draw_buffers::drawBuffersWEBGL(const jsbind::Sequence<jsbind::Any>& buffers) {
+jsbind::Undefined WEBGL_draw_buffers::drawBuffersWEBGL(const jsbind::TypedArray<jsbind::Any>& buffers) {
     return emlite::Val::call("drawBuffersWEBGL", buffers).as<jsbind::Undefined>();
 }
 

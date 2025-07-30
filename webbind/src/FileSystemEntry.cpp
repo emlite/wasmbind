@@ -18,12 +18,12 @@ bool FileSystemEntry::isDirectory() const {
     return emlite::Val::get("isDirectory").as<bool>();
 }
 
-jsbind::USVString FileSystemEntry::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String FileSystemEntry::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-jsbind::USVString FileSystemEntry::fullPath() const {
-    return emlite::Val::get("fullPath").as<jsbind::USVString>();
+jsbind::String FileSystemEntry::fullPath() const {
+    return emlite::Val::get("fullPath").as<jsbind::String>();
 }
 
 FileSystem FileSystemEntry::filesystem() const {

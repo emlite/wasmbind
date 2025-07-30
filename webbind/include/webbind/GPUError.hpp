@@ -13,6 +13,6 @@ public:
     static GPUError take_ownership(Handle h) noexcept;
 
     GPUError clone() const noexcept;
-    jsbind::DOMString message() const;
+    jsbind::String message() const;
 };
 

@@ -32,12 +32,12 @@ public:
     jsbind::Any onsourceclose() const;
     void onsourceclose(const jsbind::Any& value);
     static bool canConstructInDedicatedWorker();
-    SourceBuffer addSourceBuffer(const jsbind::DOMString& type);
+    SourceBuffer addSourceBuffer(const jsbind::String& type);
     jsbind::Undefined removeSourceBuffer(const SourceBuffer& sourceBuffer);
     jsbind::Undefined endOfStream();
     jsbind::Undefined endOfStream(const EndOfStreamError& error);
     jsbind::Undefined setLiveSeekableRange(double start, double end);
     jsbind::Undefined clearLiveSeekableRange();
-    static bool isTypeSupported(const jsbind::DOMString& type);
+    static bool isTypeSupported(const jsbind::String& type);
 };
 

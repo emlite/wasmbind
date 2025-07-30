@@ -37,19 +37,19 @@ EventTarget::EventTarget(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 EventTarget::EventTarget() : emlite::Val(emlite::Val::global("EventTarget").new_()) {}
 
-jsbind::Undefined EventTarget::addEventListener(const jsbind::DOMString& type, const jsbind::Function& callback) {
+jsbind::Undefined EventTarget::addEventListener(const jsbind::String& type, const jsbind::Function& callback) {
     return emlite::Val::call("addEventListener", type, callback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EventTarget::addEventListener(const jsbind::DOMString& type, const jsbind::Function& callback, const jsbind::Any& options) {
+jsbind::Undefined EventTarget::addEventListener(const jsbind::String& type, const jsbind::Function& callback, const jsbind::Any& options) {
     return emlite::Val::call("addEventListener", type, callback, options).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EventTarget::removeEventListener(const jsbind::DOMString& type, const jsbind::Function& callback) {
+jsbind::Undefined EventTarget::removeEventListener(const jsbind::String& type, const jsbind::Function& callback) {
     return emlite::Val::call("removeEventListener", type, callback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EventTarget::removeEventListener(const jsbind::DOMString& type, const jsbind::Function& callback, const jsbind::Any& options) {
+jsbind::Undefined EventTarget::removeEventListener(const jsbind::String& type, const jsbind::Function& callback, const jsbind::Any& options) {
     return emlite::Val::call("removeEventListener", type, callback, options).as<jsbind::Undefined>();
 }
 
@@ -57,11 +57,11 @@ bool EventTarget::dispatchEvent(const Event& event) {
     return emlite::Val::call("dispatchEvent", event).as<bool>();
 }
 
-Observable EventTarget::when(const jsbind::DOMString& type) {
+Observable EventTarget::when(const jsbind::String& type) {
     return emlite::Val::call("when", type).as<Observable>();
 }
 
-Observable EventTarget::when(const jsbind::DOMString& type, const ObservableEventListenerOptions& options) {
+Observable EventTarget::when(const jsbind::String& type, const ObservableEventListenerOptions& options) {
     return emlite::Val::call("when", type, options).as<Observable>();
 }
 

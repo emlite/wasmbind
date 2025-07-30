@@ -10,11 +10,11 @@ ColorSelectionResult::ColorSelectionResult(const emlite::Val &val) noexcept: eml
 ColorSelectionResult::ColorSelectionResult() noexcept: emlite::Val(emlite::Val::object()) {}
 ColorSelectionResult ColorSelectionResult::clone() const noexcept { return *this; }
 
-jsbind::DOMString ColorSelectionResult::sRGBHex() const {
-    return emlite::Val::get("sRGBHex").as<jsbind::DOMString>();
+jsbind::String ColorSelectionResult::sRGBHex() const {
+    return emlite::Val::get("sRGBHex").as<jsbind::String>();
 }
 
-void ColorSelectionResult::sRGBHex(const jsbind::DOMString& value) {
+void ColorSelectionResult::sRGBHex(const jsbind::String& value) {
     emlite::Val::set("sRGBHex", value);
 }
 

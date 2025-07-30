@@ -14,9 +14,9 @@ public:
     static CSSUnitValue take_ownership(Handle h) noexcept;
 
     CSSUnitValue clone() const noexcept;
-    CSSUnitValue(double value, const jsbind::USVString& unit);
+    CSSUnitValue(double value, const jsbind::String& unit);
     double value() const;
     void value(double value);
-    jsbind::USVString unit() const;
+    jsbind::String unit() const;
 };
 

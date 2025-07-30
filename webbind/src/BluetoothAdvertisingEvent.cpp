@@ -12,18 +12,18 @@ BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(Handle h) noexcept : Event(
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const jsbind::DOMString& type, const jsbind::Any& init) : Event(emlite::Val::global("BluetoothAdvertisingEvent").new_(type, init)) {}
+BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const jsbind::String& type, const jsbind::Any& init) : Event(emlite::Val::global("BluetoothAdvertisingEvent").new_(type, init)) {}
 
 BluetoothDevice BluetoothAdvertisingEvent::device() const {
     return Event::get("device").as<BluetoothDevice>();
 }
 
-jsbind::FrozenArray<jsbind::Any> BluetoothAdvertisingEvent::uuids() const {
-    return Event::get("uuids").as<jsbind::FrozenArray<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> BluetoothAdvertisingEvent::uuids() const {
+    return Event::get("uuids").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-jsbind::DOMString BluetoothAdvertisingEvent::name() const {
-    return Event::get("name").as<jsbind::DOMString>();
+jsbind::String BluetoothAdvertisingEvent::name() const {
+    return Event::get("name").as<jsbind::String>();
 }
 
 unsigned short BluetoothAdvertisingEvent::appearance() const {

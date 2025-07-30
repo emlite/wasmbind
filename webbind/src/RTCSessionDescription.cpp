@@ -16,8 +16,8 @@ RTCSdpType RTCSessionDescription::type() const {
     return emlite::Val::get("type").as<RTCSdpType>();
 }
 
-jsbind::DOMString RTCSessionDescription::sdp() const {
-    return emlite::Val::get("sdp").as<jsbind::DOMString>();
+jsbind::String RTCSessionDescription::sdp() const {
+    return emlite::Val::get("sdp").as<jsbind::String>();
 }
 
 RTCSessionDescriptionInit RTCSessionDescription::toJSON() {

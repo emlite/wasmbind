@@ -13,8 +13,8 @@ jsbind::ArrayBuffer AuthenticatorAttestationResponse::attestationObject() const 
     return AuthenticatorResponse::get("attestationObject").as<jsbind::ArrayBuffer>();
 }
 
-jsbind::Sequence<jsbind::DOMString> AuthenticatorAttestationResponse::getTransports() {
-    return AuthenticatorResponse::call("getTransports").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> AuthenticatorAttestationResponse::getTransports() {
+    return AuthenticatorResponse::call("getTransports").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 jsbind::ArrayBuffer AuthenticatorAttestationResponse::getAuthenticatorData() {

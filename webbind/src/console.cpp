@@ -41,7 +41,7 @@ jsbind::Undefined console::table(const jsbind::Any& tabularData) {
     return emlite::Val::global("console").call("table", tabularData).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined console::table(const jsbind::Any& tabularData, const jsbind::Sequence<jsbind::DOMString>& properties) {
+jsbind::Undefined console::table(const jsbind::Any& tabularData, const jsbind::TypedArray<jsbind::String>& properties) {
     return emlite::Val::global("console").call("table", tabularData, properties).as<jsbind::Undefined>();
 }
 
@@ -73,7 +73,7 @@ jsbind::Undefined console::count() {
     return emlite::Val::global("console").call("count").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined console::count(const jsbind::DOMString& label) {
+jsbind::Undefined console::count(const jsbind::String& label) {
     return emlite::Val::global("console").call("count", label).as<jsbind::Undefined>();
 }
 
@@ -81,7 +81,7 @@ jsbind::Undefined console::countReset() {
     return emlite::Val::global("console").call("countReset").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined console::countReset(const jsbind::DOMString& label) {
+jsbind::Undefined console::countReset(const jsbind::String& label) {
     return emlite::Val::global("console").call("countReset", label).as<jsbind::Undefined>();
 }
 
@@ -101,7 +101,7 @@ jsbind::Undefined console::time() {
     return emlite::Val::global("console").call("time").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined console::time(const jsbind::DOMString& label) {
+jsbind::Undefined console::time(const jsbind::String& label) {
     return emlite::Val::global("console").call("time", label).as<jsbind::Undefined>();
 }
 
@@ -109,11 +109,11 @@ jsbind::Undefined console::timeLog() {
     return emlite::Val::global("console").call("timeLog").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined console::timeLog(const jsbind::DOMString& label) {
+jsbind::Undefined console::timeLog(const jsbind::String& label) {
     return emlite::Val::global("console").call("timeLog", label).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined console::timeLog(const jsbind::DOMString& label, const jsbind::Any& data) {
+jsbind::Undefined console::timeLog(const jsbind::String& label, const jsbind::Any& data) {
     return emlite::Val::global("console").call("timeLog", label, data).as<jsbind::Undefined>();
 }
 
@@ -121,7 +121,7 @@ jsbind::Undefined console::timeEnd() {
     return emlite::Val::global("console").call("timeEnd").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined console::timeEnd(const jsbind::DOMString& label) {
+jsbind::Undefined console::timeEnd(const jsbind::String& label) {
     return emlite::Val::global("console").call("timeEnd", label).as<jsbind::Undefined>();
 }
 

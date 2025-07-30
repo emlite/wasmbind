@@ -12,16 +12,16 @@ Blob::Blob(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Blob::Blob() : emlite::Val(emlite::Val::global("Blob").new_()) {}
 
-Blob::Blob(const jsbind::Sequence<jsbind::Any>& blobParts) : emlite::Val(emlite::Val::global("Blob").new_(blobParts)) {}
+Blob::Blob(const jsbind::TypedArray<jsbind::Any>& blobParts) : emlite::Val(emlite::Val::global("Blob").new_(blobParts)) {}
 
-Blob::Blob(const jsbind::Sequence<jsbind::Any>& blobParts, const jsbind::Any& options) : emlite::Val(emlite::Val::global("Blob").new_(blobParts, options)) {}
+Blob::Blob(const jsbind::TypedArray<jsbind::Any>& blobParts, const jsbind::Any& options) : emlite::Val(emlite::Val::global("Blob").new_(blobParts, options)) {}
 
 long long Blob::size() const {
     return emlite::Val::get("size").as<long long>();
 }
 
-jsbind::DOMString Blob::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String Blob::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
 Blob Blob::slice() {
@@ -36,7 +36,7 @@ Blob Blob::slice(long long start, long long end) {
     return emlite::Val::call("slice", start, end).as<Blob>();
 }
 
-Blob Blob::slice(long long start, long long end, const jsbind::DOMString& contentType) {
+Blob Blob::slice(long long start, long long end, const jsbind::String& contentType) {
     return emlite::Val::call("slice", start, end, contentType).as<Blob>();
 }
 
@@ -44,8 +44,8 @@ ReadableStream Blob::stream() {
     return emlite::Val::call("stream").as<ReadableStream>();
 }
 
-jsbind::Promise<jsbind::USVString> Blob::text() {
-    return emlite::Val::call("text").as<jsbind::Promise<jsbind::USVString>>();
+jsbind::Promise<jsbind::String> Blob::text() {
+    return emlite::Val::call("text").as<jsbind::Promise<jsbind::String>>();
 }
 
 jsbind::Promise<jsbind::ArrayBuffer> Blob::arrayBuffer() {

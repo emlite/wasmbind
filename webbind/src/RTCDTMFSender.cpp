@@ -9,15 +9,15 @@ RTCDTMFSender::RTCDTMFSender(Handle h) noexcept : EventTarget(emlite::Val::take_
 RTCDTMFSender::RTCDTMFSender(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::DOMString& tones) {
+jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::String& tones) {
     return EventTarget::call("insertDTMF", tones).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::DOMString& tones, unsigned long duration) {
+jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::String& tones, unsigned long duration) {
     return EventTarget::call("insertDTMF", tones, duration).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::DOMString& tones, unsigned long duration, unsigned long interToneGap) {
+jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::String& tones, unsigned long duration, unsigned long interToneGap) {
     return EventTarget::call("insertDTMF", tones, duration, interToneGap).as<jsbind::Undefined>();
 }
 
@@ -33,7 +33,7 @@ bool RTCDTMFSender::canInsertDTMF() const {
     return EventTarget::get("canInsertDTMF").as<bool>();
 }
 
-jsbind::DOMString RTCDTMFSender::toneBuffer() const {
-    return EventTarget::get("toneBuffer").as<jsbind::DOMString>();
+jsbind::String RTCDTMFSender::toneBuffer() const {
+    return EventTarget::get("toneBuffer").as<jsbind::String>();
 }
 

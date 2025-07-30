@@ -11,8 +11,8 @@ MediaKeySystemAccess::MediaKeySystemAccess(Handle h) noexcept : emlite::Val(emli
 MediaKeySystemAccess::MediaKeySystemAccess(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString MediaKeySystemAccess::keySystem() const {
-    return emlite::Val::get("keySystem").as<jsbind::DOMString>();
+jsbind::String MediaKeySystemAccess::keySystem() const {
+    return emlite::Val::get("keySystem").as<jsbind::String>();
 }
 
 MediaKeySystemConfiguration MediaKeySystemAccess::getConfiguration() {

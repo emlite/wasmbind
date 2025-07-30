@@ -14,8 +14,8 @@ public:
 
     VTTRegion clone() const noexcept;
     VTTRegion();
-    jsbind::DOMString id() const;
-    void id(const jsbind::DOMString& value);
+    jsbind::String id() const;
+    void id(const jsbind::String& value);
     double width() const;
     void width(double value);
     unsigned long lines() const;

@@ -19,7 +19,7 @@ public:
     static AbortSignal abort();
     static AbortSignal abort(const jsbind::Any& reason);
     static AbortSignal timeout(long long milliseconds);
-    static AbortSignal any(const jsbind::Sequence<AbortSignal>& signals);
+    static AbortSignal any(const jsbind::TypedArray<AbortSignal>& signals);
     bool aborted() const;
     jsbind::Any reason() const;
     jsbind::Undefined throwIfAborted();

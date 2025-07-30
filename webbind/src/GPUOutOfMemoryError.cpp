@@ -9,5 +9,5 @@ GPUOutOfMemoryError::GPUOutOfMemoryError(Handle h) noexcept : GPUError(emlite::V
 GPUOutOfMemoryError::GPUOutOfMemoryError(const emlite::Val &val) noexcept: GPUError(val) {}
 
 
-GPUOutOfMemoryError::GPUOutOfMemoryError(const jsbind::DOMString& message) : GPUError(emlite::Val::global("GPUOutOfMemoryError").new_(message)) {}
+GPUOutOfMemoryError::GPUOutOfMemoryError(const jsbind::String& message) : GPUError(emlite::Val::global("GPUOutOfMemoryError").new_(message)) {}
 

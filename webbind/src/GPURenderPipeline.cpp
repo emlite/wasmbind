@@ -10,11 +10,11 @@ GPURenderPipeline::GPURenderPipeline(Handle h) noexcept : emlite::Val(emlite::Va
 GPURenderPipeline::GPURenderPipeline(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPURenderPipeline::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPURenderPipeline::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPURenderPipeline::label(const jsbind::USVString& value) {
+void GPURenderPipeline::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

@@ -15,7 +15,7 @@ public:
     static BluetoothLEScan take_ownership(Handle h) noexcept;
 
     BluetoothLEScan clone() const noexcept;
-    jsbind::FrozenArray<BluetoothLEScanFilter> filters() const;
+    jsbind::TypedArray<BluetoothLEScanFilter> filters() const;
     bool keepRepeatedDevices() const;
     bool acceptAllAdvertisements() const;
     bool active() const;

@@ -1,33 +1,48 @@
 #pragma once
 
-#include "Any.hpp"
-#include "utils.hpp"
 #include <emlite/emlite.hpp>
+#include "Any.hpp"
+
 namespace jsbind {
-class Object : public emlite::Val {
-    explicit Object(Handle h) noexcept;
+template <typename K, typename V>
+class Record : public emlite::Val {
+    explicit Record(Handle h) noexcept: emlite::Val(emlite::Val::take_ownership(h)) {}
 
   public:
-    static Object take_ownership(Handle h) noexcept;
-    explicit Object(const emlite::Val &val) noexcept;
-    Object() noexcept;
-    bool hasOwnProperty(const char *prop) noexcept;
+    static Record take_ownership(Handle h) noexcept {
+        return Record(h);
+    }
 
-    template <typename K, typename V>
+    explicit Record(const emlite::Val &val)
+        : emlite::Val(val) {}
+
+    [[nodiscard]] Record clone() const noexcept {
+        return *this;
+    }
+
+    Record() noexcept: emlite::Val(emlite::Val::object()) {}
+
+    bool hasOwnProperty(const char *prop) noexcept {
+        return has_own_property(prop);
+    }
+
     void set(const K &prop, const V &val) noexcept {
         emlite::Val::set(prop, val);
     }
 
-    template <typename K, typename V = Any>
     V get(const K &prop) noexcept {
         return emlite::Val::get(prop).template as<V>();
     }
 
-    template <typename K>
     bool has(const K &prop) const noexcept {
         return emlite::Val::has(prop);
     }
 
-    DECLARE_CLONE(Object)
+    [[nodiscard]] size_t size() const {
+        return emlite::Val::get("size").template as<size_t>(
+        );
+    }
 };
+
+using Object = Record<Any, Any>;
 } // namespace jsbind

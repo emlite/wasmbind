@@ -17,7 +17,7 @@ public:
     static CSSTransformValue take_ownership(Handle h) noexcept;
 
     CSSTransformValue clone() const noexcept;
-    CSSTransformValue(const jsbind::Sequence<CSSTransformComponent>& transforms);
+    CSSTransformValue(const jsbind::TypedArray<CSSTransformComponent>& transforms);
     unsigned long length() const;
     bool is2D() const;
     DOMMatrix toMatrix();

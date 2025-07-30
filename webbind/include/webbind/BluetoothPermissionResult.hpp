@@ -16,7 +16,7 @@ public:
     static BluetoothPermissionResult take_ownership(Handle h) noexcept;
 
     BluetoothPermissionResult clone() const noexcept;
-    jsbind::FrozenArray<BluetoothDevice> devices() const;
-    void devices(const jsbind::FrozenArray<BluetoothDevice>& value);
+    jsbind::TypedArray<BluetoothDevice> devices() const;
+    void devices(const jsbind::TypedArray<BluetoothDevice>& value);
 };
 

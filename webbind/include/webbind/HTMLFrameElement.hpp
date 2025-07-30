@@ -17,23 +17,23 @@ public:
 
     HTMLFrameElement clone() const noexcept;
     HTMLFrameElement();
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
-    jsbind::DOMString scrolling() const;
-    void scrolling(const jsbind::DOMString& value);
-    jsbind::USVString src() const;
-    void src(const jsbind::USVString& value);
-    jsbind::DOMString frameBorder() const;
-    void frameBorder(const jsbind::DOMString& value);
-    jsbind::USVString longDesc() const;
-    void longDesc(const jsbind::USVString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
+    jsbind::String scrolling() const;
+    void scrolling(const jsbind::String& value);
+    jsbind::String src() const;
+    void src(const jsbind::String& value);
+    jsbind::String frameBorder() const;
+    void frameBorder(const jsbind::String& value);
+    jsbind::String longDesc() const;
+    void longDesc(const jsbind::String& value);
     bool noResize() const;
     void noResize(bool value);
     Document contentDocument() const;
     jsbind::Any contentWindow() const;
-    jsbind::DOMString marginHeight() const;
-    void marginHeight(const jsbind::DOMString& value);
-    jsbind::DOMString marginWidth() const;
-    void marginWidth(const jsbind::DOMString& value);
+    jsbind::String marginHeight() const;
+    void marginHeight(const jsbind::String& value);
+    jsbind::String marginWidth() const;
+    void marginWidth(const jsbind::String& value);
 };
 

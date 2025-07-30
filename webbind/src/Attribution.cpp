@@ -34,19 +34,19 @@ void AttributionImpressionOptions::matchValue(unsigned long value) {
     emlite::Val::set("matchValue", value);
 }
 
-jsbind::Sequence<jsbind::USVString> AttributionImpressionOptions::conversionSites() const {
-    return emlite::Val::get("conversionSites").as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> AttributionImpressionOptions::conversionSites() const {
+    return emlite::Val::get("conversionSites").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void AttributionImpressionOptions::conversionSites(const jsbind::Sequence<jsbind::USVString>& value) {
+void AttributionImpressionOptions::conversionSites(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("conversionSites", value);
 }
 
-jsbind::Sequence<jsbind::USVString> AttributionImpressionOptions::conversionCallers() const {
-    return emlite::Val::get("conversionCallers").as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> AttributionImpressionOptions::conversionCallers() const {
+    return emlite::Val::get("conversionCallers").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void AttributionImpressionOptions::conversionCallers(const jsbind::Sequence<jsbind::USVString>& value) {
+void AttributionImpressionOptions::conversionCallers(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("conversionCallers", value);
 }
 
@@ -82,11 +82,11 @@ AttributionConversionOptions::AttributionConversionOptions(const emlite::Val &va
 AttributionConversionOptions::AttributionConversionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 AttributionConversionOptions AttributionConversionOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString AttributionConversionOptions::aggregationService() const {
-    return emlite::Val::get("aggregationService").as<jsbind::USVString>();
+jsbind::String AttributionConversionOptions::aggregationService() const {
+    return emlite::Val::get("aggregationService").as<jsbind::String>();
 }
 
-void AttributionConversionOptions::aggregationService(const jsbind::USVString& value) {
+void AttributionConversionOptions::aggregationService(const jsbind::String& value) {
     emlite::Val::set("aggregationService", value);
 }
 
@@ -114,27 +114,27 @@ void AttributionConversionOptions::lookbackDays(unsigned long value) {
     emlite::Val::set("lookbackDays", value);
 }
 
-jsbind::Sequence<unsigned long> AttributionConversionOptions::matchValues() const {
-    return emlite::Val::get("matchValues").as<jsbind::Sequence<unsigned long>>();
+jsbind::TypedArray<unsigned long> AttributionConversionOptions::matchValues() const {
+    return emlite::Val::get("matchValues").as<jsbind::TypedArray<unsigned long>>();
 }
 
-void AttributionConversionOptions::matchValues(jsbind::Sequence<unsigned long> value) {
+void AttributionConversionOptions::matchValues(jsbind::TypedArray<unsigned long> value) {
     emlite::Val::set("matchValues", value);
 }
 
-jsbind::Sequence<jsbind::USVString> AttributionConversionOptions::impressionSites() const {
-    return emlite::Val::get("impressionSites").as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> AttributionConversionOptions::impressionSites() const {
+    return emlite::Val::get("impressionSites").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void AttributionConversionOptions::impressionSites(const jsbind::Sequence<jsbind::USVString>& value) {
+void AttributionConversionOptions::impressionSites(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("impressionSites", value);
 }
 
-jsbind::Sequence<jsbind::USVString> AttributionConversionOptions::impressionCallers() const {
-    return emlite::Val::get("impressionCallers").as<jsbind::Sequence<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> AttributionConversionOptions::impressionCallers() const {
+    return emlite::Val::get("impressionCallers").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void AttributionConversionOptions::impressionCallers(const jsbind::Sequence<jsbind::USVString>& value) {
+void AttributionConversionOptions::impressionCallers(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("impressionCallers", value);
 }
 

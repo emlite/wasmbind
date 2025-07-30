@@ -128,11 +128,11 @@ jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags)
     return emlite::Val::call("setValidity", flags).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags, const jsbind::DOMString& message) {
+jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags, const jsbind::String& message) {
     return emlite::Val::call("setValidity", flags, message).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags, const jsbind::DOMString& message, const HTMLElement& anchor) {
+jsbind::Undefined ElementInternals::setValidity(const ValidityStateFlags& flags, const jsbind::String& message, const HTMLElement& anchor) {
     return emlite::Val::call("setValidity", flags, message, anchor).as<jsbind::Undefined>();
 }
 
@@ -144,8 +144,8 @@ ValidityState ElementInternals::validity() const {
     return emlite::Val::get("validity").as<ValidityState>();
 }
 
-jsbind::DOMString ElementInternals::validationMessage() const {
-    return emlite::Val::get("validationMessage").as<jsbind::DOMString>();
+jsbind::String ElementInternals::validationMessage() const {
+    return emlite::Val::get("validationMessage").as<jsbind::String>();
 }
 
 bool ElementInternals::checkValidity() {
@@ -164,11 +164,11 @@ CustomStateSet ElementInternals::states() const {
     return emlite::Val::get("states").as<CustomStateSet>();
 }
 
-jsbind::DOMString ElementInternals::role() const {
-    return emlite::Val::get("role").as<jsbind::DOMString>();
+jsbind::String ElementInternals::role() const {
+    return emlite::Val::get("role").as<jsbind::String>();
 }
 
-void ElementInternals::role(const jsbind::DOMString& value) {
+void ElementInternals::role(const jsbind::String& value) {
     emlite::Val::set("role", value);
 }
 
@@ -180,403 +180,403 @@ void ElementInternals::ariaActiveDescendantElement(const Element& value) {
     emlite::Val::set("ariaActiveDescendantElement", value);
 }
 
-jsbind::DOMString ElementInternals::ariaAtomic() const {
-    return emlite::Val::get("ariaAtomic").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaAtomic() const {
+    return emlite::Val::get("ariaAtomic").as<jsbind::String>();
 }
 
-void ElementInternals::ariaAtomic(const jsbind::DOMString& value) {
+void ElementInternals::ariaAtomic(const jsbind::String& value) {
     emlite::Val::set("ariaAtomic", value);
 }
 
-jsbind::DOMString ElementInternals::ariaAutoComplete() const {
-    return emlite::Val::get("ariaAutoComplete").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaAutoComplete() const {
+    return emlite::Val::get("ariaAutoComplete").as<jsbind::String>();
 }
 
-void ElementInternals::ariaAutoComplete(const jsbind::DOMString& value) {
+void ElementInternals::ariaAutoComplete(const jsbind::String& value) {
     emlite::Val::set("ariaAutoComplete", value);
 }
 
-jsbind::DOMString ElementInternals::ariaBrailleLabel() const {
-    return emlite::Val::get("ariaBrailleLabel").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaBrailleLabel() const {
+    return emlite::Val::get("ariaBrailleLabel").as<jsbind::String>();
 }
 
-void ElementInternals::ariaBrailleLabel(const jsbind::DOMString& value) {
+void ElementInternals::ariaBrailleLabel(const jsbind::String& value) {
     emlite::Val::set("ariaBrailleLabel", value);
 }
 
-jsbind::DOMString ElementInternals::ariaBrailleRoleDescription() const {
-    return emlite::Val::get("ariaBrailleRoleDescription").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaBrailleRoleDescription() const {
+    return emlite::Val::get("ariaBrailleRoleDescription").as<jsbind::String>();
 }
 
-void ElementInternals::ariaBrailleRoleDescription(const jsbind::DOMString& value) {
+void ElementInternals::ariaBrailleRoleDescription(const jsbind::String& value) {
     emlite::Val::set("ariaBrailleRoleDescription", value);
 }
 
-jsbind::DOMString ElementInternals::ariaBusy() const {
-    return emlite::Val::get("ariaBusy").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaBusy() const {
+    return emlite::Val::get("ariaBusy").as<jsbind::String>();
 }
 
-void ElementInternals::ariaBusy(const jsbind::DOMString& value) {
+void ElementInternals::ariaBusy(const jsbind::String& value) {
     emlite::Val::set("ariaBusy", value);
 }
 
-jsbind::DOMString ElementInternals::ariaChecked() const {
-    return emlite::Val::get("ariaChecked").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaChecked() const {
+    return emlite::Val::get("ariaChecked").as<jsbind::String>();
 }
 
-void ElementInternals::ariaChecked(const jsbind::DOMString& value) {
+void ElementInternals::ariaChecked(const jsbind::String& value) {
     emlite::Val::set("ariaChecked", value);
 }
 
-jsbind::DOMString ElementInternals::ariaColCount() const {
-    return emlite::Val::get("ariaColCount").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaColCount() const {
+    return emlite::Val::get("ariaColCount").as<jsbind::String>();
 }
 
-void ElementInternals::ariaColCount(const jsbind::DOMString& value) {
+void ElementInternals::ariaColCount(const jsbind::String& value) {
     emlite::Val::set("ariaColCount", value);
 }
 
-jsbind::DOMString ElementInternals::ariaColIndex() const {
-    return emlite::Val::get("ariaColIndex").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaColIndex() const {
+    return emlite::Val::get("ariaColIndex").as<jsbind::String>();
 }
 
-void ElementInternals::ariaColIndex(const jsbind::DOMString& value) {
+void ElementInternals::ariaColIndex(const jsbind::String& value) {
     emlite::Val::set("ariaColIndex", value);
 }
 
-jsbind::DOMString ElementInternals::ariaColIndexText() const {
-    return emlite::Val::get("ariaColIndexText").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaColIndexText() const {
+    return emlite::Val::get("ariaColIndexText").as<jsbind::String>();
 }
 
-void ElementInternals::ariaColIndexText(const jsbind::DOMString& value) {
+void ElementInternals::ariaColIndexText(const jsbind::String& value) {
     emlite::Val::set("ariaColIndexText", value);
 }
 
-jsbind::DOMString ElementInternals::ariaColSpan() const {
-    return emlite::Val::get("ariaColSpan").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaColSpan() const {
+    return emlite::Val::get("ariaColSpan").as<jsbind::String>();
 }
 
-void ElementInternals::ariaColSpan(const jsbind::DOMString& value) {
+void ElementInternals::ariaColSpan(const jsbind::String& value) {
     emlite::Val::set("ariaColSpan", value);
 }
 
-jsbind::FrozenArray<Element> ElementInternals::ariaControlsElements() const {
-    return emlite::Val::get("ariaControlsElements").as<jsbind::FrozenArray<Element>>();
+jsbind::TypedArray<Element> ElementInternals::ariaControlsElements() const {
+    return emlite::Val::get("ariaControlsElements").as<jsbind::TypedArray<Element>>();
 }
 
-void ElementInternals::ariaControlsElements(const jsbind::FrozenArray<Element>& value) {
+void ElementInternals::ariaControlsElements(const jsbind::TypedArray<Element>& value) {
     emlite::Val::set("ariaControlsElements", value);
 }
 
-jsbind::DOMString ElementInternals::ariaCurrent() const {
-    return emlite::Val::get("ariaCurrent").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaCurrent() const {
+    return emlite::Val::get("ariaCurrent").as<jsbind::String>();
 }
 
-void ElementInternals::ariaCurrent(const jsbind::DOMString& value) {
+void ElementInternals::ariaCurrent(const jsbind::String& value) {
     emlite::Val::set("ariaCurrent", value);
 }
 
-jsbind::FrozenArray<Element> ElementInternals::ariaDescribedByElements() const {
-    return emlite::Val::get("ariaDescribedByElements").as<jsbind::FrozenArray<Element>>();
+jsbind::TypedArray<Element> ElementInternals::ariaDescribedByElements() const {
+    return emlite::Val::get("ariaDescribedByElements").as<jsbind::TypedArray<Element>>();
 }
 
-void ElementInternals::ariaDescribedByElements(const jsbind::FrozenArray<Element>& value) {
+void ElementInternals::ariaDescribedByElements(const jsbind::TypedArray<Element>& value) {
     emlite::Val::set("ariaDescribedByElements", value);
 }
 
-jsbind::DOMString ElementInternals::ariaDescription() const {
-    return emlite::Val::get("ariaDescription").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaDescription() const {
+    return emlite::Val::get("ariaDescription").as<jsbind::String>();
 }
 
-void ElementInternals::ariaDescription(const jsbind::DOMString& value) {
+void ElementInternals::ariaDescription(const jsbind::String& value) {
     emlite::Val::set("ariaDescription", value);
 }
 
-jsbind::FrozenArray<Element> ElementInternals::ariaDetailsElements() const {
-    return emlite::Val::get("ariaDetailsElements").as<jsbind::FrozenArray<Element>>();
+jsbind::TypedArray<Element> ElementInternals::ariaDetailsElements() const {
+    return emlite::Val::get("ariaDetailsElements").as<jsbind::TypedArray<Element>>();
 }
 
-void ElementInternals::ariaDetailsElements(const jsbind::FrozenArray<Element>& value) {
+void ElementInternals::ariaDetailsElements(const jsbind::TypedArray<Element>& value) {
     emlite::Val::set("ariaDetailsElements", value);
 }
 
-jsbind::DOMString ElementInternals::ariaDisabled() const {
-    return emlite::Val::get("ariaDisabled").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaDisabled() const {
+    return emlite::Val::get("ariaDisabled").as<jsbind::String>();
 }
 
-void ElementInternals::ariaDisabled(const jsbind::DOMString& value) {
+void ElementInternals::ariaDisabled(const jsbind::String& value) {
     emlite::Val::set("ariaDisabled", value);
 }
 
-jsbind::FrozenArray<Element> ElementInternals::ariaErrorMessageElements() const {
-    return emlite::Val::get("ariaErrorMessageElements").as<jsbind::FrozenArray<Element>>();
+jsbind::TypedArray<Element> ElementInternals::ariaErrorMessageElements() const {
+    return emlite::Val::get("ariaErrorMessageElements").as<jsbind::TypedArray<Element>>();
 }
 
-void ElementInternals::ariaErrorMessageElements(const jsbind::FrozenArray<Element>& value) {
+void ElementInternals::ariaErrorMessageElements(const jsbind::TypedArray<Element>& value) {
     emlite::Val::set("ariaErrorMessageElements", value);
 }
 
-jsbind::DOMString ElementInternals::ariaExpanded() const {
-    return emlite::Val::get("ariaExpanded").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaExpanded() const {
+    return emlite::Val::get("ariaExpanded").as<jsbind::String>();
 }
 
-void ElementInternals::ariaExpanded(const jsbind::DOMString& value) {
+void ElementInternals::ariaExpanded(const jsbind::String& value) {
     emlite::Val::set("ariaExpanded", value);
 }
 
-jsbind::FrozenArray<Element> ElementInternals::ariaFlowToElements() const {
-    return emlite::Val::get("ariaFlowToElements").as<jsbind::FrozenArray<Element>>();
+jsbind::TypedArray<Element> ElementInternals::ariaFlowToElements() const {
+    return emlite::Val::get("ariaFlowToElements").as<jsbind::TypedArray<Element>>();
 }
 
-void ElementInternals::ariaFlowToElements(const jsbind::FrozenArray<Element>& value) {
+void ElementInternals::ariaFlowToElements(const jsbind::TypedArray<Element>& value) {
     emlite::Val::set("ariaFlowToElements", value);
 }
 
-jsbind::DOMString ElementInternals::ariaHasPopup() const {
-    return emlite::Val::get("ariaHasPopup").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaHasPopup() const {
+    return emlite::Val::get("ariaHasPopup").as<jsbind::String>();
 }
 
-void ElementInternals::ariaHasPopup(const jsbind::DOMString& value) {
+void ElementInternals::ariaHasPopup(const jsbind::String& value) {
     emlite::Val::set("ariaHasPopup", value);
 }
 
-jsbind::DOMString ElementInternals::ariaHidden() const {
-    return emlite::Val::get("ariaHidden").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaHidden() const {
+    return emlite::Val::get("ariaHidden").as<jsbind::String>();
 }
 
-void ElementInternals::ariaHidden(const jsbind::DOMString& value) {
+void ElementInternals::ariaHidden(const jsbind::String& value) {
     emlite::Val::set("ariaHidden", value);
 }
 
-jsbind::DOMString ElementInternals::ariaInvalid() const {
-    return emlite::Val::get("ariaInvalid").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaInvalid() const {
+    return emlite::Val::get("ariaInvalid").as<jsbind::String>();
 }
 
-void ElementInternals::ariaInvalid(const jsbind::DOMString& value) {
+void ElementInternals::ariaInvalid(const jsbind::String& value) {
     emlite::Val::set("ariaInvalid", value);
 }
 
-jsbind::DOMString ElementInternals::ariaKeyShortcuts() const {
-    return emlite::Val::get("ariaKeyShortcuts").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaKeyShortcuts() const {
+    return emlite::Val::get("ariaKeyShortcuts").as<jsbind::String>();
 }
 
-void ElementInternals::ariaKeyShortcuts(const jsbind::DOMString& value) {
+void ElementInternals::ariaKeyShortcuts(const jsbind::String& value) {
     emlite::Val::set("ariaKeyShortcuts", value);
 }
 
-jsbind::DOMString ElementInternals::ariaLabel() const {
-    return emlite::Val::get("ariaLabel").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaLabel() const {
+    return emlite::Val::get("ariaLabel").as<jsbind::String>();
 }
 
-void ElementInternals::ariaLabel(const jsbind::DOMString& value) {
+void ElementInternals::ariaLabel(const jsbind::String& value) {
     emlite::Val::set("ariaLabel", value);
 }
 
-jsbind::FrozenArray<Element> ElementInternals::ariaLabelledByElements() const {
-    return emlite::Val::get("ariaLabelledByElements").as<jsbind::FrozenArray<Element>>();
+jsbind::TypedArray<Element> ElementInternals::ariaLabelledByElements() const {
+    return emlite::Val::get("ariaLabelledByElements").as<jsbind::TypedArray<Element>>();
 }
 
-void ElementInternals::ariaLabelledByElements(const jsbind::FrozenArray<Element>& value) {
+void ElementInternals::ariaLabelledByElements(const jsbind::TypedArray<Element>& value) {
     emlite::Val::set("ariaLabelledByElements", value);
 }
 
-jsbind::DOMString ElementInternals::ariaLevel() const {
-    return emlite::Val::get("ariaLevel").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaLevel() const {
+    return emlite::Val::get("ariaLevel").as<jsbind::String>();
 }
 
-void ElementInternals::ariaLevel(const jsbind::DOMString& value) {
+void ElementInternals::ariaLevel(const jsbind::String& value) {
     emlite::Val::set("ariaLevel", value);
 }
 
-jsbind::DOMString ElementInternals::ariaLive() const {
-    return emlite::Val::get("ariaLive").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaLive() const {
+    return emlite::Val::get("ariaLive").as<jsbind::String>();
 }
 
-void ElementInternals::ariaLive(const jsbind::DOMString& value) {
+void ElementInternals::ariaLive(const jsbind::String& value) {
     emlite::Val::set("ariaLive", value);
 }
 
-jsbind::DOMString ElementInternals::ariaModal() const {
-    return emlite::Val::get("ariaModal").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaModal() const {
+    return emlite::Val::get("ariaModal").as<jsbind::String>();
 }
 
-void ElementInternals::ariaModal(const jsbind::DOMString& value) {
+void ElementInternals::ariaModal(const jsbind::String& value) {
     emlite::Val::set("ariaModal", value);
 }
 
-jsbind::DOMString ElementInternals::ariaMultiLine() const {
-    return emlite::Val::get("ariaMultiLine").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaMultiLine() const {
+    return emlite::Val::get("ariaMultiLine").as<jsbind::String>();
 }
 
-void ElementInternals::ariaMultiLine(const jsbind::DOMString& value) {
+void ElementInternals::ariaMultiLine(const jsbind::String& value) {
     emlite::Val::set("ariaMultiLine", value);
 }
 
-jsbind::DOMString ElementInternals::ariaMultiSelectable() const {
-    return emlite::Val::get("ariaMultiSelectable").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaMultiSelectable() const {
+    return emlite::Val::get("ariaMultiSelectable").as<jsbind::String>();
 }
 
-void ElementInternals::ariaMultiSelectable(const jsbind::DOMString& value) {
+void ElementInternals::ariaMultiSelectable(const jsbind::String& value) {
     emlite::Val::set("ariaMultiSelectable", value);
 }
 
-jsbind::DOMString ElementInternals::ariaOrientation() const {
-    return emlite::Val::get("ariaOrientation").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaOrientation() const {
+    return emlite::Val::get("ariaOrientation").as<jsbind::String>();
 }
 
-void ElementInternals::ariaOrientation(const jsbind::DOMString& value) {
+void ElementInternals::ariaOrientation(const jsbind::String& value) {
     emlite::Val::set("ariaOrientation", value);
 }
 
-jsbind::FrozenArray<Element> ElementInternals::ariaOwnsElements() const {
-    return emlite::Val::get("ariaOwnsElements").as<jsbind::FrozenArray<Element>>();
+jsbind::TypedArray<Element> ElementInternals::ariaOwnsElements() const {
+    return emlite::Val::get("ariaOwnsElements").as<jsbind::TypedArray<Element>>();
 }
 
-void ElementInternals::ariaOwnsElements(const jsbind::FrozenArray<Element>& value) {
+void ElementInternals::ariaOwnsElements(const jsbind::TypedArray<Element>& value) {
     emlite::Val::set("ariaOwnsElements", value);
 }
 
-jsbind::DOMString ElementInternals::ariaPlaceholder() const {
-    return emlite::Val::get("ariaPlaceholder").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaPlaceholder() const {
+    return emlite::Val::get("ariaPlaceholder").as<jsbind::String>();
 }
 
-void ElementInternals::ariaPlaceholder(const jsbind::DOMString& value) {
+void ElementInternals::ariaPlaceholder(const jsbind::String& value) {
     emlite::Val::set("ariaPlaceholder", value);
 }
 
-jsbind::DOMString ElementInternals::ariaPosInSet() const {
-    return emlite::Val::get("ariaPosInSet").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaPosInSet() const {
+    return emlite::Val::get("ariaPosInSet").as<jsbind::String>();
 }
 
-void ElementInternals::ariaPosInSet(const jsbind::DOMString& value) {
+void ElementInternals::ariaPosInSet(const jsbind::String& value) {
     emlite::Val::set("ariaPosInSet", value);
 }
 
-jsbind::DOMString ElementInternals::ariaPressed() const {
-    return emlite::Val::get("ariaPressed").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaPressed() const {
+    return emlite::Val::get("ariaPressed").as<jsbind::String>();
 }
 
-void ElementInternals::ariaPressed(const jsbind::DOMString& value) {
+void ElementInternals::ariaPressed(const jsbind::String& value) {
     emlite::Val::set("ariaPressed", value);
 }
 
-jsbind::DOMString ElementInternals::ariaReadOnly() const {
-    return emlite::Val::get("ariaReadOnly").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaReadOnly() const {
+    return emlite::Val::get("ariaReadOnly").as<jsbind::String>();
 }
 
-void ElementInternals::ariaReadOnly(const jsbind::DOMString& value) {
+void ElementInternals::ariaReadOnly(const jsbind::String& value) {
     emlite::Val::set("ariaReadOnly", value);
 }
 
-jsbind::DOMString ElementInternals::ariaRelevant() const {
-    return emlite::Val::get("ariaRelevant").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaRelevant() const {
+    return emlite::Val::get("ariaRelevant").as<jsbind::String>();
 }
 
-void ElementInternals::ariaRelevant(const jsbind::DOMString& value) {
+void ElementInternals::ariaRelevant(const jsbind::String& value) {
     emlite::Val::set("ariaRelevant", value);
 }
 
-jsbind::DOMString ElementInternals::ariaRequired() const {
-    return emlite::Val::get("ariaRequired").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaRequired() const {
+    return emlite::Val::get("ariaRequired").as<jsbind::String>();
 }
 
-void ElementInternals::ariaRequired(const jsbind::DOMString& value) {
+void ElementInternals::ariaRequired(const jsbind::String& value) {
     emlite::Val::set("ariaRequired", value);
 }
 
-jsbind::DOMString ElementInternals::ariaRoleDescription() const {
-    return emlite::Val::get("ariaRoleDescription").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaRoleDescription() const {
+    return emlite::Val::get("ariaRoleDescription").as<jsbind::String>();
 }
 
-void ElementInternals::ariaRoleDescription(const jsbind::DOMString& value) {
+void ElementInternals::ariaRoleDescription(const jsbind::String& value) {
     emlite::Val::set("ariaRoleDescription", value);
 }
 
-jsbind::DOMString ElementInternals::ariaRowCount() const {
-    return emlite::Val::get("ariaRowCount").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaRowCount() const {
+    return emlite::Val::get("ariaRowCount").as<jsbind::String>();
 }
 
-void ElementInternals::ariaRowCount(const jsbind::DOMString& value) {
+void ElementInternals::ariaRowCount(const jsbind::String& value) {
     emlite::Val::set("ariaRowCount", value);
 }
 
-jsbind::DOMString ElementInternals::ariaRowIndex() const {
-    return emlite::Val::get("ariaRowIndex").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaRowIndex() const {
+    return emlite::Val::get("ariaRowIndex").as<jsbind::String>();
 }
 
-void ElementInternals::ariaRowIndex(const jsbind::DOMString& value) {
+void ElementInternals::ariaRowIndex(const jsbind::String& value) {
     emlite::Val::set("ariaRowIndex", value);
 }
 
-jsbind::DOMString ElementInternals::ariaRowIndexText() const {
-    return emlite::Val::get("ariaRowIndexText").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaRowIndexText() const {
+    return emlite::Val::get("ariaRowIndexText").as<jsbind::String>();
 }
 
-void ElementInternals::ariaRowIndexText(const jsbind::DOMString& value) {
+void ElementInternals::ariaRowIndexText(const jsbind::String& value) {
     emlite::Val::set("ariaRowIndexText", value);
 }
 
-jsbind::DOMString ElementInternals::ariaRowSpan() const {
-    return emlite::Val::get("ariaRowSpan").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaRowSpan() const {
+    return emlite::Val::get("ariaRowSpan").as<jsbind::String>();
 }
 
-void ElementInternals::ariaRowSpan(const jsbind::DOMString& value) {
+void ElementInternals::ariaRowSpan(const jsbind::String& value) {
     emlite::Val::set("ariaRowSpan", value);
 }
 
-jsbind::DOMString ElementInternals::ariaSelected() const {
-    return emlite::Val::get("ariaSelected").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaSelected() const {
+    return emlite::Val::get("ariaSelected").as<jsbind::String>();
 }
 
-void ElementInternals::ariaSelected(const jsbind::DOMString& value) {
+void ElementInternals::ariaSelected(const jsbind::String& value) {
     emlite::Val::set("ariaSelected", value);
 }
 
-jsbind::DOMString ElementInternals::ariaSetSize() const {
-    return emlite::Val::get("ariaSetSize").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaSetSize() const {
+    return emlite::Val::get("ariaSetSize").as<jsbind::String>();
 }
 
-void ElementInternals::ariaSetSize(const jsbind::DOMString& value) {
+void ElementInternals::ariaSetSize(const jsbind::String& value) {
     emlite::Val::set("ariaSetSize", value);
 }
 
-jsbind::DOMString ElementInternals::ariaSort() const {
-    return emlite::Val::get("ariaSort").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaSort() const {
+    return emlite::Val::get("ariaSort").as<jsbind::String>();
 }
 
-void ElementInternals::ariaSort(const jsbind::DOMString& value) {
+void ElementInternals::ariaSort(const jsbind::String& value) {
     emlite::Val::set("ariaSort", value);
 }
 
-jsbind::DOMString ElementInternals::ariaValueMax() const {
-    return emlite::Val::get("ariaValueMax").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaValueMax() const {
+    return emlite::Val::get("ariaValueMax").as<jsbind::String>();
 }
 
-void ElementInternals::ariaValueMax(const jsbind::DOMString& value) {
+void ElementInternals::ariaValueMax(const jsbind::String& value) {
     emlite::Val::set("ariaValueMax", value);
 }
 
-jsbind::DOMString ElementInternals::ariaValueMin() const {
-    return emlite::Val::get("ariaValueMin").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaValueMin() const {
+    return emlite::Val::get("ariaValueMin").as<jsbind::String>();
 }
 
-void ElementInternals::ariaValueMin(const jsbind::DOMString& value) {
+void ElementInternals::ariaValueMin(const jsbind::String& value) {
     emlite::Val::set("ariaValueMin", value);
 }
 
-jsbind::DOMString ElementInternals::ariaValueNow() const {
-    return emlite::Val::get("ariaValueNow").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaValueNow() const {
+    return emlite::Val::get("ariaValueNow").as<jsbind::String>();
 }
 
-void ElementInternals::ariaValueNow(const jsbind::DOMString& value) {
+void ElementInternals::ariaValueNow(const jsbind::String& value) {
     emlite::Val::set("ariaValueNow", value);
 }
 
-jsbind::DOMString ElementInternals::ariaValueText() const {
-    return emlite::Val::get("ariaValueText").as<jsbind::DOMString>();
+jsbind::String ElementInternals::ariaValueText() const {
+    return emlite::Val::get("ariaValueText").as<jsbind::String>();
 }
 
-void ElementInternals::ariaValueText(const jsbind::DOMString& value) {
+void ElementInternals::ariaValueText(const jsbind::String& value) {
     emlite::Val::set("ariaValueText", value);
 }
 

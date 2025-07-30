@@ -16,7 +16,7 @@ public:
     static SensorErrorEvent take_ownership(Handle h) noexcept;
 
     SensorErrorEvent clone() const noexcept;
-    SensorErrorEvent(const jsbind::DOMString& type, const jsbind::Any& errorEventInitDict);
+    SensorErrorEvent(const jsbind::String& type, const jsbind::Any& errorEventInitDict);
     DOMException error() const;
 };
 

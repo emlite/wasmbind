@@ -13,8 +13,8 @@ public:
     static Credential take_ownership(Handle h) noexcept;
 
     Credential clone() const noexcept;
-    jsbind::USVString id() const;
-    jsbind::DOMString type() const;
+    jsbind::String id() const;
+    jsbind::String type() const;
     static jsbind::Promise<bool> isConditionalMediationAvailable();
     static jsbind::Promise<jsbind::Undefined> willRequestConditionalCreation();
 };

@@ -10,27 +10,27 @@ SVGStyleElement::SVGStyleElement(Handle h) noexcept : SVGElement(emlite::Val::ta
 SVGStyleElement::SVGStyleElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 
-jsbind::DOMString SVGStyleElement::type() const {
-    return SVGElement::get("type").as<jsbind::DOMString>();
+jsbind::String SVGStyleElement::type() const {
+    return SVGElement::get("type").as<jsbind::String>();
 }
 
-void SVGStyleElement::type(const jsbind::DOMString& value) {
+void SVGStyleElement::type(const jsbind::String& value) {
     SVGElement::set("type", value);
 }
 
-jsbind::DOMString SVGStyleElement::media() const {
-    return SVGElement::get("media").as<jsbind::DOMString>();
+jsbind::String SVGStyleElement::media() const {
+    return SVGElement::get("media").as<jsbind::String>();
 }
 
-void SVGStyleElement::media(const jsbind::DOMString& value) {
+void SVGStyleElement::media(const jsbind::String& value) {
     SVGElement::set("media", value);
 }
 
-jsbind::DOMString SVGStyleElement::title() const {
-    return SVGElement::get("title").as<jsbind::DOMString>();
+jsbind::String SVGStyleElement::title() const {
+    return SVGElement::get("title").as<jsbind::String>();
 }
 
-void SVGStyleElement::title(const jsbind::DOMString& value) {
+void SVGStyleElement::title(const jsbind::String& value) {
     SVGElement::set("title", value);
 }
 

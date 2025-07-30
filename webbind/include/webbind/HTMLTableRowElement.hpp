@@ -24,15 +24,15 @@ public:
     HTMLTableCellElement insertCell();
     HTMLTableCellElement insertCell(long index);
     jsbind::Undefined deleteCell(long index);
-    jsbind::DOMString align() const;
-    void align(const jsbind::DOMString& value);
-    jsbind::DOMString ch() const;
-    void ch(const jsbind::DOMString& value);
-    jsbind::DOMString chOff() const;
-    void chOff(const jsbind::DOMString& value);
-    jsbind::DOMString vAlign() const;
-    void vAlign(const jsbind::DOMString& value);
-    jsbind::DOMString bgColor() const;
-    void bgColor(const jsbind::DOMString& value);
+    jsbind::String align() const;
+    void align(const jsbind::String& value);
+    jsbind::String ch() const;
+    void ch(const jsbind::String& value);
+    jsbind::String chOff() const;
+    void chOff(const jsbind::String& value);
+    jsbind::String vAlign() const;
+    void vAlign(const jsbind::String& value);
+    jsbind::String bgColor() const;
+    void bgColor(const jsbind::String& value);
 };
 

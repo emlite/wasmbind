@@ -14,8 +14,8 @@ public:
     static AnimationPlaybackEvent take_ownership(Handle h) noexcept;
 
     AnimationPlaybackEvent clone() const noexcept;
-    AnimationPlaybackEvent(const jsbind::DOMString& type);
-    AnimationPlaybackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    AnimationPlaybackEvent(const jsbind::String& type);
+    AnimationPlaybackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     jsbind::Any currentTime() const;
     jsbind::Any timelineTime() const;
 };

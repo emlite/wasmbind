@@ -104,6 +104,6 @@ public:
     DOMMatrix skewYSelf();
     DOMMatrix skewYSelf(double sy);
     DOMMatrix invertSelf();
-    DOMMatrix setMatrixValue(const jsbind::DOMString& transformList);
+    DOMMatrix setMatrixValue(const jsbind::String& transformList);
 };
 

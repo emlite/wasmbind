@@ -9,9 +9,9 @@ CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(Handle h) noexcept : Even
 CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("CharacterBoundsUpdateEvent").new_(type)) {}
+CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const jsbind::String& type) : Event(emlite::Val::global("CharacterBoundsUpdateEvent").new_(type)) {}
 
-CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& options) : Event(emlite::Val::global("CharacterBoundsUpdateEvent").new_(type, options)) {}
+CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const jsbind::String& type, const jsbind::Any& options) : Event(emlite::Val::global("CharacterBoundsUpdateEvent").new_(type, options)) {}
 
 unsigned long CharacterBoundsUpdateEvent::rangeStart() const {
     return Event::get("rangeStart").as<unsigned long>();

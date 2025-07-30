@@ -14,10 +14,10 @@ public:
     explicit RTCDtlsFingerprint(const emlite::Val &val) noexcept;
     RTCDtlsFingerprint() noexcept;
     RTCDtlsFingerprint clone() const noexcept;
-    jsbind::DOMString algorithm() const;
-    void algorithm(const jsbind::DOMString& value);
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
+    jsbind::String algorithm() const;
+    void algorithm(const jsbind::String& value);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
 };
 
 class RTCCertificate : public emlite::Val {
@@ -29,6 +29,6 @@ public:
 
     RTCCertificate clone() const noexcept;
     jsbind::Any expires() const;
-    jsbind::Sequence<RTCDtlsFingerprint> getFingerprints();
+    jsbind::TypedArray<RTCDtlsFingerprint> getFingerprints();
 };
 

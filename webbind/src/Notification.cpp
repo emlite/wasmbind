@@ -10,27 +10,27 @@ NotificationAction::NotificationAction(const emlite::Val &val) noexcept: emlite:
 NotificationAction::NotificationAction() noexcept: emlite::Val(emlite::Val::object()) {}
 NotificationAction NotificationAction::clone() const noexcept { return *this; }
 
-jsbind::DOMString NotificationAction::action() const {
-    return emlite::Val::get("action").as<jsbind::DOMString>();
+jsbind::String NotificationAction::action() const {
+    return emlite::Val::get("action").as<jsbind::String>();
 }
 
-void NotificationAction::action(const jsbind::DOMString& value) {
+void NotificationAction::action(const jsbind::String& value) {
     emlite::Val::set("action", value);
 }
 
-jsbind::DOMString NotificationAction::title() const {
-    return emlite::Val::get("title").as<jsbind::DOMString>();
+jsbind::String NotificationAction::title() const {
+    return emlite::Val::get("title").as<jsbind::String>();
 }
 
-void NotificationAction::title(const jsbind::DOMString& value) {
+void NotificationAction::title(const jsbind::String& value) {
     emlite::Val::set("title", value);
 }
 
-jsbind::USVString NotificationAction::icon() const {
-    return emlite::Val::get("icon").as<jsbind::USVString>();
+jsbind::String NotificationAction::icon() const {
+    return emlite::Val::get("icon").as<jsbind::String>();
 }
 
-void NotificationAction::icon(const jsbind::USVString& value) {
+void NotificationAction::icon(const jsbind::String& value) {
     emlite::Val::set("icon", value);
 }
 
@@ -42,9 +42,9 @@ Notification::Notification(Handle h) noexcept : EventTarget(emlite::Val::take_ow
 Notification::Notification(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-Notification::Notification(const jsbind::DOMString& title) : EventTarget(emlite::Val::global("Notification").new_(title)) {}
+Notification::Notification(const jsbind::String& title) : EventTarget(emlite::Val::global("Notification").new_(title)) {}
 
-Notification::Notification(const jsbind::DOMString& title, const NotificationOptions& options) : EventTarget(emlite::Val::global("Notification").new_(title, options)) {}
+Notification::Notification(const jsbind::String& title, const NotificationOptions& options) : EventTarget(emlite::Val::global("Notification").new_(title, options)) {}
 
 NotificationPermission Notification::permission() {
     return emlite::Val::global("notification").get("permission").as<NotificationPermission>();
@@ -94,40 +94,40 @@ void Notification::onclose(const jsbind::Any& value) {
     EventTarget::set("onclose", value);
 }
 
-jsbind::DOMString Notification::title() const {
-    return EventTarget::get("title").as<jsbind::DOMString>();
+jsbind::String Notification::title() const {
+    return EventTarget::get("title").as<jsbind::String>();
 }
 
 NotificationDirection Notification::dir() const {
     return EventTarget::get("dir").as<NotificationDirection>();
 }
 
-jsbind::DOMString Notification::lang() const {
-    return EventTarget::get("lang").as<jsbind::DOMString>();
+jsbind::String Notification::lang() const {
+    return EventTarget::get("lang").as<jsbind::String>();
 }
 
-jsbind::DOMString Notification::body() const {
-    return EventTarget::get("body").as<jsbind::DOMString>();
+jsbind::String Notification::body() const {
+    return EventTarget::get("body").as<jsbind::String>();
 }
 
-jsbind::DOMString Notification::tag() const {
-    return EventTarget::get("tag").as<jsbind::DOMString>();
+jsbind::String Notification::tag() const {
+    return EventTarget::get("tag").as<jsbind::String>();
 }
 
-jsbind::USVString Notification::image() const {
-    return EventTarget::get("image").as<jsbind::USVString>();
+jsbind::String Notification::image() const {
+    return EventTarget::get("image").as<jsbind::String>();
 }
 
-jsbind::USVString Notification::icon() const {
-    return EventTarget::get("icon").as<jsbind::USVString>();
+jsbind::String Notification::icon() const {
+    return EventTarget::get("icon").as<jsbind::String>();
 }
 
-jsbind::USVString Notification::badge() const {
-    return EventTarget::get("badge").as<jsbind::USVString>();
+jsbind::String Notification::badge() const {
+    return EventTarget::get("badge").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<unsigned long> Notification::vibrate() const {
-    return EventTarget::get("vibrate").as<jsbind::FrozenArray<unsigned long>>();
+jsbind::TypedArray<unsigned long> Notification::vibrate() const {
+    return EventTarget::get("vibrate").as<jsbind::TypedArray<unsigned long>>();
 }
 
 jsbind::Any Notification::timestamp() const {
@@ -150,8 +150,8 @@ jsbind::Any Notification::data() const {
     return EventTarget::get("data").as<jsbind::Any>();
 }
 
-jsbind::FrozenArray<NotificationAction> Notification::actions() const {
-    return EventTarget::get("actions").as<jsbind::FrozenArray<NotificationAction>>();
+jsbind::TypedArray<NotificationAction> Notification::actions() const {
+    return EventTarget::get("actions").as<jsbind::TypedArray<NotificationAction>>();
 }
 
 jsbind::Undefined Notification::close() {

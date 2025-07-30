@@ -10,27 +10,27 @@ Attr::Attr(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Attr::Attr(const emlite::Val &val) noexcept: Node(val) {}
 
 
-jsbind::DOMString Attr::namespaceURI() const {
-    return Node::get("namespaceURI").as<jsbind::DOMString>();
+jsbind::String Attr::namespaceURI() const {
+    return Node::get("namespaceURI").as<jsbind::String>();
 }
 
-jsbind::DOMString Attr::prefix() const {
-    return Node::get("prefix").as<jsbind::DOMString>();
+jsbind::String Attr::prefix() const {
+    return Node::get("prefix").as<jsbind::String>();
 }
 
-jsbind::DOMString Attr::localName() const {
-    return Node::get("localName").as<jsbind::DOMString>();
+jsbind::String Attr::localName() const {
+    return Node::get("localName").as<jsbind::String>();
 }
 
-jsbind::DOMString Attr::name() const {
-    return Node::get("name").as<jsbind::DOMString>();
+jsbind::String Attr::name() const {
+    return Node::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString Attr::value() const {
-    return Node::get("value").as<jsbind::DOMString>();
+jsbind::String Attr::value() const {
+    return Node::get("value").as<jsbind::String>();
 }
 
-void Attr::value(const jsbind::DOMString& value) {
+void Attr::value(const jsbind::String& value) {
     Node::set("value", value);
 }
 

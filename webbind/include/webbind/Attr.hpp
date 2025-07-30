@@ -16,12 +16,12 @@ public:
     static Attr take_ownership(Handle h) noexcept;
 
     Attr clone() const noexcept;
-    jsbind::DOMString namespaceURI() const;
-    jsbind::DOMString prefix() const;
-    jsbind::DOMString localName() const;
-    jsbind::DOMString name() const;
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
+    jsbind::String namespaceURI() const;
+    jsbind::String prefix() const;
+    jsbind::String localName() const;
+    jsbind::String name() const;
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
     Element ownerElement() const;
     bool specified() const;
 };

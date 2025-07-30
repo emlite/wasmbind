@@ -21,14 +21,14 @@ public:
     void usage(unsigned short value);
     unsigned char type() const;
     void type(unsigned char value);
-    jsbind::Sequence<HIDCollectionInfo> children() const;
-    void children(const jsbind::Sequence<HIDCollectionInfo>& value);
-    jsbind::Sequence<jsbind::Any> inputReports() const;
-    void inputReports(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::Sequence<jsbind::Any> outputReports() const;
-    void outputReports(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::Sequence<jsbind::Any> featureReports() const;
-    void featureReports(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<HIDCollectionInfo> children() const;
+    void children(const jsbind::TypedArray<HIDCollectionInfo>& value);
+    jsbind::TypedArray<jsbind::Any> inputReports() const;
+    void inputReports(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> outputReports() const;
+    void outputReports(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> featureReports() const;
+    void featureReports(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class HIDDevice : public EventTarget {
@@ -44,8 +44,8 @@ public:
     bool opened() const;
     unsigned short vendorId() const;
     unsigned short productId() const;
-    jsbind::DOMString productName() const;
-    jsbind::FrozenArray<HIDCollectionInfo> collections() const;
+    jsbind::String productName() const;
+    jsbind::TypedArray<HIDCollectionInfo> collections() const;
     jsbind::Promise<jsbind::Undefined> open();
     jsbind::Promise<jsbind::Undefined> close();
     jsbind::Promise<jsbind::Undefined> forget();

@@ -16,6 +16,6 @@ public:
     static XRBoundedReferenceSpace take_ownership(Handle h) noexcept;
 
     XRBoundedReferenceSpace clone() const noexcept;
-    jsbind::FrozenArray<DOMPointReadOnly> boundsGeometry() const;
+    jsbind::TypedArray<DOMPointReadOnly> boundsGeometry() const;
 };
 

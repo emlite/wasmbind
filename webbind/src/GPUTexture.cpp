@@ -126,11 +126,11 @@ jsbind::Any GPUTexture::usage() const {
     return emlite::Val::get("usage").as<jsbind::Any>();
 }
 
-jsbind::USVString GPUTexture::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUTexture::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUTexture::label(const jsbind::USVString& value) {
+void GPUTexture::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

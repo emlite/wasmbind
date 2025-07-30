@@ -9,11 +9,11 @@ StructuredSerializeOptions::StructuredSerializeOptions(const emlite::Val &val) n
 StructuredSerializeOptions::StructuredSerializeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 StructuredSerializeOptions StructuredSerializeOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Object> StructuredSerializeOptions::transfer() const {
-    return emlite::Val::get("transfer").as<jsbind::Sequence<jsbind::Object>>();
+jsbind::TypedArray<jsbind::Object> StructuredSerializeOptions::transfer() const {
+    return emlite::Val::get("transfer").as<jsbind::TypedArray<jsbind::Object>>();
 }
 
-void StructuredSerializeOptions::transfer(const jsbind::Sequence<jsbind::Object>& value) {
+void StructuredSerializeOptions::transfer(const jsbind::TypedArray<jsbind::Object>& value) {
     emlite::Val::set("transfer", value);
 }
 

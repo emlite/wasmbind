@@ -13,59 +13,59 @@ HTMLFormElement::HTMLFormElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLFormElement::HTMLFormElement() : HTMLElement(emlite::Val::global("HTMLFormElement").new_()) {}
 
-jsbind::DOMString HTMLFormElement::acceptCharset() const {
-    return HTMLElement::get("acceptCharset").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::acceptCharset() const {
+    return HTMLElement::get("acceptCharset").as<jsbind::String>();
 }
 
-void HTMLFormElement::acceptCharset(const jsbind::DOMString& value) {
+void HTMLFormElement::acceptCharset(const jsbind::String& value) {
     HTMLElement::set("acceptCharset", value);
 }
 
-jsbind::USVString HTMLFormElement::action() const {
-    return HTMLElement::get("action").as<jsbind::USVString>();
+jsbind::String HTMLFormElement::action() const {
+    return HTMLElement::get("action").as<jsbind::String>();
 }
 
-void HTMLFormElement::action(const jsbind::USVString& value) {
+void HTMLFormElement::action(const jsbind::String& value) {
     HTMLElement::set("action", value);
 }
 
-jsbind::DOMString HTMLFormElement::autocomplete() const {
-    return HTMLElement::get("autocomplete").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::autocomplete() const {
+    return HTMLElement::get("autocomplete").as<jsbind::String>();
 }
 
-void HTMLFormElement::autocomplete(const jsbind::DOMString& value) {
+void HTMLFormElement::autocomplete(const jsbind::String& value) {
     HTMLElement::set("autocomplete", value);
 }
 
-jsbind::DOMString HTMLFormElement::enctype() const {
-    return HTMLElement::get("enctype").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::enctype() const {
+    return HTMLElement::get("enctype").as<jsbind::String>();
 }
 
-void HTMLFormElement::enctype(const jsbind::DOMString& value) {
+void HTMLFormElement::enctype(const jsbind::String& value) {
     HTMLElement::set("enctype", value);
 }
 
-jsbind::DOMString HTMLFormElement::encoding() const {
-    return HTMLElement::get("encoding").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::encoding() const {
+    return HTMLElement::get("encoding").as<jsbind::String>();
 }
 
-void HTMLFormElement::encoding(const jsbind::DOMString& value) {
+void HTMLFormElement::encoding(const jsbind::String& value) {
     HTMLElement::set("encoding", value);
 }
 
-jsbind::DOMString HTMLFormElement::method() const {
-    return HTMLElement::get("method").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::method() const {
+    return HTMLElement::get("method").as<jsbind::String>();
 }
 
-void HTMLFormElement::method(const jsbind::DOMString& value) {
+void HTMLFormElement::method(const jsbind::String& value) {
     HTMLElement::set("method", value);
 }
 
-jsbind::DOMString HTMLFormElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLFormElement::name(const jsbind::DOMString& value) {
+void HTMLFormElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
@@ -77,19 +77,19 @@ void HTMLFormElement::noValidate(bool value) {
     HTMLElement::set("noValidate", value);
 }
 
-jsbind::DOMString HTMLFormElement::target() const {
-    return HTMLElement::get("target").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::target() const {
+    return HTMLElement::get("target").as<jsbind::String>();
 }
 
-void HTMLFormElement::target(const jsbind::DOMString& value) {
+void HTMLFormElement::target(const jsbind::String& value) {
     HTMLElement::set("target", value);
 }
 
-jsbind::DOMString HTMLFormElement::rel() const {
-    return HTMLElement::get("rel").as<jsbind::DOMString>();
+jsbind::String HTMLFormElement::rel() const {
+    return HTMLElement::get("rel").as<jsbind::String>();
 }
 
-void HTMLFormElement::rel(const jsbind::DOMString& value) {
+void HTMLFormElement::rel(const jsbind::String& value) {
     HTMLElement::set("rel", value);
 }
 

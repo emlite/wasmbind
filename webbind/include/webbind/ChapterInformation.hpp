@@ -14,12 +14,12 @@ public:
     explicit MediaImage(const emlite::Val &val) noexcept;
     MediaImage() noexcept;
     MediaImage clone() const noexcept;
-    jsbind::USVString src() const;
-    void src(const jsbind::USVString& value);
-    jsbind::DOMString sizes() const;
-    void sizes(const jsbind::DOMString& value);
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
+    jsbind::String src() const;
+    void src(const jsbind::String& value);
+    jsbind::String sizes() const;
+    void sizes(const jsbind::String& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
 };
 
 class ChapterInformation : public emlite::Val {
@@ -30,8 +30,8 @@ public:
     static ChapterInformation take_ownership(Handle h) noexcept;
 
     ChapterInformation clone() const noexcept;
-    jsbind::DOMString title() const;
+    jsbind::String title() const;
     double startTime() const;
-    jsbind::FrozenArray<MediaImage> artwork() const;
+    jsbind::TypedArray<MediaImage> artwork() const;
 };
 

@@ -12,15 +12,15 @@ DOMImplementation::DOMImplementation(Handle h) noexcept : emlite::Val(emlite::Va
 DOMImplementation::DOMImplementation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-DocumentType DOMImplementation::createDocumentType(const jsbind::DOMString& name, const jsbind::DOMString& publicId, const jsbind::DOMString& systemId) {
+DocumentType DOMImplementation::createDocumentType(const jsbind::String& name, const jsbind::String& publicId, const jsbind::String& systemId) {
     return emlite::Val::call("createDocumentType", name, publicId, systemId).as<DocumentType>();
 }
 
-XMLDocument DOMImplementation::createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName) {
+XMLDocument DOMImplementation::createDocument(const jsbind::String& namespace_, const jsbind::String& qualifiedName) {
     return emlite::Val::call("createDocument", namespace_, qualifiedName).as<XMLDocument>();
 }
 
-XMLDocument DOMImplementation::createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName, const DocumentType& doctype) {
+XMLDocument DOMImplementation::createDocument(const jsbind::String& namespace_, const jsbind::String& qualifiedName, const DocumentType& doctype) {
     return emlite::Val::call("createDocument", namespace_, qualifiedName, doctype).as<XMLDocument>();
 }
 
@@ -28,7 +28,7 @@ Document DOMImplementation::createHTMLDocument() {
     return emlite::Val::call("createHTMLDocument").as<Document>();
 }
 
-Document DOMImplementation::createHTMLDocument(const jsbind::DOMString& title) {
+Document DOMImplementation::createHTMLDocument(const jsbind::String& title) {
     return emlite::Val::call("createHTMLDocument", title).as<Document>();
 }
 

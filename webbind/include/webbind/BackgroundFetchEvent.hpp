@@ -16,7 +16,7 @@ public:
     static BackgroundFetchEvent take_ownership(Handle h) noexcept;
 
     BackgroundFetchEvent clone() const noexcept;
-    BackgroundFetchEvent(const jsbind::DOMString& type, const jsbind::Any& init);
+    BackgroundFetchEvent(const jsbind::String& type, const jsbind::Any& init);
     BackgroundFetchRegistration registration() const;
 };
 

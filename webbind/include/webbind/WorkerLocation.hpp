@@ -13,14 +13,14 @@ public:
     static WorkerLocation take_ownership(Handle h) noexcept;
 
     WorkerLocation clone() const noexcept;
-    jsbind::USVString href() const;
-    jsbind::USVString origin() const;
-    jsbind::USVString protocol() const;
-    jsbind::USVString host() const;
-    jsbind::USVString hostname() const;
-    jsbind::USVString port() const;
-    jsbind::USVString pathname() const;
-    jsbind::USVString search() const;
-    jsbind::USVString hash() const;
+    jsbind::String href() const;
+    jsbind::String origin() const;
+    jsbind::String protocol() const;
+    jsbind::String host() const;
+    jsbind::String hostname() const;
+    jsbind::String port() const;
+    jsbind::String pathname() const;
+    jsbind::String search() const;
+    jsbind::String hash() const;
 };
 

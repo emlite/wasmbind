@@ -16,11 +16,11 @@ HTMLFormElement HTMLLegendElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();
 }
 
-jsbind::DOMString HTMLLegendElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLLegendElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLLegendElement::align(const jsbind::DOMString& value) {
+void HTMLLegendElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 

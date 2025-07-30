@@ -16,14 +16,14 @@ public:
     static MutationRecord take_ownership(Handle h) noexcept;
 
     MutationRecord clone() const noexcept;
-    jsbind::DOMString type() const;
+    jsbind::String type() const;
     Node target() const;
     NodeList addedNodes() const;
     NodeList removedNodes() const;
     Node previousSibling() const;
     Node nextSibling() const;
-    jsbind::DOMString attributeName() const;
-    jsbind::DOMString attributeNamespace() const;
-    jsbind::DOMString oldValue() const;
+    jsbind::String attributeName() const;
+    jsbind::String attributeNamespace() const;
+    jsbind::String oldValue() const;
 };
 

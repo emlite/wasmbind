@@ -18,9 +18,9 @@ public:
     BluetoothLEScanFilter clone() const noexcept;
     BluetoothLEScanFilter();
     BluetoothLEScanFilter(const jsbind::Any& init);
-    jsbind::DOMString name() const;
-    jsbind::DOMString namePrefix() const;
-    jsbind::FrozenArray<jsbind::Any> services() const;
+    jsbind::String name() const;
+    jsbind::String namePrefix() const;
+    jsbind::TypedArray<jsbind::Any> services() const;
     BluetoothManufacturerDataFilter manufacturerData() const;
     BluetoothServiceDataFilter serviceData() const;
 };

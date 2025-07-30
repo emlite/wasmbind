@@ -19,11 +19,11 @@ void HTMLLIElement::value(long value) {
     HTMLElement::set("value", value);
 }
 
-jsbind::DOMString HTMLLIElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLLIElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLLIElement::type(const jsbind::DOMString& value) {
+void HTMLLIElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 

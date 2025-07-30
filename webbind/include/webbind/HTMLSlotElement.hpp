@@ -30,12 +30,12 @@ public:
 
     HTMLSlotElement clone() const noexcept;
     HTMLSlotElement();
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
-    jsbind::Sequence<Node> assignedNodes();
-    jsbind::Sequence<Node> assignedNodes(const AssignedNodesOptions& options);
-    jsbind::Sequence<Element> assignedElements();
-    jsbind::Sequence<Element> assignedElements(const AssignedNodesOptions& options);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
+    jsbind::TypedArray<Node> assignedNodes();
+    jsbind::TypedArray<Node> assignedNodes(const AssignedNodesOptions& options);
+    jsbind::TypedArray<Element> assignedElements();
+    jsbind::TypedArray<Element> assignedElements(const AssignedNodesOptions& options);
     jsbind::Undefined assign(const jsbind::Any& nodes);
 };
 

@@ -44,7 +44,7 @@ public:
     void onabort(const jsbind::Any& value);
     jsbind::Undefined appendBuffer(const jsbind::Any& data);
     jsbind::Undefined abort();
-    jsbind::Undefined changeType(const jsbind::DOMString& type);
+    jsbind::Undefined changeType(const jsbind::String& type);
     jsbind::Undefined remove(double start, double end);
 };
 

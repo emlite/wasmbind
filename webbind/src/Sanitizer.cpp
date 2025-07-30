@@ -9,43 +9,43 @@ SanitizerConfig::SanitizerConfig(const emlite::Val &val) noexcept: emlite::Val(v
 SanitizerConfig::SanitizerConfig() noexcept: emlite::Val(emlite::Val::object()) {}
 SanitizerConfig SanitizerConfig::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> SanitizerConfig::elements() const {
-    return emlite::Val::get("elements").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> SanitizerConfig::elements() const {
+    return emlite::Val::get("elements").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void SanitizerConfig::elements(const jsbind::Sequence<jsbind::Any>& value) {
+void SanitizerConfig::elements(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("elements", value);
 }
 
-jsbind::Sequence<jsbind::Any> SanitizerConfig::removeElements() const {
-    return emlite::Val::get("removeElements").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> SanitizerConfig::removeElements() const {
+    return emlite::Val::get("removeElements").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void SanitizerConfig::removeElements(const jsbind::Sequence<jsbind::Any>& value) {
+void SanitizerConfig::removeElements(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("removeElements", value);
 }
 
-jsbind::Sequence<jsbind::Any> SanitizerConfig::replaceWithChildrenElements() const {
-    return emlite::Val::get("replaceWithChildrenElements").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> SanitizerConfig::replaceWithChildrenElements() const {
+    return emlite::Val::get("replaceWithChildrenElements").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void SanitizerConfig::replaceWithChildrenElements(const jsbind::Sequence<jsbind::Any>& value) {
+void SanitizerConfig::replaceWithChildrenElements(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("replaceWithChildrenElements", value);
 }
 
-jsbind::Sequence<jsbind::Any> SanitizerConfig::attributes() const {
-    return emlite::Val::get("attributes").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> SanitizerConfig::attributes() const {
+    return emlite::Val::get("attributes").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void SanitizerConfig::attributes(const jsbind::Sequence<jsbind::Any>& value) {
+void SanitizerConfig::attributes(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("attributes", value);
 }
 
-jsbind::Sequence<jsbind::Any> SanitizerConfig::removeAttributes() const {
-    return emlite::Val::get("removeAttributes").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> SanitizerConfig::removeAttributes() const {
+    return emlite::Val::get("removeAttributes").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void SanitizerConfig::removeAttributes(const jsbind::Sequence<jsbind::Any>& value) {
+void SanitizerConfig::removeAttributes(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("removeAttributes", value);
 }
 

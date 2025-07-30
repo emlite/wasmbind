@@ -9,20 +9,20 @@ GPUAdapterInfo::GPUAdapterInfo(Handle h) noexcept : emlite::Val(emlite::Val::tak
 GPUAdapterInfo::GPUAdapterInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString GPUAdapterInfo::vendor() const {
-    return emlite::Val::get("vendor").as<jsbind::DOMString>();
+jsbind::String GPUAdapterInfo::vendor() const {
+    return emlite::Val::get("vendor").as<jsbind::String>();
 }
 
-jsbind::DOMString GPUAdapterInfo::architecture() const {
-    return emlite::Val::get("architecture").as<jsbind::DOMString>();
+jsbind::String GPUAdapterInfo::architecture() const {
+    return emlite::Val::get("architecture").as<jsbind::String>();
 }
 
-jsbind::DOMString GPUAdapterInfo::device() const {
-    return emlite::Val::get("device").as<jsbind::DOMString>();
+jsbind::String GPUAdapterInfo::device() const {
+    return emlite::Val::get("device").as<jsbind::String>();
 }
 
-jsbind::DOMString GPUAdapterInfo::description() const {
-    return emlite::Val::get("description").as<jsbind::DOMString>();
+jsbind::String GPUAdapterInfo::description() const {
+    return emlite::Val::get("description").as<jsbind::String>();
 }
 
 unsigned long GPUAdapterInfo::subgroupMinSize() const {

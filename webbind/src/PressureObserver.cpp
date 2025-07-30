@@ -44,11 +44,11 @@ jsbind::Undefined PressureObserver::disconnect() {
     return emlite::Val::call("disconnect").as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<PressureRecord> PressureObserver::takeRecords() {
-    return emlite::Val::call("takeRecords").as<jsbind::Sequence<PressureRecord>>();
+jsbind::TypedArray<PressureRecord> PressureObserver::takeRecords() {
+    return emlite::Val::call("takeRecords").as<jsbind::TypedArray<PressureRecord>>();
 }
 
-jsbind::FrozenArray<PressureSource> PressureObserver::knownSources() {
-    return emlite::Val::global("pressureobserver").get("knownSources").as<jsbind::FrozenArray<PressureSource>>();
+jsbind::TypedArray<PressureSource> PressureObserver::knownSources() {
+    return emlite::Val::global("pressureobserver").get("knownSources").as<jsbind::TypedArray<PressureSource>>();
 }
 

@@ -15,7 +15,7 @@ public:
 
     AuthenticatorAttestationResponse clone() const noexcept;
     jsbind::ArrayBuffer attestationObject() const;
-    jsbind::Sequence<jsbind::DOMString> getTransports();
+    jsbind::TypedArray<jsbind::String> getTransports();
     jsbind::ArrayBuffer getAuthenticatorData();
     jsbind::ArrayBuffer getPublicKey();
     jsbind::Any getPublicKeyAlgorithm();

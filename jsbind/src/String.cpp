@@ -183,9 +183,9 @@ String String::slice(int start, int end) const noexcept {
     return String(this->call("slice", start));
 }
 
-Sequence<String> String::split(const char *sep
+TypedArray<String> String::split(const char *sep
 ) const noexcept {
-    return this->call("split", sep).as<Sequence<String>>();
+    return this->call("split", sep).as<TypedArray<String>>();
 }
 
 bool String::starts_with(const char *pat) const noexcept {
@@ -237,11 +237,3 @@ String operator+(const String &a, const String &b) {
 }
 
 DEFINE_CLONE(String)
-
-DEFINE_STRING(ByteString)
-
-DEFINE_STRING(DOMString)
-
-DEFINE_STRING(CSSOMString)
-
-DEFINE_STRING(USVString)

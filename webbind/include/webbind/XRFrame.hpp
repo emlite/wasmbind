@@ -43,10 +43,10 @@ public:
     XRMeshSet detectedMeshes() const;
     XRCPUDepthInformation getDepthInformation(const XRView& view);
     XRJointPose getJointPose(const XRJointSpace& joint, const XRSpace& baseSpace);
-    bool fillJointRadii(const jsbind::Sequence<XRJointSpace>& jointSpaces, const jsbind::Float32Array& radii);
-    bool fillPoses(const jsbind::Sequence<XRSpace>& spaces, const XRSpace& baseSpace, const jsbind::Float32Array& transforms);
-    jsbind::Sequence<XRHitTestResult> getHitTestResults(const XRHitTestSource& hitTestSource);
-    jsbind::Sequence<XRTransientInputHitTestResult> getHitTestResultsForTransientInput(const XRTransientInputHitTestSource& hitTestSource);
+    bool fillJointRadii(const jsbind::TypedArray<XRJointSpace>& jointSpaces, const jsbind::Float32Array& radii);
+    bool fillPoses(const jsbind::TypedArray<XRSpace>& spaces, const XRSpace& baseSpace, const jsbind::Float32Array& transforms);
+    jsbind::TypedArray<XRHitTestResult> getHitTestResults(const XRHitTestSource& hitTestSource);
+    jsbind::TypedArray<XRTransientInputHitTestResult> getHitTestResultsForTransientInput(const XRTransientInputHitTestSource& hitTestSource);
     XRLightEstimate getLightEstimate(const XRLightProbe& lightProbe);
     XRPlaneSet detectedPlanes() const;
 };

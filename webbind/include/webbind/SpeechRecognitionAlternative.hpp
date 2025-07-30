@@ -13,7 +13,7 @@ public:
     static SpeechRecognitionAlternative take_ownership(Handle h) noexcept;
 
     SpeechRecognitionAlternative clone() const noexcept;
-    jsbind::DOMString transcript() const;
+    jsbind::String transcript() const;
     float confidence() const;
 };
 

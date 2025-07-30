@@ -12,9 +12,9 @@ AudioWorkletNode::AudioWorkletNode(Handle h) noexcept : AudioNode(emlite::Val::t
 AudioWorkletNode::AudioWorkletNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 
-AudioWorkletNode::AudioWorkletNode(const BaseAudioContext& context, const jsbind::DOMString& name) : AudioNode(emlite::Val::global("AudioWorkletNode").new_(context, name)) {}
+AudioWorkletNode::AudioWorkletNode(const BaseAudioContext& context, const jsbind::String& name) : AudioNode(emlite::Val::global("AudioWorkletNode").new_(context, name)) {}
 
-AudioWorkletNode::AudioWorkletNode(const BaseAudioContext& context, const jsbind::DOMString& name, const jsbind::Any& options) : AudioNode(emlite::Val::global("AudioWorkletNode").new_(context, name, options)) {}
+AudioWorkletNode::AudioWorkletNode(const BaseAudioContext& context, const jsbind::String& name, const jsbind::Any& options) : AudioNode(emlite::Val::global("AudioWorkletNode").new_(context, name, options)) {}
 
 AudioParamMap AudioWorkletNode::parameters() const {
     return AudioNode::get("parameters").as<AudioParamMap>();

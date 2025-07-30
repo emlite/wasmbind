@@ -37,7 +37,7 @@ float ScreenDetailed::devicePixelRatio() const {
     return Screen::get("devicePixelRatio").as<float>();
 }
 
-jsbind::DOMString ScreenDetailed::label() const {
-    return Screen::get("label").as<jsbind::DOMString>();
+jsbind::String ScreenDetailed::label() const {
+    return Screen::get("label").as<jsbind::String>();
 }
 

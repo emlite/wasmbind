@@ -9,11 +9,11 @@ RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(Handle h) noexcept : Event(emlite
 RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("RTCDTMFToneChangeEvent").new_(type)) {}
+RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const jsbind::String& type) : Event(emlite::Val::global("RTCDTMFToneChangeEvent").new_(type)) {}
 
-RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCDTMFToneChangeEvent").new_(type, eventInitDict)) {}
+RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCDTMFToneChangeEvent").new_(type, eventInitDict)) {}
 
-jsbind::DOMString RTCDTMFToneChangeEvent::tone() const {
-    return Event::get("tone").as<jsbind::DOMString>();
+jsbind::String RTCDTMFToneChangeEvent::tone() const {
+    return Event::get("tone").as<jsbind::String>();
 }
 

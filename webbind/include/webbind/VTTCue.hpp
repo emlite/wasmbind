@@ -17,7 +17,7 @@ public:
     static VTTCue take_ownership(Handle h) noexcept;
 
     VTTCue clone() const noexcept;
-    VTTCue(double startTime, double endTime, const jsbind::DOMString& text);
+    VTTCue(double startTime, double endTime, const jsbind::String& text);
     VTTRegion region() const;
     void region(const VTTRegion& value);
     DirectionSetting vertical() const;
@@ -36,8 +36,8 @@ public:
     void size(double value);
     AlignSetting align() const;
     void align(const AlignSetting& value);
-    jsbind::DOMString text() const;
-    void text(const jsbind::DOMString& value);
+    jsbind::String text() const;
+    void text(const jsbind::String& value);
     DocumentFragment getCueAsHTML();
 };
 

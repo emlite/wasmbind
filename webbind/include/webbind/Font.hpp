@@ -13,7 +13,7 @@ public:
     static Font take_ownership(Handle h) noexcept;
 
     Font clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     unsigned long glyphsRendered() const;
 };
 

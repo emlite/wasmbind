@@ -14,10 +14,10 @@ public:
     explicit PerformanceObserverInit(const emlite::Val &val) noexcept;
     PerformanceObserverInit() noexcept;
     PerformanceObserverInit clone() const noexcept;
-    jsbind::Sequence<jsbind::DOMString> entryTypes() const;
-    void entryTypes(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
+    jsbind::TypedArray<jsbind::String> entryTypes() const;
+    void entryTypes(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
     bool buffered() const;
     void buffered(bool value);
 };
@@ -35,6 +35,6 @@ public:
     jsbind::Undefined observe(const PerformanceObserverInit& options);
     jsbind::Undefined disconnect();
     jsbind::Any takeRecords();
-    static jsbind::FrozenArray<jsbind::DOMString> supportedEntryTypes();
+    static jsbind::TypedArray<jsbind::String> supportedEntryTypes();
 };
 

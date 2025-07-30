@@ -17,16 +17,16 @@ public:
     explicit ContactInfo(const emlite::Val &val) noexcept;
     ContactInfo() noexcept;
     ContactInfo clone() const noexcept;
-    jsbind::Sequence<ContactAddress> address() const;
-    void address(const jsbind::Sequence<ContactAddress>& value);
-    jsbind::Sequence<jsbind::DOMString> email() const;
-    void email(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::Sequence<Blob> icon() const;
-    void icon(const jsbind::Sequence<Blob>& value);
-    jsbind::Sequence<jsbind::DOMString> name() const;
-    void name(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::Sequence<jsbind::DOMString> tel() const;
-    void tel(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<ContactAddress> address() const;
+    void address(const jsbind::TypedArray<ContactAddress>& value);
+    jsbind::TypedArray<jsbind::String> email() const;
+    void email(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::TypedArray<Blob> icon() const;
+    void icon(const jsbind::TypedArray<Blob>& value);
+    jsbind::TypedArray<jsbind::String> name() const;
+    void name(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::TypedArray<jsbind::String> tel() const;
+    void tel(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class ContactsSelectOptions : public emlite::Val {
@@ -48,8 +48,8 @@ public:
     static ContactsManager take_ownership(Handle h) noexcept;
 
     ContactsManager clone() const noexcept;
-    jsbind::Promise<jsbind::Sequence<ContactProperty>> getProperties();
-    jsbind::Promise<jsbind::Sequence<ContactInfo>> select(const jsbind::Sequence<ContactProperty>& properties);
-    jsbind::Promise<jsbind::Sequence<ContactInfo>> select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options);
+    jsbind::Promise<jsbind::TypedArray<ContactProperty>> getProperties();
+    jsbind::Promise<jsbind::TypedArray<ContactInfo>> select(const jsbind::TypedArray<ContactProperty>& properties);
+    jsbind::Promise<jsbind::TypedArray<ContactInfo>> select(const jsbind::TypedArray<ContactProperty>& properties, const ContactsSelectOptions& options);
 };
 

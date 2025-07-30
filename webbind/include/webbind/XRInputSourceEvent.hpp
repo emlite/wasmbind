@@ -17,7 +17,7 @@ public:
     static XRInputSourceEvent take_ownership(Handle h) noexcept;
 
     XRInputSourceEvent clone() const noexcept;
-    XRInputSourceEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    XRInputSourceEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     XRFrame frame() const;
     XRInputSource inputSource() const;
 };

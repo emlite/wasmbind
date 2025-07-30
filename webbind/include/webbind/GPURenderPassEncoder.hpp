@@ -24,13 +24,13 @@ public:
     jsbind::Undefined setStencilReference(const jsbind::Any& reference);
     jsbind::Undefined beginOcclusionQuery(const jsbind::Any& queryIndex);
     jsbind::Undefined endOcclusionQuery();
-    jsbind::Undefined executeBundles(const jsbind::Sequence<GPURenderBundle>& bundles);
+    jsbind::Undefined executeBundles(const jsbind::TypedArray<GPURenderBundle>& bundles);
     jsbind::Undefined end();
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
-    jsbind::Undefined pushDebugGroup(const jsbind::USVString& groupLabel);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
+    jsbind::Undefined pushDebugGroup(const jsbind::String& groupLabel);
     jsbind::Undefined popDebugGroup();
-    jsbind::Undefined insertDebugMarker(const jsbind::USVString& markerLabel);
+    jsbind::Undefined insertDebugMarker(const jsbind::String& markerLabel);
     jsbind::Undefined setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup, const jsbind::Uint32Array& dynamicOffsetsData, const jsbind::Any& dynamicOffsetsDataStart, const jsbind::Any& dynamicOffsetsDataLength);
     jsbind::Undefined setPipeline(const GPURenderPipeline& pipeline);
     jsbind::Undefined setIndexBuffer(const GPUBuffer& buffer, const GPUIndexFormat& indexFormat);

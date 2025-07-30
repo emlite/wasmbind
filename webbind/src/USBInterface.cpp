@@ -21,8 +21,8 @@ USBAlternateInterface USBInterface::alternate() const {
     return emlite::Val::get("alternate").as<USBAlternateInterface>();
 }
 
-jsbind::FrozenArray<USBAlternateInterface> USBInterface::alternates() const {
-    return emlite::Val::get("alternates").as<jsbind::FrozenArray<USBAlternateInterface>>();
+jsbind::TypedArray<USBAlternateInterface> USBInterface::alternates() const {
+    return emlite::Val::get("alternates").as<jsbind::TypedArray<USBAlternateInterface>>();
 }
 
 bool USBInterface::claimed() const {

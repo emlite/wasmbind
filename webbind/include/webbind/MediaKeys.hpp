@@ -15,8 +15,8 @@ public:
     explicit MediaKeysPolicy(const emlite::Val &val) noexcept;
     MediaKeysPolicy() noexcept;
     MediaKeysPolicy clone() const noexcept;
-    jsbind::DOMString minHdcpVersion() const;
-    void minHdcpVersion(const jsbind::DOMString& value);
+    jsbind::String minHdcpVersion() const;
+    void minHdcpVersion(const jsbind::String& value);
 };
 
 class MediaKeys : public emlite::Val {

@@ -34,8 +34,8 @@ PushManager::PushManager(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 PushManager::PushManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::FrozenArray<jsbind::DOMString> PushManager::supportedContentEncodings() {
-    return emlite::Val::global("pushmanager").get("supportedContentEncodings").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PushManager::supportedContentEncodings() {
+    return emlite::Val::global("pushmanager").get("supportedContentEncodings").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 jsbind::Promise<PushSubscription> PushManager::subscribe() {

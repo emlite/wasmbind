@@ -18,9 +18,9 @@ public:
     PerformanceLongTaskTiming clone() const noexcept;
     jsbind::Any startTime() const;
     jsbind::Any duration() const;
-    jsbind::DOMString name() const;
-    jsbind::DOMString entryType() const;
-    jsbind::FrozenArray<TaskAttributionTiming> attribution() const;
+    jsbind::String name() const;
+    jsbind::String entryType() const;
+    jsbind::TypedArray<TaskAttributionTiming> attribution() const;
     jsbind::Object toJSON();
 };
 

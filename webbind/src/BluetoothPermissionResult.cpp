@@ -10,11 +10,11 @@ BluetoothPermissionResult::BluetoothPermissionResult(Handle h) noexcept : Permis
 BluetoothPermissionResult::BluetoothPermissionResult(const emlite::Val &val) noexcept: PermissionStatus(val) {}
 
 
-jsbind::FrozenArray<BluetoothDevice> BluetoothPermissionResult::devices() const {
-    return PermissionStatus::get("devices").as<jsbind::FrozenArray<BluetoothDevice>>();
+jsbind::TypedArray<BluetoothDevice> BluetoothPermissionResult::devices() const {
+    return PermissionStatus::get("devices").as<jsbind::TypedArray<BluetoothDevice>>();
 }
 
-void BluetoothPermissionResult::devices(const jsbind::FrozenArray<BluetoothDevice>& value) {
+void BluetoothPermissionResult::devices(const jsbind::TypedArray<BluetoothDevice>& value) {
     PermissionStatus::set("devices", value);
 }
 

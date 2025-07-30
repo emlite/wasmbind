@@ -9,7 +9,7 @@ CSSTransition::CSSTransition(Handle h) noexcept : Animation(emlite::Val::take_ow
 CSSTransition::CSSTransition(const emlite::Val &val) noexcept: Animation(val) {}
 
 
-jsbind::CSSOMString CSSTransition::transitionProperty() const {
-    return Animation::get("transitionProperty").as<jsbind::CSSOMString>();
+jsbind::String CSSTransition::transitionProperty() const {
+    return Animation::get("transitionProperty").as<jsbind::String>();
 }
 

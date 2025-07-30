@@ -16,7 +16,7 @@ public:
     static GPUUncapturedErrorEvent take_ownership(Handle h) noexcept;
 
     GPUUncapturedErrorEvent clone() const noexcept;
-    GPUUncapturedErrorEvent(const jsbind::DOMString& type, const jsbind::Any& gpuUncapturedErrorEventInitDict);
+    GPUUncapturedErrorEvent(const jsbind::String& type, const jsbind::Any& gpuUncapturedErrorEventInitDict);
     GPUError error() const;
 };
 

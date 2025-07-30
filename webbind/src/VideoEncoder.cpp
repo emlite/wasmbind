@@ -10,11 +10,11 @@ VideoEncoderConfig::VideoEncoderConfig(const emlite::Val &val) noexcept: emlite:
 VideoEncoderConfig::VideoEncoderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
 VideoEncoderConfig VideoEncoderConfig::clone() const noexcept { return *this; }
 
-jsbind::DOMString VideoEncoderConfig::codec() const {
-    return emlite::Val::get("codec").as<jsbind::DOMString>();
+jsbind::String VideoEncoderConfig::codec() const {
+    return emlite::Val::get("codec").as<jsbind::String>();
 }
 
-void VideoEncoderConfig::codec(const jsbind::DOMString& value) {
+void VideoEncoderConfig::codec(const jsbind::String& value) {
     emlite::Val::set("codec", value);
 }
 
@@ -82,11 +82,11 @@ void VideoEncoderConfig::alpha(const AlphaOption& value) {
     emlite::Val::set("alpha", value);
 }
 
-jsbind::DOMString VideoEncoderConfig::scalabilityMode() const {
-    return emlite::Val::get("scalabilityMode").as<jsbind::DOMString>();
+jsbind::String VideoEncoderConfig::scalabilityMode() const {
+    return emlite::Val::get("scalabilityMode").as<jsbind::String>();
 }
 
-void VideoEncoderConfig::scalabilityMode(const jsbind::DOMString& value) {
+void VideoEncoderConfig::scalabilityMode(const jsbind::String& value) {
     emlite::Val::set("scalabilityMode", value);
 }
 
@@ -106,11 +106,11 @@ void VideoEncoderConfig::latencyMode(const LatencyMode& value) {
     emlite::Val::set("latencyMode", value);
 }
 
-jsbind::DOMString VideoEncoderConfig::contentHint() const {
-    return emlite::Val::get("contentHint").as<jsbind::DOMString>();
+jsbind::String VideoEncoderConfig::contentHint() const {
+    return emlite::Val::get("contentHint").as<jsbind::String>();
 }
 
-void VideoEncoderConfig::contentHint(const jsbind::DOMString& value) {
+void VideoEncoderConfig::contentHint(const jsbind::String& value) {
     emlite::Val::set("contentHint", value);
 }
 

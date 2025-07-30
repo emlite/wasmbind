@@ -10,20 +10,20 @@ AudioTrack::AudioTrack(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 AudioTrack::AudioTrack(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString AudioTrack::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String AudioTrack::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString AudioTrack::kind() const {
-    return emlite::Val::get("kind").as<jsbind::DOMString>();
+jsbind::String AudioTrack::kind() const {
+    return emlite::Val::get("kind").as<jsbind::String>();
 }
 
-jsbind::DOMString AudioTrack::label() const {
-    return emlite::Val::get("label").as<jsbind::DOMString>();
+jsbind::String AudioTrack::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-jsbind::DOMString AudioTrack::language() const {
-    return emlite::Val::get("language").as<jsbind::DOMString>();
+jsbind::String AudioTrack::language() const {
+    return emlite::Val::get("language").as<jsbind::String>();
 }
 
 bool AudioTrack::enabled() const {

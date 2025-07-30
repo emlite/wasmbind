@@ -13,8 +13,8 @@ StorageBucket::StorageBucket(Handle h) noexcept : emlite::Val(emlite::Val::take_
 StorageBucket::StorageBucket(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString StorageBucket::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String StorageBucket::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
 jsbind::Promise<bool> StorageBucket::persist() {

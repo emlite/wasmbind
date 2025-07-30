@@ -14,10 +14,10 @@ public:
     static File take_ownership(Handle h) noexcept;
 
     File clone() const noexcept;
-    File(const jsbind::Sequence<jsbind::Any>& fileBits, const jsbind::USVString& fileName);
-    File(const jsbind::Sequence<jsbind::Any>& fileBits, const jsbind::USVString& fileName, const jsbind::Any& options);
-    jsbind::DOMString name() const;
+    File(const jsbind::TypedArray<jsbind::Any>& fileBits, const jsbind::String& fileName);
+    File(const jsbind::TypedArray<jsbind::Any>& fileBits, const jsbind::String& fileName, const jsbind::Any& options);
+    jsbind::String name() const;
     long long lastModified() const;
-    jsbind::USVString webkitRelativePath() const;
+    jsbind::String webkitRelativePath() const;
 };
 

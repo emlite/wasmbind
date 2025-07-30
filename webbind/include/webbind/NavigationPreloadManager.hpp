@@ -16,8 +16,8 @@ public:
     NavigationPreloadState clone() const noexcept;
     bool enabled() const;
     void enabled(bool value);
-    jsbind::ByteString headerValue() const;
-    void headerValue(const jsbind::ByteString& value);
+    jsbind::String headerValue() const;
+    void headerValue(const jsbind::String& value);
 };
 
 class NavigationPreloadManager : public emlite::Val {
@@ -30,7 +30,7 @@ public:
     NavigationPreloadManager clone() const noexcept;
     jsbind::Promise<jsbind::Undefined> enable();
     jsbind::Promise<jsbind::Undefined> disable();
-    jsbind::Promise<jsbind::Undefined> setHeaderValue(const jsbind::ByteString& value);
+    jsbind::Promise<jsbind::Undefined> setHeaderValue(const jsbind::String& value);
     jsbind::Promise<NavigationPreloadState> getState();
 };
 

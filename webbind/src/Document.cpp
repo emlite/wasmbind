@@ -46,11 +46,11 @@ CaretPositionFromPointOptions::CaretPositionFromPointOptions(const emlite::Val &
 CaretPositionFromPointOptions::CaretPositionFromPointOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 CaretPositionFromPointOptions CaretPositionFromPointOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<ShadowRoot> CaretPositionFromPointOptions::shadowRoots() const {
-    return emlite::Val::get("shadowRoots").as<jsbind::Sequence<ShadowRoot>>();
+jsbind::TypedArray<ShadowRoot> CaretPositionFromPointOptions::shadowRoots() const {
+    return emlite::Val::get("shadowRoots").as<jsbind::TypedArray<ShadowRoot>>();
 }
 
-void CaretPositionFromPointOptions::shadowRoots(const jsbind::Sequence<ShadowRoot>& value) {
+void CaretPositionFromPointOptions::shadowRoots(const jsbind::TypedArray<ShadowRoot>& value) {
     emlite::Val::set("shadowRoots", value);
 }
 
@@ -156,32 +156,32 @@ DOMImplementation Document::implementation() const {
     return Node::get("implementation").as<DOMImplementation>();
 }
 
-jsbind::USVString Document::URL() const {
-    return Node::get("URL").as<jsbind::USVString>();
+jsbind::String Document::URL() const {
+    return Node::get("URL").as<jsbind::String>();
 }
 
-jsbind::USVString Document::documentURI() const {
-    return Node::get("documentURI").as<jsbind::USVString>();
+jsbind::String Document::documentURI() const {
+    return Node::get("documentURI").as<jsbind::String>();
 }
 
-jsbind::DOMString Document::compatMode() const {
-    return Node::get("compatMode").as<jsbind::DOMString>();
+jsbind::String Document::compatMode() const {
+    return Node::get("compatMode").as<jsbind::String>();
 }
 
-jsbind::DOMString Document::characterSet() const {
-    return Node::get("characterSet").as<jsbind::DOMString>();
+jsbind::String Document::characterSet() const {
+    return Node::get("characterSet").as<jsbind::String>();
 }
 
-jsbind::DOMString Document::charset() const {
-    return Node::get("charset").as<jsbind::DOMString>();
+jsbind::String Document::charset() const {
+    return Node::get("charset").as<jsbind::String>();
 }
 
-jsbind::DOMString Document::inputEncoding() const {
-    return Node::get("inputEncoding").as<jsbind::DOMString>();
+jsbind::String Document::inputEncoding() const {
+    return Node::get("inputEncoding").as<jsbind::String>();
 }
 
-jsbind::DOMString Document::contentType() const {
-    return Node::get("contentType").as<jsbind::DOMString>();
+jsbind::String Document::contentType() const {
+    return Node::get("contentType").as<jsbind::String>();
 }
 
 DocumentType Document::doctype() const {
@@ -192,31 +192,31 @@ Element Document::documentElement() const {
     return Node::get("documentElement").as<Element>();
 }
 
-HTMLCollection Document::getElementsByTagName(const jsbind::DOMString& qualifiedName) {
+HTMLCollection Document::getElementsByTagName(const jsbind::String& qualifiedName) {
     return Node::call("getElementsByTagName", qualifiedName).as<HTMLCollection>();
 }
 
-HTMLCollection Document::getElementsByTagNameNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& localName) {
+HTMLCollection Document::getElementsByTagNameNS(const jsbind::String& namespace_, const jsbind::String& localName) {
     return Node::call("getElementsByTagNameNS", namespace_, localName).as<HTMLCollection>();
 }
 
-HTMLCollection Document::getElementsByClassName(const jsbind::DOMString& classNames) {
+HTMLCollection Document::getElementsByClassName(const jsbind::String& classNames) {
     return Node::call("getElementsByClassName", classNames).as<HTMLCollection>();
 }
 
-Element Document::createElement(const jsbind::DOMString& localName) {
+Element Document::createElement(const jsbind::String& localName) {
     return Node::call("createElement", localName).as<Element>();
 }
 
-Element Document::createElement(const jsbind::DOMString& localName, const jsbind::Any& options) {
+Element Document::createElement(const jsbind::String& localName, const jsbind::Any& options) {
     return Node::call("createElement", localName, options).as<Element>();
 }
 
-Element Document::createElementNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName) {
+Element Document::createElementNS(const jsbind::String& namespace_, const jsbind::String& qualifiedName) {
     return Node::call("createElementNS", namespace_, qualifiedName).as<Element>();
 }
 
-Element Document::createElementNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName, const jsbind::Any& options) {
+Element Document::createElementNS(const jsbind::String& namespace_, const jsbind::String& qualifiedName, const jsbind::Any& options) {
     return Node::call("createElementNS", namespace_, qualifiedName, options).as<Element>();
 }
 
@@ -224,19 +224,19 @@ DocumentFragment Document::createDocumentFragment() {
     return Node::call("createDocumentFragment").as<DocumentFragment>();
 }
 
-Text Document::createTextNode(const jsbind::DOMString& data) {
+Text Document::createTextNode(const jsbind::String& data) {
     return Node::call("createTextNode", data).as<Text>();
 }
 
-CDATASection Document::createCDATASection(const jsbind::DOMString& data) {
+CDATASection Document::createCDATASection(const jsbind::String& data) {
     return Node::call("createCDATASection", data).as<CDATASection>();
 }
 
-Comment Document::createComment(const jsbind::DOMString& data) {
+Comment Document::createComment(const jsbind::String& data) {
     return Node::call("createComment", data).as<Comment>();
 }
 
-ProcessingInstruction Document::createProcessingInstruction(const jsbind::DOMString& target, const jsbind::DOMString& data) {
+ProcessingInstruction Document::createProcessingInstruction(const jsbind::String& target, const jsbind::String& data) {
     return Node::call("createProcessingInstruction", target, data).as<ProcessingInstruction>();
 }
 
@@ -252,15 +252,15 @@ Node Document::adoptNode(const Node& node) {
     return Node::call("adoptNode", node).as<Node>();
 }
 
-Attr Document::createAttribute(const jsbind::DOMString& localName) {
+Attr Document::createAttribute(const jsbind::String& localName) {
     return Node::call("createAttribute", localName).as<Attr>();
 }
 
-Attr Document::createAttributeNS(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName) {
+Attr Document::createAttributeNS(const jsbind::String& namespace_, const jsbind::String& qualifiedName) {
     return Node::call("createAttributeNS", namespace_, qualifiedName).as<Attr>();
 }
 
-Event Document::createEvent(const jsbind::DOMString& interface) {
+Event Document::createEvent(const jsbind::String& interface) {
     return Node::call("createEvent", interface).as<Event>();
 }
 
@@ -312,8 +312,8 @@ Element Document::elementFromPoint(double x, double y) {
     return Node::call("elementFromPoint", x, y).as<Element>();
 }
 
-jsbind::Sequence<Element> Document::elementsFromPoint(double x, double y) {
-    return Node::call("elementsFromPoint", x, y).as<jsbind::Sequence<Element>>();
+jsbind::TypedArray<Element> Document::elementsFromPoint(double x, double y) {
+    return Node::call("elementsFromPoint", x, y).as<jsbind::TypedArray<Element>>();
 }
 
 CaretPosition Document::caretPositionFromPoint(double x, double y) {
@@ -332,7 +332,7 @@ FontMetrics Document::measureElement(const Element& element) {
     return Node::call("measureElement", element).as<FontMetrics>();
 }
 
-FontMetrics Document::measureText(const jsbind::DOMString& text, const StylePropertyMapReadOnly& styleMap) {
+FontMetrics Document::measureText(const jsbind::String& text, const StylePropertyMapReadOnly& styleMap) {
     return Node::call("measureText", text, styleMap).as<FontMetrics>();
 }
 
@@ -372,47 +372,47 @@ jsbind::Any Document::location() const {
     return Node::get("location").as<jsbind::Any>();
 }
 
-jsbind::USVString Document::domain() const {
-    return Node::get("domain").as<jsbind::USVString>();
+jsbind::String Document::domain() const {
+    return Node::get("domain").as<jsbind::String>();
 }
 
-void Document::domain(const jsbind::USVString& value) {
+void Document::domain(const jsbind::String& value) {
     Node::set("domain", value);
 }
 
-jsbind::USVString Document::referrer() const {
-    return Node::get("referrer").as<jsbind::USVString>();
+jsbind::String Document::referrer() const {
+    return Node::get("referrer").as<jsbind::String>();
 }
 
-jsbind::USVString Document::cookie() const {
-    return Node::get("cookie").as<jsbind::USVString>();
+jsbind::String Document::cookie() const {
+    return Node::get("cookie").as<jsbind::String>();
 }
 
-void Document::cookie(const jsbind::USVString& value) {
+void Document::cookie(const jsbind::String& value) {
     Node::set("cookie", value);
 }
 
-jsbind::DOMString Document::lastModified() const {
-    return Node::get("lastModified").as<jsbind::DOMString>();
+jsbind::String Document::lastModified() const {
+    return Node::get("lastModified").as<jsbind::String>();
 }
 
 DocumentReadyState Document::readyState() const {
     return Node::get("readyState").as<DocumentReadyState>();
 }
 
-jsbind::DOMString Document::title() const {
-    return Node::get("title").as<jsbind::DOMString>();
+jsbind::String Document::title() const {
+    return Node::get("title").as<jsbind::String>();
 }
 
-void Document::title(const jsbind::DOMString& value) {
+void Document::title(const jsbind::String& value) {
     Node::set("title", value);
 }
 
-jsbind::DOMString Document::dir() const {
-    return Node::get("dir").as<jsbind::DOMString>();
+jsbind::String Document::dir() const {
+    return Node::get("dir").as<jsbind::String>();
 }
 
-void Document::dir(const jsbind::DOMString& value) {
+void Document::dir(const jsbind::String& value) {
     Node::set("dir", value);
 }
 
@@ -452,7 +452,7 @@ HTMLCollection Document::scripts() const {
     return Node::get("scripts").as<HTMLCollection>();
 }
 
-NodeList Document::getElementsByName(const jsbind::DOMString& elementName) {
+NodeList Document::getElementsByName(const jsbind::String& elementName) {
     return Node::call("getElementsByName", elementName).as<NodeList>();
 }
 
@@ -460,7 +460,7 @@ jsbind::Any Document::currentScript() const {
     return Node::get("currentScript").as<jsbind::Any>();
 }
 
-jsbind::Any Document::open(const jsbind::USVString& url, const jsbind::DOMString& name, const jsbind::DOMString& features) {
+jsbind::Any Document::open(const jsbind::String& url, const jsbind::String& name, const jsbind::String& features) {
     return Node::call("open", url, name, features).as<jsbind::Any>();
 }
 
@@ -484,44 +484,44 @@ bool Document::hasFocus() {
     return Node::call("hasFocus").as<bool>();
 }
 
-jsbind::DOMString Document::designMode() const {
-    return Node::get("designMode").as<jsbind::DOMString>();
+jsbind::String Document::designMode() const {
+    return Node::get("designMode").as<jsbind::String>();
 }
 
-void Document::designMode(const jsbind::DOMString& value) {
+void Document::designMode(const jsbind::String& value) {
     Node::set("designMode", value);
 }
 
-bool Document::execCommand(const jsbind::DOMString& commandId) {
+bool Document::execCommand(const jsbind::String& commandId) {
     return Node::call("execCommand", commandId).as<bool>();
 }
 
-bool Document::execCommand(const jsbind::DOMString& commandId, bool showUI) {
+bool Document::execCommand(const jsbind::String& commandId, bool showUI) {
     return Node::call("execCommand", commandId, showUI).as<bool>();
 }
 
-bool Document::execCommand(const jsbind::DOMString& commandId, bool showUI, const jsbind::DOMString& value) {
+bool Document::execCommand(const jsbind::String& commandId, bool showUI, const jsbind::String& value) {
     return Node::call("execCommand", commandId, showUI, value).as<bool>();
 }
 
-bool Document::queryCommandEnabled(const jsbind::DOMString& commandId) {
+bool Document::queryCommandEnabled(const jsbind::String& commandId) {
     return Node::call("queryCommandEnabled", commandId).as<bool>();
 }
 
-bool Document::queryCommandIndeterm(const jsbind::DOMString& commandId) {
+bool Document::queryCommandIndeterm(const jsbind::String& commandId) {
     return Node::call("queryCommandIndeterm", commandId).as<bool>();
 }
 
-bool Document::queryCommandState(const jsbind::DOMString& commandId) {
+bool Document::queryCommandState(const jsbind::String& commandId) {
     return Node::call("queryCommandState", commandId).as<bool>();
 }
 
-bool Document::queryCommandSupported(const jsbind::DOMString& commandId) {
+bool Document::queryCommandSupported(const jsbind::String& commandId) {
     return Node::call("queryCommandSupported", commandId).as<bool>();
 }
 
-jsbind::DOMString Document::queryCommandValue(const jsbind::DOMString& commandId) {
-    return Node::call("queryCommandValue", commandId).as<jsbind::DOMString>();
+jsbind::String Document::queryCommandValue(const jsbind::String& commandId) {
+    return Node::call("queryCommandValue", commandId).as<jsbind::String>();
 }
 
 bool Document::hidden() const {
@@ -548,43 +548,43 @@ void Document::onvisibilitychange(const jsbind::Any& value) {
     Node::set("onvisibilitychange", value);
 }
 
-jsbind::DOMString Document::fgColor() const {
-    return Node::get("fgColor").as<jsbind::DOMString>();
+jsbind::String Document::fgColor() const {
+    return Node::get("fgColor").as<jsbind::String>();
 }
 
-void Document::fgColor(const jsbind::DOMString& value) {
+void Document::fgColor(const jsbind::String& value) {
     Node::set("fgColor", value);
 }
 
-jsbind::DOMString Document::linkColor() const {
-    return Node::get("linkColor").as<jsbind::DOMString>();
+jsbind::String Document::linkColor() const {
+    return Node::get("linkColor").as<jsbind::String>();
 }
 
-void Document::linkColor(const jsbind::DOMString& value) {
+void Document::linkColor(const jsbind::String& value) {
     Node::set("linkColor", value);
 }
 
-jsbind::DOMString Document::vlinkColor() const {
-    return Node::get("vlinkColor").as<jsbind::DOMString>();
+jsbind::String Document::vlinkColor() const {
+    return Node::get("vlinkColor").as<jsbind::String>();
 }
 
-void Document::vlinkColor(const jsbind::DOMString& value) {
+void Document::vlinkColor(const jsbind::String& value) {
     Node::set("vlinkColor", value);
 }
 
-jsbind::DOMString Document::alinkColor() const {
-    return Node::get("alinkColor").as<jsbind::DOMString>();
+jsbind::String Document::alinkColor() const {
+    return Node::get("alinkColor").as<jsbind::String>();
 }
 
-void Document::alinkColor(const jsbind::DOMString& value) {
+void Document::alinkColor(const jsbind::String& value) {
     Node::set("alinkColor", value);
 }
 
-jsbind::DOMString Document::bgColor() const {
-    return Node::get("bgColor").as<jsbind::DOMString>();
+jsbind::String Document::bgColor() const {
+    return Node::get("bgColor").as<jsbind::String>();
 }
 
-void Document::bgColor(const jsbind::DOMString& value) {
+void Document::bgColor(const jsbind::String& value) {
     Node::set("bgColor", value);
 }
 
@@ -676,7 +676,7 @@ void Document::onprerenderingchange(const jsbind::Any& value) {
     Node::set("onprerenderingchange", value);
 }
 
-jsbind::Promise<jsbind::Undefined> Document::requestStorageAccessFor(const jsbind::USVString& requestedOrigin) {
+jsbind::Promise<jsbind::Undefined> Document::requestStorageAccessFor(const jsbind::String& requestedOrigin) {
     return Node::call("requestStorageAccessFor", requestedOrigin).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
@@ -700,11 +700,11 @@ jsbind::Promise<jsbind::Undefined> Document::requestStorageAccess() {
     return Node::call("requestStorageAccess").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<bool> Document::hasPrivateToken(const jsbind::USVString& issuer) {
+jsbind::Promise<bool> Document::hasPrivateToken(const jsbind::String& issuer) {
     return Node::call("hasPrivateToken", issuer).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise<bool> Document::hasRedemptionRecord(const jsbind::USVString& issuer) {
+jsbind::Promise<bool> Document::hasRedemptionRecord(const jsbind::String& issuer) {
     return Node::call("hasRedemptionRecord", issuer).as<jsbind::Promise<bool>>();
 }
 
@@ -716,12 +716,12 @@ FontFaceSet Document::fonts() const {
     return Node::get("fonts").as<FontFaceSet>();
 }
 
-jsbind::Sequence<DOMQuad> Document::getBoxQuads() {
-    return Node::call("getBoxQuads").as<jsbind::Sequence<DOMQuad>>();
+jsbind::TypedArray<DOMQuad> Document::getBoxQuads() {
+    return Node::call("getBoxQuads").as<jsbind::TypedArray<DOMQuad>>();
 }
 
-jsbind::Sequence<DOMQuad> Document::getBoxQuads(const BoxQuadOptions& options) {
-    return Node::call("getBoxQuads", options).as<jsbind::Sequence<DOMQuad>>();
+jsbind::TypedArray<DOMQuad> Document::getBoxQuads(const BoxQuadOptions& options) {
+    return Node::call("getBoxQuads", options).as<jsbind::TypedArray<DOMQuad>>();
 }
 
 DOMQuad Document::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from) {
@@ -748,12 +748,12 @@ DOMPoint Document::convertPointFromNode(const DOMPointInit& point, const jsbind:
     return Node::call("convertPointFromNode", point, from, options).as<DOMPoint>();
 }
 
-Element Document::getElementById(const jsbind::DOMString& elementId) {
+Element Document::getElementById(const jsbind::String& elementId) {
     return Node::call("getElementById", elementId).as<Element>();
 }
 
-jsbind::Sequence<Animation> Document::getAnimations() {
-    return Node::call("getAnimations").as<jsbind::Sequence<Animation>>();
+jsbind::TypedArray<Animation> Document::getAnimations() {
+    return Node::call("getAnimations").as<jsbind::TypedArray<Animation>>();
 }
 
 HTMLCollection Document::children() const {
@@ -788,19 +788,19 @@ jsbind::Undefined Document::moveBefore(const Node& node, const Node& child) {
     return Node::call("moveBefore", node, child).as<jsbind::Undefined>();
 }
 
-Element Document::querySelector(const jsbind::DOMString& selectors) {
+Element Document::querySelector(const jsbind::String& selectors) {
     return Node::call("querySelector", selectors).as<Element>();
 }
 
-NodeList Document::querySelectorAll(const jsbind::DOMString& selectors) {
+NodeList Document::querySelectorAll(const jsbind::String& selectors) {
     return Node::call("querySelectorAll", selectors).as<NodeList>();
 }
 
-XPathExpression Document::createExpression(const jsbind::DOMString& expression) {
+XPathExpression Document::createExpression(const jsbind::String& expression) {
     return Node::call("createExpression", expression).as<XPathExpression>();
 }
 
-XPathExpression Document::createExpression(const jsbind::DOMString& expression, const jsbind::Function& resolver) {
+XPathExpression Document::createExpression(const jsbind::String& expression, const jsbind::Function& resolver) {
     return Node::call("createExpression", expression, resolver).as<XPathExpression>();
 }
 
@@ -808,19 +808,19 @@ Node Document::createNSResolver(const Node& nodeResolver) {
     return Node::call("createNSResolver", nodeResolver).as<Node>();
 }
 
-XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode) {
+XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode) {
     return Node::call("evaluate", expression, contextNode).as<XPathResult>();
 }
 
-XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver) {
+XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver) {
     return Node::call("evaluate", expression, contextNode, resolver).as<XPathResult>();
 }
 
-XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type) {
+XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type) {
     return Node::call("evaluate", expression, contextNode, resolver, type).as<XPathResult>();
 }
 
-XPathResult Document::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result) {
+XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result) {
     return Node::call("evaluate", expression, contextNode, resolver, type, result).as<XPathResult>();
 }
 

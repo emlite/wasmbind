@@ -17,8 +17,8 @@ public:
     static CSSStyleRule take_ownership(Handle h) noexcept;
 
     CSSStyleRule clone() const noexcept;
-    jsbind::CSSOMString selectorText() const;
-    void selectorText(const jsbind::CSSOMString& value);
+    jsbind::String selectorText() const;
+    void selectorText(const jsbind::String& value);
     CSSStyleProperties style() const;
     StylePropertyMap styleMap() const;
 };

@@ -9,11 +9,11 @@ GPUTextureView::GPUTextureView(Handle h) noexcept : emlite::Val(emlite::Val::tak
 GPUTextureView::GPUTextureView(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPUTextureView::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUTextureView::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUTextureView::label(const jsbind::USVString& value) {
+void GPUTextureView::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

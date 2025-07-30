@@ -11,5 +11,5 @@ Comment::Comment(const emlite::Val &val) noexcept: CharacterData(val) {}
 
 Comment::Comment() : CharacterData(emlite::Val::global("Comment").new_()) {}
 
-Comment::Comment(const jsbind::DOMString& data) : CharacterData(emlite::Val::global("Comment").new_(data)) {}
+Comment::Comment(const jsbind::String& data) : CharacterData(emlite::Val::global("Comment").new_(data)) {}
 

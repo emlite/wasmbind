@@ -20,7 +20,7 @@ public:
     jsbind::Undefined setFocusBehavior(const CaptureStartFocusBehavior& focusBehavior);
     jsbind::Any oncapturedmousechange() const;
     void oncapturedmousechange(const jsbind::Any& value);
-    jsbind::Sequence<long> getSupportedZoomLevels();
+    jsbind::TypedArray<long> getSupportedZoomLevels();
     long zoomLevel() const;
     jsbind::Promise<jsbind::Undefined> increaseZoomLevel();
     jsbind::Promise<jsbind::Undefined> decreaseZoomLevel();

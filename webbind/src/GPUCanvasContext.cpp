@@ -35,11 +35,11 @@ void GPUCanvasConfiguration::usage(const jsbind::Any& value) {
     emlite::Val::set("usage", value);
 }
 
-jsbind::Sequence<GPUTextureFormat> GPUCanvasConfiguration::viewFormats() const {
-    return emlite::Val::get("viewFormats").as<jsbind::Sequence<GPUTextureFormat>>();
+jsbind::TypedArray<GPUTextureFormat> GPUCanvasConfiguration::viewFormats() const {
+    return emlite::Val::get("viewFormats").as<jsbind::TypedArray<GPUTextureFormat>>();
 }
 
-void GPUCanvasConfiguration::viewFormats(const jsbind::Sequence<GPUTextureFormat>& value) {
+void GPUCanvasConfiguration::viewFormats(const jsbind::TypedArray<GPUTextureFormat>& value) {
     emlite::Val::set("viewFormats", value);
 }
 

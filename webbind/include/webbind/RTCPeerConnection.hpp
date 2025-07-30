@@ -48,8 +48,8 @@ public:
     RTCLocalSessionDescriptionInit clone() const noexcept;
     RTCSdpType type() const;
     void type(const RTCSdpType& value);
-    jsbind::DOMString sdp() const;
-    void sdp(const jsbind::DOMString& value);
+    jsbind::String sdp() const;
+    void sdp(const jsbind::String& value);
 };
 
 class RTCSessionDescriptionInit : public emlite::Val {
@@ -61,8 +61,8 @@ public:
     RTCSessionDescriptionInit clone() const noexcept;
     RTCSdpType type() const;
     void type(const RTCSdpType& value);
-    jsbind::DOMString sdp() const;
-    void sdp(const jsbind::DOMString& value);
+    jsbind::String sdp() const;
+    void sdp(const jsbind::String& value);
 };
 
 class RTCConfiguration : public emlite::Val {
@@ -72,16 +72,16 @@ public:
     explicit RTCConfiguration(const emlite::Val &val) noexcept;
     RTCConfiguration() noexcept;
     RTCConfiguration clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> iceServers() const;
-    void iceServers(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> iceServers() const;
+    void iceServers(const jsbind::TypedArray<jsbind::Any>& value);
     RTCIceTransportPolicy iceTransportPolicy() const;
     void iceTransportPolicy(const RTCIceTransportPolicy& value);
     RTCBundlePolicy bundlePolicy() const;
     void bundlePolicy(const RTCBundlePolicy& value);
     RTCRtcpMuxPolicy rtcpMuxPolicy() const;
     void rtcpMuxPolicy(const RTCRtcpMuxPolicy& value);
-    jsbind::Sequence<RTCCertificate> certificates() const;
-    void certificates(const jsbind::Sequence<RTCCertificate>& value);
+    jsbind::TypedArray<RTCCertificate> certificates() const;
+    void certificates(const jsbind::TypedArray<RTCCertificate>& value);
     unsigned char iceCandidatePoolSize() const;
     void iceCandidatePoolSize(unsigned char value);
 };
@@ -93,12 +93,12 @@ public:
     explicit RTCIdentityProviderOptions(const emlite::Val &val) noexcept;
     RTCIdentityProviderOptions() noexcept;
     RTCIdentityProviderOptions clone() const noexcept;
-    jsbind::DOMString protocol() const;
-    void protocol(const jsbind::DOMString& value);
-    jsbind::DOMString usernameHint() const;
-    void usernameHint(const jsbind::DOMString& value);
-    jsbind::DOMString peerIdentity() const;
-    void peerIdentity(const jsbind::DOMString& value);
+    jsbind::String protocol() const;
+    void protocol(const jsbind::String& value);
+    jsbind::String usernameHint() const;
+    void usernameHint(const jsbind::String& value);
+    jsbind::String peerIdentity() const;
+    void peerIdentity(const jsbind::String& value);
 };
 
 class RTCRtpTransceiverInit : public emlite::Val {
@@ -110,10 +110,10 @@ public:
     RTCRtpTransceiverInit clone() const noexcept;
     RTCRtpTransceiverDirection direction() const;
     void direction(const RTCRtpTransceiverDirection& value);
-    jsbind::Sequence<MediaStream> streams() const;
-    void streams(const jsbind::Sequence<MediaStream>& value);
-    jsbind::Sequence<jsbind::Any> sendEncodings() const;
-    void sendEncodings(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<MediaStream> streams() const;
+    void streams(const jsbind::TypedArray<MediaStream>& value);
+    jsbind::TypedArray<jsbind::Any> sendEncodings() const;
+    void sendEncodings(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class RTCDataChannelInit : public emlite::Val {
@@ -129,8 +129,8 @@ public:
     void maxPacketLifeTime(unsigned short value);
     unsigned short maxRetransmits() const;
     void maxRetransmits(unsigned short value);
-    jsbind::USVString protocol() const;
-    void protocol(const jsbind::USVString& value);
+    jsbind::String protocol() const;
+    void protocol(const jsbind::String& value);
     bool negotiated() const;
     void negotiated(bool value);
     unsigned short id() const;
@@ -183,16 +183,16 @@ public:
     void onicegatheringstatechange(const jsbind::Any& value);
     jsbind::Any onconnectionstatechange() const;
     void onconnectionstatechange(const jsbind::Any& value);
-    jsbind::Undefined setIdentityProvider(const jsbind::DOMString& provider);
-    jsbind::Undefined setIdentityProvider(const jsbind::DOMString& provider, const RTCIdentityProviderOptions& options);
-    jsbind::Promise<jsbind::DOMString> getIdentityAssertion();
+    jsbind::Undefined setIdentityProvider(const jsbind::String& provider);
+    jsbind::Undefined setIdentityProvider(const jsbind::String& provider, const RTCIdentityProviderOptions& options);
+    jsbind::Promise<jsbind::String> getIdentityAssertion();
     jsbind::Promise<RTCIdentityAssertion> peerIdentity() const;
-    jsbind::DOMString idpLoginUrl() const;
-    jsbind::DOMString idpErrorInfo() const;
+    jsbind::String idpLoginUrl() const;
+    jsbind::String idpErrorInfo() const;
     static jsbind::Promise<RTCCertificate> generateCertificate(const jsbind::Any& keygenAlgorithm);
-    jsbind::Sequence<RTCRtpSender> getSenders();
-    jsbind::Sequence<RTCRtpReceiver> getReceivers();
-    jsbind::Sequence<RTCRtpTransceiver> getTransceivers();
+    jsbind::TypedArray<RTCRtpSender> getSenders();
+    jsbind::TypedArray<RTCRtpReceiver> getReceivers();
+    jsbind::TypedArray<RTCRtpTransceiver> getTransceivers();
     RTCRtpSender addTrack(const MediaStreamTrack& track, const MediaStream& streams);
     jsbind::Undefined removeTrack(const RTCRtpSender& sender);
     RTCRtpTransceiver addTransceiver(const jsbind::Any& trackOrKind);
@@ -200,8 +200,8 @@ public:
     jsbind::Any ontrack() const;
     void ontrack(const jsbind::Any& value);
     RTCSctpTransport sctp() const;
-    RTCDataChannel createDataChannel(const jsbind::USVString& label);
-    RTCDataChannel createDataChannel(const jsbind::USVString& label, const RTCDataChannelInit& dataChannelDict);
+    RTCDataChannel createDataChannel(const jsbind::String& label);
+    RTCDataChannel createDataChannel(const jsbind::String& label, const RTCDataChannelInit& dataChannelDict);
     jsbind::Any ondatachannel() const;
     void ondatachannel(const jsbind::Any& value);
     jsbind::Promise<RTCStatsReport> getStats();

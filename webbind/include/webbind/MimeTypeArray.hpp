@@ -17,6 +17,6 @@ public:
     MimeTypeArray clone() const noexcept;
     unsigned long length() const;
     MimeType item(unsigned long index);
-    MimeType namedItem(const jsbind::DOMString& name);
+    MimeType namedItem(const jsbind::String& name);
 };
 

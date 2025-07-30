@@ -16,14 +16,14 @@ public:
     static CharacterData take_ownership(Handle h) noexcept;
 
     CharacterData clone() const noexcept;
-    jsbind::DOMString data() const;
-    void data(const jsbind::DOMString& value);
+    jsbind::String data() const;
+    void data(const jsbind::String& value);
     unsigned long length() const;
-    jsbind::DOMString substringData(unsigned long offset, unsigned long count);
-    jsbind::Undefined appendData(const jsbind::DOMString& data);
-    jsbind::Undefined insertData(unsigned long offset, const jsbind::DOMString& data);
+    jsbind::String substringData(unsigned long offset, unsigned long count);
+    jsbind::Undefined appendData(const jsbind::String& data);
+    jsbind::Undefined insertData(unsigned long offset, const jsbind::String& data);
     jsbind::Undefined deleteData(unsigned long offset, unsigned long count);
-    jsbind::Undefined replaceData(unsigned long offset, unsigned long count, const jsbind::DOMString& data);
+    jsbind::Undefined replaceData(unsigned long offset, unsigned long count, const jsbind::String& data);
     Element previousElementSibling() const;
     Element nextElementSibling() const;
     jsbind::Undefined before(const jsbind::Any& nodes);

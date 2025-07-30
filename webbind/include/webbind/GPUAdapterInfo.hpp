@@ -13,10 +13,10 @@ public:
     static GPUAdapterInfo take_ownership(Handle h) noexcept;
 
     GPUAdapterInfo clone() const noexcept;
-    jsbind::DOMString vendor() const;
-    jsbind::DOMString architecture() const;
-    jsbind::DOMString device() const;
-    jsbind::DOMString description() const;
+    jsbind::String vendor() const;
+    jsbind::String architecture() const;
+    jsbind::String device() const;
+    jsbind::String description() const;
     unsigned long subgroupMinSize() const;
     unsigned long subgroupMaxSize() const;
     bool isFallbackAdapter() const;

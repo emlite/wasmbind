@@ -14,10 +14,10 @@ public:
     static ErrorEvent take_ownership(Handle h) noexcept;
 
     ErrorEvent clone() const noexcept;
-    ErrorEvent(const jsbind::DOMString& type);
-    ErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::DOMString message() const;
-    jsbind::USVString filename() const;
+    ErrorEvent(const jsbind::String& type);
+    ErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String message() const;
+    jsbind::String filename() const;
     unsigned long lineno() const;
     unsigned long colno() const;
     jsbind::Any error() const;

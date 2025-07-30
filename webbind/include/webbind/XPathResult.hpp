@@ -17,7 +17,7 @@ public:
     XPathResult clone() const noexcept;
     unsigned short resultType() const;
     double numberValue() const;
-    jsbind::DOMString stringValue() const;
+    jsbind::String stringValue() const;
     bool booleanValue() const;
     Node singleNodeValue() const;
     bool invalidIteratorState() const;

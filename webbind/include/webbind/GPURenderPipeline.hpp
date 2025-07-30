@@ -15,8 +15,8 @@ public:
     static GPURenderPipeline take_ownership(Handle h) noexcept;
 
     GPURenderPipeline clone() const noexcept;
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
     GPUBindGroupLayout getBindGroupLayout(unsigned long index);
 };
 

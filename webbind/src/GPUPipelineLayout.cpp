@@ -9,11 +9,11 @@ GPUPipelineLayout::GPUPipelineLayout(Handle h) noexcept : emlite::Val(emlite::Va
 GPUPipelineLayout::GPUPipelineLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPUPipelineLayout::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUPipelineLayout::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUPipelineLayout::label(const jsbind::USVString& value) {
+void GPUPipelineLayout::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

@@ -10,11 +10,11 @@ CSSStyleDeclaration::CSSStyleDeclaration(Handle h) noexcept : emlite::Val(emlite
 CSSStyleDeclaration::CSSStyleDeclaration(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::CSSOMString CSSStyleDeclaration::cssText() const {
-    return emlite::Val::get("cssText").as<jsbind::CSSOMString>();
+jsbind::String CSSStyleDeclaration::cssText() const {
+    return emlite::Val::get("cssText").as<jsbind::String>();
 }
 
-void CSSStyleDeclaration::cssText(const jsbind::CSSOMString& value) {
+void CSSStyleDeclaration::cssText(const jsbind::String& value) {
     emlite::Val::set("cssText", value);
 }
 
@@ -22,28 +22,28 @@ unsigned long CSSStyleDeclaration::length() const {
     return emlite::Val::get("length").as<unsigned long>();
 }
 
-jsbind::CSSOMString CSSStyleDeclaration::item(unsigned long index) {
-    return emlite::Val::call("item", index).as<jsbind::CSSOMString>();
+jsbind::String CSSStyleDeclaration::item(unsigned long index) {
+    return emlite::Val::call("item", index).as<jsbind::String>();
 }
 
-jsbind::CSSOMString CSSStyleDeclaration::getPropertyValue(const jsbind::CSSOMString& property) {
-    return emlite::Val::call("getPropertyValue", property).as<jsbind::CSSOMString>();
+jsbind::String CSSStyleDeclaration::getPropertyValue(const jsbind::String& property) {
+    return emlite::Val::call("getPropertyValue", property).as<jsbind::String>();
 }
 
-jsbind::CSSOMString CSSStyleDeclaration::getPropertyPriority(const jsbind::CSSOMString& property) {
-    return emlite::Val::call("getPropertyPriority", property).as<jsbind::CSSOMString>();
+jsbind::String CSSStyleDeclaration::getPropertyPriority(const jsbind::String& property) {
+    return emlite::Val::call("getPropertyPriority", property).as<jsbind::String>();
 }
 
-jsbind::Undefined CSSStyleDeclaration::setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value) {
+jsbind::Undefined CSSStyleDeclaration::setProperty(const jsbind::String& property, const jsbind::String& value) {
     return emlite::Val::call("setProperty", property, value).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CSSStyleDeclaration::setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value, const jsbind::CSSOMString& priority) {
+jsbind::Undefined CSSStyleDeclaration::setProperty(const jsbind::String& property, const jsbind::String& value, const jsbind::String& priority) {
     return emlite::Val::call("setProperty", property, value, priority).as<jsbind::Undefined>();
 }
 
-jsbind::CSSOMString CSSStyleDeclaration::removeProperty(const jsbind::CSSOMString& property) {
-    return emlite::Val::call("removeProperty", property).as<jsbind::CSSOMString>();
+jsbind::String CSSStyleDeclaration::removeProperty(const jsbind::String& property) {
+    return emlite::Val::call("removeProperty", property).as<jsbind::String>();
 }
 
 CSSRule CSSStyleDeclaration::parentRule() const {

@@ -13,6 +13,6 @@ public:
     static ProtectedAudience take_ownership(Handle h) noexcept;
 
     ProtectedAudience clone() const noexcept;
-    jsbind::Any queryFeatureSupport(const jsbind::DOMString& feature);
+    jsbind::Any queryFeatureSupport(const jsbind::String& feature);
 };
 

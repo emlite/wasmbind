@@ -9,9 +9,9 @@ FencedFrameConfig::FencedFrameConfig(Handle h) noexcept : emlite::Val(emlite::Va
 FencedFrameConfig::FencedFrameConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-FencedFrameConfig::FencedFrameConfig(const jsbind::USVString& url) : emlite::Val(emlite::Val::global("FencedFrameConfig").new_(url)) {}
+FencedFrameConfig::FencedFrameConfig(const jsbind::String& url) : emlite::Val(emlite::Val::global("FencedFrameConfig").new_(url)) {}
 
-jsbind::Undefined FencedFrameConfig::setSharedStorageContext(const jsbind::DOMString& contextString) {
+jsbind::Undefined FencedFrameConfig::setSharedStorageContext(const jsbind::String& contextString) {
     return emlite::Val::call("setSharedStorageContext", contextString).as<jsbind::Undefined>();
 }
 

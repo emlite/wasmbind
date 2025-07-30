@@ -13,8 +13,8 @@ public:
     static PaymentManager take_ownership(Handle h) noexcept;
 
     PaymentManager clone() const noexcept;
-    jsbind::DOMString userHint() const;
-    void userHint(const jsbind::DOMString& value);
-    jsbind::Promise<jsbind::Undefined> enableDelegations(const jsbind::Sequence<PaymentDelegation>& delegations);
+    jsbind::String userHint() const;
+    void userHint(const jsbind::String& value);
+    jsbind::Promise<jsbind::Undefined> enableDelegations(const jsbind::TypedArray<PaymentDelegation>& delegations);
 };
 

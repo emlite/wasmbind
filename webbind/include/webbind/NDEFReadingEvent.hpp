@@ -16,8 +16,8 @@ public:
     static NDEFReadingEvent take_ownership(Handle h) noexcept;
 
     NDEFReadingEvent clone() const noexcept;
-    NDEFReadingEvent(const jsbind::DOMString& type, const jsbind::Any& readingEventInitDict);
-    jsbind::DOMString serialNumber() const;
+    NDEFReadingEvent(const jsbind::String& type, const jsbind::Any& readingEventInitDict);
+    jsbind::String serialNumber() const;
     NDEFMessage message() const;
 };
 

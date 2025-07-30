@@ -9,9 +9,9 @@ IDBVersionChangeEvent::IDBVersionChangeEvent(Handle h) noexcept : Event(emlite::
 IDBVersionChangeEvent::IDBVersionChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-IDBVersionChangeEvent::IDBVersionChangeEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("IDBVersionChangeEvent").new_(type)) {}
+IDBVersionChangeEvent::IDBVersionChangeEvent(const jsbind::String& type) : Event(emlite::Val::global("IDBVersionChangeEvent").new_(type)) {}
 
-IDBVersionChangeEvent::IDBVersionChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("IDBVersionChangeEvent").new_(type, eventInitDict)) {}
+IDBVersionChangeEvent::IDBVersionChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("IDBVersionChangeEvent").new_(type, eventInitDict)) {}
 
 long long IDBVersionChangeEvent::oldVersion() const {
     return Event::get("oldVersion").as<long long>();

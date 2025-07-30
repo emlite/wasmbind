@@ -15,7 +15,7 @@ public:
 
     RTCError clone() const noexcept;
     RTCError(const jsbind::Any& init);
-    RTCError(const jsbind::Any& init, const jsbind::DOMString& message);
+    RTCError(const jsbind::Any& init, const jsbind::String& message);
     RTCErrorDetailType errorDetail() const;
     long sdpLineNumber() const;
     long sctpCauseCode() const;

@@ -10,11 +10,11 @@ BluetoothLEScanPermissionResult::BluetoothLEScanPermissionResult(Handle h) noexc
 BluetoothLEScanPermissionResult::BluetoothLEScanPermissionResult(const emlite::Val &val) noexcept: PermissionStatus(val) {}
 
 
-jsbind::FrozenArray<BluetoothLEScan> BluetoothLEScanPermissionResult::scans() const {
-    return PermissionStatus::get("scans").as<jsbind::FrozenArray<BluetoothLEScan>>();
+jsbind::TypedArray<BluetoothLEScan> BluetoothLEScanPermissionResult::scans() const {
+    return PermissionStatus::get("scans").as<jsbind::TypedArray<BluetoothLEScan>>();
 }
 
-void BluetoothLEScanPermissionResult::scans(const jsbind::FrozenArray<BluetoothLEScan>& value) {
+void BluetoothLEScanPermissionResult::scans(const jsbind::TypedArray<BluetoothLEScan>& value) {
     PermissionStatus::set("scans", value);
 }
 

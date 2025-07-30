@@ -9,9 +9,9 @@ DeviceOrientationEvent::DeviceOrientationEvent(Handle h) noexcept : Event(emlite
 DeviceOrientationEvent::DeviceOrientationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type)) {}
+DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::String& type) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type)) {}
 
-DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type, eventInitDict)) {}
+DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type, eventInitDict)) {}
 
 double DeviceOrientationEvent::alpha() const {
     return Event::get("alpha").as<double>();

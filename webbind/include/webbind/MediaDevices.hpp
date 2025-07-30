@@ -22,8 +22,8 @@ public:
     explicit AudioOutputOptions(const emlite::Val &val) noexcept;
     AudioOutputOptions() noexcept;
     AudioOutputOptions clone() const noexcept;
-    jsbind::DOMString deviceId() const;
-    void deviceId(const jsbind::DOMString& value);
+    jsbind::String deviceId() const;
+    void deviceId(const jsbind::String& value);
 };
 
 class CaptureHandleConfig : public emlite::Val {
@@ -35,10 +35,10 @@ public:
     CaptureHandleConfig clone() const noexcept;
     bool exposeOrigin() const;
     void exposeOrigin(bool value);
-    jsbind::DOMString handle() const;
-    void handle(const jsbind::DOMString& value);
-    jsbind::Sequence<jsbind::DOMString> permittedOrigins() const;
-    void permittedOrigins(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::String handle() const;
+    void handle(const jsbind::String& value);
+    jsbind::TypedArray<jsbind::String> permittedOrigins() const;
+    void permittedOrigins(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class MediaTrackSupportedConstraints : public emlite::Val {
@@ -67,8 +67,8 @@ public:
     explicit MediaStreamConstraints(const emlite::Val &val) noexcept;
     MediaStreamConstraints() noexcept;
     MediaStreamConstraints clone() const noexcept;
-    jsbind::DOMString peerIdentity() const;
-    void peerIdentity(const jsbind::DOMString& value);
+    jsbind::String peerIdentity() const;
+    void peerIdentity(const jsbind::String& value);
 };
 
 class DisplayMediaStreamOptions : public emlite::Val {
@@ -106,12 +106,12 @@ public:
     MediaDevices clone() const noexcept;
     jsbind::Any ondevicechange() const;
     void ondevicechange(const jsbind::Any& value);
-    jsbind::Promise<jsbind::Sequence<MediaDeviceInfo>> enumerateDevices();
+    jsbind::Promise<jsbind::TypedArray<MediaDeviceInfo>> enumerateDevices();
     jsbind::Promise<MediaDeviceInfo> selectAudioOutput();
     jsbind::Promise<MediaDeviceInfo> selectAudioOutput(const AudioOutputOptions& options);
     jsbind::Undefined setCaptureHandleConfig();
     jsbind::Undefined setCaptureHandleConfig(const CaptureHandleConfig& config);
-    jsbind::Undefined setSupportedCaptureActions(const jsbind::Sequence<jsbind::DOMString>& actions);
+    jsbind::Undefined setSupportedCaptureActions(const jsbind::TypedArray<jsbind::String>& actions);
     jsbind::Any oncaptureaction() const;
     void oncaptureaction(const jsbind::Any& value);
     MediaTrackSupportedConstraints getSupportedConstraints();

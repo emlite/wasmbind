@@ -13,11 +13,11 @@ GetComposedRangesOptions::GetComposedRangesOptions(const emlite::Val &val) noexc
 GetComposedRangesOptions::GetComposedRangesOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 GetComposedRangesOptions GetComposedRangesOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<ShadowRoot> GetComposedRangesOptions::shadowRoots() const {
-    return emlite::Val::get("shadowRoots").as<jsbind::Sequence<ShadowRoot>>();
+jsbind::TypedArray<ShadowRoot> GetComposedRangesOptions::shadowRoots() const {
+    return emlite::Val::get("shadowRoots").as<jsbind::TypedArray<ShadowRoot>>();
 }
 
-void GetComposedRangesOptions::shadowRoots(const jsbind::Sequence<ShadowRoot>& value) {
+void GetComposedRangesOptions::shadowRoots(const jsbind::TypedArray<ShadowRoot>& value) {
     emlite::Val::set("shadowRoots", value);
 }
 
@@ -53,12 +53,12 @@ unsigned long Selection::rangeCount() const {
     return emlite::Val::get("rangeCount").as<unsigned long>();
 }
 
-jsbind::DOMString Selection::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String Selection::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-jsbind::DOMString Selection::direction() const {
-    return emlite::Val::get("direction").as<jsbind::DOMString>();
+jsbind::String Selection::direction() const {
+    return emlite::Val::get("direction").as<jsbind::String>();
 }
 
 Range Selection::getRangeAt(unsigned long index) {
@@ -81,12 +81,12 @@ jsbind::Undefined Selection::empty() {
     return emlite::Val::call("empty").as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<StaticRange> Selection::getComposedRanges() {
-    return emlite::Val::call("getComposedRanges").as<jsbind::Sequence<StaticRange>>();
+jsbind::TypedArray<StaticRange> Selection::getComposedRanges() {
+    return emlite::Val::call("getComposedRanges").as<jsbind::TypedArray<StaticRange>>();
 }
 
-jsbind::Sequence<StaticRange> Selection::getComposedRanges(const GetComposedRangesOptions& options) {
-    return emlite::Val::call("getComposedRanges", options).as<jsbind::Sequence<StaticRange>>();
+jsbind::TypedArray<StaticRange> Selection::getComposedRanges(const GetComposedRangesOptions& options) {
+    return emlite::Val::call("getComposedRanges", options).as<jsbind::TypedArray<StaticRange>>();
 }
 
 jsbind::Undefined Selection::collapse(const Node& node) {
@@ -133,15 +133,15 @@ jsbind::Undefined Selection::modify() {
     return emlite::Val::call("modify").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Selection::modify(const jsbind::DOMString& alter) {
+jsbind::Undefined Selection::modify(const jsbind::String& alter) {
     return emlite::Val::call("modify", alter).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Selection::modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction) {
+jsbind::Undefined Selection::modify(const jsbind::String& alter, const jsbind::String& direction) {
     return emlite::Val::call("modify", alter, direction).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Selection::modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction, const jsbind::DOMString& granularity) {
+jsbind::Undefined Selection::modify(const jsbind::String& alter, const jsbind::String& direction, const jsbind::String& granularity) {
     return emlite::Val::call("modify", alter, direction, granularity).as<jsbind::Undefined>();
 }
 

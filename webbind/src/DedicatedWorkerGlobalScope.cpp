@@ -10,8 +10,8 @@ DedicatedWorkerGlobalScope::DedicatedWorkerGlobalScope(Handle h) noexcept : Work
 DedicatedWorkerGlobalScope::DedicatedWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
 
 
-jsbind::DOMString DedicatedWorkerGlobalScope::name() const {
-    return WorkerGlobalScope::get("name").as<jsbind::DOMString>();
+jsbind::String DedicatedWorkerGlobalScope::name() const {
+    return WorkerGlobalScope::get("name").as<jsbind::String>();
 }
 
 jsbind::Undefined DedicatedWorkerGlobalScope::postMessage(const jsbind::Any& message) {

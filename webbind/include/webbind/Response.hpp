@@ -23,15 +23,15 @@ public:
     Response(const jsbind::Any& body);
     Response(const jsbind::Any& body, const jsbind::Any& init);
     static Response error();
-    static Response redirect(const jsbind::USVString& url);
-    static Response redirect(const jsbind::USVString& url, unsigned short status);
+    static Response redirect(const jsbind::String& url);
+    static Response redirect(const jsbind::String& url, unsigned short status);
     jsbind::Promise<jsbind::Any> json();
     ResponseType type() const;
-    jsbind::USVString url() const;
+    jsbind::String url() const;
     bool redirected() const;
     unsigned short status() const;
     bool ok() const;
-    jsbind::ByteString statusText() const;
+    jsbind::String statusText() const;
     Headers headers() const;
     Response clone();
     ReadableStream body() const;
@@ -40,6 +40,6 @@ public:
     jsbind::Promise<Blob> blob();
     jsbind::Promise<jsbind::Uint8Array> bytes();
     jsbind::Promise<FormData> formData();
-    jsbind::Promise<jsbind::USVString> text();
+    jsbind::Promise<jsbind::String> text();
 };
 

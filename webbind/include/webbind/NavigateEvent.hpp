@@ -35,7 +35,7 @@ public:
     static NavigateEvent take_ownership(Handle h) noexcept;
 
     NavigateEvent clone() const noexcept;
-    NavigateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    NavigateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     NavigationType navigationType() const;
     NavigationDestination destination() const;
     bool canIntercept() const;
@@ -43,7 +43,7 @@ public:
     bool hashChange() const;
     AbortSignal signal() const;
     FormData formData() const;
-    jsbind::DOMString downloadRequest() const;
+    jsbind::String downloadRequest() const;
     jsbind::Any info() const;
     bool hasUAVisualTransition() const;
     Element sourceElement() const;

@@ -354,7 +354,7 @@ DOMMatrix DOMMatrix::invertSelf() {
     return DOMMatrixReadOnly::call("invertSelf").as<DOMMatrix>();
 }
 
-DOMMatrix DOMMatrix::setMatrixValue(const jsbind::DOMString& transformList) {
+DOMMatrix DOMMatrix::setMatrixValue(const jsbind::String& transformList) {
     return DOMMatrixReadOnly::call("setMatrixValue", transformList).as<DOMMatrix>();
 }
 

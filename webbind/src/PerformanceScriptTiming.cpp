@@ -18,32 +18,32 @@ jsbind::Any PerformanceScriptTiming::duration() const {
     return PerformanceEntry::get("duration").as<jsbind::Any>();
 }
 
-jsbind::DOMString PerformanceScriptTiming::name() const {
-    return PerformanceEntry::get("name").as<jsbind::DOMString>();
+jsbind::String PerformanceScriptTiming::name() const {
+    return PerformanceEntry::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString PerformanceScriptTiming::entryType() const {
-    return PerformanceEntry::get("entryType").as<jsbind::DOMString>();
+jsbind::String PerformanceScriptTiming::entryType() const {
+    return PerformanceEntry::get("entryType").as<jsbind::String>();
 }
 
 ScriptInvokerType PerformanceScriptTiming::invokerType() const {
     return PerformanceEntry::get("invokerType").as<ScriptInvokerType>();
 }
 
-jsbind::DOMString PerformanceScriptTiming::invoker() const {
-    return PerformanceEntry::get("invoker").as<jsbind::DOMString>();
+jsbind::String PerformanceScriptTiming::invoker() const {
+    return PerformanceEntry::get("invoker").as<jsbind::String>();
 }
 
 jsbind::Any PerformanceScriptTiming::executionStart() const {
     return PerformanceEntry::get("executionStart").as<jsbind::Any>();
 }
 
-jsbind::DOMString PerformanceScriptTiming::sourceURL() const {
-    return PerformanceEntry::get("sourceURL").as<jsbind::DOMString>();
+jsbind::String PerformanceScriptTiming::sourceURL() const {
+    return PerformanceEntry::get("sourceURL").as<jsbind::String>();
 }
 
-jsbind::DOMString PerformanceScriptTiming::sourceFunctionName() const {
-    return PerformanceEntry::get("sourceFunctionName").as<jsbind::DOMString>();
+jsbind::String PerformanceScriptTiming::sourceFunctionName() const {
+    return PerformanceEntry::get("sourceFunctionName").as<jsbind::String>();
 }
 
 long long PerformanceScriptTiming::sourceCharPosition() const {

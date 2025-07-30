@@ -16,8 +16,8 @@ public:
     static CSSFontFeatureValuesRule take_ownership(Handle h) noexcept;
 
     CSSFontFeatureValuesRule clone() const noexcept;
-    jsbind::CSSOMString fontFamily() const;
-    void fontFamily(const jsbind::CSSOMString& value);
+    jsbind::String fontFamily() const;
+    void fontFamily(const jsbind::String& value);
     CSSFontFeatureValuesMap annotation() const;
     CSSFontFeatureValuesMap ornaments() const;
     CSSFontFeatureValuesMap stylistic() const;

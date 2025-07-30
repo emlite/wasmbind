@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Any.hpp"
-#include "Sequence.hpp"
+#include "Array.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
 #if __has_include(<string>)
@@ -20,7 +20,7 @@ class String : public emlite::Val {
     explicit String(const emlite::Val &v) noexcept;
     String() noexcept;
 
-    explicit String(const char *utf8);
+    String(const char *utf8);
 #if JSBIND_HAS_STD_STRING
     explicit String(const std::string &utf8);
     explicit String(std::string_view utf8);
@@ -80,9 +80,9 @@ class String : public emlite::Val {
     [[nodiscard]] int search(const Any &pat) const noexcept;
     [[nodiscard]] String slice(int start, int end = -1)
         const noexcept;
-    // For split, you may need a Sequence<String> type or
+    // For split, you may need a TypedArray<String> type or
     // similar
-    [[nodiscard]] Sequence<String> split(const char *sep
+    [[nodiscard]] TypedArray<String> split(const char *sep
     ) const noexcept;
     [[nodiscard]] bool starts_with(const char *pat
     ) const noexcept;
@@ -106,13 +106,5 @@ class String : public emlite::Val {
 
     DECLARE_CLONE(String)
 };
-
-DECLARE_STRING(ByteString)
-
-DECLARE_STRING(DOMString)
-
-DECLARE_STRING(CSSOMString)
-
-DECLARE_STRING(USVString)
 
 } // namespace jsbind

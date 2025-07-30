@@ -126,11 +126,11 @@ void WebTransportCloseInfo::closeCode(unsigned long value) {
     emlite::Val::set("closeCode", value);
 }
 
-jsbind::USVString WebTransportCloseInfo::reason() const {
-    return emlite::Val::get("reason").as<jsbind::USVString>();
+jsbind::String WebTransportCloseInfo::reason() const {
+    return emlite::Val::get("reason").as<jsbind::String>();
 }
 
-void WebTransportCloseInfo::reason(const jsbind::USVString& value) {
+void WebTransportCloseInfo::reason(const jsbind::String& value) {
     emlite::Val::set("reason", value);
 }
 
@@ -158,9 +158,9 @@ WebTransport::WebTransport(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 WebTransport::WebTransport(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-WebTransport::WebTransport(const jsbind::USVString& url) : emlite::Val(emlite::Val::global("WebTransport").new_(url)) {}
+WebTransport::WebTransport(const jsbind::String& url) : emlite::Val(emlite::Val::global("WebTransport").new_(url)) {}
 
-WebTransport::WebTransport(const jsbind::USVString& url, const jsbind::Any& options) : emlite::Val(emlite::Val::global("WebTransport").new_(url, options)) {}
+WebTransport::WebTransport(const jsbind::String& url, const jsbind::Any& options) : emlite::Val(emlite::Val::global("WebTransport").new_(url, options)) {}
 
 jsbind::Promise<WebTransportConnectionStats> WebTransport::getStats() {
     return emlite::Val::call("getStats").as<jsbind::Promise<WebTransportConnectionStats>>();
@@ -202,8 +202,8 @@ void WebTransport::anticipatedConcurrentIncomingBidirectionalStreams(unsigned sh
     emlite::Val::set("anticipatedConcurrentIncomingBidirectionalStreams", value);
 }
 
-jsbind::DOMString WebTransport::protocol() const {
-    return emlite::Val::get("protocol").as<jsbind::DOMString>();
+jsbind::String WebTransport::protocol() const {
+    return emlite::Val::get("protocol").as<jsbind::String>();
 }
 
 jsbind::Promise<WebTransportCloseInfo> WebTransport::closed() const {

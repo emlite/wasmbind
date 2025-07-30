@@ -14,15 +14,15 @@ public:
 
     DOMTokenList clone() const noexcept;
     unsigned long length() const;
-    jsbind::DOMString item(unsigned long index);
-    bool contains(const jsbind::DOMString& token);
-    jsbind::Undefined add(const jsbind::DOMString& tokens);
-    jsbind::Undefined remove(const jsbind::DOMString& tokens);
-    bool toggle(const jsbind::DOMString& token);
-    bool toggle(const jsbind::DOMString& token, bool force);
-    bool replace(const jsbind::DOMString& token, const jsbind::DOMString& newToken);
-    bool supports(const jsbind::DOMString& token);
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
+    jsbind::String item(unsigned long index);
+    bool contains(const jsbind::String& token);
+    jsbind::Undefined add(const jsbind::String& tokens);
+    jsbind::Undefined remove(const jsbind::String& tokens);
+    bool toggle(const jsbind::String& token);
+    bool toggle(const jsbind::String& token, bool force);
+    bool replace(const jsbind::String& token, const jsbind::String& newToken);
+    bool supports(const jsbind::String& token);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
 };
 

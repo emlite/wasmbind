@@ -11,11 +11,11 @@ VTTRegion::VTTRegion(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 VTTRegion::VTTRegion() : emlite::Val(emlite::Val::global("VTTRegion").new_()) {}
 
-jsbind::DOMString VTTRegion::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String VTTRegion::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-void VTTRegion::id(const jsbind::DOMString& value) {
+void VTTRegion::id(const jsbind::String& value) {
     emlite::Val::set("id", value);
 }
 

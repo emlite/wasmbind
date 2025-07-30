@@ -17,7 +17,7 @@ jsbind::Any WebGLActiveInfo::type() const {
     return emlite::Val::get("type").as<jsbind::Any>();
 }
 
-jsbind::DOMString WebGLActiveInfo::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String WebGLActiveInfo::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 

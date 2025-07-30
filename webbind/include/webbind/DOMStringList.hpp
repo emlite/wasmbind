@@ -14,7 +14,7 @@ public:
 
     DOMStringList clone() const noexcept;
     unsigned long length() const;
-    jsbind::DOMString item(unsigned long index);
-    bool contains(const jsbind::DOMString& string);
+    jsbind::String item(unsigned long index);
+    bool contains(const jsbind::String& string);
 };
 

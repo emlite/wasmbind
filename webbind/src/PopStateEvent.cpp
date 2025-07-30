@@ -9,9 +9,9 @@ PopStateEvent::PopStateEvent(Handle h) noexcept : Event(emlite::Val::take_owners
 PopStateEvent::PopStateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-PopStateEvent::PopStateEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("PopStateEvent").new_(type)) {}
+PopStateEvent::PopStateEvent(const jsbind::String& type) : Event(emlite::Val::global("PopStateEvent").new_(type)) {}
 
-PopStateEvent::PopStateEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PopStateEvent").new_(type, eventInitDict)) {}
+PopStateEvent::PopStateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PopStateEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any PopStateEvent::state() const {
     return Event::get("state").as<jsbind::Any>();

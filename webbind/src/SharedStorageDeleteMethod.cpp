@@ -10,7 +10,7 @@ SharedStorageDeleteMethod::SharedStorageDeleteMethod(Handle h) noexcept : Shared
 SharedStorageDeleteMethod::SharedStorageDeleteMethod(const emlite::Val &val) noexcept: SharedStorageModifierMethod(val) {}
 
 
-SharedStorageDeleteMethod::SharedStorageDeleteMethod(const jsbind::DOMString& key) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageDeleteMethod").new_(key)) {}
+SharedStorageDeleteMethod::SharedStorageDeleteMethod(const jsbind::String& key) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageDeleteMethod").new_(key)) {}
 
-SharedStorageDeleteMethod::SharedStorageDeleteMethod(const jsbind::DOMString& key, const SharedStorageModifierMethodOptions& options) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageDeleteMethod").new_(key, options)) {}
+SharedStorageDeleteMethod::SharedStorageDeleteMethod(const jsbind::String& key, const SharedStorageModifierMethodOptions& options) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageDeleteMethod").new_(key, options)) {}
 

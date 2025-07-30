@@ -10,8 +10,8 @@ ScreenDetails::ScreenDetails(Handle h) noexcept : EventTarget(emlite::Val::take_
 ScreenDetails::ScreenDetails(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::FrozenArray<ScreenDetailed> ScreenDetails::screens() const {
-    return EventTarget::get("screens").as<jsbind::FrozenArray<ScreenDetailed>>();
+jsbind::TypedArray<ScreenDetailed> ScreenDetails::screens() const {
+    return EventTarget::get("screens").as<jsbind::TypedArray<ScreenDetailed>>();
 }
 
 ScreenDetailed ScreenDetails::currentScreen() const {

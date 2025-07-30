@@ -15,7 +15,7 @@ XRInputSource XRTransientInputHitTestResult::inputSource() const {
     return emlite::Val::get("inputSource").as<XRInputSource>();
 }
 
-jsbind::FrozenArray<XRHitTestResult> XRTransientInputHitTestResult::results() const {
-    return emlite::Val::get("results").as<jsbind::FrozenArray<XRHitTestResult>>();
+jsbind::TypedArray<XRHitTestResult> XRTransientInputHitTestResult::results() const {
+    return emlite::Val::get("results").as<jsbind::TypedArray<XRHitTestResult>>();
 }
 

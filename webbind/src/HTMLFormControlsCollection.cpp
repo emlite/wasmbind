@@ -9,7 +9,7 @@ HTMLFormControlsCollection::HTMLFormControlsCollection(Handle h) noexcept : HTML
 HTMLFormControlsCollection::HTMLFormControlsCollection(const emlite::Val &val) noexcept: HTMLCollection(val) {}
 
 
-jsbind::Any HTMLFormControlsCollection::namedItem(const jsbind::DOMString& name) {
+jsbind::Any HTMLFormControlsCollection::namedItem(const jsbind::String& name) {
     return HTMLCollection::call("namedItem", name).as<jsbind::Any>();
 }
 

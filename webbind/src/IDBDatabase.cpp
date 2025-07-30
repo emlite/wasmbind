@@ -52,8 +52,8 @@ IDBDatabase::IDBDatabase(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 IDBDatabase::IDBDatabase(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::DOMString IDBDatabase::name() const {
-    return EventTarget::get("name").as<jsbind::DOMString>();
+jsbind::String IDBDatabase::name() const {
+    return EventTarget::get("name").as<jsbind::String>();
 }
 
 long long IDBDatabase::version() const {
@@ -80,15 +80,15 @@ jsbind::Undefined IDBDatabase::close() {
     return EventTarget::call("close").as<jsbind::Undefined>();
 }
 
-IDBObjectStore IDBDatabase::createObjectStore(const jsbind::DOMString& name) {
+IDBObjectStore IDBDatabase::createObjectStore(const jsbind::String& name) {
     return EventTarget::call("createObjectStore", name).as<IDBObjectStore>();
 }
 
-IDBObjectStore IDBDatabase::createObjectStore(const jsbind::DOMString& name, const IDBObjectStoreParameters& options) {
+IDBObjectStore IDBDatabase::createObjectStore(const jsbind::String& name, const IDBObjectStoreParameters& options) {
     return EventTarget::call("createObjectStore", name, options).as<IDBObjectStore>();
 }
 
-jsbind::Undefined IDBDatabase::deleteObjectStore(const jsbind::DOMString& name) {
+jsbind::Undefined IDBDatabase::deleteObjectStore(const jsbind::String& name) {
     return EventTarget::call("deleteObjectStore", name).as<jsbind::Undefined>();
 }
 

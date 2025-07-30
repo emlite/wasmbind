@@ -14,39 +14,39 @@ MediaMetadata::MediaMetadata() : emlite::Val(emlite::Val::global("MediaMetadata"
 
 MediaMetadata::MediaMetadata(const jsbind::Any& init) : emlite::Val(emlite::Val::global("MediaMetadata").new_(init)) {}
 
-jsbind::DOMString MediaMetadata::title() const {
-    return emlite::Val::get("title").as<jsbind::DOMString>();
+jsbind::String MediaMetadata::title() const {
+    return emlite::Val::get("title").as<jsbind::String>();
 }
 
-void MediaMetadata::title(const jsbind::DOMString& value) {
+void MediaMetadata::title(const jsbind::String& value) {
     emlite::Val::set("title", value);
 }
 
-jsbind::DOMString MediaMetadata::artist() const {
-    return emlite::Val::get("artist").as<jsbind::DOMString>();
+jsbind::String MediaMetadata::artist() const {
+    return emlite::Val::get("artist").as<jsbind::String>();
 }
 
-void MediaMetadata::artist(const jsbind::DOMString& value) {
+void MediaMetadata::artist(const jsbind::String& value) {
     emlite::Val::set("artist", value);
 }
 
-jsbind::DOMString MediaMetadata::album() const {
-    return emlite::Val::get("album").as<jsbind::DOMString>();
+jsbind::String MediaMetadata::album() const {
+    return emlite::Val::get("album").as<jsbind::String>();
 }
 
-void MediaMetadata::album(const jsbind::DOMString& value) {
+void MediaMetadata::album(const jsbind::String& value) {
     emlite::Val::set("album", value);
 }
 
-jsbind::FrozenArray<jsbind::Object> MediaMetadata::artwork() const {
-    return emlite::Val::get("artwork").as<jsbind::FrozenArray<jsbind::Object>>();
+jsbind::TypedArray<jsbind::Object> MediaMetadata::artwork() const {
+    return emlite::Val::get("artwork").as<jsbind::TypedArray<jsbind::Object>>();
 }
 
-void MediaMetadata::artwork(const jsbind::FrozenArray<jsbind::Object>& value) {
+void MediaMetadata::artwork(const jsbind::TypedArray<jsbind::Object>& value) {
     emlite::Val::set("artwork", value);
 }
 
-jsbind::FrozenArray<ChapterInformation> MediaMetadata::chapterInfo() const {
-    return emlite::Val::get("chapterInfo").as<jsbind::FrozenArray<ChapterInformation>>();
+jsbind::TypedArray<ChapterInformation> MediaMetadata::chapterInfo() const {
+    return emlite::Val::get("chapterInfo").as<jsbind::TypedArray<ChapterInformation>>();
 }
 

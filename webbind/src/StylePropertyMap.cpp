@@ -9,15 +9,15 @@ StylePropertyMap::StylePropertyMap(Handle h) noexcept : StylePropertyMapReadOnly
 StylePropertyMap::StylePropertyMap(const emlite::Val &val) noexcept: StylePropertyMapReadOnly(val) {}
 
 
-jsbind::Undefined StylePropertyMap::set(const jsbind::USVString& property, const jsbind::Any& values) {
+jsbind::Undefined StylePropertyMap::set(const jsbind::String& property, const jsbind::Any& values) {
     return StylePropertyMapReadOnly::call("set", property, values).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined StylePropertyMap::append(const jsbind::USVString& property, const jsbind::Any& values) {
+jsbind::Undefined StylePropertyMap::append(const jsbind::String& property, const jsbind::Any& values) {
     return StylePropertyMapReadOnly::call("append", property, values).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined StylePropertyMap::delete_(const jsbind::USVString& property) {
+jsbind::Undefined StylePropertyMap::delete_(const jsbind::String& property) {
     return StylePropertyMapReadOnly::call("delete", property).as<jsbind::Undefined>();
 }
 

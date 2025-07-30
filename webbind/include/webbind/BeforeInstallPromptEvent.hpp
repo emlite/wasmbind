@@ -27,8 +27,8 @@ public:
     static BeforeInstallPromptEvent take_ownership(Handle h) noexcept;
 
     BeforeInstallPromptEvent clone() const noexcept;
-    BeforeInstallPromptEvent(const jsbind::DOMString& type);
-    BeforeInstallPromptEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    BeforeInstallPromptEvent(const jsbind::String& type);
+    BeforeInstallPromptEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     jsbind::Promise<PromptResponseObject> prompt();
 };
 

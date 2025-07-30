@@ -16,8 +16,8 @@ public:
     static CSSKeyframeRule take_ownership(Handle h) noexcept;
 
     CSSKeyframeRule clone() const noexcept;
-    jsbind::CSSOMString keyText() const;
-    void keyText(const jsbind::CSSOMString& value);
+    jsbind::String keyText() const;
+    void keyText(const jsbind::String& value);
     CSSStyleProperties style() const;
 };
 

@@ -12,21 +12,21 @@ SpeechSynthesisUtterance::SpeechSynthesisUtterance(const emlite::Val &val) noexc
 
 SpeechSynthesisUtterance::SpeechSynthesisUtterance() : EventTarget(emlite::Val::global("SpeechSynthesisUtterance").new_()) {}
 
-SpeechSynthesisUtterance::SpeechSynthesisUtterance(const jsbind::DOMString& text) : EventTarget(emlite::Val::global("SpeechSynthesisUtterance").new_(text)) {}
+SpeechSynthesisUtterance::SpeechSynthesisUtterance(const jsbind::String& text) : EventTarget(emlite::Val::global("SpeechSynthesisUtterance").new_(text)) {}
 
-jsbind::DOMString SpeechSynthesisUtterance::text() const {
-    return EventTarget::get("text").as<jsbind::DOMString>();
+jsbind::String SpeechSynthesisUtterance::text() const {
+    return EventTarget::get("text").as<jsbind::String>();
 }
 
-void SpeechSynthesisUtterance::text(const jsbind::DOMString& value) {
+void SpeechSynthesisUtterance::text(const jsbind::String& value) {
     EventTarget::set("text", value);
 }
 
-jsbind::DOMString SpeechSynthesisUtterance::lang() const {
-    return EventTarget::get("lang").as<jsbind::DOMString>();
+jsbind::String SpeechSynthesisUtterance::lang() const {
+    return EventTarget::get("lang").as<jsbind::String>();
 }
 
-void SpeechSynthesisUtterance::lang(const jsbind::DOMString& value) {
+void SpeechSynthesisUtterance::lang(const jsbind::String& value) {
     EventTarget::set("lang", value);
 }
 

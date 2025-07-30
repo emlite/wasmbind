@@ -61,7 +61,7 @@ jsbind::Undefined PrivateAggregation::contributeToHistogram(const PAHistogramCon
     return emlite::Val::call("contributeToHistogram", contribution).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined PrivateAggregation::contributeToHistogramOnEvent(const jsbind::DOMString& event, const jsbind::Record<jsbind::DOMString, jsbind::Any>& contribution) {
+jsbind::Undefined PrivateAggregation::contributeToHistogramOnEvent(const jsbind::String& event, const jsbind::Record<jsbind::String, jsbind::Any>& contribution) {
     return emlite::Val::call("contributeToHistogramOnEvent", event, contribution).as<jsbind::Undefined>();
 }
 

@@ -9,19 +9,19 @@ ItemDetails::ItemDetails(const emlite::Val &val) noexcept: emlite::Val(val) {}
 ItemDetails::ItemDetails() noexcept: emlite::Val(emlite::Val::object()) {}
 ItemDetails ItemDetails::clone() const noexcept { return *this; }
 
-jsbind::DOMString ItemDetails::itemId() const {
-    return emlite::Val::get("itemId").as<jsbind::DOMString>();
+jsbind::String ItemDetails::itemId() const {
+    return emlite::Val::get("itemId").as<jsbind::String>();
 }
 
-void ItemDetails::itemId(const jsbind::DOMString& value) {
+void ItemDetails::itemId(const jsbind::String& value) {
     emlite::Val::set("itemId", value);
 }
 
-jsbind::DOMString ItemDetails::title() const {
-    return emlite::Val::get("title").as<jsbind::DOMString>();
+jsbind::String ItemDetails::title() const {
+    return emlite::Val::get("title").as<jsbind::String>();
 }
 
-void ItemDetails::title(const jsbind::DOMString& value) {
+void ItemDetails::title(const jsbind::String& value) {
     emlite::Val::set("title", value);
 }
 
@@ -41,35 +41,35 @@ void ItemDetails::type(const ItemType& value) {
     emlite::Val::set("type", value);
 }
 
-jsbind::DOMString ItemDetails::description() const {
-    return emlite::Val::get("description").as<jsbind::DOMString>();
+jsbind::String ItemDetails::description() const {
+    return emlite::Val::get("description").as<jsbind::String>();
 }
 
-void ItemDetails::description(const jsbind::DOMString& value) {
+void ItemDetails::description(const jsbind::String& value) {
     emlite::Val::set("description", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> ItemDetails::iconURLs() const {
-    return emlite::Val::get("iconURLs").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> ItemDetails::iconURLs() const {
+    return emlite::Val::get("iconURLs").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void ItemDetails::iconURLs(const jsbind::Sequence<jsbind::DOMString>& value) {
+void ItemDetails::iconURLs(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("iconURLs", value);
 }
 
-jsbind::DOMString ItemDetails::subscriptionPeriod() const {
-    return emlite::Val::get("subscriptionPeriod").as<jsbind::DOMString>();
+jsbind::String ItemDetails::subscriptionPeriod() const {
+    return emlite::Val::get("subscriptionPeriod").as<jsbind::String>();
 }
 
-void ItemDetails::subscriptionPeriod(const jsbind::DOMString& value) {
+void ItemDetails::subscriptionPeriod(const jsbind::String& value) {
     emlite::Val::set("subscriptionPeriod", value);
 }
 
-jsbind::DOMString ItemDetails::freeTrialPeriod() const {
-    return emlite::Val::get("freeTrialPeriod").as<jsbind::DOMString>();
+jsbind::String ItemDetails::freeTrialPeriod() const {
+    return emlite::Val::get("freeTrialPeriod").as<jsbind::String>();
 }
 
-void ItemDetails::freeTrialPeriod(const jsbind::DOMString& value) {
+void ItemDetails::freeTrialPeriod(const jsbind::String& value) {
     emlite::Val::set("freeTrialPeriod", value);
 }
 
@@ -81,11 +81,11 @@ void ItemDetails::introductoryPrice(const jsbind::Any& value) {
     emlite::Val::set("introductoryPrice", value);
 }
 
-jsbind::DOMString ItemDetails::introductoryPricePeriod() const {
-    return emlite::Val::get("introductoryPricePeriod").as<jsbind::DOMString>();
+jsbind::String ItemDetails::introductoryPricePeriod() const {
+    return emlite::Val::get("introductoryPricePeriod").as<jsbind::String>();
 }
 
-void ItemDetails::introductoryPricePeriod(const jsbind::DOMString& value) {
+void ItemDetails::introductoryPricePeriod(const jsbind::String& value) {
     emlite::Val::set("introductoryPricePeriod", value);
 }
 
@@ -105,19 +105,19 @@ PurchaseDetails::PurchaseDetails(const emlite::Val &val) noexcept: emlite::Val(v
 PurchaseDetails::PurchaseDetails() noexcept: emlite::Val(emlite::Val::object()) {}
 PurchaseDetails PurchaseDetails::clone() const noexcept { return *this; }
 
-jsbind::DOMString PurchaseDetails::itemId() const {
-    return emlite::Val::get("itemId").as<jsbind::DOMString>();
+jsbind::String PurchaseDetails::itemId() const {
+    return emlite::Val::get("itemId").as<jsbind::String>();
 }
 
-void PurchaseDetails::itemId(const jsbind::DOMString& value) {
+void PurchaseDetails::itemId(const jsbind::String& value) {
     emlite::Val::set("itemId", value);
 }
 
-jsbind::DOMString PurchaseDetails::purchaseToken() const {
-    return emlite::Val::get("purchaseToken").as<jsbind::DOMString>();
+jsbind::String PurchaseDetails::purchaseToken() const {
+    return emlite::Val::get("purchaseToken").as<jsbind::String>();
 }
 
-void PurchaseDetails::purchaseToken(const jsbind::DOMString& value) {
+void PurchaseDetails::purchaseToken(const jsbind::String& value) {
     emlite::Val::set("purchaseToken", value);
 }
 
@@ -129,19 +129,19 @@ DigitalGoodsService::DigitalGoodsService(Handle h) noexcept : emlite::Val(emlite
 DigitalGoodsService::DigitalGoodsService(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise<jsbind::Sequence<ItemDetails>> DigitalGoodsService::getDetails(const jsbind::Sequence<jsbind::DOMString>& itemIds) {
-    return emlite::Val::call("getDetails", itemIds).as<jsbind::Promise<jsbind::Sequence<ItemDetails>>>();
+jsbind::Promise<jsbind::TypedArray<ItemDetails>> DigitalGoodsService::getDetails(const jsbind::TypedArray<jsbind::String>& itemIds) {
+    return emlite::Val::call("getDetails", itemIds).as<jsbind::Promise<jsbind::TypedArray<ItemDetails>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<PurchaseDetails>> DigitalGoodsService::listPurchases() {
-    return emlite::Val::call("listPurchases").as<jsbind::Promise<jsbind::Sequence<PurchaseDetails>>>();
+jsbind::Promise<jsbind::TypedArray<PurchaseDetails>> DigitalGoodsService::listPurchases() {
+    return emlite::Val::call("listPurchases").as<jsbind::Promise<jsbind::TypedArray<PurchaseDetails>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<PurchaseDetails>> DigitalGoodsService::listPurchaseHistory() {
-    return emlite::Val::call("listPurchaseHistory").as<jsbind::Promise<jsbind::Sequence<PurchaseDetails>>>();
+jsbind::Promise<jsbind::TypedArray<PurchaseDetails>> DigitalGoodsService::listPurchaseHistory() {
+    return emlite::Val::call("listPurchaseHistory").as<jsbind::Promise<jsbind::TypedArray<PurchaseDetails>>>();
 }
 
-jsbind::Promise<jsbind::Undefined> DigitalGoodsService::consume(const jsbind::DOMString& purchaseToken) {
+jsbind::Promise<jsbind::Undefined> DigitalGoodsService::consume(const jsbind::String& purchaseToken) {
     return emlite::Val::call("consume", purchaseToken).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

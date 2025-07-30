@@ -14,7 +14,7 @@ jsbind::Promise<jsbind::Undefined> Keyboard::lock() {
     return EventTarget::call("lock").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> Keyboard::lock(const jsbind::Sequence<jsbind::DOMString>& keyCodes) {
+jsbind::Promise<jsbind::Undefined> Keyboard::lock(const jsbind::TypedArray<jsbind::String>& keyCodes) {
     return EventTarget::call("lock", keyCodes).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

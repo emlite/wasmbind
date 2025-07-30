@@ -13,8 +13,8 @@ MLOperandDataType MLTensor::dataType() const {
     return emlite::Val::get("dataType").as<MLOperandDataType>();
 }
 
-jsbind::FrozenArray<unsigned long> MLTensor::shape() const {
-    return emlite::Val::get("shape").as<jsbind::FrozenArray<unsigned long>>();
+jsbind::TypedArray<unsigned long> MLTensor::shape() const {
+    return emlite::Val::get("shape").as<jsbind::TypedArray<unsigned long>>();
 }
 
 bool MLTensor::readable() const {

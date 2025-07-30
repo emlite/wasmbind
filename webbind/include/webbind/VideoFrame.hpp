@@ -31,8 +31,8 @@ public:
     VideoFrameCopyToOptions clone() const noexcept;
     DOMRectInit rect() const;
     void rect(const DOMRectInit& value);
-    jsbind::Sequence<PlaneLayout> layout() const;
-    void layout(const jsbind::Sequence<PlaneLayout>& value);
+    jsbind::TypedArray<PlaneLayout> layout() const;
+    void layout(const jsbind::TypedArray<PlaneLayout>& value);
     VideoPixelFormat format() const;
     void format(const VideoPixelFormat& value);
     PredefinedColorSpace colorSpace() const;
@@ -76,8 +76,8 @@ public:
     VideoFrameMetadata metadata();
     unsigned long allocationSize();
     unsigned long allocationSize(const VideoFrameCopyToOptions& options);
-    jsbind::Promise<jsbind::Sequence<PlaneLayout>> copyTo(const jsbind::Any& destination);
-    jsbind::Promise<jsbind::Sequence<PlaneLayout>> copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options);
+    jsbind::Promise<jsbind::TypedArray<PlaneLayout>> copyTo(const jsbind::Any& destination);
+    jsbind::Promise<jsbind::TypedArray<PlaneLayout>> copyTo(const jsbind::Any& destination, const VideoFrameCopyToOptions& options);
     VideoFrame clone();
     jsbind::Undefined close();
 };

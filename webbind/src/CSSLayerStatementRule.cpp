@@ -9,7 +9,7 @@ CSSLayerStatementRule::CSSLayerStatementRule(Handle h) noexcept : CSSRule(emlite
 CSSLayerStatementRule::CSSLayerStatementRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::FrozenArray<jsbind::CSSOMString> CSSLayerStatementRule::nameList() const {
-    return CSSRule::get("nameList").as<jsbind::FrozenArray<jsbind::CSSOMString>>();
+jsbind::TypedArray<jsbind::String> CSSLayerStatementRule::nameList() const {
+    return CSSRule::get("nameList").as<jsbind::TypedArray<jsbind::String>>();
 }
 

@@ -27,11 +27,11 @@ void HTMLTableCellElement::rowSpan(unsigned long value) {
     HTMLElement::set("rowSpan", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::headers() const {
-    return HTMLElement::get("headers").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::headers() const {
+    return HTMLElement::get("headers").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::headers(const jsbind::DOMString& value) {
+void HTMLTableCellElement::headers(const jsbind::String& value) {
     HTMLElement::set("headers", value);
 }
 
@@ -39,67 +39,67 @@ long HTMLTableCellElement::cellIndex() const {
     return HTMLElement::get("cellIndex").as<long>();
 }
 
-jsbind::DOMString HTMLTableCellElement::scope() const {
-    return HTMLElement::get("scope").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::scope() const {
+    return HTMLElement::get("scope").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::scope(const jsbind::DOMString& value) {
+void HTMLTableCellElement::scope(const jsbind::String& value) {
     HTMLElement::set("scope", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::abbr() const {
-    return HTMLElement::get("abbr").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::abbr() const {
+    return HTMLElement::get("abbr").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::abbr(const jsbind::DOMString& value) {
+void HTMLTableCellElement::abbr(const jsbind::String& value) {
     HTMLElement::set("abbr", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::align(const jsbind::DOMString& value) {
+void HTMLTableCellElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::axis() const {
-    return HTMLElement::get("axis").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::axis() const {
+    return HTMLElement::get("axis").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::axis(const jsbind::DOMString& value) {
+void HTMLTableCellElement::axis(const jsbind::String& value) {
     HTMLElement::set("axis", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::height() const {
-    return HTMLElement::get("height").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::height() const {
+    return HTMLElement::get("height").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::height(const jsbind::DOMString& value) {
+void HTMLTableCellElement::height(const jsbind::String& value) {
     HTMLElement::set("height", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::width() const {
-    return HTMLElement::get("width").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::width() const {
+    return HTMLElement::get("width").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::width(const jsbind::DOMString& value) {
+void HTMLTableCellElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::ch() const {
-    return HTMLElement::get("ch").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::ch() const {
+    return HTMLElement::get("ch").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::ch(const jsbind::DOMString& value) {
+void HTMLTableCellElement::ch(const jsbind::String& value) {
     HTMLElement::set("ch", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::chOff() const {
-    return HTMLElement::get("chOff").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::chOff() const {
+    return HTMLElement::get("chOff").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::chOff(const jsbind::DOMString& value) {
+void HTMLTableCellElement::chOff(const jsbind::String& value) {
     HTMLElement::set("chOff", value);
 }
 
@@ -111,19 +111,19 @@ void HTMLTableCellElement::noWrap(bool value) {
     HTMLElement::set("noWrap", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::vAlign() const {
-    return HTMLElement::get("vAlign").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::vAlign() const {
+    return HTMLElement::get("vAlign").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::vAlign(const jsbind::DOMString& value) {
+void HTMLTableCellElement::vAlign(const jsbind::String& value) {
     HTMLElement::set("vAlign", value);
 }
 
-jsbind::DOMString HTMLTableCellElement::bgColor() const {
-    return HTMLElement::get("bgColor").as<jsbind::DOMString>();
+jsbind::String HTMLTableCellElement::bgColor() const {
+    return HTMLElement::get("bgColor").as<jsbind::String>();
 }
 
-void HTMLTableCellElement::bgColor(const jsbind::DOMString& value) {
+void HTMLTableCellElement::bgColor(const jsbind::String& value) {
     HTMLElement::set("bgColor", value);
 }
 

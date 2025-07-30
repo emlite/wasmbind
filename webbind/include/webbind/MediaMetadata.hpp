@@ -17,14 +17,14 @@ public:
     MediaMetadata clone() const noexcept;
     MediaMetadata();
     MediaMetadata(const jsbind::Any& init);
-    jsbind::DOMString title() const;
-    void title(const jsbind::DOMString& value);
-    jsbind::DOMString artist() const;
-    void artist(const jsbind::DOMString& value);
-    jsbind::DOMString album() const;
-    void album(const jsbind::DOMString& value);
-    jsbind::FrozenArray<jsbind::Object> artwork() const;
-    void artwork(const jsbind::FrozenArray<jsbind::Object>& value);
-    jsbind::FrozenArray<ChapterInformation> chapterInfo() const;
+    jsbind::String title() const;
+    void title(const jsbind::String& value);
+    jsbind::String artist() const;
+    void artist(const jsbind::String& value);
+    jsbind::String album() const;
+    void album(const jsbind::String& value);
+    jsbind::TypedArray<jsbind::Object> artwork() const;
+    void artwork(const jsbind::TypedArray<jsbind::Object>& value);
+    jsbind::TypedArray<ChapterInformation> chapterInfo() const;
 };
 

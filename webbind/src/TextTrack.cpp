@@ -16,20 +16,20 @@ TextTrackKind TextTrack::kind() const {
     return EventTarget::get("kind").as<TextTrackKind>();
 }
 
-jsbind::DOMString TextTrack::label() const {
-    return EventTarget::get("label").as<jsbind::DOMString>();
+jsbind::String TextTrack::label() const {
+    return EventTarget::get("label").as<jsbind::String>();
 }
 
-jsbind::DOMString TextTrack::language() const {
-    return EventTarget::get("language").as<jsbind::DOMString>();
+jsbind::String TextTrack::language() const {
+    return EventTarget::get("language").as<jsbind::String>();
 }
 
-jsbind::DOMString TextTrack::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String TextTrack::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString TextTrack::inBandMetadataTrackDispatchType() const {
-    return EventTarget::get("inBandMetadataTrackDispatchType").as<jsbind::DOMString>();
+jsbind::String TextTrack::inBandMetadataTrackDispatchType() const {
+    return EventTarget::get("inBandMetadataTrackDispatchType").as<jsbind::String>();
 }
 
 TextTrackMode TextTrack::mode() const {

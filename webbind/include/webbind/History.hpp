@@ -21,9 +21,9 @@ public:
     jsbind::Undefined go(long delta);
     jsbind::Undefined back();
     jsbind::Undefined forward();
-    jsbind::Undefined pushState(const jsbind::Any& data, const jsbind::DOMString& unused);
-    jsbind::Undefined pushState(const jsbind::Any& data, const jsbind::DOMString& unused, const jsbind::USVString& url);
-    jsbind::Undefined replaceState(const jsbind::Any& data, const jsbind::DOMString& unused);
-    jsbind::Undefined replaceState(const jsbind::Any& data, const jsbind::DOMString& unused, const jsbind::USVString& url);
+    jsbind::Undefined pushState(const jsbind::Any& data, const jsbind::String& unused);
+    jsbind::Undefined pushState(const jsbind::Any& data, const jsbind::String& unused, const jsbind::String& url);
+    jsbind::Undefined replaceState(const jsbind::Any& data, const jsbind::String& unused);
+    jsbind::Undefined replaceState(const jsbind::Any& data, const jsbind::String& unused, const jsbind::String& url);
 };
 

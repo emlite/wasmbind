@@ -73,8 +73,8 @@ public:
     void format(const GPUTextureFormat& value);
     jsbind::Any usage() const;
     void usage(const jsbind::Any& value);
-    jsbind::Sequence<GPUTextureFormat> viewFormats() const;
-    void viewFormats(const jsbind::Sequence<GPUTextureFormat>& value);
+    jsbind::TypedArray<GPUTextureFormat> viewFormats() const;
+    void viewFormats(const jsbind::TypedArray<GPUTextureFormat>& value);
 };
 
 class GPUSamplerDescriptor : public emlite::Val {
@@ -126,8 +126,8 @@ public:
     explicit GPUBindGroupLayoutDescriptor(const emlite::Val &val) noexcept;
     GPUBindGroupLayoutDescriptor() noexcept;
     GPUBindGroupLayoutDescriptor clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> entries() const;
-    void entries(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> entries() const;
+    void entries(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class GPUPipelineLayoutDescriptor : public emlite::Val {
@@ -137,8 +137,8 @@ public:
     explicit GPUPipelineLayoutDescriptor(const emlite::Val &val) noexcept;
     GPUPipelineLayoutDescriptor() noexcept;
     GPUPipelineLayoutDescriptor clone() const noexcept;
-    jsbind::Sequence<GPUBindGroupLayout> bindGroupLayouts() const;
-    void bindGroupLayouts(const jsbind::Sequence<GPUBindGroupLayout>& value);
+    jsbind::TypedArray<GPUBindGroupLayout> bindGroupLayouts() const;
+    void bindGroupLayouts(const jsbind::TypedArray<GPUBindGroupLayout>& value);
 };
 
 class GPUBindGroupDescriptor : public emlite::Val {
@@ -150,8 +150,8 @@ public:
     GPUBindGroupDescriptor clone() const noexcept;
     GPUBindGroupLayout layout() const;
     void layout(const GPUBindGroupLayout& value);
-    jsbind::Sequence<jsbind::Any> entries() const;
-    void entries(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> entries() const;
+    void entries(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class GPUShaderModuleDescriptor : public emlite::Val {
@@ -161,10 +161,10 @@ public:
     explicit GPUShaderModuleDescriptor(const emlite::Val &val) noexcept;
     GPUShaderModuleDescriptor() noexcept;
     GPUShaderModuleDescriptor clone() const noexcept;
-    jsbind::USVString code() const;
-    void code(const jsbind::USVString& value);
-    jsbind::Sequence<jsbind::Any> compilationHints() const;
-    void compilationHints(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::String code() const;
+    void code(const jsbind::String& value);
+    jsbind::TypedArray<jsbind::Any> compilationHints() const;
+    void compilationHints(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class GPUComputePipelineDescriptor : public emlite::Val {
@@ -267,7 +267,7 @@ public:
     jsbind::Promise<GPUError> popErrorScope();
     jsbind::Any onuncapturederror() const;
     void onuncapturederror(const jsbind::Any& value);
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

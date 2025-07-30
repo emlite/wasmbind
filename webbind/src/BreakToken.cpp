@@ -10,8 +10,8 @@ BreakToken::BreakToken(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 BreakToken::BreakToken(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::FrozenArray<ChildBreakToken> BreakToken::childBreakTokens() const {
-    return emlite::Val::get("childBreakTokens").as<jsbind::FrozenArray<ChildBreakToken>>();
+jsbind::TypedArray<ChildBreakToken> BreakToken::childBreakTokens() const {
+    return emlite::Val::get("childBreakTokens").as<jsbind::TypedArray<ChildBreakToken>>();
 }
 
 jsbind::Any BreakToken::data() const {

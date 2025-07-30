@@ -15,7 +15,7 @@ public:
     static ServiceWorker take_ownership(Handle h) noexcept;
 
     ServiceWorker clone() const noexcept;
-    jsbind::USVString scriptURL() const;
+    jsbind::String scriptURL() const;
     ServiceWorkerState state() const;
     jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);

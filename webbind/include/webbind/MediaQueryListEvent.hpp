@@ -14,9 +14,9 @@ public:
     static MediaQueryListEvent take_ownership(Handle h) noexcept;
 
     MediaQueryListEvent clone() const noexcept;
-    MediaQueryListEvent(const jsbind::CSSOMString& type);
-    MediaQueryListEvent(const jsbind::CSSOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::CSSOMString media() const;
+    MediaQueryListEvent(const jsbind::String& type);
+    MediaQueryListEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String media() const;
     bool matches() const;
 };
 

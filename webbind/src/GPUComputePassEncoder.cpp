@@ -36,15 +36,15 @@ jsbind::Undefined GPUComputePassEncoder::end() {
     return emlite::Val::call("end").as<jsbind::Undefined>();
 }
 
-jsbind::USVString GPUComputePassEncoder::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUComputePassEncoder::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUComputePassEncoder::label(const jsbind::USVString& value) {
+void GPUComputePassEncoder::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
-jsbind::Undefined GPUComputePassEncoder::pushDebugGroup(const jsbind::USVString& groupLabel) {
+jsbind::Undefined GPUComputePassEncoder::pushDebugGroup(const jsbind::String& groupLabel) {
     return emlite::Val::call("pushDebugGroup", groupLabel).as<jsbind::Undefined>();
 }
 
@@ -52,7 +52,7 @@ jsbind::Undefined GPUComputePassEncoder::popDebugGroup() {
     return emlite::Val::call("popDebugGroup").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined GPUComputePassEncoder::insertDebugMarker(const jsbind::USVString& markerLabel) {
+jsbind::Undefined GPUComputePassEncoder::insertDebugMarker(const jsbind::String& markerLabel) {
     return emlite::Val::call("insertDebugMarker", markerLabel).as<jsbind::Undefined>();
 }
 

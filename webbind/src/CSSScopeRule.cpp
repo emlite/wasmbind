@@ -9,11 +9,11 @@ CSSScopeRule::CSSScopeRule(Handle h) noexcept : CSSGroupingRule(emlite::Val::tak
 CSSScopeRule::CSSScopeRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 
-jsbind::CSSOMString CSSScopeRule::start() const {
-    return CSSGroupingRule::get("start").as<jsbind::CSSOMString>();
+jsbind::String CSSScopeRule::start() const {
+    return CSSGroupingRule::get("start").as<jsbind::String>();
 }
 
-jsbind::CSSOMString CSSScopeRule::end() const {
-    return CSSGroupingRule::get("end").as<jsbind::CSSOMString>();
+jsbind::String CSSScopeRule::end() const {
+    return CSSGroupingRule::get("end").as<jsbind::String>();
 }
 

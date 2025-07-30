@@ -47,12 +47,12 @@ jsbind::Undefined ShadowRoot::setHTMLUnsafe(const jsbind::Any& html) {
     return DocumentFragment::call("setHTMLUnsafe", html).as<jsbind::Undefined>();
 }
 
-jsbind::DOMString ShadowRoot::getHTML() {
-    return DocumentFragment::call("getHTML").as<jsbind::DOMString>();
+jsbind::String ShadowRoot::getHTML() {
+    return DocumentFragment::call("getHTML").as<jsbind::String>();
 }
 
-jsbind::DOMString ShadowRoot::getHTML(const GetHTMLOptions& options) {
-    return DocumentFragment::call("getHTML", options).as<jsbind::DOMString>();
+jsbind::String ShadowRoot::getHTML(const GetHTMLOptions& options) {
+    return DocumentFragment::call("getHTML", options).as<jsbind::String>();
 }
 
 jsbind::Any ShadowRoot::innerHTML() const {
@@ -63,7 +63,7 @@ void ShadowRoot::innerHTML(const jsbind::Any& value) {
     DocumentFragment::set("innerHTML", value);
 }
 
-jsbind::Sequence<Animation> ShadowRoot::getAnimations() {
-    return DocumentFragment::call("getAnimations").as<jsbind::Sequence<Animation>>();
+jsbind::TypedArray<Animation> ShadowRoot::getAnimations() {
+    return DocumentFragment::call("getAnimations").as<jsbind::TypedArray<Animation>>();
 }
 

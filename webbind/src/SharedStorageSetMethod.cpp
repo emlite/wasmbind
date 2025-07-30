@@ -10,7 +10,7 @@ SharedStorageSetMethod::SharedStorageSetMethod(Handle h) noexcept : SharedStorag
 SharedStorageSetMethod::SharedStorageSetMethod(const emlite::Val &val) noexcept: SharedStorageModifierMethod(val) {}
 
 
-SharedStorageSetMethod::SharedStorageSetMethod(const jsbind::DOMString& key, const jsbind::DOMString& value) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageSetMethod").new_(key, value)) {}
+SharedStorageSetMethod::SharedStorageSetMethod(const jsbind::String& key, const jsbind::String& value) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageSetMethod").new_(key, value)) {}
 
-SharedStorageSetMethod::SharedStorageSetMethod(const jsbind::DOMString& key, const jsbind::DOMString& value, const SharedStorageSetMethodOptions& options) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageSetMethod").new_(key, value, options)) {}
+SharedStorageSetMethod::SharedStorageSetMethod(const jsbind::String& key, const jsbind::String& value, const SharedStorageSetMethodOptions& options) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageSetMethod").new_(key, value, options)) {}
 

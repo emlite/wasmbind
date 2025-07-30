@@ -13,7 +13,7 @@ public:
     static ProtectedAudienceUtilities take_ownership(Handle h) noexcept;
 
     ProtectedAudienceUtilities clone() const noexcept;
-    jsbind::Uint8Array encodeUtf8(const jsbind::USVString& input);
-    jsbind::USVString decodeUtf8(const jsbind::Uint8Array& bytes);
+    jsbind::Uint8Array encodeUtf8(const jsbind::String& input);
+    jsbind::String decodeUtf8(const jsbind::Uint8Array& bytes);
 };
 

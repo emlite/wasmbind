@@ -10,7 +10,7 @@ Viewport::Viewport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 Viewport::Viewport(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::FrozenArray<DOMRect> Viewport::segments() const {
-    return emlite::Val::get("segments").as<jsbind::FrozenArray<DOMRect>>();
+jsbind::TypedArray<DOMRect> Viewport::segments() const {
+    return emlite::Val::get("segments").as<jsbind::TypedArray<DOMRect>>();
 }
 

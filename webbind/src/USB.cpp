@@ -10,19 +10,19 @@ USBDeviceRequestOptions::USBDeviceRequestOptions(const emlite::Val &val) noexcep
 USBDeviceRequestOptions::USBDeviceRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 USBDeviceRequestOptions USBDeviceRequestOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> USBDeviceRequestOptions::filters() const {
-    return emlite::Val::get("filters").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> USBDeviceRequestOptions::filters() const {
+    return emlite::Val::get("filters").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void USBDeviceRequestOptions::filters(const jsbind::Sequence<jsbind::Any>& value) {
+void USBDeviceRequestOptions::filters(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("filters", value);
 }
 
-jsbind::Sequence<jsbind::Any> USBDeviceRequestOptions::exclusionFilters() const {
-    return emlite::Val::get("exclusionFilters").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> USBDeviceRequestOptions::exclusionFilters() const {
+    return emlite::Val::get("exclusionFilters").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void USBDeviceRequestOptions::exclusionFilters(const jsbind::Sequence<jsbind::Any>& value) {
+void USBDeviceRequestOptions::exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("exclusionFilters", value);
 }
 
@@ -50,8 +50,8 @@ void USB::ondisconnect(const jsbind::Any& value) {
     EventTarget::set("ondisconnect", value);
 }
 
-jsbind::Promise<jsbind::Sequence<USBDevice>> USB::getDevices() {
-    return EventTarget::call("getDevices").as<jsbind::Promise<jsbind::Sequence<USBDevice>>>();
+jsbind::Promise<jsbind::TypedArray<USBDevice>> USB::getDevices() {
+    return EventTarget::call("getDevices").as<jsbind::Promise<jsbind::TypedArray<USBDevice>>>();
 }
 
 jsbind::Promise<USBDevice> USB::requestDevice(const USBDeviceRequestOptions& options) {

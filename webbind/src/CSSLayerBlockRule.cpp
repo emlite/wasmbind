@@ -9,7 +9,7 @@ CSSLayerBlockRule::CSSLayerBlockRule(Handle h) noexcept : CSSGroupingRule(emlite
 CSSLayerBlockRule::CSSLayerBlockRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 
-jsbind::CSSOMString CSSLayerBlockRule::name() const {
-    return CSSGroupingRule::get("name").as<jsbind::CSSOMString>();
+jsbind::String CSSLayerBlockRule::name() const {
+    return CSSGroupingRule::get("name").as<jsbind::String>();
 }
 

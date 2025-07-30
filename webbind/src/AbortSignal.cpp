@@ -21,7 +21,7 @@ AbortSignal AbortSignal::timeout(long long milliseconds) {
     return emlite::Val::global("abortsignal").call("timeout", milliseconds).as<AbortSignal>();
 }
 
-AbortSignal AbortSignal::any(const jsbind::Sequence<AbortSignal>& signals) {
+AbortSignal AbortSignal::any(const jsbind::TypedArray<AbortSignal>& signals) {
     return emlite::Val::global("abortsignal").call("any", signals).as<AbortSignal>();
 }
 

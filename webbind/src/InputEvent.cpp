@@ -11,27 +11,27 @@ InputEvent::InputEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(
 InputEvent::InputEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-InputEvent::InputEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("InputEvent").new_(type)) {}
+InputEvent::InputEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("InputEvent").new_(type)) {}
 
-InputEvent::InputEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("InputEvent").new_(type, eventInitDict)) {}
+InputEvent::InputEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("InputEvent").new_(type, eventInitDict)) {}
 
-jsbind::USVString InputEvent::data() const {
-    return UIEvent::get("data").as<jsbind::USVString>();
+jsbind::String InputEvent::data() const {
+    return UIEvent::get("data").as<jsbind::String>();
 }
 
 bool InputEvent::isComposing() const {
     return UIEvent::get("isComposing").as<bool>();
 }
 
-jsbind::DOMString InputEvent::inputType() const {
-    return UIEvent::get("inputType").as<jsbind::DOMString>();
+jsbind::String InputEvent::inputType() const {
+    return UIEvent::get("inputType").as<jsbind::String>();
 }
 
 DataTransfer InputEvent::dataTransfer() const {
     return UIEvent::get("dataTransfer").as<DataTransfer>();
 }
 
-jsbind::Sequence<StaticRange> InputEvent::getTargetRanges() {
-    return UIEvent::call("getTargetRanges").as<jsbind::Sequence<StaticRange>>();
+jsbind::TypedArray<StaticRange> InputEvent::getTargetRanges() {
+    return UIEvent::call("getTargetRanges").as<jsbind::TypedArray<StaticRange>>();
 }
 

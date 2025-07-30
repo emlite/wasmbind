@@ -30,11 +30,11 @@ jsbind::Promise<jsbind::ArrayBuffer> SubtleCrypto::digest(const jsbind::Any& alg
     return emlite::Val::call("digest", algorithm, data).as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise<jsbind::Any> SubtleCrypto::generateKey(const jsbind::Any& algorithm, bool extractable, const jsbind::Sequence<KeyUsage>& keyUsages) {
+jsbind::Promise<jsbind::Any> SubtleCrypto::generateKey(const jsbind::Any& algorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages) {
     return emlite::Val::call("generateKey", algorithm, extractable, keyUsages).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise<CryptoKey> SubtleCrypto::deriveKey(const jsbind::Any& algorithm, const CryptoKey& baseKey, const jsbind::Any& derivedKeyType, bool extractable, const jsbind::Sequence<KeyUsage>& keyUsages) {
+jsbind::Promise<CryptoKey> SubtleCrypto::deriveKey(const jsbind::Any& algorithm, const CryptoKey& baseKey, const jsbind::Any& derivedKeyType, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages) {
     return emlite::Val::call("deriveKey", algorithm, baseKey, derivedKeyType, extractable, keyUsages).as<jsbind::Promise<CryptoKey>>();
 }
 
@@ -46,7 +46,7 @@ jsbind::Promise<jsbind::ArrayBuffer> SubtleCrypto::deriveBits(const jsbind::Any&
     return emlite::Val::call("deriveBits", algorithm, baseKey, length).as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise<CryptoKey> SubtleCrypto::importKey(const KeyFormat& format, const jsbind::Any& keyData, const jsbind::Any& algorithm, bool extractable, const jsbind::Sequence<KeyUsage>& keyUsages) {
+jsbind::Promise<CryptoKey> SubtleCrypto::importKey(const KeyFormat& format, const jsbind::Any& keyData, const jsbind::Any& algorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages) {
     return emlite::Val::call("importKey", format, keyData, algorithm, extractable, keyUsages).as<jsbind::Promise<CryptoKey>>();
 }
 
@@ -58,7 +58,7 @@ jsbind::Promise<jsbind::ArrayBuffer> SubtleCrypto::wrapKey(const KeyFormat& form
     return emlite::Val::call("wrapKey", format, key, wrappingKey, wrapAlgorithm).as<jsbind::Promise<jsbind::ArrayBuffer>>();
 }
 
-jsbind::Promise<CryptoKey> SubtleCrypto::unwrapKey(const KeyFormat& format, const jsbind::Any& wrappedKey, const CryptoKey& unwrappingKey, const jsbind::Any& unwrapAlgorithm, const jsbind::Any& unwrappedKeyAlgorithm, bool extractable, const jsbind::Sequence<KeyUsage>& keyUsages) {
+jsbind::Promise<CryptoKey> SubtleCrypto::unwrapKey(const KeyFormat& format, const jsbind::Any& wrappedKey, const CryptoKey& unwrappingKey, const jsbind::Any& unwrapAlgorithm, const jsbind::Any& unwrappedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages) {
     return emlite::Val::call("unwrapKey", format, wrappedKey, unwrappingKey, unwrapAlgorithm, unwrappedKeyAlgorithm, extractable, keyUsages).as<jsbind::Promise<CryptoKey>>();
 }
 

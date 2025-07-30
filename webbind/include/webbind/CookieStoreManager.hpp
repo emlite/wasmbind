@@ -14,8 +14,8 @@ public:
     static CookieStoreManager take_ownership(Handle h) noexcept;
 
     CookieStoreManager clone() const noexcept;
-    jsbind::Promise<jsbind::Undefined> subscribe(const jsbind::Sequence<CookieStoreGetOptions>& subscriptions);
-    jsbind::Promise<jsbind::Sequence<CookieStoreGetOptions>> getSubscriptions();
-    jsbind::Promise<jsbind::Undefined> unsubscribe(const jsbind::Sequence<CookieStoreGetOptions>& subscriptions);
+    jsbind::Promise<jsbind::Undefined> subscribe(const jsbind::TypedArray<CookieStoreGetOptions>& subscriptions);
+    jsbind::Promise<jsbind::TypedArray<CookieStoreGetOptions>> getSubscriptions();
+    jsbind::Promise<jsbind::Undefined> unsubscribe(const jsbind::TypedArray<CookieStoreGetOptions>& subscriptions);
 };
 

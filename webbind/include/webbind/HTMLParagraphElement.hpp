@@ -15,7 +15,7 @@ public:
 
     HTMLParagraphElement clone() const noexcept;
     HTMLParagraphElement();
-    jsbind::DOMString align() const;
-    void align(const jsbind::DOMString& value);
+    jsbind::String align() const;
+    void align(const jsbind::String& value);
 };
 

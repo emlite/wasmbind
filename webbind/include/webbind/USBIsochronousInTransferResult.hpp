@@ -15,9 +15,9 @@ public:
     static USBIsochronousInTransferResult take_ownership(Handle h) noexcept;
 
     USBIsochronousInTransferResult clone() const noexcept;
-    USBIsochronousInTransferResult(const jsbind::Sequence<USBIsochronousInTransferPacket>& packets);
-    USBIsochronousInTransferResult(const jsbind::Sequence<USBIsochronousInTransferPacket>& packets, const jsbind::DataView& data);
+    USBIsochronousInTransferResult(const jsbind::TypedArray<USBIsochronousInTransferPacket>& packets);
+    USBIsochronousInTransferResult(const jsbind::TypedArray<USBIsochronousInTransferPacket>& packets, const jsbind::DataView& data);
     jsbind::DataView data() const;
-    jsbind::FrozenArray<USBIsochronousInTransferPacket> packets() const;
+    jsbind::TypedArray<USBIsochronousInTransferPacket> packets() const;
 };
 

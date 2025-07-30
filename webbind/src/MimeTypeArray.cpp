@@ -18,7 +18,7 @@ MimeType MimeTypeArray::item(unsigned long index) {
     return emlite::Val::call("item", index).as<MimeType>();
 }
 
-MimeType MimeTypeArray::namedItem(const jsbind::DOMString& name) {
+MimeType MimeTypeArray::namedItem(const jsbind::String& name) {
     return emlite::Val::call("namedItem", name).as<MimeType>();
 }
 

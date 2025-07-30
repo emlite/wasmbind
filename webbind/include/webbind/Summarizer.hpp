@@ -23,8 +23,8 @@ public:
     void signal(const AbortSignal& value);
     jsbind::Function monitor() const;
     void monitor(const jsbind::Function& value);
-    jsbind::DOMString sharedContext() const;
-    void sharedContext(const jsbind::DOMString& value);
+    jsbind::String sharedContext() const;
+    void sharedContext(const jsbind::String& value);
 };
 
 class SummarizerCreateCoreOptions : public emlite::Val {
@@ -40,12 +40,12 @@ public:
     void format(const SummarizerFormat& value);
     SummarizerLength length() const;
     void length(const SummarizerLength& value);
-    jsbind::Sequence<jsbind::DOMString> expectedInputLanguages() const;
-    void expectedInputLanguages(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::Sequence<jsbind::DOMString> expectedContextLanguages() const;
-    void expectedContextLanguages(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::DOMString outputLanguage() const;
-    void outputLanguage(const jsbind::DOMString& value);
+    jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
+    void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
+    void expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::String outputLanguage() const;
+    void outputLanguage(const jsbind::String& value);
 };
 
 class SummarizerSummarizeOptions : public emlite::Val {
@@ -57,8 +57,8 @@ public:
     SummarizerSummarizeOptions clone() const noexcept;
     AbortSignal signal() const;
     void signal(const AbortSignal& value);
-    jsbind::DOMString context() const;
-    void context(const jsbind::DOMString& value);
+    jsbind::String context() const;
+    void context(const jsbind::String& value);
 };
 
 class Summarizer : public emlite::Val {
@@ -73,19 +73,19 @@ public:
     static jsbind::Promise<Summarizer> create(const SummarizerCreateOptions& options);
     static jsbind::Promise<Availability> availability();
     static jsbind::Promise<Availability> availability(const SummarizerCreateCoreOptions& options);
-    jsbind::Promise<jsbind::DOMString> summarize(const jsbind::DOMString& input);
-    jsbind::Promise<jsbind::DOMString> summarize(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options);
-    ReadableStream summarizeStreaming(const jsbind::DOMString& input);
-    ReadableStream summarizeStreaming(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options);
-    jsbind::DOMString sharedContext() const;
+    jsbind::Promise<jsbind::String> summarize(const jsbind::String& input);
+    jsbind::Promise<jsbind::String> summarize(const jsbind::String& input, const SummarizerSummarizeOptions& options);
+    ReadableStream summarizeStreaming(const jsbind::String& input);
+    ReadableStream summarizeStreaming(const jsbind::String& input, const SummarizerSummarizeOptions& options);
+    jsbind::String sharedContext() const;
     SummarizerType type() const;
     SummarizerFormat format() const;
     SummarizerLength length() const;
-    jsbind::FrozenArray<jsbind::DOMString> expectedInputLanguages() const;
-    jsbind::FrozenArray<jsbind::DOMString> expectedContextLanguages() const;
-    jsbind::DOMString outputLanguage() const;
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const SummarizerSummarizeOptions& options);
+    jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
+    jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
+    jsbind::String outputLanguage() const;
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const SummarizerSummarizeOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };

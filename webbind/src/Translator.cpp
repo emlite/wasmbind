@@ -35,19 +35,19 @@ TranslatorCreateCoreOptions::TranslatorCreateCoreOptions(const emlite::Val &val)
 TranslatorCreateCoreOptions::TranslatorCreateCoreOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 TranslatorCreateCoreOptions TranslatorCreateCoreOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString TranslatorCreateCoreOptions::sourceLanguage() const {
-    return emlite::Val::get("sourceLanguage").as<jsbind::DOMString>();
+jsbind::String TranslatorCreateCoreOptions::sourceLanguage() const {
+    return emlite::Val::get("sourceLanguage").as<jsbind::String>();
 }
 
-void TranslatorCreateCoreOptions::sourceLanguage(const jsbind::DOMString& value) {
+void TranslatorCreateCoreOptions::sourceLanguage(const jsbind::String& value) {
     emlite::Val::set("sourceLanguage", value);
 }
 
-jsbind::DOMString TranslatorCreateCoreOptions::targetLanguage() const {
-    return emlite::Val::get("targetLanguage").as<jsbind::DOMString>();
+jsbind::String TranslatorCreateCoreOptions::targetLanguage() const {
+    return emlite::Val::get("targetLanguage").as<jsbind::String>();
 }
 
-void TranslatorCreateCoreOptions::targetLanguage(const jsbind::DOMString& value) {
+void TranslatorCreateCoreOptions::targetLanguage(const jsbind::String& value) {
     emlite::Val::set("targetLanguage", value);
 }
 
@@ -83,35 +83,35 @@ jsbind::Promise<Availability> Translator::availability(const TranslatorCreateCor
     return emlite::Val::global("translator").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Translator::translate(const jsbind::DOMString& input) {
-    return emlite::Val::call("translate", input).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Translator::translate(const jsbind::String& input) {
+    return emlite::Val::call("translate", input).as<jsbind::Promise<jsbind::String>>();
 }
 
-jsbind::Promise<jsbind::DOMString> Translator::translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
-    return emlite::Val::call("translate", input, options).as<jsbind::Promise<jsbind::DOMString>>();
+jsbind::Promise<jsbind::String> Translator::translate(const jsbind::String& input, const TranslatorTranslateOptions& options) {
+    return emlite::Val::call("translate", input, options).as<jsbind::Promise<jsbind::String>>();
 }
 
-ReadableStream Translator::translateStreaming(const jsbind::DOMString& input) {
+ReadableStream Translator::translateStreaming(const jsbind::String& input) {
     return emlite::Val::call("translateStreaming", input).as<ReadableStream>();
 }
 
-ReadableStream Translator::translateStreaming(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
+ReadableStream Translator::translateStreaming(const jsbind::String& input, const TranslatorTranslateOptions& options) {
     return emlite::Val::call("translateStreaming", input, options).as<ReadableStream>();
 }
 
-jsbind::DOMString Translator::sourceLanguage() const {
-    return emlite::Val::get("sourceLanguage").as<jsbind::DOMString>();
+jsbind::String Translator::sourceLanguage() const {
+    return emlite::Val::get("sourceLanguage").as<jsbind::String>();
 }
 
-jsbind::DOMString Translator::targetLanguage() const {
-    return emlite::Val::get("targetLanguage").as<jsbind::DOMString>();
+jsbind::String Translator::targetLanguage() const {
+    return emlite::Val::get("targetLanguage").as<jsbind::String>();
 }
 
-jsbind::Promise<double> Translator::measureInputUsage(const jsbind::DOMString& input) {
+jsbind::Promise<double> Translator::measureInputUsage(const jsbind::String& input) {
     return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise<double> Translator::measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options) {
+jsbind::Promise<double> Translator::measureInputUsage(const jsbind::String& input, const TranslatorTranslateOptions& options) {
     return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 

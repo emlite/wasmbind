@@ -18,8 +18,8 @@ public:
     explicit GetComposedRangesOptions(const emlite::Val &val) noexcept;
     GetComposedRangesOptions() noexcept;
     GetComposedRangesOptions clone() const noexcept;
-    jsbind::Sequence<ShadowRoot> shadowRoots() const;
-    void shadowRoots(const jsbind::Sequence<ShadowRoot>& value);
+    jsbind::TypedArray<ShadowRoot> shadowRoots() const;
+    void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
 };
 
 class Selection : public emlite::Val {
@@ -36,15 +36,15 @@ public:
     unsigned long focusOffset() const;
     bool isCollapsed() const;
     unsigned long rangeCount() const;
-    jsbind::DOMString type() const;
-    jsbind::DOMString direction() const;
+    jsbind::String type() const;
+    jsbind::String direction() const;
     Range getRangeAt(unsigned long index);
     jsbind::Undefined addRange(const Range& range);
     jsbind::Undefined removeRange(const Range& range);
     jsbind::Undefined removeAllRanges();
     jsbind::Undefined empty();
-    jsbind::Sequence<StaticRange> getComposedRanges();
-    jsbind::Sequence<StaticRange> getComposedRanges(const GetComposedRangesOptions& options);
+    jsbind::TypedArray<StaticRange> getComposedRanges();
+    jsbind::TypedArray<StaticRange> getComposedRanges(const GetComposedRangesOptions& options);
     jsbind::Undefined collapse(const Node& node);
     jsbind::Undefined collapse(const Node& node, unsigned long offset);
     jsbind::Undefined setPosition(const Node& node);
@@ -56,9 +56,9 @@ public:
     jsbind::Undefined setBaseAndExtent(const Node& anchorNode, unsigned long anchorOffset, const Node& focusNode, unsigned long focusOffset);
     jsbind::Undefined selectAllChildren(const Node& node);
     jsbind::Undefined modify();
-    jsbind::Undefined modify(const jsbind::DOMString& alter);
-    jsbind::Undefined modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction);
-    jsbind::Undefined modify(const jsbind::DOMString& alter, const jsbind::DOMString& direction, const jsbind::DOMString& granularity);
+    jsbind::Undefined modify(const jsbind::String& alter);
+    jsbind::Undefined modify(const jsbind::String& alter, const jsbind::String& direction);
+    jsbind::Undefined modify(const jsbind::String& alter, const jsbind::String& direction, const jsbind::String& granularity);
     jsbind::Undefined deleteFromDocument();
     bool containsNode(const Node& node);
     bool containsNode(const Node& node, bool allowPartialContainment);

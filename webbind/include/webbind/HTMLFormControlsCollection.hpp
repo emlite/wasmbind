@@ -14,6 +14,6 @@ public:
     static HTMLFormControlsCollection take_ownership(Handle h) noexcept;
 
     HTMLFormControlsCollection clone() const noexcept;
-    jsbind::Any namedItem(const jsbind::DOMString& name);
+    jsbind::Any namedItem(const jsbind::String& name);
 };
 

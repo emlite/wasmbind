@@ -14,7 +14,7 @@ public:
     static PeriodicSyncEvent take_ownership(Handle h) noexcept;
 
     PeriodicSyncEvent clone() const noexcept;
-    PeriodicSyncEvent(const jsbind::DOMString& type, const jsbind::Any& init);
-    jsbind::DOMString tag() const;
+    PeriodicSyncEvent(const jsbind::String& type, const jsbind::Any& init);
+    jsbind::String tag() const;
 };
 

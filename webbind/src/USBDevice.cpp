@@ -106,24 +106,24 @@ unsigned char USBDevice::deviceVersionSubminor() const {
     return emlite::Val::get("deviceVersionSubminor").as<unsigned char>();
 }
 
-jsbind::DOMString USBDevice::manufacturerName() const {
-    return emlite::Val::get("manufacturerName").as<jsbind::DOMString>();
+jsbind::String USBDevice::manufacturerName() const {
+    return emlite::Val::get("manufacturerName").as<jsbind::String>();
 }
 
-jsbind::DOMString USBDevice::productName() const {
-    return emlite::Val::get("productName").as<jsbind::DOMString>();
+jsbind::String USBDevice::productName() const {
+    return emlite::Val::get("productName").as<jsbind::String>();
 }
 
-jsbind::DOMString USBDevice::serialNumber() const {
-    return emlite::Val::get("serialNumber").as<jsbind::DOMString>();
+jsbind::String USBDevice::serialNumber() const {
+    return emlite::Val::get("serialNumber").as<jsbind::String>();
 }
 
 USBConfiguration USBDevice::configuration() const {
     return emlite::Val::get("configuration").as<USBConfiguration>();
 }
 
-jsbind::FrozenArray<USBConfiguration> USBDevice::configurations() const {
-    return emlite::Val::get("configurations").as<jsbind::FrozenArray<USBConfiguration>>();
+jsbind::TypedArray<USBConfiguration> USBDevice::configurations() const {
+    return emlite::Val::get("configurations").as<jsbind::TypedArray<USBConfiguration>>();
 }
 
 bool USBDevice::opened() const {
@@ -182,11 +182,11 @@ jsbind::Promise<USBOutTransferResult> USBDevice::transferOut(unsigned char endpo
     return emlite::Val::call("transferOut", endpointNumber, data).as<jsbind::Promise<USBOutTransferResult>>();
 }
 
-jsbind::Promise<USBIsochronousInTransferResult> USBDevice::isochronousTransferIn(unsigned char endpointNumber, jsbind::Sequence<unsigned long> packetLengths) {
+jsbind::Promise<USBIsochronousInTransferResult> USBDevice::isochronousTransferIn(unsigned char endpointNumber, jsbind::TypedArray<unsigned long> packetLengths) {
     return emlite::Val::call("isochronousTransferIn", endpointNumber, packetLengths).as<jsbind::Promise<USBIsochronousInTransferResult>>();
 }
 
-jsbind::Promise<USBIsochronousOutTransferResult> USBDevice::isochronousTransferOut(unsigned char endpointNumber, const jsbind::Any& data, jsbind::Sequence<unsigned long> packetLengths) {
+jsbind::Promise<USBIsochronousOutTransferResult> USBDevice::isochronousTransferOut(unsigned char endpointNumber, const jsbind::Any& data, jsbind::TypedArray<unsigned long> packetLengths) {
     return emlite::Val::call("isochronousTransferOut", endpointNumber, data, packetLengths).as<jsbind::Promise<USBIsochronousOutTransferResult>>();
 }
 

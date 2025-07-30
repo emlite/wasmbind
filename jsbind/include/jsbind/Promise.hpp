@@ -2,8 +2,6 @@
 
 #include "Any.hpp"
 #include "Function.hpp"
-#include "Sequence.hpp"
-#include "utils.hpp"
 #include <emlite/emlite.hpp>
 
 namespace jsbind {

@@ -24,8 +24,8 @@ void CaptureController::oncapturedmousechange(const jsbind::Any& value) {
     EventTarget::set("oncapturedmousechange", value);
 }
 
-jsbind::Sequence<long> CaptureController::getSupportedZoomLevels() {
-    return EventTarget::call("getSupportedZoomLevels").as<jsbind::Sequence<long>>();
+jsbind::TypedArray<long> CaptureController::getSupportedZoomLevels() {
+    return EventTarget::call("getSupportedZoomLevels").as<jsbind::TypedArray<long>>();
 }
 
 long CaptureController::zoomLevel() const {

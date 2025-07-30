@@ -16,11 +16,11 @@ public:
     static MIDIPort take_ownership(Handle h) noexcept;
 
     MIDIPort clone() const noexcept;
-    jsbind::DOMString id() const;
-    jsbind::DOMString manufacturer() const;
-    jsbind::DOMString name() const;
+    jsbind::String id() const;
+    jsbind::String manufacturer() const;
+    jsbind::String name() const;
     MIDIPortType type() const;
-    jsbind::DOMString version() const;
+    jsbind::String version() const;
     MIDIPortDeviceState state() const;
     MIDIPortConnectionState connection() const;
     jsbind::Any onstatechange() const;

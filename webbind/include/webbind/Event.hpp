@@ -15,13 +15,13 @@ public:
     static Event take_ownership(Handle h) noexcept;
 
     Event clone() const noexcept;
-    Event(const jsbind::DOMString& type);
-    Event(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::DOMString type() const;
+    Event(const jsbind::String& type);
+    Event(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String type() const;
     EventTarget target() const;
     EventTarget srcElement() const;
     EventTarget currentTarget() const;
-    jsbind::Sequence<EventTarget> composedPath();
+    jsbind::TypedArray<EventTarget> composedPath();
     unsigned short eventPhase() const;
     jsbind::Undefined stopPropagation();
     bool cancelBubble() const;
@@ -36,8 +36,8 @@ public:
     bool composed() const;
     bool isTrusted() const;
     jsbind::Any timeStamp() const;
-    jsbind::Undefined initEvent(const jsbind::DOMString& type);
-    jsbind::Undefined initEvent(const jsbind::DOMString& type, bool bubbles);
-    jsbind::Undefined initEvent(const jsbind::DOMString& type, bool bubbles, bool cancelable);
+    jsbind::Undefined initEvent(const jsbind::String& type);
+    jsbind::Undefined initEvent(const jsbind::String& type, bool bubbles);
+    jsbind::Undefined initEvent(const jsbind::String& type, bool bubbles, bool cancelable);
 };
 

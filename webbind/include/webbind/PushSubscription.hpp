@@ -15,12 +15,12 @@ public:
     explicit PushSubscriptionJSON(const emlite::Val &val) noexcept;
     PushSubscriptionJSON() noexcept;
     PushSubscriptionJSON clone() const noexcept;
-    jsbind::USVString endpoint() const;
-    void endpoint(const jsbind::USVString& value);
+    jsbind::String endpoint() const;
+    void endpoint(const jsbind::String& value);
     jsbind::Any expirationTime() const;
     void expirationTime(const jsbind::Any& value);
-    jsbind::Record<jsbind::DOMString, jsbind::USVString> keys() const;
-    void keys(const jsbind::Record<jsbind::DOMString, jsbind::USVString>& value);
+    jsbind::Record<jsbind::String, jsbind::String> keys() const;
+    void keys(const jsbind::Record<jsbind::String, jsbind::String>& value);
 };
 
 class PushSubscription : public emlite::Val {
@@ -31,7 +31,7 @@ public:
     static PushSubscription take_ownership(Handle h) noexcept;
 
     PushSubscription clone() const noexcept;
-    jsbind::USVString endpoint() const;
+    jsbind::String endpoint() const;
     jsbind::Any expirationTime() const;
     PushSubscriptionOptions options() const;
     jsbind::ArrayBuffer getKey(const PushEncryptionKeyName& name);

@@ -27,8 +27,8 @@ Any Response::headers_raw() const {
     return get("headers").template as<Any>();
 }
 
-Promise<DOMString> Response::text() const {
-    return call("text").template as<Promise<DOMString>>();
+Promise<String> Response::text() const {
+    return call("text").template as<Promise<String>>();
 }
 Promise<Any> Response::json() const {
     return call("json").template as<Promise<Any>>();

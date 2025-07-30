@@ -15,7 +15,7 @@ public:
     static FileSystem take_ownership(Handle h) noexcept;
 
     FileSystem clone() const noexcept;
-    jsbind::USVString name() const;
+    jsbind::String name() const;
     FileSystemDirectoryEntry root() const;
 };
 

@@ -12,19 +12,19 @@ TrustedTypePolicy::TrustedTypePolicy(Handle h) noexcept : emlite::Val(emlite::Va
 TrustedTypePolicy::TrustedTypePolicy(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString TrustedTypePolicy::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String TrustedTypePolicy::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-TrustedHTML TrustedTypePolicy::createHTML(const jsbind::DOMString& input, const jsbind::Any& arguments) {
+TrustedHTML TrustedTypePolicy::createHTML(const jsbind::String& input, const jsbind::Any& arguments) {
     return emlite::Val::call("createHTML", input, arguments).as<TrustedHTML>();
 }
 
-TrustedScript TrustedTypePolicy::createScript(const jsbind::DOMString& input, const jsbind::Any& arguments) {
+TrustedScript TrustedTypePolicy::createScript(const jsbind::String& input, const jsbind::Any& arguments) {
     return emlite::Val::call("createScript", input, arguments).as<TrustedScript>();
 }
 
-TrustedScriptURL TrustedTypePolicy::createScriptURL(const jsbind::DOMString& input, const jsbind::Any& arguments) {
+TrustedScriptURL TrustedTypePolicy::createScriptURL(const jsbind::String& input, const jsbind::Any& arguments) {
     return emlite::Val::call("createScriptURL", input, arguments).as<TrustedScriptURL>();
 }
 

@@ -10,9 +10,9 @@ PerformanceMark::PerformanceMark(Handle h) noexcept : PerformanceEntry(emlite::V
 PerformanceMark::PerformanceMark(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 
 
-PerformanceMark::PerformanceMark(const jsbind::DOMString& markName) : PerformanceEntry(emlite::Val::global("PerformanceMark").new_(markName)) {}
+PerformanceMark::PerformanceMark(const jsbind::String& markName) : PerformanceEntry(emlite::Val::global("PerformanceMark").new_(markName)) {}
 
-PerformanceMark::PerformanceMark(const jsbind::DOMString& markName, const PerformanceMarkOptions& markOptions) : PerformanceEntry(emlite::Val::global("PerformanceMark").new_(markName, markOptions)) {}
+PerformanceMark::PerformanceMark(const jsbind::String& markName, const PerformanceMarkOptions& markOptions) : PerformanceEntry(emlite::Val::global("PerformanceMark").new_(markName, markOptions)) {}
 
 jsbind::Any PerformanceMark::detail() const {
     return PerformanceEntry::get("detail").as<jsbind::Any>();

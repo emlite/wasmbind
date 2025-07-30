@@ -14,11 +14,11 @@ XPathEvaluator::XPathEvaluator(const emlite::Val &val) noexcept: emlite::Val(val
 
 XPathEvaluator::XPathEvaluator() : emlite::Val(emlite::Val::global("XPathEvaluator").new_()) {}
 
-XPathExpression XPathEvaluator::createExpression(const jsbind::DOMString& expression) {
+XPathExpression XPathEvaluator::createExpression(const jsbind::String& expression) {
     return emlite::Val::call("createExpression", expression).as<XPathExpression>();
 }
 
-XPathExpression XPathEvaluator::createExpression(const jsbind::DOMString& expression, const jsbind::Function& resolver) {
+XPathExpression XPathEvaluator::createExpression(const jsbind::String& expression, const jsbind::Function& resolver) {
     return emlite::Val::call("createExpression", expression, resolver).as<XPathExpression>();
 }
 
@@ -26,19 +26,19 @@ Node XPathEvaluator::createNSResolver(const Node& nodeResolver) {
     return emlite::Val::call("createNSResolver", nodeResolver).as<Node>();
 }
 
-XPathResult XPathEvaluator::evaluate(const jsbind::DOMString& expression, const Node& contextNode) {
+XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode) {
     return emlite::Val::call("evaluate", expression, contextNode).as<XPathResult>();
 }
 
-XPathResult XPathEvaluator::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver) {
+XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver) {
     return emlite::Val::call("evaluate", expression, contextNode, resolver).as<XPathResult>();
 }
 
-XPathResult XPathEvaluator::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type) {
+XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type) {
     return emlite::Val::call("evaluate", expression, contextNode, resolver, type).as<XPathResult>();
 }
 
-XPathResult XPathEvaluator::evaluate(const jsbind::DOMString& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result) {
+XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result) {
     return emlite::Val::call("evaluate", expression, contextNode, resolver, type, result).as<XPathResult>();
 }
 

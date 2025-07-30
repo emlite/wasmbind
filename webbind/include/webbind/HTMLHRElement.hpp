@@ -15,15 +15,15 @@ public:
 
     HTMLHRElement clone() const noexcept;
     HTMLHRElement();
-    jsbind::DOMString align() const;
-    void align(const jsbind::DOMString& value);
-    jsbind::DOMString color() const;
-    void color(const jsbind::DOMString& value);
+    jsbind::String align() const;
+    void align(const jsbind::String& value);
+    jsbind::String color() const;
+    void color(const jsbind::String& value);
     bool noShade() const;
     void noShade(bool value);
-    jsbind::DOMString size() const;
-    void size(const jsbind::DOMString& value);
-    jsbind::DOMString width() const;
-    void width(const jsbind::DOMString& value);
+    jsbind::String size() const;
+    void size(const jsbind::String& value);
+    jsbind::String width() const;
+    void width(const jsbind::String& value);
 };
 

@@ -10,7 +10,7 @@ SpeechSynthesisEvent::SpeechSynthesisEvent(Handle h) noexcept : Event(emlite::Va
 SpeechSynthesisEvent::SpeechSynthesisEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SpeechSynthesisEvent::SpeechSynthesisEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SpeechSynthesisEvent").new_(type, eventInitDict)) {}
+SpeechSynthesisEvent::SpeechSynthesisEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SpeechSynthesisEvent").new_(type, eventInitDict)) {}
 
 SpeechSynthesisUtterance SpeechSynthesisEvent::utterance() const {
     return Event::get("utterance").as<SpeechSynthesisUtterance>();
@@ -28,7 +28,7 @@ float SpeechSynthesisEvent::elapsedTime() const {
     return Event::get("elapsedTime").as<float>();
 }
 
-jsbind::DOMString SpeechSynthesisEvent::name() const {
-    return Event::get("name").as<jsbind::DOMString>();
+jsbind::String SpeechSynthesisEvent::name() const {
+    return Event::get("name").as<jsbind::String>();
 }
 

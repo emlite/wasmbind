@@ -19,16 +19,16 @@ jsbind::Any IntersectionObserver::root() const {
     return emlite::Val::get("root").as<jsbind::Any>();
 }
 
-jsbind::DOMString IntersectionObserver::rootMargin() const {
-    return emlite::Val::get("rootMargin").as<jsbind::DOMString>();
+jsbind::String IntersectionObserver::rootMargin() const {
+    return emlite::Val::get("rootMargin").as<jsbind::String>();
 }
 
-jsbind::DOMString IntersectionObserver::scrollMargin() const {
-    return emlite::Val::get("scrollMargin").as<jsbind::DOMString>();
+jsbind::String IntersectionObserver::scrollMargin() const {
+    return emlite::Val::get("scrollMargin").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<double> IntersectionObserver::thresholds() const {
-    return emlite::Val::get("thresholds").as<jsbind::FrozenArray<double>>();
+jsbind::TypedArray<double> IntersectionObserver::thresholds() const {
+    return emlite::Val::get("thresholds").as<jsbind::TypedArray<double>>();
 }
 
 long IntersectionObserver::delay() const {
@@ -51,7 +51,7 @@ jsbind::Undefined IntersectionObserver::disconnect() {
     return emlite::Val::call("disconnect").as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<IntersectionObserverEntry> IntersectionObserver::takeRecords() {
-    return emlite::Val::call("takeRecords").as<jsbind::Sequence<IntersectionObserverEntry>>();
+jsbind::TypedArray<IntersectionObserverEntry> IntersectionObserver::takeRecords() {
+    return emlite::Val::call("takeRecords").as<jsbind::TypedArray<IntersectionObserverEntry>>();
 }
 

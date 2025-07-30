@@ -23,31 +23,31 @@ HTMLFormElement HTMLOutputElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();
 }
 
-jsbind::DOMString HTMLOutputElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLOutputElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLOutputElement::name(const jsbind::DOMString& value) {
+void HTMLOutputElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::DOMString HTMLOutputElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLOutputElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-jsbind::DOMString HTMLOutputElement::defaultValue() const {
-    return HTMLElement::get("defaultValue").as<jsbind::DOMString>();
+jsbind::String HTMLOutputElement::defaultValue() const {
+    return HTMLElement::get("defaultValue").as<jsbind::String>();
 }
 
-void HTMLOutputElement::defaultValue(const jsbind::DOMString& value) {
+void HTMLOutputElement::defaultValue(const jsbind::String& value) {
     HTMLElement::set("defaultValue", value);
 }
 
-jsbind::DOMString HTMLOutputElement::value() const {
-    return HTMLElement::get("value").as<jsbind::DOMString>();
+jsbind::String HTMLOutputElement::value() const {
+    return HTMLElement::get("value").as<jsbind::String>();
 }
 
-void HTMLOutputElement::value(const jsbind::DOMString& value) {
+void HTMLOutputElement::value(const jsbind::String& value) {
     HTMLElement::set("value", value);
 }
 
@@ -59,8 +59,8 @@ ValidityState HTMLOutputElement::validity() const {
     return HTMLElement::get("validity").as<ValidityState>();
 }
 
-jsbind::DOMString HTMLOutputElement::validationMessage() const {
-    return HTMLElement::get("validationMessage").as<jsbind::DOMString>();
+jsbind::String HTMLOutputElement::validationMessage() const {
+    return HTMLElement::get("validationMessage").as<jsbind::String>();
 }
 
 bool HTMLOutputElement::checkValidity() {
@@ -71,7 +71,7 @@ bool HTMLOutputElement::reportValidity() {
     return HTMLElement::call("reportValidity").as<bool>();
 }
 
-jsbind::Undefined HTMLOutputElement::setCustomValidity(const jsbind::DOMString& error) {
+jsbind::Undefined HTMLOutputElement::setCustomValidity(const jsbind::String& error) {
     return HTMLElement::call("setCustomValidity", error).as<jsbind::Undefined>();
 }
 

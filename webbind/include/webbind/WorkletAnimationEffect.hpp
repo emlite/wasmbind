@@ -23,8 +23,8 @@ public:
     void iterations(double value);
     PlaybackDirection direction() const;
     void direction(const PlaybackDirection& value);
-    jsbind::DOMString easing() const;
-    void easing(const jsbind::DOMString& value);
+    jsbind::String easing() const;
+    void easing(const jsbind::String& value);
 };
 
 class ComputedEffectTiming : public emlite::Val {

@@ -29,35 +29,35 @@ jsbind::Undefined HTMLTableSectionElement::deleteRow(long index) {
     return HTMLElement::call("deleteRow", index).as<jsbind::Undefined>();
 }
 
-jsbind::DOMString HTMLTableSectionElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLTableSectionElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLTableSectionElement::align(const jsbind::DOMString& value) {
+void HTMLTableSectionElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
-jsbind::DOMString HTMLTableSectionElement::ch() const {
-    return HTMLElement::get("ch").as<jsbind::DOMString>();
+jsbind::String HTMLTableSectionElement::ch() const {
+    return HTMLElement::get("ch").as<jsbind::String>();
 }
 
-void HTMLTableSectionElement::ch(const jsbind::DOMString& value) {
+void HTMLTableSectionElement::ch(const jsbind::String& value) {
     HTMLElement::set("ch", value);
 }
 
-jsbind::DOMString HTMLTableSectionElement::chOff() const {
-    return HTMLElement::get("chOff").as<jsbind::DOMString>();
+jsbind::String HTMLTableSectionElement::chOff() const {
+    return HTMLElement::get("chOff").as<jsbind::String>();
 }
 
-void HTMLTableSectionElement::chOff(const jsbind::DOMString& value) {
+void HTMLTableSectionElement::chOff(const jsbind::String& value) {
     HTMLElement::set("chOff", value);
 }
 
-jsbind::DOMString HTMLTableSectionElement::vAlign() const {
-    return HTMLElement::get("vAlign").as<jsbind::DOMString>();
+jsbind::String HTMLTableSectionElement::vAlign() const {
+    return HTMLElement::get("vAlign").as<jsbind::String>();
 }
 
-void HTMLTableSectionElement::vAlign(const jsbind::DOMString& value) {
+void HTMLTableSectionElement::vAlign(const jsbind::String& value) {
     HTMLElement::set("vAlign", value);
 }
 

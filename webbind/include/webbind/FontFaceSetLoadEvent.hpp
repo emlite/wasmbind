@@ -16,8 +16,8 @@ public:
     static FontFaceSetLoadEvent take_ownership(Handle h) noexcept;
 
     FontFaceSetLoadEvent clone() const noexcept;
-    FontFaceSetLoadEvent(const jsbind::CSSOMString& type);
-    FontFaceSetLoadEvent(const jsbind::CSSOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::FrozenArray<FontFace> fontfaces() const;
+    FontFaceSetLoadEvent(const jsbind::String& type);
+    FontFaceSetLoadEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::TypedArray<FontFace> fontfaces() const;
 };
 

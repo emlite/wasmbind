@@ -14,8 +14,8 @@ public:
     static TrackEvent take_ownership(Handle h) noexcept;
 
     TrackEvent clone() const noexcept;
-    TrackEvent(const jsbind::DOMString& type);
-    TrackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    TrackEvent(const jsbind::String& type);
+    TrackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     jsbind::Any track() const;
 };
 

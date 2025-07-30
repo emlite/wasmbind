@@ -13,9 +13,9 @@ public:
 
     IdentityCredentialError clone() const noexcept;
     IdentityCredentialError();
-    IdentityCredentialError(const jsbind::DOMString& message);
-    IdentityCredentialError(const jsbind::DOMString& message, const jsbind::Any& options);
-    jsbind::DOMString error() const;
-    jsbind::DOMString url() const;
+    IdentityCredentialError(const jsbind::String& message);
+    IdentityCredentialError(const jsbind::String& message, const jsbind::Any& options);
+    jsbind::String error() const;
+    jsbind::String url() const;
 };
 

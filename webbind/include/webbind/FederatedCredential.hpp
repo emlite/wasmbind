@@ -15,9 +15,9 @@ public:
 
     FederatedCredential clone() const noexcept;
     FederatedCredential(const jsbind::Any& data);
-    jsbind::USVString provider() const;
-    jsbind::DOMString protocol() const;
-    jsbind::USVString name() const;
-    jsbind::USVString iconURL() const;
+    jsbind::String provider() const;
+    jsbind::String protocol() const;
+    jsbind::String name() const;
+    jsbind::String iconURL() const;
 };
 

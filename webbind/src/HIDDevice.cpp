@@ -33,35 +33,35 @@ void HIDCollectionInfo::type(unsigned char value) {
     emlite::Val::set("type", value);
 }
 
-jsbind::Sequence<HIDCollectionInfo> HIDCollectionInfo::children() const {
-    return emlite::Val::get("children").as<jsbind::Sequence<HIDCollectionInfo>>();
+jsbind::TypedArray<HIDCollectionInfo> HIDCollectionInfo::children() const {
+    return emlite::Val::get("children").as<jsbind::TypedArray<HIDCollectionInfo>>();
 }
 
-void HIDCollectionInfo::children(const jsbind::Sequence<HIDCollectionInfo>& value) {
+void HIDCollectionInfo::children(const jsbind::TypedArray<HIDCollectionInfo>& value) {
     emlite::Val::set("children", value);
 }
 
-jsbind::Sequence<jsbind::Any> HIDCollectionInfo::inputReports() const {
-    return emlite::Val::get("inputReports").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> HIDCollectionInfo::inputReports() const {
+    return emlite::Val::get("inputReports").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void HIDCollectionInfo::inputReports(const jsbind::Sequence<jsbind::Any>& value) {
+void HIDCollectionInfo::inputReports(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("inputReports", value);
 }
 
-jsbind::Sequence<jsbind::Any> HIDCollectionInfo::outputReports() const {
-    return emlite::Val::get("outputReports").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> HIDCollectionInfo::outputReports() const {
+    return emlite::Val::get("outputReports").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void HIDCollectionInfo::outputReports(const jsbind::Sequence<jsbind::Any>& value) {
+void HIDCollectionInfo::outputReports(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("outputReports", value);
 }
 
-jsbind::Sequence<jsbind::Any> HIDCollectionInfo::featureReports() const {
-    return emlite::Val::get("featureReports").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> HIDCollectionInfo::featureReports() const {
+    return emlite::Val::get("featureReports").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void HIDCollectionInfo::featureReports(const jsbind::Sequence<jsbind::Any>& value) {
+void HIDCollectionInfo::featureReports(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("featureReports", value);
 }
 
@@ -93,12 +93,12 @@ unsigned short HIDDevice::productId() const {
     return EventTarget::get("productId").as<unsigned short>();
 }
 
-jsbind::DOMString HIDDevice::productName() const {
-    return EventTarget::get("productName").as<jsbind::DOMString>();
+jsbind::String HIDDevice::productName() const {
+    return EventTarget::get("productName").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<HIDCollectionInfo> HIDDevice::collections() const {
-    return EventTarget::get("collections").as<jsbind::FrozenArray<HIDCollectionInfo>>();
+jsbind::TypedArray<HIDCollectionInfo> HIDDevice::collections() const {
+    return EventTarget::get("collections").as<jsbind::TypedArray<HIDCollectionInfo>>();
 }
 
 jsbind::Promise<jsbind::Undefined> HIDDevice::open() {

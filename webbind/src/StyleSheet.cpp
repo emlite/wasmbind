@@ -11,12 +11,12 @@ StyleSheet::StyleSheet(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 StyleSheet::StyleSheet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::CSSOMString StyleSheet::type() const {
-    return emlite::Val::get("type").as<jsbind::CSSOMString>();
+jsbind::String StyleSheet::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-jsbind::USVString StyleSheet::href() const {
-    return emlite::Val::get("href").as<jsbind::USVString>();
+jsbind::String StyleSheet::href() const {
+    return emlite::Val::get("href").as<jsbind::String>();
 }
 
 jsbind::Any StyleSheet::ownerNode() const {
@@ -27,8 +27,8 @@ CSSStyleSheet StyleSheet::parentStyleSheet() const {
     return emlite::Val::get("parentStyleSheet").as<CSSStyleSheet>();
 }
 
-jsbind::DOMString StyleSheet::title() const {
-    return emlite::Val::get("title").as<jsbind::DOMString>();
+jsbind::String StyleSheet::title() const {
+    return emlite::Val::get("title").as<jsbind::String>();
 }
 
 MediaList StyleSheet::media() const {

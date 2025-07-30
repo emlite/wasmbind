@@ -32,7 +32,7 @@ public:
     jsbind::Promise<jsbind::Undefined> observe(const PressureSource& source, const PressureObserverOptions& options);
     jsbind::Undefined unobserve(const PressureSource& source);
     jsbind::Undefined disconnect();
-    jsbind::Sequence<PressureRecord> takeRecords();
-    static jsbind::FrozenArray<PressureSource> knownSources();
+    jsbind::TypedArray<PressureRecord> takeRecords();
+    static jsbind::TypedArray<PressureSource> knownSources();
 };
 

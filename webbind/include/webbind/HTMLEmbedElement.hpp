@@ -17,18 +17,18 @@ public:
 
     HTMLEmbedElement clone() const noexcept;
     HTMLEmbedElement();
-    jsbind::USVString src() const;
-    void src(const jsbind::USVString& value);
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
-    jsbind::DOMString width() const;
-    void width(const jsbind::DOMString& value);
-    jsbind::DOMString height() const;
-    void height(const jsbind::DOMString& value);
+    jsbind::String src() const;
+    void src(const jsbind::String& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
+    jsbind::String width() const;
+    void width(const jsbind::String& value);
+    jsbind::String height() const;
+    void height(const jsbind::String& value);
     Document getSVGDocument();
-    jsbind::DOMString align() const;
-    void align(const jsbind::DOMString& value);
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    jsbind::String align() const;
+    void align(const jsbind::String& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
 };
 

@@ -14,9 +14,9 @@ public:
     static WebSocket take_ownership(Handle h) noexcept;
 
     WebSocket clone() const noexcept;
-    WebSocket(const jsbind::USVString& url);
-    WebSocket(const jsbind::USVString& url, const jsbind::Any& protocols);
-    jsbind::USVString url() const;
+    WebSocket(const jsbind::String& url);
+    WebSocket(const jsbind::String& url, const jsbind::Any& protocols);
+    jsbind::String url() const;
     unsigned short readyState() const;
     long long bufferedAmount() const;
     jsbind::Any onopen() const;
@@ -25,11 +25,11 @@ public:
     void onerror(const jsbind::Any& value);
     jsbind::Any onclose() const;
     void onclose(const jsbind::Any& value);
-    jsbind::DOMString extensions() const;
-    jsbind::DOMString protocol() const;
+    jsbind::String extensions() const;
+    jsbind::String protocol() const;
     jsbind::Undefined close();
     jsbind::Undefined close(unsigned short code);
-    jsbind::Undefined close(unsigned short code, const jsbind::USVString& reason);
+    jsbind::Undefined close(unsigned short code, const jsbind::String& reason);
     jsbind::Any onmessage() const;
     void onmessage(const jsbind::Any& value);
     BinaryType binaryType() const;

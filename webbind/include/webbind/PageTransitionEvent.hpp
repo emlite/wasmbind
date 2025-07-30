@@ -14,8 +14,8 @@ public:
     static PageTransitionEvent take_ownership(Handle h) noexcept;
 
     PageTransitionEvent clone() const noexcept;
-    PageTransitionEvent(const jsbind::DOMString& type);
-    PageTransitionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    PageTransitionEvent(const jsbind::String& type);
+    PageTransitionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     bool persisted() const;
 };
 

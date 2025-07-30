@@ -9,7 +9,7 @@ SFrameTransformErrorEvent::SFrameTransformErrorEvent(Handle h) noexcept : Event(
 SFrameTransformErrorEvent::SFrameTransformErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SFrameTransformErrorEvent::SFrameTransformErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SFrameTransformErrorEvent").new_(type, eventInitDict)) {}
+SFrameTransformErrorEvent::SFrameTransformErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SFrameTransformErrorEvent").new_(type, eventInitDict)) {}
 
 SFrameTransformErrorEventType SFrameTransformErrorEvent::errorType() const {
     return Event::get("errorType").as<SFrameTransformErrorEventType>();

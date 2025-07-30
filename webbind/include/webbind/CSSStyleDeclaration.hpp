@@ -15,15 +15,15 @@ public:
     static CSSStyleDeclaration take_ownership(Handle h) noexcept;
 
     CSSStyleDeclaration clone() const noexcept;
-    jsbind::CSSOMString cssText() const;
-    void cssText(const jsbind::CSSOMString& value);
+    jsbind::String cssText() const;
+    void cssText(const jsbind::String& value);
     unsigned long length() const;
-    jsbind::CSSOMString item(unsigned long index);
-    jsbind::CSSOMString getPropertyValue(const jsbind::CSSOMString& property);
-    jsbind::CSSOMString getPropertyPriority(const jsbind::CSSOMString& property);
-    jsbind::Undefined setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value);
-    jsbind::Undefined setProperty(const jsbind::CSSOMString& property, const jsbind::CSSOMString& value, const jsbind::CSSOMString& priority);
-    jsbind::CSSOMString removeProperty(const jsbind::CSSOMString& property);
+    jsbind::String item(unsigned long index);
+    jsbind::String getPropertyValue(const jsbind::String& property);
+    jsbind::String getPropertyPriority(const jsbind::String& property);
+    jsbind::Undefined setProperty(const jsbind::String& property, const jsbind::String& value);
+    jsbind::Undefined setProperty(const jsbind::String& property, const jsbind::String& value, const jsbind::String& priority);
+    jsbind::String removeProperty(const jsbind::String& property);
     CSSRule parentRule() const;
 };
 

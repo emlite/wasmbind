@@ -15,8 +15,8 @@ XRSpace XRPlane::planeSpace() const {
     return emlite::Val::get("planeSpace").as<XRSpace>();
 }
 
-jsbind::FrozenArray<DOMPointReadOnly> XRPlane::polygon() const {
-    return emlite::Val::get("polygon").as<jsbind::FrozenArray<DOMPointReadOnly>>();
+jsbind::TypedArray<DOMPointReadOnly> XRPlane::polygon() const {
+    return emlite::Val::get("polygon").as<jsbind::TypedArray<DOMPointReadOnly>>();
 }
 
 XRPlaneOrientation XRPlane::orientation() const {
@@ -27,7 +27,7 @@ jsbind::Any XRPlane::lastChangedTime() const {
     return emlite::Val::get("lastChangedTime").as<jsbind::Any>();
 }
 
-jsbind::DOMString XRPlane::semanticLabel() const {
-    return emlite::Val::get("semanticLabel").as<jsbind::DOMString>();
+jsbind::String XRPlane::semanticLabel() const {
+    return emlite::Val::get("semanticLabel").as<jsbind::String>();
 }
 

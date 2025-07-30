@@ -10,7 +10,7 @@ AudioWorkletGlobalScope::AudioWorkletGlobalScope(Handle h) noexcept : WorkletGlo
 AudioWorkletGlobalScope::AudioWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 
 
-jsbind::Undefined AudioWorkletGlobalScope::registerProcessor(const jsbind::DOMString& name, const jsbind::Function& processorCtor) {
+jsbind::Undefined AudioWorkletGlobalScope::registerProcessor(const jsbind::String& name, const jsbind::Function& processorCtor) {
     return WorkletGlobalScope::call("registerProcessor", name, processorCtor).as<jsbind::Undefined>();
 }
 

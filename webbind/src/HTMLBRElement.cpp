@@ -11,11 +11,11 @@ HTMLBRElement::HTMLBRElement(const emlite::Val &val) noexcept: HTMLElement(val) 
 
 HTMLBRElement::HTMLBRElement() : HTMLElement(emlite::Val::global("HTMLBRElement").new_()) {}
 
-jsbind::DOMString HTMLBRElement::clear() const {
-    return HTMLElement::get("clear").as<jsbind::DOMString>();
+jsbind::String HTMLBRElement::clear() const {
+    return HTMLElement::get("clear").as<jsbind::String>();
 }
 
-void HTMLBRElement::clear(const jsbind::DOMString& value) {
+void HTMLBRElement::clear(const jsbind::String& value) {
     HTMLElement::set("clear", value);
 }
 

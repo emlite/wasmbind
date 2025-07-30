@@ -15,7 +15,7 @@ public:
     static CSSStyleValue take_ownership(Handle h) noexcept;
 
     CSSStyleValue clone() const noexcept;
-    static CSSStyleValue parse(const jsbind::USVString& property, const jsbind::USVString& cssText);
-    static jsbind::Sequence<CSSStyleValue> parseAll(const jsbind::USVString& property, const jsbind::USVString& cssText);
+    static CSSStyleValue parse(const jsbind::String& property, const jsbind::String& cssText);
+    static jsbind::TypedArray<CSSStyleValue> parseAll(const jsbind::String& property, const jsbind::String& cssText);
 };
 

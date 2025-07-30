@@ -9,12 +9,12 @@ FontFaceVariationAxis::FontFaceVariationAxis(Handle h) noexcept : emlite::Val(em
 FontFaceVariationAxis::FontFaceVariationAxis(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString FontFaceVariationAxis::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String FontFaceVariationAxis::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString FontFaceVariationAxis::axisTag() const {
-    return emlite::Val::get("axisTag").as<jsbind::DOMString>();
+jsbind::String FontFaceVariationAxis::axisTag() const {
+    return emlite::Val::get("axisTag").as<jsbind::String>();
 }
 
 double FontFaceVariationAxis::minimumValue() const {

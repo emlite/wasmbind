@@ -17,11 +17,11 @@ public:
     static DOMImplementation take_ownership(Handle h) noexcept;
 
     DOMImplementation clone() const noexcept;
-    DocumentType createDocumentType(const jsbind::DOMString& name, const jsbind::DOMString& publicId, const jsbind::DOMString& systemId);
-    XMLDocument createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName);
-    XMLDocument createDocument(const jsbind::DOMString& namespace_, const jsbind::DOMString& qualifiedName, const DocumentType& doctype);
+    DocumentType createDocumentType(const jsbind::String& name, const jsbind::String& publicId, const jsbind::String& systemId);
+    XMLDocument createDocument(const jsbind::String& namespace_, const jsbind::String& qualifiedName);
+    XMLDocument createDocument(const jsbind::String& namespace_, const jsbind::String& qualifiedName, const DocumentType& doctype);
     Document createHTMLDocument();
-    Document createHTMLDocument(const jsbind::DOMString& title);
+    Document createHTMLDocument(const jsbind::String& title);
     bool hasFeature();
 };
 

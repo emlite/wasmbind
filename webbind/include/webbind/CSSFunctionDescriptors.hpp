@@ -14,7 +14,7 @@ public:
     static CSSFunctionDescriptors take_ownership(Handle h) noexcept;
 
     CSSFunctionDescriptors clone() const noexcept;
-    jsbind::CSSOMString result() const;
-    void result(const jsbind::CSSOMString& value);
+    jsbind::String result() const;
+    void result(const jsbind::String& value);
 };
 

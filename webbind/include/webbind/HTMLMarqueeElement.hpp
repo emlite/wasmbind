@@ -15,14 +15,14 @@ public:
 
     HTMLMarqueeElement clone() const noexcept;
     HTMLMarqueeElement();
-    jsbind::DOMString behavior() const;
-    void behavior(const jsbind::DOMString& value);
-    jsbind::DOMString bgColor() const;
-    void bgColor(const jsbind::DOMString& value);
-    jsbind::DOMString direction() const;
-    void direction(const jsbind::DOMString& value);
-    jsbind::DOMString height() const;
-    void height(const jsbind::DOMString& value);
+    jsbind::String behavior() const;
+    void behavior(const jsbind::String& value);
+    jsbind::String bgColor() const;
+    void bgColor(const jsbind::String& value);
+    jsbind::String direction() const;
+    void direction(const jsbind::String& value);
+    jsbind::String height() const;
+    void height(const jsbind::String& value);
     unsigned long hspace() const;
     void hspace(unsigned long value);
     long loop() const;
@@ -35,8 +35,8 @@ public:
     void trueSpeed(bool value);
     unsigned long vspace() const;
     void vspace(unsigned long value);
-    jsbind::DOMString width() const;
-    void width(const jsbind::DOMString& value);
+    jsbind::String width() const;
+    void width(const jsbind::String& value);
     jsbind::Undefined start();
     jsbind::Undefined stop();
 };

@@ -11,11 +11,11 @@ HTMLTitleElement::HTMLTitleElement(const emlite::Val &val) noexcept: HTMLElement
 
 HTMLTitleElement::HTMLTitleElement() : HTMLElement(emlite::Val::global("HTMLTitleElement").new_()) {}
 
-jsbind::DOMString HTMLTitleElement::text() const {
-    return HTMLElement::get("text").as<jsbind::DOMString>();
+jsbind::String HTMLTitleElement::text() const {
+    return HTMLElement::get("text").as<jsbind::String>();
 }
 
-void HTMLTitleElement::text(const jsbind::DOMString& value) {
+void HTMLTitleElement::text(const jsbind::String& value) {
     HTMLElement::set("text", value);
 }
 

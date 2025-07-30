@@ -17,8 +17,8 @@ public:
 
     TextTrackCue clone() const noexcept;
     TextTrack track() const;
-    jsbind::DOMString id() const;
-    void id(const jsbind::DOMString& value);
+    jsbind::String id() const;
+    void id(const jsbind::String& value);
     double startTime() const;
     void startTime(double value);
     double endTime() const;

@@ -65,20 +65,20 @@ XRJointPose XRFrame::getJointPose(const XRJointSpace& joint, const XRSpace& base
     return emlite::Val::call("getJointPose", joint, baseSpace).as<XRJointPose>();
 }
 
-bool XRFrame::fillJointRadii(const jsbind::Sequence<XRJointSpace>& jointSpaces, const jsbind::Float32Array& radii) {
+bool XRFrame::fillJointRadii(const jsbind::TypedArray<XRJointSpace>& jointSpaces, const jsbind::Float32Array& radii) {
     return emlite::Val::call("fillJointRadii", jointSpaces, radii).as<bool>();
 }
 
-bool XRFrame::fillPoses(const jsbind::Sequence<XRSpace>& spaces, const XRSpace& baseSpace, const jsbind::Float32Array& transforms) {
+bool XRFrame::fillPoses(const jsbind::TypedArray<XRSpace>& spaces, const XRSpace& baseSpace, const jsbind::Float32Array& transforms) {
     return emlite::Val::call("fillPoses", spaces, baseSpace, transforms).as<bool>();
 }
 
-jsbind::Sequence<XRHitTestResult> XRFrame::getHitTestResults(const XRHitTestSource& hitTestSource) {
-    return emlite::Val::call("getHitTestResults", hitTestSource).as<jsbind::Sequence<XRHitTestResult>>();
+jsbind::TypedArray<XRHitTestResult> XRFrame::getHitTestResults(const XRHitTestSource& hitTestSource) {
+    return emlite::Val::call("getHitTestResults", hitTestSource).as<jsbind::TypedArray<XRHitTestResult>>();
 }
 
-jsbind::Sequence<XRTransientInputHitTestResult> XRFrame::getHitTestResultsForTransientInput(const XRTransientInputHitTestSource& hitTestSource) {
-    return emlite::Val::call("getHitTestResultsForTransientInput", hitTestSource).as<jsbind::Sequence<XRTransientInputHitTestResult>>();
+jsbind::TypedArray<XRTransientInputHitTestResult> XRFrame::getHitTestResultsForTransientInput(const XRTransientInputHitTestSource& hitTestSource) {
+    return emlite::Val::call("getHitTestResultsForTransientInput", hitTestSource).as<jsbind::TypedArray<XRTransientInputHitTestResult>>();
 }
 
 XRLightEstimate XRFrame::getLightEstimate(const XRLightProbe& lightProbe) {

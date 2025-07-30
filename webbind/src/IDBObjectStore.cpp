@@ -37,11 +37,11 @@ IDBObjectStore::IDBObjectStore(Handle h) noexcept : emlite::Val(emlite::Val::tak
 IDBObjectStore::IDBObjectStore(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString IDBObjectStore::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String IDBObjectStore::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void IDBObjectStore::name(const jsbind::DOMString& value) {
+void IDBObjectStore::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
@@ -149,19 +149,19 @@ IDBRequest IDBObjectStore::openKeyCursor(const jsbind::Any& query, const IDBCurs
     return emlite::Val::call("openKeyCursor", query, direction).as<IDBRequest>();
 }
 
-IDBIndex IDBObjectStore::index(const jsbind::DOMString& name) {
+IDBIndex IDBObjectStore::index(const jsbind::String& name) {
     return emlite::Val::call("index", name).as<IDBIndex>();
 }
 
-IDBIndex IDBObjectStore::createIndex(const jsbind::DOMString& name, const jsbind::Any& keyPath) {
+IDBIndex IDBObjectStore::createIndex(const jsbind::String& name, const jsbind::Any& keyPath) {
     return emlite::Val::call("createIndex", name, keyPath).as<IDBIndex>();
 }
 
-IDBIndex IDBObjectStore::createIndex(const jsbind::DOMString& name, const jsbind::Any& keyPath, const IDBIndexParameters& options) {
+IDBIndex IDBObjectStore::createIndex(const jsbind::String& name, const jsbind::Any& keyPath, const IDBIndexParameters& options) {
     return emlite::Val::call("createIndex", name, keyPath, options).as<IDBIndex>();
 }
 
-jsbind::Undefined IDBObjectStore::deleteIndex(const jsbind::DOMString& name) {
+jsbind::Undefined IDBObjectStore::deleteIndex(const jsbind::String& name) {
     return emlite::Val::call("deleteIndex", name).as<jsbind::Undefined>();
 }
 

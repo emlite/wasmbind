@@ -16,6 +16,6 @@ public:
 
     NDEFMessage clone() const noexcept;
     NDEFMessage(const jsbind::Any& messageInit);
-    jsbind::FrozenArray<NDEFRecord> records() const;
+    jsbind::TypedArray<NDEFRecord> records() const;
 };
 

@@ -11,27 +11,27 @@ NamedFlow::NamedFlow(Handle h) noexcept : EventTarget(emlite::Val::take_ownershi
 NamedFlow::NamedFlow(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::CSSOMString NamedFlow::name() const {
-    return EventTarget::get("name").as<jsbind::CSSOMString>();
+jsbind::String NamedFlow::name() const {
+    return EventTarget::get("name").as<jsbind::String>();
 }
 
 bool NamedFlow::overset() const {
     return EventTarget::get("overset").as<bool>();
 }
 
-jsbind::Sequence<Element> NamedFlow::getRegions() {
-    return EventTarget::call("getRegions").as<jsbind::Sequence<Element>>();
+jsbind::TypedArray<Element> NamedFlow::getRegions() {
+    return EventTarget::call("getRegions").as<jsbind::TypedArray<Element>>();
 }
 
 short NamedFlow::firstEmptyRegionIndex() const {
     return EventTarget::get("firstEmptyRegionIndex").as<short>();
 }
 
-jsbind::Sequence<Node> NamedFlow::getContent() {
-    return EventTarget::call("getContent").as<jsbind::Sequence<Node>>();
+jsbind::TypedArray<Node> NamedFlow::getContent() {
+    return EventTarget::call("getContent").as<jsbind::TypedArray<Node>>();
 }
 
-jsbind::Sequence<Element> NamedFlow::getRegionsByContent(const Node& node) {
-    return EventTarget::call("getRegionsByContent", node).as<jsbind::Sequence<Element>>();
+jsbind::TypedArray<Element> NamedFlow::getRegionsByContent(const Node& node) {
+    return EventTarget::call("getRegionsByContent", node).as<jsbind::TypedArray<Element>>();
 }
 

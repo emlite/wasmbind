@@ -32,7 +32,7 @@ public:
     HandwritingStroke clone() const noexcept;
     HandwritingStroke();
     jsbind::Undefined addPoint(const HandwritingPoint& point);
-    jsbind::Sequence<HandwritingPoint> getPoints();
+    jsbind::TypedArray<HandwritingPoint> getPoints();
     jsbind::Undefined clear();
 };
 

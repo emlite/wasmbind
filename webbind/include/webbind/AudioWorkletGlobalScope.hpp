@@ -16,7 +16,7 @@ public:
     static AudioWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     AudioWorkletGlobalScope clone() const noexcept;
-    jsbind::Undefined registerProcessor(const jsbind::DOMString& name, const jsbind::Function& processorCtor);
+    jsbind::Undefined registerProcessor(const jsbind::String& name, const jsbind::Function& processorCtor);
     long long currentFrame() const;
     double currentTime() const;
     float sampleRate() const;

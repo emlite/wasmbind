@@ -9,11 +9,11 @@ WebGLObject::WebGLObject(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 WebGLObject::WebGLObject(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString WebGLObject::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String WebGLObject::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void WebGLObject::label(const jsbind::USVString& value) {
+void WebGLObject::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

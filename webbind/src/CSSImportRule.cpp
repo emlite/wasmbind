@@ -11,8 +11,8 @@ CSSImportRule::CSSImportRule(Handle h) noexcept : CSSRule(emlite::Val::take_owne
 CSSImportRule::CSSImportRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::USVString CSSImportRule::href() const {
-    return CSSRule::get("href").as<jsbind::USVString>();
+jsbind::String CSSImportRule::href() const {
+    return CSSRule::get("href").as<jsbind::String>();
 }
 
 MediaList CSSImportRule::media() const {
@@ -23,11 +23,11 @@ CSSStyleSheet CSSImportRule::styleSheet() const {
     return CSSRule::get("styleSheet").as<CSSStyleSheet>();
 }
 
-jsbind::CSSOMString CSSImportRule::layerName() const {
-    return CSSRule::get("layerName").as<jsbind::CSSOMString>();
+jsbind::String CSSImportRule::layerName() const {
+    return CSSRule::get("layerName").as<jsbind::String>();
 }
 
-jsbind::CSSOMString CSSImportRule::supportsText() const {
-    return CSSRule::get("supportsText").as<jsbind::CSSOMString>();
+jsbind::String CSSImportRule::supportsText() const {
+    return CSSRule::get("supportsText").as<jsbind::String>();
 }
 

@@ -16,7 +16,7 @@ public:
     static MediaStreamTrackEvent take_ownership(Handle h) noexcept;
 
     MediaStreamTrackEvent clone() const noexcept;
-    MediaStreamTrackEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    MediaStreamTrackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     MediaStreamTrack track() const;
 };
 

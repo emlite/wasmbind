@@ -13,8 +13,8 @@ public:
     static SpeechGrammar take_ownership(Handle h) noexcept;
 
     SpeechGrammar clone() const noexcept;
-    jsbind::DOMString src() const;
-    void src(const jsbind::DOMString& value);
+    jsbind::String src() const;
+    void src(const jsbind::String& value);
     float weight() const;
     void weight(float value);
 };

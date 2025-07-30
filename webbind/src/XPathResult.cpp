@@ -18,8 +18,8 @@ double XPathResult::numberValue() const {
     return emlite::Val::get("numberValue").as<double>();
 }
 
-jsbind::DOMString XPathResult::stringValue() const {
-    return emlite::Val::get("stringValue").as<jsbind::DOMString>();
+jsbind::String XPathResult::stringValue() const {
+    return emlite::Val::get("stringValue").as<jsbind::String>();
 }
 
 bool XPathResult::booleanValue() const {

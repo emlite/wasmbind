@@ -14,6 +14,6 @@ public:
     static CSSLayerStatementRule take_ownership(Handle h) noexcept;
 
     CSSLayerStatementRule clone() const noexcept;
-    jsbind::FrozenArray<jsbind::CSSOMString> nameList() const;
+    jsbind::TypedArray<jsbind::String> nameList() const;
 };
 

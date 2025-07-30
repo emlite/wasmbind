@@ -20,23 +20,23 @@ jsbind::Promise<jsbind::Any> Cache::match(const jsbind::Any& request, const Cach
     return emlite::Val::call("match", request, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
-jsbind::Promise<jsbind::FrozenArray<Response>> Cache::matchAll() {
-    return emlite::Val::call("matchAll").as<jsbind::Promise<jsbind::FrozenArray<Response>>>();
+jsbind::Promise<jsbind::TypedArray<Response>> Cache::matchAll() {
+    return emlite::Val::call("matchAll").as<jsbind::Promise<jsbind::TypedArray<Response>>>();
 }
 
-jsbind::Promise<jsbind::FrozenArray<Response>> Cache::matchAll(const jsbind::Any& request) {
-    return emlite::Val::call("matchAll", request).as<jsbind::Promise<jsbind::FrozenArray<Response>>>();
+jsbind::Promise<jsbind::TypedArray<Response>> Cache::matchAll(const jsbind::Any& request) {
+    return emlite::Val::call("matchAll", request).as<jsbind::Promise<jsbind::TypedArray<Response>>>();
 }
 
-jsbind::Promise<jsbind::FrozenArray<Response>> Cache::matchAll(const jsbind::Any& request, const CacheQueryOptions& options) {
-    return emlite::Val::call("matchAll", request, options).as<jsbind::Promise<jsbind::FrozenArray<Response>>>();
+jsbind::Promise<jsbind::TypedArray<Response>> Cache::matchAll(const jsbind::Any& request, const CacheQueryOptions& options) {
+    return emlite::Val::call("matchAll", request, options).as<jsbind::Promise<jsbind::TypedArray<Response>>>();
 }
 
 jsbind::Promise<jsbind::Undefined> Cache::add(const jsbind::Any& request) {
     return emlite::Val::call("add", request).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> Cache::addAll(const jsbind::Sequence<jsbind::Any>& requests) {
+jsbind::Promise<jsbind::Undefined> Cache::addAll(const jsbind::TypedArray<jsbind::Any>& requests) {
     return emlite::Val::call("addAll", requests).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
@@ -52,15 +52,15 @@ jsbind::Promise<bool> Cache::delete_(const jsbind::Any& request, const CacheQuer
     return emlite::Val::call("delete", request, options).as<jsbind::Promise<bool>>();
 }
 
-jsbind::Promise<jsbind::FrozenArray<Request>> Cache::keys() {
-    return emlite::Val::call("keys").as<jsbind::Promise<jsbind::FrozenArray<Request>>>();
+jsbind::Promise<jsbind::TypedArray<Request>> Cache::keys() {
+    return emlite::Val::call("keys").as<jsbind::Promise<jsbind::TypedArray<Request>>>();
 }
 
-jsbind::Promise<jsbind::FrozenArray<Request>> Cache::keys(const jsbind::Any& request) {
-    return emlite::Val::call("keys", request).as<jsbind::Promise<jsbind::FrozenArray<Request>>>();
+jsbind::Promise<jsbind::TypedArray<Request>> Cache::keys(const jsbind::Any& request) {
+    return emlite::Val::call("keys", request).as<jsbind::Promise<jsbind::TypedArray<Request>>>();
 }
 
-jsbind::Promise<jsbind::FrozenArray<Request>> Cache::keys(const jsbind::Any& request, const CacheQueryOptions& options) {
-    return emlite::Val::call("keys", request, options).as<jsbind::Promise<jsbind::FrozenArray<Request>>>();
+jsbind::Promise<jsbind::TypedArray<Request>> Cache::keys(const jsbind::Any& request, const CacheQueryOptions& options) {
+    return emlite::Val::call("keys", request, options).as<jsbind::Promise<jsbind::TypedArray<Request>>>();
 }
 

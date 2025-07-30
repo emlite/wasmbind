@@ -16,11 +16,11 @@ DocumentFragment HTMLTemplateElement::content() const {
     return HTMLElement::get("content").as<DocumentFragment>();
 }
 
-jsbind::DOMString HTMLTemplateElement::shadowRootMode() const {
-    return HTMLElement::get("shadowRootMode").as<jsbind::DOMString>();
+jsbind::String HTMLTemplateElement::shadowRootMode() const {
+    return HTMLElement::get("shadowRootMode").as<jsbind::String>();
 }
 
-void HTMLTemplateElement::shadowRootMode(const jsbind::DOMString& value) {
+void HTMLTemplateElement::shadowRootMode(const jsbind::String& value) {
     HTMLElement::set("shadowRootMode", value);
 }
 
@@ -48,11 +48,11 @@ void HTMLTemplateElement::shadowRootSerializable(bool value) {
     HTMLElement::set("shadowRootSerializable", value);
 }
 
-jsbind::DOMString HTMLTemplateElement::shadowRootCustomElementRegistry() const {
-    return HTMLElement::get("shadowRootCustomElementRegistry").as<jsbind::DOMString>();
+jsbind::String HTMLTemplateElement::shadowRootCustomElementRegistry() const {
+    return HTMLElement::get("shadowRootCustomElementRegistry").as<jsbind::String>();
 }
 
-void HTMLTemplateElement::shadowRootCustomElementRegistry(const jsbind::DOMString& value) {
+void HTMLTemplateElement::shadowRootCustomElementRegistry(const jsbind::String& value) {
     HTMLElement::set("shadowRootCustomElementRegistry", value);
 }
 

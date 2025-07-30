@@ -19,7 +19,7 @@ public:
 
     DocumentFragment clone() const noexcept;
     DocumentFragment();
-    Element getElementById(const jsbind::DOMString& elementId);
+    Element getElementById(const jsbind::String& elementId);
     HTMLCollection children() const;
     Element firstElementChild() const;
     Element lastElementChild() const;
@@ -28,7 +28,7 @@ public:
     jsbind::Undefined append(const jsbind::Any& nodes);
     jsbind::Undefined replaceChildren(const jsbind::Any& nodes);
     jsbind::Undefined moveBefore(const Node& node, const Node& child);
-    Element querySelector(const jsbind::DOMString& selectors);
-    NodeList querySelectorAll(const jsbind::DOMString& selectors);
+    Element querySelector(const jsbind::String& selectors);
+    NodeList querySelectorAll(const jsbind::String& selectors);
 };
 

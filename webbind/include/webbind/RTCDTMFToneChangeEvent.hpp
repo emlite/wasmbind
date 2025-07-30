@@ -14,8 +14,8 @@ public:
     static RTCDTMFToneChangeEvent take_ownership(Handle h) noexcept;
 
     RTCDTMFToneChangeEvent clone() const noexcept;
-    RTCDTMFToneChangeEvent(const jsbind::DOMString& type);
-    RTCDTMFToneChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
-    jsbind::DOMString tone() const;
+    RTCDTMFToneChangeEvent(const jsbind::String& type);
+    RTCDTMFToneChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    jsbind::String tone() const;
 };
 

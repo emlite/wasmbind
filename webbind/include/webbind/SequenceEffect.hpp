@@ -16,8 +16,8 @@ public:
     static SequenceEffect take_ownership(Handle h) noexcept;
 
     SequenceEffect clone() const noexcept;
-    SequenceEffect(const jsbind::Sequence<AnimationEffect>& children);
-    SequenceEffect(const jsbind::Sequence<AnimationEffect>& children, const jsbind::Any& timing);
+    SequenceEffect(const jsbind::TypedArray<AnimationEffect>& children);
+    SequenceEffect(const jsbind::TypedArray<AnimationEffect>& children, const jsbind::Any& timing);
     SequenceEffect clone();
 };
 

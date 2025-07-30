@@ -10,11 +10,11 @@ CharacterData::CharacterData(Handle h) noexcept : Node(emlite::Val::take_ownersh
 CharacterData::CharacterData(const emlite::Val &val) noexcept: Node(val) {}
 
 
-jsbind::DOMString CharacterData::data() const {
-    return Node::get("data").as<jsbind::DOMString>();
+jsbind::String CharacterData::data() const {
+    return Node::get("data").as<jsbind::String>();
 }
 
-void CharacterData::data(const jsbind::DOMString& value) {
+void CharacterData::data(const jsbind::String& value) {
     Node::set("data", value);
 }
 
@@ -22,15 +22,15 @@ unsigned long CharacterData::length() const {
     return Node::get("length").as<unsigned long>();
 }
 
-jsbind::DOMString CharacterData::substringData(unsigned long offset, unsigned long count) {
-    return Node::call("substringData", offset, count).as<jsbind::DOMString>();
+jsbind::String CharacterData::substringData(unsigned long offset, unsigned long count) {
+    return Node::call("substringData", offset, count).as<jsbind::String>();
 }
 
-jsbind::Undefined CharacterData::appendData(const jsbind::DOMString& data) {
+jsbind::Undefined CharacterData::appendData(const jsbind::String& data) {
     return Node::call("appendData", data).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CharacterData::insertData(unsigned long offset, const jsbind::DOMString& data) {
+jsbind::Undefined CharacterData::insertData(unsigned long offset, const jsbind::String& data) {
     return Node::call("insertData", offset, data).as<jsbind::Undefined>();
 }
 
@@ -38,7 +38,7 @@ jsbind::Undefined CharacterData::deleteData(unsigned long offset, unsigned long 
     return Node::call("deleteData", offset, count).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined CharacterData::replaceData(unsigned long offset, unsigned long count, const jsbind::DOMString& data) {
+jsbind::Undefined CharacterData::replaceData(unsigned long offset, unsigned long count, const jsbind::String& data) {
     return Node::call("replaceData", offset, count, data).as<jsbind::Undefined>();
 }
 

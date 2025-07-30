@@ -61,8 +61,8 @@ ImageDecoder::ImageDecoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 ImageDecoder::ImageDecoder(const jsbind::Any& init) : emlite::Val(emlite::Val::global("ImageDecoder").new_(init)) {}
 
-jsbind::DOMString ImageDecoder::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String ImageDecoder::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
 bool ImageDecoder::complete() const {
@@ -93,7 +93,7 @@ jsbind::Undefined ImageDecoder::close() {
     return emlite::Val::call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Promise<bool> ImageDecoder::isTypeSupported(const jsbind::DOMString& type) {
+jsbind::Promise<bool> ImageDecoder::isTypeSupported(const jsbind::String& type) {
     return emlite::Val::global("imagedecoder").call("isTypeSupported", type).as<jsbind::Promise<bool>>();
 }
 

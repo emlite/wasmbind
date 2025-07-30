@@ -10,16 +10,16 @@ KeyboardEvent::KeyboardEvent(Handle h) noexcept : UIEvent(emlite::Val::take_owne
 KeyboardEvent::KeyboardEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 
-KeyboardEvent::KeyboardEvent(const jsbind::DOMString& type) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type)) {}
+KeyboardEvent::KeyboardEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type)) {}
 
-KeyboardEvent::KeyboardEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type, eventInitDict)) {}
+KeyboardEvent::KeyboardEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type, eventInitDict)) {}
 
-jsbind::DOMString KeyboardEvent::key() const {
-    return UIEvent::get("key").as<jsbind::DOMString>();
+jsbind::String KeyboardEvent::key() const {
+    return UIEvent::get("key").as<jsbind::String>();
 }
 
-jsbind::DOMString KeyboardEvent::code() const {
-    return UIEvent::get("code").as<jsbind::DOMString>();
+jsbind::String KeyboardEvent::code() const {
+    return UIEvent::get("code").as<jsbind::String>();
 }
 
 unsigned long KeyboardEvent::location() const {
@@ -50,47 +50,47 @@ bool KeyboardEvent::isComposing() const {
     return UIEvent::get("isComposing").as<bool>();
 }
 
-bool KeyboardEvent::getModifierState(const jsbind::DOMString& keyArg) {
+bool KeyboardEvent::getModifierState(const jsbind::String& keyArg) {
     return UIEvent::call("getModifierState", keyArg).as<bool>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg) {
     return UIEvent::call("initKeyboardEvent", typeArg).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg, viewArg).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::String& keyArg) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg, viewArg, keyArg).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::String& keyArg, unsigned long locationArg) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg, viewArg, keyArg, locationArg).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::String& keyArg, unsigned long locationArg, bool ctrlKey) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg, viewArg, keyArg, locationArg, ctrlKey).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::String& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg, viewArg, keyArg, locationArg, ctrlKey, altKey).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey, bool shiftKey) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::String& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey, bool shiftKey) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg, viewArg, keyArg, locationArg, ctrlKey, altKey, shiftKey).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::DOMString& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::DOMString& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey, bool shiftKey, bool metaKey) {
+jsbind::Undefined KeyboardEvent::initKeyboardEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, const jsbind::String& keyArg, unsigned long locationArg, bool ctrlKey, bool altKey, bool shiftKey, bool metaKey) {
     return UIEvent::call("initKeyboardEvent", typeArg, bubblesArg, cancelableArg, viewArg, keyArg, locationArg, ctrlKey, altKey, shiftKey, metaKey).as<jsbind::Undefined>();
 }
 

@@ -14,8 +14,8 @@ public:
     static WheelEvent take_ownership(Handle h) noexcept;
 
     WheelEvent clone() const noexcept;
-    WheelEvent(const jsbind::DOMString& type);
-    WheelEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    WheelEvent(const jsbind::String& type);
+    WheelEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     double deltaX() const;
     double deltaY() const;
     double deltaZ() const;

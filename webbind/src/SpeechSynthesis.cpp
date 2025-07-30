@@ -47,7 +47,7 @@ jsbind::Undefined SpeechSynthesis::resume() {
     return EventTarget::call("resume").as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<SpeechSynthesisVoice> SpeechSynthesis::getVoices() {
-    return EventTarget::call("getVoices").as<jsbind::Sequence<SpeechSynthesisVoice>>();
+jsbind::TypedArray<SpeechSynthesisVoice> SpeechSynthesis::getVoices() {
+    return EventTarget::call("getVoices").as<jsbind::TypedArray<SpeechSynthesisVoice>>();
 }
 

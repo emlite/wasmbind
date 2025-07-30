@@ -9,11 +9,11 @@ MIDIOutput::MIDIOutput(Handle h) noexcept : MIDIPort(emlite::Val::take_ownership
 MIDIOutput::MIDIOutput(const emlite::Val &val) noexcept: MIDIPort(val) {}
 
 
-jsbind::Undefined MIDIOutput::send(jsbind::Sequence<unsigned char> data) {
+jsbind::Undefined MIDIOutput::send(jsbind::TypedArray<unsigned char> data) {
     return MIDIPort::call("send", data).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined MIDIOutput::send(jsbind::Sequence<unsigned char> data, const jsbind::Any& timestamp) {
+jsbind::Undefined MIDIOutput::send(jsbind::TypedArray<unsigned char> data, const jsbind::Any& timestamp) {
     return MIDIPort::call("send", data, timestamp).as<jsbind::Undefined>();
 }
 

@@ -9,91 +9,91 @@ CSSCounterStyleRule::CSSCounterStyleRule(Handle h) noexcept : CSSRule(emlite::Va
 CSSCounterStyleRule::CSSCounterStyleRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSCounterStyleRule::name() const {
-    return CSSRule::get("name").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::name() const {
+    return CSSRule::get("name").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::name(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::name(const jsbind::String& value) {
     CSSRule::set("name", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::system() const {
-    return CSSRule::get("system").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::system() const {
+    return CSSRule::get("system").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::system(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::system(const jsbind::String& value) {
     CSSRule::set("system", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::symbols() const {
-    return CSSRule::get("symbols").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::symbols() const {
+    return CSSRule::get("symbols").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::symbols(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::symbols(const jsbind::String& value) {
     CSSRule::set("symbols", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::additiveSymbols() const {
-    return CSSRule::get("additiveSymbols").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::additiveSymbols() const {
+    return CSSRule::get("additiveSymbols").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::additiveSymbols(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::additiveSymbols(const jsbind::String& value) {
     CSSRule::set("additiveSymbols", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::negative() const {
-    return CSSRule::get("negative").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::negative() const {
+    return CSSRule::get("negative").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::negative(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::negative(const jsbind::String& value) {
     CSSRule::set("negative", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::prefix() const {
-    return CSSRule::get("prefix").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::prefix() const {
+    return CSSRule::get("prefix").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::prefix(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::prefix(const jsbind::String& value) {
     CSSRule::set("prefix", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::suffix() const {
-    return CSSRule::get("suffix").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::suffix() const {
+    return CSSRule::get("suffix").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::suffix(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::suffix(const jsbind::String& value) {
     CSSRule::set("suffix", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::range() const {
-    return CSSRule::get("range").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::range() const {
+    return CSSRule::get("range").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::range(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::range(const jsbind::String& value) {
     CSSRule::set("range", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::pad() const {
-    return CSSRule::get("pad").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::pad() const {
+    return CSSRule::get("pad").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::pad(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::pad(const jsbind::String& value) {
     CSSRule::set("pad", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::speakAs() const {
-    return CSSRule::get("speakAs").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::speakAs() const {
+    return CSSRule::get("speakAs").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::speakAs(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::speakAs(const jsbind::String& value) {
     CSSRule::set("speakAs", value);
 }
 
-jsbind::CSSOMString CSSCounterStyleRule::fallback() const {
-    return CSSRule::get("fallback").as<jsbind::CSSOMString>();
+jsbind::String CSSCounterStyleRule::fallback() const {
+    return CSSRule::get("fallback").as<jsbind::String>();
 }
 
-void CSSCounterStyleRule::fallback(const jsbind::CSSOMString& value) {
+void CSSCounterStyleRule::fallback(const jsbind::String& value) {
     CSSRule::set("fallback", value);
 }
 

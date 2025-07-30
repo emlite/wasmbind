@@ -29,7 +29,7 @@ public:
     static PushManager take_ownership(Handle h) noexcept;
 
     PushManager clone() const noexcept;
-    static jsbind::FrozenArray<jsbind::DOMString> supportedContentEncodings();
+    static jsbind::TypedArray<jsbind::String> supportedContentEncodings();
     jsbind::Promise<PushSubscription> subscribe();
     jsbind::Promise<PushSubscription> subscribe(const PushSubscriptionOptionsInit& options);
     jsbind::Promise<PushSubscription> getSubscription();

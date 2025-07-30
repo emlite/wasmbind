@@ -9,16 +9,16 @@ NavigationHistoryEntry::NavigationHistoryEntry(Handle h) noexcept : EventTarget(
 NavigationHistoryEntry::NavigationHistoryEntry(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::USVString NavigationHistoryEntry::url() const {
-    return EventTarget::get("url").as<jsbind::USVString>();
+jsbind::String NavigationHistoryEntry::url() const {
+    return EventTarget::get("url").as<jsbind::String>();
 }
 
-jsbind::DOMString NavigationHistoryEntry::key() const {
-    return EventTarget::get("key").as<jsbind::DOMString>();
+jsbind::String NavigationHistoryEntry::key() const {
+    return EventTarget::get("key").as<jsbind::String>();
 }
 
-jsbind::DOMString NavigationHistoryEntry::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String NavigationHistoryEntry::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
 long long NavigationHistoryEntry::index() const {

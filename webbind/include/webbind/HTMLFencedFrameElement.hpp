@@ -20,12 +20,12 @@ public:
     HTMLFencedFrameElement();
     FencedFrameConfig config() const;
     void config(const FencedFrameConfig& value);
-    jsbind::DOMString width() const;
-    void width(const jsbind::DOMString& value);
-    jsbind::DOMString height() const;
-    void height(const jsbind::DOMString& value);
+    jsbind::String width() const;
+    void width(const jsbind::String& value);
+    jsbind::String height() const;
+    void height(const jsbind::String& value);
     DOMTokenList sandbox() const;
-    jsbind::DOMString allow() const;
-    void allow(const jsbind::DOMString& value);
+    jsbind::String allow() const;
+    void allow(const jsbind::String& value);
 };
 

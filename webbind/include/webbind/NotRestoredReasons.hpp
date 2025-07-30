@@ -16,12 +16,12 @@ public:
     static NotRestoredReasons take_ownership(Handle h) noexcept;
 
     NotRestoredReasons clone() const noexcept;
-    jsbind::USVString src() const;
-    jsbind::DOMString id() const;
-    jsbind::DOMString name() const;
-    jsbind::USVString url() const;
-    jsbind::FrozenArray<NotRestoredReasonDetails> reasons() const;
-    jsbind::FrozenArray<NotRestoredReasons> children() const;
+    jsbind::String src() const;
+    jsbind::String id() const;
+    jsbind::String name() const;
+    jsbind::String url() const;
+    jsbind::TypedArray<NotRestoredReasonDetails> reasons() const;
+    jsbind::TypedArray<NotRestoredReasons> children() const;
     jsbind::Object toJSON();
 };
 

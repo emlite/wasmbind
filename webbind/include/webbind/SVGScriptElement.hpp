@@ -16,10 +16,10 @@ public:
     static SVGScriptElement take_ownership(Handle h) noexcept;
 
     SVGScriptElement clone() const noexcept;
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
-    jsbind::DOMString crossOrigin() const;
-    void crossOrigin(const jsbind::DOMString& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
+    jsbind::String crossOrigin() const;
+    void crossOrigin(const jsbind::String& value);
     SVGAnimatedString href() const;
 };
 

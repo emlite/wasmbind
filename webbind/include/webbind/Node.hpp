@@ -31,8 +31,8 @@ public:
 
     Node clone() const noexcept;
     unsigned short nodeType() const;
-    jsbind::DOMString nodeName() const;
-    jsbind::USVString baseURI() const;
+    jsbind::String nodeName() const;
+    jsbind::String baseURI() const;
     bool isConnected() const;
     Document ownerDocument() const;
     Node getRootNode();
@@ -45,10 +45,10 @@ public:
     Node lastChild() const;
     Node previousSibling() const;
     Node nextSibling() const;
-    jsbind::DOMString nodeValue() const;
-    void nodeValue(const jsbind::DOMString& value);
-    jsbind::DOMString textContent() const;
-    void textContent(const jsbind::DOMString& value);
+    jsbind::String nodeValue() const;
+    void nodeValue(const jsbind::String& value);
+    jsbind::String textContent() const;
+    void textContent(const jsbind::String& value);
     jsbind::Undefined normalize();
     Node cloneNode();
     Node cloneNode(bool subtree);
@@ -56,9 +56,9 @@ public:
     bool isSameNode(const Node& otherNode);
     unsigned short compareDocumentPosition(const Node& other);
     bool contains(const Node& other);
-    jsbind::DOMString lookupPrefix(const jsbind::DOMString& namespace_);
-    jsbind::DOMString lookupNamespaceURI(const jsbind::DOMString& prefix);
-    bool isDefaultNamespace(const jsbind::DOMString& namespace_);
+    jsbind::String lookupPrefix(const jsbind::String& namespace_);
+    jsbind::String lookupNamespaceURI(const jsbind::String& prefix);
+    bool isDefaultNamespace(const jsbind::String& namespace_);
     Node insertBefore(const Node& node, const Node& child);
     Node appendChild(const Node& node);
     Node replaceChild(const Node& node, const Node& child);

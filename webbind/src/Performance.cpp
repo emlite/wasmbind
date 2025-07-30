@@ -22,11 +22,11 @@ void MemoryMeasurement::bytes(long long value) {
     emlite::Val::set("bytes", value);
 }
 
-jsbind::Sequence<jsbind::Any> MemoryMeasurement::breakdown() const {
-    return emlite::Val::get("breakdown").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> MemoryMeasurement::breakdown() const {
+    return emlite::Val::get("breakdown").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void MemoryMeasurement::breakdown(const jsbind::Sequence<jsbind::Any>& value) {
+void MemoryMeasurement::breakdown(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("breakdown", value);
 }
 
@@ -98,15 +98,15 @@ jsbind::Any Performance::getEntries() {
     return EventTarget::call("getEntries").as<jsbind::Any>();
 }
 
-jsbind::Any Performance::getEntriesByType(const jsbind::DOMString& type) {
+jsbind::Any Performance::getEntriesByType(const jsbind::String& type) {
     return EventTarget::call("getEntriesByType", type).as<jsbind::Any>();
 }
 
-jsbind::Any Performance::getEntriesByName(const jsbind::DOMString& name) {
+jsbind::Any Performance::getEntriesByName(const jsbind::String& name) {
     return EventTarget::call("getEntriesByName", name).as<jsbind::Any>();
 }
 
-jsbind::Any Performance::getEntriesByName(const jsbind::DOMString& name, const jsbind::DOMString& type) {
+jsbind::Any Performance::getEntriesByName(const jsbind::String& name, const jsbind::String& type) {
     return EventTarget::call("getEntriesByName", name, type).as<jsbind::Any>();
 }
 
@@ -126,11 +126,11 @@ void Performance::onresourcetimingbufferfull(const jsbind::Any& value) {
     EventTarget::set("onresourcetimingbufferfull", value);
 }
 
-PerformanceMark Performance::mark(const jsbind::DOMString& markName) {
+PerformanceMark Performance::mark(const jsbind::String& markName) {
     return EventTarget::call("mark", markName).as<PerformanceMark>();
 }
 
-PerformanceMark Performance::mark(const jsbind::DOMString& markName, const PerformanceMarkOptions& markOptions) {
+PerformanceMark Performance::mark(const jsbind::String& markName, const PerformanceMarkOptions& markOptions) {
     return EventTarget::call("mark", markName, markOptions).as<PerformanceMark>();
 }
 
@@ -138,19 +138,19 @@ jsbind::Undefined Performance::clearMarks() {
     return EventTarget::call("clearMarks").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Performance::clearMarks(const jsbind::DOMString& markName) {
+jsbind::Undefined Performance::clearMarks(const jsbind::String& markName) {
     return EventTarget::call("clearMarks", markName).as<jsbind::Undefined>();
 }
 
-PerformanceMeasure Performance::measure(const jsbind::DOMString& measureName) {
+PerformanceMeasure Performance::measure(const jsbind::String& measureName) {
     return EventTarget::call("measure", measureName).as<PerformanceMeasure>();
 }
 
-PerformanceMeasure Performance::measure(const jsbind::DOMString& measureName, const jsbind::Any& startOrMeasureOptions) {
+PerformanceMeasure Performance::measure(const jsbind::String& measureName, const jsbind::Any& startOrMeasureOptions) {
     return EventTarget::call("measure", measureName, startOrMeasureOptions).as<PerformanceMeasure>();
 }
 
-PerformanceMeasure Performance::measure(const jsbind::DOMString& measureName, const jsbind::Any& startOrMeasureOptions, const jsbind::DOMString& endMark) {
+PerformanceMeasure Performance::measure(const jsbind::String& measureName, const jsbind::Any& startOrMeasureOptions, const jsbind::String& endMark) {
     return EventTarget::call("measure", measureName, startOrMeasureOptions, endMark).as<PerformanceMeasure>();
 }
 
@@ -158,7 +158,7 @@ jsbind::Undefined Performance::clearMeasures() {
     return EventTarget::call("clearMeasures").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Performance::clearMeasures(const jsbind::DOMString& measureName) {
+jsbind::Undefined Performance::clearMeasures(const jsbind::String& measureName) {
     return EventTarget::call("clearMeasures", measureName).as<jsbind::Undefined>();
 }
 

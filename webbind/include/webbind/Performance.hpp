@@ -23,8 +23,8 @@ public:
     MemoryMeasurement clone() const noexcept;
     long long bytes() const;
     void bytes(long long value);
-    jsbind::Sequence<jsbind::Any> breakdown() const;
-    void breakdown(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> breakdown() const;
+    void breakdown(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class PerformanceMarkOptions : public emlite::Val {
@@ -57,21 +57,21 @@ public:
     PerformanceNavigation navigation() const;
     jsbind::Promise<MemoryMeasurement> measureUserAgentSpecificMemory();
     jsbind::Any getEntries();
-    jsbind::Any getEntriesByType(const jsbind::DOMString& type);
-    jsbind::Any getEntriesByName(const jsbind::DOMString& name);
-    jsbind::Any getEntriesByName(const jsbind::DOMString& name, const jsbind::DOMString& type);
+    jsbind::Any getEntriesByType(const jsbind::String& type);
+    jsbind::Any getEntriesByName(const jsbind::String& name);
+    jsbind::Any getEntriesByName(const jsbind::String& name, const jsbind::String& type);
     jsbind::Undefined clearResourceTimings();
     jsbind::Undefined setResourceTimingBufferSize(unsigned long maxSize);
     jsbind::Any onresourcetimingbufferfull() const;
     void onresourcetimingbufferfull(const jsbind::Any& value);
-    PerformanceMark mark(const jsbind::DOMString& markName);
-    PerformanceMark mark(const jsbind::DOMString& markName, const PerformanceMarkOptions& markOptions);
+    PerformanceMark mark(const jsbind::String& markName);
+    PerformanceMark mark(const jsbind::String& markName, const PerformanceMarkOptions& markOptions);
     jsbind::Undefined clearMarks();
-    jsbind::Undefined clearMarks(const jsbind::DOMString& markName);
-    PerformanceMeasure measure(const jsbind::DOMString& measureName);
-    PerformanceMeasure measure(const jsbind::DOMString& measureName, const jsbind::Any& startOrMeasureOptions);
-    PerformanceMeasure measure(const jsbind::DOMString& measureName, const jsbind::Any& startOrMeasureOptions, const jsbind::DOMString& endMark);
+    jsbind::Undefined clearMarks(const jsbind::String& markName);
+    PerformanceMeasure measure(const jsbind::String& measureName);
+    PerformanceMeasure measure(const jsbind::String& measureName, const jsbind::Any& startOrMeasureOptions);
+    PerformanceMeasure measure(const jsbind::String& measureName, const jsbind::Any& startOrMeasureOptions, const jsbind::String& endMark);
     jsbind::Undefined clearMeasures();
-    jsbind::Undefined clearMeasures(const jsbind::DOMString& measureName);
+    jsbind::Undefined clearMeasures(const jsbind::String& measureName);
 };
 

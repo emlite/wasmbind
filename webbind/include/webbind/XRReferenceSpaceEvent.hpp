@@ -17,7 +17,7 @@ public:
     static XRReferenceSpaceEvent take_ownership(Handle h) noexcept;
 
     XRReferenceSpaceEvent clone() const noexcept;
-    XRReferenceSpaceEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    XRReferenceSpaceEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     XRReferenceSpace referenceSpace() const;
     XRRigidTransform transform() const;
 };

@@ -16,8 +16,8 @@ public:
     static TextFormatUpdateEvent take_ownership(Handle h) noexcept;
 
     TextFormatUpdateEvent clone() const noexcept;
-    TextFormatUpdateEvent(const jsbind::DOMString& type);
-    TextFormatUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& options);
-    jsbind::Sequence<TextFormat> getTextFormats();
+    TextFormatUpdateEvent(const jsbind::String& type);
+    TextFormatUpdateEvent(const jsbind::String& type, const jsbind::Any& options);
+    jsbind::TypedArray<TextFormat> getTextFormats();
 };
 

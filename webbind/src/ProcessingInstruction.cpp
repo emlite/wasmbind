@@ -10,8 +10,8 @@ ProcessingInstruction::ProcessingInstruction(Handle h) noexcept : CharacterData(
 ProcessingInstruction::ProcessingInstruction(const emlite::Val &val) noexcept: CharacterData(val) {}
 
 
-jsbind::DOMString ProcessingInstruction::target() const {
-    return CharacterData::get("target").as<jsbind::DOMString>();
+jsbind::String ProcessingInstruction::target() const {
+    return CharacterData::get("target").as<jsbind::String>();
 }
 
 CSSStyleSheet ProcessingInstruction::sheet() const {

@@ -16,11 +16,11 @@ public:
     static SpeechSynthesisEvent take_ownership(Handle h) noexcept;
 
     SpeechSynthesisEvent clone() const noexcept;
-    SpeechSynthesisEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    SpeechSynthesisEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     SpeechSynthesisUtterance utterance() const;
     unsigned long charIndex() const;
     unsigned long charLength() const;
     float elapsedTime() const;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
 };
 

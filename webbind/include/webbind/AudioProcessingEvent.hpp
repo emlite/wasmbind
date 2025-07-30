@@ -16,7 +16,7 @@ public:
     static AudioProcessingEvent take_ownership(Handle h) noexcept;
 
     AudioProcessingEvent clone() const noexcept;
-    AudioProcessingEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    AudioProcessingEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     double playbackTime() const;
     AudioBuffer inputBuffer() const;
     AudioBuffer outputBuffer() const;

@@ -10,8 +10,8 @@ PresentationConnectionList::PresentationConnectionList(Handle h) noexcept : Even
 PresentationConnectionList::PresentationConnectionList(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::FrozenArray<PresentationConnection> PresentationConnectionList::connections() const {
-    return EventTarget::get("connections").as<jsbind::FrozenArray<PresentationConnection>>();
+jsbind::TypedArray<PresentationConnection> PresentationConnectionList::connections() const {
+    return EventTarget::get("connections").as<jsbind::TypedArray<PresentationConnection>>();
 }
 
 jsbind::Any PresentationConnectionList::onconnectionavailable() const {

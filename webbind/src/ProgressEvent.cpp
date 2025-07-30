@@ -9,9 +9,9 @@ ProgressEvent::ProgressEvent(Handle h) noexcept : Event(emlite::Val::take_owners
 ProgressEvent::ProgressEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-ProgressEvent::ProgressEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("ProgressEvent").new_(type)) {}
+ProgressEvent::ProgressEvent(const jsbind::String& type) : Event(emlite::Val::global("ProgressEvent").new_(type)) {}
 
-ProgressEvent::ProgressEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ProgressEvent").new_(type, eventInitDict)) {}
+ProgressEvent::ProgressEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ProgressEvent").new_(type, eventInitDict)) {}
 
 bool ProgressEvent::lengthComputable() const {
     return Event::get("lengthComputable").as<bool>();

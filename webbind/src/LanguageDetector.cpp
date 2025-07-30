@@ -34,11 +34,11 @@ LanguageDetectorCreateCoreOptions::LanguageDetectorCreateCoreOptions(const emlit
 LanguageDetectorCreateCoreOptions::LanguageDetectorCreateCoreOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 LanguageDetectorCreateCoreOptions LanguageDetectorCreateCoreOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::DOMString> LanguageDetectorCreateCoreOptions::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> LanguageDetectorCreateCoreOptions::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void LanguageDetectorCreateCoreOptions::expectedInputLanguages(const jsbind::Sequence<jsbind::DOMString>& value) {
+void LanguageDetectorCreateCoreOptions::expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("expectedInputLanguages", value);
 }
 
@@ -50,11 +50,11 @@ LanguageDetectionResult::LanguageDetectionResult(const emlite::Val &val) noexcep
 LanguageDetectionResult::LanguageDetectionResult() noexcept: emlite::Val(emlite::Val::object()) {}
 LanguageDetectionResult LanguageDetectionResult::clone() const noexcept { return *this; }
 
-jsbind::DOMString LanguageDetectionResult::detectedLanguage() const {
-    return emlite::Val::get("detectedLanguage").as<jsbind::DOMString>();
+jsbind::String LanguageDetectionResult::detectedLanguage() const {
+    return emlite::Val::get("detectedLanguage").as<jsbind::String>();
 }
 
-void LanguageDetectionResult::detectedLanguage(const jsbind::DOMString& value) {
+void LanguageDetectionResult::detectedLanguage(const jsbind::String& value) {
     emlite::Val::set("detectedLanguage", value);
 }
 
@@ -106,23 +106,23 @@ jsbind::Promise<Availability> LanguageDetector::availability(const LanguageDetec
     return emlite::Val::global("languagedetector").call("availability", options).as<jsbind::Promise<Availability>>();
 }
 
-jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> LanguageDetector::detect(const jsbind::DOMString& input) {
-    return emlite::Val::call("detect", input).as<jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>>>();
+jsbind::Promise<jsbind::TypedArray<LanguageDetectionResult>> LanguageDetector::detect(const jsbind::String& input) {
+    return emlite::Val::call("detect", input).as<jsbind::Promise<jsbind::TypedArray<LanguageDetectionResult>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>> LanguageDetector::detect(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options) {
-    return emlite::Val::call("detect", input, options).as<jsbind::Promise<jsbind::Sequence<LanguageDetectionResult>>>();
+jsbind::Promise<jsbind::TypedArray<LanguageDetectionResult>> LanguageDetector::detect(const jsbind::String& input, const LanguageDetectorDetectOptions& options) {
+    return emlite::Val::call("detect", input, options).as<jsbind::Promise<jsbind::TypedArray<LanguageDetectionResult>>>();
 }
 
-jsbind::FrozenArray<jsbind::DOMString> LanguageDetector::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::FrozenArray<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> LanguageDetector::expectedInputLanguages() const {
+    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::Promise<double> LanguageDetector::measureInputUsage(const jsbind::DOMString& input) {
+jsbind::Promise<double> LanguageDetector::measureInputUsage(const jsbind::String& input) {
     return emlite::Val::call("measureInputUsage", input).as<jsbind::Promise<double>>();
 }
 
-jsbind::Promise<double> LanguageDetector::measureInputUsage(const jsbind::DOMString& input, const LanguageDetectorDetectOptions& options) {
+jsbind::Promise<double> LanguageDetector::measureInputUsage(const jsbind::String& input, const LanguageDetectorDetectOptions& options) {
     return emlite::Val::call("measureInputUsage", input, options).as<jsbind::Promise<double>>();
 }
 

@@ -12,11 +12,11 @@ HTMLMapElement::HTMLMapElement(const emlite::Val &val) noexcept: HTMLElement(val
 
 HTMLMapElement::HTMLMapElement() : HTMLElement(emlite::Val::global("HTMLMapElement").new_()) {}
 
-jsbind::DOMString HTMLMapElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLMapElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLMapElement::name(const jsbind::DOMString& value) {
+void HTMLMapElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 

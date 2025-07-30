@@ -27,12 +27,12 @@ BluetoothDevice::BluetoothDevice(Handle h) noexcept : EventTarget(emlite::Val::t
 BluetoothDevice::BluetoothDevice(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::DOMString BluetoothDevice::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String BluetoothDevice::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString BluetoothDevice::name() const {
-    return EventTarget::get("name").as<jsbind::DOMString>();
+jsbind::String BluetoothDevice::name() const {
+    return EventTarget::get("name").as<jsbind::String>();
 }
 
 BluetoothRemoteGATTServer BluetoothDevice::gatt() const {

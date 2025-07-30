@@ -15,7 +15,7 @@ public:
 
     HTMLTableCaptionElement clone() const noexcept;
     HTMLTableCaptionElement();
-    jsbind::DOMString align() const;
-    void align(const jsbind::DOMString& value);
+    jsbind::String align() const;
+    void align(const jsbind::String& value);
 };
 

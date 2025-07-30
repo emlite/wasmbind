@@ -21,6 +21,6 @@ public:
     bool isPrimary() const;
     bool isInternal() const;
     float devicePixelRatio() const;
-    jsbind::DOMString label() const;
+    jsbind::String label() const;
 };
 

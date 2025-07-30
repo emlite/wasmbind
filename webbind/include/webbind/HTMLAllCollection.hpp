@@ -16,8 +16,8 @@ public:
 
     HTMLAllCollection clone() const noexcept;
     unsigned long length() const;
-    jsbind::Any namedItem(const jsbind::DOMString& name);
+    jsbind::Any namedItem(const jsbind::String& name);
     jsbind::Any item();
-    jsbind::Any item(const jsbind::DOMString& nameOrIndex);
+    jsbind::Any item(const jsbind::String& nameOrIndex);
 };
 

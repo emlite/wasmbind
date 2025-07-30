@@ -1,3 +1,0 @@
-CompileFlags:
-    Add: ["-I../include", "-I../../bin/_deps/emlite-src/include"]
-    CompilationDatabase: None

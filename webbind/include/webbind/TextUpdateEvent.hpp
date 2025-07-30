@@ -14,11 +14,11 @@ public:
     static TextUpdateEvent take_ownership(Handle h) noexcept;
 
     TextUpdateEvent clone() const noexcept;
-    TextUpdateEvent(const jsbind::DOMString& type);
-    TextUpdateEvent(const jsbind::DOMString& type, const jsbind::Any& options);
+    TextUpdateEvent(const jsbind::String& type);
+    TextUpdateEvent(const jsbind::String& type, const jsbind::Any& options);
     unsigned long updateRangeStart() const;
     unsigned long updateRangeEnd() const;
-    jsbind::DOMString text() const;
+    jsbind::String text() const;
     unsigned long selectionStart() const;
     unsigned long selectionEnd() const;
 };

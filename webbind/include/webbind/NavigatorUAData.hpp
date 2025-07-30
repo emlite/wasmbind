@@ -16,10 +16,10 @@ public:
     explicit NavigatorUABrandVersion(const emlite::Val &val) noexcept;
     NavigatorUABrandVersion() noexcept;
     NavigatorUABrandVersion clone() const noexcept;
-    jsbind::DOMString brand() const;
-    void brand(const jsbind::DOMString& value);
-    jsbind::DOMString version() const;
-    void version(const jsbind::DOMString& value);
+    jsbind::String brand() const;
+    void brand(const jsbind::String& value);
+    jsbind::String version() const;
+    void version(const jsbind::String& value);
 };
 
 class UADataValues : public emlite::Val {
@@ -29,26 +29,26 @@ public:
     explicit UADataValues(const emlite::Val &val) noexcept;
     UADataValues() noexcept;
     UADataValues clone() const noexcept;
-    jsbind::DOMString architecture() const;
-    void architecture(const jsbind::DOMString& value);
-    jsbind::DOMString bitness() const;
-    void bitness(const jsbind::DOMString& value);
-    jsbind::Sequence<NavigatorUABrandVersion> brands() const;
-    void brands(const jsbind::Sequence<NavigatorUABrandVersion>& value);
-    jsbind::Sequence<jsbind::DOMString> formFactors() const;
-    void formFactors(const jsbind::Sequence<jsbind::DOMString>& value);
-    jsbind::Sequence<NavigatorUABrandVersion> fullVersionList() const;
-    void fullVersionList(const jsbind::Sequence<NavigatorUABrandVersion>& value);
-    jsbind::DOMString model() const;
-    void model(const jsbind::DOMString& value);
+    jsbind::String architecture() const;
+    void architecture(const jsbind::String& value);
+    jsbind::String bitness() const;
+    void bitness(const jsbind::String& value);
+    jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
+    void brands(const jsbind::TypedArray<NavigatorUABrandVersion>& value);
+    jsbind::TypedArray<jsbind::String> formFactors() const;
+    void formFactors(const jsbind::TypedArray<jsbind::String>& value);
+    jsbind::TypedArray<NavigatorUABrandVersion> fullVersionList() const;
+    void fullVersionList(const jsbind::TypedArray<NavigatorUABrandVersion>& value);
+    jsbind::String model() const;
+    void model(const jsbind::String& value);
     bool mobile() const;
     void mobile(bool value);
-    jsbind::DOMString platform() const;
-    void platform(const jsbind::DOMString& value);
-    jsbind::DOMString platformVersion() const;
-    void platformVersion(const jsbind::DOMString& value);
-    jsbind::DOMString uaFullVersion() const;
-    void uaFullVersion(const jsbind::DOMString& value);
+    jsbind::String platform() const;
+    void platform(const jsbind::String& value);
+    jsbind::String platformVersion() const;
+    void platformVersion(const jsbind::String& value);
+    jsbind::String uaFullVersion() const;
+    void uaFullVersion(const jsbind::String& value);
     bool wow64() const;
     void wow64(bool value);
 };
@@ -60,12 +60,12 @@ public:
     explicit UALowEntropyJSON(const emlite::Val &val) noexcept;
     UALowEntropyJSON() noexcept;
     UALowEntropyJSON clone() const noexcept;
-    jsbind::Sequence<NavigatorUABrandVersion> brands() const;
-    void brands(const jsbind::Sequence<NavigatorUABrandVersion>& value);
+    jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
+    void brands(const jsbind::TypedArray<NavigatorUABrandVersion>& value);
     bool mobile() const;
     void mobile(bool value);
-    jsbind::DOMString platform() const;
-    void platform(const jsbind::DOMString& value);
+    jsbind::String platform() const;
+    void platform(const jsbind::String& value);
 };
 
 class NavigatorUAData : public emlite::Val {
@@ -76,10 +76,10 @@ public:
     static NavigatorUAData take_ownership(Handle h) noexcept;
 
     NavigatorUAData clone() const noexcept;
-    jsbind::FrozenArray<NavigatorUABrandVersion> brands() const;
+    jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
     bool mobile() const;
-    jsbind::DOMString platform() const;
-    jsbind::Promise<UADataValues> getHighEntropyValues(const jsbind::Sequence<jsbind::DOMString>& hints);
+    jsbind::String platform() const;
+    jsbind::Promise<UADataValues> getHighEntropyValues(const jsbind::TypedArray<jsbind::String>& hints);
     UALowEntropyJSON toJSON();
 };
 

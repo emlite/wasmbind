@@ -20,12 +20,12 @@ public:
     jsbind::Any renderTime() const;
     jsbind::Any loadTime() const;
     DOMRectReadOnly intersectionRect() const;
-    jsbind::DOMString identifier() const;
+    jsbind::String identifier() const;
     unsigned long naturalWidth() const;
     unsigned long naturalHeight() const;
-    jsbind::DOMString id() const;
+    jsbind::String id() const;
     Element element() const;
-    jsbind::USVString url() const;
+    jsbind::String url() const;
     jsbind::Object toJSON();
     jsbind::Any paintTime() const;
     jsbind::Any presentationTime() const;

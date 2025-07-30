@@ -16,12 +16,12 @@ public:
     static ExtendableMessageEvent take_ownership(Handle h) noexcept;
 
     ExtendableMessageEvent clone() const noexcept;
-    ExtendableMessageEvent(const jsbind::DOMString& type);
-    ExtendableMessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    ExtendableMessageEvent(const jsbind::String& type);
+    ExtendableMessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     jsbind::Any data() const;
-    jsbind::USVString origin() const;
-    jsbind::DOMString lastEventId() const;
+    jsbind::String origin() const;
+    jsbind::String lastEventId() const;
     jsbind::Any source() const;
-    jsbind::FrozenArray<jsbind::Any> ports() const;
+    jsbind::TypedArray<jsbind::Any> ports() const;
 };
 

@@ -10,19 +10,19 @@ CSSParserAtRule::CSSParserAtRule(Handle h) noexcept : CSSParserRule(emlite::Val:
 CSSParserAtRule::CSSParserAtRule(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 
 
-CSSParserAtRule::CSSParserAtRule(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Any>& prelude) : CSSParserRule(emlite::Val::global("CSSParserAtRule").new_(name, prelude)) {}
+CSSParserAtRule::CSSParserAtRule(const jsbind::String& name, const jsbind::TypedArray<jsbind::Any>& prelude) : CSSParserRule(emlite::Val::global("CSSParserAtRule").new_(name, prelude)) {}
 
-CSSParserAtRule::CSSParserAtRule(const jsbind::DOMString& name, const jsbind::Sequence<jsbind::Any>& prelude, const jsbind::Sequence<CSSParserRule>& body) : CSSParserRule(emlite::Val::global("CSSParserAtRule").new_(name, prelude, body)) {}
+CSSParserAtRule::CSSParserAtRule(const jsbind::String& name, const jsbind::TypedArray<jsbind::Any>& prelude, const jsbind::TypedArray<CSSParserRule>& body) : CSSParserRule(emlite::Val::global("CSSParserAtRule").new_(name, prelude, body)) {}
 
-jsbind::DOMString CSSParserAtRule::name() const {
-    return CSSParserRule::get("name").as<jsbind::DOMString>();
+jsbind::String CSSParserAtRule::name() const {
+    return CSSParserRule::get("name").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<CSSParserValue> CSSParserAtRule::prelude() const {
-    return CSSParserRule::get("prelude").as<jsbind::FrozenArray<CSSParserValue>>();
+jsbind::TypedArray<CSSParserValue> CSSParserAtRule::prelude() const {
+    return CSSParserRule::get("prelude").as<jsbind::TypedArray<CSSParserValue>>();
 }
 
-jsbind::FrozenArray<CSSParserRule> CSSParserAtRule::body() const {
-    return CSSParserRule::get("body").as<jsbind::FrozenArray<CSSParserRule>>();
+jsbind::TypedArray<CSSParserRule> CSSParserAtRule::body() const {
+    return CSSParserRule::get("body").as<jsbind::TypedArray<CSSParserRule>>();
 }
 

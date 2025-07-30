@@ -10,11 +10,11 @@ AudioDecoderConfig::AudioDecoderConfig(const emlite::Val &val) noexcept: emlite:
 AudioDecoderConfig::AudioDecoderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
 AudioDecoderConfig AudioDecoderConfig::clone() const noexcept { return *this; }
 
-jsbind::DOMString AudioDecoderConfig::codec() const {
-    return emlite::Val::get("codec").as<jsbind::DOMString>();
+jsbind::String AudioDecoderConfig::codec() const {
+    return emlite::Val::get("codec").as<jsbind::String>();
 }
 
-void AudioDecoderConfig::codec(const jsbind::DOMString& value) {
+void AudioDecoderConfig::codec(const jsbind::String& value) {
     emlite::Val::set("codec", value);
 }
 

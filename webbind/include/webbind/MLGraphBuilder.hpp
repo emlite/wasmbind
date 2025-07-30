@@ -76,8 +76,8 @@ public:
     explicit MLOperatorOptions(const emlite::Val &val) noexcept;
     MLOperatorOptions() noexcept;
     MLOperatorOptions clone() const noexcept;
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 
 class MLClampOptions : public emlite::Val {
@@ -100,12 +100,12 @@ public:
     explicit MLConv2dOptions(const emlite::Val &val) noexcept;
     MLConv2dOptions() noexcept;
     MLConv2dOptions clone() const noexcept;
-    jsbind::Sequence<unsigned long> padding() const;
-    void padding(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> strides() const;
-    void strides(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> dilations() const;
-    void dilations(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> padding() const;
+    void padding(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> strides() const;
+    void strides(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> dilations() const;
+    void dilations(jsbind::TypedArray<unsigned long> value);
     unsigned long groups() const;
     void groups(unsigned long value);
     MLInputOperandLayout inputLayout() const;
@@ -123,16 +123,16 @@ public:
     explicit MLConvTranspose2dOptions(const emlite::Val &val) noexcept;
     MLConvTranspose2dOptions() noexcept;
     MLConvTranspose2dOptions clone() const noexcept;
-    jsbind::Sequence<unsigned long> padding() const;
-    void padding(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> strides() const;
-    void strides(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> dilations() const;
-    void dilations(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> outputPadding() const;
-    void outputPadding(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> outputSizes() const;
-    void outputSizes(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> padding() const;
+    void padding(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> strides() const;
+    void strides(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> dilations() const;
+    void dilations(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> outputPadding() const;
+    void outputPadding(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> outputSizes() const;
+    void outputSizes(jsbind::TypedArray<unsigned long> value);
     unsigned long groups() const;
     void groups(unsigned long value);
     MLInputOperandLayout inputLayout() const;
@@ -218,8 +218,8 @@ public:
     void direction(const MLRecurrentNetworkDirection& value);
     MLGruWeightLayout layout() const;
     void layout(const MLGruWeightLayout& value);
-    jsbind::Sequence<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value);
+    jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
+    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
 };
 
 class MLGruCellOptions : public emlite::Val {
@@ -237,8 +237,8 @@ public:
     void resetAfter(bool value);
     MLGruWeightLayout layout() const;
     void layout(const MLGruWeightLayout& value);
-    jsbind::Sequence<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value);
+    jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
+    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
 };
 
 class MLHardSigmoidOptions : public emlite::Val {
@@ -282,8 +282,8 @@ public:
     void scale(const MLOperand& value);
     MLOperand bias() const;
     void bias(const MLOperand& value);
-    jsbind::Sequence<unsigned long> axes() const;
-    void axes(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> axes() const;
+    void axes(jsbind::TypedArray<unsigned long> value);
     double epsilon() const;
     void epsilon(double value);
 };
@@ -335,8 +335,8 @@ public:
     void direction(const MLRecurrentNetworkDirection& value);
     MLLstmWeightLayout layout() const;
     void layout(const MLLstmWeightLayout& value);
-    jsbind::Sequence<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value);
+    jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
+    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
 };
 
 class MLLstmCellOptions : public emlite::Val {
@@ -354,8 +354,8 @@ public:
     void peepholeWeight(const MLOperand& value);
     MLLstmWeightLayout layout() const;
     void layout(const MLLstmWeightLayout& value);
-    jsbind::Sequence<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::Sequence<MLRecurrentNetworkActivation>& value);
+    jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
+    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
 };
 
 class MLPadOptions : public emlite::Val {
@@ -378,20 +378,20 @@ public:
     explicit MLPool2dOptions(const emlite::Val &val) noexcept;
     MLPool2dOptions() noexcept;
     MLPool2dOptions clone() const noexcept;
-    jsbind::Sequence<unsigned long> windowDimensions() const;
-    void windowDimensions(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> padding() const;
-    void padding(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> strides() const;
-    void strides(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> dilations() const;
-    void dilations(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> windowDimensions() const;
+    void windowDimensions(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> padding() const;
+    void padding(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> strides() const;
+    void strides(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> dilations() const;
+    void dilations(jsbind::TypedArray<unsigned long> value);
     MLInputOperandLayout layout() const;
     void layout(const MLInputOperandLayout& value);
     MLRoundingType roundingType() const;
     void roundingType(const MLRoundingType& value);
-    jsbind::Sequence<unsigned long> outputSizes() const;
-    void outputSizes(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> outputSizes() const;
+    void outputSizes(jsbind::TypedArray<unsigned long> value);
 };
 
 class MLReduceOptions : public emlite::Val {
@@ -401,8 +401,8 @@ public:
     explicit MLReduceOptions(const emlite::Val &val) noexcept;
     MLReduceOptions() noexcept;
     MLReduceOptions clone() const noexcept;
-    jsbind::Sequence<unsigned long> axes() const;
-    void axes(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> axes() const;
+    void axes(jsbind::TypedArray<unsigned long> value);
     bool keepDimensions() const;
     void keepDimensions(bool value);
 };
@@ -416,12 +416,12 @@ public:
     MLResample2dOptions clone() const noexcept;
     MLInterpolationMode mode() const;
     void mode(const MLInterpolationMode& value);
-    jsbind::Sequence<float> scales() const;
-    void scales(jsbind::Sequence<float> value);
-    jsbind::Sequence<unsigned long> sizes() const;
-    void sizes(jsbind::Sequence<unsigned long> value);
-    jsbind::Sequence<unsigned long> axes() const;
-    void axes(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<float> scales() const;
+    void scales(jsbind::TypedArray<float> value);
+    jsbind::TypedArray<unsigned long> sizes() const;
+    void sizes(jsbind::TypedArray<unsigned long> value);
+    jsbind::TypedArray<unsigned long> axes() const;
+    void axes(jsbind::TypedArray<unsigned long> value);
 };
 
 class MLReverseOptions : public emlite::Val {
@@ -431,8 +431,8 @@ public:
     explicit MLReverseOptions(const emlite::Val &val) noexcept;
     MLReverseOptions() noexcept;
     MLReverseOptions clone() const noexcept;
-    jsbind::Sequence<unsigned long> axes() const;
-    void axes(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> axes() const;
+    void axes(jsbind::TypedArray<unsigned long> value);
 };
 
 class MLScatterOptions : public emlite::Val {
@@ -453,8 +453,8 @@ public:
     explicit MLSliceOptions(const emlite::Val &val) noexcept;
     MLSliceOptions() noexcept;
     MLSliceOptions clone() const noexcept;
-    jsbind::Sequence<unsigned long> strides() const;
-    void strides(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> strides() const;
+    void strides(jsbind::TypedArray<unsigned long> value);
 };
 
 class MLSplitOptions : public emlite::Val {
@@ -475,8 +475,8 @@ public:
     explicit MLTransposeOptions(const emlite::Val &val) noexcept;
     MLTransposeOptions() noexcept;
     MLTransposeOptions clone() const noexcept;
-    jsbind::Sequence<unsigned long> permutation() const;
-    void permutation(jsbind::Sequence<unsigned long> value);
+    jsbind::TypedArray<unsigned long> permutation() const;
+    void permutation(jsbind::TypedArray<unsigned long> value);
 };
 
 class MLTriangularOptions : public emlite::Val {
@@ -501,7 +501,7 @@ public:
 
     MLGraphBuilder clone() const noexcept;
     MLGraphBuilder(const MLContext& context);
-    MLOperand input(const jsbind::USVString& name, const MLOperandDescriptor& descriptor);
+    MLOperand input(const jsbind::String& name, const MLOperandDescriptor& descriptor);
     MLOperand constant(const MLTensor& tensor);
     jsbind::Promise<MLGraph> build(const jsbind::Any& outputs);
     MLOperand argMin(const MLOperand& input, unsigned long axis);
@@ -514,8 +514,8 @@ public:
     MLOperand cast(const MLOperand& input, const MLOperandDataType& type, const MLOperatorOptions& options);
     MLOperand clamp(const MLOperand& input);
     MLOperand clamp(const MLOperand& input, const MLClampOptions& options);
-    MLOperand concat(const jsbind::Sequence<MLOperand>& inputs, unsigned long axis);
-    MLOperand concat(const jsbind::Sequence<MLOperand>& inputs, unsigned long axis, const MLOperatorOptions& options);
+    MLOperand concat(const jsbind::TypedArray<MLOperand>& inputs, unsigned long axis);
+    MLOperand concat(const jsbind::TypedArray<MLOperand>& inputs, unsigned long axis, const MLOperatorOptions& options);
     MLOperand conv2d(const MLOperand& input, const MLOperand& filter);
     MLOperand conv2d(const MLOperand& input, const MLOperand& filter, const MLConv2dOptions& options);
     MLOperand convTranspose2d(const MLOperand& input, const MLOperand& filter);
@@ -590,8 +590,8 @@ public:
     MLOperand quantizeLinear(const MLOperand& input, const MLOperand& scale, const MLOperand& zeroPoint, const MLOperatorOptions& options);
     MLOperand elu(const MLOperand& input);
     MLOperand elu(const MLOperand& input, const MLEluOptions& options);
-    MLOperand expand(const MLOperand& input, jsbind::Sequence<unsigned long> newShape);
-    MLOperand expand(const MLOperand& input, jsbind::Sequence<unsigned long> newShape, const MLOperatorOptions& options);
+    MLOperand expand(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape);
+    MLOperand expand(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape, const MLOperatorOptions& options);
     MLOperand gather(const MLOperand& input, const MLOperand& indices);
     MLOperand gather(const MLOperand& input, const MLOperand& indices, const MLGatherOptions& options);
     MLOperand gatherElements(const MLOperand& input, const MLOperand& indices);
@@ -602,8 +602,8 @@ public:
     MLOperand gelu(const MLOperand& input, const MLOperatorOptions& options);
     MLOperand gemm(const MLOperand& a, const MLOperand& b);
     MLOperand gemm(const MLOperand& a, const MLOperand& b, const MLGemmOptions& options);
-    jsbind::Sequence<MLOperand> gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize);
-    jsbind::Sequence<MLOperand> gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLGruOptions& options);
+    jsbind::TypedArray<MLOperand> gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize);
+    jsbind::TypedArray<MLOperand> gru(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLGruOptions& options);
     MLOperand gruCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, unsigned long hiddenSize);
     MLOperand gruCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, unsigned long hiddenSize, const MLGruCellOptions& options);
     MLOperand hardSigmoid(const MLOperand& input);
@@ -618,14 +618,14 @@ public:
     MLOperand leakyRelu(const MLOperand& input, const MLLeakyReluOptions& options);
     MLOperand linear(const MLOperand& input);
     MLOperand linear(const MLOperand& input, const MLLinearOptions& options);
-    jsbind::Sequence<MLOperand> lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize);
-    jsbind::Sequence<MLOperand> lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLLstmOptions& options);
-    jsbind::Sequence<MLOperand> lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize);
-    jsbind::Sequence<MLOperand> lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize, const MLLstmCellOptions& options);
+    jsbind::TypedArray<MLOperand> lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize);
+    jsbind::TypedArray<MLOperand> lstm(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, unsigned long steps, unsigned long hiddenSize, const MLLstmOptions& options);
+    jsbind::TypedArray<MLOperand> lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize);
+    jsbind::TypedArray<MLOperand> lstmCell(const MLOperand& input, const MLOperand& weight, const MLOperand& recurrentWeight, const MLOperand& hiddenState, const MLOperand& cellState, unsigned long hiddenSize, const MLLstmCellOptions& options);
     MLOperand matmul(const MLOperand& a, const MLOperand& b);
     MLOperand matmul(const MLOperand& a, const MLOperand& b, const MLOperatorOptions& options);
-    MLOperand pad(const MLOperand& input, jsbind::Sequence<unsigned long> beginningPadding, jsbind::Sequence<unsigned long> endingPadding);
-    MLOperand pad(const MLOperand& input, jsbind::Sequence<unsigned long> beginningPadding, jsbind::Sequence<unsigned long> endingPadding, const MLPadOptions& options);
+    MLOperand pad(const MLOperand& input, jsbind::TypedArray<unsigned long> beginningPadding, jsbind::TypedArray<unsigned long> endingPadding);
+    MLOperand pad(const MLOperand& input, jsbind::TypedArray<unsigned long> beginningPadding, jsbind::TypedArray<unsigned long> endingPadding, const MLPadOptions& options);
     MLOperand averagePool2d(const MLOperand& input);
     MLOperand averagePool2d(const MLOperand& input, const MLPool2dOptions& options);
     MLOperand l2Pool2d(const MLOperand& input);
@@ -658,8 +658,8 @@ public:
     MLOperand relu(const MLOperand& input, const MLOperatorOptions& options);
     MLOperand resample2d(const MLOperand& input);
     MLOperand resample2d(const MLOperand& input, const MLResample2dOptions& options);
-    MLOperand reshape(const MLOperand& input, jsbind::Sequence<unsigned long> newShape);
-    MLOperand reshape(const MLOperand& input, jsbind::Sequence<unsigned long> newShape, const MLOperatorOptions& options);
+    MLOperand reshape(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape);
+    MLOperand reshape(const MLOperand& input, jsbind::TypedArray<unsigned long> newShape, const MLOperatorOptions& options);
     MLOperand reverse(const MLOperand& input);
     MLOperand reverse(const MLOperand& input, const MLReverseOptions& options);
     MLOperand scatterElements(const MLOperand& input, const MLOperand& indices, const MLOperand& updates);
@@ -668,20 +668,20 @@ public:
     MLOperand scatterND(const MLOperand& input, const MLOperand& indices, const MLOperand& updates, const MLOperatorOptions& options);
     MLOperand sigmoid(const MLOperand& input);
     MLOperand sigmoid(const MLOperand& input, const MLOperatorOptions& options);
-    MLOperand slice(const MLOperand& input, jsbind::Sequence<unsigned long> starts, jsbind::Sequence<unsigned long> sizes);
-    MLOperand slice(const MLOperand& input, jsbind::Sequence<unsigned long> starts, jsbind::Sequence<unsigned long> sizes, const MLSliceOptions& options);
+    MLOperand slice(const MLOperand& input, jsbind::TypedArray<unsigned long> starts, jsbind::TypedArray<unsigned long> sizes);
+    MLOperand slice(const MLOperand& input, jsbind::TypedArray<unsigned long> starts, jsbind::TypedArray<unsigned long> sizes, const MLSliceOptions& options);
     MLOperand softmax(const MLOperand& input, unsigned long axis);
     MLOperand softmax(const MLOperand& input, unsigned long axis, const MLOperatorOptions& options);
     MLOperand softplus(const MLOperand& input);
     MLOperand softplus(const MLOperand& input, const MLOperatorOptions& options);
     MLOperand softsign(const MLOperand& input);
     MLOperand softsign(const MLOperand& input, const MLOperatorOptions& options);
-    jsbind::Sequence<MLOperand> split(const MLOperand& input, const jsbind::Any& splits);
-    jsbind::Sequence<MLOperand> split(const MLOperand& input, const jsbind::Any& splits, const MLSplitOptions& options);
+    jsbind::TypedArray<MLOperand> split(const MLOperand& input, const jsbind::Any& splits);
+    jsbind::TypedArray<MLOperand> split(const MLOperand& input, const jsbind::Any& splits, const MLSplitOptions& options);
     MLOperand tanh(const MLOperand& input);
     MLOperand tanh(const MLOperand& input, const MLOperatorOptions& options);
-    MLOperand tile(const MLOperand& input, jsbind::Sequence<unsigned long> repetitions);
-    MLOperand tile(const MLOperand& input, jsbind::Sequence<unsigned long> repetitions, const MLOperatorOptions& options);
+    MLOperand tile(const MLOperand& input, jsbind::TypedArray<unsigned long> repetitions);
+    MLOperand tile(const MLOperand& input, jsbind::TypedArray<unsigned long> repetitions, const MLOperatorOptions& options);
     MLOperand transpose(const MLOperand& input);
     MLOperand transpose(const MLOperand& input, const MLTransposeOptions& options);
     MLOperand triangular(const MLOperand& input);

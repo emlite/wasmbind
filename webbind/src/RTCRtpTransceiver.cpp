@@ -11,11 +11,11 @@ RTCRtpCodec::RTCRtpCodec(const emlite::Val &val) noexcept: emlite::Val(val) {}
 RTCRtpCodec::RTCRtpCodec() noexcept: emlite::Val(emlite::Val::object()) {}
 RTCRtpCodec RTCRtpCodec::clone() const noexcept { return *this; }
 
-jsbind::DOMString RTCRtpCodec::mimeType() const {
-    return emlite::Val::get("mimeType").as<jsbind::DOMString>();
+jsbind::String RTCRtpCodec::mimeType() const {
+    return emlite::Val::get("mimeType").as<jsbind::String>();
 }
 
-void RTCRtpCodec::mimeType(const jsbind::DOMString& value) {
+void RTCRtpCodec::mimeType(const jsbind::String& value) {
     emlite::Val::set("mimeType", value);
 }
 
@@ -35,11 +35,11 @@ void RTCRtpCodec::channels(unsigned short value) {
     emlite::Val::set("channels", value);
 }
 
-jsbind::DOMString RTCRtpCodec::sdpFmtpLine() const {
-    return emlite::Val::get("sdpFmtpLine").as<jsbind::DOMString>();
+jsbind::String RTCRtpCodec::sdpFmtpLine() const {
+    return emlite::Val::get("sdpFmtpLine").as<jsbind::String>();
 }
 
-void RTCRtpCodec::sdpFmtpLine(const jsbind::DOMString& value) {
+void RTCRtpCodec::sdpFmtpLine(const jsbind::String& value) {
     emlite::Val::set("sdpFmtpLine", value);
 }
 
@@ -51,8 +51,8 @@ RTCRtpTransceiver::RTCRtpTransceiver(Handle h) noexcept : emlite::Val(emlite::Va
 RTCRtpTransceiver::RTCRtpTransceiver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString RTCRtpTransceiver::mid() const {
-    return emlite::Val::get("mid").as<jsbind::DOMString>();
+jsbind::String RTCRtpTransceiver::mid() const {
+    return emlite::Val::get("mid").as<jsbind::String>();
 }
 
 RTCRtpSender RTCRtpTransceiver::sender() const {
@@ -79,7 +79,7 @@ jsbind::Undefined RTCRtpTransceiver::stop() {
     return emlite::Val::call("stop").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined RTCRtpTransceiver::setCodecPreferences(const jsbind::Sequence<RTCRtpCodec>& codecs) {
+jsbind::Undefined RTCRtpTransceiver::setCodecPreferences(const jsbind::TypedArray<RTCRtpCodec>& codecs) {
     return emlite::Val::call("setCodecPreferences", codecs).as<jsbind::Undefined>();
 }
 

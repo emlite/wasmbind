@@ -17,7 +17,7 @@ public:
 
     Keyboard clone() const noexcept;
     jsbind::Promise<jsbind::Undefined> lock();
-    jsbind::Promise<jsbind::Undefined> lock(const jsbind::Sequence<jsbind::DOMString>& keyCodes);
+    jsbind::Promise<jsbind::Undefined> lock(const jsbind::TypedArray<jsbind::String>& keyCodes);
     jsbind::Undefined unlock();
     jsbind::Promise<KeyboardLayoutMap> getLayoutMap();
     jsbind::Any onlayoutchange() const;

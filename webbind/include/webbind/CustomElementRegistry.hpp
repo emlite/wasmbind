@@ -15,8 +15,8 @@ public:
     explicit ElementDefinitionOptions(const emlite::Val &val) noexcept;
     ElementDefinitionOptions() noexcept;
     ElementDefinitionOptions clone() const noexcept;
-    jsbind::DOMString extends() const;
-    void extends(const jsbind::DOMString& value);
+    jsbind::String extends() const;
+    void extends(const jsbind::String& value);
 };
 
 class CustomElementRegistry : public emlite::Val {
@@ -28,11 +28,11 @@ public:
 
     CustomElementRegistry clone() const noexcept;
     CustomElementRegistry();
-    jsbind::Undefined define(const jsbind::DOMString& name, const jsbind::Function& constructor);
-    jsbind::Undefined define(const jsbind::DOMString& name, const jsbind::Function& constructor, const ElementDefinitionOptions& options);
-    jsbind::Any get(const jsbind::DOMString& name);
-    jsbind::DOMString getName(const jsbind::Function& constructor);
-    jsbind::Promise<jsbind::Function> whenDefined(const jsbind::DOMString& name);
+    jsbind::Undefined define(const jsbind::String& name, const jsbind::Function& constructor);
+    jsbind::Undefined define(const jsbind::String& name, const jsbind::Function& constructor, const ElementDefinitionOptions& options);
+    jsbind::Any get(const jsbind::String& name);
+    jsbind::String getName(const jsbind::Function& constructor);
+    jsbind::Promise<jsbind::Function> whenDefined(const jsbind::String& name);
     jsbind::Undefined upgrade(const Node& root);
     jsbind::Undefined initialize(const Node& root);
 };

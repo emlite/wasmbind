@@ -16,8 +16,8 @@ public:
     RTCEncodedVideoFrameMetadata clone() const noexcept;
     long long frameId() const;
     void frameId(long long value);
-    jsbind::Sequence<long long> dependencies() const;
-    void dependencies(jsbind::Sequence<long long> value);
+    jsbind::TypedArray<long long> dependencies() const;
+    void dependencies(jsbind::TypedArray<long long> value);
     unsigned short width() const;
     void width(unsigned short value);
     unsigned short height() const;

@@ -14,7 +14,7 @@ unsigned long AudioTrackList::length() const {
     return EventTarget::get("length").as<unsigned long>();
 }
 
-AudioTrack AudioTrackList::getTrackById(const jsbind::DOMString& id) {
+AudioTrack AudioTrackList::getTrackById(const jsbind::String& id) {
     return EventTarget::call("getTrackById", id).as<AudioTrack>();
 }
 

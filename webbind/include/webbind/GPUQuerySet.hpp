@@ -16,7 +16,7 @@ public:
     jsbind::Undefined destroy();
     GPUQueryType type() const;
     jsbind::Any count() const;
-    jsbind::USVString label() const;
-    void label(const jsbind::USVString& value);
+    jsbind::String label() const;
+    void label(const jsbind::String& value);
 };
 

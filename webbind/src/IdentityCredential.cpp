@@ -9,11 +9,11 @@ IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions(const e
 IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 IdentityCredentialDisconnectOptions IdentityCredentialDisconnectOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString IdentityCredentialDisconnectOptions::accountHint() const {
-    return emlite::Val::get("accountHint").as<jsbind::USVString>();
+jsbind::String IdentityCredentialDisconnectOptions::accountHint() const {
+    return emlite::Val::get("accountHint").as<jsbind::String>();
 }
 
-void IdentityCredentialDisconnectOptions::accountHint(const jsbind::USVString& value) {
+void IdentityCredentialDisconnectOptions::accountHint(const jsbind::String& value) {
     emlite::Val::set("accountHint", value);
 }
 
@@ -29,15 +29,15 @@ jsbind::Promise<jsbind::Undefined> IdentityCredential::disconnect(const Identity
     return emlite::Val::global("identitycredential").call("disconnect", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::USVString IdentityCredential::token() const {
-    return Credential::get("token").as<jsbind::USVString>();
+jsbind::String IdentityCredential::token() const {
+    return Credential::get("token").as<jsbind::String>();
 }
 
 bool IdentityCredential::isAutoSelected() const {
     return Credential::get("isAutoSelected").as<bool>();
 }
 
-jsbind::USVString IdentityCredential::configURL() const {
-    return Credential::get("configURL").as<jsbind::USVString>();
+jsbind::String IdentityCredential::configURL() const {
+    return Credential::get("configURL").as<jsbind::String>();
 }
 

@@ -14,8 +14,8 @@ public:
     static IDBVersionChangeEvent take_ownership(Handle h) noexcept;
 
     IDBVersionChangeEvent clone() const noexcept;
-    IDBVersionChangeEvent(const jsbind::DOMString& type);
-    IDBVersionChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    IDBVersionChangeEvent(const jsbind::String& type);
+    IDBVersionChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     long long oldVersion() const;
     long long newVersion() const;
 };

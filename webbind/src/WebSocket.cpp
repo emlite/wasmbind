@@ -9,12 +9,12 @@ WebSocket::WebSocket(Handle h) noexcept : EventTarget(emlite::Val::take_ownershi
 WebSocket::WebSocket(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-WebSocket::WebSocket(const jsbind::USVString& url) : EventTarget(emlite::Val::global("WebSocket").new_(url)) {}
+WebSocket::WebSocket(const jsbind::String& url) : EventTarget(emlite::Val::global("WebSocket").new_(url)) {}
 
-WebSocket::WebSocket(const jsbind::USVString& url, const jsbind::Any& protocols) : EventTarget(emlite::Val::global("WebSocket").new_(url, protocols)) {}
+WebSocket::WebSocket(const jsbind::String& url, const jsbind::Any& protocols) : EventTarget(emlite::Val::global("WebSocket").new_(url, protocols)) {}
 
-jsbind::USVString WebSocket::url() const {
-    return EventTarget::get("url").as<jsbind::USVString>();
+jsbind::String WebSocket::url() const {
+    return EventTarget::get("url").as<jsbind::String>();
 }
 
 unsigned short WebSocket::readyState() const {
@@ -49,12 +49,12 @@ void WebSocket::onclose(const jsbind::Any& value) {
     EventTarget::set("onclose", value);
 }
 
-jsbind::DOMString WebSocket::extensions() const {
-    return EventTarget::get("extensions").as<jsbind::DOMString>();
+jsbind::String WebSocket::extensions() const {
+    return EventTarget::get("extensions").as<jsbind::String>();
 }
 
-jsbind::DOMString WebSocket::protocol() const {
-    return EventTarget::get("protocol").as<jsbind::DOMString>();
+jsbind::String WebSocket::protocol() const {
+    return EventTarget::get("protocol").as<jsbind::String>();
 }
 
 jsbind::Undefined WebSocket::close() {
@@ -65,7 +65,7 @@ jsbind::Undefined WebSocket::close(unsigned short code) {
     return EventTarget::call("close", code).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined WebSocket::close(unsigned short code, const jsbind::USVString& reason) {
+jsbind::Undefined WebSocket::close(unsigned short code, const jsbind::String& reason) {
     return EventTarget::call("close", code, reason).as<jsbind::Undefined>();
 }
 

@@ -15,11 +15,11 @@ GPURenderPassDescriptor::GPURenderPassDescriptor(const emlite::Val &val) noexcep
 GPURenderPassDescriptor::GPURenderPassDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
 GPURenderPassDescriptor GPURenderPassDescriptor::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> GPURenderPassDescriptor::colorAttachments() const {
-    return emlite::Val::get("colorAttachments").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> GPURenderPassDescriptor::colorAttachments() const {
+    return emlite::Val::get("colorAttachments").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void GPURenderPassDescriptor::colorAttachments(const jsbind::Sequence<jsbind::Any>& value) {
+void GPURenderPassDescriptor::colorAttachments(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("colorAttachments", value);
 }
 
@@ -199,15 +199,15 @@ GPUCommandBuffer GPUCommandEncoder::finish(const GPUCommandBufferDescriptor& des
     return emlite::Val::call("finish", descriptor).as<GPUCommandBuffer>();
 }
 
-jsbind::USVString GPUCommandEncoder::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUCommandEncoder::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUCommandEncoder::label(const jsbind::USVString& value) {
+void GPUCommandEncoder::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
-jsbind::Undefined GPUCommandEncoder::pushDebugGroup(const jsbind::USVString& groupLabel) {
+jsbind::Undefined GPUCommandEncoder::pushDebugGroup(const jsbind::String& groupLabel) {
     return emlite::Val::call("pushDebugGroup", groupLabel).as<jsbind::Undefined>();
 }
 
@@ -215,7 +215,7 @@ jsbind::Undefined GPUCommandEncoder::popDebugGroup() {
     return emlite::Val::call("popDebugGroup").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined GPUCommandEncoder::insertDebugMarker(const jsbind::USVString& markerLabel) {
+jsbind::Undefined GPUCommandEncoder::insertDebugMarker(const jsbind::String& markerLabel) {
     return emlite::Val::call("insertDebugMarker", markerLabel).as<jsbind::Undefined>();
 }
 

@@ -9,11 +9,11 @@ ProtectedAudienceUtilities::ProtectedAudienceUtilities(Handle h) noexcept : emli
 ProtectedAudienceUtilities::ProtectedAudienceUtilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Uint8Array ProtectedAudienceUtilities::encodeUtf8(const jsbind::USVString& input) {
+jsbind::Uint8Array ProtectedAudienceUtilities::encodeUtf8(const jsbind::String& input) {
     return emlite::Val::call("encodeUtf8", input).as<jsbind::Uint8Array>();
 }
 
-jsbind::USVString ProtectedAudienceUtilities::decodeUtf8(const jsbind::Uint8Array& bytes) {
-    return emlite::Val::call("decodeUtf8", bytes).as<jsbind::USVString>();
+jsbind::String ProtectedAudienceUtilities::decodeUtf8(const jsbind::Uint8Array& bytes) {
+    return emlite::Val::call("decodeUtf8", bytes).as<jsbind::String>();
 }
 

@@ -16,7 +16,7 @@ public:
     static MediaKeySession take_ownership(Handle h) noexcept;
 
     MediaKeySession clone() const noexcept;
-    jsbind::DOMString sessionId() const;
+    jsbind::String sessionId() const;
     double expiration() const;
     jsbind::Promise<MediaKeySessionClosedReason> closed() const;
     MediaKeyStatusMap keyStatuses() const;
@@ -24,8 +24,8 @@ public:
     void onkeystatuseschange(const jsbind::Any& value);
     jsbind::Any onmessage() const;
     void onmessage(const jsbind::Any& value);
-    jsbind::Promise<jsbind::Undefined> generateRequest(const jsbind::DOMString& initDataType, const jsbind::Any& initData);
-    jsbind::Promise<bool> load(const jsbind::DOMString& sessionId);
+    jsbind::Promise<jsbind::Undefined> generateRequest(const jsbind::String& initDataType, const jsbind::Any& initData);
+    jsbind::Promise<bool> load(const jsbind::String& sessionId);
     jsbind::Promise<jsbind::Undefined> update(const jsbind::Any& response);
     jsbind::Promise<jsbind::Undefined> close();
     jsbind::Promise<jsbind::Undefined> remove();

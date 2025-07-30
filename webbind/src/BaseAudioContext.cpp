@@ -138,7 +138,7 @@ GainNode BaseAudioContext::createGain() {
     return EventTarget::call("createGain").as<GainNode>();
 }
 
-IIRFilterNode BaseAudioContext::createIIRFilter(jsbind::Sequence<double> feedforward, jsbind::Sequence<double> feedback) {
+IIRFilterNode BaseAudioContext::createIIRFilter(jsbind::TypedArray<double> feedforward, jsbind::TypedArray<double> feedback) {
     return EventTarget::call("createIIRFilter", feedforward, feedback).as<IIRFilterNode>();
 }
 
@@ -150,11 +150,11 @@ PannerNode BaseAudioContext::createPanner() {
     return EventTarget::call("createPanner").as<PannerNode>();
 }
 
-PeriodicWave BaseAudioContext::createPeriodicWave(jsbind::Sequence<float> real, jsbind::Sequence<float> imag) {
+PeriodicWave BaseAudioContext::createPeriodicWave(jsbind::TypedArray<float> real, jsbind::TypedArray<float> imag) {
     return EventTarget::call("createPeriodicWave", real, imag).as<PeriodicWave>();
 }
 
-PeriodicWave BaseAudioContext::createPeriodicWave(jsbind::Sequence<float> real, jsbind::Sequence<float> imag, const PeriodicWaveConstraints& constraints) {
+PeriodicWave BaseAudioContext::createPeriodicWave(jsbind::TypedArray<float> real, jsbind::TypedArray<float> imag, const PeriodicWaveConstraints& constraints) {
     return EventTarget::call("createPeriodicWave", real, imag, constraints).as<PeriodicWave>();
 }
 

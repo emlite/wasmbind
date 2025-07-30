@@ -15,6 +15,6 @@ public:
     static WEBGL_debug_shaders take_ownership(Handle h) noexcept;
 
     WEBGL_debug_shaders clone() const noexcept;
-    jsbind::DOMString getTranslatedShaderSource(const WebGLShader& shader);
+    jsbind::String getTranslatedShaderSource(const WebGLShader& shader);
 };
 

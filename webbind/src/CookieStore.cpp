@@ -9,35 +9,35 @@ CookieListItem::CookieListItem(const emlite::Val &val) noexcept: emlite::Val(val
 CookieListItem::CookieListItem() noexcept: emlite::Val(emlite::Val::object()) {}
 CookieListItem CookieListItem::clone() const noexcept { return *this; }
 
-jsbind::USVString CookieListItem::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String CookieListItem::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void CookieListItem::name(const jsbind::USVString& value) {
+void CookieListItem::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::USVString CookieListItem::value() const {
-    return emlite::Val::get("value").as<jsbind::USVString>();
+jsbind::String CookieListItem::value() const {
+    return emlite::Val::get("value").as<jsbind::String>();
 }
 
-void CookieListItem::value(const jsbind::USVString& value) {
+void CookieListItem::value(const jsbind::String& value) {
     emlite::Val::set("value", value);
 }
 
-jsbind::USVString CookieListItem::domain() const {
-    return emlite::Val::get("domain").as<jsbind::USVString>();
+jsbind::String CookieListItem::domain() const {
+    return emlite::Val::get("domain").as<jsbind::String>();
 }
 
-void CookieListItem::domain(const jsbind::USVString& value) {
+void CookieListItem::domain(const jsbind::String& value) {
     emlite::Val::set("domain", value);
 }
 
-jsbind::USVString CookieListItem::path() const {
-    return emlite::Val::get("path").as<jsbind::USVString>();
+jsbind::String CookieListItem::path() const {
+    return emlite::Val::get("path").as<jsbind::String>();
 }
 
-void CookieListItem::path(const jsbind::USVString& value) {
+void CookieListItem::path(const jsbind::String& value) {
     emlite::Val::set("path", value);
 }
 
@@ -81,19 +81,19 @@ CookieStoreGetOptions::CookieStoreGetOptions(const emlite::Val &val) noexcept: e
 CookieStoreGetOptions::CookieStoreGetOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 CookieStoreGetOptions CookieStoreGetOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString CookieStoreGetOptions::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String CookieStoreGetOptions::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void CookieStoreGetOptions::name(const jsbind::USVString& value) {
+void CookieStoreGetOptions::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::USVString CookieStoreGetOptions::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String CookieStoreGetOptions::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
-void CookieStoreGetOptions::url(const jsbind::USVString& value) {
+void CookieStoreGetOptions::url(const jsbind::String& value) {
     emlite::Val::set("url", value);
 }
 
@@ -105,19 +105,19 @@ CookieInit::CookieInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
 CookieInit::CookieInit() noexcept: emlite::Val(emlite::Val::object()) {}
 CookieInit CookieInit::clone() const noexcept { return *this; }
 
-jsbind::USVString CookieInit::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String CookieInit::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void CookieInit::name(const jsbind::USVString& value) {
+void CookieInit::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::USVString CookieInit::value() const {
-    return emlite::Val::get("value").as<jsbind::USVString>();
+jsbind::String CookieInit::value() const {
+    return emlite::Val::get("value").as<jsbind::String>();
 }
 
-void CookieInit::value(const jsbind::USVString& value) {
+void CookieInit::value(const jsbind::String& value) {
     emlite::Val::set("value", value);
 }
 
@@ -129,19 +129,19 @@ void CookieInit::expires(const jsbind::Any& value) {
     emlite::Val::set("expires", value);
 }
 
-jsbind::USVString CookieInit::domain() const {
-    return emlite::Val::get("domain").as<jsbind::USVString>();
+jsbind::String CookieInit::domain() const {
+    return emlite::Val::get("domain").as<jsbind::String>();
 }
 
-void CookieInit::domain(const jsbind::USVString& value) {
+void CookieInit::domain(const jsbind::String& value) {
     emlite::Val::set("domain", value);
 }
 
-jsbind::USVString CookieInit::path() const {
-    return emlite::Val::get("path").as<jsbind::USVString>();
+jsbind::String CookieInit::path() const {
+    return emlite::Val::get("path").as<jsbind::String>();
 }
 
-void CookieInit::path(const jsbind::USVString& value) {
+void CookieInit::path(const jsbind::String& value) {
     emlite::Val::set("path", value);
 }
 
@@ -169,27 +169,27 @@ CookieStoreDeleteOptions::CookieStoreDeleteOptions(const emlite::Val &val) noexc
 CookieStoreDeleteOptions::CookieStoreDeleteOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 CookieStoreDeleteOptions CookieStoreDeleteOptions::clone() const noexcept { return *this; }
 
-jsbind::USVString CookieStoreDeleteOptions::name() const {
-    return emlite::Val::get("name").as<jsbind::USVString>();
+jsbind::String CookieStoreDeleteOptions::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void CookieStoreDeleteOptions::name(const jsbind::USVString& value) {
+void CookieStoreDeleteOptions::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::USVString CookieStoreDeleteOptions::domain() const {
-    return emlite::Val::get("domain").as<jsbind::USVString>();
+jsbind::String CookieStoreDeleteOptions::domain() const {
+    return emlite::Val::get("domain").as<jsbind::String>();
 }
 
-void CookieStoreDeleteOptions::domain(const jsbind::USVString& value) {
+void CookieStoreDeleteOptions::domain(const jsbind::String& value) {
     emlite::Val::set("domain", value);
 }
 
-jsbind::USVString CookieStoreDeleteOptions::path() const {
-    return emlite::Val::get("path").as<jsbind::USVString>();
+jsbind::String CookieStoreDeleteOptions::path() const {
+    return emlite::Val::get("path").as<jsbind::String>();
 }
 
-void CookieStoreDeleteOptions::path(const jsbind::USVString& value) {
+void CookieStoreDeleteOptions::path(const jsbind::String& value) {
     emlite::Val::set("path", value);
 }
 

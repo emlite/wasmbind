@@ -53,7 +53,7 @@ AudioParam AudioParam::setTargetAtTime(float target, double startTime, float tim
     return emlite::Val::call("setTargetAtTime", target, startTime, timeConstant).as<AudioParam>();
 }
 
-AudioParam AudioParam::setValueCurveAtTime(jsbind::Sequence<float> values, double startTime, double duration) {
+AudioParam AudioParam::setValueCurveAtTime(jsbind::TypedArray<float> values, double startTime, double duration) {
     return emlite::Val::call("setValueCurveAtTime", values, startTime, duration).as<AudioParam>();
 }
 

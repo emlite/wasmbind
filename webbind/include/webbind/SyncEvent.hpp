@@ -14,8 +14,8 @@ public:
     static SyncEvent take_ownership(Handle h) noexcept;
 
     SyncEvent clone() const noexcept;
-    SyncEvent(const jsbind::DOMString& type, const jsbind::Any& init);
-    jsbind::DOMString tag() const;
+    SyncEvent(const jsbind::String& type, const jsbind::Any& init);
+    jsbind::String tag() const;
     bool lastChance() const;
 };
 

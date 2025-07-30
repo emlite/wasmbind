@@ -42,19 +42,19 @@ jsbind::Undefined FileSystemDirectoryEntry::getFile() {
     return FileSystemEntry::call("getFile").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path) {
+jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::String& path) {
     return FileSystemEntry::call("getFile", path).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path, const FileSystemFlags& options) {
+jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::String& path, const FileSystemFlags& options) {
     return FileSystemEntry::call("getFile", path, options).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback) {
+jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback) {
     return FileSystemEntry::call("getFile", path, options, successCallback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
+jsbind::Undefined FileSystemDirectoryEntry::getFile(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
     return FileSystemEntry::call("getFile", path, options, successCallback, errorCallback).as<jsbind::Undefined>();
 }
 
@@ -62,19 +62,19 @@ jsbind::Undefined FileSystemDirectoryEntry::getDirectory() {
     return FileSystemEntry::call("getDirectory").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path) {
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::String& path) {
     return FileSystemEntry::call("getDirectory", path).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path, const FileSystemFlags& options) {
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::String& path, const FileSystemFlags& options) {
     return FileSystemEntry::call("getDirectory", path, options).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback) {
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback) {
     return FileSystemEntry::call("getDirectory", path, options, successCallback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::USVString& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
+jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback) {
     return FileSystemEntry::call("getDirectory", path, options, successCallback, errorCallback).as<jsbind::Undefined>();
 }
 

@@ -11,8 +11,8 @@ MutationRecord::MutationRecord(Handle h) noexcept : emlite::Val(emlite::Val::tak
 MutationRecord::MutationRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString MutationRecord::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String MutationRecord::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
 Node MutationRecord::target() const {
@@ -35,15 +35,15 @@ Node MutationRecord::nextSibling() const {
     return emlite::Val::get("nextSibling").as<Node>();
 }
 
-jsbind::DOMString MutationRecord::attributeName() const {
-    return emlite::Val::get("attributeName").as<jsbind::DOMString>();
+jsbind::String MutationRecord::attributeName() const {
+    return emlite::Val::get("attributeName").as<jsbind::String>();
 }
 
-jsbind::DOMString MutationRecord::attributeNamespace() const {
-    return emlite::Val::get("attributeNamespace").as<jsbind::DOMString>();
+jsbind::String MutationRecord::attributeNamespace() const {
+    return emlite::Val::get("attributeNamespace").as<jsbind::String>();
 }
 
-jsbind::DOMString MutationRecord::oldValue() const {
-    return emlite::Val::get("oldValue").as<jsbind::DOMString>();
+jsbind::String MutationRecord::oldValue() const {
+    return emlite::Val::get("oldValue").as<jsbind::String>();
 }
 

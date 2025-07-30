@@ -9,12 +9,12 @@ PresentationConnection::PresentationConnection(Handle h) noexcept : EventTarget(
 PresentationConnection::PresentationConnection(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::USVString PresentationConnection::id() const {
-    return EventTarget::get("id").as<jsbind::USVString>();
+jsbind::String PresentationConnection::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-jsbind::USVString PresentationConnection::url() const {
-    return EventTarget::get("url").as<jsbind::USVString>();
+jsbind::String PresentationConnection::url() const {
+    return EventTarget::get("url").as<jsbind::String>();
 }
 
 PresentationConnectionState PresentationConnection::state() const {

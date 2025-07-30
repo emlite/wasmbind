@@ -9,7 +9,7 @@ WEBGL_compressed_texture_astc::WEBGL_compressed_texture_astc(Handle h) noexcept 
 WEBGL_compressed_texture_astc::WEBGL_compressed_texture_astc(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Sequence<jsbind::DOMString> WEBGL_compressed_texture_astc::getSupportedProfiles() {
-    return emlite::Val::call("getSupportedProfiles").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> WEBGL_compressed_texture_astc::getSupportedProfiles() {
+    return emlite::Val::call("getSupportedProfiles").as<jsbind::TypedArray<jsbind::String>>();
 }
 

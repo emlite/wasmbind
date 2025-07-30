@@ -16,7 +16,7 @@ public:
     static HIDInputReportEvent take_ownership(Handle h) noexcept;
 
     HIDInputReportEvent clone() const noexcept;
-    HIDInputReportEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    HIDInputReportEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     HIDDevice device() const;
     unsigned char reportId() const;
     jsbind::DataView data() const;

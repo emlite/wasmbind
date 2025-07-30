@@ -18,8 +18,8 @@ public:
     explicit SpeechRecognitionOptions(const emlite::Val &val) noexcept;
     SpeechRecognitionOptions() noexcept;
     SpeechRecognitionOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::DOMString> langs() const;
-    void langs(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<jsbind::String> langs() const;
+    void langs(const jsbind::TypedArray<jsbind::String>& value);
     bool processLocally() const;
     void processLocally(bool value);
 };
@@ -35,8 +35,8 @@ public:
     SpeechRecognition();
     SpeechGrammarList grammars() const;
     void grammars(const SpeechGrammarList& value);
-    jsbind::DOMString lang() const;
-    void lang(const jsbind::DOMString& value);
+    jsbind::String lang() const;
+    void lang(const jsbind::String& value);
     bool continuous() const;
     void continuous(bool value);
     bool interimResults() const;

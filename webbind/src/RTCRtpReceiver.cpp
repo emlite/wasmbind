@@ -77,7 +77,7 @@ RTCDtlsTransport RTCRtpReceiver::transport() const {
     return emlite::Val::get("transport").as<RTCDtlsTransport>();
 }
 
-RTCRtpCapabilities RTCRtpReceiver::getCapabilities(const jsbind::DOMString& kind) {
+RTCRtpCapabilities RTCRtpReceiver::getCapabilities(const jsbind::String& kind) {
     return emlite::Val::global("rtcrtpreceiver").call("getCapabilities", kind).as<RTCRtpCapabilities>();
 }
 
@@ -85,12 +85,12 @@ RTCRtpReceiveParameters RTCRtpReceiver::getParameters() {
     return emlite::Val::call("getParameters").as<RTCRtpReceiveParameters>();
 }
 
-jsbind::Sequence<RTCRtpContributingSource> RTCRtpReceiver::getContributingSources() {
-    return emlite::Val::call("getContributingSources").as<jsbind::Sequence<RTCRtpContributingSource>>();
+jsbind::TypedArray<RTCRtpContributingSource> RTCRtpReceiver::getContributingSources() {
+    return emlite::Val::call("getContributingSources").as<jsbind::TypedArray<RTCRtpContributingSource>>();
 }
 
-jsbind::Sequence<RTCRtpSynchronizationSource> RTCRtpReceiver::getSynchronizationSources() {
-    return emlite::Val::call("getSynchronizationSources").as<jsbind::Sequence<RTCRtpSynchronizationSource>>();
+jsbind::TypedArray<RTCRtpSynchronizationSource> RTCRtpReceiver::getSynchronizationSources() {
+    return emlite::Val::call("getSynchronizationSources").as<jsbind::TypedArray<RTCRtpSynchronizationSource>>();
 }
 
 jsbind::Promise<RTCStatsReport> RTCRtpReceiver::getStats() {

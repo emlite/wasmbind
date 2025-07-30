@@ -17,7 +17,7 @@ public:
     bool setBid();
     bool setBid(const jsbind::Any& oneOrManyBids);
     jsbind::Undefined setPriority(double priority);
-    jsbind::Undefined setPrioritySignalsOverride(const jsbind::DOMString& key);
-    jsbind::Undefined setPrioritySignalsOverride(const jsbind::DOMString& key, double priority);
+    jsbind::Undefined setPrioritySignalsOverride(const jsbind::String& key);
+    jsbind::Undefined setPrioritySignalsOverride(const jsbind::String& key, double priority);
 };
 

@@ -13,7 +13,7 @@ GPUDeviceLostReason GPUDeviceLostInfo::reason() const {
     return emlite::Val::get("reason").as<GPUDeviceLostReason>();
 }
 
-jsbind::DOMString GPUDeviceLostInfo::message() const {
-    return emlite::Val::get("message").as<jsbind::DOMString>();
+jsbind::String GPUDeviceLostInfo::message() const {
+    return emlite::Val::get("message").as<jsbind::String>();
 }
 

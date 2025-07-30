@@ -14,8 +14,8 @@ public:
     static OverconstrainedError take_ownership(Handle h) noexcept;
 
     OverconstrainedError clone() const noexcept;
-    OverconstrainedError(const jsbind::DOMString& constraint);
-    OverconstrainedError(const jsbind::DOMString& constraint, const jsbind::DOMString& message);
-    jsbind::DOMString constraint() const;
+    OverconstrainedError(const jsbind::String& constraint);
+    OverconstrainedError(const jsbind::String& constraint, const jsbind::String& message);
+    jsbind::String constraint() const;
 };
 

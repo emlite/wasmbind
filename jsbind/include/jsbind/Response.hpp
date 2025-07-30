@@ -22,7 +22,7 @@ class Response : public emlite::Val {
     /* response.headers   (raw; wrap later if you need) */
     [[nodiscard]] Any headers_raw() const;
 
-    [[nodiscard]] Promise<DOMString> text() const;
+    [[nodiscard]] Promise<String> text() const;
     [[nodiscard]] Promise<Any> json() const;
     /* arrayBuffer() → we map to Uint8Array like Rust code
      */

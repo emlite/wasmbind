@@ -18,19 +18,19 @@ void DetectedText::boundingBox(const DOMRectReadOnly& value) {
     emlite::Val::set("boundingBox", value);
 }
 
-jsbind::DOMString DetectedText::rawValue() const {
-    return emlite::Val::get("rawValue").as<jsbind::DOMString>();
+jsbind::String DetectedText::rawValue() const {
+    return emlite::Val::get("rawValue").as<jsbind::String>();
 }
 
-void DetectedText::rawValue(const jsbind::DOMString& value) {
+void DetectedText::rawValue(const jsbind::String& value) {
     emlite::Val::set("rawValue", value);
 }
 
-jsbind::Sequence<jsbind::Any> DetectedText::cornerPoints() const {
-    return emlite::Val::get("cornerPoints").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> DetectedText::cornerPoints() const {
+    return emlite::Val::get("cornerPoints").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void DetectedText::cornerPoints(const jsbind::Sequence<jsbind::Any>& value) {
+void DetectedText::cornerPoints(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("cornerPoints", value);
 }
 
@@ -44,7 +44,7 @@ TextDetector::TextDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 TextDetector::TextDetector() : emlite::Val(emlite::Val::global("TextDetector").new_()) {}
 
-jsbind::Promise<jsbind::Sequence<DetectedText>> TextDetector::detect(const jsbind::Any& image) {
-    return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::Sequence<DetectedText>>>();
+jsbind::Promise<jsbind::TypedArray<DetectedText>> TextDetector::detect(const jsbind::Any& image) {
+    return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::TypedArray<DetectedText>>>();
 }
 

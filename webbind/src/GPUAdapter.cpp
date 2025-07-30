@@ -13,19 +13,19 @@ GPUDeviceDescriptor::GPUDeviceDescriptor(const emlite::Val &val) noexcept: emlit
 GPUDeviceDescriptor::GPUDeviceDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
 GPUDeviceDescriptor GPUDeviceDescriptor::clone() const noexcept { return *this; }
 
-jsbind::Sequence<GPUFeatureName> GPUDeviceDescriptor::requiredFeatures() const {
-    return emlite::Val::get("requiredFeatures").as<jsbind::Sequence<GPUFeatureName>>();
+jsbind::TypedArray<GPUFeatureName> GPUDeviceDescriptor::requiredFeatures() const {
+    return emlite::Val::get("requiredFeatures").as<jsbind::TypedArray<GPUFeatureName>>();
 }
 
-void GPUDeviceDescriptor::requiredFeatures(const jsbind::Sequence<GPUFeatureName>& value) {
+void GPUDeviceDescriptor::requiredFeatures(const jsbind::TypedArray<GPUFeatureName>& value) {
     emlite::Val::set("requiredFeatures", value);
 }
 
-jsbind::Record<jsbind::DOMString, jsbind::Any> GPUDeviceDescriptor::requiredLimits() const {
-    return emlite::Val::get("requiredLimits").as<jsbind::Record<jsbind::DOMString, jsbind::Any>>();
+jsbind::Record<jsbind::String, jsbind::Any> GPUDeviceDescriptor::requiredLimits() const {
+    return emlite::Val::get("requiredLimits").as<jsbind::Record<jsbind::String, jsbind::Any>>();
 }
 
-void GPUDeviceDescriptor::requiredLimits(const jsbind::Record<jsbind::DOMString, jsbind::Any>& value) {
+void GPUDeviceDescriptor::requiredLimits(const jsbind::Record<jsbind::String, jsbind::Any>& value) {
     emlite::Val::set("requiredLimits", value);
 }
 

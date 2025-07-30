@@ -10,8 +10,8 @@ ServiceWorker::ServiceWorker(Handle h) noexcept : EventTarget(emlite::Val::take_
 ServiceWorker::ServiceWorker(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::USVString ServiceWorker::scriptURL() const {
-    return EventTarget::get("scriptURL").as<jsbind::USVString>();
+jsbind::String ServiceWorker::scriptURL() const {
+    return EventTarget::get("scriptURL").as<jsbind::String>();
 }
 
 ServiceWorkerState ServiceWorker::state() const {

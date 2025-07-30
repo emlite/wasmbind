@@ -16,8 +16,8 @@ public:
     static IDBIndex take_ownership(Handle h) noexcept;
 
     IDBIndex clone() const noexcept;
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
     IDBObjectStore objectStore() const;
     jsbind::Any keyPath() const;
     bool multiEntry() const;

@@ -8,7 +8,7 @@ static inline Val R() { return Val::global("Reflect"); }
 Any Reflect::apply(
     const Function &target,
     const Any &thisArg,
-    const Sequence<Any> &args
+    const TypedArray<Any> &args
 ) {
     return R()
         .call("apply", target, thisArg, args)
@@ -17,7 +17,7 @@ Any Reflect::apply(
 
 Any Reflect::construct(
     const Function &target,
-    const Sequence<Any> &args,
+    const TypedArray<Any> &args,
     const Any &newTarget
 ) {
     return R()
@@ -67,8 +67,8 @@ bool Reflect::isExtensible(const Any &target) {
     return R().call("isExtensible", target).as<bool>();
 }
 
-Sequence<Any> Reflect::ownKeys(const Any &target) {
-    return R().call("ownKeys", target).as<Sequence<Any>>();
+TypedArray<Any> Reflect::ownKeys(const Any &target) {
+    return R().call("ownKeys", target).as<TypedArray<Any>>();
 }
 
 bool Reflect::preventExtensions(const Any &target) {

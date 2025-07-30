@@ -15,13 +15,13 @@ public:
 
     HTMLParamElement clone() const noexcept;
     HTMLParamElement();
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
-    jsbind::DOMString value() const;
-    void value(const jsbind::DOMString& value);
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
-    jsbind::DOMString valueType() const;
-    void valueType(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
+    jsbind::String value() const;
+    void value(const jsbind::String& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
+    jsbind::String valueType() const;
+    void valueType(const jsbind::String& value);
 };
 

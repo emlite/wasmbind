@@ -16,12 +16,12 @@ public:
     static SVGStyleElement take_ownership(Handle h) noexcept;
 
     SVGStyleElement clone() const noexcept;
-    jsbind::DOMString type() const;
-    void type(const jsbind::DOMString& value);
-    jsbind::DOMString media() const;
-    void media(const jsbind::DOMString& value);
-    jsbind::DOMString title() const;
-    void title(const jsbind::DOMString& value);
+    jsbind::String type() const;
+    void type(const jsbind::String& value);
+    jsbind::String media() const;
+    void media(const jsbind::String& value);
+    jsbind::String title() const;
+    void title(const jsbind::String& value);
     CSSStyleSheet sheet() const;
 };
 

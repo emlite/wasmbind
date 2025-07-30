@@ -30,10 +30,10 @@ public:
     static Clients take_ownership(Handle h) noexcept;
 
     Clients clone() const noexcept;
-    jsbind::Promise<jsbind::Any> get(const jsbind::DOMString& id);
-    jsbind::Promise<jsbind::FrozenArray<Client>> matchAll();
-    jsbind::Promise<jsbind::FrozenArray<Client>> matchAll(const ClientQueryOptions& options);
-    jsbind::Promise<WindowClient> openWindow(const jsbind::USVString& url);
+    jsbind::Promise<jsbind::Any> get(const jsbind::String& id);
+    jsbind::Promise<jsbind::TypedArray<Client>> matchAll();
+    jsbind::Promise<jsbind::TypedArray<Client>> matchAll(const ClientQueryOptions& options);
+    jsbind::Promise<WindowClient> openWindow(const jsbind::String& url);
     jsbind::Promise<jsbind::Undefined> claim();
 };
 

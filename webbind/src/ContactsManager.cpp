@@ -11,43 +11,43 @@ ContactInfo::ContactInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
 ContactInfo::ContactInfo() noexcept: emlite::Val(emlite::Val::object()) {}
 ContactInfo ContactInfo::clone() const noexcept { return *this; }
 
-jsbind::Sequence<ContactAddress> ContactInfo::address() const {
-    return emlite::Val::get("address").as<jsbind::Sequence<ContactAddress>>();
+jsbind::TypedArray<ContactAddress> ContactInfo::address() const {
+    return emlite::Val::get("address").as<jsbind::TypedArray<ContactAddress>>();
 }
 
-void ContactInfo::address(const jsbind::Sequence<ContactAddress>& value) {
+void ContactInfo::address(const jsbind::TypedArray<ContactAddress>& value) {
     emlite::Val::set("address", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> ContactInfo::email() const {
-    return emlite::Val::get("email").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> ContactInfo::email() const {
+    return emlite::Val::get("email").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void ContactInfo::email(const jsbind::Sequence<jsbind::DOMString>& value) {
+void ContactInfo::email(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("email", value);
 }
 
-jsbind::Sequence<Blob> ContactInfo::icon() const {
-    return emlite::Val::get("icon").as<jsbind::Sequence<Blob>>();
+jsbind::TypedArray<Blob> ContactInfo::icon() const {
+    return emlite::Val::get("icon").as<jsbind::TypedArray<Blob>>();
 }
 
-void ContactInfo::icon(const jsbind::Sequence<Blob>& value) {
+void ContactInfo::icon(const jsbind::TypedArray<Blob>& value) {
     emlite::Val::set("icon", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> ContactInfo::name() const {
-    return emlite::Val::get("name").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> ContactInfo::name() const {
+    return emlite::Val::get("name").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void ContactInfo::name(const jsbind::Sequence<jsbind::DOMString>& value) {
+void ContactInfo::name(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> ContactInfo::tel() const {
-    return emlite::Val::get("tel").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> ContactInfo::tel() const {
+    return emlite::Val::get("tel").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void ContactInfo::tel(const jsbind::Sequence<jsbind::DOMString>& value) {
+void ContactInfo::tel(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("tel", value);
 }
 
@@ -75,15 +75,15 @@ ContactsManager::ContactsManager(Handle h) noexcept : emlite::Val(emlite::Val::t
 ContactsManager::ContactsManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Promise<jsbind::Sequence<ContactProperty>> ContactsManager::getProperties() {
-    return emlite::Val::call("getProperties").as<jsbind::Promise<jsbind::Sequence<ContactProperty>>>();
+jsbind::Promise<jsbind::TypedArray<ContactProperty>> ContactsManager::getProperties() {
+    return emlite::Val::call("getProperties").as<jsbind::Promise<jsbind::TypedArray<ContactProperty>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<ContactInfo>> ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties) {
-    return emlite::Val::call("select", properties).as<jsbind::Promise<jsbind::Sequence<ContactInfo>>>();
+jsbind::Promise<jsbind::TypedArray<ContactInfo>> ContactsManager::select(const jsbind::TypedArray<ContactProperty>& properties) {
+    return emlite::Val::call("select", properties).as<jsbind::Promise<jsbind::TypedArray<ContactInfo>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<ContactInfo>> ContactsManager::select(const jsbind::Sequence<ContactProperty>& properties, const ContactsSelectOptions& options) {
-    return emlite::Val::call("select", properties, options).as<jsbind::Promise<jsbind::Sequence<ContactInfo>>>();
+jsbind::Promise<jsbind::TypedArray<ContactInfo>> ContactsManager::select(const jsbind::TypedArray<ContactProperty>& properties, const ContactsSelectOptions& options) {
+    return emlite::Val::call("select", properties, options).as<jsbind::Promise<jsbind::TypedArray<ContactInfo>>>();
 }
 

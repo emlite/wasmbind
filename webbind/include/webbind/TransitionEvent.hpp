@@ -14,10 +14,10 @@ public:
     static TransitionEvent take_ownership(Handle h) noexcept;
 
     TransitionEvent clone() const noexcept;
-    TransitionEvent(const jsbind::CSSOMString& type);
-    TransitionEvent(const jsbind::CSSOMString& type, const jsbind::Any& transitionEventInitDict);
-    jsbind::CSSOMString propertyName() const;
+    TransitionEvent(const jsbind::String& type);
+    TransitionEvent(const jsbind::String& type, const jsbind::Any& transitionEventInitDict);
+    jsbind::String propertyName() const;
     double elapsedTime() const;
-    jsbind::CSSOMString pseudoElement() const;
+    jsbind::String pseudoElement() const;
 };
 

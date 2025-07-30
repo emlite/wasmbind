@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Any.hpp"
-#include "Sequence.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
 #include <stddef.h>
@@ -15,11 +14,6 @@
 #define EM_HAVE_STD_SPAN 0
 #endif
 
-#if EM_HAVE_STD_SPAN
-#define EM_IF_STD_SPAN(code) code
-#else
-#define EM_IF_STD_SPAN(code)
-#endif
 
 namespace jsbind {
 class ArrayBuffer : public emlite::Val {
@@ -40,37 +34,130 @@ class ArrayBuffer : public emlite::Val {
 };
 
 template <typename T>
-class TypedArray : public Sequence<T> {
+class TypedArray : public emlite::Val {
     explicit TypedArray(Handle h) noexcept
-        : Sequence<T>(Sequence<T>::take_ownership(h)) {}
+        : emlite::Val(emlite::Val::take_ownership(h)) {}
 
   public:
     static TypedArray take_ownership(Handle h) noexcept {
         return TypedArray(h);
     }
     explicit TypedArray(const emlite::Val &val) noexcept
-        : Sequence<T>(val) {}
+        : emlite::Val(val) {}
 
     TypedArray() noexcept
         : emlite::Val(emlite::Val(emlite::Val::array())) {}
 
     [[nodiscard]] size_t byteLength() const {
-        return Sequence<T>::get("byteLength")
+        return emlite::Val::get("byteLength")
             .template as<size_t>();
     }
 
     [[nodiscard]] size_t byteOffset() const {
-        return Sequence<T>::get("byteOffset")
+        return emlite::Val::get("byteOffset")
             .template as<size_t>();
     }
 
     [[nodiscard]] ArrayBuffer buffer() const {
-        return Sequence<T>::get("buffer")
+        return emlite::Val::get("buffer")
             .template as<ArrayBuffer>();
+    }
+
+    static TypedArray new_(T *data, size_t len) {
+        auto arr = emlite::Val::array();
+        for (auto i = 0; i < len; i++)
+            arr.call("push", data[i]);
+        return TypedArray(arr);
     }
 
     [[nodiscard]] TypedArray clone() const noexcept {
         return *this;
+    }
+
+    [[nodiscard]] size_t size() const {
+        return emlite::Val::get("length")
+            .template as<size_t>();
+    }
+
+    [[nodiscard]] bool empty() const { return size() == 0; }
+
+    void push(const T &v) { emlite::Val::call("push", v); }
+
+    T operator[](size_t i) const {
+        return emlite::Val::operator[](i).template as<T>();
+    }
+
+    void set(size_t idx, const T &val) noexcept {
+        emlite::Val::set(idx, val);
+    }
+
+    bool has(const T &val) const noexcept {
+        return emlite::Val::has(val);
+    }
+
+#if EM_HAVE_STD_SPAN
+    static TypedArray from(std::span<T> s) {  
+        return from(s.data(), s.size());                   
+    }
+    std::vector<T> to_vector() const {                                              
+        std::vector<int_ty> vec;                           
+        for (size_t i = 0; i < this->size(); i++) {        
+            vec.push_back(this->get(i).as<int_ty>());      
+        }                                                  
+        return vec;                                        
+    }
+#endif
+    
+    struct iterator {
+        TypedArray *parent;
+        size_t idx;
+
+        using difference_type = ptrdiff_t;
+        using value_type      = T;
+        using reference       = T;
+        using pointer         = void;
+
+        reference operator*() const {
+            return parent->get(idx).template as<reference>(
+            );
+        }
+        iterator &operator++() {
+            ++idx;
+            return *this;
+        }
+        const iterator operator++(int) {
+            auto c = *this;
+            ++*this;
+            return c;
+        }
+
+        friend bool operator==(
+            const iterator &a, const iterator &b
+        ) {
+            return a.idx == b.idx;
+        }
+        friend bool operator!=(
+            const iterator &a, const iterator &b
+        ) {
+            return !(a == b);
+        }
+    };
+
+    iterator begin() { return {this, 0}; }
+    iterator end() { return {this, size()}; }
+
+    struct const_iterator : iterator {
+        using iterator::iterator;
+        T operator*() const {
+            return this->parent->get(this->idx)
+                .template as<T>();
+        }
+    };
+    const_iterator begin() const {
+        return {const_cast<TypedArray *>(this), 0};
+    }
+    const_iterator end() const {
+        return {const_cast<TypedArray *>(this), size()};
     }
 };
 
@@ -87,47 +174,6 @@ DECLARE_ARRAY(Int32Array, int32_t)
 DECLARE_ARRAY(Float32Array, float)
 
 DECLARE_ARRAY(Float64Array, double)
-
-template <typename T>
-class ObservableArray : public TypedArray<T> {
-    explicit ObservableArray(Handle h) noexcept;
-
-  public:
-    using TypedArray<T>::call;
-    static ObservableArray take_ownership(Handle h
-    ) noexcept;
-    explicit ObservableArray(const emlite::Val &val
-    ) noexcept;
-    [[nodiscard]] ObservableArray subarray(
-        size_t begin, size_t end = SIZE_MAX
-    ) const;
-    [[nodiscard]] ObservableArray clone() const noexcept {
-        return *this;
-    }
-};
-
-template <typename T>
-ObservableArray<T>::ObservableArray(const emlite::Val &val
-) noexcept
-    : TypedArray<T>(val) {}
-
-template <typename T>
-ObservableArray<T>::ObservableArray(Handle h) noexcept
-    : TypedArray<T>(TypedArray<T>::take_ownership(h)) {}
-
-template <typename T>
-ObservableArray<T> ObservableArray<T>::take_ownership(
-    Handle h
-) noexcept {
-    return ObservableArray(h);
-}
-
-template <typename T>
-[[nodiscard]] ObservableArray<T> ObservableArray<
-    T>::subarray(size_t begin, size_t end) const {
-    return TypedArray<uint8_t>::call("subarray", begin, end)
-        .template as<ObservableArray<T>>();
-}
 
 class DataView : public emlite::Val {
     explicit DataView(Handle h) noexcept;
@@ -188,41 +234,4 @@ class DataView : public emlite::Val {
     );
 };
 
-template <typename T>
-class FrozenArray : public TypedArray<T> {
-    explicit FrozenArray(Handle h) noexcept;
-
-  public:
-    using TypedArray<T>::call;
-    static FrozenArray take_ownership(Handle h) noexcept;
-    explicit FrozenArray(const emlite::Val &val) noexcept;
-    [[nodiscard]] FrozenArray subarray(
-        size_t begin, size_t end = SIZE_MAX
-    ) const;
-    [[nodiscard]] FrozenArray clone() const {
-        return *this;
-    }
-};
-
-template <typename T>
-FrozenArray<T>::FrozenArray(const emlite::Val &val) noexcept
-    : TypedArray<T>(val) {}
-
-template <typename T>
-FrozenArray<T>::FrozenArray(Handle h) noexcept
-    : TypedArray<T>(TypedArray<T>::take_ownership(h)) {}
-
-template <typename T>
-FrozenArray<T> FrozenArray<T>::take_ownership(Handle h
-) noexcept {
-    return FrozenArray(h);
-}
-
-template <typename T>
-[[nodiscard]] FrozenArray<T> FrozenArray<T>::subarray(
-    size_t begin, size_t end
-) const {
-    return TypedArray<uint8_t>::call("subarray", begin, end)
-        .template as<FrozenArray<T>>();
-}
 } // namespace jsbind

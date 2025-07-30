@@ -9,16 +9,16 @@ DocumentType::DocumentType(Handle h) noexcept : Node(emlite::Val::take_ownership
 DocumentType::DocumentType(const emlite::Val &val) noexcept: Node(val) {}
 
 
-jsbind::DOMString DocumentType::name() const {
-    return Node::get("name").as<jsbind::DOMString>();
+jsbind::String DocumentType::name() const {
+    return Node::get("name").as<jsbind::String>();
 }
 
-jsbind::DOMString DocumentType::publicId() const {
-    return Node::get("publicId").as<jsbind::DOMString>();
+jsbind::String DocumentType::publicId() const {
+    return Node::get("publicId").as<jsbind::String>();
 }
 
-jsbind::DOMString DocumentType::systemId() const {
-    return Node::get("systemId").as<jsbind::DOMString>();
+jsbind::String DocumentType::systemId() const {
+    return Node::get("systemId").as<jsbind::String>();
 }
 
 jsbind::Undefined DocumentType::before(const jsbind::Any& nodes) {

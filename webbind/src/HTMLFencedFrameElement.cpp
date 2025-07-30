@@ -21,19 +21,19 @@ void HTMLFencedFrameElement::config(const FencedFrameConfig& value) {
     HTMLElement::set("config", value);
 }
 
-jsbind::DOMString HTMLFencedFrameElement::width() const {
-    return HTMLElement::get("width").as<jsbind::DOMString>();
+jsbind::String HTMLFencedFrameElement::width() const {
+    return HTMLElement::get("width").as<jsbind::String>();
 }
 
-void HTMLFencedFrameElement::width(const jsbind::DOMString& value) {
+void HTMLFencedFrameElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 
-jsbind::DOMString HTMLFencedFrameElement::height() const {
-    return HTMLElement::get("height").as<jsbind::DOMString>();
+jsbind::String HTMLFencedFrameElement::height() const {
+    return HTMLElement::get("height").as<jsbind::String>();
 }
 
-void HTMLFencedFrameElement::height(const jsbind::DOMString& value) {
+void HTMLFencedFrameElement::height(const jsbind::String& value) {
     HTMLElement::set("height", value);
 }
 
@@ -41,11 +41,11 @@ DOMTokenList HTMLFencedFrameElement::sandbox() const {
     return HTMLElement::get("sandbox").as<DOMTokenList>();
 }
 
-jsbind::DOMString HTMLFencedFrameElement::allow() const {
-    return HTMLElement::get("allow").as<jsbind::DOMString>();
+jsbind::String HTMLFencedFrameElement::allow() const {
+    return HTMLElement::get("allow").as<jsbind::String>();
 }
 
-void HTMLFencedFrameElement::allow(const jsbind::DOMString& value) {
+void HTMLFencedFrameElement::allow(const jsbind::String& value) {
     HTMLElement::set("allow", value);
 }
 

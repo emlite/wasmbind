@@ -11,43 +11,43 @@ HTMLMetaElement::HTMLMetaElement(const emlite::Val &val) noexcept: HTMLElement(v
 
 HTMLMetaElement::HTMLMetaElement() : HTMLElement(emlite::Val::global("HTMLMetaElement").new_()) {}
 
-jsbind::DOMString HTMLMetaElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLMetaElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLMetaElement::name(const jsbind::DOMString& value) {
+void HTMLMetaElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::DOMString HTMLMetaElement::httpEquiv() const {
-    return HTMLElement::get("httpEquiv").as<jsbind::DOMString>();
+jsbind::String HTMLMetaElement::httpEquiv() const {
+    return HTMLElement::get("httpEquiv").as<jsbind::String>();
 }
 
-void HTMLMetaElement::httpEquiv(const jsbind::DOMString& value) {
+void HTMLMetaElement::httpEquiv(const jsbind::String& value) {
     HTMLElement::set("httpEquiv", value);
 }
 
-jsbind::DOMString HTMLMetaElement::content() const {
-    return HTMLElement::get("content").as<jsbind::DOMString>();
+jsbind::String HTMLMetaElement::content() const {
+    return HTMLElement::get("content").as<jsbind::String>();
 }
 
-void HTMLMetaElement::content(const jsbind::DOMString& value) {
+void HTMLMetaElement::content(const jsbind::String& value) {
     HTMLElement::set("content", value);
 }
 
-jsbind::DOMString HTMLMetaElement::media() const {
-    return HTMLElement::get("media").as<jsbind::DOMString>();
+jsbind::String HTMLMetaElement::media() const {
+    return HTMLElement::get("media").as<jsbind::String>();
 }
 
-void HTMLMetaElement::media(const jsbind::DOMString& value) {
+void HTMLMetaElement::media(const jsbind::String& value) {
     HTMLElement::set("media", value);
 }
 
-jsbind::DOMString HTMLMetaElement::scheme() const {
-    return HTMLElement::get("scheme").as<jsbind::DOMString>();
+jsbind::String HTMLMetaElement::scheme() const {
+    return HTMLElement::get("scheme").as<jsbind::String>();
 }
 
-void HTMLMetaElement::scheme(const jsbind::DOMString& value) {
+void HTMLMetaElement::scheme(const jsbind::String& value) {
     HTMLElement::set("scheme", value);
 }
 

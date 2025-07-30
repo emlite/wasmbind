@@ -10,28 +10,28 @@ NotRestoredReasons::NotRestoredReasons(Handle h) noexcept : emlite::Val(emlite::
 NotRestoredReasons::NotRestoredReasons(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString NotRestoredReasons::src() const {
-    return emlite::Val::get("src").as<jsbind::USVString>();
+jsbind::String NotRestoredReasons::src() const {
+    return emlite::Val::get("src").as<jsbind::String>();
 }
 
-jsbind::DOMString NotRestoredReasons::id() const {
-    return emlite::Val::get("id").as<jsbind::DOMString>();
+jsbind::String NotRestoredReasons::id() const {
+    return emlite::Val::get("id").as<jsbind::String>();
 }
 
-jsbind::DOMString NotRestoredReasons::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String NotRestoredReasons::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-jsbind::USVString NotRestoredReasons::url() const {
-    return emlite::Val::get("url").as<jsbind::USVString>();
+jsbind::String NotRestoredReasons::url() const {
+    return emlite::Val::get("url").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<NotRestoredReasonDetails> NotRestoredReasons::reasons() const {
-    return emlite::Val::get("reasons").as<jsbind::FrozenArray<NotRestoredReasonDetails>>();
+jsbind::TypedArray<NotRestoredReasonDetails> NotRestoredReasons::reasons() const {
+    return emlite::Val::get("reasons").as<jsbind::TypedArray<NotRestoredReasonDetails>>();
 }
 
-jsbind::FrozenArray<NotRestoredReasons> NotRestoredReasons::children() const {
-    return emlite::Val::get("children").as<jsbind::FrozenArray<NotRestoredReasons>>();
+jsbind::TypedArray<NotRestoredReasons> NotRestoredReasons::children() const {
+    return emlite::Val::get("children").as<jsbind::TypedArray<NotRestoredReasons>>();
 }
 
 jsbind::Object NotRestoredReasons::toJSON() {

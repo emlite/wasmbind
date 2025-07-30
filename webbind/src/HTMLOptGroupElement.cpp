@@ -19,11 +19,11 @@ void HTMLOptGroupElement::disabled(bool value) {
     HTMLElement::set("disabled", value);
 }
 
-jsbind::DOMString HTMLOptGroupElement::label() const {
-    return HTMLElement::get("label").as<jsbind::DOMString>();
+jsbind::String HTMLOptGroupElement::label() const {
+    return HTMLElement::get("label").as<jsbind::String>();
 }
 
-void HTMLOptGroupElement::label(const jsbind::DOMString& value) {
+void HTMLOptGroupElement::label(const jsbind::String& value) {
     HTMLElement::set("label", value);
 }
 

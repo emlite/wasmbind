@@ -40,8 +40,8 @@ public:
     void inlineVerticalFieldOfView(double value);
     XRWebGLLayer baseLayer() const;
     void baseLayer(const XRWebGLLayer& value);
-    jsbind::Sequence<XRLayer> layers() const;
-    void layers(const jsbind::Sequence<XRLayer>& value);
+    jsbind::TypedArray<XRLayer> layers() const;
+    void layers(const jsbind::TypedArray<XRLayer>& value);
 };
 
 class XRDOMOverlayState : public emlite::Val {
@@ -64,8 +64,8 @@ public:
     XRHitTestOptionsInit clone() const noexcept;
     XRSpace space() const;
     void space(const XRSpace& value);
-    jsbind::Sequence<XRHitTestTrackableType> entityTypes() const;
-    void entityTypes(const jsbind::Sequence<XRHitTestTrackableType>& value);
+    jsbind::TypedArray<XRHitTestTrackableType> entityTypes() const;
+    void entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value);
     XRRay offsetRay() const;
     void offsetRay(const XRRay& value);
 };
@@ -77,10 +77,10 @@ public:
     explicit XRTransientInputHitTestOptionsInit(const emlite::Val &val) noexcept;
     XRTransientInputHitTestOptionsInit() noexcept;
     XRTransientInputHitTestOptionsInit clone() const noexcept;
-    jsbind::DOMString profile() const;
-    void profile(const jsbind::DOMString& value);
-    jsbind::Sequence<XRHitTestTrackableType> entityTypes() const;
-    void entityTypes(const jsbind::Sequence<XRHitTestTrackableType>& value);
+    jsbind::String profile() const;
+    void profile(const jsbind::String& value);
+    jsbind::TypedArray<XRHitTestTrackableType> entityTypes() const;
+    void entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value);
     XRRay offsetRay() const;
     void offsetRay(const XRRay& value);
 };
@@ -110,7 +110,7 @@ public:
     XRRenderState renderState() const;
     XRInputSourceArray inputSources() const;
     XRInputSourceArray trackedSources() const;
-    jsbind::FrozenArray<jsbind::DOMString> enabledFeatures() const;
+    jsbind::TypedArray<jsbind::String> enabledFeatures() const;
     bool isSystemKeyboardSupported() const;
     jsbind::Undefined updateRenderState();
     jsbind::Undefined updateRenderState(const XRRenderStateInit& state);
@@ -139,9 +139,9 @@ public:
     void onvisibilitychange(const jsbind::Any& value);
     jsbind::Any onframeratechange() const;
     void onframeratechange(const jsbind::Any& value);
-    jsbind::FrozenArray<jsbind::DOMString> persistentAnchors() const;
-    jsbind::Promise<XRAnchor> restorePersistentAnchor(const jsbind::DOMString& uuid);
-    jsbind::Promise<jsbind::Undefined> deletePersistentAnchor(const jsbind::DOMString& uuid);
+    jsbind::TypedArray<jsbind::String> persistentAnchors() const;
+    jsbind::Promise<XRAnchor> restorePersistentAnchor(const jsbind::String& uuid);
+    jsbind::Promise<jsbind::Undefined> deletePersistentAnchor(const jsbind::String& uuid);
     XREnvironmentBlendMode environmentBlendMode() const;
     XRInteractionMode interactionMode() const;
     XRDepthUsage depthUsage() const;

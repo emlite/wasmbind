@@ -14,7 +14,7 @@ public:
     static MediaKeyMessageEvent take_ownership(Handle h) noexcept;
 
     MediaKeyMessageEvent clone() const noexcept;
-    MediaKeyMessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    MediaKeyMessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     MediaKeyMessageType messageType() const;
     jsbind::ArrayBuffer message() const;
 };

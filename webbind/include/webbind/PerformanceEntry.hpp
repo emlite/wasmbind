@@ -14,8 +14,8 @@ public:
 
     PerformanceEntry clone() const noexcept;
     long long id() const;
-    jsbind::DOMString name() const;
-    jsbind::DOMString entryType() const;
+    jsbind::String name() const;
+    jsbind::String entryType() const;
     jsbind::Any startTime() const;
     jsbind::Any duration() const;
     long long navigationId() const;

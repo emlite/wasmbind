@@ -10,7 +10,7 @@ XRViewerPose::XRViewerPose(Handle h) noexcept : XRPose(emlite::Val::take_ownersh
 XRViewerPose::XRViewerPose(const emlite::Val &val) noexcept: XRPose(val) {}
 
 
-jsbind::FrozenArray<XRView> XRViewerPose::views() const {
-    return XRPose::get("views").as<jsbind::FrozenArray<XRView>>();
+jsbind::TypedArray<XRView> XRViewerPose::views() const {
+    return XRPose::get("views").as<jsbind::TypedArray<XRView>>();
 }
 

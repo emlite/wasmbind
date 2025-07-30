@@ -9,27 +9,27 @@ MediaImage::MediaImage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 MediaImage::MediaImage() noexcept: emlite::Val(emlite::Val::object()) {}
 MediaImage MediaImage::clone() const noexcept { return *this; }
 
-jsbind::USVString MediaImage::src() const {
-    return emlite::Val::get("src").as<jsbind::USVString>();
+jsbind::String MediaImage::src() const {
+    return emlite::Val::get("src").as<jsbind::String>();
 }
 
-void MediaImage::src(const jsbind::USVString& value) {
+void MediaImage::src(const jsbind::String& value) {
     emlite::Val::set("src", value);
 }
 
-jsbind::DOMString MediaImage::sizes() const {
-    return emlite::Val::get("sizes").as<jsbind::DOMString>();
+jsbind::String MediaImage::sizes() const {
+    return emlite::Val::get("sizes").as<jsbind::String>();
 }
 
-void MediaImage::sizes(const jsbind::DOMString& value) {
+void MediaImage::sizes(const jsbind::String& value) {
     emlite::Val::set("sizes", value);
 }
 
-jsbind::DOMString MediaImage::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String MediaImage::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-void MediaImage::type(const jsbind::DOMString& value) {
+void MediaImage::type(const jsbind::String& value) {
     emlite::Val::set("type", value);
 }
 
@@ -41,15 +41,15 @@ ChapterInformation::ChapterInformation(Handle h) noexcept : emlite::Val(emlite::
 ChapterInformation::ChapterInformation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString ChapterInformation::title() const {
-    return emlite::Val::get("title").as<jsbind::DOMString>();
+jsbind::String ChapterInformation::title() const {
+    return emlite::Val::get("title").as<jsbind::String>();
 }
 
 double ChapterInformation::startTime() const {
     return emlite::Val::get("startTime").as<double>();
 }
 
-jsbind::FrozenArray<MediaImage> ChapterInformation::artwork() const {
-    return emlite::Val::get("artwork").as<jsbind::FrozenArray<MediaImage>>();
+jsbind::TypedArray<MediaImage> ChapterInformation::artwork() const {
+    return emlite::Val::get("artwork").as<jsbind::TypedArray<MediaImage>>();
 }
 

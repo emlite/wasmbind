@@ -10,19 +10,19 @@ XRSessionInit::XRSessionInit(const emlite::Val &val) noexcept: emlite::Val(val) 
 XRSessionInit::XRSessionInit() noexcept: emlite::Val(emlite::Val::object()) {}
 XRSessionInit XRSessionInit::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::DOMString> XRSessionInit::requiredFeatures() const {
-    return emlite::Val::get("requiredFeatures").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> XRSessionInit::requiredFeatures() const {
+    return emlite::Val::get("requiredFeatures").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void XRSessionInit::requiredFeatures(const jsbind::Sequence<jsbind::DOMString>& value) {
+void XRSessionInit::requiredFeatures(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("requiredFeatures", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> XRSessionInit::optionalFeatures() const {
-    return emlite::Val::get("optionalFeatures").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> XRSessionInit::optionalFeatures() const {
+    return emlite::Val::get("optionalFeatures").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void XRSessionInit::optionalFeatures(const jsbind::Sequence<jsbind::DOMString>& value) {
+void XRSessionInit::optionalFeatures(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("optionalFeatures", value);
 }
 

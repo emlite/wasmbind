@@ -14,9 +14,9 @@ public:
     static CSSPropertyRule take_ownership(Handle h) noexcept;
 
     CSSPropertyRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
-    jsbind::CSSOMString syntax() const;
+    jsbind::String name() const;
+    jsbind::String syntax() const;
     bool inherits() const;
-    jsbind::CSSOMString initialValue() const;
+    jsbind::String initialValue() const;
 };
 

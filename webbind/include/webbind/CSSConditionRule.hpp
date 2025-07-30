@@ -14,6 +14,6 @@ public:
     static CSSConditionRule take_ownership(Handle h) noexcept;
 
     CSSConditionRule clone() const noexcept;
-    jsbind::CSSOMString conditionText() const;
+    jsbind::String conditionText() const;
 };
 

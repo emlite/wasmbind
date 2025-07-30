@@ -44,8 +44,8 @@ public:
     Observable inspect(const jsbind::Any& inspectorUnion);
     Observable catch_(const jsbind::Function& callback);
     Observable finally(const jsbind::Any& callback);
-    jsbind::Promise<jsbind::Sequence<jsbind::Any>> toArray();
-    jsbind::Promise<jsbind::Sequence<jsbind::Any>> toArray(const SubscribeOptions& options);
+    jsbind::Promise<jsbind::TypedArray<jsbind::Any>> toArray();
+    jsbind::Promise<jsbind::TypedArray<jsbind::Any>> toArray(const SubscribeOptions& options);
     jsbind::Promise<jsbind::Undefined> forEach(const jsbind::Function& callback);
     jsbind::Promise<jsbind::Undefined> forEach(const jsbind::Function& callback, const SubscribeOptions& options);
     jsbind::Promise<bool> every(const jsbind::Function& predicate);

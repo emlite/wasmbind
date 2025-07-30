@@ -11,11 +11,11 @@ IDBIndex::IDBIndex(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 IDBIndex::IDBIndex(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString IDBIndex::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String IDBIndex::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void IDBIndex::name(const jsbind::DOMString& value) {
+void IDBIndex::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 

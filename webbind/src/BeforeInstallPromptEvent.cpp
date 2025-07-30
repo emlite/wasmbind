@@ -25,9 +25,9 @@ BeforeInstallPromptEvent::BeforeInstallPromptEvent(Handle h) noexcept : Event(em
 BeforeInstallPromptEvent::BeforeInstallPromptEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-BeforeInstallPromptEvent::BeforeInstallPromptEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("BeforeInstallPromptEvent").new_(type)) {}
+BeforeInstallPromptEvent::BeforeInstallPromptEvent(const jsbind::String& type) : Event(emlite::Val::global("BeforeInstallPromptEvent").new_(type)) {}
 
-BeforeInstallPromptEvent::BeforeInstallPromptEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("BeforeInstallPromptEvent").new_(type, eventInitDict)) {}
+BeforeInstallPromptEvent::BeforeInstallPromptEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("BeforeInstallPromptEvent").new_(type, eventInitDict)) {}
 
 jsbind::Promise<PromptResponseObject> BeforeInstallPromptEvent::prompt() {
     return Event::call("prompt").as<jsbind::Promise<PromptResponseObject>>();

@@ -15,8 +15,8 @@ CSSPseudoElement::CSSPseudoElement(Handle h) noexcept : EventTarget(emlite::Val:
 CSSPseudoElement::CSSPseudoElement(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-jsbind::CSSOMString CSSPseudoElement::type() const {
-    return EventTarget::get("type").as<jsbind::CSSOMString>();
+jsbind::String CSSPseudoElement::type() const {
+    return EventTarget::get("type").as<jsbind::String>();
 }
 
 Element CSSPseudoElement::element() const {
@@ -27,16 +27,16 @@ jsbind::Any CSSPseudoElement::parent() const {
     return EventTarget::get("parent").as<jsbind::Any>();
 }
 
-CSSPseudoElement CSSPseudoElement::pseudo(const jsbind::CSSOMString& type) {
+CSSPseudoElement CSSPseudoElement::pseudo(const jsbind::String& type) {
     return EventTarget::call("pseudo", type).as<CSSPseudoElement>();
 }
 
-jsbind::Sequence<DOMQuad> CSSPseudoElement::getBoxQuads() {
-    return EventTarget::call("getBoxQuads").as<jsbind::Sequence<DOMQuad>>();
+jsbind::TypedArray<DOMQuad> CSSPseudoElement::getBoxQuads() {
+    return EventTarget::call("getBoxQuads").as<jsbind::TypedArray<DOMQuad>>();
 }
 
-jsbind::Sequence<DOMQuad> CSSPseudoElement::getBoxQuads(const BoxQuadOptions& options) {
-    return EventTarget::call("getBoxQuads", options).as<jsbind::Sequence<DOMQuad>>();
+jsbind::TypedArray<DOMQuad> CSSPseudoElement::getBoxQuads(const BoxQuadOptions& options) {
+    return EventTarget::call("getBoxQuads", options).as<jsbind::TypedArray<DOMQuad>>();
 }
 
 DOMQuad CSSPseudoElement::convertQuadFromNode(const DOMQuadInit& quad, const jsbind::Any& from) {

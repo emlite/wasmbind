@@ -9,13 +9,13 @@ CSSParserBlock::CSSParserBlock(Handle h) noexcept : CSSParserValue(emlite::Val::
 CSSParserBlock::CSSParserBlock(const emlite::Val &val) noexcept: CSSParserValue(val) {}
 
 
-CSSParserBlock::CSSParserBlock(const jsbind::DOMString& name, const jsbind::Sequence<CSSParserValue>& body) : CSSParserValue(emlite::Val::global("CSSParserBlock").new_(name, body)) {}
+CSSParserBlock::CSSParserBlock(const jsbind::String& name, const jsbind::TypedArray<CSSParserValue>& body) : CSSParserValue(emlite::Val::global("CSSParserBlock").new_(name, body)) {}
 
-jsbind::DOMString CSSParserBlock::name() const {
-    return CSSParserValue::get("name").as<jsbind::DOMString>();
+jsbind::String CSSParserBlock::name() const {
+    return CSSParserValue::get("name").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<CSSParserValue> CSSParserBlock::body() const {
-    return CSSParserValue::get("body").as<jsbind::FrozenArray<CSSParserValue>>();
+jsbind::TypedArray<CSSParserValue> CSSParserBlock::body() const {
+    return CSSParserValue::get("body").as<jsbind::TypedArray<CSSParserValue>>();
 }
 

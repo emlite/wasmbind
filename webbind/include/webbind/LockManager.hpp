@@ -33,10 +33,10 @@ public:
     explicit LockManagerSnapshot(const emlite::Val &val) noexcept;
     LockManagerSnapshot() noexcept;
     LockManagerSnapshot clone() const noexcept;
-    jsbind::Sequence<jsbind::Any> held() const;
-    void held(const jsbind::Sequence<jsbind::Any>& value);
-    jsbind::Sequence<jsbind::Any> pending() const;
-    void pending(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> held() const;
+    void held(const jsbind::TypedArray<jsbind::Any>& value);
+    jsbind::TypedArray<jsbind::Any> pending() const;
+    void pending(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class LockManager : public emlite::Val {
@@ -47,7 +47,7 @@ public:
     static LockManager take_ownership(Handle h) noexcept;
 
     LockManager clone() const noexcept;
-    jsbind::Promise<jsbind::Any> request(const jsbind::DOMString& name, const LockOptions& options, const jsbind::Function& callback);
+    jsbind::Promise<jsbind::Any> request(const jsbind::String& name, const LockOptions& options, const jsbind::Function& callback);
     jsbind::Promise<LockManagerSnapshot> query();
 };
 

@@ -14,7 +14,7 @@ public:
     static CSSScopeRule take_ownership(Handle h) noexcept;
 
     CSSScopeRule clone() const noexcept;
-    jsbind::CSSOMString start() const;
-    jsbind::CSSOMString end() const;
+    jsbind::String start() const;
+    jsbind::String end() const;
 };
 

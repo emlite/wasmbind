@@ -13,7 +13,7 @@ public:
     static Lock take_ownership(Handle h) noexcept;
 
     Lock clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     LockMode mode() const;
 };
 

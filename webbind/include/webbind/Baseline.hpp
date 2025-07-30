@@ -13,7 +13,7 @@ public:
     static Baseline take_ownership(Handle h) noexcept;
 
     Baseline clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     double value() const;
 };
 

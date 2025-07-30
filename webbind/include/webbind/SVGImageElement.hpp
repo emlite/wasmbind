@@ -23,8 +23,8 @@ public:
     SVGAnimatedLength width() const;
     SVGAnimatedLength height() const;
     SVGAnimatedPreserveAspectRatio preserveAspectRatio() const;
-    jsbind::DOMString crossOrigin() const;
-    void crossOrigin(const jsbind::DOMString& value);
+    jsbind::String crossOrigin() const;
+    void crossOrigin(const jsbind::String& value);
     SVGAnimatedString href() const;
 };
 

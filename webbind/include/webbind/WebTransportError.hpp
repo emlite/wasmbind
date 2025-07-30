@@ -15,8 +15,8 @@ public:
 
     WebTransportError clone() const noexcept;
     WebTransportError();
-    WebTransportError(const jsbind::DOMString& message);
-    WebTransportError(const jsbind::DOMString& message, const jsbind::Any& options);
+    WebTransportError(const jsbind::String& message);
+    WebTransportError(const jsbind::String& message, const jsbind::Any& options);
     WebTransportErrorSource source() const;
     unsigned long streamErrorCode() const;
 };

@@ -14,15 +14,15 @@ public:
 
     ContactAddress clone() const noexcept;
     jsbind::Object toJSON();
-    jsbind::DOMString city() const;
-    jsbind::DOMString country() const;
-    jsbind::DOMString dependentLocality() const;
-    jsbind::DOMString organization() const;
-    jsbind::DOMString phone() const;
-    jsbind::DOMString postalCode() const;
-    jsbind::DOMString recipient() const;
-    jsbind::DOMString region() const;
-    jsbind::DOMString sortingCode() const;
-    jsbind::FrozenArray<jsbind::DOMString> addressLine() const;
+    jsbind::String city() const;
+    jsbind::String country() const;
+    jsbind::String dependentLocality() const;
+    jsbind::String organization() const;
+    jsbind::String phone() const;
+    jsbind::String postalCode() const;
+    jsbind::String recipient() const;
+    jsbind::String region() const;
+    jsbind::String sortingCode() const;
+    jsbind::TypedArray<jsbind::String> addressLine() const;
 };
 

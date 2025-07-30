@@ -9,11 +9,11 @@ CSSContainerRule::CSSContainerRule(Handle h) noexcept : CSSConditionRule(emlite:
 CSSContainerRule::CSSContainerRule(const emlite::Val &val) noexcept: CSSConditionRule(val) {}
 
 
-jsbind::CSSOMString CSSContainerRule::containerName() const {
-    return CSSConditionRule::get("containerName").as<jsbind::CSSOMString>();
+jsbind::String CSSContainerRule::containerName() const {
+    return CSSConditionRule::get("containerName").as<jsbind::String>();
 }
 
-jsbind::CSSOMString CSSContainerRule::containerQuery() const {
-    return CSSConditionRule::get("containerQuery").as<jsbind::CSSOMString>();
+jsbind::String CSSContainerRule::containerQuery() const {
+    return CSSConditionRule::get("containerQuery").as<jsbind::String>();
 }
 

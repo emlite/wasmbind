@@ -17,6 +17,6 @@ public:
     Crypto clone() const noexcept;
     SubtleCrypto subtle() const;
     jsbind::Any getRandomValues(const jsbind::Any& array);
-    jsbind::DOMString randomUUID();
+    jsbind::String randomUUID();
 };
 

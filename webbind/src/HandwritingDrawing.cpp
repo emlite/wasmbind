@@ -10,19 +10,19 @@ HandwritingPrediction::HandwritingPrediction(const emlite::Val &val) noexcept: e
 HandwritingPrediction::HandwritingPrediction() noexcept: emlite::Val(emlite::Val::object()) {}
 HandwritingPrediction HandwritingPrediction::clone() const noexcept { return *this; }
 
-jsbind::DOMString HandwritingPrediction::text() const {
-    return emlite::Val::get("text").as<jsbind::DOMString>();
+jsbind::String HandwritingPrediction::text() const {
+    return emlite::Val::get("text").as<jsbind::String>();
 }
 
-void HandwritingPrediction::text(const jsbind::DOMString& value) {
+void HandwritingPrediction::text(const jsbind::String& value) {
     emlite::Val::set("text", value);
 }
 
-jsbind::Sequence<jsbind::Any> HandwritingPrediction::segmentationResult() const {
-    return emlite::Val::get("segmentationResult").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> HandwritingPrediction::segmentationResult() const {
+    return emlite::Val::get("segmentationResult").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void HandwritingPrediction::segmentationResult(const jsbind::Sequence<jsbind::Any>& value) {
+void HandwritingPrediction::segmentationResult(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("segmentationResult", value);
 }
 
@@ -46,11 +46,11 @@ jsbind::Undefined HandwritingDrawing::clear() {
     return emlite::Val::call("clear").as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<HandwritingStroke> HandwritingDrawing::getStrokes() {
-    return emlite::Val::call("getStrokes").as<jsbind::Sequence<HandwritingStroke>>();
+jsbind::TypedArray<HandwritingStroke> HandwritingDrawing::getStrokes() {
+    return emlite::Val::call("getStrokes").as<jsbind::TypedArray<HandwritingStroke>>();
 }
 
-jsbind::Promise<jsbind::Sequence<HandwritingPrediction>> HandwritingDrawing::getPrediction() {
-    return emlite::Val::call("getPrediction").as<jsbind::Promise<jsbind::Sequence<HandwritingPrediction>>>();
+jsbind::Promise<jsbind::TypedArray<HandwritingPrediction>> HandwritingDrawing::getPrediction() {
+    return emlite::Val::call("getPrediction").as<jsbind::Promise<jsbind::TypedArray<HandwritingPrediction>>>();
 }
 

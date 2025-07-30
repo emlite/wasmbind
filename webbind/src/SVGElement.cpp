@@ -70,11 +70,11 @@ DOMStringMap SVGElement::dataset() const {
     return Element::get("dataset").as<DOMStringMap>();
 }
 
-jsbind::DOMString SVGElement::nonce() const {
-    return Element::get("nonce").as<jsbind::DOMString>();
+jsbind::String SVGElement::nonce() const {
+    return Element::get("nonce").as<jsbind::String>();
 }
 
-void SVGElement::nonce(const jsbind::DOMString& value) {
+void SVGElement::nonce(const jsbind::String& value) {
     Element::set("nonce", value);
 }
 

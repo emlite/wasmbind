@@ -14,7 +14,7 @@ public:
     static SharedWorkerGlobalScope take_ownership(Handle h) noexcept;
 
     SharedWorkerGlobalScope clone() const noexcept;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
     jsbind::Undefined close();
     jsbind::Any onconnect() const;
     void onconnect(const jsbind::Any& value);

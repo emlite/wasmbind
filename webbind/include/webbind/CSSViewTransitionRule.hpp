@@ -14,7 +14,7 @@ public:
     static CSSViewTransitionRule take_ownership(Handle h) noexcept;
 
     CSSViewTransitionRule clone() const noexcept;
-    jsbind::CSSOMString navigation() const;
-    jsbind::FrozenArray<jsbind::CSSOMString> types() const;
+    jsbind::String navigation() const;
+    jsbind::TypedArray<jsbind::String> types() const;
 };
 

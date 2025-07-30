@@ -15,9 +15,9 @@ public:
     static StylePropertyMapReadOnly take_ownership(Handle h) noexcept;
 
     StylePropertyMapReadOnly clone() const noexcept;
-    jsbind::Any get(const jsbind::USVString& property);
-    jsbind::Sequence<CSSStyleValue> getAll(const jsbind::USVString& property);
-    bool has(const jsbind::USVString& property);
+    jsbind::Any get(const jsbind::String& property);
+    jsbind::TypedArray<CSSStyleValue> getAll(const jsbind::String& property);
+    bool has(const jsbind::String& property);
     unsigned long size() const;
 };
 

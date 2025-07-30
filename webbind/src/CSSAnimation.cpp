@@ -9,7 +9,7 @@ CSSAnimation::CSSAnimation(Handle h) noexcept : Animation(emlite::Val::take_owne
 CSSAnimation::CSSAnimation(const emlite::Val &val) noexcept: Animation(val) {}
 
 
-jsbind::CSSOMString CSSAnimation::animationName() const {
-    return Animation::get("animationName").as<jsbind::CSSOMString>();
+jsbind::String CSSAnimation::animationName() const {
+    return Animation::get("animationName").as<jsbind::String>();
 }
 

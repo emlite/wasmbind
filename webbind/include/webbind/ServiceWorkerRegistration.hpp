@@ -30,18 +30,18 @@ public:
     NotificationOptions clone() const noexcept;
     NotificationDirection dir() const;
     void dir(const NotificationDirection& value);
-    jsbind::DOMString lang() const;
-    void lang(const jsbind::DOMString& value);
-    jsbind::DOMString body() const;
-    void body(const jsbind::DOMString& value);
-    jsbind::DOMString tag() const;
-    void tag(const jsbind::DOMString& value);
-    jsbind::USVString image() const;
-    void image(const jsbind::USVString& value);
-    jsbind::USVString icon() const;
-    void icon(const jsbind::USVString& value);
-    jsbind::USVString badge() const;
-    void badge(const jsbind::USVString& value);
+    jsbind::String lang() const;
+    void lang(const jsbind::String& value);
+    jsbind::String body() const;
+    void body(const jsbind::String& value);
+    jsbind::String tag() const;
+    void tag(const jsbind::String& value);
+    jsbind::String image() const;
+    void image(const jsbind::String& value);
+    jsbind::String icon() const;
+    void icon(const jsbind::String& value);
+    jsbind::String badge() const;
+    void badge(const jsbind::String& value);
     jsbind::Any vibrate() const;
     void vibrate(const jsbind::Any& value);
     jsbind::Any timestamp() const;
@@ -54,8 +54,8 @@ public:
     void requireInteraction(bool value);
     jsbind::Any data() const;
     void data(const jsbind::Any& value);
-    jsbind::Sequence<NotificationAction> actions() const;
-    void actions(const jsbind::Sequence<NotificationAction>& value);
+    jsbind::TypedArray<NotificationAction> actions() const;
+    void actions(const jsbind::TypedArray<NotificationAction>& value);
 };
 
 class GetNotificationOptions : public emlite::Val {
@@ -65,8 +65,8 @@ public:
     explicit GetNotificationOptions(const emlite::Val &val) noexcept;
     GetNotificationOptions() noexcept;
     GetNotificationOptions clone() const noexcept;
-    jsbind::DOMString tag() const;
-    void tag(const jsbind::DOMString& value);
+    jsbind::String tag() const;
+    void tag(const jsbind::String& value);
 };
 
 class ServiceWorkerRegistration : public EventTarget {
@@ -81,7 +81,7 @@ public:
     ServiceWorker waiting() const;
     ServiceWorker active() const;
     NavigationPreloadManager navigationPreload() const;
-    jsbind::USVString scope() const;
+    jsbind::String scope() const;
     ServiceWorkerUpdateViaCache updateViaCache() const;
     jsbind::Promise<ServiceWorkerRegistration> update();
     jsbind::Promise<bool> unregister();
@@ -91,10 +91,10 @@ public:
     SyncManager sync() const;
     ContentIndex index() const;
     CookieStoreManager cookies() const;
-    jsbind::Promise<jsbind::Undefined> showNotification(const jsbind::DOMString& title);
-    jsbind::Promise<jsbind::Undefined> showNotification(const jsbind::DOMString& title, const NotificationOptions& options);
-    jsbind::Promise<jsbind::Sequence<Notification>> getNotifications();
-    jsbind::Promise<jsbind::Sequence<Notification>> getNotifications(const GetNotificationOptions& filter);
+    jsbind::Promise<jsbind::Undefined> showNotification(const jsbind::String& title);
+    jsbind::Promise<jsbind::Undefined> showNotification(const jsbind::String& title, const NotificationOptions& options);
+    jsbind::Promise<jsbind::TypedArray<Notification>> getNotifications();
+    jsbind::Promise<jsbind::TypedArray<Notification>> getNotifications(const GetNotificationOptions& filter);
     PaymentManager paymentManager() const;
     PeriodicSyncManager periodicSync() const;
     PushManager pushManager() const;

@@ -9,40 +9,40 @@ SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(Handle h) noexcept : 
 SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type)) {}
+SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::String& type) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type)) {}
 
-SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type, eventInitDict)) {}
+SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type, eventInitDict)) {}
 
-jsbind::USVString SecurityPolicyViolationEvent::documentURI() const {
-    return Event::get("documentURI").as<jsbind::USVString>();
+jsbind::String SecurityPolicyViolationEvent::documentURI() const {
+    return Event::get("documentURI").as<jsbind::String>();
 }
 
-jsbind::USVString SecurityPolicyViolationEvent::referrer() const {
-    return Event::get("referrer").as<jsbind::USVString>();
+jsbind::String SecurityPolicyViolationEvent::referrer() const {
+    return Event::get("referrer").as<jsbind::String>();
 }
 
-jsbind::USVString SecurityPolicyViolationEvent::blockedURI() const {
-    return Event::get("blockedURI").as<jsbind::USVString>();
+jsbind::String SecurityPolicyViolationEvent::blockedURI() const {
+    return Event::get("blockedURI").as<jsbind::String>();
 }
 
-jsbind::DOMString SecurityPolicyViolationEvent::effectiveDirective() const {
-    return Event::get("effectiveDirective").as<jsbind::DOMString>();
+jsbind::String SecurityPolicyViolationEvent::effectiveDirective() const {
+    return Event::get("effectiveDirective").as<jsbind::String>();
 }
 
-jsbind::DOMString SecurityPolicyViolationEvent::violatedDirective() const {
-    return Event::get("violatedDirective").as<jsbind::DOMString>();
+jsbind::String SecurityPolicyViolationEvent::violatedDirective() const {
+    return Event::get("violatedDirective").as<jsbind::String>();
 }
 
-jsbind::DOMString SecurityPolicyViolationEvent::originalPolicy() const {
-    return Event::get("originalPolicy").as<jsbind::DOMString>();
+jsbind::String SecurityPolicyViolationEvent::originalPolicy() const {
+    return Event::get("originalPolicy").as<jsbind::String>();
 }
 
-jsbind::USVString SecurityPolicyViolationEvent::sourceFile() const {
-    return Event::get("sourceFile").as<jsbind::USVString>();
+jsbind::String SecurityPolicyViolationEvent::sourceFile() const {
+    return Event::get("sourceFile").as<jsbind::String>();
 }
 
-jsbind::DOMString SecurityPolicyViolationEvent::sample() const {
-    return Event::get("sample").as<jsbind::DOMString>();
+jsbind::String SecurityPolicyViolationEvent::sample() const {
+    return Event::get("sample").as<jsbind::String>();
 }
 
 SecurityPolicyViolationEventDisposition SecurityPolicyViolationEvent::disposition() const {

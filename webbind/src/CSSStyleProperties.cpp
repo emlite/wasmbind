@@ -9,11 +9,11 @@ CSSStyleProperties::CSSStyleProperties(Handle h) noexcept : CSSStyleDeclaration(
 CSSStyleProperties::CSSStyleProperties(const emlite::Val &val) noexcept: CSSStyleDeclaration(val) {}
 
 
-jsbind::CSSOMString CSSStyleProperties::cssFloat() const {
-    return CSSStyleDeclaration::get("cssFloat").as<jsbind::CSSOMString>();
+jsbind::String CSSStyleProperties::cssFloat() const {
+    return CSSStyleDeclaration::get("cssFloat").as<jsbind::String>();
 }
 
-void CSSStyleProperties::cssFloat(const jsbind::CSSOMString& value) {
+void CSSStyleProperties::cssFloat(const jsbind::String& value) {
     CSSStyleDeclaration::set("cssFloat", value);
 }
 

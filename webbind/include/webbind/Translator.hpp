@@ -32,10 +32,10 @@ public:
     explicit TranslatorCreateCoreOptions(const emlite::Val &val) noexcept;
     TranslatorCreateCoreOptions() noexcept;
     TranslatorCreateCoreOptions clone() const noexcept;
-    jsbind::DOMString sourceLanguage() const;
-    void sourceLanguage(const jsbind::DOMString& value);
-    jsbind::DOMString targetLanguage() const;
-    void targetLanguage(const jsbind::DOMString& value);
+    jsbind::String sourceLanguage() const;
+    void sourceLanguage(const jsbind::String& value);
+    jsbind::String targetLanguage() const;
+    void targetLanguage(const jsbind::String& value);
 };
 
 class TranslatorTranslateOptions : public emlite::Val {
@@ -59,14 +59,14 @@ public:
     Translator clone() const noexcept;
     static jsbind::Promise<Translator> create(const TranslatorCreateOptions& options);
     static jsbind::Promise<Availability> availability(const TranslatorCreateCoreOptions& options);
-    jsbind::Promise<jsbind::DOMString> translate(const jsbind::DOMString& input);
-    jsbind::Promise<jsbind::DOMString> translate(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
-    ReadableStream translateStreaming(const jsbind::DOMString& input);
-    ReadableStream translateStreaming(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
-    jsbind::DOMString sourceLanguage() const;
-    jsbind::DOMString targetLanguage() const;
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input);
-    jsbind::Promise<double> measureInputUsage(const jsbind::DOMString& input, const TranslatorTranslateOptions& options);
+    jsbind::Promise<jsbind::String> translate(const jsbind::String& input);
+    jsbind::Promise<jsbind::String> translate(const jsbind::String& input, const TranslatorTranslateOptions& options);
+    ReadableStream translateStreaming(const jsbind::String& input);
+    ReadableStream translateStreaming(const jsbind::String& input, const TranslatorTranslateOptions& options);
+    jsbind::String sourceLanguage() const;
+    jsbind::String targetLanguage() const;
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input);
+    jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const TranslatorTranslateOptions& options);
     double inputQuota() const;
     jsbind::Undefined destroy();
 };

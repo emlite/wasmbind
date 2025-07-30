@@ -23,8 +23,8 @@ DOMRectReadOnly PerformanceElementTiming::intersectionRect() const {
     return PerformanceEntry::get("intersectionRect").as<DOMRectReadOnly>();
 }
 
-jsbind::DOMString PerformanceElementTiming::identifier() const {
-    return PerformanceEntry::get("identifier").as<jsbind::DOMString>();
+jsbind::String PerformanceElementTiming::identifier() const {
+    return PerformanceEntry::get("identifier").as<jsbind::String>();
 }
 
 unsigned long PerformanceElementTiming::naturalWidth() const {
@@ -35,16 +35,16 @@ unsigned long PerformanceElementTiming::naturalHeight() const {
     return PerformanceEntry::get("naturalHeight").as<unsigned long>();
 }
 
-jsbind::DOMString PerformanceElementTiming::id() const {
-    return PerformanceEntry::get("id").as<jsbind::DOMString>();
+jsbind::String PerformanceElementTiming::id() const {
+    return PerformanceEntry::get("id").as<jsbind::String>();
 }
 
 Element PerformanceElementTiming::element() const {
     return PerformanceEntry::get("element").as<Element>();
 }
 
-jsbind::USVString PerformanceElementTiming::url() const {
-    return PerformanceEntry::get("url").as<jsbind::USVString>();
+jsbind::String PerformanceElementTiming::url() const {
+    return PerformanceEntry::get("url").as<jsbind::String>();
 }
 
 jsbind::Object PerformanceElementTiming::toJSON() {

@@ -56,8 +56,8 @@ public:
     WebTransportCloseInfo clone() const noexcept;
     unsigned long closeCode() const;
     void closeCode(unsigned long value);
-    jsbind::USVString reason() const;
-    void reason(const jsbind::USVString& value);
+    jsbind::String reason() const;
+    void reason(const jsbind::String& value);
 };
 
 class WebTransportSendStreamOptions : public emlite::Val {
@@ -79,8 +79,8 @@ public:
     static WebTransport take_ownership(Handle h) noexcept;
 
     WebTransport clone() const noexcept;
-    WebTransport(const jsbind::USVString& url);
-    WebTransport(const jsbind::USVString& url, const jsbind::Any& options);
+    WebTransport(const jsbind::String& url);
+    WebTransport(const jsbind::String& url, const jsbind::Any& options);
     jsbind::Promise<WebTransportConnectionStats> getStats();
     jsbind::Promise<jsbind::ArrayBuffer> exportKeyingMaterial(const jsbind::Any& label);
     jsbind::Promise<jsbind::ArrayBuffer> exportKeyingMaterial(const jsbind::Any& label, const jsbind::Any& context);
@@ -91,7 +91,7 @@ public:
     void anticipatedConcurrentIncomingUnidirectionalStreams(unsigned short value);
     unsigned short anticipatedConcurrentIncomingBidirectionalStreams() const;
     void anticipatedConcurrentIncomingBidirectionalStreams(unsigned short value);
-    jsbind::DOMString protocol() const;
+    jsbind::String protocol() const;
     jsbind::Promise<WebTransportCloseInfo> closed() const;
     jsbind::Promise<jsbind::Undefined> draining() const;
     jsbind::Undefined close();

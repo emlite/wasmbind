@@ -31,7 +31,7 @@ XRWebGLLayer XRRenderState::baseLayer() const {
     return emlite::Val::get("baseLayer").as<XRWebGLLayer>();
 }
 
-jsbind::FrozenArray<XRLayer> XRRenderState::layers() const {
-    return emlite::Val::get("layers").as<jsbind::FrozenArray<XRLayer>>();
+jsbind::TypedArray<XRLayer> XRRenderState::layers() const {
+    return emlite::Val::get("layers").as<jsbind::TypedArray<XRLayer>>();
 }
 

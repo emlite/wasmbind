@@ -9,11 +9,11 @@ GPUBindGroup::GPUBindGroup(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 GPUBindGroup::GPUBindGroup(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPUBindGroup::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUBindGroup::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUBindGroup::label(const jsbind::USVString& value) {
+void GPUBindGroup::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

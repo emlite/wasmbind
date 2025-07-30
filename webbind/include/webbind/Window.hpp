@@ -50,8 +50,8 @@ public:
     explicit WindowPostMessageOptions(const emlite::Val &val) noexcept;
     WindowPostMessageOptions() noexcept;
     WindowPostMessageOptions clone() const noexcept;
-    jsbind::USVString targetOrigin() const;
-    void targetOrigin(const jsbind::USVString& value);
+    jsbind::String targetOrigin() const;
+    void targetOrigin(const jsbind::String& value);
 };
 
 class OpenFilePickerOptions : public emlite::Val {
@@ -72,8 +72,8 @@ public:
     explicit SaveFilePickerOptions(const emlite::Val &val) noexcept;
     SaveFilePickerOptions() noexcept;
     SaveFilePickerOptions clone() const noexcept;
-    jsbind::USVString suggestedName() const;
-    void suggestedName(const jsbind::USVString& value);
+    jsbind::String suggestedName() const;
+    void suggestedName(const jsbind::String& value);
 };
 
 class DirectoryPickerOptions : public emlite::Val {
@@ -83,8 +83,8 @@ public:
     explicit DirectoryPickerOptions(const emlite::Val &val) noexcept;
     DirectoryPickerOptions() noexcept;
     DirectoryPickerOptions clone() const noexcept;
-    jsbind::DOMString id() const;
-    void id(const jsbind::DOMString& value);
+    jsbind::String id() const;
+    void id(const jsbind::String& value);
     jsbind::Any startIn() const;
     void startIn(const jsbind::Any& value);
     FileSystemPermissionMode mode() const;
@@ -98,8 +98,8 @@ public:
     explicit QueryOptions(const emlite::Val &val) noexcept;
     QueryOptions() noexcept;
     QueryOptions clone() const noexcept;
-    jsbind::Sequence<jsbind::DOMString> postscriptNames() const;
-    void postscriptNames(const jsbind::Sequence<jsbind::DOMString>& value);
+    jsbind::TypedArray<jsbind::String> postscriptNames() const;
+    void postscriptNames(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class IdleRequestOptions : public emlite::Val {
@@ -124,8 +124,8 @@ public:
     jsbind::Any window() const;
     jsbind::Any self() const;
     Document document() const;
-    jsbind::DOMString name() const;
-    void name(const jsbind::DOMString& value);
+    jsbind::String name() const;
+    void name(const jsbind::String& value);
     jsbind::Any location() const;
     History history() const;
     Navigation navigation() const;
@@ -136,8 +136,8 @@ public:
     BarProp scrollbars() const;
     BarProp statusbar() const;
     BarProp toolbar() const;
-    jsbind::DOMString status() const;
-    void status(const jsbind::DOMString& value);
+    jsbind::String status() const;
+    void status(const jsbind::String& value);
     jsbind::Undefined close();
     bool closed() const;
     jsbind::Undefined stop();
@@ -151,18 +151,18 @@ public:
     jsbind::Any parent() const;
     Element frameElement() const;
     jsbind::Any open();
-    jsbind::Any open(const jsbind::USVString& url);
-    jsbind::Any open(const jsbind::USVString& url, const jsbind::DOMString& target);
-    jsbind::Any open(const jsbind::USVString& url, const jsbind::DOMString& target, const jsbind::DOMString& features);
+    jsbind::Any open(const jsbind::String& url);
+    jsbind::Any open(const jsbind::String& url, const jsbind::String& target);
+    jsbind::Any open(const jsbind::String& url, const jsbind::String& target, const jsbind::String& features);
     Navigator navigator() const;
     Navigator clientInformation() const;
     bool originAgentCluster() const;
-    jsbind::Undefined alert(const jsbind::DOMString& message);
+    jsbind::Undefined alert(const jsbind::String& message);
     bool confirm();
-    bool confirm(const jsbind::DOMString& message);
-    jsbind::DOMString prompt();
-    jsbind::DOMString prompt(const jsbind::DOMString& message);
-    jsbind::DOMString prompt(const jsbind::DOMString& message, const jsbind::DOMString& default_);
+    bool confirm(const jsbind::String& message);
+    jsbind::String prompt();
+    jsbind::String prompt(const jsbind::String& message);
+    jsbind::String prompt(const jsbind::String& message, const jsbind::String& default_);
     jsbind::Undefined print();
     jsbind::Undefined postMessage(const jsbind::Any& message);
     jsbind::Undefined postMessage(const jsbind::Any& message, const WindowPostMessageOptions& options);
@@ -173,7 +173,7 @@ public:
     CookieStore cookieStore() const;
     jsbind::Undefined navigate(const SpatialNavigationDirection& dir);
     Viewport viewport() const;
-    MediaQueryList matchMedia(const jsbind::CSSOMString& query);
+    MediaQueryList matchMedia(const jsbind::String& query);
     Screen screen() const;
     VisualViewport visualViewport() const;
     jsbind::Undefined moveTo(long x, long y);
@@ -197,13 +197,13 @@ public:
     long outerHeight() const;
     double devicePixelRatio() const;
     CSSStyleDeclaration getComputedStyle(const Element& elt);
-    CSSStyleDeclaration getComputedStyle(const Element& elt, const jsbind::CSSOMString& pseudoElt);
-    jsbind::Promise<DigitalGoodsService> getDigitalGoodsService(const jsbind::DOMString& serviceProvider);
+    CSSStyleDeclaration getComputedStyle(const Element& elt, const jsbind::String& pseudoElt);
+    jsbind::Promise<DigitalGoodsService> getDigitalGoodsService(const jsbind::String& serviceProvider);
     DocumentPictureInPicture documentPictureInPicture() const;
     jsbind::Any event() const;
     Fence fence() const;
-    jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>> showOpenFilePicker();
-    jsbind::Promise<jsbind::Sequence<FileSystemFileHandle>> showOpenFilePicker(const OpenFilePickerOptions& options);
+    jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>> showOpenFilePicker();
+    jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>> showOpenFilePicker(const OpenFilePickerOptions& options);
     jsbind::Promise<FileSystemFileHandle> showSaveFilePicker();
     jsbind::Promise<FileSystemFileHandle> showSaveFilePicker(const SaveFilePickerOptions& options);
     jsbind::Promise<FileSystemDirectoryHandle> showDirectoryPicker();
@@ -211,8 +211,8 @@ public:
     jsbind::Undefined captureEvents();
     jsbind::Undefined releaseEvents();
     External external() const;
-    jsbind::Promise<jsbind::Sequence<FontData>> queryLocalFonts();
-    jsbind::Promise<jsbind::Sequence<FontData>> queryLocalFonts(const QueryOptions& options);
+    jsbind::Promise<jsbind::TypedArray<FontData>> queryLocalFonts();
+    jsbind::Promise<jsbind::TypedArray<FontData>> queryLocalFonts(const QueryOptions& options);
     jsbind::Any onappinstalled() const;
     void onappinstalled(const jsbind::Any& value);
     jsbind::Any onbeforeinstallprompt() const;

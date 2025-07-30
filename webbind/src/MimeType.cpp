@@ -10,16 +10,16 @@ MimeType::MimeType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(
 MimeType::MimeType(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString MimeType::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String MimeType::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-jsbind::DOMString MimeType::description() const {
-    return emlite::Val::get("description").as<jsbind::DOMString>();
+jsbind::String MimeType::description() const {
+    return emlite::Val::get("description").as<jsbind::String>();
 }
 
-jsbind::DOMString MimeType::suffixes() const {
-    return emlite::Val::get("suffixes").as<jsbind::DOMString>();
+jsbind::String MimeType::suffixes() const {
+    return emlite::Val::get("suffixes").as<jsbind::String>();
 }
 
 Plugin MimeType::enabledPlugin() const {

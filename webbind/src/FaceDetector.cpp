@@ -18,11 +18,11 @@ void DetectedFace::boundingBox(const DOMRectReadOnly& value) {
     emlite::Val::set("boundingBox", value);
 }
 
-jsbind::Sequence<jsbind::Any> DetectedFace::landmarks() const {
-    return emlite::Val::get("landmarks").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> DetectedFace::landmarks() const {
+    return emlite::Val::get("landmarks").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void DetectedFace::landmarks(const jsbind::Sequence<jsbind::Any>& value) {
+void DetectedFace::landmarks(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("landmarks", value);
 }
 
@@ -38,7 +38,7 @@ FaceDetector::FaceDetector() : emlite::Val(emlite::Val::global("FaceDetector").n
 
 FaceDetector::FaceDetector(const jsbind::Any& faceDetectorOptions) : emlite::Val(emlite::Val::global("FaceDetector").new_(faceDetectorOptions)) {}
 
-jsbind::Promise<jsbind::Sequence<DetectedFace>> FaceDetector::detect(const jsbind::Any& image) {
-    return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::Sequence<DetectedFace>>>();
+jsbind::Promise<jsbind::TypedArray<DetectedFace>> FaceDetector::detect(const jsbind::Any& image) {
+    return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::TypedArray<DetectedFace>>>();
 }
 

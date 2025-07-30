@@ -10,7 +10,7 @@ HIDConnectionEvent::HIDConnectionEvent(Handle h) noexcept : Event(emlite::Val::t
 HIDConnectionEvent::HIDConnectionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-HIDConnectionEvent::HIDConnectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("HIDConnectionEvent").new_(type, eventInitDict)) {}
+HIDConnectionEvent::HIDConnectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("HIDConnectionEvent").new_(type, eventInitDict)) {}
 
 HIDDevice HIDConnectionEvent::device() const {
     return Event::get("device").as<HIDDevice>();

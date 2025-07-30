@@ -11,19 +11,19 @@ HTMLHRElement::HTMLHRElement(const emlite::Val &val) noexcept: HTMLElement(val) 
 
 HTMLHRElement::HTMLHRElement() : HTMLElement(emlite::Val::global("HTMLHRElement").new_()) {}
 
-jsbind::DOMString HTMLHRElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLHRElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLHRElement::align(const jsbind::DOMString& value) {
+void HTMLHRElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
-jsbind::DOMString HTMLHRElement::color() const {
-    return HTMLElement::get("color").as<jsbind::DOMString>();
+jsbind::String HTMLHRElement::color() const {
+    return HTMLElement::get("color").as<jsbind::String>();
 }
 
-void HTMLHRElement::color(const jsbind::DOMString& value) {
+void HTMLHRElement::color(const jsbind::String& value) {
     HTMLElement::set("color", value);
 }
 
@@ -35,19 +35,19 @@ void HTMLHRElement::noShade(bool value) {
     HTMLElement::set("noShade", value);
 }
 
-jsbind::DOMString HTMLHRElement::size() const {
-    return HTMLElement::get("size").as<jsbind::DOMString>();
+jsbind::String HTMLHRElement::size() const {
+    return HTMLElement::get("size").as<jsbind::String>();
 }
 
-void HTMLHRElement::size(const jsbind::DOMString& value) {
+void HTMLHRElement::size(const jsbind::String& value) {
     HTMLElement::set("size", value);
 }
 
-jsbind::DOMString HTMLHRElement::width() const {
-    return HTMLElement::get("width").as<jsbind::DOMString>();
+jsbind::String HTMLHRElement::width() const {
+    return HTMLElement::get("width").as<jsbind::String>();
 }
 
-void HTMLHRElement::width(const jsbind::DOMString& value) {
+void HTMLHRElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 

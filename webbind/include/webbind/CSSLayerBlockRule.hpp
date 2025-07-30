@@ -14,6 +14,6 @@ public:
     static CSSLayerBlockRule take_ownership(Handle h) noexcept;
 
     CSSLayerBlockRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
+    jsbind::String name() const;
 };
 

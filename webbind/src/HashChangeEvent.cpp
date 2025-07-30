@@ -9,15 +9,15 @@ HashChangeEvent::HashChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ow
 HashChangeEvent::HashChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-HashChangeEvent::HashChangeEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("HashChangeEvent").new_(type)) {}
+HashChangeEvent::HashChangeEvent(const jsbind::String& type) : Event(emlite::Val::global("HashChangeEvent").new_(type)) {}
 
-HashChangeEvent::HashChangeEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("HashChangeEvent").new_(type, eventInitDict)) {}
+HashChangeEvent::HashChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("HashChangeEvent").new_(type, eventInitDict)) {}
 
-jsbind::USVString HashChangeEvent::oldURL() const {
-    return Event::get("oldURL").as<jsbind::USVString>();
+jsbind::String HashChangeEvent::oldURL() const {
+    return Event::get("oldURL").as<jsbind::String>();
 }
 
-jsbind::USVString HashChangeEvent::newURL() const {
-    return Event::get("newURL").as<jsbind::USVString>();
+jsbind::String HashChangeEvent::newURL() const {
+    return Event::get("newURL").as<jsbind::String>();
 }
 

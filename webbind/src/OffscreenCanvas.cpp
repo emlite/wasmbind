@@ -11,11 +11,11 @@ ImageEncodeOptions::ImageEncodeOptions(const emlite::Val &val) noexcept: emlite:
 ImageEncodeOptions::ImageEncodeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 ImageEncodeOptions ImageEncodeOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString ImageEncodeOptions::type() const {
-    return emlite::Val::get("type").as<jsbind::DOMString>();
+jsbind::String ImageEncodeOptions::type() const {
+    return emlite::Val::get("type").as<jsbind::String>();
 }
 
-void ImageEncodeOptions::type(const jsbind::DOMString& value) {
+void ImageEncodeOptions::type(const jsbind::String& value) {
     emlite::Val::set("type", value);
 }
 

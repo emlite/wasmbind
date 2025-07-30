@@ -14,6 +14,6 @@ public:
     static AnimationWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     AnimationWorkletGlobalScope clone() const noexcept;
-    jsbind::Undefined registerAnimator(const jsbind::DOMString& name, const jsbind::Function& animatorCtor);
+    jsbind::Undefined registerAnimator(const jsbind::String& name, const jsbind::Function& animatorCtor);
 };
 

@@ -8,7 +8,7 @@
     "example": "examples"
   },
   "scripts": {
-    "cmake:config": "cmake -Bbin -GNinja -DCMAKE_BUILD_TYPE=MinSizeRel -DWASMBIND_BUILD_EXAMPLES=ON -DEMLITE_USE_DLMALLOC=ON -DCMAKE_TOOLCHAIN_FILE=./cmake/freestanding.cmake",
+    "cmake:config": "cmake -Bbin -GNinja -DCMAKE_BUILD_TYPE=MinSizeRel -DWASMBIND_BUILD_EXAMPLES=ON -DEMLITE_USE_DLMALLOC=ON -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_TOOLCHAIN_FILE=./cmake/freestanding.cmake",
     "cmake:build": "cmake --build bin",
     "regen": "node scripts/index.js",
     "test:all": "npm run regen && npm run cmake:config && npm run cmake:build",

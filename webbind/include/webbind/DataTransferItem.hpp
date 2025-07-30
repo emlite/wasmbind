@@ -17,8 +17,8 @@ public:
     static DataTransferItem take_ownership(Handle h) noexcept;
 
     DataTransferItem clone() const noexcept;
-    jsbind::DOMString kind() const;
-    jsbind::DOMString type() const;
+    jsbind::String kind() const;
+    jsbind::String type() const;
     jsbind::Undefined getAsString(const jsbind::Any& callback);
     File getAsFile();
     FileSystemEntry webkitGetAsEntry();

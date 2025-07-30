@@ -14,7 +14,7 @@ public:
     static CSSStyleProperties take_ownership(Handle h) noexcept;
 
     CSSStyleProperties clone() const noexcept;
-    jsbind::CSSOMString cssFloat() const;
-    void cssFloat(const jsbind::CSSOMString& value);
+    jsbind::String cssFloat() const;
+    void cssFloat(const jsbind::String& value);
 };
 

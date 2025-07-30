@@ -41,8 +41,8 @@ public:
     void imageHeight(const jsbind::Any& value);
     jsbind::Any imageWidth() const;
     void imageWidth(const jsbind::Any& value);
-    jsbind::Sequence<FillLightMode> fillLightMode() const;
-    void fillLightMode(const jsbind::Sequence<FillLightMode>& value);
+    jsbind::TypedArray<FillLightMode> fillLightMode() const;
+    void fillLightMode(const jsbind::TypedArray<FillLightMode>& value);
 };
 
 class ImageCapture : public emlite::Val {

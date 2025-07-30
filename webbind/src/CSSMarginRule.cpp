@@ -10,8 +10,8 @@ CSSMarginRule::CSSMarginRule(Handle h) noexcept : CSSRule(emlite::Val::take_owne
 CSSMarginRule::CSSMarginRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 
-jsbind::CSSOMString CSSMarginRule::name() const {
-    return CSSRule::get("name").as<jsbind::CSSOMString>();
+jsbind::String CSSMarginRule::name() const {
+    return CSSRule::get("name").as<jsbind::String>();
 }
 
 CSSStyleDeclaration CSSMarginRule::style() const {

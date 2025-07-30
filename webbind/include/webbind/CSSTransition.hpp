@@ -14,6 +14,6 @@ public:
     static CSSTransition take_ownership(Handle h) noexcept;
 
     CSSTransition clone() const noexcept;
-    jsbind::CSSOMString transitionProperty() const;
+    jsbind::String transitionProperty() const;
 };
 

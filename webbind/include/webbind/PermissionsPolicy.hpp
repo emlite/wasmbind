@@ -13,10 +13,10 @@ public:
     static PermissionsPolicy take_ownership(Handle h) noexcept;
 
     PermissionsPolicy clone() const noexcept;
-    bool allowsFeature(const jsbind::DOMString& feature);
-    bool allowsFeature(const jsbind::DOMString& feature, const jsbind::DOMString& origin);
-    jsbind::Sequence<jsbind::DOMString> features();
-    jsbind::Sequence<jsbind::DOMString> allowedFeatures();
-    jsbind::Sequence<jsbind::DOMString> getAllowlistForFeature(const jsbind::DOMString& feature);
+    bool allowsFeature(const jsbind::String& feature);
+    bool allowsFeature(const jsbind::String& feature, const jsbind::String& origin);
+    jsbind::TypedArray<jsbind::String> features();
+    jsbind::TypedArray<jsbind::String> allowedFeatures();
+    jsbind::TypedArray<jsbind::String> getAllowlistForFeature(const jsbind::String& feature);
 };
 

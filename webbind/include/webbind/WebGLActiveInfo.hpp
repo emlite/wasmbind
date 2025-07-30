@@ -15,6 +15,6 @@ public:
     WebGLActiveInfo clone() const noexcept;
     jsbind::Any size() const;
     jsbind::Any type() const;
-    jsbind::DOMString name() const;
+    jsbind::String name() const;
 };
 

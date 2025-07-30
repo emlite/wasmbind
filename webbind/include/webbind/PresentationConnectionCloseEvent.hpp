@@ -14,8 +14,8 @@ public:
     static PresentationConnectionCloseEvent take_ownership(Handle h) noexcept;
 
     PresentationConnectionCloseEvent clone() const noexcept;
-    PresentationConnectionCloseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    PresentationConnectionCloseEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     PresentationConnectionCloseReason reason() const;
-    jsbind::DOMString message() const;
+    jsbind::String message() const;
 };
 

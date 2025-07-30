@@ -17,15 +17,15 @@ public:
     HTMLTableColElement();
     unsigned long span() const;
     void span(unsigned long value);
-    jsbind::DOMString align() const;
-    void align(const jsbind::DOMString& value);
-    jsbind::DOMString ch() const;
-    void ch(const jsbind::DOMString& value);
-    jsbind::DOMString chOff() const;
-    void chOff(const jsbind::DOMString& value);
-    jsbind::DOMString vAlign() const;
-    void vAlign(const jsbind::DOMString& value);
-    jsbind::DOMString width() const;
-    void width(const jsbind::DOMString& value);
+    jsbind::String align() const;
+    void align(const jsbind::String& value);
+    jsbind::String ch() const;
+    void ch(const jsbind::String& value);
+    jsbind::String chOff() const;
+    void chOff(const jsbind::String& value);
+    jsbind::String vAlign() const;
+    void vAlign(const jsbind::String& value);
+    jsbind::String width() const;
+    void width(const jsbind::String& value);
 };
 

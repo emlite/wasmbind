@@ -10,11 +10,11 @@ USBPermissionResult::USBPermissionResult(Handle h) noexcept : PermissionStatus(e
 USBPermissionResult::USBPermissionResult(const emlite::Val &val) noexcept: PermissionStatus(val) {}
 
 
-jsbind::FrozenArray<USBDevice> USBPermissionResult::devices() const {
-    return PermissionStatus::get("devices").as<jsbind::FrozenArray<USBDevice>>();
+jsbind::TypedArray<USBDevice> USBPermissionResult::devices() const {
+    return PermissionStatus::get("devices").as<jsbind::TypedArray<USBDevice>>();
 }
 
-void USBPermissionResult::devices(const jsbind::FrozenArray<USBDevice>& value) {
+void USBPermissionResult::devices(const jsbind::TypedArray<USBDevice>& value) {
     PermissionStatus::set("devices", value);
 }
 

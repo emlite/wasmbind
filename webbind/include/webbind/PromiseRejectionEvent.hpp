@@ -14,7 +14,7 @@ public:
     static PromiseRejectionEvent take_ownership(Handle h) noexcept;
 
     PromiseRejectionEvent clone() const noexcept;
-    PromiseRejectionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    PromiseRejectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     jsbind::Object promise() const;
     jsbind::Any reason() const;
 };

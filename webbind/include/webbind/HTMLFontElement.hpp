@@ -15,11 +15,11 @@ public:
 
     HTMLFontElement clone() const noexcept;
     HTMLFontElement();
-    jsbind::DOMString color() const;
-    void color(const jsbind::DOMString& value);
-    jsbind::DOMString face() const;
-    void face(const jsbind::DOMString& value);
-    jsbind::DOMString size() const;
-    void size(const jsbind::DOMString& value);
+    jsbind::String color() const;
+    void color(const jsbind::String& value);
+    jsbind::String face() const;
+    void face(const jsbind::String& value);
+    jsbind::String size() const;
+    void size(const jsbind::String& value);
 };
 

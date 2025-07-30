@@ -14,7 +14,7 @@ public:
     static ContentIndexEvent take_ownership(Handle h) noexcept;
 
     ContentIndexEvent clone() const noexcept;
-    ContentIndexEvent(const jsbind::DOMString& type, const jsbind::Any& init);
-    jsbind::DOMString id() const;
+    ContentIndexEvent(const jsbind::String& type, const jsbind::Any& init);
+    jsbind::String id() const;
 };
 

@@ -9,11 +9,11 @@ GPUSampler::GPUSampler(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 GPUSampler::GPUSampler(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::USVString GPUSampler::label() const {
-    return emlite::Val::get("label").as<jsbind::USVString>();
+jsbind::String GPUSampler::label() const {
+    return emlite::Val::get("label").as<jsbind::String>();
 }
 
-void GPUSampler::label(const jsbind::USVString& value) {
+void GPUSampler::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 

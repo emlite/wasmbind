@@ -13,6 +13,6 @@ public:
     static CSSFontFeatureValuesMap take_ownership(Handle h) noexcept;
 
     CSSFontFeatureValuesMap clone() const noexcept;
-    jsbind::Undefined set(const jsbind::CSSOMString& featureValueName, const jsbind::Any& values);
+    jsbind::Undefined set(const jsbind::String& featureValueName, const jsbind::Any& values);
 };
 

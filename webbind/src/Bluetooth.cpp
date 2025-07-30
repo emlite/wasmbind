@@ -11,35 +11,35 @@ RequestDeviceOptions::RequestDeviceOptions(const emlite::Val &val) noexcept: eml
 RequestDeviceOptions::RequestDeviceOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 RequestDeviceOptions RequestDeviceOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> RequestDeviceOptions::filters() const {
-    return emlite::Val::get("filters").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RequestDeviceOptions::filters() const {
+    return emlite::Val::get("filters").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RequestDeviceOptions::filters(const jsbind::Sequence<jsbind::Any>& value) {
+void RequestDeviceOptions::filters(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("filters", value);
 }
 
-jsbind::Sequence<jsbind::Any> RequestDeviceOptions::exclusionFilters() const {
-    return emlite::Val::get("exclusionFilters").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RequestDeviceOptions::exclusionFilters() const {
+    return emlite::Val::get("exclusionFilters").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RequestDeviceOptions::exclusionFilters(const jsbind::Sequence<jsbind::Any>& value) {
+void RequestDeviceOptions::exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("exclusionFilters", value);
 }
 
-jsbind::Sequence<jsbind::Any> RequestDeviceOptions::optionalServices() const {
-    return emlite::Val::get("optionalServices").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RequestDeviceOptions::optionalServices() const {
+    return emlite::Val::get("optionalServices").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RequestDeviceOptions::optionalServices(const jsbind::Sequence<jsbind::Any>& value) {
+void RequestDeviceOptions::optionalServices(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("optionalServices", value);
 }
 
-jsbind::Sequence<unsigned short> RequestDeviceOptions::optionalManufacturerData() const {
-    return emlite::Val::get("optionalManufacturerData").as<jsbind::Sequence<unsigned short>>();
+jsbind::TypedArray<unsigned short> RequestDeviceOptions::optionalManufacturerData() const {
+    return emlite::Val::get("optionalManufacturerData").as<jsbind::TypedArray<unsigned short>>();
 }
 
-void RequestDeviceOptions::optionalManufacturerData(jsbind::Sequence<unsigned short> value) {
+void RequestDeviceOptions::optionalManufacturerData(jsbind::TypedArray<unsigned short> value) {
     emlite::Val::set("optionalManufacturerData", value);
 }
 
@@ -59,11 +59,11 @@ BluetoothLEScanOptions::BluetoothLEScanOptions(const emlite::Val &val) noexcept:
 BluetoothLEScanOptions::BluetoothLEScanOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 BluetoothLEScanOptions BluetoothLEScanOptions::clone() const noexcept { return *this; }
 
-jsbind::Sequence<jsbind::Any> BluetoothLEScanOptions::filters() const {
-    return emlite::Val::get("filters").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> BluetoothLEScanOptions::filters() const {
+    return emlite::Val::get("filters").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void BluetoothLEScanOptions::filters(const jsbind::Sequence<jsbind::Any>& value) {
+void BluetoothLEScanOptions::filters(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("filters", value);
 }
 
@@ -107,8 +107,8 @@ BluetoothDevice Bluetooth::referringDevice() const {
     return EventTarget::get("referringDevice").as<BluetoothDevice>();
 }
 
-jsbind::Promise<jsbind::Sequence<BluetoothDevice>> Bluetooth::getDevices() {
-    return EventTarget::call("getDevices").as<jsbind::Promise<jsbind::Sequence<BluetoothDevice>>>();
+jsbind::Promise<jsbind::TypedArray<BluetoothDevice>> Bluetooth::getDevices() {
+    return EventTarget::call("getDevices").as<jsbind::Promise<jsbind::TypedArray<BluetoothDevice>>>();
 }
 
 jsbind::Promise<BluetoothDevice> Bluetooth::requestDevice() {

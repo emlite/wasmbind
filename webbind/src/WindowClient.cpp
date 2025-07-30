@@ -17,15 +17,15 @@ bool WindowClient::focused() const {
     return Client::get("focused").as<bool>();
 }
 
-jsbind::FrozenArray<jsbind::USVString> WindowClient::ancestorOrigins() const {
-    return Client::get("ancestorOrigins").as<jsbind::FrozenArray<jsbind::USVString>>();
+jsbind::TypedArray<jsbind::String> WindowClient::ancestorOrigins() const {
+    return Client::get("ancestorOrigins").as<jsbind::TypedArray<jsbind::String>>();
 }
 
 jsbind::Promise<WindowClient> WindowClient::focus() {
     return Client::call("focus").as<jsbind::Promise<WindowClient>>();
 }
 
-jsbind::Promise<WindowClient> WindowClient::navigate(const jsbind::USVString& url) {
+jsbind::Promise<WindowClient> WindowClient::navigate(const jsbind::String& url) {
     return Client::call("navigate", url).as<jsbind::Promise<WindowClient>>();
 }
 

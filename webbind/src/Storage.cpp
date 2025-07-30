@@ -13,19 +13,19 @@ unsigned long Storage::length() const {
     return emlite::Val::get("length").as<unsigned long>();
 }
 
-jsbind::DOMString Storage::key(unsigned long index) {
-    return emlite::Val::call("key", index).as<jsbind::DOMString>();
+jsbind::String Storage::key(unsigned long index) {
+    return emlite::Val::call("key", index).as<jsbind::String>();
 }
 
-jsbind::DOMString Storage::getItem(const jsbind::DOMString& key) {
-    return emlite::Val::call("getItem", key).as<jsbind::DOMString>();
+jsbind::String Storage::getItem(const jsbind::String& key) {
+    return emlite::Val::call("getItem", key).as<jsbind::String>();
 }
 
-jsbind::Undefined Storage::setItem(const jsbind::DOMString& key, const jsbind::DOMString& value) {
+jsbind::Undefined Storage::setItem(const jsbind::String& key, const jsbind::String& value) {
     return emlite::Val::call("setItem", key, value).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined Storage::removeItem(const jsbind::DOMString& key) {
+jsbind::Undefined Storage::removeItem(const jsbind::String& key) {
     return emlite::Val::call("removeItem", key).as<jsbind::Undefined>();
 }
 

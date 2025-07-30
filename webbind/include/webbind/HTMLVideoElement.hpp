@@ -24,8 +24,8 @@ public:
     void height(unsigned long value);
     unsigned long videoWidth() const;
     unsigned long videoHeight() const;
-    jsbind::USVString poster() const;
-    void poster(const jsbind::USVString& value);
+    jsbind::String poster() const;
+    void poster(const jsbind::String& value);
     bool playsInline() const;
     void playsInline(bool value);
     VideoPlaybackQuality getVideoPlaybackQuality();

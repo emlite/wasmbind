@@ -14,7 +14,7 @@ unsigned long HTMLAllCollection::length() const {
     return emlite::Val::get("length").as<unsigned long>();
 }
 
-jsbind::Any HTMLAllCollection::namedItem(const jsbind::DOMString& name) {
+jsbind::Any HTMLAllCollection::namedItem(const jsbind::String& name) {
     return emlite::Val::call("namedItem", name).as<jsbind::Any>();
 }
 
@@ -22,7 +22,7 @@ jsbind::Any HTMLAllCollection::item() {
     return emlite::Val::call("item").as<jsbind::Any>();
 }
 
-jsbind::Any HTMLAllCollection::item(const jsbind::DOMString& nameOrIndex) {
+jsbind::Any HTMLAllCollection::item(const jsbind::String& nameOrIndex) {
     return emlite::Val::call("item", nameOrIndex).as<jsbind::Any>();
 }
 

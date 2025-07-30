@@ -11,27 +11,27 @@ FenceEvent::FenceEvent(const emlite::Val &val) noexcept: emlite::Val(val) {}
 FenceEvent::FenceEvent() noexcept: emlite::Val(emlite::Val::object()) {}
 FenceEvent FenceEvent::clone() const noexcept { return *this; }
 
-jsbind::DOMString FenceEvent::eventType() const {
-    return emlite::Val::get("eventType").as<jsbind::DOMString>();
+jsbind::String FenceEvent::eventType() const {
+    return emlite::Val::get("eventType").as<jsbind::String>();
 }
 
-void FenceEvent::eventType(const jsbind::DOMString& value) {
+void FenceEvent::eventType(const jsbind::String& value) {
     emlite::Val::set("eventType", value);
 }
 
-jsbind::DOMString FenceEvent::eventData() const {
-    return emlite::Val::get("eventData").as<jsbind::DOMString>();
+jsbind::String FenceEvent::eventData() const {
+    return emlite::Val::get("eventData").as<jsbind::String>();
 }
 
-void FenceEvent::eventData(const jsbind::DOMString& value) {
+void FenceEvent::eventData(const jsbind::String& value) {
     emlite::Val::set("eventData", value);
 }
 
-jsbind::Sequence<FenceReportingDestination> FenceEvent::destination() const {
-    return emlite::Val::get("destination").as<jsbind::Sequence<FenceReportingDestination>>();
+jsbind::TypedArray<FenceReportingDestination> FenceEvent::destination() const {
+    return emlite::Val::get("destination").as<jsbind::TypedArray<FenceReportingDestination>>();
 }
 
-void FenceEvent::destination(const jsbind::Sequence<FenceReportingDestination>& value) {
+void FenceEvent::destination(const jsbind::TypedArray<FenceReportingDestination>& value) {
     emlite::Val::set("destination", value);
 }
 
@@ -51,11 +51,11 @@ void FenceEvent::once(bool value) {
     emlite::Val::set("once", value);
 }
 
-jsbind::USVString FenceEvent::destinationURL() const {
-    return emlite::Val::get("destinationURL").as<jsbind::USVString>();
+jsbind::String FenceEvent::destinationURL() const {
+    return emlite::Val::get("destinationURL").as<jsbind::String>();
 }
 
-void FenceEvent::destinationURL(const jsbind::USVString& value) {
+void FenceEvent::destinationURL(const jsbind::String& value) {
     emlite::Val::set("destinationURL", value);
 }
 
@@ -83,8 +83,8 @@ jsbind::Undefined Fence::setReportEventDataForAutomaticBeacons(const FenceEvent&
     return emlite::Val::call("setReportEventDataForAutomaticBeacons", event).as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<FencedFrameConfig> Fence::getNestedConfigs() {
-    return emlite::Val::call("getNestedConfigs").as<jsbind::Sequence<FencedFrameConfig>>();
+jsbind::TypedArray<FencedFrameConfig> Fence::getNestedConfigs() {
+    return emlite::Val::call("getNestedConfigs").as<jsbind::TypedArray<FencedFrameConfig>>();
 }
 
 jsbind::Promise<jsbind::Undefined> Fence::disableUntrustedNetwork() {

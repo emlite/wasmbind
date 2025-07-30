@@ -18,8 +18,8 @@ public:
     explicit VideoEncoderConfig(const emlite::Val &val) noexcept;
     VideoEncoderConfig() noexcept;
     VideoEncoderConfig clone() const noexcept;
-    jsbind::DOMString codec() const;
-    void codec(const jsbind::DOMString& value);
+    jsbind::String codec() const;
+    void codec(const jsbind::String& value);
     unsigned long width() const;
     void width(unsigned long value);
     unsigned long height() const;
@@ -36,14 +36,14 @@ public:
     void hardwareAcceleration(const HardwareAcceleration& value);
     AlphaOption alpha() const;
     void alpha(const AlphaOption& value);
-    jsbind::DOMString scalabilityMode() const;
-    void scalabilityMode(const jsbind::DOMString& value);
+    jsbind::String scalabilityMode() const;
+    void scalabilityMode(const jsbind::String& value);
     VideoEncoderBitrateMode bitrateMode() const;
     void bitrateMode(const VideoEncoderBitrateMode& value);
     LatencyMode latencyMode() const;
     void latencyMode(const LatencyMode& value);
-    jsbind::DOMString contentHint() const;
-    void contentHint(const jsbind::DOMString& value);
+    jsbind::String contentHint() const;
+    void contentHint(const jsbind::String& value);
 };
 
 class VideoEncoderEncodeOptions : public emlite::Val {

@@ -15,7 +15,7 @@ EditContext::EditContext() : EventTarget(emlite::Val::global("EditContext").new_
 
 EditContext::EditContext(const jsbind::Any& options) : EventTarget(emlite::Val::global("EditContext").new_(options)) {}
 
-jsbind::Undefined EditContext::updateText(unsigned long rangeStart, unsigned long rangeEnd, const jsbind::DOMString& text) {
+jsbind::Undefined EditContext::updateText(unsigned long rangeStart, unsigned long rangeEnd, const jsbind::String& text) {
     return EventTarget::call("updateText", rangeStart, rangeEnd, text).as<jsbind::Undefined>();
 }
 
@@ -31,16 +31,16 @@ jsbind::Undefined EditContext::updateSelectionBounds(const DOMRect& selectionBou
     return EventTarget::call("updateSelectionBounds", selectionBounds).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EditContext::updateCharacterBounds(unsigned long rangeStart, const jsbind::Sequence<DOMRect>& characterBounds) {
+jsbind::Undefined EditContext::updateCharacterBounds(unsigned long rangeStart, const jsbind::TypedArray<DOMRect>& characterBounds) {
     return EventTarget::call("updateCharacterBounds", rangeStart, characterBounds).as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<HTMLElement> EditContext::attachedElements() {
-    return EventTarget::call("attachedElements").as<jsbind::Sequence<HTMLElement>>();
+jsbind::TypedArray<HTMLElement> EditContext::attachedElements() {
+    return EventTarget::call("attachedElements").as<jsbind::TypedArray<HTMLElement>>();
 }
 
-jsbind::DOMString EditContext::text() const {
-    return EventTarget::get("text").as<jsbind::DOMString>();
+jsbind::String EditContext::text() const {
+    return EventTarget::get("text").as<jsbind::String>();
 }
 
 unsigned long EditContext::selectionStart() const {
@@ -55,8 +55,8 @@ unsigned long EditContext::characterBoundsRangeStart() const {
     return EventTarget::get("characterBoundsRangeStart").as<unsigned long>();
 }
 
-jsbind::Sequence<DOMRect> EditContext::characterBounds() {
-    return EventTarget::call("characterBounds").as<jsbind::Sequence<DOMRect>>();
+jsbind::TypedArray<DOMRect> EditContext::characterBounds() {
+    return EventTarget::call("characterBounds").as<jsbind::TypedArray<DOMRect>>();
 }
 
 jsbind::Any EditContext::ontextupdate() const {

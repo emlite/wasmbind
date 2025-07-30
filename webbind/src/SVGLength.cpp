@@ -29,11 +29,11 @@ void SVGLength::valueInSpecifiedUnits(float value) {
     emlite::Val::set("valueInSpecifiedUnits", value);
 }
 
-jsbind::DOMString SVGLength::valueAsString() const {
-    return emlite::Val::get("valueAsString").as<jsbind::DOMString>();
+jsbind::String SVGLength::valueAsString() const {
+    return emlite::Val::get("valueAsString").as<jsbind::String>();
 }
 
-void SVGLength::valueAsString(const jsbind::DOMString& value) {
+void SVGLength::valueAsString(const jsbind::String& value) {
     emlite::Val::set("valueAsString", value);
 }
 

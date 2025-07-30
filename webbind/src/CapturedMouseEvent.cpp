@@ -9,9 +9,9 @@ CapturedMouseEvent::CapturedMouseEvent(Handle h) noexcept : Event(emlite::Val::t
 CapturedMouseEvent::CapturedMouseEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-CapturedMouseEvent::CapturedMouseEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("CapturedMouseEvent").new_(type)) {}
+CapturedMouseEvent::CapturedMouseEvent(const jsbind::String& type) : Event(emlite::Val::global("CapturedMouseEvent").new_(type)) {}
 
-CapturedMouseEvent::CapturedMouseEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("CapturedMouseEvent").new_(type, eventInitDict)) {}
+CapturedMouseEvent::CapturedMouseEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("CapturedMouseEvent").new_(type, eventInitDict)) {}
 
 long CapturedMouseEvent::surfaceX() const {
     return Event::get("surfaceX").as<long>();

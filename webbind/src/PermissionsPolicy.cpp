@@ -9,23 +9,23 @@ PermissionsPolicy::PermissionsPolicy(Handle h) noexcept : emlite::Val(emlite::Va
 PermissionsPolicy::PermissionsPolicy(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-bool PermissionsPolicy::allowsFeature(const jsbind::DOMString& feature) {
+bool PermissionsPolicy::allowsFeature(const jsbind::String& feature) {
     return emlite::Val::call("allowsFeature", feature).as<bool>();
 }
 
-bool PermissionsPolicy::allowsFeature(const jsbind::DOMString& feature, const jsbind::DOMString& origin) {
+bool PermissionsPolicy::allowsFeature(const jsbind::String& feature, const jsbind::String& origin) {
     return emlite::Val::call("allowsFeature", feature, origin).as<bool>();
 }
 
-jsbind::Sequence<jsbind::DOMString> PermissionsPolicy::features() {
-    return emlite::Val::call("features").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PermissionsPolicy::features() {
+    return emlite::Val::call("features").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::Sequence<jsbind::DOMString> PermissionsPolicy::allowedFeatures() {
-    return emlite::Val::call("allowedFeatures").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PermissionsPolicy::allowedFeatures() {
+    return emlite::Val::call("allowedFeatures").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-jsbind::Sequence<jsbind::DOMString> PermissionsPolicy::getAllowlistForFeature(const jsbind::DOMString& feature) {
-    return emlite::Val::call("getAllowlistForFeature", feature).as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PermissionsPolicy::getAllowlistForFeature(const jsbind::String& feature) {
+    return emlite::Val::call("getAllowlistForFeature", feature).as<jsbind::TypedArray<jsbind::String>>();
 }
 

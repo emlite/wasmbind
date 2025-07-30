@@ -16,19 +16,19 @@ jsbind::ArrayBuffer FileReaderSync::readAsArrayBuffer(const Blob& blob) {
     return emlite::Val::call("readAsArrayBuffer", blob).as<jsbind::ArrayBuffer>();
 }
 
-jsbind::DOMString FileReaderSync::readAsBinaryString(const Blob& blob) {
-    return emlite::Val::call("readAsBinaryString", blob).as<jsbind::DOMString>();
+jsbind::String FileReaderSync::readAsBinaryString(const Blob& blob) {
+    return emlite::Val::call("readAsBinaryString", blob).as<jsbind::String>();
 }
 
-jsbind::DOMString FileReaderSync::readAsText(const Blob& blob) {
-    return emlite::Val::call("readAsText", blob).as<jsbind::DOMString>();
+jsbind::String FileReaderSync::readAsText(const Blob& blob) {
+    return emlite::Val::call("readAsText", blob).as<jsbind::String>();
 }
 
-jsbind::DOMString FileReaderSync::readAsText(const Blob& blob, const jsbind::DOMString& encoding) {
-    return emlite::Val::call("readAsText", blob, encoding).as<jsbind::DOMString>();
+jsbind::String FileReaderSync::readAsText(const Blob& blob, const jsbind::String& encoding) {
+    return emlite::Val::call("readAsText", blob, encoding).as<jsbind::String>();
 }
 
-jsbind::DOMString FileReaderSync::readAsDataURL(const Blob& blob) {
-    return emlite::Val::call("readAsDataURL", blob).as<jsbind::DOMString>();
+jsbind::String FileReaderSync::readAsDataURL(const Blob& blob) {
+    return emlite::Val::call("readAsDataURL", blob).as<jsbind::String>();
 }
 

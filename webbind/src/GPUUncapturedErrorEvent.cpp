@@ -10,7 +10,7 @@ GPUUncapturedErrorEvent::GPUUncapturedErrorEvent(Handle h) noexcept : Event(emli
 GPUUncapturedErrorEvent::GPUUncapturedErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-GPUUncapturedErrorEvent::GPUUncapturedErrorEvent(const jsbind::DOMString& type, const jsbind::Any& gpuUncapturedErrorEventInitDict) : Event(emlite::Val::global("GPUUncapturedErrorEvent").new_(type, gpuUncapturedErrorEventInitDict)) {}
+GPUUncapturedErrorEvent::GPUUncapturedErrorEvent(const jsbind::String& type, const jsbind::Any& gpuUncapturedErrorEventInitDict) : Event(emlite::Val::global("GPUUncapturedErrorEvent").new_(type, gpuUncapturedErrorEventInitDict)) {}
 
 GPUError GPUUncapturedErrorEvent::error() const {
     return Event::get("error").as<GPUError>();

@@ -14,6 +14,6 @@ public:
 
     MediaError clone() const noexcept;
     unsigned short code() const;
-    jsbind::DOMString message() const;
+    jsbind::String message() const;
 };
 

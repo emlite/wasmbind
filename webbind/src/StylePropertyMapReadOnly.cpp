@@ -10,15 +10,15 @@ StylePropertyMapReadOnly::StylePropertyMapReadOnly(Handle h) noexcept : emlite::
 StylePropertyMapReadOnly::StylePropertyMapReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::Any StylePropertyMapReadOnly::get(const jsbind::USVString& property) {
+jsbind::Any StylePropertyMapReadOnly::get(const jsbind::String& property) {
     return emlite::Val::call("get", property).as<jsbind::Any>();
 }
 
-jsbind::Sequence<CSSStyleValue> StylePropertyMapReadOnly::getAll(const jsbind::USVString& property) {
-    return emlite::Val::call("getAll", property).as<jsbind::Sequence<CSSStyleValue>>();
+jsbind::TypedArray<CSSStyleValue> StylePropertyMapReadOnly::getAll(const jsbind::String& property) {
+    return emlite::Val::call("getAll", property).as<jsbind::TypedArray<CSSStyleValue>>();
 }
 
-bool StylePropertyMapReadOnly::has(const jsbind::USVString& property) {
+bool StylePropertyMapReadOnly::has(const jsbind::String& property) {
     return emlite::Val::call("has", property).as<bool>();
 }
 

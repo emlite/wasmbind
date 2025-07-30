@@ -15,6 +15,6 @@ public:
 
     Comment clone() const noexcept;
     Comment();
-    Comment(const jsbind::DOMString& data);
+    Comment(const jsbind::String& data);
 };
 

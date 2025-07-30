@@ -70,11 +70,11 @@ void PaintRenderingContext2D::globalAlpha(double value) {
     emlite::Val::set("globalAlpha", value);
 }
 
-jsbind::DOMString PaintRenderingContext2D::globalCompositeOperation() const {
-    return emlite::Val::get("globalCompositeOperation").as<jsbind::DOMString>();
+jsbind::String PaintRenderingContext2D::globalCompositeOperation() const {
+    return emlite::Val::get("globalCompositeOperation").as<jsbind::String>();
 }
 
-void PaintRenderingContext2D::globalCompositeOperation(const jsbind::DOMString& value) {
+void PaintRenderingContext2D::globalCompositeOperation(const jsbind::String& value) {
     emlite::Val::set("globalCompositeOperation", value);
 }
 
@@ -122,7 +122,7 @@ CanvasGradient PaintRenderingContext2D::createConicGradient(double startAngle, d
     return emlite::Val::call("createConicGradient", startAngle, x, y).as<CanvasGradient>();
 }
 
-CanvasPattern PaintRenderingContext2D::createPattern(const jsbind::Any& image, const jsbind::DOMString& repetition) {
+CanvasPattern PaintRenderingContext2D::createPattern(const jsbind::Any& image, const jsbind::String& repetition) {
     return emlite::Val::call("createPattern", image, repetition).as<CanvasPattern>();
 }
 
@@ -150,11 +150,11 @@ void PaintRenderingContext2D::shadowBlur(double value) {
     emlite::Val::set("shadowBlur", value);
 }
 
-jsbind::DOMString PaintRenderingContext2D::shadowColor() const {
-    return emlite::Val::get("shadowColor").as<jsbind::DOMString>();
+jsbind::String PaintRenderingContext2D::shadowColor() const {
+    return emlite::Val::get("shadowColor").as<jsbind::String>();
 }
 
-void PaintRenderingContext2D::shadowColor(const jsbind::DOMString& value) {
+void PaintRenderingContext2D::shadowColor(const jsbind::String& value) {
     emlite::Val::set("shadowColor", value);
 }
 
@@ -242,12 +242,12 @@ void PaintRenderingContext2D::miterLimit(double value) {
     emlite::Val::set("miterLimit", value);
 }
 
-jsbind::Undefined PaintRenderingContext2D::setLineDash(jsbind::Sequence<double> segments) {
+jsbind::Undefined PaintRenderingContext2D::setLineDash(jsbind::TypedArray<double> segments) {
     return emlite::Val::call("setLineDash", segments).as<jsbind::Undefined>();
 }
 
-jsbind::Sequence<double> PaintRenderingContext2D::getLineDash() {
-    return emlite::Val::call("getLineDash").as<jsbind::Sequence<double>>();
+jsbind::TypedArray<double> PaintRenderingContext2D::getLineDash() {
+    return emlite::Val::call("getLineDash").as<jsbind::TypedArray<double>>();
 }
 
 double PaintRenderingContext2D::lineDashOffset() const {

@@ -28,8 +28,8 @@ public:
     SVGAnimatedLength markerHeight() const;
     SVGAnimatedEnumeration orientType() const;
     SVGAnimatedAngle orientAngle() const;
-    jsbind::DOMString orient() const;
-    void orient(const jsbind::DOMString& value);
+    jsbind::String orient() const;
+    void orient(const jsbind::String& value);
     jsbind::Undefined setOrientToAuto();
     jsbind::Undefined setOrientToAngle(const SVGAngle& angle);
     SVGAnimatedRect viewBox() const;

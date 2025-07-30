@@ -16,8 +16,8 @@ public:
     static CSSPageRule take_ownership(Handle h) noexcept;
 
     CSSPageRule clone() const noexcept;
-    jsbind::CSSOMString selectorText() const;
-    void selectorText(const jsbind::CSSOMString& value);
+    jsbind::String selectorText() const;
+    void selectorText(const jsbind::String& value);
     CSSPageDescriptors style() const;
 };
 

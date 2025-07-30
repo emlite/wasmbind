@@ -19,7 +19,7 @@ jsbind::Promise<long long> RTCRtpScriptTransformer::generateKeyFrame() {
     return EventTarget::call("generateKeyFrame").as<jsbind::Promise<long long>>();
 }
 
-jsbind::Promise<long long> RTCRtpScriptTransformer::generateKeyFrame(const jsbind::DOMString& rid) {
+jsbind::Promise<long long> RTCRtpScriptTransformer::generateKeyFrame(const jsbind::String& rid) {
     return EventTarget::call("generateKeyFrame", rid).as<jsbind::Promise<long long>>();
 }
 

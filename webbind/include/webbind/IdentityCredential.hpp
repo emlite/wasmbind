@@ -15,8 +15,8 @@ public:
     explicit IdentityCredentialDisconnectOptions(const emlite::Val &val) noexcept;
     IdentityCredentialDisconnectOptions() noexcept;
     IdentityCredentialDisconnectOptions clone() const noexcept;
-    jsbind::USVString accountHint() const;
-    void accountHint(const jsbind::USVString& value);
+    jsbind::String accountHint() const;
+    void accountHint(const jsbind::String& value);
 };
 
 class IdentityCredential : public Credential {
@@ -28,8 +28,8 @@ public:
 
     IdentityCredential clone() const noexcept;
     static jsbind::Promise<jsbind::Undefined> disconnect(const IdentityCredentialDisconnectOptions& options);
-    jsbind::USVString token() const;
+    jsbind::String token() const;
     bool isAutoSelected() const;
-    jsbind::USVString configURL() const;
+    jsbind::String configURL() const;
 };
 

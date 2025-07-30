@@ -10,25 +10,25 @@ MediaStream::MediaStream(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 MediaStream::MediaStream(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 
-MediaStream::MediaStream(const jsbind::Sequence<MediaStreamTrack>& tracks) : EventTarget(emlite::Val::global("MediaStream").new_(tracks)) {}
+MediaStream::MediaStream(const jsbind::TypedArray<MediaStreamTrack>& tracks) : EventTarget(emlite::Val::global("MediaStream").new_(tracks)) {}
 
-jsbind::DOMString MediaStream::id() const {
-    return EventTarget::get("id").as<jsbind::DOMString>();
+jsbind::String MediaStream::id() const {
+    return EventTarget::get("id").as<jsbind::String>();
 }
 
-jsbind::Sequence<MediaStreamTrack> MediaStream::getAudioTracks() {
-    return EventTarget::call("getAudioTracks").as<jsbind::Sequence<MediaStreamTrack>>();
+jsbind::TypedArray<MediaStreamTrack> MediaStream::getAudioTracks() {
+    return EventTarget::call("getAudioTracks").as<jsbind::TypedArray<MediaStreamTrack>>();
 }
 
-jsbind::Sequence<MediaStreamTrack> MediaStream::getVideoTracks() {
-    return EventTarget::call("getVideoTracks").as<jsbind::Sequence<MediaStreamTrack>>();
+jsbind::TypedArray<MediaStreamTrack> MediaStream::getVideoTracks() {
+    return EventTarget::call("getVideoTracks").as<jsbind::TypedArray<MediaStreamTrack>>();
 }
 
-jsbind::Sequence<MediaStreamTrack> MediaStream::getTracks() {
-    return EventTarget::call("getTracks").as<jsbind::Sequence<MediaStreamTrack>>();
+jsbind::TypedArray<MediaStreamTrack> MediaStream::getTracks() {
+    return EventTarget::call("getTracks").as<jsbind::TypedArray<MediaStreamTrack>>();
 }
 
-MediaStreamTrack MediaStream::getTrackById(const jsbind::DOMString& trackId) {
+MediaStreamTrack MediaStream::getTrackById(const jsbind::String& trackId) {
     return EventTarget::call("getTrackById", trackId).as<MediaStreamTrack>();
 }
 

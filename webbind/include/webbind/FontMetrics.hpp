@@ -17,7 +17,7 @@ public:
 
     FontMetrics clone() const noexcept;
     double width() const;
-    jsbind::FrozenArray<double> advances() const;
+    jsbind::TypedArray<double> advances() const;
     double boundingBoxLeft() const;
     double boundingBoxRight() const;
     double height() const;
@@ -28,7 +28,7 @@ public:
     double fontBoundingBoxAscent() const;
     double fontBoundingBoxDescent() const;
     Baseline dominantBaseline() const;
-    jsbind::FrozenArray<Baseline> baselines() const;
-    jsbind::FrozenArray<Font> fonts() const;
+    jsbind::TypedArray<Baseline> baselines() const;
+    jsbind::TypedArray<Font> fonts() const;
 };
 

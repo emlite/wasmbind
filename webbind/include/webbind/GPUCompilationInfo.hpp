@@ -15,6 +15,6 @@ public:
     static GPUCompilationInfo take_ownership(Handle h) noexcept;
 
     GPUCompilationInfo clone() const noexcept;
-    jsbind::FrozenArray<GPUCompilationMessage> messages() const;
+    jsbind::TypedArray<GPUCompilationMessage> messages() const;
 };
 

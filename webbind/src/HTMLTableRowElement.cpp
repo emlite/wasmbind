@@ -37,43 +37,43 @@ jsbind::Undefined HTMLTableRowElement::deleteCell(long index) {
     return HTMLElement::call("deleteCell", index).as<jsbind::Undefined>();
 }
 
-jsbind::DOMString HTMLTableRowElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLTableRowElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLTableRowElement::align(const jsbind::DOMString& value) {
+void HTMLTableRowElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
-jsbind::DOMString HTMLTableRowElement::ch() const {
-    return HTMLElement::get("ch").as<jsbind::DOMString>();
+jsbind::String HTMLTableRowElement::ch() const {
+    return HTMLElement::get("ch").as<jsbind::String>();
 }
 
-void HTMLTableRowElement::ch(const jsbind::DOMString& value) {
+void HTMLTableRowElement::ch(const jsbind::String& value) {
     HTMLElement::set("ch", value);
 }
 
-jsbind::DOMString HTMLTableRowElement::chOff() const {
-    return HTMLElement::get("chOff").as<jsbind::DOMString>();
+jsbind::String HTMLTableRowElement::chOff() const {
+    return HTMLElement::get("chOff").as<jsbind::String>();
 }
 
-void HTMLTableRowElement::chOff(const jsbind::DOMString& value) {
+void HTMLTableRowElement::chOff(const jsbind::String& value) {
     HTMLElement::set("chOff", value);
 }
 
-jsbind::DOMString HTMLTableRowElement::vAlign() const {
-    return HTMLElement::get("vAlign").as<jsbind::DOMString>();
+jsbind::String HTMLTableRowElement::vAlign() const {
+    return HTMLElement::get("vAlign").as<jsbind::String>();
 }
 
-void HTMLTableRowElement::vAlign(const jsbind::DOMString& value) {
+void HTMLTableRowElement::vAlign(const jsbind::String& value) {
     HTMLElement::set("vAlign", value);
 }
 
-jsbind::DOMString HTMLTableRowElement::bgColor() const {
-    return HTMLElement::get("bgColor").as<jsbind::DOMString>();
+jsbind::String HTMLTableRowElement::bgColor() const {
+    return HTMLElement::get("bgColor").as<jsbind::String>();
 }
 
-void HTMLTableRowElement::bgColor(const jsbind::DOMString& value) {
+void HTMLTableRowElement::bgColor(const jsbind::String& value) {
     HTMLElement::set("bgColor", value);
 }
 

@@ -22,11 +22,11 @@ MediaError HTMLMediaElement::error() const {
     return HTMLElement::get("error").as<MediaError>();
 }
 
-jsbind::USVString HTMLMediaElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLMediaElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLMediaElement::src(const jsbind::USVString& value) {
+void HTMLMediaElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
@@ -38,15 +38,15 @@ void HTMLMediaElement::srcObject(const jsbind::Any& value) {
     HTMLElement::set("srcObject", value);
 }
 
-jsbind::USVString HTMLMediaElement::currentSrc() const {
-    return HTMLElement::get("currentSrc").as<jsbind::USVString>();
+jsbind::String HTMLMediaElement::currentSrc() const {
+    return HTMLElement::get("currentSrc").as<jsbind::String>();
 }
 
-jsbind::DOMString HTMLMediaElement::crossOrigin() const {
-    return HTMLElement::get("crossOrigin").as<jsbind::DOMString>();
+jsbind::String HTMLMediaElement::crossOrigin() const {
+    return HTMLElement::get("crossOrigin").as<jsbind::String>();
 }
 
-void HTMLMediaElement::crossOrigin(const jsbind::DOMString& value) {
+void HTMLMediaElement::crossOrigin(const jsbind::String& value) {
     HTMLElement::set("crossOrigin", value);
 }
 
@@ -54,11 +54,11 @@ unsigned short HTMLMediaElement::networkState() const {
     return HTMLElement::get("networkState").as<unsigned short>();
 }
 
-jsbind::DOMString HTMLMediaElement::preload() const {
-    return HTMLElement::get("preload").as<jsbind::DOMString>();
+jsbind::String HTMLMediaElement::preload() const {
+    return HTMLElement::get("preload").as<jsbind::String>();
 }
 
-void HTMLMediaElement::preload(const jsbind::DOMString& value) {
+void HTMLMediaElement::preload(const jsbind::String& value) {
     HTMLElement::set("preload", value);
 }
 
@@ -70,7 +70,7 @@ jsbind::Undefined HTMLMediaElement::load() {
     return HTMLElement::call("load").as<jsbind::Undefined>();
 }
 
-CanPlayTypeResult HTMLMediaElement::canPlayType(const jsbind::DOMString& type) {
+CanPlayTypeResult HTMLMediaElement::canPlayType(const jsbind::String& type) {
     return HTMLElement::call("canPlayType", type).as<CanPlayTypeResult>();
 }
 
@@ -214,19 +214,19 @@ TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind) {
     return HTMLElement::call("addTextTrack", kind).as<TextTrack>();
 }
 
-TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label) {
+TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind, const jsbind::String& label) {
     return HTMLElement::call("addTextTrack", kind, label).as<TextTrack>();
 }
 
-TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind, const jsbind::DOMString& label, const jsbind::DOMString& language) {
+TextTrack HTMLMediaElement::addTextTrack(const TextTrackKind& kind, const jsbind::String& label, const jsbind::String& language) {
     return HTMLElement::call("addTextTrack", kind, label, language).as<TextTrack>();
 }
 
-jsbind::DOMString HTMLMediaElement::sinkId() const {
-    return HTMLElement::get("sinkId").as<jsbind::DOMString>();
+jsbind::String HTMLMediaElement::sinkId() const {
+    return HTMLElement::get("sinkId").as<jsbind::String>();
 }
 
-jsbind::Promise<jsbind::Undefined> HTMLMediaElement::setSinkId(const jsbind::DOMString& sinkId) {
+jsbind::Promise<jsbind::Undefined> HTMLMediaElement::setSinkId(const jsbind::String& sinkId) {
     return HTMLElement::call("setSinkId", sinkId).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

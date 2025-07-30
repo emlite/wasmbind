@@ -16,7 +16,7 @@ public:
     static CSSPositionTryRule take_ownership(Handle h) noexcept;
 
     CSSPositionTryRule clone() const noexcept;
-    jsbind::CSSOMString name() const;
+    jsbind::String name() const;
     CSSPositionTryDescriptors style() const;
 };
 

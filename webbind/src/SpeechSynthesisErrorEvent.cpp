@@ -9,7 +9,7 @@ SpeechSynthesisErrorEvent::SpeechSynthesisErrorEvent(Handle h) noexcept : Speech
 SpeechSynthesisErrorEvent::SpeechSynthesisErrorEvent(const emlite::Val &val) noexcept: SpeechSynthesisEvent(val) {}
 
 
-SpeechSynthesisErrorEvent::SpeechSynthesisErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : SpeechSynthesisEvent(emlite::Val::global("SpeechSynthesisErrorEvent").new_(type, eventInitDict)) {}
+SpeechSynthesisErrorEvent::SpeechSynthesisErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : SpeechSynthesisEvent(emlite::Val::global("SpeechSynthesisErrorEvent").new_(type, eventInitDict)) {}
 
 SpeechSynthesisErrorCode SpeechSynthesisErrorEvent::error() const {
     return SpeechSynthesisEvent::get("error").as<SpeechSynthesisErrorCode>();

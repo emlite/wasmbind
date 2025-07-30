@@ -36,7 +36,7 @@ public:
     static GamepadHapticActuator take_ownership(Handle h) noexcept;
 
     GamepadHapticActuator clone() const noexcept;
-    jsbind::FrozenArray<GamepadHapticEffectType> effects() const;
+    jsbind::TypedArray<GamepadHapticEffectType> effects() const;
     jsbind::Promise<GamepadHapticsResult> playEffect(const GamepadHapticEffectType& type);
     jsbind::Promise<GamepadHapticsResult> playEffect(const GamepadHapticEffectType& type, const GamepadEffectParameters& params);
     jsbind::Promise<GamepadHapticsResult> reset();

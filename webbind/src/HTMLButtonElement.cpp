@@ -15,11 +15,11 @@ HTMLButtonElement::HTMLButtonElement(const emlite::Val &val) noexcept: HTMLEleme
 
 HTMLButtonElement::HTMLButtonElement() : HTMLElement(emlite::Val::global("HTMLButtonElement").new_()) {}
 
-jsbind::DOMString HTMLButtonElement::command() const {
-    return HTMLElement::get("command").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::command() const {
+    return HTMLElement::get("command").as<jsbind::String>();
 }
 
-void HTMLButtonElement::command(const jsbind::DOMString& value) {
+void HTMLButtonElement::command(const jsbind::String& value) {
     HTMLElement::set("command", value);
 }
 
@@ -43,27 +43,27 @@ HTMLFormElement HTMLButtonElement::form() const {
     return HTMLElement::get("form").as<HTMLFormElement>();
 }
 
-jsbind::USVString HTMLButtonElement::formAction() const {
-    return HTMLElement::get("formAction").as<jsbind::USVString>();
+jsbind::String HTMLButtonElement::formAction() const {
+    return HTMLElement::get("formAction").as<jsbind::String>();
 }
 
-void HTMLButtonElement::formAction(const jsbind::USVString& value) {
+void HTMLButtonElement::formAction(const jsbind::String& value) {
     HTMLElement::set("formAction", value);
 }
 
-jsbind::DOMString HTMLButtonElement::formEnctype() const {
-    return HTMLElement::get("formEnctype").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::formEnctype() const {
+    return HTMLElement::get("formEnctype").as<jsbind::String>();
 }
 
-void HTMLButtonElement::formEnctype(const jsbind::DOMString& value) {
+void HTMLButtonElement::formEnctype(const jsbind::String& value) {
     HTMLElement::set("formEnctype", value);
 }
 
-jsbind::DOMString HTMLButtonElement::formMethod() const {
-    return HTMLElement::get("formMethod").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::formMethod() const {
+    return HTMLElement::get("formMethod").as<jsbind::String>();
 }
 
-void HTMLButtonElement::formMethod(const jsbind::DOMString& value) {
+void HTMLButtonElement::formMethod(const jsbind::String& value) {
     HTMLElement::set("formMethod", value);
 }
 
@@ -75,35 +75,35 @@ void HTMLButtonElement::formNoValidate(bool value) {
     HTMLElement::set("formNoValidate", value);
 }
 
-jsbind::DOMString HTMLButtonElement::formTarget() const {
-    return HTMLElement::get("formTarget").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::formTarget() const {
+    return HTMLElement::get("formTarget").as<jsbind::String>();
 }
 
-void HTMLButtonElement::formTarget(const jsbind::DOMString& value) {
+void HTMLButtonElement::formTarget(const jsbind::String& value) {
     HTMLElement::set("formTarget", value);
 }
 
-jsbind::DOMString HTMLButtonElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLButtonElement::name(const jsbind::DOMString& value) {
+void HTMLButtonElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::DOMString HTMLButtonElement::type() const {
-    return HTMLElement::get("type").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::type() const {
+    return HTMLElement::get("type").as<jsbind::String>();
 }
 
-void HTMLButtonElement::type(const jsbind::DOMString& value) {
+void HTMLButtonElement::type(const jsbind::String& value) {
     HTMLElement::set("type", value);
 }
 
-jsbind::DOMString HTMLButtonElement::value() const {
-    return HTMLElement::get("value").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::value() const {
+    return HTMLElement::get("value").as<jsbind::String>();
 }
 
-void HTMLButtonElement::value(const jsbind::DOMString& value) {
+void HTMLButtonElement::value(const jsbind::String& value) {
     HTMLElement::set("value", value);
 }
 
@@ -115,8 +115,8 @@ ValidityState HTMLButtonElement::validity() const {
     return HTMLElement::get("validity").as<ValidityState>();
 }
 
-jsbind::DOMString HTMLButtonElement::validationMessage() const {
-    return HTMLElement::get("validationMessage").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::validationMessage() const {
+    return HTMLElement::get("validationMessage").as<jsbind::String>();
 }
 
 bool HTMLButtonElement::checkValidity() {
@@ -127,7 +127,7 @@ bool HTMLButtonElement::reportValidity() {
     return HTMLElement::call("reportValidity").as<bool>();
 }
 
-jsbind::Undefined HTMLButtonElement::setCustomValidity(const jsbind::DOMString& error) {
+jsbind::Undefined HTMLButtonElement::setCustomValidity(const jsbind::String& error) {
     return HTMLElement::call("setCustomValidity", error).as<jsbind::Undefined>();
 }
 
@@ -143,11 +143,11 @@ void HTMLButtonElement::popoverTargetElement(const Element& value) {
     HTMLElement::set("popoverTargetElement", value);
 }
 
-jsbind::DOMString HTMLButtonElement::popoverTargetAction() const {
-    return HTMLElement::get("popoverTargetAction").as<jsbind::DOMString>();
+jsbind::String HTMLButtonElement::popoverTargetAction() const {
+    return HTMLElement::get("popoverTargetAction").as<jsbind::String>();
 }
 
-void HTMLButtonElement::popoverTargetAction(const jsbind::DOMString& value) {
+void HTMLButtonElement::popoverTargetAction(const jsbind::String& value) {
     HTMLElement::set("popoverTargetAction", value);
 }
 

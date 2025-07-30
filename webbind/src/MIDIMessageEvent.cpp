@@ -9,9 +9,9 @@ MIDIMessageEvent::MIDIMessageEvent(Handle h) noexcept : Event(emlite::Val::take_
 MIDIMessageEvent::MIDIMessageEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 
-MIDIMessageEvent::MIDIMessageEvent(const jsbind::DOMString& type) : Event(emlite::Val::global("MIDIMessageEvent").new_(type)) {}
+MIDIMessageEvent::MIDIMessageEvent(const jsbind::String& type) : Event(emlite::Val::global("MIDIMessageEvent").new_(type)) {}
 
-MIDIMessageEvent::MIDIMessageEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MIDIMessageEvent").new_(type, eventInitDict)) {}
+MIDIMessageEvent::MIDIMessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MIDIMessageEvent").new_(type, eventInitDict)) {}
 
 jsbind::Uint8Array MIDIMessageEvent::data() const {
     return Event::get("data").as<jsbind::Uint8Array>();

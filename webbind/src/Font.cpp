@@ -9,8 +9,8 @@ Font::Font(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Font::Font(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::DOMString Font::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String Font::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
 unsigned long Font::glyphsRendered() const {

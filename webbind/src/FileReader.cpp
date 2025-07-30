@@ -25,7 +25,7 @@ jsbind::Undefined FileReader::readAsText(const Blob& blob) {
     return EventTarget::call("readAsText", blob).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined FileReader::readAsText(const Blob& blob, const jsbind::DOMString& encoding) {
+jsbind::Undefined FileReader::readAsText(const Blob& blob, const jsbind::String& encoding) {
     return EventTarget::call("readAsText", blob, encoding).as<jsbind::Undefined>();
 }
 

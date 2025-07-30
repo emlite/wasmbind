@@ -58,10 +58,10 @@ public:
     RTCRtpReceiver clone() const noexcept;
     MediaStreamTrack track() const;
     RTCDtlsTransport transport() const;
-    static RTCRtpCapabilities getCapabilities(const jsbind::DOMString& kind);
+    static RTCRtpCapabilities getCapabilities(const jsbind::String& kind);
     RTCRtpReceiveParameters getParameters();
-    jsbind::Sequence<RTCRtpContributingSource> getContributingSources();
-    jsbind::Sequence<RTCRtpSynchronizationSource> getSynchronizationSources();
+    jsbind::TypedArray<RTCRtpContributingSource> getContributingSources();
+    jsbind::TypedArray<RTCRtpSynchronizationSource> getSynchronizationSources();
     jsbind::Promise<RTCStatsReport> getStats();
     jsbind::Any jitterBufferTarget() const;
     void jitterBufferTarget(const jsbind::Any& value);

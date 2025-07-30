@@ -37,8 +37,8 @@ public:
     void operation(const OperationType& value);
     RefreshPolicy refreshPolicy() const;
     void refreshPolicy(const RefreshPolicy& value);
-    jsbind::Sequence<jsbind::USVString> issuers() const;
-    void issuers(const jsbind::Sequence<jsbind::USVString>& value);
+    jsbind::TypedArray<jsbind::String> issuers() const;
+    void issuers(const jsbind::TypedArray<jsbind::String>& value);
 };
 
 class XMLHttpRequest : public XMLHttpRequestEventTarget {
@@ -53,10 +53,10 @@ public:
     jsbind::Any onreadystatechange() const;
     void onreadystatechange(const jsbind::Any& value);
     unsigned short readyState() const;
-    jsbind::Undefined open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async);
-    jsbind::Undefined open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username);
-    jsbind::Undefined open(const jsbind::ByteString& method, const jsbind::USVString& url, bool async, const jsbind::USVString& username, const jsbind::USVString& password);
-    jsbind::Undefined setRequestHeader(const jsbind::ByteString& name, const jsbind::ByteString& value);
+    jsbind::Undefined open(const jsbind::String& method, const jsbind::String& url, bool async);
+    jsbind::Undefined open(const jsbind::String& method, const jsbind::String& url, bool async, const jsbind::String& username);
+    jsbind::Undefined open(const jsbind::String& method, const jsbind::String& url, bool async, const jsbind::String& username, const jsbind::String& password);
+    jsbind::Undefined setRequestHeader(const jsbind::String& name, const jsbind::String& value);
     unsigned long timeout() const;
     void timeout(unsigned long value);
     bool withCredentials() const;
@@ -65,16 +65,16 @@ public:
     jsbind::Undefined send();
     jsbind::Undefined send(const jsbind::Any& body);
     jsbind::Undefined abort();
-    jsbind::USVString responseURL() const;
+    jsbind::String responseURL() const;
     unsigned short status() const;
-    jsbind::ByteString statusText() const;
-    jsbind::ByteString getResponseHeader(const jsbind::ByteString& name);
-    jsbind::ByteString getAllResponseHeaders();
-    jsbind::Undefined overrideMimeType(const jsbind::DOMString& mime);
+    jsbind::String statusText() const;
+    jsbind::String getResponseHeader(const jsbind::String& name);
+    jsbind::String getAllResponseHeaders();
+    jsbind::Undefined overrideMimeType(const jsbind::String& mime);
     XMLHttpRequestResponseType responseType() const;
     void responseType(const XMLHttpRequestResponseType& value);
     jsbind::Any response() const;
-    jsbind::USVString responseText() const;
+    jsbind::String responseText() const;
     Document responseXML() const;
     jsbind::Undefined setAttributionReporting(const AttributionReportingRequestOptions& options);
     jsbind::Undefined setPrivateToken(const PrivateToken& privateToken);

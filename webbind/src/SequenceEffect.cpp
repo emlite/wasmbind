@@ -9,9 +9,9 @@ SequenceEffect::SequenceEffect(Handle h) noexcept : GroupEffect(emlite::Val::tak
 SequenceEffect::SequenceEffect(const emlite::Val &val) noexcept: GroupEffect(val) {}
 
 
-SequenceEffect::SequenceEffect(const jsbind::Sequence<AnimationEffect>& children) : GroupEffect(emlite::Val::global("SequenceEffect").new_(children)) {}
+SequenceEffect::SequenceEffect(const jsbind::TypedArray<AnimationEffect>& children) : GroupEffect(emlite::Val::global("SequenceEffect").new_(children)) {}
 
-SequenceEffect::SequenceEffect(const jsbind::Sequence<AnimationEffect>& children, const jsbind::Any& timing) : GroupEffect(emlite::Val::global("SequenceEffect").new_(children, timing)) {}
+SequenceEffect::SequenceEffect(const jsbind::TypedArray<AnimationEffect>& children, const jsbind::Any& timing) : GroupEffect(emlite::Val::global("SequenceEffect").new_(children, timing)) {}
 
 SequenceEffect SequenceEffect::clone() {
     return GroupEffect::call("clone").as<SequenceEffect>();

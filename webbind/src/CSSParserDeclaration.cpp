@@ -10,15 +10,15 @@ CSSParserDeclaration::CSSParserDeclaration(Handle h) noexcept : CSSParserRule(em
 CSSParserDeclaration::CSSParserDeclaration(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 
 
-CSSParserDeclaration::CSSParserDeclaration(const jsbind::DOMString& name) : CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name)) {}
+CSSParserDeclaration::CSSParserDeclaration(const jsbind::String& name) : CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name)) {}
 
-CSSParserDeclaration::CSSParserDeclaration(const jsbind::DOMString& name, const jsbind::Sequence<CSSParserRule>& body) : CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name, body)) {}
+CSSParserDeclaration::CSSParserDeclaration(const jsbind::String& name, const jsbind::TypedArray<CSSParserRule>& body) : CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name, body)) {}
 
-jsbind::DOMString CSSParserDeclaration::name() const {
-    return CSSParserRule::get("name").as<jsbind::DOMString>();
+jsbind::String CSSParserDeclaration::name() const {
+    return CSSParserRule::get("name").as<jsbind::String>();
 }
 
-jsbind::FrozenArray<CSSParserValue> CSSParserDeclaration::body() const {
-    return CSSParserRule::get("body").as<jsbind::FrozenArray<CSSParserValue>>();
+jsbind::TypedArray<CSSParserValue> CSSParserDeclaration::body() const {
+    return CSSParserRule::get("body").as<jsbind::TypedArray<CSSParserValue>>();
 }
 

@@ -14,7 +14,7 @@ public:
     static SFrameTransformErrorEvent take_ownership(Handle h) noexcept;
 
     SFrameTransformErrorEvent clone() const noexcept;
-    SFrameTransformErrorEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    SFrameTransformErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     SFrameTransformErrorEventType errorType() const;
     jsbind::Any keyID() const;
     jsbind::Any frame() const;

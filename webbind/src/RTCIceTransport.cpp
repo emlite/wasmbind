@@ -11,19 +11,19 @@ RTCIceParameters::RTCIceParameters(const emlite::Val &val) noexcept: emlite::Val
 RTCIceParameters::RTCIceParameters() noexcept: emlite::Val(emlite::Val::object()) {}
 RTCIceParameters RTCIceParameters::clone() const noexcept { return *this; }
 
-jsbind::DOMString RTCIceParameters::usernameFragment() const {
-    return emlite::Val::get("usernameFragment").as<jsbind::DOMString>();
+jsbind::String RTCIceParameters::usernameFragment() const {
+    return emlite::Val::get("usernameFragment").as<jsbind::String>();
 }
 
-void RTCIceParameters::usernameFragment(const jsbind::DOMString& value) {
+void RTCIceParameters::usernameFragment(const jsbind::String& value) {
     emlite::Val::set("usernameFragment", value);
 }
 
-jsbind::DOMString RTCIceParameters::password() const {
-    return emlite::Val::get("password").as<jsbind::DOMString>();
+jsbind::String RTCIceParameters::password() const {
+    return emlite::Val::get("password").as<jsbind::String>();
 }
 
-void RTCIceParameters::password(const jsbind::DOMString& value) {
+void RTCIceParameters::password(const jsbind::String& value) {
     emlite::Val::set("password", value);
 }
 
@@ -43,11 +43,11 @@ void RTCIceGatherOptions::gatherPolicy(const RTCIceTransportPolicy& value) {
     emlite::Val::set("gatherPolicy", value);
 }
 
-jsbind::Sequence<jsbind::Any> RTCIceGatherOptions::iceServers() const {
-    return emlite::Val::get("iceServers").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> RTCIceGatherOptions::iceServers() const {
+    return emlite::Val::get("iceServers").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void RTCIceGatherOptions::iceServers(const jsbind::Sequence<jsbind::Any>& value) {
+void RTCIceGatherOptions::iceServers(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("iceServers", value);
 }
 
@@ -59,19 +59,19 @@ RTCIceCandidateInit::RTCIceCandidateInit(const emlite::Val &val) noexcept: emlit
 RTCIceCandidateInit::RTCIceCandidateInit() noexcept: emlite::Val(emlite::Val::object()) {}
 RTCIceCandidateInit RTCIceCandidateInit::clone() const noexcept { return *this; }
 
-jsbind::DOMString RTCIceCandidateInit::candidate() const {
-    return emlite::Val::get("candidate").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidateInit::candidate() const {
+    return emlite::Val::get("candidate").as<jsbind::String>();
 }
 
-void RTCIceCandidateInit::candidate(const jsbind::DOMString& value) {
+void RTCIceCandidateInit::candidate(const jsbind::String& value) {
     emlite::Val::set("candidate", value);
 }
 
-jsbind::DOMString RTCIceCandidateInit::sdpMid() const {
-    return emlite::Val::get("sdpMid").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidateInit::sdpMid() const {
+    return emlite::Val::get("sdpMid").as<jsbind::String>();
 }
 
-void RTCIceCandidateInit::sdpMid(const jsbind::DOMString& value) {
+void RTCIceCandidateInit::sdpMid(const jsbind::String& value) {
     emlite::Val::set("sdpMid", value);
 }
 
@@ -83,11 +83,11 @@ void RTCIceCandidateInit::sdpMLineIndex(unsigned short value) {
     emlite::Val::set("sdpMLineIndex", value);
 }
 
-jsbind::DOMString RTCIceCandidateInit::usernameFragment() const {
-    return emlite::Val::get("usernameFragment").as<jsbind::DOMString>();
+jsbind::String RTCIceCandidateInit::usernameFragment() const {
+    return emlite::Val::get("usernameFragment").as<jsbind::String>();
 }
 
-void RTCIceCandidateInit::usernameFragment(const jsbind::DOMString& value) {
+void RTCIceCandidateInit::usernameFragment(const jsbind::String& value) {
     emlite::Val::set("usernameFragment", value);
 }
 
@@ -115,12 +115,12 @@ RTCIceGathererState RTCIceTransport::gatheringState() const {
     return EventTarget::get("gatheringState").as<RTCIceGathererState>();
 }
 
-jsbind::Sequence<RTCIceCandidate> RTCIceTransport::getLocalCandidates() {
-    return EventTarget::call("getLocalCandidates").as<jsbind::Sequence<RTCIceCandidate>>();
+jsbind::TypedArray<RTCIceCandidate> RTCIceTransport::getLocalCandidates() {
+    return EventTarget::call("getLocalCandidates").as<jsbind::TypedArray<RTCIceCandidate>>();
 }
 
-jsbind::Sequence<RTCIceCandidate> RTCIceTransport::getRemoteCandidates() {
-    return EventTarget::call("getRemoteCandidates").as<jsbind::Sequence<RTCIceCandidate>>();
+jsbind::TypedArray<RTCIceCandidate> RTCIceTransport::getRemoteCandidates() {
+    return EventTarget::call("getRemoteCandidates").as<jsbind::TypedArray<RTCIceCandidate>>();
 }
 
 RTCIceCandidatePair RTCIceTransport::getSelectedCandidatePair() {

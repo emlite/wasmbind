@@ -32,11 +32,11 @@ SVGAnimatedPreserveAspectRatio SVGImageElement::preserveAspectRatio() const {
     return SVGGraphicsElement::get("preserveAspectRatio").as<SVGAnimatedPreserveAspectRatio>();
 }
 
-jsbind::DOMString SVGImageElement::crossOrigin() const {
-    return SVGGraphicsElement::get("crossOrigin").as<jsbind::DOMString>();
+jsbind::String SVGImageElement::crossOrigin() const {
+    return SVGGraphicsElement::get("crossOrigin").as<jsbind::String>();
 }
 
-void SVGImageElement::crossOrigin(const jsbind::DOMString& value) {
+void SVGImageElement::crossOrigin(const jsbind::String& value) {
     SVGGraphicsElement::set("crossOrigin", value);
 }
 

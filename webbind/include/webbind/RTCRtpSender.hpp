@@ -22,10 +22,10 @@ public:
     explicit RTCRtpCapabilities(const emlite::Val &val) noexcept;
     RTCRtpCapabilities() noexcept;
     RTCRtpCapabilities clone() const noexcept;
-    jsbind::Sequence<RTCRtpCodec> codecs() const;
-    void codecs(const jsbind::Sequence<RTCRtpCodec>& value);
-    jsbind::Sequence<jsbind::Any> headerExtensions() const;
-    void headerExtensions(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::TypedArray<RTCRtpCodec> codecs() const;
+    void codecs(const jsbind::TypedArray<RTCRtpCodec>& value);
+    jsbind::TypedArray<jsbind::Any> headerExtensions() const;
+    void headerExtensions(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class RTCRtpSendParameters : public emlite::Val {
@@ -35,10 +35,10 @@ public:
     explicit RTCRtpSendParameters(const emlite::Val &val) noexcept;
     RTCRtpSendParameters() noexcept;
     RTCRtpSendParameters clone() const noexcept;
-    jsbind::DOMString transactionId() const;
-    void transactionId(const jsbind::DOMString& value);
-    jsbind::Sequence<jsbind::Any> encodings() const;
-    void encodings(const jsbind::Sequence<jsbind::Any>& value);
+    jsbind::String transactionId() const;
+    void transactionId(const jsbind::String& value);
+    jsbind::TypedArray<jsbind::Any> encodings() const;
+    void encodings(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
 class RTCSetParameterOptions : public emlite::Val {
@@ -60,7 +60,7 @@ public:
     RTCRtpSender clone() const noexcept;
     MediaStreamTrack track() const;
     RTCDtlsTransport transport() const;
-    static RTCRtpCapabilities getCapabilities(const jsbind::DOMString& kind);
+    static RTCRtpCapabilities getCapabilities(const jsbind::String& kind);
     jsbind::Promise<jsbind::Undefined> setParameters(const RTCRtpSendParameters& parameters);
     jsbind::Promise<jsbind::Undefined> setParameters(const RTCRtpSendParameters& parameters, const RTCSetParameterOptions& setParameterOptions);
     RTCRtpSendParameters getParameters();
@@ -70,7 +70,7 @@ public:
     jsbind::Any transform() const;
     void transform(const jsbind::Any& value);
     jsbind::Promise<jsbind::Undefined> generateKeyFrame();
-    jsbind::Promise<jsbind::Undefined> generateKeyFrame(const jsbind::Sequence<jsbind::DOMString>& rids);
+    jsbind::Promise<jsbind::Undefined> generateKeyFrame(const jsbind::TypedArray<jsbind::String>& rids);
     RTCDTMFSender dtmf() const;
 };
 

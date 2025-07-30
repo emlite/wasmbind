@@ -50,11 +50,11 @@ void PublicKeyCredentialCreationOptions::challenge(const jsbind::Any& value) {
     emlite::Val::set("challenge", value);
 }
 
-jsbind::Sequence<jsbind::Any> PublicKeyCredentialCreationOptions::pubKeyCredParams() const {
-    return emlite::Val::get("pubKeyCredParams").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> PublicKeyCredentialCreationOptions::pubKeyCredParams() const {
+    return emlite::Val::get("pubKeyCredParams").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void PublicKeyCredentialCreationOptions::pubKeyCredParams(const jsbind::Sequence<jsbind::Any>& value) {
+void PublicKeyCredentialCreationOptions::pubKeyCredParams(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("pubKeyCredParams", value);
 }
 
@@ -66,11 +66,11 @@ void PublicKeyCredentialCreationOptions::timeout(unsigned long value) {
     emlite::Val::set("timeout", value);
 }
 
-jsbind::Sequence<jsbind::Any> PublicKeyCredentialCreationOptions::excludeCredentials() const {
-    return emlite::Val::get("excludeCredentials").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> PublicKeyCredentialCreationOptions::excludeCredentials() const {
+    return emlite::Val::get("excludeCredentials").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void PublicKeyCredentialCreationOptions::excludeCredentials(const jsbind::Sequence<jsbind::Any>& value) {
+void PublicKeyCredentialCreationOptions::excludeCredentials(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("excludeCredentials", value);
 }
 
@@ -82,27 +82,27 @@ void PublicKeyCredentialCreationOptions::authenticatorSelection(const jsbind::An
     emlite::Val::set("authenticatorSelection", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> PublicKeyCredentialCreationOptions::hints() const {
-    return emlite::Val::get("hints").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PublicKeyCredentialCreationOptions::hints() const {
+    return emlite::Val::get("hints").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PublicKeyCredentialCreationOptions::hints(const jsbind::Sequence<jsbind::DOMString>& value) {
+void PublicKeyCredentialCreationOptions::hints(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("hints", value);
 }
 
-jsbind::DOMString PublicKeyCredentialCreationOptions::attestation() const {
-    return emlite::Val::get("attestation").as<jsbind::DOMString>();
+jsbind::String PublicKeyCredentialCreationOptions::attestation() const {
+    return emlite::Val::get("attestation").as<jsbind::String>();
 }
 
-void PublicKeyCredentialCreationOptions::attestation(const jsbind::DOMString& value) {
+void PublicKeyCredentialCreationOptions::attestation(const jsbind::String& value) {
     emlite::Val::set("attestation", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> PublicKeyCredentialCreationOptions::attestationFormats() const {
-    return emlite::Val::get("attestationFormats").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PublicKeyCredentialCreationOptions::attestationFormats() const {
+    return emlite::Val::get("attestationFormats").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PublicKeyCredentialCreationOptions::attestationFormats(const jsbind::Sequence<jsbind::DOMString>& value) {
+void PublicKeyCredentialCreationOptions::attestationFormats(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("attestationFormats", value);
 }
 
@@ -146,11 +146,11 @@ void PublicKeyCredentialCreationOptionsJSON::challenge(const jsbind::Any& value)
     emlite::Val::set("challenge", value);
 }
 
-jsbind::Sequence<jsbind::Any> PublicKeyCredentialCreationOptionsJSON::pubKeyCredParams() const {
-    return emlite::Val::get("pubKeyCredParams").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> PublicKeyCredentialCreationOptionsJSON::pubKeyCredParams() const {
+    return emlite::Val::get("pubKeyCredParams").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void PublicKeyCredentialCreationOptionsJSON::pubKeyCredParams(const jsbind::Sequence<jsbind::Any>& value) {
+void PublicKeyCredentialCreationOptionsJSON::pubKeyCredParams(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("pubKeyCredParams", value);
 }
 
@@ -162,11 +162,11 @@ void PublicKeyCredentialCreationOptionsJSON::timeout(unsigned long value) {
     emlite::Val::set("timeout", value);
 }
 
-jsbind::Sequence<jsbind::Any> PublicKeyCredentialCreationOptionsJSON::excludeCredentials() const {
-    return emlite::Val::get("excludeCredentials").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> PublicKeyCredentialCreationOptionsJSON::excludeCredentials() const {
+    return emlite::Val::get("excludeCredentials").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void PublicKeyCredentialCreationOptionsJSON::excludeCredentials(const jsbind::Sequence<jsbind::Any>& value) {
+void PublicKeyCredentialCreationOptionsJSON::excludeCredentials(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("excludeCredentials", value);
 }
 
@@ -178,27 +178,27 @@ void PublicKeyCredentialCreationOptionsJSON::authenticatorSelection(const jsbind
     emlite::Val::set("authenticatorSelection", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> PublicKeyCredentialCreationOptionsJSON::hints() const {
-    return emlite::Val::get("hints").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PublicKeyCredentialCreationOptionsJSON::hints() const {
+    return emlite::Val::get("hints").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PublicKeyCredentialCreationOptionsJSON::hints(const jsbind::Sequence<jsbind::DOMString>& value) {
+void PublicKeyCredentialCreationOptionsJSON::hints(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("hints", value);
 }
 
-jsbind::DOMString PublicKeyCredentialCreationOptionsJSON::attestation() const {
-    return emlite::Val::get("attestation").as<jsbind::DOMString>();
+jsbind::String PublicKeyCredentialCreationOptionsJSON::attestation() const {
+    return emlite::Val::get("attestation").as<jsbind::String>();
 }
 
-void PublicKeyCredentialCreationOptionsJSON::attestation(const jsbind::DOMString& value) {
+void PublicKeyCredentialCreationOptionsJSON::attestation(const jsbind::String& value) {
     emlite::Val::set("attestation", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> PublicKeyCredentialCreationOptionsJSON::attestationFormats() const {
-    return emlite::Val::get("attestationFormats").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PublicKeyCredentialCreationOptionsJSON::attestationFormats() const {
+    return emlite::Val::get("attestationFormats").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PublicKeyCredentialCreationOptionsJSON::attestationFormats(const jsbind::Sequence<jsbind::DOMString>& value) {
+void PublicKeyCredentialCreationOptionsJSON::attestationFormats(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("attestationFormats", value);
 }
 
@@ -234,35 +234,35 @@ void PublicKeyCredentialRequestOptions::timeout(unsigned long value) {
     emlite::Val::set("timeout", value);
 }
 
-jsbind::DOMString PublicKeyCredentialRequestOptions::rpId() const {
-    return emlite::Val::get("rpId").as<jsbind::DOMString>();
+jsbind::String PublicKeyCredentialRequestOptions::rpId() const {
+    return emlite::Val::get("rpId").as<jsbind::String>();
 }
 
-void PublicKeyCredentialRequestOptions::rpId(const jsbind::DOMString& value) {
+void PublicKeyCredentialRequestOptions::rpId(const jsbind::String& value) {
     emlite::Val::set("rpId", value);
 }
 
-jsbind::Sequence<jsbind::Any> PublicKeyCredentialRequestOptions::allowCredentials() const {
-    return emlite::Val::get("allowCredentials").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> PublicKeyCredentialRequestOptions::allowCredentials() const {
+    return emlite::Val::get("allowCredentials").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void PublicKeyCredentialRequestOptions::allowCredentials(const jsbind::Sequence<jsbind::Any>& value) {
+void PublicKeyCredentialRequestOptions::allowCredentials(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("allowCredentials", value);
 }
 
-jsbind::DOMString PublicKeyCredentialRequestOptions::userVerification() const {
-    return emlite::Val::get("userVerification").as<jsbind::DOMString>();
+jsbind::String PublicKeyCredentialRequestOptions::userVerification() const {
+    return emlite::Val::get("userVerification").as<jsbind::String>();
 }
 
-void PublicKeyCredentialRequestOptions::userVerification(const jsbind::DOMString& value) {
+void PublicKeyCredentialRequestOptions::userVerification(const jsbind::String& value) {
     emlite::Val::set("userVerification", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> PublicKeyCredentialRequestOptions::hints() const {
-    return emlite::Val::get("hints").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PublicKeyCredentialRequestOptions::hints() const {
+    return emlite::Val::get("hints").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PublicKeyCredentialRequestOptions::hints(const jsbind::Sequence<jsbind::DOMString>& value) {
+void PublicKeyCredentialRequestOptions::hints(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("hints", value);
 }
 
@@ -298,35 +298,35 @@ void PublicKeyCredentialRequestOptionsJSON::timeout(unsigned long value) {
     emlite::Val::set("timeout", value);
 }
 
-jsbind::DOMString PublicKeyCredentialRequestOptionsJSON::rpId() const {
-    return emlite::Val::get("rpId").as<jsbind::DOMString>();
+jsbind::String PublicKeyCredentialRequestOptionsJSON::rpId() const {
+    return emlite::Val::get("rpId").as<jsbind::String>();
 }
 
-void PublicKeyCredentialRequestOptionsJSON::rpId(const jsbind::DOMString& value) {
+void PublicKeyCredentialRequestOptionsJSON::rpId(const jsbind::String& value) {
     emlite::Val::set("rpId", value);
 }
 
-jsbind::Sequence<jsbind::Any> PublicKeyCredentialRequestOptionsJSON::allowCredentials() const {
-    return emlite::Val::get("allowCredentials").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> PublicKeyCredentialRequestOptionsJSON::allowCredentials() const {
+    return emlite::Val::get("allowCredentials").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void PublicKeyCredentialRequestOptionsJSON::allowCredentials(const jsbind::Sequence<jsbind::Any>& value) {
+void PublicKeyCredentialRequestOptionsJSON::allowCredentials(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("allowCredentials", value);
 }
 
-jsbind::DOMString PublicKeyCredentialRequestOptionsJSON::userVerification() const {
-    return emlite::Val::get("userVerification").as<jsbind::DOMString>();
+jsbind::String PublicKeyCredentialRequestOptionsJSON::userVerification() const {
+    return emlite::Val::get("userVerification").as<jsbind::String>();
 }
 
-void PublicKeyCredentialRequestOptionsJSON::userVerification(const jsbind::DOMString& value) {
+void PublicKeyCredentialRequestOptionsJSON::userVerification(const jsbind::String& value) {
     emlite::Val::set("userVerification", value);
 }
 
-jsbind::Sequence<jsbind::DOMString> PublicKeyCredentialRequestOptionsJSON::hints() const {
-    return emlite::Val::get("hints").as<jsbind::Sequence<jsbind::DOMString>>();
+jsbind::TypedArray<jsbind::String> PublicKeyCredentialRequestOptionsJSON::hints() const {
+    return emlite::Val::get("hints").as<jsbind::TypedArray<jsbind::String>>();
 }
 
-void PublicKeyCredentialRequestOptionsJSON::hints(const jsbind::Sequence<jsbind::DOMString>& value) {
+void PublicKeyCredentialRequestOptionsJSON::hints(const jsbind::TypedArray<jsbind::String>& value) {
     emlite::Val::set("hints", value);
 }
 
@@ -346,11 +346,11 @@ UnknownCredentialOptions::UnknownCredentialOptions(const emlite::Val &val) noexc
 UnknownCredentialOptions::UnknownCredentialOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 UnknownCredentialOptions UnknownCredentialOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString UnknownCredentialOptions::rpId() const {
-    return emlite::Val::get("rpId").as<jsbind::DOMString>();
+jsbind::String UnknownCredentialOptions::rpId() const {
+    return emlite::Val::get("rpId").as<jsbind::String>();
 }
 
-void UnknownCredentialOptions::rpId(const jsbind::DOMString& value) {
+void UnknownCredentialOptions::rpId(const jsbind::String& value) {
     emlite::Val::set("rpId", value);
 }
 
@@ -370,11 +370,11 @@ AllAcceptedCredentialsOptions::AllAcceptedCredentialsOptions(const emlite::Val &
 AllAcceptedCredentialsOptions::AllAcceptedCredentialsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 AllAcceptedCredentialsOptions AllAcceptedCredentialsOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString AllAcceptedCredentialsOptions::rpId() const {
-    return emlite::Val::get("rpId").as<jsbind::DOMString>();
+jsbind::String AllAcceptedCredentialsOptions::rpId() const {
+    return emlite::Val::get("rpId").as<jsbind::String>();
 }
 
-void AllAcceptedCredentialsOptions::rpId(const jsbind::DOMString& value) {
+void AllAcceptedCredentialsOptions::rpId(const jsbind::String& value) {
     emlite::Val::set("rpId", value);
 }
 
@@ -386,11 +386,11 @@ void AllAcceptedCredentialsOptions::userId(const jsbind::Any& value) {
     emlite::Val::set("userId", value);
 }
 
-jsbind::Sequence<jsbind::Any> AllAcceptedCredentialsOptions::allAcceptedCredentialIds() const {
-    return emlite::Val::get("allAcceptedCredentialIds").as<jsbind::Sequence<jsbind::Any>>();
+jsbind::TypedArray<jsbind::Any> AllAcceptedCredentialsOptions::allAcceptedCredentialIds() const {
+    return emlite::Val::get("allAcceptedCredentialIds").as<jsbind::TypedArray<jsbind::Any>>();
 }
 
-void AllAcceptedCredentialsOptions::allAcceptedCredentialIds(const jsbind::Sequence<jsbind::Any>& value) {
+void AllAcceptedCredentialsOptions::allAcceptedCredentialIds(const jsbind::TypedArray<jsbind::Any>& value) {
     emlite::Val::set("allAcceptedCredentialIds", value);
 }
 
@@ -402,11 +402,11 @@ CurrentUserDetailsOptions::CurrentUserDetailsOptions(const emlite::Val &val) noe
 CurrentUserDetailsOptions::CurrentUserDetailsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 CurrentUserDetailsOptions CurrentUserDetailsOptions::clone() const noexcept { return *this; }
 
-jsbind::DOMString CurrentUserDetailsOptions::rpId() const {
-    return emlite::Val::get("rpId").as<jsbind::DOMString>();
+jsbind::String CurrentUserDetailsOptions::rpId() const {
+    return emlite::Val::get("rpId").as<jsbind::String>();
 }
 
-void CurrentUserDetailsOptions::rpId(const jsbind::DOMString& value) {
+void CurrentUserDetailsOptions::rpId(const jsbind::String& value) {
     emlite::Val::set("rpId", value);
 }
 
@@ -418,19 +418,19 @@ void CurrentUserDetailsOptions::userId(const jsbind::Any& value) {
     emlite::Val::set("userId", value);
 }
 
-jsbind::DOMString CurrentUserDetailsOptions::name() const {
-    return emlite::Val::get("name").as<jsbind::DOMString>();
+jsbind::String CurrentUserDetailsOptions::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
 }
 
-void CurrentUserDetailsOptions::name(const jsbind::DOMString& value) {
+void CurrentUserDetailsOptions::name(const jsbind::String& value) {
     emlite::Val::set("name", value);
 }
 
-jsbind::DOMString CurrentUserDetailsOptions::displayName() const {
-    return emlite::Val::get("displayName").as<jsbind::DOMString>();
+jsbind::String CurrentUserDetailsOptions::displayName() const {
+    return emlite::Val::get("displayName").as<jsbind::String>();
 }
 
-void CurrentUserDetailsOptions::displayName(const jsbind::DOMString& value) {
+void CurrentUserDetailsOptions::displayName(const jsbind::String& value) {
     emlite::Val::set("displayName", value);
 }
 
@@ -450,8 +450,8 @@ AuthenticatorResponse PublicKeyCredential::response() const {
     return Credential::get("response").as<AuthenticatorResponse>();
 }
 
-jsbind::DOMString PublicKeyCredential::authenticatorAttachment() const {
-    return Credential::get("authenticatorAttachment").as<jsbind::DOMString>();
+jsbind::String PublicKeyCredential::authenticatorAttachment() const {
+    return Credential::get("authenticatorAttachment").as<jsbind::String>();
 }
 
 AuthenticationExtensionsClientOutputs PublicKeyCredential::getClientExtensionResults() {

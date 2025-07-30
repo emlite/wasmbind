@@ -10,7 +10,7 @@ GPUCompilationInfo::GPUCompilationInfo(Handle h) noexcept : emlite::Val(emlite::
 GPUCompilationInfo::GPUCompilationInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
-jsbind::FrozenArray<GPUCompilationMessage> GPUCompilationInfo::messages() const {
-    return emlite::Val::get("messages").as<jsbind::FrozenArray<GPUCompilationMessage>>();
+jsbind::TypedArray<GPUCompilationMessage> GPUCompilationInfo::messages() const {
+    return emlite::Val::get("messages").as<jsbind::TypedArray<GPUCompilationMessage>>();
 }
 

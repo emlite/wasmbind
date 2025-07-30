@@ -10,7 +10,7 @@ BackgroundFetchEvent::BackgroundFetchEvent(Handle h) noexcept : ExtendableEvent(
 BackgroundFetchEvent::BackgroundFetchEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 
-BackgroundFetchEvent::BackgroundFetchEvent(const jsbind::DOMString& type, const jsbind::Any& init) : ExtendableEvent(emlite::Val::global("BackgroundFetchEvent").new_(type, init)) {}
+BackgroundFetchEvent::BackgroundFetchEvent(const jsbind::String& type, const jsbind::Any& init) : ExtendableEvent(emlite::Val::global("BackgroundFetchEvent").new_(type, init)) {}
 
 BackgroundFetchRegistration BackgroundFetchEvent::registration() const {
     return ExtendableEvent::get("registration").as<BackgroundFetchRegistration>();

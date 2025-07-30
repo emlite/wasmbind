@@ -18,8 +18,8 @@ public:
     LargestContentfulPaint clone() const noexcept;
     jsbind::Any loadTime() const;
     unsigned long size() const;
-    jsbind::DOMString id() const;
-    jsbind::DOMString url() const;
+    jsbind::String id() const;
+    jsbind::String url() const;
     Element element() const;
     jsbind::Object toJSON();
     jsbind::Any paintTime() const;

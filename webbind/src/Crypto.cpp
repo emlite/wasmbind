@@ -18,7 +18,7 @@ jsbind::Any Crypto::getRandomValues(const jsbind::Any& array) {
     return emlite::Val::call("getRandomValues", array).as<jsbind::Any>();
 }
 
-jsbind::DOMString Crypto::randomUUID() {
-    return emlite::Val::call("randomUUID").as<jsbind::DOMString>();
+jsbind::String Crypto::randomUUID() {
+    return emlite::Val::call("randomUUID").as<jsbind::String>();
 }
 

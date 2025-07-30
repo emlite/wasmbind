@@ -67,10 +67,10 @@ export function cpp(idlType) {
   const { n, unsigned } = flat(idlType);
   const jsbindMap = {
     undefined: "jsbind::Undefined",
-    DOMString: "jsbind::DOMString",
-    USVString: "jsbind::USVString",
-    ByteString: "jsbind::ByteString",
-    CSSOMString: "jsbind::CSSOMString",
+    DOMString: "jsbind::String",
+    USVString: "jsbind::String",
+    ByteString: "jsbind::String",
+    CSSOMString: "jsbind::String",
     object: "jsbind::Object",
     any: "jsbind::Any",
     Uint8Array: "jsbind::Uint8Array",
@@ -95,7 +95,7 @@ export function cpp(idlType) {
     const elem = Array.isArray(inner) ? inner[0] : inner;
 
     if (idlType.generic === "sequence") {
-      return `jsbind::Sequence<${cpp(elem)}>`;
+      return `jsbind::TypedArray<${cpp(elem)}>`;
     }
 
     if (idlType.generic === "Promise") {
@@ -103,11 +103,11 @@ export function cpp(idlType) {
     }
 
     if (idlType.generic === "FrozenArray") {
-      return `jsbind::FrozenArray<${cpp(elem)}>`;
+      return `jsbind::TypedArray<${cpp(elem)}>`;
     }
 
     if (idlType.generic === "ObservableArray") {
-      return `jsbind::ObservableArray<${cpp(elem)}>`;
+      return `jsbind::TypedArray<${cpp(elem)}>`;
     }
 
     if (idlType.generic === "record") {

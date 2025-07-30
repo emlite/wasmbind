@@ -45,23 +45,23 @@ jsbind::Promise<StorageEstimate> StorageAccessHandle::estimate() {
     return emlite::Val::call("estimate").as<jsbind::Promise<StorageEstimate>>();
 }
 
-jsbind::DOMString StorageAccessHandle::createObjectURL(const jsbind::Any& obj) {
-    return emlite::Val::call("createObjectURL", obj).as<jsbind::DOMString>();
+jsbind::String StorageAccessHandle::createObjectURL(const jsbind::Any& obj) {
+    return emlite::Val::call("createObjectURL", obj).as<jsbind::String>();
 }
 
-jsbind::Undefined StorageAccessHandle::revokeObjectURL(const jsbind::DOMString& url) {
+jsbind::Undefined StorageAccessHandle::revokeObjectURL(const jsbind::String& url) {
     return emlite::Val::call("revokeObjectURL", url).as<jsbind::Undefined>();
 }
 
-BroadcastChannel StorageAccessHandle::BroadcastChannel_(const jsbind::DOMString& name) {
+BroadcastChannel StorageAccessHandle::BroadcastChannel_(const jsbind::String& name) {
     return emlite::Val::call("BroadcastChannel", name).as<BroadcastChannel>();
 }
 
-SharedWorker StorageAccessHandle::SharedWorker_(const jsbind::USVString& scriptURL) {
+SharedWorker StorageAccessHandle::SharedWorker_(const jsbind::String& scriptURL) {
     return emlite::Val::call("SharedWorker", scriptURL).as<SharedWorker>();
 }
 
-SharedWorker StorageAccessHandle::SharedWorker_(const jsbind::USVString& scriptURL, const jsbind::Any& options) {
+SharedWorker StorageAccessHandle::SharedWorker_(const jsbind::String& scriptURL, const jsbind::Any& options) {
     return emlite::Val::call("SharedWorker", scriptURL, options).as<SharedWorker>();
 }
 

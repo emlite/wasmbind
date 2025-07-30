@@ -16,12 +16,12 @@ public:
 
     NDEFRecord clone() const noexcept;
     NDEFRecord(const jsbind::Any& recordInit);
-    jsbind::USVString recordType() const;
-    jsbind::USVString mediaType() const;
-    jsbind::USVString id() const;
+    jsbind::String recordType() const;
+    jsbind::String mediaType() const;
+    jsbind::String id() const;
     jsbind::DataView data() const;
-    jsbind::USVString encoding() const;
-    jsbind::USVString lang() const;
-    jsbind::Sequence<NDEFRecord> toRecords();
+    jsbind::String encoding() const;
+    jsbind::String lang() const;
+    jsbind::TypedArray<NDEFRecord> toRecords();
 };
 

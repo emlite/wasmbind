@@ -31,9 +31,9 @@ public:
     static StorageBucketManager take_ownership(Handle h) noexcept;
 
     StorageBucketManager clone() const noexcept;
-    jsbind::Promise<StorageBucket> open(const jsbind::DOMString& name);
-    jsbind::Promise<StorageBucket> open(const jsbind::DOMString& name, const StorageBucketOptions& options);
-    jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> keys();
-    jsbind::Promise<jsbind::Undefined> delete_(const jsbind::DOMString& name);
+    jsbind::Promise<StorageBucket> open(const jsbind::String& name);
+    jsbind::Promise<StorageBucket> open(const jsbind::String& name, const StorageBucketOptions& options);
+    jsbind::Promise<jsbind::TypedArray<jsbind::String>> keys();
+    jsbind::Promise<jsbind::Undefined> delete_(const jsbind::String& name);
 };
 

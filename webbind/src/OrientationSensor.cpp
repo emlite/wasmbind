@@ -9,8 +9,8 @@ OrientationSensor::OrientationSensor(Handle h) noexcept : Sensor(emlite::Val::ta
 OrientationSensor::OrientationSensor(const emlite::Val &val) noexcept: Sensor(val) {}
 
 
-jsbind::FrozenArray<double> OrientationSensor::quaternion() const {
-    return Sensor::get("quaternion").as<jsbind::FrozenArray<double>>();
+jsbind::TypedArray<double> OrientationSensor::quaternion() const {
+    return Sensor::get("quaternion").as<jsbind::TypedArray<double>>();
 }
 
 jsbind::Undefined OrientationSensor::populateMatrix(const jsbind::Any& targetMatrix) {

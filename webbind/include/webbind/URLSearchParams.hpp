@@ -16,14 +16,14 @@ public:
     URLSearchParams();
     URLSearchParams(const jsbind::Any& init);
     unsigned long size() const;
-    jsbind::Undefined append(const jsbind::USVString& name, const jsbind::USVString& value);
-    jsbind::Undefined delete_(const jsbind::USVString& name);
-    jsbind::Undefined delete_(const jsbind::USVString& name, const jsbind::USVString& value);
-    jsbind::USVString get(const jsbind::USVString& name);
-    jsbind::Sequence<jsbind::USVString> getAll(const jsbind::USVString& name);
-    bool has(const jsbind::USVString& name);
-    bool has(const jsbind::USVString& name, const jsbind::USVString& value);
-    jsbind::Undefined set(const jsbind::USVString& name, const jsbind::USVString& value);
+    jsbind::Undefined append(const jsbind::String& name, const jsbind::String& value);
+    jsbind::Undefined delete_(const jsbind::String& name);
+    jsbind::Undefined delete_(const jsbind::String& name, const jsbind::String& value);
+    jsbind::String get(const jsbind::String& name);
+    jsbind::TypedArray<jsbind::String> getAll(const jsbind::String& name);
+    bool has(const jsbind::String& name);
+    bool has(const jsbind::String& name, const jsbind::String& value);
+    jsbind::Undefined set(const jsbind::String& name, const jsbind::String& value);
     jsbind::Undefined sort();
 };
 

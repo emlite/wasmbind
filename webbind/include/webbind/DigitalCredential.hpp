@@ -15,8 +15,8 @@ public:
 
     DigitalCredential clone() const noexcept;
     jsbind::Object toJSON();
-    jsbind::DOMString protocol() const;
+    jsbind::String protocol() const;
     jsbind::Object data() const;
-    static bool userAgentAllowsProtocol(const jsbind::DOMString& protocol);
+    static bool userAgentAllowsProtocol(const jsbind::String& protocol);
 };
 

@@ -76,11 +76,11 @@ void PhotoCapabilities::imageWidth(const jsbind::Any& value) {
     emlite::Val::set("imageWidth", value);
 }
 
-jsbind::Sequence<FillLightMode> PhotoCapabilities::fillLightMode() const {
-    return emlite::Val::get("fillLightMode").as<jsbind::Sequence<FillLightMode>>();
+jsbind::TypedArray<FillLightMode> PhotoCapabilities::fillLightMode() const {
+    return emlite::Val::get("fillLightMode").as<jsbind::TypedArray<FillLightMode>>();
 }
 
-void PhotoCapabilities::fillLightMode(const jsbind::Sequence<FillLightMode>& value) {
+void PhotoCapabilities::fillLightMode(const jsbind::TypedArray<FillLightMode>& value) {
     emlite::Val::set("fillLightMode", value);
 }
 

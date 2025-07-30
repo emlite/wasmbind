@@ -15,11 +15,11 @@ public:
     static Plugin take_ownership(Handle h) noexcept;
 
     Plugin clone() const noexcept;
-    jsbind::DOMString name() const;
-    jsbind::DOMString description() const;
-    jsbind::DOMString filename() const;
+    jsbind::String name() const;
+    jsbind::String description() const;
+    jsbind::String filename() const;
     unsigned long length() const;
     MimeType item(unsigned long index);
-    MimeType namedItem(const jsbind::DOMString& name);
+    MimeType namedItem(const jsbind::String& name);
 };
 

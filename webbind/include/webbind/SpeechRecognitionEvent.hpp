@@ -16,7 +16,7 @@ public:
     static SpeechRecognitionEvent take_ownership(Handle h) noexcept;
 
     SpeechRecognitionEvent clone() const noexcept;
-    SpeechRecognitionEvent(const jsbind::DOMString& type, const jsbind::Any& eventInitDict);
+    SpeechRecognitionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     unsigned long resultIndex() const;
     SpeechRecognitionResultList results() const;
 };

@@ -18,8 +18,8 @@ public:
     explicit PaymentDetailsUpdate(const emlite::Val &val) noexcept;
     PaymentDetailsUpdate() noexcept;
     PaymentDetailsUpdate clone() const noexcept;
-    jsbind::DOMString error() const;
-    void error(const jsbind::DOMString& value);
+    jsbind::String error() const;
+    void error(const jsbind::String& value);
     jsbind::Any total() const;
     void total(const jsbind::Any& value);
     jsbind::Any shippingAddressErrors() const;
@@ -38,15 +38,15 @@ public:
     static PaymentRequest take_ownership(Handle h) noexcept;
 
     PaymentRequest clone() const noexcept;
-    PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details);
-    PaymentRequest(const jsbind::Sequence<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options);
+    PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const jsbind::Any& details);
+    PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options);
     jsbind::Promise<PaymentResponse> show();
     jsbind::Promise<PaymentResponse> show(const jsbind::Promise<PaymentDetailsUpdate>& detailsPromise);
     jsbind::Promise<jsbind::Undefined> abort();
     jsbind::Promise<bool> canMakePayment();
-    jsbind::DOMString id() const;
+    jsbind::String id() const;
     ContactAddress shippingAddress() const;
-    jsbind::DOMString shippingOption() const;
+    jsbind::String shippingOption() const;
     PaymentShippingType shippingType() const;
     jsbind::Any onshippingaddresschange() const;
     void onshippingaddresschange(const jsbind::Any& value);

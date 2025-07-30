@@ -15,8 +15,8 @@ public:
     explicit MultiCacheQueryOptions(const emlite::Val &val) noexcept;
     MultiCacheQueryOptions() noexcept;
     MultiCacheQueryOptions clone() const noexcept;
-    jsbind::DOMString cacheName() const;
-    void cacheName(const jsbind::DOMString& value);
+    jsbind::String cacheName() const;
+    void cacheName(const jsbind::String& value);
 };
 
 class CacheStorage : public emlite::Val {
@@ -29,9 +29,9 @@ public:
     CacheStorage clone() const noexcept;
     jsbind::Promise<jsbind::Any> match(const jsbind::Any& request);
     jsbind::Promise<jsbind::Any> match(const jsbind::Any& request, const MultiCacheQueryOptions& options);
-    jsbind::Promise<bool> has(const jsbind::DOMString& cacheName);
-    jsbind::Promise<Cache> open(const jsbind::DOMString& cacheName);
-    jsbind::Promise<bool> delete_(const jsbind::DOMString& cacheName);
-    jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> keys();
+    jsbind::Promise<bool> has(const jsbind::String& cacheName);
+    jsbind::Promise<Cache> open(const jsbind::String& cacheName);
+    jsbind::Promise<bool> delete_(const jsbind::String& cacheName);
+    jsbind::Promise<jsbind::TypedArray<jsbind::String>> keys();
 };
 

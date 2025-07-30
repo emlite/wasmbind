@@ -11,51 +11,51 @@ HTMLImageElement::HTMLImageElement(const emlite::Val &val) noexcept: HTMLElement
 
 HTMLImageElement::HTMLImageElement() : HTMLElement(emlite::Val::global("HTMLImageElement").new_()) {}
 
-jsbind::DOMString HTMLImageElement::alt() const {
-    return HTMLElement::get("alt").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::alt() const {
+    return HTMLElement::get("alt").as<jsbind::String>();
 }
 
-void HTMLImageElement::alt(const jsbind::DOMString& value) {
+void HTMLImageElement::alt(const jsbind::String& value) {
     HTMLElement::set("alt", value);
 }
 
-jsbind::USVString HTMLImageElement::src() const {
-    return HTMLElement::get("src").as<jsbind::USVString>();
+jsbind::String HTMLImageElement::src() const {
+    return HTMLElement::get("src").as<jsbind::String>();
 }
 
-void HTMLImageElement::src(const jsbind::USVString& value) {
+void HTMLImageElement::src(const jsbind::String& value) {
     HTMLElement::set("src", value);
 }
 
-jsbind::USVString HTMLImageElement::srcset() const {
-    return HTMLElement::get("srcset").as<jsbind::USVString>();
+jsbind::String HTMLImageElement::srcset() const {
+    return HTMLElement::get("srcset").as<jsbind::String>();
 }
 
-void HTMLImageElement::srcset(const jsbind::USVString& value) {
+void HTMLImageElement::srcset(const jsbind::String& value) {
     HTMLElement::set("srcset", value);
 }
 
-jsbind::DOMString HTMLImageElement::sizes() const {
-    return HTMLElement::get("sizes").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::sizes() const {
+    return HTMLElement::get("sizes").as<jsbind::String>();
 }
 
-void HTMLImageElement::sizes(const jsbind::DOMString& value) {
+void HTMLImageElement::sizes(const jsbind::String& value) {
     HTMLElement::set("sizes", value);
 }
 
-jsbind::DOMString HTMLImageElement::crossOrigin() const {
-    return HTMLElement::get("crossOrigin").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::crossOrigin() const {
+    return HTMLElement::get("crossOrigin").as<jsbind::String>();
 }
 
-void HTMLImageElement::crossOrigin(const jsbind::DOMString& value) {
+void HTMLImageElement::crossOrigin(const jsbind::String& value) {
     HTMLElement::set("crossOrigin", value);
 }
 
-jsbind::DOMString HTMLImageElement::useMap() const {
-    return HTMLElement::get("useMap").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::useMap() const {
+    return HTMLElement::get("useMap").as<jsbind::String>();
 }
 
-void HTMLImageElement::useMap(const jsbind::DOMString& value) {
+void HTMLImageElement::useMap(const jsbind::String& value) {
     HTMLElement::set("useMap", value);
 }
 
@@ -95,39 +95,39 @@ bool HTMLImageElement::complete() const {
     return HTMLElement::get("complete").as<bool>();
 }
 
-jsbind::USVString HTMLImageElement::currentSrc() const {
-    return HTMLElement::get("currentSrc").as<jsbind::USVString>();
+jsbind::String HTMLImageElement::currentSrc() const {
+    return HTMLElement::get("currentSrc").as<jsbind::String>();
 }
 
-jsbind::DOMString HTMLImageElement::referrerPolicy() const {
-    return HTMLElement::get("referrerPolicy").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::referrerPolicy() const {
+    return HTMLElement::get("referrerPolicy").as<jsbind::String>();
 }
 
-void HTMLImageElement::referrerPolicy(const jsbind::DOMString& value) {
+void HTMLImageElement::referrerPolicy(const jsbind::String& value) {
     HTMLElement::set("referrerPolicy", value);
 }
 
-jsbind::DOMString HTMLImageElement::decoding() const {
-    return HTMLElement::get("decoding").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::decoding() const {
+    return HTMLElement::get("decoding").as<jsbind::String>();
 }
 
-void HTMLImageElement::decoding(const jsbind::DOMString& value) {
+void HTMLImageElement::decoding(const jsbind::String& value) {
     HTMLElement::set("decoding", value);
 }
 
-jsbind::DOMString HTMLImageElement::loading() const {
-    return HTMLElement::get("loading").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::loading() const {
+    return HTMLElement::get("loading").as<jsbind::String>();
 }
 
-void HTMLImageElement::loading(const jsbind::DOMString& value) {
+void HTMLImageElement::loading(const jsbind::String& value) {
     HTMLElement::set("loading", value);
 }
 
-jsbind::DOMString HTMLImageElement::fetchPriority() const {
-    return HTMLElement::get("fetchPriority").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::fetchPriority() const {
+    return HTMLElement::get("fetchPriority").as<jsbind::String>();
 }
 
-void HTMLImageElement::fetchPriority(const jsbind::DOMString& value) {
+void HTMLImageElement::fetchPriority(const jsbind::String& value) {
     HTMLElement::set("fetchPriority", value);
 }
 
@@ -143,27 +143,27 @@ long HTMLImageElement::y() const {
     return HTMLElement::get("y").as<long>();
 }
 
-jsbind::DOMString HTMLImageElement::name() const {
-    return HTMLElement::get("name").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::name() const {
+    return HTMLElement::get("name").as<jsbind::String>();
 }
 
-void HTMLImageElement::name(const jsbind::DOMString& value) {
+void HTMLImageElement::name(const jsbind::String& value) {
     HTMLElement::set("name", value);
 }
 
-jsbind::USVString HTMLImageElement::lowsrc() const {
-    return HTMLElement::get("lowsrc").as<jsbind::USVString>();
+jsbind::String HTMLImageElement::lowsrc() const {
+    return HTMLElement::get("lowsrc").as<jsbind::String>();
 }
 
-void HTMLImageElement::lowsrc(const jsbind::USVString& value) {
+void HTMLImageElement::lowsrc(const jsbind::String& value) {
     HTMLElement::set("lowsrc", value);
 }
 
-jsbind::DOMString HTMLImageElement::align() const {
-    return HTMLElement::get("align").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::align() const {
+    return HTMLElement::get("align").as<jsbind::String>();
 }
 
-void HTMLImageElement::align(const jsbind::DOMString& value) {
+void HTMLImageElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
@@ -183,27 +183,27 @@ void HTMLImageElement::vspace(unsigned long value) {
     HTMLElement::set("vspace", value);
 }
 
-jsbind::USVString HTMLImageElement::longDesc() const {
-    return HTMLElement::get("longDesc").as<jsbind::USVString>();
+jsbind::String HTMLImageElement::longDesc() const {
+    return HTMLElement::get("longDesc").as<jsbind::String>();
 }
 
-void HTMLImageElement::longDesc(const jsbind::USVString& value) {
+void HTMLImageElement::longDesc(const jsbind::String& value) {
     HTMLElement::set("longDesc", value);
 }
 
-jsbind::DOMString HTMLImageElement::border() const {
-    return HTMLElement::get("border").as<jsbind::DOMString>();
+jsbind::String HTMLImageElement::border() const {
+    return HTMLElement::get("border").as<jsbind::String>();
 }
 
-void HTMLImageElement::border(const jsbind::DOMString& value) {
+void HTMLImageElement::border(const jsbind::String& value) {
     HTMLElement::set("border", value);
 }
 
-jsbind::USVString HTMLImageElement::attributionSrc() const {
-    return HTMLElement::get("attributionSrc").as<jsbind::USVString>();
+jsbind::String HTMLImageElement::attributionSrc() const {
+    return HTMLElement::get("attributionSrc").as<jsbind::String>();
 }
 
-void HTMLImageElement::attributionSrc(const jsbind::USVString& value) {
+void HTMLImageElement::attributionSrc(const jsbind::String& value) {
     HTMLElement::set("attributionSrc", value);
 }
 

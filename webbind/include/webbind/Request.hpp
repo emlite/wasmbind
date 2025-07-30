@@ -22,17 +22,17 @@ public:
     Request clone() const noexcept;
     Request(const jsbind::Any& input);
     Request(const jsbind::Any& input, const jsbind::Any& init);
-    jsbind::ByteString method() const;
-    jsbind::USVString url() const;
+    jsbind::String method() const;
+    jsbind::String url() const;
     Headers headers() const;
     RequestDestination destination() const;
-    jsbind::USVString referrer() const;
+    jsbind::String referrer() const;
     ReferrerPolicy referrerPolicy() const;
     RequestMode mode() const;
     RequestCredentials credentials() const;
     RequestCache cache() const;
     RequestRedirect redirect() const;
-    jsbind::DOMString integrity() const;
+    jsbind::String integrity() const;
     bool keepalive() const;
     bool isReloadNavigation() const;
     bool isHistoryNavigation() const;
@@ -47,6 +47,6 @@ public:
     jsbind::Promise<jsbind::Uint8Array> bytes();
     jsbind::Promise<FormData> formData();
     jsbind::Promise<jsbind::Any> json();
-    jsbind::Promise<jsbind::USVString> text();
+    jsbind::Promise<jsbind::String> text();
 };
 

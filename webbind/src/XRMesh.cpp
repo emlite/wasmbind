@@ -14,8 +14,8 @@ XRSpace XRMesh::meshSpace() const {
     return emlite::Val::get("meshSpace").as<XRSpace>();
 }
 
-jsbind::FrozenArray<jsbind::Float32Array> XRMesh::vertices() const {
-    return emlite::Val::get("vertices").as<jsbind::FrozenArray<jsbind::Float32Array>>();
+jsbind::TypedArray<jsbind::Float32Array> XRMesh::vertices() const {
+    return emlite::Val::get("vertices").as<jsbind::TypedArray<jsbind::Float32Array>>();
 }
 
 jsbind::Uint32Array XRMesh::indices() const {
@@ -26,7 +26,7 @@ jsbind::Any XRMesh::lastChangedTime() const {
     return emlite::Val::get("lastChangedTime").as<jsbind::Any>();
 }
 
-jsbind::DOMString XRMesh::semanticLabel() const {
-    return emlite::Val::get("semanticLabel").as<jsbind::DOMString>();
+jsbind::String XRMesh::semanticLabel() const {
+    return emlite::Val::get("semanticLabel").as<jsbind::String>();
 }
 

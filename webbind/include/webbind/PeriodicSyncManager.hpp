@@ -26,9 +26,9 @@ public:
     static PeriodicSyncManager take_ownership(Handle h) noexcept;
 
     PeriodicSyncManager clone() const noexcept;
-    jsbind::Promise<jsbind::Undefined> register_(const jsbind::DOMString& tag);
-    jsbind::Promise<jsbind::Undefined> register_(const jsbind::DOMString& tag, const BackgroundSyncOptions& options);
-    jsbind::Promise<jsbind::Sequence<jsbind::DOMString>> getTags();
-    jsbind::Promise<jsbind::Undefined> unregister(const jsbind::DOMString& tag);
+    jsbind::Promise<jsbind::Undefined> register_(const jsbind::String& tag);
+    jsbind::Promise<jsbind::Undefined> register_(const jsbind::String& tag, const BackgroundSyncOptions& options);
+    jsbind::Promise<jsbind::TypedArray<jsbind::String>> getTags();
+    jsbind::Promise<jsbind::Undefined> unregister(const jsbind::String& tag);
 };
 

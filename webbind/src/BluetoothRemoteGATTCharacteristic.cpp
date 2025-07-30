@@ -32,12 +32,12 @@ jsbind::Promise<BluetoothRemoteGATTDescriptor> BluetoothRemoteGATTCharacteristic
     return EventTarget::call("getDescriptor", descriptor).as<jsbind::Promise<BluetoothRemoteGATTDescriptor>>();
 }
 
-jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTDescriptor>> BluetoothRemoteGATTCharacteristic::getDescriptors() {
-    return EventTarget::call("getDescriptors").as<jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTDescriptor>>>();
+jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTDescriptor>> BluetoothRemoteGATTCharacteristic::getDescriptors() {
+    return EventTarget::call("getDescriptors").as<jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTDescriptor>>>();
 }
 
-jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTDescriptor>> BluetoothRemoteGATTCharacteristic::getDescriptors(const jsbind::Any& descriptor) {
-    return EventTarget::call("getDescriptors", descriptor).as<jsbind::Promise<jsbind::Sequence<BluetoothRemoteGATTDescriptor>>>();
+jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTDescriptor>> BluetoothRemoteGATTCharacteristic::getDescriptors(const jsbind::Any& descriptor) {
+    return EventTarget::call("getDescriptors", descriptor).as<jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTDescriptor>>>();
 }
 
 jsbind::Promise<jsbind::DataView> BluetoothRemoteGATTCharacteristic::readValue() {

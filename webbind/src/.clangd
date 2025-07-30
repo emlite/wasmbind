@@ -1,3 +1,0 @@
-CompileFlags:
-    Add: ["-I../../bin/_deps/emlite-src/include", "-I../../jsbind/include", "-I../include"]
-    CompilationDatabase: None

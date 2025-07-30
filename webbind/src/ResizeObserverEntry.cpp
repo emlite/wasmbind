@@ -20,15 +20,15 @@ DOMRectReadOnly ResizeObserverEntry::contentRect() const {
     return emlite::Val::get("contentRect").as<DOMRectReadOnly>();
 }
 
-jsbind::FrozenArray<ResizeObserverSize> ResizeObserverEntry::borderBoxSize() const {
-    return emlite::Val::get("borderBoxSize").as<jsbind::FrozenArray<ResizeObserverSize>>();
+jsbind::TypedArray<ResizeObserverSize> ResizeObserverEntry::borderBoxSize() const {
+    return emlite::Val::get("borderBoxSize").as<jsbind::TypedArray<ResizeObserverSize>>();
 }
 
-jsbind::FrozenArray<ResizeObserverSize> ResizeObserverEntry::contentBoxSize() const {
-    return emlite::Val::get("contentBoxSize").as<jsbind::FrozenArray<ResizeObserverSize>>();
+jsbind::TypedArray<ResizeObserverSize> ResizeObserverEntry::contentBoxSize() const {
+    return emlite::Val::get("contentBoxSize").as<jsbind::TypedArray<ResizeObserverSize>>();
 }
 
-jsbind::FrozenArray<ResizeObserverSize> ResizeObserverEntry::devicePixelContentBoxSize() const {
-    return emlite::Val::get("devicePixelContentBoxSize").as<jsbind::FrozenArray<ResizeObserverSize>>();
+jsbind::TypedArray<ResizeObserverSize> ResizeObserverEntry::devicePixelContentBoxSize() const {
+    return emlite::Val::get("devicePixelContentBoxSize").as<jsbind::TypedArray<ResizeObserverSize>>();
 }
 
