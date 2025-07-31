@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The SVGAnimatedNumber class.
+/// [`SVGAnimatedNumber`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedNumber)
 class SVGAnimatedNumber : public emlite::Val {
     explicit SVGAnimatedNumber(Handle h) noexcept;
 
@@ -12,9 +14,15 @@ public:
     explicit SVGAnimatedNumber(const emlite::Val &val) noexcept;
     static SVGAnimatedNumber take_ownership(Handle h) noexcept;
 
-    SVGAnimatedNumber clone() const noexcept;
-    float baseVal() const;
+    [[nodiscard]] SVGAnimatedNumber clone() const noexcept;
+    /// Getter of the `baseVal` attribute.
+    /// [`SVGAnimatedNumber.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedNumber/baseVal)
+    [[nodiscard]] float baseVal() const;
+    /// Setter of the `baseVal` attribute.
+    /// [`SVGAnimatedNumber.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedNumber/baseVal)
     void baseVal(float value);
-    float animVal() const;
+    /// Getter of the `animVal` attribute.
+    /// [`SVGAnimatedNumber.animVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedNumber/animVal)
+    [[nodiscard]] float animVal() const;
 };
 

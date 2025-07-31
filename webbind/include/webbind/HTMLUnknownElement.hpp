@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLUnknownElement class.
+/// [`HTMLUnknownElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUnknownElement)
 class HTMLUnknownElement : public HTMLElement {
     explicit HTMLUnknownElement(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit HTMLUnknownElement(const emlite::Val &val) noexcept;
     static HTMLUnknownElement take_ownership(Handle h) noexcept;
 
-    HTMLUnknownElement clone() const noexcept;
+    [[nodiscard]] HTMLUnknownElement clone() const noexcept;
 };
 

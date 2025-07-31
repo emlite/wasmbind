@@ -15,17 +15,19 @@ public:
     static GPURequestAdapterOptions take_ownership(Handle h) noexcept;
     explicit GPURequestAdapterOptions(const emlite::Val &val) noexcept;
     GPURequestAdapterOptions() noexcept;
-    GPURequestAdapterOptions clone() const noexcept;
-    jsbind::String featureLevel() const;
+    [[nodiscard]] GPURequestAdapterOptions clone() const noexcept;
+    [[nodiscard]] jsbind::String featureLevel() const;
     void featureLevel(const jsbind::String& value);
-    GPUPowerPreference powerPreference() const;
+    [[nodiscard]] GPUPowerPreference powerPreference() const;
     void powerPreference(const GPUPowerPreference& value);
-    bool forceFallbackAdapter() const;
+    [[nodiscard]] bool forceFallbackAdapter() const;
     void forceFallbackAdapter(bool value);
-    bool xrCompatible() const;
+    [[nodiscard]] bool xrCompatible() const;
     void xrCompatible(bool value);
 };
 
+/// The GPU class.
+/// [`GPU`](https://developer.mozilla.org/en-US/docs/Web/API/GPU)
 class GPU : public emlite::Val {
     explicit GPU(Handle h) noexcept;
 
@@ -33,10 +35,18 @@ public:
     explicit GPU(const emlite::Val &val) noexcept;
     static GPU take_ownership(Handle h) noexcept;
 
-    GPU clone() const noexcept;
+    [[nodiscard]] GPU clone() const noexcept;
+    /// The requestAdapter method.
+    /// [`GPU.requestAdapter`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/requestAdapter)
     jsbind::Promise<GPUAdapter> requestAdapter();
+    /// The requestAdapter method.
+    /// [`GPU.requestAdapter`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/requestAdapter)
     jsbind::Promise<GPUAdapter> requestAdapter(const GPURequestAdapterOptions& options);
+    /// The getPreferredCanvasFormat method.
+    /// [`GPU.getPreferredCanvasFormat`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/getPreferredCanvasFormat)
     GPUTextureFormat getPreferredCanvasFormat();
-    WGSLLanguageFeatures wgslLanguageFeatures() const;
+    /// Getter of the `wgslLanguageFeatures` attribute.
+    /// [`GPU.wgslLanguageFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/wgslLanguageFeatures)
+    [[nodiscard]] WGSLLanguageFeatures wgslLanguageFeatures() const;
 };
 

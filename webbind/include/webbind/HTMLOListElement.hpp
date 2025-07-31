@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLOListElement class.
+/// [`HTMLOListElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement)
 class HTMLOListElement : public HTMLElement {
     explicit HTMLOListElement(Handle h) noexcept;
 
@@ -13,15 +15,32 @@ public:
     explicit HTMLOListElement(const emlite::Val &val) noexcept;
     static HTMLOListElement take_ownership(Handle h) noexcept;
 
-    HTMLOListElement clone() const noexcept;
+    [[nodiscard]] HTMLOListElement clone() const noexcept;
+    /// The `new HTMLOListElement(..)` constructor, creating a new HTMLOListElement instance
     HTMLOListElement();
-    bool reversed() const;
+    /// Getter of the `reversed` attribute.
+    /// [`HTMLOListElement.reversed`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/reversed)
+    [[nodiscard]] bool reversed() const;
+    /// Setter of the `reversed` attribute.
+    /// [`HTMLOListElement.reversed`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/reversed)
     void reversed(bool value);
-    long start() const;
+    /// Getter of the `start` attribute.
+    /// [`HTMLOListElement.start`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/start)
+    [[nodiscard]] long start() const;
+    /// Setter of the `start` attribute.
+    /// [`HTMLOListElement.start`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/start)
     void start(long value);
-    jsbind::String type() const;
+    /// Getter of the `type` attribute.
+    /// [`HTMLOListElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/type)
+    [[nodiscard]] jsbind::String type() const;
+    /// Setter of the `type` attribute.
+    /// [`HTMLOListElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/type)
     void type(const jsbind::String& value);
-    bool compact() const;
+    /// Getter of the `compact` attribute.
+    /// [`HTMLOListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/compact)
+    [[nodiscard]] bool compact() const;
+    /// Setter of the `compact` attribute.
+    /// [`HTMLOListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/compact)
     void compact(bool value);
 };
 

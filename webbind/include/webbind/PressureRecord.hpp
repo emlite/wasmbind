@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The PressureRecord class.
+/// [`PressureRecord`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord)
 class PressureRecord : public emlite::Val {
     explicit PressureRecord(Handle h) noexcept;
 
@@ -12,10 +14,18 @@ public:
     explicit PressureRecord(const emlite::Val &val) noexcept;
     static PressureRecord take_ownership(Handle h) noexcept;
 
-    PressureRecord clone() const noexcept;
-    PressureSource source() const;
-    PressureState state() const;
-    jsbind::Any time() const;
+    [[nodiscard]] PressureRecord clone() const noexcept;
+    /// Getter of the `source` attribute.
+    /// [`PressureRecord.source`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/source)
+    [[nodiscard]] PressureSource source() const;
+    /// Getter of the `state` attribute.
+    /// [`PressureRecord.state`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/state)
+    [[nodiscard]] PressureState state() const;
+    /// Getter of the `time` attribute.
+    /// [`PressureRecord.time`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/time)
+    [[nodiscard]] jsbind::Any time() const;
+    /// The toJSON method.
+    /// [`PressureRecord.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/toJSON)
     jsbind::Object toJSON();
 };
 

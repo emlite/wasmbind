@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The FragmentDirective class.
+/// [`FragmentDirective`](https://developer.mozilla.org/en-US/docs/Web/API/FragmentDirective)
 class FragmentDirective : public emlite::Val {
     explicit FragmentDirective(Handle h) noexcept;
 
@@ -12,6 +14,6 @@ public:
     explicit FragmentDirective(const emlite::Val &val) noexcept;
     static FragmentDirective take_ownership(Handle h) noexcept;
 
-    FragmentDirective clone() const noexcept;
+    [[nodiscard]] FragmentDirective clone() const noexcept;
 };
 

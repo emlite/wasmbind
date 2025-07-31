@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The PerformanceNavigation class.
+/// [`PerformanceNavigation`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation)
 class PerformanceNavigation : public emlite::Val {
     explicit PerformanceNavigation(Handle h) noexcept;
 
@@ -12,9 +14,15 @@ public:
     explicit PerformanceNavigation(const emlite::Val &val) noexcept;
     static PerformanceNavigation take_ownership(Handle h) noexcept;
 
-    PerformanceNavigation clone() const noexcept;
-    unsigned short type() const;
-    unsigned short redirectCount() const;
+    [[nodiscard]] PerformanceNavigation clone() const noexcept;
+    /// Getter of the `type` attribute.
+    /// [`PerformanceNavigation.type`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/type)
+    [[nodiscard]] unsigned short type() const;
+    /// Getter of the `redirectCount` attribute.
+    /// [`PerformanceNavigation.redirectCount`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/redirectCount)
+    [[nodiscard]] unsigned short redirectCount() const;
+    /// The toJSON method.
+    /// [`PerformanceNavigation.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/toJSON)
     jsbind::Object toJSON();
 };
 

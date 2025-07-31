@@ -8,6 +8,8 @@
 class SVGAnimatedNumber;
 
 
+/// The SVGFEDistantLightElement class.
+/// [`SVGFEDistantLightElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDistantLightElement)
 class SVGFEDistantLightElement : public SVGElement {
     explicit SVGFEDistantLightElement(Handle h) noexcept;
 
@@ -15,8 +17,12 @@ public:
     explicit SVGFEDistantLightElement(const emlite::Val &val) noexcept;
     static SVGFEDistantLightElement take_ownership(Handle h) noexcept;
 
-    SVGFEDistantLightElement clone() const noexcept;
-    SVGAnimatedNumber azimuth() const;
-    SVGAnimatedNumber elevation() const;
+    [[nodiscard]] SVGFEDistantLightElement clone() const noexcept;
+    /// Getter of the `azimuth` attribute.
+    /// [`SVGFEDistantLightElement.azimuth`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDistantLightElement/azimuth)
+    [[nodiscard]] SVGAnimatedNumber azimuth() const;
+    /// Getter of the `elevation` attribute.
+    /// [`SVGFEDistantLightElement.elevation`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDistantLightElement/elevation)
+    [[nodiscard]] SVGAnimatedNumber elevation() const;
 };
 

@@ -8,6 +8,8 @@ class PresentationRequest;
 class PresentationReceiver;
 
 
+/// The Presentation class.
+/// [`Presentation`](https://developer.mozilla.org/en-US/docs/Web/API/Presentation)
 class Presentation : public emlite::Val {
     explicit Presentation(Handle h) noexcept;
 
@@ -15,9 +17,15 @@ public:
     explicit Presentation(const emlite::Val &val) noexcept;
     static Presentation take_ownership(Handle h) noexcept;
 
-    Presentation clone() const noexcept;
-    PresentationRequest defaultRequest() const;
+    [[nodiscard]] Presentation clone() const noexcept;
+    /// Getter of the `defaultRequest` attribute.
+    /// [`Presentation.defaultRequest`](https://developer.mozilla.org/en-US/docs/Web/API/Presentation/defaultRequest)
+    [[nodiscard]] PresentationRequest defaultRequest() const;
+    /// Setter of the `defaultRequest` attribute.
+    /// [`Presentation.defaultRequest`](https://developer.mozilla.org/en-US/docs/Web/API/Presentation/defaultRequest)
     void defaultRequest(const PresentationRequest& value);
-    PresentationReceiver receiver() const;
+    /// Getter of the `receiver` attribute.
+    /// [`Presentation.receiver`](https://developer.mozilla.org/en-US/docs/Web/API/Presentation/receiver)
+    [[nodiscard]] PresentationReceiver receiver() const;
 };
 

@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The ChannelSplitterNode class.
+/// [`ChannelSplitterNode`](https://developer.mozilla.org/en-US/docs/Web/API/ChannelSplitterNode)
 class ChannelSplitterNode : public AudioNode {
     explicit ChannelSplitterNode(Handle h) noexcept;
 
@@ -13,8 +15,10 @@ public:
     explicit ChannelSplitterNode(const emlite::Val &val) noexcept;
     static ChannelSplitterNode take_ownership(Handle h) noexcept;
 
-    ChannelSplitterNode clone() const noexcept;
+    [[nodiscard]] ChannelSplitterNode clone() const noexcept;
+    /// The `new ChannelSplitterNode(..)` constructor, creating a new ChannelSplitterNode instance
     ChannelSplitterNode(const BaseAudioContext& context);
+    /// The `new ChannelSplitterNode(..)` constructor, creating a new ChannelSplitterNode instance
     ChannelSplitterNode(const BaseAudioContext& context, const jsbind::Any& options);
 };
 

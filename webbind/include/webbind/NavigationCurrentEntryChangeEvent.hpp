@@ -8,6 +8,8 @@
 class NavigationHistoryEntry;
 
 
+/// The NavigationCurrentEntryChangeEvent class.
+/// [`NavigationCurrentEntryChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent)
 class NavigationCurrentEntryChangeEvent : public Event {
     explicit NavigationCurrentEntryChangeEvent(Handle h) noexcept;
 
@@ -15,9 +17,14 @@ public:
     explicit NavigationCurrentEntryChangeEvent(const emlite::Val &val) noexcept;
     static NavigationCurrentEntryChangeEvent take_ownership(Handle h) noexcept;
 
-    NavigationCurrentEntryChangeEvent clone() const noexcept;
+    [[nodiscard]] NavigationCurrentEntryChangeEvent clone() const noexcept;
+    /// The `new NavigationCurrentEntryChangeEvent(..)` constructor, creating a new NavigationCurrentEntryChangeEvent instance
     NavigationCurrentEntryChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    NavigationType navigationType() const;
-    NavigationHistoryEntry from() const;
+    /// Getter of the `navigationType` attribute.
+    /// [`NavigationCurrentEntryChangeEvent.navigationType`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/navigationType)
+    [[nodiscard]] NavigationType navigationType() const;
+    /// Getter of the `from` attribute.
+    /// [`NavigationCurrentEntryChangeEvent.from`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/from)
+    [[nodiscard]] NavigationHistoryEntry from() const;
 };
 

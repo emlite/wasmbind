@@ -7,6 +7,8 @@
 class ReadableStream;
 
 
+/// The MediaStreamTrackProcessor class.
+/// [`MediaStreamTrackProcessor`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackProcessor)
 class MediaStreamTrackProcessor : public emlite::Val {
     explicit MediaStreamTrackProcessor(Handle h) noexcept;
 
@@ -14,8 +16,11 @@ public:
     explicit MediaStreamTrackProcessor(const emlite::Val &val) noexcept;
     static MediaStreamTrackProcessor take_ownership(Handle h) noexcept;
 
-    MediaStreamTrackProcessor clone() const noexcept;
+    [[nodiscard]] MediaStreamTrackProcessor clone() const noexcept;
+    /// The `new MediaStreamTrackProcessor(..)` constructor, creating a new MediaStreamTrackProcessor instance
     MediaStreamTrackProcessor(const jsbind::Any& init);
-    ReadableStream readable() const;
+    /// Getter of the `readable` attribute.
+    /// [`MediaStreamTrackProcessor.readable`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackProcessor/readable)
+    [[nodiscard]] ReadableStream readable() const;
 };
 

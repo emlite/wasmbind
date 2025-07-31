@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The StaticRange class.
+/// [`StaticRange`](https://developer.mozilla.org/en-US/docs/Web/API/StaticRange)
 class StaticRange : public AbstractRange {
     explicit StaticRange(Handle h) noexcept;
 
@@ -13,7 +15,8 @@ public:
     explicit StaticRange(const emlite::Val &val) noexcept;
     static StaticRange take_ownership(Handle h) noexcept;
 
-    StaticRange clone() const noexcept;
+    [[nodiscard]] StaticRange clone() const noexcept;
+    /// The `new StaticRange(..)` constructor, creating a new StaticRange instance
     StaticRange(const jsbind::Any& init);
 };
 

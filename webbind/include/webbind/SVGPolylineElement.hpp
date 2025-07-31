@@ -8,6 +8,8 @@
 class SVGPointList;
 
 
+/// The SVGPolylineElement class.
+/// [`SVGPolylineElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolylineElement)
 class SVGPolylineElement : public SVGGeometryElement {
     explicit SVGPolylineElement(Handle h) noexcept;
 
@@ -15,8 +17,12 @@ public:
     explicit SVGPolylineElement(const emlite::Val &val) noexcept;
     static SVGPolylineElement take_ownership(Handle h) noexcept;
 
-    SVGPolylineElement clone() const noexcept;
-    SVGPointList points() const;
-    SVGPointList animatedPoints() const;
+    [[nodiscard]] SVGPolylineElement clone() const noexcept;
+    /// Getter of the `points` attribute.
+    /// [`SVGPolylineElement.points`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolylineElement/points)
+    [[nodiscard]] SVGPointList points() const;
+    /// Getter of the `animatedPoints` attribute.
+    /// [`SVGPolylineElement.animatedPoints`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolylineElement/animatedPoints)
+    [[nodiscard]] SVGPointList animatedPoints() const;
 };
 

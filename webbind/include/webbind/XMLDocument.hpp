@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The XMLDocument class.
+/// [`XMLDocument`](https://developer.mozilla.org/en-US/docs/Web/API/XMLDocument)
 class XMLDocument : public Document {
     explicit XMLDocument(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit XMLDocument(const emlite::Val &val) noexcept;
     static XMLDocument take_ownership(Handle h) noexcept;
 
-    XMLDocument clone() const noexcept;
+    [[nodiscard]] XMLDocument clone() const noexcept;
 };
 

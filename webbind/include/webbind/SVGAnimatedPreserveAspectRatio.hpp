@@ -7,6 +7,8 @@
 class SVGPreserveAspectRatio;
 
 
+/// The SVGAnimatedPreserveAspectRatio class.
+/// [`SVGAnimatedPreserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedPreserveAspectRatio)
 class SVGAnimatedPreserveAspectRatio : public emlite::Val {
     explicit SVGAnimatedPreserveAspectRatio(Handle h) noexcept;
 
@@ -14,8 +16,12 @@ public:
     explicit SVGAnimatedPreserveAspectRatio(const emlite::Val &val) noexcept;
     static SVGAnimatedPreserveAspectRatio take_ownership(Handle h) noexcept;
 
-    SVGAnimatedPreserveAspectRatio clone() const noexcept;
-    SVGPreserveAspectRatio baseVal() const;
-    SVGPreserveAspectRatio animVal() const;
+    [[nodiscard]] SVGAnimatedPreserveAspectRatio clone() const noexcept;
+    /// Getter of the `baseVal` attribute.
+    /// [`SVGAnimatedPreserveAspectRatio.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedPreserveAspectRatio/baseVal)
+    [[nodiscard]] SVGPreserveAspectRatio baseVal() const;
+    /// Getter of the `animVal` attribute.
+    /// [`SVGAnimatedPreserveAspectRatio.animVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedPreserveAspectRatio/animVal)
+    [[nodiscard]] SVGPreserveAspectRatio animVal() const;
 };
 

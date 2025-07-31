@@ -9,6 +9,8 @@ class MIDIInputMap;
 class MIDIOutputMap;
 
 
+/// The MIDIAccess class.
+/// [`MIDIAccess`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess)
 class MIDIAccess : public EventTarget {
     explicit MIDIAccess(Handle h) noexcept;
 
@@ -16,11 +18,21 @@ public:
     explicit MIDIAccess(const emlite::Val &val) noexcept;
     static MIDIAccess take_ownership(Handle h) noexcept;
 
-    MIDIAccess clone() const noexcept;
-    MIDIInputMap inputs() const;
-    MIDIOutputMap outputs() const;
-    jsbind::Any onstatechange() const;
+    [[nodiscard]] MIDIAccess clone() const noexcept;
+    /// Getter of the `inputs` attribute.
+    /// [`MIDIAccess.inputs`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/inputs)
+    [[nodiscard]] MIDIInputMap inputs() const;
+    /// Getter of the `outputs` attribute.
+    /// [`MIDIAccess.outputs`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/outputs)
+    [[nodiscard]] MIDIOutputMap outputs() const;
+    /// Getter of the `onstatechange` attribute.
+    /// [`MIDIAccess.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/onstatechange)
+    [[nodiscard]] jsbind::Any onstatechange() const;
+    /// Setter of the `onstatechange` attribute.
+    /// [`MIDIAccess.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/onstatechange)
     void onstatechange(const jsbind::Any& value);
-    bool sysexEnabled() const;
+    /// Getter of the `sysexEnabled` attribute.
+    /// [`MIDIAccess.sysexEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/sysexEnabled)
+    [[nodiscard]] bool sysexEnabled() const;
 };
 

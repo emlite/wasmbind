@@ -9,6 +9,8 @@ class FileSystemEntry;
 class FileSystemHandle;
 
 
+/// The DataTransferItem class.
+/// [`DataTransferItem`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem)
 class DataTransferItem : public emlite::Val {
     explicit DataTransferItem(Handle h) noexcept;
 
@@ -16,12 +18,24 @@ public:
     explicit DataTransferItem(const emlite::Val &val) noexcept;
     static DataTransferItem take_ownership(Handle h) noexcept;
 
-    DataTransferItem clone() const noexcept;
-    jsbind::String kind() const;
-    jsbind::String type() const;
+    [[nodiscard]] DataTransferItem clone() const noexcept;
+    /// Getter of the `kind` attribute.
+    /// [`DataTransferItem.kind`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind)
+    [[nodiscard]] jsbind::String kind() const;
+    /// Getter of the `type` attribute.
+    /// [`DataTransferItem.type`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/type)
+    [[nodiscard]] jsbind::String type() const;
+    /// The getAsString method.
+    /// [`DataTransferItem.getAsString`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsString)
     jsbind::Undefined getAsString(const jsbind::Any& callback);
+    /// The getAsFile method.
+    /// [`DataTransferItem.getAsFile`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsFile)
     File getAsFile();
+    /// The webkitGetAsEntry method.
+    /// [`DataTransferItem.webkitGetAsEntry`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/webkitGetAsEntry)
     FileSystemEntry webkitGetAsEntry();
+    /// The getAsFileSystemHandle method.
+    /// [`DataTransferItem.getAsFileSystemHandle`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsFileSystemHandle)
     jsbind::Promise<FileSystemHandle> getAsFileSystemHandle();
 };
 

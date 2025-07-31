@@ -15,11 +15,13 @@ public:
     static InkPresenterParam take_ownership(Handle h) noexcept;
     explicit InkPresenterParam(const emlite::Val &val) noexcept;
     InkPresenterParam() noexcept;
-    InkPresenterParam clone() const noexcept;
-    Element presentationArea() const;
+    [[nodiscard]] InkPresenterParam clone() const noexcept;
+    [[nodiscard]] Element presentationArea() const;
     void presentationArea(const Element& value);
 };
 
+/// The Ink class.
+/// [`Ink`](https://developer.mozilla.org/en-US/docs/Web/API/Ink)
 class Ink : public emlite::Val {
     explicit Ink(Handle h) noexcept;
 
@@ -27,8 +29,12 @@ public:
     explicit Ink(const emlite::Val &val) noexcept;
     static Ink take_ownership(Handle h) noexcept;
 
-    Ink clone() const noexcept;
+    [[nodiscard]] Ink clone() const noexcept;
+    /// The requestPresenter method.
+    /// [`Ink.requestPresenter`](https://developer.mozilla.org/en-US/docs/Web/API/Ink/requestPresenter)
     jsbind::Promise<DelegatedInkTrailPresenter> requestPresenter();
+    /// The requestPresenter method.
+    /// [`Ink.requestPresenter`](https://developer.mozilla.org/en-US/docs/Web/API/Ink/requestPresenter)
     jsbind::Promise<DelegatedInkTrailPresenter> requestPresenter(const InkPresenterParam& param);
 };
 

@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The InputDeviceCapabilities class.
+/// [`InputDeviceCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities)
 class InputDeviceCapabilities : public emlite::Val {
     explicit InputDeviceCapabilities(Handle h) noexcept;
 
@@ -12,10 +14,16 @@ public:
     explicit InputDeviceCapabilities(const emlite::Val &val) noexcept;
     static InputDeviceCapabilities take_ownership(Handle h) noexcept;
 
-    InputDeviceCapabilities clone() const noexcept;
+    [[nodiscard]] InputDeviceCapabilities clone() const noexcept;
+    /// The `new InputDeviceCapabilities(..)` constructor, creating a new InputDeviceCapabilities instance
     InputDeviceCapabilities();
+    /// The `new InputDeviceCapabilities(..)` constructor, creating a new InputDeviceCapabilities instance
     InputDeviceCapabilities(const jsbind::Any& deviceInitDict);
-    bool firesTouchEvents() const;
-    bool pointerMovementScrolls() const;
+    /// Getter of the `firesTouchEvents` attribute.
+    /// [`InputDeviceCapabilities.firesTouchEvents`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/firesTouchEvents)
+    [[nodiscard]] bool firesTouchEvents() const;
+    /// Getter of the `pointerMovementScrolls` attribute.
+    /// [`InputDeviceCapabilities.pointerMovementScrolls`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/pointerMovementScrolls)
+    [[nodiscard]] bool pointerMovementScrolls() const;
 };
 

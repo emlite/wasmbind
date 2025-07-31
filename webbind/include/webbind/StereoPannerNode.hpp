@@ -8,6 +8,8 @@
 class AudioParam;
 
 
+/// The StereoPannerNode class.
+/// [`StereoPannerNode`](https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode)
 class StereoPannerNode : public AudioNode {
     explicit StereoPannerNode(Handle h) noexcept;
 
@@ -15,9 +17,13 @@ public:
     explicit StereoPannerNode(const emlite::Val &val) noexcept;
     static StereoPannerNode take_ownership(Handle h) noexcept;
 
-    StereoPannerNode clone() const noexcept;
+    [[nodiscard]] StereoPannerNode clone() const noexcept;
+    /// The `new StereoPannerNode(..)` constructor, creating a new StereoPannerNode instance
     StereoPannerNode(const BaseAudioContext& context);
+    /// The `new StereoPannerNode(..)` constructor, creating a new StereoPannerNode instance
     StereoPannerNode(const BaseAudioContext& context, const jsbind::Any& options);
-    AudioParam pan() const;
+    /// Getter of the `pan` attribute.
+    /// [`StereoPannerNode.pan`](https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode/pan)
+    [[nodiscard]] AudioParam pan() const;
 };
 

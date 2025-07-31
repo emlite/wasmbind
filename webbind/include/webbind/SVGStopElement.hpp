@@ -8,6 +8,8 @@
 class SVGAnimatedNumber;
 
 
+/// The SVGStopElement class.
+/// [`SVGStopElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStopElement)
 class SVGStopElement : public SVGElement {
     explicit SVGStopElement(Handle h) noexcept;
 
@@ -15,7 +17,9 @@ public:
     explicit SVGStopElement(const emlite::Val &val) noexcept;
     static SVGStopElement take_ownership(Handle h) noexcept;
 
-    SVGStopElement clone() const noexcept;
-    SVGAnimatedNumber offset() const;
+    [[nodiscard]] SVGStopElement clone() const noexcept;
+    /// Getter of the `offset` attribute.
+    /// [`SVGStopElement.offset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStopElement/offset)
+    [[nodiscard]] SVGAnimatedNumber offset() const;
 };
 

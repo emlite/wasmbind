@@ -13,13 +13,15 @@ public:
     static TextEncoderEncodeIntoResult take_ownership(Handle h) noexcept;
     explicit TextEncoderEncodeIntoResult(const emlite::Val &val) noexcept;
     TextEncoderEncodeIntoResult() noexcept;
-    TextEncoderEncodeIntoResult clone() const noexcept;
-    long long read() const;
+    [[nodiscard]] TextEncoderEncodeIntoResult clone() const noexcept;
+    [[nodiscard]] long long read() const;
     void read(long long value);
-    long long written() const;
+    [[nodiscard]] long long written() const;
     void written(long long value);
 };
 
+/// The TextEncoder class.
+/// [`TextEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
 class TextEncoder : public emlite::Val {
     explicit TextEncoder(Handle h) noexcept;
 
@@ -27,11 +29,20 @@ public:
     explicit TextEncoder(const emlite::Val &val) noexcept;
     static TextEncoder take_ownership(Handle h) noexcept;
 
-    TextEncoder clone() const noexcept;
+    [[nodiscard]] TextEncoder clone() const noexcept;
+    /// The `new TextEncoder(..)` constructor, creating a new TextEncoder instance
     TextEncoder();
+    /// The encode method.
+    /// [`TextEncoder.encode`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder/encode)
     jsbind::Uint8Array encode();
+    /// The encode method.
+    /// [`TextEncoder.encode`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder/encode)
     jsbind::Uint8Array encode(const jsbind::String& input);
+    /// The encodeInto method.
+    /// [`TextEncoder.encodeInto`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder/encodeInto)
     TextEncoderEncodeIntoResult encodeInto(const jsbind::String& source, const jsbind::Uint8Array& destination);
-    jsbind::String encoding() const;
+    /// Getter of the `encoding` attribute.
+    /// [`TextEncoder.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder/encoding)
+    [[nodiscard]] jsbind::String encoding() const;
 };
 

@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The RTCPeerConnectionIceErrorEvent class.
+/// [`RTCPeerConnectionIceErrorEvent`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent)
 class RTCPeerConnectionIceErrorEvent : public Event {
     explicit RTCPeerConnectionIceErrorEvent(Handle h) noexcept;
 
@@ -13,12 +15,23 @@ public:
     explicit RTCPeerConnectionIceErrorEvent(const emlite::Val &val) noexcept;
     static RTCPeerConnectionIceErrorEvent take_ownership(Handle h) noexcept;
 
-    RTCPeerConnectionIceErrorEvent clone() const noexcept;
+    [[nodiscard]] RTCPeerConnectionIceErrorEvent clone() const noexcept;
+    /// The `new RTCPeerConnectionIceErrorEvent(..)` constructor, creating a new RTCPeerConnectionIceErrorEvent instance
     RTCPeerConnectionIceErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    jsbind::String address() const;
-    unsigned short port() const;
-    jsbind::String url() const;
-    unsigned short errorCode() const;
-    jsbind::String errorText() const;
+    /// Getter of the `address` attribute.
+    /// [`RTCPeerConnectionIceErrorEvent.address`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent/address)
+    [[nodiscard]] jsbind::String address() const;
+    /// Getter of the `port` attribute.
+    /// [`RTCPeerConnectionIceErrorEvent.port`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent/port)
+    [[nodiscard]] unsigned short port() const;
+    /// Getter of the `url` attribute.
+    /// [`RTCPeerConnectionIceErrorEvent.url`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent/url)
+    [[nodiscard]] jsbind::String url() const;
+    /// Getter of the `errorCode` attribute.
+    /// [`RTCPeerConnectionIceErrorEvent.errorCode`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorCode)
+    [[nodiscard]] unsigned short errorCode() const;
+    /// Getter of the `errorText` attribute.
+    /// [`RTCPeerConnectionIceErrorEvent.errorText`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorText)
+    [[nodiscard]] jsbind::String errorText() const;
 };
 

@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The IDBOpenDBRequest class.
+/// [`IDBOpenDBRequest`](https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest)
 class IDBOpenDBRequest : public IDBRequest {
     explicit IDBOpenDBRequest(Handle h) noexcept;
 
@@ -13,10 +15,18 @@ public:
     explicit IDBOpenDBRequest(const emlite::Val &val) noexcept;
     static IDBOpenDBRequest take_ownership(Handle h) noexcept;
 
-    IDBOpenDBRequest clone() const noexcept;
-    jsbind::Any onblocked() const;
+    [[nodiscard]] IDBOpenDBRequest clone() const noexcept;
+    /// Getter of the `onblocked` attribute.
+    /// [`IDBOpenDBRequest.onblocked`](https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/onblocked)
+    [[nodiscard]] jsbind::Any onblocked() const;
+    /// Setter of the `onblocked` attribute.
+    /// [`IDBOpenDBRequest.onblocked`](https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/onblocked)
     void onblocked(const jsbind::Any& value);
-    jsbind::Any onupgradeneeded() const;
+    /// Getter of the `onupgradeneeded` attribute.
+    /// [`IDBOpenDBRequest.onupgradeneeded`](https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/onupgradeneeded)
+    [[nodiscard]] jsbind::Any onupgradeneeded() const;
+    /// Setter of the `onupgradeneeded` attribute.
+    /// [`IDBOpenDBRequest.onupgradeneeded`](https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/onupgradeneeded)
     void onupgradeneeded(const jsbind::Any& value);
 };
 

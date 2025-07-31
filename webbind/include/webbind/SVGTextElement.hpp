@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The SVGTextElement class.
+/// [`SVGTextElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextElement)
 class SVGTextElement : public SVGTextPositioningElement {
     explicit SVGTextElement(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit SVGTextElement(const emlite::Val &val) noexcept;
     static SVGTextElement take_ownership(Handle h) noexcept;
 
-    SVGTextElement clone() const noexcept;
+    [[nodiscard]] SVGTextElement clone() const noexcept;
 };
 

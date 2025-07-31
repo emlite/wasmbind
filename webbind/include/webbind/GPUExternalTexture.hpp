@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The GPUExternalTexture class.
+/// [`GPUExternalTexture`](https://developer.mozilla.org/en-US/docs/Web/API/GPUExternalTexture)
 class GPUExternalTexture : public emlite::Val {
     explicit GPUExternalTexture(Handle h) noexcept;
 
@@ -12,8 +14,12 @@ public:
     explicit GPUExternalTexture(const emlite::Val &val) noexcept;
     static GPUExternalTexture take_ownership(Handle h) noexcept;
 
-    GPUExternalTexture clone() const noexcept;
-    jsbind::String label() const;
+    [[nodiscard]] GPUExternalTexture clone() const noexcept;
+    /// Getter of the `label` attribute.
+    /// [`GPUExternalTexture.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUExternalTexture/label)
+    [[nodiscard]] jsbind::String label() const;
+    /// Setter of the `label` attribute.
+    /// [`GPUExternalTexture.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUExternalTexture/label)
     void label(const jsbind::String& value);
 };
 

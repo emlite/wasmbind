@@ -8,6 +8,8 @@
 class VideoTrack;
 
 
+/// The VideoTrackList class.
+/// [`VideoTrackList`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList)
 class VideoTrackList : public EventTarget {
     explicit VideoTrackList(Handle h) noexcept;
 
@@ -15,15 +17,33 @@ public:
     explicit VideoTrackList(const emlite::Val &val) noexcept;
     static VideoTrackList take_ownership(Handle h) noexcept;
 
-    VideoTrackList clone() const noexcept;
-    unsigned long length() const;
+    [[nodiscard]] VideoTrackList clone() const noexcept;
+    /// Getter of the `length` attribute.
+    /// [`VideoTrackList.length`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/length)
+    [[nodiscard]] unsigned long length() const;
+    /// The getTrackById method.
+    /// [`VideoTrackList.getTrackById`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/getTrackById)
     VideoTrack getTrackById(const jsbind::String& id);
-    long selectedIndex() const;
-    jsbind::Any onchange() const;
+    /// Getter of the `selectedIndex` attribute.
+    /// [`VideoTrackList.selectedIndex`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/selectedIndex)
+    [[nodiscard]] long selectedIndex() const;
+    /// Getter of the `onchange` attribute.
+    /// [`VideoTrackList.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onchange)
+    [[nodiscard]] jsbind::Any onchange() const;
+    /// Setter of the `onchange` attribute.
+    /// [`VideoTrackList.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onchange)
     void onchange(const jsbind::Any& value);
-    jsbind::Any onaddtrack() const;
+    /// Getter of the `onaddtrack` attribute.
+    /// [`VideoTrackList.onaddtrack`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onaddtrack)
+    [[nodiscard]] jsbind::Any onaddtrack() const;
+    /// Setter of the `onaddtrack` attribute.
+    /// [`VideoTrackList.onaddtrack`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onaddtrack)
     void onaddtrack(const jsbind::Any& value);
-    jsbind::Any onremovetrack() const;
+    /// Getter of the `onremovetrack` attribute.
+    /// [`VideoTrackList.onremovetrack`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onremovetrack)
+    [[nodiscard]] jsbind::Any onremovetrack() const;
+    /// Setter of the `onremovetrack` attribute.
+    /// [`VideoTrackList.onremovetrack`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onremovetrack)
     void onremovetrack(const jsbind::Any& value);
 };
 

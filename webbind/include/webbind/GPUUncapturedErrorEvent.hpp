@@ -8,6 +8,8 @@
 class GPUError;
 
 
+/// The GPUUncapturedErrorEvent class.
+/// [`GPUUncapturedErrorEvent`](https://developer.mozilla.org/en-US/docs/Web/API/GPUUncapturedErrorEvent)
 class GPUUncapturedErrorEvent : public Event {
     explicit GPUUncapturedErrorEvent(Handle h) noexcept;
 
@@ -15,8 +17,11 @@ public:
     explicit GPUUncapturedErrorEvent(const emlite::Val &val) noexcept;
     static GPUUncapturedErrorEvent take_ownership(Handle h) noexcept;
 
-    GPUUncapturedErrorEvent clone() const noexcept;
+    [[nodiscard]] GPUUncapturedErrorEvent clone() const noexcept;
+    /// The `new GPUUncapturedErrorEvent(..)` constructor, creating a new GPUUncapturedErrorEvent instance
     GPUUncapturedErrorEvent(const jsbind::String& type, const jsbind::Any& gpuUncapturedErrorEventInitDict);
-    GPUError error() const;
+    /// Getter of the `error` attribute.
+    /// [`GPUUncapturedErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/GPUUncapturedErrorEvent/error)
+    [[nodiscard]] GPUError error() const;
 };
 

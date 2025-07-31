@@ -8,6 +8,8 @@
 class SVGAnimatedString;
 
 
+/// The SVGMPathElement class.
+/// [`SVGMPathElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGMPathElement)
 class SVGMPathElement : public SVGElement {
     explicit SVGMPathElement(Handle h) noexcept;
 
@@ -15,7 +17,9 @@ public:
     explicit SVGMPathElement(const emlite::Val &val) noexcept;
     static SVGMPathElement take_ownership(Handle h) noexcept;
 
-    SVGMPathElement clone() const noexcept;
-    SVGAnimatedString href() const;
+    [[nodiscard]] SVGMPathElement clone() const noexcept;
+    /// Getter of the `href` attribute.
+    /// [`SVGMPathElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGMPathElement/href)
+    [[nodiscard]] SVGAnimatedString href() const;
 };
 

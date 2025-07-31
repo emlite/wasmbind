@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The WebGLVertexArrayObject class.
+/// [`WebGLVertexArrayObject`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLVertexArrayObject)
 class WebGLVertexArrayObject : public WebGLObject {
     explicit WebGLVertexArrayObject(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit WebGLVertexArrayObject(const emlite::Val &val) noexcept;
     static WebGLVertexArrayObject take_ownership(Handle h) noexcept;
 
-    WebGLVertexArrayObject clone() const noexcept;
+    [[nodiscard]] WebGLVertexArrayObject clone() const noexcept;
 };
 

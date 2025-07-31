@@ -20,10 +20,10 @@ public:
     static PaymentMethodData take_ownership(Handle h) noexcept;
     explicit PaymentMethodData(const emlite::Val &val) noexcept;
     PaymentMethodData() noexcept;
-    PaymentMethodData clone() const noexcept;
-    jsbind::String supportedMethods() const;
+    [[nodiscard]] PaymentMethodData clone() const noexcept;
+    [[nodiscard]] jsbind::String supportedMethods() const;
     void supportedMethods(const jsbind::String& value);
-    jsbind::Object data() const;
+    [[nodiscard]] jsbind::Object data() const;
     void data(const jsbind::Object& value);
 };
 
@@ -33,14 +33,14 @@ public:
     static PaymentDetailsModifier take_ownership(Handle h) noexcept;
     explicit PaymentDetailsModifier(const emlite::Val &val) noexcept;
     PaymentDetailsModifier() noexcept;
-    PaymentDetailsModifier clone() const noexcept;
-    jsbind::String supportedMethods() const;
+    [[nodiscard]] PaymentDetailsModifier clone() const noexcept;
+    [[nodiscard]] jsbind::String supportedMethods() const;
     void supportedMethods(const jsbind::String& value);
-    jsbind::Any total() const;
+    [[nodiscard]] jsbind::Any total() const;
     void total(const jsbind::Any& value);
-    jsbind::TypedArray<jsbind::Any> additionalDisplayItems() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> additionalDisplayItems() const;
     void additionalDisplayItems(const jsbind::TypedArray<jsbind::Any>& value);
-    jsbind::Object data() const;
+    [[nodiscard]] jsbind::Object data() const;
     void data(const jsbind::Object& value);
 };
 
@@ -50,14 +50,14 @@ public:
     static PaymentShippingOption take_ownership(Handle h) noexcept;
     explicit PaymentShippingOption(const emlite::Val &val) noexcept;
     PaymentShippingOption() noexcept;
-    PaymentShippingOption clone() const noexcept;
-    jsbind::String id() const;
+    [[nodiscard]] PaymentShippingOption clone() const noexcept;
+    [[nodiscard]] jsbind::String id() const;
     void id(const jsbind::String& value);
-    jsbind::String label() const;
+    [[nodiscard]] jsbind::String label() const;
     void label(const jsbind::String& value);
-    jsbind::Any amount() const;
+    [[nodiscard]] jsbind::Any amount() const;
     void amount(const jsbind::Any& value);
-    bool selected() const;
+    [[nodiscard]] bool selected() const;
     void selected(bool value);
 };
 
@@ -67,18 +67,18 @@ public:
     static PaymentRequestDetailsUpdate take_ownership(Handle h) noexcept;
     explicit PaymentRequestDetailsUpdate(const emlite::Val &val) noexcept;
     PaymentRequestDetailsUpdate() noexcept;
-    PaymentRequestDetailsUpdate clone() const noexcept;
-    jsbind::String error() const;
+    [[nodiscard]] PaymentRequestDetailsUpdate clone() const noexcept;
+    [[nodiscard]] jsbind::String error() const;
     void error(const jsbind::String& value);
-    jsbind::Any total() const;
+    [[nodiscard]] jsbind::Any total() const;
     void total(const jsbind::Any& value);
-    jsbind::TypedArray<PaymentDetailsModifier> modifiers() const;
+    [[nodiscard]] jsbind::TypedArray<PaymentDetailsModifier> modifiers() const;
     void modifiers(const jsbind::TypedArray<PaymentDetailsModifier>& value);
-    jsbind::TypedArray<PaymentShippingOption> shippingOptions() const;
+    [[nodiscard]] jsbind::TypedArray<PaymentShippingOption> shippingOptions() const;
     void shippingOptions(const jsbind::TypedArray<PaymentShippingOption>& value);
-    jsbind::Object paymentMethodErrors() const;
+    [[nodiscard]] jsbind::Object paymentMethodErrors() const;
     void paymentMethodErrors(const jsbind::Object& value);
-    jsbind::Any shippingAddressErrors() const;
+    [[nodiscard]] jsbind::Any shippingAddressErrors() const;
     void shippingAddressErrors(const jsbind::Any& value);
 };
 
@@ -88,26 +88,26 @@ public:
     static AddressInit take_ownership(Handle h) noexcept;
     explicit AddressInit(const emlite::Val &val) noexcept;
     AddressInit() noexcept;
-    AddressInit clone() const noexcept;
-    jsbind::String country() const;
+    [[nodiscard]] AddressInit clone() const noexcept;
+    [[nodiscard]] jsbind::String country() const;
     void country(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::String> addressLine() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> addressLine() const;
     void addressLine(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::String region() const;
+    [[nodiscard]] jsbind::String region() const;
     void region(const jsbind::String& value);
-    jsbind::String city() const;
+    [[nodiscard]] jsbind::String city() const;
     void city(const jsbind::String& value);
-    jsbind::String dependentLocality() const;
+    [[nodiscard]] jsbind::String dependentLocality() const;
     void dependentLocality(const jsbind::String& value);
-    jsbind::String postalCode() const;
+    [[nodiscard]] jsbind::String postalCode() const;
     void postalCode(const jsbind::String& value);
-    jsbind::String sortingCode() const;
+    [[nodiscard]] jsbind::String sortingCode() const;
     void sortingCode(const jsbind::String& value);
-    jsbind::String organization() const;
+    [[nodiscard]] jsbind::String organization() const;
     void organization(const jsbind::String& value);
-    jsbind::String recipient() const;
+    [[nodiscard]] jsbind::String recipient() const;
     void recipient(const jsbind::String& value);
-    jsbind::String phone() const;
+    [[nodiscard]] jsbind::String phone() const;
     void phone(const jsbind::String& value);
 };
 
@@ -117,23 +117,25 @@ public:
     static PaymentHandlerResponse take_ownership(Handle h) noexcept;
     explicit PaymentHandlerResponse(const emlite::Val &val) noexcept;
     PaymentHandlerResponse() noexcept;
-    PaymentHandlerResponse clone() const noexcept;
-    jsbind::String methodName() const;
+    [[nodiscard]] PaymentHandlerResponse clone() const noexcept;
+    [[nodiscard]] jsbind::String methodName() const;
     void methodName(const jsbind::String& value);
-    jsbind::Object details() const;
+    [[nodiscard]] jsbind::Object details() const;
     void details(const jsbind::Object& value);
-    jsbind::String payerName() const;
+    [[nodiscard]] jsbind::String payerName() const;
     void payerName(const jsbind::String& value);
-    jsbind::String payerEmail() const;
+    [[nodiscard]] jsbind::String payerEmail() const;
     void payerEmail(const jsbind::String& value);
-    jsbind::String payerPhone() const;
+    [[nodiscard]] jsbind::String payerPhone() const;
     void payerPhone(const jsbind::String& value);
-    AddressInit shippingAddress() const;
+    [[nodiscard]] AddressInit shippingAddress() const;
     void shippingAddress(const AddressInit& value);
-    jsbind::String shippingOption() const;
+    [[nodiscard]] jsbind::String shippingOption() const;
     void shippingOption(const jsbind::String& value);
 };
 
+/// The PaymentRequestEvent class.
+/// [`PaymentRequestEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent)
 class PaymentRequestEvent : public ExtendableEvent {
     explicit PaymentRequestEvent(Handle h) noexcept;
 
@@ -141,23 +143,55 @@ public:
     explicit PaymentRequestEvent(const emlite::Val &val) noexcept;
     static PaymentRequestEvent take_ownership(Handle h) noexcept;
 
-    PaymentRequestEvent clone() const noexcept;
+    [[nodiscard]] PaymentRequestEvent clone() const noexcept;
+    /// The `new PaymentRequestEvent(..)` constructor, creating a new PaymentRequestEvent instance
     PaymentRequestEvent(const jsbind::String& type);
+    /// The `new PaymentRequestEvent(..)` constructor, creating a new PaymentRequestEvent instance
     PaymentRequestEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    jsbind::String topOrigin() const;
-    jsbind::String paymentRequestOrigin() const;
-    jsbind::String paymentRequestId() const;
-    jsbind::TypedArray<PaymentMethodData> methodData() const;
-    jsbind::Object total() const;
-    jsbind::TypedArray<PaymentDetailsModifier> modifiers() const;
-    jsbind::Object paymentOptions() const;
-    jsbind::TypedArray<PaymentShippingOption> shippingOptions() const;
+    /// Getter of the `topOrigin` attribute.
+    /// [`PaymentRequestEvent.topOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/topOrigin)
+    [[nodiscard]] jsbind::String topOrigin() const;
+    /// Getter of the `paymentRequestOrigin` attribute.
+    /// [`PaymentRequestEvent.paymentRequestOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestOrigin)
+    [[nodiscard]] jsbind::String paymentRequestOrigin() const;
+    /// Getter of the `paymentRequestId` attribute.
+    /// [`PaymentRequestEvent.paymentRequestId`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestId)
+    [[nodiscard]] jsbind::String paymentRequestId() const;
+    /// Getter of the `methodData` attribute.
+    /// [`PaymentRequestEvent.methodData`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/methodData)
+    [[nodiscard]] jsbind::TypedArray<PaymentMethodData> methodData() const;
+    /// Getter of the `total` attribute.
+    /// [`PaymentRequestEvent.total`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/total)
+    [[nodiscard]] jsbind::Object total() const;
+    /// Getter of the `modifiers` attribute.
+    /// [`PaymentRequestEvent.modifiers`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/modifiers)
+    [[nodiscard]] jsbind::TypedArray<PaymentDetailsModifier> modifiers() const;
+    /// Getter of the `paymentOptions` attribute.
+    /// [`PaymentRequestEvent.paymentOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentOptions)
+    [[nodiscard]] jsbind::Object paymentOptions() const;
+    /// Getter of the `shippingOptions` attribute.
+    /// [`PaymentRequestEvent.shippingOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/shippingOptions)
+    [[nodiscard]] jsbind::TypedArray<PaymentShippingOption> shippingOptions() const;
+    /// The openWindow method.
+    /// [`PaymentRequestEvent.openWindow`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/openWindow)
     jsbind::Promise<WindowClient> openWindow(const jsbind::String& url);
+    /// The changePaymentMethod method.
+    /// [`PaymentRequestEvent.changePaymentMethod`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/changePaymentMethod)
     jsbind::Promise<PaymentRequestDetailsUpdate> changePaymentMethod(const jsbind::String& methodName);
+    /// The changePaymentMethod method.
+    /// [`PaymentRequestEvent.changePaymentMethod`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/changePaymentMethod)
     jsbind::Promise<PaymentRequestDetailsUpdate> changePaymentMethod(const jsbind::String& methodName, const jsbind::Object& methodDetails);
+    /// The changeShippingAddress method.
+    /// [`PaymentRequestEvent.changeShippingAddress`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/changeShippingAddress)
     jsbind::Promise<PaymentRequestDetailsUpdate> changeShippingAddress();
+    /// The changeShippingAddress method.
+    /// [`PaymentRequestEvent.changeShippingAddress`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/changeShippingAddress)
     jsbind::Promise<PaymentRequestDetailsUpdate> changeShippingAddress(const AddressInit& shippingAddress);
+    /// The changeShippingOption method.
+    /// [`PaymentRequestEvent.changeShippingOption`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/changeShippingOption)
     jsbind::Promise<PaymentRequestDetailsUpdate> changeShippingOption(const jsbind::String& shippingOption);
+    /// The respondWith method.
+    /// [`PaymentRequestEvent.respondWith`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/respondWith)
     jsbind::Undefined respondWith(const jsbind::Promise<PaymentHandlerResponse>& handlerResponsePromise);
 };
 

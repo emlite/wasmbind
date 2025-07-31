@@ -7,6 +7,8 @@
 class AbortSignal;
 
 
+/// The AbortController class.
+/// [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
 class AbortController : public emlite::Val {
     explicit AbortController(Handle h) noexcept;
 
@@ -14,10 +16,17 @@ public:
     explicit AbortController(const emlite::Val &val) noexcept;
     static AbortController take_ownership(Handle h) noexcept;
 
-    AbortController clone() const noexcept;
+    [[nodiscard]] AbortController clone() const noexcept;
+    /// The `new AbortController(..)` constructor, creating a new AbortController instance
     AbortController();
-    AbortSignal signal() const;
+    /// Getter of the `signal` attribute.
+    /// [`AbortController.signal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal)
+    [[nodiscard]] AbortSignal signal() const;
+    /// The abort method.
+    /// [`AbortController.abort`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)
     jsbind::Undefined abort();
+    /// The abort method.
+    /// [`AbortController.abort`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)
     jsbind::Undefined abort(const jsbind::Any& reason);
 };
 

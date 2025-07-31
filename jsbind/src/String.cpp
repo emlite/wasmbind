@@ -26,15 +26,15 @@ String::String(std::string_view utf8)
       )) {}
 
 std::string String::to_std_string() const {
-    return as<Uniq<char[]>>().get();
+    return as<Uniq<char[]>>().release();
 }
 #endif
 
 size_t String::size() const {
-    return strlen(as<Uniq<char[]>>().get());
+    return length();
 }
 bool String::empty() const {
-    return strlen(as<Uniq<char[]>>().get()) == 0;
+    return length() == 0;
 }
 char String::operator[](size_t i) const {
     return as<Uniq<char[]>>().get()[i];
@@ -58,10 +58,10 @@ String String::char_at(size_t i) const noexcept {
     return String(this->call("charAt", i));
 }
 
-const char *String::as_str() const noexcept {
+char *String::as_str() const noexcept {
     // Assumes emlite::Val provides a way to get a C string
     // view
-    return as<Uniq<char[]>>().get();
+    return as<Uniq<char[]>>().release();
 }
 
 size_t String::length() const noexcept {

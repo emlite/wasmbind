@@ -8,6 +8,8 @@ class PrivateAggregation;
 class ProtectedAudienceUtilities;
 
 
+/// The InterestGroupScriptRunnerGlobalScope class.
+/// [`InterestGroupScriptRunnerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupScriptRunnerGlobalScope)
 class InterestGroupScriptRunnerGlobalScope : public emlite::Val {
     explicit InterestGroupScriptRunnerGlobalScope(Handle h) noexcept;
 
@@ -15,8 +17,12 @@ public:
     explicit InterestGroupScriptRunnerGlobalScope(const emlite::Val &val) noexcept;
     static InterestGroupScriptRunnerGlobalScope take_ownership(Handle h) noexcept;
 
-    InterestGroupScriptRunnerGlobalScope clone() const noexcept;
-    PrivateAggregation privateAggregation() const;
-    ProtectedAudienceUtilities protectedAudience() const;
+    [[nodiscard]] InterestGroupScriptRunnerGlobalScope clone() const noexcept;
+    /// Getter of the `privateAggregation` attribute.
+    /// [`InterestGroupScriptRunnerGlobalScope.privateAggregation`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupScriptRunnerGlobalScope/privateAggregation)
+    [[nodiscard]] PrivateAggregation privateAggregation() const;
+    /// Getter of the `protectedAudience` attribute.
+    /// [`InterestGroupScriptRunnerGlobalScope.protectedAudience`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupScriptRunnerGlobalScope/protectedAudience)
+    [[nodiscard]] ProtectedAudienceUtilities protectedAudience() const;
 };
 

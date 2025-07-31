@@ -8,6 +8,8 @@
 class SVGAnimatedLength;
 
 
+/// The SVGLinearGradientElement class.
+/// [`SVGLinearGradientElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLinearGradientElement)
 class SVGLinearGradientElement : public SVGGradientElement {
     explicit SVGLinearGradientElement(Handle h) noexcept;
 
@@ -15,10 +17,18 @@ public:
     explicit SVGLinearGradientElement(const emlite::Val &val) noexcept;
     static SVGLinearGradientElement take_ownership(Handle h) noexcept;
 
-    SVGLinearGradientElement clone() const noexcept;
-    SVGAnimatedLength x1() const;
-    SVGAnimatedLength y1() const;
-    SVGAnimatedLength x2() const;
-    SVGAnimatedLength y2() const;
+    [[nodiscard]] SVGLinearGradientElement clone() const noexcept;
+    /// Getter of the `x1` attribute.
+    /// [`SVGLinearGradientElement.x1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLinearGradientElement/x1)
+    [[nodiscard]] SVGAnimatedLength x1() const;
+    /// Getter of the `y1` attribute.
+    /// [`SVGLinearGradientElement.y1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLinearGradientElement/y1)
+    [[nodiscard]] SVGAnimatedLength y1() const;
+    /// Getter of the `x2` attribute.
+    /// [`SVGLinearGradientElement.x2`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLinearGradientElement/x2)
+    [[nodiscard]] SVGAnimatedLength x2() const;
+    /// Getter of the `y2` attribute.
+    /// [`SVGLinearGradientElement.y2`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLinearGradientElement/y2)
+    [[nodiscard]] SVGAnimatedLength y2() const;
 };
 

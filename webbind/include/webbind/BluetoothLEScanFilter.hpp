@@ -8,6 +8,8 @@ class BluetoothManufacturerDataFilter;
 class BluetoothServiceDataFilter;
 
 
+/// The BluetoothLEScanFilter class.
+/// [`BluetoothLEScanFilter`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter)
 class BluetoothLEScanFilter : public emlite::Val {
     explicit BluetoothLEScanFilter(Handle h) noexcept;
 
@@ -15,13 +17,25 @@ public:
     explicit BluetoothLEScanFilter(const emlite::Val &val) noexcept;
     static BluetoothLEScanFilter take_ownership(Handle h) noexcept;
 
-    BluetoothLEScanFilter clone() const noexcept;
+    [[nodiscard]] BluetoothLEScanFilter clone() const noexcept;
+    /// The `new BluetoothLEScanFilter(..)` constructor, creating a new BluetoothLEScanFilter instance
     BluetoothLEScanFilter();
+    /// The `new BluetoothLEScanFilter(..)` constructor, creating a new BluetoothLEScanFilter instance
     BluetoothLEScanFilter(const jsbind::Any& init);
-    jsbind::String name() const;
-    jsbind::String namePrefix() const;
-    jsbind::TypedArray<jsbind::Any> services() const;
-    BluetoothManufacturerDataFilter manufacturerData() const;
-    BluetoothServiceDataFilter serviceData() const;
+    /// Getter of the `name` attribute.
+    /// [`BluetoothLEScanFilter.name`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `namePrefix` attribute.
+    /// [`BluetoothLEScanFilter.namePrefix`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/namePrefix)
+    [[nodiscard]] jsbind::String namePrefix() const;
+    /// Getter of the `services` attribute.
+    /// [`BluetoothLEScanFilter.services`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/services)
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> services() const;
+    /// Getter of the `manufacturerData` attribute.
+    /// [`BluetoothLEScanFilter.manufacturerData`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/manufacturerData)
+    [[nodiscard]] BluetoothManufacturerDataFilter manufacturerData() const;
+    /// Getter of the `serviceData` attribute.
+    /// [`BluetoothLEScanFilter.serviceData`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/serviceData)
+    [[nodiscard]] BluetoothServiceDataFilter serviceData() const;
 };
 

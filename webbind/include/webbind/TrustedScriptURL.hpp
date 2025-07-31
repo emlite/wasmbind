@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The TrustedScriptURL class.
+/// [`TrustedScriptURL`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScriptURL)
 class TrustedScriptURL : public emlite::Val {
     explicit TrustedScriptURL(Handle h) noexcept;
 
@@ -12,7 +14,9 @@ public:
     explicit TrustedScriptURL(const emlite::Val &val) noexcept;
     static TrustedScriptURL take_ownership(Handle h) noexcept;
 
-    TrustedScriptURL clone() const noexcept;
+    [[nodiscard]] TrustedScriptURL clone() const noexcept;
+    /// The toJSON method.
+    /// [`TrustedScriptURL.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScriptURL/toJSON)
     jsbind::String toJSON();
 };
 

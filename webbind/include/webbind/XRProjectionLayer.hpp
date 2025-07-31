@@ -8,6 +8,8 @@
 class XRRigidTransform;
 
 
+/// The XRProjectionLayer class.
+/// [`XRProjectionLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer)
 class XRProjectionLayer : public XRCompositionLayer {
     explicit XRProjectionLayer(Handle h) noexcept;
 
@@ -15,14 +17,30 @@ public:
     explicit XRProjectionLayer(const emlite::Val &val) noexcept;
     static XRProjectionLayer take_ownership(Handle h) noexcept;
 
-    XRProjectionLayer clone() const noexcept;
-    unsigned long textureWidth() const;
-    unsigned long textureHeight() const;
-    unsigned long textureArrayLength() const;
-    bool ignoreDepthValues() const;
-    float fixedFoveation() const;
+    [[nodiscard]] XRProjectionLayer clone() const noexcept;
+    /// Getter of the `textureWidth` attribute.
+    /// [`XRProjectionLayer.textureWidth`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/textureWidth)
+    [[nodiscard]] unsigned long textureWidth() const;
+    /// Getter of the `textureHeight` attribute.
+    /// [`XRProjectionLayer.textureHeight`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/textureHeight)
+    [[nodiscard]] unsigned long textureHeight() const;
+    /// Getter of the `textureArrayLength` attribute.
+    /// [`XRProjectionLayer.textureArrayLength`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/textureArrayLength)
+    [[nodiscard]] unsigned long textureArrayLength() const;
+    /// Getter of the `ignoreDepthValues` attribute.
+    /// [`XRProjectionLayer.ignoreDepthValues`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/ignoreDepthValues)
+    [[nodiscard]] bool ignoreDepthValues() const;
+    /// Getter of the `fixedFoveation` attribute.
+    /// [`XRProjectionLayer.fixedFoveation`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/fixedFoveation)
+    [[nodiscard]] float fixedFoveation() const;
+    /// Setter of the `fixedFoveation` attribute.
+    /// [`XRProjectionLayer.fixedFoveation`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/fixedFoveation)
     void fixedFoveation(float value);
-    XRRigidTransform deltaPose() const;
+    /// Getter of the `deltaPose` attribute.
+    /// [`XRProjectionLayer.deltaPose`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/deltaPose)
+    [[nodiscard]] XRRigidTransform deltaPose() const;
+    /// Setter of the `deltaPose` attribute.
+    /// [`XRProjectionLayer.deltaPose`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/deltaPose)
     void deltaPose(const XRRigidTransform& value);
 };
 

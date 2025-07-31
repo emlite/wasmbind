@@ -13,11 +13,13 @@ public:
     static WorkletOptions take_ownership(Handle h) noexcept;
     explicit WorkletOptions(const emlite::Val &val) noexcept;
     WorkletOptions() noexcept;
-    WorkletOptions clone() const noexcept;
-    RequestCredentials credentials() const;
+    [[nodiscard]] WorkletOptions clone() const noexcept;
+    [[nodiscard]] RequestCredentials credentials() const;
     void credentials(const RequestCredentials& value);
 };
 
+/// The Worklet class.
+/// [`Worklet`](https://developer.mozilla.org/en-US/docs/Web/API/Worklet)
 class Worklet : public emlite::Val {
     explicit Worklet(Handle h) noexcept;
 
@@ -25,8 +27,12 @@ public:
     explicit Worklet(const emlite::Val &val) noexcept;
     static Worklet take_ownership(Handle h) noexcept;
 
-    Worklet clone() const noexcept;
+    [[nodiscard]] Worklet clone() const noexcept;
+    /// The addModule method.
+    /// [`Worklet.addModule`](https://developer.mozilla.org/en-US/docs/Web/API/Worklet/addModule)
     jsbind::Promise<jsbind::Undefined> addModule(const jsbind::String& moduleURL);
+    /// The addModule method.
+    /// [`Worklet.addModule`](https://developer.mozilla.org/en-US/docs/Web/API/Worklet/addModule)
     jsbind::Promise<jsbind::Undefined> addModule(const jsbind::String& moduleURL, const WorkletOptions& options);
 };
 

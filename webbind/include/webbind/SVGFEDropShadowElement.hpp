@@ -10,6 +10,8 @@ class SVGAnimatedNumber;
 class SVGAnimatedLength;
 
 
+/// The SVGFEDropShadowElement class.
+/// [`SVGFEDropShadowElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement)
 class SVGFEDropShadowElement : public SVGElement {
     explicit SVGFEDropShadowElement(Handle h) noexcept;
 
@@ -17,17 +19,39 @@ public:
     explicit SVGFEDropShadowElement(const emlite::Val &val) noexcept;
     static SVGFEDropShadowElement take_ownership(Handle h) noexcept;
 
-    SVGFEDropShadowElement clone() const noexcept;
-    SVGAnimatedString in1() const;
-    SVGAnimatedNumber dx() const;
-    SVGAnimatedNumber dy() const;
-    SVGAnimatedNumber stdDeviationX() const;
-    SVGAnimatedNumber stdDeviationY() const;
+    [[nodiscard]] SVGFEDropShadowElement clone() const noexcept;
+    /// Getter of the `in1` attribute.
+    /// [`SVGFEDropShadowElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/in1)
+    [[nodiscard]] SVGAnimatedString in1() const;
+    /// Getter of the `dx` attribute.
+    /// [`SVGFEDropShadowElement.dx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/dx)
+    [[nodiscard]] SVGAnimatedNumber dx() const;
+    /// Getter of the `dy` attribute.
+    /// [`SVGFEDropShadowElement.dy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/dy)
+    [[nodiscard]] SVGAnimatedNumber dy() const;
+    /// Getter of the `stdDeviationX` attribute.
+    /// [`SVGFEDropShadowElement.stdDeviationX`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/stdDeviationX)
+    [[nodiscard]] SVGAnimatedNumber stdDeviationX() const;
+    /// Getter of the `stdDeviationY` attribute.
+    /// [`SVGFEDropShadowElement.stdDeviationY`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/stdDeviationY)
+    [[nodiscard]] SVGAnimatedNumber stdDeviationY() const;
+    /// The setStdDeviation method.
+    /// [`SVGFEDropShadowElement.setStdDeviation`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/setStdDeviation)
     jsbind::Undefined setStdDeviation(float stdDeviationX, float stdDeviationY);
-    SVGAnimatedLength x() const;
-    SVGAnimatedLength y() const;
-    SVGAnimatedLength width() const;
-    SVGAnimatedLength height() const;
-    SVGAnimatedString result() const;
+    /// Getter of the `x` attribute.
+    /// [`SVGFEDropShadowElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/x)
+    [[nodiscard]] SVGAnimatedLength x() const;
+    /// Getter of the `y` attribute.
+    /// [`SVGFEDropShadowElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/y)
+    [[nodiscard]] SVGAnimatedLength y() const;
+    /// Getter of the `width` attribute.
+    /// [`SVGFEDropShadowElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/width)
+    [[nodiscard]] SVGAnimatedLength width() const;
+    /// Getter of the `height` attribute.
+    /// [`SVGFEDropShadowElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/height)
+    [[nodiscard]] SVGAnimatedLength height() const;
+    /// Getter of the `result` attribute.
+    /// [`SVGFEDropShadowElement.result`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/result)
+    [[nodiscard]] SVGAnimatedString result() const;
 };
 

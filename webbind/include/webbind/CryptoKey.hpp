@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The CryptoKey class.
+/// [`CryptoKey`](https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey)
 class CryptoKey : public emlite::Val {
     explicit CryptoKey(Handle h) noexcept;
 
@@ -12,10 +14,18 @@ public:
     explicit CryptoKey(const emlite::Val &val) noexcept;
     static CryptoKey take_ownership(Handle h) noexcept;
 
-    CryptoKey clone() const noexcept;
-    KeyType type() const;
-    bool extractable() const;
-    jsbind::Object algorithm() const;
-    jsbind::Object usages() const;
+    [[nodiscard]] CryptoKey clone() const noexcept;
+    /// Getter of the `type` attribute.
+    /// [`CryptoKey.type`](https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/type)
+    [[nodiscard]] KeyType type() const;
+    /// Getter of the `extractable` attribute.
+    /// [`CryptoKey.extractable`](https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/extractable)
+    [[nodiscard]] bool extractable() const;
+    /// Getter of the `algorithm` attribute.
+    /// [`CryptoKey.algorithm`](https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/algorithm)
+    [[nodiscard]] jsbind::Object algorithm() const;
+    /// Getter of the `usages` attribute.
+    /// [`CryptoKey.usages`](https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/usages)
+    [[nodiscard]] jsbind::Object usages() const;
 };
 

@@ -8,6 +8,8 @@
 class SVGAnimatedLength;
 
 
+/// The SVGRectElement class.
+/// [`SVGRectElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement)
 class SVGRectElement : public SVGGeometryElement {
     explicit SVGRectElement(Handle h) noexcept;
 
@@ -15,12 +17,24 @@ public:
     explicit SVGRectElement(const emlite::Val &val) noexcept;
     static SVGRectElement take_ownership(Handle h) noexcept;
 
-    SVGRectElement clone() const noexcept;
-    SVGAnimatedLength x() const;
-    SVGAnimatedLength y() const;
-    SVGAnimatedLength width() const;
-    SVGAnimatedLength height() const;
-    SVGAnimatedLength rx() const;
-    SVGAnimatedLength ry() const;
+    [[nodiscard]] SVGRectElement clone() const noexcept;
+    /// Getter of the `x` attribute.
+    /// [`SVGRectElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/x)
+    [[nodiscard]] SVGAnimatedLength x() const;
+    /// Getter of the `y` attribute.
+    /// [`SVGRectElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/y)
+    [[nodiscard]] SVGAnimatedLength y() const;
+    /// Getter of the `width` attribute.
+    /// [`SVGRectElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/width)
+    [[nodiscard]] SVGAnimatedLength width() const;
+    /// Getter of the `height` attribute.
+    /// [`SVGRectElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/height)
+    [[nodiscard]] SVGAnimatedLength height() const;
+    /// Getter of the `rx` attribute.
+    /// [`SVGRectElement.rx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/rx)
+    [[nodiscard]] SVGAnimatedLength rx() const;
+    /// Getter of the `ry` attribute.
+    /// [`SVGRectElement.ry`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/ry)
+    [[nodiscard]] SVGAnimatedLength ry() const;
 };
 

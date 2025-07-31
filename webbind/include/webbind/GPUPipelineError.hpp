@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The GPUPipelineError class.
+/// [`GPUPipelineError`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineError)
 class GPUPipelineError : public DOMException {
     explicit GPUPipelineError(Handle h) noexcept;
 
@@ -13,10 +15,15 @@ public:
     explicit GPUPipelineError(const emlite::Val &val) noexcept;
     static GPUPipelineError take_ownership(Handle h) noexcept;
 
-    GPUPipelineError clone() const noexcept;
+    [[nodiscard]] GPUPipelineError clone() const noexcept;
+    /// The `new GPUPipelineError(..)` constructor, creating a new GPUPipelineError instance
     GPUPipelineError();
+    /// The `new GPUPipelineError(..)` constructor, creating a new GPUPipelineError instance
     GPUPipelineError(const jsbind::String& message);
+    /// The `new GPUPipelineError(..)` constructor, creating a new GPUPipelineError instance
     GPUPipelineError(const jsbind::String& message, const jsbind::Any& options);
-    GPUPipelineErrorReason reason() const;
+    /// Getter of the `reason` attribute.
+    /// [`GPUPipelineError.reason`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineError/reason)
+    [[nodiscard]] GPUPipelineErrorReason reason() const;
 };
 

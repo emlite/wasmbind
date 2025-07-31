@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLUListElement class.
+/// [`HTMLUListElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement)
 class HTMLUListElement : public HTMLElement {
     explicit HTMLUListElement(Handle h) noexcept;
 
@@ -13,11 +15,20 @@ public:
     explicit HTMLUListElement(const emlite::Val &val) noexcept;
     static HTMLUListElement take_ownership(Handle h) noexcept;
 
-    HTMLUListElement clone() const noexcept;
+    [[nodiscard]] HTMLUListElement clone() const noexcept;
+    /// The `new HTMLUListElement(..)` constructor, creating a new HTMLUListElement instance
     HTMLUListElement();
-    bool compact() const;
+    /// Getter of the `compact` attribute.
+    /// [`HTMLUListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/compact)
+    [[nodiscard]] bool compact() const;
+    /// Setter of the `compact` attribute.
+    /// [`HTMLUListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/compact)
     void compact(bool value);
-    jsbind::String type() const;
+    /// Getter of the `type` attribute.
+    /// [`HTMLUListElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/type)
+    [[nodiscard]] jsbind::String type() const;
+    /// Setter of the `type` attribute.
+    /// [`HTMLUListElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/type)
     void type(const jsbind::String& value);
 };
 

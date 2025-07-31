@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The PerformanceMeasure class.
+/// [`PerformanceMeasure`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure)
 class PerformanceMeasure : public PerformanceEntry {
     explicit PerformanceMeasure(Handle h) noexcept;
 
@@ -13,7 +15,9 @@ public:
     explicit PerformanceMeasure(const emlite::Val &val) noexcept;
     static PerformanceMeasure take_ownership(Handle h) noexcept;
 
-    PerformanceMeasure clone() const noexcept;
-    jsbind::Any detail() const;
+    [[nodiscard]] PerformanceMeasure clone() const noexcept;
+    /// Getter of the `detail` attribute.
+    /// [`PerformanceMeasure.detail`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure/detail)
+    [[nodiscard]] jsbind::Any detail() const;
 };
 

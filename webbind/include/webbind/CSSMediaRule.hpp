@@ -8,6 +8,8 @@
 class MediaList;
 
 
+/// The CSSMediaRule class.
+/// [`CSSMediaRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule)
 class CSSMediaRule : public CSSConditionRule {
     explicit CSSMediaRule(Handle h) noexcept;
 
@@ -15,8 +17,12 @@ public:
     explicit CSSMediaRule(const emlite::Val &val) noexcept;
     static CSSMediaRule take_ownership(Handle h) noexcept;
 
-    CSSMediaRule clone() const noexcept;
-    MediaList media() const;
-    bool matches() const;
+    [[nodiscard]] CSSMediaRule clone() const noexcept;
+    /// Getter of the `media` attribute.
+    /// [`CSSMediaRule.media`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/media)
+    [[nodiscard]] MediaList media() const;
+    /// Getter of the `matches` attribute.
+    /// [`CSSMediaRule.matches`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/matches)
+    [[nodiscard]] bool matches() const;
 };
 

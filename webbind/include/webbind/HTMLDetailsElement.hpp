@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLDetailsElement class.
+/// [`HTMLDetailsElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement)
 class HTMLDetailsElement : public HTMLElement {
     explicit HTMLDetailsElement(Handle h) noexcept;
 
@@ -13,11 +15,20 @@ public:
     explicit HTMLDetailsElement(const emlite::Val &val) noexcept;
     static HTMLDetailsElement take_ownership(Handle h) noexcept;
 
-    HTMLDetailsElement clone() const noexcept;
+    [[nodiscard]] HTMLDetailsElement clone() const noexcept;
+    /// The `new HTMLDetailsElement(..)` constructor, creating a new HTMLDetailsElement instance
     HTMLDetailsElement();
-    jsbind::String name() const;
+    /// Getter of the `name` attribute.
+    /// [`HTMLDetailsElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
+    /// [`HTMLDetailsElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/name)
     void name(const jsbind::String& value);
-    bool open() const;
+    /// Getter of the `open` attribute.
+    /// [`HTMLDetailsElement.open`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/open)
+    [[nodiscard]] bool open() const;
+    /// Setter of the `open` attribute.
+    /// [`HTMLDetailsElement.open`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/open)
     void open(bool value);
 };
 

@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The CSSHSL class.
+/// [`CSSHSL`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL)
 class CSSHSL : public CSSColorValue {
     explicit CSSHSL(Handle h) noexcept;
 
@@ -13,16 +15,34 @@ public:
     explicit CSSHSL(const emlite::Val &val) noexcept;
     static CSSHSL take_ownership(Handle h) noexcept;
 
-    CSSHSL clone() const noexcept;
+    [[nodiscard]] CSSHSL clone() const noexcept;
+    /// The `new CSSHSL(..)` constructor, creating a new CSSHSL instance
     CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l);
+    /// The `new CSSHSL(..)` constructor, creating a new CSSHSL instance
     CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l, const jsbind::Any& alpha);
-    jsbind::Any h() const;
+    /// Getter of the `h` attribute.
+    /// [`CSSHSL.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/h)
+    [[nodiscard]] jsbind::Any h() const;
+    /// Setter of the `h` attribute.
+    /// [`CSSHSL.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/h)
     void h(const jsbind::Any& value);
-    jsbind::Any s() const;
+    /// Getter of the `s` attribute.
+    /// [`CSSHSL.s`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/s)
+    [[nodiscard]] jsbind::Any s() const;
+    /// Setter of the `s` attribute.
+    /// [`CSSHSL.s`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/s)
     void s(const jsbind::Any& value);
-    jsbind::Any l() const;
+    /// Getter of the `l` attribute.
+    /// [`CSSHSL.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/l)
+    [[nodiscard]] jsbind::Any l() const;
+    /// Setter of the `l` attribute.
+    /// [`CSSHSL.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/l)
     void l(const jsbind::Any& value);
-    jsbind::Any alpha() const;
+    /// Getter of the `alpha` attribute.
+    /// [`CSSHSL.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/alpha)
+    [[nodiscard]] jsbind::Any alpha() const;
+    /// Setter of the `alpha` attribute.
+    /// [`CSSHSL.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/alpha)
     void alpha(const jsbind::Any& value);
 };
 

@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The FileSystemFileEntry class.
+/// [`FileSystemFileEntry`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry)
 class FileSystemFileEntry : public FileSystemEntry {
     explicit FileSystemFileEntry(Handle h) noexcept;
 
@@ -13,8 +15,12 @@ public:
     explicit FileSystemFileEntry(const emlite::Val &val) noexcept;
     static FileSystemFileEntry take_ownership(Handle h) noexcept;
 
-    FileSystemFileEntry clone() const noexcept;
+    [[nodiscard]] FileSystemFileEntry clone() const noexcept;
+    /// The file method.
+    /// [`FileSystemFileEntry.file`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry/file)
     jsbind::Undefined file(const jsbind::Function& successCallback);
+    /// The file method.
+    /// [`FileSystemFileEntry.file`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry/file)
     jsbind::Undefined file(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

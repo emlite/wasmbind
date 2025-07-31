@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The CompositionEvent class.
+/// [`CompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent)
 class CompositionEvent : public UIEvent {
     explicit CompositionEvent(Handle h) noexcept;
 
@@ -13,14 +15,28 @@ public:
     explicit CompositionEvent(const emlite::Val &val) noexcept;
     static CompositionEvent take_ownership(Handle h) noexcept;
 
-    CompositionEvent clone() const noexcept;
+    [[nodiscard]] CompositionEvent clone() const noexcept;
+    /// The `new CompositionEvent(..)` constructor, creating a new CompositionEvent instance
     CompositionEvent(const jsbind::String& type);
+    /// The `new CompositionEvent(..)` constructor, creating a new CompositionEvent instance
     CompositionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    jsbind::String data() const;
+    /// Getter of the `data` attribute.
+    /// [`CompositionEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/data)
+    [[nodiscard]] jsbind::String data() const;
+    /// The initCompositionEvent method.
+    /// [`CompositionEvent.initCompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/initCompositionEvent)
     jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg);
+    /// The initCompositionEvent method.
+    /// [`CompositionEvent.initCompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/initCompositionEvent)
     jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg);
+    /// The initCompositionEvent method.
+    /// [`CompositionEvent.initCompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/initCompositionEvent)
     jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg);
+    /// The initCompositionEvent method.
+    /// [`CompositionEvent.initCompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/initCompositionEvent)
     jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg);
+    /// The initCompositionEvent method.
+    /// [`CompositionEvent.initCompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/initCompositionEvent)
     jsbind::Undefined initCompositionEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const jsbind::Any& viewArg, const jsbind::String& dataArg);
 };
 

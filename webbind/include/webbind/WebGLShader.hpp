@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The WebGLShader class.
+/// [`WebGLShader`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShader)
 class WebGLShader : public WebGLObject {
     explicit WebGLShader(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit WebGLShader(const emlite::Val &val) noexcept;
     static WebGLShader take_ownership(Handle h) noexcept;
 
-    WebGLShader clone() const noexcept;
+    [[nodiscard]] WebGLShader clone() const noexcept;
 };
 

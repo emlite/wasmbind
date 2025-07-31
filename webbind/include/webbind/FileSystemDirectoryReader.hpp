@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The FileSystemDirectoryReader class.
+/// [`FileSystemDirectoryReader`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader)
 class FileSystemDirectoryReader : public emlite::Val {
     explicit FileSystemDirectoryReader(Handle h) noexcept;
 
@@ -12,8 +14,12 @@ public:
     explicit FileSystemDirectoryReader(const emlite::Val &val) noexcept;
     static FileSystemDirectoryReader take_ownership(Handle h) noexcept;
 
-    FileSystemDirectoryReader clone() const noexcept;
+    [[nodiscard]] FileSystemDirectoryReader clone() const noexcept;
+    /// The readEntries method.
+    /// [`FileSystemDirectoryReader.readEntries`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader/readEntries)
     jsbind::Undefined readEntries(const jsbind::Function& successCallback);
+    /// The readEntries method.
+    /// [`FileSystemDirectoryReader.readEntries`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader/readEntries)
     jsbind::Undefined readEntries(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

@@ -15,23 +15,25 @@ public:
     static MutationObserverInit take_ownership(Handle h) noexcept;
     explicit MutationObserverInit(const emlite::Val &val) noexcept;
     MutationObserverInit() noexcept;
-    MutationObserverInit clone() const noexcept;
-    bool childList() const;
+    [[nodiscard]] MutationObserverInit clone() const noexcept;
+    [[nodiscard]] bool childList() const;
     void childList(bool value);
-    bool attributes() const;
+    [[nodiscard]] bool attributes() const;
     void attributes(bool value);
-    bool characterData() const;
+    [[nodiscard]] bool characterData() const;
     void characterData(bool value);
-    bool subtree() const;
+    [[nodiscard]] bool subtree() const;
     void subtree(bool value);
-    bool attributeOldValue() const;
+    [[nodiscard]] bool attributeOldValue() const;
     void attributeOldValue(bool value);
-    bool characterDataOldValue() const;
+    [[nodiscard]] bool characterDataOldValue() const;
     void characterDataOldValue(bool value);
-    jsbind::TypedArray<jsbind::String> attributeFilter() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> attributeFilter() const;
     void attributeFilter(const jsbind::TypedArray<jsbind::String>& value);
 };
 
+/// The MutationObserver class.
+/// [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)
 class MutationObserver : public emlite::Val {
     explicit MutationObserver(Handle h) noexcept;
 
@@ -39,11 +41,20 @@ public:
     explicit MutationObserver(const emlite::Val &val) noexcept;
     static MutationObserver take_ownership(Handle h) noexcept;
 
-    MutationObserver clone() const noexcept;
+    [[nodiscard]] MutationObserver clone() const noexcept;
+    /// The `new MutationObserver(..)` constructor, creating a new MutationObserver instance
     MutationObserver(const jsbind::Function& callback);
+    /// The observe method.
+    /// [`MutationObserver.observe`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe)
     jsbind::Undefined observe(const Node& target);
+    /// The observe method.
+    /// [`MutationObserver.observe`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe)
     jsbind::Undefined observe(const Node& target, const MutationObserverInit& options);
+    /// The disconnect method.
+    /// [`MutationObserver.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/disconnect)
     jsbind::Undefined disconnect();
+    /// The takeRecords method.
+    /// [`MutationObserver.takeRecords`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/takeRecords)
     jsbind::TypedArray<MutationRecord> takeRecords();
 };
 

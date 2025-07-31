@@ -7,6 +7,8 @@
 class AbortSignal;
 
 
+/// The WritableStreamDefaultController class.
+/// [`WritableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController)
 class WritableStreamDefaultController : public emlite::Val {
     explicit WritableStreamDefaultController(Handle h) noexcept;
 
@@ -14,9 +16,15 @@ public:
     explicit WritableStreamDefaultController(const emlite::Val &val) noexcept;
     static WritableStreamDefaultController take_ownership(Handle h) noexcept;
 
-    WritableStreamDefaultController clone() const noexcept;
-    AbortSignal signal() const;
+    [[nodiscard]] WritableStreamDefaultController clone() const noexcept;
+    /// Getter of the `signal` attribute.
+    /// [`WritableStreamDefaultController.signal`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController/signal)
+    [[nodiscard]] AbortSignal signal() const;
+    /// The error method.
+    /// [`WritableStreamDefaultController.error`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController/error)
     jsbind::Undefined error();
+    /// The error method.
+    /// [`WritableStreamDefaultController.error`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController/error)
     jsbind::Undefined error(const jsbind::Any& e);
 };
 

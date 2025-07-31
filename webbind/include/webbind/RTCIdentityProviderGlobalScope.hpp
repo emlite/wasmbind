@@ -8,6 +8,8 @@
 class RTCIdentityProviderRegistrar;
 
 
+/// The RTCIdentityProviderGlobalScope class.
+/// [`RTCIdentityProviderGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityProviderGlobalScope)
 class RTCIdentityProviderGlobalScope : public WorkerGlobalScope {
     explicit RTCIdentityProviderGlobalScope(Handle h) noexcept;
 
@@ -15,7 +17,9 @@ public:
     explicit RTCIdentityProviderGlobalScope(const emlite::Val &val) noexcept;
     static RTCIdentityProviderGlobalScope take_ownership(Handle h) noexcept;
 
-    RTCIdentityProviderGlobalScope clone() const noexcept;
-    RTCIdentityProviderRegistrar rtcIdentityProvider() const;
+    [[nodiscard]] RTCIdentityProviderGlobalScope clone() const noexcept;
+    /// Getter of the `rtcIdentityProvider` attribute.
+    /// [`RTCIdentityProviderGlobalScope.rtcIdentityProvider`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityProviderGlobalScope/rtcIdentityProvider)
+    [[nodiscard]] RTCIdentityProviderRegistrar rtcIdentityProvider() const;
 };
 

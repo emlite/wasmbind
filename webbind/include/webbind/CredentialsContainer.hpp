@@ -18,8 +18,8 @@ public:
     static CredentialRequestOptions take_ownership(Handle h) noexcept;
     explicit CredentialRequestOptions(const emlite::Val &val) noexcept;
     CredentialRequestOptions() noexcept;
-    CredentialRequestOptions clone() const noexcept;
-    PublicKeyCredentialRequestOptions publicKey() const;
+    [[nodiscard]] CredentialRequestOptions clone() const noexcept;
+    [[nodiscard]] PublicKeyCredentialRequestOptions publicKey() const;
     void publicKey(const PublicKeyCredentialRequestOptions& value);
 };
 
@@ -29,11 +29,13 @@ public:
     static CredentialCreationOptions take_ownership(Handle h) noexcept;
     explicit CredentialCreationOptions(const emlite::Val &val) noexcept;
     CredentialCreationOptions() noexcept;
-    CredentialCreationOptions clone() const noexcept;
-    PublicKeyCredentialCreationOptions publicKey() const;
+    [[nodiscard]] CredentialCreationOptions clone() const noexcept;
+    [[nodiscard]] PublicKeyCredentialCreationOptions publicKey() const;
     void publicKey(const PublicKeyCredentialCreationOptions& value);
 };
 
+/// The CredentialsContainer class.
+/// [`CredentialsContainer`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer)
 class CredentialsContainer : public emlite::Val {
     explicit CredentialsContainer(Handle h) noexcept;
 
@@ -41,12 +43,24 @@ public:
     explicit CredentialsContainer(const emlite::Val &val) noexcept;
     static CredentialsContainer take_ownership(Handle h) noexcept;
 
-    CredentialsContainer clone() const noexcept;
+    [[nodiscard]] CredentialsContainer clone() const noexcept;
+    /// The get method.
+    /// [`CredentialsContainer.get`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get)
     jsbind::Promise<Credential> get();
+    /// The get method.
+    /// [`CredentialsContainer.get`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get)
     jsbind::Promise<Credential> get(const CredentialRequestOptions& options);
+    /// The store method.
+    /// [`CredentialsContainer.store`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/store)
     jsbind::Promise<jsbind::Undefined> store(const Credential& credential);
+    /// The create method.
+    /// [`CredentialsContainer.create`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/create)
     jsbind::Promise<Credential> create();
+    /// The create method.
+    /// [`CredentialsContainer.create`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/create)
     jsbind::Promise<Credential> create(const CredentialCreationOptions& options);
+    /// The preventSilentAccess method.
+    /// [`CredentialsContainer.preventSilentAccess`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/preventSilentAccess)
     jsbind::Promise<jsbind::Undefined> preventSilentAccess();
 };
 

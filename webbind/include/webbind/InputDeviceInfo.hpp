@@ -7,6 +7,8 @@
 #include "enums.hpp"
 
 
+/// The InputDeviceInfo class.
+/// [`InputDeviceInfo`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo)
 class InputDeviceInfo : public MediaDeviceInfo {
     explicit InputDeviceInfo(Handle h) noexcept;
 
@@ -14,7 +16,9 @@ public:
     explicit InputDeviceInfo(const emlite::Val &val) noexcept;
     static InputDeviceInfo take_ownership(Handle h) noexcept;
 
-    InputDeviceInfo clone() const noexcept;
+    [[nodiscard]] InputDeviceInfo clone() const noexcept;
+    /// The getCapabilities method.
+    /// [`InputDeviceInfo.getCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo/getCapabilities)
     MediaTrackCapabilities getCapabilities();
 };
 

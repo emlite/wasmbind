@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The MediaStreamTrackAudioSourceNode class.
+/// [`MediaStreamTrackAudioSourceNode`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackAudioSourceNode)
 class MediaStreamTrackAudioSourceNode : public AudioNode {
     explicit MediaStreamTrackAudioSourceNode(Handle h) noexcept;
 
@@ -13,7 +15,8 @@ public:
     explicit MediaStreamTrackAudioSourceNode(const emlite::Val &val) noexcept;
     static MediaStreamTrackAudioSourceNode take_ownership(Handle h) noexcept;
 
-    MediaStreamTrackAudioSourceNode clone() const noexcept;
+    [[nodiscard]] MediaStreamTrackAudioSourceNode clone() const noexcept;
+    /// The `new MediaStreamTrackAudioSourceNode(..)` constructor, creating a new MediaStreamTrackAudioSourceNode instance
     MediaStreamTrackAudioSourceNode(const AudioContext& context, const jsbind::Any& options);
 };
 

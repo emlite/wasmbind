@@ -8,6 +8,8 @@
 class MediaDeviceInfo;
 
 
+/// The DeviceChangeEvent class.
+/// [`DeviceChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEvent)
 class DeviceChangeEvent : public Event {
     explicit DeviceChangeEvent(Handle h) noexcept;
 
@@ -15,10 +17,16 @@ public:
     explicit DeviceChangeEvent(const emlite::Val &val) noexcept;
     static DeviceChangeEvent take_ownership(Handle h) noexcept;
 
-    DeviceChangeEvent clone() const noexcept;
+    [[nodiscard]] DeviceChangeEvent clone() const noexcept;
+    /// The `new DeviceChangeEvent(..)` constructor, creating a new DeviceChangeEvent instance
     DeviceChangeEvent(const jsbind::String& type);
+    /// The `new DeviceChangeEvent(..)` constructor, creating a new DeviceChangeEvent instance
     DeviceChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    jsbind::TypedArray<MediaDeviceInfo> devices() const;
-    jsbind::TypedArray<MediaDeviceInfo> userInsertedDevices() const;
+    /// Getter of the `devices` attribute.
+    /// [`DeviceChangeEvent.devices`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEvent/devices)
+    [[nodiscard]] jsbind::TypedArray<MediaDeviceInfo> devices() const;
+    /// Getter of the `userInsertedDevices` attribute.
+    /// [`DeviceChangeEvent.userInsertedDevices`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEvent/userInsertedDevices)
+    [[nodiscard]] jsbind::TypedArray<MediaDeviceInfo> userInsertedDevices() const;
 };
 

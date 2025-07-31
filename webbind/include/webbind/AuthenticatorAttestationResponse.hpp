@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The AuthenticatorAttestationResponse class.
+/// [`AuthenticatorAttestationResponse`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse)
 class AuthenticatorAttestationResponse : public AuthenticatorResponse {
     explicit AuthenticatorAttestationResponse(Handle h) noexcept;
 
@@ -13,11 +15,21 @@ public:
     explicit AuthenticatorAttestationResponse(const emlite::Val &val) noexcept;
     static AuthenticatorAttestationResponse take_ownership(Handle h) noexcept;
 
-    AuthenticatorAttestationResponse clone() const noexcept;
-    jsbind::ArrayBuffer attestationObject() const;
+    [[nodiscard]] AuthenticatorAttestationResponse clone() const noexcept;
+    /// Getter of the `attestationObject` attribute.
+    /// [`AuthenticatorAttestationResponse.attestationObject`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/attestationObject)
+    [[nodiscard]] jsbind::ArrayBuffer attestationObject() const;
+    /// The getTransports method.
+    /// [`AuthenticatorAttestationResponse.getTransports`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getTransports)
     jsbind::TypedArray<jsbind::String> getTransports();
+    /// The getAuthenticatorData method.
+    /// [`AuthenticatorAttestationResponse.getAuthenticatorData`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getAuthenticatorData)
     jsbind::ArrayBuffer getAuthenticatorData();
+    /// The getPublicKey method.
+    /// [`AuthenticatorAttestationResponse.getPublicKey`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getPublicKey)
     jsbind::ArrayBuffer getPublicKey();
+    /// The getPublicKeyAlgorithm method.
+    /// [`AuthenticatorAttestationResponse.getPublicKeyAlgorithm`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getPublicKeyAlgorithm)
     jsbind::Any getPublicKeyAlgorithm();
 };
 

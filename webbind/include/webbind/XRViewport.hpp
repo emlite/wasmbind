@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The XRViewport class.
+/// [`XRViewport`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport)
 class XRViewport : public emlite::Val {
     explicit XRViewport(Handle h) noexcept;
 
@@ -12,10 +14,18 @@ public:
     explicit XRViewport(const emlite::Val &val) noexcept;
     static XRViewport take_ownership(Handle h) noexcept;
 
-    XRViewport clone() const noexcept;
-    long x() const;
-    long y() const;
-    long width() const;
-    long height() const;
+    [[nodiscard]] XRViewport clone() const noexcept;
+    /// Getter of the `x` attribute.
+    /// [`XRViewport.x`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/x)
+    [[nodiscard]] long x() const;
+    /// Getter of the `y` attribute.
+    /// [`XRViewport.y`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/y)
+    [[nodiscard]] long y() const;
+    /// Getter of the `width` attribute.
+    /// [`XRViewport.width`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/width)
+    [[nodiscard]] long width() const;
+    /// Getter of the `height` attribute.
+    /// [`XRViewport.height`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/height)
+    [[nodiscard]] long height() const;
 };
 

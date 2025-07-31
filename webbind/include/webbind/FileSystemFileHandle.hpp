@@ -17,11 +17,13 @@ public:
     static FileSystemCreateWritableOptions take_ownership(Handle h) noexcept;
     explicit FileSystemCreateWritableOptions(const emlite::Val &val) noexcept;
     FileSystemCreateWritableOptions() noexcept;
-    FileSystemCreateWritableOptions clone() const noexcept;
-    bool keepExistingData() const;
+    [[nodiscard]] FileSystemCreateWritableOptions clone() const noexcept;
+    [[nodiscard]] bool keepExistingData() const;
     void keepExistingData(bool value);
 };
 
+/// The FileSystemFileHandle class.
+/// [`FileSystemFileHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle)
 class FileSystemFileHandle : public FileSystemHandle {
     explicit FileSystemFileHandle(Handle h) noexcept;
 
@@ -29,10 +31,18 @@ public:
     explicit FileSystemFileHandle(const emlite::Val &val) noexcept;
     static FileSystemFileHandle take_ownership(Handle h) noexcept;
 
-    FileSystemFileHandle clone() const noexcept;
+    [[nodiscard]] FileSystemFileHandle clone() const noexcept;
+    /// The getFile method.
+    /// [`FileSystemFileHandle.getFile`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/getFile)
     jsbind::Promise<File> getFile();
+    /// The createWritable method.
+    /// [`FileSystemFileHandle.createWritable`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/createWritable)
     jsbind::Promise<FileSystemWritableFileStream> createWritable();
+    /// The createWritable method.
+    /// [`FileSystemFileHandle.createWritable`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/createWritable)
     jsbind::Promise<FileSystemWritableFileStream> createWritable(const FileSystemCreateWritableOptions& options);
+    /// The createSyncAccessHandle method.
+    /// [`FileSystemFileHandle.createSyncAccessHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
     jsbind::Promise<FileSystemSyncAccessHandle> createSyncAccessHandle();
 };
 

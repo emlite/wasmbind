@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The CSSStyleProperties class.
+/// [`CSSStyleProperties`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleProperties)
 class CSSStyleProperties : public CSSStyleDeclaration {
     explicit CSSStyleProperties(Handle h) noexcept;
 
@@ -13,8 +15,12 @@ public:
     explicit CSSStyleProperties(const emlite::Val &val) noexcept;
     static CSSStyleProperties take_ownership(Handle h) noexcept;
 
-    CSSStyleProperties clone() const noexcept;
-    jsbind::String cssFloat() const;
+    [[nodiscard]] CSSStyleProperties clone() const noexcept;
+    /// Getter of the `cssFloat` attribute.
+    /// [`CSSStyleProperties.cssFloat`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleProperties/cssFloat)
+    [[nodiscard]] jsbind::String cssFloat() const;
+    /// Setter of the `cssFloat` attribute.
+    /// [`CSSStyleProperties.cssFloat`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleProperties/cssFloat)
     void cssFloat(const jsbind::String& value);
 };
 

@@ -8,6 +8,8 @@
 class XRSession;
 
 
+/// The XRSessionEvent class.
+/// [`XRSessionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/XRSessionEvent)
 class XRSessionEvent : public Event {
     explicit XRSessionEvent(Handle h) noexcept;
 
@@ -15,8 +17,11 @@ public:
     explicit XRSessionEvent(const emlite::Val &val) noexcept;
     static XRSessionEvent take_ownership(Handle h) noexcept;
 
-    XRSessionEvent clone() const noexcept;
+    [[nodiscard]] XRSessionEvent clone() const noexcept;
+    /// The `new XRSessionEvent(..)` constructor, creating a new XRSessionEvent instance
     XRSessionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    XRSession session() const;
+    /// Getter of the `session` attribute.
+    /// [`XRSessionEvent.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRSessionEvent/session)
+    [[nodiscard]] XRSession session() const;
 };
 

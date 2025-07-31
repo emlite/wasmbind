@@ -17,27 +17,29 @@ public:
     static StorageInterestGroup take_ownership(Handle h) noexcept;
     explicit StorageInterestGroup(const emlite::Val &val) noexcept;
     StorageInterestGroup() noexcept;
-    StorageInterestGroup clone() const noexcept;
-    long long joinCount() const;
+    [[nodiscard]] StorageInterestGroup clone() const noexcept;
+    [[nodiscard]] long long joinCount() const;
     void joinCount(long long value);
-    long long bidCount() const;
+    [[nodiscard]] long long bidCount() const;
     void bidCount(long long value);
-    jsbind::TypedArray<jsbind::Any> prevWinsMs() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> prevWinsMs() const;
     void prevWinsMs(const jsbind::TypedArray<jsbind::Any>& value);
-    jsbind::String joiningOrigin() const;
+    [[nodiscard]] jsbind::String joiningOrigin() const;
     void joiningOrigin(const jsbind::String& value);
-    long long timeSinceGroupJoinedMs() const;
+    [[nodiscard]] long long timeSinceGroupJoinedMs() const;
     void timeSinceGroupJoinedMs(long long value);
-    long long lifetimeRemainingMs() const;
+    [[nodiscard]] long long lifetimeRemainingMs() const;
     void lifetimeRemainingMs(long long value);
-    long long timeSinceLastUpdateMs() const;
+    [[nodiscard]] long long timeSinceLastUpdateMs() const;
     void timeSinceLastUpdateMs(long long value);
-    long long timeUntilNextUpdateMs() const;
+    [[nodiscard]] long long timeUntilNextUpdateMs() const;
     void timeUntilNextUpdateMs(long long value);
-    long long estimatedSize() const;
+    [[nodiscard]] long long estimatedSize() const;
     void estimatedSize(long long value);
 };
 
+/// The SharedStorageWorkletGlobalScope class.
+/// [`SharedStorageWorkletGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope)
 class SharedStorageWorkletGlobalScope : public WorkletGlobalScope {
     explicit SharedStorageWorkletGlobalScope(Handle h) noexcept;
 
@@ -45,11 +47,21 @@ public:
     explicit SharedStorageWorkletGlobalScope(const emlite::Val &val) noexcept;
     static SharedStorageWorkletGlobalScope take_ownership(Handle h) noexcept;
 
-    SharedStorageWorkletGlobalScope clone() const noexcept;
+    [[nodiscard]] SharedStorageWorkletGlobalScope clone() const noexcept;
+    /// The register method.
+    /// [`SharedStorageWorkletGlobalScope.register`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/register)
     jsbind::Undefined register_(const jsbind::String& name, const jsbind::Function& operationCtor);
-    SharedStorage sharedStorage() const;
-    PrivateAggregation privateAggregation() const;
+    /// Getter of the `sharedStorage` attribute.
+    /// [`SharedStorageWorkletGlobalScope.sharedStorage`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/sharedStorage)
+    [[nodiscard]] SharedStorage sharedStorage() const;
+    /// Getter of the `privateAggregation` attribute.
+    /// [`SharedStorageWorkletGlobalScope.privateAggregation`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/privateAggregation)
+    [[nodiscard]] PrivateAggregation privateAggregation() const;
+    /// The interestGroups method.
+    /// [`SharedStorageWorkletGlobalScope.interestGroups`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/interestGroups)
     jsbind::Promise<jsbind::TypedArray<StorageInterestGroup>> interestGroups();
-    SharedStorageWorkletNavigator navigator() const;
+    /// Getter of the `navigator` attribute.
+    /// [`SharedStorageWorkletGlobalScope.navigator`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/navigator)
+    [[nodiscard]] SharedStorageWorkletNavigator navigator() const;
 };
 

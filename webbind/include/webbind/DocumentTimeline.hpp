@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The DocumentTimeline class.
+/// [`DocumentTimeline`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentTimeline)
 class DocumentTimeline : public AnimationTimeline {
     explicit DocumentTimeline(Handle h) noexcept;
 
@@ -13,8 +15,10 @@ public:
     explicit DocumentTimeline(const emlite::Val &val) noexcept;
     static DocumentTimeline take_ownership(Handle h) noexcept;
 
-    DocumentTimeline clone() const noexcept;
+    [[nodiscard]] DocumentTimeline clone() const noexcept;
+    /// The `new DocumentTimeline(..)` constructor, creating a new DocumentTimeline instance
     DocumentTimeline();
+    /// The `new DocumentTimeline(..)` constructor, creating a new DocumentTimeline instance
     DocumentTimeline(const jsbind::Any& options);
 };
 

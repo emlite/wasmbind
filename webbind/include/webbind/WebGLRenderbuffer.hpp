@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The WebGLRenderbuffer class.
+/// [`WebGLRenderbuffer`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderbuffer)
 class WebGLRenderbuffer : public WebGLObject {
     explicit WebGLRenderbuffer(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit WebGLRenderbuffer(const emlite::Val &val) noexcept;
     static WebGLRenderbuffer take_ownership(Handle h) noexcept;
 
-    WebGLRenderbuffer clone() const noexcept;
+    [[nodiscard]] WebGLRenderbuffer clone() const noexcept;
 };
 

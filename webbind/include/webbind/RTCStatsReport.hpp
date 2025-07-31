@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The RTCStatsReport class.
+/// [`RTCStatsReport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCStatsReport)
 class RTCStatsReport : public emlite::Val {
     explicit RTCStatsReport(Handle h) noexcept;
 
@@ -12,6 +14,6 @@ public:
     explicit RTCStatsReport(const emlite::Val &val) noexcept;
     static RTCStatsReport take_ownership(Handle h) noexcept;
 
-    RTCStatsReport clone() const noexcept;
+    [[nodiscard]] RTCStatsReport clone() const noexcept;
 };
 

@@ -8,6 +8,8 @@
 class CSSParserValue;
 
 
+/// The CSSParserDeclaration class.
+/// [`CSSParserDeclaration`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserDeclaration)
 class CSSParserDeclaration : public CSSParserRule {
     explicit CSSParserDeclaration(Handle h) noexcept;
 
@@ -15,10 +17,16 @@ public:
     explicit CSSParserDeclaration(const emlite::Val &val) noexcept;
     static CSSParserDeclaration take_ownership(Handle h) noexcept;
 
-    CSSParserDeclaration clone() const noexcept;
+    [[nodiscard]] CSSParserDeclaration clone() const noexcept;
+    /// The `new CSSParserDeclaration(..)` constructor, creating a new CSSParserDeclaration instance
     CSSParserDeclaration(const jsbind::String& name);
+    /// The `new CSSParserDeclaration(..)` constructor, creating a new CSSParserDeclaration instance
     CSSParserDeclaration(const jsbind::String& name, const jsbind::TypedArray<CSSParserRule>& body);
-    jsbind::String name() const;
-    jsbind::TypedArray<CSSParserValue> body() const;
+    /// Getter of the `name` attribute.
+    /// [`CSSParserDeclaration.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserDeclaration/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `body` attribute.
+    /// [`CSSParserDeclaration.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserDeclaration/body)
+    [[nodiscard]] jsbind::TypedArray<CSSParserValue> body() const;
 };
 

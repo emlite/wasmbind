@@ -8,6 +8,8 @@
 class Node;
 
 
+/// The SnapEvent class.
+/// [`SnapEvent`](https://developer.mozilla.org/en-US/docs/Web/API/SnapEvent)
 class SnapEvent : public Event {
     explicit SnapEvent(Handle h) noexcept;
 
@@ -15,10 +17,16 @@ public:
     explicit SnapEvent(const emlite::Val &val) noexcept;
     static SnapEvent take_ownership(Handle h) noexcept;
 
-    SnapEvent clone() const noexcept;
+    [[nodiscard]] SnapEvent clone() const noexcept;
+    /// The `new SnapEvent(..)` constructor, creating a new SnapEvent instance
     SnapEvent(const jsbind::String& type);
+    /// The `new SnapEvent(..)` constructor, creating a new SnapEvent instance
     SnapEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    Node snapTargetBlock() const;
-    Node snapTargetInline() const;
+    /// Getter of the `snapTargetBlock` attribute.
+    /// [`SnapEvent.snapTargetBlock`](https://developer.mozilla.org/en-US/docs/Web/API/SnapEvent/snapTargetBlock)
+    [[nodiscard]] Node snapTargetBlock() const;
+    /// Getter of the `snapTargetInline` attribute.
+    /// [`SnapEvent.snapTargetInline`](https://developer.mozilla.org/en-US/docs/Web/API/SnapEvent/snapTargetInline)
+    [[nodiscard]] Node snapTargetInline() const;
 };
 

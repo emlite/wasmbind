@@ -7,6 +7,8 @@
 class USBIsochronousInTransferPacket;
 
 
+/// The USBIsochronousInTransferResult class.
+/// [`USBIsochronousInTransferResult`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousInTransferResult)
 class USBIsochronousInTransferResult : public emlite::Val {
     explicit USBIsochronousInTransferResult(Handle h) noexcept;
 
@@ -14,10 +16,16 @@ public:
     explicit USBIsochronousInTransferResult(const emlite::Val &val) noexcept;
     static USBIsochronousInTransferResult take_ownership(Handle h) noexcept;
 
-    USBIsochronousInTransferResult clone() const noexcept;
+    [[nodiscard]] USBIsochronousInTransferResult clone() const noexcept;
+    /// The `new USBIsochronousInTransferResult(..)` constructor, creating a new USBIsochronousInTransferResult instance
     USBIsochronousInTransferResult(const jsbind::TypedArray<USBIsochronousInTransferPacket>& packets);
+    /// The `new USBIsochronousInTransferResult(..)` constructor, creating a new USBIsochronousInTransferResult instance
     USBIsochronousInTransferResult(const jsbind::TypedArray<USBIsochronousInTransferPacket>& packets, const jsbind::DataView& data);
-    jsbind::DataView data() const;
-    jsbind::TypedArray<USBIsochronousInTransferPacket> packets() const;
+    /// Getter of the `data` attribute.
+    /// [`USBIsochronousInTransferResult.data`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousInTransferResult/data)
+    [[nodiscard]] jsbind::DataView data() const;
+    /// Getter of the `packets` attribute.
+    /// [`USBIsochronousInTransferResult.packets`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousInTransferResult/packets)
+    [[nodiscard]] jsbind::TypedArray<USBIsochronousInTransferPacket> packets() const;
 };
 

@@ -21,8 +21,8 @@ public:
     static AudioOutputOptions take_ownership(Handle h) noexcept;
     explicit AudioOutputOptions(const emlite::Val &val) noexcept;
     AudioOutputOptions() noexcept;
-    AudioOutputOptions clone() const noexcept;
-    jsbind::String deviceId() const;
+    [[nodiscard]] AudioOutputOptions clone() const noexcept;
+    [[nodiscard]] jsbind::String deviceId() const;
     void deviceId(const jsbind::String& value);
 };
 
@@ -32,12 +32,12 @@ public:
     static CaptureHandleConfig take_ownership(Handle h) noexcept;
     explicit CaptureHandleConfig(const emlite::Val &val) noexcept;
     CaptureHandleConfig() noexcept;
-    CaptureHandleConfig clone() const noexcept;
-    bool exposeOrigin() const;
+    [[nodiscard]] CaptureHandleConfig clone() const noexcept;
+    [[nodiscard]] bool exposeOrigin() const;
     void exposeOrigin(bool value);
-    jsbind::String handle() const;
+    [[nodiscard]] jsbind::String handle() const;
     void handle(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::String> permittedOrigins() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> permittedOrigins() const;
     void permittedOrigins(const jsbind::TypedArray<jsbind::String>& value);
 };
 
@@ -47,16 +47,16 @@ public:
     static MediaTrackSupportedConstraints take_ownership(Handle h) noexcept;
     explicit MediaTrackSupportedConstraints(const emlite::Val &val) noexcept;
     MediaTrackSupportedConstraints() noexcept;
-    MediaTrackSupportedConstraints clone() const noexcept;
-    bool displaySurface() const;
+    [[nodiscard]] MediaTrackSupportedConstraints clone() const noexcept;
+    [[nodiscard]] bool displaySurface() const;
     void displaySurface(bool value);
-    bool logicalSurface() const;
+    [[nodiscard]] bool logicalSurface() const;
     void logicalSurface(bool value);
-    bool cursor() const;
+    [[nodiscard]] bool cursor() const;
     void cursor(bool value);
-    bool restrictOwnAudio() const;
+    [[nodiscard]] bool restrictOwnAudio() const;
     void restrictOwnAudio(bool value);
-    bool suppressLocalAudioPlayback() const;
+    [[nodiscard]] bool suppressLocalAudioPlayback() const;
     void suppressLocalAudioPlayback(bool value);
 };
 
@@ -66,8 +66,8 @@ public:
     static MediaStreamConstraints take_ownership(Handle h) noexcept;
     explicit MediaStreamConstraints(const emlite::Val &val) noexcept;
     MediaStreamConstraints() noexcept;
-    MediaStreamConstraints clone() const noexcept;
-    jsbind::String peerIdentity() const;
+    [[nodiscard]] MediaStreamConstraints clone() const noexcept;
+    [[nodiscard]] jsbind::String peerIdentity() const;
     void peerIdentity(const jsbind::String& value);
 };
 
@@ -77,25 +77,27 @@ public:
     static DisplayMediaStreamOptions take_ownership(Handle h) noexcept;
     explicit DisplayMediaStreamOptions(const emlite::Val &val) noexcept;
     DisplayMediaStreamOptions() noexcept;
-    DisplayMediaStreamOptions clone() const noexcept;
-    jsbind::Any video() const;
+    [[nodiscard]] DisplayMediaStreamOptions clone() const noexcept;
+    [[nodiscard]] jsbind::Any video() const;
     void video(const jsbind::Any& value);
-    jsbind::Any audio() const;
+    [[nodiscard]] jsbind::Any audio() const;
     void audio(const jsbind::Any& value);
-    CaptureController controller() const;
+    [[nodiscard]] CaptureController controller() const;
     void controller(const CaptureController& value);
-    SelfCapturePreferenceEnum selfBrowserSurface() const;
+    [[nodiscard]] SelfCapturePreferenceEnum selfBrowserSurface() const;
     void selfBrowserSurface(const SelfCapturePreferenceEnum& value);
-    SystemAudioPreferenceEnum systemAudio() const;
+    [[nodiscard]] SystemAudioPreferenceEnum systemAudio() const;
     void systemAudio(const SystemAudioPreferenceEnum& value);
-    WindowAudioPreferenceEnum windowAudio() const;
+    [[nodiscard]] WindowAudioPreferenceEnum windowAudio() const;
     void windowAudio(const WindowAudioPreferenceEnum& value);
-    SurfaceSwitchingPreferenceEnum surfaceSwitching() const;
+    [[nodiscard]] SurfaceSwitchingPreferenceEnum surfaceSwitching() const;
     void surfaceSwitching(const SurfaceSwitchingPreferenceEnum& value);
-    MonitorTypeSurfacesEnum monitorTypeSurfaces() const;
+    [[nodiscard]] MonitorTypeSurfacesEnum monitorTypeSurfaces() const;
     void monitorTypeSurfaces(const MonitorTypeSurfacesEnum& value);
 };
 
+/// The MediaDevices class.
+/// [`MediaDevices`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices)
 class MediaDevices : public EventTarget {
     explicit MediaDevices(Handle h) noexcept;
 
@@ -103,23 +105,57 @@ public:
     explicit MediaDevices(const emlite::Val &val) noexcept;
     static MediaDevices take_ownership(Handle h) noexcept;
 
-    MediaDevices clone() const noexcept;
-    jsbind::Any ondevicechange() const;
+    [[nodiscard]] MediaDevices clone() const noexcept;
+    /// Getter of the `ondevicechange` attribute.
+    /// [`MediaDevices.ondevicechange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/ondevicechange)
+    [[nodiscard]] jsbind::Any ondevicechange() const;
+    /// Setter of the `ondevicechange` attribute.
+    /// [`MediaDevices.ondevicechange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/ondevicechange)
     void ondevicechange(const jsbind::Any& value);
+    /// The enumerateDevices method.
+    /// [`MediaDevices.enumerateDevices`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices)
     jsbind::Promise<jsbind::TypedArray<MediaDeviceInfo>> enumerateDevices();
+    /// The selectAudioOutput method.
+    /// [`MediaDevices.selectAudioOutput`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/selectAudioOutput)
     jsbind::Promise<MediaDeviceInfo> selectAudioOutput();
+    /// The selectAudioOutput method.
+    /// [`MediaDevices.selectAudioOutput`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/selectAudioOutput)
     jsbind::Promise<MediaDeviceInfo> selectAudioOutput(const AudioOutputOptions& options);
+    /// The setCaptureHandleConfig method.
+    /// [`MediaDevices.setCaptureHandleConfig`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/setCaptureHandleConfig)
     jsbind::Undefined setCaptureHandleConfig();
+    /// The setCaptureHandleConfig method.
+    /// [`MediaDevices.setCaptureHandleConfig`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/setCaptureHandleConfig)
     jsbind::Undefined setCaptureHandleConfig(const CaptureHandleConfig& config);
+    /// The setSupportedCaptureActions method.
+    /// [`MediaDevices.setSupportedCaptureActions`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/setSupportedCaptureActions)
     jsbind::Undefined setSupportedCaptureActions(const jsbind::TypedArray<jsbind::String>& actions);
-    jsbind::Any oncaptureaction() const;
+    /// Getter of the `oncaptureaction` attribute.
+    /// [`MediaDevices.oncaptureaction`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/oncaptureaction)
+    [[nodiscard]] jsbind::Any oncaptureaction() const;
+    /// Setter of the `oncaptureaction` attribute.
+    /// [`MediaDevices.oncaptureaction`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/oncaptureaction)
     void oncaptureaction(const jsbind::Any& value);
+    /// The getSupportedConstraints method.
+    /// [`MediaDevices.getSupportedConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getSupportedConstraints)
     MediaTrackSupportedConstraints getSupportedConstraints();
+    /// The getUserMedia method.
+    /// [`MediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
     jsbind::Promise<MediaStream> getUserMedia();
+    /// The getUserMedia method.
+    /// [`MediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
     jsbind::Promise<MediaStream> getUserMedia(const MediaStreamConstraints& constraints);
+    /// The getViewportMedia method.
+    /// [`MediaDevices.getViewportMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getViewportMedia)
     jsbind::Promise<MediaStream> getViewportMedia();
+    /// The getViewportMedia method.
+    /// [`MediaDevices.getViewportMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getViewportMedia)
     jsbind::Promise<MediaStream> getViewportMedia(const DisplayMediaStreamOptions& options);
+    /// The getDisplayMedia method.
+    /// [`MediaDevices.getDisplayMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia)
     jsbind::Promise<MediaStream> getDisplayMedia();
+    /// The getDisplayMedia method.
+    /// [`MediaDevices.getDisplayMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia)
     jsbind::Promise<MediaStream> getDisplayMedia(const DisplayMediaStreamOptions& options);
 };
 

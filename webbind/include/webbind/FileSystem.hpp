@@ -7,6 +7,8 @@
 class FileSystemDirectoryEntry;
 
 
+/// The FileSystem class.
+/// [`FileSystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem)
 class FileSystem : public emlite::Val {
     explicit FileSystem(Handle h) noexcept;
 
@@ -14,8 +16,12 @@ public:
     explicit FileSystem(const emlite::Val &val) noexcept;
     static FileSystem take_ownership(Handle h) noexcept;
 
-    FileSystem clone() const noexcept;
-    jsbind::String name() const;
-    FileSystemDirectoryEntry root() const;
+    [[nodiscard]] FileSystem clone() const noexcept;
+    /// Getter of the `name` attribute.
+    /// [`FileSystem.name`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `root` attribute.
+    /// [`FileSystem.root`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/root)
+    [[nodiscard]] FileSystemDirectoryEntry root() const;
 };
 

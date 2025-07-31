@@ -15,10 +15,10 @@ public:
     static NavigatorUABrandVersion take_ownership(Handle h) noexcept;
     explicit NavigatorUABrandVersion(const emlite::Val &val) noexcept;
     NavigatorUABrandVersion() noexcept;
-    NavigatorUABrandVersion clone() const noexcept;
-    jsbind::String brand() const;
+    [[nodiscard]] NavigatorUABrandVersion clone() const noexcept;
+    [[nodiscard]] jsbind::String brand() const;
     void brand(const jsbind::String& value);
-    jsbind::String version() const;
+    [[nodiscard]] jsbind::String version() const;
     void version(const jsbind::String& value);
 };
 
@@ -28,28 +28,28 @@ public:
     static UADataValues take_ownership(Handle h) noexcept;
     explicit UADataValues(const emlite::Val &val) noexcept;
     UADataValues() noexcept;
-    UADataValues clone() const noexcept;
-    jsbind::String architecture() const;
+    [[nodiscard]] UADataValues clone() const noexcept;
+    [[nodiscard]] jsbind::String architecture() const;
     void architecture(const jsbind::String& value);
-    jsbind::String bitness() const;
+    [[nodiscard]] jsbind::String bitness() const;
     void bitness(const jsbind::String& value);
-    jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
+    [[nodiscard]] jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
     void brands(const jsbind::TypedArray<NavigatorUABrandVersion>& value);
-    jsbind::TypedArray<jsbind::String> formFactors() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> formFactors() const;
     void formFactors(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::TypedArray<NavigatorUABrandVersion> fullVersionList() const;
+    [[nodiscard]] jsbind::TypedArray<NavigatorUABrandVersion> fullVersionList() const;
     void fullVersionList(const jsbind::TypedArray<NavigatorUABrandVersion>& value);
-    jsbind::String model() const;
+    [[nodiscard]] jsbind::String model() const;
     void model(const jsbind::String& value);
-    bool mobile() const;
+    [[nodiscard]] bool mobile() const;
     void mobile(bool value);
-    jsbind::String platform() const;
+    [[nodiscard]] jsbind::String platform() const;
     void platform(const jsbind::String& value);
-    jsbind::String platformVersion() const;
+    [[nodiscard]] jsbind::String platformVersion() const;
     void platformVersion(const jsbind::String& value);
-    jsbind::String uaFullVersion() const;
+    [[nodiscard]] jsbind::String uaFullVersion() const;
     void uaFullVersion(const jsbind::String& value);
-    bool wow64() const;
+    [[nodiscard]] bool wow64() const;
     void wow64(bool value);
 };
 
@@ -59,15 +59,17 @@ public:
     static UALowEntropyJSON take_ownership(Handle h) noexcept;
     explicit UALowEntropyJSON(const emlite::Val &val) noexcept;
     UALowEntropyJSON() noexcept;
-    UALowEntropyJSON clone() const noexcept;
-    jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
+    [[nodiscard]] UALowEntropyJSON clone() const noexcept;
+    [[nodiscard]] jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
     void brands(const jsbind::TypedArray<NavigatorUABrandVersion>& value);
-    bool mobile() const;
+    [[nodiscard]] bool mobile() const;
     void mobile(bool value);
-    jsbind::String platform() const;
+    [[nodiscard]] jsbind::String platform() const;
     void platform(const jsbind::String& value);
 };
 
+/// The NavigatorUAData class.
+/// [`NavigatorUAData`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData)
 class NavigatorUAData : public emlite::Val {
     explicit NavigatorUAData(Handle h) noexcept;
 
@@ -75,11 +77,21 @@ public:
     explicit NavigatorUAData(const emlite::Val &val) noexcept;
     static NavigatorUAData take_ownership(Handle h) noexcept;
 
-    NavigatorUAData clone() const noexcept;
-    jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
-    bool mobile() const;
-    jsbind::String platform() const;
+    [[nodiscard]] NavigatorUAData clone() const noexcept;
+    /// Getter of the `brands` attribute.
+    /// [`NavigatorUAData.brands`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/brands)
+    [[nodiscard]] jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
+    /// Getter of the `mobile` attribute.
+    /// [`NavigatorUAData.mobile`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/mobile)
+    [[nodiscard]] bool mobile() const;
+    /// Getter of the `platform` attribute.
+    /// [`NavigatorUAData.platform`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/platform)
+    [[nodiscard]] jsbind::String platform() const;
+    /// The getHighEntropyValues method.
+    /// [`NavigatorUAData.getHighEntropyValues`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
     jsbind::Promise<UADataValues> getHighEntropyValues(const jsbind::TypedArray<jsbind::String>& hints);
+    /// The toJSON method.
+    /// [`NavigatorUAData.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/toJSON)
     UALowEntropyJSON toJSON();
 };
 

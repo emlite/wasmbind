@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The GPUCommandBuffer class.
+/// [`GPUCommandBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer)
 class GPUCommandBuffer : public emlite::Val {
     explicit GPUCommandBuffer(Handle h) noexcept;
 
@@ -12,8 +14,12 @@ public:
     explicit GPUCommandBuffer(const emlite::Val &val) noexcept;
     static GPUCommandBuffer take_ownership(Handle h) noexcept;
 
-    GPUCommandBuffer clone() const noexcept;
-    jsbind::String label() const;
+    [[nodiscard]] GPUCommandBuffer clone() const noexcept;
+    /// Getter of the `label` attribute.
+    /// [`GPUCommandBuffer.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer/label)
+    [[nodiscard]] jsbind::String label() const;
+    /// Setter of the `label` attribute.
+    /// [`GPUCommandBuffer.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer/label)
     void label(const jsbind::String& value);
 };
 

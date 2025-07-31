@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The Client class.
+/// [`Client`](https://developer.mozilla.org/en-US/docs/Web/API/Client)
 class Client : public emlite::Val {
     explicit Client(Handle h) noexcept;
 
@@ -13,13 +15,27 @@ public:
     explicit Client(const emlite::Val &val) noexcept;
     static Client take_ownership(Handle h) noexcept;
 
-    Client clone() const noexcept;
-    jsbind::String url() const;
-    FrameType frameType() const;
-    jsbind::String id() const;
-    ClientType type() const;
+    [[nodiscard]] Client clone() const noexcept;
+    /// Getter of the `url` attribute.
+    /// [`Client.url`](https://developer.mozilla.org/en-US/docs/Web/API/Client/url)
+    [[nodiscard]] jsbind::String url() const;
+    /// Getter of the `frameType` attribute.
+    /// [`Client.frameType`](https://developer.mozilla.org/en-US/docs/Web/API/Client/frameType)
+    [[nodiscard]] FrameType frameType() const;
+    /// Getter of the `id` attribute.
+    /// [`Client.id`](https://developer.mozilla.org/en-US/docs/Web/API/Client/id)
+    [[nodiscard]] jsbind::String id() const;
+    /// Getter of the `type` attribute.
+    /// [`Client.type`](https://developer.mozilla.org/en-US/docs/Web/API/Client/type)
+    [[nodiscard]] ClientType type() const;
+    /// The postMessage method.
+    /// [`Client.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);
+    /// The postMessage method.
+    /// [`Client.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
-    ClientLifecycleState lifecycleState() const;
+    /// Getter of the `lifecycleState` attribute.
+    /// [`Client.lifecycleState`](https://developer.mozilla.org/en-US/docs/Web/API/Client/lifecycleState)
+    [[nodiscard]] ClientLifecycleState lifecycleState() const;
 };
 

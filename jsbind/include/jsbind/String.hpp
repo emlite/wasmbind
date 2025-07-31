@@ -37,7 +37,7 @@ class String : public emlite::Val {
     [[nodiscard]] String char_at(size_t i
     ) const noexcept; // C++ can't return Option<char>, so
                       // return String or maybe char
-    [[nodiscard]] const char *as_str() const noexcept;
+    [[nodiscard]] char *as_str() const noexcept;
     [[nodiscard]] size_t length() const noexcept;
     [[nodiscard]] int char_code_at(size_t idx
     ) const noexcept; // returns -1 if out of bounds

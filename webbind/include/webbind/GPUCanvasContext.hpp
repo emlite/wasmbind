@@ -15,23 +15,25 @@ public:
     static GPUCanvasConfiguration take_ownership(Handle h) noexcept;
     explicit GPUCanvasConfiguration(const emlite::Val &val) noexcept;
     GPUCanvasConfiguration() noexcept;
-    GPUCanvasConfiguration clone() const noexcept;
-    GPUDevice device() const;
+    [[nodiscard]] GPUCanvasConfiguration clone() const noexcept;
+    [[nodiscard]] GPUDevice device() const;
     void device(const GPUDevice& value);
-    GPUTextureFormat format() const;
+    [[nodiscard]] GPUTextureFormat format() const;
     void format(const GPUTextureFormat& value);
-    jsbind::Any usage() const;
+    [[nodiscard]] jsbind::Any usage() const;
     void usage(const jsbind::Any& value);
-    jsbind::TypedArray<GPUTextureFormat> viewFormats() const;
+    [[nodiscard]] jsbind::TypedArray<GPUTextureFormat> viewFormats() const;
     void viewFormats(const jsbind::TypedArray<GPUTextureFormat>& value);
-    PredefinedColorSpace colorSpace() const;
+    [[nodiscard]] PredefinedColorSpace colorSpace() const;
     void colorSpace(const PredefinedColorSpace& value);
-    jsbind::Any toneMapping() const;
+    [[nodiscard]] jsbind::Any toneMapping() const;
     void toneMapping(const jsbind::Any& value);
-    GPUCanvasAlphaMode alphaMode() const;
+    [[nodiscard]] GPUCanvasAlphaMode alphaMode() const;
     void alphaMode(const GPUCanvasAlphaMode& value);
 };
 
+/// The GPUCanvasContext class.
+/// [`GPUCanvasContext`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext)
 class GPUCanvasContext : public emlite::Val {
     explicit GPUCanvasContext(Handle h) noexcept;
 
@@ -39,11 +41,21 @@ public:
     explicit GPUCanvasContext(const emlite::Val &val) noexcept;
     static GPUCanvasContext take_ownership(Handle h) noexcept;
 
-    GPUCanvasContext clone() const noexcept;
-    jsbind::Any canvas() const;
+    [[nodiscard]] GPUCanvasContext clone() const noexcept;
+    /// Getter of the `canvas` attribute.
+    /// [`GPUCanvasContext.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/canvas)
+    [[nodiscard]] jsbind::Any canvas() const;
+    /// The configure method.
+    /// [`GPUCanvasContext.configure`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/configure)
     jsbind::Undefined configure(const GPUCanvasConfiguration& configuration);
+    /// The unconfigure method.
+    /// [`GPUCanvasContext.unconfigure`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/unconfigure)
     jsbind::Undefined unconfigure();
+    /// The getConfiguration method.
+    /// [`GPUCanvasContext.getConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/getConfiguration)
     GPUCanvasConfiguration getConfiguration();
+    /// The getCurrentTexture method.
+    /// [`GPUCanvasContext.getCurrentTexture`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/getCurrentTexture)
     GPUTexture getCurrentTexture();
 };
 

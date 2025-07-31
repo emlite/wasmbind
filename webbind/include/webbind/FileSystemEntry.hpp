@@ -7,6 +7,8 @@
 class FileSystem;
 
 
+/// The FileSystemEntry class.
+/// [`FileSystemEntry`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry)
 class FileSystemEntry : public emlite::Val {
     explicit FileSystemEntry(Handle h) noexcept;
 
@@ -14,14 +16,30 @@ public:
     explicit FileSystemEntry(const emlite::Val &val) noexcept;
     static FileSystemEntry take_ownership(Handle h) noexcept;
 
-    FileSystemEntry clone() const noexcept;
-    bool isFile() const;
-    bool isDirectory() const;
-    jsbind::String name() const;
-    jsbind::String fullPath() const;
-    FileSystem filesystem() const;
+    [[nodiscard]] FileSystemEntry clone() const noexcept;
+    /// Getter of the `isFile` attribute.
+    /// [`FileSystemEntry.isFile`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isFile)
+    [[nodiscard]] bool isFile() const;
+    /// Getter of the `isDirectory` attribute.
+    /// [`FileSystemEntry.isDirectory`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isDirectory)
+    [[nodiscard]] bool isDirectory() const;
+    /// Getter of the `name` attribute.
+    /// [`FileSystemEntry.name`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `fullPath` attribute.
+    /// [`FileSystemEntry.fullPath`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/fullPath)
+    [[nodiscard]] jsbind::String fullPath() const;
+    /// Getter of the `filesystem` attribute.
+    /// [`FileSystemEntry.filesystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/filesystem)
+    [[nodiscard]] FileSystem filesystem() const;
+    /// The getParent method.
+    /// [`FileSystemEntry.getParent`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/getParent)
     jsbind::Undefined getParent();
+    /// The getParent method.
+    /// [`FileSystemEntry.getParent`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/getParent)
     jsbind::Undefined getParent(const jsbind::Function& successCallback);
+    /// The getParent method.
+    /// [`FileSystemEntry.getParent`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/getParent)
     jsbind::Undefined getParent(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 

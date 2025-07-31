@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLParagraphElement class.
+/// [`HTMLParagraphElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement)
 class HTMLParagraphElement : public HTMLElement {
     explicit HTMLParagraphElement(Handle h) noexcept;
 
@@ -13,9 +15,14 @@ public:
     explicit HTMLParagraphElement(const emlite::Val &val) noexcept;
     static HTMLParagraphElement take_ownership(Handle h) noexcept;
 
-    HTMLParagraphElement clone() const noexcept;
+    [[nodiscard]] HTMLParagraphElement clone() const noexcept;
+    /// The `new HTMLParagraphElement(..)` constructor, creating a new HTMLParagraphElement instance
     HTMLParagraphElement();
-    jsbind::String align() const;
+    /// Getter of the `align` attribute.
+    /// [`HTMLParagraphElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement/align)
+    [[nodiscard]] jsbind::String align() const;
+    /// Setter of the `align` attribute.
+    /// [`HTMLParagraphElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement/align)
     void align(const jsbind::String& value);
 };
 

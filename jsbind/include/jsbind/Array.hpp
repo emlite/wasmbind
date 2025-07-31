@@ -92,7 +92,7 @@ class TypedArray : public emlite::Val {
 
     void set(size_t idx, const T &val) noexcept;
 
-    bool has(const T &val) const noexcept;
+    [[nodiscard]] bool has(const T &val) const noexcept;
 
     [[nodiscard]] String toString() const noexcept;
     [[nodiscard]] String toLocaleString() const noexcept;
@@ -212,11 +212,11 @@ class TypedArray : public emlite::Val {
                 .template as<T>();
         }
     };
-    const_iterator begin() const {
-        return {const_cast<TypedArray *>(this), 0};
+    [[nodiscard]] const_iterator begin() const {
+        return {this, 0};
     }
-    const_iterator end() const {
-        return {const_cast<TypedArray *>(this), size()};
+    [[nodiscard]] const_iterator end() const {
+        return {this, size()};
     }
 };
 

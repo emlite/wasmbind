@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The CSSScopeRule class.
+/// [`CSSScopeRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule)
 class CSSScopeRule : public CSSGroupingRule {
     explicit CSSScopeRule(Handle h) noexcept;
 
@@ -13,8 +15,12 @@ public:
     explicit CSSScopeRule(const emlite::Val &val) noexcept;
     static CSSScopeRule take_ownership(Handle h) noexcept;
 
-    CSSScopeRule clone() const noexcept;
-    jsbind::String start() const;
-    jsbind::String end() const;
+    [[nodiscard]] CSSScopeRule clone() const noexcept;
+    /// Getter of the `start` attribute.
+    /// [`CSSScopeRule.start`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/start)
+    [[nodiscard]] jsbind::String start() const;
+    /// Getter of the `end` attribute.
+    /// [`CSSScopeRule.end`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/end)
+    [[nodiscard]] jsbind::String end() const;
 };
 

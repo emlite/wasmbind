@@ -8,6 +8,8 @@
 class MIDIPort;
 
 
+/// The MIDIConnectionEvent class.
+/// [`MIDIConnectionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEvent)
 class MIDIConnectionEvent : public Event {
     explicit MIDIConnectionEvent(Handle h) noexcept;
 
@@ -15,9 +17,13 @@ public:
     explicit MIDIConnectionEvent(const emlite::Val &val) noexcept;
     static MIDIConnectionEvent take_ownership(Handle h) noexcept;
 
-    MIDIConnectionEvent clone() const noexcept;
+    [[nodiscard]] MIDIConnectionEvent clone() const noexcept;
+    /// The `new MIDIConnectionEvent(..)` constructor, creating a new MIDIConnectionEvent instance
     MIDIConnectionEvent(const jsbind::String& type);
+    /// The `new MIDIConnectionEvent(..)` constructor, creating a new MIDIConnectionEvent instance
     MIDIConnectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    MIDIPort port() const;
+    /// Getter of the `port` attribute.
+    /// [`MIDIConnectionEvent.port`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEvent/port)
+    [[nodiscard]] MIDIPort port() const;
 };
 

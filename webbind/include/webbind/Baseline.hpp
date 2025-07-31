@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The Baseline class.
+/// [`Baseline`](https://developer.mozilla.org/en-US/docs/Web/API/Baseline)
 class Baseline : public emlite::Val {
     explicit Baseline(Handle h) noexcept;
 
@@ -12,8 +14,12 @@ public:
     explicit Baseline(const emlite::Val &val) noexcept;
     static Baseline take_ownership(Handle h) noexcept;
 
-    Baseline clone() const noexcept;
-    jsbind::String name() const;
-    double value() const;
+    [[nodiscard]] Baseline clone() const noexcept;
+    /// Getter of the `name` attribute.
+    /// [`Baseline.name`](https://developer.mozilla.org/en-US/docs/Web/API/Baseline/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `value` attribute.
+    /// [`Baseline.value`](https://developer.mozilla.org/en-US/docs/Web/API/Baseline/value)
+    [[nodiscard]] double value() const;
 };
 

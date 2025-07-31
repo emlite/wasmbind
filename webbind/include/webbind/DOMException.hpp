@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The DOMException class.
+/// [`DOMException`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException)
 class DOMException : public emlite::Val {
     explicit DOMException(Handle h) noexcept;
 
@@ -12,12 +14,21 @@ public:
     explicit DOMException(const emlite::Val &val) noexcept;
     static DOMException take_ownership(Handle h) noexcept;
 
-    DOMException clone() const noexcept;
+    [[nodiscard]] DOMException clone() const noexcept;
+    /// The `new DOMException(..)` constructor, creating a new DOMException instance
     DOMException();
+    /// The `new DOMException(..)` constructor, creating a new DOMException instance
     DOMException(const jsbind::String& message);
+    /// The `new DOMException(..)` constructor, creating a new DOMException instance
     DOMException(const jsbind::String& message, const jsbind::String& name);
-    jsbind::String name() const;
-    jsbind::String message() const;
-    unsigned short code() const;
+    /// Getter of the `name` attribute.
+    /// [`DOMException.name`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `message` attribute.
+    /// [`DOMException.message`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/message)
+    [[nodiscard]] jsbind::String message() const;
+    /// Getter of the `code` attribute.
+    /// [`DOMException.code`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/code)
+    [[nodiscard]] unsigned short code() const;
 };
 

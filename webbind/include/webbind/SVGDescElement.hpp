@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The SVGDescElement class.
+/// [`SVGDescElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGDescElement)
 class SVGDescElement : public SVGElement {
     explicit SVGDescElement(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit SVGDescElement(const emlite::Val &val) noexcept;
     static SVGDescElement take_ownership(Handle h) noexcept;
 
-    SVGDescElement clone() const noexcept;
+    [[nodiscard]] SVGDescElement clone() const noexcept;
 };
 

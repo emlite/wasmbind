@@ -17,10 +17,10 @@ public:
     static MediaCapabilitiesDecodingInfo take_ownership(Handle h) noexcept;
     explicit MediaCapabilitiesDecodingInfo(const emlite::Val &val) noexcept;
     MediaCapabilitiesDecodingInfo() noexcept;
-    MediaCapabilitiesDecodingInfo clone() const noexcept;
-    MediaKeySystemAccess keySystemAccess() const;
+    [[nodiscard]] MediaCapabilitiesDecodingInfo clone() const noexcept;
+    [[nodiscard]] MediaKeySystemAccess keySystemAccess() const;
     void keySystemAccess(const MediaKeySystemAccess& value);
-    MediaDecodingConfiguration configuration() const;
+    [[nodiscard]] MediaDecodingConfiguration configuration() const;
     void configuration(const MediaDecodingConfiguration& value);
 };
 
@@ -30,10 +30,10 @@ public:
     static MediaDecodingConfiguration take_ownership(Handle h) noexcept;
     explicit MediaDecodingConfiguration(const emlite::Val &val) noexcept;
     MediaDecodingConfiguration() noexcept;
-    MediaDecodingConfiguration clone() const noexcept;
-    MediaDecodingType type() const;
+    [[nodiscard]] MediaDecodingConfiguration clone() const noexcept;
+    [[nodiscard]] MediaDecodingType type() const;
     void type(const MediaDecodingType& value);
-    jsbind::Any keySystemConfiguration() const;
+    [[nodiscard]] jsbind::Any keySystemConfiguration() const;
     void keySystemConfiguration(const jsbind::Any& value);
 };
 
@@ -43,8 +43,8 @@ public:
     static MediaCapabilitiesEncodingInfo take_ownership(Handle h) noexcept;
     explicit MediaCapabilitiesEncodingInfo(const emlite::Val &val) noexcept;
     MediaCapabilitiesEncodingInfo() noexcept;
-    MediaCapabilitiesEncodingInfo clone() const noexcept;
-    MediaEncodingConfiguration configuration() const;
+    [[nodiscard]] MediaCapabilitiesEncodingInfo clone() const noexcept;
+    [[nodiscard]] MediaEncodingConfiguration configuration() const;
     void configuration(const MediaEncodingConfiguration& value);
 };
 
@@ -54,11 +54,13 @@ public:
     static MediaEncodingConfiguration take_ownership(Handle h) noexcept;
     explicit MediaEncodingConfiguration(const emlite::Val &val) noexcept;
     MediaEncodingConfiguration() noexcept;
-    MediaEncodingConfiguration clone() const noexcept;
-    MediaEncodingType type() const;
+    [[nodiscard]] MediaEncodingConfiguration clone() const noexcept;
+    [[nodiscard]] MediaEncodingType type() const;
     void type(const MediaEncodingType& value);
 };
 
+/// The MediaCapabilities class.
+/// [`MediaCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities)
 class MediaCapabilities : public emlite::Val {
     explicit MediaCapabilities(Handle h) noexcept;
 
@@ -66,8 +68,12 @@ public:
     explicit MediaCapabilities(const emlite::Val &val) noexcept;
     static MediaCapabilities take_ownership(Handle h) noexcept;
 
-    MediaCapabilities clone() const noexcept;
+    [[nodiscard]] MediaCapabilities clone() const noexcept;
+    /// The decodingInfo method.
+    /// [`MediaCapabilities.decodingInfo`](https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities/decodingInfo)
     jsbind::Promise<MediaCapabilitiesDecodingInfo> decodingInfo(const MediaDecodingConfiguration& configuration);
+    /// The encodingInfo method.
+    /// [`MediaCapabilities.encodingInfo`](https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities/encodingInfo)
     jsbind::Promise<MediaCapabilitiesEncodingInfo> encodingInfo(const MediaEncodingConfiguration& configuration);
 };
 

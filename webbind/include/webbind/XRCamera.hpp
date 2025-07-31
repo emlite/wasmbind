@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The XRCamera class.
+/// [`XRCamera`](https://developer.mozilla.org/en-US/docs/Web/API/XRCamera)
 class XRCamera : public emlite::Val {
     explicit XRCamera(Handle h) noexcept;
 
@@ -12,8 +14,12 @@ public:
     explicit XRCamera(const emlite::Val &val) noexcept;
     static XRCamera take_ownership(Handle h) noexcept;
 
-    XRCamera clone() const noexcept;
-    unsigned long width() const;
-    unsigned long height() const;
+    [[nodiscard]] XRCamera clone() const noexcept;
+    /// Getter of the `width` attribute.
+    /// [`XRCamera.width`](https://developer.mozilla.org/en-US/docs/Web/API/XRCamera/width)
+    [[nodiscard]] unsigned long width() const;
+    /// Getter of the `height` attribute.
+    /// [`XRCamera.height`](https://developer.mozilla.org/en-US/docs/Web/API/XRCamera/height)
+    [[nodiscard]] unsigned long height() const;
 };
 

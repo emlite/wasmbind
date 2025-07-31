@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The SVGUnitTypes class.
+/// [`SVGUnitTypes`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUnitTypes)
 class SVGUnitTypes : public emlite::Val {
     explicit SVGUnitTypes(Handle h) noexcept;
 
@@ -12,6 +14,6 @@ public:
     explicit SVGUnitTypes(const emlite::Val &val) noexcept;
     static SVGUnitTypes take_ownership(Handle h) noexcept;
 
-    SVGUnitTypes clone() const noexcept;
+    [[nodiscard]] SVGUnitTypes clone() const noexcept;
 };
 

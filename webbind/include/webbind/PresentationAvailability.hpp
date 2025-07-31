@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The PresentationAvailability class.
+/// [`PresentationAvailability`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability)
 class PresentationAvailability : public EventTarget {
     explicit PresentationAvailability(Handle h) noexcept;
 
@@ -13,9 +15,15 @@ public:
     explicit PresentationAvailability(const emlite::Val &val) noexcept;
     static PresentationAvailability take_ownership(Handle h) noexcept;
 
-    PresentationAvailability clone() const noexcept;
-    bool value() const;
-    jsbind::Any onchange() const;
+    [[nodiscard]] PresentationAvailability clone() const noexcept;
+    /// Getter of the `value` attribute.
+    /// [`PresentationAvailability.value`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/value)
+    [[nodiscard]] bool value() const;
+    /// Getter of the `onchange` attribute.
+    /// [`PresentationAvailability.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/onchange)
+    [[nodiscard]] jsbind::Any onchange() const;
+    /// Setter of the `onchange` attribute.
+    /// [`PresentationAvailability.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/onchange)
     void onchange(const jsbind::Any& value);
 };
 

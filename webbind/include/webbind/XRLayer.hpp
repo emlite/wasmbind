@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The XRLayer class.
+/// [`XRLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRLayer)
 class XRLayer : public EventTarget {
     explicit XRLayer(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit XRLayer(const emlite::Val &val) noexcept;
     static XRLayer take_ownership(Handle h) noexcept;
 
-    XRLayer clone() const noexcept;
+    [[nodiscard]] XRLayer clone() const noexcept;
 };
 

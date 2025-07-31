@@ -8,6 +8,8 @@
 class SharedStorageModifierMethodOptions;
 
 
+/// The SharedStorageClearMethod class.
+/// [`SharedStorageClearMethod`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageClearMethod)
 class SharedStorageClearMethod : public SharedStorageModifierMethod {
     explicit SharedStorageClearMethod(Handle h) noexcept;
 
@@ -15,8 +17,10 @@ public:
     explicit SharedStorageClearMethod(const emlite::Val &val) noexcept;
     static SharedStorageClearMethod take_ownership(Handle h) noexcept;
 
-    SharedStorageClearMethod clone() const noexcept;
+    [[nodiscard]] SharedStorageClearMethod clone() const noexcept;
+    /// The `new SharedStorageClearMethod(..)` constructor, creating a new SharedStorageClearMethod instance
     SharedStorageClearMethod();
+    /// The `new SharedStorageClearMethod(..)` constructor, creating a new SharedStorageClearMethod instance
     SharedStorageClearMethod(const SharedStorageModifierMethodOptions& options);
 };
 

@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The WebGLContextEvent class.
+/// [`WebGLContextEvent`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextEvent)
 class WebGLContextEvent : public Event {
     explicit WebGLContextEvent(Handle h) noexcept;
 
@@ -13,9 +15,13 @@ public:
     explicit WebGLContextEvent(const emlite::Val &val) noexcept;
     static WebGLContextEvent take_ownership(Handle h) noexcept;
 
-    WebGLContextEvent clone() const noexcept;
+    [[nodiscard]] WebGLContextEvent clone() const noexcept;
+    /// The `new WebGLContextEvent(..)` constructor, creating a new WebGLContextEvent instance
     WebGLContextEvent(const jsbind::String& type);
+    /// The `new WebGLContextEvent(..)` constructor, creating a new WebGLContextEvent instance
     WebGLContextEvent(const jsbind::String& type, const jsbind::Any& eventInit);
-    jsbind::String statusMessage() const;
+    /// Getter of the `statusMessage` attribute.
+    /// [`WebGLContextEvent.statusMessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextEvent/statusMessage)
+    [[nodiscard]] jsbind::String statusMessage() const;
 };
 

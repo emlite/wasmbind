@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The EXT_texture_filter_anisotropic class.
+/// [`EXT_texture_filter_anisotropic`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_filter_anisotropic)
 class EXT_texture_filter_anisotropic : public emlite::Val {
     explicit EXT_texture_filter_anisotropic(Handle h) noexcept;
 
@@ -12,6 +14,6 @@ public:
     explicit EXT_texture_filter_anisotropic(const emlite::Val &val) noexcept;
     static EXT_texture_filter_anisotropic take_ownership(Handle h) noexcept;
 
-    EXT_texture_filter_anisotropic clone() const noexcept;
+    [[nodiscard]] EXT_texture_filter_anisotropic clone() const noexcept;
 };
 

@@ -8,6 +8,8 @@
 class DataTransfer;
 
 
+/// The DragEvent class.
+/// [`DragEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent)
 class DragEvent : public MouseEvent {
     explicit DragEvent(Handle h) noexcept;
 
@@ -15,9 +17,13 @@ public:
     explicit DragEvent(const emlite::Val &val) noexcept;
     static DragEvent take_ownership(Handle h) noexcept;
 
-    DragEvent clone() const noexcept;
+    [[nodiscard]] DragEvent clone() const noexcept;
+    /// The `new DragEvent(..)` constructor, creating a new DragEvent instance
     DragEvent(const jsbind::String& type);
+    /// The `new DragEvent(..)` constructor, creating a new DragEvent instance
     DragEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    DataTransfer dataTransfer() const;
+    /// Getter of the `dataTransfer` attribute.
+    /// [`DragEvent.dataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer)
+    [[nodiscard]] DataTransfer dataTransfer() const;
 };
 

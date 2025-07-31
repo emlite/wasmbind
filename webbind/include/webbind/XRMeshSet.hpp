@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The XRMeshSet class.
+/// [`XRMeshSet`](https://developer.mozilla.org/en-US/docs/Web/API/XRMeshSet)
 class XRMeshSet : public emlite::Val {
     explicit XRMeshSet(Handle h) noexcept;
 
@@ -12,6 +14,6 @@ public:
     explicit XRMeshSet(const emlite::Val &val) noexcept;
     static XRMeshSet take_ownership(Handle h) noexcept;
 
-    XRMeshSet clone() const noexcept;
+    [[nodiscard]] XRMeshSet clone() const noexcept;
 };
 

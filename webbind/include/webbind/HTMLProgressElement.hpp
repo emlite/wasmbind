@@ -8,6 +8,8 @@
 class NodeList;
 
 
+/// The HTMLProgressElement class.
+/// [`HTMLProgressElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement)
 class HTMLProgressElement : public HTMLElement {
     explicit HTMLProgressElement(Handle h) noexcept;
 
@@ -15,13 +17,26 @@ public:
     explicit HTMLProgressElement(const emlite::Val &val) noexcept;
     static HTMLProgressElement take_ownership(Handle h) noexcept;
 
-    HTMLProgressElement clone() const noexcept;
+    [[nodiscard]] HTMLProgressElement clone() const noexcept;
+    /// The `new HTMLProgressElement(..)` constructor, creating a new HTMLProgressElement instance
     HTMLProgressElement();
-    double value() const;
+    /// Getter of the `value` attribute.
+    /// [`HTMLProgressElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/value)
+    [[nodiscard]] double value() const;
+    /// Setter of the `value` attribute.
+    /// [`HTMLProgressElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/value)
     void value(double value);
-    double max() const;
+    /// Getter of the `max` attribute.
+    /// [`HTMLProgressElement.max`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/max)
+    [[nodiscard]] double max() const;
+    /// Setter of the `max` attribute.
+    /// [`HTMLProgressElement.max`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/max)
     void max(double value);
-    double position() const;
-    NodeList labels() const;
+    /// Getter of the `position` attribute.
+    /// [`HTMLProgressElement.position`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/position)
+    [[nodiscard]] double position() const;
+    /// Getter of the `labels` attribute.
+    /// [`HTMLProgressElement.labels`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/labels)
+    [[nodiscard]] NodeList labels() const;
 };
 

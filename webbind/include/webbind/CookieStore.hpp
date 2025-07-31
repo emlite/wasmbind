@@ -17,22 +17,22 @@ public:
     static CookieListItem take_ownership(Handle h) noexcept;
     explicit CookieListItem(const emlite::Val &val) noexcept;
     CookieListItem() noexcept;
-    CookieListItem clone() const noexcept;
-    jsbind::String name() const;
+    [[nodiscard]] CookieListItem clone() const noexcept;
+    [[nodiscard]] jsbind::String name() const;
     void name(const jsbind::String& value);
-    jsbind::String value() const;
+    [[nodiscard]] jsbind::String value() const;
     void value(const jsbind::String& value);
-    jsbind::String domain() const;
+    [[nodiscard]] jsbind::String domain() const;
     void domain(const jsbind::String& value);
-    jsbind::String path() const;
+    [[nodiscard]] jsbind::String path() const;
     void path(const jsbind::String& value);
-    jsbind::Any expires() const;
+    [[nodiscard]] jsbind::Any expires() const;
     void expires(const jsbind::Any& value);
-    bool secure() const;
+    [[nodiscard]] bool secure() const;
     void secure(bool value);
-    CookieSameSite sameSite() const;
+    [[nodiscard]] CookieSameSite sameSite() const;
     void sameSite(const CookieSameSite& value);
-    bool partitioned() const;
+    [[nodiscard]] bool partitioned() const;
     void partitioned(bool value);
 };
 
@@ -42,10 +42,10 @@ public:
     static CookieStoreGetOptions take_ownership(Handle h) noexcept;
     explicit CookieStoreGetOptions(const emlite::Val &val) noexcept;
     CookieStoreGetOptions() noexcept;
-    CookieStoreGetOptions clone() const noexcept;
-    jsbind::String name() const;
+    [[nodiscard]] CookieStoreGetOptions clone() const noexcept;
+    [[nodiscard]] jsbind::String name() const;
     void name(const jsbind::String& value);
-    jsbind::String url() const;
+    [[nodiscard]] jsbind::String url() const;
     void url(const jsbind::String& value);
 };
 
@@ -55,20 +55,20 @@ public:
     static CookieInit take_ownership(Handle h) noexcept;
     explicit CookieInit(const emlite::Val &val) noexcept;
     CookieInit() noexcept;
-    CookieInit clone() const noexcept;
-    jsbind::String name() const;
+    [[nodiscard]] CookieInit clone() const noexcept;
+    [[nodiscard]] jsbind::String name() const;
     void name(const jsbind::String& value);
-    jsbind::String value() const;
+    [[nodiscard]] jsbind::String value() const;
     void value(const jsbind::String& value);
-    jsbind::Any expires() const;
+    [[nodiscard]] jsbind::Any expires() const;
     void expires(const jsbind::Any& value);
-    jsbind::String domain() const;
+    [[nodiscard]] jsbind::String domain() const;
     void domain(const jsbind::String& value);
-    jsbind::String path() const;
+    [[nodiscard]] jsbind::String path() const;
     void path(const jsbind::String& value);
-    CookieSameSite sameSite() const;
+    [[nodiscard]] CookieSameSite sameSite() const;
     void sameSite(const CookieSameSite& value);
-    bool partitioned() const;
+    [[nodiscard]] bool partitioned() const;
     void partitioned(bool value);
 };
 
@@ -78,17 +78,19 @@ public:
     static CookieStoreDeleteOptions take_ownership(Handle h) noexcept;
     explicit CookieStoreDeleteOptions(const emlite::Val &val) noexcept;
     CookieStoreDeleteOptions() noexcept;
-    CookieStoreDeleteOptions clone() const noexcept;
-    jsbind::String name() const;
+    [[nodiscard]] CookieStoreDeleteOptions clone() const noexcept;
+    [[nodiscard]] jsbind::String name() const;
     void name(const jsbind::String& value);
-    jsbind::String domain() const;
+    [[nodiscard]] jsbind::String domain() const;
     void domain(const jsbind::String& value);
-    jsbind::String path() const;
+    [[nodiscard]] jsbind::String path() const;
     void path(const jsbind::String& value);
-    bool partitioned() const;
+    [[nodiscard]] bool partitioned() const;
     void partitioned(bool value);
 };
 
+/// The CookieStore class.
+/// [`CookieStore`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore)
 class CookieStore : public EventTarget {
     explicit CookieStore(Handle h) noexcept;
 
@@ -96,14 +98,30 @@ public:
     explicit CookieStore(const emlite::Val &val) noexcept;
     static CookieStore take_ownership(Handle h) noexcept;
 
-    CookieStore clone() const noexcept;
+    [[nodiscard]] CookieStore clone() const noexcept;
+    /// The get method.
+    /// [`CookieStore.get`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get)
     jsbind::Promise<CookieListItem> get();
+    /// The get method.
+    /// [`CookieStore.get`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get)
     jsbind::Promise<CookieListItem> get(const CookieStoreGetOptions& options);
+    /// The getAll method.
+    /// [`CookieStore.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll)
     jsbind::Promise<jsbind::Any> getAll();
+    /// The getAll method.
+    /// [`CookieStore.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll)
     jsbind::Promise<jsbind::Any> getAll(const CookieStoreGetOptions& options);
+    /// The set method.
+    /// [`CookieStore.set`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set)
     jsbind::Promise<jsbind::Undefined> set(const CookieInit& options);
+    /// The delete method.
+    /// [`CookieStore.delete`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete)
     jsbind::Promise<jsbind::Undefined> delete_(const CookieStoreDeleteOptions& options);
-    jsbind::Any onchange() const;
+    /// Getter of the `onchange` attribute.
+    /// [`CookieStore.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange)
+    [[nodiscard]] jsbind::Any onchange() const;
+    /// Setter of the `onchange` attribute.
+    /// [`CookieStore.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange)
     void onchange(const jsbind::Any& value);
 };
 

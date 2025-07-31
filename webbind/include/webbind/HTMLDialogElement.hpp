@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLDialogElement class.
+/// [`HTMLDialogElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)
 class HTMLDialogElement : public HTMLElement {
     explicit HTMLDialogElement(Handle h) noexcept;
 
@@ -13,19 +15,44 @@ public:
     explicit HTMLDialogElement(const emlite::Val &val) noexcept;
     static HTMLDialogElement take_ownership(Handle h) noexcept;
 
-    HTMLDialogElement clone() const noexcept;
+    [[nodiscard]] HTMLDialogElement clone() const noexcept;
+    /// The `new HTMLDialogElement(..)` constructor, creating a new HTMLDialogElement instance
     HTMLDialogElement();
-    bool open() const;
+    /// Getter of the `open` attribute.
+    /// [`HTMLDialogElement.open`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/open)
+    [[nodiscard]] bool open() const;
+    /// Setter of the `open` attribute.
+    /// [`HTMLDialogElement.open`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/open)
     void open(bool value);
-    jsbind::String returnValue() const;
+    /// Getter of the `returnValue` attribute.
+    /// [`HTMLDialogElement.returnValue`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue)
+    [[nodiscard]] jsbind::String returnValue() const;
+    /// Setter of the `returnValue` attribute.
+    /// [`HTMLDialogElement.returnValue`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue)
     void returnValue(const jsbind::String& value);
-    jsbind::String closedBy() const;
+    /// Getter of the `closedBy` attribute.
+    /// [`HTMLDialogElement.closedBy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/closedBy)
+    [[nodiscard]] jsbind::String closedBy() const;
+    /// Setter of the `closedBy` attribute.
+    /// [`HTMLDialogElement.closedBy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/closedBy)
     void closedBy(const jsbind::String& value);
+    /// The show method.
+    /// [`HTMLDialogElement.show`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/show)
     jsbind::Undefined show();
+    /// The showModal method.
+    /// [`HTMLDialogElement.showModal`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal)
     jsbind::Undefined showModal();
+    /// The close method.
+    /// [`HTMLDialogElement.close`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close)
     jsbind::Undefined close();
+    /// The close method.
+    /// [`HTMLDialogElement.close`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close)
     jsbind::Undefined close(const jsbind::String& returnValue);
+    /// The requestClose method.
+    /// [`HTMLDialogElement.requestClose`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/requestClose)
     jsbind::Undefined requestClose();
+    /// The requestClose method.
+    /// [`HTMLDialogElement.requestClose`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/requestClose)
     jsbind::Undefined requestClose(const jsbind::String& returnValue);
 };
 

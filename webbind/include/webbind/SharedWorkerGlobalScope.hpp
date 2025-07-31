@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The SharedWorkerGlobalScope class.
+/// [`SharedWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope)
 class SharedWorkerGlobalScope : public WorkerGlobalScope {
     explicit SharedWorkerGlobalScope(Handle h) noexcept;
 
@@ -13,10 +15,18 @@ public:
     explicit SharedWorkerGlobalScope(const emlite::Val &val) noexcept;
     static SharedWorkerGlobalScope take_ownership(Handle h) noexcept;
 
-    SharedWorkerGlobalScope clone() const noexcept;
-    jsbind::String name() const;
+    [[nodiscard]] SharedWorkerGlobalScope clone() const noexcept;
+    /// Getter of the `name` attribute.
+    /// [`SharedWorkerGlobalScope.name`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// The close method.
+    /// [`SharedWorkerGlobalScope.close`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/close)
     jsbind::Undefined close();
-    jsbind::Any onconnect() const;
+    /// Getter of the `onconnect` attribute.
+    /// [`SharedWorkerGlobalScope.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/onconnect)
+    [[nodiscard]] jsbind::Any onconnect() const;
+    /// Setter of the `onconnect` attribute.
+    /// [`SharedWorkerGlobalScope.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/onconnect)
     void onconnect(const jsbind::Any& value);
 };
 

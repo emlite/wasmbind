@@ -13,21 +13,23 @@ public:
     static GamepadEffectParameters take_ownership(Handle h) noexcept;
     explicit GamepadEffectParameters(const emlite::Val &val) noexcept;
     GamepadEffectParameters() noexcept;
-    GamepadEffectParameters clone() const noexcept;
-    long long duration() const;
+    [[nodiscard]] GamepadEffectParameters clone() const noexcept;
+    [[nodiscard]] long long duration() const;
     void duration(long long value);
-    long long startDelay() const;
+    [[nodiscard]] long long startDelay() const;
     void startDelay(long long value);
-    double strongMagnitude() const;
+    [[nodiscard]] double strongMagnitude() const;
     void strongMagnitude(double value);
-    double weakMagnitude() const;
+    [[nodiscard]] double weakMagnitude() const;
     void weakMagnitude(double value);
-    double leftTrigger() const;
+    [[nodiscard]] double leftTrigger() const;
     void leftTrigger(double value);
-    double rightTrigger() const;
+    [[nodiscard]] double rightTrigger() const;
     void rightTrigger(double value);
 };
 
+/// The GamepadHapticActuator class.
+/// [`GamepadHapticActuator`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator)
 class GamepadHapticActuator : public emlite::Val {
     explicit GamepadHapticActuator(Handle h) noexcept;
 
@@ -35,11 +37,21 @@ public:
     explicit GamepadHapticActuator(const emlite::Val &val) noexcept;
     static GamepadHapticActuator take_ownership(Handle h) noexcept;
 
-    GamepadHapticActuator clone() const noexcept;
-    jsbind::TypedArray<GamepadHapticEffectType> effects() const;
+    [[nodiscard]] GamepadHapticActuator clone() const noexcept;
+    /// Getter of the `effects` attribute.
+    /// [`GamepadHapticActuator.effects`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/effects)
+    [[nodiscard]] jsbind::TypedArray<GamepadHapticEffectType> effects() const;
+    /// The playEffect method.
+    /// [`GamepadHapticActuator.playEffect`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/playEffect)
     jsbind::Promise<GamepadHapticsResult> playEffect(const GamepadHapticEffectType& type);
+    /// The playEffect method.
+    /// [`GamepadHapticActuator.playEffect`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/playEffect)
     jsbind::Promise<GamepadHapticsResult> playEffect(const GamepadHapticEffectType& type, const GamepadEffectParameters& params);
+    /// The reset method.
+    /// [`GamepadHapticActuator.reset`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/reset)
     jsbind::Promise<GamepadHapticsResult> reset();
+    /// The pulse method.
+    /// [`GamepadHapticActuator.pulse`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/pulse)
     jsbind::Promise<bool> pulse(double value, double duration);
 };
 

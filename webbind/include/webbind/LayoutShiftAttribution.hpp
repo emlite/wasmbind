@@ -8,6 +8,8 @@ class Node;
 class DOMRectReadOnly;
 
 
+/// The LayoutShiftAttribution class.
+/// [`LayoutShiftAttribution`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution)
 class LayoutShiftAttribution : public emlite::Val {
     explicit LayoutShiftAttribution(Handle h) noexcept;
 
@@ -15,9 +17,15 @@ public:
     explicit LayoutShiftAttribution(const emlite::Val &val) noexcept;
     static LayoutShiftAttribution take_ownership(Handle h) noexcept;
 
-    LayoutShiftAttribution clone() const noexcept;
-    Node node() const;
-    DOMRectReadOnly previousRect() const;
-    DOMRectReadOnly currentRect() const;
+    [[nodiscard]] LayoutShiftAttribution clone() const noexcept;
+    /// Getter of the `node` attribute.
+    /// [`LayoutShiftAttribution.node`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/node)
+    [[nodiscard]] Node node() const;
+    /// Getter of the `previousRect` attribute.
+    /// [`LayoutShiftAttribution.previousRect`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/previousRect)
+    [[nodiscard]] DOMRectReadOnly previousRect() const;
+    /// Getter of the `currentRect` attribute.
+    /// [`LayoutShiftAttribution.currentRect`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/currentRect)
+    [[nodiscard]] DOMRectReadOnly currentRect() const;
 };
 

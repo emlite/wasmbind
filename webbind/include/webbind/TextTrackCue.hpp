@@ -8,6 +8,8 @@
 class TextTrack;
 
 
+/// The TextTrackCue class.
+/// [`TextTrackCue`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue)
 class TextTrackCue : public EventTarget {
     explicit TextTrackCue(Handle h) noexcept;
 
@@ -15,19 +17,45 @@ public:
     explicit TextTrackCue(const emlite::Val &val) noexcept;
     static TextTrackCue take_ownership(Handle h) noexcept;
 
-    TextTrackCue clone() const noexcept;
-    TextTrack track() const;
-    jsbind::String id() const;
+    [[nodiscard]] TextTrackCue clone() const noexcept;
+    /// Getter of the `track` attribute.
+    /// [`TextTrackCue.track`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/track)
+    [[nodiscard]] TextTrack track() const;
+    /// Getter of the `id` attribute.
+    /// [`TextTrackCue.id`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/id)
+    [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
+    /// [`TextTrackCue.id`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/id)
     void id(const jsbind::String& value);
-    double startTime() const;
+    /// Getter of the `startTime` attribute.
+    /// [`TextTrackCue.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/startTime)
+    [[nodiscard]] double startTime() const;
+    /// Setter of the `startTime` attribute.
+    /// [`TextTrackCue.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/startTime)
     void startTime(double value);
-    double endTime() const;
+    /// Getter of the `endTime` attribute.
+    /// [`TextTrackCue.endTime`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/endTime)
+    [[nodiscard]] double endTime() const;
+    /// Setter of the `endTime` attribute.
+    /// [`TextTrackCue.endTime`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/endTime)
     void endTime(double value);
-    bool pauseOnExit() const;
+    /// Getter of the `pauseOnExit` attribute.
+    /// [`TextTrackCue.pauseOnExit`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/pauseOnExit)
+    [[nodiscard]] bool pauseOnExit() const;
+    /// Setter of the `pauseOnExit` attribute.
+    /// [`TextTrackCue.pauseOnExit`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/pauseOnExit)
     void pauseOnExit(bool value);
-    jsbind::Any onenter() const;
+    /// Getter of the `onenter` attribute.
+    /// [`TextTrackCue.onenter`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/onenter)
+    [[nodiscard]] jsbind::Any onenter() const;
+    /// Setter of the `onenter` attribute.
+    /// [`TextTrackCue.onenter`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/onenter)
     void onenter(const jsbind::Any& value);
-    jsbind::Any onexit() const;
+    /// Getter of the `onexit` attribute.
+    /// [`TextTrackCue.onexit`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/onexit)
+    [[nodiscard]] jsbind::Any onexit() const;
+    /// Setter of the `onexit` attribute.
+    /// [`TextTrackCue.onexit`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/onexit)
     void onexit(const jsbind::Any& value);
 };
 

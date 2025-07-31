@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The Font class.
+/// [`Font`](https://developer.mozilla.org/en-US/docs/Web/API/Font)
 class Font : public emlite::Val {
     explicit Font(Handle h) noexcept;
 
@@ -12,8 +14,12 @@ public:
     explicit Font(const emlite::Val &val) noexcept;
     static Font take_ownership(Handle h) noexcept;
 
-    Font clone() const noexcept;
-    jsbind::String name() const;
-    unsigned long glyphsRendered() const;
+    [[nodiscard]] Font clone() const noexcept;
+    /// Getter of the `name` attribute.
+    /// [`Font.name`](https://developer.mozilla.org/en-US/docs/Web/API/Font/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `glyphsRendered` attribute.
+    /// [`Font.glyphsRendered`](https://developer.mozilla.org/en-US/docs/Web/API/Font/glyphsRendered)
+    [[nodiscard]] unsigned long glyphsRendered() const;
 };
 

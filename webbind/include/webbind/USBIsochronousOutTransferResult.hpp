@@ -7,6 +7,8 @@
 class USBIsochronousOutTransferPacket;
 
 
+/// The USBIsochronousOutTransferResult class.
+/// [`USBIsochronousOutTransferResult`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousOutTransferResult)
 class USBIsochronousOutTransferResult : public emlite::Val {
     explicit USBIsochronousOutTransferResult(Handle h) noexcept;
 
@@ -14,8 +16,11 @@ public:
     explicit USBIsochronousOutTransferResult(const emlite::Val &val) noexcept;
     static USBIsochronousOutTransferResult take_ownership(Handle h) noexcept;
 
-    USBIsochronousOutTransferResult clone() const noexcept;
+    [[nodiscard]] USBIsochronousOutTransferResult clone() const noexcept;
+    /// The `new USBIsochronousOutTransferResult(..)` constructor, creating a new USBIsochronousOutTransferResult instance
     USBIsochronousOutTransferResult(const jsbind::TypedArray<USBIsochronousOutTransferPacket>& packets);
-    jsbind::TypedArray<USBIsochronousOutTransferPacket> packets() const;
+    /// Getter of the `packets` attribute.
+    /// [`USBIsochronousOutTransferResult.packets`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousOutTransferResult/packets)
+    [[nodiscard]] jsbind::TypedArray<USBIsochronousOutTransferPacket> packets() const;
 };
 

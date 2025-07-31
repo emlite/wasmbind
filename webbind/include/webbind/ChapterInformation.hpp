@@ -13,15 +13,17 @@ public:
     static MediaImage take_ownership(Handle h) noexcept;
     explicit MediaImage(const emlite::Val &val) noexcept;
     MediaImage() noexcept;
-    MediaImage clone() const noexcept;
-    jsbind::String src() const;
+    [[nodiscard]] MediaImage clone() const noexcept;
+    [[nodiscard]] jsbind::String src() const;
     void src(const jsbind::String& value);
-    jsbind::String sizes() const;
+    [[nodiscard]] jsbind::String sizes() const;
     void sizes(const jsbind::String& value);
-    jsbind::String type() const;
+    [[nodiscard]] jsbind::String type() const;
     void type(const jsbind::String& value);
 };
 
+/// The ChapterInformation class.
+/// [`ChapterInformation`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation)
 class ChapterInformation : public emlite::Val {
     explicit ChapterInformation(Handle h) noexcept;
 
@@ -29,9 +31,15 @@ public:
     explicit ChapterInformation(const emlite::Val &val) noexcept;
     static ChapterInformation take_ownership(Handle h) noexcept;
 
-    ChapterInformation clone() const noexcept;
-    jsbind::String title() const;
-    double startTime() const;
-    jsbind::TypedArray<MediaImage> artwork() const;
+    [[nodiscard]] ChapterInformation clone() const noexcept;
+    /// Getter of the `title` attribute.
+    /// [`ChapterInformation.title`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/title)
+    [[nodiscard]] jsbind::String title() const;
+    /// Getter of the `startTime` attribute.
+    /// [`ChapterInformation.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/startTime)
+    [[nodiscard]] double startTime() const;
+    /// Getter of the `artwork` attribute.
+    /// [`ChapterInformation.artwork`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/artwork)
+    [[nodiscard]] jsbind::TypedArray<MediaImage> artwork() const;
 };
 

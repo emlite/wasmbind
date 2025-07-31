@@ -18,10 +18,10 @@ public:
     static MLTensorDescriptor take_ownership(Handle h) noexcept;
     explicit MLTensorDescriptor(const emlite::Val &val) noexcept;
     MLTensorDescriptor() noexcept;
-    MLTensorDescriptor clone() const noexcept;
-    bool readable() const;
+    [[nodiscard]] MLTensorDescriptor clone() const noexcept;
+    [[nodiscard]] bool readable() const;
     void readable(bool value);
-    bool writable() const;
+    [[nodiscard]] bool writable() const;
     void writable(bool value);
 };
 
@@ -31,10 +31,10 @@ public:
     static MLOperandDescriptor take_ownership(Handle h) noexcept;
     explicit MLOperandDescriptor(const emlite::Val &val) noexcept;
     MLOperandDescriptor() noexcept;
-    MLOperandDescriptor clone() const noexcept;
-    MLOperandDataType dataType() const;
+    [[nodiscard]] MLOperandDescriptor clone() const noexcept;
+    [[nodiscard]] MLOperandDataType dataType() const;
     void dataType(const MLOperandDataType& value);
-    jsbind::TypedArray<unsigned long> shape() const;
+    [[nodiscard]] jsbind::TypedArray<unsigned long> shape() const;
     void shape(jsbind::TypedArray<unsigned long> value);
 };
 
@@ -44,8 +44,8 @@ public:
     static MLOpSupportLimits take_ownership(Handle h) noexcept;
     explicit MLOpSupportLimits(const emlite::Val &val) noexcept;
     MLOpSupportLimits() noexcept;
-    MLOpSupportLimits clone() const noexcept;
-    jsbind::Any where() const;
+    [[nodiscard]] MLOpSupportLimits clone() const noexcept;
+    [[nodiscard]] jsbind::Any where() const;
     void where(const jsbind::Any& value);
 };
 
@@ -55,11 +55,13 @@ public:
     static MLContextLostInfo take_ownership(Handle h) noexcept;
     explicit MLContextLostInfo(const emlite::Val &val) noexcept;
     MLContextLostInfo() noexcept;
-    MLContextLostInfo clone() const noexcept;
-    jsbind::String message() const;
+    [[nodiscard]] MLContextLostInfo clone() const noexcept;
+    [[nodiscard]] jsbind::String message() const;
     void message(const jsbind::String& value);
 };
 
+/// The MLContext class.
+/// [`MLContext`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext)
 class MLContext : public emlite::Val {
     explicit MLContext(Handle h) noexcept;
 
@@ -67,14 +69,30 @@ public:
     explicit MLContext(const emlite::Val &val) noexcept;
     static MLContext take_ownership(Handle h) noexcept;
 
-    MLContext clone() const noexcept;
+    [[nodiscard]] MLContext clone() const noexcept;
+    /// The dispatch method.
+    /// [`MLContext.dispatch`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/dispatch)
     jsbind::Undefined dispatch(const MLGraph& graph, const jsbind::Any& inputs, const jsbind::Any& outputs);
+    /// The createTensor method.
+    /// [`MLContext.createTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/createTensor)
     jsbind::Promise<MLTensor> createTensor(const MLTensorDescriptor& descriptor);
+    /// The createConstantTensor method.
+    /// [`MLContext.createConstantTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/createConstantTensor)
     jsbind::Promise<MLTensor> createConstantTensor(const MLOperandDescriptor& descriptor, const jsbind::Any& inputData);
+    /// The readTensor method.
+    /// [`MLContext.readTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/readTensor)
     jsbind::Promise<jsbind::Undefined> readTensor(const MLTensor& tensor, const jsbind::Any& outputData);
+    /// The writeTensor method.
+    /// [`MLContext.writeTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/writeTensor)
     jsbind::Undefined writeTensor(const MLTensor& tensor, const jsbind::Any& inputData);
+    /// The opSupportLimits method.
+    /// [`MLContext.opSupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/opSupportLimits)
     MLOpSupportLimits opSupportLimits();
+    /// The destroy method.
+    /// [`MLContext.destroy`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/destroy)
     jsbind::Undefined destroy();
-    jsbind::Promise<MLContextLostInfo> lost() const;
+    /// Getter of the `lost` attribute.
+    /// [`MLContext.lost`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/lost)
+    [[nodiscard]] jsbind::Promise<MLContextLostInfo> lost() const;
 };
 

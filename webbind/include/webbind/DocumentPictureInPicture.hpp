@@ -15,17 +15,19 @@ public:
     static DocumentPictureInPictureOptions take_ownership(Handle h) noexcept;
     explicit DocumentPictureInPictureOptions(const emlite::Val &val) noexcept;
     DocumentPictureInPictureOptions() noexcept;
-    DocumentPictureInPictureOptions clone() const noexcept;
-    long long width() const;
+    [[nodiscard]] DocumentPictureInPictureOptions clone() const noexcept;
+    [[nodiscard]] long long width() const;
     void width(long long value);
-    long long height() const;
+    [[nodiscard]] long long height() const;
     void height(long long value);
-    bool disallowReturnToOpener() const;
+    [[nodiscard]] bool disallowReturnToOpener() const;
     void disallowReturnToOpener(bool value);
-    bool preferInitialWindowPlacement() const;
+    [[nodiscard]] bool preferInitialWindowPlacement() const;
     void preferInitialWindowPlacement(bool value);
 };
 
+/// The DocumentPictureInPicture class.
+/// [`DocumentPictureInPicture`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture)
 class DocumentPictureInPicture : public EventTarget {
     explicit DocumentPictureInPicture(Handle h) noexcept;
 
@@ -33,11 +35,21 @@ public:
     explicit DocumentPictureInPicture(const emlite::Val &val) noexcept;
     static DocumentPictureInPicture take_ownership(Handle h) noexcept;
 
-    DocumentPictureInPicture clone() const noexcept;
+    [[nodiscard]] DocumentPictureInPicture clone() const noexcept;
+    /// The requestWindow method.
+    /// [`DocumentPictureInPicture.requestWindow`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/requestWindow)
     jsbind::Promise<Window> requestWindow();
+    /// The requestWindow method.
+    /// [`DocumentPictureInPicture.requestWindow`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/requestWindow)
     jsbind::Promise<Window> requestWindow(const DocumentPictureInPictureOptions& options);
-    Window window() const;
-    jsbind::Any onenter() const;
+    /// Getter of the `window` attribute.
+    /// [`DocumentPictureInPicture.window`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/window)
+    [[nodiscard]] Window window() const;
+    /// Getter of the `onenter` attribute.
+    /// [`DocumentPictureInPicture.onenter`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/onenter)
+    [[nodiscard]] jsbind::Any onenter() const;
+    /// Setter of the `onenter` attribute.
+    /// [`DocumentPictureInPicture.onenter`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/onenter)
     void onenter(const jsbind::Any& value);
 };
 

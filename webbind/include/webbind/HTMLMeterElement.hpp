@@ -8,6 +8,8 @@
 class NodeList;
 
 
+/// The HTMLMeterElement class.
+/// [`HTMLMeterElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement)
 class HTMLMeterElement : public HTMLElement {
     explicit HTMLMeterElement(Handle h) noexcept;
 
@@ -15,20 +17,47 @@ public:
     explicit HTMLMeterElement(const emlite::Val &val) noexcept;
     static HTMLMeterElement take_ownership(Handle h) noexcept;
 
-    HTMLMeterElement clone() const noexcept;
+    [[nodiscard]] HTMLMeterElement clone() const noexcept;
+    /// The `new HTMLMeterElement(..)` constructor, creating a new HTMLMeterElement instance
     HTMLMeterElement();
-    double value() const;
+    /// Getter of the `value` attribute.
+    /// [`HTMLMeterElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/value)
+    [[nodiscard]] double value() const;
+    /// Setter of the `value` attribute.
+    /// [`HTMLMeterElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/value)
     void value(double value);
-    double min() const;
+    /// Getter of the `min` attribute.
+    /// [`HTMLMeterElement.min`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/min)
+    [[nodiscard]] double min() const;
+    /// Setter of the `min` attribute.
+    /// [`HTMLMeterElement.min`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/min)
     void min(double value);
-    double max() const;
+    /// Getter of the `max` attribute.
+    /// [`HTMLMeterElement.max`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/max)
+    [[nodiscard]] double max() const;
+    /// Setter of the `max` attribute.
+    /// [`HTMLMeterElement.max`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/max)
     void max(double value);
-    double low() const;
+    /// Getter of the `low` attribute.
+    /// [`HTMLMeterElement.low`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/low)
+    [[nodiscard]] double low() const;
+    /// Setter of the `low` attribute.
+    /// [`HTMLMeterElement.low`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/low)
     void low(double value);
-    double high() const;
+    /// Getter of the `high` attribute.
+    /// [`HTMLMeterElement.high`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/high)
+    [[nodiscard]] double high() const;
+    /// Setter of the `high` attribute.
+    /// [`HTMLMeterElement.high`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/high)
     void high(double value);
-    double optimum() const;
+    /// Getter of the `optimum` attribute.
+    /// [`HTMLMeterElement.optimum`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/optimum)
+    [[nodiscard]] double optimum() const;
+    /// Setter of the `optimum` attribute.
+    /// [`HTMLMeterElement.optimum`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/optimum)
     void optimum(double value);
-    NodeList labels() const;
+    /// Getter of the `labels` attribute.
+    /// [`HTMLMeterElement.labels`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/labels)
+    [[nodiscard]] NodeList labels() const;
 };
 

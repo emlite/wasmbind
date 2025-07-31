@@ -15,21 +15,23 @@ public:
     static FenceEvent take_ownership(Handle h) noexcept;
     explicit FenceEvent(const emlite::Val &val) noexcept;
     FenceEvent() noexcept;
-    FenceEvent clone() const noexcept;
-    jsbind::String eventType() const;
+    [[nodiscard]] FenceEvent clone() const noexcept;
+    [[nodiscard]] jsbind::String eventType() const;
     void eventType(const jsbind::String& value);
-    jsbind::String eventData() const;
+    [[nodiscard]] jsbind::String eventData() const;
     void eventData(const jsbind::String& value);
-    jsbind::TypedArray<FenceReportingDestination> destination() const;
+    [[nodiscard]] jsbind::TypedArray<FenceReportingDestination> destination() const;
     void destination(const jsbind::TypedArray<FenceReportingDestination>& value);
-    bool crossOriginExposed() const;
+    [[nodiscard]] bool crossOriginExposed() const;
     void crossOriginExposed(bool value);
-    bool once() const;
+    [[nodiscard]] bool once() const;
     void once(bool value);
-    jsbind::String destinationURL() const;
+    [[nodiscard]] jsbind::String destinationURL() const;
     void destinationURL(const jsbind::String& value);
 };
 
+/// The Fence class.
+/// [`Fence`](https://developer.mozilla.org/en-US/docs/Web/API/Fence)
 class Fence : public emlite::Val {
     explicit Fence(Handle h) noexcept;
 
@@ -37,13 +39,27 @@ public:
     explicit Fence(const emlite::Val &val) noexcept;
     static Fence take_ownership(Handle h) noexcept;
 
-    Fence clone() const noexcept;
+    [[nodiscard]] Fence clone() const noexcept;
+    /// The reportEvent method.
+    /// [`Fence.reportEvent`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/reportEvent)
     jsbind::Undefined reportEvent();
+    /// The reportEvent method.
+    /// [`Fence.reportEvent`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/reportEvent)
     jsbind::Undefined reportEvent(const jsbind::Any& event);
+    /// The setReportEventDataForAutomaticBeacons method.
+    /// [`Fence.setReportEventDataForAutomaticBeacons`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/setReportEventDataForAutomaticBeacons)
     jsbind::Undefined setReportEventDataForAutomaticBeacons();
+    /// The setReportEventDataForAutomaticBeacons method.
+    /// [`Fence.setReportEventDataForAutomaticBeacons`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/setReportEventDataForAutomaticBeacons)
     jsbind::Undefined setReportEventDataForAutomaticBeacons(const FenceEvent& event);
+    /// The getNestedConfigs method.
+    /// [`Fence.getNestedConfigs`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/getNestedConfigs)
     jsbind::TypedArray<FencedFrameConfig> getNestedConfigs();
+    /// The disableUntrustedNetwork method.
+    /// [`Fence.disableUntrustedNetwork`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/disableUntrustedNetwork)
     jsbind::Promise<jsbind::Undefined> disableUntrustedNetwork();
+    /// The notifyEvent method.
+    /// [`Fence.notifyEvent`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/notifyEvent)
     jsbind::Undefined notifyEvent(const Event& event);
 };
 

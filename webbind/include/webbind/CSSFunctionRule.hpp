@@ -14,15 +14,17 @@ public:
     static FunctionParameter take_ownership(Handle h) noexcept;
     explicit FunctionParameter(const emlite::Val &val) noexcept;
     FunctionParameter() noexcept;
-    FunctionParameter clone() const noexcept;
-    jsbind::String name() const;
+    [[nodiscard]] FunctionParameter clone() const noexcept;
+    [[nodiscard]] jsbind::String name() const;
     void name(const jsbind::String& value);
-    jsbind::String type() const;
+    [[nodiscard]] jsbind::String type() const;
     void type(const jsbind::String& value);
-    jsbind::String defaultValue() const;
+    [[nodiscard]] jsbind::String defaultValue() const;
     void defaultValue(const jsbind::String& value);
 };
 
+/// The CSSFunctionRule class.
+/// [`CSSFunctionRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule)
 class CSSFunctionRule : public CSSGroupingRule {
     explicit CSSFunctionRule(Handle h) noexcept;
 
@@ -30,9 +32,15 @@ public:
     explicit CSSFunctionRule(const emlite::Val &val) noexcept;
     static CSSFunctionRule take_ownership(Handle h) noexcept;
 
-    CSSFunctionRule clone() const noexcept;
-    jsbind::String name() const;
+    [[nodiscard]] CSSFunctionRule clone() const noexcept;
+    /// Getter of the `name` attribute.
+    /// [`CSSFunctionRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// The getParameters method.
+    /// [`CSSFunctionRule.getParameters`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule/getParameters)
     jsbind::TypedArray<FunctionParameter> getParameters();
-    jsbind::String returnType() const;
+    /// Getter of the `returnType` attribute.
+    /// [`CSSFunctionRule.returnType`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule/returnType)
+    [[nodiscard]] jsbind::String returnType() const;
 };
 

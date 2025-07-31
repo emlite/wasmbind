@@ -16,10 +16,10 @@ public:
     static HighlightHitResult take_ownership(Handle h) noexcept;
     explicit HighlightHitResult(const emlite::Val &val) noexcept;
     HighlightHitResult() noexcept;
-    HighlightHitResult clone() const noexcept;
-    Highlight highlight() const;
+    [[nodiscard]] HighlightHitResult clone() const noexcept;
+    [[nodiscard]] Highlight highlight() const;
     void highlight(const Highlight& value);
-    jsbind::TypedArray<AbstractRange> ranges() const;
+    [[nodiscard]] jsbind::TypedArray<AbstractRange> ranges() const;
     void ranges(const jsbind::TypedArray<AbstractRange>& value);
 };
 
@@ -29,11 +29,13 @@ public:
     static HighlightsFromPointOptions take_ownership(Handle h) noexcept;
     explicit HighlightsFromPointOptions(const emlite::Val &val) noexcept;
     HighlightsFromPointOptions() noexcept;
-    HighlightsFromPointOptions clone() const noexcept;
-    jsbind::TypedArray<ShadowRoot> shadowRoots() const;
+    [[nodiscard]] HighlightsFromPointOptions clone() const noexcept;
+    [[nodiscard]] jsbind::TypedArray<ShadowRoot> shadowRoots() const;
     void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
 };
 
+/// The HighlightRegistry class.
+/// [`HighlightRegistry`](https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry)
 class HighlightRegistry : public emlite::Val {
     explicit HighlightRegistry(Handle h) noexcept;
 
@@ -41,8 +43,12 @@ public:
     explicit HighlightRegistry(const emlite::Val &val) noexcept;
     static HighlightRegistry take_ownership(Handle h) noexcept;
 
-    HighlightRegistry clone() const noexcept;
+    [[nodiscard]] HighlightRegistry clone() const noexcept;
+    /// The highlightsFromPoint method.
+    /// [`HighlightRegistry.highlightsFromPoint`](https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/highlightsFromPoint)
     jsbind::TypedArray<HighlightHitResult> highlightsFromPoint(float x, float y);
+    /// The highlightsFromPoint method.
+    /// [`HighlightRegistry.highlightsFromPoint`](https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/highlightsFromPoint)
     jsbind::TypedArray<HighlightHitResult> highlightsFromPoint(float x, float y, const HighlightsFromPointOptions& options);
 };
 

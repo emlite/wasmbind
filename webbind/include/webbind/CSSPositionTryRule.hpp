@@ -8,6 +8,8 @@
 class CSSPositionTryDescriptors;
 
 
+/// The CSSPositionTryRule class.
+/// [`CSSPositionTryRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule)
 class CSSPositionTryRule : public CSSRule {
     explicit CSSPositionTryRule(Handle h) noexcept;
 
@@ -15,8 +17,12 @@ public:
     explicit CSSPositionTryRule(const emlite::Val &val) noexcept;
     static CSSPositionTryRule take_ownership(Handle h) noexcept;
 
-    CSSPositionTryRule clone() const noexcept;
-    jsbind::String name() const;
-    CSSPositionTryDescriptors style() const;
+    [[nodiscard]] CSSPositionTryRule clone() const noexcept;
+    /// Getter of the `name` attribute.
+    /// [`CSSPositionTryRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule/name)
+    [[nodiscard]] jsbind::String name() const;
+    /// Getter of the `style` attribute.
+    /// [`CSSPositionTryRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule/style)
+    [[nodiscard]] CSSPositionTryDescriptors style() const;
 };
 

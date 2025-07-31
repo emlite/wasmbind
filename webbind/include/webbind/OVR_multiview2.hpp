@@ -7,6 +7,8 @@
 class WebGLTexture;
 
 
+/// The OVR_multiview2 class.
+/// [`OVR_multiview2`](https://developer.mozilla.org/en-US/docs/Web/API/OVR_multiview2)
 class OVR_multiview2 : public emlite::Val {
     explicit OVR_multiview2(Handle h) noexcept;
 
@@ -14,7 +16,9 @@ public:
     explicit OVR_multiview2(const emlite::Val &val) noexcept;
     static OVR_multiview2 take_ownership(Handle h) noexcept;
 
-    OVR_multiview2 clone() const noexcept;
+    [[nodiscard]] OVR_multiview2 clone() const noexcept;
+    /// The framebufferTextureMultiviewOVR method.
+    /// [`OVR_multiview2.framebufferTextureMultiviewOVR`](https://developer.mozilla.org/en-US/docs/Web/API/OVR_multiview2/framebufferTextureMultiviewOVR)
     jsbind::Undefined framebufferTextureMultiviewOVR(const jsbind::Any& target, const jsbind::Any& attachment, const WebGLTexture& texture, const jsbind::Any& level, const jsbind::Any& baseViewIndex, const jsbind::Any& numViews);
 };
 

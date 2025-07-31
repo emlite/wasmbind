@@ -9,6 +9,8 @@ class SVGAnimatedLength;
 class SVGAnimatedString;
 
 
+/// The SVGFEFloodElement class.
+/// [`SVGFEFloodElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEFloodElement)
 class SVGFEFloodElement : public SVGElement {
     explicit SVGFEFloodElement(Handle h) noexcept;
 
@@ -16,11 +18,21 @@ public:
     explicit SVGFEFloodElement(const emlite::Val &val) noexcept;
     static SVGFEFloodElement take_ownership(Handle h) noexcept;
 
-    SVGFEFloodElement clone() const noexcept;
-    SVGAnimatedLength x() const;
-    SVGAnimatedLength y() const;
-    SVGAnimatedLength width() const;
-    SVGAnimatedLength height() const;
-    SVGAnimatedString result() const;
+    [[nodiscard]] SVGFEFloodElement clone() const noexcept;
+    /// Getter of the `x` attribute.
+    /// [`SVGFEFloodElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEFloodElement/x)
+    [[nodiscard]] SVGAnimatedLength x() const;
+    /// Getter of the `y` attribute.
+    /// [`SVGFEFloodElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEFloodElement/y)
+    [[nodiscard]] SVGAnimatedLength y() const;
+    /// Getter of the `width` attribute.
+    /// [`SVGFEFloodElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEFloodElement/width)
+    [[nodiscard]] SVGAnimatedLength width() const;
+    /// Getter of the `height` attribute.
+    /// [`SVGFEFloodElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEFloodElement/height)
+    [[nodiscard]] SVGAnimatedLength height() const;
+    /// Getter of the `result` attribute.
+    /// [`SVGFEFloodElement.result`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEFloodElement/result)
+    [[nodiscard]] SVGAnimatedString result() const;
 };
 

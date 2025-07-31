@@ -18,8 +18,8 @@ public:
     static FileSystemGetFileOptions take_ownership(Handle h) noexcept;
     explicit FileSystemGetFileOptions(const emlite::Val &val) noexcept;
     FileSystemGetFileOptions() noexcept;
-    FileSystemGetFileOptions clone() const noexcept;
-    bool create() const;
+    [[nodiscard]] FileSystemGetFileOptions clone() const noexcept;
+    [[nodiscard]] bool create() const;
     void create(bool value);
 };
 
@@ -29,8 +29,8 @@ public:
     static FileSystemGetDirectoryOptions take_ownership(Handle h) noexcept;
     explicit FileSystemGetDirectoryOptions(const emlite::Val &val) noexcept;
     FileSystemGetDirectoryOptions() noexcept;
-    FileSystemGetDirectoryOptions clone() const noexcept;
-    bool create() const;
+    [[nodiscard]] FileSystemGetDirectoryOptions clone() const noexcept;
+    [[nodiscard]] bool create() const;
     void create(bool value);
 };
 
@@ -40,11 +40,13 @@ public:
     static FileSystemRemoveOptions take_ownership(Handle h) noexcept;
     explicit FileSystemRemoveOptions(const emlite::Val &val) noexcept;
     FileSystemRemoveOptions() noexcept;
-    FileSystemRemoveOptions clone() const noexcept;
-    bool recursive() const;
+    [[nodiscard]] FileSystemRemoveOptions clone() const noexcept;
+    [[nodiscard]] bool recursive() const;
     void recursive(bool value);
 };
 
+/// The FileSystemDirectoryHandle class.
+/// [`FileSystemDirectoryHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle)
 class FileSystemDirectoryHandle : public FileSystemHandle {
     explicit FileSystemDirectoryHandle(Handle h) noexcept;
 
@@ -52,13 +54,27 @@ public:
     explicit FileSystemDirectoryHandle(const emlite::Val &val) noexcept;
     static FileSystemDirectoryHandle take_ownership(Handle h) noexcept;
 
-    FileSystemDirectoryHandle clone() const noexcept;
+    [[nodiscard]] FileSystemDirectoryHandle clone() const noexcept;
+    /// The getFileHandle method.
+    /// [`FileSystemDirectoryHandle.getFileHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
     jsbind::Promise<FileSystemFileHandle> getFileHandle(const jsbind::String& name);
+    /// The getFileHandle method.
+    /// [`FileSystemDirectoryHandle.getFileHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
     jsbind::Promise<FileSystemFileHandle> getFileHandle(const jsbind::String& name, const FileSystemGetFileOptions& options);
+    /// The getDirectoryHandle method.
+    /// [`FileSystemDirectoryHandle.getDirectoryHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
     jsbind::Promise<FileSystemDirectoryHandle> getDirectoryHandle(const jsbind::String& name);
+    /// The getDirectoryHandle method.
+    /// [`FileSystemDirectoryHandle.getDirectoryHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
     jsbind::Promise<FileSystemDirectoryHandle> getDirectoryHandle(const jsbind::String& name, const FileSystemGetDirectoryOptions& options);
+    /// The removeEntry method.
+    /// [`FileSystemDirectoryHandle.removeEntry`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
     jsbind::Promise<jsbind::Undefined> removeEntry(const jsbind::String& name);
+    /// The removeEntry method.
+    /// [`FileSystemDirectoryHandle.removeEntry`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
     jsbind::Promise<jsbind::Undefined> removeEntry(const jsbind::String& name, const FileSystemRemoveOptions& options);
+    /// The resolve method.
+    /// [`FileSystemDirectoryHandle.resolve`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/resolve)
     jsbind::Promise<jsbind::TypedArray<jsbind::String>> resolve(const FileSystemHandle& possibleDescendant);
 };
 

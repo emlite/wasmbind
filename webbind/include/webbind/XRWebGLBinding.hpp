@@ -33,16 +33,16 @@ public:
     static XRProjectionLayerInit take_ownership(Handle h) noexcept;
     explicit XRProjectionLayerInit(const emlite::Val &val) noexcept;
     XRProjectionLayerInit() noexcept;
-    XRProjectionLayerInit clone() const noexcept;
-    XRTextureType textureType() const;
+    [[nodiscard]] XRProjectionLayerInit clone() const noexcept;
+    [[nodiscard]] XRTextureType textureType() const;
     void textureType(const XRTextureType& value);
-    jsbind::Any colorFormat() const;
+    [[nodiscard]] jsbind::Any colorFormat() const;
     void colorFormat(const jsbind::Any& value);
-    jsbind::Any depthFormat() const;
+    [[nodiscard]] jsbind::Any depthFormat() const;
     void depthFormat(const jsbind::Any& value);
-    double scaleFactor() const;
+    [[nodiscard]] double scaleFactor() const;
     void scaleFactor(double value);
-    bool clearOnAccess() const;
+    [[nodiscard]] bool clearOnAccess() const;
     void clearOnAccess(bool value);
 };
 
@@ -52,14 +52,14 @@ public:
     static XRQuadLayerInit take_ownership(Handle h) noexcept;
     explicit XRQuadLayerInit(const emlite::Val &val) noexcept;
     XRQuadLayerInit() noexcept;
-    XRQuadLayerInit clone() const noexcept;
-    XRTextureType textureType() const;
+    [[nodiscard]] XRQuadLayerInit clone() const noexcept;
+    [[nodiscard]] XRTextureType textureType() const;
     void textureType(const XRTextureType& value);
-    XRRigidTransform transform() const;
+    [[nodiscard]] XRRigidTransform transform() const;
     void transform(const XRRigidTransform& value);
-    float width() const;
+    [[nodiscard]] float width() const;
     void width(float value);
-    float height() const;
+    [[nodiscard]] float height() const;
     void height(float value);
 };
 
@@ -69,16 +69,16 @@ public:
     static XRCylinderLayerInit take_ownership(Handle h) noexcept;
     explicit XRCylinderLayerInit(const emlite::Val &val) noexcept;
     XRCylinderLayerInit() noexcept;
-    XRCylinderLayerInit clone() const noexcept;
-    XRTextureType textureType() const;
+    [[nodiscard]] XRCylinderLayerInit clone() const noexcept;
+    [[nodiscard]] XRTextureType textureType() const;
     void textureType(const XRTextureType& value);
-    XRRigidTransform transform() const;
+    [[nodiscard]] XRRigidTransform transform() const;
     void transform(const XRRigidTransform& value);
-    float radius() const;
+    [[nodiscard]] float radius() const;
     void radius(float value);
-    float centralAngle() const;
+    [[nodiscard]] float centralAngle() const;
     void centralAngle(float value);
-    float aspectRatio() const;
+    [[nodiscard]] float aspectRatio() const;
     void aspectRatio(float value);
 };
 
@@ -88,18 +88,18 @@ public:
     static XREquirectLayerInit take_ownership(Handle h) noexcept;
     explicit XREquirectLayerInit(const emlite::Val &val) noexcept;
     XREquirectLayerInit() noexcept;
-    XREquirectLayerInit clone() const noexcept;
-    XRTextureType textureType() const;
+    [[nodiscard]] XREquirectLayerInit clone() const noexcept;
+    [[nodiscard]] XRTextureType textureType() const;
     void textureType(const XRTextureType& value);
-    XRRigidTransform transform() const;
+    [[nodiscard]] XRRigidTransform transform() const;
     void transform(const XRRigidTransform& value);
-    float radius() const;
+    [[nodiscard]] float radius() const;
     void radius(float value);
-    float centralHorizontalAngle() const;
+    [[nodiscard]] float centralHorizontalAngle() const;
     void centralHorizontalAngle(float value);
-    float upperVerticalAngle() const;
+    [[nodiscard]] float upperVerticalAngle() const;
     void upperVerticalAngle(float value);
-    float lowerVerticalAngle() const;
+    [[nodiscard]] float lowerVerticalAngle() const;
     void lowerVerticalAngle(float value);
 };
 
@@ -109,11 +109,13 @@ public:
     static XRCubeLayerInit take_ownership(Handle h) noexcept;
     explicit XRCubeLayerInit(const emlite::Val &val) noexcept;
     XRCubeLayerInit() noexcept;
-    XRCubeLayerInit clone() const noexcept;
-    DOMPointReadOnly orientation() const;
+    [[nodiscard]] XRCubeLayerInit clone() const noexcept;
+    [[nodiscard]] DOMPointReadOnly orientation() const;
     void orientation(const DOMPointReadOnly& value);
 };
 
+/// The XRWebGLBinding class.
+/// [`XRWebGLBinding`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding)
 class XRWebGLBinding : public emlite::Val {
     explicit XRWebGLBinding(Handle h) noexcept;
 
@@ -121,26 +123,65 @@ public:
     explicit XRWebGLBinding(const emlite::Val &val) noexcept;
     static XRWebGLBinding take_ownership(Handle h) noexcept;
 
-    XRWebGLBinding clone() const noexcept;
+    [[nodiscard]] XRWebGLBinding clone() const noexcept;
+    /// The `new XRWebGLBinding(..)` constructor, creating a new XRWebGLBinding instance
     XRWebGLBinding(const XRSession& session, const jsbind::Any& context);
-    double nativeProjectionScaleFactor() const;
-    bool usesDepthValues() const;
+    /// Getter of the `nativeProjectionScaleFactor` attribute.
+    /// [`XRWebGLBinding.nativeProjectionScaleFactor`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/nativeProjectionScaleFactor)
+    [[nodiscard]] double nativeProjectionScaleFactor() const;
+    /// Getter of the `usesDepthValues` attribute.
+    /// [`XRWebGLBinding.usesDepthValues`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/usesDepthValues)
+    [[nodiscard]] bool usesDepthValues() const;
+    /// The createProjectionLayer method.
+    /// [`XRWebGLBinding.createProjectionLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createProjectionLayer)
     XRProjectionLayer createProjectionLayer();
+    /// The createProjectionLayer method.
+    /// [`XRWebGLBinding.createProjectionLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createProjectionLayer)
     XRProjectionLayer createProjectionLayer(const XRProjectionLayerInit& init);
+    /// The createQuadLayer method.
+    /// [`XRWebGLBinding.createQuadLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createQuadLayer)
     XRQuadLayer createQuadLayer();
+    /// The createQuadLayer method.
+    /// [`XRWebGLBinding.createQuadLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createQuadLayer)
     XRQuadLayer createQuadLayer(const XRQuadLayerInit& init);
+    /// The createCylinderLayer method.
+    /// [`XRWebGLBinding.createCylinderLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createCylinderLayer)
     XRCylinderLayer createCylinderLayer();
+    /// The createCylinderLayer method.
+    /// [`XRWebGLBinding.createCylinderLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createCylinderLayer)
     XRCylinderLayer createCylinderLayer(const XRCylinderLayerInit& init);
+    /// The createEquirectLayer method.
+    /// [`XRWebGLBinding.createEquirectLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createEquirectLayer)
     XREquirectLayer createEquirectLayer();
+    /// The createEquirectLayer method.
+    /// [`XRWebGLBinding.createEquirectLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createEquirectLayer)
     XREquirectLayer createEquirectLayer(const XREquirectLayerInit& init);
+    /// The createCubeLayer method.
+    /// [`XRWebGLBinding.createCubeLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createCubeLayer)
     XRCubeLayer createCubeLayer();
+    /// The createCubeLayer method.
+    /// [`XRWebGLBinding.createCubeLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/createCubeLayer)
     XRCubeLayer createCubeLayer(const XRCubeLayerInit& init);
+    /// The getSubImage method.
+    /// [`XRWebGLBinding.getSubImage`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/getSubImage)
     XRWebGLSubImage getSubImage(const XRCompositionLayer& layer, const XRFrame& frame);
+    /// The getSubImage method.
+    /// [`XRWebGLBinding.getSubImage`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/getSubImage)
     XRWebGLSubImage getSubImage(const XRCompositionLayer& layer, const XRFrame& frame, const XREye& eye);
+    /// The getViewSubImage method.
+    /// [`XRWebGLBinding.getViewSubImage`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/getViewSubImage)
     XRWebGLSubImage getViewSubImage(const XRProjectionLayer& layer, const XRView& view);
+    /// The foveateBoundTexture method.
+    /// [`XRWebGLBinding.foveateBoundTexture`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/foveateBoundTexture)
     jsbind::Undefined foveateBoundTexture(const jsbind::Any& target, float fixed_foveation);
+    /// The getCameraImage method.
+    /// [`XRWebGLBinding.getCameraImage`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/getCameraImage)
     WebGLTexture getCameraImage(const XRCamera& camera);
+    /// The getDepthInformation method.
+    /// [`XRWebGLBinding.getDepthInformation`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/getDepthInformation)
     XRWebGLDepthInformation getDepthInformation(const XRView& view);
+    /// The getReflectionCubeMap method.
+    /// [`XRWebGLBinding.getReflectionCubeMap`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/getReflectionCubeMap)
     WebGLTexture getReflectionCubeMap(const XRLightProbe& lightProbe);
 };
 

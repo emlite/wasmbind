@@ -8,6 +8,8 @@ class Request;
 class Response;
 
 
+/// The BackgroundFetchRecord class.
+/// [`BackgroundFetchRecord`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord)
 class BackgroundFetchRecord : public emlite::Val {
     explicit BackgroundFetchRecord(Handle h) noexcept;
 
@@ -15,8 +17,12 @@ public:
     explicit BackgroundFetchRecord(const emlite::Val &val) noexcept;
     static BackgroundFetchRecord take_ownership(Handle h) noexcept;
 
-    BackgroundFetchRecord clone() const noexcept;
-    Request request() const;
-    jsbind::Promise<Response> responseReady() const;
+    [[nodiscard]] BackgroundFetchRecord clone() const noexcept;
+    /// Getter of the `request` attribute.
+    /// [`BackgroundFetchRecord.request`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/request)
+    [[nodiscard]] Request request() const;
+    /// Getter of the `responseReady` attribute.
+    /// [`BackgroundFetchRecord.responseReady`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/responseReady)
+    [[nodiscard]] jsbind::Promise<Response> responseReady() const;
 };
 

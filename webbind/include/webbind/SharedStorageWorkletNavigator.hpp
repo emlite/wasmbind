@@ -7,6 +7,8 @@
 class LockManager;
 
 
+/// The SharedStorageWorkletNavigator class.
+/// [`SharedStorageWorkletNavigator`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletNavigator)
 class SharedStorageWorkletNavigator : public emlite::Val {
     explicit SharedStorageWorkletNavigator(Handle h) noexcept;
 
@@ -14,7 +16,9 @@ public:
     explicit SharedStorageWorkletNavigator(const emlite::Val &val) noexcept;
     static SharedStorageWorkletNavigator take_ownership(Handle h) noexcept;
 
-    SharedStorageWorkletNavigator clone() const noexcept;
-    LockManager locks() const;
+    [[nodiscard]] SharedStorageWorkletNavigator clone() const noexcept;
+    /// Getter of the `locks` attribute.
+    /// [`SharedStorageWorkletNavigator.locks`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletNavigator/locks)
+    [[nodiscard]] LockManager locks() const;
 };
 

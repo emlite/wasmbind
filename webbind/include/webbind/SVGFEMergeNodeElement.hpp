@@ -8,6 +8,8 @@
 class SVGAnimatedString;
 
 
+/// The SVGFEMergeNodeElement class.
+/// [`SVGFEMergeNodeElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeNodeElement)
 class SVGFEMergeNodeElement : public SVGElement {
     explicit SVGFEMergeNodeElement(Handle h) noexcept;
 
@@ -15,7 +17,9 @@ public:
     explicit SVGFEMergeNodeElement(const emlite::Val &val) noexcept;
     static SVGFEMergeNodeElement take_ownership(Handle h) noexcept;
 
-    SVGFEMergeNodeElement clone() const noexcept;
-    SVGAnimatedString in1() const;
+    [[nodiscard]] SVGFEMergeNodeElement clone() const noexcept;
+    /// Getter of the `in1` attribute.
+    /// [`SVGFEMergeNodeElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeNodeElement/in1)
+    [[nodiscard]] SVGAnimatedString in1() const;
 };
 

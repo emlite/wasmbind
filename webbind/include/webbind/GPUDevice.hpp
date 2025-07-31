@@ -45,12 +45,12 @@ public:
     static GPUBufferDescriptor take_ownership(Handle h) noexcept;
     explicit GPUBufferDescriptor(const emlite::Val &val) noexcept;
     GPUBufferDescriptor() noexcept;
-    GPUBufferDescriptor clone() const noexcept;
-    jsbind::Any size() const;
+    [[nodiscard]] GPUBufferDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::Any size() const;
     void size(const jsbind::Any& value);
-    jsbind::Any usage() const;
+    [[nodiscard]] jsbind::Any usage() const;
     void usage(const jsbind::Any& value);
-    bool mappedAtCreation() const;
+    [[nodiscard]] bool mappedAtCreation() const;
     void mappedAtCreation(bool value);
 };
 
@@ -60,20 +60,20 @@ public:
     static GPUTextureDescriptor take_ownership(Handle h) noexcept;
     explicit GPUTextureDescriptor(const emlite::Val &val) noexcept;
     GPUTextureDescriptor() noexcept;
-    GPUTextureDescriptor clone() const noexcept;
-    jsbind::Any size() const;
+    [[nodiscard]] GPUTextureDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::Any size() const;
     void size(const jsbind::Any& value);
-    jsbind::Any mipLevelCount() const;
+    [[nodiscard]] jsbind::Any mipLevelCount() const;
     void mipLevelCount(const jsbind::Any& value);
-    jsbind::Any sampleCount() const;
+    [[nodiscard]] jsbind::Any sampleCount() const;
     void sampleCount(const jsbind::Any& value);
-    GPUTextureDimension dimension() const;
+    [[nodiscard]] GPUTextureDimension dimension() const;
     void dimension(const GPUTextureDimension& value);
-    GPUTextureFormat format() const;
+    [[nodiscard]] GPUTextureFormat format() const;
     void format(const GPUTextureFormat& value);
-    jsbind::Any usage() const;
+    [[nodiscard]] jsbind::Any usage() const;
     void usage(const jsbind::Any& value);
-    jsbind::TypedArray<GPUTextureFormat> viewFormats() const;
+    [[nodiscard]] jsbind::TypedArray<GPUTextureFormat> viewFormats() const;
     void viewFormats(const jsbind::TypedArray<GPUTextureFormat>& value);
 };
 
@@ -83,26 +83,26 @@ public:
     static GPUSamplerDescriptor take_ownership(Handle h) noexcept;
     explicit GPUSamplerDescriptor(const emlite::Val &val) noexcept;
     GPUSamplerDescriptor() noexcept;
-    GPUSamplerDescriptor clone() const noexcept;
-    GPUAddressMode addressModeU() const;
+    [[nodiscard]] GPUSamplerDescriptor clone() const noexcept;
+    [[nodiscard]] GPUAddressMode addressModeU() const;
     void addressModeU(const GPUAddressMode& value);
-    GPUAddressMode addressModeV() const;
+    [[nodiscard]] GPUAddressMode addressModeV() const;
     void addressModeV(const GPUAddressMode& value);
-    GPUAddressMode addressModeW() const;
+    [[nodiscard]] GPUAddressMode addressModeW() const;
     void addressModeW(const GPUAddressMode& value);
-    GPUFilterMode magFilter() const;
+    [[nodiscard]] GPUFilterMode magFilter() const;
     void magFilter(const GPUFilterMode& value);
-    GPUFilterMode minFilter() const;
+    [[nodiscard]] GPUFilterMode minFilter() const;
     void minFilter(const GPUFilterMode& value);
-    GPUMipmapFilterMode mipmapFilter() const;
+    [[nodiscard]] GPUMipmapFilterMode mipmapFilter() const;
     void mipmapFilter(const GPUMipmapFilterMode& value);
-    float lodMinClamp() const;
+    [[nodiscard]] float lodMinClamp() const;
     void lodMinClamp(float value);
-    float lodMaxClamp() const;
+    [[nodiscard]] float lodMaxClamp() const;
     void lodMaxClamp(float value);
-    GPUCompareFunction compare() const;
+    [[nodiscard]] GPUCompareFunction compare() const;
     void compare(const GPUCompareFunction& value);
-    unsigned short maxAnisotropy() const;
+    [[nodiscard]] unsigned short maxAnisotropy() const;
     void maxAnisotropy(unsigned short value);
 };
 
@@ -112,10 +112,10 @@ public:
     static GPUExternalTextureDescriptor take_ownership(Handle h) noexcept;
     explicit GPUExternalTextureDescriptor(const emlite::Val &val) noexcept;
     GPUExternalTextureDescriptor() noexcept;
-    GPUExternalTextureDescriptor clone() const noexcept;
-    jsbind::Any source() const;
+    [[nodiscard]] GPUExternalTextureDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::Any source() const;
     void source(const jsbind::Any& value);
-    PredefinedColorSpace colorSpace() const;
+    [[nodiscard]] PredefinedColorSpace colorSpace() const;
     void colorSpace(const PredefinedColorSpace& value);
 };
 
@@ -125,8 +125,8 @@ public:
     static GPUBindGroupLayoutDescriptor take_ownership(Handle h) noexcept;
     explicit GPUBindGroupLayoutDescriptor(const emlite::Val &val) noexcept;
     GPUBindGroupLayoutDescriptor() noexcept;
-    GPUBindGroupLayoutDescriptor clone() const noexcept;
-    jsbind::TypedArray<jsbind::Any> entries() const;
+    [[nodiscard]] GPUBindGroupLayoutDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> entries() const;
     void entries(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
@@ -136,8 +136,8 @@ public:
     static GPUPipelineLayoutDescriptor take_ownership(Handle h) noexcept;
     explicit GPUPipelineLayoutDescriptor(const emlite::Val &val) noexcept;
     GPUPipelineLayoutDescriptor() noexcept;
-    GPUPipelineLayoutDescriptor clone() const noexcept;
-    jsbind::TypedArray<GPUBindGroupLayout> bindGroupLayouts() const;
+    [[nodiscard]] GPUPipelineLayoutDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::TypedArray<GPUBindGroupLayout> bindGroupLayouts() const;
     void bindGroupLayouts(const jsbind::TypedArray<GPUBindGroupLayout>& value);
 };
 
@@ -147,10 +147,10 @@ public:
     static GPUBindGroupDescriptor take_ownership(Handle h) noexcept;
     explicit GPUBindGroupDescriptor(const emlite::Val &val) noexcept;
     GPUBindGroupDescriptor() noexcept;
-    GPUBindGroupDescriptor clone() const noexcept;
-    GPUBindGroupLayout layout() const;
+    [[nodiscard]] GPUBindGroupDescriptor clone() const noexcept;
+    [[nodiscard]] GPUBindGroupLayout layout() const;
     void layout(const GPUBindGroupLayout& value);
-    jsbind::TypedArray<jsbind::Any> entries() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> entries() const;
     void entries(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
@@ -160,10 +160,10 @@ public:
     static GPUShaderModuleDescriptor take_ownership(Handle h) noexcept;
     explicit GPUShaderModuleDescriptor(const emlite::Val &val) noexcept;
     GPUShaderModuleDescriptor() noexcept;
-    GPUShaderModuleDescriptor clone() const noexcept;
-    jsbind::String code() const;
+    [[nodiscard]] GPUShaderModuleDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::String code() const;
     void code(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::Any> compilationHints() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> compilationHints() const;
     void compilationHints(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
@@ -173,8 +173,8 @@ public:
     static GPUComputePipelineDescriptor take_ownership(Handle h) noexcept;
     explicit GPUComputePipelineDescriptor(const emlite::Val &val) noexcept;
     GPUComputePipelineDescriptor() noexcept;
-    GPUComputePipelineDescriptor clone() const noexcept;
-    jsbind::Any compute() const;
+    [[nodiscard]] GPUComputePipelineDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::Any compute() const;
     void compute(const jsbind::Any& value);
 };
 
@@ -184,16 +184,16 @@ public:
     static GPURenderPipelineDescriptor take_ownership(Handle h) noexcept;
     explicit GPURenderPipelineDescriptor(const emlite::Val &val) noexcept;
     GPURenderPipelineDescriptor() noexcept;
-    GPURenderPipelineDescriptor clone() const noexcept;
-    jsbind::Any vertex() const;
+    [[nodiscard]] GPURenderPipelineDescriptor clone() const noexcept;
+    [[nodiscard]] jsbind::Any vertex() const;
     void vertex(const jsbind::Any& value);
-    jsbind::Any primitive() const;
+    [[nodiscard]] jsbind::Any primitive() const;
     void primitive(const jsbind::Any& value);
-    jsbind::Any depthStencil() const;
+    [[nodiscard]] jsbind::Any depthStencil() const;
     void depthStencil(const jsbind::Any& value);
-    jsbind::Any multisample() const;
+    [[nodiscard]] jsbind::Any multisample() const;
     void multisample(const jsbind::Any& value);
-    jsbind::Any fragment() const;
+    [[nodiscard]] jsbind::Any fragment() const;
     void fragment(const jsbind::Any& value);
 };
 
@@ -203,7 +203,7 @@ public:
     static GPUCommandEncoderDescriptor take_ownership(Handle h) noexcept;
     explicit GPUCommandEncoderDescriptor(const emlite::Val &val) noexcept;
     GPUCommandEncoderDescriptor() noexcept;
-    GPUCommandEncoderDescriptor clone() const noexcept;
+    [[nodiscard]] GPUCommandEncoderDescriptor clone() const noexcept;
 };
 
 class GPURenderBundleEncoderDescriptor : public emlite::Val {
@@ -212,10 +212,10 @@ public:
     static GPURenderBundleEncoderDescriptor take_ownership(Handle h) noexcept;
     explicit GPURenderBundleEncoderDescriptor(const emlite::Val &val) noexcept;
     GPURenderBundleEncoderDescriptor() noexcept;
-    GPURenderBundleEncoderDescriptor clone() const noexcept;
-    bool depthReadOnly() const;
+    [[nodiscard]] GPURenderBundleEncoderDescriptor clone() const noexcept;
+    [[nodiscard]] bool depthReadOnly() const;
     void depthReadOnly(bool value);
-    bool stencilReadOnly() const;
+    [[nodiscard]] bool stencilReadOnly() const;
     void stencilReadOnly(bool value);
 };
 
@@ -225,13 +225,15 @@ public:
     static GPUQuerySetDescriptor take_ownership(Handle h) noexcept;
     explicit GPUQuerySetDescriptor(const emlite::Val &val) noexcept;
     GPUQuerySetDescriptor() noexcept;
-    GPUQuerySetDescriptor clone() const noexcept;
-    GPUQueryType type() const;
+    [[nodiscard]] GPUQuerySetDescriptor clone() const noexcept;
+    [[nodiscard]] GPUQueryType type() const;
     void type(const GPUQueryType& value);
-    jsbind::Any count() const;
+    [[nodiscard]] jsbind::Any count() const;
     void count(const jsbind::Any& value);
 };
 
+/// The GPUDevice class.
+/// [`GPUDevice`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice)
 class GPUDevice : public EventTarget {
     explicit GPUDevice(Handle h) noexcept;
 
@@ -239,35 +241,93 @@ public:
     explicit GPUDevice(const emlite::Val &val) noexcept;
     static GPUDevice take_ownership(Handle h) noexcept;
 
-    GPUDevice clone() const noexcept;
-    GPUSupportedFeatures features() const;
-    GPUSupportedLimits limits() const;
-    GPUAdapterInfo adapterInfo() const;
-    GPUQueue queue() const;
+    [[nodiscard]] GPUDevice clone() const noexcept;
+    /// Getter of the `features` attribute.
+    /// [`GPUDevice.features`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/features)
+    [[nodiscard]] GPUSupportedFeatures features() const;
+    /// Getter of the `limits` attribute.
+    /// [`GPUDevice.limits`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/limits)
+    [[nodiscard]] GPUSupportedLimits limits() const;
+    /// Getter of the `adapterInfo` attribute.
+    /// [`GPUDevice.adapterInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/adapterInfo)
+    [[nodiscard]] GPUAdapterInfo adapterInfo() const;
+    /// Getter of the `queue` attribute.
+    /// [`GPUDevice.queue`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/queue)
+    [[nodiscard]] GPUQueue queue() const;
+    /// The destroy method.
+    /// [`GPUDevice.destroy`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/destroy)
     jsbind::Undefined destroy();
+    /// The createBuffer method.
+    /// [`GPUDevice.createBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBuffer)
     GPUBuffer createBuffer(const GPUBufferDescriptor& descriptor);
+    /// The createTexture method.
+    /// [`GPUDevice.createTexture`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createTexture)
     GPUTexture createTexture(const GPUTextureDescriptor& descriptor);
+    /// The createSampler method.
+    /// [`GPUDevice.createSampler`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createSampler)
     GPUSampler createSampler();
+    /// The createSampler method.
+    /// [`GPUDevice.createSampler`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createSampler)
     GPUSampler createSampler(const GPUSamplerDescriptor& descriptor);
+    /// The importExternalTexture method.
+    /// [`GPUDevice.importExternalTexture`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/importExternalTexture)
     GPUExternalTexture importExternalTexture(const GPUExternalTextureDescriptor& descriptor);
+    /// The createBindGroupLayout method.
+    /// [`GPUDevice.createBindGroupLayout`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroupLayout)
     GPUBindGroupLayout createBindGroupLayout(const GPUBindGroupLayoutDescriptor& descriptor);
+    /// The createPipelineLayout method.
+    /// [`GPUDevice.createPipelineLayout`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createPipelineLayout)
     GPUPipelineLayout createPipelineLayout(const GPUPipelineLayoutDescriptor& descriptor);
+    /// The createBindGroup method.
+    /// [`GPUDevice.createBindGroup`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroup)
     GPUBindGroup createBindGroup(const GPUBindGroupDescriptor& descriptor);
+    /// The createShaderModule method.
+    /// [`GPUDevice.createShaderModule`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createShaderModule)
     GPUShaderModule createShaderModule(const GPUShaderModuleDescriptor& descriptor);
+    /// The createComputePipeline method.
+    /// [`GPUDevice.createComputePipeline`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createComputePipeline)
     GPUComputePipeline createComputePipeline(const GPUComputePipelineDescriptor& descriptor);
+    /// The createRenderPipeline method.
+    /// [`GPUDevice.createRenderPipeline`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipeline)
     GPURenderPipeline createRenderPipeline(const GPURenderPipelineDescriptor& descriptor);
+    /// The createComputePipelineAsync method.
+    /// [`GPUDevice.createComputePipelineAsync`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createComputePipelineAsync)
     jsbind::Promise<GPUComputePipeline> createComputePipelineAsync(const GPUComputePipelineDescriptor& descriptor);
+    /// The createRenderPipelineAsync method.
+    /// [`GPUDevice.createRenderPipelineAsync`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipelineAsync)
     jsbind::Promise<GPURenderPipeline> createRenderPipelineAsync(const GPURenderPipelineDescriptor& descriptor);
+    /// The createCommandEncoder method.
+    /// [`GPUDevice.createCommandEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createCommandEncoder)
     GPUCommandEncoder createCommandEncoder();
+    /// The createCommandEncoder method.
+    /// [`GPUDevice.createCommandEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createCommandEncoder)
     GPUCommandEncoder createCommandEncoder(const GPUCommandEncoderDescriptor& descriptor);
+    /// The createRenderBundleEncoder method.
+    /// [`GPUDevice.createRenderBundleEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderBundleEncoder)
     GPURenderBundleEncoder createRenderBundleEncoder(const GPURenderBundleEncoderDescriptor& descriptor);
+    /// The createQuerySet method.
+    /// [`GPUDevice.createQuerySet`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createQuerySet)
     GPUQuerySet createQuerySet(const GPUQuerySetDescriptor& descriptor);
-    jsbind::Promise<GPUDeviceLostInfo> lost() const;
+    /// Getter of the `lost` attribute.
+    /// [`GPUDevice.lost`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/lost)
+    [[nodiscard]] jsbind::Promise<GPUDeviceLostInfo> lost() const;
+    /// The pushErrorScope method.
+    /// [`GPUDevice.pushErrorScope`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/pushErrorScope)
     jsbind::Undefined pushErrorScope(const GPUErrorFilter& filter);
+    /// The popErrorScope method.
+    /// [`GPUDevice.popErrorScope`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/popErrorScope)
     jsbind::Promise<GPUError> popErrorScope();
-    jsbind::Any onuncapturederror() const;
+    /// Getter of the `onuncapturederror` attribute.
+    /// [`GPUDevice.onuncapturederror`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/onuncapturederror)
+    [[nodiscard]] jsbind::Any onuncapturederror() const;
+    /// Setter of the `onuncapturederror` attribute.
+    /// [`GPUDevice.onuncapturederror`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/onuncapturederror)
     void onuncapturederror(const jsbind::Any& value);
-    jsbind::String label() const;
+    /// Getter of the `label` attribute.
+    /// [`GPUDevice.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/label)
+    [[nodiscard]] jsbind::String label() const;
+    /// Setter of the `label` attribute.
+    /// [`GPUDevice.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/label)
     void label(const jsbind::String& value);
 };
 

@@ -14,16 +14,16 @@ public:
     static EffectTiming take_ownership(Handle h) noexcept;
     explicit EffectTiming(const emlite::Val &val) noexcept;
     EffectTiming() noexcept;
-    EffectTiming clone() const noexcept;
-    FillMode fill() const;
+    [[nodiscard]] EffectTiming clone() const noexcept;
+    [[nodiscard]] FillMode fill() const;
     void fill(const FillMode& value);
-    double iterationStart() const;
+    [[nodiscard]] double iterationStart() const;
     void iterationStart(double value);
-    double iterations() const;
+    [[nodiscard]] double iterations() const;
     void iterations(double value);
-    PlaybackDirection direction() const;
+    [[nodiscard]] PlaybackDirection direction() const;
     void direction(const PlaybackDirection& value);
-    jsbind::String easing() const;
+    [[nodiscard]] jsbind::String easing() const;
     void easing(const jsbind::String& value);
 };
 
@@ -33,13 +33,15 @@ public:
     static ComputedEffectTiming take_ownership(Handle h) noexcept;
     explicit ComputedEffectTiming(const emlite::Val &val) noexcept;
     ComputedEffectTiming() noexcept;
-    ComputedEffectTiming clone() const noexcept;
-    double progress() const;
+    [[nodiscard]] ComputedEffectTiming clone() const noexcept;
+    [[nodiscard]] double progress() const;
     void progress(double value);
-    double currentIteration() const;
+    [[nodiscard]] double currentIteration() const;
     void currentIteration(double value);
 };
 
+/// The WorkletAnimationEffect class.
+/// [`WorkletAnimationEffect`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect)
 class WorkletAnimationEffect : public emlite::Val {
     explicit WorkletAnimationEffect(Handle h) noexcept;
 
@@ -47,10 +49,18 @@ public:
     explicit WorkletAnimationEffect(const emlite::Val &val) noexcept;
     static WorkletAnimationEffect take_ownership(Handle h) noexcept;
 
-    WorkletAnimationEffect clone() const noexcept;
+    [[nodiscard]] WorkletAnimationEffect clone() const noexcept;
+    /// The getTiming method.
+    /// [`WorkletAnimationEffect.getTiming`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/getTiming)
     EffectTiming getTiming();
+    /// The getComputedTiming method.
+    /// [`WorkletAnimationEffect.getComputedTiming`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/getComputedTiming)
     ComputedEffectTiming getComputedTiming();
-    double localTime() const;
+    /// Getter of the `localTime` attribute.
+    /// [`WorkletAnimationEffect.localTime`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/localTime)
+    [[nodiscard]] double localTime() const;
+    /// Setter of the `localTime` attribute.
+    /// [`WorkletAnimationEffect.localTime`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/localTime)
     void localTime(double value);
 };
 

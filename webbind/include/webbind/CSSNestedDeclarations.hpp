@@ -8,6 +8,8 @@
 class CSSStyleProperties;
 
 
+/// The CSSNestedDeclarations class.
+/// [`CSSNestedDeclarations`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNestedDeclarations)
 class CSSNestedDeclarations : public CSSRule {
     explicit CSSNestedDeclarations(Handle h) noexcept;
 
@@ -15,7 +17,9 @@ public:
     explicit CSSNestedDeclarations(const emlite::Val &val) noexcept;
     static CSSNestedDeclarations take_ownership(Handle h) noexcept;
 
-    CSSNestedDeclarations clone() const noexcept;
-    CSSStyleProperties style() const;
+    [[nodiscard]] CSSNestedDeclarations clone() const noexcept;
+    /// Getter of the `style` attribute.
+    /// [`CSSNestedDeclarations.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNestedDeclarations/style)
+    [[nodiscard]] CSSStyleProperties style() const;
 };
 

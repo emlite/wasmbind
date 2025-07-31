@@ -38,17 +38,17 @@ class Function : public emlite::Val {
 
     template <class = void>
     struct Fn {
-        emlite::Val f;
+        emlite::Val _f;
         Fn(Callback f,
            const emlite::Val &data = emlite::Val::null()
         ) noexcept
-            : f(emlite::Val::make_fn(f, data)) {}
+            : _f(emlite::Val::make_fn(f, data)) {}
         Fn(emlite::Closure<Val(emlite::Params)> &&f
         ) noexcept
-            : f(emlite::Val::make_fn(
-                  (emlite::Closure<Val(emlite::Params)> &&)f
+            : _f(emlite::Val::make_fn(
+                  emlite::detail::move(f)
               )) {}
-        operator Function() const { return Function(f); }
+        operator Function() const { return Function(_f); }
     };
     template <typename Ret, typename... Args>
     struct Fn<Ret(Args...)> {

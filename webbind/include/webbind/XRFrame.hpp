@@ -26,6 +26,8 @@ class XRLightProbe;
 class XRPlaneSet;
 
 
+/// The XRFrame class.
+/// [`XRFrame`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame)
 class XRFrame : public emlite::Val {
     explicit XRFrame(Handle h) noexcept;
 
@@ -33,21 +35,51 @@ public:
     explicit XRFrame(const emlite::Val &val) noexcept;
     static XRFrame take_ownership(Handle h) noexcept;
 
-    XRFrame clone() const noexcept;
-    XRSession session() const;
-    jsbind::Any predictedDisplayTime() const;
+    [[nodiscard]] XRFrame clone() const noexcept;
+    /// Getter of the `session` attribute.
+    /// [`XRFrame.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session)
+    [[nodiscard]] XRSession session() const;
+    /// Getter of the `predictedDisplayTime` attribute.
+    /// [`XRFrame.predictedDisplayTime`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/predictedDisplayTime)
+    [[nodiscard]] jsbind::Any predictedDisplayTime() const;
+    /// The getViewerPose method.
+    /// [`XRFrame.getViewerPose`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getViewerPose)
     XRViewerPose getViewerPose(const XRReferenceSpace& referenceSpace);
+    /// The getPose method.
+    /// [`XRFrame.getPose`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getPose)
     XRPose getPose(const XRSpace& space, const XRSpace& baseSpace);
+    /// The createAnchor method.
+    /// [`XRFrame.createAnchor`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/createAnchor)
     jsbind::Promise<XRAnchor> createAnchor(const XRRigidTransform& pose, const XRSpace& space);
-    XRAnchorSet trackedAnchors() const;
-    XRMeshSet detectedMeshes() const;
+    /// Getter of the `trackedAnchors` attribute.
+    /// [`XRFrame.trackedAnchors`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/trackedAnchors)
+    [[nodiscard]] XRAnchorSet trackedAnchors() const;
+    /// Getter of the `detectedMeshes` attribute.
+    /// [`XRFrame.detectedMeshes`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/detectedMeshes)
+    [[nodiscard]] XRMeshSet detectedMeshes() const;
+    /// The getDepthInformation method.
+    /// [`XRFrame.getDepthInformation`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getDepthInformation)
     XRCPUDepthInformation getDepthInformation(const XRView& view);
+    /// The getJointPose method.
+    /// [`XRFrame.getJointPose`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getJointPose)
     XRJointPose getJointPose(const XRJointSpace& joint, const XRSpace& baseSpace);
+    /// The fillJointRadii method.
+    /// [`XRFrame.fillJointRadii`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/fillJointRadii)
     bool fillJointRadii(const jsbind::TypedArray<XRJointSpace>& jointSpaces, const jsbind::Float32Array& radii);
+    /// The fillPoses method.
+    /// [`XRFrame.fillPoses`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/fillPoses)
     bool fillPoses(const jsbind::TypedArray<XRSpace>& spaces, const XRSpace& baseSpace, const jsbind::Float32Array& transforms);
+    /// The getHitTestResults method.
+    /// [`XRFrame.getHitTestResults`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getHitTestResults)
     jsbind::TypedArray<XRHitTestResult> getHitTestResults(const XRHitTestSource& hitTestSource);
+    /// The getHitTestResultsForTransientInput method.
+    /// [`XRFrame.getHitTestResultsForTransientInput`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getHitTestResultsForTransientInput)
     jsbind::TypedArray<XRTransientInputHitTestResult> getHitTestResultsForTransientInput(const XRTransientInputHitTestSource& hitTestSource);
+    /// The getLightEstimate method.
+    /// [`XRFrame.getLightEstimate`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getLightEstimate)
     XRLightEstimate getLightEstimate(const XRLightProbe& lightProbe);
-    XRPlaneSet detectedPlanes() const;
+    /// Getter of the `detectedPlanes` attribute.
+    /// [`XRFrame.detectedPlanes`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/detectedPlanes)
+    [[nodiscard]] XRPlaneSet detectedPlanes() const;
 };
 

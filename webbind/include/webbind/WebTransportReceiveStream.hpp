@@ -14,13 +14,15 @@ public:
     static WebTransportReceiveStreamStats take_ownership(Handle h) noexcept;
     explicit WebTransportReceiveStreamStats(const emlite::Val &val) noexcept;
     WebTransportReceiveStreamStats() noexcept;
-    WebTransportReceiveStreamStats clone() const noexcept;
-    long long bytesReceived() const;
+    [[nodiscard]] WebTransportReceiveStreamStats clone() const noexcept;
+    [[nodiscard]] long long bytesReceived() const;
     void bytesReceived(long long value);
-    long long bytesRead() const;
+    [[nodiscard]] long long bytesRead() const;
     void bytesRead(long long value);
 };
 
+/// The WebTransportReceiveStream class.
+/// [`WebTransportReceiveStream`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportReceiveStream)
 class WebTransportReceiveStream : public ReadableStream {
     explicit WebTransportReceiveStream(Handle h) noexcept;
 
@@ -28,7 +30,9 @@ public:
     explicit WebTransportReceiveStream(const emlite::Val &val) noexcept;
     static WebTransportReceiveStream take_ownership(Handle h) noexcept;
 
-    WebTransportReceiveStream clone() const noexcept;
+    [[nodiscard]] WebTransportReceiveStream clone() const noexcept;
+    /// The getStats method.
+    /// [`WebTransportReceiveStream.getStats`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportReceiveStream/getStats)
     jsbind::Promise<WebTransportReceiveStreamStats> getStats();
 };
 

@@ -8,6 +8,8 @@
 class CSSParserValue;
 
 
+/// The CSSParserQualifiedRule class.
+/// [`CSSParserQualifiedRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule)
 class CSSParserQualifiedRule : public CSSParserRule {
     explicit CSSParserQualifiedRule(Handle h) noexcept;
 
@@ -15,10 +17,16 @@ public:
     explicit CSSParserQualifiedRule(const emlite::Val &val) noexcept;
     static CSSParserQualifiedRule take_ownership(Handle h) noexcept;
 
-    CSSParserQualifiedRule clone() const noexcept;
+    [[nodiscard]] CSSParserQualifiedRule clone() const noexcept;
+    /// The `new CSSParserQualifiedRule(..)` constructor, creating a new CSSParserQualifiedRule instance
     CSSParserQualifiedRule(const jsbind::TypedArray<jsbind::Any>& prelude);
+    /// The `new CSSParserQualifiedRule(..)` constructor, creating a new CSSParserQualifiedRule instance
     CSSParserQualifiedRule(const jsbind::TypedArray<jsbind::Any>& prelude, const jsbind::TypedArray<CSSParserRule>& body);
-    jsbind::TypedArray<CSSParserValue> prelude() const;
-    jsbind::TypedArray<CSSParserRule> body() const;
+    /// Getter of the `prelude` attribute.
+    /// [`CSSParserQualifiedRule.prelude`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule/prelude)
+    [[nodiscard]] jsbind::TypedArray<CSSParserValue> prelude() const;
+    /// Getter of the `body` attribute.
+    /// [`CSSParserQualifiedRule.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule/body)
+    [[nodiscard]] jsbind::TypedArray<CSSParserRule> body() const;
 };
 

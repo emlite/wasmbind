@@ -8,6 +8,8 @@
 class AudioParam;
 
 
+/// The GainNode class.
+/// [`GainNode`](https://developer.mozilla.org/en-US/docs/Web/API/GainNode)
 class GainNode : public AudioNode {
     explicit GainNode(Handle h) noexcept;
 
@@ -15,9 +17,13 @@ public:
     explicit GainNode(const emlite::Val &val) noexcept;
     static GainNode take_ownership(Handle h) noexcept;
 
-    GainNode clone() const noexcept;
+    [[nodiscard]] GainNode clone() const noexcept;
+    /// The `new GainNode(..)` constructor, creating a new GainNode instance
     GainNode(const BaseAudioContext& context);
+    /// The `new GainNode(..)` constructor, creating a new GainNode instance
     GainNode(const BaseAudioContext& context, const jsbind::Any& options);
-    AudioParam gain() const;
+    /// Getter of the `gain` attribute.
+    /// [`GainNode.gain`](https://developer.mozilla.org/en-US/docs/Web/API/GainNode/gain)
+    [[nodiscard]] AudioParam gain() const;
 };
 

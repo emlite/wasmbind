@@ -14,17 +14,19 @@ public:
     static DetectedBarcode take_ownership(Handle h) noexcept;
     explicit DetectedBarcode(const emlite::Val &val) noexcept;
     DetectedBarcode() noexcept;
-    DetectedBarcode clone() const noexcept;
-    DOMRectReadOnly boundingBox() const;
+    [[nodiscard]] DetectedBarcode clone() const noexcept;
+    [[nodiscard]] DOMRectReadOnly boundingBox() const;
     void boundingBox(const DOMRectReadOnly& value);
-    jsbind::String rawValue() const;
+    [[nodiscard]] jsbind::String rawValue() const;
     void rawValue(const jsbind::String& value);
-    BarcodeFormat format() const;
+    [[nodiscard]] BarcodeFormat format() const;
     void format(const BarcodeFormat& value);
-    jsbind::TypedArray<jsbind::Any> cornerPoints() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> cornerPoints() const;
     void cornerPoints(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
+/// The BarcodeDetector class.
+/// [`BarcodeDetector`](https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector)
 class BarcodeDetector : public emlite::Val {
     explicit BarcodeDetector(Handle h) noexcept;
 
@@ -32,10 +34,16 @@ public:
     explicit BarcodeDetector(const emlite::Val &val) noexcept;
     static BarcodeDetector take_ownership(Handle h) noexcept;
 
-    BarcodeDetector clone() const noexcept;
+    [[nodiscard]] BarcodeDetector clone() const noexcept;
+    /// The `new BarcodeDetector(..)` constructor, creating a new BarcodeDetector instance
     BarcodeDetector();
+    /// The `new BarcodeDetector(..)` constructor, creating a new BarcodeDetector instance
     BarcodeDetector(const jsbind::Any& barcodeDetectorOptions);
+    /// The getSupportedFormats method.
+    /// [`BarcodeDetector.getSupportedFormats`](https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector/getSupportedFormats)
     static jsbind::Promise<jsbind::TypedArray<BarcodeFormat>> getSupportedFormats();
+    /// The detect method.
+    /// [`BarcodeDetector.detect`](https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector/detect)
     jsbind::Promise<jsbind::TypedArray<DetectedBarcode>> detect(const jsbind::Any& image);
 };
 

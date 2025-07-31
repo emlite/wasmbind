@@ -15,7 +15,7 @@ import {
   callbacks,
 } from "./globals.js";
 
-function emitAttr(attr, owner, isStatic = false, parent0) {
+function emitAttr(attr, owner, isStatic = false, parent0, isInterface = false) {
   const H = [],
     S = [];
   const type = cpp(attr.idlType);
@@ -24,7 +24,19 @@ function emitAttr(attr, owner, isStatic = false, parent0) {
 
   let parent = parent0 ? parent0 : "emlite::Val";
 
-  H.push(`    ${staticKw}${type} ${fixIdent(attr.name)}()${constQual};`);
+  if (isInterface) {
+    if (isStatic)
+      H.push(
+        `    /// Getter of the \`${attr.name}\` static attribute.`,
+        `    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`
+      );
+    else
+      H.push(
+        `    /// Getter of the \`${attr.name}\` attribute.`,
+        `    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`
+      );
+  }
+  H.push(`    [[nodiscard]] ${staticKw}${type} ${fixIdent(attr.name)}()${constQual};`);
 
   if (isStatic) {
     S.push(
@@ -44,6 +56,11 @@ function emitAttr(attr, owner, isStatic = false, parent0) {
     );
 
     if (!attr.readonly) {
+      if (isInterface)
+        H.push(
+          `    /// Setter of the \`${attr.name}\` attribute.`,
+          `    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`
+        );
       H.push(`    void ${fixIdent(attr.name)}(${argtypeFix(type)} value);`);
       S.push(
         `void ${owner}::${fixIdent(attr.name)}(${argtypeFix(type)} value) {`,
@@ -76,6 +93,10 @@ function emitOp(op, owner, isStatic = false, parent0) {
         })`
       : `${parent}::call("${op.name}"${callArgs ? ", " + callArgs : ""})`;
 
+    H.push(
+        `    /// The ${op.name} method.`,
+        `    /// [\`${owner}.${op.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${op.name})`
+      );
     H.push(`    ${staticKw}${ret} ${cppName}(${declHdr});`);
 
     S.push(
@@ -98,6 +119,8 @@ function emitCtor(ctor, owner, parent) {
     const declSrc = declHdr;
     const callArgs = v.map((a) => fixIdent(a.name)).join(", ");
 
+    H.push(
+      `    /// The \`new ${owner}(..)\` constructor, creating a new ${owner} instance`);
     H.push(`    ${owner}(${declHdr});`);
 
     S.push(
@@ -121,7 +144,7 @@ function embedDict(dict, hdr, src, ownerName) {
     `    static ${dict.name} take_ownership(Handle h) noexcept;`,
     `    explicit ${dict.name}(const emlite::Val &val) noexcept;`,
     `    ${dict.name}() noexcept;`,
-    `    ${dict.name} clone() const noexcept;`
+    `    [[nodiscard]] ${dict.name} clone() const noexcept;`
   );
   src.push(
     `${dict.name}::${dict.name}(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}`,
@@ -238,7 +261,7 @@ export function generate(specAst) {
         `${e.name}::${e.name}(const emlite::Val &v) noexcept : emlite::Val(v) {}`
       );
       hdr.push(`  static ${e.name} take_ownership(Handle h) noexcept;`);
-      hdr.push(`    ${e.name} clone() const noexcept;`);
+      hdr.push(`    [[nodiscard]] ${e.name} clone() const noexcept;`);
       src.push(
         `${e.name} ${e.name}::take_ownership(Handle h) noexcept { return ${e.name}(h); }`
       );
@@ -252,9 +275,9 @@ export function generate(specAst) {
     for (const e of enums.values()) {
       for (const v of e.values) {
         src.push(
-          `const ${e.name} ${e.name}::${fixIdent(v.value)}(){ return ${e.name}(emlite::Val("${
-            v.value
-          }")); };`
+          `const ${e.name} ${e.name}::${fixIdent(v.value)}(){ return ${
+            e.name
+          }(emlite::Val("${v.value}")); };`
         );
       }
     }
@@ -352,6 +375,8 @@ export function generate(specAst) {
 
     localDicts.forEach((d) => embedDict(d, hdr, src, iname));
 
+    hdr.push(`/// The ${iname} class.`,
+    `/// [\`${iname}\`](https://developer.mozilla.org/en-US/docs/Web/API/${iname})`);
     hdr.push(
       parent
         ? `class ${iname} : public ${parent} {`
@@ -364,7 +389,7 @@ export function generate(specAst) {
     hdr.push("public:");
     hdr.push(`    explicit ${iname}(const emlite::Val &val) noexcept;`);
     hdr.push(`    static ${iname} take_ownership(Handle h) noexcept;\n`);
-    hdr.push(`    ${iname} clone() const noexcept;`);
+    hdr.push(`    [[nodiscard]] ${iname} clone() const noexcept;`);
     src.push(`${iname} ${iname}::take_ownership(Handle h) noexcept {
         return ${iname}(h);
     }`);
@@ -386,7 +411,7 @@ export function generate(specAst) {
     rec.members.forEach((m) => {
       const isStatic = m.static === true || m.special === "static";
       if (m.type === "attribute") {
-        const { H, S } = emitAttr(m, iname, isStatic, parent);
+        const { H, S } = emitAttr(m, iname, isStatic, parent, true);
         hdr.push(...H);
         src.push(...S);
       } else if (m.type === "operation") {

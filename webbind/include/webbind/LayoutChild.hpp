@@ -17,27 +17,29 @@ public:
     static LayoutConstraintsOptions take_ownership(Handle h) noexcept;
     explicit LayoutConstraintsOptions(const emlite::Val &val) noexcept;
     LayoutConstraintsOptions() noexcept;
-    LayoutConstraintsOptions clone() const noexcept;
-    double availableInlineSize() const;
+    [[nodiscard]] LayoutConstraintsOptions clone() const noexcept;
+    [[nodiscard]] double availableInlineSize() const;
     void availableInlineSize(double value);
-    double availableBlockSize() const;
+    [[nodiscard]] double availableBlockSize() const;
     void availableBlockSize(double value);
-    double fixedInlineSize() const;
+    [[nodiscard]] double fixedInlineSize() const;
     void fixedInlineSize(double value);
-    double fixedBlockSize() const;
+    [[nodiscard]] double fixedBlockSize() const;
     void fixedBlockSize(double value);
-    double percentageInlineSize() const;
+    [[nodiscard]] double percentageInlineSize() const;
     void percentageInlineSize(double value);
-    double percentageBlockSize() const;
+    [[nodiscard]] double percentageBlockSize() const;
     void percentageBlockSize(double value);
-    double blockFragmentationOffset() const;
+    [[nodiscard]] double blockFragmentationOffset() const;
     void blockFragmentationOffset(double value);
-    BlockFragmentationType blockFragmentationType() const;
+    [[nodiscard]] BlockFragmentationType blockFragmentationType() const;
     void blockFragmentationType(const BlockFragmentationType& value);
-    jsbind::Any data() const;
+    [[nodiscard]] jsbind::Any data() const;
     void data(const jsbind::Any& value);
 };
 
+/// The LayoutChild class.
+/// [`LayoutChild`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutChild)
 class LayoutChild : public emlite::Val {
     explicit LayoutChild(Handle h) noexcept;
 
@@ -45,9 +47,15 @@ public:
     explicit LayoutChild(const emlite::Val &val) noexcept;
     static LayoutChild take_ownership(Handle h) noexcept;
 
-    LayoutChild clone() const noexcept;
-    StylePropertyMapReadOnly styleMap() const;
+    [[nodiscard]] LayoutChild clone() const noexcept;
+    /// Getter of the `styleMap` attribute.
+    /// [`LayoutChild.styleMap`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutChild/styleMap)
+    [[nodiscard]] StylePropertyMapReadOnly styleMap() const;
+    /// The intrinsicSizes method.
+    /// [`LayoutChild.intrinsicSizes`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutChild/intrinsicSizes)
     jsbind::Promise<IntrinsicSizes> intrinsicSizes();
+    /// The layoutNextFragment method.
+    /// [`LayoutChild.layoutNextFragment`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutChild/layoutNextFragment)
     jsbind::Promise<LayoutFragment> layoutNextFragment(const LayoutConstraintsOptions& constraints, const ChildBreakToken& breakToken);
 };
 

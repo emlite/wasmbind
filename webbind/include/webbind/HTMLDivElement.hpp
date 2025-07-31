@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLDivElement class.
+/// [`HTMLDivElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement)
 class HTMLDivElement : public HTMLElement {
     explicit HTMLDivElement(Handle h) noexcept;
 
@@ -13,9 +15,14 @@ public:
     explicit HTMLDivElement(const emlite::Val &val) noexcept;
     static HTMLDivElement take_ownership(Handle h) noexcept;
 
-    HTMLDivElement clone() const noexcept;
+    [[nodiscard]] HTMLDivElement clone() const noexcept;
+    /// The `new HTMLDivElement(..)` constructor, creating a new HTMLDivElement instance
     HTMLDivElement();
-    jsbind::String align() const;
+    /// Getter of the `align` attribute.
+    /// [`HTMLDivElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement/align)
+    [[nodiscard]] jsbind::String align() const;
+    /// Setter of the `align` attribute.
+    /// [`HTMLDivElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement/align)
     void align(const jsbind::String& value);
 };
 

@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The AttributionAggregationServices class.
+/// [`AttributionAggregationServices`](https://developer.mozilla.org/en-US/docs/Web/API/AttributionAggregationServices)
 class AttributionAggregationServices : public emlite::Val {
     explicit AttributionAggregationServices(Handle h) noexcept;
 
@@ -12,6 +14,6 @@ public:
     explicit AttributionAggregationServices(const emlite::Val &val) noexcept;
     static AttributionAggregationServices take_ownership(Handle h) noexcept;
 
-    AttributionAggregationServices clone() const noexcept;
+    [[nodiscard]] AttributionAggregationServices clone() const noexcept;
 };
 

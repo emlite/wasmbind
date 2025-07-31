@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The XRSpace class.
+/// [`XRSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRSpace)
 class XRSpace : public EventTarget {
     explicit XRSpace(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit XRSpace(const emlite::Val &val) noexcept;
     static XRSpace take_ownership(Handle h) noexcept;
 
-    XRSpace clone() const noexcept;
+    [[nodiscard]] XRSpace clone() const noexcept;
 };
 

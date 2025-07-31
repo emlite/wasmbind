@@ -9,6 +9,8 @@ class XRSpace;
 class XRRigidTransform;
 
 
+/// The XRCylinderLayer class.
+/// [`XRCylinderLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer)
 class XRCylinderLayer : public XRCompositionLayer {
     explicit XRCylinderLayer(Handle h) noexcept;
 
@@ -16,18 +18,42 @@ public:
     explicit XRCylinderLayer(const emlite::Val &val) noexcept;
     static XRCylinderLayer take_ownership(Handle h) noexcept;
 
-    XRCylinderLayer clone() const noexcept;
-    XRSpace space() const;
+    [[nodiscard]] XRCylinderLayer clone() const noexcept;
+    /// Getter of the `space` attribute.
+    /// [`XRCylinderLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/space)
+    [[nodiscard]] XRSpace space() const;
+    /// Setter of the `space` attribute.
+    /// [`XRCylinderLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/space)
     void space(const XRSpace& value);
-    XRRigidTransform transform() const;
+    /// Getter of the `transform` attribute.
+    /// [`XRCylinderLayer.transform`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/transform)
+    [[nodiscard]] XRRigidTransform transform() const;
+    /// Setter of the `transform` attribute.
+    /// [`XRCylinderLayer.transform`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/transform)
     void transform(const XRRigidTransform& value);
-    float radius() const;
+    /// Getter of the `radius` attribute.
+    /// [`XRCylinderLayer.radius`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/radius)
+    [[nodiscard]] float radius() const;
+    /// Setter of the `radius` attribute.
+    /// [`XRCylinderLayer.radius`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/radius)
     void radius(float value);
-    float centralAngle() const;
+    /// Getter of the `centralAngle` attribute.
+    /// [`XRCylinderLayer.centralAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/centralAngle)
+    [[nodiscard]] float centralAngle() const;
+    /// Setter of the `centralAngle` attribute.
+    /// [`XRCylinderLayer.centralAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/centralAngle)
     void centralAngle(float value);
-    float aspectRatio() const;
+    /// Getter of the `aspectRatio` attribute.
+    /// [`XRCylinderLayer.aspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/aspectRatio)
+    [[nodiscard]] float aspectRatio() const;
+    /// Setter of the `aspectRatio` attribute.
+    /// [`XRCylinderLayer.aspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/aspectRatio)
     void aspectRatio(float value);
-    jsbind::Any onredraw() const;
+    /// Getter of the `onredraw` attribute.
+    /// [`XRCylinderLayer.onredraw`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/onredraw)
+    [[nodiscard]] jsbind::Any onredraw() const;
+    /// Setter of the `onredraw` attribute.
+    /// [`XRCylinderLayer.onredraw`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/onredraw)
     void onredraw(const jsbind::Any& value);
 };
 

@@ -7,6 +7,8 @@
 class USBAlternateInterface;
 
 
+/// The USBEndpoint class.
+/// [`USBEndpoint`](https://developer.mozilla.org/en-US/docs/Web/API/USBEndpoint)
 class USBEndpoint : public emlite::Val {
     explicit USBEndpoint(Handle h) noexcept;
 
@@ -14,11 +16,20 @@ public:
     explicit USBEndpoint(const emlite::Val &val) noexcept;
     static USBEndpoint take_ownership(Handle h) noexcept;
 
-    USBEndpoint clone() const noexcept;
+    [[nodiscard]] USBEndpoint clone() const noexcept;
+    /// The `new USBEndpoint(..)` constructor, creating a new USBEndpoint instance
     USBEndpoint(const USBAlternateInterface& alternate, unsigned char endpointNumber, const USBDirection& direction);
-    unsigned char endpointNumber() const;
-    USBDirection direction() const;
-    USBEndpointType type() const;
-    unsigned long packetSize() const;
+    /// Getter of the `endpointNumber` attribute.
+    /// [`USBEndpoint.endpointNumber`](https://developer.mozilla.org/en-US/docs/Web/API/USBEndpoint/endpointNumber)
+    [[nodiscard]] unsigned char endpointNumber() const;
+    /// Getter of the `direction` attribute.
+    /// [`USBEndpoint.direction`](https://developer.mozilla.org/en-US/docs/Web/API/USBEndpoint/direction)
+    [[nodiscard]] USBDirection direction() const;
+    /// Getter of the `type` attribute.
+    /// [`USBEndpoint.type`](https://developer.mozilla.org/en-US/docs/Web/API/USBEndpoint/type)
+    [[nodiscard]] USBEndpointType type() const;
+    /// Getter of the `packetSize` attribute.
+    /// [`USBEndpoint.packetSize`](https://developer.mozilla.org/en-US/docs/Web/API/USBEndpoint/packetSize)
+    [[nodiscard]] unsigned long packetSize() const;
 };
 

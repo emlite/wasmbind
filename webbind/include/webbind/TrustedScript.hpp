@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The TrustedScript class.
+/// [`TrustedScript`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScript)
 class TrustedScript : public emlite::Val {
     explicit TrustedScript(Handle h) noexcept;
 
@@ -12,7 +14,9 @@ public:
     explicit TrustedScript(const emlite::Val &val) noexcept;
     static TrustedScript take_ownership(Handle h) noexcept;
 
-    TrustedScript clone() const noexcept;
+    [[nodiscard]] TrustedScript clone() const noexcept;
+    /// The toJSON method.
+    /// [`TrustedScript.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScript/toJSON)
     jsbind::String toJSON();
 };
 

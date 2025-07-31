@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The HTMLSpanElement class.
+/// [`HTMLSpanElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSpanElement)
 class HTMLSpanElement : public HTMLElement {
     explicit HTMLSpanElement(Handle h) noexcept;
 
@@ -13,7 +15,8 @@ public:
     explicit HTMLSpanElement(const emlite::Val &val) noexcept;
     static HTMLSpanElement take_ownership(Handle h) noexcept;
 
-    HTMLSpanElement clone() const noexcept;
+    [[nodiscard]] HTMLSpanElement clone() const noexcept;
+    /// The `new HTMLSpanElement(..)` constructor, creating a new HTMLSpanElement instance
     HTMLSpanElement();
 };
 

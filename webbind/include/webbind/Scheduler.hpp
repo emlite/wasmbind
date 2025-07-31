@@ -14,15 +14,17 @@ public:
     static SchedulerPostTaskOptions take_ownership(Handle h) noexcept;
     explicit SchedulerPostTaskOptions(const emlite::Val &val) noexcept;
     SchedulerPostTaskOptions() noexcept;
-    SchedulerPostTaskOptions clone() const noexcept;
-    AbortSignal signal() const;
+    [[nodiscard]] SchedulerPostTaskOptions clone() const noexcept;
+    [[nodiscard]] AbortSignal signal() const;
     void signal(const AbortSignal& value);
-    TaskPriority priority() const;
+    [[nodiscard]] TaskPriority priority() const;
     void priority(const TaskPriority& value);
-    long long delay() const;
+    [[nodiscard]] long long delay() const;
     void delay(long long value);
 };
 
+/// The Scheduler class.
+/// [`Scheduler`](https://developer.mozilla.org/en-US/docs/Web/API/Scheduler)
 class Scheduler : public emlite::Val {
     explicit Scheduler(Handle h) noexcept;
 
@@ -30,9 +32,15 @@ public:
     explicit Scheduler(const emlite::Val &val) noexcept;
     static Scheduler take_ownership(Handle h) noexcept;
 
-    Scheduler clone() const noexcept;
+    [[nodiscard]] Scheduler clone() const noexcept;
+    /// The postTask method.
+    /// [`Scheduler.postTask`](https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/postTask)
     jsbind::Promise<jsbind::Any> postTask(const jsbind::Function& callback);
+    /// The postTask method.
+    /// [`Scheduler.postTask`](https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/postTask)
     jsbind::Promise<jsbind::Any> postTask(const jsbind::Function& callback, const SchedulerPostTaskOptions& options);
+    /// The yield method.
+    /// [`Scheduler.yield`](https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/yield)
     jsbind::Promise<jsbind::Undefined> yield();
 };
 

@@ -8,6 +8,8 @@
 class WebGLTexture;
 
 
+/// The XRWebGLDepthInformation class.
+/// [`XRWebGLDepthInformation`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation)
 class XRWebGLDepthInformation : public XRDepthInformation {
     explicit XRWebGLDepthInformation(Handle h) noexcept;
 
@@ -15,9 +17,15 @@ public:
     explicit XRWebGLDepthInformation(const emlite::Val &val) noexcept;
     static XRWebGLDepthInformation take_ownership(Handle h) noexcept;
 
-    XRWebGLDepthInformation clone() const noexcept;
-    WebGLTexture texture() const;
-    XRTextureType textureType() const;
-    unsigned long imageIndex() const;
+    [[nodiscard]] XRWebGLDepthInformation clone() const noexcept;
+    /// Getter of the `texture` attribute.
+    /// [`XRWebGLDepthInformation.texture`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/texture)
+    [[nodiscard]] WebGLTexture texture() const;
+    /// Getter of the `textureType` attribute.
+    /// [`XRWebGLDepthInformation.textureType`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/textureType)
+    [[nodiscard]] XRTextureType textureType() const;
+    /// Getter of the `imageIndex` attribute.
+    /// [`XRWebGLDepthInformation.imageIndex`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/imageIndex)
+    [[nodiscard]] unsigned long imageIndex() const;
 };
 

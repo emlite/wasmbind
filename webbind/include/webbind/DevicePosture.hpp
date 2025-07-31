@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The DevicePosture class.
+/// [`DevicePosture`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture)
 class DevicePosture : public EventTarget {
     explicit DevicePosture(Handle h) noexcept;
 
@@ -13,9 +15,15 @@ public:
     explicit DevicePosture(const emlite::Val &val) noexcept;
     static DevicePosture take_ownership(Handle h) noexcept;
 
-    DevicePosture clone() const noexcept;
-    DevicePostureType type() const;
-    jsbind::Any onchange() const;
+    [[nodiscard]] DevicePosture clone() const noexcept;
+    /// Getter of the `type` attribute.
+    /// [`DevicePosture.type`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/type)
+    [[nodiscard]] DevicePostureType type() const;
+    /// Getter of the `onchange` attribute.
+    /// [`DevicePosture.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/onchange)
+    [[nodiscard]] jsbind::Any onchange() const;
+    /// Setter of the `onchange` attribute.
+    /// [`DevicePosture.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/onchange)
     void onchange(const jsbind::Any& value);
 };
 

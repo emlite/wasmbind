@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The CharacterBoundsUpdateEvent class.
+/// [`CharacterBoundsUpdateEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent)
 class CharacterBoundsUpdateEvent : public Event {
     explicit CharacterBoundsUpdateEvent(Handle h) noexcept;
 
@@ -13,10 +15,16 @@ public:
     explicit CharacterBoundsUpdateEvent(const emlite::Val &val) noexcept;
     static CharacterBoundsUpdateEvent take_ownership(Handle h) noexcept;
 
-    CharacterBoundsUpdateEvent clone() const noexcept;
+    [[nodiscard]] CharacterBoundsUpdateEvent clone() const noexcept;
+    /// The `new CharacterBoundsUpdateEvent(..)` constructor, creating a new CharacterBoundsUpdateEvent instance
     CharacterBoundsUpdateEvent(const jsbind::String& type);
+    /// The `new CharacterBoundsUpdateEvent(..)` constructor, creating a new CharacterBoundsUpdateEvent instance
     CharacterBoundsUpdateEvent(const jsbind::String& type, const jsbind::Any& options);
-    unsigned long rangeStart() const;
-    unsigned long rangeEnd() const;
+    /// Getter of the `rangeStart` attribute.
+    /// [`CharacterBoundsUpdateEvent.rangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeStart)
+    [[nodiscard]] unsigned long rangeStart() const;
+    /// Getter of the `rangeEnd` attribute.
+    /// [`CharacterBoundsUpdateEvent.rangeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeEnd)
+    [[nodiscard]] unsigned long rangeEnd() const;
 };
 

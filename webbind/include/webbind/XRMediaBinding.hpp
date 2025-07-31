@@ -21,12 +21,12 @@ public:
     static XRMediaQuadLayerInit take_ownership(Handle h) noexcept;
     explicit XRMediaQuadLayerInit(const emlite::Val &val) noexcept;
     XRMediaQuadLayerInit() noexcept;
-    XRMediaQuadLayerInit clone() const noexcept;
-    XRRigidTransform transform() const;
+    [[nodiscard]] XRMediaQuadLayerInit clone() const noexcept;
+    [[nodiscard]] XRRigidTransform transform() const;
     void transform(const XRRigidTransform& value);
-    float width() const;
+    [[nodiscard]] float width() const;
     void width(float value);
-    float height() const;
+    [[nodiscard]] float height() const;
     void height(float value);
 };
 
@@ -36,14 +36,14 @@ public:
     static XRMediaCylinderLayerInit take_ownership(Handle h) noexcept;
     explicit XRMediaCylinderLayerInit(const emlite::Val &val) noexcept;
     XRMediaCylinderLayerInit() noexcept;
-    XRMediaCylinderLayerInit clone() const noexcept;
-    XRRigidTransform transform() const;
+    [[nodiscard]] XRMediaCylinderLayerInit clone() const noexcept;
+    [[nodiscard]] XRRigidTransform transform() const;
     void transform(const XRRigidTransform& value);
-    float radius() const;
+    [[nodiscard]] float radius() const;
     void radius(float value);
-    float centralAngle() const;
+    [[nodiscard]] float centralAngle() const;
     void centralAngle(float value);
-    float aspectRatio() const;
+    [[nodiscard]] float aspectRatio() const;
     void aspectRatio(float value);
 };
 
@@ -53,19 +53,21 @@ public:
     static XRMediaEquirectLayerInit take_ownership(Handle h) noexcept;
     explicit XRMediaEquirectLayerInit(const emlite::Val &val) noexcept;
     XRMediaEquirectLayerInit() noexcept;
-    XRMediaEquirectLayerInit clone() const noexcept;
-    XRRigidTransform transform() const;
+    [[nodiscard]] XRMediaEquirectLayerInit clone() const noexcept;
+    [[nodiscard]] XRRigidTransform transform() const;
     void transform(const XRRigidTransform& value);
-    float radius() const;
+    [[nodiscard]] float radius() const;
     void radius(float value);
-    float centralHorizontalAngle() const;
+    [[nodiscard]] float centralHorizontalAngle() const;
     void centralHorizontalAngle(float value);
-    float upperVerticalAngle() const;
+    [[nodiscard]] float upperVerticalAngle() const;
     void upperVerticalAngle(float value);
-    float lowerVerticalAngle() const;
+    [[nodiscard]] float lowerVerticalAngle() const;
     void lowerVerticalAngle(float value);
 };
 
+/// The XRMediaBinding class.
+/// [`XRMediaBinding`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding)
 class XRMediaBinding : public emlite::Val {
     explicit XRMediaBinding(Handle h) noexcept;
 
@@ -73,13 +75,26 @@ public:
     explicit XRMediaBinding(const emlite::Val &val) noexcept;
     static XRMediaBinding take_ownership(Handle h) noexcept;
 
-    XRMediaBinding clone() const noexcept;
+    [[nodiscard]] XRMediaBinding clone() const noexcept;
+    /// The `new XRMediaBinding(..)` constructor, creating a new XRMediaBinding instance
     XRMediaBinding(const XRSession& session);
+    /// The createQuadLayer method.
+    /// [`XRMediaBinding.createQuadLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding/createQuadLayer)
     XRQuadLayer createQuadLayer(const HTMLVideoElement& video);
+    /// The createQuadLayer method.
+    /// [`XRMediaBinding.createQuadLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding/createQuadLayer)
     XRQuadLayer createQuadLayer(const HTMLVideoElement& video, const XRMediaQuadLayerInit& init);
+    /// The createCylinderLayer method.
+    /// [`XRMediaBinding.createCylinderLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding/createCylinderLayer)
     XRCylinderLayer createCylinderLayer(const HTMLVideoElement& video);
+    /// The createCylinderLayer method.
+    /// [`XRMediaBinding.createCylinderLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding/createCylinderLayer)
     XRCylinderLayer createCylinderLayer(const HTMLVideoElement& video, const XRMediaCylinderLayerInit& init);
+    /// The createEquirectLayer method.
+    /// [`XRMediaBinding.createEquirectLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding/createEquirectLayer)
     XREquirectLayer createEquirectLayer(const HTMLVideoElement& video);
+    /// The createEquirectLayer method.
+    /// [`XRMediaBinding.createEquirectLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding/createEquirectLayer)
     XREquirectLayer createEquirectLayer(const HTMLVideoElement& video, const XRMediaEquirectLayerInit& init);
 };
 

@@ -8,6 +8,8 @@
 class CSSPageDescriptors;
 
 
+/// The CSSPageRule class.
+/// [`CSSPageRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule)
 class CSSPageRule : public CSSGroupingRule {
     explicit CSSPageRule(Handle h) noexcept;
 
@@ -15,9 +17,15 @@ public:
     explicit CSSPageRule(const emlite::Val &val) noexcept;
     static CSSPageRule take_ownership(Handle h) noexcept;
 
-    CSSPageRule clone() const noexcept;
-    jsbind::String selectorText() const;
+    [[nodiscard]] CSSPageRule clone() const noexcept;
+    /// Getter of the `selectorText` attribute.
+    /// [`CSSPageRule.selectorText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule/selectorText)
+    [[nodiscard]] jsbind::String selectorText() const;
+    /// Setter of the `selectorText` attribute.
+    /// [`CSSPageRule.selectorText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule/selectorText)
     void selectorText(const jsbind::String& value);
-    CSSPageDescriptors style() const;
+    /// Getter of the `style` attribute.
+    /// [`CSSPageRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule/style)
+    [[nodiscard]] CSSPageDescriptors style() const;
 };
 

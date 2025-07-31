@@ -14,13 +14,15 @@ public:
     static BackgroundFetchUIOptions take_ownership(Handle h) noexcept;
     explicit BackgroundFetchUIOptions(const emlite::Val &val) noexcept;
     BackgroundFetchUIOptions() noexcept;
-    BackgroundFetchUIOptions clone() const noexcept;
-    jsbind::TypedArray<jsbind::Any> icons() const;
+    [[nodiscard]] BackgroundFetchUIOptions clone() const noexcept;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> icons() const;
     void icons(const jsbind::TypedArray<jsbind::Any>& value);
-    jsbind::String title() const;
+    [[nodiscard]] jsbind::String title() const;
     void title(const jsbind::String& value);
 };
 
+/// The BackgroundFetchUpdateUIEvent class.
+/// [`BackgroundFetchUpdateUIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchUpdateUIEvent)
 class BackgroundFetchUpdateUIEvent : public BackgroundFetchEvent {
     explicit BackgroundFetchUpdateUIEvent(Handle h) noexcept;
 
@@ -28,9 +30,14 @@ public:
     explicit BackgroundFetchUpdateUIEvent(const emlite::Val &val) noexcept;
     static BackgroundFetchUpdateUIEvent take_ownership(Handle h) noexcept;
 
-    BackgroundFetchUpdateUIEvent clone() const noexcept;
+    [[nodiscard]] BackgroundFetchUpdateUIEvent clone() const noexcept;
+    /// The `new BackgroundFetchUpdateUIEvent(..)` constructor, creating a new BackgroundFetchUpdateUIEvent instance
     BackgroundFetchUpdateUIEvent(const jsbind::String& type, const jsbind::Any& init);
+    /// The updateUI method.
+    /// [`BackgroundFetchUpdateUIEvent.updateUI`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchUpdateUIEvent/updateUI)
     jsbind::Promise<jsbind::Undefined> updateUI();
+    /// The updateUI method.
+    /// [`BackgroundFetchUpdateUIEvent.updateUI`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchUpdateUIEvent/updateUI)
     jsbind::Promise<jsbind::Undefined> updateUI(const BackgroundFetchUIOptions& options);
 };
 

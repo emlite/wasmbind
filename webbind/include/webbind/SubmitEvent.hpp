@@ -8,6 +8,8 @@
 class HTMLElement;
 
 
+/// The SubmitEvent class.
+/// [`SubmitEvent`](https://developer.mozilla.org/en-US/docs/Web/API/SubmitEvent)
 class SubmitEvent : public Event {
     explicit SubmitEvent(Handle h) noexcept;
 
@@ -15,9 +17,13 @@ public:
     explicit SubmitEvent(const emlite::Val &val) noexcept;
     static SubmitEvent take_ownership(Handle h) noexcept;
 
-    SubmitEvent clone() const noexcept;
+    [[nodiscard]] SubmitEvent clone() const noexcept;
+    /// The `new SubmitEvent(..)` constructor, creating a new SubmitEvent instance
     SubmitEvent(const jsbind::String& type);
+    /// The `new SubmitEvent(..)` constructor, creating a new SubmitEvent instance
     SubmitEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
-    HTMLElement submitter() const;
+    /// Getter of the `submitter` attribute.
+    /// [`SubmitEvent.submitter`](https://developer.mozilla.org/en-US/docs/Web/API/SubmitEvent/submitter)
+    [[nodiscard]] HTMLElement submitter() const;
 };
 

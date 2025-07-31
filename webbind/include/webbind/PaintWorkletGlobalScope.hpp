@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The PaintWorkletGlobalScope class.
+/// [`PaintWorkletGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope)
 class PaintWorkletGlobalScope : public WorkletGlobalScope {
     explicit PaintWorkletGlobalScope(Handle h) noexcept;
 
@@ -13,8 +15,12 @@ public:
     explicit PaintWorkletGlobalScope(const emlite::Val &val) noexcept;
     static PaintWorkletGlobalScope take_ownership(Handle h) noexcept;
 
-    PaintWorkletGlobalScope clone() const noexcept;
+    [[nodiscard]] PaintWorkletGlobalScope clone() const noexcept;
+    /// The registerPaint method.
+    /// [`PaintWorkletGlobalScope.registerPaint`](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/registerPaint)
     jsbind::Undefined registerPaint(const jsbind::String& name, const jsbind::Any& paintCtor);
-    double devicePixelRatio() const;
+    /// Getter of the `devicePixelRatio` attribute.
+    /// [`PaintWorkletGlobalScope.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/devicePixelRatio)
+    [[nodiscard]] double devicePixelRatio() const;
 };
 

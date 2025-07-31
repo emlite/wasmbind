@@ -9,6 +9,8 @@ class XRSpace;
 class XRRigidTransform;
 
 
+/// The XREquirectLayer class.
+/// [`XREquirectLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer)
 class XREquirectLayer : public XRCompositionLayer {
     explicit XREquirectLayer(Handle h) noexcept;
 
@@ -16,20 +18,48 @@ public:
     explicit XREquirectLayer(const emlite::Val &val) noexcept;
     static XREquirectLayer take_ownership(Handle h) noexcept;
 
-    XREquirectLayer clone() const noexcept;
-    XRSpace space() const;
+    [[nodiscard]] XREquirectLayer clone() const noexcept;
+    /// Getter of the `space` attribute.
+    /// [`XREquirectLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/space)
+    [[nodiscard]] XRSpace space() const;
+    /// Setter of the `space` attribute.
+    /// [`XREquirectLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/space)
     void space(const XRSpace& value);
-    XRRigidTransform transform() const;
+    /// Getter of the `transform` attribute.
+    /// [`XREquirectLayer.transform`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/transform)
+    [[nodiscard]] XRRigidTransform transform() const;
+    /// Setter of the `transform` attribute.
+    /// [`XREquirectLayer.transform`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/transform)
     void transform(const XRRigidTransform& value);
-    float radius() const;
+    /// Getter of the `radius` attribute.
+    /// [`XREquirectLayer.radius`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/radius)
+    [[nodiscard]] float radius() const;
+    /// Setter of the `radius` attribute.
+    /// [`XREquirectLayer.radius`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/radius)
     void radius(float value);
-    float centralHorizontalAngle() const;
+    /// Getter of the `centralHorizontalAngle` attribute.
+    /// [`XREquirectLayer.centralHorizontalAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/centralHorizontalAngle)
+    [[nodiscard]] float centralHorizontalAngle() const;
+    /// Setter of the `centralHorizontalAngle` attribute.
+    /// [`XREquirectLayer.centralHorizontalAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/centralHorizontalAngle)
     void centralHorizontalAngle(float value);
-    float upperVerticalAngle() const;
+    /// Getter of the `upperVerticalAngle` attribute.
+    /// [`XREquirectLayer.upperVerticalAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/upperVerticalAngle)
+    [[nodiscard]] float upperVerticalAngle() const;
+    /// Setter of the `upperVerticalAngle` attribute.
+    /// [`XREquirectLayer.upperVerticalAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/upperVerticalAngle)
     void upperVerticalAngle(float value);
-    float lowerVerticalAngle() const;
+    /// Getter of the `lowerVerticalAngle` attribute.
+    /// [`XREquirectLayer.lowerVerticalAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/lowerVerticalAngle)
+    [[nodiscard]] float lowerVerticalAngle() const;
+    /// Setter of the `lowerVerticalAngle` attribute.
+    /// [`XREquirectLayer.lowerVerticalAngle`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/lowerVerticalAngle)
     void lowerVerticalAngle(float value);
-    jsbind::Any onredraw() const;
+    /// Getter of the `onredraw` attribute.
+    /// [`XREquirectLayer.onredraw`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/onredraw)
+    [[nodiscard]] jsbind::Any onredraw() const;
+    /// Setter of the `onredraw` attribute.
+    /// [`XREquirectLayer.onredraw`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/onredraw)
     void onredraw(const jsbind::Any& value);
 };
 

@@ -5,6 +5,8 @@
 #include "enums.hpp"
 
 
+/// The WorkletGlobalScope class.
+/// [`WorkletGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletGlobalScope)
 class WorkletGlobalScope : public emlite::Val {
     explicit WorkletGlobalScope(Handle h) noexcept;
 
@@ -12,6 +14,6 @@ public:
     explicit WorkletGlobalScope(const emlite::Val &val) noexcept;
     static WorkletGlobalScope take_ownership(Handle h) noexcept;
 
-    WorkletGlobalScope clone() const noexcept;
+    [[nodiscard]] WorkletGlobalScope clone() const noexcept;
 };
 

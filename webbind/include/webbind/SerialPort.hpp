@@ -19,12 +19,12 @@ public:
     static SerialPortInfo take_ownership(Handle h) noexcept;
     explicit SerialPortInfo(const emlite::Val &val) noexcept;
     SerialPortInfo() noexcept;
-    SerialPortInfo clone() const noexcept;
-    unsigned short usbVendorId() const;
+    [[nodiscard]] SerialPortInfo clone() const noexcept;
+    [[nodiscard]] unsigned short usbVendorId() const;
     void usbVendorId(unsigned short value);
-    unsigned short usbProductId() const;
+    [[nodiscard]] unsigned short usbProductId() const;
     void usbProductId(unsigned short value);
-    jsbind::Any bluetoothServiceClassId() const;
+    [[nodiscard]] jsbind::Any bluetoothServiceClassId() const;
     void bluetoothServiceClassId(const jsbind::Any& value);
 };
 
@@ -34,18 +34,18 @@ public:
     static SerialOptions take_ownership(Handle h) noexcept;
     explicit SerialOptions(const emlite::Val &val) noexcept;
     SerialOptions() noexcept;
-    SerialOptions clone() const noexcept;
-    unsigned long baudRate() const;
+    [[nodiscard]] SerialOptions clone() const noexcept;
+    [[nodiscard]] unsigned long baudRate() const;
     void baudRate(unsigned long value);
-    unsigned char dataBits() const;
+    [[nodiscard]] unsigned char dataBits() const;
     void dataBits(unsigned char value);
-    unsigned char stopBits() const;
+    [[nodiscard]] unsigned char stopBits() const;
     void stopBits(unsigned char value);
-    ParityType parity() const;
+    [[nodiscard]] ParityType parity() const;
     void parity(const ParityType& value);
-    unsigned long bufferSize() const;
+    [[nodiscard]] unsigned long bufferSize() const;
     void bufferSize(unsigned long value);
-    FlowControlType flowControl() const;
+    [[nodiscard]] FlowControlType flowControl() const;
     void flowControl(const FlowControlType& value);
 };
 
@@ -55,12 +55,12 @@ public:
     static SerialOutputSignals take_ownership(Handle h) noexcept;
     explicit SerialOutputSignals(const emlite::Val &val) noexcept;
     SerialOutputSignals() noexcept;
-    SerialOutputSignals clone() const noexcept;
-    bool dataTerminalReady() const;
+    [[nodiscard]] SerialOutputSignals clone() const noexcept;
+    [[nodiscard]] bool dataTerminalReady() const;
     void dataTerminalReady(bool value);
-    bool requestToSend() const;
+    [[nodiscard]] bool requestToSend() const;
     void requestToSend(bool value);
-    bool break_() const;
+    [[nodiscard]] bool break_() const;
     void break_(bool value);
 };
 
@@ -70,17 +70,19 @@ public:
     static SerialInputSignals take_ownership(Handle h) noexcept;
     explicit SerialInputSignals(const emlite::Val &val) noexcept;
     SerialInputSignals() noexcept;
-    SerialInputSignals clone() const noexcept;
-    bool dataCarrierDetect() const;
+    [[nodiscard]] SerialInputSignals clone() const noexcept;
+    [[nodiscard]] bool dataCarrierDetect() const;
     void dataCarrierDetect(bool value);
-    bool clearToSend() const;
+    [[nodiscard]] bool clearToSend() const;
     void clearToSend(bool value);
-    bool ringIndicator() const;
+    [[nodiscard]] bool ringIndicator() const;
     void ringIndicator(bool value);
-    bool dataSetReady() const;
+    [[nodiscard]] bool dataSetReady() const;
     void dataSetReady(bool value);
 };
 
+/// The SerialPort class.
+/// [`SerialPort`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort)
 class SerialPort : public EventTarget {
     explicit SerialPort(Handle h) noexcept;
 
@@ -88,20 +90,48 @@ public:
     explicit SerialPort(const emlite::Val &val) noexcept;
     static SerialPort take_ownership(Handle h) noexcept;
 
-    SerialPort clone() const noexcept;
-    jsbind::Any onconnect() const;
+    [[nodiscard]] SerialPort clone() const noexcept;
+    /// Getter of the `onconnect` attribute.
+    /// [`SerialPort.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/onconnect)
+    [[nodiscard]] jsbind::Any onconnect() const;
+    /// Setter of the `onconnect` attribute.
+    /// [`SerialPort.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/onconnect)
     void onconnect(const jsbind::Any& value);
-    jsbind::Any ondisconnect() const;
+    /// Getter of the `ondisconnect` attribute.
+    /// [`SerialPort.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/ondisconnect)
+    [[nodiscard]] jsbind::Any ondisconnect() const;
+    /// Setter of the `ondisconnect` attribute.
+    /// [`SerialPort.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/ondisconnect)
     void ondisconnect(const jsbind::Any& value);
-    bool connected() const;
-    ReadableStream readable() const;
-    WritableStream writable() const;
+    /// Getter of the `connected` attribute.
+    /// [`SerialPort.connected`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/connected)
+    [[nodiscard]] bool connected() const;
+    /// Getter of the `readable` attribute.
+    /// [`SerialPort.readable`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/readable)
+    [[nodiscard]] ReadableStream readable() const;
+    /// Getter of the `writable` attribute.
+    /// [`SerialPort.writable`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/writable)
+    [[nodiscard]] WritableStream writable() const;
+    /// The getInfo method.
+    /// [`SerialPort.getInfo`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/getInfo)
     SerialPortInfo getInfo();
+    /// The open method.
+    /// [`SerialPort.open`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/open)
     jsbind::Promise<jsbind::Undefined> open(const SerialOptions& options);
+    /// The setSignals method.
+    /// [`SerialPort.setSignals`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/setSignals)
     jsbind::Promise<jsbind::Undefined> setSignals();
+    /// The setSignals method.
+    /// [`SerialPort.setSignals`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/setSignals)
     jsbind::Promise<jsbind::Undefined> setSignals(const SerialOutputSignals& signals);
+    /// The getSignals method.
+    /// [`SerialPort.getSignals`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/getSignals)
     jsbind::Promise<SerialInputSignals> getSignals();
+    /// The close method.
+    /// [`SerialPort.close`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/close)
     jsbind::Promise<jsbind::Undefined> close();
+    /// The forget method.
+    /// [`SerialPort.forget`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/forget)
     jsbind::Promise<jsbind::Undefined> forget();
 };
 

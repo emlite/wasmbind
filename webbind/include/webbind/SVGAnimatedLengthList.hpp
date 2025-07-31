@@ -7,6 +7,8 @@
 class SVGLengthList;
 
 
+/// The SVGAnimatedLengthList class.
+/// [`SVGAnimatedLengthList`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLengthList)
 class SVGAnimatedLengthList : public emlite::Val {
     explicit SVGAnimatedLengthList(Handle h) noexcept;
 
@@ -14,8 +16,12 @@ public:
     explicit SVGAnimatedLengthList(const emlite::Val &val) noexcept;
     static SVGAnimatedLengthList take_ownership(Handle h) noexcept;
 
-    SVGAnimatedLengthList clone() const noexcept;
-    SVGLengthList baseVal() const;
-    SVGLengthList animVal() const;
+    [[nodiscard]] SVGAnimatedLengthList clone() const noexcept;
+    /// Getter of the `baseVal` attribute.
+    /// [`SVGAnimatedLengthList.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLengthList/baseVal)
+    [[nodiscard]] SVGLengthList baseVal() const;
+    /// Getter of the `animVal` attribute.
+    /// [`SVGAnimatedLengthList.animVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLengthList/animVal)
+    [[nodiscard]] SVGLengthList animVal() const;
 };
 

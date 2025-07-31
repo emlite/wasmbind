@@ -22,8 +22,8 @@ public:
     static AuthenticationExtensionsClientOutputs take_ownership(Handle h) noexcept;
     explicit AuthenticationExtensionsClientOutputs(const emlite::Val &val) noexcept;
     AuthenticationExtensionsClientOutputs() noexcept;
-    AuthenticationExtensionsClientOutputs clone() const noexcept;
-    jsbind::Any largeBlob() const;
+    [[nodiscard]] AuthenticationExtensionsClientOutputs clone() const noexcept;
+    [[nodiscard]] jsbind::Any largeBlob() const;
     void largeBlob(const jsbind::Any& value);
 };
 
@@ -33,28 +33,28 @@ public:
     static PublicKeyCredentialCreationOptions take_ownership(Handle h) noexcept;
     explicit PublicKeyCredentialCreationOptions(const emlite::Val &val) noexcept;
     PublicKeyCredentialCreationOptions() noexcept;
-    PublicKeyCredentialCreationOptions clone() const noexcept;
-    jsbind::Any rp() const;
+    [[nodiscard]] PublicKeyCredentialCreationOptions clone() const noexcept;
+    [[nodiscard]] jsbind::Any rp() const;
     void rp(const jsbind::Any& value);
-    jsbind::Any user() const;
+    [[nodiscard]] jsbind::Any user() const;
     void user(const jsbind::Any& value);
-    jsbind::Any challenge() const;
+    [[nodiscard]] jsbind::Any challenge() const;
     void challenge(const jsbind::Any& value);
-    jsbind::TypedArray<jsbind::Any> pubKeyCredParams() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> pubKeyCredParams() const;
     void pubKeyCredParams(const jsbind::TypedArray<jsbind::Any>& value);
-    unsigned long timeout() const;
+    [[nodiscard]] unsigned long timeout() const;
     void timeout(unsigned long value);
-    jsbind::TypedArray<jsbind::Any> excludeCredentials() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> excludeCredentials() const;
     void excludeCredentials(const jsbind::TypedArray<jsbind::Any>& value);
-    jsbind::Any authenticatorSelection() const;
+    [[nodiscard]] jsbind::Any authenticatorSelection() const;
     void authenticatorSelection(const jsbind::Any& value);
-    jsbind::TypedArray<jsbind::String> hints() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> hints() const;
     void hints(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::String attestation() const;
+    [[nodiscard]] jsbind::String attestation() const;
     void attestation(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::String> attestationFormats() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> attestationFormats() const;
     void attestationFormats(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::Any extensions() const;
+    [[nodiscard]] jsbind::Any extensions() const;
     void extensions(const jsbind::Any& value);
 };
 
@@ -64,28 +64,28 @@ public:
     static PublicKeyCredentialCreationOptionsJSON take_ownership(Handle h) noexcept;
     explicit PublicKeyCredentialCreationOptionsJSON(const emlite::Val &val) noexcept;
     PublicKeyCredentialCreationOptionsJSON() noexcept;
-    PublicKeyCredentialCreationOptionsJSON clone() const noexcept;
-    jsbind::Any rp() const;
+    [[nodiscard]] PublicKeyCredentialCreationOptionsJSON clone() const noexcept;
+    [[nodiscard]] jsbind::Any rp() const;
     void rp(const jsbind::Any& value);
-    jsbind::Any user() const;
+    [[nodiscard]] jsbind::Any user() const;
     void user(const jsbind::Any& value);
-    jsbind::Any challenge() const;
+    [[nodiscard]] jsbind::Any challenge() const;
     void challenge(const jsbind::Any& value);
-    jsbind::TypedArray<jsbind::Any> pubKeyCredParams() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> pubKeyCredParams() const;
     void pubKeyCredParams(const jsbind::TypedArray<jsbind::Any>& value);
-    unsigned long timeout() const;
+    [[nodiscard]] unsigned long timeout() const;
     void timeout(unsigned long value);
-    jsbind::TypedArray<jsbind::Any> excludeCredentials() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> excludeCredentials() const;
     void excludeCredentials(const jsbind::TypedArray<jsbind::Any>& value);
-    jsbind::Any authenticatorSelection() const;
+    [[nodiscard]] jsbind::Any authenticatorSelection() const;
     void authenticatorSelection(const jsbind::Any& value);
-    jsbind::TypedArray<jsbind::String> hints() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> hints() const;
     void hints(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::String attestation() const;
+    [[nodiscard]] jsbind::String attestation() const;
     void attestation(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::String> attestationFormats() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> attestationFormats() const;
     void attestationFormats(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::Any extensions() const;
+    [[nodiscard]] jsbind::Any extensions() const;
     void extensions(const jsbind::Any& value);
 };
 
@@ -95,20 +95,20 @@ public:
     static PublicKeyCredentialRequestOptions take_ownership(Handle h) noexcept;
     explicit PublicKeyCredentialRequestOptions(const emlite::Val &val) noexcept;
     PublicKeyCredentialRequestOptions() noexcept;
-    PublicKeyCredentialRequestOptions clone() const noexcept;
-    jsbind::Any challenge() const;
+    [[nodiscard]] PublicKeyCredentialRequestOptions clone() const noexcept;
+    [[nodiscard]] jsbind::Any challenge() const;
     void challenge(const jsbind::Any& value);
-    unsigned long timeout() const;
+    [[nodiscard]] unsigned long timeout() const;
     void timeout(unsigned long value);
-    jsbind::String rpId() const;
+    [[nodiscard]] jsbind::String rpId() const;
     void rpId(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::Any> allowCredentials() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> allowCredentials() const;
     void allowCredentials(const jsbind::TypedArray<jsbind::Any>& value);
-    jsbind::String userVerification() const;
+    [[nodiscard]] jsbind::String userVerification() const;
     void userVerification(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::String> hints() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> hints() const;
     void hints(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::Any extensions() const;
+    [[nodiscard]] jsbind::Any extensions() const;
     void extensions(const jsbind::Any& value);
 };
 
@@ -118,20 +118,20 @@ public:
     static PublicKeyCredentialRequestOptionsJSON take_ownership(Handle h) noexcept;
     explicit PublicKeyCredentialRequestOptionsJSON(const emlite::Val &val) noexcept;
     PublicKeyCredentialRequestOptionsJSON() noexcept;
-    PublicKeyCredentialRequestOptionsJSON clone() const noexcept;
-    jsbind::Any challenge() const;
+    [[nodiscard]] PublicKeyCredentialRequestOptionsJSON clone() const noexcept;
+    [[nodiscard]] jsbind::Any challenge() const;
     void challenge(const jsbind::Any& value);
-    unsigned long timeout() const;
+    [[nodiscard]] unsigned long timeout() const;
     void timeout(unsigned long value);
-    jsbind::String rpId() const;
+    [[nodiscard]] jsbind::String rpId() const;
     void rpId(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::Any> allowCredentials() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> allowCredentials() const;
     void allowCredentials(const jsbind::TypedArray<jsbind::Any>& value);
-    jsbind::String userVerification() const;
+    [[nodiscard]] jsbind::String userVerification() const;
     void userVerification(const jsbind::String& value);
-    jsbind::TypedArray<jsbind::String> hints() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::String> hints() const;
     void hints(const jsbind::TypedArray<jsbind::String>& value);
-    jsbind::Any extensions() const;
+    [[nodiscard]] jsbind::Any extensions() const;
     void extensions(const jsbind::Any& value);
 };
 
@@ -141,10 +141,10 @@ public:
     static UnknownCredentialOptions take_ownership(Handle h) noexcept;
     explicit UnknownCredentialOptions(const emlite::Val &val) noexcept;
     UnknownCredentialOptions() noexcept;
-    UnknownCredentialOptions clone() const noexcept;
-    jsbind::String rpId() const;
+    [[nodiscard]] UnknownCredentialOptions clone() const noexcept;
+    [[nodiscard]] jsbind::String rpId() const;
     void rpId(const jsbind::String& value);
-    jsbind::Any credentialId() const;
+    [[nodiscard]] jsbind::Any credentialId() const;
     void credentialId(const jsbind::Any& value);
 };
 
@@ -154,12 +154,12 @@ public:
     static AllAcceptedCredentialsOptions take_ownership(Handle h) noexcept;
     explicit AllAcceptedCredentialsOptions(const emlite::Val &val) noexcept;
     AllAcceptedCredentialsOptions() noexcept;
-    AllAcceptedCredentialsOptions clone() const noexcept;
-    jsbind::String rpId() const;
+    [[nodiscard]] AllAcceptedCredentialsOptions clone() const noexcept;
+    [[nodiscard]] jsbind::String rpId() const;
     void rpId(const jsbind::String& value);
-    jsbind::Any userId() const;
+    [[nodiscard]] jsbind::Any userId() const;
     void userId(const jsbind::Any& value);
-    jsbind::TypedArray<jsbind::Any> allAcceptedCredentialIds() const;
+    [[nodiscard]] jsbind::TypedArray<jsbind::Any> allAcceptedCredentialIds() const;
     void allAcceptedCredentialIds(const jsbind::TypedArray<jsbind::Any>& value);
 };
 
@@ -169,17 +169,19 @@ public:
     static CurrentUserDetailsOptions take_ownership(Handle h) noexcept;
     explicit CurrentUserDetailsOptions(const emlite::Val &val) noexcept;
     CurrentUserDetailsOptions() noexcept;
-    CurrentUserDetailsOptions clone() const noexcept;
-    jsbind::String rpId() const;
+    [[nodiscard]] CurrentUserDetailsOptions clone() const noexcept;
+    [[nodiscard]] jsbind::String rpId() const;
     void rpId(const jsbind::String& value);
-    jsbind::Any userId() const;
+    [[nodiscard]] jsbind::Any userId() const;
     void userId(const jsbind::Any& value);
-    jsbind::String name() const;
+    [[nodiscard]] jsbind::String name() const;
     void name(const jsbind::String& value);
-    jsbind::String displayName() const;
+    [[nodiscard]] jsbind::String displayName() const;
     void displayName(const jsbind::String& value);
 };
 
+/// The PublicKeyCredential class.
+/// [`PublicKeyCredential`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential)
 class PublicKeyCredential : public Credential {
     explicit PublicKeyCredential(Handle h) noexcept;
 
@@ -187,19 +189,45 @@ public:
     explicit PublicKeyCredential(const emlite::Val &val) noexcept;
     static PublicKeyCredential take_ownership(Handle h) noexcept;
 
-    PublicKeyCredential clone() const noexcept;
-    jsbind::ArrayBuffer rawId() const;
-    AuthenticatorResponse response() const;
-    jsbind::String authenticatorAttachment() const;
+    [[nodiscard]] PublicKeyCredential clone() const noexcept;
+    /// Getter of the `rawId` attribute.
+    /// [`PublicKeyCredential.rawId`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/rawId)
+    [[nodiscard]] jsbind::ArrayBuffer rawId() const;
+    /// Getter of the `response` attribute.
+    /// [`PublicKeyCredential.response`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/response)
+    [[nodiscard]] AuthenticatorResponse response() const;
+    /// Getter of the `authenticatorAttachment` attribute.
+    /// [`PublicKeyCredential.authenticatorAttachment`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/authenticatorAttachment)
+    [[nodiscard]] jsbind::String authenticatorAttachment() const;
+    /// The getClientExtensionResults method.
+    /// [`PublicKeyCredential.getClientExtensionResults`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/getClientExtensionResults)
     AuthenticationExtensionsClientOutputs getClientExtensionResults();
+    /// The isConditionalMediationAvailable method.
+    /// [`PublicKeyCredential.isConditionalMediationAvailable`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable)
     static jsbind::Promise<bool> isConditionalMediationAvailable();
+    /// The toJSON method.
+    /// [`PublicKeyCredential.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/toJSON)
     jsbind::Any toJSON();
+    /// The isUserVerifyingPlatformAuthenticatorAvailable method.
+    /// [`PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable)
     static jsbind::Promise<bool> isUserVerifyingPlatformAuthenticatorAvailable();
+    /// The getClientCapabilities method.
+    /// [`PublicKeyCredential.getClientCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/getClientCapabilities)
     static jsbind::Promise<jsbind::Any> getClientCapabilities();
+    /// The parseCreationOptionsFromJSON method.
+    /// [`PublicKeyCredential.parseCreationOptionsFromJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON)
     static PublicKeyCredentialCreationOptions parseCreationOptionsFromJSON(const PublicKeyCredentialCreationOptionsJSON& options);
+    /// The parseRequestOptionsFromJSON method.
+    /// [`PublicKeyCredential.parseRequestOptionsFromJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON)
     static PublicKeyCredentialRequestOptions parseRequestOptionsFromJSON(const PublicKeyCredentialRequestOptionsJSON& options);
+    /// The signalUnknownCredential method.
+    /// [`PublicKeyCredential.signalUnknownCredential`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/signalUnknownCredential)
     static jsbind::Promise<jsbind::Undefined> signalUnknownCredential(const UnknownCredentialOptions& options);
+    /// The signalAllAcceptedCredentials method.
+    /// [`PublicKeyCredential.signalAllAcceptedCredentials`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials)
     static jsbind::Promise<jsbind::Undefined> signalAllAcceptedCredentials(const AllAcceptedCredentialsOptions& options);
+    /// The signalCurrentUserDetails method.
+    /// [`PublicKeyCredential.signalCurrentUserDetails`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails)
     static jsbind::Promise<jsbind::Undefined> signalCurrentUserDetails(const CurrentUserDetailsOptions& options);
 };
 

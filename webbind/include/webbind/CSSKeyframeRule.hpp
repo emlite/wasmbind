@@ -8,6 +8,8 @@
 class CSSStyleProperties;
 
 
+/// The CSSKeyframeRule class.
+/// [`CSSKeyframeRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule)
 class CSSKeyframeRule : public CSSRule {
     explicit CSSKeyframeRule(Handle h) noexcept;
 
@@ -15,9 +17,15 @@ public:
     explicit CSSKeyframeRule(const emlite::Val &val) noexcept;
     static CSSKeyframeRule take_ownership(Handle h) noexcept;
 
-    CSSKeyframeRule clone() const noexcept;
-    jsbind::String keyText() const;
+    [[nodiscard]] CSSKeyframeRule clone() const noexcept;
+    /// Getter of the `keyText` attribute.
+    /// [`CSSKeyframeRule.keyText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/keyText)
+    [[nodiscard]] jsbind::String keyText() const;
+    /// Setter of the `keyText` attribute.
+    /// [`CSSKeyframeRule.keyText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/keyText)
     void keyText(const jsbind::String& value);
-    CSSStyleProperties style() const;
+    /// Getter of the `style` attribute.
+    /// [`CSSKeyframeRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/style)
+    [[nodiscard]] CSSStyleProperties style() const;
 };
 

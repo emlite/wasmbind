@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The SVGAnimateElement class.
+/// [`SVGAnimateElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimateElement)
 class SVGAnimateElement : public SVGAnimationElement {
     explicit SVGAnimateElement(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit SVGAnimateElement(const emlite::Val &val) noexcept;
     static SVGAnimateElement take_ownership(Handle h) noexcept;
 
-    SVGAnimateElement clone() const noexcept;
+    [[nodiscard]] SVGAnimateElement clone() const noexcept;
 };
 

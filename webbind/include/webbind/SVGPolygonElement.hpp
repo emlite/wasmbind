@@ -8,6 +8,8 @@
 class SVGPointList;
 
 
+/// The SVGPolygonElement class.
+/// [`SVGPolygonElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolygonElement)
 class SVGPolygonElement : public SVGGeometryElement {
     explicit SVGPolygonElement(Handle h) noexcept;
 
@@ -15,8 +17,12 @@ public:
     explicit SVGPolygonElement(const emlite::Val &val) noexcept;
     static SVGPolygonElement take_ownership(Handle h) noexcept;
 
-    SVGPolygonElement clone() const noexcept;
-    SVGPointList points() const;
-    SVGPointList animatedPoints() const;
+    [[nodiscard]] SVGPolygonElement clone() const noexcept;
+    /// Getter of the `points` attribute.
+    /// [`SVGPolygonElement.points`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolygonElement/points)
+    [[nodiscard]] SVGPointList points() const;
+    /// Getter of the `animatedPoints` attribute.
+    /// [`SVGPolygonElement.animatedPoints`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolygonElement/animatedPoints)
+    [[nodiscard]] SVGPointList animatedPoints() const;
 };
 

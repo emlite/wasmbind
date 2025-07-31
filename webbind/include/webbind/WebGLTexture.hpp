@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The WebGLTexture class.
+/// [`WebGLTexture`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLTexture)
 class WebGLTexture : public WebGLObject {
     explicit WebGLTexture(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit WebGLTexture(const emlite::Val &val) noexcept;
     static WebGLTexture take_ownership(Handle h) noexcept;
 
-    WebGLTexture clone() const noexcept;
+    [[nodiscard]] WebGLTexture clone() const noexcept;
 };
 

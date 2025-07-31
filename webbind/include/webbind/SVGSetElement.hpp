@@ -6,6 +6,8 @@
 #include "enums.hpp"
 
 
+/// The SVGSetElement class.
+/// [`SVGSetElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSetElement)
 class SVGSetElement : public SVGAnimationElement {
     explicit SVGSetElement(Handle h) noexcept;
 
@@ -13,6 +15,6 @@ public:
     explicit SVGSetElement(const emlite::Val &val) noexcept;
     static SVGSetElement take_ownership(Handle h) noexcept;
 
-    SVGSetElement clone() const noexcept;
+    [[nodiscard]] SVGSetElement clone() const noexcept;
 };
 
