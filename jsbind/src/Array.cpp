@@ -1,4 +1,6 @@
 #include <jsbind/Array.hpp>
+#include <jsbind/Function.hpp>
+#include <jsbind/String.hpp>
 
 using namespace jsbind;
 
@@ -41,6 +43,165 @@ DEFINE_ARRAY(Int32Array, int32_t)
 DEFINE_ARRAY(Float32Array, float)
 
 DEFINE_ARRAY(Float64Array, double)
+
+template <typename T>
+String TypedArray<T>::toString() const noexcept {
+    return String(this->call("toString"));
+}
+
+template <typename T>
+String TypedArray<T>::toLocaleString() const noexcept {
+    return String(this->call("toLocaleString"));
+}
+
+template <typename T>
+T TypedArray<T>::pop() noexcept {
+    return this->call("pop").template as<T>();
+}
+
+template <typename T>
+size_t TypedArray<T>::push(const TypedArray<T> &items
+) noexcept {
+    return this->call("push", items).template as<size_t>();
+}
+
+template <typename T>
+TypedArray<T> TypedArray<T>::concat(
+    const TypedArray<T> &items
+) noexcept {
+    return this->call("concat", items)
+        .template as<TypedArray<T>>();
+}
+
+template <typename T>
+String TypedArray<T>::join(const String &separator
+) noexcept {
+    return this->call("join", separator)
+        .template as<String>();
+}
+
+template <typename T>
+TypedArray<T> TypedArray<T>::reverse() noexcept {
+    return this->call("reverse").template as<TypedArray<T>>(
+    );
+}
+
+template <typename T>
+T TypedArray<T>::shift() noexcept {
+    return this->call("shift").template as<T>();
+}
+
+template <typename T>
+TypedArray<T> TypedArray<T>::sort(const Function &compareFn
+) noexcept {
+    return this->call("sort", compareFn)
+        .template as<TypedArray<T>>();
+}
+
+template <typename T>
+TypedArray<T> TypedArray<T>::splice(
+    size_t start,
+    size_t deleteCount,
+    const TypedArray<T> &items
+) noexcept {
+    return this->call("splice", start, deleteCount, items)
+        .template as<TypedArray<T>>();
+}
+
+template <typename T>
+size_t TypedArray<T>::unshift(const TypedArray<T> &items
+) noexcept {
+    return this->call("unshift", items)
+        .template as<size_t>();
+}
+
+template <typename T>
+int TypedArray<T>::indexOf(
+    const T &searchElement, size_t fromIndex
+) noexcept {
+    return this->call("indexOf", searchElement, fromIndex)
+        .template as<int>();
+}
+
+template <typename T>
+int TypedArray<T>::lastIndexOf(
+    const T &searchElement, size_t fromIndex
+) noexcept {
+    return this
+        ->call("lastIndexOf", searchElement, fromIndex)
+        .template as<int>();
+}
+
+template <typename T>
+bool TypedArray<T>::every(
+    const Function &predicate, const Any &thisArg
+) noexcept {
+    return this->call("every", predicate, thisArg)
+        .template as<bool>();
+}
+
+template <typename T>
+bool TypedArray<T>::some(
+    const Function &predicate, const Any &thisArg
+) noexcept {
+    return this->call("some", predicate, thisArg)
+        .template as<bool>();
+}
+
+template <typename T>
+void TypedArray<T>::forEach(
+    const Function &callbackfn, const Any &thisArg
+) noexcept {
+    this->call("forEach", callbackfn, thisArg);
+}
+
+template <typename T>
+TypedArray<Any> TypedArray<T>::map(
+    const Function &callbackfn, const Any &thisArg
+) noexcept {
+    return this->call("map", callbackfn, thisArg)
+        .template as<TypedArray<Any>>();
+}
+
+template <typename T>
+TypedArray<T> TypedArray<T>::filter(
+    const Function &predicate, const Any &thisArg
+) noexcept {
+    return this->call("filter", predicate, thisArg)
+        .template as<TypedArray<T>>();
+}
+
+template <typename T>
+Any TypedArray<T>::reduce(
+    const Function &callbackfn, const Any &initialValue
+) noexcept {
+    return this->call("reduce", callbackfn, initialValue)
+        .template as<Any>();
+}
+
+template <typename T>
+Any TypedArray<T>::reduceRight(
+    const Function &callbackfn, const Any &initialValue
+) noexcept {
+    return this
+        ->call("reduceRight", callbackfn, initialValue)
+        .template as<Any>();
+}
+
+template <typename T>
+Any TypedArray<T>::entries() noexcept {
+    return this->call("entries").template as<Any>();
+}
+
+template <typename T>
+Any TypedArray<T>::keys() noexcept {
+    return this->call("keys").template as<Any>();
+}
+
+template <typename T>
+Any TypedArray<T>::values() noexcept {
+    return this->call("values").template as<Any>();
+}
 
 DataView::DataView(Handle h) noexcept
     : emlite::Val(emlite::Val::take_ownership(h)) {}

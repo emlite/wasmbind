@@ -1,12 +1,13 @@
 #pragma once
 
-#include <emlite/emlite.hpp>
 #include "Any.hpp"
+#include <emlite/emlite.hpp>
 
 namespace jsbind {
 template <typename K, typename V>
 class Record : public emlite::Val {
-    explicit Record(Handle h) noexcept: emlite::Val(emlite::Val::take_ownership(h)) {}
+    explicit Record(Handle h) noexcept
+        : emlite::Val(emlite::Val::take_ownership(h)) {}
 
   public:
     static Record take_ownership(Handle h) noexcept {
@@ -20,7 +21,8 @@ class Record : public emlite::Val {
         return *this;
     }
 
-    Record() noexcept: emlite::Val(emlite::Val::object()) {}
+    Record() noexcept
+        : emlite::Val(emlite::Val::object()) {}
 
     bool hasOwnProperty(const char *prop) noexcept {
         return has_own_property(prop);

@@ -44,6 +44,6 @@ class URL : public emlite::Val {
     [[nodiscard]] URLSearchParams search_params() const;
 
     [[nodiscard]] String search() const;
-    void search(const String& value);
+    void search(const String &value);
 };
 } // namespace jsbind

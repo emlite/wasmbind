@@ -185,7 +185,8 @@ String String::slice(int start, int end) const noexcept {
 
 TypedArray<String> String::split(const char *sep
 ) const noexcept {
-    return this->call("split", sep).as<TypedArray<String>>();
+    return this->call("split", sep)
+        .as<TypedArray<String>>();
 }
 
 bool String::starts_with(const char *pat) const noexcept {
@@ -230,6 +231,21 @@ String String::trim_end() const noexcept {
 
 String String::trim_start() const noexcept {
     return String(this->call("trimStart"));
+}
+
+String String::toString() const noexcept {
+    return String(this->call("toString"));
+}
+
+String String::substr(int from, int length) const noexcept {
+    if (length != -1) {
+        return String(this->call("substr", from, length));
+    }
+    return String(this->call("substr", from));
+}
+
+String String::valueOf() const noexcept {
+    return String(this->call("valueOf"));
 }
 
 String operator+(const String &a, const String &b) {

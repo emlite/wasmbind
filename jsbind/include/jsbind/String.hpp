@@ -4,6 +4,7 @@
 #include "Array.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
+
 #if __has_include(<string>)
 #define JSBIND_HAS_STD_STRING 1
 #include <string>
@@ -99,6 +100,10 @@ class String : public emlite::Val {
     [[nodiscard]] String trim() const noexcept;
     [[nodiscard]] String trim_end() const noexcept;
     [[nodiscard]] String trim_start() const noexcept;
+    [[nodiscard]] String toString() const noexcept;
+    [[nodiscard]] String substr(int from, int length = -1)
+        const noexcept;
+    [[nodiscard]] String valueOf() const noexcept;
 
     friend String operator+(
         const String &a, const String &b

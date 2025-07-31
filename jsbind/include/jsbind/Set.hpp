@@ -24,7 +24,9 @@ class TypedSet : public emlite::Val {
         emlite::Val::set(idx, val);
     }
 
-    T get(size_t idx) noexcept { return emlite::Val::get(idx).template as<T>(); }
+    T get(size_t idx) noexcept {
+        return emlite::Val::get(idx).template as<T>();
+    }
 
     bool has(const T &val) const noexcept {
         return emlite::Val::has(val);

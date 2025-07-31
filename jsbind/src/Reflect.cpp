@@ -68,7 +68,9 @@ bool Reflect::isExtensible(const Any &target) {
 }
 
 TypedArray<Any> Reflect::ownKeys(const Any &target) {
-    return R().call("ownKeys", target).as<TypedArray<Any>>();
+    return R()
+        .call("ownKeys", target)
+        .as<TypedArray<Any>>();
 }
 
 bool Reflect::preventExtensions(const Any &target) {

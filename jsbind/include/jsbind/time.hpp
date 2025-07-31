@@ -42,4 +42,7 @@ int32_t set_interval(
 
 /* clearInterval(id) */
 void clear_interval(int32_t id);
+
+int32_t set_timeout(const Function &cb, int32_t millis);
+int32_t set_interval(const Function &cb, int32_t millis);
 } // namespace jsbind

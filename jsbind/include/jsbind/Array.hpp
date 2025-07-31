@@ -14,8 +14,11 @@
 #define EM_HAVE_STD_SPAN 0
 #endif
 
-
 namespace jsbind {
+
+class String;
+class Function;
+
 class ArrayBuffer : public emlite::Val {
     explicit ArrayBuffer(Handle h) noexcept;
 
@@ -87,27 +90,83 @@ class TypedArray : public emlite::Val {
         return emlite::Val::operator[](i).template as<T>();
     }
 
-    void set(size_t idx, const T &val) noexcept {
-        emlite::Val::set(idx, val);
-    }
+    void set(size_t idx, const T &val) noexcept;
 
-    bool has(const T &val) const noexcept {
-        return emlite::Val::has(val);
-    }
+    bool has(const T &val) const noexcept;
+
+    [[nodiscard]] String toString() const noexcept;
+    [[nodiscard]] String toLocaleString() const noexcept;
+    [[nodiscard]] T pop() noexcept;
+    [[nodiscard]] size_t push(const TypedArray<T> &items
+    ) noexcept;
+    [[nodiscard]] TypedArray<T> concat(
+        const TypedArray<T> &items
+    ) noexcept;
+    [[nodiscard]] String join(const String &separator
+    ) noexcept;
+    [[nodiscard]] TypedArray<T> reverse() noexcept;
+    [[nodiscard]] T shift() noexcept;
+    [[nodiscard]] TypedArray<T> sort(
+        const Function &compareFn
+    ) noexcept;
+    [[nodiscard]] TypedArray<T> splice(
+        size_t start,
+        size_t deleteCount,
+        const TypedArray<T> &items
+    ) noexcept;
+    [[nodiscard]] size_t unshift(const TypedArray<T> &items
+    ) noexcept;
+    [[nodiscard]] int indexOf(
+        const T &searchElement, size_t fromIndex = 0
+    ) noexcept;
+    [[nodiscard]] int lastIndexOf(
+        const T &searchElement, size_t fromIndex = 0
+    ) noexcept;
+    [[nodiscard]] bool every(
+        const Function &predicate,
+        const Any &thisArg = Any()
+    ) noexcept;
+    [[nodiscard]] bool some(
+        const Function &predicate,
+        const Any &thisArg = Any()
+    ) noexcept;
+    void forEach(
+        const Function &callbackfn,
+        const Any &thisArg = Any()
+    ) noexcept;
+    [[nodiscard]] TypedArray<Any> map(
+        const Function &callbackfn,
+        const Any &thisArg = Any()
+    ) noexcept;
+    [[nodiscard]] TypedArray<T> filter(
+        const Function &predicate,
+        const Any &thisArg = Any()
+    ) noexcept;
+    [[nodiscard]] Any reduce(
+        const Function &callbackfn,
+        const Any &initialValue = Any()
+    ) noexcept;
+    [[nodiscard]] Any reduceRight(
+        const Function &callbackfn,
+        const Any &initialValue = Any()
+    ) noexcept;
+    [[nodiscard]] Any entries() noexcept;
+    [[nodiscard]] Any keys() noexcept;
+    [[nodiscard]] Any values() noexcept;
 
 #if EM_HAVE_STD_SPAN
-    static TypedArray from(std::span<T> s) {  
-        return from(s.data(), s.size());                   
+    static TypedArray from(std::span<T> s) {
+        return from(s.data(), s.size());
     }
-    std::vector<T> to_vector() const {                                              
-        std::vector<int_ty> vec;                           
-        for (size_t i = 0; i < this->size(); i++) {        
-            vec.push_back(this->get(i).as<int_ty>());      
-        }                                                  
-        return vec;                                        
+    std::vector<T> to_vector() const {
+        std::vector<int_ty> vec;
+        for (size_t i = 0; i < this->size(); i++) {
+            vec.push_back(this->get(i).as<int_ty>());
+        }
+        return vec;
     }
 #endif
-    
+
     struct iterator {
         TypedArray *parent;
         size_t idx;
