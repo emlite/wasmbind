@@ -13,6 +13,9 @@ class Response : public emlite::Val {
   public:
     static Response take_ownership(Handle h) noexcept;
     Response(const emlite::Val &val) noexcept;
+
+    static emlite::Val instance() noexcept;
+
     /* response.ok */
     [[nodiscard]] bool ok() const;
 

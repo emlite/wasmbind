@@ -27,6 +27,10 @@ class Symbol : public emlite::Val {
     Symbol() noexcept
         : emlite::Val(emlite::Val::global("Symbol")()) {}
 
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global("Symbol");
+    }
+
     [[nodiscard]] Symbol clone() const noexcept {
         return *this;
     }

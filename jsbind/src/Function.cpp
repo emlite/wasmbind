@@ -12,6 +12,10 @@ Function Function::take_ownership(Handle h) noexcept {
 Function::Function(const emlite::Val &val) noexcept
     : emlite::Val(val) {}
 
+emlite::Val Function::instance() noexcept {
+    return emlite::Val::global("Function");
+}
+
 Function::Function(const char *name)
     : emlite::Val(emlite::Val::global(name)) {}
 

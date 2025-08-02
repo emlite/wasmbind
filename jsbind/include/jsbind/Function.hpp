@@ -26,6 +26,8 @@ class Function : public emlite::Val {
     static Function take_ownership(Handle h) noexcept;
     explicit Function(const emlite::Val &val) noexcept;
 
+    static emlite::Val instance() noexcept;
+
     template <size_t N>
     Function(const char *const (&args)[N], const char *body)
         : emlite::Val(make_dyn_function(

@@ -17,6 +17,7 @@ class Any : public emlite::Val {
 
     Any() noexcept;
 
+    static emlite::Val instance() noexcept;
     static Any undefined() noexcept;
     static Any null() noexcept;
     [[nodiscard]] bool isUndefined() const;

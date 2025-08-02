@@ -51,6 +51,10 @@ URL::URL(const char *input, const char *base)
           emlite::Val::global("URL").new_(input, base)
       ) {}
 
+emlite::Val URL::instance() noexcept {
+    return emlite::Val::global("URL");
+}
+
 String URL::href() const {
     return get("href").template as<String>();
 }

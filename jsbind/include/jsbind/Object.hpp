@@ -24,6 +24,10 @@ class Record : public emlite::Val {
     Record() noexcept
         : emlite::Val(emlite::Val::object()) {}
 
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global("Object");
+    }
+
     bool hasOwnProperty(const char *prop) noexcept {
         return has_own_property(prop);
     }

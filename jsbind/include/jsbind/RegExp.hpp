@@ -32,6 +32,10 @@ class RegExp : public emlite::Val {
     RegExp() noexcept
         : emlite::Val(emlite::Val::global("RegExp").new_()) {}
 
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global("RegExp");
+    }
+
     [[nodiscard]] RegExp clone() const noexcept {
         return *this;
     }

@@ -15,6 +15,10 @@ Error::Error(const emlite::Val &val) noexcept
 Error::Error(const char *msg) noexcept
     : emlite::Val(emlite::Val::global("Error").new_(msg)) {}
 
+emlite::Val Error::instance() noexcept {
+    return emlite::Val::global("Error");
+}
+
 String Error::message() const {
     return get("message").template as<String>();
 }
@@ -44,7 +48,11 @@ bool Error::stack(String &out) const {
     NAME::NAME(const char *msg) noexcept                   \
         : Error(emlite::Val::global(#NAME).new_(           \
               emlite::Val(msg)                             \
-          )) {}
+          )) {}                                            \
+                                                           \
+    emlite::Val NAME::instance() noexcept {                \
+        return emlite::Val::global(#NAME);                 \
+    }
 
 DEFINE_JS_ERROR(EvalError)
 DEFINE_JS_ERROR(RangeError)

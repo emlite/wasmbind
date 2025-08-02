@@ -12,6 +12,10 @@ Response Response::take_ownership(Handle h) noexcept {
 Response::Response(const emlite::Val &val) noexcept
     : emlite::Val(val) {}
 
+emlite::Val Response::instance() noexcept {
+    return emlite::Val::global("Response");
+}
+
 bool Response::ok() const {
     return get("ok").template as<bool>();
 }

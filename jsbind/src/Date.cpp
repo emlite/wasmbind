@@ -3,7 +3,11 @@
 using namespace jsbind;
 
 Date::Date() noexcept
-    : emlite::Val(emlite::Val::global().new_()) {}
+    : emlite::Val(emlite::Val::global("Date").new_()) {}
+
+emlite::Val Date::instance() noexcept {
+    return emlite::Val::global("Date");
+}
 
 Date Date::from_epoch_millis(int64_t ms) {
     return emlite::Val::global("Date")

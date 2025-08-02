@@ -37,6 +37,10 @@ class TypedMap : public emlite::Val {
               Strong ? "Map" : "WeakMap"
           )) {}
 
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global(Strong ? "Map" : "WeakMap");
+    }
+
     [[nodiscard]] size_t size() const {
         return get("size").template as<size_t>();
     }

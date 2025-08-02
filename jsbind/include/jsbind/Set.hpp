@@ -37,6 +37,10 @@ class TypedSet : public emlite::Val {
               Strong ? "Set" : "WeakSet"
           )) {}
 
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global(Strong ? "Set" : "WeakSet");
+    }
+
     [[nodiscard]] size_t size() const {
         return get("size").template as<size_t>();
     }

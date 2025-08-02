@@ -33,6 +33,8 @@ class URL : public emlite::Val {
 
     URL(const char *input, const char *base);
 
+    static emlite::Val instance() noexcept;
+
     [[nodiscard]] String href() const;
     void set_href(const char *v);
     [[nodiscard]] String protocol() const;

@@ -21,6 +21,8 @@ class TextEncoder : public emlite::Val {
     /* Construct `new TextEncoder()` (always UTF-8) */
     TextEncoder();
 
+    static emlite::Val instance() noexcept;
+
     /* encoder.encode(str) → Uint8Array */
     Uint8Array encode(const char *str) const;
 
@@ -48,6 +50,8 @@ class TextDecoder : public emlite::Val {
 
     /* new TextDecoder(options) */
     TextDecoder(const Any &opts);
+
+    static emlite::Val instance() noexcept;
 
     /* new TextDecoder(label, options) */
     TextDecoder(const char *label, const Any &opts);

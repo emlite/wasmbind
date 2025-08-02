@@ -273,6 +273,8 @@ class DataView : public emlite::Val {
         size_t byteLength = SIZE_MAX
     );
 
+    static emlite::Val instance() noexcept;
+
     [[nodiscard]] size_t byteLength() const;
     [[nodiscard]] size_t byteOffset() const;
     [[nodiscard]] ArrayBuffer buffer() const;

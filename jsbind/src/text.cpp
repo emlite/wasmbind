@@ -16,6 +16,10 @@ TextEncoder::TextEncoder()
     : emlite::Val(emlite::Val::global("TextEncoder").new_()
       ) {}
 
+emlite::Val TextEncoder::instance() noexcept {
+    return emlite::Val::global("TextEncoder");
+}
+
 /* encoder.encode(str) → Uint8Array */
 Uint8Array TextEncoder::encode(const char *str) const {
     return call("encode", emlite::Val(str))
@@ -65,6 +69,10 @@ TextDecoder::TextDecoder(const Any &opts)
 TextDecoder::TextDecoder(const char *label, const Any &opts)
     : emlite::Val(emlite::Val::global("TextDecoder")
                       .new_(label, opts)) {}
+
+emlite::Val TextDecoder::instance() noexcept {
+    return emlite::Val::global("TextDecoder");
+}
 
 /* decoder.decode(bytes) -> String (UTF-8) */
 String TextDecoder::decode(const Uint8Array &bytes) const {

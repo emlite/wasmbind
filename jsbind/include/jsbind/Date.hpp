@@ -14,6 +14,7 @@ class Date : public emlite::Val {
     Date(const emlite::Val &val) noexcept;
     Date() noexcept;
 
+    static emlite::Val instance() noexcept;
     static Date from_epoch_millis(int64_t ms);
 
     /// `Date.now()` – epoch milliseconds

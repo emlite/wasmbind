@@ -21,6 +21,8 @@ class String : public emlite::Val {
     explicit String(const emlite::Val &v) noexcept;
     String() noexcept;
 
+    static emlite::Val instance() noexcept;
+
     String(const char *utf8);
 #if JSBIND_HAS_STD_STRING
     explicit String(const std::string &utf8);

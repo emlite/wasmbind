@@ -14,6 +14,10 @@ String::String(const emlite::Val &v) noexcept
     : emlite::Val(v) {}
 String::String() noexcept : emlite::Val("") {}
 
+emlite::Val String::instance() noexcept {
+    return emlite::Val::global("String");
+}
+
 String::String(const char *s) : emlite::Val(s) {}
 
 #if JSBIND_HAS_STD_STRING

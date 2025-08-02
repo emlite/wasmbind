@@ -39,6 +39,10 @@ class BigInt64Array : public emlite::Val {
             }
         }()) {}
 
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global("BigInt64Array");
+    }
+
     [[nodiscard]] BigInt64Array clone() const noexcept {
         return *this;
     }
@@ -198,6 +202,10 @@ class BigUint64Array : public emlite::Val {
                 return emlite::Val::global("BigUint64Array").new_(buffer, static_cast<double>(byteOffset), static_cast<double>(length));
             }
         }()) {}
+
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global("BigUint64Array");
+    }
 
     [[nodiscard]] BigUint64Array clone() const noexcept {
         return *this;

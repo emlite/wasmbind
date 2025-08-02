@@ -224,6 +224,10 @@ DataView::DataView(
     : emlite::Val(emlite::Val::global("DataView")
                       .new_(buf, byteOffset, byteLen)) {}
 
+emlite::Val DataView::instance() noexcept {
+    return emlite::Val::global("DataView");
+}
+
 size_t DataView::byteLength() const {
     return emlite::Val::get("byteLength").as<size_t>();
 }

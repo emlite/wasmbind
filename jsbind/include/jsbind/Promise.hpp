@@ -20,6 +20,10 @@ class Promise : public emlite::Val {
     Promise() noexcept
         : emlite::Val(emlite::Val::undefined()) {}
 
+    static emlite::Val instance() noexcept {
+        return emlite::Val::global("Promise");
+    }
+
     Promise then(
         const Function &onFulfilled,
         const Function &onRejected

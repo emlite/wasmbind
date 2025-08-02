@@ -16,6 +16,7 @@
         name() noexcept;                                   \
         static name take_ownership(Handle h) noexcept;     \
         explicit name(const emlite::Val &val) noexcept;    \
+        static emlite::Val instance() noexcept;            \
         [[nodiscard]] name subarray(                       \
             size_t begin, size_t end = SIZE_MAX            \
         ) const;                                           \
@@ -51,6 +52,9 @@
         return name(                                       \
             emlite::Val::global(#name).call("from", temp)  \
         );                                                 \
+    }                                                      \
+    emlite::Val name::instance() noexcept {                \
+        return emlite::Val::global(#name);                 \
     }                                                      \
     DEFINE_CLONE(name)
 

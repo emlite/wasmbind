@@ -13,6 +13,8 @@ class Error : public emlite::Val {
     /* Construct `new Error(msg)` */
     Error(const char *msg) noexcept;
 
+    static emlite::Val instance() noexcept;
+
     /* JS err.message */
     [[nodiscard]] String message() const;
 
@@ -32,6 +34,7 @@ class Error : public emlite::Val {
         static NAME take_ownership(Handle h) noexcept;     \
         NAME(const emlite::Val &val) noexcept;             \
         NAME(const char *msg) noexcept;                    \
+        static emlite::Val instance() noexcept;            \
     };
 
 DECLARE_JS_ERROR(EvalError)
