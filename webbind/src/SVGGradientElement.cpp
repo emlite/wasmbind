@@ -8,6 +8,7 @@ SVGGradientElement SVGGradientElement::take_ownership(Handle h) noexcept {
         return SVGGradientElement(h);
     }
 SVGGradientElement SVGGradientElement::clone() const noexcept { return *this; }
+emlite::Val SVGGradientElement::instance() noexcept { return emlite::Val::global("SVGGradientElement"); }
 SVGGradientElement::SVGGradientElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGGradientElement::SVGGradientElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

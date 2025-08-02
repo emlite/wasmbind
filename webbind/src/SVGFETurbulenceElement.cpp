@@ -10,6 +10,7 @@ SVGFETurbulenceElement SVGFETurbulenceElement::take_ownership(Handle h) noexcept
         return SVGFETurbulenceElement(h);
     }
 SVGFETurbulenceElement SVGFETurbulenceElement::clone() const noexcept { return *this; }
+emlite::Val SVGFETurbulenceElement::instance() noexcept { return emlite::Val::global("SVGFETurbulenceElement"); }
 SVGFETurbulenceElement::SVGFETurbulenceElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFETurbulenceElement::SVGFETurbulenceElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

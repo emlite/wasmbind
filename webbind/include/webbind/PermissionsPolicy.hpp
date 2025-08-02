@@ -15,6 +15,7 @@ public:
     static PermissionsPolicy take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PermissionsPolicy clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The allowsFeature method.
     /// [`PermissionsPolicy.allowsFeature`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionsPolicy/allowsFeature)
     bool allowsFeature(const jsbind::String& feature);

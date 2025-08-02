@@ -30,6 +30,7 @@ StorageManager StorageManager::take_ownership(Handle h) noexcept {
         return StorageManager(h);
     }
 StorageManager StorageManager::clone() const noexcept { return *this; }
+emlite::Val StorageManager::instance() noexcept { return emlite::Val::global("StorageManager"); }
 StorageManager::StorageManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageManager::StorageManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

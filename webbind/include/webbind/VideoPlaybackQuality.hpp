@@ -15,6 +15,7 @@ public:
     static VideoPlaybackQuality take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoPlaybackQuality clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `creationTime` attribute.
     /// [`VideoPlaybackQuality.creationTime`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/creationTime)
     [[nodiscard]] jsbind::Any creationTime() const;

@@ -16,6 +16,7 @@ public:
     static MIDIMessageEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MIDIMessageEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MIDIMessageEvent(..)` constructor, creating a new MIDIMessageEvent instance
     MIDIMessageEvent(const jsbind::String& type);
     /// The `new MIDIMessageEvent(..)` constructor, creating a new MIDIMessageEvent instance

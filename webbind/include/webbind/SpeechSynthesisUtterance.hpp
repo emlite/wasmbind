@@ -18,6 +18,7 @@ public:
     static SpeechSynthesisUtterance take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechSynthesisUtterance clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechSynthesisUtterance(..)` constructor, creating a new SpeechSynthesisUtterance instance
     SpeechSynthesisUtterance();
     /// The `new SpeechSynthesisUtterance(..)` constructor, creating a new SpeechSynthesisUtterance instance

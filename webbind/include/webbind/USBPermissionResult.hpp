@@ -18,6 +18,7 @@ public:
     static USBPermissionResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBPermissionResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `devices` attribute.
     /// [`USBPermissionResult.devices`](https://developer.mozilla.org/en-US/docs/Web/API/USBPermissionResult/devices)
     [[nodiscard]] jsbind::TypedArray<USBDevice> devices() const;

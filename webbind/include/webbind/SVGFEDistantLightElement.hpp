@@ -18,6 +18,7 @@ public:
     static SVGFEDistantLightElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEDistantLightElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `azimuth` attribute.
     /// [`SVGFEDistantLightElement.azimuth`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDistantLightElement/azimuth)
     [[nodiscard]] SVGAnimatedNumber azimuth() const;

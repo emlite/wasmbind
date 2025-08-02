@@ -58,6 +58,7 @@ Performance Performance::take_ownership(Handle h) noexcept {
         return Performance(h);
     }
 Performance Performance::clone() const noexcept { return *this; }
+emlite::Val Performance::instance() noexcept { return emlite::Val::global("Performance"); }
 Performance::Performance(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Performance::Performance(const emlite::Val &val) noexcept: EventTarget(val) {}
 

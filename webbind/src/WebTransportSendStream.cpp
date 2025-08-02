@@ -39,6 +39,7 @@ WebTransportSendStream WebTransportSendStream::take_ownership(Handle h) noexcept
         return WebTransportSendStream(h);
     }
 WebTransportSendStream WebTransportSendStream::clone() const noexcept { return *this; }
+emlite::Val WebTransportSendStream::instance() noexcept { return emlite::Val::global("WebTransportSendStream"); }
 WebTransportSendStream::WebTransportSendStream(Handle h) noexcept : WritableStream(emlite::Val::take_ownership(h)) {}
 WebTransportSendStream::WebTransportSendStream(const emlite::Val &val) noexcept: WritableStream(val) {}
 

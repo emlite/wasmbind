@@ -16,6 +16,7 @@ public:
     static HTMLAudioElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLAudioElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLAudioElement(..)` constructor, creating a new HTMLAudioElement instance
     HTMLAudioElement();
 };

@@ -18,6 +18,7 @@ public:
     static LayoutShiftAttribution take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LayoutShiftAttribution clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `node` attribute.
     /// [`LayoutShiftAttribution.node`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/node)
     [[nodiscard]] Node node() const;

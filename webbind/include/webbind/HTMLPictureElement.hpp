@@ -16,6 +16,7 @@ public:
     static HTMLPictureElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLPictureElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLPictureElement(..)` constructor, creating a new HTMLPictureElement instance
     HTMLPictureElement();
 };

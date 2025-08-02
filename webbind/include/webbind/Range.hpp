@@ -22,6 +22,7 @@ public:
     static Range take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Range clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Range(..)` constructor, creating a new Range instance
     Range();
     /// Getter of the `commonAncestorContainer` attribute.

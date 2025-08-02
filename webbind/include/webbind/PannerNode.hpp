@@ -18,6 +18,7 @@ public:
     static PannerNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PannerNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PannerNode(..)` constructor, creating a new PannerNode instance
     PannerNode(const BaseAudioContext& context);
     /// The `new PannerNode(..)` constructor, creating a new PannerNode instance

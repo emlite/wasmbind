@@ -16,6 +16,7 @@ public:
     static PopStateEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PopStateEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PopStateEvent(..)` constructor, creating a new PopStateEvent instance
     PopStateEvent(const jsbind::String& type);
     /// The `new PopStateEvent(..)` constructor, creating a new PopStateEvent instance

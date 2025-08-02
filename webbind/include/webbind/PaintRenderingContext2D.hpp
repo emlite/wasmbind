@@ -21,6 +21,7 @@ public:
     static PaintRenderingContext2D take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PaintRenderingContext2D clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The save method.
     /// [`PaintRenderingContext2D.save`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/save)
     jsbind::Undefined save();

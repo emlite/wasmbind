@@ -5,6 +5,7 @@ PictureInPictureWindow PictureInPictureWindow::take_ownership(Handle h) noexcept
         return PictureInPictureWindow(h);
     }
 PictureInPictureWindow PictureInPictureWindow::clone() const noexcept { return *this; }
+emlite::Val PictureInPictureWindow::instance() noexcept { return emlite::Val::global("PictureInPictureWindow"); }
 PictureInPictureWindow::PictureInPictureWindow(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PictureInPictureWindow::PictureInPictureWindow(const emlite::Val &val) noexcept: EventTarget(val) {}
 

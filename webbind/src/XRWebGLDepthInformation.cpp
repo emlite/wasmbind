@@ -6,6 +6,7 @@ XRWebGLDepthInformation XRWebGLDepthInformation::take_ownership(Handle h) noexce
         return XRWebGLDepthInformation(h);
     }
 XRWebGLDepthInformation XRWebGLDepthInformation::clone() const noexcept { return *this; }
+emlite::Val XRWebGLDepthInformation::instance() noexcept { return emlite::Val::global("XRWebGLDepthInformation"); }
 XRWebGLDepthInformation::XRWebGLDepthInformation(Handle h) noexcept : XRDepthInformation(emlite::Val::take_ownership(h)) {}
 XRWebGLDepthInformation::XRWebGLDepthInformation(const emlite::Val &val) noexcept: XRDepthInformation(val) {}
 

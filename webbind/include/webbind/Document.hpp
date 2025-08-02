@@ -115,6 +115,7 @@ public:
     static Document take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Document clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Document(..)` constructor, creating a new Document instance
     Document();
     /// Getter of the `implementation` attribute.

@@ -7,6 +7,7 @@ XREquirectLayer XREquirectLayer::take_ownership(Handle h) noexcept {
         return XREquirectLayer(h);
     }
 XREquirectLayer XREquirectLayer::clone() const noexcept { return *this; }
+emlite::Val XREquirectLayer::instance() noexcept { return emlite::Val::global("XREquirectLayer"); }
 XREquirectLayer::XREquirectLayer(Handle h) noexcept : XRCompositionLayer(emlite::Val::take_ownership(h)) {}
 XREquirectLayer::XREquirectLayer(const emlite::Val &val) noexcept: XRCompositionLayer(val) {}
 

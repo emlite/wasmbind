@@ -5,6 +5,7 @@ FileSystemWritableFileStream FileSystemWritableFileStream::take_ownership(Handle
         return FileSystemWritableFileStream(h);
     }
 FileSystemWritableFileStream FileSystemWritableFileStream::clone() const noexcept { return *this; }
+emlite::Val FileSystemWritableFileStream::instance() noexcept { return emlite::Val::global("FileSystemWritableFileStream"); }
 FileSystemWritableFileStream::FileSystemWritableFileStream(Handle h) noexcept : WritableStream(emlite::Val::take_ownership(h)) {}
 FileSystemWritableFileStream::FileSystemWritableFileStream(const emlite::Val &val) noexcept: WritableStream(val) {}
 

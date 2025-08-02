@@ -18,6 +18,7 @@ public:
     static NavigationEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigationEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NavigationEvent(..)` constructor, creating a new NavigationEvent instance
     NavigationEvent(const jsbind::String& type);
     /// The `new NavigationEvent(..)` constructor, creating a new NavigationEvent instance

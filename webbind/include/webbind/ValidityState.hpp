@@ -15,6 +15,7 @@ public:
     static ValidityState take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ValidityState clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `valueMissing` attribute.
     /// [`ValidityState.valueMissing`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/valueMissing)
     [[nodiscard]] bool valueMissing() const;

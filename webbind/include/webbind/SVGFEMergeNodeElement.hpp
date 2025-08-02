@@ -18,6 +18,7 @@ public:
     static SVGFEMergeNodeElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEMergeNodeElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEMergeNodeElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeNodeElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

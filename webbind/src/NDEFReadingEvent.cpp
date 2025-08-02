@@ -6,6 +6,7 @@ NDEFReadingEvent NDEFReadingEvent::take_ownership(Handle h) noexcept {
         return NDEFReadingEvent(h);
     }
 NDEFReadingEvent NDEFReadingEvent::clone() const noexcept { return *this; }
+emlite::Val NDEFReadingEvent::instance() noexcept { return emlite::Val::global("NDEFReadingEvent"); }
 NDEFReadingEvent::NDEFReadingEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 NDEFReadingEvent::NDEFReadingEvent(const emlite::Val &val) noexcept: Event(val) {}
 

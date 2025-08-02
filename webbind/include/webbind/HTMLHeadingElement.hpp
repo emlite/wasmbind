@@ -16,6 +16,7 @@ public:
     static HTMLHeadingElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLHeadingElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLHeadingElement(..)` constructor, creating a new HTMLHeadingElement instance
     HTMLHeadingElement();
     /// Getter of the `align` attribute.

@@ -18,6 +18,7 @@ public:
     static XRPlane take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRPlane clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `planeSpace` attribute.
     /// [`XRPlane.planeSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRPlane/planeSpace)
     [[nodiscard]] XRSpace planeSpace() const;

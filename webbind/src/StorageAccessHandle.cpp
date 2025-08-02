@@ -13,6 +13,7 @@ StorageAccessHandle StorageAccessHandle::take_ownership(Handle h) noexcept {
         return StorageAccessHandle(h);
     }
 StorageAccessHandle StorageAccessHandle::clone() const noexcept { return *this; }
+emlite::Val StorageAccessHandle::instance() noexcept { return emlite::Val::global("StorageAccessHandle"); }
 StorageAccessHandle::StorageAccessHandle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageAccessHandle::StorageAccessHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

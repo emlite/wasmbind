@@ -5,6 +5,7 @@ ScreenOrientation ScreenOrientation::take_ownership(Handle h) noexcept {
         return ScreenOrientation(h);
     }
 ScreenOrientation ScreenOrientation::clone() const noexcept { return *this; }
+emlite::Val ScreenOrientation::instance() noexcept { return emlite::Val::global("ScreenOrientation"); }
 ScreenOrientation::ScreenOrientation(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 ScreenOrientation::ScreenOrientation(const emlite::Val &val) noexcept: EventTarget(val) {}
 

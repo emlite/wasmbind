@@ -18,6 +18,7 @@ public:
     static DataTransferItemList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DataTransferItemList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`DataTransferItemList.length`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/length)
     [[nodiscard]] unsigned long length() const;

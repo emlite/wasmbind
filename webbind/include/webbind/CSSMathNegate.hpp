@@ -18,6 +18,7 @@ public:
     static CSSMathNegate take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathNegate clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathNegate(..)` constructor, creating a new CSSMathNegate instance
     CSSMathNegate(const jsbind::Any& arg);
     /// Getter of the `value` attribute.

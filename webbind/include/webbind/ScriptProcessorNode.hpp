@@ -16,6 +16,7 @@ public:
     static ScriptProcessorNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ScriptProcessorNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onaudioprocess` attribute.
     /// [`ScriptProcessorNode.onaudioprocess`](https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/onaudioprocess)
     [[nodiscard]] jsbind::Any onaudioprocess() const;

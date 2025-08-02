@@ -19,6 +19,7 @@ public:
     static SVGFETileElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFETileElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFETileElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFETileElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

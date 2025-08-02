@@ -166,6 +166,7 @@ Attribution Attribution::take_ownership(Handle h) noexcept {
         return Attribution(h);
     }
 Attribution Attribution::clone() const noexcept { return *this; }
+emlite::Val Attribution::instance() noexcept { return emlite::Val::global("Attribution"); }
 Attribution::Attribution(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Attribution::Attribution(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

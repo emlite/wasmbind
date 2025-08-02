@@ -16,6 +16,7 @@ public:
     static WebTransportSendGroup take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebTransportSendGroup clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getStats method.
     /// [`WebTransportSendGroup.getStats`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendGroup/getStats)
     jsbind::Promise<WebTransportSendStreamStats> getStats();

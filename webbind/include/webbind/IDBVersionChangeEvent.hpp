@@ -16,6 +16,7 @@ public:
     static IDBVersionChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBVersionChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IDBVersionChangeEvent(..)` constructor, creating a new IDBVersionChangeEvent instance
     IDBVersionChangeEvent(const jsbind::String& type);
     /// The `new IDBVersionChangeEvent(..)` constructor, creating a new IDBVersionChangeEvent instance

@@ -21,6 +21,7 @@ public:
     static Animation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Animation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Animation(..)` constructor, creating a new Animation instance
     Animation();
     /// The `new Animation(..)` constructor, creating a new Animation instance

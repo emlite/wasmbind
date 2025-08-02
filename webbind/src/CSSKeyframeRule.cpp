@@ -6,6 +6,7 @@ CSSKeyframeRule CSSKeyframeRule::take_ownership(Handle h) noexcept {
         return CSSKeyframeRule(h);
     }
 CSSKeyframeRule CSSKeyframeRule::clone() const noexcept { return *this; }
+emlite::Val CSSKeyframeRule::instance() noexcept { return emlite::Val::global("CSSKeyframeRule"); }
 CSSKeyframeRule::CSSKeyframeRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
 CSSKeyframeRule::CSSKeyframeRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 

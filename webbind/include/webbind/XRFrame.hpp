@@ -36,6 +36,7 @@ public:
     static XRFrame take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRFrame clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `session` attribute.
     /// [`XRFrame.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session)
     [[nodiscard]] XRSession session() const;

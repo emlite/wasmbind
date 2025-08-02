@@ -18,6 +18,7 @@ public:
     static SharedStorageClearMethod take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedStorageClearMethod clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SharedStorageClearMethod(..)` constructor, creating a new SharedStorageClearMethod instance
     SharedStorageClearMethod();
     /// The `new SharedStorageClearMethod(..)` constructor, creating a new SharedStorageClearMethod instance

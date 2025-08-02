@@ -15,5 +15,6 @@ public:
     static EXT_frag_depth take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_frag_depth clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -16,6 +16,7 @@ public:
     static ContentIndexEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ContentIndexEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ContentIndexEvent(..)` constructor, creating a new ContentIndexEvent instance
     ContentIndexEvent(const jsbind::String& type, const jsbind::Any& init);
     /// Getter of the `id` attribute.

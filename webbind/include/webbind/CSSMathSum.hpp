@@ -18,6 +18,7 @@ public:
     static CSSMathSum take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathSum clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathSum(..)` constructor, creating a new CSSMathSum instance
     CSSMathSum(const jsbind::Any& args);
     /// Getter of the `values` attribute.

@@ -17,6 +17,7 @@ public:
     static XPathResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XPathResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `resultType` attribute.
     /// [`XPathResult.resultType`](https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/resultType)
     [[nodiscard]] unsigned short resultType() const;

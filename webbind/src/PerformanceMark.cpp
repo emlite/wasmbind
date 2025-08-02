@@ -6,6 +6,7 @@ PerformanceMark PerformanceMark::take_ownership(Handle h) noexcept {
         return PerformanceMark(h);
     }
 PerformanceMark PerformanceMark::clone() const noexcept { return *this; }
+emlite::Val PerformanceMark::instance() noexcept { return emlite::Val::global("PerformanceMark"); }
 PerformanceMark::PerformanceMark(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceMark::PerformanceMark(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 

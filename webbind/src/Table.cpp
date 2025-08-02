@@ -5,6 +5,7 @@ Table Table::take_ownership(Handle h) noexcept {
         return Table(h);
     }
 Table Table::clone() const noexcept { return *this; }
+emlite::Val Table::instance() noexcept { return emlite::Val::global("Table"); }
 Table::Table(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Table::Table(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

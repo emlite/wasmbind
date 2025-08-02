@@ -6,6 +6,7 @@ EXT_disjoint_timer_query EXT_disjoint_timer_query::take_ownership(Handle h) noex
         return EXT_disjoint_timer_query(h);
     }
 EXT_disjoint_timer_query EXT_disjoint_timer_query::clone() const noexcept { return *this; }
+emlite::Val EXT_disjoint_timer_query::instance() noexcept { return emlite::Val::global("EXT_disjoint_timer_query"); }
 EXT_disjoint_timer_query::EXT_disjoint_timer_query(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EXT_disjoint_timer_query::EXT_disjoint_timer_query(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

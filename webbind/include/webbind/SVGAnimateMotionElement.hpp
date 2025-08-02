@@ -16,5 +16,6 @@ public:
     static SVGAnimateMotionElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimateMotionElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

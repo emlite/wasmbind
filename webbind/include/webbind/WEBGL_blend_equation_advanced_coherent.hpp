@@ -15,5 +15,6 @@ public:
     static WEBGL_blend_equation_advanced_coherent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_blend_equation_advanced_coherent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

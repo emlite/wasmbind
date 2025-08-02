@@ -5,6 +5,7 @@ TaskAttributionTiming TaskAttributionTiming::take_ownership(Handle h) noexcept {
         return TaskAttributionTiming(h);
     }
 TaskAttributionTiming TaskAttributionTiming::clone() const noexcept { return *this; }
+emlite::Val TaskAttributionTiming::instance() noexcept { return emlite::Val::global("TaskAttributionTiming"); }
 TaskAttributionTiming::TaskAttributionTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 TaskAttributionTiming::TaskAttributionTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 

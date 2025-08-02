@@ -15,6 +15,7 @@ public:
     static PerformanceEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
     /// [`PerformanceEntry.id`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/id)
     [[nodiscard]] long long id() const;

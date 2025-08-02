@@ -7,6 +7,7 @@ BluetoothLEScanFilter BluetoothLEScanFilter::take_ownership(Handle h) noexcept {
         return BluetoothLEScanFilter(h);
     }
 BluetoothLEScanFilter BluetoothLEScanFilter::clone() const noexcept { return *this; }
+emlite::Val BluetoothLEScanFilter::instance() noexcept { return emlite::Val::global("BluetoothLEScanFilter"); }
 BluetoothLEScanFilter::BluetoothLEScanFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothLEScanFilter::BluetoothLEScanFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

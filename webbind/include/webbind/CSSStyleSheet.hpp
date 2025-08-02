@@ -20,6 +20,7 @@ public:
     static CSSStyleSheet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSStyleSheet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSStyleSheet(..)` constructor, creating a new CSSStyleSheet instance
     CSSStyleSheet();
     /// The `new CSSStyleSheet(..)` constructor, creating a new CSSStyleSheet instance

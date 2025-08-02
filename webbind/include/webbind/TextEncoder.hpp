@@ -30,6 +30,7 @@ public:
     static TextEncoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextEncoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextEncoder(..)` constructor, creating a new TextEncoder instance
     TextEncoder();
     /// The encode method.

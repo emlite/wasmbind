@@ -88,6 +88,7 @@ SharedStorageWorkletGlobalScope SharedStorageWorkletGlobalScope::take_ownership(
         return SharedStorageWorkletGlobalScope(h);
     }
 SharedStorageWorkletGlobalScope SharedStorageWorkletGlobalScope::clone() const noexcept { return *this; }
+emlite::Val SharedStorageWorkletGlobalScope::instance() noexcept { return emlite::Val::global("SharedStorageWorkletGlobalScope"); }
 SharedStorageWorkletGlobalScope::SharedStorageWorkletGlobalScope(Handle h) noexcept : WorkletGlobalScope(emlite::Val::take_ownership(h)) {}
 SharedStorageWorkletGlobalScope::SharedStorageWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 

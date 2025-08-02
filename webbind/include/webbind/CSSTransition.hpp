@@ -16,6 +16,7 @@ public:
     static CSSTransition take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSTransition clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `transitionProperty` attribute.
     /// [`CSSTransition.transitionProperty`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransition/transitionProperty)
     [[nodiscard]] jsbind::String transitionProperty() const;

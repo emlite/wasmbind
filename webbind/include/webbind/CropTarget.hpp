@@ -18,6 +18,7 @@ public:
     static CropTarget take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CropTarget clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The fromElement method.
     /// [`CropTarget.fromElement`](https://developer.mozilla.org/en-US/docs/Web/API/CropTarget/fromElement)
     static jsbind::Promise<CropTarget> fromElement(const Element& element);

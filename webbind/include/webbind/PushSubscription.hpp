@@ -33,6 +33,7 @@ public:
     static PushSubscription take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PushSubscription clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `endpoint` attribute.
     /// [`PushSubscription.endpoint`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/endpoint)
     [[nodiscard]] jsbind::String endpoint() const;

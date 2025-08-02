@@ -16,6 +16,7 @@ public:
     static HTMLFormControlsCollection take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLFormControlsCollection clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The namedItem method.
     /// [`HTMLFormControlsCollection.namedItem`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection/namedItem)
     jsbind::Any namedItem(const jsbind::String& name);

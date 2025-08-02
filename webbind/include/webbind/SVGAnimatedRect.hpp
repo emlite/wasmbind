@@ -18,6 +18,7 @@ public:
     static SVGAnimatedRect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedRect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedRect.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedRect/baseVal)
     [[nodiscard]] DOMRect baseVal() const;

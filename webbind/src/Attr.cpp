@@ -6,6 +6,7 @@ Attr Attr::take_ownership(Handle h) noexcept {
         return Attr(h);
     }
 Attr Attr::clone() const noexcept { return *this; }
+emlite::Val Attr::instance() noexcept { return emlite::Val::global("Attr"); }
 Attr::Attr(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Attr::Attr(const emlite::Val &val) noexcept: Node(val) {}
 

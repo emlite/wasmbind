@@ -5,6 +5,7 @@ PopStateEvent PopStateEvent::take_ownership(Handle h) noexcept {
         return PopStateEvent(h);
     }
 PopStateEvent PopStateEvent::clone() const noexcept { return *this; }
+emlite::Val PopStateEvent::instance() noexcept { return emlite::Val::global("PopStateEvent"); }
 PopStateEvent::PopStateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 PopStateEvent::PopStateEvent(const emlite::Val &val) noexcept: Event(val) {}
 

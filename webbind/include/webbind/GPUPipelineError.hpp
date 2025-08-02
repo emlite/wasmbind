@@ -16,6 +16,7 @@ public:
     static GPUPipelineError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUPipelineError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GPUPipelineError(..)` constructor, creating a new GPUPipelineError instance
     GPUPipelineError();
     /// The `new GPUPipelineError(..)` constructor, creating a new GPUPipelineError instance

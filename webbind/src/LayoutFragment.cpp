@@ -6,6 +6,7 @@ LayoutFragment LayoutFragment::take_ownership(Handle h) noexcept {
         return LayoutFragment(h);
     }
 LayoutFragment LayoutFragment::clone() const noexcept { return *this; }
+emlite::Val LayoutFragment::instance() noexcept { return emlite::Val::global("LayoutFragment"); }
 LayoutFragment::LayoutFragment(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LayoutFragment::LayoutFragment(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -16,6 +16,7 @@ public:
     static CSSNamespaceRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSNamespaceRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `namespaceURI` attribute.
     /// [`CSSNamespaceRule.namespaceURI`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNamespaceRule/namespaceURI)
     [[nodiscard]] jsbind::String namespaceURI() const;

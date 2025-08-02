@@ -15,6 +15,7 @@ public:
     static GPUAdapterInfo take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUAdapterInfo clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `vendor` attribute.
     /// [`GPUAdapterInfo.vendor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo/vendor)
     [[nodiscard]] jsbind::String vendor() const;

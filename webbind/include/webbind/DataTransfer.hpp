@@ -19,6 +19,7 @@ public:
     static DataTransfer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DataTransfer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DataTransfer(..)` constructor, creating a new DataTransfer instance
     DataTransfer();
     /// Getter of the `dropEffect` attribute.

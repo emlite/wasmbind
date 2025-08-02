@@ -17,6 +17,7 @@ public:
     static NavigationTransition take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigationTransition clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `navigationType` attribute.
     /// [`NavigationTransition.navigationType`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/navigationType)
     [[nodiscard]] NavigationType navigationType() const;

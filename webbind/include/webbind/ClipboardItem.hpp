@@ -17,6 +17,7 @@ public:
     static ClipboardItem take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ClipboardItem clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ClipboardItem(..)` constructor, creating a new ClipboardItem instance
     ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items);
     /// The `new ClipboardItem(..)` constructor, creating a new ClipboardItem instance

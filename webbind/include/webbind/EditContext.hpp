@@ -19,6 +19,7 @@ public:
     static EditContext take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EditContext clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EditContext(..)` constructor, creating a new EditContext instance
     EditContext();
     /// The `new EditContext(..)` constructor, creating a new EditContext instance

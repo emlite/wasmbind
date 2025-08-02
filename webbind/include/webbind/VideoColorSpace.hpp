@@ -34,6 +34,7 @@ public:
     static VideoColorSpace take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoColorSpace clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoColorSpace(..)` constructor, creating a new VideoColorSpace instance
     VideoColorSpace();
     /// The `new VideoColorSpace(..)` constructor, creating a new VideoColorSpace instance

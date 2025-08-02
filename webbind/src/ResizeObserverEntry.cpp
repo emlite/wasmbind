@@ -8,6 +8,7 @@ ResizeObserverEntry ResizeObserverEntry::take_ownership(Handle h) noexcept {
         return ResizeObserverEntry(h);
     }
 ResizeObserverEntry ResizeObserverEntry::clone() const noexcept { return *this; }
+emlite::Val ResizeObserverEntry::instance() noexcept { return emlite::Val::global("ResizeObserverEntry"); }
 ResizeObserverEntry::ResizeObserverEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ResizeObserverEntry::ResizeObserverEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

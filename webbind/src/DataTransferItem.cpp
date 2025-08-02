@@ -8,6 +8,7 @@ DataTransferItem DataTransferItem::take_ownership(Handle h) noexcept {
         return DataTransferItem(h);
     }
 DataTransferItem DataTransferItem::clone() const noexcept { return *this; }
+emlite::Val DataTransferItem::instance() noexcept { return emlite::Val::global("DataTransferItem"); }
 DataTransferItem::DataTransferItem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DataTransferItem::DataTransferItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

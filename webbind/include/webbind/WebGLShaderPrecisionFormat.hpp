@@ -15,6 +15,7 @@ public:
     static WebGLShaderPrecisionFormat take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLShaderPrecisionFormat clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `rangeMin` attribute.
     /// [`WebGLShaderPrecisionFormat.rangeMin`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMin)
     [[nodiscard]] jsbind::Any rangeMin() const;

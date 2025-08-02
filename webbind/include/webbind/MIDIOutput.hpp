@@ -16,6 +16,7 @@ public:
     static MIDIOutput take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MIDIOutput clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The send method.
     /// [`MIDIOutput.send`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIOutput/send)
     jsbind::Undefined send(jsbind::TypedArray<unsigned char> data);

@@ -65,6 +65,7 @@ public:
     static RTCIceTransport take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCIceTransport clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `role` attribute.
     /// [`RTCIceTransport.role`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/role)
     [[nodiscard]] RTCIceRole role() const;

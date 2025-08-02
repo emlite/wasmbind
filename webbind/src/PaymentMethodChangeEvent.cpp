@@ -5,6 +5,7 @@ PaymentMethodChangeEvent PaymentMethodChangeEvent::take_ownership(Handle h) noex
         return PaymentMethodChangeEvent(h);
     }
 PaymentMethodChangeEvent PaymentMethodChangeEvent::clone() const noexcept { return *this; }
+emlite::Val PaymentMethodChangeEvent::instance() noexcept { return emlite::Val::global("PaymentMethodChangeEvent"); }
 PaymentMethodChangeEvent::PaymentMethodChangeEvent(Handle h) noexcept : PaymentRequestUpdateEvent(emlite::Val::take_ownership(h)) {}
 PaymentMethodChangeEvent::PaymentMethodChangeEvent(const emlite::Val &val) noexcept: PaymentRequestUpdateEvent(val) {}
 

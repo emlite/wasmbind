@@ -21,6 +21,7 @@ TaskSignal TaskSignal::take_ownership(Handle h) noexcept {
         return TaskSignal(h);
     }
 TaskSignal TaskSignal::clone() const noexcept { return *this; }
+emlite::Val TaskSignal::instance() noexcept { return emlite::Val::global("TaskSignal"); }
 TaskSignal::TaskSignal(Handle h) noexcept : AbortSignal(emlite::Val::take_ownership(h)) {}
 TaskSignal::TaskSignal(const emlite::Val &val) noexcept: AbortSignal(val) {}
 

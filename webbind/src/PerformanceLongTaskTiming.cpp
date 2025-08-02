@@ -6,6 +6,7 @@ PerformanceLongTaskTiming PerformanceLongTaskTiming::take_ownership(Handle h) no
         return PerformanceLongTaskTiming(h);
     }
 PerformanceLongTaskTiming PerformanceLongTaskTiming::clone() const noexcept { return *this; }
+emlite::Val PerformanceLongTaskTiming::instance() noexcept { return emlite::Val::global("PerformanceLongTaskTiming"); }
 PerformanceLongTaskTiming::PerformanceLongTaskTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceLongTaskTiming::PerformanceLongTaskTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 

@@ -15,6 +15,7 @@ public:
     static GamepadPose take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GamepadPose clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `hasOrientation` attribute.
     /// [`GamepadPose.hasOrientation`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/hasOrientation)
     [[nodiscard]] bool hasOrientation() const;

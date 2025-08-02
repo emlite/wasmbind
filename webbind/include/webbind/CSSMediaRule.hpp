@@ -18,6 +18,7 @@ public:
     static CSSMediaRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMediaRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `media` attribute.
     /// [`CSSMediaRule.media`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/media)
     [[nodiscard]] MediaList media() const;

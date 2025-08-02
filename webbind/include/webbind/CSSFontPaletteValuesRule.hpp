@@ -16,6 +16,7 @@ public:
     static CSSFontPaletteValuesRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFontPaletteValuesRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSFontPaletteValuesRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/name)
     [[nodiscard]] jsbind::String name() const;

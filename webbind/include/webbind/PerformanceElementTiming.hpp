@@ -19,6 +19,7 @@ public:
     static PerformanceElementTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceElementTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `renderTime` attribute.
     /// [`PerformanceElementTiming.renderTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/renderTime)
     [[nodiscard]] jsbind::Any renderTime() const;

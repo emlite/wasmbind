@@ -65,6 +65,7 @@ public:
     static VideoDecoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoDecoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoDecoder(..)` constructor, creating a new VideoDecoder instance
     VideoDecoder(const jsbind::Any& init);
     /// Getter of the `state` attribute.

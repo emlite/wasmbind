@@ -15,6 +15,7 @@ public:
     static GamepadButton take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GamepadButton clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `pressed` attribute.
     /// [`GamepadButton.pressed`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/pressed)
     [[nodiscard]] bool pressed() const;

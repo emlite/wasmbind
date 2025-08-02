@@ -18,6 +18,7 @@ public:
     static HIDInputReportEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HIDInputReportEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HIDInputReportEvent(..)` constructor, creating a new HIDInputReportEvent instance
     HIDInputReportEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `device` attribute.

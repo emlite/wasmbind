@@ -5,6 +5,7 @@ CloseEvent CloseEvent::take_ownership(Handle h) noexcept {
         return CloseEvent(h);
     }
 CloseEvent CloseEvent::clone() const noexcept { return *this; }
+emlite::Val CloseEvent::instance() noexcept { return emlite::Val::global("CloseEvent"); }
 CloseEvent::CloseEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 CloseEvent::CloseEvent(const emlite::Val &val) noexcept: Event(val) {}
 

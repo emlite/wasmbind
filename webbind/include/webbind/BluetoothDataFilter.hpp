@@ -15,6 +15,7 @@ public:
     static BluetoothDataFilter take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothDataFilter clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BluetoothDataFilter(..)` constructor, creating a new BluetoothDataFilter instance
     BluetoothDataFilter();
     /// The `new BluetoothDataFilter(..)` constructor, creating a new BluetoothDataFilter instance

@@ -19,6 +19,7 @@ public:
     static DeviceMotionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DeviceMotionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DeviceMotionEvent(..)` constructor, creating a new DeviceMotionEvent instance
     DeviceMotionEvent(const jsbind::String& type);
     /// The `new DeviceMotionEvent(..)` constructor, creating a new DeviceMotionEvent instance

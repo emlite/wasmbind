@@ -18,6 +18,7 @@ public:
     static AudioTrackList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioTrackList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`AudioTrackList.length`](https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/length)
     [[nodiscard]] unsigned long length() const;

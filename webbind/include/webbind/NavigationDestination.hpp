@@ -15,6 +15,7 @@ public:
     static NavigationDestination take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigationDestination clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `url` attribute.
     /// [`NavigationDestination.url`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination/url)
     [[nodiscard]] jsbind::String url() const;

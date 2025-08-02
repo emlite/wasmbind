@@ -16,6 +16,7 @@ public:
     static ProximitySensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ProximitySensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ProximitySensor(..)` constructor, creating a new ProximitySensor instance
     ProximitySensor();
     /// The `new ProximitySensor(..)` constructor, creating a new ProximitySensor instance

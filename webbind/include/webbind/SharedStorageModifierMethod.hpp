@@ -15,5 +15,6 @@ public:
     static SharedStorageModifierMethod take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedStorageModifierMethod clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

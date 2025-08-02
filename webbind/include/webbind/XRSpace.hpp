@@ -16,5 +16,6 @@ public:
     static XRSpace take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRSpace clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

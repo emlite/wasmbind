@@ -5,6 +5,7 @@ EncodedVideoChunk EncodedVideoChunk::take_ownership(Handle h) noexcept {
         return EncodedVideoChunk(h);
     }
 EncodedVideoChunk EncodedVideoChunk::clone() const noexcept { return *this; }
+emlite::Val EncodedVideoChunk::instance() noexcept { return emlite::Val::global("EncodedVideoChunk"); }
 EncodedVideoChunk::EncodedVideoChunk(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EncodedVideoChunk::EncodedVideoChunk(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

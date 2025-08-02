@@ -19,6 +19,7 @@ public:
     static SVGFEComponentTransferElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEComponentTransferElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEComponentTransferElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

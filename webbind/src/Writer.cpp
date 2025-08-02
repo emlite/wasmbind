@@ -119,6 +119,7 @@ Writer Writer::take_ownership(Handle h) noexcept {
         return Writer(h);
     }
 Writer Writer::clone() const noexcept { return *this; }
+emlite::Val Writer::instance() noexcept { return emlite::Val::global("Writer"); }
 Writer::Writer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Writer::Writer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

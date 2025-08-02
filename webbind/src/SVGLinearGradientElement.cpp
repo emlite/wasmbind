@@ -6,6 +6,7 @@ SVGLinearGradientElement SVGLinearGradientElement::take_ownership(Handle h) noex
         return SVGLinearGradientElement(h);
     }
 SVGLinearGradientElement SVGLinearGradientElement::clone() const noexcept { return *this; }
+emlite::Val SVGLinearGradientElement::instance() noexcept { return emlite::Val::global("SVGLinearGradientElement"); }
 SVGLinearGradientElement::SVGLinearGradientElement(Handle h) noexcept : SVGGradientElement(emlite::Val::take_ownership(h)) {}
 SVGLinearGradientElement::SVGLinearGradientElement(const emlite::Val &val) noexcept: SVGGradientElement(val) {}
 

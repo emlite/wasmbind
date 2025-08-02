@@ -5,6 +5,7 @@ HTMLDialogElement HTMLDialogElement::take_ownership(Handle h) noexcept {
         return HTMLDialogElement(h);
     }
 HTMLDialogElement HTMLDialogElement::clone() const noexcept { return *this; }
+emlite::Val HTMLDialogElement::instance() noexcept { return emlite::Val::global("HTMLDialogElement"); }
 HTMLDialogElement::HTMLDialogElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLDialogElement::HTMLDialogElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

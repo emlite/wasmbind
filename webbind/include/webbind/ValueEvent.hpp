@@ -16,6 +16,7 @@ public:
     static ValueEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ValueEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ValueEvent(..)` constructor, creating a new ValueEvent instance
     ValueEvent(const jsbind::String& type);
     /// The `new ValueEvent(..)` constructor, creating a new ValueEvent instance

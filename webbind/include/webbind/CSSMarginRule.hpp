@@ -18,6 +18,7 @@ public:
     static CSSMarginRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMarginRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSMarginRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMarginRule/name)
     [[nodiscard]] jsbind::String name() const;

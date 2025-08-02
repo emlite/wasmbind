@@ -17,6 +17,7 @@ public:
     static DedicatedWorkerGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DedicatedWorkerGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`DedicatedWorkerGlobalScope.name`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/name)
     [[nodiscard]] jsbind::String name() const;

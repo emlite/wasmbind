@@ -18,6 +18,7 @@ public:
     static USBConnectionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBConnectionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBConnectionEvent(..)` constructor, creating a new USBConnectionEvent instance
     USBConnectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `device` attribute.

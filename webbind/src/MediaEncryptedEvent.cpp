@@ -5,6 +5,7 @@ MediaEncryptedEvent MediaEncryptedEvent::take_ownership(Handle h) noexcept {
         return MediaEncryptedEvent(h);
     }
 MediaEncryptedEvent MediaEncryptedEvent::clone() const noexcept { return *this; }
+emlite::Val MediaEncryptedEvent::instance() noexcept { return emlite::Val::global("MediaEncryptedEvent"); }
 MediaEncryptedEvent::MediaEncryptedEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 MediaEncryptedEvent::MediaEncryptedEvent(const emlite::Val &val) noexcept: Event(val) {}
 

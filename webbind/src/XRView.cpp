@@ -7,6 +7,7 @@ XRView XRView::take_ownership(Handle h) noexcept {
         return XRView(h);
     }
 XRView XRView::clone() const noexcept { return *this; }
+emlite::Val XRView::instance() noexcept { return emlite::Val::global("XRView"); }
 XRView::XRView(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRView::XRView(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

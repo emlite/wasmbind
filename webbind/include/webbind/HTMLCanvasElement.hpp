@@ -19,6 +19,7 @@ public:
     static HTMLCanvasElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLCanvasElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLCanvasElement(..)` constructor, creating a new HTMLCanvasElement instance
     HTMLCanvasElement();
     /// Getter of the `width` attribute.

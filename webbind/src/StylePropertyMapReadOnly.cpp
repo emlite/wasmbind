@@ -6,6 +6,7 @@ StylePropertyMapReadOnly StylePropertyMapReadOnly::take_ownership(Handle h) noex
         return StylePropertyMapReadOnly(h);
     }
 StylePropertyMapReadOnly StylePropertyMapReadOnly::clone() const noexcept { return *this; }
+emlite::Val StylePropertyMapReadOnly::instance() noexcept { return emlite::Val::global("StylePropertyMapReadOnly"); }
 StylePropertyMapReadOnly::StylePropertyMapReadOnly(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StylePropertyMapReadOnly::StylePropertyMapReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

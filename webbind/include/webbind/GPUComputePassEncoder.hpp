@@ -19,6 +19,7 @@ public:
     static GPUComputePassEncoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUComputePassEncoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setPipeline method.
     /// [`GPUComputePassEncoder.setPipeline`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/setPipeline)
     jsbind::Undefined setPipeline(const GPUComputePipeline& pipeline);

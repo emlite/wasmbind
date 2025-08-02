@@ -32,6 +32,7 @@ public:
     static IdleDetector take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IdleDetector clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IdleDetector(..)` constructor, creating a new IdleDetector instance
     IdleDetector();
     /// Getter of the `userState` attribute.

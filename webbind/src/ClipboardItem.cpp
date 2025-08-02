@@ -6,6 +6,7 @@ ClipboardItem ClipboardItem::take_ownership(Handle h) noexcept {
         return ClipboardItem(h);
     }
 ClipboardItem ClipboardItem::clone() const noexcept { return *this; }
+emlite::Val ClipboardItem::instance() noexcept { return emlite::Val::global("ClipboardItem"); }
 ClipboardItem::ClipboardItem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ClipboardItem::ClipboardItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

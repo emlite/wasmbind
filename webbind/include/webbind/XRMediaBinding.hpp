@@ -76,6 +76,7 @@ public:
     static XRMediaBinding take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRMediaBinding clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRMediaBinding(..)` constructor, creating a new XRMediaBinding instance
     XRMediaBinding(const XRSession& session);
     /// The createQuadLayer method.

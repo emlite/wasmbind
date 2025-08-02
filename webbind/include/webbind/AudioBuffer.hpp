@@ -15,6 +15,7 @@ public:
     static AudioBuffer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioBuffer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioBuffer(..)` constructor, creating a new AudioBuffer instance
     AudioBuffer(const jsbind::Any& options);
     /// Getter of the `sampleRate` attribute.

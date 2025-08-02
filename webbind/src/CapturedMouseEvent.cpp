@@ -5,6 +5,7 @@ CapturedMouseEvent CapturedMouseEvent::take_ownership(Handle h) noexcept {
         return CapturedMouseEvent(h);
     }
 CapturedMouseEvent CapturedMouseEvent::clone() const noexcept { return *this; }
+emlite::Val CapturedMouseEvent::instance() noexcept { return emlite::Val::global("CapturedMouseEvent"); }
 CapturedMouseEvent::CapturedMouseEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 CapturedMouseEvent::CapturedMouseEvent(const emlite::Val &val) noexcept: Event(val) {}
 

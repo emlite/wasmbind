@@ -15,6 +15,7 @@ public:
     static AudioSinkInfo take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioSinkInfo clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`AudioSinkInfo.type`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSinkInfo/type)
     [[nodiscard]] AudioSinkType type() const;

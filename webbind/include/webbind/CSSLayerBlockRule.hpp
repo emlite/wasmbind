@@ -16,6 +16,7 @@ public:
     static CSSLayerBlockRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSLayerBlockRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSLayerBlockRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSLayerBlockRule/name)
     [[nodiscard]] jsbind::String name() const;

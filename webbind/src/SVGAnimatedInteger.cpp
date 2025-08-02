@@ -5,6 +5,7 @@ SVGAnimatedInteger SVGAnimatedInteger::take_ownership(Handle h) noexcept {
         return SVGAnimatedInteger(h);
     }
 SVGAnimatedInteger SVGAnimatedInteger::clone() const noexcept { return *this; }
+emlite::Val SVGAnimatedInteger::instance() noexcept { return emlite::Val::global("SVGAnimatedInteger"); }
 SVGAnimatedInteger::SVGAnimatedInteger(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGAnimatedInteger::SVGAnimatedInteger(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

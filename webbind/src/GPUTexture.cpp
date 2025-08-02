@@ -78,6 +78,7 @@ GPUTexture GPUTexture::take_ownership(Handle h) noexcept {
         return GPUTexture(h);
     }
 GPUTexture GPUTexture::clone() const noexcept { return *this; }
+emlite::Val GPUTexture::instance() noexcept { return emlite::Val::global("GPUTexture"); }
 GPUTexture::GPUTexture(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUTexture::GPUTexture(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -8,6 +8,7 @@ MathMLElement MathMLElement::take_ownership(Handle h) noexcept {
         return MathMLElement(h);
     }
 MathMLElement MathMLElement::clone() const noexcept { return *this; }
+emlite::Val MathMLElement::instance() noexcept { return emlite::Val::global("MathMLElement"); }
 MathMLElement::MathMLElement(Handle h) noexcept : Element(emlite::Val::take_ownership(h)) {}
 MathMLElement::MathMLElement(const emlite::Val &val) noexcept: Element(val) {}
 

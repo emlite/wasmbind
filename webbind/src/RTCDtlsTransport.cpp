@@ -6,6 +6,7 @@ RTCDtlsTransport RTCDtlsTransport::take_ownership(Handle h) noexcept {
         return RTCDtlsTransport(h);
     }
 RTCDtlsTransport RTCDtlsTransport::clone() const noexcept { return *this; }
+emlite::Val RTCDtlsTransport::instance() noexcept { return emlite::Val::global("RTCDtlsTransport"); }
 RTCDtlsTransport::RTCDtlsTransport(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 RTCDtlsTransport::RTCDtlsTransport(const emlite::Val &val) noexcept: EventTarget(val) {}
 

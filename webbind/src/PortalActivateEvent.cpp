@@ -6,6 +6,7 @@ PortalActivateEvent PortalActivateEvent::take_ownership(Handle h) noexcept {
         return PortalActivateEvent(h);
     }
 PortalActivateEvent PortalActivateEvent::clone() const noexcept { return *this; }
+emlite::Val PortalActivateEvent::instance() noexcept { return emlite::Val::global("PortalActivateEvent"); }
 PortalActivateEvent::PortalActivateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 PortalActivateEvent::PortalActivateEvent(const emlite::Val &val) noexcept: Event(val) {}
 

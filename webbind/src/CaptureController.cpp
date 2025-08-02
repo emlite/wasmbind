@@ -6,6 +6,7 @@ CaptureController CaptureController::take_ownership(Handle h) noexcept {
         return CaptureController(h);
     }
 CaptureController CaptureController::clone() const noexcept { return *this; }
+emlite::Val CaptureController::instance() noexcept { return emlite::Val::global("CaptureController"); }
 CaptureController::CaptureController(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 CaptureController::CaptureController(const emlite::Val &val) noexcept: EventTarget(val) {}
 

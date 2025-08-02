@@ -5,6 +5,7 @@ HTMLTableColElement HTMLTableColElement::take_ownership(Handle h) noexcept {
         return HTMLTableColElement(h);
     }
 HTMLTableColElement HTMLTableColElement::clone() const noexcept { return *this; }
+emlite::Val HTMLTableColElement::instance() noexcept { return emlite::Val::global("HTMLTableColElement"); }
 HTMLTableColElement::HTMLTableColElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLTableColElement::HTMLTableColElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

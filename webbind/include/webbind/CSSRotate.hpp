@@ -18,6 +18,7 @@ public:
     static CSSRotate take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSRotate clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSRotate(..)` constructor, creating a new CSSRotate instance
     CSSRotate(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& z, const CSSNumericValue& angle);
     /// Getter of the `x` attribute.

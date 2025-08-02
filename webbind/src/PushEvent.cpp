@@ -6,6 +6,7 @@ PushEvent PushEvent::take_ownership(Handle h) noexcept {
         return PushEvent(h);
     }
 PushEvent PushEvent::clone() const noexcept { return *this; }
+emlite::Val PushEvent::instance() noexcept { return emlite::Val::global("PushEvent"); }
 PushEvent::PushEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 PushEvent::PushEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 

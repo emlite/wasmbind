@@ -19,6 +19,7 @@ public:
     static XRQuadLayer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRQuadLayer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `space` attribute.
     /// [`XRQuadLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XRQuadLayer/space)
     [[nodiscard]] XRSpace space() const;

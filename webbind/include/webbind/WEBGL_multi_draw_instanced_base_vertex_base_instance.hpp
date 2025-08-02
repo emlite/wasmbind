@@ -15,6 +15,7 @@ public:
     static WEBGL_multi_draw_instanced_base_vertex_base_instance take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_multi_draw_instanced_base_vertex_base_instance clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The multiDrawArraysInstancedBaseInstanceWEBGL method.
     /// [`WEBGL_multi_draw_instanced_base_vertex_base_instance.multiDrawArraysInstancedBaseInstanceWEBGL`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_multi_draw_instanced_base_vertex_base_instance/multiDrawArraysInstancedBaseInstanceWEBGL)
     jsbind::Undefined multiDrawArraysInstancedBaseInstanceWEBGL(const jsbind::Any& mode, const jsbind::Any& firstsList, long long firstsOffset, const jsbind::Any& countsList, long long countsOffset, const jsbind::Any& instanceCountsList, long long instanceCountsOffset, const jsbind::Any& baseInstancesList, long long baseInstancesOffset, const jsbind::Any& drawcount);

@@ -15,6 +15,7 @@ public:
     static MLTensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MLTensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `dataType` attribute.
     /// [`MLTensor.dataType`](https://developer.mozilla.org/en-US/docs/Web/API/MLTensor/dataType)
     [[nodiscard]] MLOperandDataType dataType() const;

@@ -38,6 +38,7 @@ public:
     static GamepadHapticActuator take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GamepadHapticActuator clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `effects` attribute.
     /// [`GamepadHapticActuator.effects`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/effects)
     [[nodiscard]] jsbind::TypedArray<GamepadHapticEffectType> effects() const;

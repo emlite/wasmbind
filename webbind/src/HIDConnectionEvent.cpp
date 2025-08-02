@@ -6,6 +6,7 @@ HIDConnectionEvent HIDConnectionEvent::take_ownership(Handle h) noexcept {
         return HIDConnectionEvent(h);
     }
 HIDConnectionEvent HIDConnectionEvent::clone() const noexcept { return *this; }
+emlite::Val HIDConnectionEvent::instance() noexcept { return emlite::Val::global("HIDConnectionEvent"); }
 HIDConnectionEvent::HIDConnectionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 HIDConnectionEvent::HIDConnectionEvent(const emlite::Val &val) noexcept: Event(val) {}
 

@@ -111,5 +111,4 @@ class String : public emlite::Val {
 
     DECLARE_CLONE(String)
 };
-
 } // namespace jsbind

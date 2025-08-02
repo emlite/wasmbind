@@ -20,6 +20,7 @@ public:
     static BluetoothRemoteGATTService take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothRemoteGATTService clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `device` attribute.
     /// [`BluetoothRemoteGATTService.device`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/device)
     [[nodiscard]] BluetoothDevice device() const;

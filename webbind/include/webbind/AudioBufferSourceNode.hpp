@@ -19,6 +19,7 @@ public:
     static AudioBufferSourceNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioBufferSourceNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioBufferSourceNode(..)` constructor, creating a new AudioBufferSourceNode instance
     AudioBufferSourceNode(const BaseAudioContext& context);
     /// The `new AudioBufferSourceNode(..)` constructor, creating a new AudioBufferSourceNode instance

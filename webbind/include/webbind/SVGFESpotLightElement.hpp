@@ -18,6 +18,7 @@ public:
     static SVGFESpotLightElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFESpotLightElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`SVGFESpotLightElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFESpotLightElement/x)
     [[nodiscard]] SVGAnimatedNumber x() const;

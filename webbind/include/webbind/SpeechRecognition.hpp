@@ -34,6 +34,7 @@ public:
     static SpeechRecognition take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechRecognition clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognition(..)` constructor, creating a new SpeechRecognition instance
     SpeechRecognition();
     /// Getter of the `grammars` attribute.

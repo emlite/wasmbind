@@ -16,6 +16,7 @@ public:
     static WebTransportWriter take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebTransportWriter clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The atomicWrite method.
     /// [`WebTransportWriter.atomicWrite`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportWriter/atomicWrite)
     jsbind::Promise<jsbind::Undefined> atomicWrite();

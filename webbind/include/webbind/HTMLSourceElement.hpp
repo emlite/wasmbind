@@ -16,6 +16,7 @@ public:
     static HTMLSourceElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLSourceElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSourceElement(..)` constructor, creating a new HTMLSourceElement instance
     HTMLSourceElement();
     /// Getter of the `src` attribute.

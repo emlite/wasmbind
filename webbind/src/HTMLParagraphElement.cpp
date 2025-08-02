@@ -5,6 +5,7 @@ HTMLParagraphElement HTMLParagraphElement::take_ownership(Handle h) noexcept {
         return HTMLParagraphElement(h);
     }
 HTMLParagraphElement HTMLParagraphElement::clone() const noexcept { return *this; }
+emlite::Val HTMLParagraphElement::instance() noexcept { return emlite::Val::global("HTMLParagraphElement"); }
 HTMLParagraphElement::HTMLParagraphElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLParagraphElement::HTMLParagraphElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

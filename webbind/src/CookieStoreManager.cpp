@@ -6,6 +6,7 @@ CookieStoreManager CookieStoreManager::take_ownership(Handle h) noexcept {
         return CookieStoreManager(h);
     }
 CookieStoreManager CookieStoreManager::clone() const noexcept { return *this; }
+emlite::Val CookieStoreManager::instance() noexcept { return emlite::Val::global("CookieStoreManager"); }
 CookieStoreManager::CookieStoreManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CookieStoreManager::CookieStoreManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

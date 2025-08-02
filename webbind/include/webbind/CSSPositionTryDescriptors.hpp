@@ -16,6 +16,7 @@ public:
     static CSSPositionTryDescriptors take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSPositionTryDescriptors clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `margin` attribute.
     /// [`CSSPositionTryDescriptors.margin`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryDescriptors/margin)
     [[nodiscard]] jsbind::String margin() const;

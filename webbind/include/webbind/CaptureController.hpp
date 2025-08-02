@@ -18,6 +18,7 @@ public:
     static CaptureController take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CaptureController clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CaptureController(..)` constructor, creating a new CaptureController instance
     CaptureController();
     /// The setFocusBehavior method.

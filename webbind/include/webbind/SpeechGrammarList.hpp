@@ -17,6 +17,7 @@ public:
     static SpeechGrammarList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechGrammarList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechGrammarList(..)` constructor, creating a new SpeechGrammarList instance
     SpeechGrammarList();
     /// Getter of the `length` attribute.

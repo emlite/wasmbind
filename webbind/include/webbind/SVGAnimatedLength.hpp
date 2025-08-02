@@ -17,6 +17,7 @@ public:
     static SVGAnimatedLength take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedLength clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedLength.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLength/baseVal)
     [[nodiscard]] SVGLength baseVal() const;

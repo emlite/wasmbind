@@ -15,6 +15,7 @@ public:
     static GPURenderBundle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPURenderBundle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
     /// [`GPURenderBundle.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundle/label)
     [[nodiscard]] jsbind::String label() const;

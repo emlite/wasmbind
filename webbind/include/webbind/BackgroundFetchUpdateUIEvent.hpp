@@ -31,6 +31,7 @@ public:
     static BackgroundFetchUpdateUIEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BackgroundFetchUpdateUIEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BackgroundFetchUpdateUIEvent(..)` constructor, creating a new BackgroundFetchUpdateUIEvent instance
     BackgroundFetchUpdateUIEvent(const jsbind::String& type, const jsbind::Any& init);
     /// The updateUI method.

@@ -17,6 +17,7 @@ public:
     static Plugin take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Plugin clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`Plugin.name`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/name)
     [[nodiscard]] jsbind::String name() const;

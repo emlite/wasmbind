@@ -5,6 +5,7 @@ MediaList MediaList::take_ownership(Handle h) noexcept {
         return MediaList(h);
     }
 MediaList MediaList::clone() const noexcept { return *this; }
+emlite::Val MediaList::instance() noexcept { return emlite::Val::global("MediaList"); }
 MediaList::MediaList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaList::MediaList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

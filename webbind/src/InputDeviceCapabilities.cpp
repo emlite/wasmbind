@@ -5,6 +5,7 @@ InputDeviceCapabilities InputDeviceCapabilities::take_ownership(Handle h) noexce
         return InputDeviceCapabilities(h);
     }
 InputDeviceCapabilities InputDeviceCapabilities::clone() const noexcept { return *this; }
+emlite::Val InputDeviceCapabilities::instance() noexcept { return emlite::Val::global("InputDeviceCapabilities"); }
 InputDeviceCapabilities::InputDeviceCapabilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 InputDeviceCapabilities::InputDeviceCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

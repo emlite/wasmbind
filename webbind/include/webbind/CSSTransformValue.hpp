@@ -19,6 +19,7 @@ public:
     static CSSTransformValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSTransformValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSTransformValue(..)` constructor, creating a new CSSTransformValue instance
     CSSTransformValue(const jsbind::TypedArray<CSSTransformComponent>& transforms);
     /// Getter of the `length` attribute.

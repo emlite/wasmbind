@@ -22,6 +22,7 @@ CustomElementRegistry CustomElementRegistry::take_ownership(Handle h) noexcept {
         return CustomElementRegistry(h);
     }
 CustomElementRegistry CustomElementRegistry::clone() const noexcept { return *this; }
+emlite::Val CustomElementRegistry::instance() noexcept { return emlite::Val::global("CustomElementRegistry"); }
 CustomElementRegistry::CustomElementRegistry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CustomElementRegistry::CustomElementRegistry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

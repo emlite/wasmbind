@@ -17,6 +17,7 @@ public:
     static ImageData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ImageData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ImageData(..)` constructor, creating a new ImageData instance
     ImageData(const jsbind::Any& data, unsigned long sw);
     /// The `new ImageData(..)` constructor, creating a new ImageData instance

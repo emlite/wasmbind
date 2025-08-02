@@ -22,6 +22,7 @@ PressureObserver PressureObserver::take_ownership(Handle h) noexcept {
         return PressureObserver(h);
     }
 PressureObserver PressureObserver::clone() const noexcept { return *this; }
+emlite::Val PressureObserver::instance() noexcept { return emlite::Val::global("PressureObserver"); }
 PressureObserver::PressureObserver(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PressureObserver::PressureObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

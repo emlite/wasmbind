@@ -7,6 +7,7 @@ SVGTransform SVGTransform::take_ownership(Handle h) noexcept {
         return SVGTransform(h);
     }
 SVGTransform SVGTransform::clone() const noexcept { return *this; }
+emlite::Val SVGTransform::instance() noexcept { return emlite::Val::global("SVGTransform"); }
 SVGTransform::SVGTransform(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGTransform::SVGTransform(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

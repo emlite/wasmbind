@@ -19,6 +19,7 @@ public:
     static HTMLTableSectionElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTableSectionElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableSectionElement(..)` constructor, creating a new HTMLTableSectionElement instance
     HTMLTableSectionElement();
     /// Getter of the `rows` attribute.

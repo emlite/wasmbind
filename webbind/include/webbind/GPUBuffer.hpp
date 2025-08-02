@@ -15,6 +15,7 @@ public:
     static GPUBuffer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUBuffer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `size` attribute.
     /// [`GPUBuffer.size`](https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/size)
     [[nodiscard]] jsbind::Any size() const;

@@ -16,6 +16,7 @@ public:
     static OverconstrainedError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OverconstrainedError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OverconstrainedError(..)` constructor, creating a new OverconstrainedError instance
     OverconstrainedError(const jsbind::String& constraint);
     /// The `new OverconstrainedError(..)` constructor, creating a new OverconstrainedError instance

@@ -16,6 +16,7 @@ public:
     static ScreenDetailed take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ScreenDetailed clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `availLeft` attribute.
     /// [`ScreenDetailed.availLeft`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetailed/availLeft)
     [[nodiscard]] long availLeft() const;

@@ -15,5 +15,6 @@ public:
     static KHR_parallel_shader_compile take_ownership(Handle h) noexcept;
 
     [[nodiscard]] KHR_parallel_shader_compile clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

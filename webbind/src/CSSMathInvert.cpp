@@ -6,6 +6,7 @@ CSSMathInvert CSSMathInvert::take_ownership(Handle h) noexcept {
         return CSSMathInvert(h);
     }
 CSSMathInvert CSSMathInvert::clone() const noexcept { return *this; }
+emlite::Val CSSMathInvert::instance() noexcept { return emlite::Val::global("CSSMathInvert"); }
 CSSMathInvert::CSSMathInvert(Handle h) noexcept : CSSMathValue(emlite::Val::take_ownership(h)) {}
 CSSMathInvert::CSSMathInvert(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 

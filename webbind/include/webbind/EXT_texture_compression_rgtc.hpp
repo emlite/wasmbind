@@ -15,5 +15,6 @@ public:
     static EXT_texture_compression_rgtc take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_texture_compression_rgtc clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -20,6 +20,7 @@ public:
     static StorageBucket take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StorageBucket clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`StorageBucket.name`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/name)
     [[nodiscard]] jsbind::String name() const;

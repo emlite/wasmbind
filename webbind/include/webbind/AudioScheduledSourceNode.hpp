@@ -16,6 +16,7 @@ public:
     static AudioScheduledSourceNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioScheduledSourceNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onended` attribute.
     /// [`AudioScheduledSourceNode.onended`](https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/onended)
     [[nodiscard]] jsbind::Any onended() const;

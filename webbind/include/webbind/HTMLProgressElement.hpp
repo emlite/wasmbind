@@ -18,6 +18,7 @@ public:
     static HTMLProgressElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLProgressElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLProgressElement(..)` constructor, creating a new HTMLProgressElement instance
     HTMLProgressElement();
     /// Getter of the `value` attribute.

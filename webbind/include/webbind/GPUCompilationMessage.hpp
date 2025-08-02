@@ -15,6 +15,7 @@ public:
     static GPUCompilationMessage take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUCompilationMessage clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `message` attribute.
     /// [`GPUCompilationMessage.message`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/message)
     [[nodiscard]] jsbind::String message() const;

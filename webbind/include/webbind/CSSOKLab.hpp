@@ -16,6 +16,7 @@ public:
     static CSSOKLab take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSOKLab clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSOKLab(..)` constructor, creating a new CSSOKLab instance
     CSSOKLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b);
     /// The `new CSSOKLab(..)` constructor, creating a new CSSOKLab instance

@@ -18,6 +18,7 @@ public:
     static SVGLineElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGLineElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x1` attribute.
     /// [`SVGLineElement.x1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLineElement/x1)
     [[nodiscard]] SVGAnimatedLength x1() const;

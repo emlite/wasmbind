@@ -20,6 +20,7 @@ public:
     static SVGFEBlendElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEBlendElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEBlendElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEBlendElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

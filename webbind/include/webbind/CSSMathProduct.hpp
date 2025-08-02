@@ -18,6 +18,7 @@ public:
     static CSSMathProduct take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathProduct clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathProduct(..)` constructor, creating a new CSSMathProduct instance
     CSSMathProduct(const jsbind::Any& args);
     /// Getter of the `values` attribute.

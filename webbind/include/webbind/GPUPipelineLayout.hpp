@@ -15,6 +15,7 @@ public:
     static GPUPipelineLayout take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUPipelineLayout clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
     /// [`GPUPipelineLayout.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout/label)
     [[nodiscard]] jsbind::String label() const;

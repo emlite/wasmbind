@@ -21,6 +21,7 @@ public:
     static SVGFECompositeElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFECompositeElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFECompositeElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFECompositeElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

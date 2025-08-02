@@ -16,6 +16,7 @@ public:
     static HTMLMarqueeElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLMarqueeElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMarqueeElement(..)` constructor, creating a new HTMLMarqueeElement instance
     HTMLMarqueeElement();
     /// Getter of the `behavior` attribute.

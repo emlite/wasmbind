@@ -31,6 +31,7 @@ OffscreenCanvas OffscreenCanvas::take_ownership(Handle h) noexcept {
         return OffscreenCanvas(h);
     }
 OffscreenCanvas OffscreenCanvas::clone() const noexcept { return *this; }
+emlite::Val OffscreenCanvas::instance() noexcept { return emlite::Val::global("OffscreenCanvas"); }
 OffscreenCanvas::OffscreenCanvas(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 OffscreenCanvas::OffscreenCanvas(const emlite::Val &val) noexcept: EventTarget(val) {}
 

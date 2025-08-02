@@ -5,6 +5,7 @@ AuthenticatorAttestationResponse AuthenticatorAttestationResponse::take_ownershi
         return AuthenticatorAttestationResponse(h);
     }
 AuthenticatorAttestationResponse AuthenticatorAttestationResponse::clone() const noexcept { return *this; }
+emlite::Val AuthenticatorAttestationResponse::instance() noexcept { return emlite::Val::global("AuthenticatorAttestationResponse"); }
 AuthenticatorAttestationResponse::AuthenticatorAttestationResponse(Handle h) noexcept : AuthenticatorResponse(emlite::Val::take_ownership(h)) {}
 AuthenticatorAttestationResponse::AuthenticatorAttestationResponse(const emlite::Val &val) noexcept: AuthenticatorResponse(val) {}
 

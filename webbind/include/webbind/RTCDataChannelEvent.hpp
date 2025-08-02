@@ -18,6 +18,7 @@ public:
     static RTCDataChannelEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCDataChannelEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCDataChannelEvent(..)` constructor, creating a new RTCDataChannelEvent instance
     RTCDataChannelEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `channel` attribute.

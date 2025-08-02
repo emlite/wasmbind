@@ -5,6 +5,7 @@ CSSUnparsedValue CSSUnparsedValue::take_ownership(Handle h) noexcept {
         return CSSUnparsedValue(h);
     }
 CSSUnparsedValue CSSUnparsedValue::clone() const noexcept { return *this; }
+emlite::Val CSSUnparsedValue::instance() noexcept { return emlite::Val::global("CSSUnparsedValue"); }
 CSSUnparsedValue::CSSUnparsedValue(Handle h) noexcept : CSSStyleValue(emlite::Val::take_ownership(h)) {}
 CSSUnparsedValue::CSSUnparsedValue(const emlite::Val &val) noexcept: CSSStyleValue(val) {}
 

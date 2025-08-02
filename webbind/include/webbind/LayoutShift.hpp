@@ -18,6 +18,7 @@ public:
     static LayoutShift take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LayoutShift clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `value` attribute.
     /// [`LayoutShift.value`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift/value)
     [[nodiscard]] double value() const;

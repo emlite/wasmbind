@@ -6,6 +6,7 @@ MediaStreamTrackAudioSourceNode MediaStreamTrackAudioSourceNode::take_ownership(
         return MediaStreamTrackAudioSourceNode(h);
     }
 MediaStreamTrackAudioSourceNode MediaStreamTrackAudioSourceNode::clone() const noexcept { return *this; }
+emlite::Val MediaStreamTrackAudioSourceNode::instance() noexcept { return emlite::Val::global("MediaStreamTrackAudioSourceNode"); }
 MediaStreamTrackAudioSourceNode::MediaStreamTrackAudioSourceNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 MediaStreamTrackAudioSourceNode::MediaStreamTrackAudioSourceNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

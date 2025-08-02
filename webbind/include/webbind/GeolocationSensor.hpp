@@ -56,6 +56,7 @@ public:
     static GeolocationSensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GeolocationSensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GeolocationSensor(..)` constructor, creating a new GeolocationSensor instance
     GeolocationSensor();
     /// The `new GeolocationSensor(..)` constructor, creating a new GeolocationSensor instance

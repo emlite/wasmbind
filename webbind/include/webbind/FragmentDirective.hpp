@@ -15,5 +15,6 @@ public:
     static FragmentDirective take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FragmentDirective clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

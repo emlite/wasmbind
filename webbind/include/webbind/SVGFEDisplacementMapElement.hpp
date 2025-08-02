@@ -21,6 +21,7 @@ public:
     static SVGFEDisplacementMapElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEDisplacementMapElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEDisplacementMapElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDisplacementMapElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

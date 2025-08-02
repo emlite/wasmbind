@@ -18,6 +18,7 @@ public:
     static PerformanceEventTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceEventTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `processingStart` attribute.
     /// [`PerformanceEventTiming.processingStart`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/processingStart)
     [[nodiscard]] jsbind::Any processingStart() const;

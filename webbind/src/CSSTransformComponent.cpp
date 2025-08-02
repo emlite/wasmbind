@@ -6,6 +6,7 @@ CSSTransformComponent CSSTransformComponent::take_ownership(Handle h) noexcept {
         return CSSTransformComponent(h);
     }
 CSSTransformComponent CSSTransformComponent::clone() const noexcept { return *this; }
+emlite::Val CSSTransformComponent::instance() noexcept { return emlite::Val::global("CSSTransformComponent"); }
 CSSTransformComponent::CSSTransformComponent(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSTransformComponent::CSSTransformComponent(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

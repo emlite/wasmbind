@@ -17,6 +17,7 @@ public:
     static Subscriber take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Subscriber clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The next method.
     /// [`Subscriber.next`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/next)
     jsbind::Undefined next(const jsbind::Any& value);

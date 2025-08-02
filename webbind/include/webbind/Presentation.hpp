@@ -18,6 +18,7 @@ public:
     static Presentation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Presentation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `defaultRequest` attribute.
     /// [`Presentation.defaultRequest`](https://developer.mozilla.org/en-US/docs/Web/API/Presentation/defaultRequest)
     [[nodiscard]] PresentationRequest defaultRequest() const;

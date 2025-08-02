@@ -16,6 +16,7 @@ public:
     static DocumentTimeline take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DocumentTimeline clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DocumentTimeline(..)` constructor, creating a new DocumentTimeline instance
     DocumentTimeline();
     /// The `new DocumentTimeline(..)` constructor, creating a new DocumentTimeline instance

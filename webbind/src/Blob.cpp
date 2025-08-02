@@ -6,6 +6,7 @@ Blob Blob::take_ownership(Handle h) noexcept {
         return Blob(h);
     }
 Blob Blob::clone() const noexcept { return *this; }
+emlite::Val Blob::instance() noexcept { return emlite::Val::global("Blob"); }
 Blob::Blob(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Blob::Blob(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

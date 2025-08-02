@@ -35,6 +35,7 @@ public:
     static AudioData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioData(..)` constructor, creating a new AudioData instance
     AudioData(const jsbind::Any& init);
     /// Getter of the `format` attribute.

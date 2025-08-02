@@ -16,6 +16,7 @@ public:
     static AmbientLightSensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AmbientLightSensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AmbientLightSensor(..)` constructor, creating a new AmbientLightSensor instance
     AmbientLightSensor();
     /// The `new AmbientLightSensor(..)` constructor, creating a new AmbientLightSensor instance

@@ -16,6 +16,7 @@ public:
     static HTMLBRElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLBRElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLBRElement(..)` constructor, creating a new HTMLBRElement instance
     HTMLBRElement();
     /// Getter of the `clear` attribute.

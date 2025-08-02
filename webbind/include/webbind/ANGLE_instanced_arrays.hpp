@@ -15,6 +15,7 @@ public:
     static ANGLE_instanced_arrays take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ANGLE_instanced_arrays clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The drawArraysInstancedANGLE method.
     /// [`ANGLE_instanced_arrays.drawArraysInstancedANGLE`](https://developer.mozilla.org/en-US/docs/Web/API/ANGLE_instanced_arrays/drawArraysInstancedANGLE)
     jsbind::Undefined drawArraysInstancedANGLE(const jsbind::Any& mode, const jsbind::Any& first, const jsbind::Any& count, const jsbind::Any& primcount);

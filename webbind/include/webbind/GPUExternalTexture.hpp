@@ -15,6 +15,7 @@ public:
     static GPUExternalTexture take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUExternalTexture clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
     /// [`GPUExternalTexture.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUExternalTexture/label)
     [[nodiscard]] jsbind::String label() const;

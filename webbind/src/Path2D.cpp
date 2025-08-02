@@ -6,6 +6,7 @@ Path2D Path2D::take_ownership(Handle h) noexcept {
         return Path2D(h);
     }
 Path2D Path2D::clone() const noexcept { return *this; }
+emlite::Val Path2D::instance() noexcept { return emlite::Val::global("Path2D"); }
 Path2D::Path2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Path2D::Path2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

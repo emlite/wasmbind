@@ -17,6 +17,7 @@ public:
     static LaunchParams take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LaunchParams clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `targetURL` attribute.
     /// [`LaunchParams.targetURL`](https://developer.mozilla.org/en-US/docs/Web/API/LaunchParams/targetURL)
     [[nodiscard]] jsbind::String targetURL() const;

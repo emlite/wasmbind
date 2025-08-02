@@ -30,6 +30,7 @@ HID HID::take_ownership(Handle h) noexcept {
         return HID(h);
     }
 HID HID::clone() const noexcept { return *this; }
+emlite::Val HID::instance() noexcept { return emlite::Val::global("HID"); }
 HID::HID(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 HID::HID(const emlite::Val &val) noexcept: EventTarget(val) {}
 

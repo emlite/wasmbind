@@ -18,6 +18,7 @@ public:
     static CSSPageRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSPageRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `selectorText` attribute.
     /// [`CSSPageRule.selectorText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule/selectorText)
     [[nodiscard]] jsbind::String selectorText() const;

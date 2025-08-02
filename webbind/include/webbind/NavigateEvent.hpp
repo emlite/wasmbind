@@ -37,6 +37,7 @@ public:
     static NavigateEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigateEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NavigateEvent(..)` constructor, creating a new NavigateEvent instance
     NavigateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `navigationType` attribute.

@@ -37,6 +37,7 @@ Geolocation Geolocation::take_ownership(Handle h) noexcept {
         return Geolocation(h);
     }
 Geolocation Geolocation::clone() const noexcept { return *this; }
+emlite::Val Geolocation::instance() noexcept { return emlite::Val::global("Geolocation"); }
 Geolocation::Geolocation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Geolocation::Geolocation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

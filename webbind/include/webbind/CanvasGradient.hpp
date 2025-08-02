@@ -15,6 +15,7 @@ public:
     static CanvasGradient take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CanvasGradient clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The addColorStop method.
     /// [`CanvasGradient.addColorStop`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient/addColorStop)
     jsbind::Undefined addColorStop(double offset, const jsbind::String& color);

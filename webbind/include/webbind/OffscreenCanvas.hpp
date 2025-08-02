@@ -33,6 +33,7 @@ public:
     static OffscreenCanvas take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OffscreenCanvas clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OffscreenCanvas(..)` constructor, creating a new OffscreenCanvas instance
     OffscreenCanvas(long long width, long long height);
     /// Getter of the `width` attribute.

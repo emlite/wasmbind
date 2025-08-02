@@ -30,6 +30,7 @@ public:
     static Observable take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Observable clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Observable(..)` constructor, creating a new Observable instance
     Observable(const jsbind::Function& callback);
     /// The subscribe method.

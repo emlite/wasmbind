@@ -19,6 +19,7 @@ public:
     static CSSStyleRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSStyleRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `selectorText` attribute.
     /// [`CSSStyleRule.selectorText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/selectorText)
     [[nodiscard]] jsbind::String selectorText() const;

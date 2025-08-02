@@ -6,6 +6,7 @@ CSSVariableReferenceValue CSSVariableReferenceValue::take_ownership(Handle h) no
         return CSSVariableReferenceValue(h);
     }
 CSSVariableReferenceValue CSSVariableReferenceValue::clone() const noexcept { return *this; }
+emlite::Val CSSVariableReferenceValue::instance() noexcept { return emlite::Val::global("CSSVariableReferenceValue"); }
 CSSVariableReferenceValue::CSSVariableReferenceValue(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSVariableReferenceValue::CSSVariableReferenceValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

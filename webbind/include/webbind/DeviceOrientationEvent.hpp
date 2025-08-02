@@ -16,6 +16,7 @@ public:
     static DeviceOrientationEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DeviceOrientationEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DeviceOrientationEvent(..)` constructor, creating a new DeviceOrientationEvent instance
     DeviceOrientationEvent(const jsbind::String& type);
     /// The `new DeviceOrientationEvent(..)` constructor, creating a new DeviceOrientationEvent instance

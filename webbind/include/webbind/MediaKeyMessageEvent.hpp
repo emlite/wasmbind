@@ -16,6 +16,7 @@ public:
     static MediaKeyMessageEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaKeyMessageEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaKeyMessageEvent(..)` constructor, creating a new MediaKeyMessageEvent instance
     MediaKeyMessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `messageType` attribute.

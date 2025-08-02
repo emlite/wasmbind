@@ -17,6 +17,7 @@ public:
     static IDBKeyRange take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBKeyRange clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `lower` attribute.
     /// [`IDBKeyRange.lower`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lower)
     [[nodiscard]] jsbind::Any lower() const;

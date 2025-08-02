@@ -10,6 +10,7 @@ Request Request::take_ownership(Handle h) noexcept {
         return Request(h);
     }
 Request Request::clone() const noexcept { return *this; }
+emlite::Val Request::instance() noexcept { return emlite::Val::global("Request"); }
 Request::Request(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Request::Request(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

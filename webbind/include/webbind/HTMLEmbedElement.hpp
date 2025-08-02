@@ -18,6 +18,7 @@ public:
     static HTMLEmbedElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLEmbedElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLEmbedElement(..)` constructor, creating a new HTMLEmbedElement instance
     HTMLEmbedElement();
     /// Getter of the `src` attribute.

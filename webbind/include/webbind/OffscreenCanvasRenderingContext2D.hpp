@@ -25,6 +25,7 @@ public:
     static OffscreenCanvasRenderingContext2D take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OffscreenCanvasRenderingContext2D clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `canvas` attribute.
     /// [`OffscreenCanvasRenderingContext2D.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/canvas)
     [[nodiscard]] OffscreenCanvas canvas() const;

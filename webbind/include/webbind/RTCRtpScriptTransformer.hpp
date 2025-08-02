@@ -19,6 +19,7 @@ public:
     static RTCRtpScriptTransformer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCRtpScriptTransformer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `readable` attribute.
     /// [`RTCRtpScriptTransformer.readable`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/readable)
     [[nodiscard]] ReadableStream readable() const;

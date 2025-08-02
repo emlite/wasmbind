@@ -17,6 +17,7 @@ public:
     static AnimationNodeList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AnimationNodeList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`AnimationNodeList.length`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationNodeList/length)
     [[nodiscard]] unsigned long length() const;

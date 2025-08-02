@@ -6,6 +6,7 @@ HIDInputReportEvent HIDInputReportEvent::take_ownership(Handle h) noexcept {
         return HIDInputReportEvent(h);
     }
 HIDInputReportEvent HIDInputReportEvent::clone() const noexcept { return *this; }
+emlite::Val HIDInputReportEvent::instance() noexcept { return emlite::Val::global("HIDInputReportEvent"); }
 HIDInputReportEvent::HIDInputReportEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 HIDInputReportEvent::HIDInputReportEvent(const emlite::Val &val) noexcept: Event(val) {}
 

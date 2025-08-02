@@ -6,6 +6,7 @@ CSSFunctionDeclarations CSSFunctionDeclarations::take_ownership(Handle h) noexce
         return CSSFunctionDeclarations(h);
     }
 CSSFunctionDeclarations CSSFunctionDeclarations::clone() const noexcept { return *this; }
+emlite::Val CSSFunctionDeclarations::instance() noexcept { return emlite::Val::global("CSSFunctionDeclarations"); }
 CSSFunctionDeclarations::CSSFunctionDeclarations(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
 CSSFunctionDeclarations::CSSFunctionDeclarations(const emlite::Val &val) noexcept: CSSRule(val) {}
 

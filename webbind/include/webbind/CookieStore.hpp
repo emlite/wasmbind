@@ -99,6 +99,7 @@ public:
     static CookieStore take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CookieStore clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
     /// [`CookieStore.get`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get)
     jsbind::Promise<CookieListItem> get();

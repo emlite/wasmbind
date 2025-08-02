@@ -6,6 +6,7 @@ SVGPolylineElement SVGPolylineElement::take_ownership(Handle h) noexcept {
         return SVGPolylineElement(h);
     }
 SVGPolylineElement SVGPolylineElement::clone() const noexcept { return *this; }
+emlite::Val SVGPolylineElement::instance() noexcept { return emlite::Val::global("SVGPolylineElement"); }
 SVGPolylineElement::SVGPolylineElement(Handle h) noexcept : SVGGeometryElement(emlite::Val::take_ownership(h)) {}
 SVGPolylineElement::SVGPolylineElement(const emlite::Val &val) noexcept: SVGGeometryElement(val) {}
 

@@ -7,6 +7,7 @@ SVGTextPositioningElement SVGTextPositioningElement::take_ownership(Handle h) no
         return SVGTextPositioningElement(h);
     }
 SVGTextPositioningElement SVGTextPositioningElement::clone() const noexcept { return *this; }
+emlite::Val SVGTextPositioningElement::instance() noexcept { return emlite::Val::global("SVGTextPositioningElement"); }
 SVGTextPositioningElement::SVGTextPositioningElement(Handle h) noexcept : SVGTextContentElement(emlite::Val::take_ownership(h)) {}
 SVGTextPositioningElement::SVGTextPositioningElement(const emlite::Val &val) noexcept: SVGTextContentElement(val) {}
 

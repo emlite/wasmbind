@@ -16,6 +16,7 @@ public:
     static ChannelMergerNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ChannelMergerNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ChannelMergerNode(..)` constructor, creating a new ChannelMergerNode instance
     ChannelMergerNode(const BaseAudioContext& context);
     /// The `new ChannelMergerNode(..)` constructor, creating a new ChannelMergerNode instance

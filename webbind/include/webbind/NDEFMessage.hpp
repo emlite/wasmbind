@@ -17,6 +17,7 @@ public:
     static NDEFMessage take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NDEFMessage clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFMessage(..)` constructor, creating a new NDEFMessage instance
     NDEFMessage(const jsbind::Any& messageInit);
     /// Getter of the `records` attribute.

@@ -5,6 +5,7 @@ AudioScheduledSourceNode AudioScheduledSourceNode::take_ownership(Handle h) noex
         return AudioScheduledSourceNode(h);
     }
 AudioScheduledSourceNode AudioScheduledSourceNode::clone() const noexcept { return *this; }
+emlite::Val AudioScheduledSourceNode::instance() noexcept { return emlite::Val::global("AudioScheduledSourceNode"); }
 AudioScheduledSourceNode::AudioScheduledSourceNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 AudioScheduledSourceNode::AudioScheduledSourceNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

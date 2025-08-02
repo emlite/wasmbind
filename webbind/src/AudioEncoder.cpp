@@ -78,6 +78,7 @@ AudioEncoder AudioEncoder::take_ownership(Handle h) noexcept {
         return AudioEncoder(h);
     }
 AudioEncoder AudioEncoder::clone() const noexcept { return *this; }
+emlite::Val AudioEncoder::instance() noexcept { return emlite::Val::global("AudioEncoder"); }
 AudioEncoder::AudioEncoder(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 AudioEncoder::AudioEncoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 

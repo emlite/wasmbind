@@ -16,6 +16,7 @@ public:
     static WakeLockSentinel take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WakeLockSentinel clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `released` attribute.
     /// [`WakeLockSentinel.released`](https://developer.mozilla.org/en-US/docs/Web/API/WakeLockSentinel/released)
     [[nodiscard]] bool released() const;

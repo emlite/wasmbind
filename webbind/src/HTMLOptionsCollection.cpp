@@ -6,6 +6,7 @@ HTMLOptionsCollection HTMLOptionsCollection::take_ownership(Handle h) noexcept {
         return HTMLOptionsCollection(h);
     }
 HTMLOptionsCollection HTMLOptionsCollection::clone() const noexcept { return *this; }
+emlite::Val HTMLOptionsCollection::instance() noexcept { return emlite::Val::global("HTMLOptionsCollection"); }
 HTMLOptionsCollection::HTMLOptionsCollection(Handle h) noexcept : HTMLCollection(emlite::Val::take_ownership(h)) {}
 HTMLOptionsCollection::HTMLOptionsCollection(const emlite::Val &val) noexcept: HTMLCollection(val) {}
 

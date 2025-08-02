@@ -19,6 +19,7 @@ public:
     static HTMLFormElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLFormElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFormElement(..)` constructor, creating a new HTMLFormElement instance
     HTMLFormElement();
     /// Getter of the `acceptCharset` attribute.

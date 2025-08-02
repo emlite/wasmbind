@@ -16,6 +16,7 @@ public:
     static CSSHSL take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSHSL clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSHSL(..)` constructor, creating a new CSSHSL instance
     CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l);
     /// The `new CSSHSL(..)` constructor, creating a new CSSHSL instance

@@ -5,6 +5,7 @@ SharedWorkerGlobalScope SharedWorkerGlobalScope::take_ownership(Handle h) noexce
         return SharedWorkerGlobalScope(h);
     }
 SharedWorkerGlobalScope SharedWorkerGlobalScope::clone() const noexcept { return *this; }
+emlite::Val SharedWorkerGlobalScope::instance() noexcept { return emlite::Val::global("SharedWorkerGlobalScope"); }
 SharedWorkerGlobalScope::SharedWorkerGlobalScope(Handle h) noexcept : WorkerGlobalScope(emlite::Val::take_ownership(h)) {}
 SharedWorkerGlobalScope::SharedWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
 

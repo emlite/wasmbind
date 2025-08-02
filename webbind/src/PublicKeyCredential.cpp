@@ -438,6 +438,7 @@ PublicKeyCredential PublicKeyCredential::take_ownership(Handle h) noexcept {
         return PublicKeyCredential(h);
     }
 PublicKeyCredential PublicKeyCredential::clone() const noexcept { return *this; }
+emlite::Val PublicKeyCredential::instance() noexcept { return emlite::Val::global("PublicKeyCredential"); }
 PublicKeyCredential::PublicKeyCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
 PublicKeyCredential::PublicKeyCredential(const emlite::Val &val) noexcept: Credential(val) {}
 

@@ -18,6 +18,7 @@ public:
     static MediaKeySession take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaKeySession clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sessionId` attribute.
     /// [`MediaKeySession.sessionId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/sessionId)
     [[nodiscard]] jsbind::String sessionId() const;

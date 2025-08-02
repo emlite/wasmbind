@@ -16,6 +16,7 @@ public:
     static CSSPageDescriptors take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSPageDescriptors clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `margin` attribute.
     /// [`CSSPageDescriptors.margin`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageDescriptors/margin)
     [[nodiscard]] jsbind::String margin() const;

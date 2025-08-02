@@ -18,6 +18,7 @@ public:
     static FontMetrics take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FontMetrics clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
     /// [`FontMetrics.width`](https://developer.mozilla.org/en-US/docs/Web/API/FontMetrics/width)
     [[nodiscard]] double width() const;

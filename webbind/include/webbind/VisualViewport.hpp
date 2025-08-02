@@ -16,6 +16,7 @@ public:
     static VisualViewport take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VisualViewport clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `offsetLeft` attribute.
     /// [`VisualViewport.offsetLeft`](https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/offsetLeft)
     [[nodiscard]] double offsetLeft() const;

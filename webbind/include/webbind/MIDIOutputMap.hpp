@@ -15,5 +15,6 @@ public:
     static MIDIOutputMap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MIDIOutputMap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

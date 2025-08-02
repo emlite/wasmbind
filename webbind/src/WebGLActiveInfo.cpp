@@ -5,6 +5,7 @@ WebGLActiveInfo WebGLActiveInfo::take_ownership(Handle h) noexcept {
         return WebGLActiveInfo(h);
     }
 WebGLActiveInfo WebGLActiveInfo::clone() const noexcept { return *this; }
+emlite::Val WebGLActiveInfo::instance() noexcept { return emlite::Val::global("WebGLActiveInfo"); }
 WebGLActiveInfo::WebGLActiveInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebGLActiveInfo::WebGLActiveInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

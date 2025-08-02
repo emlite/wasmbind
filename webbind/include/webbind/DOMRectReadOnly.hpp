@@ -35,6 +35,7 @@ public:
     static DOMRectReadOnly take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMRectReadOnly clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMRectReadOnly(..)` constructor, creating a new DOMRectReadOnly instance
     DOMRectReadOnly();
     /// The `new DOMRectReadOnly(..)` constructor, creating a new DOMRectReadOnly instance

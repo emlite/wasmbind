@@ -26,6 +26,7 @@ HTMLElement HTMLElement::take_ownership(Handle h) noexcept {
         return HTMLElement(h);
     }
 HTMLElement HTMLElement::clone() const noexcept { return *this; }
+emlite::Val HTMLElement::instance() noexcept { return emlite::Val::global("HTMLElement"); }
 HTMLElement::HTMLElement(Handle h) noexcept : Element(emlite::Val::take_ownership(h)) {}
 HTMLElement::HTMLElement(const emlite::Val &val) noexcept: Element(val) {}
 

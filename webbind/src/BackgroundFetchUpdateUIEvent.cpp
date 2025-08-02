@@ -29,6 +29,7 @@ BackgroundFetchUpdateUIEvent BackgroundFetchUpdateUIEvent::take_ownership(Handle
         return BackgroundFetchUpdateUIEvent(h);
     }
 BackgroundFetchUpdateUIEvent BackgroundFetchUpdateUIEvent::clone() const noexcept { return *this; }
+emlite::Val BackgroundFetchUpdateUIEvent::instance() noexcept { return emlite::Val::global("BackgroundFetchUpdateUIEvent"); }
 BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(Handle h) noexcept : BackgroundFetchEvent(emlite::Val::take_ownership(h)) {}
 BackgroundFetchUpdateUIEvent::BackgroundFetchUpdateUIEvent(const emlite::Val &val) noexcept: BackgroundFetchEvent(val) {}
 

@@ -15,6 +15,7 @@ public:
     static BluetoothCharacteristicProperties take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothCharacteristicProperties clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `broadcast` attribute.
     /// [`BluetoothCharacteristicProperties.broadcast`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/broadcast)
     [[nodiscard]] bool broadcast() const;

@@ -5,6 +5,7 @@ AudioBuffer AudioBuffer::take_ownership(Handle h) noexcept {
         return AudioBuffer(h);
     }
 AudioBuffer AudioBuffer::clone() const noexcept { return *this; }
+emlite::Val AudioBuffer::instance() noexcept { return emlite::Val::global("AudioBuffer"); }
 AudioBuffer::AudioBuffer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioBuffer::AudioBuffer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

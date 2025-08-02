@@ -5,6 +5,7 @@ XRCPUDepthInformation XRCPUDepthInformation::take_ownership(Handle h) noexcept {
         return XRCPUDepthInformation(h);
     }
 XRCPUDepthInformation XRCPUDepthInformation::clone() const noexcept { return *this; }
+emlite::Val XRCPUDepthInformation::instance() noexcept { return emlite::Val::global("XRCPUDepthInformation"); }
 XRCPUDepthInformation::XRCPUDepthInformation(Handle h) noexcept : XRDepthInformation(emlite::Val::take_ownership(h)) {}
 XRCPUDepthInformation::XRCPUDepthInformation(const emlite::Val &val) noexcept: XRDepthInformation(val) {}
 

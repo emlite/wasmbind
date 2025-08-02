@@ -15,6 +15,7 @@ public:
     static FencedFrameConfig take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FencedFrameConfig clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FencedFrameConfig(..)` constructor, creating a new FencedFrameConfig instance
     FencedFrameConfig(const jsbind::String& url);
     /// The setSharedStorageContext method.

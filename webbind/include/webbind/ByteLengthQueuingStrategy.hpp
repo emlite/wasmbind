@@ -15,6 +15,7 @@ public:
     static ByteLengthQueuingStrategy take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ByteLengthQueuingStrategy clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ByteLengthQueuingStrategy(..)` constructor, creating a new ByteLengthQueuingStrategy instance
     ByteLengthQueuingStrategy(const jsbind::Any& init);
     /// Getter of the `highWaterMark` attribute.

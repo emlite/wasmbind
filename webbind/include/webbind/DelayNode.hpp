@@ -18,6 +18,7 @@ public:
     static DelayNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DelayNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DelayNode(..)` constructor, creating a new DelayNode instance
     DelayNode(const BaseAudioContext& context);
     /// The `new DelayNode(..)` constructor, creating a new DelayNode instance

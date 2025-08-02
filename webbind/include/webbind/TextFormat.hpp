@@ -15,6 +15,7 @@ public:
     static TextFormat take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextFormat clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextFormat(..)` constructor, creating a new TextFormat instance
     TextFormat();
     /// The `new TextFormat(..)` constructor, creating a new TextFormat instance

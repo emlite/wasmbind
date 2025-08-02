@@ -32,6 +32,7 @@ public:
     static Serial take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Serial clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
     /// [`Serial.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/Serial/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;

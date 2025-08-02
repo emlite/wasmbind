@@ -20,6 +20,7 @@ public:
     static DocumentFragment take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DocumentFragment clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DocumentFragment(..)` constructor, creating a new DocumentFragment instance
     DocumentFragment();
     /// The getElementById method.

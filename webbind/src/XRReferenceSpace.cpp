@@ -6,6 +6,7 @@ XRReferenceSpace XRReferenceSpace::take_ownership(Handle h) noexcept {
         return XRReferenceSpace(h);
     }
 XRReferenceSpace XRReferenceSpace::clone() const noexcept { return *this; }
+emlite::Val XRReferenceSpace::instance() noexcept { return emlite::Val::global("XRReferenceSpace"); }
 XRReferenceSpace::XRReferenceSpace(Handle h) noexcept : XRSpace(emlite::Val::take_ownership(h)) {}
 XRReferenceSpace::XRReferenceSpace(const emlite::Val &val) noexcept: XRSpace(val) {}
 

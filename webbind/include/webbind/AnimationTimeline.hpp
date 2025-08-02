@@ -18,6 +18,7 @@ public:
     static AnimationTimeline take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AnimationTimeline clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `currentTime` attribute.
     /// [`AnimationTimeline.currentTime`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationTimeline/currentTime)
     [[nodiscard]] jsbind::Any currentTime() const;

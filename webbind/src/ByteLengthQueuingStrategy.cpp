@@ -5,6 +5,7 @@ ByteLengthQueuingStrategy ByteLengthQueuingStrategy::take_ownership(Handle h) no
         return ByteLengthQueuingStrategy(h);
     }
 ByteLengthQueuingStrategy ByteLengthQueuingStrategy::clone() const noexcept { return *this; }
+emlite::Val ByteLengthQueuingStrategy::instance() noexcept { return emlite::Val::global("ByteLengthQueuingStrategy"); }
 ByteLengthQueuingStrategy::ByteLengthQueuingStrategy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ByteLengthQueuingStrategy::ByteLengthQueuingStrategy(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -15,6 +15,7 @@ public:
     static SVGAnimatedString take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedString clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedString.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedString/baseVal)
     [[nodiscard]] jsbind::String baseVal() const;

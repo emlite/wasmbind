@@ -16,6 +16,7 @@ public:
     static CapturedMouseEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CapturedMouseEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CapturedMouseEvent(..)` constructor, creating a new CapturedMouseEvent instance
     CapturedMouseEvent(const jsbind::String& type);
     /// The `new CapturedMouseEvent(..)` constructor, creating a new CapturedMouseEvent instance

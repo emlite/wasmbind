@@ -5,6 +5,7 @@ HashChangeEvent HashChangeEvent::take_ownership(Handle h) noexcept {
         return HashChangeEvent(h);
     }
 HashChangeEvent HashChangeEvent::clone() const noexcept { return *this; }
+emlite::Val HashChangeEvent::instance() noexcept { return emlite::Val::global("HashChangeEvent"); }
 HashChangeEvent::HashChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 HashChangeEvent::HashChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

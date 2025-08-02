@@ -17,6 +17,7 @@ public:
     static ImageTrackList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ImageTrackList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `ready` attribute.
     /// [`ImageTrackList.ready`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/ready)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> ready() const;

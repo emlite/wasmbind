@@ -48,6 +48,7 @@ public:
     static PaymentResponse take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PaymentResponse clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
     /// [`PaymentResponse.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/toJSON)
     jsbind::Object toJSON();

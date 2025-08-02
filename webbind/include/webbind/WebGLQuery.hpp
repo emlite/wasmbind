@@ -16,5 +16,6 @@ public:
     static WebGLQuery take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLQuery clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

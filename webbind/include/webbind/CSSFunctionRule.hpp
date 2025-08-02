@@ -33,6 +33,7 @@ public:
     static CSSFunctionRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFunctionRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSFunctionRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule/name)
     [[nodiscard]] jsbind::String name() const;

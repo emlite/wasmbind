@@ -17,6 +17,7 @@ public:
     static NodeIterator take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NodeIterator clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `root` attribute.
     /// [`NodeIterator.root`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root)
     [[nodiscard]] Node root() const;

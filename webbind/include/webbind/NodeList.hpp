@@ -17,6 +17,7 @@ public:
     static NodeList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NodeList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The item method.
     /// [`NodeList.item`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item)
     Node item(unsigned long index);

@@ -5,6 +5,7 @@ ScriptProcessorNode ScriptProcessorNode::take_ownership(Handle h) noexcept {
         return ScriptProcessorNode(h);
     }
 ScriptProcessorNode ScriptProcessorNode::clone() const noexcept { return *this; }
+emlite::Val ScriptProcessorNode::instance() noexcept { return emlite::Val::global("ScriptProcessorNode"); }
 ScriptProcessorNode::ScriptProcessorNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 ScriptProcessorNode::ScriptProcessorNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

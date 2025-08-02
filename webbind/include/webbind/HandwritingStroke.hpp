@@ -32,6 +32,7 @@ public:
     static HandwritingStroke take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HandwritingStroke clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HandwritingStroke(..)` constructor, creating a new HandwritingStroke instance
     HandwritingStroke();
     /// The addPoint method.

@@ -18,6 +18,7 @@ public:
     static XRWebGLSubImage take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRWebGLSubImage clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `colorTexture` attribute.
     /// [`XRWebGLSubImage.colorTexture`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLSubImage/colorTexture)
     [[nodiscard]] WebGLTexture colorTexture() const;

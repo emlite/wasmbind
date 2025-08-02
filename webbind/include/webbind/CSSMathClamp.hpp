@@ -18,6 +18,7 @@ public:
     static CSSMathClamp take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathClamp clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathClamp(..)` constructor, creating a new CSSMathClamp instance
     CSSMathClamp(const jsbind::Any& lower, const jsbind::Any& value, const jsbind::Any& upper);
     /// Getter of the `lower` attribute.

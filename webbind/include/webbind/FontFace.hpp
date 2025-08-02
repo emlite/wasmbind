@@ -20,6 +20,7 @@ public:
     static FontFace take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FontFace clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FontFace(..)` constructor, creating a new FontFace instance
     FontFace(const jsbind::String& family, const jsbind::Any& source);
     /// The `new FontFace(..)` constructor, creating a new FontFace instance

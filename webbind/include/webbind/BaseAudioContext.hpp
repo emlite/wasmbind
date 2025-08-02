@@ -50,6 +50,7 @@ public:
     static BaseAudioContext take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BaseAudioContext clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `destination` attribute.
     /// [`BaseAudioContext.destination`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/destination)
     [[nodiscard]] AudioDestinationNode destination() const;

@@ -7,6 +7,7 @@ FontMetrics FontMetrics::take_ownership(Handle h) noexcept {
         return FontMetrics(h);
     }
 FontMetrics FontMetrics::clone() const noexcept { return *this; }
+emlite::Val FontMetrics::instance() noexcept { return emlite::Val::global("FontMetrics"); }
 FontMetrics::FontMetrics(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FontMetrics::FontMetrics(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

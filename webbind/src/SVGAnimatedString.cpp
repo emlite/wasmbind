@@ -5,6 +5,7 @@ SVGAnimatedString SVGAnimatedString::take_ownership(Handle h) noexcept {
         return SVGAnimatedString(h);
     }
 SVGAnimatedString SVGAnimatedString::clone() const noexcept { return *this; }
+emlite::Val SVGAnimatedString::instance() noexcept { return emlite::Val::global("SVGAnimatedString"); }
 SVGAnimatedString::SVGAnimatedString(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGAnimatedString::SVGAnimatedString(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

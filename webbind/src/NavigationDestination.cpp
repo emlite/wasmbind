@@ -5,6 +5,7 @@ NavigationDestination NavigationDestination::take_ownership(Handle h) noexcept {
         return NavigationDestination(h);
     }
 NavigationDestination NavigationDestination::clone() const noexcept { return *this; }
+emlite::Val NavigationDestination::instance() noexcept { return emlite::Val::global("NavigationDestination"); }
 NavigationDestination::NavigationDestination(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigationDestination::NavigationDestination(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

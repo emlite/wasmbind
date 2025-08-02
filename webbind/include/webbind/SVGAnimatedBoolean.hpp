@@ -15,6 +15,7 @@ public:
     static SVGAnimatedBoolean take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedBoolean clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedBoolean.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedBoolean/baseVal)
     [[nodiscard]] bool baseVal() const;

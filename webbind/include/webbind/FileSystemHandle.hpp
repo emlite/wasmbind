@@ -29,6 +29,7 @@ public:
     static FileSystemHandle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemHandle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `kind` attribute.
     /// [`FileSystemHandle.kind`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle/kind)
     [[nodiscard]] FileSystemHandleKind kind() const;

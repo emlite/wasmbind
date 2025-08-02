@@ -18,6 +18,7 @@ public:
     static CSSKeyframeRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSKeyframeRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `keyText` attribute.
     /// [`CSSKeyframeRule.keyText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/keyText)
     [[nodiscard]] jsbind::String keyText() const;

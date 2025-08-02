@@ -15,6 +15,7 @@ public:
     static FileSystemDirectoryReader take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemDirectoryReader clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The readEntries method.
     /// [`FileSystemDirectoryReader.readEntries`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader/readEntries)
     jsbind::Undefined readEntries(const jsbind::Function& successCallback);

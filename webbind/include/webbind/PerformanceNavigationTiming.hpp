@@ -18,6 +18,7 @@ public:
     static PerformanceNavigationTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceNavigationTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `unloadEventStart` attribute.
     /// [`PerformanceNavigationTiming.unloadEventStart`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/unloadEventStart)
     [[nodiscard]] jsbind::Any unloadEventStart() const;

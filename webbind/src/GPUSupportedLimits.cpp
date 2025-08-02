@@ -5,6 +5,7 @@ GPUSupportedLimits GPUSupportedLimits::take_ownership(Handle h) noexcept {
         return GPUSupportedLimits(h);
     }
 GPUSupportedLimits GPUSupportedLimits::clone() const noexcept { return *this; }
+emlite::Val GPUSupportedLimits::instance() noexcept { return emlite::Val::global("GPUSupportedLimits"); }
 GPUSupportedLimits::GPUSupportedLimits(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUSupportedLimits::GPUSupportedLimits(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

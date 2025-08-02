@@ -17,6 +17,7 @@ public:
     static WakeLock take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WakeLock clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The request method.
     /// [`WakeLock.request`](https://developer.mozilla.org/en-US/docs/Web/API/WakeLock/request)
     jsbind::Promise<WakeLockSentinel> request();

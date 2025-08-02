@@ -32,6 +32,7 @@ public:
     static FileSystemDirectoryEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemDirectoryEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createReader method.
     /// [`FileSystemDirectoryEntry.createReader`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/createReader)
     FileSystemDirectoryReader createReader();

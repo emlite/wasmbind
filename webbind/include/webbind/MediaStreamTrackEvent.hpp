@@ -18,6 +18,7 @@ public:
     static MediaStreamTrackEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaStreamTrackEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStreamTrackEvent(..)` constructor, creating a new MediaStreamTrackEvent instance
     MediaStreamTrackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `track` attribute.

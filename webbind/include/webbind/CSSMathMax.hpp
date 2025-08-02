@@ -18,6 +18,7 @@ public:
     static CSSMathMax take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathMax clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathMax(..)` constructor, creating a new CSSMathMax instance
     CSSMathMax(const jsbind::Any& args);
     /// Getter of the `values` attribute.

@@ -21,6 +21,7 @@ public:
     static HTMLTableElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTableElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableElement(..)` constructor, creating a new HTMLTableElement instance
     HTMLTableElement();
     /// Getter of the `caption` attribute.

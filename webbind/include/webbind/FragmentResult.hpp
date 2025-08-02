@@ -15,6 +15,7 @@ public:
     static FragmentResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FragmentResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FragmentResult(..)` constructor, creating a new FragmentResult instance
     FragmentResult();
     /// The `new FragmentResult(..)` constructor, creating a new FragmentResult instance

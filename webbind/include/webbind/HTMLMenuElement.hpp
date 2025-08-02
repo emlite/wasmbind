@@ -16,6 +16,7 @@ public:
     static HTMLMenuElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLMenuElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMenuElement(..)` constructor, creating a new HTMLMenuElement instance
     HTMLMenuElement();
     /// Getter of the `compact` attribute.

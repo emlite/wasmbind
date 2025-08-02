@@ -17,6 +17,7 @@ public:
     static BreakToken take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BreakToken clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `childBreakTokens` attribute.
     /// [`BreakToken.childBreakTokens`](https://developer.mozilla.org/en-US/docs/Web/API/BreakToken/childBreakTokens)
     [[nodiscard]] jsbind::TypedArray<ChildBreakToken> childBreakTokens() const;

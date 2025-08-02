@@ -20,6 +20,7 @@ public:
     static SVGUseElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGUseElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`SVGUseElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;

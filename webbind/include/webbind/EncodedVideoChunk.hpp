@@ -15,6 +15,7 @@ public:
     static EncodedVideoChunk take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EncodedVideoChunk clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EncodedVideoChunk(..)` constructor, creating a new EncodedVideoChunk instance
     EncodedVideoChunk(const jsbind::Any& init);
     /// Getter of the `type` attribute.

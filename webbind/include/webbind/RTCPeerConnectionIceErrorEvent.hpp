@@ -16,6 +16,7 @@ public:
     static RTCPeerConnectionIceErrorEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCPeerConnectionIceErrorEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCPeerConnectionIceErrorEvent(..)` constructor, creating a new RTCPeerConnectionIceErrorEvent instance
     RTCPeerConnectionIceErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `address` attribute.

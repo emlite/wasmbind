@@ -18,6 +18,7 @@ public:
     static IDBIndex take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBIndex clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`IDBIndex.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/name)
     [[nodiscard]] jsbind::String name() const;

@@ -16,6 +16,7 @@ public:
     static RTCDTMFToneChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCDTMFToneChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCDTMFToneChangeEvent(..)` constructor, creating a new RTCDTMFToneChangeEvent instance
     RTCDTMFToneChangeEvent(const jsbind::String& type);
     /// The `new RTCDTMFToneChangeEvent(..)` constructor, creating a new RTCDTMFToneChangeEvent instance

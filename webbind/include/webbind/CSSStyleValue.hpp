@@ -17,6 +17,7 @@ public:
     static CSSStyleValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSStyleValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The parse method.
     /// [`CSSStyleValue.parse`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleValue/parse)
     static CSSStyleValue parse(const jsbind::String& property, const jsbind::String& cssText);

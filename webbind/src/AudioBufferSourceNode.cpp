@@ -8,6 +8,7 @@ AudioBufferSourceNode AudioBufferSourceNode::take_ownership(Handle h) noexcept {
         return AudioBufferSourceNode(h);
     }
 AudioBufferSourceNode AudioBufferSourceNode::clone() const noexcept { return *this; }
+emlite::Val AudioBufferSourceNode::instance() noexcept { return emlite::Val::global("AudioBufferSourceNode"); }
 AudioBufferSourceNode::AudioBufferSourceNode(Handle h) noexcept : AudioScheduledSourceNode(emlite::Val::take_ownership(h)) {}
 AudioBufferSourceNode::AudioBufferSourceNode(const emlite::Val &val) noexcept: AudioScheduledSourceNode(val) {}
 

@@ -18,6 +18,7 @@ public:
     static HTMLMapElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLMapElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMapElement(..)` constructor, creating a new HTMLMapElement instance
     HTMLMapElement();
     /// Getter of the `name` attribute.

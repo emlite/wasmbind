@@ -18,6 +18,7 @@ public:
     static MediaRecorder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaRecorder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaRecorder(..)` constructor, creating a new MediaRecorder instance
     MediaRecorder(const MediaStream& stream);
     /// The `new MediaRecorder(..)` constructor, creating a new MediaRecorder instance

@@ -6,6 +6,7 @@ CSSMathProduct CSSMathProduct::take_ownership(Handle h) noexcept {
         return CSSMathProduct(h);
     }
 CSSMathProduct CSSMathProduct::clone() const noexcept { return *this; }
+emlite::Val CSSMathProduct::instance() noexcept { return emlite::Val::global("CSSMathProduct"); }
 CSSMathProduct::CSSMathProduct(Handle h) noexcept : CSSMathValue(emlite::Val::take_ownership(h)) {}
 CSSMathProduct::CSSMathProduct(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 

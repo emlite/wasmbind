@@ -16,6 +16,7 @@ public:
     static HTMLHtmlElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLHtmlElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLHtmlElement(..)` constructor, creating a new HTMLHtmlElement instance
     HTMLHtmlElement();
     /// Getter of the `version` attribute.

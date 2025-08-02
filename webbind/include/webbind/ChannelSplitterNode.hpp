@@ -16,6 +16,7 @@ public:
     static ChannelSplitterNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ChannelSplitterNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ChannelSplitterNode(..)` constructor, creating a new ChannelSplitterNode instance
     ChannelSplitterNode(const BaseAudioContext& context);
     /// The `new ChannelSplitterNode(..)` constructor, creating a new ChannelSplitterNode instance

@@ -19,6 +19,7 @@ public:
     static DataTransferItem take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DataTransferItem clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `kind` attribute.
     /// [`DataTransferItem.kind`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind)
     [[nodiscard]] jsbind::String kind() const;

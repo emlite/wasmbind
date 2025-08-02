@@ -16,6 +16,7 @@ public:
     static InterestGroupReportingScriptRunnerGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InterestGroupReportingScriptRunnerGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The sendReportTo method.
     /// [`InterestGroupReportingScriptRunnerGlobalScope.sendReportTo`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupReportingScriptRunnerGlobalScope/sendReportTo)
     jsbind::Undefined sendReportTo(const jsbind::String& url);

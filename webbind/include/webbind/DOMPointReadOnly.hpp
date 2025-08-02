@@ -51,6 +51,7 @@ public:
     static DOMPointReadOnly take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMPointReadOnly clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMPointReadOnly(..)` constructor, creating a new DOMPointReadOnly instance
     DOMPointReadOnly();
     /// The `new DOMPointReadOnly(..)` constructor, creating a new DOMPointReadOnly instance

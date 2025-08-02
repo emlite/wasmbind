@@ -30,6 +30,7 @@ public:
     static GPURenderBundleEncoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPURenderBundleEncoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The finish method.
     /// [`GPURenderBundleEncoder.finish`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/finish)
     GPURenderBundle finish();

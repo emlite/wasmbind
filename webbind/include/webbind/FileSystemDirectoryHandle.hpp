@@ -55,6 +55,7 @@ public:
     static FileSystemDirectoryHandle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemDirectoryHandle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getFileHandle method.
     /// [`FileSystemDirectoryHandle.getFileHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
     jsbind::Promise<FileSystemFileHandle> getFileHandle(const jsbind::String& name);

@@ -19,6 +19,7 @@ public:
     static VTTCue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VTTCue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VTTCue(..)` constructor, creating a new VTTCue instance
     VTTCue(double startTime, double endTime, const jsbind::String& text);
     /// Getter of the `region` attribute.

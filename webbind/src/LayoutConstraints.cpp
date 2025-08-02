@@ -5,6 +5,7 @@ LayoutConstraints LayoutConstraints::take_ownership(Handle h) noexcept {
         return LayoutConstraints(h);
     }
 LayoutConstraints LayoutConstraints::clone() const noexcept { return *this; }
+emlite::Val LayoutConstraints::instance() noexcept { return emlite::Val::global("LayoutConstraints"); }
 LayoutConstraints::LayoutConstraints(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LayoutConstraints::LayoutConstraints(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

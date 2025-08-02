@@ -17,6 +17,7 @@ public:
     static Crypto take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Crypto clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `subtle` attribute.
     /// [`Crypto.subtle`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/subtle)
     [[nodiscard]] SubtleCrypto subtle() const;

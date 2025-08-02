@@ -29,6 +29,7 @@ public:
     static ReadableStreamBYOBReader take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ReadableStreamBYOBReader clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ReadableStreamBYOBReader(..)` constructor, creating a new ReadableStreamBYOBReader instance
     ReadableStreamBYOBReader(const ReadableStream& stream);
     /// The read method.

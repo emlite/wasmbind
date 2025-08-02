@@ -15,6 +15,7 @@ public:
     static SVGPathSegment take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGPathSegment clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`SVGPathSegment.type`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathSegment/type)
     [[nodiscard]] jsbind::String type() const;

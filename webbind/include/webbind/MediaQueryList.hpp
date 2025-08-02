@@ -16,6 +16,7 @@ public:
     static MediaQueryList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaQueryList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `media` attribute.
     /// [`MediaQueryList.media`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media)
     [[nodiscard]] jsbind::String media() const;

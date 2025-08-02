@@ -19,6 +19,7 @@ public:
     static SVGMaskElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGMaskElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `maskUnits` attribute.
     /// [`SVGMaskElement.maskUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGMaskElement/maskUnits)
     [[nodiscard]] SVGAnimatedEnumeration maskUnits() const;

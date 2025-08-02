@@ -16,5 +16,6 @@ public:
     static WebGLShader take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLShader clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

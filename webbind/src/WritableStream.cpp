@@ -6,6 +6,7 @@ WritableStream WritableStream::take_ownership(Handle h) noexcept {
         return WritableStream(h);
     }
 WritableStream WritableStream::clone() const noexcept { return *this; }
+emlite::Val WritableStream::instance() noexcept { return emlite::Val::global("WritableStream"); }
 WritableStream::WritableStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WritableStream::WritableStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

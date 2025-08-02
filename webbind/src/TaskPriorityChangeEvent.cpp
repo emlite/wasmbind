@@ -5,6 +5,7 @@ TaskPriorityChangeEvent TaskPriorityChangeEvent::take_ownership(Handle h) noexce
         return TaskPriorityChangeEvent(h);
     }
 TaskPriorityChangeEvent TaskPriorityChangeEvent::clone() const noexcept { return *this; }
+emlite::Val TaskPriorityChangeEvent::instance() noexcept { return emlite::Val::global("TaskPriorityChangeEvent"); }
 TaskPriorityChangeEvent::TaskPriorityChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 TaskPriorityChangeEvent::TaskPriorityChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

@@ -6,6 +6,7 @@ WindowControlsOverlayGeometryChangeEvent WindowControlsOverlayGeometryChangeEven
         return WindowControlsOverlayGeometryChangeEvent(h);
     }
 WindowControlsOverlayGeometryChangeEvent WindowControlsOverlayGeometryChangeEvent::clone() const noexcept { return *this; }
+emlite::Val WindowControlsOverlayGeometryChangeEvent::instance() noexcept { return emlite::Val::global("WindowControlsOverlayGeometryChangeEvent"); }
 WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

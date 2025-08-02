@@ -19,6 +19,7 @@ public:
     static CSSImportRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSImportRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `href` attribute.
     /// [`CSSImportRule.href`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/href)
     [[nodiscard]] jsbind::String href() const;

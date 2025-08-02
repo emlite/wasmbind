@@ -33,6 +33,7 @@ public:
     static MediaSession take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaSession clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `metadata` attribute.
     /// [`MediaSession.metadata`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/metadata)
     [[nodiscard]] MediaMetadata metadata() const;

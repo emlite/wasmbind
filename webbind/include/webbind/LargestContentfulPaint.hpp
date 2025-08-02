@@ -18,6 +18,7 @@ public:
     static LargestContentfulPaint take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LargestContentfulPaint clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `loadTime` attribute.
     /// [`LargestContentfulPaint.loadTime`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/loadTime)
     [[nodiscard]] jsbind::Any loadTime() const;

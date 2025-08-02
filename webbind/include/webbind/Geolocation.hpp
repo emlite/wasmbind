@@ -32,6 +32,7 @@ public:
     static Geolocation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Geolocation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getCurrentPosition method.
     /// [`Geolocation.getCurrentPosition`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition)
     jsbind::Undefined getCurrentPosition(const jsbind::Function& successCallback);

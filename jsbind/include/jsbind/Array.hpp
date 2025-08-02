@@ -25,6 +25,7 @@ class ArrayBuffer : public emlite::Val {
   public:
     static ArrayBuffer take_ownership(Handle h) noexcept;
     explicit ArrayBuffer(const emlite::Val &v) noexcept;
+    static emlite::Val instance() noexcept;
     explicit ArrayBuffer(size_t byteLen);
 
     static bool isView(const emlite::Val &v);
@@ -88,6 +89,23 @@ class TypedArray : public emlite::Val {
 
     T operator[](size_t i) const {
         return emlite::Val::operator[](i).template as<T>();
+    }
+
+    /// Safe array access using Option - returns None if index out of bounds
+    [[nodiscard]] Option<T> at(size_t index) const noexcept {
+        if (index >= size()) {
+            return Option<T>();  // None - out of bounds
+        }
+        return Option<T>(emlite::Val::operator[](index).template as<T>());
+    }
+
+    /// Safe array access using Result - returns error with details
+    [[nodiscard]] Result<T> try_at(size_t index) const noexcept {
+        if (index >= size()) {
+            return Result<T>(emlite::Val::global("RangeError")
+                .new_("Array index out of bounds"));
+        }
+        return Result<T>(emlite::Val::operator[](index).template as<T>());
     }
 
     void set(size_t idx, const T &val) noexcept;

@@ -45,6 +45,7 @@ public:
     static AnimationEffect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AnimationEffect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getTiming method.
     /// [`AnimationEffect.getTiming`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/getTiming)
     EffectTiming getTiming();

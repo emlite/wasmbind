@@ -34,6 +34,7 @@ SVGElement SVGElement::take_ownership(Handle h) noexcept {
         return SVGElement(h);
     }
 SVGElement SVGElement::clone() const noexcept { return *this; }
+emlite::Val SVGElement::instance() noexcept { return emlite::Val::global("SVGElement"); }
 SVGElement::SVGElement(Handle h) noexcept : Element(emlite::Val::take_ownership(h)) {}
 SVGElement::SVGElement(const emlite::Val &val) noexcept: Element(val) {}
 

@@ -15,5 +15,6 @@ public:
     static RTCStatsReport take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCStatsReport clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

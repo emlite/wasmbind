@@ -5,6 +5,7 @@ RTCError RTCError::take_ownership(Handle h) noexcept {
         return RTCError(h);
     }
 RTCError RTCError::clone() const noexcept { return *this; }
+emlite::Val RTCError::instance() noexcept { return emlite::Val::global("RTCError"); }
 RTCError::RTCError(Handle h) noexcept : DOMException(emlite::Val::take_ownership(h)) {}
 RTCError::RTCError(const emlite::Val &val) noexcept: DOMException(val) {}
 

@@ -29,6 +29,7 @@ public:
     static MediaKeys take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaKeys clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createSession method.
     /// [`MediaKeys.createSession`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys/createSession)
     MediaKeySession createSession();

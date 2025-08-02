@@ -6,6 +6,7 @@ BufferedChangeEvent BufferedChangeEvent::take_ownership(Handle h) noexcept {
         return BufferedChangeEvent(h);
     }
 BufferedChangeEvent BufferedChangeEvent::clone() const noexcept { return *this; }
+emlite::Val BufferedChangeEvent::instance() noexcept { return emlite::Val::global("BufferedChangeEvent"); }
 BufferedChangeEvent::BufferedChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 BufferedChangeEvent::BufferedChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

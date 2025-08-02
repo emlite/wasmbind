@@ -6,6 +6,7 @@ MediaStream MediaStream::take_ownership(Handle h) noexcept {
         return MediaStream(h);
     }
 MediaStream MediaStream::clone() const noexcept { return *this; }
+emlite::Val MediaStream::instance() noexcept { return emlite::Val::global("MediaStream"); }
 MediaStream::MediaStream(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaStream::MediaStream(const emlite::Val &val) noexcept: EventTarget(val) {}
 

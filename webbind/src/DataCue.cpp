@@ -5,6 +5,7 @@ DataCue DataCue::take_ownership(Handle h) noexcept {
         return DataCue(h);
     }
 DataCue DataCue::clone() const noexcept { return *this; }
+emlite::Val DataCue::instance() noexcept { return emlite::Val::global("DataCue"); }
 DataCue::DataCue(Handle h) noexcept : TextTrackCue(emlite::Val::take_ownership(h)) {}
 DataCue::DataCue(const emlite::Val &val) noexcept: TextTrackCue(val) {}
 

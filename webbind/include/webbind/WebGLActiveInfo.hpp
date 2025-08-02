@@ -15,6 +15,7 @@ public:
     static WebGLActiveInfo take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLActiveInfo clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `size` attribute.
     /// [`WebGLActiveInfo.size`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/size)
     [[nodiscard]] jsbind::Any size() const;

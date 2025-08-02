@@ -16,6 +16,7 @@ public:
     static RemotePlayback take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RemotePlayback clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The watchAvailability method.
     /// [`RemotePlayback.watchAvailability`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/watchAvailability)
     jsbind::Promise<long> watchAvailability(const jsbind::Function& callback);

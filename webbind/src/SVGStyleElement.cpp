@@ -6,6 +6,7 @@ SVGStyleElement SVGStyleElement::take_ownership(Handle h) noexcept {
         return SVGStyleElement(h);
     }
 SVGStyleElement SVGStyleElement::clone() const noexcept { return *this; }
+emlite::Val SVGStyleElement::instance() noexcept { return emlite::Val::global("SVGStyleElement"); }
 SVGStyleElement::SVGStyleElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGStyleElement::SVGStyleElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

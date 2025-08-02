@@ -19,6 +19,7 @@ public:
     static HTMLStyleElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLStyleElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLStyleElement(..)` constructor, creating a new HTMLStyleElement instance
     HTMLStyleElement();
     /// Getter of the `disabled` attribute.

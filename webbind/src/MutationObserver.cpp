@@ -71,6 +71,7 @@ MutationObserver MutationObserver::take_ownership(Handle h) noexcept {
         return MutationObserver(h);
     }
 MutationObserver MutationObserver::clone() const noexcept { return *this; }
+emlite::Val MutationObserver::instance() noexcept { return emlite::Val::global("MutationObserver"); }
 MutationObserver::MutationObserver(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MutationObserver::MutationObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

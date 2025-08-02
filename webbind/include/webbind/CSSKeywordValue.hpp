@@ -16,6 +16,7 @@ public:
     static CSSKeywordValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSKeywordValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSKeywordValue(..)` constructor, creating a new CSSKeywordValue instance
     CSSKeywordValue(const jsbind::String& value);
     /// Getter of the `value` attribute.

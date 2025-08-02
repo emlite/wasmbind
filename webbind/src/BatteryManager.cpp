@@ -5,6 +5,7 @@ BatteryManager BatteryManager::take_ownership(Handle h) noexcept {
         return BatteryManager(h);
     }
 BatteryManager BatteryManager::clone() const noexcept { return *this; }
+emlite::Val BatteryManager::instance() noexcept { return emlite::Val::global("BatteryManager"); }
 BatteryManager::BatteryManager(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BatteryManager::BatteryManager(const emlite::Val &val) noexcept: EventTarget(val) {}
 

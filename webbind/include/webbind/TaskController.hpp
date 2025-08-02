@@ -16,6 +16,7 @@ public:
     static TaskController take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TaskController clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TaskController(..)` constructor, creating a new TaskController instance
     TaskController();
     /// The `new TaskController(..)` constructor, creating a new TaskController instance

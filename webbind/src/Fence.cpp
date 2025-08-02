@@ -63,6 +63,7 @@ Fence Fence::take_ownership(Handle h) noexcept {
         return Fence(h);
     }
 Fence Fence::clone() const noexcept { return *this; }
+emlite::Val Fence::instance() noexcept { return emlite::Val::global("Fence"); }
 Fence::Fence(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Fence::Fence(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

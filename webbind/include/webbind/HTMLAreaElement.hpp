@@ -18,6 +18,7 @@ public:
     static HTMLAreaElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLAreaElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLAreaElement(..)` constructor, creating a new HTMLAreaElement instance
     HTMLAreaElement();
     /// Getter of the `alt` attribute.

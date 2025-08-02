@@ -15,5 +15,6 @@ public:
     static XRAnchorSet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRAnchorSet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

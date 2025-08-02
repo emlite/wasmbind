@@ -18,6 +18,7 @@ public:
     static SVGRectElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGRectElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`SVGRectElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;

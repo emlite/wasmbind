@@ -18,6 +18,7 @@ public:
     static PageRevealEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PageRevealEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PageRevealEvent(..)` constructor, creating a new PageRevealEvent instance
     PageRevealEvent(const jsbind::String& type);
     /// The `new PageRevealEvent(..)` constructor, creating a new PageRevealEvent instance

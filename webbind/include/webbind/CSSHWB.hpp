@@ -18,6 +18,7 @@ public:
     static CSSHWB take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSHWB clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSHWB(..)` constructor, creating a new CSSHWB instance
     CSSHWB(const CSSNumericValue& h, const jsbind::Any& w, const jsbind::Any& b);
     /// The `new CSSHWB(..)` constructor, creating a new CSSHWB instance

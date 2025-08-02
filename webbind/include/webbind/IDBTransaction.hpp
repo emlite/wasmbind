@@ -21,6 +21,7 @@ public:
     static IDBTransaction take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBTransaction clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `objectStoreNames` attribute.
     /// [`IDBTransaction.objectStoreNames`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/objectStoreNames)
     [[nodiscard]] DOMStringList objectStoreNames() const;

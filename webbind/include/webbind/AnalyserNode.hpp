@@ -16,6 +16,7 @@ public:
     static AnalyserNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AnalyserNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AnalyserNode(..)` constructor, creating a new AnalyserNode instance
     AnalyserNode(const BaseAudioContext& context);
     /// The `new AnalyserNode(..)` constructor, creating a new AnalyserNode instance

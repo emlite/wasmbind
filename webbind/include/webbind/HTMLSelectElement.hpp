@@ -23,6 +23,7 @@ public:
     static HTMLSelectElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLSelectElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSelectElement(..)` constructor, creating a new HTMLSelectElement instance
     HTMLSelectElement();
     /// Getter of the `autocomplete` attribute.

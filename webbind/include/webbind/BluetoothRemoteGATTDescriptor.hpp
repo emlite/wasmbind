@@ -17,6 +17,7 @@ public:
     static BluetoothRemoteGATTDescriptor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothRemoteGATTDescriptor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `characteristic` attribute.
     /// [`BluetoothRemoteGATTDescriptor.characteristic`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/characteristic)
     [[nodiscard]] BluetoothRemoteGATTCharacteristic characteristic() const;

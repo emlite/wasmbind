@@ -6,6 +6,7 @@ HTMLFrameElement HTMLFrameElement::take_ownership(Handle h) noexcept {
         return HTMLFrameElement(h);
     }
 HTMLFrameElement HTMLFrameElement::clone() const noexcept { return *this; }
+emlite::Val HTMLFrameElement::instance() noexcept { return emlite::Val::global("HTMLFrameElement"); }
 HTMLFrameElement::HTMLFrameElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLFrameElement::HTMLFrameElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

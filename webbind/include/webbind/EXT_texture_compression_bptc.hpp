@@ -15,5 +15,6 @@ public:
     static EXT_texture_compression_bptc take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_texture_compression_bptc clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

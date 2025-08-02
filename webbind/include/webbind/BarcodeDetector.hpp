@@ -35,6 +35,7 @@ public:
     static BarcodeDetector take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BarcodeDetector clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BarcodeDetector(..)` constructor, creating a new BarcodeDetector instance
     BarcodeDetector();
     /// The `new BarcodeDetector(..)` constructor, creating a new BarcodeDetector instance

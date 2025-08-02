@@ -16,6 +16,7 @@ public:
     static CSSAnimation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSAnimation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `animationName` attribute.
     /// [`CSSAnimation.animationName`](https://developer.mozilla.org/en-US/docs/Web/API/CSSAnimation/animationName)
     [[nodiscard]] jsbind::String animationName() const;

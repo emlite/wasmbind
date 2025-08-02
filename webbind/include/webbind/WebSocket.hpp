@@ -16,6 +16,7 @@ public:
     static WebSocket take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebSocket clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WebSocket(..)` constructor, creating a new WebSocket instance
     WebSocket(const jsbind::String& url);
     /// The `new WebSocket(..)` constructor, creating a new WebSocket instance

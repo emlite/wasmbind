@@ -87,6 +87,7 @@ Bluetooth Bluetooth::take_ownership(Handle h) noexcept {
         return Bluetooth(h);
     }
 Bluetooth Bluetooth::clone() const noexcept { return *this; }
+emlite::Val Bluetooth::instance() noexcept { return emlite::Val::global("Bluetooth"); }
 Bluetooth::Bluetooth(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Bluetooth::Bluetooth(const emlite::Val &val) noexcept: EventTarget(val) {}
 

@@ -17,6 +17,7 @@ public:
     static InputDeviceInfo take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InputDeviceInfo clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getCapabilities method.
     /// [`InputDeviceInfo.getCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo/getCapabilities)
     MediaTrackCapabilities getCapabilities();

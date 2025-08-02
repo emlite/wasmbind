@@ -29,6 +29,7 @@ RTCIdentityProviderRegistrar RTCIdentityProviderRegistrar::take_ownership(Handle
         return RTCIdentityProviderRegistrar(h);
     }
 RTCIdentityProviderRegistrar RTCIdentityProviderRegistrar::clone() const noexcept { return *this; }
+emlite::Val RTCIdentityProviderRegistrar::instance() noexcept { return emlite::Val::global("RTCIdentityProviderRegistrar"); }
 RTCIdentityProviderRegistrar::RTCIdentityProviderRegistrar(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCIdentityProviderRegistrar::RTCIdentityProviderRegistrar(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

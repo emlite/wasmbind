@@ -16,6 +16,7 @@ public:
     static ProgressEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ProgressEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ProgressEvent(..)` constructor, creating a new ProgressEvent instance
     ProgressEvent(const jsbind::String& type);
     /// The `new ProgressEvent(..)` constructor, creating a new ProgressEvent instance

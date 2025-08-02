@@ -15,6 +15,7 @@ public:
     static MLOperand take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MLOperand clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `dataType` attribute.
     /// [`MLOperand.dataType`](https://developer.mozilla.org/en-US/docs/Web/API/MLOperand/dataType)
     [[nodiscard]] MLOperandDataType dataType() const;

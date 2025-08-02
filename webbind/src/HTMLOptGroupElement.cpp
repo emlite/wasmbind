@@ -5,6 +5,7 @@ HTMLOptGroupElement HTMLOptGroupElement::take_ownership(Handle h) noexcept {
         return HTMLOptGroupElement(h);
     }
 HTMLOptGroupElement HTMLOptGroupElement::clone() const noexcept { return *this; }
+emlite::Val HTMLOptGroupElement::instance() noexcept { return emlite::Val::global("HTMLOptGroupElement"); }
 HTMLOptGroupElement::HTMLOptGroupElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLOptGroupElement::HTMLOptGroupElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

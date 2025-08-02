@@ -16,6 +16,7 @@ public:
     static HTMLParamElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLParamElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLParamElement(..)` constructor, creating a new HTMLParamElement instance
     HTMLParamElement();
     /// Getter of the `name` attribute.

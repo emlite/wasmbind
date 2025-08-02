@@ -15,6 +15,7 @@ public:
     static URLSearchParams take_ownership(Handle h) noexcept;
 
     [[nodiscard]] URLSearchParams clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new URLSearchParams(..)` constructor, creating a new URLSearchParams instance
     URLSearchParams();
     /// The `new URLSearchParams(..)` constructor, creating a new URLSearchParams instance

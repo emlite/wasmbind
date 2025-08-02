@@ -35,6 +35,7 @@ public:
     static Profiler take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Profiler clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sampleInterval` attribute.
     /// [`Profiler.sampleInterval`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler/sampleInterval)
     [[nodiscard]] jsbind::Any sampleInterval() const;

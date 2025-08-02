@@ -17,6 +17,7 @@ public:
     static TouchList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TouchList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`TouchList.length`](https://developer.mozilla.org/en-US/docs/Web/API/TouchList/length)
     [[nodiscard]] unsigned long length() const;

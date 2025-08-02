@@ -15,6 +15,7 @@ public:
     static MediaDeviceInfo take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaDeviceInfo clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `deviceId` attribute.
     /// [`MediaDeviceInfo.deviceId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/deviceId)
     [[nodiscard]] jsbind::String deviceId() const;

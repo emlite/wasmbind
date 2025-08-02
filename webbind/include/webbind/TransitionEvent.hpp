@@ -16,6 +16,7 @@ public:
     static TransitionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TransitionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TransitionEvent(..)` constructor, creating a new TransitionEvent instance
     TransitionEvent(const jsbind::String& type);
     /// The `new TransitionEvent(..)` constructor, creating a new TransitionEvent instance

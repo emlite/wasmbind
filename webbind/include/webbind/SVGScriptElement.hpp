@@ -18,6 +18,7 @@ public:
     static SVGScriptElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGScriptElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`SVGScriptElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/SVGScriptElement/type)
     [[nodiscard]] jsbind::String type() const;

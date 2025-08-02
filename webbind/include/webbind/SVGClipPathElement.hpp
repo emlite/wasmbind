@@ -19,6 +19,7 @@ public:
     static SVGClipPathElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGClipPathElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `clipPathUnits` attribute.
     /// [`SVGClipPathElement.clipPathUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGClipPathElement/clipPathUnits)
     [[nodiscard]] SVGAnimatedEnumeration clipPathUnits() const;

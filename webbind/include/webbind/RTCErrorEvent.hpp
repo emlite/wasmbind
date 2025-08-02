@@ -18,6 +18,7 @@ public:
     static RTCErrorEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCErrorEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCErrorEvent(..)` constructor, creating a new RTCErrorEvent instance
     RTCErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `error` attribute.

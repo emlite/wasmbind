@@ -21,6 +21,7 @@ public:
     static HTMLButtonElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLButtonElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLButtonElement(..)` constructor, creating a new HTMLButtonElement instance
     HTMLButtonElement();
     /// Getter of the `command` attribute.

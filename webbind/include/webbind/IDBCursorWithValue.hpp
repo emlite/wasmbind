@@ -16,6 +16,7 @@ public:
     static IDBCursorWithValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBCursorWithValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `value` attribute.
     /// [`IDBCursorWithValue.value`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursorWithValue/value)
     [[nodiscard]] jsbind::Any value() const;

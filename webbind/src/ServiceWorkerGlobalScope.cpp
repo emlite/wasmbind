@@ -9,6 +9,7 @@ ServiceWorkerGlobalScope ServiceWorkerGlobalScope::take_ownership(Handle h) noex
         return ServiceWorkerGlobalScope(h);
     }
 ServiceWorkerGlobalScope ServiceWorkerGlobalScope::clone() const noexcept { return *this; }
+emlite::Val ServiceWorkerGlobalScope::instance() noexcept { return emlite::Val::global("ServiceWorkerGlobalScope"); }
 ServiceWorkerGlobalScope::ServiceWorkerGlobalScope(Handle h) noexcept : WorkerGlobalScope(emlite::Val::take_ownership(h)) {}
 ServiceWorkerGlobalScope::ServiceWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
 

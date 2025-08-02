@@ -16,5 +16,6 @@ public:
     static WebGLBuffer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLBuffer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

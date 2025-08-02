@@ -15,5 +15,6 @@ public:
     static XRPlaneSet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRPlaneSet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

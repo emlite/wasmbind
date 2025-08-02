@@ -18,6 +18,7 @@ public:
     static ClipboardEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ClipboardEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ClipboardEvent(..)` constructor, creating a new ClipboardEvent instance
     ClipboardEvent(const jsbind::String& type);
     /// The `new ClipboardEvent(..)` constructor, creating a new ClipboardEvent instance

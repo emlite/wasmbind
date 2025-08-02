@@ -34,6 +34,7 @@ public:
     static IDBObjectStore take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBObjectStore clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`IDBObjectStore.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/name)
     [[nodiscard]] jsbind::String name() const;

@@ -16,6 +16,7 @@ public:
     static UncalibratedMagnetometer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] UncalibratedMagnetometer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new UncalibratedMagnetometer(..)` constructor, creating a new UncalibratedMagnetometer instance
     UncalibratedMagnetometer();
     /// The `new UncalibratedMagnetometer(..)` constructor, creating a new UncalibratedMagnetometer instance

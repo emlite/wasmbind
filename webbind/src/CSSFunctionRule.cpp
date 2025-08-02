@@ -37,6 +37,7 @@ CSSFunctionRule CSSFunctionRule::take_ownership(Handle h) noexcept {
         return CSSFunctionRule(h);
     }
 CSSFunctionRule CSSFunctionRule::clone() const noexcept { return *this; }
+emlite::Val CSSFunctionRule::instance() noexcept { return emlite::Val::global("CSSFunctionRule"); }
 CSSFunctionRule::CSSFunctionRule(Handle h) noexcept : CSSGroupingRule(emlite::Val::take_ownership(h)) {}
 CSSFunctionRule::CSSFunctionRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 

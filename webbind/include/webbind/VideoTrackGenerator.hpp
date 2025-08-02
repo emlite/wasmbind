@@ -18,6 +18,7 @@ public:
     static VideoTrackGenerator take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoTrackGenerator clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoTrackGenerator(..)` constructor, creating a new VideoTrackGenerator instance
     VideoTrackGenerator();
     /// Getter of the `writable` attribute.

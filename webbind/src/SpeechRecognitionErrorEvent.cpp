@@ -5,6 +5,7 @@ SpeechRecognitionErrorEvent SpeechRecognitionErrorEvent::take_ownership(Handle h
         return SpeechRecognitionErrorEvent(h);
     }
 SpeechRecognitionErrorEvent SpeechRecognitionErrorEvent::clone() const noexcept { return *this; }
+emlite::Val SpeechRecognitionErrorEvent::instance() noexcept { return emlite::Val::global("SpeechRecognitionErrorEvent"); }
 SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 

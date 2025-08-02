@@ -17,6 +17,7 @@ public:
     static USBIsochronousOutTransferResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBIsochronousOutTransferResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBIsochronousOutTransferResult(..)` constructor, creating a new USBIsochronousOutTransferResult instance
     USBIsochronousOutTransferResult(const jsbind::TypedArray<USBIsochronousOutTransferPacket>& packets);
     /// Getter of the `packets` attribute.

@@ -125,6 +125,7 @@ DigitalGoodsService DigitalGoodsService::take_ownership(Handle h) noexcept {
         return DigitalGoodsService(h);
     }
 DigitalGoodsService DigitalGoodsService::clone() const noexcept { return *this; }
+emlite::Val DigitalGoodsService::instance() noexcept { return emlite::Val::global("DigitalGoodsService"); }
 DigitalGoodsService::DigitalGoodsService(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DigitalGoodsService::DigitalGoodsService(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

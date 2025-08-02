@@ -38,6 +38,7 @@ public:
     static AudioContext take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioContext clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioContext(..)` constructor, creating a new AudioContext instance
     AudioContext();
     /// The `new AudioContext(..)` constructor, creating a new AudioContext instance

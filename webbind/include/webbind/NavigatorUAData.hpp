@@ -78,6 +78,7 @@ public:
     static NavigatorUAData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigatorUAData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `brands` attribute.
     /// [`NavigatorUAData.brands`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/brands)
     [[nodiscard]] jsbind::TypedArray<NavigatorUABrandVersion> brands() const;

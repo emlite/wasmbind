@@ -16,6 +16,7 @@ public:
     static DataCue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DataCue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DataCue(..)` constructor, creating a new DataCue instance
     DataCue(double startTime, double endTime, const jsbind::Any& value);
     /// The `new DataCue(..)` constructor, creating a new DataCue instance

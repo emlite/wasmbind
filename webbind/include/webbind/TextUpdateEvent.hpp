@@ -16,6 +16,7 @@ public:
     static TextUpdateEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextUpdateEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextUpdateEvent(..)` constructor, creating a new TextUpdateEvent instance
     TextUpdateEvent(const jsbind::String& type);
     /// The `new TextUpdateEvent(..)` constructor, creating a new TextUpdateEvent instance

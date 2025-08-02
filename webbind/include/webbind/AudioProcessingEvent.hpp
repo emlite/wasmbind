@@ -18,6 +18,7 @@ public:
     static AudioProcessingEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioProcessingEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioProcessingEvent(..)` constructor, creating a new AudioProcessingEvent instance
     AudioProcessingEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `playbackTime` attribute.

@@ -19,6 +19,7 @@ public:
     static NamedFlow take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NamedFlow clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`NamedFlow.name`](https://developer.mozilla.org/en-US/docs/Web/API/NamedFlow/name)
     [[nodiscard]] jsbind::String name() const;

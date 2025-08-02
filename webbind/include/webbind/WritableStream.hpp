@@ -17,6 +17,7 @@ public:
     static WritableStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WritableStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WritableStream(..)` constructor, creating a new WritableStream instance
     WritableStream();
     /// The `new WritableStream(..)` constructor, creating a new WritableStream instance

@@ -32,6 +32,7 @@ public:
     static FileSystemFileHandle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemFileHandle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getFile method.
     /// [`FileSystemFileHandle.getFile`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/getFile)
     jsbind::Promise<File> getFile();

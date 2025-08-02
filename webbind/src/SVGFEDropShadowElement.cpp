@@ -8,6 +8,7 @@ SVGFEDropShadowElement SVGFEDropShadowElement::take_ownership(Handle h) noexcept
         return SVGFEDropShadowElement(h);
     }
 SVGFEDropShadowElement SVGFEDropShadowElement::clone() const noexcept { return *this; }
+emlite::Val SVGFEDropShadowElement::instance() noexcept { return emlite::Val::global("SVGFEDropShadowElement"); }
 SVGFEDropShadowElement::SVGFEDropShadowElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEDropShadowElement::SVGFEDropShadowElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

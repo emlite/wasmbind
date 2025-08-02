@@ -15,5 +15,6 @@ public:
     static EXT_texture_norm16 take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_texture_norm16 clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

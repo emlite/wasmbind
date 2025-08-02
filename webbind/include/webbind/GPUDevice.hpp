@@ -242,6 +242,7 @@ public:
     static GPUDevice take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUDevice clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `features` attribute.
     /// [`GPUDevice.features`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/features)
     [[nodiscard]] GPUSupportedFeatures features() const;

@@ -5,6 +5,7 @@ PressureRecord PressureRecord::take_ownership(Handle h) noexcept {
         return PressureRecord(h);
     }
 PressureRecord PressureRecord::clone() const noexcept { return *this; }
+emlite::Val PressureRecord::instance() noexcept { return emlite::Val::global("PressureRecord"); }
 PressureRecord::PressureRecord(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PressureRecord::PressureRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

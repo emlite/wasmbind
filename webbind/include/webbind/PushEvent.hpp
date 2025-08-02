@@ -18,6 +18,7 @@ public:
     static PushEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PushEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PushEvent(..)` constructor, creating a new PushEvent instance
     PushEvent(const jsbind::String& type);
     /// The `new PushEvent(..)` constructor, creating a new PushEvent instance

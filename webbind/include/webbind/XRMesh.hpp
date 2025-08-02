@@ -17,6 +17,7 @@ public:
     static XRMesh take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRMesh clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `meshSpace` attribute.
     /// [`XRMesh.meshSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/meshSpace)
     [[nodiscard]] XRSpace meshSpace() const;

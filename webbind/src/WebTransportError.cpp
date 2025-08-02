@@ -5,6 +5,7 @@ WebTransportError WebTransportError::take_ownership(Handle h) noexcept {
         return WebTransportError(h);
     }
 WebTransportError WebTransportError::clone() const noexcept { return *this; }
+emlite::Val WebTransportError::instance() noexcept { return emlite::Val::global("WebTransportError"); }
 WebTransportError::WebTransportError(Handle h) noexcept : DOMException(emlite::Val::take_ownership(h)) {}
 WebTransportError::WebTransportError(const emlite::Val &val) noexcept: DOMException(val) {}
 

@@ -18,6 +18,7 @@ public:
     static HTMLTemplateElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTemplateElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTemplateElement(..)` constructor, creating a new HTMLTemplateElement instance
     HTMLTemplateElement();
     /// Getter of the `content` attribute.

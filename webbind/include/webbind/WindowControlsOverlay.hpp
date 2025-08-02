@@ -18,6 +18,7 @@ public:
     static WindowControlsOverlay take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WindowControlsOverlay clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `visible` attribute.
     /// [`WindowControlsOverlay.visible`](https://developer.mozilla.org/en-US/docs/Web/API/WindowControlsOverlay/visible)
     [[nodiscard]] bool visible() const;

@@ -19,6 +19,7 @@ public:
     static FormData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FormData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FormData(..)` constructor, creating a new FormData instance
     FormData();
     /// The `new FormData(..)` constructor, creating a new FormData instance

@@ -47,6 +47,7 @@ GPU GPU::take_ownership(Handle h) noexcept {
         return GPU(h);
     }
 GPU GPU::clone() const noexcept { return *this; }
+emlite::Val GPU::instance() noexcept { return emlite::Val::global("GPU"); }
 GPU::GPU(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPU::GPU(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

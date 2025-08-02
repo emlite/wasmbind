@@ -18,6 +18,7 @@ public:
     static CSSParserAtRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSParserAtRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserAtRule(..)` constructor, creating a new CSSParserAtRule instance
     CSSParserAtRule(const jsbind::String& name, const jsbind::TypedArray<jsbind::Any>& prelude);
     /// The `new CSSParserAtRule(..)` constructor, creating a new CSSParserAtRule instance

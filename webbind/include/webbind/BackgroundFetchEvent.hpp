@@ -18,6 +18,7 @@ public:
     static BackgroundFetchEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BackgroundFetchEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BackgroundFetchEvent(..)` constructor, creating a new BackgroundFetchEvent instance
     BackgroundFetchEvent(const jsbind::String& type, const jsbind::Any& init);
     /// Getter of the `registration` attribute.

@@ -19,6 +19,7 @@ public:
     static CSSKeyframesRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSKeyframesRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSKeyframesRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/name)
     [[nodiscard]] jsbind::String name() const;

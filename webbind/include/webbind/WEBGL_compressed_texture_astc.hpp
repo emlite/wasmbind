@@ -15,6 +15,7 @@ public:
     static WEBGL_compressed_texture_astc take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_compressed_texture_astc clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getSupportedProfiles method.
     /// [`WEBGL_compressed_texture_astc.getSupportedProfiles`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_compressed_texture_astc/getSupportedProfiles)
     jsbind::TypedArray<jsbind::String> getSupportedProfiles();

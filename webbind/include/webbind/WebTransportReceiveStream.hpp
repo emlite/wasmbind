@@ -31,6 +31,7 @@ public:
     static WebTransportReceiveStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebTransportReceiveStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getStats method.
     /// [`WebTransportReceiveStream.getStats`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportReceiveStream/getStats)
     jsbind::Promise<WebTransportReceiveStreamStats> getStats();

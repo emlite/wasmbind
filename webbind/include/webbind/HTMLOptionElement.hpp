@@ -18,6 +18,7 @@ public:
     static HTMLOptionElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLOptionElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLOptionElement(..)` constructor, creating a new HTMLOptionElement instance
     HTMLOptionElement();
     /// Getter of the `disabled` attribute.

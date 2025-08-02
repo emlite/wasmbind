@@ -6,6 +6,7 @@ OfflineAudioCompletionEvent OfflineAudioCompletionEvent::take_ownership(Handle h
         return OfflineAudioCompletionEvent(h);
     }
 OfflineAudioCompletionEvent OfflineAudioCompletionEvent::clone() const noexcept { return *this; }
+emlite::Val OfflineAudioCompletionEvent::instance() noexcept { return emlite::Val::global("OfflineAudioCompletionEvent"); }
 OfflineAudioCompletionEvent::OfflineAudioCompletionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 OfflineAudioCompletionEvent::OfflineAudioCompletionEvent(const emlite::Val &val) noexcept: Event(val) {}
 

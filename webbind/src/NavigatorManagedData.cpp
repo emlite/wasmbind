@@ -5,6 +5,7 @@ NavigatorManagedData NavigatorManagedData::take_ownership(Handle h) noexcept {
         return NavigatorManagedData(h);
     }
 NavigatorManagedData NavigatorManagedData::clone() const noexcept { return *this; }
+emlite::Val NavigatorManagedData::instance() noexcept { return emlite::Val::global("NavigatorManagedData"); }
 NavigatorManagedData::NavigatorManagedData(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 NavigatorManagedData::NavigatorManagedData(const emlite::Val &val) noexcept: EventTarget(val) {}
 

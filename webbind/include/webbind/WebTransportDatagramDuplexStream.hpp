@@ -33,6 +33,7 @@ public:
     static WebTransportDatagramDuplexStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebTransportDatagramDuplexStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createWritable method.
     /// [`WebTransportDatagramDuplexStream.createWritable`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportDatagramDuplexStream/createWritable)
     WebTransportDatagramsWritable createWritable();

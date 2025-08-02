@@ -18,6 +18,7 @@ public:
     static USBConfiguration take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBConfiguration clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBConfiguration(..)` constructor, creating a new USBConfiguration instance
     USBConfiguration(const USBDevice& device, unsigned char configurationValue);
     /// Getter of the `configurationValue` attribute.

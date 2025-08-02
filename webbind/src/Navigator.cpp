@@ -738,6 +738,7 @@ Navigator Navigator::take_ownership(Handle h) noexcept {
         return Navigator(h);
     }
 Navigator Navigator::clone() const noexcept { return *this; }
+emlite::Val Navigator::instance() noexcept { return emlite::Val::global("Navigator"); }
 Navigator::Navigator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Navigator::Navigator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

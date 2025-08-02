@@ -5,6 +5,7 @@ BluetoothManufacturerDataFilter BluetoothManufacturerDataFilter::take_ownership(
         return BluetoothManufacturerDataFilter(h);
     }
 BluetoothManufacturerDataFilter BluetoothManufacturerDataFilter::clone() const noexcept { return *this; }
+emlite::Val BluetoothManufacturerDataFilter::instance() noexcept { return emlite::Val::global("BluetoothManufacturerDataFilter"); }
 BluetoothManufacturerDataFilter::BluetoothManufacturerDataFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothManufacturerDataFilter::BluetoothManufacturerDataFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

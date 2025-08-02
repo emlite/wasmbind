@@ -6,6 +6,7 @@ AudioWorkletGlobalScope AudioWorkletGlobalScope::take_ownership(Handle h) noexce
         return AudioWorkletGlobalScope(h);
     }
 AudioWorkletGlobalScope AudioWorkletGlobalScope::clone() const noexcept { return *this; }
+emlite::Val AudioWorkletGlobalScope::instance() noexcept { return emlite::Val::global("AudioWorkletGlobalScope"); }
 AudioWorkletGlobalScope::AudioWorkletGlobalScope(Handle h) noexcept : WorkletGlobalScope(emlite::Val::take_ownership(h)) {}
 AudioWorkletGlobalScope::AudioWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 

@@ -32,6 +32,7 @@ public:
     static ChapterInformation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ChapterInformation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `title` attribute.
     /// [`ChapterInformation.title`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/title)
     [[nodiscard]] jsbind::String title() const;

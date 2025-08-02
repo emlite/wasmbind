@@ -16,6 +16,7 @@ public:
     static HTMLFrameSetElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLFrameSetElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFrameSetElement(..)` constructor, creating a new HTMLFrameSetElement instance
     HTMLFrameSetElement();
     /// Getter of the `cols` attribute.

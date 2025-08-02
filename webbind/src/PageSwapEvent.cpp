@@ -7,6 +7,7 @@ PageSwapEvent PageSwapEvent::take_ownership(Handle h) noexcept {
         return PageSwapEvent(h);
     }
 PageSwapEvent PageSwapEvent::clone() const noexcept { return *this; }
+emlite::Val PageSwapEvent::instance() noexcept { return emlite::Val::global("PageSwapEvent"); }
 PageSwapEvent::PageSwapEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 PageSwapEvent::PageSwapEvent(const emlite::Val &val) noexcept: Event(val) {}
 

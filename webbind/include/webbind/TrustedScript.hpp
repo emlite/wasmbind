@@ -15,6 +15,7 @@ public:
     static TrustedScript take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TrustedScript clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
     /// [`TrustedScript.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScript/toJSON)
     jsbind::String toJSON();

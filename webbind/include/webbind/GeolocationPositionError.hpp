@@ -15,6 +15,7 @@ public:
     static GeolocationPositionError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GeolocationPositionError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `code` attribute.
     /// [`GeolocationPositionError.code`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/code)
     [[nodiscard]] unsigned short code() const;

@@ -41,6 +41,7 @@ public:
     static EyeDropper take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EyeDropper clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EyeDropper(..)` constructor, creating a new EyeDropper instance
     EyeDropper();
     /// The open method.

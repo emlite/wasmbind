@@ -5,6 +5,7 @@ USBInTransferResult USBInTransferResult::take_ownership(Handle h) noexcept {
         return USBInTransferResult(h);
     }
 USBInTransferResult USBInTransferResult::clone() const noexcept { return *this; }
+emlite::Val USBInTransferResult::instance() noexcept { return emlite::Val::global("USBInTransferResult"); }
 USBInTransferResult::USBInTransferResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBInTransferResult::USBInTransferResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

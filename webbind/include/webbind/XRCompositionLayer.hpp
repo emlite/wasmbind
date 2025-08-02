@@ -16,6 +16,7 @@ public:
     static XRCompositionLayer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRCompositionLayer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `layout` attribute.
     /// [`XRCompositionLayer.layout`](https://developer.mozilla.org/en-US/docs/Web/API/XRCompositionLayer/layout)
     [[nodiscard]] XRLayerLayout layout() const;

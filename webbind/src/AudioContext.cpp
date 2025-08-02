@@ -36,6 +36,7 @@ AudioContext AudioContext::take_ownership(Handle h) noexcept {
         return AudioContext(h);
     }
 AudioContext AudioContext::clone() const noexcept { return *this; }
+emlite::Val AudioContext::instance() noexcept { return emlite::Val::global("AudioContext"); }
 AudioContext::AudioContext(Handle h) noexcept : BaseAudioContext(emlite::Val::take_ownership(h)) {}
 AudioContext::AudioContext(const emlite::Val &val) noexcept: BaseAudioContext(val) {}
 

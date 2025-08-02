@@ -23,6 +23,7 @@ Ink Ink::take_ownership(Handle h) noexcept {
         return Ink(h);
     }
 Ink Ink::clone() const noexcept { return *this; }
+emlite::Val Ink::instance() noexcept { return emlite::Val::global("Ink"); }
 Ink::Ink(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Ink::Ink(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -15,6 +15,7 @@ public:
     static EncodedAudioChunk take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EncodedAudioChunk clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EncodedAudioChunk(..)` constructor, creating a new EncodedAudioChunk instance
     EncodedAudioChunk(const jsbind::Any& init);
     /// Getter of the `type` attribute.

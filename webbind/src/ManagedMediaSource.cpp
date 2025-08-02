@@ -5,6 +5,7 @@ ManagedMediaSource ManagedMediaSource::take_ownership(Handle h) noexcept {
         return ManagedMediaSource(h);
     }
 ManagedMediaSource ManagedMediaSource::clone() const noexcept { return *this; }
+emlite::Val ManagedMediaSource::instance() noexcept { return emlite::Val::global("ManagedMediaSource"); }
 ManagedMediaSource::ManagedMediaSource(Handle h) noexcept : MediaSource(emlite::Val::take_ownership(h)) {}
 ManagedMediaSource::ManagedMediaSource(const emlite::Val &val) noexcept: MediaSource(val) {}
 

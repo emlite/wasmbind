@@ -5,6 +5,7 @@ CSSUnitValue CSSUnitValue::take_ownership(Handle h) noexcept {
         return CSSUnitValue(h);
     }
 CSSUnitValue CSSUnitValue::clone() const noexcept { return *this; }
+emlite::Val CSSUnitValue::instance() noexcept { return emlite::Val::global("CSSUnitValue"); }
 CSSUnitValue::CSSUnitValue(Handle h) noexcept : CSSNumericValue(emlite::Val::take_ownership(h)) {}
 CSSUnitValue::CSSUnitValue(const emlite::Val &val) noexcept: CSSNumericValue(val) {}
 

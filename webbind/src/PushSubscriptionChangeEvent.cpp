@@ -6,6 +6,7 @@ PushSubscriptionChangeEvent PushSubscriptionChangeEvent::take_ownership(Handle h
         return PushSubscriptionChangeEvent(h);
     }
 PushSubscriptionChangeEvent PushSubscriptionChangeEvent::clone() const noexcept { return *this; }
+emlite::Val PushSubscriptionChangeEvent::instance() noexcept { return emlite::Val::global("PushSubscriptionChangeEvent"); }
 PushSubscriptionChangeEvent::PushSubscriptionChangeEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 PushSubscriptionChangeEvent::PushSubscriptionChangeEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 

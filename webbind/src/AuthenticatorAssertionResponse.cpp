@@ -5,6 +5,7 @@ AuthenticatorAssertionResponse AuthenticatorAssertionResponse::take_ownership(Ha
         return AuthenticatorAssertionResponse(h);
     }
 AuthenticatorAssertionResponse AuthenticatorAssertionResponse::clone() const noexcept { return *this; }
+emlite::Val AuthenticatorAssertionResponse::instance() noexcept { return emlite::Val::global("AuthenticatorAssertionResponse"); }
 AuthenticatorAssertionResponse::AuthenticatorAssertionResponse(Handle h) noexcept : AuthenticatorResponse(emlite::Val::take_ownership(h)) {}
 AuthenticatorAssertionResponse::AuthenticatorAssertionResponse(const emlite::Val &val) noexcept: AuthenticatorResponse(val) {}
 

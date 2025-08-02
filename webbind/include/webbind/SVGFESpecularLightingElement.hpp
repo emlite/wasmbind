@@ -20,6 +20,7 @@ public:
     static SVGFESpecularLightingElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFESpecularLightingElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFESpecularLightingElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFESpecularLightingElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

@@ -18,6 +18,7 @@ public:
     static CSSSkew take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSSkew clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSSkew(..)` constructor, creating a new CSSSkew instance
     CSSSkew(const CSSNumericValue& ax, const CSSNumericValue& ay);
     /// Getter of the `ax` attribute.

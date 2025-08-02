@@ -5,6 +5,7 @@ TaskController TaskController::take_ownership(Handle h) noexcept {
         return TaskController(h);
     }
 TaskController TaskController::clone() const noexcept { return *this; }
+emlite::Val TaskController::instance() noexcept { return emlite::Val::global("TaskController"); }
 TaskController::TaskController(Handle h) noexcept : AbortController(emlite::Val::take_ownership(h)) {}
 TaskController::TaskController(const emlite::Val &val) noexcept: AbortController(val) {}
 

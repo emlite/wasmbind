@@ -7,6 +7,7 @@ CSSTransformValue CSSTransformValue::take_ownership(Handle h) noexcept {
         return CSSTransformValue(h);
     }
 CSSTransformValue CSSTransformValue::clone() const noexcept { return *this; }
+emlite::Val CSSTransformValue::instance() noexcept { return emlite::Val::global("CSSTransformValue"); }
 CSSTransformValue::CSSTransformValue(Handle h) noexcept : CSSStyleValue(emlite::Val::take_ownership(h)) {}
 CSSTransformValue::CSSTransformValue(const emlite::Val &val) noexcept: CSSStyleValue(val) {}
 

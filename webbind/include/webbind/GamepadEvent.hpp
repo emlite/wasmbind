@@ -18,6 +18,7 @@ public:
     static GamepadEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GamepadEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GamepadEvent(..)` constructor, creating a new GamepadEvent instance
     GamepadEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `gamepad` attribute.

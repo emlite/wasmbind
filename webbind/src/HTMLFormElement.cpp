@@ -7,6 +7,7 @@ HTMLFormElement HTMLFormElement::take_ownership(Handle h) noexcept {
         return HTMLFormElement(h);
     }
 HTMLFormElement HTMLFormElement::clone() const noexcept { return *this; }
+emlite::Val HTMLFormElement::instance() noexcept { return emlite::Val::global("HTMLFormElement"); }
 HTMLFormElement::HTMLFormElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLFormElement::HTMLFormElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

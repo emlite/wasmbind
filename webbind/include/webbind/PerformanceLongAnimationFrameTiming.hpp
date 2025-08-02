@@ -18,6 +18,7 @@ public:
     static PerformanceLongAnimationFrameTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceLongAnimationFrameTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startTime` attribute.
     /// [`PerformanceLongAnimationFrameTiming.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/startTime)
     [[nodiscard]] jsbind::Any startTime() const;

@@ -18,6 +18,7 @@ public:
     static MediaStreamAudioDestinationNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaStreamAudioDestinationNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStreamAudioDestinationNode(..)` constructor, creating a new MediaStreamAudioDestinationNode instance
     MediaStreamAudioDestinationNode(const AudioContext& context);
     /// The `new MediaStreamAudioDestinationNode(..)` constructor, creating a new MediaStreamAudioDestinationNode instance

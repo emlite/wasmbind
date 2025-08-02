@@ -28,6 +28,7 @@ public:
     static TextDecoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextDecoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextDecoder(..)` constructor, creating a new TextDecoder instance
     TextDecoder();
     /// The `new TextDecoder(..)` constructor, creating a new TextDecoder instance

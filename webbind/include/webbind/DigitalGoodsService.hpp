@@ -62,6 +62,7 @@ public:
     static DigitalGoodsService take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DigitalGoodsService clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getDetails method.
     /// [`DigitalGoodsService.getDetails`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalGoodsService/getDetails)
     jsbind::Promise<jsbind::TypedArray<ItemDetails>> getDetails(const jsbind::TypedArray<jsbind::String>& itemIds);

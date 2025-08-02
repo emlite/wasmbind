@@ -16,5 +16,6 @@ public:
     static CSSImageValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSImageValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -16,6 +16,7 @@ public:
     static CSSOKLCH take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSOKLCH clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSOKLCH(..)` constructor, creating a new CSSOKLCH instance
     CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h);
     /// The `new CSSOKLCH(..)` constructor, creating a new CSSOKLCH instance

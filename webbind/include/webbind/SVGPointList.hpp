@@ -17,6 +17,7 @@ public:
     static SVGPointList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGPointList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`SVGPointList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPointList/length)
     [[nodiscard]] unsigned long length() const;

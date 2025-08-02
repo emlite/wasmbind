@@ -16,6 +16,7 @@ public:
     static PresentationConnection take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PresentationConnection clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
     /// [`PresentationConnection.id`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/id)
     [[nodiscard]] jsbind::String id() const;

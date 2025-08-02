@@ -5,6 +5,7 @@ RTCDTMFToneChangeEvent RTCDTMFToneChangeEvent::take_ownership(Handle h) noexcept
         return RTCDTMFToneChangeEvent(h);
     }
 RTCDTMFToneChangeEvent RTCDTMFToneChangeEvent::clone() const noexcept { return *this; }
+emlite::Val RTCDTMFToneChangeEvent::instance() noexcept { return emlite::Val::global("RTCDTMFToneChangeEvent"); }
 RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

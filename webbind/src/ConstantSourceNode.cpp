@@ -7,6 +7,7 @@ ConstantSourceNode ConstantSourceNode::take_ownership(Handle h) noexcept {
         return ConstantSourceNode(h);
     }
 ConstantSourceNode ConstantSourceNode::clone() const noexcept { return *this; }
+emlite::Val ConstantSourceNode::instance() noexcept { return emlite::Val::global("ConstantSourceNode"); }
 ConstantSourceNode::ConstantSourceNode(Handle h) noexcept : AudioScheduledSourceNode(emlite::Val::take_ownership(h)) {}
 ConstantSourceNode::ConstantSourceNode(const emlite::Val &val) noexcept: AudioScheduledSourceNode(val) {}
 

@@ -16,6 +16,7 @@ public:
     static DocumentType take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DocumentType clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`DocumentType.name`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/name)
     [[nodiscard]] jsbind::String name() const;

@@ -16,6 +16,7 @@ public:
     static MIDIInput take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MIDIInput clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onmidimessage` attribute.
     /// [`MIDIInput.onmidimessage`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIInput/onmidimessage)
     [[nodiscard]] jsbind::Any onmidimessage() const;

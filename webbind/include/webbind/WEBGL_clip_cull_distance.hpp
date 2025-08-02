@@ -15,5 +15,6 @@ public:
     static WEBGL_clip_cull_distance take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_clip_cull_distance clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

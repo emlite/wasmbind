@@ -35,6 +35,7 @@ public:
     static ServiceWorkerContainer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ServiceWorkerContainer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `controller` attribute.
     /// [`ServiceWorkerContainer.controller`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/controller)
     [[nodiscard]] ServiceWorker controller() const;

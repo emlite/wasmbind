@@ -5,6 +5,7 @@ AudioParam AudioParam::take_ownership(Handle h) noexcept {
         return AudioParam(h);
     }
 AudioParam AudioParam::clone() const noexcept { return *this; }
+emlite::Val AudioParam::instance() noexcept { return emlite::Val::global("AudioParam"); }
 AudioParam::AudioParam(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioParam::AudioParam(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

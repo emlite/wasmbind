@@ -15,5 +15,6 @@ public:
     static EXT_blend_minmax take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_blend_minmax clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

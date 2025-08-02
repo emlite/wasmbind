@@ -8,6 +8,7 @@ HTMLIFrameElement HTMLIFrameElement::take_ownership(Handle h) noexcept {
         return HTMLIFrameElement(h);
     }
 HTMLIFrameElement HTMLIFrameElement::clone() const noexcept { return *this; }
+emlite::Val HTMLIFrameElement::instance() noexcept { return emlite::Val::global("HTMLIFrameElement"); }
 HTMLIFrameElement::HTMLIFrameElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLIFrameElement::HTMLIFrameElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

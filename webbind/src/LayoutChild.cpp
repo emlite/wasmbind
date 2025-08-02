@@ -89,6 +89,7 @@ LayoutChild LayoutChild::take_ownership(Handle h) noexcept {
         return LayoutChild(h);
     }
 LayoutChild LayoutChild::clone() const noexcept { return *this; }
+emlite::Val LayoutChild::instance() noexcept { return emlite::Val::global("LayoutChild"); }
 LayoutChild::LayoutChild(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LayoutChild::LayoutChild(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

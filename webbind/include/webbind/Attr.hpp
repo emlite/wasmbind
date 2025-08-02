@@ -18,6 +18,7 @@ public:
     static Attr take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Attr clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `namespaceURI` attribute.
     /// [`Attr.namespaceURI`](https://developer.mozilla.org/en-US/docs/Web/API/Attr/namespaceURI)
     [[nodiscard]] jsbind::String namespaceURI() const;

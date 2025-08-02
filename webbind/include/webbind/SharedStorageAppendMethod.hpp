@@ -18,6 +18,7 @@ public:
     static SharedStorageAppendMethod take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedStorageAppendMethod clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SharedStorageAppendMethod(..)` constructor, creating a new SharedStorageAppendMethod instance
     SharedStorageAppendMethod(const jsbind::String& key, const jsbind::String& value);
     /// The `new SharedStorageAppendMethod(..)` constructor, creating a new SharedStorageAppendMethod instance

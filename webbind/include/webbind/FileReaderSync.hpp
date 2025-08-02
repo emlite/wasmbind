@@ -17,6 +17,7 @@ public:
     static FileReaderSync take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileReaderSync clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FileReaderSync(..)` constructor, creating a new FileReaderSync instance
     FileReaderSync();
     /// The readAsArrayBuffer method.

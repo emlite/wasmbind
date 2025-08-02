@@ -6,6 +6,7 @@ RTCPeerConnectionIceEvent RTCPeerConnectionIceEvent::take_ownership(Handle h) no
         return RTCPeerConnectionIceEvent(h);
     }
 RTCPeerConnectionIceEvent RTCPeerConnectionIceEvent::clone() const noexcept { return *this; }
+emlite::Val RTCPeerConnectionIceEvent::instance() noexcept { return emlite::Val::global("RTCPeerConnectionIceEvent"); }
 RTCPeerConnectionIceEvent::RTCPeerConnectionIceEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 RTCPeerConnectionIceEvent::RTCPeerConnectionIceEvent(const emlite::Val &val) noexcept: Event(val) {}
 

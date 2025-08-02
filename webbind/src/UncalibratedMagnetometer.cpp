@@ -5,6 +5,7 @@ UncalibratedMagnetometer UncalibratedMagnetometer::take_ownership(Handle h) noex
         return UncalibratedMagnetometer(h);
     }
 UncalibratedMagnetometer UncalibratedMagnetometer::clone() const noexcept { return *this; }
+emlite::Val UncalibratedMagnetometer::instance() noexcept { return emlite::Val::global("UncalibratedMagnetometer"); }
 UncalibratedMagnetometer::UncalibratedMagnetometer(Handle h) noexcept : Sensor(emlite::Val::take_ownership(h)) {}
 UncalibratedMagnetometer::UncalibratedMagnetometer(const emlite::Val &val) noexcept: Sensor(val) {}
 

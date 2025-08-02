@@ -15,6 +15,7 @@ public:
     static ImageTrack take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ImageTrack clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `animated` attribute.
     /// [`ImageTrack.animated`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/animated)
     [[nodiscard]] bool animated() const;

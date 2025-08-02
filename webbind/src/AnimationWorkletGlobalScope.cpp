@@ -5,6 +5,7 @@ AnimationWorkletGlobalScope AnimationWorkletGlobalScope::take_ownership(Handle h
         return AnimationWorkletGlobalScope(h);
     }
 AnimationWorkletGlobalScope AnimationWorkletGlobalScope::clone() const noexcept { return *this; }
+emlite::Val AnimationWorkletGlobalScope::instance() noexcept { return emlite::Val::global("AnimationWorkletGlobalScope"); }
 AnimationWorkletGlobalScope::AnimationWorkletGlobalScope(Handle h) noexcept : WorkletGlobalScope(emlite::Val::take_ownership(h)) {}
 AnimationWorkletGlobalScope::AnimationWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 

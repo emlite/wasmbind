@@ -7,6 +7,7 @@ HTMLFencedFrameElement HTMLFencedFrameElement::take_ownership(Handle h) noexcept
         return HTMLFencedFrameElement(h);
     }
 HTMLFencedFrameElement HTMLFencedFrameElement::clone() const noexcept { return *this; }
+emlite::Val HTMLFencedFrameElement::instance() noexcept { return emlite::Val::global("HTMLFencedFrameElement"); }
 HTMLFencedFrameElement::HTMLFencedFrameElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLFencedFrameElement::HTMLFencedFrameElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

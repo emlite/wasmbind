@@ -41,6 +41,7 @@ NavigateEvent NavigateEvent::take_ownership(Handle h) noexcept {
         return NavigateEvent(h);
     }
 NavigateEvent NavigateEvent::clone() const noexcept { return *this; }
+emlite::Val NavigateEvent::instance() noexcept { return emlite::Val::global("NavigateEvent"); }
 NavigateEvent::NavigateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 NavigateEvent::NavigateEvent(const emlite::Val &val) noexcept: Event(val) {}
 

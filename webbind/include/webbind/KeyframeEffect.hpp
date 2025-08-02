@@ -18,6 +18,7 @@ public:
     static KeyframeEffect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] KeyframeEffect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new KeyframeEffect(..)` constructor, creating a new KeyframeEffect instance
     KeyframeEffect(const KeyframeEffect& source);
     /// Getter of the `target` attribute.

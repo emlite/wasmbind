@@ -18,6 +18,7 @@ public:
     static HTMLTrackElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTrackElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTrackElement(..)` constructor, creating a new HTMLTrackElement instance
     HTMLTrackElement();
     /// Getter of the `kind` attribute.

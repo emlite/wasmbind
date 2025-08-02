@@ -86,6 +86,7 @@ MediaCapabilities MediaCapabilities::take_ownership(Handle h) noexcept {
         return MediaCapabilities(h);
     }
 MediaCapabilities MediaCapabilities::clone() const noexcept { return *this; }
+emlite::Val MediaCapabilities::instance() noexcept { return emlite::Val::global("MediaCapabilities"); }
 MediaCapabilities::MediaCapabilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaCapabilities::MediaCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

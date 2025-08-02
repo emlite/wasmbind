@@ -15,5 +15,6 @@ public:
     static EventCounts take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EventCounts clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

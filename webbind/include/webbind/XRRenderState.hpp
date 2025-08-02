@@ -18,6 +18,7 @@ public:
     static XRRenderState take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRRenderState clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `depthNear` attribute.
     /// [`XRRenderState.depthNear`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/depthNear)
     [[nodiscard]] double depthNear() const;

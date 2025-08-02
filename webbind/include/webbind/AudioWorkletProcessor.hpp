@@ -17,6 +17,7 @@ public:
     static AudioWorkletProcessor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioWorkletProcessor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioWorkletProcessor(..)` constructor, creating a new AudioWorkletProcessor instance
     AudioWorkletProcessor();
     /// Getter of the `port` attribute.

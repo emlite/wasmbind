@@ -79,6 +79,7 @@ public:
     static ServiceWorkerRegistration take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ServiceWorkerRegistration clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `installing` attribute.
     /// [`ServiceWorkerRegistration.installing`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/installing)
     [[nodiscard]] ServiceWorker installing() const;

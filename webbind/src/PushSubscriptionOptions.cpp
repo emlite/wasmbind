@@ -5,6 +5,7 @@ PushSubscriptionOptions PushSubscriptionOptions::take_ownership(Handle h) noexce
         return PushSubscriptionOptions(h);
     }
 PushSubscriptionOptions PushSubscriptionOptions::clone() const noexcept { return *this; }
+emlite::Val PushSubscriptionOptions::instance() noexcept { return emlite::Val::global("PushSubscriptionOptions"); }
 PushSubscriptionOptions::PushSubscriptionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PushSubscriptionOptions::PushSubscriptionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

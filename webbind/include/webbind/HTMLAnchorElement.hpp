@@ -18,6 +18,7 @@ public:
     static HTMLAnchorElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLAnchorElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLAnchorElement(..)` constructor, creating a new HTMLAnchorElement instance
     HTMLAnchorElement();
     /// Getter of the `target` attribute.

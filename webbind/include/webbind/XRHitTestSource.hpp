@@ -15,6 +15,7 @@ public:
     static XRHitTestSource take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRHitTestSource clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The cancel method.
     /// [`XRHitTestSource.cancel`](https://developer.mozilla.org/en-US/docs/Web/API/XRHitTestSource/cancel)
     jsbind::Undefined cancel();

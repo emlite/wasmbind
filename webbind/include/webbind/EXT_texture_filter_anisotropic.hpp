@@ -15,5 +15,6 @@ public:
     static EXT_texture_filter_anisotropic take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_texture_filter_anisotropic clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

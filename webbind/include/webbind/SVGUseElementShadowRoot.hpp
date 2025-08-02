@@ -16,5 +16,6 @@ public:
     static SVGUseElementShadowRoot take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGUseElementShadowRoot clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -16,6 +16,7 @@ public:
     static ManagedMediaSource take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ManagedMediaSource clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ManagedMediaSource(..)` constructor, creating a new ManagedMediaSource instance
     ManagedMediaSource();
     /// Getter of the `streaming` attribute.

@@ -5,6 +5,7 @@ DOMTokenList DOMTokenList::take_ownership(Handle h) noexcept {
         return DOMTokenList(h);
     }
 DOMTokenList DOMTokenList::clone() const noexcept { return *this; }
+emlite::Val DOMTokenList::instance() noexcept { return emlite::Val::global("DOMTokenList"); }
 DOMTokenList::DOMTokenList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DOMTokenList::DOMTokenList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

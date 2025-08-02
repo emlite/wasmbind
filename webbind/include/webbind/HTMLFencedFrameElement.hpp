@@ -19,6 +19,7 @@ public:
     static HTMLFencedFrameElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLFencedFrameElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFencedFrameElement(..)` constructor, creating a new HTMLFencedFrameElement instance
     HTMLFencedFrameElement();
     /// Getter of the `config` attribute.

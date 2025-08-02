@@ -16,6 +16,7 @@ public:
     static LayoutWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LayoutWorkletGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The registerLayout method.
     /// [`LayoutWorkletGlobalScope.registerLayout`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutWorkletGlobalScope/registerLayout)
     jsbind::Undefined registerLayout(const jsbind::String& name, const jsbind::Any& layoutCtor);

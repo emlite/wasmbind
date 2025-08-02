@@ -94,6 +94,7 @@ GeolocationSensor GeolocationSensor::take_ownership(Handle h) noexcept {
         return GeolocationSensor(h);
     }
 GeolocationSensor GeolocationSensor::clone() const noexcept { return *this; }
+emlite::Val GeolocationSensor::instance() noexcept { return emlite::Val::global("GeolocationSensor"); }
 GeolocationSensor::GeolocationSensor(Handle h) noexcept : Sensor(emlite::Val::take_ownership(h)) {}
 GeolocationSensor::GeolocationSensor(const emlite::Val &val) noexcept: Sensor(val) {}
 

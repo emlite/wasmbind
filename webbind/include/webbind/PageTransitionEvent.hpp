@@ -16,6 +16,7 @@ public:
     static PageTransitionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PageTransitionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PageTransitionEvent(..)` constructor, creating a new PageTransitionEvent instance
     PageTransitionEvent(const jsbind::String& type);
     /// The `new PageTransitionEvent(..)` constructor, creating a new PageTransitionEvent instance

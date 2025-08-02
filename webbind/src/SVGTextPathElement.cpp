@@ -8,6 +8,7 @@ SVGTextPathElement SVGTextPathElement::take_ownership(Handle h) noexcept {
         return SVGTextPathElement(h);
     }
 SVGTextPathElement SVGTextPathElement::clone() const noexcept { return *this; }
+emlite::Val SVGTextPathElement::instance() noexcept { return emlite::Val::global("SVGTextPathElement"); }
 SVGTextPathElement::SVGTextPathElement(Handle h) noexcept : SVGTextContentElement(emlite::Val::take_ownership(h)) {}
 SVGTextPathElement::SVGTextPathElement(const emlite::Val &val) noexcept: SVGTextContentElement(val) {}
 

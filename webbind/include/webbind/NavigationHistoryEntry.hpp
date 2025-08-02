@@ -16,6 +16,7 @@ public:
     static NavigationHistoryEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigationHistoryEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `url` attribute.
     /// [`NavigationHistoryEntry.url`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/url)
     [[nodiscard]] jsbind::String url() const;

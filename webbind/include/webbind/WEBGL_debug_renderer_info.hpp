@@ -15,5 +15,6 @@ public:
     static WEBGL_debug_renderer_info take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_debug_renderer_info clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

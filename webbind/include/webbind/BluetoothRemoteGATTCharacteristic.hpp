@@ -21,6 +21,7 @@ public:
     static BluetoothRemoteGATTCharacteristic take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothRemoteGATTCharacteristic clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `service` attribute.
     /// [`BluetoothRemoteGATTCharacteristic.service`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/service)
     [[nodiscard]] BluetoothRemoteGATTService service() const;

@@ -17,6 +17,7 @@ public:
     static AudioListener take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioListener clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `positionX` attribute.
     /// [`AudioListener.positionX`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionX)
     [[nodiscard]] AudioParam positionX() const;

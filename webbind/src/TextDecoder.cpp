@@ -21,6 +21,7 @@ TextDecoder TextDecoder::take_ownership(Handle h) noexcept {
         return TextDecoder(h);
     }
 TextDecoder TextDecoder::clone() const noexcept { return *this; }
+emlite::Val TextDecoder::instance() noexcept { return emlite::Val::global("TextDecoder"); }
 TextDecoder::TextDecoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TextDecoder::TextDecoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

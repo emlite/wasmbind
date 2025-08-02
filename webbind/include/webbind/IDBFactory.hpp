@@ -31,6 +31,7 @@ public:
     static IDBFactory take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBFactory clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The open method.
     /// [`IDBFactory.open`](https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/open)
     IDBOpenDBRequest open(const jsbind::String& name);

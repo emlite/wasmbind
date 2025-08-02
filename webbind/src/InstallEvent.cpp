@@ -5,6 +5,7 @@ InstallEvent InstallEvent::take_ownership(Handle h) noexcept {
         return InstallEvent(h);
     }
 InstallEvent InstallEvent::clone() const noexcept { return *this; }
+emlite::Val InstallEvent::instance() noexcept { return emlite::Val::global("InstallEvent"); }
 InstallEvent::InstallEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 InstallEvent::InstallEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 

@@ -30,6 +30,7 @@ PushManager PushManager::take_ownership(Handle h) noexcept {
         return PushManager(h);
     }
 PushManager PushManager::clone() const noexcept { return *this; }
+emlite::Val PushManager::instance() noexcept { return emlite::Val::global("PushManager"); }
 PushManager::PushManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PushManager::PushManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

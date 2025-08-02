@@ -65,6 +65,7 @@ public:
     static GPUQueue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUQueue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The submit method.
     /// [`GPUQueue.submit`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/submit)
     jsbind::Undefined submit(const jsbind::TypedArray<GPUCommandBuffer>& commandBuffers);

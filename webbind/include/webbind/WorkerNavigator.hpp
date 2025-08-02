@@ -29,6 +29,7 @@ public:
     static WorkerNavigator take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WorkerNavigator clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mediaCapabilities` attribute.
     /// [`WorkerNavigator.mediaCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/mediaCapabilities)
     [[nodiscard]] MediaCapabilities mediaCapabilities() const;

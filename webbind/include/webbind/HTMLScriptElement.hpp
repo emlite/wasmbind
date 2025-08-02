@@ -18,6 +18,7 @@ public:
     static HTMLScriptElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLScriptElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLScriptElement(..)` constructor, creating a new HTMLScriptElement instance
     HTMLScriptElement();
     /// Getter of the `type` attribute.

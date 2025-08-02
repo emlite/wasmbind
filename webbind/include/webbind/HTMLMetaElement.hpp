@@ -16,6 +16,7 @@ public:
     static HTMLMetaElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLMetaElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMetaElement(..)` constructor, creating a new HTMLMetaElement instance
     HTMLMetaElement();
     /// Getter of the `name` attribute.

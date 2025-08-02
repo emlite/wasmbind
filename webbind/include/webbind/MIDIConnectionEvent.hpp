@@ -18,6 +18,7 @@ public:
     static MIDIConnectionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MIDIConnectionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MIDIConnectionEvent(..)` constructor, creating a new MIDIConnectionEvent instance
     MIDIConnectionEvent(const jsbind::String& type);
     /// The `new MIDIConnectionEvent(..)` constructor, creating a new MIDIConnectionEvent instance

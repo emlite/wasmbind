@@ -30,6 +30,7 @@ public:
     static RTCIdentityProviderRegistrar take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCIdentityProviderRegistrar clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The register method.
     /// [`RTCIdentityProviderRegistrar.register`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityProviderRegistrar/register)
     jsbind::Undefined register_(const RTCIdentityProvider& idp);

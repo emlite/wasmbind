@@ -16,6 +16,7 @@ public:
     static IIRFilterNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IIRFilterNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IIRFilterNode(..)` constructor, creating a new IIRFilterNode instance
     IIRFilterNode(const BaseAudioContext& context, const jsbind::Any& options);
     /// The getFrequencyResponse method.

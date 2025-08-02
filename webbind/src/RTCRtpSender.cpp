@@ -66,6 +66,7 @@ RTCRtpSender RTCRtpSender::take_ownership(Handle h) noexcept {
         return RTCRtpSender(h);
     }
 RTCRtpSender RTCRtpSender::clone() const noexcept { return *this; }
+emlite::Val RTCRtpSender::instance() noexcept { return emlite::Val::global("RTCRtpSender"); }
 RTCRtpSender::RTCRtpSender(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpSender::RTCRtpSender(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

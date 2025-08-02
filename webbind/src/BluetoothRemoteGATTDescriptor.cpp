@@ -6,6 +6,7 @@ BluetoothRemoteGATTDescriptor BluetoothRemoteGATTDescriptor::take_ownership(Hand
         return BluetoothRemoteGATTDescriptor(h);
     }
 BluetoothRemoteGATTDescriptor BluetoothRemoteGATTDescriptor::clone() const noexcept { return *this; }
+emlite::Val BluetoothRemoteGATTDescriptor::instance() noexcept { return emlite::Val::global("BluetoothRemoteGATTDescriptor"); }
 BluetoothRemoteGATTDescriptor::BluetoothRemoteGATTDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothRemoteGATTDescriptor::BluetoothRemoteGATTDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

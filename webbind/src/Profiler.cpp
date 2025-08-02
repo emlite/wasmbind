@@ -45,6 +45,7 @@ Profiler Profiler::take_ownership(Handle h) noexcept {
         return Profiler(h);
     }
 Profiler Profiler::clone() const noexcept { return *this; }
+emlite::Val Profiler::instance() noexcept { return emlite::Val::global("Profiler"); }
 Profiler::Profiler(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Profiler::Profiler(const emlite::Val &val) noexcept: EventTarget(val) {}
 

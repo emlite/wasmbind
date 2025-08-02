@@ -20,6 +20,7 @@ public:
     static SVGComponentTransferFunctionElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGComponentTransferFunctionElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`SVGComponentTransferFunctionElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/SVGComponentTransferFunctionElement/type)
     [[nodiscard]] SVGAnimatedEnumeration type() const;

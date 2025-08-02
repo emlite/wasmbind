@@ -61,6 +61,7 @@ ContentIndex ContentIndex::take_ownership(Handle h) noexcept {
         return ContentIndex(h);
     }
 ContentIndex ContentIndex::clone() const noexcept { return *this; }
+emlite::Val ContentIndex::instance() noexcept { return emlite::Val::global("ContentIndex"); }
 ContentIndex::ContentIndex(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ContentIndex::ContentIndex(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

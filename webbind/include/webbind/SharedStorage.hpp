@@ -55,6 +55,7 @@ public:
     static SharedStorage take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedStorage clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
     /// [`SharedStorage.get`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorage/get)
     jsbind::Promise<jsbind::String> get(const jsbind::String& key);

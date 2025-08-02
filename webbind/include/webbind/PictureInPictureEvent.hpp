@@ -18,6 +18,7 @@ public:
     static PictureInPictureEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PictureInPictureEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PictureInPictureEvent(..)` constructor, creating a new PictureInPictureEvent instance
     PictureInPictureEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `pictureInPictureWindow` attribute.

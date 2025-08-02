@@ -18,6 +18,7 @@ public:
     static SubmitEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SubmitEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SubmitEvent(..)` constructor, creating a new SubmitEvent instance
     SubmitEvent(const jsbind::String& type);
     /// The `new SubmitEvent(..)` constructor, creating a new SubmitEvent instance

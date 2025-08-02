@@ -18,6 +18,7 @@ public:
     static CSSRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cssText` attribute.
     /// [`CSSRule.cssText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/cssText)
     [[nodiscard]] jsbind::String cssText() const;

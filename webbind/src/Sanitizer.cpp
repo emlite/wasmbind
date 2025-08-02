@@ -69,6 +69,7 @@ Sanitizer Sanitizer::take_ownership(Handle h) noexcept {
         return Sanitizer(h);
     }
 Sanitizer Sanitizer::clone() const noexcept { return *this; }
+emlite::Val Sanitizer::instance() noexcept { return emlite::Val::global("Sanitizer"); }
 Sanitizer::Sanitizer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Sanitizer::Sanitizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

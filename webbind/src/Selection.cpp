@@ -25,6 +25,7 @@ Selection Selection::take_ownership(Handle h) noexcept {
         return Selection(h);
     }
 Selection Selection::clone() const noexcept { return *this; }
+emlite::Val Selection::instance() noexcept { return emlite::Val::global("Selection"); }
 Selection::Selection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Selection::Selection(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

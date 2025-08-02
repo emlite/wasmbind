@@ -5,6 +5,7 @@ DigitalCredential DigitalCredential::take_ownership(Handle h) noexcept {
         return DigitalCredential(h);
     }
 DigitalCredential DigitalCredential::clone() const noexcept { return *this; }
+emlite::Val DigitalCredential::instance() noexcept { return emlite::Val::global("DigitalCredential"); }
 DigitalCredential::DigitalCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
 DigitalCredential::DigitalCredential(const emlite::Val &val) noexcept: Credential(val) {}
 

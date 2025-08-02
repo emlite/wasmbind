@@ -7,6 +7,7 @@ VideoTrackGenerator VideoTrackGenerator::take_ownership(Handle h) noexcept {
         return VideoTrackGenerator(h);
     }
 VideoTrackGenerator VideoTrackGenerator::clone() const noexcept { return *this; }
+emlite::Val VideoTrackGenerator::instance() noexcept { return emlite::Val::global("VideoTrackGenerator"); }
 VideoTrackGenerator::VideoTrackGenerator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoTrackGenerator::VideoTrackGenerator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

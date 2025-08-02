@@ -18,6 +18,7 @@ public:
     static RestrictionTarget take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RestrictionTarget clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The fromElement method.
     /// [`RestrictionTarget.fromElement`](https://developer.mozilla.org/en-US/docs/Web/API/RestrictionTarget/fromElement)
     static jsbind::Promise<RestrictionTarget> fromElement(const Element& element);

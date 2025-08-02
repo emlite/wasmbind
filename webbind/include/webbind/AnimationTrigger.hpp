@@ -17,6 +17,7 @@ public:
     static AnimationTrigger take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AnimationTrigger clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AnimationTrigger(..)` constructor, creating a new AnimationTrigger instance
     AnimationTrigger();
     /// The `new AnimationTrigger(..)` constructor, creating a new AnimationTrigger instance

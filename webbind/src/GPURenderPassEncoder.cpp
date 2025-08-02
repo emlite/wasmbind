@@ -9,6 +9,7 @@ GPURenderPassEncoder GPURenderPassEncoder::take_ownership(Handle h) noexcept {
         return GPURenderPassEncoder(h);
     }
 GPURenderPassEncoder GPURenderPassEncoder::clone() const noexcept { return *this; }
+emlite::Val GPURenderPassEncoder::instance() noexcept { return emlite::Val::global("GPURenderPassEncoder"); }
 GPURenderPassEncoder::GPURenderPassEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPURenderPassEncoder::GPURenderPassEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

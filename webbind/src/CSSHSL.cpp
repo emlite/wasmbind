@@ -5,6 +5,7 @@ CSSHSL CSSHSL::take_ownership(Handle h) noexcept {
         return CSSHSL(h);
     }
 CSSHSL CSSHSL::clone() const noexcept { return *this; }
+emlite::Val CSSHSL::instance() noexcept { return emlite::Val::global("CSSHSL"); }
 CSSHSL::CSSHSL(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
 CSSHSL::CSSHSL(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 

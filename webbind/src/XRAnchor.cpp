@@ -6,6 +6,7 @@ XRAnchor XRAnchor::take_ownership(Handle h) noexcept {
         return XRAnchor(h);
     }
 XRAnchor XRAnchor::clone() const noexcept { return *this; }
+emlite::Val XRAnchor::instance() noexcept { return emlite::Val::global("XRAnchor"); }
 XRAnchor::XRAnchor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRAnchor::XRAnchor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

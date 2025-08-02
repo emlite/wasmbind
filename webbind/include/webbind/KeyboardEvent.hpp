@@ -18,6 +18,7 @@ public:
     static KeyboardEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] KeyboardEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new KeyboardEvent(..)` constructor, creating a new KeyboardEvent instance
     KeyboardEvent(const jsbind::String& type);
     /// The `new KeyboardEvent(..)` constructor, creating a new KeyboardEvent instance

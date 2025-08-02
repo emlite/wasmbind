@@ -8,6 +8,7 @@ XSLTProcessor XSLTProcessor::take_ownership(Handle h) noexcept {
         return XSLTProcessor(h);
     }
 XSLTProcessor XSLTProcessor::clone() const noexcept { return *this; }
+emlite::Val XSLTProcessor::instance() noexcept { return emlite::Val::global("XSLTProcessor"); }
 XSLTProcessor::XSLTProcessor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XSLTProcessor::XSLTProcessor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

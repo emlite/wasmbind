@@ -5,6 +5,7 @@ PasswordCredential PasswordCredential::take_ownership(Handle h) noexcept {
         return PasswordCredential(h);
     }
 PasswordCredential PasswordCredential::clone() const noexcept { return *this; }
+emlite::Val PasswordCredential::instance() noexcept { return emlite::Val::global("PasswordCredential"); }
 PasswordCredential::PasswordCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
 PasswordCredential::PasswordCredential(const emlite::Val &val) noexcept: Credential(val) {}
 

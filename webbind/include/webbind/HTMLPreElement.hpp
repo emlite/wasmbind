@@ -16,6 +16,7 @@ public:
     static HTMLPreElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLPreElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLPreElement(..)` constructor, creating a new HTMLPreElement instance
     HTMLPreElement();
     /// Getter of the `width` attribute.

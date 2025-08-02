@@ -15,6 +15,7 @@ public:
     static LayoutEdges take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LayoutEdges clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inlineStart` attribute.
     /// [`LayoutEdges.inlineStart`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutEdges/inlineStart)
     [[nodiscard]] double inlineStart() const;

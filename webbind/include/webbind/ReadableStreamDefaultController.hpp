@@ -15,6 +15,7 @@ public:
     static ReadableStreamDefaultController take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ReadableStreamDefaultController clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `desiredSize` attribute.
     /// [`ReadableStreamDefaultController.desiredSize`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController/desiredSize)
     [[nodiscard]] double desiredSize() const;

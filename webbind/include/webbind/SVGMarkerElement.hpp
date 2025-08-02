@@ -23,6 +23,7 @@ public:
     static SVGMarkerElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGMarkerElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `refX` attribute.
     /// [`SVGMarkerElement.refX`](https://developer.mozilla.org/en-US/docs/Web/API/SVGMarkerElement/refX)
     [[nodiscard]] SVGAnimatedLength refX() const;

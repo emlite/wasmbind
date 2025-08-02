@@ -18,6 +18,7 @@ public:
     static XRView take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRView clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `eye` attribute.
     /// [`XRView.eye`](https://developer.mozilla.org/en-US/docs/Web/API/XRView/eye)
     [[nodiscard]] XREye eye() const;

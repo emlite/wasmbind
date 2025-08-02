@@ -19,6 +19,7 @@ public:
     static PresentationRequest take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PresentationRequest clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PresentationRequest(..)` constructor, creating a new PresentationRequest instance
     PresentationRequest(const jsbind::TypedArray<jsbind::String>& urls);
     /// The start method.

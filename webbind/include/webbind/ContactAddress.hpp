@@ -15,6 +15,7 @@ public:
     static ContactAddress take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ContactAddress clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
     /// [`ContactAddress.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/toJSON)
     jsbind::Object toJSON();

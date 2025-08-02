@@ -31,6 +31,7 @@ public:
     static HandwritingDrawing take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HandwritingDrawing clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The addStroke method.
     /// [`HandwritingDrawing.addStroke`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingDrawing/addStroke)
     jsbind::Undefined addStroke(const HandwritingStroke& stroke);

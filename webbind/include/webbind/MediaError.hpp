@@ -15,6 +15,7 @@ public:
     static MediaError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `code` attribute.
     /// [`MediaError.code`](https://developer.mozilla.org/en-US/docs/Web/API/MediaError/code)
     [[nodiscard]] unsigned short code() const;

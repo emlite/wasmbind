@@ -124,6 +124,7 @@ SVGSVGElement SVGSVGElement::take_ownership(Handle h) noexcept {
         return SVGSVGElement(h);
     }
 SVGSVGElement SVGSVGElement::clone() const noexcept { return *this; }
+emlite::Val SVGSVGElement::instance() noexcept { return emlite::Val::global("SVGSVGElement"); }
 SVGSVGElement::SVGSVGElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
 SVGSVGElement::SVGSVGElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 

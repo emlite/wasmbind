@@ -30,6 +30,7 @@ HandwritingDrawing HandwritingDrawing::take_ownership(Handle h) noexcept {
         return HandwritingDrawing(h);
     }
 HandwritingDrawing HandwritingDrawing::clone() const noexcept { return *this; }
+emlite::Val HandwritingDrawing::instance() noexcept { return emlite::Val::global("HandwritingDrawing"); }
 HandwritingDrawing::HandwritingDrawing(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HandwritingDrawing::HandwritingDrawing(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

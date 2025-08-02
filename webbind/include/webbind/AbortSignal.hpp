@@ -18,6 +18,7 @@ public:
     static AbortSignal take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AbortSignal clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The abort method.
     /// [`AbortSignal.abort`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/abort)
     static AbortSignal abort();

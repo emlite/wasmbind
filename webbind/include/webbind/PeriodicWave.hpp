@@ -17,6 +17,7 @@ public:
     static PeriodicWave take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PeriodicWave clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PeriodicWave(..)` constructor, creating a new PeriodicWave instance
     PeriodicWave(const BaseAudioContext& context);
     /// The `new PeriodicWave(..)` constructor, creating a new PeriodicWave instance

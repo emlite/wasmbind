@@ -127,6 +127,7 @@ VideoDecoder VideoDecoder::take_ownership(Handle h) noexcept {
         return VideoDecoder(h);
     }
 VideoDecoder VideoDecoder::clone() const noexcept { return *this; }
+emlite::Val VideoDecoder::instance() noexcept { return emlite::Val::global("VideoDecoder"); }
 VideoDecoder::VideoDecoder(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 VideoDecoder::VideoDecoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 

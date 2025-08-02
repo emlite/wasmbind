@@ -7,6 +7,7 @@ XRPose XRPose::take_ownership(Handle h) noexcept {
         return XRPose(h);
     }
 XRPose XRPose::clone() const noexcept { return *this; }
+emlite::Val XRPose::instance() noexcept { return emlite::Val::global("XRPose"); }
 XRPose::XRPose(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRPose::XRPose(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

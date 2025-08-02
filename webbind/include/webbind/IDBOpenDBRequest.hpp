@@ -16,6 +16,7 @@ public:
     static IDBOpenDBRequest take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBOpenDBRequest clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onblocked` attribute.
     /// [`IDBOpenDBRequest.onblocked`](https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/onblocked)
     [[nodiscard]] jsbind::Any onblocked() const;

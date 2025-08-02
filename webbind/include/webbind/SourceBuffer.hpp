@@ -21,6 +21,7 @@ public:
     static SourceBuffer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SourceBuffer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mode` attribute.
     /// [`SourceBuffer.mode`](https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/mode)
     [[nodiscard]] AppendMode mode() const;

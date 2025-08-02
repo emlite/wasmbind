@@ -16,6 +16,7 @@ public:
     static CompositionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CompositionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CompositionEvent(..)` constructor, creating a new CompositionEvent instance
     CompositionEvent(const jsbind::String& type);
     /// The `new CompositionEvent(..)` constructor, creating a new CompositionEvent instance

@@ -21,6 +21,7 @@ public:
     static HTMLOutputElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLOutputElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLOutputElement(..)` constructor, creating a new HTMLOutputElement instance
     HTMLOutputElement();
     /// Getter of the `htmlFor` attribute.

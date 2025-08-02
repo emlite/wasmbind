@@ -18,6 +18,7 @@ public:
     static CommandEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CommandEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CommandEvent(..)` constructor, creating a new CommandEvent instance
     CommandEvent(const jsbind::String& type);
     /// The `new CommandEvent(..)` constructor, creating a new CommandEvent instance

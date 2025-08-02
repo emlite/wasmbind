@@ -6,6 +6,7 @@ Touch Touch::take_ownership(Handle h) noexcept {
         return Touch(h);
     }
 Touch Touch::clone() const noexcept { return *this; }
+emlite::Val Touch::instance() noexcept { return emlite::Val::global("Touch"); }
 Touch::Touch(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Touch::Touch(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

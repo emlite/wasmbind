@@ -15,6 +15,7 @@ public:
     static CSSFontFeatureValuesMap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFontFeatureValuesMap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The set method.
     /// [`CSSFontFeatureValuesMap.set`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/set)
     jsbind::Undefined set(const jsbind::String& featureValueName, const jsbind::Any& values);

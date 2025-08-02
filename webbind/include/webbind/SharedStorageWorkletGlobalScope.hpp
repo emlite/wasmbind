@@ -48,6 +48,7 @@ public:
     static SharedStorageWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedStorageWorkletGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The register method.
     /// [`SharedStorageWorkletGlobalScope.register`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/register)
     jsbind::Undefined register_(const jsbind::String& name, const jsbind::Function& operationCtor);

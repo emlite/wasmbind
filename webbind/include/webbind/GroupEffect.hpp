@@ -19,6 +19,7 @@ public:
     static GroupEffect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GroupEffect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GroupEffect(..)` constructor, creating a new GroupEffect instance
     GroupEffect(const jsbind::TypedArray<AnimationEffect>& children);
     /// The `new GroupEffect(..)` constructor, creating a new GroupEffect instance

@@ -16,6 +16,7 @@ public:
     static HTMLDivElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLDivElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDivElement(..)` constructor, creating a new HTMLDivElement instance
     HTMLDivElement();
     /// Getter of the `align` attribute.

@@ -15,6 +15,7 @@ public:
     static DeviceMotionEventRotationRate take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DeviceMotionEventRotationRate clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `alpha` attribute.
     /// [`DeviceMotionEventRotationRate.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/alpha)
     [[nodiscard]] double alpha() const;

@@ -5,6 +5,7 @@ CSSParserFunction CSSParserFunction::take_ownership(Handle h) noexcept {
         return CSSParserFunction(h);
     }
 CSSParserFunction CSSParserFunction::clone() const noexcept { return *this; }
+emlite::Val CSSParserFunction::instance() noexcept { return emlite::Val::global("CSSParserFunction"); }
 CSSParserFunction::CSSParserFunction(Handle h) noexcept : CSSParserValue(emlite::Val::take_ownership(h)) {}
 CSSParserFunction::CSSParserFunction(const emlite::Val &val) noexcept: CSSParserValue(val) {}
 

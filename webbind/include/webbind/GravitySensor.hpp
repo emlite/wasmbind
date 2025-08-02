@@ -16,6 +16,7 @@ public:
     static GravitySensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GravitySensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GravitySensor(..)` constructor, creating a new GravitySensor instance
     GravitySensor();
     /// The `new GravitySensor(..)` constructor, creating a new GravitySensor instance

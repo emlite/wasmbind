@@ -16,6 +16,7 @@ public:
     static CSSParserBlock take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSParserBlock clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserBlock(..)` constructor, creating a new CSSParserBlock instance
     CSSParserBlock(const jsbind::String& name, const jsbind::TypedArray<CSSParserValue>& body);
     /// Getter of the `name` attribute.

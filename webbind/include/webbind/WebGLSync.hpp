@@ -16,5 +16,6 @@ public:
     static WebGLSync take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLSync clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

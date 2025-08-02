@@ -5,6 +5,7 @@ CSSCounterStyleRule CSSCounterStyleRule::take_ownership(Handle h) noexcept {
         return CSSCounterStyleRule(h);
     }
 CSSCounterStyleRule CSSCounterStyleRule::clone() const noexcept { return *this; }
+emlite::Val CSSCounterStyleRule::instance() noexcept { return emlite::Val::global("CSSCounterStyleRule"); }
 CSSCounterStyleRule::CSSCounterStyleRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
 CSSCounterStyleRule::CSSCounterStyleRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 

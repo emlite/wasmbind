@@ -6,6 +6,7 @@ CSSPageRule CSSPageRule::take_ownership(Handle h) noexcept {
         return CSSPageRule(h);
     }
 CSSPageRule CSSPageRule::clone() const noexcept { return *this; }
+emlite::Val CSSPageRule::instance() noexcept { return emlite::Val::global("CSSPageRule"); }
 CSSPageRule::CSSPageRule(Handle h) noexcept : CSSGroupingRule(emlite::Val::take_ownership(h)) {}
 CSSPageRule::CSSPageRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 

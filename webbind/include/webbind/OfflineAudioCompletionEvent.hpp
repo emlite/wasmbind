@@ -18,6 +18,7 @@ public:
     static OfflineAudioCompletionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OfflineAudioCompletionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OfflineAudioCompletionEvent(..)` constructor, creating a new OfflineAudioCompletionEvent instance
     OfflineAudioCompletionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `renderedBuffer` attribute.

@@ -32,6 +32,7 @@ public:
     static USB take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USB clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
     /// [`USB.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/USB/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;

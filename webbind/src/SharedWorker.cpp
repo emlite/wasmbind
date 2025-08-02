@@ -6,6 +6,7 @@ SharedWorker SharedWorker::take_ownership(Handle h) noexcept {
         return SharedWorker(h);
     }
 SharedWorker SharedWorker::clone() const noexcept { return *this; }
+emlite::Val SharedWorker::instance() noexcept { return emlite::Val::global("SharedWorker"); }
 SharedWorker::SharedWorker(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 SharedWorker::SharedWorker(const emlite::Val &val) noexcept: EventTarget(val) {}
 

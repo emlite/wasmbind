@@ -7,6 +7,7 @@ DecompressionStream DecompressionStream::take_ownership(Handle h) noexcept {
         return DecompressionStream(h);
     }
 DecompressionStream DecompressionStream::clone() const noexcept { return *this; }
+emlite::Val DecompressionStream::instance() noexcept { return emlite::Val::global("DecompressionStream"); }
 DecompressionStream::DecompressionStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DecompressionStream::DecompressionStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

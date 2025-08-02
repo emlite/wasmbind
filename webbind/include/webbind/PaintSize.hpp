@@ -15,6 +15,7 @@ public:
     static PaintSize take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PaintSize clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
     /// [`PaintSize.width`](https://developer.mozilla.org/en-US/docs/Web/API/PaintSize/width)
     [[nodiscard]] double width() const;

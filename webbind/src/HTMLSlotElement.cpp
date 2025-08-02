@@ -23,6 +23,7 @@ HTMLSlotElement HTMLSlotElement::take_ownership(Handle h) noexcept {
         return HTMLSlotElement(h);
     }
 HTMLSlotElement HTMLSlotElement::clone() const noexcept { return *this; }
+emlite::Val HTMLSlotElement::instance() noexcept { return emlite::Val::global("HTMLSlotElement"); }
 HTMLSlotElement::HTMLSlotElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLSlotElement::HTMLSlotElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

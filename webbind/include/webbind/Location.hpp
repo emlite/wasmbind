@@ -17,6 +17,7 @@ public:
     static Location take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Location clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `href` attribute.
     /// [`Location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location/href)
     [[nodiscard]] jsbind::String href() const;

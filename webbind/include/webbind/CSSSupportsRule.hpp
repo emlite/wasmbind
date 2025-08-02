@@ -16,6 +16,7 @@ public:
     static CSSSupportsRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSSupportsRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `matches` attribute.
     /// [`CSSSupportsRule.matches`](https://developer.mozilla.org/en-US/docs/Web/API/CSSSupportsRule/matches)
     [[nodiscard]] bool matches() const;

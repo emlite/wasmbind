@@ -15,6 +15,7 @@ public:
     static PerformanceTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `navigationStart` attribute.
     /// [`PerformanceTiming.navigationStart`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/navigationStart)
     [[nodiscard]] long long navigationStart() const;

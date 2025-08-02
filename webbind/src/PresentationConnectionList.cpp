@@ -6,6 +6,7 @@ PresentationConnectionList PresentationConnectionList::take_ownership(Handle h) 
         return PresentationConnectionList(h);
     }
 PresentationConnectionList PresentationConnectionList::clone() const noexcept { return *this; }
+emlite::Val PresentationConnectionList::instance() noexcept { return emlite::Val::global("PresentationConnectionList"); }
 PresentationConnectionList::PresentationConnectionList(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PresentationConnectionList::PresentationConnectionList(const emlite::Val &val) noexcept: EventTarget(val) {}
 

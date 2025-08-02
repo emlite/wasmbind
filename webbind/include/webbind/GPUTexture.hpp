@@ -43,6 +43,7 @@ public:
     static GPUTexture take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUTexture clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createView method.
     /// [`GPUTexture.createView`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/createView)
     GPUTextureView createView();

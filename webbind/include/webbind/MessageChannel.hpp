@@ -17,6 +17,7 @@ public:
     static MessageChannel take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MessageChannel clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MessageChannel(..)` constructor, creating a new MessageChannel instance
     MessageChannel();
     /// Getter of the `port1` attribute.

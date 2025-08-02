@@ -6,6 +6,7 @@ SVGRadialGradientElement SVGRadialGradientElement::take_ownership(Handle h) noex
         return SVGRadialGradientElement(h);
     }
 SVGRadialGradientElement SVGRadialGradientElement::clone() const noexcept { return *this; }
+emlite::Val SVGRadialGradientElement::instance() noexcept { return emlite::Val::global("SVGRadialGradientElement"); }
 SVGRadialGradientElement::SVGRadialGradientElement(Handle h) noexcept : SVGGradientElement(emlite::Val::take_ownership(h)) {}
 SVGRadialGradientElement::SVGRadialGradientElement(const emlite::Val &val) noexcept: SVGGradientElement(val) {}
 

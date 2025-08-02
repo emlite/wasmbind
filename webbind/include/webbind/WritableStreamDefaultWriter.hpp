@@ -17,6 +17,7 @@ public:
     static WritableStreamDefaultWriter take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WritableStreamDefaultWriter clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WritableStreamDefaultWriter(..)` constructor, creating a new WritableStreamDefaultWriter instance
     WritableStreamDefaultWriter(const WritableStream& stream);
     /// Getter of the `closed` attribute.

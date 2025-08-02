@@ -17,6 +17,7 @@ public:
     static CSSNumericArray take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSNumericArray clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`CSSNumericArray.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericArray/length)
     [[nodiscard]] unsigned long length() const;

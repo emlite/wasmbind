@@ -16,6 +16,7 @@ public:
     static PerformancePaintTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformancePaintTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
     /// [`PerformancePaintTiming.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/toJSON)
     jsbind::Object toJSON();

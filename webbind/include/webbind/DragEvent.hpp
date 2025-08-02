@@ -18,6 +18,7 @@ public:
     static DragEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DragEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DragEvent(..)` constructor, creating a new DragEvent instance
     DragEvent(const jsbind::String& type);
     /// The `new DragEvent(..)` constructor, creating a new DragEvent instance

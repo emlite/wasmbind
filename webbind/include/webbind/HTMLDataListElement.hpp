@@ -18,6 +18,7 @@ public:
     static HTMLDataListElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLDataListElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDataListElement(..)` constructor, creating a new HTMLDataListElement instance
     HTMLDataListElement();
     /// Getter of the `options` attribute.

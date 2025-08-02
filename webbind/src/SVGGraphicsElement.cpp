@@ -49,6 +49,7 @@ SVGGraphicsElement SVGGraphicsElement::take_ownership(Handle h) noexcept {
         return SVGGraphicsElement(h);
     }
 SVGGraphicsElement SVGGraphicsElement::clone() const noexcept { return *this; }
+emlite::Val SVGGraphicsElement::instance() noexcept { return emlite::Val::global("SVGGraphicsElement"); }
 SVGGraphicsElement::SVGGraphicsElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGGraphicsElement::SVGGraphicsElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

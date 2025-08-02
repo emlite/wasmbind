@@ -15,5 +15,6 @@ public:
     static WebGLUniformLocation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLUniformLocation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

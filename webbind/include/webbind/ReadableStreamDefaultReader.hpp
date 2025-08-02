@@ -30,6 +30,7 @@ public:
     static ReadableStreamDefaultReader take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ReadableStreamDefaultReader clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ReadableStreamDefaultReader(..)` constructor, creating a new ReadableStreamDefaultReader instance
     ReadableStreamDefaultReader(const ReadableStream& stream);
     /// The read method.

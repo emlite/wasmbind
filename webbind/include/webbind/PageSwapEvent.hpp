@@ -19,6 +19,7 @@ public:
     static PageSwapEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PageSwapEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PageSwapEvent(..)` constructor, creating a new PageSwapEvent instance
     PageSwapEvent(const jsbind::String& type);
     /// The `new PageSwapEvent(..)` constructor, creating a new PageSwapEvent instance

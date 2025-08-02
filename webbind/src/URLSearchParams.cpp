@@ -5,6 +5,7 @@ URLSearchParams URLSearchParams::take_ownership(Handle h) noexcept {
         return URLSearchParams(h);
     }
 URLSearchParams URLSearchParams::clone() const noexcept { return *this; }
+emlite::Val URLSearchParams::instance() noexcept { return emlite::Val::global("URLSearchParams"); }
 URLSearchParams::URLSearchParams(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 URLSearchParams::URLSearchParams(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

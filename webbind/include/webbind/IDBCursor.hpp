@@ -17,6 +17,7 @@ public:
     static IDBCursor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBCursor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `source` attribute.
     /// [`IDBCursor.source`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/source)
     [[nodiscard]] jsbind::Any source() const;

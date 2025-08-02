@@ -19,6 +19,7 @@ public:
     static XRReferenceSpaceEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRReferenceSpaceEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRReferenceSpaceEvent(..)` constructor, creating a new XRReferenceSpaceEvent instance
     XRReferenceSpaceEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `referenceSpace` attribute.

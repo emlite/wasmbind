@@ -17,6 +17,7 @@ public:
     static ServiceWorker take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ServiceWorker clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `scriptURL` attribute.
     /// [`ServiceWorker.scriptURL`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/scriptURL)
     [[nodiscard]] jsbind::String scriptURL() const;

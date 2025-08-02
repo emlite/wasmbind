@@ -19,6 +19,7 @@ public:
     static CSSMatrixComponent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMatrixComponent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMatrixComponent(..)` constructor, creating a new CSSMatrixComponent instance
     CSSMatrixComponent(const DOMMatrixReadOnly& matrix);
     /// The `new CSSMatrixComponent(..)` constructor, creating a new CSSMatrixComponent instance

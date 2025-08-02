@@ -15,6 +15,7 @@ public:
     static SVGLength take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGLength clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `unitType` attribute.
     /// [`SVGLength.unitType`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/unitType)
     [[nodiscard]] unsigned short unitType() const;

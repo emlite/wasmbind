@@ -18,6 +18,7 @@ public:
     static CSSParserDeclaration take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSParserDeclaration clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserDeclaration(..)` constructor, creating a new CSSParserDeclaration instance
     CSSParserDeclaration(const jsbind::String& name);
     /// The `new CSSParserDeclaration(..)` constructor, creating a new CSSParserDeclaration instance

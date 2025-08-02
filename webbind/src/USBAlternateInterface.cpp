@@ -7,6 +7,7 @@ USBAlternateInterface USBAlternateInterface::take_ownership(Handle h) noexcept {
         return USBAlternateInterface(h);
     }
 USBAlternateInterface USBAlternateInterface::clone() const noexcept { return *this; }
+emlite::Val USBAlternateInterface::instance() noexcept { return emlite::Val::global("USBAlternateInterface"); }
 USBAlternateInterface::USBAlternateInterface(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBAlternateInterface::USBAlternateInterface(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

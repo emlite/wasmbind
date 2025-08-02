@@ -18,6 +18,7 @@ public:
     static ConstantSourceNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ConstantSourceNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ConstantSourceNode(..)` constructor, creating a new ConstantSourceNode instance
     ConstantSourceNode(const BaseAudioContext& context);
     /// The `new ConstantSourceNode(..)` constructor, creating a new ConstantSourceNode instance

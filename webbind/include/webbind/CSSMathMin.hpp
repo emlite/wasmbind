@@ -18,6 +18,7 @@ public:
     static CSSMathMin take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathMin clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathMin(..)` constructor, creating a new CSSMathMin instance
     CSSMathMin(const jsbind::Any& args);
     /// Getter of the `values` attribute.

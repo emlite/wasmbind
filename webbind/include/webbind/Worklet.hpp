@@ -28,6 +28,7 @@ public:
     static Worklet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Worklet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The addModule method.
     /// [`Worklet.addModule`](https://developer.mozilla.org/en-US/docs/Web/API/Worklet/addModule)
     jsbind::Promise<jsbind::Undefined> addModule(const jsbind::String& moduleURL);

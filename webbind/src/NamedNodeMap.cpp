@@ -6,6 +6,7 @@ NamedNodeMap NamedNodeMap::take_ownership(Handle h) noexcept {
         return NamedNodeMap(h);
     }
 NamedNodeMap NamedNodeMap::clone() const noexcept { return *this; }
+emlite::Val NamedNodeMap::instance() noexcept { return emlite::Val::global("NamedNodeMap"); }
 NamedNodeMap::NamedNodeMap(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NamedNodeMap::NamedNodeMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

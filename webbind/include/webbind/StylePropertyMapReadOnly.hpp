@@ -17,6 +17,7 @@ public:
     static StylePropertyMapReadOnly take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StylePropertyMapReadOnly clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
     /// [`StylePropertyMapReadOnly.get`](https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/get)
     jsbind::Any get(const jsbind::String& property);

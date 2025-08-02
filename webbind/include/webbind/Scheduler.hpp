@@ -33,6 +33,7 @@ public:
     static Scheduler take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Scheduler clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The postTask method.
     /// [`Scheduler.postTask`](https://developer.mozilla.org/en-US/docs/Web/API/Scheduler/postTask)
     jsbind::Promise<jsbind::Any> postTask(const jsbind::Function& callback);

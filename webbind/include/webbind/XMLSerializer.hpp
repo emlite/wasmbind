@@ -17,6 +17,7 @@ public:
     static XMLSerializer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XMLSerializer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XMLSerializer(..)` constructor, creating a new XMLSerializer instance
     XMLSerializer();
     /// The serializeToString method.

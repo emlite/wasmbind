@@ -16,6 +16,7 @@ public:
     static CloseEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CloseEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CloseEvent(..)` constructor, creating a new CloseEvent instance
     CloseEvent(const jsbind::String& type);
     /// The `new CloseEvent(..)` constructor, creating a new CloseEvent instance

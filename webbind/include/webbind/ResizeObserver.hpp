@@ -29,6 +29,7 @@ public:
     static ResizeObserver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ResizeObserver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ResizeObserver(..)` constructor, creating a new ResizeObserver instance
     ResizeObserver(const jsbind::Function& callback);
     /// The observe method.

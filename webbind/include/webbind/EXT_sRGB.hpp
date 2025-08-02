@@ -15,5 +15,6 @@ public:
     static EXT_sRGB take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_sRGB clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

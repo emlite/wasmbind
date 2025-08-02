@@ -16,6 +16,7 @@ public:
     static TaskPriorityChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TaskPriorityChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TaskPriorityChangeEvent(..)` constructor, creating a new TaskPriorityChangeEvent instance
     TaskPriorityChangeEvent(const jsbind::String& type, const jsbind::Any& priorityChangeEventInitDict);
     /// Getter of the `previousPriority` attribute.

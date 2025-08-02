@@ -146,6 +146,7 @@ Document Document::take_ownership(Handle h) noexcept {
         return Document(h);
     }
 Document Document::clone() const noexcept { return *this; }
+emlite::Val Document::instance() noexcept { return emlite::Val::global("Document"); }
 Document::Document(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Document::Document(const emlite::Val &val) noexcept: Node(val) {}
 

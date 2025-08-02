@@ -18,6 +18,7 @@ public:
     static HIDConnectionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HIDConnectionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HIDConnectionEvent(..)` constructor, creating a new HIDConnectionEvent instance
     HIDConnectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `device` attribute.

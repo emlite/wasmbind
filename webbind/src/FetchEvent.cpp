@@ -7,6 +7,7 @@ FetchEvent FetchEvent::take_ownership(Handle h) noexcept {
         return FetchEvent(h);
     }
 FetchEvent FetchEvent::clone() const noexcept { return *this; }
+emlite::Val FetchEvent::instance() noexcept { return emlite::Val::global("FetchEvent"); }
 FetchEvent::FetchEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 FetchEvent::FetchEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 

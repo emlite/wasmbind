@@ -16,6 +16,7 @@ public:
     static WheelEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WheelEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WheelEvent(..)` constructor, creating a new WheelEvent instance
     WheelEvent(const jsbind::String& type);
     /// The `new WheelEvent(..)` constructor, creating a new WheelEvent instance

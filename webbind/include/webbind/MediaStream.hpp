@@ -19,6 +19,7 @@ public:
     static MediaStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStream(..)` constructor, creating a new MediaStream instance
     MediaStream(const jsbind::TypedArray<MediaStreamTrack>& tracks);
     /// Getter of the `id` attribute.

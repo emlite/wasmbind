@@ -15,6 +15,7 @@ public:
     static WorkerLocation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WorkerLocation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `href` attribute.
     /// [`WorkerLocation.href`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerLocation/href)
     [[nodiscard]] jsbind::String href() const;

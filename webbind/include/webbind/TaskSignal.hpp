@@ -30,6 +30,7 @@ public:
     static TaskSignal take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TaskSignal clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The any method.
     /// [`TaskSignal.any`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal/any)
     static TaskSignal any(const jsbind::TypedArray<AbortSignal>& signals);

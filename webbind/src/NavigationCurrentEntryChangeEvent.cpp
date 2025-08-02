@@ -6,6 +6,7 @@ NavigationCurrentEntryChangeEvent NavigationCurrentEntryChangeEvent::take_owners
         return NavigationCurrentEntryChangeEvent(h);
     }
 NavigationCurrentEntryChangeEvent NavigationCurrentEntryChangeEvent::clone() const noexcept { return *this; }
+emlite::Val NavigationCurrentEntryChangeEvent::instance() noexcept { return emlite::Val::global("NavigationCurrentEntryChangeEvent"); }
 NavigationCurrentEntryChangeEvent::NavigationCurrentEntryChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 NavigationCurrentEntryChangeEvent::NavigationCurrentEntryChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

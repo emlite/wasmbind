@@ -5,6 +5,7 @@ OES_draw_buffers_indexed OES_draw_buffers_indexed::take_ownership(Handle h) noex
         return OES_draw_buffers_indexed(h);
     }
 OES_draw_buffers_indexed OES_draw_buffers_indexed::clone() const noexcept { return *this; }
+emlite::Val OES_draw_buffers_indexed::instance() noexcept { return emlite::Val::global("OES_draw_buffers_indexed"); }
 OES_draw_buffers_indexed::OES_draw_buffers_indexed(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 OES_draw_buffers_indexed::OES_draw_buffers_indexed(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

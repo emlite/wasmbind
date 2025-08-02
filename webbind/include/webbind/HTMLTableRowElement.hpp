@@ -19,6 +19,7 @@ public:
     static HTMLTableRowElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTableRowElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableRowElement(..)` constructor, creating a new HTMLTableRowElement instance
     HTMLTableRowElement();
     /// Getter of the `rowIndex` attribute.

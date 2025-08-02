@@ -7,6 +7,7 @@ MediaElementAudioSourceNode MediaElementAudioSourceNode::take_ownership(Handle h
         return MediaElementAudioSourceNode(h);
     }
 MediaElementAudioSourceNode MediaElementAudioSourceNode::clone() const noexcept { return *this; }
+emlite::Val MediaElementAudioSourceNode::instance() noexcept { return emlite::Val::global("MediaElementAudioSourceNode"); }
 MediaElementAudioSourceNode::MediaElementAudioSourceNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 MediaElementAudioSourceNode::MediaElementAudioSourceNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

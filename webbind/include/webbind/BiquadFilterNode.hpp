@@ -18,6 +18,7 @@ public:
     static BiquadFilterNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BiquadFilterNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BiquadFilterNode(..)` constructor, creating a new BiquadFilterNode instance
     BiquadFilterNode(const BaseAudioContext& context);
     /// The `new BiquadFilterNode(..)` constructor, creating a new BiquadFilterNode instance

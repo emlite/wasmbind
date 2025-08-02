@@ -16,6 +16,7 @@ public:
     static HTMLTableCellElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTableCellElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableCellElement(..)` constructor, creating a new HTMLTableCellElement instance
     HTMLTableCellElement();
     /// Getter of the `colSpan` attribute.

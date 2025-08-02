@@ -31,6 +31,7 @@ public:
     static StorageManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StorageManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The persisted method.
     /// [`StorageManager.persisted`](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persisted)
     jsbind::Promise<bool> persisted();

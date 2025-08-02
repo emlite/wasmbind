@@ -5,6 +5,7 @@ RemotePlayback RemotePlayback::take_ownership(Handle h) noexcept {
         return RemotePlayback(h);
     }
 RemotePlayback RemotePlayback::clone() const noexcept { return *this; }
+emlite::Val RemotePlayback::instance() noexcept { return emlite::Val::global("RemotePlayback"); }
 RemotePlayback::RemotePlayback(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 RemotePlayback::RemotePlayback(const emlite::Val &val) noexcept: EventTarget(val) {}
 

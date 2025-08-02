@@ -37,6 +37,7 @@ public:
     static SVGGeometryElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGGeometryElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `pathLength` attribute.
     /// [`SVGGeometryElement.pathLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/pathLength)
     [[nodiscard]] SVGAnimatedNumber pathLength() const;

@@ -7,6 +7,7 @@ PerformanceElementTiming PerformanceElementTiming::take_ownership(Handle h) noex
         return PerformanceElementTiming(h);
     }
 PerformanceElementTiming PerformanceElementTiming::clone() const noexcept { return *this; }
+emlite::Val PerformanceElementTiming::instance() noexcept { return emlite::Val::global("PerformanceElementTiming"); }
 PerformanceElementTiming::PerformanceElementTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceElementTiming::PerformanceElementTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 

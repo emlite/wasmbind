@@ -17,6 +17,7 @@ public:
     static XRDepthInformation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRDepthInformation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
     /// [`XRDepthInformation.width`](https://developer.mozilla.org/en-US/docs/Web/API/XRDepthInformation/width)
     [[nodiscard]] unsigned long width() const;

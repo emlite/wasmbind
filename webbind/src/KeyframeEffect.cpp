@@ -6,6 +6,7 @@ KeyframeEffect KeyframeEffect::take_ownership(Handle h) noexcept {
         return KeyframeEffect(h);
     }
 KeyframeEffect KeyframeEffect::clone() const noexcept { return *this; }
+emlite::Val KeyframeEffect::instance() noexcept { return emlite::Val::global("KeyframeEffect"); }
 KeyframeEffect::KeyframeEffect(Handle h) noexcept : AnimationEffect(emlite::Val::take_ownership(h)) {}
 KeyframeEffect::KeyframeEffect(const emlite::Val &val) noexcept: AnimationEffect(val) {}
 

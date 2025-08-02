@@ -44,6 +44,7 @@ public:
     static PrivateAggregation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PrivateAggregation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The contributeToHistogram method.
     /// [`PrivateAggregation.contributeToHistogram`](https://developer.mozilla.org/en-US/docs/Web/API/PrivateAggregation/contributeToHistogram)
     jsbind::Undefined contributeToHistogram(const PAHistogramContribution& contribution);

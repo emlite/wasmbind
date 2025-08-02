@@ -6,6 +6,7 @@ ServiceWorker ServiceWorker::take_ownership(Handle h) noexcept {
         return ServiceWorker(h);
     }
 ServiceWorker ServiceWorker::clone() const noexcept { return *this; }
+emlite::Val ServiceWorker::instance() noexcept { return emlite::Val::global("ServiceWorker"); }
 ServiceWorker::ServiceWorker(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 ServiceWorker::ServiceWorker(const emlite::Val &val) noexcept: EventTarget(val) {}
 

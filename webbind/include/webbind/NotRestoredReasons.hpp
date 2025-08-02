@@ -18,6 +18,7 @@ public:
     static NotRestoredReasons take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NotRestoredReasons clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `src` attribute.
     /// [`NotRestoredReasons.src`](https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons/src)
     [[nodiscard]] jsbind::String src() const;

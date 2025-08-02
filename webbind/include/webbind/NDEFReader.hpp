@@ -56,6 +56,7 @@ public:
     static NDEFReader take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NDEFReader clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFReader(..)` constructor, creating a new NDEFReader instance
     NDEFReader();
     /// Getter of the `onreading` attribute.

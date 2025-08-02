@@ -6,6 +6,7 @@ MediaStreamTrackProcessor MediaStreamTrackProcessor::take_ownership(Handle h) no
         return MediaStreamTrackProcessor(h);
     }
 MediaStreamTrackProcessor MediaStreamTrackProcessor::clone() const noexcept { return *this; }
+emlite::Val MediaStreamTrackProcessor::instance() noexcept { return emlite::Val::global("MediaStreamTrackProcessor"); }
 MediaStreamTrackProcessor::MediaStreamTrackProcessor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaStreamTrackProcessor::MediaStreamTrackProcessor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

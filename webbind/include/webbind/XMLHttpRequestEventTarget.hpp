@@ -16,6 +16,7 @@ public:
     static XMLHttpRequestEventTarget take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XMLHttpRequestEventTarget clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onloadstart` attribute.
     /// [`XMLHttpRequestEventTarget.onloadstart`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onloadstart)
     [[nodiscard]] jsbind::Any onloadstart() const;

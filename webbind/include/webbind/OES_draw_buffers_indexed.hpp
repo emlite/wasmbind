@@ -15,6 +15,7 @@ public:
     static OES_draw_buffers_indexed take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OES_draw_buffers_indexed clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The enableiOES method.
     /// [`OES_draw_buffers_indexed.enableiOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/enableiOES)
     jsbind::Undefined enableiOES(const jsbind::Any& target, const jsbind::Any& index);

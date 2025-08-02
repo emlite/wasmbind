@@ -20,6 +20,7 @@ public:
     static AudioWorkletNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioWorkletNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioWorkletNode(..)` constructor, creating a new AudioWorkletNode instance
     AudioWorkletNode(const BaseAudioContext& context, const jsbind::String& name);
     /// The `new AudioWorkletNode(..)` constructor, creating a new AudioWorkletNode instance

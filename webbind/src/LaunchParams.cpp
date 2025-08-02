@@ -6,6 +6,7 @@ LaunchParams LaunchParams::take_ownership(Handle h) noexcept {
         return LaunchParams(h);
     }
 LaunchParams LaunchParams::clone() const noexcept { return *this; }
+emlite::Val LaunchParams::instance() noexcept { return emlite::Val::global("LaunchParams"); }
 LaunchParams::LaunchParams(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LaunchParams::LaunchParams(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -17,6 +17,7 @@ public:
     static GPURenderPipeline take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPURenderPipeline clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
     /// [`GPURenderPipeline.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPipeline/label)
     [[nodiscard]] jsbind::String label() const;

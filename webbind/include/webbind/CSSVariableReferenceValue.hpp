@@ -17,6 +17,7 @@ public:
     static CSSVariableReferenceValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSVariableReferenceValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSVariableReferenceValue(..)` constructor, creating a new CSSVariableReferenceValue instance
     CSSVariableReferenceValue(const jsbind::String& variable);
     /// The `new CSSVariableReferenceValue(..)` constructor, creating a new CSSVariableReferenceValue instance

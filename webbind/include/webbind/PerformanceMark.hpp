@@ -18,6 +18,7 @@ public:
     static PerformanceMark take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceMark clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PerformanceMark(..)` constructor, creating a new PerformanceMark instance
     PerformanceMark(const jsbind::String& markName);
     /// The `new PerformanceMark(..)` constructor, creating a new PerformanceMark instance

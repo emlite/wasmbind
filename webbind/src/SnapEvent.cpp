@@ -6,6 +6,7 @@ SnapEvent SnapEvent::take_ownership(Handle h) noexcept {
         return SnapEvent(h);
     }
 SnapEvent SnapEvent::clone() const noexcept { return *this; }
+emlite::Val SnapEvent::instance() noexcept { return emlite::Val::global("SnapEvent"); }
 SnapEvent::SnapEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SnapEvent::SnapEvent(const emlite::Val &val) noexcept: Event(val) {}
 

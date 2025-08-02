@@ -17,6 +17,7 @@ public:
     static AbortController take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AbortController clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AbortController(..)` constructor, creating a new AbortController instance
     AbortController();
     /// Getter of the `signal` attribute.

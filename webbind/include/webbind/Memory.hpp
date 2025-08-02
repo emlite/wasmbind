@@ -15,6 +15,7 @@ public:
     static Memory take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Memory clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Memory(..)` constructor, creating a new Memory instance
     Memory(const jsbind::Any& descriptor);
     /// The grow method.

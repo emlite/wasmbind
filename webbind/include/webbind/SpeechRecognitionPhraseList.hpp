@@ -17,6 +17,7 @@ public:
     static SpeechRecognitionPhraseList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechRecognitionPhraseList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionPhraseList(..)` constructor, creating a new SpeechRecognitionPhraseList instance
     SpeechRecognitionPhraseList(const jsbind::TypedArray<SpeechRecognitionPhrase>& phrases);
     /// Getter of the `length` attribute.

@@ -22,6 +22,7 @@ CacheStorage CacheStorage::take_ownership(Handle h) noexcept {
         return CacheStorage(h);
     }
 CacheStorage CacheStorage::clone() const noexcept { return *this; }
+emlite::Val CacheStorage::instance() noexcept { return emlite::Val::global("CacheStorage"); }
 CacheStorage::CacheStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CacheStorage::CacheStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

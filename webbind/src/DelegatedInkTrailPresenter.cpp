@@ -31,6 +31,7 @@ DelegatedInkTrailPresenter DelegatedInkTrailPresenter::take_ownership(Handle h) 
         return DelegatedInkTrailPresenter(h);
     }
 DelegatedInkTrailPresenter DelegatedInkTrailPresenter::clone() const noexcept { return *this; }
+emlite::Val DelegatedInkTrailPresenter::instance() noexcept { return emlite::Val::global("DelegatedInkTrailPresenter"); }
 DelegatedInkTrailPresenter::DelegatedInkTrailPresenter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DelegatedInkTrailPresenter::DelegatedInkTrailPresenter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

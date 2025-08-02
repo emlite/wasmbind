@@ -18,6 +18,7 @@ public:
     static DeviceChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DeviceChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DeviceChangeEvent(..)` constructor, creating a new DeviceChangeEvent instance
     DeviceChangeEvent(const jsbind::String& type);
     /// The `new DeviceChangeEvent(..)` constructor, creating a new DeviceChangeEvent instance

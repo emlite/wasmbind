@@ -15,5 +15,6 @@ public:
     static OES_texture_half_float take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OES_texture_half_float clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

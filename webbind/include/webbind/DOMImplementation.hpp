@@ -19,6 +19,7 @@ public:
     static DOMImplementation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMImplementation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createDocumentType method.
     /// [`DOMImplementation.createDocumentType`](https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation/createDocumentType)
     DocumentType createDocumentType(const jsbind::String& name, const jsbind::String& publicId, const jsbind::String& systemId);

@@ -15,6 +15,7 @@ public:
     static TrustedHTML take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TrustedHTML clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
     /// [`TrustedHTML.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedHTML/toJSON)
     jsbind::String toJSON();

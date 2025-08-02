@@ -16,6 +16,7 @@ public:
     static InstallEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InstallEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new InstallEvent(..)` constructor, creating a new InstallEvent instance
     InstallEvent(const jsbind::String& type);
     /// The `new InstallEvent(..)` constructor, creating a new InstallEvent instance

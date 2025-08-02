@@ -20,6 +20,7 @@ public:
     static SFrameTransform take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SFrameTransform clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SFrameTransform(..)` constructor, creating a new SFrameTransform instance
     SFrameTransform();
     /// The `new SFrameTransform(..)` constructor, creating a new SFrameTransform instance

@@ -18,6 +18,7 @@ public:
     static CSSPositionTryRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSPositionTryRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSPositionTryRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule/name)
     [[nodiscard]] jsbind::String name() const;

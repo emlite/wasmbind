@@ -20,6 +20,7 @@ public:
     static GPURenderPassEncoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPURenderPassEncoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setViewport method.
     /// [`GPURenderPassEncoder.setViewport`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setViewport)
     jsbind::Undefined setViewport(float x, float y, float width, float height, float minDepth, float maxDepth);

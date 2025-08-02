@@ -18,6 +18,7 @@ public:
     static BluetoothPermissionResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothPermissionResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `devices` attribute.
     /// [`BluetoothPermissionResult.devices`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothPermissionResult/devices)
     [[nodiscard]] jsbind::TypedArray<BluetoothDevice> devices() const;

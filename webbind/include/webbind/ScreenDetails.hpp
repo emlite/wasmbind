@@ -18,6 +18,7 @@ public:
     static ScreenDetails take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ScreenDetails clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `screens` attribute.
     /// [`ScreenDetails.screens`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/screens)
     [[nodiscard]] jsbind::TypedArray<ScreenDetailed> screens() const;

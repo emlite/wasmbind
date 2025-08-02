@@ -17,6 +17,7 @@ public:
     static SVGAnimatedAngle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedAngle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedAngle.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedAngle/baseVal)
     [[nodiscard]] SVGAngle baseVal() const;

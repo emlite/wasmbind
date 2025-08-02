@@ -20,6 +20,7 @@ public:
     static HTMLTextAreaElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTextAreaElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTextAreaElement(..)` constructor, creating a new HTMLTextAreaElement instance
     HTMLTextAreaElement();
     /// Getter of the `autocomplete` attribute.

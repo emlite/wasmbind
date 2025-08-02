@@ -9,6 +9,7 @@ StorageBucket StorageBucket::take_ownership(Handle h) noexcept {
         return StorageBucket(h);
     }
 StorageBucket StorageBucket::clone() const noexcept { return *this; }
+emlite::Val StorageBucket::instance() noexcept { return emlite::Val::global("StorageBucket"); }
 StorageBucket::StorageBucket(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageBucket::StorageBucket(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -6,6 +6,7 @@ PresentationConnectionAvailableEvent PresentationConnectionAvailableEvent::take_
         return PresentationConnectionAvailableEvent(h);
     }
 PresentationConnectionAvailableEvent PresentationConnectionAvailableEvent::clone() const noexcept { return *this; }
+emlite::Val PresentationConnectionAvailableEvent::instance() noexcept { return emlite::Val::global("PresentationConnectionAvailableEvent"); }
 PresentationConnectionAvailableEvent::PresentationConnectionAvailableEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 PresentationConnectionAvailableEvent::PresentationConnectionAvailableEvent(const emlite::Val &val) noexcept: Event(val) {}
 

@@ -16,6 +16,7 @@ public:
     static CSSConditionRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSConditionRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `conditionText` attribute.
     /// [`CSSConditionRule.conditionText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSConditionRule/conditionText)
     [[nodiscard]] jsbind::String conditionText() const;

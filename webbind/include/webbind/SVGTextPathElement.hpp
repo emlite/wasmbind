@@ -20,6 +20,7 @@ public:
     static SVGTextPathElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGTextPathElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startOffset` attribute.
     /// [`SVGTextPathElement.startOffset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/startOffset)
     [[nodiscard]] SVGAnimatedLength startOffset() const;

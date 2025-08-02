@@ -20,6 +20,7 @@ public:
     static SVGImageElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGImageElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`SVGImageElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;

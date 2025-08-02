@@ -46,6 +46,7 @@ public:
     static ImageDecoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ImageDecoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ImageDecoder(..)` constructor, creating a new ImageDecoder instance
     ImageDecoder(const jsbind::Any& init);
     /// Getter of the `type` attribute.

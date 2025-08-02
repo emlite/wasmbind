@@ -18,6 +18,7 @@ public:
     static TextTrackList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextTrackList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`TextTrackList.length`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackList/length)
     [[nodiscard]] unsigned long length() const;

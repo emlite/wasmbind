@@ -50,6 +50,7 @@ public:
     static Performance take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Performance clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The now method.
     /// [`Performance.now`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)
     jsbind::Any now();

@@ -24,6 +24,7 @@ public:
     static StorageAccessHandle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StorageAccessHandle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sessionStorage` attribute.
     /// [`StorageAccessHandle.sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/sessionStorage)
     [[nodiscard]] Storage sessionStorage() const;

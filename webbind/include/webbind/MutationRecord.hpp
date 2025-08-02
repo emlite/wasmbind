@@ -18,6 +18,7 @@ public:
     static MutationRecord take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MutationRecord clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`MutationRecord.type`](https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/type)
     [[nodiscard]] jsbind::String type() const;

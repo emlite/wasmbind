@@ -18,6 +18,7 @@ public:
     static ExtendableMessageEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ExtendableMessageEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ExtendableMessageEvent(..)` constructor, creating a new ExtendableMessageEvent instance
     ExtendableMessageEvent(const jsbind::String& type);
     /// The `new ExtendableMessageEvent(..)` constructor, creating a new ExtendableMessageEvent instance

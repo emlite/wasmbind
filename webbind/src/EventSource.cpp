@@ -5,6 +5,7 @@ EventSource EventSource::take_ownership(Handle h) noexcept {
         return EventSource(h);
     }
 EventSource EventSource::clone() const noexcept { return *this; }
+emlite::Val EventSource::instance() noexcept { return emlite::Val::global("EventSource"); }
 EventSource::EventSource(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 EventSource::EventSource(const emlite::Val &val) noexcept: EventTarget(val) {}
 

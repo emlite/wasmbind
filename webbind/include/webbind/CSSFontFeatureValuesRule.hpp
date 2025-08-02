@@ -18,6 +18,7 @@ public:
     static CSSFontFeatureValuesRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFontFeatureValuesRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `fontFamily` attribute.
     /// [`CSSFontFeatureValuesRule.fontFamily`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/fontFamily)
     [[nodiscard]] jsbind::String fontFamily() const;

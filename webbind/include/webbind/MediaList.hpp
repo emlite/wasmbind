@@ -15,6 +15,7 @@ public:
     static MediaList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mediaText` attribute.
     /// [`MediaList.mediaText`](https://developer.mozilla.org/en-US/docs/Web/API/MediaList/mediaText)
     [[nodiscard]] jsbind::String mediaText() const;

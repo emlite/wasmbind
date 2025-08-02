@@ -44,6 +44,7 @@ public:
     static HighlightRegistry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HighlightRegistry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The highlightsFromPoint method.
     /// [`HighlightRegistry.highlightsFromPoint`](https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/highlightsFromPoint)
     jsbind::TypedArray<HighlightHitResult> highlightsFromPoint(float x, float y);

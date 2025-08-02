@@ -7,6 +7,7 @@ ConvolverNode ConvolverNode::take_ownership(Handle h) noexcept {
         return ConvolverNode(h);
     }
 ConvolverNode ConvolverNode::clone() const noexcept { return *this; }
+emlite::Val ConvolverNode::instance() noexcept { return emlite::Val::global("ConvolverNode"); }
 ConvolverNode::ConvolverNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 ConvolverNode::ConvolverNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

@@ -18,6 +18,7 @@ public:
     static CSSTranslate take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSTranslate clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSTranslate(..)` constructor, creating a new CSSTranslate instance
     CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y);
     /// The `new CSSTranslate(..)` constructor, creating a new CSSTranslate instance

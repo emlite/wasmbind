@@ -32,6 +32,7 @@ public:
     static EventTarget take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EventTarget clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EventTarget(..)` constructor, creating a new EventTarget instance
     EventTarget();
     /// The addEventListener method.

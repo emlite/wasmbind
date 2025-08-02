@@ -8,6 +8,7 @@ BluetoothAdvertisingEvent BluetoothAdvertisingEvent::take_ownership(Handle h) no
         return BluetoothAdvertisingEvent(h);
     }
 BluetoothAdvertisingEvent BluetoothAdvertisingEvent::clone() const noexcept { return *this; }
+emlite::Val BluetoothAdvertisingEvent::instance() noexcept { return emlite::Val::global("BluetoothAdvertisingEvent"); }
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const emlite::Val &val) noexcept: Event(val) {}
 

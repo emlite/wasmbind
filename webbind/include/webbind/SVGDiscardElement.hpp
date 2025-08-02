@@ -16,5 +16,6 @@ public:
     static SVGDiscardElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGDiscardElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

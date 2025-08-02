@@ -6,6 +6,7 @@ MessageEvent MessageEvent::take_ownership(Handle h) noexcept {
         return MessageEvent(h);
     }
 MessageEvent MessageEvent::clone() const noexcept { return *this; }
+emlite::Val MessageEvent::instance() noexcept { return emlite::Val::global("MessageEvent"); }
 MessageEvent::MessageEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 MessageEvent::MessageEvent(const emlite::Val &val) noexcept: Event(val) {}
 

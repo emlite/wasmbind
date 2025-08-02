@@ -15,5 +15,6 @@ public:
     static WEBGL_compressed_texture_pvrtc take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_compressed_texture_pvrtc clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

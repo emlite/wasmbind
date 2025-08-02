@@ -40,6 +40,7 @@ TrustedTypePolicyFactory TrustedTypePolicyFactory::take_ownership(Handle h) noex
         return TrustedTypePolicyFactory(h);
     }
 TrustedTypePolicyFactory TrustedTypePolicyFactory::clone() const noexcept { return *this; }
+emlite::Val TrustedTypePolicyFactory::instance() noexcept { return emlite::Val::global("TrustedTypePolicyFactory"); }
 TrustedTypePolicyFactory::TrustedTypePolicyFactory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TrustedTypePolicyFactory::TrustedTypePolicyFactory(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

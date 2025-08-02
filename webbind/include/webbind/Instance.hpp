@@ -17,6 +17,7 @@ public:
     static Instance take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Instance clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Instance(..)` constructor, creating a new Instance instance
     Instance(const Module& module_);
     /// The `new Instance(..)` constructor, creating a new Instance instance

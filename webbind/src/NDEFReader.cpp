@@ -62,6 +62,7 @@ NDEFReader NDEFReader::take_ownership(Handle h) noexcept {
         return NDEFReader(h);
     }
 NDEFReader NDEFReader::clone() const noexcept { return *this; }
+emlite::Val NDEFReader::instance() noexcept { return emlite::Val::global("NDEFReader"); }
 NDEFReader::NDEFReader(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 NDEFReader::NDEFReader(const emlite::Val &val) noexcept: EventTarget(val) {}
 

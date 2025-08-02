@@ -5,6 +5,7 @@ AudioSession AudioSession::take_ownership(Handle h) noexcept {
         return AudioSession(h);
     }
 AudioSession AudioSession::clone() const noexcept { return *this; }
+emlite::Val AudioSession::instance() noexcept { return emlite::Val::global("AudioSession"); }
 AudioSession::AudioSession(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 AudioSession::AudioSession(const emlite::Val &val) noexcept: EventTarget(val) {}
 

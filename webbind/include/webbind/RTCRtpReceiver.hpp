@@ -58,6 +58,7 @@ public:
     static RTCRtpReceiver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCRtpReceiver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `track` attribute.
     /// [`RTCRtpReceiver.track`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/track)
     [[nodiscard]] MediaStreamTrack track() const;

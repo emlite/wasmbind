@@ -15,6 +15,7 @@ public:
     static WebGLObject take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLObject clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
     /// [`WebGLObject.label`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLObject/label)
     [[nodiscard]] jsbind::String label() const;

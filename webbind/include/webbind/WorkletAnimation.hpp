@@ -16,6 +16,7 @@ public:
     static WorkletAnimation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WorkletAnimation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WorkletAnimation(..)` constructor, creating a new WorkletAnimation instance
     WorkletAnimation(const jsbind::String& animatorName);
     /// The `new WorkletAnimation(..)` constructor, creating a new WorkletAnimation instance

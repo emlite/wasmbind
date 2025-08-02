@@ -18,6 +18,7 @@ public:
     static FontFaceSetLoadEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FontFaceSetLoadEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FontFaceSetLoadEvent(..)` constructor, creating a new FontFaceSetLoadEvent instance
     FontFaceSetLoadEvent(const jsbind::String& type);
     /// The `new FontFaceSetLoadEvent(..)` constructor, creating a new FontFaceSetLoadEvent instance

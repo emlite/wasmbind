@@ -17,6 +17,7 @@ public:
     static XRHand take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRHand clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `size` attribute.
     /// [`XRHand.size`](https://developer.mozilla.org/en-US/docs/Web/API/XRHand/size)
     [[nodiscard]] unsigned long size() const;

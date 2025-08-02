@@ -15,5 +15,6 @@ public:
     static ViewTransitionTypeSet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ViewTransitionTypeSet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

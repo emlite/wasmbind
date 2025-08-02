@@ -18,6 +18,7 @@ public:
     static NotificationEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NotificationEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NotificationEvent(..)` constructor, creating a new NotificationEvent instance
     NotificationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `notification` attribute.

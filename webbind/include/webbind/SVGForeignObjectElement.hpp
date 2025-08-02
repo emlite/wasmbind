@@ -18,6 +18,7 @@ public:
     static SVGForeignObjectElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGForeignObjectElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`SVGForeignObjectElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGForeignObjectElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;

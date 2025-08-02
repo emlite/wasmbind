@@ -16,6 +16,7 @@ public:
     static HTMLDialogElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLDialogElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDialogElement(..)` constructor, creating a new HTMLDialogElement instance
     HTMLDialogElement();
     /// Getter of the `open` attribute.

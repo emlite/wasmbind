@@ -15,5 +15,6 @@ public:
     static SVGUnitTypes take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGUnitTypes clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

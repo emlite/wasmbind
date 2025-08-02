@@ -32,6 +32,7 @@ public:
     static Selection take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Selection clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `anchorNode` attribute.
     /// [`Selection.anchorNode`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/anchorNode)
     [[nodiscard]] Node anchorNode() const;

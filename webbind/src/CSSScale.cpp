@@ -5,6 +5,7 @@ CSSScale CSSScale::take_ownership(Handle h) noexcept {
         return CSSScale(h);
     }
 CSSScale CSSScale::clone() const noexcept { return *this; }
+emlite::Val CSSScale::instance() noexcept { return emlite::Val::global("CSSScale"); }
 CSSScale::CSSScale(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_ownership(h)) {}
 CSSScale::CSSScale(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 

@@ -16,5 +16,6 @@ public:
     static SVGTSpanElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGTSpanElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

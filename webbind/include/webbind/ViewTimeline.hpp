@@ -19,6 +19,7 @@ public:
     static ViewTimeline take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ViewTimeline clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ViewTimeline(..)` constructor, creating a new ViewTimeline instance
     ViewTimeline();
     /// The `new ViewTimeline(..)` constructor, creating a new ViewTimeline instance

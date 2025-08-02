@@ -15,6 +15,7 @@ public:
     static SpeechRecognitionAlternative take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechRecognitionAlternative clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `transcript` attribute.
     /// [`SpeechRecognitionAlternative.transcript`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/transcript)
     [[nodiscard]] jsbind::String transcript() const;

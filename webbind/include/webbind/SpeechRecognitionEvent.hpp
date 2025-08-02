@@ -18,6 +18,7 @@ public:
     static SpeechRecognitionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechRecognitionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionEvent(..)` constructor, creating a new SpeechRecognitionEvent instance
     SpeechRecognitionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `resultIndex` attribute.

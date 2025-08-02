@@ -6,6 +6,7 @@ CSSHWB CSSHWB::take_ownership(Handle h) noexcept {
         return CSSHWB(h);
     }
 CSSHWB CSSHWB::clone() const noexcept { return *this; }
+emlite::Val CSSHWB::instance() noexcept { return emlite::Val::global("CSSHWB"); }
 CSSHWB::CSSHWB(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
 CSSHWB::CSSHWB(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 

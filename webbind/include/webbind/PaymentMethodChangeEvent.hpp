@@ -16,6 +16,7 @@ public:
     static PaymentMethodChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PaymentMethodChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PaymentMethodChangeEvent(..)` constructor, creating a new PaymentMethodChangeEvent instance
     PaymentMethodChangeEvent(const jsbind::String& type);
     /// The `new PaymentMethodChangeEvent(..)` constructor, creating a new PaymentMethodChangeEvent instance

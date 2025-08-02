@@ -16,6 +16,7 @@ public:
     static NavigatorManagedData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigatorManagedData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getManagedConfiguration method.
     /// [`NavigatorManagedData.getManagedConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorManagedData/getManagedConfiguration)
     jsbind::Promise<jsbind::Record<jsbind::String, jsbind::Object>> getManagedConfiguration(const jsbind::TypedArray<jsbind::String>& keys);

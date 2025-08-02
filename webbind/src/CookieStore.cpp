@@ -205,6 +205,7 @@ CookieStore CookieStore::take_ownership(Handle h) noexcept {
         return CookieStore(h);
     }
 CookieStore CookieStore::clone() const noexcept { return *this; }
+emlite::Val CookieStore::instance() noexcept { return emlite::Val::global("CookieStore"); }
 CookieStore::CookieStore(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 CookieStore::CookieStore(const emlite::Val &val) noexcept: EventTarget(val) {}
 

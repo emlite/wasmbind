@@ -15,5 +15,6 @@ public:
     static FontFaceFeatures take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FontFaceFeatures clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

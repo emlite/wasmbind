@@ -5,6 +5,7 @@ LayoutWorkletGlobalScope LayoutWorkletGlobalScope::take_ownership(Handle h) noex
         return LayoutWorkletGlobalScope(h);
     }
 LayoutWorkletGlobalScope LayoutWorkletGlobalScope::clone() const noexcept { return *this; }
+emlite::Val LayoutWorkletGlobalScope::instance() noexcept { return emlite::Val::global("LayoutWorkletGlobalScope"); }
 LayoutWorkletGlobalScope::LayoutWorkletGlobalScope(Handle h) noexcept : WorkletGlobalScope(emlite::Val::take_ownership(h)) {}
 LayoutWorkletGlobalScope::LayoutWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 

@@ -15,6 +15,7 @@ public:
     static PushSubscriptionOptions take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PushSubscriptionOptions clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `userVisibleOnly` attribute.
     /// [`PushSubscriptionOptions.userVisibleOnly`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscriptionOptions/userVisibleOnly)
     [[nodiscard]] bool userVisibleOnly() const;

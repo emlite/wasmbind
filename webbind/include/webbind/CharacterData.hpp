@@ -18,6 +18,7 @@ public:
     static CharacterData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CharacterData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `data` attribute.
     /// [`CharacterData.data`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/data)
     [[nodiscard]] jsbind::String data() const;

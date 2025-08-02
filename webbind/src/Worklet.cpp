@@ -21,6 +21,7 @@ Worklet Worklet::take_ownership(Handle h) noexcept {
         return Worklet(h);
     }
 Worklet Worklet::clone() const noexcept { return *this; }
+emlite::Val Worklet::instance() noexcept { return emlite::Val::global("Worklet"); }
 Worklet::Worklet(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Worklet::Worklet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

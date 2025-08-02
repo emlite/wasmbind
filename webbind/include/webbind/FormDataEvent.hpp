@@ -18,6 +18,7 @@ public:
     static FormDataEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FormDataEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FormDataEvent(..)` constructor, creating a new FormDataEvent instance
     FormDataEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `formData` attribute.

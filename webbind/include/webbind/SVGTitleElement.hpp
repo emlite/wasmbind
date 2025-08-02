@@ -16,5 +16,6 @@ public:
     static SVGTitleElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGTitleElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -19,6 +19,7 @@ public:
     static XRInputSource take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRInputSource clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `handedness` attribute.
     /// [`XRInputSource.handedness`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSource/handedness)
     [[nodiscard]] XRHandedness handedness() const;

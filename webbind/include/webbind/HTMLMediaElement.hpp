@@ -26,6 +26,7 @@ public:
     static HTMLMediaElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLMediaElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `error` attribute.
     /// [`HTMLMediaElement.error`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/error)
     [[nodiscard]] MediaError error() const;

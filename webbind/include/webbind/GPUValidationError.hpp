@@ -16,6 +16,7 @@ public:
     static GPUValidationError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUValidationError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GPUValidationError(..)` constructor, creating a new GPUValidationError instance
     GPUValidationError(const jsbind::String& message);
 };

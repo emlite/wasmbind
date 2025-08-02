@@ -5,6 +5,7 @@ HTMLOListElement HTMLOListElement::take_ownership(Handle h) noexcept {
         return HTMLOListElement(h);
     }
 HTMLOListElement HTMLOListElement::clone() const noexcept { return *this; }
+emlite::Val HTMLOListElement::instance() noexcept { return emlite::Val::global("HTMLOListElement"); }
 HTMLOListElement::HTMLOListElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLOListElement::HTMLOListElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

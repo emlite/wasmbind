@@ -15,6 +15,7 @@ public:
     static LaunchQueue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LaunchQueue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setConsumer method.
     /// [`LaunchQueue.setConsumer`](https://developer.mozilla.org/en-US/docs/Web/API/LaunchQueue/setConsumer)
     jsbind::Undefined setConsumer(const jsbind::Function& consumer);

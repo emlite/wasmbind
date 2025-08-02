@@ -6,6 +6,7 @@ CSSPositionTryRule CSSPositionTryRule::take_ownership(Handle h) noexcept {
         return CSSPositionTryRule(h);
     }
 CSSPositionTryRule CSSPositionTryRule::clone() const noexcept { return *this; }
+emlite::Val CSSPositionTryRule::instance() noexcept { return emlite::Val::global("CSSPositionTryRule"); }
 CSSPositionTryRule::CSSPositionTryRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
 CSSPositionTryRule::CSSPositionTryRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 

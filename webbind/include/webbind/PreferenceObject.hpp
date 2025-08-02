@@ -16,6 +16,7 @@ public:
     static PreferenceObject take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PreferenceObject clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `override` attribute.
     /// [`PreferenceObject.override`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/override)
     [[nodiscard]] jsbind::String override() const;

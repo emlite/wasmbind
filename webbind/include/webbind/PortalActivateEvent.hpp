@@ -18,6 +18,7 @@ public:
     static PortalActivateEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PortalActivateEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PortalActivateEvent(..)` constructor, creating a new PortalActivateEvent instance
     PortalActivateEvent(const jsbind::String& type);
     /// The `new PortalActivateEvent(..)` constructor, creating a new PortalActivateEvent instance

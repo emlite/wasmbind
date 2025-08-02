@@ -52,6 +52,7 @@ public:
     static AudioEncoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioEncoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioEncoder(..)` constructor, creating a new AudioEncoder instance
     AudioEncoder(const jsbind::Any& init);
     /// Getter of the `state` attribute.

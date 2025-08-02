@@ -19,6 +19,7 @@ public:
     static SVGTextPositioningElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGTextPositioningElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`SVGTextPositioningElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPositioningElement/x)
     [[nodiscard]] SVGAnimatedLengthList x() const;

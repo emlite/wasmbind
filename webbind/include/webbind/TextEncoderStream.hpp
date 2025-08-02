@@ -18,6 +18,7 @@ public:
     static TextEncoderStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextEncoderStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextEncoderStream(..)` constructor, creating a new TextEncoderStream instance
     TextEncoderStream();
     /// Getter of the `encoding` attribute.

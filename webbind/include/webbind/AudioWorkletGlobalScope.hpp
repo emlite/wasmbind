@@ -18,6 +18,7 @@ public:
     static AudioWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioWorkletGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The registerProcessor method.
     /// [`AudioWorkletGlobalScope.registerProcessor`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)
     jsbind::Undefined registerProcessor(const jsbind::String& name, const jsbind::Function& processorCtor);

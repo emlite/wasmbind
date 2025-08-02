@@ -18,6 +18,7 @@ public:
     static StereoPannerNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StereoPannerNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new StereoPannerNode(..)` constructor, creating a new StereoPannerNode instance
     StereoPannerNode(const BaseAudioContext& context);
     /// The `new StereoPannerNode(..)` constructor, creating a new StereoPannerNode instance

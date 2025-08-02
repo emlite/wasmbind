@@ -18,6 +18,7 @@ public:
     static CanvasCaptureMediaStreamTrack take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CanvasCaptureMediaStreamTrack clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `canvas` attribute.
     /// [`CanvasCaptureMediaStreamTrack.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStreamTrack/canvas)
     [[nodiscard]] HTMLCanvasElement canvas() const;

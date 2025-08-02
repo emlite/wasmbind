@@ -18,6 +18,7 @@ public:
     static URL take_ownership(Handle h) noexcept;
 
     [[nodiscard]] URL clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new URL(..)` constructor, creating a new URL instance
     URL(const jsbind::String& url);
     /// The `new URL(..)` constructor, creating a new URL instance

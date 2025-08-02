@@ -16,6 +16,7 @@ public:
     static AbsoluteOrientationSensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AbsoluteOrientationSensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AbsoluteOrientationSensor(..)` constructor, creating a new AbsoluteOrientationSensor instance
     AbsoluteOrientationSensor();
     /// The `new AbsoluteOrientationSensor(..)` constructor, creating a new AbsoluteOrientationSensor instance

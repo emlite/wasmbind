@@ -39,6 +39,7 @@ ServiceWorkerContainer ServiceWorkerContainer::take_ownership(Handle h) noexcept
         return ServiceWorkerContainer(h);
     }
 ServiceWorkerContainer ServiceWorkerContainer::clone() const noexcept { return *this; }
+emlite::Val ServiceWorkerContainer::instance() noexcept { return emlite::Val::global("ServiceWorkerContainer"); }
 ServiceWorkerContainer::ServiceWorkerContainer(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 ServiceWorkerContainer::ServiceWorkerContainer(const emlite::Val &val) noexcept: EventTarget(val) {}
 

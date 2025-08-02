@@ -16,6 +16,7 @@ public:
     static Gyroscope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Gyroscope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Gyroscope(..)` constructor, creating a new Gyroscope instance
     Gyroscope();
     /// The `new Gyroscope(..)` constructor, creating a new Gyroscope instance

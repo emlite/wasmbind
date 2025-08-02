@@ -17,6 +17,7 @@ public:
     static NDEFRecord take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NDEFRecord clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFRecord(..)` constructor, creating a new NDEFRecord instance
     NDEFRecord(const jsbind::Any& recordInit);
     /// Getter of the `recordType` attribute.

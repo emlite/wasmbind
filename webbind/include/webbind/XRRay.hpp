@@ -18,6 +18,7 @@ public:
     static XRRay take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRRay clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRRay(..)` constructor, creating a new XRRay instance
     XRRay(const XRRigidTransform& transform);
     /// Getter of the `origin` attribute.

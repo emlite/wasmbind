@@ -16,6 +16,7 @@ public:
     static StylePropertyMap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StylePropertyMap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The set method.
     /// [`StylePropertyMap.set`](https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMap/set)
     jsbind::Undefined set(const jsbind::String& property, const jsbind::Any& values);

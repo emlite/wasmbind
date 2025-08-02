@@ -16,6 +16,7 @@ public:
     static CSSMathValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `operator` attribute.
     /// [`CSSMathValue.operator`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathValue/operator)
     [[nodiscard]] CSSMathOperator operator_() const;

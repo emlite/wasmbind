@@ -6,6 +6,7 @@ AudioTrackList AudioTrackList::take_ownership(Handle h) noexcept {
         return AudioTrackList(h);
     }
 AudioTrackList AudioTrackList::clone() const noexcept { return *this; }
+emlite::Val AudioTrackList::instance() noexcept { return emlite::Val::global("AudioTrackList"); }
 AudioTrackList::AudioTrackList(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 AudioTrackList::AudioTrackList(const emlite::Val &val) noexcept: EventTarget(val) {}
 

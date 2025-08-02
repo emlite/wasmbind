@@ -17,6 +17,7 @@ public:
     static Worker take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Worker clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Worker(..)` constructor, creating a new Worker instance
     Worker(const jsbind::Any& scriptURL);
     /// The `new Worker(..)` constructor, creating a new Worker instance

@@ -6,6 +6,7 @@ RTCIceCandidate RTCIceCandidate::take_ownership(Handle h) noexcept {
         return RTCIceCandidate(h);
     }
 RTCIceCandidate RTCIceCandidate::clone() const noexcept { return *this; }
+emlite::Val RTCIceCandidate::instance() noexcept { return emlite::Val::global("RTCIceCandidate"); }
 RTCIceCandidate::RTCIceCandidate(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCIceCandidate::RTCIceCandidate(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

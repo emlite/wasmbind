@@ -17,6 +17,7 @@ public:
     static EXT_disjoint_timer_query take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_disjoint_timer_query clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createQueryEXT method.
     /// [`EXT_disjoint_timer_query.createQueryEXT`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/createQueryEXT)
     WebGLTimerQueryEXT createQueryEXT();

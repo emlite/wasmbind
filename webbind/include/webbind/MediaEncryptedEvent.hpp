@@ -16,6 +16,7 @@ public:
     static MediaEncryptedEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaEncryptedEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaEncryptedEvent(..)` constructor, creating a new MediaEncryptedEvent instance
     MediaEncryptedEvent(const jsbind::String& type);
     /// The `new MediaEncryptedEvent(..)` constructor, creating a new MediaEncryptedEvent instance

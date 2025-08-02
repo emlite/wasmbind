@@ -190,6 +190,7 @@ public:
     static PublicKeyCredential take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PublicKeyCredential clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `rawId` attribute.
     /// [`PublicKeyCredential.rawId`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/rawId)
     [[nodiscard]] jsbind::ArrayBuffer rawId() const;

@@ -5,6 +5,7 @@ MediaKeyStatusMap MediaKeyStatusMap::take_ownership(Handle h) noexcept {
         return MediaKeyStatusMap(h);
     }
 MediaKeyStatusMap MediaKeyStatusMap::clone() const noexcept { return *this; }
+emlite::Val MediaKeyStatusMap::instance() noexcept { return emlite::Val::global("MediaKeyStatusMap"); }
 MediaKeyStatusMap::MediaKeyStatusMap(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaKeyStatusMap::MediaKeyStatusMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

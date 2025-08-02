@@ -16,6 +16,7 @@ public:
     static AnimationEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AnimationEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AnimationEvent(..)` constructor, creating a new AnimationEvent instance
     AnimationEvent(const jsbind::String& type);
     /// The `new AnimationEvent(..)` constructor, creating a new AnimationEvent instance

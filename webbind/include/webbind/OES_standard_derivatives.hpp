@@ -15,5 +15,6 @@ public:
     static OES_standard_derivatives take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OES_standard_derivatives clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -55,6 +55,7 @@ public:
     static ImageCapture take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ImageCapture clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ImageCapture(..)` constructor, creating a new ImageCapture instance
     ImageCapture(const MediaStreamTrack& videoTrack);
     /// The takePhoto method.

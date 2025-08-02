@@ -15,5 +15,6 @@ public:
     static NamedFlowMap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NamedFlowMap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

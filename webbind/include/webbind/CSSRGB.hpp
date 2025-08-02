@@ -16,6 +16,7 @@ public:
     static CSSRGB take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSRGB clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSRGB(..)` constructor, creating a new CSSRGB instance
     CSSRGB(const jsbind::Any& r, const jsbind::Any& g, const jsbind::Any& b);
     /// The `new CSSRGB(..)` constructor, creating a new CSSRGB instance

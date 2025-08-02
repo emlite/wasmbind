@@ -6,6 +6,7 @@ HTMLTrackElement HTMLTrackElement::take_ownership(Handle h) noexcept {
         return HTMLTrackElement(h);
     }
 HTMLTrackElement HTMLTrackElement::clone() const noexcept { return *this; }
+emlite::Val HTMLTrackElement::instance() noexcept { return emlite::Val::global("HTMLTrackElement"); }
 HTMLTrackElement::HTMLTrackElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLTrackElement::HTMLTrackElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

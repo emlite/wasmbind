@@ -19,6 +19,7 @@ public:
     static InputEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InputEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new InputEvent(..)` constructor, creating a new InputEvent instance
     InputEvent(const jsbind::String& type);
     /// The `new InputEvent(..)` constructor, creating a new InputEvent instance

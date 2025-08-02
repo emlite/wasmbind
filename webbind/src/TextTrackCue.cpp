@@ -6,6 +6,7 @@ TextTrackCue TextTrackCue::take_ownership(Handle h) noexcept {
         return TextTrackCue(h);
     }
 TextTrackCue TextTrackCue::clone() const noexcept { return *this; }
+emlite::Val TextTrackCue::instance() noexcept { return emlite::Val::global("TextTrackCue"); }
 TextTrackCue::TextTrackCue(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 TextTrackCue::TextTrackCue(const emlite::Val &val) noexcept: EventTarget(val) {}
 

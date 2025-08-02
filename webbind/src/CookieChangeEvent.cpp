@@ -6,6 +6,7 @@ CookieChangeEvent CookieChangeEvent::take_ownership(Handle h) noexcept {
         return CookieChangeEvent(h);
     }
 CookieChangeEvent CookieChangeEvent::clone() const noexcept { return *this; }
+emlite::Val CookieChangeEvent::instance() noexcept { return emlite::Val::global("CookieChangeEvent"); }
 CookieChangeEvent::CookieChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 CookieChangeEvent::CookieChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

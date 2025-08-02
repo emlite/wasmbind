@@ -16,6 +16,7 @@ public:
     static HTMLTimeElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTimeElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTimeElement(..)` constructor, creating a new HTMLTimeElement instance
     HTMLTimeElement();
     /// Getter of the `dateTime` attribute.

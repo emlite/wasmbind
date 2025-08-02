@@ -22,6 +22,7 @@ public:
     static DOMQuad take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMQuad clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMQuad(..)` constructor, creating a new DOMQuad instance
     DOMQuad();
     /// The `new DOMQuad(..)` constructor, creating a new DOMQuad instance

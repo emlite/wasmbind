@@ -17,6 +17,7 @@ public:
     static PreferenceManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PreferenceManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `colorScheme` attribute.
     /// [`PreferenceManager.colorScheme`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager/colorScheme)
     [[nodiscard]] PreferenceObject colorScheme() const;

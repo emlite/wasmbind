@@ -29,6 +29,7 @@ public:
     static CacheStorage take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CacheStorage clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The match method.
     /// [`CacheStorage.match`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match)
     jsbind::Promise<jsbind::Any> match(const jsbind::Any& request);

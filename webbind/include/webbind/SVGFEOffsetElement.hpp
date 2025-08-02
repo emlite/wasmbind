@@ -20,6 +20,7 @@ public:
     static SVGFEOffsetElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEOffsetElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEOffsetElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEOffsetElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

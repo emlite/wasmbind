@@ -9,6 +9,7 @@ SVGFEColorMatrixElement SVGFEColorMatrixElement::take_ownership(Handle h) noexce
         return SVGFEColorMatrixElement(h);
     }
 SVGFEColorMatrixElement SVGFEColorMatrixElement::clone() const noexcept { return *this; }
+emlite::Val SVGFEColorMatrixElement::instance() noexcept { return emlite::Val::global("SVGFEColorMatrixElement"); }
 SVGFEColorMatrixElement::SVGFEColorMatrixElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEColorMatrixElement::SVGFEColorMatrixElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

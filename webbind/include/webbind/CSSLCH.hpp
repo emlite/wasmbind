@@ -16,6 +16,7 @@ public:
     static CSSLCH take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSLCH clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSLCH(..)` constructor, creating a new CSSLCH instance
     CSSLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h);
     /// The `new CSSLCH(..)` constructor, creating a new CSSLCH instance

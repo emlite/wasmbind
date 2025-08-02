@@ -38,6 +38,7 @@ Scheduler Scheduler::take_ownership(Handle h) noexcept {
         return Scheduler(h);
     }
 Scheduler Scheduler::clone() const noexcept { return *this; }
+emlite::Val Scheduler::instance() noexcept { return emlite::Val::global("Scheduler"); }
 Scheduler::Scheduler(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Scheduler::Scheduler(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

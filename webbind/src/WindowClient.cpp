@@ -5,6 +5,7 @@ WindowClient WindowClient::take_ownership(Handle h) noexcept {
         return WindowClient(h);
     }
 WindowClient WindowClient::clone() const noexcept { return *this; }
+emlite::Val WindowClient::instance() noexcept { return emlite::Val::global("WindowClient"); }
 WindowClient::WindowClient(Handle h) noexcept : Client(emlite::Val::take_ownership(h)) {}
 WindowClient::WindowClient(const emlite::Val &val) noexcept: Client(val) {}
 

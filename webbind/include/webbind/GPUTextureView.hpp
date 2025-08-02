@@ -15,6 +15,7 @@ public:
     static GPUTextureView take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUTextureView clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
     /// [`GPUTextureView.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTextureView/label)
     [[nodiscard]] jsbind::String label() const;

@@ -5,6 +5,7 @@ PerformanceEntry PerformanceEntry::take_ownership(Handle h) noexcept {
         return PerformanceEntry(h);
     }
 PerformanceEntry PerformanceEntry::clone() const noexcept { return *this; }
+emlite::Val PerformanceEntry::instance() noexcept { return emlite::Val::global("PerformanceEntry"); }
 PerformanceEntry::PerformanceEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PerformanceEntry::PerformanceEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

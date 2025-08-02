@@ -6,6 +6,7 @@ SVGForeignObjectElement SVGForeignObjectElement::take_ownership(Handle h) noexce
         return SVGForeignObjectElement(h);
     }
 SVGForeignObjectElement SVGForeignObjectElement::clone() const noexcept { return *this; }
+emlite::Val SVGForeignObjectElement::instance() noexcept { return emlite::Val::global("SVGForeignObjectElement"); }
 SVGForeignObjectElement::SVGForeignObjectElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
 SVGForeignObjectElement::SVGForeignObjectElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 

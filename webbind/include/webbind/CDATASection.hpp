@@ -16,5 +16,6 @@ public:
     static CDATASection take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CDATASection clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

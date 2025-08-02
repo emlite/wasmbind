@@ -20,6 +20,7 @@ public:
     static HTMLFieldSetElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLFieldSetElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFieldSetElement(..)` constructor, creating a new HTMLFieldSetElement instance
     HTMLFieldSetElement();
     /// Getter of the `disabled` attribute.

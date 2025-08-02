@@ -24,6 +24,7 @@ public:
     static SVGFEConvolveMatrixElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEConvolveMatrixElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEConvolveMatrixElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEConvolveMatrixElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

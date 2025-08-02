@@ -16,6 +16,7 @@ public:
     static FileSystemWritableFileStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemWritableFileStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The write method.
     /// [`FileSystemWritableFileStream.write`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemWritableFileStream/write)
     jsbind::Promise<jsbind::Undefined> write(const jsbind::Any& data);

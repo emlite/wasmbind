@@ -18,6 +18,7 @@ public:
     static WindowControlsOverlayGeometryChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WindowControlsOverlayGeometryChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WindowControlsOverlayGeometryChangeEvent(..)` constructor, creating a new WindowControlsOverlayGeometryChangeEvent instance
     WindowControlsOverlayGeometryChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `titlebarAreaRect` attribute.

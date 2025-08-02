@@ -11,6 +11,7 @@ CSSPseudoElement CSSPseudoElement::take_ownership(Handle h) noexcept {
         return CSSPseudoElement(h);
     }
 CSSPseudoElement CSSPseudoElement::clone() const noexcept { return *this; }
+emlite::Val CSSPseudoElement::instance() noexcept { return emlite::Val::global("CSSPseudoElement"); }
 CSSPseudoElement::CSSPseudoElement(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 CSSPseudoElement::CSSPseudoElement(const emlite::Val &val) noexcept: EventTarget(val) {}
 

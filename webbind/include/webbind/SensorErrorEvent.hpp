@@ -18,6 +18,7 @@ public:
     static SensorErrorEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SensorErrorEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SensorErrorEvent(..)` constructor, creating a new SensorErrorEvent instance
     SensorErrorEvent(const jsbind::String& type, const jsbind::Any& errorEventInitDict);
     /// Getter of the `error` attribute.

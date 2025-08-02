@@ -6,6 +6,7 @@ BlobEvent BlobEvent::take_ownership(Handle h) noexcept {
         return BlobEvent(h);
     }
 BlobEvent BlobEvent::clone() const noexcept { return *this; }
+emlite::Val BlobEvent::instance() noexcept { return emlite::Val::global("BlobEvent"); }
 BlobEvent::BlobEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 BlobEvent::BlobEvent(const emlite::Val &val) noexcept: Event(val) {}
 

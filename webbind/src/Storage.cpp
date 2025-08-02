@@ -5,6 +5,7 @@ Storage Storage::take_ownership(Handle h) noexcept {
         return Storage(h);
     }
 Storage Storage::clone() const noexcept { return *this; }
+emlite::Val Storage::instance() noexcept { return emlite::Val::global("Storage"); }
 Storage::Storage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Storage::Storage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

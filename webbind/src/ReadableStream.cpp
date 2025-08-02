@@ -87,6 +87,7 @@ ReadableStream ReadableStream::take_ownership(Handle h) noexcept {
         return ReadableStream(h);
     }
 ReadableStream ReadableStream::clone() const noexcept { return *this; }
+emlite::Val ReadableStream::instance() noexcept { return emlite::Val::global("ReadableStream"); }
 ReadableStream::ReadableStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ReadableStream::ReadableStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

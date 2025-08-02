@@ -60,6 +60,7 @@ public:
     static IdentityProvider take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IdentityProvider clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The close method.
     /// [`IdentityProvider.close`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider/close)
     static jsbind::Undefined close();

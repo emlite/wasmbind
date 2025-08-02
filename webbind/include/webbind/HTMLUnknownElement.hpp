@@ -16,5 +16,6 @@ public:
     static HTMLUnknownElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLUnknownElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

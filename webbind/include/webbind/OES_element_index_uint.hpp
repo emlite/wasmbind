@@ -15,5 +15,6 @@ public:
     static OES_element_index_uint take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OES_element_index_uint clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

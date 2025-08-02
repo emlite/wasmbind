@@ -6,6 +6,7 @@ DOMMatrix DOMMatrix::take_ownership(Handle h) noexcept {
         return DOMMatrix(h);
     }
 DOMMatrix DOMMatrix::clone() const noexcept { return *this; }
+emlite::Val DOMMatrix::instance() noexcept { return emlite::Val::global("DOMMatrix"); }
 DOMMatrix::DOMMatrix(Handle h) noexcept : DOMMatrixReadOnly(emlite::Val::take_ownership(h)) {}
 DOMMatrix::DOMMatrix(const emlite::Val &val) noexcept: DOMMatrixReadOnly(val) {}
 

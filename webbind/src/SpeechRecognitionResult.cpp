@@ -6,6 +6,7 @@ SpeechRecognitionResult SpeechRecognitionResult::take_ownership(Handle h) noexce
         return SpeechRecognitionResult(h);
     }
 SpeechRecognitionResult SpeechRecognitionResult::clone() const noexcept { return *this; }
+emlite::Val SpeechRecognitionResult::instance() noexcept { return emlite::Val::global("SpeechRecognitionResult"); }
 SpeechRecognitionResult::SpeechRecognitionResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionResult::SpeechRecognitionResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

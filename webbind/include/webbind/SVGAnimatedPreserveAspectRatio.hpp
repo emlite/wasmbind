@@ -17,6 +17,7 @@ public:
     static SVGAnimatedPreserveAspectRatio take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedPreserveAspectRatio clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedPreserveAspectRatio.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedPreserveAspectRatio/baseVal)
     [[nodiscard]] SVGPreserveAspectRatio baseVal() const;

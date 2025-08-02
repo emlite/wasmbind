@@ -318,6 +318,7 @@ PaymentRequestEvent PaymentRequestEvent::take_ownership(Handle h) noexcept {
         return PaymentRequestEvent(h);
     }
 PaymentRequestEvent PaymentRequestEvent::clone() const noexcept { return *this; }
+emlite::Val PaymentRequestEvent::instance() noexcept { return emlite::Val::global("PaymentRequestEvent"); }
 PaymentRequestEvent::PaymentRequestEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 PaymentRequestEvent::PaymentRequestEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 

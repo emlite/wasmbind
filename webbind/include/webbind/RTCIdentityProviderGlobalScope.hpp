@@ -18,6 +18,7 @@ public:
     static RTCIdentityProviderGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCIdentityProviderGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `rtcIdentityProvider` attribute.
     /// [`RTCIdentityProviderGlobalScope.rtcIdentityProvider`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityProviderGlobalScope/rtcIdentityProvider)
     [[nodiscard]] RTCIdentityProviderRegistrar rtcIdentityProvider() const;

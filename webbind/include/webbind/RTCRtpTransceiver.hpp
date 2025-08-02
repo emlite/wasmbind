@@ -36,6 +36,7 @@ public:
     static RTCRtpTransceiver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCRtpTransceiver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mid` attribute.
     /// [`RTCRtpTransceiver.mid`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/mid)
     [[nodiscard]] jsbind::String mid() const;

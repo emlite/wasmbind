@@ -18,6 +18,7 @@ public:
     static DocumentPictureInPictureEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DocumentPictureInPictureEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DocumentPictureInPictureEvent(..)` constructor, creating a new DocumentPictureInPictureEvent instance
     DocumentPictureInPictureEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `window` attribute.

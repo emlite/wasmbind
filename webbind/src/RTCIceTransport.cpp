@@ -95,6 +95,7 @@ RTCIceTransport RTCIceTransport::take_ownership(Handle h) noexcept {
         return RTCIceTransport(h);
     }
 RTCIceTransport RTCIceTransport::clone() const noexcept { return *this; }
+emlite::Val RTCIceTransport::instance() noexcept { return emlite::Val::global("RTCIceTransport"); }
 RTCIceTransport::RTCIceTransport(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 RTCIceTransport::RTCIceTransport(const emlite::Val &val) noexcept: EventTarget(val) {}
 

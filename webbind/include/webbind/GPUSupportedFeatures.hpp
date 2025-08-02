@@ -15,5 +15,6 @@ public:
     static GPUSupportedFeatures take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUSupportedFeatures clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

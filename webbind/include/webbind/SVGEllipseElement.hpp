@@ -18,6 +18,7 @@ public:
     static SVGEllipseElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGEllipseElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cx` attribute.
     /// [`SVGEllipseElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/cx)
     [[nodiscard]] SVGAnimatedLength cx() const;

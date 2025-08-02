@@ -17,6 +17,7 @@ public:
     static CSSTransformComponent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSTransformComponent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `is2D` attribute.
     /// [`CSSTransformComponent.is2D`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformComponent/is2D)
     [[nodiscard]] bool is2D() const;

@@ -5,6 +5,7 @@ OverconstrainedError OverconstrainedError::take_ownership(Handle h) noexcept {
         return OverconstrainedError(h);
     }
 OverconstrainedError OverconstrainedError::clone() const noexcept { return *this; }
+emlite::Val OverconstrainedError::instance() noexcept { return emlite::Val::global("OverconstrainedError"); }
 OverconstrainedError::OverconstrainedError(Handle h) noexcept : DOMException(emlite::Val::take_ownership(h)) {}
 OverconstrainedError::OverconstrainedError(const emlite::Val &val) noexcept: DOMException(val) {}
 

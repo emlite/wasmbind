@@ -5,6 +5,7 @@ CSSPageDescriptors CSSPageDescriptors::take_ownership(Handle h) noexcept {
         return CSSPageDescriptors(h);
     }
 CSSPageDescriptors CSSPageDescriptors::clone() const noexcept { return *this; }
+emlite::Val CSSPageDescriptors::instance() noexcept { return emlite::Val::global("CSSPageDescriptors"); }
 CSSPageDescriptors::CSSPageDescriptors(Handle h) noexcept : CSSStyleDeclaration(emlite::Val::take_ownership(h)) {}
 CSSPageDescriptors::CSSPageDescriptors(const emlite::Val &val) noexcept: CSSStyleDeclaration(val) {}
 

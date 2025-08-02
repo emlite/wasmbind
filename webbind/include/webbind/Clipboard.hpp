@@ -29,6 +29,7 @@ public:
     static Clipboard take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Clipboard clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The read method.
     /// [`Clipboard.read`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read)
     jsbind::Promise<jsbind::Any> read();

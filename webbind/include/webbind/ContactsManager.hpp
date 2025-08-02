@@ -50,6 +50,7 @@ public:
     static ContactsManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ContactsManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getProperties method.
     /// [`ContactsManager.getProperties`](https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager/getProperties)
     jsbind::Promise<jsbind::TypedArray<ContactProperty>> getProperties();

@@ -22,6 +22,7 @@ public:
     static Request take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Request clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Request(..)` constructor, creating a new Request instance
     Request(const jsbind::Any& input);
     /// The `new Request(..)` constructor, creating a new Request instance

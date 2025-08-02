@@ -19,6 +19,7 @@ public:
     static UIEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] UIEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new UIEvent(..)` constructor, creating a new UIEvent instance
     UIEvent(const jsbind::String& type);
     /// The `new UIEvent(..)` constructor, creating a new UIEvent instance

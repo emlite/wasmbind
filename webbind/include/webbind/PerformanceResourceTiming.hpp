@@ -18,6 +18,7 @@ public:
     static PerformanceResourceTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceResourceTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `initiatorType` attribute.
     /// [`PerformanceResourceTiming.initiatorType`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/initiatorType)
     [[nodiscard]] jsbind::String initiatorType() const;

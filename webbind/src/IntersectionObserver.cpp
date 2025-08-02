@@ -7,6 +7,7 @@ IntersectionObserver IntersectionObserver::take_ownership(Handle h) noexcept {
         return IntersectionObserver(h);
     }
 IntersectionObserver IntersectionObserver::clone() const noexcept { return *this; }
+emlite::Val IntersectionObserver::instance() noexcept { return emlite::Val::global("IntersectionObserver"); }
 IntersectionObserver::IntersectionObserver(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IntersectionObserver::IntersectionObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

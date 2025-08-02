@@ -15,6 +15,7 @@ public:
     static ReadableStreamBYOBRequest take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ReadableStreamBYOBRequest clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `view` attribute.
     /// [`ReadableStreamBYOBRequest.view`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest/view)
     [[nodiscard]] jsbind::Any view() const;

@@ -5,6 +5,7 @@ BluetoothUUID BluetoothUUID::take_ownership(Handle h) noexcept {
         return BluetoothUUID(h);
     }
 BluetoothUUID BluetoothUUID::clone() const noexcept { return *this; }
+emlite::Val BluetoothUUID::instance() noexcept { return emlite::Val::global("BluetoothUUID"); }
 BluetoothUUID::BluetoothUUID(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothUUID::BluetoothUUID(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -19,6 +19,7 @@ public:
     static XRRigidTransform take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRRigidTransform clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRRigidTransform(..)` constructor, creating a new XRRigidTransform instance
     XRRigidTransform();
     /// The `new XRRigidTransform(..)` constructor, creating a new XRRigidTransform instance

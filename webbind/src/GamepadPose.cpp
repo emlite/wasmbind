@@ -5,6 +5,7 @@ GamepadPose GamepadPose::take_ownership(Handle h) noexcept {
         return GamepadPose(h);
     }
 GamepadPose GamepadPose::clone() const noexcept { return *this; }
+emlite::Val GamepadPose::instance() noexcept { return emlite::Val::global("GamepadPose"); }
 GamepadPose::GamepadPose(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GamepadPose::GamepadPose(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

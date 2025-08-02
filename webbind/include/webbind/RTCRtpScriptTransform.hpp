@@ -17,6 +17,7 @@ public:
     static RTCRtpScriptTransform take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCRtpScriptTransform clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCRtpScriptTransform(..)` constructor, creating a new RTCRtpScriptTransform instance
     RTCRtpScriptTransform(const Worker& worker);
     /// The `new RTCRtpScriptTransform(..)` constructor, creating a new RTCRtpScriptTransform instance

@@ -18,6 +18,7 @@ public:
     static USBAlternateInterface take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBAlternateInterface clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBAlternateInterface(..)` constructor, creating a new USBAlternateInterface instance
     USBAlternateInterface(const USBInterface& deviceInterface, unsigned char alternateSetting);
     /// Getter of the `alternateSetting` attribute.

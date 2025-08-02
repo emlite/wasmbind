@@ -29,6 +29,7 @@ public:
     static PressureObserver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PressureObserver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PressureObserver(..)` constructor, creating a new PressureObserver instance
     PressureObserver(const jsbind::Function& callback);
     /// The observe method.

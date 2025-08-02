@@ -16,6 +16,7 @@ public:
     static CSSParserFunction take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSParserFunction clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserFunction(..)` constructor, creating a new CSSParserFunction instance
     CSSParserFunction(const jsbind::String& name, const jsbind::TypedArray<jsbind::TypedArray<CSSParserValue>>& args);
     /// Getter of the `name` attribute.

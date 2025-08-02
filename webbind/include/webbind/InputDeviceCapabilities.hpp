@@ -15,6 +15,7 @@ public:
     static InputDeviceCapabilities take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InputDeviceCapabilities clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new InputDeviceCapabilities(..)` constructor, creating a new InputDeviceCapabilities instance
     InputDeviceCapabilities();
     /// The `new InputDeviceCapabilities(..)` constructor, creating a new InputDeviceCapabilities instance

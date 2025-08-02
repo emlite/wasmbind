@@ -6,6 +6,7 @@ TextTrackList TextTrackList::take_ownership(Handle h) noexcept {
         return TextTrackList(h);
     }
 TextTrackList TextTrackList::clone() const noexcept { return *this; }
+emlite::Val TextTrackList::instance() noexcept { return emlite::Val::global("TextTrackList"); }
 TextTrackList::TextTrackList(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 TextTrackList::TextTrackList(const emlite::Val &val) noexcept: EventTarget(val) {}
 

@@ -51,6 +51,7 @@ public:
     static SharedStorageWorklet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedStorageWorklet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The selectURL method.
     /// [`SharedStorageWorklet.selectURL`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorklet/selectURL)
     jsbind::Promise<jsbind::Any> selectURL(const jsbind::String& name, const jsbind::TypedArray<SharedStorageUrlWithMetadata>& urls);

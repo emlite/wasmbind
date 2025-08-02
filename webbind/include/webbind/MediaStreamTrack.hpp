@@ -82,6 +82,7 @@ public:
     static MediaStreamTrack take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaStreamTrack clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `kind` attribute.
     /// [`MediaStreamTrack.kind`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/kind)
     [[nodiscard]] jsbind::String kind() const;

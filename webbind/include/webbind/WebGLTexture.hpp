@@ -16,5 +16,6 @@ public:
     static WebGLTexture take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLTexture clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

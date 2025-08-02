@@ -7,6 +7,7 @@ SpeechSynthesis SpeechSynthesis::take_ownership(Handle h) noexcept {
         return SpeechSynthesis(h);
     }
 SpeechSynthesis SpeechSynthesis::clone() const noexcept { return *this; }
+emlite::Val SpeechSynthesis::instance() noexcept { return emlite::Val::global("SpeechSynthesis"); }
 SpeechSynthesis::SpeechSynthesis(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 SpeechSynthesis::SpeechSynthesis(const emlite::Val &val) noexcept: EventTarget(val) {}
 

@@ -19,6 +19,7 @@ public:
     static ResizeObserverEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ResizeObserverEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `target` attribute.
     /// [`ResizeObserverEntry.target`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/target)
     [[nodiscard]] Element target() const;

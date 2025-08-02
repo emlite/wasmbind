@@ -29,6 +29,7 @@ NavigationPreloadManager NavigationPreloadManager::take_ownership(Handle h) noex
         return NavigationPreloadManager(h);
     }
 NavigationPreloadManager NavigationPreloadManager::clone() const noexcept { return *this; }
+emlite::Val NavigationPreloadManager::instance() noexcept { return emlite::Val::global("NavigationPreloadManager"); }
 NavigationPreloadManager::NavigationPreloadManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigationPreloadManager::NavigationPreloadManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -17,6 +17,7 @@ public:
     static HTMLCollection take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLCollection clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`HTMLCollection.length`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection/length)
     [[nodiscard]] unsigned long length() const;

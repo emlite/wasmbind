@@ -15,6 +15,7 @@ public:
     static SVGAnimatedEnumeration take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedEnumeration clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedEnumeration.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedEnumeration/baseVal)
     [[nodiscard]] unsigned short baseVal() const;

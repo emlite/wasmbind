@@ -15,6 +15,7 @@ public:
     static GPUQuerySet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUQuerySet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The destroy method.
     /// [`GPUQuerySet.destroy`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/destroy)
     jsbind::Undefined destroy();

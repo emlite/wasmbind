@@ -6,6 +6,7 @@ HTMLDataListElement HTMLDataListElement::take_ownership(Handle h) noexcept {
         return HTMLDataListElement(h);
     }
 HTMLDataListElement HTMLDataListElement::clone() const noexcept { return *this; }
+emlite::Val HTMLDataListElement::instance() noexcept { return emlite::Val::global("HTMLDataListElement"); }
 HTMLDataListElement::HTMLDataListElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLDataListElement::HTMLDataListElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

@@ -16,6 +16,7 @@ public:
     static HTMLTitleElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTitleElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTitleElement(..)` constructor, creating a new HTMLTitleElement instance
     HTMLTitleElement();
     /// Getter of the `text` attribute.

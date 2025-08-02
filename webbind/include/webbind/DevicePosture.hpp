@@ -16,6 +16,7 @@ public:
     static DevicePosture take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DevicePosture clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`DevicePosture.type`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/type)
     [[nodiscard]] DevicePostureType type() const;

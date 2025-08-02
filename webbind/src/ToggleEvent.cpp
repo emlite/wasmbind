@@ -6,6 +6,7 @@ ToggleEvent ToggleEvent::take_ownership(Handle h) noexcept {
         return ToggleEvent(h);
     }
 ToggleEvent ToggleEvent::clone() const noexcept { return *this; }
+emlite::Val ToggleEvent::instance() noexcept { return emlite::Val::global("ToggleEvent"); }
 ToggleEvent::ToggleEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 ToggleEvent::ToggleEvent(const emlite::Val &val) noexcept: Event(val) {}
 

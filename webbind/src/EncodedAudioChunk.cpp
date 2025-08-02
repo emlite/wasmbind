@@ -5,6 +5,7 @@ EncodedAudioChunk EncodedAudioChunk::take_ownership(Handle h) noexcept {
         return EncodedAudioChunk(h);
     }
 EncodedAudioChunk EncodedAudioChunk::clone() const noexcept { return *this; }
+emlite::Val EncodedAudioChunk::instance() noexcept { return emlite::Val::global("EncodedAudioChunk"); }
 EncodedAudioChunk::EncodedAudioChunk(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EncodedAudioChunk::EncodedAudioChunk(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

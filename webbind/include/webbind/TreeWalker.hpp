@@ -17,6 +17,7 @@ public:
     static TreeWalker take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TreeWalker clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `root` attribute.
     /// [`TreeWalker.root`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root)
     [[nodiscard]] Node root() const;

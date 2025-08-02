@@ -9,6 +9,7 @@ SVGFEGaussianBlurElement SVGFEGaussianBlurElement::take_ownership(Handle h) noex
         return SVGFEGaussianBlurElement(h);
     }
 SVGFEGaussianBlurElement SVGFEGaussianBlurElement::clone() const noexcept { return *this; }
+emlite::Val SVGFEGaussianBlurElement::instance() noexcept { return emlite::Val::global("SVGFEGaussianBlurElement"); }
 SVGFEGaussianBlurElement::SVGFEGaussianBlurElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEGaussianBlurElement::SVGFEGaussianBlurElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

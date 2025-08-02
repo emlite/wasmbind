@@ -18,6 +18,7 @@ public:
     static SVGPolygonElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGPolygonElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `points` attribute.
     /// [`SVGPolygonElement.points`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolygonElement/points)
     [[nodiscard]] SVGPointList points() const;

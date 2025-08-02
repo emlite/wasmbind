@@ -19,6 +19,7 @@ public:
     static OscillatorNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OscillatorNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OscillatorNode(..)` constructor, creating a new OscillatorNode instance
     OscillatorNode(const BaseAudioContext& context);
     /// The `new OscillatorNode(..)` constructor, creating a new OscillatorNode instance

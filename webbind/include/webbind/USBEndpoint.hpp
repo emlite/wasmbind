@@ -17,6 +17,7 @@ public:
     static USBEndpoint take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBEndpoint clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBEndpoint(..)` constructor, creating a new USBEndpoint instance
     USBEndpoint(const USBAlternateInterface& alternate, unsigned char endpointNumber, const USBDirection& direction);
     /// Getter of the `endpointNumber` attribute.

@@ -71,6 +71,7 @@ public:
     static Writer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Writer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
     /// [`Writer.create`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/create)
     static jsbind::Promise<Writer> create();

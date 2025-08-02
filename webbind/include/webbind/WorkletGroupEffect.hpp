@@ -17,6 +17,7 @@ public:
     static WorkletGroupEffect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WorkletGroupEffect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getChildren method.
     /// [`WorkletGroupEffect.getChildren`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletGroupEffect/getChildren)
     jsbind::TypedArray<WorkletAnimationEffect> getChildren();

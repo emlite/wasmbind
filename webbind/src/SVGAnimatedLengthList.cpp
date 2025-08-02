@@ -6,6 +6,7 @@ SVGAnimatedLengthList SVGAnimatedLengthList::take_ownership(Handle h) noexcept {
         return SVGAnimatedLengthList(h);
     }
 SVGAnimatedLengthList SVGAnimatedLengthList::clone() const noexcept { return *this; }
+emlite::Val SVGAnimatedLengthList::instance() noexcept { return emlite::Val::global("SVGAnimatedLengthList"); }
 SVGAnimatedLengthList::SVGAnimatedLengthList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGAnimatedLengthList::SVGAnimatedLengthList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

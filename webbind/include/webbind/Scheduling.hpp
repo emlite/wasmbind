@@ -28,6 +28,7 @@ public:
     static Scheduling take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Scheduling clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The isInputPending method.
     /// [`Scheduling.isInputPending`](https://developer.mozilla.org/en-US/docs/Web/API/Scheduling/isInputPending)
     bool isInputPending();

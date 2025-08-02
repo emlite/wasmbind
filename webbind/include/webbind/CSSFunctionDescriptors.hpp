@@ -16,6 +16,7 @@ public:
     static CSSFunctionDescriptors take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFunctionDescriptors clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `result` attribute.
     /// [`CSSFunctionDescriptors.result`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionDescriptors/result)
     [[nodiscard]] jsbind::String result() const;

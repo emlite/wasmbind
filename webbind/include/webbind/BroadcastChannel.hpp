@@ -16,6 +16,7 @@ public:
     static BroadcastChannel take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BroadcastChannel clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BroadcastChannel(..)` constructor, creating a new BroadcastChannel instance
     BroadcastChannel(const jsbind::String& name);
     /// Getter of the `name` attribute.

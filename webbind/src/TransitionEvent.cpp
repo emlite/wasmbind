@@ -5,6 +5,7 @@ TransitionEvent TransitionEvent::take_ownership(Handle h) noexcept {
         return TransitionEvent(h);
     }
 TransitionEvent TransitionEvent::clone() const noexcept { return *this; }
+emlite::Val TransitionEvent::instance() noexcept { return emlite::Val::global("TransitionEvent"); }
 TransitionEvent::TransitionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 TransitionEvent::TransitionEvent(const emlite::Val &val) noexcept: Event(val) {}
 

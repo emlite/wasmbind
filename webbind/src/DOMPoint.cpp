@@ -6,6 +6,7 @@ DOMPoint DOMPoint::take_ownership(Handle h) noexcept {
         return DOMPoint(h);
     }
 DOMPoint DOMPoint::clone() const noexcept { return *this; }
+emlite::Val DOMPoint::instance() noexcept { return emlite::Val::global("DOMPoint"); }
 DOMPoint::DOMPoint(Handle h) noexcept : DOMPointReadOnly(emlite::Val::take_ownership(h)) {}
 DOMPoint::DOMPoint(const emlite::Val &val) noexcept: DOMPointReadOnly(val) {}
 

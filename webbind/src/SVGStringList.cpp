@@ -5,6 +5,7 @@ SVGStringList SVGStringList::take_ownership(Handle h) noexcept {
         return SVGStringList(h);
     }
 SVGStringList SVGStringList::clone() const noexcept { return *this; }
+emlite::Val SVGStringList::instance() noexcept { return emlite::Val::global("SVGStringList"); }
 SVGStringList::SVGStringList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGStringList::SVGStringList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

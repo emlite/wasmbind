@@ -28,6 +28,7 @@ public:
     static PeriodicSyncManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PeriodicSyncManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The register method.
     /// [`PeriodicSyncManager.register`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncManager/register)
     jsbind::Promise<jsbind::Undefined> register_(const jsbind::String& tag);

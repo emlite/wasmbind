@@ -15,5 +15,6 @@ public:
     static CustomStateSet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CustomStateSet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

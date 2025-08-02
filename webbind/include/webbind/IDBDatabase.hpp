@@ -46,6 +46,7 @@ public:
     static IDBDatabase take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBDatabase clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`IDBDatabase.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/name)
     [[nodiscard]] jsbind::String name() const;

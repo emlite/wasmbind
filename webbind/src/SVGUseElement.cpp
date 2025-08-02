@@ -8,6 +8,7 @@ SVGUseElement SVGUseElement::take_ownership(Handle h) noexcept {
         return SVGUseElement(h);
     }
 SVGUseElement SVGUseElement::clone() const noexcept { return *this; }
+emlite::Val SVGUseElement::instance() noexcept { return emlite::Val::global("SVGUseElement"); }
 SVGUseElement::SVGUseElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
 SVGUseElement::SVGUseElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 

@@ -32,6 +32,7 @@ public:
     static HID take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HID clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
     /// [`HID.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/HID/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;

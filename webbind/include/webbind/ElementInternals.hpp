@@ -53,6 +53,7 @@ public:
     static ElementInternals take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ElementInternals clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `shadowRoot` attribute.
     /// [`ElementInternals.shadowRoot`](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/shadowRoot)
     [[nodiscard]] ShadowRoot shadowRoot() const;

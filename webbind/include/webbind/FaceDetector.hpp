@@ -31,6 +31,7 @@ public:
     static FaceDetector take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FaceDetector clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FaceDetector(..)` constructor, creating a new FaceDetector instance
     FaceDetector();
     /// The `new FaceDetector(..)` constructor, creating a new FaceDetector instance

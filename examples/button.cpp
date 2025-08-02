@@ -14,7 +14,7 @@ int main() {
     }
     auto body   = bodies.item(0);
     auto button = document.createElement("BUTTON")
-                      .as<HTMLButtonElement>();
+                      .safe_cast<HTMLButtonElement>().unwrap();
     button.textContent("Click me");
     button.addEventListener(
         "click",

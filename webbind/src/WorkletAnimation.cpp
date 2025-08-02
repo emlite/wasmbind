@@ -6,6 +6,7 @@ WorkletAnimation WorkletAnimation::take_ownership(Handle h) noexcept {
         return WorkletAnimation(h);
     }
 WorkletAnimation WorkletAnimation::clone() const noexcept { return *this; }
+emlite::Val WorkletAnimation::instance() noexcept { return emlite::Val::global("WorkletAnimation"); }
 WorkletAnimation::WorkletAnimation(Handle h) noexcept : Animation(emlite::Val::take_ownership(h)) {}
 WorkletAnimation::WorkletAnimation(const emlite::Val &val) noexcept: Animation(val) {}
 

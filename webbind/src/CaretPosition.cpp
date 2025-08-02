@@ -7,6 +7,7 @@ CaretPosition CaretPosition::take_ownership(Handle h) noexcept {
         return CaretPosition(h);
     }
 CaretPosition CaretPosition::clone() const noexcept { return *this; }
+emlite::Val CaretPosition::instance() noexcept { return emlite::Val::global("CaretPosition"); }
 CaretPosition::CaretPosition(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CaretPosition::CaretPosition(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -30,6 +30,7 @@ public:
     static Ink take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Ink clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The requestPresenter method.
     /// [`Ink.requestPresenter`](https://developer.mozilla.org/en-US/docs/Web/API/Ink/requestPresenter)
     jsbind::Promise<DelegatedInkTrailPresenter> requestPresenter();

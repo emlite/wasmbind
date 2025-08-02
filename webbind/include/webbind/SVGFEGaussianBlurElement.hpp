@@ -21,6 +21,7 @@ public:
     static SVGFEGaussianBlurElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEGaussianBlurElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEGaussianBlurElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEGaussianBlurElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

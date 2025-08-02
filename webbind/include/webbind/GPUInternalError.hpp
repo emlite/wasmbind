@@ -16,6 +16,7 @@ public:
     static GPUInternalError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUInternalError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GPUInternalError(..)` constructor, creating a new GPUInternalError instance
     GPUInternalError(const jsbind::String& message);
 };

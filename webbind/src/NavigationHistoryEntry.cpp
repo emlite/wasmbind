@@ -5,6 +5,7 @@ NavigationHistoryEntry NavigationHistoryEntry::take_ownership(Handle h) noexcept
         return NavigationHistoryEntry(h);
     }
 NavigationHistoryEntry NavigationHistoryEntry::clone() const noexcept { return *this; }
+emlite::Val NavigationHistoryEntry::instance() noexcept { return emlite::Val::global("NavigationHistoryEntry"); }
 NavigationHistoryEntry::NavigationHistoryEntry(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 NavigationHistoryEntry::NavigationHistoryEntry(const emlite::Val &val) noexcept: EventTarget(val) {}
 

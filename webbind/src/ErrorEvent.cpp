@@ -5,6 +5,7 @@ ErrorEvent ErrorEvent::take_ownership(Handle h) noexcept {
         return ErrorEvent(h);
     }
 ErrorEvent ErrorEvent::clone() const noexcept { return *this; }
+emlite::Val ErrorEvent::instance() noexcept { return emlite::Val::global("ErrorEvent"); }
 ErrorEvent::ErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 ErrorEvent::ErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 

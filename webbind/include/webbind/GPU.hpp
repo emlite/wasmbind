@@ -36,6 +36,7 @@ public:
     static GPU take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPU clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The requestAdapter method.
     /// [`GPU.requestAdapter`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/requestAdapter)
     jsbind::Promise<GPUAdapter> requestAdapter();

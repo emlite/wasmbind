@@ -21,6 +21,7 @@ public:
     static RTCTrackEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCTrackEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCTrackEvent(..)` constructor, creating a new RTCTrackEvent instance
     RTCTrackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `receiver` attribute.

@@ -16,6 +16,7 @@ public:
     static PasswordCredential take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PasswordCredential clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PasswordCredential(..)` constructor, creating a new PasswordCredential instance
     PasswordCredential(const jsbind::Any& data);
     /// Getter of the `password` attribute.

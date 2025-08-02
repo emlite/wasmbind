@@ -17,6 +17,7 @@ public:
     static LayoutFragment take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LayoutFragment clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inlineSize` attribute.
     /// [`LayoutFragment.inlineSize`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutFragment/inlineSize)
     [[nodiscard]] double inlineSize() const;

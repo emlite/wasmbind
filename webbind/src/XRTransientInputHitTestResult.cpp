@@ -7,6 +7,7 @@ XRTransientInputHitTestResult XRTransientInputHitTestResult::take_ownership(Hand
         return XRTransientInputHitTestResult(h);
     }
 XRTransientInputHitTestResult XRTransientInputHitTestResult::clone() const noexcept { return *this; }
+emlite::Val XRTransientInputHitTestResult::instance() noexcept { return emlite::Val::global("XRTransientInputHitTestResult"); }
 XRTransientInputHitTestResult::XRTransientInputHitTestResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRTransientInputHitTestResult::XRTransientInputHitTestResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -6,6 +6,7 @@ AnimationNodeList AnimationNodeList::take_ownership(Handle h) noexcept {
         return AnimationNodeList(h);
     }
 AnimationNodeList AnimationNodeList::clone() const noexcept { return *this; }
+emlite::Val AnimationNodeList::instance() noexcept { return emlite::Val::global("AnimationNodeList"); }
 AnimationNodeList::AnimationNodeList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AnimationNodeList::AnimationNodeList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

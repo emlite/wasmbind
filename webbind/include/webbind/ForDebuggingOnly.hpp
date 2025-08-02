@@ -15,6 +15,7 @@ public:
     static ForDebuggingOnly take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ForDebuggingOnly clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The reportAdAuctionWin method.
     /// [`ForDebuggingOnly.reportAdAuctionWin`](https://developer.mozilla.org/en-US/docs/Web/API/ForDebuggingOnly/reportAdAuctionWin)
     jsbind::Undefined reportAdAuctionWin(const jsbind::String& url);

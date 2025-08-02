@@ -40,6 +40,7 @@ public:
     static PaymentRequest take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PaymentRequest clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PaymentRequest(..)` constructor, creating a new PaymentRequest instance
     PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const jsbind::Any& details);
     /// The `new PaymentRequest(..)` constructor, creating a new PaymentRequest instance

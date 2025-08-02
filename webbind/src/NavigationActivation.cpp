@@ -6,6 +6,7 @@ NavigationActivation NavigationActivation::take_ownership(Handle h) noexcept {
         return NavigationActivation(h);
     }
 NavigationActivation NavigationActivation::clone() const noexcept { return *this; }
+emlite::Val NavigationActivation::instance() noexcept { return emlite::Val::global("NavigationActivation"); }
 NavigationActivation::NavigationActivation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigationActivation::NavigationActivation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

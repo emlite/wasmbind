@@ -6,6 +6,7 @@ CSSRotate CSSRotate::take_ownership(Handle h) noexcept {
         return CSSRotate(h);
     }
 CSSRotate CSSRotate::clone() const noexcept { return *this; }
+emlite::Val CSSRotate::instance() noexcept { return emlite::Val::global("CSSRotate"); }
 CSSRotate::CSSRotate(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_ownership(h)) {}
 CSSRotate::CSSRotate(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 

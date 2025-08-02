@@ -15,6 +15,7 @@ public:
     static Table take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Table clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Table(..)` constructor, creating a new Table instance
     Table(const jsbind::Any& descriptor);
     /// The `new Table(..)` constructor, creating a new Table instance

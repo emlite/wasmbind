@@ -192,6 +192,7 @@ MediaDevices MediaDevices::take_ownership(Handle h) noexcept {
         return MediaDevices(h);
     }
 MediaDevices MediaDevices::clone() const noexcept { return *this; }
+emlite::Val MediaDevices::instance() noexcept { return emlite::Val::global("MediaDevices"); }
 MediaDevices::MediaDevices(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaDevices::MediaDevices(const emlite::Val &val) noexcept: EventTarget(val) {}
 

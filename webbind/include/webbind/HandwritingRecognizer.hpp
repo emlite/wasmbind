@@ -35,6 +35,7 @@ public:
     static HandwritingRecognizer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HandwritingRecognizer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The startDrawing method.
     /// [`HandwritingRecognizer.startDrawing`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingRecognizer/startDrawing)
     HandwritingDrawing startDrawing();

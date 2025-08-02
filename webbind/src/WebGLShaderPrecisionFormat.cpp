@@ -5,6 +5,7 @@ WebGLShaderPrecisionFormat WebGLShaderPrecisionFormat::take_ownership(Handle h) 
         return WebGLShaderPrecisionFormat(h);
     }
 WebGLShaderPrecisionFormat WebGLShaderPrecisionFormat::clone() const noexcept { return *this; }
+emlite::Val WebGLShaderPrecisionFormat::instance() noexcept { return emlite::Val::global("WebGLShaderPrecisionFormat"); }
 WebGLShaderPrecisionFormat::WebGLShaderPrecisionFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebGLShaderPrecisionFormat::WebGLShaderPrecisionFormat(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

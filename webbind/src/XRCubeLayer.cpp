@@ -7,6 +7,7 @@ XRCubeLayer XRCubeLayer::take_ownership(Handle h) noexcept {
         return XRCubeLayer(h);
     }
 XRCubeLayer XRCubeLayer::clone() const noexcept { return *this; }
+emlite::Val XRCubeLayer::instance() noexcept { return emlite::Val::global("XRCubeLayer"); }
 XRCubeLayer::XRCubeLayer(Handle h) noexcept : XRCompositionLayer(emlite::Val::take_ownership(h)) {}
 XRCubeLayer::XRCubeLayer(const emlite::Val &val) noexcept: XRCompositionLayer(val) {}
 

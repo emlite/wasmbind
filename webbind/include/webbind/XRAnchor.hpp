@@ -17,6 +17,7 @@ public:
     static XRAnchor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRAnchor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `anchorSpace` attribute.
     /// [`XRAnchor.anchorSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRAnchor/anchorSpace)
     [[nodiscard]] XRSpace anchorSpace() const;

@@ -17,6 +17,7 @@ public:
     static NavigationActivation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigationActivation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `from` attribute.
     /// [`NavigationActivation.from`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationActivation/from)
     [[nodiscard]] NavigationHistoryEntry from() const;

@@ -16,6 +16,7 @@ public:
     static HTMLModElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLModElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLModElement(..)` constructor, creating a new HTMLModElement instance
     HTMLModElement();
     /// Getter of the `cite` attribute.

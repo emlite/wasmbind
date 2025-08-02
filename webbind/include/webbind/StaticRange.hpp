@@ -16,6 +16,7 @@ public:
     static StaticRange take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StaticRange clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new StaticRange(..)` constructor, creating a new StaticRange instance
     StaticRange(const jsbind::Any& init);
 };

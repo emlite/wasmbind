@@ -20,6 +20,7 @@ public:
     static SVGFEImageElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEImageElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `preserveAspectRatio` attribute.
     /// [`SVGFEImageElement.preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEImageElement/preserveAspectRatio)
     [[nodiscard]] SVGAnimatedPreserveAspectRatio preserveAspectRatio() const;

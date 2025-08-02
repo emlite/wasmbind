@@ -15,6 +15,7 @@ public:
     static GeolocationCoordinates take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GeolocationCoordinates clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `accuracy` attribute.
     /// [`GeolocationCoordinates.accuracy`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/accuracy)
     [[nodiscard]] double accuracy() const;

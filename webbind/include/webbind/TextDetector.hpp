@@ -33,6 +33,7 @@ public:
     static TextDetector take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextDetector clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextDetector(..)` constructor, creating a new TextDetector instance
     TextDetector();
     /// The detect method.

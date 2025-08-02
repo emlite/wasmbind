@@ -18,6 +18,7 @@ public:
     static HTMLMeterElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLMeterElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMeterElement(..)` constructor, creating a new HTMLMeterElement instance
     HTMLMeterElement();
     /// Getter of the `value` attribute.

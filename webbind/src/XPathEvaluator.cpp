@@ -8,6 +8,7 @@ XPathEvaluator XPathEvaluator::take_ownership(Handle h) noexcept {
         return XPathEvaluator(h);
     }
 XPathEvaluator XPathEvaluator::clone() const noexcept { return *this; }
+emlite::Val XPathEvaluator::instance() noexcept { return emlite::Val::global("XPathEvaluator"); }
 XPathEvaluator::XPathEvaluator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XPathEvaluator::XPathEvaluator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

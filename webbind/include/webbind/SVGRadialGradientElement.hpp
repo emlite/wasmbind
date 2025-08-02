@@ -18,6 +18,7 @@ public:
     static SVGRadialGradientElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGRadialGradientElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cx` attribute.
     /// [`SVGRadialGradientElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/cx)
     [[nodiscard]] SVGAnimatedLength cx() const;

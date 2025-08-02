@@ -6,6 +6,7 @@ OVR_multiview2 OVR_multiview2::take_ownership(Handle h) noexcept {
         return OVR_multiview2(h);
     }
 OVR_multiview2 OVR_multiview2::clone() const noexcept { return *this; }
+emlite::Val OVR_multiview2::instance() noexcept { return emlite::Val::global("OVR_multiview2"); }
 OVR_multiview2::OVR_multiview2(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 OVR_multiview2::OVR_multiview2(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -7,6 +7,7 @@ XRReferenceSpaceEvent XRReferenceSpaceEvent::take_ownership(Handle h) noexcept {
         return XRReferenceSpaceEvent(h);
     }
 XRReferenceSpaceEvent XRReferenceSpaceEvent::clone() const noexcept { return *this; }
+emlite::Val XRReferenceSpaceEvent::instance() noexcept { return emlite::Val::global("XRReferenceSpaceEvent"); }
 XRReferenceSpaceEvent::XRReferenceSpaceEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 XRReferenceSpaceEvent::XRReferenceSpaceEvent(const emlite::Val &val) noexcept: Event(val) {}
 

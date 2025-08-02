@@ -16,5 +16,6 @@ public:
     static WebGLTimerQueryEXT take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLTimerQueryEXT clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

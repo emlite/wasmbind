@@ -16,6 +16,7 @@ public:
     static ExtendableEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ExtendableEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ExtendableEvent(..)` constructor, creating a new ExtendableEvent instance
     ExtendableEvent(const jsbind::String& type);
     /// The `new ExtendableEvent(..)` constructor, creating a new ExtendableEvent instance

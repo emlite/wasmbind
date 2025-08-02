@@ -94,6 +94,7 @@ public:
     static GPUCommandEncoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUCommandEncoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The beginRenderPass method.
     /// [`GPUCommandEncoder.beginRenderPass`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/beginRenderPass)
     GPURenderPassEncoder beginRenderPass(const GPURenderPassDescriptor& descriptor);

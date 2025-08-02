@@ -30,6 +30,7 @@ FaceDetector FaceDetector::take_ownership(Handle h) noexcept {
         return FaceDetector(h);
     }
 FaceDetector FaceDetector::clone() const noexcept { return *this; }
+emlite::Val FaceDetector::instance() noexcept { return emlite::Val::global("FaceDetector"); }
 FaceDetector::FaceDetector(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FaceDetector::FaceDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

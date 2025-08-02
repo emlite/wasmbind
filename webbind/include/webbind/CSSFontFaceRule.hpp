@@ -18,6 +18,7 @@ public:
     static CSSFontFaceRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFontFaceRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `style` attribute.
     /// [`CSSFontFaceRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFaceRule/style)
     [[nodiscard]] CSSFontFaceDescriptors style() const;

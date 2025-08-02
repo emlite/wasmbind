@@ -18,6 +18,7 @@ public:
     static CSSMathInvert take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSMathInvert clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathInvert(..)` constructor, creating a new CSSMathInvert instance
     CSSMathInvert(const jsbind::Any& arg);
     /// Getter of the `value` attribute.

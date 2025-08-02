@@ -5,6 +5,7 @@ CharacterBoundsUpdateEvent CharacterBoundsUpdateEvent::take_ownership(Handle h) 
         return CharacterBoundsUpdateEvent(h);
     }
 CharacterBoundsUpdateEvent CharacterBoundsUpdateEvent::clone() const noexcept { return *this; }
+emlite::Val CharacterBoundsUpdateEvent::instance() noexcept { return emlite::Val::global("CharacterBoundsUpdateEvent"); }
 CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const emlite::Val &val) noexcept: Event(val) {}
 

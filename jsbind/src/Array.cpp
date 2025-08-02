@@ -16,6 +16,10 @@ ArrayBuffer::ArrayBuffer(size_t byteLen)
           emlite::Val::global("ArrayBuffer").new_(byteLen)
       ) {}
 
+emlite::Val ArrayBuffer::instance() noexcept {
+    return emlite::Val::global("ArrayBuffer");
+}
+
 size_t ArrayBuffer::byteLength() const {
     return emlite::Val::get("byteLength").as<size_t>();
 }

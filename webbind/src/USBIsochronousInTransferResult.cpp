@@ -6,6 +6,7 @@ USBIsochronousInTransferResult USBIsochronousInTransferResult::take_ownership(Ha
         return USBIsochronousInTransferResult(h);
     }
 USBIsochronousInTransferResult USBIsochronousInTransferResult::clone() const noexcept { return *this; }
+emlite::Val USBIsochronousInTransferResult::instance() noexcept { return emlite::Val::global("USBIsochronousInTransferResult"); }
 USBIsochronousInTransferResult::USBIsochronousInTransferResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBIsochronousInTransferResult::USBIsochronousInTransferResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

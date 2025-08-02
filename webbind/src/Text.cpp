@@ -11,6 +11,7 @@ Text Text::take_ownership(Handle h) noexcept {
         return Text(h);
     }
 Text Text::clone() const noexcept { return *this; }
+emlite::Val Text::instance() noexcept { return emlite::Val::global("Text"); }
 Text::Text(Handle h) noexcept : CharacterData(emlite::Val::take_ownership(h)) {}
 Text::Text(const emlite::Val &val) noexcept: CharacterData(val) {}
 

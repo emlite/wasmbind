@@ -33,6 +33,7 @@ public:
     static StorageBucketManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StorageBucketManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The open method.
     /// [`StorageBucketManager.open`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucketManager/open)
     jsbind::Promise<StorageBucket> open(const jsbind::String& name);

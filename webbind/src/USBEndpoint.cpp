@@ -6,6 +6,7 @@ USBEndpoint USBEndpoint::take_ownership(Handle h) noexcept {
         return USBEndpoint(h);
     }
 USBEndpoint USBEndpoint::clone() const noexcept { return *this; }
+emlite::Val USBEndpoint::instance() noexcept { return emlite::Val::global("USBEndpoint"); }
 USBEndpoint::USBEndpoint(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBEndpoint::USBEndpoint(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

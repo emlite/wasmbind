@@ -15,6 +15,7 @@ public:
     static ProtectedAudienceUtilities take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ProtectedAudienceUtilities clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The encodeUtf8 method.
     /// [`ProtectedAudienceUtilities.encodeUtf8`](https://developer.mozilla.org/en-US/docs/Web/API/ProtectedAudienceUtilities/encodeUtf8)
     jsbind::Uint8Array encodeUtf8(const jsbind::String& input);

@@ -15,6 +15,7 @@ public:
     static NavigatorLogin take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigatorLogin clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setStatus method.
     /// [`NavigatorLogin.setStatus`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLogin/setStatus)
     jsbind::Promise<jsbind::Undefined> setStatus(const LoginStatus& status);

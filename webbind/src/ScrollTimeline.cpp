@@ -6,6 +6,7 @@ ScrollTimeline ScrollTimeline::take_ownership(Handle h) noexcept {
         return ScrollTimeline(h);
     }
 ScrollTimeline ScrollTimeline::clone() const noexcept { return *this; }
+emlite::Val ScrollTimeline::instance() noexcept { return emlite::Val::global("ScrollTimeline"); }
 ScrollTimeline::ScrollTimeline(Handle h) noexcept : AnimationTimeline(emlite::Val::take_ownership(h)) {}
 ScrollTimeline::ScrollTimeline(const emlite::Val &val) noexcept: AnimationTimeline(val) {}
 

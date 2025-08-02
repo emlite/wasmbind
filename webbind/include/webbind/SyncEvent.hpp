@@ -16,6 +16,7 @@ public:
     static SyncEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SyncEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SyncEvent(..)` constructor, creating a new SyncEvent instance
     SyncEvent(const jsbind::String& type, const jsbind::Any& init);
     /// Getter of the `tag` attribute.

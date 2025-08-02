@@ -18,6 +18,7 @@ public:
     static HTMLFrameElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLFrameElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFrameElement(..)` constructor, creating a new HTMLFrameElement instance
     HTMLFrameElement();
     /// Getter of the `name` attribute.

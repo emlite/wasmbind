@@ -15,5 +15,6 @@ public:
     static MediaSourceHandle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaSourceHandle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

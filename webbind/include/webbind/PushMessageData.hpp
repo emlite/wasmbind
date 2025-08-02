@@ -17,6 +17,7 @@ public:
     static PushMessageData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PushMessageData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The arrayBuffer method.
     /// [`PushMessageData.arrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/PushMessageData/arrayBuffer)
     jsbind::ArrayBuffer arrayBuffer();

@@ -5,6 +5,7 @@ TransformStreamDefaultController TransformStreamDefaultController::take_ownershi
         return TransformStreamDefaultController(h);
     }
 TransformStreamDefaultController TransformStreamDefaultController::clone() const noexcept { return *this; }
+emlite::Val TransformStreamDefaultController::instance() noexcept { return emlite::Val::global("TransformStreamDefaultController"); }
 TransformStreamDefaultController::TransformStreamDefaultController(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TransformStreamDefaultController::TransformStreamDefaultController(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

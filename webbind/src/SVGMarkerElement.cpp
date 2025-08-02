@@ -11,6 +11,7 @@ SVGMarkerElement SVGMarkerElement::take_ownership(Handle h) noexcept {
         return SVGMarkerElement(h);
     }
 SVGMarkerElement SVGMarkerElement::clone() const noexcept { return *this; }
+emlite::Val SVGMarkerElement::instance() noexcept { return emlite::Val::global("SVGMarkerElement"); }
 SVGMarkerElement::SVGMarkerElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGMarkerElement::SVGMarkerElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

@@ -16,6 +16,7 @@ public:
     static HTMLImageElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLImageElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLImageElement(..)` constructor, creating a new HTMLImageElement instance
     HTMLImageElement();
     /// Getter of the `alt` attribute.

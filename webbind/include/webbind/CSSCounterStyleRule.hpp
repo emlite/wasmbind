@@ -16,6 +16,7 @@ public:
     static CSSCounterStyleRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSCounterStyleRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSCounterStyleRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/name)
     [[nodiscard]] jsbind::String name() const;

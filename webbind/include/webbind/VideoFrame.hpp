@@ -62,6 +62,7 @@ public:
     static VideoFrame take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoFrame clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoFrame(..)` constructor, creating a new VideoFrame instance
     VideoFrame(const jsbind::Any& data, const jsbind::Any& init);
     /// Getter of the `format` attribute.

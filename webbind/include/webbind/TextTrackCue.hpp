@@ -18,6 +18,7 @@ public:
     static TextTrackCue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextTrackCue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `track` attribute.
     /// [`TextTrackCue.track`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue/track)
     [[nodiscard]] TextTrack track() const;

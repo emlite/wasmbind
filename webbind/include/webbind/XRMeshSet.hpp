@@ -15,5 +15,6 @@ public:
     static XRMeshSet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRMeshSet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

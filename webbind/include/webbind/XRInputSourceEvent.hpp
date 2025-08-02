@@ -19,6 +19,7 @@ public:
     static XRInputSourceEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRInputSourceEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRInputSourceEvent(..)` constructor, creating a new XRInputSourceEvent instance
     XRInputSourceEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `frame` attribute.

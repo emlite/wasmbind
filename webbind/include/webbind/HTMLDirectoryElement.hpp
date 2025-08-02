@@ -16,6 +16,7 @@ public:
     static HTMLDirectoryElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLDirectoryElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDirectoryElement(..)` constructor, creating a new HTMLDirectoryElement instance
     HTMLDirectoryElement();
     /// Getter of the `compact` attribute.

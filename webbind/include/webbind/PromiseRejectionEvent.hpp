@@ -16,6 +16,7 @@ public:
     static PromiseRejectionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PromiseRejectionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PromiseRejectionEvent(..)` constructor, creating a new PromiseRejectionEvent instance
     PromiseRejectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `promise` attribute.

@@ -8,6 +8,7 @@ TextTrack TextTrack::take_ownership(Handle h) noexcept {
         return TextTrack(h);
     }
 TextTrack TextTrack::clone() const noexcept { return *this; }
+emlite::Val TextTrack::instance() noexcept { return emlite::Val::global("TextTrack"); }
 TextTrack::TextTrack(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 TextTrack::TextTrack(const emlite::Val &val) noexcept: EventTarget(val) {}
 

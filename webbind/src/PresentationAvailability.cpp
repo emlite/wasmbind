@@ -5,6 +5,7 @@ PresentationAvailability PresentationAvailability::take_ownership(Handle h) noex
         return PresentationAvailability(h);
     }
 PresentationAvailability PresentationAvailability::clone() const noexcept { return *this; }
+emlite::Val PresentationAvailability::instance() noexcept { return emlite::Val::global("PresentationAvailability"); }
 PresentationAvailability::PresentationAvailability(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PresentationAvailability::PresentationAvailability(const emlite::Val &val) noexcept: EventTarget(val) {}
 

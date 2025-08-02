@@ -63,6 +63,7 @@ public:
     static ReadableStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ReadableStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ReadableStream(..)` constructor, creating a new ReadableStream instance
     ReadableStream();
     /// The `new ReadableStream(..)` constructor, creating a new ReadableStream instance

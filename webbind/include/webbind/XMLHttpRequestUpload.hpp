@@ -16,5 +16,6 @@ public:
     static XMLHttpRequestUpload take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XMLHttpRequestUpload clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

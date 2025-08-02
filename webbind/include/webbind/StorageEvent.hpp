@@ -18,6 +18,7 @@ public:
     static StorageEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StorageEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new StorageEvent(..)` constructor, creating a new StorageEvent instance
     StorageEvent(const jsbind::String& type);
     /// The `new StorageEvent(..)` constructor, creating a new StorageEvent instance

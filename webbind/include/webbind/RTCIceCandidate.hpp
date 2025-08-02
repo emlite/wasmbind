@@ -16,6 +16,7 @@ public:
     static RTCIceCandidate take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCIceCandidate clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCIceCandidate(..)` constructor, creating a new RTCIceCandidate instance
     RTCIceCandidate();
     /// The `new RTCIceCandidate(..)` constructor, creating a new RTCIceCandidate instance

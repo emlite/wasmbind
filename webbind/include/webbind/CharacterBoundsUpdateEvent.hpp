@@ -16,6 +16,7 @@ public:
     static CharacterBoundsUpdateEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CharacterBoundsUpdateEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CharacterBoundsUpdateEvent(..)` constructor, creating a new CharacterBoundsUpdateEvent instance
     CharacterBoundsUpdateEvent(const jsbind::String& type);
     /// The `new CharacterBoundsUpdateEvent(..)` constructor, creating a new CharacterBoundsUpdateEvent instance

@@ -15,6 +15,7 @@ public:
     static SVGAnimatedNumber take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedNumber clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedNumber.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedNumber/baseVal)
     [[nodiscard]] float baseVal() const;

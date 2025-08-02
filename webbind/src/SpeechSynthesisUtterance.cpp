@@ -6,6 +6,7 @@ SpeechSynthesisUtterance SpeechSynthesisUtterance::take_ownership(Handle h) noex
         return SpeechSynthesisUtterance(h);
     }
 SpeechSynthesisUtterance SpeechSynthesisUtterance::clone() const noexcept { return *this; }
+emlite::Val SpeechSynthesisUtterance::instance() noexcept { return emlite::Val::global("SpeechSynthesisUtterance"); }
 SpeechSynthesisUtterance::SpeechSynthesisUtterance(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 SpeechSynthesisUtterance::SpeechSynthesisUtterance(const emlite::Val &val) noexcept: EventTarget(val) {}
 

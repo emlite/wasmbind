@@ -7,6 +7,7 @@ MediaKeySystemAccess MediaKeySystemAccess::take_ownership(Handle h) noexcept {
         return MediaKeySystemAccess(h);
     }
 MediaKeySystemAccess MediaKeySystemAccess::clone() const noexcept { return *this; }
+emlite::Val MediaKeySystemAccess::instance() noexcept { return emlite::Val::global("MediaKeySystemAccess"); }
 MediaKeySystemAccess::MediaKeySystemAccess(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaKeySystemAccess::MediaKeySystemAccess(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

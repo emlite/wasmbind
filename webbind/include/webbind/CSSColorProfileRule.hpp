@@ -16,6 +16,7 @@ public:
     static CSSColorProfileRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSColorProfileRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSColorProfileRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSColorProfileRule/name)
     [[nodiscard]] jsbind::String name() const;

@@ -16,6 +16,7 @@ public:
     static HTMLQuoteElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLQuoteElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLQuoteElement(..)` constructor, creating a new HTMLQuoteElement instance
     HTMLQuoteElement();
     /// Getter of the `cite` attribute.

@@ -44,6 +44,7 @@ public:
     static URLPattern take_ownership(Handle h) noexcept;
 
     [[nodiscard]] URLPattern clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new URLPattern(..)` constructor, creating a new URLPattern instance
     URLPattern();
     /// The `new URLPattern(..)` constructor, creating a new URLPattern instance

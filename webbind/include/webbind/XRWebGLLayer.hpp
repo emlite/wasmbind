@@ -21,6 +21,7 @@ public:
     static XRWebGLLayer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRWebGLLayer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRWebGLLayer(..)` constructor, creating a new XRWebGLLayer instance
     XRWebGLLayer(const XRSession& session, const jsbind::Any& context);
     /// The `new XRWebGLLayer(..)` constructor, creating a new XRWebGLLayer instance

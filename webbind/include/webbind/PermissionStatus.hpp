@@ -16,6 +16,7 @@ public:
     static PermissionStatus take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PermissionStatus clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `state` attribute.
     /// [`PermissionStatus.state`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state)
     [[nodiscard]] PermissionState state() const;

@@ -12,6 +12,7 @@ SVGFEConvolveMatrixElement SVGFEConvolveMatrixElement::take_ownership(Handle h) 
         return SVGFEConvolveMatrixElement(h);
     }
 SVGFEConvolveMatrixElement SVGFEConvolveMatrixElement::clone() const noexcept { return *this; }
+emlite::Val SVGFEConvolveMatrixElement::instance() noexcept { return emlite::Val::global("SVGFEConvolveMatrixElement"); }
 SVGFEConvolveMatrixElement::SVGFEConvolveMatrixElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEConvolveMatrixElement::SVGFEConvolveMatrixElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

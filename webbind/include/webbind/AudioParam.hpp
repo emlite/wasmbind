@@ -17,6 +17,7 @@ public:
     static AudioParam take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioParam clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `value` attribute.
     /// [`AudioParam.value`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/value)
     [[nodiscard]] float value() const;

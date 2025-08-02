@@ -15,6 +15,7 @@ public:
     static FontFacePalette take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FontFacePalette clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`FontFacePalette.length`](https://developer.mozilla.org/en-US/docs/Web/API/FontFacePalette/length)
     [[nodiscard]] unsigned long length() const;

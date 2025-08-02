@@ -5,6 +5,7 @@ RelativeOrientationSensor RelativeOrientationSensor::take_ownership(Handle h) no
         return RelativeOrientationSensor(h);
     }
 RelativeOrientationSensor RelativeOrientationSensor::clone() const noexcept { return *this; }
+emlite::Val RelativeOrientationSensor::instance() noexcept { return emlite::Val::global("RelativeOrientationSensor"); }
 RelativeOrientationSensor::RelativeOrientationSensor(Handle h) noexcept : OrientationSensor(emlite::Val::take_ownership(h)) {}
 RelativeOrientationSensor::RelativeOrientationSensor(const emlite::Val &val) noexcept: OrientationSensor(val) {}
 

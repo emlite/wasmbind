@@ -123,6 +123,7 @@ public:
     static Window take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Window clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `window` attribute.
     /// [`Window.window`](https://developer.mozilla.org/en-US/docs/Web/API/Window/window)
     [[nodiscard]] jsbind::Any window() const;

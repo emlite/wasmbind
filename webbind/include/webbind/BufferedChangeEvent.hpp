@@ -18,6 +18,7 @@ public:
     static BufferedChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BufferedChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BufferedChangeEvent(..)` constructor, creating a new BufferedChangeEvent instance
     BufferedChangeEvent(const jsbind::String& type);
     /// The `new BufferedChangeEvent(..)` constructor, creating a new BufferedChangeEvent instance

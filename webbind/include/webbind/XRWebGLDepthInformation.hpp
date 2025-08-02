@@ -18,6 +18,7 @@ public:
     static XRWebGLDepthInformation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRWebGLDepthInformation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `texture` attribute.
     /// [`XRWebGLDepthInformation.texture`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/texture)
     [[nodiscard]] WebGLTexture texture() const;

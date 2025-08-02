@@ -17,6 +17,7 @@ public:
     static OES_vertex_array_object take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OES_vertex_array_object clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createVertexArrayOES method.
     /// [`OES_vertex_array_object.createVertexArrayOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/createVertexArrayOES)
     WebGLVertexArrayObjectOES createVertexArrayOES();

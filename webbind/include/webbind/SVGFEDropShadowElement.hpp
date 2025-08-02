@@ -20,6 +20,7 @@ public:
     static SVGFEDropShadowElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEDropShadowElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEDropShadowElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDropShadowElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

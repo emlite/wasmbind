@@ -18,6 +18,7 @@ public:
     static StyleSheet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StyleSheet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`StyleSheet.type`](https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/type)
     [[nodiscard]] jsbind::String type() const;

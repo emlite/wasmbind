@@ -18,6 +18,7 @@ public:
     static NavigationCurrentEntryChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigationCurrentEntryChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NavigationCurrentEntryChangeEvent(..)` constructor, creating a new NavigationCurrentEntryChangeEvent instance
     NavigationCurrentEntryChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `navigationType` attribute.

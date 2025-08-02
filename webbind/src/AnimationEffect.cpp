@@ -79,6 +79,7 @@ AnimationEffect AnimationEffect::take_ownership(Handle h) noexcept {
         return AnimationEffect(h);
     }
 AnimationEffect AnimationEffect::clone() const noexcept { return *this; }
+emlite::Val AnimationEffect::instance() noexcept { return emlite::Val::global("AnimationEffect"); }
 AnimationEffect::AnimationEffect(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AnimationEffect::AnimationEffect(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

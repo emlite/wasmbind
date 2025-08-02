@@ -7,6 +7,7 @@ DeviceMotionEvent DeviceMotionEvent::take_ownership(Handle h) noexcept {
         return DeviceMotionEvent(h);
     }
 DeviceMotionEvent DeviceMotionEvent::clone() const noexcept { return *this; }
+emlite::Val DeviceMotionEvent::instance() noexcept { return emlite::Val::global("DeviceMotionEvent"); }
 DeviceMotionEvent::DeviceMotionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 DeviceMotionEvent::DeviceMotionEvent(const emlite::Val &val) noexcept: Event(val) {}
 

@@ -5,6 +5,7 @@ VisualViewport VisualViewport::take_ownership(Handle h) noexcept {
         return VisualViewport(h);
     }
 VisualViewport VisualViewport::clone() const noexcept { return *this; }
+emlite::Val VisualViewport::instance() noexcept { return emlite::Val::global("VisualViewport"); }
 VisualViewport::VisualViewport(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 VisualViewport::VisualViewport(const emlite::Val &val) noexcept: EventTarget(val) {}
 

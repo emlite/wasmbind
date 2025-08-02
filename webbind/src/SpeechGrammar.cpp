@@ -5,6 +5,7 @@ SpeechGrammar SpeechGrammar::take_ownership(Handle h) noexcept {
         return SpeechGrammar(h);
     }
 SpeechGrammar SpeechGrammar::clone() const noexcept { return *this; }
+emlite::Val SpeechGrammar::instance() noexcept { return emlite::Val::global("SpeechGrammar"); }
 SpeechGrammar::SpeechGrammar(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechGrammar::SpeechGrammar(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

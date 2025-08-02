@@ -20,6 +20,7 @@ public:
     static HTMLObjectElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLObjectElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLObjectElement(..)` constructor, creating a new HTMLObjectElement instance
     HTMLObjectElement();
     /// Getter of the `data` attribute.

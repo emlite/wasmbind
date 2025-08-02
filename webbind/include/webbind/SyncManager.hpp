@@ -15,6 +15,7 @@ public:
     static SyncManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SyncManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The register method.
     /// [`SyncManager.register`](https://developer.mozilla.org/en-US/docs/Web/API/SyncManager/register)
     jsbind::Promise<jsbind::Undefined> register_(const jsbind::String& tag);

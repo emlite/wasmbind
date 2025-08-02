@@ -6,6 +6,7 @@ SpeechGrammarList SpeechGrammarList::take_ownership(Handle h) noexcept {
         return SpeechGrammarList(h);
     }
 SpeechGrammarList SpeechGrammarList::clone() const noexcept { return *this; }
+emlite::Val SpeechGrammarList::instance() noexcept { return emlite::Val::global("SpeechGrammarList"); }
 SpeechGrammarList::SpeechGrammarList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechGrammarList::SpeechGrammarList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

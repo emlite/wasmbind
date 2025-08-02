@@ -15,6 +15,7 @@ public:
     static XRViewport take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRViewport clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`XRViewport.x`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/x)
     [[nodiscard]] long x() const;

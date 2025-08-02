@@ -18,6 +18,7 @@ public:
     static CompressionStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CompressionStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CompressionStream(..)` constructor, creating a new CompressionStream instance
     CompressionStream(const CompressionFormat& format);
     /// Getter of the `readable` attribute.

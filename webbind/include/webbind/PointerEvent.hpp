@@ -18,6 +18,7 @@ public:
     static PointerEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PointerEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PointerEvent(..)` constructor, creating a new PointerEvent instance
     PointerEvent(const jsbind::String& type);
     /// The `new PointerEvent(..)` constructor, creating a new PointerEvent instance

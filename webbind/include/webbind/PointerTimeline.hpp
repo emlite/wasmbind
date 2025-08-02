@@ -18,6 +18,7 @@ public:
     static PointerTimeline take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PointerTimeline clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PointerTimeline(..)` constructor, creating a new PointerTimeline instance
     PointerTimeline();
     /// The `new PointerTimeline(..)` constructor, creating a new PointerTimeline instance

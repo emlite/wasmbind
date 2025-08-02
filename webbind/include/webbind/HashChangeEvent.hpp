@@ -16,6 +16,7 @@ public:
     static HashChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HashChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HashChangeEvent(..)` constructor, creating a new HashChangeEvent instance
     HashChangeEvent(const jsbind::String& type);
     /// The `new HashChangeEvent(..)` constructor, creating a new HashChangeEvent instance

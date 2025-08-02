@@ -80,6 +80,7 @@ public:
     static VideoEncoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoEncoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoEncoder(..)` constructor, creating a new VideoEncoder instance
     VideoEncoder(const jsbind::Any& init);
     /// Getter of the `state` attribute.

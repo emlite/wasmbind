@@ -56,6 +56,7 @@ PaymentRequest PaymentRequest::take_ownership(Handle h) noexcept {
         return PaymentRequest(h);
     }
 PaymentRequest PaymentRequest::clone() const noexcept { return *this; }
+emlite::Val PaymentRequest::instance() noexcept { return emlite::Val::global("PaymentRequest"); }
 PaymentRequest::PaymentRequest(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PaymentRequest::PaymentRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
 

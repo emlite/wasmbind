@@ -16,6 +16,7 @@ public:
     static CSSFontFaceDescriptors take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFontFaceDescriptors clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `src` attribute.
     /// [`CSSFontFaceDescriptors.src`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFaceDescriptors/src)
     [[nodiscard]] jsbind::String src() const;

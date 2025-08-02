@@ -16,6 +16,7 @@ public:
     static TrackEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TrackEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TrackEvent(..)` constructor, creating a new TrackEvent instance
     TrackEvent(const jsbind::String& type);
     /// The `new TrackEvent(..)` constructor, creating a new TrackEvent instance

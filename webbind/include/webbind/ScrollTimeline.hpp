@@ -18,6 +18,7 @@ public:
     static ScrollTimeline take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ScrollTimeline clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ScrollTimeline(..)` constructor, creating a new ScrollTimeline instance
     ScrollTimeline();
     /// The `new ScrollTimeline(..)` constructor, creating a new ScrollTimeline instance

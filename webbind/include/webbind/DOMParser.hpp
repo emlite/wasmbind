@@ -17,6 +17,7 @@ public:
     static DOMParser take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMParser clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMParser(..)` constructor, creating a new DOMParser instance
     DOMParser();
     /// The parseFromString method.

@@ -16,6 +16,7 @@ public:
     static ContentVisibilityAutoStateChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ContentVisibilityAutoStateChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ContentVisibilityAutoStateChangeEvent(..)` constructor, creating a new ContentVisibilityAutoStateChangeEvent instance
     ContentVisibilityAutoStateChangeEvent(const jsbind::String& type);
     /// The `new ContentVisibilityAutoStateChangeEvent(..)` constructor, creating a new ContentVisibilityAutoStateChangeEvent instance

@@ -16,6 +16,7 @@ public:
     static RTCSessionDescription take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCSessionDescription clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCSessionDescription(..)` constructor, creating a new RTCSessionDescription instance
     RTCSessionDescription(const RTCSessionDescriptionInit& descriptionInitDict);
     /// Getter of the `type` attribute.

@@ -124,6 +124,7 @@ public:
     static XRWebGLBinding take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRWebGLBinding clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRWebGLBinding(..)` constructor, creating a new XRWebGLBinding instance
     XRWebGLBinding(const XRSession& session, const jsbind::Any& context);
     /// Getter of the `nativeProjectionScaleFactor` attribute.

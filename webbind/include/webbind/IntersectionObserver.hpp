@@ -18,6 +18,7 @@ public:
     static IntersectionObserver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IntersectionObserver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IntersectionObserver(..)` constructor, creating a new IntersectionObserver instance
     IntersectionObserver(const jsbind::Function& callback);
     /// The `new IntersectionObserver(..)` constructor, creating a new IntersectionObserver instance

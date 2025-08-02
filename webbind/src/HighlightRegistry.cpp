@@ -48,6 +48,7 @@ HighlightRegistry HighlightRegistry::take_ownership(Handle h) noexcept {
         return HighlightRegistry(h);
     }
 HighlightRegistry HighlightRegistry::clone() const noexcept { return *this; }
+emlite::Val HighlightRegistry::instance() noexcept { return emlite::Val::global("HighlightRegistry"); }
 HighlightRegistry::HighlightRegistry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HighlightRegistry::HighlightRegistry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

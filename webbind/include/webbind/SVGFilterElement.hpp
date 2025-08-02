@@ -20,6 +20,7 @@ public:
     static SVGFilterElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFilterElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `filterUnits` attribute.
     /// [`SVGFilterElement.filterUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/filterUnits)
     [[nodiscard]] SVGAnimatedEnumeration filterUnits() const;

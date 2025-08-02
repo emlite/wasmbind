@@ -19,6 +19,7 @@ public:
     static MediaElementAudioSourceNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaElementAudioSourceNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaElementAudioSourceNode(..)` constructor, creating a new MediaElementAudioSourceNode instance
     MediaElementAudioSourceNode(const AudioContext& context, const jsbind::Any& options);
     /// Getter of the `mediaElement` attribute.

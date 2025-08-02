@@ -31,6 +31,7 @@ EventTarget EventTarget::take_ownership(Handle h) noexcept {
         return EventTarget(h);
     }
 EventTarget EventTarget::clone() const noexcept { return *this; }
+emlite::Val EventTarget::instance() noexcept { return emlite::Val::global("EventTarget"); }
 EventTarget::EventTarget(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EventTarget::EventTarget(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

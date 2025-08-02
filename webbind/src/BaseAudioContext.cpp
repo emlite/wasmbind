@@ -42,6 +42,7 @@ BaseAudioContext BaseAudioContext::take_ownership(Handle h) noexcept {
         return BaseAudioContext(h);
     }
 BaseAudioContext BaseAudioContext::clone() const noexcept { return *this; }
+emlite::Val BaseAudioContext::instance() noexcept { return emlite::Val::global("BaseAudioContext"); }
 BaseAudioContext::BaseAudioContext(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BaseAudioContext::BaseAudioContext(const emlite::Val &val) noexcept: EventTarget(val) {}
 

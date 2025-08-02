@@ -16,6 +16,7 @@ public:
     static GPUOutOfMemoryError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUOutOfMemoryError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GPUOutOfMemoryError(..)` constructor, creating a new GPUOutOfMemoryError instance
     GPUOutOfMemoryError(const jsbind::String& message);
 };

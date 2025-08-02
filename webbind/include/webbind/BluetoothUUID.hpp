@@ -15,6 +15,7 @@ public:
     static BluetoothUUID take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothUUID clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getService method.
     /// [`BluetoothUUID.getService`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothUUID/getService)
     static jsbind::Any getService(const jsbind::Any& name);

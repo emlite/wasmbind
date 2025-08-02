@@ -15,5 +15,6 @@ public:
     static WEBGL_depth_texture take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_depth_texture clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

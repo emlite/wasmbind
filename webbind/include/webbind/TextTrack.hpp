@@ -20,6 +20,7 @@ public:
     static TextTrack take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextTrack clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `kind` attribute.
     /// [`TextTrack.kind`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrack/kind)
     [[nodiscard]] TextTrackKind kind() const;

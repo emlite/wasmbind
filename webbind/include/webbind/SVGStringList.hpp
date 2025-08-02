@@ -15,6 +15,7 @@ public:
     static SVGStringList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGStringList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`SVGStringList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStringList/length)
     [[nodiscard]] unsigned long length() const;

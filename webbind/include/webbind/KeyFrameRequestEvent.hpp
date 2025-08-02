@@ -16,6 +16,7 @@ public:
     static KeyFrameRequestEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] KeyFrameRequestEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new KeyFrameRequestEvent(..)` constructor, creating a new KeyFrameRequestEvent instance
     KeyFrameRequestEvent(const jsbind::String& type);
     /// The `new KeyFrameRequestEvent(..)` constructor, creating a new KeyFrameRequestEvent instance

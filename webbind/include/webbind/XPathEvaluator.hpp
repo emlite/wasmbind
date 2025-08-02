@@ -19,6 +19,7 @@ public:
     static XPathEvaluator take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XPathEvaluator clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XPathEvaluator(..)` constructor, creating a new XPathEvaluator instance
     XPathEvaluator();
     /// The createExpression method.

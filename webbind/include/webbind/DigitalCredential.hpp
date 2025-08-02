@@ -16,6 +16,7 @@ public:
     static DigitalCredential take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DigitalCredential clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
     /// [`DigitalCredential.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalCredential/toJSON)
     jsbind::Object toJSON();

@@ -16,6 +16,7 @@ public:
     static WebGLContextEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLContextEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WebGLContextEvent(..)` constructor, creating a new WebGLContextEvent instance
     WebGLContextEvent(const jsbind::String& type);
     /// The `new WebGLContextEvent(..)` constructor, creating a new WebGLContextEvent instance

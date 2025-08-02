@@ -70,6 +70,7 @@ public:
     static LanguageDetector take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LanguageDetector clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
     /// [`LanguageDetector.create`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/create)
     static jsbind::Promise<LanguageDetector> create();

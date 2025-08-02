@@ -16,5 +16,6 @@ public:
     static XRLayer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRLayer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

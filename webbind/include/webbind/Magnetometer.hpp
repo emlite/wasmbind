@@ -16,6 +16,7 @@ public:
     static Magnetometer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Magnetometer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Magnetometer(..)` constructor, creating a new Magnetometer instance
     Magnetometer();
     /// The `new Magnetometer(..)` constructor, creating a new Magnetometer instance

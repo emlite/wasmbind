@@ -16,6 +16,7 @@ public:
     static RelativeOrientationSensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RelativeOrientationSensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RelativeOrientationSensor(..)` constructor, creating a new RelativeOrientationSensor instance
     RelativeOrientationSensor();
     /// The `new RelativeOrientationSensor(..)` constructor, creating a new RelativeOrientationSensor instance

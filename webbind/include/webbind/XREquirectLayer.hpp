@@ -19,6 +19,7 @@ public:
     static XREquirectLayer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XREquirectLayer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `space` attribute.
     /// [`XREquirectLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer/space)
     [[nodiscard]] XRSpace space() const;

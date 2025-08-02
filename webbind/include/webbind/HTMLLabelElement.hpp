@@ -18,6 +18,7 @@ public:
     static HTMLLabelElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLLabelElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLabelElement(..)` constructor, creating a new HTMLLabelElement instance
     HTMLLabelElement();
     /// Getter of the `form` attribute.

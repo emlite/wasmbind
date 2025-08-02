@@ -16,6 +16,7 @@ public:
     static CaptureActionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CaptureActionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CaptureActionEvent(..)` constructor, creating a new CaptureActionEvent instance
     CaptureActionEvent();
     /// The `new CaptureActionEvent(..)` constructor, creating a new CaptureActionEvent instance

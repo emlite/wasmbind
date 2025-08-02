@@ -8,6 +8,7 @@ MediaSource MediaSource::take_ownership(Handle h) noexcept {
         return MediaSource(h);
     }
 MediaSource MediaSource::clone() const noexcept { return *this; }
+emlite::Val MediaSource::instance() noexcept { return emlite::Val::global("MediaSource"); }
 MediaSource::MediaSource(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaSource::MediaSource(const emlite::Val &val) noexcept: EventTarget(val) {}
 

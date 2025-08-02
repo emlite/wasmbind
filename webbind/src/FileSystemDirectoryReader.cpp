@@ -5,6 +5,7 @@ FileSystemDirectoryReader FileSystemDirectoryReader::take_ownership(Handle h) no
         return FileSystemDirectoryReader(h);
     }
 FileSystemDirectoryReader FileSystemDirectoryReader::clone() const noexcept { return *this; }
+emlite::Val FileSystemDirectoryReader::instance() noexcept { return emlite::Val::global("FileSystemDirectoryReader"); }
 FileSystemDirectoryReader::FileSystemDirectoryReader(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FileSystemDirectoryReader::FileSystemDirectoryReader(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

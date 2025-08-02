@@ -71,6 +71,7 @@ public:
     static Summarizer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Summarizer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
     /// [`Summarizer.create`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/create)
     static jsbind::Promise<Summarizer> create();

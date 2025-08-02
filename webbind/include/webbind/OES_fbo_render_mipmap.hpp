@@ -15,5 +15,6 @@ public:
     static OES_fbo_render_mipmap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] OES_fbo_render_mipmap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -19,6 +19,7 @@ public:
     static XRHitTestResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRHitTestResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getPose method.
     /// [`XRHitTestResult.getPose`](https://developer.mozilla.org/en-US/docs/Web/API/XRHitTestResult/getPose)
     XRPose getPose(const XRSpace& baseSpace);

@@ -322,6 +322,7 @@ public:
     static Navigator take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Navigator clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `audioSession` attribute.
     /// [`Navigator.audioSession`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/audioSession)
     [[nodiscard]] AudioSession audioSession() const;

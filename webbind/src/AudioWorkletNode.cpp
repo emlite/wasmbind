@@ -8,6 +8,7 @@ AudioWorkletNode AudioWorkletNode::take_ownership(Handle h) noexcept {
         return AudioWorkletNode(h);
     }
 AudioWorkletNode AudioWorkletNode::clone() const noexcept { return *this; }
+emlite::Val AudioWorkletNode::instance() noexcept { return emlite::Val::global("AudioWorkletNode"); }
 AudioWorkletNode::AudioWorkletNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 AudioWorkletNode::AudioWorkletNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

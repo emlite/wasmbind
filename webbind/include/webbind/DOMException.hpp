@@ -15,6 +15,7 @@ public:
     static DOMException take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMException clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMException(..)` constructor, creating a new DOMException instance
     DOMException();
     /// The `new DOMException(..)` constructor, creating a new DOMException instance

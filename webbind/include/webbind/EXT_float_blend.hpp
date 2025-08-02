@@ -15,5 +15,6 @@ public:
     static EXT_float_blend take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_float_blend clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

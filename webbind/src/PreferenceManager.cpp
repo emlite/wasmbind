@@ -6,6 +6,7 @@ PreferenceManager PreferenceManager::take_ownership(Handle h) noexcept {
         return PreferenceManager(h);
     }
 PreferenceManager PreferenceManager::clone() const noexcept { return *this; }
+emlite::Val PreferenceManager::instance() noexcept { return emlite::Val::global("PreferenceManager"); }
 PreferenceManager::PreferenceManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PreferenceManager::PreferenceManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -6,6 +6,7 @@ URL URL::take_ownership(Handle h) noexcept {
         return URL(h);
     }
 URL URL::clone() const noexcept { return *this; }
+emlite::Val URL::instance() noexcept { return emlite::Val::global("URL"); }
 URL::URL(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 URL::URL(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

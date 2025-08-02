@@ -15,5 +15,6 @@ public:
     static DOMStringMap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMStringMap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

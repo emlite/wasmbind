@@ -38,6 +38,7 @@ Notification Notification::take_ownership(Handle h) noexcept {
         return Notification(h);
     }
 Notification Notification::clone() const noexcept { return *this; }
+emlite::Val Notification::instance() noexcept { return emlite::Val::global("Notification"); }
 Notification::Notification(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Notification::Notification(const emlite::Val &val) noexcept: EventTarget(val) {}
 

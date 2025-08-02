@@ -6,6 +6,7 @@ PerformanceNavigationTiming PerformanceNavigationTiming::take_ownership(Handle h
         return PerformanceNavigationTiming(h);
     }
 PerformanceNavigationTiming PerformanceNavigationTiming::clone() const noexcept { return *this; }
+emlite::Val PerformanceNavigationTiming::instance() noexcept { return emlite::Val::global("PerformanceNavigationTiming"); }
 PerformanceNavigationTiming::PerformanceNavigationTiming(Handle h) noexcept : PerformanceResourceTiming(emlite::Val::take_ownership(h)) {}
 PerformanceNavigationTiming::PerformanceNavigationTiming(const emlite::Val &val) noexcept: PerformanceResourceTiming(val) {}
 

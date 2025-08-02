@@ -11,6 +11,7 @@ SVGPatternElement SVGPatternElement::take_ownership(Handle h) noexcept {
         return SVGPatternElement(h);
     }
 SVGPatternElement SVGPatternElement::clone() const noexcept { return *this; }
+emlite::Val SVGPatternElement::instance() noexcept { return emlite::Val::global("SVGPatternElement"); }
 SVGPatternElement::SVGPatternElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGPatternElement::SVGPatternElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

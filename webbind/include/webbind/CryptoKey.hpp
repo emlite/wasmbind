@@ -15,6 +15,7 @@ public:
     static CryptoKey take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CryptoKey clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`CryptoKey.type`](https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/type)
     [[nodiscard]] KeyType type() const;

@@ -18,6 +18,7 @@ public:
     static VideoTrackList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoTrackList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`VideoTrackList.length`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/length)
     [[nodiscard]] unsigned long length() const;

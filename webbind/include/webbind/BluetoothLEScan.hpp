@@ -17,6 +17,7 @@ public:
     static BluetoothLEScan take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothLEScan clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `filters` attribute.
     /// [`BluetoothLEScan.filters`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/filters)
     [[nodiscard]] jsbind::TypedArray<BluetoothLEScanFilter> filters() const;

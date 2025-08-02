@@ -16,6 +16,7 @@ public:
     static CSSLab take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSLab clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSLab(..)` constructor, creating a new CSSLab instance
     CSSLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b);
     /// The `new CSSLab(..)` constructor, creating a new CSSLab instance

@@ -5,6 +5,7 @@ GPUPipelineLayout GPUPipelineLayout::take_ownership(Handle h) noexcept {
         return GPUPipelineLayout(h);
     }
 GPUPipelineLayout GPUPipelineLayout::clone() const noexcept { return *this; }
+emlite::Val GPUPipelineLayout::instance() noexcept { return emlite::Val::global("GPUPipelineLayout"); }
 GPUPipelineLayout::GPUPipelineLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUPipelineLayout::GPUPipelineLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -18,6 +18,7 @@ public:
     static RTCPeerConnectionIceEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCPeerConnectionIceEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCPeerConnectionIceEvent(..)` constructor, creating a new RTCPeerConnectionIceEvent instance
     RTCPeerConnectionIceEvent(const jsbind::String& type);
     /// The `new RTCPeerConnectionIceEvent(..)` constructor, creating a new RTCPeerConnectionIceEvent instance

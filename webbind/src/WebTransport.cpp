@@ -154,6 +154,7 @@ WebTransport WebTransport::take_ownership(Handle h) noexcept {
         return WebTransport(h);
     }
 WebTransport WebTransport::clone() const noexcept { return *this; }
+emlite::Val WebTransport::instance() noexcept { return emlite::Val::global("WebTransport"); }
 WebTransport::WebTransport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransport::WebTransport(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

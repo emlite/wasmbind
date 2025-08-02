@@ -18,6 +18,7 @@ public:
     static DOMRect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMRect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMRect(..)` constructor, creating a new DOMRect instance
     DOMRect();
     /// The `new DOMRect(..)` constructor, creating a new DOMRect instance

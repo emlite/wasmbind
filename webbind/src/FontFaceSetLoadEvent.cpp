@@ -6,6 +6,7 @@ FontFaceSetLoadEvent FontFaceSetLoadEvent::take_ownership(Handle h) noexcept {
         return FontFaceSetLoadEvent(h);
     }
 FontFaceSetLoadEvent FontFaceSetLoadEvent::clone() const noexcept { return *this; }
+emlite::Val FontFaceSetLoadEvent::instance() noexcept { return emlite::Val::global("FontFaceSetLoadEvent"); }
 FontFaceSetLoadEvent::FontFaceSetLoadEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 FontFaceSetLoadEvent::FontFaceSetLoadEvent(const emlite::Val &val) noexcept: Event(val) {}
 

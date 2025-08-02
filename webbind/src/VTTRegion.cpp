@@ -5,6 +5,7 @@ VTTRegion VTTRegion::take_ownership(Handle h) noexcept {
         return VTTRegion(h);
     }
 VTTRegion VTTRegion::clone() const noexcept { return *this; }
+emlite::Val VTTRegion::instance() noexcept { return emlite::Val::global("VTTRegion"); }
 VTTRegion::VTTRegion(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VTTRegion::VTTRegion(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

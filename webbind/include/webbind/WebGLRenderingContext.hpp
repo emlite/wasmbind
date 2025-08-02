@@ -17,6 +17,7 @@ public:
     static WebGLRenderingContext take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLRenderingContext clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The makeXRCompatible method.
     /// [`WebGLRenderingContext.makeXRCompatible`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/makeXRCompatible)
     jsbind::Promise<jsbind::Undefined> makeXRCompatible();

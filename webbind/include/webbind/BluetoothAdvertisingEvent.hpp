@@ -20,6 +20,7 @@ public:
     static BluetoothAdvertisingEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BluetoothAdvertisingEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BluetoothAdvertisingEvent(..)` constructor, creating a new BluetoothAdvertisingEvent instance
     BluetoothAdvertisingEvent(const jsbind::String& type, const jsbind::Any& init);
     /// Getter of the `device` attribute.

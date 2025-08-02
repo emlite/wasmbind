@@ -6,6 +6,7 @@ MediaMetadata MediaMetadata::take_ownership(Handle h) noexcept {
         return MediaMetadata(h);
     }
 MediaMetadata MediaMetadata::clone() const noexcept { return *this; }
+emlite::Val MediaMetadata::instance() noexcept { return emlite::Val::global("MediaMetadata"); }
 MediaMetadata::MediaMetadata(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaMetadata::MediaMetadata(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

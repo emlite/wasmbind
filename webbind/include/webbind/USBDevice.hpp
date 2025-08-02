@@ -41,6 +41,7 @@ public:
     static USBDevice take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBDevice clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `usbVersionMajor` attribute.
     /// [`USBDevice.usbVersionMajor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMajor)
     [[nodiscard]] unsigned char usbVersionMajor() const;

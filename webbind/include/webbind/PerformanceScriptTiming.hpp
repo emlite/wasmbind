@@ -18,6 +18,7 @@ public:
     static PerformanceScriptTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceScriptTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startTime` attribute.
     /// [`PerformanceScriptTiming.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/startTime)
     [[nodiscard]] jsbind::Any startTime() const;

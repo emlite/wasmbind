@@ -88,6 +88,7 @@ ImageCapture ImageCapture::take_ownership(Handle h) noexcept {
         return ImageCapture(h);
     }
 ImageCapture ImageCapture::clone() const noexcept { return *this; }
+emlite::Val ImageCapture::instance() noexcept { return emlite::Val::global("ImageCapture"); }
 ImageCapture::ImageCapture(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageCapture::ImageCapture(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -6,6 +6,7 @@ CSSParserAtRule CSSParserAtRule::take_ownership(Handle h) noexcept {
         return CSSParserAtRule(h);
     }
 CSSParserAtRule CSSParserAtRule::clone() const noexcept { return *this; }
+emlite::Val CSSParserAtRule::instance() noexcept { return emlite::Val::global("CSSParserAtRule"); }
 CSSParserAtRule::CSSParserAtRule(Handle h) noexcept : CSSParserRule(emlite::Val::take_ownership(h)) {}
 CSSParserAtRule::CSSParserAtRule(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 

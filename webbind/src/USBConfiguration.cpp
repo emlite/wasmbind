@@ -7,6 +7,7 @@ USBConfiguration USBConfiguration::take_ownership(Handle h) noexcept {
         return USBConfiguration(h);
     }
 USBConfiguration USBConfiguration::clone() const noexcept { return *this; }
+emlite::Val USBConfiguration::instance() noexcept { return emlite::Val::global("USBConfiguration"); }
 USBConfiguration::USBConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBConfiguration::USBConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

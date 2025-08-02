@@ -22,6 +22,7 @@ public:
     static SVGTextContentElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGTextContentElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `textLength` attribute.
     /// [`SVGTextContentElement.textLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextContentElement/textLength)
     [[nodiscard]] SVGAnimatedLength textLength() const;

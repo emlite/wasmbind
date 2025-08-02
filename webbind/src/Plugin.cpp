@@ -6,6 +6,7 @@ Plugin Plugin::take_ownership(Handle h) noexcept {
         return Plugin(h);
     }
 Plugin Plugin::clone() const noexcept { return *this; }
+emlite::Val Plugin::instance() noexcept { return emlite::Val::global("Plugin"); }
 Plugin::Plugin(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Plugin::Plugin(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

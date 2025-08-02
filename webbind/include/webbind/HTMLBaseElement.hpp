@@ -16,6 +16,7 @@ public:
     static HTMLBaseElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLBaseElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLBaseElement(..)` constructor, creating a new HTMLBaseElement instance
     HTMLBaseElement();
     /// Getter of the `href` attribute.

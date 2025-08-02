@@ -15,6 +15,7 @@ public:
     static ProtectedAudience take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ProtectedAudience clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The queryFeatureSupport method.
     /// [`ProtectedAudience.queryFeatureSupport`](https://developer.mozilla.org/en-US/docs/Web/API/ProtectedAudience/queryFeatureSupport)
     jsbind::Any queryFeatureSupport(const jsbind::String& feature);

@@ -5,6 +5,7 @@ SpeechRecognitionAlternative SpeechRecognitionAlternative::take_ownership(Handle
         return SpeechRecognitionAlternative(h);
     }
 SpeechRecognitionAlternative SpeechRecognitionAlternative::clone() const noexcept { return *this; }
+emlite::Val SpeechRecognitionAlternative::instance() noexcept { return emlite::Val::global("SpeechRecognitionAlternative"); }
 SpeechRecognitionAlternative::SpeechRecognitionAlternative(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionAlternative::SpeechRecognitionAlternative(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

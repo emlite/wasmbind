@@ -21,6 +21,7 @@ PeriodicSyncManager PeriodicSyncManager::take_ownership(Handle h) noexcept {
         return PeriodicSyncManager(h);
     }
 PeriodicSyncManager PeriodicSyncManager::clone() const noexcept { return *this; }
+emlite::Val PeriodicSyncManager::instance() noexcept { return emlite::Val::global("PeriodicSyncManager"); }
 PeriodicSyncManager::PeriodicSyncManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PeriodicSyncManager::PeriodicSyncManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -18,6 +18,7 @@ public:
     static RTCTransformEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCTransformEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `transformer` attribute.
     /// [`RTCTransformEvent.transformer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCTransformEvent/transformer)
     [[nodiscard]] RTCRtpScriptTransformer transformer() const;

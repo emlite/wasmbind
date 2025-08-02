@@ -36,6 +36,7 @@ public:
     static SVGElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `className` attribute.
     /// [`SVGElement.className`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/className)
     [[nodiscard]] SVGAnimatedString className() const;

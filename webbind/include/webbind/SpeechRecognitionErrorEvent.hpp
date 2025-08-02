@@ -16,6 +16,7 @@ public:
     static SpeechRecognitionErrorEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechRecognitionErrorEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionErrorEvent(..)` constructor, creating a new SpeechRecognitionErrorEvent instance
     SpeechRecognitionErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `error` attribute.

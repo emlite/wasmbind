@@ -36,6 +36,7 @@ public:
     static DocumentPictureInPicture take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DocumentPictureInPicture clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The requestWindow method.
     /// [`DocumentPictureInPicture.requestWindow`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/requestWindow)
     jsbind::Promise<Window> requestWindow();

@@ -19,6 +19,7 @@ public:
     static DOMPoint take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMPoint clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMPoint(..)` constructor, creating a new DOMPoint instance
     DOMPoint();
     /// The `new DOMPoint(..)` constructor, creating a new DOMPoint instance

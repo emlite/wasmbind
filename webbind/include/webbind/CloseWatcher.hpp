@@ -16,6 +16,7 @@ public:
     static CloseWatcher take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CloseWatcher clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CloseWatcher(..)` constructor, creating a new CloseWatcher instance
     CloseWatcher();
     /// The `new CloseWatcher(..)` constructor, creating a new CloseWatcher instance

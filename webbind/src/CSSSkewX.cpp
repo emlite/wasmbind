@@ -6,6 +6,7 @@ CSSSkewX CSSSkewX::take_ownership(Handle h) noexcept {
         return CSSSkewX(h);
     }
 CSSSkewX CSSSkewX::clone() const noexcept { return *this; }
+emlite::Val CSSSkewX::instance() noexcept { return emlite::Val::global("CSSSkewX"); }
 CSSSkewX::CSSSkewX(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_ownership(h)) {}
 CSSSkewX::CSSSkewX(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 

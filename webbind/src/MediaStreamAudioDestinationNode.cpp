@@ -7,6 +7,7 @@ MediaStreamAudioDestinationNode MediaStreamAudioDestinationNode::take_ownership(
         return MediaStreamAudioDestinationNode(h);
     }
 MediaStreamAudioDestinationNode MediaStreamAudioDestinationNode::clone() const noexcept { return *this; }
+emlite::Val MediaStreamAudioDestinationNode::instance() noexcept { return emlite::Val::global("MediaStreamAudioDestinationNode"); }
 MediaStreamAudioDestinationNode::MediaStreamAudioDestinationNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 MediaStreamAudioDestinationNode::MediaStreamAudioDestinationNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

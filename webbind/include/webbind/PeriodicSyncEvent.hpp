@@ -16,6 +16,7 @@ public:
     static PeriodicSyncEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PeriodicSyncEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PeriodicSyncEvent(..)` constructor, creating a new PeriodicSyncEvent instance
     PeriodicSyncEvent(const jsbind::String& type, const jsbind::Any& init);
     /// Getter of the `tag` attribute.

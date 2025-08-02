@@ -15,6 +15,7 @@ public:
     static USBInTransferResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBInTransferResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBInTransferResult(..)` constructor, creating a new USBInTransferResult instance
     USBInTransferResult(const USBTransferStatus& status);
     /// The `new USBInTransferResult(..)` constructor, creating a new USBInTransferResult instance

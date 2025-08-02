@@ -40,6 +40,7 @@ public:
     static Fence take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Fence clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The reportEvent method.
     /// [`Fence.reportEvent`](https://developer.mozilla.org/en-US/docs/Web/API/Fence/reportEvent)
     jsbind::Undefined reportEvent();

@@ -17,6 +17,7 @@ public:
     static XRLightEstimate take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRLightEstimate clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sphericalHarmonicsCoefficients` attribute.
     /// [`XRLightEstimate.sphericalHarmonicsCoefficients`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate/sphericalHarmonicsCoefficients)
     [[nodiscard]] jsbind::Float32Array sphericalHarmonicsCoefficients() const;

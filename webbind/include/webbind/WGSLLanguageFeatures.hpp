@@ -15,5 +15,6 @@ public:
     static WGSLLanguageFeatures take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WGSLLanguageFeatures clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -46,6 +46,7 @@ DocumentPictureInPicture DocumentPictureInPicture::take_ownership(Handle h) noex
         return DocumentPictureInPicture(h);
     }
 DocumentPictureInPicture DocumentPictureInPicture::clone() const noexcept { return *this; }
+emlite::Val DocumentPictureInPicture::instance() noexcept { return emlite::Val::global("DocumentPictureInPicture"); }
 DocumentPictureInPicture::DocumentPictureInPicture(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 DocumentPictureInPicture::DocumentPictureInPicture(const emlite::Val &val) noexcept: EventTarget(val) {}
 

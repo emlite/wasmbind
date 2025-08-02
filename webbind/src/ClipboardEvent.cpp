@@ -6,6 +6,7 @@ ClipboardEvent ClipboardEvent::take_ownership(Handle h) noexcept {
         return ClipboardEvent(h);
     }
 ClipboardEvent ClipboardEvent::clone() const noexcept { return *this; }
+emlite::Val ClipboardEvent::instance() noexcept { return emlite::Val::global("ClipboardEvent"); }
 ClipboardEvent::ClipboardEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 ClipboardEvent::ClipboardEvent(const emlite::Val &val) noexcept: Event(val) {}
 

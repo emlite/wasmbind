@@ -18,6 +18,7 @@ public:
     static DecompressionStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DecompressionStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DecompressionStream(..)` constructor, creating a new DecompressionStream instance
     DecompressionStream(const CompressionFormat& format);
     /// Getter of the `readable` attribute.

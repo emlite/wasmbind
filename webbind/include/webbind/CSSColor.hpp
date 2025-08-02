@@ -16,6 +16,7 @@ public:
     static CSSColor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSColor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSColor(..)` constructor, creating a new CSSColor instance
     CSSColor(const jsbind::Any& colorSpace, const jsbind::TypedArray<jsbind::Any>& channels);
     /// The `new CSSColor(..)` constructor, creating a new CSSColor instance

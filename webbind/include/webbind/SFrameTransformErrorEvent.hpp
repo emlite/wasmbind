@@ -16,6 +16,7 @@ public:
     static SFrameTransformErrorEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SFrameTransformErrorEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SFrameTransformErrorEvent(..)` constructor, creating a new SFrameTransformErrorEvent instance
     SFrameTransformErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `errorType` attribute.

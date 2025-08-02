@@ -16,6 +16,7 @@ public:
     static CreateMonitor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CreateMonitor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `ondownloadprogress` attribute.
     /// [`CreateMonitor.ondownloadprogress`](https://developer.mozilla.org/en-US/docs/Web/API/CreateMonitor/ondownloadprogress)
     [[nodiscard]] jsbind::Any ondownloadprogress() const;

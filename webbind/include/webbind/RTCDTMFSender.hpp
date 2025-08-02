@@ -16,6 +16,7 @@ public:
     static RTCDTMFSender take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCDTMFSender clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The insertDTMF method.
     /// [`RTCDTMFSender.insertDTMF`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/insertDTMF)
     jsbind::Undefined insertDTMF(const jsbind::String& tones);

@@ -17,6 +17,7 @@ public:
     static GPUShaderModule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUShaderModule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getCompilationInfo method.
     /// [`GPUShaderModule.getCompilationInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/getCompilationInfo)
     jsbind::Promise<GPUCompilationInfo> getCompilationInfo();

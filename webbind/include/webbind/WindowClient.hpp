@@ -18,6 +18,7 @@ public:
     static WindowClient take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WindowClient clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `visibilityState` attribute.
     /// [`WindowClient.visibilityState`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/visibilityState)
     [[nodiscard]] DocumentVisibilityState visibilityState() const;

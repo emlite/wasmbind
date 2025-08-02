@@ -16,6 +16,7 @@ public:
     static WaveShaperNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WaveShaperNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WaveShaperNode(..)` constructor, creating a new WaveShaperNode instance
     WaveShaperNode(const BaseAudioContext& context);
     /// The `new WaveShaperNode(..)` constructor, creating a new WaveShaperNode instance

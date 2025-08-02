@@ -23,6 +23,7 @@ public:
     static CSSPseudoElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSPseudoElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
     /// [`CSSPseudoElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/type)
     [[nodiscard]] jsbind::String type() const;

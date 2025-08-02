@@ -15,5 +15,6 @@ public:
     static AudioParamMap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioParamMap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

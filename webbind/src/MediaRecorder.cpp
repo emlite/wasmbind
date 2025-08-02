@@ -6,6 +6,7 @@ MediaRecorder MediaRecorder::take_ownership(Handle h) noexcept {
         return MediaRecorder(h);
     }
 MediaRecorder MediaRecorder::clone() const noexcept { return *this; }
+emlite::Val MediaRecorder::instance() noexcept { return emlite::Val::global("MediaRecorder"); }
 MediaRecorder::MediaRecorder(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaRecorder::MediaRecorder(const emlite::Val &val) noexcept: EventTarget(val) {}
 

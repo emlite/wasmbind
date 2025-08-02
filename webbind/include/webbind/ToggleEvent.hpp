@@ -18,6 +18,7 @@ public:
     static ToggleEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ToggleEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ToggleEvent(..)` constructor, creating a new ToggleEvent instance
     ToggleEvent(const jsbind::String& type);
     /// The `new ToggleEvent(..)` constructor, creating a new ToggleEvent instance

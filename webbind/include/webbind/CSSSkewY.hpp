@@ -18,6 +18,7 @@ public:
     static CSSSkewY take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSSkewY clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSSkewY(..)` constructor, creating a new CSSSkewY instance
     CSSSkewY(const CSSNumericValue& ay);
     /// Getter of the `ay` attribute.

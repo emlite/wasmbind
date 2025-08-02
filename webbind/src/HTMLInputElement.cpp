@@ -12,6 +12,7 @@ HTMLInputElement HTMLInputElement::take_ownership(Handle h) noexcept {
         return HTMLInputElement(h);
     }
 HTMLInputElement HTMLInputElement::clone() const noexcept { return *this; }
+emlite::Val HTMLInputElement::instance() noexcept { return emlite::Val::global("HTMLInputElement"); }
 HTMLInputElement::HTMLInputElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLInputElement::HTMLInputElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

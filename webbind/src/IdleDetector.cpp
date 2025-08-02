@@ -30,6 +30,7 @@ IdleDetector IdleDetector::take_ownership(Handle h) noexcept {
         return IdleDetector(h);
     }
 IdleDetector IdleDetector::clone() const noexcept { return *this; }
+emlite::Val IdleDetector::instance() noexcept { return emlite::Val::global("IdleDetector"); }
 IdleDetector::IdleDetector(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 IdleDetector::IdleDetector(const emlite::Val &val) noexcept: EventTarget(val) {}
 

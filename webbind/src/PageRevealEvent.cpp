@@ -6,6 +6,7 @@ PageRevealEvent PageRevealEvent::take_ownership(Handle h) noexcept {
         return PageRevealEvent(h);
     }
 PageRevealEvent PageRevealEvent::clone() const noexcept { return *this; }
+emlite::Val PageRevealEvent::instance() noexcept { return emlite::Val::global("PageRevealEvent"); }
 PageRevealEvent::PageRevealEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 PageRevealEvent::PageRevealEvent(const emlite::Val &val) noexcept: Event(val) {}
 

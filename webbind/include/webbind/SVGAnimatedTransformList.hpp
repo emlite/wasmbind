@@ -17,6 +17,7 @@ public:
     static SVGAnimatedTransformList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimatedTransformList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
     /// [`SVGAnimatedTransformList.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedTransformList/baseVal)
     [[nodiscard]] SVGTransformList baseVal() const;

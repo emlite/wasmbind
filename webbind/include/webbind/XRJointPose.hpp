@@ -16,6 +16,7 @@ public:
     static XRJointPose take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRJointPose clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `radius` attribute.
     /// [`XRJointPose.radius`](https://developer.mozilla.org/en-US/docs/Web/API/XRJointPose/radius)
     [[nodiscard]] float radius() const;

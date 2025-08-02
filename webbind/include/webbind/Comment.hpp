@@ -16,6 +16,7 @@ public:
     static Comment take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Comment clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Comment(..)` constructor, creating a new Comment instance
     Comment();
     /// The `new Comment(..)` constructor, creating a new Comment instance

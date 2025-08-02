@@ -7,6 +7,7 @@ InterestGroupBiddingAndScoringScriptRunnerGlobalScope InterestGroupBiddingAndSco
         return InterestGroupBiddingAndScoringScriptRunnerGlobalScope(h);
     }
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope InterestGroupBiddingAndScoringScriptRunnerGlobalScope::clone() const noexcept { return *this; }
+emlite::Val InterestGroupBiddingAndScoringScriptRunnerGlobalScope::instance() noexcept { return emlite::Val::global("InterestGroupBiddingAndScoringScriptRunnerGlobalScope"); }
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope::InterestGroupBiddingAndScoringScriptRunnerGlobalScope(Handle h) noexcept : InterestGroupScriptRunnerGlobalScope(emlite::Val::take_ownership(h)) {}
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope::InterestGroupBiddingAndScoringScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupScriptRunnerGlobalScope(val) {}
 

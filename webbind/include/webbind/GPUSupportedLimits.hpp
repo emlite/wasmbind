@@ -15,6 +15,7 @@ public:
     static GPUSupportedLimits take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUSupportedLimits clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `maxTextureDimension1D` attribute.
     /// [`GPUSupportedLimits.maxTextureDimension1D`](https://developer.mozilla.org/en-US/docs/Web/API/GPUSupportedLimits/maxTextureDimension1D)
     [[nodiscard]] unsigned long maxTextureDimension1D() const;

@@ -7,6 +7,7 @@ UIEvent UIEvent::take_ownership(Handle h) noexcept {
         return UIEvent(h);
     }
 UIEvent UIEvent::clone() const noexcept { return *this; }
+emlite::Val UIEvent::instance() noexcept { return emlite::Val::global("UIEvent"); }
 UIEvent::UIEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 UIEvent::UIEvent(const emlite::Val &val) noexcept: Event(val) {}
 

@@ -18,6 +18,7 @@ public:
     static GainNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GainNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GainNode(..)` constructor, creating a new GainNode instance
     GainNode(const BaseAudioContext& context);
     /// The `new GainNode(..)` constructor, creating a new GainNode instance

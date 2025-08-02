@@ -18,6 +18,7 @@ public:
     static XRViewerPose take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRViewerPose clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `views` attribute.
     /// [`XRViewerPose.views`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewerPose/views)
     [[nodiscard]] jsbind::TypedArray<XRView> views() const;

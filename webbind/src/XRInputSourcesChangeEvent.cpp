@@ -7,6 +7,7 @@ XRInputSourcesChangeEvent XRInputSourcesChangeEvent::take_ownership(Handle h) no
         return XRInputSourcesChangeEvent(h);
     }
 XRInputSourcesChangeEvent XRInputSourcesChangeEvent::clone() const noexcept { return *this; }
+emlite::Val XRInputSourcesChangeEvent::instance() noexcept { return emlite::Val::global("XRInputSourcesChangeEvent"); }
 XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

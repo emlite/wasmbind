@@ -16,5 +16,6 @@ public:
     static SVGTextElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGTextElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

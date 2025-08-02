@@ -7,6 +7,7 @@ IDBIndex IDBIndex::take_ownership(Handle h) noexcept {
         return IDBIndex(h);
     }
 IDBIndex IDBIndex::clone() const noexcept { return *this; }
+emlite::Val IDBIndex::instance() noexcept { return emlite::Val::global("IDBIndex"); }
 IDBIndex::IDBIndex(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBIndex::IDBIndex(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

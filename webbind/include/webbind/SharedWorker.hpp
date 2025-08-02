@@ -18,6 +18,7 @@ public:
     static SharedWorker take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedWorker clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SharedWorker(..)` constructor, creating a new SharedWorker instance
     SharedWorker(const jsbind::Any& scriptURL);
     /// The `new SharedWorker(..)` constructor, creating a new SharedWorker instance

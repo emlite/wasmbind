@@ -18,6 +18,7 @@ public:
     static XRPose take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRPose clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `transform` attribute.
     /// [`XRPose.transform`](https://developer.mozilla.org/en-US/docs/Web/API/XRPose/transform)
     [[nodiscard]] XRRigidTransform transform() const;

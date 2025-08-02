@@ -60,6 +60,7 @@ public:
     static RTCRtpSender take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCRtpSender clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `track` attribute.
     /// [`RTCRtpSender.track`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/track)
     [[nodiscard]] MediaStreamTrack track() const;

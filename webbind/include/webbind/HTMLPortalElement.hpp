@@ -30,6 +30,7 @@ public:
     static HTMLPortalElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLPortalElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLPortalElement(..)` constructor, creating a new HTMLPortalElement instance
     HTMLPortalElement();
     /// Getter of the `src` attribute.

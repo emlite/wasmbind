@@ -30,6 +30,7 @@ IDBFactory IDBFactory::take_ownership(Handle h) noexcept {
         return IDBFactory(h);
     }
 IDBFactory IDBFactory::clone() const noexcept { return *this; }
+emlite::Val IDBFactory::instance() noexcept { return emlite::Val::global("IDBFactory"); }
 IDBFactory::IDBFactory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBFactory::IDBFactory(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

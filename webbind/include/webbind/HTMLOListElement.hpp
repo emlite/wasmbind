@@ -16,6 +16,7 @@ public:
     static HTMLOListElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLOListElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLOListElement(..)` constructor, creating a new HTMLOListElement instance
     HTMLOListElement();
     /// Getter of the `reversed` attribute.

@@ -18,6 +18,7 @@ public:
     static XRLightProbe take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRLightProbe clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `probeSpace` attribute.
     /// [`XRLightProbe.probeSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightProbe/probeSpace)
     [[nodiscard]] XRSpace probeSpace() const;

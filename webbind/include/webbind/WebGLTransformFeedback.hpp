@@ -16,5 +16,6 @@ public:
     static WebGLTransformFeedback take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebGLTransformFeedback clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

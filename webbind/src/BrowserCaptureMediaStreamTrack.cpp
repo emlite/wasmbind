@@ -7,6 +7,7 @@ BrowserCaptureMediaStreamTrack BrowserCaptureMediaStreamTrack::take_ownership(Ha
         return BrowserCaptureMediaStreamTrack(h);
     }
 BrowserCaptureMediaStreamTrack BrowserCaptureMediaStreamTrack::clone() const noexcept { return *this; }
+emlite::Val BrowserCaptureMediaStreamTrack::instance() noexcept { return emlite::Val::global("BrowserCaptureMediaStreamTrack"); }
 BrowserCaptureMediaStreamTrack::BrowserCaptureMediaStreamTrack(Handle h) noexcept : MediaStreamTrack(emlite::Val::take_ownership(h)) {}
 BrowserCaptureMediaStreamTrack::BrowserCaptureMediaStreamTrack(const emlite::Val &val) noexcept: MediaStreamTrack(val) {}
 

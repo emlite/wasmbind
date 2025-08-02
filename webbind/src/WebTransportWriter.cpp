@@ -5,6 +5,7 @@ WebTransportWriter WebTransportWriter::take_ownership(Handle h) noexcept {
         return WebTransportWriter(h);
     }
 WebTransportWriter WebTransportWriter::clone() const noexcept { return *this; }
+emlite::Val WebTransportWriter::instance() noexcept { return emlite::Val::global("WebTransportWriter"); }
 WebTransportWriter::WebTransportWriter(Handle h) noexcept : WritableStreamDefaultWriter(emlite::Val::take_ownership(h)) {}
 WebTransportWriter::WebTransportWriter(const emlite::Val &val) noexcept: WritableStreamDefaultWriter(val) {}
 

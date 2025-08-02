@@ -15,6 +15,7 @@ public:
     static PressureRecord take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PressureRecord clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `source` attribute.
     /// [`PressureRecord.source`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/source)
     [[nodiscard]] PressureSource source() const;

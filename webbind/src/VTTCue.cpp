@@ -7,6 +7,7 @@ VTTCue VTTCue::take_ownership(Handle h) noexcept {
         return VTTCue(h);
     }
 VTTCue VTTCue::clone() const noexcept { return *this; }
+emlite::Val VTTCue::instance() noexcept { return emlite::Val::global("VTTCue"); }
 VTTCue::VTTCue(Handle h) noexcept : TextTrackCue(emlite::Val::take_ownership(h)) {}
 VTTCue::VTTCue(const emlite::Val &val) noexcept: TextTrackCue(val) {}
 

@@ -7,6 +7,7 @@ CompressionStream CompressionStream::take_ownership(Handle h) noexcept {
         return CompressionStream(h);
     }
 CompressionStream CompressionStream::clone() const noexcept { return *this; }
+emlite::Val CompressionStream::instance() noexcept { return emlite::Val::global("CompressionStream"); }
 CompressionStream::CompressionStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CompressionStream::CompressionStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

@@ -19,6 +19,7 @@ public:
     static MouseEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MouseEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MouseEvent(..)` constructor, creating a new MouseEvent instance
     MouseEvent(const jsbind::String& type);
     /// The `new MouseEvent(..)` constructor, creating a new MouseEvent instance

@@ -6,6 +6,7 @@ HTMLOptionElement HTMLOptionElement::take_ownership(Handle h) noexcept {
         return HTMLOptionElement(h);
     }
 HTMLOptionElement HTMLOptionElement::clone() const noexcept { return *this; }
+emlite::Val HTMLOptionElement::instance() noexcept { return emlite::Val::global("HTMLOptionElement"); }
 HTMLOptionElement::HTMLOptionElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLOptionElement::HTMLOptionElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

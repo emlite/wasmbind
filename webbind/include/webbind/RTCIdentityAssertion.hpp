@@ -15,6 +15,7 @@ public:
     static RTCIdentityAssertion take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCIdentityAssertion clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCIdentityAssertion(..)` constructor, creating a new RTCIdentityAssertion instance
     RTCIdentityAssertion(const jsbind::String& idp, const jsbind::String& name);
     /// Getter of the `idp` attribute.

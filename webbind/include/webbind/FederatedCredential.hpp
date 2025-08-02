@@ -16,6 +16,7 @@ public:
     static FederatedCredential take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FederatedCredential clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FederatedCredential(..)` constructor, creating a new FederatedCredential instance
     FederatedCredential(const jsbind::Any& data);
     /// Getter of the `provider` attribute.

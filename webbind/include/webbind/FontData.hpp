@@ -17,6 +17,7 @@ public:
     static FontData take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FontData clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The blob method.
     /// [`FontData.blob`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/blob)
     jsbind::Promise<Blob> blob();

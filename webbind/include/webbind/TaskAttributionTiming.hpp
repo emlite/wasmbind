@@ -16,6 +16,7 @@ public:
     static TaskAttributionTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TaskAttributionTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startTime` attribute.
     /// [`TaskAttributionTiming.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/startTime)
     [[nodiscard]] jsbind::Any startTime() const;

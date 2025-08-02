@@ -32,6 +32,7 @@ public:
     static XRSystem take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRSystem clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The isSessionSupported method.
     /// [`XRSystem.isSessionSupported`](https://developer.mozilla.org/en-US/docs/Web/API/XRSystem/isSessionSupported)
     jsbind::Promise<bool> isSessionSupported(const XRSessionMode& mode);

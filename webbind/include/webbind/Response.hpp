@@ -21,6 +21,7 @@ public:
     static Response take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Response clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Response(..)` constructor, creating a new Response instance
     Response();
     /// The `new Response(..)` constructor, creating a new Response instance

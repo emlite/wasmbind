@@ -15,6 +15,7 @@ public:
     static LayoutConstraints take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LayoutConstraints clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `availableInlineSize` attribute.
     /// [`LayoutConstraints.availableInlineSize`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutConstraints/availableInlineSize)
     [[nodiscard]] double availableInlineSize() const;

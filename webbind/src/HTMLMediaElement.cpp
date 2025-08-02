@@ -14,6 +14,7 @@ HTMLMediaElement HTMLMediaElement::take_ownership(Handle h) noexcept {
         return HTMLMediaElement(h);
     }
 HTMLMediaElement HTMLMediaElement::clone() const noexcept { return *this; }
+emlite::Val HTMLMediaElement::instance() noexcept { return emlite::Val::global("HTMLMediaElement"); }
 HTMLMediaElement::HTMLMediaElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLMediaElement::HTMLMediaElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

@@ -16,6 +16,7 @@ public:
     static HTMLLIElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLLIElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLIElement(..)` constructor, creating a new HTMLLIElement instance
     HTMLLIElement();
     /// Getter of the `value` attribute.

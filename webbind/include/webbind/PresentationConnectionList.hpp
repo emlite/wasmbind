@@ -18,6 +18,7 @@ public:
     static PresentationConnectionList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PresentationConnectionList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `connections` attribute.
     /// [`PresentationConnectionList.connections`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionList/connections)
     [[nodiscard]] jsbind::TypedArray<PresentationConnection> connections() const;

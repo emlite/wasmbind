@@ -9,6 +9,7 @@ HTMLButtonElement HTMLButtonElement::take_ownership(Handle h) noexcept {
         return HTMLButtonElement(h);
     }
 HTMLButtonElement HTMLButtonElement::clone() const noexcept { return *this; }
+emlite::Val HTMLButtonElement::instance() noexcept { return emlite::Val::global("HTMLButtonElement"); }
 HTMLButtonElement::HTMLButtonElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLButtonElement::HTMLButtonElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

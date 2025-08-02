@@ -42,6 +42,7 @@ public:
     static MutationObserver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MutationObserver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MutationObserver(..)` constructor, creating a new MutationObserver instance
     MutationObserver(const jsbind::Function& callback);
     /// The observe method.

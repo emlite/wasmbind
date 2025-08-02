@@ -5,6 +5,7 @@ CSSLCH CSSLCH::take_ownership(Handle h) noexcept {
         return CSSLCH(h);
     }
 CSSLCH CSSLCH::clone() const noexcept { return *this; }
+emlite::Val CSSLCH::instance() noexcept { return emlite::Val::global("CSSLCH"); }
 CSSLCH::CSSLCH(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
 CSSLCH::CSSLCH(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 

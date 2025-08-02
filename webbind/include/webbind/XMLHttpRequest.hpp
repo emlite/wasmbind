@@ -51,6 +51,7 @@ public:
     static XMLHttpRequest take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XMLHttpRequest clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XMLHttpRequest(..)` constructor, creating a new XMLHttpRequest instance
     XMLHttpRequest();
     /// Getter of the `onreadystatechange` attribute.

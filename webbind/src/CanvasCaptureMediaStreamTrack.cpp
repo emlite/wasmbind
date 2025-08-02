@@ -6,6 +6,7 @@ CanvasCaptureMediaStreamTrack CanvasCaptureMediaStreamTrack::take_ownership(Hand
         return CanvasCaptureMediaStreamTrack(h);
     }
 CanvasCaptureMediaStreamTrack CanvasCaptureMediaStreamTrack::clone() const noexcept { return *this; }
+emlite::Val CanvasCaptureMediaStreamTrack::instance() noexcept { return emlite::Val::global("CanvasCaptureMediaStreamTrack"); }
 CanvasCaptureMediaStreamTrack::CanvasCaptureMediaStreamTrack(Handle h) noexcept : MediaStreamTrack(emlite::Val::take_ownership(h)) {}
 CanvasCaptureMediaStreamTrack::CanvasCaptureMediaStreamTrack(const emlite::Val &val) noexcept: MediaStreamTrack(val) {}
 

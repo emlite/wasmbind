@@ -8,6 +8,7 @@ XRInputSource XRInputSource::take_ownership(Handle h) noexcept {
         return XRInputSource(h);
     }
 XRInputSource XRInputSource::clone() const noexcept { return *this; }
+emlite::Val XRInputSource::instance() noexcept { return emlite::Val::global("XRInputSource"); }
 XRInputSource::XRInputSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRInputSource::XRInputSource(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

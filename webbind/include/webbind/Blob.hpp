@@ -18,6 +18,7 @@ public:
     static Blob take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Blob clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Blob(..)` constructor, creating a new Blob instance
     Blob();
     /// The `new Blob(..)` constructor, creating a new Blob instance

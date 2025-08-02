@@ -8,6 +8,7 @@ GPUComputePassEncoder GPUComputePassEncoder::take_ownership(Handle h) noexcept {
         return GPUComputePassEncoder(h);
     }
 GPUComputePassEncoder GPUComputePassEncoder::clone() const noexcept { return *this; }
+emlite::Val GPUComputePassEncoder::instance() noexcept { return emlite::Val::global("GPUComputePassEncoder"); }
 GPUComputePassEncoder::GPUComputePassEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUComputePassEncoder::GPUComputePassEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

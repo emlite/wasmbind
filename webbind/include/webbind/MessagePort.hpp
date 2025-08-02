@@ -29,6 +29,7 @@ public:
     static MessagePort take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MessagePort clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The postMessage method.
     /// [`MessagePort.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);

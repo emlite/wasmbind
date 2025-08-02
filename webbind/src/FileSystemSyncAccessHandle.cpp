@@ -21,6 +21,7 @@ FileSystemSyncAccessHandle FileSystemSyncAccessHandle::take_ownership(Handle h) 
         return FileSystemSyncAccessHandle(h);
     }
 FileSystemSyncAccessHandle FileSystemSyncAccessHandle::clone() const noexcept { return *this; }
+emlite::Val FileSystemSyncAccessHandle::instance() noexcept { return emlite::Val::global("FileSystemSyncAccessHandle"); }
 FileSystemSyncAccessHandle::FileSystemSyncAccessHandle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FileSystemSyncAccessHandle::FileSystemSyncAccessHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

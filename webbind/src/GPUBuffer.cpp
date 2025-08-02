@@ -5,6 +5,7 @@ GPUBuffer GPUBuffer::take_ownership(Handle h) noexcept {
         return GPUBuffer(h);
     }
 GPUBuffer GPUBuffer::clone() const noexcept { return *this; }
+emlite::Val GPUBuffer::instance() noexcept { return emlite::Val::global("GPUBuffer"); }
 GPUBuffer::GPUBuffer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUBuffer::GPUBuffer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

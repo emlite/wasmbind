@@ -18,6 +18,7 @@ public:
     static GPUUncapturedErrorEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUUncapturedErrorEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GPUUncapturedErrorEvent(..)` constructor, creating a new GPUUncapturedErrorEvent instance
     GPUUncapturedErrorEvent(const jsbind::String& type, const jsbind::Any& gpuUncapturedErrorEventInitDict);
     /// Getter of the `error` attribute.

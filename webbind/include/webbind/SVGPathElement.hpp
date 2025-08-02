@@ -32,6 +32,7 @@ public:
     static SVGPathElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGPathElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `pathLength` attribute.
     /// [`SVGPathElement.pathLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement/pathLength)
     [[nodiscard]] SVGAnimatedNumber pathLength() const;

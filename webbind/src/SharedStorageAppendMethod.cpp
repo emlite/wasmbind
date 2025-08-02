@@ -6,6 +6,7 @@ SharedStorageAppendMethod SharedStorageAppendMethod::take_ownership(Handle h) no
         return SharedStorageAppendMethod(h);
     }
 SharedStorageAppendMethod SharedStorageAppendMethod::clone() const noexcept { return *this; }
+emlite::Val SharedStorageAppendMethod::instance() noexcept { return emlite::Val::global("SharedStorageAppendMethod"); }
 SharedStorageAppendMethod::SharedStorageAppendMethod(Handle h) noexcept : SharedStorageModifierMethod(emlite::Val::take_ownership(h)) {}
 SharedStorageAppendMethod::SharedStorageAppendMethod(const emlite::Val &val) noexcept: SharedStorageModifierMethod(val) {}
 

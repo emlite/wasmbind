@@ -30,6 +30,7 @@ public:
     static RTCEncodedAudioFrame take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCEncodedAudioFrame clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCEncodedAudioFrame(..)` constructor, creating a new RTCEncodedAudioFrame instance
     RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame);
     /// The `new RTCEncodedAudioFrame(..)` constructor, creating a new RTCEncodedAudioFrame instance

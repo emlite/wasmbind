@@ -18,6 +18,7 @@ public:
     static SVGLinearGradientElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGLinearGradientElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x1` attribute.
     /// [`SVGLinearGradientElement.x1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLinearGradientElement/x1)
     [[nodiscard]] SVGAnimatedLength x1() const;

@@ -16,6 +16,7 @@ public:
     static HTMLBodyElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLBodyElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLBodyElement(..)` constructor, creating a new HTMLBodyElement instance
     HTMLBodyElement();
     /// Getter of the `onorientationchange` attribute.

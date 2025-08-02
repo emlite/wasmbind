@@ -158,6 +158,7 @@ VideoEncoder VideoEncoder::take_ownership(Handle h) noexcept {
         return VideoEncoder(h);
     }
 VideoEncoder VideoEncoder::clone() const noexcept { return *this; }
+emlite::Val VideoEncoder::instance() noexcept { return emlite::Val::global("VideoEncoder"); }
 VideoEncoder::VideoEncoder(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 VideoEncoder::VideoEncoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 

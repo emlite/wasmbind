@@ -20,6 +20,7 @@ public:
     static HTMLIFrameElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLIFrameElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLIFrameElement(..)` constructor, creating a new HTMLIFrameElement instance
     HTMLIFrameElement();
     /// Getter of the `src` attribute.

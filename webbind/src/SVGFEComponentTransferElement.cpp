@@ -7,6 +7,7 @@ SVGFEComponentTransferElement SVGFEComponentTransferElement::take_ownership(Hand
         return SVGFEComponentTransferElement(h);
     }
 SVGFEComponentTransferElement SVGFEComponentTransferElement::clone() const noexcept { return *this; }
+emlite::Val SVGFEComponentTransferElement::instance() noexcept { return emlite::Val::global("SVGFEComponentTransferElement"); }
 SVGFEComponentTransferElement::SVGFEComponentTransferElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEComponentTransferElement::SVGFEComponentTransferElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

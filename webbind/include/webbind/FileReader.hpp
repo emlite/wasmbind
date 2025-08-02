@@ -19,6 +19,7 @@ public:
     static FileReader take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileReader clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FileReader(..)` constructor, creating a new FileReader instance
     FileReader();
     /// The readAsArrayBuffer method.

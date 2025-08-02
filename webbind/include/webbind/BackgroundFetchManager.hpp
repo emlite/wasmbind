@@ -29,6 +29,7 @@ public:
     static BackgroundFetchManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BackgroundFetchManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The fetch method.
     /// [`BackgroundFetchManager.fetch`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchManager/fetch)
     jsbind::Promise<BackgroundFetchRegistration> fetch(const jsbind::String& id, const jsbind::Any& requests);

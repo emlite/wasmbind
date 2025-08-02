@@ -18,6 +18,7 @@ public:
     static CaretPosition take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CaretPosition clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `offsetNode` attribute.
     /// [`CaretPosition.offsetNode`](https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/offsetNode)
     [[nodiscard]] Node offsetNode() const;

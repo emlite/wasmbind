@@ -18,6 +18,7 @@ public:
     static NDEFReadingEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NDEFReadingEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFReadingEvent(..)` constructor, creating a new NDEFReadingEvent instance
     NDEFReadingEvent(const jsbind::String& type, const jsbind::Any& readingEventInitDict);
     /// Getter of the `serialNumber` attribute.

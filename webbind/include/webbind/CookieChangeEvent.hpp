@@ -17,6 +17,7 @@ public:
     static CookieChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CookieChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CookieChangeEvent(..)` constructor, creating a new CookieChangeEvent instance
     CookieChangeEvent(const jsbind::String& type);
     /// The `new CookieChangeEvent(..)` constructor, creating a new CookieChangeEvent instance

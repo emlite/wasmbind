@@ -15,6 +15,7 @@ public:
     static PaymentManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PaymentManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `userHint` attribute.
     /// [`PaymentManager.userHint`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentManager/userHint)
     [[nodiscard]] jsbind::String userHint() const;

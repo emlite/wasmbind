@@ -5,6 +5,7 @@ SVGAngle SVGAngle::take_ownership(Handle h) noexcept {
         return SVGAngle(h);
     }
 SVGAngle SVGAngle::clone() const noexcept { return *this; }
+emlite::Val SVGAngle::instance() noexcept { return emlite::Val::global("SVGAngle"); }
 SVGAngle::SVGAngle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGAngle::SVGAngle(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

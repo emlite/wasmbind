@@ -16,6 +16,7 @@ public:
     static HTMLDListElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLDListElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDListElement(..)` constructor, creating a new HTMLDListElement instance
     HTMLDListElement();
     /// Getter of the `compact` attribute.

@@ -16,6 +16,7 @@ public:
     static CSSViewTransitionRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSViewTransitionRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `navigation` attribute.
     /// [`CSSViewTransitionRule.navigation`](https://developer.mozilla.org/en-US/docs/Web/API/CSSViewTransitionRule/navigation)
     [[nodiscard]] jsbind::String navigation() const;

@@ -17,6 +17,7 @@ public:
     static PluginArray take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PluginArray clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The refresh method.
     /// [`PluginArray.refresh`](https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/refresh)
     jsbind::Undefined refresh();

@@ -5,6 +5,7 @@ MediaQueryList MediaQueryList::take_ownership(Handle h) noexcept {
         return MediaQueryList(h);
     }
 MediaQueryList MediaQueryList::clone() const noexcept { return *this; }
+emlite::Val MediaQueryList::instance() noexcept { return emlite::Val::global("MediaQueryList"); }
 MediaQueryList::MediaQueryList(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaQueryList::MediaQueryList(const emlite::Val &val) noexcept: EventTarget(val) {}
 

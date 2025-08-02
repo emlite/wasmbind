@@ -32,6 +32,7 @@ public:
     static RealTimeReporting take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RealTimeReporting clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The contributeToHistogram method.
     /// [`RealTimeReporting.contributeToHistogram`](https://developer.mozilla.org/en-US/docs/Web/API/RealTimeReporting/contributeToHistogram)
     jsbind::Undefined contributeToHistogram(const RealTimeContribution& contribution);

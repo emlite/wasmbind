@@ -17,6 +17,7 @@ public:
     static ViewTransition take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ViewTransition clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `updateCallbackDone` attribute.
     /// [`ViewTransition.updateCallbackDone`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/updateCallbackDone)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> updateCallbackDone() const;

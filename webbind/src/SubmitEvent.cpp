@@ -6,6 +6,7 @@ SubmitEvent SubmitEvent::take_ownership(Handle h) noexcept {
         return SubmitEvent(h);
     }
 SubmitEvent SubmitEvent::clone() const noexcept { return *this; }
+emlite::Val SubmitEvent::instance() noexcept { return emlite::Val::global("SubmitEvent"); }
 SubmitEvent::SubmitEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SubmitEvent::SubmitEvent(const emlite::Val &val) noexcept: Event(val) {}
 

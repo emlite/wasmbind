@@ -6,6 +6,7 @@ PerformanceResourceTiming PerformanceResourceTiming::take_ownership(Handle h) no
         return PerformanceResourceTiming(h);
     }
 PerformanceResourceTiming PerformanceResourceTiming::clone() const noexcept { return *this; }
+emlite::Val PerformanceResourceTiming::instance() noexcept { return emlite::Val::global("PerformanceResourceTiming"); }
 PerformanceResourceTiming::PerformanceResourceTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceResourceTiming::PerformanceResourceTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 

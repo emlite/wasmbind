@@ -28,6 +28,7 @@ public:
     static FileSystemSyncAccessHandle take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemSyncAccessHandle clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The read method.
     /// [`FileSystemSyncAccessHandle.read`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle/read)
     long long read(const jsbind::Any& buffer);

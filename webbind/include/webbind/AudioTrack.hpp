@@ -17,6 +17,7 @@ public:
     static AudioTrack take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioTrack clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
     /// [`AudioTrack.id`](https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/id)
     [[nodiscard]] jsbind::String id() const;

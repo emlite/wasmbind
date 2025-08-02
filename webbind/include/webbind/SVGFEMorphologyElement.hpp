@@ -21,6 +21,7 @@ public:
     static SVGFEMorphologyElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEMorphologyElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
     /// [`SVGFEMorphologyElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMorphologyElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;

@@ -16,6 +16,7 @@ public:
     static LinearAccelerationSensor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LinearAccelerationSensor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new LinearAccelerationSensor(..)` constructor, creating a new LinearAccelerationSensor instance
     LinearAccelerationSensor();
     /// The `new LinearAccelerationSensor(..)` constructor, creating a new LinearAccelerationSensor instance

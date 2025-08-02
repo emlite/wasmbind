@@ -15,6 +15,7 @@ public:
     static IdleDeadline take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IdleDeadline clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The timeRemaining method.
     /// [`IdleDeadline.timeRemaining`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/timeRemaining)
     jsbind::Any timeRemaining();

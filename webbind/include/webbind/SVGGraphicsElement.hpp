@@ -39,6 +39,7 @@ public:
     static SVGGraphicsElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGGraphicsElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `transform` attribute.
     /// [`SVGGraphicsElement.transform`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/transform)
     [[nodiscard]] SVGAnimatedTransformList transform() const;

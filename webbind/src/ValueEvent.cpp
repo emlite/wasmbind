@@ -5,6 +5,7 @@ ValueEvent ValueEvent::take_ownership(Handle h) noexcept {
         return ValueEvent(h);
     }
 ValueEvent ValueEvent::clone() const noexcept { return *this; }
+emlite::Val ValueEvent::instance() noexcept { return emlite::Val::global("ValueEvent"); }
 ValueEvent::ValueEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 ValueEvent::ValueEvent(const emlite::Val &val) noexcept: Event(val) {}
 

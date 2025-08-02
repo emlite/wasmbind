@@ -5,6 +5,7 @@ NavigatorLogin NavigatorLogin::take_ownership(Handle h) noexcept {
         return NavigatorLogin(h);
     }
 NavigatorLogin NavigatorLogin::clone() const noexcept { return *this; }
+emlite::Val NavigatorLogin::instance() noexcept { return emlite::Val::global("NavigatorLogin"); }
 NavigatorLogin::NavigatorLogin(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigatorLogin::NavigatorLogin(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

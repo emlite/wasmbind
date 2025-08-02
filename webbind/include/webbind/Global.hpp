@@ -15,6 +15,7 @@ public:
     static Global take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Global clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Global(..)` constructor, creating a new Global instance
     Global(const jsbind::Any& descriptor);
     /// The `new Global(..)` constructor, creating a new Global instance

@@ -70,6 +70,7 @@ public:
     static MLContext take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MLContext clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The dispatch method.
     /// [`MLContext.dispatch`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/dispatch)
     jsbind::Undefined dispatch(const MLGraph& graph, const jsbind::Any& inputs, const jsbind::Any& outputs);

@@ -16,6 +16,7 @@ public:
     static MediaStreamTrackAudioSourceNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaStreamTrackAudioSourceNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStreamTrackAudioSourceNode(..)` constructor, creating a new MediaStreamTrackAudioSourceNode instance
     MediaStreamTrackAudioSourceNode(const AudioContext& context, const jsbind::Any& options);
 };

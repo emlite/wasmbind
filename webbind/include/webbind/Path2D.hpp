@@ -18,6 +18,7 @@ public:
     static Path2D take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Path2D clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Path2D(..)` constructor, creating a new Path2D instance
     Path2D();
     /// The `new Path2D(..)` constructor, creating a new Path2D instance

@@ -71,6 +71,7 @@ Translator Translator::take_ownership(Handle h) noexcept {
         return Translator(h);
     }
 Translator Translator::clone() const noexcept { return *this; }
+emlite::Val Translator::instance() noexcept { return emlite::Val::global("Translator"); }
 Translator::Translator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Translator::Translator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

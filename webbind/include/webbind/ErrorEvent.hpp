@@ -16,6 +16,7 @@ public:
     static ErrorEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ErrorEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ErrorEvent(..)` constructor, creating a new ErrorEvent instance
     ErrorEvent(const jsbind::String& type);
     /// The `new ErrorEvent(..)` constructor, creating a new ErrorEvent instance

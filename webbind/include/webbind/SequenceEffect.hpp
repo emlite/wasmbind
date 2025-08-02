@@ -18,6 +18,7 @@ public:
     static SequenceEffect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SequenceEffect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SequenceEffect(..)` constructor, creating a new SequenceEffect instance
     SequenceEffect(const jsbind::TypedArray<AnimationEffect>& children);
     /// The `new SequenceEffect(..)` constructor, creating a new SequenceEffect instance

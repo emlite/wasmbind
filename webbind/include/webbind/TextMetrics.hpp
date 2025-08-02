@@ -15,6 +15,7 @@ public:
     static TextMetrics take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextMetrics clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
     /// [`TextMetrics.width`](https://developer.mozilla.org/en-US/docs/Web/API/TextMetrics/width)
     [[nodiscard]] double width() const;

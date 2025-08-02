@@ -15,6 +15,7 @@ public:
     static XRTransientInputHitTestSource take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRTransientInputHitTestSource clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The cancel method.
     /// [`XRTransientInputHitTestSource.cancel`](https://developer.mozilla.org/en-US/docs/Web/API/XRTransientInputHitTestSource/cancel)
     jsbind::Undefined cancel();

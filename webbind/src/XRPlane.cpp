@@ -7,6 +7,7 @@ XRPlane XRPlane::take_ownership(Handle h) noexcept {
         return XRPlane(h);
     }
 XRPlane XRPlane::clone() const noexcept { return *this; }
+emlite::Val XRPlane::instance() noexcept { return emlite::Val::global("XRPlane"); }
 XRPlane::XRPlane(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRPlane::XRPlane(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

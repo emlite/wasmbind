@@ -31,6 +31,7 @@ public:
     static PushManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PushManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `supportedContentEncodings` static attribute.
     /// [`PushManager.supportedContentEncodings`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/supportedContentEncodings)
     [[nodiscard]] static jsbind::TypedArray<jsbind::String> supportedContentEncodings();

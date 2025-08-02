@@ -16,6 +16,7 @@ public:
     static HTMLTableCaptionElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLTableCaptionElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableCaptionElement(..)` constructor, creating a new HTMLTableCaptionElement instance
     HTMLTableCaptionElement();
     /// Getter of the `align` attribute.

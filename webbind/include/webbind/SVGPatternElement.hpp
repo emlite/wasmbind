@@ -23,6 +23,7 @@ public:
     static SVGPatternElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGPatternElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `patternUnits` attribute.
     /// [`SVGPatternElement.patternUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPatternElement/patternUnits)
     [[nodiscard]] SVGAnimatedEnumeration patternUnits() const;

@@ -20,6 +20,7 @@ public:
     static BrowserCaptureMediaStreamTrack take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BrowserCaptureMediaStreamTrack clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The cropTo method.
     /// [`BrowserCaptureMediaStreamTrack.cropTo`](https://developer.mozilla.org/en-US/docs/Web/API/BrowserCaptureMediaStreamTrack/cropTo)
     jsbind::Promise<jsbind::Undefined> cropTo(const CropTarget& cropTarget);

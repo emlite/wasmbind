@@ -18,6 +18,7 @@ public:
     static MessageEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MessageEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MessageEvent(..)` constructor, creating a new MessageEvent instance
     MessageEvent(const jsbind::String& type);
     /// The `new MessageEvent(..)` constructor, creating a new MessageEvent instance

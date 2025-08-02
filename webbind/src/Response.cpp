@@ -9,6 +9,7 @@ Response Response::take_ownership(Handle h) noexcept {
         return Response(h);
     }
 Response Response::clone() const noexcept { return *this; }
+emlite::Val Response::instance() noexcept { return emlite::Val::global("Response"); }
 Response::Response(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Response::Response(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

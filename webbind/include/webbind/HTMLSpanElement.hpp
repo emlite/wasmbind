@@ -16,6 +16,7 @@ public:
     static HTMLSpanElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLSpanElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSpanElement(..)` constructor, creating a new HTMLSpanElement instance
     HTMLSpanElement();
 };

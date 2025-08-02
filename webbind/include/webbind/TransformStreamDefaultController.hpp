@@ -15,6 +15,7 @@ public:
     static TransformStreamDefaultController take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TransformStreamDefaultController clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `desiredSize` attribute.
     /// [`TransformStreamDefaultController.desiredSize`](https://developer.mozilla.org/en-US/docs/Web/API/TransformStreamDefaultController/desiredSize)
     [[nodiscard]] double desiredSize() const;

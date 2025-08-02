@@ -16,6 +16,7 @@ public:
     static HTMLHeadElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLHeadElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLHeadElement(..)` constructor, creating a new HTMLHeadElement instance
     HTMLHeadElement();
 };

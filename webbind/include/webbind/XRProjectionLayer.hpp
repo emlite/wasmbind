@@ -18,6 +18,7 @@ public:
     static XRProjectionLayer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRProjectionLayer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `textureWidth` attribute.
     /// [`XRProjectionLayer.textureWidth`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer/textureWidth)
     [[nodiscard]] unsigned long textureWidth() const;

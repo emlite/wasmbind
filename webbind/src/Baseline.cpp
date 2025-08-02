@@ -5,6 +5,7 @@ Baseline Baseline::take_ownership(Handle h) noexcept {
         return Baseline(h);
     }
 Baseline Baseline::clone() const noexcept { return *this; }
+emlite::Val Baseline::instance() noexcept { return emlite::Val::global("Baseline"); }
 Baseline::Baseline(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Baseline::Baseline(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

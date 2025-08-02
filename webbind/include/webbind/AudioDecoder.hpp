@@ -50,6 +50,7 @@ public:
     static AudioDecoder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioDecoder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioDecoder(..)` constructor, creating a new AudioDecoder instance
     AudioDecoder(const jsbind::Any& init);
     /// Getter of the `state` attribute.

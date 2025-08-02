@@ -16,6 +16,7 @@ public:
     static HTMLFontElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLFontElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFontElement(..)` constructor, creating a new HTMLFontElement instance
     HTMLFontElement();
     /// Getter of the `color` attribute.

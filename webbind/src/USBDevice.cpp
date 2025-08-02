@@ -58,6 +58,7 @@ USBDevice USBDevice::take_ownership(Handle h) noexcept {
         return USBDevice(h);
     }
 USBDevice USBDevice::clone() const noexcept { return *this; }
+emlite::Val USBDevice::instance() noexcept { return emlite::Val::global("USBDevice"); }
 USBDevice::USBDevice(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBDevice::USBDevice(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

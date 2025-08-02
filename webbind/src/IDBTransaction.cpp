@@ -9,6 +9,7 @@ IDBTransaction IDBTransaction::take_ownership(Handle h) noexcept {
         return IDBTransaction(h);
     }
 IDBTransaction IDBTransaction::clone() const noexcept { return *this; }
+emlite::Val IDBTransaction::instance() noexcept { return emlite::Val::global("IDBTransaction"); }
 IDBTransaction::IDBTransaction(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 IDBTransaction::IDBTransaction(const emlite::Val &val) noexcept: EventTarget(val) {}
 

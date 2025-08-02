@@ -6,6 +6,7 @@ StorageEvent StorageEvent::take_ownership(Handle h) noexcept {
         return StorageEvent(h);
     }
 StorageEvent StorageEvent::clone() const noexcept { return *this; }
+emlite::Val StorageEvent::instance() noexcept { return emlite::Val::global("StorageEvent"); }
 StorageEvent::StorageEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 StorageEvent::StorageEvent(const emlite::Val &val) noexcept: Event(val) {}
 

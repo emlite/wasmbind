@@ -15,6 +15,7 @@ public:
     static SpeechRecognitionPhrase take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechRecognitionPhrase clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionPhrase(..)` constructor, creating a new SpeechRecognitionPhrase instance
     SpeechRecognitionPhrase(const jsbind::String& phrase);
     /// The `new SpeechRecognitionPhrase(..)` constructor, creating a new SpeechRecognitionPhrase instance

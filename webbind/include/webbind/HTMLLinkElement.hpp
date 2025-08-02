@@ -19,6 +19,7 @@ public:
     static HTMLLinkElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLLinkElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLinkElement(..)` constructor, creating a new HTMLLinkElement instance
     HTMLLinkElement();
     /// Getter of the `href` attribute.

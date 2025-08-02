@@ -18,6 +18,7 @@ public:
     static PushSubscriptionChangeEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PushSubscriptionChangeEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PushSubscriptionChangeEvent(..)` constructor, creating a new PushSubscriptionChangeEvent instance
     PushSubscriptionChangeEvent(const jsbind::String& type);
     /// The `new PushSubscriptionChangeEvent(..)` constructor, creating a new PushSubscriptionChangeEvent instance

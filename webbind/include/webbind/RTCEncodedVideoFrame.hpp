@@ -40,6 +40,7 @@ public:
     static RTCEncodedVideoFrame take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCEncodedVideoFrame clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCEncodedVideoFrame(..)` constructor, creating a new RTCEncodedVideoFrame instance
     RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame);
     /// The `new RTCEncodedVideoFrame(..)` constructor, creating a new RTCEncodedVideoFrame instance

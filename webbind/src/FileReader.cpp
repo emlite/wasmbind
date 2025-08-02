@@ -7,6 +7,7 @@ FileReader FileReader::take_ownership(Handle h) noexcept {
         return FileReader(h);
     }
 FileReader FileReader::clone() const noexcept { return *this; }
+emlite::Val FileReader::instance() noexcept { return emlite::Val::global("FileReader"); }
 FileReader::FileReader(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 FileReader::FileReader(const emlite::Val &val) noexcept: EventTarget(val) {}
 

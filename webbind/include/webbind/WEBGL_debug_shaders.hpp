@@ -17,6 +17,7 @@ public:
     static WEBGL_debug_shaders take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_debug_shaders clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getTranslatedShaderSource method.
     /// [`WEBGL_debug_shaders.getTranslatedShaderSource`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_shaders/getTranslatedShaderSource)
     jsbind::String getTranslatedShaderSource(const WebGLShader& shader);

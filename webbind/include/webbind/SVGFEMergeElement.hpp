@@ -19,6 +19,7 @@ public:
     static SVGFEMergeElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEMergeElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
     /// [`SVGFEMergeElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;

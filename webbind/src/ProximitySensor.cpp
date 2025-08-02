@@ -5,6 +5,7 @@ ProximitySensor ProximitySensor::take_ownership(Handle h) noexcept {
         return ProximitySensor(h);
     }
 ProximitySensor ProximitySensor::clone() const noexcept { return *this; }
+emlite::Val ProximitySensor::instance() noexcept { return emlite::Val::global("ProximitySensor"); }
 ProximitySensor::ProximitySensor(Handle h) noexcept : Sensor(emlite::Val::take_ownership(h)) {}
 ProximitySensor::ProximitySensor(const emlite::Val &val) noexcept: Sensor(val) {}
 

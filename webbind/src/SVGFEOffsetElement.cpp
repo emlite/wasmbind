@@ -8,6 +8,7 @@ SVGFEOffsetElement SVGFEOffsetElement::take_ownership(Handle h) noexcept {
         return SVGFEOffsetElement(h);
     }
 SVGFEOffsetElement SVGFEOffsetElement::clone() const noexcept { return *this; }
+emlite::Val SVGFEOffsetElement::instance() noexcept { return emlite::Val::global("SVGFEOffsetElement"); }
 SVGFEOffsetElement::SVGFEOffsetElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEOffsetElement::SVGFEOffsetElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

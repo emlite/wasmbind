@@ -5,6 +5,7 @@ SecurityPolicyViolationEvent SecurityPolicyViolationEvent::take_ownership(Handle
         return SecurityPolicyViolationEvent(h);
     }
 SecurityPolicyViolationEvent SecurityPolicyViolationEvent::clone() const noexcept { return *this; }
+emlite::Val SecurityPolicyViolationEvent::instance() noexcept { return emlite::Val::global("SecurityPolicyViolationEvent"); }
 SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const emlite::Val &val) noexcept: Event(val) {}
 

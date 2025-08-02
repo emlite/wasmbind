@@ -36,6 +36,7 @@ public:
     static GPUAdapter take_ownership(Handle h) noexcept;
 
     [[nodiscard]] GPUAdapter clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `features` attribute.
     /// [`GPUAdapter.features`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/features)
     [[nodiscard]] GPUSupportedFeatures features() const;

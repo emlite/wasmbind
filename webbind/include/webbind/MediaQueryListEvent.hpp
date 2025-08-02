@@ -16,6 +16,7 @@ public:
     static MediaQueryListEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaQueryListEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaQueryListEvent(..)` constructor, creating a new MediaQueryListEvent instance
     MediaQueryListEvent(const jsbind::String& type);
     /// The `new MediaQueryListEvent(..)` constructor, creating a new MediaQueryListEvent instance

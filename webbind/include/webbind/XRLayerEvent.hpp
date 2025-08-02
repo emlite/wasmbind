@@ -18,6 +18,7 @@ public:
     static XRLayerEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRLayerEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRLayerEvent(..)` constructor, creating a new XRLayerEvent instance
     XRLayerEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `layer` attribute.

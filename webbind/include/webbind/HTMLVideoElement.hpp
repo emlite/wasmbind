@@ -19,6 +19,7 @@ public:
     static HTMLVideoElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLVideoElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLVideoElement(..)` constructor, creating a new HTMLVideoElement instance
     HTMLVideoElement();
     /// Getter of the `width` attribute.

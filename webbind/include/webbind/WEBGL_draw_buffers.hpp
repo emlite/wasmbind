@@ -15,6 +15,7 @@ public:
     static WEBGL_draw_buffers take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_draw_buffers clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The drawBuffersWEBGL method.
     /// [`WEBGL_draw_buffers.drawBuffersWEBGL`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_draw_buffers/drawBuffersWEBGL)
     jsbind::Undefined drawBuffersWEBGL(const jsbind::TypedArray<jsbind::Any>& buffers);

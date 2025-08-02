@@ -16,6 +16,7 @@ public:
     static CSSScale take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSScale clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSScale(..)` constructor, creating a new CSSScale instance
     CSSScale(const jsbind::Any& x, const jsbind::Any& y);
     /// The `new CSSScale(..)` constructor, creating a new CSSScale instance

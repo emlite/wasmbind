@@ -5,6 +5,7 @@ Magnetometer Magnetometer::take_ownership(Handle h) noexcept {
         return Magnetometer(h);
     }
 Magnetometer Magnetometer::clone() const noexcept { return *this; }
+emlite::Val Magnetometer::instance() noexcept { return emlite::Val::global("Magnetometer"); }
 Magnetometer::Magnetometer(Handle h) noexcept : Sensor(emlite::Val::take_ownership(h)) {}
 Magnetometer::Magnetometer(const emlite::Val &val) noexcept: Sensor(val) {}
 

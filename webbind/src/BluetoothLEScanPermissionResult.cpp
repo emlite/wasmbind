@@ -6,6 +6,7 @@ BluetoothLEScanPermissionResult BluetoothLEScanPermissionResult::take_ownership(
         return BluetoothLEScanPermissionResult(h);
     }
 BluetoothLEScanPermissionResult BluetoothLEScanPermissionResult::clone() const noexcept { return *this; }
+emlite::Val BluetoothLEScanPermissionResult::instance() noexcept { return emlite::Val::global("BluetoothLEScanPermissionResult"); }
 BluetoothLEScanPermissionResult::BluetoothLEScanPermissionResult(Handle h) noexcept : PermissionStatus(emlite::Val::take_ownership(h)) {}
 BluetoothLEScanPermissionResult::BluetoothLEScanPermissionResult(const emlite::Val &val) noexcept: PermissionStatus(val) {}
 

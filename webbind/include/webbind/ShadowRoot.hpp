@@ -20,6 +20,7 @@ public:
     static ShadowRoot take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ShadowRoot clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mode` attribute.
     /// [`ShadowRoot.mode`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode)
     [[nodiscard]] ShadowRootMode mode() const;

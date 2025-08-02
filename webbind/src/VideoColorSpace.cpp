@@ -45,6 +45,7 @@ VideoColorSpace VideoColorSpace::take_ownership(Handle h) noexcept {
         return VideoColorSpace(h);
     }
 VideoColorSpace VideoColorSpace::clone() const noexcept { return *this; }
+emlite::Val VideoColorSpace::instance() noexcept { return emlite::Val::global("VideoColorSpace"); }
 VideoColorSpace::VideoColorSpace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoColorSpace::VideoColorSpace(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

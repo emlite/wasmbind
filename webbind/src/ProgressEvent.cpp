@@ -5,6 +5,7 @@ ProgressEvent ProgressEvent::take_ownership(Handle h) noexcept {
         return ProgressEvent(h);
     }
 ProgressEvent ProgressEvent::clone() const noexcept { return *this; }
+emlite::Val ProgressEvent::instance() noexcept { return emlite::Val::global("ProgressEvent"); }
 ProgressEvent::ProgressEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 ProgressEvent::ProgressEvent(const emlite::Val &val) noexcept: Event(val) {}
 

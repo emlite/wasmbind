@@ -15,6 +15,7 @@ public:
     static External take_ownership(Handle h) noexcept;
 
     [[nodiscard]] External clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The AddSearchProvider method.
     /// [`External.AddSearchProvider`](https://developer.mozilla.org/en-US/docs/Web/API/External/AddSearchProvider)
     jsbind::Undefined AddSearchProvider();

@@ -18,6 +18,7 @@ public:
     static InterestGroupScriptRunnerGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InterestGroupScriptRunnerGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `privateAggregation` attribute.
     /// [`InterestGroupScriptRunnerGlobalScope.privateAggregation`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupScriptRunnerGlobalScope/privateAggregation)
     [[nodiscard]] PrivateAggregation privateAggregation() const;

@@ -18,6 +18,7 @@ public:
     static XRSessionEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRSessionEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRSessionEvent(..)` constructor, creating a new XRSessionEvent instance
     XRSessionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `session` attribute.

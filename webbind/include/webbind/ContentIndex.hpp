@@ -38,6 +38,7 @@ public:
     static ContentIndex take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ContentIndex clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The add method.
     /// [`ContentIndex.add`](https://developer.mozilla.org/en-US/docs/Web/API/ContentIndex/add)
     jsbind::Promise<jsbind::Undefined> add(const ContentDescription& description);

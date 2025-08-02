@@ -5,6 +5,7 @@ HTMLBaseElement HTMLBaseElement::take_ownership(Handle h) noexcept {
         return HTMLBaseElement(h);
     }
 HTMLBaseElement HTMLBaseElement::clone() const noexcept { return *this; }
+emlite::Val HTMLBaseElement::instance() noexcept { return emlite::Val::global("HTMLBaseElement"); }
 HTMLBaseElement::HTMLBaseElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLBaseElement::HTMLBaseElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

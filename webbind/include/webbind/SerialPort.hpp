@@ -91,6 +91,7 @@ public:
     static SerialPort take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SerialPort clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
     /// [`SerialPort.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;

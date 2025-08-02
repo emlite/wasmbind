@@ -16,6 +16,7 @@ public:
     static InterestGroupBiddingScriptRunnerGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InterestGroupBiddingScriptRunnerGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setBid method.
     /// [`InterestGroupBiddingScriptRunnerGlobalScope.setBid`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupBiddingScriptRunnerGlobalScope/setBid)
     bool setBid();

@@ -44,6 +44,7 @@ public:
     static CredentialsContainer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CredentialsContainer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
     /// [`CredentialsContainer.get`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get)
     jsbind::Promise<Credential> get();

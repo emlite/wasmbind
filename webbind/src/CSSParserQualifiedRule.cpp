@@ -6,6 +6,7 @@ CSSParserQualifiedRule CSSParserQualifiedRule::take_ownership(Handle h) noexcept
         return CSSParserQualifiedRule(h);
     }
 CSSParserQualifiedRule CSSParserQualifiedRule::clone() const noexcept { return *this; }
+emlite::Val CSSParserQualifiedRule::instance() noexcept { return emlite::Val::global("CSSParserQualifiedRule"); }
 CSSParserQualifiedRule::CSSParserQualifiedRule(Handle h) noexcept : CSSParserRule(emlite::Val::take_ownership(h)) {}
 CSSParserQualifiedRule::CSSParserQualifiedRule(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 

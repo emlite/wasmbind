@@ -18,6 +18,7 @@ public:
     static IntersectionObserverEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IntersectionObserverEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IntersectionObserverEntry(..)` constructor, creating a new IntersectionObserverEntry instance
     IntersectionObserverEntry(const jsbind::Any& intersectionObserverEntryInit);
     /// Getter of the `time` attribute.

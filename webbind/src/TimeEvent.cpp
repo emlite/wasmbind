@@ -6,6 +6,7 @@ TimeEvent TimeEvent::take_ownership(Handle h) noexcept {
         return TimeEvent(h);
     }
 TimeEvent TimeEvent::clone() const noexcept { return *this; }
+emlite::Val TimeEvent::instance() noexcept { return emlite::Val::global("TimeEvent"); }
 TimeEvent::TimeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 TimeEvent::TimeEvent(const emlite::Val &val) noexcept: Event(val) {}
 

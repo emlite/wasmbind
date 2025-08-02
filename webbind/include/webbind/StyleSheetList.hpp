@@ -17,6 +17,7 @@ public:
     static StyleSheetList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] StyleSheetList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The item method.
     /// [`StyleSheetList.item`](https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList/item)
     CSSStyleSheet item(unsigned long index);

@@ -16,6 +16,7 @@ public:
     static ShadowAnimation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ShadowAnimation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ShadowAnimation(..)` constructor, creating a new ShadowAnimation instance
     ShadowAnimation(const Animation& source, const jsbind::Any& newTarget);
     /// Getter of the `sourceAnimation` attribute.

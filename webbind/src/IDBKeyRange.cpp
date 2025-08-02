@@ -5,6 +5,7 @@ IDBKeyRange IDBKeyRange::take_ownership(Handle h) noexcept {
         return IDBKeyRange(h);
     }
 IDBKeyRange IDBKeyRange::clone() const noexcept { return *this; }
+emlite::Val IDBKeyRange::instance() noexcept { return emlite::Val::global("IDBKeyRange"); }
 IDBKeyRange::IDBKeyRange(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBKeyRange::IDBKeyRange(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

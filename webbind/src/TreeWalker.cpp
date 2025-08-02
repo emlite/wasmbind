@@ -6,6 +6,7 @@ TreeWalker TreeWalker::take_ownership(Handle h) noexcept {
         return TreeWalker(h);
     }
 TreeWalker TreeWalker::clone() const noexcept { return *this; }
+emlite::Val TreeWalker::instance() noexcept { return emlite::Val::global("TreeWalker"); }
 TreeWalker::TreeWalker(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TreeWalker::TreeWalker(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

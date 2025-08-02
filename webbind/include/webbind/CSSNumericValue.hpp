@@ -46,6 +46,7 @@ public:
     static CSSNumericValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSNumericValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The add method.
     /// [`CSSNumericValue.add`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/add)
     CSSNumericValue add(const jsbind::Any& values);

@@ -18,6 +18,7 @@ public:
     static SVGAnimationElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGAnimationElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `targetElement` attribute.
     /// [`SVGAnimationElement.targetElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/targetElement)
     [[nodiscard]] SVGElement targetElement() const;

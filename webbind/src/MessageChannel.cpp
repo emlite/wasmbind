@@ -6,6 +6,7 @@ MessageChannel MessageChannel::take_ownership(Handle h) noexcept {
         return MessageChannel(h);
     }
 MessageChannel MessageChannel::clone() const noexcept { return *this; }
+emlite::Val MessageChannel::instance() noexcept { return emlite::Val::global("MessageChannel"); }
 MessageChannel::MessageChannel(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MessageChannel::MessageChannel(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

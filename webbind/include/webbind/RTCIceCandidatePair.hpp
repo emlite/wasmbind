@@ -17,6 +17,7 @@ public:
     static RTCIceCandidatePair take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCIceCandidatePair clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `local` attribute.
     /// [`RTCIceCandidatePair.local`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePair/local)
     [[nodiscard]] RTCIceCandidate local() const;

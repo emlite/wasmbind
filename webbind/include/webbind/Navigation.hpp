@@ -84,6 +84,7 @@ public:
     static Navigation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Navigation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The entries method.
     /// [`Navigation.entries`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/entries)
     jsbind::TypedArray<NavigationHistoryEntry> entries();

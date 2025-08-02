@@ -6,6 +6,7 @@ SpeechRecognitionPhraseList SpeechRecognitionPhraseList::take_ownership(Handle h
         return SpeechRecognitionPhraseList(h);
     }
 SpeechRecognitionPhraseList SpeechRecognitionPhraseList::clone() const noexcept { return *this; }
+emlite::Val SpeechRecognitionPhraseList::instance() noexcept { return emlite::Val::global("SpeechRecognitionPhraseList"); }
 SpeechRecognitionPhraseList::SpeechRecognitionPhraseList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionPhraseList::SpeechRecognitionPhraseList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

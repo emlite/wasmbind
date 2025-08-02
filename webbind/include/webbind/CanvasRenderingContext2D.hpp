@@ -59,6 +59,7 @@ public:
     static CanvasRenderingContext2D take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CanvasRenderingContext2D clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `canvas` attribute.
     /// [`CanvasRenderingContext2D.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas)
     [[nodiscard]] HTMLCanvasElement canvas() const;

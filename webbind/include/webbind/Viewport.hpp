@@ -17,6 +17,7 @@ public:
     static Viewport take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Viewport clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `segments` attribute.
     /// [`Viewport.segments`](https://developer.mozilla.org/en-US/docs/Web/API/Viewport/segments)
     [[nodiscard]] jsbind::TypedArray<DOMRect> segments() const;

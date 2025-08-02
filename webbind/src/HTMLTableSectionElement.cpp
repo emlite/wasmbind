@@ -7,6 +7,7 @@ HTMLTableSectionElement HTMLTableSectionElement::take_ownership(Handle h) noexce
         return HTMLTableSectionElement(h);
     }
 HTMLTableSectionElement HTMLTableSectionElement::clone() const noexcept { return *this; }
+emlite::Val HTMLTableSectionElement::instance() noexcept { return emlite::Val::global("HTMLTableSectionElement"); }
 HTMLTableSectionElement::HTMLTableSectionElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLTableSectionElement::HTMLTableSectionElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

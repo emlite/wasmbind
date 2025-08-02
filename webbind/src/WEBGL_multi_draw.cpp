@@ -5,6 +5,7 @@ WEBGL_multi_draw WEBGL_multi_draw::take_ownership(Handle h) noexcept {
         return WEBGL_multi_draw(h);
     }
 WEBGL_multi_draw WEBGL_multi_draw::clone() const noexcept { return *this; }
+emlite::Val WEBGL_multi_draw::instance() noexcept { return emlite::Val::global("WEBGL_multi_draw"); }
 WEBGL_multi_draw::WEBGL_multi_draw(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WEBGL_multi_draw::WEBGL_multi_draw(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

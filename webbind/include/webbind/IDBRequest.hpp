@@ -19,6 +19,7 @@ public:
     static IDBRequest take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IDBRequest clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `result` attribute.
     /// [`IDBRequest.result`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result)
     [[nodiscard]] jsbind::Any result() const;

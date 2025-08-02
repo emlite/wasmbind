@@ -65,6 +65,7 @@ RTCRtpReceiver RTCRtpReceiver::take_ownership(Handle h) noexcept {
         return RTCRtpReceiver(h);
     }
 RTCRtpReceiver RTCRtpReceiver::clone() const noexcept { return *this; }
+emlite::Val RTCRtpReceiver::instance() noexcept { return emlite::Val::global("RTCRtpReceiver"); }
 RTCRtpReceiver::RTCRtpReceiver(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpReceiver::RTCRtpReceiver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

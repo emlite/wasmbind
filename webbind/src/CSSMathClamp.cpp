@@ -6,6 +6,7 @@ CSSMathClamp CSSMathClamp::take_ownership(Handle h) noexcept {
         return CSSMathClamp(h);
     }
 CSSMathClamp CSSMathClamp::clone() const noexcept { return *this; }
+emlite::Val CSSMathClamp::instance() noexcept { return emlite::Val::global("CSSMathClamp"); }
 CSSMathClamp::CSSMathClamp(Handle h) noexcept : CSSMathValue(emlite::Val::take_ownership(h)) {}
 CSSMathClamp::CSSMathClamp(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 

@@ -16,6 +16,7 @@ public:
     static ScreenOrientation take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ScreenOrientation clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The lock method.
     /// [`ScreenOrientation.lock`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/lock)
     jsbind::Promise<jsbind::Undefined> lock(const OrientationLockType& orientation);

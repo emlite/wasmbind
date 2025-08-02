@@ -18,6 +18,7 @@ public:
     static BlobEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BlobEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BlobEvent(..)` constructor, creating a new BlobEvent instance
     BlobEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `data` attribute.

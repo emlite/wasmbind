@@ -16,6 +16,7 @@ public:
     static WebTransportError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebTransportError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WebTransportError(..)` constructor, creating a new WebTransportError instance
     WebTransportError();
     /// The `new WebTransportError(..)` constructor, creating a new WebTransportError instance

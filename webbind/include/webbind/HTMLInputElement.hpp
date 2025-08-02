@@ -24,6 +24,7 @@ public:
     static HTMLInputElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLInputElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLInputElement(..)` constructor, creating a new HTMLInputElement instance
     HTMLInputElement();
     /// Getter of the `accept` attribute.

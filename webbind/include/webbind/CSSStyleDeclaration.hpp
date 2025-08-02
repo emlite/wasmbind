@@ -17,6 +17,7 @@ public:
     static CSSStyleDeclaration take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSStyleDeclaration clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cssText` attribute.
     /// [`CSSStyleDeclaration.cssText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText)
     [[nodiscard]] jsbind::String cssText() const;

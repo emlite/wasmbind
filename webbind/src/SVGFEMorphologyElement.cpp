@@ -9,6 +9,7 @@ SVGFEMorphologyElement SVGFEMorphologyElement::take_ownership(Handle h) noexcept
         return SVGFEMorphologyElement(h);
     }
 SVGFEMorphologyElement SVGFEMorphologyElement::clone() const noexcept { return *this; }
+emlite::Val SVGFEMorphologyElement::instance() noexcept { return emlite::Val::global("SVGFEMorphologyElement"); }
 SVGFEMorphologyElement::SVGFEMorphologyElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEMorphologyElement::SVGFEMorphologyElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 

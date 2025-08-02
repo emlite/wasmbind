@@ -15,6 +15,7 @@ public:
     static PerformanceObserverEntryList take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceObserverEntryList clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getEntries method.
     /// [`PerformanceObserverEntryList.getEntries`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList/getEntries)
     jsbind::Any getEntries();

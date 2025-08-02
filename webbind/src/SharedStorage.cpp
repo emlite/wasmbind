@@ -55,6 +55,7 @@ SharedStorage SharedStorage::take_ownership(Handle h) noexcept {
         return SharedStorage(h);
     }
 SharedStorage SharedStorage::clone() const noexcept { return *this; }
+emlite::Val SharedStorage::instance() noexcept { return emlite::Val::global("SharedStorage"); }
 SharedStorage::SharedStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SharedStorage::SharedStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

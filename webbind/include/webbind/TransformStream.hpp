@@ -18,6 +18,7 @@ public:
     static TransformStream take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TransformStream clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TransformStream(..)` constructor, creating a new TransformStream instance
     TransformStream();
     /// The `new TransformStream(..)` constructor, creating a new TransformStream instance

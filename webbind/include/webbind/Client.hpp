@@ -16,6 +16,7 @@ public:
     static Client take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Client clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `url` attribute.
     /// [`Client.url`](https://developer.mozilla.org/en-US/docs/Web/API/Client/url)
     [[nodiscard]] jsbind::String url() const;

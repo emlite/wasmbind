@@ -5,6 +5,7 @@ ScreenDetailed ScreenDetailed::take_ownership(Handle h) noexcept {
         return ScreenDetailed(h);
     }
 ScreenDetailed ScreenDetailed::clone() const noexcept { return *this; }
+emlite::Val ScreenDetailed::instance() noexcept { return emlite::Val::global("ScreenDetailed"); }
 ScreenDetailed::ScreenDetailed(Handle h) noexcept : Screen(emlite::Val::take_ownership(h)) {}
 ScreenDetailed::ScreenDetailed(const emlite::Val &val) noexcept: Screen(val) {}
 

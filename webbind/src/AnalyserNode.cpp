@@ -6,6 +6,7 @@ AnalyserNode AnalyserNode::take_ownership(Handle h) noexcept {
         return AnalyserNode(h);
     }
 AnalyserNode AnalyserNode::clone() const noexcept { return *this; }
+emlite::Val AnalyserNode::instance() noexcept { return emlite::Val::global("AnalyserNode"); }
 AnalyserNode::AnalyserNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 AnalyserNode::AnalyserNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 

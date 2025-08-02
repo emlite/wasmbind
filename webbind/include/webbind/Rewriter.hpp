@@ -71,6 +71,7 @@ public:
     static Rewriter take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Rewriter clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
     /// [`Rewriter.create`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/create)
     static jsbind::Promise<Rewriter> create();

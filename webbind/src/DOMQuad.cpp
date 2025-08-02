@@ -11,6 +11,7 @@ DOMQuad DOMQuad::take_ownership(Handle h) noexcept {
         return DOMQuad(h);
     }
 DOMQuad DOMQuad::clone() const noexcept { return *this; }
+emlite::Val DOMQuad::instance() noexcept { return emlite::Val::global("DOMQuad"); }
 DOMQuad::DOMQuad(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DOMQuad::DOMQuad(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

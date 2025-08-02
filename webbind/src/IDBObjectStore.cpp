@@ -33,6 +33,7 @@ IDBObjectStore IDBObjectStore::take_ownership(Handle h) noexcept {
         return IDBObjectStore(h);
     }
 IDBObjectStore IDBObjectStore::clone() const noexcept { return *this; }
+emlite::Val IDBObjectStore::instance() noexcept { return emlite::Val::global("IDBObjectStore"); }
 IDBObjectStore::IDBObjectStore(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBObjectStore::IDBObjectStore(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

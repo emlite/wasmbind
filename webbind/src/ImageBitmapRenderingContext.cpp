@@ -6,6 +6,7 @@ ImageBitmapRenderingContext ImageBitmapRenderingContext::take_ownership(Handle h
         return ImageBitmapRenderingContext(h);
     }
 ImageBitmapRenderingContext ImageBitmapRenderingContext::clone() const noexcept { return *this; }
+emlite::Val ImageBitmapRenderingContext::instance() noexcept { return emlite::Val::global("ImageBitmapRenderingContext"); }
 ImageBitmapRenderingContext::ImageBitmapRenderingContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageBitmapRenderingContext::ImageBitmapRenderingContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

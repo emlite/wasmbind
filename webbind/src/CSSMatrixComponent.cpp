@@ -7,6 +7,7 @@ CSSMatrixComponent CSSMatrixComponent::take_ownership(Handle h) noexcept {
         return CSSMatrixComponent(h);
     }
 CSSMatrixComponent CSSMatrixComponent::clone() const noexcept { return *this; }
+emlite::Val CSSMatrixComponent::instance() noexcept { return emlite::Val::global("CSSMatrixComponent"); }
 CSSMatrixComponent::CSSMatrixComponent(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_ownership(h)) {}
 CSSMatrixComponent::CSSMatrixComponent(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 

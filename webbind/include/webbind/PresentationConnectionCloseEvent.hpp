@@ -16,6 +16,7 @@ public:
     static PresentationConnectionCloseEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PresentationConnectionCloseEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PresentationConnectionCloseEvent(..)` constructor, creating a new PresentationConnectionCloseEvent instance
     PresentationConnectionCloseEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `reason` attribute.

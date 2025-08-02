@@ -6,6 +6,7 @@ SVGNumberList SVGNumberList::take_ownership(Handle h) noexcept {
         return SVGNumberList(h);
     }
 SVGNumberList SVGNumberList::clone() const noexcept { return *this; }
+emlite::Val SVGNumberList::instance() noexcept { return emlite::Val::global("SVGNumberList"); }
 SVGNumberList::SVGNumberList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGNumberList::SVGNumberList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

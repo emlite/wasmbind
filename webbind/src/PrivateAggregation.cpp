@@ -53,6 +53,7 @@ PrivateAggregation PrivateAggregation::take_ownership(Handle h) noexcept {
         return PrivateAggregation(h);
     }
 PrivateAggregation PrivateAggregation::clone() const noexcept { return *this; }
+emlite::Val PrivateAggregation::instance() noexcept { return emlite::Val::global("PrivateAggregation"); }
 PrivateAggregation::PrivateAggregation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PrivateAggregation::PrivateAggregation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

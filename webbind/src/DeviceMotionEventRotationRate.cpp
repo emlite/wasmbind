@@ -5,6 +5,7 @@ DeviceMotionEventRotationRate DeviceMotionEventRotationRate::take_ownership(Hand
         return DeviceMotionEventRotationRate(h);
     }
 DeviceMotionEventRotationRate DeviceMotionEventRotationRate::clone() const noexcept { return *this; }
+emlite::Val DeviceMotionEventRotationRate::instance() noexcept { return emlite::Val::global("DeviceMotionEventRotationRate"); }
 DeviceMotionEventRotationRate::DeviceMotionEventRotationRate(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DeviceMotionEventRotationRate::DeviceMotionEventRotationRate(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

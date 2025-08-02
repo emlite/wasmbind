@@ -26,6 +26,32 @@ bool parse(
     return true;
 }
 
+/// Enhanced JSON::parse using Result for better error handling
+template <class T>
+Result<T> parse(const char *text) {
+    emlite::Val res =
+        emlite::Val::global("JSON").call("parse", text);
+
+    if (res.is_error()) {
+        return Result<T>(res);  // Return error
+    }
+
+    return Result<T>(res.as<T>());  // Return success
+}
+
+/// Enhanced JSON::parse using Option for simple cases
+template <class T>
+Option<T> try_parse(const char *text) {
+    emlite::Val res =
+        emlite::Val::global("JSON").call("parse", text);
+
+    if (res.is_error()) {
+        return Option<T>();  // Return None
+    }
+
+    return Option<T>(res.as<T>());  // Return Some(value)
+}
+
 String stringify(
     const Any &value,
     const Any &replacer = Undefined::value,

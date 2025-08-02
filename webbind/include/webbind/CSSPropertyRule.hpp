@@ -16,6 +16,7 @@ public:
     static CSSPropertyRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSPropertyRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`CSSPropertyRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPropertyRule/name)
     [[nodiscard]] jsbind::String name() const;

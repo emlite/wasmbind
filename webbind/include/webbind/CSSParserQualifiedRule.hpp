@@ -18,6 +18,7 @@ public:
     static CSSParserQualifiedRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSParserQualifiedRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserQualifiedRule(..)` constructor, creating a new CSSParserQualifiedRule instance
     CSSParserQualifiedRule(const jsbind::TypedArray<jsbind::Any>& prelude);
     /// The `new CSSParserQualifiedRule(..)` constructor, creating a new CSSParserQualifiedRule instance

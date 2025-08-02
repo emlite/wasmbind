@@ -24,6 +24,7 @@ Node Node::take_ownership(Handle h) noexcept {
         return Node(h);
     }
 Node Node::clone() const noexcept { return *this; }
+emlite::Val Node::instance() noexcept { return emlite::Val::global("Node"); }
 Node::Node(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Node::Node(const emlite::Val &val) noexcept: EventTarget(val) {}
 

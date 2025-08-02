@@ -21,6 +21,7 @@ public:
     static DOMMatrixReadOnly take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMMatrixReadOnly clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMMatrixReadOnly(..)` constructor, creating a new DOMMatrixReadOnly instance
     DOMMatrixReadOnly();
     /// The `new DOMMatrixReadOnly(..)` constructor, creating a new DOMMatrixReadOnly instance

@@ -16,5 +16,6 @@ public:
     static SVGFEFuncAElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFEFuncAElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

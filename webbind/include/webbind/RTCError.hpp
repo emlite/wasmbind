@@ -16,6 +16,7 @@ public:
     static RTCError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCError(..)` constructor, creating a new RTCError instance
     RTCError(const jsbind::Any& init);
     /// The `new RTCError(..)` constructor, creating a new RTCError instance

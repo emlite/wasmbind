@@ -17,6 +17,7 @@ public:
     static Highlight take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Highlight clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Highlight(..)` constructor, creating a new Highlight instance
     Highlight(const AbstractRange& initialRanges);
     /// Getter of the `priority` attribute.

@@ -14,6 +14,7 @@ public:
     static IdentityCredentialError take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IdentityCredentialError clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IdentityCredentialError(..)` constructor, creating a new IdentityCredentialError instance
     IdentityCredentialError();
     /// The `new IdentityCredentialError(..)` constructor, creating a new IdentityCredentialError instance

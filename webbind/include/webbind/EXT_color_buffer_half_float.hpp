@@ -15,5 +15,6 @@ public:
     static EXT_color_buffer_half_float take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EXT_color_buffer_half_float clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

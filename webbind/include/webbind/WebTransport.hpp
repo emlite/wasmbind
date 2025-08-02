@@ -81,6 +81,7 @@ public:
     static WebTransport take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WebTransport clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WebTransport(..)` constructor, creating a new WebTransport instance
     WebTransport(const jsbind::String& url);
     /// The `new WebTransport(..)` constructor, creating a new WebTransport instance

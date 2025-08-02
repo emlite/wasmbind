@@ -15,5 +15,6 @@ public:
     static CSSParserRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSParserRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

@@ -16,6 +16,7 @@ public:
     static BatteryManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BatteryManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `charging` attribute.
     /// [`BatteryManager.charging`](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/charging)
     [[nodiscard]] bool charging() const;

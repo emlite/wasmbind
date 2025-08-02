@@ -5,6 +5,7 @@ CSSColor CSSColor::take_ownership(Handle h) noexcept {
         return CSSColor(h);
     }
 CSSColor CSSColor::clone() const noexcept { return *this; }
+emlite::Val CSSColor::instance() noexcept { return emlite::Val::global("CSSColor"); }
 CSSColor::CSSColor(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
 CSSColor::CSSColor(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 

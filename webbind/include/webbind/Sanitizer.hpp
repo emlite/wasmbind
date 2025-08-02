@@ -40,6 +40,7 @@ public:
     static Sanitizer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Sanitizer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Sanitizer(..)` constructor, creating a new Sanitizer instance
     Sanitizer();
     /// The `new Sanitizer(..)` constructor, creating a new Sanitizer instance

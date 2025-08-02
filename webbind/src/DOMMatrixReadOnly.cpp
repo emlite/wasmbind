@@ -9,6 +9,7 @@ DOMMatrixReadOnly DOMMatrixReadOnly::take_ownership(Handle h) noexcept {
         return DOMMatrixReadOnly(h);
     }
 DOMMatrixReadOnly DOMMatrixReadOnly::clone() const noexcept { return *this; }
+emlite::Val DOMMatrixReadOnly::instance() noexcept { return emlite::Val::global("DOMMatrixReadOnly"); }
 DOMMatrixReadOnly::DOMMatrixReadOnly(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DOMMatrixReadOnly::DOMMatrixReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

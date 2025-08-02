@@ -35,6 +35,7 @@ public:
     static TrustedTypePolicyFactory take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TrustedTypePolicyFactory clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createPolicy method.
     /// [`TrustedTypePolicyFactory.createPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy)
     TrustedTypePolicy createPolicy(const jsbind::String& policyName);

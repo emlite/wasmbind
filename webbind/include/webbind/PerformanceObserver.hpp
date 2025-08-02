@@ -32,6 +32,7 @@ public:
     static PerformanceObserver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceObserver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PerformanceObserver(..)` constructor, creating a new PerformanceObserver instance
     PerformanceObserver(const jsbind::Function& callback);
     /// The observe method.

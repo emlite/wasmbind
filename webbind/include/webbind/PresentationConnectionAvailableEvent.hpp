@@ -18,6 +18,7 @@ public:
     static PresentationConnectionAvailableEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PresentationConnectionAvailableEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PresentationConnectionAvailableEvent(..)` constructor, creating a new PresentationConnectionAvailableEvent instance
     PresentationConnectionAvailableEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `connection` attribute.

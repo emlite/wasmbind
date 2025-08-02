@@ -15,6 +15,7 @@ public:
     static ReportingObserver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ReportingObserver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ReportingObserver(..)` constructor, creating a new ReportingObserver instance
     ReportingObserver(const jsbind::Function& callback);
     /// The `new ReportingObserver(..)` constructor, creating a new ReportingObserver instance

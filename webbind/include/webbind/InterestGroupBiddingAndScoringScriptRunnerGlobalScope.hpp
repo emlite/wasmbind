@@ -19,6 +19,7 @@ public:
     static InterestGroupBiddingAndScoringScriptRunnerGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] InterestGroupBiddingAndScoringScriptRunnerGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `forDebuggingOnly` attribute.
     /// [`InterestGroupBiddingAndScoringScriptRunnerGlobalScope.forDebuggingOnly`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupBiddingAndScoringScriptRunnerGlobalScope/forDebuggingOnly)
     [[nodiscard]] ForDebuggingOnly forDebuggingOnly() const;

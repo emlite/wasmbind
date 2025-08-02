@@ -167,6 +167,7 @@ XRSession XRSession::take_ownership(Handle h) noexcept {
         return XRSession(h);
     }
 XRSession XRSession::clone() const noexcept { return *this; }
+emlite::Val XRSession::instance() noexcept { return emlite::Val::global("XRSession"); }
 XRSession::XRSession(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 XRSession::XRSession(const emlite::Val &val) noexcept: EventTarget(val) {}
 

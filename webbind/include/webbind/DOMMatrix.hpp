@@ -19,6 +19,7 @@ public:
     static DOMMatrix take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DOMMatrix clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMMatrix(..)` constructor, creating a new DOMMatrix instance
     DOMMatrix();
     /// The `new DOMMatrix(..)` constructor, creating a new DOMMatrix instance

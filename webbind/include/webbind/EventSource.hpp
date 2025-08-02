@@ -16,6 +16,7 @@ public:
     static EventSource take_ownership(Handle h) noexcept;
 
     [[nodiscard]] EventSource clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EventSource(..)` constructor, creating a new EventSource instance
     EventSource(const jsbind::String& url);
     /// The `new EventSource(..)` constructor, creating a new EventSource instance

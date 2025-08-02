@@ -5,6 +5,7 @@ IdentityCredentialError IdentityCredentialError::take_ownership(Handle h) noexce
         return IdentityCredentialError(h);
     }
 IdentityCredentialError IdentityCredentialError::clone() const noexcept { return *this; }
+emlite::Val IdentityCredentialError::instance() noexcept { return emlite::Val::global("IdentityCredentialError"); }
 IdentityCredentialError::IdentityCredentialError(Handle h) noexcept : DOMException(emlite::Val::take_ownership(h)) {}
 IdentityCredentialError::IdentityCredentialError(const emlite::Val &val) noexcept: DOMException(val) {}
 

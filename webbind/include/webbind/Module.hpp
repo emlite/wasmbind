@@ -47,6 +47,7 @@ public:
     static Module take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Module clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Module(..)` constructor, creating a new Module instance
     Module(const jsbind::Any& bytes);
     /// The exports method.

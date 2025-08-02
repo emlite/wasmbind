@@ -29,6 +29,7 @@ public:
     static BeforeInstallPromptEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] BeforeInstallPromptEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BeforeInstallPromptEvent(..)` constructor, creating a new BeforeInstallPromptEvent instance
     BeforeInstallPromptEvent(const jsbind::String& type);
     /// The `new BeforeInstallPromptEvent(..)` constructor, creating a new BeforeInstallPromptEvent instance

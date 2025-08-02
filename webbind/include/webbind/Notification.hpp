@@ -34,6 +34,7 @@ public:
     static Notification take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Notification clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Notification(..)` constructor, creating a new Notification instance
     Notification(const jsbind::String& title);
     /// The `new Notification(..)` constructor, creating a new Notification instance

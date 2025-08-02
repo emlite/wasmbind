@@ -6,6 +6,7 @@ TextEvent TextEvent::take_ownership(Handle h) noexcept {
         return TextEvent(h);
     }
 TextEvent TextEvent::clone() const noexcept { return *this; }
+emlite::Val TextEvent::instance() noexcept { return emlite::Val::global("TextEvent"); }
 TextEvent::TextEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
 TextEvent::TextEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 

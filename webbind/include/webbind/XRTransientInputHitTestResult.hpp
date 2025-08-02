@@ -18,6 +18,7 @@ public:
     static XRTransientInputHitTestResult take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRTransientInputHitTestResult clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inputSource` attribute.
     /// [`XRTransientInputHitTestResult.inputSource`](https://developer.mozilla.org/en-US/docs/Web/API/XRTransientInputHitTestResult/inputSource)
     [[nodiscard]] XRInputSource inputSource() const;

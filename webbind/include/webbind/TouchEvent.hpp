@@ -18,6 +18,7 @@ public:
     static TouchEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TouchEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TouchEvent(..)` constructor, creating a new TouchEvent instance
     TouchEvent(const jsbind::String& type);
     /// The `new TouchEvent(..)` constructor, creating a new TouchEvent instance

@@ -6,6 +6,7 @@ ReadableByteStreamController ReadableByteStreamController::take_ownership(Handle
         return ReadableByteStreamController(h);
     }
 ReadableByteStreamController ReadableByteStreamController::clone() const noexcept { return *this; }
+emlite::Val ReadableByteStreamController::instance() noexcept { return emlite::Val::global("ReadableByteStreamController"); }
 ReadableByteStreamController::ReadableByteStreamController(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ReadableByteStreamController::ReadableByteStreamController(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

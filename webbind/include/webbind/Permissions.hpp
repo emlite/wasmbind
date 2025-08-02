@@ -17,6 +17,7 @@ public:
     static Permissions take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Permissions clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The query method.
     /// [`Permissions.query`](https://developer.mozilla.org/en-US/docs/Web/API/Permissions/query)
     jsbind::Promise<PermissionStatus> query(const jsbind::Object& permissionDesc);

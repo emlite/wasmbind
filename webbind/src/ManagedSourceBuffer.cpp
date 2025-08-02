@@ -5,6 +5,7 @@ ManagedSourceBuffer ManagedSourceBuffer::take_ownership(Handle h) noexcept {
         return ManagedSourceBuffer(h);
     }
 ManagedSourceBuffer ManagedSourceBuffer::clone() const noexcept { return *this; }
+emlite::Val ManagedSourceBuffer::instance() noexcept { return emlite::Val::global("ManagedSourceBuffer"); }
 ManagedSourceBuffer::ManagedSourceBuffer(Handle h) noexcept : SourceBuffer(emlite::Val::take_ownership(h)) {}
 ManagedSourceBuffer::ManagedSourceBuffer(const emlite::Val &val) noexcept: SourceBuffer(val) {}
 

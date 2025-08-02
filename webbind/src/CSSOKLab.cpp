@@ -5,6 +5,7 @@ CSSOKLab CSSOKLab::take_ownership(Handle h) noexcept {
         return CSSOKLab(h);
     }
 CSSOKLab CSSOKLab::clone() const noexcept { return *this; }
+emlite::Val CSSOKLab::instance() noexcept { return emlite::Val::global("CSSOKLab"); }
 CSSOKLab::CSSOKLab(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
 CSSOKLab::CSSOKLab(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 

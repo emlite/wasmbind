@@ -18,6 +18,7 @@ public:
     static FocusEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FocusEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FocusEvent(..)` constructor, creating a new FocusEvent instance
     FocusEvent(const jsbind::String& type);
     /// The `new FocusEvent(..)` constructor, creating a new FocusEvent instance

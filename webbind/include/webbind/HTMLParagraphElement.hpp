@@ -16,6 +16,7 @@ public:
     static HTMLParagraphElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLParagraphElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLParagraphElement(..)` constructor, creating a new HTMLParagraphElement instance
     HTMLParagraphElement();
     /// Getter of the `align` attribute.

@@ -18,6 +18,7 @@ public:
     static HTMLLegendElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLLegendElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLegendElement(..)` constructor, creating a new HTMLLegendElement instance
     HTMLLegendElement();
     /// Getter of the `form` attribute.

@@ -16,6 +16,7 @@ public:
     static Accelerometer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Accelerometer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Accelerometer(..)` constructor, creating a new Accelerometer instance
     Accelerometer();
     /// The `new Accelerometer(..)` constructor, creating a new Accelerometer instance

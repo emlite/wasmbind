@@ -16,6 +16,7 @@ public:
     static CanvasPattern take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CanvasPattern clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setTransform method.
     /// [`CanvasPattern.setTransform`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasPattern/setTransform)
     jsbind::Undefined setTransform();

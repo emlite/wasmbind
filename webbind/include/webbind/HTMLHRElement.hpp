@@ -16,6 +16,7 @@ public:
     static HTMLHRElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLHRElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLHRElement(..)` constructor, creating a new HTMLHRElement instance
     HTMLHRElement();
     /// Getter of the `align` attribute.

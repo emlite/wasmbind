@@ -32,6 +32,7 @@ public:
     static Node take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Node clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `nodeType` attribute.
     /// [`Node.nodeType`](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
     [[nodiscard]] unsigned short nodeType() const;

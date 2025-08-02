@@ -5,6 +5,7 @@ CryptoKey CryptoKey::take_ownership(Handle h) noexcept {
         return CryptoKey(h);
     }
 CryptoKey CryptoKey::clone() const noexcept { return *this; }
+emlite::Val CryptoKey::instance() noexcept { return emlite::Val::global("CryptoKey"); }
 CryptoKey::CryptoKey(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CryptoKey::CryptoKey(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

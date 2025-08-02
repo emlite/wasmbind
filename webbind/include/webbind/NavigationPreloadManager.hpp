@@ -30,6 +30,7 @@ public:
     static NavigationPreloadManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] NavigationPreloadManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The enable method.
     /// [`NavigationPreloadManager.enable`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager/enable)
     jsbind::Promise<jsbind::Undefined> enable();

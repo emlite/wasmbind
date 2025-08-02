@@ -15,6 +15,7 @@ public:
     static SpeechGrammar take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechGrammar clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `src` attribute.
     /// [`SpeechGrammar.src`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammar/src)
     [[nodiscard]] jsbind::String src() const;

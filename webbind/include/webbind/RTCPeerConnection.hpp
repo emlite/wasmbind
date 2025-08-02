@@ -147,6 +147,7 @@ public:
     static RTCPeerConnection take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCPeerConnection clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCPeerConnection(..)` constructor, creating a new RTCPeerConnection instance
     RTCPeerConnection();
     /// The `new RTCPeerConnection(..)` constructor, creating a new RTCPeerConnection instance

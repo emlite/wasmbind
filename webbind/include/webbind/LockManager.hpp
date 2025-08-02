@@ -49,6 +49,7 @@ public:
     static LockManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] LockManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The request method.
     /// [`LockManager.request`](https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
     jsbind::Promise<jsbind::Any> request(const jsbind::String& name, const LockOptions& options, const jsbind::Function& callback);

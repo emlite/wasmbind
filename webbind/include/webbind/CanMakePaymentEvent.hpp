@@ -16,6 +16,7 @@ public:
     static CanMakePaymentEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CanMakePaymentEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CanMakePaymentEvent(..)` constructor, creating a new CanMakePaymentEvent instance
     CanMakePaymentEvent(const jsbind::String& type);
     /// The respondWith method.

@@ -7,6 +7,7 @@ XRRay XRRay::take_ownership(Handle h) noexcept {
         return XRRay(h);
     }
 XRRay XRRay::clone() const noexcept { return *this; }
+emlite::Val XRRay::instance() noexcept { return emlite::Val::global("XRRay"); }
 XRRay::XRRay(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRRay::XRRay(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

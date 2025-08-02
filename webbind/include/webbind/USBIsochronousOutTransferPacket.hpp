@@ -15,6 +15,7 @@ public:
     static USBIsochronousOutTransferPacket take_ownership(Handle h) noexcept;
 
     [[nodiscard]] USBIsochronousOutTransferPacket clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBIsochronousOutTransferPacket(..)` constructor, creating a new USBIsochronousOutTransferPacket instance
     USBIsochronousOutTransferPacket(const USBTransferStatus& status);
     /// The `new USBIsochronousOutTransferPacket(..)` constructor, creating a new USBIsochronousOutTransferPacket instance

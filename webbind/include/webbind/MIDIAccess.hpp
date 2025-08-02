@@ -19,6 +19,7 @@ public:
     static MIDIAccess take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MIDIAccess clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inputs` attribute.
     /// [`MIDIAccess.inputs`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/inputs)
     [[nodiscard]] MIDIInputMap inputs() const;

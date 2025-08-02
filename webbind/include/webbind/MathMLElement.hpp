@@ -20,6 +20,7 @@ public:
     static MathMLElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MathMLElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `style` attribute.
     /// [`MathMLElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/style)
     [[nodiscard]] CSSStyleDeclaration style() const;

@@ -16,6 +16,7 @@ public:
     static RTCDataChannel take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCDataChannel clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
     /// [`RTCDataChannel.label`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/label)
     [[nodiscard]] jsbind::String label() const;

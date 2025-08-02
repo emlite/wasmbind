@@ -18,6 +18,7 @@ public:
     static CSSFunctionDeclarations take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSFunctionDeclarations clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `style` attribute.
     /// [`CSSFunctionDeclarations.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionDeclarations/style)
     [[nodiscard]] CSSFunctionDescriptors style() const;

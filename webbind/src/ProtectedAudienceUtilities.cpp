@@ -5,6 +5,7 @@ ProtectedAudienceUtilities ProtectedAudienceUtilities::take_ownership(Handle h) 
         return ProtectedAudienceUtilities(h);
     }
 ProtectedAudienceUtilities ProtectedAudienceUtilities::clone() const noexcept { return *this; }
+emlite::Val ProtectedAudienceUtilities::instance() noexcept { return emlite::Val::global("ProtectedAudienceUtilities"); }
 ProtectedAudienceUtilities::ProtectedAudienceUtilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ProtectedAudienceUtilities::ProtectedAudienceUtilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

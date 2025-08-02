@@ -69,6 +69,7 @@ public:
     static MediaCapabilities take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaCapabilities clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The decodingInfo method.
     /// [`MediaCapabilities.decodingInfo`](https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities/decodingInfo)
     jsbind::Promise<MediaCapabilitiesDecodingInfo> decodingInfo(const MediaDecodingConfiguration& configuration);

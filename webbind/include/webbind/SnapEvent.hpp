@@ -18,6 +18,7 @@ public:
     static SnapEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SnapEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SnapEvent(..)` constructor, creating a new SnapEvent instance
     SnapEvent(const jsbind::String& type);
     /// The `new SnapEvent(..)` constructor, creating a new SnapEvent instance

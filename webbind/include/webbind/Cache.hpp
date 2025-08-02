@@ -19,6 +19,7 @@ public:
     static Cache take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Cache clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The match method.
     /// [`Cache.match`](https://developer.mozilla.org/en-US/docs/Web/API/Cache/match)
     jsbind::Promise<jsbind::Any> match(const jsbind::Any& request);

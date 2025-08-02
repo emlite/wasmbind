@@ -18,6 +18,7 @@ public:
     static Keyboard take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Keyboard clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The lock method.
     /// [`Keyboard.lock`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/lock)
     jsbind::Promise<jsbind::Undefined> lock();

@@ -390,10 +390,12 @@ export function generate(specAst) {
     hdr.push(`    explicit ${iname}(const emlite::Val &val) noexcept;`);
     hdr.push(`    static ${iname} take_ownership(Handle h) noexcept;\n`);
     hdr.push(`    [[nodiscard]] ${iname} clone() const noexcept;`);
+    hdr.push(`    [[nodiscard]] static emlite::Val instance() noexcept;`);
     src.push(`${iname} ${iname}::take_ownership(Handle h) noexcept {
         return ${iname}(h);
     }`);
     src.push(`${iname} ${iname}::clone() const noexcept { return *this; }`);
+    src.push(`emlite::Val ${iname}::instance() noexcept { return emlite::Val::global("${iname}"); }`);
     src.push(
       `${iname}::${iname}(Handle h) noexcept : ${parent}(emlite::Val::take_ownership(h)) {}`
     );

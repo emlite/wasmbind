@@ -17,6 +17,7 @@ public:
     static MediaMetadata take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaMetadata clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaMetadata(..)` constructor, creating a new MediaMetadata instance
     MediaMetadata();
     /// The `new MediaMetadata(..)` constructor, creating a new MediaMetadata instance

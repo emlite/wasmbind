@@ -16,6 +16,7 @@ public:
     static AuthenticatorAttestationResponse take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AuthenticatorAttestationResponse clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `attestationObject` attribute.
     /// [`AuthenticatorAttestationResponse.attestationObject`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/attestationObject)
     [[nodiscard]] jsbind::ArrayBuffer attestationObject() const;

@@ -38,6 +38,7 @@ BackgroundFetchRegistration BackgroundFetchRegistration::take_ownership(Handle h
         return BackgroundFetchRegistration(h);
     }
 BackgroundFetchRegistration BackgroundFetchRegistration::clone() const noexcept { return *this; }
+emlite::Val BackgroundFetchRegistration::instance() noexcept { return emlite::Val::global("BackgroundFetchRegistration"); }
 BackgroundFetchRegistration::BackgroundFetchRegistration(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BackgroundFetchRegistration::BackgroundFetchRegistration(const emlite::Val &val) noexcept: EventTarget(val) {}
 

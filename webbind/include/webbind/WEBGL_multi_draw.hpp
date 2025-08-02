@@ -15,6 +15,7 @@ public:
     static WEBGL_multi_draw take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_multi_draw clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The multiDrawArraysWEBGL method.
     /// [`WEBGL_multi_draw.multiDrawArraysWEBGL`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_multi_draw/multiDrawArraysWEBGL)
     jsbind::Undefined multiDrawArraysWEBGL(const jsbind::Any& mode, const jsbind::Any& firstsList, long long firstsOffset, const jsbind::Any& countsList, long long countsOffset, const jsbind::Any& drawcount);

@@ -19,6 +19,7 @@ public:
     static FetchEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FetchEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FetchEvent(..)` constructor, creating a new FetchEvent instance
     FetchEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
     /// Getter of the `request` attribute.

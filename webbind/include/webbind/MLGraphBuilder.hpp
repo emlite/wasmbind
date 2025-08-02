@@ -502,6 +502,7 @@ public:
     static MLGraphBuilder take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MLGraphBuilder clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MLGraphBuilder(..)` constructor, creating a new MLGraphBuilder instance
     MLGraphBuilder(const MLContext& context);
     /// The input method.

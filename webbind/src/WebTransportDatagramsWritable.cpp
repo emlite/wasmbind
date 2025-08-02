@@ -6,6 +6,7 @@ WebTransportDatagramsWritable WebTransportDatagramsWritable::take_ownership(Hand
         return WebTransportDatagramsWritable(h);
     }
 WebTransportDatagramsWritable WebTransportDatagramsWritable::clone() const noexcept { return *this; }
+emlite::Val WebTransportDatagramsWritable::instance() noexcept { return emlite::Val::global("WebTransportDatagramsWritable"); }
 WebTransportDatagramsWritable::WebTransportDatagramsWritable(Handle h) noexcept : WritableStream(emlite::Val::take_ownership(h)) {}
 WebTransportDatagramsWritable::WebTransportDatagramsWritable(const emlite::Val &val) noexcept: WritableStream(val) {}
 

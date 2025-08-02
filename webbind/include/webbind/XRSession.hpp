@@ -106,6 +106,7 @@ public:
     static XRSession take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRSession clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `visibilityState` attribute.
     /// [`XRSession.visibilityState`](https://developer.mozilla.org/en-US/docs/Web/API/XRSession/visibilityState)
     [[nodiscard]] XRVisibilityState visibilityState() const;

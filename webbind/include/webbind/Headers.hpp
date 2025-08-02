@@ -15,6 +15,7 @@ public:
     static Headers take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Headers clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Headers(..)` constructor, creating a new Headers instance
     Headers();
     /// The `new Headers(..)` constructor, creating a new Headers instance

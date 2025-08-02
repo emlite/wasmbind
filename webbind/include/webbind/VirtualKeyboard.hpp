@@ -18,6 +18,7 @@ public:
     static VirtualKeyboard take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VirtualKeyboard clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The show method.
     /// [`VirtualKeyboard.show`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/show)
     jsbind::Undefined show();

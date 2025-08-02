@@ -5,6 +5,7 @@ CSSStyleValue CSSStyleValue::take_ownership(Handle h) noexcept {
         return CSSStyleValue(h);
     }
 CSSStyleValue CSSStyleValue::clone() const noexcept { return *this; }
+emlite::Val CSSStyleValue::instance() noexcept { return emlite::Val::global("CSSStyleValue"); }
 CSSStyleValue::CSSStyleValue(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSStyleValue::CSSStyleValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

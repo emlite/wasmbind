@@ -86,6 +86,7 @@ CanvasRenderingContext2D CanvasRenderingContext2D::take_ownership(Handle h) noex
         return CanvasRenderingContext2D(h);
     }
 CanvasRenderingContext2D CanvasRenderingContext2D::clone() const noexcept { return *this; }
+emlite::Val CanvasRenderingContext2D::instance() noexcept { return emlite::Val::global("CanvasRenderingContext2D"); }
 CanvasRenderingContext2D::CanvasRenderingContext2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CanvasRenderingContext2D::CanvasRenderingContext2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

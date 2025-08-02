@@ -18,6 +18,7 @@ public:
     static XPathExpression take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XPathExpression clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The evaluate method.
     /// [`XPathExpression.evaluate`](https://developer.mozilla.org/en-US/docs/Web/API/XPathExpression/evaluate)
     XPathResult evaluate(const Node& contextNode);

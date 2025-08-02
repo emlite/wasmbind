@@ -16,6 +16,7 @@ public:
     static VisibilityStateEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VisibilityStateEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
     /// [`VisibilityStateEntry.name`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/name)
     [[nodiscard]] jsbind::String name() const;

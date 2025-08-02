@@ -249,6 +249,7 @@ Element Element::take_ownership(Handle h) noexcept {
         return Element(h);
     }
 Element Element::clone() const noexcept { return *this; }
+emlite::Val Element::instance() noexcept { return emlite::Val::global("Element"); }
 Element::Element(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Element::Element(const emlite::Val &val) noexcept: Node(val) {}
 

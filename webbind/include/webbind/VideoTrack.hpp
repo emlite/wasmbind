@@ -17,6 +17,7 @@ public:
     static VideoTrack take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VideoTrack clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
     /// [`VideoTrack.id`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrack/id)
     [[nodiscard]] jsbind::String id() const;

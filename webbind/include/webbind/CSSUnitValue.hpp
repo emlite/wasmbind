@@ -16,6 +16,7 @@ public:
     static CSSUnitValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSUnitValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSUnitValue(..)` constructor, creating a new CSSUnitValue instance
     CSSUnitValue(double value, const jsbind::String& unit);
     /// Getter of the `value` attribute.

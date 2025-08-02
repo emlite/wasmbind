@@ -15,5 +15,6 @@ public:
     static KeyboardLayoutMap take_ownership(Handle h) noexcept;
 
     [[nodiscard]] KeyboardLayoutMap clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

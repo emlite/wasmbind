@@ -17,6 +17,7 @@ public:
     static FileSystemEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `isFile` attribute.
     /// [`FileSystemEntry.isFile`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isFile)
     [[nodiscard]] bool isFile() const;

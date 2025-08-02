@@ -7,6 +7,7 @@ TextDecoderStream TextDecoderStream::take_ownership(Handle h) noexcept {
         return TextDecoderStream(h);
     }
 TextDecoderStream TextDecoderStream::clone() const noexcept { return *this; }
+emlite::Val TextDecoderStream::instance() noexcept { return emlite::Val::global("TextDecoderStream"); }
 TextDecoderStream::TextDecoderStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TextDecoderStream::TextDecoderStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

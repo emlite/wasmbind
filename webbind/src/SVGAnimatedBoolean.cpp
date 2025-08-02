@@ -5,6 +5,7 @@ SVGAnimatedBoolean SVGAnimatedBoolean::take_ownership(Handle h) noexcept {
         return SVGAnimatedBoolean(h);
     }
 SVGAnimatedBoolean SVGAnimatedBoolean::clone() const noexcept { return *this; }
+emlite::Val SVGAnimatedBoolean::instance() noexcept { return emlite::Val::global("SVGAnimatedBoolean"); }
 SVGAnimatedBoolean::SVGAnimatedBoolean(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGAnimatedBoolean::SVGAnimatedBoolean(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

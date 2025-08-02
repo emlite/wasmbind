@@ -6,6 +6,7 @@ FontFaceSet FontFaceSet::take_ownership(Handle h) noexcept {
         return FontFaceSet(h);
     }
 FontFaceSet FontFaceSet::clone() const noexcept { return *this; }
+emlite::Val FontFaceSet::instance() noexcept { return emlite::Val::global("FontFaceSet"); }
 FontFaceSet::FontFaceSet(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 FontFaceSet::FontFaceSet(const emlite::Val &val) noexcept: EventTarget(val) {}
 

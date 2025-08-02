@@ -6,6 +6,7 @@ RTCRtpScriptTransform RTCRtpScriptTransform::take_ownership(Handle h) noexcept {
         return RTCRtpScriptTransform(h);
     }
 RTCRtpScriptTransform RTCRtpScriptTransform::clone() const noexcept { return *this; }
+emlite::Val RTCRtpScriptTransform::instance() noexcept { return emlite::Val::global("RTCRtpScriptTransform"); }
 RTCRtpScriptTransform::RTCRtpScriptTransform(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpScriptTransform::RTCRtpScriptTransform(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

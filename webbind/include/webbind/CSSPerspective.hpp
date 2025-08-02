@@ -16,6 +16,7 @@ public:
     static CSSPerspective take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSPerspective clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSPerspective(..)` constructor, creating a new CSSPerspective instance
     CSSPerspective(const jsbind::Any& length);
     /// Getter of the `length` attribute.

@@ -17,6 +17,7 @@ public:
     static ImageBitmapRenderingContext take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ImageBitmapRenderingContext clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `canvas` attribute.
     /// [`ImageBitmapRenderingContext.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmapRenderingContext/canvas)
     [[nodiscard]] jsbind::Any canvas() const;

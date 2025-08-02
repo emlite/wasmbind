@@ -19,6 +19,7 @@ public:
     static FontFaceSet take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FontFaceSet clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The add method.
     /// [`FontFaceSet.add`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/add)
     FontFaceSet add(const FontFace& font);

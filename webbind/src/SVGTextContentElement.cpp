@@ -10,6 +10,7 @@ SVGTextContentElement SVGTextContentElement::take_ownership(Handle h) noexcept {
         return SVGTextContentElement(h);
     }
 SVGTextContentElement SVGTextContentElement::clone() const noexcept { return *this; }
+emlite::Val SVGTextContentElement::instance() noexcept { return emlite::Val::global("SVGTextContentElement"); }
 SVGTextContentElement::SVGTextContentElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
 SVGTextContentElement::SVGTextContentElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 

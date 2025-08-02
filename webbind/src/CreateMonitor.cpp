@@ -5,6 +5,7 @@ CreateMonitor CreateMonitor::take_ownership(Handle h) noexcept {
         return CreateMonitor(h);
     }
 CreateMonitor CreateMonitor::clone() const noexcept { return *this; }
+emlite::Val CreateMonitor::instance() noexcept { return emlite::Val::global("CreateMonitor"); }
 CreateMonitor::CreateMonitor(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 CreateMonitor::CreateMonitor(const emlite::Val &val) noexcept: EventTarget(val) {}
 

@@ -21,6 +21,7 @@ BeforeInstallPromptEvent BeforeInstallPromptEvent::take_ownership(Handle h) noex
         return BeforeInstallPromptEvent(h);
     }
 BeforeInstallPromptEvent BeforeInstallPromptEvent::clone() const noexcept { return *this; }
+emlite::Val BeforeInstallPromptEvent::instance() noexcept { return emlite::Val::global("BeforeInstallPromptEvent"); }
 BeforeInstallPromptEvent::BeforeInstallPromptEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 BeforeInstallPromptEvent::BeforeInstallPromptEvent(const emlite::Val &val) noexcept: Event(val) {}
 

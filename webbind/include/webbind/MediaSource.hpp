@@ -20,6 +20,7 @@ public:
     static MediaSource take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaSource clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaSource(..)` constructor, creating a new MediaSource instance
     MediaSource();
     /// Getter of the `handle` attribute.

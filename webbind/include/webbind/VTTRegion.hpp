@@ -15,6 +15,7 @@ public:
     static VTTRegion take_ownership(Handle h) noexcept;
 
     [[nodiscard]] VTTRegion clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VTTRegion(..)` constructor, creating a new VTTRegion instance
     VTTRegion();
     /// Getter of the `id` attribute.

@@ -6,6 +6,7 @@ AudioTrack AudioTrack::take_ownership(Handle h) noexcept {
         return AudioTrack(h);
     }
 AudioTrack AudioTrack::clone() const noexcept { return *this; }
+emlite::Val AudioTrack::instance() noexcept { return emlite::Val::global("AudioTrack"); }
 AudioTrack::AudioTrack(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioTrack::AudioTrack(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

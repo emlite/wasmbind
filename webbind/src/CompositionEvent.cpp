@@ -5,6 +5,7 @@ CompositionEvent CompositionEvent::take_ownership(Handle h) noexcept {
         return CompositionEvent(h);
     }
 CompositionEvent CompositionEvent::clone() const noexcept { return *this; }
+emlite::Val CompositionEvent::instance() noexcept { return emlite::Val::global("CompositionEvent"); }
 CompositionEvent::CompositionEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
 CompositionEvent::CompositionEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 

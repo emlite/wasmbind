@@ -15,5 +15,6 @@ public:
     static WEBGL_color_buffer_float take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_color_buffer_float clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

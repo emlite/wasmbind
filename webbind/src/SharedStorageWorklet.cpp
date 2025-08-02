@@ -77,6 +77,7 @@ SharedStorageWorklet SharedStorageWorklet::take_ownership(Handle h) noexcept {
         return SharedStorageWorklet(h);
     }
 SharedStorageWorklet SharedStorageWorklet::clone() const noexcept { return *this; }
+emlite::Val SharedStorageWorklet::instance() noexcept { return emlite::Val::global("SharedStorageWorklet"); }
 SharedStorageWorklet::SharedStorageWorklet(Handle h) noexcept : Worklet(emlite::Val::take_ownership(h)) {}
 SharedStorageWorklet::SharedStorageWorklet(const emlite::Val &val) noexcept: Worklet(val) {}
 

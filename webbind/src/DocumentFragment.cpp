@@ -8,6 +8,7 @@ DocumentFragment DocumentFragment::take_ownership(Handle h) noexcept {
         return DocumentFragment(h);
     }
 DocumentFragment DocumentFragment::clone() const noexcept { return *this; }
+emlite::Val DocumentFragment::instance() noexcept { return emlite::Val::global("DocumentFragment"); }
 DocumentFragment::DocumentFragment(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 DocumentFragment::DocumentFragment(const emlite::Val &val) noexcept: Node(val) {}
 

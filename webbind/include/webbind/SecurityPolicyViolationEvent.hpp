@@ -16,6 +16,7 @@ public:
     static SecurityPolicyViolationEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SecurityPolicyViolationEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SecurityPolicyViolationEvent(..)` constructor, creating a new SecurityPolicyViolationEvent instance
     SecurityPolicyViolationEvent(const jsbind::String& type);
     /// The `new SecurityPolicyViolationEvent(..)` constructor, creating a new SecurityPolicyViolationEvent instance

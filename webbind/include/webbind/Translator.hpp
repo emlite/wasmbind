@@ -59,6 +59,7 @@ public:
     static Translator take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Translator clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
     /// [`Translator.create`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/create)
     static jsbind::Promise<Translator> create(const TranslatorCreateOptions& options);

@@ -18,6 +18,7 @@ public:
     static DynamicsCompressorNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] DynamicsCompressorNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DynamicsCompressorNode(..)` constructor, creating a new DynamicsCompressorNode instance
     DynamicsCompressorNode(const BaseAudioContext& context);
     /// The `new DynamicsCompressorNode(..)` constructor, creating a new DynamicsCompressorNode instance

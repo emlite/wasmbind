@@ -15,6 +15,7 @@ public:
     static CountQueuingStrategy take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CountQueuingStrategy clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CountQueuingStrategy(..)` constructor, creating a new CountQueuingStrategy instance
     CountQueuingStrategy(const jsbind::Any& init);
     /// Getter of the `highWaterMark` attribute.

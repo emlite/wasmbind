@@ -18,6 +18,7 @@ public:
     static SharedStorageDeleteMethod take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SharedStorageDeleteMethod clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SharedStorageDeleteMethod(..)` constructor, creating a new SharedStorageDeleteMethod instance
     SharedStorageDeleteMethod(const jsbind::String& key);
     /// The `new SharedStorageDeleteMethod(..)` constructor, creating a new SharedStorageDeleteMethod instance

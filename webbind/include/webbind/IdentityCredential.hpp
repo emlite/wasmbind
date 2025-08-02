@@ -29,6 +29,7 @@ public:
     static IdentityCredential take_ownership(Handle h) noexcept;
 
     [[nodiscard]] IdentityCredential clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The disconnect method.
     /// [`IdentityCredential.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredential/disconnect)
     static jsbind::Promise<jsbind::Undefined> disconnect(const IdentityCredentialDisconnectOptions& options);

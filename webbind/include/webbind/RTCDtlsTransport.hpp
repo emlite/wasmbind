@@ -18,6 +18,7 @@ public:
     static RTCDtlsTransport take_ownership(Handle h) noexcept;
 
     [[nodiscard]] RTCDtlsTransport clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `iceTransport` attribute.
     /// [`RTCDtlsTransport.iceTransport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/iceTransport)
     [[nodiscard]] RTCIceTransport iceTransport() const;

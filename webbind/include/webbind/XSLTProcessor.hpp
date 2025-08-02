@@ -19,6 +19,7 @@ public:
     static XSLTProcessor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XSLTProcessor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XSLTProcessor(..)` constructor, creating a new XSLTProcessor instance
     XSLTProcessor();
     /// The importStylesheet method.

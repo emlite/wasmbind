@@ -17,6 +17,7 @@ public:
     static Touch take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Touch clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Touch(..)` constructor, creating a new Touch instance
     Touch(const jsbind::Any& touchInitDict);
     /// Getter of the `identifier` attribute.

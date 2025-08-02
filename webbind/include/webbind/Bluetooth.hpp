@@ -55,6 +55,7 @@ public:
     static Bluetooth take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Bluetooth clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getAvailability method.
     /// [`Bluetooth.getAvailability`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/getAvailability)
     jsbind::Promise<bool> getAvailability();

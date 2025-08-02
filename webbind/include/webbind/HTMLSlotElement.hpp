@@ -31,6 +31,7 @@ public:
     static HTMLSlotElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HTMLSlotElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSlotElement(..)` constructor, creating a new HTMLSlotElement instance
     HTMLSlotElement();
     /// Getter of the `name` attribute.

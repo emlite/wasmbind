@@ -17,6 +17,7 @@ public:
     static XRInputSourceArray take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRInputSourceArray clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
     /// [`XRInputSourceArray.length`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceArray/length)
     [[nodiscard]] unsigned long length() const;

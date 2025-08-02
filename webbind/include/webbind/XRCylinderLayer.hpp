@@ -19,6 +19,7 @@ public:
     static XRCylinderLayer take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRCylinderLayer clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `space` attribute.
     /// [`XRCylinderLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XRCylinderLayer/space)
     [[nodiscard]] XRSpace space() const;

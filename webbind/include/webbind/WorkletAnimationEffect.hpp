@@ -50,6 +50,7 @@ public:
     static WorkletAnimationEffect take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WorkletAnimationEffect clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getTiming method.
     /// [`WorkletAnimationEffect.getTiming`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/getTiming)
     EffectTiming getTiming();

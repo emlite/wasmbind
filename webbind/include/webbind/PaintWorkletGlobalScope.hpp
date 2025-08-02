@@ -16,6 +16,7 @@ public:
     static PaintWorkletGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PaintWorkletGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The registerPaint method.
     /// [`PaintWorkletGlobalScope.registerPaint`](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/registerPaint)
     jsbind::Undefined registerPaint(const jsbind::String& name, const jsbind::Any& paintCtor);

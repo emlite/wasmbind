@@ -16,6 +16,7 @@ public:
     static FileSystemFileEntry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] FileSystemFileEntry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The file method.
     /// [`FileSystemFileEntry.file`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry/file)
     jsbind::Undefined file(const jsbind::Function& successCallback);

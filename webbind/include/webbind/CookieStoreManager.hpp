@@ -16,6 +16,7 @@ public:
     static CookieStoreManager take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CookieStoreManager clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The subscribe method.
     /// [`CookieStoreManager.subscribe`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreManager/subscribe)
     jsbind::Promise<jsbind::Undefined> subscribe(const jsbind::TypedArray<CookieStoreGetOptions>& subscriptions);

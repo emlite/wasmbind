@@ -23,6 +23,7 @@ public:
     static Text take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Text clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Text(..)` constructor, creating a new Text instance
     Text();
     /// The `new Text(..)` constructor, creating a new Text instance

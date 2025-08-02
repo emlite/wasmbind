@@ -32,6 +32,7 @@ public:
     static Clients take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Clients clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
     /// [`Clients.get`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/get)
     jsbind::Promise<jsbind::Any> get(const jsbind::String& id);

@@ -21,6 +21,7 @@ FileSystemHandle FileSystemHandle::take_ownership(Handle h) noexcept {
         return FileSystemHandle(h);
     }
 FileSystemHandle FileSystemHandle::clone() const noexcept { return *this; }
+emlite::Val FileSystemHandle::instance() noexcept { return emlite::Val::global("FileSystemHandle"); }
 FileSystemHandle::FileSystemHandle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FileSystemHandle::FileSystemHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

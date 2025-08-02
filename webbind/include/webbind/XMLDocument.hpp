@@ -16,5 +16,6 @@ public:
     static XMLDocument take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XMLDocument clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

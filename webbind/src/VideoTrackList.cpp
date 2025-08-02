@@ -6,6 +6,7 @@ VideoTrackList VideoTrackList::take_ownership(Handle h) noexcept {
         return VideoTrackList(h);
     }
 VideoTrackList VideoTrackList::clone() const noexcept { return *this; }
+emlite::Val VideoTrackList::instance() noexcept { return emlite::Val::global("VideoTrackList"); }
 VideoTrackList::VideoTrackList(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 VideoTrackList::VideoTrackList(const emlite::Val &val) noexcept: EventTarget(val) {}
 

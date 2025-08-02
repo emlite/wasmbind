@@ -15,6 +15,7 @@ public:
     static XRCamera take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRCamera clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
     /// [`XRCamera.width`](https://developer.mozilla.org/en-US/docs/Web/API/XRCamera/width)
     [[nodiscard]] unsigned long width() const;

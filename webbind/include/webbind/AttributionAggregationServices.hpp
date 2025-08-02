@@ -15,5 +15,6 @@ public:
     static AttributionAggregationServices take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AttributionAggregationServices clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

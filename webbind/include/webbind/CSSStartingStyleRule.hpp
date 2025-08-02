@@ -16,5 +16,6 @@ public:
     static CSSStartingStyleRule take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSStartingStyleRule clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

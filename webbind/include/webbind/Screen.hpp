@@ -17,6 +17,7 @@ public:
     static Screen take_ownership(Handle h) noexcept;
 
     [[nodiscard]] Screen clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `availWidth` attribute.
     /// [`Screen.availWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Screen/availWidth)
     [[nodiscard]] long availWidth() const;

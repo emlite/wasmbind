@@ -5,6 +5,7 @@ CSSFontPaletteValuesRule CSSFontPaletteValuesRule::take_ownership(Handle h) noex
         return CSSFontPaletteValuesRule(h);
     }
 CSSFontPaletteValuesRule CSSFontPaletteValuesRule::clone() const noexcept { return *this; }
+emlite::Val CSSFontPaletteValuesRule::instance() noexcept { return emlite::Val::global("CSSFontPaletteValuesRule"); }
 CSSFontPaletteValuesRule::CSSFontPaletteValuesRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
 CSSFontPaletteValuesRule::CSSFontPaletteValuesRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 

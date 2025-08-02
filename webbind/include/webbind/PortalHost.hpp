@@ -17,6 +17,7 @@ public:
     static PortalHost take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PortalHost clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The postMessage method.
     /// [`PortalHost.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);

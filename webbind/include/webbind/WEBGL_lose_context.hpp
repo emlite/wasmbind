@@ -15,6 +15,7 @@ public:
     static WEBGL_lose_context take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_lose_context clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The loseContext method.
     /// [`WEBGL_lose_context.loseContext`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_lose_context/loseContext)
     jsbind::Undefined loseContext();

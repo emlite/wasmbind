@@ -6,6 +6,7 @@ CSSTranslate CSSTranslate::take_ownership(Handle h) noexcept {
         return CSSTranslate(h);
     }
 CSSTranslate CSSTranslate::clone() const noexcept { return *this; }
+emlite::Val CSSTranslate::instance() noexcept { return emlite::Val::global("CSSTranslate"); }
 CSSTranslate::CSSTranslate(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_ownership(h)) {}
 CSSTranslate::CSSTranslate(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 

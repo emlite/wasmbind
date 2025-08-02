@@ -18,6 +18,7 @@ public:
     static TextFormatUpdateEvent take_ownership(Handle h) noexcept;
 
     [[nodiscard]] TextFormatUpdateEvent clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextFormatUpdateEvent(..)` constructor, creating a new TextFormatUpdateEvent instance
     TextFormatUpdateEvent(const jsbind::String& type);
     /// The `new TextFormatUpdateEvent(..)` constructor, creating a new TextFormatUpdateEvent instance

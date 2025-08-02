@@ -22,6 +22,7 @@ HTMLPortalElement HTMLPortalElement::take_ownership(Handle h) noexcept {
         return HTMLPortalElement(h);
     }
 HTMLPortalElement HTMLPortalElement::clone() const noexcept { return *this; }
+emlite::Val HTMLPortalElement::instance() noexcept { return emlite::Val::global("HTMLPortalElement"); }
 HTMLPortalElement::HTMLPortalElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLPortalElement::HTMLPortalElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

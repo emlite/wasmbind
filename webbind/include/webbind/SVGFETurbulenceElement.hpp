@@ -22,6 +22,7 @@ public:
     static SVGFETurbulenceElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGFETurbulenceElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseFrequencyX` attribute.
     /// [`SVGFETurbulenceElement.baseFrequencyX`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFETurbulenceElement/baseFrequencyX)
     [[nodiscard]] SVGAnimatedNumber baseFrequencyX() const;

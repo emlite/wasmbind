@@ -18,6 +18,7 @@ public:
     static ConvolverNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] ConvolverNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ConvolverNode(..)` constructor, creating a new ConvolverNode instance
     ConvolverNode(const BaseAudioContext& context);
     /// The `new ConvolverNode(..)` constructor, creating a new ConvolverNode instance

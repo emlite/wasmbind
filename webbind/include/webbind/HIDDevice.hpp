@@ -41,6 +41,7 @@ public:
     static HIDDevice take_ownership(Handle h) noexcept;
 
     [[nodiscard]] HIDDevice clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `oninputreport` attribute.
     /// [`HIDDevice.oninputreport`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/oninputreport)
     [[nodiscard]] jsbind::Any oninputreport() const;

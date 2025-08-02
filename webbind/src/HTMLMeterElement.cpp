@@ -6,6 +6,7 @@ HTMLMeterElement HTMLMeterElement::take_ownership(Handle h) noexcept {
         return HTMLMeterElement(h);
     }
 HTMLMeterElement HTMLMeterElement::clone() const noexcept { return *this; }
+emlite::Val HTMLMeterElement::instance() noexcept { return emlite::Val::global("HTMLMeterElement"); }
 HTMLMeterElement::HTMLMeterElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLMeterElement::HTMLMeterElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

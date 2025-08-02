@@ -6,6 +6,7 @@ HTMLCollection HTMLCollection::take_ownership(Handle h) noexcept {
         return HTMLCollection(h);
     }
 HTMLCollection HTMLCollection::clone() const noexcept { return *this; }
+emlite::Val HTMLCollection::instance() noexcept { return emlite::Val::global("HTMLCollection"); }
 HTMLCollection::HTMLCollection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HTMLCollection::HTMLCollection(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

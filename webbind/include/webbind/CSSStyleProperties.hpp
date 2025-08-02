@@ -16,6 +16,7 @@ public:
     static CSSStyleProperties take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSStyleProperties clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cssFloat` attribute.
     /// [`CSSStyleProperties.cssFloat`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleProperties/cssFloat)
     [[nodiscard]] jsbind::String cssFloat() const;

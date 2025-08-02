@@ -15,5 +15,6 @@ public:
     static WEBGL_compressed_texture_s3tc take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WEBGL_compressed_texture_s3tc clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
 };
 

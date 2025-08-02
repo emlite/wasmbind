@@ -18,6 +18,7 @@ public:
     static PerformanceLongTaskTiming take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PerformanceLongTaskTiming clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startTime` attribute.
     /// [`PerformanceLongTaskTiming.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/startTime)
     [[nodiscard]] jsbind::Any startTime() const;

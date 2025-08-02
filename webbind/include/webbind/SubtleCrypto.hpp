@@ -17,6 +17,7 @@ public:
     static SubtleCrypto take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SubtleCrypto clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The encrypt method.
     /// [`SubtleCrypto.encrypt`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt)
     jsbind::Promise<jsbind::ArrayBuffer> encrypt(const jsbind::Any& algorithm, const CryptoKey& key, const jsbind::Any& data);

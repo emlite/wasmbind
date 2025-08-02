@@ -16,6 +16,7 @@ public:
     static CSSColorValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSColorValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The parse method.
     /// [`CSSColorValue.parse`](https://developer.mozilla.org/en-US/docs/Web/API/CSSColorValue/parse)
     static jsbind::Any parse(const jsbind::String& cssText);

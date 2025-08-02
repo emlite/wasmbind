@@ -20,6 +20,7 @@ public:
     static SVGGradientElement take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SVGGradientElement clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `gradientUnits` attribute.
     /// [`SVGGradientElement.gradientUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/gradientUnits)
     [[nodiscard]] SVGAnimatedEnumeration gradientUnits() const;

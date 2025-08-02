@@ -17,6 +17,7 @@ public:
     static MediaStreamTrackProcessor take_ownership(Handle h) noexcept;
 
     [[nodiscard]] MediaStreamTrackProcessor clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStreamTrackProcessor(..)` constructor, creating a new MediaStreamTrackProcessor instance
     MediaStreamTrackProcessor(const jsbind::Any& init);
     /// Getter of the `readable` attribute.

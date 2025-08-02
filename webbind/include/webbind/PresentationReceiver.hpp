@@ -17,6 +17,7 @@ public:
     static PresentationReceiver take_ownership(Handle h) noexcept;
 
     [[nodiscard]] PresentationReceiver clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `connectionList` attribute.
     /// [`PresentationReceiver.connectionList`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationReceiver/connectionList)
     [[nodiscard]] jsbind::Promise<PresentationConnectionList> connectionList() const;

@@ -16,6 +16,7 @@ public:
     static CSSUnparsedValue take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CSSUnparsedValue clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSUnparsedValue(..)` constructor, creating a new CSSUnparsedValue instance
     CSSUnparsedValue(const jsbind::TypedArray<jsbind::Any>& members);
     /// Getter of the `length` attribute.

@@ -29,6 +29,7 @@ public:
     static CustomElementRegistry take_ownership(Handle h) noexcept;
 
     [[nodiscard]] CustomElementRegistry clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CustomElementRegistry(..)` constructor, creating a new CustomElementRegistry instance
     CustomElementRegistry();
     /// The define method.

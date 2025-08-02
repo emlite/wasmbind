@@ -30,6 +30,7 @@ ReadableStreamDefaultReader ReadableStreamDefaultReader::take_ownership(Handle h
         return ReadableStreamDefaultReader(h);
     }
 ReadableStreamDefaultReader ReadableStreamDefaultReader::clone() const noexcept { return *this; }
+emlite::Val ReadableStreamDefaultReader::instance() noexcept { return emlite::Val::global("ReadableStreamDefaultReader"); }
 ReadableStreamDefaultReader::ReadableStreamDefaultReader(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ReadableStreamDefaultReader::ReadableStreamDefaultReader(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

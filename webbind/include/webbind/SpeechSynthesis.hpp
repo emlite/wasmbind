@@ -19,6 +19,7 @@ public:
     static SpeechSynthesis take_ownership(Handle h) noexcept;
 
     [[nodiscard]] SpeechSynthesis clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `pending` attribute.
     /// [`SpeechSynthesis.pending`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/pending)
     [[nodiscard]] bool pending() const;

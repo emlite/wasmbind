@@ -6,6 +6,7 @@ Instance Instance::take_ownership(Handle h) noexcept {
         return Instance(h);
     }
 Instance Instance::clone() const noexcept { return *this; }
+emlite::Val Instance::instance() noexcept { return emlite::Val::global("Instance"); }
 Instance::Instance(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Instance::Instance(const emlite::Val &val) noexcept: emlite::Val(val) {}
 

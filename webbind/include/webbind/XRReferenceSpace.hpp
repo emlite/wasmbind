@@ -19,6 +19,7 @@ public:
     static XRReferenceSpace take_ownership(Handle h) noexcept;
 
     [[nodiscard]] XRReferenceSpace clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getOffsetReferenceSpace method.
     /// [`XRReferenceSpace.getOffsetReferenceSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace/getOffsetReferenceSpace)
     XRReferenceSpace getOffsetReferenceSpace(const XRRigidTransform& originOffset);

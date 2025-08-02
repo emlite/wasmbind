@@ -5,6 +5,7 @@ HTMLParamElement HTMLParamElement::take_ownership(Handle h) noexcept {
         return HTMLParamElement(h);
     }
 HTMLParamElement HTMLParamElement::clone() const noexcept { return *this; }
+emlite::Val HTMLParamElement::instance() noexcept { return emlite::Val::global("HTMLParamElement"); }
 HTMLParamElement::HTMLParamElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLParamElement::HTMLParamElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 

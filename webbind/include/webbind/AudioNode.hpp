@@ -20,6 +20,7 @@ public:
     static AudioNode take_ownership(Handle h) noexcept;
 
     [[nodiscard]] AudioNode clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// The connect method.
     /// [`AudioNode.connect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect)
     jsbind::Undefined connect(const AudioParam& destinationParam);

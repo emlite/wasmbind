@@ -22,6 +22,7 @@ public:
     static WorkerGlobalScope take_ownership(Handle h) noexcept;
 
     [[nodiscard]] WorkerGlobalScope clone() const noexcept;
+    [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `self` attribute.
     /// [`WorkerGlobalScope.self`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self)
     [[nodiscard]] WorkerGlobalScope self() const;
