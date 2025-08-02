@@ -17,6 +17,10 @@ set(JSBIND_SOURCES
     src/url.cpp
     src/Math.cpp
     src/text.cpp
+    src/RegExp.cpp
+    src/Symbol.cpp
+    src/BigInt.cpp
+    src/BigIntArray.cpp
 )
 
 set(JSBIND_HEADERS
@@ -42,6 +46,10 @@ set(JSBIND_HEADERS
     include/jsbind/Response.hpp
     include/jsbind/url.hpp
     include/jsbind/text.hpp
+    include/jsbind/RegExp.hpp
+    include/jsbind/Symbol.hpp
+    include/jsbind/BigInt.hpp
+    include/jsbind/BigIntArray.hpp
 )
 
 target_sources(jsbind 

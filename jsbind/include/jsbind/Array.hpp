@@ -226,6 +226,10 @@ DECLARE_ARRAY(Uint8Array, uint8_t)
 
 DECLARE_ARRAY(Int8Array, int8_t)
 
+DECLARE_ARRAY(Uint16Array, uint16_t)
+
+DECLARE_ARRAY(Int16Array, int16_t)
+
 DECLARE_ARRAY(Uint32Array, uint32_t)
 
 DECLARE_ARRAY(Int32Array, int32_t)
@@ -233,6 +237,11 @@ DECLARE_ARRAY(Int32Array, int32_t)
 DECLARE_ARRAY(Float32Array, float)
 
 DECLARE_ARRAY(Float64Array, double)
+
+// Note: BigInt arrays work with JavaScript BigInt, not C++ int64_t
+// They need special handling since BigInt is a JavaScript object type
+class BigInt64Array;
+class BigUint64Array;
 
 class DataView : public emlite::Val {
     explicit DataView(Handle h) noexcept;

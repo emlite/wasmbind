@@ -36,6 +36,14 @@
 
 #include "Response.hpp"
 
+#include "RegExp.hpp"
+
+#include "Symbol.hpp"
+
+#include "BigInt.hpp"
+
+#include "BigIntArray.hpp"
+
 #include "utils.hpp"
 
 int32_t parse_int(const char *src);
