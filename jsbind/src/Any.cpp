@@ -14,10 +14,6 @@ Any::Any(const emlite::Val &v) noexcept : emlite::Val(v) {}
 Any::Any() noexcept
     : emlite::Val(emlite::Val::undefined()) {}
 
-emlite::Val Any::instance() noexcept {
-    return emlite::Val::global("Object");
-}
-
 Any Any::undefined() noexcept {
     return Any{emlite::Val::undefined()};
 }

@@ -13,25 +13,60 @@
 
 namespace jsbind {
 
+/// Wrapper for JavaScript strings
+///
+/// String provides a C++-friendly interface for JavaScript string objects,
+/// with methods for string manipulation, character access, and conversion
+/// to/from C++ string types when available.
 class String : public emlite::Val {
     explicit String(Handle h) noexcept;
 
   public:
+    /// Creates String from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns String wrapper object
     static String take_ownership(Handle h) noexcept;
+    
+    /// Creates String from an emlite::Val
+    /// @param v emlite::Val to wrap
     explicit String(const emlite::Val &v) noexcept;
+    
+    /// Creates empty String
     String() noexcept;
 
+    /// Gets the String constructor function
+    /// @returns emlite::Val representing the String constructor
     static emlite::Val instance() noexcept;
 
+    /// Creates String from C string
+    /// @param utf8 null-terminated UTF-8 string
     String(const char *utf8);
+    
 #if JSBIND_HAS_STD_STRING
+    /// Creates String from std::string
+    /// @param utf8 UTF-8 string
     explicit String(const std::string &utf8);
+    
+    /// Creates String from std::string_view
+    /// @param utf8 UTF-8 string view
     explicit String(std::string_view utf8);
+    
+    /// Converts to std::string
+    /// @returns std::string copy of the JavaScript string
     [[nodiscard]] std::string to_std_string() const;
 #endif
+
+    /// Gets the length of the string
+    /// @returns number of characters in the string
     [[nodiscard]] size_t size() const;
+    
+    /// Checks if the string is empty
+    /// @returns true if string has zero length
     [[nodiscard]] bool empty() const;
 
+    /// Gets character at index
+    /// @param i character index
+    /// @returns character at the specified index
     char operator[](size_t i) const;
 
     [[nodiscard]] size_t byte_len() const noexcept;

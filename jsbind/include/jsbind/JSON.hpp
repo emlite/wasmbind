@@ -6,26 +6,6 @@
 #include <emlite/emlite.hpp>
 
 namespace jsbind::JSON {
-template <class T>
-bool parse(
-    const char *text, // UTF-8 JSON
-    T &out,           // parsed result
-    Any *err = nullptr
-) // optional error out-param
-{
-    emlite::Val res =
-        emlite::Val::global("JSON").call("parse", text);
-
-    if (res.is_error()) {
-        if (err)
-            *err = res.as<Any>();
-        return false;
-    }
-
-    out = res.as<T>();
-    return true;
-}
-
 /// Enhanced JSON::parse using Result for better error handling
 template <class T>
 Result<T> parse(const char *text) {
