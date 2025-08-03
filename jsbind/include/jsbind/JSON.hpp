@@ -1,9 +1,9 @@
 #pragma once
 
 #include "Any.hpp"
+#include "Error.hpp"
 #include "String.hpp"
 #include "Undefined.hpp"
-#include "Error.hpp"
 #include <emlite/emlite.hpp>
 
 /// JavaScript JSON utilities with enhanced error handling
@@ -33,7 +33,7 @@ Result<T, Error> parse(const char *text) {
 /// @param replacer optional replacer function or array to transform values
 /// @param space optional spacing for pretty-printing (string or number)
 /// @returns JSON string representation of the value
-String stringify(
+Result<String, Error> stringify(
     const Any &value, const Any &replacer = Undefined::value, const Any &space = Undefined::value
 );
 } // namespace jsbind::JSON

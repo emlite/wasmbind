@@ -5,6 +5,8 @@
 
 namespace jsbind {
 
+class Error;
+
 /// Wrapper for JavaScript URLSearchParams objects
 ///
 /// URLSearchParams provides an interface for working with URL query strings,
@@ -48,6 +50,11 @@ class URLSearchParams : public emlite::Val {
 /// It corresponds to the Web API URL constructor.
 class URL : public emlite::Val {
     explicit URL(Handle h) noexcept;
+    /// Creates URL from input string
+    /// @param input URL string to parse
+    URL(const char *input);
+
+    URL(const char *input, const char *base);
 
   public:
     /// Creates URL from a raw handle
@@ -59,18 +66,14 @@ class URL : public emlite::Val {
     /// @param val emlite::Val to wrap
     URL(const emlite::Val &val) noexcept;
 
-    /// Creates URL from input string
-    /// @param input URL string to parse
-    URL(const char *input);
+    /// Gets the URL constructor function
+    /// @returns emlite::Val representing the URL constructor
+    static emlite::Val instance() noexcept;
 
     /// Creates URL from input string relative to base
     /// @param input URL string to parse (may be relative)
     /// @param base base URL for resolving relative URLs
-    URL(const char *input, const char *base);
-
-    /// Gets the URL constructor function
-    /// @returns emlite::Val representing the URL constructor
-    static emlite::Val instance() noexcept;
+    static Result<URL, Error> create(const char *input, const char *base = nullptr);
 
     /// Gets the complete URL string
     /// @returns full URL as String

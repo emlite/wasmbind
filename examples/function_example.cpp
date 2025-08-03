@@ -9,7 +9,7 @@ int main() {
 
     // Create a JS function dynamically: function(x, y) { return x + y; }
     const char *args[] = {"x", "y"};
-    Function add(args, "return x + y;");
+    Function add = Function::create(args, "return x + y;").unwrap();
     Any result = add(2, 3);
     console.log("add(2, 3):");
     console.log(result);
@@ -22,7 +22,7 @@ int main() {
     cb("test value");
 
     // Call a global JS function (console.log)
-    Function log("console.log");
+    Function log = Function::get("console.log").unwrap();
     log("Hello from JS console.log!");
 
     return 0;

@@ -2,6 +2,7 @@
 
 #include "Any.hpp"
 #include "Array.hpp"
+#include "Error.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
 #include <stddef.h>
@@ -28,6 +29,12 @@ class Function : public emlite::Val {
             .template as<Function>();
     }
 
+    template <size_t N>
+    Function(const char *const (&args)[N], const char *body)
+        : emlite::Val(make_dyn_function(args, body, emlite::detail::make_index_sequence<N>{})) {}
+
+    Function(const char *name);
+
   public:
     /// Creates Function from a raw handle
     /// @param h raw JavaScript handle
@@ -46,12 +53,13 @@ class Function : public emlite::Val {
     /// @param args array of parameter names
     /// @param body function body source code
     template <size_t N>
-    Function(const char *const (&args)[N], const char *body)
-        : emlite::Val(make_dyn_function(args, body, emlite::detail::make_index_sequence<N>{})) {}
+    static Result<Function, Error> create(const char *const (&args)[N], const char *body) {
+        return Function(args, body).as<Result<Function, Error>>();
+    }
 
     /// Creates Function by name from global scope
     /// @param name function name to look up
-    Function(const char *name);
+    static Result<Function, Error> get(const char *name);
 
     /// Helper template for creating Functions from C++ callbacks
     ///
@@ -100,7 +108,7 @@ class Function : public emlite::Val {
     /// @param this_arg value to use as 'this' when calling function
     /// @param args_array array of arguments to pass to function
     /// @returns Any containing the function result
-    Any apply(const Any &this_arg, const Array &args_array);
+    Result<Any, Error> apply(const Any &this_arg, const Array &args_array);
 
     /// Creates bound function with specified this value and arguments
     /// @param this_arg value to use as 'this' in bound function
@@ -117,9 +125,9 @@ class Function : public emlite::Val {
     /// @param args arguments to pass to function
     /// @returns function result converted to type T
     template <typename T, typename... Args>
-    T call(const Any &this_arg, Args... args) {
+    Result<T, Error> call(const Any &this_arg, Args... args) {
         return emlite::Val::call("call", this_arg, emlite::detail::forward<Args>(args)...)
-            .template as<T>();
+            .template as<Result<T, Error>>();
     }
 
     DECLARE_CLONE(Function)

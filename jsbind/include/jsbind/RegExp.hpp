@@ -2,6 +2,7 @@
 
 #include "Any.hpp"
 #include "Array.hpp"
+#include "Error.hpp"
 #include "String.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
@@ -16,6 +17,9 @@ namespace jsbind {
 class RegExp : public emlite::Val {
     explicit RegExp(Handle h) noexcept;
 
+    explicit RegExp(const String &pattern) noexcept;
+    RegExp(const String &pattern, const String &flags) noexcept;
+
   public:
     /// Creates RegExp from a raw handle
     /// @param h raw JavaScript handle
@@ -28,12 +32,12 @@ class RegExp : public emlite::Val {
 
     /// Creates RegExp from pattern string
     /// @param pattern regular expression pattern
-    explicit RegExp(const String &pattern) noexcept;
+    static Result<RegExp, Error> create(const String &pattern) noexcept;
 
     /// Creates RegExp from pattern and flags
     /// @param pattern regular expression pattern
     /// @param flags regex flags (g, i, m, s, u, y)
-    RegExp(const String &pattern, const String &flags) noexcept;
+    static Result<RegExp, Error> create(const String &pattern, const String &flags) noexcept;
 
     /// Creates empty RegExp
     RegExp() noexcept;
@@ -118,27 +122,27 @@ class RegExp : public emlite::Val {
     /// Creates RegExp that matches literal text
     /// @param text literal string to match
     /// @returns RegExp with escaped special characters
-    static RegExp literal(const String &text) noexcept;
+    static Result<RegExp, Error> literal(const String &text) noexcept;
 
     /// Creates case-insensitive RegExp
     /// @param pattern regex pattern
     /// @returns RegExp with 'i' flag
-    static RegExp caseInsensitive(const String &pattern) noexcept;
+    static Result<RegExp, Error> caseInsensitive(const String &pattern) noexcept;
 
     /// Creates global RegExp
     /// @param pattern regex pattern
     /// @returns RegExp with 'g' flag
-    static RegExp global(const String &pattern) noexcept;
+    static Result<RegExp, Error> global(const String &pattern) noexcept;
 
     /// Creates global case-insensitive RegExp
     /// @param pattern regex pattern
     /// @returns RegExp with 'gi' flags
-    static RegExp globalIgnoreCase(const String &pattern) noexcept;
+    static Result<RegExp, Error> globalIgnoreCase(const String &pattern) noexcept;
 
     /// Creates multiline RegExp
     /// @param pattern regex pattern
     /// @returns RegExp with 'm' flag
-    static RegExp multiline(const String &pattern) noexcept;
+    static Result<RegExp, Error> multiline(const String &pattern) noexcept;
 
     // Iterator-like interface for global matches
     class MatchIterator {

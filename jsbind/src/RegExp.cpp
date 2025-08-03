@@ -11,8 +11,16 @@ RegExp::RegExp(const emlite::Val &val) noexcept : emlite::Val(val) {}
 RegExp::RegExp(const String &pattern) noexcept
     : emlite::Val(emlite::Val::global("RegExp").new_(pattern)) {}
 
+Result<RegExp, Error> RegExp::create(const String &pattern) noexcept {
+    return RegExp(pattern).as<Result<RegExp, Error>>();
+}
+
 RegExp::RegExp(const String &pattern, const String &flags) noexcept
     : emlite::Val(emlite::Val::global("RegExp").new_(pattern, flags)) {}
+
+Result<RegExp, Error> RegExp::create(const String &pattern, const String &flags) noexcept {
+    return RegExp(pattern, flags).as<Result<RegExp, Error>>();
+}
 
 RegExp::RegExp() noexcept : emlite::Val(emlite::Val::global("RegExp").new_()) {}
 
@@ -40,9 +48,7 @@ size_t RegExp::lastIndex() const noexcept { return get("lastIndex").as<size_t>()
 
 void RegExp::setLastIndex(size_t index) noexcept { set("lastIndex", index); }
 
-bool RegExp::test(const String &str) const noexcept {
-    return call("test", str).as<bool>();
-}
+bool RegExp::test(const String &str) const noexcept { return call("test", str).as<bool>(); }
 
 Option<Array> RegExp::exec(const String &str) const noexcept {
     auto result = call("exec", str);
@@ -63,19 +69,27 @@ Array RegExp::findAll(const String &str) const {
     return str.call("matchAll", *this).as<Array>();
 }
 
-RegExp RegExp::literal(const String &text) noexcept {
+Result<RegExp, Error> RegExp::literal(const String &text) noexcept {
     // Escape special regex characters
     auto escaped = text.call("replace", RegExp(R"([.*+?^${}()|[\]\\])", "g"), "\\$&");
-    return RegExp(escaped.as<String>());
+    return RegExp::create(escaped.as<String>());
 }
 
-RegExp RegExp::caseInsensitive(const String &pattern) noexcept { return {pattern, "i"}; }
+Result<RegExp, Error> RegExp::caseInsensitive(const String &pattern) noexcept {
+    return RegExp::create(pattern, "i");
+}
 
-RegExp RegExp::global(const String &pattern) noexcept { return {pattern, "g"}; }
+Result<RegExp, Error> RegExp::global(const String &pattern) noexcept {
+    return RegExp::create(pattern, "g");
+}
 
-RegExp RegExp::globalIgnoreCase(const String &pattern) noexcept { return {pattern, "gi"}; }
+Result<RegExp, Error> RegExp::globalIgnoreCase(const String &pattern) noexcept {
+    return RegExp::create(pattern, "gi");
+}
 
-RegExp RegExp::multiline(const String &pattern) noexcept { return {pattern, "m"}; }
+Result<RegExp, Error> RegExp::multiline(const String &pattern) noexcept {
+    return RegExp::create(pattern, "m");
+}
 
 // MatchIterator implementations
 RegExp::MatchIterator::MatchIterator(const RegExp &regexp, String text, bool at_end)
@@ -98,9 +112,13 @@ RegExp::MatchIterator &RegExp::MatchIterator::operator++() {
     return *this;
 }
 
-bool RegExp::MatchIterator::operator!=(const MatchIterator &other) const { return at_end_ != other.at_end_; }
+bool RegExp::MatchIterator::operator!=(const MatchIterator &other) const {
+    return at_end_ != other.at_end_;
+}
 
-bool RegExp::MatchIterator::operator==(const MatchIterator &other) const { return at_end_ == other.at_end_; }
+bool RegExp::MatchIterator::operator==(const MatchIterator &other) const {
+    return at_end_ == other.at_end_;
+}
 
 void RegExp::MatchIterator::advance() {
     auto result = regexp_.call("exec", text_);

@@ -18,6 +18,8 @@ namespace jsbind {
 
 class String;
 class Function;
+class Error;
+class Undefined;
 
 /// Wrapper for JavaScript ArrayBuffer objects
 ///
@@ -161,7 +163,7 @@ class TypedArray : public emlite::Val {
 
     /// Removes and returns last element
     /// @returns last element of array
-    [[nodiscard]] T pop() noexcept;
+    [[nodiscard]] Option<T> pop() noexcept;
 
     /// Adds elements from another array to end
     /// @param items array to append
@@ -184,7 +186,7 @@ class TypedArray : public emlite::Val {
 
     /// Removes and returns first element
     /// @returns first element of array
-    [[nodiscard]] T shift() noexcept;
+    [[nodiscard]] Option<T> shift() noexcept;
 
     /// Sorts array elements using comparison function
     /// @param compareFn function to compare elements
@@ -427,94 +429,94 @@ class DataView : public emlite::Val {
     /// Reads unsigned 8-bit integer at offset
     /// @param off byte offset
     /// @returns uint8_t value
-    [[nodiscard]] uint8_t getUint8(size_t off) const;
+    [[nodiscard]] Result<uint8_t, Error> getUint8(size_t off) const;
 
     /// Reads signed 8-bit integer at offset
     /// @param off byte offset
     /// @returns int8_t value
-    [[nodiscard]] int8_t getInt8(size_t off) const;
+    [[nodiscard]] Result<int8_t, Error> getInt8(size_t off) const;
 
     /// Reads unsigned 16-bit integer at offset
     /// @param off byte offset
     /// @param littleEndian true for little endian, false for big endian
     /// @returns uint16_t value
-    [[nodiscard]] uint16_t getUint16(size_t off, bool littleEndian = true) const;
+    [[nodiscard]] Result<uint16_t, Error> getUint16(size_t off, bool littleEndian = true) const;
 
     /// Reads signed 16-bit integer at offset
     /// @param off byte offset
     /// @param littleEndian true for little endian, false for big endian
     /// @returns int16_t value
-    [[nodiscard]] int16_t getInt16(size_t off, bool littleEndian = true) const;
+    [[nodiscard]] Result<int16_t, Error> getInt16(size_t off, bool littleEndian = true) const;
 
     /// Reads unsigned 32-bit integer at offset
     /// @param off byte offset
     /// @param littleEndian true for little endian, false for big endian
     /// @returns uint32_t value
-    [[nodiscard]] uint32_t getUint32(size_t off, bool littleEndian = true) const;
+    [[nodiscard]] Result<uint32_t, Error> getUint32(size_t off, bool littleEndian = true) const;
 
     /// Reads signed 32-bit integer at offset
     /// @param off byte offset
     /// @param littleEndian true for little endian, false for big endian
     /// @returns int32_t value
-    [[nodiscard]] int32_t getInt32(size_t off, bool littleEndian = true) const;
+    [[nodiscard]] Result<int32_t, Error> getInt32(size_t off, bool littleEndian = true) const;
 
     /// Reads 32-bit float at offset
     /// @param off byte offset
     /// @param littleEndian true for little endian, false for big endian
     /// @returns float value
-    [[nodiscard]] float getFloat32(size_t off, bool littleEndian = true) const;
+    [[nodiscard]] Result<float, Error> getFloat32(size_t off, bool littleEndian = true) const;
 
     /// Reads 64-bit double at offset
     /// @param off byte offset
     /// @param littleEndian true for little endian, false for big endian
     /// @returns double value
-    [[nodiscard]] double getFloat64(size_t off, bool littleEndian = true) const;
+    [[nodiscard]] Result<double, Error> getFloat64(size_t off, bool littleEndian = true) const;
 
     /// Writes unsigned 8-bit integer at offset
     /// @param off byte offset
     /// @param v value to write
-    void setUint8(size_t off, uint8_t v);
+    Result<Undefined, Error> setUint8(size_t off, uint8_t v);
 
     /// Writes signed 8-bit integer at offset
     /// @param off byte offset
     /// @param v value to write
-    void setInt8(size_t off, int8_t v);
+    Result<Undefined, Error> setInt8(size_t off, int8_t v);
 
     /// Writes unsigned 16-bit integer at offset
     /// @param off byte offset
     /// @param v value to write
     /// @param littleEndian true for little endian, false for big endian
-    void setUint16(size_t off, uint16_t v, bool littleEndian = true);
+    Result<Undefined, Error> setUint16(size_t off, uint16_t v, bool littleEndian = true);
 
     /// Writes signed 16-bit integer at offset
     /// @param off byte offset
     /// @param v value to write
     /// @param littleEndian true for little endian, false for big endian
-    void setInt16(size_t off, int16_t v, bool littleEndian = true);
+    Result<Undefined, Error> setInt16(size_t off, int16_t v, bool littleEndian = true);
 
     /// Writes unsigned 32-bit integer at offset
     /// @param off byte offset
     /// @param v value to write
     /// @param littleEndian true for little endian, false for big endian
-    void setUint32(size_t off, uint32_t v, bool littleEndian = true);
+    Result<Undefined, Error> setUint32(size_t off, uint32_t v, bool littleEndian = true);
 
     /// Writes signed 32-bit integer at offset
     /// @param off byte offset
     /// @param v value to write
     /// @param littleEndian true for little endian, false for big endian
-    void setInt32(size_t off, int32_t v, bool littleEndian = true);
+    Result<Undefined, Error> setInt32(size_t off, int32_t v, bool littleEndian = true);
 
     /// Writes 32-bit float at offset
     /// @param off byte offset
     /// @param v value to write
     /// @param littleEndian true for little endian, false for big endian
-    void setFloat32(size_t off, float v, bool littleEndian = true);
+    Result<Undefined, Error> setFloat32(size_t off, float v, bool littleEndian = true);
 
     /// Writes 64-bit double at offset
     /// @param off byte offset
     /// @param v value to write
     /// @param littleEndian true for little endian, false for big endian
-    void setFloat64(size_t off, double v, bool littleEndian = true);
+    Result<Undefined, Error> setFloat64(size_t off, double v, bool littleEndian = true);
 };
 
 } // namespace jsbind

@@ -1,8 +1,8 @@
 #pragma once
 
+#include "Error.hpp"
 #include "String.hpp"
 #include "utils.hpp"
-#include "Error.hpp"
 #include <emlite/emlite.hpp>
 #include <stdint.h>
 
@@ -16,6 +16,10 @@ namespace jsbind {
 class BigInt : public emlite::Val {
     explicit BigInt(Handle h) noexcept;
 
+    explicit BigInt(const String &value) noexcept;
+
+    explicit BigInt(const char *value) noexcept;
+
   public:
     /// Creates BigInt from a raw handle
     /// @param h raw JavaScript handle
@@ -26,13 +30,13 @@ class BigInt : public emlite::Val {
     /// @param val emlite::Val to wrap
     explicit BigInt(const emlite::Val &val) noexcept;
 
-    /// Creates BigInt from string
-    /// @param value string representation of big integer
-    explicit BigInt(const String &value) noexcept;
-
     /// Creates BigInt from C string
     /// @param value null-terminated string representation
-    explicit BigInt(const char *value) noexcept;
+    static Result<BigInt, Error> create(const char *value) noexcept;
+
+    /// Creates BigInt from string
+    /// @param value string representation of big integer
+    static Result<BigInt, Error> create(const String &value) noexcept;
 
     /// Creates BigInt from signed integer
     /// @param value integer value (limited to safe integer range)

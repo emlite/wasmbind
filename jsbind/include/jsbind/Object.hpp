@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Any.hpp"
+#include "Error.hpp"
+#include "Undefined.hpp"
 #include <emlite/emlite.hpp>
 
 namespace jsbind {
@@ -43,12 +45,12 @@ class Record : public emlite::Val {
     /// Sets property value
     /// @param prop property key
     /// @param val property value
-    void set(const K &prop, const V &val) noexcept { emlite::Val::set(prop, val); }
+    Result<Undefined, Error> set(const K &prop, const V &val) noexcept { return emlite::Val::set(prop, val).template as<Result<Undefined, Error>>(); }
 
     /// Gets property value
     /// @param prop property key
     /// @returns property value converted to type V
-    V get(const K &prop) noexcept { return emlite::Val::get(prop).template as<V>(); }
+    Result<V, Error> get(const K &prop) noexcept { return emlite::Val::get(prop).template as<Result<V, Error>>(); }
 
     /// Checks if object has property (including inherited)
     /// @param prop property key to check

@@ -7,7 +7,7 @@ using namespace jsbind;
 int main() {
     Console console;
     // Parse a URL using the JS URL constructor
-    jsbind::URL url("https://example.com/path?query=1");
+    jsbind::URL url = jsbind::URL::create("https://example.com/path?query=1").unwrap();
     console.log("Full URL:");
     console.log(url.href());
     console.log("Host:");

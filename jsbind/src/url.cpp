@@ -1,3 +1,4 @@
+#include <jsbind/Error.hpp>
 #include <jsbind/url.hpp>
 
 using namespace jsbind;
@@ -32,6 +33,11 @@ URL::URL(const char *input) : emlite::Val(emlite::Val::global("URL").new_(input)
 
 URL::URL(const char *input, const char *base)
     : emlite::Val(emlite::Val::global("URL").new_(input, base)) {}
+
+Result<URL, Error> URL::create(const char *input, const char *base) {
+    auto url = base ? URL(input, base) : URL(input);
+    return url.as<Result<URL, Error>>();
+}
 
 emlite::Val URL::instance() noexcept { return emlite::Val::global("URL"); }
 

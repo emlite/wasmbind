@@ -1,6 +1,8 @@
 #include <jsbind/Array.hpp>
+#include <jsbind/Error.hpp>
 #include <jsbind/Function.hpp>
 #include <jsbind/String.hpp>
+#include <jsbind/Undefined.hpp>
 
 using namespace jsbind;
 
@@ -46,8 +48,8 @@ String TypedArray<T>::toLocaleString() const noexcept {
 }
 
 template <typename T>
-T TypedArray<T>::pop() noexcept {
-    return this->call("pop").template as<T>();
+Option<T> TypedArray<T>::pop() noexcept {
+    return this->call("pop").template as<Option<T>>();
 }
 
 template <typename T>
@@ -71,8 +73,8 @@ TypedArray<T> TypedArray<T>::reverse() noexcept {
 }
 
 template <typename T>
-T TypedArray<T>::shift() noexcept {
-    return this->call("shift").template as<T>();
+Option<T> TypedArray<T>::shift() noexcept {
+    return this->call("shift").template as<Option<T>>();
 }
 
 template <typename T>
@@ -167,18 +169,26 @@ size_t DataView::byteOffset() const { return emlite::Val::get("byteOffset").as<s
 ArrayBuffer DataView::buffer() const { return emlite::Val::get("buffer").as<ArrayBuffer>(); }
 
 #define JSBIND_DV_GET(Name, Cpp)                                                                   \
-    Cpp DataView::Name(size_t off, bool le) const {                                                \
-        return emlite::Val::call(#Name, off, le).as<Cpp>();                                        \
+    Result<Cpp, Error> DataView::Name(size_t off, bool le) const {                                 \
+        return emlite::Val::call(#Name, off, le).as<Result<Cpp, Error>>();                         \
     }
 #define JSBIND_DV_SET(Name, Cpp)                                                                   \
-    void DataView::Name(size_t off, Cpp v, bool le) { emlite::Val::call(#Name, off, v, le); }
+    Result<Undefined, Error> DataView::Name(size_t off, Cpp v, bool le) {                          \
+        return emlite::Val::call(#Name, off, v, le).as<Result<Undefined, Error>>();                \
+    }
 
-uint8_t DataView::getUint8(size_t o) const {
-    return emlite::Val::call("getUint8", o).as<uint8_t>();
+Result<uint8_t, Error> DataView::getUint8(size_t o) const {
+    return emlite::Val::call("getUint8", o).as<Result<uint8_t, Error>>();
 }
-int8_t DataView::getInt8(size_t o) const { return emlite::Val::call("getInt8", o).as<int8_t>(); }
-void DataView::setUint8(size_t o, uint8_t v) { emlite::Val::call("setUint8", o, v); }
-void DataView::setInt8(size_t o, int8_t v) { emlite::Val::call("setInt8", o, v); }
+Result<int8_t, Error> DataView::getInt8(size_t o) const {
+    return emlite::Val::call("getInt8", o).as<Result<int8_t, Error>>();
+}
+Result<Undefined, Error> DataView::setUint8(size_t o, uint8_t v) {
+    return emlite::Val::call("setUint8", o, v).as<Result<Undefined, Error>>();
+}
+Result<Undefined, Error> DataView::setInt8(size_t o, int8_t v) {
+    return emlite::Val::call("setInt8", o, v).as<Result<Undefined, Error>>();
+}
 
 JSBIND_DV_GET(getUint16, uint16_t)
 JSBIND_DV_GET(getInt16, int16_t)

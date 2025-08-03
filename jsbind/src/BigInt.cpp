@@ -8,11 +8,18 @@ BigInt BigInt::take_ownership(Handle h) noexcept { return BigInt(h); }
 
 BigInt::BigInt(const emlite::Val &val) noexcept : emlite::Val(val) {}
 
-BigInt::BigInt(const String &value) noexcept
-    : emlite::Val(emlite::Val::global("BigInt")(value)) {}
+BigInt::BigInt(const String &value) noexcept : emlite::Val(emlite::Val::global("BigInt")(value)) {}
 
 BigInt::BigInt(const char *value) noexcept
     : emlite::Val(emlite::Val::global("BigInt")(String(value))) {}
+
+Result<BigInt, Error> BigInt::create(const String &value) noexcept {
+    return BigInt(value).as<Result<BigInt, Error>>();
+}
+
+Result<BigInt, Error> BigInt::create(const char *value) noexcept {
+    return BigInt(value).as<Result<BigInt, Error>>();
+}
 
 BigInt::BigInt(int64_t value) noexcept
     : emlite::Val(emlite::Val::global("BigInt")(static_cast<double>(value))) {}
@@ -21,9 +28,7 @@ BigInt::BigInt(uint64_t value) noexcept : emlite::Val(createFromUint64(value)) {
 
 BigInt::BigInt() noexcept : emlite::Val(emlite::Val::global("BigInt")(0)) {}
 
-emlite::Val BigInt::instance() noexcept {
-    return emlite::Val::global("BigInt");
-}
+emlite::Val BigInt::instance() noexcept { return emlite::Val::global("BigInt"); }
 
 BigInt BigInt::clone() const noexcept { return *this; }
 
@@ -55,15 +60,11 @@ emlite::Val BigInt::createFromUint64(uint64_t value) {
     return emlite::Val::global("BigInt")(String(buffer));
 }
 
-String BigInt::toString(int radix) const noexcept {
-    return call("toString", radix).as<String>();
-}
+String BigInt::toString(int radix) const noexcept { return call("toString", radix).as<String>(); }
 
 String BigInt::valueOf() const noexcept { return call("valueOf").as<String>(); }
 
-String BigInt::toLocaleString() const noexcept {
-    return call("toLocaleString").as<String>();
-}
+String BigInt::toLocaleString() const noexcept { return call("toLocaleString").as<String>(); }
 
 BigInt BigInt::operator+(const BigInt &other) const noexcept {
     return BigInt::take_ownership(
@@ -273,13 +274,9 @@ size_t BigInt::hash() const noexcept {
 
 bool BigInt::isZero() const noexcept { return *this == BigInt(static_cast<int64_t>(0)); }
 
-bool BigInt::isPositive() const noexcept {
-    return *this > BigInt(static_cast<int64_t>(0));
-}
+bool BigInt::isPositive() const noexcept { return *this > BigInt(static_cast<int64_t>(0)); }
 
-bool BigInt::isNegative() const noexcept {
-    return *this < BigInt(static_cast<int64_t>(0));
-}
+bool BigInt::isNegative() const noexcept { return *this < BigInt(static_cast<int64_t>(0)); }
 
 BigInt BigInt::abs() const noexcept { return isNegative() ? -*this : *this; }
 

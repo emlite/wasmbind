@@ -12,8 +12,12 @@ emlite::Val Function::instance() noexcept { return emlite::Val::global("Function
 
 Function::Function(const char *name) : emlite::Val(emlite::Val::global(name)) {}
 
-Any Function::apply(const Any &this_arg, const Array &args_array) {
-    return emlite::Val::call("apply", this_arg, args_array).as<Any>();
+Result<Function, Error> Function::get(const char *name) {
+    return Function(name).as<Result<Function, Error>>();
+}
+
+Result<Any, Error> Function::apply(const Any &this_arg, const Array &args_array) {
+    return emlite::Val::call("apply", this_arg, args_array).as<Result<Any, Error>>();
 }
 
 DEFINE_CLONE(Function)
