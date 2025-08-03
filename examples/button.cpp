@@ -6,7 +6,6 @@ using jsbind::Function;
 
 int main() {
     Console con;
-    auto h = jsbind::btoa("hello").unwrap();
     auto document = window().document();
     auto bodies   = document.getElementsByTagName("body");
     if (bodies.length() == 0) {
