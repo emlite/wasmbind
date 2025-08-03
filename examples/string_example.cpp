@@ -14,7 +14,7 @@ int main() {
     // Manipulation
     // No toUpperCase() in jsbind::String; show char_at and concat
     console.log("First char:");
-    console.log(s.char_at(0));
+    console.log(s.charAt(0));
     // No substring; show at()
     console.log("Char at index 1:");
     console.log(s.at(1));

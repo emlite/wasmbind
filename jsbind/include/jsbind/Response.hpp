@@ -59,23 +59,23 @@ class Response : public emlite::Val {
 /// Performs HTTP fetch request with URL string
 /// @param input URL string to fetch
 /// @returns Promise that resolves to Response object
-Promise<Response> fetch(const char *input);
+Promise<Result<Response, Error>> fetch(const char *input);
 
 /// Performs HTTP fetch request with URL and options
 /// @param input URL string to fetch
 /// @param init request options object (method, headers, body, etc.)
 /// @returns Promise that resolves to Response object
-Promise<Response> fetch(const char *input, const Any &init);
+Promise<Result<Response, Error>> fetch(const char *input, const Any &init);
 
 /// Performs HTTP fetch request with Request object or URL
 /// @param input Request object or URL string
 /// @returns Promise that resolves to Response object
-Promise<Response> fetchVal(const Any &input);
+Promise<Result<Response, Error>> fetchVal(const Any &input);
 
 /// Performs HTTP fetch request with Request object/URL and options
 /// @param input Request object or URL string
 /// @param init request options object (method, headers, body, etc.)
 /// @returns Promise that resolves to Response object
-Promise<Response> fetchVal(const Any &input, const Any &init);
+Promise<Result<Response, Error>> fetchVal(const Any &input, const Any &init);
 
 } // namespace jsbind

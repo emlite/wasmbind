@@ -31,18 +31,21 @@ Promise<Result<ArrayBuffer, Error>> Response::arrayBuffer() const {
     return call("arrayBuffer").template as<Promise<Result<ArrayBuffer, Error>>>();
 }
 
-Promise<Response> fetch(const char *input) {
-    return emlite::Val::global("fetch")(emlite::Val(input)).template as<Promise<Response>>();
+Promise<Result<Response, Error>> fetch(const char *input) {
+    return emlite::Val::global("fetch")(emlite::Val(input))
+        .template as<Promise<Result<Response, Error>>>();
 }
 
-Promise<Response> fetch(const char *input, const Any &init) {
-    return emlite::Val::global("fetch")(emlite::Val(input), init).template as<Promise<Response>>();
+Promise<Result<Response, Error>> fetch(const char *input, const Any &init) {
+    return emlite::Val::global("fetch")(emlite::Val(input), init)
+        .template as<Promise<Result<Response, Error>>>();
 }
 
-Promise<Response> fetchVal(const Any &input) {
-    return emlite::Val::global("fetch")(input).template as<Promise<Response>>();
+Promise<Result<Response, Error>> fetchVal(const Any &input) {
+    return emlite::Val::global("fetch")(input).template as<Promise<Result<Response, Error>>>();
 }
 
-Promise<Response> fetchVal(const Any &input, const Any &init) {
-    return emlite::Val::global("fetch")(input, init).template as<Promise<Response>>();
+Promise<Result<Response, Error>> fetchVal(const Any &input, const Any &init) {
+    return emlite::Val::global("fetch")(input, init)
+        .template as<Promise<Result<Response, Error>>>();
 }

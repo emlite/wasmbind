@@ -53,7 +53,7 @@ class String : public emlite::Val {
 
     /// Converts to std::string
     /// @returns std::string copy of the JavaScript string
-    [[nodiscard]] Option<std::string> to_std_string() const;
+    [[nodiscard]] Option<std::string> str() const;
 #endif
 
     /// Gets the length of the string
@@ -62,7 +62,7 @@ class String : public emlite::Val {
 
     /// Checks if the string is empty
     /// @returns true if string has zero length
-    [[nodiscard]] bool empty() const;
+    [[nodiscard]] bool empty() const noexcept;
 
     /// Gets character at index
     /// @param i character index
@@ -71,20 +71,16 @@ class String : public emlite::Val {
 
     /// Gets the byte length of the string
     /// @returns number of bytes in UTF-8 representation
-    [[nodiscard]] size_t byte_len() const noexcept;
-
-    /// Checks if the string is empty
-    /// @returns true if string has zero length
-    [[nodiscard]] bool is_empty() const noexcept;
+    [[nodiscard]] size_t byteLen() const noexcept;
 
     /// Gets character at specified index
     /// @param i character index
     /// @returns character at index as String
-    [[nodiscard]] String char_at(size_t i) const noexcept;
+    [[nodiscard]] String charAt(size_t i) const noexcept;
 
     /// Converts string to C string
     /// @returns pointer to null-terminated C string
-    [[nodiscard]] char *as_str() const noexcept;
+    [[nodiscard]] char *c_str() const noexcept;
 
     /// Gets the length of the string
     /// @returns number of characters
@@ -93,7 +89,7 @@ class String : public emlite::Val {
     /// Gets character code at index
     /// @param idx character index
     /// @returns character code or -1 if out of bounds
-    [[nodiscard]] int char_code_at(size_t idx) const noexcept;
+    [[nodiscard]] int charCodeAt(size_t idx) const noexcept;
 
     /// Sets character at index
     /// @param idx character index
@@ -108,7 +104,7 @@ class String : public emlite::Val {
     /// Gets Unicode code point at index
     /// @param idx character index
     /// @returns code point or -1 if out of bounds
-    [[nodiscard]] int code_point_at(size_t idx) const noexcept;
+    [[nodiscard]] int codePointAt(size_t idx) const noexcept;
 
     /// Concatenates with another string
     /// @param rhs string to concatenate
@@ -118,7 +114,7 @@ class String : public emlite::Val {
     /// Checks if string ends with pattern
     /// @param pat pattern to check
     /// @returns true if string ends with pattern
-    [[nodiscard]] bool ends_with(const char *pat) const noexcept;
+    [[nodiscard]] bool endsWith(const char *pat) const noexcept;
 
     /// Checks if string includes pattern
     /// @param pat pattern to search for
@@ -128,48 +124,48 @@ class String : public emlite::Val {
     /// Finds first index of pattern
     /// @param pat pattern to search for
     /// @returns index of first occurrence or -1 if not found
-    [[nodiscard]] int index_of(const char *pat) const noexcept;
+    [[nodiscard]] int indexOf(const char *pat) const noexcept;
 
     /// Checks if string is well-formed Unicode
     /// @returns true if string is well-formed
-    [[nodiscard]] bool is_well_formed() const noexcept;
+    [[nodiscard]] bool isWellFormed() const noexcept;
 
     /// Finds last index of pattern
     /// @param pat pattern to search for
     /// @returns index of last occurrence or -1 if not found
-    [[nodiscard]] int last_index_of(const char *pat) const noexcept;
+    [[nodiscard]] int lastIndexOf(const char *pat) const noexcept;
 
     /// Compares strings using locale
     /// @param other string to compare with
     /// @returns comparison result (-1, 0, 1)
-    [[nodiscard]] int locale_compare(const char *other) const noexcept;
+    [[nodiscard]] int localeCompare(const char *other) const noexcept;
 
     /// Matches string against pattern
     /// @param pat pattern to match
     /// @returns match result as Any
-    [[nodiscard]] Any match_(const Any &pat) const noexcept;
+    [[nodiscard]] Any match(const Any &pat) const noexcept;
 
     /// Matches all occurrences of pattern
     /// @param pat pattern to match
     /// @returns all matches as Any
-    [[nodiscard]] Any match_all(const Any &pat) const noexcept;
+    [[nodiscard]] Any matchAll(const Any &pat) const noexcept;
 
     /// Normalizes Unicode string
     /// @param form normalization form (NFC, NFD, NFKC, NFKD)
     /// @returns normalized string
-    [[nodiscard]] String normalize(const char *form = nullptr) const noexcept;
+    [[nodiscard]] Result<String, Error> normalize(const char *form = nullptr) const noexcept;
 
     /// Pads string to target length at end
     /// @param target_len target length
     /// @param pad padding string
     /// @returns padded string
-    [[nodiscard]] String pad_end(size_t target_len, const char *pad = nullptr) const noexcept;
+    [[nodiscard]] String padEnd(size_t target_len, const char *pad = nullptr) const noexcept;
 
     /// Pads string to target length at start
     /// @param target_len target length
     /// @param pad padding string
     /// @returns padded string
-    [[nodiscard]] String pad_start(size_t target_len, const char *pad = nullptr) const noexcept;
+    [[nodiscard]] String padStart(size_t target_len, const char *pad = nullptr) const noexcept;
 
     /// Repeats string specified number of times
     /// @param count number of repetitions
@@ -186,7 +182,7 @@ class String : public emlite::Val {
     /// @param pat pattern to replace
     /// @param repl replacement value
     /// @returns string with all replacements
-    [[nodiscard]] String replace_all(const Any &pat, const Any &repl) const noexcept;
+    [[nodiscard]] String replaceAll(const Any &pat, const Any &repl) const noexcept;
 
     /// Searches for pattern
     /// @param pat pattern to search for
@@ -207,7 +203,7 @@ class String : public emlite::Val {
     /// Checks if string starts with pattern
     /// @param pat pattern to check
     /// @returns true if string starts with pattern
-    [[nodiscard]] bool starts_with(const char *pat) const noexcept;
+    [[nodiscard]] bool startsWith(const char *pat) const noexcept;
 
     /// Extracts substring
     /// @param start start index
@@ -217,23 +213,23 @@ class String : public emlite::Val {
 
     /// Converts to lowercase using locale
     /// @returns lowercase string
-    [[nodiscard]] String to_locale_lower_case() const noexcept;
+    [[nodiscard]] String toLocaleLowerCase() const noexcept;
 
     /// Converts to uppercase using locale
     /// @returns uppercase string
-    [[nodiscard]] String to_locale_upper_case() const noexcept;
+    [[nodiscard]] String toLocaleUpperCase() const noexcept;
 
     /// Converts to lowercase
     /// @returns lowercase string
-    [[nodiscard]] String to_lower_case() const noexcept;
+    [[nodiscard]] String toLowerCase() const noexcept;
 
     /// Converts to uppercase
     /// @returns uppercase string
-    [[nodiscard]] String to_upper_case() const noexcept;
+    [[nodiscard]] String toUpperCase() const noexcept;
 
     /// Converts to well-formed Unicode
     /// @returns well-formed string
-    [[nodiscard]] String to_well_formed() const noexcept;
+    [[nodiscard]] String toWellFormed() const noexcept;
 
     /// Removes whitespace from both ends
     /// @returns trimmed string
@@ -241,21 +237,15 @@ class String : public emlite::Val {
 
     /// Removes whitespace from end
     /// @returns trimmed string
-    [[nodiscard]] String trim_end() const noexcept;
+    [[nodiscard]] String trimEnd() const noexcept;
 
     /// Removes whitespace from start
     /// @returns trimmed string
-    [[nodiscard]] String trim_start() const noexcept;
+    [[nodiscard]] String trimStart() const noexcept;
 
     /// Converts to string representation
     /// @returns string representation
     [[nodiscard]] String toString() const noexcept;
-
-    /// Extracts substring (legacy method)
-    /// @param from start index
-    /// @param length substring length (-1 for rest of string)
-    /// @returns substring
-    [[nodiscard]] String substr(int from, int length = -1) const noexcept;
 
     /// Gets primitive value
     /// @returns primitive string value
