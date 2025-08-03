@@ -93,11 +93,11 @@ class BigInt64Array : public emlite::Val {
 
     /// Gets first element
     /// @returns first BigInt value
-    [[nodiscard]] BigInt front() const;
+    [[nodiscard]] Option<BigInt> front() const;
 
     /// Gets last element
     /// @returns last BigInt value
-    [[nodiscard]] BigInt back() const;
+    [[nodiscard]] Option<BigInt> back() const;
 
     // Array methods
     /// Fills array with value
@@ -232,11 +232,11 @@ class BigUint64Array : public emlite::Val {
 
     /// Gets first element
     /// @returns first BigInt value
-    [[nodiscard]] BigInt front() const;
+    [[nodiscard]] Option<BigInt> front() const;
 
     /// Gets last element
     /// @returns last BigInt value
-    [[nodiscard]] BigInt back() const;
+    [[nodiscard]] Option<BigInt> back() const;
 
     // Array methods
     /// Fills array with value

@@ -55,9 +55,9 @@ Option<BigInt> BigInt64Array::at(size_t index) const {
     return operator[](index);
 }
 
-BigInt BigInt64Array::front() const { return (*this)[0]; }
+Option<BigInt> BigInt64Array::front() const { return at(0); }
 
-BigInt BigInt64Array::back() const { return (*this)[size() - 1]; }
+Option<BigInt> BigInt64Array::back() const { return at(size() - 1); }
 
 void BigInt64Array::fill(const BigInt &value, size_t start, size_t end) noexcept {
     if (end == SIZE_MAX) {
@@ -185,9 +185,9 @@ Option<BigInt> BigUint64Array::at(size_t index) const {
     return operator[](index);
 }
 
-BigInt BigUint64Array::front() const { return (*this)[0]; }
+Option<BigInt> BigUint64Array::front() const { return at(0); }
 
-BigInt BigUint64Array::back() const { return (*this)[size() - 1]; }
+Option<BigInt> BigUint64Array::back() const { return at(size() - 1); }
 
 void BigUint64Array::fill(const BigInt &value, size_t start, size_t end) noexcept {
     if (end == SIZE_MAX) {
