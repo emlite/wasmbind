@@ -17,13 +17,18 @@ uint16_t Response::status() const {
     return static_cast<uint16_t>(get("status").template as<uint32_t>());
 }
 
-Any Response::headers_raw() const { return get("headers").template as<Any>(); }
+Any Response::headersRaw() const { return get("headers").template as<Any>(); }
 
-Promise<String> Response::text() const { return call("text").template as<Promise<String>>(); }
-Promise<Any> Response::json() const { return call("json").template as<Promise<Any>>(); }
+Promise<Result<String, Error>> Response::text() const {
+    return call("text").template as<Promise<Result<String, Error>>>();
+}
 
-Promise<ArrayBuffer> Response::array_buffer() const {
-    return call("arrayBuffer").template as<Promise<ArrayBuffer>>();
+Promise<Result<Any, Error>> Response::json() const {
+    return call("json").template as<Promise<Result<Any, Error>>>();
+}
+
+Promise<Result<ArrayBuffer, Error>> Response::arrayBuffer() const {
+    return call("arrayBuffer").template as<Promise<Result<ArrayBuffer, Error>>>();
 }
 
 Promise<Response> fetch(const char *input) {
@@ -34,10 +39,10 @@ Promise<Response> fetch(const char *input, const Any &init) {
     return emlite::Val::global("fetch")(emlite::Val(input), init).template as<Promise<Response>>();
 }
 
-Promise<Response> fetch_val(const Any &input) {
+Promise<Response> fetchVal(const Any &input) {
     return emlite::Val::global("fetch")(input).template as<Promise<Response>>();
 }
 
-Promise<Response> fetch_val(const Any &input, const Any &init) {
+Promise<Response> fetchVal(const Any &input, const Any &init) {
     return emlite::Val::global("fetch")(input, init).template as<Promise<Response>>();
 }

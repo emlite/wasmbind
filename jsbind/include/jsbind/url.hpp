@@ -18,7 +18,7 @@ class URLSearchParams : public emlite::Val {
     /// @param h raw JavaScript handle
     /// @returns URLSearchParams wrapper object
     static URLSearchParams take_ownership(Handle h) noexcept;
-    
+
     /// Creates URLSearchParams from an emlite::Val
     /// @param val emlite::Val to wrap
     URLSearchParams(const emlite::Val &val) noexcept;
@@ -38,7 +38,7 @@ class URLSearchParams : public emlite::Val {
     /// Internal helper to avoid shadowing Val::get
     /// @param k key to look up
     /// @returns emlite::Val for the key
-    emlite::Val get_key(const char *k) const;
+    emlite::Val getKey(const char *k) const;
 };
 
 /// Wrapper for JavaScript URL objects
@@ -54,7 +54,7 @@ class URL : public emlite::Val {
     /// @param h raw JavaScript handle
     /// @returns URL wrapper object
     static URL take_ownership(Handle h) noexcept;
-    
+
     /// Creates URL from an emlite::Val
     /// @param val emlite::Val to wrap
     URL(const emlite::Val &val) noexcept;
@@ -75,35 +75,35 @@ class URL : public emlite::Val {
     /// Gets the complete URL string
     /// @returns full URL as String
     [[nodiscard]] String href() const;
-    
+
     /// Sets the complete URL string
     /// @param v new URL string
     void set_href(const char *v);
-    
+
     /// Gets the protocol portion (e.g., "https:")
     /// @returns protocol string including colon
     [[nodiscard]] String protocol() const;
-    
+
     /// Sets the protocol portion
     /// @param v new protocol string
-    void set_protocol(const char *v);
+    void protocol(const char *v);
 
     /// Gets the pathname portion
     /// @returns pathname string (e.g., "/path/to/resource")
     [[nodiscard]] String pathname() const;
-    
+
     /// Sets the pathname portion
     /// @param v new pathname string
-    void set_pathname(const char *v);
+    void pathname(const char *v);
 
     /// Gets URLSearchParams object for query manipulation
     /// @returns URLSearchParams for this URL's query string
-    [[nodiscard]] URLSearchParams search_params() const;
+    [[nodiscard]] URLSearchParams searchParams() const;
 
     /// Gets the search/query portion (e.g., "?key=value")
     /// @returns search string including question mark
     [[nodiscard]] String search() const;
-    
+
     /// Sets the search/query portion
     /// @param value new search string
     void search(const String &value);

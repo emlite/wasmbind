@@ -46,12 +46,5 @@
 
 #include "utils.hpp"
 
-int32_t parse_int(const char *src);
+#include "global.hpp"
 
-int32_t parse_int(const char *src, int32_t radix);
-
-double parse_float(const char *src);
-
-jsbind::String atob(const jsbind::String &encoded);
-
-jsbind::String btoa(const jsbind::String &data);

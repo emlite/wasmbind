@@ -1,25 +1,43 @@
 #include <emlite/emlite.hpp>
-#include <jsbind/String.hpp>
+#include <jsbind/global.hpp>
 
-using namespace jsbind;
+namespace jsbind {
 
-int32_t parse_int(const char *src) {
-    return emlite::Val::global("parseInt")(emlite::Val(src)).template as<int32_t>();
+Result<int32_t, Error> parseInt(const char *src) {
+    auto result = emlite::Val::global("parseInt")(emlite::Val(src));
+    if (isNaN(result)) {
+        return err<int32_t>(Error("Invalid number format in parseInt(const char *)"));
+    }
+    return ok<int32_t, Error>(result.template as<int32_t>());
 }
 
-int32_t parse_int(const char *src, int32_t radix) {
-    return emlite::Val::global("parseInt")(emlite::Val(src), emlite::Val(radix))
-        .template as<int32_t>();
+Result<int32_t, Error> parseInt(const char *src, int32_t radix) {
+    if (radix < 2 || radix > 36) {
+        return err<int32_t>(Error("Radix must be between 2 and 36 in parseInt(const char *, int32_t)"));
+    }
+    auto result = emlite::Val::global("parseInt")(emlite::Val(src), emlite::Val(radix));
+    if (isNaN(result)) {
+        return err<int32_t>(Error("Invalid number format in parseInt(const char *, int32_t)"));
+    }
+    return ok<int32_t, Error>(result.template as<int32_t>());
 }
 
-double parse_float(const char *src) {
-    return emlite::Val::global("parseFloat")(emlite::Val(src)).template as<double>();
+Result<double, Error> parseFloat(const char *src) {
+    auto result = emlite::Val::global("parseFloat")(emlite::Val(src));
+    if (isNaN(result)) {
+        return err<double>(Error("Invalid number format in parseFloat(const char *)"));
+    }
+    return ok<double, Error>(result.template as<double>());
 }
 
-jsbind::String atob(const jsbind::String &encoded) {
-    return emlite::Val::global("atob")(encoded).template as<jsbind::String>();
+Result<String, Error> atob(const String &encoded) {
+    auto result = emlite::Val::global("atob")(encoded);
+    return result.as<Result<String, Error>>();
 }
 
-jsbind::String btoa(const jsbind::String &data) {
-    return emlite::Val::global("btoa")(data).template as<jsbind::String>();
+Result<String, Error> btoa(const String &data) {
+    auto result = emlite::Val::global("btoa")(data);
+    return result.as<Result<String, Error>>();
+}
+
 }

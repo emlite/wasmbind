@@ -88,9 +88,8 @@ class BigInt64Array : public emlite::Val {
 
     /// Gets element at index with bounds checking
     /// @param index element position
-    /// @returns BigInt value at index
-    /// @throws JavaScript error if index out of bounds
-    [[nodiscard]] BigInt at(size_t index) const;
+    /// @returns Optional BigInt value at index
+    [[nodiscard]] Option<BigInt> at(size_t index) const;
 
     /// Gets first element
     /// @returns first BigInt value
@@ -228,9 +227,8 @@ class BigUint64Array : public emlite::Val {
 
     /// Gets element at index with bounds checking
     /// @param index element position
-    /// @returns BigInt value at index
-    /// @throws JavaScript error if index out of bounds
-    [[nodiscard]] BigInt at(size_t index) const;
+    /// @returns Optional BigInt value at index
+    [[nodiscard]] Option<BigInt> at(size_t index) const;
 
     /// Gets first element
     /// @returns first BigInt value

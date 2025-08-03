@@ -12,18 +12,16 @@ TextEncoder::TextEncoder() : emlite::Val(emlite::Val::global("TextEncoder").new_
 
 emlite::Val TextEncoder::instance() noexcept { return emlite::Val::global("TextEncoder"); }
 
-/* encoder.encode(str) → Uint8Array */
-Uint8Array TextEncoder::encode(const char *str) const {
-    return call("encode", emlite::Val(str)).template as<Uint8Array>();
+Result<Uint8Array, Error> TextEncoder::encode(const char *str) const {
+    return call("encode", emlite::Val(str)).template as<Result<Uint8Array, Error>>();
 }
 
-/* encoder.encodeInto(src, dst) → {read, written} */
-EncodeResult TextEncoder::encode_into(const char *src, Uint8Array &dst) const {
+Result<EncodeResult, Error> TextEncoder::encodeInto(const char *src, Uint8Array &dst) const {
     emlite::Val res = call("encodeInto", emlite::Val(src), dst);
 
     size_t read    = res.get("read").template as<uint32_t>();
     size_t written = res.get("written").template as<uint32_t>();
-    return {read, written};
+    return ok<EncodeResult, Error>({read, written});
 }
 
 TextDecoder::TextDecoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
@@ -48,7 +46,6 @@ TextDecoder::TextDecoder(const char *label, const Any &opts)
 
 emlite::Val TextDecoder::instance() noexcept { return emlite::Val::global("TextDecoder"); }
 
-/* decoder.decode(bytes) -> String (UTF-8) */
-String TextDecoder::decode(const Uint8Array &bytes) const {
-    return call("decode", bytes).template as<String>();
+Result<String, Error> TextDecoder::decode(const Uint8Array &bytes) const {
+    return call("decode", bytes).template as<Result<String, Error>>();
 }

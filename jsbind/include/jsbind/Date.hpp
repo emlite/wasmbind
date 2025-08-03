@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Error.hpp"
 #include "String.hpp"
 #include "Undefined.hpp"
 #include <emlite/emlite.hpp>
@@ -15,32 +16,37 @@ class Date : public emlite::Val {
     Date() noexcept;
 
     static emlite::Val instance() noexcept;
-    static Date from_epoch_millis(int64_t ms);
+    static Date fromEpochMillis(int64_t ms);
 
     /// `Date.now()` – epoch milliseconds
-    static int64_t now_epoch_millis();
+    static int64_t nowEpochMillis();
 
     /// `valueOf()` – epoch milliseconds
-    [[nodiscard]] int64_t value_of() const;
+    [[nodiscard]] int64_t valueOf() const;
 
     /// Alias of valueOf()
-    [[nodiscard]] int64_t get_time() const;
+    [[nodiscard]] int64_t getTime() const;
 
     /// `toISOString()`
-    [[nodiscard]] String to_iso_string() const;
+    [[nodiscard]] String toIsoString() const;
 
     /// `toUTCString()`
-    [[nodiscard]] String to_utc_string() const;
+    [[nodiscard]] String toUtcString() const;
 
     /// `toLocaleString([locales [, options]])`
-    [[nodiscard]] String to_locale_string(
+    [[nodiscard]] String toLocaleString(
         const Any &locales = Undefined::value, const Any &opts = Undefined::value
     ) const;
 
     /// Return **new** Date advanced by `delta` milliseconds
-    [[nodiscard]] Date add_millis(int64_t delta) const;
+    [[nodiscard]] Date addMillis(int64_t delta) const;
 
     /// `other - this` (milliseconds)
-    [[nodiscard]] int64_t diff_millis(const Date &other) const;
+    [[nodiscard]] int64_t diffMillis(const Date &other) const;
+
+    /// Safely parses date string with error handling
+    /// @param dateString ISO date string or other recognized format
+    /// @returns Result containing Date or error message
+    static Result<Date, Error> parse(const String &dateString);
 };
 } // namespace jsbind

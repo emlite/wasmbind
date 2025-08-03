@@ -291,13 +291,8 @@ BigInt BigInt::one() noexcept { return BigInt(static_cast<int64_t>(1)); }
 
 BigInt BigInt::minusOne() noexcept { return BigInt(static_cast<int64_t>(-1)); }
 
-Option<BigInt> BigInt::tryParse(const String &str) noexcept {
-    // Simplified version without exception handling (no std library)
-    auto result = emlite::Val::global("BigInt")(str);
-    if (result.is_error()) {
-        return none<BigInt>();
-    }
-    return some(BigInt::take_ownership(result.as_handle()));
+Result<BigInt, Error> BigInt::parse(const String &str) noexcept {
+    return emlite::Val::global("BigInt")(str).as<Result<BigInt, Error>>();
 }
 
 // Free functions for STL compatibility

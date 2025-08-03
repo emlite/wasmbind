@@ -50,6 +50,7 @@ set(JSBIND_HEADERS
     include/jsbind/Symbol.hpp
     include/jsbind/BigInt.hpp
     include/jsbind/BigIntArray.hpp
+    include/jsbind/global.hpp
 )
 
 target_sources(jsbind 

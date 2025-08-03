@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Any.hpp"
 #include "String.hpp"
 #include "utils.hpp"
+#include "Error.hpp"
 #include <emlite/emlite.hpp>
 #include <stdint.h>
 
@@ -260,7 +260,7 @@ class BigInt : public emlite::Val {
     /// Parses BigInt from string with error checking
     /// @param str string to parse
     /// @returns Option containing BigInt or None if parsing failed
-    static Option<BigInt> tryParse(const String &str) noexcept;
+    static Result<BigInt, Error> parse(const String &str) noexcept;
 
   private:
     /// Helper to create BigInt from uint64_t

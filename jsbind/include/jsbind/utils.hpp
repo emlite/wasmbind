@@ -42,8 +42,10 @@
     DEFINE_CLONE(name)
 
 namespace jsbind {
+using emlite::err;
 using emlite::none;
 using emlite::nullopt;
+using emlite::ok;
 using emlite::Option;
 using emlite::Result;
 using emlite::some;
@@ -59,13 +61,5 @@ using emlite::some;
 [[noreturn]] inline void throw_js(const emlite::Val &error) {
     emlite::Val::throw_(error);
     __builtin_unreachable();
-}
-
-/// Safe JavaScript operation wrapper
-template <typename F>
-auto try_js(F &&func) -> Result<decltype(func())> {
-    // Note: We can't catch arbitrary exceptions without std library
-    // This is a simplified version that works with emlite's error handling
-    return Result<decltype(func())>(func());
 }
 } // namespace jsbind

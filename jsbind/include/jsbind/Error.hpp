@@ -82,5 +82,13 @@ DECLARE_JS_ERROR(URIError)
 /// JavaScript AggregateError - represents multiple errors wrapped in one
 DECLARE_JS_ERROR(AggregateError)
 
+/// Safe JavaScript operation wrapper
+template <typename F>
+auto try_js(F &&func) -> Result<decltype(func()), Error> {
+    // Note: We can't catch arbitrary exceptions without std library
+    // This is a simplified version that works with emlite's error handling
+    return Result<decltype(func()), Error>(emlite::detail::forward<F>(func)());
+}
+
 #undef DECLARE_JS_ERROR
 } // namespace jsbind

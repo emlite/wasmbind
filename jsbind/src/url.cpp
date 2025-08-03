@@ -9,7 +9,7 @@ URLSearchParams URLSearchParams::take_ownership(Handle h) noexcept { return URLS
 URLSearchParams::URLSearchParams(const emlite::Val &val) noexcept : emlite::Val(val) {}
 
 bool URLSearchParams::get(const char *key, String &out) const {
-    emlite::Val v = get_key(key);
+    emlite::Val v = getKey(key);
     if (v.is_null())
         return false;
     out = v.template as<String>();
@@ -20,7 +20,7 @@ void URLSearchParams::append(const char *key, const char *value) {
     call("append", emlite::Val(key), emlite::Val(value));
 }
 
-emlite::Val URLSearchParams::get_key(const char *k) const { return emlite::Val::get(k); }
+emlite::Val URLSearchParams::getKey(const char *k) const { return emlite::Val::get(k); }
 
 URL::URL(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 
@@ -39,12 +39,12 @@ String URL::href() const { return get("href").template as<String>(); }
 void URL::set_href(const char *v) { set("href", emlite::Val(v)); }
 
 String URL::protocol() const { return get("protocol").template as<String>(); }
-void URL::set_protocol(const char *v) { set("protocol", emlite::Val(v)); }
+void URL::protocol(const char *v) { set("protocol", emlite::Val(v)); }
 
 String URL::pathname() const { return get("pathname").template as<String>(); }
-void URL::set_pathname(const char *v) { set("pathname", emlite::Val(v)); }
+void URL::pathname(const char *v) { set("pathname", emlite::Val(v)); }
 
-URLSearchParams URL::search_params() const {
+URLSearchParams URL::searchParams() const {
     return get("searchParams").template as<URLSearchParams>();
 }
 

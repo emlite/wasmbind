@@ -16,7 +16,7 @@ int main() {
     console.log(url.pathname());
     console.log("Search:");
     console.log(url.search());
-    url.set_pathname("/newpath");
+    url.pathname("/newpath");
     console.log("Modified pathname:");
     console.log(url.pathname());
 

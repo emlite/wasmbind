@@ -3,6 +3,7 @@
 #include "Any.hpp"
 #include "String.hpp"
 #include "Undefined.hpp"
+#include "Error.hpp"
 #include <emlite/emlite.hpp>
 
 /// JavaScript JSON utilities with enhanced error handling
@@ -20,32 +21,8 @@ namespace jsbind::JSON {
 /// @param text JSON string to parse
 /// @returns Result containing parsed value on success or error on failure
 template <class T>
-Result<T> parse(const char *text) {
-    emlite::Val res = emlite::Val::global("JSON").call("parse", text);
-
-    if (res.is_error()) {
-        return Result<T>(res); // Return error
-    }
-
-    return Result<T>(res.as<T>()); // Return success
-}
-
-/// Parses JSON string with Option-based error handling
-///
-/// This function provides simple JSON parsing that returns an Option type
-/// containing either the parsed value or None. It's ideal for cases where
-/// you just need to know if parsing succeeded without error details.
-/// @param text JSON string to parse
-/// @returns Option containing parsed value on success or None on failure
-template <class T>
-Option<T> try_parse(const char *text) {
-    emlite::Val res = emlite::Val::global("JSON").call("parse", text);
-
-    if (res.is_error()) {
-        return Option<T>(); // Return None
-    }
-
-    return Option<T>(res.as<T>()); // Return Some(value)
+Result<T, Error> parse(const char *text) {
+    return emlite::Val::global("JSON").call("parse", text).as<Result<T, Error>>();
 }
 
 /// Converts JavaScript value to JSON string

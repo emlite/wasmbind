@@ -9,14 +9,13 @@ BigInt64Array BigInt64Array::take_ownership(Handle h) noexcept { return BigInt64
 
 BigInt64Array::BigInt64Array(const emlite::Val &val) noexcept : emlite::Val(val) {}
 
-BigInt64Array::BigInt64Array() noexcept : emlite::Val(emlite::Val::global("BigInt64Array").new_()) {}
+BigInt64Array::BigInt64Array() noexcept
+    : emlite::Val(emlite::Val::global("BigInt64Array").new_()) {}
 
 BigInt64Array::BigInt64Array(size_t length) noexcept
     : emlite::Val(emlite::Val::global("BigInt64Array").new_(static_cast<double>(length))) {}
 
-BigInt64Array::BigInt64Array(
-    const ArrayBuffer &buffer, size_t byteOffset, size_t length
-) noexcept
+BigInt64Array::BigInt64Array(const ArrayBuffer &buffer, size_t byteOffset, size_t length) noexcept
     : emlite::Val([&]() {
           if (length == SIZE_MAX) {
               return emlite::Val::global("BigInt64Array")
@@ -45,18 +44,20 @@ ArrayBuffer BigInt64Array::buffer() const { return get("buffer").as<ArrayBuffer>
 
 BigInt BigInt64Array::operator[](size_t index) const { return get(index).as<BigInt>(); }
 
-void BigInt64Array::set(size_t index, const BigInt &value) noexcept { emlite::Val::set(index, value); }
+void BigInt64Array::set(size_t index, const BigInt &value) noexcept {
+    emlite::Val::set(index, value);
+}
 
-BigInt BigInt64Array::at(size_t index) const {
+Option<BigInt> BigInt64Array::at(size_t index) const {
     if (index >= size()) {
-        throw_js("BigInt64Array index out of range");
+        return nullopt;
     }
     return operator[](index);
 }
 
-BigInt BigInt64Array::front() const { return at(0); }
+BigInt BigInt64Array::front() const { return (*this)[0]; }
 
-BigInt BigInt64Array::back() const { return at(size() - 1); }
+BigInt BigInt64Array::back() const { return (*this)[size() - 1]; }
 
 void BigInt64Array::fill(const BigInt &value, size_t start, size_t end) noexcept {
     if (end == SIZE_MAX) {
@@ -68,9 +69,7 @@ void BigInt64Array::fill(const BigInt &value, size_t start, size_t end) noexcept
 
 BigInt64Array BigInt64Array::slice(size_t start, size_t end) const noexcept {
     if (end == SIZE_MAX) {
-        return BigInt64Array::take_ownership(
-            call("slice", static_cast<double>(start)).as_handle()
-        );
+        return BigInt64Array::take_ownership(call("slice", static_cast<double>(start)).as_handle());
     } else {
         return BigInt64Array::take_ownership(
             call("slice", static_cast<double>(start), static_cast<double>(end)).as_handle()
@@ -121,11 +120,17 @@ BigInt64Array::iterator BigInt64Array::begin() { return {this, 0}; }
 
 BigInt64Array::iterator BigInt64Array::end() { return {this, size()}; }
 
-BigInt BigInt64Array::const_iterator::operator*() const { return this->parent->operator[](this->idx); }
+BigInt BigInt64Array::const_iterator::operator*() const {
+    return this->parent->operator[](this->idx);
+}
 
-BigInt64Array::const_iterator BigInt64Array::begin() const { return {const_cast<BigInt64Array *>(this), 0}; }
+BigInt64Array::const_iterator BigInt64Array::begin() const {
+    return {const_cast<BigInt64Array *>(this), 0};
+}
 
-BigInt64Array::const_iterator BigInt64Array::end() const { return {const_cast<BigInt64Array *>(this), size()}; }
+BigInt64Array::const_iterator BigInt64Array::end() const {
+    return {const_cast<BigInt64Array *>(this), size()};
+}
 
 // BigUint64Array implementations
 BigUint64Array::BigUint64Array(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
@@ -134,14 +139,13 @@ BigUint64Array BigUint64Array::take_ownership(Handle h) noexcept { return BigUin
 
 BigUint64Array::BigUint64Array(const emlite::Val &val) noexcept : emlite::Val(val) {}
 
-BigUint64Array::BigUint64Array() noexcept : emlite::Val(emlite::Val::global("BigUint64Array").new_()) {}
+BigUint64Array::BigUint64Array() noexcept
+    : emlite::Val(emlite::Val::global("BigUint64Array").new_()) {}
 
 BigUint64Array::BigUint64Array(size_t length) noexcept
     : emlite::Val(emlite::Val::global("BigUint64Array").new_(static_cast<double>(length))) {}
 
-BigUint64Array::BigUint64Array(
-    const ArrayBuffer &buffer, size_t byteOffset, size_t length
-) noexcept
+BigUint64Array::BigUint64Array(const ArrayBuffer &buffer, size_t byteOffset, size_t length) noexcept
     : emlite::Val([&]() {
           if (length == SIZE_MAX) {
               return emlite::Val::global("BigUint64Array")
@@ -170,18 +174,20 @@ ArrayBuffer BigUint64Array::buffer() const { return get("buffer").as<ArrayBuffer
 
 BigInt BigUint64Array::operator[](size_t index) const { return get(index).as<BigInt>(); }
 
-void BigUint64Array::set(size_t index, const BigInt &value) noexcept { emlite::Val::set(index, value); }
+void BigUint64Array::set(size_t index, const BigInt &value) noexcept {
+    emlite::Val::set(index, value);
+}
 
-BigInt BigUint64Array::at(size_t index) const {
+Option<BigInt> BigUint64Array::at(size_t index) const {
     if (index >= size()) {
-        throw_js("BigUint64Array index out of range");
+        return nullopt;
     }
     return operator[](index);
 }
 
-BigInt BigUint64Array::front() const { return at(0); }
+BigInt BigUint64Array::front() const { return (*this)[0]; }
 
-BigInt BigUint64Array::back() const { return at(size() - 1); }
+BigInt BigUint64Array::back() const { return (*this)[size() - 1]; }
 
 void BigUint64Array::fill(const BigInt &value, size_t start, size_t end) noexcept {
     if (end == SIZE_MAX) {
@@ -193,8 +199,7 @@ void BigUint64Array::fill(const BigInt &value, size_t start, size_t end) noexcep
 
 BigUint64Array BigUint64Array::slice(size_t start, size_t end) const noexcept {
     if (end == SIZE_MAX) {
-        return BigUint64Array::take_ownership(
-            call("slice", static_cast<double>(start)).as_handle()
+        return BigUint64Array::take_ownership(call("slice", static_cast<double>(start)).as_handle()
         );
     } else {
         return BigUint64Array::take_ownership(
@@ -246,9 +251,13 @@ BigUint64Array::iterator BigUint64Array::begin() { return {this, 0}; }
 
 BigUint64Array::iterator BigUint64Array::end() { return {this, size()}; }
 
-BigInt BigUint64Array::const_iterator::operator*() const { return this->parent->operator[](this->idx); }
+BigInt BigUint64Array::const_iterator::operator*() const {
+    return this->parent->operator[](this->idx);
+}
 
-BigUint64Array::const_iterator BigUint64Array::begin() const { return {const_cast<BigUint64Array *>(this), 0}; }
+BigUint64Array::const_iterator BigUint64Array::begin() const {
+    return {const_cast<BigUint64Array *>(this), 0};
+}
 
 BigUint64Array::const_iterator BigUint64Array::end() const {
     return {const_cast<BigUint64Array *>(this), size()};
