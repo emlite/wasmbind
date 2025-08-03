@@ -45,12 +45,12 @@ class Record : public emlite::Val {
     /// Sets property value
     /// @param prop property key
     /// @param val property value
-    Result<Undefined, Error> set(const K &prop, const V &val) noexcept { return emlite::Val::set(prop, val).template as<Result<Undefined, Error>>(); }
+    void set(const K &prop, const V &val) noexcept { return emlite::Val::set(prop, val); }
 
     /// Gets property value
     /// @param prop property key
     /// @returns property value converted to type V
-    Result<V, Error> get(const K &prop) noexcept { return emlite::Val::get(prop).template as<Result<V, Error>>(); }
+    Result<V, Error> get(const K &prop) const noexcept { return emlite::Val::get(prop).template as<Result<V, Error>>(); }
 
     /// Checks if object has property (including inherited)
     /// @param prop property key to check
