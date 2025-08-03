@@ -2,15 +2,10 @@
 
 using namespace jsbind;
 
-emlite::Val MATHOBJ() {
-    return emlite::Val::global("Math");
-}
+emlite::Val MATHOBJ() { return emlite::Val::global("Math"); }
 
-#define DEF_MATH_UNARY(cpp, js)                            \
-    double Math::cpp(double x) {                           \
-        return MATHOBJ().call(js, x).template as<double>(  \
-        );                                                 \
-    }
+#define DEF_MATH_UNARY(cpp, js)                                                                    \
+    double Math::cpp(double x) { return MATHOBJ().call(js, x).template as<double>(); }
 
 DEF_MATH_UNARY(abs, "abs")
 DEF_MATH_UNARY(acos, "acos")
@@ -44,33 +39,19 @@ DEF_MATH_UNARY(trunc, "trunc")
 #undef DEF_MATH_UNARY
 
 double Math::atan2(double y, double x) {
-    return MATHOBJ()
-        .call("atan2", emlite::Val(y), emlite::Val(x))
-        .template as<double>();
+    return MATHOBJ().call("atan2", emlite::Val(y), emlite::Val(x)).template as<double>();
 }
 
 double Math::pow(double x, double y) {
-    return MATHOBJ()
-        .call("pow", emlite::Val(x), emlite::Val(y))
-        .template as<double>();
+    return MATHOBJ().call("pow", emlite::Val(x), emlite::Val(y)).template as<double>();
 }
 
 int32_t Math::imul(int32_t a, int32_t b) {
-    return MATHOBJ()
-        .call("imul", emlite::Val(a), emlite::Val(b))
-        .template as<int32_t>();
+    return MATHOBJ().call("imul", emlite::Val(a), emlite::Val(b)).template as<int32_t>();
 }
 
-double Math::max() {
-    return MATHOBJ().call("max").template as<double>();
-}
-double Math::min() {
-    return MATHOBJ().call("min").template as<double>();
-}
-double Math::hypot() {
-    return MATHOBJ().call("hypot").template as<double>();
-}
+double Math::max() { return MATHOBJ().call("max").template as<double>(); }
+double Math::min() { return MATHOBJ().call("min").template as<double>(); }
+double Math::hypot() { return MATHOBJ().call("hypot").template as<double>(); }
 
-double Math::random() {
-    return MATHOBJ().call("random").template as<double>();
-}
+double Math::random() { return MATHOBJ().call("random").template as<double>(); }

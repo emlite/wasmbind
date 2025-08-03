@@ -10,15 +10,9 @@ struct Performance {
 };
 
 template <class... Extra>
-int32_t set_timeout(
-    const Function &cb,
-    int32_t millis,
-    const Extra &...extra_args
-) {
+int32_t set_timeout(const Function &cb, int32_t millis, const Extra &...extra_args) {
     return emlite::Val::global("setTimeout")(
-               emlite::Val(cb),
-               emlite::Val(millis),
-               emlite::Val(extra_args)...
+               emlite::Val(cb), emlite::Val(millis), emlite::Val(extra_args)...
     )
         .template as<int32_t>();
 }
@@ -27,15 +21,9 @@ int32_t set_timeout(
 void clear_timeout(int32_t id);
 
 template <class... Extra>
-int32_t set_interval(
-    const Function &cb,
-    int32_t millis,
-    const Extra &...extra_args
-) {
+int32_t set_interval(const Function &cb, int32_t millis, const Extra &...extra_args) {
     return emlite::Val::global("setInterval")(
-               emlite::Val(cb),
-               emlite::Val(millis),
-               emlite::Val(extra_args)...
+               emlite::Val(cb), emlite::Val(millis), emlite::Val(extra_args)...
     )
         .template as<int32_t>();
 }

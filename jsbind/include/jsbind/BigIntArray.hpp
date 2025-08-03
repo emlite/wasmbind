@@ -9,332 +9,284 @@
 
 namespace jsbind {
 
+/// Wrapper for JavaScript BigInt64Array objects
+///
+/// BigInt64Array provides a typed array interface for 64-bit signed integers
+/// using BigInt values. It supports array-like operations, iteration,
+/// and efficient memory management through ArrayBuffer backing.
 class BigInt64Array : public emlite::Val {
-    explicit BigInt64Array(Handle h) noexcept
-        : emlite::Val(emlite::Val::take_ownership(h)) {}
+    explicit BigInt64Array(Handle h) noexcept;
 
   public:
-    static BigInt64Array take_ownership(Handle h) noexcept {
-        return BigInt64Array(h);
-    }
+    /// Creates BigInt64Array from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns BigInt64Array wrapper object
+    static BigInt64Array take_ownership(Handle h) noexcept;
 
-    explicit BigInt64Array(const emlite::Val &val) noexcept
-        : emlite::Val(val) {}
+    /// Creates BigInt64Array from an emlite::Val
+    /// @param val emlite::Val to wrap
+    explicit BigInt64Array(const emlite::Val &val) noexcept;
 
-    /// Create empty BigInt64Array
-    BigInt64Array() noexcept
-        : emlite::Val(emlite::Val::global("BigInt64Array").new_()) {}
+    /// Creates empty BigInt64Array
+    BigInt64Array() noexcept;
 
-    /// Create BigInt64Array with specified length
-    explicit BigInt64Array(size_t length) noexcept
-        : emlite::Val(emlite::Val::global("BigInt64Array").new_(static_cast<double>(length))) {}
+    /// Creates BigInt64Array with specified length
+    /// @param length number of elements
+    explicit BigInt64Array(size_t length) noexcept;
 
-    /// Create BigInt64Array from ArrayBuffer
-    BigInt64Array(const ArrayBuffer &buffer, size_t byteOffset = 0, size_t length = SIZE_MAX) noexcept
-        : emlite::Val([&]() {
-            if (length == SIZE_MAX) {
-                return emlite::Val::global("BigInt64Array").new_(buffer, static_cast<double>(byteOffset));
-            } else {
-                return emlite::Val::global("BigInt64Array").new_(buffer, static_cast<double>(byteOffset), static_cast<double>(length));
-            }
-        }()) {}
+    /// Creates BigInt64Array from ArrayBuffer
+    /// @param buffer ArrayBuffer to use as backing store
+    /// @param byteOffset offset in bytes from start of buffer
+    /// @param length number of elements (defaults to remaining buffer)
+    BigInt64Array(
+        const ArrayBuffer &buffer, size_t byteOffset = 0, size_t length = SIZE_MAX
+    ) noexcept;
 
-    static emlite::Val instance() noexcept {
-        return emlite::Val::global("BigInt64Array");
-    }
+    /// Gets the BigInt64Array constructor function
+    /// @returns emlite::Val representing the BigInt64Array constructor
+    static emlite::Val instance() noexcept;
 
-    [[nodiscard]] BigInt64Array clone() const noexcept {
-        return *this;
-    }
+    /// Creates a copy of this BigInt64Array
+    /// @returns cloned BigInt64Array
+    [[nodiscard]] BigInt64Array clone() const noexcept;
 
-    [[nodiscard]] size_t size() const {
-        return get("length").as<size_t>();
-    }
+    // Size and capacity
+    /// Gets number of elements in array
+    /// @returns element count
+    [[nodiscard]] size_t size() const;
 
-    [[nodiscard]] size_t length() const {
-        return size();
-    }
+    /// Gets number of elements in array (alias for size)
+    /// @returns element count
+    [[nodiscard]] size_t length() const;
 
-    [[nodiscard]] bool empty() const {
-        return size() == 0;
-    }
+    /// Checks if array is empty
+    /// @returns true if size is 0
+    [[nodiscard]] bool empty() const;
 
-    [[nodiscard]] size_t byteLength() const {
-        return get("byteLength").as<size_t>();
-    }
+    /// Gets byte length of array
+    /// @returns total bytes used by array
+    [[nodiscard]] size_t byteLength() const;
 
-    [[nodiscard]] size_t byteOffset() const {
-        return get("byteOffset").as<size_t>();
-    }
+    /// Gets byte offset in backing buffer
+    /// @returns offset in bytes
+    [[nodiscard]] size_t byteOffset() const;
 
-    [[nodiscard]] ArrayBuffer buffer() const {
-        return get("buffer").as<ArrayBuffer>();
-    }
+    /// Gets underlying ArrayBuffer
+    /// @returns backing ArrayBuffer
+    [[nodiscard]] ArrayBuffer buffer() const;
 
     // Element access
-    BigInt operator[](size_t index) const {
-        return get(index).as<BigInt>();
-    }
+    /// Gets element at index (unchecked)
+    /// @param index element position
+    /// @returns BigInt value at index
+    BigInt operator[](size_t index) const;
 
-    void set(size_t index, const BigInt &value) noexcept {
-        emlite::Val::set(index, value);
-    }
+    /// Sets element at index
+    /// @param index element position
+    /// @param value BigInt value to set
+    void set(size_t index, const BigInt &value) noexcept;
 
-    // STL-like interface
-    [[nodiscard]] BigInt at(size_t index) const {
-        if (index >= size()) {
-            throw_js("BigInt64Array index out of range");
-        }
-        return operator[](index);
-    }
+    /// Gets element at index with bounds checking
+    /// @param index element position
+    /// @returns BigInt value at index
+    /// @throws JavaScript error if index out of bounds
+    [[nodiscard]] BigInt at(size_t index) const;
 
-    [[nodiscard]] BigInt front() const {
-        return at(0);
-    }
+    /// Gets first element
+    /// @returns first BigInt value
+    [[nodiscard]] BigInt front() const;
 
-    [[nodiscard]] BigInt back() const {
-        return at(size() - 1);
-    }
+    /// Gets last element
+    /// @returns last BigInt value
+    [[nodiscard]] BigInt back() const;
 
     // Array methods
-    void fill(const BigInt &value, size_t start = 0, size_t end = SIZE_MAX) noexcept {
-        if (end == SIZE_MAX) {
-            call("fill", value, static_cast<double>(start));
-        } else {
-            call("fill", value, static_cast<double>(start), static_cast<double>(end));
-        }
-    }
+    /// Fills array with value
+    /// @param value BigInt value to fill with
+    /// @param start starting index (default 0)
+    /// @param end ending index (default array end)
+    void fill(const BigInt &value, size_t start = 0, size_t end = SIZE_MAX) noexcept;
 
-    [[nodiscard]] BigInt64Array slice(size_t start = 0, size_t end = SIZE_MAX) const noexcept {
-        if (end == SIZE_MAX) {
-            return BigInt64Array::take_ownership(call("slice", static_cast<double>(start)).as_handle());
-        } else {
-            return BigInt64Array::take_ownership(call("slice", static_cast<double>(start), static_cast<double>(end)).as_handle());
-        }
-    }
+    /// Creates slice of array
+    /// @param start starting index (default 0)
+    /// @param end ending index (default array end)
+    /// @returns new BigInt64Array with copied elements
+    [[nodiscard]] BigInt64Array slice(size_t start = 0, size_t end = SIZE_MAX) const noexcept;
 
-    [[nodiscard]] BigInt64Array subarray(size_t start = 0, size_t end = SIZE_MAX) const noexcept {
-        if (end == SIZE_MAX) {
-            return BigInt64Array::take_ownership(call("subarray", static_cast<double>(start)).as_handle());
-        } else {
-            return BigInt64Array::take_ownership(call("subarray", static_cast<double>(start), static_cast<double>(end)).as_handle());
-        }
-    }
+    /// Creates subarray view
+    /// @param start starting index (default 0)
+    /// @param end ending index (default array end)
+    /// @returns new BigInt64Array view of same buffer
+    [[nodiscard]] BigInt64Array subarray(size_t start = 0, size_t end = SIZE_MAX) const noexcept;
 
-    void copyWithin(size_t target, size_t start, size_t end = SIZE_MAX) noexcept {
-        if (end == SIZE_MAX) {
-            call("copyWithin", static_cast<double>(target), static_cast<double>(start));
-        } else {
-            call("copyWithin", static_cast<double>(target), static_cast<double>(start), static_cast<double>(end));
-        }
-    }
+    /// Copies elements within array
+    /// @param target destination index
+    /// @param start source start index
+    /// @param end source end index (default array end)
+    void copyWithin(size_t target, size_t start, size_t end = SIZE_MAX) noexcept;
 
     // Iterator support
     struct iterator {
         BigInt64Array *parent;
         size_t idx;
 
-        iterator(BigInt64Array *p, size_t i) : parent(p), idx(i) {}
-
-        BigInt operator*() const {
-            return (*parent)[idx];
-        }
-
-        iterator& operator++() {
-            ++idx;
-            return *this;
-        }
-
-        bool operator!=(const iterator& other) const {
-            return idx != other.idx;
-        }
-
-        bool operator==(const iterator& other) const {
-            return idx == other.idx;
-        }
+        iterator(BigInt64Array *p, size_t i);
+        BigInt operator*() const;
+        iterator &operator++();
+        bool operator!=(const iterator &other) const;
+        bool operator==(const iterator &other) const;
     };
 
-    iterator begin() { return {this, 0}; }
-    iterator end() { return {this, size()}; }
+    iterator begin();
+    iterator end();
 
     struct const_iterator : iterator {
         using iterator::iterator;
-        BigInt operator*() const {
-            return this->parent->operator[](this->idx);
-        }
+        BigInt operator*() const;
     };
 
-    [[nodiscard]] const_iterator begin() const {
-        return {const_cast<BigInt64Array*>(this), 0};
-    }
-
-    [[nodiscard]] const_iterator end() const {
-        return {const_cast<BigInt64Array*>(this), size()};
-    }
+    [[nodiscard]] const_iterator begin() const;
+    [[nodiscard]] const_iterator end() const;
 };
 
+/// Wrapper for JavaScript BigUint64Array objects
+///
+/// BigUint64Array provides a typed array interface for 64-bit unsigned integers
+/// using BigInt values. It supports array-like operations, iteration,
+/// and efficient memory management through ArrayBuffer backing.
 class BigUint64Array : public emlite::Val {
-    explicit BigUint64Array(Handle h) noexcept
-        : emlite::Val(emlite::Val::take_ownership(h)) {}
+    explicit BigUint64Array(Handle h) noexcept;
 
   public:
-    static BigUint64Array take_ownership(Handle h) noexcept {
-        return BigUint64Array(h);
-    }
+    /// Creates BigUint64Array from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns BigUint64Array wrapper object
+    static BigUint64Array take_ownership(Handle h) noexcept;
 
-    explicit BigUint64Array(const emlite::Val &val) noexcept
-        : emlite::Val(val) {}
+    /// Creates BigUint64Array from an emlite::Val
+    /// @param val emlite::Val to wrap
+    explicit BigUint64Array(const emlite::Val &val) noexcept;
 
-    /// Create empty BigUint64Array
-    BigUint64Array() noexcept
-        : emlite::Val(emlite::Val::global("BigUint64Array").new_()) {}
+    /// Creates empty BigUint64Array
+    BigUint64Array() noexcept;
 
-    /// Create BigUint64Array with specified length
-    explicit BigUint64Array(size_t length) noexcept
-        : emlite::Val(emlite::Val::global("BigUint64Array").new_(static_cast<double>(length))) {}
+    /// Creates BigUint64Array with specified length
+    /// @param length number of elements
+    explicit BigUint64Array(size_t length) noexcept;
 
-    /// Create BigUint64Array from ArrayBuffer
-    BigUint64Array(const ArrayBuffer &buffer, size_t byteOffset = 0, size_t length = SIZE_MAX) noexcept
-        : emlite::Val([&]() {
-            if (length == SIZE_MAX) {
-                return emlite::Val::global("BigUint64Array").new_(buffer, static_cast<double>(byteOffset));
-            } else {
-                return emlite::Val::global("BigUint64Array").new_(buffer, static_cast<double>(byteOffset), static_cast<double>(length));
-            }
-        }()) {}
+    /// Creates BigUint64Array from ArrayBuffer
+    /// @param buffer ArrayBuffer to use as backing store
+    /// @param byteOffset offset in bytes from start of buffer
+    /// @param length number of elements (defaults to remaining buffer)
+    BigUint64Array(
+        const ArrayBuffer &buffer, size_t byteOffset = 0, size_t length = SIZE_MAX
+    ) noexcept;
 
-    static emlite::Val instance() noexcept {
-        return emlite::Val::global("BigUint64Array");
-    }
+    /// Gets the BigUint64Array constructor function
+    /// @returns emlite::Val representing the BigUint64Array constructor
+    static emlite::Val instance() noexcept;
 
-    [[nodiscard]] BigUint64Array clone() const noexcept {
-        return *this;
-    }
+    /// Creates a copy of this BigUint64Array
+    /// @returns cloned BigUint64Array
+    [[nodiscard]] BigUint64Array clone() const noexcept;
 
-    [[nodiscard]] size_t size() const {
-        return get("length").as<size_t>();
-    }
+    // Size and capacity
+    /// Gets number of elements in array
+    /// @returns element count
+    [[nodiscard]] size_t size() const;
 
-    [[nodiscard]] size_t length() const {
-        return size();
-    }
+    /// Gets number of elements in array (alias for size)
+    /// @returns element count
+    [[nodiscard]] size_t length() const;
 
-    [[nodiscard]] bool empty() const {
-        return size() == 0;
-    }
+    /// Checks if array is empty
+    /// @returns true if size is 0
+    [[nodiscard]] bool empty() const;
 
-    [[nodiscard]] size_t byteLength() const {
-        return get("byteLength").as<size_t>();
-    }
+    /// Gets byte length of array
+    /// @returns total bytes used by array
+    [[nodiscard]] size_t byteLength() const;
 
-    [[nodiscard]] size_t byteOffset() const {
-        return get("byteOffset").as<size_t>();
-    }
+    /// Gets byte offset in backing buffer
+    /// @returns offset in bytes
+    [[nodiscard]] size_t byteOffset() const;
 
-    [[nodiscard]] ArrayBuffer buffer() const {
-        return get("buffer").as<ArrayBuffer>();
-    }
+    /// Gets underlying ArrayBuffer
+    /// @returns backing ArrayBuffer
+    [[nodiscard]] ArrayBuffer buffer() const;
 
     // Element access
-    BigInt operator[](size_t index) const {
-        return get(index).as<BigInt>();
-    }
+    /// Gets element at index (unchecked)
+    /// @param index element position
+    /// @returns BigInt value at index
+    BigInt operator[](size_t index) const;
 
-    void set(size_t index, const BigInt &value) noexcept {
-        emlite::Val::set(index, value);
-    }
+    /// Sets element at index
+    /// @param index element position
+    /// @param value BigInt value to set
+    void set(size_t index, const BigInt &value) noexcept;
 
-    // STL-like interface
-    [[nodiscard]] BigInt at(size_t index) const {
-        if (index >= size()) {
-            throw_js("BigUint64Array index out of range");
-        }
-        return operator[](index);
-    }
+    /// Gets element at index with bounds checking
+    /// @param index element position
+    /// @returns BigInt value at index
+    /// @throws JavaScript error if index out of bounds
+    [[nodiscard]] BigInt at(size_t index) const;
 
-    [[nodiscard]] BigInt front() const {
-        return at(0);
-    }
+    /// Gets first element
+    /// @returns first BigInt value
+    [[nodiscard]] BigInt front() const;
 
-    [[nodiscard]] BigInt back() const {
-        return at(size() - 1);
-    }
+    /// Gets last element
+    /// @returns last BigInt value
+    [[nodiscard]] BigInt back() const;
 
     // Array methods
-    void fill(const BigInt &value, size_t start = 0, size_t end = SIZE_MAX) noexcept {
-        if (end == SIZE_MAX) {
-            call("fill", value, static_cast<double>(start));
-        } else {
-            call("fill", value, static_cast<double>(start), static_cast<double>(end));
-        }
-    }
+    /// Fills array with value
+    /// @param value BigInt value to fill with
+    /// @param start starting index (default 0)
+    /// @param end ending index (default array end)
+    void fill(const BigInt &value, size_t start = 0, size_t end = SIZE_MAX) noexcept;
 
-    [[nodiscard]] BigUint64Array slice(size_t start = 0, size_t end = SIZE_MAX) const noexcept {
-        if (end == SIZE_MAX) {
-            return BigUint64Array::take_ownership(call("slice", static_cast<double>(start)).as_handle());
-        } else {
-            return BigUint64Array::take_ownership(call("slice", static_cast<double>(start), static_cast<double>(end)).as_handle());
-        }
-    }
+    /// Creates slice of array
+    /// @param start starting index (default 0)
+    /// @param end ending index (default array end)
+    /// @returns new BigUint64Array with copied elements
+    [[nodiscard]] BigUint64Array slice(size_t start = 0, size_t end = SIZE_MAX) const noexcept;
 
-    [[nodiscard]] BigUint64Array subarray(size_t start = 0, size_t end = SIZE_MAX) const noexcept {
-        if (end == SIZE_MAX) {
-            return BigUint64Array::take_ownership(call("subarray", static_cast<double>(start)).as_handle());
-        } else {
-            return BigUint64Array::take_ownership(call("subarray", static_cast<double>(start), static_cast<double>(end)).as_handle());
-        }
-    }
+    /// Creates subarray view
+    /// @param start starting index (default 0)
+    /// @param end ending index (default array end)
+    /// @returns new BigUint64Array view of same buffer
+    [[nodiscard]] BigUint64Array subarray(size_t start = 0, size_t end = SIZE_MAX) const noexcept;
 
-    void copyWithin(size_t target, size_t start, size_t end = SIZE_MAX) noexcept {
-        if (end == SIZE_MAX) {
-            call("copyWithin", static_cast<double>(target), static_cast<double>(start));
-        } else {
-            call("copyWithin", static_cast<double>(target), static_cast<double>(start), static_cast<double>(end));
-        }
-    }
+    /// Copies elements within array
+    /// @param target destination index
+    /// @param start source start index
+    /// @param end source end index (default array end)
+    void copyWithin(size_t target, size_t start, size_t end = SIZE_MAX) noexcept;
 
     // Iterator support
     struct iterator {
         BigUint64Array *parent;
         size_t idx;
 
-        iterator(BigUint64Array *p, size_t i) : parent(p), idx(i) {}
-
-        BigInt operator*() const {
-            return (*parent)[idx];
-        }
-
-        iterator& operator++() {
-            ++idx;
-            return *this;
-        }
-
-        bool operator!=(const iterator& other) const {
-            return idx != other.idx;
-        }
-
-        bool operator==(const iterator& other) const {
-            return idx == other.idx;
-        }
+        iterator(BigUint64Array *p, size_t i);
+        BigInt operator*() const;
+        iterator &operator++();
+        bool operator!=(const iterator &other) const;
+        bool operator==(const iterator &other) const;
     };
 
-    iterator begin() { return {this, 0}; }
-    iterator end() { return {this, size()}; }
+    iterator begin();
+    iterator end();
 
     struct const_iterator : iterator {
         using iterator::iterator;
-        BigInt operator*() const {
-            return this->parent->operator[](this->idx);
-        }
+        BigInt operator*() const;
     };
 
-    [[nodiscard]] const_iterator begin() const {
-        return {const_cast<BigUint64Array*>(this), 0};
-    }
-
-    [[nodiscard]] const_iterator end() const {
-        return {const_cast<BigUint64Array*>(this), size()};
-    }
+    [[nodiscard]] const_iterator begin() const;
+    [[nodiscard]] const_iterator end() const;
 };
 
 } // namespace jsbind

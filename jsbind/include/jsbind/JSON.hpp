@@ -5,36 +5,58 @@
 #include "Undefined.hpp"
 #include <emlite/emlite.hpp>
 
+/// JavaScript JSON utilities with enhanced error handling
+///
+/// This namespace provides C++ wrappers for JavaScript JSON functionality
+/// with improved error handling using Option and Result types for safer
+/// JSON parsing and serialization operations.
 namespace jsbind::JSON {
-/// Enhanced JSON::parse using Result for better error handling
+
+/// Parses JSON string with Result-based error handling
+///
+/// This function provides safe JSON parsing that returns a Result type
+/// containing either the parsed value or an error. It's ideal when you
+/// need detailed error information for invalid JSON.
+/// @param text JSON string to parse
+/// @returns Result containing parsed value on success or error on failure
 template <class T>
 Result<T> parse(const char *text) {
-    emlite::Val res =
-        emlite::Val::global("JSON").call("parse", text);
+    emlite::Val res = emlite::Val::global("JSON").call("parse", text);
 
     if (res.is_error()) {
-        return Result<T>(res);  // Return error
+        return Result<T>(res); // Return error
     }
 
-    return Result<T>(res.as<T>());  // Return success
+    return Result<T>(res.as<T>()); // Return success
 }
 
-/// Enhanced JSON::parse using Option for simple cases
+/// Parses JSON string with Option-based error handling
+///
+/// This function provides simple JSON parsing that returns an Option type
+/// containing either the parsed value or None. It's ideal for cases where
+/// you just need to know if parsing succeeded without error details.
+/// @param text JSON string to parse
+/// @returns Option containing parsed value on success or None on failure
 template <class T>
 Option<T> try_parse(const char *text) {
-    emlite::Val res =
-        emlite::Val::global("JSON").call("parse", text);
+    emlite::Val res = emlite::Val::global("JSON").call("parse", text);
 
     if (res.is_error()) {
-        return Option<T>();  // Return None
+        return Option<T>(); // Return None
     }
 
-    return Option<T>(res.as<T>());  // Return Some(value)
+    return Option<T>(res.as<T>()); // Return Some(value)
 }
 
+/// Converts JavaScript value to JSON string
+///
+/// This function serializes a JavaScript value to its JSON string
+/// representation with optional formatting and replacement controls.
+/// @param value JavaScript value to serialize
+/// @param replacer optional replacer function or array to transform values
+/// @param space optional spacing for pretty-printing (string or number)
+/// @returns JSON string representation of the value
 String stringify(
-    const Any &value,
-    const Any &replacer = Undefined::value,
-    const Any &space    = Undefined::value
+    const Any &value, const Any &replacer = Undefined::value, const Any &space = Undefined::value
 );
 } // namespace jsbind::JSON

@@ -7,15 +7,14 @@ namespace jsbind::Math {
 
 emlite::Val MATHOBJ();
 
-static constexpr double E      = 2.71828182845904523536;
-static constexpr double LN2    = 0.69314718055994530942;
-static constexpr double LN10   = 2.30258509299404568402;
-static constexpr double LOG2E  = 1.44269504088896340736;
-static constexpr double LOG10E = 0.43429448190325182765;
-static constexpr double PI     = 3.14159265358979323846;
-static constexpr double SQRT1_2 =
-    0.70710678118654752440; // 1/√2
-static constexpr double SQRT2 = 1.41421356237309504880;
+static constexpr double E       = 2.71828182845904523536;
+static constexpr double LN2     = 0.69314718055994530942;
+static constexpr double LN10    = 2.30258509299404568402;
+static constexpr double LOG2E   = 1.44269504088896340736;
+static constexpr double LOG10E  = 0.43429448190325182765;
+static constexpr double PI      = 3.14159265358979323846;
+static constexpr double SQRT1_2 = 0.70710678118654752440; // 1/√2
+static constexpr double SQRT2   = 1.41421356237309504880;
 
 #define DECL_MATH_UNARY(cpp, js) double cpp(double x);
 
@@ -94,31 +93,17 @@ double random();
 
 template <typename... Rest>
 double max(double first, Rest... rest) {
-    return MATHOBJ()
-        .call(
-            "max", emlite::Val(first), emlite::Val(rest)...
-        )
-        .template as<double>();
+    return MATHOBJ().call("max", emlite::Val(first), emlite::Val(rest)...).template as<double>();
 }
 
 template <typename... Rest>
 double min(double first, Rest... rest) {
-    return MATHOBJ()
-        .call(
-            "min", emlite::Val(first), emlite::Val(rest)...
-        )
-        .template as<double>();
+    return MATHOBJ().call("min", emlite::Val(first), emlite::Val(rest)...).template as<double>();
 }
 
 template <typename... Rest>
 double hypot(double first, Rest... rest) {
-    return MATHOBJ()
-        .call(
-            "hypot",
-            emlite::Val(first),
-            emlite::Val(rest)...
-        )
-        .template as<double>();
+    return MATHOBJ().call("hypot", emlite::Val(first), emlite::Val(rest)...).template as<double>();
 }
 
 } // namespace jsbind::Math

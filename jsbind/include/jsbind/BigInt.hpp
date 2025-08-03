@@ -8,344 +8,276 @@
 
 namespace jsbind {
 
+/// Wrapper for JavaScript BigInt objects
+///
+/// BigInt provides arbitrary precision integer arithmetic operations,
+/// corresponding to JavaScript's BigInt type for handling integers
+/// beyond the safe integer range of regular numbers.
 class BigInt : public emlite::Val {
-    explicit BigInt(Handle h) noexcept
-        : emlite::Val(emlite::Val::take_ownership(h)) {}
+    explicit BigInt(Handle h) noexcept;
 
   public:
-    static BigInt take_ownership(Handle h) noexcept {
-        return BigInt(h);
-    }
+    /// Creates BigInt from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns BigInt wrapper object
+    static BigInt take_ownership(Handle h) noexcept;
 
-    explicit BigInt(const emlite::Val &val) noexcept
-        : emlite::Val(val) {}
+    /// Creates BigInt from an emlite::Val
+    /// @param val emlite::Val to wrap
+    explicit BigInt(const emlite::Val &val) noexcept;
 
-    /// Create BigInt from string
-    explicit BigInt(const String &value) noexcept
-        : emlite::Val(emlite::Val::global("BigInt")(value)) {}
+    /// Creates BigInt from string
+    /// @param value string representation of big integer
+    explicit BigInt(const String &value) noexcept;
 
-    /// Create BigInt from C string
-    explicit BigInt(const char *value) noexcept
-        : emlite::Val(emlite::Val::global("BigInt")(String(value))) {}
+    /// Creates BigInt from C string
+    /// @param value null-terminated string representation
+    explicit BigInt(const char *value) noexcept;
 
-    /// Create BigInt from integer (note: limited to safe integer range)
-    explicit BigInt(int64_t value) noexcept
-        : emlite::Val(emlite::Val::global("BigInt")(static_cast<double>(value))) {}
+    /// Creates BigInt from signed integer
+    /// @param value integer value (limited to safe integer range)
+    explicit BigInt(int64_t value) noexcept;
 
-    /// Create BigInt from unsigned integer  
-    explicit BigInt(uint64_t value) noexcept 
-        : emlite::Val(createFromUint64(value)) {}
-        
-private:
-    static emlite::Val createFromUint64(uint64_t value) {
-        // Convert uint64_t to string manually (no std library)
-        char buffer[32];
-        size_t pos = 0;
-        
-        if (value == 0) {
-            buffer[0] = '0';
-            buffer[1] = '\0';
-        } else {
-            // Build string backwards
-            uint64_t temp = value;
-            while (temp > 0) {
-                buffer[pos++] = '0' + (temp % 10);
-                temp /= 10;
-            }
-            buffer[pos] = '\0';
-            
-            // Reverse the string
-            for (size_t i = 0; i < pos / 2; i++) {
-                char c = buffer[i];
-                buffer[i] = buffer[pos - 1 - i];
-                buffer[pos - 1 - i] = c;
-            }
-        }
-        
-        return emlite::Val::global("BigInt")(String(buffer));
-    }
+    /// Creates BigInt from unsigned integer
+    /// @param value unsigned integer value
+    explicit BigInt(uint64_t value) noexcept;
 
-public:
+    /// Creates BigInt(0)
+    BigInt() noexcept;
 
-    /// Default constructor creates BigInt(0)
-    BigInt() noexcept
-        : emlite::Val(emlite::Val::global("BigInt")(0)) {}
+    /// Gets the BigInt constructor function
+    /// @returns emlite::Val representing the BigInt constructor
+    static emlite::Val instance() noexcept;
 
-    [[nodiscard]] BigInt clone() const noexcept {
-        return *this;
-    }
+    /// Creates a copy of this BigInt
+    /// @returns cloned BigInt
+    [[nodiscard]] BigInt clone() const noexcept;
 
     // Conversion methods
-    [[nodiscard]] String toString(int radix = 10) const noexcept {
-        return call("toString", radix).as<String>();
-    }
+    /// Converts BigInt to string with specified radix
+    /// @param radix base for string conversion (2-36)
+    /// @returns string representation
+    [[nodiscard]] String toString(int radix = 10) const noexcept;
 
-    [[nodiscard]] String valueOf() const noexcept {
-        return call("valueOf").as<String>();
-    }
+    /// Gets primitive BigInt value as string
+    /// @returns string representation
+    [[nodiscard]] String valueOf() const noexcept;
 
-    [[nodiscard]] String toLocaleString() const noexcept {
-        return call("toLocaleString").as<String>();
-    }
+    /// Converts to locale-specific string
+    /// @returns locale string representation
+    [[nodiscard]] String toLocaleString() const noexcept;
 
     // Arithmetic operators
-    BigInt operator+(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " + " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Addition operator
+    /// @param other BigInt to add
+    /// @returns sum as new BigInt
+    BigInt operator+(const BigInt &other) const noexcept;
 
-    BigInt operator-(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " - " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Subtraction operator
+    /// @param other BigInt to subtract
+    /// @returns difference as new BigInt
+    BigInt operator-(const BigInt &other) const noexcept;
 
-    BigInt operator*(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " * " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Multiplication operator
+    /// @param other BigInt to multiply
+    /// @returns product as new BigInt
+    BigInt operator*(const BigInt &other) const noexcept;
 
-    BigInt operator/(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " / " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Division operator
+    /// @param other BigInt to divide by
+    /// @returns quotient as new BigInt
+    BigInt operator/(const BigInt &other) const noexcept;
 
-    BigInt operator%(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " % " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Modulo operator
+    /// @param other BigInt divisor
+    /// @returns remainder as new BigInt
+    BigInt operator%(const BigInt &other) const noexcept;
 
-    [[nodiscard]] BigInt pow(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " ** " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Power operation
+    /// @param other BigInt exponent
+    /// @returns result of base**exponent
+    [[nodiscard]] BigInt pow(const BigInt &other) const noexcept;
 
     // Bitwise operators
-    BigInt operator&(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " & " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Bitwise AND operator
+    /// @param other BigInt operand
+    /// @returns AND result as new BigInt
+    BigInt operator&(const BigInt &other) const noexcept;
 
-    BigInt operator|(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " | " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Bitwise OR operator
+    /// @param other BigInt operand
+    /// @returns OR result as new BigInt
+    BigInt operator|(const BigInt &other) const noexcept;
 
-    BigInt operator^(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " ^ " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Bitwise XOR operator
+    /// @param other BigInt operand
+    /// @returns XOR result as new BigInt
+    BigInt operator^(const BigInt &other) const noexcept;
 
-    BigInt operator<<(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " << " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Left shift operator
+    /// @param other BigInt shift amount
+    /// @returns shifted value as new BigInt
+    BigInt operator<<(const BigInt &other) const noexcept;
 
-    BigInt operator>>(const BigInt &other) const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String((toString().toString() + " >> " + other.toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Right shift operator
+    /// @param other BigInt shift amount
+    /// @returns shifted value as new BigInt
+    BigInt operator>>(const BigInt &other) const noexcept;
 
     // Unary operators
-    BigInt operator-() const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String(("-" + toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Unary minus operator
+    /// @returns negated BigInt
+    BigInt operator-() const noexcept;
 
-    BigInt operator~() const noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("eval")(
-                String(("~" + toString().toString()).as_str())
-            ).as_handle()
-        );
-    }
+    /// Bitwise NOT operator
+    /// @returns bitwise complement as new BigInt
+    BigInt operator~() const noexcept;
 
     // Assignment operators
-    BigInt& operator+=(const BigInt &other) noexcept {
-        *this = *this + other;
-        return *this;
-    }
+    /// Addition assignment operator
+    /// @param other BigInt to add
+    /// @returns reference to this BigInt
+    BigInt &operator+=(const BigInt &other) noexcept;
 
-    BigInt& operator-=(const BigInt &other) noexcept {
-        *this = *this - other;
-        return *this;
-    }
+    /// Subtraction assignment operator
+    /// @param other BigInt to subtract
+    /// @returns reference to this BigInt
+    BigInt &operator-=(const BigInt &other) noexcept;
 
-    BigInt& operator*=(const BigInt &other) noexcept {
-        *this = *this * other;
-        return *this;
-    }
+    /// Multiplication assignment operator
+    /// @param other BigInt to multiply
+    /// @returns reference to this BigInt
+    BigInt &operator*=(const BigInt &other) noexcept;
 
-    BigInt& operator/=(const BigInt &other) noexcept {
-        *this = *this / other;
-        return *this;
-    }
+    /// Division assignment operator
+    /// @param other BigInt to divide by
+    /// @returns reference to this BigInt
+    BigInt &operator/=(const BigInt &other) noexcept;
 
-    BigInt& operator%=(const BigInt &other) noexcept {
-        *this = *this % other;
-        return *this;
-    }
+    /// Modulo assignment operator
+    /// @param other BigInt divisor
+    /// @returns reference to this BigInt
+    BigInt &operator%=(const BigInt &other) noexcept;
 
-    BigInt& operator&=(const BigInt &other) noexcept {
-        *this = *this & other;
-        return *this;
-    }
+    /// Bitwise AND assignment operator
+    /// @param other BigInt operand
+    /// @returns reference to this BigInt
+    BigInt &operator&=(const BigInt &other) noexcept;
 
-    BigInt& operator|=(const BigInt &other) noexcept {
-        *this = *this | other;
-        return *this;
-    }
+    /// Bitwise OR assignment operator
+    /// @param other BigInt operand
+    /// @returns reference to this BigInt
+    BigInt &operator|=(const BigInt &other) noexcept;
 
-    BigInt& operator^=(const BigInt &other) noexcept {
-        *this = *this ^ other;
-        return *this;
-    }
+    /// Bitwise XOR assignment operator
+    /// @param other BigInt operand
+    /// @returns reference to this BigInt
+    BigInt &operator^=(const BigInt &other) noexcept;
 
-    BigInt& operator<<=(const BigInt &other) noexcept {
-        *this = *this << other;
-        return *this;
-    }
+    /// Left shift assignment operator
+    /// @param other BigInt shift amount
+    /// @returns reference to this BigInt
+    BigInt &operator<<=(const BigInt &other) noexcept;
 
-    BigInt& operator>>=(const BigInt &other) noexcept {
-        *this = *this >> other;
-        return *this;
-    }
+    /// Right shift assignment operator
+    /// @param other BigInt shift amount
+    /// @returns reference to this BigInt
+    BigInt &operator>>=(const BigInt &other) noexcept;
 
     // Comparison operators
-    bool operator<(const BigInt &other) const noexcept {
-        return emlite::Val::global("eval")(
-            String((toString().toString() + " < " + other.toString().toString()).as_str())
-        ).as<bool>();
-    }
+    /// Less than comparison
+    /// @param other BigInt to compare with
+    /// @returns true if this < other
+    bool operator<(const BigInt &other) const noexcept;
 
-    bool operator>(const BigInt &other) const noexcept {
-        return emlite::Val::global("eval")(
-            String((toString().toString() + " > " + other.toString().toString()).as_str())
-        ).as<bool>();
-    }
+    /// Greater than comparison
+    /// @param other BigInt to compare with
+    /// @returns true if this > other
+    bool operator>(const BigInt &other) const noexcept;
 
-    bool operator<=(const BigInt &other) const noexcept {
-        return emlite::Val::global("eval")(
-            String((toString().toString() + " <= " + other.toString().toString()).as_str())
-        ).as<bool>();
-    }
+    /// Less than or equal comparison
+    /// @param other BigInt to compare with
+    /// @returns true if this <= other
+    bool operator<=(const BigInt &other) const noexcept;
 
-    bool operator>=(const BigInt &other) const noexcept {
-        return emlite::Val::global("eval")(
-            String((toString().toString() + " >= " + other.toString().toString()).as_str())
-        ).as<bool>();
-    }
+    /// Greater than or equal comparison
+    /// @param other BigInt to compare with
+    /// @returns true if this >= other
+    bool operator>=(const BigInt &other) const noexcept;
 
     // Static utility methods
-    static BigInt asIntN(int width, const BigInt &bigint) noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("BigInt").call("asIntN", width, bigint).as_handle()
-        );
-    }
+    /// Returns signed n-bit BigInt value
+    /// @param width bit width
+    /// @param bigint input BigInt
+    /// @returns n-bit signed result
+    static BigInt asIntN(int width, const BigInt &bigint) noexcept;
 
-    static BigInt asUintN(int width, const BigInt &bigint) noexcept {
-        return BigInt::take_ownership(
-            emlite::Val::global("BigInt").call("asUintN", width, bigint).as_handle()
-        );
-    }
+    /// Returns unsigned n-bit BigInt value
+    /// @param width bit width
+    /// @param bigint input BigInt
+    /// @returns n-bit unsigned result
+    static BigInt asUintN(int width, const BigInt &bigint) noexcept;
 
-    // STL-like interface
-    [[nodiscard]] size_t hash() const noexcept {
-        // Simple hash based on handle value (no std library)
-        return static_cast<size_t>(as_handle());
-    }
+    // Utility methods
+    /// Gets hash code for BigInt
+    /// @returns hash value
+    [[nodiscard]] size_t hash() const noexcept;
 
-    [[nodiscard]] bool isZero() const noexcept {
-        return *this == BigInt(static_cast<int64_t>(0));
-    }
+    /// Checks if BigInt equals zero
+    /// @returns true if value is zero
+    [[nodiscard]] bool isZero() const noexcept;
 
-    [[nodiscard]] bool isPositive() const noexcept {
-        return *this > BigInt(static_cast<int64_t>(0));
-    }
+    /// Checks if BigInt is positive
+    /// @returns true if value is greater than zero
+    [[nodiscard]] bool isPositive() const noexcept;
 
-    [[nodiscard]] bool isNegative() const noexcept {
-        return *this < BigInt(static_cast<int64_t>(0));
-    }
+    /// Checks if BigInt is negative
+    /// @returns true if value is less than zero
+    [[nodiscard]] bool isNegative() const noexcept;
 
-    // Absolute value
-    [[nodiscard]] BigInt abs() const noexcept {
-        return isNegative() ? -*this : *this;
-    }
+    /// Gets absolute value
+    /// @returns absolute value as new BigInt
+    [[nodiscard]] BigInt abs() const noexcept;
 
-    // Power function alias
-    [[nodiscard]] BigInt power(const BigInt &exponent) const noexcept {
-        return pow(exponent);
-    }
+    /// Power operation (alias for pow)
+    /// @param exponent BigInt exponent
+    /// @returns result of base**exponent
+    [[nodiscard]] BigInt power(const BigInt &exponent) const noexcept;
 
     // Factory methods for common values
-    static BigInt zero() noexcept {
-        return BigInt(static_cast<int64_t>(0));
-    }
+    /// Creates BigInt(0)
+    /// @returns BigInt representing zero
+    static BigInt zero() noexcept;
 
-    static BigInt one() noexcept {
-        return BigInt(static_cast<int64_t>(1));
-    }
+    /// Creates BigInt(1)
+    /// @returns BigInt representing one
+    static BigInt one() noexcept;
 
-    static BigInt minusOne() noexcept {
-        return BigInt(static_cast<int64_t>(-1));
-    }
+    /// Creates BigInt(-1)
+    /// @returns BigInt representing minus one
+    static BigInt minusOne() noexcept;
 
-    // Parse from string with error checking
-    static Option<BigInt> tryParse(const String &str) noexcept {
-        // Simplified version without exception handling (no std library)
-        auto result = emlite::Val::global("BigInt")(str);
-        if (result.is_error()) {
-            return none<BigInt>();
-        }
-        return some(BigInt::take_ownership(result.as_handle()));
-    }
+    /// Parses BigInt from string with error checking
+    /// @param str string to parse
+    /// @returns Option containing BigInt or None if parsing failed
+    static Option<BigInt> tryParse(const String &str) noexcept;
+
+  private:
+    /// Helper to create BigInt from uint64_t
+    /// @param value unsigned integer value
+    /// @returns emlite::Val representing the BigInt
+    static emlite::Val createFromUint64(uint64_t value);
 };
 
-// Free functions for STL compatibility
-inline BigInt abs(const BigInt &x) noexcept {
-    return x.abs();
-}
+/// Gets absolute value of BigInt
+/// @param x BigInt value
+/// @returns absolute value
+BigInt abs(const BigInt &x) noexcept;
 
-inline BigInt pow(const BigInt &base, const BigInt &exp) noexcept {
-    return base.pow(exp);
-}
+/// Raises BigInt to power
+/// @param base BigInt base
+/// @param exp BigInt exponent
+/// @returns base raised to exp
+BigInt pow(const BigInt &base, const BigInt &exp) noexcept;
 
 } // namespace jsbind
-
-// Note: STL hash specialization removed for no-stdlib compatibility
-// If needed, users can implement hash functions manually

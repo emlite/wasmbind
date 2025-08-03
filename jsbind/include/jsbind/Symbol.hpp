@@ -7,177 +7,145 @@
 
 namespace jsbind {
 
+/// Wrapper for JavaScript Symbol objects
+///
+/// Symbol provides unique identifiers that can be used as object property keys.
+/// It supports both local symbols and well-known symbols from the JavaScript
+/// specification, as well as symbols from the global symbol registry.
 class Symbol : public emlite::Val {
-    explicit Symbol(Handle h) noexcept
-        : emlite::Val(emlite::Val::take_ownership(h)) {}
+    explicit Symbol(Handle h) noexcept;
 
   public:
-    static Symbol take_ownership(Handle h) noexcept {
-        return Symbol(h);
-    }
+    /// Creates Symbol from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns Symbol wrapper object
+    static Symbol take_ownership(Handle h) noexcept;
 
-    explicit Symbol(const emlite::Val &val) noexcept
-        : emlite::Val(val) {}
+    /// Creates Symbol from an emlite::Val
+    /// @param val emlite::Val to wrap
+    explicit Symbol(const emlite::Val &val) noexcept;
 
-    /// Create a new symbol with optional description
-    explicit Symbol(const String &description) noexcept
-        : emlite::Val(emlite::Val::global("Symbol")(description)) {}
+    /// Creates new symbol with description
+    /// @param description optional description for the symbol
+    explicit Symbol(const String &description) noexcept;
 
-    /// Create a new symbol without description
-    Symbol() noexcept
-        : emlite::Val(emlite::Val::global("Symbol")()) {}
+    /// Creates new symbol without description
+    Symbol() noexcept;
 
-    static emlite::Val instance() noexcept {
-        return emlite::Val::global("Symbol");
-    }
+    /// Gets the Symbol constructor function
+    /// @returns emlite::Val representing the Symbol constructor
+    static emlite::Val instance() noexcept;
 
-    [[nodiscard]] Symbol clone() const noexcept {
-        return *this;
-    }
+    /// Creates a copy of this Symbol
+    /// @returns cloned Symbol
+    [[nodiscard]] Symbol clone() const noexcept;
 
     // Properties
-    [[nodiscard]] Option<String> description() const noexcept {
-        auto desc = get("description");
-        if (desc.is_undefined()) {
-            return none<String>();
-        }
-        return some(desc.as<String>());
-    }
+    /// Gets symbol description if available
+    /// @returns Option containing description or None if undefined
+    [[nodiscard]] Option<String> description() const noexcept;
 
     // Static well-known symbols
-    static Symbol iterator() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("iterator").as_handle()
-        );
-    }
+    /// Gets Symbol.iterator
+    /// @returns well-known iterator symbol
+    static Symbol iterator() noexcept;
 
-    static Symbol asyncIterator() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("asyncIterator").as_handle()
-        );
-    }
+    /// Gets Symbol.asyncIterator
+    /// @returns well-known async iterator symbol
+    static Symbol asyncIterator() noexcept;
 
-    static Symbol hasInstance() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("hasInstance").as_handle()
-        );
-    }
+    /// Gets Symbol.hasInstance
+    /// @returns well-known hasInstance symbol
+    static Symbol hasInstance() noexcept;
 
-    static Symbol isConcatSpreadable() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("isConcatSpreadable").as_handle()
-        );
-    }
+    /// Gets Symbol.isConcatSpreadable
+    /// @returns well-known isConcatSpreadable symbol
+    static Symbol isConcatSpreadable() noexcept;
 
-    static Symbol match() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("match").as_handle()
-        );
-    }
+    /// Gets Symbol.match
+    /// @returns well-known match symbol
+    static Symbol match() noexcept;
 
-    static Symbol matchAll() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("matchAll").as_handle()
-        );
-    }
+    /// Gets Symbol.matchAll
+    /// @returns well-known matchAll symbol
+    static Symbol matchAll() noexcept;
 
-    static Symbol replace() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("replace").as_handle()
-        );
-    }
+    /// Gets Symbol.replace
+    /// @returns well-known replace symbol
+    static Symbol replace() noexcept;
 
-    static Symbol search() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("search").as_handle()
-        );
-    }
+    /// Gets Symbol.search
+    /// @returns well-known search symbol
+    static Symbol search() noexcept;
 
-    static Symbol species() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("species").as_handle()
-        );
-    }
+    /// Gets Symbol.species
+    /// @returns well-known species symbol
+    static Symbol species() noexcept;
 
-    static Symbol split() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("split").as_handle()
-        );
-    }
+    /// Gets Symbol.split
+    /// @returns well-known split symbol
+    static Symbol split() noexcept;
 
-    static Symbol toPrimitive() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("toPrimitive").as_handle()
-        );
-    }
+    /// Gets Symbol.toPrimitive
+    /// @returns well-known toPrimitive symbol
+    static Symbol toPrimitive() noexcept;
 
-    static Symbol toStringTag() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("toStringTag").as_handle()
-        );
-    }
+    /// Gets Symbol.toStringTag
+    /// @returns well-known toStringTag symbol
+    static Symbol toStringTag() noexcept;
 
-    static Symbol unscopables() noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").get("unscopables").as_handle()
-        );
-    }
+    /// Gets Symbol.unscopables
+    /// @returns well-known unscopables symbol
+    static Symbol unscopables() noexcept;
 
     // Static registry methods
-    /// Get symbol from global symbol registry
-    static Symbol for_(const String &key) noexcept {
-        return Symbol::take_ownership(
-            emlite::Val::global("Symbol").call("for", key).as_handle()
-        );
-    }
+    /// Gets symbol from global symbol registry
+    /// @param key registry key to look up
+    /// @returns symbol for the given key
+    static Symbol for_(const String &key) noexcept;
 
-    /// Get key for symbol from global registry, returns none if not found
-    static Option<String> keyFor(const Symbol &symbol) noexcept {
-        auto result = emlite::Val::global("Symbol").call("keyFor", symbol);
-        if (result.is_undefined()) {
-            return none<String>();
-        }
-        return some(result.as<String>());
-    }
+    /// Gets key for symbol from global registry
+    /// @param symbol symbol to look up
+    /// @returns Option containing key or None if not in registry
+    static Option<String> keyFor(const Symbol &symbol) noexcept;
 
     // Utility methods
-    [[nodiscard]] String toString() const noexcept {
-        return call("toString").as<String>();
-    }
+    /// Converts symbol to string representation
+    /// @returns string description of symbol
+    [[nodiscard]] String toString() const noexcept;
 
-    [[nodiscard]] String valueOf() const noexcept {
-        return call("valueOf").as<String>();
-    }
+    /// Gets primitive symbol value as string
+    /// @returns string representation
+    [[nodiscard]] String valueOf() const noexcept;
 
-    // STL-like interface
-    [[nodiscard]] bool empty() const noexcept {
-        return !description().has_value();
-    }
+    /// Checks if symbol has no description
+    /// @returns true if description is undefined
+    [[nodiscard]] bool empty() const noexcept;
 
-    [[nodiscard]] size_t hash() const noexcept {
-        // Since symbols are unique, use their handle as hash
-        return static_cast<size_t>(as_handle());
-    }
+    /// Gets hash code for symbol
+    /// @returns hash value based on unique handle
+    [[nodiscard]] size_t hash() const noexcept;
 
     // Comparison operators for STL containers
-    bool operator<(const Symbol &other) const noexcept {
-        return as_handle() < other.as_handle();
-    }
+    /// Less than comparison (for ordering)
+    /// @param other symbol to compare with
+    /// @returns true if this < other
+    bool operator<(const Symbol &other) const noexcept;
 
-    bool operator>(const Symbol &other) const noexcept {
-        return as_handle() > other.as_handle();
-    }
+    /// Greater than comparison
+    /// @param other symbol to compare with
+    /// @returns true if this > other
+    bool operator>(const Symbol &other) const noexcept;
 
-    bool operator<=(const Symbol &other) const noexcept {
-        return as_handle() <= other.as_handle();
-    }
+    /// Less than or equal comparison
+    /// @param other symbol to compare with
+    /// @returns true if this <= other
+    bool operator<=(const Symbol &other) const noexcept;
 
-    bool operator>=(const Symbol &other) const noexcept {
-        return as_handle() >= other.as_handle();
-    }
+    /// Greater than or equal comparison
+    /// @param other symbol to compare with
+    /// @returns true if this >= other
+    bool operator>=(const Symbol &other) const noexcept;
 };
 
 } // namespace jsbind
-
-// Note: STL hash specialization removed for no-stdlib compatibility
-// If needed, users can implement hash functions manually

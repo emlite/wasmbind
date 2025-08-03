@@ -1,144 +1,144 @@
 #pragma once
 
 #include "Any.hpp"
-#include "String.hpp"
 #include "Array.hpp"
+#include "String.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
 
 namespace jsbind {
 
+/// Wrapper for JavaScript RegExp objects
+///
+/// RegExp provides pattern matching functionality with support for flags,
+/// global matching, iteration over matches, and STL-like interface
+/// for common regular expression operations.
 class RegExp : public emlite::Val {
-    explicit RegExp(Handle h) noexcept
-        : emlite::Val(emlite::Val::take_ownership(h)) {}
+    explicit RegExp(Handle h) noexcept;
 
   public:
-    static RegExp take_ownership(Handle h) noexcept {
-        return RegExp(h);
-    }
+    /// Creates RegExp from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns RegExp wrapper object
+    static RegExp take_ownership(Handle h) noexcept;
 
-    explicit RegExp(const emlite::Val &val) noexcept
-        : emlite::Val(val) {}
+    /// Creates RegExp from an emlite::Val
+    /// @param val emlite::Val to wrap
+    explicit RegExp(const emlite::Val &val) noexcept;
 
-    /// Construct RegExp from pattern string
-    explicit RegExp(const String &pattern) noexcept
-        : emlite::Val(emlite::Val::global("RegExp").new_(pattern)) {}
+    /// Creates RegExp from pattern string
+    /// @param pattern regular expression pattern
+    explicit RegExp(const String &pattern) noexcept;
 
-    /// Construct RegExp from pattern and flags
-    RegExp(const String &pattern, const String &flags) noexcept
-        : emlite::Val(emlite::Val::global("RegExp").new_(pattern, flags)) {}
+    /// Creates RegExp from pattern and flags
+    /// @param pattern regular expression pattern
+    /// @param flags regex flags (g, i, m, s, u, y)
+    RegExp(const String &pattern, const String &flags) noexcept;
 
-    /// Default constructor creates empty RegExp
-    RegExp() noexcept
-        : emlite::Val(emlite::Val::global("RegExp").new_()) {}
+    /// Creates empty RegExp
+    RegExp() noexcept;
 
-    static emlite::Val instance() noexcept {
-        return emlite::Val::global("RegExp");
-    }
+    /// Gets the RegExp constructor function
+    /// @returns emlite::Val representing the RegExp constructor
+    static emlite::Val instance() noexcept;
 
-    [[nodiscard]] RegExp clone() const noexcept {
-        return *this;
-    }
+    /// Creates a copy of this RegExp
+    /// @returns cloned RegExp
+    [[nodiscard]] RegExp clone() const noexcept;
 
     // Properties
-    [[nodiscard]] String source() const noexcept {
-        return get("source").as<String>();
-    }
+    /// Gets source pattern
+    /// @returns pattern string
+    [[nodiscard]] String source() const noexcept;
 
-    [[nodiscard]] String flags() const noexcept {
-        return get("flags").as<String>();
-    }
+    /// Gets flags string
+    /// @returns flags like "gi" or "m"
+    [[nodiscard]] String flags() const noexcept;
 
-    [[nodiscard]] bool global() const noexcept {
-        return get("global").as<bool>();
-    }
+    /// Checks if global flag is set
+    /// @returns true if global flag active
+    [[nodiscard]] bool global() const noexcept;
 
-    [[nodiscard]] bool ignoreCase() const noexcept {
-        return get("ignoreCase").as<bool>();
-    }
+    /// Checks if ignore-case flag is set
+    /// @returns true if case-insensitive
+    [[nodiscard]] bool ignoreCase() const noexcept;
 
-    [[nodiscard]] bool multiline() const noexcept {
-        return get("multiline").as<bool>();
-    }
+    /// Checks if multiline flag is set
+    /// @returns true if multiline mode active
+    [[nodiscard]] bool multiline() const noexcept;
 
-    [[nodiscard]] bool dotAll() const noexcept {
-        return get("dotAll").as<bool>();
-    }
+    /// Checks if dotAll flag is set
+    /// @returns true if dot matches newlines
+    [[nodiscard]] bool dotAll() const noexcept;
 
-    [[nodiscard]] bool unicode() const noexcept {
-        return get("unicode").as<bool>();
-    }
+    /// Checks if unicode flag is set
+    /// @returns true if unicode mode active
+    [[nodiscard]] bool unicode() const noexcept;
 
-    [[nodiscard]] bool sticky() const noexcept {
-        return get("sticky").as<bool>();
-    }
+    /// Checks if sticky flag is set
+    /// @returns true if sticky mode active
+    [[nodiscard]] bool sticky() const noexcept;
 
-    [[nodiscard]] size_t lastIndex() const noexcept {
-        return get("lastIndex").as<size_t>();
-    }
+    /// Gets current lastIndex for global matching
+    /// @returns index position for next search
+    [[nodiscard]] size_t lastIndex() const noexcept;
 
-    void setLastIndex(size_t index) noexcept {
-        set("lastIndex", index);
-    }
+    /// Sets lastIndex for global matching
+    /// @param index position for next search
+    void setLastIndex(size_t index) noexcept;
 
     // Methods with STL-like API
+    /// Tests if string matches pattern
+    /// @param str string to test
+    /// @returns true if pattern matches
+    [[nodiscard]] bool test(const String &str) const noexcept;
 
-    /// Test if string matches pattern (equivalent to RegExp.test())
-    [[nodiscard]] bool test(const String &str) const noexcept {
-        return call("test", str).as<bool>();
-    }
-
-    /// Execute pattern against string, returns match result or none
-    [[nodiscard]] Option<Array> exec(const String &str) const noexcept {
-        auto result = call("exec", str);
-        if (result.is_null()) {
-            return none<Array>();
-        }
-        return some(result.as<Array>());
-    }
+    /// Executes pattern against string
+    /// @param str string to search
+    /// @returns Option containing match array or None
+    [[nodiscard]] Option<Array> exec(const String &str) const noexcept;
 
     /// STL-like contains check
-    [[nodiscard]] bool contains(const String &str) const noexcept {
-        return test(str);
-    }
+    /// @param str string to check
+    /// @returns true if pattern found
+    [[nodiscard]] bool contains(const String &str) const noexcept;
 
-    /// STL-like find operation - returns first match or none
-    [[nodiscard]] Option<Array> find(const String &str) const noexcept {
-        return exec(str);
-    }
+    /// STL-like find operation
+    /// @param str string to search
+    /// @returns Option containing first match or None
+    [[nodiscard]] Option<Array> find(const String &str) const noexcept;
 
-    /// Get all matches in string (similar to String.matchAll)
-    [[nodiscard]] Array findAll(const String &str) const {
-        if (!global()) {
-            throw_js("RegExp must have global flag for findAll");
-        }
-        return str.call("matchAll", *this).as<Array>();
-    }
+    /// Gets all matches in string (requires global flag)
+    /// @param str string to search
+    /// @returns Array of all matches
+    /// @throws JavaScript error if not global
+    [[nodiscard]] Array findAll(const String &str) const;
 
     // Static factory methods for common patterns
-    static RegExp literal(const String &text) noexcept {
-        // Escape special regex characters
-        auto escaped = text.call("replace", 
-            RegExp(R"([.*+?^${}()|[\]\\])", "g"), 
-            "\\$&");
-        return RegExp(escaped.as<String>());
-    }
+    /// Creates RegExp that matches literal text
+    /// @param text literal string to match
+    /// @returns RegExp with escaped special characters
+    static RegExp literal(const String &text) noexcept;
 
-    static RegExp caseInsensitive(const String &pattern) noexcept {
-        return {pattern, "i"};
-    }
+    /// Creates case-insensitive RegExp
+    /// @param pattern regex pattern
+    /// @returns RegExp with 'i' flag
+    static RegExp caseInsensitive(const String &pattern) noexcept;
 
-    static RegExp global(const String &pattern) noexcept {
-        return {pattern, "g"};
-    }
+    /// Creates global RegExp
+    /// @param pattern regex pattern
+    /// @returns RegExp with 'g' flag
+    static RegExp global(const String &pattern) noexcept;
 
-    static RegExp globalIgnoreCase(const String &pattern) noexcept {
-        return {pattern, "gi"};
-    }
+    /// Creates global case-insensitive RegExp
+    /// @param pattern regex pattern
+    /// @returns RegExp with 'gi' flags
+    static RegExp globalIgnoreCase(const String &pattern) noexcept;
 
-    static RegExp multiline(const String &pattern) noexcept {
-        return {pattern, "m"};
-    }
+    /// Creates multiline RegExp
+    /// @param pattern regex pattern
+    /// @returns RegExp with 'm' flag
+    static RegExp multiline(const String &pattern) noexcept;
 
     // Iterator-like interface for global matches
     class MatchIterator {
@@ -147,58 +147,47 @@ class RegExp : public emlite::Val {
         Option<Array> current_match_;
         bool at_end_;
 
-    public:
-        MatchIterator(const RegExp &regexp, String text, bool at_end = false)
-            : regexp_(regexp), text_(emlite::detail::move(text)), at_end_(at_end) {
-            if (!at_end_ && regexp.global()) {
-                regexp_.call("setLastIndex", 0);
-                advance();
-            }
-        }
+      public:
+        /// Creates iterator for global RegExp matching
+        /// @param regexp RegExp to use for matching
+        /// @param text string to search
+        /// @param at_end whether iterator is at end
+        MatchIterator(const RegExp &regexp, String text, bool at_end = false);
 
-        Array operator*() const {
-            if (!current_match_) {
-                throw_js("Iterator at end");
-            }
-            return *current_match_;
-        }
+        /// Dereferences to current match
+        /// @returns current match array
+        /// @throws JavaScript error if at end
+        Array operator*() const;
 
-        MatchIterator& operator++() {
-            advance();
-            return *this;
-        }
+        /// Advances to next match
+        /// @returns reference to this iterator
+        MatchIterator &operator++();
 
-        bool operator!=(const MatchIterator& other) const {
-            return at_end_ != other.at_end_;
-        }
+        /// Checks inequality with other iterator
+        /// @param other iterator to compare
+        /// @returns true if different
+        bool operator!=(const MatchIterator &other) const;
 
-        bool operator==(const MatchIterator& other) const {
-            return at_end_ == other.at_end_;
-        }
+        /// Checks equality with other iterator
+        /// @param other iterator to compare
+        /// @returns true if same
+        bool operator==(const MatchIterator &other) const;
 
-    private:
-        void advance() {
-            auto result = regexp_.call("exec", text_);
-            if (result.is_null()) {
-                current_match_ = none<Array>();
-                at_end_ = true;
-            } else {
-                current_match_ = some(result.as<Array>());
-            }
-        }
+      private:
+        /// Advances iterator to next match
+        void advance();
     };
 
-    // STL-like iteration interface for global RegExp
-    [[nodiscard]] MatchIterator begin(const String &text) const {
-        if (!global()) {
-            throw_js("RegExp must have global flag for iteration");
-        }
-        return {*this, text};
-    }
+    /// Gets iterator to first match (requires global flag)
+    /// @param text string to search
+    /// @returns iterator to first match
+    /// @throws JavaScript error if not global
+    [[nodiscard]] MatchIterator begin(const String &text) const;
 
-    [[nodiscard]] MatchIterator end(const String &text) const {
-        return {*this, text, true};
-    }
+    /// Gets end iterator
+    /// @param text string to search
+    /// @returns end iterator
+    [[nodiscard]] MatchIterator end(const String &text) const;
 };
 
 } // namespace jsbind

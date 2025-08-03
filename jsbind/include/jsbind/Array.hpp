@@ -19,54 +19,92 @@ namespace jsbind {
 class String;
 class Function;
 
+/// Wrapper for JavaScript ArrayBuffer objects
+///
+/// ArrayBuffer represents a raw binary data buffer, used as the backing
+/// store for TypedArray views. It provides methods for creating buffers,
+/// checking buffer properties, and creating slices.
 class ArrayBuffer : public emlite::Val {
     explicit ArrayBuffer(Handle h) noexcept;
 
   public:
+    /// Creates ArrayBuffer from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns ArrayBuffer wrapper object
     static ArrayBuffer take_ownership(Handle h) noexcept;
+
+    /// Creates ArrayBuffer from an emlite::Val
+    /// @param v emlite::Val to wrap
     explicit ArrayBuffer(const emlite::Val &v) noexcept;
+
+    /// Gets the ArrayBuffer constructor function
+    /// @returns emlite::Val representing the ArrayBuffer constructor
     static emlite::Val instance() noexcept;
+
+    /// Creates ArrayBuffer with specified byte length
+    /// @param byteLen size in bytes
     explicit ArrayBuffer(size_t byteLen);
 
+    /// Checks if a value is an ArrayBuffer view
+    /// @param v value to check
+    /// @returns true if value is a TypedArray or DataView
     static bool isView(const emlite::Val &v);
 
+    /// Gets the byte length of the buffer
+    /// @returns buffer size in bytes
     [[nodiscard]] size_t byteLength() const;
 
-    [[nodiscard]] ArrayBuffer slice(
-        size_t begin, size_t end = SIZE_MAX
-    ) const;
+    /// Creates a slice of the buffer
+    /// @param begin start byte offset
+    /// @param end end byte offset (SIZE_MAX for end of buffer)
+    /// @returns new ArrayBuffer containing the slice
+    [[nodiscard]] ArrayBuffer slice(size_t begin, size_t end = SIZE_MAX) const;
 };
 
+/// Generic wrapper for JavaScript TypedArray objects
+///
+/// TypedArray provides a C++ interface for JavaScript typed arrays like
+/// Uint8Array, Int32Array, Float64Array, etc. It supports array operations,
+/// iteration, and safe access methods with Option and Result types.
 template <typename T>
 class TypedArray : public emlite::Val {
-    explicit TypedArray(Handle h) noexcept
-        : emlite::Val(emlite::Val::take_ownership(h)) {}
+    explicit TypedArray(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 
   public:
-    static TypedArray take_ownership(Handle h) noexcept {
-        return TypedArray(h);
-    }
-    explicit TypedArray(const emlite::Val &val) noexcept
-        : emlite::Val(val) {}
+    /// Creates TypedArray from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns TypedArray wrapper object
+    static TypedArray take_ownership(Handle h) noexcept { return TypedArray(h); }
 
-    TypedArray() noexcept
-        : emlite::Val(emlite::Val(emlite::Val::array())) {}
+    /// Creates TypedArray from an emlite::Val
+    /// @param val emlite::Val to wrap
+    explicit TypedArray(const emlite::Val &val) noexcept : emlite::Val(val) {}
 
+    /// Creates empty TypedArray
+    TypedArray() noexcept : emlite::Val(emlite::Val(emlite::Val::array())) {}
+
+    /// Gets the byte length of the array's backing buffer
+    /// @returns size in bytes
     [[nodiscard]] size_t byteLength() const {
-        return emlite::Val::get("byteLength")
-            .template as<size_t>();
+        return emlite::Val::get("byteLength").template as<size_t>();
     }
 
+    /// Gets the byte offset into the backing buffer
+    /// @returns offset in bytes from start of buffer
     [[nodiscard]] size_t byteOffset() const {
-        return emlite::Val::get("byteOffset")
-            .template as<size_t>();
+        return emlite::Val::get("byteOffset").template as<size_t>();
     }
 
+    /// Gets the underlying ArrayBuffer
+    /// @returns ArrayBuffer that backs this typed array
     [[nodiscard]] ArrayBuffer buffer() const {
-        return emlite::Val::get("buffer")
-            .template as<ArrayBuffer>();
+        return emlite::Val::get("buffer").template as<ArrayBuffer>();
     }
 
+    /// Creates TypedArray from C array data
+    /// @param data pointer to array data
+    /// @param len number of elements
+    /// @returns new TypedArray containing the data
     static TypedArray new_(T *data, size_t len) {
         auto arr = emlite::Val::array();
         for (auto i = 0; i < len; i++)
@@ -74,27 +112,31 @@ class TypedArray : public emlite::Val {
         return TypedArray(arr);
     }
 
-    [[nodiscard]] TypedArray clone() const noexcept {
-        return *this;
-    }
+    /// Creates a copy of this TypedArray
+    /// @returns cloned TypedArray
+    [[nodiscard]] TypedArray clone() const noexcept { return *this; }
 
-    [[nodiscard]] size_t size() const {
-        return emlite::Val::get("length")
-            .template as<size_t>();
-    }
+    /// Gets the number of elements in the array
+    /// @returns element count
+    [[nodiscard]] size_t size() const { return emlite::Val::get("length").template as<size_t>(); }
 
+    /// Checks if the array is empty
+    /// @returns true if array has no elements
     [[nodiscard]] bool empty() const { return size() == 0; }
 
+    /// Adds element to end of array
+    /// @param v element to add
     void push(const T &v) { emlite::Val::call("push", v); }
 
-    T operator[](size_t i) const {
-        return emlite::Val::operator[](i).template as<T>();
-    }
+    /// Gets element at index without bounds checking
+    /// @param i element index
+    /// @returns element at index
+    T operator[](size_t i) const { return emlite::Val::operator[](i).template as<T>(); }
 
     /// Safe array access using Option - returns None if index out of bounds
     [[nodiscard]] Option<T> at(size_t index) const noexcept {
         if (index >= size()) {
-            return Option<T>();  // None - out of bounds
+            return Option<T>(); // None - out of bounds
         }
         return Option<T>(emlite::Val::operator[](index).template as<T>());
     }
@@ -102,80 +144,154 @@ class TypedArray : public emlite::Val {
     /// Safe array access using Result - returns error with details
     [[nodiscard]] Result<T> try_at(size_t index) const noexcept {
         if (index >= size()) {
-            return Result<T>(emlite::Val::global("RangeError")
-                .new_("Array index out of bounds"));
+            return Result<T>(emlite::Val::global("RangeError").new_("Array index out of bounds"));
         }
         return Result<T>(emlite::Val::operator[](index).template as<T>());
     }
 
+    /// Sets element at index
+    /// @param idx element index
+    /// @param val value to set
     void set(size_t idx, const T &val) noexcept;
 
+    /// Checks if array contains value
+    /// @param val value to search for
+    /// @returns true if value is found
     [[nodiscard]] bool has(const T &val) const noexcept;
 
+    /// Converts array to string representation
+    /// @returns string representation of array
     [[nodiscard]] String toString() const noexcept;
+
+    /// Converts array to locale-specific string
+    /// @returns locale string representation of array
     [[nodiscard]] String toLocaleString() const noexcept;
+
+    /// Removes and returns last element
+    /// @returns last element of array
     [[nodiscard]] T pop() noexcept;
-    [[nodiscard]] size_t push(const TypedArray<T> &items
-    ) noexcept;
-    [[nodiscard]] TypedArray<T> concat(
-        const TypedArray<T> &items
-    ) noexcept;
-    [[nodiscard]] String join(const String &separator
-    ) noexcept;
+
+    /// Adds elements from another array to end
+    /// @param items array to append
+    /// @returns new length of array
+    [[nodiscard]] size_t push(const TypedArray<T> &items) noexcept;
+
+    /// Concatenates arrays into new array
+    /// @param items array to concatenate
+    /// @returns new concatenated array
+    [[nodiscard]] TypedArray<T> concat(const TypedArray<T> &items) noexcept;
+
+    /// Joins array elements into string
+    /// @param separator string to insert between elements
+    /// @returns joined string
+    [[nodiscard]] String join(const String &separator) noexcept;
+
+    /// Reverses array elements in place
+    /// @returns reference to this array
     [[nodiscard]] TypedArray<T> reverse() noexcept;
+
+    /// Removes and returns first element
+    /// @returns first element of array
     [[nodiscard]] T shift() noexcept;
-    [[nodiscard]] TypedArray<T> sort(
-        const Function &compareFn
-    ) noexcept;
+
+    /// Sorts array elements using comparison function
+    /// @param compareFn function to compare elements
+    /// @returns reference to this array
+    [[nodiscard]] TypedArray<T> sort(const Function &compareFn) noexcept;
+
+    /// Removes/adds elements at index
+    /// @param start index to start changes
+    /// @param deleteCount number of elements to remove
+    /// @param items elements to insert
+    /// @returns array of removed elements
     [[nodiscard]] TypedArray<T> splice(
-        size_t start,
-        size_t deleteCount,
-        const TypedArray<T> &items
+        size_t start, size_t deleteCount, const TypedArray<T> &items
     ) noexcept;
-    [[nodiscard]] size_t unshift(const TypedArray<T> &items
-    ) noexcept;
-    [[nodiscard]] int indexOf(
-        const T &searchElement, size_t fromIndex = 0
-    ) noexcept;
-    [[nodiscard]] int lastIndexOf(
-        const T &searchElement, size_t fromIndex = 0
-    ) noexcept;
-    [[nodiscard]] bool every(
-        const Function &predicate,
-        const Any &thisArg = Any()
-    ) noexcept;
-    [[nodiscard]] bool some(
-        const Function &predicate,
-        const Any &thisArg = Any()
-    ) noexcept;
-    void forEach(
-        const Function &callbackfn,
-        const Any &thisArg = Any()
-    ) noexcept;
+
+    /// Adds elements to beginning of array
+    /// @param items elements to prepend
+    /// @returns new length of array
+    [[nodiscard]] size_t unshift(const TypedArray<T> &items) noexcept;
+
+    /// Finds first index of element
+    /// @param searchElement element to find
+    /// @param fromIndex index to start search
+    /// @returns index of element or -1 if not found
+    [[nodiscard]] int indexOf(const T &searchElement, size_t fromIndex = 0) noexcept;
+
+    /// Finds last index of element
+    /// @param searchElement element to find
+    /// @param fromIndex index to start backwards search
+    /// @returns index of element or -1 if not found
+    [[nodiscard]] int lastIndexOf(const T &searchElement, size_t fromIndex = 0) noexcept;
+
+    /// Tests if all elements pass predicate
+    /// @param predicate function to test elements
+    /// @param thisArg value to use as this in predicate
+    /// @returns true if all elements pass test
+    [[nodiscard]] bool every(const Function &predicate, const Any &thisArg = Any()) noexcept;
+
+    /// Tests if any element passes predicate
+    /// @param predicate function to test elements
+    /// @param thisArg value to use as this in predicate
+    /// @returns true if any element passes test
+    [[nodiscard]] bool some(const Function &predicate, const Any &thisArg = Any()) noexcept;
+
+    /// Executes function for each element
+    /// @param callbackfn function to execute for each element
+    /// @param thisArg value to use as this in callback
+    void forEach(const Function &callbackfn, const Any &thisArg = Any()) noexcept;
+
+    /// Creates new array with results of calling function on each element
+    /// @param callbackfn function to call on each element
+    /// @param thisArg value to use as this in callback
+    /// @returns new array with mapped values
     [[nodiscard]] TypedArray<Any> map(
-        const Function &callbackfn,
-        const Any &thisArg = Any()
+        const Function &callbackfn, const Any &thisArg = Any()
     ) noexcept;
+
+    /// Creates new array with elements that pass predicate
+    /// @param predicate function to test elements
+    /// @param thisArg value to use as this in predicate
+    /// @returns new filtered array
     [[nodiscard]] TypedArray<T> filter(
-        const Function &predicate,
-        const Any &thisArg = Any()
+        const Function &predicate, const Any &thisArg = Any()
     ) noexcept;
-    [[nodiscard]] Any reduce(
-        const Function &callbackfn,
-        const Any &initialValue = Any()
-    ) noexcept;
+
+    /// Reduces array to single value from left to right
+    /// @param callbackfn function to execute on each element
+    /// @param initialValue initial value for accumulator
+    /// @returns final accumulated value
+    [[nodiscard]] Any reduce(const Function &callbackfn, const Any &initialValue = Any()) noexcept;
+
+    /// Reduces array to single value from right to left
+    /// @param callbackfn function to execute on each element
+    /// @param initialValue initial value for accumulator
+    /// @returns final accumulated value
     [[nodiscard]] Any reduceRight(
-        const Function &callbackfn,
-        const Any &initialValue = Any()
+        const Function &callbackfn, const Any &initialValue = Any()
     ) noexcept;
+
+    /// Gets iterator for array entries (index, value pairs)
+    /// @returns iterator object for entries
     [[nodiscard]] Any entries() noexcept;
+
+    /// Gets iterator for array indices
+    /// @returns iterator object for keys
     [[nodiscard]] Any keys() noexcept;
+
+    /// Gets iterator for array values
+    /// @returns iterator object for values
     [[nodiscard]] Any values() noexcept;
 
 #if EM_HAVE_STD_SPAN
-    static TypedArray from(std::span<T> s) {
-        return from(s.data(), s.size());
-    }
+    /// Creates TypedArray from std::span
+    /// @param s span containing data
+    /// @returns new TypedArray with span data
+    static TypedArray from(std::span<T> s) { return from(s.data(), s.size()); }
+
+    /// Converts TypedArray to std::vector
+    /// @returns vector containing array elements
     std::vector<T> to_vector() const {
         std::vector<int_ty> vec;
         for (size_t i = 0; i < this->size(); i++) {
@@ -185,57 +301,72 @@ class TypedArray : public emlite::Val {
     }
 #endif
 
+    /// Iterator for TypedArray elements
     struct iterator {
-        TypedArray *parent;
-        size_t idx;
+        TypedArray *parent; ///< Parent array
+        size_t idx;         ///< Current index
 
         using difference_type = ptrdiff_t;
         using value_type      = T;
         using reference       = T;
         using pointer         = void;
 
-        reference operator*() const {
-            return parent->get(idx).template as<reference>(
-            );
-        }
+        /// Dereferences iterator to get element
+        /// @returns element at current position
+        reference operator*() const { return parent->get(idx).template as<reference>(); }
+
+        /// Pre-increment iterator
+        /// @returns reference to this iterator
         iterator &operator++() {
             ++idx;
             return *this;
         }
+
+        /// Post-increment iterator
+        /// @returns copy of iterator before increment
         const iterator operator++(int) {
             auto c = *this;
             ++*this;
             return c;
         }
 
-        friend bool operator==(
-            const iterator &a, const iterator &b
-        ) {
-            return a.idx == b.idx;
-        }
-        friend bool operator!=(
-            const iterator &a, const iterator &b
-        ) {
-            return !(a == b);
-        }
+        /// Equality comparison for iterators
+        /// @param a first iterator
+        /// @param b second iterator
+        /// @returns true if iterators are equal
+        friend bool operator==(const iterator &a, const iterator &b) { return a.idx == b.idx; }
+
+        /// Inequality comparison for iterators
+        /// @param a first iterator
+        /// @param b second iterator
+        /// @returns true if iterators are not equal
+        friend bool operator!=(const iterator &a, const iterator &b) { return !(a == b); }
     };
 
+    /// Gets iterator to beginning of array
+    /// @returns iterator to first element
     iterator begin() { return {this, 0}; }
+
+    /// Gets iterator to end of array
+    /// @returns iterator past last element
     iterator end() { return {this, size()}; }
 
+    /// Const iterator for TypedArray elements
     struct const_iterator : iterator {
         using iterator::iterator;
-        T operator*() const {
-            return this->parent->get(this->idx)
-                .template as<T>();
-        }
+
+        /// Dereferences const iterator to get element
+        /// @returns element at current position
+        T operator*() const { return this->parent->get(this->idx).template as<T>(); }
     };
-    [[nodiscard]] const_iterator begin() const {
-        return {this, 0};
-    }
-    [[nodiscard]] const_iterator end() const {
-        return {this, size()};
-    }
+
+    /// Gets const iterator to beginning of array
+    /// @returns const iterator to first element
+    [[nodiscard]] const_iterator begin() const { return {this, 0}; }
+
+    /// Gets const iterator to end of array
+    /// @returns const iterator past last element
+    [[nodiscard]] const_iterator end() const { return {this, size()}; }
 };
 
 DECLARE_ARRAY(Array, Any);
@@ -261,65 +392,137 @@ DECLARE_ARRAY(Float64Array, double)
 class BigInt64Array;
 class BigUint64Array;
 
+/// Wrapper for JavaScript DataView objects
+///
+/// DataView provides a low-level interface for reading and writing multiple
+/// number types in a binary ArrayBuffer with explicit endianness control.
+/// It's useful for parsing binary data formats and interfacing with binary APIs.
 class DataView : public emlite::Val {
     explicit DataView(Handle h) noexcept;
 
   public:
+    /// Creates DataView from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns DataView wrapper object
     static DataView take_ownership(Handle h) noexcept;
-    explicit DataView(const emlite::Val &v) noexcept;
-    DataView(
-        const ArrayBuffer &buf,
-        size_t byteOffset = 0,
-        size_t byteLength = SIZE_MAX
-    );
 
+    /// Creates DataView from an emlite::Val
+    /// @param v emlite::Val to wrap
+    explicit DataView(const emlite::Val &v) noexcept;
+
+    /// Creates DataView over ArrayBuffer
+    /// @param buf ArrayBuffer to view
+    /// @param byteOffset start offset in buffer
+    /// @param byteLength length of view (SIZE_MAX for entire buffer)
+    DataView(const ArrayBuffer &buf, size_t byteOffset = 0, size_t byteLength = SIZE_MAX);
+
+    /// Gets the DataView constructor function
+    /// @returns emlite::Val representing the DataView constructor
     static emlite::Val instance() noexcept;
 
+    /// Gets the byte length of the view
+    /// @returns view size in bytes
     [[nodiscard]] size_t byteLength() const;
+
+    /// Gets the byte offset into the buffer
+    /// @returns offset from start of buffer
     [[nodiscard]] size_t byteOffset() const;
+
+    /// Gets the underlying ArrayBuffer
+    /// @returns ArrayBuffer that backs this view
     [[nodiscard]] ArrayBuffer buffer() const;
 
+    /// Reads unsigned 8-bit integer at offset
+    /// @param off byte offset
+    /// @returns uint8_t value
     [[nodiscard]] uint8_t getUint8(size_t off) const;
-    [[nodiscard]] int8_t getInt8(size_t off) const;
-    [[nodiscard]] uint16_t getUint16(
-        size_t off, bool littleEndian = true
-    ) const;
-    [[nodiscard]] int16_t getInt16(
-        size_t off, bool littleEndian = true
-    ) const;
-    [[nodiscard]] uint32_t getUint32(
-        size_t off, bool littleEndian = true
-    ) const;
-    [[nodiscard]] int32_t getInt32(
-        size_t off, bool littleEndian = true
-    ) const;
-    [[nodiscard]] float getFloat32(
-        size_t off, bool littleEndian = true
-    ) const;
-    [[nodiscard]] double getFloat64(
-        size_t off, bool littleEndian = true
-    ) const;
 
+    /// Reads signed 8-bit integer at offset
+    /// @param off byte offset
+    /// @returns int8_t value
+    [[nodiscard]] int8_t getInt8(size_t off) const;
+
+    /// Reads unsigned 16-bit integer at offset
+    /// @param off byte offset
+    /// @param littleEndian true for little endian, false for big endian
+    /// @returns uint16_t value
+    [[nodiscard]] uint16_t getUint16(size_t off, bool littleEndian = true) const;
+
+    /// Reads signed 16-bit integer at offset
+    /// @param off byte offset
+    /// @param littleEndian true for little endian, false for big endian
+    /// @returns int16_t value
+    [[nodiscard]] int16_t getInt16(size_t off, bool littleEndian = true) const;
+
+    /// Reads unsigned 32-bit integer at offset
+    /// @param off byte offset
+    /// @param littleEndian true for little endian, false for big endian
+    /// @returns uint32_t value
+    [[nodiscard]] uint32_t getUint32(size_t off, bool littleEndian = true) const;
+
+    /// Reads signed 32-bit integer at offset
+    /// @param off byte offset
+    /// @param littleEndian true for little endian, false for big endian
+    /// @returns int32_t value
+    [[nodiscard]] int32_t getInt32(size_t off, bool littleEndian = true) const;
+
+    /// Reads 32-bit float at offset
+    /// @param off byte offset
+    /// @param littleEndian true for little endian, false for big endian
+    /// @returns float value
+    [[nodiscard]] float getFloat32(size_t off, bool littleEndian = true) const;
+
+    /// Reads 64-bit double at offset
+    /// @param off byte offset
+    /// @param littleEndian true for little endian, false for big endian
+    /// @returns double value
+    [[nodiscard]] double getFloat64(size_t off, bool littleEndian = true) const;
+
+    /// Writes unsigned 8-bit integer at offset
+    /// @param off byte offset
+    /// @param v value to write
     void setUint8(size_t off, uint8_t v);
+
+    /// Writes signed 8-bit integer at offset
+    /// @param off byte offset
+    /// @param v value to write
     void setInt8(size_t off, int8_t v);
-    void setUint16(
-        size_t off, uint16_t v, bool littleEndian = true
-    );
-    void setInt16(
-        size_t off, int16_t v, bool littleEndian = true
-    );
-    void setUint32(
-        size_t off, uint32_t v, bool littleEndian = true
-    );
-    void setInt32(
-        size_t off, int32_t v, bool littleEndian = true
-    );
-    void setFloat32(
-        size_t off, float v, bool littleEndian = true
-    );
-    void setFloat64(
-        size_t off, double v, bool littleEndian = true
-    );
+
+    /// Writes unsigned 16-bit integer at offset
+    /// @param off byte offset
+    /// @param v value to write
+    /// @param littleEndian true for little endian, false for big endian
+    void setUint16(size_t off, uint16_t v, bool littleEndian = true);
+
+    /// Writes signed 16-bit integer at offset
+    /// @param off byte offset
+    /// @param v value to write
+    /// @param littleEndian true for little endian, false for big endian
+    void setInt16(size_t off, int16_t v, bool littleEndian = true);
+
+    /// Writes unsigned 32-bit integer at offset
+    /// @param off byte offset
+    /// @param v value to write
+    /// @param littleEndian true for little endian, false for big endian
+    void setUint32(size_t off, uint32_t v, bool littleEndian = true);
+
+    /// Writes signed 32-bit integer at offset
+    /// @param off byte offset
+    /// @param v value to write
+    /// @param littleEndian true for little endian, false for big endian
+    void setInt32(size_t off, int32_t v, bool littleEndian = true);
+
+    /// Writes 32-bit float at offset
+    /// @param off byte offset
+    /// @param v value to write
+    /// @param littleEndian true for little endian, false for big endian
+    void setFloat32(size_t off, float v, bool littleEndian = true);
+
+    /// Writes 64-bit double at offset
+    /// @param off byte offset
+    /// @param v value to write
+    /// @param littleEndian true for little endian, false for big endian
+    void setFloat64(size_t off, double v, bool littleEndian = true);
 };
 
 } // namespace jsbind

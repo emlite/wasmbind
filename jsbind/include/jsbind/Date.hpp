@@ -34,15 +34,13 @@ class Date : public emlite::Val {
 
     /// `toLocaleString([locales [, options]])`
     [[nodiscard]] String to_locale_string(
-        const Any &locales = Undefined::value,
-        const Any &opts    = Undefined::value
+        const Any &locales = Undefined::value, const Any &opts = Undefined::value
     ) const;
 
     /// Return **new** Date advanced by `delta` milliseconds
     [[nodiscard]] Date add_millis(int64_t delta) const;
 
     /// `other - this` (milliseconds)
-    [[nodiscard]] int64_t diff_millis(const Date &other
-    ) const;
+    [[nodiscard]] int64_t diff_millis(const Date &other) const;
 };
 } // namespace jsbind
