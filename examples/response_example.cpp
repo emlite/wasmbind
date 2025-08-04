@@ -14,23 +14,13 @@ int main() {
             Console().log(resp.status());
             Console().log("Response ok:");
             Console().log(resp.ok());
-            resp.text().then(
+            resp.json().then(
                 Function::Fn<void(String)>([](auto txt) {
                     Console().log("Response text:");
                     Console().log(txt);
                 }),
                 Function::Fn<void(Any)>([](Any err) {
                     Console().log("Text error:");
-                    Console().log(err);
-                })
-            );
-            resp.json().then(
-                Function::Fn<void(Any)>([](Any json) {
-                    Console().log("Response JSON:");
-                    Console().log(json);
-                }),
-                Function::Fn<void(Any)>([](Any err) {
-                    Console().log("JSON error:");
                     Console().log(err);
                 })
             );
