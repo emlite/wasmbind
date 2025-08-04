@@ -1,6 +1,6 @@
 #include <jsbind/Response.hpp>
 
-using namespace jsbind;
+namespace jsbind {
 
 Response::Response(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 
@@ -31,21 +31,22 @@ Promise<Result<ArrayBuffer, Error>> Response::arrayBuffer() const {
     return call("arrayBuffer").template as<Promise<Result<ArrayBuffer, Error>>>();
 }
 
-Promise<Result<Response, Error>> jsbind::fetch(const char *input) {
+Promise<Result<Response, Error>> fetch(const char *input) {
     return emlite::Val::global("fetch")(emlite::Val(input))
         .template as<Promise<Result<Response, Error>>>();
 }
 
-Promise<Result<Response, Error>> jsbind::fetch(const char *input, const Any &init) {
+Promise<Result<Response, Error>> fetch(const char *input, const Any &init) {
     return emlite::Val::global("fetch")(emlite::Val(input), init)
         .template as<Promise<Result<Response, Error>>>();
 }
 
-Promise<Result<Response, Error>> jsbind::fetchVal(const Any &input) {
+Promise<Result<Response, Error>> fetch(const Any &input) {
     return emlite::Val::global("fetch")(input).template as<Promise<Result<Response, Error>>>();
 }
 
-Promise<Result<Response, Error>> jsbind::fetchVal(const Any &input, const Any &init) {
+Promise<Result<Response, Error>> fetch(const Any &input, const Any &init) {
     return emlite::Val::global("fetch")(input, init)
         .template as<Promise<Result<Response, Error>>>();
+}
 }
