@@ -109,9 +109,9 @@ int String::localeCompare(const char *other) const noexcept {
     return this->call("localeCompare", other).as<int>();
 }
 
-Any String::match(const Any &pat) const noexcept { return this->call("match", pat); }
+Option<TypedArray<String>> String::match(const Any &pat) const noexcept { return this->call("match", pat).as<Option<TypedArray<String>>>(); }
 
-Any String::matchAll(const Any &pat) const noexcept { return this->call("matchAll", pat); }
+Option<TypedArray<String>> String::matchAll(const Any &pat) const noexcept { return this->call("matchAll", pat).as<Option<TypedArray<String>>>(); }
 
 Result<String, Error> String::normalize(const char *form) const noexcept {
     if (form) {

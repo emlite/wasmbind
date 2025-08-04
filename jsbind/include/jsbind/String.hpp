@@ -143,12 +143,12 @@ class String : public emlite::Val {
     /// Matches string against pattern
     /// @param pat pattern to match
     /// @returns match result as Any
-    [[nodiscard]] Any match(const Any &pat) const noexcept;
+    [[nodiscard]] Option<TypedArray<String>> match(const Any &pat) const noexcept;
 
     /// Matches all occurrences of pattern
     /// @param pat pattern to match
     /// @returns all matches as Any
-    [[nodiscard]] Any matchAll(const Any &pat) const noexcept;
+    [[nodiscard]] Option<TypedArray<String>> matchAll(const Any &pat) const noexcept;
 
     /// Normalizes Unicode string
     /// @param form normalization form (NFC, NFD, NFKC, NFKD)
