@@ -15,16 +15,31 @@ emlite::Val String::instance() noexcept { return emlite::Val::global("String"); 
 
 String::String(const char *s) : emlite::Val(s) {}
 
+String::String(const char16_t *s) : emlite::Val(s) {}
+
 #if JSBIND_HAS_STD_STRING
 String::String(const std::string &utf8) : emlite::Val(utf8.c_str()) {}
 
 String::String(std::string_view utf8)
     : emlite::Val(emlite::Val::take_ownership(emlite_val_make_str(utf8.data(), utf8.size()))) {}
 
+String::String(const std::u16string &utf16) : emlite::Val(utf16.c_str()) {}
+
+String::String(std::u16string_view utf16)
+    : emlite::Val(emlite::Val::take_ownership(emlite_val_make_str_utf16(utf16.data(), utf16.size()))) {}
+
 Option<std::string> String::str() const {
     auto temp = Uniq<char[]>.get();
     if (temp)
         return as<Uniq<char[]>>().release();
+    else
+        return nullopt;
+}
+
+Option<std::u16string> String::u16str() const {
+    auto temp = as<Uniq<char16_t[]>>();
+    if (temp.get())
+        return std::u16string(temp.release());
     else
         return nullopt;
 }

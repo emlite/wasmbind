@@ -42,6 +42,10 @@ class String : public emlite::Val {
     /// @param utf8 null-terminated UTF-8 string
     String(const char *utf8);
 
+    /// Creates String from UTF-16 string
+    /// @param utf16 null-terminated UTF-16 string
+    String(const char16_t *utf16);
+
 #if JSBIND_HAS_STD_STRING
     /// Creates String from std::string
     /// @param utf8 UTF-8 string
@@ -51,9 +55,21 @@ class String : public emlite::Val {
     /// @param utf8 UTF-8 string view
     explicit String(std::string_view utf8);
 
+    /// Creates String from std::u16string
+    /// @param utf16 UTF-16 string
+    explicit String(const std::u16string &utf16);
+
+    /// Creates String from std::u16string_view
+    /// @param utf16 UTF-16 string view
+    explicit String(std::u16string_view utf16);
+
     /// Converts to std::string
     /// @returns std::string copy of the JavaScript string
     [[nodiscard]] Option<std::string> str() const;
+
+    /// Converts to std::u16string
+    /// @returns std::u16string copy of the JavaScript string
+    [[nodiscard]] Option<std::u16string> u16str() const;
 #endif
 
     /// Gets the length of the string
