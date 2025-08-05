@@ -1,6 +1,8 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/global.hpp>
 #include <jsbind/utils.hpp>
+#include <jsbind/Object.hpp>
+#include <jsbind/Function.hpp>
 
 namespace jsbind {
 
@@ -53,6 +55,27 @@ Result<String, Error> atob(const String &encoded) {
 Result<String, Error> btoa(const String &data) {
     auto result = emlite::Val::global("btoa")(data);
     return result.as<Result<String, Error>>();
+}
+
+void queueMicrotask(const jsbind::Function &callback) {
+    emlite::Val::global("queueMicrotask")(callback);
+}
+
+
+JsStructuredSerializeOptions::JsStructuredSerializeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+JsStructuredSerializeOptions JsStructuredSerializeOptions::take_ownership(Handle h) noexcept {
+        return JsStructuredSerializeOptions(h);
+    }
+JsStructuredSerializeOptions::JsStructuredSerializeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+JsStructuredSerializeOptions::JsStructuredSerializeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+JsStructuredSerializeOptions JsStructuredSerializeOptions::clone() const noexcept { return *this; }
+
+jsbind::TypedArray<jsbind::Object> JsStructuredSerializeOptions::transfer() const {
+    return emlite::Val::get("transfer").as<jsbind::TypedArray<jsbind::Object>>();
+}
+
+void JsStructuredSerializeOptions::transfer(const jsbind::TypedArray<jsbind::Object>& value) {
+    emlite::Val::set("transfer", value);
 }
 
 } // namespace jsbind

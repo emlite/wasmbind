@@ -2,7 +2,6 @@
 
 #include "Any.hpp"
 #include "Error.hpp"
-#include "Undefined.hpp"
 #include <emlite/emlite.hpp>
 
 namespace jsbind {

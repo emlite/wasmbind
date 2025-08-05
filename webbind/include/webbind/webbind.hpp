@@ -1,5 +1,13 @@
 #pragma once
 
+using jsbind::Result;
+using jsbind::Option;
+using jsbind::ok;
+using jsbind::err;
+using jsbind::nullopt;
+using jsbind::some;
+using jsbind::none;
+
 #include "ANGLE_instanced_arrays.hpp"
 #include "AbortController.hpp"
 #include "AbortSignal.hpp"
