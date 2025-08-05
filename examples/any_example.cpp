@@ -2,6 +2,7 @@
 #include <jsbind/Console.hpp>
 
 int main() {
+    emlite::init();
     jsbind::Any value(42); // Use constructor template
     jsbind::Console().log(
         jsbind::Any("Is undefined?"),

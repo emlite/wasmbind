@@ -7,6 +7,7 @@ using namespace jsbind;
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     double val = 3.14159;
     console.log(Math::sin(val));

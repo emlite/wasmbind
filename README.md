@@ -26,6 +26,7 @@ using jsbind::Console;
 using jsbind::Function;
 
 int main() {
+    emlite::init();
     Console con;
     auto document = window().document();
     auto bodies   = document.getElementsByTagName("body");

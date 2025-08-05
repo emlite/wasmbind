@@ -5,6 +5,7 @@
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     // Parse a URL using the JS URL constructor
     jsbind::URL url = jsbind::URL::create("https://example.com/path?query=1").unwrap();

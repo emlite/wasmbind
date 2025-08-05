@@ -6,6 +6,7 @@ using namespace jsbind;
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     int data[6] = {1, 2, 3, 4, 5, 6};
     auto arr = TypedArray<int>::new_(data, 6);

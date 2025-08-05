@@ -5,6 +5,7 @@
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     // Create a string
     String s("Hello, world!");

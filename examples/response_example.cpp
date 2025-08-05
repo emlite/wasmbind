@@ -5,6 +5,7 @@
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     const char* url = "https://jsonplaceholder.typicode.com/todos/1";
     // Fetch a URL and handle the response

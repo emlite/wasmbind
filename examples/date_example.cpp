@@ -6,6 +6,7 @@ using namespace jsbind;
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     Date now;
     console.log(now.toIsoString());

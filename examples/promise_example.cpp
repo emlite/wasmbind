@@ -4,6 +4,7 @@
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     // Create a JS Promise that resolves after 1 second
     auto promise = Promise<Any>::resolve("done");

@@ -4,6 +4,7 @@
 using namespace jsbind;
 
 int main() {
+    emlite::init();
     Console console;
     // Create and log a Uint8Array
     uint8_t arr[] = {5, 1, 2, 3, 4};

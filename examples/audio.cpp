@@ -4,6 +4,7 @@
 using jsbind::Function;
 
 int main() {
+    emlite::init();
     AudioContext context;
     OscillatorNode oscillator(context);
     oscillator.type(OscillatorType::triangle());
