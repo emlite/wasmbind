@@ -317,9 +317,9 @@ class TypedArray : public emlite::Val {
     /// Converts TypedArray to std::vector
     /// @returns vector containing array elements
     std::vector<T> to_vector() const {
-        std::vector<int_ty> vec;
+        std::vector<T> vec;
         for (size_t i = 0; i < this->size(); i++) {
-            vec.push_back(this->get(i).as<int_ty>());
+            vec.push_back(this->get(i).template as<T>());
         }
         return vec;
     }

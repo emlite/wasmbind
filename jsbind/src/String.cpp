@@ -27,13 +27,12 @@ String::String(std::string_view utf8)
 String::String(const std::u16string &utf16) : emlite::Val(utf16.c_str()) {}
 
 String::String(std::u16string_view utf16)
-    : emlite::Val(emlite::Val::take_ownership(emlite_val_make_str_utf16(utf16.data(), utf16.size()))
-      ) {}
+    : emlite::Val(emlite::Val::take_ownership(emlite_val_make_str_utf16((const uint16_t *)utf16.data(), utf16.size()))) {}
 
 Option<std::string> String::str() const {
-    auto temp = Uniq<char[]>.get();
+    auto temp = as<Uniq<char[]>>().get();
     if (temp)
-        return as<Uniq<char[]>>().release();
+        return std::string(temp);
     else
         return nullopt;
 }
