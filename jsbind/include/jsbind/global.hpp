@@ -2,11 +2,13 @@
 
 namespace jsbind {
 
-template<typename T>
+template <typename T>
 class TypedArray;
-template<typename K, typename V>
+template <typename K, typename V>
 class Record;
 using Object = Record<Any, Any>;
+
+class Function;
 
 /// Safely parses integer from string with error handling
 /// @param src string to parse
@@ -41,17 +43,18 @@ bool isNaN(const T &t) {
 
 /// Queues a microtask to be executed
 /// @param callback function to execute as microtask
-void queueMicrotask(const jsbind::Function& callback);
+void queueMicrotask(const jsbind::Function &callback);
 
 class JsStructuredSerializeOptions : public emlite::Val {
-  explicit JsStructuredSerializeOptions(Handle h) noexcept;
-public:
+    explicit JsStructuredSerializeOptions(Handle h) noexcept;
+
+  public:
     static JsStructuredSerializeOptions take_ownership(Handle h) noexcept;
     explicit JsStructuredSerializeOptions(const emlite::Val &val) noexcept;
     JsStructuredSerializeOptions() noexcept;
     [[nodiscard]] JsStructuredSerializeOptions clone() const noexcept;
     [[nodiscard]] jsbind::TypedArray<jsbind::Object> transfer() const;
-    void transfer(const jsbind::TypedArray<jsbind::Object>& value);
+    void transfer(const jsbind::TypedArray<jsbind::Object> &value);
 };
 
 /// Performs a structured clone of a value
@@ -59,7 +62,9 @@ public:
 /// @param options optional structured clone options
 /// @returns deep clone of the input value
 template <typename T>
-T structuredClone(const T& value, const JsStructuredSerializeOptions& options = JsStructuredSerializeOptions()) {
+T structuredClone(
+    const T &value, const JsStructuredSerializeOptions &options = JsStructuredSerializeOptions()
+) {
     return emlite::Val::global("structuredClone")(value, options).template as<T>();
 }
 } // namespace jsbind

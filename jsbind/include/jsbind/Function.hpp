@@ -3,6 +3,7 @@
 #include "Any.hpp"
 #include "Array.hpp"
 #include "Error.hpp"
+#include "String.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
 #include <stddef.h>
@@ -60,6 +61,15 @@ class Function : public emlite::Val {
     /// Creates Function by name from global scope
     /// @param name function name to look up
     static Result<Function, Error> get(const char *name);
+
+    /// Gets global function by name
+    /// @param name function name to look up
+    /// @returns Function if found and callable, nullopt otherwise
+    static Option<Function> global(const char *name);
+
+    /// Converts function to string representation
+    /// @returns string representation of the function
+    [[nodiscard]] String toString() const noexcept;
 
     /// Helper template for creating Functions from C++ callbacks
     ///

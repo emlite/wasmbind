@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Any.hpp"
-#include "Array.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
 
@@ -12,6 +11,10 @@
 #endif
 
 namespace jsbind {
+template <typename T>
+class TypedArray;
+
+class Error;
 
 /// Wrapper for JavaScript strings
 ///
@@ -266,6 +269,12 @@ class String : public emlite::Val {
     /// Gets primitive value
     /// @returns primitive string value
     [[nodiscard]] String valueOf() const noexcept;
+
+    /// Extracts substring (deprecated but still used)
+    /// @param from start index
+    /// @param length length of substring (-1 for rest of string)
+    /// @returns substring
+    [[nodiscard]] String substr(int from, int length = -1) const noexcept;
 
     /// String concatenation operator
     /// @param a first string

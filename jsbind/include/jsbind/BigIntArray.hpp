@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Any.hpp"
 #include "BigInt.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
@@ -8,6 +7,7 @@
 #include <stdint.h>
 
 namespace jsbind {
+class ArrayBuffer;
 
 /// Wrapper for JavaScript BigInt64Array objects
 ///

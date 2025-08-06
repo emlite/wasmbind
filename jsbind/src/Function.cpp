@@ -16,6 +16,16 @@ Result<Function, Error> Function::get(const char *name) {
     return Function(name).as<Result<Function, Error>>();
 }
 
+Option<Function> Function::global(const char *name) {
+    emlite::Val v = emlite::Val::global(name);
+    if (v.is_undefined() || !v.is_function()) {
+        return nullopt;
+    }
+    return Function(v);
+}
+
+String Function::toString() const noexcept { return emlite::Val::call("toString").as<String>(); }
+
 Result<Any, Error> Function::apply(const Any &this_arg, const Array &args_array) {
     return emlite::Val::call("apply", this_arg, args_array).as<Result<Any, Error>>();
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Any.hpp"
+#include "String.hpp"
 #include "utils.hpp"
 #include <emlite/emlite.hpp>
 #include <stddef.h>
@@ -16,7 +17,6 @@
 
 namespace jsbind {
 
-class String;
 class Function;
 class Error;
 class Undefined;
@@ -146,52 +146,66 @@ class TypedArray : public emlite::Val {
     /// Sets element at index
     /// @param idx element index
     /// @param val value to set
-    void set(size_t idx, const T &val) noexcept;
+    void set(size_t idx, const T &val) noexcept { emlite::Val::set(idx, val); }
 
     /// Checks if array contains value
     /// @param val value to search for
     /// @returns true if value is found
-    [[nodiscard]] bool has(const T &val) const noexcept;
+    [[nodiscard]] bool has(const T &val) const noexcept { return emlite::Val::has(val); }
 
     /// Converts array to string representation
     /// @returns string representation of array
-    [[nodiscard]] String toString() const noexcept;
+    [[nodiscard]] String toString() const noexcept { return String(this->call("toString")); }
 
     /// Converts array to locale-specific string
     /// @returns locale string representation of array
-    [[nodiscard]] String toLocaleString() const noexcept;
+    [[nodiscard]] String toLocaleString() const noexcept {
+        return String(this->call("toLocaleString"));
+    }
 
     /// Removes and returns last element
     /// @returns last element of array
-    [[nodiscard]] Option<T> pop() noexcept;
+    [[nodiscard]] Option<T> pop() noexcept { return this->call("pop").template as<Option<T>>(); }
 
     /// Adds elements from another array to end
     /// @param items array to append
     /// @returns new length of array
-    [[nodiscard]] size_t push(const TypedArray<T> &items) noexcept;
+    [[nodiscard]] size_t push(const TypedArray<T> &items) noexcept {
+        return this->call("push", items).template as<size_t>();
+    }
 
     /// Concatenates arrays into new array
     /// @param items array to concatenate
     /// @returns new concatenated array
-    [[nodiscard]] TypedArray<T> concat(const TypedArray<T> &items) noexcept;
+    [[nodiscard]] TypedArray<T> concat(const TypedArray<T> &items) noexcept {
+        return this->call("concat", items).template as<TypedArray<T>>();
+    }
 
     /// Joins array elements into string
     /// @param separator string to insert between elements
     /// @returns joined string
-    [[nodiscard]] String join(const String &separator) noexcept;
+    [[nodiscard]] String join(const String &separator) noexcept {
+        return this->call("join", separator).template as<String>();
+    }
 
     /// Reverses array elements in place
     /// @returns reference to this array
-    [[nodiscard]] TypedArray<T> reverse() noexcept;
+    [[nodiscard]] TypedArray<T> reverse() noexcept {
+        return this->call("reverse").template as<TypedArray<T>>();
+    }
 
     /// Removes and returns first element
     /// @returns first element of array
-    [[nodiscard]] Option<T> shift() noexcept;
+    [[nodiscard]] Option<T> shift() noexcept {
+        return this->call("shift").template as<Option<T>>();
+    }
 
     /// Sorts array elements using comparison function
     /// @param compareFn function to compare elements
     /// @returns reference to this array
-    [[nodiscard]] TypedArray<T> sort(const Function &compareFn) noexcept;
+    [[nodiscard]] TypedArray<T> sort(const Function &compareFn) noexcept {
+        return this->call("sort", compareFn).template as<TypedArray<T>>();
+    }
 
     /// Removes/adds elements at index
     /// @param start index to start changes
@@ -200,41 +214,55 @@ class TypedArray : public emlite::Val {
     /// @returns array of removed elements
     [[nodiscard]] TypedArray<T> splice(
         size_t start, size_t deleteCount, const TypedArray<T> &items
-    ) noexcept;
+    ) noexcept {
+        return this->call("splice", start, deleteCount, items).template as<TypedArray<T>>();
+    }
 
     /// Adds elements to beginning of array
     /// @param items elements to prepend
     /// @returns new length of array
-    [[nodiscard]] size_t unshift(const TypedArray<T> &items) noexcept;
+    [[nodiscard]] size_t unshift(const TypedArray<T> &items) noexcept {
+        return this->call("unshift", items).template as<size_t>();
+    }
 
     /// Finds first index of element
     /// @param searchElement element to find
     /// @param fromIndex index to start search
     /// @returns index of element or -1 if not found
-    [[nodiscard]] int indexOf(const T &searchElement, size_t fromIndex = 0) noexcept;
+    [[nodiscard]] int indexOf(const T &searchElement, size_t fromIndex = 0) noexcept {
+        return this->call("indexOf", searchElement, fromIndex).template as<int>();
+    }
 
     /// Finds last index of element
     /// @param searchElement element to find
     /// @param fromIndex index to start backwards search
     /// @returns index of element or -1 if not found
-    [[nodiscard]] int lastIndexOf(const T &searchElement, size_t fromIndex = 0) noexcept;
+    [[nodiscard]] int lastIndexOf(const T &searchElement, size_t fromIndex = 0) noexcept {
+        return this->call("lastIndexOf", searchElement, fromIndex).template as<int>();
+    }
 
     /// Tests if all elements pass predicate
     /// @param predicate function to test elements
     /// @param thisArg value to use as this in predicate
     /// @returns true if all elements pass test
-    [[nodiscard]] bool every(const Function &predicate, const Any &thisArg = Any()) noexcept;
+    [[nodiscard]] bool every(const Function &predicate, const Any &thisArg = Any()) noexcept {
+        return this->call("every", predicate, thisArg).template as<bool>();
+    }
 
     /// Tests if any element passes predicate
     /// @param predicate function to test elements
     /// @param thisArg value to use as this in predicate
     /// @returns true if any element passes test
-    [[nodiscard]] bool some(const Function &predicate, const Any &thisArg = Any()) noexcept;
+    [[nodiscard]] bool some(const Function &predicate, const Any &thisArg = Any()) noexcept {
+        return this->call("some", predicate, thisArg).template as<bool>();
+    }
 
     /// Executes function for each element
     /// @param callbackfn function to execute for each element
     /// @param thisArg value to use as this in callback
-    void forEach(const Function &callbackfn, const Any &thisArg = Any()) noexcept;
+    void forEach(const Function &callbackfn, const Any &thisArg = Any()) noexcept {
+        this->call("forEach", callbackfn, thisArg);
+    }
 
     /// Creates new array with results of calling function on each element
     /// @param callbackfn function to call on each element
@@ -242,7 +270,9 @@ class TypedArray : public emlite::Val {
     /// @returns new array with mapped values
     [[nodiscard]] TypedArray<Any> map(
         const Function &callbackfn, const Any &thisArg = Any()
-    ) noexcept;
+    ) noexcept {
+        return this->call("map", callbackfn, thisArg).template as<TypedArray<Any>>();
+    }
 
     /// Creates new array with elements that pass predicate
     /// @param predicate function to test elements
@@ -250,33 +280,33 @@ class TypedArray : public emlite::Val {
     /// @returns new filtered array
     [[nodiscard]] TypedArray<T> filter(
         const Function &predicate, const Any &thisArg = Any()
-    ) noexcept;
+    ) noexcept {
+        return this->call("filter", predicate, thisArg).template as<TypedArray<T>>();
+    }
 
     /// Reduces array to single value from left to right
     /// @param callbackfn function to execute on each element
     /// @param initialValue initial value for accumulator
     /// @returns final accumulated value
-    [[nodiscard]] Any reduce(const Function &callbackfn, const Any &initialValue = Any()) noexcept;
+    [[nodiscard]] T reduce(const Function &callbackfn, const T &initialValue) noexcept;
 
     /// Reduces array to single value from right to left
     /// @param callbackfn function to execute on each element
     /// @param initialValue initial value for accumulator
     /// @returns final accumulated value
-    [[nodiscard]] Any reduceRight(
-        const Function &callbackfn, const Any &initialValue = Any()
-    ) noexcept;
+    [[nodiscard]] T reduceRight(const Function &callbackfn, const T &initialValue) noexcept;
 
     /// Gets iterator for array entries (index, value pairs)
     /// @returns iterator object for entries
-    [[nodiscard]] Any entries() noexcept;
+    [[nodiscard]] Any entries() noexcept { return this->call("entries").template as<Any>(); }
 
     /// Gets iterator for array indices
     /// @returns iterator object for keys
-    [[nodiscard]] Any keys() noexcept;
+    [[nodiscard]] Any keys() noexcept { return this->call("keys").template as<Any>(); }
 
     /// Gets iterator for array values
     /// @returns iterator object for values
-    [[nodiscard]] Any values() noexcept;
+    [[nodiscard]] Any values() noexcept { return this->call("values").template as<Any>(); }
 
 #if EM_HAVE_STD_SPAN
     /// Creates TypedArray from std::span

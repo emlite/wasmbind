@@ -1,3 +1,4 @@
+#include <jsbind/String.hpp>
 #include <jsbind/text.hpp>
 
 using namespace jsbind;

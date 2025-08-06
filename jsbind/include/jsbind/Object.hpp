@@ -49,7 +49,9 @@ class Record : public emlite::Val {
     /// Gets property value
     /// @param prop property key
     /// @returns property value converted to type V
-    Result<V, Error> get(const K &prop) const noexcept { return emlite::Val::get(prop).template as<Result<V, Error>>(); }
+    Result<V, Error> get(const K &prop) const noexcept {
+        return emlite::Val::get(prop).template as<Result<V, Error>>();
+    }
 
     /// Checks if object has property (including inherited)
     /// @param prop property key to check
@@ -58,7 +60,20 @@ class Record : public emlite::Val {
 
     /// Gets the size of the object
     /// @returns number of properties in object
-    [[nodiscard]] size_t size() const { return emlite::Val::get("size").template as<size_t>(); }
+    [[nodiscard]] size_t size() const {
+        // JavaScript objects don't have a built-in size, so count enumerable properties using
+        // Object.keys()
+        auto keys = emlite::Val::global("Object").call("keys", *this);
+        return keys.get("length").template as<size_t>();
+    }
+
+    /// Checks if the value is null (=== null)
+    /// @returns true if value is null
+    [[nodiscard]] bool isNull() const noexcept { return emlite::Val::is_null(); }
+
+    /// Checks if the value is undefined (=== undefined)
+    /// @returns true if value is undefined
+    [[nodiscard]] bool isUndefined() const noexcept { return emlite::Val::is_undefined(); }
 };
 
 /// Type alias for generic JavaScript objects with Any keys and values

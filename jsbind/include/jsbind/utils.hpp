@@ -62,10 +62,10 @@ using emlite::some;
     emlite::Val::throw_(error);
     __builtin_unreachable();
 }
-template<typename ...Args>
-emlite::Uniq<char[]> format(const char *fmt, Args...args) {
-    auto sz = snprintf(NULL, 0, fmt, args...) + 1;
-    auto buf = (char *)malloc(sz);
+template <typename... Args>
+emlite::Uniq<char[]> format(const char *fmt, Args... args) {
+    auto sz  = snprintf(NULL, 0, fmt, args...) + 1;
+    auto buf = new char[sz];
     snprintf(buf, sz, fmt, args...);
     return emlite::Uniq<char[]>(buf);
 }

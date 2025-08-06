@@ -1,6 +1,7 @@
 #include <emlite/emlite.hpp>
-#include <jsbind/String.hpp>
+#include <jsbind/Array.hpp>
 #include <jsbind/Error.hpp>
+#include <jsbind/String.hpp>
 
 using namespace jsbind;
 using emlite::Uniq;
@@ -26,7 +27,8 @@ String::String(std::string_view utf8)
 String::String(const std::u16string &utf16) : emlite::Val(utf16.c_str()) {}
 
 String::String(std::u16string_view utf16)
-    : emlite::Val(emlite::Val::take_ownership(emlite_val_make_str_utf16(utf16.data(), utf16.size()))) {}
+    : emlite::Val(emlite::Val::take_ownership(emlite_val_make_str_utf16(utf16.data(), utf16.size()))
+      ) {}
 
 Option<std::string> String::str() const {
     auto temp = Uniq<char[]>.get();
@@ -124,9 +126,13 @@ int String::localeCompare(const char *other) const noexcept {
     return this->call("localeCompare", other).as<int>();
 }
 
-Option<TypedArray<String>> String::match(const Any &pat) const noexcept { return this->call("match", pat).as<Option<TypedArray<String>>>(); }
+Option<TypedArray<String>> String::match(const Any &pat) const noexcept {
+    return this->call("match", pat).as<Option<TypedArray<String>>>();
+}
 
-Option<TypedArray<String>> String::matchAll(const Any &pat) const noexcept { return this->call("matchAll", pat).as<Option<TypedArray<String>>>(); }
+Option<TypedArray<String>> String::matchAll(const Any &pat) const noexcept {
+    return this->call("matchAll", pat).as<Option<TypedArray<String>>>();
+}
 
 Result<String, Error> String::normalize(const char *form) const noexcept {
     if (form) {
@@ -206,6 +212,13 @@ String String::trimStart() const noexcept { return String(this->call("trimStart"
 String String::toString() const noexcept { return String(this->call("toString")); }
 
 String String::valueOf() const noexcept { return String(this->call("valueOf")); }
+
+String String::substr(int from, int length) const noexcept {
+    if (length != -1) {
+        return String(this->call("substr", from, length));
+    }
+    return String(this->call("substr", from));
+}
 
 String operator+(const String &a, const String &b) { return a.call("concat", b).as<String>(); }
 

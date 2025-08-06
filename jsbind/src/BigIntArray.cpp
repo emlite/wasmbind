@@ -1,3 +1,4 @@
+#include <jsbind/Array.hpp>
 #include <jsbind/BigIntArray.hpp>
 
 using namespace jsbind;
