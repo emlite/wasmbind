@@ -27,14 +27,14 @@ Performance performance() {
     return Performance(emlite::Val::global("performance"));
 }
 
-jsbind::Promise<ImageBitmap> createImageBitmap(
+jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>> createImageBitmap(
     const jsbind::Any &image, const jsbind::Object &options
 ) {
     auto result = emlite::Val::global("createImageBitmap")(image, options);
-    return jsbind::Promise<ImageBitmap>(result);
+    return jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>>(result);
 }
 
-jsbind::Promise<ImageBitmap> createImageBitmap(
+jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>> createImageBitmap(
     const jsbind::Any &image,
     double sx,
     double sy,
@@ -45,7 +45,7 @@ jsbind::Promise<ImageBitmap> createImageBitmap(
     auto result = emlite::Val::global("createImageBitmap")(
         image, emlite::Val(sx), emlite::Val(sy), emlite::Val(sw), emlite::Val(sh), options
     );
-    return jsbind::Promise<ImageBitmap>(result);
+    return jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>>(result);
 }
 
 void reportError(const jsbind::Error &error) { emlite::Val::global("reportError")(error); }

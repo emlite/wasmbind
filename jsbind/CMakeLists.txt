@@ -21,6 +21,7 @@ set(JSBIND_SOURCES
     src/Symbol.cpp
     src/BigInt.cpp
     src/BigIntArray.cpp
+    src/Number.cpp
 )
 
 set(JSBIND_HEADERS
@@ -51,6 +52,7 @@ set(JSBIND_HEADERS
     include/jsbind/BigInt.hpp
     include/jsbind/BigIntArray.hpp
     include/jsbind/global.hpp
+    include/jsbind/Number.hpp
 )
 
 target_sources(jsbind 

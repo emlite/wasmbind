@@ -26,6 +26,8 @@
 
 #include "Math.hpp"
 
+#include "Number.hpp"
+
 #include "Date.hpp"
 
 #include "JSON.hpp"

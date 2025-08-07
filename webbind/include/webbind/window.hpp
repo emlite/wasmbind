@@ -16,6 +16,8 @@ using jsbind::atob;
 using jsbind::btoa;
 using jsbind::isNaN;
 using jsbind::queueMicrotask;
+using jsbind::structuredClone;
+using jsbind::JsStructuredSerializeOptions;
 
 /// Get the global Window object
 Window window();
@@ -57,7 +59,7 @@ Performance performance();
 /// @param image the image source to create bitmap from
 /// @param options optional ImageBitmap creation options
 /// @returns Promise resolving to ImageBitmap
-jsbind::Promise<ImageBitmap> createImageBitmap(const jsbind::Any& image, const jsbind::Object& options = jsbind::Object());
+jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>> createImageBitmap(const jsbind::Any& image, const jsbind::Object& options = jsbind::Object());
 
 /// Creates an ImageBitmap from an image source with crop rectangle
 /// @param image the image source to create bitmap from  
@@ -67,13 +69,4 @@ jsbind::Promise<ImageBitmap> createImageBitmap(const jsbind::Any& image, const j
 /// @param sh height of crop rectangle
 /// @param options optional ImageBitmap creation options
 /// @returns Promise resolving to ImageBitmap
-jsbind::Promise<ImageBitmap> createImageBitmap(const jsbind::Any& image, double sx, double sy, double sw, double sh, const jsbind::Object& options = jsbind::Object());
-
-/// Performs a structured clone of a value
-/// @param value the value to clone
-/// @param options optional structured clone options
-/// @returns deep clone of the input value
-template <typename T>
-T structuredClone(const T& value, const StructuredSerializeOptions& options = StructuredSerializeOptions()) {
-    return emlite::Val::global("structuredClone")(value, options).template as<T>();
-}
+jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>> createImageBitmap(const jsbind::Any& image, double sx, double sy, double sw, double sh, const jsbind::Object& options = jsbind::Object());
