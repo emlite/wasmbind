@@ -28,10 +28,13 @@ export function refNames(member) {
     if (typeof t === "object" && t.idlType) scan(t.idlType);
   };
 
-  if (member.type === "attribute") scan(member.idlType);
-  else if (member.type === "operation") {
+  if (member.type === "attribute") {
     scan(member.idlType);
-    member.arguments.forEach((a) => scan(a.idlType));
+  } else if (member.type === "operation") {
+    scan(member.idlType);
+    if (member.arguments) {
+      member.arguments.forEach((a) => scan(a.idlType));
+    }
   } else if (member.type === "constructor") {
     scan(member.idlType);
     if (member.arguments) {
