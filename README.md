@@ -24,6 +24,7 @@ Running `npm install` in the root of the repo will install packages required for
 
 using jsbind::Console;
 using jsbind::Function;
+using namespace webbind;
 
 int main() {
     emlite::init();
