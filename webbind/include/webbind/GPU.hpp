@@ -3,38 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "GPURequestAdapterOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class GPUAdapter;
-class GPURequestAdapterOptions;
 class WGSLLanguageFeatures;
 
-
-class GPURequestAdapterOptions : public emlite::Val {
-  explicit GPURequestAdapterOptions(Handle h) noexcept;
-public:
-    static GPURequestAdapterOptions take_ownership(Handle h) noexcept;
-    explicit GPURequestAdapterOptions(const emlite::Val &val) noexcept;
-    GPURequestAdapterOptions() noexcept;
-    [[nodiscard]] GPURequestAdapterOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String featureLevel() const;
-    void featureLevel(const jsbind::String& value);
-    [[nodiscard]] GPUPowerPreference powerPreference() const;
-    void powerPreference(const GPUPowerPreference& value);
-    [[nodiscard]] bool forceFallbackAdapter() const;
-    void forceFallbackAdapter(bool value);
-    [[nodiscard]] bool xrCompatible() const;
-    void xrCompatible(bool value);
-};
-
-/// The GPU class.
+/// Interface GPU
 /// [`GPU`](https://developer.mozilla.org/en-US/docs/Web/API/GPU)
 class GPU : public emlite::Val {
     explicit GPU(Handle h) noexcept;
-
 public:
     explicit GPU(const emlite::Val &val) noexcept;
     static GPU take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPU clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The requestAdapter method.
@@ -51,3 +34,4 @@ public:
     [[nodiscard]] WGSLLanguageFeatures wgslLanguageFeatures() const;
 };
 
+} // namespace webbind

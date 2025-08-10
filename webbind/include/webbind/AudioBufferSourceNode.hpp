@@ -2,28 +2,29 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "AudioScheduledSourceNode.hpp"
 #include "enums.hpp"
+#include "AudioScheduledSourceNode.hpp"
+#include "AudioBufferSourceOptions.hpp"
 
+namespace webbind {
+
+class BaseAudioContext;
 class AudioBuffer;
 class AudioParam;
 
-
-/// The AudioBufferSourceNode class.
+/// Interface AudioBufferSourceNode
 /// [`AudioBufferSourceNode`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode)
 class AudioBufferSourceNode : public AudioScheduledSourceNode {
     explicit AudioBufferSourceNode(Handle h) noexcept;
-
 public:
     explicit AudioBufferSourceNode(const emlite::Val &val) noexcept;
     static AudioBufferSourceNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioBufferSourceNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioBufferSourceNode(..)` constructor, creating a new AudioBufferSourceNode instance
     AudioBufferSourceNode(const BaseAudioContext& context);
     /// The `new AudioBufferSourceNode(..)` constructor, creating a new AudioBufferSourceNode instance
-    AudioBufferSourceNode(const BaseAudioContext& context, const jsbind::Any& options);
+    AudioBufferSourceNode(const BaseAudioContext& context, const AudioBufferSourceOptions& options);
     /// Getter of the `buffer` attribute.
     /// [`AudioBufferSourceNode.buffer`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/buffer)
     [[nodiscard]] AudioBuffer buffer() const;
@@ -68,3 +69,4 @@ public:
     jsbind::Undefined start(double when, double offset, double duration);
 };
 
+} // namespace webbind

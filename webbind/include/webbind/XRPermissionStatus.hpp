@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PermissionStatus.hpp"
 #include "enums.hpp"
+#include "PermissionStatus.hpp"
 
+namespace webbind {
 
-/// The XRPermissionStatus class.
+/// Interface XRPermissionStatus
 /// [`XRPermissionStatus`](https://developer.mozilla.org/en-US/docs/Web/API/XRPermissionStatus)
 class XRPermissionStatus : public PermissionStatus {
     explicit XRPermissionStatus(Handle h) noexcept;
-
 public:
     explicit XRPermissionStatus(const emlite::Val &val) noexcept;
     static XRPermissionStatus take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRPermissionStatus clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `granted` attribute.
@@ -25,3 +24,4 @@ public:
     void granted(const jsbind::TypedArray<jsbind::String>& value);
 };
 
+} // namespace webbind

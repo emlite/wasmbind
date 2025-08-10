@@ -1,6 +1,7 @@
-#include <webbind/PerformanceLongAnimationFrameTiming.hpp>
-#include <webbind/PerformanceScriptTiming.hpp>
+#include "webbind/PerformanceLongAnimationFrameTiming.hpp"
+#include "webbind/PerformanceScriptTiming.hpp"
 
+namespace webbind {
 
 PerformanceLongAnimationFrameTiming PerformanceLongAnimationFrameTiming::take_ownership(Handle h) noexcept {
         return PerformanceLongAnimationFrameTiming(h);
@@ -9,7 +10,6 @@ PerformanceLongAnimationFrameTiming PerformanceLongAnimationFrameTiming::clone()
 emlite::Val PerformanceLongAnimationFrameTiming::instance() noexcept { return emlite::Val::global("PerformanceLongAnimationFrameTiming"); }
 PerformanceLongAnimationFrameTiming::PerformanceLongAnimationFrameTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceLongAnimationFrameTiming::PerformanceLongAnimationFrameTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
-
 
 jsbind::Any PerformanceLongAnimationFrameTiming::startTime() const {
     return PerformanceEntry::get("startTime").as<jsbind::Any>();
@@ -59,3 +59,5 @@ jsbind::Any PerformanceLongAnimationFrameTiming::presentationTime() const {
     return PerformanceEntry::get("presentationTime").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

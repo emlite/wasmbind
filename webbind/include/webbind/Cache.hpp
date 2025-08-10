@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "BackgroundFetchRegistration.hpp"
 #include "enums.hpp"
+#include "CacheQueryOptions.hpp"
+
+namespace webbind {
 
 class Response;
 class Request;
 
-
-/// The Cache class.
+/// Interface Cache
 /// [`Cache`](https://developer.mozilla.org/en-US/docs/Web/API/Cache)
 class Cache : public emlite::Val {
     explicit Cache(Handle h) noexcept;
-
 public:
     explicit Cache(const emlite::Val &val) noexcept;
     static Cache take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Cache clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The match method.
@@ -61,3 +60,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<Request>> keys(const jsbind::Any& request, const CacheQueryOptions& options);
 };
 
+} // namespace webbind

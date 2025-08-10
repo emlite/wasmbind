@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class ScreenDetailed;
 
-
-/// The ScreenDetails class.
+/// Interface ScreenDetails
 /// [`ScreenDetails`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails)
 class ScreenDetails : public EventTarget {
     explicit ScreenDetails(Handle h) noexcept;
-
 public:
     explicit ScreenDetails(const emlite::Val &val) noexcept;
     static ScreenDetails take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ScreenDetails clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `screens` attribute.
@@ -39,3 +38,4 @@ public:
     void oncurrentscreenchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

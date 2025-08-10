@@ -1,5 +1,6 @@
-#include <webbind/RTCDataChannel.hpp>
+#include "webbind/RTCDataChannel.hpp"
 
+namespace webbind {
 
 RTCDataChannel RTCDataChannel::take_ownership(Handle h) noexcept {
         return RTCDataChannel(h);
@@ -8,7 +9,6 @@ RTCDataChannel RTCDataChannel::clone() const noexcept { return *this; }
 emlite::Val RTCDataChannel::instance() noexcept { return emlite::Val::global("RTCDataChannel"); }
 RTCDataChannel::RTCDataChannel(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 RTCDataChannel::RTCDataChannel(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String RTCDataChannel::label() const {
     return EventTarget::get("label").as<jsbind::String>();
@@ -122,3 +122,5 @@ RTCPriorityType RTCDataChannel::priority() const {
     return EventTarget::get("priority").as<RTCPriorityType>();
 }
 
+
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/StorageEvent.hpp>
-#include <webbind/Storage.hpp>
+#include "webbind/StorageEvent.hpp"
+#include "webbind/StorageEventInit.hpp"
+#include "webbind/Storage.hpp"
 
+namespace webbind {
 
 StorageEvent StorageEvent::take_ownership(Handle h) noexcept {
         return StorageEvent(h);
@@ -10,10 +12,9 @@ emlite::Val StorageEvent::instance() noexcept { return emlite::Val::global("Stor
 StorageEvent::StorageEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 StorageEvent::StorageEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 StorageEvent::StorageEvent(const jsbind::String& type) : Event(emlite::Val::global("StorageEvent").new_(type)) {}
 
-StorageEvent::StorageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("StorageEvent").new_(type, eventInitDict)) {}
+StorageEvent::StorageEvent(const jsbind::String& type, const StorageEventInit& eventInitDict) : Event(emlite::Val::global("StorageEvent").new_(type, eventInitDict)) {}
 
 jsbind::String StorageEvent::key() const {
     return Event::get("key").as<jsbind::String>();
@@ -67,3 +68,5 @@ jsbind::Undefined StorageEvent::initStorageEvent(const jsbind::String& type, boo
     return Event::call("initStorageEvent", type, bubbles, cancelable, key, oldValue, newValue, url, storageArea).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The FontFacePalette class.
+/// Interface FontFacePalette
 /// [`FontFacePalette`](https://developer.mozilla.org/en-US/docs/Web/API/FontFacePalette)
 class FontFacePalette : public emlite::Val {
     explicit FontFacePalette(Handle h) noexcept;
-
 public:
     explicit FontFacePalette(const emlite::Val &val) noexcept;
     static FontFacePalette take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FontFacePalette clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] bool usableWithDarkBackground() const;
 };
 
+} // namespace webbind

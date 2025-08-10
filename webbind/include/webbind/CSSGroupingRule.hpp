@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
+
+namespace webbind {
 
 class CSSRuleList;
 
-
-/// The CSSGroupingRule class.
+/// Interface CSSGroupingRule
 /// [`CSSGroupingRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSGroupingRule)
 class CSSGroupingRule : public CSSRule {
     explicit CSSGroupingRule(Handle h) noexcept;
-
 public:
     explicit CSSGroupingRule(const emlite::Val &val) noexcept;
     static CSSGroupingRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSGroupingRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cssRules` attribute.
@@ -33,3 +32,4 @@ public:
     jsbind::Undefined deleteRule(unsigned long index);
 };
 
+} // namespace webbind

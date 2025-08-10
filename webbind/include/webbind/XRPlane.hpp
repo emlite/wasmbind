@@ -3,20 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class XRSpace;
 class DOMPointReadOnly;
 
-
-/// The XRPlane class.
+/// Interface XRPlane
 /// [`XRPlane`](https://developer.mozilla.org/en-US/docs/Web/API/XRPlane)
 class XRPlane : public emlite::Val {
     explicit XRPlane(Handle h) noexcept;
-
 public:
     explicit XRPlane(const emlite::Val &val) noexcept;
     static XRPlane take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRPlane clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `planeSpace` attribute.
@@ -36,3 +36,4 @@ public:
     [[nodiscard]] jsbind::String semanticLabel() const;
 };
 
+} // namespace webbind

@@ -3,19 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class CryptoKey;
 
-
-/// The SubtleCrypto class.
+/// Interface SubtleCrypto
 /// [`SubtleCrypto`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
 class SubtleCrypto : public emlite::Val {
     explicit SubtleCrypto(Handle h) noexcept;
-
 public:
     explicit SubtleCrypto(const emlite::Val &val) noexcept;
     static SubtleCrypto take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SubtleCrypto clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The encrypt method.
@@ -59,3 +59,4 @@ public:
     jsbind::Promise<CryptoKey> unwrapKey(const KeyFormat& format, const jsbind::Any& wrappedKey, const CryptoKey& unwrappingKey, const jsbind::Any& unwrapAlgorithm, const jsbind::Any& unwrappedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages);
 };
 
+} // namespace webbind

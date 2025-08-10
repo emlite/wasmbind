@@ -2,48 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WorkletAnimationEffect.hpp"
 #include "enums.hpp"
+#include "EffectTiming.hpp"
+#include "ComputedEffectTiming.hpp"
+#include "OptionalEffectTiming.hpp"
 
-class OptionalEffectTiming;
+namespace webbind {
+
 class GroupEffect;
 class AnimationEffect;
 
-
-class OptionalEffectTiming : public emlite::Val {
-  explicit OptionalEffectTiming(Handle h) noexcept;
-public:
-    static OptionalEffectTiming take_ownership(Handle h) noexcept;
-    explicit OptionalEffectTiming(const emlite::Val &val) noexcept;
-    OptionalEffectTiming() noexcept;
-    [[nodiscard]] OptionalEffectTiming clone() const noexcept;
-    [[nodiscard]] double delay() const;
-    void delay(double value);
-    [[nodiscard]] double endDelay() const;
-    void endDelay(double value);
-    [[nodiscard]] FillMode fill() const;
-    void fill(const FillMode& value);
-    [[nodiscard]] double iterationStart() const;
-    void iterationStart(double value);
-    [[nodiscard]] double iterations() const;
-    void iterations(double value);
-    [[nodiscard]] jsbind::Any duration() const;
-    void duration(const jsbind::Any& value);
-    [[nodiscard]] PlaybackDirection direction() const;
-    void direction(const PlaybackDirection& value);
-    [[nodiscard]] jsbind::String easing() const;
-    void easing(const jsbind::String& value);
-};
-
-/// The AnimationEffect class.
+/// Interface AnimationEffect
 /// [`AnimationEffect`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect)
 class AnimationEffect : public emlite::Val {
     explicit AnimationEffect(Handle h) noexcept;
-
 public:
     explicit AnimationEffect(const emlite::Val &val) noexcept;
     static AnimationEffect take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AnimationEffect clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getTiming method.
@@ -81,3 +56,4 @@ public:
     jsbind::Undefined remove();
 };
 
+} // namespace webbind

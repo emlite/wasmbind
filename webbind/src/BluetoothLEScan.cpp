@@ -1,6 +1,7 @@
-#include <webbind/BluetoothLEScan.hpp>
-#include <webbind/BluetoothLEScanFilter.hpp>
+#include "webbind/BluetoothLEScan.hpp"
+#include "webbind/BluetoothLEScanFilter.hpp"
 
+namespace webbind {
 
 BluetoothLEScan BluetoothLEScan::take_ownership(Handle h) noexcept {
         return BluetoothLEScan(h);
@@ -9,7 +10,6 @@ BluetoothLEScan BluetoothLEScan::clone() const noexcept { return *this; }
 emlite::Val BluetoothLEScan::instance() noexcept { return emlite::Val::global("BluetoothLEScan"); }
 BluetoothLEScan::BluetoothLEScan(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothLEScan::BluetoothLEScan(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::TypedArray<BluetoothLEScanFilter> BluetoothLEScan::filters() const {
     return emlite::Val::get("filters").as<jsbind::TypedArray<BluetoothLEScanFilter>>();
@@ -31,3 +31,5 @@ jsbind::Undefined BluetoothLEScan::stop() {
     return emlite::Val::call("stop").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

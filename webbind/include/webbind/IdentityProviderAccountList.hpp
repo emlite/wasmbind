@@ -1,0 +1,23 @@
+#pragma once
+
+#include <emlite/emlite.hpp>
+#include <jsbind/jsbind.hpp>
+#include "enums.hpp"
+#include "IdentityProviderAccount.hpp"
+
+namespace webbind {
+
+/// Dictionary type IdentityProviderAccountList
+/// [`IdentityProviderAccountList`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProviderAccountList)
+class IdentityProviderAccountList : public emlite::Val {
+  explicit IdentityProviderAccountList(Handle h) noexcept;
+public:
+    static IdentityProviderAccountList take_ownership(Handle h) noexcept;
+    explicit IdentityProviderAccountList(const emlite::Val &val) noexcept;
+    IdentityProviderAccountList() noexcept;
+    [[nodiscard]] IdentityProviderAccountList clone() const noexcept;
+    [[nodiscard]] jsbind::TypedArray<IdentityProviderAccount> accounts() const;
+    void accounts(const jsbind::TypedArray<IdentityProviderAccount>& value);
+};
+
+} // namespace webbind

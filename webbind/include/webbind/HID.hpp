@@ -2,35 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "HIDDeviceRequestOptions.hpp"
+
+namespace webbind {
 
 class HIDDevice;
-class HIDDeviceRequestOptions;
 
-
-class HIDDeviceRequestOptions : public emlite::Val {
-  explicit HIDDeviceRequestOptions(Handle h) noexcept;
-public:
-    static HIDDeviceRequestOptions take_ownership(Handle h) noexcept;
-    explicit HIDDeviceRequestOptions(const emlite::Val &val) noexcept;
-    HIDDeviceRequestOptions() noexcept;
-    [[nodiscard]] HIDDeviceRequestOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> filters() const;
-    void filters(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> exclusionFilters() const;
-    void exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-/// The HID class.
+/// Interface HID
 /// [`HID`](https://developer.mozilla.org/en-US/docs/Web/API/HID)
 class HID : public EventTarget {
     explicit HID(Handle h) noexcept;
-
 public:
     explicit HID(const emlite::Val &val) noexcept;
     static HID take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HID clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
@@ -53,3 +39,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<HIDDevice>> requestDevice(const HIDDeviceRequestOptions& options);
 };
 
+} // namespace webbind

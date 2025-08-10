@@ -1,6 +1,7 @@
-#include <webbind/XRDepthInformation.hpp>
-#include <webbind/XRRigidTransform.hpp>
+#include "webbind/XRDepthInformation.hpp"
+#include "webbind/XRRigidTransform.hpp"
 
+namespace webbind {
 
 XRDepthInformation XRDepthInformation::take_ownership(Handle h) noexcept {
         return XRDepthInformation(h);
@@ -9,7 +10,6 @@ XRDepthInformation XRDepthInformation::clone() const noexcept { return *this; }
 emlite::Val XRDepthInformation::instance() noexcept { return emlite::Val::global("XRDepthInformation"); }
 XRDepthInformation::XRDepthInformation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRDepthInformation::XRDepthInformation(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned long XRDepthInformation::width() const {
     return emlite::Val::get("width").as<unsigned long>();
@@ -35,3 +35,5 @@ XRRigidTransform XRDepthInformation::transform() const {
     return emlite::Val::get("transform").as<XRRigidTransform>();
 }
 
+
+} // namespace webbind

@@ -3,21 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "DOMPointInit.hpp"
+
+namespace webbind {
 
 class DOMPointReadOnly;
 class XRRigidTransform;
-class DOMPointInit;
 
-
-/// The XRRigidTransform class.
+/// Interface XRRigidTransform
 /// [`XRRigidTransform`](https://developer.mozilla.org/en-US/docs/Web/API/XRRigidTransform)
 class XRRigidTransform : public emlite::Val {
     explicit XRRigidTransform(Handle h) noexcept;
-
 public:
     explicit XRRigidTransform(const emlite::Val &val) noexcept;
     static XRRigidTransform take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRRigidTransform clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRRigidTransform(..)` constructor, creating a new XRRigidTransform instance
@@ -40,3 +39,4 @@ public:
     [[nodiscard]] XRRigidTransform inverse() const;
 };
 
+} // namespace webbind

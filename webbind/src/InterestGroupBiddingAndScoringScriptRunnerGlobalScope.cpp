@@ -1,7 +1,8 @@
-#include <webbind/InterestGroupBiddingAndScoringScriptRunnerGlobalScope.hpp>
-#include <webbind/ForDebuggingOnly.hpp>
-#include <webbind/RealTimeReporting.hpp>
+#include "webbind/InterestGroupBiddingAndScoringScriptRunnerGlobalScope.hpp"
+#include "webbind/ForDebuggingOnly.hpp"
+#include "webbind/RealTimeReporting.hpp"
 
+namespace webbind {
 
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope InterestGroupBiddingAndScoringScriptRunnerGlobalScope::take_ownership(Handle h) noexcept {
         return InterestGroupBiddingAndScoringScriptRunnerGlobalScope(h);
@@ -11,7 +12,6 @@ emlite::Val InterestGroupBiddingAndScoringScriptRunnerGlobalScope::instance() no
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope::InterestGroupBiddingAndScoringScriptRunnerGlobalScope(Handle h) noexcept : InterestGroupScriptRunnerGlobalScope(emlite::Val::take_ownership(h)) {}
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope::InterestGroupBiddingAndScoringScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupScriptRunnerGlobalScope(val) {}
 
-
 ForDebuggingOnly InterestGroupBiddingAndScoringScriptRunnerGlobalScope::forDebuggingOnly() const {
     return InterestGroupScriptRunnerGlobalScope::get("forDebuggingOnly").as<ForDebuggingOnly>();
 }
@@ -20,3 +20,5 @@ RealTimeReporting InterestGroupBiddingAndScoringScriptRunnerGlobalScope::realTim
     return InterestGroupScriptRunnerGlobalScope::get("realTimeReporting").as<RealTimeReporting>();
 }
 
+
+} // namespace webbind

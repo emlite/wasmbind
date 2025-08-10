@@ -1,154 +1,15 @@
-#include <webbind/WebTransport.hpp>
-#include <webbind/WebTransportDatagramDuplexStream.hpp>
-#include <webbind/WebTransportBidirectionalStream.hpp>
-#include <webbind/ReadableStream.hpp>
-#include <webbind/WebTransportSendStream.hpp>
-#include <webbind/WebTransportSendGroup.hpp>
+#include "webbind/WebTransport.hpp"
+#include "webbind/WebTransportOptions.hpp"
+#include "webbind/WebTransportConnectionStats.hpp"
+#include "webbind/WebTransportCloseInfo.hpp"
+#include "webbind/WebTransportDatagramDuplexStream.hpp"
+#include "webbind/WebTransportBidirectionalStream.hpp"
+#include "webbind/WebTransportSendStreamOptions.hpp"
+#include "webbind/ReadableStream.hpp"
+#include "webbind/WebTransportSendStream.hpp"
+#include "webbind/WebTransportSendGroup.hpp"
 
-
-WebTransportConnectionStats::WebTransportConnectionStats(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebTransportConnectionStats WebTransportConnectionStats::take_ownership(Handle h) noexcept {
-        return WebTransportConnectionStats(h);
-    }
-WebTransportConnectionStats::WebTransportConnectionStats(const emlite::Val &val) noexcept: emlite::Val(val) {}
-WebTransportConnectionStats::WebTransportConnectionStats() noexcept: emlite::Val(emlite::Val::object()) {}
-WebTransportConnectionStats WebTransportConnectionStats::clone() const noexcept { return *this; }
-
-long long WebTransportConnectionStats::bytesSent() const {
-    return emlite::Val::get("bytesSent").as<long long>();
-}
-
-void WebTransportConnectionStats::bytesSent(long long value) {
-    emlite::Val::set("bytesSent", value);
-}
-
-long long WebTransportConnectionStats::packetsSent() const {
-    return emlite::Val::get("packetsSent").as<long long>();
-}
-
-void WebTransportConnectionStats::packetsSent(long long value) {
-    emlite::Val::set("packetsSent", value);
-}
-
-long long WebTransportConnectionStats::bytesLost() const {
-    return emlite::Val::get("bytesLost").as<long long>();
-}
-
-void WebTransportConnectionStats::bytesLost(long long value) {
-    emlite::Val::set("bytesLost", value);
-}
-
-long long WebTransportConnectionStats::packetsLost() const {
-    return emlite::Val::get("packetsLost").as<long long>();
-}
-
-void WebTransportConnectionStats::packetsLost(long long value) {
-    emlite::Val::set("packetsLost", value);
-}
-
-long long WebTransportConnectionStats::bytesReceived() const {
-    return emlite::Val::get("bytesReceived").as<long long>();
-}
-
-void WebTransportConnectionStats::bytesReceived(long long value) {
-    emlite::Val::set("bytesReceived", value);
-}
-
-long long WebTransportConnectionStats::packetsReceived() const {
-    return emlite::Val::get("packetsReceived").as<long long>();
-}
-
-void WebTransportConnectionStats::packetsReceived(long long value) {
-    emlite::Val::set("packetsReceived", value);
-}
-
-jsbind::Any WebTransportConnectionStats::smoothedRtt() const {
-    return emlite::Val::get("smoothedRtt").as<jsbind::Any>();
-}
-
-void WebTransportConnectionStats::smoothedRtt(const jsbind::Any& value) {
-    emlite::Val::set("smoothedRtt", value);
-}
-
-jsbind::Any WebTransportConnectionStats::rttVariation() const {
-    return emlite::Val::get("rttVariation").as<jsbind::Any>();
-}
-
-void WebTransportConnectionStats::rttVariation(const jsbind::Any& value) {
-    emlite::Val::set("rttVariation", value);
-}
-
-jsbind::Any WebTransportConnectionStats::minRtt() const {
-    return emlite::Val::get("minRtt").as<jsbind::Any>();
-}
-
-void WebTransportConnectionStats::minRtt(const jsbind::Any& value) {
-    emlite::Val::set("minRtt", value);
-}
-
-jsbind::Any WebTransportConnectionStats::datagrams() const {
-    return emlite::Val::get("datagrams").as<jsbind::Any>();
-}
-
-void WebTransportConnectionStats::datagrams(const jsbind::Any& value) {
-    emlite::Val::set("datagrams", value);
-}
-
-long long WebTransportConnectionStats::estimatedSendRate() const {
-    return emlite::Val::get("estimatedSendRate").as<long long>();
-}
-
-void WebTransportConnectionStats::estimatedSendRate(long long value) {
-    emlite::Val::set("estimatedSendRate", value);
-}
-
-bool WebTransportConnectionStats::atSendCapacity() const {
-    return emlite::Val::get("atSendCapacity").as<bool>();
-}
-
-void WebTransportConnectionStats::atSendCapacity(bool value) {
-    emlite::Val::set("atSendCapacity", value);
-}
-
-WebTransportCloseInfo::WebTransportCloseInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebTransportCloseInfo WebTransportCloseInfo::take_ownership(Handle h) noexcept {
-        return WebTransportCloseInfo(h);
-    }
-WebTransportCloseInfo::WebTransportCloseInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
-WebTransportCloseInfo::WebTransportCloseInfo() noexcept: emlite::Val(emlite::Val::object()) {}
-WebTransportCloseInfo WebTransportCloseInfo::clone() const noexcept { return *this; }
-
-unsigned long WebTransportCloseInfo::closeCode() const {
-    return emlite::Val::get("closeCode").as<unsigned long>();
-}
-
-void WebTransportCloseInfo::closeCode(unsigned long value) {
-    emlite::Val::set("closeCode", value);
-}
-
-jsbind::String WebTransportCloseInfo::reason() const {
-    return emlite::Val::get("reason").as<jsbind::String>();
-}
-
-void WebTransportCloseInfo::reason(const jsbind::String& value) {
-    emlite::Val::set("reason", value);
-}
-
-WebTransportSendStreamOptions::WebTransportSendStreamOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebTransportSendStreamOptions WebTransportSendStreamOptions::take_ownership(Handle h) noexcept {
-        return WebTransportSendStreamOptions(h);
-    }
-WebTransportSendStreamOptions::WebTransportSendStreamOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-WebTransportSendStreamOptions::WebTransportSendStreamOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-WebTransportSendStreamOptions WebTransportSendStreamOptions::clone() const noexcept { return *this; }
-
-bool WebTransportSendStreamOptions::waitUntilAvailable() const {
-    return emlite::Val::get("waitUntilAvailable").as<bool>();
-}
-
-void WebTransportSendStreamOptions::waitUntilAvailable(bool value) {
-    emlite::Val::set("waitUntilAvailable", value);
-}
+namespace webbind {
 
 WebTransport WebTransport::take_ownership(Handle h) noexcept {
         return WebTransport(h);
@@ -158,10 +19,9 @@ emlite::Val WebTransport::instance() noexcept { return emlite::Val::global("WebT
 WebTransport::WebTransport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransport::WebTransport(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 WebTransport::WebTransport(const jsbind::String& url) : emlite::Val(emlite::Val::global("WebTransport").new_(url)) {}
 
-WebTransport::WebTransport(const jsbind::String& url, const jsbind::Any& options) : emlite::Val(emlite::Val::global("WebTransport").new_(url, options)) {}
+WebTransport::WebTransport(const jsbind::String& url, const WebTransportOptions& options) : emlite::Val(emlite::Val::global("WebTransport").new_(url, options)) {}
 
 jsbind::Promise<WebTransportConnectionStats> WebTransport::getStats() {
     return emlite::Val::call("getStats").as<jsbind::Promise<WebTransportConnectionStats>>();
@@ -259,3 +119,5 @@ bool WebTransport::supportsReliableOnly() {
     return emlite::Val::global("webtransport").get("supportsReliableOnly").as<bool>();
 }
 
+
+} // namespace webbind

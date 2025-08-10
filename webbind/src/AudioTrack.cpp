@@ -1,6 +1,7 @@
-#include <webbind/AudioTrack.hpp>
-#include <webbind/SourceBuffer.hpp>
+#include "webbind/AudioTrack.hpp"
+#include "webbind/SourceBuffer.hpp"
 
+namespace webbind {
 
 AudioTrack AudioTrack::take_ownership(Handle h) noexcept {
         return AudioTrack(h);
@@ -9,7 +10,6 @@ AudioTrack AudioTrack::clone() const noexcept { return *this; }
 emlite::Val AudioTrack::instance() noexcept { return emlite::Val::global("AudioTrack"); }
 AudioTrack::AudioTrack(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioTrack::AudioTrack(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String AudioTrack::id() const {
     return emlite::Val::get("id").as<jsbind::String>();
@@ -39,3 +39,5 @@ SourceBuffer AudioTrack::sourceBuffer() const {
     return emlite::Val::get("sourceBuffer").as<SourceBuffer>();
 }
 
+
+} // namespace webbind

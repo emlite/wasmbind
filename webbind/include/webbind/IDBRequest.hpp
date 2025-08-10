@@ -2,22 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class DOMException;
 class IDBTransaction;
 
-
-/// The IDBRequest class.
+/// Interface IDBRequest
 /// [`IDBRequest`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest)
 class IDBRequest : public EventTarget {
     explicit IDBRequest(Handle h) noexcept;
-
 public:
     explicit IDBRequest(const emlite::Val &val) noexcept;
     static IDBRequest take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IDBRequest clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `result` attribute.
@@ -49,3 +49,4 @@ public:
     void onerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

@@ -1,7 +1,8 @@
-#include <webbind/XRCylinderLayer.hpp>
-#include <webbind/XRSpace.hpp>
-#include <webbind/XRRigidTransform.hpp>
+#include "webbind/XRCylinderLayer.hpp"
+#include "webbind/XRSpace.hpp"
+#include "webbind/XRRigidTransform.hpp"
 
+namespace webbind {
 
 XRCylinderLayer XRCylinderLayer::take_ownership(Handle h) noexcept {
         return XRCylinderLayer(h);
@@ -10,7 +11,6 @@ XRCylinderLayer XRCylinderLayer::clone() const noexcept { return *this; }
 emlite::Val XRCylinderLayer::instance() noexcept { return emlite::Val::global("XRCylinderLayer"); }
 XRCylinderLayer::XRCylinderLayer(Handle h) noexcept : XRCompositionLayer(emlite::Val::take_ownership(h)) {}
 XRCylinderLayer::XRCylinderLayer(const emlite::Val &val) noexcept: XRCompositionLayer(val) {}
-
 
 XRSpace XRCylinderLayer::space() const {
     return XRCompositionLayer::get("space").as<XRSpace>();
@@ -60,3 +60,5 @@ void XRCylinderLayer::onredraw(const jsbind::Any& value) {
     XRCompositionLayer::set("onredraw", value);
 }
 
+
+} // namespace webbind

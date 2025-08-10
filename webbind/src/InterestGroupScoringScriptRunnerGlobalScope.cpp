@@ -1,5 +1,6 @@
-#include <webbind/InterestGroupScoringScriptRunnerGlobalScope.hpp>
+#include "webbind/InterestGroupScoringScriptRunnerGlobalScope.hpp"
 
+namespace webbind {
 
 InterestGroupScoringScriptRunnerGlobalScope InterestGroupScoringScriptRunnerGlobalScope::take_ownership(Handle h) noexcept {
         return InterestGroupScoringScriptRunnerGlobalScope(h);
@@ -10,3 +11,4 @@ InterestGroupScoringScriptRunnerGlobalScope::InterestGroupScoringScriptRunnerGlo
 InterestGroupScoringScriptRunnerGlobalScope::InterestGroupScoringScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupBiddingAndScoringScriptRunnerGlobalScope(val) {}
 
 
+} // namespace webbind

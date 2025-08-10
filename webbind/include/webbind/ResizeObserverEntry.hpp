@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Element;
 class DOMRectReadOnly;
 class ResizeObserverSize;
 
-
-/// The ResizeObserverEntry class.
+/// Interface ResizeObserverEntry
 /// [`ResizeObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)
 class ResizeObserverEntry : public emlite::Val {
     explicit ResizeObserverEntry(Handle h) noexcept;
-
 public:
     explicit ResizeObserverEntry(const emlite::Val &val) noexcept;
     static ResizeObserverEntry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ResizeObserverEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `target` attribute.
@@ -37,3 +36,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<ResizeObserverSize> devicePixelContentBoxSize() const;
 };
 
+} // namespace webbind

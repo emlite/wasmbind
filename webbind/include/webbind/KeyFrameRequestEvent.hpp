@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
 
+namespace webbind {
 
-/// The KeyFrameRequestEvent class.
+/// Interface KeyFrameRequestEvent
 /// [`KeyFrameRequestEvent`](https://developer.mozilla.org/en-US/docs/Web/API/KeyFrameRequestEvent)
 class KeyFrameRequestEvent : public Event {
     explicit KeyFrameRequestEvent(Handle h) noexcept;
-
 public:
     explicit KeyFrameRequestEvent(const emlite::Val &val) noexcept;
     static KeyFrameRequestEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] KeyFrameRequestEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new KeyFrameRequestEvent(..)` constructor, creating a new KeyFrameRequestEvent instance
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] jsbind::String rid() const;
 };
 
+} // namespace webbind

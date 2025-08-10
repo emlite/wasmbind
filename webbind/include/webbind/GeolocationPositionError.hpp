@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GeolocationPositionError class.
+/// Interface GeolocationPositionError
 /// [`GeolocationPositionError`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError)
 class GeolocationPositionError : public emlite::Val {
     explicit GeolocationPositionError(Handle h) noexcept;
-
 public:
     explicit GeolocationPositionError(const emlite::Val &val) noexcept;
     static GeolocationPositionError take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GeolocationPositionError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `code` attribute.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] jsbind::String message() const;
 };
 
+} // namespace webbind

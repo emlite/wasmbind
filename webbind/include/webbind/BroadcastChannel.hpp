@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The BroadcastChannel class.
+/// Interface BroadcastChannel
 /// [`BroadcastChannel`](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel)
 class BroadcastChannel : public EventTarget {
     explicit BroadcastChannel(Handle h) noexcept;
-
 public:
     explicit BroadcastChannel(const emlite::Val &val) noexcept;
     static BroadcastChannel take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BroadcastChannel clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BroadcastChannel(..)` constructor, creating a new BroadcastChannel instance
@@ -42,3 +41,4 @@ public:
     void onmessageerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

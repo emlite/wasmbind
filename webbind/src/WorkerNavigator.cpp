@@ -1,21 +1,19 @@
-#include <webbind/WorkerNavigator.hpp>
-#include <webbind/MediaCapabilities.hpp>
-#include <webbind/Permissions.hpp>
-#include <webbind/Serial.hpp>
-#include <webbind/ServiceWorkerContainer.hpp>
-#include <webbind/HID.hpp>
-#include <webbind/USB.hpp>
-#include <webbind/NetworkInformation.hpp>
-#include <webbind/StorageBucketManager.hpp>
-#include <webbind/StorageManager.hpp>
-#include <webbind/NavigatorUAData.hpp>
-#include <webbind/LockManager.hpp>
-#include <webbind/GPU.hpp>
-#include <webbind/ML.hpp>
+#include "webbind/WorkerNavigator.hpp"
+#include "webbind/MediaCapabilities.hpp"
+#include "webbind/Permissions.hpp"
+#include "webbind/Serial.hpp"
+#include "webbind/ServiceWorkerContainer.hpp"
+#include "webbind/HID.hpp"
+#include "webbind/USB.hpp"
+#include "webbind/NetworkInformation.hpp"
+#include "webbind/StorageBucketManager.hpp"
+#include "webbind/StorageManager.hpp"
+#include "webbind/NavigatorUAData.hpp"
+#include "webbind/LockManager.hpp"
+#include "webbind/GPU.hpp"
+#include "webbind/ML.hpp"
 
-class GPU;
-class ML;
-
+namespace webbind {
 
 WorkerNavigator WorkerNavigator::take_ownership(Handle h) noexcept {
         return WorkerNavigator(h);
@@ -24,7 +22,6 @@ WorkerNavigator WorkerNavigator::clone() const noexcept { return *this; }
 emlite::Val WorkerNavigator::instance() noexcept { return emlite::Val::global("WorkerNavigator"); }
 WorkerNavigator::WorkerNavigator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WorkerNavigator::WorkerNavigator(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 MediaCapabilities WorkerNavigator::mediaCapabilities() const {
     return emlite::Val::get("mediaCapabilities").as<MediaCapabilities>();
@@ -122,3 +119,5 @@ ML WorkerNavigator::ml() const {
     return emlite::Val::get("ml").as<ML>();
 }
 
+
+} // namespace webbind

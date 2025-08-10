@@ -2,9 +2,14 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CharacterData.hpp"
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "CharacterData.hpp"
+#include "BoxQuadOptions.hpp"
+#include "DOMQuadInit.hpp"
+#include "ConvertCoordinateOptions.hpp"
+#include "DOMPointInit.hpp"
+
+namespace webbind {
 
 class Text;
 class DOMQuad;
@@ -12,16 +17,13 @@ class DOMRectReadOnly;
 class DOMPoint;
 class HTMLSlotElement;
 
-
-/// The Text class.
+/// Interface Text
 /// [`Text`](https://developer.mozilla.org/en-US/docs/Web/API/Text)
 class Text : public CharacterData {
     explicit Text(Handle h) noexcept;
-
 public:
     explicit Text(const emlite::Val &val) noexcept;
     static Text take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Text clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Text(..)` constructor, creating a new Text instance
@@ -63,3 +65,4 @@ public:
     [[nodiscard]] HTMLSlotElement assignedSlot() const;
 };
 
+} // namespace webbind

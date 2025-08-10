@@ -1,5 +1,6 @@
-#include <webbind/BluetoothCharacteristicProperties.hpp>
+#include "webbind/BluetoothCharacteristicProperties.hpp"
 
+namespace webbind {
 
 BluetoothCharacteristicProperties BluetoothCharacteristicProperties::take_ownership(Handle h) noexcept {
         return BluetoothCharacteristicProperties(h);
@@ -8,7 +9,6 @@ BluetoothCharacteristicProperties BluetoothCharacteristicProperties::clone() con
 emlite::Val BluetoothCharacteristicProperties::instance() noexcept { return emlite::Val::global("BluetoothCharacteristicProperties"); }
 BluetoothCharacteristicProperties::BluetoothCharacteristicProperties(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothCharacteristicProperties::BluetoothCharacteristicProperties(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 bool BluetoothCharacteristicProperties::broadcast() const {
     return emlite::Val::get("broadcast").as<bool>();
@@ -46,3 +46,5 @@ bool BluetoothCharacteristicProperties::writableAuxiliaries() const {
     return emlite::Val::get("writableAuxiliaries").as<bool>();
 }
 
+
+} // namespace webbind

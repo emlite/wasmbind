@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "MediaSource.hpp"
 #include "enums.hpp"
+#include "MediaSource.hpp"
 
+namespace webbind {
 
-/// The ManagedMediaSource class.
+/// Interface ManagedMediaSource
 /// [`ManagedMediaSource`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource)
 class ManagedMediaSource : public MediaSource {
     explicit ManagedMediaSource(Handle h) noexcept;
-
 public:
     explicit ManagedMediaSource(const emlite::Val &val) noexcept;
     static ManagedMediaSource take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ManagedMediaSource clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ManagedMediaSource(..)` constructor, creating a new ManagedMediaSource instance
@@ -36,3 +35,4 @@ public:
     void onendstreaming(const jsbind::Any& value);
 };
 
+} // namespace webbind

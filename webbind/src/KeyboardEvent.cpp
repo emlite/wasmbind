@@ -1,6 +1,8 @@
-#include <webbind/KeyboardEvent.hpp>
-#include <webbind/Window.hpp>
+#include "webbind/KeyboardEvent.hpp"
+#include "webbind/KeyboardEventInit.hpp"
+#include "webbind/Window.hpp"
 
+namespace webbind {
 
 KeyboardEvent KeyboardEvent::take_ownership(Handle h) noexcept {
         return KeyboardEvent(h);
@@ -10,10 +12,9 @@ emlite::Val KeyboardEvent::instance() noexcept { return emlite::Val::global("Key
 KeyboardEvent::KeyboardEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
 KeyboardEvent::KeyboardEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
-
 KeyboardEvent::KeyboardEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type)) {}
 
-KeyboardEvent::KeyboardEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type, eventInitDict)) {}
+KeyboardEvent::KeyboardEvent(const jsbind::String& type, const KeyboardEventInit& eventInitDict) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type, eventInitDict)) {}
 
 jsbind::String KeyboardEvent::key() const {
     return UIEvent::get("key").as<jsbind::String>();
@@ -103,3 +104,5 @@ unsigned long KeyboardEvent::keyCode() const {
     return UIEvent::get("keyCode").as<unsigned long>();
 }
 
+
+} // namespace webbind

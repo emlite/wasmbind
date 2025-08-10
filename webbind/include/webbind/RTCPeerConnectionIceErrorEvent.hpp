@@ -2,23 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "RTCPeerConnectionIceErrorEventInit.hpp"
 
+namespace webbind {
 
-/// The RTCPeerConnectionIceErrorEvent class.
+/// Interface RTCPeerConnectionIceErrorEvent
 /// [`RTCPeerConnectionIceErrorEvent`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent)
 class RTCPeerConnectionIceErrorEvent : public Event {
     explicit RTCPeerConnectionIceErrorEvent(Handle h) noexcept;
-
 public:
     explicit RTCPeerConnectionIceErrorEvent(const emlite::Val &val) noexcept;
     static RTCPeerConnectionIceErrorEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCPeerConnectionIceErrorEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCPeerConnectionIceErrorEvent(..)` constructor, creating a new RTCPeerConnectionIceErrorEvent instance
-    RTCPeerConnectionIceErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    RTCPeerConnectionIceErrorEvent(const jsbind::String& type, const RTCPeerConnectionIceErrorEventInit& eventInitDict);
     /// Getter of the `address` attribute.
     /// [`RTCPeerConnectionIceErrorEvent.address`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent/address)
     [[nodiscard]] jsbind::String address() const;
@@ -36,3 +36,4 @@ public:
     [[nodiscard]] jsbind::String errorText() const;
 };
 
+} // namespace webbind

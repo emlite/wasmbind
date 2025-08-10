@@ -1,5 +1,6 @@
-#include <webbind/LayoutConstraints.hpp>
+#include "webbind/LayoutConstraints.hpp"
 
+namespace webbind {
 
 LayoutConstraints LayoutConstraints::take_ownership(Handle h) noexcept {
         return LayoutConstraints(h);
@@ -8,7 +9,6 @@ LayoutConstraints LayoutConstraints::clone() const noexcept { return *this; }
 emlite::Val LayoutConstraints::instance() noexcept { return emlite::Val::global("LayoutConstraints"); }
 LayoutConstraints::LayoutConstraints(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LayoutConstraints::LayoutConstraints(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 double LayoutConstraints::availableInlineSize() const {
     return emlite::Val::get("availableInlineSize").as<double>();
@@ -46,3 +46,5 @@ jsbind::Any LayoutConstraints::data() const {
     return emlite::Val::get("data").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

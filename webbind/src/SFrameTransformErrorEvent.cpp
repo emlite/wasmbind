@@ -1,5 +1,7 @@
-#include <webbind/SFrameTransformErrorEvent.hpp>
+#include "webbind/SFrameTransformErrorEvent.hpp"
+#include "webbind/SFrameTransformErrorEventInit.hpp"
 
+namespace webbind {
 
 SFrameTransformErrorEvent SFrameTransformErrorEvent::take_ownership(Handle h) noexcept {
         return SFrameTransformErrorEvent(h);
@@ -9,8 +11,7 @@ emlite::Val SFrameTransformErrorEvent::instance() noexcept { return emlite::Val:
 SFrameTransformErrorEvent::SFrameTransformErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SFrameTransformErrorEvent::SFrameTransformErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-SFrameTransformErrorEvent::SFrameTransformErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SFrameTransformErrorEvent").new_(type, eventInitDict)) {}
+SFrameTransformErrorEvent::SFrameTransformErrorEvent(const jsbind::String& type, const SFrameTransformErrorEventInit& eventInitDict) : Event(emlite::Val::global("SFrameTransformErrorEvent").new_(type, eventInitDict)) {}
 
 SFrameTransformErrorEventType SFrameTransformErrorEvent::errorType() const {
     return Event::get("errorType").as<SFrameTransformErrorEventType>();
@@ -24,3 +25,5 @@ jsbind::Any SFrameTransformErrorEvent::frame() const {
     return Event::get("frame").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

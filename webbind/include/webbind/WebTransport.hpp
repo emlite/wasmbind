@@ -3,89 +3,33 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "WebTransportOptions.hpp"
+#include "WebTransportConnectionStats.hpp"
+#include "WebTransportCloseInfo.hpp"
+#include "WebTransportSendStreamOptions.hpp"
+#include "enums.hpp"
 
-class WebTransportConnectionStats;
-class WebTransportCloseInfo;
+namespace webbind {
+
 class WebTransportDatagramDuplexStream;
 class WebTransportBidirectionalStream;
-class WebTransportSendStreamOptions;
 class ReadableStream;
 class WebTransportSendStream;
 class WebTransportSendGroup;
 
-
-class WebTransportConnectionStats : public emlite::Val {
-  explicit WebTransportConnectionStats(Handle h) noexcept;
-public:
-    static WebTransportConnectionStats take_ownership(Handle h) noexcept;
-    explicit WebTransportConnectionStats(const emlite::Val &val) noexcept;
-    WebTransportConnectionStats() noexcept;
-    [[nodiscard]] WebTransportConnectionStats clone() const noexcept;
-    [[nodiscard]] long long bytesSent() const;
-    void bytesSent(long long value);
-    [[nodiscard]] long long packetsSent() const;
-    void packetsSent(long long value);
-    [[nodiscard]] long long bytesLost() const;
-    void bytesLost(long long value);
-    [[nodiscard]] long long packetsLost() const;
-    void packetsLost(long long value);
-    [[nodiscard]] long long bytesReceived() const;
-    void bytesReceived(long long value);
-    [[nodiscard]] long long packetsReceived() const;
-    void packetsReceived(long long value);
-    [[nodiscard]] jsbind::Any smoothedRtt() const;
-    void smoothedRtt(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any rttVariation() const;
-    void rttVariation(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any minRtt() const;
-    void minRtt(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any datagrams() const;
-    void datagrams(const jsbind::Any& value);
-    [[nodiscard]] long long estimatedSendRate() const;
-    void estimatedSendRate(long long value);
-    [[nodiscard]] bool atSendCapacity() const;
-    void atSendCapacity(bool value);
-};
-
-class WebTransportCloseInfo : public emlite::Val {
-  explicit WebTransportCloseInfo(Handle h) noexcept;
-public:
-    static WebTransportCloseInfo take_ownership(Handle h) noexcept;
-    explicit WebTransportCloseInfo(const emlite::Val &val) noexcept;
-    WebTransportCloseInfo() noexcept;
-    [[nodiscard]] WebTransportCloseInfo clone() const noexcept;
-    [[nodiscard]] unsigned long closeCode() const;
-    void closeCode(unsigned long value);
-    [[nodiscard]] jsbind::String reason() const;
-    void reason(const jsbind::String& value);
-};
-
-class WebTransportSendStreamOptions : public emlite::Val {
-  explicit WebTransportSendStreamOptions(Handle h) noexcept;
-public:
-    static WebTransportSendStreamOptions take_ownership(Handle h) noexcept;
-    explicit WebTransportSendStreamOptions(const emlite::Val &val) noexcept;
-    WebTransportSendStreamOptions() noexcept;
-    [[nodiscard]] WebTransportSendStreamOptions clone() const noexcept;
-    [[nodiscard]] bool waitUntilAvailable() const;
-    void waitUntilAvailable(bool value);
-};
-
-/// The WebTransport class.
+/// Interface WebTransport
 /// [`WebTransport`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport)
 class WebTransport : public emlite::Val {
     explicit WebTransport(Handle h) noexcept;
-
 public:
     explicit WebTransport(const emlite::Val &val) noexcept;
     static WebTransport take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebTransport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WebTransport(..)` constructor, creating a new WebTransport instance
     WebTransport(const jsbind::String& url);
     /// The `new WebTransport(..)` constructor, creating a new WebTransport instance
-    WebTransport(const jsbind::String& url, const jsbind::Any& options);
+    WebTransport(const jsbind::String& url, const WebTransportOptions& options);
     /// The getStats method.
     /// [`WebTransport.getStats`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport/getStats)
     jsbind::Promise<WebTransportConnectionStats> getStats();
@@ -160,3 +104,4 @@ public:
     [[nodiscard]] static bool supportsReliableOnly();
 };
 
+} // namespace webbind

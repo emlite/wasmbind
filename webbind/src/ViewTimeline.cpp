@@ -1,7 +1,9 @@
-#include <webbind/ViewTimeline.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/CSSNumericValue.hpp>
+#include "webbind/ViewTimeline.hpp"
+#include "webbind/ViewTimelineOptions.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/CSSNumericValue.hpp"
 
+namespace webbind {
 
 ViewTimeline ViewTimeline::take_ownership(Handle h) noexcept {
         return ViewTimeline(h);
@@ -11,10 +13,9 @@ emlite::Val ViewTimeline::instance() noexcept { return emlite::Val::global("View
 ViewTimeline::ViewTimeline(Handle h) noexcept : ScrollTimeline(emlite::Val::take_ownership(h)) {}
 ViewTimeline::ViewTimeline(const emlite::Val &val) noexcept: ScrollTimeline(val) {}
 
-
 ViewTimeline::ViewTimeline() : ScrollTimeline(emlite::Val::global("ViewTimeline").new_()) {}
 
-ViewTimeline::ViewTimeline(const jsbind::Any& options) : ScrollTimeline(emlite::Val::global("ViewTimeline").new_(options)) {}
+ViewTimeline::ViewTimeline(const ViewTimelineOptions& options) : ScrollTimeline(emlite::Val::global("ViewTimeline").new_(options)) {}
 
 Element ViewTimeline::subject() const {
     return ScrollTimeline::get("subject").as<Element>();
@@ -28,3 +29,5 @@ CSSNumericValue ViewTimeline::endOffset() const {
     return ScrollTimeline::get("endOffset").as<CSSNumericValue>();
 }
 
+
+} // namespace webbind

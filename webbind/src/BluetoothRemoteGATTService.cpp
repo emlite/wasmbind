@@ -1,7 +1,9 @@
-#include <webbind/BluetoothRemoteGATTService.hpp>
-#include <webbind/BluetoothDevice.hpp>
-#include <webbind/BluetoothRemoteGATTCharacteristic.hpp>
+#include "webbind/BluetoothRemoteGATTService.hpp"
+#include "webbind/BluetoothDevice.hpp"
+#include "webbind/BluetoothRemoteGATTCharacteristic.hpp"
+#include "webbind/BluetoothRemoteGATTService.hpp"
 
+namespace webbind {
 
 BluetoothRemoteGATTService BluetoothRemoteGATTService::take_ownership(Handle h) noexcept {
         return BluetoothRemoteGATTService(h);
@@ -10,7 +12,6 @@ BluetoothRemoteGATTService BluetoothRemoteGATTService::clone() const noexcept { 
 emlite::Val BluetoothRemoteGATTService::instance() noexcept { return emlite::Val::global("BluetoothRemoteGATTService"); }
 BluetoothRemoteGATTService::BluetoothRemoteGATTService(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BluetoothRemoteGATTService::BluetoothRemoteGATTService(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 BluetoothDevice BluetoothRemoteGATTService::device() const {
     return EventTarget::get("device").as<BluetoothDevice>();
@@ -80,3 +81,5 @@ void BluetoothRemoteGATTService::onserviceremoved(const jsbind::Any& value) {
     EventTarget::set("onserviceremoved", value);
 }
 
+
+} // namespace webbind

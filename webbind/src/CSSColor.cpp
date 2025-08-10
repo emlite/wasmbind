@@ -1,5 +1,6 @@
-#include <webbind/CSSColor.hpp>
+#include "webbind/CSSColor.hpp"
 
+namespace webbind {
 
 CSSColor CSSColor::take_ownership(Handle h) noexcept {
         return CSSColor(h);
@@ -8,7 +9,6 @@ CSSColor CSSColor::clone() const noexcept { return *this; }
 emlite::Val CSSColor::instance() noexcept { return emlite::Val::global("CSSColor"); }
 CSSColor::CSSColor(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
 CSSColor::CSSColor(const emlite::Val &val) noexcept: CSSColorValue(val) {}
-
 
 CSSColor::CSSColor(const jsbind::Any& colorSpace, const jsbind::TypedArray<jsbind::Any>& channels) : CSSColorValue(emlite::Val::global("CSSColor").new_(colorSpace, channels)) {}
 
@@ -38,3 +38,5 @@ void CSSColor::alpha(const jsbind::Any& value) {
     CSSColorValue::set("alpha", value);
 }
 
+
+} // namespace webbind

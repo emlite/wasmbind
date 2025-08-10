@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SVGPreserveAspectRatio;
 
-
-/// The SVGAnimatedPreserveAspectRatio class.
+/// Interface SVGAnimatedPreserveAspectRatio
 /// [`SVGAnimatedPreserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedPreserveAspectRatio)
 class SVGAnimatedPreserveAspectRatio : public emlite::Val {
     explicit SVGAnimatedPreserveAspectRatio(Handle h) noexcept;
-
 public:
     explicit SVGAnimatedPreserveAspectRatio(const emlite::Val &val) noexcept;
     static SVGAnimatedPreserveAspectRatio take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimatedPreserveAspectRatio clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] SVGPreserveAspectRatio animVal() const;
 };
 
+} // namespace webbind

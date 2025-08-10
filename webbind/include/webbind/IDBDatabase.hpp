@@ -2,49 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "IDBTransactionOptions.hpp"
+#include "IDBObjectStoreParameters.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class DOMStringList;
 class IDBTransaction;
-class IDBTransactionOptions;
 class IDBObjectStore;
-class IDBObjectStoreParameters;
 
-
-class IDBTransactionOptions : public emlite::Val {
-  explicit IDBTransactionOptions(Handle h) noexcept;
-public:
-    static IDBTransactionOptions take_ownership(Handle h) noexcept;
-    explicit IDBTransactionOptions(const emlite::Val &val) noexcept;
-    IDBTransactionOptions() noexcept;
-    [[nodiscard]] IDBTransactionOptions clone() const noexcept;
-    [[nodiscard]] IDBTransactionDurability durability() const;
-    void durability(const IDBTransactionDurability& value);
-};
-
-class IDBObjectStoreParameters : public emlite::Val {
-  explicit IDBObjectStoreParameters(Handle h) noexcept;
-public:
-    static IDBObjectStoreParameters take_ownership(Handle h) noexcept;
-    explicit IDBObjectStoreParameters(const emlite::Val &val) noexcept;
-    IDBObjectStoreParameters() noexcept;
-    [[nodiscard]] IDBObjectStoreParameters clone() const noexcept;
-    [[nodiscard]] jsbind::Any keyPath() const;
-    void keyPath(const jsbind::Any& value);
-    [[nodiscard]] bool autoIncrement() const;
-    void autoIncrement(bool value);
-};
-
-/// The IDBDatabase class.
+/// Interface IDBDatabase
 /// [`IDBDatabase`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase)
 class IDBDatabase : public EventTarget {
     explicit IDBDatabase(Handle h) noexcept;
-
 public:
     explicit IDBDatabase(const emlite::Val &val) noexcept;
     static IDBDatabase take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IDBDatabase clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -103,3 +79,4 @@ public:
     void onversionchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

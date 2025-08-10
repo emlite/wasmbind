@@ -1,9 +1,10 @@
-#include <webbind/ServiceWorkerGlobalScope.hpp>
-#include <webbind/Clients.hpp>
-#include <webbind/ServiceWorkerRegistration.hpp>
-#include <webbind/ServiceWorker.hpp>
-#include <webbind/CookieStore.hpp>
+#include "webbind/ServiceWorkerGlobalScope.hpp"
+#include "webbind/Clients.hpp"
+#include "webbind/ServiceWorkerRegistration.hpp"
+#include "webbind/ServiceWorker.hpp"
+#include "webbind/CookieStore.hpp"
 
+namespace webbind {
 
 ServiceWorkerGlobalScope ServiceWorkerGlobalScope::take_ownership(Handle h) noexcept {
         return ServiceWorkerGlobalScope(h);
@@ -12,7 +13,6 @@ ServiceWorkerGlobalScope ServiceWorkerGlobalScope::clone() const noexcept { retu
 emlite::Val ServiceWorkerGlobalScope::instance() noexcept { return emlite::Val::global("ServiceWorkerGlobalScope"); }
 ServiceWorkerGlobalScope::ServiceWorkerGlobalScope(Handle h) noexcept : WorkerGlobalScope(emlite::Val::take_ownership(h)) {}
 ServiceWorkerGlobalScope::ServiceWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
-
 
 Clients ServiceWorkerGlobalScope::clients() const {
     return WorkerGlobalScope::get("clients").as<Clients>();
@@ -186,3 +186,5 @@ void ServiceWorkerGlobalScope::onpushsubscriptionchange(const jsbind::Any& value
     WorkerGlobalScope::set("onpushsubscriptionchange", value);
 }
 
+
+} // namespace webbind

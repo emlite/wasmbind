@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The VideoPlaybackQuality class.
+/// Interface VideoPlaybackQuality
 /// [`VideoPlaybackQuality`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality)
 class VideoPlaybackQuality : public emlite::Val {
     explicit VideoPlaybackQuality(Handle h) noexcept;
-
 public:
     explicit VideoPlaybackQuality(const emlite::Val &val) noexcept;
     static VideoPlaybackQuality take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VideoPlaybackQuality clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `creationTime` attribute.
@@ -30,3 +29,4 @@ public:
     [[nodiscard]] unsigned long corruptedVideoFrames() const;
 };
 
+} // namespace webbind

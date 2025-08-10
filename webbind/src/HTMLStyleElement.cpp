@@ -1,7 +1,8 @@
-#include <webbind/HTMLStyleElement.hpp>
-#include <webbind/DOMTokenList.hpp>
-#include <webbind/CSSStyleSheet.hpp>
+#include "webbind/HTMLStyleElement.hpp"
+#include "webbind/DOMTokenList.hpp"
+#include "webbind/CSSStyleSheet.hpp"
 
+namespace webbind {
 
 HTMLStyleElement HTMLStyleElement::take_ownership(Handle h) noexcept {
         return HTMLStyleElement(h);
@@ -10,7 +11,6 @@ HTMLStyleElement HTMLStyleElement::clone() const noexcept { return *this; }
 emlite::Val HTMLStyleElement::instance() noexcept { return emlite::Val::global("HTMLStyleElement"); }
 HTMLStyleElement::HTMLStyleElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLStyleElement::HTMLStyleElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLStyleElement::HTMLStyleElement() : HTMLElement(emlite::Val::global("HTMLStyleElement").new_()) {}
 
@@ -46,3 +46,5 @@ CSSStyleSheet HTMLStyleElement::sheet() const {
     return HTMLElement::get("sheet").as<CSSStyleSheet>();
 }
 
+
+} // namespace webbind

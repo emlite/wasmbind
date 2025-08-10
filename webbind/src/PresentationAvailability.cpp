@@ -1,5 +1,6 @@
-#include <webbind/PresentationAvailability.hpp>
+#include "webbind/PresentationAvailability.hpp"
 
+namespace webbind {
 
 PresentationAvailability PresentationAvailability::take_ownership(Handle h) noexcept {
         return PresentationAvailability(h);
@@ -8,7 +9,6 @@ PresentationAvailability PresentationAvailability::clone() const noexcept { retu
 emlite::Val PresentationAvailability::instance() noexcept { return emlite::Val::global("PresentationAvailability"); }
 PresentationAvailability::PresentationAvailability(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PresentationAvailability::PresentationAvailability(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 bool PresentationAvailability::value() const {
     return EventTarget::get("value").as<bool>();
@@ -22,3 +22,5 @@ void PresentationAvailability::onchange(const jsbind::Any& value) {
     EventTarget::set("onchange", value);
 }
 
+
+} // namespace webbind

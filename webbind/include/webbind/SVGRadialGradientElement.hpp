@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGradientElement.hpp"
 #include "enums.hpp"
+#include "SVGGradientElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 
-
-/// The SVGRadialGradientElement class.
+/// Interface SVGRadialGradientElement
 /// [`SVGRadialGradientElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement)
 class SVGRadialGradientElement : public SVGGradientElement {
     explicit SVGRadialGradientElement(Handle h) noexcept;
-
 public:
     explicit SVGRadialGradientElement(const emlite::Val &val) noexcept;
     static SVGRadialGradientElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGRadialGradientElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cx` attribute.
@@ -39,3 +38,4 @@ public:
     [[nodiscard]] SVGAnimatedLength fr() const;
 };
 
+} // namespace webbind

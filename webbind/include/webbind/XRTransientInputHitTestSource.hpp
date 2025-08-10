@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The XRTransientInputHitTestSource class.
+/// Interface XRTransientInputHitTestSource
 /// [`XRTransientInputHitTestSource`](https://developer.mozilla.org/en-US/docs/Web/API/XRTransientInputHitTestSource)
 class XRTransientInputHitTestSource : public emlite::Val {
     explicit XRTransientInputHitTestSource(Handle h) noexcept;
-
 public:
     explicit XRTransientInputHitTestSource(const emlite::Val &val) noexcept;
     static XRTransientInputHitTestSource take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRTransientInputHitTestSource clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The cancel method.
@@ -21,3 +20,4 @@ public:
     jsbind::Undefined cancel();
 };
 
+} // namespace webbind

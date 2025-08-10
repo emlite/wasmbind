@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XRCompositionLayer.hpp"
 #include "enums.hpp"
+#include "XRCompositionLayer.hpp"
+
+namespace webbind {
 
 class XRSpace;
 class DOMPointReadOnly;
 
-
-/// The XRCubeLayer class.
+/// Interface XRCubeLayer
 /// [`XRCubeLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer)
 class XRCubeLayer : public XRCompositionLayer {
     explicit XRCubeLayer(Handle h) noexcept;
-
 public:
     explicit XRCubeLayer(const emlite::Val &val) noexcept;
     static XRCubeLayer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRCubeLayer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `space` attribute.
@@ -40,3 +39,4 @@ public:
     void onredraw(const jsbind::Any& value);
 };
 
+} // namespace webbind

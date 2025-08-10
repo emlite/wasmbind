@@ -1,7 +1,8 @@
-#include <webbind/SVGAElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/DOMTokenList.hpp>
+#include "webbind/SVGAElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/DOMTokenList.hpp"
 
+namespace webbind {
 
 SVGAElement SVGAElement::take_ownership(Handle h) noexcept {
         return SVGAElement(h);
@@ -10,7 +11,6 @@ SVGAElement SVGAElement::clone() const noexcept { return *this; }
 emlite::Val SVGAElement::instance() noexcept { return emlite::Val::global("SVGAElement"); }
 SVGAElement::SVGAElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
 SVGAElement::SVGAElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
-
 
 SVGAnimatedString SVGAElement::target() const {
     return SVGGraphicsElement::get("target").as<SVGAnimatedString>();
@@ -156,3 +156,5 @@ SVGAnimatedString SVGAElement::href() const {
     return SVGGraphicsElement::get("href").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

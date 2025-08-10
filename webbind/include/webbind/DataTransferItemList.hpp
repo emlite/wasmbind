@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class DataTransferItem;
 class File;
 
-
-/// The DataTransferItemList class.
+/// Interface DataTransferItemList
 /// [`DataTransferItemList`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList)
 class DataTransferItemList : public emlite::Val {
     explicit DataTransferItemList(Handle h) noexcept;
-
 public:
     explicit DataTransferItemList(const emlite::Val &val) noexcept;
     static DataTransferItemList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DataTransferItemList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -33,3 +32,4 @@ public:
     jsbind::Undefined clear();
 };
 
+} // namespace webbind

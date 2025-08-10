@@ -1,5 +1,6 @@
-#include <webbind/NetworkInformation.hpp>
+#include "webbind/NetworkInformation.hpp"
 
+namespace webbind {
 
 NetworkInformation NetworkInformation::take_ownership(Handle h) noexcept {
         return NetworkInformation(h);
@@ -8,7 +9,6 @@ NetworkInformation NetworkInformation::clone() const noexcept { return *this; }
 emlite::Val NetworkInformation::instance() noexcept { return emlite::Val::global("NetworkInformation"); }
 NetworkInformation::NetworkInformation(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 NetworkInformation::NetworkInformation(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 ConnectionType NetworkInformation::type() const {
     return EventTarget::get("type").as<ConnectionType>();
@@ -42,3 +42,5 @@ bool NetworkInformation::saveData() const {
     return EventTarget::get("saveData").as<bool>();
 }
 
+
+} // namespace webbind

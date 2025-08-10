@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The MIDIInputMap class.
+/// Interface MIDIInputMap
 /// [`MIDIInputMap`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIInputMap)
 class MIDIInputMap : public emlite::Val {
     explicit MIDIInputMap(Handle h) noexcept;
-
 public:
     explicit MIDIInputMap(const emlite::Val &val) noexcept;
     static MIDIInputMap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MIDIInputMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

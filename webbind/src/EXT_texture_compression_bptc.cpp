@@ -1,5 +1,6 @@
-#include <webbind/EXT_texture_compression_bptc.hpp>
+#include "webbind/EXT_texture_compression_bptc.hpp"
 
+namespace webbind {
 
 EXT_texture_compression_bptc EXT_texture_compression_bptc::take_ownership(Handle h) noexcept {
         return EXT_texture_compression_bptc(h);
@@ -10,3 +11,4 @@ EXT_texture_compression_bptc::EXT_texture_compression_bptc(Handle h) noexcept : 
 EXT_texture_compression_bptc::EXT_texture_compression_bptc(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

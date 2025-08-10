@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class DOMTokenList;
 class Document;
 class PermissionsPolicy;
 
-
-/// The HTMLIFrameElement class.
+/// Interface HTMLIFrameElement
 /// [`HTMLIFrameElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement)
 class HTMLIFrameElement : public HTMLElement {
     explicit HTMLIFrameElement(Handle h) noexcept;
-
 public:
     explicit HTMLIFrameElement(const emlite::Val &val) noexcept;
     static HTMLIFrameElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLIFrameElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLIFrameElement(..)` constructor, creating a new HTMLIFrameElement instance
@@ -160,3 +159,4 @@ public:
     void sharedStorageWritable(bool value);
 };
 
+} // namespace webbind

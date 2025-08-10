@@ -1,7 +1,10 @@
-#include <webbind/CSSStyleSheet.hpp>
-#include <webbind/CSSRule.hpp>
-#include <webbind/CSSRuleList.hpp>
+#include "webbind/CSSStyleSheet.hpp"
+#include "webbind/CSSStyleSheetInit.hpp"
+#include "webbind/CSSRule.hpp"
+#include "webbind/CSSRuleList.hpp"
+#include "webbind/CSSStyleSheet.hpp"
 
+namespace webbind {
 
 CSSStyleSheet CSSStyleSheet::take_ownership(Handle h) noexcept {
         return CSSStyleSheet(h);
@@ -11,10 +14,9 @@ emlite::Val CSSStyleSheet::instance() noexcept { return emlite::Val::global("CSS
 CSSStyleSheet::CSSStyleSheet(Handle h) noexcept : StyleSheet(emlite::Val::take_ownership(h)) {}
 CSSStyleSheet::CSSStyleSheet(const emlite::Val &val) noexcept: StyleSheet(val) {}
 
-
 CSSStyleSheet::CSSStyleSheet() : StyleSheet(emlite::Val::global("CSSStyleSheet").new_()) {}
 
-CSSStyleSheet::CSSStyleSheet(const jsbind::Any& options) : StyleSheet(emlite::Val::global("CSSStyleSheet").new_(options)) {}
+CSSStyleSheet::CSSStyleSheet(const CSSStyleSheetInit& options) : StyleSheet(emlite::Val::global("CSSStyleSheet").new_(options)) {}
 
 CSSRule CSSStyleSheet::ownerRule() const {
     return StyleSheet::get("ownerRule").as<CSSRule>();
@@ -72,3 +74,5 @@ jsbind::Undefined CSSStyleSheet::removeRule(unsigned long index) {
     return StyleSheet::call("removeRule", index).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

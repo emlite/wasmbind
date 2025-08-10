@@ -1,6 +1,7 @@
-#include <webbind/CSSFontFaceRule.hpp>
-#include <webbind/CSSFontFaceDescriptors.hpp>
+#include "webbind/CSSFontFaceRule.hpp"
+#include "webbind/CSSFontFaceDescriptors.hpp"
 
+namespace webbind {
 
 CSSFontFaceRule CSSFontFaceRule::take_ownership(Handle h) noexcept {
         return CSSFontFaceRule(h);
@@ -10,8 +11,9 @@ emlite::Val CSSFontFaceRule::instance() noexcept { return emlite::Val::global("C
 CSSFontFaceRule::CSSFontFaceRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
 CSSFontFaceRule::CSSFontFaceRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
-
 CSSFontFaceDescriptors CSSFontFaceRule::style() const {
     return CSSRule::get("style").as<CSSFontFaceDescriptors>();
 }
 
+
+} // namespace webbind

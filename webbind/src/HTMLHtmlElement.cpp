@@ -1,5 +1,6 @@
-#include <webbind/HTMLHtmlElement.hpp>
+#include "webbind/HTMLHtmlElement.hpp"
 
+namespace webbind {
 
 HTMLHtmlElement HTMLHtmlElement::take_ownership(Handle h) noexcept {
         return HTMLHtmlElement(h);
@@ -8,7 +9,6 @@ HTMLHtmlElement HTMLHtmlElement::clone() const noexcept { return *this; }
 emlite::Val HTMLHtmlElement::instance() noexcept { return emlite::Val::global("HTMLHtmlElement"); }
 HTMLHtmlElement::HTMLHtmlElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLHtmlElement::HTMLHtmlElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLHtmlElement::HTMLHtmlElement() : HTMLElement(emlite::Val::global("HTMLHtmlElement").new_()) {}
 
@@ -20,3 +20,5 @@ void HTMLHtmlElement::version(const jsbind::String& value) {
     HTMLElement::set("version", value);
 }
 
+
+} // namespace webbind

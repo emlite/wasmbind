@@ -1,5 +1,6 @@
-#include <webbind/InterestGroupReportingScriptRunnerGlobalScope.hpp>
+#include "webbind/InterestGroupReportingScriptRunnerGlobalScope.hpp"
 
+namespace webbind {
 
 InterestGroupReportingScriptRunnerGlobalScope InterestGroupReportingScriptRunnerGlobalScope::take_ownership(Handle h) noexcept {
         return InterestGroupReportingScriptRunnerGlobalScope(h);
@@ -8,7 +9,6 @@ InterestGroupReportingScriptRunnerGlobalScope InterestGroupReportingScriptRunner
 emlite::Val InterestGroupReportingScriptRunnerGlobalScope::instance() noexcept { return emlite::Val::global("InterestGroupReportingScriptRunnerGlobalScope"); }
 InterestGroupReportingScriptRunnerGlobalScope::InterestGroupReportingScriptRunnerGlobalScope(Handle h) noexcept : InterestGroupScriptRunnerGlobalScope(emlite::Val::take_ownership(h)) {}
 InterestGroupReportingScriptRunnerGlobalScope::InterestGroupReportingScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupScriptRunnerGlobalScope(val) {}
-
 
 jsbind::Undefined InterestGroupReportingScriptRunnerGlobalScope::sendReportTo(const jsbind::String& url) {
     return InterestGroupScriptRunnerGlobalScope::call("sendReportTo", url).as<jsbind::Undefined>();
@@ -22,3 +22,5 @@ jsbind::Undefined InterestGroupReportingScriptRunnerGlobalScope::registerAdMacro
     return InterestGroupScriptRunnerGlobalScope::call("registerAdMacro", name, value).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

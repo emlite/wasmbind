@@ -2,8 +2,11 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "HTMLElement.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class MediaError;
 class TimeRanges;
@@ -15,16 +18,13 @@ class MediaKeys;
 class MediaStream;
 class RemotePlayback;
 
-
-/// The HTMLMediaElement class.
+/// Interface HTMLMediaElement
 /// [`HTMLMediaElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement)
 class HTMLMediaElement : public HTMLElement {
     explicit HTMLMediaElement(Handle h) noexcept;
-
 public:
     explicit HTMLMediaElement(const emlite::Val &val) noexcept;
     static HTMLMediaElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLMediaElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `error` attribute.
@@ -218,3 +218,4 @@ public:
     void disableRemotePlayback(bool value);
 };
 
+} // namespace webbind

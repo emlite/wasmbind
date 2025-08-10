@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 class SVGAnimatedString;
 
-
-/// The SVGFEFloodElement class.
+/// Interface SVGFEFloodElement
 /// [`SVGFEFloodElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEFloodElement)
 class SVGFEFloodElement : public SVGElement {
     explicit SVGFEFloodElement(Handle h) noexcept;
-
 public:
     explicit SVGFEFloodElement(const emlite::Val &val) noexcept;
     static SVGFEFloodElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEFloodElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -37,3 +36,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLCollection.hpp"
 #include "enums.hpp"
+#include "HTMLCollection.hpp"
+
+namespace webbind {
 
 class HTMLOptionElement;
 
-
-/// The HTMLOptionsCollection class.
+/// Interface HTMLOptionsCollection
 /// [`HTMLOptionsCollection`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionsCollection)
 class HTMLOptionsCollection : public HTMLCollection {
     explicit HTMLOptionsCollection(Handle h) noexcept;
-
 public:
     explicit HTMLOptionsCollection(const emlite::Val &val) noexcept;
     static HTMLOptionsCollection take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLOptionsCollection clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -42,3 +41,4 @@ public:
     void selectedIndex(long value);
 };
 
+} // namespace webbind

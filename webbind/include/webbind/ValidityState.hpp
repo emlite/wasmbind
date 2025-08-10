@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ValidityState class.
+/// Interface ValidityState
 /// [`ValidityState`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
 class ValidityState : public emlite::Val {
     explicit ValidityState(Handle h) noexcept;
-
 public:
     explicit ValidityState(const emlite::Val &val) noexcept;
     static ValidityState take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ValidityState clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `valueMissing` attribute.
@@ -51,3 +50,4 @@ public:
     [[nodiscard]] bool valid() const;
 };
 
+} // namespace webbind

@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "ErrorEventInit.hpp"
 
+namespace webbind {
 
-/// The ErrorEvent class.
+/// Interface ErrorEvent
 /// [`ErrorEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent)
 class ErrorEvent : public Event {
     explicit ErrorEvent(Handle h) noexcept;
-
 public:
     explicit ErrorEvent(const emlite::Val &val) noexcept;
     static ErrorEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ErrorEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ErrorEvent(..)` constructor, creating a new ErrorEvent instance
     ErrorEvent(const jsbind::String& type);
     /// The `new ErrorEvent(..)` constructor, creating a new ErrorEvent instance
-    ErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    ErrorEvent(const jsbind::String& type, const ErrorEventInit& eventInitDict);
     /// Getter of the `message` attribute.
     /// [`ErrorEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/message)
     [[nodiscard]] jsbind::String message() const;
@@ -38,3 +38,4 @@ public:
     [[nodiscard]] jsbind::Any error() const;
 };
 
+} // namespace webbind

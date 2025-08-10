@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class XRRigidTransform;
 
-
-/// The XRDepthInformation class.
+/// Interface XRDepthInformation
 /// [`XRDepthInformation`](https://developer.mozilla.org/en-US/docs/Web/API/XRDepthInformation)
 class XRDepthInformation : public emlite::Val {
     explicit XRDepthInformation(Handle h) noexcept;
-
 public:
     explicit XRDepthInformation(const emlite::Val &val) noexcept;
     static XRDepthInformation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRDepthInformation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
@@ -38,3 +37,4 @@ public:
     [[nodiscard]] XRRigidTransform transform() const;
 };
 
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/FormDataEvent.hpp>
-#include <webbind/FormData.hpp>
+#include "webbind/FormDataEvent.hpp"
+#include "webbind/FormDataEventInit.hpp"
+#include "webbind/FormData.hpp"
 
+namespace webbind {
 
 FormDataEvent FormDataEvent::take_ownership(Handle h) noexcept {
         return FormDataEvent(h);
@@ -10,10 +12,11 @@ emlite::Val FormDataEvent::instance() noexcept { return emlite::Val::global("For
 FormDataEvent::FormDataEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 FormDataEvent::FormDataEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-FormDataEvent::FormDataEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("FormDataEvent").new_(type, eventInitDict)) {}
+FormDataEvent::FormDataEvent(const jsbind::String& type, const FormDataEventInit& eventInitDict) : Event(emlite::Val::global("FormDataEvent").new_(type, eventInitDict)) {}
 
 FormData FormDataEvent::formData() const {
     return Event::get("formData").as<FormData>();
 }
 
+
+} // namespace webbind

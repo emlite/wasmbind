@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class CSSStyleValue;
 
-
-/// The StylePropertyMapReadOnly class.
+/// Interface StylePropertyMapReadOnly
 /// [`StylePropertyMapReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly)
 class StylePropertyMapReadOnly : public emlite::Val {
     explicit StylePropertyMapReadOnly(Handle h) noexcept;
-
 public:
     explicit StylePropertyMapReadOnly(const emlite::Val &val) noexcept;
     static StylePropertyMapReadOnly take_ownership(Handle h) noexcept;
-
     [[nodiscard]] StylePropertyMapReadOnly clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] unsigned long size() const;
 };
 
+} // namespace webbind

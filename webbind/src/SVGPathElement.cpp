@@ -1,24 +1,10 @@
-#include <webbind/SVGPathElement.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/SVGPathSegment.hpp>
+#include "webbind/SVGPathElement.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/SVGPathSegment.hpp"
+#include "webbind/SVGPathDataSettings.hpp"
 
-
-SVGPathDataSettings::SVGPathDataSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SVGPathDataSettings SVGPathDataSettings::take_ownership(Handle h) noexcept {
-        return SVGPathDataSettings(h);
-    }
-SVGPathDataSettings::SVGPathDataSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SVGPathDataSettings::SVGPathDataSettings() noexcept: emlite::Val(emlite::Val::object()) {}
-SVGPathDataSettings SVGPathDataSettings::clone() const noexcept { return *this; }
-
-bool SVGPathDataSettings::normalize() const {
-    return emlite::Val::get("normalize").as<bool>();
-}
-
-void SVGPathDataSettings::normalize(bool value) {
-    emlite::Val::set("normalize", value);
-}
+namespace webbind {
 
 SVGPathElement SVGPathElement::take_ownership(Handle h) noexcept {
         return SVGPathElement(h);
@@ -27,7 +13,6 @@ SVGPathElement SVGPathElement::clone() const noexcept { return *this; }
 emlite::Val SVGPathElement::instance() noexcept { return emlite::Val::global("SVGPathElement"); }
 SVGPathElement::SVGPathElement(Handle h) noexcept : SVGGeometryElement(emlite::Val::take_ownership(h)) {}
 SVGPathElement::SVGPathElement(const emlite::Val &val) noexcept: SVGGeometryElement(val) {}
-
 
 SVGAnimatedNumber SVGPathElement::pathLength() const {
     return SVGGeometryElement::get("pathLength").as<SVGAnimatedNumber>();
@@ -57,3 +42,5 @@ jsbind::Undefined SVGPathElement::setPathData(const jsbind::TypedArray<SVGPathSe
     return SVGGeometryElement::call("setPathData", pathData).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
-class USBAlternateInterface;
+namespace webbind {
+
 class USBConfiguration;
+class USBAlternateInterface;
 
-
-/// The USBInterface class.
+/// Interface USBInterface
 /// [`USBInterface`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface)
 class USBInterface : public emlite::Val {
     explicit USBInterface(Handle h) noexcept;
-
 public:
     explicit USBInterface(const emlite::Val &val) noexcept;
     static USBInterface take_ownership(Handle h) noexcept;
-
     [[nodiscard]] USBInterface clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBInterface(..)` constructor, creating a new USBInterface instance
@@ -35,3 +34,4 @@ public:
     [[nodiscard]] bool claimed() const;
 };
 
+} // namespace webbind

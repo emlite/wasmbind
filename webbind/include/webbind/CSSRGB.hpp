@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSColorValue.hpp"
 #include "enums.hpp"
+#include "CSSColorValue.hpp"
 
+namespace webbind {
 
-/// The CSSRGB class.
+/// Interface CSSRGB
 /// [`CSSRGB`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRGB)
 class CSSRGB : public CSSColorValue {
     explicit CSSRGB(Handle h) noexcept;
-
 public:
     explicit CSSRGB(const emlite::Val &val) noexcept;
     static CSSRGB take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSRGB clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSRGB(..)` constructor, creating a new CSSRGB instance
@@ -47,3 +46,4 @@ public:
     void alpha(const jsbind::Any& value);
 };
 
+} // namespace webbind

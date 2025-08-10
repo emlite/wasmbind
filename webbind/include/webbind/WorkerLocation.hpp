@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WorkerLocation class.
+/// Interface WorkerLocation
 /// [`WorkerLocation`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerLocation)
 class WorkerLocation : public emlite::Val {
     explicit WorkerLocation(Handle h) noexcept;
-
 public:
     explicit WorkerLocation(const emlite::Val &val) noexcept;
     static WorkerLocation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WorkerLocation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `href` attribute.
@@ -45,3 +44,4 @@ public:
     [[nodiscard]] jsbind::String hash() const;
 };
 
+} // namespace webbind

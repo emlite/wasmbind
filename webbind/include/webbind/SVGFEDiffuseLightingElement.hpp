@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedNumber;
 class SVGAnimatedLength;
 
-
-/// The SVGFEDiffuseLightingElement class.
+/// Interface SVGFEDiffuseLightingElement
 /// [`SVGFEDiffuseLightingElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDiffuseLightingElement)
 class SVGFEDiffuseLightingElement : public SVGElement {
     explicit SVGFEDiffuseLightingElement(Handle h) noexcept;
-
 public:
     explicit SVGFEDiffuseLightingElement(const emlite::Val &val) noexcept;
     static SVGFEDiffuseLightingElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEDiffuseLightingElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -53,3 +52,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

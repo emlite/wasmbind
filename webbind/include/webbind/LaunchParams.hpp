@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class FileSystemHandle;
 
-
-/// The LaunchParams class.
+/// Interface LaunchParams
 /// [`LaunchParams`](https://developer.mozilla.org/en-US/docs/Web/API/LaunchParams)
 class LaunchParams : public emlite::Val {
     explicit LaunchParams(Handle h) noexcept;
-
 public:
     explicit LaunchParams(const emlite::Val &val) noexcept;
     static LaunchParams take_ownership(Handle h) noexcept;
-
     [[nodiscard]] LaunchParams clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `targetURL` attribute.
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<FileSystemHandle> files() const;
 };
 
+} // namespace webbind

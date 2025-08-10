@@ -1,6 +1,7 @@
-#include <webbind/CSSMathSum.hpp>
-#include <webbind/CSSNumericArray.hpp>
+#include "webbind/CSSMathSum.hpp"
+#include "webbind/CSSNumericArray.hpp"
 
+namespace webbind {
 
 CSSMathSum CSSMathSum::take_ownership(Handle h) noexcept {
         return CSSMathSum(h);
@@ -10,10 +11,11 @@ emlite::Val CSSMathSum::instance() noexcept { return emlite::Val::global("CSSMat
 CSSMathSum::CSSMathSum(Handle h) noexcept : CSSMathValue(emlite::Val::take_ownership(h)) {}
 CSSMathSum::CSSMathSum(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 
-
 CSSMathSum::CSSMathSum(const jsbind::Any& args) : CSSMathValue(emlite::Val::global("CSSMathSum").new_(args)) {}
 
 CSSNumericArray CSSMathSum::values() const {
     return CSSMathValue::get("values").as<CSSNumericArray>();
 }
 
+
+} // namespace webbind

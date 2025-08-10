@@ -1,6 +1,7 @@
-#include <webbind/RTCSessionDescription.hpp>
-#include <webbind/RTCPeerConnection.hpp>
+#include "webbind/RTCSessionDescription.hpp"
+#include "webbind/RTCSessionDescriptionInit.hpp"
 
+namespace webbind {
 
 RTCSessionDescription RTCSessionDescription::take_ownership(Handle h) noexcept {
         return RTCSessionDescription(h);
@@ -9,7 +10,6 @@ RTCSessionDescription RTCSessionDescription::clone() const noexcept { return *th
 emlite::Val RTCSessionDescription::instance() noexcept { return emlite::Val::global("RTCSessionDescription"); }
 RTCSessionDescription::RTCSessionDescription(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCSessionDescription::RTCSessionDescription(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 RTCSessionDescription::RTCSessionDescription(const RTCSessionDescriptionInit& descriptionInitDict) : emlite::Val(emlite::Val::global("RTCSessionDescription").new_(descriptionInitDict)) {}
 
@@ -25,3 +25,5 @@ RTCSessionDescriptionInit RTCSessionDescription::toJSON() {
     return emlite::Val::call("toJSON").as<RTCSessionDescriptionInit>();
 }
 
+
+} // namespace webbind

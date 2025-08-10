@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class AudioParam;
 
-
-/// The AudioListener class.
+/// Interface AudioListener
 /// [`AudioListener`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener)
 class AudioListener : public emlite::Val {
     explicit AudioListener(Handle h) noexcept;
-
 public:
     explicit AudioListener(const emlite::Val &val) noexcept;
     static AudioListener take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioListener clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `positionX` attribute.
@@ -53,3 +52,4 @@ public:
     jsbind::Undefined setOrientation(float x, float y, float z, float xUp, float yUp, float zUp);
 };
 
+} // namespace webbind

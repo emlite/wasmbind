@@ -2,35 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "FileSystemEntry.hpp"
 #include "enums.hpp"
+#include "FileSystemEntry.hpp"
+#include "FileSystemFlags.hpp"
+
+namespace webbind {
 
 class FileSystemDirectoryReader;
-class FileSystemFlags;
 
-
-class FileSystemFlags : public emlite::Val {
-  explicit FileSystemFlags(Handle h) noexcept;
-public:
-    static FileSystemFlags take_ownership(Handle h) noexcept;
-    explicit FileSystemFlags(const emlite::Val &val) noexcept;
-    FileSystemFlags() noexcept;
-    [[nodiscard]] FileSystemFlags clone() const noexcept;
-    [[nodiscard]] bool create() const;
-    void create(bool value);
-    [[nodiscard]] bool exclusive() const;
-    void exclusive(bool value);
-};
-
-/// The FileSystemDirectoryEntry class.
+/// Interface FileSystemDirectoryEntry
 /// [`FileSystemDirectoryEntry`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry)
 class FileSystemDirectoryEntry : public FileSystemEntry {
     explicit FileSystemDirectoryEntry(Handle h) noexcept;
-
 public:
     explicit FileSystemDirectoryEntry(const emlite::Val &val) noexcept;
     static FileSystemDirectoryEntry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemDirectoryEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createReader method.
@@ -68,3 +54,4 @@ public:
     jsbind::Undefined getDirectory(const jsbind::String& path, const FileSystemFlags& options, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 
+} // namespace webbind

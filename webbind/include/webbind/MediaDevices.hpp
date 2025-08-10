@@ -2,109 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "AudioOutputOptions.hpp"
+#include "CaptureHandleConfig.hpp"
+#include "MediaTrackSupportedConstraints.hpp"
+#include "MediaStreamConstraints.hpp"
+#include "DisplayMediaStreamOptions.hpp"
+
+namespace webbind {
 
 class MediaDeviceInfo;
-class AudioOutputOptions;
-class CaptureHandleConfig;
-class MediaTrackSupportedConstraints;
 class MediaStream;
-class MediaStreamConstraints;
-class DisplayMediaStreamOptions;
-class CaptureController;
 
-
-class AudioOutputOptions : public emlite::Val {
-  explicit AudioOutputOptions(Handle h) noexcept;
-public:
-    static AudioOutputOptions take_ownership(Handle h) noexcept;
-    explicit AudioOutputOptions(const emlite::Val &val) noexcept;
-    AudioOutputOptions() noexcept;
-    [[nodiscard]] AudioOutputOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String deviceId() const;
-    void deviceId(const jsbind::String& value);
-};
-
-class CaptureHandleConfig : public emlite::Val {
-  explicit CaptureHandleConfig(Handle h) noexcept;
-public:
-    static CaptureHandleConfig take_ownership(Handle h) noexcept;
-    explicit CaptureHandleConfig(const emlite::Val &val) noexcept;
-    CaptureHandleConfig() noexcept;
-    [[nodiscard]] CaptureHandleConfig clone() const noexcept;
-    [[nodiscard]] bool exposeOrigin() const;
-    void exposeOrigin(bool value);
-    [[nodiscard]] jsbind::String handle() const;
-    void handle(const jsbind::String& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> permittedOrigins() const;
-    void permittedOrigins(const jsbind::TypedArray<jsbind::String>& value);
-};
-
-class MediaTrackSupportedConstraints : public emlite::Val {
-  explicit MediaTrackSupportedConstraints(Handle h) noexcept;
-public:
-    static MediaTrackSupportedConstraints take_ownership(Handle h) noexcept;
-    explicit MediaTrackSupportedConstraints(const emlite::Val &val) noexcept;
-    MediaTrackSupportedConstraints() noexcept;
-    [[nodiscard]] MediaTrackSupportedConstraints clone() const noexcept;
-    [[nodiscard]] bool displaySurface() const;
-    void displaySurface(bool value);
-    [[nodiscard]] bool logicalSurface() const;
-    void logicalSurface(bool value);
-    [[nodiscard]] bool cursor() const;
-    void cursor(bool value);
-    [[nodiscard]] bool restrictOwnAudio() const;
-    void restrictOwnAudio(bool value);
-    [[nodiscard]] bool suppressLocalAudioPlayback() const;
-    void suppressLocalAudioPlayback(bool value);
-};
-
-class MediaStreamConstraints : public emlite::Val {
-  explicit MediaStreamConstraints(Handle h) noexcept;
-public:
-    static MediaStreamConstraints take_ownership(Handle h) noexcept;
-    explicit MediaStreamConstraints(const emlite::Val &val) noexcept;
-    MediaStreamConstraints() noexcept;
-    [[nodiscard]] MediaStreamConstraints clone() const noexcept;
-    [[nodiscard]] jsbind::String peerIdentity() const;
-    void peerIdentity(const jsbind::String& value);
-};
-
-class DisplayMediaStreamOptions : public emlite::Val {
-  explicit DisplayMediaStreamOptions(Handle h) noexcept;
-public:
-    static DisplayMediaStreamOptions take_ownership(Handle h) noexcept;
-    explicit DisplayMediaStreamOptions(const emlite::Val &val) noexcept;
-    DisplayMediaStreamOptions() noexcept;
-    [[nodiscard]] DisplayMediaStreamOptions clone() const noexcept;
-    [[nodiscard]] jsbind::Any video() const;
-    void video(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any audio() const;
-    void audio(const jsbind::Any& value);
-    [[nodiscard]] CaptureController controller() const;
-    void controller(const CaptureController& value);
-    [[nodiscard]] SelfCapturePreferenceEnum selfBrowserSurface() const;
-    void selfBrowserSurface(const SelfCapturePreferenceEnum& value);
-    [[nodiscard]] SystemAudioPreferenceEnum systemAudio() const;
-    void systemAudio(const SystemAudioPreferenceEnum& value);
-    [[nodiscard]] WindowAudioPreferenceEnum windowAudio() const;
-    void windowAudio(const WindowAudioPreferenceEnum& value);
-    [[nodiscard]] SurfaceSwitchingPreferenceEnum surfaceSwitching() const;
-    void surfaceSwitching(const SurfaceSwitchingPreferenceEnum& value);
-    [[nodiscard]] MonitorTypeSurfacesEnum monitorTypeSurfaces() const;
-    void monitorTypeSurfaces(const MonitorTypeSurfacesEnum& value);
-};
-
-/// The MediaDevices class.
+/// Interface MediaDevices
 /// [`MediaDevices`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices)
 class MediaDevices : public EventTarget {
     explicit MediaDevices(Handle h) noexcept;
-
 public:
     explicit MediaDevices(const emlite::Val &val) noexcept;
     static MediaDevices take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaDevices clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `ondevicechange` attribute.
@@ -160,3 +77,4 @@ public:
     jsbind::Promise<MediaStream> getDisplayMedia(const DisplayMediaStreamOptions& options);
 };
 
+} // namespace webbind

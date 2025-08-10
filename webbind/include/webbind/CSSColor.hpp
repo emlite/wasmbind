@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSColorValue.hpp"
 #include "enums.hpp"
+#include "CSSColorValue.hpp"
 
+namespace webbind {
 
-/// The CSSColor class.
+/// Interface CSSColor
 /// [`CSSColor`](https://developer.mozilla.org/en-US/docs/Web/API/CSSColor)
 class CSSColor : public CSSColorValue {
     explicit CSSColor(Handle h) noexcept;
-
 public:
     explicit CSSColor(const emlite::Val &val) noexcept;
     static CSSColor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSColor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSColor(..)` constructor, creating a new CSSColor instance
@@ -41,3 +40,4 @@ public:
     void alpha(const jsbind::Any& value);
 };
 
+} // namespace webbind

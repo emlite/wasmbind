@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GeolocationCoordinates class.
+/// Interface GeolocationCoordinates
 /// [`GeolocationCoordinates`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates)
 class GeolocationCoordinates : public emlite::Val {
     explicit GeolocationCoordinates(Handle h) noexcept;
-
 public:
     explicit GeolocationCoordinates(const emlite::Val &val) noexcept;
     static GeolocationCoordinates take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GeolocationCoordinates clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `accuracy` attribute.
@@ -42,3 +41,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

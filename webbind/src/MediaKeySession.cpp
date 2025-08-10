@@ -1,6 +1,7 @@
-#include <webbind/MediaKeySession.hpp>
-#include <webbind/MediaKeyStatusMap.hpp>
+#include "webbind/MediaKeySession.hpp"
+#include "webbind/MediaKeyStatusMap.hpp"
 
+namespace webbind {
 
 MediaKeySession MediaKeySession::take_ownership(Handle h) noexcept {
         return MediaKeySession(h);
@@ -9,7 +10,6 @@ MediaKeySession MediaKeySession::clone() const noexcept { return *this; }
 emlite::Val MediaKeySession::instance() noexcept { return emlite::Val::global("MediaKeySession"); }
 MediaKeySession::MediaKeySession(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaKeySession::MediaKeySession(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String MediaKeySession::sessionId() const {
     return EventTarget::get("sessionId").as<jsbind::String>();
@@ -63,3 +63,5 @@ jsbind::Promise<jsbind::Undefined> MediaKeySession::remove() {
     return EventTarget::call("remove").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

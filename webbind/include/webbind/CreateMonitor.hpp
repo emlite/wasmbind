@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The CreateMonitor class.
+/// Interface CreateMonitor
 /// [`CreateMonitor`](https://developer.mozilla.org/en-US/docs/Web/API/CreateMonitor)
 class CreateMonitor : public EventTarget {
     explicit CreateMonitor(Handle h) noexcept;
-
 public:
     explicit CreateMonitor(const emlite::Val &val) noexcept;
     static CreateMonitor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CreateMonitor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `ondownloadprogress` attribute.
@@ -25,3 +24,4 @@ public:
     void ondownloadprogress(const jsbind::Any& value);
 };
 
+} // namespace webbind

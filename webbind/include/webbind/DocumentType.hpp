@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Node.hpp"
 #include "enums.hpp"
+#include "Node.hpp"
 
+namespace webbind {
 
-/// The DocumentType class.
+/// Interface DocumentType
 /// [`DocumentType`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType)
 class DocumentType : public Node {
     explicit DocumentType(Handle h) noexcept;
-
 public:
     explicit DocumentType(const emlite::Val &val) noexcept;
     static DocumentType take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DocumentType clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -40,3 +39,4 @@ public:
     jsbind::Undefined remove();
 };
 
+} // namespace webbind

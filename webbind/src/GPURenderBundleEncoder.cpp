@@ -1,17 +1,11 @@
-#include <webbind/GPURenderBundleEncoder.hpp>
-#include <webbind/GPURenderBundle.hpp>
-#include <webbind/GPUBindGroup.hpp>
-#include <webbind/GPURenderPipeline.hpp>
-#include <webbind/GPUBuffer.hpp>
+#include "webbind/GPURenderBundleEncoder.hpp"
+#include "webbind/GPURenderBundle.hpp"
+#include "webbind/GPURenderBundleDescriptor.hpp"
+#include "webbind/GPUBindGroup.hpp"
+#include "webbind/GPURenderPipeline.hpp"
+#include "webbind/GPUBuffer.hpp"
 
-
-GPURenderBundleDescriptor::GPURenderBundleDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPURenderBundleDescriptor GPURenderBundleDescriptor::take_ownership(Handle h) noexcept {
-        return GPURenderBundleDescriptor(h);
-    }
-GPURenderBundleDescriptor::GPURenderBundleDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
-GPURenderBundleDescriptor::GPURenderBundleDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
-GPURenderBundleDescriptor GPURenderBundleDescriptor::clone() const noexcept { return *this; }
+namespace webbind {
 
 GPURenderBundleEncoder GPURenderBundleEncoder::take_ownership(Handle h) noexcept {
         return GPURenderBundleEncoder(h);
@@ -20,7 +14,6 @@ GPURenderBundleEncoder GPURenderBundleEncoder::clone() const noexcept { return *
 emlite::Val GPURenderBundleEncoder::instance() noexcept { return emlite::Val::global("GPURenderBundleEncoder"); }
 GPURenderBundleEncoder::GPURenderBundleEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPURenderBundleEncoder::GPURenderBundleEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 GPURenderBundle GPURenderBundleEncoder::finish() {
     return emlite::Val::call("finish").as<GPURenderBundle>();
@@ -126,3 +119,5 @@ jsbind::Undefined GPURenderBundleEncoder::drawIndexedIndirect(const GPUBuffer& i
     return emlite::Val::call("drawIndexedIndirect", indirectBuffer, indirectOffset).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

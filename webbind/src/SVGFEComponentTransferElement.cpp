@@ -1,7 +1,8 @@
-#include <webbind/SVGFEComponentTransferElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEComponentTransferElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEComponentTransferElement SVGFEComponentTransferElement::take_ownership(Handle h) noexcept {
         return SVGFEComponentTransferElement(h);
@@ -10,7 +11,6 @@ SVGFEComponentTransferElement SVGFEComponentTransferElement::clone() const noexc
 emlite::Val SVGFEComponentTransferElement::instance() noexcept { return emlite::Val::global("SVGFEComponentTransferElement"); }
 SVGFEComponentTransferElement::SVGFEComponentTransferElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEComponentTransferElement::SVGFEComponentTransferElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEComponentTransferElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -36,3 +36,5 @@ SVGAnimatedString SVGFEComponentTransferElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class SpeechSynthesisVoice;
 
-
-/// The SpeechSynthesisUtterance class.
+/// Interface SpeechSynthesisUtterance
 /// [`SpeechSynthesisUtterance`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance)
 class SpeechSynthesisUtterance : public EventTarget {
     explicit SpeechSynthesisUtterance(Handle h) noexcept;
-
 public:
     explicit SpeechSynthesisUtterance(const emlite::Val &val) noexcept;
     static SpeechSynthesisUtterance take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechSynthesisUtterance clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechSynthesisUtterance(..)` constructor, creating a new SpeechSynthesisUtterance instance
@@ -103,3 +102,4 @@ public:
     void onboundary(const jsbind::Any& value);
 };
 
+} // namespace webbind

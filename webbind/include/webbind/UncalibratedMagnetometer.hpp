@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Sensor.hpp"
 #include "enums.hpp"
+#include "Sensor.hpp"
+#include "MagnetometerSensorOptions.hpp"
 
+namespace webbind {
 
-/// The UncalibratedMagnetometer class.
+/// Interface UncalibratedMagnetometer
 /// [`UncalibratedMagnetometer`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer)
 class UncalibratedMagnetometer : public Sensor {
     explicit UncalibratedMagnetometer(Handle h) noexcept;
-
 public:
     explicit UncalibratedMagnetometer(const emlite::Val &val) noexcept;
     static UncalibratedMagnetometer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] UncalibratedMagnetometer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new UncalibratedMagnetometer(..)` constructor, creating a new UncalibratedMagnetometer instance
     UncalibratedMagnetometer();
     /// The `new UncalibratedMagnetometer(..)` constructor, creating a new UncalibratedMagnetometer instance
-    UncalibratedMagnetometer(const jsbind::Any& sensorOptions);
+    UncalibratedMagnetometer(const MagnetometerSensorOptions& sensorOptions);
     /// Getter of the `x` attribute.
     /// [`UncalibratedMagnetometer.x`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/x)
     [[nodiscard]] double x() const;
@@ -41,3 +41,4 @@ public:
     [[nodiscard]] double zBias() const;
 };
 
+} // namespace webbind

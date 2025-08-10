@@ -1,6 +1,7 @@
-#include <webbind/PerformanceResourceTiming.hpp>
-#include <webbind/PerformanceServerTiming.hpp>
+#include "webbind/PerformanceResourceTiming.hpp"
+#include "webbind/PerformanceServerTiming.hpp"
 
+namespace webbind {
 
 PerformanceResourceTiming PerformanceResourceTiming::take_ownership(Handle h) noexcept {
         return PerformanceResourceTiming(h);
@@ -9,7 +10,6 @@ PerformanceResourceTiming PerformanceResourceTiming::clone() const noexcept { re
 emlite::Val PerformanceResourceTiming::instance() noexcept { return emlite::Val::global("PerformanceResourceTiming"); }
 PerformanceResourceTiming::PerformanceResourceTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceResourceTiming::PerformanceResourceTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
-
 
 jsbind::String PerformanceResourceTiming::initiatorType() const {
     return PerformanceEntry::get("initiatorType").as<jsbind::String>();
@@ -115,3 +115,5 @@ jsbind::TypedArray<PerformanceServerTiming> PerformanceResourceTiming::serverTim
     return PerformanceEntry::get("serverTiming").as<jsbind::TypedArray<PerformanceServerTiming>>();
 }
 
+
+} // namespace webbind

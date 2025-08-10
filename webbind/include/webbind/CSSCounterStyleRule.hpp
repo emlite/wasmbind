@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
 
+namespace webbind {
 
-/// The CSSCounterStyleRule class.
+/// Interface CSSCounterStyleRule
 /// [`CSSCounterStyleRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule)
 class CSSCounterStyleRule : public CSSRule {
     explicit CSSCounterStyleRule(Handle h) noexcept;
-
 public:
     explicit CSSCounterStyleRule(const emlite::Val &val) noexcept;
     static CSSCounterStyleRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSCounterStyleRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -85,3 +84,4 @@ public:
     void fallback(const jsbind::String& value);
 };
 
+} // namespace webbind

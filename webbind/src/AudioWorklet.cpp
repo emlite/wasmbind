@@ -1,6 +1,7 @@
-#include <webbind/AudioWorklet.hpp>
-#include <webbind/MessagePort.hpp>
+#include "webbind/AudioWorklet.hpp"
+#include "webbind/MessagePort.hpp"
 
+namespace webbind {
 
 AudioWorklet AudioWorklet::take_ownership(Handle h) noexcept {
         return AudioWorklet(h);
@@ -10,8 +11,9 @@ emlite::Val AudioWorklet::instance() noexcept { return emlite::Val::global("Audi
 AudioWorklet::AudioWorklet(Handle h) noexcept : Worklet(emlite::Val::take_ownership(h)) {}
 AudioWorklet::AudioWorklet(const emlite::Val &val) noexcept: Worklet(val) {}
 
-
-jsbind::Any AudioWorklet::port() const {
-    return Worklet::get("port").as<jsbind::Any>();
+MessagePort AudioWorklet::port() const {
+    return Worklet::get("port").as<MessagePort>();
 }
 
+
+} // namespace webbind

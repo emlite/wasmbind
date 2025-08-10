@@ -2,42 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+#include "SVGBoundingBoxOptions.hpp"
+
+namespace webbind {
 
 class SVGAnimatedTransformList;
 class DOMRect;
-class SVGBoundingBoxOptions;
 class DOMMatrix;
 class SVGStringList;
 
-
-class SVGBoundingBoxOptions : public emlite::Val {
-  explicit SVGBoundingBoxOptions(Handle h) noexcept;
-public:
-    static SVGBoundingBoxOptions take_ownership(Handle h) noexcept;
-    explicit SVGBoundingBoxOptions(const emlite::Val &val) noexcept;
-    SVGBoundingBoxOptions() noexcept;
-    [[nodiscard]] SVGBoundingBoxOptions clone() const noexcept;
-    [[nodiscard]] bool fill() const;
-    void fill(bool value);
-    [[nodiscard]] bool stroke() const;
-    void stroke(bool value);
-    [[nodiscard]] bool markers() const;
-    void markers(bool value);
-    [[nodiscard]] bool clipped() const;
-    void clipped(bool value);
-};
-
-/// The SVGGraphicsElement class.
+/// Interface SVGGraphicsElement
 /// [`SVGGraphicsElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement)
 class SVGGraphicsElement : public SVGElement {
     explicit SVGGraphicsElement(Handle h) noexcept;
-
 public:
     explicit SVGGraphicsElement(const emlite::Val &val) noexcept;
     static SVGGraphicsElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGGraphicsElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `transform` attribute.
@@ -63,3 +45,4 @@ public:
     [[nodiscard]] SVGStringList systemLanguage() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/SVGTextElement.hpp>
+#include "webbind/SVGTextElement.hpp"
 
+namespace webbind {
 
 SVGTextElement SVGTextElement::take_ownership(Handle h) noexcept {
         return SVGTextElement(h);
@@ -10,3 +11,4 @@ SVGTextElement::SVGTextElement(Handle h) noexcept : SVGTextPositioningElement(em
 SVGTextElement::SVGTextElement(const emlite::Val &val) noexcept: SVGTextPositioningElement(val) {}
 
 
+} // namespace webbind

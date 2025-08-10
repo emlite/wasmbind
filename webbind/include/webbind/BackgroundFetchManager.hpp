@@ -3,31 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "BackgroundFetchOptions.hpp"
+
+namespace webbind {
 
 class BackgroundFetchRegistration;
-class BackgroundFetchOptions;
 
-
-class BackgroundFetchOptions : public emlite::Val {
-  explicit BackgroundFetchOptions(Handle h) noexcept;
-public:
-    static BackgroundFetchOptions take_ownership(Handle h) noexcept;
-    explicit BackgroundFetchOptions(const emlite::Val &val) noexcept;
-    BackgroundFetchOptions() noexcept;
-    [[nodiscard]] BackgroundFetchOptions clone() const noexcept;
-    [[nodiscard]] long long downloadTotal() const;
-    void downloadTotal(long long value);
-};
-
-/// The BackgroundFetchManager class.
+/// Interface BackgroundFetchManager
 /// [`BackgroundFetchManager`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchManager)
 class BackgroundFetchManager : public emlite::Val {
     explicit BackgroundFetchManager(Handle h) noexcept;
-
 public:
     explicit BackgroundFetchManager(const emlite::Val &val) noexcept;
     static BackgroundFetchManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BackgroundFetchManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The fetch method.
@@ -44,3 +32,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<jsbind::String>> getIds();
 };
 
+} // namespace webbind

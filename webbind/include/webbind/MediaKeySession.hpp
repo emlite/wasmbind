@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class MediaKeyStatusMap;
 
-
-/// The MediaKeySession class.
+/// Interface MediaKeySession
 /// [`MediaKeySession`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession)
 class MediaKeySession : public EventTarget {
     explicit MediaKeySession(Handle h) noexcept;
-
 public:
     explicit MediaKeySession(const emlite::Val &val) noexcept;
     static MediaKeySession take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaKeySession clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sessionId` attribute.
@@ -60,3 +60,4 @@ public:
     jsbind::Promise<jsbind::Undefined> remove();
 };
 
+} // namespace webbind

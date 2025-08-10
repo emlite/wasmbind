@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ANGLE_instanced_arrays class.
+/// Interface ANGLE_instanced_arrays
 /// [`ANGLE_instanced_arrays`](https://developer.mozilla.org/en-US/docs/Web/API/ANGLE_instanced_arrays)
 class ANGLE_instanced_arrays : public emlite::Val {
     explicit ANGLE_instanced_arrays(Handle h) noexcept;
-
 public:
     explicit ANGLE_instanced_arrays(const emlite::Val &val) noexcept;
     static ANGLE_instanced_arrays take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ANGLE_instanced_arrays clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The drawArraysInstancedANGLE method.
@@ -27,3 +26,4 @@ public:
     jsbind::Undefined vertexAttribDivisorANGLE(const jsbind::Any& index, const jsbind::Any& divisor);
 };
 
+} // namespace webbind

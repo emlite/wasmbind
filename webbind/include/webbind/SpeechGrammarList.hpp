@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SpeechGrammar;
 
-
-/// The SpeechGrammarList class.
+/// Interface SpeechGrammarList
 /// [`SpeechGrammarList`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList)
 class SpeechGrammarList : public emlite::Val {
     explicit SpeechGrammarList(Handle h) noexcept;
-
 public:
     explicit SpeechGrammarList(const emlite::Val &val) noexcept;
     static SpeechGrammarList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechGrammarList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechGrammarList(..)` constructor, creating a new SpeechGrammarList instance
@@ -40,3 +39,4 @@ public:
     jsbind::Undefined addFromString(const jsbind::String& string, float weight);
 };
 
+} // namespace webbind

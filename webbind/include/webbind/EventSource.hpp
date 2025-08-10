@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "EventSourceInit.hpp"
 
+namespace webbind {
 
-/// The EventSource class.
+/// Interface EventSource
 /// [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)
 class EventSource : public EventTarget {
     explicit EventSource(Handle h) noexcept;
-
 public:
     explicit EventSource(const emlite::Val &val) noexcept;
     static EventSource take_ownership(Handle h) noexcept;
-
     [[nodiscard]] EventSource clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EventSource(..)` constructor, creating a new EventSource instance
     EventSource(const jsbind::String& url);
     /// The `new EventSource(..)` constructor, creating a new EventSource instance
-    EventSource(const jsbind::String& url, const jsbind::Any& eventSourceInitDict);
+    EventSource(const jsbind::String& url, const EventSourceInit& eventSourceInitDict);
     /// Getter of the `url` attribute.
     /// [`EventSource.url`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/url)
     [[nodiscard]] jsbind::String url() const;
@@ -53,3 +53,4 @@ public:
     jsbind::Undefined close();
 };
 
+} // namespace webbind

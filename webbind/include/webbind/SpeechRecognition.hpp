@@ -2,37 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "SpeechRecognitionOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class SpeechGrammarList;
 class SpeechRecognitionPhraseList;
 class MediaStreamTrack;
-class SpeechRecognitionOptions;
 
-
-class SpeechRecognitionOptions : public emlite::Val {
-  explicit SpeechRecognitionOptions(Handle h) noexcept;
-public:
-    static SpeechRecognitionOptions take_ownership(Handle h) noexcept;
-    explicit SpeechRecognitionOptions(const emlite::Val &val) noexcept;
-    SpeechRecognitionOptions() noexcept;
-    [[nodiscard]] SpeechRecognitionOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> langs() const;
-    void langs(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] bool processLocally() const;
-    void processLocally(bool value);
-};
-
-/// The SpeechRecognition class.
+/// Interface SpeechRecognition
 /// [`SpeechRecognition`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
 class SpeechRecognition : public EventTarget {
     explicit SpeechRecognition(Handle h) noexcept;
-
 public:
     explicit SpeechRecognition(const emlite::Val &val) noexcept;
     static SpeechRecognition take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechRecognition clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognition(..)` constructor, creating a new SpeechRecognition instance
@@ -162,3 +149,4 @@ public:
     void onend(const jsbind::Any& value);
 };
 
+} // namespace webbind

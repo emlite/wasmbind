@@ -1,5 +1,6 @@
-#include <webbind/SharedStorageModifierMethod.hpp>
+#include "webbind/SharedStorageModifierMethod.hpp"
 
+namespace webbind {
 
 SharedStorageModifierMethod SharedStorageModifierMethod::take_ownership(Handle h) noexcept {
         return SharedStorageModifierMethod(h);
@@ -10,3 +11,4 @@ SharedStorageModifierMethod::SharedStorageModifierMethod(Handle h) noexcept : em
 SharedStorageModifierMethod::SharedStorageModifierMethod(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

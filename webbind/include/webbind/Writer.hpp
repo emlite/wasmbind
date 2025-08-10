@@ -3,73 +3,23 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "WriterCreateOptions.hpp"
+#include "WriterCreateCoreOptions.hpp"
+#include "WriterWriteOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Writer;
-class WriterCreateOptions;
-class WriterCreateCoreOptions;
-class WriterWriteOptions;
 class ReadableStream;
-class AbortSignal;
 
-
-class WriterCreateOptions : public emlite::Val {
-  explicit WriterCreateOptions(Handle h) noexcept;
-public:
-    static WriterCreateOptions take_ownership(Handle h) noexcept;
-    explicit WriterCreateOptions(const emlite::Val &val) noexcept;
-    WriterCreateOptions() noexcept;
-    [[nodiscard]] WriterCreateOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-    [[nodiscard]] jsbind::Function monitor() const;
-    void monitor(const jsbind::Function& value);
-    [[nodiscard]] jsbind::String sharedContext() const;
-    void sharedContext(const jsbind::String& value);
-};
-
-class WriterCreateCoreOptions : public emlite::Val {
-  explicit WriterCreateCoreOptions(Handle h) noexcept;
-public:
-    static WriterCreateCoreOptions take_ownership(Handle h) noexcept;
-    explicit WriterCreateCoreOptions(const emlite::Val &val) noexcept;
-    WriterCreateCoreOptions() noexcept;
-    [[nodiscard]] WriterCreateCoreOptions clone() const noexcept;
-    [[nodiscard]] WriterTone tone() const;
-    void tone(const WriterTone& value);
-    [[nodiscard]] WriterFormat format() const;
-    void format(const WriterFormat& value);
-    [[nodiscard]] WriterLength length() const;
-    void length(const WriterLength& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
-    void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
-    void expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::String outputLanguage() const;
-    void outputLanguage(const jsbind::String& value);
-};
-
-class WriterWriteOptions : public emlite::Val {
-  explicit WriterWriteOptions(Handle h) noexcept;
-public:
-    static WriterWriteOptions take_ownership(Handle h) noexcept;
-    explicit WriterWriteOptions(const emlite::Val &val) noexcept;
-    WriterWriteOptions() noexcept;
-    [[nodiscard]] WriterWriteOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String context() const;
-    void context(const jsbind::String& value);
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-/// The Writer class.
+/// Interface Writer
 /// [`Writer`](https://developer.mozilla.org/en-US/docs/Web/API/Writer)
 class Writer : public emlite::Val {
     explicit Writer(Handle h) noexcept;
-
 public:
     explicit Writer(const emlite::Val &val) noexcept;
     static Writer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Writer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
@@ -131,3 +81,4 @@ public:
     jsbind::Undefined destroy();
 };
 
+} // namespace webbind

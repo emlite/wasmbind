@@ -1,9 +1,10 @@
-#include <webbind/StorageBucket.hpp>
-#include <webbind/StorageManager.hpp>
-#include <webbind/IDBFactory.hpp>
-#include <webbind/CacheStorage.hpp>
-#include <webbind/FileSystemDirectoryHandle.hpp>
+#include "webbind/StorageBucket.hpp"
+#include "webbind/StorageEstimate.hpp"
+#include "webbind/IDBFactory.hpp"
+#include "webbind/CacheStorage.hpp"
+#include "webbind/FileSystemDirectoryHandle.hpp"
 
+namespace webbind {
 
 StorageBucket StorageBucket::take_ownership(Handle h) noexcept {
         return StorageBucket(h);
@@ -12,7 +13,6 @@ StorageBucket StorageBucket::clone() const noexcept { return *this; }
 emlite::Val StorageBucket::instance() noexcept { return emlite::Val::global("StorageBucket"); }
 StorageBucket::StorageBucket(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageBucket::StorageBucket(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String StorageBucket::name() const {
     return emlite::Val::get("name").as<jsbind::String>();
@@ -50,3 +50,5 @@ jsbind::Promise<FileSystemDirectoryHandle> StorageBucket::getDirectory() {
     return emlite::Val::call("getDirectory").as<jsbind::Promise<FileSystemDirectoryHandle>>();
 }
 
+
+} // namespace webbind

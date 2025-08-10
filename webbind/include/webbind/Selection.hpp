@@ -3,34 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "GetComposedRangesOptions.hpp"
+
+namespace webbind {
 
 class Node;
 class Range;
 class StaticRange;
-class GetComposedRangesOptions;
-class ShadowRoot;
 
-
-class GetComposedRangesOptions : public emlite::Val {
-  explicit GetComposedRangesOptions(Handle h) noexcept;
-public:
-    static GetComposedRangesOptions take_ownership(Handle h) noexcept;
-    explicit GetComposedRangesOptions(const emlite::Val &val) noexcept;
-    GetComposedRangesOptions() noexcept;
-    [[nodiscard]] GetComposedRangesOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<ShadowRoot> shadowRoots() const;
-    void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
-};
-
-/// The Selection class.
+/// Interface Selection
 /// [`Selection`](https://developer.mozilla.org/en-US/docs/Web/API/Selection)
 class Selection : public emlite::Val {
     explicit Selection(Handle h) noexcept;
-
 public:
     explicit Selection(const emlite::Val &val) noexcept;
     static Selection take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Selection clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `anchorNode` attribute.
@@ -131,3 +118,4 @@ public:
     bool containsNode(const Node& node, bool allowPartialContainment);
 };
 
+} // namespace webbind

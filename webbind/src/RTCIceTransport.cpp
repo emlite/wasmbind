@@ -1,95 +1,11 @@
-#include <webbind/RTCIceTransport.hpp>
-#include <webbind/RTCIceCandidate.hpp>
-#include <webbind/RTCIceCandidatePair.hpp>
+#include "webbind/RTCIceTransport.hpp"
+#include "webbind/RTCIceCandidate.hpp"
+#include "webbind/RTCIceCandidatePair.hpp"
+#include "webbind/RTCIceParameters.hpp"
+#include "webbind/RTCIceGatherOptions.hpp"
+#include "webbind/RTCIceCandidateInit.hpp"
 
-
-RTCIceParameters::RTCIceParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceParameters RTCIceParameters::take_ownership(Handle h) noexcept {
-        return RTCIceParameters(h);
-    }
-RTCIceParameters::RTCIceParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCIceParameters::RTCIceParameters() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCIceParameters RTCIceParameters::clone() const noexcept { return *this; }
-
-jsbind::String RTCIceParameters::usernameFragment() const {
-    return emlite::Val::get("usernameFragment").as<jsbind::String>();
-}
-
-void RTCIceParameters::usernameFragment(const jsbind::String& value) {
-    emlite::Val::set("usernameFragment", value);
-}
-
-jsbind::String RTCIceParameters::password() const {
-    return emlite::Val::get("password").as<jsbind::String>();
-}
-
-void RTCIceParameters::password(const jsbind::String& value) {
-    emlite::Val::set("password", value);
-}
-
-RTCIceGatherOptions::RTCIceGatherOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceGatherOptions RTCIceGatherOptions::take_ownership(Handle h) noexcept {
-        return RTCIceGatherOptions(h);
-    }
-RTCIceGatherOptions::RTCIceGatherOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCIceGatherOptions::RTCIceGatherOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCIceGatherOptions RTCIceGatherOptions::clone() const noexcept { return *this; }
-
-RTCIceTransportPolicy RTCIceGatherOptions::gatherPolicy() const {
-    return emlite::Val::get("gatherPolicy").as<RTCIceTransportPolicy>();
-}
-
-void RTCIceGatherOptions::gatherPolicy(const RTCIceTransportPolicy& value) {
-    emlite::Val::set("gatherPolicy", value);
-}
-
-jsbind::TypedArray<jsbind::Any> RTCIceGatherOptions::iceServers() const {
-    return emlite::Val::get("iceServers").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RTCIceGatherOptions::iceServers(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("iceServers", value);
-}
-
-RTCIceCandidateInit::RTCIceCandidateInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceCandidateInit RTCIceCandidateInit::take_ownership(Handle h) noexcept {
-        return RTCIceCandidateInit(h);
-    }
-RTCIceCandidateInit::RTCIceCandidateInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCIceCandidateInit::RTCIceCandidateInit() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCIceCandidateInit RTCIceCandidateInit::clone() const noexcept { return *this; }
-
-jsbind::String RTCIceCandidateInit::candidate() const {
-    return emlite::Val::get("candidate").as<jsbind::String>();
-}
-
-void RTCIceCandidateInit::candidate(const jsbind::String& value) {
-    emlite::Val::set("candidate", value);
-}
-
-jsbind::String RTCIceCandidateInit::sdpMid() const {
-    return emlite::Val::get("sdpMid").as<jsbind::String>();
-}
-
-void RTCIceCandidateInit::sdpMid(const jsbind::String& value) {
-    emlite::Val::set("sdpMid", value);
-}
-
-unsigned short RTCIceCandidateInit::sdpMLineIndex() const {
-    return emlite::Val::get("sdpMLineIndex").as<unsigned short>();
-}
-
-void RTCIceCandidateInit::sdpMLineIndex(unsigned short value) {
-    emlite::Val::set("sdpMLineIndex", value);
-}
-
-jsbind::String RTCIceCandidateInit::usernameFragment() const {
-    return emlite::Val::get("usernameFragment").as<jsbind::String>();
-}
-
-void RTCIceCandidateInit::usernameFragment(const jsbind::String& value) {
-    emlite::Val::set("usernameFragment", value);
-}
+namespace webbind {
 
 RTCIceTransport RTCIceTransport::take_ownership(Handle h) noexcept {
         return RTCIceTransport(h);
@@ -98,7 +14,6 @@ RTCIceTransport RTCIceTransport::clone() const noexcept { return *this; }
 emlite::Val RTCIceTransport::instance() noexcept { return emlite::Val::global("RTCIceTransport"); }
 RTCIceTransport::RTCIceTransport(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 RTCIceTransport::RTCIceTransport(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 RTCIceRole RTCIceTransport::role() const {
     return EventTarget::get("role").as<RTCIceRole>();
@@ -210,3 +125,5 @@ void RTCIceTransport::onicecandidate(const jsbind::Any& value) {
     EventTarget::set("onicecandidate", value);
 }
 
+
+} // namespace webbind

@@ -3,34 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "ClientQueryOptions.hpp"
+
+namespace webbind {
 
 class Client;
-class ClientQueryOptions;
 class WindowClient;
 
-
-class ClientQueryOptions : public emlite::Val {
-  explicit ClientQueryOptions(Handle h) noexcept;
-public:
-    static ClientQueryOptions take_ownership(Handle h) noexcept;
-    explicit ClientQueryOptions(const emlite::Val &val) noexcept;
-    ClientQueryOptions() noexcept;
-    [[nodiscard]] ClientQueryOptions clone() const noexcept;
-    [[nodiscard]] bool includeUncontrolled() const;
-    void includeUncontrolled(bool value);
-    [[nodiscard]] ClientType type() const;
-    void type(const ClientType& value);
-};
-
-/// The Clients class.
+/// Interface Clients
 /// [`Clients`](https://developer.mozilla.org/en-US/docs/Web/API/Clients)
 class Clients : public emlite::Val {
     explicit Clients(Handle h) noexcept;
-
 public:
     explicit Clients(const emlite::Val &val) noexcept;
     static Clients take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Clients clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
@@ -50,3 +36,4 @@ public:
     jsbind::Promise<jsbind::Undefined> claim();
 };
 
+} // namespace webbind

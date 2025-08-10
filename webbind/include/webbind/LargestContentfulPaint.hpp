@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PerformanceEntry.hpp"
 #include "enums.hpp"
+#include "PerformanceEntry.hpp"
+
+namespace webbind {
 
 class Element;
 
-
-/// The LargestContentfulPaint class.
+/// Interface LargestContentfulPaint
 /// [`LargestContentfulPaint`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint)
 class LargestContentfulPaint : public PerformanceEntry {
     explicit LargestContentfulPaint(Handle h) noexcept;
-
 public:
     explicit LargestContentfulPaint(const emlite::Val &val) noexcept;
     static LargestContentfulPaint take_ownership(Handle h) noexcept;
-
     [[nodiscard]] LargestContentfulPaint clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `loadTime` attribute.
@@ -45,3 +44,4 @@ public:
     [[nodiscard]] jsbind::Any presentationTime() const;
 };
 
+} // namespace webbind

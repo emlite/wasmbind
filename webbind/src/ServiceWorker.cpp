@@ -1,6 +1,7 @@
-#include <webbind/ServiceWorker.hpp>
-#include <webbind/MessagePort.hpp>
+#include "webbind/ServiceWorker.hpp"
+#include "webbind/StructuredSerializeOptions.hpp"
 
+namespace webbind {
 
 ServiceWorker ServiceWorker::take_ownership(Handle h) noexcept {
         return ServiceWorker(h);
@@ -9,7 +10,6 @@ ServiceWorker ServiceWorker::clone() const noexcept { return *this; }
 emlite::Val ServiceWorker::instance() noexcept { return emlite::Val::global("ServiceWorker"); }
 ServiceWorker::ServiceWorker(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 ServiceWorker::ServiceWorker(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String ServiceWorker::scriptURL() const {
     return EventTarget::get("scriptURL").as<jsbind::String>();
@@ -43,3 +43,5 @@ void ServiceWorker::onerror(const jsbind::Any& value) {
     EventTarget::set("onerror", value);
 }
 
+
+} // namespace webbind

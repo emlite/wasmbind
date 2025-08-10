@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 
-
-/// The NodeList class.
+/// Interface NodeList
 /// [`NodeList`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
 class NodeList : public emlite::Val {
     explicit NodeList(Handle h) noexcept;
-
 public:
     explicit NodeList(const emlite::Val &val) noexcept;
     static NodeList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NodeList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The item method.
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] unsigned long length() const;
 };
 
+} // namespace webbind

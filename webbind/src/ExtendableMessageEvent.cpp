@@ -1,6 +1,8 @@
-#include <webbind/ExtendableMessageEvent.hpp>
-#include <webbind/MessagePort.hpp>
+#include "webbind/ExtendableMessageEvent.hpp"
+#include "webbind/ExtendableMessageEventInit.hpp"
+#include "webbind/MessagePort.hpp"
 
+namespace webbind {
 
 ExtendableMessageEvent ExtendableMessageEvent::take_ownership(Handle h) noexcept {
         return ExtendableMessageEvent(h);
@@ -10,10 +12,9 @@ emlite::Val ExtendableMessageEvent::instance() noexcept { return emlite::Val::gl
 ExtendableMessageEvent::ExtendableMessageEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 ExtendableMessageEvent::ExtendableMessageEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
-
 ExtendableMessageEvent::ExtendableMessageEvent(const jsbind::String& type) : ExtendableEvent(emlite::Val::global("ExtendableMessageEvent").new_(type)) {}
 
-ExtendableMessageEvent::ExtendableMessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("ExtendableMessageEvent").new_(type, eventInitDict)) {}
+ExtendableMessageEvent::ExtendableMessageEvent(const jsbind::String& type, const ExtendableMessageEventInit& eventInitDict) : ExtendableEvent(emlite::Val::global("ExtendableMessageEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any ExtendableMessageEvent::data() const {
     return ExtendableEvent::get("data").as<jsbind::Any>();
@@ -31,7 +32,9 @@ jsbind::Any ExtendableMessageEvent::source() const {
     return ExtendableEvent::get("source").as<jsbind::Any>();
 }
 
-jsbind::TypedArray<jsbind::Any> ExtendableMessageEvent::ports() const {
-    return ExtendableEvent::get("ports").as<jsbind::TypedArray<jsbind::Any>>();
+jsbind::TypedArray<MessagePort> ExtendableMessageEvent::ports() const {
+    return ExtendableEvent::get("ports").as<jsbind::TypedArray<MessagePort>>();
 }
 
+
+} // namespace webbind

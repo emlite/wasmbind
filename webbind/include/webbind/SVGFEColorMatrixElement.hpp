@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedEnumeration;
 class SVGAnimatedNumberList;
 class SVGAnimatedLength;
 
-
-/// The SVGFEColorMatrixElement class.
+/// Interface SVGFEColorMatrixElement
 /// [`SVGFEColorMatrixElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEColorMatrixElement)
 class SVGFEColorMatrixElement : public SVGElement {
     explicit SVGFEColorMatrixElement(Handle h) noexcept;
-
 public:
     explicit SVGFEColorMatrixElement(const emlite::Val &val) noexcept;
     static SVGFEColorMatrixElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEColorMatrixElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -48,3 +47,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

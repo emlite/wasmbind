@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class WebGLVertexArrayObjectOES;
 
-
-/// The OES_vertex_array_object class.
+/// Interface OES_vertex_array_object
 /// [`OES_vertex_array_object`](https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object)
 class OES_vertex_array_object : public emlite::Val {
     explicit OES_vertex_array_object(Handle h) noexcept;
-
 public:
     explicit OES_vertex_array_object(const emlite::Val &val) noexcept;
     static OES_vertex_array_object take_ownership(Handle h) noexcept;
-
     [[nodiscard]] OES_vertex_array_object clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createVertexArrayOES method.
@@ -32,3 +31,4 @@ public:
     jsbind::Undefined bindVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject);
 };
 
+} // namespace webbind

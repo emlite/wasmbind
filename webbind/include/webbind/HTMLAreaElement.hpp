@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class DOMTokenList;
 
-
-/// The HTMLAreaElement class.
+/// Interface HTMLAreaElement
 /// [`HTMLAreaElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement)
 class HTMLAreaElement : public HTMLElement {
     explicit HTMLAreaElement(Handle h) noexcept;
-
 public:
     explicit HTMLAreaElement(const emlite::Val &val) noexcept;
     static HTMLAreaElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLAreaElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLAreaElement(..)` constructor, creating a new HTMLAreaElement instance
@@ -149,3 +148,4 @@ public:
     void hash(const jsbind::String& value);
 };
 
+} // namespace webbind

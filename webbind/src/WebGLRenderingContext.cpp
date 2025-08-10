@@ -1,6 +1,7 @@
-#include <webbind/WebGLRenderingContext.hpp>
-#include <webbind/WebGLUniformLocation.hpp>
+#include "webbind/WebGLRenderingContext.hpp"
+#include "webbind/WebGLUniformLocation.hpp"
 
+namespace webbind {
 
 WebGLRenderingContext WebGLRenderingContext::take_ownership(Handle h) noexcept {
         return WebGLRenderingContext(h);
@@ -9,7 +10,6 @@ WebGLRenderingContext WebGLRenderingContext::clone() const noexcept { return *th
 emlite::Val WebGLRenderingContext::instance() noexcept { return emlite::Val::global("WebGLRenderingContext"); }
 WebGLRenderingContext::WebGLRenderingContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebGLRenderingContext::WebGLRenderingContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<jsbind::Undefined> WebGLRenderingContext::makeXRCompatible() {
     return emlite::Val::call("makeXRCompatible").as<jsbind::Promise<jsbind::Undefined>>();
@@ -87,3 +87,5 @@ jsbind::Undefined WebGLRenderingContext::uniformMatrix4fv(const WebGLUniformLoca
     return emlite::Val::call("uniformMatrix4fv", location, transpose, value).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

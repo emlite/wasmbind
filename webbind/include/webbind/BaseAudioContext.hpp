@@ -2,8 +2,12 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "PeriodicWaveConstraints.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class AudioDestinationNode;
 class AudioListener;
@@ -23,32 +27,17 @@ class IIRFilterNode;
 class OscillatorNode;
 class PannerNode;
 class PeriodicWave;
-class PeriodicWaveConstraints;
 class ScriptProcessorNode;
 class StereoPannerNode;
 class WaveShaperNode;
 
-
-class PeriodicWaveConstraints : public emlite::Val {
-  explicit PeriodicWaveConstraints(Handle h) noexcept;
-public:
-    static PeriodicWaveConstraints take_ownership(Handle h) noexcept;
-    explicit PeriodicWaveConstraints(const emlite::Val &val) noexcept;
-    PeriodicWaveConstraints() noexcept;
-    [[nodiscard]] PeriodicWaveConstraints clone() const noexcept;
-    [[nodiscard]] bool disableNormalization() const;
-    void disableNormalization(bool value);
-};
-
-/// The BaseAudioContext class.
+/// Interface BaseAudioContext
 /// [`BaseAudioContext`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext)
 class BaseAudioContext : public EventTarget {
     explicit BaseAudioContext(Handle h) noexcept;
-
 public:
     explicit BaseAudioContext(const emlite::Val &val) noexcept;
     static BaseAudioContext take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BaseAudioContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `destination` attribute.
@@ -164,3 +153,4 @@ public:
     jsbind::Promise<AudioBuffer> decodeAudioData(const jsbind::ArrayBuffer& audioData, const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 
+} // namespace webbind

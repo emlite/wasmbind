@@ -1,7 +1,8 @@
-#include <webbind/SpeechSynthesis.hpp>
-#include <webbind/SpeechSynthesisUtterance.hpp>
-#include <webbind/SpeechSynthesisVoice.hpp>
+#include "webbind/SpeechSynthesis.hpp"
+#include "webbind/SpeechSynthesisUtterance.hpp"
+#include "webbind/SpeechSynthesisVoice.hpp"
 
+namespace webbind {
 
 SpeechSynthesis SpeechSynthesis::take_ownership(Handle h) noexcept {
         return SpeechSynthesis(h);
@@ -10,7 +11,6 @@ SpeechSynthesis SpeechSynthesis::clone() const noexcept { return *this; }
 emlite::Val SpeechSynthesis::instance() noexcept { return emlite::Val::global("SpeechSynthesis"); }
 SpeechSynthesis::SpeechSynthesis(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 SpeechSynthesis::SpeechSynthesis(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 bool SpeechSynthesis::pending() const {
     return EventTarget::get("pending").as<bool>();
@@ -52,3 +52,5 @@ jsbind::TypedArray<SpeechSynthesisVoice> SpeechSynthesis::getVoices() {
     return EventTarget::call("getVoices").as<jsbind::TypedArray<SpeechSynthesisVoice>>();
 }
 
+
+} // namespace webbind

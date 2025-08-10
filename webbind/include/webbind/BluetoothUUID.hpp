@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The BluetoothUUID class.
+/// Interface BluetoothUUID
 /// [`BluetoothUUID`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothUUID)
 class BluetoothUUID : public emlite::Val {
     explicit BluetoothUUID(Handle h) noexcept;
-
 public:
     explicit BluetoothUUID(const emlite::Val &val) noexcept;
     static BluetoothUUID take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothUUID clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getService method.
@@ -30,3 +29,4 @@ public:
     static jsbind::Any canonicalUUID(unsigned long alias);
 };
 
+} // namespace webbind

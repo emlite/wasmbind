@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "Client.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class WindowClient;
 
-
-/// The WindowClient class.
+/// Interface WindowClient
 /// [`WindowClient`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient)
 class WindowClient : public Client {
     explicit WindowClient(Handle h) noexcept;
-
 public:
     explicit WindowClient(const emlite::Val &val) noexcept;
     static WindowClient take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WindowClient clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `visibilityState` attribute.
@@ -36,3 +36,4 @@ public:
     jsbind::Promise<WindowClient> navigate(const jsbind::String& url);
 };
 
+} // namespace webbind

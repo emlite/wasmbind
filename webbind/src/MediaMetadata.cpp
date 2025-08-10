@@ -1,6 +1,8 @@
-#include <webbind/MediaMetadata.hpp>
-#include <webbind/ChapterInformation.hpp>
+#include "webbind/MediaMetadata.hpp"
+#include "webbind/MediaMetadataInit.hpp"
+#include "webbind/ChapterInformation.hpp"
 
+namespace webbind {
 
 MediaMetadata MediaMetadata::take_ownership(Handle h) noexcept {
         return MediaMetadata(h);
@@ -10,10 +12,9 @@ emlite::Val MediaMetadata::instance() noexcept { return emlite::Val::global("Med
 MediaMetadata::MediaMetadata(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaMetadata::MediaMetadata(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 MediaMetadata::MediaMetadata() : emlite::Val(emlite::Val::global("MediaMetadata").new_()) {}
 
-MediaMetadata::MediaMetadata(const jsbind::Any& init) : emlite::Val(emlite::Val::global("MediaMetadata").new_(init)) {}
+MediaMetadata::MediaMetadata(const MediaMetadataInit& init) : emlite::Val(emlite::Val::global("MediaMetadata").new_(init)) {}
 
 jsbind::String MediaMetadata::title() const {
     return emlite::Val::get("title").as<jsbind::String>();
@@ -51,3 +52,5 @@ jsbind::TypedArray<ChapterInformation> MediaMetadata::chapterInfo() const {
     return emlite::Val::get("chapterInfo").as<jsbind::TypedArray<ChapterInformation>>();
 }
 
+
+} // namespace webbind

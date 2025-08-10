@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Baseline;
 class Font;
 
-
-/// The FontMetrics class.
+/// Interface FontMetrics
 /// [`FontMetrics`](https://developer.mozilla.org/en-US/docs/Web/API/FontMetrics)
 class FontMetrics : public emlite::Val {
     explicit FontMetrics(Handle h) noexcept;
-
 public:
     explicit FontMetrics(const emlite::Val &val) noexcept;
     static FontMetrics take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FontMetrics clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
@@ -63,3 +62,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<Font> fonts() const;
 };
 
+} // namespace webbind

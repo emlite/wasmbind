@@ -1,31 +1,9 @@
-#include <webbind/Clients.hpp>
-#include <webbind/Client.hpp>
-#include <webbind/WindowClient.hpp>
+#include "webbind/Clients.hpp"
+#include "webbind/Client.hpp"
+#include "webbind/ClientQueryOptions.hpp"
+#include "webbind/WindowClient.hpp"
 
-
-ClientQueryOptions::ClientQueryOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ClientQueryOptions ClientQueryOptions::take_ownership(Handle h) noexcept {
-        return ClientQueryOptions(h);
-    }
-ClientQueryOptions::ClientQueryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ClientQueryOptions::ClientQueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-ClientQueryOptions ClientQueryOptions::clone() const noexcept { return *this; }
-
-bool ClientQueryOptions::includeUncontrolled() const {
-    return emlite::Val::get("includeUncontrolled").as<bool>();
-}
-
-void ClientQueryOptions::includeUncontrolled(bool value) {
-    emlite::Val::set("includeUncontrolled", value);
-}
-
-ClientType ClientQueryOptions::type() const {
-    return emlite::Val::get("type").as<ClientType>();
-}
-
-void ClientQueryOptions::type(const ClientType& value) {
-    emlite::Val::set("type", value);
-}
+namespace webbind {
 
 Clients Clients::take_ownership(Handle h) noexcept {
         return Clients(h);
@@ -34,7 +12,6 @@ Clients Clients::clone() const noexcept { return *this; }
 emlite::Val Clients::instance() noexcept { return emlite::Val::global("Clients"); }
 Clients::Clients(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Clients::Clients(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<jsbind::Any> Clients::get(const jsbind::String& id) {
     return emlite::Val::call("get", id).as<jsbind::Promise<jsbind::Any>>();
@@ -56,3 +33,5 @@ jsbind::Promise<jsbind::Undefined> Clients::claim() {
     return emlite::Val::call("claim").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

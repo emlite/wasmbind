@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 
-
-/// The SVGScriptElement class.
+/// Interface SVGScriptElement
 /// [`SVGScriptElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGScriptElement)
 class SVGScriptElement : public SVGElement {
     explicit SVGScriptElement(Handle h) noexcept;
-
 public:
     explicit SVGScriptElement(const emlite::Val &val) noexcept;
     static SVGScriptElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGScriptElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -36,3 +35,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

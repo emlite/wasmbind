@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SVGTransformList;
 
-
-/// The SVGAnimatedTransformList class.
+/// Interface SVGAnimatedTransformList
 /// [`SVGAnimatedTransformList`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedTransformList)
 class SVGAnimatedTransformList : public emlite::Val {
     explicit SVGAnimatedTransformList(Handle h) noexcept;
-
 public:
     explicit SVGAnimatedTransformList(const emlite::Val &val) noexcept;
     static SVGAnimatedTransformList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimatedTransformList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] SVGTransformList animVal() const;
 };
 
+} // namespace webbind

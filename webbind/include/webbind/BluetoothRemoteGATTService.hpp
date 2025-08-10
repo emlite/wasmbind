@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class BluetoothDevice;
 class BluetoothRemoteGATTCharacteristic;
 class BluetoothRemoteGATTService;
 
-
-/// The BluetoothRemoteGATTService class.
+/// Interface BluetoothRemoteGATTService
 /// [`BluetoothRemoteGATTService`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService)
 class BluetoothRemoteGATTService : public EventTarget {
     explicit BluetoothRemoteGATTService(Handle h) noexcept;
-
 public:
     explicit BluetoothRemoteGATTService(const emlite::Val &val) noexcept;
     static BluetoothRemoteGATTService take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothRemoteGATTService clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `device` attribute.
@@ -74,3 +73,4 @@ public:
     void onserviceremoved(const jsbind::Any& value);
 };
 
+} // namespace webbind

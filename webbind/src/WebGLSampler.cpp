@@ -1,5 +1,6 @@
-#include <webbind/WebGLSampler.hpp>
+#include "webbind/WebGLSampler.hpp"
 
+namespace webbind {
 
 WebGLSampler WebGLSampler::take_ownership(Handle h) noexcept {
         return WebGLSampler(h);
@@ -10,3 +11,4 @@ WebGLSampler::WebGLSampler(Handle h) noexcept : WebGLObject(emlite::Val::take_ow
 WebGLSampler::WebGLSampler(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

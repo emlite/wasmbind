@@ -1,133 +1,11 @@
-#include <webbind/MediaStreamTrack.hpp>
+#include "webbind/MediaStreamTrack.hpp"
+#include "webbind/MediaStreamTrack.hpp"
+#include "webbind/MediaTrackCapabilities.hpp"
+#include "webbind/MediaTrackConstraints.hpp"
+#include "webbind/MediaTrackSettings.hpp"
+#include "webbind/CaptureHandle.hpp"
 
-
-MediaTrackCapabilities::MediaTrackCapabilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaTrackCapabilities MediaTrackCapabilities::take_ownership(Handle h) noexcept {
-        return MediaTrackCapabilities(h);
-    }
-MediaTrackCapabilities::MediaTrackCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
-MediaTrackCapabilities::MediaTrackCapabilities() noexcept: emlite::Val(emlite::Val::object()) {}
-MediaTrackCapabilities MediaTrackCapabilities::clone() const noexcept { return *this; }
-
-jsbind::String MediaTrackCapabilities::displaySurface() const {
-    return emlite::Val::get("displaySurface").as<jsbind::String>();
-}
-
-void MediaTrackCapabilities::displaySurface(const jsbind::String& value) {
-    emlite::Val::set("displaySurface", value);
-}
-
-bool MediaTrackCapabilities::logicalSurface() const {
-    return emlite::Val::get("logicalSurface").as<bool>();
-}
-
-void MediaTrackCapabilities::logicalSurface(bool value) {
-    emlite::Val::set("logicalSurface", value);
-}
-
-jsbind::TypedArray<jsbind::String> MediaTrackCapabilities::cursor() const {
-    return emlite::Val::get("cursor").as<jsbind::TypedArray<jsbind::String>>();
-}
-
-void MediaTrackCapabilities::cursor(const jsbind::TypedArray<jsbind::String>& value) {
-    emlite::Val::set("cursor", value);
-}
-
-MediaTrackConstraints::MediaTrackConstraints(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaTrackConstraints MediaTrackConstraints::take_ownership(Handle h) noexcept {
-        return MediaTrackConstraints(h);
-    }
-MediaTrackConstraints::MediaTrackConstraints(const emlite::Val &val) noexcept: emlite::Val(val) {}
-MediaTrackConstraints::MediaTrackConstraints() noexcept: emlite::Val(emlite::Val::object()) {}
-MediaTrackConstraints MediaTrackConstraints::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::Any> MediaTrackConstraints::advanced() const {
-    return emlite::Val::get("advanced").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void MediaTrackConstraints::advanced(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("advanced", value);
-}
-
-MediaTrackSettings::MediaTrackSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaTrackSettings MediaTrackSettings::take_ownership(Handle h) noexcept {
-        return MediaTrackSettings(h);
-    }
-MediaTrackSettings::MediaTrackSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
-MediaTrackSettings::MediaTrackSettings() noexcept: emlite::Val(emlite::Val::object()) {}
-MediaTrackSettings MediaTrackSettings::clone() const noexcept { return *this; }
-
-jsbind::String MediaTrackSettings::displaySurface() const {
-    return emlite::Val::get("displaySurface").as<jsbind::String>();
-}
-
-void MediaTrackSettings::displaySurface(const jsbind::String& value) {
-    emlite::Val::set("displaySurface", value);
-}
-
-bool MediaTrackSettings::logicalSurface() const {
-    return emlite::Val::get("logicalSurface").as<bool>();
-}
-
-void MediaTrackSettings::logicalSurface(bool value) {
-    emlite::Val::set("logicalSurface", value);
-}
-
-jsbind::String MediaTrackSettings::cursor() const {
-    return emlite::Val::get("cursor").as<jsbind::String>();
-}
-
-void MediaTrackSettings::cursor(const jsbind::String& value) {
-    emlite::Val::set("cursor", value);
-}
-
-bool MediaTrackSettings::restrictOwnAudio() const {
-    return emlite::Val::get("restrictOwnAudio").as<bool>();
-}
-
-void MediaTrackSettings::restrictOwnAudio(bool value) {
-    emlite::Val::set("restrictOwnAudio", value);
-}
-
-bool MediaTrackSettings::suppressLocalAudioPlayback() const {
-    return emlite::Val::get("suppressLocalAudioPlayback").as<bool>();
-}
-
-void MediaTrackSettings::suppressLocalAudioPlayback(bool value) {
-    emlite::Val::set("suppressLocalAudioPlayback", value);
-}
-
-double MediaTrackSettings::screenPixelRatio() const {
-    return emlite::Val::get("screenPixelRatio").as<double>();
-}
-
-void MediaTrackSettings::screenPixelRatio(double value) {
-    emlite::Val::set("screenPixelRatio", value);
-}
-
-CaptureHandle::CaptureHandle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CaptureHandle CaptureHandle::take_ownership(Handle h) noexcept {
-        return CaptureHandle(h);
-    }
-CaptureHandle::CaptureHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
-CaptureHandle::CaptureHandle() noexcept: emlite::Val(emlite::Val::object()) {}
-CaptureHandle CaptureHandle::clone() const noexcept { return *this; }
-
-jsbind::String CaptureHandle::origin() const {
-    return emlite::Val::get("origin").as<jsbind::String>();
-}
-
-void CaptureHandle::origin(const jsbind::String& value) {
-    emlite::Val::set("origin", value);
-}
-
-jsbind::String CaptureHandle::handle() const {
-    return emlite::Val::get("handle").as<jsbind::String>();
-}
-
-void CaptureHandle::handle(const jsbind::String& value) {
-    emlite::Val::set("handle", value);
-}
+namespace webbind {
 
 MediaStreamTrack MediaStreamTrack::take_ownership(Handle h) noexcept {
         return MediaStreamTrack(h);
@@ -136,7 +14,6 @@ MediaStreamTrack MediaStreamTrack::clone() const noexcept { return *this; }
 emlite::Val MediaStreamTrack::instance() noexcept { return emlite::Val::global("MediaStreamTrack"); }
 MediaStreamTrack::MediaStreamTrack(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaStreamTrack::MediaStreamTrack(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String MediaStreamTrack::kind() const {
     return EventTarget::get("kind").as<jsbind::String>();
@@ -258,3 +135,5 @@ void MediaStreamTrack::onisolationchange(const jsbind::Any& value) {
     EventTarget::set("onisolationchange", value);
 }
 
+
+} // namespace webbind

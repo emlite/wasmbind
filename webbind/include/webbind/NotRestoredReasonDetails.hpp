@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The NotRestoredReasonDetails class.
+/// Interface NotRestoredReasonDetails
 /// [`NotRestoredReasonDetails`](https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasonDetails)
 class NotRestoredReasonDetails : public emlite::Val {
     explicit NotRestoredReasonDetails(Handle h) noexcept;
-
 public:
     explicit NotRestoredReasonDetails(const emlite::Val &val) noexcept;
     static NotRestoredReasonDetails take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NotRestoredReasonDetails clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `reason` attribute.
@@ -24,3 +23,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The XRViewport class.
+/// Interface XRViewport
 /// [`XRViewport`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport)
 class XRViewport : public emlite::Val {
     explicit XRViewport(Handle h) noexcept;
-
 public:
     explicit XRViewport(const emlite::Val &val) noexcept;
     static XRViewport take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRViewport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -30,3 +29,4 @@ public:
     [[nodiscard]] long height() const;
 };
 
+} // namespace webbind

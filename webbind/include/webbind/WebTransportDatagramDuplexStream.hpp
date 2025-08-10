@@ -3,35 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "WebTransportSendOptions.hpp"
+
+namespace webbind {
 
 class WebTransportDatagramsWritable;
-class WebTransportSendOptions;
 class ReadableStream;
-class WebTransportSendGroup;
 
-
-class WebTransportSendOptions : public emlite::Val {
-  explicit WebTransportSendOptions(Handle h) noexcept;
-public:
-    static WebTransportSendOptions take_ownership(Handle h) noexcept;
-    explicit WebTransportSendOptions(const emlite::Val &val) noexcept;
-    WebTransportSendOptions() noexcept;
-    [[nodiscard]] WebTransportSendOptions clone() const noexcept;
-    [[nodiscard]] WebTransportSendGroup sendGroup() const;
-    void sendGroup(const WebTransportSendGroup& value);
-    [[nodiscard]] long long sendOrder() const;
-    void sendOrder(long long value);
-};
-
-/// The WebTransportDatagramDuplexStream class.
+/// Interface WebTransportDatagramDuplexStream
 /// [`WebTransportDatagramDuplexStream`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportDatagramDuplexStream)
 class WebTransportDatagramDuplexStream : public emlite::Val {
     explicit WebTransportDatagramDuplexStream(Handle h) noexcept;
-
 public:
     explicit WebTransportDatagramDuplexStream(const emlite::Val &val) noexcept;
     static WebTransportDatagramDuplexStream take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebTransportDatagramDuplexStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createWritable method.
@@ -72,3 +57,4 @@ public:
     void outgoingHighWaterMark(double value);
 };
 
+} // namespace webbind

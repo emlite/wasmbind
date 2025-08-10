@@ -1,5 +1,6 @@
-#include <webbind/WorkerLocation.hpp>
+#include "webbind/WorkerLocation.hpp"
 
+namespace webbind {
 
 WorkerLocation WorkerLocation::take_ownership(Handle h) noexcept {
         return WorkerLocation(h);
@@ -8,7 +9,6 @@ WorkerLocation WorkerLocation::clone() const noexcept { return *this; }
 emlite::Val WorkerLocation::instance() noexcept { return emlite::Val::global("WorkerLocation"); }
 WorkerLocation::WorkerLocation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WorkerLocation::WorkerLocation(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String WorkerLocation::href() const {
     return emlite::Val::get("href").as<jsbind::String>();
@@ -46,3 +46,5 @@ jsbind::String WorkerLocation::hash() const {
     return emlite::Val::get("hash").as<jsbind::String>();
 }
 
+
+} // namespace webbind

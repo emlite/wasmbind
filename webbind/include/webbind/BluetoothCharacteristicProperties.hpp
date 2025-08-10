@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The BluetoothCharacteristicProperties class.
+/// Interface BluetoothCharacteristicProperties
 /// [`BluetoothCharacteristicProperties`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties)
 class BluetoothCharacteristicProperties : public emlite::Val {
     explicit BluetoothCharacteristicProperties(Handle h) noexcept;
-
 public:
     explicit BluetoothCharacteristicProperties(const emlite::Val &val) noexcept;
     static BluetoothCharacteristicProperties take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothCharacteristicProperties clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `broadcast` attribute.
@@ -45,3 +44,4 @@ public:
     [[nodiscard]] bool writableAuxiliaries() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/SpeechRecognitionPhrase.hpp>
+#include "webbind/SpeechRecognitionPhrase.hpp"
 
+namespace webbind {
 
 SpeechRecognitionPhrase SpeechRecognitionPhrase::take_ownership(Handle h) noexcept {
         return SpeechRecognitionPhrase(h);
@@ -8,7 +9,6 @@ SpeechRecognitionPhrase SpeechRecognitionPhrase::clone() const noexcept { return
 emlite::Val SpeechRecognitionPhrase::instance() noexcept { return emlite::Val::global("SpeechRecognitionPhrase"); }
 SpeechRecognitionPhrase::SpeechRecognitionPhrase(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionPhrase::SpeechRecognitionPhrase(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 SpeechRecognitionPhrase::SpeechRecognitionPhrase(const jsbind::String& phrase) : emlite::Val(emlite::Val::global("SpeechRecognitionPhrase").new_(phrase)) {}
 
@@ -22,3 +22,5 @@ float SpeechRecognitionPhrase::boost() const {
     return emlite::Val::get("boost").as<float>();
 }
 
+
+} // namespace webbind

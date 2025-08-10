@@ -3,34 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "HandwritingPoint.hpp"
 
-class HandwritingPoint;
+namespace webbind {
 
-
-class HandwritingPoint : public emlite::Val {
-  explicit HandwritingPoint(Handle h) noexcept;
-public:
-    static HandwritingPoint take_ownership(Handle h) noexcept;
-    explicit HandwritingPoint(const emlite::Val &val) noexcept;
-    HandwritingPoint() noexcept;
-    [[nodiscard]] HandwritingPoint clone() const noexcept;
-    [[nodiscard]] double x() const;
-    void x(double value);
-    [[nodiscard]] double y() const;
-    void y(double value);
-    [[nodiscard]] jsbind::Any t() const;
-    void t(const jsbind::Any& value);
-};
-
-/// The HandwritingStroke class.
+/// Interface HandwritingStroke
 /// [`HandwritingStroke`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingStroke)
 class HandwritingStroke : public emlite::Val {
     explicit HandwritingStroke(Handle h) noexcept;
-
 public:
     explicit HandwritingStroke(const emlite::Val &val) noexcept;
     static HandwritingStroke take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HandwritingStroke clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HandwritingStroke(..)` constructor, creating a new HandwritingStroke instance
@@ -46,3 +29,4 @@ public:
     jsbind::Undefined clear();
 };
 
+} // namespace webbind

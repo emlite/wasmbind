@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The CSSParserValue class.
+/// Interface CSSParserValue
 /// [`CSSParserValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserValue)
 class CSSParserValue : public emlite::Val {
     explicit CSSParserValue(Handle h) noexcept;
-
 public:
     explicit CSSParserValue(const emlite::Val &val) noexcept;
     static CSSParserValue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSParserValue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

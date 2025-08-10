@@ -1,6 +1,7 @@
-#include <webbind/SVGLengthList.hpp>
-#include <webbind/SVGLength.hpp>
+#include "webbind/SVGLengthList.hpp"
+#include "webbind/SVGLength.hpp"
 
+namespace webbind {
 
 SVGLengthList SVGLengthList::take_ownership(Handle h) noexcept {
         return SVGLengthList(h);
@@ -9,7 +10,6 @@ SVGLengthList SVGLengthList::clone() const noexcept { return *this; }
 emlite::Val SVGLengthList::instance() noexcept { return emlite::Val::global("SVGLengthList"); }
 SVGLengthList::SVGLengthList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGLengthList::SVGLengthList(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned long SVGLengthList::length() const {
     return emlite::Val::get("length").as<unsigned long>();
@@ -47,3 +47,5 @@ SVGLength SVGLengthList::appendItem(const SVGLength& newItem) {
     return emlite::Val::call("appendItem", newItem).as<SVGLength>();
 }
 
+
+} // namespace webbind

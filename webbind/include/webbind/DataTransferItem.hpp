@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class File;
 class FileSystemEntry;
 class FileSystemHandle;
 
-
-/// The DataTransferItem class.
+/// Interface DataTransferItem
 /// [`DataTransferItem`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem)
 class DataTransferItem : public emlite::Val {
     explicit DataTransferItem(Handle h) noexcept;
-
 public:
     explicit DataTransferItem(const emlite::Val &val) noexcept;
     static DataTransferItem take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DataTransferItem clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `kind` attribute.
@@ -28,7 +27,7 @@ public:
     [[nodiscard]] jsbind::String type() const;
     /// The getAsString method.
     /// [`DataTransferItem.getAsString`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsString)
-    jsbind::Undefined getAsString(const jsbind::Any& callback);
+    jsbind::Undefined getAsString(const jsbind::Function& callback);
     /// The getAsFile method.
     /// [`DataTransferItem.getAsFile`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsFile)
     File getAsFile();
@@ -40,3 +39,4 @@ public:
     jsbind::Promise<FileSystemHandle> getAsFileSystemHandle();
 };
 
+} // namespace webbind

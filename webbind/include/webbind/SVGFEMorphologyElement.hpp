@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedEnumeration;
 class SVGAnimatedNumber;
 class SVGAnimatedLength;
 
-
-/// The SVGFEMorphologyElement class.
+/// Interface SVGFEMorphologyElement
 /// [`SVGFEMorphologyElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMorphologyElement)
 class SVGFEMorphologyElement : public SVGElement {
     explicit SVGFEMorphologyElement(Handle h) noexcept;
-
 public:
     explicit SVGFEMorphologyElement(const emlite::Val &val) noexcept;
     static SVGFEMorphologyElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEMorphologyElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -51,3 +50,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

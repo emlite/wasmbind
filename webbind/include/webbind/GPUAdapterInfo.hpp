@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUAdapterInfo class.
+/// Interface GPUAdapterInfo
 /// [`GPUAdapterInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo)
 class GPUAdapterInfo : public emlite::Val {
     explicit GPUAdapterInfo(Handle h) noexcept;
-
 public:
     explicit GPUAdapterInfo(const emlite::Val &val) noexcept;
     static GPUAdapterInfo take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUAdapterInfo clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `vendor` attribute.
@@ -39,3 +38,4 @@ public:
     [[nodiscard]] bool isFallbackAdapter() const;
 };
 
+} // namespace webbind

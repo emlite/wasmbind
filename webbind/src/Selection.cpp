@@ -1,25 +1,10 @@
-#include <webbind/Selection.hpp>
-#include <webbind/Node.hpp>
-#include <webbind/Range.hpp>
-#include <webbind/StaticRange.hpp>
-#include <webbind/ShadowRoot.hpp>
+#include "webbind/Selection.hpp"
+#include "webbind/Node.hpp"
+#include "webbind/Range.hpp"
+#include "webbind/StaticRange.hpp"
+#include "webbind/GetComposedRangesOptions.hpp"
 
-
-GetComposedRangesOptions::GetComposedRangesOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GetComposedRangesOptions GetComposedRangesOptions::take_ownership(Handle h) noexcept {
-        return GetComposedRangesOptions(h);
-    }
-GetComposedRangesOptions::GetComposedRangesOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-GetComposedRangesOptions::GetComposedRangesOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-GetComposedRangesOptions GetComposedRangesOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<ShadowRoot> GetComposedRangesOptions::shadowRoots() const {
-    return emlite::Val::get("shadowRoots").as<jsbind::TypedArray<ShadowRoot>>();
-}
-
-void GetComposedRangesOptions::shadowRoots(const jsbind::TypedArray<ShadowRoot>& value) {
-    emlite::Val::set("shadowRoots", value);
-}
+namespace webbind {
 
 Selection Selection::take_ownership(Handle h) noexcept {
         return Selection(h);
@@ -28,7 +13,6 @@ Selection Selection::clone() const noexcept { return *this; }
 emlite::Val Selection::instance() noexcept { return emlite::Val::global("Selection"); }
 Selection::Selection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Selection::Selection(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 Node Selection::anchorNode() const {
     return emlite::Val::get("anchorNode").as<Node>();
@@ -158,3 +142,5 @@ bool Selection::containsNode(const Node& node, bool allowPartialContainment) {
     return emlite::Val::call("containsNode", node, allowPartialContainment).as<bool>();
 }
 
+
+} // namespace webbind

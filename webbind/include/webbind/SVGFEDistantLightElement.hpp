@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedNumber;
 
-
-/// The SVGFEDistantLightElement class.
+/// Interface SVGFEDistantLightElement
 /// [`SVGFEDistantLightElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDistantLightElement)
 class SVGFEDistantLightElement : public SVGElement {
     explicit SVGFEDistantLightElement(Handle h) noexcept;
-
 public:
     explicit SVGFEDistantLightElement(const emlite::Val &val) noexcept;
     static SVGFEDistantLightElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEDistantLightElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `azimuth` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] SVGAnimatedNumber elevation() const;
 };
 
+} // namespace webbind

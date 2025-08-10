@@ -1,9 +1,10 @@
-#include <webbind/SVGFEColorMatrixElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedNumberList.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEColorMatrixElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedNumberList.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEColorMatrixElement SVGFEColorMatrixElement::take_ownership(Handle h) noexcept {
         return SVGFEColorMatrixElement(h);
@@ -12,7 +13,6 @@ SVGFEColorMatrixElement SVGFEColorMatrixElement::clone() const noexcept { return
 emlite::Val SVGFEColorMatrixElement::instance() noexcept { return emlite::Val::global("SVGFEColorMatrixElement"); }
 SVGFEColorMatrixElement::SVGFEColorMatrixElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEColorMatrixElement::SVGFEColorMatrixElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEColorMatrixElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -46,3 +46,5 @@ SVGAnimatedString SVGFEColorMatrixElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

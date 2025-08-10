@@ -1,5 +1,6 @@
-#include <webbind/ScreenOrientation.hpp>
+#include "webbind/ScreenOrientation.hpp"
 
+namespace webbind {
 
 ScreenOrientation ScreenOrientation::take_ownership(Handle h) noexcept {
         return ScreenOrientation(h);
@@ -8,7 +9,6 @@ ScreenOrientation ScreenOrientation::clone() const noexcept { return *this; }
 emlite::Val ScreenOrientation::instance() noexcept { return emlite::Val::global("ScreenOrientation"); }
 ScreenOrientation::ScreenOrientation(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 ScreenOrientation::ScreenOrientation(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Promise<jsbind::Undefined> ScreenOrientation::lock(const OrientationLockType& orientation) {
     return EventTarget::call("lock", orientation).as<jsbind::Promise<jsbind::Undefined>>();
@@ -34,3 +34,5 @@ void ScreenOrientation::onchange(const jsbind::Any& value) {
     EventTarget::set("onchange", value);
 }
 
+
+} // namespace webbind

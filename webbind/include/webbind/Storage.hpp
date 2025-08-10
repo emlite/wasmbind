@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The Storage class.
+/// Interface Storage
 /// [`Storage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage)
 class Storage : public emlite::Val {
     explicit Storage(Handle h) noexcept;
-
 public:
     explicit Storage(const emlite::Val &val) noexcept;
     static Storage take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Storage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -36,3 +35,4 @@ public:
     jsbind::Undefined clear();
 };
 
+} // namespace webbind

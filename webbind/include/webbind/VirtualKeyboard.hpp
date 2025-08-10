@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class DOMRect;
 
-
-/// The VirtualKeyboard class.
+/// Interface VirtualKeyboard
 /// [`VirtualKeyboard`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard)
 class VirtualKeyboard : public EventTarget {
     explicit VirtualKeyboard(Handle h) noexcept;
-
 public:
     explicit VirtualKeyboard(const emlite::Val &val) noexcept;
     static VirtualKeyboard take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VirtualKeyboard clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The show method.
@@ -42,3 +41,4 @@ public:
     void ongeometrychange(const jsbind::Any& value);
 };
 
+} // namespace webbind

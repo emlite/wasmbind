@@ -1,5 +1,6 @@
-#include <webbind/XRJointSpace.hpp>
+#include "webbind/XRJointSpace.hpp"
 
+namespace webbind {
 
 XRJointSpace XRJointSpace::take_ownership(Handle h) noexcept {
         return XRJointSpace(h);
@@ -9,8 +10,9 @@ emlite::Val XRJointSpace::instance() noexcept { return emlite::Val::global("XRJo
 XRJointSpace::XRJointSpace(Handle h) noexcept : XRSpace(emlite::Val::take_ownership(h)) {}
 XRJointSpace::XRJointSpace(const emlite::Val &val) noexcept: XRSpace(val) {}
 
-
 XRHandJoint XRJointSpace::jointName() const {
     return XRSpace::get("jointName").as<XRHandJoint>();
 }
 
+
+} // namespace webbind

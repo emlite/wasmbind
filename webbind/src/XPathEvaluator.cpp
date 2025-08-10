@@ -1,8 +1,9 @@
-#include <webbind/XPathEvaluator.hpp>
-#include <webbind/XPathExpression.hpp>
-#include <webbind/Node.hpp>
-#include <webbind/XPathResult.hpp>
+#include "webbind/XPathEvaluator.hpp"
+#include "webbind/XPathExpression.hpp"
+#include "webbind/Node.hpp"
+#include "webbind/XPathResult.hpp"
 
+namespace webbind {
 
 XPathEvaluator XPathEvaluator::take_ownership(Handle h) noexcept {
         return XPathEvaluator(h);
@@ -11,7 +12,6 @@ XPathEvaluator XPathEvaluator::clone() const noexcept { return *this; }
 emlite::Val XPathEvaluator::instance() noexcept { return emlite::Val::global("XPathEvaluator"); }
 XPathEvaluator::XPathEvaluator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XPathEvaluator::XPathEvaluator(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 XPathEvaluator::XPathEvaluator() : emlite::Val(emlite::Val::global("XPathEvaluator").new_()) {}
 
@@ -43,3 +43,5 @@ XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Nod
     return emlite::Val::call("evaluate", expression, contextNode, resolver, type, result).as<XPathResult>();
 }
 
+
+} // namespace webbind

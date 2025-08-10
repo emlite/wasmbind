@@ -1,86 +1,17 @@
-#include <webbind/CanvasRenderingContext2D.hpp>
-#include <webbind/HTMLCanvasElement.hpp>
-#include <webbind/DOMMatrix.hpp>
-#include <webbind/SVGSVGElement.hpp>
-#include <webbind/CanvasGradient.hpp>
-#include <webbind/CanvasPattern.hpp>
-#include <webbind/Path2D.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/TextMetrics.hpp>
-#include <webbind/ImageData.hpp>
+#include "webbind/CanvasRenderingContext2D.hpp"
+#include "webbind/HTMLCanvasElement.hpp"
+#include "webbind/CanvasRenderingContext2DSettings.hpp"
+#include "webbind/DOMMatrix.hpp"
+#include "webbind/DOMMatrix2DInit.hpp"
+#include "webbind/CanvasGradient.hpp"
+#include "webbind/CanvasPattern.hpp"
+#include "webbind/Path2D.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/TextMetrics.hpp"
+#include "webbind/ImageData.hpp"
+#include "webbind/ImageDataSettings.hpp"
 
-
-CanvasRenderingContext2DSettings::CanvasRenderingContext2DSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasRenderingContext2DSettings CanvasRenderingContext2DSettings::take_ownership(Handle h) noexcept {
-        return CanvasRenderingContext2DSettings(h);
-    }
-CanvasRenderingContext2DSettings::CanvasRenderingContext2DSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
-CanvasRenderingContext2DSettings::CanvasRenderingContext2DSettings() noexcept: emlite::Val(emlite::Val::object()) {}
-CanvasRenderingContext2DSettings CanvasRenderingContext2DSettings::clone() const noexcept { return *this; }
-
-bool CanvasRenderingContext2DSettings::alpha() const {
-    return emlite::Val::get("alpha").as<bool>();
-}
-
-void CanvasRenderingContext2DSettings::alpha(bool value) {
-    emlite::Val::set("alpha", value);
-}
-
-bool CanvasRenderingContext2DSettings::desynchronized() const {
-    return emlite::Val::get("desynchronized").as<bool>();
-}
-
-void CanvasRenderingContext2DSettings::desynchronized(bool value) {
-    emlite::Val::set("desynchronized", value);
-}
-
-PredefinedColorSpace CanvasRenderingContext2DSettings::colorSpace() const {
-    return emlite::Val::get("colorSpace").as<PredefinedColorSpace>();
-}
-
-void CanvasRenderingContext2DSettings::colorSpace(const PredefinedColorSpace& value) {
-    emlite::Val::set("colorSpace", value);
-}
-
-CanvasColorType CanvasRenderingContext2DSettings::colorType() const {
-    return emlite::Val::get("colorType").as<CanvasColorType>();
-}
-
-void CanvasRenderingContext2DSettings::colorType(const CanvasColorType& value) {
-    emlite::Val::set("colorType", value);
-}
-
-bool CanvasRenderingContext2DSettings::willReadFrequently() const {
-    return emlite::Val::get("willReadFrequently").as<bool>();
-}
-
-void CanvasRenderingContext2DSettings::willReadFrequently(bool value) {
-    emlite::Val::set("willReadFrequently", value);
-}
-
-ImageDataSettings::ImageDataSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ImageDataSettings ImageDataSettings::take_ownership(Handle h) noexcept {
-        return ImageDataSettings(h);
-    }
-ImageDataSettings::ImageDataSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ImageDataSettings::ImageDataSettings() noexcept: emlite::Val(emlite::Val::object()) {}
-ImageDataSettings ImageDataSettings::clone() const noexcept { return *this; }
-
-PredefinedColorSpace ImageDataSettings::colorSpace() const {
-    return emlite::Val::get("colorSpace").as<PredefinedColorSpace>();
-}
-
-void ImageDataSettings::colorSpace(const PredefinedColorSpace& value) {
-    emlite::Val::set("colorSpace", value);
-}
-
-ImageDataPixelFormat ImageDataSettings::pixelFormat() const {
-    return emlite::Val::get("pixelFormat").as<ImageDataPixelFormat>();
-}
-
-void ImageDataSettings::pixelFormat(const ImageDataPixelFormat& value) {
-    emlite::Val::set("pixelFormat", value);
-}
+namespace webbind {
 
 CanvasRenderingContext2D CanvasRenderingContext2D::take_ownership(Handle h) noexcept {
         return CanvasRenderingContext2D(h);
@@ -89,7 +20,6 @@ CanvasRenderingContext2D CanvasRenderingContext2D::clone() const noexcept { retu
 emlite::Val CanvasRenderingContext2D::instance() noexcept { return emlite::Val::global("CanvasRenderingContext2D"); }
 CanvasRenderingContext2D::CanvasRenderingContext2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CanvasRenderingContext2D::CanvasRenderingContext2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 HTMLCanvasElement CanvasRenderingContext2D::canvas() const {
     return emlite::Val::get("canvas").as<HTMLCanvasElement>();
@@ -531,3 +461,5 @@ jsbind::Undefined CanvasRenderingContext2D::ellipse(double x, double y, double r
     return emlite::Val::call("ellipse", x, y, radiusX, radiusY, rotation, startAngle, endAngle, counterclockwise).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

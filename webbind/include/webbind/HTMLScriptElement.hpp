@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class DOMTokenList;
 
-
-/// The HTMLScriptElement class.
+/// Interface HTMLScriptElement
 /// [`HTMLScriptElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement)
 class HTMLScriptElement : public HTMLElement {
     explicit HTMLScriptElement(Handle h) noexcept;
-
 public:
     explicit HTMLScriptElement(const emlite::Val &val) noexcept;
     static HTMLScriptElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLScriptElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLScriptElement(..)` constructor, creating a new HTMLScriptElement instance
@@ -113,3 +112,4 @@ public:
     void attributionSrc(const jsbind::String& value);
 };
 
+} // namespace webbind

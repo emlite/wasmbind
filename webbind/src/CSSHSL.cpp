@@ -1,5 +1,6 @@
-#include <webbind/CSSHSL.hpp>
+#include "webbind/CSSHSL.hpp"
 
+namespace webbind {
 
 CSSHSL CSSHSL::take_ownership(Handle h) noexcept {
         return CSSHSL(h);
@@ -8,7 +9,6 @@ CSSHSL CSSHSL::clone() const noexcept { return *this; }
 emlite::Val CSSHSL::instance() noexcept { return emlite::Val::global("CSSHSL"); }
 CSSHSL::CSSHSL(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
 CSSHSL::CSSHSL(const emlite::Val &val) noexcept: CSSColorValue(val) {}
-
 
 CSSHSL::CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l) : CSSColorValue(emlite::Val::global("CSSHSL").new_(h, s, l)) {}
 
@@ -46,3 +46,5 @@ void CSSHSL::alpha(const jsbind::Any& value) {
     CSSColorValue::set("alpha", value);
 }
 
+
+} // namespace webbind

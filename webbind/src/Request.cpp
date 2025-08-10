@@ -1,10 +1,13 @@
-#include <webbind/Request.hpp>
-#include <webbind/Headers.hpp>
-#include <webbind/AbortSignal.hpp>
-#include <webbind/ReadableStream.hpp>
-#include <webbind/Blob.hpp>
-#include <webbind/FormData.hpp>
+#include "webbind/Request.hpp"
+#include "webbind/RequestInit.hpp"
+#include "webbind/Headers.hpp"
+#include "webbind/AbortSignal.hpp"
+#include "webbind/Request.hpp"
+#include "webbind/ReadableStream.hpp"
+#include "webbind/Blob.hpp"
+#include "webbind/FormData.hpp"
 
+namespace webbind {
 
 Request Request::take_ownership(Handle h) noexcept {
         return Request(h);
@@ -14,10 +17,9 @@ emlite::Val Request::instance() noexcept { return emlite::Val::global("Request")
 Request::Request(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Request::Request(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 Request::Request(const jsbind::Any& input) : emlite::Val(emlite::Val::global("Request").new_(input)) {}
 
-Request::Request(const jsbind::Any& input, const jsbind::Any& init) : emlite::Val(emlite::Val::global("Request").new_(input, init)) {}
+Request::Request(const jsbind::Any& input, const RequestInit& init) : emlite::Val(emlite::Val::global("Request").new_(input, init)) {}
 
 jsbind::String Request::method() const {
     return emlite::Val::get("method").as<jsbind::String>();
@@ -123,3 +125,5 @@ jsbind::Promise<jsbind::String> Request::text() {
     return emlite::Val::call("text").as<jsbind::Promise<jsbind::String>>();
 }
 
+
+} // namespace webbind

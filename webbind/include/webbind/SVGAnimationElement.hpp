@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGStringList;
 
-
-/// The SVGAnimationElement class.
+/// Interface SVGAnimationElement
 /// [`SVGAnimationElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement)
 class SVGAnimationElement : public SVGElement {
     explicit SVGAnimationElement(Handle h) noexcept;
-
 public:
     explicit SVGAnimationElement(const emlite::Val &val) noexcept;
     static SVGAnimationElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimationElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `targetElement` attribute.
@@ -69,3 +68,4 @@ public:
     [[nodiscard]] SVGStringList systemLanguage() const;
 };
 
+} // namespace webbind

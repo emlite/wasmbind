@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedLength;
 
-
-/// The SVGFETileElement class.
+/// Interface SVGFETileElement
 /// [`SVGFETileElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFETileElement)
 class SVGFETileElement : public SVGElement {
     explicit SVGFETileElement(Handle h) noexcept;
-
 public:
     explicit SVGFETileElement(const emlite::Val &val) noexcept;
     static SVGFETileElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFETileElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -40,3 +39,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

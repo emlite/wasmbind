@@ -1,5 +1,7 @@
-#include <webbind/CloseWatcher.hpp>
+#include "webbind/CloseWatcher.hpp"
+#include "webbind/CloseWatcherOptions.hpp"
 
+namespace webbind {
 
 CloseWatcher CloseWatcher::take_ownership(Handle h) noexcept {
         return CloseWatcher(h);
@@ -9,10 +11,9 @@ emlite::Val CloseWatcher::instance() noexcept { return emlite::Val::global("Clos
 CloseWatcher::CloseWatcher(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 CloseWatcher::CloseWatcher(const emlite::Val &val) noexcept: EventTarget(val) {}
 
-
 CloseWatcher::CloseWatcher() : EventTarget(emlite::Val::global("CloseWatcher").new_()) {}
 
-CloseWatcher::CloseWatcher(const jsbind::Any& options) : EventTarget(emlite::Val::global("CloseWatcher").new_(options)) {}
+CloseWatcher::CloseWatcher(const CloseWatcherOptions& options) : EventTarget(emlite::Val::global("CloseWatcher").new_(options)) {}
 
 jsbind::Undefined CloseWatcher::requestClose() {
     return EventTarget::call("requestClose").as<jsbind::Undefined>();
@@ -42,3 +43,5 @@ void CloseWatcher::onclose(const jsbind::Any& value) {
     EventTarget::set("onclose", value);
 }
 
+
+} // namespace webbind

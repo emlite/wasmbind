@@ -1,5 +1,6 @@
-#include <webbind/CSSCounterStyleRule.hpp>
+#include "webbind/CSSCounterStyleRule.hpp"
 
+namespace webbind {
 
 CSSCounterStyleRule CSSCounterStyleRule::take_ownership(Handle h) noexcept {
         return CSSCounterStyleRule(h);
@@ -8,7 +9,6 @@ CSSCounterStyleRule CSSCounterStyleRule::clone() const noexcept { return *this; 
 emlite::Val CSSCounterStyleRule::instance() noexcept { return emlite::Val::global("CSSCounterStyleRule"); }
 CSSCounterStyleRule::CSSCounterStyleRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
 CSSCounterStyleRule::CSSCounterStyleRule(const emlite::Val &val) noexcept: CSSRule(val) {}
-
 
 jsbind::String CSSCounterStyleRule::name() const {
     return CSSRule::get("name").as<jsbind::String>();
@@ -98,3 +98,5 @@ void CSSCounterStyleRule::fallback(const jsbind::String& value) {
     CSSRule::set("fallback", value);
 }
 
+
+} // namespace webbind

@@ -2,23 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "HTMLElement.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 class ValidityState;
 class NodeList;
 
-
-/// The HTMLTextAreaElement class.
+/// Interface HTMLTextAreaElement
 /// [`HTMLTextAreaElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement)
 class HTMLTextAreaElement : public HTMLElement {
     explicit HTMLTextAreaElement(Handle h) noexcept;
-
 public:
     explicit HTMLTextAreaElement(const emlite::Val &val) noexcept;
     static HTMLTextAreaElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTextAreaElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTextAreaElement(..)` constructor, creating a new HTMLTextAreaElement instance
@@ -172,3 +172,4 @@ public:
     jsbind::Undefined setSelectionRange(unsigned long start, unsigned long end, const jsbind::String& direction);
 };
 
+} // namespace webbind

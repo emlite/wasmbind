@@ -1,5 +1,6 @@
-#include <webbind/WebGLBuffer.hpp>
+#include "webbind/WebGLBuffer.hpp"
 
+namespace webbind {
 
 WebGLBuffer WebGLBuffer::take_ownership(Handle h) noexcept {
         return WebGLBuffer(h);
@@ -10,3 +11,4 @@ WebGLBuffer::WebGLBuffer(Handle h) noexcept : WebGLObject(emlite::Val::take_owne
 WebGLBuffer::WebGLBuffer(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The DOMException class.
+/// Interface DOMException
 /// [`DOMException`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException)
 class DOMException : public emlite::Val {
     explicit DOMException(Handle h) noexcept;
-
 public:
     explicit DOMException(const emlite::Val &val) noexcept;
     static DOMException take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMException clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMException(..)` constructor, creating a new DOMException instance
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] unsigned short code() const;
 };
 
+} // namespace webbind

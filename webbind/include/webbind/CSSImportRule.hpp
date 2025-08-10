@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
+
+namespace webbind {
 
 class MediaList;
 class CSSStyleSheet;
 
-
-/// The CSSImportRule class.
+/// Interface CSSImportRule
 /// [`CSSImportRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule)
 class CSSImportRule : public CSSRule {
     explicit CSSImportRule(Handle h) noexcept;
-
 public:
     explicit CSSImportRule(const emlite::Val &val) noexcept;
     static CSSImportRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSImportRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `href` attribute.
@@ -37,3 +36,4 @@ public:
     [[nodiscard]] jsbind::String supportsText() const;
 };
 
+} // namespace webbind

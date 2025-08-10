@@ -1,62 +1,9 @@
-#include <webbind/PaymentResponse.hpp>
-#include <webbind/ContactAddress.hpp>
+#include "webbind/PaymentResponse.hpp"
+#include "webbind/ContactAddress.hpp"
+#include "webbind/PaymentCompleteDetails.hpp"
+#include "webbind/PaymentValidationErrors.hpp"
 
-
-PaymentCompleteDetails::PaymentCompleteDetails(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PaymentCompleteDetails PaymentCompleteDetails::take_ownership(Handle h) noexcept {
-        return PaymentCompleteDetails(h);
-    }
-PaymentCompleteDetails::PaymentCompleteDetails(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PaymentCompleteDetails::PaymentCompleteDetails() noexcept: emlite::Val(emlite::Val::object()) {}
-PaymentCompleteDetails PaymentCompleteDetails::clone() const noexcept { return *this; }
-
-jsbind::Object PaymentCompleteDetails::data() const {
-    return emlite::Val::get("data").as<jsbind::Object>();
-}
-
-void PaymentCompleteDetails::data(const jsbind::Object& value) {
-    emlite::Val::set("data", value);
-}
-
-PaymentValidationErrors::PaymentValidationErrors(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PaymentValidationErrors PaymentValidationErrors::take_ownership(Handle h) noexcept {
-        return PaymentValidationErrors(h);
-    }
-PaymentValidationErrors::PaymentValidationErrors(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PaymentValidationErrors::PaymentValidationErrors() noexcept: emlite::Val(emlite::Val::object()) {}
-PaymentValidationErrors PaymentValidationErrors::clone() const noexcept { return *this; }
-
-jsbind::Any PaymentValidationErrors::payer() const {
-    return emlite::Val::get("payer").as<jsbind::Any>();
-}
-
-void PaymentValidationErrors::payer(const jsbind::Any& value) {
-    emlite::Val::set("payer", value);
-}
-
-jsbind::Any PaymentValidationErrors::shippingAddress() const {
-    return emlite::Val::get("shippingAddress").as<jsbind::Any>();
-}
-
-void PaymentValidationErrors::shippingAddress(const jsbind::Any& value) {
-    emlite::Val::set("shippingAddress", value);
-}
-
-jsbind::String PaymentValidationErrors::error() const {
-    return emlite::Val::get("error").as<jsbind::String>();
-}
-
-void PaymentValidationErrors::error(const jsbind::String& value) {
-    emlite::Val::set("error", value);
-}
-
-jsbind::Object PaymentValidationErrors::paymentMethod() const {
-    return emlite::Val::get("paymentMethod").as<jsbind::Object>();
-}
-
-void PaymentValidationErrors::paymentMethod(const jsbind::Object& value) {
-    emlite::Val::set("paymentMethod", value);
-}
+namespace webbind {
 
 PaymentResponse PaymentResponse::take_ownership(Handle h) noexcept {
         return PaymentResponse(h);
@@ -65,7 +12,6 @@ PaymentResponse PaymentResponse::clone() const noexcept { return *this; }
 emlite::Val PaymentResponse::instance() noexcept { return emlite::Val::global("PaymentResponse"); }
 PaymentResponse::PaymentResponse(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PaymentResponse::PaymentResponse(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Object PaymentResponse::toJSON() {
     return EventTarget::call("toJSON").as<jsbind::Object>();
@@ -131,3 +77,5 @@ void PaymentResponse::onpayerdetailchange(const jsbind::Any& value) {
     EventTarget::set("onpayerdetailchange", value);
 }
 
+
+} // namespace webbind

@@ -2,25 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "RTCIceTransport.hpp"
+#include "enums.hpp"
+#include "RTCLocalIceCandidateInit.hpp"
+#include "RTCIceCandidateInit.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The RTCIceCandidate class.
+/// Interface RTCIceCandidate
 /// [`RTCIceCandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate)
 class RTCIceCandidate : public emlite::Val {
     explicit RTCIceCandidate(Handle h) noexcept;
-
 public:
     explicit RTCIceCandidate(const emlite::Val &val) noexcept;
     static RTCIceCandidate take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCIceCandidate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCIceCandidate(..)` constructor, creating a new RTCIceCandidate instance
     RTCIceCandidate();
     /// The `new RTCIceCandidate(..)` constructor, creating a new RTCIceCandidate instance
-    RTCIceCandidate(const jsbind::Any& candidateInitDict);
+    RTCIceCandidate(const RTCLocalIceCandidateInit& candidateInitDict);
     /// Getter of the `candidate` attribute.
     /// [`RTCIceCandidate.candidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/candidate)
     [[nodiscard]] jsbind::String candidate() const;
@@ -74,3 +75,4 @@ public:
     RTCIceCandidateInit toJSON();
 };
 
+} // namespace webbind

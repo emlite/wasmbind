@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SpeechRecognitionAlternative;
 
-
-/// The SpeechRecognitionResult class.
+/// Interface SpeechRecognitionResult
 /// [`SpeechRecognitionResult`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult)
 class SpeechRecognitionResult : public emlite::Val {
     explicit SpeechRecognitionResult(Handle h) noexcept;
-
 public:
     explicit SpeechRecognitionResult(const emlite::Val &val) noexcept;
     static SpeechRecognitionResult take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechRecognitionResult clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -29,3 +28,4 @@ public:
     [[nodiscard]] bool isFinal() const;
 };
 
+} // namespace webbind

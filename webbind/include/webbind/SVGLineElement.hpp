@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "SVGGeometryElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 
-
-/// The SVGLineElement class.
+/// Interface SVGLineElement
 /// [`SVGLineElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLineElement)
 class SVGLineElement : public SVGGeometryElement {
     explicit SVGLineElement(Handle h) noexcept;
-
 public:
     explicit SVGLineElement(const emlite::Val &val) noexcept;
     static SVGLineElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGLineElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x1` attribute.
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] SVGAnimatedLength y2() const;
 };
 
+} // namespace webbind

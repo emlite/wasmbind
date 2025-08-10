@@ -1,5 +1,7 @@
-#include <webbind/PresentationConnectionCloseEvent.hpp>
+#include "webbind/PresentationConnectionCloseEvent.hpp"
+#include "webbind/PresentationConnectionCloseEventInit.hpp"
 
+namespace webbind {
 
 PresentationConnectionCloseEvent PresentationConnectionCloseEvent::take_ownership(Handle h) noexcept {
         return PresentationConnectionCloseEvent(h);
@@ -9,8 +11,7 @@ emlite::Val PresentationConnectionCloseEvent::instance() noexcept { return emlit
 PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("PresentationConnectionCloseEvent").new_(type, eventInitDict)) {}
+PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const jsbind::String& type, const PresentationConnectionCloseEventInit& eventInitDict) : Event(emlite::Val::global("PresentationConnectionCloseEvent").new_(type, eventInitDict)) {}
 
 PresentationConnectionCloseReason PresentationConnectionCloseEvent::reason() const {
     return Event::get("reason").as<PresentationConnectionCloseReason>();
@@ -20,3 +21,5 @@ jsbind::String PresentationConnectionCloseEvent::message() const {
     return Event::get("message").as<jsbind::String>();
 }
 
+
+} // namespace webbind

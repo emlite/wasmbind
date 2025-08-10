@@ -1,7 +1,8 @@
-#include <webbind/SVGViewElement.hpp>
-#include <webbind/SVGAnimatedRect.hpp>
-#include <webbind/SVGAnimatedPreserveAspectRatio.hpp>
+#include "webbind/SVGViewElement.hpp"
+#include "webbind/SVGAnimatedRect.hpp"
+#include "webbind/SVGAnimatedPreserveAspectRatio.hpp"
 
+namespace webbind {
 
 SVGViewElement SVGViewElement::take_ownership(Handle h) noexcept {
         return SVGViewElement(h);
@@ -11,7 +12,6 @@ emlite::Val SVGViewElement::instance() noexcept { return emlite::Val::global("SV
 SVGViewElement::SVGViewElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGViewElement::SVGViewElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
-
 SVGAnimatedRect SVGViewElement::viewBox() const {
     return SVGElement::get("viewBox").as<SVGAnimatedRect>();
 }
@@ -20,3 +20,5 @@ SVGAnimatedPreserveAspectRatio SVGViewElement::preserveAspectRatio() const {
     return SVGElement::get("preserveAspectRatio").as<SVGAnimatedPreserveAspectRatio>();
 }
 
+
+} // namespace webbind

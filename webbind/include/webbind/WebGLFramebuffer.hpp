@@ -2,20 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WebGLObject.hpp"
 #include "enums.hpp"
+#include "WebGLObject.hpp"
 
+namespace webbind {
 
-/// The WebGLFramebuffer class.
+/// Interface WebGLFramebuffer
 /// [`WebGLFramebuffer`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLFramebuffer)
 class WebGLFramebuffer : public WebGLObject {
     explicit WebGLFramebuffer(Handle h) noexcept;
-
 public:
     explicit WebGLFramebuffer(const emlite::Val &val) noexcept;
     static WebGLFramebuffer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebGLFramebuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

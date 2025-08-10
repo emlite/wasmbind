@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SVGAngle;
 
-
-/// The SVGAnimatedAngle class.
+/// Interface SVGAnimatedAngle
 /// [`SVGAnimatedAngle`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedAngle)
 class SVGAnimatedAngle : public emlite::Val {
     explicit SVGAnimatedAngle(Handle h) noexcept;
-
 public:
     explicit SVGAnimatedAngle(const emlite::Val &val) noexcept;
     static SVGAnimatedAngle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimatedAngle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] SVGAngle animVal() const;
 };
 
+} // namespace webbind

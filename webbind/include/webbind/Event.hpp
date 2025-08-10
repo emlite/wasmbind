@@ -3,25 +3,25 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "EventInit.hpp"
+
+namespace webbind {
 
 class EventTarget;
 
-
-/// The Event class.
+/// Interface Event
 /// [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event)
 class Event : public emlite::Val {
     explicit Event(Handle h) noexcept;
-
 public:
     explicit Event(const emlite::Val &val) noexcept;
     static Event take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Event clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Event(..)` constructor, creating a new Event instance
     Event(const jsbind::String& type);
     /// The `new Event(..)` constructor, creating a new Event instance
-    Event(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    Event(const jsbind::String& type, const EventInit& eventInitDict);
     /// Getter of the `type` attribute.
     /// [`Event.type`](https://developer.mozilla.org/en-US/docs/Web/API/Event/type)
     [[nodiscard]] jsbind::String type() const;
@@ -90,3 +90,4 @@ public:
     jsbind::Undefined initEvent(const jsbind::String& type, bool bubbles, bool cancelable);
 };
 
+} // namespace webbind

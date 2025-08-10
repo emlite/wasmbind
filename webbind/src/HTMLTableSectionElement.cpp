@@ -1,7 +1,8 @@
-#include <webbind/HTMLTableSectionElement.hpp>
-#include <webbind/HTMLCollection.hpp>
-#include <webbind/HTMLTableRowElement.hpp>
+#include "webbind/HTMLTableSectionElement.hpp"
+#include "webbind/HTMLCollection.hpp"
+#include "webbind/HTMLTableRowElement.hpp"
 
+namespace webbind {
 
 HTMLTableSectionElement HTMLTableSectionElement::take_ownership(Handle h) noexcept {
         return HTMLTableSectionElement(h);
@@ -10,7 +11,6 @@ HTMLTableSectionElement HTMLTableSectionElement::clone() const noexcept { return
 emlite::Val HTMLTableSectionElement::instance() noexcept { return emlite::Val::global("HTMLTableSectionElement"); }
 HTMLTableSectionElement::HTMLTableSectionElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLTableSectionElement::HTMLTableSectionElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLTableSectionElement::HTMLTableSectionElement() : HTMLElement(emlite::Val::global("HTMLTableSectionElement").new_()) {}
 
@@ -62,3 +62,5 @@ void HTMLTableSectionElement::vAlign(const jsbind::String& value) {
     HTMLElement::set("vAlign", value);
 }
 
+
+} // namespace webbind

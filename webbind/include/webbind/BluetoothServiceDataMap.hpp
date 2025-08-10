@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The BluetoothServiceDataMap class.
+/// Interface BluetoothServiceDataMap
 /// [`BluetoothServiceDataMap`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothServiceDataMap)
 class BluetoothServiceDataMap : public emlite::Val {
     explicit BluetoothServiceDataMap(Handle h) noexcept;
-
 public:
     explicit BluetoothServiceDataMap(const emlite::Val &val) noexcept;
     static BluetoothServiceDataMap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothServiceDataMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

@@ -2,23 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "DocumentFragment.hpp"
-#include "Element.hpp"
 #include "enums.hpp"
+#include "DocumentFragment.hpp"
+#include "GetHTMLOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Element;
 class Animation;
 
-
-/// The ShadowRoot class.
+/// Interface ShadowRoot
 /// [`ShadowRoot`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot)
 class ShadowRoot : public DocumentFragment {
     explicit ShadowRoot(Handle h) noexcept;
-
 public:
     explicit ShadowRoot(const emlite::Val &val) noexcept;
     static ShadowRoot take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ShadowRoot clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mode` attribute.
@@ -65,3 +65,4 @@ public:
     jsbind::TypedArray<Animation> getAnimations();
 };
 
+} // namespace webbind

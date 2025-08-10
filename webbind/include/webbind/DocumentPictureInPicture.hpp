@@ -2,39 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "DocumentPictureInPictureOptions.hpp"
+
+namespace webbind {
 
 class Window;
-class DocumentPictureInPictureOptions;
 
-
-class DocumentPictureInPictureOptions : public emlite::Val {
-  explicit DocumentPictureInPictureOptions(Handle h) noexcept;
-public:
-    static DocumentPictureInPictureOptions take_ownership(Handle h) noexcept;
-    explicit DocumentPictureInPictureOptions(const emlite::Val &val) noexcept;
-    DocumentPictureInPictureOptions() noexcept;
-    [[nodiscard]] DocumentPictureInPictureOptions clone() const noexcept;
-    [[nodiscard]] long long width() const;
-    void width(long long value);
-    [[nodiscard]] long long height() const;
-    void height(long long value);
-    [[nodiscard]] bool disallowReturnToOpener() const;
-    void disallowReturnToOpener(bool value);
-    [[nodiscard]] bool preferInitialWindowPlacement() const;
-    void preferInitialWindowPlacement(bool value);
-};
-
-/// The DocumentPictureInPicture class.
+/// Interface DocumentPictureInPicture
 /// [`DocumentPictureInPicture`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture)
 class DocumentPictureInPicture : public EventTarget {
     explicit DocumentPictureInPicture(Handle h) noexcept;
-
 public:
     explicit DocumentPictureInPicture(const emlite::Val &val) noexcept;
     static DocumentPictureInPicture take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DocumentPictureInPicture clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The requestWindow method.
@@ -54,3 +36,4 @@ public:
     void onenter(const jsbind::Any& value);
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "TextTrackCue.hpp"
 #include "enums.hpp"
+#include "TextTrackCue.hpp"
 
+namespace webbind {
 
-/// The DataCue class.
+/// Interface DataCue
 /// [`DataCue`](https://developer.mozilla.org/en-US/docs/Web/API/DataCue)
 class DataCue : public TextTrackCue {
     explicit DataCue(Handle h) noexcept;
-
 public:
     explicit DataCue(const emlite::Val &val) noexcept;
     static DataCue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DataCue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DataCue(..)` constructor, creating a new DataCue instance
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] jsbind::String type() const;
 };
 
+} // namespace webbind

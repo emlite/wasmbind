@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class CSSRule;
 class CSSStyleSheet;
 
-
-/// The CSSRule class.
+/// Interface CSSRule
 /// [`CSSRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRule)
 class CSSRule : public emlite::Val {
     explicit CSSRule(Handle h) noexcept;
-
 public:
     explicit CSSRule(const emlite::Val &val) noexcept;
     static CSSRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cssText` attribute.
@@ -36,3 +35,4 @@ public:
     [[nodiscard]] unsigned short type() const;
 };
 
+} // namespace webbind

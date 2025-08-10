@@ -1,6 +1,7 @@
-#include <webbind/StylePropertyMapReadOnly.hpp>
-#include <webbind/CSSStyleValue.hpp>
+#include "webbind/StylePropertyMapReadOnly.hpp"
+#include "webbind/CSSStyleValue.hpp"
 
+namespace webbind {
 
 StylePropertyMapReadOnly StylePropertyMapReadOnly::take_ownership(Handle h) noexcept {
         return StylePropertyMapReadOnly(h);
@@ -9,7 +10,6 @@ StylePropertyMapReadOnly StylePropertyMapReadOnly::clone() const noexcept { retu
 emlite::Val StylePropertyMapReadOnly::instance() noexcept { return emlite::Val::global("StylePropertyMapReadOnly"); }
 StylePropertyMapReadOnly::StylePropertyMapReadOnly(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StylePropertyMapReadOnly::StylePropertyMapReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Any StylePropertyMapReadOnly::get(const jsbind::String& property) {
     return emlite::Val::call("get", property).as<jsbind::Any>();
@@ -27,3 +27,5 @@ unsigned long StylePropertyMapReadOnly::size() const {
     return emlite::Val::get("size").as<unsigned long>();
 }
 
+
+} // namespace webbind

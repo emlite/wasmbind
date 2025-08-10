@@ -1,11 +1,15 @@
-#include <webbind/CSSPseudoElement.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/DOMQuad.hpp>
-#include <webbind/Document.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/SVGGeometryElement.hpp>
+#include "webbind/CSSPseudoElement.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/CSSPseudoElement.hpp"
+#include "webbind/DOMQuad.hpp"
+#include "webbind/BoxQuadOptions.hpp"
+#include "webbind/DOMQuadInit.hpp"
+#include "webbind/ConvertCoordinateOptions.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/DOMPointInit.hpp"
 
+namespace webbind {
 
 CSSPseudoElement CSSPseudoElement::take_ownership(Handle h) noexcept {
         return CSSPseudoElement(h);
@@ -14,7 +18,6 @@ CSSPseudoElement CSSPseudoElement::clone() const noexcept { return *this; }
 emlite::Val CSSPseudoElement::instance() noexcept { return emlite::Val::global("CSSPseudoElement"); }
 CSSPseudoElement::CSSPseudoElement(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 CSSPseudoElement::CSSPseudoElement(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String CSSPseudoElement::type() const {
     return EventTarget::get("type").as<jsbind::String>();
@@ -64,3 +67,5 @@ DOMPoint CSSPseudoElement::convertPointFromNode(const DOMPointInit& point, const
     return EventTarget::call("convertPointFromNode", point, from, options).as<DOMPoint>();
 }
 
+
+} // namespace webbind

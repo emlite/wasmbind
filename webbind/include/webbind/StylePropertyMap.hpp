@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "StylePropertyMapReadOnly.hpp"
 #include "enums.hpp"
+#include "StylePropertyMapReadOnly.hpp"
 
+namespace webbind {
 
-/// The StylePropertyMap class.
+/// Interface StylePropertyMap
 /// [`StylePropertyMap`](https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMap)
 class StylePropertyMap : public StylePropertyMapReadOnly {
     explicit StylePropertyMap(Handle h) noexcept;
-
 public:
     explicit StylePropertyMap(const emlite::Val &val) noexcept;
     static StylePropertyMap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] StylePropertyMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The set method.
@@ -31,3 +30,4 @@ public:
     jsbind::Undefined clear();
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ForDebuggingOnly class.
+/// Interface ForDebuggingOnly
 /// [`ForDebuggingOnly`](https://developer.mozilla.org/en-US/docs/Web/API/ForDebuggingOnly)
 class ForDebuggingOnly : public emlite::Val {
     explicit ForDebuggingOnly(Handle h) noexcept;
-
 public:
     explicit ForDebuggingOnly(const emlite::Val &val) noexcept;
     static ForDebuggingOnly take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ForDebuggingOnly clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The reportAdAuctionWin method.
@@ -24,3 +23,4 @@ public:
     jsbind::Undefined reportAdAuctionLoss(const jsbind::String& url);
 };
 
+} // namespace webbind

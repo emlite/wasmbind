@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SpeechSynthesisVoice class.
+/// Interface SpeechSynthesisVoice
 /// [`SpeechSynthesisVoice`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice)
 class SpeechSynthesisVoice : public emlite::Val {
     explicit SpeechSynthesisVoice(Handle h) noexcept;
-
 public:
     explicit SpeechSynthesisVoice(const emlite::Val &val) noexcept;
     static SpeechSynthesisVoice take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechSynthesisVoice clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `voiceURI` attribute.
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] bool default_() const;
 };
 
+} // namespace webbind

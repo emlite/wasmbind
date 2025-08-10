@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The BluetoothManufacturerDataFilter class.
+/// Interface BluetoothManufacturerDataFilter
 /// [`BluetoothManufacturerDataFilter`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothManufacturerDataFilter)
 class BluetoothManufacturerDataFilter : public emlite::Val {
     explicit BluetoothManufacturerDataFilter(Handle h) noexcept;
-
 public:
     explicit BluetoothManufacturerDataFilter(const emlite::Val &val) noexcept;
     static BluetoothManufacturerDataFilter take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothManufacturerDataFilter clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BluetoothManufacturerDataFilter(..)` constructor, creating a new BluetoothManufacturerDataFilter instance
@@ -22,3 +21,4 @@ public:
     BluetoothManufacturerDataFilter(const jsbind::Object& init);
 };
 
+} // namespace webbind

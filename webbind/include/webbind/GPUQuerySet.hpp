@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUQuerySet class.
+/// Interface GPUQuerySet
 /// [`GPUQuerySet`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet)
 class GPUQuerySet : public emlite::Val {
     explicit GPUQuerySet(Handle h) noexcept;
-
 public:
     explicit GPUQuerySet(const emlite::Val &val) noexcept;
     static GPUQuerySet take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUQuerySet clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The destroy method.
@@ -33,3 +33,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

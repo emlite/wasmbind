@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "CloseEventInit.hpp"
 
+namespace webbind {
 
-/// The CloseEvent class.
+/// Interface CloseEvent
 /// [`CloseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent)
 class CloseEvent : public Event {
     explicit CloseEvent(Handle h) noexcept;
-
 public:
     explicit CloseEvent(const emlite::Val &val) noexcept;
     static CloseEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CloseEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CloseEvent(..)` constructor, creating a new CloseEvent instance
     CloseEvent(const jsbind::String& type);
     /// The `new CloseEvent(..)` constructor, creating a new CloseEvent instance
-    CloseEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    CloseEvent(const jsbind::String& type, const CloseEventInit& eventInitDict);
     /// Getter of the `wasClean` attribute.
     /// [`CloseEvent.wasClean`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/wasClean)
     [[nodiscard]] bool wasClean() const;
@@ -32,3 +32,4 @@ public:
     [[nodiscard]] jsbind::String reason() const;
 };
 
+} // namespace webbind

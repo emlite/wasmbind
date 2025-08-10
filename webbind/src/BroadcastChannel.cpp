@@ -1,5 +1,6 @@
-#include <webbind/BroadcastChannel.hpp>
+#include "webbind/BroadcastChannel.hpp"
 
+namespace webbind {
 
 BroadcastChannel BroadcastChannel::take_ownership(Handle h) noexcept {
         return BroadcastChannel(h);
@@ -8,7 +9,6 @@ BroadcastChannel BroadcastChannel::clone() const noexcept { return *this; }
 emlite::Val BroadcastChannel::instance() noexcept { return emlite::Val::global("BroadcastChannel"); }
 BroadcastChannel::BroadcastChannel(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BroadcastChannel::BroadcastChannel(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 BroadcastChannel::BroadcastChannel(const jsbind::String& name) : EventTarget(emlite::Val::global("BroadcastChannel").new_(name)) {}
 
@@ -40,3 +40,5 @@ void BroadcastChannel::onmessageerror(const jsbind::Any& value) {
     EventTarget::set("onmessageerror", value);
 }
 
+
+} // namespace webbind

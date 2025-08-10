@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The XRMeshSet class.
+/// Interface XRMeshSet
 /// [`XRMeshSet`](https://developer.mozilla.org/en-US/docs/Web/API/XRMeshSet)
 class XRMeshSet : public emlite::Val {
     explicit XRMeshSet(Handle h) noexcept;
-
 public:
     explicit XRMeshSet(const emlite::Val &val) noexcept;
     static XRMeshSet take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRMeshSet clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

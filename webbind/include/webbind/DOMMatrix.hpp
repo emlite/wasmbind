@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "DOMMatrixReadOnly.hpp"
-#include "DOMPointReadOnly.hpp"
 #include "enums.hpp"
+#include "DOMMatrixReadOnly.hpp"
+#include "DOMMatrixInit.hpp"
+
+namespace webbind {
 
 class DOMMatrix;
 
-
-/// The DOMMatrix class.
+/// Interface DOMMatrix
 /// [`DOMMatrix`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix)
 class DOMMatrix : public DOMMatrixReadOnly {
     explicit DOMMatrix(Handle h) noexcept;
-
 public:
     explicit DOMMatrix(const emlite::Val &val) noexcept;
     static DOMMatrix take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMMatrix clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMMatrix(..)` constructor, creating a new DOMMatrix instance
@@ -284,3 +283,4 @@ public:
     DOMMatrix setMatrixValue(const jsbind::String& transformList);
 };
 
+} // namespace webbind

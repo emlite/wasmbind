@@ -1,5 +1,6 @@
-#include <webbind/SVGSwitchElement.hpp>
+#include "webbind/SVGSwitchElement.hpp"
 
+namespace webbind {
 
 SVGSwitchElement SVGSwitchElement::take_ownership(Handle h) noexcept {
         return SVGSwitchElement(h);
@@ -10,3 +11,4 @@ SVGSwitchElement::SVGSwitchElement(Handle h) noexcept : SVGGraphicsElement(emlit
 SVGSwitchElement::SVGSwitchElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 
 
+} // namespace webbind

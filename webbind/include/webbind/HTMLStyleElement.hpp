@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class DOMTokenList;
 class CSSStyleSheet;
 
-
-/// The HTMLStyleElement class.
+/// Interface HTMLStyleElement
 /// [`HTMLStyleElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement)
 class HTMLStyleElement : public HTMLElement {
     explicit HTMLStyleElement(Handle h) noexcept;
-
 public:
     explicit HTMLStyleElement(const emlite::Val &val) noexcept;
     static HTMLStyleElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLStyleElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLStyleElement(..)` constructor, creating a new HTMLStyleElement instance
@@ -48,3 +47,4 @@ public:
     [[nodiscard]] CSSStyleSheet sheet() const;
 };
 
+} // namespace webbind

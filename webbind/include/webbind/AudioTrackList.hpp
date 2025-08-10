@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class AudioTrack;
 
-
-/// The AudioTrackList class.
+/// Interface AudioTrackList
 /// [`AudioTrackList`](https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList)
 class AudioTrackList : public EventTarget {
     explicit AudioTrackList(Handle h) noexcept;
-
 public:
     explicit AudioTrackList(const emlite::Val &val) noexcept;
     static AudioTrackList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioTrackList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -45,3 +44,4 @@ public:
     void onremovetrack(const jsbind::Any& value);
 };
 
+} // namespace webbind

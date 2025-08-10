@@ -2,27 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "UIEvent.hpp"
 #include "enums.hpp"
+#include "UIEvent.hpp"
+#include "TouchEventInit.hpp"
+
+namespace webbind {
 
 class TouchList;
 
-
-/// The TouchEvent class.
+/// Interface TouchEvent
 /// [`TouchEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent)
 class TouchEvent : public UIEvent {
     explicit TouchEvent(Handle h) noexcept;
-
 public:
     explicit TouchEvent(const emlite::Val &val) noexcept;
     static TouchEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TouchEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TouchEvent(..)` constructor, creating a new TouchEvent instance
     TouchEvent(const jsbind::String& type);
     /// The `new TouchEvent(..)` constructor, creating a new TouchEvent instance
-    TouchEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    TouchEvent(const jsbind::String& type, const TouchEventInit& eventInitDict);
     /// Getter of the `touches` attribute.
     /// [`TouchEvent.touches`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches)
     [[nodiscard]] TouchList touches() const;
@@ -49,3 +49,4 @@ public:
     bool getModifierState(const jsbind::String& keyArg);
 };
 
+} // namespace webbind

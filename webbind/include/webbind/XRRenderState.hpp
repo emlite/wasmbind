@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class XRWebGLLayer;
 class XRLayer;
 
-
-/// The XRRenderState class.
+/// Interface XRRenderState
 /// [`XRRenderState`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState)
 class XRRenderState : public emlite::Val {
     explicit XRRenderState(Handle h) noexcept;
-
 public:
     explicit XRRenderState(const emlite::Val &val) noexcept;
     static XRRenderState take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRRenderState clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `depthNear` attribute.
@@ -39,3 +38,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<XRLayer> layers() const;
 };
 
+} // namespace webbind

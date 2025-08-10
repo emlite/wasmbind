@@ -2,8 +2,10 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedEnumeration;
 class SVGAnimatedTransformList;
@@ -12,16 +14,13 @@ class SVGAnimatedRect;
 class SVGAnimatedPreserveAspectRatio;
 class SVGAnimatedString;
 
-
-/// The SVGPatternElement class.
+/// Interface SVGPatternElement
 /// [`SVGPatternElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPatternElement)
 class SVGPatternElement : public SVGElement {
     explicit SVGPatternElement(Handle h) noexcept;
-
 public:
     explicit SVGPatternElement(const emlite::Val &val) noexcept;
     static SVGPatternElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGPatternElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `patternUnits` attribute.
@@ -56,3 +55,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

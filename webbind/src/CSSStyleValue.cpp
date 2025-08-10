@@ -1,5 +1,7 @@
-#include <webbind/CSSStyleValue.hpp>
+#include "webbind/CSSStyleValue.hpp"
+#include "webbind/CSSStyleValue.hpp"
 
+namespace webbind {
 
 CSSStyleValue CSSStyleValue::take_ownership(Handle h) noexcept {
         return CSSStyleValue(h);
@@ -9,7 +11,6 @@ emlite::Val CSSStyleValue::instance() noexcept { return emlite::Val::global("CSS
 CSSStyleValue::CSSStyleValue(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSStyleValue::CSSStyleValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 CSSStyleValue CSSStyleValue::parse(const jsbind::String& property, const jsbind::String& cssText) {
     return emlite::Val::global("cssstylevalue").call("parse", property, cssText).as<CSSStyleValue>();
 }
@@ -18,3 +19,5 @@ jsbind::TypedArray<CSSStyleValue> CSSStyleValue::parseAll(const jsbind::String& 
     return emlite::Val::global("cssstylevalue").call("parseAll", property, cssText).as<jsbind::TypedArray<CSSStyleValue>>();
 }
 
+
+} // namespace webbind

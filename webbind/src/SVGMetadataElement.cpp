@@ -1,5 +1,6 @@
-#include <webbind/SVGMetadataElement.hpp>
+#include "webbind/SVGMetadataElement.hpp"
 
+namespace webbind {
 
 SVGMetadataElement SVGMetadataElement::take_ownership(Handle h) noexcept {
         return SVGMetadataElement(h);
@@ -10,3 +11,4 @@ SVGMetadataElement::SVGMetadataElement(Handle h) noexcept : SVGElement(emlite::V
 SVGMetadataElement::SVGMetadataElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 
+} // namespace webbind

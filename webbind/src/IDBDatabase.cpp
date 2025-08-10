@@ -1,48 +1,11 @@
-#include <webbind/IDBDatabase.hpp>
-#include <webbind/DOMStringList.hpp>
-#include <webbind/IDBTransaction.hpp>
-#include <webbind/IDBObjectStore.hpp>
+#include "webbind/IDBDatabase.hpp"
+#include "webbind/DOMStringList.hpp"
+#include "webbind/IDBTransaction.hpp"
+#include "webbind/IDBTransactionOptions.hpp"
+#include "webbind/IDBObjectStore.hpp"
+#include "webbind/IDBObjectStoreParameters.hpp"
 
-
-IDBTransactionOptions::IDBTransactionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IDBTransactionOptions IDBTransactionOptions::take_ownership(Handle h) noexcept {
-        return IDBTransactionOptions(h);
-    }
-IDBTransactionOptions::IDBTransactionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-IDBTransactionOptions::IDBTransactionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-IDBTransactionOptions IDBTransactionOptions::clone() const noexcept { return *this; }
-
-IDBTransactionDurability IDBTransactionOptions::durability() const {
-    return emlite::Val::get("durability").as<IDBTransactionDurability>();
-}
-
-void IDBTransactionOptions::durability(const IDBTransactionDurability& value) {
-    emlite::Val::set("durability", value);
-}
-
-IDBObjectStoreParameters::IDBObjectStoreParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IDBObjectStoreParameters IDBObjectStoreParameters::take_ownership(Handle h) noexcept {
-        return IDBObjectStoreParameters(h);
-    }
-IDBObjectStoreParameters::IDBObjectStoreParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
-IDBObjectStoreParameters::IDBObjectStoreParameters() noexcept: emlite::Val(emlite::Val::object()) {}
-IDBObjectStoreParameters IDBObjectStoreParameters::clone() const noexcept { return *this; }
-
-jsbind::Any IDBObjectStoreParameters::keyPath() const {
-    return emlite::Val::get("keyPath").as<jsbind::Any>();
-}
-
-void IDBObjectStoreParameters::keyPath(const jsbind::Any& value) {
-    emlite::Val::set("keyPath", value);
-}
-
-bool IDBObjectStoreParameters::autoIncrement() const {
-    return emlite::Val::get("autoIncrement").as<bool>();
-}
-
-void IDBObjectStoreParameters::autoIncrement(bool value) {
-    emlite::Val::set("autoIncrement", value);
-}
+namespace webbind {
 
 IDBDatabase IDBDatabase::take_ownership(Handle h) noexcept {
         return IDBDatabase(h);
@@ -51,7 +14,6 @@ IDBDatabase IDBDatabase::clone() const noexcept { return *this; }
 emlite::Val IDBDatabase::instance() noexcept { return emlite::Val::global("IDBDatabase"); }
 IDBDatabase::IDBDatabase(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 IDBDatabase::IDBDatabase(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String IDBDatabase::name() const {
     return EventTarget::get("name").as<jsbind::String>();
@@ -125,3 +87,5 @@ void IDBDatabase::onversionchange(const jsbind::Any& value) {
     EventTarget::set("onversionchange", value);
 }
 
+
+} // namespace webbind

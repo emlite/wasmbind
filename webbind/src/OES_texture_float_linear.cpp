@@ -1,5 +1,6 @@
-#include <webbind/OES_texture_float_linear.hpp>
+#include "webbind/OES_texture_float_linear.hpp"
 
+namespace webbind {
 
 OES_texture_float_linear OES_texture_float_linear::take_ownership(Handle h) noexcept {
         return OES_texture_float_linear(h);
@@ -10,3 +11,4 @@ OES_texture_float_linear::OES_texture_float_linear(Handle h) noexcept : emlite::
 OES_texture_float_linear::OES_texture_float_linear(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

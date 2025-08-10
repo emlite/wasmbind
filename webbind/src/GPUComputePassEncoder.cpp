@@ -1,8 +1,9 @@
-#include <webbind/GPUComputePassEncoder.hpp>
-#include <webbind/GPUComputePipeline.hpp>
-#include <webbind/GPUBuffer.hpp>
-#include <webbind/GPUBindGroup.hpp>
+#include "webbind/GPUComputePassEncoder.hpp"
+#include "webbind/GPUComputePipeline.hpp"
+#include "webbind/GPUBuffer.hpp"
+#include "webbind/GPUBindGroup.hpp"
 
+namespace webbind {
 
 GPUComputePassEncoder GPUComputePassEncoder::take_ownership(Handle h) noexcept {
         return GPUComputePassEncoder(h);
@@ -11,7 +12,6 @@ GPUComputePassEncoder GPUComputePassEncoder::clone() const noexcept { return *th
 emlite::Val GPUComputePassEncoder::instance() noexcept { return emlite::Val::global("GPUComputePassEncoder"); }
 GPUComputePassEncoder::GPUComputePassEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUComputePassEncoder::GPUComputePassEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Undefined GPUComputePassEncoder::setPipeline(const GPUComputePipeline& pipeline) {
     return emlite::Val::call("setPipeline", pipeline).as<jsbind::Undefined>();
@@ -61,3 +61,5 @@ jsbind::Undefined GPUComputePassEncoder::setBindGroup(const jsbind::Any& index, 
     return emlite::Val::call("setBindGroup", index, bindGroup, dynamicOffsetsData, dynamicOffsetsDataStart, dynamicOffsetsDataLength).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

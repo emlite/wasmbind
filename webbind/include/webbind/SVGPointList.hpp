@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class DOMPoint;
 
-
-/// The SVGPointList class.
+/// Interface SVGPointList
 /// [`SVGPointList`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPointList)
 class SVGPointList : public emlite::Val {
     explicit SVGPointList(Handle h) noexcept;
-
 public:
     explicit SVGPointList(const emlite::Val &val) noexcept;
     static SVGPointList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGPointList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -47,3 +46,4 @@ public:
     DOMPoint appendItem(const DOMPoint& newItem);
 };
 
+} // namespace webbind

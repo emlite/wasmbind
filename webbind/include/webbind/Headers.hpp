@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The Headers class.
+/// Interface Headers
 /// [`Headers`](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
 class Headers : public emlite::Val {
     explicit Headers(Handle h) noexcept;
-
 public:
     explicit Headers(const emlite::Val &val) noexcept;
     static Headers take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Headers clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Headers(..)` constructor, creating a new Headers instance
@@ -40,3 +39,4 @@ public:
     jsbind::Undefined set(const jsbind::String& name, const jsbind::String& value);
 };
 
+} // namespace webbind

@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLCollection;
 class HTMLTableCellElement;
 
-
-/// The HTMLTableRowElement class.
+/// Interface HTMLTableRowElement
 /// [`HTMLTableRowElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement)
 class HTMLTableRowElement : public HTMLElement {
     explicit HTMLTableRowElement(Handle h) noexcept;
-
 public:
     explicit HTMLTableRowElement(const emlite::Val &val) noexcept;
     static HTMLTableRowElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTableRowElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableRowElement(..)` constructor, creating a new HTMLTableRowElement instance
@@ -72,3 +71,4 @@ public:
     void bgColor(const jsbind::String& value);
 };
 
+} // namespace webbind

@@ -1,146 +1,48 @@
-#include <webbind/Document.hpp>
-#include <webbind/DOMImplementation.hpp>
-#include <webbind/DocumentType.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/HTMLCollection.hpp>
-#include <webbind/DocumentFragment.hpp>
-#include <webbind/Text.hpp>
-#include <webbind/CDATASection.hpp>
-#include <webbind/Comment.hpp>
-#include <webbind/ProcessingInstruction.hpp>
-#include <webbind/Attr.hpp>
-#include <webbind/Event.hpp>
-#include <webbind/Range.hpp>
-#include <webbind/NodeIterator.hpp>
-#include <webbind/TreeWalker.hpp>
-#include <webbind/SVGSVGElement.hpp>
-#include <webbind/NamedFlowMap.hpp>
-#include <webbind/ViewTransition.hpp>
-#include <webbind/CaretPosition.hpp>
-#include <webbind/FontMetrics.hpp>
-#include <webbind/StylePropertyMapReadOnly.hpp>
-#include <webbind/Location.hpp>
-#include <webbind/HTMLElement.hpp>
-#include <webbind/HTMLHeadElement.hpp>
-#include <webbind/NodeList.hpp>
-#include <webbind/HTMLAllCollection.hpp>
-#include <webbind/PermissionsPolicy.hpp>
-#include <webbind/FragmentDirective.hpp>
-#include <webbind/Selection.hpp>
-#include <webbind/DocumentTimeline.hpp>
-#include <webbind/FontFaceSet.hpp>
-#include <webbind/DOMQuad.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/SVGGeometryElement.hpp>
-#include <webbind/Animation.hpp>
-#include <webbind/XPathExpression.hpp>
-#include <webbind/XPathResult.hpp>
+#include "webbind/Document.hpp"
+#include "webbind/DOMImplementation.hpp"
+#include "webbind/DocumentType.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/HTMLCollection.hpp"
+#include "webbind/DocumentFragment.hpp"
+#include "webbind/Text.hpp"
+#include "webbind/CDATASection.hpp"
+#include "webbind/Comment.hpp"
+#include "webbind/ProcessingInstruction.hpp"
+#include "webbind/Attr.hpp"
+#include "webbind/Event.hpp"
+#include "webbind/Range.hpp"
+#include "webbind/NodeIterator.hpp"
+#include "webbind/TreeWalker.hpp"
+#include "webbind/SVGSVGElement.hpp"
+#include "webbind/NamedFlowMap.hpp"
+#include "webbind/ViewTransition.hpp"
+#include "webbind/CaretPosition.hpp"
+#include "webbind/CaretPositionFromPointOptions.hpp"
+#include "webbind/FontMetrics.hpp"
+#include "webbind/StylePropertyMapReadOnly.hpp"
+#include "webbind/Document.hpp"
+#include "webbind/Location.hpp"
+#include "webbind/HTMLElement.hpp"
+#include "webbind/HTMLHeadElement.hpp"
+#include "webbind/NodeList.hpp"
+#include "webbind/HTMLAllCollection.hpp"
+#include "webbind/PermissionsPolicy.hpp"
+#include "webbind/FragmentDirective.hpp"
+#include "webbind/Selection.hpp"
+#include "webbind/DocumentTimeline.hpp"
+#include "webbind/FontFaceSet.hpp"
+#include "webbind/DOMQuad.hpp"
+#include "webbind/BoxQuadOptions.hpp"
+#include "webbind/DOMQuadInit.hpp"
+#include "webbind/ConvertCoordinateOptions.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/DOMPointInit.hpp"
+#include "webbind/Animation.hpp"
+#include "webbind/XPathExpression.hpp"
+#include "webbind/XPathResult.hpp"
 
-
-CaretPositionFromPointOptions::CaretPositionFromPointOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CaretPositionFromPointOptions CaretPositionFromPointOptions::take_ownership(Handle h) noexcept {
-        return CaretPositionFromPointOptions(h);
-    }
-CaretPositionFromPointOptions::CaretPositionFromPointOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-CaretPositionFromPointOptions::CaretPositionFromPointOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-CaretPositionFromPointOptions CaretPositionFromPointOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<ShadowRoot> CaretPositionFromPointOptions::shadowRoots() const {
-    return emlite::Val::get("shadowRoots").as<jsbind::TypedArray<ShadowRoot>>();
-}
-
-void CaretPositionFromPointOptions::shadowRoots(const jsbind::TypedArray<ShadowRoot>& value) {
-    emlite::Val::set("shadowRoots", value);
-}
-
-BoxQuadOptions::BoxQuadOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BoxQuadOptions BoxQuadOptions::take_ownership(Handle h) noexcept {
-        return BoxQuadOptions(h);
-    }
-BoxQuadOptions::BoxQuadOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-BoxQuadOptions::BoxQuadOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-BoxQuadOptions BoxQuadOptions::clone() const noexcept { return *this; }
-
-CSSBoxType BoxQuadOptions::box() const {
-    return emlite::Val::get("box").as<CSSBoxType>();
-}
-
-void BoxQuadOptions::box(const CSSBoxType& value) {
-    emlite::Val::set("box", value);
-}
-
-jsbind::Any BoxQuadOptions::relativeTo() const {
-    return emlite::Val::get("relativeTo").as<jsbind::Any>();
-}
-
-void BoxQuadOptions::relativeTo(const jsbind::Any& value) {
-    emlite::Val::set("relativeTo", value);
-}
-
-DOMQuadInit::DOMQuadInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DOMQuadInit DOMQuadInit::take_ownership(Handle h) noexcept {
-        return DOMQuadInit(h);
-    }
-DOMQuadInit::DOMQuadInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-DOMQuadInit::DOMQuadInit() noexcept: emlite::Val(emlite::Val::object()) {}
-DOMQuadInit DOMQuadInit::clone() const noexcept { return *this; }
-
-DOMPointInit DOMQuadInit::p1() const {
-    return emlite::Val::get("p1").as<DOMPointInit>();
-}
-
-void DOMQuadInit::p1(const DOMPointInit& value) {
-    emlite::Val::set("p1", value);
-}
-
-DOMPointInit DOMQuadInit::p2() const {
-    return emlite::Val::get("p2").as<DOMPointInit>();
-}
-
-void DOMQuadInit::p2(const DOMPointInit& value) {
-    emlite::Val::set("p2", value);
-}
-
-DOMPointInit DOMQuadInit::p3() const {
-    return emlite::Val::get("p3").as<DOMPointInit>();
-}
-
-void DOMQuadInit::p3(const DOMPointInit& value) {
-    emlite::Val::set("p3", value);
-}
-
-DOMPointInit DOMQuadInit::p4() const {
-    return emlite::Val::get("p4").as<DOMPointInit>();
-}
-
-void DOMQuadInit::p4(const DOMPointInit& value) {
-    emlite::Val::set("p4", value);
-}
-
-ConvertCoordinateOptions::ConvertCoordinateOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ConvertCoordinateOptions ConvertCoordinateOptions::take_ownership(Handle h) noexcept {
-        return ConvertCoordinateOptions(h);
-    }
-ConvertCoordinateOptions::ConvertCoordinateOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ConvertCoordinateOptions::ConvertCoordinateOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-ConvertCoordinateOptions ConvertCoordinateOptions::clone() const noexcept { return *this; }
-
-CSSBoxType ConvertCoordinateOptions::fromBox() const {
-    return emlite::Val::get("fromBox").as<CSSBoxType>();
-}
-
-void ConvertCoordinateOptions::fromBox(const CSSBoxType& value) {
-    emlite::Val::set("fromBox", value);
-}
-
-CSSBoxType ConvertCoordinateOptions::toBox() const {
-    return emlite::Val::get("toBox").as<CSSBoxType>();
-}
-
-void ConvertCoordinateOptions::toBox(const CSSBoxType& value) {
-    emlite::Val::set("toBox", value);
-}
+namespace webbind {
 
 Document Document::take_ownership(Handle h) noexcept {
         return Document(h);
@@ -149,7 +51,6 @@ Document Document::clone() const noexcept { return *this; }
 emlite::Val Document::instance() noexcept { return emlite::Val::global("Document"); }
 Document::Document(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Document::Document(const emlite::Val &val) noexcept: Node(val) {}
-
 
 Document::Document() : Node(emlite::Val::global("Document").new_()) {}
 
@@ -369,8 +270,8 @@ Document Document::parseHTMLUnsafe(const jsbind::Any& html) {
     return emlite::Val::global("document").call("parseHTMLUnsafe", html).as<Document>();
 }
 
-jsbind::Any Document::location() const {
-    return Node::get("location").as<jsbind::Any>();
+Location Document::location() const {
+    return Node::get("location").as<Location>();
 }
 
 jsbind::String Document::domain() const {
@@ -833,3 +734,5 @@ void Document::onbeforexrselect(const jsbind::Any& value) {
     Node::set("onbeforexrselect", value);
 }
 
+
+} // namespace webbind

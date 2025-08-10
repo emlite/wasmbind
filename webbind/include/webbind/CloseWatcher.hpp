@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "CloseWatcherOptions.hpp"
 
+namespace webbind {
 
-/// The CloseWatcher class.
+/// Interface CloseWatcher
 /// [`CloseWatcher`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher)
 class CloseWatcher : public EventTarget {
     explicit CloseWatcher(Handle h) noexcept;
-
 public:
     explicit CloseWatcher(const emlite::Val &val) noexcept;
     static CloseWatcher take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CloseWatcher clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CloseWatcher(..)` constructor, creating a new CloseWatcher instance
     CloseWatcher();
     /// The `new CloseWatcher(..)` constructor, creating a new CloseWatcher instance
-    CloseWatcher(const jsbind::Any& options);
+    CloseWatcher(const CloseWatcherOptions& options);
     /// The requestClose method.
     /// [`CloseWatcher.requestClose`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/requestClose)
     jsbind::Undefined requestClose();
@@ -44,3 +44,4 @@ public:
     void onclose(const jsbind::Any& value);
 };
 
+} // namespace webbind

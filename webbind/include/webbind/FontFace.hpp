@@ -3,28 +3,29 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "FontFaceDescriptors.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class FontFace;
 class FontFaceFeatures;
 class FontFaceVariations;
 class FontFacePalettes;
 
-
-/// The FontFace class.
+/// Interface FontFace
 /// [`FontFace`](https://developer.mozilla.org/en-US/docs/Web/API/FontFace)
 class FontFace : public emlite::Val {
     explicit FontFace(Handle h) noexcept;
-
 public:
     explicit FontFace(const emlite::Val &val) noexcept;
     static FontFace take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FontFace clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FontFace(..)` constructor, creating a new FontFace instance
     FontFace(const jsbind::String& family, const jsbind::Any& source);
     /// The `new FontFace(..)` constructor, creating a new FontFace instance
-    FontFace(const jsbind::String& family, const jsbind::Any& source, const jsbind::Any& descriptors);
+    FontFace(const jsbind::String& family, const jsbind::Any& source, const FontFaceDescriptors& descriptors);
     /// Getter of the `family` attribute.
     /// [`FontFace.family`](https://developer.mozilla.org/en-US/docs/Web/API/FontFace/family)
     [[nodiscard]] jsbind::String family() const;
@@ -111,3 +112,4 @@ public:
     [[nodiscard]] FontFacePalettes palettes() const;
 };
 
+} // namespace webbind

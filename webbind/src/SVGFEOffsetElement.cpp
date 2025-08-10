@@ -1,8 +1,9 @@
-#include <webbind/SVGFEOffsetElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEOffsetElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEOffsetElement SVGFEOffsetElement::take_ownership(Handle h) noexcept {
         return SVGFEOffsetElement(h);
@@ -11,7 +12,6 @@ SVGFEOffsetElement SVGFEOffsetElement::clone() const noexcept { return *this; }
 emlite::Val SVGFEOffsetElement::instance() noexcept { return emlite::Val::global("SVGFEOffsetElement"); }
 SVGFEOffsetElement::SVGFEOffsetElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEOffsetElement::SVGFEOffsetElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEOffsetElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -45,3 +45,5 @@ SVGAnimatedString SVGFEOffsetElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

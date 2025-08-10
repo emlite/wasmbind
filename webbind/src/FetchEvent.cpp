@@ -1,7 +1,9 @@
-#include <webbind/FetchEvent.hpp>
-#include <webbind/Request.hpp>
-#include <webbind/Response.hpp>
+#include "webbind/FetchEvent.hpp"
+#include "webbind/FetchEventInit.hpp"
+#include "webbind/Request.hpp"
+#include "webbind/Response.hpp"
 
+namespace webbind {
 
 FetchEvent FetchEvent::take_ownership(Handle h) noexcept {
         return FetchEvent(h);
@@ -11,8 +13,7 @@ emlite::Val FetchEvent::instance() noexcept { return emlite::Val::global("FetchE
 FetchEvent::FetchEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 FetchEvent::FetchEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
-
-FetchEvent::FetchEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("FetchEvent").new_(type, eventInitDict)) {}
+FetchEvent::FetchEvent(const jsbind::String& type, const FetchEventInit& eventInitDict) : ExtendableEvent(emlite::Val::global("FetchEvent").new_(type, eventInitDict)) {}
 
 Request FetchEvent::request() const {
     return ExtendableEvent::get("request").as<Request>();
@@ -42,3 +43,5 @@ jsbind::Undefined FetchEvent::respondWith(const jsbind::Promise<Response>& r) {
     return ExtendableEvent::call("respondWith", r).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/PreferenceObject.hpp>
+#include "webbind/PreferenceObject.hpp"
 
+namespace webbind {
 
 PreferenceObject PreferenceObject::take_ownership(Handle h) noexcept {
         return PreferenceObject(h);
@@ -8,7 +9,6 @@ PreferenceObject PreferenceObject::clone() const noexcept { return *this; }
 emlite::Val PreferenceObject::instance() noexcept { return emlite::Val::global("PreferenceObject"); }
 PreferenceObject::PreferenceObject(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PreferenceObject::PreferenceObject(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String PreferenceObject::override() const {
     return EventTarget::get("override").as<jsbind::String>();
@@ -38,3 +38,5 @@ void PreferenceObject::onchange(const jsbind::Any& value) {
     EventTarget::set("onchange", value);
 }
 
+
+} // namespace webbind

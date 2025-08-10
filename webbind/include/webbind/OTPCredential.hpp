@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Credential.hpp"
 #include "enums.hpp"
+#include "Credential.hpp"
 
+namespace webbind {
 
-/// The OTPCredential class.
+/// Interface OTPCredential
 /// [`OTPCredential`](https://developer.mozilla.org/en-US/docs/Web/API/OTPCredential)
 class OTPCredential : public Credential {
     explicit OTPCredential(Handle h) noexcept;
-
 public:
     explicit OTPCredential(const emlite::Val &val) noexcept;
     static OTPCredential take_ownership(Handle h) noexcept;
-
     [[nodiscard]] OTPCredential clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `code` attribute.
@@ -22,3 +21,4 @@ public:
     [[nodiscard]] jsbind::String code() const;
 };
 
+} // namespace webbind

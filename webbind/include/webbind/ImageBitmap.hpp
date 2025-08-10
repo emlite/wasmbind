@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ImageBitmap class.
+/// Interface ImageBitmap
 /// [`ImageBitmap`](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap)
 class ImageBitmap : public emlite::Val {
     explicit ImageBitmap(Handle h) noexcept;
-
 public:
     explicit ImageBitmap(const emlite::Val &val) noexcept;
     static ImageBitmap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ImageBitmap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
@@ -27,3 +26,4 @@ public:
     jsbind::Undefined close();
 };
 
+} // namespace webbind

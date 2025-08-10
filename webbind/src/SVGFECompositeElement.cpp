@@ -1,9 +1,10 @@
-#include <webbind/SVGFECompositeElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFECompositeElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFECompositeElement SVGFECompositeElement::take_ownership(Handle h) noexcept {
         return SVGFECompositeElement(h);
@@ -12,7 +13,6 @@ SVGFECompositeElement SVGFECompositeElement::clone() const noexcept { return *th
 emlite::Val SVGFECompositeElement::instance() noexcept { return emlite::Val::global("SVGFECompositeElement"); }
 SVGFECompositeElement::SVGFECompositeElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFECompositeElement::SVGFECompositeElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFECompositeElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -62,3 +62,5 @@ SVGAnimatedString SVGFECompositeElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

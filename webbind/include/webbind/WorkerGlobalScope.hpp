@@ -2,8 +2,10 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class WorkerGlobalScope;
 class WorkerLocation;
@@ -11,16 +13,13 @@ class WorkerNavigator;
 class FontFaceSet;
 class Crypto;
 
-
-/// The WorkerGlobalScope class.
+/// Interface WorkerGlobalScope
 /// [`WorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope)
 class WorkerGlobalScope : public EventTarget {
     explicit WorkerGlobalScope(Handle h) noexcept;
-
 public:
     explicit WorkerGlobalScope(const emlite::Val &val) noexcept;
     static WorkerGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WorkerGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `self` attribute.
@@ -79,3 +78,4 @@ public:
     [[nodiscard]] Crypto crypto() const;
 };
 
+} // namespace webbind

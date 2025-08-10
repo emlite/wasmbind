@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "InterestGroupBiddingAndScoringScriptRunnerGlobalScope.hpp"
 #include "enums.hpp"
+#include "InterestGroupBiddingAndScoringScriptRunnerGlobalScope.hpp"
 
+namespace webbind {
 
-/// The InterestGroupBiddingScriptRunnerGlobalScope class.
+/// Interface InterestGroupBiddingScriptRunnerGlobalScope
 /// [`InterestGroupBiddingScriptRunnerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/InterestGroupBiddingScriptRunnerGlobalScope)
 class InterestGroupBiddingScriptRunnerGlobalScope : public InterestGroupBiddingAndScoringScriptRunnerGlobalScope {
     explicit InterestGroupBiddingScriptRunnerGlobalScope(Handle h) noexcept;
-
 public:
     explicit InterestGroupBiddingScriptRunnerGlobalScope(const emlite::Val &val) noexcept;
     static InterestGroupBiddingScriptRunnerGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] InterestGroupBiddingScriptRunnerGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setBid method.
@@ -34,3 +33,4 @@ public:
     jsbind::Undefined setPrioritySignalsOverride(const jsbind::String& key, double priority);
 };
 
+} // namespace webbind

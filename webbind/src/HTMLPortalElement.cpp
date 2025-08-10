@@ -1,22 +1,8 @@
-#include <webbind/HTMLPortalElement.hpp>
-#include <webbind/MessagePort.hpp>
+#include "webbind/HTMLPortalElement.hpp"
+#include "webbind/PortalActivateOptions.hpp"
+#include "webbind/StructuredSerializeOptions.hpp"
 
-
-PortalActivateOptions::PortalActivateOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PortalActivateOptions PortalActivateOptions::take_ownership(Handle h) noexcept {
-        return PortalActivateOptions(h);
-    }
-PortalActivateOptions::PortalActivateOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PortalActivateOptions::PortalActivateOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-PortalActivateOptions PortalActivateOptions::clone() const noexcept { return *this; }
-
-jsbind::Any PortalActivateOptions::data() const {
-    return emlite::Val::get("data").as<jsbind::Any>();
-}
-
-void PortalActivateOptions::data(const jsbind::Any& value) {
-    emlite::Val::set("data", value);
-}
+namespace webbind {
 
 HTMLPortalElement HTMLPortalElement::take_ownership(Handle h) noexcept {
         return HTMLPortalElement(h);
@@ -25,7 +11,6 @@ HTMLPortalElement HTMLPortalElement::clone() const noexcept { return *this; }
 emlite::Val HTMLPortalElement::instance() noexcept { return emlite::Val::global("HTMLPortalElement"); }
 HTMLPortalElement::HTMLPortalElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLPortalElement::HTMLPortalElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLPortalElement::HTMLPortalElement() : HTMLElement(emlite::Val::global("HTMLPortalElement").new_()) {}
 
@@ -77,3 +62,5 @@ void HTMLPortalElement::onmessageerror(const jsbind::Any& value) {
     HTMLElement::set("onmessageerror", value);
 }
 
+
+} // namespace webbind

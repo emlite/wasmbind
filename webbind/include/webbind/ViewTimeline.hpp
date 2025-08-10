@@ -2,28 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "ScrollTimeline.hpp"
 #include "enums.hpp"
+#include "ScrollTimeline.hpp"
+#include "ViewTimelineOptions.hpp"
+
+namespace webbind {
 
 class Element;
 class CSSNumericValue;
 
-
-/// The ViewTimeline class.
+/// Interface ViewTimeline
 /// [`ViewTimeline`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline)
 class ViewTimeline : public ScrollTimeline {
     explicit ViewTimeline(Handle h) noexcept;
-
 public:
     explicit ViewTimeline(const emlite::Val &val) noexcept;
     static ViewTimeline take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ViewTimeline clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ViewTimeline(..)` constructor, creating a new ViewTimeline instance
     ViewTimeline();
     /// The `new ViewTimeline(..)` constructor, creating a new ViewTimeline instance
-    ViewTimeline(const jsbind::Any& options);
+    ViewTimeline(const ViewTimelineOptions& options);
     /// Getter of the `subject` attribute.
     /// [`ViewTimeline.subject`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline/subject)
     [[nodiscard]] Element subject() const;
@@ -35,3 +35,4 @@ public:
     [[nodiscard]] CSSNumericValue endOffset() const;
 };
 
+} // namespace webbind

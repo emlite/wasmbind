@@ -1,5 +1,6 @@
-#include <webbind/WebGLTexture.hpp>
+#include "webbind/WebGLTexture.hpp"
 
+namespace webbind {
 
 WebGLTexture WebGLTexture::take_ownership(Handle h) noexcept {
         return WebGLTexture(h);
@@ -10,3 +11,4 @@ WebGLTexture::WebGLTexture(Handle h) noexcept : WebGLObject(emlite::Val::take_ow
 WebGLTexture::WebGLTexture(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

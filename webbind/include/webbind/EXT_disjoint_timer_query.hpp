@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class WebGLTimerQueryEXT;
 
-
-/// The EXT_disjoint_timer_query class.
+/// Interface EXT_disjoint_timer_query
 /// [`EXT_disjoint_timer_query`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query)
 class EXT_disjoint_timer_query : public emlite::Val {
     explicit EXT_disjoint_timer_query(Handle h) noexcept;
-
 public:
     explicit EXT_disjoint_timer_query(const emlite::Val &val) noexcept;
     static EXT_disjoint_timer_query take_ownership(Handle h) noexcept;
-
     [[nodiscard]] EXT_disjoint_timer_query clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createQueryEXT method.
@@ -44,3 +43,4 @@ public:
     jsbind::Any getQueryObjectEXT(const WebGLTimerQueryEXT& query, const jsbind::Any& pname);
 };
 
+} // namespace webbind

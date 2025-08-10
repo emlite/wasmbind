@@ -3,36 +3,18 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "VideoColorSpaceInit.hpp"
+#include "enums.hpp"
 
-class VideoColorSpaceInit;
+namespace webbind {
 
-
-class VideoColorSpaceInit : public emlite::Val {
-  explicit VideoColorSpaceInit(Handle h) noexcept;
-public:
-    static VideoColorSpaceInit take_ownership(Handle h) noexcept;
-    explicit VideoColorSpaceInit(const emlite::Val &val) noexcept;
-    VideoColorSpaceInit() noexcept;
-    [[nodiscard]] VideoColorSpaceInit clone() const noexcept;
-    [[nodiscard]] VideoColorPrimaries primaries() const;
-    void primaries(const VideoColorPrimaries& value);
-    [[nodiscard]] VideoTransferCharacteristics transfer() const;
-    void transfer(const VideoTransferCharacteristics& value);
-    [[nodiscard]] VideoMatrixCoefficients matrix() const;
-    void matrix(const VideoMatrixCoefficients& value);
-    [[nodiscard]] bool fullRange() const;
-    void fullRange(bool value);
-};
-
-/// The VideoColorSpace class.
+/// Interface VideoColorSpace
 /// [`VideoColorSpace`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace)
 class VideoColorSpace : public emlite::Val {
     explicit VideoColorSpace(Handle h) noexcept;
-
 public:
     explicit VideoColorSpace(const emlite::Val &val) noexcept;
     static VideoColorSpace take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VideoColorSpace clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoColorSpace(..)` constructor, creating a new VideoColorSpace instance
@@ -56,3 +38,4 @@ public:
     VideoColorSpaceInit toJSON();
 };
 
+} // namespace webbind

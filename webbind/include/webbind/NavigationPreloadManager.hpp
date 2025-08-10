@@ -3,32 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "NavigationPreloadState.hpp"
 
-class NavigationPreloadState;
+namespace webbind {
 
-
-class NavigationPreloadState : public emlite::Val {
-  explicit NavigationPreloadState(Handle h) noexcept;
-public:
-    static NavigationPreloadState take_ownership(Handle h) noexcept;
-    explicit NavigationPreloadState(const emlite::Val &val) noexcept;
-    NavigationPreloadState() noexcept;
-    [[nodiscard]] NavigationPreloadState clone() const noexcept;
-    [[nodiscard]] bool enabled() const;
-    void enabled(bool value);
-    [[nodiscard]] jsbind::String headerValue() const;
-    void headerValue(const jsbind::String& value);
-};
-
-/// The NavigationPreloadManager class.
+/// Interface NavigationPreloadManager
 /// [`NavigationPreloadManager`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager)
 class NavigationPreloadManager : public emlite::Val {
     explicit NavigationPreloadManager(Handle h) noexcept;
-
 public:
     explicit NavigationPreloadManager(const emlite::Val &val) noexcept;
     static NavigationPreloadManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NavigationPreloadManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The enable method.
@@ -45,3 +30,4 @@ public:
     jsbind::Promise<NavigationPreloadState> getState();
 };
 
+} // namespace webbind

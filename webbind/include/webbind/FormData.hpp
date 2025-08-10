@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
-class Blob;
-class HTMLElement;
+namespace webbind {
+
 class HTMLFormElement;
+class HTMLElement;
+class Blob;
 
-
-/// The FormData class.
+/// Interface FormData
 /// [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
 class FormData : public emlite::Val {
     explicit FormData(Handle h) noexcept;
-
 public:
     explicit FormData(const emlite::Val &val) noexcept;
     static FormData take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FormData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FormData(..)` constructor, creating a new FormData instance
@@ -52,3 +51,4 @@ public:
     jsbind::Undefined set(const jsbind::String& name, const Blob& blobValue, const jsbind::String& filename);
 };
 
+} // namespace webbind

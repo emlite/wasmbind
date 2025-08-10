@@ -3,46 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "CredentialRequestOptions.hpp"
+#include "CredentialCreationOptions.hpp"
+
+namespace webbind {
 
 class Credential;
-class CredentialRequestOptions;
-class CredentialCreationOptions;
-class PublicKeyCredentialCreationOptions;
-class PublicKeyCredential;
-class PublicKeyCredentialRequestOptions;
 
-
-class CredentialRequestOptions : public emlite::Val {
-  explicit CredentialRequestOptions(Handle h) noexcept;
-public:
-    static CredentialRequestOptions take_ownership(Handle h) noexcept;
-    explicit CredentialRequestOptions(const emlite::Val &val) noexcept;
-    CredentialRequestOptions() noexcept;
-    [[nodiscard]] CredentialRequestOptions clone() const noexcept;
-    [[nodiscard]] PublicKeyCredentialRequestOptions publicKey() const;
-    void publicKey(const PublicKeyCredentialRequestOptions& value);
-};
-
-class CredentialCreationOptions : public emlite::Val {
-  explicit CredentialCreationOptions(Handle h) noexcept;
-public:
-    static CredentialCreationOptions take_ownership(Handle h) noexcept;
-    explicit CredentialCreationOptions(const emlite::Val &val) noexcept;
-    CredentialCreationOptions() noexcept;
-    [[nodiscard]] CredentialCreationOptions clone() const noexcept;
-    [[nodiscard]] PublicKeyCredentialCreationOptions publicKey() const;
-    void publicKey(const PublicKeyCredentialCreationOptions& value);
-};
-
-/// The CredentialsContainer class.
+/// Interface CredentialsContainer
 /// [`CredentialsContainer`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer)
 class CredentialsContainer : public emlite::Val {
     explicit CredentialsContainer(Handle h) noexcept;
-
 public:
     explicit CredentialsContainer(const emlite::Val &val) noexcept;
     static CredentialsContainer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CredentialsContainer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
@@ -65,3 +39,4 @@ public:
     jsbind::Promise<jsbind::Undefined> preventSilentAccess();
 };
 
+} // namespace webbind

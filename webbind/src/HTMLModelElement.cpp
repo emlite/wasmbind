@@ -1,5 +1,6 @@
-#include <webbind/HTMLModelElement.hpp>
+#include "webbind/HTMLModelElement.hpp"
 
+namespace webbind {
 
 HTMLModelElement HTMLModelElement::take_ownership(Handle h) noexcept {
         return HTMLModelElement(h);
@@ -10,3 +11,4 @@ HTMLModelElement::HTMLModelElement(Handle h) noexcept : HTMLElement(emlite::Val:
 HTMLModelElement::HTMLModelElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
+} // namespace webbind

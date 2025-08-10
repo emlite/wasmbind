@@ -3,31 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "ElementDefinitionOptions.hpp"
 
-class ElementDefinitionOptions;
+namespace webbind {
+
 class Node;
 
-
-class ElementDefinitionOptions : public emlite::Val {
-  explicit ElementDefinitionOptions(Handle h) noexcept;
-public:
-    static ElementDefinitionOptions take_ownership(Handle h) noexcept;
-    explicit ElementDefinitionOptions(const emlite::Val &val) noexcept;
-    ElementDefinitionOptions() noexcept;
-    [[nodiscard]] ElementDefinitionOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String extends() const;
-    void extends(const jsbind::String& value);
-};
-
-/// The CustomElementRegistry class.
+/// Interface CustomElementRegistry
 /// [`CustomElementRegistry`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry)
 class CustomElementRegistry : public emlite::Val {
     explicit CustomElementRegistry(Handle h) noexcept;
-
 public:
     explicit CustomElementRegistry(const emlite::Val &val) noexcept;
     static CustomElementRegistry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CustomElementRegistry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CustomElementRegistry(..)` constructor, creating a new CustomElementRegistry instance
@@ -55,3 +43,4 @@ public:
     jsbind::Undefined initialize(const Node& root);
 };
 
+} // namespace webbind

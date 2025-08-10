@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Animation;
 class AnimationEffect;
 
-
-/// The AnimationTimeline class.
+/// Interface AnimationTimeline
 /// [`AnimationTimeline`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationTimeline)
 class AnimationTimeline : public emlite::Val {
     explicit AnimationTimeline(Handle h) noexcept;
-
 public:
     explicit AnimationTimeline(const emlite::Val &val) noexcept;
     static AnimationTimeline take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AnimationTimeline clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `currentTime` attribute.
@@ -33,3 +32,4 @@ public:
     Animation play(const AnimationEffect& effect);
 };
 
+} // namespace webbind

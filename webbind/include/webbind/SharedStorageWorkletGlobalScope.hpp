@@ -2,51 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WorkletGlobalScope.hpp"
 #include "enums.hpp"
+#include "WorkletGlobalScope.hpp"
+#include "StorageInterestGroup.hpp"
+
+namespace webbind {
 
 class SharedStorage;
 class PrivateAggregation;
-class StorageInterestGroup;
 class SharedStorageWorkletNavigator;
 
-
-class StorageInterestGroup : public emlite::Val {
-  explicit StorageInterestGroup(Handle h) noexcept;
-public:
-    static StorageInterestGroup take_ownership(Handle h) noexcept;
-    explicit StorageInterestGroup(const emlite::Val &val) noexcept;
-    StorageInterestGroup() noexcept;
-    [[nodiscard]] StorageInterestGroup clone() const noexcept;
-    [[nodiscard]] long long joinCount() const;
-    void joinCount(long long value);
-    [[nodiscard]] long long bidCount() const;
-    void bidCount(long long value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> prevWinsMs() const;
-    void prevWinsMs(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::String joiningOrigin() const;
-    void joiningOrigin(const jsbind::String& value);
-    [[nodiscard]] long long timeSinceGroupJoinedMs() const;
-    void timeSinceGroupJoinedMs(long long value);
-    [[nodiscard]] long long lifetimeRemainingMs() const;
-    void lifetimeRemainingMs(long long value);
-    [[nodiscard]] long long timeSinceLastUpdateMs() const;
-    void timeSinceLastUpdateMs(long long value);
-    [[nodiscard]] long long timeUntilNextUpdateMs() const;
-    void timeUntilNextUpdateMs(long long value);
-    [[nodiscard]] long long estimatedSize() const;
-    void estimatedSize(long long value);
-};
-
-/// The SharedStorageWorkletGlobalScope class.
+/// Interface SharedStorageWorkletGlobalScope
 /// [`SharedStorageWorkletGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope)
 class SharedStorageWorkletGlobalScope : public WorkletGlobalScope {
     explicit SharedStorageWorkletGlobalScope(Handle h) noexcept;
-
 public:
     explicit SharedStorageWorkletGlobalScope(const emlite::Val &val) noexcept;
     static SharedStorageWorkletGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SharedStorageWorkletGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The register method.
@@ -66,3 +38,4 @@ public:
     [[nodiscard]] SharedStorageWorkletNavigator navigator() const;
 };
 
+} // namespace webbind

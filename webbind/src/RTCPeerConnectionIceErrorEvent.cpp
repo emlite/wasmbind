@@ -1,5 +1,7 @@
-#include <webbind/RTCPeerConnectionIceErrorEvent.hpp>
+#include "webbind/RTCPeerConnectionIceErrorEvent.hpp"
+#include "webbind/RTCPeerConnectionIceErrorEventInit.hpp"
 
+namespace webbind {
 
 RTCPeerConnectionIceErrorEvent RTCPeerConnectionIceErrorEvent::take_ownership(Handle h) noexcept {
         return RTCPeerConnectionIceErrorEvent(h);
@@ -9,8 +11,7 @@ emlite::Val RTCPeerConnectionIceErrorEvent::instance() noexcept { return emlite:
 RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCPeerConnectionIceErrorEvent").new_(type, eventInitDict)) {}
+RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const jsbind::String& type, const RTCPeerConnectionIceErrorEventInit& eventInitDict) : Event(emlite::Val::global("RTCPeerConnectionIceErrorEvent").new_(type, eventInitDict)) {}
 
 jsbind::String RTCPeerConnectionIceErrorEvent::address() const {
     return Event::get("address").as<jsbind::String>();
@@ -32,3 +33,5 @@ jsbind::String RTCPeerConnectionIceErrorEvent::errorText() const {
     return Event::get("errorText").as<jsbind::String>();
 }
 
+
+} // namespace webbind

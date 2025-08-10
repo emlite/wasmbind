@@ -2,23 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Credential.hpp"
 #include "enums.hpp"
+#include "Credential.hpp"
+#include "FederatedCredentialInit.hpp"
 
+namespace webbind {
 
-/// The FederatedCredential class.
+/// Interface FederatedCredential
 /// [`FederatedCredential`](https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential)
 class FederatedCredential : public Credential {
     explicit FederatedCredential(Handle h) noexcept;
-
 public:
     explicit FederatedCredential(const emlite::Val &val) noexcept;
     static FederatedCredential take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FederatedCredential clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FederatedCredential(..)` constructor, creating a new FederatedCredential instance
-    FederatedCredential(const jsbind::Any& data);
+    FederatedCredential(const FederatedCredentialInit& data);
     /// Getter of the `provider` attribute.
     /// [`FederatedCredential.provider`](https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential/provider)
     [[nodiscard]] jsbind::String provider() const;
@@ -33,3 +33,4 @@ public:
     [[nodiscard]] jsbind::String iconURL() const;
 };
 
+} // namespace webbind

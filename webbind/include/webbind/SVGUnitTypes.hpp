@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGUnitTypes class.
+/// Interface SVGUnitTypes
 /// [`SVGUnitTypes`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUnitTypes)
 class SVGUnitTypes : public emlite::Val {
     explicit SVGUnitTypes(Handle h) noexcept;
-
 public:
     explicit SVGUnitTypes(const emlite::Val &val) noexcept;
     static SVGUnitTypes take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGUnitTypes clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

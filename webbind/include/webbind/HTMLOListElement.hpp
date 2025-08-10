@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLOListElement class.
+/// Interface HTMLOListElement
 /// [`HTMLOListElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement)
 class HTMLOListElement : public HTMLElement {
     explicit HTMLOListElement(Handle h) noexcept;
-
 public:
     explicit HTMLOListElement(const emlite::Val &val) noexcept;
     static HTMLOListElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLOListElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLOListElement(..)` constructor, creating a new HTMLOListElement instance
@@ -45,3 +44,4 @@ public:
     void compact(bool value);
 };
 
+} // namespace webbind

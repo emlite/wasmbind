@@ -1,5 +1,6 @@
-#include <webbind/SVGFEFuncAElement.hpp>
+#include "webbind/SVGFEFuncAElement.hpp"
 
+namespace webbind {
 
 SVGFEFuncAElement SVGFEFuncAElement::take_ownership(Handle h) noexcept {
         return SVGFEFuncAElement(h);
@@ -10,3 +11,4 @@ SVGFEFuncAElement::SVGFEFuncAElement(Handle h) noexcept : SVGComponentTransferFu
 SVGFEFuncAElement::SVGFEFuncAElement(const emlite::Val &val) noexcept: SVGComponentTransferFunctionElement(val) {}
 
 
+} // namespace webbind

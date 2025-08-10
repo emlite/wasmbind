@@ -2,27 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "TrackEventInit.hpp"
 
+namespace webbind {
 
-/// The TrackEvent class.
+/// Interface TrackEvent
 /// [`TrackEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TrackEvent)
 class TrackEvent : public Event {
     explicit TrackEvent(Handle h) noexcept;
-
 public:
     explicit TrackEvent(const emlite::Val &val) noexcept;
     static TrackEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TrackEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TrackEvent(..)` constructor, creating a new TrackEvent instance
     TrackEvent(const jsbind::String& type);
     /// The `new TrackEvent(..)` constructor, creating a new TrackEvent instance
-    TrackEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    TrackEvent(const jsbind::String& type, const TrackEventInit& eventInitDict);
     /// Getter of the `track` attribute.
     /// [`TrackEvent.track`](https://developer.mozilla.org/en-US/docs/Web/API/TrackEvent/track)
     [[nodiscard]] jsbind::Any track() const;
 };
 
+} // namespace webbind

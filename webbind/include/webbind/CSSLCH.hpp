@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSColorValue.hpp"
 #include "enums.hpp"
+#include "CSSColorValue.hpp"
 
+namespace webbind {
 
-/// The CSSLCH class.
+/// Interface CSSLCH
 /// [`CSSLCH`](https://developer.mozilla.org/en-US/docs/Web/API/CSSLCH)
 class CSSLCH : public CSSColorValue {
     explicit CSSLCH(Handle h) noexcept;
-
 public:
     explicit CSSLCH(const emlite::Val &val) noexcept;
     static CSSLCH take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSLCH clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSLCH(..)` constructor, creating a new CSSLCH instance
@@ -47,3 +46,4 @@ public:
     void alpha(const jsbind::Any& value);
 };
 
+} // namespace webbind

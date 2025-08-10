@@ -1,39 +1,9 @@
-#include <webbind/ServiceWorkerContainer.hpp>
-#include <webbind/ServiceWorker.hpp>
-#include <webbind/ServiceWorkerRegistration.hpp>
+#include "webbind/ServiceWorkerContainer.hpp"
+#include "webbind/ServiceWorker.hpp"
+#include "webbind/ServiceWorkerRegistration.hpp"
+#include "webbind/RegistrationOptions.hpp"
 
-
-RegistrationOptions::RegistrationOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RegistrationOptions RegistrationOptions::take_ownership(Handle h) noexcept {
-        return RegistrationOptions(h);
-    }
-RegistrationOptions::RegistrationOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RegistrationOptions::RegistrationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-RegistrationOptions RegistrationOptions::clone() const noexcept { return *this; }
-
-jsbind::String RegistrationOptions::scope() const {
-    return emlite::Val::get("scope").as<jsbind::String>();
-}
-
-void RegistrationOptions::scope(const jsbind::String& value) {
-    emlite::Val::set("scope", value);
-}
-
-WorkerType RegistrationOptions::type() const {
-    return emlite::Val::get("type").as<WorkerType>();
-}
-
-void RegistrationOptions::type(const WorkerType& value) {
-    emlite::Val::set("type", value);
-}
-
-ServiceWorkerUpdateViaCache RegistrationOptions::updateViaCache() const {
-    return emlite::Val::get("updateViaCache").as<ServiceWorkerUpdateViaCache>();
-}
-
-void RegistrationOptions::updateViaCache(const ServiceWorkerUpdateViaCache& value) {
-    emlite::Val::set("updateViaCache", value);
-}
+namespace webbind {
 
 ServiceWorkerContainer ServiceWorkerContainer::take_ownership(Handle h) noexcept {
         return ServiceWorkerContainer(h);
@@ -42,7 +12,6 @@ ServiceWorkerContainer ServiceWorkerContainer::clone() const noexcept { return *
 emlite::Val ServiceWorkerContainer::instance() noexcept { return emlite::Val::global("ServiceWorkerContainer"); }
 ServiceWorkerContainer::ServiceWorkerContainer(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 ServiceWorkerContainer::ServiceWorkerContainer(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 ServiceWorker ServiceWorkerContainer::controller() const {
     return EventTarget::get("controller").as<ServiceWorker>();
@@ -100,3 +69,5 @@ void ServiceWorkerContainer::onmessageerror(const jsbind::Any& value) {
     EventTarget::set("onmessageerror", value);
 }
 
+
+} // namespace webbind

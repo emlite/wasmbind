@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The MediaKeyStatusMap class.
+/// Interface MediaKeyStatusMap
 /// [`MediaKeyStatusMap`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap)
 class MediaKeyStatusMap : public emlite::Val {
     explicit MediaKeyStatusMap(Handle h) noexcept;
-
 public:
     explicit MediaKeyStatusMap(const emlite::Val &val) noexcept;
     static MediaKeyStatusMap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaKeyStatusMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `size` attribute.
@@ -27,3 +26,4 @@ public:
     jsbind::Any get(const jsbind::Any& keyId);
 };
 
+} // namespace webbind

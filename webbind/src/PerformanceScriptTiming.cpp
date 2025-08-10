@@ -1,6 +1,7 @@
-#include <webbind/PerformanceScriptTiming.hpp>
-#include <webbind/Window.hpp>
+#include "webbind/PerformanceScriptTiming.hpp"
+#include "webbind/Window.hpp"
 
+namespace webbind {
 
 PerformanceScriptTiming PerformanceScriptTiming::take_ownership(Handle h) noexcept {
         return PerformanceScriptTiming(h);
@@ -9,7 +10,6 @@ PerformanceScriptTiming PerformanceScriptTiming::clone() const noexcept { return
 emlite::Val PerformanceScriptTiming::instance() noexcept { return emlite::Val::global("PerformanceScriptTiming"); }
 PerformanceScriptTiming::PerformanceScriptTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceScriptTiming::PerformanceScriptTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
-
 
 jsbind::Any PerformanceScriptTiming::startTime() const {
     return PerformanceEntry::get("startTime").as<jsbind::Any>();
@@ -71,3 +71,5 @@ jsbind::Object PerformanceScriptTiming::toJSON() {
     return PerformanceEntry::call("toJSON").as<jsbind::Object>();
 }
 
+
+} // namespace webbind

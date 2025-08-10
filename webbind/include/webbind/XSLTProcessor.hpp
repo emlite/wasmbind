@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 class DocumentFragment;
 class Document;
 
-
-/// The XSLTProcessor class.
+/// Interface XSLTProcessor
 /// [`XSLTProcessor`](https://developer.mozilla.org/en-US/docs/Web/API/XSLTProcessor)
 class XSLTProcessor : public emlite::Val {
     explicit XSLTProcessor(Handle h) noexcept;
-
 public:
     explicit XSLTProcessor(const emlite::Val &val) noexcept;
     static XSLTProcessor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XSLTProcessor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XSLTProcessor(..)` constructor, creating a new XSLTProcessor instance
@@ -48,3 +47,4 @@ public:
     jsbind::Undefined reset();
 };
 
+} // namespace webbind

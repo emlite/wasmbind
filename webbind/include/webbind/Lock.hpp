@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The Lock class.
+/// Interface Lock
 /// [`Lock`](https://developer.mozilla.org/en-US/docs/Web/API/Lock)
 class Lock : public emlite::Val {
     explicit Lock(Handle h) noexcept;
-
 public:
     explicit Lock(const emlite::Val &val) noexcept;
     static Lock take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Lock clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -24,3 +24,4 @@ public:
     [[nodiscard]] LockMode mode() const;
 };
 
+} // namespace webbind

@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleValue.hpp"
 #include "enums.hpp"
+#include "CSSStyleValue.hpp"
+
+namespace webbind {
 
 class CSSTransformComponent;
 class DOMMatrix;
 
-
-/// The CSSTransformValue class.
+/// Interface CSSTransformValue
 /// [`CSSTransformValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue)
 class CSSTransformValue : public CSSStyleValue {
     explicit CSSTransformValue(Handle h) noexcept;
-
 public:
     explicit CSSTransformValue(const emlite::Val &val) noexcept;
     static CSSTransformValue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSTransformValue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSTransformValue(..)` constructor, creating a new CSSTransformValue instance
@@ -33,3 +32,4 @@ public:
     DOMMatrix toMatrix();
 };
 
+} // namespace webbind

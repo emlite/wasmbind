@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGradientElement.hpp"
 #include "enums.hpp"
+#include "SVGGradientElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 
-
-/// The SVGLinearGradientElement class.
+/// Interface SVGLinearGradientElement
 /// [`SVGLinearGradientElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLinearGradientElement)
 class SVGLinearGradientElement : public SVGGradientElement {
     explicit SVGLinearGradientElement(Handle h) noexcept;
-
 public:
     explicit SVGLinearGradientElement(const emlite::Val &val) noexcept;
     static SVGLinearGradientElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGLinearGradientElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x1` attribute.
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] SVGAnimatedLength y2() const;
 };
 
+} // namespace webbind

@@ -3,21 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class XRSpace;
 class Gamepad;
 class XRHand;
 
-
-/// The XRInputSource class.
+/// Interface XRInputSource
 /// [`XRInputSource`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSource)
 class XRInputSource : public emlite::Val {
     explicit XRInputSource(Handle h) noexcept;
-
 public:
     explicit XRInputSource(const emlite::Val &val) noexcept;
     static XRInputSource take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRInputSource clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `handedness` attribute.
@@ -46,3 +46,4 @@ public:
     [[nodiscard]] XRHand hand() const;
 };
 
+} // namespace webbind

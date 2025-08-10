@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class SpeechSynthesisUtterance;
 class SpeechSynthesisVoice;
 
-
-/// The SpeechSynthesis class.
+/// Interface SpeechSynthesis
 /// [`SpeechSynthesis`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
 class SpeechSynthesis : public EventTarget {
     explicit SpeechSynthesis(Handle h) noexcept;
-
 public:
     explicit SpeechSynthesis(const emlite::Val &val) noexcept;
     static SpeechSynthesis take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechSynthesis clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `pending` attribute.
@@ -52,3 +51,4 @@ public:
     jsbind::TypedArray<SpeechSynthesisVoice> getVoices();
 };
 
+} // namespace webbind

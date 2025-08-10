@@ -1,5 +1,6 @@
-#include <webbind/WebGLProgram.hpp>
+#include "webbind/WebGLProgram.hpp"
 
+namespace webbind {
 
 WebGLProgram WebGLProgram::take_ownership(Handle h) noexcept {
         return WebGLProgram(h);
@@ -10,3 +11,4 @@ WebGLProgram::WebGLProgram(Handle h) noexcept : WebGLObject(emlite::Val::take_ow
 WebGLProgram::WebGLProgram(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

@@ -2,49 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleValue.hpp"
 #include "enums.hpp"
+#include "CSSStyleValue.hpp"
+#include "CSSNumericType.hpp"
+
+namespace webbind {
 
 class CSSNumericValue;
 class CSSUnitValue;
 class CSSMathSum;
-class CSSNumericType;
 
-
-class CSSNumericType : public emlite::Val {
-  explicit CSSNumericType(Handle h) noexcept;
-public:
-    static CSSNumericType take_ownership(Handle h) noexcept;
-    explicit CSSNumericType(const emlite::Val &val) noexcept;
-    CSSNumericType() noexcept;
-    [[nodiscard]] CSSNumericType clone() const noexcept;
-    [[nodiscard]] long length() const;
-    void length(long value);
-    [[nodiscard]] long angle() const;
-    void angle(long value);
-    [[nodiscard]] long time() const;
-    void time(long value);
-    [[nodiscard]] long frequency() const;
-    void frequency(long value);
-    [[nodiscard]] long resolution() const;
-    void resolution(long value);
-    [[nodiscard]] long flex() const;
-    void flex(long value);
-    [[nodiscard]] long percent() const;
-    void percent(long value);
-    [[nodiscard]] CSSNumericBaseType percentHint() const;
-    void percentHint(const CSSNumericBaseType& value);
-};
-
-/// The CSSNumericValue class.
+/// Interface CSSNumericValue
 /// [`CSSNumericValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue)
 class CSSNumericValue : public CSSStyleValue {
     explicit CSSNumericValue(Handle h) noexcept;
-
 public:
     explicit CSSNumericValue(const emlite::Val &val) noexcept;
     static CSSNumericValue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSNumericValue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The add method.
@@ -82,3 +56,4 @@ public:
     static CSSNumericValue parse(const jsbind::String& cssText);
 };
 
+} // namespace webbind

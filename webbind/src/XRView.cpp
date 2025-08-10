@@ -1,7 +1,8 @@
-#include <webbind/XRView.hpp>
-#include <webbind/XRCamera.hpp>
-#include <webbind/XRRigidTransform.hpp>
+#include "webbind/XRView.hpp"
+#include "webbind/XRCamera.hpp"
+#include "webbind/XRRigidTransform.hpp"
 
+namespace webbind {
 
 XRView XRView::take_ownership(Handle h) noexcept {
         return XRView(h);
@@ -10,7 +11,6 @@ XRView XRView::clone() const noexcept { return *this; }
 emlite::Val XRView::instance() noexcept { return emlite::Val::global("XRView"); }
 XRView::XRView(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRView::XRView(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 XREye XRView::eye() const {
     return emlite::Val::get("eye").as<XREye>();
@@ -40,3 +40,5 @@ XRRigidTransform XRView::transform() const {
     return emlite::Val::get("transform").as<XRRigidTransform>();
 }
 
+
+} // namespace webbind

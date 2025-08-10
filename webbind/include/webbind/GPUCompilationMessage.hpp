@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUCompilationMessage class.
+/// Interface GPUCompilationMessage
 /// [`GPUCompilationMessage`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage)
 class GPUCompilationMessage : public emlite::Val {
     explicit GPUCompilationMessage(Handle h) noexcept;
-
 public:
     explicit GPUCompilationMessage(const emlite::Val &val) noexcept;
     static GPUCompilationMessage take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUCompilationMessage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `message` attribute.
@@ -36,3 +36,4 @@ public:
     [[nodiscard]] long long length() const;
 };
 
+} // namespace webbind

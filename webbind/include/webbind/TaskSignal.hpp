@@ -2,33 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "AbortSignal.hpp"
+#include "TaskSignalAnyInit.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class TaskSignal;
-class TaskSignalAnyInit;
 
-
-class TaskSignalAnyInit : public emlite::Val {
-  explicit TaskSignalAnyInit(Handle h) noexcept;
-public:
-    static TaskSignalAnyInit take_ownership(Handle h) noexcept;
-    explicit TaskSignalAnyInit(const emlite::Val &val) noexcept;
-    TaskSignalAnyInit() noexcept;
-    [[nodiscard]] TaskSignalAnyInit clone() const noexcept;
-    [[nodiscard]] jsbind::Any priority() const;
-    void priority(const jsbind::Any& value);
-};
-
-/// The TaskSignal class.
+/// Interface TaskSignal
 /// [`TaskSignal`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal)
 class TaskSignal : public AbortSignal {
     explicit TaskSignal(Handle h) noexcept;
-
 public:
     explicit TaskSignal(const emlite::Val &val) noexcept;
     static TaskSignal take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TaskSignal clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The any method.
@@ -48,3 +37,4 @@ public:
     void onprioritychange(const jsbind::Any& value);
 };
 
+} // namespace webbind

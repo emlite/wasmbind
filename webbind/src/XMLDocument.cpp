@@ -1,5 +1,6 @@
-#include <webbind/XMLDocument.hpp>
+#include "webbind/XMLDocument.hpp"
 
+namespace webbind {
 
 XMLDocument XMLDocument::take_ownership(Handle h) noexcept {
         return XMLDocument(h);
@@ -10,3 +11,4 @@ XMLDocument::XMLDocument(Handle h) noexcept : Document(emlite::Val::take_ownersh
 XMLDocument::XMLDocument(const emlite::Val &val) noexcept: Document(val) {}
 
 
+} // namespace webbind

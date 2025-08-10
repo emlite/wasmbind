@@ -2,28 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "UIEvent.hpp"
 #include "enums.hpp"
+#include "UIEvent.hpp"
+#include "MouseEventInit.hpp"
+
+namespace webbind {
 
 class EventTarget;
 class Window;
 
-
-/// The MouseEvent class.
+/// Interface MouseEvent
 /// [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent)
 class MouseEvent : public UIEvent {
     explicit MouseEvent(Handle h) noexcept;
-
 public:
     explicit MouseEvent(const emlite::Val &val) noexcept;
     static MouseEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MouseEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MouseEvent(..)` constructor, creating a new MouseEvent instance
     MouseEvent(const jsbind::String& type);
     /// The `new MouseEvent(..)` constructor, creating a new MouseEvent instance
-    MouseEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    MouseEvent(const jsbind::String& type, const MouseEventInit& eventInitDict);
     /// Getter of the `screenX` attribute.
     /// [`MouseEvent.screenX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX)
     [[nodiscard]] long screenX() const;
@@ -137,3 +137,4 @@ public:
     jsbind::Undefined initMouseEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg, long screenXArg, long screenYArg, long clientXArg, long clientYArg, bool ctrlKeyArg, bool altKeyArg, bool shiftKeyArg, bool metaKeyArg, short buttonArg, const EventTarget& relatedTargetArg);
 };
 
+} // namespace webbind

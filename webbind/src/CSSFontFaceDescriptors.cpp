@@ -1,5 +1,6 @@
-#include <webbind/CSSFontFaceDescriptors.hpp>
+#include "webbind/CSSFontFaceDescriptors.hpp"
 
+namespace webbind {
 
 CSSFontFaceDescriptors CSSFontFaceDescriptors::take_ownership(Handle h) noexcept {
         return CSSFontFaceDescriptors(h);
@@ -8,7 +9,6 @@ CSSFontFaceDescriptors CSSFontFaceDescriptors::clone() const noexcept { return *
 emlite::Val CSSFontFaceDescriptors::instance() noexcept { return emlite::Val::global("CSSFontFaceDescriptors"); }
 CSSFontFaceDescriptors::CSSFontFaceDescriptors(Handle h) noexcept : CSSStyleDeclaration(emlite::Val::take_ownership(h)) {}
 CSSFontFaceDescriptors::CSSFontFaceDescriptors(const emlite::Val &val) noexcept: CSSStyleDeclaration(val) {}
-
 
 jsbind::String CSSFontFaceDescriptors::src() const {
     return CSSStyleDeclaration::get("src").as<jsbind::String>();
@@ -338,3 +338,5 @@ void CSSFontFaceDescriptors::subscript_size_override(const jsbind::String& value
     CSSStyleDeclaration::set("subscript-size-override", value);
 }
 
+
+} // namespace webbind

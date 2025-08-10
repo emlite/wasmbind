@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class TrustedHTML;
 class TrustedScript;
 class TrustedScriptURL;
 
-
-/// The TrustedTypePolicy class.
+/// Interface TrustedTypePolicy
 /// [`TrustedTypePolicy`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicy)
 class TrustedTypePolicy : public emlite::Val {
     explicit TrustedTypePolicy(Handle h) noexcept;
-
 public:
     explicit TrustedTypePolicy(const emlite::Val &val) noexcept;
     static TrustedTypePolicy take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TrustedTypePolicy clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -34,3 +33,4 @@ public:
     TrustedScriptURL createScriptURL(const jsbind::String& input, const jsbind::Any& arguments);
 };
 
+} // namespace webbind

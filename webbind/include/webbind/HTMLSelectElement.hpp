@@ -2,8 +2,10 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 class HTMLOptionsCollection;
@@ -12,16 +14,13 @@ class HTMLCollection;
 class ValidityState;
 class NodeList;
 
-
-/// The HTMLSelectElement class.
+/// Interface HTMLSelectElement
 /// [`HTMLSelectElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement)
 class HTMLSelectElement : public HTMLElement {
     explicit HTMLSelectElement(Handle h) noexcept;
-
 public:
     explicit HTMLSelectElement(const emlite::Val &val) noexcept;
     static HTMLSelectElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLSelectElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSelectElement(..)` constructor, creating a new HTMLSelectElement instance
@@ -133,3 +132,4 @@ public:
     [[nodiscard]] NodeList labels() const;
 };
 
+} // namespace webbind

@@ -1,6 +1,7 @@
-#include <webbind/CSSVariableReferenceValue.hpp>
-#include <webbind/CSSUnparsedValue.hpp>
+#include "webbind/CSSVariableReferenceValue.hpp"
+#include "webbind/CSSUnparsedValue.hpp"
 
+namespace webbind {
 
 CSSVariableReferenceValue CSSVariableReferenceValue::take_ownership(Handle h) noexcept {
         return CSSVariableReferenceValue(h);
@@ -9,7 +10,6 @@ CSSVariableReferenceValue CSSVariableReferenceValue::clone() const noexcept { re
 emlite::Val CSSVariableReferenceValue::instance() noexcept { return emlite::Val::global("CSSVariableReferenceValue"); }
 CSSVariableReferenceValue::CSSVariableReferenceValue(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSVariableReferenceValue::CSSVariableReferenceValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 CSSVariableReferenceValue::CSSVariableReferenceValue(const jsbind::String& variable) : emlite::Val(emlite::Val::global("CSSVariableReferenceValue").new_(variable)) {}
 
@@ -27,3 +27,5 @@ CSSUnparsedValue CSSVariableReferenceValue::fallback() const {
     return emlite::Val::get("fallback").as<CSSUnparsedValue>();
 }
 
+
+} // namespace webbind

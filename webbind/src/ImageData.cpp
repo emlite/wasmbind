@@ -1,6 +1,7 @@
-#include <webbind/ImageData.hpp>
-#include <webbind/CanvasRenderingContext2D.hpp>
+#include "webbind/ImageData.hpp"
+#include "webbind/ImageDataSettings.hpp"
 
+namespace webbind {
 
 ImageData ImageData::take_ownership(Handle h) noexcept {
         return ImageData(h);
@@ -9,7 +10,6 @@ ImageData ImageData::clone() const noexcept { return *this; }
 emlite::Val ImageData::instance() noexcept { return emlite::Val::global("ImageData"); }
 ImageData::ImageData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageData::ImageData(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 ImageData::ImageData(const jsbind::Any& data, unsigned long sw) : emlite::Val(emlite::Val::global("ImageData").new_(data, sw)) {}
 
@@ -37,3 +37,5 @@ PredefinedColorSpace ImageData::colorSpace() const {
     return emlite::Val::get("colorSpace").as<PredefinedColorSpace>();
 }
 
+
+} // namespace webbind

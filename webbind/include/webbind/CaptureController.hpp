@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class HTMLElement;
 
-
-/// The CaptureController class.
+/// Interface CaptureController
 /// [`CaptureController`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController)
 class CaptureController : public EventTarget {
     explicit CaptureController(Handle h) noexcept;
-
 public:
     explicit CaptureController(const emlite::Val &val) noexcept;
     static CaptureController take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CaptureController clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CaptureController(..)` constructor, creating a new CaptureController instance
@@ -56,3 +56,4 @@ public:
     jsbind::Promise<jsbind::Undefined> forwardWheel(const HTMLElement& element);
 };
 
+} // namespace webbind

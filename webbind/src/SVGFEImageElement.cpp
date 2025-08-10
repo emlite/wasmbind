@@ -1,8 +1,9 @@
-#include <webbind/SVGFEImageElement.hpp>
-#include <webbind/SVGAnimatedPreserveAspectRatio.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEImageElement.hpp"
+#include "webbind/SVGAnimatedPreserveAspectRatio.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEImageElement SVGFEImageElement::take_ownership(Handle h) noexcept {
         return SVGFEImageElement(h);
@@ -11,7 +12,6 @@ SVGFEImageElement SVGFEImageElement::clone() const noexcept { return *this; }
 emlite::Val SVGFEImageElement::instance() noexcept { return emlite::Val::global("SVGFEImageElement"); }
 SVGFEImageElement::SVGFEImageElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEImageElement::SVGFEImageElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedPreserveAspectRatio SVGFEImageElement::preserveAspectRatio() const {
     return SVGElement::get("preserveAspectRatio").as<SVGAnimatedPreserveAspectRatio>();
@@ -45,3 +45,5 @@ SVGAnimatedString SVGFEImageElement::href() const {
     return SVGElement::get("href").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

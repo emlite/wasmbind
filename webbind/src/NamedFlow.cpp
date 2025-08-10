@@ -1,7 +1,8 @@
-#include <webbind/NamedFlow.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/Node.hpp>
+#include "webbind/NamedFlow.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/Node.hpp"
 
+namespace webbind {
 
 NamedFlow NamedFlow::take_ownership(Handle h) noexcept {
         return NamedFlow(h);
@@ -10,7 +11,6 @@ NamedFlow NamedFlow::clone() const noexcept { return *this; }
 emlite::Val NamedFlow::instance() noexcept { return emlite::Val::global("NamedFlow"); }
 NamedFlow::NamedFlow(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 NamedFlow::NamedFlow(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String NamedFlow::name() const {
     return EventTarget::get("name").as<jsbind::String>();
@@ -36,3 +36,5 @@ jsbind::TypedArray<Element> NamedFlow::getRegionsByContent(const Node& node) {
     return EventTarget::call("getRegionsByContent", node).as<jsbind::TypedArray<Element>>();
 }
 
+
+} // namespace webbind

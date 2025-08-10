@@ -2,20 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
-#include "MessagePort.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "StructuredSerializeOptions.hpp"
 
+namespace webbind {
 
-/// The PortalHost class.
+/// Interface PortalHost
 /// [`PortalHost`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost)
 class PortalHost : public EventTarget {
     explicit PortalHost(Handle h) noexcept;
-
 public:
     explicit PortalHost(const emlite::Val &val) noexcept;
     static PortalHost take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PortalHost clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The postMessage method.
@@ -38,3 +37,4 @@ public:
     void onmessageerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

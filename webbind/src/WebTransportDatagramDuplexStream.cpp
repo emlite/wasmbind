@@ -1,32 +1,9 @@
-#include <webbind/WebTransportDatagramDuplexStream.hpp>
-#include <webbind/WebTransportDatagramsWritable.hpp>
-#include <webbind/ReadableStream.hpp>
-#include <webbind/WebTransportSendGroup.hpp>
+#include "webbind/WebTransportDatagramDuplexStream.hpp"
+#include "webbind/WebTransportDatagramsWritable.hpp"
+#include "webbind/WebTransportSendOptions.hpp"
+#include "webbind/ReadableStream.hpp"
 
-
-WebTransportSendOptions::WebTransportSendOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebTransportSendOptions WebTransportSendOptions::take_ownership(Handle h) noexcept {
-        return WebTransportSendOptions(h);
-    }
-WebTransportSendOptions::WebTransportSendOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-WebTransportSendOptions::WebTransportSendOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-WebTransportSendOptions WebTransportSendOptions::clone() const noexcept { return *this; }
-
-WebTransportSendGroup WebTransportSendOptions::sendGroup() const {
-    return emlite::Val::get("sendGroup").as<WebTransportSendGroup>();
-}
-
-void WebTransportSendOptions::sendGroup(const WebTransportSendGroup& value) {
-    emlite::Val::set("sendGroup", value);
-}
-
-long long WebTransportSendOptions::sendOrder() const {
-    return emlite::Val::get("sendOrder").as<long long>();
-}
-
-void WebTransportSendOptions::sendOrder(long long value) {
-    emlite::Val::set("sendOrder", value);
-}
+namespace webbind {
 
 WebTransportDatagramDuplexStream WebTransportDatagramDuplexStream::take_ownership(Handle h) noexcept {
         return WebTransportDatagramDuplexStream(h);
@@ -35,7 +12,6 @@ WebTransportDatagramDuplexStream WebTransportDatagramDuplexStream::clone() const
 emlite::Val WebTransportDatagramDuplexStream::instance() noexcept { return emlite::Val::global("WebTransportDatagramDuplexStream"); }
 WebTransportDatagramDuplexStream::WebTransportDatagramDuplexStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransportDatagramDuplexStream::WebTransportDatagramDuplexStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 WebTransportDatagramsWritable WebTransportDatagramDuplexStream::createWritable() {
     return emlite::Val::call("createWritable").as<WebTransportDatagramsWritable>();
@@ -85,3 +61,5 @@ void WebTransportDatagramDuplexStream::outgoingHighWaterMark(double value) {
     emlite::Val::set("outgoingHighWaterMark", value);
 }
 
+
+} // namespace webbind

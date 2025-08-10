@@ -1,5 +1,6 @@
-#include <webbind/WGSLLanguageFeatures.hpp>
+#include "webbind/WGSLLanguageFeatures.hpp"
 
+namespace webbind {
 
 WGSLLanguageFeatures WGSLLanguageFeatures::take_ownership(Handle h) noexcept {
         return WGSLLanguageFeatures(h);
@@ -10,3 +11,4 @@ WGSLLanguageFeatures::WGSLLanguageFeatures(Handle h) noexcept : emlite::Val(emli
 WGSLLanguageFeatures::WGSLLanguageFeatures(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

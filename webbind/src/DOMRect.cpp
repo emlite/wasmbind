@@ -1,6 +1,8 @@
-#include <webbind/DOMRect.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
+#include "webbind/DOMRect.hpp"
+#include "webbind/DOMRect.hpp"
+#include "webbind/DOMRectInit.hpp"
 
+namespace webbind {
 
 DOMRect DOMRect::take_ownership(Handle h) noexcept {
         return DOMRect(h);
@@ -9,7 +11,6 @@ DOMRect DOMRect::clone() const noexcept { return *this; }
 emlite::Val DOMRect::instance() noexcept { return emlite::Val::global("DOMRect"); }
 DOMRect::DOMRect(Handle h) noexcept : DOMRectReadOnly(emlite::Val::take_ownership(h)) {}
 DOMRect::DOMRect(const emlite::Val &val) noexcept: DOMRectReadOnly(val) {}
-
 
 DOMRect::DOMRect() : DOMRectReadOnly(emlite::Val::global("DOMRect").new_()) {}
 
@@ -61,3 +62,5 @@ void DOMRect::height(double value) {
     DOMRectReadOnly::set("height", value);
 }
 
+
+} // namespace webbind

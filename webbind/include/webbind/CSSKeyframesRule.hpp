@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
+
+namespace webbind {
 
 class CSSRuleList;
 class CSSKeyframeRule;
 
-
-/// The CSSKeyframesRule class.
+/// Interface CSSKeyframesRule
 /// [`CSSKeyframesRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
 class CSSKeyframesRule : public CSSRule {
     explicit CSSKeyframesRule(Handle h) noexcept;
-
 public:
     explicit CSSKeyframesRule(const emlite::Val &val) noexcept;
     static CSSKeyframesRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSKeyframesRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -43,3 +42,4 @@ public:
     CSSKeyframeRule findRule(const jsbind::String& select);
 };
 
+} // namespace webbind

@@ -1,6 +1,7 @@
-#include <webbind/PerformanceNavigationTiming.hpp>
-#include <webbind/NotRestoredReasons.hpp>
+#include "webbind/PerformanceNavigationTiming.hpp"
+#include "webbind/NotRestoredReasons.hpp"
 
+namespace webbind {
 
 PerformanceNavigationTiming PerformanceNavigationTiming::take_ownership(Handle h) noexcept {
         return PerformanceNavigationTiming(h);
@@ -9,7 +10,6 @@ PerformanceNavigationTiming PerformanceNavigationTiming::clone() const noexcept 
 emlite::Val PerformanceNavigationTiming::instance() noexcept { return emlite::Val::global("PerformanceNavigationTiming"); }
 PerformanceNavigationTiming::PerformanceNavigationTiming(Handle h) noexcept : PerformanceResourceTiming(emlite::Val::take_ownership(h)) {}
 PerformanceNavigationTiming::PerformanceNavigationTiming(const emlite::Val &val) noexcept: PerformanceResourceTiming(val) {}
-
 
 jsbind::Any PerformanceNavigationTiming::unloadEventStart() const {
     return PerformanceResourceTiming::get("unloadEventStart").as<jsbind::Any>();
@@ -67,3 +67,5 @@ jsbind::Any PerformanceNavigationTiming::activationStart() const {
     return PerformanceResourceTiming::get("activationStart").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

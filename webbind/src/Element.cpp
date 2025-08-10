@@ -1,249 +1,36 @@
-#include <webbind/Element.hpp>
-#include <webbind/DOMTokenList.hpp>
-#include <webbind/NamedNodeMap.hpp>
-#include <webbind/Attr.hpp>
-#include <webbind/ShadowRoot.hpp>
-#include <webbind/CustomElementRegistry.hpp>
-#include <webbind/HTMLCollection.hpp>
-#include <webbind/CSSPseudoElement.hpp>
-#include <webbind/StylePropertyMapReadOnly.hpp>
-#include <webbind/DOMRectList.hpp>
-#include <webbind/DOMRect.hpp>
-#include <webbind/Range.hpp>
-#include <webbind/DOMQuad.hpp>
-#include <webbind/Document.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/SVGGeometryElement.hpp>
-#include <webbind/NodeList.hpp>
-#include <webbind/HTMLSlotElement.hpp>
-#include <webbind/Animation.hpp>
-#include <webbind/ScreenDetailed.hpp>
+#include "webbind/Element.hpp"
+#include "webbind/DOMTokenList.hpp"
+#include "webbind/NamedNodeMap.hpp"
+#include "webbind/Attr.hpp"
+#include "webbind/ShadowRoot.hpp"
+#include "webbind/ShadowRootInit.hpp"
+#include "webbind/CustomElementRegistry.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/HTMLCollection.hpp"
+#include "webbind/FocusableAreasOption.hpp"
+#include "webbind/SpatialNavigationSearchOptions.hpp"
+#include "webbind/CSSPseudoElement.hpp"
+#include "webbind/StylePropertyMapReadOnly.hpp"
+#include "webbind/DOMRectList.hpp"
+#include "webbind/DOMRect.hpp"
+#include "webbind/CheckVisibilityOptions.hpp"
+#include "webbind/FullscreenOptions.hpp"
+#include "webbind/GetHTMLOptions.hpp"
+#include "webbind/PointerLockOptions.hpp"
+#include "webbind/Range.hpp"
+#include "webbind/DOMQuad.hpp"
+#include "webbind/BoxQuadOptions.hpp"
+#include "webbind/DOMQuadInit.hpp"
+#include "webbind/ConvertCoordinateOptions.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/DOMPointInit.hpp"
+#include "webbind/NodeList.hpp"
+#include "webbind/HTMLSlotElement.hpp"
+#include "webbind/Animation.hpp"
+#include "webbind/GetAnimationsOptions.hpp"
 
-
-ShadowRootInit::ShadowRootInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ShadowRootInit ShadowRootInit::take_ownership(Handle h) noexcept {
-        return ShadowRootInit(h);
-    }
-ShadowRootInit::ShadowRootInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ShadowRootInit::ShadowRootInit() noexcept: emlite::Val(emlite::Val::object()) {}
-ShadowRootInit ShadowRootInit::clone() const noexcept { return *this; }
-
-ShadowRootMode ShadowRootInit::mode() const {
-    return emlite::Val::get("mode").as<ShadowRootMode>();
-}
-
-void ShadowRootInit::mode(const ShadowRootMode& value) {
-    emlite::Val::set("mode", value);
-}
-
-bool ShadowRootInit::delegatesFocus() const {
-    return emlite::Val::get("delegatesFocus").as<bool>();
-}
-
-void ShadowRootInit::delegatesFocus(bool value) {
-    emlite::Val::set("delegatesFocus", value);
-}
-
-SlotAssignmentMode ShadowRootInit::slotAssignment() const {
-    return emlite::Val::get("slotAssignment").as<SlotAssignmentMode>();
-}
-
-void ShadowRootInit::slotAssignment(const SlotAssignmentMode& value) {
-    emlite::Val::set("slotAssignment", value);
-}
-
-bool ShadowRootInit::clonable() const {
-    return emlite::Val::get("clonable").as<bool>();
-}
-
-void ShadowRootInit::clonable(bool value) {
-    emlite::Val::set("clonable", value);
-}
-
-bool ShadowRootInit::serializable() const {
-    return emlite::Val::get("serializable").as<bool>();
-}
-
-void ShadowRootInit::serializable(bool value) {
-    emlite::Val::set("serializable", value);
-}
-
-CustomElementRegistry ShadowRootInit::customElementRegistry() const {
-    return emlite::Val::get("customElementRegistry").as<CustomElementRegistry>();
-}
-
-void ShadowRootInit::customElementRegistry(const CustomElementRegistry& value) {
-    emlite::Val::set("customElementRegistry", value);
-}
-
-FocusableAreasOption::FocusableAreasOption(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FocusableAreasOption FocusableAreasOption::take_ownership(Handle h) noexcept {
-        return FocusableAreasOption(h);
-    }
-FocusableAreasOption::FocusableAreasOption(const emlite::Val &val) noexcept: emlite::Val(val) {}
-FocusableAreasOption::FocusableAreasOption() noexcept: emlite::Val(emlite::Val::object()) {}
-FocusableAreasOption FocusableAreasOption::clone() const noexcept { return *this; }
-
-FocusableAreaSearchMode FocusableAreasOption::mode() const {
-    return emlite::Val::get("mode").as<FocusableAreaSearchMode>();
-}
-
-void FocusableAreasOption::mode(const FocusableAreaSearchMode& value) {
-    emlite::Val::set("mode", value);
-}
-
-SpatialNavigationSearchOptions::SpatialNavigationSearchOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SpatialNavigationSearchOptions SpatialNavigationSearchOptions::take_ownership(Handle h) noexcept {
-        return SpatialNavigationSearchOptions(h);
-    }
-SpatialNavigationSearchOptions::SpatialNavigationSearchOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SpatialNavigationSearchOptions::SpatialNavigationSearchOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SpatialNavigationSearchOptions SpatialNavigationSearchOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<Node> SpatialNavigationSearchOptions::candidates() const {
-    return emlite::Val::get("candidates").as<jsbind::TypedArray<Node>>();
-}
-
-void SpatialNavigationSearchOptions::candidates(const jsbind::TypedArray<Node>& value) {
-    emlite::Val::set("candidates", value);
-}
-
-Node SpatialNavigationSearchOptions::container() const {
-    return emlite::Val::get("container").as<Node>();
-}
-
-void SpatialNavigationSearchOptions::container(const Node& value) {
-    emlite::Val::set("container", value);
-}
-
-CheckVisibilityOptions::CheckVisibilityOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CheckVisibilityOptions CheckVisibilityOptions::take_ownership(Handle h) noexcept {
-        return CheckVisibilityOptions(h);
-    }
-CheckVisibilityOptions::CheckVisibilityOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-CheckVisibilityOptions::CheckVisibilityOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-CheckVisibilityOptions CheckVisibilityOptions::clone() const noexcept { return *this; }
-
-bool CheckVisibilityOptions::checkOpacity() const {
-    return emlite::Val::get("checkOpacity").as<bool>();
-}
-
-void CheckVisibilityOptions::checkOpacity(bool value) {
-    emlite::Val::set("checkOpacity", value);
-}
-
-bool CheckVisibilityOptions::checkVisibilityCSS() const {
-    return emlite::Val::get("checkVisibilityCSS").as<bool>();
-}
-
-void CheckVisibilityOptions::checkVisibilityCSS(bool value) {
-    emlite::Val::set("checkVisibilityCSS", value);
-}
-
-bool CheckVisibilityOptions::contentVisibilityAuto() const {
-    return emlite::Val::get("contentVisibilityAuto").as<bool>();
-}
-
-void CheckVisibilityOptions::contentVisibilityAuto(bool value) {
-    emlite::Val::set("contentVisibilityAuto", value);
-}
-
-bool CheckVisibilityOptions::opacityProperty() const {
-    return emlite::Val::get("opacityProperty").as<bool>();
-}
-
-void CheckVisibilityOptions::opacityProperty(bool value) {
-    emlite::Val::set("opacityProperty", value);
-}
-
-bool CheckVisibilityOptions::visibilityProperty() const {
-    return emlite::Val::get("visibilityProperty").as<bool>();
-}
-
-void CheckVisibilityOptions::visibilityProperty(bool value) {
-    emlite::Val::set("visibilityProperty", value);
-}
-
-FullscreenOptions::FullscreenOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FullscreenOptions FullscreenOptions::take_ownership(Handle h) noexcept {
-        return FullscreenOptions(h);
-    }
-FullscreenOptions::FullscreenOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-FullscreenOptions::FullscreenOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-FullscreenOptions FullscreenOptions::clone() const noexcept { return *this; }
-
-ScreenDetailed FullscreenOptions::screen() const {
-    return emlite::Val::get("screen").as<ScreenDetailed>();
-}
-
-void FullscreenOptions::screen(const ScreenDetailed& value) {
-    emlite::Val::set("screen", value);
-}
-
-GetHTMLOptions::GetHTMLOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GetHTMLOptions GetHTMLOptions::take_ownership(Handle h) noexcept {
-        return GetHTMLOptions(h);
-    }
-GetHTMLOptions::GetHTMLOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-GetHTMLOptions::GetHTMLOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-GetHTMLOptions GetHTMLOptions::clone() const noexcept { return *this; }
-
-bool GetHTMLOptions::serializableShadowRoots() const {
-    return emlite::Val::get("serializableShadowRoots").as<bool>();
-}
-
-void GetHTMLOptions::serializableShadowRoots(bool value) {
-    emlite::Val::set("serializableShadowRoots", value);
-}
-
-jsbind::TypedArray<ShadowRoot> GetHTMLOptions::shadowRoots() const {
-    return emlite::Val::get("shadowRoots").as<jsbind::TypedArray<ShadowRoot>>();
-}
-
-void GetHTMLOptions::shadowRoots(const jsbind::TypedArray<ShadowRoot>& value) {
-    emlite::Val::set("shadowRoots", value);
-}
-
-PointerLockOptions::PointerLockOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PointerLockOptions PointerLockOptions::take_ownership(Handle h) noexcept {
-        return PointerLockOptions(h);
-    }
-PointerLockOptions::PointerLockOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PointerLockOptions::PointerLockOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-PointerLockOptions PointerLockOptions::clone() const noexcept { return *this; }
-
-bool PointerLockOptions::unadjustedMovement() const {
-    return emlite::Val::get("unadjustedMovement").as<bool>();
-}
-
-void PointerLockOptions::unadjustedMovement(bool value) {
-    emlite::Val::set("unadjustedMovement", value);
-}
-
-GetAnimationsOptions::GetAnimationsOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GetAnimationsOptions GetAnimationsOptions::take_ownership(Handle h) noexcept {
-        return GetAnimationsOptions(h);
-    }
-GetAnimationsOptions::GetAnimationsOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-GetAnimationsOptions::GetAnimationsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-GetAnimationsOptions GetAnimationsOptions::clone() const noexcept { return *this; }
-
-bool GetAnimationsOptions::subtree() const {
-    return emlite::Val::get("subtree").as<bool>();
-}
-
-void GetAnimationsOptions::subtree(bool value) {
-    emlite::Val::set("subtree", value);
-}
-
-jsbind::String GetAnimationsOptions::pseudoElement() const {
-    return emlite::Val::get("pseudoElement").as<jsbind::String>();
-}
-
-void GetAnimationsOptions::pseudoElement(const jsbind::String& value) {
-    emlite::Val::set("pseudoElement", value);
-}
+namespace webbind {
 
 Element Element::take_ownership(Handle h) noexcept {
         return Element(h);
@@ -252,7 +39,6 @@ Element Element::clone() const noexcept { return *this; }
 emlite::Val Element::instance() noexcept { return emlite::Val::global("Element"); }
 Element::Element(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Element::Element(const emlite::Val &val) noexcept: Node(val) {}
-
 
 jsbind::String Element::namespaceURI() const {
     return Node::get("namespaceURI").as<jsbind::String>();
@@ -1150,3 +936,5 @@ jsbind::TypedArray<Animation> Element::getAnimations(const GetAnimationsOptions&
     return Node::call("getAnimations", options).as<jsbind::TypedArray<Animation>>();
 }
 
+
+} // namespace webbind

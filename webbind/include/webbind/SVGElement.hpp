@@ -2,39 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Element.hpp"
 #include "enums.hpp"
+#include "Element.hpp"
+#include "FocusOptions.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGSVGElement;
+class SVGElement;
 class SVGUseElement;
 class DOMStringMap;
-class FocusOptions;
 class CSSStyleDeclaration;
 
-
-class FocusOptions : public emlite::Val {
-  explicit FocusOptions(Handle h) noexcept;
-public:
-    static FocusOptions take_ownership(Handle h) noexcept;
-    explicit FocusOptions(const emlite::Val &val) noexcept;
-    FocusOptions() noexcept;
-    [[nodiscard]] FocusOptions clone() const noexcept;
-    [[nodiscard]] bool preventScroll() const;
-    void preventScroll(bool value);
-    [[nodiscard]] bool focusVisible() const;
-    void focusVisible(bool value);
-};
-
-/// The SVGElement class.
+/// Interface SVGElement
 /// [`SVGElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement)
 class SVGElement : public Element {
     explicit SVGElement(Handle h) noexcept;
-
 public:
     explicit SVGElement(const emlite::Val &val) noexcept;
     static SVGElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `className` attribute.
@@ -93,3 +80,4 @@ public:
     [[nodiscard]] CSSStyleDeclaration style() const;
 };
 
+} // namespace webbind

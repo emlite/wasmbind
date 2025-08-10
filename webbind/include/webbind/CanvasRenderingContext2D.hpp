@@ -2,11 +2,15 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGSVGElement.hpp"
+#include "enums.hpp"
+#include "CanvasRenderingContext2DSettings.hpp"
+#include "DOMMatrix2DInit.hpp"
+#include "ImageDataSettings.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class HTMLCanvasElement;
-class CanvasRenderingContext2DSettings;
 class DOMMatrix;
 class CanvasGradient;
 class CanvasPattern;
@@ -14,50 +18,14 @@ class Path2D;
 class Element;
 class TextMetrics;
 class ImageData;
-class ImageDataSettings;
 
-
-class CanvasRenderingContext2DSettings : public emlite::Val {
-  explicit CanvasRenderingContext2DSettings(Handle h) noexcept;
-public:
-    static CanvasRenderingContext2DSettings take_ownership(Handle h) noexcept;
-    explicit CanvasRenderingContext2DSettings(const emlite::Val &val) noexcept;
-    CanvasRenderingContext2DSettings() noexcept;
-    [[nodiscard]] CanvasRenderingContext2DSettings clone() const noexcept;
-    [[nodiscard]] bool alpha() const;
-    void alpha(bool value);
-    [[nodiscard]] bool desynchronized() const;
-    void desynchronized(bool value);
-    [[nodiscard]] PredefinedColorSpace colorSpace() const;
-    void colorSpace(const PredefinedColorSpace& value);
-    [[nodiscard]] CanvasColorType colorType() const;
-    void colorType(const CanvasColorType& value);
-    [[nodiscard]] bool willReadFrequently() const;
-    void willReadFrequently(bool value);
-};
-
-class ImageDataSettings : public emlite::Val {
-  explicit ImageDataSettings(Handle h) noexcept;
-public:
-    static ImageDataSettings take_ownership(Handle h) noexcept;
-    explicit ImageDataSettings(const emlite::Val &val) noexcept;
-    ImageDataSettings() noexcept;
-    [[nodiscard]] ImageDataSettings clone() const noexcept;
-    [[nodiscard]] PredefinedColorSpace colorSpace() const;
-    void colorSpace(const PredefinedColorSpace& value);
-    [[nodiscard]] ImageDataPixelFormat pixelFormat() const;
-    void pixelFormat(const ImageDataPixelFormat& value);
-};
-
-/// The CanvasRenderingContext2D class.
+/// Interface CanvasRenderingContext2D
 /// [`CanvasRenderingContext2D`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D)
 class CanvasRenderingContext2D : public emlite::Val {
     explicit CanvasRenderingContext2D(Handle h) noexcept;
-
 public:
     explicit CanvasRenderingContext2D(const emlite::Val &val) noexcept;
     static CanvasRenderingContext2D take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CanvasRenderingContext2D clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `canvas` attribute.
@@ -392,3 +360,4 @@ public:
     jsbind::Undefined ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle, bool counterclockwise);
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PaintSize class.
+/// Interface PaintSize
 /// [`PaintSize`](https://developer.mozilla.org/en-US/docs/Web/API/PaintSize)
 class PaintSize : public emlite::Val {
     explicit PaintSize(Handle h) noexcept;
-
 public:
     explicit PaintSize(const emlite::Val &val) noexcept;
     static PaintSize take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PaintSize clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] double height() const;
 };
 
+} // namespace webbind

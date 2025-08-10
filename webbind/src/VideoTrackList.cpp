@@ -1,6 +1,7 @@
-#include <webbind/VideoTrackList.hpp>
-#include <webbind/VideoTrack.hpp>
+#include "webbind/VideoTrackList.hpp"
+#include "webbind/VideoTrack.hpp"
 
+namespace webbind {
 
 VideoTrackList VideoTrackList::take_ownership(Handle h) noexcept {
         return VideoTrackList(h);
@@ -9,7 +10,6 @@ VideoTrackList VideoTrackList::clone() const noexcept { return *this; }
 emlite::Val VideoTrackList::instance() noexcept { return emlite::Val::global("VideoTrackList"); }
 VideoTrackList::VideoTrackList(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 VideoTrackList::VideoTrackList(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 unsigned long VideoTrackList::length() const {
     return EventTarget::get("length").as<unsigned long>();
@@ -47,3 +47,5 @@ void VideoTrackList::onremovetrack(const jsbind::Any& value) {
     EventTarget::set("onremovetrack", value);
 }
 
+
+} // namespace webbind

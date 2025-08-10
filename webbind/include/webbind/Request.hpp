@@ -3,6 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "RequestInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Headers;
 class AbortSignal;
@@ -11,22 +15,19 @@ class ReadableStream;
 class Blob;
 class FormData;
 
-
-/// The Request class.
+/// Interface Request
 /// [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request)
 class Request : public emlite::Val {
     explicit Request(Handle h) noexcept;
-
 public:
     explicit Request(const emlite::Val &val) noexcept;
     static Request take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Request clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Request(..)` constructor, creating a new Request instance
     Request(const jsbind::Any& input);
     /// The `new Request(..)` constructor, creating a new Request instance
-    Request(const jsbind::Any& input, const jsbind::Any& init);
+    Request(const jsbind::Any& input, const RequestInit& init);
     /// Getter of the `method` attribute.
     /// [`Request.method`](https://developer.mozilla.org/en-US/docs/Web/API/Request/method)
     [[nodiscard]] jsbind::String method() const;
@@ -107,3 +108,4 @@ public:
     jsbind::Promise<jsbind::String> text();
 };
 
+} // namespace webbind

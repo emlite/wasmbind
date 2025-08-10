@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The PaymentManager class.
+/// Interface PaymentManager
 /// [`PaymentManager`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentManager)
 class PaymentManager : public emlite::Val {
     explicit PaymentManager(Handle h) noexcept;
-
 public:
     explicit PaymentManager(const emlite::Val &val) noexcept;
     static PaymentManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PaymentManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `userHint` attribute.
@@ -27,3 +27,4 @@ public:
     jsbind::Promise<jsbind::Undefined> enableDelegations(const jsbind::TypedArray<PaymentDelegation>& delegations);
 };
 
+} // namespace webbind

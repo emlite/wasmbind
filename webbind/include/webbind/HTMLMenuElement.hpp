@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLMenuElement class.
+/// Interface HTMLMenuElement
 /// [`HTMLMenuElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMenuElement)
 class HTMLMenuElement : public HTMLElement {
     explicit HTMLMenuElement(Handle h) noexcept;
-
 public:
     explicit HTMLMenuElement(const emlite::Val &val) noexcept;
     static HTMLMenuElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLMenuElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMenuElement(..)` constructor, creating a new HTMLMenuElement instance
@@ -27,3 +26,4 @@ public:
     void compact(bool value);
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleDeclaration.hpp"
 #include "enums.hpp"
+#include "CSSStyleDeclaration.hpp"
 
+namespace webbind {
 
-/// The CSSFunctionDescriptors class.
+/// Interface CSSFunctionDescriptors
 /// [`CSSFunctionDescriptors`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionDescriptors)
 class CSSFunctionDescriptors : public CSSStyleDeclaration {
     explicit CSSFunctionDescriptors(Handle h) noexcept;
-
 public:
     explicit CSSFunctionDescriptors(const emlite::Val &val) noexcept;
     static CSSFunctionDescriptors take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSFunctionDescriptors clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `result` attribute.
@@ -25,3 +24,4 @@ public:
     void result(const jsbind::String& value);
 };
 
+} // namespace webbind

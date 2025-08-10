@@ -1,13 +1,14 @@
-#include <webbind/StorageAccessHandle.hpp>
-#include <webbind/Storage.hpp>
-#include <webbind/IDBFactory.hpp>
-#include <webbind/LockManager.hpp>
-#include <webbind/CacheStorage.hpp>
-#include <webbind/FileSystemDirectoryHandle.hpp>
-#include <webbind/StorageManager.hpp>
-#include <webbind/BroadcastChannel.hpp>
-#include <webbind/SharedWorker.hpp>
+#include "webbind/StorageAccessHandle.hpp"
+#include "webbind/Storage.hpp"
+#include "webbind/IDBFactory.hpp"
+#include "webbind/LockManager.hpp"
+#include "webbind/CacheStorage.hpp"
+#include "webbind/FileSystemDirectoryHandle.hpp"
+#include "webbind/StorageEstimate.hpp"
+#include "webbind/BroadcastChannel.hpp"
+#include "webbind/SharedWorker.hpp"
 
+namespace webbind {
 
 StorageAccessHandle StorageAccessHandle::take_ownership(Handle h) noexcept {
         return StorageAccessHandle(h);
@@ -16,7 +17,6 @@ StorageAccessHandle StorageAccessHandle::clone() const noexcept { return *this; 
 emlite::Val StorageAccessHandle::instance() noexcept { return emlite::Val::global("StorageAccessHandle"); }
 StorageAccessHandle::StorageAccessHandle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageAccessHandle::StorageAccessHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 Storage StorageAccessHandle::sessionStorage() const {
     return emlite::Val::get("sessionStorage").as<Storage>();
@@ -66,3 +66,5 @@ SharedWorker StorageAccessHandle::SharedWorker_(const jsbind::String& scriptURL,
     return emlite::Val::call("SharedWorker", scriptURL, options).as<SharedWorker>();
 }
 
+
+} // namespace webbind

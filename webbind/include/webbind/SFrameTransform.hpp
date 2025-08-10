@@ -2,29 +2,29 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "SFrameTransformOptions.hpp"
+
+namespace webbind {
 
 class CryptoKey;
 class ReadableStream;
 class WritableStream;
 
-
-/// The SFrameTransform class.
+/// Interface SFrameTransform
 /// [`SFrameTransform`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform)
 class SFrameTransform : public EventTarget {
     explicit SFrameTransform(Handle h) noexcept;
-
 public:
     explicit SFrameTransform(const emlite::Val &val) noexcept;
     static SFrameTransform take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SFrameTransform clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SFrameTransform(..)` constructor, creating a new SFrameTransform instance
     SFrameTransform();
     /// The `new SFrameTransform(..)` constructor, creating a new SFrameTransform instance
-    SFrameTransform(const jsbind::Any& options);
+    SFrameTransform(const SFrameTransformOptions& options);
     /// The setEncryptionKey method.
     /// [`SFrameTransform.setEncryptionKey`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/setEncryptionKey)
     jsbind::Promise<jsbind::Undefined> setEncryptionKey(const CryptoKey& key);
@@ -45,3 +45,4 @@ public:
     [[nodiscard]] WritableStream writable() const;
 };
 
+} // namespace webbind

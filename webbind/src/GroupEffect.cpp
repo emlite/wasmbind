@@ -1,7 +1,9 @@
-#include <webbind/GroupEffect.hpp>
-#include <webbind/AnimationNodeList.hpp>
-#include <webbind/AnimationEffect.hpp>
+#include "webbind/GroupEffect.hpp"
+#include "webbind/AnimationEffect.hpp"
+#include "webbind/AnimationNodeList.hpp"
+#include "webbind/GroupEffect.hpp"
 
+namespace webbind {
 
 GroupEffect GroupEffect::take_ownership(Handle h) noexcept {
         return GroupEffect(h);
@@ -10,7 +12,6 @@ GroupEffect GroupEffect::clone() const noexcept { return *this; }
 emlite::Val GroupEffect::instance() noexcept { return emlite::Val::global("GroupEffect"); }
 GroupEffect::GroupEffect(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GroupEffect::GroupEffect(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 GroupEffect::GroupEffect(const jsbind::TypedArray<AnimationEffect>& children) : emlite::Val(emlite::Val::global("GroupEffect").new_(children)) {}
 
@@ -40,3 +41,5 @@ jsbind::Undefined GroupEffect::append(const AnimationEffect& effects) {
     return emlite::Val::call("append", effects).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

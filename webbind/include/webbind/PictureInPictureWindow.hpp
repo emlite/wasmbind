@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The PictureInPictureWindow class.
+/// Interface PictureInPictureWindow
 /// [`PictureInPictureWindow`](https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureWindow)
 class PictureInPictureWindow : public EventTarget {
     explicit PictureInPictureWindow(Handle h) noexcept;
-
 public:
     explicit PictureInPictureWindow(const emlite::Val &val) noexcept;
     static PictureInPictureWindow take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PictureInPictureWindow clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
@@ -31,3 +30,4 @@ public:
     void onresize(const jsbind::Any& value);
 };
 
+} // namespace webbind

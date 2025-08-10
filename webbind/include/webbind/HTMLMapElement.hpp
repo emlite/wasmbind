@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLCollection;
 
-
-/// The HTMLMapElement class.
+/// Interface HTMLMapElement
 /// [`HTMLMapElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement)
 class HTMLMapElement : public HTMLElement {
     explicit HTMLMapElement(Handle h) noexcept;
-
 public:
     explicit HTMLMapElement(const emlite::Val &val) noexcept;
     static HTMLMapElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLMapElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMapElement(..)` constructor, creating a new HTMLMapElement instance
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] HTMLCollection areas() const;
 };
 
+} // namespace webbind

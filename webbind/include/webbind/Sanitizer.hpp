@@ -3,42 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "SanitizerConfig.hpp"
 
-class SanitizerConfig;
+namespace webbind {
 
-
-class SanitizerConfig : public emlite::Val {
-  explicit SanitizerConfig(Handle h) noexcept;
-public:
-    static SanitizerConfig take_ownership(Handle h) noexcept;
-    explicit SanitizerConfig(const emlite::Val &val) noexcept;
-    SanitizerConfig() noexcept;
-    [[nodiscard]] SanitizerConfig clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> elements() const;
-    void elements(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> removeElements() const;
-    void removeElements(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> replaceWithChildrenElements() const;
-    void replaceWithChildrenElements(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> attributes() const;
-    void attributes(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> removeAttributes() const;
-    void removeAttributes(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] bool comments() const;
-    void comments(bool value);
-    [[nodiscard]] bool dataAttributes() const;
-    void dataAttributes(bool value);
-};
-
-/// The Sanitizer class.
+/// Interface Sanitizer
 /// [`Sanitizer`](https://developer.mozilla.org/en-US/docs/Web/API/Sanitizer)
 class Sanitizer : public emlite::Val {
     explicit Sanitizer(Handle h) noexcept;
-
 public:
     explicit Sanitizer(const emlite::Val &val) noexcept;
     static Sanitizer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Sanitizer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Sanitizer(..)` constructor, creating a new Sanitizer instance
@@ -74,3 +49,4 @@ public:
     jsbind::Undefined removeUnsafe();
 };
 
+} // namespace webbind

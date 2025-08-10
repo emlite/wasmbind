@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSTransformComponent.hpp"
 #include "enums.hpp"
+#include "CSSTransformComponent.hpp"
+
+namespace webbind {
 
 class CSSNumericValue;
 
-
-/// The CSSTranslate class.
+/// Interface CSSTranslate
 /// [`CSSTranslate`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate)
 class CSSTranslate : public CSSTransformComponent {
     explicit CSSTranslate(Handle h) noexcept;
-
 public:
     explicit CSSTranslate(const emlite::Val &val) noexcept;
     static CSSTranslate take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSTranslate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSTranslate(..)` constructor, creating a new CSSTranslate instance
@@ -43,3 +42,4 @@ public:
     void z(const CSSNumericValue& value);
 };
 
+} // namespace webbind

@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class TextTrackCue;
 
-
-/// The TextTrackCueList class.
+/// Interface TextTrackCueList
 /// [`TextTrackCueList`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCueList)
 class TextTrackCueList : public emlite::Val {
     explicit TextTrackCueList(Handle h) noexcept;
-
 public:
     explicit TextTrackCueList(const emlite::Val &val) noexcept;
     static TextTrackCueList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextTrackCueList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -26,3 +25,4 @@ public:
     TextTrackCue getCueById(const jsbind::String& id);
 };
 
+} // namespace webbind

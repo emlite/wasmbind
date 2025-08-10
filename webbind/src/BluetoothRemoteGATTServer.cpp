@@ -1,7 +1,9 @@
-#include <webbind/BluetoothRemoteGATTServer.hpp>
-#include <webbind/BluetoothDevice.hpp>
-#include <webbind/BluetoothRemoteGATTService.hpp>
+#include "webbind/BluetoothRemoteGATTServer.hpp"
+#include "webbind/BluetoothDevice.hpp"
+#include "webbind/BluetoothRemoteGATTServer.hpp"
+#include "webbind/BluetoothRemoteGATTService.hpp"
 
+namespace webbind {
 
 BluetoothRemoteGATTServer BluetoothRemoteGATTServer::take_ownership(Handle h) noexcept {
         return BluetoothRemoteGATTServer(h);
@@ -10,7 +12,6 @@ BluetoothRemoteGATTServer BluetoothRemoteGATTServer::clone() const noexcept { re
 emlite::Val BluetoothRemoteGATTServer::instance() noexcept { return emlite::Val::global("BluetoothRemoteGATTServer"); }
 BluetoothRemoteGATTServer::BluetoothRemoteGATTServer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothRemoteGATTServer::BluetoothRemoteGATTServer(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 BluetoothDevice BluetoothRemoteGATTServer::device() const {
     return emlite::Val::get("device").as<BluetoothDevice>();
@@ -40,3 +41,5 @@ jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTService>> BluetoothRemoteG
     return emlite::Val::call("getPrimaryServices", service).as<jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTService>>>();
 }
 
+
+} // namespace webbind

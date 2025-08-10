@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The NetworkInformation class.
+/// Interface NetworkInformation
 /// [`NetworkInformation`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)
 class NetworkInformation : public EventTarget {
     explicit NetworkInformation(Handle h) noexcept;
-
 public:
     explicit NetworkInformation(const emlite::Val &val) noexcept;
     static NetworkInformation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NetworkInformation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -43,3 +43,4 @@ public:
     [[nodiscard]] bool saveData() const;
 };
 
+} // namespace webbind

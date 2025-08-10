@@ -1,5 +1,6 @@
-#include <webbind/AudioParamMap.hpp>
+#include "webbind/AudioParamMap.hpp"
 
+namespace webbind {
 
 AudioParamMap AudioParamMap::take_ownership(Handle h) noexcept {
         return AudioParamMap(h);
@@ -10,3 +11,4 @@ AudioParamMap::AudioParamMap(Handle h) noexcept : emlite::Val(emlite::Val::take_
 AudioParamMap::AudioParamMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

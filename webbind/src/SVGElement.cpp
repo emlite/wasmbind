@@ -1,34 +1,13 @@
-#include <webbind/SVGElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGSVGElement.hpp>
-#include <webbind/SVGUseElement.hpp>
-#include <webbind/DOMStringMap.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
+#include "webbind/SVGElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGSVGElement.hpp"
+#include "webbind/SVGElement.hpp"
+#include "webbind/SVGUseElement.hpp"
+#include "webbind/DOMStringMap.hpp"
+#include "webbind/FocusOptions.hpp"
+#include "webbind/CSSStyleDeclaration.hpp"
 
-
-FocusOptions::FocusOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FocusOptions FocusOptions::take_ownership(Handle h) noexcept {
-        return FocusOptions(h);
-    }
-FocusOptions::FocusOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-FocusOptions::FocusOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-FocusOptions FocusOptions::clone() const noexcept { return *this; }
-
-bool FocusOptions::preventScroll() const {
-    return emlite::Val::get("preventScroll").as<bool>();
-}
-
-void FocusOptions::preventScroll(bool value) {
-    emlite::Val::set("preventScroll", value);
-}
-
-bool FocusOptions::focusVisible() const {
-    return emlite::Val::get("focusVisible").as<bool>();
-}
-
-void FocusOptions::focusVisible(bool value) {
-    emlite::Val::set("focusVisible", value);
-}
+namespace webbind {
 
 SVGElement SVGElement::take_ownership(Handle h) noexcept {
         return SVGElement(h);
@@ -37,7 +16,6 @@ SVGElement SVGElement::clone() const noexcept { return *this; }
 emlite::Val SVGElement::instance() noexcept { return emlite::Val::global("SVGElement"); }
 SVGElement::SVGElement(Handle h) noexcept : Element(emlite::Val::take_ownership(h)) {}
 SVGElement::SVGElement(const emlite::Val &val) noexcept: Element(val) {}
-
 
 SVGAnimatedString SVGElement::className() const {
     return Element::get("className").as<SVGAnimatedString>();
@@ -111,3 +89,5 @@ CSSStyleDeclaration SVGElement::style() const {
     return Element::get("style").as<CSSStyleDeclaration>();
 }
 
+
+} // namespace webbind

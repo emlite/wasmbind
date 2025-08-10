@@ -1,7 +1,8 @@
-#include <webbind/XREquirectLayer.hpp>
-#include <webbind/XRSpace.hpp>
-#include <webbind/XRRigidTransform.hpp>
+#include "webbind/XREquirectLayer.hpp"
+#include "webbind/XRSpace.hpp"
+#include "webbind/XRRigidTransform.hpp"
 
+namespace webbind {
 
 XREquirectLayer XREquirectLayer::take_ownership(Handle h) noexcept {
         return XREquirectLayer(h);
@@ -10,7 +11,6 @@ XREquirectLayer XREquirectLayer::clone() const noexcept { return *this; }
 emlite::Val XREquirectLayer::instance() noexcept { return emlite::Val::global("XREquirectLayer"); }
 XREquirectLayer::XREquirectLayer(Handle h) noexcept : XRCompositionLayer(emlite::Val::take_ownership(h)) {}
 XREquirectLayer::XREquirectLayer(const emlite::Val &val) noexcept: XRCompositionLayer(val) {}
-
 
 XRSpace XREquirectLayer::space() const {
     return XRCompositionLayer::get("space").as<XRSpace>();
@@ -68,3 +68,5 @@ void XREquirectLayer::onredraw(const jsbind::Any& value) {
     XRCompositionLayer::set("onredraw", value);
 }
 
+
+} // namespace webbind

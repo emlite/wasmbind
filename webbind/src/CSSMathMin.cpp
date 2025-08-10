@@ -1,6 +1,7 @@
-#include <webbind/CSSMathMin.hpp>
-#include <webbind/CSSNumericArray.hpp>
+#include "webbind/CSSMathMin.hpp"
+#include "webbind/CSSNumericArray.hpp"
 
+namespace webbind {
 
 CSSMathMin CSSMathMin::take_ownership(Handle h) noexcept {
         return CSSMathMin(h);
@@ -10,10 +11,11 @@ emlite::Val CSSMathMin::instance() noexcept { return emlite::Val::global("CSSMat
 CSSMathMin::CSSMathMin(Handle h) noexcept : CSSMathValue(emlite::Val::take_ownership(h)) {}
 CSSMathMin::CSSMathMin(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 
-
 CSSMathMin::CSSMathMin(const jsbind::Any& args) : CSSMathValue(emlite::Val::global("CSSMathMin").new_(args)) {}
 
 CSSNumericArray CSSMathMin::values() const {
     return CSSMathValue::get("values").as<CSSNumericArray>();
 }
 
+
+} // namespace webbind

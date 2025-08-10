@@ -1,30 +1,8 @@
-#include <webbind/FaceDetector.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
+#include "webbind/FaceDetector.hpp"
+#include "webbind/FaceDetectorOptions.hpp"
+#include "webbind/DetectedFace.hpp"
 
-
-DetectedFace::DetectedFace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DetectedFace DetectedFace::take_ownership(Handle h) noexcept {
-        return DetectedFace(h);
-    }
-DetectedFace::DetectedFace(const emlite::Val &val) noexcept: emlite::Val(val) {}
-DetectedFace::DetectedFace() noexcept: emlite::Val(emlite::Val::object()) {}
-DetectedFace DetectedFace::clone() const noexcept { return *this; }
-
-DOMRectReadOnly DetectedFace::boundingBox() const {
-    return emlite::Val::get("boundingBox").as<DOMRectReadOnly>();
-}
-
-void DetectedFace::boundingBox(const DOMRectReadOnly& value) {
-    emlite::Val::set("boundingBox", value);
-}
-
-jsbind::TypedArray<jsbind::Any> DetectedFace::landmarks() const {
-    return emlite::Val::get("landmarks").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void DetectedFace::landmarks(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("landmarks", value);
-}
+namespace webbind {
 
 FaceDetector FaceDetector::take_ownership(Handle h) noexcept {
         return FaceDetector(h);
@@ -34,12 +12,13 @@ emlite::Val FaceDetector::instance() noexcept { return emlite::Val::global("Face
 FaceDetector::FaceDetector(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FaceDetector::FaceDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 FaceDetector::FaceDetector() : emlite::Val(emlite::Val::global("FaceDetector").new_()) {}
 
-FaceDetector::FaceDetector(const jsbind::Any& faceDetectorOptions) : emlite::Val(emlite::Val::global("FaceDetector").new_(faceDetectorOptions)) {}
+FaceDetector::FaceDetector(const FaceDetectorOptions& faceDetectorOptions) : emlite::Val(emlite::Val::global("FaceDetector").new_(faceDetectorOptions)) {}
 
 jsbind::Promise<jsbind::TypedArray<DetectedFace>> FaceDetector::detect(const jsbind::Any& image) {
     return emlite::Val::call("detect", image).as<jsbind::Promise<jsbind::TypedArray<DetectedFace>>>();
 }
 
+
+} // namespace webbind

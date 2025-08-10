@@ -1,10 +1,11 @@
-#include <webbind/PaintRenderingContext2D.hpp>
-#include <webbind/DOMMatrix.hpp>
-#include <webbind/SVGSVGElement.hpp>
-#include <webbind/CanvasGradient.hpp>
-#include <webbind/CanvasPattern.hpp>
-#include <webbind/Path2D.hpp>
+#include "webbind/PaintRenderingContext2D.hpp"
+#include "webbind/DOMMatrix.hpp"
+#include "webbind/DOMMatrix2DInit.hpp"
+#include "webbind/CanvasGradient.hpp"
+#include "webbind/CanvasPattern.hpp"
+#include "webbind/Path2D.hpp"
 
+namespace webbind {
 
 PaintRenderingContext2D PaintRenderingContext2D::take_ownership(Handle h) noexcept {
         return PaintRenderingContext2D(h);
@@ -13,7 +14,6 @@ PaintRenderingContext2D PaintRenderingContext2D::clone() const noexcept { return
 emlite::Val PaintRenderingContext2D::instance() noexcept { return emlite::Val::global("PaintRenderingContext2D"); }
 PaintRenderingContext2D::PaintRenderingContext2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaintRenderingContext2D::PaintRenderingContext2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Undefined PaintRenderingContext2D::save() {
     return emlite::Val::call("save").as<jsbind::Undefined>();
@@ -311,3 +311,5 @@ jsbind::Undefined PaintRenderingContext2D::ellipse(double x, double y, double ra
     return emlite::Val::call("ellipse", x, y, radiusX, radiusY, rotation, startAngle, endAngle, counterclockwise).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

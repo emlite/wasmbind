@@ -1,5 +1,6 @@
-#include <webbind/XRJointPose.hpp>
+#include "webbind/XRJointPose.hpp"
 
+namespace webbind {
 
 XRJointPose XRJointPose::take_ownership(Handle h) noexcept {
         return XRJointPose(h);
@@ -9,8 +10,9 @@ emlite::Val XRJointPose::instance() noexcept { return emlite::Val::global("XRJoi
 XRJointPose::XRJointPose(Handle h) noexcept : XRPose(emlite::Val::take_ownership(h)) {}
 XRJointPose::XRJointPose(const emlite::Val &val) noexcept: XRPose(val) {}
 
-
 float XRJointPose::radius() const {
     return XRPose::get("radius").as<float>();
 }
 
+
+} // namespace webbind

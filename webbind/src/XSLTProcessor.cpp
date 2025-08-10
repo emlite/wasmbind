@@ -1,8 +1,9 @@
-#include <webbind/XSLTProcessor.hpp>
-#include <webbind/Node.hpp>
-#include <webbind/DocumentFragment.hpp>
-#include <webbind/Document.hpp>
+#include "webbind/XSLTProcessor.hpp"
+#include "webbind/Node.hpp"
+#include "webbind/DocumentFragment.hpp"
+#include "webbind/Document.hpp"
 
+namespace webbind {
 
 XSLTProcessor XSLTProcessor::take_ownership(Handle h) noexcept {
         return XSLTProcessor(h);
@@ -11,7 +12,6 @@ XSLTProcessor XSLTProcessor::clone() const noexcept { return *this; }
 emlite::Val XSLTProcessor::instance() noexcept { return emlite::Val::global("XSLTProcessor"); }
 XSLTProcessor::XSLTProcessor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XSLTProcessor::XSLTProcessor(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 XSLTProcessor::XSLTProcessor() : emlite::Val(emlite::Val::global("XSLTProcessor").new_()) {}
 
@@ -47,3 +47,5 @@ jsbind::Undefined XSLTProcessor::reset() {
     return emlite::Val::call("reset").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

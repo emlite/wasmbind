@@ -1,15 +1,16 @@
-#include <webbind/WebGL2RenderingContext.hpp>
-#include <webbind/WebGLTexture.hpp>
-#include <webbind/WebGLProgram.hpp>
-#include <webbind/WebGLUniformLocation.hpp>
-#include <webbind/WebGLQuery.hpp>
-#include <webbind/WebGLSampler.hpp>
-#include <webbind/WebGLSync.hpp>
-#include <webbind/WebGLTransformFeedback.hpp>
-#include <webbind/WebGLActiveInfo.hpp>
-#include <webbind/WebGLBuffer.hpp>
-#include <webbind/WebGLVertexArrayObject.hpp>
+#include "webbind/WebGL2RenderingContext.hpp"
+#include "webbind/WebGLTexture.hpp"
+#include "webbind/WebGLProgram.hpp"
+#include "webbind/WebGLUniformLocation.hpp"
+#include "webbind/WebGLQuery.hpp"
+#include "webbind/WebGLSampler.hpp"
+#include "webbind/WebGLSync.hpp"
+#include "webbind/WebGLTransformFeedback.hpp"
+#include "webbind/WebGLActiveInfo.hpp"
+#include "webbind/WebGLBuffer.hpp"
+#include "webbind/WebGLVertexArrayObject.hpp"
 
+namespace webbind {
 
 WebGL2RenderingContext WebGL2RenderingContext::take_ownership(Handle h) noexcept {
         return WebGL2RenderingContext(h);
@@ -18,7 +19,6 @@ WebGL2RenderingContext WebGL2RenderingContext::clone() const noexcept { return *
 emlite::Val WebGL2RenderingContext::instance() noexcept { return emlite::Val::global("WebGL2RenderingContext"); }
 WebGL2RenderingContext::WebGL2RenderingContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebGL2RenderingContext::WebGL2RenderingContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<jsbind::Undefined> WebGL2RenderingContext::makeXRCompatible() {
     return emlite::Val::call("makeXRCompatible").as<jsbind::Promise<jsbind::Undefined>>();
@@ -680,3 +680,5 @@ jsbind::Undefined WebGL2RenderingContext::readPixels(const jsbind::Any& x, const
     return emlite::Val::call("readPixels", x, y, width, height, format, type, dstData, dstOffset).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

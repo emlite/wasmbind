@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "XRSpace.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The XRJointSpace class.
+/// Interface XRJointSpace
 /// [`XRJointSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRJointSpace)
 class XRJointSpace : public XRSpace {
     explicit XRJointSpace(Handle h) noexcept;
-
 public:
     explicit XRJointSpace(const emlite::Val &val) noexcept;
     static XRJointSpace take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRJointSpace clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `jointName` attribute.
@@ -22,3 +22,4 @@ public:
     [[nodiscard]] XRHandJoint jointName() const;
 };
 
+} // namespace webbind

@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class DataTransferItemList;
 class Element;
 class FileList;
 
-
-/// The DataTransfer class.
+/// Interface DataTransfer
 /// [`DataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer)
 class DataTransfer : public emlite::Val {
     explicit DataTransfer(Handle h) noexcept;
-
 public:
     explicit DataTransfer(const emlite::Val &val) noexcept;
     static DataTransfer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DataTransfer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DataTransfer(..)` constructor, creating a new DataTransfer instance
@@ -60,3 +59,4 @@ public:
     [[nodiscard]] FileList files() const;
 };
 
+} // namespace webbind

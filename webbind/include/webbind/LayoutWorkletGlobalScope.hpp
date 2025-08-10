@@ -2,23 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WorkletGlobalScope.hpp"
 #include "enums.hpp"
+#include "WorkletGlobalScope.hpp"
 
+namespace webbind {
 
-/// The LayoutWorkletGlobalScope class.
+/// Interface LayoutWorkletGlobalScope
 /// [`LayoutWorkletGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutWorkletGlobalScope)
 class LayoutWorkletGlobalScope : public WorkletGlobalScope {
     explicit LayoutWorkletGlobalScope(Handle h) noexcept;
-
 public:
     explicit LayoutWorkletGlobalScope(const emlite::Val &val) noexcept;
     static LayoutWorkletGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] LayoutWorkletGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The registerLayout method.
     /// [`LayoutWorkletGlobalScope.registerLayout`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutWorkletGlobalScope/registerLayout)
-    jsbind::Undefined registerLayout(const jsbind::String& name, const jsbind::Any& layoutCtor);
+    jsbind::Undefined registerLayout(const jsbind::String& name, const jsbind::Function& layoutCtor);
 };
 
+} // namespace webbind

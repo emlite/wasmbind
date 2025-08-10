@@ -1,7 +1,8 @@
-#include <webbind/HTMLFencedFrameElement.hpp>
-#include <webbind/FencedFrameConfig.hpp>
-#include <webbind/DOMTokenList.hpp>
+#include "webbind/HTMLFencedFrameElement.hpp"
+#include "webbind/FencedFrameConfig.hpp"
+#include "webbind/DOMTokenList.hpp"
 
+namespace webbind {
 
 HTMLFencedFrameElement HTMLFencedFrameElement::take_ownership(Handle h) noexcept {
         return HTMLFencedFrameElement(h);
@@ -10,7 +11,6 @@ HTMLFencedFrameElement HTMLFencedFrameElement::clone() const noexcept { return *
 emlite::Val HTMLFencedFrameElement::instance() noexcept { return emlite::Val::global("HTMLFencedFrameElement"); }
 HTMLFencedFrameElement::HTMLFencedFrameElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLFencedFrameElement::HTMLFencedFrameElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLFencedFrameElement::HTMLFencedFrameElement() : HTMLElement(emlite::Val::global("HTMLFencedFrameElement").new_()) {}
 
@@ -50,3 +50,5 @@ void HTMLFencedFrameElement::allow(const jsbind::String& value) {
     HTMLElement::set("allow", value);
 }
 
+
+} // namespace webbind

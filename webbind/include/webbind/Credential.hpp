@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The Credential class.
+/// Interface Credential
 /// [`Credential`](https://developer.mozilla.org/en-US/docs/Web/API/Credential)
 class Credential : public emlite::Val {
     explicit Credential(Handle h) noexcept;
-
 public:
     explicit Credential(const emlite::Val &val) noexcept;
     static Credential take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Credential clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -30,3 +29,4 @@ public:
     static jsbind::Promise<jsbind::Undefined> willRequestConditionalCreation();
 };
 
+} // namespace webbind

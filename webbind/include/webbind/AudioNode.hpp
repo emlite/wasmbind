@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class AudioParam;
 class BaseAudioContext;
-class AudioContext;
 
-
-/// The AudioNode class.
+/// Interface AudioNode
 /// [`AudioNode`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode)
 class AudioNode : public EventTarget {
     explicit AudioNode(Handle h) noexcept;
-
 public:
     explicit AudioNode(const emlite::Val &val) noexcept;
     static AudioNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The connect method.
@@ -59,3 +58,4 @@ public:
     void channelInterpretation(const ChannelInterpretation& value);
 };
 
+} // namespace webbind

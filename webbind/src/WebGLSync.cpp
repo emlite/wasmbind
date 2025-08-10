@@ -1,5 +1,6 @@
-#include <webbind/WebGLSync.hpp>
+#include "webbind/WebGLSync.hpp"
 
+namespace webbind {
 
 WebGLSync WebGLSync::take_ownership(Handle h) noexcept {
         return WebGLSync(h);
@@ -10,3 +11,4 @@ WebGLSync::WebGLSync(Handle h) noexcept : WebGLObject(emlite::Val::take_ownershi
 WebGLSync::WebGLSync(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

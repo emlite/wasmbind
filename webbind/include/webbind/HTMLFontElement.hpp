@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLFontElement class.
+/// Interface HTMLFontElement
 /// [`HTMLFontElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement)
 class HTMLFontElement : public HTMLElement {
     explicit HTMLFontElement(Handle h) noexcept;
-
 public:
     explicit HTMLFontElement(const emlite::Val &val) noexcept;
     static HTMLFontElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLFontElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFontElement(..)` constructor, creating a new HTMLFontElement instance
@@ -39,3 +38,4 @@ public:
     void size(const jsbind::String& value);
 };
 
+} // namespace webbind

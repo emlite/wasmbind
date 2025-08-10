@@ -3,45 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "GPUTextureViewDescriptor.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class GPUTextureView;
-class GPUTextureViewDescriptor;
 
-
-class GPUTextureViewDescriptor : public emlite::Val {
-  explicit GPUTextureViewDescriptor(Handle h) noexcept;
-public:
-    static GPUTextureViewDescriptor take_ownership(Handle h) noexcept;
-    explicit GPUTextureViewDescriptor(const emlite::Val &val) noexcept;
-    GPUTextureViewDescriptor() noexcept;
-    [[nodiscard]] GPUTextureViewDescriptor clone() const noexcept;
-    [[nodiscard]] GPUTextureFormat format() const;
-    void format(const GPUTextureFormat& value);
-    [[nodiscard]] GPUTextureViewDimension dimension() const;
-    void dimension(const GPUTextureViewDimension& value);
-    [[nodiscard]] jsbind::Any usage() const;
-    void usage(const jsbind::Any& value);
-    [[nodiscard]] GPUTextureAspect aspect() const;
-    void aspect(const GPUTextureAspect& value);
-    [[nodiscard]] jsbind::Any baseMipLevel() const;
-    void baseMipLevel(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any mipLevelCount() const;
-    void mipLevelCount(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any baseArrayLayer() const;
-    void baseArrayLayer(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any arrayLayerCount() const;
-    void arrayLayerCount(const jsbind::Any& value);
-};
-
-/// The GPUTexture class.
+/// Interface GPUTexture
 /// [`GPUTexture`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture)
 class GPUTexture : public emlite::Val {
     explicit GPUTexture(Handle h) noexcept;
-
 public:
     explicit GPUTexture(const emlite::Val &val) noexcept;
     static GPUTexture take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUTexture clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createView method.
@@ -85,3 +60,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

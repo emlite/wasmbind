@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGTextContentElement.hpp"
 #include "enums.hpp"
+#include "SVGTextContentElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 class SVGAnimatedEnumeration;
 class SVGAnimatedString;
 
-
-/// The SVGTextPathElement class.
+/// Interface SVGTextPathElement
 /// [`SVGTextPathElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement)
 class SVGTextPathElement : public SVGTextContentElement {
     explicit SVGTextPathElement(Handle h) noexcept;
-
 public:
     explicit SVGTextPathElement(const emlite::Val &val) noexcept;
     static SVGTextPathElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGTextPathElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startOffset` attribute.
@@ -35,3 +34,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

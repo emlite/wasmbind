@@ -1,5 +1,6 @@
-#include <webbind/BarProp.hpp>
+#include "webbind/BarProp.hpp"
 
+namespace webbind {
 
 BarProp BarProp::take_ownership(Handle h) noexcept {
         return BarProp(h);
@@ -9,8 +10,9 @@ emlite::Val BarProp::instance() noexcept { return emlite::Val::global("BarProp")
 BarProp::BarProp(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BarProp::BarProp(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 bool BarProp::visible() const {
     return emlite::Val::get("visible").as<bool>();
 }
 
+
+} // namespace webbind

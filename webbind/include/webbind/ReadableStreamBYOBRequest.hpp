@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ReadableStreamBYOBRequest class.
+/// Interface ReadableStreamBYOBRequest
 /// [`ReadableStreamBYOBRequest`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest)
 class ReadableStreamBYOBRequest : public emlite::Val {
     explicit ReadableStreamBYOBRequest(Handle h) noexcept;
-
 public:
     explicit ReadableStreamBYOBRequest(const emlite::Val &val) noexcept;
     static ReadableStreamBYOBRequest take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ReadableStreamBYOBRequest clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `view` attribute.
@@ -27,3 +26,4 @@ public:
     jsbind::Undefined respondWithNewView(const jsbind::Any& view);
 };
 
+} // namespace webbind

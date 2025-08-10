@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class PreferenceObject;
 
-
-/// The PreferenceManager class.
+/// Interface PreferenceManager
 /// [`PreferenceManager`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager)
 class PreferenceManager : public emlite::Val {
     explicit PreferenceManager(Handle h) noexcept;
-
 public:
     explicit PreferenceManager(const emlite::Val &val) noexcept;
     static PreferenceManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PreferenceManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `colorScheme` attribute.
@@ -35,3 +34,4 @@ public:
     [[nodiscard]] PreferenceObject reducedData() const;
 };
 
+} // namespace webbind

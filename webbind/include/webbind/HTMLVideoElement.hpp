@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLMediaElement.hpp"
 #include "enums.hpp"
+#include "HTMLMediaElement.hpp"
+
+namespace webbind {
 
 class VideoPlaybackQuality;
 class PictureInPictureWindow;
 
-
-/// The HTMLVideoElement class.
+/// Interface HTMLVideoElement
 /// [`HTMLVideoElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement)
 class HTMLVideoElement : public HTMLMediaElement {
     explicit HTMLVideoElement(Handle h) noexcept;
-
 public:
     explicit HTMLVideoElement(const emlite::Val &val) noexcept;
     static HTMLVideoElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLVideoElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLVideoElement(..)` constructor, creating a new HTMLVideoElement instance
@@ -84,3 +83,4 @@ public:
     jsbind::Undefined cancelVideoFrameCallback(unsigned long handle);
 };
 
+} // namespace webbind

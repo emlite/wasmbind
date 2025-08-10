@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The PreferenceObject class.
+/// Interface PreferenceObject
 /// [`PreferenceObject`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject)
 class PreferenceObject : public EventTarget {
     explicit PreferenceObject(Handle h) noexcept;
-
 public:
     explicit PreferenceObject(const emlite::Val &val) noexcept;
     static PreferenceObject take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PreferenceObject clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `override` attribute.
@@ -40,3 +39,4 @@ public:
     void onchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

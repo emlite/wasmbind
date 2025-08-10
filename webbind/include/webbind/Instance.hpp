@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Module;
 
-
-/// The Instance class.
+/// Interface Instance
 /// [`Instance`](https://developer.mozilla.org/en-US/docs/Web/API/Instance)
 class Instance : public emlite::Val {
     explicit Instance(Handle h) noexcept;
-
 public:
     explicit Instance(const emlite::Val &val) noexcept;
     static Instance take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Instance clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Instance(..)` constructor, creating a new Instance instance
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] jsbind::Object exports() const;
 };
 
+} // namespace webbind

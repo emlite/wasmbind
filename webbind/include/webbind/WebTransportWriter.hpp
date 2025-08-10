@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WritableStreamDefaultWriter.hpp"
 #include "enums.hpp"
+#include "WritableStreamDefaultWriter.hpp"
 
+namespace webbind {
 
-/// The WebTransportWriter class.
+/// Interface WebTransportWriter
 /// [`WebTransportWriter`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportWriter)
 class WebTransportWriter : public WritableStreamDefaultWriter {
     explicit WebTransportWriter(Handle h) noexcept;
-
 public:
     explicit WebTransportWriter(const emlite::Val &val) noexcept;
     static WebTransportWriter take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebTransportWriter clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The atomicWrite method.
@@ -28,3 +27,4 @@ public:
     jsbind::Undefined commit();
 };
 
+} // namespace webbind

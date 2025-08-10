@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "MIDIPort.hpp"
 #include "enums.hpp"
+#include "MIDIPort.hpp"
 
+namespace webbind {
 
-/// The MIDIOutput class.
+/// Interface MIDIOutput
 /// [`MIDIOutput`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIOutput)
 class MIDIOutput : public MIDIPort {
     explicit MIDIOutput(Handle h) noexcept;
-
 public:
     explicit MIDIOutput(const emlite::Val &val) noexcept;
     static MIDIOutput take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MIDIOutput clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The send method.
@@ -28,3 +27,4 @@ public:
     jsbind::Undefined clear();
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/MIDIOutputMap.hpp>
+#include "webbind/MIDIOutputMap.hpp"
 
+namespace webbind {
 
 MIDIOutputMap MIDIOutputMap::take_ownership(Handle h) noexcept {
         return MIDIOutputMap(h);
@@ -10,3 +11,4 @@ MIDIOutputMap::MIDIOutputMap(Handle h) noexcept : emlite::Val(emlite::Val::take_
 MIDIOutputMap::MIDIOutputMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

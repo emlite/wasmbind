@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SpeechGrammar class.
+/// Interface SpeechGrammar
 /// [`SpeechGrammar`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammar)
 class SpeechGrammar : public emlite::Val {
     explicit SpeechGrammar(Handle h) noexcept;
-
 public:
     explicit SpeechGrammar(const emlite::Val &val) noexcept;
     static SpeechGrammar take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechGrammar clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `src` attribute.
@@ -30,3 +29,4 @@ public:
     void weight(float value);
 };
 
+} // namespace webbind

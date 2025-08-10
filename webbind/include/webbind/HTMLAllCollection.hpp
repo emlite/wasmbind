@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Element;
 
-
-/// The HTMLAllCollection class.
+/// Interface HTMLAllCollection
 /// [`HTMLAllCollection`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAllCollection)
 class HTMLAllCollection : public emlite::Val {
     explicit HTMLAllCollection(Handle h) noexcept;
-
 public:
     explicit HTMLAllCollection(const emlite::Val &val) noexcept;
     static HTMLAllCollection take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLAllCollection clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -32,3 +31,4 @@ public:
     jsbind::Any item(const jsbind::String& nameOrIndex);
 };
 
+} // namespace webbind

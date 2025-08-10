@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CharacterData.hpp"
 #include "enums.hpp"
+#include "CharacterData.hpp"
+
+namespace webbind {
 
 class CSSStyleSheet;
 
-
-/// The ProcessingInstruction class.
+/// Interface ProcessingInstruction
 /// [`ProcessingInstruction`](https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction)
 class ProcessingInstruction : public CharacterData {
     explicit ProcessingInstruction(Handle h) noexcept;
-
 public:
     explicit ProcessingInstruction(const emlite::Val &val) noexcept;
     static ProcessingInstruction take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ProcessingInstruction clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `target` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] CSSStyleSheet sheet() const;
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleValue.hpp"
 #include "enums.hpp"
+#include "CSSStyleValue.hpp"
 
+namespace webbind {
 
-/// The CSSUnparsedValue class.
+/// Interface CSSUnparsedValue
 /// [`CSSUnparsedValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue)
 class CSSUnparsedValue : public CSSStyleValue {
     explicit CSSUnparsedValue(Handle h) noexcept;
-
 public:
     explicit CSSUnparsedValue(const emlite::Val &val) noexcept;
     static CSSUnparsedValue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSUnparsedValue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSUnparsedValue(..)` constructor, creating a new CSSUnparsedValue instance
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] unsigned long length() const;
 };
 
+} // namespace webbind

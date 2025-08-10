@@ -1,5 +1,6 @@
-#include <webbind/HTMLPictureElement.hpp>
+#include "webbind/HTMLPictureElement.hpp"
 
+namespace webbind {
 
 HTMLPictureElement HTMLPictureElement::take_ownership(Handle h) noexcept {
         return HTMLPictureElement(h);
@@ -9,6 +10,7 @@ emlite::Val HTMLPictureElement::instance() noexcept { return emlite::Val::global
 HTMLPictureElement::HTMLPictureElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLPictureElement::HTMLPictureElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
-
 HTMLPictureElement::HTMLPictureElement() : HTMLElement(emlite::Val::global("HTMLPictureElement").new_()) {}
 
+
+} // namespace webbind

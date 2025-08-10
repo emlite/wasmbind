@@ -2,24 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGSVGElement.hpp"
 #include "enums.hpp"
+#include "DOMMatrix2DInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class DOMMatrix;
 class CanvasGradient;
 class CanvasPattern;
 class Path2D;
 
-
-/// The PaintRenderingContext2D class.
+/// Interface PaintRenderingContext2D
 /// [`PaintRenderingContext2D`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D)
 class PaintRenderingContext2D : public emlite::Val {
     explicit PaintRenderingContext2D(Handle h) noexcept;
-
 public:
     explicit PaintRenderingContext2D(const emlite::Val &val) noexcept;
     static PaintRenderingContext2D take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PaintRenderingContext2D clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The save method.
@@ -246,3 +246,4 @@ public:
     jsbind::Undefined ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle, bool counterclockwise);
 };
 
+} // namespace webbind

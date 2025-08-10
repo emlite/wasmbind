@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The MLGraph class.
+/// Interface MLGraph
 /// [`MLGraph`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraph)
 class MLGraph : public emlite::Val {
     explicit MLGraph(Handle h) noexcept;
-
 public:
     explicit MLGraph(const emlite::Val &val) noexcept;
     static MLGraph take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MLGraph clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The destroy method.
@@ -21,3 +20,4 @@ public:
     jsbind::Undefined destroy();
 };
 
+} // namespace webbind

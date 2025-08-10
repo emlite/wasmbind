@@ -1,21 +1,7 @@
-#include <webbind/IdentityCredential.hpp>
+#include "webbind/IdentityCredential.hpp"
+#include "webbind/IdentityCredentialDisconnectOptions.hpp"
 
-
-IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IdentityCredentialDisconnectOptions IdentityCredentialDisconnectOptions::take_ownership(Handle h) noexcept {
-        return IdentityCredentialDisconnectOptions(h);
-    }
-IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-IdentityCredentialDisconnectOptions IdentityCredentialDisconnectOptions::clone() const noexcept { return *this; }
-
-jsbind::String IdentityCredentialDisconnectOptions::accountHint() const {
-    return emlite::Val::get("accountHint").as<jsbind::String>();
-}
-
-void IdentityCredentialDisconnectOptions::accountHint(const jsbind::String& value) {
-    emlite::Val::set("accountHint", value);
-}
+namespace webbind {
 
 IdentityCredential IdentityCredential::take_ownership(Handle h) noexcept {
         return IdentityCredential(h);
@@ -24,7 +10,6 @@ IdentityCredential IdentityCredential::clone() const noexcept { return *this; }
 emlite::Val IdentityCredential::instance() noexcept { return emlite::Val::global("IdentityCredential"); }
 IdentityCredential::IdentityCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
 IdentityCredential::IdentityCredential(const emlite::Val &val) noexcept: Credential(val) {}
-
 
 jsbind::Promise<jsbind::Undefined> IdentityCredential::disconnect(const IdentityCredentialDisconnectOptions& options) {
     return emlite::Val::global("identitycredential").call("disconnect", options).as<jsbind::Promise<jsbind::Undefined>>();
@@ -42,3 +27,5 @@ jsbind::String IdentityCredential::configURL() const {
     return Credential::get("configURL").as<jsbind::String>();
 }
 
+
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/RTCIceCandidate.hpp>
-#include <webbind/RTCIceTransport.hpp>
+#include "webbind/RTCIceCandidate.hpp"
+#include "webbind/RTCLocalIceCandidateInit.hpp"
+#include "webbind/RTCIceCandidateInit.hpp"
 
+namespace webbind {
 
 RTCIceCandidate RTCIceCandidate::take_ownership(Handle h) noexcept {
         return RTCIceCandidate(h);
@@ -10,10 +12,9 @@ emlite::Val RTCIceCandidate::instance() noexcept { return emlite::Val::global("R
 RTCIceCandidate::RTCIceCandidate(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCIceCandidate::RTCIceCandidate(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 RTCIceCandidate::RTCIceCandidate() : emlite::Val(emlite::Val::global("RTCIceCandidate").new_()) {}
 
-RTCIceCandidate::RTCIceCandidate(const jsbind::Any& candidateInitDict) : emlite::Val(emlite::Val::global("RTCIceCandidate").new_(candidateInitDict)) {}
+RTCIceCandidate::RTCIceCandidate(const RTCLocalIceCandidateInit& candidateInitDict) : emlite::Val(emlite::Val::global("RTCIceCandidate").new_(candidateInitDict)) {}
 
 jsbind::String RTCIceCandidate::candidate() const {
     return emlite::Val::get("candidate").as<jsbind::String>();
@@ -83,3 +84,5 @@ RTCIceCandidateInit RTCIceCandidate::toJSON() {
     return emlite::Val::call("toJSON").as<RTCIceCandidateInit>();
 }
 
+
+} // namespace webbind

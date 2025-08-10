@@ -3,19 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class AbstractRange;
 
-
-/// The Highlight class.
+/// Interface Highlight
 /// [`Highlight`](https://developer.mozilla.org/en-US/docs/Web/API/Highlight)
 class Highlight : public emlite::Val {
     explicit Highlight(Handle h) noexcept;
-
 public:
     explicit Highlight(const emlite::Val &val) noexcept;
     static Highlight take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Highlight clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Highlight(..)` constructor, creating a new Highlight instance
@@ -34,3 +34,4 @@ public:
     void type(const HighlightType& value);
 };
 
+} // namespace webbind

@@ -3,20 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class IDBObjectStore;
 class IDBRequest;
 
-
-/// The IDBIndex class.
+/// Interface IDBIndex
 /// [`IDBIndex`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex)
 class IDBIndex : public emlite::Val {
     explicit IDBIndex(Handle h) noexcept;
-
 public:
     explicit IDBIndex(const emlite::Val &val) noexcept;
     static IDBIndex take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IDBIndex clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -87,3 +87,4 @@ public:
     IDBRequest openKeyCursor(const jsbind::Any& query, const IDBCursorDirection& direction);
 };
 
+} // namespace webbind

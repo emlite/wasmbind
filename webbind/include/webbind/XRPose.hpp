@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class XRRigidTransform;
 class DOMPointReadOnly;
 
-
-/// The XRPose class.
+/// Interface XRPose
 /// [`XRPose`](https://developer.mozilla.org/en-US/docs/Web/API/XRPose)
 class XRPose : public emlite::Val {
     explicit XRPose(Handle h) noexcept;
-
 public:
     explicit XRPose(const emlite::Val &val) noexcept;
     static XRPose take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRPose clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `transform` attribute.
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] bool emulatedPosition() const;
 };
 
+} // namespace webbind

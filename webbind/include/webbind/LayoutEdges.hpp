@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The LayoutEdges class.
+/// Interface LayoutEdges
 /// [`LayoutEdges`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutEdges)
 class LayoutEdges : public emlite::Val {
     explicit LayoutEdges(Handle h) noexcept;
-
 public:
     explicit LayoutEdges(const emlite::Val &val) noexcept;
     static LayoutEdges take_ownership(Handle h) noexcept;
-
     [[nodiscard]] LayoutEdges clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inlineStart` attribute.
@@ -36,3 +35,4 @@ public:
     [[nodiscard]] double block() const;
 };
 
+} // namespace webbind

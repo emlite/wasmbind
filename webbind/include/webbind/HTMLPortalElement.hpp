@@ -2,33 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
-#include "MessagePort.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+#include "PortalActivateOptions.hpp"
+#include "StructuredSerializeOptions.hpp"
 
-class PortalActivateOptions;
+namespace webbind {
 
-
-class PortalActivateOptions : public emlite::Val {
-  explicit PortalActivateOptions(Handle h) noexcept;
-public:
-    static PortalActivateOptions take_ownership(Handle h) noexcept;
-    explicit PortalActivateOptions(const emlite::Val &val) noexcept;
-    PortalActivateOptions() noexcept;
-    [[nodiscard]] PortalActivateOptions clone() const noexcept;
-    [[nodiscard]] jsbind::Any data() const;
-    void data(const jsbind::Any& value);
-};
-
-/// The HTMLPortalElement class.
+/// Interface HTMLPortalElement
 /// [`HTMLPortalElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement)
 class HTMLPortalElement : public HTMLElement {
     explicit HTMLPortalElement(Handle h) noexcept;
-
 public:
     explicit HTMLPortalElement(const emlite::Val &val) noexcept;
     static HTMLPortalElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLPortalElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLPortalElement(..)` constructor, creating a new HTMLPortalElement instance
@@ -71,3 +58,4 @@ public:
     void onmessageerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

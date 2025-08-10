@@ -3,23 +3,23 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "NDEFRecordInit.hpp"
+
+namespace webbind {
 
 class NDEFRecord;
 
-
-/// The NDEFRecord class.
+/// Interface NDEFRecord
 /// [`NDEFRecord`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord)
 class NDEFRecord : public emlite::Val {
     explicit NDEFRecord(Handle h) noexcept;
-
 public:
     explicit NDEFRecord(const emlite::Val &val) noexcept;
     static NDEFRecord take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NDEFRecord clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFRecord(..)` constructor, creating a new NDEFRecord instance
-    NDEFRecord(const jsbind::Any& recordInit);
+    NDEFRecord(const NDEFRecordInit& recordInit);
     /// Getter of the `recordType` attribute.
     /// [`NDEFRecord.recordType`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/recordType)
     [[nodiscard]] jsbind::String recordType() const;
@@ -43,3 +43,4 @@ public:
     jsbind::TypedArray<NDEFRecord> toRecords();
 };
 
+} // namespace webbind

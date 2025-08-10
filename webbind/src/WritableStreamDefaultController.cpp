@@ -1,6 +1,7 @@
-#include <webbind/WritableStreamDefaultController.hpp>
-#include <webbind/AbortSignal.hpp>
+#include "webbind/WritableStreamDefaultController.hpp"
+#include "webbind/AbortSignal.hpp"
 
+namespace webbind {
 
 WritableStreamDefaultController WritableStreamDefaultController::take_ownership(Handle h) noexcept {
         return WritableStreamDefaultController(h);
@@ -9,7 +10,6 @@ WritableStreamDefaultController WritableStreamDefaultController::clone() const n
 emlite::Val WritableStreamDefaultController::instance() noexcept { return emlite::Val::global("WritableStreamDefaultController"); }
 WritableStreamDefaultController::WritableStreamDefaultController(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WritableStreamDefaultController::WritableStreamDefaultController(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 AbortSignal WritableStreamDefaultController::signal() const {
     return emlite::Val::get("signal").as<AbortSignal>();
@@ -23,3 +23,5 @@ jsbind::Undefined WritableStreamDefaultController::error(const jsbind::Any& e) {
     return emlite::Val::call("error", e).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/AttributionAggregationServices.hpp>
+#include "webbind/AttributionAggregationServices.hpp"
 
+namespace webbind {
 
 AttributionAggregationServices AttributionAggregationServices::take_ownership(Handle h) noexcept {
         return AttributionAggregationServices(h);
@@ -10,3 +11,4 @@ AttributionAggregationServices::AttributionAggregationServices(Handle h) noexcep
 AttributionAggregationServices::AttributionAggregationServices(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

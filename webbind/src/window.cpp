@@ -7,6 +7,8 @@
 #include <webbind/ImageBitmap.hpp>
 #include <emlite/emlite.hpp>
 
+namespace webbind {
+
 Window window() {
     return emlite::Val::global("window").as<Window>();
 }
@@ -49,3 +51,4 @@ jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>> createImageBitmap(
 }
 
 void reportError(const jsbind::Error &error) { emlite::Val::global("reportError")(error); }
+}

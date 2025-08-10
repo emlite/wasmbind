@@ -1,9 +1,12 @@
-#include <webbind/Response.hpp>
-#include <webbind/Headers.hpp>
-#include <webbind/ReadableStream.hpp>
-#include <webbind/Blob.hpp>
-#include <webbind/FormData.hpp>
+#include "webbind/Response.hpp"
+#include "webbind/ResponseInit.hpp"
+#include "webbind/Response.hpp"
+#include "webbind/Headers.hpp"
+#include "webbind/ReadableStream.hpp"
+#include "webbind/Blob.hpp"
+#include "webbind/FormData.hpp"
 
+namespace webbind {
 
 Response Response::take_ownership(Handle h) noexcept {
         return Response(h);
@@ -13,12 +16,11 @@ emlite::Val Response::instance() noexcept { return emlite::Val::global("Response
 Response::Response(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Response::Response(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 Response::Response() : emlite::Val(emlite::Val::global("Response").new_()) {}
 
 Response::Response(const jsbind::Any& body) : emlite::Val(emlite::Val::global("Response").new_(body)) {}
 
-Response::Response(const jsbind::Any& body, const jsbind::Any& init) : emlite::Val(emlite::Val::global("Response").new_(body, init)) {}
+Response::Response(const jsbind::Any& body, const ResponseInit& init) : emlite::Val(emlite::Val::global("Response").new_(body, init)) {}
 
 Response Response::error() {
     return emlite::Val::global("response").call("error").as<Response>();
@@ -96,3 +98,5 @@ jsbind::Promise<jsbind::String> Response::text() {
     return emlite::Val::call("text").as<jsbind::Promise<jsbind::String>>();
 }
 
+
+} // namespace webbind

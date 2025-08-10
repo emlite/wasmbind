@@ -1,24 +1,11 @@
-#include <webbind/Node.hpp>
-#include <webbind/Document.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/NodeList.hpp>
+#include "webbind/Node.hpp"
+#include "webbind/Document.hpp"
+#include "webbind/Node.hpp"
+#include "webbind/GetRootNodeOptions.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/NodeList.hpp"
 
-
-GetRootNodeOptions::GetRootNodeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GetRootNodeOptions GetRootNodeOptions::take_ownership(Handle h) noexcept {
-        return GetRootNodeOptions(h);
-    }
-GetRootNodeOptions::GetRootNodeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-GetRootNodeOptions::GetRootNodeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-GetRootNodeOptions GetRootNodeOptions::clone() const noexcept { return *this; }
-
-bool GetRootNodeOptions::composed() const {
-    return emlite::Val::get("composed").as<bool>();
-}
-
-void GetRootNodeOptions::composed(bool value) {
-    emlite::Val::set("composed", value);
-}
+namespace webbind {
 
 Node Node::take_ownership(Handle h) noexcept {
         return Node(h);
@@ -27,7 +14,6 @@ Node Node::clone() const noexcept { return *this; }
 emlite::Val Node::instance() noexcept { return emlite::Val::global("Node"); }
 Node::Node(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Node::Node(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 unsigned short Node::nodeType() const {
     return EventTarget::get("nodeType").as<unsigned short>();
@@ -161,3 +147,5 @@ Node Node::removeChild(const Node& child) {
     return EventTarget::call("removeChild", child).as<Node>();
 }
 
+
+} // namespace webbind

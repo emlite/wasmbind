@@ -1,7 +1,8 @@
-#include <webbind/FontMetrics.hpp>
-#include <webbind/Baseline.hpp>
-#include <webbind/Font.hpp>
+#include "webbind/FontMetrics.hpp"
+#include "webbind/Baseline.hpp"
+#include "webbind/Font.hpp"
 
+namespace webbind {
 
 FontMetrics FontMetrics::take_ownership(Handle h) noexcept {
         return FontMetrics(h);
@@ -10,7 +11,6 @@ FontMetrics FontMetrics::clone() const noexcept { return *this; }
 emlite::Val FontMetrics::instance() noexcept { return emlite::Val::global("FontMetrics"); }
 FontMetrics::FontMetrics(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FontMetrics::FontMetrics(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 double FontMetrics::width() const {
     return emlite::Val::get("width").as<double>();
@@ -68,3 +68,5 @@ jsbind::TypedArray<Font> FontMetrics::fonts() const {
     return emlite::Val::get("fonts").as<jsbind::TypedArray<Font>>();
 }
 
+
+} // namespace webbind

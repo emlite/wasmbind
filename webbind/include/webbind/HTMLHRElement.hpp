@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLHRElement class.
+/// Interface HTMLHRElement
 /// [`HTMLHRElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLHRElement)
 class HTMLHRElement : public HTMLElement {
     explicit HTMLHRElement(Handle h) noexcept;
-
 public:
     explicit HTMLHRElement(const emlite::Val &val) noexcept;
     static HTMLHRElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLHRElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLHRElement(..)` constructor, creating a new HTMLHRElement instance
@@ -51,3 +50,4 @@ public:
     void width(const jsbind::String& value);
 };
 
+} // namespace webbind

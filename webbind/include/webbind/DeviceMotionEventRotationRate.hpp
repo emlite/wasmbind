@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The DeviceMotionEventRotationRate class.
+/// Interface DeviceMotionEventRotationRate
 /// [`DeviceMotionEventRotationRate`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate)
 class DeviceMotionEventRotationRate : public emlite::Val {
     explicit DeviceMotionEventRotationRate(Handle h) noexcept;
-
 public:
     explicit DeviceMotionEventRotationRate(const emlite::Val &val) noexcept;
     static DeviceMotionEventRotationRate take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DeviceMotionEventRotationRate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `alpha` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] double gamma() const;
 };
 
+} // namespace webbind

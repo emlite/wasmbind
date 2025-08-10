@@ -1,5 +1,6 @@
-#include <webbind/EventCounts.hpp>
+#include "webbind/EventCounts.hpp"
 
+namespace webbind {
 
 EventCounts EventCounts::take_ownership(Handle h) noexcept {
         return EventCounts(h);
@@ -10,3 +11,4 @@ EventCounts::EventCounts(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 EventCounts::EventCounts(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

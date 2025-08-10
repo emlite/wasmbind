@@ -1,9 +1,11 @@
-#include <webbind/WorkerGlobalScope.hpp>
-#include <webbind/WorkerLocation.hpp>
-#include <webbind/WorkerNavigator.hpp>
-#include <webbind/FontFaceSet.hpp>
-#include <webbind/Crypto.hpp>
+#include "webbind/WorkerGlobalScope.hpp"
+#include "webbind/WorkerGlobalScope.hpp"
+#include "webbind/WorkerLocation.hpp"
+#include "webbind/WorkerNavigator.hpp"
+#include "webbind/FontFaceSet.hpp"
+#include "webbind/Crypto.hpp"
 
+namespace webbind {
 
 WorkerGlobalScope WorkerGlobalScope::take_ownership(Handle h) noexcept {
         return WorkerGlobalScope(h);
@@ -12,7 +14,6 @@ WorkerGlobalScope WorkerGlobalScope::clone() const noexcept { return *this; }
 emlite::Val WorkerGlobalScope::instance() noexcept { return emlite::Val::global("WorkerGlobalScope"); }
 WorkerGlobalScope::WorkerGlobalScope(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 WorkerGlobalScope::WorkerGlobalScope(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 WorkerGlobalScope WorkerGlobalScope::self() const {
     return EventTarget::get("self").as<WorkerGlobalScope>();
@@ -86,3 +87,5 @@ Crypto WorkerGlobalScope::crypto() const {
     return EventTarget::get("crypto").as<Crypto>();
 }
 
+
+} // namespace webbind

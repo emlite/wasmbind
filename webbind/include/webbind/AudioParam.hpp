@@ -3,19 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class AudioParam;
 
-
-/// The AudioParam class.
+/// Interface AudioParam
 /// [`AudioParam`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam)
 class AudioParam : public emlite::Val {
     explicit AudioParam(Handle h) noexcept;
-
 public:
     explicit AudioParam(const emlite::Val &val) noexcept;
     static AudioParam take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioParam clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `value` attribute.
@@ -62,3 +62,4 @@ public:
     AudioParam cancelAndHoldAtTime(double cancelTime);
 };
 
+} // namespace webbind

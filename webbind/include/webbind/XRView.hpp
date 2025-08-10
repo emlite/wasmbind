@@ -3,20 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class XRCamera;
 class XRRigidTransform;
 
-
-/// The XRView class.
+/// Interface XRView
 /// [`XRView`](https://developer.mozilla.org/en-US/docs/Web/API/XRView)
 class XRView : public emlite::Val {
     explicit XRView(Handle h) noexcept;
-
 public:
     explicit XRView(const emlite::Val &val) noexcept;
     static XRView take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRView clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `eye` attribute.
@@ -42,3 +42,4 @@ public:
     [[nodiscard]] XRRigidTransform transform() const;
 };
 
+} // namespace webbind

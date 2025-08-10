@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XRCompositionLayer.hpp"
 #include "enums.hpp"
+#include "XRCompositionLayer.hpp"
+
+namespace webbind {
 
 class XRRigidTransform;
 
-
-/// The XRProjectionLayer class.
+/// Interface XRProjectionLayer
 /// [`XRProjectionLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRProjectionLayer)
 class XRProjectionLayer : public XRCompositionLayer {
     explicit XRProjectionLayer(Handle h) noexcept;
-
 public:
     explicit XRProjectionLayer(const emlite::Val &val) noexcept;
     static XRProjectionLayer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRProjectionLayer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `textureWidth` attribute.
@@ -45,3 +44,4 @@ public:
     void deltaPose(const XRRigidTransform& value);
 };
 
+} // namespace webbind

@@ -1,8 +1,9 @@
-#include <webbind/SVGFilterElement.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
-#include <webbind/SVGAnimatedString.hpp>
+#include "webbind/SVGFilterElement.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
+#include "webbind/SVGAnimatedString.hpp"
 
+namespace webbind {
 
 SVGFilterElement SVGFilterElement::take_ownership(Handle h) noexcept {
         return SVGFilterElement(h);
@@ -11,7 +12,6 @@ SVGFilterElement SVGFilterElement::clone() const noexcept { return *this; }
 emlite::Val SVGFilterElement::instance() noexcept { return emlite::Val::global("SVGFilterElement"); }
 SVGFilterElement::SVGFilterElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFilterElement::SVGFilterElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedEnumeration SVGFilterElement::filterUnits() const {
     return SVGElement::get("filterUnits").as<SVGAnimatedEnumeration>();
@@ -41,3 +41,5 @@ SVGAnimatedString SVGFilterElement::href() const {
     return SVGElement::get("href").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

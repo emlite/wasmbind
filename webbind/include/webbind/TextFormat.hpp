@@ -3,23 +3,24 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "TextFormatInit.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The TextFormat class.
+/// Interface TextFormat
 /// [`TextFormat`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat)
 class TextFormat : public emlite::Val {
     explicit TextFormat(Handle h) noexcept;
-
 public:
     explicit TextFormat(const emlite::Val &val) noexcept;
     static TextFormat take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextFormat clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextFormat(..)` constructor, creating a new TextFormat instance
     TextFormat();
     /// The `new TextFormat(..)` constructor, creating a new TextFormat instance
-    TextFormat(const jsbind::Any& options);
+    TextFormat(const TextFormatInit& options);
     /// Getter of the `rangeStart` attribute.
     /// [`TextFormat.rangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/rangeStart)
     [[nodiscard]] unsigned long rangeStart() const;
@@ -34,3 +35,4 @@ public:
     [[nodiscard]] UnderlineThickness underlineThickness() const;
 };
 
+} // namespace webbind

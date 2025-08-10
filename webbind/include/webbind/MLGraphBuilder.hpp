@@ -2,505 +2,53 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "MLContext.hpp"
+#include "enums.hpp"
+#include "MLOperandDescriptor.hpp"
+#include "MLArgMinMaxOptions.hpp"
+#include "MLBatchNormalizationOptions.hpp"
+#include "MLOperatorOptions.hpp"
+#include "MLClampOptions.hpp"
+#include "MLConv2dOptions.hpp"
+#include "MLConvTranspose2dOptions.hpp"
+#include "MLCumulativeSumOptions.hpp"
+#include "MLEluOptions.hpp"
+#include "MLGatherOptions.hpp"
+#include "MLGemmOptions.hpp"
+#include "MLGruOptions.hpp"
+#include "MLGruCellOptions.hpp"
+#include "MLHardSigmoidOptions.hpp"
+#include "MLInstanceNormalizationOptions.hpp"
+#include "MLLayerNormalizationOptions.hpp"
+#include "MLLeakyReluOptions.hpp"
+#include "MLLinearOptions.hpp"
+#include "MLLstmOptions.hpp"
+#include "MLLstmCellOptions.hpp"
+#include "MLPadOptions.hpp"
+#include "MLPool2dOptions.hpp"
+#include "MLReduceOptions.hpp"
+#include "MLResample2dOptions.hpp"
+#include "MLReverseOptions.hpp"
+#include "MLScatterOptions.hpp"
+#include "MLSliceOptions.hpp"
+#include "MLSplitOptions.hpp"
+#include "MLTransposeOptions.hpp"
+#include "MLTriangularOptions.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
+class MLContext;
 class MLOperand;
 class MLTensor;
 class MLGraph;
-class MLArgMinMaxOptions;
-class MLBatchNormalizationOptions;
-class MLOperatorOptions;
-class MLClampOptions;
-class MLConv2dOptions;
-class MLConvTranspose2dOptions;
-class MLCumulativeSumOptions;
-class MLEluOptions;
-class MLGatherOptions;
-class MLGemmOptions;
-class MLGruOptions;
-class MLGruCellOptions;
-class MLHardSigmoidOptions;
-class MLInstanceNormalizationOptions;
-class MLLayerNormalizationOptions;
-class MLLeakyReluOptions;
-class MLLinearOptions;
-class MLLstmOptions;
-class MLLstmCellOptions;
-class MLPadOptions;
-class MLPool2dOptions;
-class MLReduceOptions;
-class MLResample2dOptions;
-class MLReverseOptions;
-class MLScatterOptions;
-class MLSliceOptions;
-class MLSplitOptions;
-class MLTransposeOptions;
-class MLTriangularOptions;
 
-
-class MLArgMinMaxOptions : public emlite::Val {
-  explicit MLArgMinMaxOptions(Handle h) noexcept;
-public:
-    static MLArgMinMaxOptions take_ownership(Handle h) noexcept;
-    explicit MLArgMinMaxOptions(const emlite::Val &val) noexcept;
-    MLArgMinMaxOptions() noexcept;
-    [[nodiscard]] MLArgMinMaxOptions clone() const noexcept;
-    [[nodiscard]] bool keepDimensions() const;
-    void keepDimensions(bool value);
-    [[nodiscard]] MLOperandDataType outputDataType() const;
-    void outputDataType(const MLOperandDataType& value);
-};
-
-class MLBatchNormalizationOptions : public emlite::Val {
-  explicit MLBatchNormalizationOptions(Handle h) noexcept;
-public:
-    static MLBatchNormalizationOptions take_ownership(Handle h) noexcept;
-    explicit MLBatchNormalizationOptions(const emlite::Val &val) noexcept;
-    MLBatchNormalizationOptions() noexcept;
-    [[nodiscard]] MLBatchNormalizationOptions clone() const noexcept;
-    [[nodiscard]] MLOperand scale() const;
-    void scale(const MLOperand& value);
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-    [[nodiscard]] unsigned long axis() const;
-    void axis(unsigned long value);
-    [[nodiscard]] double epsilon() const;
-    void epsilon(double value);
-};
-
-class MLOperatorOptions : public emlite::Val {
-  explicit MLOperatorOptions(Handle h) noexcept;
-public:
-    static MLOperatorOptions take_ownership(Handle h) noexcept;
-    explicit MLOperatorOptions(const emlite::Val &val) noexcept;
-    MLOperatorOptions() noexcept;
-    [[nodiscard]] MLOperatorOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String label() const;
-    void label(const jsbind::String& value);
-};
-
-class MLClampOptions : public emlite::Val {
-  explicit MLClampOptions(Handle h) noexcept;
-public:
-    static MLClampOptions take_ownership(Handle h) noexcept;
-    explicit MLClampOptions(const emlite::Val &val) noexcept;
-    MLClampOptions() noexcept;
-    [[nodiscard]] MLClampOptions clone() const noexcept;
-    [[nodiscard]] jsbind::Any minValue() const;
-    void minValue(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any maxValue() const;
-    void maxValue(const jsbind::Any& value);
-};
-
-class MLConv2dOptions : public emlite::Val {
-  explicit MLConv2dOptions(Handle h) noexcept;
-public:
-    static MLConv2dOptions take_ownership(Handle h) noexcept;
-    explicit MLConv2dOptions(const emlite::Val &val) noexcept;
-    MLConv2dOptions() noexcept;
-    [[nodiscard]] MLConv2dOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<unsigned long> padding() const;
-    void padding(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> strides() const;
-    void strides(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> dilations() const;
-    void dilations(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] unsigned long groups() const;
-    void groups(unsigned long value);
-    [[nodiscard]] MLInputOperandLayout inputLayout() const;
-    void inputLayout(const MLInputOperandLayout& value);
-    [[nodiscard]] MLConv2dFilterOperandLayout filterLayout() const;
-    void filterLayout(const MLConv2dFilterOperandLayout& value);
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-};
-
-class MLConvTranspose2dOptions : public emlite::Val {
-  explicit MLConvTranspose2dOptions(Handle h) noexcept;
-public:
-    static MLConvTranspose2dOptions take_ownership(Handle h) noexcept;
-    explicit MLConvTranspose2dOptions(const emlite::Val &val) noexcept;
-    MLConvTranspose2dOptions() noexcept;
-    [[nodiscard]] MLConvTranspose2dOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<unsigned long> padding() const;
-    void padding(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> strides() const;
-    void strides(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> dilations() const;
-    void dilations(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> outputPadding() const;
-    void outputPadding(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> outputSizes() const;
-    void outputSizes(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] unsigned long groups() const;
-    void groups(unsigned long value);
-    [[nodiscard]] MLInputOperandLayout inputLayout() const;
-    void inputLayout(const MLInputOperandLayout& value);
-    [[nodiscard]] MLConvTranspose2dFilterOperandLayout filterLayout() const;
-    void filterLayout(const MLConvTranspose2dFilterOperandLayout& value);
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-};
-
-class MLCumulativeSumOptions : public emlite::Val {
-  explicit MLCumulativeSumOptions(Handle h) noexcept;
-public:
-    static MLCumulativeSumOptions take_ownership(Handle h) noexcept;
-    explicit MLCumulativeSumOptions(const emlite::Val &val) noexcept;
-    MLCumulativeSumOptions() noexcept;
-    [[nodiscard]] MLCumulativeSumOptions clone() const noexcept;
-    [[nodiscard]] bool exclusive() const;
-    void exclusive(bool value);
-    [[nodiscard]] bool reversed() const;
-    void reversed(bool value);
-};
-
-class MLEluOptions : public emlite::Val {
-  explicit MLEluOptions(Handle h) noexcept;
-public:
-    static MLEluOptions take_ownership(Handle h) noexcept;
-    explicit MLEluOptions(const emlite::Val &val) noexcept;
-    MLEluOptions() noexcept;
-    [[nodiscard]] MLEluOptions clone() const noexcept;
-    [[nodiscard]] double alpha() const;
-    void alpha(double value);
-};
-
-class MLGatherOptions : public emlite::Val {
-  explicit MLGatherOptions(Handle h) noexcept;
-public:
-    static MLGatherOptions take_ownership(Handle h) noexcept;
-    explicit MLGatherOptions(const emlite::Val &val) noexcept;
-    MLGatherOptions() noexcept;
-    [[nodiscard]] MLGatherOptions clone() const noexcept;
-    [[nodiscard]] unsigned long axis() const;
-    void axis(unsigned long value);
-};
-
-class MLGemmOptions : public emlite::Val {
-  explicit MLGemmOptions(Handle h) noexcept;
-public:
-    static MLGemmOptions take_ownership(Handle h) noexcept;
-    explicit MLGemmOptions(const emlite::Val &val) noexcept;
-    MLGemmOptions() noexcept;
-    [[nodiscard]] MLGemmOptions clone() const noexcept;
-    [[nodiscard]] MLOperand c() const;
-    void c(const MLOperand& value);
-    [[nodiscard]] double alpha() const;
-    void alpha(double value);
-    [[nodiscard]] double beta() const;
-    void beta(double value);
-    [[nodiscard]] bool aTranspose() const;
-    void aTranspose(bool value);
-    [[nodiscard]] bool bTranspose() const;
-    void bTranspose(bool value);
-};
-
-class MLGruOptions : public emlite::Val {
-  explicit MLGruOptions(Handle h) noexcept;
-public:
-    static MLGruOptions take_ownership(Handle h) noexcept;
-    explicit MLGruOptions(const emlite::Val &val) noexcept;
-    MLGruOptions() noexcept;
-    [[nodiscard]] MLGruOptions clone() const noexcept;
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-    [[nodiscard]] MLOperand recurrentBias() const;
-    void recurrentBias(const MLOperand& value);
-    [[nodiscard]] MLOperand initialHiddenState() const;
-    void initialHiddenState(const MLOperand& value);
-    [[nodiscard]] bool resetAfter() const;
-    void resetAfter(bool value);
-    [[nodiscard]] bool returnSequence() const;
-    void returnSequence(bool value);
-    [[nodiscard]] MLRecurrentNetworkDirection direction() const;
-    void direction(const MLRecurrentNetworkDirection& value);
-    [[nodiscard]] MLGruWeightLayout layout() const;
-    void layout(const MLGruWeightLayout& value);
-    [[nodiscard]] jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
-};
-
-class MLGruCellOptions : public emlite::Val {
-  explicit MLGruCellOptions(Handle h) noexcept;
-public:
-    static MLGruCellOptions take_ownership(Handle h) noexcept;
-    explicit MLGruCellOptions(const emlite::Val &val) noexcept;
-    MLGruCellOptions() noexcept;
-    [[nodiscard]] MLGruCellOptions clone() const noexcept;
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-    [[nodiscard]] MLOperand recurrentBias() const;
-    void recurrentBias(const MLOperand& value);
-    [[nodiscard]] bool resetAfter() const;
-    void resetAfter(bool value);
-    [[nodiscard]] MLGruWeightLayout layout() const;
-    void layout(const MLGruWeightLayout& value);
-    [[nodiscard]] jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
-};
-
-class MLHardSigmoidOptions : public emlite::Val {
-  explicit MLHardSigmoidOptions(Handle h) noexcept;
-public:
-    static MLHardSigmoidOptions take_ownership(Handle h) noexcept;
-    explicit MLHardSigmoidOptions(const emlite::Val &val) noexcept;
-    MLHardSigmoidOptions() noexcept;
-    [[nodiscard]] MLHardSigmoidOptions clone() const noexcept;
-    [[nodiscard]] double alpha() const;
-    void alpha(double value);
-    [[nodiscard]] double beta() const;
-    void beta(double value);
-};
-
-class MLInstanceNormalizationOptions : public emlite::Val {
-  explicit MLInstanceNormalizationOptions(Handle h) noexcept;
-public:
-    static MLInstanceNormalizationOptions take_ownership(Handle h) noexcept;
-    explicit MLInstanceNormalizationOptions(const emlite::Val &val) noexcept;
-    MLInstanceNormalizationOptions() noexcept;
-    [[nodiscard]] MLInstanceNormalizationOptions clone() const noexcept;
-    [[nodiscard]] MLOperand scale() const;
-    void scale(const MLOperand& value);
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-    [[nodiscard]] double epsilon() const;
-    void epsilon(double value);
-    [[nodiscard]] MLInputOperandLayout layout() const;
-    void layout(const MLInputOperandLayout& value);
-};
-
-class MLLayerNormalizationOptions : public emlite::Val {
-  explicit MLLayerNormalizationOptions(Handle h) noexcept;
-public:
-    static MLLayerNormalizationOptions take_ownership(Handle h) noexcept;
-    explicit MLLayerNormalizationOptions(const emlite::Val &val) noexcept;
-    MLLayerNormalizationOptions() noexcept;
-    [[nodiscard]] MLLayerNormalizationOptions clone() const noexcept;
-    [[nodiscard]] MLOperand scale() const;
-    void scale(const MLOperand& value);
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> axes() const;
-    void axes(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] double epsilon() const;
-    void epsilon(double value);
-};
-
-class MLLeakyReluOptions : public emlite::Val {
-  explicit MLLeakyReluOptions(Handle h) noexcept;
-public:
-    static MLLeakyReluOptions take_ownership(Handle h) noexcept;
-    explicit MLLeakyReluOptions(const emlite::Val &val) noexcept;
-    MLLeakyReluOptions() noexcept;
-    [[nodiscard]] MLLeakyReluOptions clone() const noexcept;
-    [[nodiscard]] double alpha() const;
-    void alpha(double value);
-};
-
-class MLLinearOptions : public emlite::Val {
-  explicit MLLinearOptions(Handle h) noexcept;
-public:
-    static MLLinearOptions take_ownership(Handle h) noexcept;
-    explicit MLLinearOptions(const emlite::Val &val) noexcept;
-    MLLinearOptions() noexcept;
-    [[nodiscard]] MLLinearOptions clone() const noexcept;
-    [[nodiscard]] double alpha() const;
-    void alpha(double value);
-    [[nodiscard]] double beta() const;
-    void beta(double value);
-};
-
-class MLLstmOptions : public emlite::Val {
-  explicit MLLstmOptions(Handle h) noexcept;
-public:
-    static MLLstmOptions take_ownership(Handle h) noexcept;
-    explicit MLLstmOptions(const emlite::Val &val) noexcept;
-    MLLstmOptions() noexcept;
-    [[nodiscard]] MLLstmOptions clone() const noexcept;
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-    [[nodiscard]] MLOperand recurrentBias() const;
-    void recurrentBias(const MLOperand& value);
-    [[nodiscard]] MLOperand peepholeWeight() const;
-    void peepholeWeight(const MLOperand& value);
-    [[nodiscard]] MLOperand initialHiddenState() const;
-    void initialHiddenState(const MLOperand& value);
-    [[nodiscard]] MLOperand initialCellState() const;
-    void initialCellState(const MLOperand& value);
-    [[nodiscard]] bool returnSequence() const;
-    void returnSequence(bool value);
-    [[nodiscard]] MLRecurrentNetworkDirection direction() const;
-    void direction(const MLRecurrentNetworkDirection& value);
-    [[nodiscard]] MLLstmWeightLayout layout() const;
-    void layout(const MLLstmWeightLayout& value);
-    [[nodiscard]] jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
-};
-
-class MLLstmCellOptions : public emlite::Val {
-  explicit MLLstmCellOptions(Handle h) noexcept;
-public:
-    static MLLstmCellOptions take_ownership(Handle h) noexcept;
-    explicit MLLstmCellOptions(const emlite::Val &val) noexcept;
-    MLLstmCellOptions() noexcept;
-    [[nodiscard]] MLLstmCellOptions clone() const noexcept;
-    [[nodiscard]] MLOperand bias() const;
-    void bias(const MLOperand& value);
-    [[nodiscard]] MLOperand recurrentBias() const;
-    void recurrentBias(const MLOperand& value);
-    [[nodiscard]] MLOperand peepholeWeight() const;
-    void peepholeWeight(const MLOperand& value);
-    [[nodiscard]] MLLstmWeightLayout layout() const;
-    void layout(const MLLstmWeightLayout& value);
-    [[nodiscard]] jsbind::TypedArray<MLRecurrentNetworkActivation> activations() const;
-    void activations(const jsbind::TypedArray<MLRecurrentNetworkActivation>& value);
-};
-
-class MLPadOptions : public emlite::Val {
-  explicit MLPadOptions(Handle h) noexcept;
-public:
-    static MLPadOptions take_ownership(Handle h) noexcept;
-    explicit MLPadOptions(const emlite::Val &val) noexcept;
-    MLPadOptions() noexcept;
-    [[nodiscard]] MLPadOptions clone() const noexcept;
-    [[nodiscard]] MLPaddingMode mode() const;
-    void mode(const MLPaddingMode& value);
-    [[nodiscard]] jsbind::Any value() const;
-    void value(const jsbind::Any& value);
-};
-
-class MLPool2dOptions : public emlite::Val {
-  explicit MLPool2dOptions(Handle h) noexcept;
-public:
-    static MLPool2dOptions take_ownership(Handle h) noexcept;
-    explicit MLPool2dOptions(const emlite::Val &val) noexcept;
-    MLPool2dOptions() noexcept;
-    [[nodiscard]] MLPool2dOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<unsigned long> windowDimensions() const;
-    void windowDimensions(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> padding() const;
-    void padding(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> strides() const;
-    void strides(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> dilations() const;
-    void dilations(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] MLInputOperandLayout layout() const;
-    void layout(const MLInputOperandLayout& value);
-    [[nodiscard]] MLRoundingType roundingType() const;
-    void roundingType(const MLRoundingType& value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> outputSizes() const;
-    void outputSizes(jsbind::TypedArray<unsigned long> value);
-};
-
-class MLReduceOptions : public emlite::Val {
-  explicit MLReduceOptions(Handle h) noexcept;
-public:
-    static MLReduceOptions take_ownership(Handle h) noexcept;
-    explicit MLReduceOptions(const emlite::Val &val) noexcept;
-    MLReduceOptions() noexcept;
-    [[nodiscard]] MLReduceOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<unsigned long> axes() const;
-    void axes(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] bool keepDimensions() const;
-    void keepDimensions(bool value);
-};
-
-class MLResample2dOptions : public emlite::Val {
-  explicit MLResample2dOptions(Handle h) noexcept;
-public:
-    static MLResample2dOptions take_ownership(Handle h) noexcept;
-    explicit MLResample2dOptions(const emlite::Val &val) noexcept;
-    MLResample2dOptions() noexcept;
-    [[nodiscard]] MLResample2dOptions clone() const noexcept;
-    [[nodiscard]] MLInterpolationMode mode() const;
-    void mode(const MLInterpolationMode& value);
-    [[nodiscard]] jsbind::TypedArray<float> scales() const;
-    void scales(jsbind::TypedArray<float> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> sizes() const;
-    void sizes(jsbind::TypedArray<unsigned long> value);
-    [[nodiscard]] jsbind::TypedArray<unsigned long> axes() const;
-    void axes(jsbind::TypedArray<unsigned long> value);
-};
-
-class MLReverseOptions : public emlite::Val {
-  explicit MLReverseOptions(Handle h) noexcept;
-public:
-    static MLReverseOptions take_ownership(Handle h) noexcept;
-    explicit MLReverseOptions(const emlite::Val &val) noexcept;
-    MLReverseOptions() noexcept;
-    [[nodiscard]] MLReverseOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<unsigned long> axes() const;
-    void axes(jsbind::TypedArray<unsigned long> value);
-};
-
-class MLScatterOptions : public emlite::Val {
-  explicit MLScatterOptions(Handle h) noexcept;
-public:
-    static MLScatterOptions take_ownership(Handle h) noexcept;
-    explicit MLScatterOptions(const emlite::Val &val) noexcept;
-    MLScatterOptions() noexcept;
-    [[nodiscard]] MLScatterOptions clone() const noexcept;
-    [[nodiscard]] unsigned long axis() const;
-    void axis(unsigned long value);
-};
-
-class MLSliceOptions : public emlite::Val {
-  explicit MLSliceOptions(Handle h) noexcept;
-public:
-    static MLSliceOptions take_ownership(Handle h) noexcept;
-    explicit MLSliceOptions(const emlite::Val &val) noexcept;
-    MLSliceOptions() noexcept;
-    [[nodiscard]] MLSliceOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<unsigned long> strides() const;
-    void strides(jsbind::TypedArray<unsigned long> value);
-};
-
-class MLSplitOptions : public emlite::Val {
-  explicit MLSplitOptions(Handle h) noexcept;
-public:
-    static MLSplitOptions take_ownership(Handle h) noexcept;
-    explicit MLSplitOptions(const emlite::Val &val) noexcept;
-    MLSplitOptions() noexcept;
-    [[nodiscard]] MLSplitOptions clone() const noexcept;
-    [[nodiscard]] unsigned long axis() const;
-    void axis(unsigned long value);
-};
-
-class MLTransposeOptions : public emlite::Val {
-  explicit MLTransposeOptions(Handle h) noexcept;
-public:
-    static MLTransposeOptions take_ownership(Handle h) noexcept;
-    explicit MLTransposeOptions(const emlite::Val &val) noexcept;
-    MLTransposeOptions() noexcept;
-    [[nodiscard]] MLTransposeOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<unsigned long> permutation() const;
-    void permutation(jsbind::TypedArray<unsigned long> value);
-};
-
-class MLTriangularOptions : public emlite::Val {
-  explicit MLTriangularOptions(Handle h) noexcept;
-public:
-    static MLTriangularOptions take_ownership(Handle h) noexcept;
-    explicit MLTriangularOptions(const emlite::Val &val) noexcept;
-    MLTriangularOptions() noexcept;
-    [[nodiscard]] MLTriangularOptions clone() const noexcept;
-    [[nodiscard]] bool upper() const;
-    void upper(bool value);
-    [[nodiscard]] long diagonal() const;
-    void diagonal(long value);
-};
-
-/// The MLGraphBuilder class.
+/// Interface MLGraphBuilder
 /// [`MLGraphBuilder`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder)
 class MLGraphBuilder : public emlite::Val {
     explicit MLGraphBuilder(Handle h) noexcept;
-
 public:
     explicit MLGraphBuilder(const emlite::Val &val) noexcept;
     static MLGraphBuilder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MLGraphBuilder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MLGraphBuilder(..)` constructor, creating a new MLGraphBuilder instance
@@ -1068,3 +616,4 @@ public:
     MLOperand where(const MLOperand& condition, const MLOperand& trueValue, const MLOperand& falseValue, const MLOperatorOptions& options);
 };
 
+} // namespace webbind

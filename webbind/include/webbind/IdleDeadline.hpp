@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The IdleDeadline class.
+/// Interface IdleDeadline
 /// [`IdleDeadline`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline)
 class IdleDeadline : public emlite::Val {
     explicit IdleDeadline(Handle h) noexcept;
-
 public:
     explicit IdleDeadline(const emlite::Val &val) noexcept;
     static IdleDeadline take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IdleDeadline clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The timeRemaining method.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] bool didTimeout() const;
 };
 
+} // namespace webbind

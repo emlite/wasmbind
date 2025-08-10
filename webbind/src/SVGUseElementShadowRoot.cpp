@@ -1,5 +1,6 @@
-#include <webbind/SVGUseElementShadowRoot.hpp>
+#include "webbind/SVGUseElementShadowRoot.hpp"
 
+namespace webbind {
 
 SVGUseElementShadowRoot SVGUseElementShadowRoot::take_ownership(Handle h) noexcept {
         return SVGUseElementShadowRoot(h);
@@ -10,3 +11,4 @@ SVGUseElementShadowRoot::SVGUseElementShadowRoot(Handle h) noexcept : ShadowRoot
 SVGUseElementShadowRoot::SVGUseElementShadowRoot(const emlite::Val &val) noexcept: ShadowRoot(val) {}
 
 
+} // namespace webbind

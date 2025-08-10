@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "MessagePort.hpp"
+#include "enums.hpp"
+#include "StructuredSerializeOptions.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The Client class.
+/// Interface Client
 /// [`Client`](https://developer.mozilla.org/en-US/docs/Web/API/Client)
 class Client : public emlite::Val {
     explicit Client(Handle h) noexcept;
-
 public:
     explicit Client(const emlite::Val &val) noexcept;
     static Client take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Client clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `url` attribute.
@@ -40,3 +40,4 @@ public:
     [[nodiscard]] ClientLifecycleState lifecycleState() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/HTMLDetailsElement.hpp>
+#include "webbind/HTMLDetailsElement.hpp"
 
+namespace webbind {
 
 HTMLDetailsElement HTMLDetailsElement::take_ownership(Handle h) noexcept {
         return HTMLDetailsElement(h);
@@ -8,7 +9,6 @@ HTMLDetailsElement HTMLDetailsElement::clone() const noexcept { return *this; }
 emlite::Val HTMLDetailsElement::instance() noexcept { return emlite::Val::global("HTMLDetailsElement"); }
 HTMLDetailsElement::HTMLDetailsElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLDetailsElement::HTMLDetailsElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLDetailsElement::HTMLDetailsElement() : HTMLElement(emlite::Val::global("HTMLDetailsElement").new_()) {}
 
@@ -28,3 +28,5 @@ void HTMLDetailsElement::open(bool value) {
     HTMLElement::set("open", value);
 }
 
+
+} // namespace webbind

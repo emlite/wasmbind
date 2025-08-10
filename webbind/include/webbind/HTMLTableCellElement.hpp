@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLTableCellElement class.
+/// Interface HTMLTableCellElement
 /// [`HTMLTableCellElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement)
 class HTMLTableCellElement : public HTMLElement {
     explicit HTMLTableCellElement(Handle h) noexcept;
-
 public:
     explicit HTMLTableCellElement(const emlite::Val &val) noexcept;
     static HTMLTableCellElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTableCellElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableCellElement(..)` constructor, creating a new HTMLTableCellElement instance
@@ -108,3 +107,4 @@ public:
     void bgColor(const jsbind::String& value);
 };
 
+} // namespace webbind

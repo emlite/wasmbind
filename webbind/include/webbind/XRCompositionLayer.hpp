@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "XRLayer.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The XRCompositionLayer class.
+/// Interface XRCompositionLayer
 /// [`XRCompositionLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRCompositionLayer)
 class XRCompositionLayer : public XRLayer {
     explicit XRCompositionLayer(Handle h) noexcept;
-
 public:
     explicit XRCompositionLayer(const emlite::Val &val) noexcept;
     static XRCompositionLayer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRCompositionLayer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `layout` attribute.
@@ -55,3 +55,4 @@ public:
     jsbind::Undefined destroy();
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/SVGDiscardElement.hpp>
+#include "webbind/SVGDiscardElement.hpp"
 
+namespace webbind {
 
 SVGDiscardElement SVGDiscardElement::take_ownership(Handle h) noexcept {
         return SVGDiscardElement(h);
@@ -10,3 +11,4 @@ SVGDiscardElement::SVGDiscardElement(Handle h) noexcept : SVGAnimationElement(em
 SVGDiscardElement::SVGDiscardElement(const emlite::Val &val) noexcept: SVGAnimationElement(val) {}
 
 
+} // namespace webbind

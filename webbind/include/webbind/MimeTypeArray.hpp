@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class MimeType;
 
-
-/// The MimeTypeArray class.
+/// Interface MimeTypeArray
 /// [`MimeTypeArray`](https://developer.mozilla.org/en-US/docs/Web/API/MimeTypeArray)
 class MimeTypeArray : public emlite::Val {
     explicit MimeTypeArray(Handle h) noexcept;
-
 public:
     explicit MimeTypeArray(const emlite::Val &val) noexcept;
     static MimeTypeArray take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MimeTypeArray clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -29,3 +28,4 @@ public:
     MimeType namedItem(const jsbind::String& name);
 };
 
+} // namespace webbind

@@ -2,58 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SharedStorageWorklet.hpp"
 #include "enums.hpp"
+#include "SharedStorageSetMethodOptions.hpp"
+#include "SharedStorageModifierMethodOptions.hpp"
+#include "SharedStorageUrlWithMetadata.hpp"
+#include "SharedStorageRunOperationMethodOptions.hpp"
+#include "SharedStorageWorkletOptions.hpp"
 
-class SharedStorageSetMethodOptions;
-class SharedStorageModifierMethodOptions;
+namespace webbind {
+
 class SharedStorageModifierMethod;
 class SharedStorageWorklet;
-class SharedStorageWorkletOptions;
 
-
-class SharedStorageSetMethodOptions : public emlite::Val {
-  explicit SharedStorageSetMethodOptions(Handle h) noexcept;
-public:
-    static SharedStorageSetMethodOptions take_ownership(Handle h) noexcept;
-    explicit SharedStorageSetMethodOptions(const emlite::Val &val) noexcept;
-    SharedStorageSetMethodOptions() noexcept;
-    [[nodiscard]] SharedStorageSetMethodOptions clone() const noexcept;
-    [[nodiscard]] bool ignoreIfPresent() const;
-    void ignoreIfPresent(bool value);
-};
-
-class SharedStorageModifierMethodOptions : public emlite::Val {
-  explicit SharedStorageModifierMethodOptions(Handle h) noexcept;
-public:
-    static SharedStorageModifierMethodOptions take_ownership(Handle h) noexcept;
-    explicit SharedStorageModifierMethodOptions(const emlite::Val &val) noexcept;
-    SharedStorageModifierMethodOptions() noexcept;
-    [[nodiscard]] SharedStorageModifierMethodOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String withLock() const;
-    void withLock(const jsbind::String& value);
-};
-
-class SharedStorageWorkletOptions : public emlite::Val {
-  explicit SharedStorageWorkletOptions(Handle h) noexcept;
-public:
-    static SharedStorageWorkletOptions take_ownership(Handle h) noexcept;
-    explicit SharedStorageWorkletOptions(const emlite::Val &val) noexcept;
-    SharedStorageWorkletOptions() noexcept;
-    [[nodiscard]] SharedStorageWorkletOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String dataOrigin() const;
-    void dataOrigin(const jsbind::String& value);
-};
-
-/// The SharedStorage class.
+/// Interface SharedStorage
 /// [`SharedStorage`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorage)
 class SharedStorage : public emlite::Val {
     explicit SharedStorage(Handle h) noexcept;
-
 public:
     explicit SharedStorage(const emlite::Val &val) noexcept;
     static SharedStorage take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SharedStorage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
@@ -118,3 +85,4 @@ public:
     jsbind::Promise<double> remainingBudget();
 };
 
+} // namespace webbind

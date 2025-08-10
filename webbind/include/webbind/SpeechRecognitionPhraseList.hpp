@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SpeechRecognitionPhrase;
 
-
-/// The SpeechRecognitionPhraseList class.
+/// Interface SpeechRecognitionPhraseList
 /// [`SpeechRecognitionPhraseList`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionPhraseList)
 class SpeechRecognitionPhraseList : public emlite::Val {
     explicit SpeechRecognitionPhraseList(Handle h) noexcept;
-
 public:
     explicit SpeechRecognitionPhraseList(const emlite::Val &val) noexcept;
     static SpeechRecognitionPhraseList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SpeechRecognitionPhraseList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionPhraseList(..)` constructor, creating a new SpeechRecognitionPhraseList instance
@@ -34,3 +33,4 @@ public:
     jsbind::Undefined removeItem(unsigned long index);
 };
 
+} // namespace webbind

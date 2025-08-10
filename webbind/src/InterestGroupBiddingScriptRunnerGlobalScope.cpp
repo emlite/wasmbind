@@ -1,5 +1,6 @@
-#include <webbind/InterestGroupBiddingScriptRunnerGlobalScope.hpp>
+#include "webbind/InterestGroupBiddingScriptRunnerGlobalScope.hpp"
 
+namespace webbind {
 
 InterestGroupBiddingScriptRunnerGlobalScope InterestGroupBiddingScriptRunnerGlobalScope::take_ownership(Handle h) noexcept {
         return InterestGroupBiddingScriptRunnerGlobalScope(h);
@@ -8,7 +9,6 @@ InterestGroupBiddingScriptRunnerGlobalScope InterestGroupBiddingScriptRunnerGlob
 emlite::Val InterestGroupBiddingScriptRunnerGlobalScope::instance() noexcept { return emlite::Val::global("InterestGroupBiddingScriptRunnerGlobalScope"); }
 InterestGroupBiddingScriptRunnerGlobalScope::InterestGroupBiddingScriptRunnerGlobalScope(Handle h) noexcept : InterestGroupBiddingAndScoringScriptRunnerGlobalScope(emlite::Val::take_ownership(h)) {}
 InterestGroupBiddingScriptRunnerGlobalScope::InterestGroupBiddingScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupBiddingAndScoringScriptRunnerGlobalScope(val) {}
-
 
 bool InterestGroupBiddingScriptRunnerGlobalScope::setBid() {
     return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setBid").as<bool>();
@@ -30,3 +30,5 @@ jsbind::Undefined InterestGroupBiddingScriptRunnerGlobalScope::setPrioritySignal
     return InterestGroupBiddingAndScoringScriptRunnerGlobalScope::call("setPrioritySignalsOverride", key, priority).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

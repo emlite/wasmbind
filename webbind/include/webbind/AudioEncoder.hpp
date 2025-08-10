@@ -2,59 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
+#include "AudioEncoderInit.hpp"
+#include "AudioEncoderConfig.hpp"
+#include "AudioEncoderSupport.hpp"
 #include "enums.hpp"
 
-class AudioEncoderConfig;
+namespace webbind {
+
 class AudioData;
-class AudioEncoderSupport;
 
-
-class AudioEncoderConfig : public emlite::Val {
-  explicit AudioEncoderConfig(Handle h) noexcept;
-public:
-    static AudioEncoderConfig take_ownership(Handle h) noexcept;
-    explicit AudioEncoderConfig(const emlite::Val &val) noexcept;
-    AudioEncoderConfig() noexcept;
-    [[nodiscard]] AudioEncoderConfig clone() const noexcept;
-    [[nodiscard]] jsbind::String codec() const;
-    void codec(const jsbind::String& value);
-    [[nodiscard]] unsigned long sampleRate() const;
-    void sampleRate(unsigned long value);
-    [[nodiscard]] unsigned long numberOfChannels() const;
-    void numberOfChannels(unsigned long value);
-    [[nodiscard]] long long bitrate() const;
-    void bitrate(long long value);
-    [[nodiscard]] BitrateMode bitrateMode() const;
-    void bitrateMode(const BitrateMode& value);
-};
-
-class AudioEncoderSupport : public emlite::Val {
-  explicit AudioEncoderSupport(Handle h) noexcept;
-public:
-    static AudioEncoderSupport take_ownership(Handle h) noexcept;
-    explicit AudioEncoderSupport(const emlite::Val &val) noexcept;
-    AudioEncoderSupport() noexcept;
-    [[nodiscard]] AudioEncoderSupport clone() const noexcept;
-    [[nodiscard]] bool supported() const;
-    void supported(bool value);
-    [[nodiscard]] AudioEncoderConfig config() const;
-    void config(const AudioEncoderConfig& value);
-};
-
-/// The AudioEncoder class.
+/// Interface AudioEncoder
 /// [`AudioEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder)
 class AudioEncoder : public EventTarget {
     explicit AudioEncoder(Handle h) noexcept;
-
 public:
     explicit AudioEncoder(const emlite::Val &val) noexcept;
     static AudioEncoder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioEncoder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioEncoder(..)` constructor, creating a new AudioEncoder instance
-    AudioEncoder(const jsbind::Any& init);
+    AudioEncoder(const AudioEncoderInit& init);
     /// Getter of the `state` attribute.
     /// [`AudioEncoder.state`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/state)
     [[nodiscard]] CodecState state() const;
@@ -87,3 +56,4 @@ public:
     static jsbind::Promise<AudioEncoderSupport> isConfigSupported(const AudioEncoderConfig& config);
 };
 
+} // namespace webbind

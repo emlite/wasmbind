@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSColorValue.hpp"
 #include "enums.hpp"
+#include "CSSColorValue.hpp"
+
+namespace webbind {
 
 class CSSNumericValue;
 
-
-/// The CSSHWB class.
+/// Interface CSSHWB
 /// [`CSSHWB`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHWB)
 class CSSHWB : public CSSColorValue {
     explicit CSSHWB(Handle h) noexcept;
-
 public:
     explicit CSSHWB(const emlite::Val &val) noexcept;
     static CSSHWB take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSHWB clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSHWB(..)` constructor, creating a new CSSHWB instance
@@ -49,3 +48,4 @@ public:
     void alpha(const jsbind::Any& value);
 };
 
+} // namespace webbind

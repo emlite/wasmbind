@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class XRPose;
 class XRSpace;
 class XRAnchor;
 
-
-/// The XRHitTestResult class.
+/// Interface XRHitTestResult
 /// [`XRHitTestResult`](https://developer.mozilla.org/en-US/docs/Web/API/XRHitTestResult)
 class XRHitTestResult : public emlite::Val {
     explicit XRHitTestResult(Handle h) noexcept;
-
 public:
     explicit XRHitTestResult(const emlite::Val &val) noexcept;
     static XRHitTestResult take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRHitTestResult clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getPose method.
@@ -28,3 +27,4 @@ public:
     jsbind::Promise<XRAnchor> createAnchor();
 };
 
+} // namespace webbind

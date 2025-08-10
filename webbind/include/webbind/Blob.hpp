@@ -3,20 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "BlobPropertyBag.hpp"
+
+namespace webbind {
 
 class Blob;
 class ReadableStream;
 
-
-/// The Blob class.
+/// Interface Blob
 /// [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
 class Blob : public emlite::Val {
     explicit Blob(Handle h) noexcept;
-
 public:
     explicit Blob(const emlite::Val &val) noexcept;
     static Blob take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Blob clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Blob(..)` constructor, creating a new Blob instance
@@ -24,7 +24,7 @@ public:
     /// The `new Blob(..)` constructor, creating a new Blob instance
     Blob(const jsbind::TypedArray<jsbind::Any>& blobParts);
     /// The `new Blob(..)` constructor, creating a new Blob instance
-    Blob(const jsbind::TypedArray<jsbind::Any>& blobParts, const jsbind::Any& options);
+    Blob(const jsbind::TypedArray<jsbind::Any>& blobParts, const BlobPropertyBag& options);
     /// Getter of the `size` attribute.
     /// [`Blob.size`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/size)
     [[nodiscard]] long long size() const;
@@ -57,3 +57,4 @@ public:
     jsbind::Promise<jsbind::Uint8Array> bytes();
 };
 
+} // namespace webbind

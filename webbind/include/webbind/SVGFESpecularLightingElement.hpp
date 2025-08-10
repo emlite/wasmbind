@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedNumber;
 class SVGAnimatedLength;
 
-
-/// The SVGFESpecularLightingElement class.
+/// Interface SVGFESpecularLightingElement
 /// [`SVGFESpecularLightingElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFESpecularLightingElement)
 class SVGFESpecularLightingElement : public SVGElement {
     explicit SVGFESpecularLightingElement(Handle h) noexcept;
-
 public:
     explicit SVGFESpecularLightingElement(const emlite::Val &val) noexcept;
     static SVGFESpecularLightingElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFESpecularLightingElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -56,3 +55,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

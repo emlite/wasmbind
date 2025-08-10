@@ -1,6 +1,7 @@
-#include <webbind/CSSPageRule.hpp>
-#include <webbind/CSSPageDescriptors.hpp>
+#include "webbind/CSSPageRule.hpp"
+#include "webbind/CSSPageDescriptors.hpp"
 
+namespace webbind {
 
 CSSPageRule CSSPageRule::take_ownership(Handle h) noexcept {
         return CSSPageRule(h);
@@ -9,7 +10,6 @@ CSSPageRule CSSPageRule::clone() const noexcept { return *this; }
 emlite::Val CSSPageRule::instance() noexcept { return emlite::Val::global("CSSPageRule"); }
 CSSPageRule::CSSPageRule(Handle h) noexcept : CSSGroupingRule(emlite::Val::take_ownership(h)) {}
 CSSPageRule::CSSPageRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
-
 
 jsbind::String CSSPageRule::selectorText() const {
     return CSSGroupingRule::get("selectorText").as<jsbind::String>();
@@ -23,3 +23,5 @@ CSSPageDescriptors CSSPageRule::style() const {
     return CSSGroupingRule::get("style").as<CSSPageDescriptors>();
 }
 
+
+} // namespace webbind

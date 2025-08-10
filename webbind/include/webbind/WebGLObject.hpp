@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WebGLObject class.
+/// Interface WebGLObject
 /// [`WebGLObject`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLObject)
 class WebGLObject : public emlite::Val {
     explicit WebGLObject(Handle h) noexcept;
-
 public:
     explicit WebGLObject(const emlite::Val &val) noexcept;
     static WebGLObject take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebGLObject clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
@@ -24,3 +23,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

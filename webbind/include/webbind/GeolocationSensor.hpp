@@ -2,65 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Sensor.hpp"
 #include "enums.hpp"
+#include "Sensor.hpp"
+#include "GeolocationSensorOptions.hpp"
+#include "GeolocationSensorReading.hpp"
+#include "ReadOptions.hpp"
 
-class GeolocationSensorReading;
-class ReadOptions;
-class AbortSignal;
+namespace webbind {
 
-
-class GeolocationSensorReading : public emlite::Val {
-  explicit GeolocationSensorReading(Handle h) noexcept;
-public:
-    static GeolocationSensorReading take_ownership(Handle h) noexcept;
-    explicit GeolocationSensorReading(const emlite::Val &val) noexcept;
-    GeolocationSensorReading() noexcept;
-    [[nodiscard]] GeolocationSensorReading clone() const noexcept;
-    [[nodiscard]] jsbind::Any timestamp() const;
-    void timestamp(const jsbind::Any& value);
-    [[nodiscard]] double latitude() const;
-    void latitude(double value);
-    [[nodiscard]] double longitude() const;
-    void longitude(double value);
-    [[nodiscard]] double altitude() const;
-    void altitude(double value);
-    [[nodiscard]] double accuracy() const;
-    void accuracy(double value);
-    [[nodiscard]] double altitudeAccuracy() const;
-    void altitudeAccuracy(double value);
-    [[nodiscard]] double heading() const;
-    void heading(double value);
-    [[nodiscard]] double speed() const;
-    void speed(double value);
-};
-
-class ReadOptions : public emlite::Val {
-  explicit ReadOptions(Handle h) noexcept;
-public:
-    static ReadOptions take_ownership(Handle h) noexcept;
-    explicit ReadOptions(const emlite::Val &val) noexcept;
-    ReadOptions() noexcept;
-    [[nodiscard]] ReadOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-/// The GeolocationSensor class.
+/// Interface GeolocationSensor
 /// [`GeolocationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationSensor)
 class GeolocationSensor : public Sensor {
     explicit GeolocationSensor(Handle h) noexcept;
-
 public:
     explicit GeolocationSensor(const emlite::Val &val) noexcept;
     static GeolocationSensor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GeolocationSensor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GeolocationSensor(..)` constructor, creating a new GeolocationSensor instance
     GeolocationSensor();
     /// The `new GeolocationSensor(..)` constructor, creating a new GeolocationSensor instance
-    GeolocationSensor(const jsbind::Any& options);
+    GeolocationSensor(const GeolocationSensorOptions& options);
     /// The read method.
     /// [`GeolocationSensor.read`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationSensor/read)
     static jsbind::Promise<GeolocationSensorReading> read();
@@ -90,3 +52,4 @@ public:
     [[nodiscard]] double speed() const;
 };
 
+} // namespace webbind

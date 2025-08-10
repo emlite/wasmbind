@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "BaseAudioContext.hpp"
 #include "enums.hpp"
+#include "BaseAudioContext.hpp"
+
+namespace webbind {
 
 class AudioBuffer;
 
-
-/// The OfflineAudioContext class.
+/// Interface OfflineAudioContext
 /// [`OfflineAudioContext`](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext)
 class OfflineAudioContext : public BaseAudioContext {
     explicit OfflineAudioContext(Handle h) noexcept;
-
 public:
     explicit OfflineAudioContext(const emlite::Val &val) noexcept;
     static OfflineAudioContext take_ownership(Handle h) noexcept;
-
     [[nodiscard]] OfflineAudioContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OfflineAudioContext(..)` constructor, creating a new OfflineAudioContext instance
@@ -41,3 +40,4 @@ public:
     void oncomplete(const jsbind::Any& value);
 };
 
+} // namespace webbind

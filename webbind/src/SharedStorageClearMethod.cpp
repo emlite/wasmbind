@@ -1,6 +1,7 @@
-#include <webbind/SharedStorageClearMethod.hpp>
-#include <webbind/SharedStorage.hpp>
+#include "webbind/SharedStorageClearMethod.hpp"
+#include "webbind/SharedStorageModifierMethodOptions.hpp"
 
+namespace webbind {
 
 SharedStorageClearMethod SharedStorageClearMethod::take_ownership(Handle h) noexcept {
         return SharedStorageClearMethod(h);
@@ -10,8 +11,9 @@ emlite::Val SharedStorageClearMethod::instance() noexcept { return emlite::Val::
 SharedStorageClearMethod::SharedStorageClearMethod(Handle h) noexcept : SharedStorageModifierMethod(emlite::Val::take_ownership(h)) {}
 SharedStorageClearMethod::SharedStorageClearMethod(const emlite::Val &val) noexcept: SharedStorageModifierMethod(val) {}
 
-
 SharedStorageClearMethod::SharedStorageClearMethod() : SharedStorageModifierMethod(emlite::Val::global("SharedStorageClearMethod").new_()) {}
 
 SharedStorageClearMethod::SharedStorageClearMethod(const SharedStorageModifierMethodOptions& options) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageClearMethod").new_(options)) {}
 
+
+} // namespace webbind

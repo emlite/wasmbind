@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSMathValue.hpp"
 #include "enums.hpp"
+#include "CSSMathValue.hpp"
+
+namespace webbind {
 
 class CSSNumericArray;
 
-
-/// The CSSMathSum class.
+/// Interface CSSMathSum
 /// [`CSSMathSum`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathSum)
 class CSSMathSum : public CSSMathValue {
     explicit CSSMathSum(Handle h) noexcept;
-
 public:
     explicit CSSMathSum(const emlite::Val &val) noexcept;
     static CSSMathSum take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSMathSum clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathSum(..)` constructor, creating a new CSSMathSum instance
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] CSSNumericArray values() const;
 };
 
+} // namespace webbind

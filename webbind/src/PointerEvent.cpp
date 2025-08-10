@@ -1,5 +1,8 @@
-#include <webbind/PointerEvent.hpp>
+#include "webbind/PointerEvent.hpp"
+#include "webbind/PointerEventInit.hpp"
+#include "webbind/PointerEvent.hpp"
 
+namespace webbind {
 
 PointerEvent PointerEvent::take_ownership(Handle h) noexcept {
         return PointerEvent(h);
@@ -9,10 +12,9 @@ emlite::Val PointerEvent::instance() noexcept { return emlite::Val::global("Poin
 PointerEvent::PointerEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_ownership(h)) {}
 PointerEvent::PointerEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
-
 PointerEvent::PointerEvent(const jsbind::String& type) : MouseEvent(emlite::Val::global("PointerEvent").new_(type)) {}
 
-PointerEvent::PointerEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : MouseEvent(emlite::Val::global("PointerEvent").new_(type, eventInitDict)) {}
+PointerEvent::PointerEvent(const jsbind::String& type, const PointerEventInit& eventInitDict) : MouseEvent(emlite::Val::global("PointerEvent").new_(type, eventInitDict)) {}
 
 long PointerEvent::pointerId() const {
     return MouseEvent::get("pointerId").as<long>();
@@ -74,3 +76,5 @@ jsbind::TypedArray<PointerEvent> PointerEvent::getPredictedEvents() {
     return MouseEvent::call("getPredictedEvents").as<jsbind::TypedArray<PointerEvent>>();
 }
 
+
+} // namespace webbind

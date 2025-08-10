@@ -1,6 +1,8 @@
-#include <webbind/MessageEvent.hpp>
-#include <webbind/MessagePort.hpp>
+#include "webbind/MessageEvent.hpp"
+#include "webbind/MessageEventInit.hpp"
+#include "webbind/MessagePort.hpp"
 
+namespace webbind {
 
 MessageEvent MessageEvent::take_ownership(Handle h) noexcept {
         return MessageEvent(h);
@@ -10,10 +12,9 @@ emlite::Val MessageEvent::instance() noexcept { return emlite::Val::global("Mess
 MessageEvent::MessageEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 MessageEvent::MessageEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 MessageEvent::MessageEvent(const jsbind::String& type) : Event(emlite::Val::global("MessageEvent").new_(type)) {}
 
-MessageEvent::MessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MessageEvent").new_(type, eventInitDict)) {}
+MessageEvent::MessageEvent(const jsbind::String& type, const MessageEventInit& eventInitDict) : Event(emlite::Val::global("MessageEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any MessageEvent::data() const {
     return Event::get("data").as<jsbind::Any>();
@@ -31,8 +32,8 @@ jsbind::Any MessageEvent::source() const {
     return Event::get("source").as<jsbind::Any>();
 }
 
-jsbind::TypedArray<jsbind::Any> MessageEvent::ports() const {
-    return Event::get("ports").as<jsbind::TypedArray<jsbind::Any>>();
+jsbind::TypedArray<MessagePort> MessageEvent::ports() const {
+    return Event::get("ports").as<jsbind::TypedArray<MessagePort>>();
 }
 
 jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::String& type) {
@@ -63,7 +64,9 @@ jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::String& type, boo
     return Event::call("initMessageEvent", type, bubbles, cancelable, data, origin, lastEventId, source).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::String& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::String& origin, const jsbind::String& lastEventId, const jsbind::Any& source, const jsbind::TypedArray<jsbind::Any>& ports) {
+jsbind::Undefined MessageEvent::initMessageEvent(const jsbind::String& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::String& origin, const jsbind::String& lastEventId, const jsbind::Any& source, const jsbind::TypedArray<MessagePort>& ports) {
     return Event::call("initMessageEvent", type, bubbles, cancelable, data, origin, lastEventId, source, ports).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

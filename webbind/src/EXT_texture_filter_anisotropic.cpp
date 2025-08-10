@@ -1,5 +1,6 @@
-#include <webbind/EXT_texture_filter_anisotropic.hpp>
+#include "webbind/EXT_texture_filter_anisotropic.hpp"
 
+namespace webbind {
 
 EXT_texture_filter_anisotropic EXT_texture_filter_anisotropic::take_ownership(Handle h) noexcept {
         return EXT_texture_filter_anisotropic(h);
@@ -10,3 +11,4 @@ EXT_texture_filter_anisotropic::EXT_texture_filter_anisotropic(Handle h) noexcep
 EXT_texture_filter_anisotropic::EXT_texture_filter_anisotropic(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

@@ -1,6 +1,9 @@
-#include <webbind/Blob.hpp>
-#include <webbind/ReadableStream.hpp>
+#include "webbind/Blob.hpp"
+#include "webbind/BlobPropertyBag.hpp"
+#include "webbind/Blob.hpp"
+#include "webbind/ReadableStream.hpp"
 
+namespace webbind {
 
 Blob Blob::take_ownership(Handle h) noexcept {
         return Blob(h);
@@ -10,12 +13,11 @@ emlite::Val Blob::instance() noexcept { return emlite::Val::global("Blob"); }
 Blob::Blob(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Blob::Blob(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 Blob::Blob() : emlite::Val(emlite::Val::global("Blob").new_()) {}
 
 Blob::Blob(const jsbind::TypedArray<jsbind::Any>& blobParts) : emlite::Val(emlite::Val::global("Blob").new_(blobParts)) {}
 
-Blob::Blob(const jsbind::TypedArray<jsbind::Any>& blobParts, const jsbind::Any& options) : emlite::Val(emlite::Val::global("Blob").new_(blobParts, options)) {}
+Blob::Blob(const jsbind::TypedArray<jsbind::Any>& blobParts, const BlobPropertyBag& options) : emlite::Val(emlite::Val::global("Blob").new_(blobParts, options)) {}
 
 long long Blob::size() const {
     return emlite::Val::get("size").as<long long>();
@@ -57,3 +59,5 @@ jsbind::Promise<jsbind::Uint8Array> Blob::bytes() {
     return emlite::Val::call("bytes").as<jsbind::Promise<jsbind::Uint8Array>>();
 }
 
+
+} // namespace webbind

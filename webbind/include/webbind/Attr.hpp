@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Node.hpp"
 #include "enums.hpp"
+#include "Node.hpp"
+
+namespace webbind {
 
 class Element;
 
-
-/// The Attr class.
+/// Interface Attr
 /// [`Attr`](https://developer.mozilla.org/en-US/docs/Web/API/Attr)
 class Attr : public Node {
     explicit Attr(Handle h) noexcept;
-
 public:
     explicit Attr(const emlite::Val &val) noexcept;
     static Attr take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Attr clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `namespaceURI` attribute.
@@ -45,3 +44,4 @@ public:
     [[nodiscard]] bool specified() const;
 };
 
+} // namespace webbind

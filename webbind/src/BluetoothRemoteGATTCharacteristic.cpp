@@ -1,8 +1,10 @@
-#include <webbind/BluetoothRemoteGATTCharacteristic.hpp>
-#include <webbind/BluetoothRemoteGATTService.hpp>
-#include <webbind/BluetoothCharacteristicProperties.hpp>
-#include <webbind/BluetoothRemoteGATTDescriptor.hpp>
+#include "webbind/BluetoothRemoteGATTCharacteristic.hpp"
+#include "webbind/BluetoothRemoteGATTService.hpp"
+#include "webbind/BluetoothCharacteristicProperties.hpp"
+#include "webbind/BluetoothRemoteGATTDescriptor.hpp"
+#include "webbind/BluetoothRemoteGATTCharacteristic.hpp"
 
+namespace webbind {
 
 BluetoothRemoteGATTCharacteristic BluetoothRemoteGATTCharacteristic::take_ownership(Handle h) noexcept {
         return BluetoothRemoteGATTCharacteristic(h);
@@ -11,7 +13,6 @@ BluetoothRemoteGATTCharacteristic BluetoothRemoteGATTCharacteristic::clone() con
 emlite::Val BluetoothRemoteGATTCharacteristic::instance() noexcept { return emlite::Val::global("BluetoothRemoteGATTCharacteristic"); }
 BluetoothRemoteGATTCharacteristic::BluetoothRemoteGATTCharacteristic(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BluetoothRemoteGATTCharacteristic::BluetoothRemoteGATTCharacteristic(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 BluetoothRemoteGATTService BluetoothRemoteGATTCharacteristic::service() const {
     return EventTarget::get("service").as<BluetoothRemoteGATTService>();
@@ -73,3 +74,5 @@ void BluetoothRemoteGATTCharacteristic::oncharacteristicvaluechanged(const jsbin
     EventTarget::set("oncharacteristicvaluechanged", value);
 }
 
+
+} // namespace webbind

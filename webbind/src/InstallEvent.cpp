@@ -1,5 +1,7 @@
-#include <webbind/InstallEvent.hpp>
+#include "webbind/InstallEvent.hpp"
+#include "webbind/ExtendableEventInit.hpp"
 
+namespace webbind {
 
 InstallEvent InstallEvent::take_ownership(Handle h) noexcept {
         return InstallEvent(h);
@@ -9,12 +11,13 @@ emlite::Val InstallEvent::instance() noexcept { return emlite::Val::global("Inst
 InstallEvent::InstallEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
 InstallEvent::InstallEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
-
 InstallEvent::InstallEvent(const jsbind::String& type) : ExtendableEvent(emlite::Val::global("InstallEvent").new_(type)) {}
 
-InstallEvent::InstallEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : ExtendableEvent(emlite::Val::global("InstallEvent").new_(type, eventInitDict)) {}
+InstallEvent::InstallEvent(const jsbind::String& type, const ExtendableEventInit& eventInitDict) : ExtendableEvent(emlite::Val::global("InstallEvent").new_(type, eventInitDict)) {}
 
 jsbind::Promise<jsbind::Undefined> InstallEvent::addRoutes(const jsbind::Any& rules) {
     return ExtendableEvent::call("addRoutes", rules).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

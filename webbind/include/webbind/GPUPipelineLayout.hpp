@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUPipelineLayout class.
+/// Interface GPUPipelineLayout
 /// [`GPUPipelineLayout`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout)
 class GPUPipelineLayout : public emlite::Val {
     explicit GPUPipelineLayout(Handle h) noexcept;
-
 public:
     explicit GPUPipelineLayout(const emlite::Val &val) noexcept;
     static GPUPipelineLayout take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUPipelineLayout clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
@@ -24,3 +23,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

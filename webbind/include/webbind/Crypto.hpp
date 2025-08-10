@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SubtleCrypto;
 
-
-/// The Crypto class.
+/// Interface Crypto
 /// [`Crypto`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto)
 class Crypto : public emlite::Val {
     explicit Crypto(Handle h) noexcept;
-
 public:
     explicit Crypto(const emlite::Val &val) noexcept;
     static Crypto take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Crypto clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `subtle` attribute.
@@ -29,3 +28,4 @@ public:
     jsbind::String randomUUID();
 };
 
+} // namespace webbind

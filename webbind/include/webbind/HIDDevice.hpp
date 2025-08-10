@@ -2,44 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "HIDCollectionInfo.hpp"
 
-class HIDCollectionInfo;
+namespace webbind {
 
-
-class HIDCollectionInfo : public emlite::Val {
-  explicit HIDCollectionInfo(Handle h) noexcept;
-public:
-    static HIDCollectionInfo take_ownership(Handle h) noexcept;
-    explicit HIDCollectionInfo(const emlite::Val &val) noexcept;
-    HIDCollectionInfo() noexcept;
-    [[nodiscard]] HIDCollectionInfo clone() const noexcept;
-    [[nodiscard]] unsigned short usagePage() const;
-    void usagePage(unsigned short value);
-    [[nodiscard]] unsigned short usage() const;
-    void usage(unsigned short value);
-    [[nodiscard]] unsigned char type() const;
-    void type(unsigned char value);
-    [[nodiscard]] jsbind::TypedArray<HIDCollectionInfo> children() const;
-    void children(const jsbind::TypedArray<HIDCollectionInfo>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> inputReports() const;
-    void inputReports(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> outputReports() const;
-    void outputReports(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> featureReports() const;
-    void featureReports(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-/// The HIDDevice class.
+/// Interface HIDDevice
 /// [`HIDDevice`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice)
 class HIDDevice : public EventTarget {
     explicit HIDDevice(Handle h) noexcept;
-
 public:
     explicit HIDDevice(const emlite::Val &val) noexcept;
     static HIDDevice take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HIDDevice clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `oninputreport` attribute.
@@ -83,3 +58,4 @@ public:
     jsbind::Promise<jsbind::DataView> receiveFeatureReport(unsigned char reportId);
 };
 
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/MediaStream.hpp>
-#include <webbind/MediaStreamTrack.hpp>
+#include "webbind/MediaStream.hpp"
+#include "webbind/MediaStreamTrack.hpp"
+#include "webbind/MediaStream.hpp"
 
+namespace webbind {
 
 MediaStream MediaStream::take_ownership(Handle h) noexcept {
         return MediaStream(h);
@@ -9,7 +11,6 @@ MediaStream MediaStream::clone() const noexcept { return *this; }
 emlite::Val MediaStream::instance() noexcept { return emlite::Val::global("MediaStream"); }
 MediaStream::MediaStream(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaStream::MediaStream(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 MediaStream::MediaStream(const jsbind::TypedArray<MediaStreamTrack>& tracks) : EventTarget(emlite::Val::global("MediaStream").new_(tracks)) {}
 
@@ -65,3 +66,5 @@ void MediaStream::onremovetrack(const jsbind::Any& value) {
     EventTarget::set("onremovetrack", value);
 }
 
+
+} // namespace webbind

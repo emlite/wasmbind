@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "DOMException.hpp"
 #include "enums.hpp"
+#include "DOMException.hpp"
 
+namespace webbind {
 
-/// The OverconstrainedError class.
+/// Interface OverconstrainedError
 /// [`OverconstrainedError`](https://developer.mozilla.org/en-US/docs/Web/API/OverconstrainedError)
 class OverconstrainedError : public DOMException {
     explicit OverconstrainedError(Handle h) noexcept;
-
 public:
     explicit OverconstrainedError(const emlite::Val &val) noexcept;
     static OverconstrainedError take_ownership(Handle h) noexcept;
-
     [[nodiscard]] OverconstrainedError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OverconstrainedError(..)` constructor, creating a new OverconstrainedError instance
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] jsbind::String constraint() const;
 };
 
+} // namespace webbind

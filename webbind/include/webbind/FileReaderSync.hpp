@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Blob;
 
-
-/// The FileReaderSync class.
+/// Interface FileReaderSync
 /// [`FileReaderSync`](https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync)
 class FileReaderSync : public emlite::Val {
     explicit FileReaderSync(Handle h) noexcept;
-
 public:
     explicit FileReaderSync(const emlite::Val &val) noexcept;
     static FileReaderSync take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileReaderSync clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FileReaderSync(..)` constructor, creating a new FileReaderSync instance
@@ -37,3 +36,4 @@ public:
     jsbind::String readAsDataURL(const Blob& blob);
 };
 
+} // namespace webbind

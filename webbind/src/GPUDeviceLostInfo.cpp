@@ -1,5 +1,6 @@
-#include <webbind/GPUDeviceLostInfo.hpp>
+#include "webbind/GPUDeviceLostInfo.hpp"
 
+namespace webbind {
 
 GPUDeviceLostInfo GPUDeviceLostInfo::take_ownership(Handle h) noexcept {
         return GPUDeviceLostInfo(h);
@@ -9,7 +10,6 @@ emlite::Val GPUDeviceLostInfo::instance() noexcept { return emlite::Val::global(
 GPUDeviceLostInfo::GPUDeviceLostInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUDeviceLostInfo::GPUDeviceLostInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 GPUDeviceLostReason GPUDeviceLostInfo::reason() const {
     return emlite::Val::get("reason").as<GPUDeviceLostReason>();
 }
@@ -18,3 +18,5 @@ jsbind::String GPUDeviceLostInfo::message() const {
     return emlite::Val::get("message").as<jsbind::String>();
 }
 
+
+} // namespace webbind

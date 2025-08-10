@@ -3,23 +3,24 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "TouchInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class EventTarget;
 
-
-/// The Touch class.
+/// Interface Touch
 /// [`Touch`](https://developer.mozilla.org/en-US/docs/Web/API/Touch)
 class Touch : public emlite::Val {
     explicit Touch(Handle h) noexcept;
-
 public:
     explicit Touch(const emlite::Val &val) noexcept;
     static Touch take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Touch clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Touch(..)` constructor, creating a new Touch instance
-    Touch(const jsbind::Any& touchInitDict);
+    Touch(const TouchInit& touchInitDict);
     /// Getter of the `identifier` attribute.
     /// [`Touch.identifier`](https://developer.mozilla.org/en-US/docs/Web/API/Touch/identifier)
     [[nodiscard]] long identifier() const;
@@ -67,3 +68,4 @@ public:
     [[nodiscard]] TouchType touchType() const;
 };
 
+} // namespace webbind

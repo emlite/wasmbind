@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class FencedFrameConfig;
 class DOMTokenList;
 
-
-/// The HTMLFencedFrameElement class.
+/// Interface HTMLFencedFrameElement
 /// [`HTMLFencedFrameElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement)
 class HTMLFencedFrameElement : public HTMLElement {
     explicit HTMLFencedFrameElement(Handle h) noexcept;
-
 public:
     explicit HTMLFencedFrameElement(const emlite::Val &val) noexcept;
     static HTMLFencedFrameElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLFencedFrameElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFencedFrameElement(..)` constructor, creating a new HTMLFencedFrameElement instance
@@ -51,3 +50,4 @@ public:
     void allow(const jsbind::String& value);
 };
 
+} // namespace webbind

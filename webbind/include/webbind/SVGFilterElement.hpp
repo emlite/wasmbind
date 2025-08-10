@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedEnumeration;
 class SVGAnimatedLength;
 class SVGAnimatedString;
 
-
-/// The SVGFilterElement class.
+/// Interface SVGFilterElement
 /// [`SVGFilterElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement)
 class SVGFilterElement : public SVGElement {
     explicit SVGFilterElement(Handle h) noexcept;
-
 public:
     explicit SVGFilterElement(const emlite::Val &val) noexcept;
     static SVGFilterElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFilterElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `filterUnits` attribute.
@@ -44,3 +43,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

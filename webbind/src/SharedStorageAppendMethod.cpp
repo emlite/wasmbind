@@ -1,6 +1,7 @@
-#include <webbind/SharedStorageAppendMethod.hpp>
-#include <webbind/SharedStorage.hpp>
+#include "webbind/SharedStorageAppendMethod.hpp"
+#include "webbind/SharedStorageModifierMethodOptions.hpp"
 
+namespace webbind {
 
 SharedStorageAppendMethod SharedStorageAppendMethod::take_ownership(Handle h) noexcept {
         return SharedStorageAppendMethod(h);
@@ -10,8 +11,9 @@ emlite::Val SharedStorageAppendMethod::instance() noexcept { return emlite::Val:
 SharedStorageAppendMethod::SharedStorageAppendMethod(Handle h) noexcept : SharedStorageModifierMethod(emlite::Val::take_ownership(h)) {}
 SharedStorageAppendMethod::SharedStorageAppendMethod(const emlite::Val &val) noexcept: SharedStorageModifierMethod(val) {}
 
-
 SharedStorageAppendMethod::SharedStorageAppendMethod(const jsbind::String& key, const jsbind::String& value) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageAppendMethod").new_(key, value)) {}
 
 SharedStorageAppendMethod::SharedStorageAppendMethod(const jsbind::String& key, const jsbind::String& value, const SharedStorageModifierMethodOptions& options) : SharedStorageModifierMethod(emlite::Val::global("SharedStorageAppendMethod").new_(key, value, options)) {}
 
+
+} // namespace webbind

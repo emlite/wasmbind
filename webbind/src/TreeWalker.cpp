@@ -1,6 +1,7 @@
-#include <webbind/TreeWalker.hpp>
-#include <webbind/Node.hpp>
+#include "webbind/TreeWalker.hpp"
+#include "webbind/Node.hpp"
 
+namespace webbind {
 
 TreeWalker TreeWalker::take_ownership(Handle h) noexcept {
         return TreeWalker(h);
@@ -9,7 +10,6 @@ TreeWalker TreeWalker::clone() const noexcept { return *this; }
 emlite::Val TreeWalker::instance() noexcept { return emlite::Val::global("TreeWalker"); }
 TreeWalker::TreeWalker(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TreeWalker::TreeWalker(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 Node TreeWalker::root() const {
     return emlite::Val::get("root").as<Node>();
@@ -59,3 +59,5 @@ Node TreeWalker::nextNode() {
     return emlite::Val::call("nextNode").as<Node>();
 }
 
+
+} // namespace webbind

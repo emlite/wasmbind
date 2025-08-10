@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class TextTrack;
 
-
-/// The TextTrackList class.
+/// Interface TextTrackList
 /// [`TextTrackList`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackList)
 class TextTrackList : public EventTarget {
     explicit TextTrackList(Handle h) noexcept;
-
 public:
     explicit TextTrackList(const emlite::Val &val) noexcept;
     static TextTrackList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextTrackList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -45,3 +44,4 @@ public:
     void onremovetrack(const jsbind::Any& value);
 };
 
+} // namespace webbind

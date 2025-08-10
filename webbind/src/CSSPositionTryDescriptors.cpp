@@ -1,5 +1,6 @@
-#include <webbind/CSSPositionTryDescriptors.hpp>
+#include "webbind/CSSPositionTryDescriptors.hpp"
 
+namespace webbind {
 
 CSSPositionTryDescriptors CSSPositionTryDescriptors::take_ownership(Handle h) noexcept {
         return CSSPositionTryDescriptors(h);
@@ -8,7 +9,6 @@ CSSPositionTryDescriptors CSSPositionTryDescriptors::clone() const noexcept { re
 emlite::Val CSSPositionTryDescriptors::instance() noexcept { return emlite::Val::global("CSSPositionTryDescriptors"); }
 CSSPositionTryDescriptors::CSSPositionTryDescriptors(Handle h) noexcept : CSSStyleDeclaration(emlite::Val::take_ownership(h)) {}
 CSSPositionTryDescriptors::CSSPositionTryDescriptors(const emlite::Val &val) noexcept: CSSStyleDeclaration(val) {}
-
 
 jsbind::String CSSPositionTryDescriptors::margin() const {
     return CSSStyleDeclaration::get("margin").as<jsbind::String>();
@@ -570,3 +570,5 @@ void CSSPositionTryDescriptors::position_area(const jsbind::String& value) {
     CSSStyleDeclaration::set("position-area", value);
 }
 
+
+} // namespace webbind

@@ -1,7 +1,9 @@
-#include <webbind/InputEvent.hpp>
-#include <webbind/DataTransfer.hpp>
-#include <webbind/StaticRange.hpp>
+#include "webbind/InputEvent.hpp"
+#include "webbind/InputEventInit.hpp"
+#include "webbind/DataTransfer.hpp"
+#include "webbind/StaticRange.hpp"
 
+namespace webbind {
 
 InputEvent InputEvent::take_ownership(Handle h) noexcept {
         return InputEvent(h);
@@ -11,10 +13,9 @@ emlite::Val InputEvent::instance() noexcept { return emlite::Val::global("InputE
 InputEvent::InputEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
 InputEvent::InputEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
-
 InputEvent::InputEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("InputEvent").new_(type)) {}
 
-InputEvent::InputEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("InputEvent").new_(type, eventInitDict)) {}
+InputEvent::InputEvent(const jsbind::String& type, const InputEventInit& eventInitDict) : UIEvent(emlite::Val::global("InputEvent").new_(type, eventInitDict)) {}
 
 jsbind::String InputEvent::data() const {
     return UIEvent::get("data").as<jsbind::String>();
@@ -36,3 +37,5 @@ jsbind::TypedArray<StaticRange> InputEvent::getTargetRanges() {
     return UIEvent::call("getTargetRanges").as<jsbind::TypedArray<StaticRange>>();
 }
 
+
+} // namespace webbind

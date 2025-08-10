@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class MIDIInputMap;
 class MIDIOutputMap;
 
-
-/// The MIDIAccess class.
+/// Interface MIDIAccess
 /// [`MIDIAccess`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess)
 class MIDIAccess : public EventTarget {
     explicit MIDIAccess(Handle h) noexcept;
-
 public:
     explicit MIDIAccess(const emlite::Val &val) noexcept;
     static MIDIAccess take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MIDIAccess clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inputs` attribute.
@@ -37,3 +36,4 @@ public:
     [[nodiscard]] bool sysexEnabled() const;
 };
 
+} // namespace webbind

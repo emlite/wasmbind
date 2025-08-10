@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSColorValue.hpp"
 #include "enums.hpp"
+#include "CSSColorValue.hpp"
 
+namespace webbind {
 
-/// The CSSLab class.
+/// Interface CSSLab
 /// [`CSSLab`](https://developer.mozilla.org/en-US/docs/Web/API/CSSLab)
 class CSSLab : public CSSColorValue {
     explicit CSSLab(Handle h) noexcept;
-
 public:
     explicit CSSLab(const emlite::Val &val) noexcept;
     static CSSLab take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSLab clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSLab(..)` constructor, creating a new CSSLab instance
@@ -47,3 +46,4 @@ public:
     void alpha(const jsbind::Any& value);
 };
 
+} // namespace webbind

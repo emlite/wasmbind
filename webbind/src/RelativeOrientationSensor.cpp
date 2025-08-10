@@ -1,5 +1,7 @@
-#include <webbind/RelativeOrientationSensor.hpp>
+#include "webbind/RelativeOrientationSensor.hpp"
+#include "webbind/OrientationSensorOptions.hpp"
 
+namespace webbind {
 
 RelativeOrientationSensor RelativeOrientationSensor::take_ownership(Handle h) noexcept {
         return RelativeOrientationSensor(h);
@@ -9,8 +11,9 @@ emlite::Val RelativeOrientationSensor::instance() noexcept { return emlite::Val:
 RelativeOrientationSensor::RelativeOrientationSensor(Handle h) noexcept : OrientationSensor(emlite::Val::take_ownership(h)) {}
 RelativeOrientationSensor::RelativeOrientationSensor(const emlite::Val &val) noexcept: OrientationSensor(val) {}
 
-
 RelativeOrientationSensor::RelativeOrientationSensor() : OrientationSensor(emlite::Val::global("RelativeOrientationSensor").new_()) {}
 
-RelativeOrientationSensor::RelativeOrientationSensor(const jsbind::Any& sensorOptions) : OrientationSensor(emlite::Val::global("RelativeOrientationSensor").new_(sensorOptions)) {}
+RelativeOrientationSensor::RelativeOrientationSensor(const OrientationSensorOptions& sensorOptions) : OrientationSensor(emlite::Val::global("RelativeOrientationSensor").new_(sensorOptions)) {}
 
+
+} // namespace webbind

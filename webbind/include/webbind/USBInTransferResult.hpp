@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The USBInTransferResult class.
+/// Interface USBInTransferResult
 /// [`USBInTransferResult`](https://developer.mozilla.org/en-US/docs/Web/API/USBInTransferResult)
 class USBInTransferResult : public emlite::Val {
     explicit USBInTransferResult(Handle h) noexcept;
-
 public:
     explicit USBInTransferResult(const emlite::Val &val) noexcept;
     static USBInTransferResult take_ownership(Handle h) noexcept;
-
     [[nodiscard]] USBInTransferResult clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBInTransferResult(..)` constructor, creating a new USBInTransferResult instance
@@ -28,3 +28,4 @@ public:
     [[nodiscard]] USBTransferStatus status() const;
 };
 
+} // namespace webbind

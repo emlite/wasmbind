@@ -3,25 +3,25 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "MediaMetadataInit.hpp"
+
+namespace webbind {
 
 class ChapterInformation;
 
-
-/// The MediaMetadata class.
+/// Interface MediaMetadata
 /// [`MediaMetadata`](https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata)
 class MediaMetadata : public emlite::Val {
     explicit MediaMetadata(Handle h) noexcept;
-
 public:
     explicit MediaMetadata(const emlite::Val &val) noexcept;
     static MediaMetadata take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaMetadata clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaMetadata(..)` constructor, creating a new MediaMetadata instance
     MediaMetadata();
     /// The `new MediaMetadata(..)` constructor, creating a new MediaMetadata instance
-    MediaMetadata(const jsbind::Any& init);
+    MediaMetadata(const MediaMetadataInit& init);
     /// Getter of the `title` attribute.
     /// [`MediaMetadata.title`](https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/title)
     [[nodiscard]] jsbind::String title() const;
@@ -51,3 +51,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<ChapterInformation> chapterInfo() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/XRAnchorSet.hpp>
+#include "webbind/XRAnchorSet.hpp"
 
+namespace webbind {
 
 XRAnchorSet XRAnchorSet::take_ownership(Handle h) noexcept {
         return XRAnchorSet(h);
@@ -10,3 +11,4 @@ XRAnchorSet::XRAnchorSet(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 XRAnchorSet::XRAnchorSet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

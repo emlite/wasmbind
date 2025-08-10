@@ -1,265 +1,25 @@
-#include <webbind/RTCPeerConnection.hpp>
-#include <webbind/RTCSessionDescription.hpp>
-#include <webbind/RTCIceTransport.hpp>
-#include <webbind/RTCIdentityAssertion.hpp>
-#include <webbind/RTCCertificate.hpp>
-#include <webbind/RTCRtpSender.hpp>
-#include <webbind/RTCRtpReceiver.hpp>
-#include <webbind/RTCRtpTransceiver.hpp>
-#include <webbind/MediaStreamTrack.hpp>
-#include <webbind/MediaStream.hpp>
-#include <webbind/RTCSctpTransport.hpp>
-#include <webbind/RTCDataChannel.hpp>
-#include <webbind/RTCStatsReport.hpp>
+#include "webbind/RTCPeerConnection.hpp"
+#include "webbind/RTCConfiguration.hpp"
+#include "webbind/RTCOfferOptions.hpp"
+#include "webbind/RTCLocalSessionDescriptionInit.hpp"
+#include "webbind/RTCSessionDescription.hpp"
+#include "webbind/RTCSessionDescriptionInit.hpp"
+#include "webbind/RTCIceCandidateInit.hpp"
+#include "webbind/RTCIdentityProviderOptions.hpp"
+#include "webbind/RTCIdentityAssertion.hpp"
+#include "webbind/RTCCertificate.hpp"
+#include "webbind/RTCRtpSender.hpp"
+#include "webbind/RTCRtpReceiver.hpp"
+#include "webbind/RTCRtpTransceiver.hpp"
+#include "webbind/MediaStreamTrack.hpp"
+#include "webbind/MediaStream.hpp"
+#include "webbind/RTCRtpTransceiverInit.hpp"
+#include "webbind/RTCSctpTransport.hpp"
+#include "webbind/RTCDataChannel.hpp"
+#include "webbind/RTCDataChannelInit.hpp"
+#include "webbind/RTCStatsReport.hpp"
 
-
-RTCOfferOptions::RTCOfferOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCOfferOptions RTCOfferOptions::take_ownership(Handle h) noexcept {
-        return RTCOfferOptions(h);
-    }
-RTCOfferOptions::RTCOfferOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCOfferOptions::RTCOfferOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCOfferOptions RTCOfferOptions::clone() const noexcept { return *this; }
-
-bool RTCOfferOptions::offerToReceiveAudio() const {
-    return emlite::Val::get("offerToReceiveAudio").as<bool>();
-}
-
-void RTCOfferOptions::offerToReceiveAudio(bool value) {
-    emlite::Val::set("offerToReceiveAudio", value);
-}
-
-bool RTCOfferOptions::offerToReceiveVideo() const {
-    return emlite::Val::get("offerToReceiveVideo").as<bool>();
-}
-
-void RTCOfferOptions::offerToReceiveVideo(bool value) {
-    emlite::Val::set("offerToReceiveVideo", value);
-}
-
-RTCLocalSessionDescriptionInit::RTCLocalSessionDescriptionInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCLocalSessionDescriptionInit RTCLocalSessionDescriptionInit::take_ownership(Handle h) noexcept {
-        return RTCLocalSessionDescriptionInit(h);
-    }
-RTCLocalSessionDescriptionInit::RTCLocalSessionDescriptionInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCLocalSessionDescriptionInit::RTCLocalSessionDescriptionInit() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCLocalSessionDescriptionInit RTCLocalSessionDescriptionInit::clone() const noexcept { return *this; }
-
-RTCSdpType RTCLocalSessionDescriptionInit::type() const {
-    return emlite::Val::get("type").as<RTCSdpType>();
-}
-
-void RTCLocalSessionDescriptionInit::type(const RTCSdpType& value) {
-    emlite::Val::set("type", value);
-}
-
-jsbind::String RTCLocalSessionDescriptionInit::sdp() const {
-    return emlite::Val::get("sdp").as<jsbind::String>();
-}
-
-void RTCLocalSessionDescriptionInit::sdp(const jsbind::String& value) {
-    emlite::Val::set("sdp", value);
-}
-
-RTCSessionDescriptionInit::RTCSessionDescriptionInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCSessionDescriptionInit RTCSessionDescriptionInit::take_ownership(Handle h) noexcept {
-        return RTCSessionDescriptionInit(h);
-    }
-RTCSessionDescriptionInit::RTCSessionDescriptionInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCSessionDescriptionInit::RTCSessionDescriptionInit() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCSessionDescriptionInit RTCSessionDescriptionInit::clone() const noexcept { return *this; }
-
-RTCSdpType RTCSessionDescriptionInit::type() const {
-    return emlite::Val::get("type").as<RTCSdpType>();
-}
-
-void RTCSessionDescriptionInit::type(const RTCSdpType& value) {
-    emlite::Val::set("type", value);
-}
-
-jsbind::String RTCSessionDescriptionInit::sdp() const {
-    return emlite::Val::get("sdp").as<jsbind::String>();
-}
-
-void RTCSessionDescriptionInit::sdp(const jsbind::String& value) {
-    emlite::Val::set("sdp", value);
-}
-
-RTCConfiguration::RTCConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCConfiguration RTCConfiguration::take_ownership(Handle h) noexcept {
-        return RTCConfiguration(h);
-    }
-RTCConfiguration::RTCConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCConfiguration::RTCConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCConfiguration RTCConfiguration::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::Any> RTCConfiguration::iceServers() const {
-    return emlite::Val::get("iceServers").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RTCConfiguration::iceServers(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("iceServers", value);
-}
-
-RTCIceTransportPolicy RTCConfiguration::iceTransportPolicy() const {
-    return emlite::Val::get("iceTransportPolicy").as<RTCIceTransportPolicy>();
-}
-
-void RTCConfiguration::iceTransportPolicy(const RTCIceTransportPolicy& value) {
-    emlite::Val::set("iceTransportPolicy", value);
-}
-
-RTCBundlePolicy RTCConfiguration::bundlePolicy() const {
-    return emlite::Val::get("bundlePolicy").as<RTCBundlePolicy>();
-}
-
-void RTCConfiguration::bundlePolicy(const RTCBundlePolicy& value) {
-    emlite::Val::set("bundlePolicy", value);
-}
-
-RTCRtcpMuxPolicy RTCConfiguration::rtcpMuxPolicy() const {
-    return emlite::Val::get("rtcpMuxPolicy").as<RTCRtcpMuxPolicy>();
-}
-
-void RTCConfiguration::rtcpMuxPolicy(const RTCRtcpMuxPolicy& value) {
-    emlite::Val::set("rtcpMuxPolicy", value);
-}
-
-jsbind::TypedArray<RTCCertificate> RTCConfiguration::certificates() const {
-    return emlite::Val::get("certificates").as<jsbind::TypedArray<RTCCertificate>>();
-}
-
-void RTCConfiguration::certificates(const jsbind::TypedArray<RTCCertificate>& value) {
-    emlite::Val::set("certificates", value);
-}
-
-unsigned char RTCConfiguration::iceCandidatePoolSize() const {
-    return emlite::Val::get("iceCandidatePoolSize").as<unsigned char>();
-}
-
-void RTCConfiguration::iceCandidatePoolSize(unsigned char value) {
-    emlite::Val::set("iceCandidatePoolSize", value);
-}
-
-RTCIdentityProviderOptions::RTCIdentityProviderOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIdentityProviderOptions RTCIdentityProviderOptions::take_ownership(Handle h) noexcept {
-        return RTCIdentityProviderOptions(h);
-    }
-RTCIdentityProviderOptions::RTCIdentityProviderOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCIdentityProviderOptions::RTCIdentityProviderOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCIdentityProviderOptions RTCIdentityProviderOptions::clone() const noexcept { return *this; }
-
-jsbind::String RTCIdentityProviderOptions::protocol() const {
-    return emlite::Val::get("protocol").as<jsbind::String>();
-}
-
-void RTCIdentityProviderOptions::protocol(const jsbind::String& value) {
-    emlite::Val::set("protocol", value);
-}
-
-jsbind::String RTCIdentityProviderOptions::usernameHint() const {
-    return emlite::Val::get("usernameHint").as<jsbind::String>();
-}
-
-void RTCIdentityProviderOptions::usernameHint(const jsbind::String& value) {
-    emlite::Val::set("usernameHint", value);
-}
-
-jsbind::String RTCIdentityProviderOptions::peerIdentity() const {
-    return emlite::Val::get("peerIdentity").as<jsbind::String>();
-}
-
-void RTCIdentityProviderOptions::peerIdentity(const jsbind::String& value) {
-    emlite::Val::set("peerIdentity", value);
-}
-
-RTCRtpTransceiverInit::RTCRtpTransceiverInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCRtpTransceiverInit RTCRtpTransceiverInit::take_ownership(Handle h) noexcept {
-        return RTCRtpTransceiverInit(h);
-    }
-RTCRtpTransceiverInit::RTCRtpTransceiverInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCRtpTransceiverInit::RTCRtpTransceiverInit() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCRtpTransceiverInit RTCRtpTransceiverInit::clone() const noexcept { return *this; }
-
-RTCRtpTransceiverDirection RTCRtpTransceiverInit::direction() const {
-    return emlite::Val::get("direction").as<RTCRtpTransceiverDirection>();
-}
-
-void RTCRtpTransceiverInit::direction(const RTCRtpTransceiverDirection& value) {
-    emlite::Val::set("direction", value);
-}
-
-jsbind::TypedArray<MediaStream> RTCRtpTransceiverInit::streams() const {
-    return emlite::Val::get("streams").as<jsbind::TypedArray<MediaStream>>();
-}
-
-void RTCRtpTransceiverInit::streams(const jsbind::TypedArray<MediaStream>& value) {
-    emlite::Val::set("streams", value);
-}
-
-jsbind::TypedArray<jsbind::Any> RTCRtpTransceiverInit::sendEncodings() const {
-    return emlite::Val::get("sendEncodings").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RTCRtpTransceiverInit::sendEncodings(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("sendEncodings", value);
-}
-
-RTCDataChannelInit::RTCDataChannelInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCDataChannelInit RTCDataChannelInit::take_ownership(Handle h) noexcept {
-        return RTCDataChannelInit(h);
-    }
-RTCDataChannelInit::RTCDataChannelInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCDataChannelInit::RTCDataChannelInit() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCDataChannelInit RTCDataChannelInit::clone() const noexcept { return *this; }
-
-bool RTCDataChannelInit::ordered() const {
-    return emlite::Val::get("ordered").as<bool>();
-}
-
-void RTCDataChannelInit::ordered(bool value) {
-    emlite::Val::set("ordered", value);
-}
-
-unsigned short RTCDataChannelInit::maxPacketLifeTime() const {
-    return emlite::Val::get("maxPacketLifeTime").as<unsigned short>();
-}
-
-void RTCDataChannelInit::maxPacketLifeTime(unsigned short value) {
-    emlite::Val::set("maxPacketLifeTime", value);
-}
-
-unsigned short RTCDataChannelInit::maxRetransmits() const {
-    return emlite::Val::get("maxRetransmits").as<unsigned short>();
-}
-
-void RTCDataChannelInit::maxRetransmits(unsigned short value) {
-    emlite::Val::set("maxRetransmits", value);
-}
-
-jsbind::String RTCDataChannelInit::protocol() const {
-    return emlite::Val::get("protocol").as<jsbind::String>();
-}
-
-void RTCDataChannelInit::protocol(const jsbind::String& value) {
-    emlite::Val::set("protocol", value);
-}
-
-bool RTCDataChannelInit::negotiated() const {
-    return emlite::Val::get("negotiated").as<bool>();
-}
-
-void RTCDataChannelInit::negotiated(bool value) {
-    emlite::Val::set("negotiated", value);
-}
-
-unsigned short RTCDataChannelInit::id() const {
-    return emlite::Val::get("id").as<unsigned short>();
-}
-
-void RTCDataChannelInit::id(unsigned short value) {
-    emlite::Val::set("id", value);
-}
+namespace webbind {
 
 RTCPeerConnection RTCPeerConnection::take_ownership(Handle h) noexcept {
         return RTCPeerConnection(h);
@@ -268,7 +28,6 @@ RTCPeerConnection RTCPeerConnection::clone() const noexcept { return *this; }
 emlite::Val RTCPeerConnection::instance() noexcept { return emlite::Val::global("RTCPeerConnection"); }
 RTCPeerConnection::RTCPeerConnection(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 RTCPeerConnection::RTCPeerConnection(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 RTCPeerConnection::RTCPeerConnection() : EventTarget(emlite::Val::global("RTCPeerConnection").new_()) {}
 
@@ -286,7 +45,7 @@ jsbind::Promise<jsbind::Undefined> RTCPeerConnection::createAnswer(const jsbind:
     return EventTarget::call("createAnswer", successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Any& successCallback, const jsbind::Function& failureCallback) {
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
     return EventTarget::call("setLocalDescription", description, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
@@ -302,7 +61,7 @@ RTCSessionDescription RTCPeerConnection::pendingLocalDescription() const {
     return EventTarget::get("pendingLocalDescription").as<RTCSessionDescription>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Any& successCallback, const jsbind::Function& failureCallback) {
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
     return EventTarget::call("setRemoteDescription", description, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
@@ -318,7 +77,7 @@ RTCSessionDescription RTCPeerConnection::pendingRemoteDescription() const {
     return EventTarget::get("pendingRemoteDescription").as<RTCSessionDescription>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Any& successCallback, const jsbind::Function& failureCallback) {
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
     return EventTarget::call("addIceCandidate", candidate, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
@@ -510,3 +269,5 @@ jsbind::Promise<RTCStatsReport> RTCPeerConnection::getStats(const MediaStreamTra
     return EventTarget::call("getStats", selector).as<jsbind::Promise<RTCStatsReport>>();
 }
 
+
+} // namespace webbind

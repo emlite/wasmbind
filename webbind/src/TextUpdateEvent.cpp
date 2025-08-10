@@ -1,5 +1,7 @@
-#include <webbind/TextUpdateEvent.hpp>
+#include "webbind/TextUpdateEvent.hpp"
+#include "webbind/TextUpdateEventInit.hpp"
 
+namespace webbind {
 
 TextUpdateEvent TextUpdateEvent::take_ownership(Handle h) noexcept {
         return TextUpdateEvent(h);
@@ -9,10 +11,9 @@ emlite::Val TextUpdateEvent::instance() noexcept { return emlite::Val::global("T
 TextUpdateEvent::TextUpdateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 TextUpdateEvent::TextUpdateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 TextUpdateEvent::TextUpdateEvent(const jsbind::String& type) : Event(emlite::Val::global("TextUpdateEvent").new_(type)) {}
 
-TextUpdateEvent::TextUpdateEvent(const jsbind::String& type, const jsbind::Any& options) : Event(emlite::Val::global("TextUpdateEvent").new_(type, options)) {}
+TextUpdateEvent::TextUpdateEvent(const jsbind::String& type, const TextUpdateEventInit& options) : Event(emlite::Val::global("TextUpdateEvent").new_(type, options)) {}
 
 unsigned long TextUpdateEvent::updateRangeStart() const {
     return Event::get("updateRangeStart").as<unsigned long>();
@@ -34,3 +35,5 @@ unsigned long TextUpdateEvent::selectionEnd() const {
     return Event::get("selectionEnd").as<unsigned long>();
 }
 
+
+} // namespace webbind

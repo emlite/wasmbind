@@ -1,8 +1,9 @@
-#include <webbind/SVGFEDiffuseLightingElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEDiffuseLightingElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEDiffuseLightingElement SVGFEDiffuseLightingElement::take_ownership(Handle h) noexcept {
         return SVGFEDiffuseLightingElement(h);
@@ -11,7 +12,6 @@ SVGFEDiffuseLightingElement SVGFEDiffuseLightingElement::clone() const noexcept 
 emlite::Val SVGFEDiffuseLightingElement::instance() noexcept { return emlite::Val::global("SVGFEDiffuseLightingElement"); }
 SVGFEDiffuseLightingElement::SVGFEDiffuseLightingElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEDiffuseLightingElement::SVGFEDiffuseLightingElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEDiffuseLightingElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -53,3 +53,5 @@ SVGAnimatedString SVGFEDiffuseLightingElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

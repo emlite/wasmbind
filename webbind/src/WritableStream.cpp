@@ -1,6 +1,8 @@
-#include <webbind/WritableStream.hpp>
-#include <webbind/WritableStreamDefaultWriter.hpp>
+#include "webbind/WritableStream.hpp"
+#include "webbind/QueuingStrategy.hpp"
+#include "webbind/WritableStreamDefaultWriter.hpp"
 
+namespace webbind {
 
 WritableStream WritableStream::take_ownership(Handle h) noexcept {
         return WritableStream(h);
@@ -10,12 +12,11 @@ emlite::Val WritableStream::instance() noexcept { return emlite::Val::global("Wr
 WritableStream::WritableStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WritableStream::WritableStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 WritableStream::WritableStream() : emlite::Val(emlite::Val::global("WritableStream").new_()) {}
 
 WritableStream::WritableStream(const jsbind::Object& underlyingSink) : emlite::Val(emlite::Val::global("WritableStream").new_(underlyingSink)) {}
 
-WritableStream::WritableStream(const jsbind::Object& underlyingSink, const jsbind::Any& strategy) : emlite::Val(emlite::Val::global("WritableStream").new_(underlyingSink, strategy)) {}
+WritableStream::WritableStream(const jsbind::Object& underlyingSink, const QueuingStrategy& strategy) : emlite::Val(emlite::Val::global("WritableStream").new_(underlyingSink, strategy)) {}
 
 bool WritableStream::locked() const {
     return emlite::Val::get("locked").as<bool>();
@@ -37,3 +38,5 @@ WritableStreamDefaultWriter WritableStream::getWriter() {
     return emlite::Val::call("getWriter").as<WritableStreamDefaultWriter>();
 }
 
+
+} // namespace webbind

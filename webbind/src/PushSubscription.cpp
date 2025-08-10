@@ -1,38 +1,8 @@
-#include <webbind/PushSubscription.hpp>
-#include <webbind/PushSubscriptionOptions.hpp>
+#include "webbind/PushSubscription.hpp"
+#include "webbind/PushSubscriptionOptions.hpp"
+#include "webbind/PushSubscriptionJSON.hpp"
 
-
-PushSubscriptionJSON::PushSubscriptionJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PushSubscriptionJSON PushSubscriptionJSON::take_ownership(Handle h) noexcept {
-        return PushSubscriptionJSON(h);
-    }
-PushSubscriptionJSON::PushSubscriptionJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PushSubscriptionJSON::PushSubscriptionJSON() noexcept: emlite::Val(emlite::Val::object()) {}
-PushSubscriptionJSON PushSubscriptionJSON::clone() const noexcept { return *this; }
-
-jsbind::String PushSubscriptionJSON::endpoint() const {
-    return emlite::Val::get("endpoint").as<jsbind::String>();
-}
-
-void PushSubscriptionJSON::endpoint(const jsbind::String& value) {
-    emlite::Val::set("endpoint", value);
-}
-
-jsbind::Any PushSubscriptionJSON::expirationTime() const {
-    return emlite::Val::get("expirationTime").as<jsbind::Any>();
-}
-
-void PushSubscriptionJSON::expirationTime(const jsbind::Any& value) {
-    emlite::Val::set("expirationTime", value);
-}
-
-jsbind::Record<jsbind::String, jsbind::String> PushSubscriptionJSON::keys() const {
-    return emlite::Val::get("keys").as<jsbind::Record<jsbind::String, jsbind::String>>();
-}
-
-void PushSubscriptionJSON::keys(const jsbind::Record<jsbind::String, jsbind::String>& value) {
-    emlite::Val::set("keys", value);
-}
+namespace webbind {
 
 PushSubscription PushSubscription::take_ownership(Handle h) noexcept {
         return PushSubscription(h);
@@ -41,7 +11,6 @@ PushSubscription PushSubscription::clone() const noexcept { return *this; }
 emlite::Val PushSubscription::instance() noexcept { return emlite::Val::global("PushSubscription"); }
 PushSubscription::PushSubscription(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PushSubscription::PushSubscription(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String PushSubscription::endpoint() const {
     return emlite::Val::get("endpoint").as<jsbind::String>();
@@ -67,3 +36,5 @@ PushSubscriptionJSON PushSubscription::toJSON() {
     return emlite::Val::call("toJSON").as<PushSubscriptionJSON>();
 }
 
+
+} // namespace webbind

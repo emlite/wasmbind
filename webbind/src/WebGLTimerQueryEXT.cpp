@@ -1,5 +1,6 @@
-#include <webbind/WebGLTimerQueryEXT.hpp>
+#include "webbind/WebGLTimerQueryEXT.hpp"
 
+namespace webbind {
 
 WebGLTimerQueryEXT WebGLTimerQueryEXT::take_ownership(Handle h) noexcept {
         return WebGLTimerQueryEXT(h);
@@ -10,3 +11,4 @@ WebGLTimerQueryEXT::WebGLTimerQueryEXT(Handle h) noexcept : WebGLObject(emlite::
 WebGLTimerQueryEXT::WebGLTimerQueryEXT(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

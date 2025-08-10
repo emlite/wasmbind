@@ -1,8 +1,9 @@
-#include <webbind/SVGFEDropShadowElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEDropShadowElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEDropShadowElement SVGFEDropShadowElement::take_ownership(Handle h) noexcept {
         return SVGFEDropShadowElement(h);
@@ -11,7 +12,6 @@ SVGFEDropShadowElement SVGFEDropShadowElement::clone() const noexcept { return *
 emlite::Val SVGFEDropShadowElement::instance() noexcept { return emlite::Val::global("SVGFEDropShadowElement"); }
 SVGFEDropShadowElement::SVGFEDropShadowElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEDropShadowElement::SVGFEDropShadowElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEDropShadowElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -57,3 +57,5 @@ SVGAnimatedString SVGFEDropShadowElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

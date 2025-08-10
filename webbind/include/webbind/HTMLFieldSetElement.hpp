@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 class HTMLCollection;
 class ValidityState;
 
-
-/// The HTMLFieldSetElement class.
+/// Interface HTMLFieldSetElement
 /// [`HTMLFieldSetElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement)
 class HTMLFieldSetElement : public HTMLElement {
     explicit HTMLFieldSetElement(Handle h) noexcept;
-
 public:
     explicit HTMLFieldSetElement(const emlite::Val &val) noexcept;
     static HTMLFieldSetElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLFieldSetElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFieldSetElement(..)` constructor, creating a new HTMLFieldSetElement instance
@@ -64,3 +63,4 @@ public:
     jsbind::Undefined setCustomValidity(const jsbind::String& error);
 };
 
+} // namespace webbind

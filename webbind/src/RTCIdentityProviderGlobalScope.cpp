@@ -1,6 +1,7 @@
-#include <webbind/RTCIdentityProviderGlobalScope.hpp>
-#include <webbind/RTCIdentityProviderRegistrar.hpp>
+#include "webbind/RTCIdentityProviderGlobalScope.hpp"
+#include "webbind/RTCIdentityProviderRegistrar.hpp"
 
+namespace webbind {
 
 RTCIdentityProviderGlobalScope RTCIdentityProviderGlobalScope::take_ownership(Handle h) noexcept {
         return RTCIdentityProviderGlobalScope(h);
@@ -10,8 +11,9 @@ emlite::Val RTCIdentityProviderGlobalScope::instance() noexcept { return emlite:
 RTCIdentityProviderGlobalScope::RTCIdentityProviderGlobalScope(Handle h) noexcept : WorkerGlobalScope(emlite::Val::take_ownership(h)) {}
 RTCIdentityProviderGlobalScope::RTCIdentityProviderGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
 
-
 RTCIdentityProviderRegistrar RTCIdentityProviderGlobalScope::rtcIdentityProvider() const {
     return WorkerGlobalScope::get("rtcIdentityProvider").as<RTCIdentityProviderRegistrar>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/XMLHttpRequestEventTarget.hpp>
+#include "webbind/XMLHttpRequestEventTarget.hpp"
 
+namespace webbind {
 
 XMLHttpRequestEventTarget XMLHttpRequestEventTarget::take_ownership(Handle h) noexcept {
         return XMLHttpRequestEventTarget(h);
@@ -8,7 +9,6 @@ XMLHttpRequestEventTarget XMLHttpRequestEventTarget::clone() const noexcept { re
 emlite::Val XMLHttpRequestEventTarget::instance() noexcept { return emlite::Val::global("XMLHttpRequestEventTarget"); }
 XMLHttpRequestEventTarget::XMLHttpRequestEventTarget(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 XMLHttpRequestEventTarget::XMLHttpRequestEventTarget(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Any XMLHttpRequestEventTarget::onloadstart() const {
     return EventTarget::get("onloadstart").as<jsbind::Any>();
@@ -66,3 +66,5 @@ void XMLHttpRequestEventTarget::onloadend(const jsbind::Any& value) {
     EventTarget::set("onloadend", value);
 }
 
+
+} // namespace webbind

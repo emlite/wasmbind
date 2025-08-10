@@ -2,35 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
+#include "XRSessionInit.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class XRSession;
-class XRSessionInit;
 
-
-class XRSessionInit : public emlite::Val {
-  explicit XRSessionInit(Handle h) noexcept;
-public:
-    static XRSessionInit take_ownership(Handle h) noexcept;
-    explicit XRSessionInit(const emlite::Val &val) noexcept;
-    XRSessionInit() noexcept;
-    [[nodiscard]] XRSessionInit clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> requiredFeatures() const;
-    void requiredFeatures(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> optionalFeatures() const;
-    void optionalFeatures(const jsbind::TypedArray<jsbind::String>& value);
-};
-
-/// The XRSystem class.
+/// Interface XRSystem
 /// [`XRSystem`](https://developer.mozilla.org/en-US/docs/Web/API/XRSystem)
 class XRSystem : public EventTarget {
     explicit XRSystem(Handle h) noexcept;
-
 public:
     explicit XRSystem(const emlite::Val &val) noexcept;
     static XRSystem take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRSystem clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The isSessionSupported method.
@@ -50,3 +37,4 @@ public:
     void ondevicechange(const jsbind::Any& value);
 };
 
+} // namespace webbind

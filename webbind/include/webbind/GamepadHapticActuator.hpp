@@ -3,40 +3,18 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "GamepadEffectParameters.hpp"
+#include "enums.hpp"
 
-class GamepadEffectParameters;
+namespace webbind {
 
-
-class GamepadEffectParameters : public emlite::Val {
-  explicit GamepadEffectParameters(Handle h) noexcept;
-public:
-    static GamepadEffectParameters take_ownership(Handle h) noexcept;
-    explicit GamepadEffectParameters(const emlite::Val &val) noexcept;
-    GamepadEffectParameters() noexcept;
-    [[nodiscard]] GamepadEffectParameters clone() const noexcept;
-    [[nodiscard]] long long duration() const;
-    void duration(long long value);
-    [[nodiscard]] long long startDelay() const;
-    void startDelay(long long value);
-    [[nodiscard]] double strongMagnitude() const;
-    void strongMagnitude(double value);
-    [[nodiscard]] double weakMagnitude() const;
-    void weakMagnitude(double value);
-    [[nodiscard]] double leftTrigger() const;
-    void leftTrigger(double value);
-    [[nodiscard]] double rightTrigger() const;
-    void rightTrigger(double value);
-};
-
-/// The GamepadHapticActuator class.
+/// Interface GamepadHapticActuator
 /// [`GamepadHapticActuator`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator)
 class GamepadHapticActuator : public emlite::Val {
     explicit GamepadHapticActuator(Handle h) noexcept;
-
 public:
     explicit GamepadHapticActuator(const emlite::Val &val) noexcept;
     static GamepadHapticActuator take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GamepadHapticActuator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `effects` attribute.
@@ -56,3 +34,4 @@ public:
     jsbind::Promise<bool> pulse(double value, double duration);
 };
 
+} // namespace webbind

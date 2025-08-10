@@ -1,5 +1,6 @@
-#include <webbind/CustomStateSet.hpp>
+#include "webbind/CustomStateSet.hpp"
 
+namespace webbind {
 
 CustomStateSet CustomStateSet::take_ownership(Handle h) noexcept {
         return CustomStateSet(h);
@@ -10,3 +11,4 @@ CustomStateSet::CustomStateSet(Handle h) noexcept : emlite::Val(emlite::Val::tak
 CustomStateSet::CustomStateSet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

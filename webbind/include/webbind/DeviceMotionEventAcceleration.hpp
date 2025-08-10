@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The DeviceMotionEventAcceleration class.
+/// Interface DeviceMotionEventAcceleration
 /// [`DeviceMotionEventAcceleration`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventAcceleration)
 class DeviceMotionEventAcceleration : public emlite::Val {
     explicit DeviceMotionEventAcceleration(Handle h) noexcept;
-
 public:
     explicit DeviceMotionEventAcceleration(const emlite::Val &val) noexcept;
     static DeviceMotionEventAcceleration take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DeviceMotionEventAcceleration clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] double z() const;
 };
 
+} // namespace webbind

@@ -1,104 +1,14 @@
-#include <webbind/Navigation.hpp>
-#include <webbind/NavigationHistoryEntry.hpp>
-#include <webbind/NavigationTransition.hpp>
-#include <webbind/NavigationActivation.hpp>
+#include "webbind/Navigation.hpp"
+#include "webbind/NavigationHistoryEntry.hpp"
+#include "webbind/NavigationUpdateCurrentEntryOptions.hpp"
+#include "webbind/NavigationTransition.hpp"
+#include "webbind/NavigationActivation.hpp"
+#include "webbind/NavigationResult.hpp"
+#include "webbind/NavigationNavigateOptions.hpp"
+#include "webbind/NavigationReloadOptions.hpp"
+#include "webbind/NavigationOptions.hpp"
 
-
-NavigationUpdateCurrentEntryOptions::NavigationUpdateCurrentEntryOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationUpdateCurrentEntryOptions NavigationUpdateCurrentEntryOptions::take_ownership(Handle h) noexcept {
-        return NavigationUpdateCurrentEntryOptions(h);
-    }
-NavigationUpdateCurrentEntryOptions::NavigationUpdateCurrentEntryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-NavigationUpdateCurrentEntryOptions::NavigationUpdateCurrentEntryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-NavigationUpdateCurrentEntryOptions NavigationUpdateCurrentEntryOptions::clone() const noexcept { return *this; }
-
-jsbind::Any NavigationUpdateCurrentEntryOptions::state() const {
-    return emlite::Val::get("state").as<jsbind::Any>();
-}
-
-void NavigationUpdateCurrentEntryOptions::state(const jsbind::Any& value) {
-    emlite::Val::set("state", value);
-}
-
-NavigationResult::NavigationResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationResult NavigationResult::take_ownership(Handle h) noexcept {
-        return NavigationResult(h);
-    }
-NavigationResult::NavigationResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
-NavigationResult::NavigationResult() noexcept: emlite::Val(emlite::Val::object()) {}
-NavigationResult NavigationResult::clone() const noexcept { return *this; }
-
-jsbind::Promise<NavigationHistoryEntry> NavigationResult::committed() const {
-    return emlite::Val::get("committed").as<jsbind::Promise<NavigationHistoryEntry>>();
-}
-
-void NavigationResult::committed(const jsbind::Promise<NavigationHistoryEntry>& value) {
-    emlite::Val::set("committed", value);
-}
-
-jsbind::Promise<NavigationHistoryEntry> NavigationResult::finished() const {
-    return emlite::Val::get("finished").as<jsbind::Promise<NavigationHistoryEntry>>();
-}
-
-void NavigationResult::finished(const jsbind::Promise<NavigationHistoryEntry>& value) {
-    emlite::Val::set("finished", value);
-}
-
-NavigationNavigateOptions::NavigationNavigateOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationNavigateOptions NavigationNavigateOptions::take_ownership(Handle h) noexcept {
-        return NavigationNavigateOptions(h);
-    }
-NavigationNavigateOptions::NavigationNavigateOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-NavigationNavigateOptions::NavigationNavigateOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-NavigationNavigateOptions NavigationNavigateOptions::clone() const noexcept { return *this; }
-
-jsbind::Any NavigationNavigateOptions::state() const {
-    return emlite::Val::get("state").as<jsbind::Any>();
-}
-
-void NavigationNavigateOptions::state(const jsbind::Any& value) {
-    emlite::Val::set("state", value);
-}
-
-NavigationHistoryBehavior NavigationNavigateOptions::history() const {
-    return emlite::Val::get("history").as<NavigationHistoryBehavior>();
-}
-
-void NavigationNavigateOptions::history(const NavigationHistoryBehavior& value) {
-    emlite::Val::set("history", value);
-}
-
-NavigationReloadOptions::NavigationReloadOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationReloadOptions NavigationReloadOptions::take_ownership(Handle h) noexcept {
-        return NavigationReloadOptions(h);
-    }
-NavigationReloadOptions::NavigationReloadOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-NavigationReloadOptions::NavigationReloadOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-NavigationReloadOptions NavigationReloadOptions::clone() const noexcept { return *this; }
-
-jsbind::Any NavigationReloadOptions::state() const {
-    return emlite::Val::get("state").as<jsbind::Any>();
-}
-
-void NavigationReloadOptions::state(const jsbind::Any& value) {
-    emlite::Val::set("state", value);
-}
-
-NavigationOptions::NavigationOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationOptions NavigationOptions::take_ownership(Handle h) noexcept {
-        return NavigationOptions(h);
-    }
-NavigationOptions::NavigationOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-NavigationOptions::NavigationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-NavigationOptions NavigationOptions::clone() const noexcept { return *this; }
-
-jsbind::Any NavigationOptions::info() const {
-    return emlite::Val::get("info").as<jsbind::Any>();
-}
-
-void NavigationOptions::info(const jsbind::Any& value) {
-    emlite::Val::set("info", value);
-}
+namespace webbind {
 
 Navigation Navigation::take_ownership(Handle h) noexcept {
         return Navigation(h);
@@ -107,7 +17,6 @@ Navigation Navigation::clone() const noexcept { return *this; }
 emlite::Val Navigation::instance() noexcept { return emlite::Val::global("Navigation"); }
 Navigation::Navigation(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Navigation::Navigation(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::TypedArray<NavigationHistoryEntry> Navigation::entries() {
     return EventTarget::call("entries").as<jsbind::TypedArray<NavigationHistoryEntry>>();
@@ -209,3 +118,5 @@ void Navigation::oncurrententrychange(const jsbind::Any& value) {
     EventTarget::set("oncurrententrychange", value);
 }
 
+
+} // namespace webbind

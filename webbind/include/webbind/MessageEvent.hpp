@@ -2,27 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "MessageEventInit.hpp"
+
+namespace webbind {
 
 class MessagePort;
 
-
-/// The MessageEvent class.
+/// Interface MessageEvent
 /// [`MessageEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent)
 class MessageEvent : public Event {
     explicit MessageEvent(Handle h) noexcept;
-
 public:
     explicit MessageEvent(const emlite::Val &val) noexcept;
     static MessageEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MessageEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MessageEvent(..)` constructor, creating a new MessageEvent instance
     MessageEvent(const jsbind::String& type);
     /// The `new MessageEvent(..)` constructor, creating a new MessageEvent instance
-    MessageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    MessageEvent(const jsbind::String& type, const MessageEventInit& eventInitDict);
     /// Getter of the `data` attribute.
     /// [`MessageEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/data)
     [[nodiscard]] jsbind::Any data() const;
@@ -37,7 +37,7 @@ public:
     [[nodiscard]] jsbind::Any source() const;
     /// Getter of the `ports` attribute.
     /// [`MessageEvent.ports`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/ports)
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> ports() const;
+    [[nodiscard]] jsbind::TypedArray<MessagePort> ports() const;
     /// The initMessageEvent method.
     /// [`MessageEvent.initMessageEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/initMessageEvent)
     jsbind::Undefined initMessageEvent(const jsbind::String& type);
@@ -61,6 +61,7 @@ public:
     jsbind::Undefined initMessageEvent(const jsbind::String& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::String& origin, const jsbind::String& lastEventId, const jsbind::Any& source);
     /// The initMessageEvent method.
     /// [`MessageEvent.initMessageEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/initMessageEvent)
-    jsbind::Undefined initMessageEvent(const jsbind::String& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::String& origin, const jsbind::String& lastEventId, const jsbind::Any& source, const jsbind::TypedArray<jsbind::Any>& ports);
+    jsbind::Undefined initMessageEvent(const jsbind::String& type, bool bubbles, bool cancelable, const jsbind::Any& data, const jsbind::String& origin, const jsbind::String& lastEventId, const jsbind::Any& source, const jsbind::TypedArray<MessagePort>& ports);
 };
 
+} // namespace webbind

@@ -2,20 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WorkerGlobalScope.hpp"
-#include "MessagePort.hpp"
 #include "enums.hpp"
+#include "WorkerGlobalScope.hpp"
+#include "StructuredSerializeOptions.hpp"
 
+namespace webbind {
 
-/// The DedicatedWorkerGlobalScope class.
+/// Interface DedicatedWorkerGlobalScope
 /// [`DedicatedWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope)
 class DedicatedWorkerGlobalScope : public WorkerGlobalScope {
     explicit DedicatedWorkerGlobalScope(Handle h) noexcept;
-
 public:
     explicit DedicatedWorkerGlobalScope(const emlite::Val &val) noexcept;
     static DedicatedWorkerGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DedicatedWorkerGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -56,3 +55,4 @@ public:
     void onmessageerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

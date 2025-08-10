@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class Blob;
 class DOMException;
 
-
-/// The FileReader class.
+/// Interface FileReader
 /// [`FileReader`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 class FileReader : public EventTarget {
     explicit FileReader(Handle h) noexcept;
-
 public:
     explicit FileReader(const emlite::Val &val) noexcept;
     static FileReader take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileReader clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FileReader(..)` constructor, creating a new FileReader instance
@@ -87,3 +86,4 @@ public:
     void onloadend(const jsbind::Any& value);
 };
 
+} // namespace webbind

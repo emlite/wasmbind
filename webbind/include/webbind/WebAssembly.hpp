@@ -2,27 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "enums.hpp"
+
+
+namespace webbind {
 
 class Module;
 class Response;
-class Instance;
+class WebAssemblyInstantiatedSource;
 
-
+/// Namespace WebAssembly
+/// [`WebAssembly`](https://developer.mozilla.org/en-US/docs/Web/API/WebAssembly)
 namespace WebAssembly {
-    bool validate(const jsbind::Any& bytes);
-    jsbind::Promise<Module> compile(const jsbind::Any& bytes);
-    jsbind::Promise<jsbind::Any> instantiate(const jsbind::Any& bytes);
-    jsbind::Promise<jsbind::Any> instantiate(const jsbind::Any& bytes, const jsbind::Object& importObject);
-    jsbind::Promise<Instance> instantiate(const Module& moduleObject);
-    jsbind::Promise<Instance> instantiate(const Module& moduleObject, const jsbind::Object& importObject);
-} // namespace WebAssembly
-
-
-
-namespace WebAssembly {
+    /// The compileStreaming function.
+    /// [`WebAssembly.compileStreaming`](https://developer.mozilla.org/en-US/docs/Web/API/WebAssembly/compileStreaming)
     jsbind::Promise<Module> compileStreaming(const jsbind::Promise<Response>& source);
-    jsbind::Promise<jsbind::Any> instantiateStreaming(const jsbind::Promise<Response>& source);
-    jsbind::Promise<jsbind::Any> instantiateStreaming(const jsbind::Promise<Response>& source, const jsbind::Object& importObject);
+    /// The instantiateStreaming function.
+    /// [`WebAssembly.instantiateStreaming`](https://developer.mozilla.org/en-US/docs/Web/API/WebAssembly/instantiateStreaming)
+    jsbind::Promise<WebAssemblyInstantiatedSource> instantiateStreaming(const jsbind::Promise<Response>& source);
+    /// The instantiateStreaming function.
+    /// [`WebAssembly.instantiateStreaming`](https://developer.mozilla.org/en-US/docs/Web/API/WebAssembly/instantiateStreaming)
+    jsbind::Promise<WebAssemblyInstantiatedSource> instantiateStreaming(const jsbind::Promise<Response>& source, const jsbind::Object& importObject);
 } // namespace WebAssembly
 
+} // namespace webbind

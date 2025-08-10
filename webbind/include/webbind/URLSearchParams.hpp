@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The URLSearchParams class.
+/// Interface URLSearchParams
 /// [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
 class URLSearchParams : public emlite::Val {
     explicit URLSearchParams(Handle h) noexcept;
-
 public:
     explicit URLSearchParams(const emlite::Val &val) noexcept;
     static URLSearchParams take_ownership(Handle h) noexcept;
-
     [[nodiscard]] URLSearchParams clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new URLSearchParams(..)` constructor, creating a new URLSearchParams instance
@@ -52,3 +51,4 @@ public:
     jsbind::Undefined sort();
 };
 
+} // namespace webbind

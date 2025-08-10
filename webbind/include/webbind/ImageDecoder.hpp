@@ -3,52 +3,25 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "ImageDecoderInit.hpp"
+#include "ImageDecodeResult.hpp"
+#include "ImageDecodeOptions.hpp"
+
+namespace webbind {
 
 class ImageTrackList;
-class ImageDecodeResult;
-class ImageDecodeOptions;
-class VideoFrame;
 
-
-class ImageDecodeResult : public emlite::Val {
-  explicit ImageDecodeResult(Handle h) noexcept;
-public:
-    static ImageDecodeResult take_ownership(Handle h) noexcept;
-    explicit ImageDecodeResult(const emlite::Val &val) noexcept;
-    ImageDecodeResult() noexcept;
-    [[nodiscard]] ImageDecodeResult clone() const noexcept;
-    [[nodiscard]] VideoFrame image() const;
-    void image(const VideoFrame& value);
-    [[nodiscard]] bool complete() const;
-    void complete(bool value);
-};
-
-class ImageDecodeOptions : public emlite::Val {
-  explicit ImageDecodeOptions(Handle h) noexcept;
-public:
-    static ImageDecodeOptions take_ownership(Handle h) noexcept;
-    explicit ImageDecodeOptions(const emlite::Val &val) noexcept;
-    ImageDecodeOptions() noexcept;
-    [[nodiscard]] ImageDecodeOptions clone() const noexcept;
-    [[nodiscard]] unsigned long frameIndex() const;
-    void frameIndex(unsigned long value);
-    [[nodiscard]] bool completeFramesOnly() const;
-    void completeFramesOnly(bool value);
-};
-
-/// The ImageDecoder class.
+/// Interface ImageDecoder
 /// [`ImageDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder)
 class ImageDecoder : public emlite::Val {
     explicit ImageDecoder(Handle h) noexcept;
-
 public:
     explicit ImageDecoder(const emlite::Val &val) noexcept;
     static ImageDecoder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ImageDecoder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ImageDecoder(..)` constructor, creating a new ImageDecoder instance
-    ImageDecoder(const jsbind::Any& init);
+    ImageDecoder(const ImageDecoderInit& init);
     /// Getter of the `type` attribute.
     /// [`ImageDecoder.type`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/type)
     [[nodiscard]] jsbind::String type() const;
@@ -78,3 +51,4 @@ public:
     static jsbind::Promise<bool> isTypeSupported(const jsbind::String& type);
 };
 
+} // namespace webbind

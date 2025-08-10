@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class FileSystem;
 
-
-/// The FileSystemEntry class.
+/// Interface FileSystemEntry
 /// [`FileSystemEntry`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry)
 class FileSystemEntry : public emlite::Val {
     explicit FileSystemEntry(Handle h) noexcept;
-
 public:
     explicit FileSystemEntry(const emlite::Val &val) noexcept;
     static FileSystemEntry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `isFile` attribute.
@@ -44,3 +43,4 @@ public:
     jsbind::Undefined getParent(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 
+} // namespace webbind

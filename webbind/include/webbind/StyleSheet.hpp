@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class CSSStyleSheet;
 class MediaList;
 
-
-/// The StyleSheet class.
+/// Interface StyleSheet
 /// [`StyleSheet`](https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet)
 class StyleSheet : public emlite::Val {
     explicit StyleSheet(Handle h) noexcept;
-
 public:
     explicit StyleSheet(const emlite::Val &val) noexcept;
     static StyleSheet take_ownership(Handle h) noexcept;
-
     [[nodiscard]] StyleSheet clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -45,3 +44,4 @@ public:
     void disabled(bool value);
 };
 
+} // namespace webbind

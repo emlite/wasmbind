@@ -1,6 +1,7 @@
-#include <webbind/SVGFESpotLightElement.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
+#include "webbind/SVGFESpotLightElement.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
 
+namespace webbind {
 
 SVGFESpotLightElement SVGFESpotLightElement::take_ownership(Handle h) noexcept {
         return SVGFESpotLightElement(h);
@@ -9,7 +10,6 @@ SVGFESpotLightElement SVGFESpotLightElement::clone() const noexcept { return *th
 emlite::Val SVGFESpotLightElement::instance() noexcept { return emlite::Val::global("SVGFESpotLightElement"); }
 SVGFESpotLightElement::SVGFESpotLightElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFESpotLightElement::SVGFESpotLightElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedNumber SVGFESpotLightElement::x() const {
     return SVGElement::get("x").as<SVGAnimatedNumber>();
@@ -43,3 +43,5 @@ SVGAnimatedNumber SVGFESpotLightElement::limitingConeAngle() const {
     return SVGElement::get("limitingConeAngle").as<SVGAnimatedNumber>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/GPUBindGroup.hpp>
+#include "webbind/GPUBindGroup.hpp"
 
+namespace webbind {
 
 GPUBindGroup GPUBindGroup::take_ownership(Handle h) noexcept {
         return GPUBindGroup(h);
@@ -9,7 +10,6 @@ emlite::Val GPUBindGroup::instance() noexcept { return emlite::Val::global("GPUB
 GPUBindGroup::GPUBindGroup(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUBindGroup::GPUBindGroup(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 jsbind::String GPUBindGroup::label() const {
     return emlite::Val::get("label").as<jsbind::String>();
 }
@@ -18,3 +18,5 @@ void GPUBindGroup::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
+
+} // namespace webbind

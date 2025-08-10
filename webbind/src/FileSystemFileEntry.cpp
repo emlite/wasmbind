@@ -1,5 +1,6 @@
-#include <webbind/FileSystemFileEntry.hpp>
+#include "webbind/FileSystemFileEntry.hpp"
 
+namespace webbind {
 
 FileSystemFileEntry FileSystemFileEntry::take_ownership(Handle h) noexcept {
         return FileSystemFileEntry(h);
@@ -9,7 +10,6 @@ emlite::Val FileSystemFileEntry::instance() noexcept { return emlite::Val::globa
 FileSystemFileEntry::FileSystemFileEntry(Handle h) noexcept : FileSystemEntry(emlite::Val::take_ownership(h)) {}
 FileSystemFileEntry::FileSystemFileEntry(const emlite::Val &val) noexcept: FileSystemEntry(val) {}
 
-
 jsbind::Undefined FileSystemFileEntry::file(const jsbind::Function& successCallback) {
     return FileSystemEntry::call("file", successCallback).as<jsbind::Undefined>();
 }
@@ -18,3 +18,5 @@ jsbind::Undefined FileSystemFileEntry::file(const jsbind::Function& successCallb
     return FileSystemEntry::call("file", successCallback, errorCallback).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

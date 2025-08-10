@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ImageTrack class.
+/// Interface ImageTrack
 /// [`ImageTrack`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack)
 class ImageTrack : public emlite::Val {
     explicit ImageTrack(Handle h) noexcept;
-
 public:
     explicit ImageTrack(const emlite::Val &val) noexcept;
     static ImageTrack take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ImageTrack clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `animated` attribute.
@@ -33,3 +32,4 @@ public:
     void selected(bool value);
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/EXT_blend_minmax.hpp>
+#include "webbind/EXT_blend_minmax.hpp"
 
+namespace webbind {
 
 EXT_blend_minmax EXT_blend_minmax::take_ownership(Handle h) noexcept {
         return EXT_blend_minmax(h);
@@ -10,3 +11,4 @@ EXT_blend_minmax::EXT_blend_minmax(Handle h) noexcept : emlite::Val(emlite::Val:
 EXT_blend_minmax::EXT_blend_minmax(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

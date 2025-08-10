@@ -1,5 +1,6 @@
-#include <webbind/SVGAngle.hpp>
+#include "webbind/SVGAngle.hpp"
 
+namespace webbind {
 
 SVGAngle SVGAngle::take_ownership(Handle h) noexcept {
         return SVGAngle(h);
@@ -8,7 +9,6 @@ SVGAngle SVGAngle::clone() const noexcept { return *this; }
 emlite::Val SVGAngle::instance() noexcept { return emlite::Val::global("SVGAngle"); }
 SVGAngle::SVGAngle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGAngle::SVGAngle(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned short SVGAngle::unitType() const {
     return emlite::Val::get("unitType").as<unsigned short>();
@@ -46,3 +46,5 @@ jsbind::Undefined SVGAngle::convertToSpecifiedUnits(unsigned short unitType) {
     return emlite::Val::call("convertToSpecifiedUnits", unitType).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

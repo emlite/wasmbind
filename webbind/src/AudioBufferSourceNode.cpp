@@ -1,8 +1,10 @@
-#include <webbind/AudioBufferSourceNode.hpp>
-#include <webbind/AudioBuffer.hpp>
-#include <webbind/AudioParam.hpp>
-#include <webbind/BaseAudioContext.hpp>
+#include "webbind/AudioBufferSourceNode.hpp"
+#include "webbind/BaseAudioContext.hpp"
+#include "webbind/AudioBufferSourceOptions.hpp"
+#include "webbind/AudioBuffer.hpp"
+#include "webbind/AudioParam.hpp"
 
+namespace webbind {
 
 AudioBufferSourceNode AudioBufferSourceNode::take_ownership(Handle h) noexcept {
         return AudioBufferSourceNode(h);
@@ -12,10 +14,9 @@ emlite::Val AudioBufferSourceNode::instance() noexcept { return emlite::Val::glo
 AudioBufferSourceNode::AudioBufferSourceNode(Handle h) noexcept : AudioScheduledSourceNode(emlite::Val::take_ownership(h)) {}
 AudioBufferSourceNode::AudioBufferSourceNode(const emlite::Val &val) noexcept: AudioScheduledSourceNode(val) {}
 
-
 AudioBufferSourceNode::AudioBufferSourceNode(const BaseAudioContext& context) : AudioScheduledSourceNode(emlite::Val::global("AudioBufferSourceNode").new_(context)) {}
 
-AudioBufferSourceNode::AudioBufferSourceNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioScheduledSourceNode(emlite::Val::global("AudioBufferSourceNode").new_(context, options)) {}
+AudioBufferSourceNode::AudioBufferSourceNode(const BaseAudioContext& context, const AudioBufferSourceOptions& options) : AudioScheduledSourceNode(emlite::Val::global("AudioBufferSourceNode").new_(context, options)) {}
 
 AudioBuffer AudioBufferSourceNode::buffer() const {
     return AudioScheduledSourceNode::get("buffer").as<AudioBuffer>();
@@ -73,3 +74,5 @@ jsbind::Undefined AudioBufferSourceNode::start(double when, double offset, doubl
     return AudioScheduledSourceNode::call("start", when, offset, duration).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

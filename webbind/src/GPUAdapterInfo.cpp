@@ -1,5 +1,6 @@
-#include <webbind/GPUAdapterInfo.hpp>
+#include "webbind/GPUAdapterInfo.hpp"
 
+namespace webbind {
 
 GPUAdapterInfo GPUAdapterInfo::take_ownership(Handle h) noexcept {
         return GPUAdapterInfo(h);
@@ -8,7 +9,6 @@ GPUAdapterInfo GPUAdapterInfo::clone() const noexcept { return *this; }
 emlite::Val GPUAdapterInfo::instance() noexcept { return emlite::Val::global("GPUAdapterInfo"); }
 GPUAdapterInfo::GPUAdapterInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUAdapterInfo::GPUAdapterInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String GPUAdapterInfo::vendor() const {
     return emlite::Val::get("vendor").as<jsbind::String>();
@@ -38,3 +38,5 @@ bool GPUAdapterInfo::isFallbackAdapter() const {
     return emlite::Val::get("isFallbackAdapter").as<bool>();
 }
 
+
+} // namespace webbind

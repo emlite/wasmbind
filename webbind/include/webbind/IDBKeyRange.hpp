@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class IDBKeyRange;
 
-
-/// The IDBKeyRange class.
+/// Interface IDBKeyRange
 /// [`IDBKeyRange`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange)
 class IDBKeyRange : public emlite::Val {
     explicit IDBKeyRange(Handle h) noexcept;
-
 public:
     explicit IDBKeyRange(const emlite::Val &val) noexcept;
     static IDBKeyRange take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IDBKeyRange clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `lower` attribute.
@@ -59,3 +58,4 @@ public:
     bool includes(const jsbind::Any& key);
 };
 
+} // namespace webbind

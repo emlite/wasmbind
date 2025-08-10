@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ImageBitmap;
 
-
-/// The ImageBitmapRenderingContext class.
+/// Interface ImageBitmapRenderingContext
 /// [`ImageBitmapRenderingContext`](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmapRenderingContext)
 class ImageBitmapRenderingContext : public emlite::Val {
     explicit ImageBitmapRenderingContext(Handle h) noexcept;
-
 public:
     explicit ImageBitmapRenderingContext(const emlite::Val &val) noexcept;
     static ImageBitmapRenderingContext take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ImageBitmapRenderingContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `canvas` attribute.
@@ -26,3 +25,4 @@ public:
     jsbind::Undefined transferFromImageBitmap(const ImageBitmap& bitmap);
 };
 
+} // namespace webbind

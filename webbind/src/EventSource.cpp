@@ -1,5 +1,7 @@
-#include <webbind/EventSource.hpp>
+#include "webbind/EventSource.hpp"
+#include "webbind/EventSourceInit.hpp"
 
+namespace webbind {
 
 EventSource EventSource::take_ownership(Handle h) noexcept {
         return EventSource(h);
@@ -9,10 +11,9 @@ emlite::Val EventSource::instance() noexcept { return emlite::Val::global("Event
 EventSource::EventSource(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 EventSource::EventSource(const emlite::Val &val) noexcept: EventTarget(val) {}
 
-
 EventSource::EventSource(const jsbind::String& url) : EventTarget(emlite::Val::global("EventSource").new_(url)) {}
 
-EventSource::EventSource(const jsbind::String& url, const jsbind::Any& eventSourceInitDict) : EventTarget(emlite::Val::global("EventSource").new_(url, eventSourceInitDict)) {}
+EventSource::EventSource(const jsbind::String& url, const EventSourceInit& eventSourceInitDict) : EventTarget(emlite::Val::global("EventSource").new_(url, eventSourceInitDict)) {}
 
 jsbind::String EventSource::url() const {
     return EventTarget::get("url").as<jsbind::String>();
@@ -54,3 +55,5 @@ jsbind::Undefined EventSource::close() {
     return EventTarget::call("close").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

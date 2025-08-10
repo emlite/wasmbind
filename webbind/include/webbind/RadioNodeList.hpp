@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "NodeList.hpp"
 #include "enums.hpp"
+#include "NodeList.hpp"
 
+namespace webbind {
 
-/// The RadioNodeList class.
+/// Interface RadioNodeList
 /// [`RadioNodeList`](https://developer.mozilla.org/en-US/docs/Web/API/RadioNodeList)
 class RadioNodeList : public NodeList {
     explicit RadioNodeList(Handle h) noexcept;
-
 public:
     explicit RadioNodeList(const emlite::Val &val) noexcept;
     static RadioNodeList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RadioNodeList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `value` attribute.
@@ -25,3 +24,4 @@ public:
     void value(const jsbind::String& value);
 };
 
+} // namespace webbind

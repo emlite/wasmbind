@@ -1,5 +1,6 @@
-#include <webbind/SVGGElement.hpp>
+#include "webbind/SVGGElement.hpp"
 
+namespace webbind {
 
 SVGGElement SVGGElement::take_ownership(Handle h) noexcept {
         return SVGGElement(h);
@@ -10,3 +11,4 @@ SVGGElement::SVGGElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::ta
 SVGGElement::SVGGElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 
 
+} // namespace webbind

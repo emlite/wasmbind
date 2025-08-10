@@ -1,5 +1,6 @@
-#include <webbind/KeyboardLayoutMap.hpp>
+#include "webbind/KeyboardLayoutMap.hpp"
 
+namespace webbind {
 
 KeyboardLayoutMap KeyboardLayoutMap::take_ownership(Handle h) noexcept {
         return KeyboardLayoutMap(h);
@@ -10,3 +11,4 @@ KeyboardLayoutMap::KeyboardLayoutMap(Handle h) noexcept : emlite::Val(emlite::Va
 KeyboardLayoutMap::KeyboardLayoutMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

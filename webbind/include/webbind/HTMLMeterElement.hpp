@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class NodeList;
 
-
-/// The HTMLMeterElement class.
+/// Interface HTMLMeterElement
 /// [`HTMLMeterElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement)
 class HTMLMeterElement : public HTMLElement {
     explicit HTMLMeterElement(Handle h) noexcept;
-
 public:
     explicit HTMLMeterElement(const emlite::Val &val) noexcept;
     static HTMLMeterElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLMeterElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMeterElement(..)` constructor, creating a new HTMLMeterElement instance
@@ -62,3 +61,4 @@ public:
     [[nodiscard]] NodeList labels() const;
 };
 
+} // namespace webbind

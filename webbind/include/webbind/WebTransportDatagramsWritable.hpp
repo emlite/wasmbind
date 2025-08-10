@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WritableStream.hpp"
 #include "enums.hpp"
+#include "WritableStream.hpp"
+
+namespace webbind {
 
 class WebTransportSendGroup;
 
-
-/// The WebTransportDatagramsWritable class.
+/// Interface WebTransportDatagramsWritable
 /// [`WebTransportDatagramsWritable`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportDatagramsWritable)
 class WebTransportDatagramsWritable : public WritableStream {
     explicit WebTransportDatagramsWritable(Handle h) noexcept;
-
 public:
     explicit WebTransportDatagramsWritable(const emlite::Val &val) noexcept;
     static WebTransportDatagramsWritable take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebTransportDatagramsWritable clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sendGroup` attribute.
@@ -33,3 +32,4 @@ public:
     void sendOrder(long long value);
 };
 
+} // namespace webbind

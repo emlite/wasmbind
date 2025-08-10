@@ -1,5 +1,6 @@
-#include <webbind/BatteryManager.hpp>
+#include "webbind/BatteryManager.hpp"
 
+namespace webbind {
 
 BatteryManager BatteryManager::take_ownership(Handle h) noexcept {
         return BatteryManager(h);
@@ -8,7 +9,6 @@ BatteryManager BatteryManager::clone() const noexcept { return *this; }
 emlite::Val BatteryManager::instance() noexcept { return emlite::Val::global("BatteryManager"); }
 BatteryManager::BatteryManager(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BatteryManager::BatteryManager(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 bool BatteryManager::charging() const {
     return EventTarget::get("charging").as<bool>();
@@ -58,3 +58,5 @@ void BatteryManager::onlevelchange(const jsbind::Any& value) {
     EventTarget::set("onlevelchange", value);
 }
 
+
+} // namespace webbind

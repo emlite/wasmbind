@@ -2,35 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "FileSystemHandle.hpp"
 #include "enums.hpp"
+#include "FileSystemHandle.hpp"
+#include "FileSystemCreateWritableOptions.hpp"
+
+namespace webbind {
 
 class File;
 class FileSystemWritableFileStream;
-class FileSystemCreateWritableOptions;
 class FileSystemSyncAccessHandle;
 
-
-class FileSystemCreateWritableOptions : public emlite::Val {
-  explicit FileSystemCreateWritableOptions(Handle h) noexcept;
-public:
-    static FileSystemCreateWritableOptions take_ownership(Handle h) noexcept;
-    explicit FileSystemCreateWritableOptions(const emlite::Val &val) noexcept;
-    FileSystemCreateWritableOptions() noexcept;
-    [[nodiscard]] FileSystemCreateWritableOptions clone() const noexcept;
-    [[nodiscard]] bool keepExistingData() const;
-    void keepExistingData(bool value);
-};
-
-/// The FileSystemFileHandle class.
+/// Interface FileSystemFileHandle
 /// [`FileSystemFileHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle)
 class FileSystemFileHandle : public FileSystemHandle {
     explicit FileSystemFileHandle(Handle h) noexcept;
-
 public:
     explicit FileSystemFileHandle(const emlite::Val &val) noexcept;
     static FileSystemFileHandle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemFileHandle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getFile method.
@@ -47,3 +35,4 @@ public:
     jsbind::Promise<FileSystemSyncAccessHandle> createSyncAccessHandle();
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The PresentationAvailability class.
+/// Interface PresentationAvailability
 /// [`PresentationAvailability`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability)
 class PresentationAvailability : public EventTarget {
     explicit PresentationAvailability(Handle h) noexcept;
-
 public:
     explicit PresentationAvailability(const emlite::Val &val) noexcept;
     static PresentationAvailability take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PresentationAvailability clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `value` attribute.
@@ -28,3 +27,4 @@ public:
     void onchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

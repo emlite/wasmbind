@@ -1,6 +1,7 @@
-#include <webbind/PerformanceEventTiming.hpp>
-#include <webbind/Node.hpp>
+#include "webbind/PerformanceEventTiming.hpp"
+#include "webbind/Node.hpp"
 
+namespace webbind {
 
 PerformanceEventTiming PerformanceEventTiming::take_ownership(Handle h) noexcept {
         return PerformanceEventTiming(h);
@@ -9,7 +10,6 @@ PerformanceEventTiming PerformanceEventTiming::clone() const noexcept { return *
 emlite::Val PerformanceEventTiming::instance() noexcept { return emlite::Val::global("PerformanceEventTiming"); }
 PerformanceEventTiming::PerformanceEventTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceEventTiming::PerformanceEventTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
-
 
 jsbind::Any PerformanceEventTiming::processingStart() const {
     return PerformanceEntry::get("processingStart").as<jsbind::Any>();
@@ -35,3 +35,5 @@ jsbind::Object PerformanceEventTiming::toJSON() {
     return PerformanceEntry::call("toJSON").as<jsbind::Object>();
 }
 
+
+} // namespace webbind

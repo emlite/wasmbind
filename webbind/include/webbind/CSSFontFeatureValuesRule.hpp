@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
+
+namespace webbind {
 
 class CSSFontFeatureValuesMap;
 
-
-/// The CSSFontFeatureValuesRule class.
+/// Interface CSSFontFeatureValuesRule
 /// [`CSSFontFeatureValuesRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule)
 class CSSFontFeatureValuesRule : public CSSRule {
     explicit CSSFontFeatureValuesRule(Handle h) noexcept;
-
 public:
     explicit CSSFontFeatureValuesRule(const emlite::Val &val) noexcept;
     static CSSFontFeatureValuesRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSFontFeatureValuesRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `fontFamily` attribute.
@@ -48,3 +47,4 @@ public:
     [[nodiscard]] CSSFontFeatureValuesMap historicalForms() const;
 };
 
+} // namespace webbind

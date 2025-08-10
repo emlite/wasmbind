@@ -1,6 +1,8 @@
-#include <webbind/AnimationTrigger.hpp>
-#include <webbind/AnimationTimeline.hpp>
+#include "webbind/AnimationTrigger.hpp"
+#include "webbind/AnimationTriggerOptions.hpp"
+#include "webbind/AnimationTimeline.hpp"
 
+namespace webbind {
 
 AnimationTrigger AnimationTrigger::take_ownership(Handle h) noexcept {
         return AnimationTrigger(h);
@@ -10,10 +12,9 @@ emlite::Val AnimationTrigger::instance() noexcept { return emlite::Val::global("
 AnimationTrigger::AnimationTrigger(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AnimationTrigger::AnimationTrigger(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 AnimationTrigger::AnimationTrigger() : emlite::Val(emlite::Val::global("AnimationTrigger").new_()) {}
 
-AnimationTrigger::AnimationTrigger(const jsbind::Any& options) : emlite::Val(emlite::Val::global("AnimationTrigger").new_(options)) {}
+AnimationTrigger::AnimationTrigger(const AnimationTriggerOptions& options) : emlite::Val(emlite::Val::global("AnimationTrigger").new_(options)) {}
 
 AnimationTimeline AnimationTrigger::timeline() const {
     return emlite::Val::get("timeline").as<AnimationTimeline>();
@@ -63,3 +64,5 @@ void AnimationTrigger::exitRangeEnd(const jsbind::Any& value) {
     emlite::Val::set("exitRangeEnd", value);
 }
 
+
+} // namespace webbind

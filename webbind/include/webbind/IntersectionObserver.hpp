@@ -3,26 +3,26 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "IntersectionObserverInit.hpp"
+
+namespace webbind {
 
 class Element;
 class IntersectionObserverEntry;
 
-
-/// The IntersectionObserver class.
+/// Interface IntersectionObserver
 /// [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
 class IntersectionObserver : public emlite::Val {
     explicit IntersectionObserver(Handle h) noexcept;
-
 public:
     explicit IntersectionObserver(const emlite::Val &val) noexcept;
     static IntersectionObserver take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IntersectionObserver clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IntersectionObserver(..)` constructor, creating a new IntersectionObserver instance
     IntersectionObserver(const jsbind::Function& callback);
     /// The `new IntersectionObserver(..)` constructor, creating a new IntersectionObserver instance
-    IntersectionObserver(const jsbind::Function& callback, const jsbind::Any& options);
+    IntersectionObserver(const jsbind::Function& callback, const IntersectionObserverInit& options);
     /// Getter of the `root` attribute.
     /// [`IntersectionObserver.root`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root)
     [[nodiscard]] jsbind::Any root() const;
@@ -55,3 +55,4 @@ public:
     jsbind::TypedArray<IntersectionObserverEntry> takeRecords();
 };
 
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class SourceBuffer;
 
-
-/// The SourceBufferList class.
+/// Interface SourceBufferList
 /// [`SourceBufferList`](https://developer.mozilla.org/en-US/docs/Web/API/SourceBufferList)
 class SourceBufferList : public EventTarget {
     explicit SourceBufferList(Handle h) noexcept;
-
 public:
     explicit SourceBufferList(const emlite::Val &val) noexcept;
     static SourceBufferList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SourceBufferList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -36,3 +35,4 @@ public:
     void onremovesourcebuffer(const jsbind::Any& value);
 };
 
+} // namespace webbind

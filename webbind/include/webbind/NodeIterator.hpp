@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 
-
-/// The NodeIterator class.
+/// Interface NodeIterator
 /// [`NodeIterator`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator)
 class NodeIterator : public emlite::Val {
     explicit NodeIterator(Handle h) noexcept;
-
 public:
     explicit NodeIterator(const emlite::Val &val) noexcept;
     static NodeIterator take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NodeIterator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `root` attribute.
@@ -44,3 +43,4 @@ public:
     jsbind::Undefined detach();
 };
 
+} // namespace webbind

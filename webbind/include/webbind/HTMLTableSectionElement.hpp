@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLCollection;
 class HTMLTableRowElement;
 
-
-/// The HTMLTableSectionElement class.
+/// Interface HTMLTableSectionElement
 /// [`HTMLTableSectionElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableSectionElement)
 class HTMLTableSectionElement : public HTMLElement {
     explicit HTMLTableSectionElement(Handle h) noexcept;
-
 public:
     explicit HTMLTableSectionElement(const emlite::Val &val) noexcept;
     static HTMLTableSectionElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTableSectionElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableSectionElement(..)` constructor, creating a new HTMLTableSectionElement instance
@@ -60,3 +59,4 @@ public:
     void vAlign(const jsbind::String& value);
 };
 
+} // namespace webbind

@@ -1,6 +1,7 @@
-#include <webbind/AudioListener.hpp>
-#include <webbind/AudioParam.hpp>
+#include "webbind/AudioListener.hpp"
+#include "webbind/AudioParam.hpp"
 
+namespace webbind {
 
 AudioListener AudioListener::take_ownership(Handle h) noexcept {
         return AudioListener(h);
@@ -9,7 +10,6 @@ AudioListener AudioListener::clone() const noexcept { return *this; }
 emlite::Val AudioListener::instance() noexcept { return emlite::Val::global("AudioListener"); }
 AudioListener::AudioListener(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioListener::AudioListener(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 AudioParam AudioListener::positionX() const {
     return emlite::Val::get("positionX").as<AudioParam>();
@@ -55,3 +55,5 @@ jsbind::Undefined AudioListener::setOrientation(float x, float y, float z, float
     return emlite::Val::call("setOrientation", x, y, z, xUp, yUp, zUp).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

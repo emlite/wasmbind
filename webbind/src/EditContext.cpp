@@ -1,7 +1,9 @@
-#include <webbind/EditContext.hpp>
-#include <webbind/DOMRect.hpp>
-#include <webbind/HTMLElement.hpp>
+#include "webbind/EditContext.hpp"
+#include "webbind/EditContextInit.hpp"
+#include "webbind/DOMRect.hpp"
+#include "webbind/HTMLElement.hpp"
 
+namespace webbind {
 
 EditContext EditContext::take_ownership(Handle h) noexcept {
         return EditContext(h);
@@ -11,10 +13,9 @@ emlite::Val EditContext::instance() noexcept { return emlite::Val::global("EditC
 EditContext::EditContext(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 EditContext::EditContext(const emlite::Val &val) noexcept: EventTarget(val) {}
 
-
 EditContext::EditContext() : EventTarget(emlite::Val::global("EditContext").new_()) {}
 
-EditContext::EditContext(const jsbind::Any& options) : EventTarget(emlite::Val::global("EditContext").new_(options)) {}
+EditContext::EditContext(const EditContextInit& options) : EventTarget(emlite::Val::global("EditContext").new_(options)) {}
 
 jsbind::Undefined EditContext::updateText(unsigned long rangeStart, unsigned long rangeEnd, const jsbind::String& text) {
     return EventTarget::call("updateText", rangeStart, rangeEnd, text).as<jsbind::Undefined>();
@@ -100,3 +101,5 @@ void EditContext::oncompositionend(const jsbind::Any& value) {
     EventTarget::set("oncompositionend", value);
 }
 
+
+} // namespace webbind

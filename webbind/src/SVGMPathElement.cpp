@@ -1,6 +1,7 @@
-#include <webbind/SVGMPathElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
+#include "webbind/SVGMPathElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
 
+namespace webbind {
 
 SVGMPathElement SVGMPathElement::take_ownership(Handle h) noexcept {
         return SVGMPathElement(h);
@@ -10,8 +11,9 @@ emlite::Val SVGMPathElement::instance() noexcept { return emlite::Val::global("S
 SVGMPathElement::SVGMPathElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGMPathElement::SVGMPathElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
-
 SVGAnimatedString SVGMPathElement::href() const {
     return SVGElement::get("href").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

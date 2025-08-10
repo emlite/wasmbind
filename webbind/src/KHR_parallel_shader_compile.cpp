@@ -1,5 +1,6 @@
-#include <webbind/KHR_parallel_shader_compile.hpp>
+#include "webbind/KHR_parallel_shader_compile.hpp"
 
+namespace webbind {
 
 KHR_parallel_shader_compile KHR_parallel_shader_compile::take_ownership(Handle h) noexcept {
         return KHR_parallel_shader_compile(h);
@@ -10,3 +11,4 @@ KHR_parallel_shader_compile::KHR_parallel_shader_compile(Handle h) noexcept : em
 KHR_parallel_shader_compile::KHR_parallel_shader_compile(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

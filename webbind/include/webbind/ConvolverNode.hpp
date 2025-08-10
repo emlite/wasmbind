@@ -2,27 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "AudioNode.hpp"
 #include "enums.hpp"
+#include "AudioNode.hpp"
+#include "ConvolverOptions.hpp"
 
+namespace webbind {
+
+class BaseAudioContext;
 class AudioBuffer;
 
-
-/// The ConvolverNode class.
+/// Interface ConvolverNode
 /// [`ConvolverNode`](https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode)
 class ConvolverNode : public AudioNode {
     explicit ConvolverNode(Handle h) noexcept;
-
 public:
     explicit ConvolverNode(const emlite::Val &val) noexcept;
     static ConvolverNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ConvolverNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ConvolverNode(..)` constructor, creating a new ConvolverNode instance
     ConvolverNode(const BaseAudioContext& context);
     /// The `new ConvolverNode(..)` constructor, creating a new ConvolverNode instance
-    ConvolverNode(const BaseAudioContext& context, const jsbind::Any& options);
+    ConvolverNode(const BaseAudioContext& context, const ConvolverOptions& options);
     /// Getter of the `buffer` attribute.
     /// [`ConvolverNode.buffer`](https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer)
     [[nodiscard]] AudioBuffer buffer() const;
@@ -37,3 +38,4 @@ public:
     void normalize(bool value);
 };
 
+} // namespace webbind

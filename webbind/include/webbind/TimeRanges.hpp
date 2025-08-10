@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The TimeRanges class.
+/// Interface TimeRanges
 /// [`TimeRanges`](https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges)
 class TimeRanges : public emlite::Val {
     explicit TimeRanges(Handle h) noexcept;
-
 public:
     explicit TimeRanges(const emlite::Val &val) noexcept;
     static TimeRanges take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TimeRanges clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -27,3 +26,4 @@ public:
     double end(unsigned long index);
 };
 
+} // namespace webbind

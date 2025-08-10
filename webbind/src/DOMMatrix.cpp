@@ -1,6 +1,8 @@
-#include <webbind/DOMMatrix.hpp>
-#include <webbind/DOMPointReadOnly.hpp>
+#include "webbind/DOMMatrix.hpp"
+#include "webbind/DOMMatrix.hpp"
+#include "webbind/DOMMatrixInit.hpp"
 
+namespace webbind {
 
 DOMMatrix DOMMatrix::take_ownership(Handle h) noexcept {
         return DOMMatrix(h);
@@ -9,7 +11,6 @@ DOMMatrix DOMMatrix::clone() const noexcept { return *this; }
 emlite::Val DOMMatrix::instance() noexcept { return emlite::Val::global("DOMMatrix"); }
 DOMMatrix::DOMMatrix(Handle h) noexcept : DOMMatrixReadOnly(emlite::Val::take_ownership(h)) {}
 DOMMatrix::DOMMatrix(const emlite::Val &val) noexcept: DOMMatrixReadOnly(val) {}
-
 
 DOMMatrix::DOMMatrix() : DOMMatrixReadOnly(emlite::Val::global("DOMMatrix").new_()) {}
 
@@ -359,3 +360,5 @@ DOMMatrix DOMMatrix::setMatrixValue(const jsbind::String& transformList) {
     return DOMMatrixReadOnly::call("setMatrixValue", transformList).as<DOMMatrix>();
 }
 
+
+} // namespace webbind

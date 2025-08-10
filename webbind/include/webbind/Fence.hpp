@@ -3,42 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "FenceEvent.hpp"
 
-class FenceEvent;
+namespace webbind {
+
 class FencedFrameConfig;
 class Event;
 
-
-class FenceEvent : public emlite::Val {
-  explicit FenceEvent(Handle h) noexcept;
-public:
-    static FenceEvent take_ownership(Handle h) noexcept;
-    explicit FenceEvent(const emlite::Val &val) noexcept;
-    FenceEvent() noexcept;
-    [[nodiscard]] FenceEvent clone() const noexcept;
-    [[nodiscard]] jsbind::String eventType() const;
-    void eventType(const jsbind::String& value);
-    [[nodiscard]] jsbind::String eventData() const;
-    void eventData(const jsbind::String& value);
-    [[nodiscard]] jsbind::TypedArray<FenceReportingDestination> destination() const;
-    void destination(const jsbind::TypedArray<FenceReportingDestination>& value);
-    [[nodiscard]] bool crossOriginExposed() const;
-    void crossOriginExposed(bool value);
-    [[nodiscard]] bool once() const;
-    void once(bool value);
-    [[nodiscard]] jsbind::String destinationURL() const;
-    void destinationURL(const jsbind::String& value);
-};
-
-/// The Fence class.
+/// Interface Fence
 /// [`Fence`](https://developer.mozilla.org/en-US/docs/Web/API/Fence)
 class Fence : public emlite::Val {
     explicit Fence(Handle h) noexcept;
-
 public:
     explicit Fence(const emlite::Val &val) noexcept;
     static Fence take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Fence clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The reportEvent method.
@@ -64,3 +42,4 @@ public:
     jsbind::Undefined notifyEvent(const Event& event);
 };
 
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class AbortSignal;
 
-
-/// The AbortSignal class.
+/// Interface AbortSignal
 /// [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 class AbortSignal : public EventTarget {
     explicit AbortSignal(Handle h) noexcept;
-
 public:
     explicit AbortSignal(const emlite::Val &val) noexcept;
     static AbortSignal take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AbortSignal clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The abort method.
@@ -48,3 +47,4 @@ public:
     void onabort(const jsbind::Any& value);
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SourceBuffer.hpp"
 #include "enums.hpp"
+#include "SourceBuffer.hpp"
 
+namespace webbind {
 
-/// The ManagedSourceBuffer class.
+/// Interface ManagedSourceBuffer
 /// [`ManagedSourceBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedSourceBuffer)
 class ManagedSourceBuffer : public SourceBuffer {
     explicit ManagedSourceBuffer(Handle h) noexcept;
-
 public:
     explicit ManagedSourceBuffer(const emlite::Val &val) noexcept;
     static ManagedSourceBuffer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ManagedSourceBuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onbufferedchange` attribute.
@@ -25,3 +24,4 @@ public:
     void onbufferedchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

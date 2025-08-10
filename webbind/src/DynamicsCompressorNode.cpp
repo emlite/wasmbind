@@ -1,7 +1,9 @@
-#include <webbind/DynamicsCompressorNode.hpp>
-#include <webbind/AudioParam.hpp>
-#include <webbind/BaseAudioContext.hpp>
+#include "webbind/DynamicsCompressorNode.hpp"
+#include "webbind/BaseAudioContext.hpp"
+#include "webbind/DynamicsCompressorOptions.hpp"
+#include "webbind/AudioParam.hpp"
 
+namespace webbind {
 
 DynamicsCompressorNode DynamicsCompressorNode::take_ownership(Handle h) noexcept {
         return DynamicsCompressorNode(h);
@@ -11,10 +13,9 @@ emlite::Val DynamicsCompressorNode::instance() noexcept { return emlite::Val::gl
 DynamicsCompressorNode::DynamicsCompressorNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 DynamicsCompressorNode::DynamicsCompressorNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
-
 DynamicsCompressorNode::DynamicsCompressorNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("DynamicsCompressorNode").new_(context)) {}
 
-DynamicsCompressorNode::DynamicsCompressorNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("DynamicsCompressorNode").new_(context, options)) {}
+DynamicsCompressorNode::DynamicsCompressorNode(const BaseAudioContext& context, const DynamicsCompressorOptions& options) : AudioNode(emlite::Val::global("DynamicsCompressorNode").new_(context, options)) {}
 
 AudioParam DynamicsCompressorNode::threshold() const {
     return AudioNode::get("threshold").as<AudioParam>();
@@ -40,3 +41,5 @@ AudioParam DynamicsCompressorNode::release() const {
     return AudioNode::get("release").as<AudioParam>();
 }
 
+
+} // namespace webbind

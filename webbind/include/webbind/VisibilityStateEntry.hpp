@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PerformanceEntry.hpp"
 #include "enums.hpp"
+#include "PerformanceEntry.hpp"
 
+namespace webbind {
 
-/// The VisibilityStateEntry class.
+/// Interface VisibilityStateEntry
 /// [`VisibilityStateEntry`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry)
 class VisibilityStateEntry : public PerformanceEntry {
     explicit VisibilityStateEntry(Handle h) noexcept;
-
 public:
     explicit VisibilityStateEntry(const emlite::Val &val) noexcept;
     static VisibilityStateEntry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VisibilityStateEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -31,3 +30,4 @@ public:
     [[nodiscard]] unsigned long duration() const;
 };
 
+} // namespace webbind

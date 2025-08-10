@@ -1,38 +1,8 @@
-#include <webbind/MediaSession.hpp>
-#include <webbind/MediaMetadata.hpp>
+#include "webbind/MediaSession.hpp"
+#include "webbind/MediaMetadata.hpp"
+#include "webbind/MediaPositionState.hpp"
 
-
-MediaPositionState::MediaPositionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaPositionState MediaPositionState::take_ownership(Handle h) noexcept {
-        return MediaPositionState(h);
-    }
-MediaPositionState::MediaPositionState(const emlite::Val &val) noexcept: emlite::Val(val) {}
-MediaPositionState::MediaPositionState() noexcept: emlite::Val(emlite::Val::object()) {}
-MediaPositionState MediaPositionState::clone() const noexcept { return *this; }
-
-double MediaPositionState::duration() const {
-    return emlite::Val::get("duration").as<double>();
-}
-
-void MediaPositionState::duration(double value) {
-    emlite::Val::set("duration", value);
-}
-
-double MediaPositionState::playbackRate() const {
-    return emlite::Val::get("playbackRate").as<double>();
-}
-
-void MediaPositionState::playbackRate(double value) {
-    emlite::Val::set("playbackRate", value);
-}
-
-double MediaPositionState::position() const {
-    return emlite::Val::get("position").as<double>();
-}
-
-void MediaPositionState::position(double value) {
-    emlite::Val::set("position", value);
-}
+namespace webbind {
 
 MediaSession MediaSession::take_ownership(Handle h) noexcept {
         return MediaSession(h);
@@ -41,7 +11,6 @@ MediaSession MediaSession::clone() const noexcept { return *this; }
 emlite::Val MediaSession::instance() noexcept { return emlite::Val::global("MediaSession"); }
 MediaSession::MediaSession(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaSession::MediaSession(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 MediaMetadata MediaSession::metadata() const {
     return emlite::Val::get("metadata").as<MediaMetadata>();
@@ -83,3 +52,5 @@ jsbind::Promise<jsbind::Undefined> MediaSession::setScreenshareActive(bool activ
     return emlite::Val::call("setScreenshareActive", active).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

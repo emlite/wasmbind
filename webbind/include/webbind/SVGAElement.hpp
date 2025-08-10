@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGraphicsElement.hpp"
 #include "enums.hpp"
+#include "SVGGraphicsElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class DOMTokenList;
 
-
-/// The SVGAElement class.
+/// Interface SVGAElement
 /// [`SVGAElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAElement)
 class SVGAElement : public SVGGraphicsElement {
     explicit SVGAElement(Handle h) noexcept;
-
 public:
     explicit SVGAElement(const emlite::Val &val) noexcept;
     static SVGAElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `target` attribute.
@@ -130,3 +129,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

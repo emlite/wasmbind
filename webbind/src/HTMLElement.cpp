@@ -1,26 +1,12 @@
-#include <webbind/HTMLElement.hpp>
-#include <webbind/ElementInternals.hpp>
-#include <webbind/EditContext.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
-#include <webbind/DOMStringMap.hpp>
-#include <webbind/SVGElement.hpp>
+#include "webbind/HTMLElement.hpp"
+#include "webbind/ElementInternals.hpp"
+#include "webbind/ShowPopoverOptions.hpp"
+#include "webbind/EditContext.hpp"
+#include "webbind/CSSStyleDeclaration.hpp"
+#include "webbind/DOMStringMap.hpp"
+#include "webbind/FocusOptions.hpp"
 
-
-ShowPopoverOptions::ShowPopoverOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ShowPopoverOptions ShowPopoverOptions::take_ownership(Handle h) noexcept {
-        return ShowPopoverOptions(h);
-    }
-ShowPopoverOptions::ShowPopoverOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ShowPopoverOptions::ShowPopoverOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-ShowPopoverOptions ShowPopoverOptions::clone() const noexcept { return *this; }
-
-HTMLElement ShowPopoverOptions::source() const {
-    return emlite::Val::get("source").as<HTMLElement>();
-}
-
-void ShowPopoverOptions::source(const HTMLElement& value) {
-    emlite::Val::set("source", value);
-}
+namespace webbind {
 
 HTMLElement HTMLElement::take_ownership(Handle h) noexcept {
         return HTMLElement(h);
@@ -29,7 +15,6 @@ HTMLElement HTMLElement::clone() const noexcept { return *this; }
 emlite::Val HTMLElement::instance() noexcept { return emlite::Val::global("HTMLElement"); }
 HTMLElement::HTMLElement(Handle h) noexcept : Element(emlite::Val::take_ownership(h)) {}
 HTMLElement::HTMLElement(const emlite::Val &val) noexcept: Element(val) {}
-
 
 HTMLElement::HTMLElement() : Element(emlite::Val::global("HTMLElement").new_()) {}
 
@@ -277,3 +262,5 @@ jsbind::Undefined HTMLElement::blur() {
     return Element::call("blur").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

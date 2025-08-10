@@ -1,5 +1,6 @@
-#include <webbind/FragmentDirective.hpp>
+#include "webbind/FragmentDirective.hpp"
 
+namespace webbind {
 
 FragmentDirective FragmentDirective::take_ownership(Handle h) noexcept {
         return FragmentDirective(h);
@@ -10,3 +11,4 @@ FragmentDirective::FragmentDirective(Handle h) noexcept : emlite::Val(emlite::Va
 FragmentDirective::FragmentDirective(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

@@ -2,36 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSGroupingRule.hpp"
 #include "enums.hpp"
+#include "CSSGroupingRule.hpp"
+#include "FunctionParameter.hpp"
 
-class FunctionParameter;
+namespace webbind {
 
-
-class FunctionParameter : public emlite::Val {
-  explicit FunctionParameter(Handle h) noexcept;
-public:
-    static FunctionParameter take_ownership(Handle h) noexcept;
-    explicit FunctionParameter(const emlite::Val &val) noexcept;
-    FunctionParameter() noexcept;
-    [[nodiscard]] FunctionParameter clone() const noexcept;
-    [[nodiscard]] jsbind::String name() const;
-    void name(const jsbind::String& value);
-    [[nodiscard]] jsbind::String type() const;
-    void type(const jsbind::String& value);
-    [[nodiscard]] jsbind::String defaultValue() const;
-    void defaultValue(const jsbind::String& value);
-};
-
-/// The CSSFunctionRule class.
+/// Interface CSSFunctionRule
 /// [`CSSFunctionRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule)
 class CSSFunctionRule : public CSSGroupingRule {
     explicit CSSFunctionRule(Handle h) noexcept;
-
 public:
     explicit CSSFunctionRule(const emlite::Val &val) noexcept;
     static CSSFunctionRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSFunctionRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -45,3 +28,4 @@ public:
     [[nodiscard]] jsbind::String returnType() const;
 };
 
+} // namespace webbind

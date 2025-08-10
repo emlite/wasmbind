@@ -1,7 +1,9 @@
-#include <webbind/PannerNode.hpp>
-#include <webbind/AudioParam.hpp>
-#include <webbind/BaseAudioContext.hpp>
+#include "webbind/PannerNode.hpp"
+#include "webbind/BaseAudioContext.hpp"
+#include "webbind/PannerOptions.hpp"
+#include "webbind/AudioParam.hpp"
 
+namespace webbind {
 
 PannerNode PannerNode::take_ownership(Handle h) noexcept {
         return PannerNode(h);
@@ -11,10 +13,9 @@ emlite::Val PannerNode::instance() noexcept { return emlite::Val::global("Panner
 PannerNode::PannerNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 PannerNode::PannerNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
-
 PannerNode::PannerNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("PannerNode").new_(context)) {}
 
-PannerNode::PannerNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("PannerNode").new_(context, options)) {}
+PannerNode::PannerNode(const BaseAudioContext& context, const PannerOptions& options) : AudioNode(emlite::Val::global("PannerNode").new_(context, options)) {}
 
 PanningModelType PannerNode::panningModel() const {
     return AudioNode::get("panningModel").as<PanningModelType>();
@@ -112,3 +113,5 @@ jsbind::Undefined PannerNode::setOrientation(float x, float y, float z) {
     return AudioNode::call("setOrientation", x, y, z).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

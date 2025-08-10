@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedPreserveAspectRatio;
 class SVGAnimatedString;
 class SVGAnimatedLength;
 
-
-/// The SVGFEImageElement class.
+/// Interface SVGFEImageElement
 /// [`SVGFEImageElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEImageElement)
 class SVGFEImageElement : public SVGElement {
     explicit SVGFEImageElement(Handle h) noexcept;
-
 public:
     explicit SVGFEImageElement(const emlite::Val &val) noexcept;
     static SVGFEImageElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEImageElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `preserveAspectRatio` attribute.
@@ -47,3 +46,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

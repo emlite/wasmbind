@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSTransformComponent.hpp"
 #include "enums.hpp"
+#include "CSSTransformComponent.hpp"
+
+namespace webbind {
 
 class CSSNumericValue;
 
-
-/// The CSSRotate class.
+/// Interface CSSRotate
 /// [`CSSRotate`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate)
 class CSSRotate : public CSSTransformComponent {
     explicit CSSRotate(Handle h) noexcept;
-
 public:
     explicit CSSRotate(const emlite::Val &val) noexcept;
     static CSSRotate take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSRotate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSRotate(..)` constructor, creating a new CSSRotate instance
@@ -47,3 +46,4 @@ public:
     void angle(const CSSNumericValue& value);
 };
 
+} // namespace webbind

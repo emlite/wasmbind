@@ -1,8 +1,9 @@
-#include <webbind/XRInputSource.hpp>
-#include <webbind/XRSpace.hpp>
-#include <webbind/Gamepad.hpp>
-#include <webbind/XRHand.hpp>
+#include "webbind/XRInputSource.hpp"
+#include "webbind/XRSpace.hpp"
+#include "webbind/Gamepad.hpp"
+#include "webbind/XRHand.hpp"
 
+namespace webbind {
 
 XRInputSource XRInputSource::take_ownership(Handle h) noexcept {
         return XRInputSource(h);
@@ -11,7 +12,6 @@ XRInputSource XRInputSource::clone() const noexcept { return *this; }
 emlite::Val XRInputSource::instance() noexcept { return emlite::Val::global("XRInputSource"); }
 XRInputSource::XRInputSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRInputSource::XRInputSource(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 XRHandedness XRInputSource::handedness() const {
     return emlite::Val::get("handedness").as<XRHandedness>();
@@ -45,3 +45,5 @@ XRHand XRInputSource::hand() const {
     return emlite::Val::get("hand").as<XRHand>();
 }
 
+
+} // namespace webbind

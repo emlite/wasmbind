@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PresentationConnection class.
+/// Interface PresentationConnection
 /// [`PresentationConnection`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection)
 class PresentationConnection : public EventTarget {
     explicit PresentationConnection(Handle h) noexcept;
-
 public:
     explicit PresentationConnection(const emlite::Val &val) noexcept;
     static PresentationConnection take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PresentationConnection clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -67,3 +67,4 @@ public:
     jsbind::Undefined send(const jsbind::Any& data);
 };
 
+} // namespace webbind

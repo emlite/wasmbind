@@ -1,41 +1,12 @@
-#include <webbind/NavigateEvent.hpp>
-#include <webbind/NavigationDestination.hpp>
-#include <webbind/AbortSignal.hpp>
-#include <webbind/FormData.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/NavigateEvent.hpp"
+#include "webbind/NavigateEventInit.hpp"
+#include "webbind/NavigationDestination.hpp"
+#include "webbind/AbortSignal.hpp"
+#include "webbind/FormData.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/NavigationInterceptOptions.hpp"
 
-
-NavigationInterceptOptions::NavigationInterceptOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationInterceptOptions NavigationInterceptOptions::take_ownership(Handle h) noexcept {
-        return NavigationInterceptOptions(h);
-    }
-NavigationInterceptOptions::NavigationInterceptOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-NavigationInterceptOptions::NavigationInterceptOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-NavigationInterceptOptions NavigationInterceptOptions::clone() const noexcept { return *this; }
-
-jsbind::Function NavigationInterceptOptions::handler() const {
-    return emlite::Val::get("handler").as<jsbind::Function>();
-}
-
-void NavigationInterceptOptions::handler(const jsbind::Function& value) {
-    emlite::Val::set("handler", value);
-}
-
-NavigationFocusReset NavigationInterceptOptions::focusReset() const {
-    return emlite::Val::get("focusReset").as<NavigationFocusReset>();
-}
-
-void NavigationInterceptOptions::focusReset(const NavigationFocusReset& value) {
-    emlite::Val::set("focusReset", value);
-}
-
-NavigationScrollBehavior NavigationInterceptOptions::scroll() const {
-    return emlite::Val::get("scroll").as<NavigationScrollBehavior>();
-}
-
-void NavigationInterceptOptions::scroll(const NavigationScrollBehavior& value) {
-    emlite::Val::set("scroll", value);
-}
+namespace webbind {
 
 NavigateEvent NavigateEvent::take_ownership(Handle h) noexcept {
         return NavigateEvent(h);
@@ -45,8 +16,7 @@ emlite::Val NavigateEvent::instance() noexcept { return emlite::Val::global("Nav
 NavigateEvent::NavigateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 NavigateEvent::NavigateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-NavigateEvent::NavigateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("NavigateEvent").new_(type, eventInitDict)) {}
+NavigateEvent::NavigateEvent(const jsbind::String& type, const NavigateEventInit& eventInitDict) : Event(emlite::Val::global("NavigateEvent").new_(type, eventInitDict)) {}
 
 NavigationType NavigateEvent::navigationType() const {
     return Event::get("navigationType").as<NavigationType>();
@@ -104,3 +74,5 @@ jsbind::Undefined NavigateEvent::scroll() {
     return Event::call("scroll").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

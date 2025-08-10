@@ -1,8 +1,9 @@
-#include <webbind/MathMLElement.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
-#include <webbind/DOMStringMap.hpp>
-#include <webbind/SVGElement.hpp>
+#include "webbind/MathMLElement.hpp"
+#include "webbind/CSSStyleDeclaration.hpp"
+#include "webbind/DOMStringMap.hpp"
+#include "webbind/FocusOptions.hpp"
 
+namespace webbind {
 
 MathMLElement MathMLElement::take_ownership(Handle h) noexcept {
         return MathMLElement(h);
@@ -11,7 +12,6 @@ MathMLElement MathMLElement::clone() const noexcept { return *this; }
 emlite::Val MathMLElement::instance() noexcept { return emlite::Val::global("MathMLElement"); }
 MathMLElement::MathMLElement(Handle h) noexcept : Element(emlite::Val::take_ownership(h)) {}
 MathMLElement::MathMLElement(const emlite::Val &val) noexcept: Element(val) {}
-
 
 CSSStyleDeclaration MathMLElement::style() const {
     return Element::get("style").as<CSSStyleDeclaration>();
@@ -65,3 +65,5 @@ jsbind::Undefined MathMLElement::blur() {
     return Element::call("blur").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/FontFaceSetLoadEvent.hpp>
-#include <webbind/FontFace.hpp>
+#include "webbind/FontFaceSetLoadEvent.hpp"
+#include "webbind/FontFaceSetLoadEventInit.hpp"
+#include "webbind/FontFace.hpp"
 
+namespace webbind {
 
 FontFaceSetLoadEvent FontFaceSetLoadEvent::take_ownership(Handle h) noexcept {
         return FontFaceSetLoadEvent(h);
@@ -10,12 +12,13 @@ emlite::Val FontFaceSetLoadEvent::instance() noexcept { return emlite::Val::glob
 FontFaceSetLoadEvent::FontFaceSetLoadEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 FontFaceSetLoadEvent::FontFaceSetLoadEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 FontFaceSetLoadEvent::FontFaceSetLoadEvent(const jsbind::String& type) : Event(emlite::Val::global("FontFaceSetLoadEvent").new_(type)) {}
 
-FontFaceSetLoadEvent::FontFaceSetLoadEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("FontFaceSetLoadEvent").new_(type, eventInitDict)) {}
+FontFaceSetLoadEvent::FontFaceSetLoadEvent(const jsbind::String& type, const FontFaceSetLoadEventInit& eventInitDict) : Event(emlite::Val::global("FontFaceSetLoadEvent").new_(type, eventInitDict)) {}
 
 jsbind::TypedArray<FontFace> FontFaceSetLoadEvent::fontfaces() const {
     return Event::get("fontfaces").as<jsbind::TypedArray<FontFace>>();
 }
 
+
+} // namespace webbind

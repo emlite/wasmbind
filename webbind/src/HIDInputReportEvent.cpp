@@ -1,6 +1,8 @@
-#include <webbind/HIDInputReportEvent.hpp>
-#include <webbind/HIDDevice.hpp>
+#include "webbind/HIDInputReportEvent.hpp"
+#include "webbind/HIDInputReportEventInit.hpp"
+#include "webbind/HIDDevice.hpp"
 
+namespace webbind {
 
 HIDInputReportEvent HIDInputReportEvent::take_ownership(Handle h) noexcept {
         return HIDInputReportEvent(h);
@@ -10,8 +12,7 @@ emlite::Val HIDInputReportEvent::instance() noexcept { return emlite::Val::globa
 HIDInputReportEvent::HIDInputReportEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 HIDInputReportEvent::HIDInputReportEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-HIDInputReportEvent::HIDInputReportEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("HIDInputReportEvent").new_(type, eventInitDict)) {}
+HIDInputReportEvent::HIDInputReportEvent(const jsbind::String& type, const HIDInputReportEventInit& eventInitDict) : Event(emlite::Val::global("HIDInputReportEvent").new_(type, eventInitDict)) {}
 
 HIDDevice HIDInputReportEvent::device() const {
     return Event::get("device").as<HIDDevice>();
@@ -25,3 +26,5 @@ jsbind::DataView HIDInputReportEvent::data() const {
     return Event::get("data").as<jsbind::DataView>();
 }
 
+
+} // namespace webbind

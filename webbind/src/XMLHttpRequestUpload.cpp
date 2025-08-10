@@ -1,5 +1,6 @@
-#include <webbind/XMLHttpRequestUpload.hpp>
+#include "webbind/XMLHttpRequestUpload.hpp"
 
+namespace webbind {
 
 XMLHttpRequestUpload XMLHttpRequestUpload::take_ownership(Handle h) noexcept {
         return XMLHttpRequestUpload(h);
@@ -10,3 +11,4 @@ XMLHttpRequestUpload::XMLHttpRequestUpload(Handle h) noexcept : XMLHttpRequestEv
 XMLHttpRequestUpload::XMLHttpRequestUpload(const emlite::Val &val) noexcept: XMLHttpRequestEventTarget(val) {}
 
 
+} // namespace webbind

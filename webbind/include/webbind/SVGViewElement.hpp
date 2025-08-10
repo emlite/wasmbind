@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedRect;
 class SVGAnimatedPreserveAspectRatio;
 
-
-/// The SVGViewElement class.
+/// Interface SVGViewElement
 /// [`SVGViewElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGViewElement)
 class SVGViewElement : public SVGElement {
     explicit SVGViewElement(Handle h) noexcept;
-
 public:
     explicit SVGViewElement(const emlite::Val &val) noexcept;
     static SVGViewElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGViewElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `viewBox` attribute.
@@ -28,3 +27,4 @@ public:
     [[nodiscard]] SVGAnimatedPreserveAspectRatio preserveAspectRatio() const;
 };
 
+} // namespace webbind

@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "PerformanceResourceTiming.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class NotRestoredReasons;
 
-
-/// The PerformanceNavigationTiming class.
+/// Interface PerformanceNavigationTiming
 /// [`PerformanceNavigationTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming)
 class PerformanceNavigationTiming : public PerformanceResourceTiming {
     explicit PerformanceNavigationTiming(Handle h) noexcept;
-
 public:
     explicit PerformanceNavigationTiming(const emlite::Val &val) noexcept;
     static PerformanceNavigationTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceNavigationTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `unloadEventStart` attribute.
@@ -63,3 +63,4 @@ public:
     [[nodiscard]] jsbind::Any activationStart() const;
 };
 
+} // namespace webbind

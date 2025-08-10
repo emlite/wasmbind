@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "PerformanceEntry.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class PerformanceServerTiming;
 
-
-/// The PerformanceResourceTiming class.
+/// Interface PerformanceResourceTiming
 /// [`PerformanceResourceTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming)
 class PerformanceResourceTiming : public PerformanceEntry {
     explicit PerformanceResourceTiming(Handle h) noexcept;
-
 public:
     explicit PerformanceResourceTiming(const emlite::Val &val) noexcept;
     static PerformanceResourceTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceResourceTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `initiatorType` attribute.
@@ -99,3 +99,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<PerformanceServerTiming> serverTiming() const;
 };
 
+} // namespace webbind

@@ -3,19 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "QueuingStrategy.hpp"
+
+namespace webbind {
 
 class WritableStreamDefaultWriter;
 
-
-/// The WritableStream class.
+/// Interface WritableStream
 /// [`WritableStream`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream)
 class WritableStream : public emlite::Val {
     explicit WritableStream(Handle h) noexcept;
-
 public:
     explicit WritableStream(const emlite::Val &val) noexcept;
     static WritableStream take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WritableStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WritableStream(..)` constructor, creating a new WritableStream instance
@@ -23,7 +23,7 @@ public:
     /// The `new WritableStream(..)` constructor, creating a new WritableStream instance
     WritableStream(const jsbind::Object& underlyingSink);
     /// The `new WritableStream(..)` constructor, creating a new WritableStream instance
-    WritableStream(const jsbind::Object& underlyingSink, const jsbind::Any& strategy);
+    WritableStream(const jsbind::Object& underlyingSink, const QueuingStrategy& strategy);
     /// Getter of the `locked` attribute.
     /// [`WritableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/locked)
     [[nodiscard]] bool locked() const;
@@ -41,3 +41,4 @@ public:
     WritableStreamDefaultWriter getWriter();
 };
 
+} // namespace webbind

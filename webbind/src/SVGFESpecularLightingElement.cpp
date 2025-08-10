@@ -1,8 +1,9 @@
-#include <webbind/SVGFESpecularLightingElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFESpecularLightingElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFESpecularLightingElement SVGFESpecularLightingElement::take_ownership(Handle h) noexcept {
         return SVGFESpecularLightingElement(h);
@@ -11,7 +12,6 @@ SVGFESpecularLightingElement SVGFESpecularLightingElement::clone() const noexcep
 emlite::Val SVGFESpecularLightingElement::instance() noexcept { return emlite::Val::global("SVGFESpecularLightingElement"); }
 SVGFESpecularLightingElement::SVGFESpecularLightingElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFESpecularLightingElement::SVGFESpecularLightingElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFESpecularLightingElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -57,3 +57,5 @@ SVGAnimatedString SVGFESpecularLightingElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

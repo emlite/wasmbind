@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class GPUBindGroupLayout;
 
-
-/// The GPURenderPipeline class.
+/// Interface GPURenderPipeline
 /// [`GPURenderPipeline`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPipeline)
 class GPURenderPipeline : public emlite::Val {
     explicit GPURenderPipeline(Handle h) noexcept;
-
 public:
     explicit GPURenderPipeline(const emlite::Val &val) noexcept;
     static GPURenderPipeline take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPURenderPipeline clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
@@ -29,3 +28,4 @@ public:
     GPUBindGroupLayout getBindGroupLayout(unsigned long index);
 };
 
+} // namespace webbind

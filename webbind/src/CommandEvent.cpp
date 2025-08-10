@@ -1,6 +1,8 @@
-#include <webbind/CommandEvent.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/CommandEvent.hpp"
+#include "webbind/CommandEventInit.hpp"
+#include "webbind/Element.hpp"
 
+namespace webbind {
 
 CommandEvent CommandEvent::take_ownership(Handle h) noexcept {
         return CommandEvent(h);
@@ -10,10 +12,9 @@ emlite::Val CommandEvent::instance() noexcept { return emlite::Val::global("Comm
 CommandEvent::CommandEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 CommandEvent::CommandEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 CommandEvent::CommandEvent(const jsbind::String& type) : Event(emlite::Val::global("CommandEvent").new_(type)) {}
 
-CommandEvent::CommandEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("CommandEvent").new_(type, eventInitDict)) {}
+CommandEvent::CommandEvent(const jsbind::String& type, const CommandEventInit& eventInitDict) : Event(emlite::Val::global("CommandEvent").new_(type, eventInitDict)) {}
 
 Element CommandEvent::source() const {
     return Event::get("source").as<Element>();
@@ -23,3 +24,5 @@ jsbind::String CommandEvent::command() const {
     return Event::get("command").as<jsbind::String>();
 }
 
+
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WebGLActiveInfo class.
+/// Interface WebGLActiveInfo
 /// [`WebGLActiveInfo`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo)
 class WebGLActiveInfo : public emlite::Val {
     explicit WebGLActiveInfo(Handle h) noexcept;
-
 public:
     explicit WebGLActiveInfo(const emlite::Val &val) noexcept;
     static WebGLActiveInfo take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebGLActiveInfo clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `size` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] jsbind::String name() const;
 };
 
+} // namespace webbind

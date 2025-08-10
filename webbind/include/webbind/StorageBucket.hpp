@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "StorageManager.hpp"
 #include "enums.hpp"
+#include "StorageEstimate.hpp"
+
+namespace webbind {
 
 class IDBFactory;
 class CacheStorage;
 class FileSystemDirectoryHandle;
 
-
-/// The StorageBucket class.
+/// Interface StorageBucket
 /// [`StorageBucket`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket)
 class StorageBucket : public emlite::Val {
     explicit StorageBucket(Handle h) noexcept;
-
 public:
     explicit StorageBucket(const emlite::Val &val) noexcept;
     static StorageBucket take_ownership(Handle h) noexcept;
-
     [[nodiscard]] StorageBucket clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -50,3 +49,4 @@ public:
     jsbind::Promise<FileSystemDirectoryHandle> getDirectory();
 };
 
+} // namespace webbind

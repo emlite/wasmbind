@@ -1,8 +1,9 @@
-#include <webbind/ResizeObserverEntry.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/ResizeObserverSize.hpp>
+#include "webbind/ResizeObserverEntry.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/ResizeObserverSize.hpp"
 
+namespace webbind {
 
 ResizeObserverEntry ResizeObserverEntry::take_ownership(Handle h) noexcept {
         return ResizeObserverEntry(h);
@@ -11,7 +12,6 @@ ResizeObserverEntry ResizeObserverEntry::clone() const noexcept { return *this; 
 emlite::Val ResizeObserverEntry::instance() noexcept { return emlite::Val::global("ResizeObserverEntry"); }
 ResizeObserverEntry::ResizeObserverEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ResizeObserverEntry::ResizeObserverEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 Element ResizeObserverEntry::target() const {
     return emlite::Val::get("target").as<Element>();
@@ -33,3 +33,5 @@ jsbind::TypedArray<ResizeObserverSize> ResizeObserverEntry::devicePixelContentBo
     return emlite::Val::get("devicePixelContentBoxSize").as<jsbind::TypedArray<ResizeObserverSize>>();
 }
 
+
+} // namespace webbind

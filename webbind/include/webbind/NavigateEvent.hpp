@@ -2,44 +2,30 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "NavigateEventInit.hpp"
+#include "NavigationInterceptOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class NavigationDestination;
 class AbortSignal;
 class FormData;
 class Element;
-class NavigationInterceptOptions;
 
-
-class NavigationInterceptOptions : public emlite::Val {
-  explicit NavigationInterceptOptions(Handle h) noexcept;
-public:
-    static NavigationInterceptOptions take_ownership(Handle h) noexcept;
-    explicit NavigationInterceptOptions(const emlite::Val &val) noexcept;
-    NavigationInterceptOptions() noexcept;
-    [[nodiscard]] NavigationInterceptOptions clone() const noexcept;
-    [[nodiscard]] jsbind::Function handler() const;
-    void handler(const jsbind::Function& value);
-    [[nodiscard]] NavigationFocusReset focusReset() const;
-    void focusReset(const NavigationFocusReset& value);
-    [[nodiscard]] NavigationScrollBehavior scroll() const;
-    void scroll(const NavigationScrollBehavior& value);
-};
-
-/// The NavigateEvent class.
+/// Interface NavigateEvent
 /// [`NavigateEvent`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent)
 class NavigateEvent : public Event {
     explicit NavigateEvent(Handle h) noexcept;
-
 public:
     explicit NavigateEvent(const emlite::Val &val) noexcept;
     static NavigateEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NavigateEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NavigateEvent(..)` constructor, creating a new NavigateEvent instance
-    NavigateEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    NavigateEvent(const jsbind::String& type, const NavigateEventInit& eventInitDict);
     /// Getter of the `navigationType` attribute.
     /// [`NavigateEvent.navigationType`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/navigationType)
     [[nodiscard]] NavigationType navigationType() const;
@@ -84,3 +70,4 @@ public:
     jsbind::Undefined scroll();
 };
 
+} // namespace webbind

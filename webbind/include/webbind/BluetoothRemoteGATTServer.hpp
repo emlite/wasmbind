@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class BluetoothDevice;
 class BluetoothRemoteGATTServer;
 class BluetoothRemoteGATTService;
 
-
-/// The BluetoothRemoteGATTServer class.
+/// Interface BluetoothRemoteGATTServer
 /// [`BluetoothRemoteGATTServer`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer)
 class BluetoothRemoteGATTServer : public emlite::Val {
     explicit BluetoothRemoteGATTServer(Handle h) noexcept;
-
 public:
     explicit BluetoothRemoteGATTServer(const emlite::Val &val) noexcept;
     static BluetoothRemoteGATTServer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothRemoteGATTServer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `device` attribute.
@@ -43,3 +42,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTService>> getPrimaryServices(const jsbind::Any& service);
 };
 
+} // namespace webbind

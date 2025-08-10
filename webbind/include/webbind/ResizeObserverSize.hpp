@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ResizeObserverSize class.
+/// Interface ResizeObserverSize
 /// [`ResizeObserverSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverSize)
 class ResizeObserverSize : public emlite::Val {
     explicit ResizeObserverSize(Handle h) noexcept;
-
 public:
     explicit ResizeObserverSize(const emlite::Val &val) noexcept;
     static ResizeObserverSize take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ResizeObserverSize clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inlineSize` attribute.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] double blockSize() const;
 };
 
+} // namespace webbind

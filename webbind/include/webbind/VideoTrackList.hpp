@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class VideoTrack;
 
-
-/// The VideoTrackList class.
+/// Interface VideoTrackList
 /// [`VideoTrackList`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList)
 class VideoTrackList : public EventTarget {
     explicit VideoTrackList(Handle h) noexcept;
-
 public:
     explicit VideoTrackList(const emlite::Val &val) noexcept;
     static VideoTrackList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VideoTrackList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -48,3 +47,4 @@ public:
     void onremovetrack(const jsbind::Any& value);
 };
 
+} // namespace webbind

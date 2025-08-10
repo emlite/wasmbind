@@ -2,38 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "RegistrationOptions.hpp"
+
+namespace webbind {
 
 class ServiceWorker;
 class ServiceWorkerRegistration;
-class RegistrationOptions;
 
-
-class RegistrationOptions : public emlite::Val {
-  explicit RegistrationOptions(Handle h) noexcept;
-public:
-    static RegistrationOptions take_ownership(Handle h) noexcept;
-    explicit RegistrationOptions(const emlite::Val &val) noexcept;
-    RegistrationOptions() noexcept;
-    [[nodiscard]] RegistrationOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String scope() const;
-    void scope(const jsbind::String& value);
-    [[nodiscard]] WorkerType type() const;
-    void type(const WorkerType& value);
-    [[nodiscard]] ServiceWorkerUpdateViaCache updateViaCache() const;
-    void updateViaCache(const ServiceWorkerUpdateViaCache& value);
-};
-
-/// The ServiceWorkerContainer class.
+/// Interface ServiceWorkerContainer
 /// [`ServiceWorkerContainer`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer)
 class ServiceWorkerContainer : public EventTarget {
     explicit ServiceWorkerContainer(Handle h) noexcept;
-
 public:
     explicit ServiceWorkerContainer(const emlite::Val &val) noexcept;
     static ServiceWorkerContainer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ServiceWorkerContainer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `controller` attribute.
@@ -80,3 +64,4 @@ public:
     void onmessageerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

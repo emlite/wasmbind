@@ -1,5 +1,6 @@
-#include <webbind/WebGLTransformFeedback.hpp>
+#include "webbind/WebGLTransformFeedback.hpp"
 
+namespace webbind {
 
 WebGLTransformFeedback WebGLTransformFeedback::take_ownership(Handle h) noexcept {
         return WebGLTransformFeedback(h);
@@ -10,3 +11,4 @@ WebGLTransformFeedback::WebGLTransformFeedback(Handle h) noexcept : WebGLObject(
 WebGLTransformFeedback::WebGLTransformFeedback(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

@@ -1,8 +1,9 @@
-#include <webbind/SVGUseElement.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
-#include <webbind/SVGElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
+#include "webbind/SVGUseElement.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
+#include "webbind/SVGElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
 
+namespace webbind {
 
 SVGUseElement SVGUseElement::take_ownership(Handle h) noexcept {
         return SVGUseElement(h);
@@ -11,7 +12,6 @@ SVGUseElement SVGUseElement::clone() const noexcept { return *this; }
 emlite::Val SVGUseElement::instance() noexcept { return emlite::Val::global("SVGUseElement"); }
 SVGUseElement::SVGUseElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
 SVGUseElement::SVGUseElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
-
 
 SVGAnimatedLength SVGUseElement::x() const {
     return SVGGraphicsElement::get("x").as<SVGAnimatedLength>();
@@ -41,3 +41,5 @@ SVGAnimatedString SVGUseElement::href() const {
     return SVGGraphicsElement::get("href").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

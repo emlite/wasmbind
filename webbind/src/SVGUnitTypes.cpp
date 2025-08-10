@@ -1,5 +1,6 @@
-#include <webbind/SVGUnitTypes.hpp>
+#include "webbind/SVGUnitTypes.hpp"
 
+namespace webbind {
 
 SVGUnitTypes SVGUnitTypes::take_ownership(Handle h) noexcept {
         return SVGUnitTypes(h);
@@ -10,3 +11,4 @@ SVGUnitTypes::SVGUnitTypes(Handle h) noexcept : emlite::Val(emlite::Val::take_ow
 SVGUnitTypes::SVGUnitTypes(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class AbortSignal;
 
-
-/// The Subscriber class.
+/// Interface Subscriber
 /// [`Subscriber`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber)
 class Subscriber : public emlite::Val {
     explicit Subscriber(Handle h) noexcept;
-
 public:
     explicit Subscriber(const emlite::Val &val) noexcept;
     static Subscriber take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Subscriber clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The next method.
@@ -29,7 +28,7 @@ public:
     jsbind::Undefined complete();
     /// The addTeardown method.
     /// [`Subscriber.addTeardown`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/addTeardown)
-    jsbind::Undefined addTeardown(const jsbind::Any& teardown);
+    jsbind::Undefined addTeardown(const jsbind::Function& teardown);
     /// Getter of the `active` attribute.
     /// [`Subscriber.active`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/active)
     [[nodiscard]] bool active() const;
@@ -38,3 +37,4 @@ public:
     [[nodiscard]] AbortSignal signal() const;
 };
 
+} // namespace webbind

@@ -1,6 +1,7 @@
-#include <webbind/SpeechGrammarList.hpp>
-#include <webbind/SpeechGrammar.hpp>
+#include "webbind/SpeechGrammarList.hpp"
+#include "webbind/SpeechGrammar.hpp"
 
+namespace webbind {
 
 SpeechGrammarList SpeechGrammarList::take_ownership(Handle h) noexcept {
         return SpeechGrammarList(h);
@@ -9,7 +10,6 @@ SpeechGrammarList SpeechGrammarList::clone() const noexcept { return *this; }
 emlite::Val SpeechGrammarList::instance() noexcept { return emlite::Val::global("SpeechGrammarList"); }
 SpeechGrammarList::SpeechGrammarList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechGrammarList::SpeechGrammarList(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 SpeechGrammarList::SpeechGrammarList() : emlite::Val(emlite::Val::global("SpeechGrammarList").new_()) {}
 
@@ -37,3 +37,5 @@ jsbind::Undefined SpeechGrammarList::addFromString(const jsbind::String& string,
     return emlite::Val::call("addFromString", string, weight).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

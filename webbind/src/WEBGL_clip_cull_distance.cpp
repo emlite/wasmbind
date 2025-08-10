@@ -1,5 +1,6 @@
-#include <webbind/WEBGL_clip_cull_distance.hpp>
+#include "webbind/WEBGL_clip_cull_distance.hpp"
 
+namespace webbind {
 
 WEBGL_clip_cull_distance WEBGL_clip_cull_distance::take_ownership(Handle h) noexcept {
         return WEBGL_clip_cull_distance(h);
@@ -10,3 +11,4 @@ WEBGL_clip_cull_distance::WEBGL_clip_cull_distance(Handle h) noexcept : emlite::
 WEBGL_clip_cull_distance::WEBGL_clip_cull_distance(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

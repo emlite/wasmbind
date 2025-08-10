@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGPreserveAspectRatio class.
+/// Interface SVGPreserveAspectRatio
 /// [`SVGPreserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPreserveAspectRatio)
 class SVGPreserveAspectRatio : public emlite::Val {
     explicit SVGPreserveAspectRatio(Handle h) noexcept;
-
 public:
     explicit SVGPreserveAspectRatio(const emlite::Val &val) noexcept;
     static SVGPreserveAspectRatio take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGPreserveAspectRatio clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `align` attribute.
@@ -30,3 +29,4 @@ public:
     void meetOrSlice(unsigned short value);
 };
 
+} // namespace webbind

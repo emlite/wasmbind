@@ -3,21 +3,22 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "EncodedAudioChunkInit.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The EncodedAudioChunk class.
+/// Interface EncodedAudioChunk
 /// [`EncodedAudioChunk`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk)
 class EncodedAudioChunk : public emlite::Val {
     explicit EncodedAudioChunk(Handle h) noexcept;
-
 public:
     explicit EncodedAudioChunk(const emlite::Val &val) noexcept;
     static EncodedAudioChunk take_ownership(Handle h) noexcept;
-
     [[nodiscard]] EncodedAudioChunk clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EncodedAudioChunk(..)` constructor, creating a new EncodedAudioChunk instance
-    EncodedAudioChunk(const jsbind::Any& init);
+    EncodedAudioChunk(const EncodedAudioChunkInit& init);
     /// Getter of the `type` attribute.
     /// [`EncodedAudioChunk.type`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk/type)
     [[nodiscard]] EncodedAudioChunkType type() const;
@@ -35,3 +36,4 @@ public:
     jsbind::Undefined copyTo(const jsbind::Any& destination);
 };
 
+} // namespace webbind

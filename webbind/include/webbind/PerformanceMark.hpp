@@ -2,21 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PerformanceEntry.hpp"
 #include "enums.hpp"
+#include "PerformanceEntry.hpp"
+#include "PerformanceMarkOptions.hpp"
 
-class PerformanceMarkOptions;
+namespace webbind {
 
-
-/// The PerformanceMark class.
+/// Interface PerformanceMark
 /// [`PerformanceMark`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMark)
 class PerformanceMark : public PerformanceEntry {
     explicit PerformanceMark(Handle h) noexcept;
-
 public:
     explicit PerformanceMark(const emlite::Val &val) noexcept;
     static PerformanceMark take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceMark clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PerformanceMark(..)` constructor, creating a new PerformanceMark instance
@@ -28,3 +26,4 @@ public:
     [[nodiscard]] jsbind::Any detail() const;
 };
 
+} // namespace webbind

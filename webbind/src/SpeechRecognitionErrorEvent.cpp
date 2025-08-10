@@ -1,5 +1,7 @@
-#include <webbind/SpeechRecognitionErrorEvent.hpp>
+#include "webbind/SpeechRecognitionErrorEvent.hpp"
+#include "webbind/SpeechRecognitionErrorEventInit.hpp"
 
+namespace webbind {
 
 SpeechRecognitionErrorEvent SpeechRecognitionErrorEvent::take_ownership(Handle h) noexcept {
         return SpeechRecognitionErrorEvent(h);
@@ -9,8 +11,7 @@ emlite::Val SpeechRecognitionErrorEvent::instance() noexcept { return emlite::Va
 SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SpeechRecognitionErrorEvent").new_(type, eventInitDict)) {}
+SpeechRecognitionErrorEvent::SpeechRecognitionErrorEvent(const jsbind::String& type, const SpeechRecognitionErrorEventInit& eventInitDict) : Event(emlite::Val::global("SpeechRecognitionErrorEvent").new_(type, eventInitDict)) {}
 
 SpeechRecognitionErrorCode SpeechRecognitionErrorEvent::error() const {
     return Event::get("error").as<SpeechRecognitionErrorCode>();
@@ -20,3 +21,5 @@ jsbind::String SpeechRecognitionErrorEvent::message() const {
     return Event::get("message").as<jsbind::String>();
 }
 
+
+} // namespace webbind

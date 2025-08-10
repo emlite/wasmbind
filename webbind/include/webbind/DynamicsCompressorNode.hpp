@@ -2,27 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "AudioNode.hpp"
 #include "enums.hpp"
+#include "AudioNode.hpp"
+#include "DynamicsCompressorOptions.hpp"
 
+namespace webbind {
+
+class BaseAudioContext;
 class AudioParam;
 
-
-/// The DynamicsCompressorNode class.
+/// Interface DynamicsCompressorNode
 /// [`DynamicsCompressorNode`](https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode)
 class DynamicsCompressorNode : public AudioNode {
     explicit DynamicsCompressorNode(Handle h) noexcept;
-
 public:
     explicit DynamicsCompressorNode(const emlite::Val &val) noexcept;
     static DynamicsCompressorNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DynamicsCompressorNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DynamicsCompressorNode(..)` constructor, creating a new DynamicsCompressorNode instance
     DynamicsCompressorNode(const BaseAudioContext& context);
     /// The `new DynamicsCompressorNode(..)` constructor, creating a new DynamicsCompressorNode instance
-    DynamicsCompressorNode(const BaseAudioContext& context, const jsbind::Any& options);
+    DynamicsCompressorNode(const BaseAudioContext& context, const DynamicsCompressorOptions& options);
     /// Getter of the `threshold` attribute.
     /// [`DynamicsCompressorNode.threshold`](https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/threshold)
     [[nodiscard]] AudioParam threshold() const;
@@ -43,3 +44,4 @@ public:
     [[nodiscard]] AudioParam release() const;
 };
 
+} // namespace webbind

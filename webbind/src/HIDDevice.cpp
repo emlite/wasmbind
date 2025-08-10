@@ -1,69 +1,7 @@
-#include <webbind/HIDDevice.hpp>
+#include "webbind/HIDDevice.hpp"
+#include "webbind/HIDCollectionInfo.hpp"
 
-
-HIDCollectionInfo::HIDCollectionInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HIDCollectionInfo HIDCollectionInfo::take_ownership(Handle h) noexcept {
-        return HIDCollectionInfo(h);
-    }
-HIDCollectionInfo::HIDCollectionInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
-HIDCollectionInfo::HIDCollectionInfo() noexcept: emlite::Val(emlite::Val::object()) {}
-HIDCollectionInfo HIDCollectionInfo::clone() const noexcept { return *this; }
-
-unsigned short HIDCollectionInfo::usagePage() const {
-    return emlite::Val::get("usagePage").as<unsigned short>();
-}
-
-void HIDCollectionInfo::usagePage(unsigned short value) {
-    emlite::Val::set("usagePage", value);
-}
-
-unsigned short HIDCollectionInfo::usage() const {
-    return emlite::Val::get("usage").as<unsigned short>();
-}
-
-void HIDCollectionInfo::usage(unsigned short value) {
-    emlite::Val::set("usage", value);
-}
-
-unsigned char HIDCollectionInfo::type() const {
-    return emlite::Val::get("type").as<unsigned char>();
-}
-
-void HIDCollectionInfo::type(unsigned char value) {
-    emlite::Val::set("type", value);
-}
-
-jsbind::TypedArray<HIDCollectionInfo> HIDCollectionInfo::children() const {
-    return emlite::Val::get("children").as<jsbind::TypedArray<HIDCollectionInfo>>();
-}
-
-void HIDCollectionInfo::children(const jsbind::TypedArray<HIDCollectionInfo>& value) {
-    emlite::Val::set("children", value);
-}
-
-jsbind::TypedArray<jsbind::Any> HIDCollectionInfo::inputReports() const {
-    return emlite::Val::get("inputReports").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void HIDCollectionInfo::inputReports(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("inputReports", value);
-}
-
-jsbind::TypedArray<jsbind::Any> HIDCollectionInfo::outputReports() const {
-    return emlite::Val::get("outputReports").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void HIDCollectionInfo::outputReports(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("outputReports", value);
-}
-
-jsbind::TypedArray<jsbind::Any> HIDCollectionInfo::featureReports() const {
-    return emlite::Val::get("featureReports").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void HIDCollectionInfo::featureReports(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("featureReports", value);
-}
+namespace webbind {
 
 HIDDevice HIDDevice::take_ownership(Handle h) noexcept {
         return HIDDevice(h);
@@ -72,7 +10,6 @@ HIDDevice HIDDevice::clone() const noexcept { return *this; }
 emlite::Val HIDDevice::instance() noexcept { return emlite::Val::global("HIDDevice"); }
 HIDDevice::HIDDevice(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 HIDDevice::HIDDevice(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Any HIDDevice::oninputreport() const {
     return EventTarget::get("oninputreport").as<jsbind::Any>();
@@ -126,3 +63,5 @@ jsbind::Promise<jsbind::DataView> HIDDevice::receiveFeatureReport(unsigned char 
     return EventTarget::call("receiveFeatureReport", reportId).as<jsbind::Promise<jsbind::DataView>>();
 }
 
+
+} // namespace webbind

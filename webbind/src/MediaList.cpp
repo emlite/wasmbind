@@ -1,5 +1,6 @@
-#include <webbind/MediaList.hpp>
+#include "webbind/MediaList.hpp"
 
+namespace webbind {
 
 MediaList MediaList::take_ownership(Handle h) noexcept {
         return MediaList(h);
@@ -8,7 +9,6 @@ MediaList MediaList::clone() const noexcept { return *this; }
 emlite::Val MediaList::instance() noexcept { return emlite::Val::global("MediaList"); }
 MediaList::MediaList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaList::MediaList(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String MediaList::mediaText() const {
     return emlite::Val::get("mediaText").as<jsbind::String>();
@@ -34,3 +34,5 @@ jsbind::Undefined MediaList::deleteMedium(const jsbind::String& medium) {
     return emlite::Val::call("deleteMedium", medium).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -3,62 +3,25 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "RTCRtpCapabilities.hpp"
+#include "RTCRtpSendParameters.hpp"
+#include "RTCSetParameterOptions.hpp"
+
+namespace webbind {
 
 class MediaStreamTrack;
 class RTCDtlsTransport;
-class RTCRtpCapabilities;
-class RTCRtpSendParameters;
-class RTCSetParameterOptions;
 class MediaStream;
 class RTCStatsReport;
 class RTCDTMFSender;
-class RTCRtpCodec;
 
-
-class RTCRtpCapabilities : public emlite::Val {
-  explicit RTCRtpCapabilities(Handle h) noexcept;
-public:
-    static RTCRtpCapabilities take_ownership(Handle h) noexcept;
-    explicit RTCRtpCapabilities(const emlite::Val &val) noexcept;
-    RTCRtpCapabilities() noexcept;
-    [[nodiscard]] RTCRtpCapabilities clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<RTCRtpCodec> codecs() const;
-    void codecs(const jsbind::TypedArray<RTCRtpCodec>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> headerExtensions() const;
-    void headerExtensions(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-class RTCRtpSendParameters : public emlite::Val {
-  explicit RTCRtpSendParameters(Handle h) noexcept;
-public:
-    static RTCRtpSendParameters take_ownership(Handle h) noexcept;
-    explicit RTCRtpSendParameters(const emlite::Val &val) noexcept;
-    RTCRtpSendParameters() noexcept;
-    [[nodiscard]] RTCRtpSendParameters clone() const noexcept;
-    [[nodiscard]] jsbind::String transactionId() const;
-    void transactionId(const jsbind::String& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> encodings() const;
-    void encodings(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-class RTCSetParameterOptions : public emlite::Val {
-  explicit RTCSetParameterOptions(Handle h) noexcept;
-public:
-    static RTCSetParameterOptions take_ownership(Handle h) noexcept;
-    explicit RTCSetParameterOptions(const emlite::Val &val) noexcept;
-    RTCSetParameterOptions() noexcept;
-    [[nodiscard]] RTCSetParameterOptions clone() const noexcept;
-};
-
-/// The RTCRtpSender class.
+/// Interface RTCRtpSender
 /// [`RTCRtpSender`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender)
 class RTCRtpSender : public emlite::Val {
     explicit RTCRtpSender(Handle h) noexcept;
-
 public:
     explicit RTCRtpSender(const emlite::Val &val) noexcept;
     static RTCRtpSender take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCRtpSender clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `track` attribute.
@@ -105,3 +68,4 @@ public:
     [[nodiscard]] RTCDTMFSender dtmf() const;
 };
 
+} // namespace webbind

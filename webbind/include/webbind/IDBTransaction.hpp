@@ -2,24 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class DOMStringList;
 class IDBDatabase;
 class DOMException;
 class IDBObjectStore;
 
-
-/// The IDBTransaction class.
+/// Interface IDBTransaction
 /// [`IDBTransaction`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction)
 class IDBTransaction : public EventTarget {
     explicit IDBTransaction(Handle h) noexcept;
-
 public:
     explicit IDBTransaction(const emlite::Val &val) noexcept;
     static IDBTransaction take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IDBTransaction clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `objectStoreNames` attribute.
@@ -66,3 +66,4 @@ public:
     void onerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 
-
-/// The TreeWalker class.
+/// Interface TreeWalker
 /// [`TreeWalker`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker)
 class TreeWalker : public emlite::Val {
     explicit TreeWalker(Handle h) noexcept;
-
 public:
     explicit TreeWalker(const emlite::Val &val) noexcept;
     static TreeWalker take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TreeWalker clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `root` attribute.
@@ -56,3 +55,4 @@ public:
     Node nextNode();
 };
 
+} // namespace webbind

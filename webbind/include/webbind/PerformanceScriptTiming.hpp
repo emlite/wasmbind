@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "PerformanceEntry.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class Window;
 
-
-/// The PerformanceScriptTiming class.
+/// Interface PerformanceScriptTiming
 /// [`PerformanceScriptTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming)
 class PerformanceScriptTiming : public PerformanceEntry {
     explicit PerformanceScriptTiming(Handle h) noexcept;
-
 public:
     explicit PerformanceScriptTiming(const emlite::Val &val) noexcept;
     static PerformanceScriptTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceScriptTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startTime` attribute.
@@ -66,3 +66,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

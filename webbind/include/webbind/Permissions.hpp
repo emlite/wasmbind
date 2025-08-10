@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class PermissionStatus;
 
-
-/// The Permissions class.
+/// Interface Permissions
 /// [`Permissions`](https://developer.mozilla.org/en-US/docs/Web/API/Permissions)
 class Permissions : public emlite::Val {
     explicit Permissions(Handle h) noexcept;
-
 public:
     explicit Permissions(const emlite::Val &val) noexcept;
     static Permissions take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Permissions clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The query method.
@@ -29,3 +28,4 @@ public:
     jsbind::Promise<PermissionStatus> revoke(const jsbind::Object& permissionDesc);
 };
 
+} // namespace webbind

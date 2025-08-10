@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
+
+namespace webbind {
 
 class CSSPositionTryDescriptors;
 
-
-/// The CSSPositionTryRule class.
+/// Interface CSSPositionTryRule
 /// [`CSSPositionTryRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule)
 class CSSPositionTryRule : public CSSRule {
     explicit CSSPositionTryRule(Handle h) noexcept;
-
 public:
     explicit CSSPositionTryRule(const emlite::Val &val) noexcept;
     static CSSPositionTryRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSPositionTryRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] CSSPositionTryDescriptors style() const;
 };
 
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/XRSessionEvent.hpp>
-#include <webbind/XRSession.hpp>
+#include "webbind/XRSessionEvent.hpp"
+#include "webbind/XRSessionEventInit.hpp"
+#include "webbind/XRSession.hpp"
 
+namespace webbind {
 
 XRSessionEvent XRSessionEvent::take_ownership(Handle h) noexcept {
         return XRSessionEvent(h);
@@ -10,10 +12,11 @@ emlite::Val XRSessionEvent::instance() noexcept { return emlite::Val::global("XR
 XRSessionEvent::XRSessionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 XRSessionEvent::XRSessionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-XRSessionEvent::XRSessionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("XRSessionEvent").new_(type, eventInitDict)) {}
+XRSessionEvent::XRSessionEvent(const jsbind::String& type, const XRSessionEventInit& eventInitDict) : Event(emlite::Val::global("XRSessionEvent").new_(type, eventInitDict)) {}
 
 XRSession XRSessionEvent::session() const {
     return Event::get("session").as<XRSession>();
 }
 
+
+} // namespace webbind

@@ -2,25 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "DOMRectReadOnly.hpp"
 #include "enums.hpp"
+#include "DOMPointInit.hpp"
+#include "DOMRectInit.hpp"
+#include "DOMQuadInit.hpp"
+
+namespace webbind {
 
 class DOMQuad;
 class DOMPoint;
 class DOMRect;
-class DOMQuadInit;
-class DOMPointInit;
 
-
-/// The DOMQuad class.
+/// Interface DOMQuad
 /// [`DOMQuad`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad)
 class DOMQuad : public emlite::Val {
     explicit DOMQuad(Handle h) noexcept;
-
 public:
     explicit DOMQuad(const emlite::Val &val) noexcept;
     static DOMQuad take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMQuad clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMQuad(..)` constructor, creating a new DOMQuad instance
@@ -65,3 +64,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

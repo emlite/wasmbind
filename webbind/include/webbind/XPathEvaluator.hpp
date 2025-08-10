@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class XPathExpression;
 class Node;
 class XPathResult;
 
-
-/// The XPathEvaluator class.
+/// Interface XPathEvaluator
 /// [`XPathEvaluator`](https://developer.mozilla.org/en-US/docs/Web/API/XPathEvaluator)
 class XPathEvaluator : public emlite::Val {
     explicit XPathEvaluator(Handle h) noexcept;
-
 public:
     explicit XPathEvaluator(const emlite::Val &val) noexcept;
     static XPathEvaluator take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XPathEvaluator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XPathEvaluator(..)` constructor, creating a new XPathEvaluator instance
@@ -45,3 +44,4 @@ public:
     XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result);
 };
 
+} // namespace webbind

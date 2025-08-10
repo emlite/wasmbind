@@ -1,8 +1,9 @@
-#include <webbind/DataTransfer.hpp>
-#include <webbind/DataTransferItemList.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/FileList.hpp>
+#include "webbind/DataTransfer.hpp"
+#include "webbind/DataTransferItemList.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/FileList.hpp"
 
+namespace webbind {
 
 DataTransfer DataTransfer::take_ownership(Handle h) noexcept {
         return DataTransfer(h);
@@ -11,7 +12,6 @@ DataTransfer DataTransfer::clone() const noexcept { return *this; }
 emlite::Val DataTransfer::instance() noexcept { return emlite::Val::global("DataTransfer"); }
 DataTransfer::DataTransfer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DataTransfer::DataTransfer(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 DataTransfer::DataTransfer() : emlite::Val(emlite::Val::global("DataTransfer").new_()) {}
 
@@ -63,3 +63,5 @@ FileList DataTransfer::files() const {
     return emlite::Val::get("files").as<FileList>();
 }
 
+
+} // namespace webbind

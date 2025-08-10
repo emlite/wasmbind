@@ -2,36 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "ImageEncodeOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class ImageBitmap;
 class Blob;
-class ImageEncodeOptions;
 
-
-class ImageEncodeOptions : public emlite::Val {
-  explicit ImageEncodeOptions(Handle h) noexcept;
-public:
-    static ImageEncodeOptions take_ownership(Handle h) noexcept;
-    explicit ImageEncodeOptions(const emlite::Val &val) noexcept;
-    ImageEncodeOptions() noexcept;
-    [[nodiscard]] ImageEncodeOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String type() const;
-    void type(const jsbind::String& value);
-    [[nodiscard]] double quality() const;
-    void quality(double value);
-};
-
-/// The OffscreenCanvas class.
+/// Interface OffscreenCanvas
 /// [`OffscreenCanvas`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)
 class OffscreenCanvas : public EventTarget {
     explicit OffscreenCanvas(Handle h) noexcept;
-
 public:
     explicit OffscreenCanvas(const emlite::Val &val) noexcept;
     static OffscreenCanvas take_ownership(Handle h) noexcept;
-
     [[nodiscard]] OffscreenCanvas clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OffscreenCanvas(..)` constructor, creating a new OffscreenCanvas instance
@@ -77,3 +64,4 @@ public:
     void oncontextrestored(const jsbind::Any& value);
 };
 
+} // namespace webbind

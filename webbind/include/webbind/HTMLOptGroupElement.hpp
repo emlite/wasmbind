@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLOptGroupElement class.
+/// Interface HTMLOptGroupElement
 /// [`HTMLOptGroupElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement)
 class HTMLOptGroupElement : public HTMLElement {
     explicit HTMLOptGroupElement(Handle h) noexcept;
-
 public:
     explicit HTMLOptGroupElement(const emlite::Val &val) noexcept;
     static HTMLOptGroupElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLOptGroupElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLOptGroupElement(..)` constructor, creating a new HTMLOptGroupElement instance
@@ -33,3 +32,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

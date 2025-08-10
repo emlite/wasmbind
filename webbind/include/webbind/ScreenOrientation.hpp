@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ScreenOrientation class.
+/// Interface ScreenOrientation
 /// [`ScreenOrientation`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation)
 class ScreenOrientation : public EventTarget {
     explicit ScreenOrientation(Handle h) noexcept;
-
 public:
     explicit ScreenOrientation(const emlite::Val &val) noexcept;
     static ScreenOrientation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ScreenOrientation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The lock method.
@@ -37,3 +37,4 @@ public:
     void onchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

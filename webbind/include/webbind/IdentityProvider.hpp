@@ -3,62 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "IdentityResolveOptions.hpp"
+#include "IdentityUserInfo.hpp"
+#include "IdentityProviderConfig.hpp"
 
-class IdentityResolveOptions;
-class IdentityUserInfo;
-class IdentityProviderConfig;
+namespace webbind {
 
-
-class IdentityResolveOptions : public emlite::Val {
-  explicit IdentityResolveOptions(Handle h) noexcept;
-public:
-    static IdentityResolveOptions take_ownership(Handle h) noexcept;
-    explicit IdentityResolveOptions(const emlite::Val &val) noexcept;
-    IdentityResolveOptions() noexcept;
-    [[nodiscard]] IdentityResolveOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String accountId() const;
-    void accountId(const jsbind::String& value);
-};
-
-class IdentityUserInfo : public emlite::Val {
-  explicit IdentityUserInfo(Handle h) noexcept;
-public:
-    static IdentityUserInfo take_ownership(Handle h) noexcept;
-    explicit IdentityUserInfo(const emlite::Val &val) noexcept;
-    IdentityUserInfo() noexcept;
-    [[nodiscard]] IdentityUserInfo clone() const noexcept;
-    [[nodiscard]] jsbind::String email() const;
-    void email(const jsbind::String& value);
-    [[nodiscard]] jsbind::String name() const;
-    void name(const jsbind::String& value);
-    [[nodiscard]] jsbind::String givenName() const;
-    void givenName(const jsbind::String& value);
-    [[nodiscard]] jsbind::String picture() const;
-    void picture(const jsbind::String& value);
-};
-
-class IdentityProviderConfig : public emlite::Val {
-  explicit IdentityProviderConfig(Handle h) noexcept;
-public:
-    static IdentityProviderConfig take_ownership(Handle h) noexcept;
-    explicit IdentityProviderConfig(const emlite::Val &val) noexcept;
-    IdentityProviderConfig() noexcept;
-    [[nodiscard]] IdentityProviderConfig clone() const noexcept;
-    [[nodiscard]] jsbind::String configURL() const;
-    void configURL(const jsbind::String& value);
-    [[nodiscard]] jsbind::String clientId() const;
-    void clientId(const jsbind::String& value);
-};
-
-/// The IdentityProvider class.
+/// Interface IdentityProvider
 /// [`IdentityProvider`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider)
 class IdentityProvider : public emlite::Val {
     explicit IdentityProvider(Handle h) noexcept;
-
 public:
     explicit IdentityProvider(const emlite::Val &val) noexcept;
     static IdentityProvider take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IdentityProvider clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The close method.
@@ -75,3 +32,4 @@ public:
     static jsbind::Promise<jsbind::TypedArray<IdentityUserInfo>> getUserInfo(const IdentityProviderConfig& config);
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The NavigationDestination class.
+/// Interface NavigationDestination
 /// [`NavigationDestination`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination)
 class NavigationDestination : public emlite::Val {
     explicit NavigationDestination(Handle h) noexcept;
-
 public:
     explicit NavigationDestination(const emlite::Val &val) noexcept;
     static NavigationDestination take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NavigationDestination clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `url` attribute.
@@ -36,3 +35,4 @@ public:
     jsbind::Any getState();
 };
 
+} // namespace webbind

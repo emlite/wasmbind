@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "DOMPointReadOnly.hpp"
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "DOMPointReadOnly.hpp"
+#include "DOMPointInit.hpp"
+
+namespace webbind {
 
 class DOMPoint;
 
-
-/// The DOMPoint class.
+/// Interface DOMPoint
 /// [`DOMPoint`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint)
 class DOMPoint : public DOMPointReadOnly {
     explicit DOMPoint(Handle h) noexcept;
-
 public:
     explicit DOMPoint(const emlite::Val &val) noexcept;
     static DOMPoint take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMPoint clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMPoint(..)` constructor, creating a new DOMPoint instance
@@ -62,3 +61,4 @@ public:
     void w(double value);
 };
 
+} // namespace webbind

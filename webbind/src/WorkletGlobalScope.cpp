@@ -1,5 +1,6 @@
-#include <webbind/WorkletGlobalScope.hpp>
+#include "webbind/WorkletGlobalScope.hpp"
 
+namespace webbind {
 
 WorkletGlobalScope WorkletGlobalScope::take_ownership(Handle h) noexcept {
         return WorkletGlobalScope(h);
@@ -10,3 +11,4 @@ WorkletGlobalScope::WorkletGlobalScope(Handle h) noexcept : emlite::Val(emlite::
 WorkletGlobalScope::WorkletGlobalScope(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

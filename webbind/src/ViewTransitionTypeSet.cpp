@@ -1,5 +1,6 @@
-#include <webbind/ViewTransitionTypeSet.hpp>
+#include "webbind/ViewTransitionTypeSet.hpp"
 
+namespace webbind {
 
 ViewTransitionTypeSet ViewTransitionTypeSet::take_ownership(Handle h) noexcept {
         return ViewTransitionTypeSet(h);
@@ -10,3 +11,4 @@ ViewTransitionTypeSet::ViewTransitionTypeSet(Handle h) noexcept : emlite::Val(em
 ViewTransitionTypeSet::ViewTransitionTypeSet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

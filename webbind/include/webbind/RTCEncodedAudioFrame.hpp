@@ -3,38 +3,26 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "RTCEncodedAudioFrameOptions.hpp"
+#include "RTCEncodedAudioFrameMetadata.hpp"
 
-class RTCEncodedAudioFrameMetadata;
+namespace webbind {
 
+class RTCEncodedAudioFrame;
 
-class RTCEncodedAudioFrameMetadata : public emlite::Val {
-  explicit RTCEncodedAudioFrameMetadata(Handle h) noexcept;
-public:
-    static RTCEncodedAudioFrameMetadata take_ownership(Handle h) noexcept;
-    explicit RTCEncodedAudioFrameMetadata(const emlite::Val &val) noexcept;
-    RTCEncodedAudioFrameMetadata() noexcept;
-    [[nodiscard]] RTCEncodedAudioFrameMetadata clone() const noexcept;
-    [[nodiscard]] short sequenceNumber() const;
-    void sequenceNumber(short value);
-    [[nodiscard]] double audioLevel() const;
-    void audioLevel(double value);
-};
-
-/// The RTCEncodedAudioFrame class.
+/// Interface RTCEncodedAudioFrame
 /// [`RTCEncodedAudioFrame`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedAudioFrame)
 class RTCEncodedAudioFrame : public emlite::Val {
     explicit RTCEncodedAudioFrame(Handle h) noexcept;
-
 public:
     explicit RTCEncodedAudioFrame(const emlite::Val &val) noexcept;
     static RTCEncodedAudioFrame take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCEncodedAudioFrame clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCEncodedAudioFrame(..)` constructor, creating a new RTCEncodedAudioFrame instance
     RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame);
     /// The `new RTCEncodedAudioFrame(..)` constructor, creating a new RTCEncodedAudioFrame instance
-    RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame, const jsbind::Any& options);
+    RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame, const RTCEncodedAudioFrameOptions& options);
     /// Getter of the `data` attribute.
     /// [`RTCEncodedAudioFrame.data`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedAudioFrame/data)
     [[nodiscard]] jsbind::ArrayBuffer data() const;
@@ -46,3 +34,4 @@ public:
     RTCEncodedAudioFrameMetadata getMetadata();
 };
 
+} // namespace webbind

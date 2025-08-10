@@ -1,5 +1,6 @@
-#include <webbind/History.hpp>
+#include "webbind/History.hpp"
 
+namespace webbind {
 
 History History::take_ownership(Handle h) noexcept {
         return History(h);
@@ -8,7 +9,6 @@ History History::clone() const noexcept { return *this; }
 emlite::Val History::instance() noexcept { return emlite::Val::global("History"); }
 History::History(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 History::History(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned long History::length() const {
     return emlite::Val::get("length").as<unsigned long>();
@@ -58,3 +58,5 @@ jsbind::Undefined History::replaceState(const jsbind::Any& data, const jsbind::S
     return emlite::Val::call("replaceState", data, unused, url).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

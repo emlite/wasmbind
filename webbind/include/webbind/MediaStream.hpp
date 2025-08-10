@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class MediaStreamTrack;
 class MediaStream;
 
-
-/// The MediaStream class.
+/// Interface MediaStream
 /// [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
 class MediaStream : public EventTarget {
     explicit MediaStream(Handle h) noexcept;
-
 public:
     explicit MediaStream(const emlite::Val &val) noexcept;
     static MediaStream take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStream(..)` constructor, creating a new MediaStream instance
@@ -63,3 +62,4 @@ public:
     void onremovetrack(const jsbind::Any& value);
 };
 
+} // namespace webbind

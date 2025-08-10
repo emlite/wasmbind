@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The MediaList class.
+/// Interface MediaList
 /// [`MediaList`](https://developer.mozilla.org/en-US/docs/Web/API/MediaList)
 class MediaList : public emlite::Val {
     explicit MediaList(Handle h) noexcept;
-
 public:
     explicit MediaList(const emlite::Val &val) noexcept;
     static MediaList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mediaText` attribute.
@@ -36,3 +35,4 @@ public:
     jsbind::Undefined deleteMedium(const jsbind::String& medium);
 };
 
+} // namespace webbind

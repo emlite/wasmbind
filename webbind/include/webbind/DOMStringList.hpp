@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The DOMStringList class.
+/// Interface DOMStringList
 /// [`DOMStringList`](https://developer.mozilla.org/en-US/docs/Web/API/DOMStringList)
 class DOMStringList : public emlite::Val {
     explicit DOMStringList(Handle h) noexcept;
-
 public:
     explicit DOMStringList(const emlite::Val &val) noexcept;
     static DOMStringList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMStringList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -27,3 +26,4 @@ public:
     bool contains(const jsbind::String& string);
 };
 
+} // namespace webbind

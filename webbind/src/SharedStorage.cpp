@@ -1,55 +1,13 @@
-#include <webbind/SharedStorage.hpp>
-#include <webbind/SharedStorageModifierMethod.hpp>
-#include <webbind/SharedStorageWorklet.hpp>
+#include "webbind/SharedStorage.hpp"
+#include "webbind/SharedStorageSetMethodOptions.hpp"
+#include "webbind/SharedStorageModifierMethodOptions.hpp"
+#include "webbind/SharedStorageModifierMethod.hpp"
+#include "webbind/SharedStorageUrlWithMetadata.hpp"
+#include "webbind/SharedStorageRunOperationMethodOptions.hpp"
+#include "webbind/SharedStorageWorklet.hpp"
+#include "webbind/SharedStorageWorkletOptions.hpp"
 
-
-SharedStorageSetMethodOptions::SharedStorageSetMethodOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SharedStorageSetMethodOptions SharedStorageSetMethodOptions::take_ownership(Handle h) noexcept {
-        return SharedStorageSetMethodOptions(h);
-    }
-SharedStorageSetMethodOptions::SharedStorageSetMethodOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SharedStorageSetMethodOptions::SharedStorageSetMethodOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SharedStorageSetMethodOptions SharedStorageSetMethodOptions::clone() const noexcept { return *this; }
-
-bool SharedStorageSetMethodOptions::ignoreIfPresent() const {
-    return emlite::Val::get("ignoreIfPresent").as<bool>();
-}
-
-void SharedStorageSetMethodOptions::ignoreIfPresent(bool value) {
-    emlite::Val::set("ignoreIfPresent", value);
-}
-
-SharedStorageModifierMethodOptions::SharedStorageModifierMethodOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SharedStorageModifierMethodOptions SharedStorageModifierMethodOptions::take_ownership(Handle h) noexcept {
-        return SharedStorageModifierMethodOptions(h);
-    }
-SharedStorageModifierMethodOptions::SharedStorageModifierMethodOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SharedStorageModifierMethodOptions::SharedStorageModifierMethodOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SharedStorageModifierMethodOptions SharedStorageModifierMethodOptions::clone() const noexcept { return *this; }
-
-jsbind::String SharedStorageModifierMethodOptions::withLock() const {
-    return emlite::Val::get("withLock").as<jsbind::String>();
-}
-
-void SharedStorageModifierMethodOptions::withLock(const jsbind::String& value) {
-    emlite::Val::set("withLock", value);
-}
-
-SharedStorageWorkletOptions::SharedStorageWorkletOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SharedStorageWorkletOptions SharedStorageWorkletOptions::take_ownership(Handle h) noexcept {
-        return SharedStorageWorkletOptions(h);
-    }
-SharedStorageWorkletOptions::SharedStorageWorkletOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SharedStorageWorkletOptions::SharedStorageWorkletOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SharedStorageWorkletOptions SharedStorageWorkletOptions::clone() const noexcept { return *this; }
-
-jsbind::String SharedStorageWorkletOptions::dataOrigin() const {
-    return emlite::Val::get("dataOrigin").as<jsbind::String>();
-}
-
-void SharedStorageWorkletOptions::dataOrigin(const jsbind::String& value) {
-    emlite::Val::set("dataOrigin", value);
-}
+namespace webbind {
 
 SharedStorage SharedStorage::take_ownership(Handle h) noexcept {
         return SharedStorage(h);
@@ -58,7 +16,6 @@ SharedStorage SharedStorage::clone() const noexcept { return *this; }
 emlite::Val SharedStorage::instance() noexcept { return emlite::Val::global("SharedStorage"); }
 SharedStorage::SharedStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SharedStorage::SharedStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<jsbind::String> SharedStorage::get(const jsbind::String& key) {
     return emlite::Val::call("get", key).as<jsbind::Promise<jsbind::String>>();
@@ -140,3 +97,5 @@ jsbind::Promise<double> SharedStorage::remainingBudget() {
     return emlite::Val::call("remainingBudget").as<jsbind::Promise<double>>();
 }
 
+
+} // namespace webbind

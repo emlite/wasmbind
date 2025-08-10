@@ -1,5 +1,6 @@
-#include <webbind/WebGLUniformLocation.hpp>
+#include "webbind/WebGLUniformLocation.hpp"
 
+namespace webbind {
 
 WebGLUniformLocation WebGLUniformLocation::take_ownership(Handle h) noexcept {
         return WebGLUniformLocation(h);
@@ -10,3 +11,4 @@ WebGLUniformLocation::WebGLUniformLocation(Handle h) noexcept : emlite::Val(emli
 WebGLUniformLocation::WebGLUniformLocation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

@@ -2,32 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "ReadableStreamDefaultReader.hpp"
 #include "enums.hpp"
+#include "ReadableStreamReadResult.hpp"
+#include "ReadableStreamBYOBReaderReadOptions.hpp"
 
-class ReadableStreamBYOBReaderReadOptions;
+namespace webbind {
 
+class ReadableStream;
 
-class ReadableStreamBYOBReaderReadOptions : public emlite::Val {
-  explicit ReadableStreamBYOBReaderReadOptions(Handle h) noexcept;
-public:
-    static ReadableStreamBYOBReaderReadOptions take_ownership(Handle h) noexcept;
-    explicit ReadableStreamBYOBReaderReadOptions(const emlite::Val &val) noexcept;
-    ReadableStreamBYOBReaderReadOptions() noexcept;
-    [[nodiscard]] ReadableStreamBYOBReaderReadOptions clone() const noexcept;
-    [[nodiscard]] long long min() const;
-    void min(long long value);
-};
-
-/// The ReadableStreamBYOBReader class.
+/// Interface ReadableStreamBYOBReader
 /// [`ReadableStreamBYOBReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader)
 class ReadableStreamBYOBReader : public emlite::Val {
     explicit ReadableStreamBYOBReader(Handle h) noexcept;
-
 public:
     explicit ReadableStreamBYOBReader(const emlite::Val &val) noexcept;
     static ReadableStreamBYOBReader take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ReadableStreamBYOBReader clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ReadableStreamBYOBReader(..)` constructor, creating a new ReadableStreamBYOBReader instance
@@ -52,3 +41,4 @@ public:
     jsbind::Promise<jsbind::Undefined> cancel(const jsbind::Any& reason);
 };
 
+} // namespace webbind

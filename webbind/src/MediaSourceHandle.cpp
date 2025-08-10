@@ -1,5 +1,6 @@
-#include <webbind/MediaSourceHandle.hpp>
+#include "webbind/MediaSourceHandle.hpp"
 
+namespace webbind {
 
 MediaSourceHandle MediaSourceHandle::take_ownership(Handle h) noexcept {
         return MediaSourceHandle(h);
@@ -10,3 +11,4 @@ MediaSourceHandle::MediaSourceHandle(Handle h) noexcept : emlite::Val(emlite::Va
 MediaSourceHandle::MediaSourceHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

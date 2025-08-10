@@ -1,7 +1,9 @@
-#include <webbind/BluetoothLEScanFilter.hpp>
-#include <webbind/BluetoothManufacturerDataFilter.hpp>
-#include <webbind/BluetoothServiceDataFilter.hpp>
+#include "webbind/BluetoothLEScanFilter.hpp"
+#include "webbind/BluetoothLEScanFilterInit.hpp"
+#include "webbind/BluetoothManufacturerDataFilter.hpp"
+#include "webbind/BluetoothServiceDataFilter.hpp"
 
+namespace webbind {
 
 BluetoothLEScanFilter BluetoothLEScanFilter::take_ownership(Handle h) noexcept {
         return BluetoothLEScanFilter(h);
@@ -11,10 +13,9 @@ emlite::Val BluetoothLEScanFilter::instance() noexcept { return emlite::Val::glo
 BluetoothLEScanFilter::BluetoothLEScanFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothLEScanFilter::BluetoothLEScanFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 BluetoothLEScanFilter::BluetoothLEScanFilter() : emlite::Val(emlite::Val::global("BluetoothLEScanFilter").new_()) {}
 
-BluetoothLEScanFilter::BluetoothLEScanFilter(const jsbind::Any& init) : emlite::Val(emlite::Val::global("BluetoothLEScanFilter").new_(init)) {}
+BluetoothLEScanFilter::BluetoothLEScanFilter(const BluetoothLEScanFilterInit& init) : emlite::Val(emlite::Val::global("BluetoothLEScanFilter").new_(init)) {}
 
 jsbind::String BluetoothLEScanFilter::name() const {
     return emlite::Val::get("name").as<jsbind::String>();
@@ -36,3 +37,5 @@ BluetoothServiceDataFilter BluetoothLEScanFilter::serviceData() const {
     return emlite::Val::get("serviceData").as<BluetoothServiceDataFilter>();
 }
 
+
+} // namespace webbind

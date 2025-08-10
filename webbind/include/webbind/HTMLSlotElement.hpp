@@ -2,34 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+#include "AssignedNodesOptions.hpp"
+
+namespace webbind {
 
 class Node;
-class AssignedNodesOptions;
 class Element;
 
-
-class AssignedNodesOptions : public emlite::Val {
-  explicit AssignedNodesOptions(Handle h) noexcept;
-public:
-    static AssignedNodesOptions take_ownership(Handle h) noexcept;
-    explicit AssignedNodesOptions(const emlite::Val &val) noexcept;
-    AssignedNodesOptions() noexcept;
-    [[nodiscard]] AssignedNodesOptions clone() const noexcept;
-    [[nodiscard]] bool flatten() const;
-    void flatten(bool value);
-};
-
-/// The HTMLSlotElement class.
+/// Interface HTMLSlotElement
 /// [`HTMLSlotElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement)
 class HTMLSlotElement : public HTMLElement {
     explicit HTMLSlotElement(Handle h) noexcept;
-
 public:
     explicit HTMLSlotElement(const emlite::Val &val) noexcept;
     static HTMLSlotElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLSlotElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSlotElement(..)` constructor, creating a new HTMLSlotElement instance
@@ -57,3 +45,4 @@ public:
     jsbind::Undefined assign(const jsbind::Any& nodes);
 };
 
+} // namespace webbind

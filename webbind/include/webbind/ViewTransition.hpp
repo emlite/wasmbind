@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ViewTransitionTypeSet;
 
-
-/// The ViewTransition class.
+/// Interface ViewTransition
 /// [`ViewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition)
 class ViewTransition : public emlite::Val {
     explicit ViewTransition(Handle h) noexcept;
-
 public:
     explicit ViewTransition(const emlite::Val &val) noexcept;
     static ViewTransition take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ViewTransition clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `updateCallbackDone` attribute.
@@ -38,3 +37,4 @@ public:
     void types(const ViewTransitionTypeSet& value);
 };
 
+} // namespace webbind

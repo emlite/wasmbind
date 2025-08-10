@@ -3,20 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "TextDecoderOptions.hpp"
+
+namespace webbind {
 
 class ReadableStream;
 class WritableStream;
 
-
-/// The TextDecoderStream class.
+/// Interface TextDecoderStream
 /// [`TextDecoderStream`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream)
 class TextDecoderStream : public emlite::Val {
     explicit TextDecoderStream(Handle h) noexcept;
-
 public:
     explicit TextDecoderStream(const emlite::Val &val) noexcept;
     static TextDecoderStream take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextDecoderStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextDecoderStream(..)` constructor, creating a new TextDecoderStream instance
@@ -24,7 +24,7 @@ public:
     /// The `new TextDecoderStream(..)` constructor, creating a new TextDecoderStream instance
     TextDecoderStream(const jsbind::String& label);
     /// The `new TextDecoderStream(..)` constructor, creating a new TextDecoderStream instance
-    TextDecoderStream(const jsbind::String& label, const jsbind::Any& options);
+    TextDecoderStream(const jsbind::String& label, const TextDecoderOptions& options);
     /// Getter of the `encoding` attribute.
     /// [`TextDecoderStream.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/encoding)
     [[nodiscard]] jsbind::String encoding() const;
@@ -42,3 +42,4 @@ public:
     [[nodiscard]] WritableStream writable() const;
 };
 
+} // namespace webbind

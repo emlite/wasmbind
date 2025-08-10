@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUDeviceLostInfo class.
+/// Interface GPUDeviceLostInfo
 /// [`GPUDeviceLostInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDeviceLostInfo)
 class GPUDeviceLostInfo : public emlite::Val {
     explicit GPUDeviceLostInfo(Handle h) noexcept;
-
 public:
     explicit GPUDeviceLostInfo(const emlite::Val &val) noexcept;
     static GPUDeviceLostInfo take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUDeviceLostInfo clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `reason` attribute.
@@ -24,3 +24,4 @@ public:
     [[nodiscard]] jsbind::String message() const;
 };
 
+} // namespace webbind

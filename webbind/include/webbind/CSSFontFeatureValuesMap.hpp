@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The CSSFontFeatureValuesMap class.
+/// Interface CSSFontFeatureValuesMap
 /// [`CSSFontFeatureValuesMap`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap)
 class CSSFontFeatureValuesMap : public emlite::Val {
     explicit CSSFontFeatureValuesMap(Handle h) noexcept;
-
 public:
     explicit CSSFontFeatureValuesMap(const emlite::Val &val) noexcept;
     static CSSFontFeatureValuesMap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSFontFeatureValuesMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The set method.
@@ -21,3 +20,4 @@ public:
     jsbind::Undefined set(const jsbind::String& featureValueName, const jsbind::Any& values);
 };
 
+} // namespace webbind

@@ -2,28 +2,30 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "AudioScheduledSourceNode.hpp"
+#include "OscillatorOptions.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
+class BaseAudioContext;
 class AudioParam;
 class PeriodicWave;
 
-
-/// The OscillatorNode class.
+/// Interface OscillatorNode
 /// [`OscillatorNode`](https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode)
 class OscillatorNode : public AudioScheduledSourceNode {
     explicit OscillatorNode(Handle h) noexcept;
-
 public:
     explicit OscillatorNode(const emlite::Val &val) noexcept;
     static OscillatorNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] OscillatorNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OscillatorNode(..)` constructor, creating a new OscillatorNode instance
     OscillatorNode(const BaseAudioContext& context);
     /// The `new OscillatorNode(..)` constructor, creating a new OscillatorNode instance
-    OscillatorNode(const BaseAudioContext& context, const jsbind::Any& options);
+    OscillatorNode(const BaseAudioContext& context, const OscillatorOptions& options);
     /// Getter of the `type` attribute.
     /// [`OscillatorNode.type`](https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type)
     [[nodiscard]] OscillatorType type() const;
@@ -41,3 +43,4 @@ public:
     jsbind::Undefined setPeriodicWave(const PeriodicWave& periodicWave);
 };
 
+} // namespace webbind

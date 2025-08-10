@@ -1,5 +1,6 @@
-#include <webbind/EXT_color_buffer_half_float.hpp>
+#include "webbind/EXT_color_buffer_half_float.hpp"
 
+namespace webbind {
 
 EXT_color_buffer_half_float EXT_color_buffer_half_float::take_ownership(Handle h) noexcept {
         return EXT_color_buffer_half_float(h);
@@ -10,3 +11,4 @@ EXT_color_buffer_half_float::EXT_color_buffer_half_float(Handle h) noexcept : em
 EXT_color_buffer_half_float::EXT_color_buffer_half_float(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

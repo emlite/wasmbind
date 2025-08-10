@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class DOMRect;
 class DOMRectReadOnly;
 
-
-/// The SVGAnimatedRect class.
+/// Interface SVGAnimatedRect
 /// [`SVGAnimatedRect`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedRect)
 class SVGAnimatedRect : public emlite::Val {
     explicit SVGAnimatedRect(Handle h) noexcept;
-
 public:
     explicit SVGAnimatedRect(const emlite::Val &val) noexcept;
     static SVGAnimatedRect take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimatedRect clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] DOMRectReadOnly animVal() const;
 };
 
+} // namespace webbind

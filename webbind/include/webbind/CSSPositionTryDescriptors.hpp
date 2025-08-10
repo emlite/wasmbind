@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleDeclaration.hpp"
 #include "enums.hpp"
+#include "CSSStyleDeclaration.hpp"
 
+namespace webbind {
 
-/// The CSSPositionTryDescriptors class.
+/// Interface CSSPositionTryDescriptors
 /// [`CSSPositionTryDescriptors`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryDescriptors)
 class CSSPositionTryDescriptors : public CSSStyleDeclaration {
     explicit CSSPositionTryDescriptors(Handle h) noexcept;
-
 public:
     explicit CSSPositionTryDescriptors(const emlite::Val &val) noexcept;
     static CSSPositionTryDescriptors take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSPositionTryDescriptors clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `margin` attribute.
@@ -439,3 +438,4 @@ public:
     void position_area(const jsbind::String& value);
 };
 
+} // namespace webbind

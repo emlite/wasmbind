@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedEnumeration;
 class SVGAnimatedTransformList;
 class SVGAnimatedString;
 
-
-/// The SVGGradientElement class.
+/// Interface SVGGradientElement
 /// [`SVGGradientElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement)
 class SVGGradientElement : public SVGElement {
     explicit SVGGradientElement(Handle h) noexcept;
-
 public:
     explicit SVGGradientElement(const emlite::Val &val) noexcept;
     static SVGGradientElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGGradientElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `gradientUnits` attribute.
@@ -35,3 +34,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

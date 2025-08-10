@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The PressureRecord class.
+/// Interface PressureRecord
 /// [`PressureRecord`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord)
 class PressureRecord : public emlite::Val {
     explicit PressureRecord(Handle h) noexcept;
-
 public:
     explicit PressureRecord(const emlite::Val &val) noexcept;
     static PressureRecord take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PressureRecord clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `source` attribute.
@@ -30,3 +30,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

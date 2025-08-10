@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class Document;
 
-
-/// The HTMLFrameElement class.
+/// Interface HTMLFrameElement
 /// [`HTMLFrameElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFrameElement)
 class HTMLFrameElement : public HTMLElement {
     explicit HTMLFrameElement(Handle h) noexcept;
-
 public:
     explicit HTMLFrameElement(const emlite::Val &val) noexcept;
     static HTMLFrameElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLFrameElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFrameElement(..)` constructor, creating a new HTMLFrameElement instance
@@ -77,3 +76,4 @@ public:
     void marginWidth(const jsbind::String& value);
 };
 
+} // namespace webbind

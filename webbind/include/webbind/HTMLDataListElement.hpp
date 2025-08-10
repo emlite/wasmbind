@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLCollection;
 
-
-/// The HTMLDataListElement class.
+/// Interface HTMLDataListElement
 /// [`HTMLDataListElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataListElement)
 class HTMLDataListElement : public HTMLElement {
     explicit HTMLDataListElement(Handle h) noexcept;
-
 public:
     explicit HTMLDataListElement(const emlite::Val &val) noexcept;
     static HTMLDataListElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLDataListElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDataListElement(..)` constructor, creating a new HTMLDataListElement instance
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] HTMLCollection options() const;
 };
 
+} // namespace webbind

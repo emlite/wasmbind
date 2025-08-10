@@ -1,5 +1,6 @@
-#include <webbind/MLTensor.hpp>
+#include "webbind/MLTensor.hpp"
 
+namespace webbind {
 
 MLTensor MLTensor::take_ownership(Handle h) noexcept {
         return MLTensor(h);
@@ -8,7 +9,6 @@ MLTensor MLTensor::clone() const noexcept { return *this; }
 emlite::Val MLTensor::instance() noexcept { return emlite::Val::global("MLTensor"); }
 MLTensor::MLTensor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLTensor::MLTensor(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 MLOperandDataType MLTensor::dataType() const {
     return emlite::Val::get("dataType").as<MLOperandDataType>();
@@ -34,3 +34,5 @@ jsbind::Undefined MLTensor::destroy() {
     return emlite::Val::call("destroy").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

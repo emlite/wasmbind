@@ -4,6 +4,8 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class WebGLTexture;
 class WebGLProgram;
 class WebGLUniformLocation;
@@ -15,16 +17,13 @@ class WebGLActiveInfo;
 class WebGLBuffer;
 class WebGLVertexArrayObject;
 
-
-/// The WebGL2RenderingContext class.
+/// Interface WebGL2RenderingContext
 /// [`WebGL2RenderingContext`](https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext)
 class WebGL2RenderingContext : public emlite::Val {
     explicit WebGL2RenderingContext(Handle h) noexcept;
-
 public:
     explicit WebGL2RenderingContext(const emlite::Val &val) noexcept;
     static WebGL2RenderingContext take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebGL2RenderingContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The makeXRCompatible method.
@@ -524,3 +523,4 @@ public:
     jsbind::Undefined readPixels(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& width, const jsbind::Any& height, const jsbind::Any& format, const jsbind::Any& type, const jsbind::Any& dstData, long long dstOffset);
 };
 
+} // namespace webbind

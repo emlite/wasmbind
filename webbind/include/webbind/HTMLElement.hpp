@@ -2,38 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Element.hpp"
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "Element.hpp"
+#include "ShowPopoverOptions.hpp"
+#include "FocusOptions.hpp"
+
+namespace webbind {
 
 class ElementInternals;
-class ShowPopoverOptions;
 class EditContext;
 class CSSStyleDeclaration;
 class DOMStringMap;
-class HTMLElement;
 
-
-class ShowPopoverOptions : public emlite::Val {
-  explicit ShowPopoverOptions(Handle h) noexcept;
-public:
-    static ShowPopoverOptions take_ownership(Handle h) noexcept;
-    explicit ShowPopoverOptions(const emlite::Val &val) noexcept;
-    ShowPopoverOptions() noexcept;
-    [[nodiscard]] ShowPopoverOptions clone() const noexcept;
-    [[nodiscard]] HTMLElement source() const;
-    void source(const HTMLElement& value);
-};
-
-/// The HTMLElement class.
+/// Interface HTMLElement
 /// [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
 class HTMLElement : public Element {
     explicit HTMLElement(Handle h) noexcept;
-
 public:
     explicit HTMLElement(const emlite::Val &val) noexcept;
     static HTMLElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLElement(..)` constructor, creating a new HTMLElement instance
@@ -223,3 +210,4 @@ public:
     jsbind::Undefined blur();
 };
 
+} // namespace webbind

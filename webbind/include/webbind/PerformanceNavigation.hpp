@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PerformanceNavigation class.
+/// Interface PerformanceNavigation
 /// [`PerformanceNavigation`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation)
 class PerformanceNavigation : public emlite::Val {
     explicit PerformanceNavigation(Handle h) noexcept;
-
 public:
     explicit PerformanceNavigation(const emlite::Val &val) noexcept;
     static PerformanceNavigation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceNavigation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -27,3 +26,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/HTMLParagraphElement.hpp>
+#include "webbind/HTMLParagraphElement.hpp"
 
+namespace webbind {
 
 HTMLParagraphElement HTMLParagraphElement::take_ownership(Handle h) noexcept {
         return HTMLParagraphElement(h);
@@ -8,7 +9,6 @@ HTMLParagraphElement HTMLParagraphElement::clone() const noexcept { return *this
 emlite::Val HTMLParagraphElement::instance() noexcept { return emlite::Val::global("HTMLParagraphElement"); }
 HTMLParagraphElement::HTMLParagraphElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLParagraphElement::HTMLParagraphElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLParagraphElement::HTMLParagraphElement() : HTMLElement(emlite::Val::global("HTMLParagraphElement").new_()) {}
 
@@ -20,3 +20,5 @@ void HTMLParagraphElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
+
+} // namespace webbind

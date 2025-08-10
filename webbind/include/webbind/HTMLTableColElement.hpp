@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLTableColElement class.
+/// Interface HTMLTableColElement
 /// [`HTMLTableColElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableColElement)
 class HTMLTableColElement : public HTMLElement {
     explicit HTMLTableColElement(Handle h) noexcept;
-
 public:
     explicit HTMLTableColElement(const emlite::Val &val) noexcept;
     static HTMLTableColElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTableColElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableColElement(..)` constructor, creating a new HTMLTableColElement instance
@@ -57,3 +56,4 @@ public:
     void width(const jsbind::String& value);
 };
 
+} // namespace webbind

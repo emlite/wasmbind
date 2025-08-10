@@ -1,5 +1,6 @@
-#include <webbind/WEBGL_color_buffer_float.hpp>
+#include "webbind/WEBGL_color_buffer_float.hpp"
 
+namespace webbind {
 
 WEBGL_color_buffer_float WEBGL_color_buffer_float::take_ownership(Handle h) noexcept {
         return WEBGL_color_buffer_float(h);
@@ -10,3 +11,4 @@ WEBGL_color_buffer_float::WEBGL_color_buffer_float(Handle h) noexcept : emlite::
 WEBGL_color_buffer_float::WEBGL_color_buffer_float(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

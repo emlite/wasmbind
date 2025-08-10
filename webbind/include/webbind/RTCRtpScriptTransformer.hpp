@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class ReadableStream;
 class WritableStream;
 
-
-/// The RTCRtpScriptTransformer class.
+/// Interface RTCRtpScriptTransformer
 /// [`RTCRtpScriptTransformer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer)
 class RTCRtpScriptTransformer : public EventTarget {
     explicit RTCRtpScriptTransformer(Handle h) noexcept;
-
 public:
     explicit RTCRtpScriptTransformer(const emlite::Val &val) noexcept;
     static RTCRtpScriptTransformer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCRtpScriptTransformer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `readable` attribute.
@@ -46,3 +45,4 @@ public:
     [[nodiscard]] jsbind::Any options() const;
 };
 
+} // namespace webbind

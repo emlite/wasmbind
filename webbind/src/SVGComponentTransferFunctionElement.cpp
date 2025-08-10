@@ -1,8 +1,9 @@
-#include <webbind/SVGComponentTransferFunctionElement.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedNumberList.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
+#include "webbind/SVGComponentTransferFunctionElement.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedNumberList.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
 
+namespace webbind {
 
 SVGComponentTransferFunctionElement SVGComponentTransferFunctionElement::take_ownership(Handle h) noexcept {
         return SVGComponentTransferFunctionElement(h);
@@ -11,7 +12,6 @@ SVGComponentTransferFunctionElement SVGComponentTransferFunctionElement::clone()
 emlite::Val SVGComponentTransferFunctionElement::instance() noexcept { return emlite::Val::global("SVGComponentTransferFunctionElement"); }
 SVGComponentTransferFunctionElement::SVGComponentTransferFunctionElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGComponentTransferFunctionElement::SVGComponentTransferFunctionElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedEnumeration SVGComponentTransferFunctionElement::type() const {
     return SVGElement::get("type").as<SVGAnimatedEnumeration>();
@@ -41,3 +41,5 @@ SVGAnimatedNumber SVGComponentTransferFunctionElement::offset() const {
     return SVGElement::get("offset").as<SVGAnimatedNumber>();
 }
 
+
+} // namespace webbind

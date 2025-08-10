@@ -2,58 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "FileSystemHandle.hpp"
 #include "enums.hpp"
+#include "FileSystemHandle.hpp"
+#include "FileSystemGetFileOptions.hpp"
+#include "FileSystemGetDirectoryOptions.hpp"
+#include "FileSystemRemoveOptions.hpp"
+
+namespace webbind {
 
 class FileSystemFileHandle;
-class FileSystemGetFileOptions;
 class FileSystemDirectoryHandle;
-class FileSystemGetDirectoryOptions;
-class FileSystemRemoveOptions;
 
-
-class FileSystemGetFileOptions : public emlite::Val {
-  explicit FileSystemGetFileOptions(Handle h) noexcept;
-public:
-    static FileSystemGetFileOptions take_ownership(Handle h) noexcept;
-    explicit FileSystemGetFileOptions(const emlite::Val &val) noexcept;
-    FileSystemGetFileOptions() noexcept;
-    [[nodiscard]] FileSystemGetFileOptions clone() const noexcept;
-    [[nodiscard]] bool create() const;
-    void create(bool value);
-};
-
-class FileSystemGetDirectoryOptions : public emlite::Val {
-  explicit FileSystemGetDirectoryOptions(Handle h) noexcept;
-public:
-    static FileSystemGetDirectoryOptions take_ownership(Handle h) noexcept;
-    explicit FileSystemGetDirectoryOptions(const emlite::Val &val) noexcept;
-    FileSystemGetDirectoryOptions() noexcept;
-    [[nodiscard]] FileSystemGetDirectoryOptions clone() const noexcept;
-    [[nodiscard]] bool create() const;
-    void create(bool value);
-};
-
-class FileSystemRemoveOptions : public emlite::Val {
-  explicit FileSystemRemoveOptions(Handle h) noexcept;
-public:
-    static FileSystemRemoveOptions take_ownership(Handle h) noexcept;
-    explicit FileSystemRemoveOptions(const emlite::Val &val) noexcept;
-    FileSystemRemoveOptions() noexcept;
-    [[nodiscard]] FileSystemRemoveOptions clone() const noexcept;
-    [[nodiscard]] bool recursive() const;
-    void recursive(bool value);
-};
-
-/// The FileSystemDirectoryHandle class.
+/// Interface FileSystemDirectoryHandle
 /// [`FileSystemDirectoryHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle)
 class FileSystemDirectoryHandle : public FileSystemHandle {
     explicit FileSystemDirectoryHandle(Handle h) noexcept;
-
 public:
     explicit FileSystemDirectoryHandle(const emlite::Val &val) noexcept;
     static FileSystemDirectoryHandle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemDirectoryHandle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getFileHandle method.
@@ -79,3 +45,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<jsbind::String>> resolve(const FileSystemHandle& possibleDescendant);
 };
 
+} // namespace webbind

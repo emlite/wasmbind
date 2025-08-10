@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WebSocket class.
+/// Interface WebSocket
 /// [`WebSocket`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
 class WebSocket : public EventTarget {
     explicit WebSocket(Handle h) noexcept;
-
 public:
     explicit WebSocket(const emlite::Val &val) noexcept;
     static WebSocket take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebSocket clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WebSocket(..)` constructor, creating a new WebSocket instance
@@ -80,3 +80,4 @@ public:
     jsbind::Undefined send(const jsbind::Any& data);
 };
 
+} // namespace webbind

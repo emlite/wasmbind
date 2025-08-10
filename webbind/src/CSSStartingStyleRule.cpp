@@ -1,5 +1,6 @@
-#include <webbind/CSSStartingStyleRule.hpp>
+#include "webbind/CSSStartingStyleRule.hpp"
 
+namespace webbind {
 
 CSSStartingStyleRule CSSStartingStyleRule::take_ownership(Handle h) noexcept {
         return CSSStartingStyleRule(h);
@@ -10,3 +11,4 @@ CSSStartingStyleRule::CSSStartingStyleRule(Handle h) noexcept : CSSGroupingRule(
 CSSStartingStyleRule::CSSStartingStyleRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 
+} // namespace webbind

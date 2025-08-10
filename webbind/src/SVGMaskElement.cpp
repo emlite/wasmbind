@@ -1,7 +1,8 @@
-#include <webbind/SVGMaskElement.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGMaskElement.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGMaskElement SVGMaskElement::take_ownership(Handle h) noexcept {
         return SVGMaskElement(h);
@@ -10,7 +11,6 @@ SVGMaskElement SVGMaskElement::clone() const noexcept { return *this; }
 emlite::Val SVGMaskElement::instance() noexcept { return emlite::Val::global("SVGMaskElement"); }
 SVGMaskElement::SVGMaskElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGMaskElement::SVGMaskElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedEnumeration SVGMaskElement::maskUnits() const {
     return SVGElement::get("maskUnits").as<SVGAnimatedEnumeration>();
@@ -36,3 +36,5 @@ SVGAnimatedLength SVGMaskElement::height() const {
     return SVGElement::get("height").as<SVGAnimatedLength>();
 }
 
+
+} // namespace webbind

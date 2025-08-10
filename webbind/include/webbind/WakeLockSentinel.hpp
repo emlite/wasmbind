@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WakeLockSentinel class.
+/// Interface WakeLockSentinel
 /// [`WakeLockSentinel`](https://developer.mozilla.org/en-US/docs/Web/API/WakeLockSentinel)
 class WakeLockSentinel : public EventTarget {
     explicit WakeLockSentinel(Handle h) noexcept;
-
 public:
     explicit WakeLockSentinel(const emlite::Val &val) noexcept;
     static WakeLockSentinel take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WakeLockSentinel clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `released` attribute.
@@ -34,3 +34,4 @@ public:
     void onrelease(const jsbind::Any& value);
 };
 
+} // namespace webbind

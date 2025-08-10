@@ -3,24 +3,24 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "IntersectionObserverEntryInit.hpp"
+
+namespace webbind {
 
 class DOMRectReadOnly;
 class Element;
 
-
-/// The IntersectionObserverEntry class.
+/// Interface IntersectionObserverEntry
 /// [`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)
 class IntersectionObserverEntry : public emlite::Val {
     explicit IntersectionObserverEntry(Handle h) noexcept;
-
 public:
     explicit IntersectionObserverEntry(const emlite::Val &val) noexcept;
     static IntersectionObserverEntry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IntersectionObserverEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IntersectionObserverEntry(..)` constructor, creating a new IntersectionObserverEntry instance
-    IntersectionObserverEntry(const jsbind::Any& intersectionObserverEntryInit);
+    IntersectionObserverEntry(const IntersectionObserverEntryInit& intersectionObserverEntryInit);
     /// Getter of the `time` attribute.
     /// [`IntersectionObserverEntry.time`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/time)
     [[nodiscard]] jsbind::Any time() const;
@@ -47,3 +47,4 @@ public:
     [[nodiscard]] Element target() const;
 };
 
+} // namespace webbind

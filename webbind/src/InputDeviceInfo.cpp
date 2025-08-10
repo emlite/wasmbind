@@ -1,6 +1,7 @@
-#include <webbind/InputDeviceInfo.hpp>
-#include <webbind/MediaStreamTrack.hpp>
+#include "webbind/InputDeviceInfo.hpp"
+#include "webbind/MediaTrackCapabilities.hpp"
 
+namespace webbind {
 
 InputDeviceInfo InputDeviceInfo::take_ownership(Handle h) noexcept {
         return InputDeviceInfo(h);
@@ -10,8 +11,9 @@ emlite::Val InputDeviceInfo::instance() noexcept { return emlite::Val::global("I
 InputDeviceInfo::InputDeviceInfo(Handle h) noexcept : MediaDeviceInfo(emlite::Val::take_ownership(h)) {}
 InputDeviceInfo::InputDeviceInfo(const emlite::Val &val) noexcept: MediaDeviceInfo(val) {}
 
-
 MediaTrackCapabilities InputDeviceInfo::getCapabilities() {
     return MediaDeviceInfo::call("getCapabilities").as<MediaTrackCapabilities>();
 }
 
+
+} // namespace webbind

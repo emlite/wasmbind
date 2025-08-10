@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGLength class.
+/// Interface SVGLength
 /// [`SVGLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength)
 class SVGLength : public emlite::Val {
     explicit SVGLength(Handle h) noexcept;
-
 public:
     explicit SVGLength(const emlite::Val &val) noexcept;
     static SVGLength take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGLength clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `unitType` attribute.
@@ -45,3 +44,4 @@ public:
     jsbind::Undefined convertToSpecifiedUnits(unsigned short unitType);
 };
 
+} // namespace webbind

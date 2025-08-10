@@ -1,21 +1,7 @@
-#include <webbind/Clipboard.hpp>
+#include "webbind/Clipboard.hpp"
+#include "webbind/ClipboardUnsanitizedFormats.hpp"
 
-
-ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ClipboardUnsanitizedFormats ClipboardUnsanitizedFormats::take_ownership(Handle h) noexcept {
-        return ClipboardUnsanitizedFormats(h);
-    }
-ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats() noexcept: emlite::Val(emlite::Val::object()) {}
-ClipboardUnsanitizedFormats ClipboardUnsanitizedFormats::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::String> ClipboardUnsanitizedFormats::unsanitized() const {
-    return emlite::Val::get("unsanitized").as<jsbind::TypedArray<jsbind::String>>();
-}
-
-void ClipboardUnsanitizedFormats::unsanitized(const jsbind::TypedArray<jsbind::String>& value) {
-    emlite::Val::set("unsanitized", value);
-}
+namespace webbind {
 
 Clipboard Clipboard::take_ownership(Handle h) noexcept {
         return Clipboard(h);
@@ -24,7 +10,6 @@ Clipboard Clipboard::clone() const noexcept { return *this; }
 emlite::Val Clipboard::instance() noexcept { return emlite::Val::global("Clipboard"); }
 Clipboard::Clipboard(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Clipboard::Clipboard(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Promise<jsbind::Any> Clipboard::read() {
     return EventTarget::call("read").as<jsbind::Promise<jsbind::Any>>();
@@ -46,3 +31,5 @@ jsbind::Promise<jsbind::Undefined> Clipboard::writeText(const jsbind::String& da
     return EventTarget::call("writeText", data).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

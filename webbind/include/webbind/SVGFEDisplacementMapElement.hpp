@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedNumber;
 class SVGAnimatedEnumeration;
 class SVGAnimatedLength;
 
-
-/// The SVGFEDisplacementMapElement class.
+/// Interface SVGFEDisplacementMapElement
 /// [`SVGFEDisplacementMapElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEDisplacementMapElement)
 class SVGFEDisplacementMapElement : public SVGElement {
     explicit SVGFEDisplacementMapElement(Handle h) noexcept;
-
 public:
     explicit SVGFEDisplacementMapElement(const emlite::Val &val) noexcept;
     static SVGFEDisplacementMapElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEDisplacementMapElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -54,3 +53,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

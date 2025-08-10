@@ -3,31 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "PressureObserverOptions.hpp"
+#include "enums.hpp"
 
-class PressureObserverOptions;
+namespace webbind {
+
 class PressureRecord;
 
-
-class PressureObserverOptions : public emlite::Val {
-  explicit PressureObserverOptions(Handle h) noexcept;
-public:
-    static PressureObserverOptions take_ownership(Handle h) noexcept;
-    explicit PressureObserverOptions(const emlite::Val &val) noexcept;
-    PressureObserverOptions() noexcept;
-    [[nodiscard]] PressureObserverOptions clone() const noexcept;
-    [[nodiscard]] unsigned long sampleInterval() const;
-    void sampleInterval(unsigned long value);
-};
-
-/// The PressureObserver class.
+/// Interface PressureObserver
 /// [`PressureObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver)
 class PressureObserver : public emlite::Val {
     explicit PressureObserver(Handle h) noexcept;
-
 public:
     explicit PressureObserver(const emlite::Val &val) noexcept;
     static PressureObserver take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PressureObserver clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PressureObserver(..)` constructor, creating a new PressureObserver instance
@@ -52,3 +41,4 @@ public:
     [[nodiscard]] static jsbind::TypedArray<PressureSource> knownSources();
 };
 
+} // namespace webbind

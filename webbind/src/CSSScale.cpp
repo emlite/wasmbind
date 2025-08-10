@@ -1,5 +1,6 @@
-#include <webbind/CSSScale.hpp>
+#include "webbind/CSSScale.hpp"
 
+namespace webbind {
 
 CSSScale CSSScale::take_ownership(Handle h) noexcept {
         return CSSScale(h);
@@ -8,7 +9,6 @@ CSSScale CSSScale::clone() const noexcept { return *this; }
 emlite::Val CSSScale::instance() noexcept { return emlite::Val::global("CSSScale"); }
 CSSScale::CSSScale(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_ownership(h)) {}
 CSSScale::CSSScale(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
-
 
 CSSScale::CSSScale(const jsbind::Any& x, const jsbind::Any& y) : CSSTransformComponent(emlite::Val::global("CSSScale").new_(x, y)) {}
 
@@ -38,3 +38,5 @@ void CSSScale::z(const jsbind::Any& value) {
     CSSTransformComponent::set("z", value);
 }
 
+
+} // namespace webbind

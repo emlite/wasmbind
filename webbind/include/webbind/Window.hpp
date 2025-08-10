@@ -2,9 +2,17 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
-#include "window.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "WindowPostMessageOptions.hpp"
+#include "OpenFilePickerOptions.hpp"
+#include "SaveFilePickerOptions.hpp"
+#include "DirectoryPickerOptions.hpp"
+#include "QueryOptions.hpp"
+#include "IdleRequestOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Document;
 class Location;
@@ -14,7 +22,6 @@ class CustomElementRegistry;
 class BarProp;
 class Element;
 class Navigator;
-class WindowPostMessageOptions;
 class CookieStore;
 class Viewport;
 class MediaQueryList;
@@ -25,15 +32,10 @@ class DigitalGoodsService;
 class DocumentPictureInPicture;
 class Fence;
 class FileSystemFileHandle;
-class OpenFilePickerOptions;
-class SaveFilePickerOptions;
 class FileSystemDirectoryHandle;
-class DirectoryPickerOptions;
 class External;
 class FontData;
-class QueryOptions;
 class PortalHost;
-class IdleRequestOptions;
 class Selection;
 class SharedStorage;
 class SpeechSynthesis;
@@ -42,86 +44,13 @@ class ScreenDetails;
 class Crypto;
 class Storage;
 
-
-class WindowPostMessageOptions : public emlite::Val {
-  explicit WindowPostMessageOptions(Handle h) noexcept;
-public:
-    static WindowPostMessageOptions take_ownership(Handle h) noexcept;
-    explicit WindowPostMessageOptions(const emlite::Val &val) noexcept;
-    WindowPostMessageOptions() noexcept;
-    [[nodiscard]] WindowPostMessageOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String targetOrigin() const;
-    void targetOrigin(const jsbind::String& value);
-};
-
-class OpenFilePickerOptions : public emlite::Val {
-  explicit OpenFilePickerOptions(Handle h) noexcept;
-public:
-    static OpenFilePickerOptions take_ownership(Handle h) noexcept;
-    explicit OpenFilePickerOptions(const emlite::Val &val) noexcept;
-    OpenFilePickerOptions() noexcept;
-    [[nodiscard]] OpenFilePickerOptions clone() const noexcept;
-    [[nodiscard]] bool multiple() const;
-    void multiple(bool value);
-};
-
-class SaveFilePickerOptions : public emlite::Val {
-  explicit SaveFilePickerOptions(Handle h) noexcept;
-public:
-    static SaveFilePickerOptions take_ownership(Handle h) noexcept;
-    explicit SaveFilePickerOptions(const emlite::Val &val) noexcept;
-    SaveFilePickerOptions() noexcept;
-    [[nodiscard]] SaveFilePickerOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String suggestedName() const;
-    void suggestedName(const jsbind::String& value);
-};
-
-class DirectoryPickerOptions : public emlite::Val {
-  explicit DirectoryPickerOptions(Handle h) noexcept;
-public:
-    static DirectoryPickerOptions take_ownership(Handle h) noexcept;
-    explicit DirectoryPickerOptions(const emlite::Val &val) noexcept;
-    DirectoryPickerOptions() noexcept;
-    [[nodiscard]] DirectoryPickerOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String id() const;
-    void id(const jsbind::String& value);
-    [[nodiscard]] jsbind::Any startIn() const;
-    void startIn(const jsbind::Any& value);
-    [[nodiscard]] FileSystemPermissionMode mode() const;
-    void mode(const FileSystemPermissionMode& value);
-};
-
-class QueryOptions : public emlite::Val {
-  explicit QueryOptions(Handle h) noexcept;
-public:
-    static QueryOptions take_ownership(Handle h) noexcept;
-    explicit QueryOptions(const emlite::Val &val) noexcept;
-    QueryOptions() noexcept;
-    [[nodiscard]] QueryOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> postscriptNames() const;
-    void postscriptNames(const jsbind::TypedArray<jsbind::String>& value);
-};
-
-class IdleRequestOptions : public emlite::Val {
-  explicit IdleRequestOptions(Handle h) noexcept;
-public:
-    static IdleRequestOptions take_ownership(Handle h) noexcept;
-    explicit IdleRequestOptions(const emlite::Val &val) noexcept;
-    IdleRequestOptions() noexcept;
-    [[nodiscard]] IdleRequestOptions clone() const noexcept;
-    [[nodiscard]] unsigned long timeout() const;
-    void timeout(unsigned long value);
-};
-
-/// The Window class.
+/// Interface Window
 /// [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window)
 class Window : public EventTarget {
     explicit Window(Handle h) noexcept;
-
 public:
     explicit Window(const emlite::Val &val) noexcept;
     static Window take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Window clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `window` attribute.
@@ -141,7 +70,7 @@ public:
     void name(const jsbind::String& value);
     /// Getter of the `location` attribute.
     /// [`Window.location`](https://developer.mozilla.org/en-US/docs/Web/API/Window/location)
-    [[nodiscard]] jsbind::Any location() const;
+    [[nodiscard]] Location location() const;
     /// Getter of the `history` attribute.
     /// [`Window.history`](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
     [[nodiscard]] History history() const;
@@ -486,3 +415,4 @@ public:
     [[nodiscard]] Storage localStorage() const;
 };
 
+} // namespace webbind

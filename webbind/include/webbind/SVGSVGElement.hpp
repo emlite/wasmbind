@@ -2,8 +2,11 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGraphicsElement.hpp"
 #include "enums.hpp"
+#include "SVGGraphicsElement.hpp"
+#include "DOMMatrix2DInit.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 class DOMPointReadOnly;
@@ -17,54 +20,17 @@ class DOMPoint;
 class DOMMatrix;
 class DOMRect;
 class SVGTransform;
-class DOMMatrix2DInit;
 class Element;
 class SVGAnimatedRect;
 class SVGAnimatedPreserveAspectRatio;
 
-
-class DOMMatrix2DInit : public emlite::Val {
-  explicit DOMMatrix2DInit(Handle h) noexcept;
-public:
-    static DOMMatrix2DInit take_ownership(Handle h) noexcept;
-    explicit DOMMatrix2DInit(const emlite::Val &val) noexcept;
-    DOMMatrix2DInit() noexcept;
-    [[nodiscard]] DOMMatrix2DInit clone() const noexcept;
-    [[nodiscard]] double a() const;
-    void a(double value);
-    [[nodiscard]] double b() const;
-    void b(double value);
-    [[nodiscard]] double c() const;
-    void c(double value);
-    [[nodiscard]] double d() const;
-    void d(double value);
-    [[nodiscard]] double e() const;
-    void e(double value);
-    [[nodiscard]] double f() const;
-    void f(double value);
-    [[nodiscard]] double m11() const;
-    void m11(double value);
-    [[nodiscard]] double m12() const;
-    void m12(double value);
-    [[nodiscard]] double m21() const;
-    void m21(double value);
-    [[nodiscard]] double m22() const;
-    void m22(double value);
-    [[nodiscard]] double m41() const;
-    void m41(double value);
-    [[nodiscard]] double m42() const;
-    void m42(double value);
-};
-
-/// The SVGSVGElement class.
+/// Interface SVGSVGElement
 /// [`SVGSVGElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement)
 class SVGSVGElement : public SVGGraphicsElement {
     explicit SVGSVGElement(Handle h) noexcept;
-
 public:
     explicit SVGSVGElement(const emlite::Val &val) noexcept;
     static SVGSVGElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGSVGElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -174,3 +140,4 @@ public:
     void onportalactivate(const jsbind::Any& value);
 };
 
+} // namespace webbind

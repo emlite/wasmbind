@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SyncManager class.
+/// Interface SyncManager
 /// [`SyncManager`](https://developer.mozilla.org/en-US/docs/Web/API/SyncManager)
 class SyncManager : public emlite::Val {
     explicit SyncManager(Handle h) noexcept;
-
 public:
     explicit SyncManager(const emlite::Val &val) noexcept;
     static SyncManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SyncManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The register method.
@@ -24,3 +23,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<jsbind::String>> getTags();
 };
 
+} // namespace webbind

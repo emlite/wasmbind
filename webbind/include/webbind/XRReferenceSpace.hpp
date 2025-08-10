@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XRSpace.hpp"
 #include "enums.hpp"
+#include "XRSpace.hpp"
+
+namespace webbind {
 
 class XRReferenceSpace;
 class XRRigidTransform;
 
-
-/// The XRReferenceSpace class.
+/// Interface XRReferenceSpace
 /// [`XRReferenceSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace)
 class XRReferenceSpace : public XRSpace {
     explicit XRReferenceSpace(Handle h) noexcept;
-
 public:
     explicit XRReferenceSpace(const emlite::Val &val) noexcept;
     static XRReferenceSpace take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRReferenceSpace clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getOffsetReferenceSpace method.
@@ -31,3 +30,4 @@ public:
     void onreset(const jsbind::Any& value);
 };
 
+} // namespace webbind

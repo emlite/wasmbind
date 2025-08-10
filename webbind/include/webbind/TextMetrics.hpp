@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The TextMetrics class.
+/// Interface TextMetrics
 /// [`TextMetrics`](https://developer.mozilla.org/en-US/docs/Web/API/TextMetrics)
 class TextMetrics : public emlite::Val {
     explicit TextMetrics(Handle h) noexcept;
-
 public:
     explicit TextMetrics(const emlite::Val &val) noexcept;
     static TextMetrics take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextMetrics clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `width` attribute.
@@ -54,3 +53,4 @@ public:
     [[nodiscard]] double ideographicBaseline() const;
 };
 
+} // namespace webbind

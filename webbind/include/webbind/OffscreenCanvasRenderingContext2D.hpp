@@ -2,9 +2,13 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CanvasRenderingContext2D.hpp"
-#include "SVGSVGElement.hpp"
 #include "enums.hpp"
+#include "CanvasRenderingContext2DSettings.hpp"
+#include "DOMMatrix2DInit.hpp"
+#include "ImageDataSettings.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class OffscreenCanvas;
 class DOMMatrix;
@@ -14,16 +18,13 @@ class Path2D;
 class TextMetrics;
 class ImageData;
 
-
-/// The OffscreenCanvasRenderingContext2D class.
+/// Interface OffscreenCanvasRenderingContext2D
 /// [`OffscreenCanvasRenderingContext2D`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D)
 class OffscreenCanvasRenderingContext2D : public emlite::Val {
     explicit OffscreenCanvasRenderingContext2D(Handle h) noexcept;
-
 public:
     explicit OffscreenCanvasRenderingContext2D(const emlite::Val &val) noexcept;
     static OffscreenCanvasRenderingContext2D take_ownership(Handle h) noexcept;
-
     [[nodiscard]] OffscreenCanvasRenderingContext2D clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `canvas` attribute.
@@ -355,3 +356,4 @@ public:
     jsbind::Undefined ellipse(double x, double y, double radiusX, double radiusY, double rotation, double startAngle, double endAngle, bool counterclockwise);
 };
 
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 
-
-/// The HTMLLegendElement class.
+/// Interface HTMLLegendElement
 /// [`HTMLLegendElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLegendElement)
 class HTMLLegendElement : public HTMLElement {
     explicit HTMLLegendElement(Handle h) noexcept;
-
 public:
     explicit HTMLLegendElement(const emlite::Val &val) noexcept;
     static HTMLLegendElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLLegendElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLegendElement(..)` constructor, creating a new HTMLLegendElement instance
@@ -32,3 +31,4 @@ public:
     void align(const jsbind::String& value);
 };
 
+} // namespace webbind

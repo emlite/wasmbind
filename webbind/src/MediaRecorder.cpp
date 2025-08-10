@@ -1,6 +1,8 @@
-#include <webbind/MediaRecorder.hpp>
-#include <webbind/MediaStream.hpp>
+#include "webbind/MediaRecorder.hpp"
+#include "webbind/MediaStream.hpp"
+#include "webbind/MediaRecorderOptions.hpp"
 
+namespace webbind {
 
 MediaRecorder MediaRecorder::take_ownership(Handle h) noexcept {
         return MediaRecorder(h);
@@ -10,10 +12,9 @@ emlite::Val MediaRecorder::instance() noexcept { return emlite::Val::global("Med
 MediaRecorder::MediaRecorder(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MediaRecorder::MediaRecorder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
-
 MediaRecorder::MediaRecorder(const MediaStream& stream) : EventTarget(emlite::Val::global("MediaRecorder").new_(stream)) {}
 
-MediaRecorder::MediaRecorder(const MediaStream& stream, const jsbind::Any& options) : EventTarget(emlite::Val::global("MediaRecorder").new_(stream, options)) {}
+MediaRecorder::MediaRecorder(const MediaStream& stream, const MediaRecorderOptions& options) : EventTarget(emlite::Val::global("MediaRecorder").new_(stream, options)) {}
 
 MediaStream MediaRecorder::stream() const {
     return EventTarget::get("stream").as<MediaStream>();
@@ -115,3 +116,5 @@ bool MediaRecorder::isTypeSupported(const jsbind::String& type) {
     return emlite::Val::global("mediarecorder").call("isTypeSupported", type).as<bool>();
 }
 
+
+} // namespace webbind

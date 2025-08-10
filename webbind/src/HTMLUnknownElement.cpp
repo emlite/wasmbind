@@ -1,5 +1,6 @@
-#include <webbind/HTMLUnknownElement.hpp>
+#include "webbind/HTMLUnknownElement.hpp"
 
+namespace webbind {
 
 HTMLUnknownElement HTMLUnknownElement::take_ownership(Handle h) noexcept {
         return HTMLUnknownElement(h);
@@ -10,3 +11,4 @@ HTMLUnknownElement::HTMLUnknownElement(Handle h) noexcept : HTMLElement(emlite::
 HTMLUnknownElement::HTMLUnknownElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 
+} // namespace webbind

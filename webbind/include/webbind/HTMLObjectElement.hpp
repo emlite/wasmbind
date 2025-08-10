@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 class Document;
 class ValidityState;
 
-
-/// The HTMLObjectElement class.
+/// Interface HTMLObjectElement
 /// [`HTMLObjectElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement)
 class HTMLObjectElement : public HTMLElement {
     explicit HTMLObjectElement(Handle h) noexcept;
-
 public:
     explicit HTMLObjectElement(const emlite::Val &val) noexcept;
     static HTMLObjectElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLObjectElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLObjectElement(..)` constructor, creating a new HTMLObjectElement instance
@@ -151,3 +150,4 @@ public:
     void border(const jsbind::String& value);
 };
 
+} // namespace webbind

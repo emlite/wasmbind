@@ -1,10 +1,11 @@
-#include <webbind/SVGTextContentElement.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/DOMRect.hpp>
-#include <webbind/SVGGeometryElement.hpp>
+#include "webbind/SVGTextContentElement.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/DOMRect.hpp"
+#include "webbind/DOMPointInit.hpp"
 
+namespace webbind {
 
 SVGTextContentElement SVGTextContentElement::take_ownership(Handle h) noexcept {
         return SVGTextContentElement(h);
@@ -13,7 +14,6 @@ SVGTextContentElement SVGTextContentElement::clone() const noexcept { return *th
 emlite::Val SVGTextContentElement::instance() noexcept { return emlite::Val::global("SVGTextContentElement"); }
 SVGTextContentElement::SVGTextContentElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
 SVGTextContentElement::SVGTextContentElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
-
 
 SVGAnimatedLength SVGTextContentElement::textLength() const {
     return SVGGraphicsElement::get("textLength").as<SVGAnimatedLength>();
@@ -63,3 +63,5 @@ jsbind::Undefined SVGTextContentElement::selectSubString(unsigned long charnum, 
     return SVGGraphicsElement::call("selectSubString", charnum, nchars).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

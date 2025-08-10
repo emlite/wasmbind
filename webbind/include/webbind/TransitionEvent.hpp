@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "TransitionEventInit.hpp"
 
+namespace webbind {
 
-/// The TransitionEvent class.
+/// Interface TransitionEvent
 /// [`TransitionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent)
 class TransitionEvent : public Event {
     explicit TransitionEvent(Handle h) noexcept;
-
 public:
     explicit TransitionEvent(const emlite::Val &val) noexcept;
     static TransitionEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TransitionEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TransitionEvent(..)` constructor, creating a new TransitionEvent instance
     TransitionEvent(const jsbind::String& type);
     /// The `new TransitionEvent(..)` constructor, creating a new TransitionEvent instance
-    TransitionEvent(const jsbind::String& type, const jsbind::Any& transitionEventInitDict);
+    TransitionEvent(const jsbind::String& type, const TransitionEventInit& transitionEventInitDict);
     /// Getter of the `propertyName` attribute.
     /// [`TransitionEvent.propertyName`](https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/propertyName)
     [[nodiscard]] jsbind::String propertyName() const;
@@ -32,3 +32,4 @@ public:
     [[nodiscard]] jsbind::String pseudoElement() const;
 };
 
+} // namespace webbind

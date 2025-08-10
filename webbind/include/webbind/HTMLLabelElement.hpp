@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 
-
-/// The HTMLLabelElement class.
+/// Interface HTMLLabelElement
 /// [`HTMLLabelElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement)
 class HTMLLabelElement : public HTMLElement {
     explicit HTMLLabelElement(Handle h) noexcept;
-
 public:
     explicit HTMLLabelElement(const emlite::Val &val) noexcept;
     static HTMLLabelElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLLabelElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLabelElement(..)` constructor, creating a new HTMLLabelElement instance
@@ -35,3 +34,4 @@ public:
     [[nodiscard]] HTMLElement control() const;
 };
 
+} // namespace webbind

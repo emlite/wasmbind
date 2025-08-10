@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Screen.hpp"
 #include "enums.hpp"
+#include "Screen.hpp"
 
+namespace webbind {
 
-/// The ScreenDetailed class.
+/// Interface ScreenDetailed
 /// [`ScreenDetailed`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetailed)
 class ScreenDetailed : public Screen {
     explicit ScreenDetailed(Handle h) noexcept;
-
 public:
     explicit ScreenDetailed(const emlite::Val &val) noexcept;
     static ScreenDetailed take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ScreenDetailed clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `availLeft` attribute.
@@ -43,3 +42,4 @@ public:
     [[nodiscard]] jsbind::String label() const;
 };
 
+} // namespace webbind

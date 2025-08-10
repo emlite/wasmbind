@@ -1,5 +1,7 @@
-#include <webbind/AudioBuffer.hpp>
+#include "webbind/AudioBuffer.hpp"
+#include "webbind/AudioBufferOptions.hpp"
 
+namespace webbind {
 
 AudioBuffer AudioBuffer::take_ownership(Handle h) noexcept {
         return AudioBuffer(h);
@@ -9,8 +11,7 @@ emlite::Val AudioBuffer::instance() noexcept { return emlite::Val::global("Audio
 AudioBuffer::AudioBuffer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioBuffer::AudioBuffer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
-AudioBuffer::AudioBuffer(const jsbind::Any& options) : emlite::Val(emlite::Val::global("AudioBuffer").new_(options)) {}
+AudioBuffer::AudioBuffer(const AudioBufferOptions& options) : emlite::Val(emlite::Val::global("AudioBuffer").new_(options)) {}
 
 float AudioBuffer::sampleRate() const {
     return emlite::Val::get("sampleRate").as<float>();
@@ -48,3 +49,5 @@ jsbind::Undefined AudioBuffer::copyToChannel(const jsbind::Float32Array& source,
     return emlite::Val::call("copyToChannel", source, channelNumber, bufferOffset).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

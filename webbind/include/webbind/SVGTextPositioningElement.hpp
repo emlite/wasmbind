@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGTextContentElement.hpp"
 #include "enums.hpp"
+#include "SVGTextContentElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLengthList;
 class SVGAnimatedNumberList;
 
-
-/// The SVGTextPositioningElement class.
+/// Interface SVGTextPositioningElement
 /// [`SVGTextPositioningElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPositioningElement)
 class SVGTextPositioningElement : public SVGTextContentElement {
     explicit SVGTextPositioningElement(Handle h) noexcept;
-
 public:
     explicit SVGTextPositioningElement(const emlite::Val &val) noexcept;
     static SVGTextPositioningElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGTextPositioningElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -37,3 +36,4 @@ public:
     [[nodiscard]] SVGAnimatedNumberList rotate() const;
 };
 
+} // namespace webbind

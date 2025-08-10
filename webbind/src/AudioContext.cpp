@@ -1,36 +1,15 @@
-#include <webbind/AudioContext.hpp>
-#include <webbind/MediaElementAudioSourceNode.hpp>
-#include <webbind/HTMLMediaElement.hpp>
-#include <webbind/MediaStreamAudioSourceNode.hpp>
-#include <webbind/MediaStream.hpp>
-#include <webbind/MediaStreamTrackAudioSourceNode.hpp>
-#include <webbind/MediaStreamTrack.hpp>
-#include <webbind/MediaStreamAudioDestinationNode.hpp>
+#include "webbind/AudioContext.hpp"
+#include "webbind/AudioContextOptions.hpp"
+#include "webbind/AudioTimestamp.hpp"
+#include "webbind/MediaElementAudioSourceNode.hpp"
+#include "webbind/HTMLMediaElement.hpp"
+#include "webbind/MediaStreamAudioSourceNode.hpp"
+#include "webbind/MediaStream.hpp"
+#include "webbind/MediaStreamTrackAudioSourceNode.hpp"
+#include "webbind/MediaStreamTrack.hpp"
+#include "webbind/MediaStreamAudioDestinationNode.hpp"
 
-
-AudioTimestamp::AudioTimestamp(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioTimestamp AudioTimestamp::take_ownership(Handle h) noexcept {
-        return AudioTimestamp(h);
-    }
-AudioTimestamp::AudioTimestamp(const emlite::Val &val) noexcept: emlite::Val(val) {}
-AudioTimestamp::AudioTimestamp() noexcept: emlite::Val(emlite::Val::object()) {}
-AudioTimestamp AudioTimestamp::clone() const noexcept { return *this; }
-
-double AudioTimestamp::contextTime() const {
-    return emlite::Val::get("contextTime").as<double>();
-}
-
-void AudioTimestamp::contextTime(double value) {
-    emlite::Val::set("contextTime", value);
-}
-
-jsbind::Any AudioTimestamp::performanceTime() const {
-    return emlite::Val::get("performanceTime").as<jsbind::Any>();
-}
-
-void AudioTimestamp::performanceTime(const jsbind::Any& value) {
-    emlite::Val::set("performanceTime", value);
-}
+namespace webbind {
 
 AudioContext AudioContext::take_ownership(Handle h) noexcept {
         return AudioContext(h);
@@ -40,10 +19,9 @@ emlite::Val AudioContext::instance() noexcept { return emlite::Val::global("Audi
 AudioContext::AudioContext(Handle h) noexcept : BaseAudioContext(emlite::Val::take_ownership(h)) {}
 AudioContext::AudioContext(const emlite::Val &val) noexcept: BaseAudioContext(val) {}
 
-
 AudioContext::AudioContext() : BaseAudioContext(emlite::Val::global("AudioContext").new_()) {}
 
-AudioContext::AudioContext(const jsbind::Any& contextOptions) : BaseAudioContext(emlite::Val::global("AudioContext").new_(contextOptions)) {}
+AudioContext::AudioContext(const AudioContextOptions& contextOptions) : BaseAudioContext(emlite::Val::global("AudioContext").new_(contextOptions)) {}
 
 double AudioContext::baseLatency() const {
     return BaseAudioContext::get("baseLatency").as<double>();
@@ -109,3 +87,5 @@ MediaStreamAudioDestinationNode AudioContext::createMediaStreamDestination() {
     return BaseAudioContext::call("createMediaStreamDestination").as<MediaStreamAudioDestinationNode>();
 }
 
+
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/RTCDataChannelEvent.hpp>
-#include <webbind/RTCDataChannel.hpp>
+#include "webbind/RTCDataChannelEvent.hpp"
+#include "webbind/RTCDataChannelEventInit.hpp"
+#include "webbind/RTCDataChannel.hpp"
 
+namespace webbind {
 
 RTCDataChannelEvent RTCDataChannelEvent::take_ownership(Handle h) noexcept {
         return RTCDataChannelEvent(h);
@@ -10,10 +12,11 @@ emlite::Val RTCDataChannelEvent::instance() noexcept { return emlite::Val::globa
 RTCDataChannelEvent::RTCDataChannelEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 RTCDataChannelEvent::RTCDataChannelEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-RTCDataChannelEvent::RTCDataChannelEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCDataChannelEvent").new_(type, eventInitDict)) {}
+RTCDataChannelEvent::RTCDataChannelEvent(const jsbind::String& type, const RTCDataChannelEventInit& eventInitDict) : Event(emlite::Val::global("RTCDataChannelEvent").new_(type, eventInitDict)) {}
 
 RTCDataChannel RTCDataChannelEvent::channel() const {
     return Event::get("channel").as<RTCDataChannel>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/FontFaceFeatures.hpp>
+#include "webbind/FontFaceFeatures.hpp"
 
+namespace webbind {
 
 FontFaceFeatures FontFaceFeatures::take_ownership(Handle h) noexcept {
         return FontFaceFeatures(h);
@@ -10,3 +11,4 @@ FontFaceFeatures::FontFaceFeatures(Handle h) noexcept : emlite::Val(emlite::Val:
 FontFaceFeatures::FontFaceFeatures(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

@@ -1,7 +1,8 @@
-#include <webbind/XRTransientInputHitTestResult.hpp>
-#include <webbind/XRInputSource.hpp>
-#include <webbind/XRHitTestResult.hpp>
+#include "webbind/XRTransientInputHitTestResult.hpp"
+#include "webbind/XRInputSource.hpp"
+#include "webbind/XRHitTestResult.hpp"
 
+namespace webbind {
 
 XRTransientInputHitTestResult XRTransientInputHitTestResult::take_ownership(Handle h) noexcept {
         return XRTransientInputHitTestResult(h);
@@ -11,7 +12,6 @@ emlite::Val XRTransientInputHitTestResult::instance() noexcept { return emlite::
 XRTransientInputHitTestResult::XRTransientInputHitTestResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRTransientInputHitTestResult::XRTransientInputHitTestResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 XRInputSource XRTransientInputHitTestResult::inputSource() const {
     return emlite::Val::get("inputSource").as<XRInputSource>();
 }
@@ -20,3 +20,5 @@ jsbind::TypedArray<XRHitTestResult> XRTransientInputHitTestResult::results() con
     return emlite::Val::get("results").as<jsbind::TypedArray<XRHitTestResult>>();
 }
 
+
+} // namespace webbind

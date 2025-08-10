@@ -1,5 +1,6 @@
-#include <webbind/HTMLTableColElement.hpp>
+#include "webbind/HTMLTableColElement.hpp"
 
+namespace webbind {
 
 HTMLTableColElement HTMLTableColElement::take_ownership(Handle h) noexcept {
         return HTMLTableColElement(h);
@@ -8,7 +9,6 @@ HTMLTableColElement HTMLTableColElement::clone() const noexcept { return *this; 
 emlite::Val HTMLTableColElement::instance() noexcept { return emlite::Val::global("HTMLTableColElement"); }
 HTMLTableColElement::HTMLTableColElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLTableColElement::HTMLTableColElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLTableColElement::HTMLTableColElement() : HTMLElement(emlite::Val::global("HTMLTableColElement").new_()) {}
 
@@ -60,3 +60,5 @@ void HTMLTableColElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 
+
+} // namespace webbind

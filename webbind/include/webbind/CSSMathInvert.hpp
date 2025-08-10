@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSMathValue.hpp"
 #include "enums.hpp"
+#include "CSSMathValue.hpp"
+
+namespace webbind {
 
 class CSSNumericValue;
 
-
-/// The CSSMathInvert class.
+/// Interface CSSMathInvert
 /// [`CSSMathInvert`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathInvert)
 class CSSMathInvert : public CSSMathValue {
     explicit CSSMathInvert(Handle h) noexcept;
-
 public:
     explicit CSSMathInvert(const emlite::Val &val) noexcept;
     static CSSMathInvert take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSMathInvert clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathInvert(..)` constructor, creating a new CSSMathInvert instance
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] CSSNumericValue value() const;
 };
 
+} // namespace webbind

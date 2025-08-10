@@ -2,6 +2,7 @@
 #include <webbind/webbind.hpp>
 
 using jsbind::Function;
+using namespace webbind;
 
 int main() {
     emlite::init();

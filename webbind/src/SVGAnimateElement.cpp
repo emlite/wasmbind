@@ -1,5 +1,6 @@
-#include <webbind/SVGAnimateElement.hpp>
+#include "webbind/SVGAnimateElement.hpp"
 
+namespace webbind {
 
 SVGAnimateElement SVGAnimateElement::take_ownership(Handle h) noexcept {
         return SVGAnimateElement(h);
@@ -10,3 +11,4 @@ SVGAnimateElement::SVGAnimateElement(Handle h) noexcept : SVGAnimationElement(em
 SVGAnimateElement::SVGAnimateElement(const emlite::Val &val) noexcept: SVGAnimationElement(val) {}
 
 
+} // namespace webbind

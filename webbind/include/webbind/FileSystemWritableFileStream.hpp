@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WritableStream.hpp"
 #include "enums.hpp"
+#include "WritableStream.hpp"
 
+namespace webbind {
 
-/// The FileSystemWritableFileStream class.
+/// Interface FileSystemWritableFileStream
 /// [`FileSystemWritableFileStream`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemWritableFileStream)
 class FileSystemWritableFileStream : public WritableStream {
     explicit FileSystemWritableFileStream(Handle h) noexcept;
-
 public:
     explicit FileSystemWritableFileStream(const emlite::Val &val) noexcept;
     static FileSystemWritableFileStream take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemWritableFileStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The write method.
@@ -28,3 +27,4 @@ public:
     jsbind::Promise<jsbind::Undefined> truncate(long long size);
 };
 
+} // namespace webbind

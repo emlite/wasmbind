@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGAngle class.
+/// Interface SVGAngle
 /// [`SVGAngle`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAngle)
 class SVGAngle : public emlite::Val {
     explicit SVGAngle(Handle h) noexcept;
-
 public:
     explicit SVGAngle(const emlite::Val &val) noexcept;
     static SVGAngle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAngle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `unitType` attribute.
@@ -45,3 +44,4 @@ public:
     jsbind::Undefined convertToSpecifiedUnits(unsigned short unitType);
 };
 
+} // namespace webbind

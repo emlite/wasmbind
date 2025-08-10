@@ -1,21 +1,8 @@
-#include <webbind/FileSystemHandle.hpp>
+#include "webbind/FileSystemHandle.hpp"
+#include "webbind/FileSystemHandle.hpp"
+#include "webbind/FileSystemHandlePermissionDescriptor.hpp"
 
-
-FileSystemHandlePermissionDescriptor::FileSystemHandlePermissionDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FileSystemHandlePermissionDescriptor FileSystemHandlePermissionDescriptor::take_ownership(Handle h) noexcept {
-        return FileSystemHandlePermissionDescriptor(h);
-    }
-FileSystemHandlePermissionDescriptor::FileSystemHandlePermissionDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
-FileSystemHandlePermissionDescriptor::FileSystemHandlePermissionDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
-FileSystemHandlePermissionDescriptor FileSystemHandlePermissionDescriptor::clone() const noexcept { return *this; }
-
-FileSystemPermissionMode FileSystemHandlePermissionDescriptor::mode() const {
-    return emlite::Val::get("mode").as<FileSystemPermissionMode>();
-}
-
-void FileSystemHandlePermissionDescriptor::mode(const FileSystemPermissionMode& value) {
-    emlite::Val::set("mode", value);
-}
+namespace webbind {
 
 FileSystemHandle FileSystemHandle::take_ownership(Handle h) noexcept {
         return FileSystemHandle(h);
@@ -24,7 +11,6 @@ FileSystemHandle FileSystemHandle::clone() const noexcept { return *this; }
 emlite::Val FileSystemHandle::instance() noexcept { return emlite::Val::global("FileSystemHandle"); }
 FileSystemHandle::FileSystemHandle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FileSystemHandle::FileSystemHandle(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 FileSystemHandleKind FileSystemHandle::kind() const {
     return emlite::Val::get("kind").as<FileSystemHandleKind>();
@@ -54,3 +40,5 @@ jsbind::Promise<PermissionState> FileSystemHandle::requestPermission(const FileS
     return emlite::Val::call("requestPermission", descriptor).as<jsbind::Promise<PermissionState>>();
 }
 
+
+} // namespace webbind

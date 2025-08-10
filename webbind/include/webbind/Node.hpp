@@ -2,35 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "GetRootNodeOptions.hpp"
+
+namespace webbind {
 
 class Document;
-class GetRootNodeOptions;
+class Node;
 class Element;
 class NodeList;
 
-
-class GetRootNodeOptions : public emlite::Val {
-  explicit GetRootNodeOptions(Handle h) noexcept;
-public:
-    static GetRootNodeOptions take_ownership(Handle h) noexcept;
-    explicit GetRootNodeOptions(const emlite::Val &val) noexcept;
-    GetRootNodeOptions() noexcept;
-    [[nodiscard]] GetRootNodeOptions clone() const noexcept;
-    [[nodiscard]] bool composed() const;
-    void composed(bool value);
-};
-
-/// The Node class.
+/// Interface Node
 /// [`Node`](https://developer.mozilla.org/en-US/docs/Web/API/Node)
 class Node : public EventTarget {
     explicit Node(Handle h) noexcept;
-
 public:
     explicit Node(const emlite::Val &val) noexcept;
     static Node take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Node clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `nodeType` attribute.
@@ -134,3 +123,4 @@ public:
     Node removeChild(const Node& child);
 };
 
+} // namespace webbind

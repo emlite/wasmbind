@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGSVGElement.hpp"
 #include "enums.hpp"
+#include "DOMMatrix2DInit.hpp"
+
+namespace webbind {
 
 class DOMMatrix;
 
-
-/// The SVGTransform class.
+/// Interface SVGTransform
 /// [`SVGTransform`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform)
 class SVGTransform : public emlite::Val {
     explicit SVGTransform(Handle h) noexcept;
-
 public:
     explicit SVGTransform(const emlite::Val &val) noexcept;
     static SVGTransform take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGTransform clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -51,3 +50,4 @@ public:
     jsbind::Undefined setSkewY(float angle);
 };
 
+} // namespace webbind

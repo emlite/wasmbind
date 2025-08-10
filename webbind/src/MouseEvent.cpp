@@ -1,7 +1,9 @@
-#include <webbind/MouseEvent.hpp>
-#include <webbind/EventTarget.hpp>
-#include <webbind/Window.hpp>
+#include "webbind/MouseEvent.hpp"
+#include "webbind/MouseEventInit.hpp"
+#include "webbind/EventTarget.hpp"
+#include "webbind/Window.hpp"
 
+namespace webbind {
 
 MouseEvent MouseEvent::take_ownership(Handle h) noexcept {
         return MouseEvent(h);
@@ -11,10 +13,9 @@ emlite::Val MouseEvent::instance() noexcept { return emlite::Val::global("MouseE
 MouseEvent::MouseEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
 MouseEvent::MouseEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
-
 MouseEvent::MouseEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("MouseEvent").new_(type)) {}
 
-MouseEvent::MouseEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("MouseEvent").new_(type, eventInitDict)) {}
+MouseEvent::MouseEvent(const jsbind::String& type, const MouseEventInit& eventInitDict) : UIEvent(emlite::Val::global("MouseEvent").new_(type, eventInitDict)) {}
 
 long MouseEvent::screenX() const {
     return UIEvent::get("screenX").as<long>();
@@ -164,3 +165,5 @@ jsbind::Undefined MouseEvent::initMouseEvent(const jsbind::String& typeArg, bool
     return UIEvent::call("initMouseEvent", typeArg, bubblesArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

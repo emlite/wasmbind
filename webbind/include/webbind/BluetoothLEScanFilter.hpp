@@ -3,26 +3,26 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "BluetoothLEScanFilterInit.hpp"
+
+namespace webbind {
 
 class BluetoothManufacturerDataFilter;
 class BluetoothServiceDataFilter;
 
-
-/// The BluetoothLEScanFilter class.
+/// Interface BluetoothLEScanFilter
 /// [`BluetoothLEScanFilter`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter)
 class BluetoothLEScanFilter : public emlite::Val {
     explicit BluetoothLEScanFilter(Handle h) noexcept;
-
 public:
     explicit BluetoothLEScanFilter(const emlite::Val &val) noexcept;
     static BluetoothLEScanFilter take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothLEScanFilter clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BluetoothLEScanFilter(..)` constructor, creating a new BluetoothLEScanFilter instance
     BluetoothLEScanFilter();
     /// The `new BluetoothLEScanFilter(..)` constructor, creating a new BluetoothLEScanFilter instance
-    BluetoothLEScanFilter(const jsbind::Any& init);
+    BluetoothLEScanFilter(const BluetoothLEScanFilterInit& init);
     /// Getter of the `name` attribute.
     /// [`BluetoothLEScanFilter.name`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/name)
     [[nodiscard]] jsbind::String name() const;
@@ -40,3 +40,4 @@ public:
     [[nodiscard]] BluetoothServiceDataFilter serviceData() const;
 };
 
+} // namespace webbind

@@ -1,7 +1,9 @@
-#include <webbind/IntersectionObserverEntry.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/IntersectionObserverEntry.hpp"
+#include "webbind/IntersectionObserverEntryInit.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/Element.hpp"
 
+namespace webbind {
 
 IntersectionObserverEntry IntersectionObserverEntry::take_ownership(Handle h) noexcept {
         return IntersectionObserverEntry(h);
@@ -11,8 +13,7 @@ emlite::Val IntersectionObserverEntry::instance() noexcept { return emlite::Val:
 IntersectionObserverEntry::IntersectionObserverEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IntersectionObserverEntry::IntersectionObserverEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
-IntersectionObserverEntry::IntersectionObserverEntry(const jsbind::Any& intersectionObserverEntryInit) : emlite::Val(emlite::Val::global("IntersectionObserverEntry").new_(intersectionObserverEntryInit)) {}
+IntersectionObserverEntry::IntersectionObserverEntry(const IntersectionObserverEntryInit& intersectionObserverEntryInit) : emlite::Val(emlite::Val::global("IntersectionObserverEntry").new_(intersectionObserverEntryInit)) {}
 
 jsbind::Any IntersectionObserverEntry::time() const {
     return emlite::Val::get("time").as<jsbind::Any>();
@@ -46,3 +47,5 @@ Element IntersectionObserverEntry::target() const {
     return emlite::Val::get("target").as<Element>();
 }
 
+
+} // namespace webbind

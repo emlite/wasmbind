@@ -1,6 +1,7 @@
-#include <webbind/Attr.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/Attr.hpp"
+#include "webbind/Element.hpp"
 
+namespace webbind {
 
 Attr Attr::take_ownership(Handle h) noexcept {
         return Attr(h);
@@ -9,7 +10,6 @@ Attr Attr::clone() const noexcept { return *this; }
 emlite::Val Attr::instance() noexcept { return emlite::Val::global("Attr"); }
 Attr::Attr(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 Attr::Attr(const emlite::Val &val) noexcept: Node(val) {}
-
 
 jsbind::String Attr::namespaceURI() const {
     return Node::get("namespaceURI").as<jsbind::String>();
@@ -43,3 +43,5 @@ bool Attr::specified() const {
     return Node::get("specified").as<bool>();
 }
 
+
+} // namespace webbind

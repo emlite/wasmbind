@@ -3,32 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "TextEncoderEncodeIntoResult.hpp"
 
-class TextEncoderEncodeIntoResult;
+namespace webbind {
 
-
-class TextEncoderEncodeIntoResult : public emlite::Val {
-  explicit TextEncoderEncodeIntoResult(Handle h) noexcept;
-public:
-    static TextEncoderEncodeIntoResult take_ownership(Handle h) noexcept;
-    explicit TextEncoderEncodeIntoResult(const emlite::Val &val) noexcept;
-    TextEncoderEncodeIntoResult() noexcept;
-    [[nodiscard]] TextEncoderEncodeIntoResult clone() const noexcept;
-    [[nodiscard]] long long read() const;
-    void read(long long value);
-    [[nodiscard]] long long written() const;
-    void written(long long value);
-};
-
-/// The TextEncoder class.
+/// Interface TextEncoder
 /// [`TextEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
 class TextEncoder : public emlite::Val {
     explicit TextEncoder(Handle h) noexcept;
-
 public:
     explicit TextEncoder(const emlite::Val &val) noexcept;
     static TextEncoder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextEncoder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextEncoder(..)` constructor, creating a new TextEncoder instance
@@ -47,3 +32,4 @@ public:
     [[nodiscard]] jsbind::String encoding() const;
 };
 
+} // namespace webbind

@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SVGLengthList;
 
-
-/// The SVGAnimatedLengthList class.
+/// Interface SVGAnimatedLengthList
 /// [`SVGAnimatedLengthList`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLengthList)
 class SVGAnimatedLengthList : public emlite::Val {
     explicit SVGAnimatedLengthList(Handle h) noexcept;
-
 public:
     explicit SVGAnimatedLengthList(const emlite::Val &val) noexcept;
     static SVGAnimatedLengthList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimatedLengthList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] SVGLengthList animVal() const;
 };
 
+} // namespace webbind

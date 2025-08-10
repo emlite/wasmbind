@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
-class AnimationNodeList;
+namespace webbind {
+
 class AnimationEffect;
+class AnimationNodeList;
 class GroupEffect;
 
-
-/// The GroupEffect class.
+/// Interface GroupEffect
 /// [`GroupEffect`](https://developer.mozilla.org/en-US/docs/Web/API/GroupEffect)
 class GroupEffect : public emlite::Val {
     explicit GroupEffect(Handle h) noexcept;
-
 public:
     explicit GroupEffect(const emlite::Val &val) noexcept;
     static GroupEffect take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GroupEffect clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GroupEffect(..)` constructor, creating a new GroupEffect instance
@@ -44,3 +43,4 @@ public:
     jsbind::Undefined append(const AnimationEffect& effects);
 };
 
+} // namespace webbind

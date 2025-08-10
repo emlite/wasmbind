@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The MediaQueryList class.
+/// Interface MediaQueryList
 /// [`MediaQueryList`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList)
 class MediaQueryList : public EventTarget {
     explicit MediaQueryList(Handle h) noexcept;
-
 public:
     explicit MediaQueryList(const emlite::Val &val) noexcept;
     static MediaQueryList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaQueryList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `media` attribute.
@@ -37,3 +36,4 @@ public:
     void onchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

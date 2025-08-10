@@ -2,28 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "UIEventInit.hpp"
+
+namespace webbind {
 
 class Window;
 class InputDeviceCapabilities;
 
-
-/// The UIEvent class.
+/// Interface UIEvent
 /// [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
 class UIEvent : public Event {
     explicit UIEvent(Handle h) noexcept;
-
 public:
     explicit UIEvent(const emlite::Val &val) noexcept;
     static UIEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] UIEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new UIEvent(..)` constructor, creating a new UIEvent instance
     UIEvent(const jsbind::String& type);
     /// The `new UIEvent(..)` constructor, creating a new UIEvent instance
-    UIEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    UIEvent(const jsbind::String& type, const UIEventInit& eventInitDict);
     /// Getter of the `view` attribute.
     /// [`UIEvent.view`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/view)
     [[nodiscard]] Window view() const;
@@ -53,3 +53,4 @@ public:
     [[nodiscard]] unsigned long which() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/WEBGL_blend_equation_advanced_coherent.hpp>
+#include "webbind/WEBGL_blend_equation_advanced_coherent.hpp"
 
+namespace webbind {
 
 WEBGL_blend_equation_advanced_coherent WEBGL_blend_equation_advanced_coherent::take_ownership(Handle h) noexcept {
         return WEBGL_blend_equation_advanced_coherent(h);
@@ -10,3 +11,4 @@ WEBGL_blend_equation_advanced_coherent::WEBGL_blend_equation_advanced_coherent(H
 WEBGL_blend_equation_advanced_coherent::WEBGL_blend_equation_advanced_coherent(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

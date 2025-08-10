@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XRSubImage.hpp"
 #include "enums.hpp"
+#include "XRSubImage.hpp"
+
+namespace webbind {
 
 class WebGLTexture;
 
-
-/// The XRWebGLSubImage class.
+/// Interface XRWebGLSubImage
 /// [`XRWebGLSubImage`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLSubImage)
 class XRWebGLSubImage : public XRSubImage {
     explicit XRWebGLSubImage(Handle h) noexcept;
-
 public:
     explicit XRWebGLSubImage(const emlite::Val &val) noexcept;
     static XRWebGLSubImage take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRWebGLSubImage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `colorTexture` attribute.
@@ -51,3 +50,4 @@ public:
     [[nodiscard]] unsigned long motionVectorTextureHeight() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/XRTransientInputHitTestSource.hpp>
+#include "webbind/XRTransientInputHitTestSource.hpp"
 
+namespace webbind {
 
 XRTransientInputHitTestSource XRTransientInputHitTestSource::take_ownership(Handle h) noexcept {
         return XRTransientInputHitTestSource(h);
@@ -9,8 +10,9 @@ emlite::Val XRTransientInputHitTestSource::instance() noexcept { return emlite::
 XRTransientInputHitTestSource::XRTransientInputHitTestSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRTransientInputHitTestSource::XRTransientInputHitTestSource(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 jsbind::Undefined XRTransientInputHitTestSource::cancel() {
     return emlite::Val::call("cancel").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

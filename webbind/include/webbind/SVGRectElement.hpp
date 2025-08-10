@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "SVGGeometryElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 
-
-/// The SVGRectElement class.
+/// Interface SVGRectElement
 /// [`SVGRectElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement)
 class SVGRectElement : public SVGGeometryElement {
     explicit SVGRectElement(Handle h) noexcept;
-
 public:
     explicit SVGRectElement(const emlite::Val &val) noexcept;
     static SVGRectElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGRectElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -39,3 +38,4 @@ public:
     [[nodiscard]] SVGAnimatedLength ry() const;
 };
 
+} // namespace webbind

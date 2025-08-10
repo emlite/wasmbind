@@ -1,5 +1,7 @@
-#include <webbind/GravitySensor.hpp>
+#include "webbind/GravitySensor.hpp"
+#include "webbind/AccelerometerSensorOptions.hpp"
 
+namespace webbind {
 
 GravitySensor GravitySensor::take_ownership(Handle h) noexcept {
         return GravitySensor(h);
@@ -9,8 +11,9 @@ emlite::Val GravitySensor::instance() noexcept { return emlite::Val::global("Gra
 GravitySensor::GravitySensor(Handle h) noexcept : Accelerometer(emlite::Val::take_ownership(h)) {}
 GravitySensor::GravitySensor(const emlite::Val &val) noexcept: Accelerometer(val) {}
 
-
 GravitySensor::GravitySensor() : Accelerometer(emlite::Val::global("GravitySensor").new_()) {}
 
-GravitySensor::GravitySensor(const jsbind::Any& options) : Accelerometer(emlite::Val::global("GravitySensor").new_(options)) {}
+GravitySensor::GravitySensor(const AccelerometerSensorOptions& options) : Accelerometer(emlite::Val::global("GravitySensor").new_(options)) {}
 
+
+} // namespace webbind

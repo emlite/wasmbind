@@ -1,6 +1,7 @@
-#include <webbind/CharacterData.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/CharacterData.hpp"
+#include "webbind/Element.hpp"
 
+namespace webbind {
 
 CharacterData CharacterData::take_ownership(Handle h) noexcept {
         return CharacterData(h);
@@ -9,7 +10,6 @@ CharacterData CharacterData::clone() const noexcept { return *this; }
 emlite::Val CharacterData::instance() noexcept { return emlite::Val::global("CharacterData"); }
 CharacterData::CharacterData(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 CharacterData::CharacterData(const emlite::Val &val) noexcept: Node(val) {}
-
 
 jsbind::String CharacterData::data() const {
     return Node::get("data").as<jsbind::String>();
@@ -67,3 +67,5 @@ jsbind::Undefined CharacterData::remove() {
     return Node::call("remove").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

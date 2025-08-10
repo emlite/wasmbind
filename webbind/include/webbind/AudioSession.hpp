@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The AudioSession class.
+/// Interface AudioSession
 /// [`AudioSession`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession)
 class AudioSession : public EventTarget {
     explicit AudioSession(Handle h) noexcept;
-
 public:
     explicit AudioSession(const emlite::Val &val) noexcept;
     static AudioSession take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioSession clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -34,3 +34,4 @@ public:
     void onstatechange(const jsbind::Any& value);
 };
 
+} // namespace webbind

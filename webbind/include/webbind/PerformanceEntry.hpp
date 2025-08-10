@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PerformanceEntry class.
+/// Interface PerformanceEntry
 /// [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
 class PerformanceEntry : public emlite::Val {
     explicit PerformanceEntry(Handle h) noexcept;
-
 public:
     explicit PerformanceEntry(const emlite::Val &val) noexcept;
     static PerformanceEntry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -39,3 +38,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGAnimatedInteger class.
+/// Interface SVGAnimatedInteger
 /// [`SVGAnimatedInteger`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedInteger)
 class SVGAnimatedInteger : public emlite::Val {
     explicit SVGAnimatedInteger(Handle h) noexcept;
-
 public:
     explicit SVGAnimatedInteger(const emlite::Val &val) noexcept;
     static SVGAnimatedInteger take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimatedInteger clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] long animVal() const;
 };
 
+} // namespace webbind

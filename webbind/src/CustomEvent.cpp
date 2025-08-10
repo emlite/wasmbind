@@ -1,5 +1,7 @@
-#include <webbind/CustomEvent.hpp>
+#include "webbind/CustomEvent.hpp"
+#include "webbind/CustomEventInit.hpp"
 
+namespace webbind {
 
 CustomEvent CustomEvent::take_ownership(Handle h) noexcept {
         return CustomEvent(h);
@@ -9,10 +11,9 @@ emlite::Val CustomEvent::instance() noexcept { return emlite::Val::global("Custo
 CustomEvent::CustomEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 CustomEvent::CustomEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 CustomEvent::CustomEvent(const jsbind::String& type) : Event(emlite::Val::global("CustomEvent").new_(type)) {}
 
-CustomEvent::CustomEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("CustomEvent").new_(type, eventInitDict)) {}
+CustomEvent::CustomEvent(const jsbind::String& type, const CustomEventInit& eventInitDict) : Event(emlite::Val::global("CustomEvent").new_(type, eventInitDict)) {}
 
 jsbind::Any CustomEvent::detail() const {
     return Event::get("detail").as<jsbind::Any>();
@@ -34,3 +35,5 @@ jsbind::Undefined CustomEvent::initCustomEvent(const jsbind::String& type, bool 
     return Event::call("initCustomEvent", type, bubbles, cancelable, detail).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

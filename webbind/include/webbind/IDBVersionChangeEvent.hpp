@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "IDBVersionChangeEventInit.hpp"
 
+namespace webbind {
 
-/// The IDBVersionChangeEvent class.
+/// Interface IDBVersionChangeEvent
 /// [`IDBVersionChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent)
 class IDBVersionChangeEvent : public Event {
     explicit IDBVersionChangeEvent(Handle h) noexcept;
-
 public:
     explicit IDBVersionChangeEvent(const emlite::Val &val) noexcept;
     static IDBVersionChangeEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IDBVersionChangeEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IDBVersionChangeEvent(..)` constructor, creating a new IDBVersionChangeEvent instance
     IDBVersionChangeEvent(const jsbind::String& type);
     /// The `new IDBVersionChangeEvent(..)` constructor, creating a new IDBVersionChangeEvent instance
-    IDBVersionChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    IDBVersionChangeEvent(const jsbind::String& type, const IDBVersionChangeEventInit& eventInitDict);
     /// Getter of the `oldVersion` attribute.
     /// [`IDBVersionChangeEvent.oldVersion`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/oldVersion)
     [[nodiscard]] long long oldVersion() const;
@@ -29,3 +29,4 @@ public:
     [[nodiscard]] long long newVersion() const;
 };
 
+} // namespace webbind

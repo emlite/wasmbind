@@ -1,6 +1,7 @@
-#include <webbind/ScreenDetails.hpp>
-#include <webbind/ScreenDetailed.hpp>
+#include "webbind/ScreenDetails.hpp"
+#include "webbind/ScreenDetailed.hpp"
 
+namespace webbind {
 
 ScreenDetails ScreenDetails::take_ownership(Handle h) noexcept {
         return ScreenDetails(h);
@@ -9,7 +10,6 @@ ScreenDetails ScreenDetails::clone() const noexcept { return *this; }
 emlite::Val ScreenDetails::instance() noexcept { return emlite::Val::global("ScreenDetails"); }
 ScreenDetails::ScreenDetails(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 ScreenDetails::ScreenDetails(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::TypedArray<ScreenDetailed> ScreenDetails::screens() const {
     return EventTarget::get("screens").as<jsbind::TypedArray<ScreenDetailed>>();
@@ -35,3 +35,5 @@ void ScreenDetails::oncurrentscreenchange(const jsbind::Any& value) {
     EventTarget::set("oncurrentscreenchange", value);
 }
 
+
+} // namespace webbind

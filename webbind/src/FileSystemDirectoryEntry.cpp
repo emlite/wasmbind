@@ -1,30 +1,8 @@
-#include <webbind/FileSystemDirectoryEntry.hpp>
-#include <webbind/FileSystemDirectoryReader.hpp>
+#include "webbind/FileSystemDirectoryEntry.hpp"
+#include "webbind/FileSystemDirectoryReader.hpp"
+#include "webbind/FileSystemFlags.hpp"
 
-
-FileSystemFlags::FileSystemFlags(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FileSystemFlags FileSystemFlags::take_ownership(Handle h) noexcept {
-        return FileSystemFlags(h);
-    }
-FileSystemFlags::FileSystemFlags(const emlite::Val &val) noexcept: emlite::Val(val) {}
-FileSystemFlags::FileSystemFlags() noexcept: emlite::Val(emlite::Val::object()) {}
-FileSystemFlags FileSystemFlags::clone() const noexcept { return *this; }
-
-bool FileSystemFlags::create() const {
-    return emlite::Val::get("create").as<bool>();
-}
-
-void FileSystemFlags::create(bool value) {
-    emlite::Val::set("create", value);
-}
-
-bool FileSystemFlags::exclusive() const {
-    return emlite::Val::get("exclusive").as<bool>();
-}
-
-void FileSystemFlags::exclusive(bool value) {
-    emlite::Val::set("exclusive", value);
-}
+namespace webbind {
 
 FileSystemDirectoryEntry FileSystemDirectoryEntry::take_ownership(Handle h) noexcept {
         return FileSystemDirectoryEntry(h);
@@ -33,7 +11,6 @@ FileSystemDirectoryEntry FileSystemDirectoryEntry::clone() const noexcept { retu
 emlite::Val FileSystemDirectoryEntry::instance() noexcept { return emlite::Val::global("FileSystemDirectoryEntry"); }
 FileSystemDirectoryEntry::FileSystemDirectoryEntry(Handle h) noexcept : FileSystemEntry(emlite::Val::take_ownership(h)) {}
 FileSystemDirectoryEntry::FileSystemDirectoryEntry(const emlite::Val &val) noexcept: FileSystemEntry(val) {}
-
 
 FileSystemDirectoryReader FileSystemDirectoryEntry::createReader() {
     return FileSystemEntry::call("createReader").as<FileSystemDirectoryReader>();
@@ -79,3 +56,5 @@ jsbind::Undefined FileSystemDirectoryEntry::getDirectory(const jsbind::String& p
     return FileSystemEntry::call("getDirectory", path, options, successCallback, errorCallback).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

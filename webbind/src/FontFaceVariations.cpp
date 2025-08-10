@@ -1,5 +1,6 @@
-#include <webbind/FontFaceVariations.hpp>
+#include "webbind/FontFaceVariations.hpp"
 
+namespace webbind {
 
 FontFaceVariations FontFaceVariations::take_ownership(Handle h) noexcept {
         return FontFaceVariations(h);
@@ -10,3 +11,4 @@ FontFaceVariations::FontFaceVariations(Handle h) noexcept : emlite::Val(emlite::
 FontFaceVariations::FontFaceVariations(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

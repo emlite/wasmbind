@@ -2,19 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Animation.hpp"
 #include "enums.hpp"
+#include "Animation.hpp"
 
+namespace webbind {
 
-/// The WorkletAnimation class.
+class AnimationTimeline;
+
+/// Interface WorkletAnimation
 /// [`WorkletAnimation`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimation)
 class WorkletAnimation : public Animation {
     explicit WorkletAnimation(Handle h) noexcept;
-
 public:
     explicit WorkletAnimation(const emlite::Val &val) noexcept;
     static WorkletAnimation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WorkletAnimation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WorkletAnimation(..)` constructor, creating a new WorkletAnimation instance
@@ -30,3 +31,4 @@ public:
     [[nodiscard]] jsbind::String animatorName() const;
 };
 
+} // namespace webbind

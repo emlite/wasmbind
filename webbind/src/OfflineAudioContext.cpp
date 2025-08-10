@@ -1,6 +1,7 @@
-#include <webbind/OfflineAudioContext.hpp>
-#include <webbind/AudioBuffer.hpp>
+#include "webbind/OfflineAudioContext.hpp"
+#include "webbind/AudioBuffer.hpp"
 
+namespace webbind {
 
 OfflineAudioContext OfflineAudioContext::take_ownership(Handle h) noexcept {
         return OfflineAudioContext(h);
@@ -9,7 +10,6 @@ OfflineAudioContext OfflineAudioContext::clone() const noexcept { return *this; 
 emlite::Val OfflineAudioContext::instance() noexcept { return emlite::Val::global("OfflineAudioContext"); }
 OfflineAudioContext::OfflineAudioContext(Handle h) noexcept : BaseAudioContext(emlite::Val::take_ownership(h)) {}
 OfflineAudioContext::OfflineAudioContext(const emlite::Val &val) noexcept: BaseAudioContext(val) {}
-
 
 OfflineAudioContext::OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate) : BaseAudioContext(emlite::Val::global("OfflineAudioContext").new_(numberOfChannels, length, sampleRate)) {}
 
@@ -37,3 +37,5 @@ void OfflineAudioContext::oncomplete(const jsbind::Any& value) {
     BaseAudioContext::set("oncomplete", value);
 }
 
+
+} // namespace webbind

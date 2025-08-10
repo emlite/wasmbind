@@ -1,30 +1,8 @@
-#include <webbind/ReadableStreamDefaultReader.hpp>
-#include <webbind/ReadableStream.hpp>
+#include "webbind/ReadableStreamDefaultReader.hpp"
+#include "webbind/ReadableStream.hpp"
+#include "webbind/ReadableStreamReadResult.hpp"
 
-
-ReadableStreamReadResult::ReadableStreamReadResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ReadableStreamReadResult ReadableStreamReadResult::take_ownership(Handle h) noexcept {
-        return ReadableStreamReadResult(h);
-    }
-ReadableStreamReadResult::ReadableStreamReadResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ReadableStreamReadResult::ReadableStreamReadResult() noexcept: emlite::Val(emlite::Val::object()) {}
-ReadableStreamReadResult ReadableStreamReadResult::clone() const noexcept { return *this; }
-
-jsbind::Any ReadableStreamReadResult::value() const {
-    return emlite::Val::get("value").as<jsbind::Any>();
-}
-
-void ReadableStreamReadResult::value(const jsbind::Any& value) {
-    emlite::Val::set("value", value);
-}
-
-bool ReadableStreamReadResult::done() const {
-    return emlite::Val::get("done").as<bool>();
-}
-
-void ReadableStreamReadResult::done(bool value) {
-    emlite::Val::set("done", value);
-}
+namespace webbind {
 
 ReadableStreamDefaultReader ReadableStreamDefaultReader::take_ownership(Handle h) noexcept {
         return ReadableStreamDefaultReader(h);
@@ -33,7 +11,6 @@ ReadableStreamDefaultReader ReadableStreamDefaultReader::clone() const noexcept 
 emlite::Val ReadableStreamDefaultReader::instance() noexcept { return emlite::Val::global("ReadableStreamDefaultReader"); }
 ReadableStreamDefaultReader::ReadableStreamDefaultReader(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ReadableStreamDefaultReader::ReadableStreamDefaultReader(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 ReadableStreamDefaultReader::ReadableStreamDefaultReader(const ReadableStream& stream) : emlite::Val(emlite::Val::global("ReadableStreamDefaultReader").new_(stream)) {}
 
@@ -57,3 +34,5 @@ jsbind::Promise<jsbind::Undefined> ReadableStreamDefaultReader::cancel(const jsb
     return emlite::Val::call("cancel", reason).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

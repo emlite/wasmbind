@@ -1,21 +1,7 @@
-#include <webbind/MessagePort.hpp>
+#include "webbind/MessagePort.hpp"
+#include "webbind/StructuredSerializeOptions.hpp"
 
-
-StructuredSerializeOptions::StructuredSerializeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-StructuredSerializeOptions StructuredSerializeOptions::take_ownership(Handle h) noexcept {
-        return StructuredSerializeOptions(h);
-    }
-StructuredSerializeOptions::StructuredSerializeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-StructuredSerializeOptions::StructuredSerializeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-StructuredSerializeOptions StructuredSerializeOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::Object> StructuredSerializeOptions::transfer() const {
-    return emlite::Val::get("transfer").as<jsbind::TypedArray<jsbind::Object>>();
-}
-
-void StructuredSerializeOptions::transfer(const jsbind::TypedArray<jsbind::Object>& value) {
-    emlite::Val::set("transfer", value);
-}
+namespace webbind {
 
 MessagePort MessagePort::take_ownership(Handle h) noexcept {
         return MessagePort(h);
@@ -24,7 +10,6 @@ MessagePort MessagePort::clone() const noexcept { return *this; }
 emlite::Val MessagePort::instance() noexcept { return emlite::Val::global("MessagePort"); }
 MessagePort::MessagePort(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MessagePort::MessagePort(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Undefined MessagePort::postMessage(const jsbind::Any& message) {
     return EventTarget::call("postMessage", message).as<jsbind::Undefined>();
@@ -66,3 +51,5 @@ void MessagePort::onmessageerror(const jsbind::Any& value) {
     EventTarget::set("onmessageerror", value);
 }
 
+
+} // namespace webbind

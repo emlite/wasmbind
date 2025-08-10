@@ -1,6 +1,8 @@
-#include <webbind/XRReferenceSpace.hpp>
-#include <webbind/XRRigidTransform.hpp>
+#include "webbind/XRReferenceSpace.hpp"
+#include "webbind/XRReferenceSpace.hpp"
+#include "webbind/XRRigidTransform.hpp"
 
+namespace webbind {
 
 XRReferenceSpace XRReferenceSpace::take_ownership(Handle h) noexcept {
         return XRReferenceSpace(h);
@@ -9,7 +11,6 @@ XRReferenceSpace XRReferenceSpace::clone() const noexcept { return *this; }
 emlite::Val XRReferenceSpace::instance() noexcept { return emlite::Val::global("XRReferenceSpace"); }
 XRReferenceSpace::XRReferenceSpace(Handle h) noexcept : XRSpace(emlite::Val::take_ownership(h)) {}
 XRReferenceSpace::XRReferenceSpace(const emlite::Val &val) noexcept: XRSpace(val) {}
-
 
 XRReferenceSpace XRReferenceSpace::getOffsetReferenceSpace(const XRRigidTransform& originOffset) {
     return XRSpace::call("getOffsetReferenceSpace", originOffset).as<XRReferenceSpace>();
@@ -23,3 +24,5 @@ void XRReferenceSpace::onreset(const jsbind::Any& value) {
     XRSpace::set("onreset", value);
 }
 
+
+} // namespace webbind

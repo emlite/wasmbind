@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The FontFaceFeatures class.
+/// Interface FontFaceFeatures
 /// [`FontFaceFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceFeatures)
 class FontFaceFeatures : public emlite::Val {
     explicit FontFaceFeatures(Handle h) noexcept;
-
 public:
     explicit FontFaceFeatures(const emlite::Val &val) noexcept;
     static FontFaceFeatures take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FontFaceFeatures clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

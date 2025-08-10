@@ -2,53 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "MemoryMeasurement.hpp"
+#include "PerformanceMarkOptions.hpp"
+
+namespace webbind {
 
 class EventCounts;
 class PerformanceTiming;
 class PerformanceNavigation;
-class MemoryMeasurement;
 class PerformanceMark;
-class PerformanceMarkOptions;
 class PerformanceMeasure;
 
-
-class MemoryMeasurement : public emlite::Val {
-  explicit MemoryMeasurement(Handle h) noexcept;
-public:
-    static MemoryMeasurement take_ownership(Handle h) noexcept;
-    explicit MemoryMeasurement(const emlite::Val &val) noexcept;
-    MemoryMeasurement() noexcept;
-    [[nodiscard]] MemoryMeasurement clone() const noexcept;
-    [[nodiscard]] long long bytes() const;
-    void bytes(long long value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> breakdown() const;
-    void breakdown(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-class PerformanceMarkOptions : public emlite::Val {
-  explicit PerformanceMarkOptions(Handle h) noexcept;
-public:
-    static PerformanceMarkOptions take_ownership(Handle h) noexcept;
-    explicit PerformanceMarkOptions(const emlite::Val &val) noexcept;
-    PerformanceMarkOptions() noexcept;
-    [[nodiscard]] PerformanceMarkOptions clone() const noexcept;
-    [[nodiscard]] jsbind::Any detail() const;
-    void detail(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any startTime() const;
-    void startTime(const jsbind::Any& value);
-};
-
-/// The Performance class.
+/// Interface Performance
 /// [`Performance`](https://developer.mozilla.org/en-US/docs/Web/API/Performance)
 class Performance : public EventTarget {
     explicit Performance(Handle h) noexcept;
-
 public:
     explicit Performance(const emlite::Val &val) noexcept;
     static Performance take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Performance clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The now method.
@@ -128,3 +101,4 @@ public:
     jsbind::Undefined clearMeasures(const jsbind::String& measureName);
 };
 
+} // namespace webbind

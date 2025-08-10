@@ -2,58 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "RequestDeviceOptions.hpp"
+#include "BluetoothLEScanOptions.hpp"
+
+namespace webbind {
 
 class BluetoothDevice;
-class RequestDeviceOptions;
 class BluetoothLEScan;
-class BluetoothLEScanOptions;
 
-
-class RequestDeviceOptions : public emlite::Val {
-  explicit RequestDeviceOptions(Handle h) noexcept;
-public:
-    static RequestDeviceOptions take_ownership(Handle h) noexcept;
-    explicit RequestDeviceOptions(const emlite::Val &val) noexcept;
-    RequestDeviceOptions() noexcept;
-    [[nodiscard]] RequestDeviceOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> filters() const;
-    void filters(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> exclusionFilters() const;
-    void exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> optionalServices() const;
-    void optionalServices(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<unsigned short> optionalManufacturerData() const;
-    void optionalManufacturerData(jsbind::TypedArray<unsigned short> value);
-    [[nodiscard]] bool acceptAllDevices() const;
-    void acceptAllDevices(bool value);
-};
-
-class BluetoothLEScanOptions : public emlite::Val {
-  explicit BluetoothLEScanOptions(Handle h) noexcept;
-public:
-    static BluetoothLEScanOptions take_ownership(Handle h) noexcept;
-    explicit BluetoothLEScanOptions(const emlite::Val &val) noexcept;
-    BluetoothLEScanOptions() noexcept;
-    [[nodiscard]] BluetoothLEScanOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> filters() const;
-    void filters(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] bool keepRepeatedDevices() const;
-    void keepRepeatedDevices(bool value);
-    [[nodiscard]] bool acceptAllAdvertisements() const;
-    void acceptAllAdvertisements(bool value);
-};
-
-/// The Bluetooth class.
+/// Interface Bluetooth
 /// [`Bluetooth`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth)
 class Bluetooth : public EventTarget {
     explicit Bluetooth(Handle h) noexcept;
-
 public:
     explicit Bluetooth(const emlite::Val &val) noexcept;
     static Bluetooth take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Bluetooth clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getAvailability method.
@@ -121,3 +86,4 @@ public:
     void onserviceremoved(const jsbind::Any& value);
 };
 
+} // namespace webbind

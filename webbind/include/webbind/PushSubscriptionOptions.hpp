@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PushSubscriptionOptions class.
+/// Interface PushSubscriptionOptions
 /// [`PushSubscriptionOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscriptionOptions)
 class PushSubscriptionOptions : public emlite::Val {
     explicit PushSubscriptionOptions(Handle h) noexcept;
-
 public:
     explicit PushSubscriptionOptions(const emlite::Val &val) noexcept;
     static PushSubscriptionOptions take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PushSubscriptionOptions clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `userVisibleOnly` attribute.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] jsbind::ArrayBuffer applicationServerKey() const;
 };
 
+} // namespace webbind

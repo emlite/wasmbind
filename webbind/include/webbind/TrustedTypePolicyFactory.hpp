@@ -3,37 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "TrustedTypePolicyOptions.hpp"
+
+namespace webbind {
 
 class TrustedTypePolicy;
-class TrustedTypePolicyOptions;
 class TrustedHTML;
 class TrustedScript;
 
-
-class TrustedTypePolicyOptions : public emlite::Val {
-  explicit TrustedTypePolicyOptions(Handle h) noexcept;
-public:
-    static TrustedTypePolicyOptions take_ownership(Handle h) noexcept;
-    explicit TrustedTypePolicyOptions(const emlite::Val &val) noexcept;
-    TrustedTypePolicyOptions() noexcept;
-    [[nodiscard]] TrustedTypePolicyOptions clone() const noexcept;
-    [[nodiscard]] jsbind::Function createHTML() const;
-    void createHTML(const jsbind::Function& value);
-    [[nodiscard]] jsbind::Function createScript() const;
-    void createScript(const jsbind::Function& value);
-    [[nodiscard]] jsbind::Function createScriptURL() const;
-    void createScriptURL(const jsbind::Function& value);
-};
-
-/// The TrustedTypePolicyFactory class.
+/// Interface TrustedTypePolicyFactory
 /// [`TrustedTypePolicyFactory`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory)
 class TrustedTypePolicyFactory : public emlite::Val {
     explicit TrustedTypePolicyFactory(Handle h) noexcept;
-
 public:
     explicit TrustedTypePolicyFactory(const emlite::Val &val) noexcept;
     static TrustedTypePolicyFactory take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TrustedTypePolicyFactory clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createPolicy method.
@@ -77,3 +61,4 @@ public:
     [[nodiscard]] TrustedTypePolicy defaultPolicy() const;
 };
 
+} // namespace webbind

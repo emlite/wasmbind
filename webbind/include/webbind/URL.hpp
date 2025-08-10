@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class URL;
 class URLSearchParams;
 
-
-/// The URL class.
+/// Interface URL
 /// [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL)
 class URL : public emlite::Val {
     explicit URL(Handle h) noexcept;
-
 public:
     explicit URL(const emlite::Val &val) noexcept;
     static URL take_ownership(Handle h) noexcept;
-
     [[nodiscard]] URL clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new URL(..)` constructor, creating a new URL instance
@@ -112,3 +111,4 @@ public:
     static jsbind::Undefined revokeObjectURL(const jsbind::String& url);
 };
 
+} // namespace webbind

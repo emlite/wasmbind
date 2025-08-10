@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The MediaDeviceInfo class.
+/// Interface MediaDeviceInfo
 /// [`MediaDeviceInfo`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo)
 class MediaDeviceInfo : public emlite::Val {
     explicit MediaDeviceInfo(Handle h) noexcept;
-
 public:
     explicit MediaDeviceInfo(const emlite::Val &val) noexcept;
     static MediaDeviceInfo take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaDeviceInfo clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `deviceId` attribute.
@@ -33,3 +33,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

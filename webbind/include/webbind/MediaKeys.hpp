@@ -3,31 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "MediaKeysPolicy.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class MediaKeySession;
-class MediaKeysPolicy;
 
-
-class MediaKeysPolicy : public emlite::Val {
-  explicit MediaKeysPolicy(Handle h) noexcept;
-public:
-    static MediaKeysPolicy take_ownership(Handle h) noexcept;
-    explicit MediaKeysPolicy(const emlite::Val &val) noexcept;
-    MediaKeysPolicy() noexcept;
-    [[nodiscard]] MediaKeysPolicy clone() const noexcept;
-    [[nodiscard]] jsbind::String minHdcpVersion() const;
-    void minHdcpVersion(const jsbind::String& value);
-};
-
-/// The MediaKeys class.
+/// Interface MediaKeys
 /// [`MediaKeys`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys)
 class MediaKeys : public emlite::Val {
     explicit MediaKeys(Handle h) noexcept;
-
 public:
     explicit MediaKeys(const emlite::Val &val) noexcept;
     static MediaKeys take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaKeys clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createSession method.
@@ -47,3 +36,4 @@ public:
     jsbind::Promise<bool> setServerCertificate(const jsbind::Any& serverCertificate);
 };
 
+} // namespace webbind

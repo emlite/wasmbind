@@ -1,5 +1,6 @@
-#include <webbind/SVGStringList.hpp>
+#include "webbind/SVGStringList.hpp"
 
+namespace webbind {
 
 SVGStringList SVGStringList::take_ownership(Handle h) noexcept {
         return SVGStringList(h);
@@ -8,7 +9,6 @@ SVGStringList SVGStringList::clone() const noexcept { return *this; }
 emlite::Val SVGStringList::instance() noexcept { return emlite::Val::global("SVGStringList"); }
 SVGStringList::SVGStringList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGStringList::SVGStringList(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned long SVGStringList::length() const {
     return emlite::Val::get("length").as<unsigned long>();
@@ -46,3 +46,5 @@ jsbind::String SVGStringList::appendItem(const jsbind::String& newItem) {
     return emlite::Val::call("appendItem", newItem).as<jsbind::String>();
 }
 
+
+} // namespace webbind

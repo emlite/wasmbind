@@ -1,37 +1,7 @@
-#include <webbind/Geolocation.hpp>
+#include "webbind/Geolocation.hpp"
+#include "webbind/PositionOptions.hpp"
 
-
-PositionOptions::PositionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PositionOptions PositionOptions::take_ownership(Handle h) noexcept {
-        return PositionOptions(h);
-    }
-PositionOptions::PositionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PositionOptions::PositionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-PositionOptions PositionOptions::clone() const noexcept { return *this; }
-
-bool PositionOptions::enableHighAccuracy() const {
-    return emlite::Val::get("enableHighAccuracy").as<bool>();
-}
-
-void PositionOptions::enableHighAccuracy(bool value) {
-    emlite::Val::set("enableHighAccuracy", value);
-}
-
-unsigned long PositionOptions::timeout() const {
-    return emlite::Val::get("timeout").as<unsigned long>();
-}
-
-void PositionOptions::timeout(unsigned long value) {
-    emlite::Val::set("timeout", value);
-}
-
-unsigned long PositionOptions::maximumAge() const {
-    return emlite::Val::get("maximumAge").as<unsigned long>();
-}
-
-void PositionOptions::maximumAge(unsigned long value) {
-    emlite::Val::set("maximumAge", value);
-}
+namespace webbind {
 
 Geolocation Geolocation::take_ownership(Handle h) noexcept {
         return Geolocation(h);
@@ -40,7 +10,6 @@ Geolocation Geolocation::clone() const noexcept { return *this; }
 emlite::Val Geolocation::instance() noexcept { return emlite::Val::global("Geolocation"); }
 Geolocation::Geolocation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Geolocation::Geolocation(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Undefined Geolocation::getCurrentPosition(const jsbind::Function& successCallback) {
     return emlite::Val::call("getCurrentPosition", successCallback).as<jsbind::Undefined>();
@@ -70,3 +39,5 @@ jsbind::Undefined Geolocation::clearWatch(long watchId) {
     return emlite::Val::call("clearWatch", watchId).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

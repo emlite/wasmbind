@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CookieStore.hpp"
 #include "enums.hpp"
+#include "CookieStoreGetOptions.hpp"
 
+namespace webbind {
 
-/// The CookieStoreManager class.
+/// Interface CookieStoreManager
 /// [`CookieStoreManager`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreManager)
 class CookieStoreManager : public emlite::Val {
     explicit CookieStoreManager(Handle h) noexcept;
-
 public:
     explicit CookieStoreManager(const emlite::Val &val) noexcept;
     static CookieStoreManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CookieStoreManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The subscribe method.
@@ -28,3 +27,4 @@ public:
     jsbind::Promise<jsbind::Undefined> unsubscribe(const jsbind::TypedArray<CookieStoreGetOptions>& subscriptions);
 };
 
+} // namespace webbind

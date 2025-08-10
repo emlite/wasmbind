@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUSupportedLimits class.
+/// Interface GPUSupportedLimits
 /// [`GPUSupportedLimits`](https://developer.mozilla.org/en-US/docs/Web/API/GPUSupportedLimits)
 class GPUSupportedLimits : public emlite::Val {
     explicit GPUSupportedLimits(Handle h) noexcept;
-
 public:
     explicit GPUSupportedLimits(const emlite::Val &val) noexcept;
     static GPUSupportedLimits take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUSupportedLimits clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `maxTextureDimension1D` attribute.
@@ -111,3 +110,4 @@ public:
     [[nodiscard]] unsigned long maxComputeWorkgroupsPerDimension() const;
 };
 
+} // namespace webbind

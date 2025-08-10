@@ -2,28 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "UIEvent.hpp"
 #include "enums.hpp"
+#include "UIEvent.hpp"
+#include "InputEventInit.hpp"
+
+namespace webbind {
 
 class DataTransfer;
 class StaticRange;
 
-
-/// The InputEvent class.
+/// Interface InputEvent
 /// [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent)
 class InputEvent : public UIEvent {
     explicit InputEvent(Handle h) noexcept;
-
 public:
     explicit InputEvent(const emlite::Val &val) noexcept;
     static InputEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] InputEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new InputEvent(..)` constructor, creating a new InputEvent instance
     InputEvent(const jsbind::String& type);
     /// The `new InputEvent(..)` constructor, creating a new InputEvent instance
-    InputEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    InputEvent(const jsbind::String& type, const InputEventInit& eventInitDict);
     /// Getter of the `data` attribute.
     /// [`InputEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data)
     [[nodiscard]] jsbind::String data() const;
@@ -41,3 +41,4 @@ public:
     jsbind::TypedArray<StaticRange> getTargetRanges();
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGPathSegment class.
+/// Interface SVGPathSegment
 /// [`SVGPathSegment`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathSegment)
 class SVGPathSegment : public emlite::Val {
     explicit SVGPathSegment(Handle h) noexcept;
-
 public:
     explicit SVGPathSegment(const emlite::Val &val) noexcept;
     static SVGPathSegment take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGPathSegment clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -30,3 +29,4 @@ public:
     void values(jsbind::TypedArray<float> value);
 };
 
+} // namespace webbind

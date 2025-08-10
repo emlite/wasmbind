@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "MediaStreamTrack.hpp"
 #include "enums.hpp"
+#include "MediaStreamTrack.hpp"
+
+namespace webbind {
 
 class CropTarget;
 class BrowserCaptureMediaStreamTrack;
 class RestrictionTarget;
 
-
-/// The BrowserCaptureMediaStreamTrack class.
+/// Interface BrowserCaptureMediaStreamTrack
 /// [`BrowserCaptureMediaStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/BrowserCaptureMediaStreamTrack)
 class BrowserCaptureMediaStreamTrack : public MediaStreamTrack {
     explicit BrowserCaptureMediaStreamTrack(Handle h) noexcept;
-
 public:
     explicit BrowserCaptureMediaStreamTrack(const emlite::Val &val) noexcept;
     static BrowserCaptureMediaStreamTrack take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BrowserCaptureMediaStreamTrack clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The cropTo method.
@@ -32,3 +31,4 @@ public:
     jsbind::Promise<jsbind::Undefined> restrictTo(const RestrictionTarget& RestrictionTarget);
 };
 
+} // namespace webbind

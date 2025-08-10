@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class CSSStyleSheet;
 
-
-/// The SVGStyleElement class.
+/// Interface SVGStyleElement
 /// [`SVGStyleElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStyleElement)
 class SVGStyleElement : public SVGElement {
     explicit SVGStyleElement(Handle h) noexcept;
-
 public:
     explicit SVGStyleElement(const emlite::Val &val) noexcept;
     static SVGStyleElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGStyleElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -42,3 +41,4 @@ public:
     [[nodiscard]] CSSStyleSheet sheet() const;
 };
 
+} // namespace webbind

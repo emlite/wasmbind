@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WEBGL_draw_instanced_base_vertex_base_instance class.
+/// Interface WEBGL_draw_instanced_base_vertex_base_instance
 /// [`WEBGL_draw_instanced_base_vertex_base_instance`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_draw_instanced_base_vertex_base_instance)
 class WEBGL_draw_instanced_base_vertex_base_instance : public emlite::Val {
     explicit WEBGL_draw_instanced_base_vertex_base_instance(Handle h) noexcept;
-
 public:
     explicit WEBGL_draw_instanced_base_vertex_base_instance(const emlite::Val &val) noexcept;
     static WEBGL_draw_instanced_base_vertex_base_instance take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WEBGL_draw_instanced_base_vertex_base_instance clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The drawArraysInstancedBaseInstanceWEBGL method.
@@ -24,3 +23,4 @@ public:
     jsbind::Undefined drawElementsInstancedBaseVertexBaseInstanceWEBGL(const jsbind::Any& mode, const jsbind::Any& count, const jsbind::Any& type, const jsbind::Any& offset, const jsbind::Any& instanceCount, const jsbind::Any& baseVertex, const jsbind::Any& baseInstance);
 };
 
+} // namespace webbind

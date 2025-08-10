@@ -2,37 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
+#include "NotificationOptions.hpp"
+#include "NotificationAction.hpp"
 #include "enums.hpp"
 
-class NotificationAction;
-class NotificationOptions;
+namespace webbind {
 
-
-class NotificationAction : public emlite::Val {
-  explicit NotificationAction(Handle h) noexcept;
-public:
-    static NotificationAction take_ownership(Handle h) noexcept;
-    explicit NotificationAction(const emlite::Val &val) noexcept;
-    NotificationAction() noexcept;
-    [[nodiscard]] NotificationAction clone() const noexcept;
-    [[nodiscard]] jsbind::String action() const;
-    void action(const jsbind::String& value);
-    [[nodiscard]] jsbind::String title() const;
-    void title(const jsbind::String& value);
-    [[nodiscard]] jsbind::String icon() const;
-    void icon(const jsbind::String& value);
-};
-
-/// The Notification class.
+/// Interface Notification
 /// [`Notification`](https://developer.mozilla.org/en-US/docs/Web/API/Notification)
 class Notification : public EventTarget {
     explicit Notification(Handle h) noexcept;
-
 public:
     explicit Notification(const emlite::Val &val) noexcept;
     static Notification take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Notification clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Notification(..)` constructor, creating a new Notification instance
@@ -125,3 +109,4 @@ public:
     jsbind::Undefined close();
 };
 
+} // namespace webbind

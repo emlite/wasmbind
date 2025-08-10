@@ -1,6 +1,7 @@
-#include <webbind/LargestContentfulPaint.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/LargestContentfulPaint.hpp"
+#include "webbind/Element.hpp"
 
+namespace webbind {
 
 LargestContentfulPaint LargestContentfulPaint::take_ownership(Handle h) noexcept {
         return LargestContentfulPaint(h);
@@ -9,7 +10,6 @@ LargestContentfulPaint LargestContentfulPaint::clone() const noexcept { return *
 emlite::Val LargestContentfulPaint::instance() noexcept { return emlite::Val::global("LargestContentfulPaint"); }
 LargestContentfulPaint::LargestContentfulPaint(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 LargestContentfulPaint::LargestContentfulPaint(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
-
 
 jsbind::Any LargestContentfulPaint::loadTime() const {
     return PerformanceEntry::get("loadTime").as<jsbind::Any>();
@@ -43,3 +43,5 @@ jsbind::Any LargestContentfulPaint::presentationTime() const {
     return PerformanceEntry::get("presentationTime").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

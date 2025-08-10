@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PerformanceEntry.hpp"
 #include "enums.hpp"
+#include "PerformanceEntry.hpp"
 
+namespace webbind {
 
-/// The TaskAttributionTiming class.
+/// Interface TaskAttributionTiming
 /// [`TaskAttributionTiming`](https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming)
 class TaskAttributionTiming : public PerformanceEntry {
     explicit TaskAttributionTiming(Handle h) noexcept;
-
 public:
     explicit TaskAttributionTiming(const emlite::Val &val) noexcept;
     static TaskAttributionTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TaskAttributionTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startTime` attribute.
@@ -46,3 +45,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

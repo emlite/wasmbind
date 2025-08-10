@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class Element;
 class HTMLFormElement;
 class ValidityState;
 class NodeList;
 
-
-/// The HTMLButtonElement class.
+/// Interface HTMLButtonElement
 /// [`HTMLButtonElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement)
 class HTMLButtonElement : public HTMLElement {
     explicit HTMLButtonElement(Handle h) noexcept;
-
 public:
     explicit HTMLButtonElement(const emlite::Val &val) noexcept;
     static HTMLButtonElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLButtonElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLButtonElement(..)` constructor, creating a new HTMLButtonElement instance
@@ -128,3 +127,4 @@ public:
     void popoverTargetAction(const jsbind::String& value);
 };
 
+} // namespace webbind

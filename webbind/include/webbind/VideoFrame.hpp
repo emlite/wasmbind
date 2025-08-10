@@ -3,68 +3,29 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "VideoFrameBufferInit.hpp"
+#include "VideoFrameMetadata.hpp"
+#include "VideoFrameCopyToOptions.hpp"
+#include "PlaneLayout.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class DOMRectReadOnly;
 class VideoColorSpace;
-class VideoFrameMetadata;
-class VideoFrameCopyToOptions;
-class PlaneLayout;
 class VideoFrame;
-class DOMRectInit;
 
-
-class VideoFrameMetadata : public emlite::Val {
-  explicit VideoFrameMetadata(Handle h) noexcept;
-public:
-    static VideoFrameMetadata take_ownership(Handle h) noexcept;
-    explicit VideoFrameMetadata(const emlite::Val &val) noexcept;
-    VideoFrameMetadata() noexcept;
-    [[nodiscard]] VideoFrameMetadata clone() const noexcept;
-};
-
-class VideoFrameCopyToOptions : public emlite::Val {
-  explicit VideoFrameCopyToOptions(Handle h) noexcept;
-public:
-    static VideoFrameCopyToOptions take_ownership(Handle h) noexcept;
-    explicit VideoFrameCopyToOptions(const emlite::Val &val) noexcept;
-    VideoFrameCopyToOptions() noexcept;
-    [[nodiscard]] VideoFrameCopyToOptions clone() const noexcept;
-    [[nodiscard]] DOMRectInit rect() const;
-    void rect(const DOMRectInit& value);
-    [[nodiscard]] jsbind::TypedArray<PlaneLayout> layout() const;
-    void layout(const jsbind::TypedArray<PlaneLayout>& value);
-    [[nodiscard]] VideoPixelFormat format() const;
-    void format(const VideoPixelFormat& value);
-    [[nodiscard]] PredefinedColorSpace colorSpace() const;
-    void colorSpace(const PredefinedColorSpace& value);
-};
-
-class PlaneLayout : public emlite::Val {
-  explicit PlaneLayout(Handle h) noexcept;
-public:
-    static PlaneLayout take_ownership(Handle h) noexcept;
-    explicit PlaneLayout(const emlite::Val &val) noexcept;
-    PlaneLayout() noexcept;
-    [[nodiscard]] PlaneLayout clone() const noexcept;
-    [[nodiscard]] unsigned long offset() const;
-    void offset(unsigned long value);
-    [[nodiscard]] unsigned long stride() const;
-    void stride(unsigned long value);
-};
-
-/// The VideoFrame class.
+/// Interface VideoFrame
 /// [`VideoFrame`](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame)
 class VideoFrame : public emlite::Val {
     explicit VideoFrame(Handle h) noexcept;
-
 public:
     explicit VideoFrame(const emlite::Val &val) noexcept;
     static VideoFrame take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VideoFrame clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoFrame(..)` constructor, creating a new VideoFrame instance
-    VideoFrame(const jsbind::Any& data, const jsbind::Any& init);
+    VideoFrame(const jsbind::Any& data, const VideoFrameBufferInit& init);
     /// Getter of the `format` attribute.
     /// [`VideoFrame.format`](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame/format)
     [[nodiscard]] VideoPixelFormat format() const;
@@ -124,3 +85,4 @@ public:
     jsbind::Undefined close();
 };
 
+} // namespace webbind

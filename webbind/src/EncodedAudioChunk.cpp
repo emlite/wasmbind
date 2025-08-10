@@ -1,5 +1,7 @@
-#include <webbind/EncodedAudioChunk.hpp>
+#include "webbind/EncodedAudioChunk.hpp"
+#include "webbind/EncodedAudioChunkInit.hpp"
 
+namespace webbind {
 
 EncodedAudioChunk EncodedAudioChunk::take_ownership(Handle h) noexcept {
         return EncodedAudioChunk(h);
@@ -9,8 +11,7 @@ emlite::Val EncodedAudioChunk::instance() noexcept { return emlite::Val::global(
 EncodedAudioChunk::EncodedAudioChunk(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EncodedAudioChunk::EncodedAudioChunk(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
-EncodedAudioChunk::EncodedAudioChunk(const jsbind::Any& init) : emlite::Val(emlite::Val::global("EncodedAudioChunk").new_(init)) {}
+EncodedAudioChunk::EncodedAudioChunk(const EncodedAudioChunkInit& init) : emlite::Val(emlite::Val::global("EncodedAudioChunk").new_(init)) {}
 
 EncodedAudioChunkType EncodedAudioChunk::type() const {
     return emlite::Val::get("type").as<EncodedAudioChunkType>();
@@ -32,3 +33,5 @@ jsbind::Undefined EncodedAudioChunk::copyTo(const jsbind::Any& destination) {
     return emlite::Val::call("copyTo", destination).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/CDATASection.hpp>
+#include "webbind/CDATASection.hpp"
 
+namespace webbind {
 
 CDATASection CDATASection::take_ownership(Handle h) noexcept {
         return CDATASection(h);
@@ -10,3 +11,4 @@ CDATASection::CDATASection(Handle h) noexcept : Text(emlite::Val::take_ownership
 CDATASection::CDATASection(const emlite::Val &val) noexcept: Text(val) {}
 
 
+} // namespace webbind

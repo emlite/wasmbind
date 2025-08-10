@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
 
+namespace webbind {
 
-/// The CSSFontPaletteValuesRule class.
+/// Interface CSSFontPaletteValuesRule
 /// [`CSSFontPaletteValuesRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule)
 class CSSFontPaletteValuesRule : public CSSRule {
     explicit CSSFontPaletteValuesRule(Handle h) noexcept;
-
 public:
     explicit CSSFontPaletteValuesRule(const emlite::Val &val) noexcept;
     static CSSFontPaletteValuesRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSFontPaletteValuesRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -31,3 +30,4 @@ public:
     [[nodiscard]] jsbind::String overrideColors() const;
 };
 
+} // namespace webbind

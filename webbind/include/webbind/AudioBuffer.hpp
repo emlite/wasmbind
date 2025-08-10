@@ -3,21 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "AudioBufferOptions.hpp"
 
+namespace webbind {
 
-/// The AudioBuffer class.
+/// Interface AudioBuffer
 /// [`AudioBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer)
 class AudioBuffer : public emlite::Val {
     explicit AudioBuffer(Handle h) noexcept;
-
 public:
     explicit AudioBuffer(const emlite::Val &val) noexcept;
     static AudioBuffer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioBuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioBuffer(..)` constructor, creating a new AudioBuffer instance
-    AudioBuffer(const jsbind::Any& options);
+    AudioBuffer(const AudioBufferOptions& options);
     /// Getter of the `sampleRate` attribute.
     /// [`AudioBuffer.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/sampleRate)
     [[nodiscard]] float sampleRate() const;
@@ -47,3 +47,4 @@ public:
     jsbind::Undefined copyToChannel(const jsbind::Float32Array& source, unsigned long channelNumber, unsigned long bufferOffset);
 };
 
+} // namespace webbind

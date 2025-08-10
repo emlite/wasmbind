@@ -2,109 +2,32 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "XRRenderStateInit.hpp"
+#include "XRDOMOverlayState.hpp"
+#include "XRHitTestOptionsInit.hpp"
+#include "XRTransientInputHitTestOptionsInit.hpp"
+#include "XRLightProbeInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class XRRenderState;
 class XRInputSourceArray;
-class XRRenderStateInit;
 class XRReferenceSpace;
 class XRAnchor;
-class XRDOMOverlayState;
 class XRHitTestSource;
-class XRHitTestOptionsInit;
 class XRTransientInputHitTestSource;
-class XRTransientInputHitTestOptionsInit;
 class XRLightProbe;
-class XRLightProbeInit;
-class XRRay;
-class XRLayer;
-class XRSpace;
-class XRWebGLLayer;
 
-
-class XRRenderStateInit : public emlite::Val {
-  explicit XRRenderStateInit(Handle h) noexcept;
-public:
-    static XRRenderStateInit take_ownership(Handle h) noexcept;
-    explicit XRRenderStateInit(const emlite::Val &val) noexcept;
-    XRRenderStateInit() noexcept;
-    [[nodiscard]] XRRenderStateInit clone() const noexcept;
-    [[nodiscard]] double depthNear() const;
-    void depthNear(double value);
-    [[nodiscard]] double depthFar() const;
-    void depthFar(double value);
-    [[nodiscard]] bool passthroughFullyObscured() const;
-    void passthroughFullyObscured(bool value);
-    [[nodiscard]] double inlineVerticalFieldOfView() const;
-    void inlineVerticalFieldOfView(double value);
-    [[nodiscard]] XRWebGLLayer baseLayer() const;
-    void baseLayer(const XRWebGLLayer& value);
-    [[nodiscard]] jsbind::TypedArray<XRLayer> layers() const;
-    void layers(const jsbind::TypedArray<XRLayer>& value);
-};
-
-class XRDOMOverlayState : public emlite::Val {
-  explicit XRDOMOverlayState(Handle h) noexcept;
-public:
-    static XRDOMOverlayState take_ownership(Handle h) noexcept;
-    explicit XRDOMOverlayState(const emlite::Val &val) noexcept;
-    XRDOMOverlayState() noexcept;
-    [[nodiscard]] XRDOMOverlayState clone() const noexcept;
-    [[nodiscard]] XRDOMOverlayType type() const;
-    void type(const XRDOMOverlayType& value);
-};
-
-class XRHitTestOptionsInit : public emlite::Val {
-  explicit XRHitTestOptionsInit(Handle h) noexcept;
-public:
-    static XRHitTestOptionsInit take_ownership(Handle h) noexcept;
-    explicit XRHitTestOptionsInit(const emlite::Val &val) noexcept;
-    XRHitTestOptionsInit() noexcept;
-    [[nodiscard]] XRHitTestOptionsInit clone() const noexcept;
-    [[nodiscard]] XRSpace space() const;
-    void space(const XRSpace& value);
-    [[nodiscard]] jsbind::TypedArray<XRHitTestTrackableType> entityTypes() const;
-    void entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value);
-    [[nodiscard]] XRRay offsetRay() const;
-    void offsetRay(const XRRay& value);
-};
-
-class XRTransientInputHitTestOptionsInit : public emlite::Val {
-  explicit XRTransientInputHitTestOptionsInit(Handle h) noexcept;
-public:
-    static XRTransientInputHitTestOptionsInit take_ownership(Handle h) noexcept;
-    explicit XRTransientInputHitTestOptionsInit(const emlite::Val &val) noexcept;
-    XRTransientInputHitTestOptionsInit() noexcept;
-    [[nodiscard]] XRTransientInputHitTestOptionsInit clone() const noexcept;
-    [[nodiscard]] jsbind::String profile() const;
-    void profile(const jsbind::String& value);
-    [[nodiscard]] jsbind::TypedArray<XRHitTestTrackableType> entityTypes() const;
-    void entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value);
-    [[nodiscard]] XRRay offsetRay() const;
-    void offsetRay(const XRRay& value);
-};
-
-class XRLightProbeInit : public emlite::Val {
-  explicit XRLightProbeInit(Handle h) noexcept;
-public:
-    static XRLightProbeInit take_ownership(Handle h) noexcept;
-    explicit XRLightProbeInit(const emlite::Val &val) noexcept;
-    XRLightProbeInit() noexcept;
-    [[nodiscard]] XRLightProbeInit clone() const noexcept;
-    [[nodiscard]] XRReflectionFormat reflectionFormat() const;
-    void reflectionFormat(const XRReflectionFormat& value);
-};
-
-/// The XRSession class.
+/// Interface XRSession
 /// [`XRSession`](https://developer.mozilla.org/en-US/docs/Web/API/XRSession)
 class XRSession : public EventTarget {
     explicit XRSession(Handle h) noexcept;
-
 public:
     explicit XRSession(const emlite::Val &val) noexcept;
     static XRSession take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRSession clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `visibilityState` attribute.
@@ -268,3 +191,4 @@ public:
     jsbind::Promise<jsbind::Undefined> initiateRoomCapture();
 };
 
+} // namespace webbind

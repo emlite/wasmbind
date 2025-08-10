@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 class DOMRect;
 
-
-/// The CaretPosition class.
+/// Interface CaretPosition
 /// [`CaretPosition`](https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition)
 class CaretPosition : public emlite::Val {
     explicit CaretPosition(Handle h) noexcept;
-
 public:
     explicit CaretPosition(const emlite::Val &val) noexcept;
     static CaretPosition take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CaretPosition clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `offsetNode` attribute.
@@ -30,3 +29,4 @@ public:
     DOMRect getClientRect();
 };
 
+} // namespace webbind

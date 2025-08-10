@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ProtectedAudienceUtilities class.
+/// Interface ProtectedAudienceUtilities
 /// [`ProtectedAudienceUtilities`](https://developer.mozilla.org/en-US/docs/Web/API/ProtectedAudienceUtilities)
 class ProtectedAudienceUtilities : public emlite::Val {
     explicit ProtectedAudienceUtilities(Handle h) noexcept;
-
 public:
     explicit ProtectedAudienceUtilities(const emlite::Val &val) noexcept;
     static ProtectedAudienceUtilities take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ProtectedAudienceUtilities clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The encodeUtf8 method.
@@ -24,3 +23,4 @@ public:
     jsbind::String decodeUtf8(const jsbind::Uint8Array& bytes);
 };
 
+} // namespace webbind

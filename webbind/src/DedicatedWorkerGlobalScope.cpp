@@ -1,6 +1,7 @@
-#include <webbind/DedicatedWorkerGlobalScope.hpp>
-#include <webbind/MessagePort.hpp>
+#include "webbind/DedicatedWorkerGlobalScope.hpp"
+#include "webbind/StructuredSerializeOptions.hpp"
 
+namespace webbind {
 
 DedicatedWorkerGlobalScope DedicatedWorkerGlobalScope::take_ownership(Handle h) noexcept {
         return DedicatedWorkerGlobalScope(h);
@@ -9,7 +10,6 @@ DedicatedWorkerGlobalScope DedicatedWorkerGlobalScope::clone() const noexcept { 
 emlite::Val DedicatedWorkerGlobalScope::instance() noexcept { return emlite::Val::global("DedicatedWorkerGlobalScope"); }
 DedicatedWorkerGlobalScope::DedicatedWorkerGlobalScope(Handle h) noexcept : WorkerGlobalScope(emlite::Val::take_ownership(h)) {}
 DedicatedWorkerGlobalScope::DedicatedWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
-
 
 jsbind::String DedicatedWorkerGlobalScope::name() const {
     return WorkerGlobalScope::get("name").as<jsbind::String>();
@@ -59,3 +59,5 @@ void DedicatedWorkerGlobalScope::onmessageerror(const jsbind::Any& value) {
     WorkerGlobalScope::set("onmessageerror", value);
 }
 
+
+} // namespace webbind

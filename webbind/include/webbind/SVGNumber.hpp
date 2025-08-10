@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGNumber class.
+/// Interface SVGNumber
 /// [`SVGNumber`](https://developer.mozilla.org/en-US/docs/Web/API/SVGNumber)
 class SVGNumber : public emlite::Val {
     explicit SVGNumber(Handle h) noexcept;
-
 public:
     explicit SVGNumber(const emlite::Val &val) noexcept;
     static SVGNumber take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGNumber clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `value` attribute.
@@ -24,3 +23,4 @@ public:
     void value(float value);
 };
 
+} // namespace webbind

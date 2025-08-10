@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class TextTrack;
 
-
-/// The TextTrackCue class.
+/// Interface TextTrackCue
 /// [`TextTrackCue`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCue)
 class TextTrackCue : public EventTarget {
     explicit TextTrackCue(Handle h) noexcept;
-
 public:
     explicit TextTrackCue(const emlite::Val &val) noexcept;
     static TextTrackCue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextTrackCue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `track` attribute.
@@ -60,3 +59,4 @@ public:
     void onexit(const jsbind::Any& value);
 };
 
+} // namespace webbind

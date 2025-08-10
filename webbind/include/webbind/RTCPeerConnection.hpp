@@ -2,16 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
-#include "RTCIceTransport.hpp"
+#include "RTCConfiguration.hpp"
+#include "RTCOfferOptions.hpp"
+#include "RTCLocalSessionDescriptionInit.hpp"
+#include "RTCSessionDescriptionInit.hpp"
+#include "RTCIceCandidateInit.hpp"
+#include "RTCIdentityProviderOptions.hpp"
+#include "RTCRtpTransceiverInit.hpp"
+#include "RTCDataChannelInit.hpp"
 #include "enums.hpp"
 
-class RTCOfferOptions;
-class RTCLocalSessionDescriptionInit;
+namespace webbind {
+
 class RTCSessionDescription;
-class RTCSessionDescriptionInit;
-class RTCConfiguration;
-class RTCIdentityProviderOptions;
 class RTCIdentityAssertion;
 class RTCCertificate;
 class RTCRtpSender;
@@ -19,133 +24,17 @@ class RTCRtpReceiver;
 class RTCRtpTransceiver;
 class MediaStreamTrack;
 class MediaStream;
-class RTCRtpTransceiverInit;
 class RTCSctpTransport;
 class RTCDataChannel;
-class RTCDataChannelInit;
 class RTCStatsReport;
 
-
-class RTCOfferOptions : public emlite::Val {
-  explicit RTCOfferOptions(Handle h) noexcept;
-public:
-    static RTCOfferOptions take_ownership(Handle h) noexcept;
-    explicit RTCOfferOptions(const emlite::Val &val) noexcept;
-    RTCOfferOptions() noexcept;
-    [[nodiscard]] RTCOfferOptions clone() const noexcept;
-    [[nodiscard]] bool offerToReceiveAudio() const;
-    void offerToReceiveAudio(bool value);
-    [[nodiscard]] bool offerToReceiveVideo() const;
-    void offerToReceiveVideo(bool value);
-};
-
-class RTCLocalSessionDescriptionInit : public emlite::Val {
-  explicit RTCLocalSessionDescriptionInit(Handle h) noexcept;
-public:
-    static RTCLocalSessionDescriptionInit take_ownership(Handle h) noexcept;
-    explicit RTCLocalSessionDescriptionInit(const emlite::Val &val) noexcept;
-    RTCLocalSessionDescriptionInit() noexcept;
-    [[nodiscard]] RTCLocalSessionDescriptionInit clone() const noexcept;
-    [[nodiscard]] RTCSdpType type() const;
-    void type(const RTCSdpType& value);
-    [[nodiscard]] jsbind::String sdp() const;
-    void sdp(const jsbind::String& value);
-};
-
-class RTCSessionDescriptionInit : public emlite::Val {
-  explicit RTCSessionDescriptionInit(Handle h) noexcept;
-public:
-    static RTCSessionDescriptionInit take_ownership(Handle h) noexcept;
-    explicit RTCSessionDescriptionInit(const emlite::Val &val) noexcept;
-    RTCSessionDescriptionInit() noexcept;
-    [[nodiscard]] RTCSessionDescriptionInit clone() const noexcept;
-    [[nodiscard]] RTCSdpType type() const;
-    void type(const RTCSdpType& value);
-    [[nodiscard]] jsbind::String sdp() const;
-    void sdp(const jsbind::String& value);
-};
-
-class RTCConfiguration : public emlite::Val {
-  explicit RTCConfiguration(Handle h) noexcept;
-public:
-    static RTCConfiguration take_ownership(Handle h) noexcept;
-    explicit RTCConfiguration(const emlite::Val &val) noexcept;
-    RTCConfiguration() noexcept;
-    [[nodiscard]] RTCConfiguration clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> iceServers() const;
-    void iceServers(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] RTCIceTransportPolicy iceTransportPolicy() const;
-    void iceTransportPolicy(const RTCIceTransportPolicy& value);
-    [[nodiscard]] RTCBundlePolicy bundlePolicy() const;
-    void bundlePolicy(const RTCBundlePolicy& value);
-    [[nodiscard]] RTCRtcpMuxPolicy rtcpMuxPolicy() const;
-    void rtcpMuxPolicy(const RTCRtcpMuxPolicy& value);
-    [[nodiscard]] jsbind::TypedArray<RTCCertificate> certificates() const;
-    void certificates(const jsbind::TypedArray<RTCCertificate>& value);
-    [[nodiscard]] unsigned char iceCandidatePoolSize() const;
-    void iceCandidatePoolSize(unsigned char value);
-};
-
-class RTCIdentityProviderOptions : public emlite::Val {
-  explicit RTCIdentityProviderOptions(Handle h) noexcept;
-public:
-    static RTCIdentityProviderOptions take_ownership(Handle h) noexcept;
-    explicit RTCIdentityProviderOptions(const emlite::Val &val) noexcept;
-    RTCIdentityProviderOptions() noexcept;
-    [[nodiscard]] RTCIdentityProviderOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String protocol() const;
-    void protocol(const jsbind::String& value);
-    [[nodiscard]] jsbind::String usernameHint() const;
-    void usernameHint(const jsbind::String& value);
-    [[nodiscard]] jsbind::String peerIdentity() const;
-    void peerIdentity(const jsbind::String& value);
-};
-
-class RTCRtpTransceiverInit : public emlite::Val {
-  explicit RTCRtpTransceiverInit(Handle h) noexcept;
-public:
-    static RTCRtpTransceiverInit take_ownership(Handle h) noexcept;
-    explicit RTCRtpTransceiverInit(const emlite::Val &val) noexcept;
-    RTCRtpTransceiverInit() noexcept;
-    [[nodiscard]] RTCRtpTransceiverInit clone() const noexcept;
-    [[nodiscard]] RTCRtpTransceiverDirection direction() const;
-    void direction(const RTCRtpTransceiverDirection& value);
-    [[nodiscard]] jsbind::TypedArray<MediaStream> streams() const;
-    void streams(const jsbind::TypedArray<MediaStream>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> sendEncodings() const;
-    void sendEncodings(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-class RTCDataChannelInit : public emlite::Val {
-  explicit RTCDataChannelInit(Handle h) noexcept;
-public:
-    static RTCDataChannelInit take_ownership(Handle h) noexcept;
-    explicit RTCDataChannelInit(const emlite::Val &val) noexcept;
-    RTCDataChannelInit() noexcept;
-    [[nodiscard]] RTCDataChannelInit clone() const noexcept;
-    [[nodiscard]] bool ordered() const;
-    void ordered(bool value);
-    [[nodiscard]] unsigned short maxPacketLifeTime() const;
-    void maxPacketLifeTime(unsigned short value);
-    [[nodiscard]] unsigned short maxRetransmits() const;
-    void maxRetransmits(unsigned short value);
-    [[nodiscard]] jsbind::String protocol() const;
-    void protocol(const jsbind::String& value);
-    [[nodiscard]] bool negotiated() const;
-    void negotiated(bool value);
-    [[nodiscard]] unsigned short id() const;
-    void id(unsigned short value);
-};
-
-/// The RTCPeerConnection class.
+/// Interface RTCPeerConnection
 /// [`RTCPeerConnection`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection)
 class RTCPeerConnection : public EventTarget {
     explicit RTCPeerConnection(Handle h) noexcept;
-
 public:
     explicit RTCPeerConnection(const emlite::Val &val) noexcept;
     static RTCPeerConnection take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCPeerConnection clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCPeerConnection(..)` constructor, creating a new RTCPeerConnection instance
@@ -163,7 +52,7 @@ public:
     jsbind::Promise<jsbind::Undefined> createAnswer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
     /// The setLocalDescription method.
     /// [`RTCPeerConnection.setLocalDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setLocalDescription)
-    jsbind::Promise<jsbind::Undefined> setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Any& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<jsbind::Undefined> setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
     /// Getter of the `localDescription` attribute.
     /// [`RTCPeerConnection.localDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/localDescription)
     [[nodiscard]] RTCSessionDescription localDescription() const;
@@ -175,7 +64,7 @@ public:
     [[nodiscard]] RTCSessionDescription pendingLocalDescription() const;
     /// The setRemoteDescription method.
     /// [`RTCPeerConnection.setRemoteDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setRemoteDescription)
-    jsbind::Promise<jsbind::Undefined> setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Any& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<jsbind::Undefined> setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
     /// Getter of the `remoteDescription` attribute.
     /// [`RTCPeerConnection.remoteDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/remoteDescription)
     [[nodiscard]] RTCSessionDescription remoteDescription() const;
@@ -187,7 +76,7 @@ public:
     [[nodiscard]] RTCSessionDescription pendingRemoteDescription() const;
     /// The addIceCandidate method.
     /// [`RTCPeerConnection.addIceCandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate)
-    jsbind::Promise<jsbind::Undefined> addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Any& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<jsbind::Undefined> addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
     /// Getter of the `signalingState` attribute.
     /// [`RTCPeerConnection.signalingState`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/signalingState)
     [[nodiscard]] RTCSignalingState signalingState() const;
@@ -331,3 +220,4 @@ public:
     jsbind::Promise<RTCStatsReport> getStats(const MediaStreamTrack& selector);
 };
 
+} // namespace webbind

@@ -1,5 +1,7 @@
-#include <webbind/SecurityPolicyViolationEvent.hpp>
+#include "webbind/SecurityPolicyViolationEvent.hpp"
+#include "webbind/SecurityPolicyViolationEventInit.hpp"
 
+namespace webbind {
 
 SecurityPolicyViolationEvent SecurityPolicyViolationEvent::take_ownership(Handle h) noexcept {
         return SecurityPolicyViolationEvent(h);
@@ -9,10 +11,9 @@ emlite::Val SecurityPolicyViolationEvent::instance() noexcept { return emlite::V
 SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::String& type) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type)) {}
 
-SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type, eventInitDict)) {}
+SecurityPolicyViolationEvent::SecurityPolicyViolationEvent(const jsbind::String& type, const SecurityPolicyViolationEventInit& eventInitDict) : Event(emlite::Val::global("SecurityPolicyViolationEvent").new_(type, eventInitDict)) {}
 
 jsbind::String SecurityPolicyViolationEvent::documentURI() const {
     return Event::get("documentURI").as<jsbind::String>();
@@ -62,3 +63,5 @@ unsigned long SecurityPolicyViolationEvent::columnNumber() const {
     return Event::get("columnNumber").as<unsigned long>();
 }
 
+
+} // namespace webbind

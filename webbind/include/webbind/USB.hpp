@@ -2,35 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "USBDeviceRequestOptions.hpp"
+
+namespace webbind {
 
 class USBDevice;
-class USBDeviceRequestOptions;
 
-
-class USBDeviceRequestOptions : public emlite::Val {
-  explicit USBDeviceRequestOptions(Handle h) noexcept;
-public:
-    static USBDeviceRequestOptions take_ownership(Handle h) noexcept;
-    explicit USBDeviceRequestOptions(const emlite::Val &val) noexcept;
-    USBDeviceRequestOptions() noexcept;
-    [[nodiscard]] USBDeviceRequestOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> filters() const;
-    void filters(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> exclusionFilters() const;
-    void exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-/// The USB class.
+/// Interface USB
 /// [`USB`](https://developer.mozilla.org/en-US/docs/Web/API/USB)
 class USB : public EventTarget {
     explicit USB(Handle h) noexcept;
-
 public:
     explicit USB(const emlite::Val &val) noexcept;
     static USB take_ownership(Handle h) noexcept;
-
     [[nodiscard]] USB clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
@@ -53,3 +39,4 @@ public:
     jsbind::Promise<USBDevice> requestDevice(const USBDeviceRequestOptions& options);
 };
 
+} // namespace webbind

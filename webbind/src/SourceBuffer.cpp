@@ -1,9 +1,10 @@
-#include <webbind/SourceBuffer.hpp>
-#include <webbind/TimeRanges.hpp>
-#include <webbind/AudioTrackList.hpp>
-#include <webbind/VideoTrackList.hpp>
-#include <webbind/TextTrackList.hpp>
+#include "webbind/SourceBuffer.hpp"
+#include "webbind/TimeRanges.hpp"
+#include "webbind/AudioTrackList.hpp"
+#include "webbind/VideoTrackList.hpp"
+#include "webbind/TextTrackList.hpp"
 
+namespace webbind {
 
 SourceBuffer SourceBuffer::take_ownership(Handle h) noexcept {
         return SourceBuffer(h);
@@ -12,7 +13,6 @@ SourceBuffer SourceBuffer::clone() const noexcept { return *this; }
 emlite::Val SourceBuffer::instance() noexcept { return emlite::Val::global("SourceBuffer"); }
 SourceBuffer::SourceBuffer(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 SourceBuffer::SourceBuffer(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 AppendMode SourceBuffer::mode() const {
     return EventTarget::get("mode").as<AppendMode>();
@@ -122,3 +122,5 @@ jsbind::Undefined SourceBuffer::remove(double start, double end) {
     return EventTarget::call("remove", start, end).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -1,8 +1,11 @@
-#include <webbind/FontFace.hpp>
-#include <webbind/FontFaceFeatures.hpp>
-#include <webbind/FontFaceVariations.hpp>
-#include <webbind/FontFacePalettes.hpp>
+#include "webbind/FontFace.hpp"
+#include "webbind/FontFaceDescriptors.hpp"
+#include "webbind/FontFace.hpp"
+#include "webbind/FontFaceFeatures.hpp"
+#include "webbind/FontFaceVariations.hpp"
+#include "webbind/FontFacePalettes.hpp"
 
+namespace webbind {
 
 FontFace FontFace::take_ownership(Handle h) noexcept {
         return FontFace(h);
@@ -12,10 +15,9 @@ emlite::Val FontFace::instance() noexcept { return emlite::Val::global("FontFace
 FontFace::FontFace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FontFace::FontFace(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 FontFace::FontFace(const jsbind::String& family, const jsbind::Any& source) : emlite::Val(emlite::Val::global("FontFace").new_(family, source)) {}
 
-FontFace::FontFace(const jsbind::String& family, const jsbind::Any& source, const jsbind::Any& descriptors) : emlite::Val(emlite::Val::global("FontFace").new_(family, source, descriptors)) {}
+FontFace::FontFace(const jsbind::String& family, const jsbind::Any& source, const FontFaceDescriptors& descriptors) : emlite::Val(emlite::Val::global("FontFace").new_(family, source, descriptors)) {}
 
 jsbind::String FontFace::family() const {
     return emlite::Val::get("family").as<jsbind::String>();
@@ -129,3 +131,5 @@ FontFacePalettes FontFace::palettes() const {
     return emlite::Val::get("palettes").as<FontFacePalettes>();
 }
 
+
+} // namespace webbind

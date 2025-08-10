@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ScreenOrientation;
 
-
-/// The Screen class.
+/// Interface Screen
 /// [`Screen`](https://developer.mozilla.org/en-US/docs/Web/API/Screen)
 class Screen : public emlite::Val {
     explicit Screen(Handle h) noexcept;
-
 public:
     explicit Screen(const emlite::Val &val) noexcept;
     static Screen take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Screen clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `availWidth` attribute.
@@ -50,3 +49,4 @@ public:
     void onchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

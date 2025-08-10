@@ -3,19 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class IDBRequest;
 
-
-/// The IDBCursor class.
+/// Interface IDBCursor
 /// [`IDBCursor`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor)
 class IDBCursor : public emlite::Val {
     explicit IDBCursor(Handle h) noexcept;
-
 public:
     explicit IDBCursor(const emlite::Val &val) noexcept;
     static IDBCursor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IDBCursor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `source` attribute.
@@ -53,3 +53,4 @@ public:
     IDBRequest delete_();
 };
 
+} // namespace webbind

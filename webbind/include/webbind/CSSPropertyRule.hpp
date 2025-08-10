@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
 
+namespace webbind {
 
-/// The CSSPropertyRule class.
+/// Interface CSSPropertyRule
 /// [`CSSPropertyRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPropertyRule)
 class CSSPropertyRule : public CSSRule {
     explicit CSSPropertyRule(Handle h) noexcept;
-
 public:
     explicit CSSPropertyRule(const emlite::Val &val) noexcept;
     static CSSPropertyRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSPropertyRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -31,3 +30,4 @@ public:
     [[nodiscard]] jsbind::String initialValue() const;
 };
 
+} // namespace webbind

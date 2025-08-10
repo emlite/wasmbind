@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSTransformComponent.hpp"
 #include "enums.hpp"
+#include "CSSTransformComponent.hpp"
 
+namespace webbind {
 
-/// The CSSScale class.
+/// Interface CSSScale
 /// [`CSSScale`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScale)
 class CSSScale : public CSSTransformComponent {
     explicit CSSScale(Handle h) noexcept;
-
 public:
     explicit CSSScale(const emlite::Val &val) noexcept;
     static CSSScale take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSScale clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSScale(..)` constructor, creating a new CSSScale instance
@@ -41,3 +40,4 @@ public:
     void z(const jsbind::Any& value);
 };
 
+} // namespace webbind

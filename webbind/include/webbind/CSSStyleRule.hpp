@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSGroupingRule.hpp"
 #include "enums.hpp"
+#include "CSSGroupingRule.hpp"
+
+namespace webbind {
 
 class CSSStyleProperties;
 class StylePropertyMap;
 
-
-/// The CSSStyleRule class.
+/// Interface CSSStyleRule
 /// [`CSSStyleRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule)
 class CSSStyleRule : public CSSGroupingRule {
     explicit CSSStyleRule(Handle h) noexcept;
-
 public:
     explicit CSSStyleRule(const emlite::Val &val) noexcept;
     static CSSStyleRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSStyleRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `selectorText` attribute.
@@ -34,3 +33,4 @@ public:
     [[nodiscard]] StylePropertyMap styleMap() const;
 };
 
+} // namespace webbind

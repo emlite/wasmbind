@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLBodyElement class.
+/// Interface HTMLBodyElement
 /// [`HTMLBodyElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBodyElement)
 class HTMLBodyElement : public HTMLElement {
     explicit HTMLBodyElement(Handle h) noexcept;
-
 public:
     explicit HTMLBodyElement(const emlite::Val &val) noexcept;
     static HTMLBodyElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLBodyElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLBodyElement(..)` constructor, creating a new HTMLBodyElement instance
@@ -69,3 +68,4 @@ public:
     void onportalactivate(const jsbind::Any& value);
 };
 
+} // namespace webbind

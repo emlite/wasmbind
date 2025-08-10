@@ -2,35 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "SerialPortRequestOptions.hpp"
+
+namespace webbind {
 
 class SerialPort;
-class SerialPortRequestOptions;
 
-
-class SerialPortRequestOptions : public emlite::Val {
-  explicit SerialPortRequestOptions(Handle h) noexcept;
-public:
-    static SerialPortRequestOptions take_ownership(Handle h) noexcept;
-    explicit SerialPortRequestOptions(const emlite::Val &val) noexcept;
-    SerialPortRequestOptions() noexcept;
-    [[nodiscard]] SerialPortRequestOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> filters() const;
-    void filters(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> allowedBluetoothServiceClassIds() const;
-    void allowedBluetoothServiceClassIds(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-/// The Serial class.
+/// Interface Serial
 /// [`Serial`](https://developer.mozilla.org/en-US/docs/Web/API/Serial)
 class Serial : public EventTarget {
     explicit Serial(Handle h) noexcept;
-
 public:
     explicit Serial(const emlite::Val &val) noexcept;
     static Serial take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Serial clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
@@ -56,3 +42,4 @@ public:
     jsbind::Promise<SerialPort> requestPort(const SerialPortRequestOptions& options);
 };
 
+} // namespace webbind

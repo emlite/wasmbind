@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class DOMTokenList;
 class HTMLFormControlsCollection;
 
-
-/// The HTMLFormElement class.
+/// Interface HTMLFormElement
 /// [`HTMLFormElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement)
 class HTMLFormElement : public HTMLElement {
     explicit HTMLFormElement(Handle h) noexcept;
-
 public:
     explicit HTMLFormElement(const emlite::Val &val) noexcept;
     static HTMLFormElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLFormElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFormElement(..)` constructor, creating a new HTMLFormElement instance
@@ -111,3 +110,4 @@ public:
     bool reportValidity();
 };
 
+} // namespace webbind

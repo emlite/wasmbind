@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUBuffer class.
+/// Interface GPUBuffer
 /// [`GPUBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer)
 class GPUBuffer : public emlite::Val {
     explicit GPUBuffer(Handle h) noexcept;
-
 public:
     explicit GPUBuffer(const emlite::Val &val) noexcept;
     static GPUBuffer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUBuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `size` attribute.
@@ -57,3 +57,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

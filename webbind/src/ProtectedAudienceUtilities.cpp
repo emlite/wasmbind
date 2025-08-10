@@ -1,5 +1,6 @@
-#include <webbind/ProtectedAudienceUtilities.hpp>
+#include "webbind/ProtectedAudienceUtilities.hpp"
 
+namespace webbind {
 
 ProtectedAudienceUtilities ProtectedAudienceUtilities::take_ownership(Handle h) noexcept {
         return ProtectedAudienceUtilities(h);
@@ -9,7 +10,6 @@ emlite::Val ProtectedAudienceUtilities::instance() noexcept { return emlite::Val
 ProtectedAudienceUtilities::ProtectedAudienceUtilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ProtectedAudienceUtilities::ProtectedAudienceUtilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 jsbind::Uint8Array ProtectedAudienceUtilities::encodeUtf8(const jsbind::String& input) {
     return emlite::Val::call("encodeUtf8", input).as<jsbind::Uint8Array>();
 }
@@ -18,3 +18,5 @@ jsbind::String ProtectedAudienceUtilities::decodeUtf8(const jsbind::Uint8Array& 
     return emlite::Val::call("decodeUtf8", bytes).as<jsbind::String>();
 }
 
+
+} // namespace webbind

@@ -1,7 +1,7 @@
-#include <webbind/WritableStreamDefaultWriter.hpp>
-#include <webbind/ReadableStream.hpp>
-#include <webbind/WritableStream.hpp>
+#include "webbind/WritableStreamDefaultWriter.hpp"
+#include "webbind/WritableStream.hpp"
 
+namespace webbind {
 
 WritableStreamDefaultWriter WritableStreamDefaultWriter::take_ownership(Handle h) noexcept {
         return WritableStreamDefaultWriter(h);
@@ -10,7 +10,6 @@ WritableStreamDefaultWriter WritableStreamDefaultWriter::clone() const noexcept 
 emlite::Val WritableStreamDefaultWriter::instance() noexcept { return emlite::Val::global("WritableStreamDefaultWriter"); }
 WritableStreamDefaultWriter::WritableStreamDefaultWriter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WritableStreamDefaultWriter::WritableStreamDefaultWriter(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 WritableStreamDefaultWriter::WritableStreamDefaultWriter(const WritableStream& stream) : emlite::Val(emlite::Val::global("WritableStreamDefaultWriter").new_(stream)) {}
 
@@ -50,3 +49,5 @@ jsbind::Promise<jsbind::Undefined> WritableStreamDefaultWriter::write(const jsbi
     return emlite::Val::call("write", chunk).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

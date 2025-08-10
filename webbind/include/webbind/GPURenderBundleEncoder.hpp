@@ -3,32 +3,23 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "GPURenderBundleDescriptor.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class GPURenderBundle;
-class GPURenderBundleDescriptor;
 class GPUBindGroup;
 class GPURenderPipeline;
 class GPUBuffer;
 
-
-class GPURenderBundleDescriptor : public emlite::Val {
-  explicit GPURenderBundleDescriptor(Handle h) noexcept;
-public:
-    static GPURenderBundleDescriptor take_ownership(Handle h) noexcept;
-    explicit GPURenderBundleDescriptor(const emlite::Val &val) noexcept;
-    GPURenderBundleDescriptor() noexcept;
-    [[nodiscard]] GPURenderBundleDescriptor clone() const noexcept;
-};
-
-/// The GPURenderBundleEncoder class.
+/// Interface GPURenderBundleEncoder
 /// [`GPURenderBundleEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder)
 class GPURenderBundleEncoder : public emlite::Val {
     explicit GPURenderBundleEncoder(Handle h) noexcept;
-
 public:
     explicit GPURenderBundleEncoder(const emlite::Val &val) noexcept;
     static GPURenderBundleEncoder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPURenderBundleEncoder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The finish method.
@@ -111,3 +102,4 @@ public:
     jsbind::Undefined drawIndexedIndirect(const GPUBuffer& indirectBuffer, const jsbind::Any& indirectOffset);
 };
 
+} // namespace webbind

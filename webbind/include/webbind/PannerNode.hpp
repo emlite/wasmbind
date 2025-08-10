@@ -2,27 +2,29 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "AudioNode.hpp"
+#include "PannerOptions.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
+class BaseAudioContext;
 class AudioParam;
 
-
-/// The PannerNode class.
+/// Interface PannerNode
 /// [`PannerNode`](https://developer.mozilla.org/en-US/docs/Web/API/PannerNode)
 class PannerNode : public AudioNode {
     explicit PannerNode(Handle h) noexcept;
-
 public:
     explicit PannerNode(const emlite::Val &val) noexcept;
     static PannerNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PannerNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PannerNode(..)` constructor, creating a new PannerNode instance
     PannerNode(const BaseAudioContext& context);
     /// The `new PannerNode(..)` constructor, creating a new PannerNode instance
-    PannerNode(const BaseAudioContext& context, const jsbind::Any& options);
+    PannerNode(const BaseAudioContext& context, const PannerOptions& options);
     /// Getter of the `panningModel` attribute.
     /// [`PannerNode.panningModel`](https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/panningModel)
     [[nodiscard]] PanningModelType panningModel() const;
@@ -97,3 +99,4 @@ public:
     jsbind::Undefined setOrientation(float x, float y, float z);
 };
 
+} // namespace webbind

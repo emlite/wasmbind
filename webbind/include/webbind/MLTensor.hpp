@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The MLTensor class.
+/// Interface MLTensor
 /// [`MLTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLTensor)
 class MLTensor : public emlite::Val {
     explicit MLTensor(Handle h) noexcept;
-
 public:
     explicit MLTensor(const emlite::Val &val) noexcept;
     static MLTensor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MLTensor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `dataType` attribute.
@@ -36,3 +36,4 @@ public:
     jsbind::Undefined destroy();
 };
 
+} // namespace webbind

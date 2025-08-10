@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WorkerGlobalScope.hpp"
 #include "enums.hpp"
+#include "WorkerGlobalScope.hpp"
 
+namespace webbind {
 
-/// The SharedWorkerGlobalScope class.
+/// Interface SharedWorkerGlobalScope
 /// [`SharedWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope)
 class SharedWorkerGlobalScope : public WorkerGlobalScope {
     explicit SharedWorkerGlobalScope(Handle h) noexcept;
-
 public:
     explicit SharedWorkerGlobalScope(const emlite::Val &val) noexcept;
     static SharedWorkerGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SharedWorkerGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -31,3 +30,4 @@ public:
     void onconnect(const jsbind::Any& value);
 };
 
+} // namespace webbind

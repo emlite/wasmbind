@@ -3,25 +3,26 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "AnimationTriggerOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class AnimationTimeline;
 
-
-/// The AnimationTrigger class.
+/// Interface AnimationTrigger
 /// [`AnimationTrigger`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationTrigger)
 class AnimationTrigger : public emlite::Val {
     explicit AnimationTrigger(Handle h) noexcept;
-
 public:
     explicit AnimationTrigger(const emlite::Val &val) noexcept;
     static AnimationTrigger take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AnimationTrigger clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AnimationTrigger(..)` constructor, creating a new AnimationTrigger instance
     AnimationTrigger();
     /// The `new AnimationTrigger(..)` constructor, creating a new AnimationTrigger instance
-    AnimationTrigger(const jsbind::Any& options);
+    AnimationTrigger(const AnimationTriggerOptions& options);
     /// Getter of the `timeline` attribute.
     /// [`AnimationTrigger.timeline`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationTrigger/timeline)
     [[nodiscard]] AnimationTimeline timeline() const;
@@ -60,3 +61,4 @@ public:
     void exitRangeEnd(const jsbind::Any& value);
 };
 
+} // namespace webbind

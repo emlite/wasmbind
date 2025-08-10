@@ -1,8 +1,10 @@
-#include <webbind/Animation.hpp>
-#include <webbind/AnimationEffect.hpp>
-#include <webbind/AnimationTimeline.hpp>
-#include <webbind/AnimationTrigger.hpp>
+#include "webbind/Animation.hpp"
+#include "webbind/AnimationEffect.hpp"
+#include "webbind/AnimationTimeline.hpp"
+#include "webbind/Animation.hpp"
+#include "webbind/AnimationTrigger.hpp"
 
+namespace webbind {
 
 Animation Animation::take_ownership(Handle h) noexcept {
         return Animation(h);
@@ -11,7 +13,6 @@ Animation Animation::clone() const noexcept { return *this; }
 emlite::Val Animation::instance() noexcept { return emlite::Val::global("Animation"); }
 Animation::Animation(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Animation::Animation(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 Animation::Animation() : EventTarget(emlite::Val::global("Animation").new_()) {}
 
@@ -155,3 +156,5 @@ double Animation::overallProgress() const {
     return EventTarget::get("overallProgress").as<double>();
 }
 
+
+} // namespace webbind

@@ -1,25 +1,26 @@
-#include <webbind/XRFrame.hpp>
-#include <webbind/XRSession.hpp>
-#include <webbind/XRViewerPose.hpp>
-#include <webbind/XRReferenceSpace.hpp>
-#include <webbind/XRPose.hpp>
-#include <webbind/XRSpace.hpp>
-#include <webbind/XRAnchor.hpp>
-#include <webbind/XRRigidTransform.hpp>
-#include <webbind/XRAnchorSet.hpp>
-#include <webbind/XRMeshSet.hpp>
-#include <webbind/XRCPUDepthInformation.hpp>
-#include <webbind/XRView.hpp>
-#include <webbind/XRJointPose.hpp>
-#include <webbind/XRJointSpace.hpp>
-#include <webbind/XRHitTestResult.hpp>
-#include <webbind/XRHitTestSource.hpp>
-#include <webbind/XRTransientInputHitTestResult.hpp>
-#include <webbind/XRTransientInputHitTestSource.hpp>
-#include <webbind/XRLightEstimate.hpp>
-#include <webbind/XRLightProbe.hpp>
-#include <webbind/XRPlaneSet.hpp>
+#include "webbind/XRFrame.hpp"
+#include "webbind/XRSession.hpp"
+#include "webbind/XRViewerPose.hpp"
+#include "webbind/XRReferenceSpace.hpp"
+#include "webbind/XRPose.hpp"
+#include "webbind/XRSpace.hpp"
+#include "webbind/XRAnchor.hpp"
+#include "webbind/XRRigidTransform.hpp"
+#include "webbind/XRAnchorSet.hpp"
+#include "webbind/XRMeshSet.hpp"
+#include "webbind/XRCPUDepthInformation.hpp"
+#include "webbind/XRView.hpp"
+#include "webbind/XRJointPose.hpp"
+#include "webbind/XRJointSpace.hpp"
+#include "webbind/XRHitTestResult.hpp"
+#include "webbind/XRHitTestSource.hpp"
+#include "webbind/XRTransientInputHitTestResult.hpp"
+#include "webbind/XRTransientInputHitTestSource.hpp"
+#include "webbind/XRLightEstimate.hpp"
+#include "webbind/XRLightProbe.hpp"
+#include "webbind/XRPlaneSet.hpp"
 
+namespace webbind {
 
 XRFrame XRFrame::take_ownership(Handle h) noexcept {
         return XRFrame(h);
@@ -28,7 +29,6 @@ XRFrame XRFrame::clone() const noexcept { return *this; }
 emlite::Val XRFrame::instance() noexcept { return emlite::Val::global("XRFrame"); }
 XRFrame::XRFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRFrame::XRFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 XRSession XRFrame::session() const {
     return emlite::Val::get("session").as<XRSession>();
@@ -90,3 +90,5 @@ XRPlaneSet XRFrame::detectedPlanes() const {
     return emlite::Val::get("detectedPlanes").as<XRPlaneSet>();
 }
 
+
+} // namespace webbind

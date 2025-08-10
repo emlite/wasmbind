@@ -1,5 +1,6 @@
-#include <webbind/PermissionStatus.hpp>
+#include "webbind/PermissionStatus.hpp"
 
+namespace webbind {
 
 PermissionStatus PermissionStatus::take_ownership(Handle h) noexcept {
         return PermissionStatus(h);
@@ -8,7 +9,6 @@ PermissionStatus PermissionStatus::clone() const noexcept { return *this; }
 emlite::Val PermissionStatus::instance() noexcept { return emlite::Val::global("PermissionStatus"); }
 PermissionStatus::PermissionStatus(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PermissionStatus::PermissionStatus(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 PermissionState PermissionStatus::state() const {
     return EventTarget::get("state").as<PermissionState>();
@@ -26,3 +26,5 @@ void PermissionStatus::onchange(const jsbind::Any& value) {
     EventTarget::set("onchange", value);
 }
 
+
+} // namespace webbind

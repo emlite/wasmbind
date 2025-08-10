@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WorkerGlobalScope.hpp"
 #include "enums.hpp"
+#include "WorkerGlobalScope.hpp"
+
+namespace webbind {
 
 class Clients;
 class ServiceWorkerRegistration;
 class ServiceWorker;
 class CookieStore;
 
-
-/// The ServiceWorkerGlobalScope class.
+/// Interface ServiceWorkerGlobalScope
 /// [`ServiceWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope)
 class ServiceWorkerGlobalScope : public WorkerGlobalScope {
     explicit ServiceWorkerGlobalScope(Handle h) noexcept;
-
 public:
     explicit ServiceWorkerGlobalScope(const emlite::Val &val) noexcept;
     static ServiceWorkerGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ServiceWorkerGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `clients` attribute.
@@ -153,3 +152,4 @@ public:
     void onpushsubscriptionchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

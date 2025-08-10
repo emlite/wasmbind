@@ -1,5 +1,6 @@
-#include <webbind/SVGTSpanElement.hpp>
+#include "webbind/SVGTSpanElement.hpp"
 
+namespace webbind {
 
 SVGTSpanElement SVGTSpanElement::take_ownership(Handle h) noexcept {
         return SVGTSpanElement(h);
@@ -10,3 +11,4 @@ SVGTSpanElement::SVGTSpanElement(Handle h) noexcept : SVGTextPositioningElement(
 SVGTSpanElement::SVGTSpanElement(const emlite::Val &val) noexcept: SVGTextPositioningElement(val) {}
 
 
+} // namespace webbind

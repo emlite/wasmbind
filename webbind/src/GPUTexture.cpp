@@ -1,78 +1,8 @@
-#include <webbind/GPUTexture.hpp>
-#include <webbind/GPUTextureView.hpp>
+#include "webbind/GPUTexture.hpp"
+#include "webbind/GPUTextureView.hpp"
+#include "webbind/GPUTextureViewDescriptor.hpp"
 
-
-GPUTextureViewDescriptor::GPUTextureViewDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUTextureViewDescriptor GPUTextureViewDescriptor::take_ownership(Handle h) noexcept {
-        return GPUTextureViewDescriptor(h);
-    }
-GPUTextureViewDescriptor::GPUTextureViewDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
-GPUTextureViewDescriptor::GPUTextureViewDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
-GPUTextureViewDescriptor GPUTextureViewDescriptor::clone() const noexcept { return *this; }
-
-GPUTextureFormat GPUTextureViewDescriptor::format() const {
-    return emlite::Val::get("format").as<GPUTextureFormat>();
-}
-
-void GPUTextureViewDescriptor::format(const GPUTextureFormat& value) {
-    emlite::Val::set("format", value);
-}
-
-GPUTextureViewDimension GPUTextureViewDescriptor::dimension() const {
-    return emlite::Val::get("dimension").as<GPUTextureViewDimension>();
-}
-
-void GPUTextureViewDescriptor::dimension(const GPUTextureViewDimension& value) {
-    emlite::Val::set("dimension", value);
-}
-
-jsbind::Any GPUTextureViewDescriptor::usage() const {
-    return emlite::Val::get("usage").as<jsbind::Any>();
-}
-
-void GPUTextureViewDescriptor::usage(const jsbind::Any& value) {
-    emlite::Val::set("usage", value);
-}
-
-GPUTextureAspect GPUTextureViewDescriptor::aspect() const {
-    return emlite::Val::get("aspect").as<GPUTextureAspect>();
-}
-
-void GPUTextureViewDescriptor::aspect(const GPUTextureAspect& value) {
-    emlite::Val::set("aspect", value);
-}
-
-jsbind::Any GPUTextureViewDescriptor::baseMipLevel() const {
-    return emlite::Val::get("baseMipLevel").as<jsbind::Any>();
-}
-
-void GPUTextureViewDescriptor::baseMipLevel(const jsbind::Any& value) {
-    emlite::Val::set("baseMipLevel", value);
-}
-
-jsbind::Any GPUTextureViewDescriptor::mipLevelCount() const {
-    return emlite::Val::get("mipLevelCount").as<jsbind::Any>();
-}
-
-void GPUTextureViewDescriptor::mipLevelCount(const jsbind::Any& value) {
-    emlite::Val::set("mipLevelCount", value);
-}
-
-jsbind::Any GPUTextureViewDescriptor::baseArrayLayer() const {
-    return emlite::Val::get("baseArrayLayer").as<jsbind::Any>();
-}
-
-void GPUTextureViewDescriptor::baseArrayLayer(const jsbind::Any& value) {
-    emlite::Val::set("baseArrayLayer", value);
-}
-
-jsbind::Any GPUTextureViewDescriptor::arrayLayerCount() const {
-    return emlite::Val::get("arrayLayerCount").as<jsbind::Any>();
-}
-
-void GPUTextureViewDescriptor::arrayLayerCount(const jsbind::Any& value) {
-    emlite::Val::set("arrayLayerCount", value);
-}
+namespace webbind {
 
 GPUTexture GPUTexture::take_ownership(Handle h) noexcept {
         return GPUTexture(h);
@@ -81,7 +11,6 @@ GPUTexture GPUTexture::clone() const noexcept { return *this; }
 emlite::Val GPUTexture::instance() noexcept { return emlite::Val::global("GPUTexture"); }
 GPUTexture::GPUTexture(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUTexture::GPUTexture(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 GPUTextureView GPUTexture::createView() {
     return emlite::Val::call("createView").as<GPUTextureView>();
@@ -135,3 +64,5 @@ void GPUTexture::label(const jsbind::String& value) {
     emlite::Val::set("label", value);
 }
 
+
+} // namespace webbind

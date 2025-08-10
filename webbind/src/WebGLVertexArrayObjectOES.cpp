@@ -1,5 +1,6 @@
-#include <webbind/WebGLVertexArrayObjectOES.hpp>
+#include "webbind/WebGLVertexArrayObjectOES.hpp"
 
+namespace webbind {
 
 WebGLVertexArrayObjectOES WebGLVertexArrayObjectOES::take_ownership(Handle h) noexcept {
         return WebGLVertexArrayObjectOES(h);
@@ -10,3 +11,4 @@ WebGLVertexArrayObjectOES::WebGLVertexArrayObjectOES(Handle h) noexcept : WebGLO
 WebGLVertexArrayObjectOES::WebGLVertexArrayObjectOES(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

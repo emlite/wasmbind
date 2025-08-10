@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PerformanceEntry.hpp"
 #include "enums.hpp"
+#include "PerformanceEntry.hpp"
 
+namespace webbind {
 
-/// The PerformancePaintTiming class.
+/// Interface PerformancePaintTiming
 /// [`PerformancePaintTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
 class PerformancePaintTiming : public PerformanceEntry {
     explicit PerformancePaintTiming(Handle h) noexcept;
-
 public:
     explicit PerformancePaintTiming(const emlite::Val &val) noexcept;
     static PerformancePaintTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformancePaintTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
@@ -28,3 +27,4 @@ public:
     [[nodiscard]] jsbind::Any presentationTime() const;
 };
 
+} // namespace webbind

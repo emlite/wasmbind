@@ -3,73 +3,23 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "SummarizerCreateOptions.hpp"
+#include "SummarizerCreateCoreOptions.hpp"
+#include "SummarizerSummarizeOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Summarizer;
-class SummarizerCreateOptions;
-class SummarizerCreateCoreOptions;
-class SummarizerSummarizeOptions;
 class ReadableStream;
-class AbortSignal;
 
-
-class SummarizerCreateOptions : public emlite::Val {
-  explicit SummarizerCreateOptions(Handle h) noexcept;
-public:
-    static SummarizerCreateOptions take_ownership(Handle h) noexcept;
-    explicit SummarizerCreateOptions(const emlite::Val &val) noexcept;
-    SummarizerCreateOptions() noexcept;
-    [[nodiscard]] SummarizerCreateOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-    [[nodiscard]] jsbind::Function monitor() const;
-    void monitor(const jsbind::Function& value);
-    [[nodiscard]] jsbind::String sharedContext() const;
-    void sharedContext(const jsbind::String& value);
-};
-
-class SummarizerCreateCoreOptions : public emlite::Val {
-  explicit SummarizerCreateCoreOptions(Handle h) noexcept;
-public:
-    static SummarizerCreateCoreOptions take_ownership(Handle h) noexcept;
-    explicit SummarizerCreateCoreOptions(const emlite::Val &val) noexcept;
-    SummarizerCreateCoreOptions() noexcept;
-    [[nodiscard]] SummarizerCreateCoreOptions clone() const noexcept;
-    [[nodiscard]] SummarizerType type() const;
-    void type(const SummarizerType& value);
-    [[nodiscard]] SummarizerFormat format() const;
-    void format(const SummarizerFormat& value);
-    [[nodiscard]] SummarizerLength length() const;
-    void length(const SummarizerLength& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
-    void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
-    void expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::String outputLanguage() const;
-    void outputLanguage(const jsbind::String& value);
-};
-
-class SummarizerSummarizeOptions : public emlite::Val {
-  explicit SummarizerSummarizeOptions(Handle h) noexcept;
-public:
-    static SummarizerSummarizeOptions take_ownership(Handle h) noexcept;
-    explicit SummarizerSummarizeOptions(const emlite::Val &val) noexcept;
-    SummarizerSummarizeOptions() noexcept;
-    [[nodiscard]] SummarizerSummarizeOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-    [[nodiscard]] jsbind::String context() const;
-    void context(const jsbind::String& value);
-};
-
-/// The Summarizer class.
+/// Interface Summarizer
 /// [`Summarizer`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer)
 class Summarizer : public emlite::Val {
     explicit Summarizer(Handle h) noexcept;
-
 public:
     explicit Summarizer(const emlite::Val &val) noexcept;
     static Summarizer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Summarizer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
@@ -131,3 +81,4 @@ public:
     jsbind::Undefined destroy();
 };
 
+} // namespace webbind

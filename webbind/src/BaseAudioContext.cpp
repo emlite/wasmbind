@@ -1,42 +1,28 @@
-#include <webbind/BaseAudioContext.hpp>
-#include <webbind/AudioDestinationNode.hpp>
-#include <webbind/AudioListener.hpp>
-#include <webbind/AudioWorklet.hpp>
-#include <webbind/AnalyserNode.hpp>
-#include <webbind/BiquadFilterNode.hpp>
-#include <webbind/AudioBuffer.hpp>
-#include <webbind/AudioBufferSourceNode.hpp>
-#include <webbind/ChannelMergerNode.hpp>
-#include <webbind/ChannelSplitterNode.hpp>
-#include <webbind/ConstantSourceNode.hpp>
-#include <webbind/ConvolverNode.hpp>
-#include <webbind/DelayNode.hpp>
-#include <webbind/DynamicsCompressorNode.hpp>
-#include <webbind/GainNode.hpp>
-#include <webbind/IIRFilterNode.hpp>
-#include <webbind/OscillatorNode.hpp>
-#include <webbind/PannerNode.hpp>
-#include <webbind/PeriodicWave.hpp>
-#include <webbind/ScriptProcessorNode.hpp>
-#include <webbind/StereoPannerNode.hpp>
-#include <webbind/WaveShaperNode.hpp>
+#include "webbind/BaseAudioContext.hpp"
+#include "webbind/AudioDestinationNode.hpp"
+#include "webbind/AudioListener.hpp"
+#include "webbind/AudioWorklet.hpp"
+#include "webbind/AnalyserNode.hpp"
+#include "webbind/BiquadFilterNode.hpp"
+#include "webbind/AudioBuffer.hpp"
+#include "webbind/AudioBufferSourceNode.hpp"
+#include "webbind/ChannelMergerNode.hpp"
+#include "webbind/ChannelSplitterNode.hpp"
+#include "webbind/ConstantSourceNode.hpp"
+#include "webbind/ConvolverNode.hpp"
+#include "webbind/DelayNode.hpp"
+#include "webbind/DynamicsCompressorNode.hpp"
+#include "webbind/GainNode.hpp"
+#include "webbind/IIRFilterNode.hpp"
+#include "webbind/OscillatorNode.hpp"
+#include "webbind/PannerNode.hpp"
+#include "webbind/PeriodicWave.hpp"
+#include "webbind/PeriodicWaveConstraints.hpp"
+#include "webbind/ScriptProcessorNode.hpp"
+#include "webbind/StereoPannerNode.hpp"
+#include "webbind/WaveShaperNode.hpp"
 
-
-PeriodicWaveConstraints::PeriodicWaveConstraints(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PeriodicWaveConstraints PeriodicWaveConstraints::take_ownership(Handle h) noexcept {
-        return PeriodicWaveConstraints(h);
-    }
-PeriodicWaveConstraints::PeriodicWaveConstraints(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PeriodicWaveConstraints::PeriodicWaveConstraints() noexcept: emlite::Val(emlite::Val::object()) {}
-PeriodicWaveConstraints PeriodicWaveConstraints::clone() const noexcept { return *this; }
-
-bool PeriodicWaveConstraints::disableNormalization() const {
-    return emlite::Val::get("disableNormalization").as<bool>();
-}
-
-void PeriodicWaveConstraints::disableNormalization(bool value) {
-    emlite::Val::set("disableNormalization", value);
-}
+namespace webbind {
 
 BaseAudioContext BaseAudioContext::take_ownership(Handle h) noexcept {
         return BaseAudioContext(h);
@@ -45,7 +31,6 @@ BaseAudioContext BaseAudioContext::clone() const noexcept { return *this; }
 emlite::Val BaseAudioContext::instance() noexcept { return emlite::Val::global("BaseAudioContext"); }
 BaseAudioContext::BaseAudioContext(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BaseAudioContext::BaseAudioContext(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 AudioDestinationNode BaseAudioContext::destination() const {
     return EventTarget::get("destination").as<AudioDestinationNode>();
@@ -195,3 +180,5 @@ jsbind::Promise<AudioBuffer> BaseAudioContext::decodeAudioData(const jsbind::Arr
     return EventTarget::call("decodeAudioData", audioData, successCallback, errorCallback).as<jsbind::Promise<AudioBuffer>>();
 }
 
+
+} // namespace webbind

@@ -1,6 +1,7 @@
-#include <webbind/SVGLinearGradientElement.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGLinearGradientElement.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGLinearGradientElement SVGLinearGradientElement::take_ownership(Handle h) noexcept {
         return SVGLinearGradientElement(h);
@@ -9,7 +10,6 @@ SVGLinearGradientElement SVGLinearGradientElement::clone() const noexcept { retu
 emlite::Val SVGLinearGradientElement::instance() noexcept { return emlite::Val::global("SVGLinearGradientElement"); }
 SVGLinearGradientElement::SVGLinearGradientElement(Handle h) noexcept : SVGGradientElement(emlite::Val::take_ownership(h)) {}
 SVGLinearGradientElement::SVGLinearGradientElement(const emlite::Val &val) noexcept: SVGGradientElement(val) {}
-
 
 SVGAnimatedLength SVGLinearGradientElement::x1() const {
     return SVGGradientElement::get("x1").as<SVGAnimatedLength>();
@@ -27,3 +27,5 @@ SVGAnimatedLength SVGLinearGradientElement::y2() const {
     return SVGGradientElement::get("y2").as<SVGAnimatedLength>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/GeolocationCoordinates.hpp>
+#include "webbind/GeolocationCoordinates.hpp"
 
+namespace webbind {
 
 GeolocationCoordinates GeolocationCoordinates::take_ownership(Handle h) noexcept {
         return GeolocationCoordinates(h);
@@ -8,7 +9,6 @@ GeolocationCoordinates GeolocationCoordinates::clone() const noexcept { return *
 emlite::Val GeolocationCoordinates::instance() noexcept { return emlite::Val::global("GeolocationCoordinates"); }
 GeolocationCoordinates::GeolocationCoordinates(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GeolocationCoordinates::GeolocationCoordinates(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 double GeolocationCoordinates::accuracy() const {
     return emlite::Val::get("accuracy").as<double>();
@@ -42,3 +42,5 @@ jsbind::Object GeolocationCoordinates::toJSON() {
     return emlite::Val::call("toJSON").as<jsbind::Object>();
 }
 
+
+} // namespace webbind

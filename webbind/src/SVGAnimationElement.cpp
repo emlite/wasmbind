@@ -1,6 +1,7 @@
-#include <webbind/SVGAnimationElement.hpp>
-#include <webbind/SVGStringList.hpp>
+#include "webbind/SVGAnimationElement.hpp"
+#include "webbind/SVGStringList.hpp"
 
+namespace webbind {
 
 SVGAnimationElement SVGAnimationElement::take_ownership(Handle h) noexcept {
         return SVGAnimationElement(h);
@@ -9,7 +10,6 @@ SVGAnimationElement SVGAnimationElement::clone() const noexcept { return *this; 
 emlite::Val SVGAnimationElement::instance() noexcept { return emlite::Val::global("SVGAnimationElement"); }
 SVGAnimationElement::SVGAnimationElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGAnimationElement::SVGAnimationElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGElement SVGAnimationElement::targetElement() const {
     return SVGElement::get("targetElement").as<SVGElement>();
@@ -75,3 +75,5 @@ SVGStringList SVGAnimationElement::systemLanguage() const {
     return SVGElement::get("systemLanguage").as<SVGStringList>();
 }
 
+
+} // namespace webbind

@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Plugin;
 
-
-/// The MimeType class.
+/// Interface MimeType
 /// [`MimeType`](https://developer.mozilla.org/en-US/docs/Web/API/MimeType)
 class MimeType : public emlite::Val {
     explicit MimeType(Handle h) noexcept;
-
 public:
     explicit MimeType(const emlite::Val &val) noexcept;
     static MimeType take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MimeType clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] Plugin enabledPlugin() const;
 };
 
+} // namespace webbind

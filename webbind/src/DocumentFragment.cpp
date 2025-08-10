@@ -1,8 +1,9 @@
-#include <webbind/DocumentFragment.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/HTMLCollection.hpp>
-#include <webbind/NodeList.hpp>
+#include "webbind/DocumentFragment.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/HTMLCollection.hpp"
+#include "webbind/NodeList.hpp"
 
+namespace webbind {
 
 DocumentFragment DocumentFragment::take_ownership(Handle h) noexcept {
         return DocumentFragment(h);
@@ -11,7 +12,6 @@ DocumentFragment DocumentFragment::clone() const noexcept { return *this; }
 emlite::Val DocumentFragment::instance() noexcept { return emlite::Val::global("DocumentFragment"); }
 DocumentFragment::DocumentFragment(Handle h) noexcept : Node(emlite::Val::take_ownership(h)) {}
 DocumentFragment::DocumentFragment(const emlite::Val &val) noexcept: Node(val) {}
-
 
 DocumentFragment::DocumentFragment() : Node(emlite::Val::global("DocumentFragment").new_()) {}
 
@@ -59,3 +59,5 @@ NodeList DocumentFragment::querySelectorAll(const jsbind::String& selectors) {
     return Node::call("querySelectorAll", selectors).as<NodeList>();
 }
 
+
+} // namespace webbind

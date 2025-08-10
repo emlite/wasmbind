@@ -1,7 +1,9 @@
-#include <webbind/DeviceMotionEvent.hpp>
-#include <webbind/DeviceMotionEventAcceleration.hpp>
-#include <webbind/DeviceMotionEventRotationRate.hpp>
+#include "webbind/DeviceMotionEvent.hpp"
+#include "webbind/DeviceMotionEventInit.hpp"
+#include "webbind/DeviceMotionEventAcceleration.hpp"
+#include "webbind/DeviceMotionEventRotationRate.hpp"
 
+namespace webbind {
 
 DeviceMotionEvent DeviceMotionEvent::take_ownership(Handle h) noexcept {
         return DeviceMotionEvent(h);
@@ -11,10 +13,9 @@ emlite::Val DeviceMotionEvent::instance() noexcept { return emlite::Val::global(
 DeviceMotionEvent::DeviceMotionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 DeviceMotionEvent::DeviceMotionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 DeviceMotionEvent::DeviceMotionEvent(const jsbind::String& type) : Event(emlite::Val::global("DeviceMotionEvent").new_(type)) {}
 
-DeviceMotionEvent::DeviceMotionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DeviceMotionEvent").new_(type, eventInitDict)) {}
+DeviceMotionEvent::DeviceMotionEvent(const jsbind::String& type, const DeviceMotionEventInit& eventInitDict) : Event(emlite::Val::global("DeviceMotionEvent").new_(type, eventInitDict)) {}
 
 DeviceMotionEventAcceleration DeviceMotionEvent::acceleration() const {
     return Event::get("acceleration").as<DeviceMotionEventAcceleration>();
@@ -36,3 +37,5 @@ jsbind::Promise<PermissionState> DeviceMotionEvent::requestPermission() {
     return emlite::Val::global("devicemotionevent").call("requestPermission").as<jsbind::Promise<PermissionState>>();
 }
 
+
+} // namespace webbind

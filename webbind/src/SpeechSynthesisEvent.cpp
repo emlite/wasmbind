@@ -1,6 +1,8 @@
-#include <webbind/SpeechSynthesisEvent.hpp>
-#include <webbind/SpeechSynthesisUtterance.hpp>
+#include "webbind/SpeechSynthesisEvent.hpp"
+#include "webbind/SpeechSynthesisEventInit.hpp"
+#include "webbind/SpeechSynthesisUtterance.hpp"
 
+namespace webbind {
 
 SpeechSynthesisEvent SpeechSynthesisEvent::take_ownership(Handle h) noexcept {
         return SpeechSynthesisEvent(h);
@@ -10,8 +12,7 @@ emlite::Val SpeechSynthesisEvent::instance() noexcept { return emlite::Val::glob
 SpeechSynthesisEvent::SpeechSynthesisEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 SpeechSynthesisEvent::SpeechSynthesisEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-SpeechSynthesisEvent::SpeechSynthesisEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("SpeechSynthesisEvent").new_(type, eventInitDict)) {}
+SpeechSynthesisEvent::SpeechSynthesisEvent(const jsbind::String& type, const SpeechSynthesisEventInit& eventInitDict) : Event(emlite::Val::global("SpeechSynthesisEvent").new_(type, eventInitDict)) {}
 
 SpeechSynthesisUtterance SpeechSynthesisEvent::utterance() const {
     return Event::get("utterance").as<SpeechSynthesisUtterance>();
@@ -33,3 +34,5 @@ jsbind::String SpeechSynthesisEvent::name() const {
     return Event::get("name").as<jsbind::String>();
 }
 
+
+} // namespace webbind

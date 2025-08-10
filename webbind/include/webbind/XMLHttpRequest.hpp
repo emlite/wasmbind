@@ -2,54 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XMLHttpRequestEventTarget.hpp"
 #include "enums.hpp"
+#include "XMLHttpRequestEventTarget.hpp"
+#include "AttributionReportingRequestOptions.hpp"
+#include "PrivateToken.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class XMLHttpRequestUpload;
 class Document;
-class AttributionReportingRequestOptions;
-class PrivateToken;
 
-
-class AttributionReportingRequestOptions : public emlite::Val {
-  explicit AttributionReportingRequestOptions(Handle h) noexcept;
-public:
-    static AttributionReportingRequestOptions take_ownership(Handle h) noexcept;
-    explicit AttributionReportingRequestOptions(const emlite::Val &val) noexcept;
-    AttributionReportingRequestOptions() noexcept;
-    [[nodiscard]] AttributionReportingRequestOptions clone() const noexcept;
-    [[nodiscard]] bool eventSourceEligible() const;
-    void eventSourceEligible(bool value);
-    [[nodiscard]] bool triggerEligible() const;
-    void triggerEligible(bool value);
-};
-
-class PrivateToken : public emlite::Val {
-  explicit PrivateToken(Handle h) noexcept;
-public:
-    static PrivateToken take_ownership(Handle h) noexcept;
-    explicit PrivateToken(const emlite::Val &val) noexcept;
-    PrivateToken() noexcept;
-    [[nodiscard]] PrivateToken clone() const noexcept;
-    [[nodiscard]] TokenVersion version() const;
-    void version(const TokenVersion& value);
-    [[nodiscard]] OperationType operation() const;
-    void operation(const OperationType& value);
-    [[nodiscard]] RefreshPolicy refreshPolicy() const;
-    void refreshPolicy(const RefreshPolicy& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> issuers() const;
-    void issuers(const jsbind::TypedArray<jsbind::String>& value);
-};
-
-/// The XMLHttpRequest class.
+/// Interface XMLHttpRequest
 /// [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 class XMLHttpRequest : public XMLHttpRequestEventTarget {
     explicit XMLHttpRequest(Handle h) noexcept;
-
 public:
     explicit XMLHttpRequest(const emlite::Val &val) noexcept;
     static XMLHttpRequest take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XMLHttpRequest clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XMLHttpRequest(..)` constructor, creating a new XMLHttpRequest instance
@@ -140,3 +110,4 @@ public:
     jsbind::Undefined setPrivateToken(const PrivateToken& privateToken);
 };
 
+} // namespace webbind

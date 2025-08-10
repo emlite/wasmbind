@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class XRSpace;
 
-
-/// The XRAnchor class.
+/// Interface XRAnchor
 /// [`XRAnchor`](https://developer.mozilla.org/en-US/docs/Web/API/XRAnchor)
 class XRAnchor : public emlite::Val {
     explicit XRAnchor(Handle h) noexcept;
-
 public:
     explicit XRAnchor(const emlite::Val &val) noexcept;
     static XRAnchor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRAnchor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `anchorSpace` attribute.
@@ -29,3 +28,4 @@ public:
     jsbind::Undefined delete_();
 };
 
+} // namespace webbind

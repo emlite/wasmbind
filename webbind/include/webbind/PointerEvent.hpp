@@ -2,27 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "MouseEvent.hpp"
 #include "enums.hpp"
+#include "MouseEvent.hpp"
+#include "PointerEventInit.hpp"
+
+namespace webbind {
 
 class PointerEvent;
 
-
-/// The PointerEvent class.
+/// Interface PointerEvent
 /// [`PointerEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent)
 class PointerEvent : public MouseEvent {
     explicit PointerEvent(Handle h) noexcept;
-
 public:
     explicit PointerEvent(const emlite::Val &val) noexcept;
     static PointerEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PointerEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PointerEvent(..)` constructor, creating a new PointerEvent instance
     PointerEvent(const jsbind::String& type);
     /// The `new PointerEvent(..)` constructor, creating a new PointerEvent instance
-    PointerEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    PointerEvent(const jsbind::String& type, const PointerEventInit& eventInitDict);
     /// Getter of the `pointerId` attribute.
     /// [`PointerEvent.pointerId`](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerId)
     [[nodiscard]] long pointerId() const;
@@ -70,3 +70,4 @@ public:
     jsbind::TypedArray<PointerEvent> getPredictedEvents();
 };
 
+} // namespace webbind

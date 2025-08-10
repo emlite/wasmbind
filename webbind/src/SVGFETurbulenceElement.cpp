@@ -1,10 +1,11 @@
-#include <webbind/SVGFETurbulenceElement.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedInteger.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
-#include <webbind/SVGAnimatedString.hpp>
+#include "webbind/SVGFETurbulenceElement.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedInteger.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
+#include "webbind/SVGAnimatedString.hpp"
 
+namespace webbind {
 
 SVGFETurbulenceElement SVGFETurbulenceElement::take_ownership(Handle h) noexcept {
         return SVGFETurbulenceElement(h);
@@ -13,7 +14,6 @@ SVGFETurbulenceElement SVGFETurbulenceElement::clone() const noexcept { return *
 emlite::Val SVGFETurbulenceElement::instance() noexcept { return emlite::Val::global("SVGFETurbulenceElement"); }
 SVGFETurbulenceElement::SVGFETurbulenceElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFETurbulenceElement::SVGFETurbulenceElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedNumber SVGFETurbulenceElement::baseFrequencyX() const {
     return SVGElement::get("baseFrequencyX").as<SVGAnimatedNumber>();
@@ -59,3 +59,5 @@ SVGAnimatedString SVGFETurbulenceElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

@@ -3,23 +3,23 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "GlobalDescriptor.hpp"
 
+namespace webbind {
 
-/// The Global class.
+/// Interface Global
 /// [`Global`](https://developer.mozilla.org/en-US/docs/Web/API/Global)
 class Global : public emlite::Val {
     explicit Global(Handle h) noexcept;
-
 public:
     explicit Global(const emlite::Val &val) noexcept;
     static Global take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Global clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Global(..)` constructor, creating a new Global instance
-    Global(const jsbind::Any& descriptor);
+    Global(const GlobalDescriptor& descriptor);
     /// The `new Global(..)` constructor, creating a new Global instance
-    Global(const jsbind::Any& descriptor, const jsbind::Any& v);
+    Global(const GlobalDescriptor& descriptor, const jsbind::Any& v);
     /// The valueOf method.
     /// [`Global.valueOf`](https://developer.mozilla.org/en-US/docs/Web/API/Global/valueOf)
     jsbind::Any valueOf();
@@ -31,3 +31,4 @@ public:
     void value(const jsbind::Any& value);
 };
 
+} // namespace webbind

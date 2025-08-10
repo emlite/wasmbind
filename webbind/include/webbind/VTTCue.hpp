@@ -2,22 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "TextTrackCue.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class VTTRegion;
 class DocumentFragment;
 
-
-/// The VTTCue class.
+/// Interface VTTCue
 /// [`VTTCue`](https://developer.mozilla.org/en-US/docs/Web/API/VTTCue)
 class VTTCue : public TextTrackCue {
     explicit VTTCue(Handle h) noexcept;
-
 public:
     explicit VTTCue(const emlite::Val &val) noexcept;
     static VTTCue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VTTCue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VTTCue(..)` constructor, creating a new VTTCue instance
@@ -87,3 +87,4 @@ public:
     DocumentFragment getCueAsHTML();
 };
 
+} // namespace webbind

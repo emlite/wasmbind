@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Blob;
 
-
-/// The PushMessageData class.
+/// Interface PushMessageData
 /// [`PushMessageData`](https://developer.mozilla.org/en-US/docs/Web/API/PushMessageData)
 class PushMessageData : public emlite::Val {
     explicit PushMessageData(Handle h) noexcept;
-
 public:
     explicit PushMessageData(const emlite::Val &val) noexcept;
     static PushMessageData take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PushMessageData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The arrayBuffer method.
@@ -35,3 +34,4 @@ public:
     jsbind::String text();
 };
 
+} // namespace webbind

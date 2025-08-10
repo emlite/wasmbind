@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class MLContext;
 class GPUDevice;
 
-
-/// The ML class.
+/// Interface ML
 /// [`ML`](https://developer.mozilla.org/en-US/docs/Web/API/ML)
 class ML : public emlite::Val {
     explicit ML(Handle h) noexcept;
-
 public:
     explicit ML(const emlite::Val &val) noexcept;
     static ML take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ML clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createContext method.
@@ -24,3 +23,4 @@ public:
     jsbind::Promise<MLContext> createContext(const GPUDevice& gpuDevice);
 };
 
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGraphicsElement.hpp"
 #include "enums.hpp"
+#include "SVGGraphicsElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 
-
-/// The SVGForeignObjectElement class.
+/// Interface SVGForeignObjectElement
 /// [`SVGForeignObjectElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGForeignObjectElement)
 class SVGForeignObjectElement : public SVGGraphicsElement {
     explicit SVGForeignObjectElement(Handle h) noexcept;
-
 public:
     explicit SVGForeignObjectElement(const emlite::Val &val) noexcept;
     static SVGForeignObjectElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGForeignObjectElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] SVGAnimatedLength height() const;
 };
 
+} // namespace webbind

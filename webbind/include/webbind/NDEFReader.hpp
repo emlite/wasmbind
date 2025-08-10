@@ -2,59 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "NDEFScanOptions.hpp"
+#include "NDEFWriteOptions.hpp"
+#include "NDEFMakeReadOnlyOptions.hpp"
 
-class NDEFScanOptions;
-class NDEFWriteOptions;
-class NDEFMakeReadOnlyOptions;
-class AbortSignal;
+namespace webbind {
 
-
-class NDEFScanOptions : public emlite::Val {
-  explicit NDEFScanOptions(Handle h) noexcept;
-public:
-    static NDEFScanOptions take_ownership(Handle h) noexcept;
-    explicit NDEFScanOptions(const emlite::Val &val) noexcept;
-    NDEFScanOptions() noexcept;
-    [[nodiscard]] NDEFScanOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-class NDEFWriteOptions : public emlite::Val {
-  explicit NDEFWriteOptions(Handle h) noexcept;
-public:
-    static NDEFWriteOptions take_ownership(Handle h) noexcept;
-    explicit NDEFWriteOptions(const emlite::Val &val) noexcept;
-    NDEFWriteOptions() noexcept;
-    [[nodiscard]] NDEFWriteOptions clone() const noexcept;
-    [[nodiscard]] bool overwrite() const;
-    void overwrite(bool value);
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-class NDEFMakeReadOnlyOptions : public emlite::Val {
-  explicit NDEFMakeReadOnlyOptions(Handle h) noexcept;
-public:
-    static NDEFMakeReadOnlyOptions take_ownership(Handle h) noexcept;
-    explicit NDEFMakeReadOnlyOptions(const emlite::Val &val) noexcept;
-    NDEFMakeReadOnlyOptions() noexcept;
-    [[nodiscard]] NDEFMakeReadOnlyOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-/// The NDEFReader class.
+/// Interface NDEFReader
 /// [`NDEFReader`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader)
 class NDEFReader : public EventTarget {
     explicit NDEFReader(Handle h) noexcept;
-
 public:
     explicit NDEFReader(const emlite::Val &val) noexcept;
     static NDEFReader take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NDEFReader clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFReader(..)` constructor, creating a new NDEFReader instance
@@ -91,3 +53,4 @@ public:
     jsbind::Promise<jsbind::Undefined> makeReadOnly(const NDEFMakeReadOnlyOptions& options);
 };
 
+} // namespace webbind

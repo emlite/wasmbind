@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
 
+namespace webbind {
 
-/// The CSSColorProfileRule class.
+/// Interface CSSColorProfileRule
 /// [`CSSColorProfileRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSColorProfileRule)
 class CSSColorProfileRule : public CSSRule {
     explicit CSSColorProfileRule(Handle h) noexcept;
-
 public:
     explicit CSSColorProfileRule(const emlite::Val &val) noexcept;
     static CSSColorProfileRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSColorProfileRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -31,3 +30,4 @@ public:
     [[nodiscard]] jsbind::String components() const;
 };
 
+} // namespace webbind

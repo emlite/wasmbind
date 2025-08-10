@@ -2,24 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class TimeRanges;
 class AudioTrackList;
 class VideoTrackList;
 class TextTrackList;
 
-
-/// The SourceBuffer class.
+/// Interface SourceBuffer
 /// [`SourceBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer)
 class SourceBuffer : public EventTarget {
     explicit SourceBuffer(Handle h) noexcept;
-
 public:
     explicit SourceBuffer(const emlite::Val &val) noexcept;
     static SourceBuffer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SourceBuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mode` attribute.
@@ -105,3 +105,4 @@ public:
     jsbind::Undefined remove(double start, double end);
 };
 
+} // namespace webbind

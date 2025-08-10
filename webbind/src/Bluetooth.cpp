@@ -1,87 +1,10 @@
-#include <webbind/Bluetooth.hpp>
-#include <webbind/BluetoothDevice.hpp>
-#include <webbind/BluetoothLEScan.hpp>
+#include "webbind/Bluetooth.hpp"
+#include "webbind/BluetoothDevice.hpp"
+#include "webbind/RequestDeviceOptions.hpp"
+#include "webbind/BluetoothLEScan.hpp"
+#include "webbind/BluetoothLEScanOptions.hpp"
 
-
-RequestDeviceOptions::RequestDeviceOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestDeviceOptions RequestDeviceOptions::take_ownership(Handle h) noexcept {
-        return RequestDeviceOptions(h);
-    }
-RequestDeviceOptions::RequestDeviceOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RequestDeviceOptions::RequestDeviceOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-RequestDeviceOptions RequestDeviceOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::Any> RequestDeviceOptions::filters() const {
-    return emlite::Val::get("filters").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RequestDeviceOptions::filters(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("filters", value);
-}
-
-jsbind::TypedArray<jsbind::Any> RequestDeviceOptions::exclusionFilters() const {
-    return emlite::Val::get("exclusionFilters").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RequestDeviceOptions::exclusionFilters(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("exclusionFilters", value);
-}
-
-jsbind::TypedArray<jsbind::Any> RequestDeviceOptions::optionalServices() const {
-    return emlite::Val::get("optionalServices").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RequestDeviceOptions::optionalServices(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("optionalServices", value);
-}
-
-jsbind::TypedArray<unsigned short> RequestDeviceOptions::optionalManufacturerData() const {
-    return emlite::Val::get("optionalManufacturerData").as<jsbind::TypedArray<unsigned short>>();
-}
-
-void RequestDeviceOptions::optionalManufacturerData(jsbind::TypedArray<unsigned short> value) {
-    emlite::Val::set("optionalManufacturerData", value);
-}
-
-bool RequestDeviceOptions::acceptAllDevices() const {
-    return emlite::Val::get("acceptAllDevices").as<bool>();
-}
-
-void RequestDeviceOptions::acceptAllDevices(bool value) {
-    emlite::Val::set("acceptAllDevices", value);
-}
-
-BluetoothLEScanOptions::BluetoothLEScanOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BluetoothLEScanOptions BluetoothLEScanOptions::take_ownership(Handle h) noexcept {
-        return BluetoothLEScanOptions(h);
-    }
-BluetoothLEScanOptions::BluetoothLEScanOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-BluetoothLEScanOptions::BluetoothLEScanOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-BluetoothLEScanOptions BluetoothLEScanOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::Any> BluetoothLEScanOptions::filters() const {
-    return emlite::Val::get("filters").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void BluetoothLEScanOptions::filters(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("filters", value);
-}
-
-bool BluetoothLEScanOptions::keepRepeatedDevices() const {
-    return emlite::Val::get("keepRepeatedDevices").as<bool>();
-}
-
-void BluetoothLEScanOptions::keepRepeatedDevices(bool value) {
-    emlite::Val::set("keepRepeatedDevices", value);
-}
-
-bool BluetoothLEScanOptions::acceptAllAdvertisements() const {
-    return emlite::Val::get("acceptAllAdvertisements").as<bool>();
-}
-
-void BluetoothLEScanOptions::acceptAllAdvertisements(bool value) {
-    emlite::Val::set("acceptAllAdvertisements", value);
-}
+namespace webbind {
 
 Bluetooth Bluetooth::take_ownership(Handle h) noexcept {
         return Bluetooth(h);
@@ -90,7 +13,6 @@ Bluetooth Bluetooth::clone() const noexcept { return *this; }
 emlite::Val Bluetooth::instance() noexcept { return emlite::Val::global("Bluetooth"); }
 Bluetooth::Bluetooth(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Bluetooth::Bluetooth(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Promise<bool> Bluetooth::getAvailability() {
     return EventTarget::call("getAvailability").as<jsbind::Promise<bool>>();
@@ -176,3 +98,5 @@ void Bluetooth::onserviceremoved(const jsbind::Any& value) {
     EventTarget::set("onserviceremoved", value);
 }
 
+
+} // namespace webbind

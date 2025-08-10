@@ -1,7 +1,8 @@
-#include <webbind/PerformanceElementTiming.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/PerformanceElementTiming.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/Element.hpp"
 
+namespace webbind {
 
 PerformanceElementTiming PerformanceElementTiming::take_ownership(Handle h) noexcept {
         return PerformanceElementTiming(h);
@@ -10,7 +11,6 @@ PerformanceElementTiming PerformanceElementTiming::clone() const noexcept { retu
 emlite::Val PerformanceElementTiming::instance() noexcept { return emlite::Val::global("PerformanceElementTiming"); }
 PerformanceElementTiming::PerformanceElementTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 PerformanceElementTiming::PerformanceElementTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
-
 
 jsbind::Any PerformanceElementTiming::renderTime() const {
     return PerformanceEntry::get("renderTime").as<jsbind::Any>();
@@ -60,3 +60,5 @@ jsbind::Any PerformanceElementTiming::presentationTime() const {
     return PerformanceEntry::get("presentationTime").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

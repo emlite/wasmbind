@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ChildBreakToken;
 
-
-/// The BreakToken class.
+/// Interface BreakToken
 /// [`BreakToken`](https://developer.mozilla.org/en-US/docs/Web/API/BreakToken)
 class BreakToken : public emlite::Val {
     explicit BreakToken(Handle h) noexcept;
-
 public:
     explicit BreakToken(const emlite::Val &val) noexcept;
     static BreakToken take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BreakToken clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `childBreakTokens` attribute.
@@ -26,3 +25,4 @@ public:
     [[nodiscard]] jsbind::Any data() const;
 };
 
+} // namespace webbind

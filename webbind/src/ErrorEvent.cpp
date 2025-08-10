@@ -1,5 +1,7 @@
-#include <webbind/ErrorEvent.hpp>
+#include "webbind/ErrorEvent.hpp"
+#include "webbind/ErrorEventInit.hpp"
 
+namespace webbind {
 
 ErrorEvent ErrorEvent::take_ownership(Handle h) noexcept {
         return ErrorEvent(h);
@@ -9,10 +11,9 @@ emlite::Val ErrorEvent::instance() noexcept { return emlite::Val::global("ErrorE
 ErrorEvent::ErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 ErrorEvent::ErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 ErrorEvent::ErrorEvent(const jsbind::String& type) : Event(emlite::Val::global("ErrorEvent").new_(type)) {}
 
-ErrorEvent::ErrorEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("ErrorEvent").new_(type, eventInitDict)) {}
+ErrorEvent::ErrorEvent(const jsbind::String& type, const ErrorEventInit& eventInitDict) : Event(emlite::Val::global("ErrorEvent").new_(type, eventInitDict)) {}
 
 jsbind::String ErrorEvent::message() const {
     return Event::get("message").as<jsbind::String>();
@@ -34,3 +35,5 @@ jsbind::Any ErrorEvent::error() const {
     return Event::get("error").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

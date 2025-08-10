@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSParserValue.hpp"
 #include "enums.hpp"
+#include "CSSParserValue.hpp"
 
+namespace webbind {
 
-/// The CSSParserBlock class.
+/// Interface CSSParserBlock
 /// [`CSSParserBlock`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserBlock)
 class CSSParserBlock : public CSSParserValue {
     explicit CSSParserBlock(Handle h) noexcept;
-
 public:
     explicit CSSParserBlock(const emlite::Val &val) noexcept;
     static CSSParserBlock take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSParserBlock clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserBlock(..)` constructor, creating a new CSSParserBlock instance
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<CSSParserValue> body() const;
 };
 
+} // namespace webbind

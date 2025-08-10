@@ -1,5 +1,6 @@
-#include <webbind/HTMLFontElement.hpp>
+#include "webbind/HTMLFontElement.hpp"
 
+namespace webbind {
 
 HTMLFontElement HTMLFontElement::take_ownership(Handle h) noexcept {
         return HTMLFontElement(h);
@@ -8,7 +9,6 @@ HTMLFontElement HTMLFontElement::clone() const noexcept { return *this; }
 emlite::Val HTMLFontElement::instance() noexcept { return emlite::Val::global("HTMLFontElement"); }
 HTMLFontElement::HTMLFontElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLFontElement::HTMLFontElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLFontElement::HTMLFontElement() : HTMLElement(emlite::Val::global("HTMLFontElement").new_()) {}
 
@@ -36,3 +36,5 @@ void HTMLFontElement::size(const jsbind::String& value) {
     HTMLElement::set("size", value);
 }
 
+
+} // namespace webbind

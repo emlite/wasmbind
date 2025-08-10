@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleDeclaration.hpp"
 #include "enums.hpp"
+#include "CSSStyleDeclaration.hpp"
 
+namespace webbind {
 
-/// The CSSFontFaceDescriptors class.
+/// Interface CSSFontFaceDescriptors
 /// [`CSSFontFaceDescriptors`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFaceDescriptors)
 class CSSFontFaceDescriptors : public CSSStyleDeclaration {
     explicit CSSFontFaceDescriptors(Handle h) noexcept;
-
 public:
     explicit CSSFontFaceDescriptors(const emlite::Val &val) noexcept;
     static CSSFontFaceDescriptors take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSFontFaceDescriptors clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `src` attribute.
@@ -265,3 +264,4 @@ public:
     void subscript_size_override(const jsbind::String& value);
 };
 
+} // namespace webbind

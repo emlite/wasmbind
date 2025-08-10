@@ -1,6 +1,8 @@
-#include <webbind/CSSRule.hpp>
-#include <webbind/CSSStyleSheet.hpp>
+#include "webbind/CSSRule.hpp"
+#include "webbind/CSSRule.hpp"
+#include "webbind/CSSStyleSheet.hpp"
 
+namespace webbind {
 
 CSSRule CSSRule::take_ownership(Handle h) noexcept {
         return CSSRule(h);
@@ -9,7 +11,6 @@ CSSRule CSSRule::clone() const noexcept { return *this; }
 emlite::Val CSSRule::instance() noexcept { return emlite::Val::global("CSSRule"); }
 CSSRule::CSSRule(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSRule::CSSRule(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String CSSRule::cssText() const {
     return emlite::Val::get("cssText").as<jsbind::String>();
@@ -31,3 +32,5 @@ unsigned short CSSRule::type() const {
     return emlite::Val::get("type").as<unsigned short>();
 }
 
+
+} // namespace webbind

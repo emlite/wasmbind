@@ -1,6 +1,7 @@
-#include <webbind/XRViewerPose.hpp>
-#include <webbind/XRView.hpp>
+#include "webbind/XRViewerPose.hpp"
+#include "webbind/XRView.hpp"
 
+namespace webbind {
 
 XRViewerPose XRViewerPose::take_ownership(Handle h) noexcept {
         return XRViewerPose(h);
@@ -10,8 +11,9 @@ emlite::Val XRViewerPose::instance() noexcept { return emlite::Val::global("XRVi
 XRViewerPose::XRViewerPose(Handle h) noexcept : XRPose(emlite::Val::take_ownership(h)) {}
 XRViewerPose::XRViewerPose(const emlite::Val &val) noexcept: XRPose(val) {}
 
-
 jsbind::TypedArray<XRView> XRViewerPose::views() const {
     return XRPose::get("views").as<jsbind::TypedArray<XRView>>();
 }
 
+
+} // namespace webbind

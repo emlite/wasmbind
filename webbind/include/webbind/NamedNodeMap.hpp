@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Attr;
 
-
-/// The NamedNodeMap class.
+/// Interface NamedNodeMap
 /// [`NamedNodeMap`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap)
 class NamedNodeMap : public emlite::Val {
     explicit NamedNodeMap(Handle h) noexcept;
-
 public:
     explicit NamedNodeMap(const emlite::Val &val) noexcept;
     static NamedNodeMap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NamedNodeMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -44,3 +43,4 @@ public:
     Attr removeNamedItemNS(const jsbind::String& namespace_, const jsbind::String& localName);
 };
 
+} // namespace webbind

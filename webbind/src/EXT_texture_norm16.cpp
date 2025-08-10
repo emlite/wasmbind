@@ -1,5 +1,6 @@
-#include <webbind/EXT_texture_norm16.hpp>
+#include "webbind/EXT_texture_norm16.hpp"
 
+namespace webbind {
 
 EXT_texture_norm16 EXT_texture_norm16::take_ownership(Handle h) noexcept {
         return EXT_texture_norm16(h);
@@ -10,3 +11,4 @@ EXT_texture_norm16::EXT_texture_norm16(Handle h) noexcept : emlite::Val(emlite::
 EXT_texture_norm16::EXT_texture_norm16(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

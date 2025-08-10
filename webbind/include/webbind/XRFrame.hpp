@@ -4,6 +4,8 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class XRSession;
 class XRViewerPose;
 class XRReferenceSpace;
@@ -25,16 +27,13 @@ class XRLightEstimate;
 class XRLightProbe;
 class XRPlaneSet;
 
-
-/// The XRFrame class.
+/// Interface XRFrame
 /// [`XRFrame`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame)
 class XRFrame : public emlite::Val {
     explicit XRFrame(Handle h) noexcept;
-
 public:
     explicit XRFrame(const emlite::Val &val) noexcept;
     static XRFrame take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRFrame clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `session` attribute.
@@ -84,3 +83,4 @@ public:
     [[nodiscard]] XRPlaneSet detectedPlanes() const;
 };
 
+} // namespace webbind

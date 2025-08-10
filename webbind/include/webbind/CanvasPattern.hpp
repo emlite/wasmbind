@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGSVGElement.hpp"
 #include "enums.hpp"
+#include "DOMMatrix2DInit.hpp"
 
+namespace webbind {
 
-/// The CanvasPattern class.
+/// Interface CanvasPattern
 /// [`CanvasPattern`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasPattern)
 class CanvasPattern : public emlite::Val {
     explicit CanvasPattern(Handle h) noexcept;
-
 public:
     explicit CanvasPattern(const emlite::Val &val) noexcept;
     static CanvasPattern take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CanvasPattern clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setTransform method.
@@ -25,3 +24,4 @@ public:
     jsbind::Undefined setTransform(const DOMMatrix2DInit& transform);
 };
 
+} // namespace webbind

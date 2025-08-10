@@ -1,5 +1,6 @@
-#include <webbind/ImageTrack.hpp>
+#include "webbind/ImageTrack.hpp"
 
+namespace webbind {
 
 ImageTrack ImageTrack::take_ownership(Handle h) noexcept {
         return ImageTrack(h);
@@ -8,7 +9,6 @@ ImageTrack ImageTrack::clone() const noexcept { return *this; }
 emlite::Val ImageTrack::instance() noexcept { return emlite::Val::global("ImageTrack"); }
 ImageTrack::ImageTrack(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageTrack::ImageTrack(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 bool ImageTrack::animated() const {
     return emlite::Val::get("animated").as<bool>();
@@ -30,3 +30,5 @@ void ImageTrack::selected(bool value) {
     emlite::Val::set("selected", value);
 }
 
+
+} // namespace webbind

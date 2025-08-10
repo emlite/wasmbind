@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Navigator.hpp"
 #include "enums.hpp"
+#include "MediaKeySystemConfiguration.hpp"
+
+namespace webbind {
 
 class MediaKeys;
 
-
-/// The MediaKeySystemAccess class.
+/// Interface MediaKeySystemAccess
 /// [`MediaKeySystemAccess`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess)
 class MediaKeySystemAccess : public emlite::Val {
     explicit MediaKeySystemAccess(Handle h) noexcept;
-
 public:
     explicit MediaKeySystemAccess(const emlite::Val &val) noexcept;
     static MediaKeySystemAccess take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaKeySystemAccess clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `keySystem` attribute.
@@ -30,3 +29,4 @@ public:
     jsbind::Promise<MediaKeys> createMediaKeys();
 };
 
+} // namespace webbind

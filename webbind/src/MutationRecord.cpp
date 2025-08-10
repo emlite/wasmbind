@@ -1,7 +1,8 @@
-#include <webbind/MutationRecord.hpp>
-#include <webbind/Node.hpp>
-#include <webbind/NodeList.hpp>
+#include "webbind/MutationRecord.hpp"
+#include "webbind/Node.hpp"
+#include "webbind/NodeList.hpp"
 
+namespace webbind {
 
 MutationRecord MutationRecord::take_ownership(Handle h) noexcept {
         return MutationRecord(h);
@@ -10,7 +11,6 @@ MutationRecord MutationRecord::clone() const noexcept { return *this; }
 emlite::Val MutationRecord::instance() noexcept { return emlite::Val::global("MutationRecord"); }
 MutationRecord::MutationRecord(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MutationRecord::MutationRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String MutationRecord::type() const {
     return emlite::Val::get("type").as<jsbind::String>();
@@ -48,3 +48,5 @@ jsbind::String MutationRecord::oldValue() const {
     return emlite::Val::get("oldValue").as<jsbind::String>();
 }
 
+
+} // namespace webbind

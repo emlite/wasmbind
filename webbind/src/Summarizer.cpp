@@ -1,119 +1,11 @@
-#include <webbind/Summarizer.hpp>
-#include <webbind/ReadableStream.hpp>
-#include <webbind/AbortSignal.hpp>
+#include "webbind/Summarizer.hpp"
+#include "webbind/Summarizer.hpp"
+#include "webbind/SummarizerCreateOptions.hpp"
+#include "webbind/SummarizerCreateCoreOptions.hpp"
+#include "webbind/SummarizerSummarizeOptions.hpp"
+#include "webbind/ReadableStream.hpp"
 
-
-SummarizerCreateOptions::SummarizerCreateOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SummarizerCreateOptions SummarizerCreateOptions::take_ownership(Handle h) noexcept {
-        return SummarizerCreateOptions(h);
-    }
-SummarizerCreateOptions::SummarizerCreateOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SummarizerCreateOptions::SummarizerCreateOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SummarizerCreateOptions SummarizerCreateOptions::clone() const noexcept { return *this; }
-
-AbortSignal SummarizerCreateOptions::signal() const {
-    return emlite::Val::get("signal").as<AbortSignal>();
-}
-
-void SummarizerCreateOptions::signal(const AbortSignal& value) {
-    emlite::Val::set("signal", value);
-}
-
-jsbind::Function SummarizerCreateOptions::monitor() const {
-    return emlite::Val::get("monitor").as<jsbind::Function>();
-}
-
-void SummarizerCreateOptions::monitor(const jsbind::Function& value) {
-    emlite::Val::set("monitor", value);
-}
-
-jsbind::String SummarizerCreateOptions::sharedContext() const {
-    return emlite::Val::get("sharedContext").as<jsbind::String>();
-}
-
-void SummarizerCreateOptions::sharedContext(const jsbind::String& value) {
-    emlite::Val::set("sharedContext", value);
-}
-
-SummarizerCreateCoreOptions::SummarizerCreateCoreOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SummarizerCreateCoreOptions SummarizerCreateCoreOptions::take_ownership(Handle h) noexcept {
-        return SummarizerCreateCoreOptions(h);
-    }
-SummarizerCreateCoreOptions::SummarizerCreateCoreOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SummarizerCreateCoreOptions::SummarizerCreateCoreOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SummarizerCreateCoreOptions SummarizerCreateCoreOptions::clone() const noexcept { return *this; }
-
-SummarizerType SummarizerCreateCoreOptions::type() const {
-    return emlite::Val::get("type").as<SummarizerType>();
-}
-
-void SummarizerCreateCoreOptions::type(const SummarizerType& value) {
-    emlite::Val::set("type", value);
-}
-
-SummarizerFormat SummarizerCreateCoreOptions::format() const {
-    return emlite::Val::get("format").as<SummarizerFormat>();
-}
-
-void SummarizerCreateCoreOptions::format(const SummarizerFormat& value) {
-    emlite::Val::set("format", value);
-}
-
-SummarizerLength SummarizerCreateCoreOptions::length() const {
-    return emlite::Val::get("length").as<SummarizerLength>();
-}
-
-void SummarizerCreateCoreOptions::length(const SummarizerLength& value) {
-    emlite::Val::set("length", value);
-}
-
-jsbind::TypedArray<jsbind::String> SummarizerCreateCoreOptions::expectedInputLanguages() const {
-    return emlite::Val::get("expectedInputLanguages").as<jsbind::TypedArray<jsbind::String>>();
-}
-
-void SummarizerCreateCoreOptions::expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value) {
-    emlite::Val::set("expectedInputLanguages", value);
-}
-
-jsbind::TypedArray<jsbind::String> SummarizerCreateCoreOptions::expectedContextLanguages() const {
-    return emlite::Val::get("expectedContextLanguages").as<jsbind::TypedArray<jsbind::String>>();
-}
-
-void SummarizerCreateCoreOptions::expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value) {
-    emlite::Val::set("expectedContextLanguages", value);
-}
-
-jsbind::String SummarizerCreateCoreOptions::outputLanguage() const {
-    return emlite::Val::get("outputLanguage").as<jsbind::String>();
-}
-
-void SummarizerCreateCoreOptions::outputLanguage(const jsbind::String& value) {
-    emlite::Val::set("outputLanguage", value);
-}
-
-SummarizerSummarizeOptions::SummarizerSummarizeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SummarizerSummarizeOptions SummarizerSummarizeOptions::take_ownership(Handle h) noexcept {
-        return SummarizerSummarizeOptions(h);
-    }
-SummarizerSummarizeOptions::SummarizerSummarizeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SummarizerSummarizeOptions::SummarizerSummarizeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SummarizerSummarizeOptions SummarizerSummarizeOptions::clone() const noexcept { return *this; }
-
-AbortSignal SummarizerSummarizeOptions::signal() const {
-    return emlite::Val::get("signal").as<AbortSignal>();
-}
-
-void SummarizerSummarizeOptions::signal(const AbortSignal& value) {
-    emlite::Val::set("signal", value);
-}
-
-jsbind::String SummarizerSummarizeOptions::context() const {
-    return emlite::Val::get("context").as<jsbind::String>();
-}
-
-void SummarizerSummarizeOptions::context(const jsbind::String& value) {
-    emlite::Val::set("context", value);
-}
+namespace webbind {
 
 Summarizer Summarizer::take_ownership(Handle h) noexcept {
         return Summarizer(h);
@@ -122,7 +14,6 @@ Summarizer Summarizer::clone() const noexcept { return *this; }
 emlite::Val Summarizer::instance() noexcept { return emlite::Val::global("Summarizer"); }
 Summarizer::Summarizer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Summarizer::Summarizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<Summarizer> Summarizer::create() {
     return emlite::Val::global("summarizer").call("create").as<jsbind::Promise<Summarizer>>();
@@ -200,3 +91,5 @@ jsbind::Undefined Summarizer::destroy() {
     return emlite::Val::call("destroy").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

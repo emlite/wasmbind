@@ -3,21 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "MemoryDescriptor.hpp"
 
+namespace webbind {
 
-/// The Memory class.
+/// Interface Memory
 /// [`Memory`](https://developer.mozilla.org/en-US/docs/Web/API/Memory)
 class Memory : public emlite::Val {
     explicit Memory(Handle h) noexcept;
-
 public:
     explicit Memory(const emlite::Val &val) noexcept;
     static Memory take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Memory clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Memory(..)` constructor, creating a new Memory instance
-    Memory(const jsbind::Any& descriptor);
+    Memory(const MemoryDescriptor& descriptor);
     /// The grow method.
     /// [`Memory.grow`](https://developer.mozilla.org/en-US/docs/Web/API/Memory/grow)
     unsigned long grow(unsigned long delta);
@@ -32,3 +32,4 @@ public:
     [[nodiscard]] jsbind::ArrayBuffer buffer() const;
 };
 
+} // namespace webbind

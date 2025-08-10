@@ -1,6 +1,7 @@
-#include <webbind/CanvasCaptureMediaStreamTrack.hpp>
-#include <webbind/HTMLCanvasElement.hpp>
+#include "webbind/CanvasCaptureMediaStreamTrack.hpp"
+#include "webbind/HTMLCanvasElement.hpp"
 
+namespace webbind {
 
 CanvasCaptureMediaStreamTrack CanvasCaptureMediaStreamTrack::take_ownership(Handle h) noexcept {
         return CanvasCaptureMediaStreamTrack(h);
@@ -10,7 +11,6 @@ emlite::Val CanvasCaptureMediaStreamTrack::instance() noexcept { return emlite::
 CanvasCaptureMediaStreamTrack::CanvasCaptureMediaStreamTrack(Handle h) noexcept : MediaStreamTrack(emlite::Val::take_ownership(h)) {}
 CanvasCaptureMediaStreamTrack::CanvasCaptureMediaStreamTrack(const emlite::Val &val) noexcept: MediaStreamTrack(val) {}
 
-
 HTMLCanvasElement CanvasCaptureMediaStreamTrack::canvas() const {
     return MediaStreamTrack::get("canvas").as<HTMLCanvasElement>();
 }
@@ -19,3 +19,5 @@ jsbind::Undefined CanvasCaptureMediaStreamTrack::requestFrame() {
     return MediaStreamTrack::call("requestFrame").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

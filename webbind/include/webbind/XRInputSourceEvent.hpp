@@ -2,26 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "XRInputSourceEventInit.hpp"
+
+namespace webbind {
 
 class XRFrame;
 class XRInputSource;
 
-
-/// The XRInputSourceEvent class.
+/// Interface XRInputSourceEvent
 /// [`XRInputSourceEvent`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceEvent)
 class XRInputSourceEvent : public Event {
     explicit XRInputSourceEvent(Handle h) noexcept;
-
 public:
     explicit XRInputSourceEvent(const emlite::Val &val) noexcept;
     static XRInputSourceEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRInputSourceEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRInputSourceEvent(..)` constructor, creating a new XRInputSourceEvent instance
-    XRInputSourceEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    XRInputSourceEvent(const jsbind::String& type, const XRInputSourceEventInit& eventInitDict);
     /// Getter of the `frame` attribute.
     /// [`XRInputSourceEvent.frame`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceEvent/frame)
     [[nodiscard]] XRFrame frame() const;
@@ -30,3 +30,4 @@ public:
     [[nodiscard]] XRInputSource inputSource() const;
 };
 
+} // namespace webbind

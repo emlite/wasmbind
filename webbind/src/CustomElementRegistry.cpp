@@ -1,22 +1,8 @@
-#include <webbind/CustomElementRegistry.hpp>
-#include <webbind/Node.hpp>
+#include "webbind/CustomElementRegistry.hpp"
+#include "webbind/ElementDefinitionOptions.hpp"
+#include "webbind/Node.hpp"
 
-
-ElementDefinitionOptions::ElementDefinitionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ElementDefinitionOptions ElementDefinitionOptions::take_ownership(Handle h) noexcept {
-        return ElementDefinitionOptions(h);
-    }
-ElementDefinitionOptions::ElementDefinitionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ElementDefinitionOptions::ElementDefinitionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-ElementDefinitionOptions ElementDefinitionOptions::clone() const noexcept { return *this; }
-
-jsbind::String ElementDefinitionOptions::extends() const {
-    return emlite::Val::get("extends").as<jsbind::String>();
-}
-
-void ElementDefinitionOptions::extends(const jsbind::String& value) {
-    emlite::Val::set("extends", value);
-}
+namespace webbind {
 
 CustomElementRegistry CustomElementRegistry::take_ownership(Handle h) noexcept {
         return CustomElementRegistry(h);
@@ -25,7 +11,6 @@ CustomElementRegistry CustomElementRegistry::clone() const noexcept { return *th
 emlite::Val CustomElementRegistry::instance() noexcept { return emlite::Val::global("CustomElementRegistry"); }
 CustomElementRegistry::CustomElementRegistry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CustomElementRegistry::CustomElementRegistry(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 CustomElementRegistry::CustomElementRegistry() : emlite::Val(emlite::Val::global("CustomElementRegistry").new_()) {}
 
@@ -57,3 +42,5 @@ jsbind::Undefined CustomElementRegistry::initialize(const Node& root) {
     return emlite::Val::call("initialize", root).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

@@ -1,18 +1,20 @@
 #pragma once
 
+#include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "DOMException.hpp"
+#include "IdentityCredentialErrorInit.hpp"
 
+namespace webbind {
 
-/// The IdentityCredentialError class.
+/// Interface IdentityCredentialError
 /// [`IdentityCredentialError`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError)
 class IdentityCredentialError : public DOMException {
     explicit IdentityCredentialError(Handle h) noexcept;
-
 public:
     explicit IdentityCredentialError(const emlite::Val &val) noexcept;
     static IdentityCredentialError take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IdentityCredentialError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IdentityCredentialError(..)` constructor, creating a new IdentityCredentialError instance
@@ -20,7 +22,7 @@ public:
     /// The `new IdentityCredentialError(..)` constructor, creating a new IdentityCredentialError instance
     IdentityCredentialError(const jsbind::String& message);
     /// The `new IdentityCredentialError(..)` constructor, creating a new IdentityCredentialError instance
-    IdentityCredentialError(const jsbind::String& message, const jsbind::Any& options);
+    IdentityCredentialError(const jsbind::String& message, const IdentityCredentialErrorInit& options);
     /// Getter of the `error` attribute.
     /// [`IdentityCredentialError.error`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/error)
     [[nodiscard]] jsbind::String error() const;
@@ -29,3 +31,4 @@ public:
     [[nodiscard]] jsbind::String url() const;
 };
 
+} // namespace webbind

@@ -2,32 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "StructuredSerializeOptions.hpp"
 
-class StructuredSerializeOptions;
+namespace webbind {
 
-
-class StructuredSerializeOptions : public emlite::Val {
-  explicit StructuredSerializeOptions(Handle h) noexcept;
-public:
-    static StructuredSerializeOptions take_ownership(Handle h) noexcept;
-    explicit StructuredSerializeOptions(const emlite::Val &val) noexcept;
-    StructuredSerializeOptions() noexcept;
-    [[nodiscard]] StructuredSerializeOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Object> transfer() const;
-    void transfer(const jsbind::TypedArray<jsbind::Object>& value);
-};
-
-/// The MessagePort class.
+/// Interface MessagePort
 /// [`MessagePort`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort)
 class MessagePort : public EventTarget {
     explicit MessagePort(Handle h) noexcept;
-
 public:
     explicit MessagePort(const emlite::Val &val) noexcept;
     static MessagePort take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MessagePort clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The postMessage method.
@@ -62,3 +49,4 @@ public:
     void onmessageerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

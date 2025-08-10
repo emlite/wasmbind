@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLParagraphElement class.
+/// Interface HTMLParagraphElement
 /// [`HTMLParagraphElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement)
 class HTMLParagraphElement : public HTMLElement {
     explicit HTMLParagraphElement(Handle h) noexcept;
-
 public:
     explicit HTMLParagraphElement(const emlite::Val &val) noexcept;
     static HTMLParagraphElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLParagraphElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLParagraphElement(..)` constructor, creating a new HTMLParagraphElement instance
@@ -27,3 +26,4 @@ public:
     void align(const jsbind::String& value);
 };
 
+} // namespace webbind

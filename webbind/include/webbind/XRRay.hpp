@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
-class DOMPointReadOnly;
+namespace webbind {
+
 class XRRigidTransform;
+class DOMPointReadOnly;
 
-
-/// The XRRay class.
+/// Interface XRRay
 /// [`XRRay`](https://developer.mozilla.org/en-US/docs/Web/API/XRRay)
 class XRRay : public emlite::Val {
     explicit XRRay(Handle h) noexcept;
-
 public:
     explicit XRRay(const emlite::Val &val) noexcept;
     static XRRay take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRRay clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRRay(..)` constructor, creating a new XRRay instance
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] jsbind::Float32Array matrix() const;
 };
 
+} // namespace webbind

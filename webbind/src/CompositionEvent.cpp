@@ -1,5 +1,7 @@
-#include <webbind/CompositionEvent.hpp>
+#include "webbind/CompositionEvent.hpp"
+#include "webbind/CompositionEventInit.hpp"
 
+namespace webbind {
 
 CompositionEvent CompositionEvent::take_ownership(Handle h) noexcept {
         return CompositionEvent(h);
@@ -9,10 +11,9 @@ emlite::Val CompositionEvent::instance() noexcept { return emlite::Val::global("
 CompositionEvent::CompositionEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
 CompositionEvent::CompositionEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
-
 CompositionEvent::CompositionEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("CompositionEvent").new_(type)) {}
 
-CompositionEvent::CompositionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("CompositionEvent").new_(type, eventInitDict)) {}
+CompositionEvent::CompositionEvent(const jsbind::String& type, const CompositionEventInit& eventInitDict) : UIEvent(emlite::Val::global("CompositionEvent").new_(type, eventInitDict)) {}
 
 jsbind::String CompositionEvent::data() const {
     return UIEvent::get("data").as<jsbind::String>();
@@ -38,3 +39,5 @@ jsbind::Undefined CompositionEvent::initCompositionEvent(const jsbind::String& t
     return UIEvent::call("initCompositionEvent", typeArg, bubblesArg, cancelableArg, viewArg, dataArg).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

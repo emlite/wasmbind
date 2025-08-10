@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ChildBreakToken;
 
-
-/// The LayoutFragment class.
+/// Interface LayoutFragment
 /// [`LayoutFragment`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutFragment)
 class LayoutFragment : public emlite::Val {
     explicit LayoutFragment(Handle h) noexcept;
-
 public:
     explicit LayoutFragment(const emlite::Val &val) noexcept;
     static LayoutFragment take_ownership(Handle h) noexcept;
-
     [[nodiscard]] LayoutFragment clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `inlineSize` attribute.
@@ -44,3 +43,4 @@ public:
     [[nodiscard]] ChildBreakToken breakToken() const;
 };
 
+} // namespace webbind

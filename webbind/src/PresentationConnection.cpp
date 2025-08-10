@@ -1,5 +1,6 @@
-#include <webbind/PresentationConnection.hpp>
+#include "webbind/PresentationConnection.hpp"
 
+namespace webbind {
 
 PresentationConnection PresentationConnection::take_ownership(Handle h) noexcept {
         return PresentationConnection(h);
@@ -8,7 +9,6 @@ PresentationConnection PresentationConnection::clone() const noexcept { return *
 emlite::Val PresentationConnection::instance() noexcept { return emlite::Val::global("PresentationConnection"); }
 PresentationConnection::PresentationConnection(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PresentationConnection::PresentationConnection(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String PresentationConnection::id() const {
     return EventTarget::get("id").as<jsbind::String>();
@@ -74,3 +74,5 @@ jsbind::Undefined PresentationConnection::send(const jsbind::Any& data) {
     return EventTarget::call("send", data).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

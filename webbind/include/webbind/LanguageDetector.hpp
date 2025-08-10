@@ -3,72 +3,23 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "LanguageDetectorCreateOptions.hpp"
+#include "LanguageDetectorCreateCoreOptions.hpp"
+#include "LanguageDetectionResult.hpp"
+#include "LanguageDetectorDetectOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class LanguageDetector;
-class LanguageDetectorCreateOptions;
-class LanguageDetectorCreateCoreOptions;
-class LanguageDetectionResult;
-class LanguageDetectorDetectOptions;
-class AbortSignal;
 
-
-class LanguageDetectorCreateOptions : public emlite::Val {
-  explicit LanguageDetectorCreateOptions(Handle h) noexcept;
-public:
-    static LanguageDetectorCreateOptions take_ownership(Handle h) noexcept;
-    explicit LanguageDetectorCreateOptions(const emlite::Val &val) noexcept;
-    LanguageDetectorCreateOptions() noexcept;
-    [[nodiscard]] LanguageDetectorCreateOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-    [[nodiscard]] jsbind::Function monitor() const;
-    void monitor(const jsbind::Function& value);
-};
-
-class LanguageDetectorCreateCoreOptions : public emlite::Val {
-  explicit LanguageDetectorCreateCoreOptions(Handle h) noexcept;
-public:
-    static LanguageDetectorCreateCoreOptions take_ownership(Handle h) noexcept;
-    explicit LanguageDetectorCreateCoreOptions(const emlite::Val &val) noexcept;
-    LanguageDetectorCreateCoreOptions() noexcept;
-    [[nodiscard]] LanguageDetectorCreateCoreOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
-    void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
-};
-
-class LanguageDetectionResult : public emlite::Val {
-  explicit LanguageDetectionResult(Handle h) noexcept;
-public:
-    static LanguageDetectionResult take_ownership(Handle h) noexcept;
-    explicit LanguageDetectionResult(const emlite::Val &val) noexcept;
-    LanguageDetectionResult() noexcept;
-    [[nodiscard]] LanguageDetectionResult clone() const noexcept;
-    [[nodiscard]] jsbind::String detectedLanguage() const;
-    void detectedLanguage(const jsbind::String& value);
-    [[nodiscard]] double confidence() const;
-    void confidence(double value);
-};
-
-class LanguageDetectorDetectOptions : public emlite::Val {
-  explicit LanguageDetectorDetectOptions(Handle h) noexcept;
-public:
-    static LanguageDetectorDetectOptions take_ownership(Handle h) noexcept;
-    explicit LanguageDetectorDetectOptions(const emlite::Val &val) noexcept;
-    LanguageDetectorDetectOptions() noexcept;
-    [[nodiscard]] LanguageDetectorDetectOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-/// The LanguageDetector class.
+/// Interface LanguageDetector
 /// [`LanguageDetector`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector)
 class LanguageDetector : public emlite::Val {
     explicit LanguageDetector(Handle h) noexcept;
-
 public:
     explicit LanguageDetector(const emlite::Val &val) noexcept;
     static LanguageDetector take_ownership(Handle h) noexcept;
-
     [[nodiscard]] LanguageDetector clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
@@ -106,3 +57,4 @@ public:
     jsbind::Undefined destroy();
 };
 
+} // namespace webbind

@@ -1,6 +1,8 @@
-#include <webbind/TouchEvent.hpp>
-#include <webbind/TouchList.hpp>
+#include "webbind/TouchEvent.hpp"
+#include "webbind/TouchEventInit.hpp"
+#include "webbind/TouchList.hpp"
 
+namespace webbind {
 
 TouchEvent TouchEvent::take_ownership(Handle h) noexcept {
         return TouchEvent(h);
@@ -10,10 +12,9 @@ emlite::Val TouchEvent::instance() noexcept { return emlite::Val::global("TouchE
 TouchEvent::TouchEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
 TouchEvent::TouchEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
-
 TouchEvent::TouchEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("TouchEvent").new_(type)) {}
 
-TouchEvent::TouchEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : UIEvent(emlite::Val::global("TouchEvent").new_(type, eventInitDict)) {}
+TouchEvent::TouchEvent(const jsbind::String& type, const TouchEventInit& eventInitDict) : UIEvent(emlite::Val::global("TouchEvent").new_(type, eventInitDict)) {}
 
 TouchList TouchEvent::touches() const {
     return UIEvent::get("touches").as<TouchList>();
@@ -47,3 +48,5 @@ bool TouchEvent::getModifierState(const jsbind::String& keyArg) {
     return UIEvent::call("getModifierState", keyArg).as<bool>();
 }
 
+
+} // namespace webbind

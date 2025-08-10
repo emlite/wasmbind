@@ -1,167 +1,18 @@
-#include <webbind/XRSession.hpp>
-#include <webbind/XRRenderState.hpp>
-#include <webbind/XRInputSourceArray.hpp>
-#include <webbind/XRReferenceSpace.hpp>
-#include <webbind/XRAnchor.hpp>
-#include <webbind/XRHitTestSource.hpp>
-#include <webbind/XRTransientInputHitTestSource.hpp>
-#include <webbind/XRLightProbe.hpp>
-#include <webbind/XRRay.hpp>
-#include <webbind/XRWebGLLayer.hpp>
-#include <webbind/XRRigidTransform.hpp>
+#include "webbind/XRSession.hpp"
+#include "webbind/XRRenderState.hpp"
+#include "webbind/XRInputSourceArray.hpp"
+#include "webbind/XRRenderStateInit.hpp"
+#include "webbind/XRReferenceSpace.hpp"
+#include "webbind/XRAnchor.hpp"
+#include "webbind/XRDOMOverlayState.hpp"
+#include "webbind/XRHitTestSource.hpp"
+#include "webbind/XRHitTestOptionsInit.hpp"
+#include "webbind/XRTransientInputHitTestSource.hpp"
+#include "webbind/XRTransientInputHitTestOptionsInit.hpp"
+#include "webbind/XRLightProbe.hpp"
+#include "webbind/XRLightProbeInit.hpp"
 
-
-XRRenderStateInit::XRRenderStateInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRRenderStateInit XRRenderStateInit::take_ownership(Handle h) noexcept {
-        return XRRenderStateInit(h);
-    }
-XRRenderStateInit::XRRenderStateInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-XRRenderStateInit::XRRenderStateInit() noexcept: emlite::Val(emlite::Val::object()) {}
-XRRenderStateInit XRRenderStateInit::clone() const noexcept { return *this; }
-
-double XRRenderStateInit::depthNear() const {
-    return emlite::Val::get("depthNear").as<double>();
-}
-
-void XRRenderStateInit::depthNear(double value) {
-    emlite::Val::set("depthNear", value);
-}
-
-double XRRenderStateInit::depthFar() const {
-    return emlite::Val::get("depthFar").as<double>();
-}
-
-void XRRenderStateInit::depthFar(double value) {
-    emlite::Val::set("depthFar", value);
-}
-
-bool XRRenderStateInit::passthroughFullyObscured() const {
-    return emlite::Val::get("passthroughFullyObscured").as<bool>();
-}
-
-void XRRenderStateInit::passthroughFullyObscured(bool value) {
-    emlite::Val::set("passthroughFullyObscured", value);
-}
-
-double XRRenderStateInit::inlineVerticalFieldOfView() const {
-    return emlite::Val::get("inlineVerticalFieldOfView").as<double>();
-}
-
-void XRRenderStateInit::inlineVerticalFieldOfView(double value) {
-    emlite::Val::set("inlineVerticalFieldOfView", value);
-}
-
-XRWebGLLayer XRRenderStateInit::baseLayer() const {
-    return emlite::Val::get("baseLayer").as<XRWebGLLayer>();
-}
-
-void XRRenderStateInit::baseLayer(const XRWebGLLayer& value) {
-    emlite::Val::set("baseLayer", value);
-}
-
-jsbind::TypedArray<XRLayer> XRRenderStateInit::layers() const {
-    return emlite::Val::get("layers").as<jsbind::TypedArray<XRLayer>>();
-}
-
-void XRRenderStateInit::layers(const jsbind::TypedArray<XRLayer>& value) {
-    emlite::Val::set("layers", value);
-}
-
-XRDOMOverlayState::XRDOMOverlayState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRDOMOverlayState XRDOMOverlayState::take_ownership(Handle h) noexcept {
-        return XRDOMOverlayState(h);
-    }
-XRDOMOverlayState::XRDOMOverlayState(const emlite::Val &val) noexcept: emlite::Val(val) {}
-XRDOMOverlayState::XRDOMOverlayState() noexcept: emlite::Val(emlite::Val::object()) {}
-XRDOMOverlayState XRDOMOverlayState::clone() const noexcept { return *this; }
-
-XRDOMOverlayType XRDOMOverlayState::type() const {
-    return emlite::Val::get("type").as<XRDOMOverlayType>();
-}
-
-void XRDOMOverlayState::type(const XRDOMOverlayType& value) {
-    emlite::Val::set("type", value);
-}
-
-XRHitTestOptionsInit::XRHitTestOptionsInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRHitTestOptionsInit XRHitTestOptionsInit::take_ownership(Handle h) noexcept {
-        return XRHitTestOptionsInit(h);
-    }
-XRHitTestOptionsInit::XRHitTestOptionsInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-XRHitTestOptionsInit::XRHitTestOptionsInit() noexcept: emlite::Val(emlite::Val::object()) {}
-XRHitTestOptionsInit XRHitTestOptionsInit::clone() const noexcept { return *this; }
-
-XRSpace XRHitTestOptionsInit::space() const {
-    return emlite::Val::get("space").as<XRSpace>();
-}
-
-void XRHitTestOptionsInit::space(const XRSpace& value) {
-    emlite::Val::set("space", value);
-}
-
-jsbind::TypedArray<XRHitTestTrackableType> XRHitTestOptionsInit::entityTypes() const {
-    return emlite::Val::get("entityTypes").as<jsbind::TypedArray<XRHitTestTrackableType>>();
-}
-
-void XRHitTestOptionsInit::entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value) {
-    emlite::Val::set("entityTypes", value);
-}
-
-XRRay XRHitTestOptionsInit::offsetRay() const {
-    return emlite::Val::get("offsetRay").as<XRRay>();
-}
-
-void XRHitTestOptionsInit::offsetRay(const XRRay& value) {
-    emlite::Val::set("offsetRay", value);
-}
-
-XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRTransientInputHitTestOptionsInit XRTransientInputHitTestOptionsInit::take_ownership(Handle h) noexcept {
-        return XRTransientInputHitTestOptionsInit(h);
-    }
-XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit() noexcept: emlite::Val(emlite::Val::object()) {}
-XRTransientInputHitTestOptionsInit XRTransientInputHitTestOptionsInit::clone() const noexcept { return *this; }
-
-jsbind::String XRTransientInputHitTestOptionsInit::profile() const {
-    return emlite::Val::get("profile").as<jsbind::String>();
-}
-
-void XRTransientInputHitTestOptionsInit::profile(const jsbind::String& value) {
-    emlite::Val::set("profile", value);
-}
-
-jsbind::TypedArray<XRHitTestTrackableType> XRTransientInputHitTestOptionsInit::entityTypes() const {
-    return emlite::Val::get("entityTypes").as<jsbind::TypedArray<XRHitTestTrackableType>>();
-}
-
-void XRTransientInputHitTestOptionsInit::entityTypes(const jsbind::TypedArray<XRHitTestTrackableType>& value) {
-    emlite::Val::set("entityTypes", value);
-}
-
-XRRay XRTransientInputHitTestOptionsInit::offsetRay() const {
-    return emlite::Val::get("offsetRay").as<XRRay>();
-}
-
-void XRTransientInputHitTestOptionsInit::offsetRay(const XRRay& value) {
-    emlite::Val::set("offsetRay", value);
-}
-
-XRLightProbeInit::XRLightProbeInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRLightProbeInit XRLightProbeInit::take_ownership(Handle h) noexcept {
-        return XRLightProbeInit(h);
-    }
-XRLightProbeInit::XRLightProbeInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
-XRLightProbeInit::XRLightProbeInit() noexcept: emlite::Val(emlite::Val::object()) {}
-XRLightProbeInit XRLightProbeInit::clone() const noexcept { return *this; }
-
-XRReflectionFormat XRLightProbeInit::reflectionFormat() const {
-    return emlite::Val::get("reflectionFormat").as<XRReflectionFormat>();
-}
-
-void XRLightProbeInit::reflectionFormat(const XRReflectionFormat& value) {
-    emlite::Val::set("reflectionFormat", value);
-}
+namespace webbind {
 
 XRSession XRSession::take_ownership(Handle h) noexcept {
         return XRSession(h);
@@ -170,7 +21,6 @@ XRSession XRSession::clone() const noexcept { return *this; }
 emlite::Val XRSession::instance() noexcept { return emlite::Val::global("XRSession"); }
 XRSession::XRSession(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 XRSession::XRSession(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 XRVisibilityState XRSession::visibilityState() const {
     return EventTarget::get("visibilityState").as<XRVisibilityState>();
@@ -384,3 +234,5 @@ jsbind::Promise<jsbind::Undefined> XRSession::initiateRoomCapture() {
     return EventTarget::call("initiateRoomCapture").as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

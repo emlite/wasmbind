@@ -1,5 +1,6 @@
-#include <webbind/TrustedScript.hpp>
+#include "webbind/TrustedScript.hpp"
 
+namespace webbind {
 
 TrustedScript TrustedScript::take_ownership(Handle h) noexcept {
         return TrustedScript(h);
@@ -9,8 +10,9 @@ emlite::Val TrustedScript::instance() noexcept { return emlite::Val::global("Tru
 TrustedScript::TrustedScript(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TrustedScript::TrustedScript(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 jsbind::String TrustedScript::toJSON() {
     return emlite::Val::call("toJSON").as<jsbind::String>();
 }
 
+
+} // namespace webbind

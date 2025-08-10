@@ -1,6 +1,7 @@
-#include <webbind/SubtleCrypto.hpp>
-#include <webbind/CryptoKey.hpp>
+#include "webbind/SubtleCrypto.hpp"
+#include "webbind/CryptoKey.hpp"
 
+namespace webbind {
 
 SubtleCrypto SubtleCrypto::take_ownership(Handle h) noexcept {
         return SubtleCrypto(h);
@@ -9,7 +10,6 @@ SubtleCrypto SubtleCrypto::clone() const noexcept { return *this; }
 emlite::Val SubtleCrypto::instance() noexcept { return emlite::Val::global("SubtleCrypto"); }
 SubtleCrypto::SubtleCrypto(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SubtleCrypto::SubtleCrypto(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<jsbind::ArrayBuffer> SubtleCrypto::encrypt(const jsbind::Any& algorithm, const CryptoKey& key, const jsbind::Any& data) {
     return emlite::Val::call("encrypt", algorithm, key, data).as<jsbind::Promise<jsbind::ArrayBuffer>>();
@@ -63,3 +63,5 @@ jsbind::Promise<CryptoKey> SubtleCrypto::unwrapKey(const KeyFormat& format, cons
     return emlite::Val::call("unwrapKey", format, wrappedKey, unwrappingKey, unwrapAlgorithm, unwrappedKeyAlgorithm, extractable, keyUsages).as<jsbind::Promise<CryptoKey>>();
 }
 
+
+} // namespace webbind

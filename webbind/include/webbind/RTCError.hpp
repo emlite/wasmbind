@@ -2,25 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "DOMException.hpp"
+#include "RTCErrorInit.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The RTCError class.
+/// Interface RTCError
 /// [`RTCError`](https://developer.mozilla.org/en-US/docs/Web/API/RTCError)
 class RTCError : public DOMException {
     explicit RTCError(Handle h) noexcept;
-
 public:
     explicit RTCError(const emlite::Val &val) noexcept;
     static RTCError take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCError(..)` constructor, creating a new RTCError instance
-    RTCError(const jsbind::Any& init);
+    RTCError(const RTCErrorInit& init);
     /// The `new RTCError(..)` constructor, creating a new RTCError instance
-    RTCError(const jsbind::Any& init, const jsbind::String& message);
+    RTCError(const RTCErrorInit& init, const jsbind::String& message);
     /// Getter of the `errorDetail` attribute.
     /// [`RTCError.errorDetail`](https://developer.mozilla.org/en-US/docs/Web/API/RTCError/errorDetail)
     [[nodiscard]] RTCErrorDetailType errorDetail() const;
@@ -41,3 +42,4 @@ public:
     [[nodiscard]] long httpRequestStatusCode() const;
 };
 
+} // namespace webbind

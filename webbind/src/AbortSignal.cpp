@@ -1,5 +1,7 @@
-#include <webbind/AbortSignal.hpp>
+#include "webbind/AbortSignal.hpp"
+#include "webbind/AbortSignal.hpp"
 
+namespace webbind {
 
 AbortSignal AbortSignal::take_ownership(Handle h) noexcept {
         return AbortSignal(h);
@@ -8,7 +10,6 @@ AbortSignal AbortSignal::clone() const noexcept { return *this; }
 emlite::Val AbortSignal::instance() noexcept { return emlite::Val::global("AbortSignal"); }
 AbortSignal::AbortSignal(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 AbortSignal::AbortSignal(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 AbortSignal AbortSignal::abort() {
     return emlite::Val::global("abortsignal").call("abort").as<AbortSignal>();
@@ -46,3 +47,5 @@ void AbortSignal::onabort(const jsbind::Any& value) {
     EventTarget::set("onabort", value);
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/BluetoothServiceDataMap.hpp>
+#include "webbind/BluetoothServiceDataMap.hpp"
 
+namespace webbind {
 
 BluetoothServiceDataMap BluetoothServiceDataMap::take_ownership(Handle h) noexcept {
         return BluetoothServiceDataMap(h);
@@ -10,3 +11,4 @@ BluetoothServiceDataMap::BluetoothServiceDataMap(Handle h) noexcept : emlite::Va
 BluetoothServiceDataMap::BluetoothServiceDataMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

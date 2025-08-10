@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The RTCIdentityAssertion class.
+/// Interface RTCIdentityAssertion
 /// [`RTCIdentityAssertion`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityAssertion)
 class RTCIdentityAssertion : public emlite::Val {
     explicit RTCIdentityAssertion(Handle h) noexcept;
-
 public:
     explicit RTCIdentityAssertion(const emlite::Val &val) noexcept;
     static RTCIdentityAssertion take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCIdentityAssertion clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCIdentityAssertion(..)` constructor, creating a new RTCIdentityAssertion instance
@@ -32,3 +31,4 @@ public:
     void name(const jsbind::String& value);
 };
 
+} // namespace webbind

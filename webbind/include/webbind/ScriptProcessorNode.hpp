@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "AudioNode.hpp"
 #include "enums.hpp"
+#include "AudioNode.hpp"
 
+namespace webbind {
 
-/// The ScriptProcessorNode class.
+/// Interface ScriptProcessorNode
 /// [`ScriptProcessorNode`](https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode)
 class ScriptProcessorNode : public AudioNode {
     explicit ScriptProcessorNode(Handle h) noexcept;
-
 public:
     explicit ScriptProcessorNode(const emlite::Val &val) noexcept;
     static ScriptProcessorNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ScriptProcessorNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onaudioprocess` attribute.
@@ -28,3 +27,4 @@ public:
     [[nodiscard]] long bufferSize() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/HTMLSpanElement.hpp>
+#include "webbind/HTMLSpanElement.hpp"
 
+namespace webbind {
 
 HTMLSpanElement HTMLSpanElement::take_ownership(Handle h) noexcept {
         return HTMLSpanElement(h);
@@ -9,6 +10,7 @@ emlite::Val HTMLSpanElement::instance() noexcept { return emlite::Val::global("H
 HTMLSpanElement::HTMLSpanElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLSpanElement::HTMLSpanElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
-
 HTMLSpanElement::HTMLSpanElement() : HTMLElement(emlite::Val::global("HTMLSpanElement").new_()) {}
 
+
+} // namespace webbind

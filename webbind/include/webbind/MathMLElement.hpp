@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Element.hpp"
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "Element.hpp"
+#include "FocusOptions.hpp"
+
+namespace webbind {
 
 class CSSStyleDeclaration;
 class DOMStringMap;
 
-
-/// The MathMLElement class.
+/// Interface MathMLElement
 /// [`MathMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement)
 class MathMLElement : public Element {
     explicit MathMLElement(Handle h) noexcept;
-
 public:
     explicit MathMLElement(const emlite::Val &val) noexcept;
     static MathMLElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MathMLElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `style` attribute.
@@ -62,3 +61,4 @@ public:
     jsbind::Undefined blur();
 };
 
+} // namespace webbind

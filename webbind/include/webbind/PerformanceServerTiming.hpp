@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PerformanceServerTiming class.
+/// Interface PerformanceServerTiming
 /// [`PerformanceServerTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming)
 class PerformanceServerTiming : public emlite::Val {
     explicit PerformanceServerTiming(Handle h) noexcept;
-
 public:
     explicit PerformanceServerTiming(const emlite::Val &val) noexcept;
     static PerformanceServerTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceServerTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -30,3 +29,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

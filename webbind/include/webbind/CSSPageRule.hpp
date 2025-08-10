@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSGroupingRule.hpp"
 #include "enums.hpp"
+#include "CSSGroupingRule.hpp"
+
+namespace webbind {
 
 class CSSPageDescriptors;
 
-
-/// The CSSPageRule class.
+/// Interface CSSPageRule
 /// [`CSSPageRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule)
 class CSSPageRule : public CSSGroupingRule {
     explicit CSSPageRule(Handle h) noexcept;
-
 public:
     explicit CSSPageRule(const emlite::Val &val) noexcept;
     static CSSPageRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSPageRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `selectorText` attribute.
@@ -30,3 +29,4 @@ public:
     [[nodiscard]] CSSPageDescriptors style() const;
 };
 
+} // namespace webbind

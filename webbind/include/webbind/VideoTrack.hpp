@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SourceBuffer;
 
-
-/// The VideoTrack class.
+/// Interface VideoTrack
 /// [`VideoTrack`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrack)
 class VideoTrack : public emlite::Val {
     explicit VideoTrack(Handle h) noexcept;
-
 public:
     explicit VideoTrack(const emlite::Val &val) noexcept;
     static VideoTrack take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VideoTrack clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -41,3 +40,4 @@ public:
     [[nodiscard]] SourceBuffer sourceBuffer() const;
 };
 
+} // namespace webbind

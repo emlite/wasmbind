@@ -1,5 +1,6 @@
-#include <webbind/CSSImageValue.hpp>
+#include "webbind/CSSImageValue.hpp"
 
+namespace webbind {
 
 CSSImageValue CSSImageValue::take_ownership(Handle h) noexcept {
         return CSSImageValue(h);
@@ -10,3 +11,4 @@ CSSImageValue::CSSImageValue(Handle h) noexcept : CSSStyleValue(emlite::Val::tak
 CSSImageValue::CSSImageValue(const emlite::Val &val) noexcept: CSSStyleValue(val) {}
 
 
+} // namespace webbind

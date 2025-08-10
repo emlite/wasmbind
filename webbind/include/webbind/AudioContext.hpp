@@ -2,10 +2,13 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "BaseAudioContext.hpp"
 #include "enums.hpp"
+#include "BaseAudioContext.hpp"
+#include "AudioContextOptions.hpp"
+#include "AudioTimestamp.hpp"
 
-class AudioTimestamp;
+namespace webbind {
+
 class MediaElementAudioSourceNode;
 class HTMLMediaElement;
 class MediaStreamAudioSourceNode;
@@ -14,35 +17,19 @@ class MediaStreamTrackAudioSourceNode;
 class MediaStreamTrack;
 class MediaStreamAudioDestinationNode;
 
-
-class AudioTimestamp : public emlite::Val {
-  explicit AudioTimestamp(Handle h) noexcept;
-public:
-    static AudioTimestamp take_ownership(Handle h) noexcept;
-    explicit AudioTimestamp(const emlite::Val &val) noexcept;
-    AudioTimestamp() noexcept;
-    [[nodiscard]] AudioTimestamp clone() const noexcept;
-    [[nodiscard]] double contextTime() const;
-    void contextTime(double value);
-    [[nodiscard]] jsbind::Any performanceTime() const;
-    void performanceTime(const jsbind::Any& value);
-};
-
-/// The AudioContext class.
+/// Interface AudioContext
 /// [`AudioContext`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext)
 class AudioContext : public BaseAudioContext {
     explicit AudioContext(Handle h) noexcept;
-
 public:
     explicit AudioContext(const emlite::Val &val) noexcept;
     static AudioContext take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioContext(..)` constructor, creating a new AudioContext instance
     AudioContext();
     /// The `new AudioContext(..)` constructor, creating a new AudioContext instance
-    AudioContext(const jsbind::Any& contextOptions);
+    AudioContext(const AudioContextOptions& contextOptions);
     /// Getter of the `baseLatency` attribute.
     /// [`AudioContext.baseLatency`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/baseLatency)
     [[nodiscard]] double baseLatency() const;
@@ -93,3 +80,4 @@ public:
     MediaStreamAudioDestinationNode createMediaStreamDestination();
 };
 
+} // namespace webbind

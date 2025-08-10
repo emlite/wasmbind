@@ -1,146 +1,41 @@
-#include <webbind/Window.hpp>
-#include <webbind/Document.hpp>
-#include <webbind/Location.hpp>
-#include <webbind/History.hpp>
-#include <webbind/Navigation.hpp>
-#include <webbind/CustomElementRegistry.hpp>
-#include <webbind/BarProp.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/Navigator.hpp>
-#include <webbind/CookieStore.hpp>
-#include <webbind/Viewport.hpp>
-#include <webbind/MediaQueryList.hpp>
-#include <webbind/Screen.hpp>
-#include <webbind/VisualViewport.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
-#include <webbind/DigitalGoodsService.hpp>
-#include <webbind/DocumentPictureInPicture.hpp>
-#include <webbind/Fence.hpp>
-#include <webbind/FileSystemFileHandle.hpp>
-#include <webbind/FileSystemDirectoryHandle.hpp>
-#include <webbind/External.hpp>
-#include <webbind/FontData.hpp>
-#include <webbind/PortalHost.hpp>
-#include <webbind/Selection.hpp>
-#include <webbind/SharedStorage.hpp>
-#include <webbind/SpeechSynthesis.hpp>
-#include <webbind/LaunchQueue.hpp>
-#include <webbind/ScreenDetails.hpp>
-#include <webbind/Crypto.hpp>
-#include <webbind/Storage.hpp>
+#include "webbind/Window.hpp"
+#include "webbind/Document.hpp"
+#include "webbind/Location.hpp"
+#include "webbind/History.hpp"
+#include "webbind/Navigation.hpp"
+#include "webbind/CustomElementRegistry.hpp"
+#include "webbind/BarProp.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/Navigator.hpp"
+#include "webbind/WindowPostMessageOptions.hpp"
+#include "webbind/CookieStore.hpp"
+#include "webbind/Viewport.hpp"
+#include "webbind/MediaQueryList.hpp"
+#include "webbind/Screen.hpp"
+#include "webbind/VisualViewport.hpp"
+#include "webbind/CSSStyleDeclaration.hpp"
+#include "webbind/DigitalGoodsService.hpp"
+#include "webbind/DocumentPictureInPicture.hpp"
+#include "webbind/Fence.hpp"
+#include "webbind/FileSystemFileHandle.hpp"
+#include "webbind/OpenFilePickerOptions.hpp"
+#include "webbind/SaveFilePickerOptions.hpp"
+#include "webbind/FileSystemDirectoryHandle.hpp"
+#include "webbind/DirectoryPickerOptions.hpp"
+#include "webbind/External.hpp"
+#include "webbind/FontData.hpp"
+#include "webbind/QueryOptions.hpp"
+#include "webbind/PortalHost.hpp"
+#include "webbind/IdleRequestOptions.hpp"
+#include "webbind/Selection.hpp"
+#include "webbind/SharedStorage.hpp"
+#include "webbind/SpeechSynthesis.hpp"
+#include "webbind/LaunchQueue.hpp"
+#include "webbind/ScreenDetails.hpp"
+#include "webbind/Crypto.hpp"
+#include "webbind/Storage.hpp"
 
-
-WindowPostMessageOptions::WindowPostMessageOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WindowPostMessageOptions WindowPostMessageOptions::take_ownership(Handle h) noexcept {
-        return WindowPostMessageOptions(h);
-    }
-WindowPostMessageOptions::WindowPostMessageOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-WindowPostMessageOptions::WindowPostMessageOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-WindowPostMessageOptions WindowPostMessageOptions::clone() const noexcept { return *this; }
-
-jsbind::String WindowPostMessageOptions::targetOrigin() const {
-    return emlite::Val::get("targetOrigin").as<jsbind::String>();
-}
-
-void WindowPostMessageOptions::targetOrigin(const jsbind::String& value) {
-    emlite::Val::set("targetOrigin", value);
-}
-
-OpenFilePickerOptions::OpenFilePickerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OpenFilePickerOptions OpenFilePickerOptions::take_ownership(Handle h) noexcept {
-        return OpenFilePickerOptions(h);
-    }
-OpenFilePickerOptions::OpenFilePickerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-OpenFilePickerOptions::OpenFilePickerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-OpenFilePickerOptions OpenFilePickerOptions::clone() const noexcept { return *this; }
-
-bool OpenFilePickerOptions::multiple() const {
-    return emlite::Val::get("multiple").as<bool>();
-}
-
-void OpenFilePickerOptions::multiple(bool value) {
-    emlite::Val::set("multiple", value);
-}
-
-SaveFilePickerOptions::SaveFilePickerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SaveFilePickerOptions SaveFilePickerOptions::take_ownership(Handle h) noexcept {
-        return SaveFilePickerOptions(h);
-    }
-SaveFilePickerOptions::SaveFilePickerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SaveFilePickerOptions::SaveFilePickerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SaveFilePickerOptions SaveFilePickerOptions::clone() const noexcept { return *this; }
-
-jsbind::String SaveFilePickerOptions::suggestedName() const {
-    return emlite::Val::get("suggestedName").as<jsbind::String>();
-}
-
-void SaveFilePickerOptions::suggestedName(const jsbind::String& value) {
-    emlite::Val::set("suggestedName", value);
-}
-
-DirectoryPickerOptions::DirectoryPickerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DirectoryPickerOptions DirectoryPickerOptions::take_ownership(Handle h) noexcept {
-        return DirectoryPickerOptions(h);
-    }
-DirectoryPickerOptions::DirectoryPickerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-DirectoryPickerOptions::DirectoryPickerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-DirectoryPickerOptions DirectoryPickerOptions::clone() const noexcept { return *this; }
-
-jsbind::String DirectoryPickerOptions::id() const {
-    return emlite::Val::get("id").as<jsbind::String>();
-}
-
-void DirectoryPickerOptions::id(const jsbind::String& value) {
-    emlite::Val::set("id", value);
-}
-
-jsbind::Any DirectoryPickerOptions::startIn() const {
-    return emlite::Val::get("startIn").as<jsbind::Any>();
-}
-
-void DirectoryPickerOptions::startIn(const jsbind::Any& value) {
-    emlite::Val::set("startIn", value);
-}
-
-FileSystemPermissionMode DirectoryPickerOptions::mode() const {
-    return emlite::Val::get("mode").as<FileSystemPermissionMode>();
-}
-
-void DirectoryPickerOptions::mode(const FileSystemPermissionMode& value) {
-    emlite::Val::set("mode", value);
-}
-
-QueryOptions::QueryOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-QueryOptions QueryOptions::take_ownership(Handle h) noexcept {
-        return QueryOptions(h);
-    }
-QueryOptions::QueryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-QueryOptions::QueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-QueryOptions QueryOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::String> QueryOptions::postscriptNames() const {
-    return emlite::Val::get("postscriptNames").as<jsbind::TypedArray<jsbind::String>>();
-}
-
-void QueryOptions::postscriptNames(const jsbind::TypedArray<jsbind::String>& value) {
-    emlite::Val::set("postscriptNames", value);
-}
-
-IdleRequestOptions::IdleRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IdleRequestOptions IdleRequestOptions::take_ownership(Handle h) noexcept {
-        return IdleRequestOptions(h);
-    }
-IdleRequestOptions::IdleRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-IdleRequestOptions::IdleRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-IdleRequestOptions IdleRequestOptions::clone() const noexcept { return *this; }
-
-unsigned long IdleRequestOptions::timeout() const {
-    return emlite::Val::get("timeout").as<unsigned long>();
-}
-
-void IdleRequestOptions::timeout(unsigned long value) {
-    emlite::Val::set("timeout", value);
-}
+namespace webbind {
 
 Window Window::take_ownership(Handle h) noexcept {
         return Window(h);
@@ -149,7 +44,6 @@ Window Window::clone() const noexcept { return *this; }
 emlite::Val Window::instance() noexcept { return emlite::Val::global("Window"); }
 Window::Window(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Window::Window(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Any Window::window() const {
     return EventTarget::get("window").as<jsbind::Any>();
@@ -171,8 +65,8 @@ void Window::name(const jsbind::String& value) {
     EventTarget::set("name", value);
 }
 
-jsbind::Any Window::location() const {
-    return EventTarget::get("location").as<jsbind::Any>();
+Location Window::location() const {
+    return EventTarget::get("location").as<Location>();
 }
 
 History Window::history() const {
@@ -631,3 +525,5 @@ Storage Window::localStorage() const {
     return EventTarget::get("localStorage").as<Storage>();
 }
 
+
+} // namespace webbind

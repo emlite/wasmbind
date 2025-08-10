@@ -2,25 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "BlobEventInit.hpp"
+
+namespace webbind {
 
 class Blob;
 
-
-/// The BlobEvent class.
+/// Interface BlobEvent
 /// [`BlobEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent)
 class BlobEvent : public Event {
     explicit BlobEvent(Handle h) noexcept;
-
 public:
     explicit BlobEvent(const emlite::Val &val) noexcept;
     static BlobEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BlobEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BlobEvent(..)` constructor, creating a new BlobEvent instance
-    BlobEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    BlobEvent(const jsbind::String& type, const BlobEventInit& eventInitDict);
     /// Getter of the `data` attribute.
     /// [`BlobEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/data)
     [[nodiscard]] Blob data() const;
@@ -29,3 +29,4 @@ public:
     [[nodiscard]] jsbind::Any timecode() const;
 };
 
+} // namespace webbind

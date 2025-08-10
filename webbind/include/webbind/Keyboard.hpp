@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class KeyboardLayoutMap;
 
-
-/// The Keyboard class.
+/// Interface Keyboard
 /// [`Keyboard`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard)
 class Keyboard : public EventTarget {
     explicit Keyboard(Handle h) noexcept;
-
 public:
     explicit Keyboard(const emlite::Val &val) noexcept;
     static Keyboard take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Keyboard clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The lock method.
@@ -39,3 +38,4 @@ public:
     void onlayoutchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

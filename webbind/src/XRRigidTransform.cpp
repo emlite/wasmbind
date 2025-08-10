@@ -1,6 +1,9 @@
-#include <webbind/XRRigidTransform.hpp>
-#include <webbind/DOMPointReadOnly.hpp>
+#include "webbind/XRRigidTransform.hpp"
+#include "webbind/DOMPointInit.hpp"
+#include "webbind/DOMPointReadOnly.hpp"
+#include "webbind/XRRigidTransform.hpp"
 
+namespace webbind {
 
 XRRigidTransform XRRigidTransform::take_ownership(Handle h) noexcept {
         return XRRigidTransform(h);
@@ -9,7 +12,6 @@ XRRigidTransform XRRigidTransform::clone() const noexcept { return *this; }
 emlite::Val XRRigidTransform::instance() noexcept { return emlite::Val::global("XRRigidTransform"); }
 XRRigidTransform::XRRigidTransform(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRRigidTransform::XRRigidTransform(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 XRRigidTransform::XRRigidTransform() : emlite::Val(emlite::Val::global("XRRigidTransform").new_()) {}
 
@@ -33,3 +35,5 @@ XRRigidTransform XRRigidTransform::inverse() const {
     return emlite::Val::get("inverse").as<XRRigidTransform>();
 }
 
+
+} // namespace webbind

@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "XRDepthInformation.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class WebGLTexture;
 
-
-/// The XRWebGLDepthInformation class.
+/// Interface XRWebGLDepthInformation
 /// [`XRWebGLDepthInformation`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation)
 class XRWebGLDepthInformation : public XRDepthInformation {
     explicit XRWebGLDepthInformation(Handle h) noexcept;
-
 public:
     explicit XRWebGLDepthInformation(const emlite::Val &val) noexcept;
     static XRWebGLDepthInformation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRWebGLDepthInformation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `texture` attribute.
@@ -30,3 +30,4 @@ public:
     [[nodiscard]] unsigned long imageIndex() const;
 };
 
+} // namespace webbind

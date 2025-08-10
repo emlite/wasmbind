@@ -1,5 +1,8 @@
-#include <webbind/NDEFRecord.hpp>
+#include "webbind/NDEFRecord.hpp"
+#include "webbind/NDEFRecordInit.hpp"
+#include "webbind/NDEFRecord.hpp"
 
+namespace webbind {
 
 NDEFRecord NDEFRecord::take_ownership(Handle h) noexcept {
         return NDEFRecord(h);
@@ -9,8 +12,7 @@ emlite::Val NDEFRecord::instance() noexcept { return emlite::Val::global("NDEFRe
 NDEFRecord::NDEFRecord(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NDEFRecord::NDEFRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
-NDEFRecord::NDEFRecord(const jsbind::Any& recordInit) : emlite::Val(emlite::Val::global("NDEFRecord").new_(recordInit)) {}
+NDEFRecord::NDEFRecord(const NDEFRecordInit& recordInit) : emlite::Val(emlite::Val::global("NDEFRecord").new_(recordInit)) {}
 
 jsbind::String NDEFRecord::recordType() const {
     return emlite::Val::get("recordType").as<jsbind::String>();
@@ -40,3 +42,5 @@ jsbind::TypedArray<NDEFRecord> NDEFRecord::toRecords() {
     return emlite::Val::call("toRecords").as<jsbind::TypedArray<NDEFRecord>>();
 }
 
+
+} // namespace webbind

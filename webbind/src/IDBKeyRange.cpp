@@ -1,5 +1,7 @@
-#include <webbind/IDBKeyRange.hpp>
+#include "webbind/IDBKeyRange.hpp"
+#include "webbind/IDBKeyRange.hpp"
 
+namespace webbind {
 
 IDBKeyRange IDBKeyRange::take_ownership(Handle h) noexcept {
         return IDBKeyRange(h);
@@ -8,7 +10,6 @@ IDBKeyRange IDBKeyRange::clone() const noexcept { return *this; }
 emlite::Val IDBKeyRange::instance() noexcept { return emlite::Val::global("IDBKeyRange"); }
 IDBKeyRange::IDBKeyRange(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBKeyRange::IDBKeyRange(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Any IDBKeyRange::lower() const {
     return emlite::Val::get("lower").as<jsbind::Any>();
@@ -62,3 +63,5 @@ bool IDBKeyRange::includes(const jsbind::Any& key) {
     return emlite::Val::call("includes", key).as<bool>();
 }
 
+
+} // namespace webbind

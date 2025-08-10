@@ -2,26 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
-#include "MessagePort.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "WorkerOptions.hpp"
+#include "StructuredSerializeOptions.hpp"
 
+namespace webbind {
 
-/// The Worker class.
+/// Interface Worker
 /// [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Worker)
 class Worker : public EventTarget {
     explicit Worker(Handle h) noexcept;
-
 public:
     explicit Worker(const emlite::Val &val) noexcept;
     static Worker take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Worker clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Worker(..)` constructor, creating a new Worker instance
     Worker(const jsbind::Any& scriptURL);
     /// The `new Worker(..)` constructor, creating a new Worker instance
-    Worker(const jsbind::Any& scriptURL, const jsbind::Any& options);
+    Worker(const jsbind::Any& scriptURL, const WorkerOptions& options);
     /// The terminate method.
     /// [`Worker.terminate`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/terminate)
     jsbind::Undefined terminate();
@@ -51,3 +51,4 @@ public:
     void onmessageerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

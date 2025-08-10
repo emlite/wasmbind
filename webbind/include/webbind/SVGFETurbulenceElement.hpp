@@ -2,8 +2,10 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedNumber;
 class SVGAnimatedInteger;
@@ -11,16 +13,13 @@ class SVGAnimatedEnumeration;
 class SVGAnimatedLength;
 class SVGAnimatedString;
 
-
-/// The SVGFETurbulenceElement class.
+/// Interface SVGFETurbulenceElement
 /// [`SVGFETurbulenceElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFETurbulenceElement)
 class SVGFETurbulenceElement : public SVGElement {
     explicit SVGFETurbulenceElement(Handle h) noexcept;
-
 public:
     explicit SVGFETurbulenceElement(const emlite::Val &val) noexcept;
     static SVGFETurbulenceElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFETurbulenceElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseFrequencyX` attribute.
@@ -58,3 +57,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

@@ -1,6 +1,7 @@
-#include <webbind/VirtualKeyboard.hpp>
-#include <webbind/DOMRect.hpp>
+#include "webbind/VirtualKeyboard.hpp"
+#include "webbind/DOMRect.hpp"
 
+namespace webbind {
 
 VirtualKeyboard VirtualKeyboard::take_ownership(Handle h) noexcept {
         return VirtualKeyboard(h);
@@ -9,7 +10,6 @@ VirtualKeyboard VirtualKeyboard::clone() const noexcept { return *this; }
 emlite::Val VirtualKeyboard::instance() noexcept { return emlite::Val::global("VirtualKeyboard"); }
 VirtualKeyboard::VirtualKeyboard(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 VirtualKeyboard::VirtualKeyboard(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Undefined VirtualKeyboard::show() {
     return EventTarget::call("show").as<jsbind::Undefined>();
@@ -39,3 +39,5 @@ void VirtualKeyboard::ongeometrychange(const jsbind::Any& value) {
     EventTarget::set("ongeometrychange", value);
 }
 
+
+} // namespace webbind

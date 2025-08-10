@@ -1,9 +1,10 @@
-#include <webbind/SVGFEGaussianBlurElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEGaussianBlurElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEGaussianBlurElement SVGFEGaussianBlurElement::take_ownership(Handle h) noexcept {
         return SVGFEGaussianBlurElement(h);
@@ -12,7 +13,6 @@ SVGFEGaussianBlurElement SVGFEGaussianBlurElement::clone() const noexcept { retu
 emlite::Val SVGFEGaussianBlurElement::instance() noexcept { return emlite::Val::global("SVGFEGaussianBlurElement"); }
 SVGFEGaussianBlurElement::SVGFEGaussianBlurElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEGaussianBlurElement::SVGFEGaussianBlurElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEGaussianBlurElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -54,3 +54,5 @@ SVGAnimatedString SVGFEGaussianBlurElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

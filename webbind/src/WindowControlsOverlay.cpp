@@ -1,6 +1,7 @@
-#include <webbind/WindowControlsOverlay.hpp>
-#include <webbind/DOMRect.hpp>
+#include "webbind/WindowControlsOverlay.hpp"
+#include "webbind/DOMRect.hpp"
 
+namespace webbind {
 
 WindowControlsOverlay WindowControlsOverlay::take_ownership(Handle h) noexcept {
         return WindowControlsOverlay(h);
@@ -9,7 +10,6 @@ WindowControlsOverlay WindowControlsOverlay::clone() const noexcept { return *th
 emlite::Val WindowControlsOverlay::instance() noexcept { return emlite::Val::global("WindowControlsOverlay"); }
 WindowControlsOverlay::WindowControlsOverlay(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 WindowControlsOverlay::WindowControlsOverlay(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 bool WindowControlsOverlay::visible() const {
     return EventTarget::get("visible").as<bool>();
@@ -27,3 +27,5 @@ void WindowControlsOverlay::ongeometrychange(const jsbind::Any& value) {
     EventTarget::set("ongeometrychange", value);
 }
 
+
+} // namespace webbind

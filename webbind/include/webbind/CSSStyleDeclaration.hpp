@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class CSSRule;
 
-
-/// The CSSStyleDeclaration class.
+/// Interface CSSStyleDeclaration
 /// [`CSSStyleDeclaration`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration)
 class CSSStyleDeclaration : public emlite::Val {
     explicit CSSStyleDeclaration(Handle h) noexcept;
-
 public:
     explicit CSSStyleDeclaration(const emlite::Val &val) noexcept;
     static CSSStyleDeclaration take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSStyleDeclaration clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cssText` attribute.
@@ -50,3 +49,4 @@ public:
     [[nodiscard]] CSSRule parentRule() const;
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/WebGLShader.hpp>
+#include "webbind/WebGLShader.hpp"
 
+namespace webbind {
 
 WebGLShader WebGLShader::take_ownership(Handle h) noexcept {
         return WebGLShader(h);
@@ -10,3 +11,4 @@ WebGLShader::WebGLShader(Handle h) noexcept : WebGLObject(emlite::Val::take_owne
 WebGLShader::WebGLShader(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

@@ -3,22 +3,22 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class GPURenderBundle;
 class GPUBindGroup;
 class GPURenderPipeline;
 class GPUBuffer;
 
-
-/// The GPURenderPassEncoder class.
+/// Interface GPURenderPassEncoder
 /// [`GPURenderPassEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder)
 class GPURenderPassEncoder : public emlite::Val {
     explicit GPURenderPassEncoder(Handle h) noexcept;
-
 public:
     explicit GPURenderPassEncoder(const emlite::Val &val) noexcept;
     static GPURenderPassEncoder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPURenderPassEncoder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setViewport method.
@@ -119,3 +119,4 @@ public:
     jsbind::Undefined drawIndexedIndirect(const GPUBuffer& indirectBuffer, const jsbind::Any& indirectOffset);
 };
 
+} // namespace webbind

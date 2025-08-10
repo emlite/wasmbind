@@ -2,30 +2,30 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XRLayer.hpp"
 #include "enums.hpp"
+#include "XRLayer.hpp"
+#include "XRWebGLLayerInit.hpp"
 
+namespace webbind {
+
+class XRSession;
 class WebGLFramebuffer;
 class XRViewport;
 class XRView;
-class XRSession;
 
-
-/// The XRWebGLLayer class.
+/// Interface XRWebGLLayer
 /// [`XRWebGLLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer)
 class XRWebGLLayer : public XRLayer {
     explicit XRWebGLLayer(Handle h) noexcept;
-
 public:
     explicit XRWebGLLayer(const emlite::Val &val) noexcept;
     static XRWebGLLayer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRWebGLLayer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRWebGLLayer(..)` constructor, creating a new XRWebGLLayer instance
     XRWebGLLayer(const XRSession& session, const jsbind::Any& context);
     /// The `new XRWebGLLayer(..)` constructor, creating a new XRWebGLLayer instance
-    XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const jsbind::Any& layerInit);
+    XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const XRWebGLLayerInit& layerInit);
     /// Getter of the `antialias` attribute.
     /// [`XRWebGLLayer.antialias`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/antialias)
     [[nodiscard]] bool antialias() const;
@@ -55,3 +55,4 @@ public:
     static double getNativeFramebufferScaleFactor(const XRSession& session);
 };
 
+} // namespace webbind

@@ -2,26 +2,35 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Node.hpp"
 #include "enums.hpp"
+#include "Node.hpp"
+#include "ShadowRootInit.hpp"
+#include "FocusableAreasOption.hpp"
+#include "SpatialNavigationSearchOptions.hpp"
+#include "CheckVisibilityOptions.hpp"
+#include "FullscreenOptions.hpp"
+#include "GetHTMLOptions.hpp"
+#include "PointerLockOptions.hpp"
+#include "BoxQuadOptions.hpp"
+#include "DOMQuadInit.hpp"
+#include "ConvertCoordinateOptions.hpp"
+#include "DOMPointInit.hpp"
+#include "GetAnimationsOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class DOMTokenList;
 class NamedNodeMap;
 class Attr;
 class ShadowRoot;
-class ShadowRootInit;
 class CustomElementRegistry;
+class Element;
 class HTMLCollection;
-class FocusableAreasOption;
-class SpatialNavigationSearchOptions;
 class CSSPseudoElement;
 class StylePropertyMapReadOnly;
 class DOMRectList;
 class DOMRect;
-class CheckVisibilityOptions;
-class FullscreenOptions;
-class GetHTMLOptions;
-class PointerLockOptions;
 class Range;
 class DOMQuad;
 class DOMRectReadOnly;
@@ -29,135 +38,14 @@ class DOMPoint;
 class NodeList;
 class HTMLSlotElement;
 class Animation;
-class GetAnimationsOptions;
-class ScreenDetailed;
-class ConvertCoordinateOptions;
-class DOMPointInit;
-class DOMQuadInit;
-class BoxQuadOptions;
 
-
-class ShadowRootInit : public emlite::Val {
-  explicit ShadowRootInit(Handle h) noexcept;
-public:
-    static ShadowRootInit take_ownership(Handle h) noexcept;
-    explicit ShadowRootInit(const emlite::Val &val) noexcept;
-    ShadowRootInit() noexcept;
-    [[nodiscard]] ShadowRootInit clone() const noexcept;
-    [[nodiscard]] ShadowRootMode mode() const;
-    void mode(const ShadowRootMode& value);
-    [[nodiscard]] bool delegatesFocus() const;
-    void delegatesFocus(bool value);
-    [[nodiscard]] SlotAssignmentMode slotAssignment() const;
-    void slotAssignment(const SlotAssignmentMode& value);
-    [[nodiscard]] bool clonable() const;
-    void clonable(bool value);
-    [[nodiscard]] bool serializable() const;
-    void serializable(bool value);
-    [[nodiscard]] CustomElementRegistry customElementRegistry() const;
-    void customElementRegistry(const CustomElementRegistry& value);
-};
-
-class FocusableAreasOption : public emlite::Val {
-  explicit FocusableAreasOption(Handle h) noexcept;
-public:
-    static FocusableAreasOption take_ownership(Handle h) noexcept;
-    explicit FocusableAreasOption(const emlite::Val &val) noexcept;
-    FocusableAreasOption() noexcept;
-    [[nodiscard]] FocusableAreasOption clone() const noexcept;
-    [[nodiscard]] FocusableAreaSearchMode mode() const;
-    void mode(const FocusableAreaSearchMode& value);
-};
-
-class SpatialNavigationSearchOptions : public emlite::Val {
-  explicit SpatialNavigationSearchOptions(Handle h) noexcept;
-public:
-    static SpatialNavigationSearchOptions take_ownership(Handle h) noexcept;
-    explicit SpatialNavigationSearchOptions(const emlite::Val &val) noexcept;
-    SpatialNavigationSearchOptions() noexcept;
-    [[nodiscard]] SpatialNavigationSearchOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<Node> candidates() const;
-    void candidates(const jsbind::TypedArray<Node>& value);
-    [[nodiscard]] Node container() const;
-    void container(const Node& value);
-};
-
-class CheckVisibilityOptions : public emlite::Val {
-  explicit CheckVisibilityOptions(Handle h) noexcept;
-public:
-    static CheckVisibilityOptions take_ownership(Handle h) noexcept;
-    explicit CheckVisibilityOptions(const emlite::Val &val) noexcept;
-    CheckVisibilityOptions() noexcept;
-    [[nodiscard]] CheckVisibilityOptions clone() const noexcept;
-    [[nodiscard]] bool checkOpacity() const;
-    void checkOpacity(bool value);
-    [[nodiscard]] bool checkVisibilityCSS() const;
-    void checkVisibilityCSS(bool value);
-    [[nodiscard]] bool contentVisibilityAuto() const;
-    void contentVisibilityAuto(bool value);
-    [[nodiscard]] bool opacityProperty() const;
-    void opacityProperty(bool value);
-    [[nodiscard]] bool visibilityProperty() const;
-    void visibilityProperty(bool value);
-};
-
-class FullscreenOptions : public emlite::Val {
-  explicit FullscreenOptions(Handle h) noexcept;
-public:
-    static FullscreenOptions take_ownership(Handle h) noexcept;
-    explicit FullscreenOptions(const emlite::Val &val) noexcept;
-    FullscreenOptions() noexcept;
-    [[nodiscard]] FullscreenOptions clone() const noexcept;
-    [[nodiscard]] ScreenDetailed screen() const;
-    void screen(const ScreenDetailed& value);
-};
-
-class GetHTMLOptions : public emlite::Val {
-  explicit GetHTMLOptions(Handle h) noexcept;
-public:
-    static GetHTMLOptions take_ownership(Handle h) noexcept;
-    explicit GetHTMLOptions(const emlite::Val &val) noexcept;
-    GetHTMLOptions() noexcept;
-    [[nodiscard]] GetHTMLOptions clone() const noexcept;
-    [[nodiscard]] bool serializableShadowRoots() const;
-    void serializableShadowRoots(bool value);
-    [[nodiscard]] jsbind::TypedArray<ShadowRoot> shadowRoots() const;
-    void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
-};
-
-class PointerLockOptions : public emlite::Val {
-  explicit PointerLockOptions(Handle h) noexcept;
-public:
-    static PointerLockOptions take_ownership(Handle h) noexcept;
-    explicit PointerLockOptions(const emlite::Val &val) noexcept;
-    PointerLockOptions() noexcept;
-    [[nodiscard]] PointerLockOptions clone() const noexcept;
-    [[nodiscard]] bool unadjustedMovement() const;
-    void unadjustedMovement(bool value);
-};
-
-class GetAnimationsOptions : public emlite::Val {
-  explicit GetAnimationsOptions(Handle h) noexcept;
-public:
-    static GetAnimationsOptions take_ownership(Handle h) noexcept;
-    explicit GetAnimationsOptions(const emlite::Val &val) noexcept;
-    GetAnimationsOptions() noexcept;
-    [[nodiscard]] GetAnimationsOptions clone() const noexcept;
-    [[nodiscard]] bool subtree() const;
-    void subtree(bool value);
-    [[nodiscard]] jsbind::String pseudoElement() const;
-    void pseudoElement(const jsbind::String& value);
-};
-
-/// The Element class.
+/// Interface Element
 /// [`Element`](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 class Element : public Node {
     explicit Element(Handle h) noexcept;
-
 public:
     explicit Element(const emlite::Val &val) noexcept;
     static Element take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Element clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `namespaceURI` attribute.
@@ -834,3 +722,4 @@ public:
     jsbind::TypedArray<Animation> getAnimations(const GetAnimationsOptions& options);
 };
 
+} // namespace webbind

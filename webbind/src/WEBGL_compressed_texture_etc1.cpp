@@ -1,5 +1,6 @@
-#include <webbind/WEBGL_compressed_texture_etc1.hpp>
+#include "webbind/WEBGL_compressed_texture_etc1.hpp"
 
+namespace webbind {
 
 WEBGL_compressed_texture_etc1 WEBGL_compressed_texture_etc1::take_ownership(Handle h) noexcept {
         return WEBGL_compressed_texture_etc1(h);
@@ -10,3 +11,4 @@ WEBGL_compressed_texture_etc1::WEBGL_compressed_texture_etc1(Handle h) noexcept 
 WEBGL_compressed_texture_etc1::WEBGL_compressed_texture_etc1(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

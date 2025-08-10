@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The EXT_frag_depth class.
+/// Interface EXT_frag_depth
 /// [`EXT_frag_depth`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_frag_depth)
 class EXT_frag_depth : public emlite::Val {
     explicit EXT_frag_depth(Handle h) noexcept;
-
 public:
     explicit EXT_frag_depth(const emlite::Val &val) noexcept;
     static EXT_frag_depth take_ownership(Handle h) noexcept;
-
     [[nodiscard]] EXT_frag_depth clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

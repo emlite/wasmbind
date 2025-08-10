@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PermissionStatus class.
+/// Interface PermissionStatus
 /// [`PermissionStatus`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus)
 class PermissionStatus : public EventTarget {
     explicit PermissionStatus(Handle h) noexcept;
-
 public:
     explicit PermissionStatus(const emlite::Val &val) noexcept;
     static PermissionStatus take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PermissionStatus clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `state` attribute.
@@ -31,3 +31,4 @@ public:
     void onchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

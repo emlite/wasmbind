@@ -2,8 +2,10 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedInteger;
@@ -13,16 +15,13 @@ class SVGAnimatedEnumeration;
 class SVGAnimatedBoolean;
 class SVGAnimatedLength;
 
-
-/// The SVGFEConvolveMatrixElement class.
+/// Interface SVGFEConvolveMatrixElement
 /// [`SVGFEConvolveMatrixElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEConvolveMatrixElement)
 class SVGFEConvolveMatrixElement : public SVGElement {
     explicit SVGFEConvolveMatrixElement(Handle h) noexcept;
-
 public:
     explicit SVGFEConvolveMatrixElement(const emlite::Val &val) noexcept;
     static SVGFEConvolveMatrixElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEConvolveMatrixElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -78,3 +77,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

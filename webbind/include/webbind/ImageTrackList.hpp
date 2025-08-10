@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ImageTrack;
 
-
-/// The ImageTrackList class.
+/// Interface ImageTrackList
 /// [`ImageTrackList`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList)
 class ImageTrackList : public emlite::Val {
     explicit ImageTrackList(Handle h) noexcept;
-
 public:
     explicit ImageTrackList(const emlite::Val &val) noexcept;
     static ImageTrackList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ImageTrackList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `ready` attribute.
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] ImageTrack selectedTrack() const;
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XRDepthInformation.hpp"
 #include "enums.hpp"
+#include "XRDepthInformation.hpp"
 
+namespace webbind {
 
-/// The XRCPUDepthInformation class.
+/// Interface XRCPUDepthInformation
 /// [`XRCPUDepthInformation`](https://developer.mozilla.org/en-US/docs/Web/API/XRCPUDepthInformation)
 class XRCPUDepthInformation : public XRDepthInformation {
     explicit XRCPUDepthInformation(Handle h) noexcept;
-
 public:
     explicit XRCPUDepthInformation(const emlite::Val &val) noexcept;
     static XRCPUDepthInformation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRCPUDepthInformation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `data` attribute.
@@ -25,3 +24,4 @@ public:
     float getDepthInMeters(float x, float y);
 };
 
+} // namespace webbind

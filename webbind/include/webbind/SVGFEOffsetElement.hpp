@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedNumber;
 class SVGAnimatedLength;
 
-
-/// The SVGFEOffsetElement class.
+/// Interface SVGFEOffsetElement
 /// [`SVGFEOffsetElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEOffsetElement)
 class SVGFEOffsetElement : public SVGElement {
     explicit SVGFEOffsetElement(Handle h) noexcept;
-
 public:
     explicit SVGFEOffsetElement(const emlite::Val &val) noexcept;
     static SVGFEOffsetElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEOffsetElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -47,3 +46,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

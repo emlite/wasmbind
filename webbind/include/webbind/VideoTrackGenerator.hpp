@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class WritableStream;
 class MediaStreamTrack;
 
-
-/// The VideoTrackGenerator class.
+/// Interface VideoTrackGenerator
 /// [`VideoTrackGenerator`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator)
 class VideoTrackGenerator : public emlite::Val {
     explicit VideoTrackGenerator(Handle h) noexcept;
-
 public:
     explicit VideoTrackGenerator(const emlite::Val &val) noexcept;
     static VideoTrackGenerator take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VideoTrackGenerator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoTrackGenerator(..)` constructor, creating a new VideoTrackGenerator instance
@@ -35,3 +34,4 @@ public:
     [[nodiscard]] MediaStreamTrack track() const;
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The FontFaceVariationAxis class.
+/// Interface FontFaceVariationAxis
 /// [`FontFaceVariationAxis`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis)
 class FontFaceVariationAxis : public emlite::Val {
     explicit FontFaceVariationAxis(Handle h) noexcept;
-
 public:
     explicit FontFaceVariationAxis(const emlite::Val &val) noexcept;
     static FontFaceVariationAxis take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FontFaceVariationAxis clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `name` attribute.
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] double defaultValue() const;
 };
 
+} // namespace webbind

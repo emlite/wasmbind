@@ -1,7 +1,9 @@
-#include <webbind/BiquadFilterNode.hpp>
-#include <webbind/AudioParam.hpp>
-#include <webbind/BaseAudioContext.hpp>
+#include "webbind/BiquadFilterNode.hpp"
+#include "webbind/BaseAudioContext.hpp"
+#include "webbind/BiquadFilterOptions.hpp"
+#include "webbind/AudioParam.hpp"
 
+namespace webbind {
 
 BiquadFilterNode BiquadFilterNode::take_ownership(Handle h) noexcept {
         return BiquadFilterNode(h);
@@ -11,10 +13,9 @@ emlite::Val BiquadFilterNode::instance() noexcept { return emlite::Val::global("
 BiquadFilterNode::BiquadFilterNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 BiquadFilterNode::BiquadFilterNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
-
 BiquadFilterNode::BiquadFilterNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("BiquadFilterNode").new_(context)) {}
 
-BiquadFilterNode::BiquadFilterNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("BiquadFilterNode").new_(context, options)) {}
+BiquadFilterNode::BiquadFilterNode(const BaseAudioContext& context, const BiquadFilterOptions& options) : AudioNode(emlite::Val::global("BiquadFilterNode").new_(context, options)) {}
 
 BiquadFilterType BiquadFilterNode::type() const {
     return AudioNode::get("type").as<BiquadFilterType>();
@@ -44,3 +45,5 @@ jsbind::Undefined BiquadFilterNode::getFrequencyResponse(const jsbind::Float32Ar
     return AudioNode::call("getFrequencyResponse", frequencyHz, magResponse, phaseResponse).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

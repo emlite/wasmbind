@@ -1,5 +1,6 @@
-#include <webbind/USBIsochronousInTransferPacket.hpp>
+#include "webbind/USBIsochronousInTransferPacket.hpp"
 
+namespace webbind {
 
 USBIsochronousInTransferPacket USBIsochronousInTransferPacket::take_ownership(Handle h) noexcept {
         return USBIsochronousInTransferPacket(h);
@@ -8,7 +9,6 @@ USBIsochronousInTransferPacket USBIsochronousInTransferPacket::clone() const noe
 emlite::Val USBIsochronousInTransferPacket::instance() noexcept { return emlite::Val::global("USBIsochronousInTransferPacket"); }
 USBIsochronousInTransferPacket::USBIsochronousInTransferPacket(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBIsochronousInTransferPacket::USBIsochronousInTransferPacket(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 USBIsochronousInTransferPacket::USBIsochronousInTransferPacket(const USBTransferStatus& status) : emlite::Val(emlite::Val::global("USBIsochronousInTransferPacket").new_(status)) {}
 
@@ -22,3 +22,5 @@ USBTransferStatus USBIsochronousInTransferPacket::status() const {
     return emlite::Val::get("status").as<USBTransferStatus>();
 }
 
+
+} // namespace webbind

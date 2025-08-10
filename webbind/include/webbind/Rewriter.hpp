@@ -3,73 +3,23 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "RewriterCreateOptions.hpp"
+#include "RewriterCreateCoreOptions.hpp"
+#include "RewriterRewriteOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Rewriter;
-class RewriterCreateOptions;
-class RewriterCreateCoreOptions;
-class RewriterRewriteOptions;
 class ReadableStream;
-class AbortSignal;
 
-
-class RewriterCreateOptions : public emlite::Val {
-  explicit RewriterCreateOptions(Handle h) noexcept;
-public:
-    static RewriterCreateOptions take_ownership(Handle h) noexcept;
-    explicit RewriterCreateOptions(const emlite::Val &val) noexcept;
-    RewriterCreateOptions() noexcept;
-    [[nodiscard]] RewriterCreateOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-    [[nodiscard]] jsbind::Function monitor() const;
-    void monitor(const jsbind::Function& value);
-    [[nodiscard]] jsbind::String sharedContext() const;
-    void sharedContext(const jsbind::String& value);
-};
-
-class RewriterCreateCoreOptions : public emlite::Val {
-  explicit RewriterCreateCoreOptions(Handle h) noexcept;
-public:
-    static RewriterCreateCoreOptions take_ownership(Handle h) noexcept;
-    explicit RewriterCreateCoreOptions(const emlite::Val &val) noexcept;
-    RewriterCreateCoreOptions() noexcept;
-    [[nodiscard]] RewriterCreateCoreOptions clone() const noexcept;
-    [[nodiscard]] RewriterTone tone() const;
-    void tone(const RewriterTone& value);
-    [[nodiscard]] RewriterFormat format() const;
-    void format(const RewriterFormat& value);
-    [[nodiscard]] RewriterLength length() const;
-    void length(const RewriterLength& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
-    void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
-    void expectedContextLanguages(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::String outputLanguage() const;
-    void outputLanguage(const jsbind::String& value);
-};
-
-class RewriterRewriteOptions : public emlite::Val {
-  explicit RewriterRewriteOptions(Handle h) noexcept;
-public:
-    static RewriterRewriteOptions take_ownership(Handle h) noexcept;
-    explicit RewriterRewriteOptions(const emlite::Val &val) noexcept;
-    RewriterRewriteOptions() noexcept;
-    [[nodiscard]] RewriterRewriteOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String context() const;
-    void context(const jsbind::String& value);
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-/// The Rewriter class.
+/// Interface Rewriter
 /// [`Rewriter`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter)
 class Rewriter : public emlite::Val {
     explicit Rewriter(Handle h) noexcept;
-
 public:
     explicit Rewriter(const emlite::Val &val) noexcept;
     static Rewriter take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Rewriter clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The create method.
@@ -131,3 +81,4 @@ public:
     jsbind::Undefined destroy();
 };
 
+} // namespace webbind

@@ -2,94 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "SerialPortInfo.hpp"
+#include "SerialOptions.hpp"
+#include "SerialOutputSignals.hpp"
+#include "SerialInputSignals.hpp"
+
+namespace webbind {
 
 class ReadableStream;
 class WritableStream;
-class SerialPortInfo;
-class SerialOptions;
-class SerialOutputSignals;
-class SerialInputSignals;
 
-
-class SerialPortInfo : public emlite::Val {
-  explicit SerialPortInfo(Handle h) noexcept;
-public:
-    static SerialPortInfo take_ownership(Handle h) noexcept;
-    explicit SerialPortInfo(const emlite::Val &val) noexcept;
-    SerialPortInfo() noexcept;
-    [[nodiscard]] SerialPortInfo clone() const noexcept;
-    [[nodiscard]] unsigned short usbVendorId() const;
-    void usbVendorId(unsigned short value);
-    [[nodiscard]] unsigned short usbProductId() const;
-    void usbProductId(unsigned short value);
-    [[nodiscard]] jsbind::Any bluetoothServiceClassId() const;
-    void bluetoothServiceClassId(const jsbind::Any& value);
-};
-
-class SerialOptions : public emlite::Val {
-  explicit SerialOptions(Handle h) noexcept;
-public:
-    static SerialOptions take_ownership(Handle h) noexcept;
-    explicit SerialOptions(const emlite::Val &val) noexcept;
-    SerialOptions() noexcept;
-    [[nodiscard]] SerialOptions clone() const noexcept;
-    [[nodiscard]] unsigned long baudRate() const;
-    void baudRate(unsigned long value);
-    [[nodiscard]] unsigned char dataBits() const;
-    void dataBits(unsigned char value);
-    [[nodiscard]] unsigned char stopBits() const;
-    void stopBits(unsigned char value);
-    [[nodiscard]] ParityType parity() const;
-    void parity(const ParityType& value);
-    [[nodiscard]] unsigned long bufferSize() const;
-    void bufferSize(unsigned long value);
-    [[nodiscard]] FlowControlType flowControl() const;
-    void flowControl(const FlowControlType& value);
-};
-
-class SerialOutputSignals : public emlite::Val {
-  explicit SerialOutputSignals(Handle h) noexcept;
-public:
-    static SerialOutputSignals take_ownership(Handle h) noexcept;
-    explicit SerialOutputSignals(const emlite::Val &val) noexcept;
-    SerialOutputSignals() noexcept;
-    [[nodiscard]] SerialOutputSignals clone() const noexcept;
-    [[nodiscard]] bool dataTerminalReady() const;
-    void dataTerminalReady(bool value);
-    [[nodiscard]] bool requestToSend() const;
-    void requestToSend(bool value);
-    [[nodiscard]] bool break_() const;
-    void break_(bool value);
-};
-
-class SerialInputSignals : public emlite::Val {
-  explicit SerialInputSignals(Handle h) noexcept;
-public:
-    static SerialInputSignals take_ownership(Handle h) noexcept;
-    explicit SerialInputSignals(const emlite::Val &val) noexcept;
-    SerialInputSignals() noexcept;
-    [[nodiscard]] SerialInputSignals clone() const noexcept;
-    [[nodiscard]] bool dataCarrierDetect() const;
-    void dataCarrierDetect(bool value);
-    [[nodiscard]] bool clearToSend() const;
-    void clearToSend(bool value);
-    [[nodiscard]] bool ringIndicator() const;
-    void ringIndicator(bool value);
-    [[nodiscard]] bool dataSetReady() const;
-    void dataSetReady(bool value);
-};
-
-/// The SerialPort class.
+/// Interface SerialPort
 /// [`SerialPort`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort)
 class SerialPort : public EventTarget {
     explicit SerialPort(Handle h) noexcept;
-
 public:
     explicit SerialPort(const emlite::Val &val) noexcept;
     static SerialPort take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SerialPort clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onconnect` attribute.
@@ -136,3 +67,4 @@ public:
     jsbind::Promise<jsbind::Undefined> forget();
 };
 
+} // namespace webbind

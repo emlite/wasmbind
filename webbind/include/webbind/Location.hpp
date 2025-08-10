@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class DOMStringList;
 
-
-/// The Location class.
+/// Interface Location
 /// [`Location`](https://developer.mozilla.org/en-US/docs/Web/API/Location)
 class Location : public emlite::Val {
     explicit Location(Handle h) noexcept;
-
 public:
     explicit Location(const emlite::Val &val) noexcept;
     static Location take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Location clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `href` attribute.
@@ -83,3 +82,4 @@ public:
     [[nodiscard]] DOMStringList ancestorOrigins() const;
 };
 
+} // namespace webbind

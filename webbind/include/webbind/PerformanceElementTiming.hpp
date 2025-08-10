@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PerformanceEntry.hpp"
 #include "enums.hpp"
+#include "PerformanceEntry.hpp"
+
+namespace webbind {
 
 class DOMRectReadOnly;
 class Element;
 
-
-/// The PerformanceElementTiming class.
+/// Interface PerformanceElementTiming
 /// [`PerformanceElementTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming)
 class PerformanceElementTiming : public PerformanceEntry {
     explicit PerformanceElementTiming(Handle h) noexcept;
-
 public:
     explicit PerformanceElementTiming(const emlite::Val &val) noexcept;
     static PerformanceElementTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceElementTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `renderTime` attribute.
@@ -58,3 +57,4 @@ public:
     [[nodiscard]] jsbind::Any presentationTime() const;
 };
 
+} // namespace webbind

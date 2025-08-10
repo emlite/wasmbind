@@ -1,7 +1,8 @@
-#include <webbind/IDBRequest.hpp>
-#include <webbind/DOMException.hpp>
-#include <webbind/IDBTransaction.hpp>
+#include "webbind/IDBRequest.hpp"
+#include "webbind/DOMException.hpp"
+#include "webbind/IDBTransaction.hpp"
 
+namespace webbind {
 
 IDBRequest IDBRequest::take_ownership(Handle h) noexcept {
         return IDBRequest(h);
@@ -10,7 +11,6 @@ IDBRequest IDBRequest::clone() const noexcept { return *this; }
 emlite::Val IDBRequest::instance() noexcept { return emlite::Val::global("IDBRequest"); }
 IDBRequest::IDBRequest(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 IDBRequest::IDBRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Any IDBRequest::result() const {
     return EventTarget::get("result").as<jsbind::Any>();
@@ -48,3 +48,5 @@ void IDBRequest::onerror(const jsbind::Any& value) {
     EventTarget::set("onerror", value);
 }
 
+
+} // namespace webbind

@@ -3,32 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "SubscribeOptions.hpp"
 
-class SubscribeOptions;
+namespace webbind {
+
 class Observable;
-class AbortSignal;
 
-
-class SubscribeOptions : public emlite::Val {
-  explicit SubscribeOptions(Handle h) noexcept;
-public:
-    static SubscribeOptions take_ownership(Handle h) noexcept;
-    explicit SubscribeOptions(const emlite::Val &val) noexcept;
-    SubscribeOptions() noexcept;
-    [[nodiscard]] SubscribeOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-/// The Observable class.
+/// Interface Observable
 /// [`Observable`](https://developer.mozilla.org/en-US/docs/Web/API/Observable)
 class Observable : public emlite::Val {
     explicit Observable(Handle h) noexcept;
-
 public:
     explicit Observable(const emlite::Val &val) noexcept;
     static Observable take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Observable clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Observable(..)` constructor, creating a new Observable instance
@@ -77,7 +64,7 @@ public:
     Observable catch_(const jsbind::Function& callback);
     /// The finally method.
     /// [`Observable.finally`](https://developer.mozilla.org/en-US/docs/Web/API/Observable/finally)
-    Observable finally(const jsbind::Any& callback);
+    Observable finally(const jsbind::Function& callback);
     /// The toArray method.
     /// [`Observable.toArray`](https://developer.mozilla.org/en-US/docs/Web/API/Observable/toArray)
     jsbind::Promise<jsbind::TypedArray<jsbind::Any>> toArray();
@@ -131,3 +118,4 @@ public:
     jsbind::Promise<jsbind::Any> reduce(const jsbind::Function& reducer, const jsbind::Any& initialValue, const SubscribeOptions& options);
 };
 
+} // namespace webbind

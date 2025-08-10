@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLTableCaptionElement;
 class HTMLTableSectionElement;
 class HTMLCollection;
 class HTMLTableRowElement;
 
-
-/// The HTMLTableElement class.
+/// Interface HTMLTableElement
 /// [`HTMLTableElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement)
 class HTMLTableElement : public HTMLElement {
     explicit HTMLTableElement(Handle h) noexcept;
-
 public:
     explicit HTMLTableElement(const emlite::Val &val) noexcept;
     static HTMLTableElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTableElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTableElement(..)` constructor, creating a new HTMLTableElement instance
@@ -134,3 +133,4 @@ public:
     void cellSpacing(const jsbind::String& value);
 };
 
+} // namespace webbind

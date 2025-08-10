@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class GPUComputePipeline;
 class GPUBuffer;
 class GPUBindGroup;
 
-
-/// The GPUComputePassEncoder class.
+/// Interface GPUComputePassEncoder
 /// [`GPUComputePassEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder)
 class GPUComputePassEncoder : public emlite::Val {
     explicit GPUComputePassEncoder(Handle h) noexcept;
-
 public:
     explicit GPUComputePassEncoder(const emlite::Val &val) noexcept;
     static GPUComputePassEncoder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUComputePassEncoder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setPipeline method.
@@ -58,3 +57,4 @@ public:
     jsbind::Undefined setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup, const jsbind::Uint32Array& dynamicOffsetsData, const jsbind::Any& dynamicOffsetsDataStart, const jsbind::Any& dynamicOffsetsDataLength);
 };
 
+} // namespace webbind

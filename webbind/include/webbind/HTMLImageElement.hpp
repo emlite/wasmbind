@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLImageElement class.
+/// Interface HTMLImageElement
 /// [`HTMLImageElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
 class HTMLImageElement : public HTMLElement {
     explicit HTMLImageElement(Handle h) noexcept;
-
 public:
     explicit HTMLImageElement(const emlite::Val &val) noexcept;
     static HTMLImageElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLImageElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLImageElement(..)` constructor, creating a new HTMLImageElement instance
@@ -174,3 +173,4 @@ public:
     void sharedStorageWritable(bool value);
 };
 
+} // namespace webbind

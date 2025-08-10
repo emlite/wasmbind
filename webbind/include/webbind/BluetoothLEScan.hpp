@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class BluetoothLEScanFilter;
 
-
-/// The BluetoothLEScan class.
+/// Interface BluetoothLEScan
 /// [`BluetoothLEScan`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan)
 class BluetoothLEScan : public emlite::Val {
     explicit BluetoothLEScan(Handle h) noexcept;
-
 public:
     explicit BluetoothLEScan(const emlite::Val &val) noexcept;
     static BluetoothLEScan take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothLEScan clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `filters` attribute.
@@ -35,3 +34,4 @@ public:
     jsbind::Undefined stop();
 };
 
+} // namespace webbind

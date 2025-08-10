@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GamepadPose class.
+/// Interface GamepadPose
 /// [`GamepadPose`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose)
 class GamepadPose : public emlite::Val {
     explicit GamepadPose(Handle h) noexcept;
-
 public:
     explicit GamepadPose(const emlite::Val &val) noexcept;
     static GamepadPose take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GamepadPose clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `hasOrientation` attribute.
@@ -42,3 +41,4 @@ public:
     [[nodiscard]] jsbind::Float32Array angularAcceleration() const;
 };
 
+} // namespace webbind

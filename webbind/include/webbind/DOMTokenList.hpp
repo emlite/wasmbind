@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The DOMTokenList class.
+/// Interface DOMTokenList
 /// [`DOMTokenList`](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList)
 class DOMTokenList : public emlite::Val {
     explicit DOMTokenList(Handle h) noexcept;
-
 public:
     explicit DOMTokenList(const emlite::Val &val) noexcept;
     static DOMTokenList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMTokenList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -51,3 +50,4 @@ public:
     void value(const jsbind::String& value);
 };
 
+} // namespace webbind

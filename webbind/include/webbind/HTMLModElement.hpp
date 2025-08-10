@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLModElement class.
+/// Interface HTMLModElement
 /// [`HTMLModElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLModElement)
 class HTMLModElement : public HTMLElement {
     explicit HTMLModElement(Handle h) noexcept;
-
 public:
     explicit HTMLModElement(const emlite::Val &val) noexcept;
     static HTMLModElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLModElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLModElement(..)` constructor, creating a new HTMLModElement instance
@@ -33,3 +32,4 @@ public:
     void dateTime(const jsbind::String& value);
 };
 
+} // namespace webbind

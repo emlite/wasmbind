@@ -1,30 +1,8 @@
-#include <webbind/Serial.hpp>
-#include <webbind/SerialPort.hpp>
+#include "webbind/Serial.hpp"
+#include "webbind/SerialPort.hpp"
+#include "webbind/SerialPortRequestOptions.hpp"
 
-
-SerialPortRequestOptions::SerialPortRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SerialPortRequestOptions SerialPortRequestOptions::take_ownership(Handle h) noexcept {
-        return SerialPortRequestOptions(h);
-    }
-SerialPortRequestOptions::SerialPortRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SerialPortRequestOptions::SerialPortRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SerialPortRequestOptions SerialPortRequestOptions::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<jsbind::Any> SerialPortRequestOptions::filters() const {
-    return emlite::Val::get("filters").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void SerialPortRequestOptions::filters(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("filters", value);
-}
-
-jsbind::TypedArray<jsbind::Any> SerialPortRequestOptions::allowedBluetoothServiceClassIds() const {
-    return emlite::Val::get("allowedBluetoothServiceClassIds").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void SerialPortRequestOptions::allowedBluetoothServiceClassIds(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("allowedBluetoothServiceClassIds", value);
-}
+namespace webbind {
 
 Serial Serial::take_ownership(Handle h) noexcept {
         return Serial(h);
@@ -33,7 +11,6 @@ Serial Serial::clone() const noexcept { return *this; }
 emlite::Val Serial::instance() noexcept { return emlite::Val::global("Serial"); }
 Serial::Serial(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Serial::Serial(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::Any Serial::onconnect() const {
     return EventTarget::get("onconnect").as<jsbind::Any>();
@@ -63,3 +40,5 @@ jsbind::Promise<SerialPort> Serial::requestPort(const SerialPortRequestOptions& 
     return EventTarget::call("requestPort", options).as<jsbind::Promise<SerialPort>>();
 }
 
+
+} // namespace webbind

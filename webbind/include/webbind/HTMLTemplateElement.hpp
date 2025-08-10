@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class DocumentFragment;
 
-
-/// The HTMLTemplateElement class.
+/// Interface HTMLTemplateElement
 /// [`HTMLTemplateElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement)
 class HTMLTemplateElement : public HTMLElement {
     explicit HTMLTemplateElement(Handle h) noexcept;
-
 public:
     explicit HTMLTemplateElement(const emlite::Val &val) noexcept;
     static HTMLTemplateElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTemplateElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTemplateElement(..)` constructor, creating a new HTMLTemplateElement instance
@@ -56,3 +55,4 @@ public:
     void shadowRootCustomElementRegistry(const jsbind::String& value);
 };
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/SVGLength.hpp>
+#include "webbind/SVGLength.hpp"
 
+namespace webbind {
 
 SVGLength SVGLength::take_ownership(Handle h) noexcept {
         return SVGLength(h);
@@ -8,7 +9,6 @@ SVGLength SVGLength::clone() const noexcept { return *this; }
 emlite::Val SVGLength::instance() noexcept { return emlite::Val::global("SVGLength"); }
 SVGLength::SVGLength(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGLength::SVGLength(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned short SVGLength::unitType() const {
     return emlite::Val::get("unitType").as<unsigned short>();
@@ -46,3 +46,5 @@ jsbind::Undefined SVGLength::convertToSpecifiedUnits(unsigned short unitType) {
     return emlite::Val::call("convertToSpecifiedUnits", unitType).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

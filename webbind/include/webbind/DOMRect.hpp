@@ -2,21 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "DOMRectReadOnly.hpp"
 #include "enums.hpp"
+#include "DOMRectReadOnly.hpp"
+#include "DOMRectInit.hpp"
+
+namespace webbind {
 
 class DOMRect;
 
-
-/// The DOMRect class.
+/// Interface DOMRect
 /// [`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect)
 class DOMRect : public DOMRectReadOnly {
     explicit DOMRect(Handle h) noexcept;
-
 public:
     explicit DOMRect(const emlite::Val &val) noexcept;
     static DOMRect take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMRect clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMRect(..)` constructor, creating a new DOMRect instance
@@ -61,3 +61,4 @@ public:
     void height(double value);
 };
 
+} // namespace webbind

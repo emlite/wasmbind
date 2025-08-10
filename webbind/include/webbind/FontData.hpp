@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Blob;
 
-
-/// The FontData class.
+/// Interface FontData
 /// [`FontData`](https://developer.mozilla.org/en-US/docs/Web/API/FontData)
 class FontData : public emlite::Val {
     explicit FontData(Handle h) noexcept;
-
 public:
     explicit FontData(const emlite::Val &val) noexcept;
     static FontData take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FontData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The blob method.
@@ -35,3 +34,4 @@ public:
     [[nodiscard]] jsbind::String style() const;
 };
 
+} // namespace webbind

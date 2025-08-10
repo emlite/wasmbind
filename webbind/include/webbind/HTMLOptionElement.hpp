@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 
-
-/// The HTMLOptionElement class.
+/// Interface HTMLOptionElement
 /// [`HTMLOptionElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement)
 class HTMLOptionElement : public HTMLElement {
     explicit HTMLOptionElement(Handle h) noexcept;
-
 public:
     explicit HTMLOptionElement(const emlite::Val &val) noexcept;
     static HTMLOptionElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLOptionElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLOptionElement(..)` constructor, creating a new HTMLOptionElement instance
@@ -65,3 +64,4 @@ public:
     [[nodiscard]] long index() const;
 };
 
+} // namespace webbind

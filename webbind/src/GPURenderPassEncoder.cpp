@@ -1,9 +1,10 @@
-#include <webbind/GPURenderPassEncoder.hpp>
-#include <webbind/GPURenderBundle.hpp>
-#include <webbind/GPUBindGroup.hpp>
-#include <webbind/GPURenderPipeline.hpp>
-#include <webbind/GPUBuffer.hpp>
+#include "webbind/GPURenderPassEncoder.hpp"
+#include "webbind/GPURenderBundle.hpp"
+#include "webbind/GPUBindGroup.hpp"
+#include "webbind/GPURenderPipeline.hpp"
+#include "webbind/GPUBuffer.hpp"
 
+namespace webbind {
 
 GPURenderPassEncoder GPURenderPassEncoder::take_ownership(Handle h) noexcept {
         return GPURenderPassEncoder(h);
@@ -12,7 +13,6 @@ GPURenderPassEncoder GPURenderPassEncoder::clone() const noexcept { return *this
 emlite::Val GPURenderPassEncoder::instance() noexcept { return emlite::Val::global("GPURenderPassEncoder"); }
 GPURenderPassEncoder::GPURenderPassEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPURenderPassEncoder::GPURenderPassEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Undefined GPURenderPassEncoder::setViewport(float x, float y, float width, float height, float minDepth, float maxDepth) {
     return emlite::Val::call("setViewport", x, y, width, height, minDepth, maxDepth).as<jsbind::Undefined>();
@@ -142,3 +142,5 @@ jsbind::Undefined GPURenderPassEncoder::drawIndexedIndirect(const GPUBuffer& ind
     return emlite::Val::call("drawIndexedIndirect", indirectBuffer, indirectOffset).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

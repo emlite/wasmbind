@@ -1,5 +1,6 @@
-#include <webbind/XRMeshSet.hpp>
+#include "webbind/XRMeshSet.hpp"
 
+namespace webbind {
 
 XRMeshSet XRMeshSet::take_ownership(Handle h) noexcept {
         return XRMeshSet(h);
@@ -10,3 +11,4 @@ XRMeshSet::XRMeshSet(Handle h) noexcept : emlite::Val(emlite::Val::take_ownershi
 XRMeshSet::XRMeshSet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

@@ -2,20 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGraphicsElement.hpp"
 #include "enums.hpp"
+#include "SVGGraphicsElement.hpp"
 
+namespace webbind {
 
-/// The SVGGElement class.
+/// Interface SVGGElement
 /// [`SVGGElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGElement)
 class SVGGElement : public SVGGraphicsElement {
     explicit SVGGElement(Handle h) noexcept;
-
 public:
     explicit SVGGElement(const emlite::Val &val) noexcept;
     static SVGGElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGGElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

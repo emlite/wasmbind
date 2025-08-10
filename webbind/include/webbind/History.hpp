@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "enums.hpp"
 
+namespace webbind {
 
-/// The History class.
+/// Interface History
 /// [`History`](https://developer.mozilla.org/en-US/docs/Web/API/History)
 class History : public emlite::Val {
     explicit History(Handle h) noexcept;
-
 public:
     explicit History(const emlite::Val &val) noexcept;
     static History take_ownership(Handle h) noexcept;
-
     [[nodiscard]] History clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -54,3 +54,4 @@ public:
     jsbind::Undefined replaceState(const jsbind::Any& data, const jsbind::String& unused, const jsbind::String& url);
 };
 
+} // namespace webbind

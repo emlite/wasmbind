@@ -2,27 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "StorageEventInit.hpp"
+
+namespace webbind {
 
 class Storage;
 
-
-/// The StorageEvent class.
+/// Interface StorageEvent
 /// [`StorageEvent`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent)
 class StorageEvent : public Event {
     explicit StorageEvent(Handle h) noexcept;
-
 public:
     explicit StorageEvent(const emlite::Val &val) noexcept;
     static StorageEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] StorageEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new StorageEvent(..)` constructor, creating a new StorageEvent instance
     StorageEvent(const jsbind::String& type);
     /// The `new StorageEvent(..)` constructor, creating a new StorageEvent instance
-    StorageEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    StorageEvent(const jsbind::String& type, const StorageEventInit& eventInitDict);
     /// Getter of the `key` attribute.
     /// [`StorageEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/key)
     [[nodiscard]] jsbind::String key() const;
@@ -64,3 +64,4 @@ public:
     jsbind::Undefined initStorageEvent(const jsbind::String& type, bool bubbles, bool cancelable, const jsbind::String& key, const jsbind::String& oldValue, const jsbind::String& newValue, const jsbind::String& url, const Storage& storageArea);
 };
 
+} // namespace webbind

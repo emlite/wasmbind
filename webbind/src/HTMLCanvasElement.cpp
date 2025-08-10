@@ -1,7 +1,8 @@
-#include <webbind/HTMLCanvasElement.hpp>
-#include <webbind/OffscreenCanvas.hpp>
-#include <webbind/MediaStream.hpp>
+#include "webbind/HTMLCanvasElement.hpp"
+#include "webbind/OffscreenCanvas.hpp"
+#include "webbind/MediaStream.hpp"
 
+namespace webbind {
 
 HTMLCanvasElement HTMLCanvasElement::take_ownership(Handle h) noexcept {
         return HTMLCanvasElement(h);
@@ -10,7 +11,6 @@ HTMLCanvasElement HTMLCanvasElement::clone() const noexcept { return *this; }
 emlite::Val HTMLCanvasElement::instance() noexcept { return emlite::Val::global("HTMLCanvasElement"); }
 HTMLCanvasElement::HTMLCanvasElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLCanvasElement::HTMLCanvasElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLCanvasElement::HTMLCanvasElement() : HTMLElement(emlite::Val::global("HTMLCanvasElement").new_()) {}
 
@@ -74,3 +74,5 @@ MediaStream HTMLCanvasElement::captureStream(double frameRequestRate) {
     return HTMLElement::call("captureStream", frameRequestRate).as<MediaStream>();
 }
 
+
+} // namespace webbind

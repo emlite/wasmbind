@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSParserRule.hpp"
 #include "enums.hpp"
+#include "CSSParserRule.hpp"
+
+namespace webbind {
 
 class CSSParserValue;
 
-
-/// The CSSParserQualifiedRule class.
+/// Interface CSSParserQualifiedRule
 /// [`CSSParserQualifiedRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule)
 class CSSParserQualifiedRule : public CSSParserRule {
     explicit CSSParserQualifiedRule(Handle h) noexcept;
-
 public:
     explicit CSSParserQualifiedRule(const emlite::Val &val) noexcept;
     static CSSParserQualifiedRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSParserQualifiedRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserQualifiedRule(..)` constructor, creating a new CSSParserQualifiedRule instance
@@ -31,3 +30,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<CSSParserRule> body() const;
 };
 
+} // namespace webbind

@@ -1,7 +1,8 @@
-#include <webbind/PresentationRequest.hpp>
-#include <webbind/PresentationConnection.hpp>
-#include <webbind/PresentationAvailability.hpp>
+#include "webbind/PresentationRequest.hpp"
+#include "webbind/PresentationConnection.hpp"
+#include "webbind/PresentationAvailability.hpp"
 
+namespace webbind {
 
 PresentationRequest PresentationRequest::take_ownership(Handle h) noexcept {
         return PresentationRequest(h);
@@ -10,7 +11,6 @@ PresentationRequest PresentationRequest::clone() const noexcept { return *this; 
 emlite::Val PresentationRequest::instance() noexcept { return emlite::Val::global("PresentationRequest"); }
 PresentationRequest::PresentationRequest(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 PresentationRequest::PresentationRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 PresentationRequest::PresentationRequest(const jsbind::TypedArray<jsbind::String>& urls) : EventTarget(emlite::Val::global("PresentationRequest").new_(urls)) {}
 
@@ -34,3 +34,5 @@ void PresentationRequest::onconnectionavailable(const jsbind::Any& value) {
     EventTarget::set("onconnectionavailable", value);
 }
 
+
+} // namespace webbind

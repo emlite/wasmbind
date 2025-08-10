@@ -2,28 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "EditContextInit.hpp"
+
+namespace webbind {
 
 class DOMRect;
 class HTMLElement;
 
-
-/// The EditContext class.
+/// Interface EditContext
 /// [`EditContext`](https://developer.mozilla.org/en-US/docs/Web/API/EditContext)
 class EditContext : public EventTarget {
     explicit EditContext(Handle h) noexcept;
-
 public:
     explicit EditContext(const emlite::Val &val) noexcept;
     static EditContext take_ownership(Handle h) noexcept;
-
     [[nodiscard]] EditContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EditContext(..)` constructor, creating a new EditContext instance
     EditContext();
     /// The `new EditContext(..)` constructor, creating a new EditContext instance
-    EditContext(const jsbind::Any& options);
+    EditContext(const EditContextInit& options);
     /// The updateText method.
     /// [`EditContext.updateText`](https://developer.mozilla.org/en-US/docs/Web/API/EditContext/updateText)
     jsbind::Undefined updateText(unsigned long rangeStart, unsigned long rangeEnd, const jsbind::String& text);
@@ -89,3 +89,4 @@ public:
     void oncompositionend(const jsbind::Any& value);
 };
 
+} // namespace webbind

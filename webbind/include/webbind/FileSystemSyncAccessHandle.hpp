@@ -3,30 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "FileSystemReadWriteOptions.hpp"
 
-class FileSystemReadWriteOptions;
+namespace webbind {
 
-
-class FileSystemReadWriteOptions : public emlite::Val {
-  explicit FileSystemReadWriteOptions(Handle h) noexcept;
-public:
-    static FileSystemReadWriteOptions take_ownership(Handle h) noexcept;
-    explicit FileSystemReadWriteOptions(const emlite::Val &val) noexcept;
-    FileSystemReadWriteOptions() noexcept;
-    [[nodiscard]] FileSystemReadWriteOptions clone() const noexcept;
-    [[nodiscard]] long long at() const;
-    void at(long long value);
-};
-
-/// The FileSystemSyncAccessHandle class.
+/// Interface FileSystemSyncAccessHandle
 /// [`FileSystemSyncAccessHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle)
 class FileSystemSyncAccessHandle : public emlite::Val {
     explicit FileSystemSyncAccessHandle(Handle h) noexcept;
-
 public:
     explicit FileSystemSyncAccessHandle(const emlite::Val &val) noexcept;
     static FileSystemSyncAccessHandle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemSyncAccessHandle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The read method.
@@ -55,3 +42,4 @@ public:
     jsbind::Undefined close();
 };
 
+} // namespace webbind

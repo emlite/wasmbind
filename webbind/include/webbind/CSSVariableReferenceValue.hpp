@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class CSSUnparsedValue;
 
-
-/// The CSSVariableReferenceValue class.
+/// Interface CSSVariableReferenceValue
 /// [`CSSVariableReferenceValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSVariableReferenceValue)
 class CSSVariableReferenceValue : public emlite::Val {
     explicit CSSVariableReferenceValue(Handle h) noexcept;
-
 public:
     explicit CSSVariableReferenceValue(const emlite::Val &val) noexcept;
     static CSSVariableReferenceValue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSVariableReferenceValue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSVariableReferenceValue(..)` constructor, creating a new CSSVariableReferenceValue instance
@@ -33,3 +32,4 @@ public:
     [[nodiscard]] CSSUnparsedValue fallback() const;
 };
 
+} // namespace webbind

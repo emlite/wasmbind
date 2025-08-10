@@ -3,30 +3,18 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "TextDecoderOptions.hpp"
+#include "TextDecodeOptions.hpp"
 
-class TextDecodeOptions;
+namespace webbind {
 
-
-class TextDecodeOptions : public emlite::Val {
-  explicit TextDecodeOptions(Handle h) noexcept;
-public:
-    static TextDecodeOptions take_ownership(Handle h) noexcept;
-    explicit TextDecodeOptions(const emlite::Val &val) noexcept;
-    TextDecodeOptions() noexcept;
-    [[nodiscard]] TextDecodeOptions clone() const noexcept;
-    [[nodiscard]] bool stream() const;
-    void stream(bool value);
-};
-
-/// The TextDecoder class.
+/// Interface TextDecoder
 /// [`TextDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder)
 class TextDecoder : public emlite::Val {
     explicit TextDecoder(Handle h) noexcept;
-
 public:
     explicit TextDecoder(const emlite::Val &val) noexcept;
     static TextDecoder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextDecoder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextDecoder(..)` constructor, creating a new TextDecoder instance
@@ -34,7 +22,7 @@ public:
     /// The `new TextDecoder(..)` constructor, creating a new TextDecoder instance
     TextDecoder(const jsbind::String& label);
     /// The `new TextDecoder(..)` constructor, creating a new TextDecoder instance
-    TextDecoder(const jsbind::String& label, const jsbind::Any& options);
+    TextDecoder(const jsbind::String& label, const TextDecoderOptions& options);
     /// The decode method.
     /// [`TextDecoder.decode`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/decode)
     jsbind::String decode();
@@ -55,3 +43,4 @@ public:
     [[nodiscard]] bool ignoreBOM() const;
 };
 
+} // namespace webbind

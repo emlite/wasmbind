@@ -1,5 +1,6 @@
-#include <webbind/GPUSupportedFeatures.hpp>
+#include "webbind/GPUSupportedFeatures.hpp"
 
+namespace webbind {
 
 GPUSupportedFeatures GPUSupportedFeatures::take_ownership(Handle h) noexcept {
         return GPUSupportedFeatures(h);
@@ -10,3 +11,4 @@ GPUSupportedFeatures::GPUSupportedFeatures(Handle h) noexcept : emlite::Val(emli
 GPUSupportedFeatures::GPUSupportedFeatures(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

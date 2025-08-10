@@ -1,5 +1,6 @@
-#include <webbind/HTMLTableCaptionElement.hpp>
+#include "webbind/HTMLTableCaptionElement.hpp"
 
+namespace webbind {
 
 HTMLTableCaptionElement HTMLTableCaptionElement::take_ownership(Handle h) noexcept {
         return HTMLTableCaptionElement(h);
@@ -8,7 +9,6 @@ HTMLTableCaptionElement HTMLTableCaptionElement::clone() const noexcept { return
 emlite::Val HTMLTableCaptionElement::instance() noexcept { return emlite::Val::global("HTMLTableCaptionElement"); }
 HTMLTableCaptionElement::HTMLTableCaptionElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLTableCaptionElement::HTMLTableCaptionElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLTableCaptionElement::HTMLTableCaptionElement() : HTMLElement(emlite::Val::global("HTMLTableCaptionElement").new_()) {}
 
@@ -20,3 +20,5 @@ void HTMLTableCaptionElement::align(const jsbind::String& value) {
     HTMLElement::set("align", value);
 }
 
+
+} // namespace webbind

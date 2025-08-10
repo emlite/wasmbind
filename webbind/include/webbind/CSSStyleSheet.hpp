@@ -2,29 +2,29 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "StyleSheet.hpp"
 #include "enums.hpp"
+#include "StyleSheet.hpp"
+#include "CSSStyleSheetInit.hpp"
+
+namespace webbind {
 
 class CSSRule;
 class CSSRuleList;
 class CSSStyleSheet;
 
-
-/// The CSSStyleSheet class.
+/// Interface CSSStyleSheet
 /// [`CSSStyleSheet`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet)
 class CSSStyleSheet : public StyleSheet {
     explicit CSSStyleSheet(Handle h) noexcept;
-
 public:
     explicit CSSStyleSheet(const emlite::Val &val) noexcept;
     static CSSStyleSheet take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSStyleSheet clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSStyleSheet(..)` constructor, creating a new CSSStyleSheet instance
     CSSStyleSheet();
     /// The `new CSSStyleSheet(..)` constructor, creating a new CSSStyleSheet instance
-    CSSStyleSheet(const jsbind::Any& options);
+    CSSStyleSheet(const CSSStyleSheetInit& options);
     /// Getter of the `ownerRule` attribute.
     /// [`CSSStyleSheet.ownerRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/ownerRule)
     [[nodiscard]] CSSRule ownerRule() const;
@@ -69,3 +69,4 @@ public:
     jsbind::Undefined removeRule(unsigned long index);
 };
 
+} // namespace webbind

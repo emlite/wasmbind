@@ -1,5 +1,6 @@
-#include <webbind/GPUSupportedLimits.hpp>
+#include "webbind/GPUSupportedLimits.hpp"
 
+namespace webbind {
 
 GPUSupportedLimits GPUSupportedLimits::take_ownership(Handle h) noexcept {
         return GPUSupportedLimits(h);
@@ -8,7 +9,6 @@ GPUSupportedLimits GPUSupportedLimits::clone() const noexcept { return *this; }
 emlite::Val GPUSupportedLimits::instance() noexcept { return emlite::Val::global("GPUSupportedLimits"); }
 GPUSupportedLimits::GPUSupportedLimits(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUSupportedLimits::GPUSupportedLimits(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned long GPUSupportedLimits::maxTextureDimension1D() const {
     return emlite::Val::get("maxTextureDimension1D").as<unsigned long>();
@@ -134,3 +134,5 @@ unsigned long GPUSupportedLimits::maxComputeWorkgroupsPerDimension() const {
     return emlite::Val::get("maxComputeWorkgroupsPerDimension").as<unsigned long>();
 }
 
+
+} // namespace webbind

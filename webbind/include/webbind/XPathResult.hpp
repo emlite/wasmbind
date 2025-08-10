@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 
-
-/// The XPathResult class.
+/// Interface XPathResult
 /// [`XPathResult`](https://developer.mozilla.org/en-US/docs/Web/API/XPathResult)
 class XPathResult : public emlite::Val {
     explicit XPathResult(Handle h) noexcept;
-
 public:
     explicit XPathResult(const emlite::Val &val) noexcept;
     static XPathResult take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XPathResult clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `resultType` attribute.
@@ -47,3 +46,4 @@ public:
     Node snapshotItem(unsigned long index);
 };
 
+} // namespace webbind

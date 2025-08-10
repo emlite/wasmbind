@@ -1,33 +1,11 @@
-#include <webbind/IDBObjectStore.hpp>
-#include <webbind/DOMStringList.hpp>
-#include <webbind/IDBTransaction.hpp>
-#include <webbind/IDBRequest.hpp>
-#include <webbind/IDBIndex.hpp>
+#include "webbind/IDBObjectStore.hpp"
+#include "webbind/DOMStringList.hpp"
+#include "webbind/IDBTransaction.hpp"
+#include "webbind/IDBRequest.hpp"
+#include "webbind/IDBIndex.hpp"
+#include "webbind/IDBIndexParameters.hpp"
 
-
-IDBIndexParameters::IDBIndexParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IDBIndexParameters IDBIndexParameters::take_ownership(Handle h) noexcept {
-        return IDBIndexParameters(h);
-    }
-IDBIndexParameters::IDBIndexParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
-IDBIndexParameters::IDBIndexParameters() noexcept: emlite::Val(emlite::Val::object()) {}
-IDBIndexParameters IDBIndexParameters::clone() const noexcept { return *this; }
-
-bool IDBIndexParameters::unique() const {
-    return emlite::Val::get("unique").as<bool>();
-}
-
-void IDBIndexParameters::unique(bool value) {
-    emlite::Val::set("unique", value);
-}
-
-bool IDBIndexParameters::multiEntry() const {
-    return emlite::Val::get("multiEntry").as<bool>();
-}
-
-void IDBIndexParameters::multiEntry(bool value) {
-    emlite::Val::set("multiEntry", value);
-}
+namespace webbind {
 
 IDBObjectStore IDBObjectStore::take_ownership(Handle h) noexcept {
         return IDBObjectStore(h);
@@ -36,7 +14,6 @@ IDBObjectStore IDBObjectStore::clone() const noexcept { return *this; }
 emlite::Val IDBObjectStore::instance() noexcept { return emlite::Val::global("IDBObjectStore"); }
 IDBObjectStore::IDBObjectStore(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBObjectStore::IDBObjectStore(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String IDBObjectStore::name() const {
     return emlite::Val::get("name").as<jsbind::String>();
@@ -166,3 +143,5 @@ jsbind::Undefined IDBObjectStore::deleteIndex(const jsbind::String& name) {
     return emlite::Val::call("deleteIndex", name).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

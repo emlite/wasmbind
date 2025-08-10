@@ -1,11 +1,15 @@
-#include <webbind/Text.hpp>
-#include <webbind/DOMQuad.hpp>
-#include <webbind/Document.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/SVGGeometryElement.hpp>
-#include <webbind/HTMLSlotElement.hpp>
+#include "webbind/Text.hpp"
+#include "webbind/Text.hpp"
+#include "webbind/DOMQuad.hpp"
+#include "webbind/BoxQuadOptions.hpp"
+#include "webbind/DOMQuadInit.hpp"
+#include "webbind/ConvertCoordinateOptions.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/DOMPointInit.hpp"
+#include "webbind/HTMLSlotElement.hpp"
 
+namespace webbind {
 
 Text Text::take_ownership(Handle h) noexcept {
         return Text(h);
@@ -14,7 +18,6 @@ Text Text::clone() const noexcept { return *this; }
 emlite::Val Text::instance() noexcept { return emlite::Val::global("Text"); }
 Text::Text(Handle h) noexcept : CharacterData(emlite::Val::take_ownership(h)) {}
 Text::Text(const emlite::Val &val) noexcept: CharacterData(val) {}
-
 
 Text::Text() : CharacterData(emlite::Val::global("Text").new_()) {}
 
@@ -64,3 +67,5 @@ HTMLSlotElement Text::assignedSlot() const {
     return CharacterData::get("assignedSlot").as<HTMLSlotElement>();
 }
 
+
+} // namespace webbind

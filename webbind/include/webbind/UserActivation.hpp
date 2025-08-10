@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The UserActivation class.
+/// Interface UserActivation
 /// [`UserActivation`](https://developer.mozilla.org/en-US/docs/Web/API/UserActivation)
 class UserActivation : public emlite::Val {
     explicit UserActivation(Handle h) noexcept;
-
 public:
     explicit UserActivation(const emlite::Val &val) noexcept;
     static UserActivation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] UserActivation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `hasBeenActive` attribute.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] bool isActive() const;
 };
 
+} // namespace webbind

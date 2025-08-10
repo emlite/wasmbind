@@ -1,11 +1,12 @@
-#include <webbind/DOMQuad.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/DOMRect.hpp>
-#include <webbind/Node.hpp>
-#include <webbind/Document.hpp>
-#include <webbind/SVGGeometryElement.hpp>
+#include "webbind/DOMQuad.hpp"
+#include "webbind/DOMPointInit.hpp"
+#include "webbind/DOMQuad.hpp"
+#include "webbind/DOMRectInit.hpp"
+#include "webbind/DOMQuadInit.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/DOMRect.hpp"
 
+namespace webbind {
 
 DOMQuad DOMQuad::take_ownership(Handle h) noexcept {
         return DOMQuad(h);
@@ -14,7 +15,6 @@ DOMQuad DOMQuad::clone() const noexcept { return *this; }
 emlite::Val DOMQuad::instance() noexcept { return emlite::Val::global("DOMQuad"); }
 DOMQuad::DOMQuad(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DOMQuad::DOMQuad(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 DOMQuad::DOMQuad() : emlite::Val(emlite::Val::global("DOMQuad").new_()) {}
 
@@ -66,3 +66,5 @@ jsbind::Object DOMQuad::toJSON() {
     return emlite::Val::call("toJSON").as<jsbind::Object>();
 }
 
+
+} // namespace webbind

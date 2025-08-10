@@ -2,38 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "ProfilerInitOptions.hpp"
+#include "ProfilerTrace.hpp"
 
-class ProfilerTrace;
+namespace webbind {
 
-
-class ProfilerTrace : public emlite::Val {
-  explicit ProfilerTrace(Handle h) noexcept;
-public:
-    static ProfilerTrace take_ownership(Handle h) noexcept;
-    explicit ProfilerTrace(const emlite::Val &val) noexcept;
-    ProfilerTrace() noexcept;
-    [[nodiscard]] ProfilerTrace clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> resources() const;
-    void resources(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> frames() const;
-    void frames(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> stacks() const;
-    void stacks(const jsbind::TypedArray<jsbind::Any>& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> samples() const;
-    void samples(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-/// The Profiler class.
+/// Interface Profiler
 /// [`Profiler`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler)
 class Profiler : public EventTarget {
     explicit Profiler(Handle h) noexcept;
-
 public:
     explicit Profiler(const emlite::Val &val) noexcept;
     static Profiler take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Profiler clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sampleInterval` attribute.
@@ -43,9 +25,10 @@ public:
     /// [`Profiler.stopped`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler/stopped)
     [[nodiscard]] bool stopped() const;
     /// The `new Profiler(..)` constructor, creating a new Profiler instance
-    Profiler(const jsbind::Any& options);
+    Profiler(const ProfilerInitOptions& options);
     /// The stop method.
     /// [`Profiler.stop`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler/stop)
     jsbind::Promise<ProfilerTrace> stop();
 };
 
+} // namespace webbind

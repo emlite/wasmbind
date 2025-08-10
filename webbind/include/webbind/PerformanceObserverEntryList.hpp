@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PerformanceObserverEntryList class.
+/// Interface PerformanceObserverEntryList
 /// [`PerformanceObserverEntryList`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList)
 class PerformanceObserverEntryList : public emlite::Val {
     explicit PerformanceObserverEntryList(Handle h) noexcept;
-
 public:
     explicit PerformanceObserverEntryList(const emlite::Val &val) noexcept;
     static PerformanceObserverEntryList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceObserverEntryList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The getEntries method.
@@ -30,3 +29,4 @@ public:
     jsbind::Any getEntriesByName(const jsbind::String& name, const jsbind::String& type);
 };
 
+} // namespace webbind

@@ -2,25 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGraphicsElement.hpp"
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "SVGGraphicsElement.hpp"
+#include "DOMPointInit.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 class SVGAnimatedEnumeration;
 class DOMPoint;
 class DOMRect;
 
-
-/// The SVGTextContentElement class.
+/// Interface SVGTextContentElement
 /// [`SVGTextContentElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextContentElement)
 class SVGTextContentElement : public SVGGraphicsElement {
     explicit SVGTextContentElement(Handle h) noexcept;
-
 public:
     explicit SVGTextContentElement(const emlite::Val &val) noexcept;
     static SVGTextContentElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGTextContentElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `textLength` attribute.
@@ -61,3 +60,4 @@ public:
     jsbind::Undefined selectSubString(unsigned long charnum, unsigned long nchars);
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSColorValue.hpp"
 #include "enums.hpp"
+#include "CSSColorValue.hpp"
 
+namespace webbind {
 
-/// The CSSOKLCH class.
+/// Interface CSSOKLCH
 /// [`CSSOKLCH`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH)
 class CSSOKLCH : public CSSColorValue {
     explicit CSSOKLCH(Handle h) noexcept;
-
 public:
     explicit CSSOKLCH(const emlite::Val &val) noexcept;
     static CSSOKLCH take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSOKLCH clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSOKLCH(..)` constructor, creating a new CSSOKLCH instance
@@ -47,3 +46,4 @@ public:
     void alpha(const jsbind::Any& value);
 };
 
+} // namespace webbind

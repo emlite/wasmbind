@@ -3,31 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "MultiCacheQueryOptions.hpp"
 
-class MultiCacheQueryOptions;
+namespace webbind {
+
 class Cache;
 
-
-class MultiCacheQueryOptions : public emlite::Val {
-  explicit MultiCacheQueryOptions(Handle h) noexcept;
-public:
-    static MultiCacheQueryOptions take_ownership(Handle h) noexcept;
-    explicit MultiCacheQueryOptions(const emlite::Val &val) noexcept;
-    MultiCacheQueryOptions() noexcept;
-    [[nodiscard]] MultiCacheQueryOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String cacheName() const;
-    void cacheName(const jsbind::String& value);
-};
-
-/// The CacheStorage class.
+/// Interface CacheStorage
 /// [`CacheStorage`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)
 class CacheStorage : public emlite::Val {
     explicit CacheStorage(Handle h) noexcept;
-
 public:
     explicit CacheStorage(const emlite::Val &val) noexcept;
     static CacheStorage take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CacheStorage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The match method.
@@ -50,3 +38,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<jsbind::String>> keys();
 };
 
+} // namespace webbind

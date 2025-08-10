@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class CSSStyleValue;
 
-
-/// The CSSStyleValue class.
+/// Interface CSSStyleValue
 /// [`CSSStyleValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleValue)
 class CSSStyleValue : public emlite::Val {
     explicit CSSStyleValue(Handle h) noexcept;
-
 public:
     explicit CSSStyleValue(const emlite::Val &val) noexcept;
     static CSSStyleValue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSStyleValue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The parse method.
@@ -26,3 +25,4 @@ public:
     static jsbind::TypedArray<CSSStyleValue> parseAll(const jsbind::String& property, const jsbind::String& cssText);
 };
 
+} // namespace webbind

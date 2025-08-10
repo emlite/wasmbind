@@ -2,8 +2,10 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "StorageManager.hpp"
 #include "enums.hpp"
+#include "StorageEstimate.hpp"
+
+namespace webbind {
 
 class Storage;
 class IDBFactory;
@@ -13,16 +15,13 @@ class FileSystemDirectoryHandle;
 class BroadcastChannel;
 class SharedWorker;
 
-
-/// The StorageAccessHandle class.
+/// Interface StorageAccessHandle
 /// [`StorageAccessHandle`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle)
 class StorageAccessHandle : public emlite::Val {
     explicit StorageAccessHandle(Handle h) noexcept;
-
 public:
     explicit StorageAccessHandle(const emlite::Val &val) noexcept;
     static StorageAccessHandle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] StorageAccessHandle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sessionStorage` attribute.
@@ -63,3 +62,4 @@ public:
     SharedWorker SharedWorker_(const jsbind::String& scriptURL, const jsbind::Any& options);
 };
 
+} // namespace webbind

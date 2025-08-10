@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ReadableStream;
 class WritableStream;
 
-
-/// The TextEncoderStream class.
+/// Interface TextEncoderStream
 /// [`TextEncoderStream`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream)
 class TextEncoderStream : public emlite::Val {
     explicit TextEncoderStream(Handle h) noexcept;
-
 public:
     explicit TextEncoderStream(const emlite::Val &val) noexcept;
     static TextEncoderStream take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TextEncoderStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextEncoderStream(..)` constructor, creating a new TextEncoderStream instance
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] WritableStream writable() const;
 };
 
+} // namespace webbind

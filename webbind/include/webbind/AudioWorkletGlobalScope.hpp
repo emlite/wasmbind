@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WorkletGlobalScope.hpp"
 #include "enums.hpp"
+#include "WorkletGlobalScope.hpp"
+
+namespace webbind {
 
 class MessagePort;
 
-
-/// The AudioWorkletGlobalScope class.
+/// Interface AudioWorkletGlobalScope
 /// [`AudioWorkletGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope)
 class AudioWorkletGlobalScope : public WorkletGlobalScope {
     explicit AudioWorkletGlobalScope(Handle h) noexcept;
-
 public:
     explicit AudioWorkletGlobalScope(const emlite::Val &val) noexcept;
     static AudioWorkletGlobalScope take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioWorkletGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The registerProcessor method.
@@ -36,6 +35,7 @@ public:
     [[nodiscard]] unsigned long renderQuantumSize() const;
     /// Getter of the `port` attribute.
     /// [`AudioWorkletGlobalScope.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/port)
-    [[nodiscard]] jsbind::Any port() const;
+    [[nodiscard]] MessagePort port() const;
 };
 
+} // namespace webbind

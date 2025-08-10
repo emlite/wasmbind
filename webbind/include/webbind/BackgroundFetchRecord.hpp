@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Request;
 class Response;
 
-
-/// The BackgroundFetchRecord class.
+/// Interface BackgroundFetchRecord
 /// [`BackgroundFetchRecord`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord)
 class BackgroundFetchRecord : public emlite::Val {
     explicit BackgroundFetchRecord(Handle h) noexcept;
-
 public:
     explicit BackgroundFetchRecord(const emlite::Val &val) noexcept;
     static BackgroundFetchRecord take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BackgroundFetchRecord clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `request` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] jsbind::Promise<Response> responseReady() const;
 };
 
+} // namespace webbind

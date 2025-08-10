@@ -1,5 +1,6 @@
-#include <webbind/PaymentManager.hpp>
+#include "webbind/PaymentManager.hpp"
 
+namespace webbind {
 
 PaymentManager PaymentManager::take_ownership(Handle h) noexcept {
         return PaymentManager(h);
@@ -8,7 +9,6 @@ PaymentManager PaymentManager::clone() const noexcept { return *this; }
 emlite::Val PaymentManager::instance() noexcept { return emlite::Val::global("PaymentManager"); }
 PaymentManager::PaymentManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentManager::PaymentManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String PaymentManager::userHint() const {
     return emlite::Val::get("userHint").as<jsbind::String>();
@@ -22,3 +22,5 @@ jsbind::Promise<jsbind::Undefined> PaymentManager::enableDelegations(const jsbin
     return emlite::Val::call("enableDelegations", delegations).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

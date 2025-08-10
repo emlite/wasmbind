@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class NodeList;
 
-
-/// The HTMLProgressElement class.
+/// Interface HTMLProgressElement
 /// [`HTMLProgressElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement)
 class HTMLProgressElement : public HTMLElement {
     explicit HTMLProgressElement(Handle h) noexcept;
-
 public:
     explicit HTMLProgressElement(const emlite::Val &val) noexcept;
     static HTMLProgressElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLProgressElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLProgressElement(..)` constructor, creating a new HTMLProgressElement instance
@@ -41,3 +40,4 @@ public:
     [[nodiscard]] NodeList labels() const;
 };
 
+} // namespace webbind

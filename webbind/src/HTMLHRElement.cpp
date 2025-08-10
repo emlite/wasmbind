@@ -1,5 +1,6 @@
-#include <webbind/HTMLHRElement.hpp>
+#include "webbind/HTMLHRElement.hpp"
 
+namespace webbind {
 
 HTMLHRElement HTMLHRElement::take_ownership(Handle h) noexcept {
         return HTMLHRElement(h);
@@ -8,7 +9,6 @@ HTMLHRElement HTMLHRElement::clone() const noexcept { return *this; }
 emlite::Val HTMLHRElement::instance() noexcept { return emlite::Val::global("HTMLHRElement"); }
 HTMLHRElement::HTMLHRElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLHRElement::HTMLHRElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLHRElement::HTMLHRElement() : HTMLElement(emlite::Val::global("HTMLHRElement").new_()) {}
 
@@ -52,3 +52,5 @@ void HTMLHRElement::width(const jsbind::String& value) {
     HTMLElement::set("width", value);
 }
 
+
+} // namespace webbind

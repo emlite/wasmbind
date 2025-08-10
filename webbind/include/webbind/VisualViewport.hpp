@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The VisualViewport class.
+/// Interface VisualViewport
 /// [`VisualViewport`](https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport)
 class VisualViewport : public EventTarget {
     explicit VisualViewport(Handle h) noexcept;
-
 public:
     explicit VisualViewport(const emlite::Val &val) noexcept;
     static VisualViewport take_ownership(Handle h) noexcept;
-
     [[nodiscard]] VisualViewport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `offsetLeft` attribute.
@@ -58,3 +57,4 @@ public:
     void onscrollend(const jsbind::Any& value);
 };
 
+} // namespace webbind

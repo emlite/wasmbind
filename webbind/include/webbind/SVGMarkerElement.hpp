@@ -2,8 +2,10 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 class SVGAnimatedEnumeration;
@@ -12,16 +14,13 @@ class SVGAngle;
 class SVGAnimatedRect;
 class SVGAnimatedPreserveAspectRatio;
 
-
-/// The SVGMarkerElement class.
+/// Interface SVGMarkerElement
 /// [`SVGMarkerElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGMarkerElement)
 class SVGMarkerElement : public SVGElement {
     explicit SVGMarkerElement(Handle h) noexcept;
-
 public:
     explicit SVGMarkerElement(const emlite::Val &val) noexcept;
     static SVGMarkerElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGMarkerElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `refX` attribute.
@@ -65,3 +64,4 @@ public:
     [[nodiscard]] SVGAnimatedPreserveAspectRatio preserveAspectRatio() const;
 };
 
+} // namespace webbind

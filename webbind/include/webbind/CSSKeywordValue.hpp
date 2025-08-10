@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleValue.hpp"
 #include "enums.hpp"
+#include "CSSStyleValue.hpp"
 
+namespace webbind {
 
-/// The CSSKeywordValue class.
+/// Interface CSSKeywordValue
 /// [`CSSKeywordValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeywordValue)
 class CSSKeywordValue : public CSSStyleValue {
     explicit CSSKeywordValue(Handle h) noexcept;
-
 public:
     explicit CSSKeywordValue(const emlite::Val &val) noexcept;
     static CSSKeywordValue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSKeywordValue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSKeywordValue(..)` constructor, creating a new CSSKeywordValue instance
@@ -27,3 +26,4 @@ public:
     void value(const jsbind::String& value);
 };
 
+} // namespace webbind

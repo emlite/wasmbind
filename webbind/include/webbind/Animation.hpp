@@ -2,24 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class AnimationEffect;
 class AnimationTimeline;
 class Animation;
 class AnimationTrigger;
 
-
-/// The Animation class.
+/// Interface Animation
 /// [`Animation`](https://developer.mozilla.org/en-US/docs/Web/API/Animation)
 class Animation : public EventTarget {
     explicit Animation(Handle h) noexcept;
-
 public:
     explicit Animation(const emlite::Val &val) noexcept;
     static Animation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Animation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Animation(..)` constructor, creating a new Animation instance
@@ -132,3 +132,4 @@ public:
     [[nodiscard]] double overallProgress() const;
 };
 
+} // namespace webbind

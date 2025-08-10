@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ContactAddress class.
+/// Interface ContactAddress
 /// [`ContactAddress`](https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress)
 class ContactAddress : public emlite::Val {
     explicit ContactAddress(Handle h) noexcept;
-
 public:
     explicit ContactAddress(const emlite::Val &val) noexcept;
     static ContactAddress take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ContactAddress clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
@@ -51,3 +50,4 @@ public:
     [[nodiscard]] jsbind::TypedArray<jsbind::String> addressLine() const;
 };
 
+} // namespace webbind

@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class WebGLUniformLocation;
 
-
-/// The WebGLRenderingContext class.
+/// Interface WebGLRenderingContext
 /// [`WebGLRenderingContext`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext)
 class WebGLRenderingContext : public emlite::Val {
     explicit WebGLRenderingContext(Handle h) noexcept;
-
 public:
     explicit WebGLRenderingContext(const emlite::Val &val) noexcept;
     static WebGLRenderingContext take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebGLRenderingContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The makeXRCompatible method.
@@ -77,3 +76,4 @@ public:
     jsbind::Undefined uniformMatrix4fv(const WebGLUniformLocation& location, const jsbind::Any& transpose, const jsbind::Any& value);
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WebGLShaderPrecisionFormat class.
+/// Interface WebGLShaderPrecisionFormat
 /// [`WebGLShaderPrecisionFormat`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat)
 class WebGLShaderPrecisionFormat : public emlite::Val {
     explicit WebGLShaderPrecisionFormat(Handle h) noexcept;
-
 public:
     explicit WebGLShaderPrecisionFormat(const emlite::Val &val) noexcept;
     static WebGLShaderPrecisionFormat take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebGLShaderPrecisionFormat clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `rangeMin` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] jsbind::Any precision() const;
 };
 
+} // namespace webbind

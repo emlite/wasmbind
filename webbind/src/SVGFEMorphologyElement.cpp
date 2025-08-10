@@ -1,9 +1,10 @@
-#include <webbind/SVGFEMorphologyElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEMorphologyElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEMorphologyElement SVGFEMorphologyElement::take_ownership(Handle h) noexcept {
         return SVGFEMorphologyElement(h);
@@ -12,7 +13,6 @@ SVGFEMorphologyElement SVGFEMorphologyElement::clone() const noexcept { return *
 emlite::Val SVGFEMorphologyElement::instance() noexcept { return emlite::Val::global("SVGFEMorphologyElement"); }
 SVGFEMorphologyElement::SVGFEMorphologyElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEMorphologyElement::SVGFEMorphologyElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEMorphologyElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -50,3 +50,5 @@ SVGAnimatedString SVGFEMorphologyElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

@@ -3,38 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "RTCRtpCodec.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class RTCRtpSender;
 class RTCRtpReceiver;
-class RTCRtpCodec;
 
-
-class RTCRtpCodec : public emlite::Val {
-  explicit RTCRtpCodec(Handle h) noexcept;
-public:
-    static RTCRtpCodec take_ownership(Handle h) noexcept;
-    explicit RTCRtpCodec(const emlite::Val &val) noexcept;
-    RTCRtpCodec() noexcept;
-    [[nodiscard]] RTCRtpCodec clone() const noexcept;
-    [[nodiscard]] jsbind::String mimeType() const;
-    void mimeType(const jsbind::String& value);
-    [[nodiscard]] unsigned long clockRate() const;
-    void clockRate(unsigned long value);
-    [[nodiscard]] unsigned short channels() const;
-    void channels(unsigned short value);
-    [[nodiscard]] jsbind::String sdpFmtpLine() const;
-    void sdpFmtpLine(const jsbind::String& value);
-};
-
-/// The RTCRtpTransceiver class.
+/// Interface RTCRtpTransceiver
 /// [`RTCRtpTransceiver`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver)
 class RTCRtpTransceiver : public emlite::Val {
     explicit RTCRtpTransceiver(Handle h) noexcept;
-
 public:
     explicit RTCRtpTransceiver(const emlite::Val &val) noexcept;
     static RTCRtpTransceiver take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCRtpTransceiver clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mid` attribute.
@@ -63,3 +46,4 @@ public:
     jsbind::Undefined setCodecPreferences(const jsbind::TypedArray<RTCRtpCodec>& codecs);
 };
 
+} // namespace webbind

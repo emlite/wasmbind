@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The NamedFlowMap class.
+/// Interface NamedFlowMap
 /// [`NamedFlowMap`](https://developer.mozilla.org/en-US/docs/Web/API/NamedFlowMap)
 class NamedFlowMap : public emlite::Val {
     explicit NamedFlowMap(Handle h) noexcept;
-
 public:
     explicit NamedFlowMap(const emlite::Val &val) noexcept;
     static NamedFlowMap take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NamedFlowMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
 };
 
+} // namespace webbind

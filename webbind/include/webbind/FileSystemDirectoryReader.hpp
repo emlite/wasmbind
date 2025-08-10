@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The FileSystemDirectoryReader class.
+/// Interface FileSystemDirectoryReader
 /// [`FileSystemDirectoryReader`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader)
 class FileSystemDirectoryReader : public emlite::Val {
     explicit FileSystemDirectoryReader(Handle h) noexcept;
-
 public:
     explicit FileSystemDirectoryReader(const emlite::Val &val) noexcept;
     static FileSystemDirectoryReader take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemDirectoryReader clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The readEntries method.
@@ -24,3 +23,4 @@ public:
     jsbind::Undefined readEntries(const jsbind::Function& successCallback, const jsbind::Function& errorCallback);
 };
 
+} // namespace webbind

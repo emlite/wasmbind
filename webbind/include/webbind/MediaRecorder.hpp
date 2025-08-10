@@ -2,27 +2,28 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "MediaRecorderOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class MediaStream;
 
-
-/// The MediaRecorder class.
+/// Interface MediaRecorder
 /// [`MediaRecorder`](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder)
 class MediaRecorder : public EventTarget {
     explicit MediaRecorder(Handle h) noexcept;
-
 public:
     explicit MediaRecorder(const emlite::Val &val) noexcept;
     static MediaRecorder take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaRecorder clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaRecorder(..)` constructor, creating a new MediaRecorder instance
     MediaRecorder(const MediaStream& stream);
     /// The `new MediaRecorder(..)` constructor, creating a new MediaRecorder instance
-    MediaRecorder(const MediaStream& stream, const jsbind::Any& options);
+    MediaRecorder(const MediaStream& stream, const MediaRecorderOptions& options);
     /// Getter of the `stream` attribute.
     /// [`MediaRecorder.stream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/stream)
     [[nodiscard]] MediaStream stream() const;
@@ -100,3 +101,4 @@ public:
     static bool isTypeSupported(const jsbind::String& type);
 };
 
+} // namespace webbind

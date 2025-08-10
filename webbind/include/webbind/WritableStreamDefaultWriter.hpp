@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class WritableStream;
 
-
-/// The WritableStreamDefaultWriter class.
+/// Interface WritableStreamDefaultWriter
 /// [`WritableStreamDefaultWriter`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)
 class WritableStreamDefaultWriter : public emlite::Val {
     explicit WritableStreamDefaultWriter(Handle h) noexcept;
-
 public:
     explicit WritableStreamDefaultWriter(const emlite::Val &val) noexcept;
     static WritableStreamDefaultWriter take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WritableStreamDefaultWriter clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WritableStreamDefaultWriter(..)` constructor, creating a new WritableStreamDefaultWriter instance
@@ -49,3 +48,4 @@ public:
     jsbind::Promise<jsbind::Undefined> write(const jsbind::Any& chunk);
 };
 
+} // namespace webbind

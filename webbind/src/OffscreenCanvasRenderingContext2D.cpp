@@ -1,14 +1,16 @@
-#include <webbind/OffscreenCanvasRenderingContext2D.hpp>
-#include <webbind/OffscreenCanvas.hpp>
-#include <webbind/CanvasRenderingContext2D.hpp>
-#include <webbind/DOMMatrix.hpp>
-#include <webbind/SVGSVGElement.hpp>
-#include <webbind/CanvasGradient.hpp>
-#include <webbind/CanvasPattern.hpp>
-#include <webbind/Path2D.hpp>
-#include <webbind/TextMetrics.hpp>
-#include <webbind/ImageData.hpp>
+#include "webbind/OffscreenCanvasRenderingContext2D.hpp"
+#include "webbind/OffscreenCanvas.hpp"
+#include "webbind/CanvasRenderingContext2DSettings.hpp"
+#include "webbind/DOMMatrix.hpp"
+#include "webbind/DOMMatrix2DInit.hpp"
+#include "webbind/CanvasGradient.hpp"
+#include "webbind/CanvasPattern.hpp"
+#include "webbind/Path2D.hpp"
+#include "webbind/TextMetrics.hpp"
+#include "webbind/ImageData.hpp"
+#include "webbind/ImageDataSettings.hpp"
 
+namespace webbind {
 
 OffscreenCanvasRenderingContext2D OffscreenCanvasRenderingContext2D::take_ownership(Handle h) noexcept {
         return OffscreenCanvasRenderingContext2D(h);
@@ -17,7 +19,6 @@ OffscreenCanvasRenderingContext2D OffscreenCanvasRenderingContext2D::clone() con
 emlite::Val OffscreenCanvasRenderingContext2D::instance() noexcept { return emlite::Val::global("OffscreenCanvasRenderingContext2D"); }
 OffscreenCanvasRenderingContext2D::OffscreenCanvasRenderingContext2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 OffscreenCanvasRenderingContext2D::OffscreenCanvasRenderingContext2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 OffscreenCanvas OffscreenCanvasRenderingContext2D::canvas() const {
     return emlite::Val::get("canvas").as<OffscreenCanvas>();
@@ -455,3 +456,5 @@ jsbind::Undefined OffscreenCanvasRenderingContext2D::ellipse(double x, double y,
     return emlite::Val::call("ellipse", x, y, radiusX, radiusY, rotation, startAngle, endAngle, counterclockwise).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

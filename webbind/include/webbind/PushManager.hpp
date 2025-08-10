@@ -3,33 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "PushSubscriptionOptionsInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class PushSubscription;
-class PushSubscriptionOptionsInit;
 
-
-class PushSubscriptionOptionsInit : public emlite::Val {
-  explicit PushSubscriptionOptionsInit(Handle h) noexcept;
-public:
-    static PushSubscriptionOptionsInit take_ownership(Handle h) noexcept;
-    explicit PushSubscriptionOptionsInit(const emlite::Val &val) noexcept;
-    PushSubscriptionOptionsInit() noexcept;
-    [[nodiscard]] PushSubscriptionOptionsInit clone() const noexcept;
-    [[nodiscard]] bool userVisibleOnly() const;
-    void userVisibleOnly(bool value);
-    [[nodiscard]] jsbind::Any applicationServerKey() const;
-    void applicationServerKey(const jsbind::Any& value);
-};
-
-/// The PushManager class.
+/// Interface PushManager
 /// [`PushManager`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager)
 class PushManager : public emlite::Val {
     explicit PushManager(Handle h) noexcept;
-
 public:
     explicit PushManager(const emlite::Val &val) noexcept;
     static PushManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PushManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `supportedContentEncodings` static attribute.
@@ -52,3 +39,4 @@ public:
     jsbind::Promise<PermissionState> permissionState(const PushSubscriptionOptionsInit& options);
 };
 
+} // namespace webbind

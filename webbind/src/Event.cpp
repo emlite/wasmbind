@@ -1,6 +1,8 @@
-#include <webbind/Event.hpp>
-#include <webbind/EventTarget.hpp>
+#include "webbind/Event.hpp"
+#include "webbind/EventInit.hpp"
+#include "webbind/EventTarget.hpp"
 
+namespace webbind {
 
 Event Event::take_ownership(Handle h) noexcept {
         return Event(h);
@@ -10,10 +12,9 @@ emlite::Val Event::instance() noexcept { return emlite::Val::global("Event"); }
 Event::Event(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Event::Event(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 Event::Event(const jsbind::String& type) : emlite::Val(emlite::Val::global("Event").new_(type)) {}
 
-Event::Event(const jsbind::String& type, const jsbind::Any& eventInitDict) : emlite::Val(emlite::Val::global("Event").new_(type, eventInitDict)) {}
+Event::Event(const jsbind::String& type, const EventInit& eventInitDict) : emlite::Val(emlite::Val::global("Event").new_(type, eventInitDict)) {}
 
 jsbind::String Event::type() const {
     return emlite::Val::get("type").as<jsbind::String>();
@@ -103,3 +104,5 @@ jsbind::Undefined Event::initEvent(const jsbind::String& type, bool bubbles, boo
     return emlite::Val::call("initEvent", type, bubbles, cancelable).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

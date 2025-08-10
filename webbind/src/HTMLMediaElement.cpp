@@ -1,14 +1,15 @@
-#include <webbind/HTMLMediaElement.hpp>
-#include <webbind/MediaError.hpp>
-#include <webbind/TimeRanges.hpp>
-#include <webbind/AudioTrackList.hpp>
-#include <webbind/VideoTrackList.hpp>
-#include <webbind/TextTrackList.hpp>
-#include <webbind/TextTrack.hpp>
-#include <webbind/MediaKeys.hpp>
-#include <webbind/MediaStream.hpp>
-#include <webbind/RemotePlayback.hpp>
+#include "webbind/HTMLMediaElement.hpp"
+#include "webbind/MediaError.hpp"
+#include "webbind/TimeRanges.hpp"
+#include "webbind/AudioTrackList.hpp"
+#include "webbind/VideoTrackList.hpp"
+#include "webbind/TextTrackList.hpp"
+#include "webbind/TextTrack.hpp"
+#include "webbind/MediaKeys.hpp"
+#include "webbind/MediaStream.hpp"
+#include "webbind/RemotePlayback.hpp"
 
+namespace webbind {
 
 HTMLMediaElement HTMLMediaElement::take_ownership(Handle h) noexcept {
         return HTMLMediaElement(h);
@@ -17,7 +18,6 @@ HTMLMediaElement HTMLMediaElement::clone() const noexcept { return *this; }
 emlite::Val HTMLMediaElement::instance() noexcept { return emlite::Val::global("HTMLMediaElement"); }
 HTMLMediaElement::HTMLMediaElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLMediaElement::HTMLMediaElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 MediaError HTMLMediaElement::error() const {
     return HTMLElement::get("error").as<MediaError>();
@@ -271,3 +271,5 @@ void HTMLMediaElement::disableRemotePlayback(bool value) {
     HTMLElement::set("disableRemotePlayback", value);
 }
 
+
+} // namespace webbind

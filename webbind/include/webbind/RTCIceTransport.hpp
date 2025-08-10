@@ -2,68 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "RTCIceParameters.hpp"
+#include "RTCIceGatherOptions.hpp"
+#include "RTCIceCandidateInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class RTCIceCandidate;
 class RTCIceCandidatePair;
-class RTCIceParameters;
-class RTCIceGatherOptions;
-class RTCIceCandidateInit;
 
-
-class RTCIceParameters : public emlite::Val {
-  explicit RTCIceParameters(Handle h) noexcept;
-public:
-    static RTCIceParameters take_ownership(Handle h) noexcept;
-    explicit RTCIceParameters(const emlite::Val &val) noexcept;
-    RTCIceParameters() noexcept;
-    [[nodiscard]] RTCIceParameters clone() const noexcept;
-    [[nodiscard]] jsbind::String usernameFragment() const;
-    void usernameFragment(const jsbind::String& value);
-    [[nodiscard]] jsbind::String password() const;
-    void password(const jsbind::String& value);
-};
-
-class RTCIceGatherOptions : public emlite::Val {
-  explicit RTCIceGatherOptions(Handle h) noexcept;
-public:
-    static RTCIceGatherOptions take_ownership(Handle h) noexcept;
-    explicit RTCIceGatherOptions(const emlite::Val &val) noexcept;
-    RTCIceGatherOptions() noexcept;
-    [[nodiscard]] RTCIceGatherOptions clone() const noexcept;
-    [[nodiscard]] RTCIceTransportPolicy gatherPolicy() const;
-    void gatherPolicy(const RTCIceTransportPolicy& value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> iceServers() const;
-    void iceServers(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-class RTCIceCandidateInit : public emlite::Val {
-  explicit RTCIceCandidateInit(Handle h) noexcept;
-public:
-    static RTCIceCandidateInit take_ownership(Handle h) noexcept;
-    explicit RTCIceCandidateInit(const emlite::Val &val) noexcept;
-    RTCIceCandidateInit() noexcept;
-    [[nodiscard]] RTCIceCandidateInit clone() const noexcept;
-    [[nodiscard]] jsbind::String candidate() const;
-    void candidate(const jsbind::String& value);
-    [[nodiscard]] jsbind::String sdpMid() const;
-    void sdpMid(const jsbind::String& value);
-    [[nodiscard]] unsigned short sdpMLineIndex() const;
-    void sdpMLineIndex(unsigned short value);
-    [[nodiscard]] jsbind::String usernameFragment() const;
-    void usernameFragment(const jsbind::String& value);
-};
-
-/// The RTCIceTransport class.
+/// Interface RTCIceTransport
 /// [`RTCIceTransport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport)
 class RTCIceTransport : public EventTarget {
     explicit RTCIceTransport(Handle h) noexcept;
-
 public:
     explicit RTCIceTransport(const emlite::Val &val) noexcept;
     static RTCIceTransport take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCIceTransport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `role` attribute.
@@ -151,3 +108,4 @@ public:
     void onicecandidate(const jsbind::Any& value);
 };
 
+} // namespace webbind

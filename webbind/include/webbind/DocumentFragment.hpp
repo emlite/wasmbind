@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Node.hpp"
 #include "enums.hpp"
+#include "Node.hpp"
+
+namespace webbind {
 
 class Element;
 class HTMLCollection;
 class NodeList;
 
-
-/// The DocumentFragment class.
+/// Interface DocumentFragment
 /// [`DocumentFragment`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment)
 class DocumentFragment : public Node {
     explicit DocumentFragment(Handle h) noexcept;
-
 public:
     explicit DocumentFragment(const emlite::Val &val) noexcept;
     static DocumentFragment take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DocumentFragment clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DocumentFragment(..)` constructor, creating a new DocumentFragment instance
@@ -58,3 +57,4 @@ public:
     NodeList querySelectorAll(const jsbind::String& selectors);
 };
 
+} // namespace webbind

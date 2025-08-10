@@ -1,5 +1,7 @@
-#include <webbind/WheelEvent.hpp>
+#include "webbind/WheelEvent.hpp"
+#include "webbind/WheelEventInit.hpp"
 
+namespace webbind {
 
 WheelEvent WheelEvent::take_ownership(Handle h) noexcept {
         return WheelEvent(h);
@@ -9,10 +11,9 @@ emlite::Val WheelEvent::instance() noexcept { return emlite::Val::global("WheelE
 WheelEvent::WheelEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_ownership(h)) {}
 WheelEvent::WheelEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
-
 WheelEvent::WheelEvent(const jsbind::String& type) : MouseEvent(emlite::Val::global("WheelEvent").new_(type)) {}
 
-WheelEvent::WheelEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : MouseEvent(emlite::Val::global("WheelEvent").new_(type, eventInitDict)) {}
+WheelEvent::WheelEvent(const jsbind::String& type, const WheelEventInit& eventInitDict) : MouseEvent(emlite::Val::global("WheelEvent").new_(type, eventInitDict)) {}
 
 double WheelEvent::deltaX() const {
     return MouseEvent::get("deltaX").as<double>();
@@ -30,3 +31,5 @@ unsigned long WheelEvent::deltaMode() const {
     return MouseEvent::get("deltaMode").as<unsigned long>();
 }
 
+
+} // namespace webbind

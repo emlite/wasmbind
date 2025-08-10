@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSRule.hpp"
 #include "enums.hpp"
+#include "CSSRule.hpp"
 
+namespace webbind {
 
-/// The CSSNamespaceRule class.
+/// Interface CSSNamespaceRule
 /// [`CSSNamespaceRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNamespaceRule)
 class CSSNamespaceRule : public CSSRule {
     explicit CSSNamespaceRule(Handle h) noexcept;
-
 public:
     explicit CSSNamespaceRule(const emlite::Val &val) noexcept;
     static CSSNamespaceRule take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSNamespaceRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `namespaceURI` attribute.
@@ -25,3 +24,4 @@ public:
     [[nodiscard]] jsbind::String prefix() const;
 };
 
+} // namespace webbind

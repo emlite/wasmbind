@@ -1,5 +1,6 @@
-#include <webbind/XRCompositionLayer.hpp>
+#include "webbind/XRCompositionLayer.hpp"
 
+namespace webbind {
 
 XRCompositionLayer XRCompositionLayer::take_ownership(Handle h) noexcept {
         return XRCompositionLayer(h);
@@ -8,7 +9,6 @@ XRCompositionLayer XRCompositionLayer::clone() const noexcept { return *this; }
 emlite::Val XRCompositionLayer::instance() noexcept { return emlite::Val::global("XRCompositionLayer"); }
 XRCompositionLayer::XRCompositionLayer(Handle h) noexcept : XRLayer(emlite::Val::take_ownership(h)) {}
 XRCompositionLayer::XRCompositionLayer(const emlite::Val &val) noexcept: XRLayer(val) {}
-
 
 XRLayerLayout XRCompositionLayer::layout() const {
     return XRLayer::get("layout").as<XRLayerLayout>();
@@ -58,3 +58,5 @@ jsbind::Undefined XRCompositionLayer::destroy() {
     return XRLayer::call("destroy").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

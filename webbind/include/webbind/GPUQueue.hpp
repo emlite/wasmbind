@@ -2,68 +2,24 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "GPUCommandEncoder.hpp"
 #include "enums.hpp"
+#include "GPUTexelCopyTextureInfo.hpp"
+#include "GPUTexelCopyBufferLayout.hpp"
+#include "GPUCopyExternalImageSourceInfo.hpp"
+#include "GPUCopyExternalImageDestInfo.hpp"
+
+namespace webbind {
 
 class GPUCommandBuffer;
 class GPUBuffer;
-class GPUTexelCopyBufferLayout;
-class GPUCopyExternalImageSourceInfo;
-class GPUCopyExternalImageDestInfo;
 
-
-class GPUTexelCopyBufferLayout : public emlite::Val {
-  explicit GPUTexelCopyBufferLayout(Handle h) noexcept;
-public:
-    static GPUTexelCopyBufferLayout take_ownership(Handle h) noexcept;
-    explicit GPUTexelCopyBufferLayout(const emlite::Val &val) noexcept;
-    GPUTexelCopyBufferLayout() noexcept;
-    [[nodiscard]] GPUTexelCopyBufferLayout clone() const noexcept;
-    [[nodiscard]] jsbind::Any offset() const;
-    void offset(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any bytesPerRow() const;
-    void bytesPerRow(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any rowsPerImage() const;
-    void rowsPerImage(const jsbind::Any& value);
-};
-
-class GPUCopyExternalImageSourceInfo : public emlite::Val {
-  explicit GPUCopyExternalImageSourceInfo(Handle h) noexcept;
-public:
-    static GPUCopyExternalImageSourceInfo take_ownership(Handle h) noexcept;
-    explicit GPUCopyExternalImageSourceInfo(const emlite::Val &val) noexcept;
-    GPUCopyExternalImageSourceInfo() noexcept;
-    [[nodiscard]] GPUCopyExternalImageSourceInfo clone() const noexcept;
-    [[nodiscard]] jsbind::Any source() const;
-    void source(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any origin() const;
-    void origin(const jsbind::Any& value);
-    [[nodiscard]] bool flipY() const;
-    void flipY(bool value);
-};
-
-class GPUCopyExternalImageDestInfo : public emlite::Val {
-  explicit GPUCopyExternalImageDestInfo(Handle h) noexcept;
-public:
-    static GPUCopyExternalImageDestInfo take_ownership(Handle h) noexcept;
-    explicit GPUCopyExternalImageDestInfo(const emlite::Val &val) noexcept;
-    GPUCopyExternalImageDestInfo() noexcept;
-    [[nodiscard]] GPUCopyExternalImageDestInfo clone() const noexcept;
-    [[nodiscard]] PredefinedColorSpace colorSpace() const;
-    void colorSpace(const PredefinedColorSpace& value);
-    [[nodiscard]] bool premultipliedAlpha() const;
-    void premultipliedAlpha(bool value);
-};
-
-/// The GPUQueue class.
+/// Interface GPUQueue
 /// [`GPUQueue`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue)
 class GPUQueue : public emlite::Val {
     explicit GPUQueue(Handle h) noexcept;
-
 public:
     explicit GPUQueue(const emlite::Val &val) noexcept;
     static GPUQueue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUQueue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The submit method.
@@ -95,3 +51,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

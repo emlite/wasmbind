@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GPUCommandBuffer class.
+/// Interface GPUCommandBuffer
 /// [`GPUCommandBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer)
 class GPUCommandBuffer : public emlite::Val {
     explicit GPUCommandBuffer(Handle h) noexcept;
-
 public:
     explicit GPUCommandBuffer(const emlite::Val &val) noexcept;
     static GPUCommandBuffer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPUCommandBuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
@@ -24,3 +23,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

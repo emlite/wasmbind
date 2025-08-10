@@ -2,8 +2,13 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "NotificationOptions.hpp"
+#include "GetNotificationOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class ServiceWorker;
 class NavigationPreloadManager;
@@ -12,72 +17,18 @@ class BackgroundFetchManager;
 class SyncManager;
 class ContentIndex;
 class CookieStoreManager;
-class NotificationOptions;
 class Notification;
-class GetNotificationOptions;
 class PaymentManager;
 class PeriodicSyncManager;
 class PushManager;
-class NotificationAction;
 
-
-class NotificationOptions : public emlite::Val {
-  explicit NotificationOptions(Handle h) noexcept;
-public:
-    static NotificationOptions take_ownership(Handle h) noexcept;
-    explicit NotificationOptions(const emlite::Val &val) noexcept;
-    NotificationOptions() noexcept;
-    [[nodiscard]] NotificationOptions clone() const noexcept;
-    [[nodiscard]] NotificationDirection dir() const;
-    void dir(const NotificationDirection& value);
-    [[nodiscard]] jsbind::String lang() const;
-    void lang(const jsbind::String& value);
-    [[nodiscard]] jsbind::String body() const;
-    void body(const jsbind::String& value);
-    [[nodiscard]] jsbind::String tag() const;
-    void tag(const jsbind::String& value);
-    [[nodiscard]] jsbind::String image() const;
-    void image(const jsbind::String& value);
-    [[nodiscard]] jsbind::String icon() const;
-    void icon(const jsbind::String& value);
-    [[nodiscard]] jsbind::String badge() const;
-    void badge(const jsbind::String& value);
-    [[nodiscard]] jsbind::Any vibrate() const;
-    void vibrate(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any timestamp() const;
-    void timestamp(const jsbind::Any& value);
-    [[nodiscard]] bool renotify() const;
-    void renotify(bool value);
-    [[nodiscard]] bool silent() const;
-    void silent(bool value);
-    [[nodiscard]] bool requireInteraction() const;
-    void requireInteraction(bool value);
-    [[nodiscard]] jsbind::Any data() const;
-    void data(const jsbind::Any& value);
-    [[nodiscard]] jsbind::TypedArray<NotificationAction> actions() const;
-    void actions(const jsbind::TypedArray<NotificationAction>& value);
-};
-
-class GetNotificationOptions : public emlite::Val {
-  explicit GetNotificationOptions(Handle h) noexcept;
-public:
-    static GetNotificationOptions take_ownership(Handle h) noexcept;
-    explicit GetNotificationOptions(const emlite::Val &val) noexcept;
-    GetNotificationOptions() noexcept;
-    [[nodiscard]] GetNotificationOptions clone() const noexcept;
-    [[nodiscard]] jsbind::String tag() const;
-    void tag(const jsbind::String& value);
-};
-
-/// The ServiceWorkerRegistration class.
+/// Interface ServiceWorkerRegistration
 /// [`ServiceWorkerRegistration`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration)
 class ServiceWorkerRegistration : public EventTarget {
     explicit ServiceWorkerRegistration(Handle h) noexcept;
-
 public:
     explicit ServiceWorkerRegistration(const emlite::Val &val) noexcept;
     static ServiceWorkerRegistration take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ServiceWorkerRegistration clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `installing` attribute.
@@ -145,3 +96,4 @@ public:
     [[nodiscard]] PushManager pushManager() const;
 };
 
+} // namespace webbind

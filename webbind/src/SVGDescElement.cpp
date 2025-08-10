@@ -1,5 +1,6 @@
-#include <webbind/SVGDescElement.hpp>
+#include "webbind/SVGDescElement.hpp"
 
+namespace webbind {
 
 SVGDescElement SVGDescElement::take_ownership(Handle h) noexcept {
         return SVGDescElement(h);
@@ -10,3 +11,4 @@ SVGDescElement::SVGDescElement(Handle h) noexcept : SVGElement(emlite::Val::take
 SVGDescElement::SVGDescElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 
+} // namespace webbind

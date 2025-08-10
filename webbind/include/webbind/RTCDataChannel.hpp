@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The RTCDataChannel class.
+/// Interface RTCDataChannel
 /// [`RTCDataChannel`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel)
 class RTCDataChannel : public EventTarget {
     explicit RTCDataChannel(Handle h) noexcept;
-
 public:
     explicit RTCDataChannel(const emlite::Val &val) noexcept;
     static RTCDataChannel take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RTCDataChannel clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
@@ -103,3 +103,4 @@ public:
     [[nodiscard]] RTCPriorityType priority() const;
 };
 
+} // namespace webbind

@@ -1,9 +1,11 @@
-#include <webbind/XRWebGLLayer.hpp>
-#include <webbind/WebGLFramebuffer.hpp>
-#include <webbind/XRViewport.hpp>
-#include <webbind/XRView.hpp>
-#include <webbind/XRSession.hpp>
+#include "webbind/XRWebGLLayer.hpp"
+#include "webbind/XRSession.hpp"
+#include "webbind/XRWebGLLayerInit.hpp"
+#include "webbind/WebGLFramebuffer.hpp"
+#include "webbind/XRViewport.hpp"
+#include "webbind/XRView.hpp"
 
+namespace webbind {
 
 XRWebGLLayer XRWebGLLayer::take_ownership(Handle h) noexcept {
         return XRWebGLLayer(h);
@@ -13,10 +15,9 @@ emlite::Val XRWebGLLayer::instance() noexcept { return emlite::Val::global("XRWe
 XRWebGLLayer::XRWebGLLayer(Handle h) noexcept : XRLayer(emlite::Val::take_ownership(h)) {}
 XRWebGLLayer::XRWebGLLayer(const emlite::Val &val) noexcept: XRLayer(val) {}
 
-
 XRWebGLLayer::XRWebGLLayer(const XRSession& session, const jsbind::Any& context) : XRLayer(emlite::Val::global("XRWebGLLayer").new_(session, context)) {}
 
-XRWebGLLayer::XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const jsbind::Any& layerInit) : XRLayer(emlite::Val::global("XRWebGLLayer").new_(session, context, layerInit)) {}
+XRWebGLLayer::XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const XRWebGLLayerInit& layerInit) : XRLayer(emlite::Val::global("XRWebGLLayer").new_(session, context, layerInit)) {}
 
 bool XRWebGLLayer::antialias() const {
     return XRLayer::get("antialias").as<bool>();
@@ -54,3 +55,5 @@ double XRWebGLLayer::getNativeFramebufferScaleFactor(const XRSession& session) {
     return emlite::Val::global("xrwebgllayer").call("getNativeFramebufferScaleFactor", session).as<double>();
 }
 
+
+} // namespace webbind

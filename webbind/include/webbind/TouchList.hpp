@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Touch;
 
-
-/// The TouchList class.
+/// Interface TouchList
 /// [`TouchList`](https://developer.mozilla.org/en-US/docs/Web/API/TouchList)
 class TouchList : public emlite::Val {
     explicit TouchList(Handle h) noexcept;
-
 public:
     explicit TouchList(const emlite::Val &val) noexcept;
     static TouchList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TouchList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -26,3 +25,4 @@ public:
     Touch item(unsigned long index);
 };
 
+} // namespace webbind

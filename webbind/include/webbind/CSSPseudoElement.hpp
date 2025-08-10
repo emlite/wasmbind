@@ -2,9 +2,14 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "BoxQuadOptions.hpp"
+#include "DOMQuadInit.hpp"
+#include "ConvertCoordinateOptions.hpp"
+#include "DOMPointInit.hpp"
+
+namespace webbind {
 
 class Element;
 class CSSPseudoElement;
@@ -12,16 +17,13 @@ class DOMQuad;
 class DOMRectReadOnly;
 class DOMPoint;
 
-
-/// The CSSPseudoElement class.
+/// Interface CSSPseudoElement
 /// [`CSSPseudoElement`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement)
 class CSSPseudoElement : public EventTarget {
     explicit CSSPseudoElement(Handle h) noexcept;
-
 public:
     explicit CSSPseudoElement(const emlite::Val &val) noexcept;
     static CSSPseudoElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSPseudoElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -62,3 +64,4 @@ public:
     DOMPoint convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from, const ConvertCoordinateOptions& options);
 };
 
+} // namespace webbind

@@ -3,35 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "MediaPositionState.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class MediaMetadata;
-class MediaPositionState;
 
-
-class MediaPositionState : public emlite::Val {
-  explicit MediaPositionState(Handle h) noexcept;
-public:
-    static MediaPositionState take_ownership(Handle h) noexcept;
-    explicit MediaPositionState(const emlite::Val &val) noexcept;
-    MediaPositionState() noexcept;
-    [[nodiscard]] MediaPositionState clone() const noexcept;
-    [[nodiscard]] double duration() const;
-    void duration(double value);
-    [[nodiscard]] double playbackRate() const;
-    void playbackRate(double value);
-    [[nodiscard]] double position() const;
-    void position(double value);
-};
-
-/// The MediaSession class.
+/// Interface MediaSession
 /// [`MediaSession`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession)
 class MediaSession : public emlite::Val {
     explicit MediaSession(Handle h) noexcept;
-
 public:
     explicit MediaSession(const emlite::Val &val) noexcept;
     static MediaSession take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaSession clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `metadata` attribute.
@@ -66,3 +51,4 @@ public:
     jsbind::Promise<jsbind::Undefined> setScreenshareActive(bool active);
 };
 
+} // namespace webbind

@@ -3,19 +3,18 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "ImageDataSettings.hpp"
+#include "enums.hpp"
 
-class ImageDataSettings;
+namespace webbind {
 
-
-/// The ImageData class.
+/// Interface ImageData
 /// [`ImageData`](https://developer.mozilla.org/en-US/docs/Web/API/ImageData)
 class ImageData : public emlite::Val {
     explicit ImageData(Handle h) noexcept;
-
 public:
     explicit ImageData(const emlite::Val &val) noexcept;
     static ImageData take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ImageData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ImageData(..)` constructor, creating a new ImageData instance
@@ -41,3 +40,4 @@ public:
     [[nodiscard]] PredefinedColorSpace colorSpace() const;
 };
 
+} // namespace webbind

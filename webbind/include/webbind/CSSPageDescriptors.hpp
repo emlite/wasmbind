@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSStyleDeclaration.hpp"
 #include "enums.hpp"
+#include "CSSStyleDeclaration.hpp"
 
+namespace webbind {
 
-/// The CSSPageDescriptors class.
+/// Interface CSSPageDescriptors
 /// [`CSSPageDescriptors`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPageDescriptors)
 class CSSPageDescriptors : public CSSStyleDeclaration {
     explicit CSSPageDescriptors(Handle h) noexcept;
-
 public:
     explicit CSSPageDescriptors(const emlite::Val &val) noexcept;
     static CSSPageDescriptors take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSPageDescriptors clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `margin` attribute.
@@ -103,3 +102,4 @@ public:
     void bleed(const jsbind::String& value);
 };
 
+} // namespace webbind

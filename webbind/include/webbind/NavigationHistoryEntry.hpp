@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The NavigationHistoryEntry class.
+/// Interface NavigationHistoryEntry
 /// [`NavigationHistoryEntry`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry)
 class NavigationHistoryEntry : public EventTarget {
     explicit NavigationHistoryEntry(Handle h) noexcept;
-
 public:
     explicit NavigationHistoryEntry(const emlite::Val &val) noexcept;
     static NavigationHistoryEntry take_ownership(Handle h) noexcept;
-
     [[nodiscard]] NavigationHistoryEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `url` attribute.
@@ -43,3 +42,4 @@ public:
     void ondispose(const jsbind::Any& value);
 };
 
+} // namespace webbind

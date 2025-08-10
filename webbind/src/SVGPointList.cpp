@@ -1,6 +1,7 @@
-#include <webbind/SVGPointList.hpp>
-#include <webbind/DOMPoint.hpp>
+#include "webbind/SVGPointList.hpp"
+#include "webbind/DOMPoint.hpp"
 
+namespace webbind {
 
 SVGPointList SVGPointList::take_ownership(Handle h) noexcept {
         return SVGPointList(h);
@@ -9,7 +10,6 @@ SVGPointList SVGPointList::clone() const noexcept { return *this; }
 emlite::Val SVGPointList::instance() noexcept { return emlite::Val::global("SVGPointList"); }
 SVGPointList::SVGPointList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGPointList::SVGPointList(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned long SVGPointList::length() const {
     return emlite::Val::get("length").as<unsigned long>();
@@ -47,3 +47,5 @@ DOMPoint SVGPointList::appendItem(const DOMPoint& newItem) {
     return emlite::Val::call("appendItem", newItem).as<DOMPoint>();
 }
 
+
+} // namespace webbind

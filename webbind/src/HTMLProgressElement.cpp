@@ -1,6 +1,7 @@
-#include <webbind/HTMLProgressElement.hpp>
-#include <webbind/NodeList.hpp>
+#include "webbind/HTMLProgressElement.hpp"
+#include "webbind/NodeList.hpp"
 
+namespace webbind {
 
 HTMLProgressElement HTMLProgressElement::take_ownership(Handle h) noexcept {
         return HTMLProgressElement(h);
@@ -9,7 +10,6 @@ HTMLProgressElement HTMLProgressElement::clone() const noexcept { return *this; 
 emlite::Val HTMLProgressElement::instance() noexcept { return emlite::Val::global("HTMLProgressElement"); }
 HTMLProgressElement::HTMLProgressElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLProgressElement::HTMLProgressElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLProgressElement::HTMLProgressElement() : HTMLElement(emlite::Val::global("HTMLProgressElement").new_()) {}
 
@@ -37,3 +37,5 @@ NodeList HTMLProgressElement::labels() const {
     return HTMLElement::get("labels").as<NodeList>();
 }
 
+
+} // namespace webbind

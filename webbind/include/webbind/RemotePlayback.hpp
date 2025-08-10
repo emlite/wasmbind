@@ -2,19 +2,19 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The RemotePlayback class.
+/// Interface RemotePlayback
 /// [`RemotePlayback`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback)
 class RemotePlayback : public EventTarget {
     explicit RemotePlayback(Handle h) noexcept;
-
 public:
     explicit RemotePlayback(const emlite::Val &val) noexcept;
     static RemotePlayback take_ownership(Handle h) noexcept;
-
     [[nodiscard]] RemotePlayback clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The watchAvailability method.
@@ -52,3 +52,4 @@ public:
     jsbind::Promise<jsbind::Undefined> prompt();
 };
 
+} // namespace webbind

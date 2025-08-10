@@ -1,5 +1,6 @@
-#include <webbind/CanvasGradient.hpp>
+#include "webbind/CanvasGradient.hpp"
 
+namespace webbind {
 
 CanvasGradient CanvasGradient::take_ownership(Handle h) noexcept {
         return CanvasGradient(h);
@@ -9,8 +10,9 @@ emlite::Val CanvasGradient::instance() noexcept { return emlite::Val::global("Ca
 CanvasGradient::CanvasGradient(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CanvasGradient::CanvasGradient(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 jsbind::Undefined CanvasGradient::addColorStop(double offset, const jsbind::String& color) {
     return emlite::Val::call("addColorStop", offset, color).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

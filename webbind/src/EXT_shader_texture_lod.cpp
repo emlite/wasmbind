@@ -1,5 +1,6 @@
-#include <webbind/EXT_shader_texture_lod.hpp>
+#include "webbind/EXT_shader_texture_lod.hpp"
 
+namespace webbind {
 
 EXT_shader_texture_lod EXT_shader_texture_lod::take_ownership(Handle h) noexcept {
         return EXT_shader_texture_lod(h);
@@ -10,3 +11,4 @@ EXT_shader_texture_lod::EXT_shader_texture_lod(Handle h) noexcept : emlite::Val(
 EXT_shader_texture_lod::EXT_shader_texture_lod(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

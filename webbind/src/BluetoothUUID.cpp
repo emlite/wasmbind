@@ -1,5 +1,6 @@
-#include <webbind/BluetoothUUID.hpp>
+#include "webbind/BluetoothUUID.hpp"
 
+namespace webbind {
 
 BluetoothUUID BluetoothUUID::take_ownership(Handle h) noexcept {
         return BluetoothUUID(h);
@@ -8,7 +9,6 @@ BluetoothUUID BluetoothUUID::clone() const noexcept { return *this; }
 emlite::Val BluetoothUUID::instance() noexcept { return emlite::Val::global("BluetoothUUID"); }
 BluetoothUUID::BluetoothUUID(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothUUID::BluetoothUUID(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Any BluetoothUUID::getService(const jsbind::Any& name) {
     return emlite::Val::global("bluetoothuuid").call("getService", name).as<jsbind::Any>();
@@ -26,3 +26,5 @@ jsbind::Any BluetoothUUID::canonicalUUID(unsigned long alias) {
     return emlite::Val::global("bluetoothuuid").call("canonicalUUID", alias).as<jsbind::Any>();
 }
 
+
+} // namespace webbind

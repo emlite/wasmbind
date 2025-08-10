@@ -1,6 +1,8 @@
-#include <webbind/Worker.hpp>
-#include <webbind/MessagePort.hpp>
+#include "webbind/Worker.hpp"
+#include "webbind/WorkerOptions.hpp"
+#include "webbind/StructuredSerializeOptions.hpp"
 
+namespace webbind {
 
 Worker Worker::take_ownership(Handle h) noexcept {
         return Worker(h);
@@ -10,10 +12,9 @@ emlite::Val Worker::instance() noexcept { return emlite::Val::global("Worker"); 
 Worker::Worker(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Worker::Worker(const emlite::Val &val) noexcept: EventTarget(val) {}
 
-
 Worker::Worker(const jsbind::Any& scriptURL) : EventTarget(emlite::Val::global("Worker").new_(scriptURL)) {}
 
-Worker::Worker(const jsbind::Any& scriptURL, const jsbind::Any& options) : EventTarget(emlite::Val::global("Worker").new_(scriptURL, options)) {}
+Worker::Worker(const jsbind::Any& scriptURL, const WorkerOptions& options) : EventTarget(emlite::Val::global("Worker").new_(scriptURL, options)) {}
 
 jsbind::Undefined Worker::terminate() {
     return EventTarget::call("terminate").as<jsbind::Undefined>();
@@ -51,3 +52,5 @@ void Worker::onmessageerror(const jsbind::Any& value) {
     EventTarget::set("onmessageerror", value);
 }
 
+
+} // namespace webbind

@@ -1,5 +1,7 @@
-#include <webbind/TransitionEvent.hpp>
+#include "webbind/TransitionEvent.hpp"
+#include "webbind/TransitionEventInit.hpp"
 
+namespace webbind {
 
 TransitionEvent TransitionEvent::take_ownership(Handle h) noexcept {
         return TransitionEvent(h);
@@ -9,10 +11,9 @@ emlite::Val TransitionEvent::instance() noexcept { return emlite::Val::global("T
 TransitionEvent::TransitionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 TransitionEvent::TransitionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 TransitionEvent::TransitionEvent(const jsbind::String& type) : Event(emlite::Val::global("TransitionEvent").new_(type)) {}
 
-TransitionEvent::TransitionEvent(const jsbind::String& type, const jsbind::Any& transitionEventInitDict) : Event(emlite::Val::global("TransitionEvent").new_(type, transitionEventInitDict)) {}
+TransitionEvent::TransitionEvent(const jsbind::String& type, const TransitionEventInit& transitionEventInitDict) : Event(emlite::Val::global("TransitionEvent").new_(type, transitionEventInitDict)) {}
 
 jsbind::String TransitionEvent::propertyName() const {
     return Event::get("propertyName").as<jsbind::String>();
@@ -26,3 +27,5 @@ jsbind::String TransitionEvent::pseudoElement() const {
     return Event::get("pseudoElement").as<jsbind::String>();
 }
 
+
+} // namespace webbind

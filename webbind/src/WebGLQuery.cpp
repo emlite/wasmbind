@@ -1,5 +1,6 @@
-#include <webbind/WebGLQuery.hpp>
+#include "webbind/WebGLQuery.hpp"
 
+namespace webbind {
 
 WebGLQuery WebGLQuery::take_ownership(Handle h) noexcept {
         return WebGLQuery(h);
@@ -10,3 +11,4 @@ WebGLQuery::WebGLQuery(Handle h) noexcept : WebGLObject(emlite::Val::take_owners
 WebGLQuery::WebGLQuery(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

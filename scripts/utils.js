@@ -8,6 +8,13 @@ import {
 } from "./ignored.js";
 import { enums, typedefs, callbacks } from "./globals.js";
 
+// Global dictionary registry for cpp() function
+let dictionaryRegistry = null;
+
+export function setDictionaryRegistry(dicts) {
+  dictionaryRegistry = dicts;
+}
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -85,7 +92,6 @@ export function cpp(idlType) {
 
   if (missingDictFallback.has(n) || builtinNominals.has(n))
     return "jsbind::Any";
-  if (n.includes("EventInit")) return "jsbind::Any";
 
   if (jsbindMap[n]) return jsbindMap[n];
 
@@ -127,6 +133,11 @@ export function cpp(idlType) {
   if (enums.has(n)) return n;
   if (callbacks.has(n)) return "jsbind::Function";
   if (typedefs.has(n) || n === "__union") return "jsbind::Any";
+  
+  // Check if it's a dictionary type
+  if (dictionaryRegistry && dictionaryRegistry.has(n)) {
+    return n;
+  }
 
   return n;
 }

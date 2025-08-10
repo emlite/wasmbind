@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "XRCompositionLayer.hpp"
 #include "enums.hpp"
+#include "XRCompositionLayer.hpp"
+
+namespace webbind {
 
 class XRSpace;
 class XRRigidTransform;
 
-
-/// The XREquirectLayer class.
+/// Interface XREquirectLayer
 /// [`XREquirectLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XREquirectLayer)
 class XREquirectLayer : public XRCompositionLayer {
     explicit XREquirectLayer(Handle h) noexcept;
-
 public:
     explicit XREquirectLayer(const emlite::Val &val) noexcept;
     static XREquirectLayer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XREquirectLayer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `space` attribute.
@@ -64,3 +63,4 @@ public:
     void onredraw(const jsbind::Any& value);
 };
 
+} // namespace webbind

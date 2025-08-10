@@ -2,34 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+#include "WatchAdvertisementsOptions.hpp"
+
+namespace webbind {
 
 class BluetoothRemoteGATTServer;
-class WatchAdvertisementsOptions;
-class AbortSignal;
 
-
-class WatchAdvertisementsOptions : public emlite::Val {
-  explicit WatchAdvertisementsOptions(Handle h) noexcept;
-public:
-    static WatchAdvertisementsOptions take_ownership(Handle h) noexcept;
-    explicit WatchAdvertisementsOptions(const emlite::Val &val) noexcept;
-    WatchAdvertisementsOptions() noexcept;
-    [[nodiscard]] WatchAdvertisementsOptions clone() const noexcept;
-    [[nodiscard]] AbortSignal signal() const;
-    void signal(const AbortSignal& value);
-};
-
-/// The BluetoothDevice class.
+/// Interface BluetoothDevice
 /// [`BluetoothDevice`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice)
 class BluetoothDevice : public EventTarget {
     explicit BluetoothDevice(Handle h) noexcept;
-
 public:
     explicit BluetoothDevice(const emlite::Val &val) noexcept;
     static BluetoothDevice take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothDevice clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -91,3 +78,4 @@ public:
     void onserviceremoved(const jsbind::Any& value);
 };
 
+} // namespace webbind

@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PerformanceTiming class.
+/// Interface PerformanceTiming
 /// [`PerformanceTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming)
 class PerformanceTiming : public emlite::Val {
     explicit PerformanceTiming(Handle h) noexcept;
-
 public:
     explicit PerformanceTiming(const emlite::Val &val) noexcept;
     static PerformanceTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `navigationStart` attribute.
@@ -84,3 +83,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Plugin;
 
-
-/// The PluginArray class.
+/// Interface PluginArray
 /// [`PluginArray`](https://developer.mozilla.org/en-US/docs/Web/API/PluginArray)
 class PluginArray : public emlite::Val {
     explicit PluginArray(Handle h) noexcept;
-
 public:
     explicit PluginArray(const emlite::Val &val) noexcept;
     static PluginArray take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PluginArray clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The refresh method.
@@ -32,3 +31,4 @@ public:
     Plugin namedItem(const jsbind::String& name);
 };
 
+} // namespace webbind

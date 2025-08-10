@@ -1,38 +1,8 @@
-#include <webbind/Notification.hpp>
-#include <webbind/ServiceWorkerRegistration.hpp>
+#include "webbind/Notification.hpp"
+#include "webbind/NotificationOptions.hpp"
+#include "webbind/NotificationAction.hpp"
 
-
-NotificationAction::NotificationAction(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NotificationAction NotificationAction::take_ownership(Handle h) noexcept {
-        return NotificationAction(h);
-    }
-NotificationAction::NotificationAction(const emlite::Val &val) noexcept: emlite::Val(val) {}
-NotificationAction::NotificationAction() noexcept: emlite::Val(emlite::Val::object()) {}
-NotificationAction NotificationAction::clone() const noexcept { return *this; }
-
-jsbind::String NotificationAction::action() const {
-    return emlite::Val::get("action").as<jsbind::String>();
-}
-
-void NotificationAction::action(const jsbind::String& value) {
-    emlite::Val::set("action", value);
-}
-
-jsbind::String NotificationAction::title() const {
-    return emlite::Val::get("title").as<jsbind::String>();
-}
-
-void NotificationAction::title(const jsbind::String& value) {
-    emlite::Val::set("title", value);
-}
-
-jsbind::String NotificationAction::icon() const {
-    return emlite::Val::get("icon").as<jsbind::String>();
-}
-
-void NotificationAction::icon(const jsbind::String& value) {
-    emlite::Val::set("icon", value);
-}
+namespace webbind {
 
 Notification Notification::take_ownership(Handle h) noexcept {
         return Notification(h);
@@ -41,7 +11,6 @@ Notification Notification::clone() const noexcept { return *this; }
 emlite::Val Notification::instance() noexcept { return emlite::Val::global("Notification"); }
 Notification::Notification(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 Notification::Notification(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 Notification::Notification(const jsbind::String& title) : EventTarget(emlite::Val::global("Notification").new_(title)) {}
 
@@ -159,3 +128,5 @@ jsbind::Undefined Notification::close() {
     return EventTarget::call("close").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

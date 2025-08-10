@@ -1,6 +1,7 @@
-#include <webbind/CSSStyleDeclaration.hpp>
-#include <webbind/CSSRule.hpp>
+#include "webbind/CSSStyleDeclaration.hpp"
+#include "webbind/CSSRule.hpp"
 
+namespace webbind {
 
 CSSStyleDeclaration CSSStyleDeclaration::take_ownership(Handle h) noexcept {
         return CSSStyleDeclaration(h);
@@ -9,7 +10,6 @@ CSSStyleDeclaration CSSStyleDeclaration::clone() const noexcept { return *this; 
 emlite::Val CSSStyleDeclaration::instance() noexcept { return emlite::Val::global("CSSStyleDeclaration"); }
 CSSStyleDeclaration::CSSStyleDeclaration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSStyleDeclaration::CSSStyleDeclaration(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String CSSStyleDeclaration::cssText() const {
     return emlite::Val::get("cssText").as<jsbind::String>();
@@ -51,3 +51,5 @@ CSSRule CSSStyleDeclaration::parentRule() const {
     return emlite::Val::get("parentRule").as<CSSRule>();
 }
 
+
+} // namespace webbind

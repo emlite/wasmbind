@@ -2,38 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "WritableStream.hpp"
 #include "enums.hpp"
+#include "WritableStream.hpp"
+#include "WebTransportSendStreamStats.hpp"
+
+namespace webbind {
 
 class WebTransportSendGroup;
-class WebTransportSendStreamStats;
 class WebTransportWriter;
 
-
-class WebTransportSendStreamStats : public emlite::Val {
-  explicit WebTransportSendStreamStats(Handle h) noexcept;
-public:
-    static WebTransportSendStreamStats take_ownership(Handle h) noexcept;
-    explicit WebTransportSendStreamStats(const emlite::Val &val) noexcept;
-    WebTransportSendStreamStats() noexcept;
-    [[nodiscard]] WebTransportSendStreamStats clone() const noexcept;
-    [[nodiscard]] long long bytesWritten() const;
-    void bytesWritten(long long value);
-    [[nodiscard]] long long bytesSent() const;
-    void bytesSent(long long value);
-    [[nodiscard]] long long bytesAcknowledged() const;
-    void bytesAcknowledged(long long value);
-};
-
-/// The WebTransportSendStream class.
+/// Interface WebTransportSendStream
 /// [`WebTransportSendStream`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStream)
 class WebTransportSendStream : public WritableStream {
     explicit WebTransportSendStream(Handle h) noexcept;
-
 public:
     explicit WebTransportSendStream(const emlite::Val &val) noexcept;
     static WebTransportSendStream take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WebTransportSendStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sendGroup` attribute.
@@ -56,3 +40,4 @@ public:
     WebTransportWriter getWriter();
 };
 
+} // namespace webbind

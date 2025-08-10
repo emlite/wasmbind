@@ -1,6 +1,7 @@
-#include <webbind/XRWebGLDepthInformation.hpp>
-#include <webbind/WebGLTexture.hpp>
+#include "webbind/XRWebGLDepthInformation.hpp"
+#include "webbind/WebGLTexture.hpp"
 
+namespace webbind {
 
 XRWebGLDepthInformation XRWebGLDepthInformation::take_ownership(Handle h) noexcept {
         return XRWebGLDepthInformation(h);
@@ -9,7 +10,6 @@ XRWebGLDepthInformation XRWebGLDepthInformation::clone() const noexcept { return
 emlite::Val XRWebGLDepthInformation::instance() noexcept { return emlite::Val::global("XRWebGLDepthInformation"); }
 XRWebGLDepthInformation::XRWebGLDepthInformation(Handle h) noexcept : XRDepthInformation(emlite::Val::take_ownership(h)) {}
 XRWebGLDepthInformation::XRWebGLDepthInformation(const emlite::Val &val) noexcept: XRDepthInformation(val) {}
-
 
 WebGLTexture XRWebGLDepthInformation::texture() const {
     return XRDepthInformation::get("texture").as<WebGLTexture>();
@@ -23,3 +23,5 @@ unsigned long XRWebGLDepthInformation::imageIndex() const {
     return XRDepthInformation::get("imageIndex").as<unsigned long>();
 }
 
+
+} // namespace webbind

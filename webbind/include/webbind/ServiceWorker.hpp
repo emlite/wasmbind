@@ -2,20 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
-#include "MessagePort.hpp"
+#include "StructuredSerializeOptions.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ServiceWorker class.
+/// Interface ServiceWorker
 /// [`ServiceWorker`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker)
 class ServiceWorker : public EventTarget {
     explicit ServiceWorker(Handle h) noexcept;
-
 public:
     explicit ServiceWorker(const emlite::Val &val) noexcept;
     static ServiceWorker take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ServiceWorker clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `scriptURL` attribute.
@@ -44,3 +44,4 @@ public:
     void onerror(const jsbind::Any& value);
 };
 
+} // namespace webbind

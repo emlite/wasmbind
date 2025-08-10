@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "AuthenticatorResponse.hpp"
 #include "enums.hpp"
+#include "AuthenticatorResponse.hpp"
 
+namespace webbind {
 
-/// The AuthenticatorAttestationResponse class.
+/// Interface AuthenticatorAttestationResponse
 /// [`AuthenticatorAttestationResponse`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse)
 class AuthenticatorAttestationResponse : public AuthenticatorResponse {
     explicit AuthenticatorAttestationResponse(Handle h) noexcept;
-
 public:
     explicit AuthenticatorAttestationResponse(const emlite::Val &val) noexcept;
     static AuthenticatorAttestationResponse take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AuthenticatorAttestationResponse clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `attestationObject` attribute.
@@ -34,3 +33,4 @@ public:
     jsbind::Any getPublicKeyAlgorithm();
 };
 
+} // namespace webbind

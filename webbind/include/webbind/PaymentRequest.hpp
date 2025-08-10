@@ -2,49 +2,32 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
+#include "PaymentMethodData.hpp"
+#include "PaymentDetailsInit.hpp"
+#include "PaymentOptions.hpp"
+#include "PaymentDetailsUpdate.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class PaymentResponse;
-class PaymentDetailsUpdate;
 class ContactAddress;
-class PaymentMethodData;
 
-
-class PaymentDetailsUpdate : public emlite::Val {
-  explicit PaymentDetailsUpdate(Handle h) noexcept;
-public:
-    static PaymentDetailsUpdate take_ownership(Handle h) noexcept;
-    explicit PaymentDetailsUpdate(const emlite::Val &val) noexcept;
-    PaymentDetailsUpdate() noexcept;
-    [[nodiscard]] PaymentDetailsUpdate clone() const noexcept;
-    [[nodiscard]] jsbind::String error() const;
-    void error(const jsbind::String& value);
-    [[nodiscard]] jsbind::Any total() const;
-    void total(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any shippingAddressErrors() const;
-    void shippingAddressErrors(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any payerErrors() const;
-    void payerErrors(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Object paymentMethodErrors() const;
-    void paymentMethodErrors(const jsbind::Object& value);
-};
-
-/// The PaymentRequest class.
+/// Interface PaymentRequest
 /// [`PaymentRequest`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest)
 class PaymentRequest : public EventTarget {
     explicit PaymentRequest(Handle h) noexcept;
-
 public:
     explicit PaymentRequest(const emlite::Val &val) noexcept;
     static PaymentRequest take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PaymentRequest clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PaymentRequest(..)` constructor, creating a new PaymentRequest instance
-    PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const jsbind::Any& details);
+    PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const PaymentDetailsInit& details);
     /// The `new PaymentRequest(..)` constructor, creating a new PaymentRequest instance
-    PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const jsbind::Any& details, const jsbind::Any& options);
+    PaymentRequest(const jsbind::TypedArray<PaymentMethodData>& methodData, const PaymentDetailsInit& details, const PaymentOptions& options);
     /// The show method.
     /// [`PaymentRequest.show`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/show)
     jsbind::Promise<PaymentResponse> show();
@@ -92,3 +75,4 @@ public:
     static jsbind::Promise<SecurePaymentConfirmationAvailability> securePaymentConfirmationAvailability();
 };
 
+} // namespace webbind

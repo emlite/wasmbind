@@ -1,5 +1,6 @@
-#include <webbind/CSSParserRule.hpp>
+#include "webbind/CSSParserRule.hpp"
 
+namespace webbind {
 
 CSSParserRule CSSParserRule::take_ownership(Handle h) noexcept {
         return CSSParserRule(h);
@@ -10,3 +11,4 @@ CSSParserRule::CSSParserRule(Handle h) noexcept : emlite::Val(emlite::Val::take_
 CSSParserRule::CSSParserRule(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

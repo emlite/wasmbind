@@ -2,27 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "UIEvent.hpp"
 #include "enums.hpp"
+#include "UIEvent.hpp"
+#include "KeyboardEventInit.hpp"
+
+namespace webbind {
 
 class Window;
 
-
-/// The KeyboardEvent class.
+/// Interface KeyboardEvent
 /// [`KeyboardEvent`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
 class KeyboardEvent : public UIEvent {
     explicit KeyboardEvent(Handle h) noexcept;
-
 public:
     explicit KeyboardEvent(const emlite::Val &val) noexcept;
     static KeyboardEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] KeyboardEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new KeyboardEvent(..)` constructor, creating a new KeyboardEvent instance
     KeyboardEvent(const jsbind::String& type);
     /// The `new KeyboardEvent(..)` constructor, creating a new KeyboardEvent instance
-    KeyboardEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    KeyboardEvent(const jsbind::String& type, const KeyboardEventInit& eventInitDict);
     /// Getter of the `key` attribute.
     /// [`KeyboardEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key)
     [[nodiscard]] jsbind::String key() const;
@@ -91,3 +91,4 @@ public:
     [[nodiscard]] unsigned long keyCode() const;
 };
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
 
+namespace webbind {
 
-/// The XMLHttpRequestEventTarget class.
+/// Interface XMLHttpRequestEventTarget
 /// [`XMLHttpRequestEventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget)
 class XMLHttpRequestEventTarget : public EventTarget {
     explicit XMLHttpRequestEventTarget(Handle h) noexcept;
-
 public:
     explicit XMLHttpRequestEventTarget(const emlite::Val &val) noexcept;
     static XMLHttpRequestEventTarget take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XMLHttpRequestEventTarget clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onloadstart` attribute.
@@ -61,3 +60,4 @@ public:
     void onloadend(const jsbind::Any& value);
 };
 
+} // namespace webbind

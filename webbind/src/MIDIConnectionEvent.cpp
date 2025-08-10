@@ -1,6 +1,8 @@
-#include <webbind/MIDIConnectionEvent.hpp>
-#include <webbind/MIDIPort.hpp>
+#include "webbind/MIDIConnectionEvent.hpp"
+#include "webbind/MIDIConnectionEventInit.hpp"
+#include "webbind/MIDIPort.hpp"
 
+namespace webbind {
 
 MIDIConnectionEvent MIDIConnectionEvent::take_ownership(Handle h) noexcept {
         return MIDIConnectionEvent(h);
@@ -10,12 +12,13 @@ emlite::Val MIDIConnectionEvent::instance() noexcept { return emlite::Val::globa
 MIDIConnectionEvent::MIDIConnectionEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 MIDIConnectionEvent::MIDIConnectionEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 MIDIConnectionEvent::MIDIConnectionEvent(const jsbind::String& type) : Event(emlite::Val::global("MIDIConnectionEvent").new_(type)) {}
 
-MIDIConnectionEvent::MIDIConnectionEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("MIDIConnectionEvent").new_(type, eventInitDict)) {}
+MIDIConnectionEvent::MIDIConnectionEvent(const jsbind::String& type, const MIDIConnectionEventInit& eventInitDict) : Event(emlite::Val::global("MIDIConnectionEvent").new_(type, eventInitDict)) {}
 
 MIDIPort MIDIConnectionEvent::port() const {
     return Event::get("port").as<MIDIPort>();
 }
 
+
+} // namespace webbind

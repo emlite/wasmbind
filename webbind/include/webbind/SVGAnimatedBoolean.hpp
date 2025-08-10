@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SVGAnimatedBoolean class.
+/// Interface SVGAnimatedBoolean
 /// [`SVGAnimatedBoolean`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedBoolean)
 class SVGAnimatedBoolean : public emlite::Val {
     explicit SVGAnimatedBoolean(Handle h) noexcept;
-
 public:
     explicit SVGAnimatedBoolean(const emlite::Val &val) noexcept;
     static SVGAnimatedBoolean take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGAnimatedBoolean clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `baseVal` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] bool animVal() const;
 };
 
+} // namespace webbind

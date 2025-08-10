@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class BluetoothRemoteGATTCharacteristic;
 
-
-/// The BluetoothRemoteGATTDescriptor class.
+/// Interface BluetoothRemoteGATTDescriptor
 /// [`BluetoothRemoteGATTDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor)
 class BluetoothRemoteGATTDescriptor : public emlite::Val {
     explicit BluetoothRemoteGATTDescriptor(Handle h) noexcept;
-
 public:
     explicit BluetoothRemoteGATTDescriptor(const emlite::Val &val) noexcept;
     static BluetoothRemoteGATTDescriptor take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothRemoteGATTDescriptor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `characteristic` attribute.
@@ -35,3 +34,4 @@ public:
     jsbind::Promise<jsbind::Undefined> writeValue(const jsbind::Any& value);
 };
 
+} // namespace webbind

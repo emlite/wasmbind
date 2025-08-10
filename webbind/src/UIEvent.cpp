@@ -1,7 +1,9 @@
-#include <webbind/UIEvent.hpp>
-#include <webbind/Window.hpp>
-#include <webbind/InputDeviceCapabilities.hpp>
+#include "webbind/UIEvent.hpp"
+#include "webbind/UIEventInit.hpp"
+#include "webbind/Window.hpp"
+#include "webbind/InputDeviceCapabilities.hpp"
 
+namespace webbind {
 
 UIEvent UIEvent::take_ownership(Handle h) noexcept {
         return UIEvent(h);
@@ -11,10 +13,9 @@ emlite::Val UIEvent::instance() noexcept { return emlite::Val::global("UIEvent")
 UIEvent::UIEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 UIEvent::UIEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 UIEvent::UIEvent(const jsbind::String& type) : Event(emlite::Val::global("UIEvent").new_(type)) {}
 
-UIEvent::UIEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("UIEvent").new_(type, eventInitDict)) {}
+UIEvent::UIEvent(const jsbind::String& type, const UIEventInit& eventInitDict) : Event(emlite::Val::global("UIEvent").new_(type, eventInitDict)) {}
 
 Window UIEvent::view() const {
     return Event::get("view").as<Window>();
@@ -52,3 +53,5 @@ unsigned long UIEvent::which() const {
     return Event::get("which").as<unsigned long>();
 }
 
+
+} // namespace webbind

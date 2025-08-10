@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class DOMPointReadOnly;
 
-
-/// The XRLightEstimate class.
+/// Interface XRLightEstimate
 /// [`XRLightEstimate`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate)
 class XRLightEstimate : public emlite::Val {
     explicit XRLightEstimate(Handle h) noexcept;
-
 public:
     explicit XRLightEstimate(const emlite::Val &val) noexcept;
     static XRLightEstimate take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XRLightEstimate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `sphericalHarmonicsCoefficients` attribute.
@@ -29,3 +28,4 @@ public:
     [[nodiscard]] DOMPointReadOnly primaryLightIntensity() const;
 };
 
+} // namespace webbind

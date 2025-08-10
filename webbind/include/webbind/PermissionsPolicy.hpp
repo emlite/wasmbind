@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The PermissionsPolicy class.
+/// Interface PermissionsPolicy
 /// [`PermissionsPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionsPolicy)
 class PermissionsPolicy : public emlite::Val {
     explicit PermissionsPolicy(Handle h) noexcept;
-
 public:
     explicit PermissionsPolicy(const emlite::Val &val) noexcept;
     static PermissionsPolicy take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PermissionsPolicy clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The allowsFeature method.
@@ -33,3 +32,4 @@ public:
     jsbind::TypedArray<jsbind::String> getAllowlistForFeature(const jsbind::String& feature);
 };
 
+} // namespace webbind

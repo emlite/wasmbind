@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SVGLength;
 
-
-/// The SVGLengthList class.
+/// Interface SVGLengthList
 /// [`SVGLengthList`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLengthList)
 class SVGLengthList : public emlite::Val {
     explicit SVGLengthList(Handle h) noexcept;
-
 public:
     explicit SVGLengthList(const emlite::Val &val) noexcept;
     static SVGLengthList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGLengthList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `length` attribute.
@@ -47,3 +46,4 @@ public:
     SVGLength appendItem(const SVGLength& newItem);
 };
 
+} // namespace webbind

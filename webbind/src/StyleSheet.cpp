@@ -1,7 +1,8 @@
-#include <webbind/StyleSheet.hpp>
-#include <webbind/CSSStyleSheet.hpp>
-#include <webbind/MediaList.hpp>
+#include "webbind/StyleSheet.hpp"
+#include "webbind/CSSStyleSheet.hpp"
+#include "webbind/MediaList.hpp"
 
+namespace webbind {
 
 StyleSheet StyleSheet::take_ownership(Handle h) noexcept {
         return StyleSheet(h);
@@ -10,7 +11,6 @@ StyleSheet StyleSheet::clone() const noexcept { return *this; }
 emlite::Val StyleSheet::instance() noexcept { return emlite::Val::global("StyleSheet"); }
 StyleSheet::StyleSheet(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StyleSheet::StyleSheet(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String StyleSheet::type() const {
     return emlite::Val::get("type").as<jsbind::String>();
@@ -44,3 +44,5 @@ void StyleSheet::disabled(bool value) {
     emlite::Val::set("disabled", value);
 }
 
+
+} // namespace webbind

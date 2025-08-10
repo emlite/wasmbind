@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGElement.hpp"
 #include "enums.hpp"
+#include "SVGElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedString;
 class SVGAnimatedNumber;
 class SVGAnimatedEnumeration;
 class SVGAnimatedLength;
 
-
-/// The SVGFEGaussianBlurElement class.
+/// Interface SVGFEGaussianBlurElement
 /// [`SVGFEGaussianBlurElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEGaussianBlurElement)
 class SVGFEGaussianBlurElement : public SVGElement {
     explicit SVGFEGaussianBlurElement(Handle h) noexcept;
-
 public:
     explicit SVGFEGaussianBlurElement(const emlite::Val &val) noexcept;
     static SVGFEGaussianBlurElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGFEGaussianBlurElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `in1` attribute.
@@ -54,3 +53,4 @@ public:
     [[nodiscard]] SVGAnimatedString result() const;
 };
 
+} // namespace webbind

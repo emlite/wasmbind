@@ -1,5 +1,6 @@
-#include <webbind/EXT_float_blend.hpp>
+#include "webbind/EXT_float_blend.hpp"
 
+namespace webbind {
 
 EXT_float_blend EXT_float_blend::take_ownership(Handle h) noexcept {
         return EXT_float_blend(h);
@@ -10,3 +11,4 @@ EXT_float_blend::EXT_float_blend(Handle h) noexcept : emlite::Val(emlite::Val::t
 EXT_float_blend::EXT_float_blend(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "ExtendableEvent.hpp"
 #include "enums.hpp"
+#include "ExtendableEvent.hpp"
 
+namespace webbind {
 
-/// The CanMakePaymentEvent class.
+/// Interface CanMakePaymentEvent
 /// [`CanMakePaymentEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CanMakePaymentEvent)
 class CanMakePaymentEvent : public ExtendableEvent {
     explicit CanMakePaymentEvent(Handle h) noexcept;
-
 public:
     explicit CanMakePaymentEvent(const emlite::Val &val) noexcept;
     static CanMakePaymentEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CanMakePaymentEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CanMakePaymentEvent(..)` constructor, creating a new CanMakePaymentEvent instance
@@ -24,3 +23,4 @@ public:
     jsbind::Undefined respondWith(jsbind::Promise<bool> canMakePaymentResponse);
 };
 
+} // namespace webbind

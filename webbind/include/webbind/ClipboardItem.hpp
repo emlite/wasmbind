@@ -3,25 +3,26 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "ClipboardItemOptions.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Blob;
 
-
-/// The ClipboardItem class.
+/// Interface ClipboardItem
 /// [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)
 class ClipboardItem : public emlite::Val {
     explicit ClipboardItem(Handle h) noexcept;
-
 public:
     explicit ClipboardItem(const emlite::Val &val) noexcept;
     static ClipboardItem take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ClipboardItem clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ClipboardItem(..)` constructor, creating a new ClipboardItem instance
     ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items);
     /// The `new ClipboardItem(..)` constructor, creating a new ClipboardItem instance
-    ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items, const jsbind::Any& options);
+    ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items, const ClipboardItemOptions& options);
     /// Getter of the `presentationStyle` attribute.
     /// [`ClipboardItem.presentationStyle`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/presentationStyle)
     [[nodiscard]] PresentationStyle presentationStyle() const;
@@ -36,3 +37,4 @@ public:
     static bool supports(const jsbind::String& type);
 };
 
+} // namespace webbind

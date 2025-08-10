@@ -1,41 +1,11 @@
-#include <webbind/GPUAdapter.hpp>
-#include <webbind/GPUSupportedFeatures.hpp>
-#include <webbind/GPUSupportedLimits.hpp>
-#include <webbind/GPUAdapterInfo.hpp>
-#include <webbind/GPUDevice.hpp>
+#include "webbind/GPUAdapter.hpp"
+#include "webbind/GPUSupportedFeatures.hpp"
+#include "webbind/GPUSupportedLimits.hpp"
+#include "webbind/GPUAdapterInfo.hpp"
+#include "webbind/GPUDevice.hpp"
+#include "webbind/GPUDeviceDescriptor.hpp"
 
-
-GPUDeviceDescriptor::GPUDeviceDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUDeviceDescriptor GPUDeviceDescriptor::take_ownership(Handle h) noexcept {
-        return GPUDeviceDescriptor(h);
-    }
-GPUDeviceDescriptor::GPUDeviceDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
-GPUDeviceDescriptor::GPUDeviceDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
-GPUDeviceDescriptor GPUDeviceDescriptor::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<GPUFeatureName> GPUDeviceDescriptor::requiredFeatures() const {
-    return emlite::Val::get("requiredFeatures").as<jsbind::TypedArray<GPUFeatureName>>();
-}
-
-void GPUDeviceDescriptor::requiredFeatures(const jsbind::TypedArray<GPUFeatureName>& value) {
-    emlite::Val::set("requiredFeatures", value);
-}
-
-jsbind::Record<jsbind::String, jsbind::Any> GPUDeviceDescriptor::requiredLimits() const {
-    return emlite::Val::get("requiredLimits").as<jsbind::Record<jsbind::String, jsbind::Any>>();
-}
-
-void GPUDeviceDescriptor::requiredLimits(const jsbind::Record<jsbind::String, jsbind::Any>& value) {
-    emlite::Val::set("requiredLimits", value);
-}
-
-jsbind::Any GPUDeviceDescriptor::defaultQueue() const {
-    return emlite::Val::get("defaultQueue").as<jsbind::Any>();
-}
-
-void GPUDeviceDescriptor::defaultQueue(const jsbind::Any& value) {
-    emlite::Val::set("defaultQueue", value);
-}
+namespace webbind {
 
 GPUAdapter GPUAdapter::take_ownership(Handle h) noexcept {
         return GPUAdapter(h);
@@ -44,7 +14,6 @@ GPUAdapter GPUAdapter::clone() const noexcept { return *this; }
 emlite::Val GPUAdapter::instance() noexcept { return emlite::Val::global("GPUAdapter"); }
 GPUAdapter::GPUAdapter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUAdapter::GPUAdapter(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 GPUSupportedFeatures GPUAdapter::features() const {
     return emlite::Val::get("features").as<GPUSupportedFeatures>();
@@ -66,3 +35,5 @@ jsbind::Promise<GPUDevice> GPUAdapter::requestDevice(const GPUDeviceDescriptor& 
     return emlite::Val::call("requestDevice", descriptor).as<jsbind::Promise<GPUDevice>>();
 }
 
+
+} // namespace webbind

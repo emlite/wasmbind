@@ -1,5 +1,7 @@
-#include <webbind/DeviceOrientationEvent.hpp>
+#include "webbind/DeviceOrientationEvent.hpp"
+#include "webbind/DeviceOrientationEventInit.hpp"
 
+namespace webbind {
 
 DeviceOrientationEvent DeviceOrientationEvent::take_ownership(Handle h) noexcept {
         return DeviceOrientationEvent(h);
@@ -9,10 +11,9 @@ emlite::Val DeviceOrientationEvent::instance() noexcept { return emlite::Val::gl
 DeviceOrientationEvent::DeviceOrientationEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 DeviceOrientationEvent::DeviceOrientationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::String& type) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type)) {}
 
-DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type, eventInitDict)) {}
+DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::String& type, const DeviceOrientationEventInit& eventInitDict) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type, eventInitDict)) {}
 
 double DeviceOrientationEvent::alpha() const {
     return Event::get("alpha").as<double>();
@@ -38,3 +39,5 @@ jsbind::Promise<PermissionState> DeviceOrientationEvent::requestPermission(bool 
     return emlite::Val::global("deviceorientationevent").call("requestPermission", absolute).as<jsbind::Promise<PermissionState>>();
 }
 
+
+} // namespace webbind

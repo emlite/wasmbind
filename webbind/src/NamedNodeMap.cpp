@@ -1,6 +1,7 @@
-#include <webbind/NamedNodeMap.hpp>
-#include <webbind/Attr.hpp>
+#include "webbind/NamedNodeMap.hpp"
+#include "webbind/Attr.hpp"
 
+namespace webbind {
 
 NamedNodeMap NamedNodeMap::take_ownership(Handle h) noexcept {
         return NamedNodeMap(h);
@@ -9,7 +10,6 @@ NamedNodeMap NamedNodeMap::clone() const noexcept { return *this; }
 emlite::Val NamedNodeMap::instance() noexcept { return emlite::Val::global("NamedNodeMap"); }
 NamedNodeMap::NamedNodeMap(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NamedNodeMap::NamedNodeMap(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 unsigned long NamedNodeMap::length() const {
     return emlite::Val::get("length").as<unsigned long>();
@@ -43,3 +43,5 @@ Attr NamedNodeMap::removeNamedItemNS(const jsbind::String& namespace_, const jsb
     return emlite::Val::call("removeNamedItemNS", namespace_, localName).as<Attr>();
 }
 
+
+} // namespace webbind

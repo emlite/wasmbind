@@ -1,7 +1,8 @@
-#include <webbind/IDBIndex.hpp>
-#include <webbind/IDBObjectStore.hpp>
-#include <webbind/IDBRequest.hpp>
+#include "webbind/IDBIndex.hpp"
+#include "webbind/IDBObjectStore.hpp"
+#include "webbind/IDBRequest.hpp"
 
+namespace webbind {
 
 IDBIndex IDBIndex::take_ownership(Handle h) noexcept {
         return IDBIndex(h);
@@ -10,7 +11,6 @@ IDBIndex IDBIndex::clone() const noexcept { return *this; }
 emlite::Val IDBIndex::instance() noexcept { return emlite::Val::global("IDBIndex"); }
 IDBIndex::IDBIndex(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBIndex::IDBIndex(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String IDBIndex::name() const {
     return emlite::Val::get("name").as<jsbind::String>();
@@ -100,3 +100,5 @@ IDBRequest IDBIndex::openKeyCursor(const jsbind::Any& query, const IDBCursorDire
     return emlite::Val::call("openKeyCursor", query, direction).as<IDBRequest>();
 }
 
+
+} // namespace webbind

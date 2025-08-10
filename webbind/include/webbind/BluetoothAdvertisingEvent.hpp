@@ -2,27 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Event.hpp"
 #include "enums.hpp"
+#include "Event.hpp"
+#include "BluetoothAdvertisingEventInit.hpp"
+
+namespace webbind {
 
 class BluetoothDevice;
 class BluetoothManufacturerDataMap;
 class BluetoothServiceDataMap;
 
-
-/// The BluetoothAdvertisingEvent class.
+/// Interface BluetoothAdvertisingEvent
 /// [`BluetoothAdvertisingEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingEvent)
 class BluetoothAdvertisingEvent : public Event {
     explicit BluetoothAdvertisingEvent(Handle h) noexcept;
-
 public:
     explicit BluetoothAdvertisingEvent(const emlite::Val &val) noexcept;
     static BluetoothAdvertisingEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BluetoothAdvertisingEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BluetoothAdvertisingEvent(..)` constructor, creating a new BluetoothAdvertisingEvent instance
-    BluetoothAdvertisingEvent(const jsbind::String& type, const jsbind::Any& init);
+    BluetoothAdvertisingEvent(const jsbind::String& type, const BluetoothAdvertisingEventInit& init);
     /// Getter of the `device` attribute.
     /// [`BluetoothAdvertisingEvent.device`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingEvent/device)
     [[nodiscard]] BluetoothDevice device() const;
@@ -49,3 +49,4 @@ public:
     [[nodiscard]] BluetoothServiceDataMap serviceData() const;
 };
 
+} // namespace webbind

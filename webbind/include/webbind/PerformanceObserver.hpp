@@ -3,34 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "PerformanceObserverInit.hpp"
 
-class PerformanceObserverInit;
+namespace webbind {
 
-
-class PerformanceObserverInit : public emlite::Val {
-  explicit PerformanceObserverInit(Handle h) noexcept;
-public:
-    static PerformanceObserverInit take_ownership(Handle h) noexcept;
-    explicit PerformanceObserverInit(const emlite::Val &val) noexcept;
-    PerformanceObserverInit() noexcept;
-    [[nodiscard]] PerformanceObserverInit clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> entryTypes() const;
-    void entryTypes(const jsbind::TypedArray<jsbind::String>& value);
-    [[nodiscard]] jsbind::String type() const;
-    void type(const jsbind::String& value);
-    [[nodiscard]] bool buffered() const;
-    void buffered(bool value);
-};
-
-/// The PerformanceObserver class.
+/// Interface PerformanceObserver
 /// [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
 class PerformanceObserver : public emlite::Val {
     explicit PerformanceObserver(Handle h) noexcept;
-
 public:
     explicit PerformanceObserver(const emlite::Val &val) noexcept;
     static PerformanceObserver take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceObserver clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PerformanceObserver(..)` constructor, creating a new PerformanceObserver instance
@@ -52,3 +35,4 @@ public:
     [[nodiscard]] static jsbind::TypedArray<jsbind::String> supportedEntryTypes();
 };
 
+} // namespace webbind

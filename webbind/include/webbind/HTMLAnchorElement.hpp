@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class DOMTokenList;
 
-
-/// The HTMLAnchorElement class.
+/// Interface HTMLAnchorElement
 /// [`HTMLAnchorElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement)
 class HTMLAnchorElement : public HTMLElement {
     explicit HTMLAnchorElement(Handle h) noexcept;
-
 public:
     explicit HTMLAnchorElement(const emlite::Val &val) noexcept;
     static HTMLAnchorElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLAnchorElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLAnchorElement(..)` constructor, creating a new HTMLAnchorElement instance
@@ -179,3 +178,4 @@ public:
     void hash(const jsbind::String& value);
 };
 
+} // namespace webbind

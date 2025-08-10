@@ -1,6 +1,7 @@
-#include <webbind/Highlight.hpp>
-#include <webbind/AbstractRange.hpp>
+#include "webbind/Highlight.hpp"
+#include "webbind/AbstractRange.hpp"
 
+namespace webbind {
 
 Highlight Highlight::take_ownership(Handle h) noexcept {
         return Highlight(h);
@@ -9,7 +10,6 @@ Highlight Highlight::clone() const noexcept { return *this; }
 emlite::Val Highlight::instance() noexcept { return emlite::Val::global("Highlight"); }
 Highlight::Highlight(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Highlight::Highlight(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 Highlight::Highlight(const AbstractRange& initialRanges) : emlite::Val(emlite::Val::global("Highlight").new_(initialRanges)) {}
 
@@ -29,3 +29,5 @@ void Highlight::type(const HighlightType& value) {
     emlite::Val::set("type", value);
 }
 
+
+} // namespace webbind

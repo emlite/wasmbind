@@ -1,6 +1,8 @@
-#include <webbind/AnalyserNode.hpp>
-#include <webbind/BaseAudioContext.hpp>
+#include "webbind/AnalyserNode.hpp"
+#include "webbind/BaseAudioContext.hpp"
+#include "webbind/AnalyserOptions.hpp"
 
+namespace webbind {
 
 AnalyserNode AnalyserNode::take_ownership(Handle h) noexcept {
         return AnalyserNode(h);
@@ -10,10 +12,9 @@ emlite::Val AnalyserNode::instance() noexcept { return emlite::Val::global("Anal
 AnalyserNode::AnalyserNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
 AnalyserNode::AnalyserNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
-
 AnalyserNode::AnalyserNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("AnalyserNode").new_(context)) {}
 
-AnalyserNode::AnalyserNode(const BaseAudioContext& context, const jsbind::Any& options) : AudioNode(emlite::Val::global("AnalyserNode").new_(context, options)) {}
+AnalyserNode::AnalyserNode(const BaseAudioContext& context, const AnalyserOptions& options) : AudioNode(emlite::Val::global("AnalyserNode").new_(context, options)) {}
 
 jsbind::Undefined AnalyserNode::getFloatFrequencyData(const jsbind::Float32Array& array) {
     return AudioNode::call("getFloatFrequencyData", array).as<jsbind::Undefined>();
@@ -67,3 +68,5 @@ void AnalyserNode::smoothingTimeConstant(double value) {
     AudioNode::set("smoothingTimeConstant", value);
 }
 
+
+} // namespace webbind

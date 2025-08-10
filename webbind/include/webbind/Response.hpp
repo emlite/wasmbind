@@ -3,6 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "ResponseInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class Response;
 class Headers;
@@ -10,16 +14,13 @@ class ReadableStream;
 class Blob;
 class FormData;
 
-
-/// The Response class.
+/// Interface Response
 /// [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 class Response : public emlite::Val {
     explicit Response(Handle h) noexcept;
-
 public:
     explicit Response(const emlite::Val &val) noexcept;
     static Response take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Response clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Response(..)` constructor, creating a new Response instance
@@ -27,7 +28,7 @@ public:
     /// The `new Response(..)` constructor, creating a new Response instance
     Response(const jsbind::Any& body);
     /// The `new Response(..)` constructor, creating a new Response instance
-    Response(const jsbind::Any& body, const jsbind::Any& init);
+    Response(const jsbind::Any& body, const ResponseInit& init);
     /// The error method.
     /// [`Response.error`](https://developer.mozilla.org/en-US/docs/Web/API/Response/error)
     static Response error();
@@ -87,3 +88,4 @@ public:
     jsbind::Promise<jsbind::String> text();
 };
 
+} // namespace webbind

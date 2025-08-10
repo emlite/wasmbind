@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class SourceBuffer;
 
-
-/// The AudioTrack class.
+/// Interface AudioTrack
 /// [`AudioTrack`](https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack)
 class AudioTrack : public emlite::Val {
     explicit AudioTrack(Handle h) noexcept;
-
 public:
     explicit AudioTrack(const emlite::Val &val) noexcept;
     static AudioTrack take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioTrack clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -41,3 +40,4 @@ public:
     [[nodiscard]] SourceBuffer sourceBuffer() const;
 };
 
+} // namespace webbind

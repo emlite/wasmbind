@@ -2,85 +2,25 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
+#include "MediaTrackCapabilities.hpp"
+#include "MediaTrackConstraints.hpp"
+#include "MediaTrackSettings.hpp"
+#include "CaptureHandle.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class MediaStreamTrack;
-class MediaTrackCapabilities;
-class MediaTrackConstraints;
-class MediaTrackSettings;
-class CaptureHandle;
 
-
-class MediaTrackCapabilities : public emlite::Val {
-  explicit MediaTrackCapabilities(Handle h) noexcept;
-public:
-    static MediaTrackCapabilities take_ownership(Handle h) noexcept;
-    explicit MediaTrackCapabilities(const emlite::Val &val) noexcept;
-    MediaTrackCapabilities() noexcept;
-    [[nodiscard]] MediaTrackCapabilities clone() const noexcept;
-    [[nodiscard]] jsbind::String displaySurface() const;
-    void displaySurface(const jsbind::String& value);
-    [[nodiscard]] bool logicalSurface() const;
-    void logicalSurface(bool value);
-    [[nodiscard]] jsbind::TypedArray<jsbind::String> cursor() const;
-    void cursor(const jsbind::TypedArray<jsbind::String>& value);
-};
-
-class MediaTrackConstraints : public emlite::Val {
-  explicit MediaTrackConstraints(Handle h) noexcept;
-public:
-    static MediaTrackConstraints take_ownership(Handle h) noexcept;
-    explicit MediaTrackConstraints(const emlite::Val &val) noexcept;
-    MediaTrackConstraints() noexcept;
-    [[nodiscard]] MediaTrackConstraints clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<jsbind::Any> advanced() const;
-    void advanced(const jsbind::TypedArray<jsbind::Any>& value);
-};
-
-class MediaTrackSettings : public emlite::Val {
-  explicit MediaTrackSettings(Handle h) noexcept;
-public:
-    static MediaTrackSettings take_ownership(Handle h) noexcept;
-    explicit MediaTrackSettings(const emlite::Val &val) noexcept;
-    MediaTrackSettings() noexcept;
-    [[nodiscard]] MediaTrackSettings clone() const noexcept;
-    [[nodiscard]] jsbind::String displaySurface() const;
-    void displaySurface(const jsbind::String& value);
-    [[nodiscard]] bool logicalSurface() const;
-    void logicalSurface(bool value);
-    [[nodiscard]] jsbind::String cursor() const;
-    void cursor(const jsbind::String& value);
-    [[nodiscard]] bool restrictOwnAudio() const;
-    void restrictOwnAudio(bool value);
-    [[nodiscard]] bool suppressLocalAudioPlayback() const;
-    void suppressLocalAudioPlayback(bool value);
-    [[nodiscard]] double screenPixelRatio() const;
-    void screenPixelRatio(double value);
-};
-
-class CaptureHandle : public emlite::Val {
-  explicit CaptureHandle(Handle h) noexcept;
-public:
-    static CaptureHandle take_ownership(Handle h) noexcept;
-    explicit CaptureHandle(const emlite::Val &val) noexcept;
-    CaptureHandle() noexcept;
-    [[nodiscard]] CaptureHandle clone() const noexcept;
-    [[nodiscard]] jsbind::String origin() const;
-    void origin(const jsbind::String& value);
-    [[nodiscard]] jsbind::String handle() const;
-    void handle(const jsbind::String& value);
-};
-
-/// The MediaStreamTrack class.
+/// Interface MediaStreamTrack
 /// [`MediaStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack)
 class MediaStreamTrack : public EventTarget {
     explicit MediaStreamTrack(Handle h) noexcept;
-
 public:
     explicit MediaStreamTrack(const emlite::Val &val) noexcept;
     static MediaStreamTrack take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaStreamTrack clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `kind` attribute.
@@ -175,3 +115,4 @@ public:
     void onisolationchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

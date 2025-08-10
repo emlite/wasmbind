@@ -2,25 +2,27 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "AudioNode.hpp"
 #include "enums.hpp"
+#include "AudioNode.hpp"
+#include "AnalyserOptions.hpp"
 
+namespace webbind {
 
-/// The AnalyserNode class.
+class BaseAudioContext;
+
+/// Interface AnalyserNode
 /// [`AnalyserNode`](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode)
 class AnalyserNode : public AudioNode {
     explicit AnalyserNode(Handle h) noexcept;
-
 public:
     explicit AnalyserNode(const emlite::Val &val) noexcept;
     static AnalyserNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AnalyserNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AnalyserNode(..)` constructor, creating a new AnalyserNode instance
     AnalyserNode(const BaseAudioContext& context);
     /// The `new AnalyserNode(..)` constructor, creating a new AnalyserNode instance
-    AnalyserNode(const BaseAudioContext& context, const jsbind::Any& options);
+    AnalyserNode(const BaseAudioContext& context, const AnalyserOptions& options);
     /// The getFloatFrequencyData method.
     /// [`AnalyserNode.getFloatFrequencyData`](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getFloatFrequencyData)
     jsbind::Undefined getFloatFrequencyData(const jsbind::Float32Array& array);
@@ -62,3 +64,4 @@ public:
     void smoothingTimeConstant(double value);
 };
 
+} // namespace webbind

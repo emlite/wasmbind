@@ -1,8 +1,10 @@
-#include <webbind/BluetoothAdvertisingEvent.hpp>
-#include <webbind/BluetoothDevice.hpp>
-#include <webbind/BluetoothManufacturerDataMap.hpp>
-#include <webbind/BluetoothServiceDataMap.hpp>
+#include "webbind/BluetoothAdvertisingEvent.hpp"
+#include "webbind/BluetoothAdvertisingEventInit.hpp"
+#include "webbind/BluetoothDevice.hpp"
+#include "webbind/BluetoothManufacturerDataMap.hpp"
+#include "webbind/BluetoothServiceDataMap.hpp"
 
+namespace webbind {
 
 BluetoothAdvertisingEvent BluetoothAdvertisingEvent::take_ownership(Handle h) noexcept {
         return BluetoothAdvertisingEvent(h);
@@ -12,8 +14,7 @@ emlite::Val BluetoothAdvertisingEvent::instance() noexcept { return emlite::Val:
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
-BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const jsbind::String& type, const jsbind::Any& init) : Event(emlite::Val::global("BluetoothAdvertisingEvent").new_(type, init)) {}
+BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const jsbind::String& type, const BluetoothAdvertisingEventInit& init) : Event(emlite::Val::global("BluetoothAdvertisingEvent").new_(type, init)) {}
 
 BluetoothDevice BluetoothAdvertisingEvent::device() const {
     return Event::get("device").as<BluetoothDevice>();
@@ -47,3 +48,5 @@ BluetoothServiceDataMap BluetoothAdvertisingEvent::serviceData() const {
     return Event::get("serviceData").as<BluetoothServiceDataMap>();
 }
 
+
+} // namespace webbind

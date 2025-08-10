@@ -4,20 +4,19 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class DocumentType;
 class XMLDocument;
 class Document;
 
-
-/// The DOMImplementation class.
+/// Interface DOMImplementation
 /// [`DOMImplementation`](https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation)
 class DOMImplementation : public emlite::Val {
     explicit DOMImplementation(Handle h) noexcept;
-
 public:
     explicit DOMImplementation(const emlite::Val &val) noexcept;
     static DOMImplementation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMImplementation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The createDocumentType method.
@@ -40,3 +39,4 @@ public:
     bool hasFeature();
 };
 
+} // namespace webbind

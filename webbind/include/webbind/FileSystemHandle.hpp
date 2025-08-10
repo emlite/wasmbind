@@ -3,31 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "FileSystemHandlePermissionDescriptor.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class FileSystemHandle;
-class FileSystemHandlePermissionDescriptor;
 
-
-class FileSystemHandlePermissionDescriptor : public emlite::Val {
-  explicit FileSystemHandlePermissionDescriptor(Handle h) noexcept;
-public:
-    static FileSystemHandlePermissionDescriptor take_ownership(Handle h) noexcept;
-    explicit FileSystemHandlePermissionDescriptor(const emlite::Val &val) noexcept;
-    FileSystemHandlePermissionDescriptor() noexcept;
-    [[nodiscard]] FileSystemHandlePermissionDescriptor clone() const noexcept;
-    [[nodiscard]] FileSystemPermissionMode mode() const;
-    void mode(const FileSystemPermissionMode& value);
-};
-
-/// The FileSystemHandle class.
+/// Interface FileSystemHandle
 /// [`FileSystemHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle)
 class FileSystemHandle : public emlite::Val {
     explicit FileSystemHandle(Handle h) noexcept;
-
 public:
     explicit FileSystemHandle(const emlite::Val &val) noexcept;
     static FileSystemHandle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FileSystemHandle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `kind` attribute.
@@ -53,3 +42,4 @@ public:
     jsbind::Promise<PermissionState> requestPermission(const FileSystemHandlePermissionDescriptor& descriptor);
 };
 
+} // namespace webbind

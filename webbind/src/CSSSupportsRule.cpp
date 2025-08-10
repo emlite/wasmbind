@@ -1,5 +1,6 @@
-#include <webbind/CSSSupportsRule.hpp>
+#include "webbind/CSSSupportsRule.hpp"
 
+namespace webbind {
 
 CSSSupportsRule CSSSupportsRule::take_ownership(Handle h) noexcept {
         return CSSSupportsRule(h);
@@ -9,8 +10,9 @@ emlite::Val CSSSupportsRule::instance() noexcept { return emlite::Val::global("C
 CSSSupportsRule::CSSSupportsRule(Handle h) noexcept : CSSConditionRule(emlite::Val::take_ownership(h)) {}
 CSSSupportsRule::CSSSupportsRule(const emlite::Val &val) noexcept: CSSConditionRule(val) {}
 
-
 bool CSSSupportsRule::matches() const {
     return CSSConditionRule::get("matches").as<bool>();
 }
 
+
+} // namespace webbind

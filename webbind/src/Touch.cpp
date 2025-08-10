@@ -1,6 +1,8 @@
-#include <webbind/Touch.hpp>
-#include <webbind/EventTarget.hpp>
+#include "webbind/Touch.hpp"
+#include "webbind/TouchInit.hpp"
+#include "webbind/EventTarget.hpp"
 
+namespace webbind {
 
 Touch Touch::take_ownership(Handle h) noexcept {
         return Touch(h);
@@ -10,8 +12,7 @@ emlite::Val Touch::instance() noexcept { return emlite::Val::global("Touch"); }
 Touch::Touch(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Touch::Touch(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
-Touch::Touch(const jsbind::Any& touchInitDict) : emlite::Val(emlite::Val::global("Touch").new_(touchInitDict)) {}
+Touch::Touch(const TouchInit& touchInitDict) : emlite::Val(emlite::Val::global("Touch").new_(touchInitDict)) {}
 
 long Touch::identifier() const {
     return emlite::Val::get("identifier").as<long>();
@@ -73,3 +74,5 @@ TouchType Touch::touchType() const {
     return emlite::Val::get("touchType").as<TouchType>();
 }
 
+
+} // namespace webbind

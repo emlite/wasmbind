@@ -1,6 +1,7 @@
-#include <webbind/FileSystemEntry.hpp>
-#include <webbind/FileSystem.hpp>
+#include "webbind/FileSystemEntry.hpp"
+#include "webbind/FileSystem.hpp"
 
+namespace webbind {
 
 FileSystemEntry FileSystemEntry::take_ownership(Handle h) noexcept {
         return FileSystemEntry(h);
@@ -9,7 +10,6 @@ FileSystemEntry FileSystemEntry::clone() const noexcept { return *this; }
 emlite::Val FileSystemEntry::instance() noexcept { return emlite::Val::global("FileSystemEntry"); }
 FileSystemEntry::FileSystemEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FileSystemEntry::FileSystemEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 bool FileSystemEntry::isFile() const {
     return emlite::Val::get("isFile").as<bool>();
@@ -43,3 +43,5 @@ jsbind::Undefined FileSystemEntry::getParent(const jsbind::Function& successCall
     return emlite::Val::call("getParent", successCallback, errorCallback).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

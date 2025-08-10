@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "SVGGeometryElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 
-
-/// The SVGCircleElement class.
+/// Interface SVGCircleElement
 /// [`SVGCircleElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement)
 class SVGCircleElement : public SVGGeometryElement {
     explicit SVGCircleElement(Handle h) noexcept;
-
 public:
     explicit SVGCircleElement(const emlite::Val &val) noexcept;
     static SVGCircleElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGCircleElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `cx` attribute.
@@ -30,3 +29,4 @@ public:
     [[nodiscard]] SVGAnimatedLength r() const;
 };
 
+} // namespace webbind

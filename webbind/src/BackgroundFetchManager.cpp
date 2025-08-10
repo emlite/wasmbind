@@ -1,22 +1,8 @@
-#include <webbind/BackgroundFetchManager.hpp>
-#include <webbind/BackgroundFetchRegistration.hpp>
+#include "webbind/BackgroundFetchManager.hpp"
+#include "webbind/BackgroundFetchRegistration.hpp"
+#include "webbind/BackgroundFetchOptions.hpp"
 
-
-BackgroundFetchOptions::BackgroundFetchOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BackgroundFetchOptions BackgroundFetchOptions::take_ownership(Handle h) noexcept {
-        return BackgroundFetchOptions(h);
-    }
-BackgroundFetchOptions::BackgroundFetchOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-BackgroundFetchOptions::BackgroundFetchOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-BackgroundFetchOptions BackgroundFetchOptions::clone() const noexcept { return *this; }
-
-long long BackgroundFetchOptions::downloadTotal() const {
-    return emlite::Val::get("downloadTotal").as<long long>();
-}
-
-void BackgroundFetchOptions::downloadTotal(long long value) {
-    emlite::Val::set("downloadTotal", value);
-}
+namespace webbind {
 
 BackgroundFetchManager BackgroundFetchManager::take_ownership(Handle h) noexcept {
         return BackgroundFetchManager(h);
@@ -25,7 +11,6 @@ BackgroundFetchManager BackgroundFetchManager::clone() const noexcept { return *
 emlite::Val BackgroundFetchManager::instance() noexcept { return emlite::Val::global("BackgroundFetchManager"); }
 BackgroundFetchManager::BackgroundFetchManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BackgroundFetchManager::BackgroundFetchManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::fetch(const jsbind::String& id, const jsbind::Any& requests) {
     return emlite::Val::call("fetch", id, requests).as<jsbind::Promise<BackgroundFetchRegistration>>();
@@ -43,3 +28,5 @@ jsbind::Promise<jsbind::TypedArray<jsbind::String>> BackgroundFetchManager::getI
     return emlite::Val::call("getIds").as<jsbind::Promise<jsbind::TypedArray<jsbind::String>>>();
 }
 
+
+} // namespace webbind

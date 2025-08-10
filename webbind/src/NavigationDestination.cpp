@@ -1,5 +1,6 @@
-#include <webbind/NavigationDestination.hpp>
+#include "webbind/NavigationDestination.hpp"
 
+namespace webbind {
 
 NavigationDestination NavigationDestination::take_ownership(Handle h) noexcept {
         return NavigationDestination(h);
@@ -8,7 +9,6 @@ NavigationDestination NavigationDestination::clone() const noexcept { return *th
 emlite::Val NavigationDestination::instance() noexcept { return emlite::Val::global("NavigationDestination"); }
 NavigationDestination::NavigationDestination(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigationDestination::NavigationDestination(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String NavigationDestination::url() const {
     return emlite::Val::get("url").as<jsbind::String>();
@@ -34,3 +34,5 @@ jsbind::Any NavigationDestination::getState() {
     return emlite::Val::call("getState").as<jsbind::Any>();
 }
 
+
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/HTMLMarqueeElement.hpp>
+#include "webbind/HTMLMarqueeElement.hpp"
 
+namespace webbind {
 
 HTMLMarqueeElement HTMLMarqueeElement::take_ownership(Handle h) noexcept {
         return HTMLMarqueeElement(h);
@@ -8,7 +9,6 @@ HTMLMarqueeElement HTMLMarqueeElement::clone() const noexcept { return *this; }
 emlite::Val HTMLMarqueeElement::instance() noexcept { return emlite::Val::global("HTMLMarqueeElement"); }
 HTMLMarqueeElement::HTMLMarqueeElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLMarqueeElement::HTMLMarqueeElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLMarqueeElement::HTMLMarqueeElement() : HTMLElement(emlite::Val::global("HTMLMarqueeElement").new_()) {}
 
@@ -108,3 +108,5 @@ jsbind::Undefined HTMLMarqueeElement::stop() {
     return HTMLElement::call("stop").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

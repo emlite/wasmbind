@@ -2,25 +2,26 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "Event.hpp"
+#include "SecurityPolicyViolationEventInit.hpp"
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The SecurityPolicyViolationEvent class.
+/// Interface SecurityPolicyViolationEvent
 /// [`SecurityPolicyViolationEvent`](https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent)
 class SecurityPolicyViolationEvent : public Event {
     explicit SecurityPolicyViolationEvent(Handle h) noexcept;
-
 public:
     explicit SecurityPolicyViolationEvent(const emlite::Val &val) noexcept;
     static SecurityPolicyViolationEvent take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SecurityPolicyViolationEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SecurityPolicyViolationEvent(..)` constructor, creating a new SecurityPolicyViolationEvent instance
     SecurityPolicyViolationEvent(const jsbind::String& type);
     /// The `new SecurityPolicyViolationEvent(..)` constructor, creating a new SecurityPolicyViolationEvent instance
-    SecurityPolicyViolationEvent(const jsbind::String& type, const jsbind::Any& eventInitDict);
+    SecurityPolicyViolationEvent(const jsbind::String& type, const SecurityPolicyViolationEventInit& eventInitDict);
     /// Getter of the `documentURI` attribute.
     /// [`SecurityPolicyViolationEvent.documentURI`](https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/documentURI)
     [[nodiscard]] jsbind::String documentURI() const;
@@ -59,3 +60,4 @@ public:
     [[nodiscard]] unsigned long columnNumber() const;
 };
 
+} // namespace webbind

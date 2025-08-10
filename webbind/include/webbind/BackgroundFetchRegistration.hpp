@@ -2,37 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
+#include "CacheQueryOptions.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class BackgroundFetchRecord;
-class CacheQueryOptions;
 
-
-class CacheQueryOptions : public emlite::Val {
-  explicit CacheQueryOptions(Handle h) noexcept;
-public:
-    static CacheQueryOptions take_ownership(Handle h) noexcept;
-    explicit CacheQueryOptions(const emlite::Val &val) noexcept;
-    CacheQueryOptions() noexcept;
-    [[nodiscard]] CacheQueryOptions clone() const noexcept;
-    [[nodiscard]] bool ignoreSearch() const;
-    void ignoreSearch(bool value);
-    [[nodiscard]] bool ignoreMethod() const;
-    void ignoreMethod(bool value);
-    [[nodiscard]] bool ignoreVary() const;
-    void ignoreVary(bool value);
-};
-
-/// The BackgroundFetchRegistration class.
+/// Interface BackgroundFetchRegistration
 /// [`BackgroundFetchRegistration`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration)
 class BackgroundFetchRegistration : public EventTarget {
     explicit BackgroundFetchRegistration(Handle h) noexcept;
-
 public:
     explicit BackgroundFetchRegistration(const emlite::Val &val) noexcept;
     static BackgroundFetchRegistration take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BackgroundFetchRegistration clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -85,3 +70,4 @@ public:
     jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> matchAll(const jsbind::Any& request, const CacheQueryOptions& options);
 };
 
+} // namespace webbind

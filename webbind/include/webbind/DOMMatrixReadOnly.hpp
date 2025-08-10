@@ -2,24 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "DOMPointReadOnly.hpp"
-#include "SVGGeometryElement.hpp"
 #include "enums.hpp"
+#include "DOMMatrixInit.hpp"
+#include "DOMPointInit.hpp"
+
+namespace webbind {
 
 class DOMMatrixReadOnly;
 class DOMMatrix;
 class DOMPoint;
 
-
-/// The DOMMatrixReadOnly class.
+/// Interface DOMMatrixReadOnly
 /// [`DOMMatrixReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly)
 class DOMMatrixReadOnly : public emlite::Val {
     explicit DOMMatrixReadOnly(Handle h) noexcept;
-
 public:
     explicit DOMMatrixReadOnly(const emlite::Val &val) noexcept;
     static DOMMatrixReadOnly take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMMatrixReadOnly clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMMatrixReadOnly(..)` constructor, creating a new DOMMatrixReadOnly instance
@@ -247,3 +246,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

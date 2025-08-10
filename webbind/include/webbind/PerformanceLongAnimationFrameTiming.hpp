@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "PerformanceEntry.hpp"
 #include "enums.hpp"
+#include "PerformanceEntry.hpp"
+
+namespace webbind {
 
 class PerformanceScriptTiming;
 
-
-/// The PerformanceLongAnimationFrameTiming class.
+/// Interface PerformanceLongAnimationFrameTiming
 /// [`PerformanceLongAnimationFrameTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming)
 class PerformanceLongAnimationFrameTiming : public PerformanceEntry {
     explicit PerformanceLongAnimationFrameTiming(Handle h) noexcept;
-
 public:
     explicit PerformanceLongAnimationFrameTiming(const emlite::Val &val) noexcept;
     static PerformanceLongAnimationFrameTiming take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PerformanceLongAnimationFrameTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `startTime` attribute.
@@ -57,3 +56,4 @@ public:
     [[nodiscard]] jsbind::Any presentationTime() const;
 };
 
+} // namespace webbind

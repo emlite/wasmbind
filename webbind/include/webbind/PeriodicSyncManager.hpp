@@ -3,30 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "BackgroundSyncOptions.hpp"
 
-class BackgroundSyncOptions;
+namespace webbind {
 
-
-class BackgroundSyncOptions : public emlite::Val {
-  explicit BackgroundSyncOptions(Handle h) noexcept;
-public:
-    static BackgroundSyncOptions take_ownership(Handle h) noexcept;
-    explicit BackgroundSyncOptions(const emlite::Val &val) noexcept;
-    BackgroundSyncOptions() noexcept;
-    [[nodiscard]] BackgroundSyncOptions clone() const noexcept;
-    [[nodiscard]] long long minInterval() const;
-    void minInterval(long long value);
-};
-
-/// The PeriodicSyncManager class.
+/// Interface PeriodicSyncManager
 /// [`PeriodicSyncManager`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncManager)
 class PeriodicSyncManager : public emlite::Val {
     explicit PeriodicSyncManager(Handle h) noexcept;
-
 public:
     explicit PeriodicSyncManager(const emlite::Val &val) noexcept;
     static PeriodicSyncManager take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PeriodicSyncManager clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The register method.
@@ -43,3 +30,4 @@ public:
     jsbind::Promise<jsbind::Undefined> unregister(const jsbind::String& tag);
 };
 
+} // namespace webbind

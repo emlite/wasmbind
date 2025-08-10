@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GPURenderBundle class.
+/// Interface GPURenderBundle
 /// [`GPURenderBundle`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundle)
 class GPURenderBundle : public emlite::Val {
     explicit GPURenderBundle(Handle h) noexcept;
-
 public:
     explicit GPURenderBundle(const emlite::Val &val) noexcept;
     static GPURenderBundle take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GPURenderBundle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `label` attribute.
@@ -24,3 +23,4 @@ public:
     void label(const jsbind::String& value);
 };
 
+} // namespace webbind

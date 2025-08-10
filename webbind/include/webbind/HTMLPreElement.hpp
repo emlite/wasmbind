@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLPreElement class.
+/// Interface HTMLPreElement
 /// [`HTMLPreElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPreElement)
 class HTMLPreElement : public HTMLElement {
     explicit HTMLPreElement(Handle h) noexcept;
-
 public:
     explicit HTMLPreElement(const emlite::Val &val) noexcept;
     static HTMLPreElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLPreElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLPreElement(..)` constructor, creating a new HTMLPreElement instance
@@ -27,3 +26,4 @@ public:
     void width(long value);
 };
 
+} // namespace webbind

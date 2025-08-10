@@ -1,5 +1,7 @@
-#include <webbind/AnimationEvent.hpp>
+#include "webbind/AnimationEvent.hpp"
+#include "webbind/AnimationEventInit.hpp"
 
+namespace webbind {
 
 AnimationEvent AnimationEvent::take_ownership(Handle h) noexcept {
         return AnimationEvent(h);
@@ -9,10 +11,9 @@ emlite::Val AnimationEvent::instance() noexcept { return emlite::Val::global("An
 AnimationEvent::AnimationEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 AnimationEvent::AnimationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 AnimationEvent::AnimationEvent(const jsbind::String& type) : Event(emlite::Val::global("AnimationEvent").new_(type)) {}
 
-AnimationEvent::AnimationEvent(const jsbind::String& type, const jsbind::Any& animationEventInitDict) : Event(emlite::Val::global("AnimationEvent").new_(type, animationEventInitDict)) {}
+AnimationEvent::AnimationEvent(const jsbind::String& type, const AnimationEventInit& animationEventInitDict) : Event(emlite::Val::global("AnimationEvent").new_(type, animationEventInitDict)) {}
 
 jsbind::String AnimationEvent::animationName() const {
     return Event::get("animationName").as<jsbind::String>();
@@ -26,3 +27,5 @@ jsbind::String AnimationEvent::pseudoElement() const {
     return Event::get("pseudoElement").as<jsbind::String>();
 }
 
+
+} // namespace webbind

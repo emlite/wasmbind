@@ -1,30 +1,7 @@
-#include <webbind/IdleDetector.hpp>
-#include <webbind/AbortSignal.hpp>
+#include "webbind/IdleDetector.hpp"
+#include "webbind/IdleOptions.hpp"
 
-
-IdleOptions::IdleOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IdleOptions IdleOptions::take_ownership(Handle h) noexcept {
-        return IdleOptions(h);
-    }
-IdleOptions::IdleOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-IdleOptions::IdleOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-IdleOptions IdleOptions::clone() const noexcept { return *this; }
-
-long long IdleOptions::threshold() const {
-    return emlite::Val::get("threshold").as<long long>();
-}
-
-void IdleOptions::threshold(long long value) {
-    emlite::Val::set("threshold", value);
-}
-
-AbortSignal IdleOptions::signal() const {
-    return emlite::Val::get("signal").as<AbortSignal>();
-}
-
-void IdleOptions::signal(const AbortSignal& value) {
-    emlite::Val::set("signal", value);
-}
+namespace webbind {
 
 IdleDetector IdleDetector::take_ownership(Handle h) noexcept {
         return IdleDetector(h);
@@ -33,7 +10,6 @@ IdleDetector IdleDetector::clone() const noexcept { return *this; }
 emlite::Val IdleDetector::instance() noexcept { return emlite::Val::global("IdleDetector"); }
 IdleDetector::IdleDetector(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 IdleDetector::IdleDetector(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 IdleDetector::IdleDetector() : EventTarget(emlite::Val::global("IdleDetector").new_()) {}
 
@@ -65,3 +41,5 @@ jsbind::Promise<jsbind::Undefined> IdleDetector::start(const IdleOptions& option
     return EventTarget::call("start", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

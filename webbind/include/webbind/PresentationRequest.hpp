@@ -2,22 +2,21 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class PresentationConnection;
 class PresentationAvailability;
 
-
-/// The PresentationRequest class.
+/// Interface PresentationRequest
 /// [`PresentationRequest`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest)
 class PresentationRequest : public EventTarget {
     explicit PresentationRequest(Handle h) noexcept;
-
 public:
     explicit PresentationRequest(const emlite::Val &val) noexcept;
     static PresentationRequest take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PresentationRequest clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PresentationRequest(..)` constructor, creating a new PresentationRequest instance
@@ -39,3 +38,4 @@ public:
     void onconnectionavailable(const jsbind::Any& value);
 };
 
+} // namespace webbind

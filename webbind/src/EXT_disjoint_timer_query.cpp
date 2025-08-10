@@ -1,6 +1,7 @@
-#include <webbind/EXT_disjoint_timer_query.hpp>
-#include <webbind/WebGLTimerQueryEXT.hpp>
+#include "webbind/EXT_disjoint_timer_query.hpp"
+#include "webbind/WebGLTimerQueryEXT.hpp"
 
+namespace webbind {
 
 EXT_disjoint_timer_query EXT_disjoint_timer_query::take_ownership(Handle h) noexcept {
         return EXT_disjoint_timer_query(h);
@@ -9,7 +10,6 @@ EXT_disjoint_timer_query EXT_disjoint_timer_query::clone() const noexcept { retu
 emlite::Val EXT_disjoint_timer_query::instance() noexcept { return emlite::Val::global("EXT_disjoint_timer_query"); }
 EXT_disjoint_timer_query::EXT_disjoint_timer_query(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EXT_disjoint_timer_query::EXT_disjoint_timer_query(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 WebGLTimerQueryEXT EXT_disjoint_timer_query::createQueryEXT() {
     return emlite::Val::call("createQueryEXT").as<WebGLTimerQueryEXT>();
@@ -43,3 +43,5 @@ jsbind::Any EXT_disjoint_timer_query::getQueryObjectEXT(const WebGLTimerQueryEXT
     return emlite::Val::call("getQueryObjectEXT", query, pname).as<jsbind::Any>();
 }
 
+
+} // namespace webbind

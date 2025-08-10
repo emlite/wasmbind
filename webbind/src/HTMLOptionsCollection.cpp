@@ -1,6 +1,7 @@
-#include <webbind/HTMLOptionsCollection.hpp>
-#include <webbind/HTMLOptionElement.hpp>
+#include "webbind/HTMLOptionsCollection.hpp"
+#include "webbind/HTMLOptionElement.hpp"
 
+namespace webbind {
 
 HTMLOptionsCollection HTMLOptionsCollection::take_ownership(Handle h) noexcept {
         return HTMLOptionsCollection(h);
@@ -9,7 +10,6 @@ HTMLOptionsCollection HTMLOptionsCollection::clone() const noexcept { return *th
 emlite::Val HTMLOptionsCollection::instance() noexcept { return emlite::Val::global("HTMLOptionsCollection"); }
 HTMLOptionsCollection::HTMLOptionsCollection(Handle h) noexcept : HTMLCollection(emlite::Val::take_ownership(h)) {}
 HTMLOptionsCollection::HTMLOptionsCollection(const emlite::Val &val) noexcept: HTMLCollection(val) {}
-
 
 unsigned long HTMLOptionsCollection::length() const {
     return HTMLCollection::get("length").as<unsigned long>();
@@ -39,3 +39,5 @@ void HTMLOptionsCollection::selectedIndex(long value) {
     HTMLCollection::set("selectedIndex", value);
 }
 
+
+} // namespace webbind

@@ -1,6 +1,7 @@
-#include <webbind/Screen.hpp>
-#include <webbind/ScreenOrientation.hpp>
+#include "webbind/Screen.hpp"
+#include "webbind/ScreenOrientation.hpp"
 
+namespace webbind {
 
 Screen Screen::take_ownership(Handle h) noexcept {
         return Screen(h);
@@ -9,7 +10,6 @@ Screen Screen::clone() const noexcept { return *this; }
 emlite::Val Screen::instance() noexcept { return emlite::Val::global("Screen"); }
 Screen::Screen(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Screen::Screen(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 long Screen::availWidth() const {
     return emlite::Val::get("availWidth").as<long>();
@@ -51,3 +51,5 @@ void Screen::onchange(const jsbind::Any& value) {
     emlite::Val::set("onchange", value);
 }
 
+
+} // namespace webbind

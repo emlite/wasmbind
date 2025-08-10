@@ -1,7 +1,8 @@
-#include <webbind/XRQuadLayer.hpp>
-#include <webbind/XRSpace.hpp>
-#include <webbind/XRRigidTransform.hpp>
+#include "webbind/XRQuadLayer.hpp"
+#include "webbind/XRSpace.hpp"
+#include "webbind/XRRigidTransform.hpp"
 
+namespace webbind {
 
 XRQuadLayer XRQuadLayer::take_ownership(Handle h) noexcept {
         return XRQuadLayer(h);
@@ -10,7 +11,6 @@ XRQuadLayer XRQuadLayer::clone() const noexcept { return *this; }
 emlite::Val XRQuadLayer::instance() noexcept { return emlite::Val::global("XRQuadLayer"); }
 XRQuadLayer::XRQuadLayer(Handle h) noexcept : XRCompositionLayer(emlite::Val::take_ownership(h)) {}
 XRQuadLayer::XRQuadLayer(const emlite::Val &val) noexcept: XRCompositionLayer(val) {}
-
 
 XRSpace XRQuadLayer::space() const {
     return XRCompositionLayer::get("space").as<XRSpace>();
@@ -52,3 +52,5 @@ void XRQuadLayer::onredraw(const jsbind::Any& value) {
     XRCompositionLayer::set("onredraw", value);
 }
 
+
+} // namespace webbind

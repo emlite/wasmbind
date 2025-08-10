@@ -1,23 +1,9 @@
-#include <webbind/HTMLSlotElement.hpp>
-#include <webbind/Node.hpp>
-#include <webbind/Element.hpp>
+#include "webbind/HTMLSlotElement.hpp"
+#include "webbind/Node.hpp"
+#include "webbind/AssignedNodesOptions.hpp"
+#include "webbind/Element.hpp"
 
-
-AssignedNodesOptions::AssignedNodesOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AssignedNodesOptions AssignedNodesOptions::take_ownership(Handle h) noexcept {
-        return AssignedNodesOptions(h);
-    }
-AssignedNodesOptions::AssignedNodesOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-AssignedNodesOptions::AssignedNodesOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-AssignedNodesOptions AssignedNodesOptions::clone() const noexcept { return *this; }
-
-bool AssignedNodesOptions::flatten() const {
-    return emlite::Val::get("flatten").as<bool>();
-}
-
-void AssignedNodesOptions::flatten(bool value) {
-    emlite::Val::set("flatten", value);
-}
+namespace webbind {
 
 HTMLSlotElement HTMLSlotElement::take_ownership(Handle h) noexcept {
         return HTMLSlotElement(h);
@@ -26,7 +12,6 @@ HTMLSlotElement HTMLSlotElement::clone() const noexcept { return *this; }
 emlite::Val HTMLSlotElement::instance() noexcept { return emlite::Val::global("HTMLSlotElement"); }
 HTMLSlotElement::HTMLSlotElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLSlotElement::HTMLSlotElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLSlotElement::HTMLSlotElement() : HTMLElement(emlite::Val::global("HTMLSlotElement").new_()) {}
 
@@ -58,3 +43,5 @@ jsbind::Undefined HTMLSlotElement::assign(const jsbind::Any& nodes) {
     return HTMLElement::call("assign", nodes).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

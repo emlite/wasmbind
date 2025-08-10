@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class GeolocationCoordinates;
 
-
-/// The GeolocationPosition class.
+/// Interface GeolocationPosition
 /// [`GeolocationPosition`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition)
 class GeolocationPosition : public emlite::Val {
     explicit GeolocationPosition(Handle h) noexcept;
-
 public:
     explicit GeolocationPosition(const emlite::Val &val) noexcept;
     static GeolocationPosition take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GeolocationPosition clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `coords` attribute.
@@ -29,3 +28,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

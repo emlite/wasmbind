@@ -2,22 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class FontFaceSet;
 class FontFace;
 
-
-/// The FontFaceSet class.
+/// Interface FontFaceSet
 /// [`FontFaceSet`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet)
 class FontFaceSet : public EventTarget {
     explicit FontFaceSet(Handle h) noexcept;
-
 public:
     explicit FontFaceSet(const emlite::Val &val) noexcept;
     static FontFaceSet take_ownership(Handle h) noexcept;
-
     [[nodiscard]] FontFaceSet clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The add method.
@@ -67,3 +67,4 @@ public:
     [[nodiscard]] FontFaceSetLoadStatus status() const;
 };
 
+} // namespace webbind

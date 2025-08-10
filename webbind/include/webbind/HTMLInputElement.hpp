@@ -2,8 +2,11 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "HTMLElement.hpp"
 #include "enums.hpp"
+
+namespace webbind {
 
 class HTMLFormElement;
 class FileList;
@@ -13,16 +16,13 @@ class NodeList;
 class FileSystemEntry;
 class Element;
 
-
-/// The HTMLInputElement class.
+/// Interface HTMLInputElement
 /// [`HTMLInputElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement)
 class HTMLInputElement : public HTMLElement {
     explicit HTMLInputElement(Handle h) noexcept;
-
 public:
     explicit HTMLInputElement(const emlite::Val &val) noexcept;
     static HTMLInputElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLInputElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLInputElement(..)` constructor, creating a new HTMLInputElement instance
@@ -359,3 +359,4 @@ public:
     void popoverTargetAction(const jsbind::String& value);
 };
 
+} // namespace webbind

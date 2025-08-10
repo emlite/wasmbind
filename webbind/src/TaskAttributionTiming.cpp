@@ -1,5 +1,6 @@
-#include <webbind/TaskAttributionTiming.hpp>
+#include "webbind/TaskAttributionTiming.hpp"
 
+namespace webbind {
 
 TaskAttributionTiming TaskAttributionTiming::take_ownership(Handle h) noexcept {
         return TaskAttributionTiming(h);
@@ -8,7 +9,6 @@ TaskAttributionTiming TaskAttributionTiming::clone() const noexcept { return *th
 emlite::Val TaskAttributionTiming::instance() noexcept { return emlite::Val::global("TaskAttributionTiming"); }
 TaskAttributionTiming::TaskAttributionTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
 TaskAttributionTiming::TaskAttributionTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
-
 
 jsbind::Any TaskAttributionTiming::startTime() const {
     return PerformanceEntry::get("startTime").as<jsbind::Any>();
@@ -46,3 +46,5 @@ jsbind::Object TaskAttributionTiming::toJSON() {
     return PerformanceEntry::call("toJSON").as<jsbind::Object>();
 }
 
+
+} // namespace webbind

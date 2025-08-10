@@ -1,8 +1,9 @@
-#include <webbind/Cache.hpp>
-#include <webbind/BackgroundFetchRegistration.hpp>
-#include <webbind/Response.hpp>
-#include <webbind/Request.hpp>
+#include "webbind/Cache.hpp"
+#include "webbind/CacheQueryOptions.hpp"
+#include "webbind/Response.hpp"
+#include "webbind/Request.hpp"
 
+namespace webbind {
 
 Cache Cache::take_ownership(Handle h) noexcept {
         return Cache(h);
@@ -11,7 +12,6 @@ Cache Cache::clone() const noexcept { return *this; }
 emlite::Val Cache::instance() noexcept { return emlite::Val::global("Cache"); }
 Cache::Cache(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Cache::Cache(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<jsbind::Any> Cache::match(const jsbind::Any& request) {
     return emlite::Val::call("match", request).as<jsbind::Promise<jsbind::Any>>();
@@ -65,3 +65,5 @@ jsbind::Promise<jsbind::TypedArray<Request>> Cache::keys(const jsbind::Any& requ
     return emlite::Val::call("keys", request, options).as<jsbind::Promise<jsbind::TypedArray<Request>>>();
 }
 
+
+} // namespace webbind

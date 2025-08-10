@@ -1,6 +1,7 @@
-#include <webbind/SharedStorageWorkletNavigator.hpp>
-#include <webbind/LockManager.hpp>
+#include "webbind/SharedStorageWorkletNavigator.hpp"
+#include "webbind/LockManager.hpp"
 
+namespace webbind {
 
 SharedStorageWorkletNavigator SharedStorageWorkletNavigator::take_ownership(Handle h) noexcept {
         return SharedStorageWorkletNavigator(h);
@@ -10,8 +11,9 @@ emlite::Val SharedStorageWorkletNavigator::instance() noexcept { return emlite::
 SharedStorageWorkletNavigator::SharedStorageWorkletNavigator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SharedStorageWorkletNavigator::SharedStorageWorkletNavigator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 LockManager SharedStorageWorkletNavigator::locks() const {
     return emlite::Val::get("locks").as<LockManager>();
 }
 
+
+} // namespace webbind

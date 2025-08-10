@@ -1,5 +1,7 @@
-#include <webbind/MIDIPort.hpp>
+#include "webbind/MIDIPort.hpp"
+#include "webbind/MIDIPort.hpp"
 
+namespace webbind {
 
 MIDIPort MIDIPort::take_ownership(Handle h) noexcept {
         return MIDIPort(h);
@@ -8,7 +10,6 @@ MIDIPort MIDIPort::clone() const noexcept { return *this; }
 emlite::Val MIDIPort::instance() noexcept { return emlite::Val::global("MIDIPort"); }
 MIDIPort::MIDIPort(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 MIDIPort::MIDIPort(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String MIDIPort::id() const {
     return EventTarget::get("id").as<jsbind::String>();
@@ -54,3 +55,5 @@ jsbind::Promise<MIDIPort> MIDIPort::close() {
     return EventTarget::call("close").as<jsbind::Promise<MIDIPort>>();
 }
 
+
+} // namespace webbind

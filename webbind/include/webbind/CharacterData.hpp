@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Node.hpp"
 #include "enums.hpp"
+#include "Node.hpp"
+
+namespace webbind {
 
 class Element;
 
-
-/// The CharacterData class.
+/// Interface CharacterData
 /// [`CharacterData`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData)
 class CharacterData : public Node {
     explicit CharacterData(Handle h) noexcept;
-
 public:
     explicit CharacterData(const emlite::Val &val) noexcept;
     static CharacterData take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CharacterData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `data` attribute.
@@ -63,3 +62,4 @@ public:
     jsbind::Undefined remove();
 };
 
+} // namespace webbind

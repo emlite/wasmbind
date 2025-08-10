@@ -1,5 +1,7 @@
-#include <webbind/FederatedCredential.hpp>
+#include "webbind/FederatedCredential.hpp"
+#include "webbind/FederatedCredentialInit.hpp"
 
+namespace webbind {
 
 FederatedCredential FederatedCredential::take_ownership(Handle h) noexcept {
         return FederatedCredential(h);
@@ -9,8 +11,7 @@ emlite::Val FederatedCredential::instance() noexcept { return emlite::Val::globa
 FederatedCredential::FederatedCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
 FederatedCredential::FederatedCredential(const emlite::Val &val) noexcept: Credential(val) {}
 
-
-FederatedCredential::FederatedCredential(const jsbind::Any& data) : Credential(emlite::Val::global("FederatedCredential").new_(data)) {}
+FederatedCredential::FederatedCredential(const FederatedCredentialInit& data) : Credential(emlite::Val::global("FederatedCredential").new_(data)) {}
 
 jsbind::String FederatedCredential::provider() const {
     return Credential::get("provider").as<jsbind::String>();
@@ -28,3 +29,5 @@ jsbind::String FederatedCredential::iconURL() const {
     return Credential::get("iconURL").as<jsbind::String>();
 }
 
+
+} // namespace webbind

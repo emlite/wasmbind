@@ -1,7 +1,8 @@
-#include <webbind/VTTCue.hpp>
-#include <webbind/VTTRegion.hpp>
-#include <webbind/DocumentFragment.hpp>
+#include "webbind/VTTCue.hpp"
+#include "webbind/VTTRegion.hpp"
+#include "webbind/DocumentFragment.hpp"
 
+namespace webbind {
 
 VTTCue VTTCue::take_ownership(Handle h) noexcept {
         return VTTCue(h);
@@ -10,7 +11,6 @@ VTTCue VTTCue::clone() const noexcept { return *this; }
 emlite::Val VTTCue::instance() noexcept { return emlite::Val::global("VTTCue"); }
 VTTCue::VTTCue(Handle h) noexcept : TextTrackCue(emlite::Val::take_ownership(h)) {}
 VTTCue::VTTCue(const emlite::Val &val) noexcept: TextTrackCue(val) {}
-
 
 VTTCue::VTTCue(double startTime, double endTime, const jsbind::String& text) : TextTrackCue(emlite::Val::global("VTTCue").new_(startTime, endTime, text)) {}
 
@@ -98,3 +98,5 @@ DocumentFragment VTTCue::getCueAsHTML() {
     return TextTrackCue::call("getCueAsHTML").as<DocumentFragment>();
 }
 
+
+} // namespace webbind

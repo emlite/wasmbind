@@ -1,38 +1,8 @@
-#include <webbind/BackgroundFetchRegistration.hpp>
-#include <webbind/BackgroundFetchRecord.hpp>
+#include "webbind/BackgroundFetchRegistration.hpp"
+#include "webbind/BackgroundFetchRecord.hpp"
+#include "webbind/CacheQueryOptions.hpp"
 
-
-CacheQueryOptions::CacheQueryOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CacheQueryOptions CacheQueryOptions::take_ownership(Handle h) noexcept {
-        return CacheQueryOptions(h);
-    }
-CacheQueryOptions::CacheQueryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-CacheQueryOptions::CacheQueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-CacheQueryOptions CacheQueryOptions::clone() const noexcept { return *this; }
-
-bool CacheQueryOptions::ignoreSearch() const {
-    return emlite::Val::get("ignoreSearch").as<bool>();
-}
-
-void CacheQueryOptions::ignoreSearch(bool value) {
-    emlite::Val::set("ignoreSearch", value);
-}
-
-bool CacheQueryOptions::ignoreMethod() const {
-    return emlite::Val::get("ignoreMethod").as<bool>();
-}
-
-void CacheQueryOptions::ignoreMethod(bool value) {
-    emlite::Val::set("ignoreMethod", value);
-}
-
-bool CacheQueryOptions::ignoreVary() const {
-    return emlite::Val::get("ignoreVary").as<bool>();
-}
-
-void CacheQueryOptions::ignoreVary(bool value) {
-    emlite::Val::set("ignoreVary", value);
-}
+namespace webbind {
 
 BackgroundFetchRegistration BackgroundFetchRegistration::take_ownership(Handle h) noexcept {
         return BackgroundFetchRegistration(h);
@@ -41,7 +11,6 @@ BackgroundFetchRegistration BackgroundFetchRegistration::clone() const noexcept 
 emlite::Val BackgroundFetchRegistration::instance() noexcept { return emlite::Val::global("BackgroundFetchRegistration"); }
 BackgroundFetchRegistration::BackgroundFetchRegistration(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 BackgroundFetchRegistration::BackgroundFetchRegistration(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 jsbind::String BackgroundFetchRegistration::id() const {
     return EventTarget::get("id").as<jsbind::String>();
@@ -107,3 +76,5 @@ jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>> BackgroundFetchRegist
     return EventTarget::call("matchAll", request, options).as<jsbind::Promise<jsbind::TypedArray<BackgroundFetchRecord>>>();
 }
 
+
+} // namespace webbind

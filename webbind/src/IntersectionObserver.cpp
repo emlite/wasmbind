@@ -1,7 +1,9 @@
-#include <webbind/IntersectionObserver.hpp>
-#include <webbind/Element.hpp>
-#include <webbind/IntersectionObserverEntry.hpp>
+#include "webbind/IntersectionObserver.hpp"
+#include "webbind/IntersectionObserverInit.hpp"
+#include "webbind/Element.hpp"
+#include "webbind/IntersectionObserverEntry.hpp"
 
+namespace webbind {
 
 IntersectionObserver IntersectionObserver::take_ownership(Handle h) noexcept {
         return IntersectionObserver(h);
@@ -11,10 +13,9 @@ emlite::Val IntersectionObserver::instance() noexcept { return emlite::Val::glob
 IntersectionObserver::IntersectionObserver(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IntersectionObserver::IntersectionObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
 IntersectionObserver::IntersectionObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("IntersectionObserver").new_(callback)) {}
 
-IntersectionObserver::IntersectionObserver(const jsbind::Function& callback, const jsbind::Any& options) : emlite::Val(emlite::Val::global("IntersectionObserver").new_(callback, options)) {}
+IntersectionObserver::IntersectionObserver(const jsbind::Function& callback, const IntersectionObserverInit& options) : emlite::Val(emlite::Val::global("IntersectionObserver").new_(callback, options)) {}
 
 jsbind::Any IntersectionObserver::root() const {
     return emlite::Val::get("root").as<jsbind::Any>();
@@ -56,3 +57,5 @@ jsbind::TypedArray<IntersectionObserverEntry> IntersectionObserver::takeRecords(
     return emlite::Val::call("takeRecords").as<jsbind::TypedArray<IntersectionObserverEntry>>();
 }
 
+
+} // namespace webbind

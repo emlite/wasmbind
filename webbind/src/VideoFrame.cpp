@@ -1,79 +1,13 @@
-#include <webbind/VideoFrame.hpp>
-#include <webbind/DOMRectReadOnly.hpp>
-#include <webbind/VideoColorSpace.hpp>
+#include "webbind/VideoFrame.hpp"
+#include "webbind/VideoFrameBufferInit.hpp"
+#include "webbind/DOMRectReadOnly.hpp"
+#include "webbind/VideoColorSpace.hpp"
+#include "webbind/VideoFrameMetadata.hpp"
+#include "webbind/VideoFrameCopyToOptions.hpp"
+#include "webbind/PlaneLayout.hpp"
+#include "webbind/VideoFrame.hpp"
 
-
-VideoFrameMetadata::VideoFrameMetadata(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoFrameMetadata VideoFrameMetadata::take_ownership(Handle h) noexcept {
-        return VideoFrameMetadata(h);
-    }
-VideoFrameMetadata::VideoFrameMetadata(const emlite::Val &val) noexcept: emlite::Val(val) {}
-VideoFrameMetadata::VideoFrameMetadata() noexcept: emlite::Val(emlite::Val::object()) {}
-VideoFrameMetadata VideoFrameMetadata::clone() const noexcept { return *this; }
-
-VideoFrameCopyToOptions::VideoFrameCopyToOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoFrameCopyToOptions VideoFrameCopyToOptions::take_ownership(Handle h) noexcept {
-        return VideoFrameCopyToOptions(h);
-    }
-VideoFrameCopyToOptions::VideoFrameCopyToOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-VideoFrameCopyToOptions::VideoFrameCopyToOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-VideoFrameCopyToOptions VideoFrameCopyToOptions::clone() const noexcept { return *this; }
-
-DOMRectInit VideoFrameCopyToOptions::rect() const {
-    return emlite::Val::get("rect").as<DOMRectInit>();
-}
-
-void VideoFrameCopyToOptions::rect(const DOMRectInit& value) {
-    emlite::Val::set("rect", value);
-}
-
-jsbind::TypedArray<PlaneLayout> VideoFrameCopyToOptions::layout() const {
-    return emlite::Val::get("layout").as<jsbind::TypedArray<PlaneLayout>>();
-}
-
-void VideoFrameCopyToOptions::layout(const jsbind::TypedArray<PlaneLayout>& value) {
-    emlite::Val::set("layout", value);
-}
-
-VideoPixelFormat VideoFrameCopyToOptions::format() const {
-    return emlite::Val::get("format").as<VideoPixelFormat>();
-}
-
-void VideoFrameCopyToOptions::format(const VideoPixelFormat& value) {
-    emlite::Val::set("format", value);
-}
-
-PredefinedColorSpace VideoFrameCopyToOptions::colorSpace() const {
-    return emlite::Val::get("colorSpace").as<PredefinedColorSpace>();
-}
-
-void VideoFrameCopyToOptions::colorSpace(const PredefinedColorSpace& value) {
-    emlite::Val::set("colorSpace", value);
-}
-
-PlaneLayout::PlaneLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PlaneLayout PlaneLayout::take_ownership(Handle h) noexcept {
-        return PlaneLayout(h);
-    }
-PlaneLayout::PlaneLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PlaneLayout::PlaneLayout() noexcept: emlite::Val(emlite::Val::object()) {}
-PlaneLayout PlaneLayout::clone() const noexcept { return *this; }
-
-unsigned long PlaneLayout::offset() const {
-    return emlite::Val::get("offset").as<unsigned long>();
-}
-
-void PlaneLayout::offset(unsigned long value) {
-    emlite::Val::set("offset", value);
-}
-
-unsigned long PlaneLayout::stride() const {
-    return emlite::Val::get("stride").as<unsigned long>();
-}
-
-void PlaneLayout::stride(unsigned long value) {
-    emlite::Val::set("stride", value);
-}
+namespace webbind {
 
 VideoFrame VideoFrame::take_ownership(Handle h) noexcept {
         return VideoFrame(h);
@@ -83,8 +17,7 @@ emlite::Val VideoFrame::instance() noexcept { return emlite::Val::global("VideoF
 VideoFrame::VideoFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoFrame::VideoFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-
-VideoFrame::VideoFrame(const jsbind::Any& data, const jsbind::Any& init) : emlite::Val(emlite::Val::global("VideoFrame").new_(data, init)) {}
+VideoFrame::VideoFrame(const jsbind::Any& data, const VideoFrameBufferInit& init) : emlite::Val(emlite::Val::global("VideoFrame").new_(data, init)) {}
 
 VideoPixelFormat VideoFrame::format() const {
     return emlite::Val::get("format").as<VideoPixelFormat>();
@@ -162,3 +95,5 @@ jsbind::Undefined VideoFrame::close() {
     return emlite::Val::call("close").as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

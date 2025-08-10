@@ -1,5 +1,6 @@
-#include <webbind/PerformanceTiming.hpp>
+#include "webbind/PerformanceTiming.hpp"
 
+namespace webbind {
 
 PerformanceTiming PerformanceTiming::take_ownership(Handle h) noexcept {
         return PerformanceTiming(h);
@@ -8,7 +9,6 @@ PerformanceTiming PerformanceTiming::clone() const noexcept { return *this; }
 emlite::Val PerformanceTiming::instance() noexcept { return emlite::Val::global("PerformanceTiming"); }
 PerformanceTiming::PerformanceTiming(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PerformanceTiming::PerformanceTiming(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 long long PerformanceTiming::navigationStart() const {
     return emlite::Val::get("navigationStart").as<long long>();
@@ -98,3 +98,5 @@ jsbind::Object PerformanceTiming::toJSON() {
     return emlite::Val::call("toJSON").as<jsbind::Object>();
 }
 
+
+} // namespace webbind

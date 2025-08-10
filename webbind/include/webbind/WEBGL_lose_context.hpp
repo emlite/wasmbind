@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The WEBGL_lose_context class.
+/// Interface WEBGL_lose_context
 /// [`WEBGL_lose_context`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_lose_context)
 class WEBGL_lose_context : public emlite::Val {
     explicit WEBGL_lose_context(Handle h) noexcept;
-
 public:
     explicit WEBGL_lose_context(const emlite::Val &val) noexcept;
     static WEBGL_lose_context take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WEBGL_lose_context clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The loseContext method.
@@ -24,3 +23,4 @@ public:
     jsbind::Undefined restoreContext();
 };
 
+} // namespace webbind

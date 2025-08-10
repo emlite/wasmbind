@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class ReadableStreamBYOBRequest;
 
-
-/// The ReadableByteStreamController class.
+/// Interface ReadableByteStreamController
 /// [`ReadableByteStreamController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController)
 class ReadableByteStreamController : public emlite::Val {
     explicit ReadableByteStreamController(Handle h) noexcept;
-
 public:
     explicit ReadableByteStreamController(const emlite::Val &val) noexcept;
     static ReadableByteStreamController take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ReadableByteStreamController clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `byobRequest` attribute.
@@ -38,3 +37,4 @@ public:
     jsbind::Undefined error(const jsbind::Any& e);
 };
 
+} // namespace webbind

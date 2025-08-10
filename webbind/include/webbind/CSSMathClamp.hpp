@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSMathValue.hpp"
 #include "enums.hpp"
+#include "CSSMathValue.hpp"
+
+namespace webbind {
 
 class CSSNumericValue;
 
-
-/// The CSSMathClamp class.
+/// Interface CSSMathClamp
 /// [`CSSMathClamp`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathClamp)
 class CSSMathClamp : public CSSMathValue {
     explicit CSSMathClamp(Handle h) noexcept;
-
 public:
     explicit CSSMathClamp(const emlite::Val &val) noexcept;
     static CSSMathClamp take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSMathClamp clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathClamp(..)` constructor, creating a new CSSMathClamp instance
@@ -32,3 +31,4 @@ public:
     [[nodiscard]] CSSNumericValue upper() const;
 };
 
+} // namespace webbind

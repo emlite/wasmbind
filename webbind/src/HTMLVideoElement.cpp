@@ -1,7 +1,8 @@
-#include <webbind/HTMLVideoElement.hpp>
-#include <webbind/VideoPlaybackQuality.hpp>
-#include <webbind/PictureInPictureWindow.hpp>
+#include "webbind/HTMLVideoElement.hpp"
+#include "webbind/VideoPlaybackQuality.hpp"
+#include "webbind/PictureInPictureWindow.hpp"
 
+namespace webbind {
 
 HTMLVideoElement HTMLVideoElement::take_ownership(Handle h) noexcept {
         return HTMLVideoElement(h);
@@ -10,7 +11,6 @@ HTMLVideoElement HTMLVideoElement::clone() const noexcept { return *this; }
 emlite::Val HTMLVideoElement::instance() noexcept { return emlite::Val::global("HTMLVideoElement"); }
 HTMLVideoElement::HTMLVideoElement(Handle h) noexcept : HTMLMediaElement(emlite::Val::take_ownership(h)) {}
 HTMLVideoElement::HTMLVideoElement(const emlite::Val &val) noexcept: HTMLMediaElement(val) {}
-
 
 HTMLVideoElement::HTMLVideoElement() : HTMLMediaElement(emlite::Val::global("HTMLVideoElement").new_()) {}
 
@@ -94,3 +94,5 @@ jsbind::Undefined HTMLVideoElement::cancelVideoFrameCallback(unsigned long handl
     return HTMLMediaElement::call("cancelVideoFrameCallback", handle).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

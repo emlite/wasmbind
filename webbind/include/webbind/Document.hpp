@@ -2,8 +2,16 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Node.hpp"
 #include "enums.hpp"
+#include "Node.hpp"
+#include "CaretPositionFromPointOptions.hpp"
+#include "BoxQuadOptions.hpp"
+#include "DOMQuadInit.hpp"
+#include "ConvertCoordinateOptions.hpp"
+#include "DOMPointInit.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class DOMImplementation;
 class DocumentType;
@@ -23,7 +31,6 @@ class SVGSVGElement;
 class NamedFlowMap;
 class ViewTransition;
 class CaretPosition;
-class CaretPositionFromPointOptions;
 class FontMetrics;
 class StylePropertyMapReadOnly;
 class Document;
@@ -38,82 +45,19 @@ class Selection;
 class DocumentTimeline;
 class FontFaceSet;
 class DOMQuad;
-class BoxQuadOptions;
-class DOMQuadInit;
-class ConvertCoordinateOptions;
 class DOMRectReadOnly;
 class DOMPoint;
 class Animation;
 class XPathExpression;
 class XPathResult;
-class ShadowRoot;
-class DOMPointInit;
-class DOMQuadInit;
 
-
-class CaretPositionFromPointOptions : public emlite::Val {
-  explicit CaretPositionFromPointOptions(Handle h) noexcept;
-public:
-    static CaretPositionFromPointOptions take_ownership(Handle h) noexcept;
-    explicit CaretPositionFromPointOptions(const emlite::Val &val) noexcept;
-    CaretPositionFromPointOptions() noexcept;
-    [[nodiscard]] CaretPositionFromPointOptions clone() const noexcept;
-    [[nodiscard]] jsbind::TypedArray<ShadowRoot> shadowRoots() const;
-    void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
-};
-
-class BoxQuadOptions : public emlite::Val {
-  explicit BoxQuadOptions(Handle h) noexcept;
-public:
-    static BoxQuadOptions take_ownership(Handle h) noexcept;
-    explicit BoxQuadOptions(const emlite::Val &val) noexcept;
-    BoxQuadOptions() noexcept;
-    [[nodiscard]] BoxQuadOptions clone() const noexcept;
-    [[nodiscard]] CSSBoxType box() const;
-    void box(const CSSBoxType& value);
-    [[nodiscard]] jsbind::Any relativeTo() const;
-    void relativeTo(const jsbind::Any& value);
-};
-
-class DOMQuadInit : public emlite::Val {
-  explicit DOMQuadInit(Handle h) noexcept;
-public:
-    static DOMQuadInit take_ownership(Handle h) noexcept;
-    explicit DOMQuadInit(const emlite::Val &val) noexcept;
-    DOMQuadInit() noexcept;
-    [[nodiscard]] DOMQuadInit clone() const noexcept;
-    [[nodiscard]] DOMPointInit p1() const;
-    void p1(const DOMPointInit& value);
-    [[nodiscard]] DOMPointInit p2() const;
-    void p2(const DOMPointInit& value);
-    [[nodiscard]] DOMPointInit p3() const;
-    void p3(const DOMPointInit& value);
-    [[nodiscard]] DOMPointInit p4() const;
-    void p4(const DOMPointInit& value);
-};
-
-class ConvertCoordinateOptions : public emlite::Val {
-  explicit ConvertCoordinateOptions(Handle h) noexcept;
-public:
-    static ConvertCoordinateOptions take_ownership(Handle h) noexcept;
-    explicit ConvertCoordinateOptions(const emlite::Val &val) noexcept;
-    ConvertCoordinateOptions() noexcept;
-    [[nodiscard]] ConvertCoordinateOptions clone() const noexcept;
-    [[nodiscard]] CSSBoxType fromBox() const;
-    void fromBox(const CSSBoxType& value);
-    [[nodiscard]] CSSBoxType toBox() const;
-    void toBox(const CSSBoxType& value);
-};
-
-/// The Document class.
+/// Interface Document
 /// [`Document`](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 class Document : public Node {
     explicit Document(Handle h) noexcept;
-
 public:
     explicit Document(const emlite::Val &val) noexcept;
     static Document take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Document clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Document(..)` constructor, creating a new Document instance
@@ -282,7 +226,7 @@ public:
     static Document parseHTMLUnsafe(const jsbind::Any& html);
     /// Getter of the `location` attribute.
     /// [`Document.location`](https://developer.mozilla.org/en-US/docs/Web/API/Document/location)
-    [[nodiscard]] jsbind::Any location() const;
+    [[nodiscard]] Location location() const;
     /// Getter of the `domain` attribute.
     /// [`Document.domain`](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain)
     [[nodiscard]] jsbind::String domain() const;
@@ -630,3 +574,4 @@ public:
     void onbeforexrselect(const jsbind::Any& value);
 };
 
+} // namespace webbind

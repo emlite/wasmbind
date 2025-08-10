@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The LaunchQueue class.
+/// Interface LaunchQueue
 /// [`LaunchQueue`](https://developer.mozilla.org/en-US/docs/Web/API/LaunchQueue)
 class LaunchQueue : public emlite::Val {
     explicit LaunchQueue(Handle h) noexcept;
-
 public:
     explicit LaunchQueue(const emlite::Val &val) noexcept;
     static LaunchQueue take_ownership(Handle h) noexcept;
-
     [[nodiscard]] LaunchQueue clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The setConsumer method.
@@ -21,3 +20,4 @@ public:
     jsbind::Undefined setConsumer(const jsbind::Function& consumer);
 };
 
+} // namespace webbind

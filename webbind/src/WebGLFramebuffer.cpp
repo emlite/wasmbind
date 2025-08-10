@@ -1,5 +1,6 @@
-#include <webbind/WebGLFramebuffer.hpp>
+#include "webbind/WebGLFramebuffer.hpp"
 
+namespace webbind {
 
 WebGLFramebuffer WebGLFramebuffer::take_ownership(Handle h) noexcept {
         return WebGLFramebuffer(h);
@@ -10,3 +11,4 @@ WebGLFramebuffer::WebGLFramebuffer(Handle h) noexcept : WebGLObject(emlite::Val:
 WebGLFramebuffer::WebGLFramebuffer(const emlite::Val &val) noexcept: WebGLObject(val) {}
 
 
+} // namespace webbind

@@ -1,5 +1,6 @@
-#include <webbind/WEBGL_depth_texture.hpp>
+#include "webbind/WEBGL_depth_texture.hpp"
 
+namespace webbind {
 
 WEBGL_depth_texture WEBGL_depth_texture::take_ownership(Handle h) noexcept {
         return WEBGL_depth_texture(h);
@@ -10,3 +11,4 @@ WEBGL_depth_texture::WEBGL_depth_texture(Handle h) noexcept : emlite::Val(emlite
 WEBGL_depth_texture::WEBGL_depth_texture(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

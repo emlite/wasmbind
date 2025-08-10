@@ -1,66 +1,14 @@
-#include <webbind/RTCRtpSender.hpp>
-#include <webbind/MediaStreamTrack.hpp>
-#include <webbind/RTCDtlsTransport.hpp>
-#include <webbind/MediaStream.hpp>
-#include <webbind/RTCStatsReport.hpp>
-#include <webbind/RTCDTMFSender.hpp>
+#include "webbind/RTCRtpSender.hpp"
+#include "webbind/MediaStreamTrack.hpp"
+#include "webbind/RTCDtlsTransport.hpp"
+#include "webbind/RTCRtpCapabilities.hpp"
+#include "webbind/RTCRtpSendParameters.hpp"
+#include "webbind/RTCSetParameterOptions.hpp"
+#include "webbind/MediaStream.hpp"
+#include "webbind/RTCStatsReport.hpp"
+#include "webbind/RTCDTMFSender.hpp"
 
-
-RTCRtpCapabilities::RTCRtpCapabilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCRtpCapabilities RTCRtpCapabilities::take_ownership(Handle h) noexcept {
-        return RTCRtpCapabilities(h);
-    }
-RTCRtpCapabilities::RTCRtpCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCRtpCapabilities::RTCRtpCapabilities() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCRtpCapabilities RTCRtpCapabilities::clone() const noexcept { return *this; }
-
-jsbind::TypedArray<RTCRtpCodec> RTCRtpCapabilities::codecs() const {
-    return emlite::Val::get("codecs").as<jsbind::TypedArray<RTCRtpCodec>>();
-}
-
-void RTCRtpCapabilities::codecs(const jsbind::TypedArray<RTCRtpCodec>& value) {
-    emlite::Val::set("codecs", value);
-}
-
-jsbind::TypedArray<jsbind::Any> RTCRtpCapabilities::headerExtensions() const {
-    return emlite::Val::get("headerExtensions").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RTCRtpCapabilities::headerExtensions(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("headerExtensions", value);
-}
-
-RTCRtpSendParameters::RTCRtpSendParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCRtpSendParameters RTCRtpSendParameters::take_ownership(Handle h) noexcept {
-        return RTCRtpSendParameters(h);
-    }
-RTCRtpSendParameters::RTCRtpSendParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCRtpSendParameters::RTCRtpSendParameters() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCRtpSendParameters RTCRtpSendParameters::clone() const noexcept { return *this; }
-
-jsbind::String RTCRtpSendParameters::transactionId() const {
-    return emlite::Val::get("transactionId").as<jsbind::String>();
-}
-
-void RTCRtpSendParameters::transactionId(const jsbind::String& value) {
-    emlite::Val::set("transactionId", value);
-}
-
-jsbind::TypedArray<jsbind::Any> RTCRtpSendParameters::encodings() const {
-    return emlite::Val::get("encodings").as<jsbind::TypedArray<jsbind::Any>>();
-}
-
-void RTCRtpSendParameters::encodings(const jsbind::TypedArray<jsbind::Any>& value) {
-    emlite::Val::set("encodings", value);
-}
-
-RTCSetParameterOptions::RTCSetParameterOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCSetParameterOptions RTCSetParameterOptions::take_ownership(Handle h) noexcept {
-        return RTCSetParameterOptions(h);
-    }
-RTCSetParameterOptions::RTCSetParameterOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-RTCSetParameterOptions::RTCSetParameterOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-RTCSetParameterOptions RTCSetParameterOptions::clone() const noexcept { return *this; }
+namespace webbind {
 
 RTCRtpSender RTCRtpSender::take_ownership(Handle h) noexcept {
         return RTCRtpSender(h);
@@ -69,7 +17,6 @@ RTCRtpSender RTCRtpSender::clone() const noexcept { return *this; }
 emlite::Val RTCRtpSender::instance() noexcept { return emlite::Val::global("RTCRtpSender"); }
 RTCRtpSender::RTCRtpSender(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpSender::RTCRtpSender(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 MediaStreamTrack RTCRtpSender::track() const {
     return emlite::Val::get("track").as<MediaStreamTrack>();
@@ -127,3 +74,5 @@ RTCDTMFSender RTCRtpSender::dtmf() const {
     return emlite::Val::get("dtmf").as<RTCDTMFSender>();
 }
 
+
+} // namespace webbind

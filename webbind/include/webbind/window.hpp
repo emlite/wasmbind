@@ -3,6 +3,8 @@
 #include <jsbind/jsbind.hpp>
 #include "MessagePort.hpp"
 
+namespace webbind {
+
 class Window;
 class CacheStorage;
 class Crypto;
@@ -70,3 +72,4 @@ jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>> createImageBitmap(co
 /// @param options optional ImageBitmap creation options
 /// @returns Promise resolving to ImageBitmap
 jsbind::Promise<jsbind::Result<ImageBitmap, jsbind::Error>> createImageBitmap(const jsbind::Any& image, double sx, double sy, double sw, double sh, const jsbind::Object& options = jsbind::Object());
+}

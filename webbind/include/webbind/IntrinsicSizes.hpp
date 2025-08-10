@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The IntrinsicSizes class.
+/// Interface IntrinsicSizes
 /// [`IntrinsicSizes`](https://developer.mozilla.org/en-US/docs/Web/API/IntrinsicSizes)
 class IntrinsicSizes : public emlite::Val {
     explicit IntrinsicSizes(Handle h) noexcept;
-
 public:
     explicit IntrinsicSizes(const emlite::Val &val) noexcept;
     static IntrinsicSizes take_ownership(Handle h) noexcept;
-
     [[nodiscard]] IntrinsicSizes clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `minContentSize` attribute.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] double maxContentSize() const;
 };
 
+} // namespace webbind

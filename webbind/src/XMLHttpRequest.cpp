@@ -1,71 +1,10 @@
-#include <webbind/XMLHttpRequest.hpp>
-#include <webbind/XMLHttpRequestUpload.hpp>
-#include <webbind/Document.hpp>
+#include "webbind/XMLHttpRequest.hpp"
+#include "webbind/XMLHttpRequestUpload.hpp"
+#include "webbind/Document.hpp"
+#include "webbind/AttributionReportingRequestOptions.hpp"
+#include "webbind/PrivateToken.hpp"
 
-
-AttributionReportingRequestOptions::AttributionReportingRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AttributionReportingRequestOptions AttributionReportingRequestOptions::take_ownership(Handle h) noexcept {
-        return AttributionReportingRequestOptions(h);
-    }
-AttributionReportingRequestOptions::AttributionReportingRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-AttributionReportingRequestOptions::AttributionReportingRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-AttributionReportingRequestOptions AttributionReportingRequestOptions::clone() const noexcept { return *this; }
-
-bool AttributionReportingRequestOptions::eventSourceEligible() const {
-    return emlite::Val::get("eventSourceEligible").as<bool>();
-}
-
-void AttributionReportingRequestOptions::eventSourceEligible(bool value) {
-    emlite::Val::set("eventSourceEligible", value);
-}
-
-bool AttributionReportingRequestOptions::triggerEligible() const {
-    return emlite::Val::get("triggerEligible").as<bool>();
-}
-
-void AttributionReportingRequestOptions::triggerEligible(bool value) {
-    emlite::Val::set("triggerEligible", value);
-}
-
-PrivateToken::PrivateToken(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PrivateToken PrivateToken::take_ownership(Handle h) noexcept {
-        return PrivateToken(h);
-    }
-PrivateToken::PrivateToken(const emlite::Val &val) noexcept: emlite::Val(val) {}
-PrivateToken::PrivateToken() noexcept: emlite::Val(emlite::Val::object()) {}
-PrivateToken PrivateToken::clone() const noexcept { return *this; }
-
-TokenVersion PrivateToken::version() const {
-    return emlite::Val::get("version").as<TokenVersion>();
-}
-
-void PrivateToken::version(const TokenVersion& value) {
-    emlite::Val::set("version", value);
-}
-
-OperationType PrivateToken::operation() const {
-    return emlite::Val::get("operation").as<OperationType>();
-}
-
-void PrivateToken::operation(const OperationType& value) {
-    emlite::Val::set("operation", value);
-}
-
-RefreshPolicy PrivateToken::refreshPolicy() const {
-    return emlite::Val::get("refreshPolicy").as<RefreshPolicy>();
-}
-
-void PrivateToken::refreshPolicy(const RefreshPolicy& value) {
-    emlite::Val::set("refreshPolicy", value);
-}
-
-jsbind::TypedArray<jsbind::String> PrivateToken::issuers() const {
-    return emlite::Val::get("issuers").as<jsbind::TypedArray<jsbind::String>>();
-}
-
-void PrivateToken::issuers(const jsbind::TypedArray<jsbind::String>& value) {
-    emlite::Val::set("issuers", value);
-}
+namespace webbind {
 
 XMLHttpRequest XMLHttpRequest::take_ownership(Handle h) noexcept {
         return XMLHttpRequest(h);
@@ -74,7 +13,6 @@ XMLHttpRequest XMLHttpRequest::clone() const noexcept { return *this; }
 emlite::Val XMLHttpRequest::instance() noexcept { return emlite::Val::global("XMLHttpRequest"); }
 XMLHttpRequest::XMLHttpRequest(Handle h) noexcept : XMLHttpRequestEventTarget(emlite::Val::take_ownership(h)) {}
 XMLHttpRequest::XMLHttpRequest(const emlite::Val &val) noexcept: XMLHttpRequestEventTarget(val) {}
-
 
 XMLHttpRequest::XMLHttpRequest() : XMLHttpRequestEventTarget(emlite::Val::global("XMLHttpRequest").new_()) {}
 
@@ -190,3 +128,5 @@ jsbind::Undefined XMLHttpRequest::setPrivateToken(const PrivateToken& privateTok
     return XMLHttpRequestEventTarget::call("setPrivateToken", privateToken).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

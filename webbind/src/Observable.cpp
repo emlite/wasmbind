@@ -1,22 +1,8 @@
-#include <webbind/Observable.hpp>
-#include <webbind/AbortSignal.hpp>
+#include "webbind/Observable.hpp"
+#include "webbind/SubscribeOptions.hpp"
+#include "webbind/Observable.hpp"
 
-
-SubscribeOptions::SubscribeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SubscribeOptions SubscribeOptions::take_ownership(Handle h) noexcept {
-        return SubscribeOptions(h);
-    }
-SubscribeOptions::SubscribeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-SubscribeOptions::SubscribeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-SubscribeOptions SubscribeOptions::clone() const noexcept { return *this; }
-
-AbortSignal SubscribeOptions::signal() const {
-    return emlite::Val::get("signal").as<AbortSignal>();
-}
-
-void SubscribeOptions::signal(const AbortSignal& value) {
-    emlite::Val::set("signal", value);
-}
+namespace webbind {
 
 Observable Observable::take_ownership(Handle h) noexcept {
         return Observable(h);
@@ -25,7 +11,6 @@ Observable Observable::clone() const noexcept { return *this; }
 emlite::Val Observable::instance() noexcept { return emlite::Val::global("Observable"); }
 Observable::Observable(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Observable::Observable(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 Observable::Observable(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("Observable").new_(callback)) {}
 
@@ -85,7 +70,7 @@ Observable Observable::catch_(const jsbind::Function& callback) {
     return emlite::Val::call("catch", callback).as<Observable>();
 }
 
-Observable Observable::finally(const jsbind::Any& callback) {
+Observable Observable::finally(const jsbind::Function& callback) {
     return emlite::Val::call("finally", callback).as<Observable>();
 }
 
@@ -157,3 +142,5 @@ jsbind::Promise<jsbind::Any> Observable::reduce(const jsbind::Function& reducer,
     return emlite::Val::call("reduce", reducer, initialValue, options).as<jsbind::Promise<jsbind::Any>>();
 }
 
+
+} // namespace webbind

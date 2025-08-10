@@ -1,5 +1,6 @@
-#include <webbind/HTMLHeadElement.hpp>
+#include "webbind/HTMLHeadElement.hpp"
 
+namespace webbind {
 
 HTMLHeadElement HTMLHeadElement::take_ownership(Handle h) noexcept {
         return HTMLHeadElement(h);
@@ -9,6 +10,7 @@ emlite::Val HTMLHeadElement::instance() noexcept { return emlite::Val::global("H
 HTMLHeadElement::HTMLHeadElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLHeadElement::HTMLHeadElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
-
 HTMLHeadElement::HTMLHeadElement() : HTMLElement(emlite::Val::global("HTMLHeadElement").new_()) {}
 
+
+} // namespace webbind

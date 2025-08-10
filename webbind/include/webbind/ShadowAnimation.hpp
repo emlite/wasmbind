@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "Animation.hpp"
 #include "enums.hpp"
+#include "Animation.hpp"
 
+namespace webbind {
 
-/// The ShadowAnimation class.
+/// Interface ShadowAnimation
 /// [`ShadowAnimation`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowAnimation)
 class ShadowAnimation : public Animation {
     explicit ShadowAnimation(Handle h) noexcept;
-
 public:
     explicit ShadowAnimation(const emlite::Val &val) noexcept;
     static ShadowAnimation take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ShadowAnimation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ShadowAnimation(..)` constructor, creating a new ShadowAnimation instance
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] Animation sourceAnimation() const;
 };
 
+} // namespace webbind

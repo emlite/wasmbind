@@ -1,31 +1,9 @@
-#include <webbind/OffscreenCanvas.hpp>
-#include <webbind/ImageBitmap.hpp>
-#include <webbind/Blob.hpp>
+#include "webbind/OffscreenCanvas.hpp"
+#include "webbind/ImageBitmap.hpp"
+#include "webbind/Blob.hpp"
+#include "webbind/ImageEncodeOptions.hpp"
 
-
-ImageEncodeOptions::ImageEncodeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ImageEncodeOptions ImageEncodeOptions::take_ownership(Handle h) noexcept {
-        return ImageEncodeOptions(h);
-    }
-ImageEncodeOptions::ImageEncodeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-ImageEncodeOptions::ImageEncodeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-ImageEncodeOptions ImageEncodeOptions::clone() const noexcept { return *this; }
-
-jsbind::String ImageEncodeOptions::type() const {
-    return emlite::Val::get("type").as<jsbind::String>();
-}
-
-void ImageEncodeOptions::type(const jsbind::String& value) {
-    emlite::Val::set("type", value);
-}
-
-double ImageEncodeOptions::quality() const {
-    return emlite::Val::get("quality").as<double>();
-}
-
-void ImageEncodeOptions::quality(double value) {
-    emlite::Val::set("quality", value);
-}
+namespace webbind {
 
 OffscreenCanvas OffscreenCanvas::take_ownership(Handle h) noexcept {
         return OffscreenCanvas(h);
@@ -34,7 +12,6 @@ OffscreenCanvas OffscreenCanvas::clone() const noexcept { return *this; }
 emlite::Val OffscreenCanvas::instance() noexcept { return emlite::Val::global("OffscreenCanvas"); }
 OffscreenCanvas::OffscreenCanvas(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 OffscreenCanvas::OffscreenCanvas(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 OffscreenCanvas::OffscreenCanvas(long long width, long long height) : EventTarget(emlite::Val::global("OffscreenCanvas").new_(width, height)) {}
 
@@ -90,3 +67,5 @@ void OffscreenCanvas::oncontextrestored(const jsbind::Any& value) {
     EventTarget::set("oncontextrestored", value);
 }
 
+
+} // namespace webbind

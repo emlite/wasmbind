@@ -4,6 +4,8 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class MediaCapabilities;
 class Permissions;
 class Serial;
@@ -18,16 +20,13 @@ class LockManager;
 class GPU;
 class ML;
 
-
-/// The WorkerNavigator class.
+/// Interface WorkerNavigator
 /// [`WorkerNavigator`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator)
 class WorkerNavigator : public emlite::Val {
     explicit WorkerNavigator(Handle h) noexcept;
-
 public:
     explicit WorkerNavigator(const emlite::Val &val) noexcept;
     static WorkerNavigator take_ownership(Handle h) noexcept;
-
     [[nodiscard]] WorkerNavigator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `mediaCapabilities` attribute.
@@ -104,3 +103,4 @@ public:
     [[nodiscard]] ML ml() const;
 };
 
+} // namespace webbind

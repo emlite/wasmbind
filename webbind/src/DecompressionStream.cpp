@@ -1,7 +1,8 @@
-#include <webbind/DecompressionStream.hpp>
-#include <webbind/ReadableStream.hpp>
-#include <webbind/WritableStream.hpp>
+#include "webbind/DecompressionStream.hpp"
+#include "webbind/ReadableStream.hpp"
+#include "webbind/WritableStream.hpp"
 
+namespace webbind {
 
 DecompressionStream DecompressionStream::take_ownership(Handle h) noexcept {
         return DecompressionStream(h);
@@ -10,7 +11,6 @@ DecompressionStream DecompressionStream::clone() const noexcept { return *this; 
 emlite::Val DecompressionStream::instance() noexcept { return emlite::Val::global("DecompressionStream"); }
 DecompressionStream::DecompressionStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DecompressionStream::DecompressionStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 DecompressionStream::DecompressionStream(const CompressionFormat& format) : emlite::Val(emlite::Val::global("DecompressionStream").new_(format)) {}
 
@@ -22,3 +22,5 @@ WritableStream DecompressionStream::writable() const {
     return emlite::Val::get("writable").as<WritableStream>();
 }
 
+
+} // namespace webbind

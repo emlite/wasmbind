@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLMarqueeElement class.
+/// Interface HTMLMarqueeElement
 /// [`HTMLMarqueeElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMarqueeElement)
 class HTMLMarqueeElement : public HTMLElement {
     explicit HTMLMarqueeElement(Handle h) noexcept;
-
 public:
     explicit HTMLMarqueeElement(const emlite::Val &val) noexcept;
     static HTMLMarqueeElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLMarqueeElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMarqueeElement(..)` constructor, creating a new HTMLMarqueeElement instance
@@ -93,3 +92,4 @@ public:
     jsbind::Undefined stop();
 };
 
+} // namespace webbind

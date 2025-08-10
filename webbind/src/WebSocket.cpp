@@ -1,5 +1,6 @@
-#include <webbind/WebSocket.hpp>
+#include "webbind/WebSocket.hpp"
 
+namespace webbind {
 
 WebSocket WebSocket::take_ownership(Handle h) noexcept {
         return WebSocket(h);
@@ -8,7 +9,6 @@ WebSocket WebSocket::clone() const noexcept { return *this; }
 emlite::Val WebSocket::instance() noexcept { return emlite::Val::global("WebSocket"); }
 WebSocket::WebSocket(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 WebSocket::WebSocket(const emlite::Val &val) noexcept: EventTarget(val) {}
-
 
 WebSocket::WebSocket(const jsbind::String& url) : EventTarget(emlite::Val::global("WebSocket").new_(url)) {}
 
@@ -90,3 +90,5 @@ jsbind::Undefined WebSocket::send(const jsbind::Any& data) {
     return EventTarget::call("send", data).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

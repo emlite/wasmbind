@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The ReadableStreamDefaultController class.
+/// Interface ReadableStreamDefaultController
 /// [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController)
 class ReadableStreamDefaultController : public emlite::Val {
     explicit ReadableStreamDefaultController(Handle h) noexcept;
-
 public:
     explicit ReadableStreamDefaultController(const emlite::Val &val) noexcept;
     static ReadableStreamDefaultController take_ownership(Handle h) noexcept;
-
     [[nodiscard]] ReadableStreamDefaultController clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `desiredSize` attribute.
@@ -36,3 +35,4 @@ public:
     jsbind::Undefined error(const jsbind::Any& e);
 };
 
+} // namespace webbind

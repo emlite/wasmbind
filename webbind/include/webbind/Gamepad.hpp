@@ -3,41 +3,22 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "GamepadTouch.hpp"
+#include "enums.hpp"
+
+namespace webbind {
 
 class GamepadButton;
-class GamepadTouch;
 class GamepadHapticActuator;
 class GamepadPose;
-class DOMRectReadOnly;
-class DOMPointReadOnly;
 
-
-class GamepadTouch : public emlite::Val {
-  explicit GamepadTouch(Handle h) noexcept;
-public:
-    static GamepadTouch take_ownership(Handle h) noexcept;
-    explicit GamepadTouch(const emlite::Val &val) noexcept;
-    GamepadTouch() noexcept;
-    [[nodiscard]] GamepadTouch clone() const noexcept;
-    [[nodiscard]] unsigned long touchId() const;
-    void touchId(unsigned long value);
-    [[nodiscard]] unsigned char surfaceId() const;
-    void surfaceId(unsigned char value);
-    [[nodiscard]] DOMPointReadOnly position() const;
-    void position(const DOMPointReadOnly& value);
-    [[nodiscard]] DOMRectReadOnly surfaceDimensions() const;
-    void surfaceDimensions(const DOMRectReadOnly& value);
-};
-
-/// The Gamepad class.
+/// Interface Gamepad
 /// [`Gamepad`](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad)
 class Gamepad : public emlite::Val {
     explicit Gamepad(Handle h) noexcept;
-
 public:
     explicit Gamepad(const emlite::Val &val) noexcept;
     static Gamepad take_ownership(Handle h) noexcept;
-
     [[nodiscard]] Gamepad clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `id` attribute.
@@ -78,3 +59,4 @@ public:
     [[nodiscard]] GamepadPose pose() const;
 };
 
+} // namespace webbind

@@ -2,23 +2,22 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "SVGGraphicsElement.hpp"
 #include "enums.hpp"
+#include "SVGGraphicsElement.hpp"
+
+namespace webbind {
 
 class SVGAnimatedLength;
 class SVGElement;
 class SVGAnimatedString;
 
-
-/// The SVGUseElement class.
+/// Interface SVGUseElement
 /// [`SVGUseElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement)
 class SVGUseElement : public SVGGraphicsElement {
     explicit SVGUseElement(Handle h) noexcept;
-
 public:
     explicit SVGUseElement(const emlite::Val &val) noexcept;
     static SVGUseElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] SVGUseElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `x` attribute.
@@ -44,3 +43,4 @@ public:
     [[nodiscard]] SVGAnimatedString href() const;
 };
 
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "CSSTransformComponent.hpp"
 #include "enums.hpp"
+#include "CSSTransformComponent.hpp"
+
+namespace webbind {
 
 class CSSNumericValue;
 
-
-/// The CSSSkewY class.
+/// Interface CSSSkewY
 /// [`CSSSkewY`](https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewY)
 class CSSSkewY : public CSSTransformComponent {
     explicit CSSSkewY(Handle h) noexcept;
-
 public:
     explicit CSSSkewY(const emlite::Val &val) noexcept;
     static CSSSkewY take_ownership(Handle h) noexcept;
-
     [[nodiscard]] CSSSkewY clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSSkewY(..)` constructor, creating a new CSSSkewY instance
@@ -29,3 +28,4 @@ public:
     void ay(const CSSNumericValue& value);
 };
 
+} // namespace webbind

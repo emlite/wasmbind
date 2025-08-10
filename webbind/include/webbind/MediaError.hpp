@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The MediaError class.
+/// Interface MediaError
 /// [`MediaError`](https://developer.mozilla.org/en-US/docs/Web/API/MediaError)
 class MediaError : public emlite::Val {
     explicit MediaError(Handle h) noexcept;
-
 public:
     explicit MediaError(const emlite::Val &val) noexcept;
     static MediaError take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MediaError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `code` attribute.
@@ -24,3 +23,4 @@ public:
     [[nodiscard]] jsbind::String message() const;
 };
 
+} // namespace webbind

@@ -1,22 +1,8 @@
-#include <webbind/CacheStorage.hpp>
-#include <webbind/Cache.hpp>
+#include "webbind/CacheStorage.hpp"
+#include "webbind/MultiCacheQueryOptions.hpp"
+#include "webbind/Cache.hpp"
 
-
-MultiCacheQueryOptions::MultiCacheQueryOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MultiCacheQueryOptions MultiCacheQueryOptions::take_ownership(Handle h) noexcept {
-        return MultiCacheQueryOptions(h);
-    }
-MultiCacheQueryOptions::MultiCacheQueryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-MultiCacheQueryOptions::MultiCacheQueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
-MultiCacheQueryOptions MultiCacheQueryOptions::clone() const noexcept { return *this; }
-
-jsbind::String MultiCacheQueryOptions::cacheName() const {
-    return emlite::Val::get("cacheName").as<jsbind::String>();
-}
-
-void MultiCacheQueryOptions::cacheName(const jsbind::String& value) {
-    emlite::Val::set("cacheName", value);
-}
+namespace webbind {
 
 CacheStorage CacheStorage::take_ownership(Handle h) noexcept {
         return CacheStorage(h);
@@ -25,7 +11,6 @@ CacheStorage CacheStorage::clone() const noexcept { return *this; }
 emlite::Val CacheStorage::instance() noexcept { return emlite::Val::global("CacheStorage"); }
 CacheStorage::CacheStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CacheStorage::CacheStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::Promise<jsbind::Any> CacheStorage::match(const jsbind::Any& request) {
     return emlite::Val::call("match", request).as<jsbind::Promise<jsbind::Any>>();
@@ -51,3 +36,5 @@ jsbind::Promise<jsbind::TypedArray<jsbind::String>> CacheStorage::keys() {
     return emlite::Val::call("keys").as<jsbind::Promise<jsbind::TypedArray<jsbind::String>>>();
 }
 
+
+} // namespace webbind

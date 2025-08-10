@@ -1,5 +1,6 @@
-#include <webbind/WEBGL_compressed_texture_pvrtc.hpp>
+#include "webbind/WEBGL_compressed_texture_pvrtc.hpp"
 
+namespace webbind {
 
 WEBGL_compressed_texture_pvrtc WEBGL_compressed_texture_pvrtc::take_ownership(Handle h) noexcept {
         return WEBGL_compressed_texture_pvrtc(h);
@@ -10,3 +11,4 @@ WEBGL_compressed_texture_pvrtc::WEBGL_compressed_texture_pvrtc(Handle h) noexcep
 WEBGL_compressed_texture_pvrtc::WEBGL_compressed_texture_pvrtc(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 
+} // namespace webbind

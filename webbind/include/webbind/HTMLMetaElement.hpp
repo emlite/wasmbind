@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLMetaElement class.
+/// Interface HTMLMetaElement
 /// [`HTMLMetaElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement)
 class HTMLMetaElement : public HTMLElement {
     explicit HTMLMetaElement(Handle h) noexcept;
-
 public:
     explicit HTMLMetaElement(const emlite::Val &val) noexcept;
     static HTMLMetaElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLMetaElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMetaElement(..)` constructor, creating a new HTMLMetaElement instance
@@ -51,3 +50,4 @@ public:
     void scheme(const jsbind::String& value);
 };
 
+} // namespace webbind

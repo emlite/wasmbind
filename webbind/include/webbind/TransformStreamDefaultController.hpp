@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The TransformStreamDefaultController class.
+/// Interface TransformStreamDefaultController
 /// [`TransformStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/TransformStreamDefaultController)
 class TransformStreamDefaultController : public emlite::Val {
     explicit TransformStreamDefaultController(Handle h) noexcept;
-
 public:
     explicit TransformStreamDefaultController(const emlite::Val &val) noexcept;
     static TransformStreamDefaultController take_ownership(Handle h) noexcept;
-
     [[nodiscard]] TransformStreamDefaultController clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `desiredSize` attribute.
@@ -36,3 +35,4 @@ public:
     jsbind::Undefined terminate();
 };
 
+} // namespace webbind

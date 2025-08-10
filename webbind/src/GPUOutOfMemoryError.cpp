@@ -1,5 +1,6 @@
-#include <webbind/GPUOutOfMemoryError.hpp>
+#include "webbind/GPUOutOfMemoryError.hpp"
 
+namespace webbind {
 
 GPUOutOfMemoryError GPUOutOfMemoryError::take_ownership(Handle h) noexcept {
         return GPUOutOfMemoryError(h);
@@ -9,6 +10,7 @@ emlite::Val GPUOutOfMemoryError::instance() noexcept { return emlite::Val::globa
 GPUOutOfMemoryError::GPUOutOfMemoryError(Handle h) noexcept : GPUError(emlite::Val::take_ownership(h)) {}
 GPUOutOfMemoryError::GPUOutOfMemoryError(const emlite::Val &val) noexcept: GPUError(val) {}
 
-
 GPUOutOfMemoryError::GPUOutOfMemoryError(const jsbind::String& message) : GPUError(emlite::Val::global("GPUOutOfMemoryError").new_(message)) {}
 
+
+} // namespace webbind

@@ -1,9 +1,11 @@
-#include <webbind/DOMMatrixReadOnly.hpp>
-#include <webbind/DOMPointReadOnly.hpp>
-#include <webbind/DOMMatrix.hpp>
-#include <webbind/DOMPoint.hpp>
-#include <webbind/SVGGeometryElement.hpp>
+#include "webbind/DOMMatrixReadOnly.hpp"
+#include "webbind/DOMMatrixReadOnly.hpp"
+#include "webbind/DOMMatrixInit.hpp"
+#include "webbind/DOMMatrix.hpp"
+#include "webbind/DOMPoint.hpp"
+#include "webbind/DOMPointInit.hpp"
 
+namespace webbind {
 
 DOMMatrixReadOnly DOMMatrixReadOnly::take_ownership(Handle h) noexcept {
         return DOMMatrixReadOnly(h);
@@ -12,7 +14,6 @@ DOMMatrixReadOnly DOMMatrixReadOnly::clone() const noexcept { return *this; }
 emlite::Val DOMMatrixReadOnly::instance() noexcept { return emlite::Val::global("DOMMatrixReadOnly"); }
 DOMMatrixReadOnly::DOMMatrixReadOnly(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DOMMatrixReadOnly::DOMMatrixReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 DOMMatrixReadOnly::DOMMatrixReadOnly() : emlite::Val(emlite::Val::global("DOMMatrixReadOnly").new_()) {}
 
@@ -310,3 +311,5 @@ jsbind::Object DOMMatrixReadOnly::toJSON() {
     return emlite::Val::call("toJSON").as<jsbind::Object>();
 }
 
+
+} // namespace webbind

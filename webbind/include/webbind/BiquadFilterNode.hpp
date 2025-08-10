@@ -2,27 +2,29 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "AudioNode.hpp"
+#include "BiquadFilterOptions.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
+class BaseAudioContext;
 class AudioParam;
 
-
-/// The BiquadFilterNode class.
+/// Interface BiquadFilterNode
 /// [`BiquadFilterNode`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode)
 class BiquadFilterNode : public AudioNode {
     explicit BiquadFilterNode(Handle h) noexcept;
-
 public:
     explicit BiquadFilterNode(const emlite::Val &val) noexcept;
     static BiquadFilterNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] BiquadFilterNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BiquadFilterNode(..)` constructor, creating a new BiquadFilterNode instance
     BiquadFilterNode(const BaseAudioContext& context);
     /// The `new BiquadFilterNode(..)` constructor, creating a new BiquadFilterNode instance
-    BiquadFilterNode(const BaseAudioContext& context, const jsbind::Any& options);
+    BiquadFilterNode(const BaseAudioContext& context, const BiquadFilterOptions& options);
     /// Getter of the `type` attribute.
     /// [`BiquadFilterNode.type`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/type)
     [[nodiscard]] BiquadFilterType type() const;
@@ -46,3 +48,4 @@ public:
     jsbind::Undefined getFrequencyResponse(const jsbind::Float32Array& frequencyHz, const jsbind::Float32Array& magResponse, const jsbind::Float32Array& phaseResponse);
 };
 
+} // namespace webbind

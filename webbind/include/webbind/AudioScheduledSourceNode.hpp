@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "AudioNode.hpp"
 #include "enums.hpp"
+#include "AudioNode.hpp"
 
+namespace webbind {
 
-/// The AudioScheduledSourceNode class.
+/// Interface AudioScheduledSourceNode
 /// [`AudioScheduledSourceNode`](https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode)
 class AudioScheduledSourceNode : public AudioNode {
     explicit AudioScheduledSourceNode(Handle h) noexcept;
-
 public:
     explicit AudioScheduledSourceNode(const emlite::Val &val) noexcept;
     static AudioScheduledSourceNode take_ownership(Handle h) noexcept;
-
     [[nodiscard]] AudioScheduledSourceNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `onended` attribute.
@@ -37,3 +36,4 @@ public:
     jsbind::Undefined stop(double when);
 };
 
+} // namespace webbind

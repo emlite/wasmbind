@@ -1,6 +1,8 @@
-#include <webbind/URL.hpp>
-#include <webbind/URLSearchParams.hpp>
+#include "webbind/URL.hpp"
+#include "webbind/URL.hpp"
+#include "webbind/URLSearchParams.hpp"
 
+namespace webbind {
 
 URL URL::take_ownership(Handle h) noexcept {
         return URL(h);
@@ -9,7 +11,6 @@ URL URL::clone() const noexcept { return *this; }
 emlite::Val URL::instance() noexcept { return emlite::Val::global("URL"); }
 URL::URL(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 URL::URL(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 URL::URL(const jsbind::String& url) : emlite::Val(emlite::Val::global("URL").new_(url)) {}
 
@@ -131,3 +132,5 @@ jsbind::Undefined URL::revokeObjectURL(const jsbind::String& url) {
     return emlite::Val::global("url").call("revokeObjectURL", url).as<jsbind::Undefined>();
 }
 
+
+} // namespace webbind

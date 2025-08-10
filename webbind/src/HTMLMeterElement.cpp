@@ -1,6 +1,7 @@
-#include <webbind/HTMLMeterElement.hpp>
-#include <webbind/NodeList.hpp>
+#include "webbind/HTMLMeterElement.hpp"
+#include "webbind/NodeList.hpp"
 
+namespace webbind {
 
 HTMLMeterElement HTMLMeterElement::take_ownership(Handle h) noexcept {
         return HTMLMeterElement(h);
@@ -9,7 +10,6 @@ HTMLMeterElement HTMLMeterElement::clone() const noexcept { return *this; }
 emlite::Val HTMLMeterElement::instance() noexcept { return emlite::Val::global("HTMLMeterElement"); }
 HTMLMeterElement::HTMLMeterElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLMeterElement::HTMLMeterElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLMeterElement::HTMLMeterElement() : HTMLElement(emlite::Val::global("HTMLMeterElement").new_()) {}
 
@@ -65,3 +65,5 @@ NodeList HTMLMeterElement::labels() const {
     return HTMLElement::get("labels").as<NodeList>();
 }
 
+
+} // namespace webbind

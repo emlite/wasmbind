@@ -1,12 +1,13 @@
-#include <webbind/SVGFEConvolveMatrixElement.hpp>
-#include <webbind/SVGAnimatedString.hpp>
-#include <webbind/SVGAnimatedInteger.hpp>
-#include <webbind/SVGAnimatedNumberList.hpp>
-#include <webbind/SVGAnimatedNumber.hpp>
-#include <webbind/SVGAnimatedEnumeration.hpp>
-#include <webbind/SVGAnimatedBoolean.hpp>
-#include <webbind/SVGAnimatedLength.hpp>
+#include "webbind/SVGFEConvolveMatrixElement.hpp"
+#include "webbind/SVGAnimatedString.hpp"
+#include "webbind/SVGAnimatedInteger.hpp"
+#include "webbind/SVGAnimatedNumberList.hpp"
+#include "webbind/SVGAnimatedNumber.hpp"
+#include "webbind/SVGAnimatedEnumeration.hpp"
+#include "webbind/SVGAnimatedBoolean.hpp"
+#include "webbind/SVGAnimatedLength.hpp"
 
+namespace webbind {
 
 SVGFEConvolveMatrixElement SVGFEConvolveMatrixElement::take_ownership(Handle h) noexcept {
         return SVGFEConvolveMatrixElement(h);
@@ -15,7 +16,6 @@ SVGFEConvolveMatrixElement SVGFEConvolveMatrixElement::clone() const noexcept { 
 emlite::Val SVGFEConvolveMatrixElement::instance() noexcept { return emlite::Val::global("SVGFEConvolveMatrixElement"); }
 SVGFEConvolveMatrixElement::SVGFEConvolveMatrixElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
 SVGFEConvolveMatrixElement::SVGFEConvolveMatrixElement(const emlite::Val &val) noexcept: SVGElement(val) {}
-
 
 SVGAnimatedString SVGFEConvolveMatrixElement::in1() const {
     return SVGElement::get("in1").as<SVGAnimatedString>();
@@ -85,3 +85,5 @@ SVGAnimatedString SVGFEConvolveMatrixElement::result() const {
     return SVGElement::get("result").as<SVGAnimatedString>();
 }
 
+
+} // namespace webbind

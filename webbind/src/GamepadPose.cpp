@@ -1,5 +1,6 @@
-#include <webbind/GamepadPose.hpp>
+#include "webbind/GamepadPose.hpp"
 
+namespace webbind {
 
 GamepadPose GamepadPose::take_ownership(Handle h) noexcept {
         return GamepadPose(h);
@@ -8,7 +9,6 @@ GamepadPose GamepadPose::clone() const noexcept { return *this; }
 emlite::Val GamepadPose::instance() noexcept { return emlite::Val::global("GamepadPose"); }
 GamepadPose::GamepadPose(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GamepadPose::GamepadPose(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 bool GamepadPose::hasOrientation() const {
     return emlite::Val::get("hasOrientation").as<bool>();
@@ -42,3 +42,5 @@ jsbind::Float32Array GamepadPose::angularAcceleration() const {
     return emlite::Val::get("angularAcceleration").as<jsbind::Float32Array>();
 }
 
+
+} // namespace webbind

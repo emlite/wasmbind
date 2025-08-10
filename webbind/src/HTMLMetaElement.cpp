@@ -1,5 +1,6 @@
-#include <webbind/HTMLMetaElement.hpp>
+#include "webbind/HTMLMetaElement.hpp"
 
+namespace webbind {
 
 HTMLMetaElement HTMLMetaElement::take_ownership(Handle h) noexcept {
         return HTMLMetaElement(h);
@@ -8,7 +9,6 @@ HTMLMetaElement HTMLMetaElement::clone() const noexcept { return *this; }
 emlite::Val HTMLMetaElement::instance() noexcept { return emlite::Val::global("HTMLMetaElement"); }
 HTMLMetaElement::HTMLMetaElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
 HTMLMetaElement::HTMLMetaElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
-
 
 HTMLMetaElement::HTMLMetaElement() : HTMLElement(emlite::Val::global("HTMLMetaElement").new_()) {}
 
@@ -52,3 +52,5 @@ void HTMLMetaElement::scheme(const jsbind::String& value) {
     HTMLElement::set("scheme", value);
 }
 
+
+} // namespace webbind

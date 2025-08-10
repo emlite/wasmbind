@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLDialogElement class.
+/// Interface HTMLDialogElement
 /// [`HTMLDialogElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)
 class HTMLDialogElement : public HTMLElement {
     explicit HTMLDialogElement(Handle h) noexcept;
-
 public:
     explicit HTMLDialogElement(const emlite::Val &val) noexcept;
     static HTMLDialogElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLDialogElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDialogElement(..)` constructor, creating a new HTMLDialogElement instance
@@ -57,3 +56,4 @@ public:
     jsbind::Undefined requestClose(const jsbind::String& returnValue);
 };
 
+} // namespace webbind

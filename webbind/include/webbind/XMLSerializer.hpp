@@ -4,18 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 
-
-/// The XMLSerializer class.
+/// Interface XMLSerializer
 /// [`XMLSerializer`](https://developer.mozilla.org/en-US/docs/Web/API/XMLSerializer)
 class XMLSerializer : public emlite::Val {
     explicit XMLSerializer(Handle h) noexcept;
-
 public:
     explicit XMLSerializer(const emlite::Val &val) noexcept;
     static XMLSerializer take_ownership(Handle h) noexcept;
-
     [[nodiscard]] XMLSerializer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XMLSerializer(..)` constructor, creating a new XMLSerializer instance
@@ -25,3 +24,4 @@ public:
     jsbind::String serializeToString(const Node& root);
 };
 
+} // namespace webbind

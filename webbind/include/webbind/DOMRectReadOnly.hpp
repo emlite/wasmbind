@@ -3,37 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
+#include "DOMRectInit.hpp"
+
+namespace webbind {
 
 class DOMRectReadOnly;
-class DOMRectInit;
 
-
-class DOMRectInit : public emlite::Val {
-  explicit DOMRectInit(Handle h) noexcept;
-public:
-    static DOMRectInit take_ownership(Handle h) noexcept;
-    explicit DOMRectInit(const emlite::Val &val) noexcept;
-    DOMRectInit() noexcept;
-    [[nodiscard]] DOMRectInit clone() const noexcept;
-    [[nodiscard]] double x() const;
-    void x(double value);
-    [[nodiscard]] double y() const;
-    void y(double value);
-    [[nodiscard]] double width() const;
-    void width(double value);
-    [[nodiscard]] double height() const;
-    void height(double value);
-};
-
-/// The DOMRectReadOnly class.
+/// Interface DOMRectReadOnly
 /// [`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)
 class DOMRectReadOnly : public emlite::Val {
     explicit DOMRectReadOnly(Handle h) noexcept;
-
 public:
     explicit DOMRectReadOnly(const emlite::Val &val) noexcept;
     static DOMRectReadOnly take_ownership(Handle h) noexcept;
-
     [[nodiscard]] DOMRectReadOnly clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DOMRectReadOnly(..)` constructor, creating a new DOMRectReadOnly instance
@@ -81,3 +63,4 @@ public:
     jsbind::Object toJSON();
 };
 
+} // namespace webbind

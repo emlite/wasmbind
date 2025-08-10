@@ -2,51 +2,23 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
+#include "enums.hpp"
 #include "EventTarget.hpp"
+#include "PaymentCompleteDetails.hpp"
+#include "PaymentValidationErrors.hpp"
 #include "enums.hpp"
 
+namespace webbind {
+
 class ContactAddress;
-class PaymentCompleteDetails;
-class PaymentValidationErrors;
 
-
-class PaymentCompleteDetails : public emlite::Val {
-  explicit PaymentCompleteDetails(Handle h) noexcept;
-public:
-    static PaymentCompleteDetails take_ownership(Handle h) noexcept;
-    explicit PaymentCompleteDetails(const emlite::Val &val) noexcept;
-    PaymentCompleteDetails() noexcept;
-    [[nodiscard]] PaymentCompleteDetails clone() const noexcept;
-    [[nodiscard]] jsbind::Object data() const;
-    void data(const jsbind::Object& value);
-};
-
-class PaymentValidationErrors : public emlite::Val {
-  explicit PaymentValidationErrors(Handle h) noexcept;
-public:
-    static PaymentValidationErrors take_ownership(Handle h) noexcept;
-    explicit PaymentValidationErrors(const emlite::Val &val) noexcept;
-    PaymentValidationErrors() noexcept;
-    [[nodiscard]] PaymentValidationErrors clone() const noexcept;
-    [[nodiscard]] jsbind::Any payer() const;
-    void payer(const jsbind::Any& value);
-    [[nodiscard]] jsbind::Any shippingAddress() const;
-    void shippingAddress(const jsbind::Any& value);
-    [[nodiscard]] jsbind::String error() const;
-    void error(const jsbind::String& value);
-    [[nodiscard]] jsbind::Object paymentMethod() const;
-    void paymentMethod(const jsbind::Object& value);
-};
-
-/// The PaymentResponse class.
+/// Interface PaymentResponse
 /// [`PaymentResponse`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse)
 class PaymentResponse : public EventTarget {
     explicit PaymentResponse(Handle h) noexcept;
-
 public:
     explicit PaymentResponse(const emlite::Val &val) noexcept;
     static PaymentResponse take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PaymentResponse clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The toJSON method.
@@ -99,3 +71,4 @@ public:
     void onpayerdetailchange(const jsbind::Any& value);
 };
 
+} // namespace webbind

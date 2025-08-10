@@ -4,19 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
+
 class Node;
 class NodeList;
 
-
-/// The MutationRecord class.
+/// Interface MutationRecord
 /// [`MutationRecord`](https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord)
 class MutationRecord : public emlite::Val {
     explicit MutationRecord(Handle h) noexcept;
-
 public:
     explicit MutationRecord(const emlite::Val &val) noexcept;
     static MutationRecord take_ownership(Handle h) noexcept;
-
     [[nodiscard]] MutationRecord clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `type` attribute.
@@ -48,3 +47,4 @@ public:
     [[nodiscard]] jsbind::String oldValue() const;
 };
 
+} // namespace webbind

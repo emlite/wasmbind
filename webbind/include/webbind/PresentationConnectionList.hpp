@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "EventTarget.hpp"
 #include "enums.hpp"
+#include "EventTarget.hpp"
+
+namespace webbind {
 
 class PresentationConnection;
 
-
-/// The PresentationConnectionList class.
+/// Interface PresentationConnectionList
 /// [`PresentationConnectionList`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionList)
 class PresentationConnectionList : public EventTarget {
     explicit PresentationConnectionList(Handle h) noexcept;
-
 public:
     explicit PresentationConnectionList(const emlite::Val &val) noexcept;
     static PresentationConnectionList take_ownership(Handle h) noexcept;
-
     [[nodiscard]] PresentationConnectionList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `connections` attribute.
@@ -30,3 +29,4 @@ public:
     void onconnectionavailable(const jsbind::Any& value);
 };
 
+} // namespace webbind

@@ -2,21 +2,20 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
+
+namespace webbind {
 
 class TextTrack;
 
-
-/// The HTMLTrackElement class.
+/// Interface HTMLTrackElement
 /// [`HTMLTrackElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement)
 class HTMLTrackElement : public HTMLElement {
     explicit HTMLTrackElement(Handle h) noexcept;
-
 public:
     explicit HTMLTrackElement(const emlite::Val &val) noexcept;
     static HTMLTrackElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLTrackElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTrackElement(..)` constructor, creating a new HTMLTrackElement instance
@@ -59,3 +58,4 @@ public:
     [[nodiscard]] TextTrack track() const;
 };
 
+} // namespace webbind

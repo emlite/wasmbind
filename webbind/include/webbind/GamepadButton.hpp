@@ -4,16 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 
+namespace webbind {
 
-/// The GamepadButton class.
+/// Interface GamepadButton
 /// [`GamepadButton`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton)
 class GamepadButton : public emlite::Val {
     explicit GamepadButton(Handle h) noexcept;
-
 public:
     explicit GamepadButton(const emlite::Val &val) noexcept;
     static GamepadButton take_ownership(Handle h) noexcept;
-
     [[nodiscard]] GamepadButton clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `pressed` attribute.
@@ -27,3 +26,4 @@ public:
     [[nodiscard]] double value() const;
 };
 
+} // namespace webbind

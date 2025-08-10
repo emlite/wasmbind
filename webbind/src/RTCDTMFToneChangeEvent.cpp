@@ -1,5 +1,7 @@
-#include <webbind/RTCDTMFToneChangeEvent.hpp>
+#include "webbind/RTCDTMFToneChangeEvent.hpp"
+#include "webbind/RTCDTMFToneChangeEventInit.hpp"
 
+namespace webbind {
 
 RTCDTMFToneChangeEvent RTCDTMFToneChangeEvent::take_ownership(Handle h) noexcept {
         return RTCDTMFToneChangeEvent(h);
@@ -9,12 +11,13 @@ emlite::Val RTCDTMFToneChangeEvent::instance() noexcept { return emlite::Val::gl
 RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
 RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
-
 RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const jsbind::String& type) : Event(emlite::Val::global("RTCDTMFToneChangeEvent").new_(type)) {}
 
-RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const jsbind::String& type, const jsbind::Any& eventInitDict) : Event(emlite::Val::global("RTCDTMFToneChangeEvent").new_(type, eventInitDict)) {}
+RTCDTMFToneChangeEvent::RTCDTMFToneChangeEvent(const jsbind::String& type, const RTCDTMFToneChangeEventInit& eventInitDict) : Event(emlite::Val::global("RTCDTMFToneChangeEvent").new_(type, eventInitDict)) {}
 
 jsbind::String RTCDTMFToneChangeEvent::tone() const {
     return Event::get("tone").as<jsbind::String>();
 }
 
+
+} // namespace webbind

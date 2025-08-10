@@ -2,19 +2,18 @@
 
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
-#include "HTMLElement.hpp"
 #include "enums.hpp"
+#include "HTMLElement.hpp"
 
+namespace webbind {
 
-/// The HTMLBaseElement class.
+/// Interface HTMLBaseElement
 /// [`HTMLBaseElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement)
 class HTMLBaseElement : public HTMLElement {
     explicit HTMLBaseElement(Handle h) noexcept;
-
 public:
     explicit HTMLBaseElement(const emlite::Val &val) noexcept;
     static HTMLBaseElement take_ownership(Handle h) noexcept;
-
     [[nodiscard]] HTMLBaseElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLBaseElement(..)` constructor, creating a new HTMLBaseElement instance
@@ -33,3 +32,4 @@ public:
     void target(const jsbind::String& value);
 };
 
+} // namespace webbind

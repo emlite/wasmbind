@@ -1,6 +1,7 @@
-#include <webbind/BluetoothRemoteGATTDescriptor.hpp>
-#include <webbind/BluetoothRemoteGATTCharacteristic.hpp>
+#include "webbind/BluetoothRemoteGATTDescriptor.hpp"
+#include "webbind/BluetoothRemoteGATTCharacteristic.hpp"
 
+namespace webbind {
 
 BluetoothRemoteGATTDescriptor BluetoothRemoteGATTDescriptor::take_ownership(Handle h) noexcept {
         return BluetoothRemoteGATTDescriptor(h);
@@ -9,7 +10,6 @@ BluetoothRemoteGATTDescriptor BluetoothRemoteGATTDescriptor::clone() const noexc
 emlite::Val BluetoothRemoteGATTDescriptor::instance() noexcept { return emlite::Val::global("BluetoothRemoteGATTDescriptor"); }
 BluetoothRemoteGATTDescriptor::BluetoothRemoteGATTDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothRemoteGATTDescriptor::BluetoothRemoteGATTDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 BluetoothRemoteGATTCharacteristic BluetoothRemoteGATTDescriptor::characteristic() const {
     return emlite::Val::get("characteristic").as<BluetoothRemoteGATTCharacteristic>();
@@ -31,3 +31,5 @@ jsbind::Promise<jsbind::Undefined> BluetoothRemoteGATTDescriptor::writeValue(con
     return emlite::Val::call("writeValue", value).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
+
+} // namespace webbind

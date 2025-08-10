@@ -1,6 +1,7 @@
-#include <webbind/Plugin.hpp>
-#include <webbind/MimeType.hpp>
+#include "webbind/Plugin.hpp"
+#include "webbind/MimeType.hpp"
 
+namespace webbind {
 
 Plugin Plugin::take_ownership(Handle h) noexcept {
         return Plugin(h);
@@ -9,7 +10,6 @@ Plugin Plugin::clone() const noexcept { return *this; }
 emlite::Val Plugin::instance() noexcept { return emlite::Val::global("Plugin"); }
 Plugin::Plugin(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Plugin::Plugin(const emlite::Val &val) noexcept: emlite::Val(val) {}
-
 
 jsbind::String Plugin::name() const {
     return emlite::Val::get("name").as<jsbind::String>();
@@ -35,3 +35,5 @@ MimeType Plugin::namedItem(const jsbind::String& name) {
     return emlite::Val::call("namedItem", name).as<MimeType>();
 }
 
+
+} // namespace webbind
