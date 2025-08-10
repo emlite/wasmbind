@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "ChannelMergerOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class ChannelMergerOptions;
 
 /// Interface ChannelMergerNode
 /// [`ChannelMergerNode`](https://developer.mozilla.org/en-US/docs/Web/API/ChannelMergerNode)

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "HIDDeviceFilter.hpp"
 
 namespace webbind {
+
+class HIDDeviceFilter;
 
 /// Dictionary type HIDDeviceRequestOptions
 class HIDDeviceRequestOptions : public emlite::Val {

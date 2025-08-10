@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RsaOtherPrimesInfo.hpp"
 
 namespace webbind {
+
+class RsaOtherPrimesInfo;
 
 /// Dictionary type JsonWebKey
 class JsonWebKey : public emlite::Val {

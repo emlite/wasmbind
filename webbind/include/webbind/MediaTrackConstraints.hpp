@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "MediaTrackConstraintSet.hpp"
-#include "MediaTrackConstraintSet.hpp"
 
 namespace webbind {
+
+class MediaTrackConstraintSet;
 
 /// Dictionary type MediaTrackConstraints
 class MediaTrackConstraints : public MediaTrackConstraintSet {

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BackgroundSyncOptions.hpp"
 
 namespace webbind {
+
+class BackgroundSyncOptions;
 
 /// Interface PeriodicSyncManager
 /// [`PeriodicSyncManager`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncManager)

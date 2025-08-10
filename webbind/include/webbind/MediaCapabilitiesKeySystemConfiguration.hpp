@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "KeySystemTrackConfiguration.hpp"
 
 namespace webbind {
+
+class KeySystemTrackConfiguration;
 
 /// Dictionary type MediaCapabilitiesKeySystemConfiguration
 class MediaCapabilitiesKeySystemConfiguration : public emlite::Val {

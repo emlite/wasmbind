@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MemoryBreakdownEntry.hpp"
 
 namespace webbind {
+
+class MemoryBreakdownEntry;
 
 /// Dictionary type MemoryMeasurement
 class MemoryMeasurement : public emlite::Val {

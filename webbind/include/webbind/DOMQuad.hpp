@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMPointInit.hpp"
-#include "DOMRectInit.hpp"
-#include "DOMQuadInit.hpp"
 
 namespace webbind {
 
+class DOMPointInit;
 class DOMQuad;
+class DOMRectInit;
+class DOMQuadInit;
 class DOMPoint;
 class DOMRect;
 

@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "WorkerOptions.hpp"
-#include "StructuredSerializeOptions.hpp"
 
 namespace webbind {
+
+class WorkerOptions;
+class StructuredSerializeOptions;
 
 /// Interface Worker
 /// [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Worker)

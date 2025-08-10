@@ -4,13 +4,14 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEventInit.hpp"
-#include "PaymentMethodData.hpp"
-#include "PaymentCurrencyAmount.hpp"
-#include "PaymentDetailsModifier.hpp"
-#include "PaymentOptions.hpp"
-#include "PaymentShippingOption.hpp"
 
 namespace webbind {
+
+class PaymentMethodData;
+class PaymentCurrencyAmount;
+class PaymentDetailsModifier;
+class PaymentOptions;
+class PaymentShippingOption;
 
 /// Dictionary type PaymentRequestEventInit
 class PaymentRequestEventInit : public ExtendableEventInit {

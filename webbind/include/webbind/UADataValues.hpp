@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "NavigatorUABrandVersion.hpp"
 
 namespace webbind {
+
+class NavigatorUABrandVersion;
 
 /// Dictionary type UADataValues
 class UADataValues : public emlite::Val {

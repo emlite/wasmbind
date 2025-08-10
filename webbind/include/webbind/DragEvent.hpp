@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "MouseEvent.hpp"
-#include "DragEventInit.hpp"
 
 namespace webbind {
 
+class DragEventInit;
 class DataTransfer;
 
 /// Interface DragEvent

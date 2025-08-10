@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPURenderBundleDescriptor.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class GPURenderBundle;
+class GPURenderBundleDescriptor;
 class GPUBindGroup;
 class GPURenderPipeline;
 class GPUBuffer;

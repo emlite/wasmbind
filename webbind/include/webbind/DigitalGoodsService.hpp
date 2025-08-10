@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ItemDetails.hpp"
-#include "PurchaseDetails.hpp"
 
 namespace webbind {
+
+class ItemDetails;
+class PurchaseDetails;
 
 /// Interface DigitalGoodsService
 /// [`DigitalGoodsService`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalGoodsService)

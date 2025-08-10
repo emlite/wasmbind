@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PopStateEventInit.hpp"
 
 namespace webbind {
+
+class PopStateEventInit;
 
 /// Interface PopStateEvent
 /// [`PopStateEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent)

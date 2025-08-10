@@ -3,15 +3,15 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCRtpCapabilities.hpp"
-#include "RTCRtpReceiveParameters.hpp"
-#include "RTCRtpContributingSource.hpp"
-#include "RTCRtpSynchronizationSource.hpp"
 
 namespace webbind {
 
 class MediaStreamTrack;
 class RTCDtlsTransport;
+class RTCRtpCapabilities;
+class RTCRtpReceiveParameters;
+class RTCRtpContributingSource;
+class RTCRtpSynchronizationSource;
 class RTCStatsReport;
 
 /// Interface RTCRtpReceiver

@@ -3,17 +3,6 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaKeySystemConfiguration.hpp"
-#include "RelatedApplication.hpp"
-#include "HandwritingRecognizerQueryResult.hpp"
-#include "HandwritingModelConstraint.hpp"
-#include "AuctionAdInterestGroup.hpp"
-#include "AuctionAdInterestGroupKey.hpp"
-#include "AuctionAdConfig.hpp"
-#include "AdAuctionData.hpp"
-#include "AdAuctionDataConfig.hpp"
-#include "ShareData.hpp"
-#include "MIDIOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -26,8 +15,12 @@ class ContactsManager;
 class CredentialsContainer;
 class DevicePosture;
 class MediaKeySystemAccess;
+class MediaKeySystemConfiguration;
 class Gamepad;
 class Geolocation;
+class RelatedApplication;
+class HandwritingRecognizerQueryResult;
+class HandwritingModelConstraint;
 class HandwritingRecognizer;
 class UserActivation;
 class Ink;
@@ -45,11 +38,18 @@ class Attribution;
 class WakeLock;
 class Serial;
 class ServiceWorkerContainer;
+class AuctionAdInterestGroup;
+class AuctionAdInterestGroupKey;
+class AuctionAdConfig;
+class AdAuctionData;
+class AdAuctionDataConfig;
 class ProtectedAudience;
 class VirtualKeyboard;
 class Bluetooth;
+class ShareData;
 class HID;
 class MIDIAccess;
+class MIDIOptions;
 class USB;
 class XRSystem;
 class WindowControlsOverlay;

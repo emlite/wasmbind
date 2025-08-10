@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RouterCondition.hpp"
 
 namespace webbind {
+
+class RouterCondition;
 
 /// Dictionary type RouterRule
 class RouterRule : public emlite::Val {

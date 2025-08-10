@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "EditContextInit.hpp"
 
 namespace webbind {
 
+class EditContextInit;
 class DOMRect;
 class HTMLElement;
 

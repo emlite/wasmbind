@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUObjectDescriptorBase.hpp"
-#include "GPUBindGroupLayoutEntry.hpp"
 
 namespace webbind {
+
+class GPUBindGroupLayoutEntry;
 
 /// Dictionary type GPUBindGroupLayoutDescriptor
 class GPUBindGroupLayoutDescriptor : public GPUObjectDescriptorBase {

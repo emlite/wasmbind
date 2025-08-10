@@ -4,13 +4,13 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "CSSStyleValue.hpp"
-#include "CSSNumericType.hpp"
 
 namespace webbind {
 
 class CSSNumericValue;
 class CSSUnitValue;
 class CSSMathSum;
+class CSSNumericType;
 
 /// Interface CSSNumericValue
 /// [`CSSNumericValue`](https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue)

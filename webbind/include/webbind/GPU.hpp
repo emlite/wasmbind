@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPURequestAdapterOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class GPUAdapter;
+class GPURequestAdapterOptions;
 class WGSLLanguageFeatures;
 
 /// Interface GPU

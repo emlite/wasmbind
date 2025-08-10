@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AbstractRange.hpp"
-#include "StaticRangeInit.hpp"
 
 namespace webbind {
+
+class StaticRangeInit;
 
 /// Interface StaticRange
 /// [`StaticRange`](https://developer.mozilla.org/en-US/docs/Web/API/StaticRange)

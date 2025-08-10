@@ -4,15 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "RTCIceParameters.hpp"
-#include "RTCIceGatherOptions.hpp"
-#include "RTCIceCandidateInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class RTCIceCandidate;
 class RTCIceCandidatePair;
+class RTCIceParameters;
+class RTCIceGatherOptions;
+class RTCIceCandidateInit;
 
 /// Interface RTCIceTransport
 /// [`RTCIceTransport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport)

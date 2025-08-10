@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PaymentEntityLogo.hpp"
-#include "PaymentCurrencyAmount.hpp"
-#include "PaymentCredentialInstrument.hpp"
 
 namespace webbind {
+
+class PaymentEntityLogo;
+class PaymentCurrencyAmount;
+class PaymentCredentialInstrument;
 
 /// Dictionary type CollectedClientAdditionalPaymentData
 class CollectedClientAdditionalPaymentData : public emlite::Val {

@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ResizeObserverOptions.hpp"
 
 namespace webbind {
 
 class Element;
+class ResizeObserverOptions;
 
 /// Interface ResizeObserver
 /// [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)

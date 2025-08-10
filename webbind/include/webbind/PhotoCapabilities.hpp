@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaSettingsRange.hpp"
 
 namespace webbind {
+
+class MediaSettingsRange;
 
 /// Dictionary type PhotoCapabilities
 class PhotoCapabilities : public emlite::Val {

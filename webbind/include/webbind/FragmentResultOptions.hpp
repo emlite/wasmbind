@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BreakTokenOptions.hpp"
 
 namespace webbind {
 
 class LayoutFragment;
+class BreakTokenOptions;
 
 /// Dictionary type FragmentResultOptions
 class FragmentResultOptions : public emlite::Val {

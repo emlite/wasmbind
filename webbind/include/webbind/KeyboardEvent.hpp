@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "UIEvent.hpp"
-#include "KeyboardEventInit.hpp"
 
 namespace webbind {
 
+class KeyboardEventInit;
 class Window;
 
 /// Interface KeyboardEvent

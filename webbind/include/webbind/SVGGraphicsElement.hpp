@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "SVGElement.hpp"
-#include "SVGBoundingBoxOptions.hpp"
 
 namespace webbind {
 
 class SVGAnimatedTransformList;
 class DOMRect;
+class SVGBoundingBoxOptions;
 class DOMMatrix;
 class SVGStringList;
 

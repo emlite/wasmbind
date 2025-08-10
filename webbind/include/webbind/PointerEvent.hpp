@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "MouseEvent.hpp"
-#include "PointerEventInit.hpp"
 
 namespace webbind {
 
+class PointerEventInit;
 class PointerEvent;
 
 /// Interface PointerEvent

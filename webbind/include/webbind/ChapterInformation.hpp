@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaImage.hpp"
 
 namespace webbind {
+
+class MediaImage;
 
 /// Interface ChapterInformation
 /// [`ChapterInformation`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation)

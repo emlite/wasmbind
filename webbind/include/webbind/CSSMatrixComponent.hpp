@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "CSSTransformComponent.hpp"
-#include "CSSMatrixComponentOptions.hpp"
 
 namespace webbind {
 
 class DOMMatrixReadOnly;
+class CSSMatrixComponentOptions;
 class DOMMatrix;
 
 /// Interface CSSMatrixComponent

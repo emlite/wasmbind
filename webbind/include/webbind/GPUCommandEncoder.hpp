@@ -3,19 +3,19 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPURenderPassDescriptor.hpp"
-#include "GPUComputePassDescriptor.hpp"
-#include "GPUTexelCopyBufferInfo.hpp"
-#include "GPUTexelCopyTextureInfo.hpp"
-#include "GPUCommandBufferDescriptor.hpp"
 
 namespace webbind {
 
 class GPURenderPassEncoder;
+class GPURenderPassDescriptor;
 class GPUComputePassEncoder;
+class GPUComputePassDescriptor;
 class GPUBuffer;
+class GPUTexelCopyBufferInfo;
+class GPUTexelCopyTextureInfo;
 class GPUQuerySet;
 class GPUCommandBuffer;
+class GPUCommandBufferDescriptor;
 
 /// Interface GPUCommandEncoder
 /// [`GPUCommandEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder)

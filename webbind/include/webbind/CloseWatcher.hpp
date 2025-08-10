@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "CloseWatcherOptions.hpp"
 
 namespace webbind {
+
+class CloseWatcherOptions;
 
 /// Interface CloseWatcher
 /// [`CloseWatcher`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher)

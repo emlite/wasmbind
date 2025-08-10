@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "NavigationCurrentEntryChangeEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class NavigationCurrentEntryChangeEventInit;
 class NavigationHistoryEntry;
 
 /// Interface NavigationCurrentEntryChangeEvent

@@ -3,15 +3,15 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MLTensorDescriptor.hpp"
-#include "MLOperandDescriptor.hpp"
-#include "MLOpSupportLimits.hpp"
-#include "MLContextLostInfo.hpp"
 
 namespace webbind {
 
 class MLGraph;
 class MLTensor;
+class MLTensorDescriptor;
+class MLOperandDescriptor;
+class MLOpSupportLimits;
+class MLContextLostInfo;
 
 /// Interface MLContext
 /// [`MLContext`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext)

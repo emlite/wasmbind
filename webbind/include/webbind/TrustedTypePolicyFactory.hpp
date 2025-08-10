@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "TrustedTypePolicyOptions.hpp"
 
 namespace webbind {
 
 class TrustedTypePolicy;
+class TrustedTypePolicyOptions;
 class TrustedHTML;
 class TrustedScript;
 

@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "SVGGraphicsElement.hpp"
-#include "DOMPointInit.hpp"
 
 namespace webbind {
 
 class SVGAnimatedNumber;
+class DOMPointInit;
 class DOMPoint;
 
 /// Interface SVGGeometryElement

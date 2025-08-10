@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventInit.hpp"
-#include "NDEFMessageInit.hpp"
 
 namespace webbind {
+
+class NDEFMessageInit;
 
 /// Dictionary type NDEFReadingEventInit
 class NDEFReadingEventInit : public EventInit {

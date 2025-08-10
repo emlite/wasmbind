@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventInit.hpp"
-#include "DeviceMotionEventAccelerationInit.hpp"
-#include "DeviceMotionEventRotationRateInit.hpp"
 
 namespace webbind {
+
+class DeviceMotionEventAccelerationInit;
+class DeviceMotionEventRotationRateInit;
 
 /// Dictionary type DeviceMotionEventInit
 class DeviceMotionEventInit : public EventInit {

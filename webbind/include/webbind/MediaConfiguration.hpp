@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "VideoConfiguration.hpp"
-#include "AudioConfiguration.hpp"
 
 namespace webbind {
+
+class VideoConfiguration;
+class AudioConfiguration;
 
 /// Dictionary type MediaConfiguration
 class MediaConfiguration : public emlite::Val {

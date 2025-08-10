@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "WriterCreateOptions.hpp"
-#include "WriterCreateCoreOptions.hpp"
-#include "WriterWriteOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class Writer;
+class WriterCreateOptions;
+class WriterCreateCoreOptions;
+class WriterWriteOptions;
 class ReadableStream;
 
 /// Interface Writer

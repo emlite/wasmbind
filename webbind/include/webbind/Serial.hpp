@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "SerialPortRequestOptions.hpp"
 
 namespace webbind {
 
 class SerialPort;
+class SerialPortRequestOptions;
 
 /// Interface Serial
 /// [`Serial`](https://developer.mozilla.org/en-US/docs/Web/API/Serial)

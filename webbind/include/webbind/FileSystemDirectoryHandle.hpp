@@ -4,14 +4,14 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "FileSystemHandle.hpp"
-#include "FileSystemGetFileOptions.hpp"
-#include "FileSystemGetDirectoryOptions.hpp"
-#include "FileSystemRemoveOptions.hpp"
 
 namespace webbind {
 
 class FileSystemFileHandle;
+class FileSystemGetFileOptions;
 class FileSystemDirectoryHandle;
+class FileSystemGetDirectoryOptions;
+class FileSystemRemoveOptions;
 
 /// Interface FileSystemDirectoryHandle
 /// [`FileSystemDirectoryHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle)

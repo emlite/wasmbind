@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "XRLayerEventInit.hpp"
 
 namespace webbind {
 
+class XRLayerEventInit;
 class XRLayer;
 
 /// Interface XRLayerEvent

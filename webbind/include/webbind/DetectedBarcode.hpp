@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "Point2D.hpp"
 
 namespace webbind {
 
 class DOMRectReadOnly;
+class Point2D;
 
 /// Dictionary type DetectedBarcode
 class DetectedBarcode : public emlite::Val {

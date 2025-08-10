@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCLocalIceCandidateInit.hpp"
-#include "RTCIceCandidateInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class RTCLocalIceCandidateInit;
+class RTCIceCandidateInit;
 
 /// Interface RTCIceCandidate
 /// [`RTCIceCandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate)

@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "SummarizerCreateOptions.hpp"
-#include "SummarizerCreateCoreOptions.hpp"
-#include "SummarizerSummarizeOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class Summarizer;
+class SummarizerCreateOptions;
+class SummarizerCreateCoreOptions;
+class SummarizerSummarizeOptions;
 class ReadableStream;
 
 /// Interface Summarizer

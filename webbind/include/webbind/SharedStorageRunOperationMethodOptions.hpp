@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "SharedStoragePrivateAggregationConfig.hpp"
 
 namespace webbind {
+
+class SharedStoragePrivateAggregationConfig;
 
 /// Dictionary type SharedStorageRunOperationMethodOptions
 class SharedStorageRunOperationMethodOptions : public emlite::Val {

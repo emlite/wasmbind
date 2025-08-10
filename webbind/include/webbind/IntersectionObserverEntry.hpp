@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "IntersectionObserverEntryInit.hpp"
 
 namespace webbind {
 
+class IntersectionObserverEntryInit;
 class DOMRectReadOnly;
 class Element;
 

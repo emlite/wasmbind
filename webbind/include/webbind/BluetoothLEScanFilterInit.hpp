@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BluetoothManufacturerDataFilterInit.hpp"
-#include "BluetoothServiceDataFilterInit.hpp"
 
 namespace webbind {
+
+class BluetoothManufacturerDataFilterInit;
+class BluetoothServiceDataFilterInit;
 
 /// Dictionary type BluetoothLEScanFilterInit
 class BluetoothLEScanFilterInit : public emlite::Val {

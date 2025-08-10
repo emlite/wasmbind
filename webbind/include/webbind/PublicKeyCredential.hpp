@@ -4,18 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Credential.hpp"
-#include "AuthenticationExtensionsClientOutputs.hpp"
-#include "PublicKeyCredentialCreationOptions.hpp"
-#include "PublicKeyCredentialCreationOptionsJSON.hpp"
-#include "PublicKeyCredentialRequestOptions.hpp"
-#include "PublicKeyCredentialRequestOptionsJSON.hpp"
-#include "UnknownCredentialOptions.hpp"
-#include "AllAcceptedCredentialsOptions.hpp"
-#include "CurrentUserDetailsOptions.hpp"
 
 namespace webbind {
 
 class AuthenticatorResponse;
+class AuthenticationExtensionsClientOutputs;
+class PublicKeyCredentialCreationOptions;
+class PublicKeyCredentialCreationOptionsJSON;
+class PublicKeyCredentialRequestOptions;
+class PublicKeyCredentialRequestOptionsJSON;
+class UnknownCredentialOptions;
+class AllAcceptedCredentialsOptions;
+class CurrentUserDetailsOptions;
 
 /// Interface PublicKeyCredential
 /// [`PublicKeyCredential`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential)

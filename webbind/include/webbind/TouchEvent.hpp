@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "UIEvent.hpp"
-#include "TouchEventInit.hpp"
 
 namespace webbind {
 
+class TouchEventInit;
 class TouchList;
 
 /// Interface TouchEvent

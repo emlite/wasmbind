@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUBlendComponent.hpp"
 
 namespace webbind {
+
+class GPUBlendComponent;
 
 /// Dictionary type GPUBlendState
 class GPUBlendState : public emlite::Val {

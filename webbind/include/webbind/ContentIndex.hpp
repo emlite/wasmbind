@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ContentDescription.hpp"
 
 namespace webbind {
+
+class ContentDescription;
 
 /// Interface ContentIndex
 /// [`ContentIndex`](https://developer.mozilla.org/en-US/docs/Web/API/ContentIndex)

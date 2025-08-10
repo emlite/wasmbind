@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMPointInit.hpp"
 
 namespace webbind {
+
+class DOMPointInit;
 
 /// Dictionary type DOMQuadInit
 class DOMQuadInit : public emlite::Val {

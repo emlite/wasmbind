@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "HIDConnectionEventInit.hpp"
 
 namespace webbind {
 
+class HIDConnectionEventInit;
 class HIDDevice;
 
 /// Interface HIDConnectionEvent

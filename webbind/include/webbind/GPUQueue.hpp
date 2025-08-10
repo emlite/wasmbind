@@ -3,15 +3,15 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUTexelCopyTextureInfo.hpp"
-#include "GPUTexelCopyBufferLayout.hpp"
-#include "GPUCopyExternalImageSourceInfo.hpp"
-#include "GPUCopyExternalImageDestInfo.hpp"
 
 namespace webbind {
 
 class GPUCommandBuffer;
 class GPUBuffer;
+class GPUTexelCopyTextureInfo;
+class GPUTexelCopyBufferLayout;
+class GPUCopyExternalImageSourceInfo;
+class GPUCopyExternalImageDestInfo;
 
 /// Interface GPUQueue
 /// [`GPUQueue`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue)

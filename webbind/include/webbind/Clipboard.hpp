@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "ClipboardUnsanitizedFormats.hpp"
 
 namespace webbind {
+
+class ClipboardUnsanitizedFormats;
 
 /// Interface Clipboard
 /// [`Clipboard`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard)

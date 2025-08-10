@@ -4,13 +4,13 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "PaymentCompleteDetails.hpp"
-#include "PaymentValidationErrors.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class ContactAddress;
+class PaymentCompleteDetails;
+class PaymentValidationErrors;
 
 /// Interface PaymentResponse
 /// [`PaymentResponse`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse)

@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DOMException.hpp"
-#include "GPUPipelineErrorInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class GPUPipelineErrorInit;
 
 /// Interface GPUPipelineError
 /// [`GPUPipelineError`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineError)

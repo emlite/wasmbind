@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ReadableStream.hpp"
-#include "WebTransportReceiveStreamStats.hpp"
 
 namespace webbind {
+
+class WebTransportReceiveStreamStats;
 
 /// Interface WebTransportReceiveStream
 /// [`WebTransportReceiveStream`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportReceiveStream)

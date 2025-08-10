@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "Point2D.hpp"
 
 namespace webbind {
+
+class Point2D;
 
 /// Dictionary type ConstrainPoint2DParameters
 class ConstrainPoint2DParameters : public emlite::Val {

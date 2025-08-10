@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DOMPointReadOnly.hpp"
-#include "DOMPointInit.hpp"
 
 namespace webbind {
 
 class DOMPoint;
+class DOMPointInit;
 
 /// Interface DOMPoint
 /// [`DOMPoint`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint)

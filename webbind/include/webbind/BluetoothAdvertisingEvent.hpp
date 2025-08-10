@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "BluetoothAdvertisingEventInit.hpp"
 
 namespace webbind {
 
+class BluetoothAdvertisingEventInit;
 class BluetoothDevice;
 class BluetoothManufacturerDataMap;
 class BluetoothServiceDataMap;

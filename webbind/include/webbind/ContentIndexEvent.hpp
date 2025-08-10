@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "ContentIndexEventInit.hpp"
 
 namespace webbind {
+
+class ContentIndexEventInit;
 
 /// Interface ContentIndexEvent
 /// [`ContentIndexEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ContentIndexEvent)

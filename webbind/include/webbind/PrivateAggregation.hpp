@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PAHistogramContribution.hpp"
-#include "PADebugModeOptions.hpp"
 
 namespace webbind {
+
+class PAHistogramContribution;
+class PADebugModeOptions;
 
 /// Interface PrivateAggregation
 /// [`PrivateAggregation`](https://developer.mozilla.org/en-US/docs/Web/API/PrivateAggregation)

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaKeySystemMediaCapability.hpp"
 
 namespace webbind {
+
+class MediaKeySystemMediaCapability;
 
 /// Dictionary type MediaKeySystemConfiguration
 class MediaKeySystemConfiguration : public emlite::Val {

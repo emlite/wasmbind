@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "EventSourceInit.hpp"
 
 namespace webbind {
+
+class EventSourceInit;
 
 /// Interface EventSource
 /// [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)

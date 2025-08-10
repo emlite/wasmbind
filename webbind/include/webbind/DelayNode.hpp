@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "DelayOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class DelayOptions;
 class AudioParam;
 
 /// Interface DelayNode

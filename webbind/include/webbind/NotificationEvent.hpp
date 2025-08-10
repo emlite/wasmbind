@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "NotificationEventInit.hpp"
 
 namespace webbind {
 
+class NotificationEventInit;
 class Notification;
 
 /// Interface NotificationEvent

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "OrientationSensor.hpp"
-#include "OrientationSensorOptions.hpp"
 
 namespace webbind {
+
+class OrientationSensorOptions;
 
 /// Interface AbsoluteOrientationSensor
 /// [`AbsoluteOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/AbsoluteOrientationSensor)

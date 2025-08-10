@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "RegistrationOptions.hpp"
 
 namespace webbind {
 
 class ServiceWorker;
 class ServiceWorkerRegistration;
+class RegistrationOptions;
 
 /// Interface ServiceWorkerContainer
 /// [`ServiceWorkerContainer`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer)

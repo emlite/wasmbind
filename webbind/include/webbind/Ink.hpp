@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "InkPresenterParam.hpp"
 
 namespace webbind {
 
 class DelegatedInkTrailPresenter;
+class InkPresenterParam;
 
 /// Interface Ink
 /// [`Ink`](https://developer.mozilla.org/en-US/docs/Web/API/Ink)

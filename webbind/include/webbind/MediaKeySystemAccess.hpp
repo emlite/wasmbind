@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaKeySystemConfiguration.hpp"
 
 namespace webbind {
 
+class MediaKeySystemConfiguration;
 class MediaKeys;
 
 /// Interface MediaKeySystemAccess

@@ -3,14 +3,15 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PublicKeyCredentialRpEntity.hpp"
-#include "PublicKeyCredentialUserEntityJSON.hpp"
-#include "PublicKeyCredentialParameters.hpp"
-#include "PublicKeyCredentialDescriptorJSON.hpp"
-#include "AuthenticatorSelectionCriteria.hpp"
-#include "AuthenticationExtensionsClientInputsJSON.hpp"
 
 namespace webbind {
+
+class PublicKeyCredentialRpEntity;
+class PublicKeyCredentialUserEntityJSON;
+class PublicKeyCredentialParameters;
+class PublicKeyCredentialDescriptorJSON;
+class AuthenticatorSelectionCriteria;
+class AuthenticationExtensionsClientInputsJSON;
 
 /// Dictionary type PublicKeyCredentialCreationOptionsJSON
 class PublicKeyCredentialCreationOptionsJSON : public emlite::Val {

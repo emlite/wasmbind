@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ClientQueryOptions.hpp"
 
 namespace webbind {
 
 class Client;
+class ClientQueryOptions;
 class WindowClient;
 
 /// Interface Clients

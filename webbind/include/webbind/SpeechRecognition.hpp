@@ -4,7 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "SpeechRecognitionOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -12,6 +11,7 @@ namespace webbind {
 class SpeechGrammarList;
 class SpeechRecognitionPhraseList;
 class MediaStreamTrack;
+class SpeechRecognitionOptions;
 
 /// Interface SpeechRecognition
 /// [`SpeechRecognition`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)

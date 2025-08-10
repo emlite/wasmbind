@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "FenceEvent.hpp"
 
 namespace webbind {
 
+class FenceEvent;
 class FencedFrameConfig;
 class Event;
 

@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "GamepadEventInit.hpp"
 
 namespace webbind {
 
+class GamepadEventInit;
 class Gamepad;
 
 /// Interface GamepadEvent

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "CloseEventInit.hpp"
 
 namespace webbind {
+
+class CloseEventInit;
 
 /// Interface CloseEvent
 /// [`CloseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent)

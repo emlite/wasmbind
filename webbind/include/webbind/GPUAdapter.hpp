@@ -3,7 +3,6 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUDeviceDescriptor.hpp"
 
 namespace webbind {
 
@@ -11,6 +10,7 @@ class GPUSupportedFeatures;
 class GPUSupportedLimits;
 class GPUAdapterInfo;
 class GPUDevice;
+class GPUDeviceDescriptor;
 
 /// Interface GPUAdapter
 /// [`GPUAdapter`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter)

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AudioEncoderConfig.hpp"
 
 namespace webbind {
+
+class AudioEncoderConfig;
 
 /// Dictionary type AudioEncoderSupport
 class AudioEncoderSupport : public emlite::Val {

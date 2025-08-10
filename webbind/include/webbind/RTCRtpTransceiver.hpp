@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCRtpCodec.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class RTCRtpSender;
 class RTCRtpReceiver;
+class RTCRtpCodec;
 
 /// Interface RTCRtpTransceiver
 /// [`RTCRtpTransceiver`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver)

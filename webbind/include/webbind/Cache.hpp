@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "CacheQueryOptions.hpp"
 
 namespace webbind {
 
+class CacheQueryOptions;
 class Response;
 class Request;
 

@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ElementDefinitionOptions.hpp"
 
 namespace webbind {
 
+class ElementDefinitionOptions;
 class Node;
 
 /// Interface CustomElementRegistry

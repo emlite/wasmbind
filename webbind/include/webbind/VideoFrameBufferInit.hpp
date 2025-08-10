@@ -3,12 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PlaneLayout.hpp"
-#include "DOMRectInit.hpp"
-#include "VideoColorSpaceInit.hpp"
-#include "VideoFrameMetadata.hpp"
 
 namespace webbind {
+
+class PlaneLayout;
+class DOMRectInit;
+class VideoColorSpaceInit;
+class VideoFrameMetadata;
 
 /// Dictionary type VideoFrameBufferInit
 class VideoFrameBufferInit : public emlite::Val {

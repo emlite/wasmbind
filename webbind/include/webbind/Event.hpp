@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "EventInit.hpp"
 
 namespace webbind {
 
+class EventInit;
 class EventTarget;
 
 /// Interface Event

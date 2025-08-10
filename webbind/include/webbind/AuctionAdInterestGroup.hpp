@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GenerateBidInterestGroup.hpp"
-#include "ProtectedAudiencePrivateAggregationConfig.hpp"
 
 namespace webbind {
+
+class ProtectedAudiencePrivateAggregationConfig;
 
 /// Dictionary type AuctionAdInterestGroup
 class AuctionAdInterestGroup : public GenerateBidInterestGroup {

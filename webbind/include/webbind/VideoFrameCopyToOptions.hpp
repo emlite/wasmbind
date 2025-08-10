@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMRectInit.hpp"
-#include "PlaneLayout.hpp"
 
 namespace webbind {
+
+class DOMRectInit;
+class PlaneLayout;
 
 /// Dictionary type VideoFrameCopyToOptions
 class VideoFrameCopyToOptions : public emlite::Val {

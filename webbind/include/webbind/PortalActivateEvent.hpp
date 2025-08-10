@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PortalActivateEventInit.hpp"
 
 namespace webbind {
 
+class PortalActivateEventInit;
 class HTMLPortalElement;
 
 /// Interface PortalActivateEvent

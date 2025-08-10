@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "WaveShaperOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class WaveShaperOptions;
 
 /// Interface WaveShaperNode
 /// [`WaveShaperNode`](https://developer.mozilla.org/en-US/docs/Web/API/WaveShaperNode)

@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BackgroundFetchOptions.hpp"
 
 namespace webbind {
 
 class BackgroundFetchRegistration;
+class BackgroundFetchOptions;
 
 /// Interface BackgroundFetchManager
 /// [`BackgroundFetchManager`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchManager)

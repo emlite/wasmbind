@@ -82,8 +82,7 @@ export class DependencyResolver {
     refs.forEach((ref) => {
       // Handle dictionary references
       if (this.dicts.has(ref)) {
-        // Always include dictionary headers, assuming they are standalone files
-        hdrInc.add(`"${ref}.hpp"`);
+        fwd.add(ref);
         srcInc.add(`${ref}.hpp`);
         return;
       }
@@ -176,7 +175,7 @@ export class DependencyResolver {
     refs.forEach((ref) => {
       // Handle dictionary references
       if (this.dicts.has(ref) && ref !== dictName) {
-        hdrInc.add(`"${ref}.hpp"`);
+        fwd.add(ref);
         srcInc.add(`${ref}.hpp`);
         return;
       }

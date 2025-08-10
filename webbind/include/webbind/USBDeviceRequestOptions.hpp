@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "USBDeviceFilter.hpp"
 
 namespace webbind {
+
+class USBDeviceFilter;
 
 /// Dictionary type USBDeviceRequestOptions
 class USBDeviceRequestOptions : public emlite::Val {

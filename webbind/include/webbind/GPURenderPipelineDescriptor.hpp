@@ -4,13 +4,14 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUPipelineDescriptorBase.hpp"
-#include "GPUVertexState.hpp"
-#include "GPUPrimitiveState.hpp"
-#include "GPUDepthStencilState.hpp"
-#include "GPUMultisampleState.hpp"
-#include "GPUFragmentState.hpp"
 
 namespace webbind {
+
+class GPUVertexState;
+class GPUPrimitiveState;
+class GPUDepthStencilState;
+class GPUMultisampleState;
+class GPUFragmentState;
 
 /// Dictionary type GPURenderPipelineDescriptor
 class GPURenderPipelineDescriptor : public GPUPipelineDescriptorBase {

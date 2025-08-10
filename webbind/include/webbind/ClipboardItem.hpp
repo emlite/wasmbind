@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ClipboardItemOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class ClipboardItemOptions;
 class Blob;
 
 /// Interface ClipboardItem

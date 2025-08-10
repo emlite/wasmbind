@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AttributionImpressionResult.hpp"
-#include "AttributionImpressionOptions.hpp"
-#include "AttributionConversionResult.hpp"
-#include "AttributionConversionOptions.hpp"
 
 namespace webbind {
 
 class AttributionAggregationServices;
+class AttributionImpressionResult;
+class AttributionImpressionOptions;
+class AttributionConversionResult;
+class AttributionConversionOptions;
 
 /// Interface Attribution
 /// [`Attribution`](https://developer.mozilla.org/en-US/docs/Web/API/Attribution)

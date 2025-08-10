@@ -4,19 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "RTCConfiguration.hpp"
-#include "RTCOfferOptions.hpp"
-#include "RTCLocalSessionDescriptionInit.hpp"
-#include "RTCSessionDescriptionInit.hpp"
-#include "RTCIceCandidateInit.hpp"
-#include "RTCIdentityProviderOptions.hpp"
-#include "RTCRtpTransceiverInit.hpp"
-#include "RTCDataChannelInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class RTCConfiguration;
+class RTCOfferOptions;
+class RTCLocalSessionDescriptionInit;
 class RTCSessionDescription;
+class RTCSessionDescriptionInit;
+class RTCIceCandidateInit;
+class RTCIdentityProviderOptions;
 class RTCIdentityAssertion;
 class RTCCertificate;
 class RTCRtpSender;
@@ -24,8 +22,10 @@ class RTCRtpReceiver;
 class RTCRtpTransceiver;
 class MediaStreamTrack;
 class MediaStream;
+class RTCRtpTransceiverInit;
 class RTCSctpTransport;
 class RTCDataChannel;
+class RTCDataChannelInit;
 class RTCStatsReport;
 
 /// Interface RTCPeerConnection

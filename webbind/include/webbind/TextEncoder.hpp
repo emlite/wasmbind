@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "TextEncoderEncodeIntoResult.hpp"
 
 namespace webbind {
+
+class TextEncoderEncodeIntoResult;
 
 /// Interface TextEncoder
 /// [`TextEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)

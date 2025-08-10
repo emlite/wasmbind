@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "MediaElementAudioSourceOptions.hpp"
 
 namespace webbind {
 
 class AudioContext;
+class MediaElementAudioSourceOptions;
 class HTMLMediaElement;
 
 /// Interface MediaElementAudioSourceNode

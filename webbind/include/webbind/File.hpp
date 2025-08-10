@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Blob.hpp"
-#include "FilePropertyBag.hpp"
 
 namespace webbind {
+
+class FilePropertyBag;
 
 /// Interface File
 /// [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)

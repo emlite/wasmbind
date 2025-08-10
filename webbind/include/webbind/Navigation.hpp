@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "NavigationUpdateCurrentEntryOptions.hpp"
-#include "NavigationResult.hpp"
-#include "NavigationNavigateOptions.hpp"
-#include "NavigationReloadOptions.hpp"
-#include "NavigationOptions.hpp"
 
 namespace webbind {
 
 class NavigationHistoryEntry;
+class NavigationUpdateCurrentEntryOptions;
 class NavigationTransition;
 class NavigationActivation;
+class NavigationResult;
+class NavigationNavigateOptions;
+class NavigationReloadOptions;
+class NavigationOptions;
 
 /// Interface Navigation
 /// [`Navigation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation)

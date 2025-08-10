@@ -4,13 +4,13 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUObjectDescriptorBase.hpp"
-#include "GPURenderPassColorAttachment.hpp"
-#include "GPURenderPassDepthStencilAttachment.hpp"
-#include "GPURenderPassTimestampWrites.hpp"
 
 namespace webbind {
 
+class GPURenderPassColorAttachment;
+class GPURenderPassDepthStencilAttachment;
 class GPUQuerySet;
+class GPURenderPassTimestampWrites;
 
 /// Dictionary type GPURenderPassDescriptor
 class GPURenderPassDescriptor : public GPUObjectDescriptorBase {

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "SanitizerConfig.hpp"
 
 namespace webbind {
+
+class SanitizerConfig;
 
 /// Interface Sanitizer
 /// [`Sanitizer`](https://developer.mozilla.org/en-US/docs/Web/API/Sanitizer)

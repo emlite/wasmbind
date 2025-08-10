@@ -4,15 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Element.hpp"
-#include "ShowPopoverOptions.hpp"
-#include "FocusOptions.hpp"
 
 namespace webbind {
 
 class ElementInternals;
+class ShowPopoverOptions;
 class EditContext;
 class CSSStyleDeclaration;
 class DOMStringMap;
+class FocusOptions;
 
 /// Interface HTMLElement
 /// [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)

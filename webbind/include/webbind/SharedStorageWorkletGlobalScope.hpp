@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "WorkletGlobalScope.hpp"
-#include "StorageInterestGroup.hpp"
 
 namespace webbind {
 
 class SharedStorage;
 class PrivateAggregation;
+class StorageInterestGroup;
 class SharedStorageWorkletNavigator;
 
 /// Interface SharedStorageWorkletGlobalScope

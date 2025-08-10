@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "SyncEventInit.hpp"
 
 namespace webbind {
+
+class SyncEventInit;
 
 /// Interface SyncEvent
 /// [`SyncEvent`](https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent)

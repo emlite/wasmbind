@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "MIDIConnectionEventInit.hpp"
 
 namespace webbind {
 
+class MIDIConnectionEventInit;
 class MIDIPort;
 
 /// Interface MIDIConnectionEvent

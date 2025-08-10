@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "FileSystemHandlePermissionDescriptor.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class FileSystemHandle;
+class FileSystemHandlePermissionDescriptor;
 
 /// Interface FileSystemHandle
 /// [`FileSystemHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle)

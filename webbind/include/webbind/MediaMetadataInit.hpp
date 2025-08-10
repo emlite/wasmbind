@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaImage.hpp"
-#include "ChapterInformationInit.hpp"
 
 namespace webbind {
+
+class MediaImage;
+class ChapterInformationInit;
 
 /// Dictionary type MediaMetadataInit
 class MediaMetadataInit : public emlite::Val {

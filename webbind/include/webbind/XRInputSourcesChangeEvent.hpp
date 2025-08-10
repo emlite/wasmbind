@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "XRInputSourcesChangeEventInit.hpp"
 
 namespace webbind {
 
+class XRInputSourcesChangeEventInit;
 class XRSession;
 class XRInputSource;
 

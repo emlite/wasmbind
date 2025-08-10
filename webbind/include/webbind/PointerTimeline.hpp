@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AnimationTimeline.hpp"
-#include "PointerTimelineOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class PointerTimelineOptions;
 class Element;
 
 /// Interface PointerTimeline

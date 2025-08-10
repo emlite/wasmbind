@@ -4,14 +4,14 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "AudioEncoderInit.hpp"
-#include "AudioEncoderConfig.hpp"
-#include "AudioEncoderSupport.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class AudioEncoderInit;
+class AudioEncoderConfig;
 class AudioData;
+class AudioEncoderSupport;
 
 /// Interface AudioEncoder
 /// [`AudioEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder)

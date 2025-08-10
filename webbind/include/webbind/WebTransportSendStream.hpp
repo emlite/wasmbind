@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "WritableStream.hpp"
-#include "WebTransportSendStreamStats.hpp"
 
 namespace webbind {
 
 class WebTransportSendGroup;
+class WebTransportSendStreamStats;
 class WebTransportWriter;
 
 /// Interface WebTransportSendStream

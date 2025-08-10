@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCEncodedVideoFrameMetadata.hpp"
 
 namespace webbind {
+
+class RTCEncodedVideoFrameMetadata;
 
 /// Dictionary type RTCEncodedVideoFrameOptions
 class RTCEncodedVideoFrameOptions : public emlite::Val {

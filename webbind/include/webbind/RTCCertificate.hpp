@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCDtlsFingerprint.hpp"
 
 namespace webbind {
+
+class RTCDtlsFingerprint;
 
 /// Interface RTCCertificate
 /// [`RTCCertificate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCCertificate)

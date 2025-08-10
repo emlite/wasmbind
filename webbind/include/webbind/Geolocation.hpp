@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PositionOptions.hpp"
 
 namespace webbind {
+
+class PositionOptions;
 
 /// Interface Geolocation
 /// [`Geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)

@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "VideoColorSpaceInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class VideoColorSpaceInit;
 
 /// Interface VideoColorSpace
 /// [`VideoColorSpace`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace)

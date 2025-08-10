@@ -3,16 +3,16 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "SharedStorageSetMethodOptions.hpp"
-#include "SharedStorageModifierMethodOptions.hpp"
-#include "SharedStorageUrlWithMetadata.hpp"
-#include "SharedStorageRunOperationMethodOptions.hpp"
-#include "SharedStorageWorkletOptions.hpp"
 
 namespace webbind {
 
+class SharedStorageSetMethodOptions;
+class SharedStorageModifierMethodOptions;
 class SharedStorageModifierMethod;
+class SharedStorageUrlWithMetadata;
+class SharedStorageRunOperationMethodOptions;
 class SharedStorageWorklet;
+class SharedStorageWorkletOptions;
 
 /// Interface SharedStorage
 /// [`SharedStorage`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorage)

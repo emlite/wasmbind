@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PaymentRequestUpdateEventInit.hpp"
-#include "PaymentDetailsUpdate.hpp"
 
 namespace webbind {
+
+class PaymentRequestUpdateEventInit;
+class PaymentDetailsUpdate;
 
 /// Interface PaymentRequestUpdateEvent
 /// [`PaymentRequestUpdateEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestUpdateEvent)

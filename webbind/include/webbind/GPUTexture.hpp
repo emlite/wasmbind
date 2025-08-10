@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUTextureViewDescriptor.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class GPUTextureView;
+class GPUTextureViewDescriptor;
 
 /// Interface GPUTexture
 /// [`GPUTexture`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture)

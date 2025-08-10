@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "SFrameTransformOptions.hpp"
 
 namespace webbind {
 
+class SFrameTransformOptions;
 class CryptoKey;
 class ReadableStream;
 class WritableStream;

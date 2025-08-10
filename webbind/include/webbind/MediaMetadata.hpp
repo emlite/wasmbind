@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaMetadataInit.hpp"
 
 namespace webbind {
 
+class MediaMetadataInit;
 class ChapterInformation;
 
 /// Interface MediaMetadata

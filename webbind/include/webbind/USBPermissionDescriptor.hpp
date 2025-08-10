@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "PermissionDescriptor.hpp"
-#include "USBDeviceFilter.hpp"
 
 namespace webbind {
+
+class USBDeviceFilter;
 
 /// Dictionary type USBPermissionDescriptor
 class USBPermissionDescriptor : public PermissionDescriptor {

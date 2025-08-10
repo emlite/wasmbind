@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMMatrix2DInit.hpp"
 
 namespace webbind {
+
+class DOMMatrix2DInit;
 
 /// Interface CanvasPattern
 /// [`CanvasPattern`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasPattern)

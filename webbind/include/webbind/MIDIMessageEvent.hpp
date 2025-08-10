@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "MIDIMessageEventInit.hpp"
 
 namespace webbind {
+
+class MIDIMessageEventInit;
 
 /// Interface MIDIMessageEvent
 /// [`MIDIMessageEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEvent)

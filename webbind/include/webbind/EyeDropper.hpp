@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ColorSelectionResult.hpp"
-#include "ColorSelectionOptions.hpp"
 
 namespace webbind {
+
+class ColorSelectionResult;
+class ColorSelectionOptions;
 
 /// Interface EyeDropper
 /// [`EyeDropper`](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper)

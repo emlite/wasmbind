@@ -4,13 +4,13 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "RequestDeviceOptions.hpp"
-#include "BluetoothLEScanOptions.hpp"
 
 namespace webbind {
 
 class BluetoothDevice;
+class RequestDeviceOptions;
 class BluetoothLEScan;
+class BluetoothLEScanOptions;
 
 /// Interface Bluetooth
 /// [`Bluetooth`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth)

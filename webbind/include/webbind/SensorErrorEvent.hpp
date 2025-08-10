@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "SensorErrorEventInit.hpp"
 
 namespace webbind {
 
+class SensorErrorEventInit;
 class DOMException;
 
 /// Interface SensorErrorEvent

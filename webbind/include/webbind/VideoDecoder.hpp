@@ -4,14 +4,14 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "VideoDecoderInit.hpp"
-#include "VideoDecoderConfig.hpp"
-#include "VideoDecoderSupport.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class VideoDecoderInit;
+class VideoDecoderConfig;
 class EncodedVideoChunk;
+class VideoDecoderSupport;
 
 /// Interface VideoDecoder
 /// [`VideoDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/VideoDecoder)

@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AnimationTimeline.hpp"
-#include "ScrollTimelineOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class ScrollTimelineOptions;
 class Element;
 
 /// Interface ScrollTimeline

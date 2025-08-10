@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "BlobEventInit.hpp"
 
 namespace webbind {
 
+class BlobEventInit;
 class Blob;
 
 /// Interface BlobEvent

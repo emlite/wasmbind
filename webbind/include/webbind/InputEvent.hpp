@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "UIEvent.hpp"
-#include "InputEventInit.hpp"
 
 namespace webbind {
 
+class InputEventInit;
 class DataTransfer;
 class StaticRange;
 

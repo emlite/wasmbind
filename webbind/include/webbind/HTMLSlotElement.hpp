@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "HTMLElement.hpp"
-#include "AssignedNodesOptions.hpp"
 
 namespace webbind {
 
 class Node;
+class AssignedNodesOptions;
 class Element;
 
 /// Interface HTMLSlotElement

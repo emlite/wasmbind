@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "HIDCollectionInfo.hpp"
 
 namespace webbind {
+
+class HIDCollectionInfo;
 
 /// Interface HIDDevice
 /// [`HIDDevice`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice)

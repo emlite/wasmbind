@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "BufferedChangeEventInit.hpp"
 
 namespace webbind {
 
+class BufferedChangeEventInit;
 class TimeRanges;
 
 /// Interface BufferedChangeEvent

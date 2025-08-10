@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "DeviceChangeEventInit.hpp"
 
 namespace webbind {
 
+class DeviceChangeEventInit;
 class MediaDeviceInfo;
 
 /// Interface DeviceChangeEvent

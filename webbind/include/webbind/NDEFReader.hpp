@@ -4,11 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "NDEFScanOptions.hpp"
-#include "NDEFWriteOptions.hpp"
-#include "NDEFMakeReadOnlyOptions.hpp"
 
 namespace webbind {
+
+class NDEFScanOptions;
+class NDEFWriteOptions;
+class NDEFMakeReadOnlyOptions;
 
 /// Interface NDEFReader
 /// [`NDEFReader`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader)

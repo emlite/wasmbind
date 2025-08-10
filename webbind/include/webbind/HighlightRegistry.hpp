@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "HighlightHitResult.hpp"
-#include "HighlightsFromPointOptions.hpp"
 
 namespace webbind {
+
+class HighlightHitResult;
+class HighlightsFromPointOptions;
 
 /// Interface HighlightRegistry
 /// [`HighlightRegistry`](https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry)

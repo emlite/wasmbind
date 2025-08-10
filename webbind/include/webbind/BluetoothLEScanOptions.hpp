@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BluetoothLEScanFilterInit.hpp"
 
 namespace webbind {
+
+class BluetoothLEScanFilterInit;
 
 /// Dictionary type BluetoothLEScanOptions
 class BluetoothLEScanOptions : public emlite::Val {

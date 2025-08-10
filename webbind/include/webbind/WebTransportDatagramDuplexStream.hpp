@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "WebTransportSendOptions.hpp"
 
 namespace webbind {
 
 class WebTransportDatagramsWritable;
+class WebTransportSendOptions;
 class ReadableStream;
 
 /// Interface WebTransportDatagramDuplexStream

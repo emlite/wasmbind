@@ -3,15 +3,15 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "LanguageDetectorCreateOptions.hpp"
-#include "LanguageDetectorCreateCoreOptions.hpp"
-#include "LanguageDetectionResult.hpp"
-#include "LanguageDetectorDetectOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class LanguageDetector;
+class LanguageDetectorCreateOptions;
+class LanguageDetectorCreateCoreOptions;
+class LanguageDetectionResult;
+class LanguageDetectorDetectOptions;
 
 /// Interface LanguageDetector
 /// [`LanguageDetector`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector)

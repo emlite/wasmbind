@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PageSwapEventInit.hpp"
 
 namespace webbind {
 
+class PageSwapEventInit;
 class NavigationActivation;
 class ViewTransition;
 

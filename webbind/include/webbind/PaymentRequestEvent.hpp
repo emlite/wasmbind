@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "PaymentRequestEventInit.hpp"
-#include "PaymentMethodData.hpp"
-#include "PaymentDetailsModifier.hpp"
-#include "PaymentShippingOption.hpp"
-#include "PaymentRequestDetailsUpdate.hpp"
-#include "AddressInit.hpp"
-#include "PaymentHandlerResponse.hpp"
 
 namespace webbind {
 
+class PaymentRequestEventInit;
+class PaymentMethodData;
+class PaymentDetailsModifier;
+class PaymentShippingOption;
 class WindowClient;
+class PaymentRequestDetailsUpdate;
+class AddressInit;
+class PaymentHandlerResponse;
 
 /// Interface PaymentRequestEvent
 /// [`PaymentRequestEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent)

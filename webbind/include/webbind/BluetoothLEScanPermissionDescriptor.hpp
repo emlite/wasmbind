@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "PermissionDescriptor.hpp"
-#include "BluetoothLEScanFilterInit.hpp"
 
 namespace webbind {
+
+class BluetoothLEScanFilterInit;
 
 /// Dictionary type BluetoothLEScanPermissionDescriptor
 class BluetoothLEScanPermissionDescriptor : public PermissionDescriptor {

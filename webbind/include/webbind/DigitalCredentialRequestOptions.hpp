@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DigitalCredentialGetRequest.hpp"
 
 namespace webbind {
+
+class DigitalCredentialGetRequest;
 
 /// Dictionary type DigitalCredentialRequestOptions
 class DigitalCredentialRequestOptions : public emlite::Val {

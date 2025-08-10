@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "NDEFReadingEventInit.hpp"
 
 namespace webbind {
 
+class NDEFReadingEventInit;
 class NDEFMessage;
 
 /// Interface NDEFReadingEvent

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUObjectDescriptorBase.hpp"
-#include "GPUComputePassTimestampWrites.hpp"
 
 namespace webbind {
+
+class GPUComputePassTimestampWrites;
 
 /// Dictionary type GPUComputePassDescriptor
 class GPUComputePassDescriptor : public GPUObjectDescriptorBase {

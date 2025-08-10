@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "TextUpdateEventInit.hpp"
 
 namespace webbind {
+
+class TextUpdateEventInit;
 
 /// Interface TextUpdateEvent
 /// [`TextUpdateEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent)

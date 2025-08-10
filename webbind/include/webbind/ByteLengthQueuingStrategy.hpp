@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "QueuingStrategyInit.hpp"
 
 namespace webbind {
+
+class QueuingStrategyInit;
 
 /// Interface ByteLengthQueuingStrategy
 /// [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)

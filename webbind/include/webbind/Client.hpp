@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "StructuredSerializeOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class StructuredSerializeOptions;
 
 /// Interface Client
 /// [`Client`](https://developer.mozilla.org/en-US/docs/Web/API/Client)

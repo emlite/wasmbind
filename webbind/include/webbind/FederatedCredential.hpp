@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Credential.hpp"
-#include "FederatedCredentialInit.hpp"
 
 namespace webbind {
+
+class FederatedCredentialInit;
 
 /// Interface FederatedCredential
 /// [`FederatedCredential`](https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential)

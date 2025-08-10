@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "SnapEventInit.hpp"
 
 namespace webbind {
 
+class SnapEventInit;
 class Node;
 
 /// Interface SnapEvent

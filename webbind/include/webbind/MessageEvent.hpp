@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "MessageEventInit.hpp"
 
 namespace webbind {
 
+class MessageEventInit;
 class MessagePort;
 
 /// Interface MessageEvent

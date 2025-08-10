@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "TouchInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class TouchInit;
 class EventTarget;
 
 /// Interface Touch

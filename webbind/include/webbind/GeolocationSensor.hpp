@@ -4,11 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Sensor.hpp"
-#include "GeolocationSensorOptions.hpp"
-#include "GeolocationSensorReading.hpp"
-#include "ReadOptions.hpp"
 
 namespace webbind {
+
+class GeolocationSensorOptions;
+class GeolocationSensorReading;
+class ReadOptions;
 
 /// Interface GeolocationSensor
 /// [`GeolocationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationSensor)

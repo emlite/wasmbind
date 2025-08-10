@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "ExtendableEventInit.hpp"
 
 namespace webbind {
+
+class ExtendableEventInit;
 
 /// Interface ExtendableEvent
 /// [`ExtendableEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent)

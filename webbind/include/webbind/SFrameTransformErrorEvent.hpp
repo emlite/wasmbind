@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "SFrameTransformErrorEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class SFrameTransformErrorEventInit;
 
 /// Interface SFrameTransformErrorEvent
 /// [`SFrameTransformErrorEvent`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEvent)

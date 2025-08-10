@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DOMRectReadOnly.hpp"
-#include "DOMRectInit.hpp"
 
 namespace webbind {
 
 class DOMRect;
+class DOMRectInit;
 
 /// Interface DOMRect
 /// [`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect)

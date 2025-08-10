@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "Landmark.hpp"
 
 namespace webbind {
 
 class DOMRectReadOnly;
+class Landmark;
 
 /// Dictionary type DetectedFace
 class DetectedFace : public emlite::Val {

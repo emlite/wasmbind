@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "MediaStreamTrackAudioSourceOptions.hpp"
 
 namespace webbind {
 
 class AudioContext;
+class MediaStreamTrackAudioSourceOptions;
 
 /// Interface MediaStreamTrackAudioSourceNode
 /// [`MediaStreamTrackAudioSourceNode`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackAudioSourceNode)

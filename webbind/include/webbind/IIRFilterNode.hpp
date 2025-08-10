@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "IIRFilterOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class IIRFilterOptions;
 
 /// Interface IIRFilterNode
 /// [`IIRFilterNode`](https://developer.mozilla.org/en-US/docs/Web/API/IIRFilterNode)

@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ResponseInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class ResponseInit;
 class Response;
 class Headers;
 class ReadableStream;

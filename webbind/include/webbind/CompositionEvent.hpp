@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "UIEvent.hpp"
-#include "CompositionEventInit.hpp"
 
 namespace webbind {
+
+class CompositionEventInit;
 
 /// Interface CompositionEvent
 /// [`CompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent)

@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RewriterCreateOptions.hpp"
-#include "RewriterCreateCoreOptions.hpp"
-#include "RewriterRewriteOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class Rewriter;
+class RewriterCreateOptions;
+class RewriterCreateCoreOptions;
+class RewriterRewriteOptions;
 class ReadableStream;
 
 /// Interface Rewriter

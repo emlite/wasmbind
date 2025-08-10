@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AllowedBluetoothDevice.hpp"
 
 namespace webbind {
+
+class AllowedBluetoothDevice;
 
 /// Dictionary type BluetoothPermissionStorage
 class BluetoothPermissionStorage : public emlite::Val {

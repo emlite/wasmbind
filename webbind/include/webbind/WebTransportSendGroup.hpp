@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "WebTransportSendStreamStats.hpp"
 
 namespace webbind {
+
+class WebTransportSendStreamStats;
 
 /// Interface WebTransportSendGroup
 /// [`WebTransportSendGroup`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendGroup)

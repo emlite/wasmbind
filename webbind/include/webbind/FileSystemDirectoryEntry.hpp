@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "FileSystemEntry.hpp"
-#include "FileSystemFlags.hpp"
 
 namespace webbind {
 
 class FileSystemDirectoryReader;
+class FileSystemFlags;
 
 /// Interface FileSystemDirectoryEntry
 /// [`FileSystemDirectoryEntry`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry)

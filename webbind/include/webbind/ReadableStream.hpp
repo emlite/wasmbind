@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "QueuingStrategy.hpp"
-#include "ReadableStreamGetReaderOptions.hpp"
-#include "ReadableWritablePair.hpp"
-#include "StreamPipeOptions.hpp"
 
 namespace webbind {
 
+class QueuingStrategy;
 class ReadableStream;
+class ReadableStreamGetReaderOptions;
+class ReadableWritablePair;
+class StreamPipeOptions;
 class WritableStream;
 
 /// Interface ReadableStream

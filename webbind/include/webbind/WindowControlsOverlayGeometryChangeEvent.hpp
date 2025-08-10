@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "WindowControlsOverlayGeometryChangeEventInit.hpp"
 
 namespace webbind {
 
+class WindowControlsOverlayGeometryChangeEventInit;
 class DOMRect;
 
 /// Interface WindowControlsOverlayGeometryChangeEvent

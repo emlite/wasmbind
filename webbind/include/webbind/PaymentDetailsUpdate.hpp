@@ -4,11 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "PaymentDetailsBase.hpp"
-#include "PaymentItem.hpp"
-#include "AddressErrors.hpp"
-#include "PayerErrors.hpp"
 
 namespace webbind {
+
+class PaymentItem;
+class AddressErrors;
+class PayerErrors;
 
 /// Dictionary type PaymentDetailsUpdate
 class PaymentDetailsUpdate : public PaymentDetailsBase {

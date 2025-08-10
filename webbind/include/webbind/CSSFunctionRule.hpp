@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "CSSGroupingRule.hpp"
-#include "FunctionParameter.hpp"
 
 namespace webbind {
+
+class FunctionParameter;
 
 /// Interface CSSFunctionRule
 /// [`CSSFunctionRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule)

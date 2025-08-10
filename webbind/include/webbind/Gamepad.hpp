@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GamepadTouch.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class GamepadButton;
+class GamepadTouch;
 class GamepadHapticActuator;
 class GamepadPose;
 

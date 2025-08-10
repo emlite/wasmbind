@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "IDBDatabaseInfo.hpp"
 
 namespace webbind {
 
 class IDBOpenDBRequest;
+class IDBDatabaseInfo;
 
 /// Interface IDBFactory
 /// [`IDBFactory`](https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory)

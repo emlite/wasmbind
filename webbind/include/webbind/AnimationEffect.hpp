@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "EffectTiming.hpp"
-#include "ComputedEffectTiming.hpp"
-#include "OptionalEffectTiming.hpp"
 
 namespace webbind {
 
+class EffectTiming;
+class ComputedEffectTiming;
+class OptionalEffectTiming;
 class GroupEffect;
 class AnimationEffect;
 

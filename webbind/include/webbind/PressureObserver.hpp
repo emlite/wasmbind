@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PressureObserverOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class PressureObserverOptions;
 class PressureRecord;
 
 /// Interface PressureObserver

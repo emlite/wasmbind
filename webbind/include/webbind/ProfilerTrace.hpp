@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ProfilerFrame.hpp"
-#include "ProfilerStack.hpp"
-#include "ProfilerSample.hpp"
 
 namespace webbind {
+
+class ProfilerFrame;
+class ProfilerStack;
+class ProfilerSample;
 
 /// Dictionary type ProfilerTrace
 class ProfilerTrace : public emlite::Val {

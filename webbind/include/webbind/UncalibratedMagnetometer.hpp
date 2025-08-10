@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Sensor.hpp"
-#include "MagnetometerSensorOptions.hpp"
 
 namespace webbind {
+
+class MagnetometerSensorOptions;
 
 /// Interface UncalibratedMagnetometer
 /// [`UncalibratedMagnetometer`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer)

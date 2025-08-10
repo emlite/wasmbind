@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "TrackEventInit.hpp"
 
 namespace webbind {
+
+class TrackEventInit;
 
 /// Interface TrackEvent
 /// [`TrackEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TrackEvent)

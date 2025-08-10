@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "CacheQueryOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class BackgroundFetchRecord;
+class CacheQueryOptions;
 
 /// Interface BackgroundFetchRegistration
 /// [`BackgroundFetchRegistration`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration)

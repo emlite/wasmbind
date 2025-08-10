@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DetectedText.hpp"
 
 namespace webbind {
+
+class DetectedText;
 
 /// Interface TextDetector
 /// [`TextDetector`](https://developer.mozilla.org/en-US/docs/Web/API/TextDetector)

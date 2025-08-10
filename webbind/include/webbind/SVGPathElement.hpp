@@ -4,13 +4,13 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "SVGGeometryElement.hpp"
-#include "SVGPathDataSettings.hpp"
 
 namespace webbind {
 
 class SVGAnimatedNumber;
 class DOMPoint;
 class SVGPathSegment;
+class SVGPathDataSettings;
 
 /// Interface SVGPathElement
 /// [`SVGPathElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement)

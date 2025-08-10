@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PaymentCurrencyAmount.hpp"
 
 namespace webbind {
+
+class PaymentCurrencyAmount;
 
 /// Dictionary type PaymentItem
 class PaymentItem : public emlite::Val {

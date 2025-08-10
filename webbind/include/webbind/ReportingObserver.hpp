@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ReportingObserverOptions.hpp"
 
 namespace webbind {
+
+class ReportingObserverOptions;
 
 /// Interface ReportingObserver
 /// [`ReportingObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ReportingObserver)

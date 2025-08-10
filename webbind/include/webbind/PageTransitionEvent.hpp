@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PageTransitionEventInit.hpp"
 
 namespace webbind {
+
+class PageTransitionEventInit;
 
 /// Interface PageTransitionEvent
 /// [`PageTransitionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent)

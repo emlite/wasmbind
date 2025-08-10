@@ -4,16 +4,16 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "NavigateEventInit.hpp"
-#include "NavigationInterceptOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class NavigateEventInit;
 class NavigationDestination;
 class AbortSignal;
 class FormData;
 class Element;
+class NavigationInterceptOptions;
 
 /// Interface NavigateEvent
 /// [`NavigateEvent`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent)

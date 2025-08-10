@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "AudioWorkletNodeOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class AudioWorkletNodeOptions;
 class AudioParamMap;
 class MessagePort;
 

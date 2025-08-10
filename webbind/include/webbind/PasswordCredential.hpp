@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Credential.hpp"
-#include "PasswordCredentialData.hpp"
 
 namespace webbind {
+
+class PasswordCredentialData;
 
 /// Interface PasswordCredential
 /// [`PasswordCredential`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential)

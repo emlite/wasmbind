@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AuthenticationExtensionsPRFValuesJSON.hpp"
 
 namespace webbind {
+
+class AuthenticationExtensionsPRFValuesJSON;
 
 /// Dictionary type AuthenticationExtensionsPRFInputsJSON
 class AuthenticationExtensionsPRFInputsJSON : public emlite::Val {

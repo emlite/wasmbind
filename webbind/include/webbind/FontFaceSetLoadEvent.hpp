@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "FontFaceSetLoadEventInit.hpp"
 
 namespace webbind {
 
+class FontFaceSetLoadEventInit;
 class FontFace;
 
 /// Interface FontFaceSetLoadEvent

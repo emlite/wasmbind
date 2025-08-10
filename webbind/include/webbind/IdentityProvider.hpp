@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "IdentityResolveOptions.hpp"
-#include "IdentityUserInfo.hpp"
-#include "IdentityProviderConfig.hpp"
 
 namespace webbind {
+
+class IdentityResolveOptions;
+class IdentityUserInfo;
+class IdentityProviderConfig;
 
 /// Interface IdentityProvider
 /// [`IdentityProvider`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider)

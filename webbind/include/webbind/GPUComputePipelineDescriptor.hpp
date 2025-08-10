@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUPipelineDescriptorBase.hpp"
-#include "GPUProgrammableStage.hpp"
 
 namespace webbind {
+
+class GPUProgrammableStage;
 
 /// Dictionary type GPUComputePipelineDescriptor
 class GPUComputePipelineDescriptor : public GPUPipelineDescriptorBase {

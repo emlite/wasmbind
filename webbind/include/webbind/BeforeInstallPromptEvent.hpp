@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "EventInit.hpp"
-#include "PromptResponseObject.hpp"
 
 namespace webbind {
+
+class EventInit;
+class PromptResponseObject;
 
 /// Interface BeforeInstallPromptEvent
 /// [`BeforeInstallPromptEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent)

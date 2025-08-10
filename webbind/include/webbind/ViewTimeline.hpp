@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ScrollTimeline.hpp"
-#include "ViewTimelineOptions.hpp"
 
 namespace webbind {
 
+class ViewTimelineOptions;
 class Element;
 class CSSNumericValue;
 

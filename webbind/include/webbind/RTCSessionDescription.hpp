@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCSessionDescriptionInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class RTCSessionDescriptionInit;
 
 /// Interface RTCSessionDescription
 /// [`RTCSessionDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription)

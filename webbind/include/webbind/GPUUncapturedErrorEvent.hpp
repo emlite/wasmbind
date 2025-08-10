@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "GPUUncapturedErrorEventInit.hpp"
 
 namespace webbind {
 
+class GPUUncapturedErrorEventInit;
 class GPUError;
 
 /// Interface GPUUncapturedErrorEvent

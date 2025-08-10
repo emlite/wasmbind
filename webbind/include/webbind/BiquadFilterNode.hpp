@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "BiquadFilterOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class BiquadFilterOptions;
 class AudioParam;
 
 /// Interface BiquadFilterNode

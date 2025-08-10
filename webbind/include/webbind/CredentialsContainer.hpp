@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "CredentialRequestOptions.hpp"
-#include "CredentialCreationOptions.hpp"
 
 namespace webbind {
 
 class Credential;
+class CredentialRequestOptions;
+class CredentialCreationOptions;
 
 /// Interface CredentialsContainer
 /// [`CredentialsContainer`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer)

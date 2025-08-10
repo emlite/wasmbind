@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "SerialPortFilter.hpp"
 
 namespace webbind {
+
+class SerialPortFilter;
 
 /// Dictionary type SerialPortRequestOptions
 class SerialPortRequestOptions : public emlite::Val {

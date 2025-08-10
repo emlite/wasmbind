@@ -4,7 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Element.hpp"
-#include "FocusOptions.hpp"
 
 namespace webbind {
 
@@ -13,6 +12,7 @@ class SVGSVGElement;
 class SVGElement;
 class SVGUseElement;
 class DOMStringMap;
+class FocusOptions;
 class CSSStyleDeclaration;
 
 /// Interface SVGElement

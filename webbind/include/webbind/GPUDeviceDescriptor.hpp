@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUObjectDescriptorBase.hpp"
-#include "GPUQueueDescriptor.hpp"
 
 namespace webbind {
+
+class GPUQueueDescriptor;
 
 /// Dictionary type GPUDeviceDescriptor
 class GPUDeviceDescriptor : public GPUObjectDescriptorBase {

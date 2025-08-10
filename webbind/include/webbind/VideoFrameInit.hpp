@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMRectInit.hpp"
-#include "VideoFrameMetadata.hpp"
 
 namespace webbind {
+
+class DOMRectInit;
+class VideoFrameMetadata;
 
 /// Dictionary type VideoFrameInit
 class VideoFrameInit : public emlite::Val {

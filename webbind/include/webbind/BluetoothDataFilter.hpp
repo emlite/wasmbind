@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BluetoothDataFilterInit.hpp"
 
 namespace webbind {
+
+class BluetoothDataFilterInit;
 
 /// Interface BluetoothDataFilter
 /// [`BluetoothDataFilter`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDataFilter)

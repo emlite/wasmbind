@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "WebGLContextEventInit.hpp"
 
 namespace webbind {
+
+class WebGLContextEventInit;
 
 /// Interface WebGLContextEvent
 /// [`WebGLContextEvent`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextEvent)

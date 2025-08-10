@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "PushEventInit.hpp"
 
 namespace webbind {
 
+class PushEventInit;
 class PushMessageData;
 
 /// Interface PushEvent

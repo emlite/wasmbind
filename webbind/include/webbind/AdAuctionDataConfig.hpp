@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AdAuctionOneSeller.hpp"
-#include "AdAuctionDataBuyerConfig.hpp"
 
 namespace webbind {
+
+class AdAuctionOneSeller;
+class AdAuctionDataBuyerConfig;
 
 /// Dictionary type AdAuctionDataConfig
 class AdAuctionDataConfig : public emlite::Val {

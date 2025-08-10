@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MLRankRange.hpp"
 
 namespace webbind {
+
+class MLRankRange;
 
 /// Dictionary type MLTensorLimits
 class MLTensorLimits : public emlite::Val {

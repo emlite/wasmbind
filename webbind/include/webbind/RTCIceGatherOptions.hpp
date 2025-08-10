@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCIceServer.hpp"
 
 namespace webbind {
+
+class RTCIceServer;
 
 /// Dictionary type RTCIceGatherOptions
 class RTCIceGatherOptions : public emlite::Val {

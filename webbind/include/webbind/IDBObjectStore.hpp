@@ -3,7 +3,6 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "IDBIndexParameters.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -12,6 +11,7 @@ class DOMStringList;
 class IDBTransaction;
 class IDBRequest;
 class IDBIndex;
+class IDBIndexParameters;
 
 /// Interface IDBObjectStore
 /// [`IDBObjectStore`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore)

@@ -4,7 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "PeriodicWaveConstraints.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -27,6 +26,7 @@ class IIRFilterNode;
 class OscillatorNode;
 class PannerNode;
 class PeriodicWave;
+class PeriodicWaveConstraints;
 class ScriptProcessorNode;
 class StereoPannerNode;
 class WaveShaperNode;

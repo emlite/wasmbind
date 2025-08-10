@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "URLPatternComponentResult.hpp"
 
 namespace webbind {
+
+class URLPatternComponentResult;
 
 /// Dictionary type URLPatternResult
 class URLPatternResult : public emlite::Val {

@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCRtpCapabilities.hpp"
-#include "RTCRtpSendParameters.hpp"
-#include "RTCSetParameterOptions.hpp"
 
 namespace webbind {
 
 class MediaStreamTrack;
 class RTCDtlsTransport;
+class RTCRtpCapabilities;
+class RTCRtpSendParameters;
+class RTCSetParameterOptions;
 class MediaStream;
 class RTCStatsReport;
 class RTCDTMFSender;

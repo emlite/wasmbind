@@ -3,17 +3,17 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "XRMediaQuadLayerInit.hpp"
-#include "XRMediaCylinderLayerInit.hpp"
-#include "XRMediaEquirectLayerInit.hpp"
 
 namespace webbind {
 
 class XRSession;
 class XRQuadLayer;
 class HTMLVideoElement;
+class XRMediaQuadLayerInit;
 class XRCylinderLayer;
+class XRMediaCylinderLayerInit;
 class XREquirectLayer;
+class XRMediaEquirectLayerInit;
 
 /// Interface XRMediaBinding
 /// [`XRMediaBinding`](https://developer.mozilla.org/en-US/docs/Web/API/XRMediaBinding)

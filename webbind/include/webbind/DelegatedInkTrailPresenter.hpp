@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "InkTrailStyle.hpp"
 
 namespace webbind {
 
 class Element;
 class PointerEvent;
+class InkTrailStyle;
 
 /// Interface DelegatedInkTrailPresenter
 /// [`DelegatedInkTrailPresenter`](https://developer.mozilla.org/en-US/docs/Web/API/DelegatedInkTrailPresenter)

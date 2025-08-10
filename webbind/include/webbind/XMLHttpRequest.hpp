@@ -4,14 +4,14 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "XMLHttpRequestEventTarget.hpp"
-#include "AttributionReportingRequestOptions.hpp"
-#include "PrivateToken.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class XMLHttpRequestUpload;
 class Document;
+class AttributionReportingRequestOptions;
+class PrivateToken;
 
 /// Interface XMLHttpRequest
 /// [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)

@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ValidityStateFlags.hpp"
 
 namespace webbind {
 
 class ShadowRoot;
 class HTMLFormElement;
+class ValidityStateFlags;
 class HTMLElement;
 class ValidityState;
 class NodeList;

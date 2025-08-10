@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "MediaEncryptedEventInit.hpp"
 
 namespace webbind {
+
+class MediaEncryptedEventInit;
 
 /// Interface MediaEncryptedEvent
 /// [`MediaEncryptedEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MediaEncryptedEvent)

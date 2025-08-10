@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "UIEventInit.hpp"
 
 namespace webbind {
 
+class UIEventInit;
 class Window;
 class InputDeviceCapabilities;
 

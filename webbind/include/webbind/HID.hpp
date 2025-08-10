@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "HIDDeviceRequestOptions.hpp"
 
 namespace webbind {
 
 class HIDDevice;
+class HIDDeviceRequestOptions;
 
 /// Interface HID
 /// [`HID`](https://developer.mozilla.org/en-US/docs/Web/API/HID)

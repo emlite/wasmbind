@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "BackgroundFetchEventInit.hpp"
 
 namespace webbind {
 
+class BackgroundFetchEventInit;
 class BackgroundFetchRegistration;
 
 /// Interface BackgroundFetchEvent

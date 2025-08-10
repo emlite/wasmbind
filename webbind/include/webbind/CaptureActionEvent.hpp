@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "CaptureActionEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class CaptureActionEventInit;
 
 /// Interface CaptureActionEvent
 /// [`CaptureActionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureActionEvent)

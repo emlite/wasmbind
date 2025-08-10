@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "FontFaceDescriptors.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class FontFaceDescriptors;
 class FontFace;
 class FontFaceFeatures;
 class FontFaceVariations;

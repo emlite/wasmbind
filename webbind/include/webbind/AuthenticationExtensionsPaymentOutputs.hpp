@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BrowserBoundSignature.hpp"
 
 namespace webbind {
+
+class BrowserBoundSignature;
 
 /// Dictionary type AuthenticationExtensionsPaymentOutputs
 class AuthenticationExtensionsPaymentOutputs : public emlite::Val {

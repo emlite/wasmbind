@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "VideoDecoderConfig.hpp"
-#include "SvcOutputMetadata.hpp"
 
 namespace webbind {
+
+class VideoDecoderConfig;
+class SvcOutputMetadata;
 
 /// Dictionary type EncodedVideoChunkMetadata
 class EncodedVideoChunkMetadata : public emlite::Val {

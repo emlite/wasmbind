@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "MediaKeyMessageEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class MediaKeyMessageEventInit;
 
 /// Interface MediaKeyMessageEvent
 /// [`MediaKeyMessageEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent)

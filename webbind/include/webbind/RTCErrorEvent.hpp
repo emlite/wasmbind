@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "RTCErrorEventInit.hpp"
 
 namespace webbind {
 
+class RTCErrorEventInit;
 class RTCError;
 
 /// Interface RTCErrorEvent

@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GetComposedRangesOptions.hpp"
 
 namespace webbind {
 
 class Node;
 class Range;
 class StaticRange;
+class GetComposedRangesOptions;
 
 /// Interface Selection
 /// [`Selection`](https://developer.mozilla.org/en-US/docs/Web/API/Selection)

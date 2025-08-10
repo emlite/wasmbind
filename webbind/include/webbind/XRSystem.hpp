@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "XRSessionInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class XRSession;
+class XRSessionInit;
 
 /// Interface XRSystem
 /// [`XRSystem`](https://developer.mozilla.org/en-US/docs/Web/API/XRSystem)

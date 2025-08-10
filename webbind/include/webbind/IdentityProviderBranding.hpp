@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "IdentityProviderIcon.hpp"
 
 namespace webbind {
+
+class IdentityProviderIcon;
 
 /// Dictionary type IdentityProviderBranding
 class IdentityProviderBranding : public emlite::Val {

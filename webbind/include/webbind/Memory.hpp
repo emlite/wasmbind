@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MemoryDescriptor.hpp"
 
 namespace webbind {
+
+class MemoryDescriptor;
 
 /// Interface Memory
 /// [`Memory`](https://developer.mozilla.org/en-US/docs/Web/API/Memory)

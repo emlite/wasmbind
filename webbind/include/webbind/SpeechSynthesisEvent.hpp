@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "SpeechSynthesisEventInit.hpp"
 
 namespace webbind {
 
+class SpeechSynthesisEventInit;
 class SpeechSynthesisUtterance;
 
 /// Interface SpeechSynthesisEvent

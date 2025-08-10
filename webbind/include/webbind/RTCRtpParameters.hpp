@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCRtpHeaderExtensionParameters.hpp"
-#include "RTCRtcpParameters.hpp"
-#include "RTCRtpCodecParameters.hpp"
 
 namespace webbind {
+
+class RTCRtpHeaderExtensionParameters;
+class RTCRtcpParameters;
+class RTCRtpCodecParameters;
 
 /// Dictionary type RTCRtpParameters
 class RTCRtpParameters : public emlite::Val {

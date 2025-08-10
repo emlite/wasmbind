@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "ClipboardEventInit.hpp"
 
 namespace webbind {
 
+class ClipboardEventInit;
 class DataTransfer;
 
 /// Interface ClipboardEvent

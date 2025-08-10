@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "PeriodicSyncEventInit.hpp"
 
 namespace webbind {
+
+class PeriodicSyncEventInit;
 
 /// Interface PeriodicSyncEvent
 /// [`PeriodicSyncEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncEvent)

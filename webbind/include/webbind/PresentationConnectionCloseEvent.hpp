@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PresentationConnectionCloseEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class PresentationConnectionCloseEventInit;
 
 /// Interface PresentationConnectionCloseEvent
 /// [`PresentationConnectionCloseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionCloseEvent)

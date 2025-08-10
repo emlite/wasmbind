@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "HashChangeEventInit.hpp"
 
 namespace webbind {
+
+class HashChangeEventInit;
 
 /// Interface HashChangeEvent
 /// [`HashChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent)

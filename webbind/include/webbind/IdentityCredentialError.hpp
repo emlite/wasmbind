@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DOMException.hpp"
-#include "IdentityCredentialErrorInit.hpp"
 
 namespace webbind {
+
+class IdentityCredentialErrorInit;
 
 /// Interface IdentityCredentialError
 /// [`IdentityCredentialError`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError)

@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "CommandEventInit.hpp"
 
 namespace webbind {
 
+class CommandEventInit;
 class Element;
 
 /// Interface CommandEvent

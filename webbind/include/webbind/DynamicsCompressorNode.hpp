@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "DynamicsCompressorOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class DynamicsCompressorOptions;
 class AudioParam;
 
 /// Interface DynamicsCompressorNode

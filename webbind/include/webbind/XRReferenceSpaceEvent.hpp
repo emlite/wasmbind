@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "XRReferenceSpaceEventInit.hpp"
 
 namespace webbind {
 
+class XRReferenceSpaceEventInit;
 class XRReferenceSpace;
 class XRRigidTransform;
 

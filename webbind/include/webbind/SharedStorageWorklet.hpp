@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Worklet.hpp"
-#include "SharedStorageUrlWithMetadata.hpp"
-#include "SharedStorageRunOperationMethodOptions.hpp"
 
 namespace webbind {
+
+class SharedStorageUrlWithMetadata;
+class SharedStorageRunOperationMethodOptions;
 
 /// Interface SharedStorageWorklet
 /// [`SharedStorageWorklet`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorklet)

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MLWhereSupportLimits.hpp"
 
 namespace webbind {
+
+class MLWhereSupportLimits;
 
 /// Dictionary type MLOpSupportLimits
 class MLOpSupportLimits : public emlite::Val {

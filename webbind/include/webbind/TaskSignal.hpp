@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AbortSignal.hpp"
-#include "TaskSignalAnyInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class TaskSignal;
+class TaskSignalAnyInit;
 
 /// Interface TaskSignal
 /// [`TaskSignal`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal)

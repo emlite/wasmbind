@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "LockInfo.hpp"
 
 namespace webbind {
+
+class LockInfo;
 
 /// Dictionary type LockManagerSnapshot
 class LockManagerSnapshot : public emlite::Val {

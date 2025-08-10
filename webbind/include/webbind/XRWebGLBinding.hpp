@@ -3,21 +3,21 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "XRProjectionLayerInit.hpp"
-#include "XRQuadLayerInit.hpp"
-#include "XRCylinderLayerInit.hpp"
-#include "XREquirectLayerInit.hpp"
-#include "XRCubeLayerInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class XRSession;
 class XRProjectionLayer;
+class XRProjectionLayerInit;
 class XRQuadLayer;
+class XRQuadLayerInit;
 class XRCylinderLayer;
+class XRCylinderLayerInit;
 class XREquirectLayer;
+class XREquirectLayerInit;
 class XRCubeLayer;
+class XRCubeLayerInit;
 class XRWebGLSubImage;
 class XRCompositionLayer;
 class XRFrame;

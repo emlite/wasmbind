@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "GetRootNodeOptions.hpp"
 
 namespace webbind {
 
 class Document;
 class Node;
+class GetRootNodeOptions;
 class Element;
 class NodeList;
 

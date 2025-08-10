@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "GainOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class GainOptions;
 class AudioParam;
 
 /// Interface GainNode

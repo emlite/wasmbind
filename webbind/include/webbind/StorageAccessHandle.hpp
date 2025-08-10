@@ -3,7 +3,6 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "StorageEstimate.hpp"
 
 namespace webbind {
 
@@ -12,6 +11,7 @@ class IDBFactory;
 class LockManager;
 class CacheStorage;
 class FileSystemDirectoryHandle;
+class StorageEstimate;
 class BroadcastChannel;
 class SharedWorker;
 

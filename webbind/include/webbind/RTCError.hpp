@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DOMException.hpp"
-#include "RTCErrorInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class RTCErrorInit;
 
 /// Interface RTCError
 /// [`RTCError`](https://developer.mozilla.org/en-US/docs/Web/API/RTCError)

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "OrientationSensor.hpp"
-#include "OrientationSensorOptions.hpp"
 
 namespace webbind {
+
+class OrientationSensorOptions;
 
 /// Interface RelativeOrientationSensor
 /// [`RelativeOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/RelativeOrientationSensor)

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AuthenticationExtensionsLargeBlobOutputsJSON.hpp"
 
 namespace webbind {
+
+class AuthenticationExtensionsLargeBlobOutputsJSON;
 
 /// Dictionary type AuthenticationExtensionsClientOutputsJSON
 class AuthenticationExtensionsClientOutputsJSON : public emlite::Val {

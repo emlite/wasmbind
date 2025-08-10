@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "LayoutConstraintsOptions.hpp"
 
 namespace webbind {
 
 class StylePropertyMapReadOnly;
 class IntrinsicSizes;
 class LayoutFragment;
+class LayoutConstraintsOptions;
 class ChildBreakToken;
 
 /// Interface LayoutChild

@@ -4,16 +4,16 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "AudioOutputOptions.hpp"
-#include "CaptureHandleConfig.hpp"
-#include "MediaTrackSupportedConstraints.hpp"
-#include "MediaStreamConstraints.hpp"
-#include "DisplayMediaStreamOptions.hpp"
 
 namespace webbind {
 
 class MediaDeviceInfo;
+class AudioOutputOptions;
+class CaptureHandleConfig;
+class MediaTrackSupportedConstraints;
 class MediaStream;
+class MediaStreamConstraints;
+class DisplayMediaStreamOptions;
 
 /// Interface MediaDevices
 /// [`MediaDevices`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices)

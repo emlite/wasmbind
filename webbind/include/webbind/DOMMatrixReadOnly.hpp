@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMMatrixInit.hpp"
-#include "DOMPointInit.hpp"
 
 namespace webbind {
 
 class DOMMatrixReadOnly;
+class DOMMatrixInit;
 class DOMMatrix;
 class DOMPoint;
+class DOMPointInit;
 
 /// Interface DOMMatrixReadOnly
 /// [`DOMMatrixReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly)

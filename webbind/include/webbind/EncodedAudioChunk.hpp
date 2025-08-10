@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "EncodedAudioChunkInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class EncodedAudioChunkInit;
 
 /// Interface EncodedAudioChunk
 /// [`EncodedAudioChunk`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk)

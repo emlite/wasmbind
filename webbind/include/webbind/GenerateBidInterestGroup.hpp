@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AuctionAd.hpp"
-#include "AuctionAdInterestGroupSize.hpp"
 
 namespace webbind {
+
+class AuctionAd;
+class AuctionAdInterestGroupSize;
 
 /// Dictionary type GenerateBidInterestGroup
 class GenerateBidInterestGroup : public emlite::Val {

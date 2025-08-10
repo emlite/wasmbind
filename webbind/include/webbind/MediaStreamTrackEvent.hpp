@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "MediaStreamTrackEventInit.hpp"
 
 namespace webbind {
 
+class MediaStreamTrackEventInit;
 class MediaStreamTrack;
 
 /// Interface MediaStreamTrackEvent

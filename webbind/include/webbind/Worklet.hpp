@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "WorkletOptions.hpp"
 
 namespace webbind {
+
+class WorkletOptions;
 
 /// Interface Worklet
 /// [`Worklet`](https://developer.mozilla.org/en-US/docs/Web/API/Worklet)

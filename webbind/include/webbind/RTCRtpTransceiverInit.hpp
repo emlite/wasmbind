@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCRtpEncodingParameters.hpp"
 
 namespace webbind {
 
 class MediaStream;
+class RTCRtpEncodingParameters;
 
 /// Dictionary type RTCRtpTransceiverInit
 class RTCRtpTransceiverInit : public emlite::Val {

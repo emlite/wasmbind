@@ -3,12 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaCapabilitiesDecodingInfo.hpp"
-#include "MediaDecodingConfiguration.hpp"
-#include "MediaCapabilitiesEncodingInfo.hpp"
-#include "MediaEncodingConfiguration.hpp"
 
 namespace webbind {
+
+class MediaCapabilitiesDecodingInfo;
+class MediaDecodingConfiguration;
+class MediaCapabilitiesEncodingInfo;
+class MediaEncodingConfiguration;
 
 /// Interface MediaCapabilities
 /// [`MediaCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities)

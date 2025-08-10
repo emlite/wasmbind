@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "PerformanceEntry.hpp"
-#include "PerformanceMarkOptions.hpp"
 
 namespace webbind {
+
+class PerformanceMarkOptions;
 
 /// Interface PerformanceMark
 /// [`PerformanceMark`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMark)

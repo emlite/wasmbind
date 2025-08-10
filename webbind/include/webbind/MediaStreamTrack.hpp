@@ -4,15 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "MediaTrackCapabilities.hpp"
-#include "MediaTrackConstraints.hpp"
-#include "MediaTrackSettings.hpp"
-#include "CaptureHandle.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class MediaStreamTrack;
+class MediaTrackCapabilities;
+class MediaTrackConstraints;
+class MediaTrackSettings;
+class CaptureHandle;
 
 /// Interface MediaStreamTrack
 /// [`MediaStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack)

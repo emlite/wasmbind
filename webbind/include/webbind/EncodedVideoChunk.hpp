@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "EncodedVideoChunkInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class EncodedVideoChunkInit;
 
 /// Interface EncodedVideoChunk
 /// [`EncodedVideoChunk`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk)

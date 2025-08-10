@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MLTensorLimits.hpp"
-#include "MLDataTypeLimits.hpp"
 
 namespace webbind {
+
+class MLTensorLimits;
+class MLDataTypeLimits;
 
 /// Dictionary type MLPreluSupportLimits
 class MLPreluSupportLimits : public emlite::Val {

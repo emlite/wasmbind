@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Accelerometer.hpp"
-#include "AccelerometerSensorOptions.hpp"
 
 namespace webbind {
+
+class AccelerometerSensorOptions;
 
 /// Interface GravitySensor
 /// [`GravitySensor`](https://developer.mozilla.org/en-US/docs/Web/API/GravitySensor)

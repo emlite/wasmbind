@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ModuleExportDescriptor.hpp"
-#include "ModuleImportDescriptor.hpp"
 
 namespace webbind {
 
+class ModuleExportDescriptor;
 class Module;
+class ModuleImportDescriptor;
 
 /// Interface Module
 /// [`Module`](https://developer.mozilla.org/en-US/docs/Web/API/Module)

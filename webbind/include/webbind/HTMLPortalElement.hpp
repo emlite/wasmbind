@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "HTMLElement.hpp"
-#include "PortalActivateOptions.hpp"
-#include "StructuredSerializeOptions.hpp"
 
 namespace webbind {
+
+class PortalActivateOptions;
+class StructuredSerializeOptions;
 
 /// Interface HTMLPortalElement
 /// [`HTMLPortalElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement)

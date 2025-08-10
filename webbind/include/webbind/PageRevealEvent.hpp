@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PageRevealEventInit.hpp"
 
 namespace webbind {
 
+class PageRevealEventInit;
 class ViewTransition;
 
 /// Interface PageRevealEvent

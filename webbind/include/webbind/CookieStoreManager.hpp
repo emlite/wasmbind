@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "CookieStoreGetOptions.hpp"
 
 namespace webbind {
+
+class CookieStoreGetOptions;
 
 /// Interface CookieStoreManager
 /// [`CookieStoreManager`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreManager)

@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "RTCDataChannelEventInit.hpp"
 
 namespace webbind {
 
+class RTCDataChannelEventInit;
 class RTCDataChannel;
 
 /// Interface RTCDataChannelEvent

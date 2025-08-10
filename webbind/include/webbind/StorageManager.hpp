@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "StorageEstimate.hpp"
 
 namespace webbind {
 
+class StorageEstimate;
 class FileSystemDirectoryHandle;
 
 /// Interface StorageManager

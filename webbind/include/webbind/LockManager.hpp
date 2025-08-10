@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "LockOptions.hpp"
-#include "LockManagerSnapshot.hpp"
 
 namespace webbind {
+
+class LockOptions;
+class LockManagerSnapshot;
 
 /// Interface LockManager
 /// [`LockManager`](https://developer.mozilla.org/en-US/docs/Web/API/LockManager)

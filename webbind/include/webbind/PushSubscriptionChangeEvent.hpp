@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "PushSubscriptionChangeEventInit.hpp"
 
 namespace webbind {
 
+class PushSubscriptionChangeEventInit;
 class PushSubscription;
 
 /// Interface PushSubscriptionChangeEvent

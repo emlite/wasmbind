@@ -3,16 +3,16 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "VideoFrameBufferInit.hpp"
-#include "VideoFrameMetadata.hpp"
-#include "VideoFrameCopyToOptions.hpp"
-#include "PlaneLayout.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class VideoFrameBufferInit;
 class DOMRectReadOnly;
 class VideoColorSpace;
+class VideoFrameMetadata;
+class VideoFrameCopyToOptions;
+class PlaneLayout;
 class VideoFrame;
 
 /// Interface VideoFrame

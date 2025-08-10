@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "MediaRecorderOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class MediaStream;
+class MediaRecorderOptions;
 
 /// Interface MediaRecorder
 /// [`MediaRecorder`](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder)

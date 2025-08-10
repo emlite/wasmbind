@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "UIEvent.hpp"
-#include "FocusEventInit.hpp"
 
 namespace webbind {
 
+class FocusEventInit;
 class EventTarget;
 
 /// Interface FocusEvent

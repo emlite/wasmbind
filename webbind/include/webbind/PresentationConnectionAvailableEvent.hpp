@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "PresentationConnectionAvailableEventInit.hpp"
 
 namespace webbind {
 
+class PresentationConnectionAvailableEventInit;
 class PresentationConnection;
 
 /// Interface PresentationConnectionAvailableEvent

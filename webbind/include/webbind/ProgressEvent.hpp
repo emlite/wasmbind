@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "ProgressEventInit.hpp"
 
 namespace webbind {
+
+class ProgressEventInit;
 
 /// Interface ProgressEvent
 /// [`ProgressEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent)

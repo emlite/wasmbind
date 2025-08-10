@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUCanvasConfiguration.hpp"
 
 namespace webbind {
 
+class GPUCanvasConfiguration;
 class GPUTexture;
 
 /// Interface GPUCanvasContext

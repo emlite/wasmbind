@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "StorageEventInit.hpp"
 
 namespace webbind {
 
+class StorageEventInit;
 class Storage;
 
 /// Interface StorageEvent

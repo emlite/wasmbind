@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "NavigatorUABrandVersion.hpp"
-#include "UADataValues.hpp"
-#include "UALowEntropyJSON.hpp"
 
 namespace webbind {
+
+class NavigatorUABrandVersion;
+class UADataValues;
+class UALowEntropyJSON;
 
 /// Interface NavigatorUAData
 /// [`NavigatorUAData`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData)

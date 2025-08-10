@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "USBConnectionEventInit.hpp"
 
 namespace webbind {
 
+class USBConnectionEventInit;
 class USBDevice;
 
 /// Interface USBConnectionEvent

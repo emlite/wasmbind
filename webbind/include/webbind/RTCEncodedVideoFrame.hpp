@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCEncodedVideoFrameOptions.hpp"
-#include "RTCEncodedVideoFrameMetadata.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class RTCEncodedVideoFrame;
+class RTCEncodedVideoFrameOptions;
+class RTCEncodedVideoFrameMetadata;
 
 /// Interface RTCEncodedVideoFrame
 /// [`RTCEncodedVideoFrame`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedVideoFrame)

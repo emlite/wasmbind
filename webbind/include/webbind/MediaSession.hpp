@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaPositionState.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class MediaMetadata;
+class MediaPositionState;
 
 /// Interface MediaSession
 /// [`MediaSession`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession)

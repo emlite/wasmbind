@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "CookieChangeEventInit.hpp"
-#include "CookieListItem.hpp"
 
 namespace webbind {
+
+class CookieChangeEventInit;
+class CookieListItem;
 
 /// Interface CookieChangeEvent
 /// [`CookieChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEvent)

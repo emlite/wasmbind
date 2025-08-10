@@ -3,12 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PublicKeyCredentialParameters.hpp"
-#include "PaymentEntityLogo.hpp"
-#include "PaymentCurrencyAmount.hpp"
-#include "PaymentCredentialInstrument.hpp"
 
 namespace webbind {
+
+class PublicKeyCredentialParameters;
+class PaymentEntityLogo;
+class PaymentCurrencyAmount;
+class PaymentCredentialInstrument;
 
 /// Dictionary type AuthenticationExtensionsPaymentInputs
 class AuthenticationExtensionsPaymentInputs : public emlite::Val {

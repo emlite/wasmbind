@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "DeviceOrientationEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class DeviceOrientationEventInit;
 
 /// Interface DeviceOrientationEvent
 /// [`DeviceOrientationEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent)

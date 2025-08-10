@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PayerErrors.hpp"
-#include "AddressErrors.hpp"
 
 namespace webbind {
+
+class PayerErrors;
+class AddressErrors;
 
 /// Dictionary type PaymentValidationErrors
 class PaymentValidationErrors : public emlite::Val {

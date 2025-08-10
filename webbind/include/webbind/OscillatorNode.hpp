@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioScheduledSourceNode.hpp"
-#include "OscillatorOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class OscillatorOptions;
 class AudioParam;
 class PeriodicWave;
 

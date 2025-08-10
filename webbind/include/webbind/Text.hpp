@@ -4,17 +4,17 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "CharacterData.hpp"
-#include "BoxQuadOptions.hpp"
-#include "DOMQuadInit.hpp"
-#include "ConvertCoordinateOptions.hpp"
-#include "DOMPointInit.hpp"
 
 namespace webbind {
 
 class Text;
 class DOMQuad;
+class BoxQuadOptions;
+class DOMQuadInit;
+class ConvertCoordinateOptions;
 class DOMRectReadOnly;
 class DOMPoint;
+class DOMPointInit;
 class HTMLSlotElement;
 
 /// Interface Text

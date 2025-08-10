@@ -4,18 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Node.hpp"
-#include "ShadowRootInit.hpp"
-#include "FocusableAreasOption.hpp"
-#include "SpatialNavigationSearchOptions.hpp"
-#include "CheckVisibilityOptions.hpp"
-#include "FullscreenOptions.hpp"
-#include "GetHTMLOptions.hpp"
-#include "PointerLockOptions.hpp"
-#include "BoxQuadOptions.hpp"
-#include "DOMQuadInit.hpp"
-#include "ConvertCoordinateOptions.hpp"
-#include "DOMPointInit.hpp"
-#include "GetAnimationsOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -24,20 +12,32 @@ class DOMTokenList;
 class NamedNodeMap;
 class Attr;
 class ShadowRoot;
+class ShadowRootInit;
 class CustomElementRegistry;
 class Element;
 class HTMLCollection;
+class FocusableAreasOption;
+class SpatialNavigationSearchOptions;
 class CSSPseudoElement;
 class StylePropertyMapReadOnly;
 class DOMRectList;
 class DOMRect;
+class CheckVisibilityOptions;
+class FullscreenOptions;
+class GetHTMLOptions;
+class PointerLockOptions;
 class Range;
 class DOMQuad;
+class BoxQuadOptions;
+class DOMQuadInit;
+class ConvertCoordinateOptions;
 class DOMRectReadOnly;
 class DOMPoint;
+class DOMPointInit;
 class NodeList;
 class HTMLSlotElement;
 class Animation;
+class GetAnimationsOptions;
 
 /// Interface Element
 /// [`Element`](https://developer.mozilla.org/en-US/docs/Web/API/Element)

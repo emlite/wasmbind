@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "ProfilerInitOptions.hpp"
-#include "ProfilerTrace.hpp"
 
 namespace webbind {
+
+class ProfilerInitOptions;
+class ProfilerTrace;
 
 /// Interface Profiler
 /// [`Profiler`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler)

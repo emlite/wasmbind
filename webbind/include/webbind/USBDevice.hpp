@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "USBControlTransferParameters.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class USBConfiguration;
 class USBInTransferResult;
+class USBControlTransferParameters;
 class USBOutTransferResult;
 class USBIsochronousInTransferResult;
 class USBIsochronousOutTransferResult;

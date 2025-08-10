@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "VideoColorSpaceInit.hpp"
 
 namespace webbind {
+
+class VideoColorSpaceInit;
 
 /// Dictionary type VideoDecoderConfig
 class VideoDecoderConfig : public emlite::Val {

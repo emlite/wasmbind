@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AudioDataInit.hpp"
-#include "AudioDataCopyToOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class AudioDataInit;
+class AudioDataCopyToOptions;
 class AudioData;
 
 /// Interface AudioData

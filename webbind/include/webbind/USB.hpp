@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "USBDeviceRequestOptions.hpp"
 
 namespace webbind {
 
 class USBDevice;
+class USBDeviceRequestOptions;
 
 /// Interface USB
 /// [`USB`](https://developer.mozilla.org/en-US/docs/Web/API/USB)

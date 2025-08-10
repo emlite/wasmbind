@@ -3,12 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PaymentCurrencyAmount.hpp"
-#include "PaymentDetailsModifier.hpp"
-#include "PaymentShippingOption.hpp"
-#include "AddressErrors.hpp"
 
 namespace webbind {
+
+class PaymentCurrencyAmount;
+class PaymentDetailsModifier;
+class PaymentShippingOption;
+class AddressErrors;
 
 /// Dictionary type PaymentRequestDetailsUpdate
 class PaymentRequestDetailsUpdate : public emlite::Val {

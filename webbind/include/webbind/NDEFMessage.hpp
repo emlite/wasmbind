@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "NDEFMessageInit.hpp"
 
 namespace webbind {
 
+class NDEFMessageInit;
 class NDEFRecord;
 
 /// Interface NDEFMessage

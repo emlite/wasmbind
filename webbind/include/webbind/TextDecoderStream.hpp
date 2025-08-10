@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "TextDecoderOptions.hpp"
 
 namespace webbind {
 
+class TextDecoderOptions;
 class ReadableStream;
 class WritableStream;
 

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "FileSystemReadWriteOptions.hpp"
 
 namespace webbind {
+
+class FileSystemReadWriteOptions;
 
 /// Interface FileSystemSyncAccessHandle
 /// [`FileSystemSyncAccessHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle)

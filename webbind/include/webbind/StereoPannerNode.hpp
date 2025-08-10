@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "StereoPannerOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class StereoPannerOptions;
 class AudioParam;
 
 /// Interface StereoPannerNode

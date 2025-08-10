@@ -3,13 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUBufferBindingLayout.hpp"
-#include "GPUSamplerBindingLayout.hpp"
-#include "GPUTextureBindingLayout.hpp"
-#include "GPUStorageTextureBindingLayout.hpp"
-#include "GPUExternalTextureBindingLayout.hpp"
 
 namespace webbind {
+
+class GPUBufferBindingLayout;
+class GPUSamplerBindingLayout;
+class GPUTextureBindingLayout;
+class GPUStorageTextureBindingLayout;
+class GPUExternalTextureBindingLayout;
 
 /// Dictionary type GPUBindGroupLayoutEntry
 class GPUBindGroupLayoutEntry : public emlite::Val {

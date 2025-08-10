@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "StyleSheet.hpp"
-#include "CSSStyleSheetInit.hpp"
 
 namespace webbind {
 
+class CSSStyleSheetInit;
 class CSSRule;
 class CSSRuleList;
 class CSSStyleSheet;

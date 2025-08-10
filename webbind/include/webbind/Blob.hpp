@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BlobPropertyBag.hpp"
 
 namespace webbind {
 
+class BlobPropertyBag;
 class Blob;
 class ReadableStream;
 

@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "StorageBucketOptions.hpp"
 
 namespace webbind {
 
 class StorageBucket;
+class StorageBucketOptions;
 
 /// Interface StorageBucketManager
 /// [`StorageBucketManager`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucketManager)

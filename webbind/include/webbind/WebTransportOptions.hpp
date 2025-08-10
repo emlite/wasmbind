@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "WebTransportHash.hpp"
 
 namespace webbind {
+
+class WebTransportHash;
 
 /// Dictionary type WebTransportOptions
 class WebTransportOptions : public emlite::Val {

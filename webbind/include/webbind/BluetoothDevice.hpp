@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "WatchAdvertisementsOptions.hpp"
 
 namespace webbind {
 
 class BluetoothRemoteGATTServer;
+class WatchAdvertisementsOptions;
 
 /// Interface BluetoothDevice
 /// [`BluetoothDevice`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice)

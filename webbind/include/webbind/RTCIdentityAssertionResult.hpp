@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCIdentityProviderDetails.hpp"
 
 namespace webbind {
+
+class RTCIdentityProviderDetails;
 
 /// Dictionary type RTCIdentityAssertionResult
 class RTCIdentityAssertionResult : public emlite::Val {

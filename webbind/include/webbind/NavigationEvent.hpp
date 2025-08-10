@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "UIEvent.hpp"
-#include "NavigationEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class NavigationEventInit;
 class EventTarget;
 
 /// Interface NavigationEvent

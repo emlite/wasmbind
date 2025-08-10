@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "NavigationPreloadState.hpp"
 
 namespace webbind {
+
+class NavigationPreloadState;
 
 /// Interface NavigationPreloadManager
 /// [`NavigationPreloadManager`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager)

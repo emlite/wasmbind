@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "MediaCapabilitiesInfo.hpp"
-#include "MediaEncodingConfiguration.hpp"
 
 namespace webbind {
+
+class MediaEncodingConfiguration;
 
 /// Dictionary type MediaCapabilitiesEncodingInfo
 class MediaCapabilitiesEncodingInfo : public MediaCapabilitiesInfo {

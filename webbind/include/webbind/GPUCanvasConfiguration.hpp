@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUCanvasToneMapping.hpp"
 
 namespace webbind {
 
 class GPUDevice;
+class GPUCanvasToneMapping;
 
 /// Dictionary type GPUCanvasConfiguration
 class GPUCanvasConfiguration : public emlite::Val {

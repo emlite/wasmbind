@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AddressInit.hpp"
 
 namespace webbind {
+
+class AddressInit;
 
 /// Dictionary type PaymentHandlerResponse
 class PaymentHandlerResponse : public emlite::Val {

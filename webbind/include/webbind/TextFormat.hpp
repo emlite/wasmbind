@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "TextFormatInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class TextFormatInit;
 
 /// Interface TextFormat
 /// [`TextFormat`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat)

@@ -4,12 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "WindowPostMessageOptions.hpp"
-#include "OpenFilePickerOptions.hpp"
-#include "SaveFilePickerOptions.hpp"
-#include "DirectoryPickerOptions.hpp"
-#include "QueryOptions.hpp"
-#include "IdleRequestOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -22,6 +16,7 @@ class CustomElementRegistry;
 class BarProp;
 class Element;
 class Navigator;
+class WindowPostMessageOptions;
 class CookieStore;
 class Viewport;
 class MediaQueryList;
@@ -32,10 +27,15 @@ class DigitalGoodsService;
 class DocumentPictureInPicture;
 class Fence;
 class FileSystemFileHandle;
+class OpenFilePickerOptions;
+class SaveFilePickerOptions;
 class FileSystemDirectoryHandle;
+class DirectoryPickerOptions;
 class External;
 class FontData;
+class QueryOptions;
 class PortalHost;
+class IdleRequestOptions;
 class Selection;
 class SharedStorage;
 class SpeechSynthesis;

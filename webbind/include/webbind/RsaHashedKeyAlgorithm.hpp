@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "RsaKeyAlgorithm.hpp"
-#include "KeyAlgorithm.hpp"
 
 namespace webbind {
+
+class KeyAlgorithm;
 
 /// Dictionary type RsaHashedKeyAlgorithm
 class RsaHashedKeyAlgorithm : public RsaKeyAlgorithm {

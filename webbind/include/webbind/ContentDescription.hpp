@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ImageResource.hpp"
 
 namespace webbind {
+
+class ImageResource;
 
 /// Dictionary type ContentDescription
 class ContentDescription : public emlite::Val {

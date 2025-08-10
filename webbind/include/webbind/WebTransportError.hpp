@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DOMException.hpp"
-#include "WebTransportErrorOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class WebTransportErrorOptions;
 
 /// Interface WebTransportError
 /// [`WebTransportError`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportError)

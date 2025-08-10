@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "MediaQueryListEventInit.hpp"
 
 namespace webbind {
+
+class MediaQueryListEventInit;
 
 /// Interface MediaQueryListEvent
 /// [`MediaQueryListEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent)

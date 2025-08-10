@@ -4,15 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "VideoEncoderInit.hpp"
-#include "VideoEncoderConfig.hpp"
-#include "VideoEncoderEncodeOptions.hpp"
-#include "VideoEncoderSupport.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class VideoEncoderInit;
+class VideoEncoderConfig;
 class VideoFrame;
+class VideoEncoderEncodeOptions;
+class VideoEncoderSupport;
 
 /// Interface VideoEncoder
 /// [`VideoEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoder)

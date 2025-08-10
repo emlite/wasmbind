@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "DocumentPictureInPictureOptions.hpp"
 
 namespace webbind {
 
 class Window;
+class DocumentPictureInPictureOptions;
 
 /// Interface DocumentPictureInPicture
 /// [`DocumentPictureInPicture`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture)

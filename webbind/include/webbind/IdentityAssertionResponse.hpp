@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "IdentityCredentialErrorInit.hpp"
 
 namespace webbind {
+
+class IdentityCredentialErrorInit;
 
 /// Dictionary type IdentityAssertionResponse
 class IdentityAssertionResponse : public emlite::Val {

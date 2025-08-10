@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "WorkerGlobalScope.hpp"
-#include "StructuredSerializeOptions.hpp"
 
 namespace webbind {
+
+class StructuredSerializeOptions;
 
 /// Interface DedicatedWorkerGlobalScope
 /// [`DedicatedWorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope)

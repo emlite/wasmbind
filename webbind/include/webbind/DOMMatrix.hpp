@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DOMMatrixReadOnly.hpp"
-#include "DOMMatrixInit.hpp"
 
 namespace webbind {
 
 class DOMMatrix;
+class DOMMatrixInit;
 
 /// Interface DOMMatrix
 /// [`DOMMatrix`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix)

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "MediaDeviceInfo.hpp"
-#include "MediaTrackCapabilities.hpp"
 
 namespace webbind {
+
+class MediaTrackCapabilities;
 
 /// Interface InputDeviceInfo
 /// [`InputDeviceInfo`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo)

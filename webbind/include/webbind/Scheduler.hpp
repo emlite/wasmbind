@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "SchedulerPostTaskOptions.hpp"
 
 namespace webbind {
+
+class SchedulerPostTaskOptions;
 
 /// Interface Scheduler
 /// [`Scheduler`](https://developer.mozilla.org/en-US/docs/Web/API/Scheduler)

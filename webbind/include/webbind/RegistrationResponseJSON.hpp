@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AuthenticatorAttestationResponseJSON.hpp"
-#include "AuthenticationExtensionsClientOutputsJSON.hpp"
 
 namespace webbind {
+
+class AuthenticatorAttestationResponseJSON;
+class AuthenticationExtensionsClientOutputsJSON;
 
 /// Dictionary type RegistrationResponseJSON
 class RegistrationResponseJSON : public emlite::Val {

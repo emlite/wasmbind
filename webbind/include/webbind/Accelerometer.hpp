@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Sensor.hpp"
-#include "AccelerometerSensorOptions.hpp"
 
 namespace webbind {
+
+class AccelerometerSensorOptions;
 
 /// Interface Accelerometer
 /// [`Accelerometer`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer)

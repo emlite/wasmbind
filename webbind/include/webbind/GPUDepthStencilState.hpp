@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUStencilFaceState.hpp"
 
 namespace webbind {
+
+class GPUStencilFaceState;
 
 /// Dictionary type GPUDepthStencilState
 class GPUDepthStencilState : public emlite::Val {

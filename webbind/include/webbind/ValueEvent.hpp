@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "ValueEventInit.hpp"
 
 namespace webbind {
+
+class ValueEventInit;
 
 /// Interface ValueEvent
 /// [`ValueEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ValueEvent)

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "SharedStorageModifierMethod.hpp"
-#include "SharedStorageModifierMethodOptions.hpp"
 
 namespace webbind {
+
+class SharedStorageModifierMethodOptions;
 
 /// Interface SharedStorageAppendMethod
 /// [`SharedStorageAppendMethod`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageAppendMethod)

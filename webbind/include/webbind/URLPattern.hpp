@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "URLPatternOptions.hpp"
-#include "URLPatternResult.hpp"
 
 namespace webbind {
+
+class URLPatternOptions;
+class URLPatternResult;
 
 /// Interface URLPattern
 /// [`URLPattern`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern)

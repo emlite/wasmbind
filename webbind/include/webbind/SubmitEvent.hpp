@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "SubmitEventInit.hpp"
 
 namespace webbind {
 
+class SubmitEventInit;
 class HTMLElement;
 
 /// Interface SubmitEvent

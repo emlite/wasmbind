@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GamepadEffectParameters.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class GamepadEffectParameters;
 
 /// Interface GamepadHapticActuator
 /// [`GamepadHapticActuator`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator)

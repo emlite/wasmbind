@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "InputDeviceCapabilitiesInit.hpp"
 
 namespace webbind {
+
+class InputDeviceCapabilitiesInit;
 
 /// Interface InputDeviceCapabilities
 /// [`InputDeviceCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities)

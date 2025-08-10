@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "BarcodeDetectorOptions.hpp"
-#include "DetectedBarcode.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class BarcodeDetectorOptions;
+class DetectedBarcode;
 
 /// Interface BarcodeDetector
 /// [`BarcodeDetector`](https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector)

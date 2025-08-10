@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "TaskPriorityChangeEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class TaskPriorityChangeEventInit;
 
 /// Interface TaskPriorityChangeEvent
 /// [`TaskPriorityChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TaskPriorityChangeEvent)

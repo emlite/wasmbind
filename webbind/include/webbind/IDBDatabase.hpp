@@ -4,15 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "IDBTransactionOptions.hpp"
-#include "IDBObjectStoreParameters.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class DOMStringList;
 class IDBTransaction;
+class IDBTransactionOptions;
 class IDBObjectStore;
+class IDBObjectStoreParameters;
 
 /// Interface IDBDatabase
 /// [`IDBDatabase`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase)

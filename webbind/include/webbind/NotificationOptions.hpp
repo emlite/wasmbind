@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "NotificationAction.hpp"
 
 namespace webbind {
+
+class NotificationAction;
 
 /// Dictionary type NotificationOptions
 class NotificationOptions : public emlite::Val {

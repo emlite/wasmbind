@@ -4,11 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Node.hpp"
-#include "CaretPositionFromPointOptions.hpp"
-#include "BoxQuadOptions.hpp"
-#include "DOMQuadInit.hpp"
-#include "ConvertCoordinateOptions.hpp"
-#include "DOMPointInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -31,6 +26,7 @@ class SVGSVGElement;
 class NamedFlowMap;
 class ViewTransition;
 class CaretPosition;
+class CaretPositionFromPointOptions;
 class FontMetrics;
 class StylePropertyMapReadOnly;
 class Document;
@@ -45,8 +41,12 @@ class Selection;
 class DocumentTimeline;
 class FontFaceSet;
 class DOMQuad;
+class BoxQuadOptions;
+class DOMQuadInit;
+class ConvertCoordinateOptions;
 class DOMRectReadOnly;
 class DOMPoint;
+class DOMPointInit;
 class Animation;
 class XPathExpression;
 class XPathResult;

@@ -4,12 +4,13 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "CookieListItem.hpp"
-#include "CookieStoreGetOptions.hpp"
-#include "CookieInit.hpp"
-#include "CookieStoreDeleteOptions.hpp"
 
 namespace webbind {
+
+class CookieListItem;
+class CookieStoreGetOptions;
+class CookieInit;
+class CookieStoreDeleteOptions;
 
 /// Interface CookieStore
 /// [`CookieStore`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore)

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "RTCDTMFToneChangeEventInit.hpp"
 
 namespace webbind {
+
+class RTCDTMFToneChangeEventInit;
 
 /// Interface RTCDTMFToneChangeEvent
 /// [`RTCDTMFToneChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFToneChangeEvent)

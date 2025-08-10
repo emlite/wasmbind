@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PushSubscriptionJSON.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class PushSubscriptionOptions;
+class PushSubscriptionJSON;
 
 /// Interface PushSubscription
 /// [`PushSubscription`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription)

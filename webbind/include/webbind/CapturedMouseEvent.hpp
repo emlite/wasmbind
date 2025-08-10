@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "CapturedMouseEventInit.hpp"
 
 namespace webbind {
+
+class CapturedMouseEventInit;
 
 /// Interface CapturedMouseEvent
 /// [`CapturedMouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CapturedMouseEvent)

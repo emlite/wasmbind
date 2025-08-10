@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ImageDecoderInit.hpp"
-#include "ImageDecodeResult.hpp"
-#include "ImageDecodeOptions.hpp"
 
 namespace webbind {
 
+class ImageDecoderInit;
 class ImageTrackList;
+class ImageDecodeResult;
+class ImageDecodeOptions;
 
 /// Interface ImageDecoder
 /// [`ImageDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder)

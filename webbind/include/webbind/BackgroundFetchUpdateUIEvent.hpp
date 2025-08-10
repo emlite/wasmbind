@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "BackgroundFetchEvent.hpp"
-#include "BackgroundFetchEventInit.hpp"
-#include "BackgroundFetchUIOptions.hpp"
 
 namespace webbind {
+
+class BackgroundFetchEventInit;
+class BackgroundFetchUIOptions;
 
 /// Interface BackgroundFetchUpdateUIEvent
 /// [`BackgroundFetchUpdateUIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchUpdateUIEvent)

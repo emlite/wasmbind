@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "HandwritingHints.hpp"
 
 namespace webbind {
 
 class HandwritingDrawing;
+class HandwritingHints;
 
 /// Interface HandwritingRecognizer
 /// [`HandwritingRecognizer`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingRecognizer)

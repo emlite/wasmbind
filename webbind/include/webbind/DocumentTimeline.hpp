@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AnimationTimeline.hpp"
-#include "DocumentTimelineOptions.hpp"
 
 namespace webbind {
+
+class DocumentTimelineOptions;
 
 /// Interface DocumentTimeline
 /// [`DocumentTimeline`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentTimeline)

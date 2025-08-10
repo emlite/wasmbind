@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AbortController.hpp"
-#include "TaskControllerInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class TaskControllerInit;
 
 /// Interface TaskController
 /// [`TaskController`](https://developer.mozilla.org/en-US/docs/Web/API/TaskController)

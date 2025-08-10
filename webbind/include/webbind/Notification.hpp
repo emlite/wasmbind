@@ -4,11 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "NotificationOptions.hpp"
-#include "NotificationAction.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class NotificationOptions;
+class NotificationAction;
 
 /// Interface Notification
 /// [`Notification`](https://developer.mozilla.org/en-US/docs/Web/API/Notification)

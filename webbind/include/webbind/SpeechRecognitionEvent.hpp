@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "SpeechRecognitionEventInit.hpp"
 
 namespace webbind {
 
+class SpeechRecognitionEventInit;
 class SpeechRecognitionResultList;
 
 /// Interface SpeechRecognitionEvent

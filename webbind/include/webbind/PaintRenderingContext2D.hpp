@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMMatrix2DInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class DOMMatrix;
+class DOMMatrix2DInit;
 class CanvasGradient;
 class CanvasPattern;
 class Path2D;

@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "DocumentFragment.hpp"
-#include "GetHTMLOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class Element;
+class GetHTMLOptions;
 class Animation;
 
 /// Interface ShadowRoot

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "ContentVisibilityAutoStateChangeEventInit.hpp"
 
 namespace webbind {
+
+class ContentVisibilityAutoStateChangeEventInit;
 
 /// Interface ContentVisibilityAutoStateChangeEvent
 /// [`ContentVisibilityAutoStateChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ContentVisibilityAutoStateChangeEvent)

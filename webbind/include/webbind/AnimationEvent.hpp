@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "AnimationEventInit.hpp"
 
 namespace webbind {
+
+class AnimationEventInit;
 
 /// Interface AnimationEvent
 /// [`AnimationEvent`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent)

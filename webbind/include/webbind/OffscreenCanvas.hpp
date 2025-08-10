@@ -4,13 +4,13 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "ImageEncodeOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class ImageBitmap;
 class Blob;
+class ImageEncodeOptions;
 
 /// Interface OffscreenCanvas
 /// [`OffscreenCanvas`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)

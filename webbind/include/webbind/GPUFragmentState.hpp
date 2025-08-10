@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUProgrammableStage.hpp"
-#include "GPUColorTargetState.hpp"
 
 namespace webbind {
+
+class GPUColorTargetState;
 
 /// Dictionary type GPUFragmentState
 class GPUFragmentState : public GPUProgrammableStage {

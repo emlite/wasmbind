@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "ChannelSplitterOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class ChannelSplitterOptions;
 
 /// Interface ChannelSplitterNode
 /// [`ChannelSplitterNode`](https://developer.mozilla.org/en-US/docs/Web/API/ChannelSplitterNode)

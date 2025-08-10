@@ -4,15 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "PaymentMethodData.hpp"
-#include "PaymentDetailsInit.hpp"
-#include "PaymentOptions.hpp"
-#include "PaymentDetailsUpdate.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class PaymentMethodData;
+class PaymentDetailsInit;
+class PaymentOptions;
 class PaymentResponse;
+class PaymentDetailsUpdate;
 class ContactAddress;
 
 /// Interface PaymentRequest

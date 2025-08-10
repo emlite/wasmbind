@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "TextFormatUpdateEventInit.hpp"
 
 namespace webbind {
 
+class TextFormatUpdateEventInit;
 class TextFormat;
 
 /// Interface TextFormatUpdateEvent

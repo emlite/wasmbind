@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "IDBVersionChangeEventInit.hpp"
 
 namespace webbind {
+
+class IDBVersionChangeEventInit;
 
 /// Interface IDBVersionChangeEvent
 /// [`IDBVersionChangeEvent`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent)

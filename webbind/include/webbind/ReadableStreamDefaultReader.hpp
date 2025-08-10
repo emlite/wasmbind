@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ReadableStreamReadResult.hpp"
 
 namespace webbind {
 
 class ReadableStream;
+class ReadableStreamReadResult;
 
 /// Interface ReadableStreamDefaultReader
 /// [`ReadableStreamDefaultReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader)

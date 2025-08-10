@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "AudioProcessingEventInit.hpp"
 
 namespace webbind {
 
+class AudioProcessingEventInit;
 class AudioBuffer;
 
 /// Interface AudioProcessingEvent

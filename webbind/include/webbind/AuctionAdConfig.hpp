@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AuctionReportBuyersConfig.hpp"
-#include "AuctionReportBuyerDebugModeConfig.hpp"
-#include "ProtectedAudiencePrivateAggregationConfig.hpp"
-#include "AuctionRealTimeReportingConfig.hpp"
 
 namespace webbind {
 
+class AuctionReportBuyersConfig;
+class AuctionReportBuyerDebugModeConfig;
+class ProtectedAudiencePrivateAggregationConfig;
+class AuctionRealTimeReportingConfig;
 class AbortSignal;
 
 /// Dictionary type AuctionAdConfig

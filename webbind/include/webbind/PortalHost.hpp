@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "StructuredSerializeOptions.hpp"
 
 namespace webbind {
+
+class StructuredSerializeOptions;
 
 /// Interface PortalHost
 /// [`PortalHost`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost)

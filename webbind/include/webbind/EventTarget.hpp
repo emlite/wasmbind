@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ObservableEventListenerOptions.hpp"
 
 namespace webbind {
 
 class Event;
 class Observable;
+class ObservableEventListenerOptions;
 
 /// Interface EventTarget
 /// [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)

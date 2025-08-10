@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioScheduledSourceNode.hpp"
-#include "ConstantSourceOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class ConstantSourceOptions;
 class AudioParam;
 
 /// Interface ConstantSourceNode

@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "AnimationTriggerOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class AnimationTriggerOptions;
 class AnimationTimeline;
 
 /// Interface AnimationTrigger

@@ -4,15 +4,15 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "MemoryMeasurement.hpp"
-#include "PerformanceMarkOptions.hpp"
 
 namespace webbind {
 
 class EventCounts;
 class PerformanceTiming;
 class PerformanceNavigation;
+class MemoryMeasurement;
 class PerformanceMark;
+class PerformanceMarkOptions;
 class PerformanceMeasure;
 
 /// Interface Performance

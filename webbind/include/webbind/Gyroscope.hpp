@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Sensor.hpp"
-#include "GyroscopeSensorOptions.hpp"
 
 namespace webbind {
+
+class GyroscopeSensorOptions;
 
 /// Interface Gyroscope
 /// [`Gyroscope`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope)

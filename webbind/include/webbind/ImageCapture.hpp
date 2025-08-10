@@ -3,13 +3,13 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PhotoSettings.hpp"
-#include "PhotoCapabilities.hpp"
 
 namespace webbind {
 
 class MediaStreamTrack;
 class Blob;
+class PhotoSettings;
+class PhotoCapabilities;
 class ImageBitmap;
 
 /// Interface ImageCapture

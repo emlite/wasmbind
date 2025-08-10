@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Element.hpp"
-#include "FocusOptions.hpp"
 
 namespace webbind {
 
 class CSSStyleDeclaration;
 class DOMStringMap;
+class FocusOptions;
 
 /// Interface MathMLElement
 /// [`MathMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement)

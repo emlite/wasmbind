@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ReportBody.hpp"
 
 namespace webbind {
+
+class ReportBody;
 
 /// Dictionary type Report
 class Report : public emlite::Val {

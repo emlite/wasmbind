@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaKeysPolicy.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class MediaKeySession;
+class MediaKeysPolicy;
 
 /// Interface MediaKeys
 /// [`MediaKeys`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys)

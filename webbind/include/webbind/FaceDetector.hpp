@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "FaceDetectorOptions.hpp"
-#include "DetectedFace.hpp"
 
 namespace webbind {
+
+class FaceDetectorOptions;
+class DetectedFace;
 
 /// Interface FaceDetector
 /// [`FaceDetector`](https://developer.mozilla.org/en-US/docs/Web/API/FaceDetector)

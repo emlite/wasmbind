@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "IdleOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class IdleOptions;
 
 /// Interface IdleDetector
 /// [`IdleDetector`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector)

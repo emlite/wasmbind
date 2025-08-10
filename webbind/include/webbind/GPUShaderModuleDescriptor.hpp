@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUObjectDescriptorBase.hpp"
-#include "GPUShaderModuleCompilationHint.hpp"
 
 namespace webbind {
+
+class GPUShaderModuleCompilationHint;
 
 /// Dictionary type GPUShaderModuleDescriptor
 class GPUShaderModuleDescriptor : public GPUObjectDescriptorBase {

@@ -3,11 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ContactInfo.hpp"
-#include "ContactsSelectOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class ContactInfo;
+class ContactsSelectOptions;
 
 /// Interface ContactsManager
 /// [`ContactsManager`](https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager)

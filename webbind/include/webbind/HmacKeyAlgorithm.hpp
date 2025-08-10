@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "KeyAlgorithm.hpp"
-#include "KeyAlgorithm.hpp"
 
 namespace webbind {
+
+class KeyAlgorithm;
 
 /// Dictionary type HmacKeyAlgorithm
 class HmacKeyAlgorithm : public KeyAlgorithm {

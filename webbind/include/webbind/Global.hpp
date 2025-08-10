@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GlobalDescriptor.hpp"
 
 namespace webbind {
+
+class GlobalDescriptor;
 
 /// Interface Global
 /// [`Global`](https://developer.mozilla.org/en-US/docs/Web/API/Global)

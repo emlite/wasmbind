@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "ExtendableEvent.hpp"
-#include "FetchEventInit.hpp"
 
 namespace webbind {
 
+class FetchEventInit;
 class Request;
 class Response;
 

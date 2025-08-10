@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCIceServer.hpp"
 
 namespace webbind {
 
+class RTCIceServer;
 class RTCCertificate;
 
 /// Dictionary type RTCConfiguration

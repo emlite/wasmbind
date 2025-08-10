@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "SubscribeOptions.hpp"
 
 namespace webbind {
 
+class SubscribeOptions;
 class Observable;
 
 /// Interface Observable

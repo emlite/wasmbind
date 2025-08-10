@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "ConvolverOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class ConvolverOptions;
 class AudioBuffer;
 
 /// Interface ConvolverNode

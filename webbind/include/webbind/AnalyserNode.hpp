@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "AudioNode.hpp"
-#include "AnalyserOptions.hpp"
 
 namespace webbind {
 
 class BaseAudioContext;
+class AnalyserOptions;
 
 /// Interface AnalyserNode
 /// [`AnalyserNode`](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode)

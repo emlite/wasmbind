@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "ToggleEventInit.hpp"
 
 namespace webbind {
 
+class ToggleEventInit;
 class Element;
 
 /// Interface ToggleEvent

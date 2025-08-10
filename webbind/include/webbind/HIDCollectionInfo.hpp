@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "HIDReportInfo.hpp"
 
 namespace webbind {
+
+class HIDReportInfo;
 
 /// Dictionary type HIDCollectionInfo
 class HIDCollectionInfo : public emlite::Val {

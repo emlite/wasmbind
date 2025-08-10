@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "GPUProgrammableStage.hpp"
-#include "GPUVertexBufferLayout.hpp"
 
 namespace webbind {
+
+class GPUVertexBufferLayout;
 
 /// Dictionary type GPUVertexState
 class GPUVertexState : public GPUProgrammableStage {

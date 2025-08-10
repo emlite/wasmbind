@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "GPUVertexAttribute.hpp"
 
 namespace webbind {
+
+class GPUVertexAttribute;
 
 /// Dictionary type GPUVertexBufferLayout
 class GPUVertexBufferLayout : public emlite::Val {

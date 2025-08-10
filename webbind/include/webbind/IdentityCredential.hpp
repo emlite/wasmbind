@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Credential.hpp"
-#include "IdentityCredentialDisconnectOptions.hpp"
 
 namespace webbind {
+
+class IdentityCredentialDisconnectOptions;
 
 /// Interface IdentityCredential
 /// [`IdentityCredential`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredential)

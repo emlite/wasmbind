@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "CustomEventInit.hpp"
 
 namespace webbind {
+
+class CustomEventInit;
 
 /// Interface CustomEvent
 /// [`CustomEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)

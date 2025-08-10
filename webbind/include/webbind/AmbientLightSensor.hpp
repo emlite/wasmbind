@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Sensor.hpp"
-#include "SensorOptions.hpp"
 
 namespace webbind {
+
+class SensorOptions;
 
 /// Interface AmbientLightSensor
 /// [`AmbientLightSensor`](https://developer.mozilla.org/en-US/docs/Web/API/AmbientLightSensor)

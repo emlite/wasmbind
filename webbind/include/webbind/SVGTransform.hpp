@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMMatrix2DInit.hpp"
 
 namespace webbind {
 
 class DOMMatrix;
+class DOMMatrix2DInit;
 
 /// Interface SVGTransform
 /// [`SVGTransform`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform)

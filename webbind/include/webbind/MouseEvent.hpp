@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "UIEvent.hpp"
-#include "MouseEventInit.hpp"
 
 namespace webbind {
 
+class MouseEventInit;
 class EventTarget;
 class Window;
 

@@ -3,16 +3,16 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "WebTransportOptions.hpp"
-#include "WebTransportConnectionStats.hpp"
-#include "WebTransportCloseInfo.hpp"
-#include "WebTransportSendStreamOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
+class WebTransportOptions;
+class WebTransportConnectionStats;
+class WebTransportCloseInfo;
 class WebTransportDatagramDuplexStream;
 class WebTransportBidirectionalStream;
+class WebTransportSendStreamOptions;
 class ReadableStream;
 class WebTransportSendStream;
 class WebTransportSendGroup;

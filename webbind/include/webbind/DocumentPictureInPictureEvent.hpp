@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "DocumentPictureInPictureEventInit.hpp"
 
 namespace webbind {
 
+class DocumentPictureInPictureEventInit;
 class Window;
 
 /// Interface DocumentPictureInPictureEvent

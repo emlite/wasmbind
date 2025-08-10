@@ -4,22 +4,22 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "XRRenderStateInit.hpp"
-#include "XRDOMOverlayState.hpp"
-#include "XRHitTestOptionsInit.hpp"
-#include "XRTransientInputHitTestOptionsInit.hpp"
-#include "XRLightProbeInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class XRRenderState;
 class XRInputSourceArray;
+class XRRenderStateInit;
 class XRReferenceSpace;
 class XRAnchor;
+class XRDOMOverlayState;
 class XRHitTestSource;
+class XRHitTestOptionsInit;
 class XRTransientInputHitTestSource;
+class XRTransientInputHitTestOptionsInit;
 class XRLightProbe;
+class XRLightProbeInit;
 
 /// Interface XRSession
 /// [`XRSession`](https://developer.mozilla.org/en-US/docs/Web/API/XRSession)

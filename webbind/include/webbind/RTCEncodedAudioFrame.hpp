@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCEncodedAudioFrameOptions.hpp"
-#include "RTCEncodedAudioFrameMetadata.hpp"
 
 namespace webbind {
 
 class RTCEncodedAudioFrame;
+class RTCEncodedAudioFrameOptions;
+class RTCEncodedAudioFrameMetadata;
 
 /// Interface RTCEncodedAudioFrame
 /// [`RTCEncodedAudioFrame`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedAudioFrame)

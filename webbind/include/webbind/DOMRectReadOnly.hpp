@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMRectInit.hpp"
 
 namespace webbind {
 
 class DOMRectReadOnly;
+class DOMRectInit;
 
 /// Interface DOMRectReadOnly
 /// [`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "TransitionEventInit.hpp"
 
 namespace webbind {
+
+class TransitionEventInit;
 
 /// Interface TransitionEvent
 /// [`TransitionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent)

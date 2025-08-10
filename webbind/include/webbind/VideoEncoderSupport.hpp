@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "VideoEncoderConfig.hpp"
 
 namespace webbind {
+
+class VideoEncoderConfig;
 
 /// Dictionary type VideoEncoderSupport
 class VideoEncoderSupport : public emlite::Val {

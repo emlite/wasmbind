@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "RTCTrackEventInit.hpp"
 
 namespace webbind {
 
+class RTCTrackEventInit;
 class RTCRtpReceiver;
 class MediaStreamTrack;
 class MediaStream;

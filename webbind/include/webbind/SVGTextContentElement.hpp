@@ -4,7 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "SVGGraphicsElement.hpp"
-#include "DOMPointInit.hpp"
 
 namespace webbind {
 
@@ -12,6 +11,7 @@ class SVGAnimatedLength;
 class SVGAnimatedEnumeration;
 class DOMPoint;
 class DOMRect;
+class DOMPointInit;
 
 /// Interface SVGTextContentElement
 /// [`SVGTextContentElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextContentElement)

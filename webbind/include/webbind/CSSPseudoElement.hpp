@@ -4,18 +4,18 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "BoxQuadOptions.hpp"
-#include "DOMQuadInit.hpp"
-#include "ConvertCoordinateOptions.hpp"
-#include "DOMPointInit.hpp"
 
 namespace webbind {
 
 class Element;
 class CSSPseudoElement;
 class DOMQuad;
+class BoxQuadOptions;
+class DOMQuadInit;
+class ConvertCoordinateOptions;
 class DOMRectReadOnly;
 class DOMPoint;
+class DOMPointInit;
 
 /// Interface CSSPseudoElement
 /// [`CSSPseudoElement`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement)

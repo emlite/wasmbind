@@ -4,7 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "SVGGraphicsElement.hpp"
-#include "DOMMatrix2DInit.hpp"
 
 namespace webbind {
 
@@ -20,6 +19,7 @@ class DOMPoint;
 class DOMMatrix;
 class DOMRect;
 class SVGTransform;
+class DOMMatrix2DInit;
 class Element;
 class SVGAnimatedRect;
 class SVGAnimatedPreserveAspectRatio;

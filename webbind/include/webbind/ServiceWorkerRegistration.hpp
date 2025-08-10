@@ -4,8 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "NotificationOptions.hpp"
-#include "GetNotificationOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -17,7 +15,9 @@ class BackgroundFetchManager;
 class SyncManager;
 class ContentIndex;
 class CookieStoreManager;
+class NotificationOptions;
 class Notification;
+class GetNotificationOptions;
 class PaymentManager;
 class PeriodicSyncManager;
 class PushManager;

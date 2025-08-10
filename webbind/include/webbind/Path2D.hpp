@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "DOMMatrix2DInit.hpp"
 
 namespace webbind {
 
 class Path2D;
+class DOMMatrix2DInit;
 
 /// Interface Path2D
 /// [`Path2D`](https://developer.mozilla.org/en-US/docs/Web/API/Path2D)

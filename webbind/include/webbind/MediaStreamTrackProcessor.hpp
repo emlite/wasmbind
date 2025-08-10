@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MediaStreamTrackProcessorInit.hpp"
 
 namespace webbind {
 
+class MediaStreamTrackProcessorInit;
 class ReadableStream;
 
 /// Interface MediaStreamTrackProcessor

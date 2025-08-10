@@ -4,10 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "SpeechRecognitionErrorEventInit.hpp"
 #include "enums.hpp"
 
 namespace webbind {
+
+class SpeechRecognitionErrorEventInit;
 
 /// Interface SpeechRecognitionErrorEvent
 /// [`SpeechRecognitionErrorEvent`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionErrorEvent)

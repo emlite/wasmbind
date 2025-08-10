@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PublicKeyCredentialRequestOptions.hpp"
 
 namespace webbind {
+
+class PublicKeyCredentialRequestOptions;
 
 /// Dictionary type CredentialRequestOptions
 class CredentialRequestOptions : public emlite::Val {

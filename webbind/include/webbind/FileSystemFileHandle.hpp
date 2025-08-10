@@ -4,12 +4,12 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "FileSystemHandle.hpp"
-#include "FileSystemCreateWritableOptions.hpp"
 
 namespace webbind {
 
 class File;
 class FileSystemWritableFileStream;
+class FileSystemCreateWritableOptions;
 class FileSystemSyncAccessHandle;
 
 /// Interface FileSystemFileHandle

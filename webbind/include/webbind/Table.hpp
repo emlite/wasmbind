@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "TableDescriptor.hpp"
 
 namespace webbind {
+
+class TableDescriptor;
 
 /// Interface Table
 /// [`Table`](https://developer.mozilla.org/en-US/docs/Web/API/Table)

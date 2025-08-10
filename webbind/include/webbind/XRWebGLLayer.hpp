@@ -4,11 +4,11 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "XRLayer.hpp"
-#include "XRWebGLLayerInit.hpp"
 
 namespace webbind {
 
 class XRSession;
+class XRWebGLLayerInit;
 class WebGLFramebuffer;
 class XRViewport;
 class XRView;

@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "CharacterBoundsUpdateEventInit.hpp"
 
 namespace webbind {
+
+class CharacterBoundsUpdateEventInit;
 
 /// Interface CharacterBoundsUpdateEvent
 /// [`CharacterBoundsUpdateEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent)

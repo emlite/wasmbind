@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "HandwritingDrawingSegment.hpp"
 
 namespace webbind {
+
+class HandwritingDrawingSegment;
 
 /// Dictionary type HandwritingSegment
 class HandwritingSegment : public emlite::Val {

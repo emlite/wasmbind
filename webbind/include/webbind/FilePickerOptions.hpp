@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "FilePickerAcceptType.hpp"
 
 namespace webbind {
+
+class FilePickerAcceptType;
 
 /// Dictionary type FilePickerOptions
 class FilePickerOptions : public emlite::Val {

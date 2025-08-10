@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "RTCRtpParameters.hpp"
-#include "RTCRtpEncodingParameters.hpp"
 
 namespace webbind {
+
+class RTCRtpEncodingParameters;
 
 /// Dictionary type RTCRtpSendParameters
 class RTCRtpSendParameters : public RTCRtpParameters {

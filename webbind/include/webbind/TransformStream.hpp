@@ -3,10 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "QueuingStrategy.hpp"
 
 namespace webbind {
 
+class QueuingStrategy;
 class ReadableStream;
 class WritableStream;
 

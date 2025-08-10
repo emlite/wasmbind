@@ -3,11 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "MutationObserverInit.hpp"
 
 namespace webbind {
 
 class Node;
+class MutationObserverInit;
 class MutationRecord;
 
 /// Interface MutationObserver

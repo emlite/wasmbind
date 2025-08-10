@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "RTCIdentityProvider.hpp"
 
 namespace webbind {
+
+class RTCIdentityProvider;
 
 /// Interface RTCIdentityProviderRegistrar
 /// [`RTCIdentityProviderRegistrar`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityProviderRegistrar)

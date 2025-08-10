@@ -3,10 +3,11 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "EffectTiming.hpp"
-#include "ComputedEffectTiming.hpp"
 
 namespace webbind {
+
+class EffectTiming;
+class ComputedEffectTiming;
 
 /// Interface WorkletAnimationEffect
 /// [`WorkletAnimationEffect`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect)

@@ -3,9 +3,10 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "PerformanceObserverInit.hpp"
 
 namespace webbind {
+
+class PerformanceObserverInit;
 
 /// Interface PerformanceObserver
 /// [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)

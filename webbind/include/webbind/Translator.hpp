@@ -3,14 +3,14 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "TranslatorCreateOptions.hpp"
-#include "TranslatorCreateCoreOptions.hpp"
-#include "TranslatorTranslateOptions.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class Translator;
+class TranslatorCreateOptions;
+class TranslatorCreateCoreOptions;
+class TranslatorTranslateOptions;
 class ReadableStream;
 
 /// Interface Translator

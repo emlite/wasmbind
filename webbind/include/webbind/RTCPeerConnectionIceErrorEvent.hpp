@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "RTCPeerConnectionIceErrorEventInit.hpp"
 
 namespace webbind {
+
+class RTCPeerConnectionIceErrorEventInit;
 
 /// Interface RTCPeerConnectionIceErrorEvent
 /// [`RTCPeerConnectionIceErrorEvent`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent)

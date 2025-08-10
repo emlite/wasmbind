@@ -3,20 +3,20 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "CanvasRenderingContext2DSettings.hpp"
-#include "DOMMatrix2DInit.hpp"
-#include "ImageDataSettings.hpp"
 #include "enums.hpp"
 
 namespace webbind {
 
 class OffscreenCanvas;
+class CanvasRenderingContext2DSettings;
 class DOMMatrix;
+class DOMMatrix2DInit;
 class CanvasGradient;
 class CanvasPattern;
 class Path2D;
 class TextMetrics;
 class ImageData;
+class ImageDataSettings;
 
 /// Interface OffscreenCanvasRenderingContext2D
 /// [`OffscreenCanvasRenderingContext2D`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D)

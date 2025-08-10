@@ -4,9 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "MouseEvent.hpp"
-#include "WheelEventInit.hpp"
 
 namespace webbind {
+
+class WheelEventInit;
 
 /// Interface WheelEvent
 /// [`WheelEvent`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent)

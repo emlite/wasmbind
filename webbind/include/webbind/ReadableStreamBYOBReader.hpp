@@ -3,12 +3,12 @@
 #include <emlite/emlite.hpp>
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
-#include "ReadableStreamReadResult.hpp"
-#include "ReadableStreamBYOBReaderReadOptions.hpp"
 
 namespace webbind {
 
 class ReadableStream;
+class ReadableStreamReadResult;
+class ReadableStreamBYOBReaderReadOptions;
 
 /// Interface ReadableStreamBYOBReader
 /// [`ReadableStreamBYOBReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader)

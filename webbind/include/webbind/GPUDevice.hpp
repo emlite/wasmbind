@@ -4,19 +4,6 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "EventTarget.hpp"
-#include "GPUBufferDescriptor.hpp"
-#include "GPUTextureDescriptor.hpp"
-#include "GPUSamplerDescriptor.hpp"
-#include "GPUExternalTextureDescriptor.hpp"
-#include "GPUBindGroupLayoutDescriptor.hpp"
-#include "GPUPipelineLayoutDescriptor.hpp"
-#include "GPUBindGroupDescriptor.hpp"
-#include "GPUShaderModuleDescriptor.hpp"
-#include "GPUComputePipelineDescriptor.hpp"
-#include "GPURenderPipelineDescriptor.hpp"
-#include "GPUCommandEncoderDescriptor.hpp"
-#include "GPURenderBundleEncoderDescriptor.hpp"
-#include "GPUQuerySetDescriptor.hpp"
 #include "enums.hpp"
 
 namespace webbind {
@@ -26,18 +13,31 @@ class GPUSupportedLimits;
 class GPUAdapterInfo;
 class GPUQueue;
 class GPUBuffer;
+class GPUBufferDescriptor;
 class GPUTexture;
+class GPUTextureDescriptor;
 class GPUSampler;
+class GPUSamplerDescriptor;
 class GPUExternalTexture;
+class GPUExternalTextureDescriptor;
 class GPUBindGroupLayout;
+class GPUBindGroupLayoutDescriptor;
 class GPUPipelineLayout;
+class GPUPipelineLayoutDescriptor;
 class GPUBindGroup;
+class GPUBindGroupDescriptor;
 class GPUShaderModule;
+class GPUShaderModuleDescriptor;
 class GPUComputePipeline;
+class GPUComputePipelineDescriptor;
 class GPURenderPipeline;
+class GPURenderPipelineDescriptor;
 class GPUCommandEncoder;
+class GPUCommandEncoderDescriptor;
 class GPURenderBundleEncoder;
+class GPURenderBundleEncoderDescriptor;
 class GPUQuerySet;
+class GPUQuerySetDescriptor;
 class GPUDeviceLostInfo;
 class GPUError;
 

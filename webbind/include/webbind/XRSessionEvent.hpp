@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "XRSessionEventInit.hpp"
 
 namespace webbind {
 
+class XRSessionEventInit;
 class XRSession;
 
 /// Interface XRSessionEvent

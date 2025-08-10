@@ -4,10 +4,10 @@
 #include <jsbind/jsbind.hpp>
 #include "enums.hpp"
 #include "Event.hpp"
-#include "RTCPeerConnectionIceEventInit.hpp"
 
 namespace webbind {
 
+class RTCPeerConnectionIceEventInit;
 class RTCIceCandidate;
 
 /// Interface RTCPeerConnectionIceEvent
