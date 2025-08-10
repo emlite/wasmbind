@@ -6,11 +6,15 @@
 namespace webbind {
 
 DynamicsCompressorNode DynamicsCompressorNode::take_ownership(Handle h) noexcept {
-        return DynamicsCompressorNode(h);
-    }
+    return DynamicsCompressorNode(h);
+}
+
 DynamicsCompressorNode DynamicsCompressorNode::clone() const noexcept { return *this; }
+
 emlite::Val DynamicsCompressorNode::instance() noexcept { return emlite::Val::global("DynamicsCompressorNode"); }
+
 DynamicsCompressorNode::DynamicsCompressorNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
+
 DynamicsCompressorNode::DynamicsCompressorNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 DynamicsCompressorNode::DynamicsCompressorNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("DynamicsCompressorNode").new_(context)) {}

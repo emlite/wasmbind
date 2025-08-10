@@ -1,14 +1,16 @@
 #include <webbind/GPUBlendComponent.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUBlendComponent::GPUBlendComponent(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUBlendComponent GPUBlendComponent::take_ownership(Handle h) noexcept {
-        return GPUBlendComponent(h);
-    }
+    return GPUBlendComponent(h);
+}
+
 GPUBlendComponent::GPUBlendComponent(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUBlendComponent::GPUBlendComponent() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUBlendComponent GPUBlendComponent::clone() const noexcept { return *this; }
 
 GPUBlendOperation GPUBlendComponent::operation() const {

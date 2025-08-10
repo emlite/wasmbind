@@ -4,11 +4,15 @@
 namespace webbind {
 
 XPathResult XPathResult::take_ownership(Handle h) noexcept {
-        return XPathResult(h);
-    }
+    return XPathResult(h);
+}
+
 XPathResult XPathResult::clone() const noexcept { return *this; }
+
 emlite::Val XPathResult::instance() noexcept { return emlite::Val::global("XPathResult"); }
+
 XPathResult::XPathResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 XPathResult::XPathResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned short XPathResult::resultType() const {

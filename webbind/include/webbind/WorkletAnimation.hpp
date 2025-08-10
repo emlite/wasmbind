@@ -26,7 +26,7 @@ public:
     WorkletAnimation(const jsbind::String& animatorName, const jsbind::Any& effects, const AnimationTimeline& timeline);
     /// The `new WorkletAnimation(..)` constructor, creating a new WorkletAnimation instance
     WorkletAnimation(const jsbind::String& animatorName, const jsbind::Any& effects, const AnimationTimeline& timeline, const jsbind::Any& options);
-    /// Getter of the `animatorName` attribute.
+    /// [`WorkletAnimation.animatorName`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimation/animatorName)
     /// [`WorkletAnimation.animatorName`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimation/animatorName)
     [[nodiscard]] jsbind::String animatorName() const;
 };

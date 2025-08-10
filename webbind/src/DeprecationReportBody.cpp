@@ -1,14 +1,16 @@
 #include <webbind/DeprecationReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DeprecationReportBody::DeprecationReportBody(Handle h) noexcept : ReportBody(emlite::Val::take_ownership(h)) {}
 DeprecationReportBody DeprecationReportBody::take_ownership(Handle h) noexcept {
-        return DeprecationReportBody(h);
-    }
+    return DeprecationReportBody(h);
+}
+
 DeprecationReportBody::DeprecationReportBody(const emlite::Val &val) noexcept: ReportBody(val) {}
+
 DeprecationReportBody::DeprecationReportBody() noexcept: ReportBody(emlite::Val::object()) {}
+
 DeprecationReportBody DeprecationReportBody::clone() const noexcept { return *this; }
 
 jsbind::String DeprecationReportBody::id() const {

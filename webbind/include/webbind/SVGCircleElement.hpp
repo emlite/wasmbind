@@ -18,13 +18,13 @@ public:
     static SVGCircleElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGCircleElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `cx` attribute.
+    /// [`SVGCircleElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/cx)
     /// [`SVGCircleElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/cx)
     [[nodiscard]] SVGAnimatedLength cx() const;
-    /// Getter of the `cy` attribute.
+    /// [`SVGCircleElement.cy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/cy)
     /// [`SVGCircleElement.cy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/cy)
     [[nodiscard]] SVGAnimatedLength cy() const;
-    /// Getter of the `r` attribute.
+    /// [`SVGCircleElement.r`](https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/r)
     /// [`SVGCircleElement.r`](https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/r)
     [[nodiscard]] SVGAnimatedLength r() const;
 };

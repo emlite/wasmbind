@@ -46,25 +46,25 @@ public:
     /// The summarizeStreaming method.
     /// [`Summarizer.summarizeStreaming`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/summarizeStreaming)
     ReadableStream summarizeStreaming(const jsbind::String& input, const SummarizerSummarizeOptions& options);
-    /// Getter of the `sharedContext` attribute.
+    /// [`Summarizer.sharedContext`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/sharedContext)
     /// [`Summarizer.sharedContext`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/sharedContext)
     [[nodiscard]] jsbind::String sharedContext() const;
-    /// Getter of the `type` attribute.
+    /// [`Summarizer.type`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/type)
     /// [`Summarizer.type`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/type)
     [[nodiscard]] SummarizerType type() const;
-    /// Getter of the `format` attribute.
+    /// [`Summarizer.format`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/format)
     /// [`Summarizer.format`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/format)
     [[nodiscard]] SummarizerFormat format() const;
-    /// Getter of the `length` attribute.
+    /// [`Summarizer.length`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/length)
     /// [`Summarizer.length`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/length)
     [[nodiscard]] SummarizerLength length() const;
-    /// Getter of the `expectedInputLanguages` attribute.
+    /// [`Summarizer.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/expectedInputLanguages)
     /// [`Summarizer.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/expectedInputLanguages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
-    /// Getter of the `expectedContextLanguages` attribute.
+    /// [`Summarizer.expectedContextLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/expectedContextLanguages)
     /// [`Summarizer.expectedContextLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/expectedContextLanguages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
-    /// Getter of the `outputLanguage` attribute.
+    /// [`Summarizer.outputLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/outputLanguage)
     /// [`Summarizer.outputLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/outputLanguage)
     [[nodiscard]] jsbind::String outputLanguage() const;
     /// The measureInputUsage method.
@@ -73,7 +73,7 @@ public:
     /// The measureInputUsage method.
     /// [`Summarizer.measureInputUsage`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/measureInputUsage)
     jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const SummarizerSummarizeOptions& options);
-    /// Getter of the `inputQuota` attribute.
+    /// [`Summarizer.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/inputQuota)
     /// [`Summarizer.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Summarizer/inputQuota)
     [[nodiscard]] double inputQuota() const;
     /// The destroy method.

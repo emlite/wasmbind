@@ -15,13 +15,13 @@ public:
     static DeviceMotionEventRotationRate take_ownership(Handle h) noexcept;
     [[nodiscard]] DeviceMotionEventRotationRate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `alpha` attribute.
+    /// [`DeviceMotionEventRotationRate.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/alpha)
     /// [`DeviceMotionEventRotationRate.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/alpha)
     [[nodiscard]] double alpha() const;
-    /// Getter of the `beta` attribute.
+    /// [`DeviceMotionEventRotationRate.beta`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/beta)
     /// [`DeviceMotionEventRotationRate.beta`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/beta)
     [[nodiscard]] double beta() const;
-    /// Getter of the `gamma` attribute.
+    /// [`DeviceMotionEventRotationRate.gamma`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/gamma)
     /// [`DeviceMotionEventRotationRate.gamma`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/gamma)
     [[nodiscard]] double gamma() const;
 };

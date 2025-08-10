@@ -1,15 +1,17 @@
 #include <webbind/MediaCapabilitiesKeySystemConfiguration.hpp>
 #include <webbind/KeySystemTrackConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaCapabilitiesKeySystemConfiguration::MediaCapabilitiesKeySystemConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaCapabilitiesKeySystemConfiguration MediaCapabilitiesKeySystemConfiguration::take_ownership(Handle h) noexcept {
-        return MediaCapabilitiesKeySystemConfiguration(h);
-    }
+    return MediaCapabilitiesKeySystemConfiguration(h);
+}
+
 MediaCapabilitiesKeySystemConfiguration::MediaCapabilitiesKeySystemConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaCapabilitiesKeySystemConfiguration::MediaCapabilitiesKeySystemConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaCapabilitiesKeySystemConfiguration MediaCapabilitiesKeySystemConfiguration::clone() const noexcept { return *this; }
 
 jsbind::String MediaCapabilitiesKeySystemConfiguration::keySystem() const {

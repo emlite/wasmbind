@@ -4,11 +4,15 @@
 namespace webbind {
 
 GamepadHapticActuator GamepadHapticActuator::take_ownership(Handle h) noexcept {
-        return GamepadHapticActuator(h);
-    }
+    return GamepadHapticActuator(h);
+}
+
 GamepadHapticActuator GamepadHapticActuator::clone() const noexcept { return *this; }
+
 emlite::Val GamepadHapticActuator::instance() noexcept { return emlite::Val::global("GamepadHapticActuator"); }
+
 GamepadHapticActuator::GamepadHapticActuator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GamepadHapticActuator::GamepadHapticActuator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::TypedArray<GamepadHapticEffectType> GamepadHapticActuator::effects() const {

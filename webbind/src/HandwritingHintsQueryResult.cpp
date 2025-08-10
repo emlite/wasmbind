@@ -1,14 +1,16 @@
 #include <webbind/HandwritingHintsQueryResult.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HandwritingHintsQueryResult::HandwritingHintsQueryResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HandwritingHintsQueryResult HandwritingHintsQueryResult::take_ownership(Handle h) noexcept {
-        return HandwritingHintsQueryResult(h);
-    }
+    return HandwritingHintsQueryResult(h);
+}
+
 HandwritingHintsQueryResult::HandwritingHintsQueryResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HandwritingHintsQueryResult::HandwritingHintsQueryResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HandwritingHintsQueryResult HandwritingHintsQueryResult::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<HandwritingRecognitionType> HandwritingHintsQueryResult::recognitionType() const {

@@ -1,14 +1,16 @@
 #include <webbind/MLArgMinMaxOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLArgMinMaxOptions::MLArgMinMaxOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLArgMinMaxOptions MLArgMinMaxOptions::take_ownership(Handle h) noexcept {
-        return MLArgMinMaxOptions(h);
-    }
+    return MLArgMinMaxOptions(h);
+}
+
 MLArgMinMaxOptions::MLArgMinMaxOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLArgMinMaxOptions::MLArgMinMaxOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLArgMinMaxOptions MLArgMinMaxOptions::clone() const noexcept { return *this; }
 
 bool MLArgMinMaxOptions::keepDimensions() const {

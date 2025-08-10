@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type Algorithm
-/// [`Algorithm`](https://developer.mozilla.org/en-US/docs/Web/API/Algorithm)
 class Algorithm : public emlite::Val {
   explicit Algorithm(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit Algorithm(const emlite::Val &val) noexcept;
     Algorithm() noexcept;
     [[nodiscard]] Algorithm clone() const noexcept;
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
 };
 

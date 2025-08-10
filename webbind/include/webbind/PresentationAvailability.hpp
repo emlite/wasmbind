@@ -16,10 +16,10 @@ public:
     static PresentationAvailability take_ownership(Handle h) noexcept;
     [[nodiscard]] PresentationAvailability clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `value` attribute.
+    /// [`PresentationAvailability.value`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/value)
     /// [`PresentationAvailability.value`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/value)
     [[nodiscard]] bool value() const;
-    /// Getter of the `onchange` attribute.
+    /// [`PresentationAvailability.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/onchange)
     /// [`PresentationAvailability.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

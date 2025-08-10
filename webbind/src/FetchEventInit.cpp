@@ -1,15 +1,17 @@
 #include <webbind/FetchEventInit.hpp>
 #include <webbind/Request.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FetchEventInit::FetchEventInit(Handle h) noexcept : ExtendableEventInit(emlite::Val::take_ownership(h)) {}
 FetchEventInit FetchEventInit::take_ownership(Handle h) noexcept {
-        return FetchEventInit(h);
-    }
+    return FetchEventInit(h);
+}
+
 FetchEventInit::FetchEventInit(const emlite::Val &val) noexcept: ExtendableEventInit(val) {}
+
 FetchEventInit::FetchEventInit() noexcept: ExtendableEventInit(emlite::Val::object()) {}
+
 FetchEventInit FetchEventInit::clone() const noexcept { return *this; }
 
 Request FetchEventInit::request() const {

@@ -24,7 +24,7 @@ public:
     static MediaDevices take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaDevices clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `ondevicechange` attribute.
+    /// [`MediaDevices.ondevicechange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/ondevicechange)
     /// [`MediaDevices.ondevicechange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/ondevicechange)
     [[nodiscard]] jsbind::Any ondevicechange() const;
     /// Setter of the `ondevicechange` attribute.
@@ -48,7 +48,7 @@ public:
     /// The setSupportedCaptureActions method.
     /// [`MediaDevices.setSupportedCaptureActions`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/setSupportedCaptureActions)
     jsbind::Undefined setSupportedCaptureActions(const jsbind::TypedArray<jsbind::String>& actions);
-    /// Getter of the `oncaptureaction` attribute.
+    /// [`MediaDevices.oncaptureaction`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/oncaptureaction)
     /// [`MediaDevices.oncaptureaction`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/oncaptureaction)
     [[nodiscard]] jsbind::Any oncaptureaction() const;
     /// Setter of the `oncaptureaction` attribute.

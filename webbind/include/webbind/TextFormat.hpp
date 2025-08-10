@@ -21,16 +21,16 @@ public:
     TextFormat();
     /// The `new TextFormat(..)` constructor, creating a new TextFormat instance
     TextFormat(const TextFormatInit& options);
-    /// Getter of the `rangeStart` attribute.
+    /// [`TextFormat.rangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/rangeStart)
     /// [`TextFormat.rangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/rangeStart)
     [[nodiscard]] unsigned long rangeStart() const;
-    /// Getter of the `rangeEnd` attribute.
+    /// [`TextFormat.rangeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/rangeEnd)
     /// [`TextFormat.rangeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/rangeEnd)
     [[nodiscard]] unsigned long rangeEnd() const;
-    /// Getter of the `underlineStyle` attribute.
+    /// [`TextFormat.underlineStyle`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/underlineStyle)
     /// [`TextFormat.underlineStyle`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/underlineStyle)
     [[nodiscard]] UnderlineStyle underlineStyle() const;
-    /// Getter of the `underlineThickness` attribute.
+    /// [`TextFormat.underlineThickness`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/underlineThickness)
     /// [`TextFormat.underlineThickness`](https://developer.mozilla.org/en-US/docs/Web/API/TextFormat/underlineThickness)
     [[nodiscard]] UnderlineThickness underlineThickness() const;
 };

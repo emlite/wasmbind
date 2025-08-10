@@ -1,14 +1,16 @@
 #include <webbind/AudioNodeOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioNodeOptions::AudioNodeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioNodeOptions AudioNodeOptions::take_ownership(Handle h) noexcept {
-        return AudioNodeOptions(h);
-    }
+    return AudioNodeOptions(h);
+}
+
 AudioNodeOptions::AudioNodeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioNodeOptions::AudioNodeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioNodeOptions AudioNodeOptions::clone() const noexcept { return *this; }
 
 unsigned long AudioNodeOptions::channelCount() const {

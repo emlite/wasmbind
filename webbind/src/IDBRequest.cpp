@@ -5,11 +5,15 @@
 namespace webbind {
 
 IDBRequest IDBRequest::take_ownership(Handle h) noexcept {
-        return IDBRequest(h);
-    }
+    return IDBRequest(h);
+}
+
 IDBRequest IDBRequest::clone() const noexcept { return *this; }
+
 emlite::Val IDBRequest::instance() noexcept { return emlite::Val::global("IDBRequest"); }
+
 IDBRequest::IDBRequest(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 IDBRequest::IDBRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Any IDBRequest::result() const {

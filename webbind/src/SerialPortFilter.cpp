@@ -1,14 +1,16 @@
 #include <webbind/SerialPortFilter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SerialPortFilter::SerialPortFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SerialPortFilter SerialPortFilter::take_ownership(Handle h) noexcept {
-        return SerialPortFilter(h);
-    }
+    return SerialPortFilter(h);
+}
+
 SerialPortFilter::SerialPortFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SerialPortFilter::SerialPortFilter() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SerialPortFilter SerialPortFilter::clone() const noexcept { return *this; }
 
 unsigned short SerialPortFilter::usbVendorId() const {

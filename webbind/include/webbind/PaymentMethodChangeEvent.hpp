@@ -21,10 +21,10 @@ public:
     PaymentMethodChangeEvent(const jsbind::String& type);
     /// The `new PaymentMethodChangeEvent(..)` constructor, creating a new PaymentMethodChangeEvent instance
     PaymentMethodChangeEvent(const jsbind::String& type, const PaymentMethodChangeEventInit& eventInitDict);
-    /// Getter of the `methodName` attribute.
+    /// [`PaymentMethodChangeEvent.methodName`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodName)
     /// [`PaymentMethodChangeEvent.methodName`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodName)
     [[nodiscard]] jsbind::String methodName() const;
-    /// Getter of the `methodDetails` attribute.
+    /// [`PaymentMethodChangeEvent.methodDetails`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodDetails)
     /// [`PaymentMethodChangeEvent.methodDetails`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodDetails)
     [[nodiscard]] jsbind::Object methodDetails() const;
 };

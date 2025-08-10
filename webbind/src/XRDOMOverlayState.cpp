@@ -1,14 +1,16 @@
 #include <webbind/XRDOMOverlayState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRDOMOverlayState::XRDOMOverlayState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRDOMOverlayState XRDOMOverlayState::take_ownership(Handle h) noexcept {
-        return XRDOMOverlayState(h);
-    }
+    return XRDOMOverlayState(h);
+}
+
 XRDOMOverlayState::XRDOMOverlayState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRDOMOverlayState::XRDOMOverlayState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRDOMOverlayState XRDOMOverlayState::clone() const noexcept { return *this; }
 
 XRDOMOverlayType XRDOMOverlayState::type() const {

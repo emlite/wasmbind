@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechSynthesisErrorEvent(..)` constructor, creating a new SpeechSynthesisErrorEvent instance
     SpeechSynthesisErrorEvent(const jsbind::String& type, const SpeechSynthesisErrorEventInit& eventInitDict);
-    /// Getter of the `error` attribute.
+    /// [`SpeechSynthesisErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisErrorEvent/error)
     /// [`SpeechSynthesisErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisErrorEvent/error)
     [[nodiscard]] SpeechSynthesisErrorCode error() const;
 };

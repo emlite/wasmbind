@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AuthenticationExtensionsClientInputsJSON
-/// [`AuthenticationExtensionsClientInputsJSON`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticationExtensionsClientInputsJSON)
 class AuthenticationExtensionsClientInputsJSON : public emlite::Val {
   explicit AuthenticationExtensionsClientInputsJSON(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit AuthenticationExtensionsClientInputsJSON(const emlite::Val &val) noexcept;
     AuthenticationExtensionsClientInputsJSON() noexcept;
     [[nodiscard]] AuthenticationExtensionsClientInputsJSON clone() const noexcept;
+    /// Getter of the `largeBlob` attribute.
     [[nodiscard]] AuthenticationExtensionsLargeBlobInputsJSON largeBlob() const;
+    /// Setter of the `largeBlob` attribute.
     void largeBlob(const AuthenticationExtensionsLargeBlobInputsJSON& value);
 };
 

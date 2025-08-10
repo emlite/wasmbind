@@ -18,13 +18,13 @@ public:
     static NavigatorUAData take_ownership(Handle h) noexcept;
     [[nodiscard]] NavigatorUAData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `brands` attribute.
+    /// [`NavigatorUAData.brands`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/brands)
     /// [`NavigatorUAData.brands`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/brands)
     [[nodiscard]] jsbind::TypedArray<NavigatorUABrandVersion> brands() const;
-    /// Getter of the `mobile` attribute.
+    /// [`NavigatorUAData.mobile`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/mobile)
     /// [`NavigatorUAData.mobile`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/mobile)
     [[nodiscard]] bool mobile() const;
-    /// Getter of the `platform` attribute.
+    /// [`NavigatorUAData.platform`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/platform)
     /// [`NavigatorUAData.platform`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/platform)
     [[nodiscard]] jsbind::String platform() const;
     /// The getHighEntropyValues method.

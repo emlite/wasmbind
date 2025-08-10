@@ -20,16 +20,16 @@ public:
     static SVGGradientElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGGradientElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `gradientUnits` attribute.
+    /// [`SVGGradientElement.gradientUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/gradientUnits)
     /// [`SVGGradientElement.gradientUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/gradientUnits)
     [[nodiscard]] SVGAnimatedEnumeration gradientUnits() const;
-    /// Getter of the `gradientTransform` attribute.
+    /// [`SVGGradientElement.gradientTransform`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/gradientTransform)
     /// [`SVGGradientElement.gradientTransform`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/gradientTransform)
     [[nodiscard]] SVGAnimatedTransformList gradientTransform() const;
-    /// Getter of the `spreadMethod` attribute.
+    /// [`SVGGradientElement.spreadMethod`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/spreadMethod)
     /// [`SVGGradientElement.spreadMethod`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/spreadMethod)
     [[nodiscard]] SVGAnimatedEnumeration spreadMethod() const;
-    /// Getter of the `href` attribute.
+    /// [`SVGGradientElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/href)
     /// [`SVGGradientElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGradientElement/href)
     [[nodiscard]] SVGAnimatedString href() const;
 };

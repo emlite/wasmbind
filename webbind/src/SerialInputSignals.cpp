@@ -1,14 +1,16 @@
 #include <webbind/SerialInputSignals.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SerialInputSignals::SerialInputSignals(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SerialInputSignals SerialInputSignals::take_ownership(Handle h) noexcept {
-        return SerialInputSignals(h);
-    }
+    return SerialInputSignals(h);
+}
+
 SerialInputSignals::SerialInputSignals(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SerialInputSignals::SerialInputSignals() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SerialInputSignals SerialInputSignals::clone() const noexcept { return *this; }
 
 bool SerialInputSignals::dataCarrierDetect() const {

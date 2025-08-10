@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCIdentityValidationResult
-/// [`RTCIdentityValidationResult`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityValidationResult)
 class RTCIdentityValidationResult : public emlite::Val {
   explicit RTCIdentityValidationResult(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit RTCIdentityValidationResult(const emlite::Val &val) noexcept;
     RTCIdentityValidationResult() noexcept;
     [[nodiscard]] RTCIdentityValidationResult clone() const noexcept;
+    /// Getter of the `identity` attribute.
     [[nodiscard]] jsbind::String identity() const;
+    /// Setter of the `identity` attribute.
     void identity(const jsbind::String& value);
+    /// Getter of the `contents` attribute.
     [[nodiscard]] jsbind::String contents() const;
+    /// Setter of the `contents` attribute.
     void contents(const jsbind::String& value);
 };
 

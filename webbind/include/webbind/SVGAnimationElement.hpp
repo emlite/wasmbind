@@ -18,22 +18,22 @@ public:
     static SVGAnimationElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGAnimationElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `targetElement` attribute.
+    /// [`SVGAnimationElement.targetElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/targetElement)
     /// [`SVGAnimationElement.targetElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/targetElement)
     [[nodiscard]] SVGElement targetElement() const;
-    /// Getter of the `onbegin` attribute.
+    /// [`SVGAnimationElement.onbegin`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onbegin)
     /// [`SVGAnimationElement.onbegin`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onbegin)
     [[nodiscard]] jsbind::Any onbegin() const;
     /// Setter of the `onbegin` attribute.
     /// [`SVGAnimationElement.onbegin`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onbegin)
     void onbegin(const jsbind::Any& value);
-    /// Getter of the `onend` attribute.
+    /// [`SVGAnimationElement.onend`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onend)
     /// [`SVGAnimationElement.onend`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onend)
     [[nodiscard]] jsbind::Any onend() const;
     /// Setter of the `onend` attribute.
     /// [`SVGAnimationElement.onend`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onend)
     void onend(const jsbind::Any& value);
-    /// Getter of the `onrepeat` attribute.
+    /// [`SVGAnimationElement.onrepeat`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onrepeat)
     /// [`SVGAnimationElement.onrepeat`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onrepeat)
     [[nodiscard]] jsbind::Any onrepeat() const;
     /// Setter of the `onrepeat` attribute.
@@ -60,10 +60,10 @@ public:
     /// The endElementAt method.
     /// [`SVGAnimationElement.endElementAt`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/endElementAt)
     jsbind::Undefined endElementAt(float offset);
-    /// Getter of the `requiredExtensions` attribute.
+    /// [`SVGAnimationElement.requiredExtensions`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/requiredExtensions)
     /// [`SVGAnimationElement.requiredExtensions`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/requiredExtensions)
     [[nodiscard]] SVGStringList requiredExtensions() const;
-    /// Getter of the `systemLanguage` attribute.
+    /// [`SVGAnimationElement.systemLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/systemLanguage)
     /// [`SVGAnimationElement.systemLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/systemLanguage)
     [[nodiscard]] SVGStringList systemLanguage() const;
 };

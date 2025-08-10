@@ -1,14 +1,16 @@
 #include <webbind/RsaKeyAlgorithm.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RsaKeyAlgorithm::RsaKeyAlgorithm(Handle h) noexcept : KeyAlgorithm(emlite::Val::take_ownership(h)) {}
 RsaKeyAlgorithm RsaKeyAlgorithm::take_ownership(Handle h) noexcept {
-        return RsaKeyAlgorithm(h);
-    }
+    return RsaKeyAlgorithm(h);
+}
+
 RsaKeyAlgorithm::RsaKeyAlgorithm(const emlite::Val &val) noexcept: KeyAlgorithm(val) {}
+
 RsaKeyAlgorithm::RsaKeyAlgorithm() noexcept: KeyAlgorithm(emlite::Val::object()) {}
+
 RsaKeyAlgorithm RsaKeyAlgorithm::clone() const noexcept { return *this; }
 
 unsigned long RsaKeyAlgorithm::modulusLength() const {

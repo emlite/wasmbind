@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLGatherOptions
-/// [`MLGatherOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLGatherOptions)
 class MLGatherOptions : public MLOperatorOptions {
   explicit MLGatherOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLGatherOptions(const emlite::Val &val) noexcept;
     MLGatherOptions() noexcept;
     [[nodiscard]] MLGatherOptions clone() const noexcept;
+    /// Getter of the `axis` attribute.
     [[nodiscard]] unsigned long axis() const;
+    /// Setter of the `axis` attribute.
     void axis(unsigned long value);
 };
 

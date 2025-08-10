@@ -3,11 +3,15 @@
 namespace webbind {
 
 HTMLDirectoryElement HTMLDirectoryElement::take_ownership(Handle h) noexcept {
-        return HTMLDirectoryElement(h);
-    }
+    return HTMLDirectoryElement(h);
+}
+
 HTMLDirectoryElement HTMLDirectoryElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLDirectoryElement::instance() noexcept { return emlite::Val::global("HTMLDirectoryElement"); }
+
 HTMLDirectoryElement::HTMLDirectoryElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLDirectoryElement::HTMLDirectoryElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLDirectoryElement::HTMLDirectoryElement() : HTMLElement(emlite::Val::global("HTMLDirectoryElement").new_()) {}

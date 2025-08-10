@@ -20,7 +20,7 @@ public:
     /// The item method.
     /// [`FileList.item`](https://developer.mozilla.org/en-US/docs/Web/API/FileList/item)
     File item(unsigned long index);
-    /// Getter of the `length` attribute.
+    /// [`FileList.length`](https://developer.mozilla.org/en-US/docs/Web/API/FileList/length)
     /// [`FileList.length`](https://developer.mozilla.org/en-US/docs/Web/API/FileList/length)
     [[nodiscard]] unsigned long length() const;
 };

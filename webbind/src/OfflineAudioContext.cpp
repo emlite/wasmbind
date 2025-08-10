@@ -4,11 +4,15 @@
 namespace webbind {
 
 OfflineAudioContext OfflineAudioContext::take_ownership(Handle h) noexcept {
-        return OfflineAudioContext(h);
-    }
+    return OfflineAudioContext(h);
+}
+
 OfflineAudioContext OfflineAudioContext::clone() const noexcept { return *this; }
+
 emlite::Val OfflineAudioContext::instance() noexcept { return emlite::Val::global("OfflineAudioContext"); }
+
 OfflineAudioContext::OfflineAudioContext(Handle h) noexcept : BaseAudioContext(emlite::Val::take_ownership(h)) {}
+
 OfflineAudioContext::OfflineAudioContext(const emlite::Val &val) noexcept: BaseAudioContext(val) {}
 
 OfflineAudioContext::OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate) : BaseAudioContext(emlite::Val::global("OfflineAudioContext").new_(numberOfChannels, length, sampleRate)) {}

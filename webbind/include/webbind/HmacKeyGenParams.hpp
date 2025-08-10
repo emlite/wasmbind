@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type HmacKeyGenParams
-/// [`HmacKeyGenParams`](https://developer.mozilla.org/en-US/docs/Web/API/HmacKeyGenParams)
 class HmacKeyGenParams : public Algorithm {
   explicit HmacKeyGenParams(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit HmacKeyGenParams(const emlite::Val &val) noexcept;
     HmacKeyGenParams() noexcept;
     [[nodiscard]] HmacKeyGenParams clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] jsbind::Any hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const jsbind::Any& value);
+    /// Getter of the `length` attribute.
     [[nodiscard]] unsigned long length() const;
+    /// Setter of the `length` attribute.
     void length(unsigned long value);
 };
 

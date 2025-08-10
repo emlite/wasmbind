@@ -4,11 +4,15 @@
 namespace webbind {
 
 USBPermissionResult USBPermissionResult::take_ownership(Handle h) noexcept {
-        return USBPermissionResult(h);
-    }
+    return USBPermissionResult(h);
+}
+
 USBPermissionResult USBPermissionResult::clone() const noexcept { return *this; }
+
 emlite::Val USBPermissionResult::instance() noexcept { return emlite::Val::global("USBPermissionResult"); }
+
 USBPermissionResult::USBPermissionResult(Handle h) noexcept : PermissionStatus(emlite::Val::take_ownership(h)) {}
+
 USBPermissionResult::USBPermissionResult(const emlite::Val &val) noexcept: PermissionStatus(val) {}
 
 jsbind::TypedArray<USBDevice> USBPermissionResult::devices() const {

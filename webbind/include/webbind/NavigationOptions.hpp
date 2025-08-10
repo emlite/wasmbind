@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type NavigationOptions
-/// [`NavigationOptions`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationOptions)
 class NavigationOptions : public emlite::Val {
   explicit NavigationOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit NavigationOptions(const emlite::Val &val) noexcept;
     NavigationOptions() noexcept;
     [[nodiscard]] NavigationOptions clone() const noexcept;
+    /// Getter of the `info` attribute.
     [[nodiscard]] jsbind::Any info() const;
+    /// Setter of the `info` attribute.
     void info(const jsbind::Any& value);
 };
 

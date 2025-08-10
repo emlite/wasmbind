@@ -6,11 +6,15 @@
 namespace webbind {
 
 RTCEncodedVideoFrame RTCEncodedVideoFrame::take_ownership(Handle h) noexcept {
-        return RTCEncodedVideoFrame(h);
-    }
+    return RTCEncodedVideoFrame(h);
+}
+
 RTCEncodedVideoFrame RTCEncodedVideoFrame::clone() const noexcept { return *this; }
+
 emlite::Val RTCEncodedVideoFrame::instance() noexcept { return emlite::Val::global("RTCEncodedVideoFrame"); }
+
 RTCEncodedVideoFrame::RTCEncodedVideoFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 RTCEncodedVideoFrame::RTCEncodedVideoFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 RTCEncodedVideoFrame::RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame) : emlite::Val(emlite::Val::global("RTCEncodedVideoFrame").new_(originalFrame)) {}

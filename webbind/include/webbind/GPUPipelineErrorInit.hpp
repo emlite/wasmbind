@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GPUPipelineErrorInit
-/// [`GPUPipelineErrorInit`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineErrorInit)
 class GPUPipelineErrorInit : public emlite::Val {
   explicit GPUPipelineErrorInit(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit GPUPipelineErrorInit(const emlite::Val &val) noexcept;
     GPUPipelineErrorInit() noexcept;
     [[nodiscard]] GPUPipelineErrorInit clone() const noexcept;
+    /// Getter of the `reason` attribute.
     [[nodiscard]] GPUPipelineErrorReason reason() const;
+    /// Setter of the `reason` attribute.
     void reason(const GPUPipelineErrorReason& value);
 };
 

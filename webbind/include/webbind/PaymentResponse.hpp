@@ -24,28 +24,28 @@ public:
     /// The toJSON method.
     /// [`PaymentResponse.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/toJSON)
     jsbind::Object toJSON();
-    /// Getter of the `requestId` attribute.
+    /// [`PaymentResponse.requestId`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/requestId)
     /// [`PaymentResponse.requestId`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/requestId)
     [[nodiscard]] jsbind::String requestId() const;
-    /// Getter of the `methodName` attribute.
+    /// [`PaymentResponse.methodName`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/methodName)
     /// [`PaymentResponse.methodName`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/methodName)
     [[nodiscard]] jsbind::String methodName() const;
-    /// Getter of the `details` attribute.
+    /// [`PaymentResponse.details`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/details)
     /// [`PaymentResponse.details`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/details)
     [[nodiscard]] jsbind::Object details() const;
-    /// Getter of the `shippingAddress` attribute.
+    /// [`PaymentResponse.shippingAddress`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingAddress)
     /// [`PaymentResponse.shippingAddress`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingAddress)
     [[nodiscard]] ContactAddress shippingAddress() const;
-    /// Getter of the `shippingOption` attribute.
+    /// [`PaymentResponse.shippingOption`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingOption)
     /// [`PaymentResponse.shippingOption`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingOption)
     [[nodiscard]] jsbind::String shippingOption() const;
-    /// Getter of the `payerName` attribute.
+    /// [`PaymentResponse.payerName`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerName)
     /// [`PaymentResponse.payerName`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerName)
     [[nodiscard]] jsbind::String payerName() const;
-    /// Getter of the `payerEmail` attribute.
+    /// [`PaymentResponse.payerEmail`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerEmail)
     /// [`PaymentResponse.payerEmail`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerEmail)
     [[nodiscard]] jsbind::String payerEmail() const;
-    /// Getter of the `payerPhone` attribute.
+    /// [`PaymentResponse.payerPhone`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerPhone)
     /// [`PaymentResponse.payerPhone`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerPhone)
     [[nodiscard]] jsbind::String payerPhone() const;
     /// The complete method.
@@ -63,7 +63,7 @@ public:
     /// The retry method.
     /// [`PaymentResponse.retry`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/retry)
     jsbind::Promise<jsbind::Undefined> retry(const PaymentValidationErrors& errorFields);
-    /// Getter of the `onpayerdetailchange` attribute.
+    /// [`PaymentResponse.onpayerdetailchange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/onpayerdetailchange)
     /// [`PaymentResponse.onpayerdetailchange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/onpayerdetailchange)
     [[nodiscard]] jsbind::Any onpayerdetailchange() const;
     /// Setter of the `onpayerdetailchange` attribute.

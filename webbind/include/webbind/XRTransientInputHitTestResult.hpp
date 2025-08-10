@@ -18,10 +18,10 @@ public:
     static XRTransientInputHitTestResult take_ownership(Handle h) noexcept;
     [[nodiscard]] XRTransientInputHitTestResult clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `inputSource` attribute.
+    /// [`XRTransientInputHitTestResult.inputSource`](https://developer.mozilla.org/en-US/docs/Web/API/XRTransientInputHitTestResult/inputSource)
     /// [`XRTransientInputHitTestResult.inputSource`](https://developer.mozilla.org/en-US/docs/Web/API/XRTransientInputHitTestResult/inputSource)
     [[nodiscard]] XRInputSource inputSource() const;
-    /// Getter of the `results` attribute.
+    /// [`XRTransientInputHitTestResult.results`](https://developer.mozilla.org/en-US/docs/Web/API/XRTransientInputHitTestResult/results)
     /// [`XRTransientInputHitTestResult.results`](https://developer.mozilla.org/en-US/docs/Web/API/XRTransientInputHitTestResult/results)
     [[nodiscard]] jsbind::TypedArray<XRHitTestResult> results() const;
 };

@@ -1,14 +1,16 @@
 #include <webbind/BiddingBrowserSignals.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BiddingBrowserSignals::BiddingBrowserSignals(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BiddingBrowserSignals BiddingBrowserSignals::take_ownership(Handle h) noexcept {
-        return BiddingBrowserSignals(h);
-    }
+    return BiddingBrowserSignals(h);
+}
+
 BiddingBrowserSignals::BiddingBrowserSignals(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BiddingBrowserSignals::BiddingBrowserSignals() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BiddingBrowserSignals BiddingBrowserSignals::clone() const noexcept { return *this; }
 
 jsbind::String BiddingBrowserSignals::topWindowHostname() const {

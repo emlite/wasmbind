@@ -24,13 +24,13 @@ public:
     UIEvent(const jsbind::String& type);
     /// The `new UIEvent(..)` constructor, creating a new UIEvent instance
     UIEvent(const jsbind::String& type, const UIEventInit& eventInitDict);
-    /// Getter of the `view` attribute.
+    /// [`UIEvent.view`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/view)
     /// [`UIEvent.view`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/view)
     [[nodiscard]] Window view() const;
-    /// Getter of the `detail` attribute.
+    /// [`UIEvent.detail`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail)
     /// [`UIEvent.detail`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail)
     [[nodiscard]] long detail() const;
-    /// Getter of the `sourceCapabilities` attribute.
+    /// [`UIEvent.sourceCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/sourceCapabilities)
     /// [`UIEvent.sourceCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/sourceCapabilities)
     [[nodiscard]] InputDeviceCapabilities sourceCapabilities() const;
     /// The initUIEvent method.
@@ -48,7 +48,7 @@ public:
     /// The initUIEvent method.
     /// [`UIEvent.initUIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/initUIEvent)
     jsbind::Undefined initUIEvent(const jsbind::String& typeArg, bool bubblesArg, bool cancelableArg, const Window& viewArg, long detailArg);
-    /// Getter of the `which` attribute.
+    /// [`UIEvent.which`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/which)
     /// [`UIEvent.which`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/which)
     [[nodiscard]] unsigned long which() const;
 };

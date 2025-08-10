@@ -27,7 +27,7 @@ public:
     static OffscreenCanvasRenderingContext2D take_ownership(Handle h) noexcept;
     [[nodiscard]] OffscreenCanvasRenderingContext2D clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `canvas` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/canvas)
     /// [`OffscreenCanvasRenderingContext2D.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/canvas)
     [[nodiscard]] OffscreenCanvas canvas() const;
     /// The getContextAttributes method.
@@ -69,37 +69,37 @@ public:
     /// The resetTransform method.
     /// [`OffscreenCanvasRenderingContext2D.resetTransform`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/resetTransform)
     jsbind::Undefined resetTransform();
-    /// Getter of the `globalAlpha` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/globalAlpha)
     /// [`OffscreenCanvasRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/globalAlpha)
     [[nodiscard]] double globalAlpha() const;
     /// Setter of the `globalAlpha` attribute.
     /// [`OffscreenCanvasRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/globalAlpha)
     void globalAlpha(double value);
-    /// Getter of the `globalCompositeOperation` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/globalCompositeOperation)
     /// [`OffscreenCanvasRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/globalCompositeOperation)
     [[nodiscard]] jsbind::String globalCompositeOperation() const;
     /// Setter of the `globalCompositeOperation` attribute.
     /// [`OffscreenCanvasRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/globalCompositeOperation)
     void globalCompositeOperation(const jsbind::String& value);
-    /// Getter of the `imageSmoothingEnabled` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/imageSmoothingEnabled)
     /// [`OffscreenCanvasRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/imageSmoothingEnabled)
     [[nodiscard]] bool imageSmoothingEnabled() const;
     /// Setter of the `imageSmoothingEnabled` attribute.
     /// [`OffscreenCanvasRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/imageSmoothingEnabled)
     void imageSmoothingEnabled(bool value);
-    /// Getter of the `imageSmoothingQuality` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/imageSmoothingQuality)
     /// [`OffscreenCanvasRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/imageSmoothingQuality)
     [[nodiscard]] ImageSmoothingQuality imageSmoothingQuality() const;
     /// Setter of the `imageSmoothingQuality` attribute.
     /// [`OffscreenCanvasRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/imageSmoothingQuality)
     void imageSmoothingQuality(const ImageSmoothingQuality& value);
-    /// Getter of the `strokeStyle` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/strokeStyle)
     /// [`OffscreenCanvasRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/strokeStyle)
     [[nodiscard]] jsbind::Any strokeStyle() const;
     /// Setter of the `strokeStyle` attribute.
     /// [`OffscreenCanvasRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/strokeStyle)
     void strokeStyle(const jsbind::Any& value);
-    /// Getter of the `fillStyle` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.fillStyle`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fillStyle)
     /// [`OffscreenCanvasRenderingContext2D.fillStyle`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fillStyle)
     [[nodiscard]] jsbind::Any fillStyle() const;
     /// Setter of the `fillStyle` attribute.
@@ -117,31 +117,31 @@ public:
     /// The createPattern method.
     /// [`OffscreenCanvasRenderingContext2D.createPattern`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/createPattern)
     CanvasPattern createPattern(const jsbind::Any& image, const jsbind::String& repetition);
-    /// Getter of the `shadowOffsetX` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowOffsetX)
     /// [`OffscreenCanvasRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowOffsetX)
     [[nodiscard]] double shadowOffsetX() const;
     /// Setter of the `shadowOffsetX` attribute.
     /// [`OffscreenCanvasRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowOffsetX)
     void shadowOffsetX(double value);
-    /// Getter of the `shadowOffsetY` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowOffsetY)
     /// [`OffscreenCanvasRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowOffsetY)
     [[nodiscard]] double shadowOffsetY() const;
     /// Setter of the `shadowOffsetY` attribute.
     /// [`OffscreenCanvasRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowOffsetY)
     void shadowOffsetY(double value);
-    /// Getter of the `shadowBlur` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowBlur)
     /// [`OffscreenCanvasRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowBlur)
     [[nodiscard]] double shadowBlur() const;
     /// Setter of the `shadowBlur` attribute.
     /// [`OffscreenCanvasRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowBlur)
     void shadowBlur(double value);
-    /// Getter of the `shadowColor` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowColor)
     /// [`OffscreenCanvasRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowColor)
     [[nodiscard]] jsbind::String shadowColor() const;
     /// Setter of the `shadowColor` attribute.
     /// [`OffscreenCanvasRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/shadowColor)
     void shadowColor(const jsbind::String& value);
-    /// Getter of the `filter` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.filter`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/filter)
     /// [`OffscreenCanvasRenderingContext2D.filter`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/filter)
     [[nodiscard]] jsbind::String filter() const;
     /// Setter of the `filter` attribute.
@@ -213,25 +213,25 @@ public:
     /// The putImageData method.
     /// [`OffscreenCanvasRenderingContext2D.putImageData`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/putImageData)
     jsbind::Undefined putImageData(const ImageData& imageData, long dx, long dy, long dirtyX, long dirtyY, long dirtyWidth, long dirtyHeight);
-    /// Getter of the `lineWidth` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineWidth)
     /// [`OffscreenCanvasRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineWidth)
     [[nodiscard]] double lineWidth() const;
     /// Setter of the `lineWidth` attribute.
     /// [`OffscreenCanvasRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineWidth)
     void lineWidth(double value);
-    /// Getter of the `lineCap` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineCap)
     /// [`OffscreenCanvasRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineCap)
     [[nodiscard]] CanvasLineCap lineCap() const;
     /// Setter of the `lineCap` attribute.
     /// [`OffscreenCanvasRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineCap)
     void lineCap(const CanvasLineCap& value);
-    /// Getter of the `lineJoin` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineJoin)
     /// [`OffscreenCanvasRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineJoin)
     [[nodiscard]] CanvasLineJoin lineJoin() const;
     /// Setter of the `lineJoin` attribute.
     /// [`OffscreenCanvasRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineJoin)
     void lineJoin(const CanvasLineJoin& value);
-    /// Getter of the `miterLimit` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.miterLimit`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/miterLimit)
     /// [`OffscreenCanvasRenderingContext2D.miterLimit`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/miterLimit)
     [[nodiscard]] double miterLimit() const;
     /// Setter of the `miterLimit` attribute.
@@ -243,73 +243,73 @@ public:
     /// The getLineDash method.
     /// [`OffscreenCanvasRenderingContext2D.getLineDash`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/getLineDash)
     jsbind::TypedArray<double> getLineDash();
-    /// Getter of the `lineDashOffset` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineDashOffset)
     /// [`OffscreenCanvasRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineDashOffset)
     [[nodiscard]] double lineDashOffset() const;
     /// Setter of the `lineDashOffset` attribute.
     /// [`OffscreenCanvasRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lineDashOffset)
     void lineDashOffset(double value);
-    /// Getter of the `lang` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.lang`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lang)
     /// [`OffscreenCanvasRenderingContext2D.lang`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lang)
     [[nodiscard]] jsbind::String lang() const;
     /// Setter of the `lang` attribute.
     /// [`OffscreenCanvasRenderingContext2D.lang`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/lang)
     void lang(const jsbind::String& value);
-    /// Getter of the `font` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.font`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/font)
     /// [`OffscreenCanvasRenderingContext2D.font`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/font)
     [[nodiscard]] jsbind::String font() const;
     /// Setter of the `font` attribute.
     /// [`OffscreenCanvasRenderingContext2D.font`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/font)
     void font(const jsbind::String& value);
-    /// Getter of the `textAlign` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.textAlign`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textAlign)
     /// [`OffscreenCanvasRenderingContext2D.textAlign`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textAlign)
     [[nodiscard]] CanvasTextAlign textAlign() const;
     /// Setter of the `textAlign` attribute.
     /// [`OffscreenCanvasRenderingContext2D.textAlign`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textAlign)
     void textAlign(const CanvasTextAlign& value);
-    /// Getter of the `textBaseline` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.textBaseline`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textBaseline)
     /// [`OffscreenCanvasRenderingContext2D.textBaseline`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textBaseline)
     [[nodiscard]] CanvasTextBaseline textBaseline() const;
     /// Setter of the `textBaseline` attribute.
     /// [`OffscreenCanvasRenderingContext2D.textBaseline`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textBaseline)
     void textBaseline(const CanvasTextBaseline& value);
-    /// Getter of the `direction` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.direction`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/direction)
     /// [`OffscreenCanvasRenderingContext2D.direction`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/direction)
     [[nodiscard]] CanvasDirection direction() const;
     /// Setter of the `direction` attribute.
     /// [`OffscreenCanvasRenderingContext2D.direction`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/direction)
     void direction(const CanvasDirection& value);
-    /// Getter of the `letterSpacing` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.letterSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/letterSpacing)
     /// [`OffscreenCanvasRenderingContext2D.letterSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/letterSpacing)
     [[nodiscard]] jsbind::String letterSpacing() const;
     /// Setter of the `letterSpacing` attribute.
     /// [`OffscreenCanvasRenderingContext2D.letterSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/letterSpacing)
     void letterSpacing(const jsbind::String& value);
-    /// Getter of the `fontKerning` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.fontKerning`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontKerning)
     /// [`OffscreenCanvasRenderingContext2D.fontKerning`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontKerning)
     [[nodiscard]] CanvasFontKerning fontKerning() const;
     /// Setter of the `fontKerning` attribute.
     /// [`OffscreenCanvasRenderingContext2D.fontKerning`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontKerning)
     void fontKerning(const CanvasFontKerning& value);
-    /// Getter of the `fontStretch` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.fontStretch`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontStretch)
     /// [`OffscreenCanvasRenderingContext2D.fontStretch`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontStretch)
     [[nodiscard]] CanvasFontStretch fontStretch() const;
     /// Setter of the `fontStretch` attribute.
     /// [`OffscreenCanvasRenderingContext2D.fontStretch`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontStretch)
     void fontStretch(const CanvasFontStretch& value);
-    /// Getter of the `fontVariantCaps` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.fontVariantCaps`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontVariantCaps)
     /// [`OffscreenCanvasRenderingContext2D.fontVariantCaps`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontVariantCaps)
     [[nodiscard]] CanvasFontVariantCaps fontVariantCaps() const;
     /// Setter of the `fontVariantCaps` attribute.
     /// [`OffscreenCanvasRenderingContext2D.fontVariantCaps`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fontVariantCaps)
     void fontVariantCaps(const CanvasFontVariantCaps& value);
-    /// Getter of the `textRendering` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.textRendering`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textRendering)
     /// [`OffscreenCanvasRenderingContext2D.textRendering`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textRendering)
     [[nodiscard]] CanvasTextRendering textRendering() const;
     /// Setter of the `textRendering` attribute.
     /// [`OffscreenCanvasRenderingContext2D.textRendering`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/textRendering)
     void textRendering(const CanvasTextRendering& value);
-    /// Getter of the `wordSpacing` attribute.
+    /// [`OffscreenCanvasRenderingContext2D.wordSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/wordSpacing)
     /// [`OffscreenCanvasRenderingContext2D.wordSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/wordSpacing)
     [[nodiscard]] jsbind::String wordSpacing() const;
     /// Setter of the `wordSpacing` attribute.

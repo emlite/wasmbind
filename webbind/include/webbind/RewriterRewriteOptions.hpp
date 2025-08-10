@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type RewriterRewriteOptions
-/// [`RewriterRewriteOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RewriterRewriteOptions)
 class RewriterRewriteOptions : public emlite::Val {
   explicit RewriterRewriteOptions(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit RewriterRewriteOptions(const emlite::Val &val) noexcept;
     RewriterRewriteOptions() noexcept;
     [[nodiscard]] RewriterRewriteOptions clone() const noexcept;
+    /// Getter of the `context` attribute.
     [[nodiscard]] jsbind::String context() const;
+    /// Setter of the `context` attribute.
     void context(const jsbind::String& value);
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ScrollToOptions
-/// [`ScrollToOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions)
 class ScrollToOptions : public ScrollOptions {
   explicit ScrollToOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit ScrollToOptions(const emlite::Val &val) noexcept;
     ScrollToOptions() noexcept;
     [[nodiscard]] ScrollToOptions clone() const noexcept;
+    /// Getter of the `left` attribute.
     [[nodiscard]] double left() const;
+    /// Setter of the `left` attribute.
     void left(double value);
+    /// Getter of the `top` attribute.
     [[nodiscard]] double top() const;
+    /// Setter of the `top` attribute.
     void top(double value);
 };
 

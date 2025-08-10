@@ -23,10 +23,10 @@ public:
     static RTCRtpReceiver take_ownership(Handle h) noexcept;
     [[nodiscard]] RTCRtpReceiver clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `track` attribute.
+    /// [`RTCRtpReceiver.track`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/track)
     /// [`RTCRtpReceiver.track`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/track)
     [[nodiscard]] MediaStreamTrack track() const;
-    /// Getter of the `transport` attribute.
+    /// [`RTCRtpReceiver.transport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/transport)
     /// [`RTCRtpReceiver.transport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/transport)
     [[nodiscard]] RTCDtlsTransport transport() const;
     /// The getCapabilities method.
@@ -44,13 +44,13 @@ public:
     /// The getStats method.
     /// [`RTCRtpReceiver.getStats`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/getStats)
     jsbind::Promise<RTCStatsReport> getStats();
-    /// Getter of the `jitterBufferTarget` attribute.
+    /// [`RTCRtpReceiver.jitterBufferTarget`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/jitterBufferTarget)
     /// [`RTCRtpReceiver.jitterBufferTarget`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/jitterBufferTarget)
     [[nodiscard]] jsbind::Any jitterBufferTarget() const;
     /// Setter of the `jitterBufferTarget` attribute.
     /// [`RTCRtpReceiver.jitterBufferTarget`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/jitterBufferTarget)
     void jitterBufferTarget(const jsbind::Any& value);
-    /// Getter of the `transform` attribute.
+    /// [`RTCRtpReceiver.transform`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/transform)
     /// [`RTCRtpReceiver.transform`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/transform)
     [[nodiscard]] jsbind::Any transform() const;
     /// Setter of the `transform` attribute.

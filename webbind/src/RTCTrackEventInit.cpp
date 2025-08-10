@@ -4,15 +4,17 @@
 #include <webbind/MediaStream.hpp>
 #include <webbind/RTCRtpTransceiver.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCTrackEventInit::RTCTrackEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 RTCTrackEventInit RTCTrackEventInit::take_ownership(Handle h) noexcept {
-        return RTCTrackEventInit(h);
-    }
+    return RTCTrackEventInit(h);
+}
+
 RTCTrackEventInit::RTCTrackEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 RTCTrackEventInit::RTCTrackEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 RTCTrackEventInit RTCTrackEventInit::clone() const noexcept { return *this; }
 
 RTCRtpReceiver RTCTrackEventInit::receiver() const {

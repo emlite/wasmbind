@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AudioDecoderSupport
-/// [`AudioDecoderSupport`](https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoderSupport)
 class AudioDecoderSupport : public emlite::Val {
   explicit AudioDecoderSupport(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit AudioDecoderSupport(const emlite::Val &val) noexcept;
     AudioDecoderSupport() noexcept;
     [[nodiscard]] AudioDecoderSupport clone() const noexcept;
+    /// Getter of the `supported` attribute.
     [[nodiscard]] bool supported() const;
+    /// Setter of the `supported` attribute.
     void supported(bool value);
+    /// Getter of the `config` attribute.
     [[nodiscard]] AudioDecoderConfig config() const;
+    /// Setter of the `config` attribute.
     void config(const AudioDecoderConfig& value);
 };
 

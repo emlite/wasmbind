@@ -1,15 +1,17 @@
 #include <webbind/XRMediaLayerInit.hpp>
 #include <webbind/XRSpace.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRMediaLayerInit::XRMediaLayerInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRMediaLayerInit XRMediaLayerInit::take_ownership(Handle h) noexcept {
-        return XRMediaLayerInit(h);
-    }
+    return XRMediaLayerInit(h);
+}
+
 XRMediaLayerInit::XRMediaLayerInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRMediaLayerInit::XRMediaLayerInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRMediaLayerInit XRMediaLayerInit::clone() const noexcept { return *this; }
 
 XRSpace XRMediaLayerInit::space() const {

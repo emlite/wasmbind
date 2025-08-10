@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type WebTransportSendStreamStats
-/// [`WebTransportSendStreamStats`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStreamStats)
 class WebTransportSendStreamStats : public emlite::Val {
   explicit WebTransportSendStreamStats(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit WebTransportSendStreamStats(const emlite::Val &val) noexcept;
     WebTransportSendStreamStats() noexcept;
     [[nodiscard]] WebTransportSendStreamStats clone() const noexcept;
+    /// Getter of the `bytesWritten` attribute.
     [[nodiscard]] long long bytesWritten() const;
+    /// Setter of the `bytesWritten` attribute.
     void bytesWritten(long long value);
+    /// Getter of the `bytesSent` attribute.
     [[nodiscard]] long long bytesSent() const;
+    /// Setter of the `bytesSent` attribute.
     void bytesSent(long long value);
+    /// Getter of the `bytesAcknowledged` attribute.
     [[nodiscard]] long long bytesAcknowledged() const;
+    /// Setter of the `bytesAcknowledged` attribute.
     void bytesAcknowledged(long long value);
 };
 

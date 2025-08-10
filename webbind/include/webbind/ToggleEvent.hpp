@@ -23,13 +23,13 @@ public:
     ToggleEvent(const jsbind::String& type);
     /// The `new ToggleEvent(..)` constructor, creating a new ToggleEvent instance
     ToggleEvent(const jsbind::String& type, const ToggleEventInit& eventInitDict);
-    /// Getter of the `oldState` attribute.
+    /// [`ToggleEvent.oldState`](https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent/oldState)
     /// [`ToggleEvent.oldState`](https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent/oldState)
     [[nodiscard]] jsbind::String oldState() const;
-    /// Getter of the `newState` attribute.
+    /// [`ToggleEvent.newState`](https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent/newState)
     /// [`ToggleEvent.newState`](https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent/newState)
     [[nodiscard]] jsbind::String newState() const;
-    /// Getter of the `source` attribute.
+    /// [`ToggleEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent/source)
     /// [`ToggleEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent/source)
     [[nodiscard]] Element source() const;
 };

@@ -19,7 +19,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PeriodicSyncEvent(..)` constructor, creating a new PeriodicSyncEvent instance
     PeriodicSyncEvent(const jsbind::String& type, const PeriodicSyncEventInit& init);
-    /// Getter of the `tag` attribute.
+    /// [`PeriodicSyncEvent.tag`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncEvent/tag)
     /// [`PeriodicSyncEvent.tag`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncEvent/tag)
     [[nodiscard]] jsbind::String tag() const;
 };

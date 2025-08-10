@@ -18,7 +18,7 @@ public:
     static BluetoothLEScanPermissionResult take_ownership(Handle h) noexcept;
     [[nodiscard]] BluetoothLEScanPermissionResult clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `scans` attribute.
+    /// [`BluetoothLEScanPermissionResult.scans`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanPermissionResult/scans)
     /// [`BluetoothLEScanPermissionResult.scans`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanPermissionResult/scans)
     [[nodiscard]] jsbind::TypedArray<BluetoothLEScan> scans() const;
     /// Setter of the `scans` attribute.

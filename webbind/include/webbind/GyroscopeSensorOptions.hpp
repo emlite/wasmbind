@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GyroscopeSensorOptions
-/// [`GyroscopeSensorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/GyroscopeSensorOptions)
 class GyroscopeSensorOptions : public SensorOptions {
   explicit GyroscopeSensorOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit GyroscopeSensorOptions(const emlite::Val &val) noexcept;
     GyroscopeSensorOptions() noexcept;
     [[nodiscard]] GyroscopeSensorOptions clone() const noexcept;
+    /// Getter of the `referenceFrame` attribute.
     [[nodiscard]] GyroscopeLocalCoordinateSystem referenceFrame() const;
+    /// Setter of the `referenceFrame` attribute.
     void referenceFrame(const GyroscopeLocalCoordinateSystem& value);
 };
 

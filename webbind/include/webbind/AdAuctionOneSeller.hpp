@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AdAuctionOneSeller
-/// [`AdAuctionOneSeller`](https://developer.mozilla.org/en-US/docs/Web/API/AdAuctionOneSeller)
 class AdAuctionOneSeller : public emlite::Val {
   explicit AdAuctionOneSeller(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit AdAuctionOneSeller(const emlite::Val &val) noexcept;
     AdAuctionOneSeller() noexcept;
     [[nodiscard]] AdAuctionOneSeller clone() const noexcept;
+    /// Getter of the `seller` attribute.
     [[nodiscard]] jsbind::String seller() const;
+    /// Setter of the `seller` attribute.
     void seller(const jsbind::String& value);
+    /// Getter of the `coordinatorOrigin` attribute.
     [[nodiscard]] jsbind::String coordinatorOrigin() const;
+    /// Setter of the `coordinatorOrigin` attribute.
     void coordinatorOrigin(const jsbind::String& value);
 };
 

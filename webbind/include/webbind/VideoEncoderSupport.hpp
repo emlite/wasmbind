@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type VideoEncoderSupport
-/// [`VideoEncoderSupport`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoderSupport)
 class VideoEncoderSupport : public emlite::Val {
   explicit VideoEncoderSupport(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit VideoEncoderSupport(const emlite::Val &val) noexcept;
     VideoEncoderSupport() noexcept;
     [[nodiscard]] VideoEncoderSupport clone() const noexcept;
+    /// Getter of the `supported` attribute.
     [[nodiscard]] bool supported() const;
+    /// Setter of the `supported` attribute.
     void supported(bool value);
+    /// Getter of the `config` attribute.
     [[nodiscard]] VideoEncoderConfig config() const;
+    /// Setter of the `config` attribute.
     void config(const VideoEncoderConfig& value);
 };
 

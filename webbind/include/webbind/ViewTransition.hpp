@@ -17,19 +17,19 @@ public:
     static ViewTransition take_ownership(Handle h) noexcept;
     [[nodiscard]] ViewTransition clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `updateCallbackDone` attribute.
+    /// [`ViewTransition.updateCallbackDone`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/updateCallbackDone)
     /// [`ViewTransition.updateCallbackDone`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/updateCallbackDone)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> updateCallbackDone() const;
-    /// Getter of the `ready` attribute.
+    /// [`ViewTransition.ready`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/ready)
     /// [`ViewTransition.ready`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/ready)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> ready() const;
-    /// Getter of the `finished` attribute.
+    /// [`ViewTransition.finished`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/finished)
     /// [`ViewTransition.finished`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/finished)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> finished() const;
     /// The skipTransition method.
     /// [`ViewTransition.skipTransition`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/skipTransition)
     jsbind::Undefined skipTransition();
-    /// Getter of the `types` attribute.
+    /// [`ViewTransition.types`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/types)
     /// [`ViewTransition.types`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition/types)
     [[nodiscard]] ViewTransitionTypeSet types() const;
     /// Setter of the `types` attribute.

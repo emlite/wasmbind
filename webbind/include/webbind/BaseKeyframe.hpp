@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type BaseKeyframe
-/// [`BaseKeyframe`](https://developer.mozilla.org/en-US/docs/Web/API/BaseKeyframe)
 class BaseKeyframe : public emlite::Val {
   explicit BaseKeyframe(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit BaseKeyframe(const emlite::Val &val) noexcept;
     BaseKeyframe() noexcept;
     [[nodiscard]] BaseKeyframe clone() const noexcept;
+    /// Getter of the `offset` attribute.
     [[nodiscard]] double offset() const;
+    /// Setter of the `offset` attribute.
     void offset(double value);
+    /// Getter of the `easing` attribute.
     [[nodiscard]] jsbind::String easing() const;
+    /// Setter of the `easing` attribute.
     void easing(const jsbind::String& value);
+    /// Getter of the `composite` attribute.
     [[nodiscard]] CompositeOperationOrAuto composite() const;
+    /// Setter of the `composite` attribute.
     void composite(const CompositeOperationOrAuto& value);
 };
 

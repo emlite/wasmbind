@@ -3,11 +3,15 @@
 namespace webbind {
 
 GPUCompilationMessage GPUCompilationMessage::take_ownership(Handle h) noexcept {
-        return GPUCompilationMessage(h);
-    }
+    return GPUCompilationMessage(h);
+}
+
 GPUCompilationMessage GPUCompilationMessage::clone() const noexcept { return *this; }
+
 emlite::Val GPUCompilationMessage::instance() noexcept { return emlite::Val::global("GPUCompilationMessage"); }
+
 GPUCompilationMessage::GPUCompilationMessage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUCompilationMessage::GPUCompilationMessage(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String GPUCompilationMessage::message() const {

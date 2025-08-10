@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type OpenFilePickerOptions
-/// [`OpenFilePickerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/OpenFilePickerOptions)
 class OpenFilePickerOptions : public FilePickerOptions {
   explicit OpenFilePickerOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit OpenFilePickerOptions(const emlite::Val &val) noexcept;
     OpenFilePickerOptions() noexcept;
     [[nodiscard]] OpenFilePickerOptions clone() const noexcept;
+    /// Getter of the `multiple` attribute.
     [[nodiscard]] bool multiple() const;
+    /// Setter of the `multiple` attribute.
     void multiple(bool value);
 };
 

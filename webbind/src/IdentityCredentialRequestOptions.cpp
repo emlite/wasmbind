@@ -1,15 +1,17 @@
 #include <webbind/IdentityCredentialRequestOptions.hpp>
 #include <webbind/IdentityProviderRequestOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityCredentialRequestOptions::IdentityCredentialRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityCredentialRequestOptions IdentityCredentialRequestOptions::take_ownership(Handle h) noexcept {
-        return IdentityCredentialRequestOptions(h);
-    }
+    return IdentityCredentialRequestOptions(h);
+}
+
 IdentityCredentialRequestOptions::IdentityCredentialRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityCredentialRequestOptions::IdentityCredentialRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityCredentialRequestOptions IdentityCredentialRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<IdentityProviderRequestOptions> IdentityCredentialRequestOptions::providers() const {

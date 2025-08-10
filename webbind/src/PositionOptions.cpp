@@ -1,14 +1,16 @@
 #include <webbind/PositionOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PositionOptions::PositionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PositionOptions PositionOptions::take_ownership(Handle h) noexcept {
-        return PositionOptions(h);
-    }
+    return PositionOptions(h);
+}
+
 PositionOptions::PositionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PositionOptions::PositionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PositionOptions PositionOptions::clone() const noexcept { return *this; }
 
 bool PositionOptions::enableHighAccuracy() const {

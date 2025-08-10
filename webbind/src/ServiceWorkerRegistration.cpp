@@ -16,11 +16,15 @@
 namespace webbind {
 
 ServiceWorkerRegistration ServiceWorkerRegistration::take_ownership(Handle h) noexcept {
-        return ServiceWorkerRegistration(h);
-    }
+    return ServiceWorkerRegistration(h);
+}
+
 ServiceWorkerRegistration ServiceWorkerRegistration::clone() const noexcept { return *this; }
+
 emlite::Val ServiceWorkerRegistration::instance() noexcept { return emlite::Val::global("ServiceWorkerRegistration"); }
+
 ServiceWorkerRegistration::ServiceWorkerRegistration(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 ServiceWorkerRegistration::ServiceWorkerRegistration(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 ServiceWorker ServiceWorkerRegistration::installing() const {

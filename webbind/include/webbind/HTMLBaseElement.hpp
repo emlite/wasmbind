@@ -18,13 +18,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLBaseElement(..)` constructor, creating a new HTMLBaseElement instance
     HTMLBaseElement();
-    /// Getter of the `href` attribute.
+    /// [`HTMLBaseElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement/href)
     /// [`HTMLBaseElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement/href)
     [[nodiscard]] jsbind::String href() const;
     /// Setter of the `href` attribute.
     /// [`HTMLBaseElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement/href)
     void href(const jsbind::String& value);
-    /// Getter of the `target` attribute.
+    /// [`HTMLBaseElement.target`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement/target)
     /// [`HTMLBaseElement.target`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement/target)
     [[nodiscard]] jsbind::String target() const;
     /// Setter of the `target` attribute.

@@ -10,7 +10,6 @@ namespace webbind {
 class PictureInPictureWindow;
 
 /// Dictionary type PictureInPictureEventInit
-/// [`PictureInPictureEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureEventInit)
 class PictureInPictureEventInit : public EventInit {
   explicit PictureInPictureEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit PictureInPictureEventInit(const emlite::Val &val) noexcept;
     PictureInPictureEventInit() noexcept;
     [[nodiscard]] PictureInPictureEventInit clone() const noexcept;
+    /// Getter of the `pictureInPictureWindow` attribute.
     [[nodiscard]] PictureInPictureWindow pictureInPictureWindow() const;
+    /// Setter of the `pictureInPictureWindow` attribute.
     void pictureInPictureWindow(const PictureInPictureWindow& value);
 };
 

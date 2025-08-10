@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AudioTimestamp
-/// [`AudioTimestamp`](https://developer.mozilla.org/en-US/docs/Web/API/AudioTimestamp)
 class AudioTimestamp : public emlite::Val {
   explicit AudioTimestamp(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit AudioTimestamp(const emlite::Val &val) noexcept;
     AudioTimestamp() noexcept;
     [[nodiscard]] AudioTimestamp clone() const noexcept;
+    /// Getter of the `contextTime` attribute.
     [[nodiscard]] double contextTime() const;
+    /// Setter of the `contextTime` attribute.
     void contextTime(double value);
+    /// Getter of the `performanceTime` attribute.
     [[nodiscard]] jsbind::Any performanceTime() const;
+    /// Setter of the `performanceTime` attribute.
     void performanceTime(const jsbind::Any& value);
 };
 

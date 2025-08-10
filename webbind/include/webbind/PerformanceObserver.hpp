@@ -32,6 +32,7 @@ public:
     jsbind::Any takeRecords();
     /// Getter of the `supportedEntryTypes` static attribute.
     /// [`PerformanceObserver.supportedEntryTypes`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/supportedEntryTypes)
+    /// [`PerformanceObserver.supportedEntryTypes`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/supportedEntryTypes)
     [[nodiscard]] static jsbind::TypedArray<jsbind::String> supportedEntryTypes();
 };
 

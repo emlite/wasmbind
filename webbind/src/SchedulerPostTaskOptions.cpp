@@ -1,15 +1,17 @@
 #include <webbind/SchedulerPostTaskOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SchedulerPostTaskOptions::SchedulerPostTaskOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SchedulerPostTaskOptions SchedulerPostTaskOptions::take_ownership(Handle h) noexcept {
-        return SchedulerPostTaskOptions(h);
-    }
+    return SchedulerPostTaskOptions(h);
+}
+
 SchedulerPostTaskOptions::SchedulerPostTaskOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SchedulerPostTaskOptions::SchedulerPostTaskOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SchedulerPostTaskOptions SchedulerPostTaskOptions::clone() const noexcept { return *this; }
 
 AbortSignal SchedulerPostTaskOptions::signal() const {

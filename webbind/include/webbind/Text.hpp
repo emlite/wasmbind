@@ -33,7 +33,7 @@ public:
     /// The splitText method.
     /// [`Text.splitText`](https://developer.mozilla.org/en-US/docs/Web/API/Text/splitText)
     Text splitText(unsigned long offset);
-    /// Getter of the `wholeText` attribute.
+    /// [`Text.wholeText`](https://developer.mozilla.org/en-US/docs/Web/API/Text/wholeText)
     /// [`Text.wholeText`](https://developer.mozilla.org/en-US/docs/Web/API/Text/wholeText)
     [[nodiscard]] jsbind::String wholeText() const;
     /// The getBoxQuads method.
@@ -60,7 +60,7 @@ public:
     /// The convertPointFromNode method.
     /// [`Text.convertPointFromNode`](https://developer.mozilla.org/en-US/docs/Web/API/Text/convertPointFromNode)
     DOMPoint convertPointFromNode(const DOMPointInit& point, const jsbind::Any& from, const ConvertCoordinateOptions& options);
-    /// Getter of the `assignedSlot` attribute.
+    /// [`Text.assignedSlot`](https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot)
     /// [`Text.assignedSlot`](https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot)
     [[nodiscard]] HTMLSlotElement assignedSlot() const;
 };

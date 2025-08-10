@@ -6,11 +6,15 @@
 namespace webbind {
 
 XRRigidTransform XRRigidTransform::take_ownership(Handle h) noexcept {
-        return XRRigidTransform(h);
-    }
+    return XRRigidTransform(h);
+}
+
 XRRigidTransform XRRigidTransform::clone() const noexcept { return *this; }
+
 emlite::Val XRRigidTransform::instance() noexcept { return emlite::Val::global("XRRigidTransform"); }
+
 XRRigidTransform::XRRigidTransform(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 XRRigidTransform::XRRigidTransform(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 XRRigidTransform::XRRigidTransform() : emlite::Val(emlite::Val::global("XRRigidTransform").new_()) {}

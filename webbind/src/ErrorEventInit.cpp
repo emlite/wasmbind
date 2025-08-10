@@ -1,14 +1,16 @@
 #include <webbind/ErrorEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ErrorEventInit::ErrorEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 ErrorEventInit ErrorEventInit::take_ownership(Handle h) noexcept {
-        return ErrorEventInit(h);
-    }
+    return ErrorEventInit(h);
+}
+
 ErrorEventInit::ErrorEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 ErrorEventInit::ErrorEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 ErrorEventInit ErrorEventInit::clone() const noexcept { return *this; }
 
 jsbind::String ErrorEventInit::message() const {

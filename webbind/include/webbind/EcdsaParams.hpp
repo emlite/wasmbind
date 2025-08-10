@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type EcdsaParams
-/// [`EcdsaParams`](https://developer.mozilla.org/en-US/docs/Web/API/EcdsaParams)
 class EcdsaParams : public Algorithm {
   explicit EcdsaParams(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit EcdsaParams(const emlite::Val &val) noexcept;
     EcdsaParams() noexcept;
     [[nodiscard]] EcdsaParams clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] jsbind::Any hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const jsbind::Any& value);
 };
 

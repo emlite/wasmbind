@@ -40,31 +40,31 @@ public:
     /// The canMakePayment method.
     /// [`PaymentRequest.canMakePayment`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment)
     jsbind::Promise<bool> canMakePayment();
-    /// Getter of the `id` attribute.
+    /// [`PaymentRequest.id`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/id)
     /// [`PaymentRequest.id`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/id)
     [[nodiscard]] jsbind::String id() const;
-    /// Getter of the `shippingAddress` attribute.
+    /// [`PaymentRequest.shippingAddress`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingAddress)
     /// [`PaymentRequest.shippingAddress`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingAddress)
     [[nodiscard]] ContactAddress shippingAddress() const;
-    /// Getter of the `shippingOption` attribute.
+    /// [`PaymentRequest.shippingOption`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingOption)
     /// [`PaymentRequest.shippingOption`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingOption)
     [[nodiscard]] jsbind::String shippingOption() const;
-    /// Getter of the `shippingType` attribute.
+    /// [`PaymentRequest.shippingType`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingType)
     /// [`PaymentRequest.shippingType`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingType)
     [[nodiscard]] PaymentShippingType shippingType() const;
-    /// Getter of the `onshippingaddresschange` attribute.
+    /// [`PaymentRequest.onshippingaddresschange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingaddresschange)
     /// [`PaymentRequest.onshippingaddresschange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingaddresschange)
     [[nodiscard]] jsbind::Any onshippingaddresschange() const;
     /// Setter of the `onshippingaddresschange` attribute.
     /// [`PaymentRequest.onshippingaddresschange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingaddresschange)
     void onshippingaddresschange(const jsbind::Any& value);
-    /// Getter of the `onshippingoptionchange` attribute.
+    /// [`PaymentRequest.onshippingoptionchange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingoptionchange)
     /// [`PaymentRequest.onshippingoptionchange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingoptionchange)
     [[nodiscard]] jsbind::Any onshippingoptionchange() const;
     /// Setter of the `onshippingoptionchange` attribute.
     /// [`PaymentRequest.onshippingoptionchange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingoptionchange)
     void onshippingoptionchange(const jsbind::Any& value);
-    /// Getter of the `onpaymentmethodchange` attribute.
+    /// [`PaymentRequest.onpaymentmethodchange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onpaymentmethodchange)
     /// [`PaymentRequest.onpaymentmethodchange`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onpaymentmethodchange)
     [[nodiscard]] jsbind::Any onpaymentmethodchange() const;
     /// Setter of the `onpaymentmethodchange` attribute.

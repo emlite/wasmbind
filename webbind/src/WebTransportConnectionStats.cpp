@@ -1,15 +1,17 @@
 #include <webbind/WebTransportConnectionStats.hpp>
 #include <webbind/WebTransportDatagramStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WebTransportConnectionStats::WebTransportConnectionStats(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransportConnectionStats WebTransportConnectionStats::take_ownership(Handle h) noexcept {
-        return WebTransportConnectionStats(h);
-    }
+    return WebTransportConnectionStats(h);
+}
+
 WebTransportConnectionStats::WebTransportConnectionStats(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WebTransportConnectionStats::WebTransportConnectionStats() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WebTransportConnectionStats WebTransportConnectionStats::clone() const noexcept { return *this; }
 
 long long WebTransportConnectionStats::bytesSent() const {

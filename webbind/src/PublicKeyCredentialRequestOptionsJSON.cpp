@@ -2,15 +2,17 @@
 #include <webbind/PublicKeyCredentialDescriptorJSON.hpp>
 #include <webbind/AuthenticationExtensionsClientInputsJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PublicKeyCredentialRequestOptionsJSON::PublicKeyCredentialRequestOptionsJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PublicKeyCredentialRequestOptionsJSON PublicKeyCredentialRequestOptionsJSON::take_ownership(Handle h) noexcept {
-        return PublicKeyCredentialRequestOptionsJSON(h);
-    }
+    return PublicKeyCredentialRequestOptionsJSON(h);
+}
+
 PublicKeyCredentialRequestOptionsJSON::PublicKeyCredentialRequestOptionsJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PublicKeyCredentialRequestOptionsJSON::PublicKeyCredentialRequestOptionsJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PublicKeyCredentialRequestOptionsJSON PublicKeyCredentialRequestOptionsJSON::clone() const noexcept { return *this; }
 
 jsbind::Any PublicKeyCredentialRequestOptionsJSON::challenge() const {

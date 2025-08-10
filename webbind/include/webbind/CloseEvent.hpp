@@ -21,13 +21,13 @@ public:
     CloseEvent(const jsbind::String& type);
     /// The `new CloseEvent(..)` constructor, creating a new CloseEvent instance
     CloseEvent(const jsbind::String& type, const CloseEventInit& eventInitDict);
-    /// Getter of the `wasClean` attribute.
+    /// [`CloseEvent.wasClean`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/wasClean)
     /// [`CloseEvent.wasClean`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/wasClean)
     [[nodiscard]] bool wasClean() const;
-    /// Getter of the `code` attribute.
+    /// [`CloseEvent.code`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/code)
     /// [`CloseEvent.code`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/code)
     [[nodiscard]] unsigned short code() const;
-    /// Getter of the `reason` attribute.
+    /// [`CloseEvent.reason`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/reason)
     /// [`CloseEvent.reason`](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/reason)
     [[nodiscard]] jsbind::String reason() const;
 };

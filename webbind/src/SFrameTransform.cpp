@@ -7,11 +7,15 @@
 namespace webbind {
 
 SFrameTransform SFrameTransform::take_ownership(Handle h) noexcept {
-        return SFrameTransform(h);
-    }
+    return SFrameTransform(h);
+}
+
 SFrameTransform SFrameTransform::clone() const noexcept { return *this; }
+
 emlite::Val SFrameTransform::instance() noexcept { return emlite::Val::global("SFrameTransform"); }
+
 SFrameTransform::SFrameTransform(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 SFrameTransform::SFrameTransform(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 SFrameTransform::SFrameTransform() : EventTarget(emlite::Val::global("SFrameTransform").new_()) {}

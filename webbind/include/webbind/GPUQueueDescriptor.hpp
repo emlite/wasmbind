@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUQueueDescriptor
-/// [`GPUQueueDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQueueDescriptor)
 class GPUQueueDescriptor : public GPUObjectDescriptorBase {
   explicit GPUQueueDescriptor(Handle h) noexcept;
 public:

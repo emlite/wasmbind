@@ -10,7 +10,6 @@ namespace webbind {
 class PushSubscription;
 
 /// Dictionary type PushSubscriptionChangeEventInit
-/// [`PushSubscriptionChangeEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscriptionChangeEventInit)
 class PushSubscriptionChangeEventInit : public ExtendableEventInit {
   explicit PushSubscriptionChangeEventInit(Handle h) noexcept;
 public:
@@ -18,9 +17,13 @@ public:
     explicit PushSubscriptionChangeEventInit(const emlite::Val &val) noexcept;
     PushSubscriptionChangeEventInit() noexcept;
     [[nodiscard]] PushSubscriptionChangeEventInit clone() const noexcept;
+    /// Getter of the `newSubscription` attribute.
     [[nodiscard]] PushSubscription newSubscription() const;
+    /// Setter of the `newSubscription` attribute.
     void newSubscription(const PushSubscription& value);
+    /// Getter of the `oldSubscription` attribute.
     [[nodiscard]] PushSubscription oldSubscription() const;
+    /// Setter of the `oldSubscription` attribute.
     void oldSubscription(const PushSubscription& value);
 };
 

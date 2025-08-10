@@ -1,14 +1,16 @@
 #include <webbind/PerformanceObserverInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PerformanceObserverInit::PerformanceObserverInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PerformanceObserverInit PerformanceObserverInit::take_ownership(Handle h) noexcept {
-        return PerformanceObserverInit(h);
-    }
+    return PerformanceObserverInit(h);
+}
+
 PerformanceObserverInit::PerformanceObserverInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PerformanceObserverInit::PerformanceObserverInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PerformanceObserverInit PerformanceObserverInit::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::String> PerformanceObserverInit::entryTypes() const {

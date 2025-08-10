@@ -19,10 +19,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MessageChannel(..)` constructor, creating a new MessageChannel instance
     MessageChannel();
-    /// Getter of the `port1` attribute.
+    /// [`MessageChannel.port1`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/port1)
     /// [`MessageChannel.port1`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/port1)
     [[nodiscard]] MessagePort port1() const;
-    /// Getter of the `port2` attribute.
+    /// [`MessageChannel.port2`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/port2)
     /// [`MessageChannel.port2`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/port2)
     [[nodiscard]] MessagePort port2() const;
 };

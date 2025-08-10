@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PushEventInit
-/// [`PushEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PushEventInit)
 class PushEventInit : public ExtendableEventInit {
   explicit PushEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit PushEventInit(const emlite::Val &val) noexcept;
     PushEventInit() noexcept;
     [[nodiscard]] PushEventInit clone() const noexcept;
+    /// Getter of the `data` attribute.
     [[nodiscard]] jsbind::Any data() const;
+    /// Setter of the `data` attribute.
     void data(const jsbind::Any& value);
 };
 

@@ -15,7 +15,7 @@ public:
     static AuthenticatorResponse take_ownership(Handle h) noexcept;
     [[nodiscard]] AuthenticatorResponse clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `clientDataJSON` attribute.
+    /// [`AuthenticatorResponse.clientDataJSON`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorResponse/clientDataJSON)
     /// [`AuthenticatorResponse.clientDataJSON`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorResponse/clientDataJSON)
     [[nodiscard]] jsbind::ArrayBuffer clientDataJSON() const;
 };

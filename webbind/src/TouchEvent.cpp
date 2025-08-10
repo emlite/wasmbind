@@ -5,11 +5,15 @@
 namespace webbind {
 
 TouchEvent TouchEvent::take_ownership(Handle h) noexcept {
-        return TouchEvent(h);
-    }
+    return TouchEvent(h);
+}
+
 TouchEvent TouchEvent::clone() const noexcept { return *this; }
+
 emlite::Val TouchEvent::instance() noexcept { return emlite::Val::global("TouchEvent"); }
+
 TouchEvent::TouchEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
+
 TouchEvent::TouchEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 TouchEvent::TouchEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("TouchEvent").new_(type)) {}

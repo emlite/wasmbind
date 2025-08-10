@@ -27,10 +27,10 @@ public:
     TransformStream(const jsbind::Object& transformer, const QueuingStrategy& writableStrategy);
     /// The `new TransformStream(..)` constructor, creating a new TransformStream instance
     TransformStream(const jsbind::Object& transformer, const QueuingStrategy& writableStrategy, const QueuingStrategy& readableStrategy);
-    /// Getter of the `readable` attribute.
+    /// [`TransformStream.readable`](https://developer.mozilla.org/en-US/docs/Web/API/TransformStream/readable)
     /// [`TransformStream.readable`](https://developer.mozilla.org/en-US/docs/Web/API/TransformStream/readable)
     [[nodiscard]] ReadableStream readable() const;
-    /// Getter of the `writable` attribute.
+    /// [`TransformStream.writable`](https://developer.mozilla.org/en-US/docs/Web/API/TransformStream/writable)
     /// [`TransformStream.writable`](https://developer.mozilla.org/en-US/docs/Web/API/TransformStream/writable)
     [[nodiscard]] WritableStream writable() const;
 };

@@ -18,13 +18,13 @@ public:
     static CSSKeyframeRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSKeyframeRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `keyText` attribute.
+    /// [`CSSKeyframeRule.keyText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/keyText)
     /// [`CSSKeyframeRule.keyText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/keyText)
     [[nodiscard]] jsbind::String keyText() const;
     /// Setter of the `keyText` attribute.
     /// [`CSSKeyframeRule.keyText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/keyText)
     void keyText(const jsbind::String& value);
-    /// Getter of the `style` attribute.
+    /// [`CSSKeyframeRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/style)
     /// [`CSSKeyframeRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/style)
     [[nodiscard]] CSSStyleProperties style() const;
 };

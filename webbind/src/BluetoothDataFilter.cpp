@@ -4,11 +4,15 @@
 namespace webbind {
 
 BluetoothDataFilter BluetoothDataFilter::take_ownership(Handle h) noexcept {
-        return BluetoothDataFilter(h);
-    }
+    return BluetoothDataFilter(h);
+}
+
 BluetoothDataFilter BluetoothDataFilter::clone() const noexcept { return *this; }
+
 emlite::Val BluetoothDataFilter::instance() noexcept { return emlite::Val::global("BluetoothDataFilter"); }
+
 BluetoothDataFilter::BluetoothDataFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 BluetoothDataFilter::BluetoothDataFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 BluetoothDataFilter::BluetoothDataFilter() : emlite::Val(emlite::Val::global("BluetoothDataFilter").new_()) {}

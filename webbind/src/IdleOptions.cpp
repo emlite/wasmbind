@@ -1,15 +1,17 @@
 #include <webbind/IdleOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdleOptions::IdleOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdleOptions IdleOptions::take_ownership(Handle h) noexcept {
-        return IdleOptions(h);
-    }
+    return IdleOptions(h);
+}
+
 IdleOptions::IdleOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdleOptions::IdleOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdleOptions IdleOptions::clone() const noexcept { return *this; }
 
 long long IdleOptions::threshold() const {

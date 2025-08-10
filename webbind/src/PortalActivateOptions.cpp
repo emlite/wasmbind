@@ -1,14 +1,16 @@
 #include <webbind/PortalActivateOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PortalActivateOptions::PortalActivateOptions(Handle h) noexcept : StructuredSerializeOptions(emlite::Val::take_ownership(h)) {}
 PortalActivateOptions PortalActivateOptions::take_ownership(Handle h) noexcept {
-        return PortalActivateOptions(h);
-    }
+    return PortalActivateOptions(h);
+}
+
 PortalActivateOptions::PortalActivateOptions(const emlite::Val &val) noexcept: StructuredSerializeOptions(val) {}
+
 PortalActivateOptions::PortalActivateOptions() noexcept: StructuredSerializeOptions(emlite::Val::object()) {}
+
 PortalActivateOptions PortalActivateOptions::clone() const noexcept { return *this; }
 
 jsbind::Any PortalActivateOptions::data() const {

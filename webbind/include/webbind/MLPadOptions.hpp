@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLPadOptions
-/// [`MLPadOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLPadOptions)
 class MLPadOptions : public MLOperatorOptions {
   explicit MLPadOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MLPadOptions(const emlite::Val &val) noexcept;
     MLPadOptions() noexcept;
     [[nodiscard]] MLPadOptions clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] MLPaddingMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const MLPaddingMode& value);
+    /// Getter of the `value` attribute.
     [[nodiscard]] jsbind::Any value() const;
+    /// Setter of the `value` attribute.
     void value(const jsbind::Any& value);
 };
 

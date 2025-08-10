@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PAHistogramContribution
-/// [`PAHistogramContribution`](https://developer.mozilla.org/en-US/docs/Web/API/PAHistogramContribution)
 class PAHistogramContribution : public emlite::Val {
   explicit PAHistogramContribution(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit PAHistogramContribution(const emlite::Val &val) noexcept;
     PAHistogramContribution() noexcept;
     [[nodiscard]] PAHistogramContribution clone() const noexcept;
+    /// Getter of the `bucket` attribute.
     [[nodiscard]] long long bucket() const;
+    /// Setter of the `bucket` attribute.
     void bucket(long long value);
+    /// Getter of the `value` attribute.
     [[nodiscard]] long value() const;
+    /// Setter of the `value` attribute.
     void value(long value);
+    /// Getter of the `filteringId` attribute.
     [[nodiscard]] long long filteringId() const;
+    /// Setter of the `filteringId` attribute.
     void filteringId(long long value);
 };
 

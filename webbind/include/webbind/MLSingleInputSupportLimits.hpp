@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MLSingleInputSupportLimits
-/// [`MLSingleInputSupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLSingleInputSupportLimits)
 class MLSingleInputSupportLimits : public emlite::Val {
   explicit MLSingleInputSupportLimits(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit MLSingleInputSupportLimits(const emlite::Val &val) noexcept;
     MLSingleInputSupportLimits() noexcept;
     [[nodiscard]] MLSingleInputSupportLimits clone() const noexcept;
+    /// Getter of the `input` attribute.
     [[nodiscard]] MLTensorLimits input() const;
+    /// Setter of the `input` attribute.
     void input(const MLTensorLimits& value);
+    /// Getter of the `output` attribute.
     [[nodiscard]] MLDataTypeLimits output() const;
+    /// Setter of the `output` attribute.
     void output(const MLDataTypeLimits& value);
 };
 

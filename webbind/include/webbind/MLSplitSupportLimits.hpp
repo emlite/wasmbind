@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MLSplitSupportLimits
-/// [`MLSplitSupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLSplitSupportLimits)
 class MLSplitSupportLimits : public emlite::Val {
   explicit MLSplitSupportLimits(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit MLSplitSupportLimits(const emlite::Val &val) noexcept;
     MLSplitSupportLimits() noexcept;
     [[nodiscard]] MLSplitSupportLimits clone() const noexcept;
+    /// Getter of the `input` attribute.
     [[nodiscard]] MLTensorLimits input() const;
+    /// Setter of the `input` attribute.
     void input(const MLTensorLimits& value);
+    /// Getter of the `outputs` attribute.
     [[nodiscard]] MLDataTypeLimits outputs() const;
+    /// Setter of the `outputs` attribute.
     void outputs(const MLDataTypeLimits& value);
 };
 

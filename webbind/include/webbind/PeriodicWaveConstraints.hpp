@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PeriodicWaveConstraints
-/// [`PeriodicWaveConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicWaveConstraints)
 class PeriodicWaveConstraints : public emlite::Val {
   explicit PeriodicWaveConstraints(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PeriodicWaveConstraints(const emlite::Val &val) noexcept;
     PeriodicWaveConstraints() noexcept;
     [[nodiscard]] PeriodicWaveConstraints clone() const noexcept;
+    /// Getter of the `disableNormalization` attribute.
     [[nodiscard]] bool disableNormalization() const;
+    /// Setter of the `disableNormalization` attribute.
     void disableNormalization(bool value);
 };
 

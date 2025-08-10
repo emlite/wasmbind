@@ -21,13 +21,13 @@ public:
     Magnetometer();
     /// The `new Magnetometer(..)` constructor, creating a new Magnetometer instance
     Magnetometer(const MagnetometerSensorOptions& sensorOptions);
-    /// Getter of the `x` attribute.
+    /// [`Magnetometer.x`](https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/x)
     /// [`Magnetometer.x`](https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/x)
     [[nodiscard]] double x() const;
-    /// Getter of the `y` attribute.
+    /// [`Magnetometer.y`](https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/y)
     /// [`Magnetometer.y`](https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/y)
     [[nodiscard]] double y() const;
-    /// Getter of the `z` attribute.
+    /// [`Magnetometer.z`](https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/z)
     /// [`Magnetometer.z`](https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/z)
     [[nodiscard]] double z() const;
 };

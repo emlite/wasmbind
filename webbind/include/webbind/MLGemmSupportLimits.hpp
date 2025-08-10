@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MLGemmSupportLimits
-/// [`MLGemmSupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLGemmSupportLimits)
 class MLGemmSupportLimits : public emlite::Val {
   explicit MLGemmSupportLimits(Handle h) noexcept;
 public:
@@ -17,13 +16,21 @@ public:
     explicit MLGemmSupportLimits(const emlite::Val &val) noexcept;
     MLGemmSupportLimits() noexcept;
     [[nodiscard]] MLGemmSupportLimits clone() const noexcept;
+    /// Getter of the `a` attribute.
     [[nodiscard]] MLTensorLimits a() const;
+    /// Setter of the `a` attribute.
     void a(const MLTensorLimits& value);
+    /// Getter of the `b` attribute.
     [[nodiscard]] MLTensorLimits b() const;
+    /// Setter of the `b` attribute.
     void b(const MLTensorLimits& value);
+    /// Getter of the `c` attribute.
     [[nodiscard]] MLTensorLimits c() const;
+    /// Setter of the `c` attribute.
     void c(const MLTensorLimits& value);
+    /// Getter of the `output` attribute.
     [[nodiscard]] MLDataTypeLimits output() const;
+    /// Setter of the `output` attribute.
     void output(const MLDataTypeLimits& value);
 };
 

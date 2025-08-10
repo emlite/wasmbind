@@ -4,11 +4,15 @@
 namespace webbind {
 
 MediaQueryListEvent MediaQueryListEvent::take_ownership(Handle h) noexcept {
-        return MediaQueryListEvent(h);
-    }
+    return MediaQueryListEvent(h);
+}
+
 MediaQueryListEvent MediaQueryListEvent::clone() const noexcept { return *this; }
+
 emlite::Val MediaQueryListEvent::instance() noexcept { return emlite::Val::global("MediaQueryListEvent"); }
+
 MediaQueryListEvent::MediaQueryListEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 MediaQueryListEvent::MediaQueryListEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 MediaQueryListEvent::MediaQueryListEvent(const jsbind::String& type) : Event(emlite::Val::global("MediaQueryListEvent").new_(type)) {}

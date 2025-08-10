@@ -22,19 +22,19 @@ public:
     CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y);
     /// The `new CSSTranslate(..)` constructor, creating a new CSSTranslate instance
     CSSTranslate(const CSSNumericValue& x, const CSSNumericValue& y, const CSSNumericValue& z);
-    /// Getter of the `x` attribute.
+    /// [`CSSTranslate.x`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/x)
     /// [`CSSTranslate.x`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/x)
     [[nodiscard]] CSSNumericValue x() const;
     /// Setter of the `x` attribute.
     /// [`CSSTranslate.x`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/x)
     void x(const CSSNumericValue& value);
-    /// Getter of the `y` attribute.
+    /// [`CSSTranslate.y`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/y)
     /// [`CSSTranslate.y`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/y)
     [[nodiscard]] CSSNumericValue y() const;
     /// Setter of the `y` attribute.
     /// [`CSSTranslate.y`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/y)
     void y(const CSSNumericValue& value);
-    /// Getter of the `z` attribute.
+    /// [`CSSTranslate.z`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/z)
     /// [`CSSTranslate.z`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/z)
     [[nodiscard]] CSSNumericValue z() const;
     /// Setter of the `z` attribute.

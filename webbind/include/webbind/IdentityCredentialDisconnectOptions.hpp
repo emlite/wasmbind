@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityCredentialDisconnectOptions
-/// [`IdentityCredentialDisconnectOptions`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialDisconnectOptions)
 class IdentityCredentialDisconnectOptions : public IdentityProviderConfig {
   explicit IdentityCredentialDisconnectOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit IdentityCredentialDisconnectOptions(const emlite::Val &val) noexcept;
     IdentityCredentialDisconnectOptions() noexcept;
     [[nodiscard]] IdentityCredentialDisconnectOptions clone() const noexcept;
+    /// Getter of the `accountHint` attribute.
     [[nodiscard]] jsbind::String accountHint() const;
+    /// Setter of the `accountHint` attribute.
     void accountHint(const jsbind::String& value);
 };
 

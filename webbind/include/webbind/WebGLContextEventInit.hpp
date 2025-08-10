@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type WebGLContextEventInit
-/// [`WebGLContextEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextEventInit)
 class WebGLContextEventInit : public EventInit {
   explicit WebGLContextEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit WebGLContextEventInit(const emlite::Val &val) noexcept;
     WebGLContextEventInit() noexcept;
     [[nodiscard]] WebGLContextEventInit clone() const noexcept;
+    /// Getter of the `statusMessage` attribute.
     [[nodiscard]] jsbind::String statusMessage() const;
+    /// Setter of the `statusMessage` attribute.
     void statusMessage(const jsbind::String& value);
 };
 

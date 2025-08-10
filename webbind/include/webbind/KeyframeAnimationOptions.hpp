@@ -10,7 +10,6 @@ namespace webbind {
 class AnimationTimeline;
 
 /// Dictionary type KeyframeAnimationOptions
-/// [`KeyframeAnimationOptions`](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeAnimationOptions)
 class KeyframeAnimationOptions : public KeyframeEffectOptions {
   explicit KeyframeAnimationOptions(Handle h) noexcept;
 public:
@@ -18,9 +17,13 @@ public:
     explicit KeyframeAnimationOptions(const emlite::Val &val) noexcept;
     KeyframeAnimationOptions() noexcept;
     [[nodiscard]] KeyframeAnimationOptions clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::String& value);
+    /// Getter of the `timeline` attribute.
     [[nodiscard]] AnimationTimeline timeline() const;
+    /// Setter of the `timeline` attribute.
     void timeline(const AnimationTimeline& value);
 };
 

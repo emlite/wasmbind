@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PurchaseDetails
-/// [`PurchaseDetails`](https://developer.mozilla.org/en-US/docs/Web/API/PurchaseDetails)
 class PurchaseDetails : public emlite::Val {
   explicit PurchaseDetails(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit PurchaseDetails(const emlite::Val &val) noexcept;
     PurchaseDetails() noexcept;
     [[nodiscard]] PurchaseDetails clone() const noexcept;
+    /// Getter of the `itemId` attribute.
     [[nodiscard]] jsbind::String itemId() const;
+    /// Setter of the `itemId` attribute.
     void itemId(const jsbind::String& value);
+    /// Getter of the `purchaseToken` attribute.
     [[nodiscard]] jsbind::String purchaseToken() const;
+    /// Setter of the `purchaseToken` attribute.
     void purchaseToken(const jsbind::String& value);
 };
 

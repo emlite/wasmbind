@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathMax(..)` constructor, creating a new CSSMathMax instance
     CSSMathMax(const jsbind::Any& args);
-    /// Getter of the `values` attribute.
+    /// [`CSSMathMax.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMax/values)
     /// [`CSSMathMax.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMax/values)
     [[nodiscard]] CSSNumericArray values() const;
 };

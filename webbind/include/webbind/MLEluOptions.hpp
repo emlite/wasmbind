@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLEluOptions
-/// [`MLEluOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLEluOptions)
 class MLEluOptions : public MLOperatorOptions {
   explicit MLEluOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLEluOptions(const emlite::Val &val) noexcept;
     MLEluOptions() noexcept;
     [[nodiscard]] MLEluOptions clone() const noexcept;
+    /// Getter of the `alpha` attribute.
     [[nodiscard]] double alpha() const;
+    /// Setter of the `alpha` attribute.
     void alpha(double value);
 };
 

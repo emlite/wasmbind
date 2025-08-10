@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CustomEventInit
-/// [`CustomEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEventInit)
 class CustomEventInit : public EventInit {
   explicit CustomEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit CustomEventInit(const emlite::Val &val) noexcept;
     CustomEventInit() noexcept;
     [[nodiscard]] CustomEventInit clone() const noexcept;
+    /// Getter of the `detail` attribute.
     [[nodiscard]] jsbind::Any detail() const;
+    /// Setter of the `detail` attribute.
     void detail(const jsbind::Any& value);
 };
 

@@ -18,10 +18,10 @@ public:
     static TimeEvent take_ownership(Handle h) noexcept;
     [[nodiscard]] TimeEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `view` attribute.
+    /// [`TimeEvent.view`](https://developer.mozilla.org/en-US/docs/Web/API/TimeEvent/view)
     /// [`TimeEvent.view`](https://developer.mozilla.org/en-US/docs/Web/API/TimeEvent/view)
     [[nodiscard]] jsbind::Any view() const;
-    /// Getter of the `detail` attribute.
+    /// [`TimeEvent.detail`](https://developer.mozilla.org/en-US/docs/Web/API/TimeEvent/detail)
     /// [`TimeEvent.detail`](https://developer.mozilla.org/en-US/docs/Web/API/TimeEvent/detail)
     [[nodiscard]] long detail() const;
     /// The initTimeEvent method.

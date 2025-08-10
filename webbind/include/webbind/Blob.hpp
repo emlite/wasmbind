@@ -25,10 +25,10 @@ public:
     Blob(const jsbind::TypedArray<jsbind::Any>& blobParts);
     /// The `new Blob(..)` constructor, creating a new Blob instance
     Blob(const jsbind::TypedArray<jsbind::Any>& blobParts, const BlobPropertyBag& options);
-    /// Getter of the `size` attribute.
+    /// [`Blob.size`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/size)
     /// [`Blob.size`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/size)
     [[nodiscard]] long long size() const;
-    /// Getter of the `type` attribute.
+    /// [`Blob.type`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/type)
     /// [`Blob.type`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/type)
     [[nodiscard]] jsbind::String type() const;
     /// The slice method.

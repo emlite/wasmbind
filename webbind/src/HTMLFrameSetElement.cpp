@@ -3,11 +3,15 @@
 namespace webbind {
 
 HTMLFrameSetElement HTMLFrameSetElement::take_ownership(Handle h) noexcept {
-        return HTMLFrameSetElement(h);
-    }
+    return HTMLFrameSetElement(h);
+}
+
 HTMLFrameSetElement HTMLFrameSetElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLFrameSetElement::instance() noexcept { return emlite::Val::global("HTMLFrameSetElement"); }
+
 HTMLFrameSetElement::HTMLFrameSetElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLFrameSetElement::HTMLFrameSetElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLFrameSetElement::HTMLFrameSetElement() : HTMLElement(emlite::Val::global("HTMLFrameSetElement").new_()) {}

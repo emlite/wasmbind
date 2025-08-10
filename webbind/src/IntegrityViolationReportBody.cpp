@@ -1,14 +1,16 @@
 #include <webbind/IntegrityViolationReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IntegrityViolationReportBody::IntegrityViolationReportBody(Handle h) noexcept : ReportBody(emlite::Val::take_ownership(h)) {}
 IntegrityViolationReportBody IntegrityViolationReportBody::take_ownership(Handle h) noexcept {
-        return IntegrityViolationReportBody(h);
-    }
+    return IntegrityViolationReportBody(h);
+}
+
 IntegrityViolationReportBody::IntegrityViolationReportBody(const emlite::Val &val) noexcept: ReportBody(val) {}
+
 IntegrityViolationReportBody::IntegrityViolationReportBody() noexcept: ReportBody(emlite::Val::object()) {}
+
 IntegrityViolationReportBody IntegrityViolationReportBody::clone() const noexcept { return *this; }
 
 jsbind::String IntegrityViolationReportBody::documentURL() const {

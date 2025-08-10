@@ -4,11 +4,15 @@
 namespace webbind {
 
 RTCSctpTransport RTCSctpTransport::take_ownership(Handle h) noexcept {
-        return RTCSctpTransport(h);
-    }
+    return RTCSctpTransport(h);
+}
+
 RTCSctpTransport RTCSctpTransport::clone() const noexcept { return *this; }
+
 emlite::Val RTCSctpTransport::instance() noexcept { return emlite::Val::global("RTCSctpTransport"); }
+
 RTCSctpTransport::RTCSctpTransport(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 RTCSctpTransport::RTCSctpTransport(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 RTCDtlsTransport RTCSctpTransport::transport() const {

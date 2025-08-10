@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCIceParameters
-/// [`RTCIceParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceParameters)
 class RTCIceParameters : public emlite::Val {
   explicit RTCIceParameters(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit RTCIceParameters(const emlite::Val &val) noexcept;
     RTCIceParameters() noexcept;
     [[nodiscard]] RTCIceParameters clone() const noexcept;
+    /// Getter of the `usernameFragment` attribute.
     [[nodiscard]] jsbind::String usernameFragment() const;
+    /// Setter of the `usernameFragment` attribute.
     void usernameFragment(const jsbind::String& value);
+    /// Getter of the `password` attribute.
     [[nodiscard]] jsbind::String password() const;
+    /// Setter of the `password` attribute.
     void password(const jsbind::String& value);
 };
 

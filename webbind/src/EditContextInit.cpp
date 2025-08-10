@@ -1,14 +1,16 @@
 #include <webbind/EditContextInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 EditContextInit::EditContextInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EditContextInit EditContextInit::take_ownership(Handle h) noexcept {
-        return EditContextInit(h);
-    }
+    return EditContextInit(h);
+}
+
 EditContextInit::EditContextInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 EditContextInit::EditContextInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 EditContextInit EditContextInit::clone() const noexcept { return *this; }
 
 jsbind::String EditContextInit::text() const {

@@ -1,14 +1,16 @@
 #include <webbind/RTCVideoSourceStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCVideoSourceStats::RTCVideoSourceStats(Handle h) noexcept : RTCMediaSourceStats(emlite::Val::take_ownership(h)) {}
 RTCVideoSourceStats RTCVideoSourceStats::take_ownership(Handle h) noexcept {
-        return RTCVideoSourceStats(h);
-    }
+    return RTCVideoSourceStats(h);
+}
+
 RTCVideoSourceStats::RTCVideoSourceStats(const emlite::Val &val) noexcept: RTCMediaSourceStats(val) {}
+
 RTCVideoSourceStats::RTCVideoSourceStats() noexcept: RTCMediaSourceStats(emlite::Val::object()) {}
+
 RTCVideoSourceStats RTCVideoSourceStats::clone() const noexcept { return *this; }
 
 unsigned long RTCVideoSourceStats::width() const {

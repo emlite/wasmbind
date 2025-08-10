@@ -1,14 +1,16 @@
 #include <webbind/ScoringBrowserSignals.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ScoringBrowserSignals::ScoringBrowserSignals(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ScoringBrowserSignals ScoringBrowserSignals::take_ownership(Handle h) noexcept {
-        return ScoringBrowserSignals(h);
-    }
+    return ScoringBrowserSignals(h);
+}
+
 ScoringBrowserSignals::ScoringBrowserSignals(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ScoringBrowserSignals::ScoringBrowserSignals() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ScoringBrowserSignals ScoringBrowserSignals::clone() const noexcept { return *this; }
 
 jsbind::String ScoringBrowserSignals::topWindowHostname() const {

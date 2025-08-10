@@ -1,14 +1,16 @@
 #include <webbind/AdRender.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AdRender::AdRender(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AdRender AdRender::take_ownership(Handle h) noexcept {
-        return AdRender(h);
-    }
+    return AdRender(h);
+}
+
 AdRender::AdRender(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AdRender::AdRender() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AdRender AdRender::clone() const noexcept { return *this; }
 
 jsbind::String AdRender::url() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AesCtrParams
-/// [`AesCtrParams`](https://developer.mozilla.org/en-US/docs/Web/API/AesCtrParams)
 class AesCtrParams : public Algorithm {
   explicit AesCtrParams(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit AesCtrParams(const emlite::Val &val) noexcept;
     AesCtrParams() noexcept;
     [[nodiscard]] AesCtrParams clone() const noexcept;
+    /// Getter of the `counter` attribute.
     [[nodiscard]] jsbind::Any counter() const;
+    /// Setter of the `counter` attribute.
     void counter(const jsbind::Any& value);
+    /// Getter of the `length` attribute.
     [[nodiscard]] unsigned char length() const;
+    /// Setter of the `length` attribute.
     void length(unsigned char value);
 };
 

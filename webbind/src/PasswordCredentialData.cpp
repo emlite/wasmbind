@@ -1,14 +1,16 @@
 #include <webbind/PasswordCredentialData.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PasswordCredentialData::PasswordCredentialData(Handle h) noexcept : CredentialData(emlite::Val::take_ownership(h)) {}
 PasswordCredentialData PasswordCredentialData::take_ownership(Handle h) noexcept {
-        return PasswordCredentialData(h);
-    }
+    return PasswordCredentialData(h);
+}
+
 PasswordCredentialData::PasswordCredentialData(const emlite::Val &val) noexcept: CredentialData(val) {}
+
 PasswordCredentialData::PasswordCredentialData() noexcept: CredentialData(emlite::Val::object()) {}
+
 PasswordCredentialData PasswordCredentialData::clone() const noexcept { return *this; }
 
 jsbind::String PasswordCredentialData::name() const {

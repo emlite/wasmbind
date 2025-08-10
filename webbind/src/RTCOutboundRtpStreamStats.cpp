@@ -1,14 +1,16 @@
 #include <webbind/RTCOutboundRtpStreamStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCOutboundRtpStreamStats::RTCOutboundRtpStreamStats(Handle h) noexcept : RTCSentRtpStreamStats(emlite::Val::take_ownership(h)) {}
 RTCOutboundRtpStreamStats RTCOutboundRtpStreamStats::take_ownership(Handle h) noexcept {
-        return RTCOutboundRtpStreamStats(h);
-    }
+    return RTCOutboundRtpStreamStats(h);
+}
+
 RTCOutboundRtpStreamStats::RTCOutboundRtpStreamStats(const emlite::Val &val) noexcept: RTCSentRtpStreamStats(val) {}
+
 RTCOutboundRtpStreamStats::RTCOutboundRtpStreamStats() noexcept: RTCSentRtpStreamStats(emlite::Val::object()) {}
+
 RTCOutboundRtpStreamStats RTCOutboundRtpStreamStats::clone() const noexcept { return *this; }
 
 jsbind::String RTCOutboundRtpStreamStats::mid() const {

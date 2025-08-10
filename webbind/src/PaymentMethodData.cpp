@@ -1,14 +1,16 @@
 #include <webbind/PaymentMethodData.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentMethodData::PaymentMethodData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentMethodData PaymentMethodData::take_ownership(Handle h) noexcept {
-        return PaymentMethodData(h);
-    }
+    return PaymentMethodData(h);
+}
+
 PaymentMethodData::PaymentMethodData(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentMethodData::PaymentMethodData() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentMethodData PaymentMethodData::clone() const noexcept { return *this; }
 
 jsbind::String PaymentMethodData::supportedMethods() const {

@@ -1,15 +1,17 @@
 #include <webbind/LanguageDetectorCreateOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 LanguageDetectorCreateOptions::LanguageDetectorCreateOptions(Handle h) noexcept : LanguageDetectorCreateCoreOptions(emlite::Val::take_ownership(h)) {}
 LanguageDetectorCreateOptions LanguageDetectorCreateOptions::take_ownership(Handle h) noexcept {
-        return LanguageDetectorCreateOptions(h);
-    }
+    return LanguageDetectorCreateOptions(h);
+}
+
 LanguageDetectorCreateOptions::LanguageDetectorCreateOptions(const emlite::Val &val) noexcept: LanguageDetectorCreateCoreOptions(val) {}
+
 LanguageDetectorCreateOptions::LanguageDetectorCreateOptions() noexcept: LanguageDetectorCreateCoreOptions(emlite::Val::object()) {}
+
 LanguageDetectorCreateOptions LanguageDetectorCreateOptions::clone() const noexcept { return *this; }
 
 AbortSignal LanguageDetectorCreateOptions::signal() const {

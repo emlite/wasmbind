@@ -38,11 +38,15 @@
 namespace webbind {
 
 Window Window::take_ownership(Handle h) noexcept {
-        return Window(h);
-    }
+    return Window(h);
+}
+
 Window Window::clone() const noexcept { return *this; }
+
 emlite::Val Window::instance() noexcept { return emlite::Val::global("Window"); }
+
 Window::Window(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 Window::Window(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Any Window::window() const {

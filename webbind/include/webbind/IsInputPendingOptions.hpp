@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IsInputPendingOptions
-/// [`IsInputPendingOptions`](https://developer.mozilla.org/en-US/docs/Web/API/IsInputPendingOptions)
 class IsInputPendingOptions : public emlite::Val {
   explicit IsInputPendingOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit IsInputPendingOptions(const emlite::Val &val) noexcept;
     IsInputPendingOptions() noexcept;
     [[nodiscard]] IsInputPendingOptions clone() const noexcept;
+    /// Getter of the `includeContinuous` attribute.
     [[nodiscard]] bool includeContinuous() const;
+    /// Setter of the `includeContinuous` attribute.
     void includeContinuous(bool value);
 };
 

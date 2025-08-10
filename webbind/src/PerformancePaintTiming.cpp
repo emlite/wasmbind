@@ -3,11 +3,15 @@
 namespace webbind {
 
 PerformancePaintTiming PerformancePaintTiming::take_ownership(Handle h) noexcept {
-        return PerformancePaintTiming(h);
-    }
+    return PerformancePaintTiming(h);
+}
+
 PerformancePaintTiming PerformancePaintTiming::clone() const noexcept { return *this; }
+
 emlite::Val PerformancePaintTiming::instance() noexcept { return emlite::Val::global("PerformancePaintTiming"); }
+
 PerformancePaintTiming::PerformancePaintTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
+
 PerformancePaintTiming::PerformancePaintTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 
 jsbind::Object PerformancePaintTiming::toJSON() {

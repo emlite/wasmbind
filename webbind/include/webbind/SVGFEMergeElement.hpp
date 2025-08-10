@@ -19,19 +19,19 @@ public:
     static SVGFEMergeElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGFEMergeElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `x` attribute.
+    /// [`SVGFEMergeElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/x)
     /// [`SVGFEMergeElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;
-    /// Getter of the `y` attribute.
+    /// [`SVGFEMergeElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/y)
     /// [`SVGFEMergeElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/y)
     [[nodiscard]] SVGAnimatedLength y() const;
-    /// Getter of the `width` attribute.
+    /// [`SVGFEMergeElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/width)
     /// [`SVGFEMergeElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/width)
     [[nodiscard]] SVGAnimatedLength width() const;
-    /// Getter of the `height` attribute.
+    /// [`SVGFEMergeElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/height)
     /// [`SVGFEMergeElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/height)
     [[nodiscard]] SVGAnimatedLength height() const;
-    /// Getter of the `result` attribute.
+    /// [`SVGFEMergeElement.result`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/result)
     /// [`SVGFEMergeElement.result`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEMergeElement/result)
     [[nodiscard]] SVGAnimatedString result() const;
 };

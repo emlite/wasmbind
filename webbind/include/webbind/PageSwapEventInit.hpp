@@ -11,7 +11,6 @@ class NavigationActivation;
 class ViewTransition;
 
 /// Dictionary type PageSwapEventInit
-/// [`PageSwapEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEventInit)
 class PageSwapEventInit : public EventInit {
   explicit PageSwapEventInit(Handle h) noexcept;
 public:
@@ -19,9 +18,13 @@ public:
     explicit PageSwapEventInit(const emlite::Val &val) noexcept;
     PageSwapEventInit() noexcept;
     [[nodiscard]] PageSwapEventInit clone() const noexcept;
+    /// Getter of the `activation` attribute.
     [[nodiscard]] NavigationActivation activation() const;
+    /// Setter of the `activation` attribute.
     void activation(const NavigationActivation& value);
+    /// Getter of the `viewTransition` attribute.
     [[nodiscard]] ViewTransition viewTransition() const;
+    /// Setter of the `viewTransition` attribute.
     void viewTransition(const ViewTransition& value);
 };
 

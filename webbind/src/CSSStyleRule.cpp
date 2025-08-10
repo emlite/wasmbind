@@ -5,11 +5,15 @@
 namespace webbind {
 
 CSSStyleRule CSSStyleRule::take_ownership(Handle h) noexcept {
-        return CSSStyleRule(h);
-    }
+    return CSSStyleRule(h);
+}
+
 CSSStyleRule CSSStyleRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSStyleRule::instance() noexcept { return emlite::Val::global("CSSStyleRule"); }
+
 CSSStyleRule::CSSStyleRule(Handle h) noexcept : CSSGroupingRule(emlite::Val::take_ownership(h)) {}
+
 CSSStyleRule::CSSStyleRule(const emlite::Val &val) noexcept: CSSGroupingRule(val) {}
 
 jsbind::String CSSStyleRule::selectorText() const {

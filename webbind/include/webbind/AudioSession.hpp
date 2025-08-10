@@ -17,16 +17,16 @@ public:
     static AudioSession take_ownership(Handle h) noexcept;
     [[nodiscard]] AudioSession clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `type` attribute.
+    /// [`AudioSession.type`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/type)
     /// [`AudioSession.type`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/type)
     [[nodiscard]] AudioSessionType type() const;
     /// Setter of the `type` attribute.
     /// [`AudioSession.type`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/type)
     void type(const AudioSessionType& value);
-    /// Getter of the `state` attribute.
+    /// [`AudioSession.state`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/state)
     /// [`AudioSession.state`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/state)
     [[nodiscard]] AudioSessionState state() const;
-    /// Getter of the `onstatechange` attribute.
+    /// [`AudioSession.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/onstatechange)
     /// [`AudioSession.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/onstatechange)
     [[nodiscard]] jsbind::Any onstatechange() const;
     /// Setter of the `onstatechange` attribute.

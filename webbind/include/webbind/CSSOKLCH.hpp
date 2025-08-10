@@ -20,25 +20,25 @@ public:
     CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h);
     /// The `new CSSOKLCH(..)` constructor, creating a new CSSOKLCH instance
     CSSOKLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h, const jsbind::Any& alpha);
-    /// Getter of the `l` attribute.
+    /// [`CSSOKLCH.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/l)
     /// [`CSSOKLCH.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/l)
     [[nodiscard]] jsbind::Any l() const;
     /// Setter of the `l` attribute.
     /// [`CSSOKLCH.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/l)
     void l(const jsbind::Any& value);
-    /// Getter of the `c` attribute.
+    /// [`CSSOKLCH.c`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/c)
     /// [`CSSOKLCH.c`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/c)
     [[nodiscard]] jsbind::Any c() const;
     /// Setter of the `c` attribute.
     /// [`CSSOKLCH.c`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/c)
     void c(const jsbind::Any& value);
-    /// Getter of the `h` attribute.
+    /// [`CSSOKLCH.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/h)
     /// [`CSSOKLCH.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/h)
     [[nodiscard]] jsbind::Any h() const;
     /// Setter of the `h` attribute.
     /// [`CSSOKLCH.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/h)
     void h(const jsbind::Any& value);
-    /// Getter of the `alpha` attribute.
+    /// [`CSSOKLCH.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/alpha)
     /// [`CSSOKLCH.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/CSSOKLCH/alpha)
     [[nodiscard]] jsbind::Any alpha() const;
     /// Setter of the `alpha` attribute.

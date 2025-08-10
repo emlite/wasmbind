@@ -23,13 +23,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new OffscreenCanvas(..)` constructor, creating a new OffscreenCanvas instance
     OffscreenCanvas(long long width, long long height);
-    /// Getter of the `width` attribute.
+    /// [`OffscreenCanvas.width`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/width)
     /// [`OffscreenCanvas.width`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/width)
     [[nodiscard]] long long width() const;
     /// Setter of the `width` attribute.
     /// [`OffscreenCanvas.width`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/width)
     void width(long long value);
-    /// Getter of the `height` attribute.
+    /// [`OffscreenCanvas.height`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height)
     /// [`OffscreenCanvas.height`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height)
     [[nodiscard]] long long height() const;
     /// Setter of the `height` attribute.
@@ -50,13 +50,13 @@ public:
     /// The convertToBlob method.
     /// [`OffscreenCanvas.convertToBlob`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/convertToBlob)
     jsbind::Promise<Blob> convertToBlob(const ImageEncodeOptions& options);
-    /// Getter of the `oncontextlost` attribute.
+    /// [`OffscreenCanvas.oncontextlost`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/oncontextlost)
     /// [`OffscreenCanvas.oncontextlost`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/oncontextlost)
     [[nodiscard]] jsbind::Any oncontextlost() const;
     /// Setter of the `oncontextlost` attribute.
     /// [`OffscreenCanvas.oncontextlost`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/oncontextlost)
     void oncontextlost(const jsbind::Any& value);
-    /// Getter of the `oncontextrestored` attribute.
+    /// [`OffscreenCanvas.oncontextrestored`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/oncontextrestored)
     /// [`OffscreenCanvas.oncontextrestored`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/oncontextrestored)
     [[nodiscard]] jsbind::Any oncontextrestored() const;
     /// Setter of the `oncontextrestored` attribute.

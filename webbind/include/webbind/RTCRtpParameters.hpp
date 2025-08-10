@@ -10,7 +10,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpParameters
-/// [`RTCRtpParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpParameters)
 class RTCRtpParameters : public emlite::Val {
   explicit RTCRtpParameters(Handle h) noexcept;
 public:
@@ -18,11 +17,17 @@ public:
     explicit RTCRtpParameters(const emlite::Val &val) noexcept;
     RTCRtpParameters() noexcept;
     [[nodiscard]] RTCRtpParameters clone() const noexcept;
+    /// Getter of the `headerExtensions` attribute.
     [[nodiscard]] jsbind::TypedArray<RTCRtpHeaderExtensionParameters> headerExtensions() const;
+    /// Setter of the `headerExtensions` attribute.
     void headerExtensions(const jsbind::TypedArray<RTCRtpHeaderExtensionParameters>& value);
+    /// Getter of the `rtcp` attribute.
     [[nodiscard]] RTCRtcpParameters rtcp() const;
+    /// Setter of the `rtcp` attribute.
     void rtcp(const RTCRtcpParameters& value);
+    /// Getter of the `codecs` attribute.
     [[nodiscard]] jsbind::TypedArray<RTCRtpCodecParameters> codecs() const;
+    /// Setter of the `codecs` attribute.
     void codecs(const jsbind::TypedArray<RTCRtpCodecParameters>& value);
 };
 

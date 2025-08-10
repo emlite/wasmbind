@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type HIDReportInfo
-/// [`HIDReportInfo`](https://developer.mozilla.org/en-US/docs/Web/API/HIDReportInfo)
 class HIDReportInfo : public emlite::Val {
   explicit HIDReportInfo(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit HIDReportInfo(const emlite::Val &val) noexcept;
     HIDReportInfo() noexcept;
     [[nodiscard]] HIDReportInfo clone() const noexcept;
+    /// Getter of the `reportId` attribute.
     [[nodiscard]] unsigned char reportId() const;
+    /// Setter of the `reportId` attribute.
     void reportId(unsigned char value);
+    /// Getter of the `items` attribute.
     [[nodiscard]] jsbind::TypedArray<HIDReportItem> items() const;
+    /// Setter of the `items` attribute.
     void items(const jsbind::TypedArray<HIDReportItem>& value);
 };
 

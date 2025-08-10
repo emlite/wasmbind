@@ -1,14 +1,16 @@
 #include <webbind/RTCTransportStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCTransportStats::RTCTransportStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCTransportStats RTCTransportStats::take_ownership(Handle h) noexcept {
-        return RTCTransportStats(h);
-    }
+    return RTCTransportStats(h);
+}
+
 RTCTransportStats::RTCTransportStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCTransportStats::RTCTransportStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCTransportStats RTCTransportStats::clone() const noexcept { return *this; }
 
 long long RTCTransportStats::packetsSent() const {

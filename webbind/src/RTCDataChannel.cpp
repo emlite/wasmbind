@@ -3,11 +3,15 @@
 namespace webbind {
 
 RTCDataChannel RTCDataChannel::take_ownership(Handle h) noexcept {
-        return RTCDataChannel(h);
-    }
+    return RTCDataChannel(h);
+}
+
 RTCDataChannel RTCDataChannel::clone() const noexcept { return *this; }
+
 emlite::Val RTCDataChannel::instance() noexcept { return emlite::Val::global("RTCDataChannel"); }
+
 RTCDataChannel::RTCDataChannel(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 RTCDataChannel::RTCDataChannel(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::String RTCDataChannel::label() const {

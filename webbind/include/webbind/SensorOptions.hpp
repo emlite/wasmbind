@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SensorOptions
-/// [`SensorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SensorOptions)
 class SensorOptions : public emlite::Val {
   explicit SensorOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit SensorOptions(const emlite::Val &val) noexcept;
     SensorOptions() noexcept;
     [[nodiscard]] SensorOptions clone() const noexcept;
+    /// Getter of the `frequency` attribute.
     [[nodiscard]] double frequency() const;
+    /// Setter of the `frequency` attribute.
     void frequency(double value);
 };
 

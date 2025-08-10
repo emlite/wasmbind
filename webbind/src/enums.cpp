@@ -1,3749 +1,16853 @@
 #include <webbind/enums.hpp>
 
-using emlite::Val;
-
 namespace webbind {
 
-SecurityPolicyViolationEventDisposition::SecurityPolicyViolationEventDisposition(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SecurityPolicyViolationEventDisposition::SecurityPolicyViolationEventDisposition(const emlite::Val &v) noexcept : emlite::Val(v) {}
+// Helper function to compare C strings
+static bool str_equal(const char* a, const char* b) noexcept {
+    if (a == b) return true;
+    if (!a || !b) return false;
+    while (*a && *b && *a == *b) { ++a; ++b; }
+    return *a == *b;
+}
+
+SecurityPolicyViolationEventDisposition::Value SecurityPolicyViolationEventDisposition::from_string(const char* str) noexcept {
+    if (str_equal(str, "enforce")) {
+        return ENFORCE;
+    }
+    else if (str_equal(str, "report")) {
+        return REPORT;
+    }
+    else {
+        // Default to first value for invalid input
+        return ENFORCE;
+    }
+}
+
+SecurityPolicyViolationEventDisposition::SecurityPolicyViolationEventDisposition(Value v) noexcept : emlite::Val(SecurityPolicyViolationEventDisposition::to_string(v)), value_(v) {}
+SecurityPolicyViolationEventDisposition::SecurityPolicyViolationEventDisposition(Handle h) noexcept: emlite::Val(h) {
+    value_ = SecurityPolicyViolationEventDisposition::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SecurityPolicyViolationEventDisposition::SecurityPolicyViolationEventDisposition(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SecurityPolicyViolationEventDisposition::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SecurityPolicyViolationEventDisposition SecurityPolicyViolationEventDisposition::take_ownership(Handle h) noexcept { return SecurityPolicyViolationEventDisposition(h); }
 SecurityPolicyViolationEventDisposition SecurityPolicyViolationEventDisposition::clone() const noexcept { return *this; }
+const char* SecurityPolicyViolationEventDisposition::to_string(SecurityPolicyViolationEventDisposition::Value value_) noexcept {
+    switch (value_) {
+        case ENFORCE:
+            return "enforce";
+        case REPORT:
+            return "report";
+        default:
+            return "enforce"; // fallback to first value
+    }
+}
 
-EndingType::EndingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-EndingType::EndingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+EndingType::Value EndingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "transparent")) {
+        return TRANSPARENT;
+    }
+    else if (str_equal(str, "native")) {
+        return NATIVE;
+    }
+    else {
+        // Default to first value for invalid input
+        return TRANSPARENT;
+    }
+}
+
+EndingType::EndingType(Value v) noexcept : emlite::Val(EndingType::to_string(v)), value_(v) {}
+EndingType::EndingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = EndingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+EndingType::EndingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = EndingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 EndingType EndingType::take_ownership(Handle h) noexcept { return EndingType(h); }
 EndingType EndingType::clone() const noexcept { return *this; }
+const char* EndingType::to_string(EndingType::Value value_) noexcept {
+    switch (value_) {
+        case TRANSPARENT:
+            return "transparent";
+        case NATIVE:
+            return "native";
+        default:
+            return "transparent"; // fallback to first value
+    }
+}
 
-IDBRequestReadyState::IDBRequestReadyState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IDBRequestReadyState::IDBRequestReadyState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IDBRequestReadyState::Value IDBRequestReadyState::from_string(const char* str) noexcept {
+    if (str_equal(str, "pending")) {
+        return PENDING;
+    }
+    else if (str_equal(str, "done")) {
+        return DONE;
+    }
+    else {
+        // Default to first value for invalid input
+        return PENDING;
+    }
+}
+
+IDBRequestReadyState::IDBRequestReadyState(Value v) noexcept : emlite::Val(IDBRequestReadyState::to_string(v)), value_(v) {}
+IDBRequestReadyState::IDBRequestReadyState(Handle h) noexcept: emlite::Val(h) {
+    value_ = IDBRequestReadyState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IDBRequestReadyState::IDBRequestReadyState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IDBRequestReadyState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IDBRequestReadyState IDBRequestReadyState::take_ownership(Handle h) noexcept { return IDBRequestReadyState(h); }
 IDBRequestReadyState IDBRequestReadyState::clone() const noexcept { return *this; }
+const char* IDBRequestReadyState::to_string(IDBRequestReadyState::Value value_) noexcept {
+    switch (value_) {
+        case PENDING:
+            return "pending";
+        case DONE:
+            return "done";
+        default:
+            return "pending"; // fallback to first value
+    }
+}
 
-IDBTransactionDurability::IDBTransactionDurability(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IDBTransactionDurability::IDBTransactionDurability(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IDBTransactionDurability::Value IDBTransactionDurability::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "strict")) {
+        return STRICT;
+    }
+    else if (str_equal(str, "relaxed")) {
+        return RELAXED;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+IDBTransactionDurability::IDBTransactionDurability(Value v) noexcept : emlite::Val(IDBTransactionDurability::to_string(v)), value_(v) {}
+IDBTransactionDurability::IDBTransactionDurability(Handle h) noexcept: emlite::Val(h) {
+    value_ = IDBTransactionDurability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IDBTransactionDurability::IDBTransactionDurability(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IDBTransactionDurability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IDBTransactionDurability IDBTransactionDurability::take_ownership(Handle h) noexcept { return IDBTransactionDurability(h); }
 IDBTransactionDurability IDBTransactionDurability::clone() const noexcept { return *this; }
+const char* IDBTransactionDurability::to_string(IDBTransactionDurability::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case STRICT:
+            return "strict";
+        case RELAXED:
+            return "relaxed";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-IDBCursorDirection::IDBCursorDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IDBCursorDirection::IDBCursorDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IDBCursorDirection::Value IDBCursorDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "next")) {
+        return NEXT;
+    }
+    else if (str_equal(str, "nextunique")) {
+        return NEXTUNIQUE;
+    }
+    else if (str_equal(str, "prev")) {
+        return PREV;
+    }
+    else if (str_equal(str, "prevunique")) {
+        return PREVUNIQUE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEXT;
+    }
+}
+
+IDBCursorDirection::IDBCursorDirection(Value v) noexcept : emlite::Val(IDBCursorDirection::to_string(v)), value_(v) {}
+IDBCursorDirection::IDBCursorDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = IDBCursorDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IDBCursorDirection::IDBCursorDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IDBCursorDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IDBCursorDirection IDBCursorDirection::take_ownership(Handle h) noexcept { return IDBCursorDirection(h); }
 IDBCursorDirection IDBCursorDirection::clone() const noexcept { return *this; }
+const char* IDBCursorDirection::to_string(IDBCursorDirection::Value value_) noexcept {
+    switch (value_) {
+        case NEXT:
+            return "next";
+        case NEXTUNIQUE:
+            return "nextunique";
+        case PREV:
+            return "prev";
+        case PREVUNIQUE:
+            return "prevunique";
+        default:
+            return "next"; // fallback to first value
+    }
+}
 
-IDBTransactionMode::IDBTransactionMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IDBTransactionMode::IDBTransactionMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IDBTransactionMode::Value IDBTransactionMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "readonly")) {
+        return READONLY;
+    }
+    else if (str_equal(str, "readwrite")) {
+        return READWRITE;
+    }
+    else if (str_equal(str, "versionchange")) {
+        return VERSIONCHANGE;
+    }
+    else {
+        // Default to first value for invalid input
+        return READONLY;
+    }
+}
+
+IDBTransactionMode::IDBTransactionMode(Value v) noexcept : emlite::Val(IDBTransactionMode::to_string(v)), value_(v) {}
+IDBTransactionMode::IDBTransactionMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = IDBTransactionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IDBTransactionMode::IDBTransactionMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IDBTransactionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IDBTransactionMode IDBTransactionMode::take_ownership(Handle h) noexcept { return IDBTransactionMode(h); }
 IDBTransactionMode IDBTransactionMode::clone() const noexcept { return *this; }
+const char* IDBTransactionMode::to_string(IDBTransactionMode::Value value_) noexcept {
+    switch (value_) {
+        case READONLY:
+            return "readonly";
+        case READWRITE:
+            return "readwrite";
+        case VERSIONCHANGE:
+            return "versionchange";
+        default:
+            return "readonly"; // fallback to first value
+    }
+}
 
-AccelerometerLocalCoordinateSystem::AccelerometerLocalCoordinateSystem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AccelerometerLocalCoordinateSystem::AccelerometerLocalCoordinateSystem(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AccelerometerLocalCoordinateSystem::Value AccelerometerLocalCoordinateSystem::from_string(const char* str) noexcept {
+    if (str_equal(str, "device")) {
+        return DEVICE;
+    }
+    else if (str_equal(str, "screen")) {
+        return SCREEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEVICE;
+    }
+}
+
+AccelerometerLocalCoordinateSystem::AccelerometerLocalCoordinateSystem(Value v) noexcept : emlite::Val(AccelerometerLocalCoordinateSystem::to_string(v)), value_(v) {}
+AccelerometerLocalCoordinateSystem::AccelerometerLocalCoordinateSystem(Handle h) noexcept: emlite::Val(h) {
+    value_ = AccelerometerLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AccelerometerLocalCoordinateSystem::AccelerometerLocalCoordinateSystem(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AccelerometerLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AccelerometerLocalCoordinateSystem AccelerometerLocalCoordinateSystem::take_ownership(Handle h) noexcept { return AccelerometerLocalCoordinateSystem(h); }
 AccelerometerLocalCoordinateSystem AccelerometerLocalCoordinateSystem::clone() const noexcept { return *this; }
+const char* AccelerometerLocalCoordinateSystem::to_string(AccelerometerLocalCoordinateSystem::Value value_) noexcept {
+    switch (value_) {
+        case DEVICE:
+            return "device";
+        case SCREEN:
+            return "screen";
+        default:
+            return "device"; // fallback to first value
+    }
+}
 
-AudioSessionType::AudioSessionType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioSessionType::AudioSessionType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AudioSessionType::Value AudioSessionType::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "playback")) {
+        return PLAYBACK;
+    }
+    else if (str_equal(str, "transient")) {
+        return TRANSIENT;
+    }
+    else if (str_equal(str, "transient-solo")) {
+        return TRANSIENT_SOLO;
+    }
+    else if (str_equal(str, "ambient")) {
+        return AMBIENT;
+    }
+    else if (str_equal(str, "play-and-record")) {
+        return PLAY_AND_RECORD;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+AudioSessionType::AudioSessionType(Value v) noexcept : emlite::Val(AudioSessionType::to_string(v)), value_(v) {}
+AudioSessionType::AudioSessionType(Handle h) noexcept: emlite::Val(h) {
+    value_ = AudioSessionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AudioSessionType::AudioSessionType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AudioSessionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AudioSessionType AudioSessionType::take_ownership(Handle h) noexcept { return AudioSessionType(h); }
 AudioSessionType AudioSessionType::clone() const noexcept { return *this; }
+const char* AudioSessionType::to_string(AudioSessionType::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case PLAYBACK:
+            return "playback";
+        case TRANSIENT:
+            return "transient";
+        case TRANSIENT_SOLO:
+            return "transient-solo";
+        case AMBIENT:
+            return "ambient";
+        case PLAY_AND_RECORD:
+            return "play-and-record";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-AudioSessionState::AudioSessionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioSessionState::AudioSessionState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AudioSessionState::Value AudioSessionState::from_string(const char* str) noexcept {
+    if (str_equal(str, "inactive")) {
+        return INACTIVE;
+    }
+    else if (str_equal(str, "active")) {
+        return ACTIVE;
+    }
+    else if (str_equal(str, "interrupted")) {
+        return INTERRUPTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return INACTIVE;
+    }
+}
+
+AudioSessionState::AudioSessionState(Value v) noexcept : emlite::Val(AudioSessionState::to_string(v)), value_(v) {}
+AudioSessionState::AudioSessionState(Handle h) noexcept: emlite::Val(h) {
+    value_ = AudioSessionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AudioSessionState::AudioSessionState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AudioSessionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AudioSessionState AudioSessionState::take_ownership(Handle h) noexcept { return AudioSessionState(h); }
 AudioSessionState AudioSessionState::clone() const noexcept { return *this; }
+const char* AudioSessionState::to_string(AudioSessionState::Value value_) noexcept {
+    switch (value_) {
+        case INACTIVE:
+            return "inactive";
+        case ACTIVE:
+            return "active";
+        case INTERRUPTED:
+            return "interrupted";
+        default:
+            return "inactive"; // fallback to first value
+    }
+}
 
-AutoplayPolicy::AutoplayPolicy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AutoplayPolicy::AutoplayPolicy(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AutoplayPolicy::Value AutoplayPolicy::from_string(const char* str) noexcept {
+    if (str_equal(str, "allowed")) {
+        return ALLOWED;
+    }
+    else if (str_equal(str, "allowed-muted")) {
+        return ALLOWED_MUTED;
+    }
+    else if (str_equal(str, "disallowed")) {
+        return DISALLOWED;
+    }
+    else {
+        // Default to first value for invalid input
+        return ALLOWED;
+    }
+}
+
+AutoplayPolicy::AutoplayPolicy(Value v) noexcept : emlite::Val(AutoplayPolicy::to_string(v)), value_(v) {}
+AutoplayPolicy::AutoplayPolicy(Handle h) noexcept: emlite::Val(h) {
+    value_ = AutoplayPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AutoplayPolicy::AutoplayPolicy(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AutoplayPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AutoplayPolicy AutoplayPolicy::take_ownership(Handle h) noexcept { return AutoplayPolicy(h); }
 AutoplayPolicy AutoplayPolicy::clone() const noexcept { return *this; }
+const char* AutoplayPolicy::to_string(AutoplayPolicy::Value value_) noexcept {
+    switch (value_) {
+        case ALLOWED:
+            return "allowed";
+        case ALLOWED_MUTED:
+            return "allowed-muted";
+        case DISALLOWED:
+            return "disallowed";
+        default:
+            return "allowed"; // fallback to first value
+    }
+}
 
-AutoplayPolicyMediaType::AutoplayPolicyMediaType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AutoplayPolicyMediaType::AutoplayPolicyMediaType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AutoplayPolicyMediaType::Value AutoplayPolicyMediaType::from_string(const char* str) noexcept {
+    if (str_equal(str, "mediaelement")) {
+        return MEDIAELEMENT;
+    }
+    else if (str_equal(str, "audiocontext")) {
+        return AUDIOCONTEXT;
+    }
+    else {
+        // Default to first value for invalid input
+        return MEDIAELEMENT;
+    }
+}
+
+AutoplayPolicyMediaType::AutoplayPolicyMediaType(Value v) noexcept : emlite::Val(AutoplayPolicyMediaType::to_string(v)), value_(v) {}
+AutoplayPolicyMediaType::AutoplayPolicyMediaType(Handle h) noexcept: emlite::Val(h) {
+    value_ = AutoplayPolicyMediaType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AutoplayPolicyMediaType::AutoplayPolicyMediaType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AutoplayPolicyMediaType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AutoplayPolicyMediaType AutoplayPolicyMediaType::take_ownership(Handle h) noexcept { return AutoplayPolicyMediaType(h); }
 AutoplayPolicyMediaType AutoplayPolicyMediaType::clone() const noexcept { return *this; }
+const char* AutoplayPolicyMediaType::to_string(AutoplayPolicyMediaType::Value value_) noexcept {
+    switch (value_) {
+        case MEDIAELEMENT:
+            return "mediaelement";
+        case AUDIOCONTEXT:
+            return "audiocontext";
+        default:
+            return "mediaelement"; // fallback to first value
+    }
+}
 
-BackgroundFetchResult::BackgroundFetchResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BackgroundFetchResult::BackgroundFetchResult(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BackgroundFetchResult::Value BackgroundFetchResult::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "success")) {
+        return SUCCESS;
+    }
+    else if (str_equal(str, "failure")) {
+        return FAILURE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+BackgroundFetchResult::BackgroundFetchResult(Value v) noexcept : emlite::Val(BackgroundFetchResult::to_string(v)), value_(v) {}
+BackgroundFetchResult::BackgroundFetchResult(Handle h) noexcept: emlite::Val(h) {
+    value_ = BackgroundFetchResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BackgroundFetchResult::BackgroundFetchResult(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BackgroundFetchResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BackgroundFetchResult BackgroundFetchResult::take_ownership(Handle h) noexcept { return BackgroundFetchResult(h); }
 BackgroundFetchResult BackgroundFetchResult::clone() const noexcept { return *this; }
+const char* BackgroundFetchResult::to_string(BackgroundFetchResult::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case SUCCESS:
+            return "success";
+        case FAILURE:
+            return "failure";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-BackgroundFetchFailureReason::BackgroundFetchFailureReason(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BackgroundFetchFailureReason::BackgroundFetchFailureReason(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BackgroundFetchFailureReason::Value BackgroundFetchFailureReason::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "aborted")) {
+        return ABORTED;
+    }
+    else if (str_equal(str, "bad-status")) {
+        return BAD_STATUS;
+    }
+    else if (str_equal(str, "fetch-error")) {
+        return FETCH_ERROR;
+    }
+    else if (str_equal(str, "quota-exceeded")) {
+        return QUOTA_EXCEEDED;
+    }
+    else if (str_equal(str, "download-total-exceeded")) {
+        return DOWNLOAD_TOTAL_EXCEEDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+BackgroundFetchFailureReason::BackgroundFetchFailureReason(Value v) noexcept : emlite::Val(BackgroundFetchFailureReason::to_string(v)), value_(v) {}
+BackgroundFetchFailureReason::BackgroundFetchFailureReason(Handle h) noexcept: emlite::Val(h) {
+    value_ = BackgroundFetchFailureReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BackgroundFetchFailureReason::BackgroundFetchFailureReason(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BackgroundFetchFailureReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BackgroundFetchFailureReason BackgroundFetchFailureReason::take_ownership(Handle h) noexcept { return BackgroundFetchFailureReason(h); }
 BackgroundFetchFailureReason BackgroundFetchFailureReason::clone() const noexcept { return *this; }
+const char* BackgroundFetchFailureReason::to_string(BackgroundFetchFailureReason::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case ABORTED:
+            return "aborted";
+        case BAD_STATUS:
+            return "bad-status";
+        case FETCH_ERROR:
+            return "fetch-error";
+        case QUOTA_EXCEEDED:
+            return "quota-exceeded";
+        case DOWNLOAD_TOTAL_EXCEEDED:
+            return "download-total-exceeded";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-PresentationStyle::PresentationStyle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PresentationStyle::PresentationStyle(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PresentationStyle::Value PresentationStyle::from_string(const char* str) noexcept {
+    if (str_equal(str, "unspecified")) {
+        return UNSPECIFIED;
+    }
+    else if (str_equal(str, "inline")) {
+        return INLINE_;
+    }
+    else if (str_equal(str, "attachment")) {
+        return ATTACHMENT;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNSPECIFIED;
+    }
+}
+
+PresentationStyle::PresentationStyle(Value v) noexcept : emlite::Val(PresentationStyle::to_string(v)), value_(v) {}
+PresentationStyle::PresentationStyle(Handle h) noexcept: emlite::Val(h) {
+    value_ = PresentationStyle::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PresentationStyle::PresentationStyle(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PresentationStyle::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PresentationStyle PresentationStyle::take_ownership(Handle h) noexcept { return PresentationStyle(h); }
 PresentationStyle PresentationStyle::clone() const noexcept { return *this; }
+const char* PresentationStyle::to_string(PresentationStyle::Value value_) noexcept {
+    switch (value_) {
+        case UNSPECIFIED:
+            return "unspecified";
+        case INLINE_:
+            return "inline";
+        case ATTACHMENT:
+            return "attachment";
+        default:
+            return "unspecified"; // fallback to first value
+    }
+}
 
-CompressionFormat::CompressionFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CompressionFormat::CompressionFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CompressionFormat::Value CompressionFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "deflate")) {
+        return DEFLATE;
+    }
+    else if (str_equal(str, "deflate-raw")) {
+        return DEFLATE_RAW;
+    }
+    else if (str_equal(str, "gzip")) {
+        return GZIP;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFLATE;
+    }
+}
+
+CompressionFormat::CompressionFormat(Value v) noexcept : emlite::Val(CompressionFormat::to_string(v)), value_(v) {}
+CompressionFormat::CompressionFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = CompressionFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CompressionFormat::CompressionFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CompressionFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CompressionFormat CompressionFormat::take_ownership(Handle h) noexcept { return CompressionFormat(h); }
 CompressionFormat CompressionFormat::clone() const noexcept { return *this; }
+const char* CompressionFormat::to_string(CompressionFormat::Value value_) noexcept {
+    switch (value_) {
+        case DEFLATE:
+            return "deflate";
+        case DEFLATE_RAW:
+            return "deflate-raw";
+        case GZIP:
+            return "gzip";
+        default:
+            return "deflate"; // fallback to first value
+    }
+}
 
-PressureSource::PressureSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PressureSource::PressureSource(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PressureSource::Value PressureSource::from_string(const char* str) noexcept {
+    if (str_equal(str, "cpu")) {
+        return CPU;
+    }
+    else {
+        // Default to first value for invalid input
+        return CPU;
+    }
+}
+
+PressureSource::PressureSource(Value v) noexcept : emlite::Val(PressureSource::to_string(v)), value_(v) {}
+PressureSource::PressureSource(Handle h) noexcept: emlite::Val(h) {
+    value_ = PressureSource::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PressureSource::PressureSource(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PressureSource::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PressureSource PressureSource::take_ownership(Handle h) noexcept { return PressureSource(h); }
 PressureSource PressureSource::clone() const noexcept { return *this; }
+const char* PressureSource::to_string(PressureSource::Value value_) noexcept {
+    switch (value_) {
+        case CPU:
+            return "cpu";
+        default:
+            return "cpu"; // fallback to first value
+    }
+}
 
-PressureState::PressureState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PressureState::PressureState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PressureState::Value PressureState::from_string(const char* str) noexcept {
+    if (str_equal(str, "nominal")) {
+        return NOMINAL;
+    }
+    else if (str_equal(str, "fair")) {
+        return FAIR;
+    }
+    else if (str_equal(str, "serious")) {
+        return SERIOUS;
+    }
+    else if (str_equal(str, "critical")) {
+        return CRITICAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return NOMINAL;
+    }
+}
+
+PressureState::PressureState(Value v) noexcept : emlite::Val(PressureState::to_string(v)), value_(v) {}
+PressureState::PressureState(Handle h) noexcept: emlite::Val(h) {
+    value_ = PressureState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PressureState::PressureState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PressureState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PressureState PressureState::take_ownership(Handle h) noexcept { return PressureState(h); }
 PressureState PressureState::clone() const noexcept { return *this; }
+const char* PressureState::to_string(PressureState::Value value_) noexcept {
+    switch (value_) {
+        case NOMINAL:
+            return "nominal";
+        case FAIR:
+            return "fair";
+        case SERIOUS:
+            return "serious";
+        case CRITICAL:
+            return "critical";
+        default:
+            return "nominal"; // fallback to first value
+    }
+}
 
-ContactProperty::ContactProperty(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ContactProperty::ContactProperty(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ContactProperty::Value ContactProperty::from_string(const char* str) noexcept {
+    if (str_equal(str, "address")) {
+        return ADDRESS;
+    }
+    else if (str_equal(str, "email")) {
+        return EMAIL;
+    }
+    else if (str_equal(str, "icon")) {
+        return ICON;
+    }
+    else if (str_equal(str, "name")) {
+        return NAME;
+    }
+    else if (str_equal(str, "tel")) {
+        return TEL;
+    }
+    else {
+        // Default to first value for invalid input
+        return ADDRESS;
+    }
+}
+
+ContactProperty::ContactProperty(Value v) noexcept : emlite::Val(ContactProperty::to_string(v)), value_(v) {}
+ContactProperty::ContactProperty(Handle h) noexcept: emlite::Val(h) {
+    value_ = ContactProperty::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ContactProperty::ContactProperty(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ContactProperty::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ContactProperty ContactProperty::take_ownership(Handle h) noexcept { return ContactProperty(h); }
 ContactProperty ContactProperty::clone() const noexcept { return *this; }
+const char* ContactProperty::to_string(ContactProperty::Value value_) noexcept {
+    switch (value_) {
+        case ADDRESS:
+            return "address";
+        case EMAIL:
+            return "email";
+        case ICON:
+            return "icon";
+        case NAME:
+            return "name";
+        case TEL:
+            return "tel";
+        default:
+            return "address"; // fallback to first value
+    }
+}
 
-ContentCategory::ContentCategory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ContentCategory::ContentCategory(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ContentCategory::Value ContentCategory::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "homepage")) {
+        return HOMEPAGE;
+    }
+    else if (str_equal(str, "article")) {
+        return ARTICLE;
+    }
+    else if (str_equal(str, "video")) {
+        return VIDEO;
+    }
+    else if (str_equal(str, "audio")) {
+        return AUDIO;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+ContentCategory::ContentCategory(Value v) noexcept : emlite::Val(ContentCategory::to_string(v)), value_(v) {}
+ContentCategory::ContentCategory(Handle h) noexcept: emlite::Val(h) {
+    value_ = ContentCategory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ContentCategory::ContentCategory(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ContentCategory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ContentCategory ContentCategory::take_ownership(Handle h) noexcept { return ContentCategory(h); }
 ContentCategory ContentCategory::clone() const noexcept { return *this; }
+const char* ContentCategory::to_string(ContentCategory::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case HOMEPAGE:
+            return "homepage";
+        case ARTICLE:
+            return "article";
+        case VIDEO:
+            return "video";
+        case AUDIO:
+            return "audio";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-CookieSameSite::CookieSameSite(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CookieSameSite::CookieSameSite(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CookieSameSite::Value CookieSameSite::from_string(const char* str) noexcept {
+    if (str_equal(str, "strict")) {
+        return STRICT;
+    }
+    else if (str_equal(str, "lax")) {
+        return LAX;
+    }
+    else if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else {
+        // Default to first value for invalid input
+        return STRICT;
+    }
+}
+
+CookieSameSite::CookieSameSite(Value v) noexcept : emlite::Val(CookieSameSite::to_string(v)), value_(v) {}
+CookieSameSite::CookieSameSite(Handle h) noexcept: emlite::Val(h) {
+    value_ = CookieSameSite::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CookieSameSite::CookieSameSite(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CookieSameSite::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CookieSameSite CookieSameSite::take_ownership(Handle h) noexcept { return CookieSameSite(h); }
 CookieSameSite CookieSameSite::clone() const noexcept { return *this; }
+const char* CookieSameSite::to_string(CookieSameSite::Value value_) noexcept {
+    switch (value_) {
+        case STRICT:
+            return "strict";
+        case LAX:
+            return "lax";
+        case NONE:
+            return "none";
+        default:
+            return "strict"; // fallback to first value
+    }
+}
 
-CredentialMediationRequirement::CredentialMediationRequirement(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CredentialMediationRequirement::CredentialMediationRequirement(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CredentialMediationRequirement::Value CredentialMediationRequirement::from_string(const char* str) noexcept {
+    if (str_equal(str, "silent")) {
+        return SILENT;
+    }
+    else if (str_equal(str, "optional")) {
+        return OPTIONAL;
+    }
+    else if (str_equal(str, "conditional")) {
+        return CONDITIONAL;
+    }
+    else if (str_equal(str, "required")) {
+        return REQUIRED;
+    }
+    else {
+        // Default to first value for invalid input
+        return SILENT;
+    }
+}
+
+CredentialMediationRequirement::CredentialMediationRequirement(Value v) noexcept : emlite::Val(CredentialMediationRequirement::to_string(v)), value_(v) {}
+CredentialMediationRequirement::CredentialMediationRequirement(Handle h) noexcept: emlite::Val(h) {
+    value_ = CredentialMediationRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CredentialMediationRequirement::CredentialMediationRequirement(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CredentialMediationRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CredentialMediationRequirement CredentialMediationRequirement::take_ownership(Handle h) noexcept { return CredentialMediationRequirement(h); }
 CredentialMediationRequirement CredentialMediationRequirement::clone() const noexcept { return *this; }
+const char* CredentialMediationRequirement::to_string(CredentialMediationRequirement::Value value_) noexcept {
+    switch (value_) {
+        case SILENT:
+            return "silent";
+        case OPTIONAL:
+            return "optional";
+        case CONDITIONAL:
+            return "conditional";
+        case REQUIRED:
+            return "required";
+        default:
+            return "silent"; // fallback to first value
+    }
+}
 
-ScriptingPolicyViolationType::ScriptingPolicyViolationType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScriptingPolicyViolationType::ScriptingPolicyViolationType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScriptingPolicyViolationType::Value ScriptingPolicyViolationType::from_string(const char* str) noexcept {
+    if (str_equal(str, "externalScript")) {
+        return EXTERNALSCRIPT;
+    }
+    else if (str_equal(str, "inlineScript")) {
+        return INLINESCRIPT;
+    }
+    else if (str_equal(str, "inlineEventHandler")) {
+        return INLINEEVENTHANDLER;
+    }
+    else if (str_equal(str, "eval")) {
+        return EVAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return EXTERNALSCRIPT;
+    }
+}
+
+ScriptingPolicyViolationType::ScriptingPolicyViolationType(Value v) noexcept : emlite::Val(ScriptingPolicyViolationType::to_string(v)), value_(v) {}
+ScriptingPolicyViolationType::ScriptingPolicyViolationType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScriptingPolicyViolationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScriptingPolicyViolationType::ScriptingPolicyViolationType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScriptingPolicyViolationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScriptingPolicyViolationType ScriptingPolicyViolationType::take_ownership(Handle h) noexcept { return ScriptingPolicyViolationType(h); }
 ScriptingPolicyViolationType ScriptingPolicyViolationType::clone() const noexcept { return *this; }
+const char* ScriptingPolicyViolationType::to_string(ScriptingPolicyViolationType::Value value_) noexcept {
+    switch (value_) {
+        case EXTERNALSCRIPT:
+            return "externalScript";
+        case INLINESCRIPT:
+            return "inlineScript";
+        case INLINEEVENTHANDLER:
+            return "inlineEventHandler";
+        case EVAL:
+            return "eval";
+        default:
+            return "externalScript"; // fallback to first value
+    }
+}
 
-FontFaceLoadStatus::FontFaceLoadStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FontFaceLoadStatus::FontFaceLoadStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FontFaceLoadStatus::Value FontFaceLoadStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "unloaded")) {
+        return UNLOADED;
+    }
+    else if (str_equal(str, "loading")) {
+        return LOADING;
+    }
+    else if (str_equal(str, "loaded")) {
+        return LOADED;
+    }
+    else if (str_equal(str, "error")) {
+        return ERROR;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNLOADED;
+    }
+}
+
+FontFaceLoadStatus::FontFaceLoadStatus(Value v) noexcept : emlite::Val(FontFaceLoadStatus::to_string(v)), value_(v) {}
+FontFaceLoadStatus::FontFaceLoadStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = FontFaceLoadStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FontFaceLoadStatus::FontFaceLoadStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FontFaceLoadStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FontFaceLoadStatus FontFaceLoadStatus::take_ownership(Handle h) noexcept { return FontFaceLoadStatus(h); }
 FontFaceLoadStatus FontFaceLoadStatus::clone() const noexcept { return *this; }
+const char* FontFaceLoadStatus::to_string(FontFaceLoadStatus::Value value_) noexcept {
+    switch (value_) {
+        case UNLOADED:
+            return "unloaded";
+        case LOADING:
+            return "loading";
+        case LOADED:
+            return "loaded";
+        case ERROR:
+            return "error";
+        default:
+            return "unloaded"; // fallback to first value
+    }
+}
 
-FontFaceSetLoadStatus::FontFaceSetLoadStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FontFaceSetLoadStatus::FontFaceSetLoadStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FontFaceSetLoadStatus::Value FontFaceSetLoadStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "loading")) {
+        return LOADING;
+    }
+    else if (str_equal(str, "loaded")) {
+        return LOADED;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOADING;
+    }
+}
+
+FontFaceSetLoadStatus::FontFaceSetLoadStatus(Value v) noexcept : emlite::Val(FontFaceSetLoadStatus::to_string(v)), value_(v) {}
+FontFaceSetLoadStatus::FontFaceSetLoadStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = FontFaceSetLoadStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FontFaceSetLoadStatus::FontFaceSetLoadStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FontFaceSetLoadStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FontFaceSetLoadStatus FontFaceSetLoadStatus::take_ownership(Handle h) noexcept { return FontFaceSetLoadStatus(h); }
 FontFaceSetLoadStatus FontFaceSetLoadStatus::clone() const noexcept { return *this; }
+const char* FontFaceSetLoadStatus::to_string(FontFaceSetLoadStatus::Value value_) noexcept {
+    switch (value_) {
+        case LOADING:
+            return "loading";
+        case LOADED:
+            return "loaded";
+        default:
+            return "loading"; // fallback to first value
+    }
+}
 
-HighlightType::HighlightType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HighlightType::HighlightType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+HighlightType::Value HighlightType::from_string(const char* str) noexcept {
+    if (str_equal(str, "highlight")) {
+        return HIGHLIGHT;
+    }
+    else if (str_equal(str, "spelling-error")) {
+        return SPELLING_ERROR;
+    }
+    else if (str_equal(str, "grammar-error")) {
+        return GRAMMAR_ERROR;
+    }
+    else {
+        // Default to first value for invalid input
+        return HIGHLIGHT;
+    }
+}
+
+HighlightType::HighlightType(Value v) noexcept : emlite::Val(HighlightType::to_string(v)), value_(v) {}
+HighlightType::HighlightType(Handle h) noexcept: emlite::Val(h) {
+    value_ = HighlightType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+HighlightType::HighlightType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = HighlightType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 HighlightType HighlightType::take_ownership(Handle h) noexcept { return HighlightType(h); }
 HighlightType HighlightType::clone() const noexcept { return *this; }
+const char* HighlightType::to_string(HighlightType::Value value_) noexcept {
+    switch (value_) {
+        case HIGHLIGHT:
+            return "highlight";
+        case SPELLING_ERROR:
+            return "spelling-error";
+        case GRAMMAR_ERROR:
+            return "grammar-error";
+        default:
+            return "highlight"; // fallback to first value
+    }
+}
 
-ChildDisplayType::ChildDisplayType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ChildDisplayType::ChildDisplayType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ChildDisplayType::Value ChildDisplayType::from_string(const char* str) noexcept {
+    if (str_equal(str, "block")) {
+        return BLOCK;
+    }
+    else if (str_equal(str, "normal")) {
+        return NORMAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return BLOCK;
+    }
+}
+
+ChildDisplayType::ChildDisplayType(Value v) noexcept : emlite::Val(ChildDisplayType::to_string(v)), value_(v) {}
+ChildDisplayType::ChildDisplayType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ChildDisplayType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ChildDisplayType::ChildDisplayType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ChildDisplayType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ChildDisplayType ChildDisplayType::take_ownership(Handle h) noexcept { return ChildDisplayType(h); }
 ChildDisplayType ChildDisplayType::clone() const noexcept { return *this; }
+const char* ChildDisplayType::to_string(ChildDisplayType::Value value_) noexcept {
+    switch (value_) {
+        case BLOCK:
+            return "block";
+        case NORMAL:
+            return "normal";
+        default:
+            return "block"; // fallback to first value
+    }
+}
 
-LayoutSizingMode::LayoutSizingMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-LayoutSizingMode::LayoutSizingMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+LayoutSizingMode::Value LayoutSizingMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "block-like")) {
+        return BLOCK_LIKE;
+    }
+    else if (str_equal(str, "manual")) {
+        return MANUAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return BLOCK_LIKE;
+    }
+}
+
+LayoutSizingMode::LayoutSizingMode(Value v) noexcept : emlite::Val(LayoutSizingMode::to_string(v)), value_(v) {}
+LayoutSizingMode::LayoutSizingMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = LayoutSizingMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+LayoutSizingMode::LayoutSizingMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = LayoutSizingMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 LayoutSizingMode LayoutSizingMode::take_ownership(Handle h) noexcept { return LayoutSizingMode(h); }
 LayoutSizingMode LayoutSizingMode::clone() const noexcept { return *this; }
+const char* LayoutSizingMode::to_string(LayoutSizingMode::Value value_) noexcept {
+    switch (value_) {
+        case BLOCK_LIKE:
+            return "block-like";
+        case MANUAL:
+            return "manual";
+        default:
+            return "block-like"; // fallback to first value
+    }
+}
 
-BlockFragmentationType::BlockFragmentationType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BlockFragmentationType::BlockFragmentationType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BlockFragmentationType::Value BlockFragmentationType::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "page")) {
+        return PAGE;
+    }
+    else if (str_equal(str, "column")) {
+        return COLUMN;
+    }
+    else if (str_equal(str, "region")) {
+        return REGION;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+BlockFragmentationType::BlockFragmentationType(Value v) noexcept : emlite::Val(BlockFragmentationType::to_string(v)), value_(v) {}
+BlockFragmentationType::BlockFragmentationType(Handle h) noexcept: emlite::Val(h) {
+    value_ = BlockFragmentationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BlockFragmentationType::BlockFragmentationType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BlockFragmentationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BlockFragmentationType BlockFragmentationType::take_ownership(Handle h) noexcept { return BlockFragmentationType(h); }
 BlockFragmentationType BlockFragmentationType::clone() const noexcept { return *this; }
+const char* BlockFragmentationType::to_string(BlockFragmentationType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case PAGE:
+            return "page";
+        case COLUMN:
+            return "column";
+        case REGION:
+            return "region";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-BreakType::BreakType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BreakType::BreakType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BreakType::Value BreakType::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "line")) {
+        return LINE;
+    }
+    else if (str_equal(str, "column")) {
+        return COLUMN;
+    }
+    else if (str_equal(str, "page")) {
+        return PAGE;
+    }
+    else if (str_equal(str, "region")) {
+        return REGION;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+BreakType::BreakType(Value v) noexcept : emlite::Val(BreakType::to_string(v)), value_(v) {}
+BreakType::BreakType(Handle h) noexcept: emlite::Val(h) {
+    value_ = BreakType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BreakType::BreakType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BreakType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BreakType BreakType::take_ownership(Handle h) noexcept { return BreakType(h); }
 BreakType BreakType::clone() const noexcept { return *this; }
+const char* BreakType::to_string(BreakType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case LINE:
+            return "line";
+        case COLUMN:
+            return "column";
+        case PAGE:
+            return "page";
+        case REGION:
+            return "region";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-SpatialNavigationDirection::SpatialNavigationDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SpatialNavigationDirection::SpatialNavigationDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SpatialNavigationDirection::Value SpatialNavigationDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "up")) {
+        return UP;
+    }
+    else if (str_equal(str, "down")) {
+        return DOWN;
+    }
+    else if (str_equal(str, "left")) {
+        return LEFT;
+    }
+    else if (str_equal(str, "right")) {
+        return RIGHT;
+    }
+    else {
+        // Default to first value for invalid input
+        return UP;
+    }
+}
+
+SpatialNavigationDirection::SpatialNavigationDirection(Value v) noexcept : emlite::Val(SpatialNavigationDirection::to_string(v)), value_(v) {}
+SpatialNavigationDirection::SpatialNavigationDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = SpatialNavigationDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SpatialNavigationDirection::SpatialNavigationDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SpatialNavigationDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SpatialNavigationDirection SpatialNavigationDirection::take_ownership(Handle h) noexcept { return SpatialNavigationDirection(h); }
 SpatialNavigationDirection SpatialNavigationDirection::clone() const noexcept { return *this; }
+const char* SpatialNavigationDirection::to_string(SpatialNavigationDirection::Value value_) noexcept {
+    switch (value_) {
+        case UP:
+            return "up";
+        case DOWN:
+            return "down";
+        case LEFT:
+            return "left";
+        case RIGHT:
+            return "right";
+        default:
+            return "up"; // fallback to first value
+    }
+}
 
-FocusableAreaSearchMode::FocusableAreaSearchMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FocusableAreaSearchMode::FocusableAreaSearchMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FocusableAreaSearchMode::Value FocusableAreaSearchMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "visible")) {
+        return VISIBLE;
+    }
+    else if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else {
+        // Default to first value for invalid input
+        return VISIBLE;
+    }
+}
+
+FocusableAreaSearchMode::FocusableAreaSearchMode(Value v) noexcept : emlite::Val(FocusableAreaSearchMode::to_string(v)), value_(v) {}
+FocusableAreaSearchMode::FocusableAreaSearchMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = FocusableAreaSearchMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FocusableAreaSearchMode::FocusableAreaSearchMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FocusableAreaSearchMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FocusableAreaSearchMode FocusableAreaSearchMode::take_ownership(Handle h) noexcept { return FocusableAreaSearchMode(h); }
 FocusableAreaSearchMode FocusableAreaSearchMode::clone() const noexcept { return *this; }
+const char* FocusableAreaSearchMode::to_string(FocusableAreaSearchMode::Value value_) noexcept {
+    switch (value_) {
+        case VISIBLE:
+            return "visible";
+        case ALL:
+            return "all";
+        default:
+            return "visible"; // fallback to first value
+    }
+}
 
-CSSNumericBaseType::CSSNumericBaseType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CSSNumericBaseType::CSSNumericBaseType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CSSNumericBaseType::Value CSSNumericBaseType::from_string(const char* str) noexcept {
+    if (str_equal(str, "length")) {
+        return LENGTH;
+    }
+    else if (str_equal(str, "angle")) {
+        return ANGLE;
+    }
+    else if (str_equal(str, "time")) {
+        return TIME;
+    }
+    else if (str_equal(str, "frequency")) {
+        return FREQUENCY;
+    }
+    else if (str_equal(str, "resolution")) {
+        return RESOLUTION;
+    }
+    else if (str_equal(str, "flex")) {
+        return FLEX;
+    }
+    else if (str_equal(str, "percent")) {
+        return PERCENT;
+    }
+    else {
+        // Default to first value for invalid input
+        return LENGTH;
+    }
+}
+
+CSSNumericBaseType::CSSNumericBaseType(Value v) noexcept : emlite::Val(CSSNumericBaseType::to_string(v)), value_(v) {}
+CSSNumericBaseType::CSSNumericBaseType(Handle h) noexcept: emlite::Val(h) {
+    value_ = CSSNumericBaseType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CSSNumericBaseType::CSSNumericBaseType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CSSNumericBaseType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CSSNumericBaseType CSSNumericBaseType::take_ownership(Handle h) noexcept { return CSSNumericBaseType(h); }
 CSSNumericBaseType CSSNumericBaseType::clone() const noexcept { return *this; }
+const char* CSSNumericBaseType::to_string(CSSNumericBaseType::Value value_) noexcept {
+    switch (value_) {
+        case LENGTH:
+            return "length";
+        case ANGLE:
+            return "angle";
+        case TIME:
+            return "time";
+        case FREQUENCY:
+            return "frequency";
+        case RESOLUTION:
+            return "resolution";
+        case FLEX:
+            return "flex";
+        case PERCENT:
+            return "percent";
+        default:
+            return "length"; // fallback to first value
+    }
+}
 
-CSSMathOperator::CSSMathOperator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CSSMathOperator::CSSMathOperator(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CSSMathOperator::Value CSSMathOperator::from_string(const char* str) noexcept {
+    if (str_equal(str, "sum")) {
+        return SUM;
+    }
+    else if (str_equal(str, "product")) {
+        return PRODUCT;
+    }
+    else if (str_equal(str, "negate")) {
+        return NEGATE;
+    }
+    else if (str_equal(str, "invert")) {
+        return INVERT;
+    }
+    else if (str_equal(str, "min")) {
+        return MIN;
+    }
+    else if (str_equal(str, "max")) {
+        return MAX;
+    }
+    else if (str_equal(str, "clamp")) {
+        return CLAMP;
+    }
+    else {
+        // Default to first value for invalid input
+        return SUM;
+    }
+}
+
+CSSMathOperator::CSSMathOperator(Value v) noexcept : emlite::Val(CSSMathOperator::to_string(v)), value_(v) {}
+CSSMathOperator::CSSMathOperator(Handle h) noexcept: emlite::Val(h) {
+    value_ = CSSMathOperator::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CSSMathOperator::CSSMathOperator(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CSSMathOperator::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CSSMathOperator CSSMathOperator::take_ownership(Handle h) noexcept { return CSSMathOperator(h); }
 CSSMathOperator CSSMathOperator::clone() const noexcept { return *this; }
+const char* CSSMathOperator::to_string(CSSMathOperator::Value value_) noexcept {
+    switch (value_) {
+        case SUM:
+            return "sum";
+        case PRODUCT:
+            return "product";
+        case NEGATE:
+            return "negate";
+        case INVERT:
+            return "invert";
+        case MIN:
+            return "min";
+        case MAX:
+            return "max";
+        case CLAMP:
+            return "clamp";
+        default:
+            return "sum"; // fallback to first value
+    }
+}
 
-ScrollBehavior::ScrollBehavior(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScrollBehavior::ScrollBehavior(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScrollBehavior::Value ScrollBehavior::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "instant")) {
+        return INSTANT;
+    }
+    else if (str_equal(str, "smooth")) {
+        return SMOOTH;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+ScrollBehavior::ScrollBehavior(Value v) noexcept : emlite::Val(ScrollBehavior::to_string(v)), value_(v) {}
+ScrollBehavior::ScrollBehavior(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScrollBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScrollBehavior::ScrollBehavior(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScrollBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScrollBehavior ScrollBehavior::take_ownership(Handle h) noexcept { return ScrollBehavior(h); }
 ScrollBehavior ScrollBehavior::clone() const noexcept { return *this; }
+const char* ScrollBehavior::to_string(ScrollBehavior::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case INSTANT:
+            return "instant";
+        case SMOOTH:
+            return "smooth";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-ScrollLogicalPosition::ScrollLogicalPosition(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScrollLogicalPosition::ScrollLogicalPosition(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScrollLogicalPosition::Value ScrollLogicalPosition::from_string(const char* str) noexcept {
+    if (str_equal(str, "start")) {
+        return START;
+    }
+    else if (str_equal(str, "center")) {
+        return CENTER;
+    }
+    else if (str_equal(str, "end")) {
+        return END;
+    }
+    else if (str_equal(str, "nearest")) {
+        return NEAREST;
+    }
+    else {
+        // Default to first value for invalid input
+        return START;
+    }
+}
+
+ScrollLogicalPosition::ScrollLogicalPosition(Value v) noexcept : emlite::Val(ScrollLogicalPosition::to_string(v)), value_(v) {}
+ScrollLogicalPosition::ScrollLogicalPosition(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScrollLogicalPosition::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScrollLogicalPosition::ScrollLogicalPosition(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScrollLogicalPosition::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScrollLogicalPosition ScrollLogicalPosition::take_ownership(Handle h) noexcept { return ScrollLogicalPosition(h); }
 ScrollLogicalPosition ScrollLogicalPosition::clone() const noexcept { return *this; }
+const char* ScrollLogicalPosition::to_string(ScrollLogicalPosition::Value value_) noexcept {
+    switch (value_) {
+        case START:
+            return "start";
+        case CENTER:
+            return "center";
+        case END:
+            return "end";
+        case NEAREST:
+            return "nearest";
+        default:
+            return "start"; // fallback to first value
+    }
+}
 
-ScrollIntoViewContainer::ScrollIntoViewContainer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScrollIntoViewContainer::ScrollIntoViewContainer(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScrollIntoViewContainer::Value ScrollIntoViewContainer::from_string(const char* str) noexcept {
+    if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else if (str_equal(str, "nearest")) {
+        return NEAREST;
+    }
+    else {
+        // Default to first value for invalid input
+        return ALL;
+    }
+}
+
+ScrollIntoViewContainer::ScrollIntoViewContainer(Value v) noexcept : emlite::Val(ScrollIntoViewContainer::to_string(v)), value_(v) {}
+ScrollIntoViewContainer::ScrollIntoViewContainer(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScrollIntoViewContainer::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScrollIntoViewContainer::ScrollIntoViewContainer(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScrollIntoViewContainer::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScrollIntoViewContainer ScrollIntoViewContainer::take_ownership(Handle h) noexcept { return ScrollIntoViewContainer(h); }
 ScrollIntoViewContainer ScrollIntoViewContainer::clone() const noexcept { return *this; }
+const char* ScrollIntoViewContainer::to_string(ScrollIntoViewContainer::Value value_) noexcept {
+    switch (value_) {
+        case ALL:
+            return "all";
+        case NEAREST:
+            return "nearest";
+        default:
+            return "all"; // fallback to first value
+    }
+}
 
-CSSBoxType::CSSBoxType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CSSBoxType::CSSBoxType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CSSBoxType::Value CSSBoxType::from_string(const char* str) noexcept {
+    if (str_equal(str, "margin")) {
+        return MARGIN;
+    }
+    else if (str_equal(str, "border")) {
+        return BORDER;
+    }
+    else if (str_equal(str, "padding")) {
+        return PADDING;
+    }
+    else if (str_equal(str, "content")) {
+        return CONTENT;
+    }
+    else {
+        // Default to first value for invalid input
+        return MARGIN;
+    }
+}
+
+CSSBoxType::CSSBoxType(Value v) noexcept : emlite::Val(CSSBoxType::to_string(v)), value_(v) {}
+CSSBoxType::CSSBoxType(Handle h) noexcept: emlite::Val(h) {
+    value_ = CSSBoxType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CSSBoxType::CSSBoxType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CSSBoxType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CSSBoxType CSSBoxType::take_ownership(Handle h) noexcept { return CSSBoxType(h); }
 CSSBoxType CSSBoxType::clone() const noexcept { return *this; }
+const char* CSSBoxType::to_string(CSSBoxType::Value value_) noexcept {
+    switch (value_) {
+        case MARGIN:
+            return "margin";
+        case BORDER:
+            return "border";
+        case PADDING:
+            return "padding";
+        case CONTENT:
+            return "content";
+        default:
+            return "margin"; // fallback to first value
+    }
+}
 
-DevicePostureType::DevicePostureType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DevicePostureType::DevicePostureType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+DevicePostureType::Value DevicePostureType::from_string(const char* str) noexcept {
+    if (str_equal(str, "continuous")) {
+        return CONTINUOUS;
+    }
+    else if (str_equal(str, "folded")) {
+        return FOLDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONTINUOUS;
+    }
+}
+
+DevicePostureType::DevicePostureType(Value v) noexcept : emlite::Val(DevicePostureType::to_string(v)), value_(v) {}
+DevicePostureType::DevicePostureType(Handle h) noexcept: emlite::Val(h) {
+    value_ = DevicePostureType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DevicePostureType::DevicePostureType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DevicePostureType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 DevicePostureType DevicePostureType::take_ownership(Handle h) noexcept { return DevicePostureType(h); }
 DevicePostureType DevicePostureType::clone() const noexcept { return *this; }
+const char* DevicePostureType::to_string(DevicePostureType::Value value_) noexcept {
+    switch (value_) {
+        case CONTINUOUS:
+            return "continuous";
+        case FOLDED:
+            return "folded";
+        default:
+            return "continuous"; // fallback to first value
+    }
+}
 
-ItemType::ItemType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ItemType::ItemType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ItemType::Value ItemType::from_string(const char* str) noexcept {
+    if (str_equal(str, "product")) {
+        return PRODUCT;
+    }
+    else if (str_equal(str, "subscription")) {
+        return SUBSCRIPTION;
+    }
+    else {
+        // Default to first value for invalid input
+        return PRODUCT;
+    }
+}
+
+ItemType::ItemType(Value v) noexcept : emlite::Val(ItemType::to_string(v)), value_(v) {}
+ItemType::ItemType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ItemType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ItemType::ItemType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ItemType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ItemType ItemType::take_ownership(Handle h) noexcept { return ItemType(h); }
 ItemType ItemType::clone() const noexcept { return *this; }
+const char* ItemType::to_string(ItemType::Value value_) noexcept {
+    switch (value_) {
+        case PRODUCT:
+            return "product";
+        case SUBSCRIPTION:
+            return "subscription";
+        default:
+            return "product"; // fallback to first value
+    }
+}
 
-ShadowRootMode::ShadowRootMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ShadowRootMode::ShadowRootMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ShadowRootMode::Value ShadowRootMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "open")) {
+        return OPEN;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else {
+        // Default to first value for invalid input
+        return OPEN;
+    }
+}
+
+ShadowRootMode::ShadowRootMode(Value v) noexcept : emlite::Val(ShadowRootMode::to_string(v)), value_(v) {}
+ShadowRootMode::ShadowRootMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = ShadowRootMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ShadowRootMode::ShadowRootMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ShadowRootMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ShadowRootMode ShadowRootMode::take_ownership(Handle h) noexcept { return ShadowRootMode(h); }
 ShadowRootMode ShadowRootMode::clone() const noexcept { return *this; }
+const char* ShadowRootMode::to_string(ShadowRootMode::Value value_) noexcept {
+    switch (value_) {
+        case OPEN:
+            return "open";
+        case CLOSED:
+            return "closed";
+        default:
+            return "open"; // fallback to first value
+    }
+}
 
-SlotAssignmentMode::SlotAssignmentMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SlotAssignmentMode::SlotAssignmentMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SlotAssignmentMode::Value SlotAssignmentMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "manual")) {
+        return MANUAL;
+    }
+    else if (str_equal(str, "named")) {
+        return NAMED;
+    }
+    else {
+        // Default to first value for invalid input
+        return MANUAL;
+    }
+}
+
+SlotAssignmentMode::SlotAssignmentMode(Value v) noexcept : emlite::Val(SlotAssignmentMode::to_string(v)), value_(v) {}
+SlotAssignmentMode::SlotAssignmentMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = SlotAssignmentMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SlotAssignmentMode::SlotAssignmentMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SlotAssignmentMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SlotAssignmentMode SlotAssignmentMode::take_ownership(Handle h) noexcept { return SlotAssignmentMode(h); }
 SlotAssignmentMode SlotAssignmentMode::clone() const noexcept { return *this; }
+const char* SlotAssignmentMode::to_string(SlotAssignmentMode::Value value_) noexcept {
+    switch (value_) {
+        case MANUAL:
+            return "manual";
+        case NAMED:
+            return "named";
+        default:
+            return "manual"; // fallback to first value
+    }
+}
 
-UnderlineStyle::UnderlineStyle(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-UnderlineStyle::UnderlineStyle(const emlite::Val &v) noexcept : emlite::Val(v) {}
+UnderlineStyle::Value UnderlineStyle::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "solid")) {
+        return SOLID;
+    }
+    else if (str_equal(str, "dotted")) {
+        return DOTTED;
+    }
+    else if (str_equal(str, "dashed")) {
+        return DASHED;
+    }
+    else if (str_equal(str, "wavy")) {
+        return WAVY;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+UnderlineStyle::UnderlineStyle(Value v) noexcept : emlite::Val(UnderlineStyle::to_string(v)), value_(v) {}
+UnderlineStyle::UnderlineStyle(Handle h) noexcept: emlite::Val(h) {
+    value_ = UnderlineStyle::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+UnderlineStyle::UnderlineStyle(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = UnderlineStyle::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 UnderlineStyle UnderlineStyle::take_ownership(Handle h) noexcept { return UnderlineStyle(h); }
 UnderlineStyle UnderlineStyle::clone() const noexcept { return *this; }
+const char* UnderlineStyle::to_string(UnderlineStyle::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case SOLID:
+            return "solid";
+        case DOTTED:
+            return "dotted";
+        case DASHED:
+            return "dashed";
+        case WAVY:
+            return "wavy";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-UnderlineThickness::UnderlineThickness(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-UnderlineThickness::UnderlineThickness(const emlite::Val &v) noexcept : emlite::Val(v) {}
+UnderlineThickness::Value UnderlineThickness::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "thin")) {
+        return THIN;
+    }
+    else if (str_equal(str, "thick")) {
+        return THICK;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+UnderlineThickness::UnderlineThickness(Value v) noexcept : emlite::Val(UnderlineThickness::to_string(v)), value_(v) {}
+UnderlineThickness::UnderlineThickness(Handle h) noexcept: emlite::Val(h) {
+    value_ = UnderlineThickness::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+UnderlineThickness::UnderlineThickness(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = UnderlineThickness::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 UnderlineThickness UnderlineThickness::take_ownership(Handle h) noexcept { return UnderlineThickness(h); }
 UnderlineThickness UnderlineThickness::clone() const noexcept { return *this; }
+const char* UnderlineThickness::to_string(UnderlineThickness::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case THIN:
+            return "thin";
+        case THICK:
+            return "thick";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-MediaKeysRequirement::MediaKeysRequirement(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaKeysRequirement::MediaKeysRequirement(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaKeysRequirement::Value MediaKeysRequirement::from_string(const char* str) noexcept {
+    if (str_equal(str, "required")) {
+        return REQUIRED;
+    }
+    else if (str_equal(str, "optional")) {
+        return OPTIONAL;
+    }
+    else if (str_equal(str, "not-allowed")) {
+        return NOT_ALLOWED;
+    }
+    else {
+        // Default to first value for invalid input
+        return REQUIRED;
+    }
+}
+
+MediaKeysRequirement::MediaKeysRequirement(Value v) noexcept : emlite::Val(MediaKeysRequirement::to_string(v)), value_(v) {}
+MediaKeysRequirement::MediaKeysRequirement(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaKeysRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaKeysRequirement::MediaKeysRequirement(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaKeysRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaKeysRequirement MediaKeysRequirement::take_ownership(Handle h) noexcept { return MediaKeysRequirement(h); }
 MediaKeysRequirement MediaKeysRequirement::clone() const noexcept { return *this; }
+const char* MediaKeysRequirement::to_string(MediaKeysRequirement::Value value_) noexcept {
+    switch (value_) {
+        case REQUIRED:
+            return "required";
+        case OPTIONAL:
+            return "optional";
+        case NOT_ALLOWED:
+            return "not-allowed";
+        default:
+            return "required"; // fallback to first value
+    }
+}
 
-MediaKeySessionType::MediaKeySessionType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaKeySessionType::MediaKeySessionType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaKeySessionType::Value MediaKeySessionType::from_string(const char* str) noexcept {
+    if (str_equal(str, "temporary")) {
+        return TEMPORARY;
+    }
+    else if (str_equal(str, "persistent-license")) {
+        return PERSISTENT_LICENSE;
+    }
+    else {
+        // Default to first value for invalid input
+        return TEMPORARY;
+    }
+}
+
+MediaKeySessionType::MediaKeySessionType(Value v) noexcept : emlite::Val(MediaKeySessionType::to_string(v)), value_(v) {}
+MediaKeySessionType::MediaKeySessionType(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaKeySessionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaKeySessionType::MediaKeySessionType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaKeySessionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaKeySessionType MediaKeySessionType::take_ownership(Handle h) noexcept { return MediaKeySessionType(h); }
 MediaKeySessionType MediaKeySessionType::clone() const noexcept { return *this; }
+const char* MediaKeySessionType::to_string(MediaKeySessionType::Value value_) noexcept {
+    switch (value_) {
+        case TEMPORARY:
+            return "temporary";
+        case PERSISTENT_LICENSE:
+            return "persistent-license";
+        default:
+            return "temporary"; // fallback to first value
+    }
+}
 
-MediaKeySessionClosedReason::MediaKeySessionClosedReason(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaKeySessionClosedReason::MediaKeySessionClosedReason(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaKeySessionClosedReason::Value MediaKeySessionClosedReason::from_string(const char* str) noexcept {
+    if (str_equal(str, "internal-error")) {
+        return INTERNAL_ERROR;
+    }
+    else if (str_equal(str, "closed-by-application")) {
+        return CLOSED_BY_APPLICATION;
+    }
+    else if (str_equal(str, "release-acknowledged")) {
+        return RELEASE_ACKNOWLEDGED;
+    }
+    else if (str_equal(str, "hardware-context-reset")) {
+        return HARDWARE_CONTEXT_RESET;
+    }
+    else if (str_equal(str, "resource-evicted")) {
+        return RESOURCE_EVICTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return INTERNAL_ERROR;
+    }
+}
+
+MediaKeySessionClosedReason::MediaKeySessionClosedReason(Value v) noexcept : emlite::Val(MediaKeySessionClosedReason::to_string(v)), value_(v) {}
+MediaKeySessionClosedReason::MediaKeySessionClosedReason(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaKeySessionClosedReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaKeySessionClosedReason::MediaKeySessionClosedReason(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaKeySessionClosedReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaKeySessionClosedReason MediaKeySessionClosedReason::take_ownership(Handle h) noexcept { return MediaKeySessionClosedReason(h); }
 MediaKeySessionClosedReason MediaKeySessionClosedReason::clone() const noexcept { return *this; }
+const char* MediaKeySessionClosedReason::to_string(MediaKeySessionClosedReason::Value value_) noexcept {
+    switch (value_) {
+        case INTERNAL_ERROR:
+            return "internal-error";
+        case CLOSED_BY_APPLICATION:
+            return "closed-by-application";
+        case RELEASE_ACKNOWLEDGED:
+            return "release-acknowledged";
+        case HARDWARE_CONTEXT_RESET:
+            return "hardware-context-reset";
+        case RESOURCE_EVICTED:
+            return "resource-evicted";
+        default:
+            return "internal-error"; // fallback to first value
+    }
+}
 
-MediaKeyStatus::MediaKeyStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaKeyStatus::MediaKeyStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaKeyStatus::Value MediaKeyStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "usable")) {
+        return USABLE;
+    }
+    else if (str_equal(str, "expired")) {
+        return EXPIRED;
+    }
+    else if (str_equal(str, "released")) {
+        return RELEASED;
+    }
+    else if (str_equal(str, "output-restricted")) {
+        return OUTPUT_RESTRICTED;
+    }
+    else if (str_equal(str, "output-downscaled")) {
+        return OUTPUT_DOWNSCALED;
+    }
+    else if (str_equal(str, "usable-in-future")) {
+        return USABLE_IN_FUTURE;
+    }
+    else if (str_equal(str, "status-pending")) {
+        return STATUS_PENDING;
+    }
+    else if (str_equal(str, "internal-error")) {
+        return INTERNAL_ERROR;
+    }
+    else {
+        // Default to first value for invalid input
+        return USABLE;
+    }
+}
+
+MediaKeyStatus::MediaKeyStatus(Value v) noexcept : emlite::Val(MediaKeyStatus::to_string(v)), value_(v) {}
+MediaKeyStatus::MediaKeyStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaKeyStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaKeyStatus::MediaKeyStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaKeyStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaKeyStatus MediaKeyStatus::take_ownership(Handle h) noexcept { return MediaKeyStatus(h); }
 MediaKeyStatus MediaKeyStatus::clone() const noexcept { return *this; }
+const char* MediaKeyStatus::to_string(MediaKeyStatus::Value value_) noexcept {
+    switch (value_) {
+        case USABLE:
+            return "usable";
+        case EXPIRED:
+            return "expired";
+        case RELEASED:
+            return "released";
+        case OUTPUT_RESTRICTED:
+            return "output-restricted";
+        case OUTPUT_DOWNSCALED:
+            return "output-downscaled";
+        case USABLE_IN_FUTURE:
+            return "usable-in-future";
+        case STATUS_PENDING:
+            return "status-pending";
+        case INTERNAL_ERROR:
+            return "internal-error";
+        default:
+            return "usable"; // fallback to first value
+    }
+}
 
-MediaKeyMessageType::MediaKeyMessageType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaKeyMessageType::MediaKeyMessageType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaKeyMessageType::Value MediaKeyMessageType::from_string(const char* str) noexcept {
+    if (str_equal(str, "license-request")) {
+        return LICENSE_REQUEST;
+    }
+    else if (str_equal(str, "license-renewal")) {
+        return LICENSE_RENEWAL;
+    }
+    else if (str_equal(str, "license-release")) {
+        return LICENSE_RELEASE;
+    }
+    else if (str_equal(str, "individualization-request")) {
+        return INDIVIDUALIZATION_REQUEST;
+    }
+    else {
+        // Default to first value for invalid input
+        return LICENSE_REQUEST;
+    }
+}
+
+MediaKeyMessageType::MediaKeyMessageType(Value v) noexcept : emlite::Val(MediaKeyMessageType::to_string(v)), value_(v) {}
+MediaKeyMessageType::MediaKeyMessageType(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaKeyMessageType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaKeyMessageType::MediaKeyMessageType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaKeyMessageType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaKeyMessageType MediaKeyMessageType::take_ownership(Handle h) noexcept { return MediaKeyMessageType(h); }
 MediaKeyMessageType MediaKeyMessageType::clone() const noexcept { return *this; }
+const char* MediaKeyMessageType::to_string(MediaKeyMessageType::Value value_) noexcept {
+    switch (value_) {
+        case LICENSE_REQUEST:
+            return "license-request";
+        case LICENSE_RENEWAL:
+            return "license-renewal";
+        case LICENSE_RELEASE:
+            return "license-release";
+        case INDIVIDUALIZATION_REQUEST:
+            return "individualization-request";
+        default:
+            return "license-request"; // fallback to first value
+    }
+}
 
-IdentityCredentialRequestOptionsContext::IdentityCredentialRequestOptionsContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IdentityCredentialRequestOptionsContext::IdentityCredentialRequestOptionsContext(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IdentityCredentialRequestOptionsContext::Value IdentityCredentialRequestOptionsContext::from_string(const char* str) noexcept {
+    if (str_equal(str, "signin")) {
+        return SIGNIN;
+    }
+    else if (str_equal(str, "signup")) {
+        return SIGNUP;
+    }
+    else if (str_equal(str, "use")) {
+        return USE;
+    }
+    else if (str_equal(str, "continue")) {
+        return CONTINUE_;
+    }
+    else {
+        // Default to first value for invalid input
+        return SIGNIN;
+    }
+}
+
+IdentityCredentialRequestOptionsContext::IdentityCredentialRequestOptionsContext(Value v) noexcept : emlite::Val(IdentityCredentialRequestOptionsContext::to_string(v)), value_(v) {}
+IdentityCredentialRequestOptionsContext::IdentityCredentialRequestOptionsContext(Handle h) noexcept: emlite::Val(h) {
+    value_ = IdentityCredentialRequestOptionsContext::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IdentityCredentialRequestOptionsContext::IdentityCredentialRequestOptionsContext(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IdentityCredentialRequestOptionsContext::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IdentityCredentialRequestOptionsContext IdentityCredentialRequestOptionsContext::take_ownership(Handle h) noexcept { return IdentityCredentialRequestOptionsContext(h); }
 IdentityCredentialRequestOptionsContext IdentityCredentialRequestOptionsContext::clone() const noexcept { return *this; }
+const char* IdentityCredentialRequestOptionsContext::to_string(IdentityCredentialRequestOptionsContext::Value value_) noexcept {
+    switch (value_) {
+        case SIGNIN:
+            return "signin";
+        case SIGNUP:
+            return "signup";
+        case USE:
+            return "use";
+        case CONTINUE_:
+            return "continue";
+        default:
+            return "signin"; // fallback to first value
+    }
+}
 
-IdentityCredentialRequestOptionsMode::IdentityCredentialRequestOptionsMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IdentityCredentialRequestOptionsMode::IdentityCredentialRequestOptionsMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IdentityCredentialRequestOptionsMode::Value IdentityCredentialRequestOptionsMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "active")) {
+        return ACTIVE;
+    }
+    else if (str_equal(str, "passive")) {
+        return PASSIVE;
+    }
+    else {
+        // Default to first value for invalid input
+        return ACTIVE;
+    }
+}
+
+IdentityCredentialRequestOptionsMode::IdentityCredentialRequestOptionsMode(Value v) noexcept : emlite::Val(IdentityCredentialRequestOptionsMode::to_string(v)), value_(v) {}
+IdentityCredentialRequestOptionsMode::IdentityCredentialRequestOptionsMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = IdentityCredentialRequestOptionsMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IdentityCredentialRequestOptionsMode::IdentityCredentialRequestOptionsMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IdentityCredentialRequestOptionsMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IdentityCredentialRequestOptionsMode IdentityCredentialRequestOptionsMode::take_ownership(Handle h) noexcept { return IdentityCredentialRequestOptionsMode(h); }
 IdentityCredentialRequestOptionsMode IdentityCredentialRequestOptionsMode::clone() const noexcept { return *this; }
+const char* IdentityCredentialRequestOptionsMode::to_string(IdentityCredentialRequestOptionsMode::Value value_) noexcept {
+    switch (value_) {
+        case ACTIVE:
+            return "active";
+        case PASSIVE:
+            return "passive";
+        default:
+            return "active"; // fallback to first value
+    }
+}
 
-OpaqueProperty::OpaqueProperty(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OpaqueProperty::OpaqueProperty(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OpaqueProperty::Value OpaqueProperty::from_string(const char* str) noexcept {
+    if (str_equal(str, "opaque")) {
+        return OPAQUE;
+    }
+    else {
+        // Default to first value for invalid input
+        return OPAQUE;
+    }
+}
+
+OpaqueProperty::OpaqueProperty(Value v) noexcept : emlite::Val(OpaqueProperty::to_string(v)), value_(v) {}
+OpaqueProperty::OpaqueProperty(Handle h) noexcept: emlite::Val(h) {
+    value_ = OpaqueProperty::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OpaqueProperty::OpaqueProperty(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OpaqueProperty::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OpaqueProperty OpaqueProperty::take_ownership(Handle h) noexcept { return OpaqueProperty(h); }
 OpaqueProperty OpaqueProperty::clone() const noexcept { return *this; }
+const char* OpaqueProperty::to_string(OpaqueProperty::Value value_) noexcept {
+    switch (value_) {
+        case OPAQUE:
+            return "opaque";
+        default:
+            return "opaque"; // fallback to first value
+    }
+}
 
-FenceReportingDestination::FenceReportingDestination(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FenceReportingDestination::FenceReportingDestination(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FenceReportingDestination::Value FenceReportingDestination::from_string(const char* str) noexcept {
+    if (str_equal(str, "buyer")) {
+        return BUYER;
+    }
+    else if (str_equal(str, "seller")) {
+        return SELLER;
+    }
+    else if (str_equal(str, "component-seller")) {
+        return COMPONENT_SELLER;
+    }
+    else if (str_equal(str, "direct-seller")) {
+        return DIRECT_SELLER;
+    }
+    else if (str_equal(str, "shared-storage-select-url")) {
+        return SHARED_STORAGE_SELECT_URL;
+    }
+    else {
+        // Default to first value for invalid input
+        return BUYER;
+    }
+}
+
+FenceReportingDestination::FenceReportingDestination(Value v) noexcept : emlite::Val(FenceReportingDestination::to_string(v)), value_(v) {}
+FenceReportingDestination::FenceReportingDestination(Handle h) noexcept: emlite::Val(h) {
+    value_ = FenceReportingDestination::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FenceReportingDestination::FenceReportingDestination(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FenceReportingDestination::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FenceReportingDestination FenceReportingDestination::take_ownership(Handle h) noexcept { return FenceReportingDestination(h); }
 FenceReportingDestination FenceReportingDestination::clone() const noexcept { return *this; }
+const char* FenceReportingDestination::to_string(FenceReportingDestination::Value value_) noexcept {
+    switch (value_) {
+        case BUYER:
+            return "buyer";
+        case SELLER:
+            return "seller";
+        case COMPONENT_SELLER:
+            return "component-seller";
+        case DIRECT_SELLER:
+            return "direct-seller";
+        case SHARED_STORAGE_SELECT_URL:
+            return "shared-storage-select-url";
+        default:
+            return "buyer"; // fallback to first value
+    }
+}
 
-RequestDestination::RequestDestination(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestDestination::RequestDestination(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RequestDestination::Value RequestDestination::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "audio")) {
+        return AUDIO;
+    }
+    else if (str_equal(str, "audioworklet")) {
+        return AUDIOWORKLET;
+    }
+    else if (str_equal(str, "document")) {
+        return DOCUMENT;
+    }
+    else if (str_equal(str, "embed")) {
+        return EMBED;
+    }
+    else if (str_equal(str, "font")) {
+        return FONT;
+    }
+    else if (str_equal(str, "frame")) {
+        return FRAME;
+    }
+    else if (str_equal(str, "iframe")) {
+        return IFRAME;
+    }
+    else if (str_equal(str, "image")) {
+        return IMAGE;
+    }
+    else if (str_equal(str, "json")) {
+        return JSON;
+    }
+    else if (str_equal(str, "manifest")) {
+        return MANIFEST;
+    }
+    else if (str_equal(str, "object")) {
+        return OBJECT;
+    }
+    else if (str_equal(str, "paintworklet")) {
+        return PAINTWORKLET;
+    }
+    else if (str_equal(str, "report")) {
+        return REPORT;
+    }
+    else if (str_equal(str, "script")) {
+        return SCRIPT;
+    }
+    else if (str_equal(str, "sharedworker")) {
+        return SHAREDWORKER;
+    }
+    else if (str_equal(str, "style")) {
+        return STYLE;
+    }
+    else if (str_equal(str, "track")) {
+        return TRACK;
+    }
+    else if (str_equal(str, "video")) {
+        return VIDEO;
+    }
+    else if (str_equal(str, "worker")) {
+        return WORKER;
+    }
+    else if (str_equal(str, "xslt")) {
+        return XSLT;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+RequestDestination::RequestDestination(Value v) noexcept : emlite::Val(RequestDestination::to_string(v)), value_(v) {}
+RequestDestination::RequestDestination(Handle h) noexcept: emlite::Val(h) {
+    value_ = RequestDestination::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RequestDestination::RequestDestination(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RequestDestination::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RequestDestination RequestDestination::take_ownership(Handle h) noexcept { return RequestDestination(h); }
 RequestDestination RequestDestination::clone() const noexcept { return *this; }
+const char* RequestDestination::to_string(RequestDestination::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case AUDIO:
+            return "audio";
+        case AUDIOWORKLET:
+            return "audioworklet";
+        case DOCUMENT:
+            return "document";
+        case EMBED:
+            return "embed";
+        case FONT:
+            return "font";
+        case FRAME:
+            return "frame";
+        case IFRAME:
+            return "iframe";
+        case IMAGE:
+            return "image";
+        case JSON:
+            return "json";
+        case MANIFEST:
+            return "manifest";
+        case OBJECT:
+            return "object";
+        case PAINTWORKLET:
+            return "paintworklet";
+        case REPORT:
+            return "report";
+        case SCRIPT:
+            return "script";
+        case SHAREDWORKER:
+            return "sharedworker";
+        case STYLE:
+            return "style";
+        case TRACK:
+            return "track";
+        case VIDEO:
+            return "video";
+        case WORKER:
+            return "worker";
+        case XSLT:
+            return "xslt";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-RequestMode::RequestMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestMode::RequestMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RequestMode::Value RequestMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "navigate")) {
+        return NAVIGATE;
+    }
+    else if (str_equal(str, "same-origin")) {
+        return SAME_ORIGIN;
+    }
+    else if (str_equal(str, "no-cors")) {
+        return NO_CORS;
+    }
+    else if (str_equal(str, "cors")) {
+        return CORS;
+    }
+    else {
+        // Default to first value for invalid input
+        return NAVIGATE;
+    }
+}
+
+RequestMode::RequestMode(Value v) noexcept : emlite::Val(RequestMode::to_string(v)), value_(v) {}
+RequestMode::RequestMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = RequestMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RequestMode::RequestMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RequestMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RequestMode RequestMode::take_ownership(Handle h) noexcept { return RequestMode(h); }
 RequestMode RequestMode::clone() const noexcept { return *this; }
+const char* RequestMode::to_string(RequestMode::Value value_) noexcept {
+    switch (value_) {
+        case NAVIGATE:
+            return "navigate";
+        case SAME_ORIGIN:
+            return "same-origin";
+        case NO_CORS:
+            return "no-cors";
+        case CORS:
+            return "cors";
+        default:
+            return "navigate"; // fallback to first value
+    }
+}
 
-RequestCredentials::RequestCredentials(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestCredentials::RequestCredentials(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RequestCredentials::Value RequestCredentials::from_string(const char* str) noexcept {
+    if (str_equal(str, "omit")) {
+        return OMIT;
+    }
+    else if (str_equal(str, "same-origin")) {
+        return SAME_ORIGIN;
+    }
+    else if (str_equal(str, "include")) {
+        return INCLUDE;
+    }
+    else {
+        // Default to first value for invalid input
+        return OMIT;
+    }
+}
+
+RequestCredentials::RequestCredentials(Value v) noexcept : emlite::Val(RequestCredentials::to_string(v)), value_(v) {}
+RequestCredentials::RequestCredentials(Handle h) noexcept: emlite::Val(h) {
+    value_ = RequestCredentials::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RequestCredentials::RequestCredentials(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RequestCredentials::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RequestCredentials RequestCredentials::take_ownership(Handle h) noexcept { return RequestCredentials(h); }
 RequestCredentials RequestCredentials::clone() const noexcept { return *this; }
+const char* RequestCredentials::to_string(RequestCredentials::Value value_) noexcept {
+    switch (value_) {
+        case OMIT:
+            return "omit";
+        case SAME_ORIGIN:
+            return "same-origin";
+        case INCLUDE:
+            return "include";
+        default:
+            return "omit"; // fallback to first value
+    }
+}
 
-RequestCache::RequestCache(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestCache::RequestCache(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RequestCache::Value RequestCache::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "no-store")) {
+        return NO_STORE;
+    }
+    else if (str_equal(str, "reload")) {
+        return RELOAD;
+    }
+    else if (str_equal(str, "no-cache")) {
+        return NO_CACHE;
+    }
+    else if (str_equal(str, "force-cache")) {
+        return FORCE_CACHE;
+    }
+    else if (str_equal(str, "only-if-cached")) {
+        return ONLY_IF_CACHED;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+RequestCache::RequestCache(Value v) noexcept : emlite::Val(RequestCache::to_string(v)), value_(v) {}
+RequestCache::RequestCache(Handle h) noexcept: emlite::Val(h) {
+    value_ = RequestCache::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RequestCache::RequestCache(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RequestCache::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RequestCache RequestCache::take_ownership(Handle h) noexcept { return RequestCache(h); }
 RequestCache RequestCache::clone() const noexcept { return *this; }
+const char* RequestCache::to_string(RequestCache::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case NO_STORE:
+            return "no-store";
+        case RELOAD:
+            return "reload";
+        case NO_CACHE:
+            return "no-cache";
+        case FORCE_CACHE:
+            return "force-cache";
+        case ONLY_IF_CACHED:
+            return "only-if-cached";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-RequestRedirect::RequestRedirect(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestRedirect::RequestRedirect(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RequestRedirect::Value RequestRedirect::from_string(const char* str) noexcept {
+    if (str_equal(str, "follow")) {
+        return FOLLOW;
+    }
+    else if (str_equal(str, "error")) {
+        return ERROR;
+    }
+    else if (str_equal(str, "manual")) {
+        return MANUAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return FOLLOW;
+    }
+}
+
+RequestRedirect::RequestRedirect(Value v) noexcept : emlite::Val(RequestRedirect::to_string(v)), value_(v) {}
+RequestRedirect::RequestRedirect(Handle h) noexcept: emlite::Val(h) {
+    value_ = RequestRedirect::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RequestRedirect::RequestRedirect(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RequestRedirect::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RequestRedirect RequestRedirect::take_ownership(Handle h) noexcept { return RequestRedirect(h); }
 RequestRedirect RequestRedirect::clone() const noexcept { return *this; }
+const char* RequestRedirect::to_string(RequestRedirect::Value value_) noexcept {
+    switch (value_) {
+        case FOLLOW:
+            return "follow";
+        case ERROR:
+            return "error";
+        case MANUAL:
+            return "manual";
+        default:
+            return "follow"; // fallback to first value
+    }
+}
 
-RequestDuplex::RequestDuplex(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestDuplex::RequestDuplex(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RequestDuplex::Value RequestDuplex::from_string(const char* str) noexcept {
+    if (str_equal(str, "half")) {
+        return HALF;
+    }
+    else {
+        // Default to first value for invalid input
+        return HALF;
+    }
+}
+
+RequestDuplex::RequestDuplex(Value v) noexcept : emlite::Val(RequestDuplex::to_string(v)), value_(v) {}
+RequestDuplex::RequestDuplex(Handle h) noexcept: emlite::Val(h) {
+    value_ = RequestDuplex::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RequestDuplex::RequestDuplex(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RequestDuplex::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RequestDuplex RequestDuplex::take_ownership(Handle h) noexcept { return RequestDuplex(h); }
 RequestDuplex RequestDuplex::clone() const noexcept { return *this; }
+const char* RequestDuplex::to_string(RequestDuplex::Value value_) noexcept {
+    switch (value_) {
+        case HALF:
+            return "half";
+        default:
+            return "half"; // fallback to first value
+    }
+}
 
-RequestPriority::RequestPriority(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RequestPriority::RequestPriority(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RequestPriority::Value RequestPriority::from_string(const char* str) noexcept {
+    if (str_equal(str, "high")) {
+        return HIGH;
+    }
+    else if (str_equal(str, "low")) {
+        return LOW;
+    }
+    else if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else {
+        // Default to first value for invalid input
+        return HIGH;
+    }
+}
+
+RequestPriority::RequestPriority(Value v) noexcept : emlite::Val(RequestPriority::to_string(v)), value_(v) {}
+RequestPriority::RequestPriority(Handle h) noexcept: emlite::Val(h) {
+    value_ = RequestPriority::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RequestPriority::RequestPriority(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RequestPriority::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RequestPriority RequestPriority::take_ownership(Handle h) noexcept { return RequestPriority(h); }
 RequestPriority RequestPriority::clone() const noexcept { return *this; }
+const char* RequestPriority::to_string(RequestPriority::Value value_) noexcept {
+    switch (value_) {
+        case HIGH:
+            return "high";
+        case LOW:
+            return "low";
+        case AUTO_:
+            return "auto";
+        default:
+            return "high"; // fallback to first value
+    }
+}
 
-ResponseType::ResponseType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ResponseType::ResponseType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ResponseType::Value ResponseType::from_string(const char* str) noexcept {
+    if (str_equal(str, "basic")) {
+        return BASIC;
+    }
+    else if (str_equal(str, "cors")) {
+        return CORS;
+    }
+    else if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "error")) {
+        return ERROR;
+    }
+    else if (str_equal(str, "opaque")) {
+        return OPAQUE;
+    }
+    else if (str_equal(str, "opaqueredirect")) {
+        return OPAQUEREDIRECT;
+    }
+    else {
+        // Default to first value for invalid input
+        return BASIC;
+    }
+}
+
+ResponseType::ResponseType(Value v) noexcept : emlite::Val(ResponseType::to_string(v)), value_(v) {}
+ResponseType::ResponseType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ResponseType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ResponseType::ResponseType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ResponseType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ResponseType ResponseType::take_ownership(Handle h) noexcept { return ResponseType(h); }
 ResponseType ResponseType::clone() const noexcept { return *this; }
+const char* ResponseType::to_string(ResponseType::Value value_) noexcept {
+    switch (value_) {
+        case BASIC:
+            return "basic";
+        case CORS:
+            return "cors";
+        case DEFAULT_:
+            return "default";
+        case ERROR:
+            return "error";
+        case OPAQUE:
+            return "opaque";
+        case OPAQUEREDIRECT:
+            return "opaqueredirect";
+        default:
+            return "basic"; // fallback to first value
+    }
+}
 
-FileSystemPermissionMode::FileSystemPermissionMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FileSystemPermissionMode::FileSystemPermissionMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FileSystemPermissionMode::Value FileSystemPermissionMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "read")) {
+        return READ;
+    }
+    else if (str_equal(str, "readwrite")) {
+        return READWRITE;
+    }
+    else {
+        // Default to first value for invalid input
+        return READ;
+    }
+}
+
+FileSystemPermissionMode::FileSystemPermissionMode(Value v) noexcept : emlite::Val(FileSystemPermissionMode::to_string(v)), value_(v) {}
+FileSystemPermissionMode::FileSystemPermissionMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = FileSystemPermissionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FileSystemPermissionMode::FileSystemPermissionMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FileSystemPermissionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FileSystemPermissionMode FileSystemPermissionMode::take_ownership(Handle h) noexcept { return FileSystemPermissionMode(h); }
 FileSystemPermissionMode FileSystemPermissionMode::clone() const noexcept { return *this; }
+const char* FileSystemPermissionMode::to_string(FileSystemPermissionMode::Value value_) noexcept {
+    switch (value_) {
+        case READ:
+            return "read";
+        case READWRITE:
+            return "readwrite";
+        default:
+            return "read"; // fallback to first value
+    }
+}
 
-WellKnownDirectory::WellKnownDirectory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WellKnownDirectory::WellKnownDirectory(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WellKnownDirectory::Value WellKnownDirectory::from_string(const char* str) noexcept {
+    if (str_equal(str, "desktop")) {
+        return DESKTOP;
+    }
+    else if (str_equal(str, "documents")) {
+        return DOCUMENTS;
+    }
+    else if (str_equal(str, "downloads")) {
+        return DOWNLOADS;
+    }
+    else if (str_equal(str, "music")) {
+        return MUSIC;
+    }
+    else if (str_equal(str, "pictures")) {
+        return PICTURES;
+    }
+    else if (str_equal(str, "videos")) {
+        return VIDEOS;
+    }
+    else {
+        // Default to first value for invalid input
+        return DESKTOP;
+    }
+}
+
+WellKnownDirectory::WellKnownDirectory(Value v) noexcept : emlite::Val(WellKnownDirectory::to_string(v)), value_(v) {}
+WellKnownDirectory::WellKnownDirectory(Handle h) noexcept: emlite::Val(h) {
+    value_ = WellKnownDirectory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WellKnownDirectory::WellKnownDirectory(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WellKnownDirectory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WellKnownDirectory WellKnownDirectory::take_ownership(Handle h) noexcept { return WellKnownDirectory(h); }
 WellKnownDirectory WellKnownDirectory::clone() const noexcept { return *this; }
+const char* WellKnownDirectory::to_string(WellKnownDirectory::Value value_) noexcept {
+    switch (value_) {
+        case DESKTOP:
+            return "desktop";
+        case DOCUMENTS:
+            return "documents";
+        case DOWNLOADS:
+            return "downloads";
+        case MUSIC:
+            return "music";
+        case PICTURES:
+            return "pictures";
+        case VIDEOS:
+            return "videos";
+        default:
+            return "desktop"; // fallback to first value
+    }
+}
 
-FileSystemHandleKind::FileSystemHandleKind(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FileSystemHandleKind::FileSystemHandleKind(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FileSystemHandleKind::Value FileSystemHandleKind::from_string(const char* str) noexcept {
+    if (str_equal(str, "file")) {
+        return FILE;
+    }
+    else if (str_equal(str, "directory")) {
+        return DIRECTORY;
+    }
+    else {
+        // Default to first value for invalid input
+        return FILE;
+    }
+}
+
+FileSystemHandleKind::FileSystemHandleKind(Value v) noexcept : emlite::Val(FileSystemHandleKind::to_string(v)), value_(v) {}
+FileSystemHandleKind::FileSystemHandleKind(Handle h) noexcept: emlite::Val(h) {
+    value_ = FileSystemHandleKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FileSystemHandleKind::FileSystemHandleKind(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FileSystemHandleKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FileSystemHandleKind FileSystemHandleKind::take_ownership(Handle h) noexcept { return FileSystemHandleKind(h); }
 FileSystemHandleKind FileSystemHandleKind::clone() const noexcept { return *this; }
+const char* FileSystemHandleKind::to_string(FileSystemHandleKind::Value value_) noexcept {
+    switch (value_) {
+        case FILE:
+            return "file";
+        case DIRECTORY:
+            return "directory";
+        default:
+            return "file"; // fallback to first value
+    }
+}
 
-WriteCommandType::WriteCommandType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WriteCommandType::WriteCommandType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WriteCommandType::Value WriteCommandType::from_string(const char* str) noexcept {
+    if (str_equal(str, "write")) {
+        return WRITE;
+    }
+    else if (str_equal(str, "seek")) {
+        return SEEK;
+    }
+    else if (str_equal(str, "truncate")) {
+        return TRUNCATE;
+    }
+    else {
+        // Default to first value for invalid input
+        return WRITE;
+    }
+}
+
+WriteCommandType::WriteCommandType(Value v) noexcept : emlite::Val(WriteCommandType::to_string(v)), value_(v) {}
+WriteCommandType::WriteCommandType(Handle h) noexcept: emlite::Val(h) {
+    value_ = WriteCommandType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WriteCommandType::WriteCommandType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WriteCommandType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WriteCommandType WriteCommandType::take_ownership(Handle h) noexcept { return WriteCommandType(h); }
 WriteCommandType WriteCommandType::clone() const noexcept { return *this; }
+const char* WriteCommandType::to_string(WriteCommandType::Value value_) noexcept {
+    switch (value_) {
+        case WRITE:
+            return "write";
+        case SEEK:
+            return "seek";
+        case TRUNCATE:
+            return "truncate";
+        default:
+            return "write"; // fallback to first value
+    }
+}
 
-FullscreenNavigationUI::FullscreenNavigationUI(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FullscreenNavigationUI::FullscreenNavigationUI(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FullscreenNavigationUI::Value FullscreenNavigationUI::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "show")) {
+        return SHOW;
+    }
+    else if (str_equal(str, "hide")) {
+        return HIDE;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+FullscreenNavigationUI::FullscreenNavigationUI(Value v) noexcept : emlite::Val(FullscreenNavigationUI::to_string(v)), value_(v) {}
+FullscreenNavigationUI::FullscreenNavigationUI(Handle h) noexcept: emlite::Val(h) {
+    value_ = FullscreenNavigationUI::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FullscreenNavigationUI::FullscreenNavigationUI(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FullscreenNavigationUI::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FullscreenNavigationUI FullscreenNavigationUI::take_ownership(Handle h) noexcept { return FullscreenNavigationUI(h); }
 FullscreenNavigationUI FullscreenNavigationUI::clone() const noexcept { return *this; }
+const char* FullscreenNavigationUI::to_string(FullscreenNavigationUI::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case SHOW:
+            return "show";
+        case HIDE:
+            return "hide";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-GamepadHand::GamepadHand(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GamepadHand::GamepadHand(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GamepadHand::Value GamepadHand::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "left")) {
+        return LEFT;
+    }
+    else if (str_equal(str, "right")) {
+        return RIGHT;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+GamepadHand::GamepadHand(Value v) noexcept : emlite::Val(GamepadHand::to_string(v)), value_(v) {}
+GamepadHand::GamepadHand(Handle h) noexcept: emlite::Val(h) {
+    value_ = GamepadHand::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GamepadHand::GamepadHand(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GamepadHand::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GamepadHand GamepadHand::take_ownership(Handle h) noexcept { return GamepadHand(h); }
 GamepadHand GamepadHand::clone() const noexcept { return *this; }
+const char* GamepadHand::to_string(GamepadHand::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case LEFT:
+            return "left";
+        case RIGHT:
+            return "right";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-GamepadMappingType::GamepadMappingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GamepadMappingType::GamepadMappingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GamepadMappingType::Value GamepadMappingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "standard")) {
+        return STANDARD;
+    }
+    else if (str_equal(str, "xr-standard")) {
+        return XR_STANDARD;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+GamepadMappingType::GamepadMappingType(Value v) noexcept : emlite::Val(GamepadMappingType::to_string(v)), value_(v) {}
+GamepadMappingType::GamepadMappingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = GamepadMappingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GamepadMappingType::GamepadMappingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GamepadMappingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GamepadMappingType GamepadMappingType::take_ownership(Handle h) noexcept { return GamepadMappingType(h); }
 GamepadMappingType GamepadMappingType::clone() const noexcept { return *this; }
+const char* GamepadMappingType::to_string(GamepadMappingType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case STANDARD:
+            return "standard";
+        case XR_STANDARD:
+            return "xr-standard";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-GamepadHapticsResult::GamepadHapticsResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GamepadHapticsResult::GamepadHapticsResult(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GamepadHapticsResult::Value GamepadHapticsResult::from_string(const char* str) noexcept {
+    if (str_equal(str, "complete")) {
+        return COMPLETE;
+    }
+    else if (str_equal(str, "preempted")) {
+        return PREEMPTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return COMPLETE;
+    }
+}
+
+GamepadHapticsResult::GamepadHapticsResult(Value v) noexcept : emlite::Val(GamepadHapticsResult::to_string(v)), value_(v) {}
+GamepadHapticsResult::GamepadHapticsResult(Handle h) noexcept: emlite::Val(h) {
+    value_ = GamepadHapticsResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GamepadHapticsResult::GamepadHapticsResult(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GamepadHapticsResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GamepadHapticsResult GamepadHapticsResult::take_ownership(Handle h) noexcept { return GamepadHapticsResult(h); }
 GamepadHapticsResult GamepadHapticsResult::clone() const noexcept { return *this; }
+const char* GamepadHapticsResult::to_string(GamepadHapticsResult::Value value_) noexcept {
+    switch (value_) {
+        case COMPLETE:
+            return "complete";
+        case PREEMPTED:
+            return "preempted";
+        default:
+            return "complete"; // fallback to first value
+    }
+}
 
-GamepadHapticEffectType::GamepadHapticEffectType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GamepadHapticEffectType::GamepadHapticEffectType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GamepadHapticEffectType::Value GamepadHapticEffectType::from_string(const char* str) noexcept {
+    if (str_equal(str, "dual-rumble")) {
+        return DUAL_RUMBLE;
+    }
+    else if (str_equal(str, "trigger-rumble")) {
+        return TRIGGER_RUMBLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return DUAL_RUMBLE;
+    }
+}
+
+GamepadHapticEffectType::GamepadHapticEffectType(Value v) noexcept : emlite::Val(GamepadHapticEffectType::to_string(v)), value_(v) {}
+GamepadHapticEffectType::GamepadHapticEffectType(Handle h) noexcept: emlite::Val(h) {
+    value_ = GamepadHapticEffectType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GamepadHapticEffectType::GamepadHapticEffectType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GamepadHapticEffectType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GamepadHapticEffectType GamepadHapticEffectType::take_ownership(Handle h) noexcept { return GamepadHapticEffectType(h); }
 GamepadHapticEffectType GamepadHapticEffectType::clone() const noexcept { return *this; }
+const char* GamepadHapticEffectType::to_string(GamepadHapticEffectType::Value value_) noexcept {
+    switch (value_) {
+        case DUAL_RUMBLE:
+            return "dual-rumble";
+        case TRIGGER_RUMBLE:
+            return "trigger-rumble";
+        default:
+            return "dual-rumble"; // fallback to first value
+    }
+}
 
-GyroscopeLocalCoordinateSystem::GyroscopeLocalCoordinateSystem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GyroscopeLocalCoordinateSystem::GyroscopeLocalCoordinateSystem(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GyroscopeLocalCoordinateSystem::Value GyroscopeLocalCoordinateSystem::from_string(const char* str) noexcept {
+    if (str_equal(str, "device")) {
+        return DEVICE;
+    }
+    else if (str_equal(str, "screen")) {
+        return SCREEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEVICE;
+    }
+}
+
+GyroscopeLocalCoordinateSystem::GyroscopeLocalCoordinateSystem(Value v) noexcept : emlite::Val(GyroscopeLocalCoordinateSystem::to_string(v)), value_(v) {}
+GyroscopeLocalCoordinateSystem::GyroscopeLocalCoordinateSystem(Handle h) noexcept: emlite::Val(h) {
+    value_ = GyroscopeLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GyroscopeLocalCoordinateSystem::GyroscopeLocalCoordinateSystem(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GyroscopeLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GyroscopeLocalCoordinateSystem GyroscopeLocalCoordinateSystem::take_ownership(Handle h) noexcept { return GyroscopeLocalCoordinateSystem(h); }
 GyroscopeLocalCoordinateSystem GyroscopeLocalCoordinateSystem::clone() const noexcept { return *this; }
+const char* GyroscopeLocalCoordinateSystem::to_string(GyroscopeLocalCoordinateSystem::Value value_) noexcept {
+    switch (value_) {
+        case DEVICE:
+            return "device";
+        case SCREEN:
+            return "screen";
+        default:
+            return "device"; // fallback to first value
+    }
+}
 
-HandwritingRecognitionType::HandwritingRecognitionType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HandwritingRecognitionType::HandwritingRecognitionType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+HandwritingRecognitionType::Value HandwritingRecognitionType::from_string(const char* str) noexcept {
+    if (str_equal(str, "text")) {
+        return TEXT;
+    }
+    else if (str_equal(str, "per-character")) {
+        return PER_CHARACTER;
+    }
+    else {
+        // Default to first value for invalid input
+        return TEXT;
+    }
+}
+
+HandwritingRecognitionType::HandwritingRecognitionType(Value v) noexcept : emlite::Val(HandwritingRecognitionType::to_string(v)), value_(v) {}
+HandwritingRecognitionType::HandwritingRecognitionType(Handle h) noexcept: emlite::Val(h) {
+    value_ = HandwritingRecognitionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+HandwritingRecognitionType::HandwritingRecognitionType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = HandwritingRecognitionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 HandwritingRecognitionType HandwritingRecognitionType::take_ownership(Handle h) noexcept { return HandwritingRecognitionType(h); }
 HandwritingRecognitionType HandwritingRecognitionType::clone() const noexcept { return *this; }
+const char* HandwritingRecognitionType::to_string(HandwritingRecognitionType::Value value_) noexcept {
+    switch (value_) {
+        case TEXT:
+            return "text";
+        case PER_CHARACTER:
+            return "per-character";
+        default:
+            return "text"; // fallback to first value
+    }
+}
 
-HandwritingInputType::HandwritingInputType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HandwritingInputType::HandwritingInputType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+HandwritingInputType::Value HandwritingInputType::from_string(const char* str) noexcept {
+    if (str_equal(str, "mouse")) {
+        return MOUSE;
+    }
+    else if (str_equal(str, "stylus")) {
+        return STYLUS;
+    }
+    else if (str_equal(str, "touch")) {
+        return TOUCH;
+    }
+    else {
+        // Default to first value for invalid input
+        return MOUSE;
+    }
+}
+
+HandwritingInputType::HandwritingInputType(Value v) noexcept : emlite::Val(HandwritingInputType::to_string(v)), value_(v) {}
+HandwritingInputType::HandwritingInputType(Handle h) noexcept: emlite::Val(h) {
+    value_ = HandwritingInputType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+HandwritingInputType::HandwritingInputType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = HandwritingInputType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 HandwritingInputType HandwritingInputType::take_ownership(Handle h) noexcept { return HandwritingInputType(h); }
 HandwritingInputType HandwritingInputType::clone() const noexcept { return *this; }
+const char* HandwritingInputType::to_string(HandwritingInputType::Value value_) noexcept {
+    switch (value_) {
+        case MOUSE:
+            return "mouse";
+        case STYLUS:
+            return "stylus";
+        case TOUCH:
+            return "touch";
+        default:
+            return "mouse"; // fallback to first value
+    }
+}
 
-DocumentReadyState::DocumentReadyState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DocumentReadyState::DocumentReadyState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+DocumentReadyState::Value DocumentReadyState::from_string(const char* str) noexcept {
+    if (str_equal(str, "loading")) {
+        return LOADING;
+    }
+    else if (str_equal(str, "interactive")) {
+        return INTERACTIVE;
+    }
+    else if (str_equal(str, "complete")) {
+        return COMPLETE;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOADING;
+    }
+}
+
+DocumentReadyState::DocumentReadyState(Value v) noexcept : emlite::Val(DocumentReadyState::to_string(v)), value_(v) {}
+DocumentReadyState::DocumentReadyState(Handle h) noexcept: emlite::Val(h) {
+    value_ = DocumentReadyState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DocumentReadyState::DocumentReadyState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DocumentReadyState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 DocumentReadyState DocumentReadyState::take_ownership(Handle h) noexcept { return DocumentReadyState(h); }
 DocumentReadyState DocumentReadyState::clone() const noexcept { return *this; }
+const char* DocumentReadyState::to_string(DocumentReadyState::Value value_) noexcept {
+    switch (value_) {
+        case LOADING:
+            return "loading";
+        case INTERACTIVE:
+            return "interactive";
+        case COMPLETE:
+            return "complete";
+        default:
+            return "loading"; // fallback to first value
+    }
+}
 
-DocumentVisibilityState::DocumentVisibilityState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DocumentVisibilityState::DocumentVisibilityState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+DocumentVisibilityState::Value DocumentVisibilityState::from_string(const char* str) noexcept {
+    if (str_equal(str, "visible")) {
+        return VISIBLE;
+    }
+    else if (str_equal(str, "hidden")) {
+        return HIDDEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return VISIBLE;
+    }
+}
+
+DocumentVisibilityState::DocumentVisibilityState(Value v) noexcept : emlite::Val(DocumentVisibilityState::to_string(v)), value_(v) {}
+DocumentVisibilityState::DocumentVisibilityState(Handle h) noexcept: emlite::Val(h) {
+    value_ = DocumentVisibilityState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DocumentVisibilityState::DocumentVisibilityState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DocumentVisibilityState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 DocumentVisibilityState DocumentVisibilityState::take_ownership(Handle h) noexcept { return DocumentVisibilityState(h); }
 DocumentVisibilityState DocumentVisibilityState::clone() const noexcept { return *this; }
+const char* DocumentVisibilityState::to_string(DocumentVisibilityState::Value value_) noexcept {
+    switch (value_) {
+        case VISIBLE:
+            return "visible";
+        case HIDDEN:
+            return "hidden";
+        default:
+            return "visible"; // fallback to first value
+    }
+}
 
-CanPlayTypeResult::CanPlayTypeResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanPlayTypeResult::CanPlayTypeResult(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanPlayTypeResult::Value CanPlayTypeResult::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "maybe")) {
+        return MAYBE;
+    }
+    else if (str_equal(str, "probably")) {
+        return PROBABLY;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+CanPlayTypeResult::CanPlayTypeResult(Value v) noexcept : emlite::Val(CanPlayTypeResult::to_string(v)), value_(v) {}
+CanPlayTypeResult::CanPlayTypeResult(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanPlayTypeResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanPlayTypeResult::CanPlayTypeResult(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanPlayTypeResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanPlayTypeResult CanPlayTypeResult::take_ownership(Handle h) noexcept { return CanPlayTypeResult(h); }
 CanPlayTypeResult CanPlayTypeResult::clone() const noexcept { return *this; }
+const char* CanPlayTypeResult::to_string(CanPlayTypeResult::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case MAYBE:
+            return "maybe";
+        case PROBABLY:
+            return "probably";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-TextTrackMode::TextTrackMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TextTrackMode::TextTrackMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TextTrackMode::Value TextTrackMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "disabled")) {
+        return DISABLED;
+    }
+    else if (str_equal(str, "hidden")) {
+        return HIDDEN;
+    }
+    else if (str_equal(str, "showing")) {
+        return SHOWING;
+    }
+    else {
+        // Default to first value for invalid input
+        return DISABLED;
+    }
+}
+
+TextTrackMode::TextTrackMode(Value v) noexcept : emlite::Val(TextTrackMode::to_string(v)), value_(v) {}
+TextTrackMode::TextTrackMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = TextTrackMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TextTrackMode::TextTrackMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TextTrackMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TextTrackMode TextTrackMode::take_ownership(Handle h) noexcept { return TextTrackMode(h); }
 TextTrackMode TextTrackMode::clone() const noexcept { return *this; }
+const char* TextTrackMode::to_string(TextTrackMode::Value value_) noexcept {
+    switch (value_) {
+        case DISABLED:
+            return "disabled";
+        case HIDDEN:
+            return "hidden";
+        case SHOWING:
+            return "showing";
+        default:
+            return "disabled"; // fallback to first value
+    }
+}
 
-TextTrackKind::TextTrackKind(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TextTrackKind::TextTrackKind(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TextTrackKind::Value TextTrackKind::from_string(const char* str) noexcept {
+    if (str_equal(str, "subtitles")) {
+        return SUBTITLES;
+    }
+    else if (str_equal(str, "captions")) {
+        return CAPTIONS;
+    }
+    else if (str_equal(str, "descriptions")) {
+        return DESCRIPTIONS;
+    }
+    else if (str_equal(str, "chapters")) {
+        return CHAPTERS;
+    }
+    else if (str_equal(str, "metadata")) {
+        return METADATA;
+    }
+    else {
+        // Default to first value for invalid input
+        return SUBTITLES;
+    }
+}
+
+TextTrackKind::TextTrackKind(Value v) noexcept : emlite::Val(TextTrackKind::to_string(v)), value_(v) {}
+TextTrackKind::TextTrackKind(Handle h) noexcept: emlite::Val(h) {
+    value_ = TextTrackKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TextTrackKind::TextTrackKind(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TextTrackKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TextTrackKind TextTrackKind::take_ownership(Handle h) noexcept { return TextTrackKind(h); }
 TextTrackKind TextTrackKind::clone() const noexcept { return *this; }
+const char* TextTrackKind::to_string(TextTrackKind::Value value_) noexcept {
+    switch (value_) {
+        case SUBTITLES:
+            return "subtitles";
+        case CAPTIONS:
+            return "captions";
+        case DESCRIPTIONS:
+            return "descriptions";
+        case CHAPTERS:
+            return "chapters";
+        case METADATA:
+            return "metadata";
+        default:
+            return "subtitles"; // fallback to first value
+    }
+}
 
-SelectionMode::SelectionMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SelectionMode::SelectionMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SelectionMode::Value SelectionMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "select")) {
+        return SELECT;
+    }
+    else if (str_equal(str, "start")) {
+        return START;
+    }
+    else if (str_equal(str, "end")) {
+        return END;
+    }
+    else if (str_equal(str, "preserve")) {
+        return PRESERVE;
+    }
+    else {
+        // Default to first value for invalid input
+        return SELECT;
+    }
+}
+
+SelectionMode::SelectionMode(Value v) noexcept : emlite::Val(SelectionMode::to_string(v)), value_(v) {}
+SelectionMode::SelectionMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = SelectionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SelectionMode::SelectionMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SelectionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SelectionMode SelectionMode::take_ownership(Handle h) noexcept { return SelectionMode(h); }
 SelectionMode SelectionMode::clone() const noexcept { return *this; }
+const char* SelectionMode::to_string(SelectionMode::Value value_) noexcept {
+    switch (value_) {
+        case SELECT:
+            return "select";
+        case START:
+            return "start";
+        case END:
+            return "end";
+        case PRESERVE:
+            return "preserve";
+        default:
+            return "select"; // fallback to first value
+    }
+}
 
-PredefinedColorSpace::PredefinedColorSpace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PredefinedColorSpace::PredefinedColorSpace(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PredefinedColorSpace::Value PredefinedColorSpace::from_string(const char* str) noexcept {
+    if (str_equal(str, "srgb")) {
+        return SRGB;
+    }
+    else if (str_equal(str, "display-p3")) {
+        return DISPLAY_P3;
+    }
+    else {
+        // Default to first value for invalid input
+        return SRGB;
+    }
+}
+
+PredefinedColorSpace::PredefinedColorSpace(Value v) noexcept : emlite::Val(PredefinedColorSpace::to_string(v)), value_(v) {}
+PredefinedColorSpace::PredefinedColorSpace(Handle h) noexcept: emlite::Val(h) {
+    value_ = PredefinedColorSpace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PredefinedColorSpace::PredefinedColorSpace(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PredefinedColorSpace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PredefinedColorSpace PredefinedColorSpace::take_ownership(Handle h) noexcept { return PredefinedColorSpace(h); }
 PredefinedColorSpace PredefinedColorSpace::clone() const noexcept { return *this; }
+const char* PredefinedColorSpace::to_string(PredefinedColorSpace::Value value_) noexcept {
+    switch (value_) {
+        case SRGB:
+            return "srgb";
+        case DISPLAY_P3:
+            return "display-p3";
+        default:
+            return "srgb"; // fallback to first value
+    }
+}
 
-CanvasColorType::CanvasColorType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasColorType::CanvasColorType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasColorType::Value CanvasColorType::from_string(const char* str) noexcept {
+    if (str_equal(str, "unorm8")) {
+        return UNORM8;
+    }
+    else if (str_equal(str, "float16")) {
+        return FLOAT16;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNORM8;
+    }
+}
+
+CanvasColorType::CanvasColorType(Value v) noexcept : emlite::Val(CanvasColorType::to_string(v)), value_(v) {}
+CanvasColorType::CanvasColorType(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasColorType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasColorType::CanvasColorType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasColorType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasColorType CanvasColorType::take_ownership(Handle h) noexcept { return CanvasColorType(h); }
 CanvasColorType CanvasColorType::clone() const noexcept { return *this; }
+const char* CanvasColorType::to_string(CanvasColorType::Value value_) noexcept {
+    switch (value_) {
+        case UNORM8:
+            return "unorm8";
+        case FLOAT16:
+            return "float16";
+        default:
+            return "unorm8"; // fallback to first value
+    }
+}
 
-CanvasFillRule::CanvasFillRule(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasFillRule::CanvasFillRule(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasFillRule::Value CanvasFillRule::from_string(const char* str) noexcept {
+    if (str_equal(str, "nonzero")) {
+        return NONZERO;
+    }
+    else if (str_equal(str, "evenodd")) {
+        return EVENODD;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONZERO;
+    }
+}
+
+CanvasFillRule::CanvasFillRule(Value v) noexcept : emlite::Val(CanvasFillRule::to_string(v)), value_(v) {}
+CanvasFillRule::CanvasFillRule(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasFillRule::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasFillRule::CanvasFillRule(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasFillRule::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasFillRule CanvasFillRule::take_ownership(Handle h) noexcept { return CanvasFillRule(h); }
 CanvasFillRule CanvasFillRule::clone() const noexcept { return *this; }
+const char* CanvasFillRule::to_string(CanvasFillRule::Value value_) noexcept {
+    switch (value_) {
+        case NONZERO:
+            return "nonzero";
+        case EVENODD:
+            return "evenodd";
+        default:
+            return "nonzero"; // fallback to first value
+    }
+}
 
-ImageSmoothingQuality::ImageSmoothingQuality(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ImageSmoothingQuality::ImageSmoothingQuality(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ImageSmoothingQuality::Value ImageSmoothingQuality::from_string(const char* str) noexcept {
+    if (str_equal(str, "low")) {
+        return LOW;
+    }
+    else if (str_equal(str, "medium")) {
+        return MEDIUM;
+    }
+    else if (str_equal(str, "high")) {
+        return HIGH;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOW;
+    }
+}
+
+ImageSmoothingQuality::ImageSmoothingQuality(Value v) noexcept : emlite::Val(ImageSmoothingQuality::to_string(v)), value_(v) {}
+ImageSmoothingQuality::ImageSmoothingQuality(Handle h) noexcept: emlite::Val(h) {
+    value_ = ImageSmoothingQuality::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ImageSmoothingQuality::ImageSmoothingQuality(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ImageSmoothingQuality::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ImageSmoothingQuality ImageSmoothingQuality::take_ownership(Handle h) noexcept { return ImageSmoothingQuality(h); }
 ImageSmoothingQuality ImageSmoothingQuality::clone() const noexcept { return *this; }
+const char* ImageSmoothingQuality::to_string(ImageSmoothingQuality::Value value_) noexcept {
+    switch (value_) {
+        case LOW:
+            return "low";
+        case MEDIUM:
+            return "medium";
+        case HIGH:
+            return "high";
+        default:
+            return "low"; // fallback to first value
+    }
+}
 
-CanvasLineCap::CanvasLineCap(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasLineCap::CanvasLineCap(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasLineCap::Value CanvasLineCap::from_string(const char* str) noexcept {
+    if (str_equal(str, "butt")) {
+        return BUTT;
+    }
+    else if (str_equal(str, "round")) {
+        return ROUND;
+    }
+    else if (str_equal(str, "square")) {
+        return SQUARE;
+    }
+    else {
+        // Default to first value for invalid input
+        return BUTT;
+    }
+}
+
+CanvasLineCap::CanvasLineCap(Value v) noexcept : emlite::Val(CanvasLineCap::to_string(v)), value_(v) {}
+CanvasLineCap::CanvasLineCap(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasLineCap::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasLineCap::CanvasLineCap(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasLineCap::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasLineCap CanvasLineCap::take_ownership(Handle h) noexcept { return CanvasLineCap(h); }
 CanvasLineCap CanvasLineCap::clone() const noexcept { return *this; }
+const char* CanvasLineCap::to_string(CanvasLineCap::Value value_) noexcept {
+    switch (value_) {
+        case BUTT:
+            return "butt";
+        case ROUND:
+            return "round";
+        case SQUARE:
+            return "square";
+        default:
+            return "butt"; // fallback to first value
+    }
+}
 
-CanvasLineJoin::CanvasLineJoin(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasLineJoin::CanvasLineJoin(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasLineJoin::Value CanvasLineJoin::from_string(const char* str) noexcept {
+    if (str_equal(str, "round")) {
+        return ROUND;
+    }
+    else if (str_equal(str, "bevel")) {
+        return BEVEL;
+    }
+    else if (str_equal(str, "miter")) {
+        return MITER;
+    }
+    else {
+        // Default to first value for invalid input
+        return ROUND;
+    }
+}
+
+CanvasLineJoin::CanvasLineJoin(Value v) noexcept : emlite::Val(CanvasLineJoin::to_string(v)), value_(v) {}
+CanvasLineJoin::CanvasLineJoin(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasLineJoin::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasLineJoin::CanvasLineJoin(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasLineJoin::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasLineJoin CanvasLineJoin::take_ownership(Handle h) noexcept { return CanvasLineJoin(h); }
 CanvasLineJoin CanvasLineJoin::clone() const noexcept { return *this; }
+const char* CanvasLineJoin::to_string(CanvasLineJoin::Value value_) noexcept {
+    switch (value_) {
+        case ROUND:
+            return "round";
+        case BEVEL:
+            return "bevel";
+        case MITER:
+            return "miter";
+        default:
+            return "round"; // fallback to first value
+    }
+}
 
-CanvasTextAlign::CanvasTextAlign(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasTextAlign::CanvasTextAlign(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasTextAlign::Value CanvasTextAlign::from_string(const char* str) noexcept {
+    if (str_equal(str, "start")) {
+        return START;
+    }
+    else if (str_equal(str, "end")) {
+        return END;
+    }
+    else if (str_equal(str, "left")) {
+        return LEFT;
+    }
+    else if (str_equal(str, "right")) {
+        return RIGHT;
+    }
+    else if (str_equal(str, "center")) {
+        return CENTER;
+    }
+    else {
+        // Default to first value for invalid input
+        return START;
+    }
+}
+
+CanvasTextAlign::CanvasTextAlign(Value v) noexcept : emlite::Val(CanvasTextAlign::to_string(v)), value_(v) {}
+CanvasTextAlign::CanvasTextAlign(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasTextAlign::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasTextAlign::CanvasTextAlign(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasTextAlign::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasTextAlign CanvasTextAlign::take_ownership(Handle h) noexcept { return CanvasTextAlign(h); }
 CanvasTextAlign CanvasTextAlign::clone() const noexcept { return *this; }
+const char* CanvasTextAlign::to_string(CanvasTextAlign::Value value_) noexcept {
+    switch (value_) {
+        case START:
+            return "start";
+        case END:
+            return "end";
+        case LEFT:
+            return "left";
+        case RIGHT:
+            return "right";
+        case CENTER:
+            return "center";
+        default:
+            return "start"; // fallback to first value
+    }
+}
 
-CanvasTextBaseline::CanvasTextBaseline(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasTextBaseline::CanvasTextBaseline(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasTextBaseline::Value CanvasTextBaseline::from_string(const char* str) noexcept {
+    if (str_equal(str, "top")) {
+        return TOP;
+    }
+    else if (str_equal(str, "hanging")) {
+        return HANGING;
+    }
+    else if (str_equal(str, "middle")) {
+        return MIDDLE;
+    }
+    else if (str_equal(str, "alphabetic")) {
+        return ALPHABETIC;
+    }
+    else if (str_equal(str, "ideographic")) {
+        return IDEOGRAPHIC;
+    }
+    else if (str_equal(str, "bottom")) {
+        return BOTTOM;
+    }
+    else {
+        // Default to first value for invalid input
+        return TOP;
+    }
+}
+
+CanvasTextBaseline::CanvasTextBaseline(Value v) noexcept : emlite::Val(CanvasTextBaseline::to_string(v)), value_(v) {}
+CanvasTextBaseline::CanvasTextBaseline(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasTextBaseline::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasTextBaseline::CanvasTextBaseline(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasTextBaseline::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasTextBaseline CanvasTextBaseline::take_ownership(Handle h) noexcept { return CanvasTextBaseline(h); }
 CanvasTextBaseline CanvasTextBaseline::clone() const noexcept { return *this; }
+const char* CanvasTextBaseline::to_string(CanvasTextBaseline::Value value_) noexcept {
+    switch (value_) {
+        case TOP:
+            return "top";
+        case HANGING:
+            return "hanging";
+        case MIDDLE:
+            return "middle";
+        case ALPHABETIC:
+            return "alphabetic";
+        case IDEOGRAPHIC:
+            return "ideographic";
+        case BOTTOM:
+            return "bottom";
+        default:
+            return "top"; // fallback to first value
+    }
+}
 
-CanvasDirection::CanvasDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasDirection::CanvasDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasDirection::Value CanvasDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "ltr")) {
+        return LTR;
+    }
+    else if (str_equal(str, "rtl")) {
+        return RTL;
+    }
+    else if (str_equal(str, "inherit")) {
+        return INHERIT;
+    }
+    else {
+        // Default to first value for invalid input
+        return LTR;
+    }
+}
+
+CanvasDirection::CanvasDirection(Value v) noexcept : emlite::Val(CanvasDirection::to_string(v)), value_(v) {}
+CanvasDirection::CanvasDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasDirection::CanvasDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasDirection CanvasDirection::take_ownership(Handle h) noexcept { return CanvasDirection(h); }
 CanvasDirection CanvasDirection::clone() const noexcept { return *this; }
+const char* CanvasDirection::to_string(CanvasDirection::Value value_) noexcept {
+    switch (value_) {
+        case LTR:
+            return "ltr";
+        case RTL:
+            return "rtl";
+        case INHERIT:
+            return "inherit";
+        default:
+            return "ltr"; // fallback to first value
+    }
+}
 
-CanvasFontKerning::CanvasFontKerning(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasFontKerning::CanvasFontKerning(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasFontKerning::Value CanvasFontKerning::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "normal")) {
+        return NORMAL;
+    }
+    else if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+CanvasFontKerning::CanvasFontKerning(Value v) noexcept : emlite::Val(CanvasFontKerning::to_string(v)), value_(v) {}
+CanvasFontKerning::CanvasFontKerning(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasFontKerning::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasFontKerning::CanvasFontKerning(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasFontKerning::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasFontKerning CanvasFontKerning::take_ownership(Handle h) noexcept { return CanvasFontKerning(h); }
 CanvasFontKerning CanvasFontKerning::clone() const noexcept { return *this; }
+const char* CanvasFontKerning::to_string(CanvasFontKerning::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case NORMAL:
+            return "normal";
+        case NONE:
+            return "none";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-CanvasFontStretch::CanvasFontStretch(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasFontStretch::CanvasFontStretch(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasFontStretch::Value CanvasFontStretch::from_string(const char* str) noexcept {
+    if (str_equal(str, "ultra-condensed")) {
+        return ULTRA_CONDENSED;
+    }
+    else if (str_equal(str, "extra-condensed")) {
+        return EXTRA_CONDENSED;
+    }
+    else if (str_equal(str, "condensed")) {
+        return CONDENSED;
+    }
+    else if (str_equal(str, "semi-condensed")) {
+        return SEMI_CONDENSED;
+    }
+    else if (str_equal(str, "normal")) {
+        return NORMAL;
+    }
+    else if (str_equal(str, "semi-expanded")) {
+        return SEMI_EXPANDED;
+    }
+    else if (str_equal(str, "expanded")) {
+        return EXPANDED;
+    }
+    else if (str_equal(str, "extra-expanded")) {
+        return EXTRA_EXPANDED;
+    }
+    else if (str_equal(str, "ultra-expanded")) {
+        return ULTRA_EXPANDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return ULTRA_CONDENSED;
+    }
+}
+
+CanvasFontStretch::CanvasFontStretch(Value v) noexcept : emlite::Val(CanvasFontStretch::to_string(v)), value_(v) {}
+CanvasFontStretch::CanvasFontStretch(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasFontStretch::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasFontStretch::CanvasFontStretch(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasFontStretch::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasFontStretch CanvasFontStretch::take_ownership(Handle h) noexcept { return CanvasFontStretch(h); }
 CanvasFontStretch CanvasFontStretch::clone() const noexcept { return *this; }
+const char* CanvasFontStretch::to_string(CanvasFontStretch::Value value_) noexcept {
+    switch (value_) {
+        case ULTRA_CONDENSED:
+            return "ultra-condensed";
+        case EXTRA_CONDENSED:
+            return "extra-condensed";
+        case CONDENSED:
+            return "condensed";
+        case SEMI_CONDENSED:
+            return "semi-condensed";
+        case NORMAL:
+            return "normal";
+        case SEMI_EXPANDED:
+            return "semi-expanded";
+        case EXPANDED:
+            return "expanded";
+        case EXTRA_EXPANDED:
+            return "extra-expanded";
+        case ULTRA_EXPANDED:
+            return "ultra-expanded";
+        default:
+            return "ultra-condensed"; // fallback to first value
+    }
+}
 
-CanvasFontVariantCaps::CanvasFontVariantCaps(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasFontVariantCaps::CanvasFontVariantCaps(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasFontVariantCaps::Value CanvasFontVariantCaps::from_string(const char* str) noexcept {
+    if (str_equal(str, "normal")) {
+        return NORMAL;
+    }
+    else if (str_equal(str, "small-caps")) {
+        return SMALL_CAPS;
+    }
+    else if (str_equal(str, "all-small-caps")) {
+        return ALL_SMALL_CAPS;
+    }
+    else if (str_equal(str, "petite-caps")) {
+        return PETITE_CAPS;
+    }
+    else if (str_equal(str, "all-petite-caps")) {
+        return ALL_PETITE_CAPS;
+    }
+    else if (str_equal(str, "unicase")) {
+        return UNICASE;
+    }
+    else if (str_equal(str, "titling-caps")) {
+        return TITLING_CAPS;
+    }
+    else {
+        // Default to first value for invalid input
+        return NORMAL;
+    }
+}
+
+CanvasFontVariantCaps::CanvasFontVariantCaps(Value v) noexcept : emlite::Val(CanvasFontVariantCaps::to_string(v)), value_(v) {}
+CanvasFontVariantCaps::CanvasFontVariantCaps(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasFontVariantCaps::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasFontVariantCaps::CanvasFontVariantCaps(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasFontVariantCaps::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasFontVariantCaps CanvasFontVariantCaps::take_ownership(Handle h) noexcept { return CanvasFontVariantCaps(h); }
 CanvasFontVariantCaps CanvasFontVariantCaps::clone() const noexcept { return *this; }
+const char* CanvasFontVariantCaps::to_string(CanvasFontVariantCaps::Value value_) noexcept {
+    switch (value_) {
+        case NORMAL:
+            return "normal";
+        case SMALL_CAPS:
+            return "small-caps";
+        case ALL_SMALL_CAPS:
+            return "all-small-caps";
+        case PETITE_CAPS:
+            return "petite-caps";
+        case ALL_PETITE_CAPS:
+            return "all-petite-caps";
+        case UNICASE:
+            return "unicase";
+        case TITLING_CAPS:
+            return "titling-caps";
+        default:
+            return "normal"; // fallback to first value
+    }
+}
 
-CanvasTextRendering::CanvasTextRendering(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CanvasTextRendering::CanvasTextRendering(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CanvasTextRendering::Value CanvasTextRendering::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "optimizeSpeed")) {
+        return OPTIMIZESPEED;
+    }
+    else if (str_equal(str, "optimizeLegibility")) {
+        return OPTIMIZELEGIBILITY;
+    }
+    else if (str_equal(str, "geometricPrecision")) {
+        return GEOMETRICPRECISION;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+CanvasTextRendering::CanvasTextRendering(Value v) noexcept : emlite::Val(CanvasTextRendering::to_string(v)), value_(v) {}
+CanvasTextRendering::CanvasTextRendering(Handle h) noexcept: emlite::Val(h) {
+    value_ = CanvasTextRendering::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CanvasTextRendering::CanvasTextRendering(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CanvasTextRendering::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CanvasTextRendering CanvasTextRendering::take_ownership(Handle h) noexcept { return CanvasTextRendering(h); }
 CanvasTextRendering CanvasTextRendering::clone() const noexcept { return *this; }
+const char* CanvasTextRendering::to_string(CanvasTextRendering::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case OPTIMIZESPEED:
+            return "optimizeSpeed";
+        case OPTIMIZELEGIBILITY:
+            return "optimizeLegibility";
+        case GEOMETRICPRECISION:
+            return "geometricPrecision";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-OffscreenRenderingContextId::OffscreenRenderingContextId(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OffscreenRenderingContextId::OffscreenRenderingContextId(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OffscreenRenderingContextId::Value OffscreenRenderingContextId::from_string(const char* str) noexcept {
+    if (str_equal(str, "2d")) {
+        return _2D;
+    }
+    else if (str_equal(str, "bitmaprenderer")) {
+        return BITMAPRENDERER;
+    }
+    else if (str_equal(str, "webgl")) {
+        return WEBGL;
+    }
+    else if (str_equal(str, "webgl2")) {
+        return WEBGL2;
+    }
+    else if (str_equal(str, "webgpu")) {
+        return WEBGPU;
+    }
+    else {
+        // Default to first value for invalid input
+        return _2D;
+    }
+}
+
+OffscreenRenderingContextId::OffscreenRenderingContextId(Value v) noexcept : emlite::Val(OffscreenRenderingContextId::to_string(v)), value_(v) {}
+OffscreenRenderingContextId::OffscreenRenderingContextId(Handle h) noexcept: emlite::Val(h) {
+    value_ = OffscreenRenderingContextId::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OffscreenRenderingContextId::OffscreenRenderingContextId(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OffscreenRenderingContextId::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OffscreenRenderingContextId OffscreenRenderingContextId::take_ownership(Handle h) noexcept { return OffscreenRenderingContextId(h); }
 OffscreenRenderingContextId OffscreenRenderingContextId::clone() const noexcept { return *this; }
+const char* OffscreenRenderingContextId::to_string(OffscreenRenderingContextId::Value value_) noexcept {
+    switch (value_) {
+        case _2D:
+            return "2d";
+        case BITMAPRENDERER:
+            return "bitmaprenderer";
+        case WEBGL:
+            return "webgl";
+        case WEBGL2:
+            return "webgl2";
+        case WEBGPU:
+            return "webgpu";
+        default:
+            return "2d"; // fallback to first value
+    }
+}
 
-ScrollRestoration::ScrollRestoration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScrollRestoration::ScrollRestoration(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScrollRestoration::Value ScrollRestoration::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "manual")) {
+        return MANUAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+ScrollRestoration::ScrollRestoration(Value v) noexcept : emlite::Val(ScrollRestoration::to_string(v)), value_(v) {}
+ScrollRestoration::ScrollRestoration(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScrollRestoration::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScrollRestoration::ScrollRestoration(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScrollRestoration::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScrollRestoration ScrollRestoration::take_ownership(Handle h) noexcept { return ScrollRestoration(h); }
 ScrollRestoration ScrollRestoration::clone() const noexcept { return *this; }
+const char* ScrollRestoration::to_string(ScrollRestoration::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case MANUAL:
+            return "manual";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-NavigationHistoryBehavior::NavigationHistoryBehavior(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationHistoryBehavior::NavigationHistoryBehavior(const emlite::Val &v) noexcept : emlite::Val(v) {}
+NavigationHistoryBehavior::Value NavigationHistoryBehavior::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "push")) {
+        return PUSH;
+    }
+    else if (str_equal(str, "replace")) {
+        return REPLACE;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+NavigationHistoryBehavior::NavigationHistoryBehavior(Value v) noexcept : emlite::Val(NavigationHistoryBehavior::to_string(v)), value_(v) {}
+NavigationHistoryBehavior::NavigationHistoryBehavior(Handle h) noexcept: emlite::Val(h) {
+    value_ = NavigationHistoryBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+NavigationHistoryBehavior::NavigationHistoryBehavior(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = NavigationHistoryBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 NavigationHistoryBehavior NavigationHistoryBehavior::take_ownership(Handle h) noexcept { return NavigationHistoryBehavior(h); }
 NavigationHistoryBehavior NavigationHistoryBehavior::clone() const noexcept { return *this; }
+const char* NavigationHistoryBehavior::to_string(NavigationHistoryBehavior::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case PUSH:
+            return "push";
+        case REPLACE:
+            return "replace";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-NavigationType::NavigationType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationType::NavigationType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+NavigationType::Value NavigationType::from_string(const char* str) noexcept {
+    if (str_equal(str, "push")) {
+        return PUSH;
+    }
+    else if (str_equal(str, "replace")) {
+        return REPLACE;
+    }
+    else if (str_equal(str, "reload")) {
+        return RELOAD;
+    }
+    else if (str_equal(str, "traverse")) {
+        return TRAVERSE;
+    }
+    else {
+        // Default to first value for invalid input
+        return PUSH;
+    }
+}
+
+NavigationType::NavigationType(Value v) noexcept : emlite::Val(NavigationType::to_string(v)), value_(v) {}
+NavigationType::NavigationType(Handle h) noexcept: emlite::Val(h) {
+    value_ = NavigationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+NavigationType::NavigationType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = NavigationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 NavigationType NavigationType::take_ownership(Handle h) noexcept { return NavigationType(h); }
 NavigationType NavigationType::clone() const noexcept { return *this; }
+const char* NavigationType::to_string(NavigationType::Value value_) noexcept {
+    switch (value_) {
+        case PUSH:
+            return "push";
+        case REPLACE:
+            return "replace";
+        case RELOAD:
+            return "reload";
+        case TRAVERSE:
+            return "traverse";
+        default:
+            return "push"; // fallback to first value
+    }
+}
 
-NavigationFocusReset::NavigationFocusReset(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationFocusReset::NavigationFocusReset(const emlite::Val &v) noexcept : emlite::Val(v) {}
+NavigationFocusReset::Value NavigationFocusReset::from_string(const char* str) noexcept {
+    if (str_equal(str, "after-transition")) {
+        return AFTER_TRANSITION;
+    }
+    else if (str_equal(str, "manual")) {
+        return MANUAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return AFTER_TRANSITION;
+    }
+}
+
+NavigationFocusReset::NavigationFocusReset(Value v) noexcept : emlite::Val(NavigationFocusReset::to_string(v)), value_(v) {}
+NavigationFocusReset::NavigationFocusReset(Handle h) noexcept: emlite::Val(h) {
+    value_ = NavigationFocusReset::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+NavigationFocusReset::NavigationFocusReset(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = NavigationFocusReset::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 NavigationFocusReset NavigationFocusReset::take_ownership(Handle h) noexcept { return NavigationFocusReset(h); }
 NavigationFocusReset NavigationFocusReset::clone() const noexcept { return *this; }
+const char* NavigationFocusReset::to_string(NavigationFocusReset::Value value_) noexcept {
+    switch (value_) {
+        case AFTER_TRANSITION:
+            return "after-transition";
+        case MANUAL:
+            return "manual";
+        default:
+            return "after-transition"; // fallback to first value
+    }
+}
 
-NavigationScrollBehavior::NavigationScrollBehavior(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationScrollBehavior::NavigationScrollBehavior(const emlite::Val &v) noexcept : emlite::Val(v) {}
+NavigationScrollBehavior::Value NavigationScrollBehavior::from_string(const char* str) noexcept {
+    if (str_equal(str, "after-transition")) {
+        return AFTER_TRANSITION;
+    }
+    else if (str_equal(str, "manual")) {
+        return MANUAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return AFTER_TRANSITION;
+    }
+}
+
+NavigationScrollBehavior::NavigationScrollBehavior(Value v) noexcept : emlite::Val(NavigationScrollBehavior::to_string(v)), value_(v) {}
+NavigationScrollBehavior::NavigationScrollBehavior(Handle h) noexcept: emlite::Val(h) {
+    value_ = NavigationScrollBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+NavigationScrollBehavior::NavigationScrollBehavior(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = NavigationScrollBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 NavigationScrollBehavior NavigationScrollBehavior::take_ownership(Handle h) noexcept { return NavigationScrollBehavior(h); }
 NavigationScrollBehavior NavigationScrollBehavior::clone() const noexcept { return *this; }
+const char* NavigationScrollBehavior::to_string(NavigationScrollBehavior::Value value_) noexcept {
+    switch (value_) {
+        case AFTER_TRANSITION:
+            return "after-transition";
+        case MANUAL:
+            return "manual";
+        default:
+            return "after-transition"; // fallback to first value
+    }
+}
 
-DOMParserSupportedType::DOMParserSupportedType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DOMParserSupportedType::DOMParserSupportedType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+DOMParserSupportedType::Value DOMParserSupportedType::from_string(const char* str) noexcept {
+    if (str_equal(str, "text/html")) {
+        return TEXT_HTML;
+    }
+    else if (str_equal(str, "text/xml")) {
+        return TEXT_XML;
+    }
+    else if (str_equal(str, "application/xml")) {
+        return APPLICATION_XML;
+    }
+    else if (str_equal(str, "application/xhtml+xml")) {
+        return APPLICATION_XHTML_XML;
+    }
+    else if (str_equal(str, "image/svg+xml")) {
+        return IMAGE_SVG_XML;
+    }
+    else {
+        // Default to first value for invalid input
+        return TEXT_HTML;
+    }
+}
+
+DOMParserSupportedType::DOMParserSupportedType(Value v) noexcept : emlite::Val(DOMParserSupportedType::to_string(v)), value_(v) {}
+DOMParserSupportedType::DOMParserSupportedType(Handle h) noexcept: emlite::Val(h) {
+    value_ = DOMParserSupportedType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DOMParserSupportedType::DOMParserSupportedType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DOMParserSupportedType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 DOMParserSupportedType DOMParserSupportedType::take_ownership(Handle h) noexcept { return DOMParserSupportedType(h); }
 DOMParserSupportedType DOMParserSupportedType::clone() const noexcept { return *this; }
+const char* DOMParserSupportedType::to_string(DOMParserSupportedType::Value value_) noexcept {
+    switch (value_) {
+        case TEXT_HTML:
+            return "text/html";
+        case TEXT_XML:
+            return "text/xml";
+        case APPLICATION_XML:
+            return "application/xml";
+        case APPLICATION_XHTML_XML:
+            return "application/xhtml+xml";
+        case IMAGE_SVG_XML:
+            return "image/svg+xml";
+        default:
+            return "text/html"; // fallback to first value
+    }
+}
 
-ImageDataPixelFormat::ImageDataPixelFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ImageDataPixelFormat::ImageDataPixelFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ImageDataPixelFormat::Value ImageDataPixelFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "rgba-unorm8")) {
+        return RGBA_UNORM8;
+    }
+    else if (str_equal(str, "rgba-float16")) {
+        return RGBA_FLOAT16;
+    }
+    else {
+        // Default to first value for invalid input
+        return RGBA_UNORM8;
+    }
+}
+
+ImageDataPixelFormat::ImageDataPixelFormat(Value v) noexcept : emlite::Val(ImageDataPixelFormat::to_string(v)), value_(v) {}
+ImageDataPixelFormat::ImageDataPixelFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = ImageDataPixelFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ImageDataPixelFormat::ImageDataPixelFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ImageDataPixelFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ImageDataPixelFormat ImageDataPixelFormat::take_ownership(Handle h) noexcept { return ImageDataPixelFormat(h); }
 ImageDataPixelFormat ImageDataPixelFormat::clone() const noexcept { return *this; }
+const char* ImageDataPixelFormat::to_string(ImageDataPixelFormat::Value value_) noexcept {
+    switch (value_) {
+        case RGBA_UNORM8:
+            return "rgba-unorm8";
+        case RGBA_FLOAT16:
+            return "rgba-float16";
+        default:
+            return "rgba-unorm8"; // fallback to first value
+    }
+}
 
-ImageOrientation::ImageOrientation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ImageOrientation::ImageOrientation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ImageOrientation::Value ImageOrientation::from_string(const char* str) noexcept {
+    if (str_equal(str, "from-image")) {
+        return FROM_IMAGE;
+    }
+    else if (str_equal(str, "flipY")) {
+        return FLIPY;
+    }
+    else {
+        // Default to first value for invalid input
+        return FROM_IMAGE;
+    }
+}
+
+ImageOrientation::ImageOrientation(Value v) noexcept : emlite::Val(ImageOrientation::to_string(v)), value_(v) {}
+ImageOrientation::ImageOrientation(Handle h) noexcept: emlite::Val(h) {
+    value_ = ImageOrientation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ImageOrientation::ImageOrientation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ImageOrientation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ImageOrientation ImageOrientation::take_ownership(Handle h) noexcept { return ImageOrientation(h); }
 ImageOrientation ImageOrientation::clone() const noexcept { return *this; }
+const char* ImageOrientation::to_string(ImageOrientation::Value value_) noexcept {
+    switch (value_) {
+        case FROM_IMAGE:
+            return "from-image";
+        case FLIPY:
+            return "flipY";
+        default:
+            return "from-image"; // fallback to first value
+    }
+}
 
-PremultiplyAlpha::PremultiplyAlpha(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PremultiplyAlpha::PremultiplyAlpha(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PremultiplyAlpha::Value PremultiplyAlpha::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "premultiply")) {
+        return PREMULTIPLY;
+    }
+    else if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+PremultiplyAlpha::PremultiplyAlpha(Value v) noexcept : emlite::Val(PremultiplyAlpha::to_string(v)), value_(v) {}
+PremultiplyAlpha::PremultiplyAlpha(Handle h) noexcept: emlite::Val(h) {
+    value_ = PremultiplyAlpha::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PremultiplyAlpha::PremultiplyAlpha(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PremultiplyAlpha::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PremultiplyAlpha PremultiplyAlpha::take_ownership(Handle h) noexcept { return PremultiplyAlpha(h); }
 PremultiplyAlpha PremultiplyAlpha::clone() const noexcept { return *this; }
+const char* PremultiplyAlpha::to_string(PremultiplyAlpha::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case PREMULTIPLY:
+            return "premultiply";
+        case DEFAULT_:
+            return "default";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-ColorSpaceConversion::ColorSpaceConversion(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ColorSpaceConversion::ColorSpaceConversion(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ColorSpaceConversion::Value ColorSpaceConversion::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+ColorSpaceConversion::ColorSpaceConversion(Value v) noexcept : emlite::Val(ColorSpaceConversion::to_string(v)), value_(v) {}
+ColorSpaceConversion::ColorSpaceConversion(Handle h) noexcept: emlite::Val(h) {
+    value_ = ColorSpaceConversion::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ColorSpaceConversion::ColorSpaceConversion(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ColorSpaceConversion::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ColorSpaceConversion ColorSpaceConversion::take_ownership(Handle h) noexcept { return ColorSpaceConversion(h); }
 ColorSpaceConversion ColorSpaceConversion::clone() const noexcept { return *this; }
+const char* ColorSpaceConversion::to_string(ColorSpaceConversion::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case DEFAULT_:
+            return "default";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-ResizeQuality::ResizeQuality(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ResizeQuality::ResizeQuality(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ResizeQuality::Value ResizeQuality::from_string(const char* str) noexcept {
+    if (str_equal(str, "pixelated")) {
+        return PIXELATED;
+    }
+    else if (str_equal(str, "low")) {
+        return LOW;
+    }
+    else if (str_equal(str, "medium")) {
+        return MEDIUM;
+    }
+    else if (str_equal(str, "high")) {
+        return HIGH;
+    }
+    else {
+        // Default to first value for invalid input
+        return PIXELATED;
+    }
+}
+
+ResizeQuality::ResizeQuality(Value v) noexcept : emlite::Val(ResizeQuality::to_string(v)), value_(v) {}
+ResizeQuality::ResizeQuality(Handle h) noexcept: emlite::Val(h) {
+    value_ = ResizeQuality::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ResizeQuality::ResizeQuality(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ResizeQuality::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ResizeQuality ResizeQuality::take_ownership(Handle h) noexcept { return ResizeQuality(h); }
 ResizeQuality ResizeQuality::clone() const noexcept { return *this; }
+const char* ResizeQuality::to_string(ResizeQuality::Value value_) noexcept {
+    switch (value_) {
+        case PIXELATED:
+            return "pixelated";
+        case LOW:
+            return "low";
+        case MEDIUM:
+            return "medium";
+        case HIGH:
+            return "high";
+        default:
+            return "pixelated"; // fallback to first value
+    }
+}
 
-WorkerType::WorkerType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WorkerType::WorkerType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WorkerType::Value WorkerType::from_string(const char* str) noexcept {
+    if (str_equal(str, "classic")) {
+        return CLASSIC;
+    }
+    else if (str_equal(str, "module")) {
+        return MODULE_;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLASSIC;
+    }
+}
+
+WorkerType::WorkerType(Value v) noexcept : emlite::Val(WorkerType::to_string(v)), value_(v) {}
+WorkerType::WorkerType(Handle h) noexcept: emlite::Val(h) {
+    value_ = WorkerType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WorkerType::WorkerType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WorkerType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WorkerType WorkerType::take_ownership(Handle h) noexcept { return WorkerType(h); }
 WorkerType WorkerType::clone() const noexcept { return *this; }
+const char* WorkerType::to_string(WorkerType::Value value_) noexcept {
+    switch (value_) {
+        case CLASSIC:
+            return "classic";
+        case MODULE_:
+            return "module";
+        default:
+            return "classic"; // fallback to first value
+    }
+}
 
-UserIdleState::UserIdleState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-UserIdleState::UserIdleState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+UserIdleState::Value UserIdleState::from_string(const char* str) noexcept {
+    if (str_equal(str, "active")) {
+        return ACTIVE;
+    }
+    else if (str_equal(str, "idle")) {
+        return IDLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return ACTIVE;
+    }
+}
+
+UserIdleState::UserIdleState(Value v) noexcept : emlite::Val(UserIdleState::to_string(v)), value_(v) {}
+UserIdleState::UserIdleState(Handle h) noexcept: emlite::Val(h) {
+    value_ = UserIdleState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+UserIdleState::UserIdleState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = UserIdleState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 UserIdleState UserIdleState::take_ownership(Handle h) noexcept { return UserIdleState(h); }
 UserIdleState UserIdleState::clone() const noexcept { return *this; }
+const char* UserIdleState::to_string(UserIdleState::Value value_) noexcept {
+    switch (value_) {
+        case ACTIVE:
+            return "active";
+        case IDLE:
+            return "idle";
+        default:
+            return "active"; // fallback to first value
+    }
+}
 
-ScreenIdleState::ScreenIdleState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScreenIdleState::ScreenIdleState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScreenIdleState::Value ScreenIdleState::from_string(const char* str) noexcept {
+    if (str_equal(str, "locked")) {
+        return LOCKED;
+    }
+    else if (str_equal(str, "unlocked")) {
+        return UNLOCKED;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOCKED;
+    }
+}
+
+ScreenIdleState::ScreenIdleState(Value v) noexcept : emlite::Val(ScreenIdleState::to_string(v)), value_(v) {}
+ScreenIdleState::ScreenIdleState(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScreenIdleState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScreenIdleState::ScreenIdleState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScreenIdleState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScreenIdleState ScreenIdleState::take_ownership(Handle h) noexcept { return ScreenIdleState(h); }
 ScreenIdleState ScreenIdleState::clone() const noexcept { return *this; }
+const char* ScreenIdleState::to_string(ScreenIdleState::Value value_) noexcept {
+    switch (value_) {
+        case LOCKED:
+            return "locked";
+        case UNLOCKED:
+            return "unlocked";
+        default:
+            return "locked"; // fallback to first value
+    }
+}
 
-RedEyeReduction::RedEyeReduction(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RedEyeReduction::RedEyeReduction(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RedEyeReduction::Value RedEyeReduction::from_string(const char* str) noexcept {
+    if (str_equal(str, "never")) {
+        return NEVER;
+    }
+    else if (str_equal(str, "always")) {
+        return ALWAYS;
+    }
+    else if (str_equal(str, "controllable")) {
+        return CONTROLLABLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEVER;
+    }
+}
+
+RedEyeReduction::RedEyeReduction(Value v) noexcept : emlite::Val(RedEyeReduction::to_string(v)), value_(v) {}
+RedEyeReduction::RedEyeReduction(Handle h) noexcept: emlite::Val(h) {
+    value_ = RedEyeReduction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RedEyeReduction::RedEyeReduction(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RedEyeReduction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RedEyeReduction RedEyeReduction::take_ownership(Handle h) noexcept { return RedEyeReduction(h); }
 RedEyeReduction RedEyeReduction::clone() const noexcept { return *this; }
+const char* RedEyeReduction::to_string(RedEyeReduction::Value value_) noexcept {
+    switch (value_) {
+        case NEVER:
+            return "never";
+        case ALWAYS:
+            return "always";
+        case CONTROLLABLE:
+            return "controllable";
+        default:
+            return "never"; // fallback to first value
+    }
+}
 
-FillLightMode::FillLightMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FillLightMode::FillLightMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FillLightMode::Value FillLightMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "off")) {
+        return OFF;
+    }
+    else if (str_equal(str, "flash")) {
+        return FLASH;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+FillLightMode::FillLightMode(Value v) noexcept : emlite::Val(FillLightMode::to_string(v)), value_(v) {}
+FillLightMode::FillLightMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = FillLightMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FillLightMode::FillLightMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FillLightMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FillLightMode FillLightMode::take_ownership(Handle h) noexcept { return FillLightMode(h); }
 FillLightMode FillLightMode::clone() const noexcept { return *this; }
+const char* FillLightMode::to_string(FillLightMode::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case OFF:
+            return "off";
+        case FLASH:
+            return "flash";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-MeteringMode::MeteringMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MeteringMode::MeteringMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MeteringMode::Value MeteringMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "manual")) {
+        return MANUAL;
+    }
+    else if (str_equal(str, "single-shot")) {
+        return SINGLE_SHOT;
+    }
+    else if (str_equal(str, "continuous")) {
+        return CONTINUOUS;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+MeteringMode::MeteringMode(Value v) noexcept : emlite::Val(MeteringMode::to_string(v)), value_(v) {}
+MeteringMode::MeteringMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = MeteringMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MeteringMode::MeteringMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MeteringMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MeteringMode MeteringMode::take_ownership(Handle h) noexcept { return MeteringMode(h); }
 MeteringMode MeteringMode::clone() const noexcept { return *this; }
+const char* MeteringMode::to_string(MeteringMode::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case MANUAL:
+            return "manual";
+        case SINGLE_SHOT:
+            return "single-shot";
+        case CONTINUOUS:
+            return "continuous";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-LoginStatus::LoginStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-LoginStatus::LoginStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+LoginStatus::Value LoginStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "logged-in")) {
+        return LOGGED_IN;
+    }
+    else if (str_equal(str, "logged-out")) {
+        return LOGGED_OUT;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOGGED_IN;
+    }
+}
+
+LoginStatus::LoginStatus(Value v) noexcept : emlite::Val(LoginStatus::to_string(v)), value_(v) {}
+LoginStatus::LoginStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = LoginStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+LoginStatus::LoginStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = LoginStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 LoginStatus LoginStatus::take_ownership(Handle h) noexcept { return LoginStatus(h); }
 LoginStatus LoginStatus::clone() const noexcept { return *this; }
+const char* LoginStatus::to_string(LoginStatus::Value value_) noexcept {
+    switch (value_) {
+        case LOGGED_IN:
+            return "logged-in";
+        case LOGGED_OUT:
+            return "logged-out";
+        default:
+            return "logged-in"; // fallback to first value
+    }
+}
 
-ScriptInvokerType::ScriptInvokerType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScriptInvokerType::ScriptInvokerType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScriptInvokerType::Value ScriptInvokerType::from_string(const char* str) noexcept {
+    if (str_equal(str, "classic-script")) {
+        return CLASSIC_SCRIPT;
+    }
+    else if (str_equal(str, "module-script")) {
+        return MODULE_SCRIPT;
+    }
+    else if (str_equal(str, "event-listener")) {
+        return EVENT_LISTENER;
+    }
+    else if (str_equal(str, "user-callback")) {
+        return USER_CALLBACK;
+    }
+    else if (str_equal(str, "resolve-promise")) {
+        return RESOLVE_PROMISE;
+    }
+    else if (str_equal(str, "reject-promise")) {
+        return REJECT_PROMISE;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLASSIC_SCRIPT;
+    }
+}
+
+ScriptInvokerType::ScriptInvokerType(Value v) noexcept : emlite::Val(ScriptInvokerType::to_string(v)), value_(v) {}
+ScriptInvokerType::ScriptInvokerType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScriptInvokerType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScriptInvokerType::ScriptInvokerType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScriptInvokerType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScriptInvokerType ScriptInvokerType::take_ownership(Handle h) noexcept { return ScriptInvokerType(h); }
 ScriptInvokerType ScriptInvokerType::clone() const noexcept { return *this; }
+const char* ScriptInvokerType::to_string(ScriptInvokerType::Value value_) noexcept {
+    switch (value_) {
+        case CLASSIC_SCRIPT:
+            return "classic-script";
+        case MODULE_SCRIPT:
+            return "module-script";
+        case EVENT_LISTENER:
+            return "event-listener";
+        case USER_CALLBACK:
+            return "user-callback";
+        case RESOLVE_PROMISE:
+            return "resolve-promise";
+        case REJECT_PROMISE:
+            return "reject-promise";
+        default:
+            return "classic-script"; // fallback to first value
+    }
+}
 
-ScriptWindowAttribution::ScriptWindowAttribution(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScriptWindowAttribution::ScriptWindowAttribution(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScriptWindowAttribution::Value ScriptWindowAttribution::from_string(const char* str) noexcept {
+    if (str_equal(str, "self")) {
+        return SELF;
+    }
+    else if (str_equal(str, "descendant")) {
+        return DESCENDANT;
+    }
+    else if (str_equal(str, "ancestor")) {
+        return ANCESTOR;
+    }
+    else if (str_equal(str, "same-page")) {
+        return SAME_PAGE;
+    }
+    else if (str_equal(str, "other")) {
+        return OTHER;
+    }
+    else {
+        // Default to first value for invalid input
+        return SELF;
+    }
+}
+
+ScriptWindowAttribution::ScriptWindowAttribution(Value v) noexcept : emlite::Val(ScriptWindowAttribution::to_string(v)), value_(v) {}
+ScriptWindowAttribution::ScriptWindowAttribution(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScriptWindowAttribution::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScriptWindowAttribution::ScriptWindowAttribution(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScriptWindowAttribution::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScriptWindowAttribution ScriptWindowAttribution::take_ownership(Handle h) noexcept { return ScriptWindowAttribution(h); }
 ScriptWindowAttribution ScriptWindowAttribution::clone() const noexcept { return *this; }
+const char* ScriptWindowAttribution::to_string(ScriptWindowAttribution::Value value_) noexcept {
+    switch (value_) {
+        case SELF:
+            return "self";
+        case DESCENDANT:
+            return "descendant";
+        case ANCESTOR:
+            return "ancestor";
+        case SAME_PAGE:
+            return "same-page";
+        case OTHER:
+            return "other";
+        default:
+            return "self"; // fallback to first value
+    }
+}
 
-MagnetometerLocalCoordinateSystem::MagnetometerLocalCoordinateSystem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MagnetometerLocalCoordinateSystem::MagnetometerLocalCoordinateSystem(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MagnetometerLocalCoordinateSystem::Value MagnetometerLocalCoordinateSystem::from_string(const char* str) noexcept {
+    if (str_equal(str, "device")) {
+        return DEVICE;
+    }
+    else if (str_equal(str, "screen")) {
+        return SCREEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEVICE;
+    }
+}
+
+MagnetometerLocalCoordinateSystem::MagnetometerLocalCoordinateSystem(Value v) noexcept : emlite::Val(MagnetometerLocalCoordinateSystem::to_string(v)), value_(v) {}
+MagnetometerLocalCoordinateSystem::MagnetometerLocalCoordinateSystem(Handle h) noexcept: emlite::Val(h) {
+    value_ = MagnetometerLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MagnetometerLocalCoordinateSystem::MagnetometerLocalCoordinateSystem(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MagnetometerLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MagnetometerLocalCoordinateSystem MagnetometerLocalCoordinateSystem::take_ownership(Handle h) noexcept { return MagnetometerLocalCoordinateSystem(h); }
 MagnetometerLocalCoordinateSystem MagnetometerLocalCoordinateSystem::clone() const noexcept { return *this; }
+const char* MagnetometerLocalCoordinateSystem::to_string(MagnetometerLocalCoordinateSystem::Value value_) noexcept {
+    switch (value_) {
+        case DEVICE:
+            return "device";
+        case SCREEN:
+            return "screen";
+        default:
+            return "device"; // fallback to first value
+    }
+}
 
-AppBannerPromptOutcome::AppBannerPromptOutcome(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AppBannerPromptOutcome::AppBannerPromptOutcome(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AppBannerPromptOutcome::Value AppBannerPromptOutcome::from_string(const char* str) noexcept {
+    if (str_equal(str, "accepted")) {
+        return ACCEPTED;
+    }
+    else if (str_equal(str, "dismissed")) {
+        return DISMISSED;
+    }
+    else {
+        // Default to first value for invalid input
+        return ACCEPTED;
+    }
+}
+
+AppBannerPromptOutcome::AppBannerPromptOutcome(Value v) noexcept : emlite::Val(AppBannerPromptOutcome::to_string(v)), value_(v) {}
+AppBannerPromptOutcome::AppBannerPromptOutcome(Handle h) noexcept: emlite::Val(h) {
+    value_ = AppBannerPromptOutcome::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AppBannerPromptOutcome::AppBannerPromptOutcome(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AppBannerPromptOutcome::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AppBannerPromptOutcome AppBannerPromptOutcome::take_ownership(Handle h) noexcept { return AppBannerPromptOutcome(h); }
 AppBannerPromptOutcome AppBannerPromptOutcome::clone() const noexcept { return *this; }
+const char* AppBannerPromptOutcome::to_string(AppBannerPromptOutcome::Value value_) noexcept {
+    switch (value_) {
+        case ACCEPTED:
+            return "accepted";
+        case DISMISSED:
+            return "dismissed";
+        default:
+            return "accepted"; // fallback to first value
+    }
+}
 
-MediaDecodingType::MediaDecodingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaDecodingType::MediaDecodingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaDecodingType::Value MediaDecodingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "file")) {
+        return FILE;
+    }
+    else if (str_equal(str, "media-source")) {
+        return MEDIA_SOURCE;
+    }
+    else if (str_equal(str, "webrtc")) {
+        return WEBRTC;
+    }
+    else {
+        // Default to first value for invalid input
+        return FILE;
+    }
+}
+
+MediaDecodingType::MediaDecodingType(Value v) noexcept : emlite::Val(MediaDecodingType::to_string(v)), value_(v) {}
+MediaDecodingType::MediaDecodingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaDecodingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaDecodingType::MediaDecodingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaDecodingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaDecodingType MediaDecodingType::take_ownership(Handle h) noexcept { return MediaDecodingType(h); }
 MediaDecodingType MediaDecodingType::clone() const noexcept { return *this; }
+const char* MediaDecodingType::to_string(MediaDecodingType::Value value_) noexcept {
+    switch (value_) {
+        case FILE:
+            return "file";
+        case MEDIA_SOURCE:
+            return "media-source";
+        case WEBRTC:
+            return "webrtc";
+        default:
+            return "file"; // fallback to first value
+    }
+}
 
-MediaEncodingType::MediaEncodingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaEncodingType::MediaEncodingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaEncodingType::Value MediaEncodingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "record")) {
+        return RECORD;
+    }
+    else if (str_equal(str, "webrtc")) {
+        return WEBRTC;
+    }
+    else {
+        // Default to first value for invalid input
+        return RECORD;
+    }
+}
+
+MediaEncodingType::MediaEncodingType(Value v) noexcept : emlite::Val(MediaEncodingType::to_string(v)), value_(v) {}
+MediaEncodingType::MediaEncodingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaEncodingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaEncodingType::MediaEncodingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaEncodingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaEncodingType MediaEncodingType::take_ownership(Handle h) noexcept { return MediaEncodingType(h); }
 MediaEncodingType MediaEncodingType::clone() const noexcept { return *this; }
+const char* MediaEncodingType::to_string(MediaEncodingType::Value value_) noexcept {
+    switch (value_) {
+        case RECORD:
+            return "record";
+        case WEBRTC:
+            return "webrtc";
+        default:
+            return "record"; // fallback to first value
+    }
+}
 
-HdrMetadataType::HdrMetadataType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HdrMetadataType::HdrMetadataType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+HdrMetadataType::Value HdrMetadataType::from_string(const char* str) noexcept {
+    if (str_equal(str, "smpteSt2086")) {
+        return SMPTEST2086;
+    }
+    else if (str_equal(str, "smpteSt2094-10")) {
+        return SMPTEST2094_10;
+    }
+    else if (str_equal(str, "smpteSt2094-40")) {
+        return SMPTEST2094_40;
+    }
+    else {
+        // Default to first value for invalid input
+        return SMPTEST2086;
+    }
+}
+
+HdrMetadataType::HdrMetadataType(Value v) noexcept : emlite::Val(HdrMetadataType::to_string(v)), value_(v) {}
+HdrMetadataType::HdrMetadataType(Handle h) noexcept: emlite::Val(h) {
+    value_ = HdrMetadataType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+HdrMetadataType::HdrMetadataType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = HdrMetadataType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 HdrMetadataType HdrMetadataType::take_ownership(Handle h) noexcept { return HdrMetadataType(h); }
 HdrMetadataType HdrMetadataType::clone() const noexcept { return *this; }
+const char* HdrMetadataType::to_string(HdrMetadataType::Value value_) noexcept {
+    switch (value_) {
+        case SMPTEST2086:
+            return "smpteSt2086";
+        case SMPTEST2094_10:
+            return "smpteSt2094-10";
+        case SMPTEST2094_40:
+            return "smpteSt2094-40";
+        default:
+            return "smpteSt2086"; // fallback to first value
+    }
+}
 
-ColorGamut::ColorGamut(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ColorGamut::ColorGamut(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ColorGamut::Value ColorGamut::from_string(const char* str) noexcept {
+    if (str_equal(str, "srgb")) {
+        return SRGB;
+    }
+    else if (str_equal(str, "p3")) {
+        return P3;
+    }
+    else if (str_equal(str, "rec2020")) {
+        return REC2020;
+    }
+    else {
+        // Default to first value for invalid input
+        return SRGB;
+    }
+}
+
+ColorGamut::ColorGamut(Value v) noexcept : emlite::Val(ColorGamut::to_string(v)), value_(v) {}
+ColorGamut::ColorGamut(Handle h) noexcept: emlite::Val(h) {
+    value_ = ColorGamut::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ColorGamut::ColorGamut(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ColorGamut::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ColorGamut ColorGamut::take_ownership(Handle h) noexcept { return ColorGamut(h); }
 ColorGamut ColorGamut::clone() const noexcept { return *this; }
+const char* ColorGamut::to_string(ColorGamut::Value value_) noexcept {
+    switch (value_) {
+        case SRGB:
+            return "srgb";
+        case P3:
+            return "p3";
+        case REC2020:
+            return "rec2020";
+        default:
+            return "srgb"; // fallback to first value
+    }
+}
 
-TransferFunction::TransferFunction(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TransferFunction::TransferFunction(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TransferFunction::Value TransferFunction::from_string(const char* str) noexcept {
+    if (str_equal(str, "srgb")) {
+        return SRGB;
+    }
+    else if (str_equal(str, "pq")) {
+        return PQ;
+    }
+    else if (str_equal(str, "hlg")) {
+        return HLG;
+    }
+    else {
+        // Default to first value for invalid input
+        return SRGB;
+    }
+}
+
+TransferFunction::TransferFunction(Value v) noexcept : emlite::Val(TransferFunction::to_string(v)), value_(v) {}
+TransferFunction::TransferFunction(Handle h) noexcept: emlite::Val(h) {
+    value_ = TransferFunction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TransferFunction::TransferFunction(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TransferFunction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TransferFunction TransferFunction::take_ownership(Handle h) noexcept { return TransferFunction(h); }
 TransferFunction TransferFunction::clone() const noexcept { return *this; }
+const char* TransferFunction::to_string(TransferFunction::Value value_) noexcept {
+    switch (value_) {
+        case SRGB:
+            return "srgb";
+        case PQ:
+            return "pq";
+        case HLG:
+            return "hlg";
+        default:
+            return "srgb"; // fallback to first value
+    }
+}
 
-ReadyState::ReadyState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ReadyState::ReadyState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ReadyState::Value ReadyState::from_string(const char* str) noexcept {
+    if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "open")) {
+        return OPEN;
+    }
+    else if (str_equal(str, "ended")) {
+        return ENDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLOSED;
+    }
+}
+
+ReadyState::ReadyState(Value v) noexcept : emlite::Val(ReadyState::to_string(v)), value_(v) {}
+ReadyState::ReadyState(Handle h) noexcept: emlite::Val(h) {
+    value_ = ReadyState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ReadyState::ReadyState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ReadyState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ReadyState ReadyState::take_ownership(Handle h) noexcept { return ReadyState(h); }
 ReadyState ReadyState::clone() const noexcept { return *this; }
+const char* ReadyState::to_string(ReadyState::Value value_) noexcept {
+    switch (value_) {
+        case CLOSED:
+            return "closed";
+        case OPEN:
+            return "open";
+        case ENDED:
+            return "ended";
+        default:
+            return "closed"; // fallback to first value
+    }
+}
 
-EndOfStreamError::EndOfStreamError(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-EndOfStreamError::EndOfStreamError(const emlite::Val &v) noexcept : emlite::Val(v) {}
+EndOfStreamError::Value EndOfStreamError::from_string(const char* str) noexcept {
+    if (str_equal(str, "network")) {
+        return NETWORK;
+    }
+    else if (str_equal(str, "decode")) {
+        return DECODE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NETWORK;
+    }
+}
+
+EndOfStreamError::EndOfStreamError(Value v) noexcept : emlite::Val(EndOfStreamError::to_string(v)), value_(v) {}
+EndOfStreamError::EndOfStreamError(Handle h) noexcept: emlite::Val(h) {
+    value_ = EndOfStreamError::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+EndOfStreamError::EndOfStreamError(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = EndOfStreamError::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 EndOfStreamError EndOfStreamError::take_ownership(Handle h) noexcept { return EndOfStreamError(h); }
 EndOfStreamError EndOfStreamError::clone() const noexcept { return *this; }
+const char* EndOfStreamError::to_string(EndOfStreamError::Value value_) noexcept {
+    switch (value_) {
+        case NETWORK:
+            return "network";
+        case DECODE:
+            return "decode";
+        default:
+            return "network"; // fallback to first value
+    }
+}
 
-AppendMode::AppendMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AppendMode::AppendMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AppendMode::Value AppendMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "segments")) {
+        return SEGMENTS;
+    }
+    else if (str_equal(str, "sequence")) {
+        return SEQUENCE;
+    }
+    else {
+        // Default to first value for invalid input
+        return SEGMENTS;
+    }
+}
+
+AppendMode::AppendMode(Value v) noexcept : emlite::Val(AppendMode::to_string(v)), value_(v) {}
+AppendMode::AppendMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = AppendMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AppendMode::AppendMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AppendMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AppendMode AppendMode::take_ownership(Handle h) noexcept { return AppendMode(h); }
 AppendMode AppendMode::clone() const noexcept { return *this; }
+const char* AppendMode::to_string(AppendMode::Value value_) noexcept {
+    switch (value_) {
+        case SEGMENTS:
+            return "segments";
+        case SEQUENCE:
+            return "sequence";
+        default:
+            return "segments"; // fallback to first value
+    }
+}
 
-MockCapturePromptResult::MockCapturePromptResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MockCapturePromptResult::MockCapturePromptResult(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MockCapturePromptResult::Value MockCapturePromptResult::from_string(const char* str) noexcept {
+    if (str_equal(str, "granted")) {
+        return GRANTED;
+    }
+    else if (str_equal(str, "denied")) {
+        return DENIED;
+    }
+    else {
+        // Default to first value for invalid input
+        return GRANTED;
+    }
+}
+
+MockCapturePromptResult::MockCapturePromptResult(Value v) noexcept : emlite::Val(MockCapturePromptResult::to_string(v)), value_(v) {}
+MockCapturePromptResult::MockCapturePromptResult(Handle h) noexcept: emlite::Val(h) {
+    value_ = MockCapturePromptResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MockCapturePromptResult::MockCapturePromptResult(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MockCapturePromptResult::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MockCapturePromptResult MockCapturePromptResult::take_ownership(Handle h) noexcept { return MockCapturePromptResult(h); }
 MockCapturePromptResult MockCapturePromptResult::clone() const noexcept { return *this; }
+const char* MockCapturePromptResult::to_string(MockCapturePromptResult::Value value_) noexcept {
+    switch (value_) {
+        case GRANTED:
+            return "granted";
+        case DENIED:
+            return "denied";
+        default:
+            return "granted"; // fallback to first value
+    }
+}
 
-CaptureAction::CaptureAction(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CaptureAction::CaptureAction(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CaptureAction::Value CaptureAction::from_string(const char* str) noexcept {
+    if (str_equal(str, "next")) {
+        return NEXT;
+    }
+    else if (str_equal(str, "previous")) {
+        return PREVIOUS;
+    }
+    else if (str_equal(str, "first")) {
+        return FIRST;
+    }
+    else if (str_equal(str, "last")) {
+        return LAST;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEXT;
+    }
+}
+
+CaptureAction::CaptureAction(Value v) noexcept : emlite::Val(CaptureAction::to_string(v)), value_(v) {}
+CaptureAction::CaptureAction(Handle h) noexcept: emlite::Val(h) {
+    value_ = CaptureAction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CaptureAction::CaptureAction(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CaptureAction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CaptureAction CaptureAction::take_ownership(Handle h) noexcept { return CaptureAction(h); }
 CaptureAction CaptureAction::clone() const noexcept { return *this; }
+const char* CaptureAction::to_string(CaptureAction::Value value_) noexcept {
+    switch (value_) {
+        case NEXT:
+            return "next";
+        case PREVIOUS:
+            return "previous";
+        case FIRST:
+            return "first";
+        case LAST:
+            return "last";
+        default:
+            return "next"; // fallback to first value
+    }
+}
 
-MediaStreamTrackState::MediaStreamTrackState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaStreamTrackState::MediaStreamTrackState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaStreamTrackState::Value MediaStreamTrackState::from_string(const char* str) noexcept {
+    if (str_equal(str, "live")) {
+        return LIVE;
+    }
+    else if (str_equal(str, "ended")) {
+        return ENDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return LIVE;
+    }
+}
+
+MediaStreamTrackState::MediaStreamTrackState(Value v) noexcept : emlite::Val(MediaStreamTrackState::to_string(v)), value_(v) {}
+MediaStreamTrackState::MediaStreamTrackState(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaStreamTrackState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaStreamTrackState::MediaStreamTrackState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaStreamTrackState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaStreamTrackState MediaStreamTrackState::take_ownership(Handle h) noexcept { return MediaStreamTrackState(h); }
 MediaStreamTrackState MediaStreamTrackState::clone() const noexcept { return *this; }
+const char* MediaStreamTrackState::to_string(MediaStreamTrackState::Value value_) noexcept {
+    switch (value_) {
+        case LIVE:
+            return "live";
+        case ENDED:
+            return "ended";
+        default:
+            return "live"; // fallback to first value
+    }
+}
 
-VideoFacingModeEnum::VideoFacingModeEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoFacingModeEnum::VideoFacingModeEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+VideoFacingModeEnum::Value VideoFacingModeEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "user")) {
+        return USER;
+    }
+    else if (str_equal(str, "environment")) {
+        return ENVIRONMENT;
+    }
+    else if (str_equal(str, "left")) {
+        return LEFT;
+    }
+    else if (str_equal(str, "right")) {
+        return RIGHT;
+    }
+    else {
+        // Default to first value for invalid input
+        return USER;
+    }
+}
+
+VideoFacingModeEnum::VideoFacingModeEnum(Value v) noexcept : emlite::Val(VideoFacingModeEnum::to_string(v)), value_(v) {}
+VideoFacingModeEnum::VideoFacingModeEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = VideoFacingModeEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+VideoFacingModeEnum::VideoFacingModeEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = VideoFacingModeEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 VideoFacingModeEnum VideoFacingModeEnum::take_ownership(Handle h) noexcept { return VideoFacingModeEnum(h); }
 VideoFacingModeEnum VideoFacingModeEnum::clone() const noexcept { return *this; }
+const char* VideoFacingModeEnum::to_string(VideoFacingModeEnum::Value value_) noexcept {
+    switch (value_) {
+        case USER:
+            return "user";
+        case ENVIRONMENT:
+            return "environment";
+        case LEFT:
+            return "left";
+        case RIGHT:
+            return "right";
+        default:
+            return "user"; // fallback to first value
+    }
+}
 
-VideoResizeModeEnum::VideoResizeModeEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoResizeModeEnum::VideoResizeModeEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+VideoResizeModeEnum::Value VideoResizeModeEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "crop-and-scale")) {
+        return CROP_AND_SCALE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+VideoResizeModeEnum::VideoResizeModeEnum(Value v) noexcept : emlite::Val(VideoResizeModeEnum::to_string(v)), value_(v) {}
+VideoResizeModeEnum::VideoResizeModeEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = VideoResizeModeEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+VideoResizeModeEnum::VideoResizeModeEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = VideoResizeModeEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 VideoResizeModeEnum VideoResizeModeEnum::take_ownership(Handle h) noexcept { return VideoResizeModeEnum(h); }
 VideoResizeModeEnum VideoResizeModeEnum::clone() const noexcept { return *this; }
+const char* VideoResizeModeEnum::to_string(VideoResizeModeEnum::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case CROP_AND_SCALE:
+            return "crop-and-scale";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-EchoCancellationModeEnum::EchoCancellationModeEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-EchoCancellationModeEnum::EchoCancellationModeEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+EchoCancellationModeEnum::Value EchoCancellationModeEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else if (str_equal(str, "remote-only")) {
+        return REMOTE_ONLY;
+    }
+    else {
+        // Default to first value for invalid input
+        return ALL;
+    }
+}
+
+EchoCancellationModeEnum::EchoCancellationModeEnum(Value v) noexcept : emlite::Val(EchoCancellationModeEnum::to_string(v)), value_(v) {}
+EchoCancellationModeEnum::EchoCancellationModeEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = EchoCancellationModeEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+EchoCancellationModeEnum::EchoCancellationModeEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = EchoCancellationModeEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 EchoCancellationModeEnum EchoCancellationModeEnum::take_ownership(Handle h) noexcept { return EchoCancellationModeEnum(h); }
 EchoCancellationModeEnum EchoCancellationModeEnum::clone() const noexcept { return *this; }
+const char* EchoCancellationModeEnum::to_string(EchoCancellationModeEnum::Value value_) noexcept {
+    switch (value_) {
+        case ALL:
+            return "all";
+        case REMOTE_ONLY:
+            return "remote-only";
+        default:
+            return "all"; // fallback to first value
+    }
+}
 
-MediaDeviceKind::MediaDeviceKind(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaDeviceKind::MediaDeviceKind(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaDeviceKind::Value MediaDeviceKind::from_string(const char* str) noexcept {
+    if (str_equal(str, "audioinput")) {
+        return AUDIOINPUT;
+    }
+    else if (str_equal(str, "audiooutput")) {
+        return AUDIOOUTPUT;
+    }
+    else if (str_equal(str, "videoinput")) {
+        return VIDEOINPUT;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUDIOINPUT;
+    }
+}
+
+MediaDeviceKind::MediaDeviceKind(Value v) noexcept : emlite::Val(MediaDeviceKind::to_string(v)), value_(v) {}
+MediaDeviceKind::MediaDeviceKind(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaDeviceKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaDeviceKind::MediaDeviceKind(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaDeviceKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaDeviceKind MediaDeviceKind::take_ownership(Handle h) noexcept { return MediaDeviceKind(h); }
 MediaDeviceKind MediaDeviceKind::clone() const noexcept { return *this; }
+const char* MediaDeviceKind::to_string(MediaDeviceKind::Value value_) noexcept {
+    switch (value_) {
+        case AUDIOINPUT:
+            return "audioinput";
+        case AUDIOOUTPUT:
+            return "audiooutput";
+        case VIDEOINPUT:
+            return "videoinput";
+        default:
+            return "audioinput"; // fallback to first value
+    }
+}
 
-MediaSessionPlaybackState::MediaSessionPlaybackState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaSessionPlaybackState::MediaSessionPlaybackState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaSessionPlaybackState::Value MediaSessionPlaybackState::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "paused")) {
+        return PAUSED;
+    }
+    else if (str_equal(str, "playing")) {
+        return PLAYING;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+MediaSessionPlaybackState::MediaSessionPlaybackState(Value v) noexcept : emlite::Val(MediaSessionPlaybackState::to_string(v)), value_(v) {}
+MediaSessionPlaybackState::MediaSessionPlaybackState(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaSessionPlaybackState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaSessionPlaybackState::MediaSessionPlaybackState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaSessionPlaybackState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaSessionPlaybackState MediaSessionPlaybackState::take_ownership(Handle h) noexcept { return MediaSessionPlaybackState(h); }
 MediaSessionPlaybackState MediaSessionPlaybackState::clone() const noexcept { return *this; }
+const char* MediaSessionPlaybackState::to_string(MediaSessionPlaybackState::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case PAUSED:
+            return "paused";
+        case PLAYING:
+            return "playing";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-MediaSessionAction::MediaSessionAction(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MediaSessionAction::MediaSessionAction(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MediaSessionAction::Value MediaSessionAction::from_string(const char* str) noexcept {
+    if (str_equal(str, "play")) {
+        return PLAY;
+    }
+    else if (str_equal(str, "pause")) {
+        return PAUSE;
+    }
+    else if (str_equal(str, "seekbackward")) {
+        return SEEKBACKWARD;
+    }
+    else if (str_equal(str, "seekforward")) {
+        return SEEKFORWARD;
+    }
+    else if (str_equal(str, "previoustrack")) {
+        return PREVIOUSTRACK;
+    }
+    else if (str_equal(str, "nexttrack")) {
+        return NEXTTRACK;
+    }
+    else if (str_equal(str, "skipad")) {
+        return SKIPAD;
+    }
+    else if (str_equal(str, "stop")) {
+        return STOP;
+    }
+    else if (str_equal(str, "seekto")) {
+        return SEEKTO;
+    }
+    else if (str_equal(str, "togglemicrophone")) {
+        return TOGGLEMICROPHONE;
+    }
+    else if (str_equal(str, "togglecamera")) {
+        return TOGGLECAMERA;
+    }
+    else if (str_equal(str, "togglescreenshare")) {
+        return TOGGLESCREENSHARE;
+    }
+    else if (str_equal(str, "hangup")) {
+        return HANGUP;
+    }
+    else if (str_equal(str, "previousslide")) {
+        return PREVIOUSSLIDE;
+    }
+    else if (str_equal(str, "nextslide")) {
+        return NEXTSLIDE;
+    }
+    else if (str_equal(str, "enterpictureinpicture")) {
+        return ENTERPICTUREINPICTURE;
+    }
+    else if (str_equal(str, "voiceactivity")) {
+        return VOICEACTIVITY;
+    }
+    else {
+        // Default to first value for invalid input
+        return PLAY;
+    }
+}
+
+MediaSessionAction::MediaSessionAction(Value v) noexcept : emlite::Val(MediaSessionAction::to_string(v)), value_(v) {}
+MediaSessionAction::MediaSessionAction(Handle h) noexcept: emlite::Val(h) {
+    value_ = MediaSessionAction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MediaSessionAction::MediaSessionAction(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MediaSessionAction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MediaSessionAction MediaSessionAction::take_ownership(Handle h) noexcept { return MediaSessionAction(h); }
 MediaSessionAction MediaSessionAction::clone() const noexcept { return *this; }
+const char* MediaSessionAction::to_string(MediaSessionAction::Value value_) noexcept {
+    switch (value_) {
+        case PLAY:
+            return "play";
+        case PAUSE:
+            return "pause";
+        case SEEKBACKWARD:
+            return "seekbackward";
+        case SEEKFORWARD:
+            return "seekforward";
+        case PREVIOUSTRACK:
+            return "previoustrack";
+        case NEXTTRACK:
+            return "nexttrack";
+        case SKIPAD:
+            return "skipad";
+        case STOP:
+            return "stop";
+        case SEEKTO:
+            return "seekto";
+        case TOGGLEMICROPHONE:
+            return "togglemicrophone";
+        case TOGGLECAMERA:
+            return "togglecamera";
+        case TOGGLESCREENSHARE:
+            return "togglescreenshare";
+        case HANGUP:
+            return "hangup";
+        case PREVIOUSSLIDE:
+            return "previousslide";
+        case NEXTSLIDE:
+            return "nextslide";
+        case ENTERPICTUREINPICTURE:
+            return "enterpictureinpicture";
+        case VOICEACTIVITY:
+            return "voiceactivity";
+        default:
+            return "play"; // fallback to first value
+    }
+}
 
-BitrateMode::BitrateMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BitrateMode::BitrateMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BitrateMode::Value BitrateMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "constant")) {
+        return CONSTANT;
+    }
+    else if (str_equal(str, "variable")) {
+        return VARIABLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONSTANT;
+    }
+}
+
+BitrateMode::BitrateMode(Value v) noexcept : emlite::Val(BitrateMode::to_string(v)), value_(v) {}
+BitrateMode::BitrateMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = BitrateMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BitrateMode::BitrateMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BitrateMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BitrateMode BitrateMode::take_ownership(Handle h) noexcept { return BitrateMode(h); }
 BitrateMode BitrateMode::clone() const noexcept { return *this; }
+const char* BitrateMode::to_string(BitrateMode::Value value_) noexcept {
+    switch (value_) {
+        case CONSTANT:
+            return "constant";
+        case VARIABLE:
+            return "variable";
+        default:
+            return "constant"; // fallback to first value
+    }
+}
 
-RecordingState::RecordingState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RecordingState::RecordingState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RecordingState::Value RecordingState::from_string(const char* str) noexcept {
+    if (str_equal(str, "inactive")) {
+        return INACTIVE;
+    }
+    else if (str_equal(str, "recording")) {
+        return RECORDING;
+    }
+    else if (str_equal(str, "paused")) {
+        return PAUSED;
+    }
+    else {
+        // Default to first value for invalid input
+        return INACTIVE;
+    }
+}
+
+RecordingState::RecordingState(Value v) noexcept : emlite::Val(RecordingState::to_string(v)), value_(v) {}
+RecordingState::RecordingState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RecordingState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RecordingState::RecordingState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RecordingState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RecordingState RecordingState::take_ownership(Handle h) noexcept { return RecordingState(h); }
 RecordingState RecordingState::clone() const noexcept { return *this; }
+const char* RecordingState::to_string(RecordingState::Value value_) noexcept {
+    switch (value_) {
+        case INACTIVE:
+            return "inactive";
+        case RECORDING:
+            return "recording";
+        case PAUSED:
+            return "paused";
+        default:
+            return "inactive"; // fallback to first value
+    }
+}
 
-RTCDegradationPreference::RTCDegradationPreference(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCDegradationPreference::RTCDegradationPreference(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCDegradationPreference::Value RTCDegradationPreference::from_string(const char* str) noexcept {
+    if (str_equal(str, "maintain-framerate")) {
+        return MAINTAIN_FRAMERATE;
+    }
+    else if (str_equal(str, "maintain-resolution")) {
+        return MAINTAIN_RESOLUTION;
+    }
+    else if (str_equal(str, "balanced")) {
+        return BALANCED;
+    }
+    else {
+        // Default to first value for invalid input
+        return MAINTAIN_FRAMERATE;
+    }
+}
+
+RTCDegradationPreference::RTCDegradationPreference(Value v) noexcept : emlite::Val(RTCDegradationPreference::to_string(v)), value_(v) {}
+RTCDegradationPreference::RTCDegradationPreference(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCDegradationPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCDegradationPreference::RTCDegradationPreference(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCDegradationPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCDegradationPreference RTCDegradationPreference::take_ownership(Handle h) noexcept { return RTCDegradationPreference(h); }
 RTCDegradationPreference RTCDegradationPreference::clone() const noexcept { return *this; }
+const char* RTCDegradationPreference::to_string(RTCDegradationPreference::Value value_) noexcept {
+    switch (value_) {
+        case MAINTAIN_FRAMERATE:
+            return "maintain-framerate";
+        case MAINTAIN_RESOLUTION:
+            return "maintain-resolution";
+        case BALANCED:
+            return "balanced";
+        default:
+            return "maintain-framerate"; // fallback to first value
+    }
+}
 
-NavigationTimingType::NavigationTimingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NavigationTimingType::NavigationTimingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+NavigationTimingType::Value NavigationTimingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "navigate")) {
+        return NAVIGATE;
+    }
+    else if (str_equal(str, "reload")) {
+        return RELOAD;
+    }
+    else if (str_equal(str, "back_forward")) {
+        return BACK_FORWARD;
+    }
+    else if (str_equal(str, "prerender")) {
+        return PRERENDER;
+    }
+    else {
+        // Default to first value for invalid input
+        return NAVIGATE;
+    }
+}
+
+NavigationTimingType::NavigationTimingType(Value v) noexcept : emlite::Val(NavigationTimingType::to_string(v)), value_(v) {}
+NavigationTimingType::NavigationTimingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = NavigationTimingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+NavigationTimingType::NavigationTimingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = NavigationTimingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 NavigationTimingType NavigationTimingType::take_ownership(Handle h) noexcept { return NavigationTimingType(h); }
 NavigationTimingType NavigationTimingType::clone() const noexcept { return *this; }
+const char* NavigationTimingType::to_string(NavigationTimingType::Value value_) noexcept {
+    switch (value_) {
+        case NAVIGATE:
+            return "navigate";
+        case RELOAD:
+            return "reload";
+        case BACK_FORWARD:
+            return "back_forward";
+        case PRERENDER:
+            return "prerender";
+        default:
+            return "navigate"; // fallback to first value
+    }
+}
 
-ConnectionType::ConnectionType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ConnectionType::ConnectionType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ConnectionType::Value ConnectionType::from_string(const char* str) noexcept {
+    if (str_equal(str, "bluetooth")) {
+        return BLUETOOTH;
+    }
+    else if (str_equal(str, "cellular")) {
+        return CELLULAR;
+    }
+    else if (str_equal(str, "ethernet")) {
+        return ETHERNET;
+    }
+    else if (str_equal(str, "mixed")) {
+        return MIXED;
+    }
+    else if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "other")) {
+        return OTHER;
+    }
+    else if (str_equal(str, "unknown")) {
+        return UNKNOWN;
+    }
+    else if (str_equal(str, "wifi")) {
+        return WIFI;
+    }
+    else if (str_equal(str, "wimax")) {
+        return WIMAX;
+    }
+    else {
+        // Default to first value for invalid input
+        return BLUETOOTH;
+    }
+}
+
+ConnectionType::ConnectionType(Value v) noexcept : emlite::Val(ConnectionType::to_string(v)), value_(v) {}
+ConnectionType::ConnectionType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ConnectionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ConnectionType::ConnectionType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ConnectionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ConnectionType ConnectionType::take_ownership(Handle h) noexcept { return ConnectionType(h); }
 ConnectionType ConnectionType::clone() const noexcept { return *this; }
+const char* ConnectionType::to_string(ConnectionType::Value value_) noexcept {
+    switch (value_) {
+        case BLUETOOTH:
+            return "bluetooth";
+        case CELLULAR:
+            return "cellular";
+        case ETHERNET:
+            return "ethernet";
+        case MIXED:
+            return "mixed";
+        case NONE:
+            return "none";
+        case OTHER:
+            return "other";
+        case UNKNOWN:
+            return "unknown";
+        case WIFI:
+            return "wifi";
+        case WIMAX:
+            return "wimax";
+        default:
+            return "bluetooth"; // fallback to first value
+    }
+}
 
-EffectiveConnectionType::EffectiveConnectionType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-EffectiveConnectionType::EffectiveConnectionType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+EffectiveConnectionType::Value EffectiveConnectionType::from_string(const char* str) noexcept {
+    if (str_equal(str, "2g")) {
+        return _2G;
+    }
+    else if (str_equal(str, "3g")) {
+        return _3G;
+    }
+    else if (str_equal(str, "4g")) {
+        return _4G;
+    }
+    else if (str_equal(str, "slow-2g")) {
+        return SLOW_2G;
+    }
+    else {
+        // Default to first value for invalid input
+        return _2G;
+    }
+}
+
+EffectiveConnectionType::EffectiveConnectionType(Value v) noexcept : emlite::Val(EffectiveConnectionType::to_string(v)), value_(v) {}
+EffectiveConnectionType::EffectiveConnectionType(Handle h) noexcept: emlite::Val(h) {
+    value_ = EffectiveConnectionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+EffectiveConnectionType::EffectiveConnectionType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = EffectiveConnectionType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 EffectiveConnectionType EffectiveConnectionType::take_ownership(Handle h) noexcept { return EffectiveConnectionType(h); }
 EffectiveConnectionType EffectiveConnectionType::clone() const noexcept { return *this; }
+const char* EffectiveConnectionType::to_string(EffectiveConnectionType::Value value_) noexcept {
+    switch (value_) {
+        case _2G:
+            return "2g";
+        case _3G:
+            return "3g";
+        case _4G:
+            return "4g";
+        case SLOW_2G:
+            return "slow-2g";
+        default:
+            return "2g"; // fallback to first value
+    }
+}
 
-NotificationPermission::NotificationPermission(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NotificationPermission::NotificationPermission(const emlite::Val &v) noexcept : emlite::Val(v) {}
+NotificationPermission::Value NotificationPermission::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "denied")) {
+        return DENIED;
+    }
+    else if (str_equal(str, "granted")) {
+        return GRANTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+NotificationPermission::NotificationPermission(Value v) noexcept : emlite::Val(NotificationPermission::to_string(v)), value_(v) {}
+NotificationPermission::NotificationPermission(Handle h) noexcept: emlite::Val(h) {
+    value_ = NotificationPermission::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+NotificationPermission::NotificationPermission(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = NotificationPermission::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 NotificationPermission NotificationPermission::take_ownership(Handle h) noexcept { return NotificationPermission(h); }
 NotificationPermission NotificationPermission::clone() const noexcept { return *this; }
+const char* NotificationPermission::to_string(NotificationPermission::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case DENIED:
+            return "denied";
+        case GRANTED:
+            return "granted";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-NotificationDirection::NotificationDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-NotificationDirection::NotificationDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+NotificationDirection::Value NotificationDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "ltr")) {
+        return LTR;
+    }
+    else if (str_equal(str, "rtl")) {
+        return RTL;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+NotificationDirection::NotificationDirection(Value v) noexcept : emlite::Val(NotificationDirection::to_string(v)), value_(v) {}
+NotificationDirection::NotificationDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = NotificationDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+NotificationDirection::NotificationDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = NotificationDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 NotificationDirection NotificationDirection::take_ownership(Handle h) noexcept { return NotificationDirection(h); }
 NotificationDirection NotificationDirection::clone() const noexcept { return *this; }
+const char* NotificationDirection::to_string(NotificationDirection::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case LTR:
+            return "ltr";
+        case RTL:
+            return "rtl";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-OrientationSensorLocalCoordinateSystem::OrientationSensorLocalCoordinateSystem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OrientationSensorLocalCoordinateSystem::OrientationSensorLocalCoordinateSystem(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OrientationSensorLocalCoordinateSystem::Value OrientationSensorLocalCoordinateSystem::from_string(const char* str) noexcept {
+    if (str_equal(str, "device")) {
+        return DEVICE;
+    }
+    else if (str_equal(str, "screen")) {
+        return SCREEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEVICE;
+    }
+}
+
+OrientationSensorLocalCoordinateSystem::OrientationSensorLocalCoordinateSystem(Value v) noexcept : emlite::Val(OrientationSensorLocalCoordinateSystem::to_string(v)), value_(v) {}
+OrientationSensorLocalCoordinateSystem::OrientationSensorLocalCoordinateSystem(Handle h) noexcept: emlite::Val(h) {
+    value_ = OrientationSensorLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OrientationSensorLocalCoordinateSystem::OrientationSensorLocalCoordinateSystem(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OrientationSensorLocalCoordinateSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OrientationSensorLocalCoordinateSystem OrientationSensorLocalCoordinateSystem::take_ownership(Handle h) noexcept { return OrientationSensorLocalCoordinateSystem(h); }
 OrientationSensorLocalCoordinateSystem OrientationSensorLocalCoordinateSystem::clone() const noexcept { return *this; }
+const char* OrientationSensorLocalCoordinateSystem::to_string(OrientationSensorLocalCoordinateSystem::Value value_) noexcept {
+    switch (value_) {
+        case DEVICE:
+            return "device";
+        case SCREEN:
+            return "screen";
+        default:
+            return "device"; // fallback to first value
+    }
+}
 
-ClientLifecycleState::ClientLifecycleState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ClientLifecycleState::ClientLifecycleState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ClientLifecycleState::Value ClientLifecycleState::from_string(const char* str) noexcept {
+    if (str_equal(str, "active")) {
+        return ACTIVE;
+    }
+    else if (str_equal(str, "frozen")) {
+        return FROZEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return ACTIVE;
+    }
+}
+
+ClientLifecycleState::ClientLifecycleState(Value v) noexcept : emlite::Val(ClientLifecycleState::to_string(v)), value_(v) {}
+ClientLifecycleState::ClientLifecycleState(Handle h) noexcept: emlite::Val(h) {
+    value_ = ClientLifecycleState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ClientLifecycleState::ClientLifecycleState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ClientLifecycleState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ClientLifecycleState ClientLifecycleState::take_ownership(Handle h) noexcept { return ClientLifecycleState(h); }
 ClientLifecycleState ClientLifecycleState::clone() const noexcept { return *this; }
+const char* ClientLifecycleState::to_string(ClientLifecycleState::Value value_) noexcept {
+    switch (value_) {
+        case ACTIVE:
+            return "active";
+        case FROZEN:
+            return "frozen";
+        default:
+            return "active"; // fallback to first value
+    }
+}
 
-PaymentDelegation::PaymentDelegation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PaymentDelegation::PaymentDelegation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PaymentDelegation::Value PaymentDelegation::from_string(const char* str) noexcept {
+    if (str_equal(str, "shippingAddress")) {
+        return SHIPPINGADDRESS;
+    }
+    else if (str_equal(str, "payerName")) {
+        return PAYERNAME;
+    }
+    else if (str_equal(str, "payerPhone")) {
+        return PAYERPHONE;
+    }
+    else if (str_equal(str, "payerEmail")) {
+        return PAYEREMAIL;
+    }
+    else {
+        // Default to first value for invalid input
+        return SHIPPINGADDRESS;
+    }
+}
+
+PaymentDelegation::PaymentDelegation(Value v) noexcept : emlite::Val(PaymentDelegation::to_string(v)), value_(v) {}
+PaymentDelegation::PaymentDelegation(Handle h) noexcept: emlite::Val(h) {
+    value_ = PaymentDelegation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PaymentDelegation::PaymentDelegation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PaymentDelegation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PaymentDelegation PaymentDelegation::take_ownership(Handle h) noexcept { return PaymentDelegation(h); }
 PaymentDelegation PaymentDelegation::clone() const noexcept { return *this; }
+const char* PaymentDelegation::to_string(PaymentDelegation::Value value_) noexcept {
+    switch (value_) {
+        case SHIPPINGADDRESS:
+            return "shippingAddress";
+        case PAYERNAME:
+            return "payerName";
+        case PAYERPHONE:
+            return "payerPhone";
+        case PAYEREMAIL:
+            return "payerEmail";
+        default:
+            return "shippingAddress"; // fallback to first value
+    }
+}
 
-PaymentShippingType::PaymentShippingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PaymentShippingType::PaymentShippingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PaymentShippingType::Value PaymentShippingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "shipping")) {
+        return SHIPPING;
+    }
+    else if (str_equal(str, "delivery")) {
+        return DELIVERY;
+    }
+    else if (str_equal(str, "pickup")) {
+        return PICKUP;
+    }
+    else {
+        // Default to first value for invalid input
+        return SHIPPING;
+    }
+}
+
+PaymentShippingType::PaymentShippingType(Value v) noexcept : emlite::Val(PaymentShippingType::to_string(v)), value_(v) {}
+PaymentShippingType::PaymentShippingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = PaymentShippingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PaymentShippingType::PaymentShippingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PaymentShippingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PaymentShippingType PaymentShippingType::take_ownership(Handle h) noexcept { return PaymentShippingType(h); }
 PaymentShippingType PaymentShippingType::clone() const noexcept { return *this; }
+const char* PaymentShippingType::to_string(PaymentShippingType::Value value_) noexcept {
+    switch (value_) {
+        case SHIPPING:
+            return "shipping";
+        case DELIVERY:
+            return "delivery";
+        case PICKUP:
+            return "pickup";
+        default:
+            return "shipping"; // fallback to first value
+    }
+}
 
-PaymentComplete::PaymentComplete(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PaymentComplete::PaymentComplete(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PaymentComplete::Value PaymentComplete::from_string(const char* str) noexcept {
+    if (str_equal(str, "fail")) {
+        return FAIL;
+    }
+    else if (str_equal(str, "success")) {
+        return SUCCESS;
+    }
+    else if (str_equal(str, "unknown")) {
+        return UNKNOWN;
+    }
+    else {
+        // Default to first value for invalid input
+        return FAIL;
+    }
+}
+
+PaymentComplete::PaymentComplete(Value v) noexcept : emlite::Val(PaymentComplete::to_string(v)), value_(v) {}
+PaymentComplete::PaymentComplete(Handle h) noexcept: emlite::Val(h) {
+    value_ = PaymentComplete::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PaymentComplete::PaymentComplete(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PaymentComplete::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PaymentComplete PaymentComplete::take_ownership(Handle h) noexcept { return PaymentComplete(h); }
 PaymentComplete PaymentComplete::clone() const noexcept { return *this; }
+const char* PaymentComplete::to_string(PaymentComplete::Value value_) noexcept {
+    switch (value_) {
+        case FAIL:
+            return "fail";
+        case SUCCESS:
+            return "success";
+        case UNKNOWN:
+            return "unknown";
+        default:
+            return "fail"; // fallback to first value
+    }
+}
 
-PermissionState::PermissionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PermissionState::PermissionState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PermissionState::Value PermissionState::from_string(const char* str) noexcept {
+    if (str_equal(str, "granted")) {
+        return GRANTED;
+    }
+    else if (str_equal(str, "denied")) {
+        return DENIED;
+    }
+    else if (str_equal(str, "prompt")) {
+        return PROMPT;
+    }
+    else {
+        // Default to first value for invalid input
+        return GRANTED;
+    }
+}
+
+PermissionState::PermissionState(Value v) noexcept : emlite::Val(PermissionState::to_string(v)), value_(v) {}
+PermissionState::PermissionState(Handle h) noexcept: emlite::Val(h) {
+    value_ = PermissionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PermissionState::PermissionState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PermissionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PermissionState PermissionState::take_ownership(Handle h) noexcept { return PermissionState(h); }
 PermissionState PermissionState::clone() const noexcept { return *this; }
+const char* PermissionState::to_string(PermissionState::Value value_) noexcept {
+    switch (value_) {
+        case GRANTED:
+            return "granted";
+        case DENIED:
+            return "denied";
+        case PROMPT:
+            return "prompt";
+        default:
+            return "granted"; // fallback to first value
+    }
+}
 
-PointerAxis::PointerAxis(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PointerAxis::PointerAxis(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PointerAxis::Value PointerAxis::from_string(const char* str) noexcept {
+    if (str_equal(str, "block")) {
+        return BLOCK;
+    }
+    else if (str_equal(str, "inline")) {
+        return INLINE_;
+    }
+    else if (str_equal(str, "x")) {
+        return X;
+    }
+    else if (str_equal(str, "y")) {
+        return Y;
+    }
+    else {
+        // Default to first value for invalid input
+        return BLOCK;
+    }
+}
+
+PointerAxis::PointerAxis(Value v) noexcept : emlite::Val(PointerAxis::to_string(v)), value_(v) {}
+PointerAxis::PointerAxis(Handle h) noexcept: emlite::Val(h) {
+    value_ = PointerAxis::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PointerAxis::PointerAxis(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PointerAxis::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PointerAxis PointerAxis::take_ownership(Handle h) noexcept { return PointerAxis(h); }
 PointerAxis PointerAxis::clone() const noexcept { return *this; }
+const char* PointerAxis::to_string(PointerAxis::Value value_) noexcept {
+    switch (value_) {
+        case BLOCK:
+            return "block";
+        case INLINE_:
+            return "inline";
+        case X:
+            return "x";
+        case Y:
+            return "y";
+        default:
+            return "block"; // fallback to first value
+    }
+}
 
-PresentationConnectionState::PresentationConnectionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PresentationConnectionState::PresentationConnectionState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PresentationConnectionState::Value PresentationConnectionState::from_string(const char* str) noexcept {
+    if (str_equal(str, "connecting")) {
+        return CONNECTING;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "terminated")) {
+        return TERMINATED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONNECTING;
+    }
+}
+
+PresentationConnectionState::PresentationConnectionState(Value v) noexcept : emlite::Val(PresentationConnectionState::to_string(v)), value_(v) {}
+PresentationConnectionState::PresentationConnectionState(Handle h) noexcept: emlite::Val(h) {
+    value_ = PresentationConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PresentationConnectionState::PresentationConnectionState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PresentationConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PresentationConnectionState PresentationConnectionState::take_ownership(Handle h) noexcept { return PresentationConnectionState(h); }
 PresentationConnectionState PresentationConnectionState::clone() const noexcept { return *this; }
+const char* PresentationConnectionState::to_string(PresentationConnectionState::Value value_) noexcept {
+    switch (value_) {
+        case CONNECTING:
+            return "connecting";
+        case CONNECTED:
+            return "connected";
+        case CLOSED:
+            return "closed";
+        case TERMINATED:
+            return "terminated";
+        default:
+            return "connecting"; // fallback to first value
+    }
+}
 
-PresentationConnectionCloseReason::PresentationConnectionCloseReason(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PresentationConnectionCloseReason::PresentationConnectionCloseReason(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PresentationConnectionCloseReason::Value PresentationConnectionCloseReason::from_string(const char* str) noexcept {
+    if (str_equal(str, "error")) {
+        return ERROR;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "wentaway")) {
+        return WENTAWAY;
+    }
+    else {
+        // Default to first value for invalid input
+        return ERROR;
+    }
+}
+
+PresentationConnectionCloseReason::PresentationConnectionCloseReason(Value v) noexcept : emlite::Val(PresentationConnectionCloseReason::to_string(v)), value_(v) {}
+PresentationConnectionCloseReason::PresentationConnectionCloseReason(Handle h) noexcept: emlite::Val(h) {
+    value_ = PresentationConnectionCloseReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PresentationConnectionCloseReason::PresentationConnectionCloseReason(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PresentationConnectionCloseReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PresentationConnectionCloseReason PresentationConnectionCloseReason::take_ownership(Handle h) noexcept { return PresentationConnectionCloseReason(h); }
 PresentationConnectionCloseReason PresentationConnectionCloseReason::clone() const noexcept { return *this; }
+const char* PresentationConnectionCloseReason::to_string(PresentationConnectionCloseReason::Value value_) noexcept {
+    switch (value_) {
+        case ERROR:
+            return "error";
+        case CLOSED:
+            return "closed";
+        case WENTAWAY:
+            return "wentaway";
+        default:
+            return "error"; // fallback to first value
+    }
+}
 
-PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PrivateAttributionAggregationProtocol::Value PrivateAttributionAggregationProtocol::from_string(const char* str) noexcept {
+    if (str_equal(str, "dap-12-histogram")) {
+        return DAP_12_HISTOGRAM;
+    }
+    else if (str_equal(str, "tee-00")) {
+        return TEE_00;
+    }
+    else {
+        // Default to first value for invalid input
+        return DAP_12_HISTOGRAM;
+    }
+}
+
+PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(Value v) noexcept : emlite::Val(PrivateAttributionAggregationProtocol::to_string(v)), value_(v) {}
+PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(Handle h) noexcept: emlite::Val(h) {
+    value_ = PrivateAttributionAggregationProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PrivateAttributionAggregationProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PrivateAttributionAggregationProtocol PrivateAttributionAggregationProtocol::take_ownership(Handle h) noexcept { return PrivateAttributionAggregationProtocol(h); }
 PrivateAttributionAggregationProtocol PrivateAttributionAggregationProtocol::clone() const noexcept { return *this; }
+const char* PrivateAttributionAggregationProtocol::to_string(PrivateAttributionAggregationProtocol::Value value_) noexcept {
+    switch (value_) {
+        case DAP_12_HISTOGRAM:
+            return "dap-12-histogram";
+        case TEE_00:
+            return "tee-00";
+        default:
+            return "dap-12-histogram"; // fallback to first value
+    }
+}
 
-AttributionLogic::AttributionLogic(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AttributionLogic::AttributionLogic(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AttributionLogic::Value AttributionLogic::from_string(const char* str) noexcept {
+    if (str_equal(str, "last-touch")) {
+        return LAST_TOUCH;
+    }
+    else {
+        // Default to first value for invalid input
+        return LAST_TOUCH;
+    }
+}
+
+AttributionLogic::AttributionLogic(Value v) noexcept : emlite::Val(AttributionLogic::to_string(v)), value_(v) {}
+AttributionLogic::AttributionLogic(Handle h) noexcept: emlite::Val(h) {
+    value_ = AttributionLogic::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AttributionLogic::AttributionLogic(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AttributionLogic::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AttributionLogic AttributionLogic::take_ownership(Handle h) noexcept { return AttributionLogic(h); }
 AttributionLogic AttributionLogic::clone() const noexcept { return *this; }
+const char* AttributionLogic::to_string(AttributionLogic::Value value_) noexcept {
+    switch (value_) {
+        case LAST_TOUCH:
+            return "last-touch";
+        default:
+            return "last-touch"; // fallback to first value
+    }
+}
 
-IPAddressSpace::IPAddressSpace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IPAddressSpace::IPAddressSpace(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IPAddressSpace::Value IPAddressSpace::from_string(const char* str) noexcept {
+    if (str_equal(str, "public")) {
+        return PUBLIC_;
+    }
+    else if (str_equal(str, "private")) {
+        return PRIVATE_;
+    }
+    else if (str_equal(str, "local")) {
+        return LOCAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return PUBLIC_;
+    }
+}
+
+IPAddressSpace::IPAddressSpace(Value v) noexcept : emlite::Val(IPAddressSpace::to_string(v)), value_(v) {}
+IPAddressSpace::IPAddressSpace(Handle h) noexcept: emlite::Val(h) {
+    value_ = IPAddressSpace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IPAddressSpace::IPAddressSpace(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IPAddressSpace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IPAddressSpace IPAddressSpace::take_ownership(Handle h) noexcept { return IPAddressSpace(h); }
 IPAddressSpace IPAddressSpace::clone() const noexcept { return *this; }
+const char* IPAddressSpace::to_string(IPAddressSpace::Value value_) noexcept {
+    switch (value_) {
+        case PUBLIC_:
+            return "public";
+        case PRIVATE_:
+            return "private";
+        case LOCAL:
+            return "local";
+        default:
+            return "public"; // fallback to first value
+    }
+}
 
-PushEncryptionKeyName::PushEncryptionKeyName(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PushEncryptionKeyName::PushEncryptionKeyName(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PushEncryptionKeyName::Value PushEncryptionKeyName::from_string(const char* str) noexcept {
+    if (str_equal(str, "p256dh")) {
+        return P256DH;
+    }
+    else if (str_equal(str, "auth")) {
+        return AUTH;
+    }
+    else {
+        // Default to first value for invalid input
+        return P256DH;
+    }
+}
+
+PushEncryptionKeyName::PushEncryptionKeyName(Value v) noexcept : emlite::Val(PushEncryptionKeyName::to_string(v)), value_(v) {}
+PushEncryptionKeyName::PushEncryptionKeyName(Handle h) noexcept: emlite::Val(h) {
+    value_ = PushEncryptionKeyName::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PushEncryptionKeyName::PushEncryptionKeyName(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PushEncryptionKeyName::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PushEncryptionKeyName PushEncryptionKeyName::take_ownership(Handle h) noexcept { return PushEncryptionKeyName(h); }
 PushEncryptionKeyName PushEncryptionKeyName::clone() const noexcept { return *this; }
+const char* PushEncryptionKeyName::to_string(PushEncryptionKeyName::Value value_) noexcept {
+    switch (value_) {
+        case P256DH:
+            return "p256dh";
+        case AUTH:
+            return "auth";
+        default:
+            return "p256dh"; // fallback to first value
+    }
+}
 
-ReferrerPolicy::ReferrerPolicy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ReferrerPolicy::ReferrerPolicy(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ReferrerPolicy::Value ReferrerPolicy::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "no-referrer")) {
+        return NO_REFERRER;
+    }
+    else if (str_equal(str, "no-referrer-when-downgrade")) {
+        return NO_REFERRER_WHEN_DOWNGRADE;
+    }
+    else if (str_equal(str, "same-origin")) {
+        return SAME_ORIGIN;
+    }
+    else if (str_equal(str, "origin")) {
+        return ORIGIN;
+    }
+    else if (str_equal(str, "strict-origin")) {
+        return STRICT_ORIGIN;
+    }
+    else if (str_equal(str, "origin-when-cross-origin")) {
+        return ORIGIN_WHEN_CROSS_ORIGIN;
+    }
+    else if (str_equal(str, "strict-origin-when-cross-origin")) {
+        return STRICT_ORIGIN_WHEN_CROSS_ORIGIN;
+    }
+    else if (str_equal(str, "unsafe-url")) {
+        return UNSAFE_URL;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+ReferrerPolicy::ReferrerPolicy(Value v) noexcept : emlite::Val(ReferrerPolicy::to_string(v)), value_(v) {}
+ReferrerPolicy::ReferrerPolicy(Handle h) noexcept: emlite::Val(h) {
+    value_ = ReferrerPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ReferrerPolicy::ReferrerPolicy(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ReferrerPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ReferrerPolicy ReferrerPolicy::take_ownership(Handle h) noexcept { return ReferrerPolicy(h); }
 ReferrerPolicy ReferrerPolicy::clone() const noexcept { return *this; }
+const char* ReferrerPolicy::to_string(ReferrerPolicy::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case NO_REFERRER:
+            return "no-referrer";
+        case NO_REFERRER_WHEN_DOWNGRADE:
+            return "no-referrer-when-downgrade";
+        case SAME_ORIGIN:
+            return "same-origin";
+        case ORIGIN:
+            return "origin";
+        case STRICT_ORIGIN:
+            return "strict-origin";
+        case ORIGIN_WHEN_CROSS_ORIGIN:
+            return "origin-when-cross-origin";
+        case STRICT_ORIGIN_WHEN_CROSS_ORIGIN:
+            return "strict-origin-when-cross-origin";
+        case UNSAFE_URL:
+            return "unsafe-url";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-RemotePlaybackState::RemotePlaybackState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RemotePlaybackState::RemotePlaybackState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RemotePlaybackState::Value RemotePlaybackState::from_string(const char* str) noexcept {
+    if (str_equal(str, "connecting")) {
+        return CONNECTING;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else if (str_equal(str, "disconnected")) {
+        return DISCONNECTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONNECTING;
+    }
+}
+
+RemotePlaybackState::RemotePlaybackState(Value v) noexcept : emlite::Val(RemotePlaybackState::to_string(v)), value_(v) {}
+RemotePlaybackState::RemotePlaybackState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RemotePlaybackState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RemotePlaybackState::RemotePlaybackState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RemotePlaybackState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RemotePlaybackState RemotePlaybackState::take_ownership(Handle h) noexcept { return RemotePlaybackState(h); }
 RemotePlaybackState RemotePlaybackState::clone() const noexcept { return *this; }
+const char* RemotePlaybackState::to_string(RemotePlaybackState::Value value_) noexcept {
+    switch (value_) {
+        case CONNECTING:
+            return "connecting";
+        case CONNECTED:
+            return "connected";
+        case DISCONNECTED:
+            return "disconnected";
+        default:
+            return "connecting"; // fallback to first value
+    }
+}
 
-ResizeObserverBoxOptions::ResizeObserverBoxOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ResizeObserverBoxOptions::ResizeObserverBoxOptions(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ResizeObserverBoxOptions::Value ResizeObserverBoxOptions::from_string(const char* str) noexcept {
+    if (str_equal(str, "border-box")) {
+        return BORDER_BOX;
+    }
+    else if (str_equal(str, "content-box")) {
+        return CONTENT_BOX;
+    }
+    else if (str_equal(str, "device-pixel-content-box")) {
+        return DEVICE_PIXEL_CONTENT_BOX;
+    }
+    else {
+        // Default to first value for invalid input
+        return BORDER_BOX;
+    }
+}
+
+ResizeObserverBoxOptions::ResizeObserverBoxOptions(Value v) noexcept : emlite::Val(ResizeObserverBoxOptions::to_string(v)), value_(v) {}
+ResizeObserverBoxOptions::ResizeObserverBoxOptions(Handle h) noexcept: emlite::Val(h) {
+    value_ = ResizeObserverBoxOptions::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ResizeObserverBoxOptions::ResizeObserverBoxOptions(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ResizeObserverBoxOptions::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ResizeObserverBoxOptions ResizeObserverBoxOptions::take_ownership(Handle h) noexcept { return ResizeObserverBoxOptions(h); }
 ResizeObserverBoxOptions ResizeObserverBoxOptions::clone() const noexcept { return *this; }
+const char* ResizeObserverBoxOptions::to_string(ResizeObserverBoxOptions::Value value_) noexcept {
+    switch (value_) {
+        case BORDER_BOX:
+            return "border-box";
+        case CONTENT_BOX:
+            return "content-box";
+        case DEVICE_PIXEL_CONTENT_BOX:
+            return "device-pixel-content-box";
+        default:
+            return "border-box"; // fallback to first value
+    }
+}
 
-RenderBlockingStatusType::RenderBlockingStatusType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RenderBlockingStatusType::RenderBlockingStatusType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RenderBlockingStatusType::Value RenderBlockingStatusType::from_string(const char* str) noexcept {
+    if (str_equal(str, "blocking")) {
+        return BLOCKING;
+    }
+    else if (str_equal(str, "non-blocking")) {
+        return NON_BLOCKING;
+    }
+    else {
+        // Default to first value for invalid input
+        return BLOCKING;
+    }
+}
+
+RenderBlockingStatusType::RenderBlockingStatusType(Value v) noexcept : emlite::Val(RenderBlockingStatusType::to_string(v)), value_(v) {}
+RenderBlockingStatusType::RenderBlockingStatusType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RenderBlockingStatusType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RenderBlockingStatusType::RenderBlockingStatusType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RenderBlockingStatusType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RenderBlockingStatusType RenderBlockingStatusType::take_ownership(Handle h) noexcept { return RenderBlockingStatusType(h); }
 RenderBlockingStatusType RenderBlockingStatusType::clone() const noexcept { return *this; }
+const char* RenderBlockingStatusType::to_string(RenderBlockingStatusType::Value value_) noexcept {
+    switch (value_) {
+        case BLOCKING:
+            return "blocking";
+        case NON_BLOCKING:
+            return "non-blocking";
+        default:
+            return "blocking"; // fallback to first value
+    }
+}
 
-SameSiteCookiesType::SameSiteCookiesType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SameSiteCookiesType::SameSiteCookiesType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SameSiteCookiesType::Value SameSiteCookiesType::from_string(const char* str) noexcept {
+    if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else {
+        // Default to first value for invalid input
+        return ALL;
+    }
+}
+
+SameSiteCookiesType::SameSiteCookiesType(Value v) noexcept : emlite::Val(SameSiteCookiesType::to_string(v)), value_(v) {}
+SameSiteCookiesType::SameSiteCookiesType(Handle h) noexcept: emlite::Val(h) {
+    value_ = SameSiteCookiesType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SameSiteCookiesType::SameSiteCookiesType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SameSiteCookiesType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SameSiteCookiesType SameSiteCookiesType::take_ownership(Handle h) noexcept { return SameSiteCookiesType(h); }
 SameSiteCookiesType SameSiteCookiesType::clone() const noexcept { return *this; }
+const char* SameSiteCookiesType::to_string(SameSiteCookiesType::Value value_) noexcept {
+    switch (value_) {
+        case ALL:
+            return "all";
+        case NONE:
+            return "none";
+        default:
+            return "all"; // fallback to first value
+    }
+}
 
-SanitizerPresets::SanitizerPresets(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SanitizerPresets::SanitizerPresets(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SanitizerPresets::Value SanitizerPresets::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+SanitizerPresets::SanitizerPresets(Value v) noexcept : emlite::Val(SanitizerPresets::to_string(v)), value_(v) {}
+SanitizerPresets::SanitizerPresets(Handle h) noexcept: emlite::Val(h) {
+    value_ = SanitizerPresets::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SanitizerPresets::SanitizerPresets(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SanitizerPresets::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SanitizerPresets SanitizerPresets::take_ownership(Handle h) noexcept { return SanitizerPresets(h); }
 SanitizerPresets SanitizerPresets::clone() const noexcept { return *this; }
+const char* SanitizerPresets::to_string(SanitizerPresets::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-TaskPriority::TaskPriority(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TaskPriority::TaskPriority(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TaskPriority::Value TaskPriority::from_string(const char* str) noexcept {
+    if (str_equal(str, "user-blocking")) {
+        return USER_BLOCKING;
+    }
+    else if (str_equal(str, "user-visible")) {
+        return USER_VISIBLE;
+    }
+    else if (str_equal(str, "background")) {
+        return BACKGROUND;
+    }
+    else {
+        // Default to first value for invalid input
+        return USER_BLOCKING;
+    }
+}
+
+TaskPriority::TaskPriority(Value v) noexcept : emlite::Val(TaskPriority::to_string(v)), value_(v) {}
+TaskPriority::TaskPriority(Handle h) noexcept: emlite::Val(h) {
+    value_ = TaskPriority::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TaskPriority::TaskPriority(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TaskPriority::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TaskPriority TaskPriority::take_ownership(Handle h) noexcept { return TaskPriority(h); }
 TaskPriority TaskPriority::clone() const noexcept { return *this; }
+const char* TaskPriority::to_string(TaskPriority::Value value_) noexcept {
+    switch (value_) {
+        case USER_BLOCKING:
+            return "user-blocking";
+        case USER_VISIBLE:
+            return "user-visible";
+        case BACKGROUND:
+            return "background";
+        default:
+            return "user-blocking"; // fallback to first value
+    }
+}
 
-CaptureStartFocusBehavior::CaptureStartFocusBehavior(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CaptureStartFocusBehavior::CaptureStartFocusBehavior(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CaptureStartFocusBehavior::Value CaptureStartFocusBehavior::from_string(const char* str) noexcept {
+    if (str_equal(str, "focus-capturing-application")) {
+        return FOCUS_CAPTURING_APPLICATION;
+    }
+    else if (str_equal(str, "focus-captured-surface")) {
+        return FOCUS_CAPTURED_SURFACE;
+    }
+    else if (str_equal(str, "no-focus-change")) {
+        return NO_FOCUS_CHANGE;
+    }
+    else {
+        // Default to first value for invalid input
+        return FOCUS_CAPTURING_APPLICATION;
+    }
+}
+
+CaptureStartFocusBehavior::CaptureStartFocusBehavior(Value v) noexcept : emlite::Val(CaptureStartFocusBehavior::to_string(v)), value_(v) {}
+CaptureStartFocusBehavior::CaptureStartFocusBehavior(Handle h) noexcept: emlite::Val(h) {
+    value_ = CaptureStartFocusBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CaptureStartFocusBehavior::CaptureStartFocusBehavior(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CaptureStartFocusBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CaptureStartFocusBehavior CaptureStartFocusBehavior::take_ownership(Handle h) noexcept { return CaptureStartFocusBehavior(h); }
 CaptureStartFocusBehavior CaptureStartFocusBehavior::clone() const noexcept { return *this; }
+const char* CaptureStartFocusBehavior::to_string(CaptureStartFocusBehavior::Value value_) noexcept {
+    switch (value_) {
+        case FOCUS_CAPTURING_APPLICATION:
+            return "focus-capturing-application";
+        case FOCUS_CAPTURED_SURFACE:
+            return "focus-captured-surface";
+        case NO_FOCUS_CHANGE:
+            return "no-focus-change";
+        default:
+            return "focus-capturing-application"; // fallback to first value
+    }
+}
 
-SelfCapturePreferenceEnum::SelfCapturePreferenceEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SelfCapturePreferenceEnum::SelfCapturePreferenceEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SelfCapturePreferenceEnum::Value SelfCapturePreferenceEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "include")) {
+        return INCLUDE;
+    }
+    else if (str_equal(str, "exclude")) {
+        return EXCLUDE;
+    }
+    else {
+        // Default to first value for invalid input
+        return INCLUDE;
+    }
+}
+
+SelfCapturePreferenceEnum::SelfCapturePreferenceEnum(Value v) noexcept : emlite::Val(SelfCapturePreferenceEnum::to_string(v)), value_(v) {}
+SelfCapturePreferenceEnum::SelfCapturePreferenceEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = SelfCapturePreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SelfCapturePreferenceEnum::SelfCapturePreferenceEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SelfCapturePreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SelfCapturePreferenceEnum SelfCapturePreferenceEnum::take_ownership(Handle h) noexcept { return SelfCapturePreferenceEnum(h); }
 SelfCapturePreferenceEnum SelfCapturePreferenceEnum::clone() const noexcept { return *this; }
+const char* SelfCapturePreferenceEnum::to_string(SelfCapturePreferenceEnum::Value value_) noexcept {
+    switch (value_) {
+        case INCLUDE:
+            return "include";
+        case EXCLUDE:
+            return "exclude";
+        default:
+            return "include"; // fallback to first value
+    }
+}
 
-SystemAudioPreferenceEnum::SystemAudioPreferenceEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SystemAudioPreferenceEnum::SystemAudioPreferenceEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SystemAudioPreferenceEnum::Value SystemAudioPreferenceEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "include")) {
+        return INCLUDE;
+    }
+    else if (str_equal(str, "exclude")) {
+        return EXCLUDE;
+    }
+    else {
+        // Default to first value for invalid input
+        return INCLUDE;
+    }
+}
+
+SystemAudioPreferenceEnum::SystemAudioPreferenceEnum(Value v) noexcept : emlite::Val(SystemAudioPreferenceEnum::to_string(v)), value_(v) {}
+SystemAudioPreferenceEnum::SystemAudioPreferenceEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = SystemAudioPreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SystemAudioPreferenceEnum::SystemAudioPreferenceEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SystemAudioPreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SystemAudioPreferenceEnum SystemAudioPreferenceEnum::take_ownership(Handle h) noexcept { return SystemAudioPreferenceEnum(h); }
 SystemAudioPreferenceEnum SystemAudioPreferenceEnum::clone() const noexcept { return *this; }
+const char* SystemAudioPreferenceEnum::to_string(SystemAudioPreferenceEnum::Value value_) noexcept {
+    switch (value_) {
+        case INCLUDE:
+            return "include";
+        case EXCLUDE:
+            return "exclude";
+        default:
+            return "include"; // fallback to first value
+    }
+}
 
-WindowAudioPreferenceEnum::WindowAudioPreferenceEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WindowAudioPreferenceEnum::WindowAudioPreferenceEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WindowAudioPreferenceEnum::Value WindowAudioPreferenceEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "system")) {
+        return SYSTEM;
+    }
+    else if (str_equal(str, "window")) {
+        return WINDOW;
+    }
+    else if (str_equal(str, "exclude")) {
+        return EXCLUDE;
+    }
+    else {
+        // Default to first value for invalid input
+        return SYSTEM;
+    }
+}
+
+WindowAudioPreferenceEnum::WindowAudioPreferenceEnum(Value v) noexcept : emlite::Val(WindowAudioPreferenceEnum::to_string(v)), value_(v) {}
+WindowAudioPreferenceEnum::WindowAudioPreferenceEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = WindowAudioPreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WindowAudioPreferenceEnum::WindowAudioPreferenceEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WindowAudioPreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WindowAudioPreferenceEnum WindowAudioPreferenceEnum::take_ownership(Handle h) noexcept { return WindowAudioPreferenceEnum(h); }
 WindowAudioPreferenceEnum WindowAudioPreferenceEnum::clone() const noexcept { return *this; }
+const char* WindowAudioPreferenceEnum::to_string(WindowAudioPreferenceEnum::Value value_) noexcept {
+    switch (value_) {
+        case SYSTEM:
+            return "system";
+        case WINDOW:
+            return "window";
+        case EXCLUDE:
+            return "exclude";
+        default:
+            return "system"; // fallback to first value
+    }
+}
 
-SurfaceSwitchingPreferenceEnum::SurfaceSwitchingPreferenceEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SurfaceSwitchingPreferenceEnum::SurfaceSwitchingPreferenceEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SurfaceSwitchingPreferenceEnum::Value SurfaceSwitchingPreferenceEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "include")) {
+        return INCLUDE;
+    }
+    else if (str_equal(str, "exclude")) {
+        return EXCLUDE;
+    }
+    else {
+        // Default to first value for invalid input
+        return INCLUDE;
+    }
+}
+
+SurfaceSwitchingPreferenceEnum::SurfaceSwitchingPreferenceEnum(Value v) noexcept : emlite::Val(SurfaceSwitchingPreferenceEnum::to_string(v)), value_(v) {}
+SurfaceSwitchingPreferenceEnum::SurfaceSwitchingPreferenceEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = SurfaceSwitchingPreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SurfaceSwitchingPreferenceEnum::SurfaceSwitchingPreferenceEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SurfaceSwitchingPreferenceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SurfaceSwitchingPreferenceEnum SurfaceSwitchingPreferenceEnum::take_ownership(Handle h) noexcept { return SurfaceSwitchingPreferenceEnum(h); }
 SurfaceSwitchingPreferenceEnum SurfaceSwitchingPreferenceEnum::clone() const noexcept { return *this; }
+const char* SurfaceSwitchingPreferenceEnum::to_string(SurfaceSwitchingPreferenceEnum::Value value_) noexcept {
+    switch (value_) {
+        case INCLUDE:
+            return "include";
+        case EXCLUDE:
+            return "exclude";
+        default:
+            return "include"; // fallback to first value
+    }
+}
 
-MonitorTypeSurfacesEnum::MonitorTypeSurfacesEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MonitorTypeSurfacesEnum::MonitorTypeSurfacesEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MonitorTypeSurfacesEnum::Value MonitorTypeSurfacesEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "include")) {
+        return INCLUDE;
+    }
+    else if (str_equal(str, "exclude")) {
+        return EXCLUDE;
+    }
+    else {
+        // Default to first value for invalid input
+        return INCLUDE;
+    }
+}
+
+MonitorTypeSurfacesEnum::MonitorTypeSurfacesEnum(Value v) noexcept : emlite::Val(MonitorTypeSurfacesEnum::to_string(v)), value_(v) {}
+MonitorTypeSurfacesEnum::MonitorTypeSurfacesEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = MonitorTypeSurfacesEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MonitorTypeSurfacesEnum::MonitorTypeSurfacesEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MonitorTypeSurfacesEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MonitorTypeSurfacesEnum MonitorTypeSurfacesEnum::take_ownership(Handle h) noexcept { return MonitorTypeSurfacesEnum(h); }
 MonitorTypeSurfacesEnum MonitorTypeSurfacesEnum::clone() const noexcept { return *this; }
+const char* MonitorTypeSurfacesEnum::to_string(MonitorTypeSurfacesEnum::Value value_) noexcept {
+    switch (value_) {
+        case INCLUDE:
+            return "include";
+        case EXCLUDE:
+            return "exclude";
+        default:
+            return "include"; // fallback to first value
+    }
+}
 
-DisplayCaptureSurfaceType::DisplayCaptureSurfaceType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DisplayCaptureSurfaceType::DisplayCaptureSurfaceType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+DisplayCaptureSurfaceType::Value DisplayCaptureSurfaceType::from_string(const char* str) noexcept {
+    if (str_equal(str, "monitor")) {
+        return MONITOR;
+    }
+    else if (str_equal(str, "window")) {
+        return WINDOW;
+    }
+    else if (str_equal(str, "browser")) {
+        return BROWSER;
+    }
+    else {
+        // Default to first value for invalid input
+        return MONITOR;
+    }
+}
+
+DisplayCaptureSurfaceType::DisplayCaptureSurfaceType(Value v) noexcept : emlite::Val(DisplayCaptureSurfaceType::to_string(v)), value_(v) {}
+DisplayCaptureSurfaceType::DisplayCaptureSurfaceType(Handle h) noexcept: emlite::Val(h) {
+    value_ = DisplayCaptureSurfaceType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DisplayCaptureSurfaceType::DisplayCaptureSurfaceType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DisplayCaptureSurfaceType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 DisplayCaptureSurfaceType DisplayCaptureSurfaceType::take_ownership(Handle h) noexcept { return DisplayCaptureSurfaceType(h); }
 DisplayCaptureSurfaceType DisplayCaptureSurfaceType::clone() const noexcept { return *this; }
+const char* DisplayCaptureSurfaceType::to_string(DisplayCaptureSurfaceType::Value value_) noexcept {
+    switch (value_) {
+        case MONITOR:
+            return "monitor";
+        case WINDOW:
+            return "window";
+        case BROWSER:
+            return "browser";
+        default:
+            return "monitor"; // fallback to first value
+    }
+}
 
-CursorCaptureConstraint::CursorCaptureConstraint(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CursorCaptureConstraint::CursorCaptureConstraint(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CursorCaptureConstraint::Value CursorCaptureConstraint::from_string(const char* str) noexcept {
+    if (str_equal(str, "never")) {
+        return NEVER;
+    }
+    else if (str_equal(str, "always")) {
+        return ALWAYS;
+    }
+    else if (str_equal(str, "motion")) {
+        return MOTION;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEVER;
+    }
+}
+
+CursorCaptureConstraint::CursorCaptureConstraint(Value v) noexcept : emlite::Val(CursorCaptureConstraint::to_string(v)), value_(v) {}
+CursorCaptureConstraint::CursorCaptureConstraint(Handle h) noexcept: emlite::Val(h) {
+    value_ = CursorCaptureConstraint::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CursorCaptureConstraint::CursorCaptureConstraint(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CursorCaptureConstraint::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CursorCaptureConstraint CursorCaptureConstraint::take_ownership(Handle h) noexcept { return CursorCaptureConstraint(h); }
 CursorCaptureConstraint CursorCaptureConstraint::clone() const noexcept { return *this; }
+const char* CursorCaptureConstraint::to_string(CursorCaptureConstraint::Value value_) noexcept {
+    switch (value_) {
+        case NEVER:
+            return "never";
+        case ALWAYS:
+            return "always";
+        case MOTION:
+            return "motion";
+        default:
+            return "never"; // fallback to first value
+    }
+}
 
-OrientationLockType::OrientationLockType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OrientationLockType::OrientationLockType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OrientationLockType::Value OrientationLockType::from_string(const char* str) noexcept {
+    if (str_equal(str, "any")) {
+        return ANY;
+    }
+    else if (str_equal(str, "natural")) {
+        return NATURAL;
+    }
+    else if (str_equal(str, "landscape")) {
+        return LANDSCAPE;
+    }
+    else if (str_equal(str, "portrait")) {
+        return PORTRAIT;
+    }
+    else if (str_equal(str, "portrait-primary")) {
+        return PORTRAIT_PRIMARY;
+    }
+    else if (str_equal(str, "portrait-secondary")) {
+        return PORTRAIT_SECONDARY;
+    }
+    else if (str_equal(str, "landscape-primary")) {
+        return LANDSCAPE_PRIMARY;
+    }
+    else if (str_equal(str, "landscape-secondary")) {
+        return LANDSCAPE_SECONDARY;
+    }
+    else {
+        // Default to first value for invalid input
+        return ANY;
+    }
+}
+
+OrientationLockType::OrientationLockType(Value v) noexcept : emlite::Val(OrientationLockType::to_string(v)), value_(v) {}
+OrientationLockType::OrientationLockType(Handle h) noexcept: emlite::Val(h) {
+    value_ = OrientationLockType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OrientationLockType::OrientationLockType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OrientationLockType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OrientationLockType OrientationLockType::take_ownership(Handle h) noexcept { return OrientationLockType(h); }
 OrientationLockType OrientationLockType::clone() const noexcept { return *this; }
+const char* OrientationLockType::to_string(OrientationLockType::Value value_) noexcept {
+    switch (value_) {
+        case ANY:
+            return "any";
+        case NATURAL:
+            return "natural";
+        case LANDSCAPE:
+            return "landscape";
+        case PORTRAIT:
+            return "portrait";
+        case PORTRAIT_PRIMARY:
+            return "portrait-primary";
+        case PORTRAIT_SECONDARY:
+            return "portrait-secondary";
+        case LANDSCAPE_PRIMARY:
+            return "landscape-primary";
+        case LANDSCAPE_SECONDARY:
+            return "landscape-secondary";
+        default:
+            return "any"; // fallback to first value
+    }
+}
 
-OrientationType::OrientationType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OrientationType::OrientationType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OrientationType::Value OrientationType::from_string(const char* str) noexcept {
+    if (str_equal(str, "portrait-primary")) {
+        return PORTRAIT_PRIMARY;
+    }
+    else if (str_equal(str, "portrait-secondary")) {
+        return PORTRAIT_SECONDARY;
+    }
+    else if (str_equal(str, "landscape-primary")) {
+        return LANDSCAPE_PRIMARY;
+    }
+    else if (str_equal(str, "landscape-secondary")) {
+        return LANDSCAPE_SECONDARY;
+    }
+    else {
+        // Default to first value for invalid input
+        return PORTRAIT_PRIMARY;
+    }
+}
+
+OrientationType::OrientationType(Value v) noexcept : emlite::Val(OrientationType::to_string(v)), value_(v) {}
+OrientationType::OrientationType(Handle h) noexcept: emlite::Val(h) {
+    value_ = OrientationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OrientationType::OrientationType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OrientationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OrientationType OrientationType::take_ownership(Handle h) noexcept { return OrientationType(h); }
 OrientationType OrientationType::clone() const noexcept { return *this; }
+const char* OrientationType::to_string(OrientationType::Value value_) noexcept {
+    switch (value_) {
+        case PORTRAIT_PRIMARY:
+            return "portrait-primary";
+        case PORTRAIT_SECONDARY:
+            return "portrait-secondary";
+        case LANDSCAPE_PRIMARY:
+            return "landscape-primary";
+        case LANDSCAPE_SECONDARY:
+            return "landscape-secondary";
+        default:
+            return "portrait-primary"; // fallback to first value
+    }
+}
 
-WakeLockType::WakeLockType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WakeLockType::WakeLockType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WakeLockType::Value WakeLockType::from_string(const char* str) noexcept {
+    if (str_equal(str, "screen")) {
+        return SCREEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return SCREEN;
+    }
+}
+
+WakeLockType::WakeLockType(Value v) noexcept : emlite::Val(WakeLockType::to_string(v)), value_(v) {}
+WakeLockType::WakeLockType(Handle h) noexcept: emlite::Val(h) {
+    value_ = WakeLockType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WakeLockType::WakeLockType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WakeLockType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WakeLockType WakeLockType::take_ownership(Handle h) noexcept { return WakeLockType(h); }
 WakeLockType WakeLockType::clone() const noexcept { return *this; }
+const char* WakeLockType::to_string(WakeLockType::Value value_) noexcept {
+    switch (value_) {
+        case SCREEN:
+            return "screen";
+        default:
+            return "screen"; // fallback to first value
+    }
+}
 
-ScrollAxis::ScrollAxis(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScrollAxis::ScrollAxis(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScrollAxis::Value ScrollAxis::from_string(const char* str) noexcept {
+    if (str_equal(str, "block")) {
+        return BLOCK;
+    }
+    else if (str_equal(str, "inline")) {
+        return INLINE_;
+    }
+    else if (str_equal(str, "x")) {
+        return X;
+    }
+    else if (str_equal(str, "y")) {
+        return Y;
+    }
+    else {
+        // Default to first value for invalid input
+        return BLOCK;
+    }
+}
+
+ScrollAxis::ScrollAxis(Value v) noexcept : emlite::Val(ScrollAxis::to_string(v)), value_(v) {}
+ScrollAxis::ScrollAxis(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScrollAxis::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScrollAxis::ScrollAxis(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScrollAxis::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScrollAxis ScrollAxis::take_ownership(Handle h) noexcept { return ScrollAxis(h); }
 ScrollAxis ScrollAxis::clone() const noexcept { return *this; }
+const char* ScrollAxis::to_string(ScrollAxis::Value value_) noexcept {
+    switch (value_) {
+        case BLOCK:
+            return "block";
+        case INLINE_:
+            return "inline";
+        case X:
+            return "x";
+        case Y:
+            return "y";
+        default:
+            return "block"; // fallback to first value
+    }
+}
 
-SecurePaymentConfirmationAvailability::SecurePaymentConfirmationAvailability(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SecurePaymentConfirmationAvailability::SecurePaymentConfirmationAvailability(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SecurePaymentConfirmationAvailability::Value SecurePaymentConfirmationAvailability::from_string(const char* str) noexcept {
+    if (str_equal(str, "available")) {
+        return AVAILABLE;
+    }
+    else if (str_equal(str, "unavailable-unknown-reason")) {
+        return UNAVAILABLE_UNKNOWN_REASON;
+    }
+    else if (str_equal(str, "unavailable-feature-not-enabled")) {
+        return UNAVAILABLE_FEATURE_NOT_ENABLED;
+    }
+    else if (str_equal(str, "unavailable-no-permission-policy")) {
+        return UNAVAILABLE_NO_PERMISSION_POLICY;
+    }
+    else if (str_equal(str, "unavailable-no-user-verifying-platform-authenticator")) {
+        return UNAVAILABLE_NO_USER_VERIFYING_PLATFORM_AUTHENTICATOR;
+    }
+    else {
+        // Default to first value for invalid input
+        return AVAILABLE;
+    }
+}
+
+SecurePaymentConfirmationAvailability::SecurePaymentConfirmationAvailability(Value v) noexcept : emlite::Val(SecurePaymentConfirmationAvailability::to_string(v)), value_(v) {}
+SecurePaymentConfirmationAvailability::SecurePaymentConfirmationAvailability(Handle h) noexcept: emlite::Val(h) {
+    value_ = SecurePaymentConfirmationAvailability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SecurePaymentConfirmationAvailability::SecurePaymentConfirmationAvailability(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SecurePaymentConfirmationAvailability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SecurePaymentConfirmationAvailability SecurePaymentConfirmationAvailability::take_ownership(Handle h) noexcept { return SecurePaymentConfirmationAvailability(h); }
 SecurePaymentConfirmationAvailability SecurePaymentConfirmationAvailability::clone() const noexcept { return *this; }
+const char* SecurePaymentConfirmationAvailability::to_string(SecurePaymentConfirmationAvailability::Value value_) noexcept {
+    switch (value_) {
+        case AVAILABLE:
+            return "available";
+        case UNAVAILABLE_UNKNOWN_REASON:
+            return "unavailable-unknown-reason";
+        case UNAVAILABLE_FEATURE_NOT_ENABLED:
+            return "unavailable-feature-not-enabled";
+        case UNAVAILABLE_NO_PERMISSION_POLICY:
+            return "unavailable-no-permission-policy";
+        case UNAVAILABLE_NO_USER_VERIFYING_PLATFORM_AUTHENTICATOR:
+            return "unavailable-no-user-verifying-platform-authenticator";
+        default:
+            return "available"; // fallback to first value
+    }
+}
 
-ParityType::ParityType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ParityType::ParityType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ParityType::Value ParityType::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "even")) {
+        return EVEN;
+    }
+    else if (str_equal(str, "odd")) {
+        return ODD;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+ParityType::ParityType(Value v) noexcept : emlite::Val(ParityType::to_string(v)), value_(v) {}
+ParityType::ParityType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ParityType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ParityType::ParityType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ParityType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ParityType ParityType::take_ownership(Handle h) noexcept { return ParityType(h); }
 ParityType ParityType::clone() const noexcept { return *this; }
+const char* ParityType::to_string(ParityType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case EVEN:
+            return "even";
+        case ODD:
+            return "odd";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-FlowControlType::FlowControlType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FlowControlType::FlowControlType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FlowControlType::Value FlowControlType::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "hardware")) {
+        return HARDWARE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+FlowControlType::FlowControlType(Value v) noexcept : emlite::Val(FlowControlType::to_string(v)), value_(v) {}
+FlowControlType::FlowControlType(Handle h) noexcept: emlite::Val(h) {
+    value_ = FlowControlType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FlowControlType::FlowControlType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FlowControlType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FlowControlType FlowControlType::take_ownership(Handle h) noexcept { return FlowControlType(h); }
 FlowControlType FlowControlType::clone() const noexcept { return *this; }
+const char* FlowControlType::to_string(FlowControlType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case HARDWARE:
+            return "hardware";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-ServiceWorkerState::ServiceWorkerState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ServiceWorkerState::ServiceWorkerState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ServiceWorkerState::Value ServiceWorkerState::from_string(const char* str) noexcept {
+    if (str_equal(str, "parsed")) {
+        return PARSED;
+    }
+    else if (str_equal(str, "installing")) {
+        return INSTALLING;
+    }
+    else if (str_equal(str, "installed")) {
+        return INSTALLED;
+    }
+    else if (str_equal(str, "activating")) {
+        return ACTIVATING;
+    }
+    else if (str_equal(str, "activated")) {
+        return ACTIVATED;
+    }
+    else if (str_equal(str, "redundant")) {
+        return REDUNDANT;
+    }
+    else {
+        // Default to first value for invalid input
+        return PARSED;
+    }
+}
+
+ServiceWorkerState::ServiceWorkerState(Value v) noexcept : emlite::Val(ServiceWorkerState::to_string(v)), value_(v) {}
+ServiceWorkerState::ServiceWorkerState(Handle h) noexcept: emlite::Val(h) {
+    value_ = ServiceWorkerState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ServiceWorkerState::ServiceWorkerState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ServiceWorkerState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ServiceWorkerState ServiceWorkerState::take_ownership(Handle h) noexcept { return ServiceWorkerState(h); }
 ServiceWorkerState ServiceWorkerState::clone() const noexcept { return *this; }
+const char* ServiceWorkerState::to_string(ServiceWorkerState::Value value_) noexcept {
+    switch (value_) {
+        case PARSED:
+            return "parsed";
+        case INSTALLING:
+            return "installing";
+        case INSTALLED:
+            return "installed";
+        case ACTIVATING:
+            return "activating";
+        case ACTIVATED:
+            return "activated";
+        case REDUNDANT:
+            return "redundant";
+        default:
+            return "parsed"; // fallback to first value
+    }
+}
 
-ServiceWorkerUpdateViaCache::ServiceWorkerUpdateViaCache(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ServiceWorkerUpdateViaCache::ServiceWorkerUpdateViaCache(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ServiceWorkerUpdateViaCache::Value ServiceWorkerUpdateViaCache::from_string(const char* str) noexcept {
+    if (str_equal(str, "imports")) {
+        return IMPORTS;
+    }
+    else if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else {
+        // Default to first value for invalid input
+        return IMPORTS;
+    }
+}
+
+ServiceWorkerUpdateViaCache::ServiceWorkerUpdateViaCache(Value v) noexcept : emlite::Val(ServiceWorkerUpdateViaCache::to_string(v)), value_(v) {}
+ServiceWorkerUpdateViaCache::ServiceWorkerUpdateViaCache(Handle h) noexcept: emlite::Val(h) {
+    value_ = ServiceWorkerUpdateViaCache::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ServiceWorkerUpdateViaCache::ServiceWorkerUpdateViaCache(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ServiceWorkerUpdateViaCache::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ServiceWorkerUpdateViaCache ServiceWorkerUpdateViaCache::take_ownership(Handle h) noexcept { return ServiceWorkerUpdateViaCache(h); }
 ServiceWorkerUpdateViaCache ServiceWorkerUpdateViaCache::clone() const noexcept { return *this; }
+const char* ServiceWorkerUpdateViaCache::to_string(ServiceWorkerUpdateViaCache::Value value_) noexcept {
+    switch (value_) {
+        case IMPORTS:
+            return "imports";
+        case ALL:
+            return "all";
+        case NONE:
+            return "none";
+        default:
+            return "imports"; // fallback to first value
+    }
+}
 
-FrameType::FrameType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FrameType::FrameType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FrameType::Value FrameType::from_string(const char* str) noexcept {
+    if (str_equal(str, "auxiliary")) {
+        return AUXILIARY;
+    }
+    else if (str_equal(str, "top-level")) {
+        return TOP_LEVEL;
+    }
+    else if (str_equal(str, "nested")) {
+        return NESTED;
+    }
+    else if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUXILIARY;
+    }
+}
+
+FrameType::FrameType(Value v) noexcept : emlite::Val(FrameType::to_string(v)), value_(v) {}
+FrameType::FrameType(Handle h) noexcept: emlite::Val(h) {
+    value_ = FrameType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FrameType::FrameType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FrameType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FrameType FrameType::take_ownership(Handle h) noexcept { return FrameType(h); }
 FrameType FrameType::clone() const noexcept { return *this; }
+const char* FrameType::to_string(FrameType::Value value_) noexcept {
+    switch (value_) {
+        case AUXILIARY:
+            return "auxiliary";
+        case TOP_LEVEL:
+            return "top-level";
+        case NESTED:
+            return "nested";
+        case NONE:
+            return "none";
+        default:
+            return "auxiliary"; // fallback to first value
+    }
+}
 
-ClientType::ClientType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ClientType::ClientType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ClientType::Value ClientType::from_string(const char* str) noexcept {
+    if (str_equal(str, "window")) {
+        return WINDOW;
+    }
+    else if (str_equal(str, "worker")) {
+        return WORKER;
+    }
+    else if (str_equal(str, "sharedworker")) {
+        return SHAREDWORKER;
+    }
+    else if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else {
+        // Default to first value for invalid input
+        return WINDOW;
+    }
+}
+
+ClientType::ClientType(Value v) noexcept : emlite::Val(ClientType::to_string(v)), value_(v) {}
+ClientType::ClientType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ClientType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ClientType::ClientType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ClientType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ClientType ClientType::take_ownership(Handle h) noexcept { return ClientType(h); }
 ClientType ClientType::clone() const noexcept { return *this; }
+const char* ClientType::to_string(ClientType::Value value_) noexcept {
+    switch (value_) {
+        case WINDOW:
+            return "window";
+        case WORKER:
+            return "worker";
+        case SHAREDWORKER:
+            return "sharedworker";
+        case ALL:
+            return "all";
+        default:
+            return "window"; // fallback to first value
+    }
+}
 
-RunningStatus::RunningStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RunningStatus::RunningStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RunningStatus::Value RunningStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "running")) {
+        return RUNNING;
+    }
+    else if (str_equal(str, "not-running")) {
+        return NOT_RUNNING;
+    }
+    else {
+        // Default to first value for invalid input
+        return RUNNING;
+    }
+}
+
+RunningStatus::RunningStatus(Value v) noexcept : emlite::Val(RunningStatus::to_string(v)), value_(v) {}
+RunningStatus::RunningStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = RunningStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RunningStatus::RunningStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RunningStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RunningStatus RunningStatus::take_ownership(Handle h) noexcept { return RunningStatus(h); }
 RunningStatus RunningStatus::clone() const noexcept { return *this; }
+const char* RunningStatus::to_string(RunningStatus::Value value_) noexcept {
+    switch (value_) {
+        case RUNNING:
+            return "running";
+        case NOT_RUNNING:
+            return "not-running";
+        default:
+            return "running"; // fallback to first value
+    }
+}
 
-RouterSourceEnum::RouterSourceEnum(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RouterSourceEnum::RouterSourceEnum(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RouterSourceEnum::Value RouterSourceEnum::from_string(const char* str) noexcept {
+    if (str_equal(str, "cache")) {
+        return CACHE;
+    }
+    else if (str_equal(str, "fetch-event")) {
+        return FETCH_EVENT;
+    }
+    else if (str_equal(str, "network")) {
+        return NETWORK;
+    }
+    else if (str_equal(str, "race-network-and-fetch-handler")) {
+        return RACE_NETWORK_AND_FETCH_HANDLER;
+    }
+    else {
+        // Default to first value for invalid input
+        return CACHE;
+    }
+}
+
+RouterSourceEnum::RouterSourceEnum(Value v) noexcept : emlite::Val(RouterSourceEnum::to_string(v)), value_(v) {}
+RouterSourceEnum::RouterSourceEnum(Handle h) noexcept: emlite::Val(h) {
+    value_ = RouterSourceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RouterSourceEnum::RouterSourceEnum(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RouterSourceEnum::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RouterSourceEnum RouterSourceEnum::take_ownership(Handle h) noexcept { return RouterSourceEnum(h); }
 RouterSourceEnum RouterSourceEnum::clone() const noexcept { return *this; }
+const char* RouterSourceEnum::to_string(RouterSourceEnum::Value value_) noexcept {
+    switch (value_) {
+        case CACHE:
+            return "cache";
+        case FETCH_EVENT:
+            return "fetch-event";
+        case NETWORK:
+            return "network";
+        case RACE_NETWORK_AND_FETCH_HANDLER:
+            return "race-network-and-fetch-handler";
+        default:
+            return "cache"; // fallback to first value
+    }
+}
 
-LandmarkType::LandmarkType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-LandmarkType::LandmarkType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+LandmarkType::Value LandmarkType::from_string(const char* str) noexcept {
+    if (str_equal(str, "mouth")) {
+        return MOUTH;
+    }
+    else if (str_equal(str, "eye")) {
+        return EYE;
+    }
+    else if (str_equal(str, "nose")) {
+        return NOSE;
+    }
+    else {
+        // Default to first value for invalid input
+        return MOUTH;
+    }
+}
+
+LandmarkType::LandmarkType(Value v) noexcept : emlite::Val(LandmarkType::to_string(v)), value_(v) {}
+LandmarkType::LandmarkType(Handle h) noexcept: emlite::Val(h) {
+    value_ = LandmarkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+LandmarkType::LandmarkType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = LandmarkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 LandmarkType LandmarkType::take_ownership(Handle h) noexcept { return LandmarkType(h); }
 LandmarkType LandmarkType::clone() const noexcept { return *this; }
+const char* LandmarkType::to_string(LandmarkType::Value value_) noexcept {
+    switch (value_) {
+        case MOUTH:
+            return "mouth";
+        case EYE:
+            return "eye";
+        case NOSE:
+            return "nose";
+        default:
+            return "mouth"; // fallback to first value
+    }
+}
 
-BarcodeFormat::BarcodeFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BarcodeFormat::BarcodeFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BarcodeFormat::Value BarcodeFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "aztec")) {
+        return AZTEC;
+    }
+    else if (str_equal(str, "code_128")) {
+        return CODE_128;
+    }
+    else if (str_equal(str, "code_39")) {
+        return CODE_39;
+    }
+    else if (str_equal(str, "code_93")) {
+        return CODE_93;
+    }
+    else if (str_equal(str, "codabar")) {
+        return CODABAR;
+    }
+    else if (str_equal(str, "data_matrix")) {
+        return DATA_MATRIX;
+    }
+    else if (str_equal(str, "ean_13")) {
+        return EAN_13;
+    }
+    else if (str_equal(str, "ean_8")) {
+        return EAN_8;
+    }
+    else if (str_equal(str, "itf")) {
+        return ITF;
+    }
+    else if (str_equal(str, "pdf417")) {
+        return PDF417;
+    }
+    else if (str_equal(str, "qr_code")) {
+        return QR_CODE;
+    }
+    else if (str_equal(str, "unknown")) {
+        return UNKNOWN;
+    }
+    else if (str_equal(str, "upc_a")) {
+        return UPC_A;
+    }
+    else if (str_equal(str, "upc_e")) {
+        return UPC_E;
+    }
+    else {
+        // Default to first value for invalid input
+        return AZTEC;
+    }
+}
+
+BarcodeFormat::BarcodeFormat(Value v) noexcept : emlite::Val(BarcodeFormat::to_string(v)), value_(v) {}
+BarcodeFormat::BarcodeFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = BarcodeFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BarcodeFormat::BarcodeFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BarcodeFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BarcodeFormat BarcodeFormat::take_ownership(Handle h) noexcept { return BarcodeFormat(h); }
 BarcodeFormat BarcodeFormat::clone() const noexcept { return *this; }
+const char* BarcodeFormat::to_string(BarcodeFormat::Value value_) noexcept {
+    switch (value_) {
+        case AZTEC:
+            return "aztec";
+        case CODE_128:
+            return "code_128";
+        case CODE_39:
+            return "code_39";
+        case CODE_93:
+            return "code_93";
+        case CODABAR:
+            return "codabar";
+        case DATA_MATRIX:
+            return "data_matrix";
+        case EAN_13:
+            return "ean_13";
+        case EAN_8:
+            return "ean_8";
+        case ITF:
+            return "itf";
+        case PDF417:
+            return "pdf417";
+        case QR_CODE:
+            return "qr_code";
+        case UNKNOWN:
+            return "unknown";
+        case UPC_A:
+            return "upc_a";
+        case UPC_E:
+            return "upc_e";
+        default:
+            return "aztec"; // fallback to first value
+    }
+}
 
-SpeechRecognitionErrorCode::SpeechRecognitionErrorCode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SpeechRecognitionErrorCode::SpeechRecognitionErrorCode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SpeechRecognitionErrorCode::Value SpeechRecognitionErrorCode::from_string(const char* str) noexcept {
+    if (str_equal(str, "no-speech")) {
+        return NO_SPEECH;
+    }
+    else if (str_equal(str, "aborted")) {
+        return ABORTED;
+    }
+    else if (str_equal(str, "audio-capture")) {
+        return AUDIO_CAPTURE;
+    }
+    else if (str_equal(str, "network")) {
+        return NETWORK;
+    }
+    else if (str_equal(str, "not-allowed")) {
+        return NOT_ALLOWED;
+    }
+    else if (str_equal(str, "service-not-allowed")) {
+        return SERVICE_NOT_ALLOWED;
+    }
+    else if (str_equal(str, "language-not-supported")) {
+        return LANGUAGE_NOT_SUPPORTED;
+    }
+    else if (str_equal(str, "phrases-not-supported")) {
+        return PHRASES_NOT_SUPPORTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return NO_SPEECH;
+    }
+}
+
+SpeechRecognitionErrorCode::SpeechRecognitionErrorCode(Value v) noexcept : emlite::Val(SpeechRecognitionErrorCode::to_string(v)), value_(v) {}
+SpeechRecognitionErrorCode::SpeechRecognitionErrorCode(Handle h) noexcept: emlite::Val(h) {
+    value_ = SpeechRecognitionErrorCode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SpeechRecognitionErrorCode::SpeechRecognitionErrorCode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SpeechRecognitionErrorCode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SpeechRecognitionErrorCode SpeechRecognitionErrorCode::take_ownership(Handle h) noexcept { return SpeechRecognitionErrorCode(h); }
 SpeechRecognitionErrorCode SpeechRecognitionErrorCode::clone() const noexcept { return *this; }
+const char* SpeechRecognitionErrorCode::to_string(SpeechRecognitionErrorCode::Value value_) noexcept {
+    switch (value_) {
+        case NO_SPEECH:
+            return "no-speech";
+        case ABORTED:
+            return "aborted";
+        case AUDIO_CAPTURE:
+            return "audio-capture";
+        case NETWORK:
+            return "network";
+        case NOT_ALLOWED:
+            return "not-allowed";
+        case SERVICE_NOT_ALLOWED:
+            return "service-not-allowed";
+        case LANGUAGE_NOT_SUPPORTED:
+            return "language-not-supported";
+        case PHRASES_NOT_SUPPORTED:
+            return "phrases-not-supported";
+        default:
+            return "no-speech"; // fallback to first value
+    }
+}
 
-AvailabilityStatus::AvailabilityStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AvailabilityStatus::AvailabilityStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AvailabilityStatus::Value AvailabilityStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "unavailable")) {
+        return UNAVAILABLE;
+    }
+    else if (str_equal(str, "downloadable")) {
+        return DOWNLOADABLE;
+    }
+    else if (str_equal(str, "downloading")) {
+        return DOWNLOADING;
+    }
+    else if (str_equal(str, "available")) {
+        return AVAILABLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNAVAILABLE;
+    }
+}
+
+AvailabilityStatus::AvailabilityStatus(Value v) noexcept : emlite::Val(AvailabilityStatus::to_string(v)), value_(v) {}
+AvailabilityStatus::AvailabilityStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = AvailabilityStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AvailabilityStatus::AvailabilityStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AvailabilityStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AvailabilityStatus AvailabilityStatus::take_ownership(Handle h) noexcept { return AvailabilityStatus(h); }
 AvailabilityStatus AvailabilityStatus::clone() const noexcept { return *this; }
+const char* AvailabilityStatus::to_string(AvailabilityStatus::Value value_) noexcept {
+    switch (value_) {
+        case UNAVAILABLE:
+            return "unavailable";
+        case DOWNLOADABLE:
+            return "downloadable";
+        case DOWNLOADING:
+            return "downloading";
+        case AVAILABLE:
+            return "available";
+        default:
+            return "unavailable"; // fallback to first value
+    }
+}
 
-SpeechSynthesisErrorCode::SpeechSynthesisErrorCode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SpeechSynthesisErrorCode::SpeechSynthesisErrorCode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SpeechSynthesisErrorCode::Value SpeechSynthesisErrorCode::from_string(const char* str) noexcept {
+    if (str_equal(str, "canceled")) {
+        return CANCELED;
+    }
+    else if (str_equal(str, "interrupted")) {
+        return INTERRUPTED;
+    }
+    else if (str_equal(str, "audio-busy")) {
+        return AUDIO_BUSY;
+    }
+    else if (str_equal(str, "audio-hardware")) {
+        return AUDIO_HARDWARE;
+    }
+    else if (str_equal(str, "network")) {
+        return NETWORK;
+    }
+    else if (str_equal(str, "synthesis-unavailable")) {
+        return SYNTHESIS_UNAVAILABLE;
+    }
+    else if (str_equal(str, "synthesis-failed")) {
+        return SYNTHESIS_FAILED;
+    }
+    else if (str_equal(str, "language-unavailable")) {
+        return LANGUAGE_UNAVAILABLE;
+    }
+    else if (str_equal(str, "voice-unavailable")) {
+        return VOICE_UNAVAILABLE;
+    }
+    else if (str_equal(str, "text-too-long")) {
+        return TEXT_TOO_LONG;
+    }
+    else if (str_equal(str, "invalid-argument")) {
+        return INVALID_ARGUMENT;
+    }
+    else if (str_equal(str, "not-allowed")) {
+        return NOT_ALLOWED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CANCELED;
+    }
+}
+
+SpeechSynthesisErrorCode::SpeechSynthesisErrorCode(Value v) noexcept : emlite::Val(SpeechSynthesisErrorCode::to_string(v)), value_(v) {}
+SpeechSynthesisErrorCode::SpeechSynthesisErrorCode(Handle h) noexcept: emlite::Val(h) {
+    value_ = SpeechSynthesisErrorCode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SpeechSynthesisErrorCode::SpeechSynthesisErrorCode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SpeechSynthesisErrorCode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SpeechSynthesisErrorCode SpeechSynthesisErrorCode::take_ownership(Handle h) noexcept { return SpeechSynthesisErrorCode(h); }
 SpeechSynthesisErrorCode SpeechSynthesisErrorCode::clone() const noexcept { return *this; }
+const char* SpeechSynthesisErrorCode::to_string(SpeechSynthesisErrorCode::Value value_) noexcept {
+    switch (value_) {
+        case CANCELED:
+            return "canceled";
+        case INTERRUPTED:
+            return "interrupted";
+        case AUDIO_BUSY:
+            return "audio-busy";
+        case AUDIO_HARDWARE:
+            return "audio-hardware";
+        case NETWORK:
+            return "network";
+        case SYNTHESIS_UNAVAILABLE:
+            return "synthesis-unavailable";
+        case SYNTHESIS_FAILED:
+            return "synthesis-failed";
+        case LANGUAGE_UNAVAILABLE:
+            return "language-unavailable";
+        case VOICE_UNAVAILABLE:
+            return "voice-unavailable";
+        case TEXT_TOO_LONG:
+            return "text-too-long";
+        case INVALID_ARGUMENT:
+            return "invalid-argument";
+        case NOT_ALLOWED:
+            return "not-allowed";
+        default:
+            return "canceled"; // fallback to first value
+    }
+}
 
-ReadableStreamReaderMode::ReadableStreamReaderMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ReadableStreamReaderMode::ReadableStreamReaderMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ReadableStreamReaderMode::Value ReadableStreamReaderMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "byob")) {
+        return BYOB;
+    }
+    else {
+        // Default to first value for invalid input
+        return BYOB;
+    }
+}
+
+ReadableStreamReaderMode::ReadableStreamReaderMode(Value v) noexcept : emlite::Val(ReadableStreamReaderMode::to_string(v)), value_(v) {}
+ReadableStreamReaderMode::ReadableStreamReaderMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = ReadableStreamReaderMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ReadableStreamReaderMode::ReadableStreamReaderMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ReadableStreamReaderMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ReadableStreamReaderMode ReadableStreamReaderMode::take_ownership(Handle h) noexcept { return ReadableStreamReaderMode(h); }
 ReadableStreamReaderMode ReadableStreamReaderMode::clone() const noexcept { return *this; }
+const char* ReadableStreamReaderMode::to_string(ReadableStreamReaderMode::Value value_) noexcept {
+    switch (value_) {
+        case BYOB:
+            return "byob";
+        default:
+            return "byob"; // fallback to first value
+    }
+}
 
-ReadableStreamType::ReadableStreamType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ReadableStreamType::ReadableStreamType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ReadableStreamType::Value ReadableStreamType::from_string(const char* str) noexcept {
+    if (str_equal(str, "bytes")) {
+        return BYTES;
+    }
+    else {
+        // Default to first value for invalid input
+        return BYTES;
+    }
+}
+
+ReadableStreamType::ReadableStreamType(Value v) noexcept : emlite::Val(ReadableStreamType::to_string(v)), value_(v) {}
+ReadableStreamType::ReadableStreamType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ReadableStreamType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ReadableStreamType::ReadableStreamType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ReadableStreamType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ReadableStreamType ReadableStreamType::take_ownership(Handle h) noexcept { return ReadableStreamType(h); }
 ReadableStreamType ReadableStreamType::clone() const noexcept { return *this; }
+const char* ReadableStreamType::to_string(ReadableStreamType::Value value_) noexcept {
+    switch (value_) {
+        case BYTES:
+            return "bytes";
+        default:
+            return "bytes"; // fallback to first value
+    }
+}
 
-TouchType::TouchType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TouchType::TouchType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TouchType::Value TouchType::from_string(const char* str) noexcept {
+    if (str_equal(str, "direct")) {
+        return DIRECT;
+    }
+    else if (str_equal(str, "stylus")) {
+        return STYLUS;
+    }
+    else {
+        // Default to first value for invalid input
+        return DIRECT;
+    }
+}
+
+TouchType::TouchType(Value v) noexcept : emlite::Val(TouchType::to_string(v)), value_(v) {}
+TouchType::TouchType(Handle h) noexcept: emlite::Val(h) {
+    value_ = TouchType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TouchType::TouchType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TouchType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TouchType TouchType::take_ownership(Handle h) noexcept { return TouchType(h); }
 TouchType TouchType::clone() const noexcept { return *this; }
+const char* TouchType::to_string(TouchType::Value value_) noexcept {
+    switch (value_) {
+        case DIRECT:
+            return "direct";
+        case STYLUS:
+            return "stylus";
+        default:
+            return "direct"; // fallback to first value
+    }
+}
 
-RefreshPolicy::RefreshPolicy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RefreshPolicy::RefreshPolicy(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RefreshPolicy::Value RefreshPolicy::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "refresh")) {
+        return REFRESH;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+RefreshPolicy::RefreshPolicy(Value v) noexcept : emlite::Val(RefreshPolicy::to_string(v)), value_(v) {}
+RefreshPolicy::RefreshPolicy(Handle h) noexcept: emlite::Val(h) {
+    value_ = RefreshPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RefreshPolicy::RefreshPolicy(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RefreshPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RefreshPolicy RefreshPolicy::take_ownership(Handle h) noexcept { return RefreshPolicy(h); }
 RefreshPolicy RefreshPolicy::clone() const noexcept { return *this; }
+const char* RefreshPolicy::to_string(RefreshPolicy::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case REFRESH:
+            return "refresh";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-TokenVersion::TokenVersion(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TokenVersion::TokenVersion(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TokenVersion::Value TokenVersion::from_string(const char* str) noexcept {
+    if (str_equal(str, "1")) {
+        return _1;
+    }
+    else {
+        // Default to first value for invalid input
+        return _1;
+    }
+}
+
+TokenVersion::TokenVersion(Value v) noexcept : emlite::Val(TokenVersion::to_string(v)), value_(v) {}
+TokenVersion::TokenVersion(Handle h) noexcept: emlite::Val(h) {
+    value_ = TokenVersion::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TokenVersion::TokenVersion(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TokenVersion::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TokenVersion TokenVersion::take_ownership(Handle h) noexcept { return TokenVersion(h); }
 TokenVersion TokenVersion::clone() const noexcept { return *this; }
+const char* TokenVersion::to_string(TokenVersion::Value value_) noexcept {
+    switch (value_) {
+        case _1:
+            return "1";
+        default:
+            return "1"; // fallback to first value
+    }
+}
 
-OperationType::OperationType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OperationType::OperationType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OperationType::Value OperationType::from_string(const char* str) noexcept {
+    if (str_equal(str, "token-request")) {
+        return TOKEN_REQUEST;
+    }
+    else if (str_equal(str, "send-redemption-record")) {
+        return SEND_REDEMPTION_RECORD;
+    }
+    else if (str_equal(str, "token-redemption")) {
+        return TOKEN_REDEMPTION;
+    }
+    else {
+        // Default to first value for invalid input
+        return TOKEN_REQUEST;
+    }
+}
+
+OperationType::OperationType(Value v) noexcept : emlite::Val(OperationType::to_string(v)), value_(v) {}
+OperationType::OperationType(Handle h) noexcept: emlite::Val(h) {
+    value_ = OperationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OperationType::OperationType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OperationType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OperationType OperationType::take_ownership(Handle h) noexcept { return OperationType(h); }
 OperationType OperationType::clone() const noexcept { return *this; }
+const char* OperationType::to_string(OperationType::Value value_) noexcept {
+    switch (value_) {
+        case TOKEN_REQUEST:
+            return "token-request";
+        case SEND_REDEMPTION_RECORD:
+            return "send-redemption-record";
+        case TOKEN_REDEMPTION:
+            return "token-redemption";
+        default:
+            return "token-request"; // fallback to first value
+    }
+}
 
-KAnonStatus::KAnonStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-KAnonStatus::KAnonStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+KAnonStatus::Value KAnonStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "passedAndEnforced")) {
+        return PASSEDANDENFORCED;
+    }
+    else if (str_equal(str, "passedNotEnforced")) {
+        return PASSEDNOTENFORCED;
+    }
+    else if (str_equal(str, "belowThreshold")) {
+        return BELOWTHRESHOLD;
+    }
+    else if (str_equal(str, "notCalculated")) {
+        return NOTCALCULATED;
+    }
+    else {
+        // Default to first value for invalid input
+        return PASSEDANDENFORCED;
+    }
+}
+
+KAnonStatus::KAnonStatus(Value v) noexcept : emlite::Val(KAnonStatus::to_string(v)), value_(v) {}
+KAnonStatus::KAnonStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = KAnonStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KAnonStatus::KAnonStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = KAnonStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 KAnonStatus KAnonStatus::take_ownership(Handle h) noexcept { return KAnonStatus(h); }
 KAnonStatus KAnonStatus::clone() const noexcept { return *this; }
+const char* KAnonStatus::to_string(KAnonStatus::Value value_) noexcept {
+    switch (value_) {
+        case PASSEDANDENFORCED:
+            return "passedAndEnforced";
+        case PASSEDNOTENFORCED:
+            return "passedNotEnforced";
+        case BELOWTHRESHOLD:
+            return "belowThreshold";
+        case NOTCALCULATED:
+            return "notCalculated";
+        default:
+            return "passedAndEnforced"; // fallback to first value
+    }
+}
 
-ImportExportKind::ImportExportKind(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ImportExportKind::ImportExportKind(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ImportExportKind::Value ImportExportKind::from_string(const char* str) noexcept {
+    if (str_equal(str, "function")) {
+        return FUNCTION;
+    }
+    else if (str_equal(str, "table")) {
+        return TABLE;
+    }
+    else if (str_equal(str, "memory")) {
+        return MEMORY;
+    }
+    else if (str_equal(str, "global")) {
+        return GLOBAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return FUNCTION;
+    }
+}
+
+ImportExportKind::ImportExportKind(Value v) noexcept : emlite::Val(ImportExportKind::to_string(v)), value_(v) {}
+ImportExportKind::ImportExportKind(Handle h) noexcept: emlite::Val(h) {
+    value_ = ImportExportKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ImportExportKind::ImportExportKind(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ImportExportKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ImportExportKind ImportExportKind::take_ownership(Handle h) noexcept { return ImportExportKind(h); }
 ImportExportKind ImportExportKind::clone() const noexcept { return *this; }
+const char* ImportExportKind::to_string(ImportExportKind::Value value_) noexcept {
+    switch (value_) {
+        case FUNCTION:
+            return "function";
+        case TABLE:
+            return "table";
+        case MEMORY:
+            return "memory";
+        case GLOBAL:
+            return "global";
+        default:
+            return "function"; // fallback to first value
+    }
+}
 
-TableKind::TableKind(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TableKind::TableKind(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TableKind::Value TableKind::from_string(const char* str) noexcept {
+    if (str_equal(str, "externref")) {
+        return EXTERNREF;
+    }
+    else if (str_equal(str, "anyfunc")) {
+        return ANYFUNC;
+    }
+    else {
+        // Default to first value for invalid input
+        return EXTERNREF;
+    }
+}
+
+TableKind::TableKind(Value v) noexcept : emlite::Val(TableKind::to_string(v)), value_(v) {}
+TableKind::TableKind(Handle h) noexcept: emlite::Val(h) {
+    value_ = TableKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TableKind::TableKind(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TableKind::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TableKind TableKind::take_ownership(Handle h) noexcept { return TableKind(h); }
 TableKind TableKind::clone() const noexcept { return *this; }
+const char* TableKind::to_string(TableKind::Value value_) noexcept {
+    switch (value_) {
+        case EXTERNREF:
+            return "externref";
+        case ANYFUNC:
+            return "anyfunc";
+        default:
+            return "externref"; // fallback to first value
+    }
+}
 
-ValueType::ValueType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ValueType::ValueType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ValueType::Value ValueType::from_string(const char* str) noexcept {
+    if (str_equal(str, "i32")) {
+        return I32;
+    }
+    else if (str_equal(str, "i64")) {
+        return I64;
+    }
+    else if (str_equal(str, "f32")) {
+        return F32;
+    }
+    else if (str_equal(str, "f64")) {
+        return F64;
+    }
+    else if (str_equal(str, "v128")) {
+        return V128;
+    }
+    else if (str_equal(str, "externref")) {
+        return EXTERNREF;
+    }
+    else if (str_equal(str, "anyfunc")) {
+        return ANYFUNC;
+    }
+    else {
+        // Default to first value for invalid input
+        return I32;
+    }
+}
+
+ValueType::ValueType(Value v) noexcept : emlite::Val(ValueType::to_string(v)), value_(v) {}
+ValueType::ValueType(Handle h) noexcept: emlite::Val(h) {
+    value_ = ValueType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ValueType::ValueType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ValueType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ValueType ValueType::take_ownership(Handle h) noexcept { return ValueType(h); }
 ValueType ValueType::clone() const noexcept { return *this; }
+const char* ValueType::to_string(ValueType::Value value_) noexcept {
+    switch (value_) {
+        case I32:
+            return "i32";
+        case I64:
+            return "i64";
+        case F32:
+            return "f32";
+        case F64:
+            return "f64";
+        case V128:
+            return "v128";
+        case EXTERNREF:
+            return "externref";
+        case ANYFUNC:
+            return "anyfunc";
+        default:
+            return "i32"; // fallback to first value
+    }
+}
 
-IterationCompositeOperation::IterationCompositeOperation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-IterationCompositeOperation::IterationCompositeOperation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+IterationCompositeOperation::Value IterationCompositeOperation::from_string(const char* str) noexcept {
+    if (str_equal(str, "replace")) {
+        return REPLACE;
+    }
+    else if (str_equal(str, "accumulate")) {
+        return ACCUMULATE;
+    }
+    else {
+        // Default to first value for invalid input
+        return REPLACE;
+    }
+}
+
+IterationCompositeOperation::IterationCompositeOperation(Value v) noexcept : emlite::Val(IterationCompositeOperation::to_string(v)), value_(v) {}
+IterationCompositeOperation::IterationCompositeOperation(Handle h) noexcept: emlite::Val(h) {
+    value_ = IterationCompositeOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IterationCompositeOperation::IterationCompositeOperation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IterationCompositeOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 IterationCompositeOperation IterationCompositeOperation::take_ownership(Handle h) noexcept { return IterationCompositeOperation(h); }
 IterationCompositeOperation IterationCompositeOperation::clone() const noexcept { return *this; }
+const char* IterationCompositeOperation::to_string(IterationCompositeOperation::Value value_) noexcept {
+    switch (value_) {
+        case REPLACE:
+            return "replace";
+        case ACCUMULATE:
+            return "accumulate";
+        default:
+            return "replace"; // fallback to first value
+    }
+}
 
-AnimationTriggerBehavior::AnimationTriggerBehavior(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AnimationTriggerBehavior::AnimationTriggerBehavior(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AnimationTriggerBehavior::Value AnimationTriggerBehavior::from_string(const char* str) noexcept {
+    if (str_equal(str, "once")) {
+        return ONCE;
+    }
+    else if (str_equal(str, "repeat")) {
+        return REPEAT;
+    }
+    else if (str_equal(str, "alternate")) {
+        return ALTERNATE;
+    }
+    else if (str_equal(str, "state")) {
+        return STATE;
+    }
+    else {
+        // Default to first value for invalid input
+        return ONCE;
+    }
+}
+
+AnimationTriggerBehavior::AnimationTriggerBehavior(Value v) noexcept : emlite::Val(AnimationTriggerBehavior::to_string(v)), value_(v) {}
+AnimationTriggerBehavior::AnimationTriggerBehavior(Handle h) noexcept: emlite::Val(h) {
+    value_ = AnimationTriggerBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AnimationTriggerBehavior::AnimationTriggerBehavior(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AnimationTriggerBehavior::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AnimationTriggerBehavior AnimationTriggerBehavior::take_ownership(Handle h) noexcept { return AnimationTriggerBehavior(h); }
 AnimationTriggerBehavior AnimationTriggerBehavior::clone() const noexcept { return *this; }
+const char* AnimationTriggerBehavior::to_string(AnimationTriggerBehavior::Value value_) noexcept {
+    switch (value_) {
+        case ONCE:
+            return "once";
+        case REPEAT:
+            return "repeat";
+        case ALTERNATE:
+            return "alternate";
+        case STATE:
+            return "state";
+        default:
+            return "once"; // fallback to first value
+    }
+}
 
-AnimationPlayState::AnimationPlayState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AnimationPlayState::AnimationPlayState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AnimationPlayState::Value AnimationPlayState::from_string(const char* str) noexcept {
+    if (str_equal(str, "idle")) {
+        return IDLE;
+    }
+    else if (str_equal(str, "running")) {
+        return RUNNING;
+    }
+    else if (str_equal(str, "paused")) {
+        return PAUSED;
+    }
+    else if (str_equal(str, "finished")) {
+        return FINISHED;
+    }
+    else {
+        // Default to first value for invalid input
+        return IDLE;
+    }
+}
+
+AnimationPlayState::AnimationPlayState(Value v) noexcept : emlite::Val(AnimationPlayState::to_string(v)), value_(v) {}
+AnimationPlayState::AnimationPlayState(Handle h) noexcept: emlite::Val(h) {
+    value_ = AnimationPlayState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AnimationPlayState::AnimationPlayState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AnimationPlayState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AnimationPlayState AnimationPlayState::take_ownership(Handle h) noexcept { return AnimationPlayState(h); }
 AnimationPlayState AnimationPlayState::clone() const noexcept { return *this; }
+const char* AnimationPlayState::to_string(AnimationPlayState::Value value_) noexcept {
+    switch (value_) {
+        case IDLE:
+            return "idle";
+        case RUNNING:
+            return "running";
+        case PAUSED:
+            return "paused";
+        case FINISHED:
+            return "finished";
+        default:
+            return "idle"; // fallback to first value
+    }
+}
 
-AnimationReplaceState::AnimationReplaceState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AnimationReplaceState::AnimationReplaceState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AnimationReplaceState::Value AnimationReplaceState::from_string(const char* str) noexcept {
+    if (str_equal(str, "active")) {
+        return ACTIVE;
+    }
+    else if (str_equal(str, "removed")) {
+        return REMOVED;
+    }
+    else if (str_equal(str, "persisted")) {
+        return PERSISTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return ACTIVE;
+    }
+}
+
+AnimationReplaceState::AnimationReplaceState(Value v) noexcept : emlite::Val(AnimationReplaceState::to_string(v)), value_(v) {}
+AnimationReplaceState::AnimationReplaceState(Handle h) noexcept: emlite::Val(h) {
+    value_ = AnimationReplaceState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AnimationReplaceState::AnimationReplaceState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AnimationReplaceState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AnimationReplaceState AnimationReplaceState::take_ownership(Handle h) noexcept { return AnimationReplaceState(h); }
 AnimationReplaceState AnimationReplaceState::clone() const noexcept { return *this; }
+const char* AnimationReplaceState::to_string(AnimationReplaceState::Value value_) noexcept {
+    switch (value_) {
+        case ACTIVE:
+            return "active";
+        case REMOVED:
+            return "removed";
+        case PERSISTED:
+            return "persisted";
+        default:
+            return "active"; // fallback to first value
+    }
+}
 
-FillMode::FillMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-FillMode::FillMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+FillMode::Value FillMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "forwards")) {
+        return FORWARDS;
+    }
+    else if (str_equal(str, "backwards")) {
+        return BACKWARDS;
+    }
+    else if (str_equal(str, "both")) {
+        return BOTH;
+    }
+    else if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+FillMode::FillMode(Value v) noexcept : emlite::Val(FillMode::to_string(v)), value_(v) {}
+FillMode::FillMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = FillMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+FillMode::FillMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = FillMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 FillMode FillMode::take_ownership(Handle h) noexcept { return FillMode(h); }
 FillMode FillMode::clone() const noexcept { return *this; }
+const char* FillMode::to_string(FillMode::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case FORWARDS:
+            return "forwards";
+        case BACKWARDS:
+            return "backwards";
+        case BOTH:
+            return "both";
+        case AUTO_:
+            return "auto";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-PlaybackDirection::PlaybackDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PlaybackDirection::PlaybackDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PlaybackDirection::Value PlaybackDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "normal")) {
+        return NORMAL;
+    }
+    else if (str_equal(str, "reverse")) {
+        return REVERSE;
+    }
+    else if (str_equal(str, "alternate")) {
+        return ALTERNATE;
+    }
+    else if (str_equal(str, "alternate-reverse")) {
+        return ALTERNATE_REVERSE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NORMAL;
+    }
+}
+
+PlaybackDirection::PlaybackDirection(Value v) noexcept : emlite::Val(PlaybackDirection::to_string(v)), value_(v) {}
+PlaybackDirection::PlaybackDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = PlaybackDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PlaybackDirection::PlaybackDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PlaybackDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PlaybackDirection PlaybackDirection::take_ownership(Handle h) noexcept { return PlaybackDirection(h); }
 PlaybackDirection PlaybackDirection::clone() const noexcept { return *this; }
+const char* PlaybackDirection::to_string(PlaybackDirection::Value value_) noexcept {
+    switch (value_) {
+        case NORMAL:
+            return "normal";
+        case REVERSE:
+            return "reverse";
+        case ALTERNATE:
+            return "alternate";
+        case ALTERNATE_REVERSE:
+            return "alternate-reverse";
+        default:
+            return "normal"; // fallback to first value
+    }
+}
 
-CompositeOperation::CompositeOperation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CompositeOperation::CompositeOperation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CompositeOperation::Value CompositeOperation::from_string(const char* str) noexcept {
+    if (str_equal(str, "replace")) {
+        return REPLACE;
+    }
+    else if (str_equal(str, "add")) {
+        return ADD;
+    }
+    else if (str_equal(str, "accumulate")) {
+        return ACCUMULATE;
+    }
+    else {
+        // Default to first value for invalid input
+        return REPLACE;
+    }
+}
+
+CompositeOperation::CompositeOperation(Value v) noexcept : emlite::Val(CompositeOperation::to_string(v)), value_(v) {}
+CompositeOperation::CompositeOperation(Handle h) noexcept: emlite::Val(h) {
+    value_ = CompositeOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CompositeOperation::CompositeOperation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CompositeOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CompositeOperation CompositeOperation::take_ownership(Handle h) noexcept { return CompositeOperation(h); }
 CompositeOperation CompositeOperation::clone() const noexcept { return *this; }
+const char* CompositeOperation::to_string(CompositeOperation::Value value_) noexcept {
+    switch (value_) {
+        case REPLACE:
+            return "replace";
+        case ADD:
+            return "add";
+        case ACCUMULATE:
+            return "accumulate";
+        default:
+            return "replace"; // fallback to first value
+    }
+}
 
-CompositeOperationOrAuto::CompositeOperationOrAuto(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CompositeOperationOrAuto::CompositeOperationOrAuto(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CompositeOperationOrAuto::Value CompositeOperationOrAuto::from_string(const char* str) noexcept {
+    if (str_equal(str, "replace")) {
+        return REPLACE;
+    }
+    else if (str_equal(str, "add")) {
+        return ADD;
+    }
+    else if (str_equal(str, "accumulate")) {
+        return ACCUMULATE;
+    }
+    else if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else {
+        // Default to first value for invalid input
+        return REPLACE;
+    }
+}
+
+CompositeOperationOrAuto::CompositeOperationOrAuto(Value v) noexcept : emlite::Val(CompositeOperationOrAuto::to_string(v)), value_(v) {}
+CompositeOperationOrAuto::CompositeOperationOrAuto(Handle h) noexcept: emlite::Val(h) {
+    value_ = CompositeOperationOrAuto::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CompositeOperationOrAuto::CompositeOperationOrAuto(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CompositeOperationOrAuto::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CompositeOperationOrAuto CompositeOperationOrAuto::take_ownership(Handle h) noexcept { return CompositeOperationOrAuto(h); }
 CompositeOperationOrAuto CompositeOperationOrAuto::clone() const noexcept { return *this; }
+const char* CompositeOperationOrAuto::to_string(CompositeOperationOrAuto::Value value_) noexcept {
+    switch (value_) {
+        case REPLACE:
+            return "replace";
+        case ADD:
+            return "add";
+        case ACCUMULATE:
+            return "accumulate";
+        case AUTO_:
+            return "auto";
+        default:
+            return "replace"; // fallback to first value
+    }
+}
 
-LockMode::LockMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-LockMode::LockMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+LockMode::Value LockMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "shared")) {
+        return SHARED;
+    }
+    else if (str_equal(str, "exclusive")) {
+        return EXCLUSIVE;
+    }
+    else {
+        // Default to first value for invalid input
+        return SHARED;
+    }
+}
+
+LockMode::LockMode(Value v) noexcept : emlite::Val(LockMode::to_string(v)), value_(v) {}
+LockMode::LockMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = LockMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+LockMode::LockMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = LockMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 LockMode LockMode::take_ownership(Handle h) noexcept { return LockMode(h); }
 LockMode LockMode::clone() const noexcept { return *this; }
+const char* LockMode::to_string(LockMode::Value value_) noexcept {
+    switch (value_) {
+        case SHARED:
+            return "shared";
+        case EXCLUSIVE:
+            return "exclusive";
+        default:
+            return "shared"; // fallback to first value
+    }
+}
 
-OTPCredentialTransportType::OTPCredentialTransportType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OTPCredentialTransportType::OTPCredentialTransportType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OTPCredentialTransportType::Value OTPCredentialTransportType::from_string(const char* str) noexcept {
+    if (str_equal(str, "sms")) {
+        return SMS;
+    }
+    else {
+        // Default to first value for invalid input
+        return SMS;
+    }
+}
+
+OTPCredentialTransportType::OTPCredentialTransportType(Value v) noexcept : emlite::Val(OTPCredentialTransportType::to_string(v)), value_(v) {}
+OTPCredentialTransportType::OTPCredentialTransportType(Handle h) noexcept: emlite::Val(h) {
+    value_ = OTPCredentialTransportType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OTPCredentialTransportType::OTPCredentialTransportType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OTPCredentialTransportType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OTPCredentialTransportType OTPCredentialTransportType::take_ownership(Handle h) noexcept { return OTPCredentialTransportType(h); }
 OTPCredentialTransportType OTPCredentialTransportType::clone() const noexcept { return *this; }
+const char* OTPCredentialTransportType::to_string(OTPCredentialTransportType::Value value_) noexcept {
+    switch (value_) {
+        case SMS:
+            return "sms";
+        default:
+            return "sms"; // fallback to first value
+    }
+}
 
-AudioContextState::AudioContextState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioContextState::AudioContextState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AudioContextState::Value AudioContextState::from_string(const char* str) noexcept {
+    if (str_equal(str, "suspended")) {
+        return SUSPENDED;
+    }
+    else if (str_equal(str, "running")) {
+        return RUNNING;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "interrupted")) {
+        return INTERRUPTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return SUSPENDED;
+    }
+}
+
+AudioContextState::AudioContextState(Value v) noexcept : emlite::Val(AudioContextState::to_string(v)), value_(v) {}
+AudioContextState::AudioContextState(Handle h) noexcept: emlite::Val(h) {
+    value_ = AudioContextState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AudioContextState::AudioContextState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AudioContextState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AudioContextState AudioContextState::take_ownership(Handle h) noexcept { return AudioContextState(h); }
 AudioContextState AudioContextState::clone() const noexcept { return *this; }
+const char* AudioContextState::to_string(AudioContextState::Value value_) noexcept {
+    switch (value_) {
+        case SUSPENDED:
+            return "suspended";
+        case RUNNING:
+            return "running";
+        case CLOSED:
+            return "closed";
+        case INTERRUPTED:
+            return "interrupted";
+        default:
+            return "suspended"; // fallback to first value
+    }
+}
 
-AudioContextRenderSizeCategory::AudioContextRenderSizeCategory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioContextRenderSizeCategory::AudioContextRenderSizeCategory(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AudioContextRenderSizeCategory::Value AudioContextRenderSizeCategory::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "hardware")) {
+        return HARDWARE;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+AudioContextRenderSizeCategory::AudioContextRenderSizeCategory(Value v) noexcept : emlite::Val(AudioContextRenderSizeCategory::to_string(v)), value_(v) {}
+AudioContextRenderSizeCategory::AudioContextRenderSizeCategory(Handle h) noexcept: emlite::Val(h) {
+    value_ = AudioContextRenderSizeCategory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AudioContextRenderSizeCategory::AudioContextRenderSizeCategory(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AudioContextRenderSizeCategory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AudioContextRenderSizeCategory AudioContextRenderSizeCategory::take_ownership(Handle h) noexcept { return AudioContextRenderSizeCategory(h); }
 AudioContextRenderSizeCategory AudioContextRenderSizeCategory::clone() const noexcept { return *this; }
+const char* AudioContextRenderSizeCategory::to_string(AudioContextRenderSizeCategory::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case HARDWARE:
+            return "hardware";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-AudioContextLatencyCategory::AudioContextLatencyCategory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioContextLatencyCategory::AudioContextLatencyCategory(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AudioContextLatencyCategory::Value AudioContextLatencyCategory::from_string(const char* str) noexcept {
+    if (str_equal(str, "balanced")) {
+        return BALANCED;
+    }
+    else if (str_equal(str, "interactive")) {
+        return INTERACTIVE;
+    }
+    else if (str_equal(str, "playback")) {
+        return PLAYBACK;
+    }
+    else {
+        // Default to first value for invalid input
+        return BALANCED;
+    }
+}
+
+AudioContextLatencyCategory::AudioContextLatencyCategory(Value v) noexcept : emlite::Val(AudioContextLatencyCategory::to_string(v)), value_(v) {}
+AudioContextLatencyCategory::AudioContextLatencyCategory(Handle h) noexcept: emlite::Val(h) {
+    value_ = AudioContextLatencyCategory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AudioContextLatencyCategory::AudioContextLatencyCategory(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AudioContextLatencyCategory::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AudioContextLatencyCategory AudioContextLatencyCategory::take_ownership(Handle h) noexcept { return AudioContextLatencyCategory(h); }
 AudioContextLatencyCategory AudioContextLatencyCategory::clone() const noexcept { return *this; }
+const char* AudioContextLatencyCategory::to_string(AudioContextLatencyCategory::Value value_) noexcept {
+    switch (value_) {
+        case BALANCED:
+            return "balanced";
+        case INTERACTIVE:
+            return "interactive";
+        case PLAYBACK:
+            return "playback";
+        default:
+            return "balanced"; // fallback to first value
+    }
+}
 
-AudioSinkType::AudioSinkType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioSinkType::AudioSinkType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AudioSinkType::Value AudioSinkType::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+AudioSinkType::AudioSinkType(Value v) noexcept : emlite::Val(AudioSinkType::to_string(v)), value_(v) {}
+AudioSinkType::AudioSinkType(Handle h) noexcept: emlite::Val(h) {
+    value_ = AudioSinkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AudioSinkType::AudioSinkType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AudioSinkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AudioSinkType AudioSinkType::take_ownership(Handle h) noexcept { return AudioSinkType(h); }
 AudioSinkType AudioSinkType::clone() const noexcept { return *this; }
+const char* AudioSinkType::to_string(AudioSinkType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-ChannelCountMode::ChannelCountMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ChannelCountMode::ChannelCountMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ChannelCountMode::Value ChannelCountMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "max")) {
+        return MAX;
+    }
+    else if (str_equal(str, "clamped-max")) {
+        return CLAMPED_MAX;
+    }
+    else if (str_equal(str, "explicit")) {
+        return EXPLICIT_;
+    }
+    else {
+        // Default to first value for invalid input
+        return MAX;
+    }
+}
+
+ChannelCountMode::ChannelCountMode(Value v) noexcept : emlite::Val(ChannelCountMode::to_string(v)), value_(v) {}
+ChannelCountMode::ChannelCountMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = ChannelCountMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ChannelCountMode::ChannelCountMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ChannelCountMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ChannelCountMode ChannelCountMode::take_ownership(Handle h) noexcept { return ChannelCountMode(h); }
 ChannelCountMode ChannelCountMode::clone() const noexcept { return *this; }
+const char* ChannelCountMode::to_string(ChannelCountMode::Value value_) noexcept {
+    switch (value_) {
+        case MAX:
+            return "max";
+        case CLAMPED_MAX:
+            return "clamped-max";
+        case EXPLICIT_:
+            return "explicit";
+        default:
+            return "max"; // fallback to first value
+    }
+}
 
-ChannelInterpretation::ChannelInterpretation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ChannelInterpretation::ChannelInterpretation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ChannelInterpretation::Value ChannelInterpretation::from_string(const char* str) noexcept {
+    if (str_equal(str, "speakers")) {
+        return SPEAKERS;
+    }
+    else if (str_equal(str, "discrete")) {
+        return DISCRETE;
+    }
+    else {
+        // Default to first value for invalid input
+        return SPEAKERS;
+    }
+}
+
+ChannelInterpretation::ChannelInterpretation(Value v) noexcept : emlite::Val(ChannelInterpretation::to_string(v)), value_(v) {}
+ChannelInterpretation::ChannelInterpretation(Handle h) noexcept: emlite::Val(h) {
+    value_ = ChannelInterpretation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ChannelInterpretation::ChannelInterpretation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ChannelInterpretation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ChannelInterpretation ChannelInterpretation::take_ownership(Handle h) noexcept { return ChannelInterpretation(h); }
 ChannelInterpretation ChannelInterpretation::clone() const noexcept { return *this; }
+const char* ChannelInterpretation::to_string(ChannelInterpretation::Value value_) noexcept {
+    switch (value_) {
+        case SPEAKERS:
+            return "speakers";
+        case DISCRETE:
+            return "discrete";
+        default:
+            return "speakers"; // fallback to first value
+    }
+}
 
-AutomationRate::AutomationRate(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AutomationRate::AutomationRate(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AutomationRate::Value AutomationRate::from_string(const char* str) noexcept {
+    if (str_equal(str, "a-rate")) {
+        return A_RATE;
+    }
+    else if (str_equal(str, "k-rate")) {
+        return K_RATE;
+    }
+    else {
+        // Default to first value for invalid input
+        return A_RATE;
+    }
+}
+
+AutomationRate::AutomationRate(Value v) noexcept : emlite::Val(AutomationRate::to_string(v)), value_(v) {}
+AutomationRate::AutomationRate(Handle h) noexcept: emlite::Val(h) {
+    value_ = AutomationRate::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AutomationRate::AutomationRate(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AutomationRate::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AutomationRate AutomationRate::take_ownership(Handle h) noexcept { return AutomationRate(h); }
 AutomationRate AutomationRate::clone() const noexcept { return *this; }
+const char* AutomationRate::to_string(AutomationRate::Value value_) noexcept {
+    switch (value_) {
+        case A_RATE:
+            return "a-rate";
+        case K_RATE:
+            return "k-rate";
+        default:
+            return "a-rate"; // fallback to first value
+    }
+}
 
-BiquadFilterType::BiquadFilterType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BiquadFilterType::BiquadFilterType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BiquadFilterType::Value BiquadFilterType::from_string(const char* str) noexcept {
+    if (str_equal(str, "lowpass")) {
+        return LOWPASS;
+    }
+    else if (str_equal(str, "highpass")) {
+        return HIGHPASS;
+    }
+    else if (str_equal(str, "bandpass")) {
+        return BANDPASS;
+    }
+    else if (str_equal(str, "lowshelf")) {
+        return LOWSHELF;
+    }
+    else if (str_equal(str, "highshelf")) {
+        return HIGHSHELF;
+    }
+    else if (str_equal(str, "peaking")) {
+        return PEAKING;
+    }
+    else if (str_equal(str, "notch")) {
+        return NOTCH;
+    }
+    else if (str_equal(str, "allpass")) {
+        return ALLPASS;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOWPASS;
+    }
+}
+
+BiquadFilterType::BiquadFilterType(Value v) noexcept : emlite::Val(BiquadFilterType::to_string(v)), value_(v) {}
+BiquadFilterType::BiquadFilterType(Handle h) noexcept: emlite::Val(h) {
+    value_ = BiquadFilterType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BiquadFilterType::BiquadFilterType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BiquadFilterType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BiquadFilterType BiquadFilterType::take_ownership(Handle h) noexcept { return BiquadFilterType(h); }
 BiquadFilterType BiquadFilterType::clone() const noexcept { return *this; }
+const char* BiquadFilterType::to_string(BiquadFilterType::Value value_) noexcept {
+    switch (value_) {
+        case LOWPASS:
+            return "lowpass";
+        case HIGHPASS:
+            return "highpass";
+        case BANDPASS:
+            return "bandpass";
+        case LOWSHELF:
+            return "lowshelf";
+        case HIGHSHELF:
+            return "highshelf";
+        case PEAKING:
+            return "peaking";
+        case NOTCH:
+            return "notch";
+        case ALLPASS:
+            return "allpass";
+        default:
+            return "lowpass"; // fallback to first value
+    }
+}
 
-OscillatorType::OscillatorType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OscillatorType::OscillatorType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OscillatorType::Value OscillatorType::from_string(const char* str) noexcept {
+    if (str_equal(str, "sine")) {
+        return SINE;
+    }
+    else if (str_equal(str, "square")) {
+        return SQUARE;
+    }
+    else if (str_equal(str, "sawtooth")) {
+        return SAWTOOTH;
+    }
+    else if (str_equal(str, "triangle")) {
+        return TRIANGLE;
+    }
+    else if (str_equal(str, "custom")) {
+        return CUSTOM;
+    }
+    else {
+        // Default to first value for invalid input
+        return SINE;
+    }
+}
+
+OscillatorType::OscillatorType(Value v) noexcept : emlite::Val(OscillatorType::to_string(v)), value_(v) {}
+OscillatorType::OscillatorType(Handle h) noexcept: emlite::Val(h) {
+    value_ = OscillatorType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OscillatorType::OscillatorType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OscillatorType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OscillatorType OscillatorType::take_ownership(Handle h) noexcept { return OscillatorType(h); }
 OscillatorType OscillatorType::clone() const noexcept { return *this; }
+const char* OscillatorType::to_string(OscillatorType::Value value_) noexcept {
+    switch (value_) {
+        case SINE:
+            return "sine";
+        case SQUARE:
+            return "square";
+        case SAWTOOTH:
+            return "sawtooth";
+        case TRIANGLE:
+            return "triangle";
+        case CUSTOM:
+            return "custom";
+        default:
+            return "sine"; // fallback to first value
+    }
+}
 
-PanningModelType::PanningModelType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PanningModelType::PanningModelType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PanningModelType::Value PanningModelType::from_string(const char* str) noexcept {
+    if (str_equal(str, "equalpower")) {
+        return EQUALPOWER;
+    }
+    else if (str_equal(str, "HRTF")) {
+        return HRTF;
+    }
+    else {
+        // Default to first value for invalid input
+        return EQUALPOWER;
+    }
+}
+
+PanningModelType::PanningModelType(Value v) noexcept : emlite::Val(PanningModelType::to_string(v)), value_(v) {}
+PanningModelType::PanningModelType(Handle h) noexcept: emlite::Val(h) {
+    value_ = PanningModelType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PanningModelType::PanningModelType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PanningModelType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PanningModelType PanningModelType::take_ownership(Handle h) noexcept { return PanningModelType(h); }
 PanningModelType PanningModelType::clone() const noexcept { return *this; }
+const char* PanningModelType::to_string(PanningModelType::Value value_) noexcept {
+    switch (value_) {
+        case EQUALPOWER:
+            return "equalpower";
+        case HRTF:
+            return "HRTF";
+        default:
+            return "equalpower"; // fallback to first value
+    }
+}
 
-DistanceModelType::DistanceModelType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DistanceModelType::DistanceModelType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+DistanceModelType::Value DistanceModelType::from_string(const char* str) noexcept {
+    if (str_equal(str, "linear")) {
+        return LINEAR;
+    }
+    else if (str_equal(str, "inverse")) {
+        return INVERSE;
+    }
+    else if (str_equal(str, "exponential")) {
+        return EXPONENTIAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return LINEAR;
+    }
+}
+
+DistanceModelType::DistanceModelType(Value v) noexcept : emlite::Val(DistanceModelType::to_string(v)), value_(v) {}
+DistanceModelType::DistanceModelType(Handle h) noexcept: emlite::Val(h) {
+    value_ = DistanceModelType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DistanceModelType::DistanceModelType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DistanceModelType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 DistanceModelType DistanceModelType::take_ownership(Handle h) noexcept { return DistanceModelType(h); }
 DistanceModelType DistanceModelType::clone() const noexcept { return *this; }
+const char* DistanceModelType::to_string(DistanceModelType::Value value_) noexcept {
+    switch (value_) {
+        case LINEAR:
+            return "linear";
+        case INVERSE:
+            return "inverse";
+        case EXPONENTIAL:
+            return "exponential";
+        default:
+            return "linear"; // fallback to first value
+    }
+}
 
-OverSampleType::OverSampleType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OverSampleType::OverSampleType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OverSampleType::Value OverSampleType::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "2x")) {
+        return _2X;
+    }
+    else if (str_equal(str, "4x")) {
+        return _4X;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+OverSampleType::OverSampleType(Value v) noexcept : emlite::Val(OverSampleType::to_string(v)), value_(v) {}
+OverSampleType::OverSampleType(Handle h) noexcept: emlite::Val(h) {
+    value_ = OverSampleType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OverSampleType::OverSampleType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OverSampleType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OverSampleType OverSampleType::take_ownership(Handle h) noexcept { return OverSampleType(h); }
 OverSampleType OverSampleType::clone() const noexcept { return *this; }
+const char* OverSampleType::to_string(OverSampleType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case _2X:
+            return "2x";
+        case _4X:
+            return "4x";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-AuthenticatorAttachment::AuthenticatorAttachment(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AuthenticatorAttachment::AuthenticatorAttachment(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AuthenticatorAttachment::Value AuthenticatorAttachment::from_string(const char* str) noexcept {
+    if (str_equal(str, "platform")) {
+        return PLATFORM;
+    }
+    else if (str_equal(str, "cross-platform")) {
+        return CROSS_PLATFORM;
+    }
+    else {
+        // Default to first value for invalid input
+        return PLATFORM;
+    }
+}
+
+AuthenticatorAttachment::AuthenticatorAttachment(Value v) noexcept : emlite::Val(AuthenticatorAttachment::to_string(v)), value_(v) {}
+AuthenticatorAttachment::AuthenticatorAttachment(Handle h) noexcept: emlite::Val(h) {
+    value_ = AuthenticatorAttachment::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AuthenticatorAttachment::AuthenticatorAttachment(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AuthenticatorAttachment::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AuthenticatorAttachment AuthenticatorAttachment::take_ownership(Handle h) noexcept { return AuthenticatorAttachment(h); }
 AuthenticatorAttachment AuthenticatorAttachment::clone() const noexcept { return *this; }
+const char* AuthenticatorAttachment::to_string(AuthenticatorAttachment::Value value_) noexcept {
+    switch (value_) {
+        case PLATFORM:
+            return "platform";
+        case CROSS_PLATFORM:
+            return "cross-platform";
+        default:
+            return "platform"; // fallback to first value
+    }
+}
 
-ResidentKeyRequirement::ResidentKeyRequirement(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ResidentKeyRequirement::ResidentKeyRequirement(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ResidentKeyRequirement::Value ResidentKeyRequirement::from_string(const char* str) noexcept {
+    if (str_equal(str, "discouraged")) {
+        return DISCOURAGED;
+    }
+    else if (str_equal(str, "preferred")) {
+        return PREFERRED;
+    }
+    else if (str_equal(str, "required")) {
+        return REQUIRED;
+    }
+    else {
+        // Default to first value for invalid input
+        return DISCOURAGED;
+    }
+}
+
+ResidentKeyRequirement::ResidentKeyRequirement(Value v) noexcept : emlite::Val(ResidentKeyRequirement::to_string(v)), value_(v) {}
+ResidentKeyRequirement::ResidentKeyRequirement(Handle h) noexcept: emlite::Val(h) {
+    value_ = ResidentKeyRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ResidentKeyRequirement::ResidentKeyRequirement(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ResidentKeyRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ResidentKeyRequirement ResidentKeyRequirement::take_ownership(Handle h) noexcept { return ResidentKeyRequirement(h); }
 ResidentKeyRequirement ResidentKeyRequirement::clone() const noexcept { return *this; }
+const char* ResidentKeyRequirement::to_string(ResidentKeyRequirement::Value value_) noexcept {
+    switch (value_) {
+        case DISCOURAGED:
+            return "discouraged";
+        case PREFERRED:
+            return "preferred";
+        case REQUIRED:
+            return "required";
+        default:
+            return "discouraged"; // fallback to first value
+    }
+}
 
-AttestationConveyancePreference::AttestationConveyancePreference(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AttestationConveyancePreference::AttestationConveyancePreference(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AttestationConveyancePreference::Value AttestationConveyancePreference::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "indirect")) {
+        return INDIRECT;
+    }
+    else if (str_equal(str, "direct")) {
+        return DIRECT;
+    }
+    else if (str_equal(str, "enterprise")) {
+        return ENTERPRISE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+AttestationConveyancePreference::AttestationConveyancePreference(Value v) noexcept : emlite::Val(AttestationConveyancePreference::to_string(v)), value_(v) {}
+AttestationConveyancePreference::AttestationConveyancePreference(Handle h) noexcept: emlite::Val(h) {
+    value_ = AttestationConveyancePreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AttestationConveyancePreference::AttestationConveyancePreference(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AttestationConveyancePreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AttestationConveyancePreference AttestationConveyancePreference::take_ownership(Handle h) noexcept { return AttestationConveyancePreference(h); }
 AttestationConveyancePreference AttestationConveyancePreference::clone() const noexcept { return *this; }
+const char* AttestationConveyancePreference::to_string(AttestationConveyancePreference::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case INDIRECT:
+            return "indirect";
+        case DIRECT:
+            return "direct";
+        case ENTERPRISE:
+            return "enterprise";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-TokenBindingStatus::TokenBindingStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-TokenBindingStatus::TokenBindingStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+TokenBindingStatus::Value TokenBindingStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "present")) {
+        return PRESENT;
+    }
+    else if (str_equal(str, "supported")) {
+        return SUPPORTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return PRESENT;
+    }
+}
+
+TokenBindingStatus::TokenBindingStatus(Value v) noexcept : emlite::Val(TokenBindingStatus::to_string(v)), value_(v) {}
+TokenBindingStatus::TokenBindingStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = TokenBindingStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+TokenBindingStatus::TokenBindingStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = TokenBindingStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 TokenBindingStatus TokenBindingStatus::take_ownership(Handle h) noexcept { return TokenBindingStatus(h); }
 TokenBindingStatus TokenBindingStatus::clone() const noexcept { return *this; }
+const char* TokenBindingStatus::to_string(TokenBindingStatus::Value value_) noexcept {
+    switch (value_) {
+        case PRESENT:
+            return "present";
+        case SUPPORTED:
+            return "supported";
+        default:
+            return "present"; // fallback to first value
+    }
+}
 
-PublicKeyCredentialType::PublicKeyCredentialType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PublicKeyCredentialType::PublicKeyCredentialType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PublicKeyCredentialType::Value PublicKeyCredentialType::from_string(const char* str) noexcept {
+    if (str_equal(str, "public-key")) {
+        return PUBLIC_KEY;
+    }
+    else {
+        // Default to first value for invalid input
+        return PUBLIC_KEY;
+    }
+}
+
+PublicKeyCredentialType::PublicKeyCredentialType(Value v) noexcept : emlite::Val(PublicKeyCredentialType::to_string(v)), value_(v) {}
+PublicKeyCredentialType::PublicKeyCredentialType(Handle h) noexcept: emlite::Val(h) {
+    value_ = PublicKeyCredentialType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PublicKeyCredentialType::PublicKeyCredentialType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PublicKeyCredentialType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PublicKeyCredentialType PublicKeyCredentialType::take_ownership(Handle h) noexcept { return PublicKeyCredentialType(h); }
 PublicKeyCredentialType PublicKeyCredentialType::clone() const noexcept { return *this; }
+const char* PublicKeyCredentialType::to_string(PublicKeyCredentialType::Value value_) noexcept {
+    switch (value_) {
+        case PUBLIC_KEY:
+            return "public-key";
+        default:
+            return "public-key"; // fallback to first value
+    }
+}
 
-AuthenticatorTransport::AuthenticatorTransport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AuthenticatorTransport::AuthenticatorTransport(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AuthenticatorTransport::Value AuthenticatorTransport::from_string(const char* str) noexcept {
+    if (str_equal(str, "usb")) {
+        return USB;
+    }
+    else if (str_equal(str, "nfc")) {
+        return NFC;
+    }
+    else if (str_equal(str, "ble")) {
+        return BLE;
+    }
+    else if (str_equal(str, "smart-card")) {
+        return SMART_CARD;
+    }
+    else if (str_equal(str, "hybrid")) {
+        return HYBRID;
+    }
+    else if (str_equal(str, "internal")) {
+        return INTERNAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return USB;
+    }
+}
+
+AuthenticatorTransport::AuthenticatorTransport(Value v) noexcept : emlite::Val(AuthenticatorTransport::to_string(v)), value_(v) {}
+AuthenticatorTransport::AuthenticatorTransport(Handle h) noexcept: emlite::Val(h) {
+    value_ = AuthenticatorTransport::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AuthenticatorTransport::AuthenticatorTransport(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AuthenticatorTransport::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AuthenticatorTransport AuthenticatorTransport::take_ownership(Handle h) noexcept { return AuthenticatorTransport(h); }
 AuthenticatorTransport AuthenticatorTransport::clone() const noexcept { return *this; }
+const char* AuthenticatorTransport::to_string(AuthenticatorTransport::Value value_) noexcept {
+    switch (value_) {
+        case USB:
+            return "usb";
+        case NFC:
+            return "nfc";
+        case BLE:
+            return "ble";
+        case SMART_CARD:
+            return "smart-card";
+        case HYBRID:
+            return "hybrid";
+        case INTERNAL:
+            return "internal";
+        default:
+            return "usb"; // fallback to first value
+    }
+}
 
-UserVerificationRequirement::UserVerificationRequirement(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-UserVerificationRequirement::UserVerificationRequirement(const emlite::Val &v) noexcept : emlite::Val(v) {}
+UserVerificationRequirement::Value UserVerificationRequirement::from_string(const char* str) noexcept {
+    if (str_equal(str, "required")) {
+        return REQUIRED;
+    }
+    else if (str_equal(str, "preferred")) {
+        return PREFERRED;
+    }
+    else if (str_equal(str, "discouraged")) {
+        return DISCOURAGED;
+    }
+    else {
+        // Default to first value for invalid input
+        return REQUIRED;
+    }
+}
+
+UserVerificationRequirement::UserVerificationRequirement(Value v) noexcept : emlite::Val(UserVerificationRequirement::to_string(v)), value_(v) {}
+UserVerificationRequirement::UserVerificationRequirement(Handle h) noexcept: emlite::Val(h) {
+    value_ = UserVerificationRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+UserVerificationRequirement::UserVerificationRequirement(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = UserVerificationRequirement::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 UserVerificationRequirement UserVerificationRequirement::take_ownership(Handle h) noexcept { return UserVerificationRequirement(h); }
 UserVerificationRequirement UserVerificationRequirement::clone() const noexcept { return *this; }
+const char* UserVerificationRequirement::to_string(UserVerificationRequirement::Value value_) noexcept {
+    switch (value_) {
+        case REQUIRED:
+            return "required";
+        case PREFERRED:
+            return "preferred";
+        case DISCOURAGED:
+            return "discouraged";
+        default:
+            return "required"; // fallback to first value
+    }
+}
 
-ClientCapability::ClientCapability(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ClientCapability::ClientCapability(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ClientCapability::Value ClientCapability::from_string(const char* str) noexcept {
+    if (str_equal(str, "conditionalCreate")) {
+        return CONDITIONALCREATE;
+    }
+    else if (str_equal(str, "conditionalGet")) {
+        return CONDITIONALGET;
+    }
+    else if (str_equal(str, "hybridTransport")) {
+        return HYBRIDTRANSPORT;
+    }
+    else if (str_equal(str, "passkeyPlatformAuthenticator")) {
+        return PASSKEYPLATFORMAUTHENTICATOR;
+    }
+    else if (str_equal(str, "userVerifyingPlatformAuthenticator")) {
+        return USERVERIFYINGPLATFORMAUTHENTICATOR;
+    }
+    else if (str_equal(str, "relatedOrigins")) {
+        return RELATEDORIGINS;
+    }
+    else if (str_equal(str, "signalAllAcceptedCredentials")) {
+        return SIGNALALLACCEPTEDCREDENTIALS;
+    }
+    else if (str_equal(str, "signalCurrentUserDetails")) {
+        return SIGNALCURRENTUSERDETAILS;
+    }
+    else if (str_equal(str, "signalUnknownCredential")) {
+        return SIGNALUNKNOWNCREDENTIAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONDITIONALCREATE;
+    }
+}
+
+ClientCapability::ClientCapability(Value v) noexcept : emlite::Val(ClientCapability::to_string(v)), value_(v) {}
+ClientCapability::ClientCapability(Handle h) noexcept: emlite::Val(h) {
+    value_ = ClientCapability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ClientCapability::ClientCapability(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ClientCapability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ClientCapability ClientCapability::take_ownership(Handle h) noexcept { return ClientCapability(h); }
 ClientCapability ClientCapability::clone() const noexcept { return *this; }
+const char* ClientCapability::to_string(ClientCapability::Value value_) noexcept {
+    switch (value_) {
+        case CONDITIONALCREATE:
+            return "conditionalCreate";
+        case CONDITIONALGET:
+            return "conditionalGet";
+        case HYBRIDTRANSPORT:
+            return "hybridTransport";
+        case PASSKEYPLATFORMAUTHENTICATOR:
+            return "passkeyPlatformAuthenticator";
+        case USERVERIFYINGPLATFORMAUTHENTICATOR:
+            return "userVerifyingPlatformAuthenticator";
+        case RELATEDORIGINS:
+            return "relatedOrigins";
+        case SIGNALALLACCEPTEDCREDENTIALS:
+            return "signalAllAcceptedCredentials";
+        case SIGNALCURRENTUSERDETAILS:
+            return "signalCurrentUserDetails";
+        case SIGNALUNKNOWNCREDENTIAL:
+            return "signalUnknownCredential";
+        default:
+            return "conditionalCreate"; // fallback to first value
+    }
+}
 
-PublicKeyCredentialHint::PublicKeyCredentialHint(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PublicKeyCredentialHint::PublicKeyCredentialHint(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PublicKeyCredentialHint::Value PublicKeyCredentialHint::from_string(const char* str) noexcept {
+    if (str_equal(str, "security-key")) {
+        return SECURITY_KEY;
+    }
+    else if (str_equal(str, "client-device")) {
+        return CLIENT_DEVICE;
+    }
+    else if (str_equal(str, "hybrid")) {
+        return HYBRID;
+    }
+    else {
+        // Default to first value for invalid input
+        return SECURITY_KEY;
+    }
+}
+
+PublicKeyCredentialHint::PublicKeyCredentialHint(Value v) noexcept : emlite::Val(PublicKeyCredentialHint::to_string(v)), value_(v) {}
+PublicKeyCredentialHint::PublicKeyCredentialHint(Handle h) noexcept: emlite::Val(h) {
+    value_ = PublicKeyCredentialHint::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PublicKeyCredentialHint::PublicKeyCredentialHint(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PublicKeyCredentialHint::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PublicKeyCredentialHint PublicKeyCredentialHint::take_ownership(Handle h) noexcept { return PublicKeyCredentialHint(h); }
 PublicKeyCredentialHint PublicKeyCredentialHint::clone() const noexcept { return *this; }
+const char* PublicKeyCredentialHint::to_string(PublicKeyCredentialHint::Value value_) noexcept {
+    switch (value_) {
+        case SECURITY_KEY:
+            return "security-key";
+        case CLIENT_DEVICE:
+            return "client-device";
+        case HYBRID:
+            return "hybrid";
+        default:
+            return "security-key"; // fallback to first value
+    }
+}
 
-LargeBlobSupport::LargeBlobSupport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-LargeBlobSupport::LargeBlobSupport(const emlite::Val &v) noexcept : emlite::Val(v) {}
+LargeBlobSupport::Value LargeBlobSupport::from_string(const char* str) noexcept {
+    if (str_equal(str, "required")) {
+        return REQUIRED;
+    }
+    else if (str_equal(str, "preferred")) {
+        return PREFERRED;
+    }
+    else {
+        // Default to first value for invalid input
+        return REQUIRED;
+    }
+}
+
+LargeBlobSupport::LargeBlobSupport(Value v) noexcept : emlite::Val(LargeBlobSupport::to_string(v)), value_(v) {}
+LargeBlobSupport::LargeBlobSupport(Handle h) noexcept: emlite::Val(h) {
+    value_ = LargeBlobSupport::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+LargeBlobSupport::LargeBlobSupport(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = LargeBlobSupport::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 LargeBlobSupport LargeBlobSupport::take_ownership(Handle h) noexcept { return LargeBlobSupport(h); }
 LargeBlobSupport LargeBlobSupport::clone() const noexcept { return *this; }
+const char* LargeBlobSupport::to_string(LargeBlobSupport::Value value_) noexcept {
+    switch (value_) {
+        case REQUIRED:
+            return "required";
+        case PREFERRED:
+            return "preferred";
+        default:
+            return "required"; // fallback to first value
+    }
+}
 
-AacBitstreamFormat::AacBitstreamFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AacBitstreamFormat::AacBitstreamFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AacBitstreamFormat::Value AacBitstreamFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "aac")) {
+        return AAC;
+    }
+    else if (str_equal(str, "adts")) {
+        return ADTS;
+    }
+    else {
+        // Default to first value for invalid input
+        return AAC;
+    }
+}
+
+AacBitstreamFormat::AacBitstreamFormat(Value v) noexcept : emlite::Val(AacBitstreamFormat::to_string(v)), value_(v) {}
+AacBitstreamFormat::AacBitstreamFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = AacBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AacBitstreamFormat::AacBitstreamFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AacBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AacBitstreamFormat AacBitstreamFormat::take_ownership(Handle h) noexcept { return AacBitstreamFormat(h); }
 AacBitstreamFormat AacBitstreamFormat::clone() const noexcept { return *this; }
+const char* AacBitstreamFormat::to_string(AacBitstreamFormat::Value value_) noexcept {
+    switch (value_) {
+        case AAC:
+            return "aac";
+        case ADTS:
+            return "adts";
+        default:
+            return "aac"; // fallback to first value
+    }
+}
 
-AvcBitstreamFormat::AvcBitstreamFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AvcBitstreamFormat::AvcBitstreamFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AvcBitstreamFormat::Value AvcBitstreamFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "annexb")) {
+        return ANNEXB;
+    }
+    else if (str_equal(str, "avc")) {
+        return AVC;
+    }
+    else {
+        // Default to first value for invalid input
+        return ANNEXB;
+    }
+}
+
+AvcBitstreamFormat::AvcBitstreamFormat(Value v) noexcept : emlite::Val(AvcBitstreamFormat::to_string(v)), value_(v) {}
+AvcBitstreamFormat::AvcBitstreamFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = AvcBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AvcBitstreamFormat::AvcBitstreamFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AvcBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AvcBitstreamFormat AvcBitstreamFormat::take_ownership(Handle h) noexcept { return AvcBitstreamFormat(h); }
 AvcBitstreamFormat AvcBitstreamFormat::clone() const noexcept { return *this; }
+const char* AvcBitstreamFormat::to_string(AvcBitstreamFormat::Value value_) noexcept {
+    switch (value_) {
+        case ANNEXB:
+            return "annexb";
+        case AVC:
+            return "avc";
+        default:
+            return "annexb"; // fallback to first value
+    }
+}
 
-HevcBitstreamFormat::HevcBitstreamFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HevcBitstreamFormat::HevcBitstreamFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+HevcBitstreamFormat::Value HevcBitstreamFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "annexb")) {
+        return ANNEXB;
+    }
+    else if (str_equal(str, "hevc")) {
+        return HEVC;
+    }
+    else {
+        // Default to first value for invalid input
+        return ANNEXB;
+    }
+}
+
+HevcBitstreamFormat::HevcBitstreamFormat(Value v) noexcept : emlite::Val(HevcBitstreamFormat::to_string(v)), value_(v) {}
+HevcBitstreamFormat::HevcBitstreamFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = HevcBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+HevcBitstreamFormat::HevcBitstreamFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = HevcBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 HevcBitstreamFormat HevcBitstreamFormat::take_ownership(Handle h) noexcept { return HevcBitstreamFormat(h); }
 HevcBitstreamFormat HevcBitstreamFormat::clone() const noexcept { return *this; }
+const char* HevcBitstreamFormat::to_string(HevcBitstreamFormat::Value value_) noexcept {
+    switch (value_) {
+        case ANNEXB:
+            return "annexb";
+        case HEVC:
+            return "hevc";
+        default:
+            return "annexb"; // fallback to first value
+    }
+}
 
-OpusBitstreamFormat::OpusBitstreamFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OpusBitstreamFormat::OpusBitstreamFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OpusBitstreamFormat::Value OpusBitstreamFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "opus")) {
+        return OPUS;
+    }
+    else if (str_equal(str, "ogg")) {
+        return OGG;
+    }
+    else {
+        // Default to first value for invalid input
+        return OPUS;
+    }
+}
+
+OpusBitstreamFormat::OpusBitstreamFormat(Value v) noexcept : emlite::Val(OpusBitstreamFormat::to_string(v)), value_(v) {}
+OpusBitstreamFormat::OpusBitstreamFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = OpusBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OpusBitstreamFormat::OpusBitstreamFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OpusBitstreamFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OpusBitstreamFormat OpusBitstreamFormat::take_ownership(Handle h) noexcept { return OpusBitstreamFormat(h); }
 OpusBitstreamFormat OpusBitstreamFormat::clone() const noexcept { return *this; }
+const char* OpusBitstreamFormat::to_string(OpusBitstreamFormat::Value value_) noexcept {
+    switch (value_) {
+        case OPUS:
+            return "opus";
+        case OGG:
+            return "ogg";
+        default:
+            return "opus"; // fallback to first value
+    }
+}
 
-OpusSignal::OpusSignal(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OpusSignal::OpusSignal(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OpusSignal::Value OpusSignal::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else if (str_equal(str, "music")) {
+        return MUSIC;
+    }
+    else if (str_equal(str, "voice")) {
+        return VOICE;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+OpusSignal::OpusSignal(Value v) noexcept : emlite::Val(OpusSignal::to_string(v)), value_(v) {}
+OpusSignal::OpusSignal(Handle h) noexcept: emlite::Val(h) {
+    value_ = OpusSignal::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OpusSignal::OpusSignal(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OpusSignal::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OpusSignal OpusSignal::take_ownership(Handle h) noexcept { return OpusSignal(h); }
 OpusSignal OpusSignal::clone() const noexcept { return *this; }
+const char* OpusSignal::to_string(OpusSignal::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        case MUSIC:
+            return "music";
+        case VOICE:
+            return "voice";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-OpusApplication::OpusApplication(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-OpusApplication::OpusApplication(const emlite::Val &v) noexcept : emlite::Val(v) {}
+OpusApplication::Value OpusApplication::from_string(const char* str) noexcept {
+    if (str_equal(str, "voip")) {
+        return VOIP;
+    }
+    else if (str_equal(str, "audio")) {
+        return AUDIO;
+    }
+    else if (str_equal(str, "lowdelay")) {
+        return LOWDELAY;
+    }
+    else {
+        // Default to first value for invalid input
+        return VOIP;
+    }
+}
+
+OpusApplication::OpusApplication(Value v) noexcept : emlite::Val(OpusApplication::to_string(v)), value_(v) {}
+OpusApplication::OpusApplication(Handle h) noexcept: emlite::Val(h) {
+    value_ = OpusApplication::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+OpusApplication::OpusApplication(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = OpusApplication::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 OpusApplication OpusApplication::take_ownership(Handle h) noexcept { return OpusApplication(h); }
 OpusApplication OpusApplication::clone() const noexcept { return *this; }
+const char* OpusApplication::to_string(OpusApplication::Value value_) noexcept {
+    switch (value_) {
+        case VOIP:
+            return "voip";
+        case AUDIO:
+            return "audio";
+        case LOWDELAY:
+            return "lowdelay";
+        default:
+            return "voip"; // fallback to first value
+    }
+}
 
-HardwareAcceleration::HardwareAcceleration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HardwareAcceleration::HardwareAcceleration(const emlite::Val &v) noexcept : emlite::Val(v) {}
+HardwareAcceleration::Value HardwareAcceleration::from_string(const char* str) noexcept {
+    if (str_equal(str, "no-preference")) {
+        return NO_PREFERENCE;
+    }
+    else if (str_equal(str, "prefer-hardware")) {
+        return PREFER_HARDWARE;
+    }
+    else if (str_equal(str, "prefer-software")) {
+        return PREFER_SOFTWARE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NO_PREFERENCE;
+    }
+}
+
+HardwareAcceleration::HardwareAcceleration(Value v) noexcept : emlite::Val(HardwareAcceleration::to_string(v)), value_(v) {}
+HardwareAcceleration::HardwareAcceleration(Handle h) noexcept: emlite::Val(h) {
+    value_ = HardwareAcceleration::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+HardwareAcceleration::HardwareAcceleration(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = HardwareAcceleration::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 HardwareAcceleration HardwareAcceleration::take_ownership(Handle h) noexcept { return HardwareAcceleration(h); }
 HardwareAcceleration HardwareAcceleration::clone() const noexcept { return *this; }
+const char* HardwareAcceleration::to_string(HardwareAcceleration::Value value_) noexcept {
+    switch (value_) {
+        case NO_PREFERENCE:
+            return "no-preference";
+        case PREFER_HARDWARE:
+            return "prefer-hardware";
+        case PREFER_SOFTWARE:
+            return "prefer-software";
+        default:
+            return "no-preference"; // fallback to first value
+    }
+}
 
-AlphaOption::AlphaOption(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AlphaOption::AlphaOption(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AlphaOption::Value AlphaOption::from_string(const char* str) noexcept {
+    if (str_equal(str, "keep")) {
+        return KEEP;
+    }
+    else if (str_equal(str, "discard")) {
+        return DISCARD;
+    }
+    else {
+        // Default to first value for invalid input
+        return KEEP;
+    }
+}
+
+AlphaOption::AlphaOption(Value v) noexcept : emlite::Val(AlphaOption::to_string(v)), value_(v) {}
+AlphaOption::AlphaOption(Handle h) noexcept: emlite::Val(h) {
+    value_ = AlphaOption::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AlphaOption::AlphaOption(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AlphaOption::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AlphaOption AlphaOption::take_ownership(Handle h) noexcept { return AlphaOption(h); }
 AlphaOption AlphaOption::clone() const noexcept { return *this; }
+const char* AlphaOption::to_string(AlphaOption::Value value_) noexcept {
+    switch (value_) {
+        case KEEP:
+            return "keep";
+        case DISCARD:
+            return "discard";
+        default:
+            return "keep"; // fallback to first value
+    }
+}
 
-LatencyMode::LatencyMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-LatencyMode::LatencyMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+LatencyMode::Value LatencyMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "quality")) {
+        return QUALITY;
+    }
+    else if (str_equal(str, "realtime")) {
+        return REALTIME;
+    }
+    else {
+        // Default to first value for invalid input
+        return QUALITY;
+    }
+}
+
+LatencyMode::LatencyMode(Value v) noexcept : emlite::Val(LatencyMode::to_string(v)), value_(v) {}
+LatencyMode::LatencyMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = LatencyMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+LatencyMode::LatencyMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = LatencyMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 LatencyMode LatencyMode::take_ownership(Handle h) noexcept { return LatencyMode(h); }
 LatencyMode LatencyMode::clone() const noexcept { return *this; }
+const char* LatencyMode::to_string(LatencyMode::Value value_) noexcept {
+    switch (value_) {
+        case QUALITY:
+            return "quality";
+        case REALTIME:
+            return "realtime";
+        default:
+            return "quality"; // fallback to first value
+    }
+}
 
-VideoEncoderBitrateMode::VideoEncoderBitrateMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoEncoderBitrateMode::VideoEncoderBitrateMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+VideoEncoderBitrateMode::Value VideoEncoderBitrateMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "constant")) {
+        return CONSTANT;
+    }
+    else if (str_equal(str, "variable")) {
+        return VARIABLE;
+    }
+    else if (str_equal(str, "quantizer")) {
+        return QUANTIZER;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONSTANT;
+    }
+}
+
+VideoEncoderBitrateMode::VideoEncoderBitrateMode(Value v) noexcept : emlite::Val(VideoEncoderBitrateMode::to_string(v)), value_(v) {}
+VideoEncoderBitrateMode::VideoEncoderBitrateMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = VideoEncoderBitrateMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+VideoEncoderBitrateMode::VideoEncoderBitrateMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = VideoEncoderBitrateMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 VideoEncoderBitrateMode VideoEncoderBitrateMode::take_ownership(Handle h) noexcept { return VideoEncoderBitrateMode(h); }
 VideoEncoderBitrateMode VideoEncoderBitrateMode::clone() const noexcept { return *this; }
+const char* VideoEncoderBitrateMode::to_string(VideoEncoderBitrateMode::Value value_) noexcept {
+    switch (value_) {
+        case CONSTANT:
+            return "constant";
+        case VARIABLE:
+            return "variable";
+        case QUANTIZER:
+            return "quantizer";
+        default:
+            return "constant"; // fallback to first value
+    }
+}
 
-CodecState::CodecState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-CodecState::CodecState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+CodecState::Value CodecState::from_string(const char* str) noexcept {
+    if (str_equal(str, "unconfigured")) {
+        return UNCONFIGURED;
+    }
+    else if (str_equal(str, "configured")) {
+        return CONFIGURED;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNCONFIGURED;
+    }
+}
+
+CodecState::CodecState(Value v) noexcept : emlite::Val(CodecState::to_string(v)), value_(v) {}
+CodecState::CodecState(Handle h) noexcept: emlite::Val(h) {
+    value_ = CodecState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+CodecState::CodecState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = CodecState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 CodecState CodecState::take_ownership(Handle h) noexcept { return CodecState(h); }
 CodecState CodecState::clone() const noexcept { return *this; }
+const char* CodecState::to_string(CodecState::Value value_) noexcept {
+    switch (value_) {
+        case UNCONFIGURED:
+            return "unconfigured";
+        case CONFIGURED:
+            return "configured";
+        case CLOSED:
+            return "closed";
+        default:
+            return "unconfigured"; // fallback to first value
+    }
+}
 
-EncodedAudioChunkType::EncodedAudioChunkType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-EncodedAudioChunkType::EncodedAudioChunkType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+EncodedAudioChunkType::Value EncodedAudioChunkType::from_string(const char* str) noexcept {
+    if (str_equal(str, "key")) {
+        return KEY;
+    }
+    else if (str_equal(str, "delta")) {
+        return DELTA;
+    }
+    else {
+        // Default to first value for invalid input
+        return KEY;
+    }
+}
+
+EncodedAudioChunkType::EncodedAudioChunkType(Value v) noexcept : emlite::Val(EncodedAudioChunkType::to_string(v)), value_(v) {}
+EncodedAudioChunkType::EncodedAudioChunkType(Handle h) noexcept: emlite::Val(h) {
+    value_ = EncodedAudioChunkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+EncodedAudioChunkType::EncodedAudioChunkType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = EncodedAudioChunkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 EncodedAudioChunkType EncodedAudioChunkType::take_ownership(Handle h) noexcept { return EncodedAudioChunkType(h); }
 EncodedAudioChunkType EncodedAudioChunkType::clone() const noexcept { return *this; }
+const char* EncodedAudioChunkType::to_string(EncodedAudioChunkType::Value value_) noexcept {
+    switch (value_) {
+        case KEY:
+            return "key";
+        case DELTA:
+            return "delta";
+        default:
+            return "key"; // fallback to first value
+    }
+}
 
-EncodedVideoChunkType::EncodedVideoChunkType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-EncodedVideoChunkType::EncodedVideoChunkType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+EncodedVideoChunkType::Value EncodedVideoChunkType::from_string(const char* str) noexcept {
+    if (str_equal(str, "key")) {
+        return KEY;
+    }
+    else if (str_equal(str, "delta")) {
+        return DELTA;
+    }
+    else {
+        // Default to first value for invalid input
+        return KEY;
+    }
+}
+
+EncodedVideoChunkType::EncodedVideoChunkType(Value v) noexcept : emlite::Val(EncodedVideoChunkType::to_string(v)), value_(v) {}
+EncodedVideoChunkType::EncodedVideoChunkType(Handle h) noexcept: emlite::Val(h) {
+    value_ = EncodedVideoChunkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+EncodedVideoChunkType::EncodedVideoChunkType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = EncodedVideoChunkType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 EncodedVideoChunkType EncodedVideoChunkType::take_ownership(Handle h) noexcept { return EncodedVideoChunkType(h); }
 EncodedVideoChunkType EncodedVideoChunkType::clone() const noexcept { return *this; }
+const char* EncodedVideoChunkType::to_string(EncodedVideoChunkType::Value value_) noexcept {
+    switch (value_) {
+        case KEY:
+            return "key";
+        case DELTA:
+            return "delta";
+        default:
+            return "key"; // fallback to first value
+    }
+}
 
-AudioSampleFormat::AudioSampleFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AudioSampleFormat::AudioSampleFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AudioSampleFormat::Value AudioSampleFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "u8")) {
+        return U8;
+    }
+    else if (str_equal(str, "s16")) {
+        return S16;
+    }
+    else if (str_equal(str, "s32")) {
+        return S32;
+    }
+    else if (str_equal(str, "f32")) {
+        return F32;
+    }
+    else if (str_equal(str, "u8-planar")) {
+        return U8_PLANAR;
+    }
+    else if (str_equal(str, "s16-planar")) {
+        return S16_PLANAR;
+    }
+    else if (str_equal(str, "s32-planar")) {
+        return S32_PLANAR;
+    }
+    else if (str_equal(str, "f32-planar")) {
+        return F32_PLANAR;
+    }
+    else {
+        // Default to first value for invalid input
+        return U8;
+    }
+}
+
+AudioSampleFormat::AudioSampleFormat(Value v) noexcept : emlite::Val(AudioSampleFormat::to_string(v)), value_(v) {}
+AudioSampleFormat::AudioSampleFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = AudioSampleFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AudioSampleFormat::AudioSampleFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AudioSampleFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AudioSampleFormat AudioSampleFormat::take_ownership(Handle h) noexcept { return AudioSampleFormat(h); }
 AudioSampleFormat AudioSampleFormat::clone() const noexcept { return *this; }
+const char* AudioSampleFormat::to_string(AudioSampleFormat::Value value_) noexcept {
+    switch (value_) {
+        case U8:
+            return "u8";
+        case S16:
+            return "s16";
+        case S32:
+            return "s32";
+        case F32:
+            return "f32";
+        case U8_PLANAR:
+            return "u8-planar";
+        case S16_PLANAR:
+            return "s16-planar";
+        case S32_PLANAR:
+            return "s32-planar";
+        case F32_PLANAR:
+            return "f32-planar";
+        default:
+            return "u8"; // fallback to first value
+    }
+}
 
-VideoPixelFormat::VideoPixelFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoPixelFormat::VideoPixelFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+VideoPixelFormat::Value VideoPixelFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "I420")) {
+        return I420;
+    }
+    else if (str_equal(str, "I420P10")) {
+        return I420P10;
+    }
+    else if (str_equal(str, "I420P12")) {
+        return I420P12;
+    }
+    else if (str_equal(str, "I420A")) {
+        return I420A;
+    }
+    else if (str_equal(str, "I420AP10")) {
+        return I420AP10;
+    }
+    else if (str_equal(str, "I420AP12")) {
+        return I420AP12;
+    }
+    else if (str_equal(str, "I422")) {
+        return I422;
+    }
+    else if (str_equal(str, "I422P10")) {
+        return I422P10;
+    }
+    else if (str_equal(str, "I422P12")) {
+        return I422P12;
+    }
+    else if (str_equal(str, "I422A")) {
+        return I422A;
+    }
+    else if (str_equal(str, "I422AP10")) {
+        return I422AP10;
+    }
+    else if (str_equal(str, "I422AP12")) {
+        return I422AP12;
+    }
+    else if (str_equal(str, "I444")) {
+        return I444;
+    }
+    else if (str_equal(str, "I444P10")) {
+        return I444P10;
+    }
+    else if (str_equal(str, "I444P12")) {
+        return I444P12;
+    }
+    else if (str_equal(str, "I444A")) {
+        return I444A;
+    }
+    else if (str_equal(str, "I444AP10")) {
+        return I444AP10;
+    }
+    else if (str_equal(str, "I444AP12")) {
+        return I444AP12;
+    }
+    else if (str_equal(str, "NV12")) {
+        return NV12;
+    }
+    else if (str_equal(str, "RGBA")) {
+        return RGBA;
+    }
+    else if (str_equal(str, "RGBX")) {
+        return RGBX;
+    }
+    else if (str_equal(str, "BGRA")) {
+        return BGRA;
+    }
+    else if (str_equal(str, "BGRX")) {
+        return BGRX;
+    }
+    else {
+        // Default to first value for invalid input
+        return I420;
+    }
+}
+
+VideoPixelFormat::VideoPixelFormat(Value v) noexcept : emlite::Val(VideoPixelFormat::to_string(v)), value_(v) {}
+VideoPixelFormat::VideoPixelFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = VideoPixelFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+VideoPixelFormat::VideoPixelFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = VideoPixelFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 VideoPixelFormat VideoPixelFormat::take_ownership(Handle h) noexcept { return VideoPixelFormat(h); }
 VideoPixelFormat VideoPixelFormat::clone() const noexcept { return *this; }
+const char* VideoPixelFormat::to_string(VideoPixelFormat::Value value_) noexcept {
+    switch (value_) {
+        case I420:
+            return "I420";
+        case I420P10:
+            return "I420P10";
+        case I420P12:
+            return "I420P12";
+        case I420A:
+            return "I420A";
+        case I420AP10:
+            return "I420AP10";
+        case I420AP12:
+            return "I420AP12";
+        case I422:
+            return "I422";
+        case I422P10:
+            return "I422P10";
+        case I422P12:
+            return "I422P12";
+        case I422A:
+            return "I422A";
+        case I422AP10:
+            return "I422AP10";
+        case I422AP12:
+            return "I422AP12";
+        case I444:
+            return "I444";
+        case I444P10:
+            return "I444P10";
+        case I444P12:
+            return "I444P12";
+        case I444A:
+            return "I444A";
+        case I444AP10:
+            return "I444AP10";
+        case I444AP12:
+            return "I444AP12";
+        case NV12:
+            return "NV12";
+        case RGBA:
+            return "RGBA";
+        case RGBX:
+            return "RGBX";
+        case BGRA:
+            return "BGRA";
+        case BGRX:
+            return "BGRX";
+        default:
+            return "I420"; // fallback to first value
+    }
+}
 
-VideoColorPrimaries::VideoColorPrimaries(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoColorPrimaries::VideoColorPrimaries(const emlite::Val &v) noexcept : emlite::Val(v) {}
+VideoColorPrimaries::Value VideoColorPrimaries::from_string(const char* str) noexcept {
+    if (str_equal(str, "bt709")) {
+        return BT709;
+    }
+    else if (str_equal(str, "bt470bg")) {
+        return BT470BG;
+    }
+    else if (str_equal(str, "smpte170m")) {
+        return SMPTE170M;
+    }
+    else if (str_equal(str, "bt2020")) {
+        return BT2020;
+    }
+    else if (str_equal(str, "smpte432")) {
+        return SMPTE432;
+    }
+    else {
+        // Default to first value for invalid input
+        return BT709;
+    }
+}
+
+VideoColorPrimaries::VideoColorPrimaries(Value v) noexcept : emlite::Val(VideoColorPrimaries::to_string(v)), value_(v) {}
+VideoColorPrimaries::VideoColorPrimaries(Handle h) noexcept: emlite::Val(h) {
+    value_ = VideoColorPrimaries::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+VideoColorPrimaries::VideoColorPrimaries(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = VideoColorPrimaries::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 VideoColorPrimaries VideoColorPrimaries::take_ownership(Handle h) noexcept { return VideoColorPrimaries(h); }
 VideoColorPrimaries VideoColorPrimaries::clone() const noexcept { return *this; }
+const char* VideoColorPrimaries::to_string(VideoColorPrimaries::Value value_) noexcept {
+    switch (value_) {
+        case BT709:
+            return "bt709";
+        case BT470BG:
+            return "bt470bg";
+        case SMPTE170M:
+            return "smpte170m";
+        case BT2020:
+            return "bt2020";
+        case SMPTE432:
+            return "smpte432";
+        default:
+            return "bt709"; // fallback to first value
+    }
+}
 
-VideoTransferCharacteristics::VideoTransferCharacteristics(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoTransferCharacteristics::VideoTransferCharacteristics(const emlite::Val &v) noexcept : emlite::Val(v) {}
+VideoTransferCharacteristics::Value VideoTransferCharacteristics::from_string(const char* str) noexcept {
+    if (str_equal(str, "bt709")) {
+        return BT709;
+    }
+    else if (str_equal(str, "smpte170m")) {
+        return SMPTE170M;
+    }
+    else if (str_equal(str, "iec61966-2-1")) {
+        return IEC61966_2_1;
+    }
+    else if (str_equal(str, "linear")) {
+        return LINEAR;
+    }
+    else if (str_equal(str, "pq")) {
+        return PQ;
+    }
+    else if (str_equal(str, "hlg")) {
+        return HLG;
+    }
+    else {
+        // Default to first value for invalid input
+        return BT709;
+    }
+}
+
+VideoTransferCharacteristics::VideoTransferCharacteristics(Value v) noexcept : emlite::Val(VideoTransferCharacteristics::to_string(v)), value_(v) {}
+VideoTransferCharacteristics::VideoTransferCharacteristics(Handle h) noexcept: emlite::Val(h) {
+    value_ = VideoTransferCharacteristics::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+VideoTransferCharacteristics::VideoTransferCharacteristics(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = VideoTransferCharacteristics::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 VideoTransferCharacteristics VideoTransferCharacteristics::take_ownership(Handle h) noexcept { return VideoTransferCharacteristics(h); }
 VideoTransferCharacteristics VideoTransferCharacteristics::clone() const noexcept { return *this; }
+const char* VideoTransferCharacteristics::to_string(VideoTransferCharacteristics::Value value_) noexcept {
+    switch (value_) {
+        case BT709:
+            return "bt709";
+        case SMPTE170M:
+            return "smpte170m";
+        case IEC61966_2_1:
+            return "iec61966-2-1";
+        case LINEAR:
+            return "linear";
+        case PQ:
+            return "pq";
+        case HLG:
+            return "hlg";
+        default:
+            return "bt709"; // fallback to first value
+    }
+}
 
-VideoMatrixCoefficients::VideoMatrixCoefficients(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-VideoMatrixCoefficients::VideoMatrixCoefficients(const emlite::Val &v) noexcept : emlite::Val(v) {}
+VideoMatrixCoefficients::Value VideoMatrixCoefficients::from_string(const char* str) noexcept {
+    if (str_equal(str, "rgb")) {
+        return RGB;
+    }
+    else if (str_equal(str, "bt709")) {
+        return BT709;
+    }
+    else if (str_equal(str, "bt470bg")) {
+        return BT470BG;
+    }
+    else if (str_equal(str, "smpte170m")) {
+        return SMPTE170M;
+    }
+    else if (str_equal(str, "bt2020-ncl")) {
+        return BT2020_NCL;
+    }
+    else {
+        // Default to first value for invalid input
+        return RGB;
+    }
+}
+
+VideoMatrixCoefficients::VideoMatrixCoefficients(Value v) noexcept : emlite::Val(VideoMatrixCoefficients::to_string(v)), value_(v) {}
+VideoMatrixCoefficients::VideoMatrixCoefficients(Handle h) noexcept: emlite::Val(h) {
+    value_ = VideoMatrixCoefficients::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+VideoMatrixCoefficients::VideoMatrixCoefficients(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = VideoMatrixCoefficients::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 VideoMatrixCoefficients VideoMatrixCoefficients::take_ownership(Handle h) noexcept { return VideoMatrixCoefficients(h); }
 VideoMatrixCoefficients VideoMatrixCoefficients::clone() const noexcept { return *this; }
+const char* VideoMatrixCoefficients::to_string(VideoMatrixCoefficients::Value value_) noexcept {
+    switch (value_) {
+        case RGB:
+            return "rgb";
+        case BT709:
+            return "bt709";
+        case BT470BG:
+            return "bt470bg";
+        case SMPTE170M:
+            return "smpte170m";
+        case BT2020_NCL:
+            return "bt2020-ncl";
+        default:
+            return "rgb"; // fallback to first value
+    }
+}
 
-KeyType::KeyType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-KeyType::KeyType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+KeyType::Value KeyType::from_string(const char* str) noexcept {
+    if (str_equal(str, "public")) {
+        return PUBLIC_;
+    }
+    else if (str_equal(str, "private")) {
+        return PRIVATE_;
+    }
+    else if (str_equal(str, "secret")) {
+        return SECRET;
+    }
+    else {
+        // Default to first value for invalid input
+        return PUBLIC_;
+    }
+}
+
+KeyType::KeyType(Value v) noexcept : emlite::Val(KeyType::to_string(v)), value_(v) {}
+KeyType::KeyType(Handle h) noexcept: emlite::Val(h) {
+    value_ = KeyType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KeyType::KeyType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = KeyType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 KeyType KeyType::take_ownership(Handle h) noexcept { return KeyType(h); }
 KeyType KeyType::clone() const noexcept { return *this; }
+const char* KeyType::to_string(KeyType::Value value_) noexcept {
+    switch (value_) {
+        case PUBLIC_:
+            return "public";
+        case PRIVATE_:
+            return "private";
+        case SECRET:
+            return "secret";
+        default:
+            return "public"; // fallback to first value
+    }
+}
 
-KeyUsage::KeyUsage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-KeyUsage::KeyUsage(const emlite::Val &v) noexcept : emlite::Val(v) {}
+KeyUsage::Value KeyUsage::from_string(const char* str) noexcept {
+    if (str_equal(str, "encrypt")) {
+        return ENCRYPT;
+    }
+    else if (str_equal(str, "decrypt")) {
+        return DECRYPT;
+    }
+    else if (str_equal(str, "sign")) {
+        return SIGN;
+    }
+    else if (str_equal(str, "verify")) {
+        return VERIFY;
+    }
+    else if (str_equal(str, "deriveKey")) {
+        return DERIVEKEY;
+    }
+    else if (str_equal(str, "deriveBits")) {
+        return DERIVEBITS;
+    }
+    else if (str_equal(str, "wrapKey")) {
+        return WRAPKEY;
+    }
+    else if (str_equal(str, "unwrapKey")) {
+        return UNWRAPKEY;
+    }
+    else {
+        // Default to first value for invalid input
+        return ENCRYPT;
+    }
+}
+
+KeyUsage::KeyUsage(Value v) noexcept : emlite::Val(KeyUsage::to_string(v)), value_(v) {}
+KeyUsage::KeyUsage(Handle h) noexcept: emlite::Val(h) {
+    value_ = KeyUsage::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KeyUsage::KeyUsage(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = KeyUsage::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 KeyUsage KeyUsage::take_ownership(Handle h) noexcept { return KeyUsage(h); }
 KeyUsage KeyUsage::clone() const noexcept { return *this; }
+const char* KeyUsage::to_string(KeyUsage::Value value_) noexcept {
+    switch (value_) {
+        case ENCRYPT:
+            return "encrypt";
+        case DECRYPT:
+            return "decrypt";
+        case SIGN:
+            return "sign";
+        case VERIFY:
+            return "verify";
+        case DERIVEKEY:
+            return "deriveKey";
+        case DERIVEBITS:
+            return "deriveBits";
+        case WRAPKEY:
+            return "wrapKey";
+        case UNWRAPKEY:
+            return "unwrapKey";
+        default:
+            return "encrypt"; // fallback to first value
+    }
+}
 
-KeyFormat::KeyFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-KeyFormat::KeyFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+KeyFormat::Value KeyFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "raw")) {
+        return RAW;
+    }
+    else if (str_equal(str, "spki")) {
+        return SPKI;
+    }
+    else if (str_equal(str, "pkcs8")) {
+        return PKCS8;
+    }
+    else if (str_equal(str, "jwk")) {
+        return JWK;
+    }
+    else {
+        // Default to first value for invalid input
+        return RAW;
+    }
+}
+
+KeyFormat::KeyFormat(Value v) noexcept : emlite::Val(KeyFormat::to_string(v)), value_(v) {}
+KeyFormat::KeyFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = KeyFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KeyFormat::KeyFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = KeyFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 KeyFormat KeyFormat::take_ownership(Handle h) noexcept { return KeyFormat(h); }
 KeyFormat KeyFormat::clone() const noexcept { return *this; }
+const char* KeyFormat::to_string(KeyFormat::Value value_) noexcept {
+    switch (value_) {
+        case RAW:
+            return "raw";
+        case SPKI:
+            return "spki";
+        case PKCS8:
+            return "pkcs8";
+        case JWK:
+            return "jwk";
+        default:
+            return "raw"; // fallback to first value
+    }
+}
 
-WebGLPowerPreference::WebGLPowerPreference(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebGLPowerPreference::WebGLPowerPreference(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WebGLPowerPreference::Value WebGLPowerPreference::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "low-power")) {
+        return LOW_POWER;
+    }
+    else if (str_equal(str, "high-performance")) {
+        return HIGH_PERFORMANCE;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+WebGLPowerPreference::WebGLPowerPreference(Value v) noexcept : emlite::Val(WebGLPowerPreference::to_string(v)), value_(v) {}
+WebGLPowerPreference::WebGLPowerPreference(Handle h) noexcept: emlite::Val(h) {
+    value_ = WebGLPowerPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WebGLPowerPreference::WebGLPowerPreference(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WebGLPowerPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WebGLPowerPreference WebGLPowerPreference::take_ownership(Handle h) noexcept { return WebGLPowerPreference(h); }
 WebGLPowerPreference WebGLPowerPreference::clone() const noexcept { return *this; }
+const char* WebGLPowerPreference::to_string(WebGLPowerPreference::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case LOW_POWER:
+            return "low-power";
+        case HIGH_PERFORMANCE:
+            return "high-performance";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-GPUPowerPreference::GPUPowerPreference(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUPowerPreference::GPUPowerPreference(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUPowerPreference::Value GPUPowerPreference::from_string(const char* str) noexcept {
+    if (str_equal(str, "low-power")) {
+        return LOW_POWER;
+    }
+    else if (str_equal(str, "high-performance")) {
+        return HIGH_PERFORMANCE;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOW_POWER;
+    }
+}
+
+GPUPowerPreference::GPUPowerPreference(Value v) noexcept : emlite::Val(GPUPowerPreference::to_string(v)), value_(v) {}
+GPUPowerPreference::GPUPowerPreference(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUPowerPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUPowerPreference::GPUPowerPreference(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUPowerPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUPowerPreference GPUPowerPreference::take_ownership(Handle h) noexcept { return GPUPowerPreference(h); }
 GPUPowerPreference GPUPowerPreference::clone() const noexcept { return *this; }
+const char* GPUPowerPreference::to_string(GPUPowerPreference::Value value_) noexcept {
+    switch (value_) {
+        case LOW_POWER:
+            return "low-power";
+        case HIGH_PERFORMANCE:
+            return "high-performance";
+        default:
+            return "low-power"; // fallback to first value
+    }
+}
 
-GPUFeatureName::GPUFeatureName(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUFeatureName::GPUFeatureName(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUFeatureName::Value GPUFeatureName::from_string(const char* str) noexcept {
+    if (str_equal(str, "core-features-and-limits")) {
+        return CORE_FEATURES_AND_LIMITS;
+    }
+    else if (str_equal(str, "depth-clip-control")) {
+        return DEPTH_CLIP_CONTROL;
+    }
+    else if (str_equal(str, "depth32float-stencil8")) {
+        return DEPTH32FLOAT_STENCIL8;
+    }
+    else if (str_equal(str, "texture-compression-bc")) {
+        return TEXTURE_COMPRESSION_BC;
+    }
+    else if (str_equal(str, "texture-compression-bc-sliced-3d")) {
+        return TEXTURE_COMPRESSION_BC_SLICED_3D;
+    }
+    else if (str_equal(str, "texture-compression-etc2")) {
+        return TEXTURE_COMPRESSION_ETC2;
+    }
+    else if (str_equal(str, "texture-compression-astc")) {
+        return TEXTURE_COMPRESSION_ASTC;
+    }
+    else if (str_equal(str, "texture-compression-astc-sliced-3d")) {
+        return TEXTURE_COMPRESSION_ASTC_SLICED_3D;
+    }
+    else if (str_equal(str, "timestamp-query")) {
+        return TIMESTAMP_QUERY;
+    }
+    else if (str_equal(str, "indirect-first-instance")) {
+        return INDIRECT_FIRST_INSTANCE;
+    }
+    else if (str_equal(str, "shader-f16")) {
+        return SHADER_F16;
+    }
+    else if (str_equal(str, "rg11b10ufloat-renderable")) {
+        return RG11B10UFLOAT_RENDERABLE;
+    }
+    else if (str_equal(str, "bgra8unorm-storage")) {
+        return BGRA8UNORM_STORAGE;
+    }
+    else if (str_equal(str, "float32-filterable")) {
+        return FLOAT32_FILTERABLE;
+    }
+    else if (str_equal(str, "float32-blendable")) {
+        return FLOAT32_BLENDABLE;
+    }
+    else if (str_equal(str, "clip-distances")) {
+        return CLIP_DISTANCES;
+    }
+    else if (str_equal(str, "dual-source-blending")) {
+        return DUAL_SOURCE_BLENDING;
+    }
+    else if (str_equal(str, "subgroups")) {
+        return SUBGROUPS;
+    }
+    else if (str_equal(str, "texture-formats-tier1")) {
+        return TEXTURE_FORMATS_TIER1;
+    }
+    else if (str_equal(str, "texture-formats-tier2")) {
+        return TEXTURE_FORMATS_TIER2;
+    }
+    else {
+        // Default to first value for invalid input
+        return CORE_FEATURES_AND_LIMITS;
+    }
+}
+
+GPUFeatureName::GPUFeatureName(Value v) noexcept : emlite::Val(GPUFeatureName::to_string(v)), value_(v) {}
+GPUFeatureName::GPUFeatureName(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUFeatureName::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUFeatureName::GPUFeatureName(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUFeatureName::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUFeatureName GPUFeatureName::take_ownership(Handle h) noexcept { return GPUFeatureName(h); }
 GPUFeatureName GPUFeatureName::clone() const noexcept { return *this; }
+const char* GPUFeatureName::to_string(GPUFeatureName::Value value_) noexcept {
+    switch (value_) {
+        case CORE_FEATURES_AND_LIMITS:
+            return "core-features-and-limits";
+        case DEPTH_CLIP_CONTROL:
+            return "depth-clip-control";
+        case DEPTH32FLOAT_STENCIL8:
+            return "depth32float-stencil8";
+        case TEXTURE_COMPRESSION_BC:
+            return "texture-compression-bc";
+        case TEXTURE_COMPRESSION_BC_SLICED_3D:
+            return "texture-compression-bc-sliced-3d";
+        case TEXTURE_COMPRESSION_ETC2:
+            return "texture-compression-etc2";
+        case TEXTURE_COMPRESSION_ASTC:
+            return "texture-compression-astc";
+        case TEXTURE_COMPRESSION_ASTC_SLICED_3D:
+            return "texture-compression-astc-sliced-3d";
+        case TIMESTAMP_QUERY:
+            return "timestamp-query";
+        case INDIRECT_FIRST_INSTANCE:
+            return "indirect-first-instance";
+        case SHADER_F16:
+            return "shader-f16";
+        case RG11B10UFLOAT_RENDERABLE:
+            return "rg11b10ufloat-renderable";
+        case BGRA8UNORM_STORAGE:
+            return "bgra8unorm-storage";
+        case FLOAT32_FILTERABLE:
+            return "float32-filterable";
+        case FLOAT32_BLENDABLE:
+            return "float32-blendable";
+        case CLIP_DISTANCES:
+            return "clip-distances";
+        case DUAL_SOURCE_BLENDING:
+            return "dual-source-blending";
+        case SUBGROUPS:
+            return "subgroups";
+        case TEXTURE_FORMATS_TIER1:
+            return "texture-formats-tier1";
+        case TEXTURE_FORMATS_TIER2:
+            return "texture-formats-tier2";
+        default:
+            return "core-features-and-limits"; // fallback to first value
+    }
+}
 
-GPUBufferMapState::GPUBufferMapState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUBufferMapState::GPUBufferMapState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUBufferMapState::Value GPUBufferMapState::from_string(const char* str) noexcept {
+    if (str_equal(str, "unmapped")) {
+        return UNMAPPED;
+    }
+    else if (str_equal(str, "pending")) {
+        return PENDING;
+    }
+    else if (str_equal(str, "mapped")) {
+        return MAPPED;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNMAPPED;
+    }
+}
+
+GPUBufferMapState::GPUBufferMapState(Value v) noexcept : emlite::Val(GPUBufferMapState::to_string(v)), value_(v) {}
+GPUBufferMapState::GPUBufferMapState(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUBufferMapState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUBufferMapState::GPUBufferMapState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUBufferMapState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUBufferMapState GPUBufferMapState::take_ownership(Handle h) noexcept { return GPUBufferMapState(h); }
 GPUBufferMapState GPUBufferMapState::clone() const noexcept { return *this; }
+const char* GPUBufferMapState::to_string(GPUBufferMapState::Value value_) noexcept {
+    switch (value_) {
+        case UNMAPPED:
+            return "unmapped";
+        case PENDING:
+            return "pending";
+        case MAPPED:
+            return "mapped";
+        default:
+            return "unmapped"; // fallback to first value
+    }
+}
 
-GPUTextureDimension::GPUTextureDimension(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUTextureDimension::GPUTextureDimension(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUTextureDimension::Value GPUTextureDimension::from_string(const char* str) noexcept {
+    if (str_equal(str, "1d")) {
+        return _1D;
+    }
+    else if (str_equal(str, "2d")) {
+        return _2D;
+    }
+    else if (str_equal(str, "3d")) {
+        return _3D;
+    }
+    else {
+        // Default to first value for invalid input
+        return _1D;
+    }
+}
+
+GPUTextureDimension::GPUTextureDimension(Value v) noexcept : emlite::Val(GPUTextureDimension::to_string(v)), value_(v) {}
+GPUTextureDimension::GPUTextureDimension(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUTextureDimension::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUTextureDimension::GPUTextureDimension(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUTextureDimension::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUTextureDimension GPUTextureDimension::take_ownership(Handle h) noexcept { return GPUTextureDimension(h); }
 GPUTextureDimension GPUTextureDimension::clone() const noexcept { return *this; }
+const char* GPUTextureDimension::to_string(GPUTextureDimension::Value value_) noexcept {
+    switch (value_) {
+        case _1D:
+            return "1d";
+        case _2D:
+            return "2d";
+        case _3D:
+            return "3d";
+        default:
+            return "1d"; // fallback to first value
+    }
+}
 
-GPUTextureViewDimension::GPUTextureViewDimension(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUTextureViewDimension::GPUTextureViewDimension(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUTextureViewDimension::Value GPUTextureViewDimension::from_string(const char* str) noexcept {
+    if (str_equal(str, "1d")) {
+        return _1D;
+    }
+    else if (str_equal(str, "2d")) {
+        return _2D;
+    }
+    else if (str_equal(str, "2d-array")) {
+        return _2D_ARRAY;
+    }
+    else if (str_equal(str, "cube")) {
+        return CUBE;
+    }
+    else if (str_equal(str, "cube-array")) {
+        return CUBE_ARRAY;
+    }
+    else if (str_equal(str, "3d")) {
+        return _3D;
+    }
+    else {
+        // Default to first value for invalid input
+        return _1D;
+    }
+}
+
+GPUTextureViewDimension::GPUTextureViewDimension(Value v) noexcept : emlite::Val(GPUTextureViewDimension::to_string(v)), value_(v) {}
+GPUTextureViewDimension::GPUTextureViewDimension(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUTextureViewDimension::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUTextureViewDimension::GPUTextureViewDimension(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUTextureViewDimension::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUTextureViewDimension GPUTextureViewDimension::take_ownership(Handle h) noexcept { return GPUTextureViewDimension(h); }
 GPUTextureViewDimension GPUTextureViewDimension::clone() const noexcept { return *this; }
+const char* GPUTextureViewDimension::to_string(GPUTextureViewDimension::Value value_) noexcept {
+    switch (value_) {
+        case _1D:
+            return "1d";
+        case _2D:
+            return "2d";
+        case _2D_ARRAY:
+            return "2d-array";
+        case CUBE:
+            return "cube";
+        case CUBE_ARRAY:
+            return "cube-array";
+        case _3D:
+            return "3d";
+        default:
+            return "1d"; // fallback to first value
+    }
+}
 
-GPUTextureAspect::GPUTextureAspect(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUTextureAspect::GPUTextureAspect(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUTextureAspect::Value GPUTextureAspect::from_string(const char* str) noexcept {
+    if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else if (str_equal(str, "stencil-only")) {
+        return STENCIL_ONLY;
+    }
+    else if (str_equal(str, "depth-only")) {
+        return DEPTH_ONLY;
+    }
+    else {
+        // Default to first value for invalid input
+        return ALL;
+    }
+}
+
+GPUTextureAspect::GPUTextureAspect(Value v) noexcept : emlite::Val(GPUTextureAspect::to_string(v)), value_(v) {}
+GPUTextureAspect::GPUTextureAspect(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUTextureAspect::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUTextureAspect::GPUTextureAspect(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUTextureAspect::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUTextureAspect GPUTextureAspect::take_ownership(Handle h) noexcept { return GPUTextureAspect(h); }
 GPUTextureAspect GPUTextureAspect::clone() const noexcept { return *this; }
+const char* GPUTextureAspect::to_string(GPUTextureAspect::Value value_) noexcept {
+    switch (value_) {
+        case ALL:
+            return "all";
+        case STENCIL_ONLY:
+            return "stencil-only";
+        case DEPTH_ONLY:
+            return "depth-only";
+        default:
+            return "all"; // fallback to first value
+    }
+}
 
-GPUTextureFormat::GPUTextureFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUTextureFormat::GPUTextureFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUTextureFormat::Value GPUTextureFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "r8unorm")) {
+        return R8UNORM;
+    }
+    else if (str_equal(str, "r8snorm")) {
+        return R8SNORM;
+    }
+    else if (str_equal(str, "r8uint")) {
+        return R8UINT;
+    }
+    else if (str_equal(str, "r8sint")) {
+        return R8SINT;
+    }
+    else if (str_equal(str, "r16unorm")) {
+        return R16UNORM;
+    }
+    else if (str_equal(str, "r16snorm")) {
+        return R16SNORM;
+    }
+    else if (str_equal(str, "r16uint")) {
+        return R16UINT;
+    }
+    else if (str_equal(str, "r16sint")) {
+        return R16SINT;
+    }
+    else if (str_equal(str, "r16float")) {
+        return R16FLOAT;
+    }
+    else if (str_equal(str, "rg8unorm")) {
+        return RG8UNORM;
+    }
+    else if (str_equal(str, "rg8snorm")) {
+        return RG8SNORM;
+    }
+    else if (str_equal(str, "rg8uint")) {
+        return RG8UINT;
+    }
+    else if (str_equal(str, "rg8sint")) {
+        return RG8SINT;
+    }
+    else if (str_equal(str, "r32uint")) {
+        return R32UINT;
+    }
+    else if (str_equal(str, "r32sint")) {
+        return R32SINT;
+    }
+    else if (str_equal(str, "r32float")) {
+        return R32FLOAT;
+    }
+    else if (str_equal(str, "rg16unorm")) {
+        return RG16UNORM;
+    }
+    else if (str_equal(str, "rg16snorm")) {
+        return RG16SNORM;
+    }
+    else if (str_equal(str, "rg16uint")) {
+        return RG16UINT;
+    }
+    else if (str_equal(str, "rg16sint")) {
+        return RG16SINT;
+    }
+    else if (str_equal(str, "rg16float")) {
+        return RG16FLOAT;
+    }
+    else if (str_equal(str, "rgba8unorm")) {
+        return RGBA8UNORM;
+    }
+    else if (str_equal(str, "rgba8unorm-srgb")) {
+        return RGBA8UNORM_SRGB;
+    }
+    else if (str_equal(str, "rgba8snorm")) {
+        return RGBA8SNORM;
+    }
+    else if (str_equal(str, "rgba8uint")) {
+        return RGBA8UINT;
+    }
+    else if (str_equal(str, "rgba8sint")) {
+        return RGBA8SINT;
+    }
+    else if (str_equal(str, "bgra8unorm")) {
+        return BGRA8UNORM;
+    }
+    else if (str_equal(str, "bgra8unorm-srgb")) {
+        return BGRA8UNORM_SRGB;
+    }
+    else if (str_equal(str, "rgb9e5ufloat")) {
+        return RGB9E5UFLOAT;
+    }
+    else if (str_equal(str, "rgb10a2uint")) {
+        return RGB10A2UINT;
+    }
+    else if (str_equal(str, "rgb10a2unorm")) {
+        return RGB10A2UNORM;
+    }
+    else if (str_equal(str, "rg11b10ufloat")) {
+        return RG11B10UFLOAT;
+    }
+    else if (str_equal(str, "rg32uint")) {
+        return RG32UINT;
+    }
+    else if (str_equal(str, "rg32sint")) {
+        return RG32SINT;
+    }
+    else if (str_equal(str, "rg32float")) {
+        return RG32FLOAT;
+    }
+    else if (str_equal(str, "rgba16unorm")) {
+        return RGBA16UNORM;
+    }
+    else if (str_equal(str, "rgba16snorm")) {
+        return RGBA16SNORM;
+    }
+    else if (str_equal(str, "rgba16uint")) {
+        return RGBA16UINT;
+    }
+    else if (str_equal(str, "rgba16sint")) {
+        return RGBA16SINT;
+    }
+    else if (str_equal(str, "rgba16float")) {
+        return RGBA16FLOAT;
+    }
+    else if (str_equal(str, "rgba32uint")) {
+        return RGBA32UINT;
+    }
+    else if (str_equal(str, "rgba32sint")) {
+        return RGBA32SINT;
+    }
+    else if (str_equal(str, "rgba32float")) {
+        return RGBA32FLOAT;
+    }
+    else if (str_equal(str, "stencil8")) {
+        return STENCIL8;
+    }
+    else if (str_equal(str, "depth16unorm")) {
+        return DEPTH16UNORM;
+    }
+    else if (str_equal(str, "depth24plus")) {
+        return DEPTH24PLUS;
+    }
+    else if (str_equal(str, "depth24plus-stencil8")) {
+        return DEPTH24PLUS_STENCIL8;
+    }
+    else if (str_equal(str, "depth32float")) {
+        return DEPTH32FLOAT;
+    }
+    else if (str_equal(str, "depth32float-stencil8")) {
+        return DEPTH32FLOAT_STENCIL8;
+    }
+    else if (str_equal(str, "bc1-rgba-unorm")) {
+        return BC1_RGBA_UNORM;
+    }
+    else if (str_equal(str, "bc1-rgba-unorm-srgb")) {
+        return BC1_RGBA_UNORM_SRGB;
+    }
+    else if (str_equal(str, "bc2-rgba-unorm")) {
+        return BC2_RGBA_UNORM;
+    }
+    else if (str_equal(str, "bc2-rgba-unorm-srgb")) {
+        return BC2_RGBA_UNORM_SRGB;
+    }
+    else if (str_equal(str, "bc3-rgba-unorm")) {
+        return BC3_RGBA_UNORM;
+    }
+    else if (str_equal(str, "bc3-rgba-unorm-srgb")) {
+        return BC3_RGBA_UNORM_SRGB;
+    }
+    else if (str_equal(str, "bc4-r-unorm")) {
+        return BC4_R_UNORM;
+    }
+    else if (str_equal(str, "bc4-r-snorm")) {
+        return BC4_R_SNORM;
+    }
+    else if (str_equal(str, "bc5-rg-unorm")) {
+        return BC5_RG_UNORM;
+    }
+    else if (str_equal(str, "bc5-rg-snorm")) {
+        return BC5_RG_SNORM;
+    }
+    else if (str_equal(str, "bc6h-rgb-ufloat")) {
+        return BC6H_RGB_UFLOAT;
+    }
+    else if (str_equal(str, "bc6h-rgb-float")) {
+        return BC6H_RGB_FLOAT;
+    }
+    else if (str_equal(str, "bc7-rgba-unorm")) {
+        return BC7_RGBA_UNORM;
+    }
+    else if (str_equal(str, "bc7-rgba-unorm-srgb")) {
+        return BC7_RGBA_UNORM_SRGB;
+    }
+    else if (str_equal(str, "etc2-rgb8unorm")) {
+        return ETC2_RGB8UNORM;
+    }
+    else if (str_equal(str, "etc2-rgb8unorm-srgb")) {
+        return ETC2_RGB8UNORM_SRGB;
+    }
+    else if (str_equal(str, "etc2-rgb8a1unorm")) {
+        return ETC2_RGB8A1UNORM;
+    }
+    else if (str_equal(str, "etc2-rgb8a1unorm-srgb")) {
+        return ETC2_RGB8A1UNORM_SRGB;
+    }
+    else if (str_equal(str, "etc2-rgba8unorm")) {
+        return ETC2_RGBA8UNORM;
+    }
+    else if (str_equal(str, "etc2-rgba8unorm-srgb")) {
+        return ETC2_RGBA8UNORM_SRGB;
+    }
+    else if (str_equal(str, "eac-r11unorm")) {
+        return EAC_R11UNORM;
+    }
+    else if (str_equal(str, "eac-r11snorm")) {
+        return EAC_R11SNORM;
+    }
+    else if (str_equal(str, "eac-rg11unorm")) {
+        return EAC_RG11UNORM;
+    }
+    else if (str_equal(str, "eac-rg11snorm")) {
+        return EAC_RG11SNORM;
+    }
+    else if (str_equal(str, "astc-4x4-unorm")) {
+        return ASTC_4X4_UNORM;
+    }
+    else if (str_equal(str, "astc-4x4-unorm-srgb")) {
+        return ASTC_4X4_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-5x4-unorm")) {
+        return ASTC_5X4_UNORM;
+    }
+    else if (str_equal(str, "astc-5x4-unorm-srgb")) {
+        return ASTC_5X4_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-5x5-unorm")) {
+        return ASTC_5X5_UNORM;
+    }
+    else if (str_equal(str, "astc-5x5-unorm-srgb")) {
+        return ASTC_5X5_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-6x5-unorm")) {
+        return ASTC_6X5_UNORM;
+    }
+    else if (str_equal(str, "astc-6x5-unorm-srgb")) {
+        return ASTC_6X5_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-6x6-unorm")) {
+        return ASTC_6X6_UNORM;
+    }
+    else if (str_equal(str, "astc-6x6-unorm-srgb")) {
+        return ASTC_6X6_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-8x5-unorm")) {
+        return ASTC_8X5_UNORM;
+    }
+    else if (str_equal(str, "astc-8x5-unorm-srgb")) {
+        return ASTC_8X5_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-8x6-unorm")) {
+        return ASTC_8X6_UNORM;
+    }
+    else if (str_equal(str, "astc-8x6-unorm-srgb")) {
+        return ASTC_8X6_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-8x8-unorm")) {
+        return ASTC_8X8_UNORM;
+    }
+    else if (str_equal(str, "astc-8x8-unorm-srgb")) {
+        return ASTC_8X8_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-10x5-unorm")) {
+        return ASTC_10X5_UNORM;
+    }
+    else if (str_equal(str, "astc-10x5-unorm-srgb")) {
+        return ASTC_10X5_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-10x6-unorm")) {
+        return ASTC_10X6_UNORM;
+    }
+    else if (str_equal(str, "astc-10x6-unorm-srgb")) {
+        return ASTC_10X6_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-10x8-unorm")) {
+        return ASTC_10X8_UNORM;
+    }
+    else if (str_equal(str, "astc-10x8-unorm-srgb")) {
+        return ASTC_10X8_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-10x10-unorm")) {
+        return ASTC_10X10_UNORM;
+    }
+    else if (str_equal(str, "astc-10x10-unorm-srgb")) {
+        return ASTC_10X10_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-12x10-unorm")) {
+        return ASTC_12X10_UNORM;
+    }
+    else if (str_equal(str, "astc-12x10-unorm-srgb")) {
+        return ASTC_12X10_UNORM_SRGB;
+    }
+    else if (str_equal(str, "astc-12x12-unorm")) {
+        return ASTC_12X12_UNORM;
+    }
+    else if (str_equal(str, "astc-12x12-unorm-srgb")) {
+        return ASTC_12X12_UNORM_SRGB;
+    }
+    else {
+        // Default to first value for invalid input
+        return R8UNORM;
+    }
+}
+
+GPUTextureFormat::GPUTextureFormat(Value v) noexcept : emlite::Val(GPUTextureFormat::to_string(v)), value_(v) {}
+GPUTextureFormat::GPUTextureFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUTextureFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUTextureFormat::GPUTextureFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUTextureFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUTextureFormat GPUTextureFormat::take_ownership(Handle h) noexcept { return GPUTextureFormat(h); }
 GPUTextureFormat GPUTextureFormat::clone() const noexcept { return *this; }
+const char* GPUTextureFormat::to_string(GPUTextureFormat::Value value_) noexcept {
+    switch (value_) {
+        case R8UNORM:
+            return "r8unorm";
+        case R8SNORM:
+            return "r8snorm";
+        case R8UINT:
+            return "r8uint";
+        case R8SINT:
+            return "r8sint";
+        case R16UNORM:
+            return "r16unorm";
+        case R16SNORM:
+            return "r16snorm";
+        case R16UINT:
+            return "r16uint";
+        case R16SINT:
+            return "r16sint";
+        case R16FLOAT:
+            return "r16float";
+        case RG8UNORM:
+            return "rg8unorm";
+        case RG8SNORM:
+            return "rg8snorm";
+        case RG8UINT:
+            return "rg8uint";
+        case RG8SINT:
+            return "rg8sint";
+        case R32UINT:
+            return "r32uint";
+        case R32SINT:
+            return "r32sint";
+        case R32FLOAT:
+            return "r32float";
+        case RG16UNORM:
+            return "rg16unorm";
+        case RG16SNORM:
+            return "rg16snorm";
+        case RG16UINT:
+            return "rg16uint";
+        case RG16SINT:
+            return "rg16sint";
+        case RG16FLOAT:
+            return "rg16float";
+        case RGBA8UNORM:
+            return "rgba8unorm";
+        case RGBA8UNORM_SRGB:
+            return "rgba8unorm-srgb";
+        case RGBA8SNORM:
+            return "rgba8snorm";
+        case RGBA8UINT:
+            return "rgba8uint";
+        case RGBA8SINT:
+            return "rgba8sint";
+        case BGRA8UNORM:
+            return "bgra8unorm";
+        case BGRA8UNORM_SRGB:
+            return "bgra8unorm-srgb";
+        case RGB9E5UFLOAT:
+            return "rgb9e5ufloat";
+        case RGB10A2UINT:
+            return "rgb10a2uint";
+        case RGB10A2UNORM:
+            return "rgb10a2unorm";
+        case RG11B10UFLOAT:
+            return "rg11b10ufloat";
+        case RG32UINT:
+            return "rg32uint";
+        case RG32SINT:
+            return "rg32sint";
+        case RG32FLOAT:
+            return "rg32float";
+        case RGBA16UNORM:
+            return "rgba16unorm";
+        case RGBA16SNORM:
+            return "rgba16snorm";
+        case RGBA16UINT:
+            return "rgba16uint";
+        case RGBA16SINT:
+            return "rgba16sint";
+        case RGBA16FLOAT:
+            return "rgba16float";
+        case RGBA32UINT:
+            return "rgba32uint";
+        case RGBA32SINT:
+            return "rgba32sint";
+        case RGBA32FLOAT:
+            return "rgba32float";
+        case STENCIL8:
+            return "stencil8";
+        case DEPTH16UNORM:
+            return "depth16unorm";
+        case DEPTH24PLUS:
+            return "depth24plus";
+        case DEPTH24PLUS_STENCIL8:
+            return "depth24plus-stencil8";
+        case DEPTH32FLOAT:
+            return "depth32float";
+        case DEPTH32FLOAT_STENCIL8:
+            return "depth32float-stencil8";
+        case BC1_RGBA_UNORM:
+            return "bc1-rgba-unorm";
+        case BC1_RGBA_UNORM_SRGB:
+            return "bc1-rgba-unorm-srgb";
+        case BC2_RGBA_UNORM:
+            return "bc2-rgba-unorm";
+        case BC2_RGBA_UNORM_SRGB:
+            return "bc2-rgba-unorm-srgb";
+        case BC3_RGBA_UNORM:
+            return "bc3-rgba-unorm";
+        case BC3_RGBA_UNORM_SRGB:
+            return "bc3-rgba-unorm-srgb";
+        case BC4_R_UNORM:
+            return "bc4-r-unorm";
+        case BC4_R_SNORM:
+            return "bc4-r-snorm";
+        case BC5_RG_UNORM:
+            return "bc5-rg-unorm";
+        case BC5_RG_SNORM:
+            return "bc5-rg-snorm";
+        case BC6H_RGB_UFLOAT:
+            return "bc6h-rgb-ufloat";
+        case BC6H_RGB_FLOAT:
+            return "bc6h-rgb-float";
+        case BC7_RGBA_UNORM:
+            return "bc7-rgba-unorm";
+        case BC7_RGBA_UNORM_SRGB:
+            return "bc7-rgba-unorm-srgb";
+        case ETC2_RGB8UNORM:
+            return "etc2-rgb8unorm";
+        case ETC2_RGB8UNORM_SRGB:
+            return "etc2-rgb8unorm-srgb";
+        case ETC2_RGB8A1UNORM:
+            return "etc2-rgb8a1unorm";
+        case ETC2_RGB8A1UNORM_SRGB:
+            return "etc2-rgb8a1unorm-srgb";
+        case ETC2_RGBA8UNORM:
+            return "etc2-rgba8unorm";
+        case ETC2_RGBA8UNORM_SRGB:
+            return "etc2-rgba8unorm-srgb";
+        case EAC_R11UNORM:
+            return "eac-r11unorm";
+        case EAC_R11SNORM:
+            return "eac-r11snorm";
+        case EAC_RG11UNORM:
+            return "eac-rg11unorm";
+        case EAC_RG11SNORM:
+            return "eac-rg11snorm";
+        case ASTC_4X4_UNORM:
+            return "astc-4x4-unorm";
+        case ASTC_4X4_UNORM_SRGB:
+            return "astc-4x4-unorm-srgb";
+        case ASTC_5X4_UNORM:
+            return "astc-5x4-unorm";
+        case ASTC_5X4_UNORM_SRGB:
+            return "astc-5x4-unorm-srgb";
+        case ASTC_5X5_UNORM:
+            return "astc-5x5-unorm";
+        case ASTC_5X5_UNORM_SRGB:
+            return "astc-5x5-unorm-srgb";
+        case ASTC_6X5_UNORM:
+            return "astc-6x5-unorm";
+        case ASTC_6X5_UNORM_SRGB:
+            return "astc-6x5-unorm-srgb";
+        case ASTC_6X6_UNORM:
+            return "astc-6x6-unorm";
+        case ASTC_6X6_UNORM_SRGB:
+            return "astc-6x6-unorm-srgb";
+        case ASTC_8X5_UNORM:
+            return "astc-8x5-unorm";
+        case ASTC_8X5_UNORM_SRGB:
+            return "astc-8x5-unorm-srgb";
+        case ASTC_8X6_UNORM:
+            return "astc-8x6-unorm";
+        case ASTC_8X6_UNORM_SRGB:
+            return "astc-8x6-unorm-srgb";
+        case ASTC_8X8_UNORM:
+            return "astc-8x8-unorm";
+        case ASTC_8X8_UNORM_SRGB:
+            return "astc-8x8-unorm-srgb";
+        case ASTC_10X5_UNORM:
+            return "astc-10x5-unorm";
+        case ASTC_10X5_UNORM_SRGB:
+            return "astc-10x5-unorm-srgb";
+        case ASTC_10X6_UNORM:
+            return "astc-10x6-unorm";
+        case ASTC_10X6_UNORM_SRGB:
+            return "astc-10x6-unorm-srgb";
+        case ASTC_10X8_UNORM:
+            return "astc-10x8-unorm";
+        case ASTC_10X8_UNORM_SRGB:
+            return "astc-10x8-unorm-srgb";
+        case ASTC_10X10_UNORM:
+            return "astc-10x10-unorm";
+        case ASTC_10X10_UNORM_SRGB:
+            return "astc-10x10-unorm-srgb";
+        case ASTC_12X10_UNORM:
+            return "astc-12x10-unorm";
+        case ASTC_12X10_UNORM_SRGB:
+            return "astc-12x10-unorm-srgb";
+        case ASTC_12X12_UNORM:
+            return "astc-12x12-unorm";
+        case ASTC_12X12_UNORM_SRGB:
+            return "astc-12x12-unorm-srgb";
+        default:
+            return "r8unorm"; // fallback to first value
+    }
+}
 
-GPUAddressMode::GPUAddressMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUAddressMode::GPUAddressMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUAddressMode::Value GPUAddressMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "clamp-to-edge")) {
+        return CLAMP_TO_EDGE;
+    }
+    else if (str_equal(str, "repeat")) {
+        return REPEAT;
+    }
+    else if (str_equal(str, "mirror-repeat")) {
+        return MIRROR_REPEAT;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLAMP_TO_EDGE;
+    }
+}
+
+GPUAddressMode::GPUAddressMode(Value v) noexcept : emlite::Val(GPUAddressMode::to_string(v)), value_(v) {}
+GPUAddressMode::GPUAddressMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUAddressMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUAddressMode::GPUAddressMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUAddressMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUAddressMode GPUAddressMode::take_ownership(Handle h) noexcept { return GPUAddressMode(h); }
 GPUAddressMode GPUAddressMode::clone() const noexcept { return *this; }
+const char* GPUAddressMode::to_string(GPUAddressMode::Value value_) noexcept {
+    switch (value_) {
+        case CLAMP_TO_EDGE:
+            return "clamp-to-edge";
+        case REPEAT:
+            return "repeat";
+        case MIRROR_REPEAT:
+            return "mirror-repeat";
+        default:
+            return "clamp-to-edge"; // fallback to first value
+    }
+}
 
-GPUFilterMode::GPUFilterMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUFilterMode::GPUFilterMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUFilterMode::Value GPUFilterMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "nearest")) {
+        return NEAREST;
+    }
+    else if (str_equal(str, "linear")) {
+        return LINEAR;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEAREST;
+    }
+}
+
+GPUFilterMode::GPUFilterMode(Value v) noexcept : emlite::Val(GPUFilterMode::to_string(v)), value_(v) {}
+GPUFilterMode::GPUFilterMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUFilterMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUFilterMode::GPUFilterMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUFilterMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUFilterMode GPUFilterMode::take_ownership(Handle h) noexcept { return GPUFilterMode(h); }
 GPUFilterMode GPUFilterMode::clone() const noexcept { return *this; }
+const char* GPUFilterMode::to_string(GPUFilterMode::Value value_) noexcept {
+    switch (value_) {
+        case NEAREST:
+            return "nearest";
+        case LINEAR:
+            return "linear";
+        default:
+            return "nearest"; // fallback to first value
+    }
+}
 
-GPUMipmapFilterMode::GPUMipmapFilterMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUMipmapFilterMode::GPUMipmapFilterMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUMipmapFilterMode::Value GPUMipmapFilterMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "nearest")) {
+        return NEAREST;
+    }
+    else if (str_equal(str, "linear")) {
+        return LINEAR;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEAREST;
+    }
+}
+
+GPUMipmapFilterMode::GPUMipmapFilterMode(Value v) noexcept : emlite::Val(GPUMipmapFilterMode::to_string(v)), value_(v) {}
+GPUMipmapFilterMode::GPUMipmapFilterMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUMipmapFilterMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUMipmapFilterMode::GPUMipmapFilterMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUMipmapFilterMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUMipmapFilterMode GPUMipmapFilterMode::take_ownership(Handle h) noexcept { return GPUMipmapFilterMode(h); }
 GPUMipmapFilterMode GPUMipmapFilterMode::clone() const noexcept { return *this; }
+const char* GPUMipmapFilterMode::to_string(GPUMipmapFilterMode::Value value_) noexcept {
+    switch (value_) {
+        case NEAREST:
+            return "nearest";
+        case LINEAR:
+            return "linear";
+        default:
+            return "nearest"; // fallback to first value
+    }
+}
 
-GPUCompareFunction::GPUCompareFunction(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUCompareFunction::GPUCompareFunction(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUCompareFunction::Value GPUCompareFunction::from_string(const char* str) noexcept {
+    if (str_equal(str, "never")) {
+        return NEVER;
+    }
+    else if (str_equal(str, "less")) {
+        return LESS;
+    }
+    else if (str_equal(str, "equal")) {
+        return EQUAL;
+    }
+    else if (str_equal(str, "less-equal")) {
+        return LESS_EQUAL;
+    }
+    else if (str_equal(str, "greater")) {
+        return GREATER;
+    }
+    else if (str_equal(str, "not-equal")) {
+        return NOT_EQUAL;
+    }
+    else if (str_equal(str, "greater-equal")) {
+        return GREATER_EQUAL;
+    }
+    else if (str_equal(str, "always")) {
+        return ALWAYS;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEVER;
+    }
+}
+
+GPUCompareFunction::GPUCompareFunction(Value v) noexcept : emlite::Val(GPUCompareFunction::to_string(v)), value_(v) {}
+GPUCompareFunction::GPUCompareFunction(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUCompareFunction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUCompareFunction::GPUCompareFunction(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUCompareFunction::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUCompareFunction GPUCompareFunction::take_ownership(Handle h) noexcept { return GPUCompareFunction(h); }
 GPUCompareFunction GPUCompareFunction::clone() const noexcept { return *this; }
+const char* GPUCompareFunction::to_string(GPUCompareFunction::Value value_) noexcept {
+    switch (value_) {
+        case NEVER:
+            return "never";
+        case LESS:
+            return "less";
+        case EQUAL:
+            return "equal";
+        case LESS_EQUAL:
+            return "less-equal";
+        case GREATER:
+            return "greater";
+        case NOT_EQUAL:
+            return "not-equal";
+        case GREATER_EQUAL:
+            return "greater-equal";
+        case ALWAYS:
+            return "always";
+        default:
+            return "never"; // fallback to first value
+    }
+}
 
-GPUBufferBindingType::GPUBufferBindingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUBufferBindingType::GPUBufferBindingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUBufferBindingType::Value GPUBufferBindingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "uniform")) {
+        return UNIFORM;
+    }
+    else if (str_equal(str, "storage")) {
+        return STORAGE;
+    }
+    else if (str_equal(str, "read-only-storage")) {
+        return READ_ONLY_STORAGE;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNIFORM;
+    }
+}
+
+GPUBufferBindingType::GPUBufferBindingType(Value v) noexcept : emlite::Val(GPUBufferBindingType::to_string(v)), value_(v) {}
+GPUBufferBindingType::GPUBufferBindingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUBufferBindingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUBufferBindingType::GPUBufferBindingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUBufferBindingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUBufferBindingType GPUBufferBindingType::take_ownership(Handle h) noexcept { return GPUBufferBindingType(h); }
 GPUBufferBindingType GPUBufferBindingType::clone() const noexcept { return *this; }
+const char* GPUBufferBindingType::to_string(GPUBufferBindingType::Value value_) noexcept {
+    switch (value_) {
+        case UNIFORM:
+            return "uniform";
+        case STORAGE:
+            return "storage";
+        case READ_ONLY_STORAGE:
+            return "read-only-storage";
+        default:
+            return "uniform"; // fallback to first value
+    }
+}
 
-GPUSamplerBindingType::GPUSamplerBindingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUSamplerBindingType::GPUSamplerBindingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUSamplerBindingType::Value GPUSamplerBindingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "filtering")) {
+        return FILTERING;
+    }
+    else if (str_equal(str, "non-filtering")) {
+        return NON_FILTERING;
+    }
+    else if (str_equal(str, "comparison")) {
+        return COMPARISON;
+    }
+    else {
+        // Default to first value for invalid input
+        return FILTERING;
+    }
+}
+
+GPUSamplerBindingType::GPUSamplerBindingType(Value v) noexcept : emlite::Val(GPUSamplerBindingType::to_string(v)), value_(v) {}
+GPUSamplerBindingType::GPUSamplerBindingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUSamplerBindingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUSamplerBindingType::GPUSamplerBindingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUSamplerBindingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUSamplerBindingType GPUSamplerBindingType::take_ownership(Handle h) noexcept { return GPUSamplerBindingType(h); }
 GPUSamplerBindingType GPUSamplerBindingType::clone() const noexcept { return *this; }
+const char* GPUSamplerBindingType::to_string(GPUSamplerBindingType::Value value_) noexcept {
+    switch (value_) {
+        case FILTERING:
+            return "filtering";
+        case NON_FILTERING:
+            return "non-filtering";
+        case COMPARISON:
+            return "comparison";
+        default:
+            return "filtering"; // fallback to first value
+    }
+}
 
-GPUTextureSampleType::GPUTextureSampleType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUTextureSampleType::GPUTextureSampleType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUTextureSampleType::Value GPUTextureSampleType::from_string(const char* str) noexcept {
+    if (str_equal(str, "float")) {
+        return FLOAT_;
+    }
+    else if (str_equal(str, "unfilterable-float")) {
+        return UNFILTERABLE_FLOAT;
+    }
+    else if (str_equal(str, "depth")) {
+        return DEPTH;
+    }
+    else if (str_equal(str, "sint")) {
+        return SINT;
+    }
+    else if (str_equal(str, "uint")) {
+        return UINT;
+    }
+    else {
+        // Default to first value for invalid input
+        return FLOAT_;
+    }
+}
+
+GPUTextureSampleType::GPUTextureSampleType(Value v) noexcept : emlite::Val(GPUTextureSampleType::to_string(v)), value_(v) {}
+GPUTextureSampleType::GPUTextureSampleType(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUTextureSampleType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUTextureSampleType::GPUTextureSampleType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUTextureSampleType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUTextureSampleType GPUTextureSampleType::take_ownership(Handle h) noexcept { return GPUTextureSampleType(h); }
 GPUTextureSampleType GPUTextureSampleType::clone() const noexcept { return *this; }
+const char* GPUTextureSampleType::to_string(GPUTextureSampleType::Value value_) noexcept {
+    switch (value_) {
+        case FLOAT_:
+            return "float";
+        case UNFILTERABLE_FLOAT:
+            return "unfilterable-float";
+        case DEPTH:
+            return "depth";
+        case SINT:
+            return "sint";
+        case UINT:
+            return "uint";
+        default:
+            return "float"; // fallback to first value
+    }
+}
 
-GPUStorageTextureAccess::GPUStorageTextureAccess(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUStorageTextureAccess::GPUStorageTextureAccess(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUStorageTextureAccess::Value GPUStorageTextureAccess::from_string(const char* str) noexcept {
+    if (str_equal(str, "write-only")) {
+        return WRITE_ONLY;
+    }
+    else if (str_equal(str, "read-only")) {
+        return READ_ONLY;
+    }
+    else if (str_equal(str, "read-write")) {
+        return READ_WRITE;
+    }
+    else {
+        // Default to first value for invalid input
+        return WRITE_ONLY;
+    }
+}
+
+GPUStorageTextureAccess::GPUStorageTextureAccess(Value v) noexcept : emlite::Val(GPUStorageTextureAccess::to_string(v)), value_(v) {}
+GPUStorageTextureAccess::GPUStorageTextureAccess(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUStorageTextureAccess::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUStorageTextureAccess::GPUStorageTextureAccess(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUStorageTextureAccess::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUStorageTextureAccess GPUStorageTextureAccess::take_ownership(Handle h) noexcept { return GPUStorageTextureAccess(h); }
 GPUStorageTextureAccess GPUStorageTextureAccess::clone() const noexcept { return *this; }
+const char* GPUStorageTextureAccess::to_string(GPUStorageTextureAccess::Value value_) noexcept {
+    switch (value_) {
+        case WRITE_ONLY:
+            return "write-only";
+        case READ_ONLY:
+            return "read-only";
+        case READ_WRITE:
+            return "read-write";
+        default:
+            return "write-only"; // fallback to first value
+    }
+}
 
-GPUCompilationMessageType::GPUCompilationMessageType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUCompilationMessageType::GPUCompilationMessageType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUCompilationMessageType::Value GPUCompilationMessageType::from_string(const char* str) noexcept {
+    if (str_equal(str, "error")) {
+        return ERROR;
+    }
+    else if (str_equal(str, "warning")) {
+        return WARNING;
+    }
+    else if (str_equal(str, "info")) {
+        return INFO;
+    }
+    else {
+        // Default to first value for invalid input
+        return ERROR;
+    }
+}
+
+GPUCompilationMessageType::GPUCompilationMessageType(Value v) noexcept : emlite::Val(GPUCompilationMessageType::to_string(v)), value_(v) {}
+GPUCompilationMessageType::GPUCompilationMessageType(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUCompilationMessageType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUCompilationMessageType::GPUCompilationMessageType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUCompilationMessageType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUCompilationMessageType GPUCompilationMessageType::take_ownership(Handle h) noexcept { return GPUCompilationMessageType(h); }
 GPUCompilationMessageType GPUCompilationMessageType::clone() const noexcept { return *this; }
+const char* GPUCompilationMessageType::to_string(GPUCompilationMessageType::Value value_) noexcept {
+    switch (value_) {
+        case ERROR:
+            return "error";
+        case WARNING:
+            return "warning";
+        case INFO:
+            return "info";
+        default:
+            return "error"; // fallback to first value
+    }
+}
 
-GPUPipelineErrorReason::GPUPipelineErrorReason(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUPipelineErrorReason::GPUPipelineErrorReason(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUPipelineErrorReason::Value GPUPipelineErrorReason::from_string(const char* str) noexcept {
+    if (str_equal(str, "validation")) {
+        return VALIDATION;
+    }
+    else if (str_equal(str, "internal")) {
+        return INTERNAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return VALIDATION;
+    }
+}
+
+GPUPipelineErrorReason::GPUPipelineErrorReason(Value v) noexcept : emlite::Val(GPUPipelineErrorReason::to_string(v)), value_(v) {}
+GPUPipelineErrorReason::GPUPipelineErrorReason(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUPipelineErrorReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUPipelineErrorReason::GPUPipelineErrorReason(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUPipelineErrorReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUPipelineErrorReason GPUPipelineErrorReason::take_ownership(Handle h) noexcept { return GPUPipelineErrorReason(h); }
 GPUPipelineErrorReason GPUPipelineErrorReason::clone() const noexcept { return *this; }
+const char* GPUPipelineErrorReason::to_string(GPUPipelineErrorReason::Value value_) noexcept {
+    switch (value_) {
+        case VALIDATION:
+            return "validation";
+        case INTERNAL:
+            return "internal";
+        default:
+            return "validation"; // fallback to first value
+    }
+}
 
-GPUAutoLayoutMode::GPUAutoLayoutMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUAutoLayoutMode::GPUAutoLayoutMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUAutoLayoutMode::Value GPUAutoLayoutMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+GPUAutoLayoutMode::GPUAutoLayoutMode(Value v) noexcept : emlite::Val(GPUAutoLayoutMode::to_string(v)), value_(v) {}
+GPUAutoLayoutMode::GPUAutoLayoutMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUAutoLayoutMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUAutoLayoutMode::GPUAutoLayoutMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUAutoLayoutMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUAutoLayoutMode GPUAutoLayoutMode::take_ownership(Handle h) noexcept { return GPUAutoLayoutMode(h); }
 GPUAutoLayoutMode GPUAutoLayoutMode::clone() const noexcept { return *this; }
+const char* GPUAutoLayoutMode::to_string(GPUAutoLayoutMode::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-GPUPrimitiveTopology::GPUPrimitiveTopology(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUPrimitiveTopology::GPUPrimitiveTopology(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUPrimitiveTopology::Value GPUPrimitiveTopology::from_string(const char* str) noexcept {
+    if (str_equal(str, "point-list")) {
+        return POINT_LIST;
+    }
+    else if (str_equal(str, "line-list")) {
+        return LINE_LIST;
+    }
+    else if (str_equal(str, "line-strip")) {
+        return LINE_STRIP;
+    }
+    else if (str_equal(str, "triangle-list")) {
+        return TRIANGLE_LIST;
+    }
+    else if (str_equal(str, "triangle-strip")) {
+        return TRIANGLE_STRIP;
+    }
+    else {
+        // Default to first value for invalid input
+        return POINT_LIST;
+    }
+}
+
+GPUPrimitiveTopology::GPUPrimitiveTopology(Value v) noexcept : emlite::Val(GPUPrimitiveTopology::to_string(v)), value_(v) {}
+GPUPrimitiveTopology::GPUPrimitiveTopology(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUPrimitiveTopology::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUPrimitiveTopology::GPUPrimitiveTopology(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUPrimitiveTopology::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUPrimitiveTopology GPUPrimitiveTopology::take_ownership(Handle h) noexcept { return GPUPrimitiveTopology(h); }
 GPUPrimitiveTopology GPUPrimitiveTopology::clone() const noexcept { return *this; }
+const char* GPUPrimitiveTopology::to_string(GPUPrimitiveTopology::Value value_) noexcept {
+    switch (value_) {
+        case POINT_LIST:
+            return "point-list";
+        case LINE_LIST:
+            return "line-list";
+        case LINE_STRIP:
+            return "line-strip";
+        case TRIANGLE_LIST:
+            return "triangle-list";
+        case TRIANGLE_STRIP:
+            return "triangle-strip";
+        default:
+            return "point-list"; // fallback to first value
+    }
+}
 
-GPUFrontFace::GPUFrontFace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUFrontFace::GPUFrontFace(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUFrontFace::Value GPUFrontFace::from_string(const char* str) noexcept {
+    if (str_equal(str, "ccw")) {
+        return CCW;
+    }
+    else if (str_equal(str, "cw")) {
+        return CW;
+    }
+    else {
+        // Default to first value for invalid input
+        return CCW;
+    }
+}
+
+GPUFrontFace::GPUFrontFace(Value v) noexcept : emlite::Val(GPUFrontFace::to_string(v)), value_(v) {}
+GPUFrontFace::GPUFrontFace(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUFrontFace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUFrontFace::GPUFrontFace(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUFrontFace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUFrontFace GPUFrontFace::take_ownership(Handle h) noexcept { return GPUFrontFace(h); }
 GPUFrontFace GPUFrontFace::clone() const noexcept { return *this; }
+const char* GPUFrontFace::to_string(GPUFrontFace::Value value_) noexcept {
+    switch (value_) {
+        case CCW:
+            return "ccw";
+        case CW:
+            return "cw";
+        default:
+            return "ccw"; // fallback to first value
+    }
+}
 
-GPUCullMode::GPUCullMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUCullMode::GPUCullMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUCullMode::Value GPUCullMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "front")) {
+        return FRONT;
+    }
+    else if (str_equal(str, "back")) {
+        return BACK;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+GPUCullMode::GPUCullMode(Value v) noexcept : emlite::Val(GPUCullMode::to_string(v)), value_(v) {}
+GPUCullMode::GPUCullMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUCullMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUCullMode::GPUCullMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUCullMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUCullMode GPUCullMode::take_ownership(Handle h) noexcept { return GPUCullMode(h); }
 GPUCullMode GPUCullMode::clone() const noexcept { return *this; }
+const char* GPUCullMode::to_string(GPUCullMode::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case FRONT:
+            return "front";
+        case BACK:
+            return "back";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-GPUBlendFactor::GPUBlendFactor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUBlendFactor::GPUBlendFactor(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUBlendFactor::Value GPUBlendFactor::from_string(const char* str) noexcept {
+    if (str_equal(str, "zero")) {
+        return ZERO;
+    }
+    else if (str_equal(str, "one")) {
+        return ONE;
+    }
+    else if (str_equal(str, "src")) {
+        return SRC;
+    }
+    else if (str_equal(str, "one-minus-src")) {
+        return ONE_MINUS_SRC;
+    }
+    else if (str_equal(str, "src-alpha")) {
+        return SRC_ALPHA;
+    }
+    else if (str_equal(str, "one-minus-src-alpha")) {
+        return ONE_MINUS_SRC_ALPHA;
+    }
+    else if (str_equal(str, "dst")) {
+        return DST;
+    }
+    else if (str_equal(str, "one-minus-dst")) {
+        return ONE_MINUS_DST;
+    }
+    else if (str_equal(str, "dst-alpha")) {
+        return DST_ALPHA;
+    }
+    else if (str_equal(str, "one-minus-dst-alpha")) {
+        return ONE_MINUS_DST_ALPHA;
+    }
+    else if (str_equal(str, "src-alpha-saturated")) {
+        return SRC_ALPHA_SATURATED;
+    }
+    else if (str_equal(str, "constant")) {
+        return CONSTANT;
+    }
+    else if (str_equal(str, "one-minus-constant")) {
+        return ONE_MINUS_CONSTANT;
+    }
+    else if (str_equal(str, "src1")) {
+        return SRC1;
+    }
+    else if (str_equal(str, "one-minus-src1")) {
+        return ONE_MINUS_SRC1;
+    }
+    else if (str_equal(str, "src1-alpha")) {
+        return SRC1_ALPHA;
+    }
+    else if (str_equal(str, "one-minus-src1-alpha")) {
+        return ONE_MINUS_SRC1_ALPHA;
+    }
+    else {
+        // Default to first value for invalid input
+        return ZERO;
+    }
+}
+
+GPUBlendFactor::GPUBlendFactor(Value v) noexcept : emlite::Val(GPUBlendFactor::to_string(v)), value_(v) {}
+GPUBlendFactor::GPUBlendFactor(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUBlendFactor::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUBlendFactor::GPUBlendFactor(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUBlendFactor::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUBlendFactor GPUBlendFactor::take_ownership(Handle h) noexcept { return GPUBlendFactor(h); }
 GPUBlendFactor GPUBlendFactor::clone() const noexcept { return *this; }
+const char* GPUBlendFactor::to_string(GPUBlendFactor::Value value_) noexcept {
+    switch (value_) {
+        case ZERO:
+            return "zero";
+        case ONE:
+            return "one";
+        case SRC:
+            return "src";
+        case ONE_MINUS_SRC:
+            return "one-minus-src";
+        case SRC_ALPHA:
+            return "src-alpha";
+        case ONE_MINUS_SRC_ALPHA:
+            return "one-minus-src-alpha";
+        case DST:
+            return "dst";
+        case ONE_MINUS_DST:
+            return "one-minus-dst";
+        case DST_ALPHA:
+            return "dst-alpha";
+        case ONE_MINUS_DST_ALPHA:
+            return "one-minus-dst-alpha";
+        case SRC_ALPHA_SATURATED:
+            return "src-alpha-saturated";
+        case CONSTANT:
+            return "constant";
+        case ONE_MINUS_CONSTANT:
+            return "one-minus-constant";
+        case SRC1:
+            return "src1";
+        case ONE_MINUS_SRC1:
+            return "one-minus-src1";
+        case SRC1_ALPHA:
+            return "src1-alpha";
+        case ONE_MINUS_SRC1_ALPHA:
+            return "one-minus-src1-alpha";
+        default:
+            return "zero"; // fallback to first value
+    }
+}
 
-GPUBlendOperation::GPUBlendOperation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUBlendOperation::GPUBlendOperation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUBlendOperation::Value GPUBlendOperation::from_string(const char* str) noexcept {
+    if (str_equal(str, "add")) {
+        return ADD;
+    }
+    else if (str_equal(str, "subtract")) {
+        return SUBTRACT;
+    }
+    else if (str_equal(str, "reverse-subtract")) {
+        return REVERSE_SUBTRACT;
+    }
+    else if (str_equal(str, "min")) {
+        return MIN;
+    }
+    else if (str_equal(str, "max")) {
+        return MAX;
+    }
+    else {
+        // Default to first value for invalid input
+        return ADD;
+    }
+}
+
+GPUBlendOperation::GPUBlendOperation(Value v) noexcept : emlite::Val(GPUBlendOperation::to_string(v)), value_(v) {}
+GPUBlendOperation::GPUBlendOperation(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUBlendOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUBlendOperation::GPUBlendOperation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUBlendOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUBlendOperation GPUBlendOperation::take_ownership(Handle h) noexcept { return GPUBlendOperation(h); }
 GPUBlendOperation GPUBlendOperation::clone() const noexcept { return *this; }
+const char* GPUBlendOperation::to_string(GPUBlendOperation::Value value_) noexcept {
+    switch (value_) {
+        case ADD:
+            return "add";
+        case SUBTRACT:
+            return "subtract";
+        case REVERSE_SUBTRACT:
+            return "reverse-subtract";
+        case MIN:
+            return "min";
+        case MAX:
+            return "max";
+        default:
+            return "add"; // fallback to first value
+    }
+}
 
-GPUStencilOperation::GPUStencilOperation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUStencilOperation::GPUStencilOperation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUStencilOperation::Value GPUStencilOperation::from_string(const char* str) noexcept {
+    if (str_equal(str, "keep")) {
+        return KEEP;
+    }
+    else if (str_equal(str, "zero")) {
+        return ZERO;
+    }
+    else if (str_equal(str, "replace")) {
+        return REPLACE;
+    }
+    else if (str_equal(str, "invert")) {
+        return INVERT;
+    }
+    else if (str_equal(str, "increment-clamp")) {
+        return INCREMENT_CLAMP;
+    }
+    else if (str_equal(str, "decrement-clamp")) {
+        return DECREMENT_CLAMP;
+    }
+    else if (str_equal(str, "increment-wrap")) {
+        return INCREMENT_WRAP;
+    }
+    else if (str_equal(str, "decrement-wrap")) {
+        return DECREMENT_WRAP;
+    }
+    else {
+        // Default to first value for invalid input
+        return KEEP;
+    }
+}
+
+GPUStencilOperation::GPUStencilOperation(Value v) noexcept : emlite::Val(GPUStencilOperation::to_string(v)), value_(v) {}
+GPUStencilOperation::GPUStencilOperation(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUStencilOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUStencilOperation::GPUStencilOperation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUStencilOperation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUStencilOperation GPUStencilOperation::take_ownership(Handle h) noexcept { return GPUStencilOperation(h); }
 GPUStencilOperation GPUStencilOperation::clone() const noexcept { return *this; }
+const char* GPUStencilOperation::to_string(GPUStencilOperation::Value value_) noexcept {
+    switch (value_) {
+        case KEEP:
+            return "keep";
+        case ZERO:
+            return "zero";
+        case REPLACE:
+            return "replace";
+        case INVERT:
+            return "invert";
+        case INCREMENT_CLAMP:
+            return "increment-clamp";
+        case DECREMENT_CLAMP:
+            return "decrement-clamp";
+        case INCREMENT_WRAP:
+            return "increment-wrap";
+        case DECREMENT_WRAP:
+            return "decrement-wrap";
+        default:
+            return "keep"; // fallback to first value
+    }
+}
 
-GPUIndexFormat::GPUIndexFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUIndexFormat::GPUIndexFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUIndexFormat::Value GPUIndexFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "uint16")) {
+        return UINT16;
+    }
+    else if (str_equal(str, "uint32")) {
+        return UINT32;
+    }
+    else {
+        // Default to first value for invalid input
+        return UINT16;
+    }
+}
+
+GPUIndexFormat::GPUIndexFormat(Value v) noexcept : emlite::Val(GPUIndexFormat::to_string(v)), value_(v) {}
+GPUIndexFormat::GPUIndexFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUIndexFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUIndexFormat::GPUIndexFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUIndexFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUIndexFormat GPUIndexFormat::take_ownership(Handle h) noexcept { return GPUIndexFormat(h); }
 GPUIndexFormat GPUIndexFormat::clone() const noexcept { return *this; }
+const char* GPUIndexFormat::to_string(GPUIndexFormat::Value value_) noexcept {
+    switch (value_) {
+        case UINT16:
+            return "uint16";
+        case UINT32:
+            return "uint32";
+        default:
+            return "uint16"; // fallback to first value
+    }
+}
 
-GPUVertexFormat::GPUVertexFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUVertexFormat::GPUVertexFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUVertexFormat::Value GPUVertexFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "uint8")) {
+        return UINT8;
+    }
+    else if (str_equal(str, "uint8x2")) {
+        return UINT8X2;
+    }
+    else if (str_equal(str, "uint8x4")) {
+        return UINT8X4;
+    }
+    else if (str_equal(str, "sint8")) {
+        return SINT8;
+    }
+    else if (str_equal(str, "sint8x2")) {
+        return SINT8X2;
+    }
+    else if (str_equal(str, "sint8x4")) {
+        return SINT8X4;
+    }
+    else if (str_equal(str, "unorm8")) {
+        return UNORM8;
+    }
+    else if (str_equal(str, "unorm8x2")) {
+        return UNORM8X2;
+    }
+    else if (str_equal(str, "unorm8x4")) {
+        return UNORM8X4;
+    }
+    else if (str_equal(str, "snorm8")) {
+        return SNORM8;
+    }
+    else if (str_equal(str, "snorm8x2")) {
+        return SNORM8X2;
+    }
+    else if (str_equal(str, "snorm8x4")) {
+        return SNORM8X4;
+    }
+    else if (str_equal(str, "uint16")) {
+        return UINT16;
+    }
+    else if (str_equal(str, "uint16x2")) {
+        return UINT16X2;
+    }
+    else if (str_equal(str, "uint16x4")) {
+        return UINT16X4;
+    }
+    else if (str_equal(str, "sint16")) {
+        return SINT16;
+    }
+    else if (str_equal(str, "sint16x2")) {
+        return SINT16X2;
+    }
+    else if (str_equal(str, "sint16x4")) {
+        return SINT16X4;
+    }
+    else if (str_equal(str, "unorm16")) {
+        return UNORM16;
+    }
+    else if (str_equal(str, "unorm16x2")) {
+        return UNORM16X2;
+    }
+    else if (str_equal(str, "unorm16x4")) {
+        return UNORM16X4;
+    }
+    else if (str_equal(str, "snorm16")) {
+        return SNORM16;
+    }
+    else if (str_equal(str, "snorm16x2")) {
+        return SNORM16X2;
+    }
+    else if (str_equal(str, "snorm16x4")) {
+        return SNORM16X4;
+    }
+    else if (str_equal(str, "float16")) {
+        return FLOAT16;
+    }
+    else if (str_equal(str, "float16x2")) {
+        return FLOAT16X2;
+    }
+    else if (str_equal(str, "float16x4")) {
+        return FLOAT16X4;
+    }
+    else if (str_equal(str, "float32")) {
+        return FLOAT32;
+    }
+    else if (str_equal(str, "float32x2")) {
+        return FLOAT32X2;
+    }
+    else if (str_equal(str, "float32x3")) {
+        return FLOAT32X3;
+    }
+    else if (str_equal(str, "float32x4")) {
+        return FLOAT32X4;
+    }
+    else if (str_equal(str, "uint32")) {
+        return UINT32;
+    }
+    else if (str_equal(str, "uint32x2")) {
+        return UINT32X2;
+    }
+    else if (str_equal(str, "uint32x3")) {
+        return UINT32X3;
+    }
+    else if (str_equal(str, "uint32x4")) {
+        return UINT32X4;
+    }
+    else if (str_equal(str, "sint32")) {
+        return SINT32;
+    }
+    else if (str_equal(str, "sint32x2")) {
+        return SINT32X2;
+    }
+    else if (str_equal(str, "sint32x3")) {
+        return SINT32X3;
+    }
+    else if (str_equal(str, "sint32x4")) {
+        return SINT32X4;
+    }
+    else if (str_equal(str, "unorm10-10-10-2")) {
+        return UNORM10_10_10_2;
+    }
+    else if (str_equal(str, "unorm8x4-bgra")) {
+        return UNORM8X4_BGRA;
+    }
+    else {
+        // Default to first value for invalid input
+        return UINT8;
+    }
+}
+
+GPUVertexFormat::GPUVertexFormat(Value v) noexcept : emlite::Val(GPUVertexFormat::to_string(v)), value_(v) {}
+GPUVertexFormat::GPUVertexFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUVertexFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUVertexFormat::GPUVertexFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUVertexFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUVertexFormat GPUVertexFormat::take_ownership(Handle h) noexcept { return GPUVertexFormat(h); }
 GPUVertexFormat GPUVertexFormat::clone() const noexcept { return *this; }
+const char* GPUVertexFormat::to_string(GPUVertexFormat::Value value_) noexcept {
+    switch (value_) {
+        case UINT8:
+            return "uint8";
+        case UINT8X2:
+            return "uint8x2";
+        case UINT8X4:
+            return "uint8x4";
+        case SINT8:
+            return "sint8";
+        case SINT8X2:
+            return "sint8x2";
+        case SINT8X4:
+            return "sint8x4";
+        case UNORM8:
+            return "unorm8";
+        case UNORM8X2:
+            return "unorm8x2";
+        case UNORM8X4:
+            return "unorm8x4";
+        case SNORM8:
+            return "snorm8";
+        case SNORM8X2:
+            return "snorm8x2";
+        case SNORM8X4:
+            return "snorm8x4";
+        case UINT16:
+            return "uint16";
+        case UINT16X2:
+            return "uint16x2";
+        case UINT16X4:
+            return "uint16x4";
+        case SINT16:
+            return "sint16";
+        case SINT16X2:
+            return "sint16x2";
+        case SINT16X4:
+            return "sint16x4";
+        case UNORM16:
+            return "unorm16";
+        case UNORM16X2:
+            return "unorm16x2";
+        case UNORM16X4:
+            return "unorm16x4";
+        case SNORM16:
+            return "snorm16";
+        case SNORM16X2:
+            return "snorm16x2";
+        case SNORM16X4:
+            return "snorm16x4";
+        case FLOAT16:
+            return "float16";
+        case FLOAT16X2:
+            return "float16x2";
+        case FLOAT16X4:
+            return "float16x4";
+        case FLOAT32:
+            return "float32";
+        case FLOAT32X2:
+            return "float32x2";
+        case FLOAT32X3:
+            return "float32x3";
+        case FLOAT32X4:
+            return "float32x4";
+        case UINT32:
+            return "uint32";
+        case UINT32X2:
+            return "uint32x2";
+        case UINT32X3:
+            return "uint32x3";
+        case UINT32X4:
+            return "uint32x4";
+        case SINT32:
+            return "sint32";
+        case SINT32X2:
+            return "sint32x2";
+        case SINT32X3:
+            return "sint32x3";
+        case SINT32X4:
+            return "sint32x4";
+        case UNORM10_10_10_2:
+            return "unorm10-10-10-2";
+        case UNORM8X4_BGRA:
+            return "unorm8x4-bgra";
+        default:
+            return "uint8"; // fallback to first value
+    }
+}
 
-GPUVertexStepMode::GPUVertexStepMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUVertexStepMode::GPUVertexStepMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUVertexStepMode::Value GPUVertexStepMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "vertex")) {
+        return VERTEX;
+    }
+    else if (str_equal(str, "instance")) {
+        return INSTANCE;
+    }
+    else {
+        // Default to first value for invalid input
+        return VERTEX;
+    }
+}
+
+GPUVertexStepMode::GPUVertexStepMode(Value v) noexcept : emlite::Val(GPUVertexStepMode::to_string(v)), value_(v) {}
+GPUVertexStepMode::GPUVertexStepMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUVertexStepMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUVertexStepMode::GPUVertexStepMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUVertexStepMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUVertexStepMode GPUVertexStepMode::take_ownership(Handle h) noexcept { return GPUVertexStepMode(h); }
 GPUVertexStepMode GPUVertexStepMode::clone() const noexcept { return *this; }
+const char* GPUVertexStepMode::to_string(GPUVertexStepMode::Value value_) noexcept {
+    switch (value_) {
+        case VERTEX:
+            return "vertex";
+        case INSTANCE:
+            return "instance";
+        default:
+            return "vertex"; // fallback to first value
+    }
+}
 
-GPULoadOp::GPULoadOp(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPULoadOp::GPULoadOp(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPULoadOp::Value GPULoadOp::from_string(const char* str) noexcept {
+    if (str_equal(str, "load")) {
+        return LOAD;
+    }
+    else if (str_equal(str, "clear")) {
+        return CLEAR;
+    }
+    else {
+        // Default to first value for invalid input
+        return LOAD;
+    }
+}
+
+GPULoadOp::GPULoadOp(Value v) noexcept : emlite::Val(GPULoadOp::to_string(v)), value_(v) {}
+GPULoadOp::GPULoadOp(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPULoadOp::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPULoadOp::GPULoadOp(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPULoadOp::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPULoadOp GPULoadOp::take_ownership(Handle h) noexcept { return GPULoadOp(h); }
 GPULoadOp GPULoadOp::clone() const noexcept { return *this; }
+const char* GPULoadOp::to_string(GPULoadOp::Value value_) noexcept {
+    switch (value_) {
+        case LOAD:
+            return "load";
+        case CLEAR:
+            return "clear";
+        default:
+            return "load"; // fallback to first value
+    }
+}
 
-GPUStoreOp::GPUStoreOp(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUStoreOp::GPUStoreOp(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUStoreOp::Value GPUStoreOp::from_string(const char* str) noexcept {
+    if (str_equal(str, "store")) {
+        return STORE;
+    }
+    else if (str_equal(str, "discard")) {
+        return DISCARD;
+    }
+    else {
+        // Default to first value for invalid input
+        return STORE;
+    }
+}
+
+GPUStoreOp::GPUStoreOp(Value v) noexcept : emlite::Val(GPUStoreOp::to_string(v)), value_(v) {}
+GPUStoreOp::GPUStoreOp(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUStoreOp::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUStoreOp::GPUStoreOp(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUStoreOp::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUStoreOp GPUStoreOp::take_ownership(Handle h) noexcept { return GPUStoreOp(h); }
 GPUStoreOp GPUStoreOp::clone() const noexcept { return *this; }
+const char* GPUStoreOp::to_string(GPUStoreOp::Value value_) noexcept {
+    switch (value_) {
+        case STORE:
+            return "store";
+        case DISCARD:
+            return "discard";
+        default:
+            return "store"; // fallback to first value
+    }
+}
 
-GPUQueryType::GPUQueryType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUQueryType::GPUQueryType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUQueryType::Value GPUQueryType::from_string(const char* str) noexcept {
+    if (str_equal(str, "occlusion")) {
+        return OCCLUSION;
+    }
+    else if (str_equal(str, "timestamp")) {
+        return TIMESTAMP;
+    }
+    else {
+        // Default to first value for invalid input
+        return OCCLUSION;
+    }
+}
+
+GPUQueryType::GPUQueryType(Value v) noexcept : emlite::Val(GPUQueryType::to_string(v)), value_(v) {}
+GPUQueryType::GPUQueryType(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUQueryType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUQueryType::GPUQueryType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUQueryType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUQueryType GPUQueryType::take_ownership(Handle h) noexcept { return GPUQueryType(h); }
 GPUQueryType GPUQueryType::clone() const noexcept { return *this; }
+const char* GPUQueryType::to_string(GPUQueryType::Value value_) noexcept {
+    switch (value_) {
+        case OCCLUSION:
+            return "occlusion";
+        case TIMESTAMP:
+            return "timestamp";
+        default:
+            return "occlusion"; // fallback to first value
+    }
+}
 
-GPUCanvasAlphaMode::GPUCanvasAlphaMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUCanvasAlphaMode::GPUCanvasAlphaMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUCanvasAlphaMode::Value GPUCanvasAlphaMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "opaque")) {
+        return OPAQUE;
+    }
+    else if (str_equal(str, "premultiplied")) {
+        return PREMULTIPLIED;
+    }
+    else {
+        // Default to first value for invalid input
+        return OPAQUE;
+    }
+}
+
+GPUCanvasAlphaMode::GPUCanvasAlphaMode(Value v) noexcept : emlite::Val(GPUCanvasAlphaMode::to_string(v)), value_(v) {}
+GPUCanvasAlphaMode::GPUCanvasAlphaMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUCanvasAlphaMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUCanvasAlphaMode::GPUCanvasAlphaMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUCanvasAlphaMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUCanvasAlphaMode GPUCanvasAlphaMode::take_ownership(Handle h) noexcept { return GPUCanvasAlphaMode(h); }
 GPUCanvasAlphaMode GPUCanvasAlphaMode::clone() const noexcept { return *this; }
+const char* GPUCanvasAlphaMode::to_string(GPUCanvasAlphaMode::Value value_) noexcept {
+    switch (value_) {
+        case OPAQUE:
+            return "opaque";
+        case PREMULTIPLIED:
+            return "premultiplied";
+        default:
+            return "opaque"; // fallback to first value
+    }
+}
 
-GPUCanvasToneMappingMode::GPUCanvasToneMappingMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUCanvasToneMappingMode::GPUCanvasToneMappingMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUCanvasToneMappingMode::Value GPUCanvasToneMappingMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "standard")) {
+        return STANDARD;
+    }
+    else if (str_equal(str, "extended")) {
+        return EXTENDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return STANDARD;
+    }
+}
+
+GPUCanvasToneMappingMode::GPUCanvasToneMappingMode(Value v) noexcept : emlite::Val(GPUCanvasToneMappingMode::to_string(v)), value_(v) {}
+GPUCanvasToneMappingMode::GPUCanvasToneMappingMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUCanvasToneMappingMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUCanvasToneMappingMode::GPUCanvasToneMappingMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUCanvasToneMappingMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUCanvasToneMappingMode GPUCanvasToneMappingMode::take_ownership(Handle h) noexcept { return GPUCanvasToneMappingMode(h); }
 GPUCanvasToneMappingMode GPUCanvasToneMappingMode::clone() const noexcept { return *this; }
+const char* GPUCanvasToneMappingMode::to_string(GPUCanvasToneMappingMode::Value value_) noexcept {
+    switch (value_) {
+        case STANDARD:
+            return "standard";
+        case EXTENDED:
+            return "extended";
+        default:
+            return "standard"; // fallback to first value
+    }
+}
 
-GPUDeviceLostReason::GPUDeviceLostReason(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUDeviceLostReason::GPUDeviceLostReason(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUDeviceLostReason::Value GPUDeviceLostReason::from_string(const char* str) noexcept {
+    if (str_equal(str, "unknown")) {
+        return UNKNOWN;
+    }
+    else if (str_equal(str, "destroyed")) {
+        return DESTROYED;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNKNOWN;
+    }
+}
+
+GPUDeviceLostReason::GPUDeviceLostReason(Value v) noexcept : emlite::Val(GPUDeviceLostReason::to_string(v)), value_(v) {}
+GPUDeviceLostReason::GPUDeviceLostReason(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUDeviceLostReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUDeviceLostReason::GPUDeviceLostReason(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUDeviceLostReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUDeviceLostReason GPUDeviceLostReason::take_ownership(Handle h) noexcept { return GPUDeviceLostReason(h); }
 GPUDeviceLostReason GPUDeviceLostReason::clone() const noexcept { return *this; }
+const char* GPUDeviceLostReason::to_string(GPUDeviceLostReason::Value value_) noexcept {
+    switch (value_) {
+        case UNKNOWN:
+            return "unknown";
+        case DESTROYED:
+            return "destroyed";
+        default:
+            return "unknown"; // fallback to first value
+    }
+}
 
-GPUErrorFilter::GPUErrorFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-GPUErrorFilter::GPUErrorFilter(const emlite::Val &v) noexcept : emlite::Val(v) {}
+GPUErrorFilter::Value GPUErrorFilter::from_string(const char* str) noexcept {
+    if (str_equal(str, "validation")) {
+        return VALIDATION;
+    }
+    else if (str_equal(str, "out-of-memory")) {
+        return OUT_OF_MEMORY;
+    }
+    else if (str_equal(str, "internal")) {
+        return INTERNAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return VALIDATION;
+    }
+}
+
+GPUErrorFilter::GPUErrorFilter(Value v) noexcept : emlite::Val(GPUErrorFilter::to_string(v)), value_(v) {}
+GPUErrorFilter::GPUErrorFilter(Handle h) noexcept: emlite::Val(h) {
+    value_ = GPUErrorFilter::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+GPUErrorFilter::GPUErrorFilter(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = GPUErrorFilter::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 GPUErrorFilter GPUErrorFilter::take_ownership(Handle h) noexcept { return GPUErrorFilter(h); }
 GPUErrorFilter GPUErrorFilter::clone() const noexcept { return *this; }
+const char* GPUErrorFilter::to_string(GPUErrorFilter::Value value_) noexcept {
+    switch (value_) {
+        case VALIDATION:
+            return "validation";
+        case OUT_OF_MEMORY:
+            return "out-of-memory";
+        case INTERNAL:
+            return "internal";
+        default:
+            return "validation"; // fallback to first value
+    }
+}
 
-HIDUnitSystem::HIDUnitSystem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-HIDUnitSystem::HIDUnitSystem(const emlite::Val &v) noexcept : emlite::Val(v) {}
+HIDUnitSystem::Value HIDUnitSystem::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "si-linear")) {
+        return SI_LINEAR;
+    }
+    else if (str_equal(str, "si-rotation")) {
+        return SI_ROTATION;
+    }
+    else if (str_equal(str, "english-linear")) {
+        return ENGLISH_LINEAR;
+    }
+    else if (str_equal(str, "english-rotation")) {
+        return ENGLISH_ROTATION;
+    }
+    else if (str_equal(str, "vendor-defined")) {
+        return VENDOR_DEFINED;
+    }
+    else if (str_equal(str, "reserved")) {
+        return RESERVED;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+HIDUnitSystem::HIDUnitSystem(Value v) noexcept : emlite::Val(HIDUnitSystem::to_string(v)), value_(v) {}
+HIDUnitSystem::HIDUnitSystem(Handle h) noexcept: emlite::Val(h) {
+    value_ = HIDUnitSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+HIDUnitSystem::HIDUnitSystem(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = HIDUnitSystem::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 HIDUnitSystem HIDUnitSystem::take_ownership(Handle h) noexcept { return HIDUnitSystem(h); }
 HIDUnitSystem HIDUnitSystem::clone() const noexcept { return *this; }
+const char* HIDUnitSystem::to_string(HIDUnitSystem::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case SI_LINEAR:
+            return "si-linear";
+        case SI_ROTATION:
+            return "si-rotation";
+        case ENGLISH_LINEAR:
+            return "english-linear";
+        case ENGLISH_ROTATION:
+            return "english-rotation";
+        case VENDOR_DEFINED:
+            return "vendor-defined";
+        case RESERVED:
+            return "reserved";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-MIDIPortType::MIDIPortType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MIDIPortType::MIDIPortType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MIDIPortType::Value MIDIPortType::from_string(const char* str) noexcept {
+    if (str_equal(str, "input")) {
+        return INPUT;
+    }
+    else if (str_equal(str, "output")) {
+        return OUTPUT;
+    }
+    else {
+        // Default to first value for invalid input
+        return INPUT;
+    }
+}
+
+MIDIPortType::MIDIPortType(Value v) noexcept : emlite::Val(MIDIPortType::to_string(v)), value_(v) {}
+MIDIPortType::MIDIPortType(Handle h) noexcept: emlite::Val(h) {
+    value_ = MIDIPortType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MIDIPortType::MIDIPortType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MIDIPortType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MIDIPortType MIDIPortType::take_ownership(Handle h) noexcept { return MIDIPortType(h); }
 MIDIPortType MIDIPortType::clone() const noexcept { return *this; }
+const char* MIDIPortType::to_string(MIDIPortType::Value value_) noexcept {
+    switch (value_) {
+        case INPUT:
+            return "input";
+        case OUTPUT:
+            return "output";
+        default:
+            return "input"; // fallback to first value
+    }
+}
 
-MIDIPortDeviceState::MIDIPortDeviceState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MIDIPortDeviceState::MIDIPortDeviceState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MIDIPortDeviceState::Value MIDIPortDeviceState::from_string(const char* str) noexcept {
+    if (str_equal(str, "disconnected")) {
+        return DISCONNECTED;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return DISCONNECTED;
+    }
+}
+
+MIDIPortDeviceState::MIDIPortDeviceState(Value v) noexcept : emlite::Val(MIDIPortDeviceState::to_string(v)), value_(v) {}
+MIDIPortDeviceState::MIDIPortDeviceState(Handle h) noexcept: emlite::Val(h) {
+    value_ = MIDIPortDeviceState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MIDIPortDeviceState::MIDIPortDeviceState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MIDIPortDeviceState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MIDIPortDeviceState MIDIPortDeviceState::take_ownership(Handle h) noexcept { return MIDIPortDeviceState(h); }
 MIDIPortDeviceState MIDIPortDeviceState::clone() const noexcept { return *this; }
+const char* MIDIPortDeviceState::to_string(MIDIPortDeviceState::Value value_) noexcept {
+    switch (value_) {
+        case DISCONNECTED:
+            return "disconnected";
+        case CONNECTED:
+            return "connected";
+        default:
+            return "disconnected"; // fallback to first value
+    }
+}
 
-MIDIPortConnectionState::MIDIPortConnectionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MIDIPortConnectionState::MIDIPortConnectionState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MIDIPortConnectionState::Value MIDIPortConnectionState::from_string(const char* str) noexcept {
+    if (str_equal(str, "open")) {
+        return OPEN;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "pending")) {
+        return PENDING;
+    }
+    else {
+        // Default to first value for invalid input
+        return OPEN;
+    }
+}
+
+MIDIPortConnectionState::MIDIPortConnectionState(Value v) noexcept : emlite::Val(MIDIPortConnectionState::to_string(v)), value_(v) {}
+MIDIPortConnectionState::MIDIPortConnectionState(Handle h) noexcept: emlite::Val(h) {
+    value_ = MIDIPortConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MIDIPortConnectionState::MIDIPortConnectionState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MIDIPortConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MIDIPortConnectionState MIDIPortConnectionState::take_ownership(Handle h) noexcept { return MIDIPortConnectionState(h); }
 MIDIPortConnectionState MIDIPortConnectionState::clone() const noexcept { return *this; }
+const char* MIDIPortConnectionState::to_string(MIDIPortConnectionState::Value value_) noexcept {
+    switch (value_) {
+        case OPEN:
+            return "open";
+        case CLOSED:
+            return "closed";
+        case PENDING:
+            return "pending";
+        default:
+            return "open"; // fallback to first value
+    }
+}
 
-MLPowerPreference::MLPowerPreference(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLPowerPreference::MLPowerPreference(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLPowerPreference::Value MLPowerPreference::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "high-performance")) {
+        return HIGH_PERFORMANCE;
+    }
+    else if (str_equal(str, "low-power")) {
+        return LOW_POWER;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+MLPowerPreference::MLPowerPreference(Value v) noexcept : emlite::Val(MLPowerPreference::to_string(v)), value_(v) {}
+MLPowerPreference::MLPowerPreference(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLPowerPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLPowerPreference::MLPowerPreference(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLPowerPreference::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLPowerPreference MLPowerPreference::take_ownership(Handle h) noexcept { return MLPowerPreference(h); }
 MLPowerPreference MLPowerPreference::clone() const noexcept { return *this; }
+const char* MLPowerPreference::to_string(MLPowerPreference::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case HIGH_PERFORMANCE:
+            return "high-performance";
+        case LOW_POWER:
+            return "low-power";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-MLInputOperandLayout::MLInputOperandLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLInputOperandLayout::MLInputOperandLayout(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLInputOperandLayout::Value MLInputOperandLayout::from_string(const char* str) noexcept {
+    if (str_equal(str, "nchw")) {
+        return NCHW;
+    }
+    else if (str_equal(str, "nhwc")) {
+        return NHWC;
+    }
+    else {
+        // Default to first value for invalid input
+        return NCHW;
+    }
+}
+
+MLInputOperandLayout::MLInputOperandLayout(Value v) noexcept : emlite::Val(MLInputOperandLayout::to_string(v)), value_(v) {}
+MLInputOperandLayout::MLInputOperandLayout(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLInputOperandLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLInputOperandLayout::MLInputOperandLayout(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLInputOperandLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLInputOperandLayout MLInputOperandLayout::take_ownership(Handle h) noexcept { return MLInputOperandLayout(h); }
 MLInputOperandLayout MLInputOperandLayout::clone() const noexcept { return *this; }
+const char* MLInputOperandLayout::to_string(MLInputOperandLayout::Value value_) noexcept {
+    switch (value_) {
+        case NCHW:
+            return "nchw";
+        case NHWC:
+            return "nhwc";
+        default:
+            return "nchw"; // fallback to first value
+    }
+}
 
-MLOperandDataType::MLOperandDataType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLOperandDataType::MLOperandDataType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLOperandDataType::Value MLOperandDataType::from_string(const char* str) noexcept {
+    if (str_equal(str, "float32")) {
+        return FLOAT32;
+    }
+    else if (str_equal(str, "float16")) {
+        return FLOAT16;
+    }
+    else if (str_equal(str, "int32")) {
+        return INT32;
+    }
+    else if (str_equal(str, "uint32")) {
+        return UINT32;
+    }
+    else if (str_equal(str, "int64")) {
+        return INT64;
+    }
+    else if (str_equal(str, "uint64")) {
+        return UINT64;
+    }
+    else if (str_equal(str, "int8")) {
+        return INT8;
+    }
+    else if (str_equal(str, "uint8")) {
+        return UINT8;
+    }
+    else {
+        // Default to first value for invalid input
+        return FLOAT32;
+    }
+}
+
+MLOperandDataType::MLOperandDataType(Value v) noexcept : emlite::Val(MLOperandDataType::to_string(v)), value_(v) {}
+MLOperandDataType::MLOperandDataType(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLOperandDataType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLOperandDataType::MLOperandDataType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLOperandDataType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLOperandDataType MLOperandDataType::take_ownership(Handle h) noexcept { return MLOperandDataType(h); }
 MLOperandDataType MLOperandDataType::clone() const noexcept { return *this; }
+const char* MLOperandDataType::to_string(MLOperandDataType::Value value_) noexcept {
+    switch (value_) {
+        case FLOAT32:
+            return "float32";
+        case FLOAT16:
+            return "float16";
+        case INT32:
+            return "int32";
+        case UINT32:
+            return "uint32";
+        case INT64:
+            return "int64";
+        case UINT64:
+            return "uint64";
+        case INT8:
+            return "int8";
+        case UINT8:
+            return "uint8";
+        default:
+            return "float32"; // fallback to first value
+    }
+}
 
-MLConv2dFilterOperandLayout::MLConv2dFilterOperandLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLConv2dFilterOperandLayout::MLConv2dFilterOperandLayout(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLConv2dFilterOperandLayout::Value MLConv2dFilterOperandLayout::from_string(const char* str) noexcept {
+    if (str_equal(str, "oihw")) {
+        return OIHW;
+    }
+    else if (str_equal(str, "hwio")) {
+        return HWIO;
+    }
+    else if (str_equal(str, "ohwi")) {
+        return OHWI;
+    }
+    else if (str_equal(str, "ihwo")) {
+        return IHWO;
+    }
+    else {
+        // Default to first value for invalid input
+        return OIHW;
+    }
+}
+
+MLConv2dFilterOperandLayout::MLConv2dFilterOperandLayout(Value v) noexcept : emlite::Val(MLConv2dFilterOperandLayout::to_string(v)), value_(v) {}
+MLConv2dFilterOperandLayout::MLConv2dFilterOperandLayout(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLConv2dFilterOperandLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLConv2dFilterOperandLayout::MLConv2dFilterOperandLayout(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLConv2dFilterOperandLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLConv2dFilterOperandLayout MLConv2dFilterOperandLayout::take_ownership(Handle h) noexcept { return MLConv2dFilterOperandLayout(h); }
 MLConv2dFilterOperandLayout MLConv2dFilterOperandLayout::clone() const noexcept { return *this; }
+const char* MLConv2dFilterOperandLayout::to_string(MLConv2dFilterOperandLayout::Value value_) noexcept {
+    switch (value_) {
+        case OIHW:
+            return "oihw";
+        case HWIO:
+            return "hwio";
+        case OHWI:
+            return "ohwi";
+        case IHWO:
+            return "ihwo";
+        default:
+            return "oihw"; // fallback to first value
+    }
+}
 
-MLConvTranspose2dFilterOperandLayout::MLConvTranspose2dFilterOperandLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLConvTranspose2dFilterOperandLayout::MLConvTranspose2dFilterOperandLayout(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLConvTranspose2dFilterOperandLayout::Value MLConvTranspose2dFilterOperandLayout::from_string(const char* str) noexcept {
+    if (str_equal(str, "iohw")) {
+        return IOHW;
+    }
+    else if (str_equal(str, "hwoi")) {
+        return HWOI;
+    }
+    else if (str_equal(str, "ohwi")) {
+        return OHWI;
+    }
+    else {
+        // Default to first value for invalid input
+        return IOHW;
+    }
+}
+
+MLConvTranspose2dFilterOperandLayout::MLConvTranspose2dFilterOperandLayout(Value v) noexcept : emlite::Val(MLConvTranspose2dFilterOperandLayout::to_string(v)), value_(v) {}
+MLConvTranspose2dFilterOperandLayout::MLConvTranspose2dFilterOperandLayout(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLConvTranspose2dFilterOperandLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLConvTranspose2dFilterOperandLayout::MLConvTranspose2dFilterOperandLayout(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLConvTranspose2dFilterOperandLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLConvTranspose2dFilterOperandLayout MLConvTranspose2dFilterOperandLayout::take_ownership(Handle h) noexcept { return MLConvTranspose2dFilterOperandLayout(h); }
 MLConvTranspose2dFilterOperandLayout MLConvTranspose2dFilterOperandLayout::clone() const noexcept { return *this; }
+const char* MLConvTranspose2dFilterOperandLayout::to_string(MLConvTranspose2dFilterOperandLayout::Value value_) noexcept {
+    switch (value_) {
+        case IOHW:
+            return "iohw";
+        case HWOI:
+            return "hwoi";
+        case OHWI:
+            return "ohwi";
+        default:
+            return "iohw"; // fallback to first value
+    }
+}
 
-MLGruWeightLayout::MLGruWeightLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLGruWeightLayout::MLGruWeightLayout(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLGruWeightLayout::Value MLGruWeightLayout::from_string(const char* str) noexcept {
+    if (str_equal(str, "zrn")) {
+        return ZRN;
+    }
+    else if (str_equal(str, "rzn")) {
+        return RZN;
+    }
+    else {
+        // Default to first value for invalid input
+        return ZRN;
+    }
+}
+
+MLGruWeightLayout::MLGruWeightLayout(Value v) noexcept : emlite::Val(MLGruWeightLayout::to_string(v)), value_(v) {}
+MLGruWeightLayout::MLGruWeightLayout(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLGruWeightLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLGruWeightLayout::MLGruWeightLayout(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLGruWeightLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLGruWeightLayout MLGruWeightLayout::take_ownership(Handle h) noexcept { return MLGruWeightLayout(h); }
 MLGruWeightLayout MLGruWeightLayout::clone() const noexcept { return *this; }
+const char* MLGruWeightLayout::to_string(MLGruWeightLayout::Value value_) noexcept {
+    switch (value_) {
+        case ZRN:
+            return "zrn";
+        case RZN:
+            return "rzn";
+        default:
+            return "zrn"; // fallback to first value
+    }
+}
 
-MLRecurrentNetworkActivation::MLRecurrentNetworkActivation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLRecurrentNetworkActivation::MLRecurrentNetworkActivation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLRecurrentNetworkActivation::Value MLRecurrentNetworkActivation::from_string(const char* str) noexcept {
+    if (str_equal(str, "relu")) {
+        return RELU;
+    }
+    else if (str_equal(str, "sigmoid")) {
+        return SIGMOID;
+    }
+    else if (str_equal(str, "tanh")) {
+        return TANH;
+    }
+    else {
+        // Default to first value for invalid input
+        return RELU;
+    }
+}
+
+MLRecurrentNetworkActivation::MLRecurrentNetworkActivation(Value v) noexcept : emlite::Val(MLRecurrentNetworkActivation::to_string(v)), value_(v) {}
+MLRecurrentNetworkActivation::MLRecurrentNetworkActivation(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLRecurrentNetworkActivation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLRecurrentNetworkActivation::MLRecurrentNetworkActivation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLRecurrentNetworkActivation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLRecurrentNetworkActivation MLRecurrentNetworkActivation::take_ownership(Handle h) noexcept { return MLRecurrentNetworkActivation(h); }
 MLRecurrentNetworkActivation MLRecurrentNetworkActivation::clone() const noexcept { return *this; }
+const char* MLRecurrentNetworkActivation::to_string(MLRecurrentNetworkActivation::Value value_) noexcept {
+    switch (value_) {
+        case RELU:
+            return "relu";
+        case SIGMOID:
+            return "sigmoid";
+        case TANH:
+            return "tanh";
+        default:
+            return "relu"; // fallback to first value
+    }
+}
 
-MLRecurrentNetworkDirection::MLRecurrentNetworkDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLRecurrentNetworkDirection::MLRecurrentNetworkDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLRecurrentNetworkDirection::Value MLRecurrentNetworkDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "forward")) {
+        return FORWARD;
+    }
+    else if (str_equal(str, "backward")) {
+        return BACKWARD;
+    }
+    else if (str_equal(str, "both")) {
+        return BOTH;
+    }
+    else {
+        // Default to first value for invalid input
+        return FORWARD;
+    }
+}
+
+MLRecurrentNetworkDirection::MLRecurrentNetworkDirection(Value v) noexcept : emlite::Val(MLRecurrentNetworkDirection::to_string(v)), value_(v) {}
+MLRecurrentNetworkDirection::MLRecurrentNetworkDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLRecurrentNetworkDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLRecurrentNetworkDirection::MLRecurrentNetworkDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLRecurrentNetworkDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLRecurrentNetworkDirection MLRecurrentNetworkDirection::take_ownership(Handle h) noexcept { return MLRecurrentNetworkDirection(h); }
 MLRecurrentNetworkDirection MLRecurrentNetworkDirection::clone() const noexcept { return *this; }
+const char* MLRecurrentNetworkDirection::to_string(MLRecurrentNetworkDirection::Value value_) noexcept {
+    switch (value_) {
+        case FORWARD:
+            return "forward";
+        case BACKWARD:
+            return "backward";
+        case BOTH:
+            return "both";
+        default:
+            return "forward"; // fallback to first value
+    }
+}
 
-MLLstmWeightLayout::MLLstmWeightLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLLstmWeightLayout::MLLstmWeightLayout(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLLstmWeightLayout::Value MLLstmWeightLayout::from_string(const char* str) noexcept {
+    if (str_equal(str, "iofg")) {
+        return IOFG;
+    }
+    else if (str_equal(str, "ifgo")) {
+        return IFGO;
+    }
+    else {
+        // Default to first value for invalid input
+        return IOFG;
+    }
+}
+
+MLLstmWeightLayout::MLLstmWeightLayout(Value v) noexcept : emlite::Val(MLLstmWeightLayout::to_string(v)), value_(v) {}
+MLLstmWeightLayout::MLLstmWeightLayout(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLLstmWeightLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLLstmWeightLayout::MLLstmWeightLayout(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLLstmWeightLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLLstmWeightLayout MLLstmWeightLayout::take_ownership(Handle h) noexcept { return MLLstmWeightLayout(h); }
 MLLstmWeightLayout MLLstmWeightLayout::clone() const noexcept { return *this; }
+const char* MLLstmWeightLayout::to_string(MLLstmWeightLayout::Value value_) noexcept {
+    switch (value_) {
+        case IOFG:
+            return "iofg";
+        case IFGO:
+            return "ifgo";
+        default:
+            return "iofg"; // fallback to first value
+    }
+}
 
-MLPaddingMode::MLPaddingMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLPaddingMode::MLPaddingMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLPaddingMode::Value MLPaddingMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "constant")) {
+        return CONSTANT;
+    }
+    else if (str_equal(str, "edge")) {
+        return EDGE;
+    }
+    else if (str_equal(str, "reflection")) {
+        return REFLECTION;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONSTANT;
+    }
+}
+
+MLPaddingMode::MLPaddingMode(Value v) noexcept : emlite::Val(MLPaddingMode::to_string(v)), value_(v) {}
+MLPaddingMode::MLPaddingMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLPaddingMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLPaddingMode::MLPaddingMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLPaddingMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLPaddingMode MLPaddingMode::take_ownership(Handle h) noexcept { return MLPaddingMode(h); }
 MLPaddingMode MLPaddingMode::clone() const noexcept { return *this; }
+const char* MLPaddingMode::to_string(MLPaddingMode::Value value_) noexcept {
+    switch (value_) {
+        case CONSTANT:
+            return "constant";
+        case EDGE:
+            return "edge";
+        case REFLECTION:
+            return "reflection";
+        default:
+            return "constant"; // fallback to first value
+    }
+}
 
-MLRoundingType::MLRoundingType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLRoundingType::MLRoundingType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLRoundingType::Value MLRoundingType::from_string(const char* str) noexcept {
+    if (str_equal(str, "floor")) {
+        return FLOOR;
+    }
+    else if (str_equal(str, "ceil")) {
+        return CEIL;
+    }
+    else {
+        // Default to first value for invalid input
+        return FLOOR;
+    }
+}
+
+MLRoundingType::MLRoundingType(Value v) noexcept : emlite::Val(MLRoundingType::to_string(v)), value_(v) {}
+MLRoundingType::MLRoundingType(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLRoundingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLRoundingType::MLRoundingType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLRoundingType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLRoundingType MLRoundingType::take_ownership(Handle h) noexcept { return MLRoundingType(h); }
 MLRoundingType MLRoundingType::clone() const noexcept { return *this; }
+const char* MLRoundingType::to_string(MLRoundingType::Value value_) noexcept {
+    switch (value_) {
+        case FLOOR:
+            return "floor";
+        case CEIL:
+            return "ceil";
+        default:
+            return "floor"; // fallback to first value
+    }
+}
 
-MLInterpolationMode::MLInterpolationMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-MLInterpolationMode::MLInterpolationMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+MLInterpolationMode::Value MLInterpolationMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "nearest-neighbor")) {
+        return NEAREST_NEIGHBOR;
+    }
+    else if (str_equal(str, "linear")) {
+        return LINEAR;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEAREST_NEIGHBOR;
+    }
+}
+
+MLInterpolationMode::MLInterpolationMode(Value v) noexcept : emlite::Val(MLInterpolationMode::to_string(v)), value_(v) {}
+MLInterpolationMode::MLInterpolationMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = MLInterpolationMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+MLInterpolationMode::MLInterpolationMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = MLInterpolationMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 MLInterpolationMode MLInterpolationMode::take_ownership(Handle h) noexcept { return MLInterpolationMode(h); }
 MLInterpolationMode MLInterpolationMode::clone() const noexcept { return *this; }
+const char* MLInterpolationMode::to_string(MLInterpolationMode::Value value_) noexcept {
+    switch (value_) {
+        case NEAREST_NEIGHBOR:
+            return "nearest-neighbor";
+        case LINEAR:
+            return "linear";
+        default:
+            return "nearest-neighbor"; // fallback to first value
+    }
+}
 
-SFrameTransformRole::SFrameTransformRole(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SFrameTransformRole::SFrameTransformRole(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SFrameTransformRole::Value SFrameTransformRole::from_string(const char* str) noexcept {
+    if (str_equal(str, "encrypt")) {
+        return ENCRYPT;
+    }
+    else if (str_equal(str, "decrypt")) {
+        return DECRYPT;
+    }
+    else {
+        // Default to first value for invalid input
+        return ENCRYPT;
+    }
+}
+
+SFrameTransformRole::SFrameTransformRole(Value v) noexcept : emlite::Val(SFrameTransformRole::to_string(v)), value_(v) {}
+SFrameTransformRole::SFrameTransformRole(Handle h) noexcept: emlite::Val(h) {
+    value_ = SFrameTransformRole::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SFrameTransformRole::SFrameTransformRole(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SFrameTransformRole::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SFrameTransformRole SFrameTransformRole::take_ownership(Handle h) noexcept { return SFrameTransformRole(h); }
 SFrameTransformRole SFrameTransformRole::clone() const noexcept { return *this; }
+const char* SFrameTransformRole::to_string(SFrameTransformRole::Value value_) noexcept {
+    switch (value_) {
+        case ENCRYPT:
+            return "encrypt";
+        case DECRYPT:
+            return "decrypt";
+        default:
+            return "encrypt"; // fallback to first value
+    }
+}
 
-SFrameTransformErrorEventType::SFrameTransformErrorEventType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SFrameTransformErrorEventType::SFrameTransformErrorEventType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SFrameTransformErrorEventType::Value SFrameTransformErrorEventType::from_string(const char* str) noexcept {
+    if (str_equal(str, "authentication")) {
+        return AUTHENTICATION;
+    }
+    else if (str_equal(str, "keyID")) {
+        return KEYID;
+    }
+    else if (str_equal(str, "syntax")) {
+        return SYNTAX;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTHENTICATION;
+    }
+}
+
+SFrameTransformErrorEventType::SFrameTransformErrorEventType(Value v) noexcept : emlite::Val(SFrameTransformErrorEventType::to_string(v)), value_(v) {}
+SFrameTransformErrorEventType::SFrameTransformErrorEventType(Handle h) noexcept: emlite::Val(h) {
+    value_ = SFrameTransformErrorEventType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SFrameTransformErrorEventType::SFrameTransformErrorEventType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SFrameTransformErrorEventType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SFrameTransformErrorEventType SFrameTransformErrorEventType::take_ownership(Handle h) noexcept { return SFrameTransformErrorEventType(h); }
 SFrameTransformErrorEventType SFrameTransformErrorEventType::clone() const noexcept { return *this; }
+const char* SFrameTransformErrorEventType::to_string(SFrameTransformErrorEventType::Value value_) noexcept {
+    switch (value_) {
+        case AUTHENTICATION:
+            return "authentication";
+        case KEYID:
+            return "keyID";
+        case SYNTAX:
+            return "syntax";
+        default:
+            return "authentication"; // fallback to first value
+    }
+}
 
-RTCEncodedVideoFrameType::RTCEncodedVideoFrameType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCEncodedVideoFrameType::RTCEncodedVideoFrameType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCEncodedVideoFrameType::Value RTCEncodedVideoFrameType::from_string(const char* str) noexcept {
+    if (str_equal(str, "empty")) {
+        return EMPTY;
+    }
+    else if (str_equal(str, "key")) {
+        return KEY;
+    }
+    else if (str_equal(str, "delta")) {
+        return DELTA;
+    }
+    else {
+        // Default to first value for invalid input
+        return EMPTY;
+    }
+}
+
+RTCEncodedVideoFrameType::RTCEncodedVideoFrameType(Value v) noexcept : emlite::Val(RTCEncodedVideoFrameType::to_string(v)), value_(v) {}
+RTCEncodedVideoFrameType::RTCEncodedVideoFrameType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCEncodedVideoFrameType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCEncodedVideoFrameType::RTCEncodedVideoFrameType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCEncodedVideoFrameType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCEncodedVideoFrameType RTCEncodedVideoFrameType::take_ownership(Handle h) noexcept { return RTCEncodedVideoFrameType(h); }
 RTCEncodedVideoFrameType RTCEncodedVideoFrameType::clone() const noexcept { return *this; }
+const char* RTCEncodedVideoFrameType::to_string(RTCEncodedVideoFrameType::Value value_) noexcept {
+    switch (value_) {
+        case EMPTY:
+            return "empty";
+        case KEY:
+            return "key";
+        case DELTA:
+            return "delta";
+        default:
+            return "empty"; // fallback to first value
+    }
+}
 
-RTCErrorDetailTypeIdp::RTCErrorDetailTypeIdp(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCErrorDetailTypeIdp::RTCErrorDetailTypeIdp(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCErrorDetailTypeIdp::Value RTCErrorDetailTypeIdp::from_string(const char* str) noexcept {
+    if (str_equal(str, "idp-bad-script-failure")) {
+        return IDP_BAD_SCRIPT_FAILURE;
+    }
+    else if (str_equal(str, "idp-execution-failure")) {
+        return IDP_EXECUTION_FAILURE;
+    }
+    else if (str_equal(str, "idp-load-failure")) {
+        return IDP_LOAD_FAILURE;
+    }
+    else if (str_equal(str, "idp-need-login")) {
+        return IDP_NEED_LOGIN;
+    }
+    else if (str_equal(str, "idp-timeout")) {
+        return IDP_TIMEOUT;
+    }
+    else if (str_equal(str, "idp-tls-failure")) {
+        return IDP_TLS_FAILURE;
+    }
+    else if (str_equal(str, "idp-token-expired")) {
+        return IDP_TOKEN_EXPIRED;
+    }
+    else if (str_equal(str, "idp-token-invalid")) {
+        return IDP_TOKEN_INVALID;
+    }
+    else {
+        // Default to first value for invalid input
+        return IDP_BAD_SCRIPT_FAILURE;
+    }
+}
+
+RTCErrorDetailTypeIdp::RTCErrorDetailTypeIdp(Value v) noexcept : emlite::Val(RTCErrorDetailTypeIdp::to_string(v)), value_(v) {}
+RTCErrorDetailTypeIdp::RTCErrorDetailTypeIdp(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCErrorDetailTypeIdp::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCErrorDetailTypeIdp::RTCErrorDetailTypeIdp(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCErrorDetailTypeIdp::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::take_ownership(Handle h) noexcept { return RTCErrorDetailTypeIdp(h); }
 RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::clone() const noexcept { return *this; }
+const char* RTCErrorDetailTypeIdp::to_string(RTCErrorDetailTypeIdp::Value value_) noexcept {
+    switch (value_) {
+        case IDP_BAD_SCRIPT_FAILURE:
+            return "idp-bad-script-failure";
+        case IDP_EXECUTION_FAILURE:
+            return "idp-execution-failure";
+        case IDP_LOAD_FAILURE:
+            return "idp-load-failure";
+        case IDP_NEED_LOGIN:
+            return "idp-need-login";
+        case IDP_TIMEOUT:
+            return "idp-timeout";
+        case IDP_TLS_FAILURE:
+            return "idp-tls-failure";
+        case IDP_TOKEN_EXPIRED:
+            return "idp-token-expired";
+        case IDP_TOKEN_INVALID:
+            return "idp-token-invalid";
+        default:
+            return "idp-bad-script-failure"; // fallback to first value
+    }
+}
 
-RTCPriorityType::RTCPriorityType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCPriorityType::RTCPriorityType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCPriorityType::Value RTCPriorityType::from_string(const char* str) noexcept {
+    if (str_equal(str, "very-low")) {
+        return VERY_LOW;
+    }
+    else if (str_equal(str, "low")) {
+        return LOW;
+    }
+    else if (str_equal(str, "medium")) {
+        return MEDIUM;
+    }
+    else if (str_equal(str, "high")) {
+        return HIGH;
+    }
+    else {
+        // Default to first value for invalid input
+        return VERY_LOW;
+    }
+}
+
+RTCPriorityType::RTCPriorityType(Value v) noexcept : emlite::Val(RTCPriorityType::to_string(v)), value_(v) {}
+RTCPriorityType::RTCPriorityType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCPriorityType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCPriorityType::RTCPriorityType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCPriorityType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCPriorityType RTCPriorityType::take_ownership(Handle h) noexcept { return RTCPriorityType(h); }
 RTCPriorityType RTCPriorityType::clone() const noexcept { return *this; }
+const char* RTCPriorityType::to_string(RTCPriorityType::Value value_) noexcept {
+    switch (value_) {
+        case VERY_LOW:
+            return "very-low";
+        case LOW:
+            return "low";
+        case MEDIUM:
+            return "medium";
+        case HIGH:
+            return "high";
+        default:
+            return "very-low"; // fallback to first value
+    }
+}
 
-RTCStatsType::RTCStatsType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCStatsType::RTCStatsType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCStatsType::Value RTCStatsType::from_string(const char* str) noexcept {
+    if (str_equal(str, "codec")) {
+        return CODEC;
+    }
+    else if (str_equal(str, "inbound-rtp")) {
+        return INBOUND_RTP;
+    }
+    else if (str_equal(str, "outbound-rtp")) {
+        return OUTBOUND_RTP;
+    }
+    else if (str_equal(str, "remote-inbound-rtp")) {
+        return REMOTE_INBOUND_RTP;
+    }
+    else if (str_equal(str, "remote-outbound-rtp")) {
+        return REMOTE_OUTBOUND_RTP;
+    }
+    else if (str_equal(str, "media-source")) {
+        return MEDIA_SOURCE;
+    }
+    else if (str_equal(str, "media-playout")) {
+        return MEDIA_PLAYOUT;
+    }
+    else if (str_equal(str, "peer-connection")) {
+        return PEER_CONNECTION;
+    }
+    else if (str_equal(str, "data-channel")) {
+        return DATA_CHANNEL;
+    }
+    else if (str_equal(str, "transport")) {
+        return TRANSPORT;
+    }
+    else if (str_equal(str, "candidate-pair")) {
+        return CANDIDATE_PAIR;
+    }
+    else if (str_equal(str, "local-candidate")) {
+        return LOCAL_CANDIDATE;
+    }
+    else if (str_equal(str, "remote-candidate")) {
+        return REMOTE_CANDIDATE;
+    }
+    else if (str_equal(str, "certificate")) {
+        return CERTIFICATE;
+    }
+    else {
+        // Default to first value for invalid input
+        return CODEC;
+    }
+}
+
+RTCStatsType::RTCStatsType(Value v) noexcept : emlite::Val(RTCStatsType::to_string(v)), value_(v) {}
+RTCStatsType::RTCStatsType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCStatsType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCStatsType::RTCStatsType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCStatsType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCStatsType RTCStatsType::take_ownership(Handle h) noexcept { return RTCStatsType(h); }
 RTCStatsType RTCStatsType::clone() const noexcept { return *this; }
+const char* RTCStatsType::to_string(RTCStatsType::Value value_) noexcept {
+    switch (value_) {
+        case CODEC:
+            return "codec";
+        case INBOUND_RTP:
+            return "inbound-rtp";
+        case OUTBOUND_RTP:
+            return "outbound-rtp";
+        case REMOTE_INBOUND_RTP:
+            return "remote-inbound-rtp";
+        case REMOTE_OUTBOUND_RTP:
+            return "remote-outbound-rtp";
+        case MEDIA_SOURCE:
+            return "media-source";
+        case MEDIA_PLAYOUT:
+            return "media-playout";
+        case PEER_CONNECTION:
+            return "peer-connection";
+        case DATA_CHANNEL:
+            return "data-channel";
+        case TRANSPORT:
+            return "transport";
+        case CANDIDATE_PAIR:
+            return "candidate-pair";
+        case LOCAL_CANDIDATE:
+            return "local-candidate";
+        case REMOTE_CANDIDATE:
+            return "remote-candidate";
+        case CERTIFICATE:
+            return "certificate";
+        default:
+            return "codec"; // fallback to first value
+    }
+}
 
-RTCQualityLimitationReason::RTCQualityLimitationReason(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCQualityLimitationReason::RTCQualityLimitationReason(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCQualityLimitationReason::Value RTCQualityLimitationReason::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "cpu")) {
+        return CPU;
+    }
+    else if (str_equal(str, "bandwidth")) {
+        return BANDWIDTH;
+    }
+    else if (str_equal(str, "other")) {
+        return OTHER;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+RTCQualityLimitationReason::RTCQualityLimitationReason(Value v) noexcept : emlite::Val(RTCQualityLimitationReason::to_string(v)), value_(v) {}
+RTCQualityLimitationReason::RTCQualityLimitationReason(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCQualityLimitationReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCQualityLimitationReason::RTCQualityLimitationReason(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCQualityLimitationReason::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCQualityLimitationReason RTCQualityLimitationReason::take_ownership(Handle h) noexcept { return RTCQualityLimitationReason(h); }
 RTCQualityLimitationReason RTCQualityLimitationReason::clone() const noexcept { return *this; }
+const char* RTCQualityLimitationReason::to_string(RTCQualityLimitationReason::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case CPU:
+            return "cpu";
+        case BANDWIDTH:
+            return "bandwidth";
+        case OTHER:
+            return "other";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-RTCDtlsRole::RTCDtlsRole(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCDtlsRole::RTCDtlsRole(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCDtlsRole::Value RTCDtlsRole::from_string(const char* str) noexcept {
+    if (str_equal(str, "client")) {
+        return CLIENT;
+    }
+    else if (str_equal(str, "server")) {
+        return SERVER;
+    }
+    else if (str_equal(str, "unknown")) {
+        return UNKNOWN;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLIENT;
+    }
+}
+
+RTCDtlsRole::RTCDtlsRole(Value v) noexcept : emlite::Val(RTCDtlsRole::to_string(v)), value_(v) {}
+RTCDtlsRole::RTCDtlsRole(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCDtlsRole::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCDtlsRole::RTCDtlsRole(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCDtlsRole::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCDtlsRole RTCDtlsRole::take_ownership(Handle h) noexcept { return RTCDtlsRole(h); }
 RTCDtlsRole RTCDtlsRole::clone() const noexcept { return *this; }
+const char* RTCDtlsRole::to_string(RTCDtlsRole::Value value_) noexcept {
+    switch (value_) {
+        case CLIENT:
+            return "client";
+        case SERVER:
+            return "server";
+        case UNKNOWN:
+            return "unknown";
+        default:
+            return "client"; // fallback to first value
+    }
+}
 
-RTCStatsIceCandidatePairState::RTCStatsIceCandidatePairState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCStatsIceCandidatePairState::RTCStatsIceCandidatePairState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCStatsIceCandidatePairState::Value RTCStatsIceCandidatePairState::from_string(const char* str) noexcept {
+    if (str_equal(str, "frozen")) {
+        return FROZEN;
+    }
+    else if (str_equal(str, "waiting")) {
+        return WAITING;
+    }
+    else if (str_equal(str, "in-progress")) {
+        return IN_PROGRESS;
+    }
+    else if (str_equal(str, "failed")) {
+        return FAILED;
+    }
+    else if (str_equal(str, "succeeded")) {
+        return SUCCEEDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return FROZEN;
+    }
+}
+
+RTCStatsIceCandidatePairState::RTCStatsIceCandidatePairState(Value v) noexcept : emlite::Val(RTCStatsIceCandidatePairState::to_string(v)), value_(v) {}
+RTCStatsIceCandidatePairState::RTCStatsIceCandidatePairState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCStatsIceCandidatePairState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCStatsIceCandidatePairState::RTCStatsIceCandidatePairState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCStatsIceCandidatePairState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCStatsIceCandidatePairState RTCStatsIceCandidatePairState::take_ownership(Handle h) noexcept { return RTCStatsIceCandidatePairState(h); }
 RTCStatsIceCandidatePairState RTCStatsIceCandidatePairState::clone() const noexcept { return *this; }
+const char* RTCStatsIceCandidatePairState::to_string(RTCStatsIceCandidatePairState::Value value_) noexcept {
+    switch (value_) {
+        case FROZEN:
+            return "frozen";
+        case WAITING:
+            return "waiting";
+        case IN_PROGRESS:
+            return "in-progress";
+        case FAILED:
+            return "failed";
+        case SUCCEEDED:
+            return "succeeded";
+        default:
+            return "frozen"; // fallback to first value
+    }
+}
 
-RTCIceTransportPolicy::RTCIceTransportPolicy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceTransportPolicy::RTCIceTransportPolicy(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceTransportPolicy::Value RTCIceTransportPolicy::from_string(const char* str) noexcept {
+    if (str_equal(str, "relay")) {
+        return RELAY;
+    }
+    else if (str_equal(str, "all")) {
+        return ALL;
+    }
+    else {
+        // Default to first value for invalid input
+        return RELAY;
+    }
+}
+
+RTCIceTransportPolicy::RTCIceTransportPolicy(Value v) noexcept : emlite::Val(RTCIceTransportPolicy::to_string(v)), value_(v) {}
+RTCIceTransportPolicy::RTCIceTransportPolicy(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceTransportPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceTransportPolicy::RTCIceTransportPolicy(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceTransportPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceTransportPolicy RTCIceTransportPolicy::take_ownership(Handle h) noexcept { return RTCIceTransportPolicy(h); }
 RTCIceTransportPolicy RTCIceTransportPolicy::clone() const noexcept { return *this; }
+const char* RTCIceTransportPolicy::to_string(RTCIceTransportPolicy::Value value_) noexcept {
+    switch (value_) {
+        case RELAY:
+            return "relay";
+        case ALL:
+            return "all";
+        default:
+            return "relay"; // fallback to first value
+    }
+}
 
-RTCBundlePolicy::RTCBundlePolicy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCBundlePolicy::RTCBundlePolicy(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCBundlePolicy::Value RTCBundlePolicy::from_string(const char* str) noexcept {
+    if (str_equal(str, "balanced")) {
+        return BALANCED;
+    }
+    else if (str_equal(str, "max-compat")) {
+        return MAX_COMPAT;
+    }
+    else if (str_equal(str, "max-bundle")) {
+        return MAX_BUNDLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return BALANCED;
+    }
+}
+
+RTCBundlePolicy::RTCBundlePolicy(Value v) noexcept : emlite::Val(RTCBundlePolicy::to_string(v)), value_(v) {}
+RTCBundlePolicy::RTCBundlePolicy(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCBundlePolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCBundlePolicy::RTCBundlePolicy(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCBundlePolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCBundlePolicy RTCBundlePolicy::take_ownership(Handle h) noexcept { return RTCBundlePolicy(h); }
 RTCBundlePolicy RTCBundlePolicy::clone() const noexcept { return *this; }
+const char* RTCBundlePolicy::to_string(RTCBundlePolicy::Value value_) noexcept {
+    switch (value_) {
+        case BALANCED:
+            return "balanced";
+        case MAX_COMPAT:
+            return "max-compat";
+        case MAX_BUNDLE:
+            return "max-bundle";
+        default:
+            return "balanced"; // fallback to first value
+    }
+}
 
-RTCRtcpMuxPolicy::RTCRtcpMuxPolicy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCRtcpMuxPolicy::RTCRtcpMuxPolicy(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCRtcpMuxPolicy::Value RTCRtcpMuxPolicy::from_string(const char* str) noexcept {
+    if (str_equal(str, "require")) {
+        return REQUIRE;
+    }
+    else {
+        // Default to first value for invalid input
+        return REQUIRE;
+    }
+}
+
+RTCRtcpMuxPolicy::RTCRtcpMuxPolicy(Value v) noexcept : emlite::Val(RTCRtcpMuxPolicy::to_string(v)), value_(v) {}
+RTCRtcpMuxPolicy::RTCRtcpMuxPolicy(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCRtcpMuxPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCRtcpMuxPolicy::RTCRtcpMuxPolicy(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCRtcpMuxPolicy::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCRtcpMuxPolicy RTCRtcpMuxPolicy::take_ownership(Handle h) noexcept { return RTCRtcpMuxPolicy(h); }
 RTCRtcpMuxPolicy RTCRtcpMuxPolicy::clone() const noexcept { return *this; }
+const char* RTCRtcpMuxPolicy::to_string(RTCRtcpMuxPolicy::Value value_) noexcept {
+    switch (value_) {
+        case REQUIRE:
+            return "require";
+        default:
+            return "require"; // fallback to first value
+    }
+}
 
-RTCSignalingState::RTCSignalingState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCSignalingState::RTCSignalingState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCSignalingState::Value RTCSignalingState::from_string(const char* str) noexcept {
+    if (str_equal(str, "stable")) {
+        return STABLE;
+    }
+    else if (str_equal(str, "have-local-offer")) {
+        return HAVE_LOCAL_OFFER;
+    }
+    else if (str_equal(str, "have-remote-offer")) {
+        return HAVE_REMOTE_OFFER;
+    }
+    else if (str_equal(str, "have-local-pranswer")) {
+        return HAVE_LOCAL_PRANSWER;
+    }
+    else if (str_equal(str, "have-remote-pranswer")) {
+        return HAVE_REMOTE_PRANSWER;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else {
+        // Default to first value for invalid input
+        return STABLE;
+    }
+}
+
+RTCSignalingState::RTCSignalingState(Value v) noexcept : emlite::Val(RTCSignalingState::to_string(v)), value_(v) {}
+RTCSignalingState::RTCSignalingState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCSignalingState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCSignalingState::RTCSignalingState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCSignalingState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCSignalingState RTCSignalingState::take_ownership(Handle h) noexcept { return RTCSignalingState(h); }
 RTCSignalingState RTCSignalingState::clone() const noexcept { return *this; }
+const char* RTCSignalingState::to_string(RTCSignalingState::Value value_) noexcept {
+    switch (value_) {
+        case STABLE:
+            return "stable";
+        case HAVE_LOCAL_OFFER:
+            return "have-local-offer";
+        case HAVE_REMOTE_OFFER:
+            return "have-remote-offer";
+        case HAVE_LOCAL_PRANSWER:
+            return "have-local-pranswer";
+        case HAVE_REMOTE_PRANSWER:
+            return "have-remote-pranswer";
+        case CLOSED:
+            return "closed";
+        default:
+            return "stable"; // fallback to first value
+    }
+}
 
-RTCIceGatheringState::RTCIceGatheringState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceGatheringState::RTCIceGatheringState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceGatheringState::Value RTCIceGatheringState::from_string(const char* str) noexcept {
+    if (str_equal(str, "new")) {
+        return NEW_;
+    }
+    else if (str_equal(str, "gathering")) {
+        return GATHERING;
+    }
+    else if (str_equal(str, "complete")) {
+        return COMPLETE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEW_;
+    }
+}
+
+RTCIceGatheringState::RTCIceGatheringState(Value v) noexcept : emlite::Val(RTCIceGatheringState::to_string(v)), value_(v) {}
+RTCIceGatheringState::RTCIceGatheringState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceGatheringState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceGatheringState::RTCIceGatheringState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceGatheringState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceGatheringState RTCIceGatheringState::take_ownership(Handle h) noexcept { return RTCIceGatheringState(h); }
 RTCIceGatheringState RTCIceGatheringState::clone() const noexcept { return *this; }
+const char* RTCIceGatheringState::to_string(RTCIceGatheringState::Value value_) noexcept {
+    switch (value_) {
+        case NEW_:
+            return "new";
+        case GATHERING:
+            return "gathering";
+        case COMPLETE:
+            return "complete";
+        default:
+            return "new"; // fallback to first value
+    }
+}
 
-RTCPeerConnectionState::RTCPeerConnectionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCPeerConnectionState::RTCPeerConnectionState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCPeerConnectionState::Value RTCPeerConnectionState::from_string(const char* str) noexcept {
+    if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "failed")) {
+        return FAILED;
+    }
+    else if (str_equal(str, "disconnected")) {
+        return DISCONNECTED;
+    }
+    else if (str_equal(str, "new")) {
+        return NEW_;
+    }
+    else if (str_equal(str, "connecting")) {
+        return CONNECTING;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLOSED;
+    }
+}
+
+RTCPeerConnectionState::RTCPeerConnectionState(Value v) noexcept : emlite::Val(RTCPeerConnectionState::to_string(v)), value_(v) {}
+RTCPeerConnectionState::RTCPeerConnectionState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCPeerConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCPeerConnectionState::RTCPeerConnectionState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCPeerConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCPeerConnectionState RTCPeerConnectionState::take_ownership(Handle h) noexcept { return RTCPeerConnectionState(h); }
 RTCPeerConnectionState RTCPeerConnectionState::clone() const noexcept { return *this; }
+const char* RTCPeerConnectionState::to_string(RTCPeerConnectionState::Value value_) noexcept {
+    switch (value_) {
+        case CLOSED:
+            return "closed";
+        case FAILED:
+            return "failed";
+        case DISCONNECTED:
+            return "disconnected";
+        case NEW_:
+            return "new";
+        case CONNECTING:
+            return "connecting";
+        case CONNECTED:
+            return "connected";
+        default:
+            return "closed"; // fallback to first value
+    }
+}
 
-RTCIceConnectionState::RTCIceConnectionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceConnectionState::RTCIceConnectionState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceConnectionState::Value RTCIceConnectionState::from_string(const char* str) noexcept {
+    if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "failed")) {
+        return FAILED;
+    }
+    else if (str_equal(str, "disconnected")) {
+        return DISCONNECTED;
+    }
+    else if (str_equal(str, "new")) {
+        return NEW_;
+    }
+    else if (str_equal(str, "checking")) {
+        return CHECKING;
+    }
+    else if (str_equal(str, "completed")) {
+        return COMPLETED;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLOSED;
+    }
+}
+
+RTCIceConnectionState::RTCIceConnectionState(Value v) noexcept : emlite::Val(RTCIceConnectionState::to_string(v)), value_(v) {}
+RTCIceConnectionState::RTCIceConnectionState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceConnectionState::RTCIceConnectionState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceConnectionState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceConnectionState RTCIceConnectionState::take_ownership(Handle h) noexcept { return RTCIceConnectionState(h); }
 RTCIceConnectionState RTCIceConnectionState::clone() const noexcept { return *this; }
+const char* RTCIceConnectionState::to_string(RTCIceConnectionState::Value value_) noexcept {
+    switch (value_) {
+        case CLOSED:
+            return "closed";
+        case FAILED:
+            return "failed";
+        case DISCONNECTED:
+            return "disconnected";
+        case NEW_:
+            return "new";
+        case CHECKING:
+            return "checking";
+        case COMPLETED:
+            return "completed";
+        case CONNECTED:
+            return "connected";
+        default:
+            return "closed"; // fallback to first value
+    }
+}
 
-RTCSdpType::RTCSdpType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCSdpType::RTCSdpType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCSdpType::Value RTCSdpType::from_string(const char* str) noexcept {
+    if (str_equal(str, "offer")) {
+        return OFFER;
+    }
+    else if (str_equal(str, "pranswer")) {
+        return PRANSWER;
+    }
+    else if (str_equal(str, "answer")) {
+        return ANSWER;
+    }
+    else if (str_equal(str, "rollback")) {
+        return ROLLBACK;
+    }
+    else {
+        // Default to first value for invalid input
+        return OFFER;
+    }
+}
+
+RTCSdpType::RTCSdpType(Value v) noexcept : emlite::Val(RTCSdpType::to_string(v)), value_(v) {}
+RTCSdpType::RTCSdpType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCSdpType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCSdpType::RTCSdpType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCSdpType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCSdpType RTCSdpType::take_ownership(Handle h) noexcept { return RTCSdpType(h); }
 RTCSdpType RTCSdpType::clone() const noexcept { return *this; }
+const char* RTCSdpType::to_string(RTCSdpType::Value value_) noexcept {
+    switch (value_) {
+        case OFFER:
+            return "offer";
+        case PRANSWER:
+            return "pranswer";
+        case ANSWER:
+            return "answer";
+        case ROLLBACK:
+            return "rollback";
+        default:
+            return "offer"; // fallback to first value
+    }
+}
 
-RTCIceProtocol::RTCIceProtocol(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceProtocol::RTCIceProtocol(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceProtocol::Value RTCIceProtocol::from_string(const char* str) noexcept {
+    if (str_equal(str, "udp")) {
+        return UDP;
+    }
+    else if (str_equal(str, "tcp")) {
+        return TCP;
+    }
+    else {
+        // Default to first value for invalid input
+        return UDP;
+    }
+}
+
+RTCIceProtocol::RTCIceProtocol(Value v) noexcept : emlite::Val(RTCIceProtocol::to_string(v)), value_(v) {}
+RTCIceProtocol::RTCIceProtocol(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceProtocol::RTCIceProtocol(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceProtocol RTCIceProtocol::take_ownership(Handle h) noexcept { return RTCIceProtocol(h); }
 RTCIceProtocol RTCIceProtocol::clone() const noexcept { return *this; }
+const char* RTCIceProtocol::to_string(RTCIceProtocol::Value value_) noexcept {
+    switch (value_) {
+        case UDP:
+            return "udp";
+        case TCP:
+            return "tcp";
+        default:
+            return "udp"; // fallback to first value
+    }
+}
 
-RTCIceTcpCandidateType::RTCIceTcpCandidateType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceTcpCandidateType::RTCIceTcpCandidateType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceTcpCandidateType::Value RTCIceTcpCandidateType::from_string(const char* str) noexcept {
+    if (str_equal(str, "active")) {
+        return ACTIVE;
+    }
+    else if (str_equal(str, "passive")) {
+        return PASSIVE;
+    }
+    else if (str_equal(str, "so")) {
+        return SO;
+    }
+    else {
+        // Default to first value for invalid input
+        return ACTIVE;
+    }
+}
+
+RTCIceTcpCandidateType::RTCIceTcpCandidateType(Value v) noexcept : emlite::Val(RTCIceTcpCandidateType::to_string(v)), value_(v) {}
+RTCIceTcpCandidateType::RTCIceTcpCandidateType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceTcpCandidateType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceTcpCandidateType::RTCIceTcpCandidateType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceTcpCandidateType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceTcpCandidateType RTCIceTcpCandidateType::take_ownership(Handle h) noexcept { return RTCIceTcpCandidateType(h); }
 RTCIceTcpCandidateType RTCIceTcpCandidateType::clone() const noexcept { return *this; }
+const char* RTCIceTcpCandidateType::to_string(RTCIceTcpCandidateType::Value value_) noexcept {
+    switch (value_) {
+        case ACTIVE:
+            return "active";
+        case PASSIVE:
+            return "passive";
+        case SO:
+            return "so";
+        default:
+            return "active"; // fallback to first value
+    }
+}
 
-RTCIceCandidateType::RTCIceCandidateType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceCandidateType::RTCIceCandidateType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceCandidateType::Value RTCIceCandidateType::from_string(const char* str) noexcept {
+    if (str_equal(str, "host")) {
+        return HOST;
+    }
+    else if (str_equal(str, "srflx")) {
+        return SRFLX;
+    }
+    else if (str_equal(str, "prflx")) {
+        return PRFLX;
+    }
+    else if (str_equal(str, "relay")) {
+        return RELAY;
+    }
+    else {
+        // Default to first value for invalid input
+        return HOST;
+    }
+}
+
+RTCIceCandidateType::RTCIceCandidateType(Value v) noexcept : emlite::Val(RTCIceCandidateType::to_string(v)), value_(v) {}
+RTCIceCandidateType::RTCIceCandidateType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceCandidateType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceCandidateType::RTCIceCandidateType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceCandidateType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceCandidateType RTCIceCandidateType::take_ownership(Handle h) noexcept { return RTCIceCandidateType(h); }
 RTCIceCandidateType RTCIceCandidateType::clone() const noexcept { return *this; }
+const char* RTCIceCandidateType::to_string(RTCIceCandidateType::Value value_) noexcept {
+    switch (value_) {
+        case HOST:
+            return "host";
+        case SRFLX:
+            return "srflx";
+        case PRFLX:
+            return "prflx";
+        case RELAY:
+            return "relay";
+        default:
+            return "host"; // fallback to first value
+    }
+}
 
-RTCIceServerTransportProtocol::RTCIceServerTransportProtocol(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceServerTransportProtocol::RTCIceServerTransportProtocol(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceServerTransportProtocol::Value RTCIceServerTransportProtocol::from_string(const char* str) noexcept {
+    if (str_equal(str, "udp")) {
+        return UDP;
+    }
+    else if (str_equal(str, "tcp")) {
+        return TCP;
+    }
+    else if (str_equal(str, "tls")) {
+        return TLS;
+    }
+    else {
+        // Default to first value for invalid input
+        return UDP;
+    }
+}
+
+RTCIceServerTransportProtocol::RTCIceServerTransportProtocol(Value v) noexcept : emlite::Val(RTCIceServerTransportProtocol::to_string(v)), value_(v) {}
+RTCIceServerTransportProtocol::RTCIceServerTransportProtocol(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceServerTransportProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceServerTransportProtocol::RTCIceServerTransportProtocol(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceServerTransportProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceServerTransportProtocol RTCIceServerTransportProtocol::take_ownership(Handle h) noexcept { return RTCIceServerTransportProtocol(h); }
 RTCIceServerTransportProtocol RTCIceServerTransportProtocol::clone() const noexcept { return *this; }
+const char* RTCIceServerTransportProtocol::to_string(RTCIceServerTransportProtocol::Value value_) noexcept {
+    switch (value_) {
+        case UDP:
+            return "udp";
+        case TCP:
+            return "tcp";
+        case TLS:
+            return "tls";
+        default:
+            return "udp"; // fallback to first value
+    }
+}
 
-RTCRtpTransceiverDirection::RTCRtpTransceiverDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCRtpTransceiverDirection::RTCRtpTransceiverDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCRtpTransceiverDirection::Value RTCRtpTransceiverDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "sendrecv")) {
+        return SENDRECV;
+    }
+    else if (str_equal(str, "sendonly")) {
+        return SENDONLY;
+    }
+    else if (str_equal(str, "recvonly")) {
+        return RECVONLY;
+    }
+    else if (str_equal(str, "inactive")) {
+        return INACTIVE;
+    }
+    else if (str_equal(str, "stopped")) {
+        return STOPPED;
+    }
+    else {
+        // Default to first value for invalid input
+        return SENDRECV;
+    }
+}
+
+RTCRtpTransceiverDirection::RTCRtpTransceiverDirection(Value v) noexcept : emlite::Val(RTCRtpTransceiverDirection::to_string(v)), value_(v) {}
+RTCRtpTransceiverDirection::RTCRtpTransceiverDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCRtpTransceiverDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCRtpTransceiverDirection::RTCRtpTransceiverDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCRtpTransceiverDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCRtpTransceiverDirection RTCRtpTransceiverDirection::take_ownership(Handle h) noexcept { return RTCRtpTransceiverDirection(h); }
 RTCRtpTransceiverDirection RTCRtpTransceiverDirection::clone() const noexcept { return *this; }
+const char* RTCRtpTransceiverDirection::to_string(RTCRtpTransceiverDirection::Value value_) noexcept {
+    switch (value_) {
+        case SENDRECV:
+            return "sendrecv";
+        case SENDONLY:
+            return "sendonly";
+        case RECVONLY:
+            return "recvonly";
+        case INACTIVE:
+            return "inactive";
+        case STOPPED:
+            return "stopped";
+        default:
+            return "sendrecv"; // fallback to first value
+    }
+}
 
-RTCDtlsTransportState::RTCDtlsTransportState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCDtlsTransportState::RTCDtlsTransportState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCDtlsTransportState::Value RTCDtlsTransportState::from_string(const char* str) noexcept {
+    if (str_equal(str, "new")) {
+        return NEW_;
+    }
+    else if (str_equal(str, "connecting")) {
+        return CONNECTING;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "failed")) {
+        return FAILED;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEW_;
+    }
+}
+
+RTCDtlsTransportState::RTCDtlsTransportState(Value v) noexcept : emlite::Val(RTCDtlsTransportState::to_string(v)), value_(v) {}
+RTCDtlsTransportState::RTCDtlsTransportState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCDtlsTransportState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCDtlsTransportState::RTCDtlsTransportState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCDtlsTransportState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCDtlsTransportState RTCDtlsTransportState::take_ownership(Handle h) noexcept { return RTCDtlsTransportState(h); }
 RTCDtlsTransportState RTCDtlsTransportState::clone() const noexcept { return *this; }
+const char* RTCDtlsTransportState::to_string(RTCDtlsTransportState::Value value_) noexcept {
+    switch (value_) {
+        case NEW_:
+            return "new";
+        case CONNECTING:
+            return "connecting";
+        case CONNECTED:
+            return "connected";
+        case CLOSED:
+            return "closed";
+        case FAILED:
+            return "failed";
+        default:
+            return "new"; // fallback to first value
+    }
+}
 
-RTCIceGathererState::RTCIceGathererState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceGathererState::RTCIceGathererState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceGathererState::Value RTCIceGathererState::from_string(const char* str) noexcept {
+    if (str_equal(str, "new")) {
+        return NEW_;
+    }
+    else if (str_equal(str, "gathering")) {
+        return GATHERING;
+    }
+    else if (str_equal(str, "complete")) {
+        return COMPLETE;
+    }
+    else {
+        // Default to first value for invalid input
+        return NEW_;
+    }
+}
+
+RTCIceGathererState::RTCIceGathererState(Value v) noexcept : emlite::Val(RTCIceGathererState::to_string(v)), value_(v) {}
+RTCIceGathererState::RTCIceGathererState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceGathererState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceGathererState::RTCIceGathererState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceGathererState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceGathererState RTCIceGathererState::take_ownership(Handle h) noexcept { return RTCIceGathererState(h); }
 RTCIceGathererState RTCIceGathererState::clone() const noexcept { return *this; }
+const char* RTCIceGathererState::to_string(RTCIceGathererState::Value value_) noexcept {
+    switch (value_) {
+        case NEW_:
+            return "new";
+        case GATHERING:
+            return "gathering";
+        case COMPLETE:
+            return "complete";
+        default:
+            return "new"; // fallback to first value
+    }
+}
 
-RTCIceTransportState::RTCIceTransportState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceTransportState::RTCIceTransportState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceTransportState::Value RTCIceTransportState::from_string(const char* str) noexcept {
+    if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else if (str_equal(str, "failed")) {
+        return FAILED;
+    }
+    else if (str_equal(str, "disconnected")) {
+        return DISCONNECTED;
+    }
+    else if (str_equal(str, "new")) {
+        return NEW_;
+    }
+    else if (str_equal(str, "checking")) {
+        return CHECKING;
+    }
+    else if (str_equal(str, "completed")) {
+        return COMPLETED;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CLOSED;
+    }
+}
+
+RTCIceTransportState::RTCIceTransportState(Value v) noexcept : emlite::Val(RTCIceTransportState::to_string(v)), value_(v) {}
+RTCIceTransportState::RTCIceTransportState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceTransportState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceTransportState::RTCIceTransportState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceTransportState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceTransportState RTCIceTransportState::take_ownership(Handle h) noexcept { return RTCIceTransportState(h); }
 RTCIceTransportState RTCIceTransportState::clone() const noexcept { return *this; }
+const char* RTCIceTransportState::to_string(RTCIceTransportState::Value value_) noexcept {
+    switch (value_) {
+        case CLOSED:
+            return "closed";
+        case FAILED:
+            return "failed";
+        case DISCONNECTED:
+            return "disconnected";
+        case NEW_:
+            return "new";
+        case CHECKING:
+            return "checking";
+        case COMPLETED:
+            return "completed";
+        case CONNECTED:
+            return "connected";
+        default:
+            return "closed"; // fallback to first value
+    }
+}
 
-RTCIceRole::RTCIceRole(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceRole::RTCIceRole(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceRole::Value RTCIceRole::from_string(const char* str) noexcept {
+    if (str_equal(str, "unknown")) {
+        return UNKNOWN;
+    }
+    else if (str_equal(str, "controlling")) {
+        return CONTROLLING;
+    }
+    else if (str_equal(str, "controlled")) {
+        return CONTROLLED;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNKNOWN;
+    }
+}
+
+RTCIceRole::RTCIceRole(Value v) noexcept : emlite::Val(RTCIceRole::to_string(v)), value_(v) {}
+RTCIceRole::RTCIceRole(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceRole::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceRole::RTCIceRole(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceRole::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceRole RTCIceRole::take_ownership(Handle h) noexcept { return RTCIceRole(h); }
 RTCIceRole RTCIceRole::clone() const noexcept { return *this; }
+const char* RTCIceRole::to_string(RTCIceRole::Value value_) noexcept {
+    switch (value_) {
+        case UNKNOWN:
+            return "unknown";
+        case CONTROLLING:
+            return "controlling";
+        case CONTROLLED:
+            return "controlled";
+        default:
+            return "unknown"; // fallback to first value
+    }
+}
 
-RTCIceComponent::RTCIceComponent(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCIceComponent::RTCIceComponent(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCIceComponent::Value RTCIceComponent::from_string(const char* str) noexcept {
+    if (str_equal(str, "rtp")) {
+        return RTP;
+    }
+    else if (str_equal(str, "rtcp")) {
+        return RTCP;
+    }
+    else {
+        // Default to first value for invalid input
+        return RTP;
+    }
+}
+
+RTCIceComponent::RTCIceComponent(Value v) noexcept : emlite::Val(RTCIceComponent::to_string(v)), value_(v) {}
+RTCIceComponent::RTCIceComponent(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCIceComponent::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCIceComponent::RTCIceComponent(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCIceComponent::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCIceComponent RTCIceComponent::take_ownership(Handle h) noexcept { return RTCIceComponent(h); }
 RTCIceComponent RTCIceComponent::clone() const noexcept { return *this; }
+const char* RTCIceComponent::to_string(RTCIceComponent::Value value_) noexcept {
+    switch (value_) {
+        case RTP:
+            return "rtp";
+        case RTCP:
+            return "rtcp";
+        default:
+            return "rtp"; // fallback to first value
+    }
+}
 
-RTCSctpTransportState::RTCSctpTransportState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCSctpTransportState::RTCSctpTransportState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCSctpTransportState::Value RTCSctpTransportState::from_string(const char* str) noexcept {
+    if (str_equal(str, "connecting")) {
+        return CONNECTING;
+    }
+    else if (str_equal(str, "connected")) {
+        return CONNECTED;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONNECTING;
+    }
+}
+
+RTCSctpTransportState::RTCSctpTransportState(Value v) noexcept : emlite::Val(RTCSctpTransportState::to_string(v)), value_(v) {}
+RTCSctpTransportState::RTCSctpTransportState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCSctpTransportState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCSctpTransportState::RTCSctpTransportState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCSctpTransportState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCSctpTransportState RTCSctpTransportState::take_ownership(Handle h) noexcept { return RTCSctpTransportState(h); }
 RTCSctpTransportState RTCSctpTransportState::clone() const noexcept { return *this; }
+const char* RTCSctpTransportState::to_string(RTCSctpTransportState::Value value_) noexcept {
+    switch (value_) {
+        case CONNECTING:
+            return "connecting";
+        case CONNECTED:
+            return "connected";
+        case CLOSED:
+            return "closed";
+        default:
+            return "connecting"; // fallback to first value
+    }
+}
 
-RTCDataChannelState::RTCDataChannelState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCDataChannelState::RTCDataChannelState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCDataChannelState::Value RTCDataChannelState::from_string(const char* str) noexcept {
+    if (str_equal(str, "connecting")) {
+        return CONNECTING;
+    }
+    else if (str_equal(str, "open")) {
+        return OPEN;
+    }
+    else if (str_equal(str, "closing")) {
+        return CLOSING;
+    }
+    else if (str_equal(str, "closed")) {
+        return CLOSED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CONNECTING;
+    }
+}
+
+RTCDataChannelState::RTCDataChannelState(Value v) noexcept : emlite::Val(RTCDataChannelState::to_string(v)), value_(v) {}
+RTCDataChannelState::RTCDataChannelState(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCDataChannelState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCDataChannelState::RTCDataChannelState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCDataChannelState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCDataChannelState RTCDataChannelState::take_ownership(Handle h) noexcept { return RTCDataChannelState(h); }
 RTCDataChannelState RTCDataChannelState::clone() const noexcept { return *this; }
+const char* RTCDataChannelState::to_string(RTCDataChannelState::Value value_) noexcept {
+    switch (value_) {
+        case CONNECTING:
+            return "connecting";
+        case OPEN:
+            return "open";
+        case CLOSING:
+            return "closing";
+        case CLOSED:
+            return "closed";
+        default:
+            return "connecting"; // fallback to first value
+    }
+}
 
-RTCErrorDetailType::RTCErrorDetailType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RTCErrorDetailType::RTCErrorDetailType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RTCErrorDetailType::Value RTCErrorDetailType::from_string(const char* str) noexcept {
+    if (str_equal(str, "data-channel-failure")) {
+        return DATA_CHANNEL_FAILURE;
+    }
+    else if (str_equal(str, "dtls-failure")) {
+        return DTLS_FAILURE;
+    }
+    else if (str_equal(str, "fingerprint-failure")) {
+        return FINGERPRINT_FAILURE;
+    }
+    else if (str_equal(str, "sctp-failure")) {
+        return SCTP_FAILURE;
+    }
+    else if (str_equal(str, "sdp-syntax-error")) {
+        return SDP_SYNTAX_ERROR;
+    }
+    else if (str_equal(str, "hardware-encoder-not-available")) {
+        return HARDWARE_ENCODER_NOT_AVAILABLE;
+    }
+    else if (str_equal(str, "hardware-encoder-error")) {
+        return HARDWARE_ENCODER_ERROR;
+    }
+    else {
+        // Default to first value for invalid input
+        return DATA_CHANNEL_FAILURE;
+    }
+}
+
+RTCErrorDetailType::RTCErrorDetailType(Value v) noexcept : emlite::Val(RTCErrorDetailType::to_string(v)), value_(v) {}
+RTCErrorDetailType::RTCErrorDetailType(Handle h) noexcept: emlite::Val(h) {
+    value_ = RTCErrorDetailType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RTCErrorDetailType::RTCErrorDetailType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RTCErrorDetailType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RTCErrorDetailType RTCErrorDetailType::take_ownership(Handle h) noexcept { return RTCErrorDetailType(h); }
 RTCErrorDetailType RTCErrorDetailType::clone() const noexcept { return *this; }
+const char* RTCErrorDetailType::to_string(RTCErrorDetailType::Value value_) noexcept {
+    switch (value_) {
+        case DATA_CHANNEL_FAILURE:
+            return "data-channel-failure";
+        case DTLS_FAILURE:
+            return "dtls-failure";
+        case FINGERPRINT_FAILURE:
+            return "fingerprint-failure";
+        case SCTP_FAILURE:
+            return "sctp-failure";
+        case SDP_SYNTAX_ERROR:
+            return "sdp-syntax-error";
+        case HARDWARE_ENCODER_NOT_AVAILABLE:
+            return "hardware-encoder-not-available";
+        case HARDWARE_ENCODER_ERROR:
+            return "hardware-encoder-error";
+        default:
+            return "data-channel-failure"; // fallback to first value
+    }
+}
 
-BinaryType::BinaryType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-BinaryType::BinaryType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+BinaryType::Value BinaryType::from_string(const char* str) noexcept {
+    if (str_equal(str, "blob")) {
+        return BLOB;
+    }
+    else if (str_equal(str, "arraybuffer")) {
+        return ARRAYBUFFER;
+    }
+    else {
+        // Default to first value for invalid input
+        return BLOB;
+    }
+}
+
+BinaryType::BinaryType(Value v) noexcept : emlite::Val(BinaryType::to_string(v)), value_(v) {}
+BinaryType::BinaryType(Handle h) noexcept: emlite::Val(h) {
+    value_ = BinaryType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+BinaryType::BinaryType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = BinaryType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 BinaryType BinaryType::take_ownership(Handle h) noexcept { return BinaryType(h); }
 BinaryType BinaryType::clone() const noexcept { return *this; }
+const char* BinaryType::to_string(BinaryType::Value value_) noexcept {
+    switch (value_) {
+        case BLOB:
+            return "blob";
+        case ARRAYBUFFER:
+            return "arraybuffer";
+        default:
+            return "blob"; // fallback to first value
+    }
+}
 
-WebTransportReliabilityMode::WebTransportReliabilityMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebTransportReliabilityMode::WebTransportReliabilityMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WebTransportReliabilityMode::Value WebTransportReliabilityMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "pending")) {
+        return PENDING;
+    }
+    else if (str_equal(str, "reliable-only")) {
+        return RELIABLE_ONLY;
+    }
+    else if (str_equal(str, "supports-unreliable")) {
+        return SUPPORTS_UNRELIABLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return PENDING;
+    }
+}
+
+WebTransportReliabilityMode::WebTransportReliabilityMode(Value v) noexcept : emlite::Val(WebTransportReliabilityMode::to_string(v)), value_(v) {}
+WebTransportReliabilityMode::WebTransportReliabilityMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = WebTransportReliabilityMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WebTransportReliabilityMode::WebTransportReliabilityMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WebTransportReliabilityMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WebTransportReliabilityMode WebTransportReliabilityMode::take_ownership(Handle h) noexcept { return WebTransportReliabilityMode(h); }
 WebTransportReliabilityMode WebTransportReliabilityMode::clone() const noexcept { return *this; }
+const char* WebTransportReliabilityMode::to_string(WebTransportReliabilityMode::Value value_) noexcept {
+    switch (value_) {
+        case PENDING:
+            return "pending";
+        case RELIABLE_ONLY:
+            return "reliable-only";
+        case SUPPORTS_UNRELIABLE:
+            return "supports-unreliable";
+        default:
+            return "pending"; // fallback to first value
+    }
+}
 
-WebTransportCongestionControl::WebTransportCongestionControl(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebTransportCongestionControl::WebTransportCongestionControl(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WebTransportCongestionControl::Value WebTransportCongestionControl::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "throughput")) {
+        return THROUGHPUT;
+    }
+    else if (str_equal(str, "low-latency")) {
+        return LOW_LATENCY;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+WebTransportCongestionControl::WebTransportCongestionControl(Value v) noexcept : emlite::Val(WebTransportCongestionControl::to_string(v)), value_(v) {}
+WebTransportCongestionControl::WebTransportCongestionControl(Handle h) noexcept: emlite::Val(h) {
+    value_ = WebTransportCongestionControl::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WebTransportCongestionControl::WebTransportCongestionControl(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WebTransportCongestionControl::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WebTransportCongestionControl WebTransportCongestionControl::take_ownership(Handle h) noexcept { return WebTransportCongestionControl(h); }
 WebTransportCongestionControl WebTransportCongestionControl::clone() const noexcept { return *this; }
+const char* WebTransportCongestionControl::to_string(WebTransportCongestionControl::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case THROUGHPUT:
+            return "throughput";
+        case LOW_LATENCY:
+            return "low-latency";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-WebTransportErrorSource::WebTransportErrorSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WebTransportErrorSource::WebTransportErrorSource(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WebTransportErrorSource::Value WebTransportErrorSource::from_string(const char* str) noexcept {
+    if (str_equal(str, "stream")) {
+        return STREAM;
+    }
+    else if (str_equal(str, "session")) {
+        return SESSION;
+    }
+    else {
+        // Default to first value for invalid input
+        return STREAM;
+    }
+}
+
+WebTransportErrorSource::WebTransportErrorSource(Value v) noexcept : emlite::Val(WebTransportErrorSource::to_string(v)), value_(v) {}
+WebTransportErrorSource::WebTransportErrorSource(Handle h) noexcept: emlite::Val(h) {
+    value_ = WebTransportErrorSource::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WebTransportErrorSource::WebTransportErrorSource(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WebTransportErrorSource::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WebTransportErrorSource WebTransportErrorSource::take_ownership(Handle h) noexcept { return WebTransportErrorSource(h); }
 WebTransportErrorSource WebTransportErrorSource::clone() const noexcept { return *this; }
+const char* WebTransportErrorSource::to_string(WebTransportErrorSource::Value value_) noexcept {
+    switch (value_) {
+        case STREAM:
+            return "stream";
+        case SESSION:
+            return "session";
+        default:
+            return "stream"; // fallback to first value
+    }
+}
 
-USBTransferStatus::USBTransferStatus(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-USBTransferStatus::USBTransferStatus(const emlite::Val &v) noexcept : emlite::Val(v) {}
+USBTransferStatus::Value USBTransferStatus::from_string(const char* str) noexcept {
+    if (str_equal(str, "ok")) {
+        return OK;
+    }
+    else if (str_equal(str, "stall")) {
+        return STALL;
+    }
+    else if (str_equal(str, "babble")) {
+        return BABBLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return OK;
+    }
+}
+
+USBTransferStatus::USBTransferStatus(Value v) noexcept : emlite::Val(USBTransferStatus::to_string(v)), value_(v) {}
+USBTransferStatus::USBTransferStatus(Handle h) noexcept: emlite::Val(h) {
+    value_ = USBTransferStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+USBTransferStatus::USBTransferStatus(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = USBTransferStatus::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 USBTransferStatus USBTransferStatus::take_ownership(Handle h) noexcept { return USBTransferStatus(h); }
 USBTransferStatus USBTransferStatus::clone() const noexcept { return *this; }
+const char* USBTransferStatus::to_string(USBTransferStatus::Value value_) noexcept {
+    switch (value_) {
+        case OK:
+            return "ok";
+        case STALL:
+            return "stall";
+        case BABBLE:
+            return "babble";
+        default:
+            return "ok"; // fallback to first value
+    }
+}
 
-USBRequestType::USBRequestType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-USBRequestType::USBRequestType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+USBRequestType::Value USBRequestType::from_string(const char* str) noexcept {
+    if (str_equal(str, "standard")) {
+        return STANDARD;
+    }
+    else if (str_equal(str, "class")) {
+        return CLASS_;
+    }
+    else if (str_equal(str, "vendor")) {
+        return VENDOR;
+    }
+    else {
+        // Default to first value for invalid input
+        return STANDARD;
+    }
+}
+
+USBRequestType::USBRequestType(Value v) noexcept : emlite::Val(USBRequestType::to_string(v)), value_(v) {}
+USBRequestType::USBRequestType(Handle h) noexcept: emlite::Val(h) {
+    value_ = USBRequestType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+USBRequestType::USBRequestType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = USBRequestType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 USBRequestType USBRequestType::take_ownership(Handle h) noexcept { return USBRequestType(h); }
 USBRequestType USBRequestType::clone() const noexcept { return *this; }
+const char* USBRequestType::to_string(USBRequestType::Value value_) noexcept {
+    switch (value_) {
+        case STANDARD:
+            return "standard";
+        case CLASS_:
+            return "class";
+        case VENDOR:
+            return "vendor";
+        default:
+            return "standard"; // fallback to first value
+    }
+}
 
-USBRecipient::USBRecipient(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-USBRecipient::USBRecipient(const emlite::Val &v) noexcept : emlite::Val(v) {}
+USBRecipient::Value USBRecipient::from_string(const char* str) noexcept {
+    if (str_equal(str, "device")) {
+        return DEVICE;
+    }
+    else if (str_equal(str, "interface")) {
+        return INTERFACE;
+    }
+    else if (str_equal(str, "endpoint")) {
+        return ENDPOINT;
+    }
+    else if (str_equal(str, "other")) {
+        return OTHER;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEVICE;
+    }
+}
+
+USBRecipient::USBRecipient(Value v) noexcept : emlite::Val(USBRecipient::to_string(v)), value_(v) {}
+USBRecipient::USBRecipient(Handle h) noexcept: emlite::Val(h) {
+    value_ = USBRecipient::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+USBRecipient::USBRecipient(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = USBRecipient::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 USBRecipient USBRecipient::take_ownership(Handle h) noexcept { return USBRecipient(h); }
 USBRecipient USBRecipient::clone() const noexcept { return *this; }
+const char* USBRecipient::to_string(USBRecipient::Value value_) noexcept {
+    switch (value_) {
+        case DEVICE:
+            return "device";
+        case INTERFACE:
+            return "interface";
+        case ENDPOINT:
+            return "endpoint";
+        case OTHER:
+            return "other";
+        default:
+            return "device"; // fallback to first value
+    }
+}
 
-USBDirection::USBDirection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-USBDirection::USBDirection(const emlite::Val &v) noexcept : emlite::Val(v) {}
+USBDirection::Value USBDirection::from_string(const char* str) noexcept {
+    if (str_equal(str, "in")) {
+        return IN;
+    }
+    else if (str_equal(str, "out")) {
+        return OUT;
+    }
+    else {
+        // Default to first value for invalid input
+        return IN;
+    }
+}
+
+USBDirection::USBDirection(Value v) noexcept : emlite::Val(USBDirection::to_string(v)), value_(v) {}
+USBDirection::USBDirection(Handle h) noexcept: emlite::Val(h) {
+    value_ = USBDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+USBDirection::USBDirection(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = USBDirection::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 USBDirection USBDirection::take_ownership(Handle h) noexcept { return USBDirection(h); }
 USBDirection USBDirection::clone() const noexcept { return *this; }
+const char* USBDirection::to_string(USBDirection::Value value_) noexcept {
+    switch (value_) {
+        case IN:
+            return "in";
+        case OUT:
+            return "out";
+        default:
+            return "in"; // fallback to first value
+    }
+}
 
-USBEndpointType::USBEndpointType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-USBEndpointType::USBEndpointType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+USBEndpointType::Value USBEndpointType::from_string(const char* str) noexcept {
+    if (str_equal(str, "bulk")) {
+        return BULK;
+    }
+    else if (str_equal(str, "interrupt")) {
+        return INTERRUPT;
+    }
+    else if (str_equal(str, "isochronous")) {
+        return ISOCHRONOUS;
+    }
+    else {
+        // Default to first value for invalid input
+        return BULK;
+    }
+}
+
+USBEndpointType::USBEndpointType(Value v) noexcept : emlite::Val(USBEndpointType::to_string(v)), value_(v) {}
+USBEndpointType::USBEndpointType(Handle h) noexcept: emlite::Val(h) {
+    value_ = USBEndpointType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+USBEndpointType::USBEndpointType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = USBEndpointType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 USBEndpointType USBEndpointType::take_ownership(Handle h) noexcept { return USBEndpointType(h); }
 USBEndpointType USBEndpointType::clone() const noexcept { return *this; }
+const char* USBEndpointType::to_string(USBEndpointType::Value value_) noexcept {
+    switch (value_) {
+        case BULK:
+            return "bulk";
+        case INTERRUPT:
+            return "interrupt";
+        case ISOCHRONOUS:
+            return "isochronous";
+        default:
+            return "bulk"; // fallback to first value
+    }
+}
 
-AutoKeyword::AutoKeyword(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AutoKeyword::AutoKeyword(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AutoKeyword::Value AutoKeyword::from_string(const char* str) noexcept {
+    if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else {
+        // Default to first value for invalid input
+        return AUTO_;
+    }
+}
+
+AutoKeyword::AutoKeyword(Value v) noexcept : emlite::Val(AutoKeyword::to_string(v)), value_(v) {}
+AutoKeyword::AutoKeyword(Handle h) noexcept: emlite::Val(h) {
+    value_ = AutoKeyword::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AutoKeyword::AutoKeyword(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AutoKeyword::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AutoKeyword AutoKeyword::take_ownership(Handle h) noexcept { return AutoKeyword(h); }
 AutoKeyword AutoKeyword::clone() const noexcept { return *this; }
+const char* AutoKeyword::to_string(AutoKeyword::Value value_) noexcept {
+    switch (value_) {
+        case AUTO_:
+            return "auto";
+        default:
+            return "auto"; // fallback to first value
+    }
+}
 
-DirectionSetting::DirectionSetting(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-DirectionSetting::DirectionSetting(const emlite::Val &v) noexcept : emlite::Val(v) {}
+DirectionSetting::Value DirectionSetting::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "rl")) {
+        return RL;
+    }
+    else if (str_equal(str, "lr")) {
+        return LR;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+DirectionSetting::DirectionSetting(Value v) noexcept : emlite::Val(DirectionSetting::to_string(v)), value_(v) {}
+DirectionSetting::DirectionSetting(Handle h) noexcept: emlite::Val(h) {
+    value_ = DirectionSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DirectionSetting::DirectionSetting(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DirectionSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 DirectionSetting DirectionSetting::take_ownership(Handle h) noexcept { return DirectionSetting(h); }
 DirectionSetting DirectionSetting::clone() const noexcept { return *this; }
+const char* DirectionSetting::to_string(DirectionSetting::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case RL:
+            return "rl";
+        case LR:
+            return "lr";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-LineAlignSetting::LineAlignSetting(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-LineAlignSetting::LineAlignSetting(const emlite::Val &v) noexcept : emlite::Val(v) {}
+LineAlignSetting::Value LineAlignSetting::from_string(const char* str) noexcept {
+    if (str_equal(str, "start")) {
+        return START;
+    }
+    else if (str_equal(str, "center")) {
+        return CENTER;
+    }
+    else if (str_equal(str, "end")) {
+        return END;
+    }
+    else {
+        // Default to first value for invalid input
+        return START;
+    }
+}
+
+LineAlignSetting::LineAlignSetting(Value v) noexcept : emlite::Val(LineAlignSetting::to_string(v)), value_(v) {}
+LineAlignSetting::LineAlignSetting(Handle h) noexcept: emlite::Val(h) {
+    value_ = LineAlignSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+LineAlignSetting::LineAlignSetting(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = LineAlignSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 LineAlignSetting LineAlignSetting::take_ownership(Handle h) noexcept { return LineAlignSetting(h); }
 LineAlignSetting LineAlignSetting::clone() const noexcept { return *this; }
+const char* LineAlignSetting::to_string(LineAlignSetting::Value value_) noexcept {
+    switch (value_) {
+        case START:
+            return "start";
+        case CENTER:
+            return "center";
+        case END:
+            return "end";
+        default:
+            return "start"; // fallback to first value
+    }
+}
 
-PositionAlignSetting::PositionAlignSetting(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-PositionAlignSetting::PositionAlignSetting(const emlite::Val &v) noexcept : emlite::Val(v) {}
+PositionAlignSetting::Value PositionAlignSetting::from_string(const char* str) noexcept {
+    if (str_equal(str, "line-left")) {
+        return LINE_LEFT;
+    }
+    else if (str_equal(str, "center")) {
+        return CENTER;
+    }
+    else if (str_equal(str, "line-right")) {
+        return LINE_RIGHT;
+    }
+    else if (str_equal(str, "auto")) {
+        return AUTO_;
+    }
+    else {
+        // Default to first value for invalid input
+        return LINE_LEFT;
+    }
+}
+
+PositionAlignSetting::PositionAlignSetting(Value v) noexcept : emlite::Val(PositionAlignSetting::to_string(v)), value_(v) {}
+PositionAlignSetting::PositionAlignSetting(Handle h) noexcept: emlite::Val(h) {
+    value_ = PositionAlignSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+PositionAlignSetting::PositionAlignSetting(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = PositionAlignSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 PositionAlignSetting PositionAlignSetting::take_ownership(Handle h) noexcept { return PositionAlignSetting(h); }
 PositionAlignSetting PositionAlignSetting::clone() const noexcept { return *this; }
+const char* PositionAlignSetting::to_string(PositionAlignSetting::Value value_) noexcept {
+    switch (value_) {
+        case LINE_LEFT:
+            return "line-left";
+        case CENTER:
+            return "center";
+        case LINE_RIGHT:
+            return "line-right";
+        case AUTO_:
+            return "auto";
+        default:
+            return "line-left"; // fallback to first value
+    }
+}
 
-AlignSetting::AlignSetting(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-AlignSetting::AlignSetting(const emlite::Val &v) noexcept : emlite::Val(v) {}
+AlignSetting::Value AlignSetting::from_string(const char* str) noexcept {
+    if (str_equal(str, "start")) {
+        return START;
+    }
+    else if (str_equal(str, "center")) {
+        return CENTER;
+    }
+    else if (str_equal(str, "end")) {
+        return END;
+    }
+    else if (str_equal(str, "left")) {
+        return LEFT;
+    }
+    else if (str_equal(str, "right")) {
+        return RIGHT;
+    }
+    else {
+        // Default to first value for invalid input
+        return START;
+    }
+}
+
+AlignSetting::AlignSetting(Value v) noexcept : emlite::Val(AlignSetting::to_string(v)), value_(v) {}
+AlignSetting::AlignSetting(Handle h) noexcept: emlite::Val(h) {
+    value_ = AlignSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+AlignSetting::AlignSetting(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AlignSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 AlignSetting AlignSetting::take_ownership(Handle h) noexcept { return AlignSetting(h); }
 AlignSetting AlignSetting::clone() const noexcept { return *this; }
+const char* AlignSetting::to_string(AlignSetting::Value value_) noexcept {
+    switch (value_) {
+        case START:
+            return "start";
+        case CENTER:
+            return "center";
+        case END:
+            return "end";
+        case LEFT:
+            return "left";
+        case RIGHT:
+            return "right";
+        default:
+            return "start"; // fallback to first value
+    }
+}
 
-ScrollSetting::ScrollSetting(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-ScrollSetting::ScrollSetting(const emlite::Val &v) noexcept : emlite::Val(v) {}
+ScrollSetting::Value ScrollSetting::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "up")) {
+        return UP;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+ScrollSetting::ScrollSetting(Value v) noexcept : emlite::Val(ScrollSetting::to_string(v)), value_(v) {}
+ScrollSetting::ScrollSetting(Handle h) noexcept: emlite::Val(h) {
+    value_ = ScrollSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+ScrollSetting::ScrollSetting(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = ScrollSetting::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 ScrollSetting ScrollSetting::take_ownership(Handle h) noexcept { return ScrollSetting(h); }
 ScrollSetting ScrollSetting::clone() const noexcept { return *this; }
+const char* ScrollSetting::to_string(ScrollSetting::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case UP:
+            return "up";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
-XREnvironmentBlendMode::XREnvironmentBlendMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XREnvironmentBlendMode::XREnvironmentBlendMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XREnvironmentBlendMode::Value XREnvironmentBlendMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "opaque")) {
+        return OPAQUE;
+    }
+    else if (str_equal(str, "alpha-blend")) {
+        return ALPHA_BLEND;
+    }
+    else if (str_equal(str, "additive")) {
+        return ADDITIVE;
+    }
+    else {
+        // Default to first value for invalid input
+        return OPAQUE;
+    }
+}
+
+XREnvironmentBlendMode::XREnvironmentBlendMode(Value v) noexcept : emlite::Val(XREnvironmentBlendMode::to_string(v)), value_(v) {}
+XREnvironmentBlendMode::XREnvironmentBlendMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = XREnvironmentBlendMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XREnvironmentBlendMode::XREnvironmentBlendMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XREnvironmentBlendMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XREnvironmentBlendMode XREnvironmentBlendMode::take_ownership(Handle h) noexcept { return XREnvironmentBlendMode(h); }
 XREnvironmentBlendMode XREnvironmentBlendMode::clone() const noexcept { return *this; }
+const char* XREnvironmentBlendMode::to_string(XREnvironmentBlendMode::Value value_) noexcept {
+    switch (value_) {
+        case OPAQUE:
+            return "opaque";
+        case ALPHA_BLEND:
+            return "alpha-blend";
+        case ADDITIVE:
+            return "additive";
+        default:
+            return "opaque"; // fallback to first value
+    }
+}
 
-XRInteractionMode::XRInteractionMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRInteractionMode::XRInteractionMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRInteractionMode::Value XRInteractionMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "screen-space")) {
+        return SCREEN_SPACE;
+    }
+    else if (str_equal(str, "world-space")) {
+        return WORLD_SPACE;
+    }
+    else {
+        // Default to first value for invalid input
+        return SCREEN_SPACE;
+    }
+}
+
+XRInteractionMode::XRInteractionMode(Value v) noexcept : emlite::Val(XRInteractionMode::to_string(v)), value_(v) {}
+XRInteractionMode::XRInteractionMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRInteractionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRInteractionMode::XRInteractionMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRInteractionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRInteractionMode XRInteractionMode::take_ownership(Handle h) noexcept { return XRInteractionMode(h); }
 XRInteractionMode XRInteractionMode::clone() const noexcept { return *this; }
+const char* XRInteractionMode::to_string(XRInteractionMode::Value value_) noexcept {
+    switch (value_) {
+        case SCREEN_SPACE:
+            return "screen-space";
+        case WORLD_SPACE:
+            return "world-space";
+        default:
+            return "screen-space"; // fallback to first value
+    }
+}
 
-XRDepthType::XRDepthType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRDepthType::XRDepthType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRDepthType::Value XRDepthType::from_string(const char* str) noexcept {
+    if (str_equal(str, "raw")) {
+        return RAW;
+    }
+    else if (str_equal(str, "smooth")) {
+        return SMOOTH;
+    }
+    else {
+        // Default to first value for invalid input
+        return RAW;
+    }
+}
+
+XRDepthType::XRDepthType(Value v) noexcept : emlite::Val(XRDepthType::to_string(v)), value_(v) {}
+XRDepthType::XRDepthType(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRDepthType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRDepthType::XRDepthType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRDepthType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRDepthType XRDepthType::take_ownership(Handle h) noexcept { return XRDepthType(h); }
 XRDepthType XRDepthType::clone() const noexcept { return *this; }
+const char* XRDepthType::to_string(XRDepthType::Value value_) noexcept {
+    switch (value_) {
+        case RAW:
+            return "raw";
+        case SMOOTH:
+            return "smooth";
+        default:
+            return "raw"; // fallback to first value
+    }
+}
 
-XRDepthUsage::XRDepthUsage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRDepthUsage::XRDepthUsage(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRDepthUsage::Value XRDepthUsage::from_string(const char* str) noexcept {
+    if (str_equal(str, "cpu-optimized")) {
+        return CPU_OPTIMIZED;
+    }
+    else if (str_equal(str, "gpu-optimized")) {
+        return GPU_OPTIMIZED;
+    }
+    else {
+        // Default to first value for invalid input
+        return CPU_OPTIMIZED;
+    }
+}
+
+XRDepthUsage::XRDepthUsage(Value v) noexcept : emlite::Val(XRDepthUsage::to_string(v)), value_(v) {}
+XRDepthUsage::XRDepthUsage(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRDepthUsage::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRDepthUsage::XRDepthUsage(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRDepthUsage::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRDepthUsage XRDepthUsage::take_ownership(Handle h) noexcept { return XRDepthUsage(h); }
 XRDepthUsage XRDepthUsage::clone() const noexcept { return *this; }
+const char* XRDepthUsage::to_string(XRDepthUsage::Value value_) noexcept {
+    switch (value_) {
+        case CPU_OPTIMIZED:
+            return "cpu-optimized";
+        case GPU_OPTIMIZED:
+            return "gpu-optimized";
+        default:
+            return "cpu-optimized"; // fallback to first value
+    }
+}
 
-XRDepthDataFormat::XRDepthDataFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRDepthDataFormat::XRDepthDataFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRDepthDataFormat::Value XRDepthDataFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "luminance-alpha")) {
+        return LUMINANCE_ALPHA;
+    }
+    else if (str_equal(str, "float32")) {
+        return FLOAT32;
+    }
+    else if (str_equal(str, "unsigned-short")) {
+        return UNSIGNED_SHORT;
+    }
+    else {
+        // Default to first value for invalid input
+        return LUMINANCE_ALPHA;
+    }
+}
+
+XRDepthDataFormat::XRDepthDataFormat(Value v) noexcept : emlite::Val(XRDepthDataFormat::to_string(v)), value_(v) {}
+XRDepthDataFormat::XRDepthDataFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRDepthDataFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRDepthDataFormat::XRDepthDataFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRDepthDataFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRDepthDataFormat XRDepthDataFormat::take_ownership(Handle h) noexcept { return XRDepthDataFormat(h); }
 XRDepthDataFormat XRDepthDataFormat::clone() const noexcept { return *this; }
+const char* XRDepthDataFormat::to_string(XRDepthDataFormat::Value value_) noexcept {
+    switch (value_) {
+        case LUMINANCE_ALPHA:
+            return "luminance-alpha";
+        case FLOAT32:
+            return "float32";
+        case UNSIGNED_SHORT:
+            return "unsigned-short";
+        default:
+            return "luminance-alpha"; // fallback to first value
+    }
+}
 
-XRDOMOverlayType::XRDOMOverlayType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRDOMOverlayType::XRDOMOverlayType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRDOMOverlayType::Value XRDOMOverlayType::from_string(const char* str) noexcept {
+    if (str_equal(str, "screen")) {
+        return SCREEN;
+    }
+    else if (str_equal(str, "floating")) {
+        return FLOATING;
+    }
+    else if (str_equal(str, "head-locked")) {
+        return HEAD_LOCKED;
+    }
+    else {
+        // Default to first value for invalid input
+        return SCREEN;
+    }
+}
+
+XRDOMOverlayType::XRDOMOverlayType(Value v) noexcept : emlite::Val(XRDOMOverlayType::to_string(v)), value_(v) {}
+XRDOMOverlayType::XRDOMOverlayType(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRDOMOverlayType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRDOMOverlayType::XRDOMOverlayType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRDOMOverlayType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRDOMOverlayType XRDOMOverlayType::take_ownership(Handle h) noexcept { return XRDOMOverlayType(h); }
 XRDOMOverlayType XRDOMOverlayType::clone() const noexcept { return *this; }
+const char* XRDOMOverlayType::to_string(XRDOMOverlayType::Value value_) noexcept {
+    switch (value_) {
+        case SCREEN:
+            return "screen";
+        case FLOATING:
+            return "floating";
+        case HEAD_LOCKED:
+            return "head-locked";
+        default:
+            return "screen"; // fallback to first value
+    }
+}
 
-XRHandJoint::XRHandJoint(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRHandJoint::XRHandJoint(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRHandJoint::Value XRHandJoint::from_string(const char* str) noexcept {
+    if (str_equal(str, "wrist")) {
+        return WRIST;
+    }
+    else if (str_equal(str, "thumb-metacarpal")) {
+        return THUMB_METACARPAL;
+    }
+    else if (str_equal(str, "thumb-phalanx-proximal")) {
+        return THUMB_PHALANX_PROXIMAL;
+    }
+    else if (str_equal(str, "thumb-phalanx-distal")) {
+        return THUMB_PHALANX_DISTAL;
+    }
+    else if (str_equal(str, "thumb-tip")) {
+        return THUMB_TIP;
+    }
+    else if (str_equal(str, "index-finger-metacarpal")) {
+        return INDEX_FINGER_METACARPAL;
+    }
+    else if (str_equal(str, "index-finger-phalanx-proximal")) {
+        return INDEX_FINGER_PHALANX_PROXIMAL;
+    }
+    else if (str_equal(str, "index-finger-phalanx-intermediate")) {
+        return INDEX_FINGER_PHALANX_INTERMEDIATE;
+    }
+    else if (str_equal(str, "index-finger-phalanx-distal")) {
+        return INDEX_FINGER_PHALANX_DISTAL;
+    }
+    else if (str_equal(str, "index-finger-tip")) {
+        return INDEX_FINGER_TIP;
+    }
+    else if (str_equal(str, "middle-finger-metacarpal")) {
+        return MIDDLE_FINGER_METACARPAL;
+    }
+    else if (str_equal(str, "middle-finger-phalanx-proximal")) {
+        return MIDDLE_FINGER_PHALANX_PROXIMAL;
+    }
+    else if (str_equal(str, "middle-finger-phalanx-intermediate")) {
+        return MIDDLE_FINGER_PHALANX_INTERMEDIATE;
+    }
+    else if (str_equal(str, "middle-finger-phalanx-distal")) {
+        return MIDDLE_FINGER_PHALANX_DISTAL;
+    }
+    else if (str_equal(str, "middle-finger-tip")) {
+        return MIDDLE_FINGER_TIP;
+    }
+    else if (str_equal(str, "ring-finger-metacarpal")) {
+        return RING_FINGER_METACARPAL;
+    }
+    else if (str_equal(str, "ring-finger-phalanx-proximal")) {
+        return RING_FINGER_PHALANX_PROXIMAL;
+    }
+    else if (str_equal(str, "ring-finger-phalanx-intermediate")) {
+        return RING_FINGER_PHALANX_INTERMEDIATE;
+    }
+    else if (str_equal(str, "ring-finger-phalanx-distal")) {
+        return RING_FINGER_PHALANX_DISTAL;
+    }
+    else if (str_equal(str, "ring-finger-tip")) {
+        return RING_FINGER_TIP;
+    }
+    else if (str_equal(str, "pinky-finger-metacarpal")) {
+        return PINKY_FINGER_METACARPAL;
+    }
+    else if (str_equal(str, "pinky-finger-phalanx-proximal")) {
+        return PINKY_FINGER_PHALANX_PROXIMAL;
+    }
+    else if (str_equal(str, "pinky-finger-phalanx-intermediate")) {
+        return PINKY_FINGER_PHALANX_INTERMEDIATE;
+    }
+    else if (str_equal(str, "pinky-finger-phalanx-distal")) {
+        return PINKY_FINGER_PHALANX_DISTAL;
+    }
+    else if (str_equal(str, "pinky-finger-tip")) {
+        return PINKY_FINGER_TIP;
+    }
+    else {
+        // Default to first value for invalid input
+        return WRIST;
+    }
+}
+
+XRHandJoint::XRHandJoint(Value v) noexcept : emlite::Val(XRHandJoint::to_string(v)), value_(v) {}
+XRHandJoint::XRHandJoint(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRHandJoint::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRHandJoint::XRHandJoint(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRHandJoint::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRHandJoint XRHandJoint::take_ownership(Handle h) noexcept { return XRHandJoint(h); }
 XRHandJoint XRHandJoint::clone() const noexcept { return *this; }
+const char* XRHandJoint::to_string(XRHandJoint::Value value_) noexcept {
+    switch (value_) {
+        case WRIST:
+            return "wrist";
+        case THUMB_METACARPAL:
+            return "thumb-metacarpal";
+        case THUMB_PHALANX_PROXIMAL:
+            return "thumb-phalanx-proximal";
+        case THUMB_PHALANX_DISTAL:
+            return "thumb-phalanx-distal";
+        case THUMB_TIP:
+            return "thumb-tip";
+        case INDEX_FINGER_METACARPAL:
+            return "index-finger-metacarpal";
+        case INDEX_FINGER_PHALANX_PROXIMAL:
+            return "index-finger-phalanx-proximal";
+        case INDEX_FINGER_PHALANX_INTERMEDIATE:
+            return "index-finger-phalanx-intermediate";
+        case INDEX_FINGER_PHALANX_DISTAL:
+            return "index-finger-phalanx-distal";
+        case INDEX_FINGER_TIP:
+            return "index-finger-tip";
+        case MIDDLE_FINGER_METACARPAL:
+            return "middle-finger-metacarpal";
+        case MIDDLE_FINGER_PHALANX_PROXIMAL:
+            return "middle-finger-phalanx-proximal";
+        case MIDDLE_FINGER_PHALANX_INTERMEDIATE:
+            return "middle-finger-phalanx-intermediate";
+        case MIDDLE_FINGER_PHALANX_DISTAL:
+            return "middle-finger-phalanx-distal";
+        case MIDDLE_FINGER_TIP:
+            return "middle-finger-tip";
+        case RING_FINGER_METACARPAL:
+            return "ring-finger-metacarpal";
+        case RING_FINGER_PHALANX_PROXIMAL:
+            return "ring-finger-phalanx-proximal";
+        case RING_FINGER_PHALANX_INTERMEDIATE:
+            return "ring-finger-phalanx-intermediate";
+        case RING_FINGER_PHALANX_DISTAL:
+            return "ring-finger-phalanx-distal";
+        case RING_FINGER_TIP:
+            return "ring-finger-tip";
+        case PINKY_FINGER_METACARPAL:
+            return "pinky-finger-metacarpal";
+        case PINKY_FINGER_PHALANX_PROXIMAL:
+            return "pinky-finger-phalanx-proximal";
+        case PINKY_FINGER_PHALANX_INTERMEDIATE:
+            return "pinky-finger-phalanx-intermediate";
+        case PINKY_FINGER_PHALANX_DISTAL:
+            return "pinky-finger-phalanx-distal";
+        case PINKY_FINGER_TIP:
+            return "pinky-finger-tip";
+        default:
+            return "wrist"; // fallback to first value
+    }
+}
 
-XRHitTestTrackableType::XRHitTestTrackableType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRHitTestTrackableType::XRHitTestTrackableType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRHitTestTrackableType::Value XRHitTestTrackableType::from_string(const char* str) noexcept {
+    if (str_equal(str, "point")) {
+        return POINT;
+    }
+    else if (str_equal(str, "plane")) {
+        return PLANE;
+    }
+    else if (str_equal(str, "mesh")) {
+        return MESH;
+    }
+    else {
+        // Default to first value for invalid input
+        return POINT;
+    }
+}
+
+XRHitTestTrackableType::XRHitTestTrackableType(Value v) noexcept : emlite::Val(XRHitTestTrackableType::to_string(v)), value_(v) {}
+XRHitTestTrackableType::XRHitTestTrackableType(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRHitTestTrackableType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRHitTestTrackableType::XRHitTestTrackableType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRHitTestTrackableType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRHitTestTrackableType XRHitTestTrackableType::take_ownership(Handle h) noexcept { return XRHitTestTrackableType(h); }
 XRHitTestTrackableType XRHitTestTrackableType::clone() const noexcept { return *this; }
+const char* XRHitTestTrackableType::to_string(XRHitTestTrackableType::Value value_) noexcept {
+    switch (value_) {
+        case POINT:
+            return "point";
+        case PLANE:
+            return "plane";
+        case MESH:
+            return "mesh";
+        default:
+            return "point"; // fallback to first value
+    }
+}
 
-XRReflectionFormat::XRReflectionFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRReflectionFormat::XRReflectionFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRReflectionFormat::Value XRReflectionFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "srgba8")) {
+        return SRGBA8;
+    }
+    else if (str_equal(str, "rgba16f")) {
+        return RGBA16F;
+    }
+    else {
+        // Default to first value for invalid input
+        return SRGBA8;
+    }
+}
+
+XRReflectionFormat::XRReflectionFormat(Value v) noexcept : emlite::Val(XRReflectionFormat::to_string(v)), value_(v) {}
+XRReflectionFormat::XRReflectionFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRReflectionFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRReflectionFormat::XRReflectionFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRReflectionFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRReflectionFormat XRReflectionFormat::take_ownership(Handle h) noexcept { return XRReflectionFormat(h); }
 XRReflectionFormat XRReflectionFormat::clone() const noexcept { return *this; }
+const char* XRReflectionFormat::to_string(XRReflectionFormat::Value value_) noexcept {
+    switch (value_) {
+        case SRGBA8:
+            return "srgba8";
+        case RGBA16F:
+            return "rgba16f";
+        default:
+            return "srgba8"; // fallback to first value
+    }
+}
 
-XRPlaneOrientation::XRPlaneOrientation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRPlaneOrientation::XRPlaneOrientation(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRPlaneOrientation::Value XRPlaneOrientation::from_string(const char* str) noexcept {
+    if (str_equal(str, "horizontal")) {
+        return HORIZONTAL;
+    }
+    else if (str_equal(str, "vertical")) {
+        return VERTICAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return HORIZONTAL;
+    }
+}
+
+XRPlaneOrientation::XRPlaneOrientation(Value v) noexcept : emlite::Val(XRPlaneOrientation::to_string(v)), value_(v) {}
+XRPlaneOrientation::XRPlaneOrientation(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRPlaneOrientation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRPlaneOrientation::XRPlaneOrientation(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRPlaneOrientation::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRPlaneOrientation XRPlaneOrientation::take_ownership(Handle h) noexcept { return XRPlaneOrientation(h); }
 XRPlaneOrientation XRPlaneOrientation::clone() const noexcept { return *this; }
+const char* XRPlaneOrientation::to_string(XRPlaneOrientation::Value value_) noexcept {
+    switch (value_) {
+        case HORIZONTAL:
+            return "horizontal";
+        case VERTICAL:
+            return "vertical";
+        default:
+            return "horizontal"; // fallback to first value
+    }
+}
 
-XRSessionMode::XRSessionMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRSessionMode::XRSessionMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRSessionMode::Value XRSessionMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "inline")) {
+        return INLINE_;
+    }
+    else if (str_equal(str, "immersive-vr")) {
+        return IMMERSIVE_VR;
+    }
+    else if (str_equal(str, "immersive-ar")) {
+        return IMMERSIVE_AR;
+    }
+    else {
+        // Default to first value for invalid input
+        return INLINE_;
+    }
+}
+
+XRSessionMode::XRSessionMode(Value v) noexcept : emlite::Val(XRSessionMode::to_string(v)), value_(v) {}
+XRSessionMode::XRSessionMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRSessionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRSessionMode::XRSessionMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRSessionMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRSessionMode XRSessionMode::take_ownership(Handle h) noexcept { return XRSessionMode(h); }
 XRSessionMode XRSessionMode::clone() const noexcept { return *this; }
+const char* XRSessionMode::to_string(XRSessionMode::Value value_) noexcept {
+    switch (value_) {
+        case INLINE_:
+            return "inline";
+        case IMMERSIVE_VR:
+            return "immersive-vr";
+        case IMMERSIVE_AR:
+            return "immersive-ar";
+        default:
+            return "inline"; // fallback to first value
+    }
+}
 
-XRVisibilityState::XRVisibilityState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRVisibilityState::XRVisibilityState(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRVisibilityState::Value XRVisibilityState::from_string(const char* str) noexcept {
+    if (str_equal(str, "visible")) {
+        return VISIBLE;
+    }
+    else if (str_equal(str, "visible-blurred")) {
+        return VISIBLE_BLURRED;
+    }
+    else if (str_equal(str, "hidden")) {
+        return HIDDEN;
+    }
+    else {
+        // Default to first value for invalid input
+        return VISIBLE;
+    }
+}
+
+XRVisibilityState::XRVisibilityState(Value v) noexcept : emlite::Val(XRVisibilityState::to_string(v)), value_(v) {}
+XRVisibilityState::XRVisibilityState(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRVisibilityState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRVisibilityState::XRVisibilityState(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRVisibilityState::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRVisibilityState XRVisibilityState::take_ownership(Handle h) noexcept { return XRVisibilityState(h); }
 XRVisibilityState XRVisibilityState::clone() const noexcept { return *this; }
+const char* XRVisibilityState::to_string(XRVisibilityState::Value value_) noexcept {
+    switch (value_) {
+        case VISIBLE:
+            return "visible";
+        case VISIBLE_BLURRED:
+            return "visible-blurred";
+        case HIDDEN:
+            return "hidden";
+        default:
+            return "visible"; // fallback to first value
+    }
+}
 
-XRReferenceSpaceType::XRReferenceSpaceType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRReferenceSpaceType::XRReferenceSpaceType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRReferenceSpaceType::Value XRReferenceSpaceType::from_string(const char* str) noexcept {
+    if (str_equal(str, "viewer")) {
+        return VIEWER;
+    }
+    else if (str_equal(str, "local")) {
+        return LOCAL;
+    }
+    else if (str_equal(str, "local-floor")) {
+        return LOCAL_FLOOR;
+    }
+    else if (str_equal(str, "bounded-floor")) {
+        return BOUNDED_FLOOR;
+    }
+    else if (str_equal(str, "unbounded")) {
+        return UNBOUNDED;
+    }
+    else {
+        // Default to first value for invalid input
+        return VIEWER;
+    }
+}
+
+XRReferenceSpaceType::XRReferenceSpaceType(Value v) noexcept : emlite::Val(XRReferenceSpaceType::to_string(v)), value_(v) {}
+XRReferenceSpaceType::XRReferenceSpaceType(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRReferenceSpaceType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRReferenceSpaceType::XRReferenceSpaceType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRReferenceSpaceType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRReferenceSpaceType XRReferenceSpaceType::take_ownership(Handle h) noexcept { return XRReferenceSpaceType(h); }
 XRReferenceSpaceType XRReferenceSpaceType::clone() const noexcept { return *this; }
+const char* XRReferenceSpaceType::to_string(XRReferenceSpaceType::Value value_) noexcept {
+    switch (value_) {
+        case VIEWER:
+            return "viewer";
+        case LOCAL:
+            return "local";
+        case LOCAL_FLOOR:
+            return "local-floor";
+        case BOUNDED_FLOOR:
+            return "bounded-floor";
+        case UNBOUNDED:
+            return "unbounded";
+        default:
+            return "viewer"; // fallback to first value
+    }
+}
 
-XREye::XREye(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XREye::XREye(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XREye::Value XREye::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "left")) {
+        return LEFT;
+    }
+    else if (str_equal(str, "right")) {
+        return RIGHT;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+XREye::XREye(Value v) noexcept : emlite::Val(XREye::to_string(v)), value_(v) {}
+XREye::XREye(Handle h) noexcept: emlite::Val(h) {
+    value_ = XREye::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XREye::XREye(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XREye::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XREye XREye::take_ownership(Handle h) noexcept { return XREye(h); }
 XREye XREye::clone() const noexcept { return *this; }
+const char* XREye::to_string(XREye::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case LEFT:
+            return "left";
+        case RIGHT:
+            return "right";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-XRHandedness::XRHandedness(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRHandedness::XRHandedness(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRHandedness::Value XRHandedness::from_string(const char* str) noexcept {
+    if (str_equal(str, "none")) {
+        return NONE;
+    }
+    else if (str_equal(str, "left")) {
+        return LEFT;
+    }
+    else if (str_equal(str, "right")) {
+        return RIGHT;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+XRHandedness::XRHandedness(Value v) noexcept : emlite::Val(XRHandedness::to_string(v)), value_(v) {}
+XRHandedness::XRHandedness(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRHandedness::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRHandedness::XRHandedness(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRHandedness::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRHandedness XRHandedness::take_ownership(Handle h) noexcept { return XRHandedness(h); }
 XRHandedness XRHandedness::clone() const noexcept { return *this; }
+const char* XRHandedness::to_string(XRHandedness::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "none";
+        case LEFT:
+            return "left";
+        case RIGHT:
+            return "right";
+        default:
+            return "none"; // fallback to first value
+    }
+}
 
-XRTargetRayMode::XRTargetRayMode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRTargetRayMode::XRTargetRayMode(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRTargetRayMode::Value XRTargetRayMode::from_string(const char* str) noexcept {
+    if (str_equal(str, "gaze")) {
+        return GAZE;
+    }
+    else if (str_equal(str, "tracked-pointer")) {
+        return TRACKED_POINTER;
+    }
+    else if (str_equal(str, "screen")) {
+        return SCREEN;
+    }
+    else if (str_equal(str, "transient-pointer")) {
+        return TRANSIENT_POINTER;
+    }
+    else {
+        // Default to first value for invalid input
+        return GAZE;
+    }
+}
+
+XRTargetRayMode::XRTargetRayMode(Value v) noexcept : emlite::Val(XRTargetRayMode::to_string(v)), value_(v) {}
+XRTargetRayMode::XRTargetRayMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRTargetRayMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRTargetRayMode::XRTargetRayMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRTargetRayMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRTargetRayMode XRTargetRayMode::take_ownership(Handle h) noexcept { return XRTargetRayMode(h); }
 XRTargetRayMode XRTargetRayMode::clone() const noexcept { return *this; }
+const char* XRTargetRayMode::to_string(XRTargetRayMode::Value value_) noexcept {
+    switch (value_) {
+        case GAZE:
+            return "gaze";
+        case TRACKED_POINTER:
+            return "tracked-pointer";
+        case SCREEN:
+            return "screen";
+        case TRANSIENT_POINTER:
+            return "transient-pointer";
+        default:
+            return "gaze"; // fallback to first value
+    }
+}
 
-XRLayerLayout::XRLayerLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRLayerLayout::XRLayerLayout(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRLayerLayout::Value XRLayerLayout::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "mono")) {
+        return MONO;
+    }
+    else if (str_equal(str, "stereo")) {
+        return STEREO;
+    }
+    else if (str_equal(str, "stereo-left-right")) {
+        return STEREO_LEFT_RIGHT;
+    }
+    else if (str_equal(str, "stereo-top-bottom")) {
+        return STEREO_TOP_BOTTOM;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+XRLayerLayout::XRLayerLayout(Value v) noexcept : emlite::Val(XRLayerLayout::to_string(v)), value_(v) {}
+XRLayerLayout::XRLayerLayout(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRLayerLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRLayerLayout::XRLayerLayout(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRLayerLayout::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRLayerLayout XRLayerLayout::take_ownership(Handle h) noexcept { return XRLayerLayout(h); }
 XRLayerLayout XRLayerLayout::clone() const noexcept { return *this; }
+const char* XRLayerLayout::to_string(XRLayerLayout::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case MONO:
+            return "mono";
+        case STEREO:
+            return "stereo";
+        case STEREO_LEFT_RIGHT:
+            return "stereo-left-right";
+        case STEREO_TOP_BOTTOM:
+            return "stereo-top-bottom";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-XRLayerQuality::XRLayerQuality(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRLayerQuality::XRLayerQuality(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRLayerQuality::Value XRLayerQuality::from_string(const char* str) noexcept {
+    if (str_equal(str, "default")) {
+        return DEFAULT_;
+    }
+    else if (str_equal(str, "text-optimized")) {
+        return TEXT_OPTIMIZED;
+    }
+    else if (str_equal(str, "graphics-optimized")) {
+        return GRAPHICS_OPTIMIZED;
+    }
+    else {
+        // Default to first value for invalid input
+        return DEFAULT_;
+    }
+}
+
+XRLayerQuality::XRLayerQuality(Value v) noexcept : emlite::Val(XRLayerQuality::to_string(v)), value_(v) {}
+XRLayerQuality::XRLayerQuality(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRLayerQuality::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRLayerQuality::XRLayerQuality(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRLayerQuality::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRLayerQuality XRLayerQuality::take_ownership(Handle h) noexcept { return XRLayerQuality(h); }
 XRLayerQuality XRLayerQuality::clone() const noexcept { return *this; }
+const char* XRLayerQuality::to_string(XRLayerQuality::Value value_) noexcept {
+    switch (value_) {
+        case DEFAULT_:
+            return "default";
+        case TEXT_OPTIMIZED:
+            return "text-optimized";
+        case GRAPHICS_OPTIMIZED:
+            return "graphics-optimized";
+        default:
+            return "default"; // fallback to first value
+    }
+}
 
-XRTextureType::XRTextureType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XRTextureType::XRTextureType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XRTextureType::Value XRTextureType::from_string(const char* str) noexcept {
+    if (str_equal(str, "texture")) {
+        return TEXTURE;
+    }
+    else if (str_equal(str, "texture-array")) {
+        return TEXTURE_ARRAY;
+    }
+    else {
+        // Default to first value for invalid input
+        return TEXTURE;
+    }
+}
+
+XRTextureType::XRTextureType(Value v) noexcept : emlite::Val(XRTextureType::to_string(v)), value_(v) {}
+XRTextureType::XRTextureType(Handle h) noexcept: emlite::Val(h) {
+    value_ = XRTextureType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XRTextureType::XRTextureType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XRTextureType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XRTextureType XRTextureType::take_ownership(Handle h) noexcept { return XRTextureType(h); }
 XRTextureType XRTextureType::clone() const noexcept { return *this; }
+const char* XRTextureType::to_string(XRTextureType::Value value_) noexcept {
+    switch (value_) {
+        case TEXTURE:
+            return "texture";
+        case TEXTURE_ARRAY:
+            return "texture-array";
+        default:
+            return "texture"; // fallback to first value
+    }
+}
 
-SummarizerType::SummarizerType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SummarizerType::SummarizerType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SummarizerType::Value SummarizerType::from_string(const char* str) noexcept {
+    if (str_equal(str, "tldr")) {
+        return TLDR;
+    }
+    else if (str_equal(str, "teaser")) {
+        return TEASER;
+    }
+    else if (str_equal(str, "key-points")) {
+        return KEY_POINTS;
+    }
+    else if (str_equal(str, "headline")) {
+        return HEADLINE;
+    }
+    else {
+        // Default to first value for invalid input
+        return TLDR;
+    }
+}
+
+SummarizerType::SummarizerType(Value v) noexcept : emlite::Val(SummarizerType::to_string(v)), value_(v) {}
+SummarizerType::SummarizerType(Handle h) noexcept: emlite::Val(h) {
+    value_ = SummarizerType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SummarizerType::SummarizerType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SummarizerType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SummarizerType SummarizerType::take_ownership(Handle h) noexcept { return SummarizerType(h); }
 SummarizerType SummarizerType::clone() const noexcept { return *this; }
+const char* SummarizerType::to_string(SummarizerType::Value value_) noexcept {
+    switch (value_) {
+        case TLDR:
+            return "tldr";
+        case TEASER:
+            return "teaser";
+        case KEY_POINTS:
+            return "key-points";
+        case HEADLINE:
+            return "headline";
+        default:
+            return "tldr"; // fallback to first value
+    }
+}
 
-SummarizerFormat::SummarizerFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SummarizerFormat::SummarizerFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SummarizerFormat::Value SummarizerFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "plain-text")) {
+        return PLAIN_TEXT;
+    }
+    else if (str_equal(str, "markdown")) {
+        return MARKDOWN;
+    }
+    else {
+        // Default to first value for invalid input
+        return PLAIN_TEXT;
+    }
+}
+
+SummarizerFormat::SummarizerFormat(Value v) noexcept : emlite::Val(SummarizerFormat::to_string(v)), value_(v) {}
+SummarizerFormat::SummarizerFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = SummarizerFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SummarizerFormat::SummarizerFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SummarizerFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SummarizerFormat SummarizerFormat::take_ownership(Handle h) noexcept { return SummarizerFormat(h); }
 SummarizerFormat SummarizerFormat::clone() const noexcept { return *this; }
+const char* SummarizerFormat::to_string(SummarizerFormat::Value value_) noexcept {
+    switch (value_) {
+        case PLAIN_TEXT:
+            return "plain-text";
+        case MARKDOWN:
+            return "markdown";
+        default:
+            return "plain-text"; // fallback to first value
+    }
+}
 
-SummarizerLength::SummarizerLength(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-SummarizerLength::SummarizerLength(const emlite::Val &v) noexcept : emlite::Val(v) {}
+SummarizerLength::Value SummarizerLength::from_string(const char* str) noexcept {
+    if (str_equal(str, "short")) {
+        return SHORT_;
+    }
+    else if (str_equal(str, "medium")) {
+        return MEDIUM;
+    }
+    else if (str_equal(str, "long")) {
+        return LONG_;
+    }
+    else {
+        // Default to first value for invalid input
+        return SHORT_;
+    }
+}
+
+SummarizerLength::SummarizerLength(Value v) noexcept : emlite::Val(SummarizerLength::to_string(v)), value_(v) {}
+SummarizerLength::SummarizerLength(Handle h) noexcept: emlite::Val(h) {
+    value_ = SummarizerLength::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SummarizerLength::SummarizerLength(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SummarizerLength::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 SummarizerLength SummarizerLength::take_ownership(Handle h) noexcept { return SummarizerLength(h); }
 SummarizerLength SummarizerLength::clone() const noexcept { return *this; }
+const char* SummarizerLength::to_string(SummarizerLength::Value value_) noexcept {
+    switch (value_) {
+        case SHORT_:
+            return "short";
+        case MEDIUM:
+            return "medium";
+        case LONG_:
+            return "long";
+        default:
+            return "short"; // fallback to first value
+    }
+}
 
-WriterTone::WriterTone(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WriterTone::WriterTone(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WriterTone::Value WriterTone::from_string(const char* str) noexcept {
+    if (str_equal(str, "formal")) {
+        return FORMAL;
+    }
+    else if (str_equal(str, "neutral")) {
+        return NEUTRAL;
+    }
+    else if (str_equal(str, "casual")) {
+        return CASUAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return FORMAL;
+    }
+}
+
+WriterTone::WriterTone(Value v) noexcept : emlite::Val(WriterTone::to_string(v)), value_(v) {}
+WriterTone::WriterTone(Handle h) noexcept: emlite::Val(h) {
+    value_ = WriterTone::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WriterTone::WriterTone(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WriterTone::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WriterTone WriterTone::take_ownership(Handle h) noexcept { return WriterTone(h); }
 WriterTone WriterTone::clone() const noexcept { return *this; }
+const char* WriterTone::to_string(WriterTone::Value value_) noexcept {
+    switch (value_) {
+        case FORMAL:
+            return "formal";
+        case NEUTRAL:
+            return "neutral";
+        case CASUAL:
+            return "casual";
+        default:
+            return "formal"; // fallback to first value
+    }
+}
 
-WriterFormat::WriterFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WriterFormat::WriterFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WriterFormat::Value WriterFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "plain-text")) {
+        return PLAIN_TEXT;
+    }
+    else if (str_equal(str, "markdown")) {
+        return MARKDOWN;
+    }
+    else {
+        // Default to first value for invalid input
+        return PLAIN_TEXT;
+    }
+}
+
+WriterFormat::WriterFormat(Value v) noexcept : emlite::Val(WriterFormat::to_string(v)), value_(v) {}
+WriterFormat::WriterFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = WriterFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WriterFormat::WriterFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WriterFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WriterFormat WriterFormat::take_ownership(Handle h) noexcept { return WriterFormat(h); }
 WriterFormat WriterFormat::clone() const noexcept { return *this; }
+const char* WriterFormat::to_string(WriterFormat::Value value_) noexcept {
+    switch (value_) {
+        case PLAIN_TEXT:
+            return "plain-text";
+        case MARKDOWN:
+            return "markdown";
+        default:
+            return "plain-text"; // fallback to first value
+    }
+}
 
-WriterLength::WriterLength(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-WriterLength::WriterLength(const emlite::Val &v) noexcept : emlite::Val(v) {}
+WriterLength::Value WriterLength::from_string(const char* str) noexcept {
+    if (str_equal(str, "short")) {
+        return SHORT_;
+    }
+    else if (str_equal(str, "medium")) {
+        return MEDIUM;
+    }
+    else if (str_equal(str, "long")) {
+        return LONG_;
+    }
+    else {
+        // Default to first value for invalid input
+        return SHORT_;
+    }
+}
+
+WriterLength::WriterLength(Value v) noexcept : emlite::Val(WriterLength::to_string(v)), value_(v) {}
+WriterLength::WriterLength(Handle h) noexcept: emlite::Val(h) {
+    value_ = WriterLength::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+WriterLength::WriterLength(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = WriterLength::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 WriterLength WriterLength::take_ownership(Handle h) noexcept { return WriterLength(h); }
 WriterLength WriterLength::clone() const noexcept { return *this; }
+const char* WriterLength::to_string(WriterLength::Value value_) noexcept {
+    switch (value_) {
+        case SHORT_:
+            return "short";
+        case MEDIUM:
+            return "medium";
+        case LONG_:
+            return "long";
+        default:
+            return "short"; // fallback to first value
+    }
+}
 
-RewriterTone::RewriterTone(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RewriterTone::RewriterTone(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RewriterTone::Value RewriterTone::from_string(const char* str) noexcept {
+    if (str_equal(str, "as-is")) {
+        return AS_IS;
+    }
+    else if (str_equal(str, "more-formal")) {
+        return MORE_FORMAL;
+    }
+    else if (str_equal(str, "more-casual")) {
+        return MORE_CASUAL;
+    }
+    else {
+        // Default to first value for invalid input
+        return AS_IS;
+    }
+}
+
+RewriterTone::RewriterTone(Value v) noexcept : emlite::Val(RewriterTone::to_string(v)), value_(v) {}
+RewriterTone::RewriterTone(Handle h) noexcept: emlite::Val(h) {
+    value_ = RewriterTone::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RewriterTone::RewriterTone(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RewriterTone::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RewriterTone RewriterTone::take_ownership(Handle h) noexcept { return RewriterTone(h); }
 RewriterTone RewriterTone::clone() const noexcept { return *this; }
+const char* RewriterTone::to_string(RewriterTone::Value value_) noexcept {
+    switch (value_) {
+        case AS_IS:
+            return "as-is";
+        case MORE_FORMAL:
+            return "more-formal";
+        case MORE_CASUAL:
+            return "more-casual";
+        default:
+            return "as-is"; // fallback to first value
+    }
+}
 
-RewriterFormat::RewriterFormat(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RewriterFormat::RewriterFormat(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RewriterFormat::Value RewriterFormat::from_string(const char* str) noexcept {
+    if (str_equal(str, "as-is")) {
+        return AS_IS;
+    }
+    else if (str_equal(str, "plain-text")) {
+        return PLAIN_TEXT;
+    }
+    else if (str_equal(str, "markdown")) {
+        return MARKDOWN;
+    }
+    else {
+        // Default to first value for invalid input
+        return AS_IS;
+    }
+}
+
+RewriterFormat::RewriterFormat(Value v) noexcept : emlite::Val(RewriterFormat::to_string(v)), value_(v) {}
+RewriterFormat::RewriterFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = RewriterFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RewriterFormat::RewriterFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RewriterFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RewriterFormat RewriterFormat::take_ownership(Handle h) noexcept { return RewriterFormat(h); }
 RewriterFormat RewriterFormat::clone() const noexcept { return *this; }
+const char* RewriterFormat::to_string(RewriterFormat::Value value_) noexcept {
+    switch (value_) {
+        case AS_IS:
+            return "as-is";
+        case PLAIN_TEXT:
+            return "plain-text";
+        case MARKDOWN:
+            return "markdown";
+        default:
+            return "as-is"; // fallback to first value
+    }
+}
 
-RewriterLength::RewriterLength(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-RewriterLength::RewriterLength(const emlite::Val &v) noexcept : emlite::Val(v) {}
+RewriterLength::Value RewriterLength::from_string(const char* str) noexcept {
+    if (str_equal(str, "as-is")) {
+        return AS_IS;
+    }
+    else if (str_equal(str, "shorter")) {
+        return SHORTER;
+    }
+    else if (str_equal(str, "longer")) {
+        return LONGER;
+    }
+    else {
+        // Default to first value for invalid input
+        return AS_IS;
+    }
+}
+
+RewriterLength::RewriterLength(Value v) noexcept : emlite::Val(RewriterLength::to_string(v)), value_(v) {}
+RewriterLength::RewriterLength(Handle h) noexcept: emlite::Val(h) {
+    value_ = RewriterLength::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+RewriterLength::RewriterLength(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = RewriterLength::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 RewriterLength RewriterLength::take_ownership(Handle h) noexcept { return RewriterLength(h); }
 RewriterLength RewriterLength::clone() const noexcept { return *this; }
+const char* RewriterLength::to_string(RewriterLength::Value value_) noexcept {
+    switch (value_) {
+        case AS_IS:
+            return "as-is";
+        case SHORTER:
+            return "shorter";
+        case LONGER:
+            return "longer";
+        default:
+            return "as-is"; // fallback to first value
+    }
+}
 
-Availability::Availability(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-Availability::Availability(const emlite::Val &v) noexcept : emlite::Val(v) {}
+Availability::Value Availability::from_string(const char* str) noexcept {
+    if (str_equal(str, "unavailable")) {
+        return UNAVAILABLE;
+    }
+    else if (str_equal(str, "downloadable")) {
+        return DOWNLOADABLE;
+    }
+    else if (str_equal(str, "downloading")) {
+        return DOWNLOADING;
+    }
+    else if (str_equal(str, "available")) {
+        return AVAILABLE;
+    }
+    else {
+        // Default to first value for invalid input
+        return UNAVAILABLE;
+    }
+}
+
+Availability::Availability(Value v) noexcept : emlite::Val(Availability::to_string(v)), value_(v) {}
+Availability::Availability(Handle h) noexcept: emlite::Val(h) {
+    value_ = Availability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+Availability::Availability(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = Availability::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 Availability Availability::take_ownership(Handle h) noexcept { return Availability(h); }
 Availability Availability::clone() const noexcept { return *this; }
+const char* Availability::to_string(Availability::Value value_) noexcept {
+    switch (value_) {
+        case UNAVAILABLE:
+            return "unavailable";
+        case DOWNLOADABLE:
+            return "downloadable";
+        case DOWNLOADING:
+            return "downloading";
+        case AVAILABLE:
+            return "available";
+        default:
+            return "unavailable"; // fallback to first value
+    }
+}
 
-XMLHttpRequestResponseType::XMLHttpRequestResponseType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-XMLHttpRequestResponseType::XMLHttpRequestResponseType(const emlite::Val &v) noexcept : emlite::Val(v) {}
+XMLHttpRequestResponseType::Value XMLHttpRequestResponseType::from_string(const char* str) noexcept {
+    if (str_equal(str, "")) {
+        return NONE;
+    }
+    else if (str_equal(str, "arraybuffer")) {
+        return ARRAYBUFFER;
+    }
+    else if (str_equal(str, "blob")) {
+        return BLOB;
+    }
+    else if (str_equal(str, "document")) {
+        return DOCUMENT;
+    }
+    else if (str_equal(str, "json")) {
+        return JSON;
+    }
+    else if (str_equal(str, "text")) {
+        return TEXT;
+    }
+    else {
+        // Default to first value for invalid input
+        return NONE;
+    }
+}
+
+XMLHttpRequestResponseType::XMLHttpRequestResponseType(Value v) noexcept : emlite::Val(XMLHttpRequestResponseType::to_string(v)), value_(v) {}
+XMLHttpRequestResponseType::XMLHttpRequestResponseType(Handle h) noexcept: emlite::Val(h) {
+    value_ = XMLHttpRequestResponseType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+XMLHttpRequestResponseType::XMLHttpRequestResponseType(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = XMLHttpRequestResponseType::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
 XMLHttpRequestResponseType XMLHttpRequestResponseType::take_ownership(Handle h) noexcept { return XMLHttpRequestResponseType(h); }
 XMLHttpRequestResponseType XMLHttpRequestResponseType::clone() const noexcept { return *this; }
-
-const SecurityPolicyViolationEventDisposition SecurityPolicyViolationEventDisposition::enforce(){ return SecurityPolicyViolationEventDisposition(emlite::Val("enforce")); };
-const SecurityPolicyViolationEventDisposition SecurityPolicyViolationEventDisposition::report(){ return SecurityPolicyViolationEventDisposition(emlite::Val("report")); };
-
-const EndingType EndingType::transparent(){ return EndingType(emlite::Val("transparent")); };
-const EndingType EndingType::native(){ return EndingType(emlite::Val("native")); };
-
-const IDBRequestReadyState IDBRequestReadyState::pending(){ return IDBRequestReadyState(emlite::Val("pending")); };
-const IDBRequestReadyState IDBRequestReadyState::done(){ return IDBRequestReadyState(emlite::Val("done")); };
-
-const IDBTransactionDurability IDBTransactionDurability::default_(){ return IDBTransactionDurability(emlite::Val("default")); };
-const IDBTransactionDurability IDBTransactionDurability::strict(){ return IDBTransactionDurability(emlite::Val("strict")); };
-const IDBTransactionDurability IDBTransactionDurability::relaxed(){ return IDBTransactionDurability(emlite::Val("relaxed")); };
-
-const IDBCursorDirection IDBCursorDirection::next(){ return IDBCursorDirection(emlite::Val("next")); };
-const IDBCursorDirection IDBCursorDirection::nextunique(){ return IDBCursorDirection(emlite::Val("nextunique")); };
-const IDBCursorDirection IDBCursorDirection::prev(){ return IDBCursorDirection(emlite::Val("prev")); };
-const IDBCursorDirection IDBCursorDirection::prevunique(){ return IDBCursorDirection(emlite::Val("prevunique")); };
-
-const IDBTransactionMode IDBTransactionMode::readonly(){ return IDBTransactionMode(emlite::Val("readonly")); };
-const IDBTransactionMode IDBTransactionMode::readwrite(){ return IDBTransactionMode(emlite::Val("readwrite")); };
-const IDBTransactionMode IDBTransactionMode::versionchange(){ return IDBTransactionMode(emlite::Val("versionchange")); };
-
-const AccelerometerLocalCoordinateSystem AccelerometerLocalCoordinateSystem::device(){ return AccelerometerLocalCoordinateSystem(emlite::Val("device")); };
-const AccelerometerLocalCoordinateSystem AccelerometerLocalCoordinateSystem::screen(){ return AccelerometerLocalCoordinateSystem(emlite::Val("screen")); };
-
-const AudioSessionType AudioSessionType::auto_(){ return AudioSessionType(emlite::Val("auto")); };
-const AudioSessionType AudioSessionType::playback(){ return AudioSessionType(emlite::Val("playback")); };
-const AudioSessionType AudioSessionType::transient(){ return AudioSessionType(emlite::Val("transient")); };
-const AudioSessionType AudioSessionType::transient_solo(){ return AudioSessionType(emlite::Val("transient-solo")); };
-const AudioSessionType AudioSessionType::ambient(){ return AudioSessionType(emlite::Val("ambient")); };
-const AudioSessionType AudioSessionType::play_and_record(){ return AudioSessionType(emlite::Val("play-and-record")); };
-
-const AudioSessionState AudioSessionState::inactive(){ return AudioSessionState(emlite::Val("inactive")); };
-const AudioSessionState AudioSessionState::active(){ return AudioSessionState(emlite::Val("active")); };
-const AudioSessionState AudioSessionState::interrupted(){ return AudioSessionState(emlite::Val("interrupted")); };
-
-const AutoplayPolicy AutoplayPolicy::allowed(){ return AutoplayPolicy(emlite::Val("allowed")); };
-const AutoplayPolicy AutoplayPolicy::allowed_muted(){ return AutoplayPolicy(emlite::Val("allowed-muted")); };
-const AutoplayPolicy AutoplayPolicy::disallowed(){ return AutoplayPolicy(emlite::Val("disallowed")); };
-
-const AutoplayPolicyMediaType AutoplayPolicyMediaType::mediaelement(){ return AutoplayPolicyMediaType(emlite::Val("mediaelement")); };
-const AutoplayPolicyMediaType AutoplayPolicyMediaType::audiocontext(){ return AutoplayPolicyMediaType(emlite::Val("audiocontext")); };
-
-const BackgroundFetchResult BackgroundFetchResult::none(){ return BackgroundFetchResult(emlite::Val("")); };
-const BackgroundFetchResult BackgroundFetchResult::success(){ return BackgroundFetchResult(emlite::Val("success")); };
-const BackgroundFetchResult BackgroundFetchResult::failure(){ return BackgroundFetchResult(emlite::Val("failure")); };
-
-const BackgroundFetchFailureReason BackgroundFetchFailureReason::none(){ return BackgroundFetchFailureReason(emlite::Val("")); };
-const BackgroundFetchFailureReason BackgroundFetchFailureReason::aborted(){ return BackgroundFetchFailureReason(emlite::Val("aborted")); };
-const BackgroundFetchFailureReason BackgroundFetchFailureReason::bad_status(){ return BackgroundFetchFailureReason(emlite::Val("bad-status")); };
-const BackgroundFetchFailureReason BackgroundFetchFailureReason::fetch_error(){ return BackgroundFetchFailureReason(emlite::Val("fetch-error")); };
-const BackgroundFetchFailureReason BackgroundFetchFailureReason::quota_exceeded(){ return BackgroundFetchFailureReason(emlite::Val("quota-exceeded")); };
-const BackgroundFetchFailureReason BackgroundFetchFailureReason::download_total_exceeded(){ return BackgroundFetchFailureReason(emlite::Val("download-total-exceeded")); };
-
-const PresentationStyle PresentationStyle::unspecified(){ return PresentationStyle(emlite::Val("unspecified")); };
-const PresentationStyle PresentationStyle::inline_(){ return PresentationStyle(emlite::Val("inline")); };
-const PresentationStyle PresentationStyle::attachment(){ return PresentationStyle(emlite::Val("attachment")); };
-
-const CompressionFormat CompressionFormat::deflate(){ return CompressionFormat(emlite::Val("deflate")); };
-const CompressionFormat CompressionFormat::deflate_raw(){ return CompressionFormat(emlite::Val("deflate-raw")); };
-const CompressionFormat CompressionFormat::gzip(){ return CompressionFormat(emlite::Val("gzip")); };
-
-const PressureSource PressureSource::cpu(){ return PressureSource(emlite::Val("cpu")); };
-
-const PressureState PressureState::nominal(){ return PressureState(emlite::Val("nominal")); };
-const PressureState PressureState::fair(){ return PressureState(emlite::Val("fair")); };
-const PressureState PressureState::serious(){ return PressureState(emlite::Val("serious")); };
-const PressureState PressureState::critical(){ return PressureState(emlite::Val("critical")); };
-
-const ContactProperty ContactProperty::address(){ return ContactProperty(emlite::Val("address")); };
-const ContactProperty ContactProperty::email(){ return ContactProperty(emlite::Val("email")); };
-const ContactProperty ContactProperty::icon(){ return ContactProperty(emlite::Val("icon")); };
-const ContactProperty ContactProperty::name(){ return ContactProperty(emlite::Val("name")); };
-const ContactProperty ContactProperty::tel(){ return ContactProperty(emlite::Val("tel")); };
-
-const ContentCategory ContentCategory::none(){ return ContentCategory(emlite::Val("")); };
-const ContentCategory ContentCategory::homepage(){ return ContentCategory(emlite::Val("homepage")); };
-const ContentCategory ContentCategory::article(){ return ContentCategory(emlite::Val("article")); };
-const ContentCategory ContentCategory::video(){ return ContentCategory(emlite::Val("video")); };
-const ContentCategory ContentCategory::audio(){ return ContentCategory(emlite::Val("audio")); };
-
-const CookieSameSite CookieSameSite::strict(){ return CookieSameSite(emlite::Val("strict")); };
-const CookieSameSite CookieSameSite::lax(){ return CookieSameSite(emlite::Val("lax")); };
-const CookieSameSite CookieSameSite::none(){ return CookieSameSite(emlite::Val("none")); };
-
-const CredentialMediationRequirement CredentialMediationRequirement::silent(){ return CredentialMediationRequirement(emlite::Val("silent")); };
-const CredentialMediationRequirement CredentialMediationRequirement::optional(){ return CredentialMediationRequirement(emlite::Val("optional")); };
-const CredentialMediationRequirement CredentialMediationRequirement::conditional(){ return CredentialMediationRequirement(emlite::Val("conditional")); };
-const CredentialMediationRequirement CredentialMediationRequirement::required(){ return CredentialMediationRequirement(emlite::Val("required")); };
-
-const ScriptingPolicyViolationType ScriptingPolicyViolationType::externalScript(){ return ScriptingPolicyViolationType(emlite::Val("externalScript")); };
-const ScriptingPolicyViolationType ScriptingPolicyViolationType::inlineScript(){ return ScriptingPolicyViolationType(emlite::Val("inlineScript")); };
-const ScriptingPolicyViolationType ScriptingPolicyViolationType::inlineEventHandler(){ return ScriptingPolicyViolationType(emlite::Val("inlineEventHandler")); };
-const ScriptingPolicyViolationType ScriptingPolicyViolationType::eval(){ return ScriptingPolicyViolationType(emlite::Val("eval")); };
-
-const FontFaceLoadStatus FontFaceLoadStatus::unloaded(){ return FontFaceLoadStatus(emlite::Val("unloaded")); };
-const FontFaceLoadStatus FontFaceLoadStatus::loading(){ return FontFaceLoadStatus(emlite::Val("loading")); };
-const FontFaceLoadStatus FontFaceLoadStatus::loaded(){ return FontFaceLoadStatus(emlite::Val("loaded")); };
-const FontFaceLoadStatus FontFaceLoadStatus::error(){ return FontFaceLoadStatus(emlite::Val("error")); };
-
-const FontFaceSetLoadStatus FontFaceSetLoadStatus::loading(){ return FontFaceSetLoadStatus(emlite::Val("loading")); };
-const FontFaceSetLoadStatus FontFaceSetLoadStatus::loaded(){ return FontFaceSetLoadStatus(emlite::Val("loaded")); };
-
-const HighlightType HighlightType::highlight(){ return HighlightType(emlite::Val("highlight")); };
-const HighlightType HighlightType::spelling_error(){ return HighlightType(emlite::Val("spelling-error")); };
-const HighlightType HighlightType::grammar_error(){ return HighlightType(emlite::Val("grammar-error")); };
-
-const ChildDisplayType ChildDisplayType::block(){ return ChildDisplayType(emlite::Val("block")); };
-const ChildDisplayType ChildDisplayType::normal(){ return ChildDisplayType(emlite::Val("normal")); };
-
-const LayoutSizingMode LayoutSizingMode::block_like(){ return LayoutSizingMode(emlite::Val("block-like")); };
-const LayoutSizingMode LayoutSizingMode::manual(){ return LayoutSizingMode(emlite::Val("manual")); };
-
-const BlockFragmentationType BlockFragmentationType::none(){ return BlockFragmentationType(emlite::Val("none")); };
-const BlockFragmentationType BlockFragmentationType::page(){ return BlockFragmentationType(emlite::Val("page")); };
-const BlockFragmentationType BlockFragmentationType::column(){ return BlockFragmentationType(emlite::Val("column")); };
-const BlockFragmentationType BlockFragmentationType::region(){ return BlockFragmentationType(emlite::Val("region")); };
-
-const BreakType BreakType::none(){ return BreakType(emlite::Val("none")); };
-const BreakType BreakType::line(){ return BreakType(emlite::Val("line")); };
-const BreakType BreakType::column(){ return BreakType(emlite::Val("column")); };
-const BreakType BreakType::page(){ return BreakType(emlite::Val("page")); };
-const BreakType BreakType::region(){ return BreakType(emlite::Val("region")); };
-
-const SpatialNavigationDirection SpatialNavigationDirection::up(){ return SpatialNavigationDirection(emlite::Val("up")); };
-const SpatialNavigationDirection SpatialNavigationDirection::down(){ return SpatialNavigationDirection(emlite::Val("down")); };
-const SpatialNavigationDirection SpatialNavigationDirection::left(){ return SpatialNavigationDirection(emlite::Val("left")); };
-const SpatialNavigationDirection SpatialNavigationDirection::right(){ return SpatialNavigationDirection(emlite::Val("right")); };
-
-const FocusableAreaSearchMode FocusableAreaSearchMode::visible(){ return FocusableAreaSearchMode(emlite::Val("visible")); };
-const FocusableAreaSearchMode FocusableAreaSearchMode::all(){ return FocusableAreaSearchMode(emlite::Val("all")); };
-
-const CSSNumericBaseType CSSNumericBaseType::length(){ return CSSNumericBaseType(emlite::Val("length")); };
-const CSSNumericBaseType CSSNumericBaseType::angle(){ return CSSNumericBaseType(emlite::Val("angle")); };
-const CSSNumericBaseType CSSNumericBaseType::time(){ return CSSNumericBaseType(emlite::Val("time")); };
-const CSSNumericBaseType CSSNumericBaseType::frequency(){ return CSSNumericBaseType(emlite::Val("frequency")); };
-const CSSNumericBaseType CSSNumericBaseType::resolution(){ return CSSNumericBaseType(emlite::Val("resolution")); };
-const CSSNumericBaseType CSSNumericBaseType::flex(){ return CSSNumericBaseType(emlite::Val("flex")); };
-const CSSNumericBaseType CSSNumericBaseType::percent(){ return CSSNumericBaseType(emlite::Val("percent")); };
-
-const CSSMathOperator CSSMathOperator::sum(){ return CSSMathOperator(emlite::Val("sum")); };
-const CSSMathOperator CSSMathOperator::product(){ return CSSMathOperator(emlite::Val("product")); };
-const CSSMathOperator CSSMathOperator::negate(){ return CSSMathOperator(emlite::Val("negate")); };
-const CSSMathOperator CSSMathOperator::invert(){ return CSSMathOperator(emlite::Val("invert")); };
-const CSSMathOperator CSSMathOperator::min(){ return CSSMathOperator(emlite::Val("min")); };
-const CSSMathOperator CSSMathOperator::max(){ return CSSMathOperator(emlite::Val("max")); };
-const CSSMathOperator CSSMathOperator::clamp(){ return CSSMathOperator(emlite::Val("clamp")); };
-
-const ScrollBehavior ScrollBehavior::auto_(){ return ScrollBehavior(emlite::Val("auto")); };
-const ScrollBehavior ScrollBehavior::instant(){ return ScrollBehavior(emlite::Val("instant")); };
-const ScrollBehavior ScrollBehavior::smooth(){ return ScrollBehavior(emlite::Val("smooth")); };
-
-const ScrollLogicalPosition ScrollLogicalPosition::start(){ return ScrollLogicalPosition(emlite::Val("start")); };
-const ScrollLogicalPosition ScrollLogicalPosition::center(){ return ScrollLogicalPosition(emlite::Val("center")); };
-const ScrollLogicalPosition ScrollLogicalPosition::end(){ return ScrollLogicalPosition(emlite::Val("end")); };
-const ScrollLogicalPosition ScrollLogicalPosition::nearest(){ return ScrollLogicalPosition(emlite::Val("nearest")); };
-
-const ScrollIntoViewContainer ScrollIntoViewContainer::all(){ return ScrollIntoViewContainer(emlite::Val("all")); };
-const ScrollIntoViewContainer ScrollIntoViewContainer::nearest(){ return ScrollIntoViewContainer(emlite::Val("nearest")); };
-
-const CSSBoxType CSSBoxType::margin(){ return CSSBoxType(emlite::Val("margin")); };
-const CSSBoxType CSSBoxType::border(){ return CSSBoxType(emlite::Val("border")); };
-const CSSBoxType CSSBoxType::padding(){ return CSSBoxType(emlite::Val("padding")); };
-const CSSBoxType CSSBoxType::content(){ return CSSBoxType(emlite::Val("content")); };
-
-const DevicePostureType DevicePostureType::continuous(){ return DevicePostureType(emlite::Val("continuous")); };
-const DevicePostureType DevicePostureType::folded(){ return DevicePostureType(emlite::Val("folded")); };
-
-const ItemType ItemType::product(){ return ItemType(emlite::Val("product")); };
-const ItemType ItemType::subscription(){ return ItemType(emlite::Val("subscription")); };
-
-const ShadowRootMode ShadowRootMode::open(){ return ShadowRootMode(emlite::Val("open")); };
-const ShadowRootMode ShadowRootMode::closed(){ return ShadowRootMode(emlite::Val("closed")); };
-
-const SlotAssignmentMode SlotAssignmentMode::manual(){ return SlotAssignmentMode(emlite::Val("manual")); };
-const SlotAssignmentMode SlotAssignmentMode::named(){ return SlotAssignmentMode(emlite::Val("named")); };
-
-const UnderlineStyle UnderlineStyle::none(){ return UnderlineStyle(emlite::Val("none")); };
-const UnderlineStyle UnderlineStyle::solid(){ return UnderlineStyle(emlite::Val("solid")); };
-const UnderlineStyle UnderlineStyle::dotted(){ return UnderlineStyle(emlite::Val("dotted")); };
-const UnderlineStyle UnderlineStyle::dashed(){ return UnderlineStyle(emlite::Val("dashed")); };
-const UnderlineStyle UnderlineStyle::wavy(){ return UnderlineStyle(emlite::Val("wavy")); };
-
-const UnderlineThickness UnderlineThickness::none(){ return UnderlineThickness(emlite::Val("none")); };
-const UnderlineThickness UnderlineThickness::thin(){ return UnderlineThickness(emlite::Val("thin")); };
-const UnderlineThickness UnderlineThickness::thick(){ return UnderlineThickness(emlite::Val("thick")); };
-
-const MediaKeysRequirement MediaKeysRequirement::required(){ return MediaKeysRequirement(emlite::Val("required")); };
-const MediaKeysRequirement MediaKeysRequirement::optional(){ return MediaKeysRequirement(emlite::Val("optional")); };
-const MediaKeysRequirement MediaKeysRequirement::not_allowed(){ return MediaKeysRequirement(emlite::Val("not-allowed")); };
-
-const MediaKeySessionType MediaKeySessionType::temporary(){ return MediaKeySessionType(emlite::Val("temporary")); };
-const MediaKeySessionType MediaKeySessionType::persistent_license(){ return MediaKeySessionType(emlite::Val("persistent-license")); };
-
-const MediaKeySessionClosedReason MediaKeySessionClosedReason::internal_error(){ return MediaKeySessionClosedReason(emlite::Val("internal-error")); };
-const MediaKeySessionClosedReason MediaKeySessionClosedReason::closed_by_application(){ return MediaKeySessionClosedReason(emlite::Val("closed-by-application")); };
-const MediaKeySessionClosedReason MediaKeySessionClosedReason::release_acknowledged(){ return MediaKeySessionClosedReason(emlite::Val("release-acknowledged")); };
-const MediaKeySessionClosedReason MediaKeySessionClosedReason::hardware_context_reset(){ return MediaKeySessionClosedReason(emlite::Val("hardware-context-reset")); };
-const MediaKeySessionClosedReason MediaKeySessionClosedReason::resource_evicted(){ return MediaKeySessionClosedReason(emlite::Val("resource-evicted")); };
-
-const MediaKeyStatus MediaKeyStatus::usable(){ return MediaKeyStatus(emlite::Val("usable")); };
-const MediaKeyStatus MediaKeyStatus::expired(){ return MediaKeyStatus(emlite::Val("expired")); };
-const MediaKeyStatus MediaKeyStatus::released(){ return MediaKeyStatus(emlite::Val("released")); };
-const MediaKeyStatus MediaKeyStatus::output_restricted(){ return MediaKeyStatus(emlite::Val("output-restricted")); };
-const MediaKeyStatus MediaKeyStatus::output_downscaled(){ return MediaKeyStatus(emlite::Val("output-downscaled")); };
-const MediaKeyStatus MediaKeyStatus::usable_in_future(){ return MediaKeyStatus(emlite::Val("usable-in-future")); };
-const MediaKeyStatus MediaKeyStatus::status_pending(){ return MediaKeyStatus(emlite::Val("status-pending")); };
-const MediaKeyStatus MediaKeyStatus::internal_error(){ return MediaKeyStatus(emlite::Val("internal-error")); };
-
-const MediaKeyMessageType MediaKeyMessageType::license_request(){ return MediaKeyMessageType(emlite::Val("license-request")); };
-const MediaKeyMessageType MediaKeyMessageType::license_renewal(){ return MediaKeyMessageType(emlite::Val("license-renewal")); };
-const MediaKeyMessageType MediaKeyMessageType::license_release(){ return MediaKeyMessageType(emlite::Val("license-release")); };
-const MediaKeyMessageType MediaKeyMessageType::individualization_request(){ return MediaKeyMessageType(emlite::Val("individualization-request")); };
-
-const IdentityCredentialRequestOptionsContext IdentityCredentialRequestOptionsContext::signin(){ return IdentityCredentialRequestOptionsContext(emlite::Val("signin")); };
-const IdentityCredentialRequestOptionsContext IdentityCredentialRequestOptionsContext::signup(){ return IdentityCredentialRequestOptionsContext(emlite::Val("signup")); };
-const IdentityCredentialRequestOptionsContext IdentityCredentialRequestOptionsContext::use(){ return IdentityCredentialRequestOptionsContext(emlite::Val("use")); };
-const IdentityCredentialRequestOptionsContext IdentityCredentialRequestOptionsContext::continue_(){ return IdentityCredentialRequestOptionsContext(emlite::Val("continue")); };
-
-const IdentityCredentialRequestOptionsMode IdentityCredentialRequestOptionsMode::active(){ return IdentityCredentialRequestOptionsMode(emlite::Val("active")); };
-const IdentityCredentialRequestOptionsMode IdentityCredentialRequestOptionsMode::passive(){ return IdentityCredentialRequestOptionsMode(emlite::Val("passive")); };
-
-const OpaqueProperty OpaqueProperty::opaque(){ return OpaqueProperty(emlite::Val("opaque")); };
-
-const FenceReportingDestination FenceReportingDestination::buyer(){ return FenceReportingDestination(emlite::Val("buyer")); };
-const FenceReportingDestination FenceReportingDestination::seller(){ return FenceReportingDestination(emlite::Val("seller")); };
-const FenceReportingDestination FenceReportingDestination::component_seller(){ return FenceReportingDestination(emlite::Val("component-seller")); };
-const FenceReportingDestination FenceReportingDestination::direct_seller(){ return FenceReportingDestination(emlite::Val("direct-seller")); };
-const FenceReportingDestination FenceReportingDestination::shared_storage_select_url(){ return FenceReportingDestination(emlite::Val("shared-storage-select-url")); };
-
-const RequestDestination RequestDestination::none(){ return RequestDestination(emlite::Val("")); };
-const RequestDestination RequestDestination::audio(){ return RequestDestination(emlite::Val("audio")); };
-const RequestDestination RequestDestination::audioworklet(){ return RequestDestination(emlite::Val("audioworklet")); };
-const RequestDestination RequestDestination::document(){ return RequestDestination(emlite::Val("document")); };
-const RequestDestination RequestDestination::embed(){ return RequestDestination(emlite::Val("embed")); };
-const RequestDestination RequestDestination::font(){ return RequestDestination(emlite::Val("font")); };
-const RequestDestination RequestDestination::frame(){ return RequestDestination(emlite::Val("frame")); };
-const RequestDestination RequestDestination::iframe(){ return RequestDestination(emlite::Val("iframe")); };
-const RequestDestination RequestDestination::image(){ return RequestDestination(emlite::Val("image")); };
-const RequestDestination RequestDestination::json(){ return RequestDestination(emlite::Val("json")); };
-const RequestDestination RequestDestination::manifest(){ return RequestDestination(emlite::Val("manifest")); };
-const RequestDestination RequestDestination::object(){ return RequestDestination(emlite::Val("object")); };
-const RequestDestination RequestDestination::paintworklet(){ return RequestDestination(emlite::Val("paintworklet")); };
-const RequestDestination RequestDestination::report(){ return RequestDestination(emlite::Val("report")); };
-const RequestDestination RequestDestination::script(){ return RequestDestination(emlite::Val("script")); };
-const RequestDestination RequestDestination::sharedworker(){ return RequestDestination(emlite::Val("sharedworker")); };
-const RequestDestination RequestDestination::style(){ return RequestDestination(emlite::Val("style")); };
-const RequestDestination RequestDestination::track(){ return RequestDestination(emlite::Val("track")); };
-const RequestDestination RequestDestination::video(){ return RequestDestination(emlite::Val("video")); };
-const RequestDestination RequestDestination::worker(){ return RequestDestination(emlite::Val("worker")); };
-const RequestDestination RequestDestination::xslt(){ return RequestDestination(emlite::Val("xslt")); };
-
-const RequestMode RequestMode::navigate(){ return RequestMode(emlite::Val("navigate")); };
-const RequestMode RequestMode::same_origin(){ return RequestMode(emlite::Val("same-origin")); };
-const RequestMode RequestMode::no_cors(){ return RequestMode(emlite::Val("no-cors")); };
-const RequestMode RequestMode::cors(){ return RequestMode(emlite::Val("cors")); };
-
-const RequestCredentials RequestCredentials::omit(){ return RequestCredentials(emlite::Val("omit")); };
-const RequestCredentials RequestCredentials::same_origin(){ return RequestCredentials(emlite::Val("same-origin")); };
-const RequestCredentials RequestCredentials::include(){ return RequestCredentials(emlite::Val("include")); };
-
-const RequestCache RequestCache::default_(){ return RequestCache(emlite::Val("default")); };
-const RequestCache RequestCache::no_store(){ return RequestCache(emlite::Val("no-store")); };
-const RequestCache RequestCache::reload(){ return RequestCache(emlite::Val("reload")); };
-const RequestCache RequestCache::no_cache(){ return RequestCache(emlite::Val("no-cache")); };
-const RequestCache RequestCache::force_cache(){ return RequestCache(emlite::Val("force-cache")); };
-const RequestCache RequestCache::only_if_cached(){ return RequestCache(emlite::Val("only-if-cached")); };
-
-const RequestRedirect RequestRedirect::follow(){ return RequestRedirect(emlite::Val("follow")); };
-const RequestRedirect RequestRedirect::error(){ return RequestRedirect(emlite::Val("error")); };
-const RequestRedirect RequestRedirect::manual(){ return RequestRedirect(emlite::Val("manual")); };
-
-const RequestDuplex RequestDuplex::half(){ return RequestDuplex(emlite::Val("half")); };
-
-const RequestPriority RequestPriority::high(){ return RequestPriority(emlite::Val("high")); };
-const RequestPriority RequestPriority::low(){ return RequestPriority(emlite::Val("low")); };
-const RequestPriority RequestPriority::auto_(){ return RequestPriority(emlite::Val("auto")); };
-
-const ResponseType ResponseType::basic(){ return ResponseType(emlite::Val("basic")); };
-const ResponseType ResponseType::cors(){ return ResponseType(emlite::Val("cors")); };
-const ResponseType ResponseType::default_(){ return ResponseType(emlite::Val("default")); };
-const ResponseType ResponseType::error(){ return ResponseType(emlite::Val("error")); };
-const ResponseType ResponseType::opaque(){ return ResponseType(emlite::Val("opaque")); };
-const ResponseType ResponseType::opaqueredirect(){ return ResponseType(emlite::Val("opaqueredirect")); };
-
-const FileSystemPermissionMode FileSystemPermissionMode::read(){ return FileSystemPermissionMode(emlite::Val("read")); };
-const FileSystemPermissionMode FileSystemPermissionMode::readwrite(){ return FileSystemPermissionMode(emlite::Val("readwrite")); };
-
-const WellKnownDirectory WellKnownDirectory::desktop(){ return WellKnownDirectory(emlite::Val("desktop")); };
-const WellKnownDirectory WellKnownDirectory::documents(){ return WellKnownDirectory(emlite::Val("documents")); };
-const WellKnownDirectory WellKnownDirectory::downloads(){ return WellKnownDirectory(emlite::Val("downloads")); };
-const WellKnownDirectory WellKnownDirectory::music(){ return WellKnownDirectory(emlite::Val("music")); };
-const WellKnownDirectory WellKnownDirectory::pictures(){ return WellKnownDirectory(emlite::Val("pictures")); };
-const WellKnownDirectory WellKnownDirectory::videos(){ return WellKnownDirectory(emlite::Val("videos")); };
-
-const FileSystemHandleKind FileSystemHandleKind::file(){ return FileSystemHandleKind(emlite::Val("file")); };
-const FileSystemHandleKind FileSystemHandleKind::directory(){ return FileSystemHandleKind(emlite::Val("directory")); };
-
-const WriteCommandType WriteCommandType::write(){ return WriteCommandType(emlite::Val("write")); };
-const WriteCommandType WriteCommandType::seek(){ return WriteCommandType(emlite::Val("seek")); };
-const WriteCommandType WriteCommandType::truncate(){ return WriteCommandType(emlite::Val("truncate")); };
-
-const FullscreenNavigationUI FullscreenNavigationUI::auto_(){ return FullscreenNavigationUI(emlite::Val("auto")); };
-const FullscreenNavigationUI FullscreenNavigationUI::show(){ return FullscreenNavigationUI(emlite::Val("show")); };
-const FullscreenNavigationUI FullscreenNavigationUI::hide(){ return FullscreenNavigationUI(emlite::Val("hide")); };
-
-const GamepadHand GamepadHand::none(){ return GamepadHand(emlite::Val("")); };
-const GamepadHand GamepadHand::left(){ return GamepadHand(emlite::Val("left")); };
-const GamepadHand GamepadHand::right(){ return GamepadHand(emlite::Val("right")); };
-
-const GamepadMappingType GamepadMappingType::none(){ return GamepadMappingType(emlite::Val("")); };
-const GamepadMappingType GamepadMappingType::standard(){ return GamepadMappingType(emlite::Val("standard")); };
-const GamepadMappingType GamepadMappingType::xr_standard(){ return GamepadMappingType(emlite::Val("xr-standard")); };
-
-const GamepadHapticsResult GamepadHapticsResult::complete(){ return GamepadHapticsResult(emlite::Val("complete")); };
-const GamepadHapticsResult GamepadHapticsResult::preempted(){ return GamepadHapticsResult(emlite::Val("preempted")); };
-
-const GamepadHapticEffectType GamepadHapticEffectType::dual_rumble(){ return GamepadHapticEffectType(emlite::Val("dual-rumble")); };
-const GamepadHapticEffectType GamepadHapticEffectType::trigger_rumble(){ return GamepadHapticEffectType(emlite::Val("trigger-rumble")); };
-
-const GyroscopeLocalCoordinateSystem GyroscopeLocalCoordinateSystem::device(){ return GyroscopeLocalCoordinateSystem(emlite::Val("device")); };
-const GyroscopeLocalCoordinateSystem GyroscopeLocalCoordinateSystem::screen(){ return GyroscopeLocalCoordinateSystem(emlite::Val("screen")); };
-
-const HandwritingRecognitionType HandwritingRecognitionType::text(){ return HandwritingRecognitionType(emlite::Val("text")); };
-const HandwritingRecognitionType HandwritingRecognitionType::per_character(){ return HandwritingRecognitionType(emlite::Val("per-character")); };
-
-const HandwritingInputType HandwritingInputType::mouse(){ return HandwritingInputType(emlite::Val("mouse")); };
-const HandwritingInputType HandwritingInputType::stylus(){ return HandwritingInputType(emlite::Val("stylus")); };
-const HandwritingInputType HandwritingInputType::touch(){ return HandwritingInputType(emlite::Val("touch")); };
-
-const DocumentReadyState DocumentReadyState::loading(){ return DocumentReadyState(emlite::Val("loading")); };
-const DocumentReadyState DocumentReadyState::interactive(){ return DocumentReadyState(emlite::Val("interactive")); };
-const DocumentReadyState DocumentReadyState::complete(){ return DocumentReadyState(emlite::Val("complete")); };
-
-const DocumentVisibilityState DocumentVisibilityState::visible(){ return DocumentVisibilityState(emlite::Val("visible")); };
-const DocumentVisibilityState DocumentVisibilityState::hidden(){ return DocumentVisibilityState(emlite::Val("hidden")); };
-
-const CanPlayTypeResult CanPlayTypeResult::none(){ return CanPlayTypeResult(emlite::Val("")); };
-const CanPlayTypeResult CanPlayTypeResult::maybe(){ return CanPlayTypeResult(emlite::Val("maybe")); };
-const CanPlayTypeResult CanPlayTypeResult::probably(){ return CanPlayTypeResult(emlite::Val("probably")); };
-
-const TextTrackMode TextTrackMode::disabled(){ return TextTrackMode(emlite::Val("disabled")); };
-const TextTrackMode TextTrackMode::hidden(){ return TextTrackMode(emlite::Val("hidden")); };
-const TextTrackMode TextTrackMode::showing(){ return TextTrackMode(emlite::Val("showing")); };
-
-const TextTrackKind TextTrackKind::subtitles(){ return TextTrackKind(emlite::Val("subtitles")); };
-const TextTrackKind TextTrackKind::captions(){ return TextTrackKind(emlite::Val("captions")); };
-const TextTrackKind TextTrackKind::descriptions(){ return TextTrackKind(emlite::Val("descriptions")); };
-const TextTrackKind TextTrackKind::chapters(){ return TextTrackKind(emlite::Val("chapters")); };
-const TextTrackKind TextTrackKind::metadata(){ return TextTrackKind(emlite::Val("metadata")); };
-
-const SelectionMode SelectionMode::select(){ return SelectionMode(emlite::Val("select")); };
-const SelectionMode SelectionMode::start(){ return SelectionMode(emlite::Val("start")); };
-const SelectionMode SelectionMode::end(){ return SelectionMode(emlite::Val("end")); };
-const SelectionMode SelectionMode::preserve(){ return SelectionMode(emlite::Val("preserve")); };
-
-const PredefinedColorSpace PredefinedColorSpace::srgb(){ return PredefinedColorSpace(emlite::Val("srgb")); };
-const PredefinedColorSpace PredefinedColorSpace::display_p3(){ return PredefinedColorSpace(emlite::Val("display-p3")); };
-
-const CanvasColorType CanvasColorType::unorm8(){ return CanvasColorType(emlite::Val("unorm8")); };
-const CanvasColorType CanvasColorType::float16(){ return CanvasColorType(emlite::Val("float16")); };
-
-const CanvasFillRule CanvasFillRule::nonzero(){ return CanvasFillRule(emlite::Val("nonzero")); };
-const CanvasFillRule CanvasFillRule::evenodd(){ return CanvasFillRule(emlite::Val("evenodd")); };
-
-const ImageSmoothingQuality ImageSmoothingQuality::low(){ return ImageSmoothingQuality(emlite::Val("low")); };
-const ImageSmoothingQuality ImageSmoothingQuality::medium(){ return ImageSmoothingQuality(emlite::Val("medium")); };
-const ImageSmoothingQuality ImageSmoothingQuality::high(){ return ImageSmoothingQuality(emlite::Val("high")); };
-
-const CanvasLineCap CanvasLineCap::butt(){ return CanvasLineCap(emlite::Val("butt")); };
-const CanvasLineCap CanvasLineCap::round(){ return CanvasLineCap(emlite::Val("round")); };
-const CanvasLineCap CanvasLineCap::square(){ return CanvasLineCap(emlite::Val("square")); };
-
-const CanvasLineJoin CanvasLineJoin::round(){ return CanvasLineJoin(emlite::Val("round")); };
-const CanvasLineJoin CanvasLineJoin::bevel(){ return CanvasLineJoin(emlite::Val("bevel")); };
-const CanvasLineJoin CanvasLineJoin::miter(){ return CanvasLineJoin(emlite::Val("miter")); };
-
-const CanvasTextAlign CanvasTextAlign::start(){ return CanvasTextAlign(emlite::Val("start")); };
-const CanvasTextAlign CanvasTextAlign::end(){ return CanvasTextAlign(emlite::Val("end")); };
-const CanvasTextAlign CanvasTextAlign::left(){ return CanvasTextAlign(emlite::Val("left")); };
-const CanvasTextAlign CanvasTextAlign::right(){ return CanvasTextAlign(emlite::Val("right")); };
-const CanvasTextAlign CanvasTextAlign::center(){ return CanvasTextAlign(emlite::Val("center")); };
-
-const CanvasTextBaseline CanvasTextBaseline::top(){ return CanvasTextBaseline(emlite::Val("top")); };
-const CanvasTextBaseline CanvasTextBaseline::hanging(){ return CanvasTextBaseline(emlite::Val("hanging")); };
-const CanvasTextBaseline CanvasTextBaseline::middle(){ return CanvasTextBaseline(emlite::Val("middle")); };
-const CanvasTextBaseline CanvasTextBaseline::alphabetic(){ return CanvasTextBaseline(emlite::Val("alphabetic")); };
-const CanvasTextBaseline CanvasTextBaseline::ideographic(){ return CanvasTextBaseline(emlite::Val("ideographic")); };
-const CanvasTextBaseline CanvasTextBaseline::bottom(){ return CanvasTextBaseline(emlite::Val("bottom")); };
-
-const CanvasDirection CanvasDirection::ltr(){ return CanvasDirection(emlite::Val("ltr")); };
-const CanvasDirection CanvasDirection::rtl(){ return CanvasDirection(emlite::Val("rtl")); };
-const CanvasDirection CanvasDirection::inherit(){ return CanvasDirection(emlite::Val("inherit")); };
-
-const CanvasFontKerning CanvasFontKerning::auto_(){ return CanvasFontKerning(emlite::Val("auto")); };
-const CanvasFontKerning CanvasFontKerning::normal(){ return CanvasFontKerning(emlite::Val("normal")); };
-const CanvasFontKerning CanvasFontKerning::none(){ return CanvasFontKerning(emlite::Val("none")); };
-
-const CanvasFontStretch CanvasFontStretch::ultra_condensed(){ return CanvasFontStretch(emlite::Val("ultra-condensed")); };
-const CanvasFontStretch CanvasFontStretch::extra_condensed(){ return CanvasFontStretch(emlite::Val("extra-condensed")); };
-const CanvasFontStretch CanvasFontStretch::condensed(){ return CanvasFontStretch(emlite::Val("condensed")); };
-const CanvasFontStretch CanvasFontStretch::semi_condensed(){ return CanvasFontStretch(emlite::Val("semi-condensed")); };
-const CanvasFontStretch CanvasFontStretch::normal(){ return CanvasFontStretch(emlite::Val("normal")); };
-const CanvasFontStretch CanvasFontStretch::semi_expanded(){ return CanvasFontStretch(emlite::Val("semi-expanded")); };
-const CanvasFontStretch CanvasFontStretch::expanded(){ return CanvasFontStretch(emlite::Val("expanded")); };
-const CanvasFontStretch CanvasFontStretch::extra_expanded(){ return CanvasFontStretch(emlite::Val("extra-expanded")); };
-const CanvasFontStretch CanvasFontStretch::ultra_expanded(){ return CanvasFontStretch(emlite::Val("ultra-expanded")); };
-
-const CanvasFontVariantCaps CanvasFontVariantCaps::normal(){ return CanvasFontVariantCaps(emlite::Val("normal")); };
-const CanvasFontVariantCaps CanvasFontVariantCaps::small_caps(){ return CanvasFontVariantCaps(emlite::Val("small-caps")); };
-const CanvasFontVariantCaps CanvasFontVariantCaps::all_small_caps(){ return CanvasFontVariantCaps(emlite::Val("all-small-caps")); };
-const CanvasFontVariantCaps CanvasFontVariantCaps::petite_caps(){ return CanvasFontVariantCaps(emlite::Val("petite-caps")); };
-const CanvasFontVariantCaps CanvasFontVariantCaps::all_petite_caps(){ return CanvasFontVariantCaps(emlite::Val("all-petite-caps")); };
-const CanvasFontVariantCaps CanvasFontVariantCaps::unicase(){ return CanvasFontVariantCaps(emlite::Val("unicase")); };
-const CanvasFontVariantCaps CanvasFontVariantCaps::titling_caps(){ return CanvasFontVariantCaps(emlite::Val("titling-caps")); };
-
-const CanvasTextRendering CanvasTextRendering::auto_(){ return CanvasTextRendering(emlite::Val("auto")); };
-const CanvasTextRendering CanvasTextRendering::optimizeSpeed(){ return CanvasTextRendering(emlite::Val("optimizeSpeed")); };
-const CanvasTextRendering CanvasTextRendering::optimizeLegibility(){ return CanvasTextRendering(emlite::Val("optimizeLegibility")); };
-const CanvasTextRendering CanvasTextRendering::geometricPrecision(){ return CanvasTextRendering(emlite::Val("geometricPrecision")); };
-
-const OffscreenRenderingContextId OffscreenRenderingContextId::_2d(){ return OffscreenRenderingContextId(emlite::Val("2d")); };
-const OffscreenRenderingContextId OffscreenRenderingContextId::bitmaprenderer(){ return OffscreenRenderingContextId(emlite::Val("bitmaprenderer")); };
-const OffscreenRenderingContextId OffscreenRenderingContextId::webgl(){ return OffscreenRenderingContextId(emlite::Val("webgl")); };
-const OffscreenRenderingContextId OffscreenRenderingContextId::webgl2(){ return OffscreenRenderingContextId(emlite::Val("webgl2")); };
-const OffscreenRenderingContextId OffscreenRenderingContextId::webgpu(){ return OffscreenRenderingContextId(emlite::Val("webgpu")); };
-
-const ScrollRestoration ScrollRestoration::auto_(){ return ScrollRestoration(emlite::Val("auto")); };
-const ScrollRestoration ScrollRestoration::manual(){ return ScrollRestoration(emlite::Val("manual")); };
-
-const NavigationHistoryBehavior NavigationHistoryBehavior::auto_(){ return NavigationHistoryBehavior(emlite::Val("auto")); };
-const NavigationHistoryBehavior NavigationHistoryBehavior::push(){ return NavigationHistoryBehavior(emlite::Val("push")); };
-const NavigationHistoryBehavior NavigationHistoryBehavior::replace(){ return NavigationHistoryBehavior(emlite::Val("replace")); };
-
-const NavigationType NavigationType::push(){ return NavigationType(emlite::Val("push")); };
-const NavigationType NavigationType::replace(){ return NavigationType(emlite::Val("replace")); };
-const NavigationType NavigationType::reload(){ return NavigationType(emlite::Val("reload")); };
-const NavigationType NavigationType::traverse(){ return NavigationType(emlite::Val("traverse")); };
-
-const NavigationFocusReset NavigationFocusReset::after_transition(){ return NavigationFocusReset(emlite::Val("after-transition")); };
-const NavigationFocusReset NavigationFocusReset::manual(){ return NavigationFocusReset(emlite::Val("manual")); };
-
-const NavigationScrollBehavior NavigationScrollBehavior::after_transition(){ return NavigationScrollBehavior(emlite::Val("after-transition")); };
-const NavigationScrollBehavior NavigationScrollBehavior::manual(){ return NavigationScrollBehavior(emlite::Val("manual")); };
-
-const DOMParserSupportedType DOMParserSupportedType::text_html(){ return DOMParserSupportedType(emlite::Val("text/html")); };
-const DOMParserSupportedType DOMParserSupportedType::text_xml(){ return DOMParserSupportedType(emlite::Val("text/xml")); };
-const DOMParserSupportedType DOMParserSupportedType::application_xml(){ return DOMParserSupportedType(emlite::Val("application/xml")); };
-const DOMParserSupportedType DOMParserSupportedType::application_xhtml_xml(){ return DOMParserSupportedType(emlite::Val("application/xhtml+xml")); };
-const DOMParserSupportedType DOMParserSupportedType::image_svg_xml(){ return DOMParserSupportedType(emlite::Val("image/svg+xml")); };
-
-const ImageDataPixelFormat ImageDataPixelFormat::rgba_unorm8(){ return ImageDataPixelFormat(emlite::Val("rgba-unorm8")); };
-const ImageDataPixelFormat ImageDataPixelFormat::rgba_float16(){ return ImageDataPixelFormat(emlite::Val("rgba-float16")); };
-
-const ImageOrientation ImageOrientation::from_image(){ return ImageOrientation(emlite::Val("from-image")); };
-const ImageOrientation ImageOrientation::flipY(){ return ImageOrientation(emlite::Val("flipY")); };
-
-const PremultiplyAlpha PremultiplyAlpha::none(){ return PremultiplyAlpha(emlite::Val("none")); };
-const PremultiplyAlpha PremultiplyAlpha::premultiply(){ return PremultiplyAlpha(emlite::Val("premultiply")); };
-const PremultiplyAlpha PremultiplyAlpha::default_(){ return PremultiplyAlpha(emlite::Val("default")); };
-
-const ColorSpaceConversion ColorSpaceConversion::none(){ return ColorSpaceConversion(emlite::Val("none")); };
-const ColorSpaceConversion ColorSpaceConversion::default_(){ return ColorSpaceConversion(emlite::Val("default")); };
-
-const ResizeQuality ResizeQuality::pixelated(){ return ResizeQuality(emlite::Val("pixelated")); };
-const ResizeQuality ResizeQuality::low(){ return ResizeQuality(emlite::Val("low")); };
-const ResizeQuality ResizeQuality::medium(){ return ResizeQuality(emlite::Val("medium")); };
-const ResizeQuality ResizeQuality::high(){ return ResizeQuality(emlite::Val("high")); };
-
-const WorkerType WorkerType::classic(){ return WorkerType(emlite::Val("classic")); };
-const WorkerType WorkerType::module_(){ return WorkerType(emlite::Val("module")); };
-
-const UserIdleState UserIdleState::active(){ return UserIdleState(emlite::Val("active")); };
-const UserIdleState UserIdleState::idle(){ return UserIdleState(emlite::Val("idle")); };
-
-const ScreenIdleState ScreenIdleState::locked(){ return ScreenIdleState(emlite::Val("locked")); };
-const ScreenIdleState ScreenIdleState::unlocked(){ return ScreenIdleState(emlite::Val("unlocked")); };
-
-const RedEyeReduction RedEyeReduction::never(){ return RedEyeReduction(emlite::Val("never")); };
-const RedEyeReduction RedEyeReduction::always(){ return RedEyeReduction(emlite::Val("always")); };
-const RedEyeReduction RedEyeReduction::controllable(){ return RedEyeReduction(emlite::Val("controllable")); };
-
-const FillLightMode FillLightMode::auto_(){ return FillLightMode(emlite::Val("auto")); };
-const FillLightMode FillLightMode::off(){ return FillLightMode(emlite::Val("off")); };
-const FillLightMode FillLightMode::flash(){ return FillLightMode(emlite::Val("flash")); };
-
-const MeteringMode MeteringMode::none(){ return MeteringMode(emlite::Val("none")); };
-const MeteringMode MeteringMode::manual(){ return MeteringMode(emlite::Val("manual")); };
-const MeteringMode MeteringMode::single_shot(){ return MeteringMode(emlite::Val("single-shot")); };
-const MeteringMode MeteringMode::continuous(){ return MeteringMode(emlite::Val("continuous")); };
-
-const LoginStatus LoginStatus::logged_in(){ return LoginStatus(emlite::Val("logged-in")); };
-const LoginStatus LoginStatus::logged_out(){ return LoginStatus(emlite::Val("logged-out")); };
-
-const ScriptInvokerType ScriptInvokerType::classic_script(){ return ScriptInvokerType(emlite::Val("classic-script")); };
-const ScriptInvokerType ScriptInvokerType::module_script(){ return ScriptInvokerType(emlite::Val("module-script")); };
-const ScriptInvokerType ScriptInvokerType::event_listener(){ return ScriptInvokerType(emlite::Val("event-listener")); };
-const ScriptInvokerType ScriptInvokerType::user_callback(){ return ScriptInvokerType(emlite::Val("user-callback")); };
-const ScriptInvokerType ScriptInvokerType::resolve_promise(){ return ScriptInvokerType(emlite::Val("resolve-promise")); };
-const ScriptInvokerType ScriptInvokerType::reject_promise(){ return ScriptInvokerType(emlite::Val("reject-promise")); };
-
-const ScriptWindowAttribution ScriptWindowAttribution::self(){ return ScriptWindowAttribution(emlite::Val("self")); };
-const ScriptWindowAttribution ScriptWindowAttribution::descendant(){ return ScriptWindowAttribution(emlite::Val("descendant")); };
-const ScriptWindowAttribution ScriptWindowAttribution::ancestor(){ return ScriptWindowAttribution(emlite::Val("ancestor")); };
-const ScriptWindowAttribution ScriptWindowAttribution::same_page(){ return ScriptWindowAttribution(emlite::Val("same-page")); };
-const ScriptWindowAttribution ScriptWindowAttribution::other(){ return ScriptWindowAttribution(emlite::Val("other")); };
-
-const MagnetometerLocalCoordinateSystem MagnetometerLocalCoordinateSystem::device(){ return MagnetometerLocalCoordinateSystem(emlite::Val("device")); };
-const MagnetometerLocalCoordinateSystem MagnetometerLocalCoordinateSystem::screen(){ return MagnetometerLocalCoordinateSystem(emlite::Val("screen")); };
-
-const AppBannerPromptOutcome AppBannerPromptOutcome::accepted(){ return AppBannerPromptOutcome(emlite::Val("accepted")); };
-const AppBannerPromptOutcome AppBannerPromptOutcome::dismissed(){ return AppBannerPromptOutcome(emlite::Val("dismissed")); };
-
-const MediaDecodingType MediaDecodingType::file(){ return MediaDecodingType(emlite::Val("file")); };
-const MediaDecodingType MediaDecodingType::media_source(){ return MediaDecodingType(emlite::Val("media-source")); };
-const MediaDecodingType MediaDecodingType::webrtc(){ return MediaDecodingType(emlite::Val("webrtc")); };
-
-const MediaEncodingType MediaEncodingType::record(){ return MediaEncodingType(emlite::Val("record")); };
-const MediaEncodingType MediaEncodingType::webrtc(){ return MediaEncodingType(emlite::Val("webrtc")); };
-
-const HdrMetadataType HdrMetadataType::smpteSt2086(){ return HdrMetadataType(emlite::Val("smpteSt2086")); };
-const HdrMetadataType HdrMetadataType::smpteSt2094_10(){ return HdrMetadataType(emlite::Val("smpteSt2094-10")); };
-const HdrMetadataType HdrMetadataType::smpteSt2094_40(){ return HdrMetadataType(emlite::Val("smpteSt2094-40")); };
-
-const ColorGamut ColorGamut::srgb(){ return ColorGamut(emlite::Val("srgb")); };
-const ColorGamut ColorGamut::p3(){ return ColorGamut(emlite::Val("p3")); };
-const ColorGamut ColorGamut::rec2020(){ return ColorGamut(emlite::Val("rec2020")); };
-
-const TransferFunction TransferFunction::srgb(){ return TransferFunction(emlite::Val("srgb")); };
-const TransferFunction TransferFunction::pq(){ return TransferFunction(emlite::Val("pq")); };
-const TransferFunction TransferFunction::hlg(){ return TransferFunction(emlite::Val("hlg")); };
-
-const ReadyState ReadyState::closed(){ return ReadyState(emlite::Val("closed")); };
-const ReadyState ReadyState::open(){ return ReadyState(emlite::Val("open")); };
-const ReadyState ReadyState::ended(){ return ReadyState(emlite::Val("ended")); };
-
-const EndOfStreamError EndOfStreamError::network(){ return EndOfStreamError(emlite::Val("network")); };
-const EndOfStreamError EndOfStreamError::decode(){ return EndOfStreamError(emlite::Val("decode")); };
-
-const AppendMode AppendMode::segments(){ return AppendMode(emlite::Val("segments")); };
-const AppendMode AppendMode::sequence(){ return AppendMode(emlite::Val("sequence")); };
-
-const MockCapturePromptResult MockCapturePromptResult::granted(){ return MockCapturePromptResult(emlite::Val("granted")); };
-const MockCapturePromptResult MockCapturePromptResult::denied(){ return MockCapturePromptResult(emlite::Val("denied")); };
-
-const CaptureAction CaptureAction::next(){ return CaptureAction(emlite::Val("next")); };
-const CaptureAction CaptureAction::previous(){ return CaptureAction(emlite::Val("previous")); };
-const CaptureAction CaptureAction::first(){ return CaptureAction(emlite::Val("first")); };
-const CaptureAction CaptureAction::last(){ return CaptureAction(emlite::Val("last")); };
-
-const MediaStreamTrackState MediaStreamTrackState::live(){ return MediaStreamTrackState(emlite::Val("live")); };
-const MediaStreamTrackState MediaStreamTrackState::ended(){ return MediaStreamTrackState(emlite::Val("ended")); };
-
-const VideoFacingModeEnum VideoFacingModeEnum::user(){ return VideoFacingModeEnum(emlite::Val("user")); };
-const VideoFacingModeEnum VideoFacingModeEnum::environment(){ return VideoFacingModeEnum(emlite::Val("environment")); };
-const VideoFacingModeEnum VideoFacingModeEnum::left(){ return VideoFacingModeEnum(emlite::Val("left")); };
-const VideoFacingModeEnum VideoFacingModeEnum::right(){ return VideoFacingModeEnum(emlite::Val("right")); };
-
-const VideoResizeModeEnum VideoResizeModeEnum::none(){ return VideoResizeModeEnum(emlite::Val("none")); };
-const VideoResizeModeEnum VideoResizeModeEnum::crop_and_scale(){ return VideoResizeModeEnum(emlite::Val("crop-and-scale")); };
-
-const EchoCancellationModeEnum EchoCancellationModeEnum::all(){ return EchoCancellationModeEnum(emlite::Val("all")); };
-const EchoCancellationModeEnum EchoCancellationModeEnum::remote_only(){ return EchoCancellationModeEnum(emlite::Val("remote-only")); };
-
-const MediaDeviceKind MediaDeviceKind::audioinput(){ return MediaDeviceKind(emlite::Val("audioinput")); };
-const MediaDeviceKind MediaDeviceKind::audiooutput(){ return MediaDeviceKind(emlite::Val("audiooutput")); };
-const MediaDeviceKind MediaDeviceKind::videoinput(){ return MediaDeviceKind(emlite::Val("videoinput")); };
-
-const MediaSessionPlaybackState MediaSessionPlaybackState::none(){ return MediaSessionPlaybackState(emlite::Val("none")); };
-const MediaSessionPlaybackState MediaSessionPlaybackState::paused(){ return MediaSessionPlaybackState(emlite::Val("paused")); };
-const MediaSessionPlaybackState MediaSessionPlaybackState::playing(){ return MediaSessionPlaybackState(emlite::Val("playing")); };
-
-const MediaSessionAction MediaSessionAction::play(){ return MediaSessionAction(emlite::Val("play")); };
-const MediaSessionAction MediaSessionAction::pause(){ return MediaSessionAction(emlite::Val("pause")); };
-const MediaSessionAction MediaSessionAction::seekbackward(){ return MediaSessionAction(emlite::Val("seekbackward")); };
-const MediaSessionAction MediaSessionAction::seekforward(){ return MediaSessionAction(emlite::Val("seekforward")); };
-const MediaSessionAction MediaSessionAction::previoustrack(){ return MediaSessionAction(emlite::Val("previoustrack")); };
-const MediaSessionAction MediaSessionAction::nexttrack(){ return MediaSessionAction(emlite::Val("nexttrack")); };
-const MediaSessionAction MediaSessionAction::skipad(){ return MediaSessionAction(emlite::Val("skipad")); };
-const MediaSessionAction MediaSessionAction::stop(){ return MediaSessionAction(emlite::Val("stop")); };
-const MediaSessionAction MediaSessionAction::seekto(){ return MediaSessionAction(emlite::Val("seekto")); };
-const MediaSessionAction MediaSessionAction::togglemicrophone(){ return MediaSessionAction(emlite::Val("togglemicrophone")); };
-const MediaSessionAction MediaSessionAction::togglecamera(){ return MediaSessionAction(emlite::Val("togglecamera")); };
-const MediaSessionAction MediaSessionAction::togglescreenshare(){ return MediaSessionAction(emlite::Val("togglescreenshare")); };
-const MediaSessionAction MediaSessionAction::hangup(){ return MediaSessionAction(emlite::Val("hangup")); };
-const MediaSessionAction MediaSessionAction::previousslide(){ return MediaSessionAction(emlite::Val("previousslide")); };
-const MediaSessionAction MediaSessionAction::nextslide(){ return MediaSessionAction(emlite::Val("nextslide")); };
-const MediaSessionAction MediaSessionAction::enterpictureinpicture(){ return MediaSessionAction(emlite::Val("enterpictureinpicture")); };
-const MediaSessionAction MediaSessionAction::voiceactivity(){ return MediaSessionAction(emlite::Val("voiceactivity")); };
-
-const BitrateMode BitrateMode::constant(){ return BitrateMode(emlite::Val("constant")); };
-const BitrateMode BitrateMode::variable(){ return BitrateMode(emlite::Val("variable")); };
-
-const RecordingState RecordingState::inactive(){ return RecordingState(emlite::Val("inactive")); };
-const RecordingState RecordingState::recording(){ return RecordingState(emlite::Val("recording")); };
-const RecordingState RecordingState::paused(){ return RecordingState(emlite::Val("paused")); };
-
-const RTCDegradationPreference RTCDegradationPreference::maintain_framerate(){ return RTCDegradationPreference(emlite::Val("maintain-framerate")); };
-const RTCDegradationPreference RTCDegradationPreference::maintain_resolution(){ return RTCDegradationPreference(emlite::Val("maintain-resolution")); };
-const RTCDegradationPreference RTCDegradationPreference::balanced(){ return RTCDegradationPreference(emlite::Val("balanced")); };
-
-const NavigationTimingType NavigationTimingType::navigate(){ return NavigationTimingType(emlite::Val("navigate")); };
-const NavigationTimingType NavigationTimingType::reload(){ return NavigationTimingType(emlite::Val("reload")); };
-const NavigationTimingType NavigationTimingType::back_forward(){ return NavigationTimingType(emlite::Val("back_forward")); };
-const NavigationTimingType NavigationTimingType::prerender(){ return NavigationTimingType(emlite::Val("prerender")); };
-
-const ConnectionType ConnectionType::bluetooth(){ return ConnectionType(emlite::Val("bluetooth")); };
-const ConnectionType ConnectionType::cellular(){ return ConnectionType(emlite::Val("cellular")); };
-const ConnectionType ConnectionType::ethernet(){ return ConnectionType(emlite::Val("ethernet")); };
-const ConnectionType ConnectionType::mixed(){ return ConnectionType(emlite::Val("mixed")); };
-const ConnectionType ConnectionType::none(){ return ConnectionType(emlite::Val("none")); };
-const ConnectionType ConnectionType::other(){ return ConnectionType(emlite::Val("other")); };
-const ConnectionType ConnectionType::unknown(){ return ConnectionType(emlite::Val("unknown")); };
-const ConnectionType ConnectionType::wifi(){ return ConnectionType(emlite::Val("wifi")); };
-const ConnectionType ConnectionType::wimax(){ return ConnectionType(emlite::Val("wimax")); };
-
-const EffectiveConnectionType EffectiveConnectionType::_2g(){ return EffectiveConnectionType(emlite::Val("2g")); };
-const EffectiveConnectionType EffectiveConnectionType::_3g(){ return EffectiveConnectionType(emlite::Val("3g")); };
-const EffectiveConnectionType EffectiveConnectionType::_4g(){ return EffectiveConnectionType(emlite::Val("4g")); };
-const EffectiveConnectionType EffectiveConnectionType::slow_2g(){ return EffectiveConnectionType(emlite::Val("slow-2g")); };
-
-const NotificationPermission NotificationPermission::default_(){ return NotificationPermission(emlite::Val("default")); };
-const NotificationPermission NotificationPermission::denied(){ return NotificationPermission(emlite::Val("denied")); };
-const NotificationPermission NotificationPermission::granted(){ return NotificationPermission(emlite::Val("granted")); };
-
-const NotificationDirection NotificationDirection::auto_(){ return NotificationDirection(emlite::Val("auto")); };
-const NotificationDirection NotificationDirection::ltr(){ return NotificationDirection(emlite::Val("ltr")); };
-const NotificationDirection NotificationDirection::rtl(){ return NotificationDirection(emlite::Val("rtl")); };
-
-const OrientationSensorLocalCoordinateSystem OrientationSensorLocalCoordinateSystem::device(){ return OrientationSensorLocalCoordinateSystem(emlite::Val("device")); };
-const OrientationSensorLocalCoordinateSystem OrientationSensorLocalCoordinateSystem::screen(){ return OrientationSensorLocalCoordinateSystem(emlite::Val("screen")); };
-
-const ClientLifecycleState ClientLifecycleState::active(){ return ClientLifecycleState(emlite::Val("active")); };
-const ClientLifecycleState ClientLifecycleState::frozen(){ return ClientLifecycleState(emlite::Val("frozen")); };
-
-const PaymentDelegation PaymentDelegation::shippingAddress(){ return PaymentDelegation(emlite::Val("shippingAddress")); };
-const PaymentDelegation PaymentDelegation::payerName(){ return PaymentDelegation(emlite::Val("payerName")); };
-const PaymentDelegation PaymentDelegation::payerPhone(){ return PaymentDelegation(emlite::Val("payerPhone")); };
-const PaymentDelegation PaymentDelegation::payerEmail(){ return PaymentDelegation(emlite::Val("payerEmail")); };
-
-const PaymentShippingType PaymentShippingType::shipping(){ return PaymentShippingType(emlite::Val("shipping")); };
-const PaymentShippingType PaymentShippingType::delivery(){ return PaymentShippingType(emlite::Val("delivery")); };
-const PaymentShippingType PaymentShippingType::pickup(){ return PaymentShippingType(emlite::Val("pickup")); };
-
-const PaymentComplete PaymentComplete::fail(){ return PaymentComplete(emlite::Val("fail")); };
-const PaymentComplete PaymentComplete::success(){ return PaymentComplete(emlite::Val("success")); };
-const PaymentComplete PaymentComplete::unknown(){ return PaymentComplete(emlite::Val("unknown")); };
-
-const PermissionState PermissionState::granted(){ return PermissionState(emlite::Val("granted")); };
-const PermissionState PermissionState::denied(){ return PermissionState(emlite::Val("denied")); };
-const PermissionState PermissionState::prompt(){ return PermissionState(emlite::Val("prompt")); };
-
-const PointerAxis PointerAxis::block(){ return PointerAxis(emlite::Val("block")); };
-const PointerAxis PointerAxis::inline_(){ return PointerAxis(emlite::Val("inline")); };
-const PointerAxis PointerAxis::x(){ return PointerAxis(emlite::Val("x")); };
-const PointerAxis PointerAxis::y(){ return PointerAxis(emlite::Val("y")); };
-
-const PresentationConnectionState PresentationConnectionState::connecting(){ return PresentationConnectionState(emlite::Val("connecting")); };
-const PresentationConnectionState PresentationConnectionState::connected(){ return PresentationConnectionState(emlite::Val("connected")); };
-const PresentationConnectionState PresentationConnectionState::closed(){ return PresentationConnectionState(emlite::Val("closed")); };
-const PresentationConnectionState PresentationConnectionState::terminated(){ return PresentationConnectionState(emlite::Val("terminated")); };
-
-const PresentationConnectionCloseReason PresentationConnectionCloseReason::error(){ return PresentationConnectionCloseReason(emlite::Val("error")); };
-const PresentationConnectionCloseReason PresentationConnectionCloseReason::closed(){ return PresentationConnectionCloseReason(emlite::Val("closed")); };
-const PresentationConnectionCloseReason PresentationConnectionCloseReason::wentaway(){ return PresentationConnectionCloseReason(emlite::Val("wentaway")); };
-
-const PrivateAttributionAggregationProtocol PrivateAttributionAggregationProtocol::dap_12_histogram(){ return PrivateAttributionAggregationProtocol(emlite::Val("dap-12-histogram")); };
-const PrivateAttributionAggregationProtocol PrivateAttributionAggregationProtocol::tee_00(){ return PrivateAttributionAggregationProtocol(emlite::Val("tee-00")); };
-
-const AttributionLogic AttributionLogic::last_touch(){ return AttributionLogic(emlite::Val("last-touch")); };
-
-const IPAddressSpace IPAddressSpace::public_(){ return IPAddressSpace(emlite::Val("public")); };
-const IPAddressSpace IPAddressSpace::private_(){ return IPAddressSpace(emlite::Val("private")); };
-const IPAddressSpace IPAddressSpace::local(){ return IPAddressSpace(emlite::Val("local")); };
-
-const PushEncryptionKeyName PushEncryptionKeyName::p256dh(){ return PushEncryptionKeyName(emlite::Val("p256dh")); };
-const PushEncryptionKeyName PushEncryptionKeyName::auth(){ return PushEncryptionKeyName(emlite::Val("auth")); };
-
-const ReferrerPolicy ReferrerPolicy::none(){ return ReferrerPolicy(emlite::Val("")); };
-const ReferrerPolicy ReferrerPolicy::no_referrer(){ return ReferrerPolicy(emlite::Val("no-referrer")); };
-const ReferrerPolicy ReferrerPolicy::no_referrer_when_downgrade(){ return ReferrerPolicy(emlite::Val("no-referrer-when-downgrade")); };
-const ReferrerPolicy ReferrerPolicy::same_origin(){ return ReferrerPolicy(emlite::Val("same-origin")); };
-const ReferrerPolicy ReferrerPolicy::origin(){ return ReferrerPolicy(emlite::Val("origin")); };
-const ReferrerPolicy ReferrerPolicy::strict_origin(){ return ReferrerPolicy(emlite::Val("strict-origin")); };
-const ReferrerPolicy ReferrerPolicy::origin_when_cross_origin(){ return ReferrerPolicy(emlite::Val("origin-when-cross-origin")); };
-const ReferrerPolicy ReferrerPolicy::strict_origin_when_cross_origin(){ return ReferrerPolicy(emlite::Val("strict-origin-when-cross-origin")); };
-const ReferrerPolicy ReferrerPolicy::unsafe_url(){ return ReferrerPolicy(emlite::Val("unsafe-url")); };
-
-const RemotePlaybackState RemotePlaybackState::connecting(){ return RemotePlaybackState(emlite::Val("connecting")); };
-const RemotePlaybackState RemotePlaybackState::connected(){ return RemotePlaybackState(emlite::Val("connected")); };
-const RemotePlaybackState RemotePlaybackState::disconnected(){ return RemotePlaybackState(emlite::Val("disconnected")); };
-
-const ResizeObserverBoxOptions ResizeObserverBoxOptions::border_box(){ return ResizeObserverBoxOptions(emlite::Val("border-box")); };
-const ResizeObserverBoxOptions ResizeObserverBoxOptions::content_box(){ return ResizeObserverBoxOptions(emlite::Val("content-box")); };
-const ResizeObserverBoxOptions ResizeObserverBoxOptions::device_pixel_content_box(){ return ResizeObserverBoxOptions(emlite::Val("device-pixel-content-box")); };
-
-const RenderBlockingStatusType RenderBlockingStatusType::blocking(){ return RenderBlockingStatusType(emlite::Val("blocking")); };
-const RenderBlockingStatusType RenderBlockingStatusType::non_blocking(){ return RenderBlockingStatusType(emlite::Val("non-blocking")); };
-
-const SameSiteCookiesType SameSiteCookiesType::all(){ return SameSiteCookiesType(emlite::Val("all")); };
-const SameSiteCookiesType SameSiteCookiesType::none(){ return SameSiteCookiesType(emlite::Val("none")); };
-
-const SanitizerPresets SanitizerPresets::default_(){ return SanitizerPresets(emlite::Val("default")); };
-
-const TaskPriority TaskPriority::user_blocking(){ return TaskPriority(emlite::Val("user-blocking")); };
-const TaskPriority TaskPriority::user_visible(){ return TaskPriority(emlite::Val("user-visible")); };
-const TaskPriority TaskPriority::background(){ return TaskPriority(emlite::Val("background")); };
-
-const CaptureStartFocusBehavior CaptureStartFocusBehavior::focus_capturing_application(){ return CaptureStartFocusBehavior(emlite::Val("focus-capturing-application")); };
-const CaptureStartFocusBehavior CaptureStartFocusBehavior::focus_captured_surface(){ return CaptureStartFocusBehavior(emlite::Val("focus-captured-surface")); };
-const CaptureStartFocusBehavior CaptureStartFocusBehavior::no_focus_change(){ return CaptureStartFocusBehavior(emlite::Val("no-focus-change")); };
-
-const SelfCapturePreferenceEnum SelfCapturePreferenceEnum::include(){ return SelfCapturePreferenceEnum(emlite::Val("include")); };
-const SelfCapturePreferenceEnum SelfCapturePreferenceEnum::exclude(){ return SelfCapturePreferenceEnum(emlite::Val("exclude")); };
-
-const SystemAudioPreferenceEnum SystemAudioPreferenceEnum::include(){ return SystemAudioPreferenceEnum(emlite::Val("include")); };
-const SystemAudioPreferenceEnum SystemAudioPreferenceEnum::exclude(){ return SystemAudioPreferenceEnum(emlite::Val("exclude")); };
-
-const WindowAudioPreferenceEnum WindowAudioPreferenceEnum::system(){ return WindowAudioPreferenceEnum(emlite::Val("system")); };
-const WindowAudioPreferenceEnum WindowAudioPreferenceEnum::window(){ return WindowAudioPreferenceEnum(emlite::Val("window")); };
-const WindowAudioPreferenceEnum WindowAudioPreferenceEnum::exclude(){ return WindowAudioPreferenceEnum(emlite::Val("exclude")); };
-
-const SurfaceSwitchingPreferenceEnum SurfaceSwitchingPreferenceEnum::include(){ return SurfaceSwitchingPreferenceEnum(emlite::Val("include")); };
-const SurfaceSwitchingPreferenceEnum SurfaceSwitchingPreferenceEnum::exclude(){ return SurfaceSwitchingPreferenceEnum(emlite::Val("exclude")); };
-
-const MonitorTypeSurfacesEnum MonitorTypeSurfacesEnum::include(){ return MonitorTypeSurfacesEnum(emlite::Val("include")); };
-const MonitorTypeSurfacesEnum MonitorTypeSurfacesEnum::exclude(){ return MonitorTypeSurfacesEnum(emlite::Val("exclude")); };
-
-const DisplayCaptureSurfaceType DisplayCaptureSurfaceType::monitor(){ return DisplayCaptureSurfaceType(emlite::Val("monitor")); };
-const DisplayCaptureSurfaceType DisplayCaptureSurfaceType::window(){ return DisplayCaptureSurfaceType(emlite::Val("window")); };
-const DisplayCaptureSurfaceType DisplayCaptureSurfaceType::browser(){ return DisplayCaptureSurfaceType(emlite::Val("browser")); };
-
-const CursorCaptureConstraint CursorCaptureConstraint::never(){ return CursorCaptureConstraint(emlite::Val("never")); };
-const CursorCaptureConstraint CursorCaptureConstraint::always(){ return CursorCaptureConstraint(emlite::Val("always")); };
-const CursorCaptureConstraint CursorCaptureConstraint::motion(){ return CursorCaptureConstraint(emlite::Val("motion")); };
-
-const OrientationLockType OrientationLockType::any(){ return OrientationLockType(emlite::Val("any")); };
-const OrientationLockType OrientationLockType::natural(){ return OrientationLockType(emlite::Val("natural")); };
-const OrientationLockType OrientationLockType::landscape(){ return OrientationLockType(emlite::Val("landscape")); };
-const OrientationLockType OrientationLockType::portrait(){ return OrientationLockType(emlite::Val("portrait")); };
-const OrientationLockType OrientationLockType::portrait_primary(){ return OrientationLockType(emlite::Val("portrait-primary")); };
-const OrientationLockType OrientationLockType::portrait_secondary(){ return OrientationLockType(emlite::Val("portrait-secondary")); };
-const OrientationLockType OrientationLockType::landscape_primary(){ return OrientationLockType(emlite::Val("landscape-primary")); };
-const OrientationLockType OrientationLockType::landscape_secondary(){ return OrientationLockType(emlite::Val("landscape-secondary")); };
-
-const OrientationType OrientationType::portrait_primary(){ return OrientationType(emlite::Val("portrait-primary")); };
-const OrientationType OrientationType::portrait_secondary(){ return OrientationType(emlite::Val("portrait-secondary")); };
-const OrientationType OrientationType::landscape_primary(){ return OrientationType(emlite::Val("landscape-primary")); };
-const OrientationType OrientationType::landscape_secondary(){ return OrientationType(emlite::Val("landscape-secondary")); };
-
-const WakeLockType WakeLockType::screen(){ return WakeLockType(emlite::Val("screen")); };
-
-const ScrollAxis ScrollAxis::block(){ return ScrollAxis(emlite::Val("block")); };
-const ScrollAxis ScrollAxis::inline_(){ return ScrollAxis(emlite::Val("inline")); };
-const ScrollAxis ScrollAxis::x(){ return ScrollAxis(emlite::Val("x")); };
-const ScrollAxis ScrollAxis::y(){ return ScrollAxis(emlite::Val("y")); };
-
-const SecurePaymentConfirmationAvailability SecurePaymentConfirmationAvailability::available(){ return SecurePaymentConfirmationAvailability(emlite::Val("available")); };
-const SecurePaymentConfirmationAvailability SecurePaymentConfirmationAvailability::unavailable_unknown_reason(){ return SecurePaymentConfirmationAvailability(emlite::Val("unavailable-unknown-reason")); };
-const SecurePaymentConfirmationAvailability SecurePaymentConfirmationAvailability::unavailable_feature_not_enabled(){ return SecurePaymentConfirmationAvailability(emlite::Val("unavailable-feature-not-enabled")); };
-const SecurePaymentConfirmationAvailability SecurePaymentConfirmationAvailability::unavailable_no_permission_policy(){ return SecurePaymentConfirmationAvailability(emlite::Val("unavailable-no-permission-policy")); };
-const SecurePaymentConfirmationAvailability SecurePaymentConfirmationAvailability::unavailable_no_user_verifying_platform_authenticator(){ return SecurePaymentConfirmationAvailability(emlite::Val("unavailable-no-user-verifying-platform-authenticator")); };
-
-const ParityType ParityType::none(){ return ParityType(emlite::Val("none")); };
-const ParityType ParityType::even(){ return ParityType(emlite::Val("even")); };
-const ParityType ParityType::odd(){ return ParityType(emlite::Val("odd")); };
-
-const FlowControlType FlowControlType::none(){ return FlowControlType(emlite::Val("none")); };
-const FlowControlType FlowControlType::hardware(){ return FlowControlType(emlite::Val("hardware")); };
-
-const ServiceWorkerState ServiceWorkerState::parsed(){ return ServiceWorkerState(emlite::Val("parsed")); };
-const ServiceWorkerState ServiceWorkerState::installing(){ return ServiceWorkerState(emlite::Val("installing")); };
-const ServiceWorkerState ServiceWorkerState::installed(){ return ServiceWorkerState(emlite::Val("installed")); };
-const ServiceWorkerState ServiceWorkerState::activating(){ return ServiceWorkerState(emlite::Val("activating")); };
-const ServiceWorkerState ServiceWorkerState::activated(){ return ServiceWorkerState(emlite::Val("activated")); };
-const ServiceWorkerState ServiceWorkerState::redundant(){ return ServiceWorkerState(emlite::Val("redundant")); };
-
-const ServiceWorkerUpdateViaCache ServiceWorkerUpdateViaCache::imports(){ return ServiceWorkerUpdateViaCache(emlite::Val("imports")); };
-const ServiceWorkerUpdateViaCache ServiceWorkerUpdateViaCache::all(){ return ServiceWorkerUpdateViaCache(emlite::Val("all")); };
-const ServiceWorkerUpdateViaCache ServiceWorkerUpdateViaCache::none(){ return ServiceWorkerUpdateViaCache(emlite::Val("none")); };
-
-const FrameType FrameType::auxiliary(){ return FrameType(emlite::Val("auxiliary")); };
-const FrameType FrameType::top_level(){ return FrameType(emlite::Val("top-level")); };
-const FrameType FrameType::nested(){ return FrameType(emlite::Val("nested")); };
-const FrameType FrameType::none(){ return FrameType(emlite::Val("none")); };
-
-const ClientType ClientType::window(){ return ClientType(emlite::Val("window")); };
-const ClientType ClientType::worker(){ return ClientType(emlite::Val("worker")); };
-const ClientType ClientType::sharedworker(){ return ClientType(emlite::Val("sharedworker")); };
-const ClientType ClientType::all(){ return ClientType(emlite::Val("all")); };
-
-const RunningStatus RunningStatus::running(){ return RunningStatus(emlite::Val("running")); };
-const RunningStatus RunningStatus::not_running(){ return RunningStatus(emlite::Val("not-running")); };
-
-const RouterSourceEnum RouterSourceEnum::cache(){ return RouterSourceEnum(emlite::Val("cache")); };
-const RouterSourceEnum RouterSourceEnum::fetch_event(){ return RouterSourceEnum(emlite::Val("fetch-event")); };
-const RouterSourceEnum RouterSourceEnum::network(){ return RouterSourceEnum(emlite::Val("network")); };
-const RouterSourceEnum RouterSourceEnum::race_network_and_fetch_handler(){ return RouterSourceEnum(emlite::Val("race-network-and-fetch-handler")); };
-
-const LandmarkType LandmarkType::mouth(){ return LandmarkType(emlite::Val("mouth")); };
-const LandmarkType LandmarkType::eye(){ return LandmarkType(emlite::Val("eye")); };
-const LandmarkType LandmarkType::nose(){ return LandmarkType(emlite::Val("nose")); };
-
-const BarcodeFormat BarcodeFormat::aztec(){ return BarcodeFormat(emlite::Val("aztec")); };
-const BarcodeFormat BarcodeFormat::code_128(){ return BarcodeFormat(emlite::Val("code_128")); };
-const BarcodeFormat BarcodeFormat::code_39(){ return BarcodeFormat(emlite::Val("code_39")); };
-const BarcodeFormat BarcodeFormat::code_93(){ return BarcodeFormat(emlite::Val("code_93")); };
-const BarcodeFormat BarcodeFormat::codabar(){ return BarcodeFormat(emlite::Val("codabar")); };
-const BarcodeFormat BarcodeFormat::data_matrix(){ return BarcodeFormat(emlite::Val("data_matrix")); };
-const BarcodeFormat BarcodeFormat::ean_13(){ return BarcodeFormat(emlite::Val("ean_13")); };
-const BarcodeFormat BarcodeFormat::ean_8(){ return BarcodeFormat(emlite::Val("ean_8")); };
-const BarcodeFormat BarcodeFormat::itf(){ return BarcodeFormat(emlite::Val("itf")); };
-const BarcodeFormat BarcodeFormat::pdf417(){ return BarcodeFormat(emlite::Val("pdf417")); };
-const BarcodeFormat BarcodeFormat::qr_code(){ return BarcodeFormat(emlite::Val("qr_code")); };
-const BarcodeFormat BarcodeFormat::unknown(){ return BarcodeFormat(emlite::Val("unknown")); };
-const BarcodeFormat BarcodeFormat::upc_a(){ return BarcodeFormat(emlite::Val("upc_a")); };
-const BarcodeFormat BarcodeFormat::upc_e(){ return BarcodeFormat(emlite::Val("upc_e")); };
-
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::no_speech(){ return SpeechRecognitionErrorCode(emlite::Val("no-speech")); };
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::aborted(){ return SpeechRecognitionErrorCode(emlite::Val("aborted")); };
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::audio_capture(){ return SpeechRecognitionErrorCode(emlite::Val("audio-capture")); };
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::network(){ return SpeechRecognitionErrorCode(emlite::Val("network")); };
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::not_allowed(){ return SpeechRecognitionErrorCode(emlite::Val("not-allowed")); };
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::service_not_allowed(){ return SpeechRecognitionErrorCode(emlite::Val("service-not-allowed")); };
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::language_not_supported(){ return SpeechRecognitionErrorCode(emlite::Val("language-not-supported")); };
-const SpeechRecognitionErrorCode SpeechRecognitionErrorCode::phrases_not_supported(){ return SpeechRecognitionErrorCode(emlite::Val("phrases-not-supported")); };
-
-const AvailabilityStatus AvailabilityStatus::unavailable(){ return AvailabilityStatus(emlite::Val("unavailable")); };
-const AvailabilityStatus AvailabilityStatus::downloadable(){ return AvailabilityStatus(emlite::Val("downloadable")); };
-const AvailabilityStatus AvailabilityStatus::downloading(){ return AvailabilityStatus(emlite::Val("downloading")); };
-const AvailabilityStatus AvailabilityStatus::available(){ return AvailabilityStatus(emlite::Val("available")); };
-
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::canceled(){ return SpeechSynthesisErrorCode(emlite::Val("canceled")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::interrupted(){ return SpeechSynthesisErrorCode(emlite::Val("interrupted")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::audio_busy(){ return SpeechSynthesisErrorCode(emlite::Val("audio-busy")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::audio_hardware(){ return SpeechSynthesisErrorCode(emlite::Val("audio-hardware")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::network(){ return SpeechSynthesisErrorCode(emlite::Val("network")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::synthesis_unavailable(){ return SpeechSynthesisErrorCode(emlite::Val("synthesis-unavailable")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::synthesis_failed(){ return SpeechSynthesisErrorCode(emlite::Val("synthesis-failed")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::language_unavailable(){ return SpeechSynthesisErrorCode(emlite::Val("language-unavailable")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::voice_unavailable(){ return SpeechSynthesisErrorCode(emlite::Val("voice-unavailable")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::text_too_long(){ return SpeechSynthesisErrorCode(emlite::Val("text-too-long")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::invalid_argument(){ return SpeechSynthesisErrorCode(emlite::Val("invalid-argument")); };
-const SpeechSynthesisErrorCode SpeechSynthesisErrorCode::not_allowed(){ return SpeechSynthesisErrorCode(emlite::Val("not-allowed")); };
-
-const ReadableStreamReaderMode ReadableStreamReaderMode::byob(){ return ReadableStreamReaderMode(emlite::Val("byob")); };
-
-const ReadableStreamType ReadableStreamType::bytes(){ return ReadableStreamType(emlite::Val("bytes")); };
-
-const TouchType TouchType::direct(){ return TouchType(emlite::Val("direct")); };
-const TouchType TouchType::stylus(){ return TouchType(emlite::Val("stylus")); };
-
-const RefreshPolicy RefreshPolicy::none(){ return RefreshPolicy(emlite::Val("none")); };
-const RefreshPolicy RefreshPolicy::refresh(){ return RefreshPolicy(emlite::Val("refresh")); };
-
-const TokenVersion TokenVersion::_1(){ return TokenVersion(emlite::Val("1")); };
-
-const OperationType OperationType::token_request(){ return OperationType(emlite::Val("token-request")); };
-const OperationType OperationType::send_redemption_record(){ return OperationType(emlite::Val("send-redemption-record")); };
-const OperationType OperationType::token_redemption(){ return OperationType(emlite::Val("token-redemption")); };
-
-const KAnonStatus KAnonStatus::passedAndEnforced(){ return KAnonStatus(emlite::Val("passedAndEnforced")); };
-const KAnonStatus KAnonStatus::passedNotEnforced(){ return KAnonStatus(emlite::Val("passedNotEnforced")); };
-const KAnonStatus KAnonStatus::belowThreshold(){ return KAnonStatus(emlite::Val("belowThreshold")); };
-const KAnonStatus KAnonStatus::notCalculated(){ return KAnonStatus(emlite::Val("notCalculated")); };
-
-const ImportExportKind ImportExportKind::function(){ return ImportExportKind(emlite::Val("function")); };
-const ImportExportKind ImportExportKind::table(){ return ImportExportKind(emlite::Val("table")); };
-const ImportExportKind ImportExportKind::memory(){ return ImportExportKind(emlite::Val("memory")); };
-const ImportExportKind ImportExportKind::global(){ return ImportExportKind(emlite::Val("global")); };
-
-const TableKind TableKind::externref(){ return TableKind(emlite::Val("externref")); };
-const TableKind TableKind::anyfunc(){ return TableKind(emlite::Val("anyfunc")); };
-
-const ValueType ValueType::i32(){ return ValueType(emlite::Val("i32")); };
-const ValueType ValueType::i64(){ return ValueType(emlite::Val("i64")); };
-const ValueType ValueType::f32(){ return ValueType(emlite::Val("f32")); };
-const ValueType ValueType::f64(){ return ValueType(emlite::Val("f64")); };
-const ValueType ValueType::v128(){ return ValueType(emlite::Val("v128")); };
-const ValueType ValueType::externref(){ return ValueType(emlite::Val("externref")); };
-const ValueType ValueType::anyfunc(){ return ValueType(emlite::Val("anyfunc")); };
-
-const IterationCompositeOperation IterationCompositeOperation::replace(){ return IterationCompositeOperation(emlite::Val("replace")); };
-const IterationCompositeOperation IterationCompositeOperation::accumulate(){ return IterationCompositeOperation(emlite::Val("accumulate")); };
-
-const AnimationTriggerBehavior AnimationTriggerBehavior::once(){ return AnimationTriggerBehavior(emlite::Val("once")); };
-const AnimationTriggerBehavior AnimationTriggerBehavior::repeat(){ return AnimationTriggerBehavior(emlite::Val("repeat")); };
-const AnimationTriggerBehavior AnimationTriggerBehavior::alternate(){ return AnimationTriggerBehavior(emlite::Val("alternate")); };
-const AnimationTriggerBehavior AnimationTriggerBehavior::state(){ return AnimationTriggerBehavior(emlite::Val("state")); };
-
-const AnimationPlayState AnimationPlayState::idle(){ return AnimationPlayState(emlite::Val("idle")); };
-const AnimationPlayState AnimationPlayState::running(){ return AnimationPlayState(emlite::Val("running")); };
-const AnimationPlayState AnimationPlayState::paused(){ return AnimationPlayState(emlite::Val("paused")); };
-const AnimationPlayState AnimationPlayState::finished(){ return AnimationPlayState(emlite::Val("finished")); };
-
-const AnimationReplaceState AnimationReplaceState::active(){ return AnimationReplaceState(emlite::Val("active")); };
-const AnimationReplaceState AnimationReplaceState::removed(){ return AnimationReplaceState(emlite::Val("removed")); };
-const AnimationReplaceState AnimationReplaceState::persisted(){ return AnimationReplaceState(emlite::Val("persisted")); };
-
-const FillMode FillMode::none(){ return FillMode(emlite::Val("none")); };
-const FillMode FillMode::forwards(){ return FillMode(emlite::Val("forwards")); };
-const FillMode FillMode::backwards(){ return FillMode(emlite::Val("backwards")); };
-const FillMode FillMode::both(){ return FillMode(emlite::Val("both")); };
-const FillMode FillMode::auto_(){ return FillMode(emlite::Val("auto")); };
-
-const PlaybackDirection PlaybackDirection::normal(){ return PlaybackDirection(emlite::Val("normal")); };
-const PlaybackDirection PlaybackDirection::reverse(){ return PlaybackDirection(emlite::Val("reverse")); };
-const PlaybackDirection PlaybackDirection::alternate(){ return PlaybackDirection(emlite::Val("alternate")); };
-const PlaybackDirection PlaybackDirection::alternate_reverse(){ return PlaybackDirection(emlite::Val("alternate-reverse")); };
-
-const CompositeOperation CompositeOperation::replace(){ return CompositeOperation(emlite::Val("replace")); };
-const CompositeOperation CompositeOperation::add(){ return CompositeOperation(emlite::Val("add")); };
-const CompositeOperation CompositeOperation::accumulate(){ return CompositeOperation(emlite::Val("accumulate")); };
-
-const CompositeOperationOrAuto CompositeOperationOrAuto::replace(){ return CompositeOperationOrAuto(emlite::Val("replace")); };
-const CompositeOperationOrAuto CompositeOperationOrAuto::add(){ return CompositeOperationOrAuto(emlite::Val("add")); };
-const CompositeOperationOrAuto CompositeOperationOrAuto::accumulate(){ return CompositeOperationOrAuto(emlite::Val("accumulate")); };
-const CompositeOperationOrAuto CompositeOperationOrAuto::auto_(){ return CompositeOperationOrAuto(emlite::Val("auto")); };
-
-const LockMode LockMode::shared(){ return LockMode(emlite::Val("shared")); };
-const LockMode LockMode::exclusive(){ return LockMode(emlite::Val("exclusive")); };
-
-const OTPCredentialTransportType OTPCredentialTransportType::sms(){ return OTPCredentialTransportType(emlite::Val("sms")); };
-
-const AudioContextState AudioContextState::suspended(){ return AudioContextState(emlite::Val("suspended")); };
-const AudioContextState AudioContextState::running(){ return AudioContextState(emlite::Val("running")); };
-const AudioContextState AudioContextState::closed(){ return AudioContextState(emlite::Val("closed")); };
-const AudioContextState AudioContextState::interrupted(){ return AudioContextState(emlite::Val("interrupted")); };
-
-const AudioContextRenderSizeCategory AudioContextRenderSizeCategory::default_(){ return AudioContextRenderSizeCategory(emlite::Val("default")); };
-const AudioContextRenderSizeCategory AudioContextRenderSizeCategory::hardware(){ return AudioContextRenderSizeCategory(emlite::Val("hardware")); };
-
-const AudioContextLatencyCategory AudioContextLatencyCategory::balanced(){ return AudioContextLatencyCategory(emlite::Val("balanced")); };
-const AudioContextLatencyCategory AudioContextLatencyCategory::interactive(){ return AudioContextLatencyCategory(emlite::Val("interactive")); };
-const AudioContextLatencyCategory AudioContextLatencyCategory::playback(){ return AudioContextLatencyCategory(emlite::Val("playback")); };
-
-const AudioSinkType AudioSinkType::none(){ return AudioSinkType(emlite::Val("none")); };
-
-const ChannelCountMode ChannelCountMode::max(){ return ChannelCountMode(emlite::Val("max")); };
-const ChannelCountMode ChannelCountMode::clamped_max(){ return ChannelCountMode(emlite::Val("clamped-max")); };
-const ChannelCountMode ChannelCountMode::explicit_(){ return ChannelCountMode(emlite::Val("explicit")); };
-
-const ChannelInterpretation ChannelInterpretation::speakers(){ return ChannelInterpretation(emlite::Val("speakers")); };
-const ChannelInterpretation ChannelInterpretation::discrete(){ return ChannelInterpretation(emlite::Val("discrete")); };
-
-const AutomationRate AutomationRate::a_rate(){ return AutomationRate(emlite::Val("a-rate")); };
-const AutomationRate AutomationRate::k_rate(){ return AutomationRate(emlite::Val("k-rate")); };
-
-const BiquadFilterType BiquadFilterType::lowpass(){ return BiquadFilterType(emlite::Val("lowpass")); };
-const BiquadFilterType BiquadFilterType::highpass(){ return BiquadFilterType(emlite::Val("highpass")); };
-const BiquadFilterType BiquadFilterType::bandpass(){ return BiquadFilterType(emlite::Val("bandpass")); };
-const BiquadFilterType BiquadFilterType::lowshelf(){ return BiquadFilterType(emlite::Val("lowshelf")); };
-const BiquadFilterType BiquadFilterType::highshelf(){ return BiquadFilterType(emlite::Val("highshelf")); };
-const BiquadFilterType BiquadFilterType::peaking(){ return BiquadFilterType(emlite::Val("peaking")); };
-const BiquadFilterType BiquadFilterType::notch(){ return BiquadFilterType(emlite::Val("notch")); };
-const BiquadFilterType BiquadFilterType::allpass(){ return BiquadFilterType(emlite::Val("allpass")); };
-
-const OscillatorType OscillatorType::sine(){ return OscillatorType(emlite::Val("sine")); };
-const OscillatorType OscillatorType::square(){ return OscillatorType(emlite::Val("square")); };
-const OscillatorType OscillatorType::sawtooth(){ return OscillatorType(emlite::Val("sawtooth")); };
-const OscillatorType OscillatorType::triangle(){ return OscillatorType(emlite::Val("triangle")); };
-const OscillatorType OscillatorType::custom(){ return OscillatorType(emlite::Val("custom")); };
-
-const PanningModelType PanningModelType::equalpower(){ return PanningModelType(emlite::Val("equalpower")); };
-const PanningModelType PanningModelType::HRTF(){ return PanningModelType(emlite::Val("HRTF")); };
-
-const DistanceModelType DistanceModelType::linear(){ return DistanceModelType(emlite::Val("linear")); };
-const DistanceModelType DistanceModelType::inverse(){ return DistanceModelType(emlite::Val("inverse")); };
-const DistanceModelType DistanceModelType::exponential(){ return DistanceModelType(emlite::Val("exponential")); };
-
-const OverSampleType OverSampleType::none(){ return OverSampleType(emlite::Val("none")); };
-const OverSampleType OverSampleType::_2x(){ return OverSampleType(emlite::Val("2x")); };
-const OverSampleType OverSampleType::_4x(){ return OverSampleType(emlite::Val("4x")); };
-
-const AuthenticatorAttachment AuthenticatorAttachment::platform(){ return AuthenticatorAttachment(emlite::Val("platform")); };
-const AuthenticatorAttachment AuthenticatorAttachment::cross_platform(){ return AuthenticatorAttachment(emlite::Val("cross-platform")); };
-
-const ResidentKeyRequirement ResidentKeyRequirement::discouraged(){ return ResidentKeyRequirement(emlite::Val("discouraged")); };
-const ResidentKeyRequirement ResidentKeyRequirement::preferred(){ return ResidentKeyRequirement(emlite::Val("preferred")); };
-const ResidentKeyRequirement ResidentKeyRequirement::required(){ return ResidentKeyRequirement(emlite::Val("required")); };
-
-const AttestationConveyancePreference AttestationConveyancePreference::none(){ return AttestationConveyancePreference(emlite::Val("none")); };
-const AttestationConveyancePreference AttestationConveyancePreference::indirect(){ return AttestationConveyancePreference(emlite::Val("indirect")); };
-const AttestationConveyancePreference AttestationConveyancePreference::direct(){ return AttestationConveyancePreference(emlite::Val("direct")); };
-const AttestationConveyancePreference AttestationConveyancePreference::enterprise(){ return AttestationConveyancePreference(emlite::Val("enterprise")); };
-
-const TokenBindingStatus TokenBindingStatus::present(){ return TokenBindingStatus(emlite::Val("present")); };
-const TokenBindingStatus TokenBindingStatus::supported(){ return TokenBindingStatus(emlite::Val("supported")); };
-
-const PublicKeyCredentialType PublicKeyCredentialType::public_key(){ return PublicKeyCredentialType(emlite::Val("public-key")); };
-
-const AuthenticatorTransport AuthenticatorTransport::usb(){ return AuthenticatorTransport(emlite::Val("usb")); };
-const AuthenticatorTransport AuthenticatorTransport::nfc(){ return AuthenticatorTransport(emlite::Val("nfc")); };
-const AuthenticatorTransport AuthenticatorTransport::ble(){ return AuthenticatorTransport(emlite::Val("ble")); };
-const AuthenticatorTransport AuthenticatorTransport::smart_card(){ return AuthenticatorTransport(emlite::Val("smart-card")); };
-const AuthenticatorTransport AuthenticatorTransport::hybrid(){ return AuthenticatorTransport(emlite::Val("hybrid")); };
-const AuthenticatorTransport AuthenticatorTransport::internal(){ return AuthenticatorTransport(emlite::Val("internal")); };
-
-const UserVerificationRequirement UserVerificationRequirement::required(){ return UserVerificationRequirement(emlite::Val("required")); };
-const UserVerificationRequirement UserVerificationRequirement::preferred(){ return UserVerificationRequirement(emlite::Val("preferred")); };
-const UserVerificationRequirement UserVerificationRequirement::discouraged(){ return UserVerificationRequirement(emlite::Val("discouraged")); };
-
-const ClientCapability ClientCapability::conditionalCreate(){ return ClientCapability(emlite::Val("conditionalCreate")); };
-const ClientCapability ClientCapability::conditionalGet(){ return ClientCapability(emlite::Val("conditionalGet")); };
-const ClientCapability ClientCapability::hybridTransport(){ return ClientCapability(emlite::Val("hybridTransport")); };
-const ClientCapability ClientCapability::passkeyPlatformAuthenticator(){ return ClientCapability(emlite::Val("passkeyPlatformAuthenticator")); };
-const ClientCapability ClientCapability::userVerifyingPlatformAuthenticator(){ return ClientCapability(emlite::Val("userVerifyingPlatformAuthenticator")); };
-const ClientCapability ClientCapability::relatedOrigins(){ return ClientCapability(emlite::Val("relatedOrigins")); };
-const ClientCapability ClientCapability::signalAllAcceptedCredentials(){ return ClientCapability(emlite::Val("signalAllAcceptedCredentials")); };
-const ClientCapability ClientCapability::signalCurrentUserDetails(){ return ClientCapability(emlite::Val("signalCurrentUserDetails")); };
-const ClientCapability ClientCapability::signalUnknownCredential(){ return ClientCapability(emlite::Val("signalUnknownCredential")); };
-
-const PublicKeyCredentialHint PublicKeyCredentialHint::security_key(){ return PublicKeyCredentialHint(emlite::Val("security-key")); };
-const PublicKeyCredentialHint PublicKeyCredentialHint::client_device(){ return PublicKeyCredentialHint(emlite::Val("client-device")); };
-const PublicKeyCredentialHint PublicKeyCredentialHint::hybrid(){ return PublicKeyCredentialHint(emlite::Val("hybrid")); };
-
-const LargeBlobSupport LargeBlobSupport::required(){ return LargeBlobSupport(emlite::Val("required")); };
-const LargeBlobSupport LargeBlobSupport::preferred(){ return LargeBlobSupport(emlite::Val("preferred")); };
-
-const AacBitstreamFormat AacBitstreamFormat::aac(){ return AacBitstreamFormat(emlite::Val("aac")); };
-const AacBitstreamFormat AacBitstreamFormat::adts(){ return AacBitstreamFormat(emlite::Val("adts")); };
-
-const AvcBitstreamFormat AvcBitstreamFormat::annexb(){ return AvcBitstreamFormat(emlite::Val("annexb")); };
-const AvcBitstreamFormat AvcBitstreamFormat::avc(){ return AvcBitstreamFormat(emlite::Val("avc")); };
-
-const HevcBitstreamFormat HevcBitstreamFormat::annexb(){ return HevcBitstreamFormat(emlite::Val("annexb")); };
-const HevcBitstreamFormat HevcBitstreamFormat::hevc(){ return HevcBitstreamFormat(emlite::Val("hevc")); };
-
-const OpusBitstreamFormat OpusBitstreamFormat::opus(){ return OpusBitstreamFormat(emlite::Val("opus")); };
-const OpusBitstreamFormat OpusBitstreamFormat::ogg(){ return OpusBitstreamFormat(emlite::Val("ogg")); };
-
-const OpusSignal OpusSignal::auto_(){ return OpusSignal(emlite::Val("auto")); };
-const OpusSignal OpusSignal::music(){ return OpusSignal(emlite::Val("music")); };
-const OpusSignal OpusSignal::voice(){ return OpusSignal(emlite::Val("voice")); };
-
-const OpusApplication OpusApplication::voip(){ return OpusApplication(emlite::Val("voip")); };
-const OpusApplication OpusApplication::audio(){ return OpusApplication(emlite::Val("audio")); };
-const OpusApplication OpusApplication::lowdelay(){ return OpusApplication(emlite::Val("lowdelay")); };
-
-const HardwareAcceleration HardwareAcceleration::no_preference(){ return HardwareAcceleration(emlite::Val("no-preference")); };
-const HardwareAcceleration HardwareAcceleration::prefer_hardware(){ return HardwareAcceleration(emlite::Val("prefer-hardware")); };
-const HardwareAcceleration HardwareAcceleration::prefer_software(){ return HardwareAcceleration(emlite::Val("prefer-software")); };
-
-const AlphaOption AlphaOption::keep(){ return AlphaOption(emlite::Val("keep")); };
-const AlphaOption AlphaOption::discard(){ return AlphaOption(emlite::Val("discard")); };
-
-const LatencyMode LatencyMode::quality(){ return LatencyMode(emlite::Val("quality")); };
-const LatencyMode LatencyMode::realtime(){ return LatencyMode(emlite::Val("realtime")); };
-
-const VideoEncoderBitrateMode VideoEncoderBitrateMode::constant(){ return VideoEncoderBitrateMode(emlite::Val("constant")); };
-const VideoEncoderBitrateMode VideoEncoderBitrateMode::variable(){ return VideoEncoderBitrateMode(emlite::Val("variable")); };
-const VideoEncoderBitrateMode VideoEncoderBitrateMode::quantizer(){ return VideoEncoderBitrateMode(emlite::Val("quantizer")); };
-
-const CodecState CodecState::unconfigured(){ return CodecState(emlite::Val("unconfigured")); };
-const CodecState CodecState::configured(){ return CodecState(emlite::Val("configured")); };
-const CodecState CodecState::closed(){ return CodecState(emlite::Val("closed")); };
-
-const EncodedAudioChunkType EncodedAudioChunkType::key(){ return EncodedAudioChunkType(emlite::Val("key")); };
-const EncodedAudioChunkType EncodedAudioChunkType::delta(){ return EncodedAudioChunkType(emlite::Val("delta")); };
-
-const EncodedVideoChunkType EncodedVideoChunkType::key(){ return EncodedVideoChunkType(emlite::Val("key")); };
-const EncodedVideoChunkType EncodedVideoChunkType::delta(){ return EncodedVideoChunkType(emlite::Val("delta")); };
-
-const AudioSampleFormat AudioSampleFormat::u8(){ return AudioSampleFormat(emlite::Val("u8")); };
-const AudioSampleFormat AudioSampleFormat::s16(){ return AudioSampleFormat(emlite::Val("s16")); };
-const AudioSampleFormat AudioSampleFormat::s32(){ return AudioSampleFormat(emlite::Val("s32")); };
-const AudioSampleFormat AudioSampleFormat::f32(){ return AudioSampleFormat(emlite::Val("f32")); };
-const AudioSampleFormat AudioSampleFormat::u8_planar(){ return AudioSampleFormat(emlite::Val("u8-planar")); };
-const AudioSampleFormat AudioSampleFormat::s16_planar(){ return AudioSampleFormat(emlite::Val("s16-planar")); };
-const AudioSampleFormat AudioSampleFormat::s32_planar(){ return AudioSampleFormat(emlite::Val("s32-planar")); };
-const AudioSampleFormat AudioSampleFormat::f32_planar(){ return AudioSampleFormat(emlite::Val("f32-planar")); };
-
-const VideoPixelFormat VideoPixelFormat::I420(){ return VideoPixelFormat(emlite::Val("I420")); };
-const VideoPixelFormat VideoPixelFormat::I420P10(){ return VideoPixelFormat(emlite::Val("I420P10")); };
-const VideoPixelFormat VideoPixelFormat::I420P12(){ return VideoPixelFormat(emlite::Val("I420P12")); };
-const VideoPixelFormat VideoPixelFormat::I420A(){ return VideoPixelFormat(emlite::Val("I420A")); };
-const VideoPixelFormat VideoPixelFormat::I420AP10(){ return VideoPixelFormat(emlite::Val("I420AP10")); };
-const VideoPixelFormat VideoPixelFormat::I420AP12(){ return VideoPixelFormat(emlite::Val("I420AP12")); };
-const VideoPixelFormat VideoPixelFormat::I422(){ return VideoPixelFormat(emlite::Val("I422")); };
-const VideoPixelFormat VideoPixelFormat::I422P10(){ return VideoPixelFormat(emlite::Val("I422P10")); };
-const VideoPixelFormat VideoPixelFormat::I422P12(){ return VideoPixelFormat(emlite::Val("I422P12")); };
-const VideoPixelFormat VideoPixelFormat::I422A(){ return VideoPixelFormat(emlite::Val("I422A")); };
-const VideoPixelFormat VideoPixelFormat::I422AP10(){ return VideoPixelFormat(emlite::Val("I422AP10")); };
-const VideoPixelFormat VideoPixelFormat::I422AP12(){ return VideoPixelFormat(emlite::Val("I422AP12")); };
-const VideoPixelFormat VideoPixelFormat::I444(){ return VideoPixelFormat(emlite::Val("I444")); };
-const VideoPixelFormat VideoPixelFormat::I444P10(){ return VideoPixelFormat(emlite::Val("I444P10")); };
-const VideoPixelFormat VideoPixelFormat::I444P12(){ return VideoPixelFormat(emlite::Val("I444P12")); };
-const VideoPixelFormat VideoPixelFormat::I444A(){ return VideoPixelFormat(emlite::Val("I444A")); };
-const VideoPixelFormat VideoPixelFormat::I444AP10(){ return VideoPixelFormat(emlite::Val("I444AP10")); };
-const VideoPixelFormat VideoPixelFormat::I444AP12(){ return VideoPixelFormat(emlite::Val("I444AP12")); };
-const VideoPixelFormat VideoPixelFormat::NV12(){ return VideoPixelFormat(emlite::Val("NV12")); };
-const VideoPixelFormat VideoPixelFormat::RGBA(){ return VideoPixelFormat(emlite::Val("RGBA")); };
-const VideoPixelFormat VideoPixelFormat::RGBX(){ return VideoPixelFormat(emlite::Val("RGBX")); };
-const VideoPixelFormat VideoPixelFormat::BGRA(){ return VideoPixelFormat(emlite::Val("BGRA")); };
-const VideoPixelFormat VideoPixelFormat::BGRX(){ return VideoPixelFormat(emlite::Val("BGRX")); };
-
-const VideoColorPrimaries VideoColorPrimaries::bt709(){ return VideoColorPrimaries(emlite::Val("bt709")); };
-const VideoColorPrimaries VideoColorPrimaries::bt470bg(){ return VideoColorPrimaries(emlite::Val("bt470bg")); };
-const VideoColorPrimaries VideoColorPrimaries::smpte170m(){ return VideoColorPrimaries(emlite::Val("smpte170m")); };
-const VideoColorPrimaries VideoColorPrimaries::bt2020(){ return VideoColorPrimaries(emlite::Val("bt2020")); };
-const VideoColorPrimaries VideoColorPrimaries::smpte432(){ return VideoColorPrimaries(emlite::Val("smpte432")); };
-
-const VideoTransferCharacteristics VideoTransferCharacteristics::bt709(){ return VideoTransferCharacteristics(emlite::Val("bt709")); };
-const VideoTransferCharacteristics VideoTransferCharacteristics::smpte170m(){ return VideoTransferCharacteristics(emlite::Val("smpte170m")); };
-const VideoTransferCharacteristics VideoTransferCharacteristics::iec61966_2_1(){ return VideoTransferCharacteristics(emlite::Val("iec61966-2-1")); };
-const VideoTransferCharacteristics VideoTransferCharacteristics::linear(){ return VideoTransferCharacteristics(emlite::Val("linear")); };
-const VideoTransferCharacteristics VideoTransferCharacteristics::pq(){ return VideoTransferCharacteristics(emlite::Val("pq")); };
-const VideoTransferCharacteristics VideoTransferCharacteristics::hlg(){ return VideoTransferCharacteristics(emlite::Val("hlg")); };
-
-const VideoMatrixCoefficients VideoMatrixCoefficients::rgb(){ return VideoMatrixCoefficients(emlite::Val("rgb")); };
-const VideoMatrixCoefficients VideoMatrixCoefficients::bt709(){ return VideoMatrixCoefficients(emlite::Val("bt709")); };
-const VideoMatrixCoefficients VideoMatrixCoefficients::bt470bg(){ return VideoMatrixCoefficients(emlite::Val("bt470bg")); };
-const VideoMatrixCoefficients VideoMatrixCoefficients::smpte170m(){ return VideoMatrixCoefficients(emlite::Val("smpte170m")); };
-const VideoMatrixCoefficients VideoMatrixCoefficients::bt2020_ncl(){ return VideoMatrixCoefficients(emlite::Val("bt2020-ncl")); };
-
-const KeyType KeyType::public_(){ return KeyType(emlite::Val("public")); };
-const KeyType KeyType::private_(){ return KeyType(emlite::Val("private")); };
-const KeyType KeyType::secret(){ return KeyType(emlite::Val("secret")); };
-
-const KeyUsage KeyUsage::encrypt(){ return KeyUsage(emlite::Val("encrypt")); };
-const KeyUsage KeyUsage::decrypt(){ return KeyUsage(emlite::Val("decrypt")); };
-const KeyUsage KeyUsage::sign(){ return KeyUsage(emlite::Val("sign")); };
-const KeyUsage KeyUsage::verify(){ return KeyUsage(emlite::Val("verify")); };
-const KeyUsage KeyUsage::deriveKey(){ return KeyUsage(emlite::Val("deriveKey")); };
-const KeyUsage KeyUsage::deriveBits(){ return KeyUsage(emlite::Val("deriveBits")); };
-const KeyUsage KeyUsage::wrapKey(){ return KeyUsage(emlite::Val("wrapKey")); };
-const KeyUsage KeyUsage::unwrapKey(){ return KeyUsage(emlite::Val("unwrapKey")); };
-
-const KeyFormat KeyFormat::raw(){ return KeyFormat(emlite::Val("raw")); };
-const KeyFormat KeyFormat::spki(){ return KeyFormat(emlite::Val("spki")); };
-const KeyFormat KeyFormat::pkcs8(){ return KeyFormat(emlite::Val("pkcs8")); };
-const KeyFormat KeyFormat::jwk(){ return KeyFormat(emlite::Val("jwk")); };
-
-const WebGLPowerPreference WebGLPowerPreference::default_(){ return WebGLPowerPreference(emlite::Val("default")); };
-const WebGLPowerPreference WebGLPowerPreference::low_power(){ return WebGLPowerPreference(emlite::Val("low-power")); };
-const WebGLPowerPreference WebGLPowerPreference::high_performance(){ return WebGLPowerPreference(emlite::Val("high-performance")); };
-
-const GPUPowerPreference GPUPowerPreference::low_power(){ return GPUPowerPreference(emlite::Val("low-power")); };
-const GPUPowerPreference GPUPowerPreference::high_performance(){ return GPUPowerPreference(emlite::Val("high-performance")); };
-
-const GPUFeatureName GPUFeatureName::core_features_and_limits(){ return GPUFeatureName(emlite::Val("core-features-and-limits")); };
-const GPUFeatureName GPUFeatureName::depth_clip_control(){ return GPUFeatureName(emlite::Val("depth-clip-control")); };
-const GPUFeatureName GPUFeatureName::depth32float_stencil8(){ return GPUFeatureName(emlite::Val("depth32float-stencil8")); };
-const GPUFeatureName GPUFeatureName::texture_compression_bc(){ return GPUFeatureName(emlite::Val("texture-compression-bc")); };
-const GPUFeatureName GPUFeatureName::texture_compression_bc_sliced_3d(){ return GPUFeatureName(emlite::Val("texture-compression-bc-sliced-3d")); };
-const GPUFeatureName GPUFeatureName::texture_compression_etc2(){ return GPUFeatureName(emlite::Val("texture-compression-etc2")); };
-const GPUFeatureName GPUFeatureName::texture_compression_astc(){ return GPUFeatureName(emlite::Val("texture-compression-astc")); };
-const GPUFeatureName GPUFeatureName::texture_compression_astc_sliced_3d(){ return GPUFeatureName(emlite::Val("texture-compression-astc-sliced-3d")); };
-const GPUFeatureName GPUFeatureName::timestamp_query(){ return GPUFeatureName(emlite::Val("timestamp-query")); };
-const GPUFeatureName GPUFeatureName::indirect_first_instance(){ return GPUFeatureName(emlite::Val("indirect-first-instance")); };
-const GPUFeatureName GPUFeatureName::shader_f16(){ return GPUFeatureName(emlite::Val("shader-f16")); };
-const GPUFeatureName GPUFeatureName::rg11b10ufloat_renderable(){ return GPUFeatureName(emlite::Val("rg11b10ufloat-renderable")); };
-const GPUFeatureName GPUFeatureName::bgra8unorm_storage(){ return GPUFeatureName(emlite::Val("bgra8unorm-storage")); };
-const GPUFeatureName GPUFeatureName::float32_filterable(){ return GPUFeatureName(emlite::Val("float32-filterable")); };
-const GPUFeatureName GPUFeatureName::float32_blendable(){ return GPUFeatureName(emlite::Val("float32-blendable")); };
-const GPUFeatureName GPUFeatureName::clip_distances(){ return GPUFeatureName(emlite::Val("clip-distances")); };
-const GPUFeatureName GPUFeatureName::dual_source_blending(){ return GPUFeatureName(emlite::Val("dual-source-blending")); };
-const GPUFeatureName GPUFeatureName::subgroups(){ return GPUFeatureName(emlite::Val("subgroups")); };
-const GPUFeatureName GPUFeatureName::texture_formats_tier1(){ return GPUFeatureName(emlite::Val("texture-formats-tier1")); };
-const GPUFeatureName GPUFeatureName::texture_formats_tier2(){ return GPUFeatureName(emlite::Val("texture-formats-tier2")); };
-
-const GPUBufferMapState GPUBufferMapState::unmapped(){ return GPUBufferMapState(emlite::Val("unmapped")); };
-const GPUBufferMapState GPUBufferMapState::pending(){ return GPUBufferMapState(emlite::Val("pending")); };
-const GPUBufferMapState GPUBufferMapState::mapped(){ return GPUBufferMapState(emlite::Val("mapped")); };
-
-const GPUTextureDimension GPUTextureDimension::_1d(){ return GPUTextureDimension(emlite::Val("1d")); };
-const GPUTextureDimension GPUTextureDimension::_2d(){ return GPUTextureDimension(emlite::Val("2d")); };
-const GPUTextureDimension GPUTextureDimension::_3d(){ return GPUTextureDimension(emlite::Val("3d")); };
-
-const GPUTextureViewDimension GPUTextureViewDimension::_1d(){ return GPUTextureViewDimension(emlite::Val("1d")); };
-const GPUTextureViewDimension GPUTextureViewDimension::_2d(){ return GPUTextureViewDimension(emlite::Val("2d")); };
-const GPUTextureViewDimension GPUTextureViewDimension::_2d_array(){ return GPUTextureViewDimension(emlite::Val("2d-array")); };
-const GPUTextureViewDimension GPUTextureViewDimension::cube(){ return GPUTextureViewDimension(emlite::Val("cube")); };
-const GPUTextureViewDimension GPUTextureViewDimension::cube_array(){ return GPUTextureViewDimension(emlite::Val("cube-array")); };
-const GPUTextureViewDimension GPUTextureViewDimension::_3d(){ return GPUTextureViewDimension(emlite::Val("3d")); };
-
-const GPUTextureAspect GPUTextureAspect::all(){ return GPUTextureAspect(emlite::Val("all")); };
-const GPUTextureAspect GPUTextureAspect::stencil_only(){ return GPUTextureAspect(emlite::Val("stencil-only")); };
-const GPUTextureAspect GPUTextureAspect::depth_only(){ return GPUTextureAspect(emlite::Val("depth-only")); };
-
-const GPUTextureFormat GPUTextureFormat::r8unorm(){ return GPUTextureFormat(emlite::Val("r8unorm")); };
-const GPUTextureFormat GPUTextureFormat::r8snorm(){ return GPUTextureFormat(emlite::Val("r8snorm")); };
-const GPUTextureFormat GPUTextureFormat::r8uint(){ return GPUTextureFormat(emlite::Val("r8uint")); };
-const GPUTextureFormat GPUTextureFormat::r8sint(){ return GPUTextureFormat(emlite::Val("r8sint")); };
-const GPUTextureFormat GPUTextureFormat::r16unorm(){ return GPUTextureFormat(emlite::Val("r16unorm")); };
-const GPUTextureFormat GPUTextureFormat::r16snorm(){ return GPUTextureFormat(emlite::Val("r16snorm")); };
-const GPUTextureFormat GPUTextureFormat::r16uint(){ return GPUTextureFormat(emlite::Val("r16uint")); };
-const GPUTextureFormat GPUTextureFormat::r16sint(){ return GPUTextureFormat(emlite::Val("r16sint")); };
-const GPUTextureFormat GPUTextureFormat::r16float(){ return GPUTextureFormat(emlite::Val("r16float")); };
-const GPUTextureFormat GPUTextureFormat::rg8unorm(){ return GPUTextureFormat(emlite::Val("rg8unorm")); };
-const GPUTextureFormat GPUTextureFormat::rg8snorm(){ return GPUTextureFormat(emlite::Val("rg8snorm")); };
-const GPUTextureFormat GPUTextureFormat::rg8uint(){ return GPUTextureFormat(emlite::Val("rg8uint")); };
-const GPUTextureFormat GPUTextureFormat::rg8sint(){ return GPUTextureFormat(emlite::Val("rg8sint")); };
-const GPUTextureFormat GPUTextureFormat::r32uint(){ return GPUTextureFormat(emlite::Val("r32uint")); };
-const GPUTextureFormat GPUTextureFormat::r32sint(){ return GPUTextureFormat(emlite::Val("r32sint")); };
-const GPUTextureFormat GPUTextureFormat::r32float(){ return GPUTextureFormat(emlite::Val("r32float")); };
-const GPUTextureFormat GPUTextureFormat::rg16unorm(){ return GPUTextureFormat(emlite::Val("rg16unorm")); };
-const GPUTextureFormat GPUTextureFormat::rg16snorm(){ return GPUTextureFormat(emlite::Val("rg16snorm")); };
-const GPUTextureFormat GPUTextureFormat::rg16uint(){ return GPUTextureFormat(emlite::Val("rg16uint")); };
-const GPUTextureFormat GPUTextureFormat::rg16sint(){ return GPUTextureFormat(emlite::Val("rg16sint")); };
-const GPUTextureFormat GPUTextureFormat::rg16float(){ return GPUTextureFormat(emlite::Val("rg16float")); };
-const GPUTextureFormat GPUTextureFormat::rgba8unorm(){ return GPUTextureFormat(emlite::Val("rgba8unorm")); };
-const GPUTextureFormat GPUTextureFormat::rgba8unorm_srgb(){ return GPUTextureFormat(emlite::Val("rgba8unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::rgba8snorm(){ return GPUTextureFormat(emlite::Val("rgba8snorm")); };
-const GPUTextureFormat GPUTextureFormat::rgba8uint(){ return GPUTextureFormat(emlite::Val("rgba8uint")); };
-const GPUTextureFormat GPUTextureFormat::rgba8sint(){ return GPUTextureFormat(emlite::Val("rgba8sint")); };
-const GPUTextureFormat GPUTextureFormat::bgra8unorm(){ return GPUTextureFormat(emlite::Val("bgra8unorm")); };
-const GPUTextureFormat GPUTextureFormat::bgra8unorm_srgb(){ return GPUTextureFormat(emlite::Val("bgra8unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::rgb9e5ufloat(){ return GPUTextureFormat(emlite::Val("rgb9e5ufloat")); };
-const GPUTextureFormat GPUTextureFormat::rgb10a2uint(){ return GPUTextureFormat(emlite::Val("rgb10a2uint")); };
-const GPUTextureFormat GPUTextureFormat::rgb10a2unorm(){ return GPUTextureFormat(emlite::Val("rgb10a2unorm")); };
-const GPUTextureFormat GPUTextureFormat::rg11b10ufloat(){ return GPUTextureFormat(emlite::Val("rg11b10ufloat")); };
-const GPUTextureFormat GPUTextureFormat::rg32uint(){ return GPUTextureFormat(emlite::Val("rg32uint")); };
-const GPUTextureFormat GPUTextureFormat::rg32sint(){ return GPUTextureFormat(emlite::Val("rg32sint")); };
-const GPUTextureFormat GPUTextureFormat::rg32float(){ return GPUTextureFormat(emlite::Val("rg32float")); };
-const GPUTextureFormat GPUTextureFormat::rgba16unorm(){ return GPUTextureFormat(emlite::Val("rgba16unorm")); };
-const GPUTextureFormat GPUTextureFormat::rgba16snorm(){ return GPUTextureFormat(emlite::Val("rgba16snorm")); };
-const GPUTextureFormat GPUTextureFormat::rgba16uint(){ return GPUTextureFormat(emlite::Val("rgba16uint")); };
-const GPUTextureFormat GPUTextureFormat::rgba16sint(){ return GPUTextureFormat(emlite::Val("rgba16sint")); };
-const GPUTextureFormat GPUTextureFormat::rgba16float(){ return GPUTextureFormat(emlite::Val("rgba16float")); };
-const GPUTextureFormat GPUTextureFormat::rgba32uint(){ return GPUTextureFormat(emlite::Val("rgba32uint")); };
-const GPUTextureFormat GPUTextureFormat::rgba32sint(){ return GPUTextureFormat(emlite::Val("rgba32sint")); };
-const GPUTextureFormat GPUTextureFormat::rgba32float(){ return GPUTextureFormat(emlite::Val("rgba32float")); };
-const GPUTextureFormat GPUTextureFormat::stencil8(){ return GPUTextureFormat(emlite::Val("stencil8")); };
-const GPUTextureFormat GPUTextureFormat::depth16unorm(){ return GPUTextureFormat(emlite::Val("depth16unorm")); };
-const GPUTextureFormat GPUTextureFormat::depth24plus(){ return GPUTextureFormat(emlite::Val("depth24plus")); };
-const GPUTextureFormat GPUTextureFormat::depth24plus_stencil8(){ return GPUTextureFormat(emlite::Val("depth24plus-stencil8")); };
-const GPUTextureFormat GPUTextureFormat::depth32float(){ return GPUTextureFormat(emlite::Val("depth32float")); };
-const GPUTextureFormat GPUTextureFormat::depth32float_stencil8(){ return GPUTextureFormat(emlite::Val("depth32float-stencil8")); };
-const GPUTextureFormat GPUTextureFormat::bc1_rgba_unorm(){ return GPUTextureFormat(emlite::Val("bc1-rgba-unorm")); };
-const GPUTextureFormat GPUTextureFormat::bc1_rgba_unorm_srgb(){ return GPUTextureFormat(emlite::Val("bc1-rgba-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::bc2_rgba_unorm(){ return GPUTextureFormat(emlite::Val("bc2-rgba-unorm")); };
-const GPUTextureFormat GPUTextureFormat::bc2_rgba_unorm_srgb(){ return GPUTextureFormat(emlite::Val("bc2-rgba-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::bc3_rgba_unorm(){ return GPUTextureFormat(emlite::Val("bc3-rgba-unorm")); };
-const GPUTextureFormat GPUTextureFormat::bc3_rgba_unorm_srgb(){ return GPUTextureFormat(emlite::Val("bc3-rgba-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::bc4_r_unorm(){ return GPUTextureFormat(emlite::Val("bc4-r-unorm")); };
-const GPUTextureFormat GPUTextureFormat::bc4_r_snorm(){ return GPUTextureFormat(emlite::Val("bc4-r-snorm")); };
-const GPUTextureFormat GPUTextureFormat::bc5_rg_unorm(){ return GPUTextureFormat(emlite::Val("bc5-rg-unorm")); };
-const GPUTextureFormat GPUTextureFormat::bc5_rg_snorm(){ return GPUTextureFormat(emlite::Val("bc5-rg-snorm")); };
-const GPUTextureFormat GPUTextureFormat::bc6h_rgb_ufloat(){ return GPUTextureFormat(emlite::Val("bc6h-rgb-ufloat")); };
-const GPUTextureFormat GPUTextureFormat::bc6h_rgb_float(){ return GPUTextureFormat(emlite::Val("bc6h-rgb-float")); };
-const GPUTextureFormat GPUTextureFormat::bc7_rgba_unorm(){ return GPUTextureFormat(emlite::Val("bc7-rgba-unorm")); };
-const GPUTextureFormat GPUTextureFormat::bc7_rgba_unorm_srgb(){ return GPUTextureFormat(emlite::Val("bc7-rgba-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::etc2_rgb8unorm(){ return GPUTextureFormat(emlite::Val("etc2-rgb8unorm")); };
-const GPUTextureFormat GPUTextureFormat::etc2_rgb8unorm_srgb(){ return GPUTextureFormat(emlite::Val("etc2-rgb8unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::etc2_rgb8a1unorm(){ return GPUTextureFormat(emlite::Val("etc2-rgb8a1unorm")); };
-const GPUTextureFormat GPUTextureFormat::etc2_rgb8a1unorm_srgb(){ return GPUTextureFormat(emlite::Val("etc2-rgb8a1unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::etc2_rgba8unorm(){ return GPUTextureFormat(emlite::Val("etc2-rgba8unorm")); };
-const GPUTextureFormat GPUTextureFormat::etc2_rgba8unorm_srgb(){ return GPUTextureFormat(emlite::Val("etc2-rgba8unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::eac_r11unorm(){ return GPUTextureFormat(emlite::Val("eac-r11unorm")); };
-const GPUTextureFormat GPUTextureFormat::eac_r11snorm(){ return GPUTextureFormat(emlite::Val("eac-r11snorm")); };
-const GPUTextureFormat GPUTextureFormat::eac_rg11unorm(){ return GPUTextureFormat(emlite::Val("eac-rg11unorm")); };
-const GPUTextureFormat GPUTextureFormat::eac_rg11snorm(){ return GPUTextureFormat(emlite::Val("eac-rg11snorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_4x4_unorm(){ return GPUTextureFormat(emlite::Val("astc-4x4-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_4x4_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-4x4-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_5x4_unorm(){ return GPUTextureFormat(emlite::Val("astc-5x4-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_5x4_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-5x4-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_5x5_unorm(){ return GPUTextureFormat(emlite::Val("astc-5x5-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_5x5_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-5x5-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_6x5_unorm(){ return GPUTextureFormat(emlite::Val("astc-6x5-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_6x5_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-6x5-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_6x6_unorm(){ return GPUTextureFormat(emlite::Val("astc-6x6-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_6x6_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-6x6-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_8x5_unorm(){ return GPUTextureFormat(emlite::Val("astc-8x5-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_8x5_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-8x5-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_8x6_unorm(){ return GPUTextureFormat(emlite::Val("astc-8x6-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_8x6_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-8x6-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_8x8_unorm(){ return GPUTextureFormat(emlite::Val("astc-8x8-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_8x8_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-8x8-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x5_unorm(){ return GPUTextureFormat(emlite::Val("astc-10x5-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x5_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-10x5-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x6_unorm(){ return GPUTextureFormat(emlite::Val("astc-10x6-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x6_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-10x6-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x8_unorm(){ return GPUTextureFormat(emlite::Val("astc-10x8-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x8_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-10x8-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x10_unorm(){ return GPUTextureFormat(emlite::Val("astc-10x10-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_10x10_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-10x10-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_12x10_unorm(){ return GPUTextureFormat(emlite::Val("astc-12x10-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_12x10_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-12x10-unorm-srgb")); };
-const GPUTextureFormat GPUTextureFormat::astc_12x12_unorm(){ return GPUTextureFormat(emlite::Val("astc-12x12-unorm")); };
-const GPUTextureFormat GPUTextureFormat::astc_12x12_unorm_srgb(){ return GPUTextureFormat(emlite::Val("astc-12x12-unorm-srgb")); };
-
-const GPUAddressMode GPUAddressMode::clamp_to_edge(){ return GPUAddressMode(emlite::Val("clamp-to-edge")); };
-const GPUAddressMode GPUAddressMode::repeat(){ return GPUAddressMode(emlite::Val("repeat")); };
-const GPUAddressMode GPUAddressMode::mirror_repeat(){ return GPUAddressMode(emlite::Val("mirror-repeat")); };
-
-const GPUFilterMode GPUFilterMode::nearest(){ return GPUFilterMode(emlite::Val("nearest")); };
-const GPUFilterMode GPUFilterMode::linear(){ return GPUFilterMode(emlite::Val("linear")); };
-
-const GPUMipmapFilterMode GPUMipmapFilterMode::nearest(){ return GPUMipmapFilterMode(emlite::Val("nearest")); };
-const GPUMipmapFilterMode GPUMipmapFilterMode::linear(){ return GPUMipmapFilterMode(emlite::Val("linear")); };
-
-const GPUCompareFunction GPUCompareFunction::never(){ return GPUCompareFunction(emlite::Val("never")); };
-const GPUCompareFunction GPUCompareFunction::less(){ return GPUCompareFunction(emlite::Val("less")); };
-const GPUCompareFunction GPUCompareFunction::equal(){ return GPUCompareFunction(emlite::Val("equal")); };
-const GPUCompareFunction GPUCompareFunction::less_equal(){ return GPUCompareFunction(emlite::Val("less-equal")); };
-const GPUCompareFunction GPUCompareFunction::greater(){ return GPUCompareFunction(emlite::Val("greater")); };
-const GPUCompareFunction GPUCompareFunction::not_equal(){ return GPUCompareFunction(emlite::Val("not-equal")); };
-const GPUCompareFunction GPUCompareFunction::greater_equal(){ return GPUCompareFunction(emlite::Val("greater-equal")); };
-const GPUCompareFunction GPUCompareFunction::always(){ return GPUCompareFunction(emlite::Val("always")); };
-
-const GPUBufferBindingType GPUBufferBindingType::uniform(){ return GPUBufferBindingType(emlite::Val("uniform")); };
-const GPUBufferBindingType GPUBufferBindingType::storage(){ return GPUBufferBindingType(emlite::Val("storage")); };
-const GPUBufferBindingType GPUBufferBindingType::read_only_storage(){ return GPUBufferBindingType(emlite::Val("read-only-storage")); };
-
-const GPUSamplerBindingType GPUSamplerBindingType::filtering(){ return GPUSamplerBindingType(emlite::Val("filtering")); };
-const GPUSamplerBindingType GPUSamplerBindingType::non_filtering(){ return GPUSamplerBindingType(emlite::Val("non-filtering")); };
-const GPUSamplerBindingType GPUSamplerBindingType::comparison(){ return GPUSamplerBindingType(emlite::Val("comparison")); };
-
-const GPUTextureSampleType GPUTextureSampleType::float_(){ return GPUTextureSampleType(emlite::Val("float")); };
-const GPUTextureSampleType GPUTextureSampleType::unfilterable_float(){ return GPUTextureSampleType(emlite::Val("unfilterable-float")); };
-const GPUTextureSampleType GPUTextureSampleType::depth(){ return GPUTextureSampleType(emlite::Val("depth")); };
-const GPUTextureSampleType GPUTextureSampleType::sint(){ return GPUTextureSampleType(emlite::Val("sint")); };
-const GPUTextureSampleType GPUTextureSampleType::uint(){ return GPUTextureSampleType(emlite::Val("uint")); };
-
-const GPUStorageTextureAccess GPUStorageTextureAccess::write_only(){ return GPUStorageTextureAccess(emlite::Val("write-only")); };
-const GPUStorageTextureAccess GPUStorageTextureAccess::read_only(){ return GPUStorageTextureAccess(emlite::Val("read-only")); };
-const GPUStorageTextureAccess GPUStorageTextureAccess::read_write(){ return GPUStorageTextureAccess(emlite::Val("read-write")); };
-
-const GPUCompilationMessageType GPUCompilationMessageType::error(){ return GPUCompilationMessageType(emlite::Val("error")); };
-const GPUCompilationMessageType GPUCompilationMessageType::warning(){ return GPUCompilationMessageType(emlite::Val("warning")); };
-const GPUCompilationMessageType GPUCompilationMessageType::info(){ return GPUCompilationMessageType(emlite::Val("info")); };
-
-const GPUPipelineErrorReason GPUPipelineErrorReason::validation(){ return GPUPipelineErrorReason(emlite::Val("validation")); };
-const GPUPipelineErrorReason GPUPipelineErrorReason::internal(){ return GPUPipelineErrorReason(emlite::Val("internal")); };
-
-const GPUAutoLayoutMode GPUAutoLayoutMode::auto_(){ return GPUAutoLayoutMode(emlite::Val("auto")); };
-
-const GPUPrimitiveTopology GPUPrimitiveTopology::point_list(){ return GPUPrimitiveTopology(emlite::Val("point-list")); };
-const GPUPrimitiveTopology GPUPrimitiveTopology::line_list(){ return GPUPrimitiveTopology(emlite::Val("line-list")); };
-const GPUPrimitiveTopology GPUPrimitiveTopology::line_strip(){ return GPUPrimitiveTopology(emlite::Val("line-strip")); };
-const GPUPrimitiveTopology GPUPrimitiveTopology::triangle_list(){ return GPUPrimitiveTopology(emlite::Val("triangle-list")); };
-const GPUPrimitiveTopology GPUPrimitiveTopology::triangle_strip(){ return GPUPrimitiveTopology(emlite::Val("triangle-strip")); };
-
-const GPUFrontFace GPUFrontFace::ccw(){ return GPUFrontFace(emlite::Val("ccw")); };
-const GPUFrontFace GPUFrontFace::cw(){ return GPUFrontFace(emlite::Val("cw")); };
-
-const GPUCullMode GPUCullMode::none(){ return GPUCullMode(emlite::Val("none")); };
-const GPUCullMode GPUCullMode::front(){ return GPUCullMode(emlite::Val("front")); };
-const GPUCullMode GPUCullMode::back(){ return GPUCullMode(emlite::Val("back")); };
-
-const GPUBlendFactor GPUBlendFactor::zero(){ return GPUBlendFactor(emlite::Val("zero")); };
-const GPUBlendFactor GPUBlendFactor::one(){ return GPUBlendFactor(emlite::Val("one")); };
-const GPUBlendFactor GPUBlendFactor::src(){ return GPUBlendFactor(emlite::Val("src")); };
-const GPUBlendFactor GPUBlendFactor::one_minus_src(){ return GPUBlendFactor(emlite::Val("one-minus-src")); };
-const GPUBlendFactor GPUBlendFactor::src_alpha(){ return GPUBlendFactor(emlite::Val("src-alpha")); };
-const GPUBlendFactor GPUBlendFactor::one_minus_src_alpha(){ return GPUBlendFactor(emlite::Val("one-minus-src-alpha")); };
-const GPUBlendFactor GPUBlendFactor::dst(){ return GPUBlendFactor(emlite::Val("dst")); };
-const GPUBlendFactor GPUBlendFactor::one_minus_dst(){ return GPUBlendFactor(emlite::Val("one-minus-dst")); };
-const GPUBlendFactor GPUBlendFactor::dst_alpha(){ return GPUBlendFactor(emlite::Val("dst-alpha")); };
-const GPUBlendFactor GPUBlendFactor::one_minus_dst_alpha(){ return GPUBlendFactor(emlite::Val("one-minus-dst-alpha")); };
-const GPUBlendFactor GPUBlendFactor::src_alpha_saturated(){ return GPUBlendFactor(emlite::Val("src-alpha-saturated")); };
-const GPUBlendFactor GPUBlendFactor::constant(){ return GPUBlendFactor(emlite::Val("constant")); };
-const GPUBlendFactor GPUBlendFactor::one_minus_constant(){ return GPUBlendFactor(emlite::Val("one-minus-constant")); };
-const GPUBlendFactor GPUBlendFactor::src1(){ return GPUBlendFactor(emlite::Val("src1")); };
-const GPUBlendFactor GPUBlendFactor::one_minus_src1(){ return GPUBlendFactor(emlite::Val("one-minus-src1")); };
-const GPUBlendFactor GPUBlendFactor::src1_alpha(){ return GPUBlendFactor(emlite::Val("src1-alpha")); };
-const GPUBlendFactor GPUBlendFactor::one_minus_src1_alpha(){ return GPUBlendFactor(emlite::Val("one-minus-src1-alpha")); };
-
-const GPUBlendOperation GPUBlendOperation::add(){ return GPUBlendOperation(emlite::Val("add")); };
-const GPUBlendOperation GPUBlendOperation::subtract(){ return GPUBlendOperation(emlite::Val("subtract")); };
-const GPUBlendOperation GPUBlendOperation::reverse_subtract(){ return GPUBlendOperation(emlite::Val("reverse-subtract")); };
-const GPUBlendOperation GPUBlendOperation::min(){ return GPUBlendOperation(emlite::Val("min")); };
-const GPUBlendOperation GPUBlendOperation::max(){ return GPUBlendOperation(emlite::Val("max")); };
-
-const GPUStencilOperation GPUStencilOperation::keep(){ return GPUStencilOperation(emlite::Val("keep")); };
-const GPUStencilOperation GPUStencilOperation::zero(){ return GPUStencilOperation(emlite::Val("zero")); };
-const GPUStencilOperation GPUStencilOperation::replace(){ return GPUStencilOperation(emlite::Val("replace")); };
-const GPUStencilOperation GPUStencilOperation::invert(){ return GPUStencilOperation(emlite::Val("invert")); };
-const GPUStencilOperation GPUStencilOperation::increment_clamp(){ return GPUStencilOperation(emlite::Val("increment-clamp")); };
-const GPUStencilOperation GPUStencilOperation::decrement_clamp(){ return GPUStencilOperation(emlite::Val("decrement-clamp")); };
-const GPUStencilOperation GPUStencilOperation::increment_wrap(){ return GPUStencilOperation(emlite::Val("increment-wrap")); };
-const GPUStencilOperation GPUStencilOperation::decrement_wrap(){ return GPUStencilOperation(emlite::Val("decrement-wrap")); };
-
-const GPUIndexFormat GPUIndexFormat::uint16(){ return GPUIndexFormat(emlite::Val("uint16")); };
-const GPUIndexFormat GPUIndexFormat::uint32(){ return GPUIndexFormat(emlite::Val("uint32")); };
-
-const GPUVertexFormat GPUVertexFormat::uint8(){ return GPUVertexFormat(emlite::Val("uint8")); };
-const GPUVertexFormat GPUVertexFormat::uint8x2(){ return GPUVertexFormat(emlite::Val("uint8x2")); };
-const GPUVertexFormat GPUVertexFormat::uint8x4(){ return GPUVertexFormat(emlite::Val("uint8x4")); };
-const GPUVertexFormat GPUVertexFormat::sint8(){ return GPUVertexFormat(emlite::Val("sint8")); };
-const GPUVertexFormat GPUVertexFormat::sint8x2(){ return GPUVertexFormat(emlite::Val("sint8x2")); };
-const GPUVertexFormat GPUVertexFormat::sint8x4(){ return GPUVertexFormat(emlite::Val("sint8x4")); };
-const GPUVertexFormat GPUVertexFormat::unorm8(){ return GPUVertexFormat(emlite::Val("unorm8")); };
-const GPUVertexFormat GPUVertexFormat::unorm8x2(){ return GPUVertexFormat(emlite::Val("unorm8x2")); };
-const GPUVertexFormat GPUVertexFormat::unorm8x4(){ return GPUVertexFormat(emlite::Val("unorm8x4")); };
-const GPUVertexFormat GPUVertexFormat::snorm8(){ return GPUVertexFormat(emlite::Val("snorm8")); };
-const GPUVertexFormat GPUVertexFormat::snorm8x2(){ return GPUVertexFormat(emlite::Val("snorm8x2")); };
-const GPUVertexFormat GPUVertexFormat::snorm8x4(){ return GPUVertexFormat(emlite::Val("snorm8x4")); };
-const GPUVertexFormat GPUVertexFormat::uint16(){ return GPUVertexFormat(emlite::Val("uint16")); };
-const GPUVertexFormat GPUVertexFormat::uint16x2(){ return GPUVertexFormat(emlite::Val("uint16x2")); };
-const GPUVertexFormat GPUVertexFormat::uint16x4(){ return GPUVertexFormat(emlite::Val("uint16x4")); };
-const GPUVertexFormat GPUVertexFormat::sint16(){ return GPUVertexFormat(emlite::Val("sint16")); };
-const GPUVertexFormat GPUVertexFormat::sint16x2(){ return GPUVertexFormat(emlite::Val("sint16x2")); };
-const GPUVertexFormat GPUVertexFormat::sint16x4(){ return GPUVertexFormat(emlite::Val("sint16x4")); };
-const GPUVertexFormat GPUVertexFormat::unorm16(){ return GPUVertexFormat(emlite::Val("unorm16")); };
-const GPUVertexFormat GPUVertexFormat::unorm16x2(){ return GPUVertexFormat(emlite::Val("unorm16x2")); };
-const GPUVertexFormat GPUVertexFormat::unorm16x4(){ return GPUVertexFormat(emlite::Val("unorm16x4")); };
-const GPUVertexFormat GPUVertexFormat::snorm16(){ return GPUVertexFormat(emlite::Val("snorm16")); };
-const GPUVertexFormat GPUVertexFormat::snorm16x2(){ return GPUVertexFormat(emlite::Val("snorm16x2")); };
-const GPUVertexFormat GPUVertexFormat::snorm16x4(){ return GPUVertexFormat(emlite::Val("snorm16x4")); };
-const GPUVertexFormat GPUVertexFormat::float16(){ return GPUVertexFormat(emlite::Val("float16")); };
-const GPUVertexFormat GPUVertexFormat::float16x2(){ return GPUVertexFormat(emlite::Val("float16x2")); };
-const GPUVertexFormat GPUVertexFormat::float16x4(){ return GPUVertexFormat(emlite::Val("float16x4")); };
-const GPUVertexFormat GPUVertexFormat::float32(){ return GPUVertexFormat(emlite::Val("float32")); };
-const GPUVertexFormat GPUVertexFormat::float32x2(){ return GPUVertexFormat(emlite::Val("float32x2")); };
-const GPUVertexFormat GPUVertexFormat::float32x3(){ return GPUVertexFormat(emlite::Val("float32x3")); };
-const GPUVertexFormat GPUVertexFormat::float32x4(){ return GPUVertexFormat(emlite::Val("float32x4")); };
-const GPUVertexFormat GPUVertexFormat::uint32(){ return GPUVertexFormat(emlite::Val("uint32")); };
-const GPUVertexFormat GPUVertexFormat::uint32x2(){ return GPUVertexFormat(emlite::Val("uint32x2")); };
-const GPUVertexFormat GPUVertexFormat::uint32x3(){ return GPUVertexFormat(emlite::Val("uint32x3")); };
-const GPUVertexFormat GPUVertexFormat::uint32x4(){ return GPUVertexFormat(emlite::Val("uint32x4")); };
-const GPUVertexFormat GPUVertexFormat::sint32(){ return GPUVertexFormat(emlite::Val("sint32")); };
-const GPUVertexFormat GPUVertexFormat::sint32x2(){ return GPUVertexFormat(emlite::Val("sint32x2")); };
-const GPUVertexFormat GPUVertexFormat::sint32x3(){ return GPUVertexFormat(emlite::Val("sint32x3")); };
-const GPUVertexFormat GPUVertexFormat::sint32x4(){ return GPUVertexFormat(emlite::Val("sint32x4")); };
-const GPUVertexFormat GPUVertexFormat::unorm10_10_10_2(){ return GPUVertexFormat(emlite::Val("unorm10-10-10-2")); };
-const GPUVertexFormat GPUVertexFormat::unorm8x4_bgra(){ return GPUVertexFormat(emlite::Val("unorm8x4-bgra")); };
-
-const GPUVertexStepMode GPUVertexStepMode::vertex(){ return GPUVertexStepMode(emlite::Val("vertex")); };
-const GPUVertexStepMode GPUVertexStepMode::instance(){ return GPUVertexStepMode(emlite::Val("instance")); };
-
-const GPULoadOp GPULoadOp::load(){ return GPULoadOp(emlite::Val("load")); };
-const GPULoadOp GPULoadOp::clear(){ return GPULoadOp(emlite::Val("clear")); };
-
-const GPUStoreOp GPUStoreOp::store(){ return GPUStoreOp(emlite::Val("store")); };
-const GPUStoreOp GPUStoreOp::discard(){ return GPUStoreOp(emlite::Val("discard")); };
-
-const GPUQueryType GPUQueryType::occlusion(){ return GPUQueryType(emlite::Val("occlusion")); };
-const GPUQueryType GPUQueryType::timestamp(){ return GPUQueryType(emlite::Val("timestamp")); };
-
-const GPUCanvasAlphaMode GPUCanvasAlphaMode::opaque(){ return GPUCanvasAlphaMode(emlite::Val("opaque")); };
-const GPUCanvasAlphaMode GPUCanvasAlphaMode::premultiplied(){ return GPUCanvasAlphaMode(emlite::Val("premultiplied")); };
-
-const GPUCanvasToneMappingMode GPUCanvasToneMappingMode::standard(){ return GPUCanvasToneMappingMode(emlite::Val("standard")); };
-const GPUCanvasToneMappingMode GPUCanvasToneMappingMode::extended(){ return GPUCanvasToneMappingMode(emlite::Val("extended")); };
-
-const GPUDeviceLostReason GPUDeviceLostReason::unknown(){ return GPUDeviceLostReason(emlite::Val("unknown")); };
-const GPUDeviceLostReason GPUDeviceLostReason::destroyed(){ return GPUDeviceLostReason(emlite::Val("destroyed")); };
-
-const GPUErrorFilter GPUErrorFilter::validation(){ return GPUErrorFilter(emlite::Val("validation")); };
-const GPUErrorFilter GPUErrorFilter::out_of_memory(){ return GPUErrorFilter(emlite::Val("out-of-memory")); };
-const GPUErrorFilter GPUErrorFilter::internal(){ return GPUErrorFilter(emlite::Val("internal")); };
-
-const HIDUnitSystem HIDUnitSystem::none(){ return HIDUnitSystem(emlite::Val("none")); };
-const HIDUnitSystem HIDUnitSystem::si_linear(){ return HIDUnitSystem(emlite::Val("si-linear")); };
-const HIDUnitSystem HIDUnitSystem::si_rotation(){ return HIDUnitSystem(emlite::Val("si-rotation")); };
-const HIDUnitSystem HIDUnitSystem::english_linear(){ return HIDUnitSystem(emlite::Val("english-linear")); };
-const HIDUnitSystem HIDUnitSystem::english_rotation(){ return HIDUnitSystem(emlite::Val("english-rotation")); };
-const HIDUnitSystem HIDUnitSystem::vendor_defined(){ return HIDUnitSystem(emlite::Val("vendor-defined")); };
-const HIDUnitSystem HIDUnitSystem::reserved(){ return HIDUnitSystem(emlite::Val("reserved")); };
-
-const MIDIPortType MIDIPortType::input(){ return MIDIPortType(emlite::Val("input")); };
-const MIDIPortType MIDIPortType::output(){ return MIDIPortType(emlite::Val("output")); };
-
-const MIDIPortDeviceState MIDIPortDeviceState::disconnected(){ return MIDIPortDeviceState(emlite::Val("disconnected")); };
-const MIDIPortDeviceState MIDIPortDeviceState::connected(){ return MIDIPortDeviceState(emlite::Val("connected")); };
-
-const MIDIPortConnectionState MIDIPortConnectionState::open(){ return MIDIPortConnectionState(emlite::Val("open")); };
-const MIDIPortConnectionState MIDIPortConnectionState::closed(){ return MIDIPortConnectionState(emlite::Val("closed")); };
-const MIDIPortConnectionState MIDIPortConnectionState::pending(){ return MIDIPortConnectionState(emlite::Val("pending")); };
-
-const MLPowerPreference MLPowerPreference::default_(){ return MLPowerPreference(emlite::Val("default")); };
-const MLPowerPreference MLPowerPreference::high_performance(){ return MLPowerPreference(emlite::Val("high-performance")); };
-const MLPowerPreference MLPowerPreference::low_power(){ return MLPowerPreference(emlite::Val("low-power")); };
-
-const MLInputOperandLayout MLInputOperandLayout::nchw(){ return MLInputOperandLayout(emlite::Val("nchw")); };
-const MLInputOperandLayout MLInputOperandLayout::nhwc(){ return MLInputOperandLayout(emlite::Val("nhwc")); };
-
-const MLOperandDataType MLOperandDataType::float32(){ return MLOperandDataType(emlite::Val("float32")); };
-const MLOperandDataType MLOperandDataType::float16(){ return MLOperandDataType(emlite::Val("float16")); };
-const MLOperandDataType MLOperandDataType::int32(){ return MLOperandDataType(emlite::Val("int32")); };
-const MLOperandDataType MLOperandDataType::uint32(){ return MLOperandDataType(emlite::Val("uint32")); };
-const MLOperandDataType MLOperandDataType::int64(){ return MLOperandDataType(emlite::Val("int64")); };
-const MLOperandDataType MLOperandDataType::uint64(){ return MLOperandDataType(emlite::Val("uint64")); };
-const MLOperandDataType MLOperandDataType::int8(){ return MLOperandDataType(emlite::Val("int8")); };
-const MLOperandDataType MLOperandDataType::uint8(){ return MLOperandDataType(emlite::Val("uint8")); };
-
-const MLConv2dFilterOperandLayout MLConv2dFilterOperandLayout::oihw(){ return MLConv2dFilterOperandLayout(emlite::Val("oihw")); };
-const MLConv2dFilterOperandLayout MLConv2dFilterOperandLayout::hwio(){ return MLConv2dFilterOperandLayout(emlite::Val("hwio")); };
-const MLConv2dFilterOperandLayout MLConv2dFilterOperandLayout::ohwi(){ return MLConv2dFilterOperandLayout(emlite::Val("ohwi")); };
-const MLConv2dFilterOperandLayout MLConv2dFilterOperandLayout::ihwo(){ return MLConv2dFilterOperandLayout(emlite::Val("ihwo")); };
-
-const MLConvTranspose2dFilterOperandLayout MLConvTranspose2dFilterOperandLayout::iohw(){ return MLConvTranspose2dFilterOperandLayout(emlite::Val("iohw")); };
-const MLConvTranspose2dFilterOperandLayout MLConvTranspose2dFilterOperandLayout::hwoi(){ return MLConvTranspose2dFilterOperandLayout(emlite::Val("hwoi")); };
-const MLConvTranspose2dFilterOperandLayout MLConvTranspose2dFilterOperandLayout::ohwi(){ return MLConvTranspose2dFilterOperandLayout(emlite::Val("ohwi")); };
-
-const MLGruWeightLayout MLGruWeightLayout::zrn(){ return MLGruWeightLayout(emlite::Val("zrn")); };
-const MLGruWeightLayout MLGruWeightLayout::rzn(){ return MLGruWeightLayout(emlite::Val("rzn")); };
-
-const MLRecurrentNetworkActivation MLRecurrentNetworkActivation::relu(){ return MLRecurrentNetworkActivation(emlite::Val("relu")); };
-const MLRecurrentNetworkActivation MLRecurrentNetworkActivation::sigmoid(){ return MLRecurrentNetworkActivation(emlite::Val("sigmoid")); };
-const MLRecurrentNetworkActivation MLRecurrentNetworkActivation::tanh(){ return MLRecurrentNetworkActivation(emlite::Val("tanh")); };
-
-const MLRecurrentNetworkDirection MLRecurrentNetworkDirection::forward(){ return MLRecurrentNetworkDirection(emlite::Val("forward")); };
-const MLRecurrentNetworkDirection MLRecurrentNetworkDirection::backward(){ return MLRecurrentNetworkDirection(emlite::Val("backward")); };
-const MLRecurrentNetworkDirection MLRecurrentNetworkDirection::both(){ return MLRecurrentNetworkDirection(emlite::Val("both")); };
-
-const MLLstmWeightLayout MLLstmWeightLayout::iofg(){ return MLLstmWeightLayout(emlite::Val("iofg")); };
-const MLLstmWeightLayout MLLstmWeightLayout::ifgo(){ return MLLstmWeightLayout(emlite::Val("ifgo")); };
-
-const MLPaddingMode MLPaddingMode::constant(){ return MLPaddingMode(emlite::Val("constant")); };
-const MLPaddingMode MLPaddingMode::edge(){ return MLPaddingMode(emlite::Val("edge")); };
-const MLPaddingMode MLPaddingMode::reflection(){ return MLPaddingMode(emlite::Val("reflection")); };
-
-const MLRoundingType MLRoundingType::floor(){ return MLRoundingType(emlite::Val("floor")); };
-const MLRoundingType MLRoundingType::ceil(){ return MLRoundingType(emlite::Val("ceil")); };
-
-const MLInterpolationMode MLInterpolationMode::nearest_neighbor(){ return MLInterpolationMode(emlite::Val("nearest-neighbor")); };
-const MLInterpolationMode MLInterpolationMode::linear(){ return MLInterpolationMode(emlite::Val("linear")); };
-
-const SFrameTransformRole SFrameTransformRole::encrypt(){ return SFrameTransformRole(emlite::Val("encrypt")); };
-const SFrameTransformRole SFrameTransformRole::decrypt(){ return SFrameTransformRole(emlite::Val("decrypt")); };
-
-const SFrameTransformErrorEventType SFrameTransformErrorEventType::authentication(){ return SFrameTransformErrorEventType(emlite::Val("authentication")); };
-const SFrameTransformErrorEventType SFrameTransformErrorEventType::keyID(){ return SFrameTransformErrorEventType(emlite::Val("keyID")); };
-const SFrameTransformErrorEventType SFrameTransformErrorEventType::syntax(){ return SFrameTransformErrorEventType(emlite::Val("syntax")); };
-
-const RTCEncodedVideoFrameType RTCEncodedVideoFrameType::empty(){ return RTCEncodedVideoFrameType(emlite::Val("empty")); };
-const RTCEncodedVideoFrameType RTCEncodedVideoFrameType::key(){ return RTCEncodedVideoFrameType(emlite::Val("key")); };
-const RTCEncodedVideoFrameType RTCEncodedVideoFrameType::delta(){ return RTCEncodedVideoFrameType(emlite::Val("delta")); };
-
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_bad_script_failure(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-bad-script-failure")); };
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_execution_failure(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-execution-failure")); };
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_load_failure(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-load-failure")); };
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_need_login(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-need-login")); };
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_timeout(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-timeout")); };
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_tls_failure(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-tls-failure")); };
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_token_expired(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-token-expired")); };
-const RTCErrorDetailTypeIdp RTCErrorDetailTypeIdp::idp_token_invalid(){ return RTCErrorDetailTypeIdp(emlite::Val("idp-token-invalid")); };
-
-const RTCPriorityType RTCPriorityType::very_low(){ return RTCPriorityType(emlite::Val("very-low")); };
-const RTCPriorityType RTCPriorityType::low(){ return RTCPriorityType(emlite::Val("low")); };
-const RTCPriorityType RTCPriorityType::medium(){ return RTCPriorityType(emlite::Val("medium")); };
-const RTCPriorityType RTCPriorityType::high(){ return RTCPriorityType(emlite::Val("high")); };
-
-const RTCStatsType RTCStatsType::codec(){ return RTCStatsType(emlite::Val("codec")); };
-const RTCStatsType RTCStatsType::inbound_rtp(){ return RTCStatsType(emlite::Val("inbound-rtp")); };
-const RTCStatsType RTCStatsType::outbound_rtp(){ return RTCStatsType(emlite::Val("outbound-rtp")); };
-const RTCStatsType RTCStatsType::remote_inbound_rtp(){ return RTCStatsType(emlite::Val("remote-inbound-rtp")); };
-const RTCStatsType RTCStatsType::remote_outbound_rtp(){ return RTCStatsType(emlite::Val("remote-outbound-rtp")); };
-const RTCStatsType RTCStatsType::media_source(){ return RTCStatsType(emlite::Val("media-source")); };
-const RTCStatsType RTCStatsType::media_playout(){ return RTCStatsType(emlite::Val("media-playout")); };
-const RTCStatsType RTCStatsType::peer_connection(){ return RTCStatsType(emlite::Val("peer-connection")); };
-const RTCStatsType RTCStatsType::data_channel(){ return RTCStatsType(emlite::Val("data-channel")); };
-const RTCStatsType RTCStatsType::transport(){ return RTCStatsType(emlite::Val("transport")); };
-const RTCStatsType RTCStatsType::candidate_pair(){ return RTCStatsType(emlite::Val("candidate-pair")); };
-const RTCStatsType RTCStatsType::local_candidate(){ return RTCStatsType(emlite::Val("local-candidate")); };
-const RTCStatsType RTCStatsType::remote_candidate(){ return RTCStatsType(emlite::Val("remote-candidate")); };
-const RTCStatsType RTCStatsType::certificate(){ return RTCStatsType(emlite::Val("certificate")); };
-
-const RTCQualityLimitationReason RTCQualityLimitationReason::none(){ return RTCQualityLimitationReason(emlite::Val("none")); };
-const RTCQualityLimitationReason RTCQualityLimitationReason::cpu(){ return RTCQualityLimitationReason(emlite::Val("cpu")); };
-const RTCQualityLimitationReason RTCQualityLimitationReason::bandwidth(){ return RTCQualityLimitationReason(emlite::Val("bandwidth")); };
-const RTCQualityLimitationReason RTCQualityLimitationReason::other(){ return RTCQualityLimitationReason(emlite::Val("other")); };
-
-const RTCDtlsRole RTCDtlsRole::client(){ return RTCDtlsRole(emlite::Val("client")); };
-const RTCDtlsRole RTCDtlsRole::server(){ return RTCDtlsRole(emlite::Val("server")); };
-const RTCDtlsRole RTCDtlsRole::unknown(){ return RTCDtlsRole(emlite::Val("unknown")); };
-
-const RTCStatsIceCandidatePairState RTCStatsIceCandidatePairState::frozen(){ return RTCStatsIceCandidatePairState(emlite::Val("frozen")); };
-const RTCStatsIceCandidatePairState RTCStatsIceCandidatePairState::waiting(){ return RTCStatsIceCandidatePairState(emlite::Val("waiting")); };
-const RTCStatsIceCandidatePairState RTCStatsIceCandidatePairState::in_progress(){ return RTCStatsIceCandidatePairState(emlite::Val("in-progress")); };
-const RTCStatsIceCandidatePairState RTCStatsIceCandidatePairState::failed(){ return RTCStatsIceCandidatePairState(emlite::Val("failed")); };
-const RTCStatsIceCandidatePairState RTCStatsIceCandidatePairState::succeeded(){ return RTCStatsIceCandidatePairState(emlite::Val("succeeded")); };
-
-const RTCIceTransportPolicy RTCIceTransportPolicy::relay(){ return RTCIceTransportPolicy(emlite::Val("relay")); };
-const RTCIceTransportPolicy RTCIceTransportPolicy::all(){ return RTCIceTransportPolicy(emlite::Val("all")); };
-
-const RTCBundlePolicy RTCBundlePolicy::balanced(){ return RTCBundlePolicy(emlite::Val("balanced")); };
-const RTCBundlePolicy RTCBundlePolicy::max_compat(){ return RTCBundlePolicy(emlite::Val("max-compat")); };
-const RTCBundlePolicy RTCBundlePolicy::max_bundle(){ return RTCBundlePolicy(emlite::Val("max-bundle")); };
-
-const RTCRtcpMuxPolicy RTCRtcpMuxPolicy::require(){ return RTCRtcpMuxPolicy(emlite::Val("require")); };
-
-const RTCSignalingState RTCSignalingState::stable(){ return RTCSignalingState(emlite::Val("stable")); };
-const RTCSignalingState RTCSignalingState::have_local_offer(){ return RTCSignalingState(emlite::Val("have-local-offer")); };
-const RTCSignalingState RTCSignalingState::have_remote_offer(){ return RTCSignalingState(emlite::Val("have-remote-offer")); };
-const RTCSignalingState RTCSignalingState::have_local_pranswer(){ return RTCSignalingState(emlite::Val("have-local-pranswer")); };
-const RTCSignalingState RTCSignalingState::have_remote_pranswer(){ return RTCSignalingState(emlite::Val("have-remote-pranswer")); };
-const RTCSignalingState RTCSignalingState::closed(){ return RTCSignalingState(emlite::Val("closed")); };
-
-const RTCIceGatheringState RTCIceGatheringState::new_(){ return RTCIceGatheringState(emlite::Val("new")); };
-const RTCIceGatheringState RTCIceGatheringState::gathering(){ return RTCIceGatheringState(emlite::Val("gathering")); };
-const RTCIceGatheringState RTCIceGatheringState::complete(){ return RTCIceGatheringState(emlite::Val("complete")); };
-
-const RTCPeerConnectionState RTCPeerConnectionState::closed(){ return RTCPeerConnectionState(emlite::Val("closed")); };
-const RTCPeerConnectionState RTCPeerConnectionState::failed(){ return RTCPeerConnectionState(emlite::Val("failed")); };
-const RTCPeerConnectionState RTCPeerConnectionState::disconnected(){ return RTCPeerConnectionState(emlite::Val("disconnected")); };
-const RTCPeerConnectionState RTCPeerConnectionState::new_(){ return RTCPeerConnectionState(emlite::Val("new")); };
-const RTCPeerConnectionState RTCPeerConnectionState::connecting(){ return RTCPeerConnectionState(emlite::Val("connecting")); };
-const RTCPeerConnectionState RTCPeerConnectionState::connected(){ return RTCPeerConnectionState(emlite::Val("connected")); };
-
-const RTCIceConnectionState RTCIceConnectionState::closed(){ return RTCIceConnectionState(emlite::Val("closed")); };
-const RTCIceConnectionState RTCIceConnectionState::failed(){ return RTCIceConnectionState(emlite::Val("failed")); };
-const RTCIceConnectionState RTCIceConnectionState::disconnected(){ return RTCIceConnectionState(emlite::Val("disconnected")); };
-const RTCIceConnectionState RTCIceConnectionState::new_(){ return RTCIceConnectionState(emlite::Val("new")); };
-const RTCIceConnectionState RTCIceConnectionState::checking(){ return RTCIceConnectionState(emlite::Val("checking")); };
-const RTCIceConnectionState RTCIceConnectionState::completed(){ return RTCIceConnectionState(emlite::Val("completed")); };
-const RTCIceConnectionState RTCIceConnectionState::connected(){ return RTCIceConnectionState(emlite::Val("connected")); };
-
-const RTCSdpType RTCSdpType::offer(){ return RTCSdpType(emlite::Val("offer")); };
-const RTCSdpType RTCSdpType::pranswer(){ return RTCSdpType(emlite::Val("pranswer")); };
-const RTCSdpType RTCSdpType::answer(){ return RTCSdpType(emlite::Val("answer")); };
-const RTCSdpType RTCSdpType::rollback(){ return RTCSdpType(emlite::Val("rollback")); };
-
-const RTCIceProtocol RTCIceProtocol::udp(){ return RTCIceProtocol(emlite::Val("udp")); };
-const RTCIceProtocol RTCIceProtocol::tcp(){ return RTCIceProtocol(emlite::Val("tcp")); };
-
-const RTCIceTcpCandidateType RTCIceTcpCandidateType::active(){ return RTCIceTcpCandidateType(emlite::Val("active")); };
-const RTCIceTcpCandidateType RTCIceTcpCandidateType::passive(){ return RTCIceTcpCandidateType(emlite::Val("passive")); };
-const RTCIceTcpCandidateType RTCIceTcpCandidateType::so(){ return RTCIceTcpCandidateType(emlite::Val("so")); };
-
-const RTCIceCandidateType RTCIceCandidateType::host(){ return RTCIceCandidateType(emlite::Val("host")); };
-const RTCIceCandidateType RTCIceCandidateType::srflx(){ return RTCIceCandidateType(emlite::Val("srflx")); };
-const RTCIceCandidateType RTCIceCandidateType::prflx(){ return RTCIceCandidateType(emlite::Val("prflx")); };
-const RTCIceCandidateType RTCIceCandidateType::relay(){ return RTCIceCandidateType(emlite::Val("relay")); };
-
-const RTCIceServerTransportProtocol RTCIceServerTransportProtocol::udp(){ return RTCIceServerTransportProtocol(emlite::Val("udp")); };
-const RTCIceServerTransportProtocol RTCIceServerTransportProtocol::tcp(){ return RTCIceServerTransportProtocol(emlite::Val("tcp")); };
-const RTCIceServerTransportProtocol RTCIceServerTransportProtocol::tls(){ return RTCIceServerTransportProtocol(emlite::Val("tls")); };
-
-const RTCRtpTransceiverDirection RTCRtpTransceiverDirection::sendrecv(){ return RTCRtpTransceiverDirection(emlite::Val("sendrecv")); };
-const RTCRtpTransceiverDirection RTCRtpTransceiverDirection::sendonly(){ return RTCRtpTransceiverDirection(emlite::Val("sendonly")); };
-const RTCRtpTransceiverDirection RTCRtpTransceiverDirection::recvonly(){ return RTCRtpTransceiverDirection(emlite::Val("recvonly")); };
-const RTCRtpTransceiverDirection RTCRtpTransceiverDirection::inactive(){ return RTCRtpTransceiverDirection(emlite::Val("inactive")); };
-const RTCRtpTransceiverDirection RTCRtpTransceiverDirection::stopped(){ return RTCRtpTransceiverDirection(emlite::Val("stopped")); };
-
-const RTCDtlsTransportState RTCDtlsTransportState::new_(){ return RTCDtlsTransportState(emlite::Val("new")); };
-const RTCDtlsTransportState RTCDtlsTransportState::connecting(){ return RTCDtlsTransportState(emlite::Val("connecting")); };
-const RTCDtlsTransportState RTCDtlsTransportState::connected(){ return RTCDtlsTransportState(emlite::Val("connected")); };
-const RTCDtlsTransportState RTCDtlsTransportState::closed(){ return RTCDtlsTransportState(emlite::Val("closed")); };
-const RTCDtlsTransportState RTCDtlsTransportState::failed(){ return RTCDtlsTransportState(emlite::Val("failed")); };
-
-const RTCIceGathererState RTCIceGathererState::new_(){ return RTCIceGathererState(emlite::Val("new")); };
-const RTCIceGathererState RTCIceGathererState::gathering(){ return RTCIceGathererState(emlite::Val("gathering")); };
-const RTCIceGathererState RTCIceGathererState::complete(){ return RTCIceGathererState(emlite::Val("complete")); };
-
-const RTCIceTransportState RTCIceTransportState::closed(){ return RTCIceTransportState(emlite::Val("closed")); };
-const RTCIceTransportState RTCIceTransportState::failed(){ return RTCIceTransportState(emlite::Val("failed")); };
-const RTCIceTransportState RTCIceTransportState::disconnected(){ return RTCIceTransportState(emlite::Val("disconnected")); };
-const RTCIceTransportState RTCIceTransportState::new_(){ return RTCIceTransportState(emlite::Val("new")); };
-const RTCIceTransportState RTCIceTransportState::checking(){ return RTCIceTransportState(emlite::Val("checking")); };
-const RTCIceTransportState RTCIceTransportState::completed(){ return RTCIceTransportState(emlite::Val("completed")); };
-const RTCIceTransportState RTCIceTransportState::connected(){ return RTCIceTransportState(emlite::Val("connected")); };
-
-const RTCIceRole RTCIceRole::unknown(){ return RTCIceRole(emlite::Val("unknown")); };
-const RTCIceRole RTCIceRole::controlling(){ return RTCIceRole(emlite::Val("controlling")); };
-const RTCIceRole RTCIceRole::controlled(){ return RTCIceRole(emlite::Val("controlled")); };
-
-const RTCIceComponent RTCIceComponent::rtp(){ return RTCIceComponent(emlite::Val("rtp")); };
-const RTCIceComponent RTCIceComponent::rtcp(){ return RTCIceComponent(emlite::Val("rtcp")); };
-
-const RTCSctpTransportState RTCSctpTransportState::connecting(){ return RTCSctpTransportState(emlite::Val("connecting")); };
-const RTCSctpTransportState RTCSctpTransportState::connected(){ return RTCSctpTransportState(emlite::Val("connected")); };
-const RTCSctpTransportState RTCSctpTransportState::closed(){ return RTCSctpTransportState(emlite::Val("closed")); };
-
-const RTCDataChannelState RTCDataChannelState::connecting(){ return RTCDataChannelState(emlite::Val("connecting")); };
-const RTCDataChannelState RTCDataChannelState::open(){ return RTCDataChannelState(emlite::Val("open")); };
-const RTCDataChannelState RTCDataChannelState::closing(){ return RTCDataChannelState(emlite::Val("closing")); };
-const RTCDataChannelState RTCDataChannelState::closed(){ return RTCDataChannelState(emlite::Val("closed")); };
-
-const RTCErrorDetailType RTCErrorDetailType::data_channel_failure(){ return RTCErrorDetailType(emlite::Val("data-channel-failure")); };
-const RTCErrorDetailType RTCErrorDetailType::dtls_failure(){ return RTCErrorDetailType(emlite::Val("dtls-failure")); };
-const RTCErrorDetailType RTCErrorDetailType::fingerprint_failure(){ return RTCErrorDetailType(emlite::Val("fingerprint-failure")); };
-const RTCErrorDetailType RTCErrorDetailType::sctp_failure(){ return RTCErrorDetailType(emlite::Val("sctp-failure")); };
-const RTCErrorDetailType RTCErrorDetailType::sdp_syntax_error(){ return RTCErrorDetailType(emlite::Val("sdp-syntax-error")); };
-const RTCErrorDetailType RTCErrorDetailType::hardware_encoder_not_available(){ return RTCErrorDetailType(emlite::Val("hardware-encoder-not-available")); };
-const RTCErrorDetailType RTCErrorDetailType::hardware_encoder_error(){ return RTCErrorDetailType(emlite::Val("hardware-encoder-error")); };
-
-const BinaryType BinaryType::blob(){ return BinaryType(emlite::Val("blob")); };
-const BinaryType BinaryType::arraybuffer(){ return BinaryType(emlite::Val("arraybuffer")); };
-
-const WebTransportReliabilityMode WebTransportReliabilityMode::pending(){ return WebTransportReliabilityMode(emlite::Val("pending")); };
-const WebTransportReliabilityMode WebTransportReliabilityMode::reliable_only(){ return WebTransportReliabilityMode(emlite::Val("reliable-only")); };
-const WebTransportReliabilityMode WebTransportReliabilityMode::supports_unreliable(){ return WebTransportReliabilityMode(emlite::Val("supports-unreliable")); };
-
-const WebTransportCongestionControl WebTransportCongestionControl::default_(){ return WebTransportCongestionControl(emlite::Val("default")); };
-const WebTransportCongestionControl WebTransportCongestionControl::throughput(){ return WebTransportCongestionControl(emlite::Val("throughput")); };
-const WebTransportCongestionControl WebTransportCongestionControl::low_latency(){ return WebTransportCongestionControl(emlite::Val("low-latency")); };
-
-const WebTransportErrorSource WebTransportErrorSource::stream(){ return WebTransportErrorSource(emlite::Val("stream")); };
-const WebTransportErrorSource WebTransportErrorSource::session(){ return WebTransportErrorSource(emlite::Val("session")); };
-
-const USBTransferStatus USBTransferStatus::ok(){ return USBTransferStatus(emlite::Val("ok")); };
-const USBTransferStatus USBTransferStatus::stall(){ return USBTransferStatus(emlite::Val("stall")); };
-const USBTransferStatus USBTransferStatus::babble(){ return USBTransferStatus(emlite::Val("babble")); };
-
-const USBRequestType USBRequestType::standard(){ return USBRequestType(emlite::Val("standard")); };
-const USBRequestType USBRequestType::class_(){ return USBRequestType(emlite::Val("class")); };
-const USBRequestType USBRequestType::vendor(){ return USBRequestType(emlite::Val("vendor")); };
-
-const USBRecipient USBRecipient::device(){ return USBRecipient(emlite::Val("device")); };
-const USBRecipient USBRecipient::interface(){ return USBRecipient(emlite::Val("interface")); };
-const USBRecipient USBRecipient::endpoint(){ return USBRecipient(emlite::Val("endpoint")); };
-const USBRecipient USBRecipient::other(){ return USBRecipient(emlite::Val("other")); };
-
-const USBDirection USBDirection::in(){ return USBDirection(emlite::Val("in")); };
-const USBDirection USBDirection::out(){ return USBDirection(emlite::Val("out")); };
-
-const USBEndpointType USBEndpointType::bulk(){ return USBEndpointType(emlite::Val("bulk")); };
-const USBEndpointType USBEndpointType::interrupt(){ return USBEndpointType(emlite::Val("interrupt")); };
-const USBEndpointType USBEndpointType::isochronous(){ return USBEndpointType(emlite::Val("isochronous")); };
-
-const AutoKeyword AutoKeyword::auto_(){ return AutoKeyword(emlite::Val("auto")); };
-
-const DirectionSetting DirectionSetting::none(){ return DirectionSetting(emlite::Val("")); };
-const DirectionSetting DirectionSetting::rl(){ return DirectionSetting(emlite::Val("rl")); };
-const DirectionSetting DirectionSetting::lr(){ return DirectionSetting(emlite::Val("lr")); };
-
-const LineAlignSetting LineAlignSetting::start(){ return LineAlignSetting(emlite::Val("start")); };
-const LineAlignSetting LineAlignSetting::center(){ return LineAlignSetting(emlite::Val("center")); };
-const LineAlignSetting LineAlignSetting::end(){ return LineAlignSetting(emlite::Val("end")); };
-
-const PositionAlignSetting PositionAlignSetting::line_left(){ return PositionAlignSetting(emlite::Val("line-left")); };
-const PositionAlignSetting PositionAlignSetting::center(){ return PositionAlignSetting(emlite::Val("center")); };
-const PositionAlignSetting PositionAlignSetting::line_right(){ return PositionAlignSetting(emlite::Val("line-right")); };
-const PositionAlignSetting PositionAlignSetting::auto_(){ return PositionAlignSetting(emlite::Val("auto")); };
-
-const AlignSetting AlignSetting::start(){ return AlignSetting(emlite::Val("start")); };
-const AlignSetting AlignSetting::center(){ return AlignSetting(emlite::Val("center")); };
-const AlignSetting AlignSetting::end(){ return AlignSetting(emlite::Val("end")); };
-const AlignSetting AlignSetting::left(){ return AlignSetting(emlite::Val("left")); };
-const AlignSetting AlignSetting::right(){ return AlignSetting(emlite::Val("right")); };
-
-const ScrollSetting ScrollSetting::none(){ return ScrollSetting(emlite::Val("")); };
-const ScrollSetting ScrollSetting::up(){ return ScrollSetting(emlite::Val("up")); };
-
-const XREnvironmentBlendMode XREnvironmentBlendMode::opaque(){ return XREnvironmentBlendMode(emlite::Val("opaque")); };
-const XREnvironmentBlendMode XREnvironmentBlendMode::alpha_blend(){ return XREnvironmentBlendMode(emlite::Val("alpha-blend")); };
-const XREnvironmentBlendMode XREnvironmentBlendMode::additive(){ return XREnvironmentBlendMode(emlite::Val("additive")); };
-
-const XRInteractionMode XRInteractionMode::screen_space(){ return XRInteractionMode(emlite::Val("screen-space")); };
-const XRInteractionMode XRInteractionMode::world_space(){ return XRInteractionMode(emlite::Val("world-space")); };
-
-const XRDepthType XRDepthType::raw(){ return XRDepthType(emlite::Val("raw")); };
-const XRDepthType XRDepthType::smooth(){ return XRDepthType(emlite::Val("smooth")); };
-
-const XRDepthUsage XRDepthUsage::cpu_optimized(){ return XRDepthUsage(emlite::Val("cpu-optimized")); };
-const XRDepthUsage XRDepthUsage::gpu_optimized(){ return XRDepthUsage(emlite::Val("gpu-optimized")); };
-
-const XRDepthDataFormat XRDepthDataFormat::luminance_alpha(){ return XRDepthDataFormat(emlite::Val("luminance-alpha")); };
-const XRDepthDataFormat XRDepthDataFormat::float32(){ return XRDepthDataFormat(emlite::Val("float32")); };
-const XRDepthDataFormat XRDepthDataFormat::unsigned_short(){ return XRDepthDataFormat(emlite::Val("unsigned-short")); };
-
-const XRDOMOverlayType XRDOMOverlayType::screen(){ return XRDOMOverlayType(emlite::Val("screen")); };
-const XRDOMOverlayType XRDOMOverlayType::floating(){ return XRDOMOverlayType(emlite::Val("floating")); };
-const XRDOMOverlayType XRDOMOverlayType::head_locked(){ return XRDOMOverlayType(emlite::Val("head-locked")); };
-
-const XRHandJoint XRHandJoint::wrist(){ return XRHandJoint(emlite::Val("wrist")); };
-const XRHandJoint XRHandJoint::thumb_metacarpal(){ return XRHandJoint(emlite::Val("thumb-metacarpal")); };
-const XRHandJoint XRHandJoint::thumb_phalanx_proximal(){ return XRHandJoint(emlite::Val("thumb-phalanx-proximal")); };
-const XRHandJoint XRHandJoint::thumb_phalanx_distal(){ return XRHandJoint(emlite::Val("thumb-phalanx-distal")); };
-const XRHandJoint XRHandJoint::thumb_tip(){ return XRHandJoint(emlite::Val("thumb-tip")); };
-const XRHandJoint XRHandJoint::index_finger_metacarpal(){ return XRHandJoint(emlite::Val("index-finger-metacarpal")); };
-const XRHandJoint XRHandJoint::index_finger_phalanx_proximal(){ return XRHandJoint(emlite::Val("index-finger-phalanx-proximal")); };
-const XRHandJoint XRHandJoint::index_finger_phalanx_intermediate(){ return XRHandJoint(emlite::Val("index-finger-phalanx-intermediate")); };
-const XRHandJoint XRHandJoint::index_finger_phalanx_distal(){ return XRHandJoint(emlite::Val("index-finger-phalanx-distal")); };
-const XRHandJoint XRHandJoint::index_finger_tip(){ return XRHandJoint(emlite::Val("index-finger-tip")); };
-const XRHandJoint XRHandJoint::middle_finger_metacarpal(){ return XRHandJoint(emlite::Val("middle-finger-metacarpal")); };
-const XRHandJoint XRHandJoint::middle_finger_phalanx_proximal(){ return XRHandJoint(emlite::Val("middle-finger-phalanx-proximal")); };
-const XRHandJoint XRHandJoint::middle_finger_phalanx_intermediate(){ return XRHandJoint(emlite::Val("middle-finger-phalanx-intermediate")); };
-const XRHandJoint XRHandJoint::middle_finger_phalanx_distal(){ return XRHandJoint(emlite::Val("middle-finger-phalanx-distal")); };
-const XRHandJoint XRHandJoint::middle_finger_tip(){ return XRHandJoint(emlite::Val("middle-finger-tip")); };
-const XRHandJoint XRHandJoint::ring_finger_metacarpal(){ return XRHandJoint(emlite::Val("ring-finger-metacarpal")); };
-const XRHandJoint XRHandJoint::ring_finger_phalanx_proximal(){ return XRHandJoint(emlite::Val("ring-finger-phalanx-proximal")); };
-const XRHandJoint XRHandJoint::ring_finger_phalanx_intermediate(){ return XRHandJoint(emlite::Val("ring-finger-phalanx-intermediate")); };
-const XRHandJoint XRHandJoint::ring_finger_phalanx_distal(){ return XRHandJoint(emlite::Val("ring-finger-phalanx-distal")); };
-const XRHandJoint XRHandJoint::ring_finger_tip(){ return XRHandJoint(emlite::Val("ring-finger-tip")); };
-const XRHandJoint XRHandJoint::pinky_finger_metacarpal(){ return XRHandJoint(emlite::Val("pinky-finger-metacarpal")); };
-const XRHandJoint XRHandJoint::pinky_finger_phalanx_proximal(){ return XRHandJoint(emlite::Val("pinky-finger-phalanx-proximal")); };
-const XRHandJoint XRHandJoint::pinky_finger_phalanx_intermediate(){ return XRHandJoint(emlite::Val("pinky-finger-phalanx-intermediate")); };
-const XRHandJoint XRHandJoint::pinky_finger_phalanx_distal(){ return XRHandJoint(emlite::Val("pinky-finger-phalanx-distal")); };
-const XRHandJoint XRHandJoint::pinky_finger_tip(){ return XRHandJoint(emlite::Val("pinky-finger-tip")); };
-
-const XRHitTestTrackableType XRHitTestTrackableType::point(){ return XRHitTestTrackableType(emlite::Val("point")); };
-const XRHitTestTrackableType XRHitTestTrackableType::plane(){ return XRHitTestTrackableType(emlite::Val("plane")); };
-const XRHitTestTrackableType XRHitTestTrackableType::mesh(){ return XRHitTestTrackableType(emlite::Val("mesh")); };
-
-const XRReflectionFormat XRReflectionFormat::srgba8(){ return XRReflectionFormat(emlite::Val("srgba8")); };
-const XRReflectionFormat XRReflectionFormat::rgba16f(){ return XRReflectionFormat(emlite::Val("rgba16f")); };
-
-const XRPlaneOrientation XRPlaneOrientation::horizontal(){ return XRPlaneOrientation(emlite::Val("horizontal")); };
-const XRPlaneOrientation XRPlaneOrientation::vertical(){ return XRPlaneOrientation(emlite::Val("vertical")); };
-
-const XRSessionMode XRSessionMode::inline_(){ return XRSessionMode(emlite::Val("inline")); };
-const XRSessionMode XRSessionMode::immersive_vr(){ return XRSessionMode(emlite::Val("immersive-vr")); };
-const XRSessionMode XRSessionMode::immersive_ar(){ return XRSessionMode(emlite::Val("immersive-ar")); };
-
-const XRVisibilityState XRVisibilityState::visible(){ return XRVisibilityState(emlite::Val("visible")); };
-const XRVisibilityState XRVisibilityState::visible_blurred(){ return XRVisibilityState(emlite::Val("visible-blurred")); };
-const XRVisibilityState XRVisibilityState::hidden(){ return XRVisibilityState(emlite::Val("hidden")); };
-
-const XRReferenceSpaceType XRReferenceSpaceType::viewer(){ return XRReferenceSpaceType(emlite::Val("viewer")); };
-const XRReferenceSpaceType XRReferenceSpaceType::local(){ return XRReferenceSpaceType(emlite::Val("local")); };
-const XRReferenceSpaceType XRReferenceSpaceType::local_floor(){ return XRReferenceSpaceType(emlite::Val("local-floor")); };
-const XRReferenceSpaceType XRReferenceSpaceType::bounded_floor(){ return XRReferenceSpaceType(emlite::Val("bounded-floor")); };
-const XRReferenceSpaceType XRReferenceSpaceType::unbounded(){ return XRReferenceSpaceType(emlite::Val("unbounded")); };
-
-const XREye XREye::none(){ return XREye(emlite::Val("none")); };
-const XREye XREye::left(){ return XREye(emlite::Val("left")); };
-const XREye XREye::right(){ return XREye(emlite::Val("right")); };
-
-const XRHandedness XRHandedness::none(){ return XRHandedness(emlite::Val("none")); };
-const XRHandedness XRHandedness::left(){ return XRHandedness(emlite::Val("left")); };
-const XRHandedness XRHandedness::right(){ return XRHandedness(emlite::Val("right")); };
-
-const XRTargetRayMode XRTargetRayMode::gaze(){ return XRTargetRayMode(emlite::Val("gaze")); };
-const XRTargetRayMode XRTargetRayMode::tracked_pointer(){ return XRTargetRayMode(emlite::Val("tracked-pointer")); };
-const XRTargetRayMode XRTargetRayMode::screen(){ return XRTargetRayMode(emlite::Val("screen")); };
-const XRTargetRayMode XRTargetRayMode::transient_pointer(){ return XRTargetRayMode(emlite::Val("transient-pointer")); };
-
-const XRLayerLayout XRLayerLayout::default_(){ return XRLayerLayout(emlite::Val("default")); };
-const XRLayerLayout XRLayerLayout::mono(){ return XRLayerLayout(emlite::Val("mono")); };
-const XRLayerLayout XRLayerLayout::stereo(){ return XRLayerLayout(emlite::Val("stereo")); };
-const XRLayerLayout XRLayerLayout::stereo_left_right(){ return XRLayerLayout(emlite::Val("stereo-left-right")); };
-const XRLayerLayout XRLayerLayout::stereo_top_bottom(){ return XRLayerLayout(emlite::Val("stereo-top-bottom")); };
-
-const XRLayerQuality XRLayerQuality::default_(){ return XRLayerQuality(emlite::Val("default")); };
-const XRLayerQuality XRLayerQuality::text_optimized(){ return XRLayerQuality(emlite::Val("text-optimized")); };
-const XRLayerQuality XRLayerQuality::graphics_optimized(){ return XRLayerQuality(emlite::Val("graphics-optimized")); };
-
-const XRTextureType XRTextureType::texture(){ return XRTextureType(emlite::Val("texture")); };
-const XRTextureType XRTextureType::texture_array(){ return XRTextureType(emlite::Val("texture-array")); };
-
-const SummarizerType SummarizerType::tldr(){ return SummarizerType(emlite::Val("tldr")); };
-const SummarizerType SummarizerType::teaser(){ return SummarizerType(emlite::Val("teaser")); };
-const SummarizerType SummarizerType::key_points(){ return SummarizerType(emlite::Val("key-points")); };
-const SummarizerType SummarizerType::headline(){ return SummarizerType(emlite::Val("headline")); };
-
-const SummarizerFormat SummarizerFormat::plain_text(){ return SummarizerFormat(emlite::Val("plain-text")); };
-const SummarizerFormat SummarizerFormat::markdown(){ return SummarizerFormat(emlite::Val("markdown")); };
-
-const SummarizerLength SummarizerLength::short_(){ return SummarizerLength(emlite::Val("short")); };
-const SummarizerLength SummarizerLength::medium(){ return SummarizerLength(emlite::Val("medium")); };
-const SummarizerLength SummarizerLength::long_(){ return SummarizerLength(emlite::Val("long")); };
-
-const WriterTone WriterTone::formal(){ return WriterTone(emlite::Val("formal")); };
-const WriterTone WriterTone::neutral(){ return WriterTone(emlite::Val("neutral")); };
-const WriterTone WriterTone::casual(){ return WriterTone(emlite::Val("casual")); };
-
-const WriterFormat WriterFormat::plain_text(){ return WriterFormat(emlite::Val("plain-text")); };
-const WriterFormat WriterFormat::markdown(){ return WriterFormat(emlite::Val("markdown")); };
-
-const WriterLength WriterLength::short_(){ return WriterLength(emlite::Val("short")); };
-const WriterLength WriterLength::medium(){ return WriterLength(emlite::Val("medium")); };
-const WriterLength WriterLength::long_(){ return WriterLength(emlite::Val("long")); };
-
-const RewriterTone RewriterTone::as_is(){ return RewriterTone(emlite::Val("as-is")); };
-const RewriterTone RewriterTone::more_formal(){ return RewriterTone(emlite::Val("more-formal")); };
-const RewriterTone RewriterTone::more_casual(){ return RewriterTone(emlite::Val("more-casual")); };
-
-const RewriterFormat RewriterFormat::as_is(){ return RewriterFormat(emlite::Val("as-is")); };
-const RewriterFormat RewriterFormat::plain_text(){ return RewriterFormat(emlite::Val("plain-text")); };
-const RewriterFormat RewriterFormat::markdown(){ return RewriterFormat(emlite::Val("markdown")); };
-
-const RewriterLength RewriterLength::as_is(){ return RewriterLength(emlite::Val("as-is")); };
-const RewriterLength RewriterLength::shorter(){ return RewriterLength(emlite::Val("shorter")); };
-const RewriterLength RewriterLength::longer(){ return RewriterLength(emlite::Val("longer")); };
-
-const Availability Availability::unavailable(){ return Availability(emlite::Val("unavailable")); };
-const Availability Availability::downloadable(){ return Availability(emlite::Val("downloadable")); };
-const Availability Availability::downloading(){ return Availability(emlite::Val("downloading")); };
-const Availability Availability::available(){ return Availability(emlite::Val("available")); };
-
-const XMLHttpRequestResponseType XMLHttpRequestResponseType::none(){ return XMLHttpRequestResponseType(emlite::Val("")); };
-const XMLHttpRequestResponseType XMLHttpRequestResponseType::arraybuffer(){ return XMLHttpRequestResponseType(emlite::Val("arraybuffer")); };
-const XMLHttpRequestResponseType XMLHttpRequestResponseType::blob(){ return XMLHttpRequestResponseType(emlite::Val("blob")); };
-const XMLHttpRequestResponseType XMLHttpRequestResponseType::document(){ return XMLHttpRequestResponseType(emlite::Val("document")); };
-const XMLHttpRequestResponseType XMLHttpRequestResponseType::json(){ return XMLHttpRequestResponseType(emlite::Val("json")); };
-const XMLHttpRequestResponseType XMLHttpRequestResponseType::text(){ return XMLHttpRequestResponseType(emlite::Val("text")); };
+const char* XMLHttpRequestResponseType::to_string(XMLHttpRequestResponseType::Value value_) noexcept {
+    switch (value_) {
+        case NONE:
+            return "";
+        case ARRAYBUFFER:
+            return "arraybuffer";
+        case BLOB:
+            return "blob";
+        case DOCUMENT:
+            return "document";
+        case JSON:
+            return "json";
+        case TEXT:
+            return "text";
+        default:
+            return ""; // fallback to first value
+    }
+}
 
 } // namespace webbind

@@ -1,15 +1,17 @@
 #include <webbind/CredentialCreationOptions.hpp>
 #include <webbind/PublicKeyCredentialCreationOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CredentialCreationOptions::CredentialCreationOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CredentialCreationOptions CredentialCreationOptions::take_ownership(Handle h) noexcept {
-        return CredentialCreationOptions(h);
-    }
+    return CredentialCreationOptions(h);
+}
+
 CredentialCreationOptions::CredentialCreationOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CredentialCreationOptions::CredentialCreationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CredentialCreationOptions CredentialCreationOptions::clone() const noexcept { return *this; }
 
 PublicKeyCredentialCreationOptions CredentialCreationOptions::publicKey() const {

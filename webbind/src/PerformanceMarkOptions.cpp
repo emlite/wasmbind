@@ -1,14 +1,16 @@
 #include <webbind/PerformanceMarkOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PerformanceMarkOptions::PerformanceMarkOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PerformanceMarkOptions PerformanceMarkOptions::take_ownership(Handle h) noexcept {
-        return PerformanceMarkOptions(h);
-    }
+    return PerformanceMarkOptions(h);
+}
+
 PerformanceMarkOptions::PerformanceMarkOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PerformanceMarkOptions::PerformanceMarkOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PerformanceMarkOptions PerformanceMarkOptions::clone() const noexcept { return *this; }
 
 jsbind::Any PerformanceMarkOptions::detail() const {

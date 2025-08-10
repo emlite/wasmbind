@@ -74,7 +74,7 @@ public:
     /// The createWorklet method.
     /// [`SharedStorage.createWorklet`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorage/createWorklet)
     jsbind::Promise<SharedStorageWorklet> createWorklet(const jsbind::String& moduleURL, const SharedStorageWorkletOptions& options);
-    /// Getter of the `worklet` attribute.
+    /// [`SharedStorage.worklet`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorage/worklet)
     /// [`SharedStorage.worklet`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorage/worklet)
     [[nodiscard]] SharedStorageWorklet worklet() const;
     /// The length method.

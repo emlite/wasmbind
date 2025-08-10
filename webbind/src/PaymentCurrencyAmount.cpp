@@ -1,14 +1,16 @@
 #include <webbind/PaymentCurrencyAmount.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentCurrencyAmount::PaymentCurrencyAmount(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentCurrencyAmount PaymentCurrencyAmount::take_ownership(Handle h) noexcept {
-        return PaymentCurrencyAmount(h);
-    }
+    return PaymentCurrencyAmount(h);
+}
+
 PaymentCurrencyAmount::PaymentCurrencyAmount(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentCurrencyAmount::PaymentCurrencyAmount() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentCurrencyAmount PaymentCurrencyAmount::clone() const noexcept { return *this; }
 
 jsbind::String PaymentCurrencyAmount::currency() const {

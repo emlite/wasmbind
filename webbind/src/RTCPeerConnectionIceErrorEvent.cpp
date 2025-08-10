@@ -4,11 +4,15 @@
 namespace webbind {
 
 RTCPeerConnectionIceErrorEvent RTCPeerConnectionIceErrorEvent::take_ownership(Handle h) noexcept {
-        return RTCPeerConnectionIceErrorEvent(h);
-    }
+    return RTCPeerConnectionIceErrorEvent(h);
+}
+
 RTCPeerConnectionIceErrorEvent RTCPeerConnectionIceErrorEvent::clone() const noexcept { return *this; }
+
 emlite::Val RTCPeerConnectionIceErrorEvent::instance() noexcept { return emlite::Val::global("RTCPeerConnectionIceErrorEvent"); }
+
 RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 RTCPeerConnectionIceErrorEvent::RTCPeerConnectionIceErrorEvent(const jsbind::String& type, const RTCPeerConnectionIceErrorEventInit& eventInitDict) : Event(emlite::Val::global("RTCPeerConnectionIceErrorEvent").new_(type, eventInitDict)) {}

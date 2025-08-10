@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MIDIOptions
-/// [`MIDIOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIOptions)
 class MIDIOptions : public emlite::Val {
   explicit MIDIOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit MIDIOptions(const emlite::Val &val) noexcept;
     MIDIOptions() noexcept;
     [[nodiscard]] MIDIOptions clone() const noexcept;
+    /// Getter of the `sysex` attribute.
     [[nodiscard]] bool sysex() const;
+    /// Setter of the `sysex` attribute.
     void sysex(bool value);
+    /// Getter of the `software` attribute.
     [[nodiscard]] bool software() const;
+    /// Setter of the `software` attribute.
     void software(bool value);
 };
 

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type XRLightProbeInit
-/// [`XRLightProbeInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightProbeInit)
 class XRLightProbeInit : public emlite::Val {
   explicit XRLightProbeInit(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit XRLightProbeInit(const emlite::Val &val) noexcept;
     XRLightProbeInit() noexcept;
     [[nodiscard]] XRLightProbeInit clone() const noexcept;
+    /// Getter of the `reflectionFormat` attribute.
     [[nodiscard]] XRReflectionFormat reflectionFormat() const;
+    /// Setter of the `reflectionFormat` attribute.
     void reflectionFormat(const XRReflectionFormat& value);
 };
 

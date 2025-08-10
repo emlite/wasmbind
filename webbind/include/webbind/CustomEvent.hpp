@@ -21,7 +21,7 @@ public:
     CustomEvent(const jsbind::String& type);
     /// The `new CustomEvent(..)` constructor, creating a new CustomEvent instance
     CustomEvent(const jsbind::String& type, const CustomEventInit& eventInitDict);
-    /// Getter of the `detail` attribute.
+    /// [`CustomEvent.detail`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail)
     /// [`CustomEvent.detail`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail)
     [[nodiscard]] jsbind::Any detail() const;
     /// The initCustomEvent method.

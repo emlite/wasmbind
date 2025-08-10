@@ -1,14 +1,16 @@
 #include <webbind/GPURenderPassLayout.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPURenderPassLayout::GPURenderPassLayout(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPURenderPassLayout GPURenderPassLayout::take_ownership(Handle h) noexcept {
-        return GPURenderPassLayout(h);
-    }
+    return GPURenderPassLayout(h);
+}
+
 GPURenderPassLayout::GPURenderPassLayout(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPURenderPassLayout::GPURenderPassLayout() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPURenderPassLayout GPURenderPassLayout::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<GPUTextureFormat> GPURenderPassLayout::colorFormats() const {

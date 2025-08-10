@@ -1,14 +1,16 @@
 #include <webbind/GPUQuerySetDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUQuerySetDescriptor::GPUQuerySetDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPUQuerySetDescriptor GPUQuerySetDescriptor::take_ownership(Handle h) noexcept {
-        return GPUQuerySetDescriptor(h);
-    }
+    return GPUQuerySetDescriptor(h);
+}
+
 GPUQuerySetDescriptor::GPUQuerySetDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPUQuerySetDescriptor::GPUQuerySetDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPUQuerySetDescriptor GPUQuerySetDescriptor::clone() const noexcept { return *this; }
 
 GPUQueryType GPUQuerySetDescriptor::type() const {

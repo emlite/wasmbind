@@ -1,14 +1,16 @@
 #include <webbind/HkdfParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HkdfParams::HkdfParams(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 HkdfParams HkdfParams::take_ownership(Handle h) noexcept {
-        return HkdfParams(h);
-    }
+    return HkdfParams(h);
+}
+
 HkdfParams::HkdfParams(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 HkdfParams::HkdfParams() noexcept: Algorithm(emlite::Val::object()) {}
+
 HkdfParams HkdfParams::clone() const noexcept { return *this; }
 
 jsbind::Any HkdfParams::hash() const {

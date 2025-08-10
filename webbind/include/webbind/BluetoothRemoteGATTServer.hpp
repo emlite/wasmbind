@@ -19,10 +19,10 @@ public:
     static BluetoothRemoteGATTServer take_ownership(Handle h) noexcept;
     [[nodiscard]] BluetoothRemoteGATTServer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `device` attribute.
+    /// [`BluetoothRemoteGATTServer.device`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/device)
     /// [`BluetoothRemoteGATTServer.device`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/device)
     [[nodiscard]] BluetoothDevice device() const;
-    /// Getter of the `connected` attribute.
+    /// [`BluetoothRemoteGATTServer.connected`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/connected)
     /// [`BluetoothRemoteGATTServer.connected`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/connected)
     [[nodiscard]] bool connected() const;
     /// The connect method.

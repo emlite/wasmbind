@@ -24,13 +24,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioEncoder(..)` constructor, creating a new AudioEncoder instance
     AudioEncoder(const AudioEncoderInit& init);
-    /// Getter of the `state` attribute.
+    /// [`AudioEncoder.state`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/state)
     /// [`AudioEncoder.state`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/state)
     [[nodiscard]] CodecState state() const;
-    /// Getter of the `encodeQueueSize` attribute.
+    /// [`AudioEncoder.encodeQueueSize`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/encodeQueueSize)
     /// [`AudioEncoder.encodeQueueSize`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/encodeQueueSize)
     [[nodiscard]] unsigned long encodeQueueSize() const;
-    /// Getter of the `ondequeue` attribute.
+    /// [`AudioEncoder.ondequeue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/ondequeue)
     /// [`AudioEncoder.ondequeue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/ondequeue)
     [[nodiscard]] jsbind::Any ondequeue() const;
     /// Setter of the `ondequeue` attribute.

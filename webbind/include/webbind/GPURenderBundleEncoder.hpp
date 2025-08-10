@@ -28,7 +28,7 @@ public:
     /// The finish method.
     /// [`GPURenderBundleEncoder.finish`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/finish)
     GPURenderBundle finish(const GPURenderBundleDescriptor& descriptor);
-    /// Getter of the `label` attribute.
+    /// [`GPURenderBundleEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/label)
     /// [`GPURenderBundleEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

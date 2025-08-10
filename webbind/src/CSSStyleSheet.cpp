@@ -7,11 +7,15 @@
 namespace webbind {
 
 CSSStyleSheet CSSStyleSheet::take_ownership(Handle h) noexcept {
-        return CSSStyleSheet(h);
-    }
+    return CSSStyleSheet(h);
+}
+
 CSSStyleSheet CSSStyleSheet::clone() const noexcept { return *this; }
+
 emlite::Val CSSStyleSheet::instance() noexcept { return emlite::Val::global("CSSStyleSheet"); }
+
 CSSStyleSheet::CSSStyleSheet(Handle h) noexcept : StyleSheet(emlite::Val::take_ownership(h)) {}
+
 CSSStyleSheet::CSSStyleSheet(const emlite::Val &val) noexcept: StyleSheet(val) {}
 
 CSSStyleSheet::CSSStyleSheet() : StyleSheet(emlite::Val::global("CSSStyleSheet").new_()) {}

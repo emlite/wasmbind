@@ -1,14 +1,16 @@
 #include <webbind/ImageDecoderInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ImageDecoderInit::ImageDecoderInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageDecoderInit ImageDecoderInit::take_ownership(Handle h) noexcept {
-        return ImageDecoderInit(h);
-    }
+    return ImageDecoderInit(h);
+}
+
 ImageDecoderInit::ImageDecoderInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ImageDecoderInit::ImageDecoderInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ImageDecoderInit ImageDecoderInit::clone() const noexcept { return *this; }
 
 jsbind::String ImageDecoderInit::type() const {

@@ -1,14 +1,16 @@
 #include <webbind/AddressErrors.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AddressErrors::AddressErrors(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AddressErrors AddressErrors::take_ownership(Handle h) noexcept {
-        return AddressErrors(h);
-    }
+    return AddressErrors(h);
+}
+
 AddressErrors::AddressErrors(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AddressErrors::AddressErrors() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AddressErrors AddressErrors::clone() const noexcept { return *this; }
 
 jsbind::String AddressErrors::addressLine() const {

@@ -15,7 +15,7 @@ public:
     static BarProp take_ownership(Handle h) noexcept;
     [[nodiscard]] BarProp clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `visible` attribute.
+    /// [`BarProp.visible`](https://developer.mozilla.org/en-US/docs/Web/API/BarProp/visible)
     /// [`BarProp.visible`](https://developer.mozilla.org/en-US/docs/Web/API/BarProp/visible)
     [[nodiscard]] bool visible() const;
 };

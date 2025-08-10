@@ -1,14 +1,16 @@
 #include <webbind/LanguageDetectionResult.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 LanguageDetectionResult::LanguageDetectionResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LanguageDetectionResult LanguageDetectionResult::take_ownership(Handle h) noexcept {
-        return LanguageDetectionResult(h);
-    }
+    return LanguageDetectionResult(h);
+}
+
 LanguageDetectionResult::LanguageDetectionResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 LanguageDetectionResult::LanguageDetectionResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 LanguageDetectionResult LanguageDetectionResult::clone() const noexcept { return *this; }
 
 jsbind::String LanguageDetectionResult::detectedLanguage() const {

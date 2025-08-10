@@ -13,7 +13,6 @@
 namespace webbind {
 
 /// Dictionary type PublicKeyCredentialCreationOptionsJSON
-/// [`PublicKeyCredentialCreationOptionsJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptionsJSON)
 class PublicKeyCredentialCreationOptionsJSON : public emlite::Val {
   explicit PublicKeyCredentialCreationOptionsJSON(Handle h) noexcept;
 public:
@@ -21,27 +20,49 @@ public:
     explicit PublicKeyCredentialCreationOptionsJSON(const emlite::Val &val) noexcept;
     PublicKeyCredentialCreationOptionsJSON() noexcept;
     [[nodiscard]] PublicKeyCredentialCreationOptionsJSON clone() const noexcept;
+    /// Getter of the `rp` attribute.
     [[nodiscard]] PublicKeyCredentialRpEntity rp() const;
+    /// Setter of the `rp` attribute.
     void rp(const PublicKeyCredentialRpEntity& value);
+    /// Getter of the `user` attribute.
     [[nodiscard]] PublicKeyCredentialUserEntityJSON user() const;
+    /// Setter of the `user` attribute.
     void user(const PublicKeyCredentialUserEntityJSON& value);
+    /// Getter of the `challenge` attribute.
     [[nodiscard]] jsbind::Any challenge() const;
+    /// Setter of the `challenge` attribute.
     void challenge(const jsbind::Any& value);
+    /// Getter of the `pubKeyCredParams` attribute.
     [[nodiscard]] jsbind::TypedArray<PublicKeyCredentialParameters> pubKeyCredParams() const;
+    /// Setter of the `pubKeyCredParams` attribute.
     void pubKeyCredParams(const jsbind::TypedArray<PublicKeyCredentialParameters>& value);
+    /// Getter of the `timeout` attribute.
     [[nodiscard]] unsigned long timeout() const;
+    /// Setter of the `timeout` attribute.
     void timeout(unsigned long value);
+    /// Getter of the `excludeCredentials` attribute.
     [[nodiscard]] jsbind::TypedArray<PublicKeyCredentialDescriptorJSON> excludeCredentials() const;
+    /// Setter of the `excludeCredentials` attribute.
     void excludeCredentials(const jsbind::TypedArray<PublicKeyCredentialDescriptorJSON>& value);
+    /// Getter of the `authenticatorSelection` attribute.
     [[nodiscard]] AuthenticatorSelectionCriteria authenticatorSelection() const;
+    /// Setter of the `authenticatorSelection` attribute.
     void authenticatorSelection(const AuthenticatorSelectionCriteria& value);
+    /// Getter of the `hints` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> hints() const;
+    /// Setter of the `hints` attribute.
     void hints(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `attestation` attribute.
     [[nodiscard]] jsbind::String attestation() const;
+    /// Setter of the `attestation` attribute.
     void attestation(const jsbind::String& value);
+    /// Getter of the `attestationFormats` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> attestationFormats() const;
+    /// Setter of the `attestationFormats` attribute.
     void attestationFormats(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `extensions` attribute.
     [[nodiscard]] AuthenticationExtensionsClientInputsJSON extensions() const;
+    /// Setter of the `extensions` attribute.
     void extensions(const AuthenticationExtensionsClientInputsJSON& value);
 };
 

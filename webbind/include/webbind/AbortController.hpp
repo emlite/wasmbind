@@ -19,7 +19,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AbortController(..)` constructor, creating a new AbortController instance
     AbortController();
-    /// Getter of the `signal` attribute.
+    /// [`AbortController.signal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal)
     /// [`AbortController.signal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal)
     [[nodiscard]] AbortSignal signal() const;
     /// The abort method.

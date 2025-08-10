@@ -1,14 +1,16 @@
 #include <webbind/StructuredSerializeOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StructuredSerializeOptions::StructuredSerializeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StructuredSerializeOptions StructuredSerializeOptions::take_ownership(Handle h) noexcept {
-        return StructuredSerializeOptions(h);
-    }
+    return StructuredSerializeOptions(h);
+}
+
 StructuredSerializeOptions::StructuredSerializeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 StructuredSerializeOptions::StructuredSerializeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 StructuredSerializeOptions StructuredSerializeOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::Object> StructuredSerializeOptions::transfer() const {

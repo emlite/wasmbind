@@ -1,15 +1,17 @@
 #include <webbind/GetHTMLOptions.hpp>
 #include <webbind/ShadowRoot.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GetHTMLOptions::GetHTMLOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GetHTMLOptions GetHTMLOptions::take_ownership(Handle h) noexcept {
-        return GetHTMLOptions(h);
-    }
+    return GetHTMLOptions(h);
+}
+
 GetHTMLOptions::GetHTMLOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GetHTMLOptions::GetHTMLOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GetHTMLOptions GetHTMLOptions::clone() const noexcept { return *this; }
 
 bool GetHTMLOptions::serializableShadowRoots() const {

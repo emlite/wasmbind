@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type UIEventInit
-/// [`UIEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/UIEventInit)
 class UIEventInit : public emlite::Val {
   explicit UIEventInit(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit UIEventInit(const emlite::Val &val) noexcept;
     UIEventInit() noexcept;
     [[nodiscard]] UIEventInit clone() const noexcept;
+    /// Getter of the `which` attribute.
     [[nodiscard]] unsigned long which() const;
+    /// Setter of the `which` attribute.
     void which(unsigned long value);
 };
 

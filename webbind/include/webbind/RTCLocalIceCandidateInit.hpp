@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCLocalIceCandidateInit
-/// [`RTCLocalIceCandidateInit`](https://developer.mozilla.org/en-US/docs/Web/API/RTCLocalIceCandidateInit)
 class RTCLocalIceCandidateInit : public RTCIceCandidateInit {
   explicit RTCLocalIceCandidateInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit RTCLocalIceCandidateInit(const emlite::Val &val) noexcept;
     RTCLocalIceCandidateInit() noexcept;
     [[nodiscard]] RTCLocalIceCandidateInit clone() const noexcept;
+    /// Getter of the `relayProtocol` attribute.
     [[nodiscard]] RTCIceServerTransportProtocol relayProtocol() const;
+    /// Setter of the `relayProtocol` attribute.
     void relayProtocol(const RTCIceServerTransportProtocol& value);
+    /// Getter of the `url` attribute.
     [[nodiscard]] jsbind::String url() const;
+    /// Setter of the `url` attribute.
     void url(const jsbind::String& value);
 };
 

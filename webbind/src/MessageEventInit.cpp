@@ -1,15 +1,17 @@
 #include <webbind/MessageEventInit.hpp>
 #include <webbind/MessagePort.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MessageEventInit::MessageEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 MessageEventInit MessageEventInit::take_ownership(Handle h) noexcept {
-        return MessageEventInit(h);
-    }
+    return MessageEventInit(h);
+}
+
 MessageEventInit::MessageEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 MessageEventInit::MessageEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 MessageEventInit MessageEventInit::clone() const noexcept { return *this; }
 
 jsbind::Any MessageEventInit::data() const {

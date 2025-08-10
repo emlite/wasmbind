@@ -4,15 +4,17 @@
 #include <webbind/FormData.hpp>
 #include <webbind/Element.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NavigateEventInit::NavigateEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 NavigateEventInit NavigateEventInit::take_ownership(Handle h) noexcept {
-        return NavigateEventInit(h);
-    }
+    return NavigateEventInit(h);
+}
+
 NavigateEventInit::NavigateEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 NavigateEventInit::NavigateEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 NavigateEventInit NavigateEventInit::clone() const noexcept { return *this; }
 
 NavigationType NavigateEventInit::navigationType() const {

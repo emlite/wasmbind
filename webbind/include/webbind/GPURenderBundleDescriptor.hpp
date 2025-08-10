@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPURenderBundleDescriptor
-/// [`GPURenderBundleDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleDescriptor)
 class GPURenderBundleDescriptor : public GPUObjectDescriptorBase {
   explicit GPURenderBundleDescriptor(Handle h) noexcept;
 public:

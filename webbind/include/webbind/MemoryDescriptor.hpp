@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MemoryDescriptor
-/// [`MemoryDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/MemoryDescriptor)
 class MemoryDescriptor : public emlite::Val {
   explicit MemoryDescriptor(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit MemoryDescriptor(const emlite::Val &val) noexcept;
     MemoryDescriptor() noexcept;
     [[nodiscard]] MemoryDescriptor clone() const noexcept;
+    /// Getter of the `initial` attribute.
     [[nodiscard]] unsigned long initial() const;
+    /// Setter of the `initial` attribute.
     void initial(unsigned long value);
+    /// Getter of the `maximum` attribute.
     [[nodiscard]] unsigned long maximum() const;
+    /// Setter of the `maximum` attribute.
     void maximum(unsigned long value);
 };
 

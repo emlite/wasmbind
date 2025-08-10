@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ElementDefinitionOptions
-/// [`ElementDefinitionOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ElementDefinitionOptions)
 class ElementDefinitionOptions : public emlite::Val {
   explicit ElementDefinitionOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ElementDefinitionOptions(const emlite::Val &val) noexcept;
     ElementDefinitionOptions() noexcept;
     [[nodiscard]] ElementDefinitionOptions clone() const noexcept;
+    /// Getter of the `extends` attribute.
     [[nodiscard]] jsbind::String extends() const;
+    /// Setter of the `extends` attribute.
     void extends(const jsbind::String& value);
 };
 

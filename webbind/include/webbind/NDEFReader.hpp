@@ -21,13 +21,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFReader(..)` constructor, creating a new NDEFReader instance
     NDEFReader();
-    /// Getter of the `onreading` attribute.
+    /// [`NDEFReader.onreading`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/onreading)
     /// [`NDEFReader.onreading`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/onreading)
     [[nodiscard]] jsbind::Any onreading() const;
     /// Setter of the `onreading` attribute.
     /// [`NDEFReader.onreading`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/onreading)
     void onreading(const jsbind::Any& value);
-    /// Getter of the `onreadingerror` attribute.
+    /// [`NDEFReader.onreadingerror`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/onreadingerror)
     /// [`NDEFReader.onreadingerror`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/onreadingerror)
     [[nodiscard]] jsbind::Any onreadingerror() const;
     /// Setter of the `onreadingerror` attribute.

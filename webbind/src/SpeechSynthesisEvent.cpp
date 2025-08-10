@@ -5,11 +5,15 @@
 namespace webbind {
 
 SpeechSynthesisEvent SpeechSynthesisEvent::take_ownership(Handle h) noexcept {
-        return SpeechSynthesisEvent(h);
-    }
+    return SpeechSynthesisEvent(h);
+}
+
 SpeechSynthesisEvent SpeechSynthesisEvent::clone() const noexcept { return *this; }
+
 emlite::Val SpeechSynthesisEvent::instance() noexcept { return emlite::Val::global("SpeechSynthesisEvent"); }
+
 SpeechSynthesisEvent::SpeechSynthesisEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 SpeechSynthesisEvent::SpeechSynthesisEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 SpeechSynthesisEvent::SpeechSynthesisEvent(const jsbind::String& type, const SpeechSynthesisEventInit& eventInitDict) : Event(emlite::Val::global("SpeechSynthesisEvent").new_(type, eventInitDict)) {}

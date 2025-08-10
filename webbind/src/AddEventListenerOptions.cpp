@@ -1,15 +1,17 @@
 #include <webbind/AddEventListenerOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AddEventListenerOptions::AddEventListenerOptions(Handle h) noexcept : EventListenerOptions(emlite::Val::take_ownership(h)) {}
 AddEventListenerOptions AddEventListenerOptions::take_ownership(Handle h) noexcept {
-        return AddEventListenerOptions(h);
-    }
+    return AddEventListenerOptions(h);
+}
+
 AddEventListenerOptions::AddEventListenerOptions(const emlite::Val &val) noexcept: EventListenerOptions(val) {}
+
 AddEventListenerOptions::AddEventListenerOptions() noexcept: EventListenerOptions(emlite::Val::object()) {}
+
 AddEventListenerOptions AddEventListenerOptions::clone() const noexcept { return *this; }
 
 bool AddEventListenerOptions::passive() const {

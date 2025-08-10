@@ -21,10 +21,10 @@ public:
     PopStateEvent(const jsbind::String& type);
     /// The `new PopStateEvent(..)` constructor, creating a new PopStateEvent instance
     PopStateEvent(const jsbind::String& type, const PopStateEventInit& eventInitDict);
-    /// Getter of the `state` attribute.
+    /// [`PopStateEvent.state`](https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent/state)
     /// [`PopStateEvent.state`](https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent/state)
     [[nodiscard]] jsbind::Any state() const;
-    /// Getter of the `hasUAVisualTransition` attribute.
+    /// [`PopStateEvent.hasUAVisualTransition`](https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent/hasUAVisualTransition)
     /// [`PopStateEvent.hasUAVisualTransition`](https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent/hasUAVisualTransition)
     [[nodiscard]] bool hasUAVisualTransition() const;
 };

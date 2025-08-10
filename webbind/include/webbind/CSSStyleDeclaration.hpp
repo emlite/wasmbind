@@ -17,13 +17,13 @@ public:
     static CSSStyleDeclaration take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSStyleDeclaration clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `cssText` attribute.
+    /// [`CSSStyleDeclaration.cssText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText)
     /// [`CSSStyleDeclaration.cssText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText)
     [[nodiscard]] jsbind::String cssText() const;
     /// Setter of the `cssText` attribute.
     /// [`CSSStyleDeclaration.cssText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText)
     void cssText(const jsbind::String& value);
-    /// Getter of the `length` attribute.
+    /// [`CSSStyleDeclaration.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/length)
     /// [`CSSStyleDeclaration.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.
@@ -44,7 +44,7 @@ public:
     /// The removeProperty method.
     /// [`CSSStyleDeclaration.removeProperty`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/removeProperty)
     jsbind::String removeProperty(const jsbind::String& property);
-    /// Getter of the `parentRule` attribute.
+    /// [`CSSStyleDeclaration.parentRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/parentRule)
     /// [`CSSStyleDeclaration.parentRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/parentRule)
     [[nodiscard]] CSSRule parentRule() const;
 };

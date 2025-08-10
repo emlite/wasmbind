@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type BluetoothLEScanFilterInit
-/// [`BluetoothLEScanFilterInit`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilterInit)
 class BluetoothLEScanFilterInit : public emlite::Val {
   explicit BluetoothLEScanFilterInit(Handle h) noexcept;
 public:
@@ -17,15 +16,25 @@ public:
     explicit BluetoothLEScanFilterInit(const emlite::Val &val) noexcept;
     BluetoothLEScanFilterInit() noexcept;
     [[nodiscard]] BluetoothLEScanFilterInit clone() const noexcept;
+    /// Getter of the `services` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::Any> services() const;
+    /// Setter of the `services` attribute.
     void services(const jsbind::TypedArray<jsbind::Any>& value);
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
+    /// Getter of the `namePrefix` attribute.
     [[nodiscard]] jsbind::String namePrefix() const;
+    /// Setter of the `namePrefix` attribute.
     void namePrefix(const jsbind::String& value);
+    /// Getter of the `manufacturerData` attribute.
     [[nodiscard]] jsbind::TypedArray<BluetoothManufacturerDataFilterInit> manufacturerData() const;
+    /// Setter of the `manufacturerData` attribute.
     void manufacturerData(const jsbind::TypedArray<BluetoothManufacturerDataFilterInit>& value);
+    /// Getter of the `serviceData` attribute.
     [[nodiscard]] jsbind::TypedArray<BluetoothServiceDataFilterInit> serviceData() const;
+    /// Setter of the `serviceData` attribute.
     void serviceData(const jsbind::TypedArray<BluetoothServiceDataFilterInit>& value);
 };
 

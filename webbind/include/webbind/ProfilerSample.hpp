@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ProfilerSample
-/// [`ProfilerSample`](https://developer.mozilla.org/en-US/docs/Web/API/ProfilerSample)
 class ProfilerSample : public emlite::Val {
   explicit ProfilerSample(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ProfilerSample(const emlite::Val &val) noexcept;
     ProfilerSample() noexcept;
     [[nodiscard]] ProfilerSample clone() const noexcept;
+    /// Getter of the `timestamp` attribute.
     [[nodiscard]] jsbind::Any timestamp() const;
+    /// Setter of the `timestamp` attribute.
     void timestamp(const jsbind::Any& value);
+    /// Getter of the `stackId` attribute.
     [[nodiscard]] long long stackId() const;
+    /// Setter of the `stackId` attribute.
     void stackId(long long value);
 };
 

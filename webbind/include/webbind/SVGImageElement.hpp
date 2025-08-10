@@ -20,28 +20,28 @@ public:
     static SVGImageElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGImageElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `x` attribute.
+    /// [`SVGImageElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/x)
     /// [`SVGImageElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;
-    /// Getter of the `y` attribute.
+    /// [`SVGImageElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/y)
     /// [`SVGImageElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/y)
     [[nodiscard]] SVGAnimatedLength y() const;
-    /// Getter of the `width` attribute.
+    /// [`SVGImageElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/width)
     /// [`SVGImageElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/width)
     [[nodiscard]] SVGAnimatedLength width() const;
-    /// Getter of the `height` attribute.
+    /// [`SVGImageElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/height)
     /// [`SVGImageElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/height)
     [[nodiscard]] SVGAnimatedLength height() const;
-    /// Getter of the `preserveAspectRatio` attribute.
+    /// [`SVGImageElement.preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/preserveAspectRatio)
     /// [`SVGImageElement.preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/preserveAspectRatio)
     [[nodiscard]] SVGAnimatedPreserveAspectRatio preserveAspectRatio() const;
-    /// Getter of the `crossOrigin` attribute.
+    /// [`SVGImageElement.crossOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/crossOrigin)
     /// [`SVGImageElement.crossOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/crossOrigin)
     [[nodiscard]] jsbind::String crossOrigin() const;
     /// Setter of the `crossOrigin` attribute.
     /// [`SVGImageElement.crossOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/crossOrigin)
     void crossOrigin(const jsbind::String& value);
-    /// Getter of the `href` attribute.
+    /// [`SVGImageElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/href)
     /// [`SVGImageElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/href)
     [[nodiscard]] SVGAnimatedString href() const;
 };

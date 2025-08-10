@@ -10,7 +10,6 @@ namespace webbind {
 class PresentationConnection;
 
 /// Dictionary type PresentationConnectionAvailableEventInit
-/// [`PresentationConnectionAvailableEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionAvailableEventInit)
 class PresentationConnectionAvailableEventInit : public EventInit {
   explicit PresentationConnectionAvailableEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit PresentationConnectionAvailableEventInit(const emlite::Val &val) noexcept;
     PresentationConnectionAvailableEventInit() noexcept;
     [[nodiscard]] PresentationConnectionAvailableEventInit clone() const noexcept;
+    /// Getter of the `connection` attribute.
     [[nodiscard]] PresentationConnection connection() const;
+    /// Setter of the `connection` attribute.
     void connection(const PresentationConnection& value);
 };
 

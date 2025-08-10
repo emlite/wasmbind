@@ -4,11 +4,15 @@
 namespace webbind {
 
 NodeIterator NodeIterator::take_ownership(Handle h) noexcept {
-        return NodeIterator(h);
-    }
+    return NodeIterator(h);
+}
+
 NodeIterator NodeIterator::clone() const noexcept { return *this; }
+
 emlite::Val NodeIterator::instance() noexcept { return emlite::Val::global("NodeIterator"); }
+
 NodeIterator::NodeIterator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 NodeIterator::NodeIterator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Node NodeIterator::root() const {

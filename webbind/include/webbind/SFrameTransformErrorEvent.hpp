@@ -20,13 +20,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SFrameTransformErrorEvent(..)` constructor, creating a new SFrameTransformErrorEvent instance
     SFrameTransformErrorEvent(const jsbind::String& type, const SFrameTransformErrorEventInit& eventInitDict);
-    /// Getter of the `errorType` attribute.
+    /// [`SFrameTransformErrorEvent.errorType`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEvent/errorType)
     /// [`SFrameTransformErrorEvent.errorType`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEvent/errorType)
     [[nodiscard]] SFrameTransformErrorEventType errorType() const;
-    /// Getter of the `keyID` attribute.
+    /// [`SFrameTransformErrorEvent.keyID`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEvent/keyID)
     /// [`SFrameTransformErrorEvent.keyID`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEvent/keyID)
     [[nodiscard]] jsbind::Any keyID() const;
-    /// Getter of the `frame` attribute.
+    /// [`SFrameTransformErrorEvent.frame`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEvent/frame)
     /// [`SFrameTransformErrorEvent.frame`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEvent/frame)
     [[nodiscard]] jsbind::Any frame() const;
 };

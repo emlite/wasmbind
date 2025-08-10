@@ -1,14 +1,16 @@
 #include <webbind/ImageDataSettings.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ImageDataSettings::ImageDataSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageDataSettings ImageDataSettings::take_ownership(Handle h) noexcept {
-        return ImageDataSettings(h);
-    }
+    return ImageDataSettings(h);
+}
+
 ImageDataSettings::ImageDataSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ImageDataSettings::ImageDataSettings() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ImageDataSettings ImageDataSettings::clone() const noexcept { return *this; }
 
 PredefinedColorSpace ImageDataSettings::colorSpace() const {

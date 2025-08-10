@@ -20,7 +20,7 @@ public:
     OverconstrainedError(const jsbind::String& constraint);
     /// The `new OverconstrainedError(..)` constructor, creating a new OverconstrainedError instance
     OverconstrainedError(const jsbind::String& constraint, const jsbind::String& message);
-    /// Getter of the `constraint` attribute.
+    /// [`OverconstrainedError.constraint`](https://developer.mozilla.org/en-US/docs/Web/API/OverconstrainedError/constraint)
     /// [`OverconstrainedError.constraint`](https://developer.mozilla.org/en-US/docs/Web/API/OverconstrainedError/constraint)
     [[nodiscard]] jsbind::String constraint() const;
 };

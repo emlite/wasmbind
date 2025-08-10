@@ -1,14 +1,16 @@
 #include <webbind/HMACGetSecretInput.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HMACGetSecretInput::HMACGetSecretInput(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HMACGetSecretInput HMACGetSecretInput::take_ownership(Handle h) noexcept {
-        return HMACGetSecretInput(h);
-    }
+    return HMACGetSecretInput(h);
+}
+
 HMACGetSecretInput::HMACGetSecretInput(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HMACGetSecretInput::HMACGetSecretInput() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HMACGetSecretInput HMACGetSecretInput::clone() const noexcept { return *this; }
 
 jsbind::ArrayBuffer HMACGetSecretInput::salt1() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RsaHashedKeyGenParams
-/// [`RsaHashedKeyGenParams`](https://developer.mozilla.org/en-US/docs/Web/API/RsaHashedKeyGenParams)
 class RsaHashedKeyGenParams : public RsaKeyGenParams {
   explicit RsaHashedKeyGenParams(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit RsaHashedKeyGenParams(const emlite::Val &val) noexcept;
     RsaHashedKeyGenParams() noexcept;
     [[nodiscard]] RsaHashedKeyGenParams clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] jsbind::Any hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const jsbind::Any& value);
 };
 

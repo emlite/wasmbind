@@ -1,14 +1,16 @@
 #include <webbind/AudioTimestamp.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioTimestamp::AudioTimestamp(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioTimestamp AudioTimestamp::take_ownership(Handle h) noexcept {
-        return AudioTimestamp(h);
-    }
+    return AudioTimestamp(h);
+}
+
 AudioTimestamp::AudioTimestamp(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioTimestamp::AudioTimestamp() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioTimestamp AudioTimestamp::clone() const noexcept { return *this; }
 
 double AudioTimestamp::contextTime() const {

@@ -1,14 +1,16 @@
 #include <webbind/SharedStorageUrlWithMetadata.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SharedStorageUrlWithMetadata::SharedStorageUrlWithMetadata(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SharedStorageUrlWithMetadata SharedStorageUrlWithMetadata::take_ownership(Handle h) noexcept {
-        return SharedStorageUrlWithMetadata(h);
-    }
+    return SharedStorageUrlWithMetadata(h);
+}
+
 SharedStorageUrlWithMetadata::SharedStorageUrlWithMetadata(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SharedStorageUrlWithMetadata::SharedStorageUrlWithMetadata() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SharedStorageUrlWithMetadata SharedStorageUrlWithMetadata::clone() const noexcept { return *this; }
 
 jsbind::String SharedStorageUrlWithMetadata::url() const {

@@ -25,22 +25,22 @@ public:
     BiquadFilterNode(const BaseAudioContext& context);
     /// The `new BiquadFilterNode(..)` constructor, creating a new BiquadFilterNode instance
     BiquadFilterNode(const BaseAudioContext& context, const BiquadFilterOptions& options);
-    /// Getter of the `type` attribute.
+    /// [`BiquadFilterNode.type`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/type)
     /// [`BiquadFilterNode.type`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/type)
     [[nodiscard]] BiquadFilterType type() const;
     /// Setter of the `type` attribute.
     /// [`BiquadFilterNode.type`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/type)
     void type(const BiquadFilterType& value);
-    /// Getter of the `frequency` attribute.
+    /// [`BiquadFilterNode.frequency`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/frequency)
     /// [`BiquadFilterNode.frequency`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/frequency)
     [[nodiscard]] AudioParam frequency() const;
-    /// Getter of the `detune` attribute.
+    /// [`BiquadFilterNode.detune`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/detune)
     /// [`BiquadFilterNode.detune`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/detune)
     [[nodiscard]] AudioParam detune() const;
-    /// Getter of the `Q` attribute.
+    /// [`BiquadFilterNode.Q`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/Q)
     /// [`BiquadFilterNode.Q`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/Q)
     [[nodiscard]] AudioParam Q() const;
-    /// Getter of the `gain` attribute.
+    /// [`BiquadFilterNode.gain`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/gain)
     /// [`BiquadFilterNode.gain`](https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/gain)
     [[nodiscard]] AudioParam gain() const;
     /// The getFrequencyResponse method.

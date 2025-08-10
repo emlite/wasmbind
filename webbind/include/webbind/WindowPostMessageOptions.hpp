@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type WindowPostMessageOptions
-/// [`WindowPostMessageOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WindowPostMessageOptions)
 class WindowPostMessageOptions : public StructuredSerializeOptions {
   explicit WindowPostMessageOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit WindowPostMessageOptions(const emlite::Val &val) noexcept;
     WindowPostMessageOptions() noexcept;
     [[nodiscard]] WindowPostMessageOptions clone() const noexcept;
+    /// Getter of the `targetOrigin` attribute.
     [[nodiscard]] jsbind::String targetOrigin() const;
+    /// Setter of the `targetOrigin` attribute.
     void targetOrigin(const jsbind::String& value);
 };
 

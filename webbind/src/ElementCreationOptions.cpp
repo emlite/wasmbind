@@ -1,15 +1,17 @@
 #include <webbind/ElementCreationOptions.hpp>
 #include <webbind/CustomElementRegistry.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ElementCreationOptions::ElementCreationOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ElementCreationOptions ElementCreationOptions::take_ownership(Handle h) noexcept {
-        return ElementCreationOptions(h);
-    }
+    return ElementCreationOptions(h);
+}
+
 ElementCreationOptions::ElementCreationOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ElementCreationOptions::ElementCreationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ElementCreationOptions ElementCreationOptions::clone() const noexcept { return *this; }
 
 CustomElementRegistry ElementCreationOptions::customElementRegistry() const {

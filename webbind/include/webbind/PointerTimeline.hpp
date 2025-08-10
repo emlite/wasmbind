@@ -24,10 +24,10 @@ public:
     PointerTimeline();
     /// The `new PointerTimeline(..)` constructor, creating a new PointerTimeline instance
     PointerTimeline(const PointerTimelineOptions& options);
-    /// Getter of the `source` attribute.
+    /// [`PointerTimeline.source`](https://developer.mozilla.org/en-US/docs/Web/API/PointerTimeline/source)
     /// [`PointerTimeline.source`](https://developer.mozilla.org/en-US/docs/Web/API/PointerTimeline/source)
     [[nodiscard]] Element source() const;
-    /// Getter of the `axis` attribute.
+    /// [`PointerTimeline.axis`](https://developer.mozilla.org/en-US/docs/Web/API/PointerTimeline/axis)
     /// [`PointerTimeline.axis`](https://developer.mozilla.org/en-US/docs/Web/API/PointerTimeline/axis)
     [[nodiscard]] PointerAxis axis() const;
 };

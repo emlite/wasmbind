@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUCopyExternalImageDestInfo
-/// [`GPUCopyExternalImageDestInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCopyExternalImageDestInfo)
 class GPUCopyExternalImageDestInfo : public GPUTexelCopyTextureInfo {
   explicit GPUCopyExternalImageDestInfo(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit GPUCopyExternalImageDestInfo(const emlite::Val &val) noexcept;
     GPUCopyExternalImageDestInfo() noexcept;
     [[nodiscard]] GPUCopyExternalImageDestInfo clone() const noexcept;
+    /// Getter of the `colorSpace` attribute.
     [[nodiscard]] PredefinedColorSpace colorSpace() const;
+    /// Setter of the `colorSpace` attribute.
     void colorSpace(const PredefinedColorSpace& value);
+    /// Getter of the `premultipliedAlpha` attribute.
     [[nodiscard]] bool premultipliedAlpha() const;
+    /// Setter of the `premultipliedAlpha` attribute.
     void premultipliedAlpha(bool value);
 };
 

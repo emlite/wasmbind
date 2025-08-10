@@ -13,11 +13,15 @@
 namespace webbind {
 
 WebGL2RenderingContext WebGL2RenderingContext::take_ownership(Handle h) noexcept {
-        return WebGL2RenderingContext(h);
-    }
+    return WebGL2RenderingContext(h);
+}
+
 WebGL2RenderingContext WebGL2RenderingContext::clone() const noexcept { return *this; }
+
 emlite::Val WebGL2RenderingContext::instance() noexcept { return emlite::Val::global("WebGL2RenderingContext"); }
+
 WebGL2RenderingContext::WebGL2RenderingContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 WebGL2RenderingContext::WebGL2RenderingContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::Undefined> WebGL2RenderingContext::makeXRCompatible() {

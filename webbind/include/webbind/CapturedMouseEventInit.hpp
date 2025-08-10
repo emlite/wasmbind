@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CapturedMouseEventInit
-/// [`CapturedMouseEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/CapturedMouseEventInit)
 class CapturedMouseEventInit : public EventInit {
   explicit CapturedMouseEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit CapturedMouseEventInit(const emlite::Val &val) noexcept;
     CapturedMouseEventInit() noexcept;
     [[nodiscard]] CapturedMouseEventInit clone() const noexcept;
+    /// Getter of the `surfaceX` attribute.
     [[nodiscard]] long surfaceX() const;
+    /// Setter of the `surfaceX` attribute.
     void surfaceX(long value);
+    /// Getter of the `surfaceY` attribute.
     [[nodiscard]] long surfaceY() const;
+    /// Setter of the `surfaceY` attribute.
     void surfaceY(long value);
 };
 

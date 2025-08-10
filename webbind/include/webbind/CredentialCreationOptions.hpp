@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CredentialCreationOptions
-/// [`CredentialCreationOptions`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialCreationOptions)
 class CredentialCreationOptions : public emlite::Val {
   explicit CredentialCreationOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit CredentialCreationOptions(const emlite::Val &val) noexcept;
     CredentialCreationOptions() noexcept;
     [[nodiscard]] CredentialCreationOptions clone() const noexcept;
+    /// Getter of the `publicKey` attribute.
     [[nodiscard]] PublicKeyCredentialCreationOptions publicKey() const;
+    /// Setter of the `publicKey` attribute.
     void publicKey(const PublicKeyCredentialCreationOptions& value);
 };
 

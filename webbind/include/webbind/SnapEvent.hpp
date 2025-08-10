@@ -23,10 +23,10 @@ public:
     SnapEvent(const jsbind::String& type);
     /// The `new SnapEvent(..)` constructor, creating a new SnapEvent instance
     SnapEvent(const jsbind::String& type, const SnapEventInit& eventInitDict);
-    /// Getter of the `snapTargetBlock` attribute.
+    /// [`SnapEvent.snapTargetBlock`](https://developer.mozilla.org/en-US/docs/Web/API/SnapEvent/snapTargetBlock)
     /// [`SnapEvent.snapTargetBlock`](https://developer.mozilla.org/en-US/docs/Web/API/SnapEvent/snapTargetBlock)
     [[nodiscard]] Node snapTargetBlock() const;
-    /// Getter of the `snapTargetInline` attribute.
+    /// [`SnapEvent.snapTargetInline`](https://developer.mozilla.org/en-US/docs/Web/API/SnapEvent/snapTargetInline)
     /// [`SnapEvent.snapTargetInline`](https://developer.mozilla.org/en-US/docs/Web/API/SnapEvent/snapTargetInline)
     [[nodiscard]] Node snapTargetInline() const;
 };

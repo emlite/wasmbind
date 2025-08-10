@@ -1,14 +1,16 @@
 #include <webbind/GamepadEffectParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GamepadEffectParameters::GamepadEffectParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GamepadEffectParameters GamepadEffectParameters::take_ownership(Handle h) noexcept {
-        return GamepadEffectParameters(h);
-    }
+    return GamepadEffectParameters(h);
+}
+
 GamepadEffectParameters::GamepadEffectParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GamepadEffectParameters::GamepadEffectParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GamepadEffectParameters GamepadEffectParameters::clone() const noexcept { return *this; }
 
 long long GamepadEffectParameters::duration() const {

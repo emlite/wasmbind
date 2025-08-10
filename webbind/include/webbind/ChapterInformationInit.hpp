@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ChapterInformationInit
-/// [`ChapterInformationInit`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformationInit)
 class ChapterInformationInit : public emlite::Val {
   explicit ChapterInformationInit(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit ChapterInformationInit(const emlite::Val &val) noexcept;
     ChapterInformationInit() noexcept;
     [[nodiscard]] ChapterInformationInit clone() const noexcept;
+    /// Getter of the `title` attribute.
     [[nodiscard]] jsbind::String title() const;
+    /// Setter of the `title` attribute.
     void title(const jsbind::String& value);
+    /// Getter of the `startTime` attribute.
     [[nodiscard]] double startTime() const;
+    /// Setter of the `startTime` attribute.
     void startTime(double value);
+    /// Getter of the `artwork` attribute.
     [[nodiscard]] jsbind::TypedArray<MediaImage> artwork() const;
+    /// Setter of the `artwork` attribute.
     void artwork(const jsbind::TypedArray<MediaImage>& value);
 };
 

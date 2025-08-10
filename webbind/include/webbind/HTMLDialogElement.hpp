@@ -18,19 +18,19 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDialogElement(..)` constructor, creating a new HTMLDialogElement instance
     HTMLDialogElement();
-    /// Getter of the `open` attribute.
+    /// [`HTMLDialogElement.open`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/open)
     /// [`HTMLDialogElement.open`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/open)
     [[nodiscard]] bool open() const;
     /// Setter of the `open` attribute.
     /// [`HTMLDialogElement.open`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/open)
     void open(bool value);
-    /// Getter of the `returnValue` attribute.
+    /// [`HTMLDialogElement.returnValue`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue)
     /// [`HTMLDialogElement.returnValue`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue)
     [[nodiscard]] jsbind::String returnValue() const;
     /// Setter of the `returnValue` attribute.
     /// [`HTMLDialogElement.returnValue`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue)
     void returnValue(const jsbind::String& value);
-    /// Getter of the `closedBy` attribute.
+    /// [`HTMLDialogElement.closedBy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/closedBy)
     /// [`HTMLDialogElement.closedBy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/closedBy)
     [[nodiscard]] jsbind::String closedBy() const;
     /// Setter of the `closedBy` attribute.

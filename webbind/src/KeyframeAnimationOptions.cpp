@@ -1,15 +1,17 @@
 #include <webbind/KeyframeAnimationOptions.hpp>
 #include <webbind/AnimationTimeline.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 KeyframeAnimationOptions::KeyframeAnimationOptions(Handle h) noexcept : KeyframeEffectOptions(emlite::Val::take_ownership(h)) {}
 KeyframeAnimationOptions KeyframeAnimationOptions::take_ownership(Handle h) noexcept {
-        return KeyframeAnimationOptions(h);
-    }
+    return KeyframeAnimationOptions(h);
+}
+
 KeyframeAnimationOptions::KeyframeAnimationOptions(const emlite::Val &val) noexcept: KeyframeEffectOptions(val) {}
+
 KeyframeAnimationOptions::KeyframeAnimationOptions() noexcept: KeyframeEffectOptions(emlite::Val::object()) {}
+
 KeyframeAnimationOptions KeyframeAnimationOptions::clone() const noexcept { return *this; }
 
 jsbind::String KeyframeAnimationOptions::id() const {

@@ -1,15 +1,17 @@
 #include <webbind/AdAuctionData.hpp>
 #include <webbind/AdAuctionPerSellerData.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AdAuctionData::AdAuctionData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AdAuctionData AdAuctionData::take_ownership(Handle h) noexcept {
-        return AdAuctionData(h);
-    }
+    return AdAuctionData(h);
+}
+
 AdAuctionData::AdAuctionData(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AdAuctionData::AdAuctionData() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AdAuctionData AdAuctionData::clone() const noexcept { return *this; }
 
 jsbind::String AdAuctionData::requestId() const {

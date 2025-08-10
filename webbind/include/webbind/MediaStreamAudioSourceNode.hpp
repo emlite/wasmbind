@@ -22,7 +22,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStreamAudioSourceNode(..)` constructor, creating a new MediaStreamAudioSourceNode instance
     MediaStreamAudioSourceNode(const AudioContext& context, const MediaStreamAudioSourceOptions& options);
-    /// Getter of the `mediaStream` attribute.
+    /// [`MediaStreamAudioSourceNode.mediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode/mediaStream)
     /// [`MediaStreamAudioSourceNode.mediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode/mediaStream)
     [[nodiscard]] MediaStream mediaStream() const;
 };

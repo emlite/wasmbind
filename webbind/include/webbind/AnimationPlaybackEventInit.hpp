@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AnimationPlaybackEventInit
-/// [`AnimationPlaybackEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEventInit)
 class AnimationPlaybackEventInit : public EventInit {
   explicit AnimationPlaybackEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit AnimationPlaybackEventInit(const emlite::Val &val) noexcept;
     AnimationPlaybackEventInit() noexcept;
     [[nodiscard]] AnimationPlaybackEventInit clone() const noexcept;
+    /// Getter of the `currentTime` attribute.
     [[nodiscard]] jsbind::Any currentTime() const;
+    /// Setter of the `currentTime` attribute.
     void currentTime(const jsbind::Any& value);
+    /// Getter of the `timelineTime` attribute.
     [[nodiscard]] jsbind::Any timelineTime() const;
+    /// Setter of the `timelineTime` attribute.
     void timelineTime(const jsbind::Any& value);
 };
 

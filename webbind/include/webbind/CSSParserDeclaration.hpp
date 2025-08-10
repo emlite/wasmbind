@@ -22,10 +22,10 @@ public:
     CSSParserDeclaration(const jsbind::String& name);
     /// The `new CSSParserDeclaration(..)` constructor, creating a new CSSParserDeclaration instance
     CSSParserDeclaration(const jsbind::String& name, const jsbind::TypedArray<CSSParserRule>& body);
-    /// Getter of the `name` attribute.
+    /// [`CSSParserDeclaration.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserDeclaration/name)
     /// [`CSSParserDeclaration.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserDeclaration/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `body` attribute.
+    /// [`CSSParserDeclaration.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserDeclaration/body)
     /// [`CSSParserDeclaration.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserDeclaration/body)
     [[nodiscard]] jsbind::TypedArray<CSSParserValue> body() const;
 };

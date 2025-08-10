@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FileSystemRemoveOptions
-/// [`FileSystemRemoveOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemRemoveOptions)
 class FileSystemRemoveOptions : public emlite::Val {
   explicit FileSystemRemoveOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit FileSystemRemoveOptions(const emlite::Val &val) noexcept;
     FileSystemRemoveOptions() noexcept;
     [[nodiscard]] FileSystemRemoveOptions clone() const noexcept;
+    /// Getter of the `recursive` attribute.
     [[nodiscard]] bool recursive() const;
+    /// Setter of the `recursive` attribute.
     void recursive(bool value);
 };
 

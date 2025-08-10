@@ -35,25 +35,25 @@ public:
     /// The fromPoint method.
     /// [`DOMPoint.fromPoint`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/fromPoint)
     static DOMPoint fromPoint(const DOMPointInit& other);
-    /// Getter of the `x` attribute.
+    /// [`DOMPoint.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/x)
     /// [`DOMPoint.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/x)
     [[nodiscard]] double x() const;
     /// Setter of the `x` attribute.
     /// [`DOMPoint.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/x)
     void x(double value);
-    /// Getter of the `y` attribute.
+    /// [`DOMPoint.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/y)
     /// [`DOMPoint.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/y)
     [[nodiscard]] double y() const;
     /// Setter of the `y` attribute.
     /// [`DOMPoint.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/y)
     void y(double value);
-    /// Getter of the `z` attribute.
+    /// [`DOMPoint.z`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/z)
     /// [`DOMPoint.z`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/z)
     [[nodiscard]] double z() const;
     /// Setter of the `z` attribute.
     /// [`DOMPoint.z`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/z)
     void z(double value);
-    /// Getter of the `w` attribute.
+    /// [`DOMPoint.w`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/w)
     /// [`DOMPoint.w`](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/w)
     [[nodiscard]] double w() const;
     /// Setter of the `w` attribute.

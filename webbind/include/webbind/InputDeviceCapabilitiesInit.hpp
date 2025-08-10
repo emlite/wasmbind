@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type InputDeviceCapabilitiesInit
-/// [`InputDeviceCapabilitiesInit`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilitiesInit)
 class InputDeviceCapabilitiesInit : public emlite::Val {
   explicit InputDeviceCapabilitiesInit(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit InputDeviceCapabilitiesInit(const emlite::Val &val) noexcept;
     InputDeviceCapabilitiesInit() noexcept;
     [[nodiscard]] InputDeviceCapabilitiesInit clone() const noexcept;
+    /// Getter of the `firesTouchEvents` attribute.
     [[nodiscard]] bool firesTouchEvents() const;
+    /// Setter of the `firesTouchEvents` attribute.
     void firesTouchEvents(bool value);
+    /// Getter of the `pointerMovementScrolls` attribute.
     [[nodiscard]] bool pointerMovementScrolls() const;
+    /// Setter of the `pointerMovementScrolls` attribute.
     void pointerMovementScrolls(bool value);
 };
 

@@ -19,10 +19,10 @@ public:
     SpeechRecognitionPhrase(const jsbind::String& phrase);
     /// The `new SpeechRecognitionPhrase(..)` constructor, creating a new SpeechRecognitionPhrase instance
     SpeechRecognitionPhrase(const jsbind::String& phrase, float boost);
-    /// Getter of the `phrase` attribute.
+    /// [`SpeechRecognitionPhrase.phrase`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionPhrase/phrase)
     /// [`SpeechRecognitionPhrase.phrase`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionPhrase/phrase)
     [[nodiscard]] jsbind::String phrase() const;
-    /// Getter of the `boost` attribute.
+    /// [`SpeechRecognitionPhrase.boost`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionPhrase/boost)
     /// [`SpeechRecognitionPhrase.boost`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionPhrase/boost)
     [[nodiscard]] float boost() const;
 };

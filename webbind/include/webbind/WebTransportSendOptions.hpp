@@ -9,7 +9,6 @@ namespace webbind {
 class WebTransportSendGroup;
 
 /// Dictionary type WebTransportSendOptions
-/// [`WebTransportSendOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendOptions)
 class WebTransportSendOptions : public emlite::Val {
   explicit WebTransportSendOptions(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit WebTransportSendOptions(const emlite::Val &val) noexcept;
     WebTransportSendOptions() noexcept;
     [[nodiscard]] WebTransportSendOptions clone() const noexcept;
+    /// Getter of the `sendGroup` attribute.
     [[nodiscard]] WebTransportSendGroup sendGroup() const;
+    /// Setter of the `sendGroup` attribute.
     void sendGroup(const WebTransportSendGroup& value);
+    /// Getter of the `sendOrder` attribute.
     [[nodiscard]] long long sendOrder() const;
+    /// Setter of the `sendOrder` attribute.
     void sendOrder(long long value);
 };
 

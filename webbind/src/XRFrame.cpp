@@ -23,11 +23,15 @@
 namespace webbind {
 
 XRFrame XRFrame::take_ownership(Handle h) noexcept {
-        return XRFrame(h);
-    }
+    return XRFrame(h);
+}
+
 XRFrame XRFrame::clone() const noexcept { return *this; }
+
 emlite::Val XRFrame::instance() noexcept { return emlite::Val::global("XRFrame"); }
+
 XRFrame::XRFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 XRFrame::XRFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 XRSession XRFrame::session() const {

@@ -1,14 +1,16 @@
 #include <webbind/NavigationNavigateOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NavigationNavigateOptions::NavigationNavigateOptions(Handle h) noexcept : NavigationOptions(emlite::Val::take_ownership(h)) {}
 NavigationNavigateOptions NavigationNavigateOptions::take_ownership(Handle h) noexcept {
-        return NavigationNavigateOptions(h);
-    }
+    return NavigationNavigateOptions(h);
+}
+
 NavigationNavigateOptions::NavigationNavigateOptions(const emlite::Val &val) noexcept: NavigationOptions(val) {}
+
 NavigationNavigateOptions::NavigationNavigateOptions() noexcept: NavigationOptions(emlite::Val::object()) {}
+
 NavigationNavigateOptions NavigationNavigateOptions::clone() const noexcept { return *this; }
 
 jsbind::Any NavigationNavigateOptions::state() const {

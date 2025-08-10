@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type BluetoothDataFilterInit
-/// [`BluetoothDataFilterInit`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDataFilterInit)
 class BluetoothDataFilterInit : public emlite::Val {
   explicit BluetoothDataFilterInit(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit BluetoothDataFilterInit(const emlite::Val &val) noexcept;
     BluetoothDataFilterInit() noexcept;
     [[nodiscard]] BluetoothDataFilterInit clone() const noexcept;
+    /// Getter of the `dataPrefix` attribute.
     [[nodiscard]] jsbind::Any dataPrefix() const;
+    /// Setter of the `dataPrefix` attribute.
     void dataPrefix(const jsbind::Any& value);
+    /// Getter of the `mask` attribute.
     [[nodiscard]] jsbind::Any mask() const;
+    /// Setter of the `mask` attribute.
     void mask(const jsbind::Any& value);
 };
 

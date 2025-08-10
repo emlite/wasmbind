@@ -1,15 +1,17 @@
 #include <webbind/NotificationOptions.hpp>
 #include <webbind/NotificationAction.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NotificationOptions::NotificationOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NotificationOptions NotificationOptions::take_ownership(Handle h) noexcept {
-        return NotificationOptions(h);
-    }
+    return NotificationOptions(h);
+}
+
 NotificationOptions::NotificationOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 NotificationOptions::NotificationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 NotificationOptions NotificationOptions::clone() const noexcept { return *this; }
 
 NotificationDirection NotificationOptions::dir() const {

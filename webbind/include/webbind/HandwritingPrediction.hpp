@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type HandwritingPrediction
-/// [`HandwritingPrediction`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingPrediction)
 class HandwritingPrediction : public emlite::Val {
   explicit HandwritingPrediction(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit HandwritingPrediction(const emlite::Val &val) noexcept;
     HandwritingPrediction() noexcept;
     [[nodiscard]] HandwritingPrediction clone() const noexcept;
+    /// Getter of the `text` attribute.
     [[nodiscard]] jsbind::String text() const;
+    /// Setter of the `text` attribute.
     void text(const jsbind::String& value);
+    /// Getter of the `segmentationResult` attribute.
     [[nodiscard]] jsbind::TypedArray<HandwritingSegment> segmentationResult() const;
+    /// Setter of the `segmentationResult` attribute.
     void segmentationResult(const jsbind::TypedArray<HandwritingSegment>& value);
 };
 

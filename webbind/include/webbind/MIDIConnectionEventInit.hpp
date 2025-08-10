@@ -10,7 +10,6 @@ namespace webbind {
 class MIDIPort;
 
 /// Dictionary type MIDIConnectionEventInit
-/// [`MIDIConnectionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEventInit)
 class MIDIConnectionEventInit : public EventInit {
   explicit MIDIConnectionEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit MIDIConnectionEventInit(const emlite::Val &val) noexcept;
     MIDIConnectionEventInit() noexcept;
     [[nodiscard]] MIDIConnectionEventInit clone() const noexcept;
+    /// Getter of the `port` attribute.
     [[nodiscard]] MIDIPort port() const;
+    /// Setter of the `port` attribute.
     void port(const MIDIPort& value);
 };
 

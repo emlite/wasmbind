@@ -18,10 +18,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSParserBlock(..)` constructor, creating a new CSSParserBlock instance
     CSSParserBlock(const jsbind::String& name, const jsbind::TypedArray<CSSParserValue>& body);
-    /// Getter of the `name` attribute.
+    /// [`CSSParserBlock.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserBlock/name)
     /// [`CSSParserBlock.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserBlock/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `body` attribute.
+    /// [`CSSParserBlock.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserBlock/body)
     /// [`CSSParserBlock.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserBlock/body)
     [[nodiscard]] jsbind::TypedArray<CSSParserValue> body() const;
 };

@@ -1,14 +1,16 @@
 #include <webbind/AuctionReportBuyerDebugModeConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuctionReportBuyerDebugModeConfig::AuctionReportBuyerDebugModeConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuctionReportBuyerDebugModeConfig AuctionReportBuyerDebugModeConfig::take_ownership(Handle h) noexcept {
-        return AuctionReportBuyerDebugModeConfig(h);
-    }
+    return AuctionReportBuyerDebugModeConfig(h);
+}
+
 AuctionReportBuyerDebugModeConfig::AuctionReportBuyerDebugModeConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuctionReportBuyerDebugModeConfig::AuctionReportBuyerDebugModeConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuctionReportBuyerDebugModeConfig AuctionReportBuyerDebugModeConfig::clone() const noexcept { return *this; }
 
 bool AuctionReportBuyerDebugModeConfig::enabled() const {

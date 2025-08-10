@@ -6,11 +6,15 @@
 namespace webbind {
 
 IntersectionObserverEntry IntersectionObserverEntry::take_ownership(Handle h) noexcept {
-        return IntersectionObserverEntry(h);
-    }
+    return IntersectionObserverEntry(h);
+}
+
 IntersectionObserverEntry IntersectionObserverEntry::clone() const noexcept { return *this; }
+
 emlite::Val IntersectionObserverEntry::instance() noexcept { return emlite::Val::global("IntersectionObserverEntry"); }
+
 IntersectionObserverEntry::IntersectionObserverEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 IntersectionObserverEntry::IntersectionObserverEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 IntersectionObserverEntry::IntersectionObserverEntry(const IntersectionObserverEntryInit& intersectionObserverEntryInit) : emlite::Val(emlite::Val::global("IntersectionObserverEntry").new_(intersectionObserverEntryInit)) {}

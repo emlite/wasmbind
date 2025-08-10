@@ -1,14 +1,16 @@
 #include <webbind/MLTensorDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLTensorDescriptor::MLTensorDescriptor(Handle h) noexcept : MLOperandDescriptor(emlite::Val::take_ownership(h)) {}
 MLTensorDescriptor MLTensorDescriptor::take_ownership(Handle h) noexcept {
-        return MLTensorDescriptor(h);
-    }
+    return MLTensorDescriptor(h);
+}
+
 MLTensorDescriptor::MLTensorDescriptor(const emlite::Val &val) noexcept: MLOperandDescriptor(val) {}
+
 MLTensorDescriptor::MLTensorDescriptor() noexcept: MLOperandDescriptor(emlite::Val::object()) {}
+
 MLTensorDescriptor MLTensorDescriptor::clone() const noexcept { return *this; }
 
 bool MLTensorDescriptor::readable() const {

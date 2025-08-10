@@ -5,11 +5,15 @@
 namespace webbind {
 
 XRCylinderLayer XRCylinderLayer::take_ownership(Handle h) noexcept {
-        return XRCylinderLayer(h);
-    }
+    return XRCylinderLayer(h);
+}
+
 XRCylinderLayer XRCylinderLayer::clone() const noexcept { return *this; }
+
 emlite::Val XRCylinderLayer::instance() noexcept { return emlite::Val::global("XRCylinderLayer"); }
+
 XRCylinderLayer::XRCylinderLayer(Handle h) noexcept : XRCompositionLayer(emlite::Val::take_ownership(h)) {}
+
 XRCylinderLayer::XRCylinderLayer(const emlite::Val &val) noexcept: XRCompositionLayer(val) {}
 
 XRSpace XRCylinderLayer::space() const {

@@ -2,15 +2,17 @@
 #include <webbind/DOMPointReadOnly.hpp>
 #include <webbind/DOMRectReadOnly.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GamepadTouch::GamepadTouch(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GamepadTouch GamepadTouch::take_ownership(Handle h) noexcept {
-        return GamepadTouch(h);
-    }
+    return GamepadTouch(h);
+}
+
 GamepadTouch::GamepadTouch(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GamepadTouch::GamepadTouch() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GamepadTouch GamepadTouch::clone() const noexcept { return *this; }
 
 unsigned long GamepadTouch::touchId() const {

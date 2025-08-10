@@ -4,11 +4,15 @@
 namespace webbind {
 
 GPUPipelineError GPUPipelineError::take_ownership(Handle h) noexcept {
-        return GPUPipelineError(h);
-    }
+    return GPUPipelineError(h);
+}
+
 GPUPipelineError GPUPipelineError::clone() const noexcept { return *this; }
+
 emlite::Val GPUPipelineError::instance() noexcept { return emlite::Val::global("GPUPipelineError"); }
+
 GPUPipelineError::GPUPipelineError(Handle h) noexcept : DOMException(emlite::Val::take_ownership(h)) {}
+
 GPUPipelineError::GPUPipelineError(const emlite::Val &val) noexcept: DOMException(val) {}
 
 GPUPipelineError::GPUPipelineError() : DOMException(emlite::Val::global("GPUPipelineError").new_()) {}

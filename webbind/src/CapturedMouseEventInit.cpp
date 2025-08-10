@@ -1,14 +1,16 @@
 #include <webbind/CapturedMouseEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CapturedMouseEventInit::CapturedMouseEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 CapturedMouseEventInit CapturedMouseEventInit::take_ownership(Handle h) noexcept {
-        return CapturedMouseEventInit(h);
-    }
+    return CapturedMouseEventInit(h);
+}
+
 CapturedMouseEventInit::CapturedMouseEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 CapturedMouseEventInit::CapturedMouseEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 CapturedMouseEventInit CapturedMouseEventInit::clone() const noexcept { return *this; }
 
 long CapturedMouseEventInit::surfaceX() const {

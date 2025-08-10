@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type BackgroundSyncOptions
-/// [`BackgroundSyncOptions`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundSyncOptions)
 class BackgroundSyncOptions : public emlite::Val {
   explicit BackgroundSyncOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit BackgroundSyncOptions(const emlite::Val &val) noexcept;
     BackgroundSyncOptions() noexcept;
     [[nodiscard]] BackgroundSyncOptions clone() const noexcept;
+    /// Getter of the `minInterval` attribute.
     [[nodiscard]] long long minInterval() const;
+    /// Setter of the `minInterval` attribute.
     void minInterval(long long value);
 };
 

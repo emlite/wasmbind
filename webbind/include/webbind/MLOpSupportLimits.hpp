@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLOpSupportLimits
-/// [`MLOpSupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLOpSupportLimits)
 class MLOpSupportLimits : public emlite::Val {
   explicit MLOpSupportLimits(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLOpSupportLimits(const emlite::Val &val) noexcept;
     MLOpSupportLimits() noexcept;
     [[nodiscard]] MLOpSupportLimits clone() const noexcept;
+    /// Getter of the `where` attribute.
     [[nodiscard]] MLWhereSupportLimits where() const;
+    /// Setter of the `where` attribute.
     void where(const MLWhereSupportLimits& value);
 };
 

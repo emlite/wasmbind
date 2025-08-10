@@ -29,7 +29,7 @@ public:
     /// The requestSession method.
     /// [`XRSystem.requestSession`](https://developer.mozilla.org/en-US/docs/Web/API/XRSystem/requestSession)
     jsbind::Promise<XRSession> requestSession(const XRSessionMode& mode, const XRSessionInit& options);
-    /// Getter of the `ondevicechange` attribute.
+    /// [`XRSystem.ondevicechange`](https://developer.mozilla.org/en-US/docs/Web/API/XRSystem/ondevicechange)
     /// [`XRSystem.ondevicechange`](https://developer.mozilla.org/en-US/docs/Web/API/XRSystem/ondevicechange)
     [[nodiscard]] jsbind::Any ondevicechange() const;
     /// Setter of the `ondevicechange` attribute.

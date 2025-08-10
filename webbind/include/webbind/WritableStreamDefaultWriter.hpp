@@ -19,13 +19,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new WritableStreamDefaultWriter(..)` constructor, creating a new WritableStreamDefaultWriter instance
     WritableStreamDefaultWriter(const WritableStream& stream);
-    /// Getter of the `closed` attribute.
+    /// [`WritableStreamDefaultWriter.closed`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/closed)
     /// [`WritableStreamDefaultWriter.closed`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/closed)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> closed() const;
-    /// Getter of the `desiredSize` attribute.
+    /// [`WritableStreamDefaultWriter.desiredSize`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
     /// [`WritableStreamDefaultWriter.desiredSize`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
     [[nodiscard]] double desiredSize() const;
-    /// Getter of the `ready` attribute.
+    /// [`WritableStreamDefaultWriter.ready`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/ready)
     /// [`WritableStreamDefaultWriter.ready`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/ready)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> ready() const;
     /// The abort method.

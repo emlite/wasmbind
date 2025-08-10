@@ -1,15 +1,17 @@
 #include <webbind/WriterCreateOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WriterCreateOptions::WriterCreateOptions(Handle h) noexcept : WriterCreateCoreOptions(emlite::Val::take_ownership(h)) {}
 WriterCreateOptions WriterCreateOptions::take_ownership(Handle h) noexcept {
-        return WriterCreateOptions(h);
-    }
+    return WriterCreateOptions(h);
+}
+
 WriterCreateOptions::WriterCreateOptions(const emlite::Val &val) noexcept: WriterCreateCoreOptions(val) {}
+
 WriterCreateOptions::WriterCreateOptions() noexcept: WriterCreateCoreOptions(emlite::Val::object()) {}
+
 WriterCreateOptions WriterCreateOptions::clone() const noexcept { return *this; }
 
 AbortSignal WriterCreateOptions::signal() const {

@@ -1,14 +1,16 @@
 #include <webbind/AttributionConversionOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AttributionConversionOptions::AttributionConversionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AttributionConversionOptions AttributionConversionOptions::take_ownership(Handle h) noexcept {
-        return AttributionConversionOptions(h);
-    }
+    return AttributionConversionOptions(h);
+}
+
 AttributionConversionOptions::AttributionConversionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AttributionConversionOptions::AttributionConversionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AttributionConversionOptions AttributionConversionOptions::clone() const noexcept { return *this; }
 
 jsbind::String AttributionConversionOptions::aggregationService() const {

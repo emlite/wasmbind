@@ -4,11 +4,15 @@
 namespace webbind {
 
 EncodedAudioChunk EncodedAudioChunk::take_ownership(Handle h) noexcept {
-        return EncodedAudioChunk(h);
-    }
+    return EncodedAudioChunk(h);
+}
+
 EncodedAudioChunk EncodedAudioChunk::clone() const noexcept { return *this; }
+
 emlite::Val EncodedAudioChunk::instance() noexcept { return emlite::Val::global("EncodedAudioChunk"); }
+
 EncodedAudioChunk::EncodedAudioChunk(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 EncodedAudioChunk::EncodedAudioChunk(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 EncodedAudioChunk::EncodedAudioChunk(const EncodedAudioChunkInit& init) : emlite::Val(emlite::Val::global("EncodedAudioChunk").new_(init)) {}

@@ -20,22 +20,22 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFRecord(..)` constructor, creating a new NDEFRecord instance
     NDEFRecord(const NDEFRecordInit& recordInit);
-    /// Getter of the `recordType` attribute.
+    /// [`NDEFRecord.recordType`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/recordType)
     /// [`NDEFRecord.recordType`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/recordType)
     [[nodiscard]] jsbind::String recordType() const;
-    /// Getter of the `mediaType` attribute.
+    /// [`NDEFRecord.mediaType`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/mediaType)
     /// [`NDEFRecord.mediaType`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/mediaType)
     [[nodiscard]] jsbind::String mediaType() const;
-    /// Getter of the `id` attribute.
+    /// [`NDEFRecord.id`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/id)
     /// [`NDEFRecord.id`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/id)
     [[nodiscard]] jsbind::String id() const;
-    /// Getter of the `data` attribute.
+    /// [`NDEFRecord.data`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/data)
     /// [`NDEFRecord.data`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/data)
     [[nodiscard]] jsbind::DataView data() const;
-    /// Getter of the `encoding` attribute.
+    /// [`NDEFRecord.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/encoding)
     /// [`NDEFRecord.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/encoding)
     [[nodiscard]] jsbind::String encoding() const;
-    /// Getter of the `lang` attribute.
+    /// [`NDEFRecord.lang`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/lang)
     /// [`NDEFRecord.lang`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/lang)
     [[nodiscard]] jsbind::String lang() const;
     /// The toRecords method.

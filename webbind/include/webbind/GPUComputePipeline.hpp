@@ -17,7 +17,7 @@ public:
     static GPUComputePipeline take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUComputePipeline clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `label` attribute.
+    /// [`GPUComputePipeline.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline/label)
     /// [`GPUComputePipeline.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

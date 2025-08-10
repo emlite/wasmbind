@@ -20,7 +20,7 @@ public:
     KeyFrameRequestEvent(const jsbind::String& type);
     /// The `new KeyFrameRequestEvent(..)` constructor, creating a new KeyFrameRequestEvent instance
     KeyFrameRequestEvent(const jsbind::String& type, const jsbind::String& rid);
-    /// Getter of the `rid` attribute.
+    /// [`KeyFrameRequestEvent.rid`](https://developer.mozilla.org/en-US/docs/Web/API/KeyFrameRequestEvent/rid)
     /// [`KeyFrameRequestEvent.rid`](https://developer.mozilla.org/en-US/docs/Web/API/KeyFrameRequestEvent/rid)
     [[nodiscard]] jsbind::String rid() const;
 };

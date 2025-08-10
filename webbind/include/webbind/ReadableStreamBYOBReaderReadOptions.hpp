@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ReadableStreamBYOBReaderReadOptions
-/// [`ReadableStreamBYOBReaderReadOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReaderReadOptions)
 class ReadableStreamBYOBReaderReadOptions : public emlite::Val {
   explicit ReadableStreamBYOBReaderReadOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ReadableStreamBYOBReaderReadOptions(const emlite::Val &val) noexcept;
     ReadableStreamBYOBReaderReadOptions() noexcept;
     [[nodiscard]] ReadableStreamBYOBReaderReadOptions clone() const noexcept;
+    /// Getter of the `min` attribute.
     [[nodiscard]] long long min() const;
+    /// Setter of the `min` attribute.
     void min(long long value);
 };
 

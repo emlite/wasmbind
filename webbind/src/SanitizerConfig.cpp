@@ -1,14 +1,16 @@
 #include <webbind/SanitizerConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SanitizerConfig::SanitizerConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SanitizerConfig SanitizerConfig::take_ownership(Handle h) noexcept {
-        return SanitizerConfig(h);
-    }
+    return SanitizerConfig(h);
+}
+
 SanitizerConfig::SanitizerConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SanitizerConfig::SanitizerConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SanitizerConfig SanitizerConfig::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::Any> SanitizerConfig::elements() const {

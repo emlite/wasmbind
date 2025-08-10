@@ -9,7 +9,6 @@ namespace webbind {
 class Element;
 
 /// Dictionary type XRDOMOverlayInit
-/// [`XRDOMOverlayInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRDOMOverlayInit)
 class XRDOMOverlayInit : public emlite::Val {
   explicit XRDOMOverlayInit(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit XRDOMOverlayInit(const emlite::Val &val) noexcept;
     XRDOMOverlayInit() noexcept;
     [[nodiscard]] XRDOMOverlayInit clone() const noexcept;
+    /// Getter of the `root` attribute.
     [[nodiscard]] Element root() const;
+    /// Setter of the `root` attribute.
     void root(const Element& value);
 };
 

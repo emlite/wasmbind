@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MagnetometerSensorOptions
-/// [`MagnetometerSensorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MagnetometerSensorOptions)
 class MagnetometerSensorOptions : public SensorOptions {
   explicit MagnetometerSensorOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MagnetometerSensorOptions(const emlite::Val &val) noexcept;
     MagnetometerSensorOptions() noexcept;
     [[nodiscard]] MagnetometerSensorOptions clone() const noexcept;
+    /// Getter of the `referenceFrame` attribute.
     [[nodiscard]] MagnetometerLocalCoordinateSystem referenceFrame() const;
+    /// Setter of the `referenceFrame` attribute.
     void referenceFrame(const MagnetometerLocalCoordinateSystem& value);
 };
 

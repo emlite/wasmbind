@@ -21,10 +21,10 @@ public:
     MediaEncryptedEvent(const jsbind::String& type);
     /// The `new MediaEncryptedEvent(..)` constructor, creating a new MediaEncryptedEvent instance
     MediaEncryptedEvent(const jsbind::String& type, const MediaEncryptedEventInit& eventInitDict);
-    /// Getter of the `initDataType` attribute.
+    /// [`MediaEncryptedEvent.initDataType`](https://developer.mozilla.org/en-US/docs/Web/API/MediaEncryptedEvent/initDataType)
     /// [`MediaEncryptedEvent.initDataType`](https://developer.mozilla.org/en-US/docs/Web/API/MediaEncryptedEvent/initDataType)
     [[nodiscard]] jsbind::String initDataType() const;
-    /// Getter of the `initData` attribute.
+    /// [`MediaEncryptedEvent.initData`](https://developer.mozilla.org/en-US/docs/Web/API/MediaEncryptedEvent/initData)
     /// [`MediaEncryptedEvent.initData`](https://developer.mozilla.org/en-US/docs/Web/API/MediaEncryptedEvent/initData)
     [[nodiscard]] jsbind::ArrayBuffer initData() const;
 };

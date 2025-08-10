@@ -11,7 +11,6 @@ class XRReferenceSpace;
 class XRRigidTransform;
 
 /// Dictionary type XRReferenceSpaceEventInit
-/// [`XRReferenceSpaceEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceEventInit)
 class XRReferenceSpaceEventInit : public EventInit {
   explicit XRReferenceSpaceEventInit(Handle h) noexcept;
 public:
@@ -19,9 +18,13 @@ public:
     explicit XRReferenceSpaceEventInit(const emlite::Val &val) noexcept;
     XRReferenceSpaceEventInit() noexcept;
     [[nodiscard]] XRReferenceSpaceEventInit clone() const noexcept;
+    /// Getter of the `referenceSpace` attribute.
     [[nodiscard]] XRReferenceSpace referenceSpace() const;
+    /// Setter of the `referenceSpace` attribute.
     void referenceSpace(const XRReferenceSpace& value);
+    /// Getter of the `transform` attribute.
     [[nodiscard]] XRRigidTransform transform() const;
+    /// Setter of the `transform` attribute.
     void transform(const XRRigidTransform& value);
 };
 

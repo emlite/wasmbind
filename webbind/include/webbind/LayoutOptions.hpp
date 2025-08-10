@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type LayoutOptions
-/// [`LayoutOptions`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutOptions)
 class LayoutOptions : public emlite::Val {
   explicit LayoutOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit LayoutOptions(const emlite::Val &val) noexcept;
     LayoutOptions() noexcept;
     [[nodiscard]] LayoutOptions clone() const noexcept;
+    /// Getter of the `childDisplay` attribute.
     [[nodiscard]] ChildDisplayType childDisplay() const;
+    /// Setter of the `childDisplay` attribute.
     void childDisplay(const ChildDisplayType& value);
+    /// Getter of the `sizing` attribute.
     [[nodiscard]] LayoutSizingMode sizing() const;
+    /// Setter of the `sizing` attribute.
     void sizing(const LayoutSizingMode& value);
 };
 

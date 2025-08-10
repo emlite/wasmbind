@@ -5,11 +5,15 @@
 namespace webbind {
 
 DeviceChangeEvent DeviceChangeEvent::take_ownership(Handle h) noexcept {
-        return DeviceChangeEvent(h);
-    }
+    return DeviceChangeEvent(h);
+}
+
 DeviceChangeEvent DeviceChangeEvent::clone() const noexcept { return *this; }
+
 emlite::Val DeviceChangeEvent::instance() noexcept { return emlite::Val::global("DeviceChangeEvent"); }
+
 DeviceChangeEvent::DeviceChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 DeviceChangeEvent::DeviceChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 DeviceChangeEvent::DeviceChangeEvent(const jsbind::String& type) : Event(emlite::Val::global("DeviceChangeEvent").new_(type)) {}

@@ -1,15 +1,17 @@
 #include <webbind/OscillatorOptions.hpp>
 #include <webbind/PeriodicWave.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 OscillatorOptions::OscillatorOptions(Handle h) noexcept : AudioNodeOptions(emlite::Val::take_ownership(h)) {}
 OscillatorOptions OscillatorOptions::take_ownership(Handle h) noexcept {
-        return OscillatorOptions(h);
-    }
+    return OscillatorOptions(h);
+}
+
 OscillatorOptions::OscillatorOptions(const emlite::Val &val) noexcept: AudioNodeOptions(val) {}
+
 OscillatorOptions::OscillatorOptions() noexcept: AudioNodeOptions(emlite::Val::object()) {}
+
 OscillatorOptions OscillatorOptions::clone() const noexcept { return *this; }
 
 OscillatorType OscillatorOptions::type() const {

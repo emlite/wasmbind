@@ -1,15 +1,17 @@
 #include <webbind/IdentityAssertionResponse.hpp>
 #include <webbind/IdentityCredentialErrorInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityAssertionResponse::IdentityAssertionResponse(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityAssertionResponse IdentityAssertionResponse::take_ownership(Handle h) noexcept {
-        return IdentityAssertionResponse(h);
-    }
+    return IdentityAssertionResponse(h);
+}
+
 IdentityAssertionResponse::IdentityAssertionResponse(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityAssertionResponse::IdentityAssertionResponse() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityAssertionResponse IdentityAssertionResponse::clone() const noexcept { return *this; }
 
 jsbind::String IdentityAssertionResponse::token() const {

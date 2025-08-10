@@ -20,13 +20,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new IdleDetector(..)` constructor, creating a new IdleDetector instance
     IdleDetector();
-    /// Getter of the `userState` attribute.
+    /// [`IdleDetector.userState`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/userState)
     /// [`IdleDetector.userState`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/userState)
     [[nodiscard]] UserIdleState userState() const;
-    /// Getter of the `screenState` attribute.
+    /// [`IdleDetector.screenState`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/screenState)
     /// [`IdleDetector.screenState`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/screenState)
     [[nodiscard]] ScreenIdleState screenState() const;
-    /// Getter of the `onchange` attribute.
+    /// [`IdleDetector.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/onchange)
     /// [`IdleDetector.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

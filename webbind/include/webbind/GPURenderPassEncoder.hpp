@@ -45,7 +45,7 @@ public:
     /// The end method.
     /// [`GPURenderPassEncoder.end`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/end)
     jsbind::Undefined end();
-    /// Getter of the `label` attribute.
+    /// [`GPURenderPassEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/label)
     /// [`GPURenderPassEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

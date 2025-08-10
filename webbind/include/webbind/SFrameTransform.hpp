@@ -31,16 +31,16 @@ public:
     /// The setEncryptionKey method.
     /// [`SFrameTransform.setEncryptionKey`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/setEncryptionKey)
     jsbind::Promise<jsbind::Undefined> setEncryptionKey(const CryptoKey& key, const jsbind::Any& keyID);
-    /// Getter of the `onerror` attribute.
+    /// [`SFrameTransform.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/onerror)
     /// [`SFrameTransform.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.
     /// [`SFrameTransform.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/onerror)
     void onerror(const jsbind::Any& value);
-    /// Getter of the `readable` attribute.
+    /// [`SFrameTransform.readable`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/readable)
     /// [`SFrameTransform.readable`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/readable)
     [[nodiscard]] ReadableStream readable() const;
-    /// Getter of the `writable` attribute.
+    /// [`SFrameTransform.writable`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/writable)
     /// [`SFrameTransform.writable`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransform/writable)
     [[nodiscard]] WritableStream writable() const;
 };

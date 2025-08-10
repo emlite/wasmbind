@@ -16,7 +16,7 @@ public:
     static OrientationSensor take_ownership(Handle h) noexcept;
     [[nodiscard]] OrientationSensor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `quaternion` attribute.
+    /// [`OrientationSensor.quaternion`](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion)
     /// [`OrientationSensor.quaternion`](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion)
     [[nodiscard]] jsbind::TypedArray<double> quaternion() const;
     /// The populateMatrix method.

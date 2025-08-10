@@ -1,15 +1,17 @@
 #include <webbind/AudioBufferSourceOptions.hpp>
 #include <webbind/AudioBuffer.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioBufferSourceOptions::AudioBufferSourceOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioBufferSourceOptions AudioBufferSourceOptions::take_ownership(Handle h) noexcept {
-        return AudioBufferSourceOptions(h);
-    }
+    return AudioBufferSourceOptions(h);
+}
+
 AudioBufferSourceOptions::AudioBufferSourceOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioBufferSourceOptions::AudioBufferSourceOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioBufferSourceOptions AudioBufferSourceOptions::clone() const noexcept { return *this; }
 
 AudioBuffer AudioBufferSourceOptions::buffer() const {

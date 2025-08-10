@@ -1,14 +1,16 @@
 #include <webbind/AudioWorkletNodeOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioWorkletNodeOptions::AudioWorkletNodeOptions(Handle h) noexcept : AudioNodeOptions(emlite::Val::take_ownership(h)) {}
 AudioWorkletNodeOptions AudioWorkletNodeOptions::take_ownership(Handle h) noexcept {
-        return AudioWorkletNodeOptions(h);
-    }
+    return AudioWorkletNodeOptions(h);
+}
+
 AudioWorkletNodeOptions::AudioWorkletNodeOptions(const emlite::Val &val) noexcept: AudioNodeOptions(val) {}
+
 AudioWorkletNodeOptions::AudioWorkletNodeOptions() noexcept: AudioNodeOptions(emlite::Val::object()) {}
+
 AudioWorkletNodeOptions AudioWorkletNodeOptions::clone() const noexcept { return *this; }
 
 unsigned long AudioWorkletNodeOptions::numberOfInputs() const {

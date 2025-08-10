@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLHtmlElement(..)` constructor, creating a new HTMLHtmlElement instance
     HTMLHtmlElement();
-    /// Getter of the `version` attribute.
+    /// [`HTMLHtmlElement.version`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLHtmlElement/version)
     /// [`HTMLHtmlElement.version`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLHtmlElement/version)
     [[nodiscard]] jsbind::String version() const;
     /// Setter of the `version` attribute.

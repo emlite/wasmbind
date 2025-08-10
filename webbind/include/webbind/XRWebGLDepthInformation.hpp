@@ -19,13 +19,13 @@ public:
     static XRWebGLDepthInformation take_ownership(Handle h) noexcept;
     [[nodiscard]] XRWebGLDepthInformation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `texture` attribute.
+    /// [`XRWebGLDepthInformation.texture`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/texture)
     /// [`XRWebGLDepthInformation.texture`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/texture)
     [[nodiscard]] WebGLTexture texture() const;
-    /// Getter of the `textureType` attribute.
+    /// [`XRWebGLDepthInformation.textureType`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/textureType)
     /// [`XRWebGLDepthInformation.textureType`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/textureType)
     [[nodiscard]] XRTextureType textureType() const;
-    /// Getter of the `imageIndex` attribute.
+    /// [`XRWebGLDepthInformation.imageIndex`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/imageIndex)
     /// [`XRWebGLDepthInformation.imageIndex`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLDepthInformation/imageIndex)
     [[nodiscard]] unsigned long imageIndex() const;
 };

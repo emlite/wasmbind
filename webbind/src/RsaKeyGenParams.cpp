@@ -1,14 +1,16 @@
 #include <webbind/RsaKeyGenParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RsaKeyGenParams::RsaKeyGenParams(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 RsaKeyGenParams RsaKeyGenParams::take_ownership(Handle h) noexcept {
-        return RsaKeyGenParams(h);
-    }
+    return RsaKeyGenParams(h);
+}
+
 RsaKeyGenParams::RsaKeyGenParams(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 RsaKeyGenParams::RsaKeyGenParams() noexcept: Algorithm(emlite::Val::object()) {}
+
 RsaKeyGenParams RsaKeyGenParams::clone() const noexcept { return *this; }
 
 unsigned long RsaKeyGenParams::modulusLength() const {

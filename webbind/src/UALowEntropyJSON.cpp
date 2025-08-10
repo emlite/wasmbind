@@ -1,15 +1,17 @@
 #include <webbind/UALowEntropyJSON.hpp>
 #include <webbind/NavigatorUABrandVersion.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 UALowEntropyJSON::UALowEntropyJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 UALowEntropyJSON UALowEntropyJSON::take_ownership(Handle h) noexcept {
-        return UALowEntropyJSON(h);
-    }
+    return UALowEntropyJSON(h);
+}
+
 UALowEntropyJSON::UALowEntropyJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 UALowEntropyJSON::UALowEntropyJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 UALowEntropyJSON UALowEntropyJSON::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<NavigatorUABrandVersion> UALowEntropyJSON::brands() const {

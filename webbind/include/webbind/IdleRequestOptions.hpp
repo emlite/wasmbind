@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IdleRequestOptions
-/// [`IdleRequestOptions`](https://developer.mozilla.org/en-US/docs/Web/API/IdleRequestOptions)
 class IdleRequestOptions : public emlite::Val {
   explicit IdleRequestOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit IdleRequestOptions(const emlite::Val &val) noexcept;
     IdleRequestOptions() noexcept;
     [[nodiscard]] IdleRequestOptions clone() const noexcept;
+    /// Getter of the `timeout` attribute.
     [[nodiscard]] unsigned long timeout() const;
+    /// Setter of the `timeout` attribute.
     void timeout(unsigned long value);
 };
 

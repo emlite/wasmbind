@@ -24,7 +24,7 @@ public:
     CSSMatrixComponent(const DOMMatrixReadOnly& matrix);
     /// The `new CSSMatrixComponent(..)` constructor, creating a new CSSMatrixComponent instance
     CSSMatrixComponent(const DOMMatrixReadOnly& matrix, const CSSMatrixComponentOptions& options);
-    /// Getter of the `matrix` attribute.
+    /// [`CSSMatrixComponent.matrix`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMatrixComponent/matrix)
     /// [`CSSMatrixComponent.matrix`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMatrixComponent/matrix)
     [[nodiscard]] DOMMatrix matrix() const;
     /// Setter of the `matrix` attribute.

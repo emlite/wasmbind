@@ -18,7 +18,7 @@ public:
     static CSSGroupingRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSGroupingRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `cssRules` attribute.
+    /// [`CSSGroupingRule.cssRules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSGroupingRule/cssRules)
     /// [`CSSGroupingRule.cssRules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSGroupingRule/cssRules)
     [[nodiscard]] CSSRuleList cssRules() const;
     /// The insertRule method.

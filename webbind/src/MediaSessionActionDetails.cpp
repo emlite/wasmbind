@@ -1,14 +1,16 @@
 #include <webbind/MediaSessionActionDetails.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaSessionActionDetails::MediaSessionActionDetails(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaSessionActionDetails MediaSessionActionDetails::take_ownership(Handle h) noexcept {
-        return MediaSessionActionDetails(h);
-    }
+    return MediaSessionActionDetails(h);
+}
+
 MediaSessionActionDetails::MediaSessionActionDetails(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaSessionActionDetails::MediaSessionActionDetails() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaSessionActionDetails MediaSessionActionDetails::clone() const noexcept { return *this; }
 
 MediaSessionAction MediaSessionActionDetails::action() const {

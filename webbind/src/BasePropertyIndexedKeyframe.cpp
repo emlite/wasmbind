@@ -1,14 +1,16 @@
 #include <webbind/BasePropertyIndexedKeyframe.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BasePropertyIndexedKeyframe::BasePropertyIndexedKeyframe(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BasePropertyIndexedKeyframe BasePropertyIndexedKeyframe::take_ownership(Handle h) noexcept {
-        return BasePropertyIndexedKeyframe(h);
-    }
+    return BasePropertyIndexedKeyframe(h);
+}
+
 BasePropertyIndexedKeyframe::BasePropertyIndexedKeyframe(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BasePropertyIndexedKeyframe::BasePropertyIndexedKeyframe() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BasePropertyIndexedKeyframe BasePropertyIndexedKeyframe::clone() const noexcept { return *this; }
 
 jsbind::Any BasePropertyIndexedKeyframe::offset() const {

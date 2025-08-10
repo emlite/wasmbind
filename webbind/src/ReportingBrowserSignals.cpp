@@ -1,14 +1,16 @@
 #include <webbind/ReportingBrowserSignals.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ReportingBrowserSignals::ReportingBrowserSignals(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ReportingBrowserSignals ReportingBrowserSignals::take_ownership(Handle h) noexcept {
-        return ReportingBrowserSignals(h);
-    }
+    return ReportingBrowserSignals(h);
+}
+
 ReportingBrowserSignals::ReportingBrowserSignals(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ReportingBrowserSignals::ReportingBrowserSignals() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ReportingBrowserSignals ReportingBrowserSignals::clone() const noexcept { return *this; }
 
 jsbind::String ReportingBrowserSignals::topWindowHostname() const {

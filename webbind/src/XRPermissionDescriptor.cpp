@@ -1,14 +1,16 @@
 #include <webbind/XRPermissionDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRPermissionDescriptor::XRPermissionDescriptor(Handle h) noexcept : PermissionDescriptor(emlite::Val::take_ownership(h)) {}
 XRPermissionDescriptor XRPermissionDescriptor::take_ownership(Handle h) noexcept {
-        return XRPermissionDescriptor(h);
-    }
+    return XRPermissionDescriptor(h);
+}
+
 XRPermissionDescriptor::XRPermissionDescriptor(const emlite::Val &val) noexcept: PermissionDescriptor(val) {}
+
 XRPermissionDescriptor::XRPermissionDescriptor() noexcept: PermissionDescriptor(emlite::Val::object()) {}
+
 XRPermissionDescriptor XRPermissionDescriptor::clone() const noexcept { return *this; }
 
 XRSessionMode XRPermissionDescriptor::mode() const {

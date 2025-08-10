@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBConnectionEvent(..)` constructor, creating a new USBConnectionEvent instance
     USBConnectionEvent(const jsbind::String& type, const USBConnectionEventInit& eventInitDict);
-    /// Getter of the `device` attribute.
+    /// [`USBConnectionEvent.device`](https://developer.mozilla.org/en-US/docs/Web/API/USBConnectionEvent/device)
     /// [`USBConnectionEvent.device`](https://developer.mozilla.org/en-US/docs/Web/API/USBConnectionEvent/device)
     [[nodiscard]] USBDevice device() const;
 };

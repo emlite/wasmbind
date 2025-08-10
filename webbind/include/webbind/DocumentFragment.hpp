@@ -25,16 +25,16 @@ public:
     /// The getElementById method.
     /// [`DocumentFragment.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/getElementById)
     Element getElementById(const jsbind::String& elementId);
-    /// Getter of the `children` attribute.
+    /// [`DocumentFragment.children`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/children)
     /// [`DocumentFragment.children`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/children)
     [[nodiscard]] HTMLCollection children() const;
-    /// Getter of the `firstElementChild` attribute.
+    /// [`DocumentFragment.firstElementChild`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/firstElementChild)
     /// [`DocumentFragment.firstElementChild`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/firstElementChild)
     [[nodiscard]] Element firstElementChild() const;
-    /// Getter of the `lastElementChild` attribute.
+    /// [`DocumentFragment.lastElementChild`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/lastElementChild)
     /// [`DocumentFragment.lastElementChild`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/lastElementChild)
     [[nodiscard]] Element lastElementChild() const;
-    /// Getter of the `childElementCount` attribute.
+    /// [`DocumentFragment.childElementCount`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/childElementCount)
     /// [`DocumentFragment.childElementCount`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/childElementCount)
     [[nodiscard]] unsigned long childElementCount() const;
     /// The prepend method.

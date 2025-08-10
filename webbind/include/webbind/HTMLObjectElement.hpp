@@ -22,55 +22,55 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLObjectElement(..)` constructor, creating a new HTMLObjectElement instance
     HTMLObjectElement();
-    /// Getter of the `data` attribute.
+    /// [`HTMLObjectElement.data`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/data)
     /// [`HTMLObjectElement.data`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/data)
     [[nodiscard]] jsbind::String data() const;
     /// Setter of the `data` attribute.
     /// [`HTMLObjectElement.data`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/data)
     void data(const jsbind::String& value);
-    /// Getter of the `type` attribute.
+    /// [`HTMLObjectElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/type)
     /// [`HTMLObjectElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/type)
     [[nodiscard]] jsbind::String type() const;
     /// Setter of the `type` attribute.
     /// [`HTMLObjectElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/type)
     void type(const jsbind::String& value);
-    /// Getter of the `name` attribute.
+    /// [`HTMLObjectElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/name)
     /// [`HTMLObjectElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.
     /// [`HTMLObjectElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/name)
     void name(const jsbind::String& value);
-    /// Getter of the `form` attribute.
+    /// [`HTMLObjectElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/form)
     /// [`HTMLObjectElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/form)
     [[nodiscard]] HTMLFormElement form() const;
-    /// Getter of the `width` attribute.
+    /// [`HTMLObjectElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/width)
     /// [`HTMLObjectElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/width)
     [[nodiscard]] jsbind::String width() const;
     /// Setter of the `width` attribute.
     /// [`HTMLObjectElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/width)
     void width(const jsbind::String& value);
-    /// Getter of the `height` attribute.
+    /// [`HTMLObjectElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/height)
     /// [`HTMLObjectElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/height)
     [[nodiscard]] jsbind::String height() const;
     /// Setter of the `height` attribute.
     /// [`HTMLObjectElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/height)
     void height(const jsbind::String& value);
-    /// Getter of the `contentDocument` attribute.
+    /// [`HTMLObjectElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentDocument)
     /// [`HTMLObjectElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentDocument)
     [[nodiscard]] Document contentDocument() const;
-    /// Getter of the `contentWindow` attribute.
+    /// [`HTMLObjectElement.contentWindow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentWindow)
     /// [`HTMLObjectElement.contentWindow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentWindow)
     [[nodiscard]] jsbind::Any contentWindow() const;
     /// The getSVGDocument method.
     /// [`HTMLObjectElement.getSVGDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/getSVGDocument)
     Document getSVGDocument();
-    /// Getter of the `willValidate` attribute.
+    /// [`HTMLObjectElement.willValidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/willValidate)
     /// [`HTMLObjectElement.willValidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/willValidate)
     [[nodiscard]] bool willValidate() const;
-    /// Getter of the `validity` attribute.
+    /// [`HTMLObjectElement.validity`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validity)
     /// [`HTMLObjectElement.validity`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validity)
     [[nodiscard]] ValidityState validity() const;
-    /// Getter of the `validationMessage` attribute.
+    /// [`HTMLObjectElement.validationMessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validationMessage)
     /// [`HTMLObjectElement.validationMessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validationMessage)
     [[nodiscard]] jsbind::String validationMessage() const;
     /// The checkValidity method.
@@ -82,67 +82,67 @@ public:
     /// The setCustomValidity method.
     /// [`HTMLObjectElement.setCustomValidity`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/setCustomValidity)
     jsbind::Undefined setCustomValidity(const jsbind::String& error);
-    /// Getter of the `align` attribute.
+    /// [`HTMLObjectElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/align)
     /// [`HTMLObjectElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/align)
     [[nodiscard]] jsbind::String align() const;
     /// Setter of the `align` attribute.
     /// [`HTMLObjectElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/align)
     void align(const jsbind::String& value);
-    /// Getter of the `archive` attribute.
+    /// [`HTMLObjectElement.archive`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/archive)
     /// [`HTMLObjectElement.archive`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/archive)
     [[nodiscard]] jsbind::String archive() const;
     /// Setter of the `archive` attribute.
     /// [`HTMLObjectElement.archive`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/archive)
     void archive(const jsbind::String& value);
-    /// Getter of the `code` attribute.
+    /// [`HTMLObjectElement.code`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/code)
     /// [`HTMLObjectElement.code`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/code)
     [[nodiscard]] jsbind::String code() const;
     /// Setter of the `code` attribute.
     /// [`HTMLObjectElement.code`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/code)
     void code(const jsbind::String& value);
-    /// Getter of the `declare` attribute.
+    /// [`HTMLObjectElement.declare`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/declare)
     /// [`HTMLObjectElement.declare`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/declare)
     [[nodiscard]] bool declare() const;
     /// Setter of the `declare` attribute.
     /// [`HTMLObjectElement.declare`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/declare)
     void declare(bool value);
-    /// Getter of the `hspace` attribute.
+    /// [`HTMLObjectElement.hspace`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/hspace)
     /// [`HTMLObjectElement.hspace`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/hspace)
     [[nodiscard]] unsigned long hspace() const;
     /// Setter of the `hspace` attribute.
     /// [`HTMLObjectElement.hspace`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/hspace)
     void hspace(unsigned long value);
-    /// Getter of the `standby` attribute.
+    /// [`HTMLObjectElement.standby`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/standby)
     /// [`HTMLObjectElement.standby`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/standby)
     [[nodiscard]] jsbind::String standby() const;
     /// Setter of the `standby` attribute.
     /// [`HTMLObjectElement.standby`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/standby)
     void standby(const jsbind::String& value);
-    /// Getter of the `vspace` attribute.
+    /// [`HTMLObjectElement.vspace`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/vspace)
     /// [`HTMLObjectElement.vspace`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/vspace)
     [[nodiscard]] unsigned long vspace() const;
     /// Setter of the `vspace` attribute.
     /// [`HTMLObjectElement.vspace`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/vspace)
     void vspace(unsigned long value);
-    /// Getter of the `codeBase` attribute.
+    /// [`HTMLObjectElement.codeBase`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/codeBase)
     /// [`HTMLObjectElement.codeBase`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/codeBase)
     [[nodiscard]] jsbind::String codeBase() const;
     /// Setter of the `codeBase` attribute.
     /// [`HTMLObjectElement.codeBase`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/codeBase)
     void codeBase(const jsbind::String& value);
-    /// Getter of the `codeType` attribute.
+    /// [`HTMLObjectElement.codeType`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/codeType)
     /// [`HTMLObjectElement.codeType`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/codeType)
     [[nodiscard]] jsbind::String codeType() const;
     /// Setter of the `codeType` attribute.
     /// [`HTMLObjectElement.codeType`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/codeType)
     void codeType(const jsbind::String& value);
-    /// Getter of the `useMap` attribute.
+    /// [`HTMLObjectElement.useMap`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/useMap)
     /// [`HTMLObjectElement.useMap`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/useMap)
     [[nodiscard]] jsbind::String useMap() const;
     /// Setter of the `useMap` attribute.
     /// [`HTMLObjectElement.useMap`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/useMap)
     void useMap(const jsbind::String& value);
-    /// Getter of the `border` attribute.
+    /// [`HTMLObjectElement.border`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/border)
     /// [`HTMLObjectElement.border`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/border)
     [[nodiscard]] jsbind::String border() const;
     /// Setter of the `border` attribute.

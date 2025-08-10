@@ -17,7 +17,7 @@ public:
     static NamedNodeMap take_ownership(Handle h) noexcept;
     [[nodiscard]] NamedNodeMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`NamedNodeMap.length`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/length)
     /// [`NamedNodeMap.length`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.

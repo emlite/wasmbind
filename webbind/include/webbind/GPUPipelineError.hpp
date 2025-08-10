@@ -24,7 +24,7 @@ public:
     GPUPipelineError(const jsbind::String& message);
     /// The `new GPUPipelineError(..)` constructor, creating a new GPUPipelineError instance
     GPUPipelineError(const jsbind::String& message, const GPUPipelineErrorInit& options);
-    /// Getter of the `reason` attribute.
+    /// [`GPUPipelineError.reason`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineError/reason)
     /// [`GPUPipelineError.reason`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineError/reason)
     [[nodiscard]] GPUPipelineErrorReason reason() const;
 };

@@ -1,15 +1,17 @@
 #include <webbind/XRQuadLayerInit.hpp>
 #include <webbind/XRRigidTransform.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRQuadLayerInit::XRQuadLayerInit(Handle h) noexcept : XRLayerInit(emlite::Val::take_ownership(h)) {}
 XRQuadLayerInit XRQuadLayerInit::take_ownership(Handle h) noexcept {
-        return XRQuadLayerInit(h);
-    }
+    return XRQuadLayerInit(h);
+}
+
 XRQuadLayerInit::XRQuadLayerInit(const emlite::Val &val) noexcept: XRLayerInit(val) {}
+
 XRQuadLayerInit::XRQuadLayerInit() noexcept: XRLayerInit(emlite::Val::object()) {}
+
 XRQuadLayerInit XRQuadLayerInit::clone() const noexcept { return *this; }
 
 XRTextureType XRQuadLayerInit::textureType() const {

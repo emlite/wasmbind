@@ -21,10 +21,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFReadingEvent(..)` constructor, creating a new NDEFReadingEvent instance
     NDEFReadingEvent(const jsbind::String& type, const NDEFReadingEventInit& readingEventInitDict);
-    /// Getter of the `serialNumber` attribute.
+    /// [`NDEFReadingEvent.serialNumber`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent/serialNumber)
     /// [`NDEFReadingEvent.serialNumber`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent/serialNumber)
     [[nodiscard]] jsbind::String serialNumber() const;
-    /// Getter of the `message` attribute.
+    /// [`NDEFReadingEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent/message)
     /// [`NDEFReadingEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent/message)
     [[nodiscard]] NDEFMessage message() const;
 };

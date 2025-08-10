@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type BarcodeDetectorOptions
-/// [`BarcodeDetectorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetectorOptions)
 class BarcodeDetectorOptions : public emlite::Val {
   explicit BarcodeDetectorOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit BarcodeDetectorOptions(const emlite::Val &val) noexcept;
     BarcodeDetectorOptions() noexcept;
     [[nodiscard]] BarcodeDetectorOptions clone() const noexcept;
+    /// Getter of the `formats` attribute.
     [[nodiscard]] jsbind::TypedArray<BarcodeFormat> formats() const;
+    /// Setter of the `formats` attribute.
     void formats(const jsbind::TypedArray<BarcodeFormat>& value);
 };
 

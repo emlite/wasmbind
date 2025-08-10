@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type HandwritingSegment
-/// [`HandwritingSegment`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingSegment)
 class HandwritingSegment : public emlite::Val {
   explicit HandwritingSegment(Handle h) noexcept;
 public:
@@ -16,13 +15,21 @@ public:
     explicit HandwritingSegment(const emlite::Val &val) noexcept;
     HandwritingSegment() noexcept;
     [[nodiscard]] HandwritingSegment clone() const noexcept;
+    /// Getter of the `grapheme` attribute.
     [[nodiscard]] jsbind::String grapheme() const;
+    /// Setter of the `grapheme` attribute.
     void grapheme(const jsbind::String& value);
+    /// Getter of the `beginIndex` attribute.
     [[nodiscard]] unsigned long beginIndex() const;
+    /// Setter of the `beginIndex` attribute.
     void beginIndex(unsigned long value);
+    /// Getter of the `endIndex` attribute.
     [[nodiscard]] unsigned long endIndex() const;
+    /// Setter of the `endIndex` attribute.
     void endIndex(unsigned long value);
+    /// Getter of the `drawingSegments` attribute.
     [[nodiscard]] jsbind::TypedArray<HandwritingDrawingSegment> drawingSegments() const;
+    /// Setter of the `drawingSegments` attribute.
     void drawingSegments(const jsbind::TypedArray<HandwritingDrawingSegment>& value);
 };
 

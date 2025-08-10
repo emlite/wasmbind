@@ -23,25 +23,25 @@ public:
     static SerialPort take_ownership(Handle h) noexcept;
     [[nodiscard]] SerialPort clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `onconnect` attribute.
+    /// [`SerialPort.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/onconnect)
     /// [`SerialPort.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;
     /// Setter of the `onconnect` attribute.
     /// [`SerialPort.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/onconnect)
     void onconnect(const jsbind::Any& value);
-    /// Getter of the `ondisconnect` attribute.
+    /// [`SerialPort.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/ondisconnect)
     /// [`SerialPort.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/ondisconnect)
     [[nodiscard]] jsbind::Any ondisconnect() const;
     /// Setter of the `ondisconnect` attribute.
     /// [`SerialPort.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/ondisconnect)
     void ondisconnect(const jsbind::Any& value);
-    /// Getter of the `connected` attribute.
+    /// [`SerialPort.connected`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/connected)
     /// [`SerialPort.connected`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/connected)
     [[nodiscard]] bool connected() const;
-    /// Getter of the `readable` attribute.
+    /// [`SerialPort.readable`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/readable)
     /// [`SerialPort.readable`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/readable)
     [[nodiscard]] ReadableStream readable() const;
-    /// Getter of the `writable` attribute.
+    /// [`SerialPort.writable`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/writable)
     /// [`SerialPort.writable`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPort/writable)
     [[nodiscard]] WritableStream writable() const;
     /// The getInfo method.

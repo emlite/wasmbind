@@ -1,14 +1,16 @@
 #include <webbind/IdentityProviderWellKnown.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityProviderWellKnown::IdentityProviderWellKnown(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityProviderWellKnown IdentityProviderWellKnown::take_ownership(Handle h) noexcept {
-        return IdentityProviderWellKnown(h);
-    }
+    return IdentityProviderWellKnown(h);
+}
+
 IdentityProviderWellKnown::IdentityProviderWellKnown(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityProviderWellKnown::IdentityProviderWellKnown() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityProviderWellKnown IdentityProviderWellKnown::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::String> IdentityProviderWellKnown::provider_urls() const {

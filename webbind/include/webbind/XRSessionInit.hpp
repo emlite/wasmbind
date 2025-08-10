@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type XRSessionInit
-/// [`XRSessionInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRSessionInit)
 class XRSessionInit : public emlite::Val {
   explicit XRSessionInit(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit XRSessionInit(const emlite::Val &val) noexcept;
     XRSessionInit() noexcept;
     [[nodiscard]] XRSessionInit clone() const noexcept;
+    /// Getter of the `requiredFeatures` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> requiredFeatures() const;
+    /// Setter of the `requiredFeatures` attribute.
     void requiredFeatures(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `optionalFeatures` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> optionalFeatures() const;
+    /// Setter of the `optionalFeatures` attribute.
     void optionalFeatures(const jsbind::TypedArray<jsbind::String>& value);
 };
 

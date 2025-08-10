@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AudioOutputOptions
-/// [`AudioOutputOptions`](https://developer.mozilla.org/en-US/docs/Web/API/AudioOutputOptions)
 class AudioOutputOptions : public emlite::Val {
   explicit AudioOutputOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit AudioOutputOptions(const emlite::Val &val) noexcept;
     AudioOutputOptions() noexcept;
     [[nodiscard]] AudioOutputOptions clone() const noexcept;
+    /// Getter of the `deviceId` attribute.
     [[nodiscard]] jsbind::String deviceId() const;
+    /// Setter of the `deviceId` attribute.
     void deviceId(const jsbind::String& value);
 };
 

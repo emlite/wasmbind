@@ -1,14 +1,16 @@
 #include <webbind/XRWebGLLayerInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRWebGLLayerInit::XRWebGLLayerInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRWebGLLayerInit XRWebGLLayerInit::take_ownership(Handle h) noexcept {
-        return XRWebGLLayerInit(h);
-    }
+    return XRWebGLLayerInit(h);
+}
+
 XRWebGLLayerInit::XRWebGLLayerInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRWebGLLayerInit::XRWebGLLayerInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRWebGLLayerInit XRWebGLLayerInit::clone() const noexcept { return *this; }
 
 bool XRWebGLLayerInit::antialias() const {

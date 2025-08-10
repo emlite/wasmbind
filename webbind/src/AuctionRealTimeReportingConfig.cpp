@@ -1,14 +1,16 @@
 #include <webbind/AuctionRealTimeReportingConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuctionRealTimeReportingConfig::AuctionRealTimeReportingConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuctionRealTimeReportingConfig AuctionRealTimeReportingConfig::take_ownership(Handle h) noexcept {
-        return AuctionRealTimeReportingConfig(h);
-    }
+    return AuctionRealTimeReportingConfig(h);
+}
+
 AuctionRealTimeReportingConfig::AuctionRealTimeReportingConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuctionRealTimeReportingConfig::AuctionRealTimeReportingConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuctionRealTimeReportingConfig AuctionRealTimeReportingConfig::clone() const noexcept { return *this; }
 
 jsbind::String AuctionRealTimeReportingConfig::type() const {

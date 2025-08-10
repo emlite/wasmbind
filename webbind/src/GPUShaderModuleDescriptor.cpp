@@ -1,15 +1,17 @@
 #include <webbind/GPUShaderModuleDescriptor.hpp>
 #include <webbind/GPUShaderModuleCompilationHint.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUShaderModuleDescriptor::GPUShaderModuleDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPUShaderModuleDescriptor GPUShaderModuleDescriptor::take_ownership(Handle h) noexcept {
-        return GPUShaderModuleDescriptor(h);
-    }
+    return GPUShaderModuleDescriptor(h);
+}
+
 GPUShaderModuleDescriptor::GPUShaderModuleDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPUShaderModuleDescriptor::GPUShaderModuleDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPUShaderModuleDescriptor GPUShaderModuleDescriptor::clone() const noexcept { return *this; }
 
 jsbind::String GPUShaderModuleDescriptor::code() const {

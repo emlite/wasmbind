@@ -5,11 +5,15 @@
 namespace webbind {
 
 MutationRecord MutationRecord::take_ownership(Handle h) noexcept {
-        return MutationRecord(h);
-    }
+    return MutationRecord(h);
+}
+
 MutationRecord MutationRecord::clone() const noexcept { return *this; }
+
 emlite::Val MutationRecord::instance() noexcept { return emlite::Val::global("MutationRecord"); }
+
 MutationRecord::MutationRecord(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 MutationRecord::MutationRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String MutationRecord::type() const {

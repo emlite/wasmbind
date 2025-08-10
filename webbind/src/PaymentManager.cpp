@@ -3,11 +3,15 @@
 namespace webbind {
 
 PaymentManager PaymentManager::take_ownership(Handle h) noexcept {
-        return PaymentManager(h);
-    }
+    return PaymentManager(h);
+}
+
 PaymentManager PaymentManager::clone() const noexcept { return *this; }
+
 emlite::Val PaymentManager::instance() noexcept { return emlite::Val::global("PaymentManager"); }
+
 PaymentManager::PaymentManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PaymentManager::PaymentManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String PaymentManager::userHint() const {

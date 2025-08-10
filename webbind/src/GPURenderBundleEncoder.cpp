@@ -8,11 +8,15 @@
 namespace webbind {
 
 GPURenderBundleEncoder GPURenderBundleEncoder::take_ownership(Handle h) noexcept {
-        return GPURenderBundleEncoder(h);
-    }
+    return GPURenderBundleEncoder(h);
+}
+
 GPURenderBundleEncoder GPURenderBundleEncoder::clone() const noexcept { return *this; }
+
 emlite::Val GPURenderBundleEncoder::instance() noexcept { return emlite::Val::global("GPURenderBundleEncoder"); }
+
 GPURenderBundleEncoder::GPURenderBundleEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPURenderBundleEncoder::GPURenderBundleEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 GPURenderBundle GPURenderBundleEncoder::finish() {

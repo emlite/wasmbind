@@ -9,7 +9,6 @@ namespace webbind {
 class ShadowRoot;
 
 /// Dictionary type GetHTMLOptions
-/// [`GetHTMLOptions`](https://developer.mozilla.org/en-US/docs/Web/API/GetHTMLOptions)
 class GetHTMLOptions : public emlite::Val {
   explicit GetHTMLOptions(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit GetHTMLOptions(const emlite::Val &val) noexcept;
     GetHTMLOptions() noexcept;
     [[nodiscard]] GetHTMLOptions clone() const noexcept;
+    /// Getter of the `serializableShadowRoots` attribute.
     [[nodiscard]] bool serializableShadowRoots() const;
+    /// Setter of the `serializableShadowRoots` attribute.
     void serializableShadowRoots(bool value);
+    /// Getter of the `shadowRoots` attribute.
     [[nodiscard]] jsbind::TypedArray<ShadowRoot> shadowRoots() const;
+    /// Setter of the `shadowRoots` attribute.
     void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
 };
 

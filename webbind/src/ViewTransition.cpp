@@ -4,11 +4,15 @@
 namespace webbind {
 
 ViewTransition ViewTransition::take_ownership(Handle h) noexcept {
-        return ViewTransition(h);
-    }
+    return ViewTransition(h);
+}
+
 ViewTransition ViewTransition::clone() const noexcept { return *this; }
+
 emlite::Val ViewTransition::instance() noexcept { return emlite::Val::global("ViewTransition"); }
+
 ViewTransition::ViewTransition(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ViewTransition::ViewTransition(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::Undefined> ViewTransition::updateCallbackDone() const {

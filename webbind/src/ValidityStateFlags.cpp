@@ -1,14 +1,16 @@
 #include <webbind/ValidityStateFlags.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ValidityStateFlags::ValidityStateFlags(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ValidityStateFlags ValidityStateFlags::take_ownership(Handle h) noexcept {
-        return ValidityStateFlags(h);
-    }
+    return ValidityStateFlags(h);
+}
+
 ValidityStateFlags::ValidityStateFlags(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ValidityStateFlags::ValidityStateFlags() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ValidityStateFlags ValidityStateFlags::clone() const noexcept { return *this; }
 
 bool ValidityStateFlags::valueMissing() const {

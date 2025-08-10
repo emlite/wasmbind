@@ -10,7 +10,6 @@ namespace webbind {
 class XRRigidTransform;
 
 /// Dictionary type XRQuadLayerInit
-/// [`XRQuadLayerInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRQuadLayerInit)
 class XRQuadLayerInit : public XRLayerInit {
   explicit XRQuadLayerInit(Handle h) noexcept;
 public:
@@ -18,13 +17,21 @@ public:
     explicit XRQuadLayerInit(const emlite::Val &val) noexcept;
     XRQuadLayerInit() noexcept;
     [[nodiscard]] XRQuadLayerInit clone() const noexcept;
+    /// Getter of the `textureType` attribute.
     [[nodiscard]] XRTextureType textureType() const;
+    /// Setter of the `textureType` attribute.
     void textureType(const XRTextureType& value);
+    /// Getter of the `transform` attribute.
     [[nodiscard]] XRRigidTransform transform() const;
+    /// Setter of the `transform` attribute.
     void transform(const XRRigidTransform& value);
+    /// Getter of the `width` attribute.
     [[nodiscard]] float width() const;
+    /// Setter of the `width` attribute.
     void width(float value);
+    /// Getter of the `height` attribute.
     [[nodiscard]] float height() const;
+    /// Setter of the `height` attribute.
     void height(float value);
 };
 

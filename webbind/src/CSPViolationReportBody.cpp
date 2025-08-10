@@ -1,14 +1,16 @@
 #include <webbind/CSPViolationReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CSPViolationReportBody::CSPViolationReportBody(Handle h) noexcept : ReportBody(emlite::Val::take_ownership(h)) {}
 CSPViolationReportBody CSPViolationReportBody::take_ownership(Handle h) noexcept {
-        return CSPViolationReportBody(h);
-    }
+    return CSPViolationReportBody(h);
+}
+
 CSPViolationReportBody::CSPViolationReportBody(const emlite::Val &val) noexcept: ReportBody(val) {}
+
 CSPViolationReportBody::CSPViolationReportBody() noexcept: ReportBody(emlite::Val::object()) {}
+
 CSPViolationReportBody CSPViolationReportBody::clone() const noexcept { return *this; }
 
 jsbind::String CSPViolationReportBody::documentURL() const {

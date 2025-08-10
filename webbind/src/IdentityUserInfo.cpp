@@ -1,14 +1,16 @@
 #include <webbind/IdentityUserInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityUserInfo::IdentityUserInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityUserInfo IdentityUserInfo::take_ownership(Handle h) noexcept {
-        return IdentityUserInfo(h);
-    }
+    return IdentityUserInfo(h);
+}
+
 IdentityUserInfo::IdentityUserInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityUserInfo::IdentityUserInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityUserInfo IdentityUserInfo::clone() const noexcept { return *this; }
 
 jsbind::String IdentityUserInfo::email() const {

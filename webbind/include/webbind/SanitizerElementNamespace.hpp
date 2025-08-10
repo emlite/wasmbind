@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SanitizerElementNamespace
-/// [`SanitizerElementNamespace`](https://developer.mozilla.org/en-US/docs/Web/API/SanitizerElementNamespace)
 class SanitizerElementNamespace : public emlite::Val {
   explicit SanitizerElementNamespace(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit SanitizerElementNamespace(const emlite::Val &val) noexcept;
     SanitizerElementNamespace() noexcept;
     [[nodiscard]] SanitizerElementNamespace clone() const noexcept;
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
+    /// Getter of the `namespace` attribute.
     [[nodiscard]] jsbind::String namespace_() const;
+    /// Setter of the `namespace` attribute.
     void namespace_(const jsbind::String& value);
 };
 

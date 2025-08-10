@@ -1,14 +1,16 @@
 #include <webbind/PublicKeyCredentialUserEntity.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PublicKeyCredentialUserEntity::PublicKeyCredentialUserEntity(Handle h) noexcept : PublicKeyCredentialEntity(emlite::Val::take_ownership(h)) {}
 PublicKeyCredentialUserEntity PublicKeyCredentialUserEntity::take_ownership(Handle h) noexcept {
-        return PublicKeyCredentialUserEntity(h);
-    }
+    return PublicKeyCredentialUserEntity(h);
+}
+
 PublicKeyCredentialUserEntity::PublicKeyCredentialUserEntity(const emlite::Val &val) noexcept: PublicKeyCredentialEntity(val) {}
+
 PublicKeyCredentialUserEntity::PublicKeyCredentialUserEntity() noexcept: PublicKeyCredentialEntity(emlite::Val::object()) {}
+
 PublicKeyCredentialUserEntity PublicKeyCredentialUserEntity::clone() const noexcept { return *this; }
 
 jsbind::Any PublicKeyCredentialUserEntity::id() const {

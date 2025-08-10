@@ -10,7 +10,6 @@ namespace webbind {
 class RTCError;
 
 /// Dictionary type RTCErrorEventInit
-/// [`RTCErrorEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/RTCErrorEventInit)
 class RTCErrorEventInit : public EventInit {
   explicit RTCErrorEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit RTCErrorEventInit(const emlite::Val &val) noexcept;
     RTCErrorEventInit() noexcept;
     [[nodiscard]] RTCErrorEventInit clone() const noexcept;
+    /// Getter of the `error` attribute.
     [[nodiscard]] RTCError error() const;
+    /// Setter of the `error` attribute.
     void error(const RTCError& value);
 };
 

@@ -6,11 +6,15 @@
 namespace webbind {
 
 ViewTimeline ViewTimeline::take_ownership(Handle h) noexcept {
-        return ViewTimeline(h);
-    }
+    return ViewTimeline(h);
+}
+
 ViewTimeline ViewTimeline::clone() const noexcept { return *this; }
+
 emlite::Val ViewTimeline::instance() noexcept { return emlite::Val::global("ViewTimeline"); }
+
 ViewTimeline::ViewTimeline(Handle h) noexcept : ScrollTimeline(emlite::Val::take_ownership(h)) {}
+
 ViewTimeline::ViewTimeline(const emlite::Val &val) noexcept: ScrollTimeline(val) {}
 
 ViewTimeline::ViewTimeline() : ScrollTimeline(emlite::Val::global("ViewTimeline").new_()) {}

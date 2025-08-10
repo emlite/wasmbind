@@ -29,28 +29,28 @@ public:
     PaymentRequestEvent(const jsbind::String& type);
     /// The `new PaymentRequestEvent(..)` constructor, creating a new PaymentRequestEvent instance
     PaymentRequestEvent(const jsbind::String& type, const PaymentRequestEventInit& eventInitDict);
-    /// Getter of the `topOrigin` attribute.
+    /// [`PaymentRequestEvent.topOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/topOrigin)
     /// [`PaymentRequestEvent.topOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/topOrigin)
     [[nodiscard]] jsbind::String topOrigin() const;
-    /// Getter of the `paymentRequestOrigin` attribute.
+    /// [`PaymentRequestEvent.paymentRequestOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestOrigin)
     /// [`PaymentRequestEvent.paymentRequestOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestOrigin)
     [[nodiscard]] jsbind::String paymentRequestOrigin() const;
-    /// Getter of the `paymentRequestId` attribute.
+    /// [`PaymentRequestEvent.paymentRequestId`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestId)
     /// [`PaymentRequestEvent.paymentRequestId`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestId)
     [[nodiscard]] jsbind::String paymentRequestId() const;
-    /// Getter of the `methodData` attribute.
+    /// [`PaymentRequestEvent.methodData`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/methodData)
     /// [`PaymentRequestEvent.methodData`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/methodData)
     [[nodiscard]] jsbind::TypedArray<PaymentMethodData> methodData() const;
-    /// Getter of the `total` attribute.
+    /// [`PaymentRequestEvent.total`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/total)
     /// [`PaymentRequestEvent.total`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/total)
     [[nodiscard]] jsbind::Object total() const;
-    /// Getter of the `modifiers` attribute.
+    /// [`PaymentRequestEvent.modifiers`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/modifiers)
     /// [`PaymentRequestEvent.modifiers`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/modifiers)
     [[nodiscard]] jsbind::TypedArray<PaymentDetailsModifier> modifiers() const;
-    /// Getter of the `paymentOptions` attribute.
+    /// [`PaymentRequestEvent.paymentOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentOptions)
     /// [`PaymentRequestEvent.paymentOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentOptions)
     [[nodiscard]] jsbind::Object paymentOptions() const;
-    /// Getter of the `shippingOptions` attribute.
+    /// [`PaymentRequestEvent.shippingOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/shippingOptions)
     /// [`PaymentRequestEvent.shippingOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/shippingOptions)
     [[nodiscard]] jsbind::TypedArray<PaymentShippingOption> shippingOptions() const;
     /// The openWindow method.

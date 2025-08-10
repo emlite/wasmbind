@@ -21,10 +21,10 @@ public:
     CapturedMouseEvent(const jsbind::String& type);
     /// The `new CapturedMouseEvent(..)` constructor, creating a new CapturedMouseEvent instance
     CapturedMouseEvent(const jsbind::String& type, const CapturedMouseEventInit& eventInitDict);
-    /// Getter of the `surfaceX` attribute.
+    /// [`CapturedMouseEvent.surfaceX`](https://developer.mozilla.org/en-US/docs/Web/API/CapturedMouseEvent/surfaceX)
     /// [`CapturedMouseEvent.surfaceX`](https://developer.mozilla.org/en-US/docs/Web/API/CapturedMouseEvent/surfaceX)
     [[nodiscard]] long surfaceX() const;
-    /// Getter of the `surfaceY` attribute.
+    /// [`CapturedMouseEvent.surfaceY`](https://developer.mozilla.org/en-US/docs/Web/API/CapturedMouseEvent/surfaceY)
     /// [`CapturedMouseEvent.surfaceY`](https://developer.mozilla.org/en-US/docs/Web/API/CapturedMouseEvent/surfaceY)
     [[nodiscard]] long surfaceY() const;
 };

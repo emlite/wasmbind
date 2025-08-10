@@ -1,15 +1,17 @@
 #include <webbind/PhotoCapabilities.hpp>
 #include <webbind/MediaSettingsRange.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PhotoCapabilities::PhotoCapabilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PhotoCapabilities PhotoCapabilities::take_ownership(Handle h) noexcept {
-        return PhotoCapabilities(h);
-    }
+    return PhotoCapabilities(h);
+}
+
 PhotoCapabilities::PhotoCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PhotoCapabilities::PhotoCapabilities() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PhotoCapabilities PhotoCapabilities::clone() const noexcept { return *this; }
 
 RedEyeReduction PhotoCapabilities::redEyeReduction() const {

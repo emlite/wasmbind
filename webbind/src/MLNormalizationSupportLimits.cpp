@@ -2,15 +2,17 @@
 #include <webbind/MLTensorLimits.hpp>
 #include <webbind/MLDataTypeLimits.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLNormalizationSupportLimits::MLNormalizationSupportLimits(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLNormalizationSupportLimits MLNormalizationSupportLimits::take_ownership(Handle h) noexcept {
-        return MLNormalizationSupportLimits(h);
-    }
+    return MLNormalizationSupportLimits(h);
+}
+
 MLNormalizationSupportLimits::MLNormalizationSupportLimits(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MLNormalizationSupportLimits::MLNormalizationSupportLimits() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MLNormalizationSupportLimits MLNormalizationSupportLimits::clone() const noexcept { return *this; }
 
 MLTensorLimits MLNormalizationSupportLimits::input() const {

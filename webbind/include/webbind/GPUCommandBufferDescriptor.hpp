@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUCommandBufferDescriptor
-/// [`GPUCommandBufferDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBufferDescriptor)
 class GPUCommandBufferDescriptor : public GPUObjectDescriptorBase {
   explicit GPUCommandBufferDescriptor(Handle h) noexcept;
 public:

@@ -35,10 +35,10 @@ public:
     /// The isScriptURL method.
     /// [`TrustedTypePolicyFactory.isScriptURL`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/isScriptURL)
     bool isScriptURL(const jsbind::Any& value);
-    /// Getter of the `emptyHTML` attribute.
+    /// [`TrustedTypePolicyFactory.emptyHTML`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/emptyHTML)
     /// [`TrustedTypePolicyFactory.emptyHTML`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/emptyHTML)
     [[nodiscard]] TrustedHTML emptyHTML() const;
-    /// Getter of the `emptyScript` attribute.
+    /// [`TrustedTypePolicyFactory.emptyScript`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/emptyScript)
     /// [`TrustedTypePolicyFactory.emptyScript`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/emptyScript)
     [[nodiscard]] TrustedScript emptyScript() const;
     /// The getAttributeType method.
@@ -56,7 +56,7 @@ public:
     /// The getPropertyType method.
     /// [`TrustedTypePolicyFactory.getPropertyType`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/getPropertyType)
     jsbind::String getPropertyType(const jsbind::String& tagName, const jsbind::String& property, const jsbind::String& elementNs);
-    /// Getter of the `defaultPolicy` attribute.
+    /// [`TrustedTypePolicyFactory.defaultPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/defaultPolicy)
     /// [`TrustedTypePolicyFactory.defaultPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/defaultPolicy)
     [[nodiscard]] TrustedTypePolicy defaultPolicy() const;
 };

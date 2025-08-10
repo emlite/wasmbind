@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpSendParameters
-/// [`RTCRtpSendParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSendParameters)
 class RTCRtpSendParameters : public RTCRtpParameters {
   explicit RTCRtpSendParameters(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit RTCRtpSendParameters(const emlite::Val &val) noexcept;
     RTCRtpSendParameters() noexcept;
     [[nodiscard]] RTCRtpSendParameters clone() const noexcept;
+    /// Getter of the `transactionId` attribute.
     [[nodiscard]] jsbind::String transactionId() const;
+    /// Setter of the `transactionId` attribute.
     void transactionId(const jsbind::String& value);
+    /// Getter of the `encodings` attribute.
     [[nodiscard]] jsbind::TypedArray<RTCRtpEncodingParameters> encodings() const;
+    /// Setter of the `encodings` attribute.
     void encodings(const jsbind::TypedArray<RTCRtpEncodingParameters>& value);
 };
 

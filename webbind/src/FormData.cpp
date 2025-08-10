@@ -6,11 +6,15 @@
 namespace webbind {
 
 FormData FormData::take_ownership(Handle h) noexcept {
-        return FormData(h);
-    }
+    return FormData(h);
+}
+
 FormData FormData::clone() const noexcept { return *this; }
+
 emlite::Val FormData::instance() noexcept { return emlite::Val::global("FormData"); }
+
 FormData::FormData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 FormData::FormData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 FormData::FormData() : emlite::Val(emlite::Val::global("FormData").new_()) {}

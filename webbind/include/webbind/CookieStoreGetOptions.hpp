@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CookieStoreGetOptions
-/// [`CookieStoreGetOptions`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreGetOptions)
 class CookieStoreGetOptions : public emlite::Val {
   explicit CookieStoreGetOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit CookieStoreGetOptions(const emlite::Val &val) noexcept;
     CookieStoreGetOptions() noexcept;
     [[nodiscard]] CookieStoreGetOptions clone() const noexcept;
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
+    /// Getter of the `url` attribute.
     [[nodiscard]] jsbind::String url() const;
+    /// Setter of the `url` attribute.
     void url(const jsbind::String& value);
 };
 

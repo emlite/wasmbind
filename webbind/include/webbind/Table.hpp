@@ -35,7 +35,7 @@ public:
     /// The set method.
     /// [`Table.set`](https://developer.mozilla.org/en-US/docs/Web/API/Table/set)
     jsbind::Undefined set(unsigned long index, const jsbind::Any& value);
-    /// Getter of the `length` attribute.
+    /// [`Table.length`](https://developer.mozilla.org/en-US/docs/Web/API/Table/length)
     /// [`Table.length`](https://developer.mozilla.org/en-US/docs/Web/API/Table/length)
     [[nodiscard]] unsigned long length() const;
 };

@@ -18,7 +18,7 @@ public:
     static XRBoundedReferenceSpace take_ownership(Handle h) noexcept;
     [[nodiscard]] XRBoundedReferenceSpace clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `boundsGeometry` attribute.
+    /// [`XRBoundedReferenceSpace.boundsGeometry`](https://developer.mozilla.org/en-US/docs/Web/API/XRBoundedReferenceSpace/boundsGeometry)
     /// [`XRBoundedReferenceSpace.boundsGeometry`](https://developer.mozilla.org/en-US/docs/Web/API/XRBoundedReferenceSpace/boundsGeometry)
     [[nodiscard]] jsbind::TypedArray<DOMPointReadOnly> boundsGeometry() const;
 };

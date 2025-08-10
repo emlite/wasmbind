@@ -1,14 +1,16 @@
 #include <webbind/RTCDataChannelInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCDataChannelInit::RTCDataChannelInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCDataChannelInit RTCDataChannelInit::take_ownership(Handle h) noexcept {
-        return RTCDataChannelInit(h);
-    }
+    return RTCDataChannelInit(h);
+}
+
 RTCDataChannelInit::RTCDataChannelInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCDataChannelInit::RTCDataChannelInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCDataChannelInit RTCDataChannelInit::clone() const noexcept { return *this; }
 
 bool RTCDataChannelInit::ordered() const {

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MockCapturePromptResultConfiguration
-/// [`MockCapturePromptResultConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/MockCapturePromptResultConfiguration)
 class MockCapturePromptResultConfiguration : public emlite::Val {
   explicit MockCapturePromptResultConfiguration(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit MockCapturePromptResultConfiguration(const emlite::Val &val) noexcept;
     MockCapturePromptResultConfiguration() noexcept;
     [[nodiscard]] MockCapturePromptResultConfiguration clone() const noexcept;
+    /// Getter of the `getUserMedia` attribute.
     [[nodiscard]] MockCapturePromptResult getUserMedia() const;
+    /// Setter of the `getUserMedia` attribute.
     void getUserMedia(const MockCapturePromptResult& value);
+    /// Getter of the `getDisplayMedia` attribute.
     [[nodiscard]] MockCapturePromptResult getDisplayMedia() const;
+    /// Setter of the `getDisplayMedia` attribute.
     void getDisplayMedia(const MockCapturePromptResult& value);
 };
 

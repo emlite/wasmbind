@@ -18,22 +18,22 @@ public:
     static SVGRadialGradientElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGRadialGradientElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `cx` attribute.
+    /// [`SVGRadialGradientElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/cx)
     /// [`SVGRadialGradientElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/cx)
     [[nodiscard]] SVGAnimatedLength cx() const;
-    /// Getter of the `cy` attribute.
+    /// [`SVGRadialGradientElement.cy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/cy)
     /// [`SVGRadialGradientElement.cy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/cy)
     [[nodiscard]] SVGAnimatedLength cy() const;
-    /// Getter of the `r` attribute.
+    /// [`SVGRadialGradientElement.r`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/r)
     /// [`SVGRadialGradientElement.r`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/r)
     [[nodiscard]] SVGAnimatedLength r() const;
-    /// Getter of the `fx` attribute.
+    /// [`SVGRadialGradientElement.fx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/fx)
     /// [`SVGRadialGradientElement.fx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/fx)
     [[nodiscard]] SVGAnimatedLength fx() const;
-    /// Getter of the `fy` attribute.
+    /// [`SVGRadialGradientElement.fy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/fy)
     /// [`SVGRadialGradientElement.fy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/fy)
     [[nodiscard]] SVGAnimatedLength fy() const;
-    /// Getter of the `fr` attribute.
+    /// [`SVGRadialGradientElement.fr`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/fr)
     /// [`SVGRadialGradientElement.fr`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRadialGradientElement/fr)
     [[nodiscard]] SVGAnimatedLength fr() const;
 };

@@ -1,14 +1,16 @@
 #include <webbind/SVGBoundingBoxOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SVGBoundingBoxOptions::SVGBoundingBoxOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SVGBoundingBoxOptions SVGBoundingBoxOptions::take_ownership(Handle h) noexcept {
-        return SVGBoundingBoxOptions(h);
-    }
+    return SVGBoundingBoxOptions(h);
+}
+
 SVGBoundingBoxOptions::SVGBoundingBoxOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SVGBoundingBoxOptions::SVGBoundingBoxOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SVGBoundingBoxOptions SVGBoundingBoxOptions::clone() const noexcept { return *this; }
 
 bool SVGBoundingBoxOptions::fill() const {

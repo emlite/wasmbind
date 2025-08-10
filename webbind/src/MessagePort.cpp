@@ -4,11 +4,15 @@
 namespace webbind {
 
 MessagePort MessagePort::take_ownership(Handle h) noexcept {
-        return MessagePort(h);
-    }
+    return MessagePort(h);
+}
+
 MessagePort MessagePort::clone() const noexcept { return *this; }
+
 emlite::Val MessagePort::instance() noexcept { return emlite::Val::global("MessagePort"); }
+
 MessagePort::MessagePort(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 MessagePort::MessagePort(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Undefined MessagePort::postMessage(const jsbind::Any& message) {

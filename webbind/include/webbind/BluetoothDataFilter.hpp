@@ -20,10 +20,10 @@ public:
     BluetoothDataFilter();
     /// The `new BluetoothDataFilter(..)` constructor, creating a new BluetoothDataFilter instance
     BluetoothDataFilter(const BluetoothDataFilterInit& init);
-    /// Getter of the `dataPrefix` attribute.
+    /// [`BluetoothDataFilter.dataPrefix`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDataFilter/dataPrefix)
     /// [`BluetoothDataFilter.dataPrefix`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDataFilter/dataPrefix)
     [[nodiscard]] jsbind::ArrayBuffer dataPrefix() const;
-    /// Getter of the `mask` attribute.
+    /// [`BluetoothDataFilter.mask`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDataFilter/mask)
     /// [`BluetoothDataFilter.mask`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDataFilter/mask)
     [[nodiscard]] jsbind::ArrayBuffer mask() const;
 };

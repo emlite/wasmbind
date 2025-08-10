@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AesGcmParams
-/// [`AesGcmParams`](https://developer.mozilla.org/en-US/docs/Web/API/AesGcmParams)
 class AesGcmParams : public Algorithm {
   explicit AesGcmParams(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit AesGcmParams(const emlite::Val &val) noexcept;
     AesGcmParams() noexcept;
     [[nodiscard]] AesGcmParams clone() const noexcept;
+    /// Getter of the `iv` attribute.
     [[nodiscard]] jsbind::Any iv() const;
+    /// Setter of the `iv` attribute.
     void iv(const jsbind::Any& value);
+    /// Getter of the `additionalData` attribute.
     [[nodiscard]] jsbind::Any additionalData() const;
+    /// Setter of the `additionalData` attribute.
     void additionalData(const jsbind::Any& value);
+    /// Getter of the `tagLength` attribute.
     [[nodiscard]] unsigned char tagLength() const;
+    /// Setter of the `tagLength` attribute.
     void tagLength(unsigned char value);
 };
 

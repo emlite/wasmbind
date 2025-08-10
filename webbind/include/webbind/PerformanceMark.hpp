@@ -21,7 +21,7 @@ public:
     PerformanceMark(const jsbind::String& markName);
     /// The `new PerformanceMark(..)` constructor, creating a new PerformanceMark instance
     PerformanceMark(const jsbind::String& markName, const PerformanceMarkOptions& markOptions);
-    /// Getter of the `detail` attribute.
+    /// [`PerformanceMark.detail`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMark/detail)
     /// [`PerformanceMark.detail`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMark/detail)
     [[nodiscard]] jsbind::Any detail() const;
 };

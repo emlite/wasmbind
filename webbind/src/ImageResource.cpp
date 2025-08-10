@@ -1,14 +1,16 @@
 #include <webbind/ImageResource.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ImageResource::ImageResource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageResource ImageResource::take_ownership(Handle h) noexcept {
-        return ImageResource(h);
-    }
+    return ImageResource(h);
+}
+
 ImageResource::ImageResource(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ImageResource::ImageResource() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ImageResource ImageResource::clone() const noexcept { return *this; }
 
 jsbind::String ImageResource::src() const {

@@ -1,15 +1,17 @@
 #include <webbind/HIDReportInfo.hpp>
 #include <webbind/HIDReportItem.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HIDReportInfo::HIDReportInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HIDReportInfo HIDReportInfo::take_ownership(Handle h) noexcept {
-        return HIDReportInfo(h);
-    }
+    return HIDReportInfo(h);
+}
+
 HIDReportInfo::HIDReportInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HIDReportInfo::HIDReportInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HIDReportInfo HIDReportInfo::clone() const noexcept { return *this; }
 
 unsigned char HIDReportInfo::reportId() const {

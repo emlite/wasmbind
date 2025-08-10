@@ -37,11 +37,15 @@
 namespace webbind {
 
 MLGraphBuilder MLGraphBuilder::take_ownership(Handle h) noexcept {
-        return MLGraphBuilder(h);
-    }
+    return MLGraphBuilder(h);
+}
+
 MLGraphBuilder MLGraphBuilder::clone() const noexcept { return *this; }
+
 emlite::Val MLGraphBuilder::instance() noexcept { return emlite::Val::global("MLGraphBuilder"); }
+
 MLGraphBuilder::MLGraphBuilder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 MLGraphBuilder::MLGraphBuilder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 MLGraphBuilder::MLGraphBuilder(const MLContext& context) : emlite::Val(emlite::Val::global("MLGraphBuilder").new_(context)) {}

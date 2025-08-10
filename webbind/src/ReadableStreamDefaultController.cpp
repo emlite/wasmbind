@@ -3,11 +3,15 @@
 namespace webbind {
 
 ReadableStreamDefaultController ReadableStreamDefaultController::take_ownership(Handle h) noexcept {
-        return ReadableStreamDefaultController(h);
-    }
+    return ReadableStreamDefaultController(h);
+}
+
 ReadableStreamDefaultController ReadableStreamDefaultController::clone() const noexcept { return *this; }
+
 emlite::Val ReadableStreamDefaultController::instance() noexcept { return emlite::Val::global("ReadableStreamDefaultController"); }
+
 ReadableStreamDefaultController::ReadableStreamDefaultController(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ReadableStreamDefaultController::ReadableStreamDefaultController(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 double ReadableStreamDefaultController::desiredSize() const {

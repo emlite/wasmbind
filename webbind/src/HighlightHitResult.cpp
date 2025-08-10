@@ -2,15 +2,17 @@
 #include <webbind/Highlight.hpp>
 #include <webbind/AbstractRange.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HighlightHitResult::HighlightHitResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HighlightHitResult HighlightHitResult::take_ownership(Handle h) noexcept {
-        return HighlightHitResult(h);
-    }
+    return HighlightHitResult(h);
+}
+
 HighlightHitResult::HighlightHitResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HighlightHitResult::HighlightHitResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HighlightHitResult HighlightHitResult::clone() const noexcept { return *this; }
 
 Highlight HighlightHitResult::highlight() const {

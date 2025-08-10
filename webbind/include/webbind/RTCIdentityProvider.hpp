@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCIdentityProvider
-/// [`RTCIdentityProvider`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityProvider)
 class RTCIdentityProvider : public emlite::Val {
   explicit RTCIdentityProvider(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit RTCIdentityProvider(const emlite::Val &val) noexcept;
     RTCIdentityProvider() noexcept;
     [[nodiscard]] RTCIdentityProvider clone() const noexcept;
+    /// Getter of the `generateAssertion` attribute.
     [[nodiscard]] jsbind::Function generateAssertion() const;
+    /// Setter of the `generateAssertion` attribute.
     void generateAssertion(const jsbind::Function& value);
+    /// Getter of the `validateAssertion` attribute.
     [[nodiscard]] jsbind::Function validateAssertion() const;
+    /// Setter of the `validateAssertion` attribute.
     void validateAssertion(const jsbind::Function& value);
 };
 

@@ -1,15 +1,17 @@
 #include <webbind/GPUColorTargetState.hpp>
 #include <webbind/GPUBlendState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUColorTargetState::GPUColorTargetState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUColorTargetState GPUColorTargetState::take_ownership(Handle h) noexcept {
-        return GPUColorTargetState(h);
-    }
+    return GPUColorTargetState(h);
+}
+
 GPUColorTargetState::GPUColorTargetState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUColorTargetState::GPUColorTargetState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUColorTargetState GPUColorTargetState::clone() const noexcept { return *this; }
 
 GPUTextureFormat GPUColorTargetState::format() const {

@@ -1,14 +1,16 @@
 #include <webbind/ConstrainDOMStringParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ConstrainDOMStringParameters::ConstrainDOMStringParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ConstrainDOMStringParameters ConstrainDOMStringParameters::take_ownership(Handle h) noexcept {
-        return ConstrainDOMStringParameters(h);
-    }
+    return ConstrainDOMStringParameters(h);
+}
+
 ConstrainDOMStringParameters::ConstrainDOMStringParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ConstrainDOMStringParameters::ConstrainDOMStringParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ConstrainDOMStringParameters ConstrainDOMStringParameters::clone() const noexcept { return *this; }
 
 jsbind::Any ConstrainDOMStringParameters::exact() const {

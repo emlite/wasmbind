@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type HandwritingHints
-/// [`HandwritingHints`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingHints)
 class HandwritingHints : public emlite::Val {
   explicit HandwritingHints(Handle h) noexcept;
 public:
@@ -15,13 +14,21 @@ public:
     explicit HandwritingHints(const emlite::Val &val) noexcept;
     HandwritingHints() noexcept;
     [[nodiscard]] HandwritingHints clone() const noexcept;
+    /// Getter of the `recognitionType` attribute.
     [[nodiscard]] jsbind::String recognitionType() const;
+    /// Setter of the `recognitionType` attribute.
     void recognitionType(const jsbind::String& value);
+    /// Getter of the `inputType` attribute.
     [[nodiscard]] jsbind::String inputType() const;
+    /// Setter of the `inputType` attribute.
     void inputType(const jsbind::String& value);
+    /// Getter of the `textContext` attribute.
     [[nodiscard]] jsbind::String textContext() const;
+    /// Setter of the `textContext` attribute.
     void textContext(const jsbind::String& value);
+    /// Getter of the `alternatives` attribute.
     [[nodiscard]] unsigned long alternatives() const;
+    /// Setter of the `alternatives` attribute.
     void alternatives(unsigned long value);
 };
 

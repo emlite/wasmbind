@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FileSystemGetDirectoryOptions
-/// [`FileSystemGetDirectoryOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemGetDirectoryOptions)
 class FileSystemGetDirectoryOptions : public emlite::Val {
   explicit FileSystemGetDirectoryOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit FileSystemGetDirectoryOptions(const emlite::Val &val) noexcept;
     FileSystemGetDirectoryOptions() noexcept;
     [[nodiscard]] FileSystemGetDirectoryOptions clone() const noexcept;
+    /// Getter of the `create` attribute.
     [[nodiscard]] bool create() const;
+    /// Setter of the `create` attribute.
     void create(bool value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/AudioConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioConfiguration::AudioConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioConfiguration AudioConfiguration::take_ownership(Handle h) noexcept {
-        return AudioConfiguration(h);
-    }
+    return AudioConfiguration(h);
+}
+
 AudioConfiguration::AudioConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioConfiguration::AudioConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioConfiguration AudioConfiguration::clone() const noexcept { return *this; }
 
 jsbind::String AudioConfiguration::contentType() const {

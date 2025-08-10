@@ -5,11 +5,15 @@
 namespace webbind {
 
 XRSystem XRSystem::take_ownership(Handle h) noexcept {
-        return XRSystem(h);
-    }
+    return XRSystem(h);
+}
+
 XRSystem XRSystem::clone() const noexcept { return *this; }
+
 emlite::Val XRSystem::instance() noexcept { return emlite::Val::global("XRSystem"); }
+
 XRSystem::XRSystem(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 XRSystem::XRSystem(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Promise<bool> XRSystem::isSessionSupported(const XRSessionMode& mode) {

@@ -18,10 +18,10 @@ public:
     static BackgroundFetchRecord take_ownership(Handle h) noexcept;
     [[nodiscard]] BackgroundFetchRecord clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `request` attribute.
+    /// [`BackgroundFetchRecord.request`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/request)
     /// [`BackgroundFetchRecord.request`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/request)
     [[nodiscard]] Request request() const;
-    /// Getter of the `responseReady` attribute.
+    /// [`BackgroundFetchRecord.responseReady`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/responseReady)
     /// [`BackgroundFetchRecord.responseReady`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/responseReady)
     [[nodiscard]] jsbind::Promise<Response> responseReady() const;
 };

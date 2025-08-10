@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLLinearOptions
-/// [`MLLinearOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLLinearOptions)
 class MLLinearOptions : public MLOperatorOptions {
   explicit MLLinearOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MLLinearOptions(const emlite::Val &val) noexcept;
     MLLinearOptions() noexcept;
     [[nodiscard]] MLLinearOptions clone() const noexcept;
+    /// Getter of the `alpha` attribute.
     [[nodiscard]] double alpha() const;
+    /// Setter of the `alpha` attribute.
     void alpha(double value);
+    /// Getter of the `beta` attribute.
     [[nodiscard]] double beta() const;
+    /// Setter of the `beta` attribute.
     void beta(double value);
 };
 

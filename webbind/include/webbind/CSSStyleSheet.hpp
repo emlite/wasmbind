@@ -25,10 +25,10 @@ public:
     CSSStyleSheet();
     /// The `new CSSStyleSheet(..)` constructor, creating a new CSSStyleSheet instance
     CSSStyleSheet(const CSSStyleSheetInit& options);
-    /// Getter of the `ownerRule` attribute.
+    /// [`CSSStyleSheet.ownerRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/ownerRule)
     /// [`CSSStyleSheet.ownerRule`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/ownerRule)
     [[nodiscard]] CSSRule ownerRule() const;
-    /// Getter of the `cssRules` attribute.
+    /// [`CSSStyleSheet.cssRules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/cssRules)
     /// [`CSSStyleSheet.cssRules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/cssRules)
     [[nodiscard]] CSSRuleList cssRules() const;
     /// The insertRule method.
@@ -46,7 +46,7 @@ public:
     /// The replaceSync method.
     /// [`CSSStyleSheet.replaceSync`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/replaceSync)
     jsbind::Undefined replaceSync(const jsbind::String& text);
-    /// Getter of the `rules` attribute.
+    /// [`CSSStyleSheet.rules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/rules)
     /// [`CSSStyleSheet.rules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/rules)
     [[nodiscard]] CSSRuleList rules() const;
     /// The addRule method.

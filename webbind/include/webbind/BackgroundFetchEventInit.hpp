@@ -10,7 +10,6 @@ namespace webbind {
 class BackgroundFetchRegistration;
 
 /// Dictionary type BackgroundFetchEventInit
-/// [`BackgroundFetchEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEventInit)
 class BackgroundFetchEventInit : public ExtendableEventInit {
   explicit BackgroundFetchEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit BackgroundFetchEventInit(const emlite::Val &val) noexcept;
     BackgroundFetchEventInit() noexcept;
     [[nodiscard]] BackgroundFetchEventInit clone() const noexcept;
+    /// Getter of the `registration` attribute.
     [[nodiscard]] BackgroundFetchRegistration registration() const;
+    /// Setter of the `registration` attribute.
     void registration(const BackgroundFetchRegistration& value);
 };
 

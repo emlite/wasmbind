@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCOfferOptions
-/// [`RTCOfferOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RTCOfferOptions)
 class RTCOfferOptions : public emlite::Val {
   explicit RTCOfferOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit RTCOfferOptions(const emlite::Val &val) noexcept;
     RTCOfferOptions() noexcept;
     [[nodiscard]] RTCOfferOptions clone() const noexcept;
+    /// Getter of the `offerToReceiveAudio` attribute.
     [[nodiscard]] bool offerToReceiveAudio() const;
+    /// Setter of the `offerToReceiveAudio` attribute.
     void offerToReceiveAudio(bool value);
+    /// Getter of the `offerToReceiveVideo` attribute.
     [[nodiscard]] bool offerToReceiveVideo() const;
+    /// Setter of the `offerToReceiveVideo` attribute.
     void offerToReceiveVideo(bool value);
 };
 

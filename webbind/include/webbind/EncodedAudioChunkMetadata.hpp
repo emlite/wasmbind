@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type EncodedAudioChunkMetadata
-/// [`EncodedAudioChunkMetadata`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunkMetadata)
 class EncodedAudioChunkMetadata : public emlite::Val {
   explicit EncodedAudioChunkMetadata(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit EncodedAudioChunkMetadata(const emlite::Val &val) noexcept;
     EncodedAudioChunkMetadata() noexcept;
     [[nodiscard]] EncodedAudioChunkMetadata clone() const noexcept;
+    /// Getter of the `decoderConfig` attribute.
     [[nodiscard]] AudioDecoderConfig decoderConfig() const;
+    /// Setter of the `decoderConfig` attribute.
     void decoderConfig(const AudioDecoderConfig& value);
 };
 

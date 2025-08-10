@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AudioEncoderSupport
-/// [`AudioEncoderSupport`](https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoderSupport)
 class AudioEncoderSupport : public emlite::Val {
   explicit AudioEncoderSupport(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit AudioEncoderSupport(const emlite::Val &val) noexcept;
     AudioEncoderSupport() noexcept;
     [[nodiscard]] AudioEncoderSupport clone() const noexcept;
+    /// Getter of the `supported` attribute.
     [[nodiscard]] bool supported() const;
+    /// Setter of the `supported` attribute.
     void supported(bool value);
+    /// Getter of the `config` attribute.
     [[nodiscard]] AudioEncoderConfig config() const;
+    /// Setter of the `config` attribute.
     void config(const AudioEncoderConfig& value);
 };
 

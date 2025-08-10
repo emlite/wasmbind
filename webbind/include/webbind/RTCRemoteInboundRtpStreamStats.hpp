@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRemoteInboundRtpStreamStats
-/// [`RTCRemoteInboundRtpStreamStats`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRemoteInboundRtpStreamStats)
 class RTCRemoteInboundRtpStreamStats : public RTCReceivedRtpStreamStats {
   explicit RTCRemoteInboundRtpStreamStats(Handle h) noexcept;
 public:
@@ -16,17 +15,29 @@ public:
     explicit RTCRemoteInboundRtpStreamStats(const emlite::Val &val) noexcept;
     RTCRemoteInboundRtpStreamStats() noexcept;
     [[nodiscard]] RTCRemoteInboundRtpStreamStats clone() const noexcept;
+    /// Getter of the `localId` attribute.
     [[nodiscard]] jsbind::String localId() const;
+    /// Setter of the `localId` attribute.
     void localId(const jsbind::String& value);
+    /// Getter of the `roundTripTime` attribute.
     [[nodiscard]] double roundTripTime() const;
+    /// Setter of the `roundTripTime` attribute.
     void roundTripTime(double value);
+    /// Getter of the `totalRoundTripTime` attribute.
     [[nodiscard]] double totalRoundTripTime() const;
+    /// Setter of the `totalRoundTripTime` attribute.
     void totalRoundTripTime(double value);
+    /// Getter of the `fractionLost` attribute.
     [[nodiscard]] double fractionLost() const;
+    /// Setter of the `fractionLost` attribute.
     void fractionLost(double value);
+    /// Getter of the `roundTripTimeMeasurements` attribute.
     [[nodiscard]] long long roundTripTimeMeasurements() const;
+    /// Setter of the `roundTripTimeMeasurements` attribute.
     void roundTripTimeMeasurements(long long value);
+    /// Getter of the `packetsWithBleachedEct1Marking` attribute.
     [[nodiscard]] long long packetsWithBleachedEct1Marking() const;
+    /// Setter of the `packetsWithBleachedEct1Marking` attribute.
     void packetsWithBleachedEct1Marking(long long value);
 };
 

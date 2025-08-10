@@ -33,25 +33,25 @@ public:
     static SVGSVGElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGSVGElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `x` attribute.
+    /// [`SVGSVGElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/x)
     /// [`SVGSVGElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;
-    /// Getter of the `y` attribute.
+    /// [`SVGSVGElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/y)
     /// [`SVGSVGElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/y)
     [[nodiscard]] SVGAnimatedLength y() const;
-    /// Getter of the `width` attribute.
+    /// [`SVGSVGElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/width)
     /// [`SVGSVGElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/width)
     [[nodiscard]] SVGAnimatedLength width() const;
-    /// Getter of the `height` attribute.
+    /// [`SVGSVGElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/height)
     /// [`SVGSVGElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/height)
     [[nodiscard]] SVGAnimatedLength height() const;
-    /// Getter of the `currentScale` attribute.
+    /// [`SVGSVGElement.currentScale`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/currentScale)
     /// [`SVGSVGElement.currentScale`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/currentScale)
     [[nodiscard]] float currentScale() const;
     /// Setter of the `currentScale` attribute.
     /// [`SVGSVGElement.currentScale`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/currentScale)
     void currentScale(float value);
-    /// Getter of the `currentTranslate` attribute.
+    /// [`SVGSVGElement.currentTranslate`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/currentTranslate)
     /// [`SVGSVGElement.currentTranslate`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/currentTranslate)
     [[nodiscard]] DOMPointReadOnly currentTranslate() const;
     /// The getIntersectionList method.
@@ -126,13 +126,13 @@ public:
     /// The setCurrentTime method.
     /// [`SVGSVGElement.setCurrentTime`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/setCurrentTime)
     jsbind::Undefined setCurrentTime(float seconds);
-    /// Getter of the `viewBox` attribute.
+    /// [`SVGSVGElement.viewBox`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/viewBox)
     /// [`SVGSVGElement.viewBox`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/viewBox)
     [[nodiscard]] SVGAnimatedRect viewBox() const;
-    /// Getter of the `preserveAspectRatio` attribute.
+    /// [`SVGSVGElement.preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/preserveAspectRatio)
     /// [`SVGSVGElement.preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/preserveAspectRatio)
     [[nodiscard]] SVGAnimatedPreserveAspectRatio preserveAspectRatio() const;
-    /// Getter of the `onportalactivate` attribute.
+    /// [`SVGSVGElement.onportalactivate`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/onportalactivate)
     /// [`SVGSVGElement.onportalactivate`](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/onportalactivate)
     [[nodiscard]] jsbind::Any onportalactivate() const;
     /// Setter of the `onportalactivate` attribute.

@@ -15,10 +15,10 @@ public:
     static SVGStringList take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGStringList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`SVGStringList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStringList/length)
     /// [`SVGStringList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStringList/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `numberOfItems` attribute.
+    /// [`SVGStringList.numberOfItems`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStringList/numberOfItems)
     /// [`SVGStringList.numberOfItems`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStringList/numberOfItems)
     [[nodiscard]] unsigned long numberOfItems() const;
     /// The clear method.

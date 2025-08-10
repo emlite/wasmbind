@@ -16,13 +16,13 @@ public:
     static ChapterInformation take_ownership(Handle h) noexcept;
     [[nodiscard]] ChapterInformation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `title` attribute.
+    /// [`ChapterInformation.title`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/title)
     /// [`ChapterInformation.title`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/title)
     [[nodiscard]] jsbind::String title() const;
-    /// Getter of the `startTime` attribute.
+    /// [`ChapterInformation.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/startTime)
     /// [`ChapterInformation.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/startTime)
     [[nodiscard]] double startTime() const;
-    /// Getter of the `artwork` attribute.
+    /// [`ChapterInformation.artwork`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/artwork)
     /// [`ChapterInformation.artwork`](https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/artwork)
     [[nodiscard]] jsbind::TypedArray<MediaImage> artwork() const;
 };

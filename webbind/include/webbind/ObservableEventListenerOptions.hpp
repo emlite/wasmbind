@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ObservableEventListenerOptions
-/// [`ObservableEventListenerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ObservableEventListenerOptions)
 class ObservableEventListenerOptions : public emlite::Val {
   explicit ObservableEventListenerOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ObservableEventListenerOptions(const emlite::Val &val) noexcept;
     ObservableEventListenerOptions() noexcept;
     [[nodiscard]] ObservableEventListenerOptions clone() const noexcept;
+    /// Getter of the `capture` attribute.
     [[nodiscard]] bool capture() const;
+    /// Setter of the `capture` attribute.
     void capture(bool value);
+    /// Getter of the `passive` attribute.
     [[nodiscard]] bool passive() const;
+    /// Setter of the `passive` attribute.
     void passive(bool value);
 };
 

@@ -7,11 +7,15 @@
 namespace webbind {
 
 OscillatorNode OscillatorNode::take_ownership(Handle h) noexcept {
-        return OscillatorNode(h);
-    }
+    return OscillatorNode(h);
+}
+
 OscillatorNode OscillatorNode::clone() const noexcept { return *this; }
+
 emlite::Val OscillatorNode::instance() noexcept { return emlite::Val::global("OscillatorNode"); }
+
 OscillatorNode::OscillatorNode(Handle h) noexcept : AudioScheduledSourceNode(emlite::Val::take_ownership(h)) {}
+
 OscillatorNode::OscillatorNode(const emlite::Val &val) noexcept: AudioScheduledSourceNode(val) {}
 
 OscillatorNode::OscillatorNode(const BaseAudioContext& context) : AudioScheduledSourceNode(emlite::Val::global("OscillatorNode").new_(context)) {}

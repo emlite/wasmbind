@@ -23,19 +23,19 @@ public:
     ExtendableMessageEvent(const jsbind::String& type);
     /// The `new ExtendableMessageEvent(..)` constructor, creating a new ExtendableMessageEvent instance
     ExtendableMessageEvent(const jsbind::String& type, const ExtendableMessageEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`ExtendableMessageEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/data)
     /// [`ExtendableMessageEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/data)
     [[nodiscard]] jsbind::Any data() const;
-    /// Getter of the `origin` attribute.
+    /// [`ExtendableMessageEvent.origin`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/origin)
     /// [`ExtendableMessageEvent.origin`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/origin)
     [[nodiscard]] jsbind::String origin() const;
-    /// Getter of the `lastEventId` attribute.
+    /// [`ExtendableMessageEvent.lastEventId`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/lastEventId)
     /// [`ExtendableMessageEvent.lastEventId`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/lastEventId)
     [[nodiscard]] jsbind::String lastEventId() const;
-    /// Getter of the `source` attribute.
+    /// [`ExtendableMessageEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/source)
     /// [`ExtendableMessageEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/source)
     [[nodiscard]] jsbind::Any source() const;
-    /// Getter of the `ports` attribute.
+    /// [`ExtendableMessageEvent.ports`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/ports)
     /// [`ExtendableMessageEvent.ports`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/ports)
     [[nodiscard]] jsbind::TypedArray<MessagePort> ports() const;
 };

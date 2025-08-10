@@ -20,13 +20,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TextEncoderStream(..)` constructor, creating a new TextEncoderStream instance
     TextEncoderStream();
-    /// Getter of the `encoding` attribute.
+    /// [`TextEncoderStream.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream/encoding)
     /// [`TextEncoderStream.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream/encoding)
     [[nodiscard]] jsbind::String encoding() const;
-    /// Getter of the `readable` attribute.
+    /// [`TextEncoderStream.readable`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream/readable)
     /// [`TextEncoderStream.readable`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream/readable)
     [[nodiscard]] ReadableStream readable() const;
-    /// Getter of the `writable` attribute.
+    /// [`TextEncoderStream.writable`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream/writable)
     /// [`TextEncoderStream.writable`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream/writable)
     [[nodiscard]] WritableStream writable() const;
 };

@@ -1,14 +1,16 @@
 #include <webbind/EncodedAudioChunkInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 EncodedAudioChunkInit::EncodedAudioChunkInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EncodedAudioChunkInit EncodedAudioChunkInit::take_ownership(Handle h) noexcept {
-        return EncodedAudioChunkInit(h);
-    }
+    return EncodedAudioChunkInit(h);
+}
+
 EncodedAudioChunkInit::EncodedAudioChunkInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 EncodedAudioChunkInit::EncodedAudioChunkInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 EncodedAudioChunkInit EncodedAudioChunkInit::clone() const noexcept { return *this; }
 
 EncodedAudioChunkType EncodedAudioChunkInit::type() const {

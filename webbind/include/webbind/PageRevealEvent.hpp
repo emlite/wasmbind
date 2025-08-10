@@ -23,7 +23,7 @@ public:
     PageRevealEvent(const jsbind::String& type);
     /// The `new PageRevealEvent(..)` constructor, creating a new PageRevealEvent instance
     PageRevealEvent(const jsbind::String& type, const PageRevealEventInit& eventInitDict);
-    /// Getter of the `viewTransition` attribute.
+    /// [`PageRevealEvent.viewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEvent/viewTransition)
     /// [`PageRevealEvent.viewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEvent/viewTransition)
     [[nodiscard]] ViewTransition viewTransition() const;
 };

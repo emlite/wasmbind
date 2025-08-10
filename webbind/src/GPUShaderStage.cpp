@@ -1,7 +1,5 @@
 #include <webbind/GPUShaderStage.hpp>
 
-using emlite::Val;
-
 namespace webbind {
 
 namespace GPUShaderStage {

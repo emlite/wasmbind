@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLArgMinMaxOptions
-/// [`MLArgMinMaxOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLArgMinMaxOptions)
 class MLArgMinMaxOptions : public MLOperatorOptions {
   explicit MLArgMinMaxOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MLArgMinMaxOptions(const emlite::Val &val) noexcept;
     MLArgMinMaxOptions() noexcept;
     [[nodiscard]] MLArgMinMaxOptions clone() const noexcept;
+    /// Getter of the `keepDimensions` attribute.
     [[nodiscard]] bool keepDimensions() const;
+    /// Setter of the `keepDimensions` attribute.
     void keepDimensions(bool value);
+    /// Getter of the `outputDataType` attribute.
     [[nodiscard]] MLOperandDataType outputDataType() const;
+    /// Setter of the `outputDataType` attribute.
     void outputDataType(const MLOperandDataType& value);
 };
 

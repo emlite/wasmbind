@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GPUObjectDescriptorBase
-/// [`GPUObjectDescriptorBase`](https://developer.mozilla.org/en-US/docs/Web/API/GPUObjectDescriptorBase)
 class GPUObjectDescriptorBase : public emlite::Val {
   explicit GPUObjectDescriptorBase(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit GPUObjectDescriptorBase(const emlite::Val &val) noexcept;
     GPUObjectDescriptorBase() noexcept;
     [[nodiscard]] GPUObjectDescriptorBase clone() const noexcept;
+    /// Getter of the `label` attribute.
     [[nodiscard]] jsbind::String label() const;
+    /// Setter of the `label` attribute.
     void label(const jsbind::String& value);
 };
 

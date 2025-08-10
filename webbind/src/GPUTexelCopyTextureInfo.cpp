@@ -1,15 +1,17 @@
 #include <webbind/GPUTexelCopyTextureInfo.hpp>
 #include <webbind/GPUTexture.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUTexelCopyTextureInfo::GPUTexelCopyTextureInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUTexelCopyTextureInfo GPUTexelCopyTextureInfo::take_ownership(Handle h) noexcept {
-        return GPUTexelCopyTextureInfo(h);
-    }
+    return GPUTexelCopyTextureInfo(h);
+}
+
 GPUTexelCopyTextureInfo::GPUTexelCopyTextureInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUTexelCopyTextureInfo::GPUTexelCopyTextureInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUTexelCopyTextureInfo GPUTexelCopyTextureInfo::clone() const noexcept { return *this; }
 
 GPUTexture GPUTexelCopyTextureInfo::texture() const {

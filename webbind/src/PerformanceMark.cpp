@@ -4,11 +4,15 @@
 namespace webbind {
 
 PerformanceMark PerformanceMark::take_ownership(Handle h) noexcept {
-        return PerformanceMark(h);
-    }
+    return PerformanceMark(h);
+}
+
 PerformanceMark PerformanceMark::clone() const noexcept { return *this; }
+
 emlite::Val PerformanceMark::instance() noexcept { return emlite::Val::global("PerformanceMark"); }
+
 PerformanceMark::PerformanceMark(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
+
 PerformanceMark::PerformanceMark(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 
 PerformanceMark::PerformanceMark(const jsbind::String& markName) : PerformanceEntry(emlite::Val::global("PerformanceMark").new_(markName)) {}

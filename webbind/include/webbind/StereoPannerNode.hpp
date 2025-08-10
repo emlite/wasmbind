@@ -24,7 +24,7 @@ public:
     StereoPannerNode(const BaseAudioContext& context);
     /// The `new StereoPannerNode(..)` constructor, creating a new StereoPannerNode instance
     StereoPannerNode(const BaseAudioContext& context, const StereoPannerOptions& options);
-    /// Getter of the `pan` attribute.
+    /// [`StereoPannerNode.pan`](https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode/pan)
     /// [`StereoPannerNode.pan`](https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode/pan)
     [[nodiscard]] AudioParam pan() const;
 };

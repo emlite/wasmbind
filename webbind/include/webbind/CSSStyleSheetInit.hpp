@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CSSStyleSheetInit
-/// [`CSSStyleSheetInit`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheetInit)
 class CSSStyleSheetInit : public emlite::Val {
   explicit CSSStyleSheetInit(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit CSSStyleSheetInit(const emlite::Val &val) noexcept;
     CSSStyleSheetInit() noexcept;
     [[nodiscard]] CSSStyleSheetInit clone() const noexcept;
+    /// Getter of the `baseURL` attribute.
     [[nodiscard]] jsbind::String baseURL() const;
+    /// Setter of the `baseURL` attribute.
     void baseURL(const jsbind::String& value);
+    /// Getter of the `media` attribute.
     [[nodiscard]] jsbind::Any media() const;
+    /// Setter of the `media` attribute.
     void media(const jsbind::Any& value);
+    /// Getter of the `disabled` attribute.
     [[nodiscard]] bool disabled() const;
+    /// Setter of the `disabled` attribute.
     void disabled(bool value);
 };
 

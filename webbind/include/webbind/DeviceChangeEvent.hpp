@@ -23,10 +23,10 @@ public:
     DeviceChangeEvent(const jsbind::String& type);
     /// The `new DeviceChangeEvent(..)` constructor, creating a new DeviceChangeEvent instance
     DeviceChangeEvent(const jsbind::String& type, const DeviceChangeEventInit& eventInitDict);
-    /// Getter of the `devices` attribute.
+    /// [`DeviceChangeEvent.devices`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEvent/devices)
     /// [`DeviceChangeEvent.devices`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEvent/devices)
     [[nodiscard]] jsbind::TypedArray<MediaDeviceInfo> devices() const;
-    /// Getter of the `userInsertedDevices` attribute.
+    /// [`DeviceChangeEvent.userInsertedDevices`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEvent/userInsertedDevices)
     /// [`DeviceChangeEvent.userInsertedDevices`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEvent/userInsertedDevices)
     [[nodiscard]] jsbind::TypedArray<MediaDeviceInfo> userInsertedDevices() const;
 };

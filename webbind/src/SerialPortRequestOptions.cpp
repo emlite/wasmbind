@@ -1,15 +1,17 @@
 #include <webbind/SerialPortRequestOptions.hpp>
 #include <webbind/SerialPortFilter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SerialPortRequestOptions::SerialPortRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SerialPortRequestOptions SerialPortRequestOptions::take_ownership(Handle h) noexcept {
-        return SerialPortRequestOptions(h);
-    }
+    return SerialPortRequestOptions(h);
+}
+
 SerialPortRequestOptions::SerialPortRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SerialPortRequestOptions::SerialPortRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SerialPortRequestOptions SerialPortRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<SerialPortFilter> SerialPortRequestOptions::filters() const {

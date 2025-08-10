@@ -1,14 +1,16 @@
 #include <webbind/MLOperatorOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLOperatorOptions::MLOperatorOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLOperatorOptions MLOperatorOptions::take_ownership(Handle h) noexcept {
-        return MLOperatorOptions(h);
-    }
+    return MLOperatorOptions(h);
+}
+
 MLOperatorOptions::MLOperatorOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MLOperatorOptions::MLOperatorOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MLOperatorOptions MLOperatorOptions::clone() const noexcept { return *this; }
 
 jsbind::String MLOperatorOptions::label() const {

@@ -16,10 +16,10 @@ public:
     static CSSContainerRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSContainerRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `containerName` attribute.
+    /// [`CSSContainerRule.containerName`](https://developer.mozilla.org/en-US/docs/Web/API/CSSContainerRule/containerName)
     /// [`CSSContainerRule.containerName`](https://developer.mozilla.org/en-US/docs/Web/API/CSSContainerRule/containerName)
     [[nodiscard]] jsbind::String containerName() const;
-    /// Getter of the `containerQuery` attribute.
+    /// [`CSSContainerRule.containerQuery`](https://developer.mozilla.org/en-US/docs/Web/API/CSSContainerRule/containerQuery)
     /// [`CSSContainerRule.containerQuery`](https://developer.mozilla.org/en-US/docs/Web/API/CSSContainerRule/containerQuery)
     [[nodiscard]] jsbind::String containerQuery() const;
 };

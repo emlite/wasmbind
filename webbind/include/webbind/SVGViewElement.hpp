@@ -19,10 +19,10 @@ public:
     static SVGViewElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGViewElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `viewBox` attribute.
+    /// [`SVGViewElement.viewBox`](https://developer.mozilla.org/en-US/docs/Web/API/SVGViewElement/viewBox)
     /// [`SVGViewElement.viewBox`](https://developer.mozilla.org/en-US/docs/Web/API/SVGViewElement/viewBox)
     [[nodiscard]] SVGAnimatedRect viewBox() const;
-    /// Getter of the `preserveAspectRatio` attribute.
+    /// [`SVGViewElement.preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGViewElement/preserveAspectRatio)
     /// [`SVGViewElement.preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/SVGViewElement/preserveAspectRatio)
     [[nodiscard]] SVGAnimatedPreserveAspectRatio preserveAspectRatio() const;
 };

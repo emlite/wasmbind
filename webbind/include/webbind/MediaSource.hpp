@@ -23,43 +23,44 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaSource(..)` constructor, creating a new MediaSource instance
     MediaSource();
-    /// Getter of the `handle` attribute.
+    /// [`MediaSource.handle`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/handle)
     /// [`MediaSource.handle`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/handle)
     [[nodiscard]] MediaSourceHandle handle() const;
-    /// Getter of the `sourceBuffers` attribute.
+    /// [`MediaSource.sourceBuffers`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceBuffers)
     /// [`MediaSource.sourceBuffers`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceBuffers)
     [[nodiscard]] SourceBufferList sourceBuffers() const;
-    /// Getter of the `activeSourceBuffers` attribute.
+    /// [`MediaSource.activeSourceBuffers`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/activeSourceBuffers)
     /// [`MediaSource.activeSourceBuffers`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/activeSourceBuffers)
     [[nodiscard]] SourceBufferList activeSourceBuffers() const;
-    /// Getter of the `readyState` attribute.
+    /// [`MediaSource.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState)
     /// [`MediaSource.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState)
     [[nodiscard]] ReadyState readyState() const;
-    /// Getter of the `duration` attribute.
+    /// [`MediaSource.duration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/duration)
     /// [`MediaSource.duration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/duration)
     [[nodiscard]] double duration() const;
     /// Setter of the `duration` attribute.
     /// [`MediaSource.duration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/duration)
     void duration(double value);
-    /// Getter of the `onsourceopen` attribute.
+    /// [`MediaSource.onsourceopen`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceopen)
     /// [`MediaSource.onsourceopen`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceopen)
     [[nodiscard]] jsbind::Any onsourceopen() const;
     /// Setter of the `onsourceopen` attribute.
     /// [`MediaSource.onsourceopen`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceopen)
     void onsourceopen(const jsbind::Any& value);
-    /// Getter of the `onsourceended` attribute.
+    /// [`MediaSource.onsourceended`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceended)
     /// [`MediaSource.onsourceended`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceended)
     [[nodiscard]] jsbind::Any onsourceended() const;
     /// Setter of the `onsourceended` attribute.
     /// [`MediaSource.onsourceended`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceended)
     void onsourceended(const jsbind::Any& value);
-    /// Getter of the `onsourceclose` attribute.
+    /// [`MediaSource.onsourceclose`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceclose)
     /// [`MediaSource.onsourceclose`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceclose)
     [[nodiscard]] jsbind::Any onsourceclose() const;
     /// Setter of the `onsourceclose` attribute.
     /// [`MediaSource.onsourceclose`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/onsourceclose)
     void onsourceclose(const jsbind::Any& value);
     /// Getter of the `canConstructInDedicatedWorker` static attribute.
+    /// [`MediaSource.canConstructInDedicatedWorker`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/canConstructInDedicatedWorker)
     /// [`MediaSource.canConstructInDedicatedWorker`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/canConstructInDedicatedWorker)
     [[nodiscard]] static bool canConstructInDedicatedWorker();
     /// The addSourceBuffer method.

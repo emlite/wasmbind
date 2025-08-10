@@ -1,14 +1,16 @@
 #include <webbind/RTCRtpContributingSource.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpContributingSource::RTCRtpContributingSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpContributingSource RTCRtpContributingSource::take_ownership(Handle h) noexcept {
-        return RTCRtpContributingSource(h);
-    }
+    return RTCRtpContributingSource(h);
+}
+
 RTCRtpContributingSource::RTCRtpContributingSource(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCRtpContributingSource::RTCRtpContributingSource() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCRtpContributingSource RTCRtpContributingSource::clone() const noexcept { return *this; }
 
 jsbind::Any RTCRtpContributingSource::timestamp() const {

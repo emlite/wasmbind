@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpCapabilities
-/// [`RTCRtpCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpCapabilities)
 class RTCRtpCapabilities : public emlite::Val {
   explicit RTCRtpCapabilities(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit RTCRtpCapabilities(const emlite::Val &val) noexcept;
     RTCRtpCapabilities() noexcept;
     [[nodiscard]] RTCRtpCapabilities clone() const noexcept;
+    /// Getter of the `codecs` attribute.
     [[nodiscard]] jsbind::TypedArray<RTCRtpCodec> codecs() const;
+    /// Setter of the `codecs` attribute.
     void codecs(const jsbind::TypedArray<RTCRtpCodec>& value);
+    /// Getter of the `headerExtensions` attribute.
     [[nodiscard]] jsbind::TypedArray<RTCRtpHeaderExtensionCapability> headerExtensions() const;
+    /// Setter of the `headerExtensions` attribute.
     void headerExtensions(const jsbind::TypedArray<RTCRtpHeaderExtensionCapability>& value);
 };
 

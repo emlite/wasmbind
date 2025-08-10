@@ -1,15 +1,17 @@
 #include <webbind/AuctionAdInterestGroup.hpp>
 #include <webbind/ProtectedAudiencePrivateAggregationConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuctionAdInterestGroup::AuctionAdInterestGroup(Handle h) noexcept : GenerateBidInterestGroup(emlite::Val::take_ownership(h)) {}
 AuctionAdInterestGroup AuctionAdInterestGroup::take_ownership(Handle h) noexcept {
-        return AuctionAdInterestGroup(h);
-    }
+    return AuctionAdInterestGroup(h);
+}
+
 AuctionAdInterestGroup::AuctionAdInterestGroup(const emlite::Val &val) noexcept: GenerateBidInterestGroup(val) {}
+
 AuctionAdInterestGroup::AuctionAdInterestGroup() noexcept: GenerateBidInterestGroup(emlite::Val::object()) {}
+
 AuctionAdInterestGroup AuctionAdInterestGroup::clone() const noexcept { return *this; }
 
 double AuctionAdInterestGroup::priority() const {

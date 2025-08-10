@@ -2,15 +2,17 @@
 #include <webbind/DOMRectInit.hpp>
 #include <webbind/VideoFrameMetadata.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoFrameInit::VideoFrameInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoFrameInit VideoFrameInit::take_ownership(Handle h) noexcept {
-        return VideoFrameInit(h);
-    }
+    return VideoFrameInit(h);
+}
+
 VideoFrameInit::VideoFrameInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoFrameInit::VideoFrameInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoFrameInit VideoFrameInit::clone() const noexcept { return *this; }
 
 long long VideoFrameInit::duration() const {

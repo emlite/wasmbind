@@ -5,11 +5,15 @@
 namespace webbind {
 
 AudioProcessingEvent AudioProcessingEvent::take_ownership(Handle h) noexcept {
-        return AudioProcessingEvent(h);
-    }
+    return AudioProcessingEvent(h);
+}
+
 AudioProcessingEvent AudioProcessingEvent::clone() const noexcept { return *this; }
+
 emlite::Val AudioProcessingEvent::instance() noexcept { return emlite::Val::global("AudioProcessingEvent"); }
+
 AudioProcessingEvent::AudioProcessingEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 AudioProcessingEvent::AudioProcessingEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 AudioProcessingEvent::AudioProcessingEvent(const jsbind::String& type, const AudioProcessingEventInit& eventInitDict) : Event(emlite::Val::global("AudioProcessingEvent").new_(type, eventInitDict)) {}

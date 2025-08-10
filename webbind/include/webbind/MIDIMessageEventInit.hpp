@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MIDIMessageEventInit
-/// [`MIDIMessageEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEventInit)
 class MIDIMessageEventInit : public EventInit {
   explicit MIDIMessageEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MIDIMessageEventInit(const emlite::Val &val) noexcept;
     MIDIMessageEventInit() noexcept;
     [[nodiscard]] MIDIMessageEventInit clone() const noexcept;
+    /// Getter of the `data` attribute.
     [[nodiscard]] jsbind::Uint8Array data() const;
+    /// Setter of the `data` attribute.
     void data(const jsbind::Uint8Array& value);
 };
 

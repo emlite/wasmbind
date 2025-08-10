@@ -1,14 +1,16 @@
 #include <webbind/AuctionReportBuyersConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuctionReportBuyersConfig::AuctionReportBuyersConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuctionReportBuyersConfig AuctionReportBuyersConfig::take_ownership(Handle h) noexcept {
-        return AuctionReportBuyersConfig(h);
-    }
+    return AuctionReportBuyersConfig(h);
+}
+
 AuctionReportBuyersConfig::AuctionReportBuyersConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuctionReportBuyersConfig::AuctionReportBuyersConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuctionReportBuyersConfig AuctionReportBuyersConfig::clone() const noexcept { return *this; }
 
 long long AuctionReportBuyersConfig::bucket() const {

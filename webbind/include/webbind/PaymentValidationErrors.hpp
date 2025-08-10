@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type PaymentValidationErrors
-/// [`PaymentValidationErrors`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentValidationErrors)
 class PaymentValidationErrors : public emlite::Val {
   explicit PaymentValidationErrors(Handle h) noexcept;
 public:
@@ -17,13 +16,21 @@ public:
     explicit PaymentValidationErrors(const emlite::Val &val) noexcept;
     PaymentValidationErrors() noexcept;
     [[nodiscard]] PaymentValidationErrors clone() const noexcept;
+    /// Getter of the `payer` attribute.
     [[nodiscard]] PayerErrors payer() const;
+    /// Setter of the `payer` attribute.
     void payer(const PayerErrors& value);
+    /// Getter of the `shippingAddress` attribute.
     [[nodiscard]] AddressErrors shippingAddress() const;
+    /// Setter of the `shippingAddress` attribute.
     void shippingAddress(const AddressErrors& value);
+    /// Getter of the `error` attribute.
     [[nodiscard]] jsbind::String error() const;
+    /// Setter of the `error` attribute.
     void error(const jsbind::String& value);
+    /// Getter of the `paymentMethod` attribute.
     [[nodiscard]] jsbind::Object paymentMethod() const;
+    /// Setter of the `paymentMethod` attribute.
     void paymentMethod(const jsbind::Object& value);
 };
 

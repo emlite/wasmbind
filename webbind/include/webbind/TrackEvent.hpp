@@ -21,7 +21,7 @@ public:
     TrackEvent(const jsbind::String& type);
     /// The `new TrackEvent(..)` constructor, creating a new TrackEvent instance
     TrackEvent(const jsbind::String& type, const TrackEventInit& eventInitDict);
-    /// Getter of the `track` attribute.
+    /// [`TrackEvent.track`](https://developer.mozilla.org/en-US/docs/Web/API/TrackEvent/track)
     /// [`TrackEvent.track`](https://developer.mozilla.org/en-US/docs/Web/API/TrackEvent/track)
     [[nodiscard]] jsbind::Any track() const;
 };

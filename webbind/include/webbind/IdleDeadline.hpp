@@ -18,7 +18,7 @@ public:
     /// The timeRemaining method.
     /// [`IdleDeadline.timeRemaining`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/timeRemaining)
     jsbind::Any timeRemaining();
-    /// Getter of the `didTimeout` attribute.
+    /// [`IdleDeadline.didTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/didTimeout)
     /// [`IdleDeadline.didTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/didTimeout)
     [[nodiscard]] bool didTimeout() const;
 };

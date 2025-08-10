@@ -3,11 +3,15 @@
 namespace webbind {
 
 PerformanceNavigation PerformanceNavigation::take_ownership(Handle h) noexcept {
-        return PerformanceNavigation(h);
-    }
+    return PerformanceNavigation(h);
+}
+
 PerformanceNavigation PerformanceNavigation::clone() const noexcept { return *this; }
+
 emlite::Val PerformanceNavigation::instance() noexcept { return emlite::Val::global("PerformanceNavigation"); }
+
 PerformanceNavigation::PerformanceNavigation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PerformanceNavigation::PerformanceNavigation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned short PerformanceNavigation::type() const {

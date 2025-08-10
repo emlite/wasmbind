@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RsaHashedImportParams
-/// [`RsaHashedImportParams`](https://developer.mozilla.org/en-US/docs/Web/API/RsaHashedImportParams)
 class RsaHashedImportParams : public Algorithm {
   explicit RsaHashedImportParams(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit RsaHashedImportParams(const emlite::Val &val) noexcept;
     RsaHashedImportParams() noexcept;
     [[nodiscard]] RsaHashedImportParams clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] jsbind::Any hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const jsbind::Any& value);
 };
 

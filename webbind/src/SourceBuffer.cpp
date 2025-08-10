@@ -7,11 +7,15 @@
 namespace webbind {
 
 SourceBuffer SourceBuffer::take_ownership(Handle h) noexcept {
-        return SourceBuffer(h);
-    }
+    return SourceBuffer(h);
+}
+
 SourceBuffer SourceBuffer::clone() const noexcept { return *this; }
+
 emlite::Val SourceBuffer::instance() noexcept { return emlite::Val::global("SourceBuffer"); }
+
 SourceBuffer::SourceBuffer(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 SourceBuffer::SourceBuffer(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 AppendMode SourceBuffer::mode() const {

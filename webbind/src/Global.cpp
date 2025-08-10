@@ -4,11 +4,15 @@
 namespace webbind {
 
 Global Global::take_ownership(Handle h) noexcept {
-        return Global(h);
-    }
+    return Global(h);
+}
+
 Global Global::clone() const noexcept { return *this; }
+
 emlite::Val Global::instance() noexcept { return emlite::Val::global("Global"); }
+
 Global::Global(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Global::Global(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Global::Global(const GlobalDescriptor& descriptor) : emlite::Val(emlite::Val::global("Global").new_(descriptor)) {}

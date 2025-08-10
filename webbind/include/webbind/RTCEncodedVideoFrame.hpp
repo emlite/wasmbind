@@ -24,10 +24,10 @@ public:
     RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame);
     /// The `new RTCEncodedVideoFrame(..)` constructor, creating a new RTCEncodedVideoFrame instance
     RTCEncodedVideoFrame(const RTCEncodedVideoFrame& originalFrame, const RTCEncodedVideoFrameOptions& options);
-    /// Getter of the `type` attribute.
+    /// [`RTCEncodedVideoFrame.type`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedVideoFrame/type)
     /// [`RTCEncodedVideoFrame.type`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedVideoFrame/type)
     [[nodiscard]] RTCEncodedVideoFrameType type() const;
-    /// Getter of the `data` attribute.
+    /// [`RTCEncodedVideoFrame.data`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedVideoFrame/data)
     /// [`RTCEncodedVideoFrame.data`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedVideoFrame/data)
     [[nodiscard]] jsbind::ArrayBuffer data() const;
     /// Setter of the `data` attribute.

@@ -1,14 +1,16 @@
 #include <webbind/ModuleImportDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ModuleImportDescriptor::ModuleImportDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ModuleImportDescriptor ModuleImportDescriptor::take_ownership(Handle h) noexcept {
-        return ModuleImportDescriptor(h);
-    }
+    return ModuleImportDescriptor(h);
+}
+
 ModuleImportDescriptor::ModuleImportDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ModuleImportDescriptor::ModuleImportDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ModuleImportDescriptor ModuleImportDescriptor::clone() const noexcept { return *this; }
 
 jsbind::String ModuleImportDescriptor::module_() const {

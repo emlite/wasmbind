@@ -18,10 +18,10 @@ public:
     static ServiceWorker take_ownership(Handle h) noexcept;
     [[nodiscard]] ServiceWorker clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `scriptURL` attribute.
+    /// [`ServiceWorker.scriptURL`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/scriptURL)
     /// [`ServiceWorker.scriptURL`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/scriptURL)
     [[nodiscard]] jsbind::String scriptURL() const;
-    /// Getter of the `state` attribute.
+    /// [`ServiceWorker.state`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/state)
     /// [`ServiceWorker.state`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/state)
     [[nodiscard]] ServiceWorkerState state() const;
     /// The postMessage method.
@@ -30,13 +30,13 @@ public:
     /// The postMessage method.
     /// [`ServiceWorker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
-    /// Getter of the `onstatechange` attribute.
+    /// [`ServiceWorker.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
     /// [`ServiceWorker.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
     [[nodiscard]] jsbind::Any onstatechange() const;
     /// Setter of the `onstatechange` attribute.
     /// [`ServiceWorker.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
     void onstatechange(const jsbind::Any& value);
-    /// Getter of the `onerror` attribute.
+    /// [`ServiceWorker.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onerror)
     /// [`ServiceWorker.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.

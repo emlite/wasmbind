@@ -10,7 +10,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type LanguageDetectorCreateOptions
-/// [`LanguageDetectorCreateOptions`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetectorCreateOptions)
 class LanguageDetectorCreateOptions : public LanguageDetectorCreateCoreOptions {
   explicit LanguageDetectorCreateOptions(Handle h) noexcept;
 public:
@@ -18,9 +17,13 @@ public:
     explicit LanguageDetectorCreateOptions(const emlite::Val &val) noexcept;
     LanguageDetectorCreateOptions() noexcept;
     [[nodiscard]] LanguageDetectorCreateOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
+    /// Getter of the `monitor` attribute.
     [[nodiscard]] jsbind::Function monitor() const;
+    /// Setter of the `monitor` attribute.
     void monitor(const jsbind::Function& value);
 };
 

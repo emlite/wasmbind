@@ -17,7 +17,7 @@ public:
     static SharedStorageWorkletNavigator take_ownership(Handle h) noexcept;
     [[nodiscard]] SharedStorageWorkletNavigator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `locks` attribute.
+    /// [`SharedStorageWorkletNavigator.locks`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletNavigator/locks)
     /// [`SharedStorageWorkletNavigator.locks`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletNavigator/locks)
     [[nodiscard]] LockManager locks() const;
 };

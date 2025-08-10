@@ -2,15 +2,17 @@
 #include <webbind/PayerErrors.hpp>
 #include <webbind/AddressErrors.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentValidationErrors::PaymentValidationErrors(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentValidationErrors PaymentValidationErrors::take_ownership(Handle h) noexcept {
-        return PaymentValidationErrors(h);
-    }
+    return PaymentValidationErrors(h);
+}
+
 PaymentValidationErrors::PaymentValidationErrors(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentValidationErrors::PaymentValidationErrors() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentValidationErrors PaymentValidationErrors::clone() const noexcept { return *this; }
 
 PayerErrors PaymentValidationErrors::payer() const {

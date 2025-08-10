@@ -10,7 +10,6 @@
 namespace webbind {
 
 /// Dictionary type DeviceMotionEventInit
-/// [`DeviceMotionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventInit)
 class DeviceMotionEventInit : public EventInit {
   explicit DeviceMotionEventInit(Handle h) noexcept;
 public:
@@ -18,13 +17,21 @@ public:
     explicit DeviceMotionEventInit(const emlite::Val &val) noexcept;
     DeviceMotionEventInit() noexcept;
     [[nodiscard]] DeviceMotionEventInit clone() const noexcept;
+    /// Getter of the `acceleration` attribute.
     [[nodiscard]] DeviceMotionEventAccelerationInit acceleration() const;
+    /// Setter of the `acceleration` attribute.
     void acceleration(const DeviceMotionEventAccelerationInit& value);
+    /// Getter of the `accelerationIncludingGravity` attribute.
     [[nodiscard]] DeviceMotionEventAccelerationInit accelerationIncludingGravity() const;
+    /// Setter of the `accelerationIncludingGravity` attribute.
     void accelerationIncludingGravity(const DeviceMotionEventAccelerationInit& value);
+    /// Getter of the `rotationRate` attribute.
     [[nodiscard]] DeviceMotionEventRotationRateInit rotationRate() const;
+    /// Setter of the `rotationRate` attribute.
     void rotationRate(const DeviceMotionEventRotationRateInit& value);
+    /// Getter of the `interval` attribute.
     [[nodiscard]] double interval() const;
+    /// Setter of the `interval` attribute.
     void interval(double value);
 };
 

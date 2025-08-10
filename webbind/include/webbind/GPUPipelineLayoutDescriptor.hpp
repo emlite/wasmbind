@@ -10,7 +10,6 @@ namespace webbind {
 class GPUBindGroupLayout;
 
 /// Dictionary type GPUPipelineLayoutDescriptor
-/// [`GPUPipelineLayoutDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayoutDescriptor)
 class GPUPipelineLayoutDescriptor : public GPUObjectDescriptorBase {
   explicit GPUPipelineLayoutDescriptor(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit GPUPipelineLayoutDescriptor(const emlite::Val &val) noexcept;
     GPUPipelineLayoutDescriptor() noexcept;
     [[nodiscard]] GPUPipelineLayoutDescriptor clone() const noexcept;
+    /// Getter of the `bindGroupLayouts` attribute.
     [[nodiscard]] jsbind::TypedArray<GPUBindGroupLayout> bindGroupLayouts() const;
+    /// Setter of the `bindGroupLayouts` attribute.
     void bindGroupLayouts(const jsbind::TypedArray<GPUBindGroupLayout>& value);
 };
 

@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDivElement(..)` constructor, creating a new HTMLDivElement instance
     HTMLDivElement();
-    /// Getter of the `align` attribute.
+    /// [`HTMLDivElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement/align)
     /// [`HTMLDivElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement/align)
     [[nodiscard]] jsbind::String align() const;
     /// Setter of the `align` attribute.

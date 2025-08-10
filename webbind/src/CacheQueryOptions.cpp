@@ -1,14 +1,16 @@
 #include <webbind/CacheQueryOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CacheQueryOptions::CacheQueryOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CacheQueryOptions CacheQueryOptions::take_ownership(Handle h) noexcept {
-        return CacheQueryOptions(h);
-    }
+    return CacheQueryOptions(h);
+}
+
 CacheQueryOptions::CacheQueryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CacheQueryOptions::CacheQueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CacheQueryOptions CacheQueryOptions::clone() const noexcept { return *this; }
 
 bool CacheQueryOptions::ignoreSearch() const {

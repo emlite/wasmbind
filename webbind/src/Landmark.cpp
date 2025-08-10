@@ -1,15 +1,17 @@
 #include <webbind/Landmark.hpp>
 #include <webbind/Point2D.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 Landmark::Landmark(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Landmark Landmark::take_ownership(Handle h) noexcept {
-        return Landmark(h);
-    }
+    return Landmark(h);
+}
+
 Landmark::Landmark(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 Landmark::Landmark() noexcept: emlite::Val(emlite::Val::object()) {}
+
 Landmark Landmark::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<Point2D> Landmark::locations() const {

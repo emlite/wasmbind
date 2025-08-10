@@ -4,11 +4,15 @@
 namespace webbind {
 
 FederatedCredential FederatedCredential::take_ownership(Handle h) noexcept {
-        return FederatedCredential(h);
-    }
+    return FederatedCredential(h);
+}
+
 FederatedCredential FederatedCredential::clone() const noexcept { return *this; }
+
 emlite::Val FederatedCredential::instance() noexcept { return emlite::Val::global("FederatedCredential"); }
+
 FederatedCredential::FederatedCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
+
 FederatedCredential::FederatedCredential(const emlite::Val &val) noexcept: Credential(val) {}
 
 FederatedCredential::FederatedCredential(const FederatedCredentialInit& data) : Credential(emlite::Val::global("FederatedCredential").new_(data)) {}

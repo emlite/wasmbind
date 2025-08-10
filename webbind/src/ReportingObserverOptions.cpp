@@ -1,14 +1,16 @@
 #include <webbind/ReportingObserverOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ReportingObserverOptions::ReportingObserverOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ReportingObserverOptions ReportingObserverOptions::take_ownership(Handle h) noexcept {
-        return ReportingObserverOptions(h);
-    }
+    return ReportingObserverOptions(h);
+}
+
 ReportingObserverOptions::ReportingObserverOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ReportingObserverOptions::ReportingObserverOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ReportingObserverOptions ReportingObserverOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::String> ReportingObserverOptions::types() const {

@@ -13,11 +13,15 @@
 namespace webbind {
 
 OffscreenCanvasRenderingContext2D OffscreenCanvasRenderingContext2D::take_ownership(Handle h) noexcept {
-        return OffscreenCanvasRenderingContext2D(h);
-    }
+    return OffscreenCanvasRenderingContext2D(h);
+}
+
 OffscreenCanvasRenderingContext2D OffscreenCanvasRenderingContext2D::clone() const noexcept { return *this; }
+
 emlite::Val OffscreenCanvasRenderingContext2D::instance() noexcept { return emlite::Val::global("OffscreenCanvasRenderingContext2D"); }
+
 OffscreenCanvasRenderingContext2D::OffscreenCanvasRenderingContext2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 OffscreenCanvasRenderingContext2D::OffscreenCanvasRenderingContext2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 OffscreenCanvas OffscreenCanvasRenderingContext2D::canvas() const {

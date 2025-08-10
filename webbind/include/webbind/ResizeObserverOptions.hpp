@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ResizeObserverOptions
-/// [`ResizeObserverOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverOptions)
 class ResizeObserverOptions : public emlite::Val {
   explicit ResizeObserverOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ResizeObserverOptions(const emlite::Val &val) noexcept;
     ResizeObserverOptions() noexcept;
     [[nodiscard]] ResizeObserverOptions clone() const noexcept;
+    /// Getter of the `box` attribute.
     [[nodiscard]] ResizeObserverBoxOptions box() const;
+    /// Setter of the `box` attribute.
     void box(const ResizeObserverBoxOptions& value);
 };
 

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AssignedNodesOptions
-/// [`AssignedNodesOptions`](https://developer.mozilla.org/en-US/docs/Web/API/AssignedNodesOptions)
 class AssignedNodesOptions : public emlite::Val {
   explicit AssignedNodesOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit AssignedNodesOptions(const emlite::Val &val) noexcept;
     AssignedNodesOptions() noexcept;
     [[nodiscard]] AssignedNodesOptions clone() const noexcept;
+    /// Getter of the `flatten` attribute.
     [[nodiscard]] bool flatten() const;
+    /// Setter of the `flatten` attribute.
     void flatten(bool value);
 };
 

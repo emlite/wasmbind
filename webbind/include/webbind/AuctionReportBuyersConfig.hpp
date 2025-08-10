@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AuctionReportBuyersConfig
-/// [`AuctionReportBuyersConfig`](https://developer.mozilla.org/en-US/docs/Web/API/AuctionReportBuyersConfig)
 class AuctionReportBuyersConfig : public emlite::Val {
   explicit AuctionReportBuyersConfig(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit AuctionReportBuyersConfig(const emlite::Val &val) noexcept;
     AuctionReportBuyersConfig() noexcept;
     [[nodiscard]] AuctionReportBuyersConfig clone() const noexcept;
+    /// Getter of the `bucket` attribute.
     [[nodiscard]] long long bucket() const;
+    /// Setter of the `bucket` attribute.
     void bucket(long long value);
+    /// Getter of the `scale` attribute.
     [[nodiscard]] double scale() const;
+    /// Setter of the `scale` attribute.
     void scale(double value);
 };
 

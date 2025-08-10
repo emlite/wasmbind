@@ -1,15 +1,17 @@
 #include <webbind/VideoDecoderConfig.hpp>
 #include <webbind/VideoColorSpaceInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoDecoderConfig::VideoDecoderConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoDecoderConfig VideoDecoderConfig::take_ownership(Handle h) noexcept {
-        return VideoDecoderConfig(h);
-    }
+    return VideoDecoderConfig(h);
+}
+
 VideoDecoderConfig::VideoDecoderConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoDecoderConfig::VideoDecoderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoDecoderConfig VideoDecoderConfig::clone() const noexcept { return *this; }
 
 jsbind::String VideoDecoderConfig::codec() const {

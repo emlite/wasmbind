@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtcpParameters
-/// [`RTCRtcpParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtcpParameters)
 class RTCRtcpParameters : public emlite::Val {
   explicit RTCRtcpParameters(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit RTCRtcpParameters(const emlite::Val &val) noexcept;
     RTCRtcpParameters() noexcept;
     [[nodiscard]] RTCRtcpParameters clone() const noexcept;
+    /// Getter of the `cname` attribute.
     [[nodiscard]] jsbind::String cname() const;
+    /// Setter of the `cname` attribute.
     void cname(const jsbind::String& value);
+    /// Getter of the `reducedSize` attribute.
     [[nodiscard]] bool reducedSize() const;
+    /// Setter of the `reducedSize` attribute.
     void reducedSize(bool value);
 };
 

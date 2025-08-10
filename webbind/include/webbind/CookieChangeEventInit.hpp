@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CookieChangeEventInit
-/// [`CookieChangeEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEventInit)
 class CookieChangeEventInit : public EventInit {
   explicit CookieChangeEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit CookieChangeEventInit(const emlite::Val &val) noexcept;
     CookieChangeEventInit() noexcept;
     [[nodiscard]] CookieChangeEventInit clone() const noexcept;
+    /// Getter of the `changed` attribute.
     [[nodiscard]] jsbind::Any changed() const;
+    /// Setter of the `changed` attribute.
     void changed(const jsbind::Any& value);
+    /// Getter of the `deleted` attribute.
     [[nodiscard]] jsbind::Any deleted() const;
+    /// Setter of the `deleted` attribute.
     void deleted(const jsbind::Any& value);
 };
 

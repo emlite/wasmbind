@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type StorageBucketOptions
-/// [`StorageBucketOptions`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucketOptions)
 class StorageBucketOptions : public emlite::Val {
   explicit StorageBucketOptions(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit StorageBucketOptions(const emlite::Val &val) noexcept;
     StorageBucketOptions() noexcept;
     [[nodiscard]] StorageBucketOptions clone() const noexcept;
+    /// Getter of the `persisted` attribute.
     [[nodiscard]] bool persisted() const;
+    /// Setter of the `persisted` attribute.
     void persisted(bool value);
+    /// Getter of the `quota` attribute.
     [[nodiscard]] long long quota() const;
+    /// Setter of the `quota` attribute.
     void quota(long long value);
+    /// Getter of the `expires` attribute.
     [[nodiscard]] jsbind::Any expires() const;
+    /// Setter of the `expires` attribute.
     void expires(const jsbind::Any& value);
 };
 

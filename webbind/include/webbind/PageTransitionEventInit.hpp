@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PageTransitionEventInit
-/// [`PageTransitionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEventInit)
 class PageTransitionEventInit : public EventInit {
   explicit PageTransitionEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit PageTransitionEventInit(const emlite::Val &val) noexcept;
     PageTransitionEventInit() noexcept;
     [[nodiscard]] PageTransitionEventInit clone() const noexcept;
+    /// Getter of the `persisted` attribute.
     [[nodiscard]] bool persisted() const;
+    /// Setter of the `persisted` attribute.
     void persisted(bool value);
 };
 

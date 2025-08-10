@@ -5,11 +5,15 @@
 namespace webbind {
 
 DragEvent DragEvent::take_ownership(Handle h) noexcept {
-        return DragEvent(h);
-    }
+    return DragEvent(h);
+}
+
 DragEvent DragEvent::clone() const noexcept { return *this; }
+
 emlite::Val DragEvent::instance() noexcept { return emlite::Val::global("DragEvent"); }
+
 DragEvent::DragEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_ownership(h)) {}
+
 DragEvent::DragEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
 DragEvent::DragEvent(const jsbind::String& type) : MouseEvent(emlite::Val::global("DragEvent").new_(type)) {}

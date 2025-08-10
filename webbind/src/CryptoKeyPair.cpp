@@ -1,15 +1,17 @@
 #include <webbind/CryptoKeyPair.hpp>
 #include <webbind/CryptoKey.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CryptoKeyPair::CryptoKeyPair(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CryptoKeyPair CryptoKeyPair::take_ownership(Handle h) noexcept {
-        return CryptoKeyPair(h);
-    }
+    return CryptoKeyPair(h);
+}
+
 CryptoKeyPair::CryptoKeyPair(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CryptoKeyPair::CryptoKeyPair() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CryptoKeyPair CryptoKeyPair::clone() const noexcept { return *this; }
 
 CryptoKey CryptoKeyPair::publicKey() const {

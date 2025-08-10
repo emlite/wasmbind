@@ -17,16 +17,16 @@ public:
     static Plugin take_ownership(Handle h) noexcept;
     [[nodiscard]] Plugin clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`Plugin.name`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/name)
     /// [`Plugin.name`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `description` attribute.
+    /// [`Plugin.description`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/description)
     /// [`Plugin.description`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/description)
     [[nodiscard]] jsbind::String description() const;
-    /// Getter of the `filename` attribute.
+    /// [`Plugin.filename`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/filename)
     /// [`Plugin.filename`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/filename)
     [[nodiscard]] jsbind::String filename() const;
-    /// Getter of the `length` attribute.
+    /// [`Plugin.length`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/length)
     /// [`Plugin.length`](https://developer.mozilla.org/en-US/docs/Web/API/Plugin/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.

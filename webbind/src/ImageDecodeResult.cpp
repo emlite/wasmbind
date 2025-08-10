@@ -1,15 +1,17 @@
 #include <webbind/ImageDecodeResult.hpp>
 #include <webbind/VideoFrame.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ImageDecodeResult::ImageDecodeResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageDecodeResult ImageDecodeResult::take_ownership(Handle h) noexcept {
-        return ImageDecodeResult(h);
-    }
+    return ImageDecodeResult(h);
+}
+
 ImageDecodeResult::ImageDecodeResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ImageDecodeResult::ImageDecodeResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ImageDecodeResult ImageDecodeResult::clone() const noexcept { return *this; }
 
 VideoFrame ImageDecodeResult::image() const {

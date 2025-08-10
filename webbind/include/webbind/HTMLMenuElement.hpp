@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMenuElement(..)` constructor, creating a new HTMLMenuElement instance
     HTMLMenuElement();
-    /// Getter of the `compact` attribute.
+    /// [`HTMLMenuElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMenuElement/compact)
     /// [`HTMLMenuElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMenuElement/compact)
     [[nodiscard]] bool compact() const;
     /// Setter of the `compact` attribute.

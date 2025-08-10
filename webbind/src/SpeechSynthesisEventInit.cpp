@@ -1,15 +1,17 @@
 #include <webbind/SpeechSynthesisEventInit.hpp>
 #include <webbind/SpeechSynthesisUtterance.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SpeechSynthesisEventInit::SpeechSynthesisEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 SpeechSynthesisEventInit SpeechSynthesisEventInit::take_ownership(Handle h) noexcept {
-        return SpeechSynthesisEventInit(h);
-    }
+    return SpeechSynthesisEventInit(h);
+}
+
 SpeechSynthesisEventInit::SpeechSynthesisEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 SpeechSynthesisEventInit::SpeechSynthesisEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 SpeechSynthesisEventInit SpeechSynthesisEventInit::clone() const noexcept { return *this; }
 
 SpeechSynthesisUtterance SpeechSynthesisEventInit::utterance() const {

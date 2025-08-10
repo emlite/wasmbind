@@ -1,14 +1,16 @@
 #include <webbind/SyncEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SyncEventInit::SyncEventInit(Handle h) noexcept : ExtendableEventInit(emlite::Val::take_ownership(h)) {}
 SyncEventInit SyncEventInit::take_ownership(Handle h) noexcept {
-        return SyncEventInit(h);
-    }
+    return SyncEventInit(h);
+}
+
 SyncEventInit::SyncEventInit(const emlite::Val &val) noexcept: ExtendableEventInit(val) {}
+
 SyncEventInit::SyncEventInit() noexcept: ExtendableEventInit(emlite::Val::object()) {}
+
 SyncEventInit SyncEventInit::clone() const noexcept { return *this; }
 
 jsbind::String SyncEventInit::tag() const {

@@ -4,11 +4,15 @@
 namespace webbind {
 
 IDBCursor IDBCursor::take_ownership(Handle h) noexcept {
-        return IDBCursor(h);
-    }
+    return IDBCursor(h);
+}
+
 IDBCursor IDBCursor::clone() const noexcept { return *this; }
+
 emlite::Val IDBCursor::instance() noexcept { return emlite::Val::global("IDBCursor"); }
+
 IDBCursor::IDBCursor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 IDBCursor::IDBCursor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Any IDBCursor::source() const {

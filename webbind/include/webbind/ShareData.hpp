@@ -9,7 +9,6 @@ namespace webbind {
 class File;
 
 /// Dictionary type ShareData
-/// [`ShareData`](https://developer.mozilla.org/en-US/docs/Web/API/ShareData)
 class ShareData : public emlite::Val {
   explicit ShareData(Handle h) noexcept;
 public:
@@ -17,13 +16,21 @@ public:
     explicit ShareData(const emlite::Val &val) noexcept;
     ShareData() noexcept;
     [[nodiscard]] ShareData clone() const noexcept;
+    /// Getter of the `files` attribute.
     [[nodiscard]] jsbind::TypedArray<File> files() const;
+    /// Setter of the `files` attribute.
     void files(const jsbind::TypedArray<File>& value);
+    /// Getter of the `title` attribute.
     [[nodiscard]] jsbind::String title() const;
+    /// Setter of the `title` attribute.
     void title(const jsbind::String& value);
+    /// Getter of the `text` attribute.
     [[nodiscard]] jsbind::String text() const;
+    /// Setter of the `text` attribute.
     void text(const jsbind::String& value);
+    /// Getter of the `url` attribute.
     [[nodiscard]] jsbind::String url() const;
+    /// Setter of the `url` attribute.
     void url(const jsbind::String& value);
 };
 

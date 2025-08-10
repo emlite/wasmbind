@@ -4,11 +4,15 @@
 namespace webbind {
 
 ImageTrackList ImageTrackList::take_ownership(Handle h) noexcept {
-        return ImageTrackList(h);
-    }
+    return ImageTrackList(h);
+}
+
 ImageTrackList ImageTrackList::clone() const noexcept { return *this; }
+
 emlite::Val ImageTrackList::instance() noexcept { return emlite::Val::global("ImageTrackList"); }
+
 ImageTrackList::ImageTrackList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ImageTrackList::ImageTrackList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::Undefined> ImageTrackList::ready() const {

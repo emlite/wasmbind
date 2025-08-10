@@ -15,7 +15,7 @@ public:
     static GPUBindGroup take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUBindGroup clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `label` attribute.
+    /// [`GPUBindGroup.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroup/label)
     /// [`GPUBindGroup.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroup/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

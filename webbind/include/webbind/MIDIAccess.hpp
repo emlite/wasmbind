@@ -19,19 +19,19 @@ public:
     static MIDIAccess take_ownership(Handle h) noexcept;
     [[nodiscard]] MIDIAccess clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `inputs` attribute.
+    /// [`MIDIAccess.inputs`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/inputs)
     /// [`MIDIAccess.inputs`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/inputs)
     [[nodiscard]] MIDIInputMap inputs() const;
-    /// Getter of the `outputs` attribute.
+    /// [`MIDIAccess.outputs`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/outputs)
     /// [`MIDIAccess.outputs`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/outputs)
     [[nodiscard]] MIDIOutputMap outputs() const;
-    /// Getter of the `onstatechange` attribute.
+    /// [`MIDIAccess.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/onstatechange)
     /// [`MIDIAccess.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/onstatechange)
     [[nodiscard]] jsbind::Any onstatechange() const;
     /// Setter of the `onstatechange` attribute.
     /// [`MIDIAccess.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/onstatechange)
     void onstatechange(const jsbind::Any& value);
-    /// Getter of the `sysexEnabled` attribute.
+    /// [`MIDIAccess.sysexEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/sysexEnabled)
     /// [`MIDIAccess.sysexEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/sysexEnabled)
     [[nodiscard]] bool sysexEnabled() const;
 };

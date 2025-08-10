@@ -17,25 +17,25 @@ public:
     static HIDDevice take_ownership(Handle h) noexcept;
     [[nodiscard]] HIDDevice clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `oninputreport` attribute.
+    /// [`HIDDevice.oninputreport`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/oninputreport)
     /// [`HIDDevice.oninputreport`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/oninputreport)
     [[nodiscard]] jsbind::Any oninputreport() const;
     /// Setter of the `oninputreport` attribute.
     /// [`HIDDevice.oninputreport`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/oninputreport)
     void oninputreport(const jsbind::Any& value);
-    /// Getter of the `opened` attribute.
+    /// [`HIDDevice.opened`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/opened)
     /// [`HIDDevice.opened`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/opened)
     [[nodiscard]] bool opened() const;
-    /// Getter of the `vendorId` attribute.
+    /// [`HIDDevice.vendorId`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/vendorId)
     /// [`HIDDevice.vendorId`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/vendorId)
     [[nodiscard]] unsigned short vendorId() const;
-    /// Getter of the `productId` attribute.
+    /// [`HIDDevice.productId`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/productId)
     /// [`HIDDevice.productId`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/productId)
     [[nodiscard]] unsigned short productId() const;
-    /// Getter of the `productName` attribute.
+    /// [`HIDDevice.productName`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/productName)
     /// [`HIDDevice.productName`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/productName)
     [[nodiscard]] jsbind::String productName() const;
-    /// Getter of the `collections` attribute.
+    /// [`HIDDevice.collections`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/collections)
     /// [`HIDDevice.collections`](https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/collections)
     [[nodiscard]] jsbind::TypedArray<HIDCollectionInfo> collections() const;
     /// The open method.

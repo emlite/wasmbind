@@ -2,15 +2,17 @@
 #include <webbind/XRWebGLLayer.hpp>
 #include <webbind/XRLayer.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRRenderStateInit::XRRenderStateInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRRenderStateInit XRRenderStateInit::take_ownership(Handle h) noexcept {
-        return XRRenderStateInit(h);
-    }
+    return XRRenderStateInit(h);
+}
+
 XRRenderStateInit::XRRenderStateInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRRenderStateInit::XRRenderStateInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRRenderStateInit XRRenderStateInit::clone() const noexcept { return *this; }
 
 double XRRenderStateInit::depthNear() const {

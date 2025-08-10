@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AudioDecoderInit
-/// [`AudioDecoderInit`](https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoderInit)
 class AudioDecoderInit : public emlite::Val {
   explicit AudioDecoderInit(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit AudioDecoderInit(const emlite::Val &val) noexcept;
     AudioDecoderInit() noexcept;
     [[nodiscard]] AudioDecoderInit clone() const noexcept;
+    /// Getter of the `output` attribute.
     [[nodiscard]] jsbind::Function output() const;
+    /// Setter of the `output` attribute.
     void output(const jsbind::Function& value);
+    /// Getter of the `error` attribute.
     [[nodiscard]] jsbind::Function error() const;
+    /// Setter of the `error` attribute.
     void error(const jsbind::Function& value);
 };
 

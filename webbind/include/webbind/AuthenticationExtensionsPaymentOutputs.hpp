@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AuthenticationExtensionsPaymentOutputs
-/// [`AuthenticationExtensionsPaymentOutputs`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticationExtensionsPaymentOutputs)
 class AuthenticationExtensionsPaymentOutputs : public emlite::Val {
   explicit AuthenticationExtensionsPaymentOutputs(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit AuthenticationExtensionsPaymentOutputs(const emlite::Val &val) noexcept;
     AuthenticationExtensionsPaymentOutputs() noexcept;
     [[nodiscard]] AuthenticationExtensionsPaymentOutputs clone() const noexcept;
+    /// Getter of the `browserBoundSignature` attribute.
     [[nodiscard]] BrowserBoundSignature browserBoundSignature() const;
+    /// Setter of the `browserBoundSignature` attribute.
     void browserBoundSignature(const BrowserBoundSignature& value);
 };
 

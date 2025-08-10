@@ -1,14 +1,16 @@
 #include <webbind/AuctionAd.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuctionAd::AuctionAd(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuctionAd AuctionAd::take_ownership(Handle h) noexcept {
-        return AuctionAd(h);
-    }
+    return AuctionAd(h);
+}
+
 AuctionAd::AuctionAd(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuctionAd::AuctionAd() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuctionAd AuctionAd::clone() const noexcept { return *this; }
 
 jsbind::String AuctionAd::renderURL() const {

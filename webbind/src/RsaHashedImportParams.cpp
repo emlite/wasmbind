@@ -1,14 +1,16 @@
 #include <webbind/RsaHashedImportParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RsaHashedImportParams::RsaHashedImportParams(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 RsaHashedImportParams RsaHashedImportParams::take_ownership(Handle h) noexcept {
-        return RsaHashedImportParams(h);
-    }
+    return RsaHashedImportParams(h);
+}
+
 RsaHashedImportParams::RsaHashedImportParams(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 RsaHashedImportParams::RsaHashedImportParams() noexcept: Algorithm(emlite::Val::object()) {}
+
 RsaHashedImportParams RsaHashedImportParams::clone() const noexcept { return *this; }
 
 jsbind::Any RsaHashedImportParams::hash() const {

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PerformanceMarkOptions
-/// [`PerformanceMarkOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMarkOptions)
 class PerformanceMarkOptions : public emlite::Val {
   explicit PerformanceMarkOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit PerformanceMarkOptions(const emlite::Val &val) noexcept;
     PerformanceMarkOptions() noexcept;
     [[nodiscard]] PerformanceMarkOptions clone() const noexcept;
+    /// Getter of the `detail` attribute.
     [[nodiscard]] jsbind::Any detail() const;
+    /// Setter of the `detail` attribute.
     void detail(const jsbind::Any& value);
+    /// Getter of the `startTime` attribute.
     [[nodiscard]] jsbind::Any startTime() const;
+    /// Setter of the `startTime` attribute.
     void startTime(const jsbind::Any& value);
 };
 

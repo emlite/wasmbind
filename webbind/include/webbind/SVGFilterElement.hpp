@@ -20,25 +20,25 @@ public:
     static SVGFilterElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGFilterElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `filterUnits` attribute.
+    /// [`SVGFilterElement.filterUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/filterUnits)
     /// [`SVGFilterElement.filterUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/filterUnits)
     [[nodiscard]] SVGAnimatedEnumeration filterUnits() const;
-    /// Getter of the `primitiveUnits` attribute.
+    /// [`SVGFilterElement.primitiveUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/primitiveUnits)
     /// [`SVGFilterElement.primitiveUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/primitiveUnits)
     [[nodiscard]] SVGAnimatedEnumeration primitiveUnits() const;
-    /// Getter of the `x` attribute.
+    /// [`SVGFilterElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/x)
     /// [`SVGFilterElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;
-    /// Getter of the `y` attribute.
+    /// [`SVGFilterElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/y)
     /// [`SVGFilterElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/y)
     [[nodiscard]] SVGAnimatedLength y() const;
-    /// Getter of the `width` attribute.
+    /// [`SVGFilterElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/width)
     /// [`SVGFilterElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/width)
     [[nodiscard]] SVGAnimatedLength width() const;
-    /// Getter of the `height` attribute.
+    /// [`SVGFilterElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/height)
     /// [`SVGFilterElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/height)
     [[nodiscard]] SVGAnimatedLength height() const;
-    /// Getter of the `href` attribute.
+    /// [`SVGFilterElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/href)
     /// [`SVGFilterElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFilterElement/href)
     [[nodiscard]] SVGAnimatedString href() const;
 };

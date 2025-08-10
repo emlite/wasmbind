@@ -20,16 +20,16 @@ public:
     /// The blob method.
     /// [`FontData.blob`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/blob)
     jsbind::Promise<Blob> blob();
-    /// Getter of the `postscriptName` attribute.
+    /// [`FontData.postscriptName`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/postscriptName)
     /// [`FontData.postscriptName`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/postscriptName)
     [[nodiscard]] jsbind::String postscriptName() const;
-    /// Getter of the `fullName` attribute.
+    /// [`FontData.fullName`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/fullName)
     /// [`FontData.fullName`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/fullName)
     [[nodiscard]] jsbind::String fullName() const;
-    /// Getter of the `family` attribute.
+    /// [`FontData.family`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/family)
     /// [`FontData.family`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/family)
     [[nodiscard]] jsbind::String family() const;
-    /// Getter of the `style` attribute.
+    /// [`FontData.style`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/style)
     /// [`FontData.style`](https://developer.mozilla.org/en-US/docs/Web/API/FontData/style)
     [[nodiscard]] jsbind::String style() const;
 };

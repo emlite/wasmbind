@@ -4,11 +4,15 @@
 namespace webbind {
 
 SVGFEPointLightElement SVGFEPointLightElement::take_ownership(Handle h) noexcept {
-        return SVGFEPointLightElement(h);
-    }
+    return SVGFEPointLightElement(h);
+}
+
 SVGFEPointLightElement SVGFEPointLightElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFEPointLightElement::instance() noexcept { return emlite::Val::global("SVGFEPointLightElement"); }
+
 SVGFEPointLightElement::SVGFEPointLightElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFEPointLightElement::SVGFEPointLightElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedNumber SVGFEPointLightElement::x() const {

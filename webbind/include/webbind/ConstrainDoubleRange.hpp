@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ConstrainDoubleRange
-/// [`ConstrainDoubleRange`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDoubleRange)
 class ConstrainDoubleRange : public DoubleRange {
   explicit ConstrainDoubleRange(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit ConstrainDoubleRange(const emlite::Val &val) noexcept;
     ConstrainDoubleRange() noexcept;
     [[nodiscard]] ConstrainDoubleRange clone() const noexcept;
+    /// Getter of the `exact` attribute.
     [[nodiscard]] double exact() const;
+    /// Setter of the `exact` attribute.
     void exact(double value);
+    /// Getter of the `ideal` attribute.
     [[nodiscard]] double ideal() const;
+    /// Setter of the `ideal` attribute.
     void ideal(double value);
 };
 

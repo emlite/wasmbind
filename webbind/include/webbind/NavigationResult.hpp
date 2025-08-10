@@ -9,7 +9,6 @@ namespace webbind {
 class NavigationHistoryEntry;
 
 /// Dictionary type NavigationResult
-/// [`NavigationResult`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationResult)
 class NavigationResult : public emlite::Val {
   explicit NavigationResult(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit NavigationResult(const emlite::Val &val) noexcept;
     NavigationResult() noexcept;
     [[nodiscard]] NavigationResult clone() const noexcept;
+    /// Getter of the `committed` attribute.
     [[nodiscard]] jsbind::Promise<NavigationHistoryEntry> committed() const;
+    /// Setter of the `committed` attribute.
     void committed(const jsbind::Promise<NavigationHistoryEntry>& value);
+    /// Getter of the `finished` attribute.
     [[nodiscard]] jsbind::Promise<NavigationHistoryEntry> finished() const;
+    /// Setter of the `finished` attribute.
     void finished(const jsbind::Promise<NavigationHistoryEntry>& value);
 };
 

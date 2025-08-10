@@ -1,14 +1,16 @@
 #include <webbind/PublicKeyCredentialUserEntityJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PublicKeyCredentialUserEntityJSON::PublicKeyCredentialUserEntityJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PublicKeyCredentialUserEntityJSON PublicKeyCredentialUserEntityJSON::take_ownership(Handle h) noexcept {
-        return PublicKeyCredentialUserEntityJSON(h);
-    }
+    return PublicKeyCredentialUserEntityJSON(h);
+}
+
 PublicKeyCredentialUserEntityJSON::PublicKeyCredentialUserEntityJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PublicKeyCredentialUserEntityJSON::PublicKeyCredentialUserEntityJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PublicKeyCredentialUserEntityJSON PublicKeyCredentialUserEntityJSON::clone() const noexcept { return *this; }
 
 jsbind::Any PublicKeyCredentialUserEntityJSON::id() const {

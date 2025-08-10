@@ -1,7 +1,5 @@
 #include <webbind/TestUtils.hpp>
 
-using emlite::Val;
-
 namespace webbind {
 
 namespace TestUtils {

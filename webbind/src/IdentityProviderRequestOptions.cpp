@@ -1,14 +1,16 @@
 #include <webbind/IdentityProviderRequestOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityProviderRequestOptions::IdentityProviderRequestOptions(Handle h) noexcept : IdentityProviderConfig(emlite::Val::take_ownership(h)) {}
 IdentityProviderRequestOptions IdentityProviderRequestOptions::take_ownership(Handle h) noexcept {
-        return IdentityProviderRequestOptions(h);
-    }
+    return IdentityProviderRequestOptions(h);
+}
+
 IdentityProviderRequestOptions::IdentityProviderRequestOptions(const emlite::Val &val) noexcept: IdentityProviderConfig(val) {}
+
 IdentityProviderRequestOptions::IdentityProviderRequestOptions() noexcept: IdentityProviderConfig(emlite::Val::object()) {}
+
 IdentityProviderRequestOptions IdentityProviderRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::String IdentityProviderRequestOptions::nonce() const {

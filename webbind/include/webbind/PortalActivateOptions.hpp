@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PortalActivateOptions
-/// [`PortalActivateOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PortalActivateOptions)
 class PortalActivateOptions : public StructuredSerializeOptions {
   explicit PortalActivateOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit PortalActivateOptions(const emlite::Val &val) noexcept;
     PortalActivateOptions() noexcept;
     [[nodiscard]] PortalActivateOptions clone() const noexcept;
+    /// Getter of the `data` attribute.
     [[nodiscard]] jsbind::Any data() const;
+    /// Setter of the `data` attribute.
     void data(const jsbind::Any& value);
 };
 

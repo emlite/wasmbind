@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type RsaHashedKeyAlgorithm
-/// [`RsaHashedKeyAlgorithm`](https://developer.mozilla.org/en-US/docs/Web/API/RsaHashedKeyAlgorithm)
 class RsaHashedKeyAlgorithm : public RsaKeyAlgorithm {
   explicit RsaHashedKeyAlgorithm(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit RsaHashedKeyAlgorithm(const emlite::Val &val) noexcept;
     RsaHashedKeyAlgorithm() noexcept;
     [[nodiscard]] RsaHashedKeyAlgorithm clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] KeyAlgorithm hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const KeyAlgorithm& value);
 };
 

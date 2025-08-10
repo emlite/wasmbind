@@ -10,7 +10,6 @@ namespace webbind {
 class GPUBuffer;
 
 /// Dictionary type GPUTexelCopyBufferInfo
-/// [`GPUTexelCopyBufferInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexelCopyBufferInfo)
 class GPUTexelCopyBufferInfo : public GPUTexelCopyBufferLayout {
   explicit GPUTexelCopyBufferInfo(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit GPUTexelCopyBufferInfo(const emlite::Val &val) noexcept;
     GPUTexelCopyBufferInfo() noexcept;
     [[nodiscard]] GPUTexelCopyBufferInfo clone() const noexcept;
+    /// Getter of the `buffer` attribute.
     [[nodiscard]] GPUBuffer buffer() const;
+    /// Setter of the `buffer` attribute.
     void buffer(const GPUBuffer& value);
 };
 

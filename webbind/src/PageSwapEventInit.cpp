@@ -2,15 +2,17 @@
 #include <webbind/NavigationActivation.hpp>
 #include <webbind/ViewTransition.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PageSwapEventInit::PageSwapEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 PageSwapEventInit PageSwapEventInit::take_ownership(Handle h) noexcept {
-        return PageSwapEventInit(h);
-    }
+    return PageSwapEventInit(h);
+}
+
 PageSwapEventInit::PageSwapEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 PageSwapEventInit::PageSwapEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 PageSwapEventInit PageSwapEventInit::clone() const noexcept { return *this; }
 
 NavigationActivation PageSwapEventInit::activation() const {

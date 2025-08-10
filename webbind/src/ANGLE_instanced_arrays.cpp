@@ -3,11 +3,15 @@
 namespace webbind {
 
 ANGLE_instanced_arrays ANGLE_instanced_arrays::take_ownership(Handle h) noexcept {
-        return ANGLE_instanced_arrays(h);
-    }
+    return ANGLE_instanced_arrays(h);
+}
+
 ANGLE_instanced_arrays ANGLE_instanced_arrays::clone() const noexcept { return *this; }
+
 emlite::Val ANGLE_instanced_arrays::instance() noexcept { return emlite::Val::global("ANGLE_instanced_arrays"); }
+
 ANGLE_instanced_arrays::ANGLE_instanced_arrays(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ANGLE_instanced_arrays::ANGLE_instanced_arrays(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined ANGLE_instanced_arrays::drawArraysInstancedANGLE(const jsbind::Any& mode, const jsbind::Any& first, const jsbind::Any& count, const jsbind::Any& primcount) {

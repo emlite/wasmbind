@@ -1,14 +1,16 @@
 #include <webbind/RewriterCreateCoreOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RewriterCreateCoreOptions::RewriterCreateCoreOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RewriterCreateCoreOptions RewriterCreateCoreOptions::take_ownership(Handle h) noexcept {
-        return RewriterCreateCoreOptions(h);
-    }
+    return RewriterCreateCoreOptions(h);
+}
+
 RewriterCreateCoreOptions::RewriterCreateCoreOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RewriterCreateCoreOptions::RewriterCreateCoreOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RewriterCreateCoreOptions RewriterCreateCoreOptions::clone() const noexcept { return *this; }
 
 RewriterTone RewriterCreateCoreOptions::tone() const {

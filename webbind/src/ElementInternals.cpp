@@ -11,11 +11,15 @@
 namespace webbind {
 
 ElementInternals ElementInternals::take_ownership(Handle h) noexcept {
-        return ElementInternals(h);
-    }
+    return ElementInternals(h);
+}
+
 ElementInternals ElementInternals::clone() const noexcept { return *this; }
+
 emlite::Val ElementInternals::instance() noexcept { return emlite::Val::global("ElementInternals"); }
+
 ElementInternals::ElementInternals(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ElementInternals::ElementInternals(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 ShadowRoot ElementInternals::shadowRoot() const {

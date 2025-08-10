@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ClientQueryOptions
-/// [`ClientQueryOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ClientQueryOptions)
 class ClientQueryOptions : public emlite::Val {
   explicit ClientQueryOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ClientQueryOptions(const emlite::Val &val) noexcept;
     ClientQueryOptions() noexcept;
     [[nodiscard]] ClientQueryOptions clone() const noexcept;
+    /// Getter of the `includeUncontrolled` attribute.
     [[nodiscard]] bool includeUncontrolled() const;
+    /// Setter of the `includeUncontrolled` attribute.
     void includeUncontrolled(bool value);
+    /// Getter of the `type` attribute.
     [[nodiscard]] ClientType type() const;
+    /// Setter of the `type` attribute.
     void type(const ClientType& value);
 };
 

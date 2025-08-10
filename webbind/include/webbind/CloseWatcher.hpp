@@ -30,13 +30,13 @@ public:
     /// The destroy method.
     /// [`CloseWatcher.destroy`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/destroy)
     jsbind::Undefined destroy();
-    /// Getter of the `oncancel` attribute.
+    /// [`CloseWatcher.oncancel`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/oncancel)
     /// [`CloseWatcher.oncancel`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/oncancel)
     [[nodiscard]] jsbind::Any oncancel() const;
     /// Setter of the `oncancel` attribute.
     /// [`CloseWatcher.oncancel`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/oncancel)
     void oncancel(const jsbind::Any& value);
-    /// Getter of the `onclose` attribute.
+    /// [`CloseWatcher.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/onclose)
     /// [`CloseWatcher.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/onclose)
     [[nodiscard]] jsbind::Any onclose() const;
     /// Setter of the `onclose` attribute.

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type TrackEventInit
-/// [`TrackEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/TrackEventInit)
 class TrackEventInit : public EventInit {
   explicit TrackEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit TrackEventInit(const emlite::Val &val) noexcept;
     TrackEventInit() noexcept;
     [[nodiscard]] TrackEventInit clone() const noexcept;
+    /// Getter of the `track` attribute.
     [[nodiscard]] jsbind::Any track() const;
+    /// Setter of the `track` attribute.
     void track(const jsbind::Any& value);
 };
 

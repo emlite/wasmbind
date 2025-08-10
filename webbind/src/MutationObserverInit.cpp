@@ -1,14 +1,16 @@
 #include <webbind/MutationObserverInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MutationObserverInit::MutationObserverInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MutationObserverInit MutationObserverInit::take_ownership(Handle h) noexcept {
-        return MutationObserverInit(h);
-    }
+    return MutationObserverInit(h);
+}
+
 MutationObserverInit::MutationObserverInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MutationObserverInit::MutationObserverInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MutationObserverInit MutationObserverInit::clone() const noexcept { return *this; }
 
 bool MutationObserverInit::childList() const {

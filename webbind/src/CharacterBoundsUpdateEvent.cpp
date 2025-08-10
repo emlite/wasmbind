@@ -4,11 +4,15 @@
 namespace webbind {
 
 CharacterBoundsUpdateEvent CharacterBoundsUpdateEvent::take_ownership(Handle h) noexcept {
-        return CharacterBoundsUpdateEvent(h);
-    }
+    return CharacterBoundsUpdateEvent(h);
+}
+
 CharacterBoundsUpdateEvent CharacterBoundsUpdateEvent::clone() const noexcept { return *this; }
+
 emlite::Val CharacterBoundsUpdateEvent::instance() noexcept { return emlite::Val::global("CharacterBoundsUpdateEvent"); }
+
 CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 CharacterBoundsUpdateEvent::CharacterBoundsUpdateEvent(const jsbind::String& type) : Event(emlite::Val::global("CharacterBoundsUpdateEvent").new_(type)) {}

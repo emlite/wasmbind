@@ -18,19 +18,19 @@ public:
     static PerformanceLongTaskTiming take_ownership(Handle h) noexcept;
     [[nodiscard]] PerformanceLongTaskTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `startTime` attribute.
+    /// [`PerformanceLongTaskTiming.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/startTime)
     /// [`PerformanceLongTaskTiming.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/startTime)
     [[nodiscard]] jsbind::Any startTime() const;
-    /// Getter of the `duration` attribute.
+    /// [`PerformanceLongTaskTiming.duration`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/duration)
     /// [`PerformanceLongTaskTiming.duration`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/duration)
     [[nodiscard]] jsbind::Any duration() const;
-    /// Getter of the `name` attribute.
+    /// [`PerformanceLongTaskTiming.name`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/name)
     /// [`PerformanceLongTaskTiming.name`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `entryType` attribute.
+    /// [`PerformanceLongTaskTiming.entryType`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/entryType)
     /// [`PerformanceLongTaskTiming.entryType`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/entryType)
     [[nodiscard]] jsbind::String entryType() const;
-    /// Getter of the `attribution` attribute.
+    /// [`PerformanceLongTaskTiming.attribution`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/attribution)
     /// [`PerformanceLongTaskTiming.attribution`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/attribution)
     [[nodiscard]] jsbind::TypedArray<TaskAttributionTiming> attribution() const;
     /// The toJSON method.

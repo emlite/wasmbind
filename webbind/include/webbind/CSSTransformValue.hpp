@@ -21,10 +21,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSTransformValue(..)` constructor, creating a new CSSTransformValue instance
     CSSTransformValue(const jsbind::TypedArray<CSSTransformComponent>& transforms);
-    /// Getter of the `length` attribute.
+    /// [`CSSTransformValue.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/length)
     /// [`CSSTransformValue.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `is2D` attribute.
+    /// [`CSSTransformValue.is2D`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/is2D)
     /// [`CSSTransformValue.is2D`](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/is2D)
     [[nodiscard]] bool is2D() const;
     /// The toMatrix method.

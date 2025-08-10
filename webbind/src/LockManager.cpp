@@ -5,11 +5,15 @@
 namespace webbind {
 
 LockManager LockManager::take_ownership(Handle h) noexcept {
-        return LockManager(h);
-    }
+    return LockManager(h);
+}
+
 LockManager LockManager::clone() const noexcept { return *this; }
+
 emlite::Val LockManager::instance() noexcept { return emlite::Val::global("LockManager"); }
+
 LockManager::LockManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 LockManager::LockManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::Any> LockManager::request(const jsbind::String& name, const LockOptions& options, const jsbind::Function& callback) {

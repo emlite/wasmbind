@@ -5,11 +5,15 @@
 namespace webbind {
 
 CompressionStream CompressionStream::take_ownership(Handle h) noexcept {
-        return CompressionStream(h);
-    }
+    return CompressionStream(h);
+}
+
 CompressionStream CompressionStream::clone() const noexcept { return *this; }
+
 emlite::Val CompressionStream::instance() noexcept { return emlite::Val::global("CompressionStream"); }
+
 CompressionStream::CompressionStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 CompressionStream::CompressionStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 CompressionStream::CompressionStream(const CompressionFormat& format) : emlite::Val(emlite::Val::global("CompressionStream").new_(format)) {}

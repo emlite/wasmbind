@@ -13,11 +13,15 @@
 namespace webbind {
 
 GPUCommandEncoder GPUCommandEncoder::take_ownership(Handle h) noexcept {
-        return GPUCommandEncoder(h);
-    }
+    return GPUCommandEncoder(h);
+}
+
 GPUCommandEncoder GPUCommandEncoder::clone() const noexcept { return *this; }
+
 emlite::Val GPUCommandEncoder::instance() noexcept { return emlite::Val::global("GPUCommandEncoder"); }
+
 GPUCommandEncoder::GPUCommandEncoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUCommandEncoder::GPUCommandEncoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 GPURenderPassEncoder GPUCommandEncoder::beginRenderPass(const GPURenderPassDescriptor& descriptor) {

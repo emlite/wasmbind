@@ -4,11 +4,15 @@
 namespace webbind {
 
 MediaKeySession MediaKeySession::take_ownership(Handle h) noexcept {
-        return MediaKeySession(h);
-    }
+    return MediaKeySession(h);
+}
+
 MediaKeySession MediaKeySession::clone() const noexcept { return *this; }
+
 emlite::Val MediaKeySession::instance() noexcept { return emlite::Val::global("MediaKeySession"); }
+
 MediaKeySession::MediaKeySession(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 MediaKeySession::MediaKeySession(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::String MediaKeySession::sessionId() const {

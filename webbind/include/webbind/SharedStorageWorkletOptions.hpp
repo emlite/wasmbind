@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type SharedStorageWorkletOptions
-/// [`SharedStorageWorkletOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletOptions)
 class SharedStorageWorkletOptions : public WorkletOptions {
   explicit SharedStorageWorkletOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit SharedStorageWorkletOptions(const emlite::Val &val) noexcept;
     SharedStorageWorkletOptions() noexcept;
     [[nodiscard]] SharedStorageWorkletOptions clone() const noexcept;
+    /// Getter of the `dataOrigin` attribute.
     [[nodiscard]] jsbind::String dataOrigin() const;
+    /// Setter of the `dataOrigin` attribute.
     void dataOrigin(const jsbind::String& value);
 };
 

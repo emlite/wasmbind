@@ -22,7 +22,7 @@ public:
     /// The getOffsetReferenceSpace method.
     /// [`XRReferenceSpace.getOffsetReferenceSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace/getOffsetReferenceSpace)
     XRReferenceSpace getOffsetReferenceSpace(const XRRigidTransform& originOffset);
-    /// Getter of the `onreset` attribute.
+    /// [`XRReferenceSpace.onreset`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace/onreset)
     /// [`XRReferenceSpace.onreset`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace/onreset)
     [[nodiscard]] jsbind::Any onreset() const;
     /// Setter of the `onreset` attribute.

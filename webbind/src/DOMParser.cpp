@@ -4,11 +4,15 @@
 namespace webbind {
 
 DOMParser DOMParser::take_ownership(Handle h) noexcept {
-        return DOMParser(h);
-    }
+    return DOMParser(h);
+}
+
 DOMParser DOMParser::clone() const noexcept { return *this; }
+
 emlite::Val DOMParser::instance() noexcept { return emlite::Val::global("DOMParser"); }
+
 DOMParser::DOMParser(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 DOMParser::DOMParser(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 DOMParser::DOMParser() : emlite::Val(emlite::Val::global("DOMParser").new_()) {}

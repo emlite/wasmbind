@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type SpeechSynthesisErrorEventInit
-/// [`SpeechSynthesisErrorEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisErrorEventInit)
 class SpeechSynthesisErrorEventInit : public SpeechSynthesisEventInit {
   explicit SpeechSynthesisErrorEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit SpeechSynthesisErrorEventInit(const emlite::Val &val) noexcept;
     SpeechSynthesisErrorEventInit() noexcept;
     [[nodiscard]] SpeechSynthesisErrorEventInit clone() const noexcept;
+    /// Getter of the `error` attribute.
     [[nodiscard]] SpeechSynthesisErrorCode error() const;
+    /// Setter of the `error` attribute.
     void error(const SpeechSynthesisErrorCode& value);
 };
 

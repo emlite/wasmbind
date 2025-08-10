@@ -1,14 +1,16 @@
 #include <webbind/ImageDecodeOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ImageDecodeOptions::ImageDecodeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageDecodeOptions ImageDecodeOptions::take_ownership(Handle h) noexcept {
-        return ImageDecodeOptions(h);
-    }
+    return ImageDecodeOptions(h);
+}
+
 ImageDecodeOptions::ImageDecodeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ImageDecodeOptions::ImageDecodeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ImageDecodeOptions ImageDecodeOptions::clone() const noexcept { return *this; }
 
 unsigned long ImageDecodeOptions::frameIndex() const {

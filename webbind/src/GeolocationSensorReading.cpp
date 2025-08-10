@@ -1,14 +1,16 @@
 #include <webbind/GeolocationSensorReading.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GeolocationSensorReading::GeolocationSensorReading(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GeolocationSensorReading GeolocationSensorReading::take_ownership(Handle h) noexcept {
-        return GeolocationSensorReading(h);
-    }
+    return GeolocationSensorReading(h);
+}
+
 GeolocationSensorReading::GeolocationSensorReading(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GeolocationSensorReading::GeolocationSensorReading() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GeolocationSensorReading GeolocationSensorReading::clone() const noexcept { return *this; }
 
 jsbind::Any GeolocationSensorReading::timestamp() const {

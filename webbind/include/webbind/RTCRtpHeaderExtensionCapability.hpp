@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpHeaderExtensionCapability
-/// [`RTCRtpHeaderExtensionCapability`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpHeaderExtensionCapability)
 class RTCRtpHeaderExtensionCapability : public emlite::Val {
   explicit RTCRtpHeaderExtensionCapability(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit RTCRtpHeaderExtensionCapability(const emlite::Val &val) noexcept;
     RTCRtpHeaderExtensionCapability() noexcept;
     [[nodiscard]] RTCRtpHeaderExtensionCapability clone() const noexcept;
+    /// Getter of the `uri` attribute.
     [[nodiscard]] jsbind::String uri() const;
+    /// Setter of the `uri` attribute.
     void uri(const jsbind::String& value);
 };
 

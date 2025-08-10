@@ -5,11 +5,15 @@
 namespace webbind {
 
 BackgroundFetchManager BackgroundFetchManager::take_ownership(Handle h) noexcept {
-        return BackgroundFetchManager(h);
-    }
+    return BackgroundFetchManager(h);
+}
+
 BackgroundFetchManager BackgroundFetchManager::clone() const noexcept { return *this; }
+
 emlite::Val BackgroundFetchManager::instance() noexcept { return emlite::Val::global("BackgroundFetchManager"); }
+
 BackgroundFetchManager::BackgroundFetchManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 BackgroundFetchManager::BackgroundFetchManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<BackgroundFetchRegistration> BackgroundFetchManager::fetch(const jsbind::String& id, const jsbind::Any& requests) {

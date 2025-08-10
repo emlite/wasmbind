@@ -6,11 +6,15 @@
 namespace webbind {
 
 SVGFEBlendElement SVGFEBlendElement::take_ownership(Handle h) noexcept {
-        return SVGFEBlendElement(h);
-    }
+    return SVGFEBlendElement(h);
+}
+
 SVGFEBlendElement SVGFEBlendElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFEBlendElement::instance() noexcept { return emlite::Val::global("SVGFEBlendElement"); }
+
 SVGFEBlendElement::SVGFEBlendElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFEBlendElement::SVGFEBlendElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedString SVGFEBlendElement::in1() const {

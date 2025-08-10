@@ -18,7 +18,7 @@ public:
     static GPUCanvasContext take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUCanvasContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `canvas` attribute.
+    /// [`GPUCanvasContext.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/canvas)
     /// [`GPUCanvasContext.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/canvas)
     [[nodiscard]] jsbind::Any canvas() const;
     /// The configure method.

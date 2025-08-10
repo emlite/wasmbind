@@ -1,15 +1,17 @@
 #include <webbind/PaymentItem.hpp>
 #include <webbind/PaymentCurrencyAmount.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentItem::PaymentItem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentItem PaymentItem::take_ownership(Handle h) noexcept {
-        return PaymentItem(h);
-    }
+    return PaymentItem(h);
+}
+
 PaymentItem::PaymentItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentItem::PaymentItem() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentItem PaymentItem::clone() const noexcept { return *this; }
 
 jsbind::String PaymentItem::label() const {

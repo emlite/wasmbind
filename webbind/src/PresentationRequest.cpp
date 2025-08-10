@@ -5,11 +5,15 @@
 namespace webbind {
 
 PresentationRequest PresentationRequest::take_ownership(Handle h) noexcept {
-        return PresentationRequest(h);
-    }
+    return PresentationRequest(h);
+}
+
 PresentationRequest PresentationRequest::clone() const noexcept { return *this; }
+
 emlite::Val PresentationRequest::instance() noexcept { return emlite::Val::global("PresentationRequest"); }
+
 PresentationRequest::PresentationRequest(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 PresentationRequest::PresentationRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 PresentationRequest::PresentationRequest(const jsbind::TypedArray<jsbind::String>& urls) : EventTarget(emlite::Val::global("PresentationRequest").new_(urls)) {}

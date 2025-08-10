@@ -5,11 +5,15 @@
 namespace webbind {
 
 NotRestoredReasons NotRestoredReasons::take_ownership(Handle h) noexcept {
-        return NotRestoredReasons(h);
-    }
+    return NotRestoredReasons(h);
+}
+
 NotRestoredReasons NotRestoredReasons::clone() const noexcept { return *this; }
+
 emlite::Val NotRestoredReasons::instance() noexcept { return emlite::Val::global("NotRestoredReasons"); }
+
 NotRestoredReasons::NotRestoredReasons(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 NotRestoredReasons::NotRestoredReasons(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String NotRestoredReasons::src() const {

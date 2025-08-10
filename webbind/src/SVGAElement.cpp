@@ -5,11 +5,15 @@
 namespace webbind {
 
 SVGAElement SVGAElement::take_ownership(Handle h) noexcept {
-        return SVGAElement(h);
-    }
+    return SVGAElement(h);
+}
+
 SVGAElement SVGAElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGAElement::instance() noexcept { return emlite::Val::global("SVGAElement"); }
+
 SVGAElement::SVGAElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
+
 SVGAElement::SVGAElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 
 SVGAnimatedString SVGAElement::target() const {

@@ -1,15 +1,17 @@
 #include <webbind/MLOpSupportLimits.hpp>
 #include <webbind/MLWhereSupportLimits.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLOpSupportLimits::MLOpSupportLimits(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLOpSupportLimits MLOpSupportLimits::take_ownership(Handle h) noexcept {
-        return MLOpSupportLimits(h);
-    }
+    return MLOpSupportLimits(h);
+}
+
 MLOpSupportLimits::MLOpSupportLimits(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MLOpSupportLimits::MLOpSupportLimits() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MLOpSupportLimits MLOpSupportLimits::clone() const noexcept { return *this; }
 
 MLWhereSupportLimits MLOpSupportLimits::where() const {

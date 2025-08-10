@@ -5,11 +5,15 @@
 namespace webbind {
 
 StyleSheet StyleSheet::take_ownership(Handle h) noexcept {
-        return StyleSheet(h);
-    }
+    return StyleSheet(h);
+}
+
 StyleSheet StyleSheet::clone() const noexcept { return *this; }
+
 emlite::Val StyleSheet::instance() noexcept { return emlite::Val::global("StyleSheet"); }
+
 StyleSheet::StyleSheet(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 StyleSheet::StyleSheet(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String StyleSheet::type() const {

@@ -21,7 +21,7 @@ public:
     PageTransitionEvent(const jsbind::String& type);
     /// The `new PageTransitionEvent(..)` constructor, creating a new PageTransitionEvent instance
     PageTransitionEvent(const jsbind::String& type, const PageTransitionEventInit& eventInitDict);
-    /// Getter of the `persisted` attribute.
+    /// [`PageTransitionEvent.persisted`](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent/persisted)
     /// [`PageTransitionEvent.persisted`](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent/persisted)
     [[nodiscard]] bool persisted() const;
 };

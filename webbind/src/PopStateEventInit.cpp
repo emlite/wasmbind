@@ -1,14 +1,16 @@
 #include <webbind/PopStateEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PopStateEventInit::PopStateEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 PopStateEventInit PopStateEventInit::take_ownership(Handle h) noexcept {
-        return PopStateEventInit(h);
-    }
+    return PopStateEventInit(h);
+}
+
 PopStateEventInit::PopStateEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 PopStateEventInit::PopStateEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 PopStateEventInit PopStateEventInit::clone() const noexcept { return *this; }
 
 jsbind::Any PopStateEventInit::state() const {

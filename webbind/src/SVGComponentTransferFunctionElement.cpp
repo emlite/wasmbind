@@ -6,11 +6,15 @@
 namespace webbind {
 
 SVGComponentTransferFunctionElement SVGComponentTransferFunctionElement::take_ownership(Handle h) noexcept {
-        return SVGComponentTransferFunctionElement(h);
-    }
+    return SVGComponentTransferFunctionElement(h);
+}
+
 SVGComponentTransferFunctionElement SVGComponentTransferFunctionElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGComponentTransferFunctionElement::instance() noexcept { return emlite::Val::global("SVGComponentTransferFunctionElement"); }
+
 SVGComponentTransferFunctionElement::SVGComponentTransferFunctionElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGComponentTransferFunctionElement::SVGComponentTransferFunctionElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedEnumeration SVGComponentTransferFunctionElement::type() const {

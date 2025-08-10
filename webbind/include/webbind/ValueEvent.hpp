@@ -21,7 +21,7 @@ public:
     ValueEvent(const jsbind::String& type);
     /// The `new ValueEvent(..)` constructor, creating a new ValueEvent instance
     ValueEvent(const jsbind::String& type, const ValueEventInit& initDict);
-    /// Getter of the `value` attribute.
+    /// [`ValueEvent.value`](https://developer.mozilla.org/en-US/docs/Web/API/ValueEvent/value)
     /// [`ValueEvent.value`](https://developer.mozilla.org/en-US/docs/Web/API/ValueEvent/value)
     [[nodiscard]] jsbind::Any value() const;
 };

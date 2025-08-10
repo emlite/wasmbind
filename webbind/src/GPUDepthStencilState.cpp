@@ -1,15 +1,17 @@
 #include <webbind/GPUDepthStencilState.hpp>
 #include <webbind/GPUStencilFaceState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUDepthStencilState::GPUDepthStencilState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUDepthStencilState GPUDepthStencilState::take_ownership(Handle h) noexcept {
-        return GPUDepthStencilState(h);
-    }
+    return GPUDepthStencilState(h);
+}
+
 GPUDepthStencilState::GPUDepthStencilState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUDepthStencilState::GPUDepthStencilState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUDepthStencilState GPUDepthStencilState::clone() const noexcept { return *this; }
 
 GPUTextureFormat GPUDepthStencilState::format() const {

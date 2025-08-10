@@ -19,13 +19,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PasswordCredential(..)` constructor, creating a new PasswordCredential instance
     PasswordCredential(const PasswordCredentialData& data);
-    /// Getter of the `password` attribute.
+    /// [`PasswordCredential.password`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/password)
     /// [`PasswordCredential.password`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/password)
     [[nodiscard]] jsbind::String password() const;
-    /// Getter of the `name` attribute.
+    /// [`PasswordCredential.name`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/name)
     /// [`PasswordCredential.name`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `iconURL` attribute.
+    /// [`PasswordCredential.iconURL`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/iconURL)
     /// [`PasswordCredential.iconURL`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/iconURL)
     [[nodiscard]] jsbind::String iconURL() const;
 };

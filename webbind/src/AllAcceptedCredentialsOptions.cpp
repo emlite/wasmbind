@@ -1,14 +1,16 @@
 #include <webbind/AllAcceptedCredentialsOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AllAcceptedCredentialsOptions::AllAcceptedCredentialsOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AllAcceptedCredentialsOptions AllAcceptedCredentialsOptions::take_ownership(Handle h) noexcept {
-        return AllAcceptedCredentialsOptions(h);
-    }
+    return AllAcceptedCredentialsOptions(h);
+}
+
 AllAcceptedCredentialsOptions::AllAcceptedCredentialsOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AllAcceptedCredentialsOptions::AllAcceptedCredentialsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AllAcceptedCredentialsOptions AllAcceptedCredentialsOptions::clone() const noexcept { return *this; }
 
 jsbind::String AllAcceptedCredentialsOptions::rpId() const {

@@ -15,10 +15,10 @@ public:
     static MediaError take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `code` attribute.
+    /// [`MediaError.code`](https://developer.mozilla.org/en-US/docs/Web/API/MediaError/code)
     /// [`MediaError.code`](https://developer.mozilla.org/en-US/docs/Web/API/MediaError/code)
     [[nodiscard]] unsigned short code() const;
-    /// Getter of the `message` attribute.
+    /// [`MediaError.message`](https://developer.mozilla.org/en-US/docs/Web/API/MediaError/message)
     /// [`MediaError.message`](https://developer.mozilla.org/en-US/docs/Web/API/MediaError/message)
     [[nodiscard]] jsbind::String message() const;
 };

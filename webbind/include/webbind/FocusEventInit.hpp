@@ -10,7 +10,6 @@ namespace webbind {
 class EventTarget;
 
 /// Dictionary type FocusEventInit
-/// [`FocusEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/FocusEventInit)
 class FocusEventInit : public UIEventInit {
   explicit FocusEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit FocusEventInit(const emlite::Val &val) noexcept;
     FocusEventInit() noexcept;
     [[nodiscard]] FocusEventInit clone() const noexcept;
+    /// Getter of the `relatedTarget` attribute.
     [[nodiscard]] EventTarget relatedTarget() const;
+    /// Setter of the `relatedTarget` attribute.
     void relatedTarget(const EventTarget& value);
 };
 

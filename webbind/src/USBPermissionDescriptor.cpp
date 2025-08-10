@@ -1,15 +1,17 @@
 #include <webbind/USBPermissionDescriptor.hpp>
 #include <webbind/USBDeviceFilter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 USBPermissionDescriptor::USBPermissionDescriptor(Handle h) noexcept : PermissionDescriptor(emlite::Val::take_ownership(h)) {}
 USBPermissionDescriptor USBPermissionDescriptor::take_ownership(Handle h) noexcept {
-        return USBPermissionDescriptor(h);
-    }
+    return USBPermissionDescriptor(h);
+}
+
 USBPermissionDescriptor::USBPermissionDescriptor(const emlite::Val &val) noexcept: PermissionDescriptor(val) {}
+
 USBPermissionDescriptor::USBPermissionDescriptor() noexcept: PermissionDescriptor(emlite::Val::object()) {}
+
 USBPermissionDescriptor USBPermissionDescriptor::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<USBDeviceFilter> USBPermissionDescriptor::filters() const {

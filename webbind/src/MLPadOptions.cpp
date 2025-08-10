@@ -1,14 +1,16 @@
 #include <webbind/MLPadOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLPadOptions::MLPadOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLPadOptions MLPadOptions::take_ownership(Handle h) noexcept {
-        return MLPadOptions(h);
-    }
+    return MLPadOptions(h);
+}
+
 MLPadOptions::MLPadOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLPadOptions::MLPadOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLPadOptions MLPadOptions::clone() const noexcept { return *this; }
 
 MLPaddingMode MLPadOptions::mode() const {

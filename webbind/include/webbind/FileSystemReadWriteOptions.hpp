@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FileSystemReadWriteOptions
-/// [`FileSystemReadWriteOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemReadWriteOptions)
 class FileSystemReadWriteOptions : public emlite::Val {
   explicit FileSystemReadWriteOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit FileSystemReadWriteOptions(const emlite::Val &val) noexcept;
     FileSystemReadWriteOptions() noexcept;
     [[nodiscard]] FileSystemReadWriteOptions clone() const noexcept;
+    /// Getter of the `at` attribute.
     [[nodiscard]] long long at() const;
+    /// Setter of the `at` attribute.
     void at(long long value);
 };
 

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HIDConnectionEvent(..)` constructor, creating a new HIDConnectionEvent instance
     HIDConnectionEvent(const jsbind::String& type, const HIDConnectionEventInit& eventInitDict);
-    /// Getter of the `device` attribute.
+    /// [`HIDConnectionEvent.device`](https://developer.mozilla.org/en-US/docs/Web/API/HIDConnectionEvent/device)
     /// [`HIDConnectionEvent.device`](https://developer.mozilla.org/en-US/docs/Web/API/HIDConnectionEvent/device)
     [[nodiscard]] HIDDevice device() const;
 };

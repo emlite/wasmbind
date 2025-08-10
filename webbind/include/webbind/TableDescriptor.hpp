@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type TableDescriptor
-/// [`TableDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/TableDescriptor)
 class TableDescriptor : public emlite::Val {
   explicit TableDescriptor(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit TableDescriptor(const emlite::Val &val) noexcept;
     TableDescriptor() noexcept;
     [[nodiscard]] TableDescriptor clone() const noexcept;
+    /// Getter of the `element` attribute.
     [[nodiscard]] TableKind element() const;
+    /// Setter of the `element` attribute.
     void element(const TableKind& value);
+    /// Getter of the `initial` attribute.
     [[nodiscard]] unsigned long initial() const;
+    /// Setter of the `initial` attribute.
     void initial(unsigned long value);
+    /// Getter of the `maximum` attribute.
     [[nodiscard]] unsigned long maximum() const;
+    /// Setter of the `maximum` attribute.
     void maximum(unsigned long value);
 };
 

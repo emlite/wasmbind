@@ -1,14 +1,16 @@
 #include <webbind/PurchaseDetails.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PurchaseDetails::PurchaseDetails(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PurchaseDetails PurchaseDetails::take_ownership(Handle h) noexcept {
-        return PurchaseDetails(h);
-    }
+    return PurchaseDetails(h);
+}
+
 PurchaseDetails::PurchaseDetails(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PurchaseDetails::PurchaseDetails() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PurchaseDetails PurchaseDetails::clone() const noexcept { return *this; }
 
 jsbind::String PurchaseDetails::itemId() const {

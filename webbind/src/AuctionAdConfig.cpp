@@ -5,15 +5,17 @@
 #include <webbind/AuctionRealTimeReportingConfig.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuctionAdConfig::AuctionAdConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuctionAdConfig AuctionAdConfig::take_ownership(Handle h) noexcept {
-        return AuctionAdConfig(h);
-    }
+    return AuctionAdConfig(h);
+}
+
 AuctionAdConfig::AuctionAdConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuctionAdConfig::AuctionAdConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuctionAdConfig AuctionAdConfig::clone() const noexcept { return *this; }
 
 jsbind::String AuctionAdConfig::seller() const {

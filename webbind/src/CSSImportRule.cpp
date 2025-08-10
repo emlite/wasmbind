@@ -5,11 +5,15 @@
 namespace webbind {
 
 CSSImportRule CSSImportRule::take_ownership(Handle h) noexcept {
-        return CSSImportRule(h);
-    }
+    return CSSImportRule(h);
+}
+
 CSSImportRule CSSImportRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSImportRule::instance() noexcept { return emlite::Val::global("CSSImportRule"); }
+
 CSSImportRule::CSSImportRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
+
 CSSImportRule::CSSImportRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 jsbind::String CSSImportRule::href() const {

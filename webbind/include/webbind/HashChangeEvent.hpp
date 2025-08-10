@@ -21,10 +21,10 @@ public:
     HashChangeEvent(const jsbind::String& type);
     /// The `new HashChangeEvent(..)` constructor, creating a new HashChangeEvent instance
     HashChangeEvent(const jsbind::String& type, const HashChangeEventInit& eventInitDict);
-    /// Getter of the `oldURL` attribute.
+    /// [`HashChangeEvent.oldURL`](https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/oldURL)
     /// [`HashChangeEvent.oldURL`](https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/oldURL)
     [[nodiscard]] jsbind::String oldURL() const;
-    /// Getter of the `newURL` attribute.
+    /// [`HashChangeEvent.newURL`](https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/newURL)
     /// [`HashChangeEvent.newURL`](https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/newURL)
     [[nodiscard]] jsbind::String newURL() const;
 };

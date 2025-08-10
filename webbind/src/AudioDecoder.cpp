@@ -7,11 +7,15 @@
 namespace webbind {
 
 AudioDecoder AudioDecoder::take_ownership(Handle h) noexcept {
-        return AudioDecoder(h);
-    }
+    return AudioDecoder(h);
+}
+
 AudioDecoder AudioDecoder::clone() const noexcept { return *this; }
+
 emlite::Val AudioDecoder::instance() noexcept { return emlite::Val::global("AudioDecoder"); }
+
 AudioDecoder::AudioDecoder(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 AudioDecoder::AudioDecoder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 AudioDecoder::AudioDecoder(const AudioDecoderInit& init) : EventTarget(emlite::Val::global("AudioDecoder").new_(init)) {}

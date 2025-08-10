@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type IIRFilterOptions
-/// [`IIRFilterOptions`](https://developer.mozilla.org/en-US/docs/Web/API/IIRFilterOptions)
 class IIRFilterOptions : public AudioNodeOptions {
   explicit IIRFilterOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit IIRFilterOptions(const emlite::Val &val) noexcept;
     IIRFilterOptions() noexcept;
     [[nodiscard]] IIRFilterOptions clone() const noexcept;
+    /// Getter of the `feedforward` attribute.
     [[nodiscard]] jsbind::TypedArray<double> feedforward() const;
+    /// Setter of the `feedforward` attribute.
     void feedforward(jsbind::TypedArray<double> value);
+    /// Getter of the `feedback` attribute.
     [[nodiscard]] jsbind::TypedArray<double> feedback() const;
+    /// Setter of the `feedback` attribute.
     void feedback(jsbind::TypedArray<double> value);
 };
 

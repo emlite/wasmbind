@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PortalActivateEventInit
-/// [`PortalActivateEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PortalActivateEventInit)
 class PortalActivateEventInit : public EventInit {
   explicit PortalActivateEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit PortalActivateEventInit(const emlite::Val &val) noexcept;
     PortalActivateEventInit() noexcept;
     [[nodiscard]] PortalActivateEventInit clone() const noexcept;
+    /// Getter of the `data` attribute.
     [[nodiscard]] jsbind::Any data() const;
+    /// Setter of the `data` attribute.
     void data(const jsbind::Any& value);
 };
 

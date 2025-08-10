@@ -20,16 +20,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLabelElement(..)` constructor, creating a new HTMLLabelElement instance
     HTMLLabelElement();
-    /// Getter of the `form` attribute.
+    /// [`HTMLLabelElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/form)
     /// [`HTMLLabelElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/form)
     [[nodiscard]] HTMLFormElement form() const;
-    /// Getter of the `htmlFor` attribute.
+    /// [`HTMLLabelElement.htmlFor`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor)
     /// [`HTMLLabelElement.htmlFor`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor)
     [[nodiscard]] jsbind::String htmlFor() const;
     /// Setter of the `htmlFor` attribute.
     /// [`HTMLLabelElement.htmlFor`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor)
     void htmlFor(const jsbind::String& value);
-    /// Getter of the `control` attribute.
+    /// [`HTMLLabelElement.control`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/control)
     /// [`HTMLLabelElement.control`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/control)
     [[nodiscard]] HTMLElement control() const;
 };

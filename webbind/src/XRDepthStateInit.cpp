@@ -1,14 +1,16 @@
 #include <webbind/XRDepthStateInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRDepthStateInit::XRDepthStateInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRDepthStateInit XRDepthStateInit::take_ownership(Handle h) noexcept {
-        return XRDepthStateInit(h);
-    }
+    return XRDepthStateInit(h);
+}
+
 XRDepthStateInit::XRDepthStateInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRDepthStateInit::XRDepthStateInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRDepthStateInit XRDepthStateInit::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<XRDepthUsage> XRDepthStateInit::usagePreference() const {

@@ -1,14 +1,16 @@
 #include <webbind/RTCMediaSourceStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCMediaSourceStats::RTCMediaSourceStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCMediaSourceStats RTCMediaSourceStats::take_ownership(Handle h) noexcept {
-        return RTCMediaSourceStats(h);
-    }
+    return RTCMediaSourceStats(h);
+}
+
 RTCMediaSourceStats::RTCMediaSourceStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCMediaSourceStats::RTCMediaSourceStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCMediaSourceStats RTCMediaSourceStats::clone() const noexcept { return *this; }
 
 jsbind::String RTCMediaSourceStats::trackIdentifier() const {

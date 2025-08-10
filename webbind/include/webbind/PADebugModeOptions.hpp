@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PADebugModeOptions
-/// [`PADebugModeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PADebugModeOptions)
 class PADebugModeOptions : public emlite::Val {
   explicit PADebugModeOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PADebugModeOptions(const emlite::Val &val) noexcept;
     PADebugModeOptions() noexcept;
     [[nodiscard]] PADebugModeOptions clone() const noexcept;
+    /// Getter of the `debugKey` attribute.
     [[nodiscard]] long long debugKey() const;
+    /// Setter of the `debugKey` attribute.
     void debugKey(long long value);
 };
 

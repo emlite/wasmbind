@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CSSParserOptions
-/// [`CSSParserOptions`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserOptions)
 class CSSParserOptions : public emlite::Val {
   explicit CSSParserOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit CSSParserOptions(const emlite::Val &val) noexcept;
     CSSParserOptions() noexcept;
     [[nodiscard]] CSSParserOptions clone() const noexcept;
+    /// Getter of the `atRules` attribute.
     [[nodiscard]] jsbind::Object atRules() const;
+    /// Setter of the `atRules` attribute.
     void atRules(const jsbind::Object& value);
 };
 

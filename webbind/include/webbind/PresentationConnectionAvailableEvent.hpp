@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PresentationConnectionAvailableEvent(..)` constructor, creating a new PresentationConnectionAvailableEvent instance
     PresentationConnectionAvailableEvent(const jsbind::String& type, const PresentationConnectionAvailableEventInit& eventInitDict);
-    /// Getter of the `connection` attribute.
+    /// [`PresentationConnectionAvailableEvent.connection`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionAvailableEvent/connection)
     /// [`PresentationConnectionAvailableEvent.connection`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionAvailableEvent/connection)
     [[nodiscard]] PresentationConnection connection() const;
 };

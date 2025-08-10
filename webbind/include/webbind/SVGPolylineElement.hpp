@@ -18,10 +18,10 @@ public:
     static SVGPolylineElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGPolylineElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `points` attribute.
+    /// [`SVGPolylineElement.points`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolylineElement/points)
     /// [`SVGPolylineElement.points`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolylineElement/points)
     [[nodiscard]] SVGPointList points() const;
-    /// Getter of the `animatedPoints` attribute.
+    /// [`SVGPolylineElement.animatedPoints`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolylineElement/animatedPoints)
     /// [`SVGPolylineElement.animatedPoints`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPolylineElement/animatedPoints)
     [[nodiscard]] SVGPointList animatedPoints() const;
 };

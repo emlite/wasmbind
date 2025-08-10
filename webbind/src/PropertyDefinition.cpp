@@ -1,14 +1,16 @@
 #include <webbind/PropertyDefinition.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PropertyDefinition::PropertyDefinition(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PropertyDefinition PropertyDefinition::take_ownership(Handle h) noexcept {
-        return PropertyDefinition(h);
-    }
+    return PropertyDefinition(h);
+}
+
 PropertyDefinition::PropertyDefinition(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PropertyDefinition::PropertyDefinition() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PropertyDefinition PropertyDefinition::clone() const noexcept { return *this; }
 
 jsbind::String PropertyDefinition::name() const {

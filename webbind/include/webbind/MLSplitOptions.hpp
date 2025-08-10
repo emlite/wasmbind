@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLSplitOptions
-/// [`MLSplitOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLSplitOptions)
 class MLSplitOptions : public MLOperatorOptions {
   explicit MLSplitOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLSplitOptions(const emlite::Val &val) noexcept;
     MLSplitOptions() noexcept;
     [[nodiscard]] MLSplitOptions clone() const noexcept;
+    /// Getter of the `axis` attribute.
     [[nodiscard]] unsigned long axis() const;
+    /// Setter of the `axis` attribute.
     void axis(unsigned long value);
 };
 

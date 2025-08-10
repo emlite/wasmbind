@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MockMicrophoneConfiguration
-/// [`MockMicrophoneConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/MockMicrophoneConfiguration)
 class MockMicrophoneConfiguration : public MockCaptureDeviceConfiguration {
   explicit MockMicrophoneConfiguration(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MockMicrophoneConfiguration(const emlite::Val &val) noexcept;
     MockMicrophoneConfiguration() noexcept;
     [[nodiscard]] MockMicrophoneConfiguration clone() const noexcept;
+    /// Getter of the `defaultSampleRate` attribute.
     [[nodiscard]] unsigned long defaultSampleRate() const;
+    /// Setter of the `defaultSampleRate` attribute.
     void defaultSampleRate(unsigned long value);
 };
 

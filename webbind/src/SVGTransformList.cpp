@@ -5,11 +5,15 @@
 namespace webbind {
 
 SVGTransformList SVGTransformList::take_ownership(Handle h) noexcept {
-        return SVGTransformList(h);
-    }
+    return SVGTransformList(h);
+}
+
 SVGTransformList SVGTransformList::clone() const noexcept { return *this; }
+
 emlite::Val SVGTransformList::instance() noexcept { return emlite::Val::global("SVGTransformList"); }
+
 SVGTransformList::SVGTransformList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 SVGTransformList::SVGTransformList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned long SVGTransformList::length() const {

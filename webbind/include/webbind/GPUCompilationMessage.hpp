@@ -16,22 +16,22 @@ public:
     static GPUCompilationMessage take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUCompilationMessage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `message` attribute.
+    /// [`GPUCompilationMessage.message`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/message)
     /// [`GPUCompilationMessage.message`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/message)
     [[nodiscard]] jsbind::String message() const;
-    /// Getter of the `type` attribute.
+    /// [`GPUCompilationMessage.type`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/type)
     /// [`GPUCompilationMessage.type`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/type)
     [[nodiscard]] GPUCompilationMessageType type() const;
-    /// Getter of the `lineNum` attribute.
+    /// [`GPUCompilationMessage.lineNum`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/lineNum)
     /// [`GPUCompilationMessage.lineNum`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/lineNum)
     [[nodiscard]] long long lineNum() const;
-    /// Getter of the `linePos` attribute.
+    /// [`GPUCompilationMessage.linePos`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/linePos)
     /// [`GPUCompilationMessage.linePos`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/linePos)
     [[nodiscard]] long long linePos() const;
-    /// Getter of the `offset` attribute.
+    /// [`GPUCompilationMessage.offset`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/offset)
     /// [`GPUCompilationMessage.offset`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/offset)
     [[nodiscard]] long long offset() const;
-    /// Getter of the `length` attribute.
+    /// [`GPUCompilationMessage.length`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/length)
     /// [`GPUCompilationMessage.length`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/length)
     [[nodiscard]] long long length() const;
 };

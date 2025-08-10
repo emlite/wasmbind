@@ -26,25 +26,25 @@ public:
     XRWebGLLayer(const XRSession& session, const jsbind::Any& context);
     /// The `new XRWebGLLayer(..)` constructor, creating a new XRWebGLLayer instance
     XRWebGLLayer(const XRSession& session, const jsbind::Any& context, const XRWebGLLayerInit& layerInit);
-    /// Getter of the `antialias` attribute.
+    /// [`XRWebGLLayer.antialias`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/antialias)
     /// [`XRWebGLLayer.antialias`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/antialias)
     [[nodiscard]] bool antialias() const;
-    /// Getter of the `ignoreDepthValues` attribute.
+    /// [`XRWebGLLayer.ignoreDepthValues`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/ignoreDepthValues)
     /// [`XRWebGLLayer.ignoreDepthValues`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/ignoreDepthValues)
     [[nodiscard]] bool ignoreDepthValues() const;
-    /// Getter of the `fixedFoveation` attribute.
+    /// [`XRWebGLLayer.fixedFoveation`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/fixedFoveation)
     /// [`XRWebGLLayer.fixedFoveation`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/fixedFoveation)
     [[nodiscard]] float fixedFoveation() const;
     /// Setter of the `fixedFoveation` attribute.
     /// [`XRWebGLLayer.fixedFoveation`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/fixedFoveation)
     void fixedFoveation(float value);
-    /// Getter of the `framebuffer` attribute.
+    /// [`XRWebGLLayer.framebuffer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/framebuffer)
     /// [`XRWebGLLayer.framebuffer`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/framebuffer)
     [[nodiscard]] WebGLFramebuffer framebuffer() const;
-    /// Getter of the `framebufferWidth` attribute.
+    /// [`XRWebGLLayer.framebufferWidth`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/framebufferWidth)
     /// [`XRWebGLLayer.framebufferWidth`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/framebufferWidth)
     [[nodiscard]] unsigned long framebufferWidth() const;
-    /// Getter of the `framebufferHeight` attribute.
+    /// [`XRWebGLLayer.framebufferHeight`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/framebufferHeight)
     /// [`XRWebGLLayer.framebufferHeight`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer/framebufferHeight)
     [[nodiscard]] unsigned long framebufferHeight() const;
     /// The getViewport method.

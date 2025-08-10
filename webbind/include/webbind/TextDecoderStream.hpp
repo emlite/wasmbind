@@ -25,19 +25,19 @@ public:
     TextDecoderStream(const jsbind::String& label);
     /// The `new TextDecoderStream(..)` constructor, creating a new TextDecoderStream instance
     TextDecoderStream(const jsbind::String& label, const TextDecoderOptions& options);
-    /// Getter of the `encoding` attribute.
+    /// [`TextDecoderStream.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/encoding)
     /// [`TextDecoderStream.encoding`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/encoding)
     [[nodiscard]] jsbind::String encoding() const;
-    /// Getter of the `fatal` attribute.
+    /// [`TextDecoderStream.fatal`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/fatal)
     /// [`TextDecoderStream.fatal`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/fatal)
     [[nodiscard]] bool fatal() const;
-    /// Getter of the `ignoreBOM` attribute.
+    /// [`TextDecoderStream.ignoreBOM`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/ignoreBOM)
     /// [`TextDecoderStream.ignoreBOM`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/ignoreBOM)
     [[nodiscard]] bool ignoreBOM() const;
-    /// Getter of the `readable` attribute.
+    /// [`TextDecoderStream.readable`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/readable)
     /// [`TextDecoderStream.readable`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/readable)
     [[nodiscard]] ReadableStream readable() const;
-    /// Getter of the `writable` attribute.
+    /// [`TextDecoderStream.writable`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/writable)
     /// [`TextDecoderStream.writable`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream/writable)
     [[nodiscard]] WritableStream writable() const;
 };

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ProgressEventInit
-/// [`ProgressEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/ProgressEventInit)
 class ProgressEventInit : public EventInit {
   explicit ProgressEventInit(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit ProgressEventInit(const emlite::Val &val) noexcept;
     ProgressEventInit() noexcept;
     [[nodiscard]] ProgressEventInit clone() const noexcept;
+    /// Getter of the `lengthComputable` attribute.
     [[nodiscard]] bool lengthComputable() const;
+    /// Setter of the `lengthComputable` attribute.
     void lengthComputable(bool value);
+    /// Getter of the `loaded` attribute.
     [[nodiscard]] double loaded() const;
+    /// Setter of the `loaded` attribute.
     void loaded(double value);
+    /// Getter of the `total` attribute.
     [[nodiscard]] double total() const;
+    /// Setter of the `total` attribute.
     void total(double value);
 };
 

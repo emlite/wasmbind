@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PlaneLayout
-/// [`PlaneLayout`](https://developer.mozilla.org/en-US/docs/Web/API/PlaneLayout)
 class PlaneLayout : public emlite::Val {
   explicit PlaneLayout(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit PlaneLayout(const emlite::Val &val) noexcept;
     PlaneLayout() noexcept;
     [[nodiscard]] PlaneLayout clone() const noexcept;
+    /// Getter of the `offset` attribute.
     [[nodiscard]] unsigned long offset() const;
+    /// Setter of the `offset` attribute.
     void offset(unsigned long value);
+    /// Getter of the `stride` attribute.
     [[nodiscard]] unsigned long stride() const;
+    /// Setter of the `stride` attribute.
     void stride(unsigned long value);
 };
 

@@ -10,7 +10,6 @@ namespace webbind {
 class DataTransfer;
 
 /// Dictionary type ClipboardEventInit
-/// [`ClipboardEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEventInit)
 class ClipboardEventInit : public EventInit {
   explicit ClipboardEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit ClipboardEventInit(const emlite::Val &val) noexcept;
     ClipboardEventInit() noexcept;
     [[nodiscard]] ClipboardEventInit clone() const noexcept;
+    /// Getter of the `clipboardData` attribute.
     [[nodiscard]] DataTransfer clipboardData() const;
+    /// Setter of the `clipboardData` attribute.
     void clipboardData(const DataTransfer& value);
 };
 

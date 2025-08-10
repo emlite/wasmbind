@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type TextEncoderEncodeIntoResult
-/// [`TextEncoderEncodeIntoResult`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderEncodeIntoResult)
 class TextEncoderEncodeIntoResult : public emlite::Val {
   explicit TextEncoderEncodeIntoResult(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit TextEncoderEncodeIntoResult(const emlite::Val &val) noexcept;
     TextEncoderEncodeIntoResult() noexcept;
     [[nodiscard]] TextEncoderEncodeIntoResult clone() const noexcept;
+    /// Getter of the `read` attribute.
     [[nodiscard]] long long read() const;
+    /// Setter of the `read` attribute.
     void read(long long value);
+    /// Getter of the `written` attribute.
     [[nodiscard]] long long written() const;
+    /// Setter of the `written` attribute.
     void written(long long value);
 };
 

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLSliceOptions
-/// [`MLSliceOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLSliceOptions)
 class MLSliceOptions : public MLOperatorOptions {
   explicit MLSliceOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLSliceOptions(const emlite::Val &val) noexcept;
     MLSliceOptions() noexcept;
     [[nodiscard]] MLSliceOptions clone() const noexcept;
+    /// Getter of the `strides` attribute.
     [[nodiscard]] jsbind::TypedArray<unsigned long> strides() const;
+    /// Setter of the `strides` attribute.
     void strides(jsbind::TypedArray<unsigned long> value);
 };
 

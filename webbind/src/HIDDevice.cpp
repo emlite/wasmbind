@@ -4,11 +4,15 @@
 namespace webbind {
 
 HIDDevice HIDDevice::take_ownership(Handle h) noexcept {
-        return HIDDevice(h);
-    }
+    return HIDDevice(h);
+}
+
 HIDDevice HIDDevice::clone() const noexcept { return *this; }
+
 emlite::Val HIDDevice::instance() noexcept { return emlite::Val::global("HIDDevice"); }
+
 HIDDevice::HIDDevice(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 HIDDevice::HIDDevice(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Any HIDDevice::oninputreport() const {

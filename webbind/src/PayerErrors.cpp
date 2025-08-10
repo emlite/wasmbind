@@ -1,14 +1,16 @@
 #include <webbind/PayerErrors.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PayerErrors::PayerErrors(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PayerErrors PayerErrors::take_ownership(Handle h) noexcept {
-        return PayerErrors(h);
-    }
+    return PayerErrors(h);
+}
+
 PayerErrors::PayerErrors(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PayerErrors::PayerErrors() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PayerErrors PayerErrors::clone() const noexcept { return *this; }
 
 jsbind::String PayerErrors::email() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLTriangularOptions
-/// [`MLTriangularOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLTriangularOptions)
 class MLTriangularOptions : public MLOperatorOptions {
   explicit MLTriangularOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MLTriangularOptions(const emlite::Val &val) noexcept;
     MLTriangularOptions() noexcept;
     [[nodiscard]] MLTriangularOptions clone() const noexcept;
+    /// Getter of the `upper` attribute.
     [[nodiscard]] bool upper() const;
+    /// Setter of the `upper` attribute.
     void upper(bool value);
+    /// Getter of the `diagonal` attribute.
     [[nodiscard]] long diagonal() const;
+    /// Setter of the `diagonal` attribute.
     void diagonal(long value);
 };
 

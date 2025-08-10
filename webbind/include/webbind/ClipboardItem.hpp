@@ -23,10 +23,10 @@ public:
     ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items);
     /// The `new ClipboardItem(..)` constructor, creating a new ClipboardItem instance
     ClipboardItem(const jsbind::Record<jsbind::String, jsbind::Any>& items, const ClipboardItemOptions& options);
-    /// Getter of the `presentationStyle` attribute.
+    /// [`ClipboardItem.presentationStyle`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/presentationStyle)
     /// [`ClipboardItem.presentationStyle`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/presentationStyle)
     [[nodiscard]] PresentationStyle presentationStyle() const;
-    /// Getter of the `types` attribute.
+    /// [`ClipboardItem.types`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/types)
     /// [`ClipboardItem.types`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/types)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> types() const;
     /// The getType method.

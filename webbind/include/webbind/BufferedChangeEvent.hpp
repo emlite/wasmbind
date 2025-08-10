@@ -23,10 +23,10 @@ public:
     BufferedChangeEvent(const jsbind::String& type);
     /// The `new BufferedChangeEvent(..)` constructor, creating a new BufferedChangeEvent instance
     BufferedChangeEvent(const jsbind::String& type, const BufferedChangeEventInit& eventInitDict);
-    /// Getter of the `addedRanges` attribute.
+    /// [`BufferedChangeEvent.addedRanges`](https://developer.mozilla.org/en-US/docs/Web/API/BufferedChangeEvent/addedRanges)
     /// [`BufferedChangeEvent.addedRanges`](https://developer.mozilla.org/en-US/docs/Web/API/BufferedChangeEvent/addedRanges)
     [[nodiscard]] TimeRanges addedRanges() const;
-    /// Getter of the `removedRanges` attribute.
+    /// [`BufferedChangeEvent.removedRanges`](https://developer.mozilla.org/en-US/docs/Web/API/BufferedChangeEvent/removedRanges)
     /// [`BufferedChangeEvent.removedRanges`](https://developer.mozilla.org/en-US/docs/Web/API/BufferedChangeEvent/removedRanges)
     [[nodiscard]] TimeRanges removedRanges() const;
 };

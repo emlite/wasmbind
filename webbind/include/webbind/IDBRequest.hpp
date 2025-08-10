@@ -20,28 +20,28 @@ public:
     static IDBRequest take_ownership(Handle h) noexcept;
     [[nodiscard]] IDBRequest clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `result` attribute.
+    /// [`IDBRequest.result`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result)
     /// [`IDBRequest.result`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result)
     [[nodiscard]] jsbind::Any result() const;
-    /// Getter of the `error` attribute.
+    /// [`IDBRequest.error`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/error)
     /// [`IDBRequest.error`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/error)
     [[nodiscard]] DOMException error() const;
-    /// Getter of the `source` attribute.
+    /// [`IDBRequest.source`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source)
     /// [`IDBRequest.source`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source)
     [[nodiscard]] jsbind::Any source() const;
-    /// Getter of the `transaction` attribute.
+    /// [`IDBRequest.transaction`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction)
     /// [`IDBRequest.transaction`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction)
     [[nodiscard]] IDBTransaction transaction() const;
-    /// Getter of the `readyState` attribute.
+    /// [`IDBRequest.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState)
     /// [`IDBRequest.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState)
     [[nodiscard]] IDBRequestReadyState readyState() const;
-    /// Getter of the `onsuccess` attribute.
+    /// [`IDBRequest.onsuccess`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onsuccess)
     /// [`IDBRequest.onsuccess`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onsuccess)
     [[nodiscard]] jsbind::Any onsuccess() const;
     /// Setter of the `onsuccess` attribute.
     /// [`IDBRequest.onsuccess`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onsuccess)
     void onsuccess(const jsbind::Any& value);
-    /// Getter of the `onerror` attribute.
+    /// [`IDBRequest.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onerror)
     /// [`IDBRequest.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.

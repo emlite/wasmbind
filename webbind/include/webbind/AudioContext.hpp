@@ -30,22 +30,22 @@ public:
     AudioContext();
     /// The `new AudioContext(..)` constructor, creating a new AudioContext instance
     AudioContext(const AudioContextOptions& contextOptions);
-    /// Getter of the `baseLatency` attribute.
+    /// [`AudioContext.baseLatency`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/baseLatency)
     /// [`AudioContext.baseLatency`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/baseLatency)
     [[nodiscard]] double baseLatency() const;
-    /// Getter of the `outputLatency` attribute.
+    /// [`AudioContext.outputLatency`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/outputLatency)
     /// [`AudioContext.outputLatency`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/outputLatency)
     [[nodiscard]] double outputLatency() const;
-    /// Getter of the `sinkId` attribute.
+    /// [`AudioContext.sinkId`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/sinkId)
     /// [`AudioContext.sinkId`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/sinkId)
     [[nodiscard]] jsbind::Any sinkId() const;
-    /// Getter of the `onsinkchange` attribute.
+    /// [`AudioContext.onsinkchange`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/onsinkchange)
     /// [`AudioContext.onsinkchange`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/onsinkchange)
     [[nodiscard]] jsbind::Any onsinkchange() const;
     /// Setter of the `onsinkchange` attribute.
     /// [`AudioContext.onsinkchange`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/onsinkchange)
     void onsinkchange(const jsbind::Any& value);
-    /// Getter of the `onerror` attribute.
+    /// [`AudioContext.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/onerror)
     /// [`AudioContext.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.

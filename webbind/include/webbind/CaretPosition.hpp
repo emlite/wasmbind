@@ -18,10 +18,10 @@ public:
     static CaretPosition take_ownership(Handle h) noexcept;
     [[nodiscard]] CaretPosition clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `offsetNode` attribute.
+    /// [`CaretPosition.offsetNode`](https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/offsetNode)
     /// [`CaretPosition.offsetNode`](https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/offsetNode)
     [[nodiscard]] Node offsetNode() const;
-    /// Getter of the `offset` attribute.
+    /// [`CaretPosition.offset`](https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/offset)
     /// [`CaretPosition.offset`](https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/offset)
     [[nodiscard]] unsigned long offset() const;
     /// The getClientRect method.

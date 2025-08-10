@@ -4,11 +4,15 @@
 namespace webbind {
 
 CSSHWB CSSHWB::take_ownership(Handle h) noexcept {
-        return CSSHWB(h);
-    }
+    return CSSHWB(h);
+}
+
 CSSHWB CSSHWB::clone() const noexcept { return *this; }
+
 emlite::Val CSSHWB::instance() noexcept { return emlite::Val::global("CSSHWB"); }
+
 CSSHWB::CSSHWB(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
+
 CSSHWB::CSSHWB(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 CSSHWB::CSSHWB(const CSSNumericValue& h, const jsbind::Any& w, const jsbind::Any& b) : CSSColorValue(emlite::Val::global("CSSHWB").new_(h, w, b)) {}

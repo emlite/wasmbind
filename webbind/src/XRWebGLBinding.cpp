@@ -22,11 +22,15 @@
 namespace webbind {
 
 XRWebGLBinding XRWebGLBinding::take_ownership(Handle h) noexcept {
-        return XRWebGLBinding(h);
-    }
+    return XRWebGLBinding(h);
+}
+
 XRWebGLBinding XRWebGLBinding::clone() const noexcept { return *this; }
+
 emlite::Val XRWebGLBinding::instance() noexcept { return emlite::Val::global("XRWebGLBinding"); }
+
 XRWebGLBinding::XRWebGLBinding(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 XRWebGLBinding::XRWebGLBinding(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 XRWebGLBinding::XRWebGLBinding(const XRSession& session, const jsbind::Any& context) : emlite::Val(emlite::Val::global("XRWebGLBinding").new_(session, context)) {}

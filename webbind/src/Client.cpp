@@ -4,11 +4,15 @@
 namespace webbind {
 
 Client Client::take_ownership(Handle h) noexcept {
-        return Client(h);
-    }
+    return Client(h);
+}
+
 Client Client::clone() const noexcept { return *this; }
+
 emlite::Val Client::instance() noexcept { return emlite::Val::global("Client"); }
+
 Client::Client(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Client::Client(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String Client::url() const {

@@ -11,7 +11,6 @@ namespace webbind {
 class MediaKeySystemAccess;
 
 /// Dictionary type MediaCapabilitiesDecodingInfo
-/// [`MediaCapabilitiesDecodingInfo`](https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilitiesDecodingInfo)
 class MediaCapabilitiesDecodingInfo : public MediaCapabilitiesInfo {
   explicit MediaCapabilitiesDecodingInfo(Handle h) noexcept;
 public:
@@ -19,9 +18,13 @@ public:
     explicit MediaCapabilitiesDecodingInfo(const emlite::Val &val) noexcept;
     MediaCapabilitiesDecodingInfo() noexcept;
     [[nodiscard]] MediaCapabilitiesDecodingInfo clone() const noexcept;
+    /// Getter of the `keySystemAccess` attribute.
     [[nodiscard]] MediaKeySystemAccess keySystemAccess() const;
+    /// Setter of the `keySystemAccess` attribute.
     void keySystemAccess(const MediaKeySystemAccess& value);
+    /// Getter of the `configuration` attribute.
     [[nodiscard]] MediaDecodingConfiguration configuration() const;
+    /// Setter of the `configuration` attribute.
     void configuration(const MediaDecodingConfiguration& value);
 };
 

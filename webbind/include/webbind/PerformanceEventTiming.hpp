@@ -18,19 +18,19 @@ public:
     static PerformanceEventTiming take_ownership(Handle h) noexcept;
     [[nodiscard]] PerformanceEventTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `processingStart` attribute.
+    /// [`PerformanceEventTiming.processingStart`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/processingStart)
     /// [`PerformanceEventTiming.processingStart`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/processingStart)
     [[nodiscard]] jsbind::Any processingStart() const;
-    /// Getter of the `processingEnd` attribute.
+    /// [`PerformanceEventTiming.processingEnd`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/processingEnd)
     /// [`PerformanceEventTiming.processingEnd`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/processingEnd)
     [[nodiscard]] jsbind::Any processingEnd() const;
-    /// Getter of the `cancelable` attribute.
+    /// [`PerformanceEventTiming.cancelable`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/cancelable)
     /// [`PerformanceEventTiming.cancelable`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/cancelable)
     [[nodiscard]] bool cancelable() const;
-    /// Getter of the `target` attribute.
+    /// [`PerformanceEventTiming.target`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/target)
     /// [`PerformanceEventTiming.target`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/target)
     [[nodiscard]] Node target() const;
-    /// Getter of the `interactionId` attribute.
+    /// [`PerformanceEventTiming.interactionId`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/interactionId)
     /// [`PerformanceEventTiming.interactionId`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/interactionId)
     [[nodiscard]] long long interactionId() const;
     /// The toJSON method.

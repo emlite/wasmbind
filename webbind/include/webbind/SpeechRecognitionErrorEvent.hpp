@@ -20,10 +20,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionErrorEvent(..)` constructor, creating a new SpeechRecognitionErrorEvent instance
     SpeechRecognitionErrorEvent(const jsbind::String& type, const SpeechRecognitionErrorEventInit& eventInitDict);
-    /// Getter of the `error` attribute.
+    /// [`SpeechRecognitionErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionErrorEvent/error)
     /// [`SpeechRecognitionErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionErrorEvent/error)
     [[nodiscard]] SpeechRecognitionErrorCode error() const;
-    /// Getter of the `message` attribute.
+    /// [`SpeechRecognitionErrorEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionErrorEvent/message)
     /// [`SpeechRecognitionErrorEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionErrorEvent/message)
     [[nodiscard]] jsbind::String message() const;
 };

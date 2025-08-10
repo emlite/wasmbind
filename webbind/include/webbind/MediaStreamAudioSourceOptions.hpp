@@ -9,7 +9,6 @@ namespace webbind {
 class MediaStream;
 
 /// Dictionary type MediaStreamAudioSourceOptions
-/// [`MediaStreamAudioSourceOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceOptions)
 class MediaStreamAudioSourceOptions : public emlite::Val {
   explicit MediaStreamAudioSourceOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit MediaStreamAudioSourceOptions(const emlite::Val &val) noexcept;
     MediaStreamAudioSourceOptions() noexcept;
     [[nodiscard]] MediaStreamAudioSourceOptions clone() const noexcept;
+    /// Getter of the `mediaStream` attribute.
     [[nodiscard]] MediaStream mediaStream() const;
+    /// Setter of the `mediaStream` attribute.
     void mediaStream(const MediaStream& value);
 };
 

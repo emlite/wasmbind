@@ -2,15 +2,17 @@
 #include <webbind/XRFrame.hpp>
 #include <webbind/XRInputSource.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRInputSourceEventInit::XRInputSourceEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 XRInputSourceEventInit XRInputSourceEventInit::take_ownership(Handle h) noexcept {
-        return XRInputSourceEventInit(h);
-    }
+    return XRInputSourceEventInit(h);
+}
+
 XRInputSourceEventInit::XRInputSourceEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 XRInputSourceEventInit::XRInputSourceEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 XRInputSourceEventInit XRInputSourceEventInit::clone() const noexcept { return *this; }
 
 XRFrame XRInputSourceEventInit::frame() const {

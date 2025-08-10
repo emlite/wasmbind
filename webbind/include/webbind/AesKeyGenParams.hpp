@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AesKeyGenParams
-/// [`AesKeyGenParams`](https://developer.mozilla.org/en-US/docs/Web/API/AesKeyGenParams)
 class AesKeyGenParams : public Algorithm {
   explicit AesKeyGenParams(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit AesKeyGenParams(const emlite::Val &val) noexcept;
     AesKeyGenParams() noexcept;
     [[nodiscard]] AesKeyGenParams clone() const noexcept;
+    /// Getter of the `length` attribute.
     [[nodiscard]] unsigned short length() const;
+    /// Setter of the `length` attribute.
     void length(unsigned short value);
 };
 

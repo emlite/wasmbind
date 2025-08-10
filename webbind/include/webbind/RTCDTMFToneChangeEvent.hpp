@@ -21,7 +21,7 @@ public:
     RTCDTMFToneChangeEvent(const jsbind::String& type);
     /// The `new RTCDTMFToneChangeEvent(..)` constructor, creating a new RTCDTMFToneChangeEvent instance
     RTCDTMFToneChangeEvent(const jsbind::String& type, const RTCDTMFToneChangeEventInit& eventInitDict);
-    /// Getter of the `tone` attribute.
+    /// [`RTCDTMFToneChangeEvent.tone`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFToneChangeEvent/tone)
     /// [`RTCDTMFToneChangeEvent.tone`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFToneChangeEvent/tone)
     [[nodiscard]] jsbind::String tone() const;
 };

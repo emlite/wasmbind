@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type StorageEstimate
-/// [`StorageEstimate`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate)
 class StorageEstimate : public emlite::Val {
   explicit StorageEstimate(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit StorageEstimate(const emlite::Val &val) noexcept;
     StorageEstimate() noexcept;
     [[nodiscard]] StorageEstimate clone() const noexcept;
+    /// Getter of the `usage` attribute.
     [[nodiscard]] long long usage() const;
+    /// Setter of the `usage` attribute.
     void usage(long long value);
+    /// Getter of the `quota` attribute.
     [[nodiscard]] long long quota() const;
+    /// Setter of the `quota` attribute.
     void quota(long long value);
 };
 

@@ -40,7 +40,7 @@ public:
     /// The detect method.
     /// [`LanguageDetector.detect`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/detect)
     jsbind::Promise<jsbind::TypedArray<LanguageDetectionResult>> detect(const jsbind::String& input, const LanguageDetectorDetectOptions& options);
-    /// Getter of the `expectedInputLanguages` attribute.
+    /// [`LanguageDetector.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/expectedInputLanguages)
     /// [`LanguageDetector.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/expectedInputLanguages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
     /// The measureInputUsage method.
@@ -49,7 +49,7 @@ public:
     /// The measureInputUsage method.
     /// [`LanguageDetector.measureInputUsage`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/measureInputUsage)
     jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const LanguageDetectorDetectOptions& options);
-    /// Getter of the `inputQuota` attribute.
+    /// [`LanguageDetector.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/inputQuota)
     /// [`LanguageDetector.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/inputQuota)
     [[nodiscard]] double inputQuota() const;
     /// The destroy method.

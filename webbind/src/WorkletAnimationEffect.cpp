@@ -5,11 +5,15 @@
 namespace webbind {
 
 WorkletAnimationEffect WorkletAnimationEffect::take_ownership(Handle h) noexcept {
-        return WorkletAnimationEffect(h);
-    }
+    return WorkletAnimationEffect(h);
+}
+
 WorkletAnimationEffect WorkletAnimationEffect::clone() const noexcept { return *this; }
+
 emlite::Val WorkletAnimationEffect::instance() noexcept { return emlite::Val::global("WorkletAnimationEffect"); }
+
 WorkletAnimationEffect::WorkletAnimationEffect(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 WorkletAnimationEffect::WorkletAnimationEffect(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 EffectTiming WorkletAnimationEffect::getTiming() {

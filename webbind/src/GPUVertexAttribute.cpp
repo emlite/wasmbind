@@ -1,14 +1,16 @@
 #include <webbind/GPUVertexAttribute.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUVertexAttribute::GPUVertexAttribute(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUVertexAttribute GPUVertexAttribute::take_ownership(Handle h) noexcept {
-        return GPUVertexAttribute(h);
-    }
+    return GPUVertexAttribute(h);
+}
+
 GPUVertexAttribute::GPUVertexAttribute(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUVertexAttribute::GPUVertexAttribute() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUVertexAttribute GPUVertexAttribute::clone() const noexcept { return *this; }
 
 GPUVertexFormat GPUVertexAttribute::format() const {

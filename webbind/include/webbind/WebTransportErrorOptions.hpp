@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type WebTransportErrorOptions
-/// [`WebTransportErrorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportErrorOptions)
 class WebTransportErrorOptions : public emlite::Val {
   explicit WebTransportErrorOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit WebTransportErrorOptions(const emlite::Val &val) noexcept;
     WebTransportErrorOptions() noexcept;
     [[nodiscard]] WebTransportErrorOptions clone() const noexcept;
+    /// Getter of the `source` attribute.
     [[nodiscard]] WebTransportErrorSource source() const;
+    /// Setter of the `source` attribute.
     void source(const WebTransportErrorSource& value);
+    /// Getter of the `streamErrorCode` attribute.
     [[nodiscard]] unsigned long streamErrorCode() const;
+    /// Setter of the `streamErrorCode` attribute.
     void streamErrorCode(unsigned long value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/EffectTiming.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 EffectTiming::EffectTiming(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EffectTiming EffectTiming::take_ownership(Handle h) noexcept {
-        return EffectTiming(h);
-    }
+    return EffectTiming(h);
+}
+
 EffectTiming::EffectTiming(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 EffectTiming::EffectTiming() noexcept: emlite::Val(emlite::Val::object()) {}
+
 EffectTiming EffectTiming::clone() const noexcept { return *this; }
 
 FillMode EffectTiming::fill() const {

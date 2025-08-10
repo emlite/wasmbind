@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpCodecParameters
-/// [`RTCRtpCodecParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpCodecParameters)
 class RTCRtpCodecParameters : public RTCRtpCodec {
   explicit RTCRtpCodecParameters(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit RTCRtpCodecParameters(const emlite::Val &val) noexcept;
     RTCRtpCodecParameters() noexcept;
     [[nodiscard]] RTCRtpCodecParameters clone() const noexcept;
+    /// Getter of the `payloadType` attribute.
     [[nodiscard]] unsigned char payloadType() const;
+    /// Setter of the `payloadType` attribute.
     void payloadType(unsigned char value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/SpeechRecognitionErrorEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SpeechRecognitionErrorEventInit::SpeechRecognitionErrorEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionErrorEventInit SpeechRecognitionErrorEventInit::take_ownership(Handle h) noexcept {
-        return SpeechRecognitionErrorEventInit(h);
-    }
+    return SpeechRecognitionErrorEventInit(h);
+}
+
 SpeechRecognitionErrorEventInit::SpeechRecognitionErrorEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 SpeechRecognitionErrorEventInit::SpeechRecognitionErrorEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 SpeechRecognitionErrorEventInit SpeechRecognitionErrorEventInit::clone() const noexcept { return *this; }
 
 SpeechRecognitionErrorCode SpeechRecognitionErrorEventInit::error() const {

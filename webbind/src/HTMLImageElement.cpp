@@ -3,11 +3,15 @@
 namespace webbind {
 
 HTMLImageElement HTMLImageElement::take_ownership(Handle h) noexcept {
-        return HTMLImageElement(h);
-    }
+    return HTMLImageElement(h);
+}
+
 HTMLImageElement HTMLImageElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLImageElement::instance() noexcept { return emlite::Val::global("HTMLImageElement"); }
+
 HTMLImageElement::HTMLImageElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLImageElement::HTMLImageElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLImageElement::HTMLImageElement() : HTMLElement(emlite::Val::global("HTMLImageElement").new_()) {}

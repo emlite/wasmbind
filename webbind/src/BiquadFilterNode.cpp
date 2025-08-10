@@ -6,11 +6,15 @@
 namespace webbind {
 
 BiquadFilterNode BiquadFilterNode::take_ownership(Handle h) noexcept {
-        return BiquadFilterNode(h);
-    }
+    return BiquadFilterNode(h);
+}
+
 BiquadFilterNode BiquadFilterNode::clone() const noexcept { return *this; }
+
 emlite::Val BiquadFilterNode::instance() noexcept { return emlite::Val::global("BiquadFilterNode"); }
+
 BiquadFilterNode::BiquadFilterNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
+
 BiquadFilterNode::BiquadFilterNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 BiquadFilterNode::BiquadFilterNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("BiquadFilterNode").new_(context)) {}

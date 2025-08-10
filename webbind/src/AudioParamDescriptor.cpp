@@ -1,14 +1,16 @@
 #include <webbind/AudioParamDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioParamDescriptor::AudioParamDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioParamDescriptor AudioParamDescriptor::take_ownership(Handle h) noexcept {
-        return AudioParamDescriptor(h);
-    }
+    return AudioParamDescriptor(h);
+}
+
 AudioParamDescriptor::AudioParamDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioParamDescriptor::AudioParamDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioParamDescriptor AudioParamDescriptor::clone() const noexcept { return *this; }
 
 jsbind::String AudioParamDescriptor::name() const {

@@ -1,14 +1,16 @@
 #include <webbind/OptionalEffectTiming.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 OptionalEffectTiming::OptionalEffectTiming(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 OptionalEffectTiming OptionalEffectTiming::take_ownership(Handle h) noexcept {
-        return OptionalEffectTiming(h);
-    }
+    return OptionalEffectTiming(h);
+}
+
 OptionalEffectTiming::OptionalEffectTiming(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 OptionalEffectTiming::OptionalEffectTiming() noexcept: emlite::Val(emlite::Val::object()) {}
+
 OptionalEffectTiming OptionalEffectTiming::clone() const noexcept { return *this; }
 
 double OptionalEffectTiming::delay() const {

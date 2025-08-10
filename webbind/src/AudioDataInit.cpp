@@ -1,14 +1,16 @@
 #include <webbind/AudioDataInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioDataInit::AudioDataInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioDataInit AudioDataInit::take_ownership(Handle h) noexcept {
-        return AudioDataInit(h);
-    }
+    return AudioDataInit(h);
+}
+
 AudioDataInit::AudioDataInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioDataInit::AudioDataInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioDataInit AudioDataInit::clone() const noexcept { return *this; }
 
 AudioSampleFormat AudioDataInit::format() const {

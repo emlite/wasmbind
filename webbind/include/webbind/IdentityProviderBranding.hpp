@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityProviderBranding
-/// [`IdentityProviderBranding`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProviderBranding)
 class IdentityProviderBranding : public emlite::Val {
   explicit IdentityProviderBranding(Handle h) noexcept;
 public:
@@ -16,13 +15,21 @@ public:
     explicit IdentityProviderBranding(const emlite::Val &val) noexcept;
     IdentityProviderBranding() noexcept;
     [[nodiscard]] IdentityProviderBranding clone() const noexcept;
+    /// Getter of the `background_color` attribute.
     [[nodiscard]] jsbind::String background_color() const;
+    /// Setter of the `background_color` attribute.
     void background_color(const jsbind::String& value);
+    /// Getter of the `color` attribute.
     [[nodiscard]] jsbind::String color() const;
+    /// Setter of the `color` attribute.
     void color(const jsbind::String& value);
+    /// Getter of the `icons` attribute.
     [[nodiscard]] jsbind::TypedArray<IdentityProviderIcon> icons() const;
+    /// Setter of the `icons` attribute.
     void icons(const jsbind::TypedArray<IdentityProviderIcon>& value);
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
 };
 

@@ -21,10 +21,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BlobEvent(..)` constructor, creating a new BlobEvent instance
     BlobEvent(const jsbind::String& type, const BlobEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`BlobEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/data)
     /// [`BlobEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/data)
     [[nodiscard]] Blob data() const;
-    /// Getter of the `timecode` attribute.
+    /// [`BlobEvent.timecode`](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/timecode)
     /// [`BlobEvent.timecode`](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/timecode)
     [[nodiscard]] jsbind::Any timecode() const;
 };

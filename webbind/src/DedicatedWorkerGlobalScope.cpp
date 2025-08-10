@@ -4,11 +4,15 @@
 namespace webbind {
 
 DedicatedWorkerGlobalScope DedicatedWorkerGlobalScope::take_ownership(Handle h) noexcept {
-        return DedicatedWorkerGlobalScope(h);
-    }
+    return DedicatedWorkerGlobalScope(h);
+}
+
 DedicatedWorkerGlobalScope DedicatedWorkerGlobalScope::clone() const noexcept { return *this; }
+
 emlite::Val DedicatedWorkerGlobalScope::instance() noexcept { return emlite::Val::global("DedicatedWorkerGlobalScope"); }
+
 DedicatedWorkerGlobalScope::DedicatedWorkerGlobalScope(Handle h) noexcept : WorkerGlobalScope(emlite::Val::take_ownership(h)) {}
+
 DedicatedWorkerGlobalScope::DedicatedWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
 
 jsbind::String DedicatedWorkerGlobalScope::name() const {

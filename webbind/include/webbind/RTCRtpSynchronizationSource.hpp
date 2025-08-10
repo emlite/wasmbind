@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpSynchronizationSource
-/// [`RTCRtpSynchronizationSource`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSynchronizationSource)
 class RTCRtpSynchronizationSource : public RTCRtpContributingSource {
   explicit RTCRtpSynchronizationSource(Handle h) noexcept;
 public:

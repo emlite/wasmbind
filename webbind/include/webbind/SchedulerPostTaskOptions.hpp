@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type SchedulerPostTaskOptions
-/// [`SchedulerPostTaskOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SchedulerPostTaskOptions)
 class SchedulerPostTaskOptions : public emlite::Val {
   explicit SchedulerPostTaskOptions(Handle h) noexcept;
 public:
@@ -17,11 +16,17 @@ public:
     explicit SchedulerPostTaskOptions(const emlite::Val &val) noexcept;
     SchedulerPostTaskOptions() noexcept;
     [[nodiscard]] SchedulerPostTaskOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
+    /// Getter of the `priority` attribute.
     [[nodiscard]] TaskPriority priority() const;
+    /// Setter of the `priority` attribute.
     void priority(const TaskPriority& value);
+    /// Getter of the `delay` attribute.
     [[nodiscard]] long long delay() const;
+    /// Setter of the `delay` attribute.
     void delay(long long value);
 };
 

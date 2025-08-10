@@ -1,15 +1,17 @@
 #include <webbind/ShareData.hpp>
 #include <webbind/File.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ShareData::ShareData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ShareData ShareData::take_ownership(Handle h) noexcept {
-        return ShareData(h);
-    }
+    return ShareData(h);
+}
+
 ShareData::ShareData(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ShareData::ShareData() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ShareData ShareData::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<File> ShareData::files() const {

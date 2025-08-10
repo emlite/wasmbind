@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type EcKeyImportParams
-/// [`EcKeyImportParams`](https://developer.mozilla.org/en-US/docs/Web/API/EcKeyImportParams)
 class EcKeyImportParams : public Algorithm {
   explicit EcKeyImportParams(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit EcKeyImportParams(const emlite::Val &val) noexcept;
     EcKeyImportParams() noexcept;
     [[nodiscard]] EcKeyImportParams clone() const noexcept;
+    /// Getter of the `namedCurve` attribute.
     [[nodiscard]] jsbind::Any namedCurve() const;
+    /// Setter of the `namedCurve` attribute.
     void namedCurve(const jsbind::Any& value);
 };
 

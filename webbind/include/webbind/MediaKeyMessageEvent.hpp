@@ -20,10 +20,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaKeyMessageEvent(..)` constructor, creating a new MediaKeyMessageEvent instance
     MediaKeyMessageEvent(const jsbind::String& type, const MediaKeyMessageEventInit& eventInitDict);
-    /// Getter of the `messageType` attribute.
+    /// [`MediaKeyMessageEvent.messageType`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/messageType)
     /// [`MediaKeyMessageEvent.messageType`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/messageType)
     [[nodiscard]] MediaKeyMessageType messageType() const;
-    /// Getter of the `message` attribute.
+    /// [`MediaKeyMessageEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/message)
     /// [`MediaKeyMessageEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/message)
     [[nodiscard]] jsbind::ArrayBuffer message() const;
 };

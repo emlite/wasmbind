@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type HmacImportParams
-/// [`HmacImportParams`](https://developer.mozilla.org/en-US/docs/Web/API/HmacImportParams)
 class HmacImportParams : public Algorithm {
   explicit HmacImportParams(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit HmacImportParams(const emlite::Val &val) noexcept;
     HmacImportParams() noexcept;
     [[nodiscard]] HmacImportParams clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] jsbind::Any hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const jsbind::Any& value);
+    /// Getter of the `length` attribute.
     [[nodiscard]] unsigned long length() const;
+    /// Setter of the `length` attribute.
     void length(unsigned long value);
 };
 

@@ -3,15 +3,17 @@
 #include <webbind/BluetoothManufacturerDataMap.hpp>
 #include <webbind/BluetoothServiceDataMap.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BluetoothAdvertisingEventInit::BluetoothAdvertisingEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 BluetoothAdvertisingEventInit BluetoothAdvertisingEventInit::take_ownership(Handle h) noexcept {
-        return BluetoothAdvertisingEventInit(h);
-    }
+    return BluetoothAdvertisingEventInit(h);
+}
+
 BluetoothAdvertisingEventInit::BluetoothAdvertisingEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 BluetoothAdvertisingEventInit::BluetoothAdvertisingEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 BluetoothAdvertisingEventInit BluetoothAdvertisingEventInit::clone() const noexcept { return *this; }
 
 BluetoothDevice BluetoothAdvertisingEventInit::device() const {

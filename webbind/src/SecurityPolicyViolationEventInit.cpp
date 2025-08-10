@@ -1,14 +1,16 @@
 #include <webbind/SecurityPolicyViolationEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SecurityPolicyViolationEventInit::SecurityPolicyViolationEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 SecurityPolicyViolationEventInit SecurityPolicyViolationEventInit::take_ownership(Handle h) noexcept {
-        return SecurityPolicyViolationEventInit(h);
-    }
+    return SecurityPolicyViolationEventInit(h);
+}
+
 SecurityPolicyViolationEventInit::SecurityPolicyViolationEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 SecurityPolicyViolationEventInit::SecurityPolicyViolationEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 SecurityPolicyViolationEventInit SecurityPolicyViolationEventInit::clone() const noexcept { return *this; }
 
 jsbind::String SecurityPolicyViolationEventInit::documentURI() const {

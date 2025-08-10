@@ -1,15 +1,17 @@
 #include <webbind/GPURenderPassColorAttachment.hpp>
 #include <webbind/GPUTextureView.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPURenderPassColorAttachment::GPURenderPassColorAttachment(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPURenderPassColorAttachment GPURenderPassColorAttachment::take_ownership(Handle h) noexcept {
-        return GPURenderPassColorAttachment(h);
-    }
+    return GPURenderPassColorAttachment(h);
+}
+
 GPURenderPassColorAttachment::GPURenderPassColorAttachment(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPURenderPassColorAttachment::GPURenderPassColorAttachment() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPURenderPassColorAttachment GPURenderPassColorAttachment::clone() const noexcept { return *this; }
 
 GPUTextureView GPURenderPassColorAttachment::view() const {

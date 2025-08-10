@@ -8,11 +8,15 @@
 namespace webbind {
 
 Summarizer Summarizer::take_ownership(Handle h) noexcept {
-        return Summarizer(h);
-    }
+    return Summarizer(h);
+}
+
 Summarizer Summarizer::clone() const noexcept { return *this; }
+
 emlite::Val Summarizer::instance() noexcept { return emlite::Val::global("Summarizer"); }
+
 Summarizer::Summarizer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Summarizer::Summarizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<Summarizer> Summarizer::create() {

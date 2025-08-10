@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ProtectedAudiencePrivateAggregationConfig
-/// [`ProtectedAudiencePrivateAggregationConfig`](https://developer.mozilla.org/en-US/docs/Web/API/ProtectedAudiencePrivateAggregationConfig)
 class ProtectedAudiencePrivateAggregationConfig : public emlite::Val {
   explicit ProtectedAudiencePrivateAggregationConfig(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ProtectedAudiencePrivateAggregationConfig(const emlite::Val &val) noexcept;
     ProtectedAudiencePrivateAggregationConfig() noexcept;
     [[nodiscard]] ProtectedAudiencePrivateAggregationConfig clone() const noexcept;
+    /// Getter of the `aggregationCoordinatorOrigin` attribute.
     [[nodiscard]] jsbind::String aggregationCoordinatorOrigin() const;
+    /// Setter of the `aggregationCoordinatorOrigin` attribute.
     void aggregationCoordinatorOrigin(const jsbind::String& value);
 };
 

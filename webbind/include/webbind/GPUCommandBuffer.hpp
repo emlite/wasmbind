@@ -15,7 +15,7 @@ public:
     static GPUCommandBuffer take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUCommandBuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `label` attribute.
+    /// [`GPUCommandBuffer.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer/label)
     /// [`GPUCommandBuffer.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

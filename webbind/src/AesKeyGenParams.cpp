@@ -1,14 +1,16 @@
 #include <webbind/AesKeyGenParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AesKeyGenParams::AesKeyGenParams(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 AesKeyGenParams AesKeyGenParams::take_ownership(Handle h) noexcept {
-        return AesKeyGenParams(h);
-    }
+    return AesKeyGenParams(h);
+}
+
 AesKeyGenParams::AesKeyGenParams(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 AesKeyGenParams::AesKeyGenParams() noexcept: Algorithm(emlite::Val::object()) {}
+
 AesKeyGenParams AesKeyGenParams::clone() const noexcept { return *this; }
 
 unsigned short AesKeyGenParams::length() const {

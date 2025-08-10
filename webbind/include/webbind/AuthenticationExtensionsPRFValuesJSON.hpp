@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AuthenticationExtensionsPRFValuesJSON
-/// [`AuthenticationExtensionsPRFValuesJSON`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticationExtensionsPRFValuesJSON)
 class AuthenticationExtensionsPRFValuesJSON : public emlite::Val {
   explicit AuthenticationExtensionsPRFValuesJSON(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit AuthenticationExtensionsPRFValuesJSON(const emlite::Val &val) noexcept;
     AuthenticationExtensionsPRFValuesJSON() noexcept;
     [[nodiscard]] AuthenticationExtensionsPRFValuesJSON clone() const noexcept;
+    /// Getter of the `first` attribute.
     [[nodiscard]] jsbind::Any first() const;
+    /// Setter of the `first` attribute.
     void first(const jsbind::Any& value);
+    /// Getter of the `second` attribute.
     [[nodiscard]] jsbind::Any second() const;
+    /// Setter of the `second` attribute.
     void second(const jsbind::Any& value);
 };
 

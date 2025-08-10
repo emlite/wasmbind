@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ComputedEffectTiming
-/// [`ComputedEffectTiming`](https://developer.mozilla.org/en-US/docs/Web/API/ComputedEffectTiming)
 class ComputedEffectTiming : public EffectTiming {
   explicit ComputedEffectTiming(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit ComputedEffectTiming(const emlite::Val &val) noexcept;
     ComputedEffectTiming() noexcept;
     [[nodiscard]] ComputedEffectTiming clone() const noexcept;
+    /// Getter of the `progress` attribute.
     [[nodiscard]] double progress() const;
+    /// Setter of the `progress` attribute.
     void progress(double value);
+    /// Getter of the `currentIteration` attribute.
     [[nodiscard]] double currentIteration() const;
+    /// Setter of the `currentIteration` attribute.
     void currentIteration(double value);
 };
 

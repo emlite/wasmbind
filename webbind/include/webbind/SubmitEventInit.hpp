@@ -10,7 +10,6 @@ namespace webbind {
 class HTMLElement;
 
 /// Dictionary type SubmitEventInit
-/// [`SubmitEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/SubmitEventInit)
 class SubmitEventInit : public EventInit {
   explicit SubmitEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit SubmitEventInit(const emlite::Val &val) noexcept;
     SubmitEventInit() noexcept;
     [[nodiscard]] SubmitEventInit clone() const noexcept;
+    /// Getter of the `submitter` attribute.
     [[nodiscard]] HTMLElement submitter() const;
+    /// Setter of the `submitter` attribute.
     void submitter(const HTMLElement& value);
 };
 

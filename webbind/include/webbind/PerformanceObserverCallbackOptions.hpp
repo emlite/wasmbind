@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PerformanceObserverCallbackOptions
-/// [`PerformanceObserverCallbackOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverCallbackOptions)
 class PerformanceObserverCallbackOptions : public emlite::Val {
   explicit PerformanceObserverCallbackOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PerformanceObserverCallbackOptions(const emlite::Val &val) noexcept;
     PerformanceObserverCallbackOptions() noexcept;
     [[nodiscard]] PerformanceObserverCallbackOptions clone() const noexcept;
+    /// Getter of the `droppedEntriesCount` attribute.
     [[nodiscard]] long long droppedEntriesCount() const;
+    /// Setter of the `droppedEntriesCount` attribute.
     void droppedEntriesCount(long long value);
 };
 

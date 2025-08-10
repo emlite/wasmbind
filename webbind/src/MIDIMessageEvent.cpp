@@ -4,11 +4,15 @@
 namespace webbind {
 
 MIDIMessageEvent MIDIMessageEvent::take_ownership(Handle h) noexcept {
-        return MIDIMessageEvent(h);
-    }
+    return MIDIMessageEvent(h);
+}
+
 MIDIMessageEvent MIDIMessageEvent::clone() const noexcept { return *this; }
+
 emlite::Val MIDIMessageEvent::instance() noexcept { return emlite::Val::global("MIDIMessageEvent"); }
+
 MIDIMessageEvent::MIDIMessageEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 MIDIMessageEvent::MIDIMessageEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 MIDIMessageEvent::MIDIMessageEvent(const jsbind::String& type) : Event(emlite::Val::global("MIDIMessageEvent").new_(type)) {}

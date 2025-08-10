@@ -6,11 +6,15 @@
 namespace webbind {
 
 DOMImplementation DOMImplementation::take_ownership(Handle h) noexcept {
-        return DOMImplementation(h);
-    }
+    return DOMImplementation(h);
+}
+
 DOMImplementation DOMImplementation::clone() const noexcept { return *this; }
+
 emlite::Val DOMImplementation::instance() noexcept { return emlite::Val::global("DOMImplementation"); }
+
 DOMImplementation::DOMImplementation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 DOMImplementation::DOMImplementation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 DocumentType DOMImplementation::createDocumentType(const jsbind::String& name, const jsbind::String& publicId, const jsbind::String& systemId) {

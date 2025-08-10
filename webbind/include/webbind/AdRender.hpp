@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AdRender
-/// [`AdRender`](https://developer.mozilla.org/en-US/docs/Web/API/AdRender)
 class AdRender : public emlite::Val {
   explicit AdRender(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit AdRender(const emlite::Val &val) noexcept;
     AdRender() noexcept;
     [[nodiscard]] AdRender clone() const noexcept;
+    /// Getter of the `url` attribute.
     [[nodiscard]] jsbind::String url() const;
+    /// Setter of the `url` attribute.
     void url(const jsbind::String& value);
+    /// Getter of the `width` attribute.
     [[nodiscard]] jsbind::String width() const;
+    /// Setter of the `width` attribute.
     void width(const jsbind::String& value);
+    /// Getter of the `height` attribute.
     [[nodiscard]] jsbind::String height() const;
+    /// Setter of the `height` attribute.
     void height(const jsbind::String& value);
 };
 

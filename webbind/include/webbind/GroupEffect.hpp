@@ -23,13 +23,13 @@ public:
     GroupEffect(const jsbind::TypedArray<AnimationEffect>& children);
     /// The `new GroupEffect(..)` constructor, creating a new GroupEffect instance
     GroupEffect(const jsbind::TypedArray<AnimationEffect>& children, const jsbind::Any& timing);
-    /// Getter of the `children` attribute.
+    /// [`GroupEffect.children`](https://developer.mozilla.org/en-US/docs/Web/API/GroupEffect/children)
     /// [`GroupEffect.children`](https://developer.mozilla.org/en-US/docs/Web/API/GroupEffect/children)
     [[nodiscard]] AnimationNodeList children() const;
-    /// Getter of the `firstChild` attribute.
+    /// [`GroupEffect.firstChild`](https://developer.mozilla.org/en-US/docs/Web/API/GroupEffect/firstChild)
     /// [`GroupEffect.firstChild`](https://developer.mozilla.org/en-US/docs/Web/API/GroupEffect/firstChild)
     [[nodiscard]] AnimationEffect firstChild() const;
-    /// Getter of the `lastChild` attribute.
+    /// [`GroupEffect.lastChild`](https://developer.mozilla.org/en-US/docs/Web/API/GroupEffect/lastChild)
     /// [`GroupEffect.lastChild`](https://developer.mozilla.org/en-US/docs/Web/API/GroupEffect/lastChild)
     [[nodiscard]] AnimationEffect lastChild() const;
     /// The clone method.

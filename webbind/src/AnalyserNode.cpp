@@ -5,11 +5,15 @@
 namespace webbind {
 
 AnalyserNode AnalyserNode::take_ownership(Handle h) noexcept {
-        return AnalyserNode(h);
-    }
+    return AnalyserNode(h);
+}
+
 AnalyserNode AnalyserNode::clone() const noexcept { return *this; }
+
 emlite::Val AnalyserNode::instance() noexcept { return emlite::Val::global("AnalyserNode"); }
+
 AnalyserNode::AnalyserNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
+
 AnalyserNode::AnalyserNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 AnalyserNode::AnalyserNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("AnalyserNode").new_(context)) {}

@@ -7,11 +7,15 @@
 namespace webbind {
 
 BluetoothAdvertisingEvent BluetoothAdvertisingEvent::take_ownership(Handle h) noexcept {
-        return BluetoothAdvertisingEvent(h);
-    }
+    return BluetoothAdvertisingEvent(h);
+}
+
 BluetoothAdvertisingEvent BluetoothAdvertisingEvent::clone() const noexcept { return *this; }
+
 emlite::Val BluetoothAdvertisingEvent::instance() noexcept { return emlite::Val::global("BluetoothAdvertisingEvent"); }
+
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 BluetoothAdvertisingEvent::BluetoothAdvertisingEvent(const jsbind::String& type, const BluetoothAdvertisingEventInit& init) : Event(emlite::Val::global("BluetoothAdvertisingEvent").new_(type, init)) {}

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCEncodedAudioFrameOptions
-/// [`RTCEncodedAudioFrameOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedAudioFrameOptions)
 class RTCEncodedAudioFrameOptions : public emlite::Val {
   explicit RTCEncodedAudioFrameOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit RTCEncodedAudioFrameOptions(const emlite::Val &val) noexcept;
     RTCEncodedAudioFrameOptions() noexcept;
     [[nodiscard]] RTCEncodedAudioFrameOptions clone() const noexcept;
+    /// Getter of the `metadata` attribute.
     [[nodiscard]] RTCEncodedAudioFrameMetadata metadata() const;
+    /// Setter of the `metadata` attribute.
     void metadata(const RTCEncodedAudioFrameMetadata& value);
 };
 

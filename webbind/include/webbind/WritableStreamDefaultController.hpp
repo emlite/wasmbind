@@ -17,7 +17,7 @@ public:
     static WritableStreamDefaultController take_ownership(Handle h) noexcept;
     [[nodiscard]] WritableStreamDefaultController clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `signal` attribute.
+    /// [`WritableStreamDefaultController.signal`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController/signal)
     /// [`WritableStreamDefaultController.signal`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController/signal)
     [[nodiscard]] AbortSignal signal() const;
     /// The error method.

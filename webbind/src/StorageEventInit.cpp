@@ -1,15 +1,17 @@
 #include <webbind/StorageEventInit.hpp>
 #include <webbind/Storage.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StorageEventInit::StorageEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 StorageEventInit StorageEventInit::take_ownership(Handle h) noexcept {
-        return StorageEventInit(h);
-    }
+    return StorageEventInit(h);
+}
+
 StorageEventInit::StorageEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 StorageEventInit::StorageEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 StorageEventInit StorageEventInit::clone() const noexcept { return *this; }
 
 jsbind::String StorageEventInit::key() const {

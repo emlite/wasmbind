@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type WebTransportHash
-/// [`WebTransportHash`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportHash)
 class WebTransportHash : public emlite::Val {
   explicit WebTransportHash(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit WebTransportHash(const emlite::Val &val) noexcept;
     WebTransportHash() noexcept;
     [[nodiscard]] WebTransportHash clone() const noexcept;
+    /// Getter of the `algorithm` attribute.
     [[nodiscard]] jsbind::String algorithm() const;
+    /// Setter of the `algorithm` attribute.
     void algorithm(const jsbind::String& value);
+    /// Getter of the `value` attribute.
     [[nodiscard]] jsbind::Any value() const;
+    /// Setter of the `value` attribute.
     void value(const jsbind::Any& value);
 };
 

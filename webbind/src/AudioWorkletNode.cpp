@@ -7,11 +7,15 @@
 namespace webbind {
 
 AudioWorkletNode AudioWorkletNode::take_ownership(Handle h) noexcept {
-        return AudioWorkletNode(h);
-    }
+    return AudioWorkletNode(h);
+}
+
 AudioWorkletNode AudioWorkletNode::clone() const noexcept { return *this; }
+
 emlite::Val AudioWorkletNode::instance() noexcept { return emlite::Val::global("AudioWorkletNode"); }
+
 AudioWorkletNode::AudioWorkletNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
+
 AudioWorkletNode::AudioWorkletNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 AudioWorkletNode::AudioWorkletNode(const BaseAudioContext& context, const jsbind::String& name) : AudioNode(emlite::Val::global("AudioWorkletNode").new_(context, name)) {}

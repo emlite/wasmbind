@@ -18,10 +18,10 @@ public:
     static ProcessingInstruction take_ownership(Handle h) noexcept;
     [[nodiscard]] ProcessingInstruction clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `target` attribute.
+    /// [`ProcessingInstruction.target`](https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction/target)
     /// [`ProcessingInstruction.target`](https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction/target)
     [[nodiscard]] jsbind::String target() const;
-    /// Getter of the `sheet` attribute.
+    /// [`ProcessingInstruction.sheet`](https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction/sheet)
     /// [`ProcessingInstruction.sheet`](https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction/sheet)
     [[nodiscard]] CSSStyleSheet sheet() const;
 };

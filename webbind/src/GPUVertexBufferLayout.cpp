@@ -1,15 +1,17 @@
 #include <webbind/GPUVertexBufferLayout.hpp>
 #include <webbind/GPUVertexAttribute.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUVertexBufferLayout::GPUVertexBufferLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUVertexBufferLayout GPUVertexBufferLayout::take_ownership(Handle h) noexcept {
-        return GPUVertexBufferLayout(h);
-    }
+    return GPUVertexBufferLayout(h);
+}
+
 GPUVertexBufferLayout::GPUVertexBufferLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUVertexBufferLayout::GPUVertexBufferLayout() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUVertexBufferLayout GPUVertexBufferLayout::clone() const noexcept { return *this; }
 
 jsbind::Any GPUVertexBufferLayout::arrayStride() const {

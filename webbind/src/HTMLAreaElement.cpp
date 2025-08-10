@@ -4,11 +4,15 @@
 namespace webbind {
 
 HTMLAreaElement HTMLAreaElement::take_ownership(Handle h) noexcept {
-        return HTMLAreaElement(h);
-    }
+    return HTMLAreaElement(h);
+}
+
 HTMLAreaElement HTMLAreaElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLAreaElement::instance() noexcept { return emlite::Val::global("HTMLAreaElement"); }
+
 HTMLAreaElement::HTMLAreaElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLAreaElement::HTMLAreaElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLAreaElement::HTMLAreaElement() : HTMLElement(emlite::Val::global("HTMLAreaElement").new_()) {}

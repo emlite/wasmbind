@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MediaTrackConstraints
-/// [`MediaTrackConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints)
 class MediaTrackConstraints : public MediaTrackConstraintSet {
   explicit MediaTrackConstraints(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit MediaTrackConstraints(const emlite::Val &val) noexcept;
     MediaTrackConstraints() noexcept;
     [[nodiscard]] MediaTrackConstraints clone() const noexcept;
+    /// Getter of the `advanced` attribute.
     [[nodiscard]] jsbind::TypedArray<MediaTrackConstraintSet> advanced() const;
+    /// Setter of the `advanced` attribute.
     void advanced(const jsbind::TypedArray<MediaTrackConstraintSet>& value);
 };
 

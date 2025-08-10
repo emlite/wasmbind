@@ -16,25 +16,25 @@ public:
     static NavigationHistoryEntry take_ownership(Handle h) noexcept;
     [[nodiscard]] NavigationHistoryEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `url` attribute.
+    /// [`NavigationHistoryEntry.url`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/url)
     /// [`NavigationHistoryEntry.url`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/url)
     [[nodiscard]] jsbind::String url() const;
-    /// Getter of the `key` attribute.
+    /// [`NavigationHistoryEntry.key`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/key)
     /// [`NavigationHistoryEntry.key`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/key)
     [[nodiscard]] jsbind::String key() const;
-    /// Getter of the `id` attribute.
+    /// [`NavigationHistoryEntry.id`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/id)
     /// [`NavigationHistoryEntry.id`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/id)
     [[nodiscard]] jsbind::String id() const;
-    /// Getter of the `index` attribute.
+    /// [`NavigationHistoryEntry.index`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/index)
     /// [`NavigationHistoryEntry.index`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/index)
     [[nodiscard]] long long index() const;
-    /// Getter of the `sameDocument` attribute.
+    /// [`NavigationHistoryEntry.sameDocument`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/sameDocument)
     /// [`NavigationHistoryEntry.sameDocument`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/sameDocument)
     [[nodiscard]] bool sameDocument() const;
     /// The getState method.
     /// [`NavigationHistoryEntry.getState`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/getState)
     jsbind::Any getState();
-    /// Getter of the `ondispose` attribute.
+    /// [`NavigationHistoryEntry.ondispose`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/ondispose)
     /// [`NavigationHistoryEntry.ondispose`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/ondispose)
     [[nodiscard]] jsbind::Any ondispose() const;
     /// Setter of the `ondispose` attribute.

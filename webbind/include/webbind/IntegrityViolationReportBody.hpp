@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type IntegrityViolationReportBody
-/// [`IntegrityViolationReportBody`](https://developer.mozilla.org/en-US/docs/Web/API/IntegrityViolationReportBody)
 class IntegrityViolationReportBody : public ReportBody {
   explicit IntegrityViolationReportBody(Handle h) noexcept;
 public:
@@ -16,13 +15,21 @@ public:
     explicit IntegrityViolationReportBody(const emlite::Val &val) noexcept;
     IntegrityViolationReportBody() noexcept;
     [[nodiscard]] IntegrityViolationReportBody clone() const noexcept;
+    /// Getter of the `documentURL` attribute.
     [[nodiscard]] jsbind::String documentURL() const;
+    /// Setter of the `documentURL` attribute.
     void documentURL(const jsbind::String& value);
+    /// Getter of the `blockedURL` attribute.
     [[nodiscard]] jsbind::String blockedURL() const;
+    /// Setter of the `blockedURL` attribute.
     void blockedURL(const jsbind::String& value);
+    /// Getter of the `destination` attribute.
     [[nodiscard]] jsbind::String destination() const;
+    /// Setter of the `destination` attribute.
     void destination(const jsbind::String& value);
+    /// Getter of the `reportOnly` attribute.
     [[nodiscard]] bool reportOnly() const;
+    /// Setter of the `reportOnly` attribute.
     void reportOnly(bool value);
 };
 

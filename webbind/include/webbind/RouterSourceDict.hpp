@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RouterSourceDict
-/// [`RouterSourceDict`](https://developer.mozilla.org/en-US/docs/Web/API/RouterSourceDict)
 class RouterSourceDict : public emlite::Val {
   explicit RouterSourceDict(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit RouterSourceDict(const emlite::Val &val) noexcept;
     RouterSourceDict() noexcept;
     [[nodiscard]] RouterSourceDict clone() const noexcept;
+    /// Getter of the `cacheName` attribute.
     [[nodiscard]] jsbind::String cacheName() const;
+    /// Setter of the `cacheName` attribute.
     void cacheName(const jsbind::String& value);
 };
 

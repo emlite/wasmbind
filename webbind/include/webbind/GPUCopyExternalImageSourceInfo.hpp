@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GPUCopyExternalImageSourceInfo
-/// [`GPUCopyExternalImageSourceInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCopyExternalImageSourceInfo)
 class GPUCopyExternalImageSourceInfo : public emlite::Val {
   explicit GPUCopyExternalImageSourceInfo(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit GPUCopyExternalImageSourceInfo(const emlite::Val &val) noexcept;
     GPUCopyExternalImageSourceInfo() noexcept;
     [[nodiscard]] GPUCopyExternalImageSourceInfo clone() const noexcept;
+    /// Getter of the `source` attribute.
     [[nodiscard]] jsbind::Any source() const;
+    /// Setter of the `source` attribute.
     void source(const jsbind::Any& value);
+    /// Getter of the `origin` attribute.
     [[nodiscard]] jsbind::Any origin() const;
+    /// Setter of the `origin` attribute.
     void origin(const jsbind::Any& value);
+    /// Getter of the `flipY` attribute.
     [[nodiscard]] bool flipY() const;
+    /// Setter of the `flipY` attribute.
     void flipY(bool value);
 };
 

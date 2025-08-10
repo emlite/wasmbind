@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type HkdfParams
-/// [`HkdfParams`](https://developer.mozilla.org/en-US/docs/Web/API/HkdfParams)
 class HkdfParams : public Algorithm {
   explicit HkdfParams(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit HkdfParams(const emlite::Val &val) noexcept;
     HkdfParams() noexcept;
     [[nodiscard]] HkdfParams clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] jsbind::Any hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const jsbind::Any& value);
+    /// Getter of the `salt` attribute.
     [[nodiscard]] jsbind::Any salt() const;
+    /// Setter of the `salt` attribute.
     void salt(const jsbind::Any& value);
+    /// Getter of the `info` attribute.
     [[nodiscard]] jsbind::Any info() const;
+    /// Setter of the `info` attribute.
     void info(const jsbind::Any& value);
 };
 

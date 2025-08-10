@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type HandwritingModelConstraint
-/// [`HandwritingModelConstraint`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingModelConstraint)
 class HandwritingModelConstraint : public emlite::Val {
   explicit HandwritingModelConstraint(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit HandwritingModelConstraint(const emlite::Val &val) noexcept;
     HandwritingModelConstraint() noexcept;
     [[nodiscard]] HandwritingModelConstraint clone() const noexcept;
+    /// Getter of the `languages` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> languages() const;
+    /// Setter of the `languages` attribute.
     void languages(const jsbind::TypedArray<jsbind::String>& value);
 };
 

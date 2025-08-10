@@ -1,14 +1,16 @@
 #include <webbind/ScoreAdOutput.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ScoreAdOutput::ScoreAdOutput(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ScoreAdOutput ScoreAdOutput::take_ownership(Handle h) noexcept {
-        return ScoreAdOutput(h);
-    }
+    return ScoreAdOutput(h);
+}
+
 ScoreAdOutput::ScoreAdOutput(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ScoreAdOutput::ScoreAdOutput() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ScoreAdOutput ScoreAdOutput::clone() const noexcept { return *this; }
 
 double ScoreAdOutput::desirability() const {

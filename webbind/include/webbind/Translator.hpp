@@ -40,10 +40,10 @@ public:
     /// The translateStreaming method.
     /// [`Translator.translateStreaming`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/translateStreaming)
     ReadableStream translateStreaming(const jsbind::String& input, const TranslatorTranslateOptions& options);
-    /// Getter of the `sourceLanguage` attribute.
+    /// [`Translator.sourceLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/sourceLanguage)
     /// [`Translator.sourceLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/sourceLanguage)
     [[nodiscard]] jsbind::String sourceLanguage() const;
-    /// Getter of the `targetLanguage` attribute.
+    /// [`Translator.targetLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/targetLanguage)
     /// [`Translator.targetLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/targetLanguage)
     [[nodiscard]] jsbind::String targetLanguage() const;
     /// The measureInputUsage method.
@@ -52,7 +52,7 @@ public:
     /// The measureInputUsage method.
     /// [`Translator.measureInputUsage`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/measureInputUsage)
     jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const TranslatorTranslateOptions& options);
-    /// Getter of the `inputQuota` attribute.
+    /// [`Translator.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/inputQuota)
     /// [`Translator.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Translator/inputQuota)
     [[nodiscard]] double inputQuota() const;
     /// The destroy method.

@@ -16,7 +16,7 @@ public:
     static ManagedSourceBuffer take_ownership(Handle h) noexcept;
     [[nodiscard]] ManagedSourceBuffer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `onbufferedchange` attribute.
+    /// [`ManagedSourceBuffer.onbufferedchange`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedSourceBuffer/onbufferedchange)
     /// [`ManagedSourceBuffer.onbufferedchange`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedSourceBuffer/onbufferedchange)
     [[nodiscard]] jsbind::Any onbufferedchange() const;
     /// Setter of the `onbufferedchange` attribute.

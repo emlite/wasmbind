@@ -1,14 +1,16 @@
 #include <webbind/CanvasRenderingContext2DSettings.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CanvasRenderingContext2DSettings::CanvasRenderingContext2DSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CanvasRenderingContext2DSettings CanvasRenderingContext2DSettings::take_ownership(Handle h) noexcept {
-        return CanvasRenderingContext2DSettings(h);
-    }
+    return CanvasRenderingContext2DSettings(h);
+}
+
 CanvasRenderingContext2DSettings::CanvasRenderingContext2DSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CanvasRenderingContext2DSettings::CanvasRenderingContext2DSettings() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CanvasRenderingContext2DSettings CanvasRenderingContext2DSettings::clone() const noexcept { return *this; }
 
 bool CanvasRenderingContext2DSettings::alpha() const {

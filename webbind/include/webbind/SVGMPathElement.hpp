@@ -18,7 +18,7 @@ public:
     static SVGMPathElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGMPathElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `href` attribute.
+    /// [`SVGMPathElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGMPathElement/href)
     /// [`SVGMPathElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGMPathElement/href)
     [[nodiscard]] SVGAnimatedString href() const;
 };

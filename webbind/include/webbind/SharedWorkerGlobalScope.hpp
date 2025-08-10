@@ -16,13 +16,13 @@ public:
     static SharedWorkerGlobalScope take_ownership(Handle h) noexcept;
     [[nodiscard]] SharedWorkerGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`SharedWorkerGlobalScope.name`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/name)
     /// [`SharedWorkerGlobalScope.name`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/name)
     [[nodiscard]] jsbind::String name() const;
     /// The close method.
     /// [`SharedWorkerGlobalScope.close`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/close)
     jsbind::Undefined close();
-    /// Getter of the `onconnect` attribute.
+    /// [`SharedWorkerGlobalScope.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/onconnect)
     /// [`SharedWorkerGlobalScope.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerGlobalScope/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;
     /// Setter of the `onconnect` attribute.

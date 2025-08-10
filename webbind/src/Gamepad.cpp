@@ -7,11 +7,15 @@
 namespace webbind {
 
 Gamepad Gamepad::take_ownership(Handle h) noexcept {
-        return Gamepad(h);
-    }
+    return Gamepad(h);
+}
+
 Gamepad Gamepad::clone() const noexcept { return *this; }
+
 emlite::Val Gamepad::instance() noexcept { return emlite::Val::global("Gamepad"); }
+
 Gamepad::Gamepad(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Gamepad::Gamepad(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String Gamepad::id() const {

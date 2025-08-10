@@ -1,14 +1,16 @@
 #include <webbind/MediaTrackSettings.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaTrackSettings::MediaTrackSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaTrackSettings MediaTrackSettings::take_ownership(Handle h) noexcept {
-        return MediaTrackSettings(h);
-    }
+    return MediaTrackSettings(h);
+}
+
 MediaTrackSettings::MediaTrackSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaTrackSettings::MediaTrackSettings() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaTrackSettings MediaTrackSettings::clone() const noexcept { return *this; }
 
 jsbind::String MediaTrackSettings::displaySurface() const {

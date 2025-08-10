@@ -9,7 +9,6 @@ namespace webbind {
 class MediaStreamTrack;
 
 /// Dictionary type MediaStreamTrackAudioSourceOptions
-/// [`MediaStreamTrackAudioSourceOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackAudioSourceOptions)
 class MediaStreamTrackAudioSourceOptions : public emlite::Val {
   explicit MediaStreamTrackAudioSourceOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit MediaStreamTrackAudioSourceOptions(const emlite::Val &val) noexcept;
     MediaStreamTrackAudioSourceOptions() noexcept;
     [[nodiscard]] MediaStreamTrackAudioSourceOptions clone() const noexcept;
+    /// Getter of the `mediaStreamTrack` attribute.
     [[nodiscard]] MediaStreamTrack mediaStreamTrack() const;
+    /// Setter of the `mediaStreamTrack` attribute.
     void mediaStreamTrack(const MediaStreamTrack& value);
 };
 

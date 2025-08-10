@@ -1,14 +1,16 @@
 #include <webbind/ResponseInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ResponseInit::ResponseInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ResponseInit ResponseInit::take_ownership(Handle h) noexcept {
-        return ResponseInit(h);
-    }
+    return ResponseInit(h);
+}
+
 ResponseInit::ResponseInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ResponseInit::ResponseInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ResponseInit ResponseInit::clone() const noexcept { return *this; }
 
 unsigned short ResponseInit::status() const {

@@ -1,14 +1,16 @@
 #include <webbind/CloseEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CloseEventInit::CloseEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 CloseEventInit CloseEventInit::take_ownership(Handle h) noexcept {
-        return CloseEventInit(h);
-    }
+    return CloseEventInit(h);
+}
+
 CloseEventInit::CloseEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 CloseEventInit::CloseEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 CloseEventInit CloseEventInit::clone() const noexcept { return *this; }
 
 bool CloseEventInit::wasClean() const {

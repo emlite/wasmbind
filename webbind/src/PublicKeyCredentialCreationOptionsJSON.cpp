@@ -6,15 +6,17 @@
 #include <webbind/AuthenticatorSelectionCriteria.hpp>
 #include <webbind/AuthenticationExtensionsClientInputsJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PublicKeyCredentialCreationOptionsJSON::PublicKeyCredentialCreationOptionsJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PublicKeyCredentialCreationOptionsJSON PublicKeyCredentialCreationOptionsJSON::take_ownership(Handle h) noexcept {
-        return PublicKeyCredentialCreationOptionsJSON(h);
-    }
+    return PublicKeyCredentialCreationOptionsJSON(h);
+}
+
 PublicKeyCredentialCreationOptionsJSON::PublicKeyCredentialCreationOptionsJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PublicKeyCredentialCreationOptionsJSON::PublicKeyCredentialCreationOptionsJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PublicKeyCredentialCreationOptionsJSON PublicKeyCredentialCreationOptionsJSON::clone() const noexcept { return *this; }
 
 PublicKeyCredentialRpEntity PublicKeyCredentialCreationOptionsJSON::rp() const {

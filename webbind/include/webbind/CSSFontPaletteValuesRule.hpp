@@ -16,16 +16,16 @@ public:
     static CSSFontPaletteValuesRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSFontPaletteValuesRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`CSSFontPaletteValuesRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/name)
     /// [`CSSFontPaletteValuesRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `fontFamily` attribute.
+    /// [`CSSFontPaletteValuesRule.fontFamily`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/fontFamily)
     /// [`CSSFontPaletteValuesRule.fontFamily`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/fontFamily)
     [[nodiscard]] jsbind::String fontFamily() const;
-    /// Getter of the `basePalette` attribute.
+    /// [`CSSFontPaletteValuesRule.basePalette`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/basePalette)
     /// [`CSSFontPaletteValuesRule.basePalette`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/basePalette)
     [[nodiscard]] jsbind::String basePalette() const;
-    /// Getter of the `overrideColors` attribute.
+    /// [`CSSFontPaletteValuesRule.overrideColors`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/overrideColors)
     /// [`CSSFontPaletteValuesRule.overrideColors`](https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/overrideColors)
     [[nodiscard]] jsbind::String overrideColors() const;
 };

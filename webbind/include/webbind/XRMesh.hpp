@@ -17,19 +17,19 @@ public:
     static XRMesh take_ownership(Handle h) noexcept;
     [[nodiscard]] XRMesh clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `meshSpace` attribute.
+    /// [`XRMesh.meshSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/meshSpace)
     /// [`XRMesh.meshSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/meshSpace)
     [[nodiscard]] XRSpace meshSpace() const;
-    /// Getter of the `vertices` attribute.
+    /// [`XRMesh.vertices`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/vertices)
     /// [`XRMesh.vertices`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/vertices)
     [[nodiscard]] jsbind::TypedArray<jsbind::Float32Array> vertices() const;
-    /// Getter of the `indices` attribute.
+    /// [`XRMesh.indices`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/indices)
     /// [`XRMesh.indices`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/indices)
     [[nodiscard]] jsbind::Uint32Array indices() const;
-    /// Getter of the `lastChangedTime` attribute.
+    /// [`XRMesh.lastChangedTime`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/lastChangedTime)
     /// [`XRMesh.lastChangedTime`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/lastChangedTime)
     [[nodiscard]] jsbind::Any lastChangedTime() const;
-    /// Getter of the `semanticLabel` attribute.
+    /// [`XRMesh.semanticLabel`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/semanticLabel)
     /// [`XRMesh.semanticLabel`](https://developer.mozilla.org/en-US/docs/Web/API/XRMesh/semanticLabel)
     [[nodiscard]] jsbind::String semanticLabel() const;
 };

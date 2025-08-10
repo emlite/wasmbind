@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpReceiveParameters
-/// [`RTCRtpReceiveParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiveParameters)
 class RTCRtpReceiveParameters : public RTCRtpParameters {
   explicit RTCRtpReceiveParameters(Handle h) noexcept;
 public:

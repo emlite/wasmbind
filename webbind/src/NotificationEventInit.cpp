@@ -1,15 +1,17 @@
 #include <webbind/NotificationEventInit.hpp>
 #include <webbind/Notification.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NotificationEventInit::NotificationEventInit(Handle h) noexcept : ExtendableEventInit(emlite::Val::take_ownership(h)) {}
 NotificationEventInit NotificationEventInit::take_ownership(Handle h) noexcept {
-        return NotificationEventInit(h);
-    }
+    return NotificationEventInit(h);
+}
+
 NotificationEventInit::NotificationEventInit(const emlite::Val &val) noexcept: ExtendableEventInit(val) {}
+
 NotificationEventInit::NotificationEventInit() noexcept: ExtendableEventInit(emlite::Val::object()) {}
+
 NotificationEventInit NotificationEventInit::clone() const noexcept { return *this; }
 
 Notification NotificationEventInit::notification() const {

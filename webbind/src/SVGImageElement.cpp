@@ -6,11 +6,15 @@
 namespace webbind {
 
 SVGImageElement SVGImageElement::take_ownership(Handle h) noexcept {
-        return SVGImageElement(h);
-    }
+    return SVGImageElement(h);
+}
+
 SVGImageElement SVGImageElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGImageElement::instance() noexcept { return emlite::Val::global("SVGImageElement"); }
+
 SVGImageElement::SVGImageElement(Handle h) noexcept : SVGGraphicsElement(emlite::Val::take_ownership(h)) {}
+
 SVGImageElement::SVGImageElement(const emlite::Val &val) noexcept: SVGGraphicsElement(val) {}
 
 SVGAnimatedLength SVGImageElement::x() const {

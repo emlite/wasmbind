@@ -20,7 +20,7 @@ public:
     /// The item method.
     /// [`CSSRuleList.item`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRuleList/item)
     CSSRule item(unsigned long index);
-    /// Getter of the `length` attribute.
+    /// [`CSSRuleList.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRuleList/length)
     /// [`CSSRuleList.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRuleList/length)
     [[nodiscard]] unsigned long length() const;
 };

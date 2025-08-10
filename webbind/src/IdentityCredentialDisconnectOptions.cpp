@@ -1,14 +1,16 @@
 #include <webbind/IdentityCredentialDisconnectOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions(Handle h) noexcept : IdentityProviderConfig(emlite::Val::take_ownership(h)) {}
 IdentityCredentialDisconnectOptions IdentityCredentialDisconnectOptions::take_ownership(Handle h) noexcept {
-        return IdentityCredentialDisconnectOptions(h);
-    }
+    return IdentityCredentialDisconnectOptions(h);
+}
+
 IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions(const emlite::Val &val) noexcept: IdentityProviderConfig(val) {}
+
 IdentityCredentialDisconnectOptions::IdentityCredentialDisconnectOptions() noexcept: IdentityProviderConfig(emlite::Val::object()) {}
+
 IdentityCredentialDisconnectOptions IdentityCredentialDisconnectOptions::clone() const noexcept { return *this; }
 
 jsbind::String IdentityCredentialDisconnectOptions::accountHint() const {

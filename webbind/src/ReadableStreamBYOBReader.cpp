@@ -6,11 +6,15 @@
 namespace webbind {
 
 ReadableStreamBYOBReader ReadableStreamBYOBReader::take_ownership(Handle h) noexcept {
-        return ReadableStreamBYOBReader(h);
-    }
+    return ReadableStreamBYOBReader(h);
+}
+
 ReadableStreamBYOBReader ReadableStreamBYOBReader::clone() const noexcept { return *this; }
+
 emlite::Val ReadableStreamBYOBReader::instance() noexcept { return emlite::Val::global("ReadableStreamBYOBReader"); }
+
 ReadableStreamBYOBReader::ReadableStreamBYOBReader(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ReadableStreamBYOBReader::ReadableStreamBYOBReader(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 ReadableStreamBYOBReader::ReadableStreamBYOBReader(const ReadableStream& stream) : emlite::Val(emlite::Val::global("ReadableStreamBYOBReader").new_(stream)) {}

@@ -1,15 +1,17 @@
 #include <webbind/NavigationResult.hpp>
 #include <webbind/NavigationHistoryEntry.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NavigationResult::NavigationResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigationResult NavigationResult::take_ownership(Handle h) noexcept {
-        return NavigationResult(h);
-    }
+    return NavigationResult(h);
+}
+
 NavigationResult::NavigationResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 NavigationResult::NavigationResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 NavigationResult NavigationResult::clone() const noexcept { return *this; }
 
 jsbind::Promise<NavigationHistoryEntry> NavigationResult::committed() const {

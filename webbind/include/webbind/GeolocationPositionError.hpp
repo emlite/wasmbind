@@ -15,10 +15,10 @@ public:
     static GeolocationPositionError take_ownership(Handle h) noexcept;
     [[nodiscard]] GeolocationPositionError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `code` attribute.
+    /// [`GeolocationPositionError.code`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/code)
     /// [`GeolocationPositionError.code`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/code)
     [[nodiscard]] unsigned short code() const;
-    /// Getter of the `message` attribute.
+    /// [`GeolocationPositionError.message`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/message)
     /// [`GeolocationPositionError.message`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/message)
     [[nodiscard]] jsbind::String message() const;
 };

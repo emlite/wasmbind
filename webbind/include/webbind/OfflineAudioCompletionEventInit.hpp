@@ -10,7 +10,6 @@ namespace webbind {
 class AudioBuffer;
 
 /// Dictionary type OfflineAudioCompletionEventInit
-/// [`OfflineAudioCompletionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioCompletionEventInit)
 class OfflineAudioCompletionEventInit : public EventInit {
   explicit OfflineAudioCompletionEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit OfflineAudioCompletionEventInit(const emlite::Val &val) noexcept;
     OfflineAudioCompletionEventInit() noexcept;
     [[nodiscard]] OfflineAudioCompletionEventInit clone() const noexcept;
+    /// Getter of the `renderedBuffer` attribute.
     [[nodiscard]] AudioBuffer renderedBuffer() const;
+    /// Setter of the `renderedBuffer` attribute.
     void renderedBuffer(const AudioBuffer& value);
 };
 

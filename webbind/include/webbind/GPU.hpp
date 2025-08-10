@@ -29,7 +29,7 @@ public:
     /// The getPreferredCanvasFormat method.
     /// [`GPU.getPreferredCanvasFormat`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/getPreferredCanvasFormat)
     GPUTextureFormat getPreferredCanvasFormat();
-    /// Getter of the `wgslLanguageFeatures` attribute.
+    /// [`GPU.wgslLanguageFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/wgslLanguageFeatures)
     /// [`GPU.wgslLanguageFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/GPU/wgslLanguageFeatures)
     [[nodiscard]] WGSLLanguageFeatures wgslLanguageFeatures() const;
 };

@@ -5,11 +5,15 @@
 namespace webbind {
 
 StorageBucketManager StorageBucketManager::take_ownership(Handle h) noexcept {
-        return StorageBucketManager(h);
-    }
+    return StorageBucketManager(h);
+}
+
 StorageBucketManager StorageBucketManager::clone() const noexcept { return *this; }
+
 emlite::Val StorageBucketManager::instance() noexcept { return emlite::Val::global("StorageBucketManager"); }
+
 StorageBucketManager::StorageBucketManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 StorageBucketManager::StorageBucketManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<StorageBucket> StorageBucketManager::open(const jsbind::String& name) {

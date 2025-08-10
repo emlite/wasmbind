@@ -3,11 +3,15 @@
 namespace webbind {
 
 WakeLockSentinel WakeLockSentinel::take_ownership(Handle h) noexcept {
-        return WakeLockSentinel(h);
-    }
+    return WakeLockSentinel(h);
+}
+
 WakeLockSentinel WakeLockSentinel::clone() const noexcept { return *this; }
+
 emlite::Val WakeLockSentinel::instance() noexcept { return emlite::Val::global("WakeLockSentinel"); }
+
 WakeLockSentinel::WakeLockSentinel(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 WakeLockSentinel::WakeLockSentinel(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 bool WakeLockSentinel::released() const {

@@ -5,11 +5,15 @@
 namespace webbind {
 
 BarcodeDetector BarcodeDetector::take_ownership(Handle h) noexcept {
-        return BarcodeDetector(h);
-    }
+    return BarcodeDetector(h);
+}
+
 BarcodeDetector BarcodeDetector::clone() const noexcept { return *this; }
+
 emlite::Val BarcodeDetector::instance() noexcept { return emlite::Val::global("BarcodeDetector"); }
+
 BarcodeDetector::BarcodeDetector(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 BarcodeDetector::BarcodeDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 BarcodeDetector::BarcodeDetector() : emlite::Val(emlite::Val::global("BarcodeDetector").new_()) {}

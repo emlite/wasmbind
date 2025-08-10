@@ -8,11 +8,15 @@
 namespace webbind {
 
 Rewriter Rewriter::take_ownership(Handle h) noexcept {
-        return Rewriter(h);
-    }
+    return Rewriter(h);
+}
+
 Rewriter Rewriter::clone() const noexcept { return *this; }
+
 emlite::Val Rewriter::instance() noexcept { return emlite::Val::global("Rewriter"); }
+
 Rewriter::Rewriter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Rewriter::Rewriter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<Rewriter> Rewriter::create() {

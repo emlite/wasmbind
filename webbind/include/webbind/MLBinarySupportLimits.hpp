@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MLBinarySupportLimits
-/// [`MLBinarySupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLBinarySupportLimits)
 class MLBinarySupportLimits : public emlite::Val {
   explicit MLBinarySupportLimits(Handle h) noexcept;
 public:
@@ -17,11 +16,17 @@ public:
     explicit MLBinarySupportLimits(const emlite::Val &val) noexcept;
     MLBinarySupportLimits() noexcept;
     [[nodiscard]] MLBinarySupportLimits clone() const noexcept;
+    /// Getter of the `a` attribute.
     [[nodiscard]] MLTensorLimits a() const;
+    /// Setter of the `a` attribute.
     void a(const MLTensorLimits& value);
+    /// Getter of the `b` attribute.
     [[nodiscard]] MLTensorLimits b() const;
+    /// Setter of the `b` attribute.
     void b(const MLTensorLimits& value);
+    /// Getter of the `output` attribute.
     [[nodiscard]] MLDataTypeLimits output() const;
+    /// Setter of the `output` attribute.
     void output(const MLDataTypeLimits& value);
 };
 

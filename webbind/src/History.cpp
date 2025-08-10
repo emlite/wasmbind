@@ -3,11 +3,15 @@
 namespace webbind {
 
 History History::take_ownership(Handle h) noexcept {
-        return History(h);
-    }
+    return History(h);
+}
+
 History History::clone() const noexcept { return *this; }
+
 emlite::Val History::instance() noexcept { return emlite::Val::global("History"); }
+
 History::History(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 History::History(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned long History::length() const {

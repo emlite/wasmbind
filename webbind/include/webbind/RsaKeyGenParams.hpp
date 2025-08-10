@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RsaKeyGenParams
-/// [`RsaKeyGenParams`](https://developer.mozilla.org/en-US/docs/Web/API/RsaKeyGenParams)
 class RsaKeyGenParams : public Algorithm {
   explicit RsaKeyGenParams(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit RsaKeyGenParams(const emlite::Val &val) noexcept;
     RsaKeyGenParams() noexcept;
     [[nodiscard]] RsaKeyGenParams clone() const noexcept;
+    /// Getter of the `modulusLength` attribute.
     [[nodiscard]] unsigned long modulusLength() const;
+    /// Setter of the `modulusLength` attribute.
     void modulusLength(unsigned long value);
+    /// Getter of the `publicExponent` attribute.
     [[nodiscard]] jsbind::Any publicExponent() const;
+    /// Setter of the `publicExponent` attribute.
     void publicExponent(const jsbind::Any& value);
 };
 

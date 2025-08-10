@@ -17,16 +17,16 @@ public:
     static IDBKeyRange take_ownership(Handle h) noexcept;
     [[nodiscard]] IDBKeyRange clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `lower` attribute.
+    /// [`IDBKeyRange.lower`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lower)
     /// [`IDBKeyRange.lower`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lower)
     [[nodiscard]] jsbind::Any lower() const;
-    /// Getter of the `upper` attribute.
+    /// [`IDBKeyRange.upper`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upper)
     /// [`IDBKeyRange.upper`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upper)
     [[nodiscard]] jsbind::Any upper() const;
-    /// Getter of the `lowerOpen` attribute.
+    /// [`IDBKeyRange.lowerOpen`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen)
     /// [`IDBKeyRange.lowerOpen`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen)
     [[nodiscard]] bool lowerOpen() const;
-    /// Getter of the `upperOpen` attribute.
+    /// [`IDBKeyRange.upperOpen`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upperOpen)
     /// [`IDBKeyRange.upperOpen`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upperOpen)
     [[nodiscard]] bool upperOpen() const;
     /// The only method.

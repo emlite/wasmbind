@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathInvert(..)` constructor, creating a new CSSMathInvert instance
     CSSMathInvert(const jsbind::Any& arg);
-    /// Getter of the `value` attribute.
+    /// [`CSSMathInvert.value`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathInvert/value)
     /// [`CSSMathInvert.value`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathInvert/value)
     [[nodiscard]] CSSNumericValue value() const;
 };

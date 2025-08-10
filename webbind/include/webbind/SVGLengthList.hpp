@@ -17,10 +17,10 @@ public:
     static SVGLengthList take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGLengthList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`SVGLengthList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLengthList/length)
     /// [`SVGLengthList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLengthList/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `numberOfItems` attribute.
+    /// [`SVGLengthList.numberOfItems`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLengthList/numberOfItems)
     /// [`SVGLengthList.numberOfItems`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLengthList/numberOfItems)
     [[nodiscard]] unsigned long numberOfItems() const;
     /// The clear method.

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ValueEventInit
-/// [`ValueEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/ValueEventInit)
 class ValueEventInit : public EventInit {
   explicit ValueEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit ValueEventInit(const emlite::Val &val) noexcept;
     ValueEventInit() noexcept;
     [[nodiscard]] ValueEventInit clone() const noexcept;
+    /// Getter of the `value` attribute.
     [[nodiscard]] jsbind::Any value() const;
+    /// Setter of the `value` attribute.
     void value(const jsbind::Any& value);
 };
 

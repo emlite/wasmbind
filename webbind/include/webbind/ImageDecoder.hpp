@@ -22,16 +22,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ImageDecoder(..)` constructor, creating a new ImageDecoder instance
     ImageDecoder(const ImageDecoderInit& init);
-    /// Getter of the `type` attribute.
+    /// [`ImageDecoder.type`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/type)
     /// [`ImageDecoder.type`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/type)
     [[nodiscard]] jsbind::String type() const;
-    /// Getter of the `complete` attribute.
+    /// [`ImageDecoder.complete`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/complete)
     /// [`ImageDecoder.complete`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/complete)
     [[nodiscard]] bool complete() const;
-    /// Getter of the `completed` attribute.
+    /// [`ImageDecoder.completed`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/completed)
     /// [`ImageDecoder.completed`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/completed)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> completed() const;
-    /// Getter of the `tracks` attribute.
+    /// [`ImageDecoder.tracks`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/tracks)
     /// [`ImageDecoder.tracks`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/tracks)
     [[nodiscard]] ImageTrackList tracks() const;
     /// The decode method.

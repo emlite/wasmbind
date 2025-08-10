@@ -1,15 +1,17 @@
 #include <webbind/GPUComputePassTimestampWrites.hpp>
 #include <webbind/GPUQuerySet.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUComputePassTimestampWrites::GPUComputePassTimestampWrites(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUComputePassTimestampWrites GPUComputePassTimestampWrites::take_ownership(Handle h) noexcept {
-        return GPUComputePassTimestampWrites(h);
-    }
+    return GPUComputePassTimestampWrites(h);
+}
+
 GPUComputePassTimestampWrites::GPUComputePassTimestampWrites(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUComputePassTimestampWrites::GPUComputePassTimestampWrites() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUComputePassTimestampWrites GPUComputePassTimestampWrites::clone() const noexcept { return *this; }
 
 GPUQuerySet GPUComputePassTimestampWrites::querySet() const {

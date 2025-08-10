@@ -1,15 +1,17 @@
 #include <webbind/USBDeviceRequestOptions.hpp>
 #include <webbind/USBDeviceFilter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 USBDeviceRequestOptions::USBDeviceRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBDeviceRequestOptions USBDeviceRequestOptions::take_ownership(Handle h) noexcept {
-        return USBDeviceRequestOptions(h);
-    }
+    return USBDeviceRequestOptions(h);
+}
+
 USBDeviceRequestOptions::USBDeviceRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 USBDeviceRequestOptions::USBDeviceRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 USBDeviceRequestOptions USBDeviceRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<USBDeviceFilter> USBDeviceRequestOptions::filters() const {

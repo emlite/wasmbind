@@ -1,15 +1,17 @@
 #include <webbind/Report.hpp>
 #include <webbind/ReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 Report::Report(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Report Report::take_ownership(Handle h) noexcept {
-        return Report(h);
-    }
+    return Report(h);
+}
+
 Report::Report(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 Report::Report() noexcept: emlite::Val(emlite::Val::object()) {}
+
 Report Report::clone() const noexcept { return *this; }
 
 jsbind::String Report::type() const {

@@ -21,10 +21,10 @@ public:
     IDBVersionChangeEvent(const jsbind::String& type);
     /// The `new IDBVersionChangeEvent(..)` constructor, creating a new IDBVersionChangeEvent instance
     IDBVersionChangeEvent(const jsbind::String& type, const IDBVersionChangeEventInit& eventInitDict);
-    /// Getter of the `oldVersion` attribute.
+    /// [`IDBVersionChangeEvent.oldVersion`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/oldVersion)
     /// [`IDBVersionChangeEvent.oldVersion`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/oldVersion)
     [[nodiscard]] long long oldVersion() const;
-    /// Getter of the `newVersion` attribute.
+    /// [`IDBVersionChangeEvent.newVersion`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/newVersion)
     /// [`IDBVersionChangeEvent.newVersion`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/newVersion)
     [[nodiscard]] long long newVersion() const;
 };

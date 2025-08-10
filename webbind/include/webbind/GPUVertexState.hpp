@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type GPUVertexState
-/// [`GPUVertexState`](https://developer.mozilla.org/en-US/docs/Web/API/GPUVertexState)
 class GPUVertexState : public GPUProgrammableStage {
   explicit GPUVertexState(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit GPUVertexState(const emlite::Val &val) noexcept;
     GPUVertexState() noexcept;
     [[nodiscard]] GPUVertexState clone() const noexcept;
+    /// Getter of the `buffers` attribute.
     [[nodiscard]] jsbind::TypedArray<GPUVertexBufferLayout> buffers() const;
+    /// Setter of the `buffers` attribute.
     void buffers(const jsbind::TypedArray<GPUVertexBufferLayout>& value);
 };
 

@@ -23,55 +23,55 @@ public:
     static USBDevice take_ownership(Handle h) noexcept;
     [[nodiscard]] USBDevice clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `usbVersionMajor` attribute.
+    /// [`USBDevice.usbVersionMajor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMajor)
     /// [`USBDevice.usbVersionMajor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMajor)
     [[nodiscard]] unsigned char usbVersionMajor() const;
-    /// Getter of the `usbVersionMinor` attribute.
+    /// [`USBDevice.usbVersionMinor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMinor)
     /// [`USBDevice.usbVersionMinor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMinor)
     [[nodiscard]] unsigned char usbVersionMinor() const;
-    /// Getter of the `usbVersionSubminor` attribute.
+    /// [`USBDevice.usbVersionSubminor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionSubminor)
     /// [`USBDevice.usbVersionSubminor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionSubminor)
     [[nodiscard]] unsigned char usbVersionSubminor() const;
-    /// Getter of the `deviceClass` attribute.
+    /// [`USBDevice.deviceClass`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceClass)
     /// [`USBDevice.deviceClass`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceClass)
     [[nodiscard]] unsigned char deviceClass() const;
-    /// Getter of the `deviceSubclass` attribute.
+    /// [`USBDevice.deviceSubclass`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceSubclass)
     /// [`USBDevice.deviceSubclass`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceSubclass)
     [[nodiscard]] unsigned char deviceSubclass() const;
-    /// Getter of the `deviceProtocol` attribute.
+    /// [`USBDevice.deviceProtocol`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceProtocol)
     /// [`USBDevice.deviceProtocol`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceProtocol)
     [[nodiscard]] unsigned char deviceProtocol() const;
-    /// Getter of the `vendorId` attribute.
+    /// [`USBDevice.vendorId`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/vendorId)
     /// [`USBDevice.vendorId`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/vendorId)
     [[nodiscard]] unsigned short vendorId() const;
-    /// Getter of the `productId` attribute.
+    /// [`USBDevice.productId`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productId)
     /// [`USBDevice.productId`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productId)
     [[nodiscard]] unsigned short productId() const;
-    /// Getter of the `deviceVersionMajor` attribute.
+    /// [`USBDevice.deviceVersionMajor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMajor)
     /// [`USBDevice.deviceVersionMajor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMajor)
     [[nodiscard]] unsigned char deviceVersionMajor() const;
-    /// Getter of the `deviceVersionMinor` attribute.
+    /// [`USBDevice.deviceVersionMinor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMinor)
     /// [`USBDevice.deviceVersionMinor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMinor)
     [[nodiscard]] unsigned char deviceVersionMinor() const;
-    /// Getter of the `deviceVersionSubminor` attribute.
+    /// [`USBDevice.deviceVersionSubminor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionSubminor)
     /// [`USBDevice.deviceVersionSubminor`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionSubminor)
     [[nodiscard]] unsigned char deviceVersionSubminor() const;
-    /// Getter of the `manufacturerName` attribute.
+    /// [`USBDevice.manufacturerName`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/manufacturerName)
     /// [`USBDevice.manufacturerName`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/manufacturerName)
     [[nodiscard]] jsbind::String manufacturerName() const;
-    /// Getter of the `productName` attribute.
+    /// [`USBDevice.productName`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productName)
     /// [`USBDevice.productName`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productName)
     [[nodiscard]] jsbind::String productName() const;
-    /// Getter of the `serialNumber` attribute.
+    /// [`USBDevice.serialNumber`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/serialNumber)
     /// [`USBDevice.serialNumber`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/serialNumber)
     [[nodiscard]] jsbind::String serialNumber() const;
-    /// Getter of the `configuration` attribute.
+    /// [`USBDevice.configuration`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configuration)
     /// [`USBDevice.configuration`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configuration)
     [[nodiscard]] USBConfiguration configuration() const;
-    /// Getter of the `configurations` attribute.
+    /// [`USBDevice.configurations`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configurations)
     /// [`USBDevice.configurations`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configurations)
     [[nodiscard]] jsbind::TypedArray<USBConfiguration> configurations() const;
-    /// Getter of the `opened` attribute.
+    /// [`USBDevice.opened`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/opened)
     /// [`USBDevice.opened`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/opened)
     [[nodiscard]] bool opened() const;
     /// The open method.

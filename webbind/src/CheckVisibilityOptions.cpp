@@ -1,14 +1,16 @@
 #include <webbind/CheckVisibilityOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CheckVisibilityOptions::CheckVisibilityOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CheckVisibilityOptions CheckVisibilityOptions::take_ownership(Handle h) noexcept {
-        return CheckVisibilityOptions(h);
-    }
+    return CheckVisibilityOptions(h);
+}
+
 CheckVisibilityOptions::CheckVisibilityOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CheckVisibilityOptions::CheckVisibilityOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CheckVisibilityOptions CheckVisibilityOptions::clone() const noexcept { return *this; }
 
 bool CheckVisibilityOptions::checkOpacity() const {

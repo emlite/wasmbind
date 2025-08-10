@@ -20,7 +20,7 @@ public:
     /// The item method.
     /// [`StyleSheetList.item`](https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList/item)
     CSSStyleSheet item(unsigned long index);
-    /// Getter of the `length` attribute.
+    /// [`StyleSheetList.length`](https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList/length)
     /// [`StyleSheetList.length`](https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList/length)
     [[nodiscard]] unsigned long length() const;
 };

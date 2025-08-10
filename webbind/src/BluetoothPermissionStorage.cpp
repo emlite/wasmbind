@@ -1,15 +1,17 @@
 #include <webbind/BluetoothPermissionStorage.hpp>
 #include <webbind/AllowedBluetoothDevice.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BluetoothPermissionStorage::BluetoothPermissionStorage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothPermissionStorage BluetoothPermissionStorage::take_ownership(Handle h) noexcept {
-        return BluetoothPermissionStorage(h);
-    }
+    return BluetoothPermissionStorage(h);
+}
+
 BluetoothPermissionStorage::BluetoothPermissionStorage(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BluetoothPermissionStorage::BluetoothPermissionStorage() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BluetoothPermissionStorage BluetoothPermissionStorage::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<AllowedBluetoothDevice> BluetoothPermissionStorage::allowedDevices() const {

@@ -19,22 +19,22 @@ public:
     static SVGFEComponentTransferElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGFEComponentTransferElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `in1` attribute.
+    /// [`SVGFEComponentTransferElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/in1)
     /// [`SVGFEComponentTransferElement.in1`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/in1)
     [[nodiscard]] SVGAnimatedString in1() const;
-    /// Getter of the `x` attribute.
+    /// [`SVGFEComponentTransferElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/x)
     /// [`SVGFEComponentTransferElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;
-    /// Getter of the `y` attribute.
+    /// [`SVGFEComponentTransferElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/y)
     /// [`SVGFEComponentTransferElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/y)
     [[nodiscard]] SVGAnimatedLength y() const;
-    /// Getter of the `width` attribute.
+    /// [`SVGFEComponentTransferElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/width)
     /// [`SVGFEComponentTransferElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/width)
     [[nodiscard]] SVGAnimatedLength width() const;
-    /// Getter of the `height` attribute.
+    /// [`SVGFEComponentTransferElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/height)
     /// [`SVGFEComponentTransferElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/height)
     [[nodiscard]] SVGAnimatedLength height() const;
-    /// Getter of the `result` attribute.
+    /// [`SVGFEComponentTransferElement.result`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/result)
     /// [`SVGFEComponentTransferElement.result`](https://developer.mozilla.org/en-US/docs/Web/API/SVGFEComponentTransferElement/result)
     [[nodiscard]] SVGAnimatedString result() const;
 };

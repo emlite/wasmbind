@@ -10,7 +10,6 @@ namespace webbind {
 class MediaDeviceInfo;
 
 /// Dictionary type DeviceChangeEventInit
-/// [`DeviceChangeEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceChangeEventInit)
 class DeviceChangeEventInit : public EventInit {
   explicit DeviceChangeEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit DeviceChangeEventInit(const emlite::Val &val) noexcept;
     DeviceChangeEventInit() noexcept;
     [[nodiscard]] DeviceChangeEventInit clone() const noexcept;
+    /// Getter of the `devices` attribute.
     [[nodiscard]] jsbind::TypedArray<MediaDeviceInfo> devices() const;
+    /// Setter of the `devices` attribute.
     void devices(const jsbind::TypedArray<MediaDeviceInfo>& value);
 };
 

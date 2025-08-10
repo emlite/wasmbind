@@ -1,15 +1,17 @@
 #include <webbind/GPURenderPassDepthStencilAttachment.hpp>
 #include <webbind/GPUTextureView.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPURenderPassDepthStencilAttachment::GPURenderPassDepthStencilAttachment(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPURenderPassDepthStencilAttachment GPURenderPassDepthStencilAttachment::take_ownership(Handle h) noexcept {
-        return GPURenderPassDepthStencilAttachment(h);
-    }
+    return GPURenderPassDepthStencilAttachment(h);
+}
+
 GPURenderPassDepthStencilAttachment::GPURenderPassDepthStencilAttachment(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPURenderPassDepthStencilAttachment::GPURenderPassDepthStencilAttachment() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPURenderPassDepthStencilAttachment GPURenderPassDepthStencilAttachment::clone() const noexcept { return *this; }
 
 GPUTextureView GPURenderPassDepthStencilAttachment::view() const {

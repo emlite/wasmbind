@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLScatterOptions
-/// [`MLScatterOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLScatterOptions)
 class MLScatterOptions : public MLOperatorOptions {
   explicit MLScatterOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLScatterOptions(const emlite::Val &val) noexcept;
     MLScatterOptions() noexcept;
     [[nodiscard]] MLScatterOptions clone() const noexcept;
+    /// Getter of the `axis` attribute.
     [[nodiscard]] unsigned long axis() const;
+    /// Setter of the `axis` attribute.
     void axis(unsigned long value);
 };
 

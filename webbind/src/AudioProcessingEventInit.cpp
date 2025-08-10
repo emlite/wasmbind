@@ -1,15 +1,17 @@
 #include <webbind/AudioProcessingEventInit.hpp>
 #include <webbind/AudioBuffer.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioProcessingEventInit::AudioProcessingEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 AudioProcessingEventInit AudioProcessingEventInit::take_ownership(Handle h) noexcept {
-        return AudioProcessingEventInit(h);
-    }
+    return AudioProcessingEventInit(h);
+}
+
 AudioProcessingEventInit::AudioProcessingEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 AudioProcessingEventInit::AudioProcessingEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 AudioProcessingEventInit AudioProcessingEventInit::clone() const noexcept { return *this; }
 
 double AudioProcessingEventInit::playbackTime() const {

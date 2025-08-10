@@ -27,22 +27,22 @@ public:
     /// The now method.
     /// [`Performance.now`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)
     jsbind::Any now();
-    /// Getter of the `timeOrigin` attribute.
+    /// [`Performance.timeOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/timeOrigin)
     /// [`Performance.timeOrigin`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/timeOrigin)
     [[nodiscard]] jsbind::Any timeOrigin() const;
     /// The toJSON method.
     /// [`Performance.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/toJSON)
     jsbind::Object toJSON();
-    /// Getter of the `eventCounts` attribute.
+    /// [`Performance.eventCounts`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/eventCounts)
     /// [`Performance.eventCounts`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/eventCounts)
     [[nodiscard]] EventCounts eventCounts() const;
-    /// Getter of the `interactionCount` attribute.
+    /// [`Performance.interactionCount`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/interactionCount)
     /// [`Performance.interactionCount`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/interactionCount)
     [[nodiscard]] long long interactionCount() const;
-    /// Getter of the `timing` attribute.
+    /// [`Performance.timing`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/timing)
     /// [`Performance.timing`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/timing)
     [[nodiscard]] PerformanceTiming timing() const;
-    /// Getter of the `navigation` attribute.
+    /// [`Performance.navigation`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/navigation)
     /// [`Performance.navigation`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/navigation)
     [[nodiscard]] PerformanceNavigation navigation() const;
     /// The measureUserAgentSpecificMemory method.
@@ -66,7 +66,7 @@ public:
     /// The setResourceTimingBufferSize method.
     /// [`Performance.setResourceTimingBufferSize`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/setResourceTimingBufferSize)
     jsbind::Undefined setResourceTimingBufferSize(unsigned long maxSize);
-    /// Getter of the `onresourcetimingbufferfull` attribute.
+    /// [`Performance.onresourcetimingbufferfull`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/onresourcetimingbufferfull)
     /// [`Performance.onresourcetimingbufferfull`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/onresourcetimingbufferfull)
     [[nodiscard]] jsbind::Any onresourcetimingbufferfull() const;
     /// Setter of the `onresourcetimingbufferfull` attribute.

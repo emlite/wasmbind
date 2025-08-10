@@ -1,14 +1,16 @@
 #include <webbind/GPUCopyExternalImageDestInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUCopyExternalImageDestInfo::GPUCopyExternalImageDestInfo(Handle h) noexcept : GPUTexelCopyTextureInfo(emlite::Val::take_ownership(h)) {}
 GPUCopyExternalImageDestInfo GPUCopyExternalImageDestInfo::take_ownership(Handle h) noexcept {
-        return GPUCopyExternalImageDestInfo(h);
-    }
+    return GPUCopyExternalImageDestInfo(h);
+}
+
 GPUCopyExternalImageDestInfo::GPUCopyExternalImageDestInfo(const emlite::Val &val) noexcept: GPUTexelCopyTextureInfo(val) {}
+
 GPUCopyExternalImageDestInfo::GPUCopyExternalImageDestInfo() noexcept: GPUTexelCopyTextureInfo(emlite::Val::object()) {}
+
 GPUCopyExternalImageDestInfo GPUCopyExternalImageDestInfo::clone() const noexcept { return *this; }
 
 PredefinedColorSpace GPUCopyExternalImageDestInfo::colorSpace() const {

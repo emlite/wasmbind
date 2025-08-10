@@ -6,11 +6,15 @@
 namespace webbind {
 
 SVGFilterElement SVGFilterElement::take_ownership(Handle h) noexcept {
-        return SVGFilterElement(h);
-    }
+    return SVGFilterElement(h);
+}
+
 SVGFilterElement SVGFilterElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFilterElement::instance() noexcept { return emlite::Val::global("SVGFilterElement"); }
+
 SVGFilterElement::SVGFilterElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFilterElement::SVGFilterElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedEnumeration SVGFilterElement::filterUnits() const {

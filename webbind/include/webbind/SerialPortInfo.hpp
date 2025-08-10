@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SerialPortInfo
-/// [`SerialPortInfo`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPortInfo)
 class SerialPortInfo : public emlite::Val {
   explicit SerialPortInfo(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit SerialPortInfo(const emlite::Val &val) noexcept;
     SerialPortInfo() noexcept;
     [[nodiscard]] SerialPortInfo clone() const noexcept;
+    /// Getter of the `usbVendorId` attribute.
     [[nodiscard]] unsigned short usbVendorId() const;
+    /// Setter of the `usbVendorId` attribute.
     void usbVendorId(unsigned short value);
+    /// Getter of the `usbProductId` attribute.
     [[nodiscard]] unsigned short usbProductId() const;
+    /// Setter of the `usbProductId` attribute.
     void usbProductId(unsigned short value);
+    /// Getter of the `bluetoothServiceClassId` attribute.
     [[nodiscard]] jsbind::Any bluetoothServiceClassId() const;
+    /// Setter of the `bluetoothServiceClassId` attribute.
     void bluetoothServiceClassId(const jsbind::Any& value);
 };
 

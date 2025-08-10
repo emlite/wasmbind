@@ -3,11 +3,15 @@
 namespace webbind {
 
 CSSNamespaceRule CSSNamespaceRule::take_ownership(Handle h) noexcept {
-        return CSSNamespaceRule(h);
-    }
+    return CSSNamespaceRule(h);
+}
+
 CSSNamespaceRule CSSNamespaceRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSNamespaceRule::instance() noexcept { return emlite::Val::global("CSSNamespaceRule"); }
+
 CSSNamespaceRule::CSSNamespaceRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
+
 CSSNamespaceRule::CSSNamespaceRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 jsbind::String CSSNamespaceRule::namespaceURI() const {

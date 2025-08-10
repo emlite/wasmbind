@@ -5,11 +5,15 @@
 namespace webbind {
 
 MediaSession MediaSession::take_ownership(Handle h) noexcept {
-        return MediaSession(h);
-    }
+    return MediaSession(h);
+}
+
 MediaSession MediaSession::clone() const noexcept { return *this; }
+
 emlite::Val MediaSession::instance() noexcept { return emlite::Val::global("MediaSession"); }
+
 MediaSession::MediaSession(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 MediaSession::MediaSession(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 MediaMetadata MediaSession::metadata() const {

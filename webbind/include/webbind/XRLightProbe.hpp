@@ -18,10 +18,10 @@ public:
     static XRLightProbe take_ownership(Handle h) noexcept;
     [[nodiscard]] XRLightProbe clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `probeSpace` attribute.
+    /// [`XRLightProbe.probeSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightProbe/probeSpace)
     /// [`XRLightProbe.probeSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightProbe/probeSpace)
     [[nodiscard]] XRSpace probeSpace() const;
-    /// Getter of the `onreflectionchange` attribute.
+    /// [`XRLightProbe.onreflectionchange`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightProbe/onreflectionchange)
     /// [`XRLightProbe.onreflectionchange`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightProbe/onreflectionchange)
     [[nodiscard]] jsbind::Any onreflectionchange() const;
     /// Setter of the `onreflectionchange` attribute.

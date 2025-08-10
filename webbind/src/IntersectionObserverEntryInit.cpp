@@ -2,15 +2,17 @@
 #include <webbind/DOMRectInit.hpp>
 #include <webbind/Element.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IntersectionObserverEntryInit::IntersectionObserverEntryInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IntersectionObserverEntryInit IntersectionObserverEntryInit::take_ownership(Handle h) noexcept {
-        return IntersectionObserverEntryInit(h);
-    }
+    return IntersectionObserverEntryInit(h);
+}
+
 IntersectionObserverEntryInit::IntersectionObserverEntryInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IntersectionObserverEntryInit::IntersectionObserverEntryInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IntersectionObserverEntryInit IntersectionObserverEntryInit::clone() const noexcept { return *this; }
 
 jsbind::Any IntersectionObserverEntryInit::time() const {

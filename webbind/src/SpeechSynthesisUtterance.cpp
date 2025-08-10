@@ -4,11 +4,15 @@
 namespace webbind {
 
 SpeechSynthesisUtterance SpeechSynthesisUtterance::take_ownership(Handle h) noexcept {
-        return SpeechSynthesisUtterance(h);
-    }
+    return SpeechSynthesisUtterance(h);
+}
+
 SpeechSynthesisUtterance SpeechSynthesisUtterance::clone() const noexcept { return *this; }
+
 emlite::Val SpeechSynthesisUtterance::instance() noexcept { return emlite::Val::global("SpeechSynthesisUtterance"); }
+
 SpeechSynthesisUtterance::SpeechSynthesisUtterance(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 SpeechSynthesisUtterance::SpeechSynthesisUtterance(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 SpeechSynthesisUtterance::SpeechSynthesisUtterance() : EventTarget(emlite::Val::global("SpeechSynthesisUtterance").new_()) {}

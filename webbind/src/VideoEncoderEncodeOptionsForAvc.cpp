@@ -1,14 +1,16 @@
 #include <webbind/VideoEncoderEncodeOptionsForAvc.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoEncoderEncodeOptionsForAvc::VideoEncoderEncodeOptionsForAvc(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoEncoderEncodeOptionsForAvc VideoEncoderEncodeOptionsForAvc::take_ownership(Handle h) noexcept {
-        return VideoEncoderEncodeOptionsForAvc(h);
-    }
+    return VideoEncoderEncodeOptionsForAvc(h);
+}
+
 VideoEncoderEncodeOptionsForAvc::VideoEncoderEncodeOptionsForAvc(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoEncoderEncodeOptionsForAvc::VideoEncoderEncodeOptionsForAvc() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoEncoderEncodeOptionsForAvc VideoEncoderEncodeOptionsForAvc::clone() const noexcept { return *this; }
 
 unsigned short VideoEncoderEncodeOptionsForAvc::quantizer() const {

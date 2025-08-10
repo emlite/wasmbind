@@ -3,11 +3,15 @@
 namespace webbind {
 
 XMLHttpRequestEventTarget XMLHttpRequestEventTarget::take_ownership(Handle h) noexcept {
-        return XMLHttpRequestEventTarget(h);
-    }
+    return XMLHttpRequestEventTarget(h);
+}
+
 XMLHttpRequestEventTarget XMLHttpRequestEventTarget::clone() const noexcept { return *this; }
+
 emlite::Val XMLHttpRequestEventTarget::instance() noexcept { return emlite::Val::global("XMLHttpRequestEventTarget"); }
+
 XMLHttpRequestEventTarget::XMLHttpRequestEventTarget(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 XMLHttpRequestEventTarget::XMLHttpRequestEventTarget(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Any XMLHttpRequestEventTarget::onloadstart() const {

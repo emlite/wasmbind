@@ -19,10 +19,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PromiseRejectionEvent(..)` constructor, creating a new PromiseRejectionEvent instance
     PromiseRejectionEvent(const jsbind::String& type, const PromiseRejectionEventInit& eventInitDict);
-    /// Getter of the `promise` attribute.
+    /// [`PromiseRejectionEvent.promise`](https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/promise)
     /// [`PromiseRejectionEvent.promise`](https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/promise)
     [[nodiscard]] jsbind::Object promise() const;
-    /// Getter of the `reason` attribute.
+    /// [`PromiseRejectionEvent.reason`](https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/reason)
     /// [`PromiseRejectionEvent.reason`](https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/reason)
     [[nodiscard]] jsbind::Any reason() const;
 };

@@ -2,15 +2,17 @@
 #include <webbind/VideoConfiguration.hpp>
 #include <webbind/AudioConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaConfiguration::MediaConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaConfiguration MediaConfiguration::take_ownership(Handle h) noexcept {
-        return MediaConfiguration(h);
-    }
+    return MediaConfiguration(h);
+}
+
 MediaConfiguration::MediaConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaConfiguration::MediaConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaConfiguration MediaConfiguration::clone() const noexcept { return *this; }
 
 VideoConfiguration MediaConfiguration::video() const {

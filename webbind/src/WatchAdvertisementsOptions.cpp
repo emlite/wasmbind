@@ -1,15 +1,17 @@
 #include <webbind/WatchAdvertisementsOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WatchAdvertisementsOptions::WatchAdvertisementsOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WatchAdvertisementsOptions WatchAdvertisementsOptions::take_ownership(Handle h) noexcept {
-        return WatchAdvertisementsOptions(h);
-    }
+    return WatchAdvertisementsOptions(h);
+}
+
 WatchAdvertisementsOptions::WatchAdvertisementsOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WatchAdvertisementsOptions::WatchAdvertisementsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WatchAdvertisementsOptions WatchAdvertisementsOptions::clone() const noexcept { return *this; }
 
 AbortSignal WatchAdvertisementsOptions::signal() const {

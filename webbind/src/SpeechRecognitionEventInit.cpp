@@ -1,15 +1,17 @@
 #include <webbind/SpeechRecognitionEventInit.hpp>
 #include <webbind/SpeechRecognitionResultList.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SpeechRecognitionEventInit::SpeechRecognitionEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionEventInit SpeechRecognitionEventInit::take_ownership(Handle h) noexcept {
-        return SpeechRecognitionEventInit(h);
-    }
+    return SpeechRecognitionEventInit(h);
+}
+
 SpeechRecognitionEventInit::SpeechRecognitionEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 SpeechRecognitionEventInit::SpeechRecognitionEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 SpeechRecognitionEventInit SpeechRecognitionEventInit::clone() const noexcept { return *this; }
 
 unsigned long SpeechRecognitionEventInit::resultIndex() const {

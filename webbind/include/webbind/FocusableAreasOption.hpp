@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FocusableAreasOption
-/// [`FocusableAreasOption`](https://developer.mozilla.org/en-US/docs/Web/API/FocusableAreasOption)
 class FocusableAreasOption : public emlite::Val {
   explicit FocusableAreasOption(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit FocusableAreasOption(const emlite::Val &val) noexcept;
     FocusableAreasOption() noexcept;
     [[nodiscard]] FocusableAreasOption clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] FocusableAreaSearchMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const FocusableAreaSearchMode& value);
 };
 

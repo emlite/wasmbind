@@ -1,14 +1,16 @@
 #include <webbind/ContactsSelectOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ContactsSelectOptions::ContactsSelectOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ContactsSelectOptions ContactsSelectOptions::take_ownership(Handle h) noexcept {
-        return ContactsSelectOptions(h);
-    }
+    return ContactsSelectOptions(h);
+}
+
 ContactsSelectOptions::ContactsSelectOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ContactsSelectOptions::ContactsSelectOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ContactsSelectOptions ContactsSelectOptions::clone() const noexcept { return *this; }
 
 bool ContactsSelectOptions::multiple() const {

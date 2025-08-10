@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IDBTransactionOptions
-/// [`IDBTransactionOptions`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransactionOptions)
 class IDBTransactionOptions : public emlite::Val {
   explicit IDBTransactionOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit IDBTransactionOptions(const emlite::Val &val) noexcept;
     IDBTransactionOptions() noexcept;
     [[nodiscard]] IDBTransactionOptions clone() const noexcept;
+    /// Getter of the `durability` attribute.
     [[nodiscard]] IDBTransactionDurability durability() const;
+    /// Setter of the `durability` attribute.
     void durability(const IDBTransactionDurability& value);
 };
 

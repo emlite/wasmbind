@@ -15,10 +15,10 @@ public:
     static IntrinsicSizes take_ownership(Handle h) noexcept;
     [[nodiscard]] IntrinsicSizes clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `minContentSize` attribute.
+    /// [`IntrinsicSizes.minContentSize`](https://developer.mozilla.org/en-US/docs/Web/API/IntrinsicSizes/minContentSize)
     /// [`IntrinsicSizes.minContentSize`](https://developer.mozilla.org/en-US/docs/Web/API/IntrinsicSizes/minContentSize)
     [[nodiscard]] double minContentSize() const;
-    /// Getter of the `maxContentSize` attribute.
+    /// [`IntrinsicSizes.maxContentSize`](https://developer.mozilla.org/en-US/docs/Web/API/IntrinsicSizes/maxContentSize)
     /// [`IntrinsicSizes.maxContentSize`](https://developer.mozilla.org/en-US/docs/Web/API/IntrinsicSizes/maxContentSize)
     [[nodiscard]] double maxContentSize() const;
 };

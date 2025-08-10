@@ -1,15 +1,17 @@
 #include <webbind/RouterRule.hpp>
 #include <webbind/RouterCondition.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RouterRule::RouterRule(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RouterRule RouterRule::take_ownership(Handle h) noexcept {
-        return RouterRule(h);
-    }
+    return RouterRule(h);
+}
+
 RouterRule::RouterRule(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RouterRule::RouterRule() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RouterRule RouterRule::clone() const noexcept { return *this; }
 
 RouterCondition RouterRule::condition() const {

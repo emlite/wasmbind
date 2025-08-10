@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type PaymentDetailsInit
-/// [`PaymentDetailsInit`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentDetailsInit)
 class PaymentDetailsInit : public PaymentDetailsBase {
   explicit PaymentDetailsInit(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit PaymentDetailsInit(const emlite::Val &val) noexcept;
     PaymentDetailsInit() noexcept;
     [[nodiscard]] PaymentDetailsInit clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::String& value);
+    /// Getter of the `total` attribute.
     [[nodiscard]] PaymentItem total() const;
+    /// Setter of the `total` attribute.
     void total(const PaymentItem& value);
 };
 

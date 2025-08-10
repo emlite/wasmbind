@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SetHTMLOptions
-/// [`SetHTMLOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SetHTMLOptions)
 class SetHTMLOptions : public emlite::Val {
   explicit SetHTMLOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit SetHTMLOptions(const emlite::Val &val) noexcept;
     SetHTMLOptions() noexcept;
     [[nodiscard]] SetHTMLOptions clone() const noexcept;
+    /// Getter of the `sanitizer` attribute.
     [[nodiscard]] jsbind::Any sanitizer() const;
+    /// Setter of the `sanitizer` attribute.
     void sanitizer(const jsbind::Any& value);
 };
 

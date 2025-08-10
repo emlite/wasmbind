@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDataElement(..)` constructor, creating a new HTMLDataElement instance
     HTMLDataElement();
-    /// Getter of the `value` attribute.
+    /// [`HTMLDataElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value)
     /// [`HTMLDataElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value)
     [[nodiscard]] jsbind::String value() const;
     /// Setter of the `value` attribute.

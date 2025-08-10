@@ -1,14 +1,16 @@
 #include <webbind/AuthenticationExtensionsLargeBlobInputsJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticationExtensionsLargeBlobInputsJSON::AuthenticationExtensionsLargeBlobInputsJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticationExtensionsLargeBlobInputsJSON AuthenticationExtensionsLargeBlobInputsJSON::take_ownership(Handle h) noexcept {
-        return AuthenticationExtensionsLargeBlobInputsJSON(h);
-    }
+    return AuthenticationExtensionsLargeBlobInputsJSON(h);
+}
+
 AuthenticationExtensionsLargeBlobInputsJSON::AuthenticationExtensionsLargeBlobInputsJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticationExtensionsLargeBlobInputsJSON::AuthenticationExtensionsLargeBlobInputsJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticationExtensionsLargeBlobInputsJSON AuthenticationExtensionsLargeBlobInputsJSON::clone() const noexcept { return *this; }
 
 jsbind::String AuthenticationExtensionsLargeBlobInputsJSON::support() const {

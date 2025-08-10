@@ -9,11 +9,15 @@
 namespace webbind {
 
 GPUQueue GPUQueue::take_ownership(Handle h) noexcept {
-        return GPUQueue(h);
-    }
+    return GPUQueue(h);
+}
+
 GPUQueue GPUQueue::clone() const noexcept { return *this; }
+
 emlite::Val GPUQueue::instance() noexcept { return emlite::Val::global("GPUQueue"); }
+
 GPUQueue::GPUQueue(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUQueue::GPUQueue(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined GPUQueue::submit(const jsbind::TypedArray<GPUCommandBuffer>& commandBuffers) {

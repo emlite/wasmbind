@@ -5,11 +5,15 @@
 namespace webbind {
 
 AnimationTimeline AnimationTimeline::take_ownership(Handle h) noexcept {
-        return AnimationTimeline(h);
-    }
+    return AnimationTimeline(h);
+}
+
 AnimationTimeline AnimationTimeline::clone() const noexcept { return *this; }
+
 emlite::Val AnimationTimeline::instance() noexcept { return emlite::Val::global("AnimationTimeline"); }
+
 AnimationTimeline::AnimationTimeline(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 AnimationTimeline::AnimationTimeline(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Any AnimationTimeline::currentTime() const {

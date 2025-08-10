@@ -1,14 +1,16 @@
 #include <webbind/ClientQueryOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ClientQueryOptions::ClientQueryOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ClientQueryOptions ClientQueryOptions::take_ownership(Handle h) noexcept {
-        return ClientQueryOptions(h);
-    }
+    return ClientQueryOptions(h);
+}
+
 ClientQueryOptions::ClientQueryOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ClientQueryOptions::ClientQueryOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ClientQueryOptions ClientQueryOptions::clone() const noexcept { return *this; }
 
 bool ClientQueryOptions::includeUncontrolled() const {

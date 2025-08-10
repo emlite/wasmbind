@@ -1,14 +1,16 @@
 #include <webbind/LayoutOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 LayoutOptions::LayoutOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LayoutOptions LayoutOptions::take_ownership(Handle h) noexcept {
-        return LayoutOptions(h);
-    }
+    return LayoutOptions(h);
+}
+
 LayoutOptions::LayoutOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 LayoutOptions::LayoutOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 LayoutOptions LayoutOptions::clone() const noexcept { return *this; }
 
 ChildDisplayType LayoutOptions::childDisplay() const {

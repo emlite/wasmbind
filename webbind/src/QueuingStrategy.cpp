@@ -1,14 +1,16 @@
 #include <webbind/QueuingStrategy.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 QueuingStrategy::QueuingStrategy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 QueuingStrategy QueuingStrategy::take_ownership(Handle h) noexcept {
-        return QueuingStrategy(h);
-    }
+    return QueuingStrategy(h);
+}
+
 QueuingStrategy::QueuingStrategy(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 QueuingStrategy::QueuingStrategy() noexcept: emlite::Val(emlite::Val::object()) {}
+
 QueuingStrategy QueuingStrategy::clone() const noexcept { return *this; }
 
 double QueuingStrategy::highWaterMark() const {

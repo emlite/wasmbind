@@ -10,7 +10,6 @@ namespace webbind {
 class CryptoKey;
 
 /// Dictionary type EcdhKeyDeriveParams
-/// [`EcdhKeyDeriveParams`](https://developer.mozilla.org/en-US/docs/Web/API/EcdhKeyDeriveParams)
 class EcdhKeyDeriveParams : public Algorithm {
   explicit EcdhKeyDeriveParams(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit EcdhKeyDeriveParams(const emlite::Val &val) noexcept;
     EcdhKeyDeriveParams() noexcept;
     [[nodiscard]] EcdhKeyDeriveParams clone() const noexcept;
+    /// Getter of the `public` attribute.
     [[nodiscard]] CryptoKey public_() const;
+    /// Setter of the `public` attribute.
     void public_(const CryptoKey& value);
 };
 

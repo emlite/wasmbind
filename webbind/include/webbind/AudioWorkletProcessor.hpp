@@ -19,7 +19,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioWorkletProcessor(..)` constructor, creating a new AudioWorkletProcessor instance
     AudioWorkletProcessor();
-    /// Getter of the `port` attribute.
+    /// [`AudioWorkletProcessor.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/port)
     /// [`AudioWorkletProcessor.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/port)
     [[nodiscard]] MessagePort port() const;
 };

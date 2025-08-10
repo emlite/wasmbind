@@ -21,13 +21,13 @@ public:
     Accelerometer();
     /// The `new Accelerometer(..)` constructor, creating a new Accelerometer instance
     Accelerometer(const AccelerometerSensorOptions& options);
-    /// Getter of the `x` attribute.
+    /// [`Accelerometer.x`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer/x)
     /// [`Accelerometer.x`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer/x)
     [[nodiscard]] double x() const;
-    /// Getter of the `y` attribute.
+    /// [`Accelerometer.y`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer/y)
     /// [`Accelerometer.y`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer/y)
     [[nodiscard]] double y() const;
-    /// Getter of the `z` attribute.
+    /// [`Accelerometer.z`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer/z)
     /// [`Accelerometer.z`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer/z)
     [[nodiscard]] double z() const;
 };

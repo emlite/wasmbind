@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type GPUDeviceDescriptor
-/// [`GPUDeviceDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDeviceDescriptor)
 class GPUDeviceDescriptor : public GPUObjectDescriptorBase {
   explicit GPUDeviceDescriptor(Handle h) noexcept;
 public:
@@ -17,11 +16,17 @@ public:
     explicit GPUDeviceDescriptor(const emlite::Val &val) noexcept;
     GPUDeviceDescriptor() noexcept;
     [[nodiscard]] GPUDeviceDescriptor clone() const noexcept;
+    /// Getter of the `requiredFeatures` attribute.
     [[nodiscard]] jsbind::TypedArray<GPUFeatureName> requiredFeatures() const;
+    /// Setter of the `requiredFeatures` attribute.
     void requiredFeatures(const jsbind::TypedArray<GPUFeatureName>& value);
+    /// Getter of the `requiredLimits` attribute.
     [[nodiscard]] jsbind::Record<jsbind::String, jsbind::Any> requiredLimits() const;
+    /// Setter of the `requiredLimits` attribute.
     void requiredLimits(const jsbind::Record<jsbind::String, jsbind::Any>& value);
+    /// Getter of the `defaultQueue` attribute.
     [[nodiscard]] GPUQueueDescriptor defaultQueue() const;
+    /// Setter of the `defaultQueue` attribute.
     void defaultQueue(const GPUQueueDescriptor& value);
 };
 

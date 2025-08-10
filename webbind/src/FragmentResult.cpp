@@ -4,11 +4,15 @@
 namespace webbind {
 
 FragmentResult FragmentResult::take_ownership(Handle h) noexcept {
-        return FragmentResult(h);
-    }
+    return FragmentResult(h);
+}
+
 FragmentResult FragmentResult::clone() const noexcept { return *this; }
+
 emlite::Val FragmentResult::instance() noexcept { return emlite::Val::global("FragmentResult"); }
+
 FragmentResult::FragmentResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 FragmentResult::FragmentResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 FragmentResult::FragmentResult() : emlite::Val(emlite::Val::global("FragmentResult").new_()) {}

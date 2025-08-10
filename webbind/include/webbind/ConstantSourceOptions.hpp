@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ConstantSourceOptions
-/// [`ConstantSourceOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ConstantSourceOptions)
 class ConstantSourceOptions : public emlite::Val {
   explicit ConstantSourceOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ConstantSourceOptions(const emlite::Val &val) noexcept;
     ConstantSourceOptions() noexcept;
     [[nodiscard]] ConstantSourceOptions clone() const noexcept;
+    /// Getter of the `offset` attribute.
     [[nodiscard]] float offset() const;
+    /// Setter of the `offset` attribute.
     void offset(float value);
 };
 

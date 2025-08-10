@@ -2,15 +2,17 @@
 #include <webbind/DOMRectReadOnly.hpp>
 #include <webbind/Point2D.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DetectedBarcode::DetectedBarcode(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DetectedBarcode DetectedBarcode::take_ownership(Handle h) noexcept {
-        return DetectedBarcode(h);
-    }
+    return DetectedBarcode(h);
+}
+
 DetectedBarcode::DetectedBarcode(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DetectedBarcode::DetectedBarcode() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DetectedBarcode DetectedBarcode::clone() const noexcept { return *this; }
 
 DOMRectReadOnly DetectedBarcode::boundingBox() const {

@@ -1,14 +1,16 @@
 #include <webbind/NavigationPreloadState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NavigationPreloadState::NavigationPreloadState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigationPreloadState NavigationPreloadState::take_ownership(Handle h) noexcept {
-        return NavigationPreloadState(h);
-    }
+    return NavigationPreloadState(h);
+}
+
 NavigationPreloadState::NavigationPreloadState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 NavigationPreloadState::NavigationPreloadState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 NavigationPreloadState NavigationPreloadState::clone() const noexcept { return *this; }
 
 bool NavigationPreloadState::enabled() const {

@@ -1,14 +1,16 @@
 #include <webbind/RTCCertificateStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCCertificateStats::RTCCertificateStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCCertificateStats RTCCertificateStats::take_ownership(Handle h) noexcept {
-        return RTCCertificateStats(h);
-    }
+    return RTCCertificateStats(h);
+}
+
 RTCCertificateStats::RTCCertificateStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCCertificateStats::RTCCertificateStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCCertificateStats RTCCertificateStats::clone() const noexcept { return *this; }
 
 jsbind::String RTCCertificateStats::fingerprint() const {

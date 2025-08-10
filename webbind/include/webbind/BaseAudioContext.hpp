@@ -40,28 +40,28 @@ public:
     static BaseAudioContext take_ownership(Handle h) noexcept;
     [[nodiscard]] BaseAudioContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `destination` attribute.
+    /// [`BaseAudioContext.destination`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/destination)
     /// [`BaseAudioContext.destination`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/destination)
     [[nodiscard]] AudioDestinationNode destination() const;
-    /// Getter of the `sampleRate` attribute.
+    /// [`BaseAudioContext.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/sampleRate)
     /// [`BaseAudioContext.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/sampleRate)
     [[nodiscard]] float sampleRate() const;
-    /// Getter of the `currentTime` attribute.
+    /// [`BaseAudioContext.currentTime`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/currentTime)
     /// [`BaseAudioContext.currentTime`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/currentTime)
     [[nodiscard]] double currentTime() const;
-    /// Getter of the `listener` attribute.
+    /// [`BaseAudioContext.listener`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/listener)
     /// [`BaseAudioContext.listener`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/listener)
     [[nodiscard]] AudioListener listener() const;
-    /// Getter of the `state` attribute.
+    /// [`BaseAudioContext.state`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state)
     /// [`BaseAudioContext.state`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state)
     [[nodiscard]] AudioContextState state() const;
-    /// Getter of the `renderQuantumSize` attribute.
+    /// [`BaseAudioContext.renderQuantumSize`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/renderQuantumSize)
     /// [`BaseAudioContext.renderQuantumSize`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/renderQuantumSize)
     [[nodiscard]] unsigned long renderQuantumSize() const;
-    /// Getter of the `audioWorklet` attribute.
+    /// [`BaseAudioContext.audioWorklet`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/audioWorklet)
     /// [`BaseAudioContext.audioWorklet`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/audioWorklet)
     [[nodiscard]] AudioWorklet audioWorklet() const;
-    /// Getter of the `onstatechange` attribute.
+    /// [`BaseAudioContext.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/onstatechange)
     /// [`BaseAudioContext.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/onstatechange)
     [[nodiscard]] jsbind::Any onstatechange() const;
     /// Setter of the `onstatechange` attribute.

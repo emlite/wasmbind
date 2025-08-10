@@ -5,11 +5,15 @@
 namespace webbind {
 
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope InterestGroupBiddingAndScoringScriptRunnerGlobalScope::take_ownership(Handle h) noexcept {
-        return InterestGroupBiddingAndScoringScriptRunnerGlobalScope(h);
-    }
+    return InterestGroupBiddingAndScoringScriptRunnerGlobalScope(h);
+}
+
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope InterestGroupBiddingAndScoringScriptRunnerGlobalScope::clone() const noexcept { return *this; }
+
 emlite::Val InterestGroupBiddingAndScoringScriptRunnerGlobalScope::instance() noexcept { return emlite::Val::global("InterestGroupBiddingAndScoringScriptRunnerGlobalScope"); }
+
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope::InterestGroupBiddingAndScoringScriptRunnerGlobalScope(Handle h) noexcept : InterestGroupScriptRunnerGlobalScope(emlite::Val::take_ownership(h)) {}
+
 InterestGroupBiddingAndScoringScriptRunnerGlobalScope::InterestGroupBiddingAndScoringScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupScriptRunnerGlobalScope(val) {}
 
 ForDebuggingOnly InterestGroupBiddingAndScoringScriptRunnerGlobalScope::forDebuggingOnly() const {

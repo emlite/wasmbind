@@ -1,15 +1,17 @@
 #include <webbind/XREquirectLayerInit.hpp>
 #include <webbind/XRRigidTransform.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XREquirectLayerInit::XREquirectLayerInit(Handle h) noexcept : XRLayerInit(emlite::Val::take_ownership(h)) {}
 XREquirectLayerInit XREquirectLayerInit::take_ownership(Handle h) noexcept {
-        return XREquirectLayerInit(h);
-    }
+    return XREquirectLayerInit(h);
+}
+
 XREquirectLayerInit::XREquirectLayerInit(const emlite::Val &val) noexcept: XRLayerInit(val) {}
+
 XREquirectLayerInit::XREquirectLayerInit() noexcept: XRLayerInit(emlite::Val::object()) {}
+
 XREquirectLayerInit XREquirectLayerInit::clone() const noexcept { return *this; }
 
 XRTextureType XREquirectLayerInit::textureType() const {

@@ -1,14 +1,16 @@
 #include <webbind/IdentityProviderConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityProviderConfig::IdentityProviderConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityProviderConfig IdentityProviderConfig::take_ownership(Handle h) noexcept {
-        return IdentityProviderConfig(h);
-    }
+    return IdentityProviderConfig(h);
+}
+
 IdentityProviderConfig::IdentityProviderConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityProviderConfig::IdentityProviderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityProviderConfig IdentityProviderConfig::clone() const noexcept { return *this; }
 
 jsbind::String IdentityProviderConfig::configURL() const {

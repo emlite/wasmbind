@@ -24,16 +24,16 @@ public:
     InputEvent(const jsbind::String& type);
     /// The `new InputEvent(..)` constructor, creating a new InputEvent instance
     InputEvent(const jsbind::String& type, const InputEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`InputEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data)
     /// [`InputEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data)
     [[nodiscard]] jsbind::String data() const;
-    /// Getter of the `isComposing` attribute.
+    /// [`InputEvent.isComposing`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/isComposing)
     /// [`InputEvent.isComposing`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/isComposing)
     [[nodiscard]] bool isComposing() const;
-    /// Getter of the `inputType` attribute.
+    /// [`InputEvent.inputType`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/inputType)
     /// [`InputEvent.inputType`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/inputType)
     [[nodiscard]] jsbind::String inputType() const;
-    /// Getter of the `dataTransfer` attribute.
+    /// [`InputEvent.dataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/dataTransfer)
     /// [`InputEvent.dataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/dataTransfer)
     [[nodiscard]] DataTransfer dataTransfer() const;
     /// The getTargetRanges method.

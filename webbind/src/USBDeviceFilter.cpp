@@ -1,14 +1,16 @@
 #include <webbind/USBDeviceFilter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 USBDeviceFilter::USBDeviceFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBDeviceFilter USBDeviceFilter::take_ownership(Handle h) noexcept {
-        return USBDeviceFilter(h);
-    }
+    return USBDeviceFilter(h);
+}
+
 USBDeviceFilter::USBDeviceFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 USBDeviceFilter::USBDeviceFilter() noexcept: emlite::Val(emlite::Val::object()) {}
+
 USBDeviceFilter USBDeviceFilter::clone() const noexcept { return *this; }
 
 unsigned short USBDeviceFilter::vendorId() const {

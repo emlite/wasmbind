@@ -9,7 +9,6 @@ namespace webbind {
 class CSSNumericValue;
 
 /// Dictionary type TimelineRangeOffset
-/// [`TimelineRangeOffset`](https://developer.mozilla.org/en-US/docs/Web/API/TimelineRangeOffset)
 class TimelineRangeOffset : public emlite::Val {
   explicit TimelineRangeOffset(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit TimelineRangeOffset(const emlite::Val &val) noexcept;
     TimelineRangeOffset() noexcept;
     [[nodiscard]] TimelineRangeOffset clone() const noexcept;
+    /// Getter of the `rangeName` attribute.
     [[nodiscard]] jsbind::String rangeName() const;
+    /// Setter of the `rangeName` attribute.
     void rangeName(const jsbind::String& value);
+    /// Getter of the `offset` attribute.
     [[nodiscard]] CSSNumericValue offset() const;
+    /// Setter of the `offset` attribute.
     void offset(const CSSNumericValue& value);
 };
 

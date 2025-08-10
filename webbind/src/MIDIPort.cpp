@@ -4,11 +4,15 @@
 namespace webbind {
 
 MIDIPort MIDIPort::take_ownership(Handle h) noexcept {
-        return MIDIPort(h);
-    }
+    return MIDIPort(h);
+}
+
 MIDIPort MIDIPort::clone() const noexcept { return *this; }
+
 emlite::Val MIDIPort::instance() noexcept { return emlite::Val::global("MIDIPort"); }
+
 MIDIPort::MIDIPort(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 MIDIPort::MIDIPort(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::String MIDIPort::id() const {

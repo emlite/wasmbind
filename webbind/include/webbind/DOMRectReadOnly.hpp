@@ -34,28 +34,28 @@ public:
     /// The fromRect method.
     /// [`DOMRectReadOnly.fromRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/fromRect)
     static DOMRectReadOnly fromRect(const DOMRectInit& other);
-    /// Getter of the `x` attribute.
+    /// [`DOMRectReadOnly.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/x)
     /// [`DOMRectReadOnly.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/x)
     [[nodiscard]] double x() const;
-    /// Getter of the `y` attribute.
+    /// [`DOMRectReadOnly.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/y)
     /// [`DOMRectReadOnly.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/y)
     [[nodiscard]] double y() const;
-    /// Getter of the `width` attribute.
+    /// [`DOMRectReadOnly.width`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/width)
     /// [`DOMRectReadOnly.width`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/width)
     [[nodiscard]] double width() const;
-    /// Getter of the `height` attribute.
+    /// [`DOMRectReadOnly.height`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/height)
     /// [`DOMRectReadOnly.height`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/height)
     [[nodiscard]] double height() const;
-    /// Getter of the `top` attribute.
+    /// [`DOMRectReadOnly.top`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/top)
     /// [`DOMRectReadOnly.top`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/top)
     [[nodiscard]] double top() const;
-    /// Getter of the `right` attribute.
+    /// [`DOMRectReadOnly.right`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/right)
     /// [`DOMRectReadOnly.right`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/right)
     [[nodiscard]] double right() const;
-    /// Getter of the `bottom` attribute.
+    /// [`DOMRectReadOnly.bottom`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/bottom)
     /// [`DOMRectReadOnly.bottom`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/bottom)
     [[nodiscard]] double bottom() const;
-    /// Getter of the `left` attribute.
+    /// [`DOMRectReadOnly.left`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/left)
     /// [`DOMRectReadOnly.left`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/left)
     [[nodiscard]] double left() const;
     /// The toJSON method.

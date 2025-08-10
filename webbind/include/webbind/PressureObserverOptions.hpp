@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PressureObserverOptions
-/// [`PressureObserverOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PressureObserverOptions)
 class PressureObserverOptions : public emlite::Val {
   explicit PressureObserverOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PressureObserverOptions(const emlite::Val &val) noexcept;
     PressureObserverOptions() noexcept;
     [[nodiscard]] PressureObserverOptions clone() const noexcept;
+    /// Getter of the `sampleInterval` attribute.
     [[nodiscard]] unsigned long sampleInterval() const;
+    /// Setter of the `sampleInterval` attribute.
     void sampleInterval(unsigned long value);
 };
 

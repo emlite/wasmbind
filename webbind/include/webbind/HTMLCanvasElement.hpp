@@ -21,13 +21,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLCanvasElement(..)` constructor, creating a new HTMLCanvasElement instance
     HTMLCanvasElement();
-    /// Getter of the `width` attribute.
+    /// [`HTMLCanvasElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width)
     /// [`HTMLCanvasElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width)
     [[nodiscard]] unsigned long width() const;
     /// Setter of the `width` attribute.
     /// [`HTMLCanvasElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width)
     void width(unsigned long value);
-    /// Getter of the `height` attribute.
+    /// [`HTMLCanvasElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/height)
     /// [`HTMLCanvasElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/height)
     [[nodiscard]] unsigned long height() const;
     /// Setter of the `height` attribute.

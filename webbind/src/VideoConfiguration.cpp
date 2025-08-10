@@ -1,14 +1,16 @@
 #include <webbind/VideoConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoConfiguration::VideoConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoConfiguration VideoConfiguration::take_ownership(Handle h) noexcept {
-        return VideoConfiguration(h);
-    }
+    return VideoConfiguration(h);
+}
+
 VideoConfiguration::VideoConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoConfiguration::VideoConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoConfiguration VideoConfiguration::clone() const noexcept { return *this; }
 
 jsbind::String VideoConfiguration::contentType() const {

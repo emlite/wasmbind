@@ -4,15 +4,17 @@
 #include <webbind/AuthenticationExtensionsClientInputs.hpp>
 #include <webbind/PublicKeyCredentialParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SecurePaymentConfirmationRequest::SecurePaymentConfirmationRequest(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SecurePaymentConfirmationRequest SecurePaymentConfirmationRequest::take_ownership(Handle h) noexcept {
-        return SecurePaymentConfirmationRequest(h);
-    }
+    return SecurePaymentConfirmationRequest(h);
+}
+
 SecurePaymentConfirmationRequest::SecurePaymentConfirmationRequest(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SecurePaymentConfirmationRequest::SecurePaymentConfirmationRequest() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SecurePaymentConfirmationRequest SecurePaymentConfirmationRequest::clone() const noexcept { return *this; }
 
 jsbind::Any SecurePaymentConfirmationRequest::challenge() const {

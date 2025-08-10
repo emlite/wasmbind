@@ -41,34 +41,34 @@ public:
     /// The json method.
     /// [`Response.json`](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
     jsbind::Promise<jsbind::Any> json();
-    /// Getter of the `type` attribute.
+    /// [`Response.type`](https://developer.mozilla.org/en-US/docs/Web/API/Response/type)
     /// [`Response.type`](https://developer.mozilla.org/en-US/docs/Web/API/Response/type)
     [[nodiscard]] ResponseType type() const;
-    /// Getter of the `url` attribute.
+    /// [`Response.url`](https://developer.mozilla.org/en-US/docs/Web/API/Response/url)
     /// [`Response.url`](https://developer.mozilla.org/en-US/docs/Web/API/Response/url)
     [[nodiscard]] jsbind::String url() const;
-    /// Getter of the `redirected` attribute.
+    /// [`Response.redirected`](https://developer.mozilla.org/en-US/docs/Web/API/Response/redirected)
     /// [`Response.redirected`](https://developer.mozilla.org/en-US/docs/Web/API/Response/redirected)
     [[nodiscard]] bool redirected() const;
-    /// Getter of the `status` attribute.
+    /// [`Response.status`](https://developer.mozilla.org/en-US/docs/Web/API/Response/status)
     /// [`Response.status`](https://developer.mozilla.org/en-US/docs/Web/API/Response/status)
     [[nodiscard]] unsigned short status() const;
-    /// Getter of the `ok` attribute.
+    /// [`Response.ok`](https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)
     /// [`Response.ok`](https://developer.mozilla.org/en-US/docs/Web/API/Response/ok)
     [[nodiscard]] bool ok() const;
-    /// Getter of the `statusText` attribute.
+    /// [`Response.statusText`](https://developer.mozilla.org/en-US/docs/Web/API/Response/statusText)
     /// [`Response.statusText`](https://developer.mozilla.org/en-US/docs/Web/API/Response/statusText)
     [[nodiscard]] jsbind::String statusText() const;
-    /// Getter of the `headers` attribute.
+    /// [`Response.headers`](https://developer.mozilla.org/en-US/docs/Web/API/Response/headers)
     /// [`Response.headers`](https://developer.mozilla.org/en-US/docs/Web/API/Response/headers)
     [[nodiscard]] Headers headers() const;
     /// The clone method.
     /// [`Response.clone`](https://developer.mozilla.org/en-US/docs/Web/API/Response/clone)
     Response clone();
-    /// Getter of the `body` attribute.
+    /// [`Response.body`](https://developer.mozilla.org/en-US/docs/Web/API/Response/body)
     /// [`Response.body`](https://developer.mozilla.org/en-US/docs/Web/API/Response/body)
     [[nodiscard]] ReadableStream body() const;
-    /// Getter of the `bodyUsed` attribute.
+    /// [`Response.bodyUsed`](https://developer.mozilla.org/en-US/docs/Web/API/Response/bodyUsed)
     /// [`Response.bodyUsed`](https://developer.mozilla.org/en-US/docs/Web/API/Response/bodyUsed)
     [[nodiscard]] bool bodyUsed() const;
     /// The arrayBuffer method.

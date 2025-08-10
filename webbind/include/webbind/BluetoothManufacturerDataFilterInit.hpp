@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type BluetoothManufacturerDataFilterInit
-/// [`BluetoothManufacturerDataFilterInit`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothManufacturerDataFilterInit)
 class BluetoothManufacturerDataFilterInit : public BluetoothDataFilterInit {
   explicit BluetoothManufacturerDataFilterInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit BluetoothManufacturerDataFilterInit(const emlite::Val &val) noexcept;
     BluetoothManufacturerDataFilterInit() noexcept;
     [[nodiscard]] BluetoothManufacturerDataFilterInit clone() const noexcept;
+    /// Getter of the `companyIdentifier` attribute.
     [[nodiscard]] unsigned short companyIdentifier() const;
+    /// Setter of the `companyIdentifier` attribute.
     void companyIdentifier(unsigned short value);
 };
 

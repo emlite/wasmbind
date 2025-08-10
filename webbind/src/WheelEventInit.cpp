@@ -1,14 +1,16 @@
 #include <webbind/WheelEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WheelEventInit::WheelEventInit(Handle h) noexcept : MouseEventInit(emlite::Val::take_ownership(h)) {}
 WheelEventInit WheelEventInit::take_ownership(Handle h) noexcept {
-        return WheelEventInit(h);
-    }
+    return WheelEventInit(h);
+}
+
 WheelEventInit::WheelEventInit(const emlite::Val &val) noexcept: MouseEventInit(val) {}
+
 WheelEventInit::WheelEventInit() noexcept: MouseEventInit(emlite::Val::object()) {}
+
 WheelEventInit WheelEventInit::clone() const noexcept { return *this; }
 
 double WheelEventInit::deltaX() const {

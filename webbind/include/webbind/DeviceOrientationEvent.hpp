@@ -22,16 +22,16 @@ public:
     DeviceOrientationEvent(const jsbind::String& type);
     /// The `new DeviceOrientationEvent(..)` constructor, creating a new DeviceOrientationEvent instance
     DeviceOrientationEvent(const jsbind::String& type, const DeviceOrientationEventInit& eventInitDict);
-    /// Getter of the `alpha` attribute.
+    /// [`DeviceOrientationEvent.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/alpha)
     /// [`DeviceOrientationEvent.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/alpha)
     [[nodiscard]] double alpha() const;
-    /// Getter of the `beta` attribute.
+    /// [`DeviceOrientationEvent.beta`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/beta)
     /// [`DeviceOrientationEvent.beta`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/beta)
     [[nodiscard]] double beta() const;
-    /// Getter of the `gamma` attribute.
+    /// [`DeviceOrientationEvent.gamma`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/gamma)
     /// [`DeviceOrientationEvent.gamma`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/gamma)
     [[nodiscard]] double gamma() const;
-    /// Getter of the `absolute` attribute.
+    /// [`DeviceOrientationEvent.absolute`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/absolute)
     /// [`DeviceOrientationEvent.absolute`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/absolute)
     [[nodiscard]] bool absolute() const;
     /// The requestPermission method.

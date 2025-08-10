@@ -1,14 +1,16 @@
 #include <webbind/IntersectionObserverInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IntersectionObserverInit::IntersectionObserverInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IntersectionObserverInit IntersectionObserverInit::take_ownership(Handle h) noexcept {
-        return IntersectionObserverInit(h);
-    }
+    return IntersectionObserverInit(h);
+}
+
 IntersectionObserverInit::IntersectionObserverInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IntersectionObserverInit::IntersectionObserverInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IntersectionObserverInit IntersectionObserverInit::clone() const noexcept { return *this; }
 
 jsbind::Any IntersectionObserverInit::root() const {

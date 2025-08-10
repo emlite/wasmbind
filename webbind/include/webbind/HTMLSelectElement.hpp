@@ -25,52 +25,52 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSelectElement(..)` constructor, creating a new HTMLSelectElement instance
     HTMLSelectElement();
-    /// Getter of the `autocomplete` attribute.
+    /// [`HTMLSelectElement.autocomplete`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/autocomplete)
     /// [`HTMLSelectElement.autocomplete`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/autocomplete)
     [[nodiscard]] jsbind::String autocomplete() const;
     /// Setter of the `autocomplete` attribute.
     /// [`HTMLSelectElement.autocomplete`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/autocomplete)
     void autocomplete(const jsbind::String& value);
-    /// Getter of the `disabled` attribute.
+    /// [`HTMLSelectElement.disabled`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled)
     /// [`HTMLSelectElement.disabled`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled)
     [[nodiscard]] bool disabled() const;
     /// Setter of the `disabled` attribute.
     /// [`HTMLSelectElement.disabled`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled)
     void disabled(bool value);
-    /// Getter of the `form` attribute.
+    /// [`HTMLSelectElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/form)
     /// [`HTMLSelectElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/form)
     [[nodiscard]] HTMLFormElement form() const;
-    /// Getter of the `multiple` attribute.
+    /// [`HTMLSelectElement.multiple`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/multiple)
     /// [`HTMLSelectElement.multiple`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/multiple)
     [[nodiscard]] bool multiple() const;
     /// Setter of the `multiple` attribute.
     /// [`HTMLSelectElement.multiple`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/multiple)
     void multiple(bool value);
-    /// Getter of the `name` attribute.
+    /// [`HTMLSelectElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/name)
     /// [`HTMLSelectElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.
     /// [`HTMLSelectElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/name)
     void name(const jsbind::String& value);
-    /// Getter of the `required` attribute.
+    /// [`HTMLSelectElement.required`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/required)
     /// [`HTMLSelectElement.required`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/required)
     [[nodiscard]] bool required() const;
     /// Setter of the `required` attribute.
     /// [`HTMLSelectElement.required`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/required)
     void required(bool value);
-    /// Getter of the `size` attribute.
+    /// [`HTMLSelectElement.size`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/size)
     /// [`HTMLSelectElement.size`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/size)
     [[nodiscard]] unsigned long size() const;
     /// Setter of the `size` attribute.
     /// [`HTMLSelectElement.size`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/size)
     void size(unsigned long value);
-    /// Getter of the `type` attribute.
+    /// [`HTMLSelectElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/type)
     /// [`HTMLSelectElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/type)
     [[nodiscard]] jsbind::String type() const;
-    /// Getter of the `options` attribute.
+    /// [`HTMLSelectElement.options`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/options)
     /// [`HTMLSelectElement.options`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/options)
     [[nodiscard]] HTMLOptionsCollection options() const;
-    /// Getter of the `length` attribute.
+    /// [`HTMLSelectElement.length`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/length)
     /// [`HTMLSelectElement.length`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/length)
     [[nodiscard]] unsigned long length() const;
     /// Setter of the `length` attribute.
@@ -91,28 +91,28 @@ public:
     /// The remove method.
     /// [`HTMLSelectElement.remove`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/remove)
     jsbind::Undefined remove(long index);
-    /// Getter of the `selectedOptions` attribute.
+    /// [`HTMLSelectElement.selectedOptions`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions)
     /// [`HTMLSelectElement.selectedOptions`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions)
     [[nodiscard]] HTMLCollection selectedOptions() const;
-    /// Getter of the `selectedIndex` attribute.
+    /// [`HTMLSelectElement.selectedIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex)
     /// [`HTMLSelectElement.selectedIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex)
     [[nodiscard]] long selectedIndex() const;
     /// Setter of the `selectedIndex` attribute.
     /// [`HTMLSelectElement.selectedIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex)
     void selectedIndex(long value);
-    /// Getter of the `value` attribute.
+    /// [`HTMLSelectElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/value)
     /// [`HTMLSelectElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/value)
     [[nodiscard]] jsbind::String value() const;
     /// Setter of the `value` attribute.
     /// [`HTMLSelectElement.value`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/value)
     void value(const jsbind::String& value);
-    /// Getter of the `willValidate` attribute.
+    /// [`HTMLSelectElement.willValidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/willValidate)
     /// [`HTMLSelectElement.willValidate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/willValidate)
     [[nodiscard]] bool willValidate() const;
-    /// Getter of the `validity` attribute.
+    /// [`HTMLSelectElement.validity`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/validity)
     /// [`HTMLSelectElement.validity`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/validity)
     [[nodiscard]] ValidityState validity() const;
-    /// Getter of the `validationMessage` attribute.
+    /// [`HTMLSelectElement.validationMessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/validationMessage)
     /// [`HTMLSelectElement.validationMessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/validationMessage)
     [[nodiscard]] jsbind::String validationMessage() const;
     /// The checkValidity method.
@@ -127,7 +127,7 @@ public:
     /// The showPicker method.
     /// [`HTMLSelectElement.showPicker`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/showPicker)
     jsbind::Undefined showPicker();
-    /// Getter of the `labels` attribute.
+    /// [`HTMLSelectElement.labels`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/labels)
     /// [`HTMLSelectElement.labels`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/labels)
     [[nodiscard]] NodeList labels() const;
 };

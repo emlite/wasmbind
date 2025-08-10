@@ -22,13 +22,13 @@ public:
     CSSParserAtRule(const jsbind::String& name, const jsbind::TypedArray<jsbind::Any>& prelude);
     /// The `new CSSParserAtRule(..)` constructor, creating a new CSSParserAtRule instance
     CSSParserAtRule(const jsbind::String& name, const jsbind::TypedArray<jsbind::Any>& prelude, const jsbind::TypedArray<CSSParserRule>& body);
-    /// Getter of the `name` attribute.
+    /// [`CSSParserAtRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserAtRule/name)
     /// [`CSSParserAtRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserAtRule/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `prelude` attribute.
+    /// [`CSSParserAtRule.prelude`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserAtRule/prelude)
     /// [`CSSParserAtRule.prelude`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserAtRule/prelude)
     [[nodiscard]] jsbind::TypedArray<CSSParserValue> prelude() const;
-    /// Getter of the `body` attribute.
+    /// [`CSSParserAtRule.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserAtRule/body)
     /// [`CSSParserAtRule.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserAtRule/body)
     [[nodiscard]] jsbind::TypedArray<CSSParserRule> body() const;
 };

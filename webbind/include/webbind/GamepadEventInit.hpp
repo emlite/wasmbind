@@ -10,7 +10,6 @@ namespace webbind {
 class Gamepad;
 
 /// Dictionary type GamepadEventInit
-/// [`GamepadEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadEventInit)
 class GamepadEventInit : public EventInit {
   explicit GamepadEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit GamepadEventInit(const emlite::Val &val) noexcept;
     GamepadEventInit() noexcept;
     [[nodiscard]] GamepadEventInit clone() const noexcept;
+    /// Getter of the `gamepad` attribute.
     [[nodiscard]] Gamepad gamepad() const;
+    /// Setter of the `gamepad` attribute.
     void gamepad(const Gamepad& value);
 };
 

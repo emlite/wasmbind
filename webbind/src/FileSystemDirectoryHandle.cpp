@@ -8,11 +8,15 @@
 namespace webbind {
 
 FileSystemDirectoryHandle FileSystemDirectoryHandle::take_ownership(Handle h) noexcept {
-        return FileSystemDirectoryHandle(h);
-    }
+    return FileSystemDirectoryHandle(h);
+}
+
 FileSystemDirectoryHandle FileSystemDirectoryHandle::clone() const noexcept { return *this; }
+
 emlite::Val FileSystemDirectoryHandle::instance() noexcept { return emlite::Val::global("FileSystemDirectoryHandle"); }
+
 FileSystemDirectoryHandle::FileSystemDirectoryHandle(Handle h) noexcept : FileSystemHandle(emlite::Val::take_ownership(h)) {}
+
 FileSystemDirectoryHandle::FileSystemDirectoryHandle(const emlite::Val &val) noexcept: FileSystemHandle(val) {}
 
 jsbind::Promise<FileSystemFileHandle> FileSystemDirectoryHandle::getFileHandle(const jsbind::String& name) {

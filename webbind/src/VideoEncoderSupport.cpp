@@ -1,15 +1,17 @@
 #include <webbind/VideoEncoderSupport.hpp>
 #include <webbind/VideoEncoderConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoEncoderSupport::VideoEncoderSupport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoEncoderSupport VideoEncoderSupport::take_ownership(Handle h) noexcept {
-        return VideoEncoderSupport(h);
-    }
+    return VideoEncoderSupport(h);
+}
+
 VideoEncoderSupport::VideoEncoderSupport(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoEncoderSupport::VideoEncoderSupport() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoEncoderSupport VideoEncoderSupport::clone() const noexcept { return *this; }
 
 bool VideoEncoderSupport::supported() const {

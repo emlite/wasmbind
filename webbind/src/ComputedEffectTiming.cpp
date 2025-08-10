@@ -1,14 +1,16 @@
 #include <webbind/ComputedEffectTiming.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ComputedEffectTiming::ComputedEffectTiming(Handle h) noexcept : EffectTiming(emlite::Val::take_ownership(h)) {}
 ComputedEffectTiming ComputedEffectTiming::take_ownership(Handle h) noexcept {
-        return ComputedEffectTiming(h);
-    }
+    return ComputedEffectTiming(h);
+}
+
 ComputedEffectTiming::ComputedEffectTiming(const emlite::Val &val) noexcept: EffectTiming(val) {}
+
 ComputedEffectTiming::ComputedEffectTiming() noexcept: EffectTiming(emlite::Val::object()) {}
+
 ComputedEffectTiming ComputedEffectTiming::clone() const noexcept { return *this; }
 
 double ComputedEffectTiming::progress() const {

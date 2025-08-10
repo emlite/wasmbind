@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityCredentialErrorInit
-/// [`IdentityCredentialErrorInit`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialErrorInit)
 class IdentityCredentialErrorInit : public emlite::Val {
   explicit IdentityCredentialErrorInit(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit IdentityCredentialErrorInit(const emlite::Val &val) noexcept;
     IdentityCredentialErrorInit() noexcept;
     [[nodiscard]] IdentityCredentialErrorInit clone() const noexcept;
+    /// Getter of the `error` attribute.
     [[nodiscard]] jsbind::String error() const;
+    /// Setter of the `error` attribute.
     void error(const jsbind::String& value);
+    /// Getter of the `url` attribute.
     [[nodiscard]] jsbind::String url() const;
+    /// Setter of the `url` attribute.
     void url(const jsbind::String& value);
 };
 

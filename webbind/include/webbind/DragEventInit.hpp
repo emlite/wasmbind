@@ -10,7 +10,6 @@ namespace webbind {
 class DataTransfer;
 
 /// Dictionary type DragEventInit
-/// [`DragEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/DragEventInit)
 class DragEventInit : public MouseEventInit {
   explicit DragEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit DragEventInit(const emlite::Val &val) noexcept;
     DragEventInit() noexcept;
     [[nodiscard]] DragEventInit clone() const noexcept;
+    /// Getter of the `dataTransfer` attribute.
     [[nodiscard]] DataTransfer dataTransfer() const;
+    /// Setter of the `dataTransfer` attribute.
     void dataTransfer(const DataTransfer& value);
 };
 

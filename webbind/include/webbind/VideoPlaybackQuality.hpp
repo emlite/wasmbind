@@ -15,16 +15,16 @@ public:
     static VideoPlaybackQuality take_ownership(Handle h) noexcept;
     [[nodiscard]] VideoPlaybackQuality clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `creationTime` attribute.
+    /// [`VideoPlaybackQuality.creationTime`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/creationTime)
     /// [`VideoPlaybackQuality.creationTime`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/creationTime)
     [[nodiscard]] jsbind::Any creationTime() const;
-    /// Getter of the `droppedVideoFrames` attribute.
+    /// [`VideoPlaybackQuality.droppedVideoFrames`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/droppedVideoFrames)
     /// [`VideoPlaybackQuality.droppedVideoFrames`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/droppedVideoFrames)
     [[nodiscard]] unsigned long droppedVideoFrames() const;
-    /// Getter of the `totalVideoFrames` attribute.
+    /// [`VideoPlaybackQuality.totalVideoFrames`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalVideoFrames)
     /// [`VideoPlaybackQuality.totalVideoFrames`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalVideoFrames)
     [[nodiscard]] unsigned long totalVideoFrames() const;
-    /// Getter of the `corruptedVideoFrames` attribute.
+    /// [`VideoPlaybackQuality.corruptedVideoFrames`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/corruptedVideoFrames)
     /// [`VideoPlaybackQuality.corruptedVideoFrames`](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/corruptedVideoFrames)
     [[nodiscard]] unsigned long corruptedVideoFrames() const;
 };

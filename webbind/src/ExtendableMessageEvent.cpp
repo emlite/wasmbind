@@ -5,11 +5,15 @@
 namespace webbind {
 
 ExtendableMessageEvent ExtendableMessageEvent::take_ownership(Handle h) noexcept {
-        return ExtendableMessageEvent(h);
-    }
+    return ExtendableMessageEvent(h);
+}
+
 ExtendableMessageEvent ExtendableMessageEvent::clone() const noexcept { return *this; }
+
 emlite::Val ExtendableMessageEvent::instance() noexcept { return emlite::Val::global("ExtendableMessageEvent"); }
+
 ExtendableMessageEvent::ExtendableMessageEvent(Handle h) noexcept : ExtendableEvent(emlite::Val::take_ownership(h)) {}
+
 ExtendableMessageEvent::ExtendableMessageEvent(const emlite::Val &val) noexcept: ExtendableEvent(val) {}
 
 ExtendableMessageEvent::ExtendableMessageEvent(const jsbind::String& type) : ExtendableEvent(emlite::Val::global("ExtendableMessageEvent").new_(type)) {}

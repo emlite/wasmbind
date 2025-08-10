@@ -8,11 +8,15 @@
 namespace webbind {
 
 MediaStreamTrack MediaStreamTrack::take_ownership(Handle h) noexcept {
-        return MediaStreamTrack(h);
-    }
+    return MediaStreamTrack(h);
+}
+
 MediaStreamTrack MediaStreamTrack::clone() const noexcept { return *this; }
+
 emlite::Val MediaStreamTrack::instance() noexcept { return emlite::Val::global("MediaStreamTrack"); }
+
 MediaStreamTrack::MediaStreamTrack(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 MediaStreamTrack::MediaStreamTrack(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::String MediaStreamTrack::kind() const {

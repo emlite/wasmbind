@@ -5,11 +5,15 @@
 namespace webbind {
 
 Worker Worker::take_ownership(Handle h) noexcept {
-        return Worker(h);
-    }
+    return Worker(h);
+}
+
 Worker Worker::clone() const noexcept { return *this; }
+
 emlite::Val Worker::instance() noexcept { return emlite::Val::global("Worker"); }
+
 Worker::Worker(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 Worker::Worker(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 Worker::Worker(const jsbind::Any& scriptURL) : EventTarget(emlite::Val::global("Worker").new_(scriptURL)) {}

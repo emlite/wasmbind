@@ -4,11 +4,15 @@
 namespace webbind {
 
 PortalHost PortalHost::take_ownership(Handle h) noexcept {
-        return PortalHost(h);
-    }
+    return PortalHost(h);
+}
+
 PortalHost PortalHost::clone() const noexcept { return *this; }
+
 emlite::Val PortalHost::instance() noexcept { return emlite::Val::global("PortalHost"); }
+
 PortalHost::PortalHost(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 PortalHost::PortalHost(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Undefined PortalHost::postMessage(const jsbind::Any& message) {

@@ -1,14 +1,16 @@
 #include <webbind/AesGcmParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AesGcmParams::AesGcmParams(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 AesGcmParams AesGcmParams::take_ownership(Handle h) noexcept {
-        return AesGcmParams(h);
-    }
+    return AesGcmParams(h);
+}
+
 AesGcmParams::AesGcmParams(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 AesGcmParams::AesGcmParams() noexcept: Algorithm(emlite::Val::object()) {}
+
 AesGcmParams AesGcmParams::clone() const noexcept { return *this; }
 
 jsbind::Any AesGcmParams::iv() const {

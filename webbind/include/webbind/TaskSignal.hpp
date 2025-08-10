@@ -26,10 +26,10 @@ public:
     /// The any method.
     /// [`TaskSignal.any`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal/any)
     static TaskSignal any(const jsbind::TypedArray<AbortSignal>& signals, const TaskSignalAnyInit& init);
-    /// Getter of the `priority` attribute.
+    /// [`TaskSignal.priority`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal/priority)
     /// [`TaskSignal.priority`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal/priority)
     [[nodiscard]] TaskPriority priority() const;
-    /// Getter of the `onprioritychange` attribute.
+    /// [`TaskSignal.onprioritychange`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal/onprioritychange)
     /// [`TaskSignal.onprioritychange`](https://developer.mozilla.org/en-US/docs/Web/API/TaskSignal/onprioritychange)
     [[nodiscard]] jsbind::Any onprioritychange() const;
     /// Setter of the `onprioritychange` attribute.

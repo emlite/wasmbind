@@ -7,11 +7,15 @@
 namespace webbind {
 
 ImageDecoder ImageDecoder::take_ownership(Handle h) noexcept {
-        return ImageDecoder(h);
-    }
+    return ImageDecoder(h);
+}
+
 ImageDecoder ImageDecoder::clone() const noexcept { return *this; }
+
 emlite::Val ImageDecoder::instance() noexcept { return emlite::Val::global("ImageDecoder"); }
+
 ImageDecoder::ImageDecoder(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ImageDecoder::ImageDecoder(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 ImageDecoder::ImageDecoder(const ImageDecoderInit& init) : emlite::Val(emlite::Val::global("ImageDecoder").new_(init)) {}

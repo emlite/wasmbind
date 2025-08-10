@@ -2,15 +2,17 @@
 #include <webbind/XRReferenceSpace.hpp>
 #include <webbind/XRRigidTransform.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRReferenceSpaceEventInit::XRReferenceSpaceEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 XRReferenceSpaceEventInit XRReferenceSpaceEventInit::take_ownership(Handle h) noexcept {
-        return XRReferenceSpaceEventInit(h);
-    }
+    return XRReferenceSpaceEventInit(h);
+}
+
 XRReferenceSpaceEventInit::XRReferenceSpaceEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 XRReferenceSpaceEventInit::XRReferenceSpaceEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 XRReferenceSpaceEventInit XRReferenceSpaceEventInit::clone() const noexcept { return *this; }
 
 XRReferenceSpace XRReferenceSpaceEventInit::referenceSpace() const {

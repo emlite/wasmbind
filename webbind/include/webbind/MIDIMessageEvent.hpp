@@ -21,7 +21,7 @@ public:
     MIDIMessageEvent(const jsbind::String& type);
     /// The `new MIDIMessageEvent(..)` constructor, creating a new MIDIMessageEvent instance
     MIDIMessageEvent(const jsbind::String& type, const MIDIMessageEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`MIDIMessageEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEvent/data)
     /// [`MIDIMessageEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEvent/data)
     [[nodiscard]] jsbind::Uint8Array data() const;
 };

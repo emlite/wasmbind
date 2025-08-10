@@ -17,13 +17,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCIdentityAssertion(..)` constructor, creating a new RTCIdentityAssertion instance
     RTCIdentityAssertion(const jsbind::String& idp, const jsbind::String& name);
-    /// Getter of the `idp` attribute.
+    /// [`RTCIdentityAssertion.idp`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityAssertion/idp)
     /// [`RTCIdentityAssertion.idp`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityAssertion/idp)
     [[nodiscard]] jsbind::String idp() const;
     /// Setter of the `idp` attribute.
     /// [`RTCIdentityAssertion.idp`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityAssertion/idp)
     void idp(const jsbind::String& value);
-    /// Getter of the `name` attribute.
+    /// [`RTCIdentityAssertion.name`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityAssertion/name)
     /// [`RTCIdentityAssertion.name`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityAssertion/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.

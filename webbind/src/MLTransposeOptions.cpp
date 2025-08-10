@@ -1,14 +1,16 @@
 #include <webbind/MLTransposeOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLTransposeOptions::MLTransposeOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLTransposeOptions MLTransposeOptions::take_ownership(Handle h) noexcept {
-        return MLTransposeOptions(h);
-    }
+    return MLTransposeOptions(h);
+}
+
 MLTransposeOptions::MLTransposeOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLTransposeOptions::MLTransposeOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLTransposeOptions MLTransposeOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<unsigned long> MLTransposeOptions::permutation() const {

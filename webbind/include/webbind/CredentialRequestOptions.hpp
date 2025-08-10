@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CredentialRequestOptions
-/// [`CredentialRequestOptions`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialRequestOptions)
 class CredentialRequestOptions : public emlite::Val {
   explicit CredentialRequestOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit CredentialRequestOptions(const emlite::Val &val) noexcept;
     CredentialRequestOptions() noexcept;
     [[nodiscard]] CredentialRequestOptions clone() const noexcept;
+    /// Getter of the `publicKey` attribute.
     [[nodiscard]] PublicKeyCredentialRequestOptions publicKey() const;
+    /// Setter of the `publicKey` attribute.
     void publicKey(const PublicKeyCredentialRequestOptions& value);
 };
 

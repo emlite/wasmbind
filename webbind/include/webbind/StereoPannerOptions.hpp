@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type StereoPannerOptions
-/// [`StereoPannerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerOptions)
 class StereoPannerOptions : public AudioNodeOptions {
   explicit StereoPannerOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit StereoPannerOptions(const emlite::Val &val) noexcept;
     StereoPannerOptions() noexcept;
     [[nodiscard]] StereoPannerOptions clone() const noexcept;
+    /// Getter of the `pan` attribute.
     [[nodiscard]] float pan() const;
+    /// Setter of the `pan` attribute.
     void pan(float value);
 };
 

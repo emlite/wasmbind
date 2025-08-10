@@ -1,14 +1,16 @@
 #include <webbind/IDBDatabaseInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IDBDatabaseInfo::IDBDatabaseInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBDatabaseInfo IDBDatabaseInfo::take_ownership(Handle h) noexcept {
-        return IDBDatabaseInfo(h);
-    }
+    return IDBDatabaseInfo(h);
+}
+
 IDBDatabaseInfo::IDBDatabaseInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IDBDatabaseInfo::IDBDatabaseInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IDBDatabaseInfo IDBDatabaseInfo::clone() const noexcept { return *this; }
 
 jsbind::String IDBDatabaseInfo::name() const {

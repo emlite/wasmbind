@@ -22,7 +22,7 @@ public:
     CaptureActionEvent();
     /// The `new CaptureActionEvent(..)` constructor, creating a new CaptureActionEvent instance
     CaptureActionEvent(const CaptureActionEventInit& init);
-    /// Getter of the `action` attribute.
+    /// [`CaptureActionEvent.action`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureActionEvent/action)
     /// [`CaptureActionEvent.action`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureActionEvent/action)
     [[nodiscard]] CaptureAction action() const;
 };

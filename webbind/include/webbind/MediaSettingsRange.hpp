@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MediaSettingsRange
-/// [`MediaSettingsRange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSettingsRange)
 class MediaSettingsRange : public emlite::Val {
   explicit MediaSettingsRange(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit MediaSettingsRange(const emlite::Val &val) noexcept;
     MediaSettingsRange() noexcept;
     [[nodiscard]] MediaSettingsRange clone() const noexcept;
+    /// Getter of the `max` attribute.
     [[nodiscard]] double max() const;
+    /// Setter of the `max` attribute.
     void max(double value);
+    /// Getter of the `min` attribute.
     [[nodiscard]] double min() const;
+    /// Setter of the `min` attribute.
     void min(double value);
+    /// Getter of the `step` attribute.
     [[nodiscard]] double step() const;
+    /// Setter of the `step` attribute.
     void step(double value);
 };
 

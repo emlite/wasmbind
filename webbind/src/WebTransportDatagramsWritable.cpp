@@ -4,11 +4,15 @@
 namespace webbind {
 
 WebTransportDatagramsWritable WebTransportDatagramsWritable::take_ownership(Handle h) noexcept {
-        return WebTransportDatagramsWritable(h);
-    }
+    return WebTransportDatagramsWritable(h);
+}
+
 WebTransportDatagramsWritable WebTransportDatagramsWritable::clone() const noexcept { return *this; }
+
 emlite::Val WebTransportDatagramsWritable::instance() noexcept { return emlite::Val::global("WebTransportDatagramsWritable"); }
+
 WebTransportDatagramsWritable::WebTransportDatagramsWritable(Handle h) noexcept : WritableStream(emlite::Val::take_ownership(h)) {}
+
 WebTransportDatagramsWritable::WebTransportDatagramsWritable(const emlite::Val &val) noexcept: WritableStream(val) {}
 
 WebTransportSendGroup WebTransportDatagramsWritable::sendGroup() const {

@@ -5,11 +5,15 @@
 namespace webbind {
 
 CSSRule CSSRule::take_ownership(Handle h) noexcept {
-        return CSSRule(h);
-    }
+    return CSSRule(h);
+}
+
 CSSRule CSSRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSRule::instance() noexcept { return emlite::Val::global("CSSRule"); }
+
 CSSRule::CSSRule(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 CSSRule::CSSRule(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String CSSRule::cssText() const {

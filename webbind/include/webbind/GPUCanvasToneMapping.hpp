@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GPUCanvasToneMapping
-/// [`GPUCanvasToneMapping`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasToneMapping)
 class GPUCanvasToneMapping : public emlite::Val {
   explicit GPUCanvasToneMapping(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit GPUCanvasToneMapping(const emlite::Val &val) noexcept;
     GPUCanvasToneMapping() noexcept;
     [[nodiscard]] GPUCanvasToneMapping clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] GPUCanvasToneMappingMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const GPUCanvasToneMappingMode& value);
 };
 

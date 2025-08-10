@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type WatchAdvertisementsOptions
-/// [`WatchAdvertisementsOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WatchAdvertisementsOptions)
 class WatchAdvertisementsOptions : public emlite::Val {
   explicit WatchAdvertisementsOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit WatchAdvertisementsOptions(const emlite::Val &val) noexcept;
     WatchAdvertisementsOptions() noexcept;
     [[nodiscard]] WatchAdvertisementsOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

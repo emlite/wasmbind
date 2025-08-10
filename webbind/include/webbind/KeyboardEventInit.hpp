@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type KeyboardEventInit
-/// [`KeyboardEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEventInit)
 class KeyboardEventInit : public emlite::Val {
   explicit KeyboardEventInit(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit KeyboardEventInit(const emlite::Val &val) noexcept;
     KeyboardEventInit() noexcept;
     [[nodiscard]] KeyboardEventInit clone() const noexcept;
+    /// Getter of the `charCode` attribute.
     [[nodiscard]] unsigned long charCode() const;
+    /// Setter of the `charCode` attribute.
     void charCode(unsigned long value);
+    /// Getter of the `keyCode` attribute.
     [[nodiscard]] unsigned long keyCode() const;
+    /// Setter of the `keyCode` attribute.
     void keyCode(unsigned long value);
 };
 

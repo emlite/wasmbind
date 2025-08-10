@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MLConcatSupportLimits
-/// [`MLConcatSupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLConcatSupportLimits)
 class MLConcatSupportLimits : public emlite::Val {
   explicit MLConcatSupportLimits(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit MLConcatSupportLimits(const emlite::Val &val) noexcept;
     MLConcatSupportLimits() noexcept;
     [[nodiscard]] MLConcatSupportLimits clone() const noexcept;
+    /// Getter of the `inputs` attribute.
     [[nodiscard]] MLTensorLimits inputs() const;
+    /// Setter of the `inputs` attribute.
     void inputs(const MLTensorLimits& value);
+    /// Getter of the `output` attribute.
     [[nodiscard]] MLDataTypeLimits output() const;
+    /// Setter of the `output` attribute.
     void output(const MLDataTypeLimits& value);
 };
 

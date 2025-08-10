@@ -1,14 +1,16 @@
 #include <webbind/PhotoSettings.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PhotoSettings::PhotoSettings(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PhotoSettings PhotoSettings::take_ownership(Handle h) noexcept {
-        return PhotoSettings(h);
-    }
+    return PhotoSettings(h);
+}
+
 PhotoSettings::PhotoSettings(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PhotoSettings::PhotoSettings() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PhotoSettings PhotoSettings::clone() const noexcept { return *this; }
 
 FillLightMode PhotoSettings::fillLightMode() const {

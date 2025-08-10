@@ -4,11 +4,15 @@
 namespace webbind {
 
 SVGLineElement SVGLineElement::take_ownership(Handle h) noexcept {
-        return SVGLineElement(h);
-    }
+    return SVGLineElement(h);
+}
+
 SVGLineElement SVGLineElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGLineElement::instance() noexcept { return emlite::Val::global("SVGLineElement"); }
+
 SVGLineElement::SVGLineElement(Handle h) noexcept : SVGGeometryElement(emlite::Val::take_ownership(h)) {}
+
 SVGLineElement::SVGLineElement(const emlite::Val &val) noexcept: SVGGeometryElement(val) {}
 
 SVGAnimatedLength SVGLineElement::x1() const {

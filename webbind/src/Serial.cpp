@@ -5,11 +5,15 @@
 namespace webbind {
 
 Serial Serial::take_ownership(Handle h) noexcept {
-        return Serial(h);
-    }
+    return Serial(h);
+}
+
 Serial Serial::clone() const noexcept { return *this; }
+
 emlite::Val Serial::instance() noexcept { return emlite::Val::global("Serial"); }
+
 Serial::Serial(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 Serial::Serial(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Any Serial::onconnect() const {

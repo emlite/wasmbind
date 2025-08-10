@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type NDEFMessageInit
-/// [`NDEFMessageInit`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFMessageInit)
 class NDEFMessageInit : public emlite::Val {
   explicit NDEFMessageInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit NDEFMessageInit(const emlite::Val &val) noexcept;
     NDEFMessageInit() noexcept;
     [[nodiscard]] NDEFMessageInit clone() const noexcept;
+    /// Getter of the `records` attribute.
     [[nodiscard]] jsbind::TypedArray<NDEFRecordInit> records() const;
+    /// Setter of the `records` attribute.
     void records(const jsbind::TypedArray<NDEFRecordInit>& value);
 };
 

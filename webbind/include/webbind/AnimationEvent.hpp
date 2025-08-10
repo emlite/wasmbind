@@ -21,13 +21,13 @@ public:
     AnimationEvent(const jsbind::String& type);
     /// The `new AnimationEvent(..)` constructor, creating a new AnimationEvent instance
     AnimationEvent(const jsbind::String& type, const AnimationEventInit& animationEventInitDict);
-    /// Getter of the `animationName` attribute.
+    /// [`AnimationEvent.animationName`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/animationName)
     /// [`AnimationEvent.animationName`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/animationName)
     [[nodiscard]] jsbind::String animationName() const;
-    /// Getter of the `elapsedTime` attribute.
+    /// [`AnimationEvent.elapsedTime`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/elapsedTime)
     /// [`AnimationEvent.elapsedTime`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/elapsedTime)
     [[nodiscard]] double elapsedTime() const;
-    /// Getter of the `pseudoElement` attribute.
+    /// [`AnimationEvent.pseudoElement`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/pseudoElement)
     /// [`AnimationEvent.pseudoElement`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/pseudoElement)
     [[nodiscard]] jsbind::String pseudoElement() const;
 };

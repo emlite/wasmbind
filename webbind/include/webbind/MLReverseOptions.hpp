@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLReverseOptions
-/// [`MLReverseOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLReverseOptions)
 class MLReverseOptions : public MLOperatorOptions {
   explicit MLReverseOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLReverseOptions(const emlite::Val &val) noexcept;
     MLReverseOptions() noexcept;
     [[nodiscard]] MLReverseOptions clone() const noexcept;
+    /// Getter of the `axes` attribute.
     [[nodiscard]] jsbind::TypedArray<unsigned long> axes() const;
+    /// Setter of the `axes` attribute.
     void axes(jsbind::TypedArray<unsigned long> value);
 };
 

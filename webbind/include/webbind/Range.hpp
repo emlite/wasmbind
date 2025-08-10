@@ -24,7 +24,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Range(..)` constructor, creating a new Range instance
     Range();
-    /// Getter of the `commonAncestorContainer` attribute.
+    /// [`Range.commonAncestorContainer`](https://developer.mozilla.org/en-US/docs/Web/API/Range/commonAncestorContainer)
     /// [`Range.commonAncestorContainer`](https://developer.mozilla.org/en-US/docs/Web/API/Range/commonAncestorContainer)
     [[nodiscard]] Node commonAncestorContainer() const;
     /// The setStart method.

@@ -1,14 +1,16 @@
 #include <webbind/TableDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TableDescriptor::TableDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TableDescriptor TableDescriptor::take_ownership(Handle h) noexcept {
-        return TableDescriptor(h);
-    }
+    return TableDescriptor(h);
+}
+
 TableDescriptor::TableDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 TableDescriptor::TableDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
+
 TableDescriptor TableDescriptor::clone() const noexcept { return *this; }
 
 TableKind TableDescriptor::element() const {

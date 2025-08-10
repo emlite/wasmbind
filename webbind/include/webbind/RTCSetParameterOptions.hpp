@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCSetParameterOptions
-/// [`RTCSetParameterOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSetParameterOptions)
 class RTCSetParameterOptions : public emlite::Val {
   explicit RTCSetParameterOptions(Handle h) noexcept;
 public:

@@ -1,14 +1,16 @@
 #include <webbind/MediaRecorderOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaRecorderOptions::MediaRecorderOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaRecorderOptions MediaRecorderOptions::take_ownership(Handle h) noexcept {
-        return MediaRecorderOptions(h);
-    }
+    return MediaRecorderOptions(h);
+}
+
 MediaRecorderOptions::MediaRecorderOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaRecorderOptions::MediaRecorderOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaRecorderOptions MediaRecorderOptions::clone() const noexcept { return *this; }
 
 jsbind::String MediaRecorderOptions::mimeType() const {

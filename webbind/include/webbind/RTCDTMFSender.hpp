@@ -25,16 +25,16 @@ public:
     /// The insertDTMF method.
     /// [`RTCDTMFSender.insertDTMF`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/insertDTMF)
     jsbind::Undefined insertDTMF(const jsbind::String& tones, unsigned long duration, unsigned long interToneGap);
-    /// Getter of the `ontonechange` attribute.
+    /// [`RTCDTMFSender.ontonechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/ontonechange)
     /// [`RTCDTMFSender.ontonechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/ontonechange)
     [[nodiscard]] jsbind::Any ontonechange() const;
     /// Setter of the `ontonechange` attribute.
     /// [`RTCDTMFSender.ontonechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/ontonechange)
     void ontonechange(const jsbind::Any& value);
-    /// Getter of the `canInsertDTMF` attribute.
+    /// [`RTCDTMFSender.canInsertDTMF`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/canInsertDTMF)
     /// [`RTCDTMFSender.canInsertDTMF`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/canInsertDTMF)
     [[nodiscard]] bool canInsertDTMF() const;
-    /// Getter of the `toneBuffer` attribute.
+    /// [`RTCDTMFSender.toneBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/toneBuffer)
     /// [`RTCDTMFSender.toneBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/toneBuffer)
     [[nodiscard]] jsbind::String toneBuffer() const;
 };

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FilePickerAcceptType
-/// [`FilePickerAcceptType`](https://developer.mozilla.org/en-US/docs/Web/API/FilePickerAcceptType)
 class FilePickerAcceptType : public emlite::Val {
   explicit FilePickerAcceptType(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit FilePickerAcceptType(const emlite::Val &val) noexcept;
     FilePickerAcceptType() noexcept;
     [[nodiscard]] FilePickerAcceptType clone() const noexcept;
+    /// Getter of the `description` attribute.
     [[nodiscard]] jsbind::String description() const;
+    /// Setter of the `description` attribute.
     void description(const jsbind::String& value);
+    /// Getter of the `accept` attribute.
     [[nodiscard]] jsbind::Record<jsbind::String, jsbind::Any> accept() const;
+    /// Setter of the `accept` attribute.
     void accept(const jsbind::Record<jsbind::String, jsbind::Any>& value);
 };
 

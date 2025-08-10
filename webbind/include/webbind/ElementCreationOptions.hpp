@@ -9,7 +9,6 @@ namespace webbind {
 class CustomElementRegistry;
 
 /// Dictionary type ElementCreationOptions
-/// [`ElementCreationOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ElementCreationOptions)
 class ElementCreationOptions : public emlite::Val {
   explicit ElementCreationOptions(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit ElementCreationOptions(const emlite::Val &val) noexcept;
     ElementCreationOptions() noexcept;
     [[nodiscard]] ElementCreationOptions clone() const noexcept;
+    /// Getter of the `customElementRegistry` attribute.
     [[nodiscard]] CustomElementRegistry customElementRegistry() const;
+    /// Setter of the `customElementRegistry` attribute.
     void customElementRegistry(const CustomElementRegistry& value);
+    /// Getter of the `is` attribute.
     [[nodiscard]] jsbind::String is() const;
+    /// Setter of the `is` attribute.
     void is(const jsbind::String& value);
 };
 

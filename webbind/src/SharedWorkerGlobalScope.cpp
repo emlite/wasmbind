@@ -3,11 +3,15 @@
 namespace webbind {
 
 SharedWorkerGlobalScope SharedWorkerGlobalScope::take_ownership(Handle h) noexcept {
-        return SharedWorkerGlobalScope(h);
-    }
+    return SharedWorkerGlobalScope(h);
+}
+
 SharedWorkerGlobalScope SharedWorkerGlobalScope::clone() const noexcept { return *this; }
+
 emlite::Val SharedWorkerGlobalScope::instance() noexcept { return emlite::Val::global("SharedWorkerGlobalScope"); }
+
 SharedWorkerGlobalScope::SharedWorkerGlobalScope(Handle h) noexcept : WorkerGlobalScope(emlite::Val::take_ownership(h)) {}
+
 SharedWorkerGlobalScope::SharedWorkerGlobalScope(const emlite::Val &val) noexcept: WorkerGlobalScope(val) {}
 
 jsbind::String SharedWorkerGlobalScope::name() const {

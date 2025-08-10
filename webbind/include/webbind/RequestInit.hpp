@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RequestInit
-/// [`RequestInit`](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit)
 class RequestInit : public emlite::Val {
   explicit RequestInit(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit RequestInit(const emlite::Val &val) noexcept;
     RequestInit() noexcept;
     [[nodiscard]] RequestInit clone() const noexcept;
+    /// Getter of the `adAuctionHeaders` attribute.
     [[nodiscard]] bool adAuctionHeaders() const;
+    /// Setter of the `adAuctionHeaders` attribute.
     void adAuctionHeaders(bool value);
 };
 

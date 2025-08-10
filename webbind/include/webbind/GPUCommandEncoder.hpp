@@ -68,7 +68,7 @@ public:
     /// The finish method.
     /// [`GPUCommandEncoder.finish`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/finish)
     GPUCommandBuffer finish(const GPUCommandBufferDescriptor& descriptor);
-    /// Getter of the `label` attribute.
+    /// [`GPUCommandEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/label)
     /// [`GPUCommandEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

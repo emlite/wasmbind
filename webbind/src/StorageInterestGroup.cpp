@@ -1,14 +1,16 @@
 #include <webbind/StorageInterestGroup.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StorageInterestGroup::StorageInterestGroup(Handle h) noexcept : AuctionAdInterestGroup(emlite::Val::take_ownership(h)) {}
 StorageInterestGroup StorageInterestGroup::take_ownership(Handle h) noexcept {
-        return StorageInterestGroup(h);
-    }
+    return StorageInterestGroup(h);
+}
+
 StorageInterestGroup::StorageInterestGroup(const emlite::Val &val) noexcept: AuctionAdInterestGroup(val) {}
+
 StorageInterestGroup::StorageInterestGroup() noexcept: AuctionAdInterestGroup(emlite::Val::object()) {}
+
 StorageInterestGroup StorageInterestGroup::clone() const noexcept { return *this; }
 
 long long StorageInterestGroup::joinCount() const {

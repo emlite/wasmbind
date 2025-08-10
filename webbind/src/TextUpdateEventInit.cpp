@@ -1,14 +1,16 @@
 #include <webbind/TextUpdateEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TextUpdateEventInit::TextUpdateEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 TextUpdateEventInit TextUpdateEventInit::take_ownership(Handle h) noexcept {
-        return TextUpdateEventInit(h);
-    }
+    return TextUpdateEventInit(h);
+}
+
 TextUpdateEventInit::TextUpdateEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 TextUpdateEventInit::TextUpdateEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 TextUpdateEventInit TextUpdateEventInit::clone() const noexcept { return *this; }
 
 unsigned long TextUpdateEventInit::updateRangeStart() const {

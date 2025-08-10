@@ -9,11 +9,15 @@
 namespace webbind {
 
 MLContext MLContext::take_ownership(Handle h) noexcept {
-        return MLContext(h);
-    }
+    return MLContext(h);
+}
+
 MLContext MLContext::clone() const noexcept { return *this; }
+
 emlite::Val MLContext::instance() noexcept { return emlite::Val::global("MLContext"); }
+
 MLContext::MLContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 MLContext::MLContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined MLContext::dispatch(const MLGraph& graph, const jsbind::Any& inputs, const jsbind::Any& outputs) {

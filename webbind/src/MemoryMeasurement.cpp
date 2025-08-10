@@ -1,15 +1,17 @@
 #include <webbind/MemoryMeasurement.hpp>
 #include <webbind/MemoryBreakdownEntry.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MemoryMeasurement::MemoryMeasurement(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MemoryMeasurement MemoryMeasurement::take_ownership(Handle h) noexcept {
-        return MemoryMeasurement(h);
-    }
+    return MemoryMeasurement(h);
+}
+
 MemoryMeasurement::MemoryMeasurement(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MemoryMeasurement::MemoryMeasurement() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MemoryMeasurement MemoryMeasurement::clone() const noexcept { return *this; }
 
 long long MemoryMeasurement::bytes() const {

@@ -10,7 +10,6 @@ namespace webbind {
 class ViewTransition;
 
 /// Dictionary type PageRevealEventInit
-/// [`PageRevealEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEventInit)
 class PageRevealEventInit : public EventInit {
   explicit PageRevealEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit PageRevealEventInit(const emlite::Val &val) noexcept;
     PageRevealEventInit() noexcept;
     [[nodiscard]] PageRevealEventInit clone() const noexcept;
+    /// Getter of the `viewTransition` attribute.
     [[nodiscard]] ViewTransition viewTransition() const;
+    /// Setter of the `viewTransition` attribute.
     void viewTransition(const ViewTransition& value);
 };
 

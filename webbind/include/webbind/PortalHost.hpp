@@ -23,13 +23,13 @@ public:
     /// The postMessage method.
     /// [`PortalHost.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
-    /// Getter of the `onmessage` attribute.
+    /// [`PortalHost.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost/onmessage)
     /// [`PortalHost.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.
     /// [`PortalHost.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost/onmessage)
     void onmessage(const jsbind::Any& value);
-    /// Getter of the `onmessageerror` attribute.
+    /// [`PortalHost.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost/onmessageerror)
     /// [`PortalHost.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/PortalHost/onmessageerror)
     [[nodiscard]] jsbind::Any onmessageerror() const;
     /// Setter of the `onmessageerror` attribute.

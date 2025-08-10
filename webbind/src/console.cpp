@@ -1,7 +1,5 @@
 #include <webbind/console.hpp>
 
-using emlite::Val;
-
 namespace webbind {
 
 namespace console {

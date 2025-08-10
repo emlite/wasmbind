@@ -18,16 +18,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ManagedMediaSource(..)` constructor, creating a new ManagedMediaSource instance
     ManagedMediaSource();
-    /// Getter of the `streaming` attribute.
+    /// [`ManagedMediaSource.streaming`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/streaming)
     /// [`ManagedMediaSource.streaming`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/streaming)
     [[nodiscard]] bool streaming() const;
-    /// Getter of the `onstartstreaming` attribute.
+    /// [`ManagedMediaSource.onstartstreaming`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/onstartstreaming)
     /// [`ManagedMediaSource.onstartstreaming`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/onstartstreaming)
     [[nodiscard]] jsbind::Any onstartstreaming() const;
     /// Setter of the `onstartstreaming` attribute.
     /// [`ManagedMediaSource.onstartstreaming`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/onstartstreaming)
     void onstartstreaming(const jsbind::Any& value);
-    /// Getter of the `onendstreaming` attribute.
+    /// [`ManagedMediaSource.onendstreaming`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/onendstreaming)
     /// [`ManagedMediaSource.onendstreaming`](https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/onendstreaming)
     [[nodiscard]] jsbind::Any onendstreaming() const;
     /// Setter of the `onendstreaming` attribute.

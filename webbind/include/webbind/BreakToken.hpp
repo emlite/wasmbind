@@ -17,10 +17,10 @@ public:
     static BreakToken take_ownership(Handle h) noexcept;
     [[nodiscard]] BreakToken clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `childBreakTokens` attribute.
+    /// [`BreakToken.childBreakTokens`](https://developer.mozilla.org/en-US/docs/Web/API/BreakToken/childBreakTokens)
     /// [`BreakToken.childBreakTokens`](https://developer.mozilla.org/en-US/docs/Web/API/BreakToken/childBreakTokens)
     [[nodiscard]] jsbind::TypedArray<ChildBreakToken> childBreakTokens() const;
-    /// Getter of the `data` attribute.
+    /// [`BreakToken.data`](https://developer.mozilla.org/en-US/docs/Web/API/BreakToken/data)
     /// [`BreakToken.data`](https://developer.mozilla.org/en-US/docs/Web/API/BreakToken/data)
     [[nodiscard]] jsbind::Any data() const;
 };

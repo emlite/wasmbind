@@ -6,11 +6,15 @@
 namespace webbind {
 
 StereoPannerNode StereoPannerNode::take_ownership(Handle h) noexcept {
-        return StereoPannerNode(h);
-    }
+    return StereoPannerNode(h);
+}
+
 StereoPannerNode StereoPannerNode::clone() const noexcept { return *this; }
+
 emlite::Val StereoPannerNode::instance() noexcept { return emlite::Val::global("StereoPannerNode"); }
+
 StereoPannerNode::StereoPannerNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
+
 StereoPannerNode::StereoPannerNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 StereoPannerNode::StereoPannerNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("StereoPannerNode").new_(context)) {}

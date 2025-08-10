@@ -21,7 +21,7 @@ public:
     static LayoutChild take_ownership(Handle h) noexcept;
     [[nodiscard]] LayoutChild clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `styleMap` attribute.
+    /// [`LayoutChild.styleMap`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutChild/styleMap)
     /// [`LayoutChild.styleMap`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutChild/styleMap)
     [[nodiscard]] StylePropertyMapReadOnly styleMap() const;
     /// The intrinsicSizes method.

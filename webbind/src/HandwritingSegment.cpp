@@ -1,15 +1,17 @@
 #include <webbind/HandwritingSegment.hpp>
 #include <webbind/HandwritingDrawingSegment.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HandwritingSegment::HandwritingSegment(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HandwritingSegment HandwritingSegment::take_ownership(Handle h) noexcept {
-        return HandwritingSegment(h);
-    }
+    return HandwritingSegment(h);
+}
+
 HandwritingSegment::HandwritingSegment(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HandwritingSegment::HandwritingSegment() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HandwritingSegment HandwritingSegment::clone() const noexcept { return *this; }
 
 jsbind::String HandwritingSegment::grapheme() const {

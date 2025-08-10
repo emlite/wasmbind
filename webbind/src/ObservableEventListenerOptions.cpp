@@ -1,14 +1,16 @@
 #include <webbind/ObservableEventListenerOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ObservableEventListenerOptions::ObservableEventListenerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ObservableEventListenerOptions ObservableEventListenerOptions::take_ownership(Handle h) noexcept {
-        return ObservableEventListenerOptions(h);
-    }
+    return ObservableEventListenerOptions(h);
+}
+
 ObservableEventListenerOptions::ObservableEventListenerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ObservableEventListenerOptions::ObservableEventListenerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ObservableEventListenerOptions ObservableEventListenerOptions::clone() const noexcept { return *this; }
 
 bool ObservableEventListenerOptions::capture() const {

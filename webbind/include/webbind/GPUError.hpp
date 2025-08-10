@@ -15,7 +15,7 @@ public:
     static GPUError take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUError clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `message` attribute.
+    /// [`GPUError.message`](https://developer.mozilla.org/en-US/docs/Web/API/GPUError/message)
     /// [`GPUError.message`](https://developer.mozilla.org/en-US/docs/Web/API/GPUError/message)
     [[nodiscard]] jsbind::String message() const;
 };

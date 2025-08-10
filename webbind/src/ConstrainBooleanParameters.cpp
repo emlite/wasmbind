@@ -1,14 +1,16 @@
 #include <webbind/ConstrainBooleanParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ConstrainBooleanParameters::ConstrainBooleanParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ConstrainBooleanParameters ConstrainBooleanParameters::take_ownership(Handle h) noexcept {
-        return ConstrainBooleanParameters(h);
-    }
+    return ConstrainBooleanParameters(h);
+}
+
 ConstrainBooleanParameters::ConstrainBooleanParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ConstrainBooleanParameters::ConstrainBooleanParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ConstrainBooleanParameters ConstrainBooleanParameters::clone() const noexcept { return *this; }
 
 bool ConstrainBooleanParameters::exact() const {

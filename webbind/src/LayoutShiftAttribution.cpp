@@ -5,11 +5,15 @@
 namespace webbind {
 
 LayoutShiftAttribution LayoutShiftAttribution::take_ownership(Handle h) noexcept {
-        return LayoutShiftAttribution(h);
-    }
+    return LayoutShiftAttribution(h);
+}
+
 LayoutShiftAttribution LayoutShiftAttribution::clone() const noexcept { return *this; }
+
 emlite::Val LayoutShiftAttribution::instance() noexcept { return emlite::Val::global("LayoutShiftAttribution"); }
+
 LayoutShiftAttribution::LayoutShiftAttribution(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 LayoutShiftAttribution::LayoutShiftAttribution(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Node LayoutShiftAttribution::node() const {

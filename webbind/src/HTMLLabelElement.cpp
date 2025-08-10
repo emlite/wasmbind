@@ -4,11 +4,15 @@
 namespace webbind {
 
 HTMLLabelElement HTMLLabelElement::take_ownership(Handle h) noexcept {
-        return HTMLLabelElement(h);
-    }
+    return HTMLLabelElement(h);
+}
+
 HTMLLabelElement HTMLLabelElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLLabelElement::instance() noexcept { return emlite::Val::global("HTMLLabelElement"); }
+
 HTMLLabelElement::HTMLLabelElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLLabelElement::HTMLLabelElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLLabelElement::HTMLLabelElement() : HTMLElement(emlite::Val::global("HTMLLabelElement").new_()) {}

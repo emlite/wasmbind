@@ -26,22 +26,22 @@ public:
     /// The cancelWatchAvailability method.
     /// [`RemotePlayback.cancelWatchAvailability`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/cancelWatchAvailability)
     jsbind::Promise<jsbind::Undefined> cancelWatchAvailability(long id);
-    /// Getter of the `state` attribute.
+    /// [`RemotePlayback.state`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/state)
     /// [`RemotePlayback.state`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/state)
     [[nodiscard]] RemotePlaybackState state() const;
-    /// Getter of the `onconnecting` attribute.
+    /// [`RemotePlayback.onconnecting`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/onconnecting)
     /// [`RemotePlayback.onconnecting`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/onconnecting)
     [[nodiscard]] jsbind::Any onconnecting() const;
     /// Setter of the `onconnecting` attribute.
     /// [`RemotePlayback.onconnecting`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/onconnecting)
     void onconnecting(const jsbind::Any& value);
-    /// Getter of the `onconnect` attribute.
+    /// [`RemotePlayback.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/onconnect)
     /// [`RemotePlayback.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;
     /// Setter of the `onconnect` attribute.
     /// [`RemotePlayback.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/onconnect)
     void onconnect(const jsbind::Any& value);
-    /// Getter of the `ondisconnect` attribute.
+    /// [`RemotePlayback.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/ondisconnect)
     /// [`RemotePlayback.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback/ondisconnect)
     [[nodiscard]] jsbind::Any ondisconnect() const;
     /// Setter of the `ondisconnect` attribute.

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PublicKeyCredentialParameters
-/// [`PublicKeyCredentialParameters`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialParameters)
 class PublicKeyCredentialParameters : public emlite::Val {
   explicit PublicKeyCredentialParameters(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit PublicKeyCredentialParameters(const emlite::Val &val) noexcept;
     PublicKeyCredentialParameters() noexcept;
     [[nodiscard]] PublicKeyCredentialParameters clone() const noexcept;
+    /// Getter of the `type` attribute.
     [[nodiscard]] jsbind::String type() const;
+    /// Setter of the `type` attribute.
     void type(const jsbind::String& value);
+    /// Getter of the `alg` attribute.
     [[nodiscard]] jsbind::Any alg() const;
+    /// Setter of the `alg` attribute.
     void alg(const jsbind::Any& value);
 };
 

@@ -20,13 +20,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLPortalElement(..)` constructor, creating a new HTMLPortalElement instance
     HTMLPortalElement();
-    /// Getter of the `src` attribute.
+    /// [`HTMLPortalElement.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/src)
     /// [`HTMLPortalElement.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/src)
     [[nodiscard]] jsbind::String src() const;
     /// Setter of the `src` attribute.
     /// [`HTMLPortalElement.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/src)
     void src(const jsbind::String& value);
-    /// Getter of the `referrerPolicy` attribute.
+    /// [`HTMLPortalElement.referrerPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/referrerPolicy)
     /// [`HTMLPortalElement.referrerPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/referrerPolicy)
     [[nodiscard]] jsbind::String referrerPolicy() const;
     /// Setter of the `referrerPolicy` attribute.
@@ -44,13 +44,13 @@ public:
     /// The postMessage method.
     /// [`HTMLPortalElement.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
-    /// Getter of the `onmessage` attribute.
+    /// [`HTMLPortalElement.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/onmessage)
     /// [`HTMLPortalElement.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.
     /// [`HTMLPortalElement.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/onmessage)
     void onmessage(const jsbind::Any& value);
-    /// Getter of the `onmessageerror` attribute.
+    /// [`HTMLPortalElement.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/onmessageerror)
     /// [`HTMLPortalElement.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPortalElement/onmessageerror)
     [[nodiscard]] jsbind::Any onmessageerror() const;
     /// Setter of the `onmessageerror` attribute.

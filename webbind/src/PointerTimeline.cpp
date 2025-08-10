@@ -5,11 +5,15 @@
 namespace webbind {
 
 PointerTimeline PointerTimeline::take_ownership(Handle h) noexcept {
-        return PointerTimeline(h);
-    }
+    return PointerTimeline(h);
+}
+
 PointerTimeline PointerTimeline::clone() const noexcept { return *this; }
+
 emlite::Val PointerTimeline::instance() noexcept { return emlite::Val::global("PointerTimeline"); }
+
 PointerTimeline::PointerTimeline(Handle h) noexcept : AnimationTimeline(emlite::Val::take_ownership(h)) {}
+
 PointerTimeline::PointerTimeline(const emlite::Val &val) noexcept: AnimationTimeline(val) {}
 
 PointerTimeline::PointerTimeline() : AnimationTimeline(emlite::Val::global("PointerTimeline").new_()) {}

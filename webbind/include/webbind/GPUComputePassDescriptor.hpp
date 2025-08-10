@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type GPUComputePassDescriptor
-/// [`GPUComputePassDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassDescriptor)
 class GPUComputePassDescriptor : public GPUObjectDescriptorBase {
   explicit GPUComputePassDescriptor(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit GPUComputePassDescriptor(const emlite::Val &val) noexcept;
     GPUComputePassDescriptor() noexcept;
     [[nodiscard]] GPUComputePassDescriptor clone() const noexcept;
+    /// Getter of the `timestampWrites` attribute.
     [[nodiscard]] GPUComputePassTimestampWrites timestampWrites() const;
+    /// Setter of the `timestampWrites` attribute.
     void timestampWrites(const GPUComputePassTimestampWrites& value);
 };
 

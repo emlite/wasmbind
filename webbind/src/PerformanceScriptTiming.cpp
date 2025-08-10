@@ -4,11 +4,15 @@
 namespace webbind {
 
 PerformanceScriptTiming PerformanceScriptTiming::take_ownership(Handle h) noexcept {
-        return PerformanceScriptTiming(h);
-    }
+    return PerformanceScriptTiming(h);
+}
+
 PerformanceScriptTiming PerformanceScriptTiming::clone() const noexcept { return *this; }
+
 emlite::Val PerformanceScriptTiming::instance() noexcept { return emlite::Val::global("PerformanceScriptTiming"); }
+
 PerformanceScriptTiming::PerformanceScriptTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
+
 PerformanceScriptTiming::PerformanceScriptTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 
 jsbind::Any PerformanceScriptTiming::startTime() const {

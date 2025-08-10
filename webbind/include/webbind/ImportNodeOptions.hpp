@@ -9,7 +9,6 @@ namespace webbind {
 class CustomElementRegistry;
 
 /// Dictionary type ImportNodeOptions
-/// [`ImportNodeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ImportNodeOptions)
 class ImportNodeOptions : public emlite::Val {
   explicit ImportNodeOptions(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit ImportNodeOptions(const emlite::Val &val) noexcept;
     ImportNodeOptions() noexcept;
     [[nodiscard]] ImportNodeOptions clone() const noexcept;
+    /// Getter of the `customElementRegistry` attribute.
     [[nodiscard]] CustomElementRegistry customElementRegistry() const;
+    /// Setter of the `customElementRegistry` attribute.
     void customElementRegistry(const CustomElementRegistry& value);
+    /// Getter of the `selfOnly` attribute.
     [[nodiscard]] bool selfOnly() const;
+    /// Setter of the `selfOnly` attribute.
     void selfOnly(bool value);
 };
 

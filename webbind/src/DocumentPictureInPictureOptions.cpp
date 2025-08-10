@@ -1,14 +1,16 @@
 #include <webbind/DocumentPictureInPictureOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DocumentPictureInPictureOptions::DocumentPictureInPictureOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DocumentPictureInPictureOptions DocumentPictureInPictureOptions::take_ownership(Handle h) noexcept {
-        return DocumentPictureInPictureOptions(h);
-    }
+    return DocumentPictureInPictureOptions(h);
+}
+
 DocumentPictureInPictureOptions::DocumentPictureInPictureOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DocumentPictureInPictureOptions::DocumentPictureInPictureOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DocumentPictureInPictureOptions DocumentPictureInPictureOptions::clone() const noexcept { return *this; }
 
 long long DocumentPictureInPictureOptions::width() const {

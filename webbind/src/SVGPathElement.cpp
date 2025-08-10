@@ -7,11 +7,15 @@
 namespace webbind {
 
 SVGPathElement SVGPathElement::take_ownership(Handle h) noexcept {
-        return SVGPathElement(h);
-    }
+    return SVGPathElement(h);
+}
+
 SVGPathElement SVGPathElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGPathElement::instance() noexcept { return emlite::Val::global("SVGPathElement"); }
+
 SVGPathElement::SVGPathElement(Handle h) noexcept : SVGGeometryElement(emlite::Val::take_ownership(h)) {}
+
 SVGPathElement::SVGPathElement(const emlite::Val &val) noexcept: SVGGeometryElement(val) {}
 
 SVGAnimatedNumber SVGPathElement::pathLength() const {

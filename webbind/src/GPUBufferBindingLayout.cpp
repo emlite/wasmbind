@@ -1,14 +1,16 @@
 #include <webbind/GPUBufferBindingLayout.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUBufferBindingLayout::GPUBufferBindingLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUBufferBindingLayout GPUBufferBindingLayout::take_ownership(Handle h) noexcept {
-        return GPUBufferBindingLayout(h);
-    }
+    return GPUBufferBindingLayout(h);
+}
+
 GPUBufferBindingLayout::GPUBufferBindingLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUBufferBindingLayout::GPUBufferBindingLayout() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUBufferBindingLayout GPUBufferBindingLayout::clone() const noexcept { return *this; }
 
 GPUBufferBindingType GPUBufferBindingLayout::type() const {

@@ -20,13 +20,13 @@ public:
     static BluetoothRemoteGATTService take_ownership(Handle h) noexcept;
     [[nodiscard]] BluetoothRemoteGATTService clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `device` attribute.
+    /// [`BluetoothRemoteGATTService.device`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/device)
     /// [`BluetoothRemoteGATTService.device`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/device)
     [[nodiscard]] BluetoothDevice device() const;
-    /// Getter of the `uuid` attribute.
+    /// [`BluetoothRemoteGATTService.uuid`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/uuid)
     /// [`BluetoothRemoteGATTService.uuid`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/uuid)
     [[nodiscard]] jsbind::Any uuid() const;
-    /// Getter of the `isPrimary` attribute.
+    /// [`BluetoothRemoteGATTService.isPrimary`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/isPrimary)
     /// [`BluetoothRemoteGATTService.isPrimary`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/isPrimary)
     [[nodiscard]] bool isPrimary() const;
     /// The getCharacteristic method.
@@ -47,25 +47,25 @@ public:
     /// The getIncludedServices method.
     /// [`BluetoothRemoteGATTService.getIncludedServices`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getIncludedServices)
     jsbind::Promise<jsbind::TypedArray<BluetoothRemoteGATTService>> getIncludedServices(const jsbind::Any& service);
-    /// Getter of the `oncharacteristicvaluechanged` attribute.
+    /// [`BluetoothRemoteGATTService.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/oncharacteristicvaluechanged)
     /// [`BluetoothRemoteGATTService.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/oncharacteristicvaluechanged)
     [[nodiscard]] jsbind::Any oncharacteristicvaluechanged() const;
     /// Setter of the `oncharacteristicvaluechanged` attribute.
     /// [`BluetoothRemoteGATTService.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/oncharacteristicvaluechanged)
     void oncharacteristicvaluechanged(const jsbind::Any& value);
-    /// Getter of the `onserviceadded` attribute.
+    /// [`BluetoothRemoteGATTService.onserviceadded`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onserviceadded)
     /// [`BluetoothRemoteGATTService.onserviceadded`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onserviceadded)
     [[nodiscard]] jsbind::Any onserviceadded() const;
     /// Setter of the `onserviceadded` attribute.
     /// [`BluetoothRemoteGATTService.onserviceadded`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onserviceadded)
     void onserviceadded(const jsbind::Any& value);
-    /// Getter of the `onservicechanged` attribute.
+    /// [`BluetoothRemoteGATTService.onservicechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onservicechanged)
     /// [`BluetoothRemoteGATTService.onservicechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onservicechanged)
     [[nodiscard]] jsbind::Any onservicechanged() const;
     /// Setter of the `onservicechanged` attribute.
     /// [`BluetoothRemoteGATTService.onservicechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onservicechanged)
     void onservicechanged(const jsbind::Any& value);
-    /// Getter of the `onserviceremoved` attribute.
+    /// [`BluetoothRemoteGATTService.onserviceremoved`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onserviceremoved)
     /// [`BluetoothRemoteGATTService.onserviceremoved`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/onserviceremoved)
     [[nodiscard]] jsbind::Any onserviceremoved() const;
     /// Setter of the `onserviceremoved` attribute.

@@ -20,10 +20,10 @@ public:
     FragmentResult();
     /// The `new FragmentResult(..)` constructor, creating a new FragmentResult instance
     FragmentResult(const FragmentResultOptions& options);
-    /// Getter of the `inlineSize` attribute.
+    /// [`FragmentResult.inlineSize`](https://developer.mozilla.org/en-US/docs/Web/API/FragmentResult/inlineSize)
     /// [`FragmentResult.inlineSize`](https://developer.mozilla.org/en-US/docs/Web/API/FragmentResult/inlineSize)
     [[nodiscard]] double inlineSize() const;
-    /// Getter of the `blockSize` attribute.
+    /// [`FragmentResult.blockSize`](https://developer.mozilla.org/en-US/docs/Web/API/FragmentResult/blockSize)
     /// [`FragmentResult.blockSize`](https://developer.mozilla.org/en-US/docs/Web/API/FragmentResult/blockSize)
     [[nodiscard]] double blockSize() const;
 };

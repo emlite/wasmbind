@@ -21,7 +21,7 @@ public:
     static Attribution take_ownership(Handle h) noexcept;
     [[nodiscard]] Attribution clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `aggregationServices` attribute.
+    /// [`Attribution.aggregationServices`](https://developer.mozilla.org/en-US/docs/Web/API/Attribution/aggregationServices)
     /// [`Attribution.aggregationServices`](https://developer.mozilla.org/en-US/docs/Web/API/Attribution/aggregationServices)
     [[nodiscard]] AttributionAggregationServices aggregationServices() const;
     /// The saveImpression method.

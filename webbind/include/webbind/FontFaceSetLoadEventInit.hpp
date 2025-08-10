@@ -10,7 +10,6 @@ namespace webbind {
 class FontFace;
 
 /// Dictionary type FontFaceSetLoadEventInit
-/// [`FontFaceSetLoadEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSetLoadEventInit)
 class FontFaceSetLoadEventInit : public EventInit {
   explicit FontFaceSetLoadEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit FontFaceSetLoadEventInit(const emlite::Val &val) noexcept;
     FontFaceSetLoadEventInit() noexcept;
     [[nodiscard]] FontFaceSetLoadEventInit clone() const noexcept;
+    /// Getter of the `fontfaces` attribute.
     [[nodiscard]] jsbind::TypedArray<FontFace> fontfaces() const;
+    /// Setter of the `fontfaces` attribute.
     void fontfaces(const jsbind::TypedArray<FontFace>& value);
 };
 

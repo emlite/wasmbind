@@ -8,11 +8,15 @@
 namespace webbind {
 
 FontFace FontFace::take_ownership(Handle h) noexcept {
-        return FontFace(h);
-    }
+    return FontFace(h);
+}
+
 FontFace FontFace::clone() const noexcept { return *this; }
+
 emlite::Val FontFace::instance() noexcept { return emlite::Val::global("FontFace"); }
+
 FontFace::FontFace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 FontFace::FontFace(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 FontFace::FontFace(const jsbind::String& family, const jsbind::Any& source) : emlite::Val(emlite::Val::global("FontFace").new_(family, source)) {}

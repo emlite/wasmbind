@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SetHTMLUnsafeOptions
-/// [`SetHTMLUnsafeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SetHTMLUnsafeOptions)
 class SetHTMLUnsafeOptions : public emlite::Val {
   explicit SetHTMLUnsafeOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit SetHTMLUnsafeOptions(const emlite::Val &val) noexcept;
     SetHTMLUnsafeOptions() noexcept;
     [[nodiscard]] SetHTMLUnsafeOptions clone() const noexcept;
+    /// Getter of the `sanitizer` attribute.
     [[nodiscard]] jsbind::Any sanitizer() const;
+    /// Setter of the `sanitizer` attribute.
     void sanitizer(const jsbind::Any& value);
 };
 

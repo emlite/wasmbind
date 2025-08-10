@@ -3,11 +3,15 @@
 namespace webbind {
 
 ValidityState ValidityState::take_ownership(Handle h) noexcept {
-        return ValidityState(h);
-    }
+    return ValidityState(h);
+}
+
 ValidityState ValidityState::clone() const noexcept { return *this; }
+
 emlite::Val ValidityState::instance() noexcept { return emlite::Val::global("ValidityState"); }
+
 ValidityState::ValidityState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ValidityState::ValidityState(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 bool ValidityState::valueMissing() const {

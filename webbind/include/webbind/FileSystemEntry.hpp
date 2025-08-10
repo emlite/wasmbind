@@ -17,19 +17,19 @@ public:
     static FileSystemEntry take_ownership(Handle h) noexcept;
     [[nodiscard]] FileSystemEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `isFile` attribute.
+    /// [`FileSystemEntry.isFile`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isFile)
     /// [`FileSystemEntry.isFile`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isFile)
     [[nodiscard]] bool isFile() const;
-    /// Getter of the `isDirectory` attribute.
+    /// [`FileSystemEntry.isDirectory`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isDirectory)
     /// [`FileSystemEntry.isDirectory`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isDirectory)
     [[nodiscard]] bool isDirectory() const;
-    /// Getter of the `name` attribute.
+    /// [`FileSystemEntry.name`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/name)
     /// [`FileSystemEntry.name`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `fullPath` attribute.
+    /// [`FileSystemEntry.fullPath`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/fullPath)
     /// [`FileSystemEntry.fullPath`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/fullPath)
     [[nodiscard]] jsbind::String fullPath() const;
-    /// Getter of the `filesystem` attribute.
+    /// [`FileSystemEntry.filesystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/filesystem)
     /// [`FileSystemEntry.filesystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/filesystem)
     [[nodiscard]] FileSystem filesystem() const;
     /// The getParent method.

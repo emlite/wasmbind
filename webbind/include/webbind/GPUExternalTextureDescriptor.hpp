@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUExternalTextureDescriptor
-/// [`GPUExternalTextureDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUExternalTextureDescriptor)
 class GPUExternalTextureDescriptor : public GPUObjectDescriptorBase {
   explicit GPUExternalTextureDescriptor(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit GPUExternalTextureDescriptor(const emlite::Val &val) noexcept;
     GPUExternalTextureDescriptor() noexcept;
     [[nodiscard]] GPUExternalTextureDescriptor clone() const noexcept;
+    /// Getter of the `source` attribute.
     [[nodiscard]] jsbind::Any source() const;
+    /// Setter of the `source` attribute.
     void source(const jsbind::Any& value);
+    /// Getter of the `colorSpace` attribute.
     [[nodiscard]] PredefinedColorSpace colorSpace() const;
+    /// Setter of the `colorSpace` attribute.
     void colorSpace(const PredefinedColorSpace& value);
 };
 

@@ -5,11 +5,15 @@
 namespace webbind {
 
 NDEFRecord NDEFRecord::take_ownership(Handle h) noexcept {
-        return NDEFRecord(h);
-    }
+    return NDEFRecord(h);
+}
+
 NDEFRecord NDEFRecord::clone() const noexcept { return *this; }
+
 emlite::Val NDEFRecord::instance() noexcept { return emlite::Val::global("NDEFRecord"); }
+
 NDEFRecord::NDEFRecord(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 NDEFRecord::NDEFRecord(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 NDEFRecord::NDEFRecord(const NDEFRecordInit& recordInit) : emlite::Val(emlite::Val::global("NDEFRecord").new_(recordInit)) {}

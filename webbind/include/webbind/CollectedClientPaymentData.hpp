@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CollectedClientPaymentData
-/// [`CollectedClientPaymentData`](https://developer.mozilla.org/en-US/docs/Web/API/CollectedClientPaymentData)
 class CollectedClientPaymentData : public CollectedClientData {
   explicit CollectedClientPaymentData(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit CollectedClientPaymentData(const emlite::Val &val) noexcept;
     CollectedClientPaymentData() noexcept;
     [[nodiscard]] CollectedClientPaymentData clone() const noexcept;
+    /// Getter of the `payment` attribute.
     [[nodiscard]] jsbind::Any payment() const;
+    /// Setter of the `payment` attribute.
     void payment(const jsbind::Any& value);
 };
 

@@ -4,11 +4,15 @@
 namespace webbind {
 
 GPURenderPipeline GPURenderPipeline::take_ownership(Handle h) noexcept {
-        return GPURenderPipeline(h);
-    }
+    return GPURenderPipeline(h);
+}
+
 GPURenderPipeline GPURenderPipeline::clone() const noexcept { return *this; }
+
 emlite::Val GPURenderPipeline::instance() noexcept { return emlite::Val::global("GPURenderPipeline"); }
+
 GPURenderPipeline::GPURenderPipeline(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPURenderPipeline::GPURenderPipeline(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String GPURenderPipeline::label() const {

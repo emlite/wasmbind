@@ -4,11 +4,15 @@
 namespace webbind {
 
 IdentityCredential IdentityCredential::take_ownership(Handle h) noexcept {
-        return IdentityCredential(h);
-    }
+    return IdentityCredential(h);
+}
+
 IdentityCredential IdentityCredential::clone() const noexcept { return *this; }
+
 emlite::Val IdentityCredential::instance() noexcept { return emlite::Val::global("IdentityCredential"); }
+
 IdentityCredential::IdentityCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
+
 IdentityCredential::IdentityCredential(const emlite::Val &val) noexcept: Credential(val) {}
 
 jsbind::Promise<jsbind::Undefined> IdentityCredential::disconnect(const IdentityCredentialDisconnectOptions& options) {

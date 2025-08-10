@@ -1,14 +1,16 @@
 #include <webbind/StartViewTransitionOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StartViewTransitionOptions::StartViewTransitionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StartViewTransitionOptions StartViewTransitionOptions::take_ownership(Handle h) noexcept {
-        return StartViewTransitionOptions(h);
-    }
+    return StartViewTransitionOptions(h);
+}
+
 StartViewTransitionOptions::StartViewTransitionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 StartViewTransitionOptions::StartViewTransitionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 StartViewTransitionOptions StartViewTransitionOptions::clone() const noexcept { return *this; }
 
 jsbind::Function StartViewTransitionOptions::update() const {

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GPUExternalTextureBindingLayout
-/// [`GPUExternalTextureBindingLayout`](https://developer.mozilla.org/en-US/docs/Web/API/GPUExternalTextureBindingLayout)
 class GPUExternalTextureBindingLayout : public emlite::Val {
   explicit GPUExternalTextureBindingLayout(Handle h) noexcept;
 public:

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRLayerEvent(..)` constructor, creating a new XRLayerEvent instance
     XRLayerEvent(const jsbind::String& type, const XRLayerEventInit& eventInitDict);
-    /// Getter of the `layer` attribute.
+    /// [`XRLayerEvent.layer`](https://developer.mozilla.org/en-US/docs/Web/API/XRLayerEvent/layer)
     /// [`XRLayerEvent.layer`](https://developer.mozilla.org/en-US/docs/Web/API/XRLayerEvent/layer)
     [[nodiscard]] XRLayer layer() const;
 };

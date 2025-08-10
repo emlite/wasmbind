@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ContentIndexEventInit
-/// [`ContentIndexEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/ContentIndexEventInit)
 class ContentIndexEventInit : public ExtendableEventInit {
   explicit ContentIndexEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit ContentIndexEventInit(const emlite::Val &val) noexcept;
     ContentIndexEventInit() noexcept;
     [[nodiscard]] ContentIndexEventInit clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::String& value);
 };
 

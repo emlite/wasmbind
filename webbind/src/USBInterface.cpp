@@ -5,11 +5,15 @@
 namespace webbind {
 
 USBInterface USBInterface::take_ownership(Handle h) noexcept {
-        return USBInterface(h);
-    }
+    return USBInterface(h);
+}
+
 USBInterface USBInterface::clone() const noexcept { return *this; }
+
 emlite::Val USBInterface::instance() noexcept { return emlite::Val::global("USBInterface"); }
+
 USBInterface::USBInterface(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 USBInterface::USBInterface(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 USBInterface::USBInterface(const USBConfiguration& configuration, unsigned char interfaceNumber) : emlite::Val(emlite::Val::global("USBInterface").new_(configuration, interfaceNumber)) {}

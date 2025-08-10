@@ -16,10 +16,10 @@ public:
     static MediaQueryList take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaQueryList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `media` attribute.
+    /// [`MediaQueryList.media`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media)
     /// [`MediaQueryList.media`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media)
     [[nodiscard]] jsbind::String media() const;
-    /// Getter of the `matches` attribute.
+    /// [`MediaQueryList.matches`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches)
     /// [`MediaQueryList.matches`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches)
     [[nodiscard]] bool matches() const;
     /// The addListener method.
@@ -28,7 +28,7 @@ public:
     /// The removeListener method.
     /// [`MediaQueryList.removeListener`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/removeListener)
     jsbind::Undefined removeListener(const jsbind::Function& callback);
-    /// Getter of the `onchange` attribute.
+    /// [`MediaQueryList.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/onchange)
     /// [`MediaQueryList.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

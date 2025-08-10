@@ -5,11 +5,15 @@
 namespace webbind {
 
 KeyboardEvent KeyboardEvent::take_ownership(Handle h) noexcept {
-        return KeyboardEvent(h);
-    }
+    return KeyboardEvent(h);
+}
+
 KeyboardEvent KeyboardEvent::clone() const noexcept { return *this; }
+
 emlite::Val KeyboardEvent::instance() noexcept { return emlite::Val::global("KeyboardEvent"); }
+
 KeyboardEvent::KeyboardEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
+
 KeyboardEvent::KeyboardEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 KeyboardEvent::KeyboardEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("KeyboardEvent").new_(type)) {}

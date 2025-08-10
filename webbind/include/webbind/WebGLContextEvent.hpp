@@ -21,7 +21,7 @@ public:
     WebGLContextEvent(const jsbind::String& type);
     /// The `new WebGLContextEvent(..)` constructor, creating a new WebGLContextEvent instance
     WebGLContextEvent(const jsbind::String& type, const WebGLContextEventInit& eventInit);
-    /// Getter of the `statusMessage` attribute.
+    /// [`WebGLContextEvent.statusMessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextEvent/statusMessage)
     /// [`WebGLContextEvent.statusMessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextEvent/statusMessage)
     [[nodiscard]] jsbind::String statusMessage() const;
 };

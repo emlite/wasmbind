@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type DirectoryPickerOptions
-/// [`DirectoryPickerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/DirectoryPickerOptions)
 class DirectoryPickerOptions : public emlite::Val {
   explicit DirectoryPickerOptions(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit DirectoryPickerOptions(const emlite::Val &val) noexcept;
     DirectoryPickerOptions() noexcept;
     [[nodiscard]] DirectoryPickerOptions clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::String& value);
+    /// Getter of the `startIn` attribute.
     [[nodiscard]] jsbind::Any startIn() const;
+    /// Setter of the `startIn` attribute.
     void startIn(const jsbind::Any& value);
+    /// Getter of the `mode` attribute.
     [[nodiscard]] FileSystemPermissionMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const FileSystemPermissionMode& value);
 };
 

@@ -21,13 +21,13 @@ public:
     DOMException(const jsbind::String& message);
     /// The `new DOMException(..)` constructor, creating a new DOMException instance
     DOMException(const jsbind::String& message, const jsbind::String& name);
-    /// Getter of the `name` attribute.
+    /// [`DOMException.name`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/name)
     /// [`DOMException.name`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `message` attribute.
+    /// [`DOMException.message`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/message)
     /// [`DOMException.message`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/message)
     [[nodiscard]] jsbind::String message() const;
-    /// Getter of the `code` attribute.
+    /// [`DOMException.code`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/code)
     /// [`DOMException.code`](https://developer.mozilla.org/en-US/docs/Web/API/DOMException/code)
     [[nodiscard]] unsigned short code() const;
 };

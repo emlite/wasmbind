@@ -5,11 +5,15 @@
 namespace webbind {
 
 PointerEvent PointerEvent::take_ownership(Handle h) noexcept {
-        return PointerEvent(h);
-    }
+    return PointerEvent(h);
+}
+
 PointerEvent PointerEvent::clone() const noexcept { return *this; }
+
 emlite::Val PointerEvent::instance() noexcept { return emlite::Val::global("PointerEvent"); }
+
 PointerEvent::PointerEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_ownership(h)) {}
+
 PointerEvent::PointerEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
 PointerEvent::PointerEvent(const jsbind::String& type) : MouseEvent(emlite::Val::global("PointerEvent").new_(type)) {}

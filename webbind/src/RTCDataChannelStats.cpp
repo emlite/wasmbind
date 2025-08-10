@@ -1,14 +1,16 @@
 #include <webbind/RTCDataChannelStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCDataChannelStats::RTCDataChannelStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCDataChannelStats RTCDataChannelStats::take_ownership(Handle h) noexcept {
-        return RTCDataChannelStats(h);
-    }
+    return RTCDataChannelStats(h);
+}
+
 RTCDataChannelStats::RTCDataChannelStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCDataChannelStats::RTCDataChannelStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCDataChannelStats RTCDataChannelStats::clone() const noexcept { return *this; }
 
 jsbind::String RTCDataChannelStats::label() const {

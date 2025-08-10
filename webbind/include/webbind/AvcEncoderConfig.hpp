@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AvcEncoderConfig
-/// [`AvcEncoderConfig`](https://developer.mozilla.org/en-US/docs/Web/API/AvcEncoderConfig)
 class AvcEncoderConfig : public emlite::Val {
   explicit AvcEncoderConfig(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit AvcEncoderConfig(const emlite::Val &val) noexcept;
     AvcEncoderConfig() noexcept;
     [[nodiscard]] AvcEncoderConfig clone() const noexcept;
+    /// Getter of the `format` attribute.
     [[nodiscard]] AvcBitstreamFormat format() const;
+    /// Setter of the `format` attribute.
     void format(const AvcBitstreamFormat& value);
 };
 

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CredentialData
-/// [`CredentialData`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialData)
 class CredentialData : public emlite::Val {
   explicit CredentialData(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit CredentialData(const emlite::Val &val) noexcept;
     CredentialData() noexcept;
     [[nodiscard]] CredentialData clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::String& value);
 };
 

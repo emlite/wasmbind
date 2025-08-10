@@ -16,11 +16,15 @@
 namespace webbind {
 
 WorkerNavigator WorkerNavigator::take_ownership(Handle h) noexcept {
-        return WorkerNavigator(h);
-    }
+    return WorkerNavigator(h);
+}
+
 WorkerNavigator WorkerNavigator::clone() const noexcept { return *this; }
+
 emlite::Val WorkerNavigator::instance() noexcept { return emlite::Val::global("WorkerNavigator"); }
+
 WorkerNavigator::WorkerNavigator(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 WorkerNavigator::WorkerNavigator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 MediaCapabilities WorkerNavigator::mediaCapabilities() const {

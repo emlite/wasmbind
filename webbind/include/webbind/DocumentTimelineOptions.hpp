@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type DocumentTimelineOptions
-/// [`DocumentTimelineOptions`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentTimelineOptions)
 class DocumentTimelineOptions : public emlite::Val {
   explicit DocumentTimelineOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit DocumentTimelineOptions(const emlite::Val &val) noexcept;
     DocumentTimelineOptions() noexcept;
     [[nodiscard]] DocumentTimelineOptions clone() const noexcept;
+    /// Getter of the `originTime` attribute.
     [[nodiscard]] jsbind::Any originTime() const;
+    /// Setter of the `originTime` attribute.
     void originTime(const jsbind::Any& value);
 };
 

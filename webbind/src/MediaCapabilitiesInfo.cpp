@@ -1,14 +1,16 @@
 #include <webbind/MediaCapabilitiesInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaCapabilitiesInfo::MediaCapabilitiesInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaCapabilitiesInfo MediaCapabilitiesInfo::take_ownership(Handle h) noexcept {
-        return MediaCapabilitiesInfo(h);
-    }
+    return MediaCapabilitiesInfo(h);
+}
+
 MediaCapabilitiesInfo::MediaCapabilitiesInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaCapabilitiesInfo::MediaCapabilitiesInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaCapabilitiesInfo MediaCapabilitiesInfo::clone() const noexcept { return *this; }
 
 bool MediaCapabilitiesInfo::supported() const {

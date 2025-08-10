@@ -19,7 +19,7 @@ public:
     static RTCRtpScriptTransformer take_ownership(Handle h) noexcept;
     [[nodiscard]] RTCRtpScriptTransformer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `readable` attribute.
+    /// [`RTCRtpScriptTransformer.readable`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/readable)
     /// [`RTCRtpScriptTransformer.readable`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/readable)
     [[nodiscard]] ReadableStream readable() const;
     /// The generateKeyFrame method.
@@ -31,16 +31,16 @@ public:
     /// The sendKeyFrameRequest method.
     /// [`RTCRtpScriptTransformer.sendKeyFrameRequest`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
     jsbind::Promise<jsbind::Undefined> sendKeyFrameRequest();
-    /// Getter of the `writable` attribute.
+    /// [`RTCRtpScriptTransformer.writable`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/writable)
     /// [`RTCRtpScriptTransformer.writable`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/writable)
     [[nodiscard]] WritableStream writable() const;
-    /// Getter of the `onkeyframerequest` attribute.
+    /// [`RTCRtpScriptTransformer.onkeyframerequest`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/onkeyframerequest)
     /// [`RTCRtpScriptTransformer.onkeyframerequest`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/onkeyframerequest)
     [[nodiscard]] jsbind::Any onkeyframerequest() const;
     /// Setter of the `onkeyframerequest` attribute.
     /// [`RTCRtpScriptTransformer.onkeyframerequest`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/onkeyframerequest)
     void onkeyframerequest(const jsbind::Any& value);
-    /// Getter of the `options` attribute.
+    /// [`RTCRtpScriptTransformer.options`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/options)
     /// [`RTCRtpScriptTransformer.options`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/options)
     [[nodiscard]] jsbind::Any options() const;
 };

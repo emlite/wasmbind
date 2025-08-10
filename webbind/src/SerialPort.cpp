@@ -9,11 +9,15 @@
 namespace webbind {
 
 SerialPort SerialPort::take_ownership(Handle h) noexcept {
-        return SerialPort(h);
-    }
+    return SerialPort(h);
+}
+
 SerialPort SerialPort::clone() const noexcept { return *this; }
+
 emlite::Val SerialPort::instance() noexcept { return emlite::Val::global("SerialPort"); }
+
 SerialPort::SerialPort(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 SerialPort::SerialPort(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Any SerialPort::onconnect() const {

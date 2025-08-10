@@ -19,10 +19,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCSessionDescription(..)` constructor, creating a new RTCSessionDescription instance
     RTCSessionDescription(const RTCSessionDescriptionInit& descriptionInitDict);
-    /// Getter of the `type` attribute.
+    /// [`RTCSessionDescription.type`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/type)
     /// [`RTCSessionDescription.type`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/type)
     [[nodiscard]] RTCSdpType type() const;
-    /// Getter of the `sdp` attribute.
+    /// [`RTCSessionDescription.sdp`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/sdp)
     /// [`RTCSessionDescription.sdp`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/sdp)
     [[nodiscard]] jsbind::String sdp() const;
     /// The toJSON method.

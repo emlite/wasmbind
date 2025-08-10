@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCDataChannelEvent(..)` constructor, creating a new RTCDataChannelEvent instance
     RTCDataChannelEvent(const jsbind::String& type, const RTCDataChannelEventInit& eventInitDict);
-    /// Getter of the `channel` attribute.
+    /// [`RTCDataChannelEvent.channel`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannelEvent/channel)
     /// [`RTCDataChannelEvent.channel`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannelEvent/channel)
     [[nodiscard]] RTCDataChannel channel() const;
 };

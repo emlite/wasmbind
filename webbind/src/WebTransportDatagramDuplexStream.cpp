@@ -6,11 +6,15 @@
 namespace webbind {
 
 WebTransportDatagramDuplexStream WebTransportDatagramDuplexStream::take_ownership(Handle h) noexcept {
-        return WebTransportDatagramDuplexStream(h);
-    }
+    return WebTransportDatagramDuplexStream(h);
+}
+
 WebTransportDatagramDuplexStream WebTransportDatagramDuplexStream::clone() const noexcept { return *this; }
+
 emlite::Val WebTransportDatagramDuplexStream::instance() noexcept { return emlite::Val::global("WebTransportDatagramDuplexStream"); }
+
 WebTransportDatagramDuplexStream::WebTransportDatagramDuplexStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 WebTransportDatagramDuplexStream::WebTransportDatagramDuplexStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 WebTransportDatagramsWritable WebTransportDatagramDuplexStream::createWritable() {

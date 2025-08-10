@@ -1,15 +1,17 @@
 #include <webbind/BluetoothPermissionDescriptor.hpp>
 #include <webbind/BluetoothLEScanFilterInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BluetoothPermissionDescriptor::BluetoothPermissionDescriptor(Handle h) noexcept : PermissionDescriptor(emlite::Val::take_ownership(h)) {}
 BluetoothPermissionDescriptor BluetoothPermissionDescriptor::take_ownership(Handle h) noexcept {
-        return BluetoothPermissionDescriptor(h);
-    }
+    return BluetoothPermissionDescriptor(h);
+}
+
 BluetoothPermissionDescriptor::BluetoothPermissionDescriptor(const emlite::Val &val) noexcept: PermissionDescriptor(val) {}
+
 BluetoothPermissionDescriptor::BluetoothPermissionDescriptor() noexcept: PermissionDescriptor(emlite::Val::object()) {}
+
 BluetoothPermissionDescriptor BluetoothPermissionDescriptor::clone() const noexcept { return *this; }
 
 jsbind::String BluetoothPermissionDescriptor::deviceId() const {

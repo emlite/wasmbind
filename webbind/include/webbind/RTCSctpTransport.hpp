@@ -19,19 +19,19 @@ public:
     static RTCSctpTransport take_ownership(Handle h) noexcept;
     [[nodiscard]] RTCSctpTransport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `transport` attribute.
+    /// [`RTCSctpTransport.transport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/transport)
     /// [`RTCSctpTransport.transport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/transport)
     [[nodiscard]] RTCDtlsTransport transport() const;
-    /// Getter of the `state` attribute.
+    /// [`RTCSctpTransport.state`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/state)
     /// [`RTCSctpTransport.state`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/state)
     [[nodiscard]] RTCSctpTransportState state() const;
-    /// Getter of the `maxMessageSize` attribute.
+    /// [`RTCSctpTransport.maxMessageSize`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/maxMessageSize)
     /// [`RTCSctpTransport.maxMessageSize`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/maxMessageSize)
     [[nodiscard]] double maxMessageSize() const;
-    /// Getter of the `maxChannels` attribute.
+    /// [`RTCSctpTransport.maxChannels`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/maxChannels)
     /// [`RTCSctpTransport.maxChannels`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/maxChannels)
     [[nodiscard]] unsigned short maxChannels() const;
-    /// Getter of the `onstatechange` attribute.
+    /// [`RTCSctpTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/onstatechange)
     /// [`RTCSctpTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/onstatechange)
     [[nodiscard]] jsbind::Any onstatechange() const;
     /// Setter of the `onstatechange` attribute.

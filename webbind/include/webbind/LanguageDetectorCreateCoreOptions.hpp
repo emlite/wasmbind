@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type LanguageDetectorCreateCoreOptions
-/// [`LanguageDetectorCreateCoreOptions`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetectorCreateCoreOptions)
 class LanguageDetectorCreateCoreOptions : public emlite::Val {
   explicit LanguageDetectorCreateCoreOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit LanguageDetectorCreateCoreOptions(const emlite::Val &val) noexcept;
     LanguageDetectorCreateCoreOptions() noexcept;
     [[nodiscard]] LanguageDetectorCreateCoreOptions clone() const noexcept;
+    /// Getter of the `expectedInputLanguages` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
+    /// Setter of the `expectedInputLanguages` attribute.
     void expectedInputLanguages(const jsbind::TypedArray<jsbind::String>& value);
 };
 

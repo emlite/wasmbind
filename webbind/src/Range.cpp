@@ -8,11 +8,15 @@
 namespace webbind {
 
 Range Range::take_ownership(Handle h) noexcept {
-        return Range(h);
-    }
+    return Range(h);
+}
+
 Range Range::clone() const noexcept { return *this; }
+
 emlite::Val Range::instance() noexcept { return emlite::Val::global("Range"); }
+
 Range::Range(Handle h) noexcept : AbstractRange(emlite::Val::take_ownership(h)) {}
+
 Range::Range(const emlite::Val &val) noexcept: AbstractRange(val) {}
 
 Range::Range() : AbstractRange(emlite::Val::global("Range").new_()) {}

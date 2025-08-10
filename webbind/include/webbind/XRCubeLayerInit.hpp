@@ -10,7 +10,6 @@ namespace webbind {
 class DOMPointReadOnly;
 
 /// Dictionary type XRCubeLayerInit
-/// [`XRCubeLayerInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayerInit)
 class XRCubeLayerInit : public XRLayerInit {
   explicit XRCubeLayerInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit XRCubeLayerInit(const emlite::Val &val) noexcept;
     XRCubeLayerInit() noexcept;
     [[nodiscard]] XRCubeLayerInit clone() const noexcept;
+    /// Getter of the `orientation` attribute.
     [[nodiscard]] DOMPointReadOnly orientation() const;
+    /// Setter of the `orientation` attribute.
     void orientation(const DOMPointReadOnly& value);
 };
 

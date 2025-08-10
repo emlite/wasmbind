@@ -1,14 +1,16 @@
 #include <webbind/KeySystemTrackConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 KeySystemTrackConfiguration::KeySystemTrackConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 KeySystemTrackConfiguration KeySystemTrackConfiguration::take_ownership(Handle h) noexcept {
-        return KeySystemTrackConfiguration(h);
-    }
+    return KeySystemTrackConfiguration(h);
+}
+
 KeySystemTrackConfiguration::KeySystemTrackConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 KeySystemTrackConfiguration::KeySystemTrackConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 KeySystemTrackConfiguration KeySystemTrackConfiguration::clone() const noexcept { return *this; }
 
 jsbind::String KeySystemTrackConfiguration::robustness() const {

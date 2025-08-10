@@ -1,14 +1,16 @@
 #include <webbind/SerialPortInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SerialPortInfo::SerialPortInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SerialPortInfo SerialPortInfo::take_ownership(Handle h) noexcept {
-        return SerialPortInfo(h);
-    }
+    return SerialPortInfo(h);
+}
+
 SerialPortInfo::SerialPortInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SerialPortInfo::SerialPortInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SerialPortInfo SerialPortInfo::clone() const noexcept { return *this; }
 
 unsigned short SerialPortInfo::usbVendorId() const {

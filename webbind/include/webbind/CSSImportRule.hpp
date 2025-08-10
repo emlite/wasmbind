@@ -19,19 +19,19 @@ public:
     static CSSImportRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSImportRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `href` attribute.
+    /// [`CSSImportRule.href`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/href)
     /// [`CSSImportRule.href`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/href)
     [[nodiscard]] jsbind::String href() const;
-    /// Getter of the `media` attribute.
+    /// [`CSSImportRule.media`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/media)
     /// [`CSSImportRule.media`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/media)
     [[nodiscard]] MediaList media() const;
-    /// Getter of the `styleSheet` attribute.
+    /// [`CSSImportRule.styleSheet`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/styleSheet)
     /// [`CSSImportRule.styleSheet`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/styleSheet)
     [[nodiscard]] CSSStyleSheet styleSheet() const;
-    /// Getter of the `layerName` attribute.
+    /// [`CSSImportRule.layerName`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/layerName)
     /// [`CSSImportRule.layerName`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/layerName)
     [[nodiscard]] jsbind::String layerName() const;
-    /// Getter of the `supportsText` attribute.
+    /// [`CSSImportRule.supportsText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/supportsText)
     /// [`CSSImportRule.supportsText`](https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/supportsText)
     [[nodiscard]] jsbind::String supportsText() const;
 };

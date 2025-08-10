@@ -1,14 +1,16 @@
 #include <webbind/GPUMultisampleState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUMultisampleState::GPUMultisampleState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUMultisampleState GPUMultisampleState::take_ownership(Handle h) noexcept {
-        return GPUMultisampleState(h);
-    }
+    return GPUMultisampleState(h);
+}
+
 GPUMultisampleState::GPUMultisampleState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUMultisampleState::GPUMultisampleState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUMultisampleState GPUMultisampleState::clone() const noexcept { return *this; }
 
 jsbind::Any GPUMultisampleState::count() const {

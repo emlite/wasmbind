@@ -15,18 +15,18 @@ export function emitAttr(
 
   let parent = parent0 ? parent0 : "emlite::Val";
 
-  if (isInterface) {
-    if (isStatic)
-      H.push(
-        `    /// Getter of the \`${attr.name}\` static attribute.`,
-        `    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`
-      );
-    else
-      H.push(
-        `    /// Getter of the \`${attr.name}\` attribute.`,
-        `    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`
-      );
-  }
+  // Always emit documentation for getters (both interfaces and dictionaries)
+  if (isStatic)
+    H.push(
+      `    /// Getter of the \`${attr.name}\` static attribute.`,
+    );
+    if (isInterface) H.push(`    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`);
+  else
+    H.push(
+      `    /// Getter of the \`${attr.name}\` attribute.`,
+    );
+    if (isInterface) H.push(`    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`);
+
   H.push(
     `    [[nodiscard]] ${staticKw}${type} ${fixIdent(attr.name)}()${constQual};`
   );
@@ -49,11 +49,11 @@ export function emitAttr(
     );
 
     if (!attr.readonly) {
-      if (isInterface)
-        H.push(
-          `    /// Setter of the \`${attr.name}\` attribute.`,
-          `    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`
-        );
+      // Always emit documentation for setters (both interfaces and dictionaries)
+      H.push(
+        `    /// Setter of the \`${attr.name}\` attribute.`,
+      );
+      if (isInterface) H.push(`    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`);
       H.push(`    void ${fixIdent(attr.name)}(${argtypeFix(type)} value);`);
       S.push(
         `void ${owner}::${fixIdent(attr.name)}(${argtypeFix(type)} value) {`,

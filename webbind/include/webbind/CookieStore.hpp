@@ -38,7 +38,7 @@ public:
     /// The delete method.
     /// [`CookieStore.delete`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete)
     jsbind::Promise<jsbind::Undefined> delete_(const CookieStoreDeleteOptions& options);
-    /// Getter of the `onchange` attribute.
+    /// [`CookieStore.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange)
     /// [`CookieStore.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

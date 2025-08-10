@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PaymentCurrencyAmount
-/// [`PaymentCurrencyAmount`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount)
 class PaymentCurrencyAmount : public emlite::Val {
   explicit PaymentCurrencyAmount(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit PaymentCurrencyAmount(const emlite::Val &val) noexcept;
     PaymentCurrencyAmount() noexcept;
     [[nodiscard]] PaymentCurrencyAmount clone() const noexcept;
+    /// Getter of the `currency` attribute.
     [[nodiscard]] jsbind::String currency() const;
+    /// Setter of the `currency` attribute.
     void currency(const jsbind::String& value);
+    /// Getter of the `value` attribute.
     [[nodiscard]] jsbind::String value() const;
+    /// Setter of the `value` attribute.
     void value(const jsbind::String& value);
 };
 

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PerformanceMeasureOptions
-/// [`PerformanceMeasureOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasureOptions)
 class PerformanceMeasureOptions : public emlite::Val {
   explicit PerformanceMeasureOptions(Handle h) noexcept;
 public:
@@ -15,13 +14,21 @@ public:
     explicit PerformanceMeasureOptions(const emlite::Val &val) noexcept;
     PerformanceMeasureOptions() noexcept;
     [[nodiscard]] PerformanceMeasureOptions clone() const noexcept;
+    /// Getter of the `detail` attribute.
     [[nodiscard]] jsbind::Any detail() const;
+    /// Setter of the `detail` attribute.
     void detail(const jsbind::Any& value);
+    /// Getter of the `start` attribute.
     [[nodiscard]] jsbind::Any start() const;
+    /// Setter of the `start` attribute.
     void start(const jsbind::Any& value);
+    /// Getter of the `duration` attribute.
     [[nodiscard]] jsbind::Any duration() const;
+    /// Setter of the `duration` attribute.
     void duration(const jsbind::Any& value);
+    /// Getter of the `end` attribute.
     [[nodiscard]] jsbind::Any end() const;
+    /// Setter of the `end` attribute.
     void end(const jsbind::Any& value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/PaymentMethodChangeEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentMethodChangeEventInit::PaymentMethodChangeEventInit(Handle h) noexcept : PaymentRequestUpdateEventInit(emlite::Val::take_ownership(h)) {}
 PaymentMethodChangeEventInit PaymentMethodChangeEventInit::take_ownership(Handle h) noexcept {
-        return PaymentMethodChangeEventInit(h);
-    }
+    return PaymentMethodChangeEventInit(h);
+}
+
 PaymentMethodChangeEventInit::PaymentMethodChangeEventInit(const emlite::Val &val) noexcept: PaymentRequestUpdateEventInit(val) {}
+
 PaymentMethodChangeEventInit::PaymentMethodChangeEventInit() noexcept: PaymentRequestUpdateEventInit(emlite::Val::object()) {}
+
 PaymentMethodChangeEventInit PaymentMethodChangeEventInit::clone() const noexcept { return *this; }
 
 jsbind::String PaymentMethodChangeEventInit::methodName() const {

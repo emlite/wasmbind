@@ -1,14 +1,16 @@
 #include <webbind/SpeechRecognitionOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SpeechRecognitionOptions::SpeechRecognitionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpeechRecognitionOptions SpeechRecognitionOptions::take_ownership(Handle h) noexcept {
-        return SpeechRecognitionOptions(h);
-    }
+    return SpeechRecognitionOptions(h);
+}
+
 SpeechRecognitionOptions::SpeechRecognitionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SpeechRecognitionOptions::SpeechRecognitionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SpeechRecognitionOptions SpeechRecognitionOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::String> SpeechRecognitionOptions::langs() const {

@@ -3,11 +3,15 @@
 namespace webbind {
 
 CSSOKLab CSSOKLab::take_ownership(Handle h) noexcept {
-        return CSSOKLab(h);
-    }
+    return CSSOKLab(h);
+}
+
 CSSOKLab CSSOKLab::clone() const noexcept { return *this; }
+
 emlite::Val CSSOKLab::instance() noexcept { return emlite::Val::global("CSSOKLab"); }
+
 CSSOKLab::CSSOKLab(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
+
 CSSOKLab::CSSOKLab(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 CSSOKLab::CSSOKLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b) : CSSColorValue(emlite::Val::global("CSSOKLab").new_(l, a, b)) {}

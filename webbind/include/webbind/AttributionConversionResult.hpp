@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AttributionConversionResult
-/// [`AttributionConversionResult`](https://developer.mozilla.org/en-US/docs/Web/API/AttributionConversionResult)
 class AttributionConversionResult : public emlite::Val {
   explicit AttributionConversionResult(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit AttributionConversionResult(const emlite::Val &val) noexcept;
     AttributionConversionResult() noexcept;
     [[nodiscard]] AttributionConversionResult clone() const noexcept;
+    /// Getter of the `report` attribute.
     [[nodiscard]] jsbind::Uint8Array report() const;
+    /// Setter of the `report` attribute.
     void report(const jsbind::Uint8Array& value);
 };
 

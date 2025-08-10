@@ -1,14 +1,16 @@
 #include <webbind/MockCameraConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MockCameraConfiguration::MockCameraConfiguration(Handle h) noexcept : MockCaptureDeviceConfiguration(emlite::Val::take_ownership(h)) {}
 MockCameraConfiguration MockCameraConfiguration::take_ownership(Handle h) noexcept {
-        return MockCameraConfiguration(h);
-    }
+    return MockCameraConfiguration(h);
+}
+
 MockCameraConfiguration::MockCameraConfiguration(const emlite::Val &val) noexcept: MockCaptureDeviceConfiguration(val) {}
+
 MockCameraConfiguration::MockCameraConfiguration() noexcept: MockCaptureDeviceConfiguration(emlite::Val::object()) {}
+
 MockCameraConfiguration MockCameraConfiguration::clone() const noexcept { return *this; }
 
 double MockCameraConfiguration::defaultFrameRate() const {

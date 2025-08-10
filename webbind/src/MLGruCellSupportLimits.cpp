@@ -2,15 +2,17 @@
 #include <webbind/MLTensorLimits.hpp>
 #include <webbind/MLDataTypeLimits.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLGruCellSupportLimits::MLGruCellSupportLimits(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLGruCellSupportLimits MLGruCellSupportLimits::take_ownership(Handle h) noexcept {
-        return MLGruCellSupportLimits(h);
-    }
+    return MLGruCellSupportLimits(h);
+}
+
 MLGruCellSupportLimits::MLGruCellSupportLimits(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MLGruCellSupportLimits::MLGruCellSupportLimits() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MLGruCellSupportLimits MLGruCellSupportLimits::clone() const noexcept { return *this; }
 
 MLTensorLimits MLGruCellSupportLimits::input() const {

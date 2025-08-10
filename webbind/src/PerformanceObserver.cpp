@@ -4,11 +4,15 @@
 namespace webbind {
 
 PerformanceObserver PerformanceObserver::take_ownership(Handle h) noexcept {
-        return PerformanceObserver(h);
-    }
+    return PerformanceObserver(h);
+}
+
 PerformanceObserver PerformanceObserver::clone() const noexcept { return *this; }
+
 emlite::Val PerformanceObserver::instance() noexcept { return emlite::Val::global("PerformanceObserver"); }
+
 PerformanceObserver::PerformanceObserver(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PerformanceObserver::PerformanceObserver(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 PerformanceObserver::PerformanceObserver(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("PerformanceObserver").new_(callback)) {}

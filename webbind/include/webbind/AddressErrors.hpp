@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AddressErrors
-/// [`AddressErrors`](https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors)
 class AddressErrors : public emlite::Val {
   explicit AddressErrors(Handle h) noexcept;
 public:
@@ -15,25 +14,45 @@ public:
     explicit AddressErrors(const emlite::Val &val) noexcept;
     AddressErrors() noexcept;
     [[nodiscard]] AddressErrors clone() const noexcept;
+    /// Getter of the `addressLine` attribute.
     [[nodiscard]] jsbind::String addressLine() const;
+    /// Setter of the `addressLine` attribute.
     void addressLine(const jsbind::String& value);
+    /// Getter of the `city` attribute.
     [[nodiscard]] jsbind::String city() const;
+    /// Setter of the `city` attribute.
     void city(const jsbind::String& value);
+    /// Getter of the `country` attribute.
     [[nodiscard]] jsbind::String country() const;
+    /// Setter of the `country` attribute.
     void country(const jsbind::String& value);
+    /// Getter of the `dependentLocality` attribute.
     [[nodiscard]] jsbind::String dependentLocality() const;
+    /// Setter of the `dependentLocality` attribute.
     void dependentLocality(const jsbind::String& value);
+    /// Getter of the `organization` attribute.
     [[nodiscard]] jsbind::String organization() const;
+    /// Setter of the `organization` attribute.
     void organization(const jsbind::String& value);
+    /// Getter of the `phone` attribute.
     [[nodiscard]] jsbind::String phone() const;
+    /// Setter of the `phone` attribute.
     void phone(const jsbind::String& value);
+    /// Getter of the `postalCode` attribute.
     [[nodiscard]] jsbind::String postalCode() const;
+    /// Setter of the `postalCode` attribute.
     void postalCode(const jsbind::String& value);
+    /// Getter of the `recipient` attribute.
     [[nodiscard]] jsbind::String recipient() const;
+    /// Setter of the `recipient` attribute.
     void recipient(const jsbind::String& value);
+    /// Getter of the `region` attribute.
     [[nodiscard]] jsbind::String region() const;
+    /// Setter of the `region` attribute.
     void region(const jsbind::String& value);
+    /// Getter of the `sortingCode` attribute.
     [[nodiscard]] jsbind::String sortingCode() const;
+    /// Setter of the `sortingCode` attribute.
     void sortingCode(const jsbind::String& value);
 };
 

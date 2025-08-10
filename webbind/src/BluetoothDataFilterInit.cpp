@@ -1,14 +1,16 @@
 #include <webbind/BluetoothDataFilterInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BluetoothDataFilterInit::BluetoothDataFilterInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BluetoothDataFilterInit BluetoothDataFilterInit::take_ownership(Handle h) noexcept {
-        return BluetoothDataFilterInit(h);
-    }
+    return BluetoothDataFilterInit(h);
+}
+
 BluetoothDataFilterInit::BluetoothDataFilterInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BluetoothDataFilterInit::BluetoothDataFilterInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BluetoothDataFilterInit BluetoothDataFilterInit::clone() const noexcept { return *this; }
 
 jsbind::Any BluetoothDataFilterInit::dataPrefix() const {

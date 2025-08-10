@@ -1,15 +1,17 @@
 #include <webbind/XRTransientInputHitTestOptionsInit.hpp>
 #include <webbind/XRRay.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRTransientInputHitTestOptionsInit XRTransientInputHitTestOptionsInit::take_ownership(Handle h) noexcept {
-        return XRTransientInputHitTestOptionsInit(h);
-    }
+    return XRTransientInputHitTestOptionsInit(h);
+}
+
 XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRTransientInputHitTestOptionsInit::XRTransientInputHitTestOptionsInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRTransientInputHitTestOptionsInit XRTransientInputHitTestOptionsInit::clone() const noexcept { return *this; }
 
 jsbind::String XRTransientInputHitTestOptionsInit::profile() const {

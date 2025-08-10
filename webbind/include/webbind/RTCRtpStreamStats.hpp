@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpStreamStats
-/// [`RTCRtpStreamStats`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats)
 class RTCRtpStreamStats : public RTCStats {
   explicit RTCRtpStreamStats(Handle h) noexcept;
 public:
@@ -16,13 +15,21 @@ public:
     explicit RTCRtpStreamStats(const emlite::Val &val) noexcept;
     RTCRtpStreamStats() noexcept;
     [[nodiscard]] RTCRtpStreamStats clone() const noexcept;
+    /// Getter of the `ssrc` attribute.
     [[nodiscard]] unsigned long ssrc() const;
+    /// Setter of the `ssrc` attribute.
     void ssrc(unsigned long value);
+    /// Getter of the `kind` attribute.
     [[nodiscard]] jsbind::String kind() const;
+    /// Setter of the `kind` attribute.
     void kind(const jsbind::String& value);
+    /// Getter of the `transportId` attribute.
     [[nodiscard]] jsbind::String transportId() const;
+    /// Setter of the `transportId` attribute.
     void transportId(const jsbind::String& value);
+    /// Getter of the `codecId` attribute.
     [[nodiscard]] jsbind::String codecId() const;
+    /// Setter of the `codecId` attribute.
     void codecId(const jsbind::String& value);
 };
 

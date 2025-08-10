@@ -46,25 +46,25 @@ public:
     /// The rewriteStreaming method.
     /// [`Rewriter.rewriteStreaming`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/rewriteStreaming)
     ReadableStream rewriteStreaming(const jsbind::String& input, const RewriterRewriteOptions& options);
-    /// Getter of the `sharedContext` attribute.
+    /// [`Rewriter.sharedContext`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/sharedContext)
     /// [`Rewriter.sharedContext`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/sharedContext)
     [[nodiscard]] jsbind::String sharedContext() const;
-    /// Getter of the `tone` attribute.
+    /// [`Rewriter.tone`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/tone)
     /// [`Rewriter.tone`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/tone)
     [[nodiscard]] RewriterTone tone() const;
-    /// Getter of the `format` attribute.
+    /// [`Rewriter.format`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/format)
     /// [`Rewriter.format`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/format)
     [[nodiscard]] RewriterFormat format() const;
-    /// Getter of the `length` attribute.
+    /// [`Rewriter.length`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/length)
     /// [`Rewriter.length`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/length)
     [[nodiscard]] RewriterLength length() const;
-    /// Getter of the `expectedInputLanguages` attribute.
+    /// [`Rewriter.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/expectedInputLanguages)
     /// [`Rewriter.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/expectedInputLanguages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
-    /// Getter of the `expectedContextLanguages` attribute.
+    /// [`Rewriter.expectedContextLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/expectedContextLanguages)
     /// [`Rewriter.expectedContextLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/expectedContextLanguages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
-    /// Getter of the `outputLanguage` attribute.
+    /// [`Rewriter.outputLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/outputLanguage)
     /// [`Rewriter.outputLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/outputLanguage)
     [[nodiscard]] jsbind::String outputLanguage() const;
     /// The measureInputUsage method.
@@ -73,7 +73,7 @@ public:
     /// The measureInputUsage method.
     /// [`Rewriter.measureInputUsage`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/measureInputUsage)
     jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const RewriterRewriteOptions& options);
-    /// Getter of the `inputQuota` attribute.
+    /// [`Rewriter.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/inputQuota)
     /// [`Rewriter.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Rewriter/inputQuota)
     [[nodiscard]] double inputQuota() const;
     /// The destroy method.

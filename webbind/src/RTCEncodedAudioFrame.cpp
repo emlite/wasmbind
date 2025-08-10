@@ -6,11 +6,15 @@
 namespace webbind {
 
 RTCEncodedAudioFrame RTCEncodedAudioFrame::take_ownership(Handle h) noexcept {
-        return RTCEncodedAudioFrame(h);
-    }
+    return RTCEncodedAudioFrame(h);
+}
+
 RTCEncodedAudioFrame RTCEncodedAudioFrame::clone() const noexcept { return *this; }
+
 emlite::Val RTCEncodedAudioFrame::instance() noexcept { return emlite::Val::global("RTCEncodedAudioFrame"); }
+
 RTCEncodedAudioFrame::RTCEncodedAudioFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 RTCEncodedAudioFrame::RTCEncodedAudioFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 RTCEncodedAudioFrame::RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame) : emlite::Val(emlite::Val::global("RTCEncodedAudioFrame").new_(originalFrame)) {}

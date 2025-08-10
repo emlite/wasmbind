@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type WebGLContextAttributes
-/// [`WebGLContextAttributes`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextAttributes)
 class WebGLContextAttributes : public emlite::Val {
   explicit WebGLContextAttributes(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit WebGLContextAttributes(const emlite::Val &val) noexcept;
     WebGLContextAttributes() noexcept;
     [[nodiscard]] WebGLContextAttributes clone() const noexcept;
+    /// Getter of the `xrCompatible` attribute.
     [[nodiscard]] bool xrCompatible() const;
+    /// Setter of the `xrCompatible` attribute.
     void xrCompatible(bool value);
 };
 

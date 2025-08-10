@@ -1,14 +1,16 @@
 #include <webbind/UnknownCredentialOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 UnknownCredentialOptions::UnknownCredentialOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 UnknownCredentialOptions UnknownCredentialOptions::take_ownership(Handle h) noexcept {
-        return UnknownCredentialOptions(h);
-    }
+    return UnknownCredentialOptions(h);
+}
+
 UnknownCredentialOptions::UnknownCredentialOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 UnknownCredentialOptions::UnknownCredentialOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 UnknownCredentialOptions UnknownCredentialOptions::clone() const noexcept { return *this; }
 
 jsbind::String UnknownCredentialOptions::rpId() const {

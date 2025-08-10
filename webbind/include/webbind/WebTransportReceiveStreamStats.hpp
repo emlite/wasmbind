@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type WebTransportReceiveStreamStats
-/// [`WebTransportReceiveStreamStats`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportReceiveStreamStats)
 class WebTransportReceiveStreamStats : public emlite::Val {
   explicit WebTransportReceiveStreamStats(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit WebTransportReceiveStreamStats(const emlite::Val &val) noexcept;
     WebTransportReceiveStreamStats() noexcept;
     [[nodiscard]] WebTransportReceiveStreamStats clone() const noexcept;
+    /// Getter of the `bytesReceived` attribute.
     [[nodiscard]] long long bytesReceived() const;
+    /// Setter of the `bytesReceived` attribute.
     void bytesReceived(long long value);
+    /// Getter of the `bytesRead` attribute.
     [[nodiscard]] long long bytesRead() const;
+    /// Setter of the `bytesRead` attribute.
     void bytesRead(long long value);
 };
 

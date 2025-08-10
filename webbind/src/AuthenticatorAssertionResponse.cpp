@@ -3,11 +3,15 @@
 namespace webbind {
 
 AuthenticatorAssertionResponse AuthenticatorAssertionResponse::take_ownership(Handle h) noexcept {
-        return AuthenticatorAssertionResponse(h);
-    }
+    return AuthenticatorAssertionResponse(h);
+}
+
 AuthenticatorAssertionResponse AuthenticatorAssertionResponse::clone() const noexcept { return *this; }
+
 emlite::Val AuthenticatorAssertionResponse::instance() noexcept { return emlite::Val::global("AuthenticatorAssertionResponse"); }
+
 AuthenticatorAssertionResponse::AuthenticatorAssertionResponse(Handle h) noexcept : AuthenticatorResponse(emlite::Val::take_ownership(h)) {}
+
 AuthenticatorAssertionResponse::AuthenticatorAssertionResponse(const emlite::Val &val) noexcept: AuthenticatorResponse(val) {}
 
 jsbind::ArrayBuffer AuthenticatorAssertionResponse::authenticatorData() const {

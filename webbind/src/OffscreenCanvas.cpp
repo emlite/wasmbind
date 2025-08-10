@@ -6,11 +6,15 @@
 namespace webbind {
 
 OffscreenCanvas OffscreenCanvas::take_ownership(Handle h) noexcept {
-        return OffscreenCanvas(h);
-    }
+    return OffscreenCanvas(h);
+}
+
 OffscreenCanvas OffscreenCanvas::clone() const noexcept { return *this; }
+
 emlite::Val OffscreenCanvas::instance() noexcept { return emlite::Val::global("OffscreenCanvas"); }
+
 OffscreenCanvas::OffscreenCanvas(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 OffscreenCanvas::OffscreenCanvas(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 OffscreenCanvas::OffscreenCanvas(long long width, long long height) : EventTarget(emlite::Val::global("OffscreenCanvas").new_(width, height)) {}

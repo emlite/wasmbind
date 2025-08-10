@@ -24,19 +24,19 @@ public:
     static StorageAccessHandle take_ownership(Handle h) noexcept;
     [[nodiscard]] StorageAccessHandle clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `sessionStorage` attribute.
+    /// [`StorageAccessHandle.sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/sessionStorage)
     /// [`StorageAccessHandle.sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/sessionStorage)
     [[nodiscard]] Storage sessionStorage() const;
-    /// Getter of the `localStorage` attribute.
+    /// [`StorageAccessHandle.localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/localStorage)
     /// [`StorageAccessHandle.localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/localStorage)
     [[nodiscard]] Storage localStorage() const;
-    /// Getter of the `indexedDB` attribute.
+    /// [`StorageAccessHandle.indexedDB`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/indexedDB)
     /// [`StorageAccessHandle.indexedDB`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/indexedDB)
     [[nodiscard]] IDBFactory indexedDB() const;
-    /// Getter of the `locks` attribute.
+    /// [`StorageAccessHandle.locks`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/locks)
     /// [`StorageAccessHandle.locks`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/locks)
     [[nodiscard]] LockManager locks() const;
-    /// Getter of the `caches` attribute.
+    /// [`StorageAccessHandle.caches`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/caches)
     /// [`StorageAccessHandle.caches`](https://developer.mozilla.org/en-US/docs/Web/API/StorageAccessHandle/caches)
     [[nodiscard]] CacheStorage caches() const;
     /// The getDirectory method.

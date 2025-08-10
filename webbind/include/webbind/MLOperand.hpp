@@ -16,10 +16,10 @@ public:
     static MLOperand take_ownership(Handle h) noexcept;
     [[nodiscard]] MLOperand clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `dataType` attribute.
+    /// [`MLOperand.dataType`](https://developer.mozilla.org/en-US/docs/Web/API/MLOperand/dataType)
     /// [`MLOperand.dataType`](https://developer.mozilla.org/en-US/docs/Web/API/MLOperand/dataType)
     [[nodiscard]] MLOperandDataType dataType() const;
-    /// Getter of the `shape` attribute.
+    /// [`MLOperand.shape`](https://developer.mozilla.org/en-US/docs/Web/API/MLOperand/shape)
     /// [`MLOperand.shape`](https://developer.mozilla.org/en-US/docs/Web/API/MLOperand/shape)
     [[nodiscard]] jsbind::TypedArray<unsigned long> shape() const;
 };

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AnimationEventInit
-/// [`AnimationEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEventInit)
 class AnimationEventInit : public EventInit {
   explicit AnimationEventInit(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit AnimationEventInit(const emlite::Val &val) noexcept;
     AnimationEventInit() noexcept;
     [[nodiscard]] AnimationEventInit clone() const noexcept;
+    /// Getter of the `animationName` attribute.
     [[nodiscard]] jsbind::String animationName() const;
+    /// Setter of the `animationName` attribute.
     void animationName(const jsbind::String& value);
+    /// Getter of the `elapsedTime` attribute.
     [[nodiscard]] double elapsedTime() const;
+    /// Setter of the `elapsedTime` attribute.
     void elapsedTime(double value);
+    /// Getter of the `pseudoElement` attribute.
     [[nodiscard]] jsbind::String pseudoElement() const;
+    /// Setter of the `pseudoElement` attribute.
     void pseudoElement(const jsbind::String& value);
 };
 

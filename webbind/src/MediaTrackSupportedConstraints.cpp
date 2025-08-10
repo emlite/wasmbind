@@ -1,14 +1,16 @@
 #include <webbind/MediaTrackSupportedConstraints.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaTrackSupportedConstraints::MediaTrackSupportedConstraints(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaTrackSupportedConstraints MediaTrackSupportedConstraints::take_ownership(Handle h) noexcept {
-        return MediaTrackSupportedConstraints(h);
-    }
+    return MediaTrackSupportedConstraints(h);
+}
+
 MediaTrackSupportedConstraints::MediaTrackSupportedConstraints(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaTrackSupportedConstraints::MediaTrackSupportedConstraints() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaTrackSupportedConstraints MediaTrackSupportedConstraints::clone() const noexcept { return *this; }
 
 bool MediaTrackSupportedConstraints::displaySurface() const {

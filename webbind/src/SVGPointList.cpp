@@ -4,11 +4,15 @@
 namespace webbind {
 
 SVGPointList SVGPointList::take_ownership(Handle h) noexcept {
-        return SVGPointList(h);
-    }
+    return SVGPointList(h);
+}
+
 SVGPointList SVGPointList::clone() const noexcept { return *this; }
+
 emlite::Val SVGPointList::instance() noexcept { return emlite::Val::global("SVGPointList"); }
+
 SVGPointList::SVGPointList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 SVGPointList::SVGPointList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned long SVGPointList::length() const {

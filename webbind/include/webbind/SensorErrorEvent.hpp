@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SensorErrorEvent(..)` constructor, creating a new SensorErrorEvent instance
     SensorErrorEvent(const jsbind::String& type, const SensorErrorEventInit& errorEventInitDict);
-    /// Getter of the `error` attribute.
+    /// [`SensorErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/SensorErrorEvent/error)
     /// [`SensorErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/SensorErrorEvent/error)
     [[nodiscard]] DOMException error() const;
 };

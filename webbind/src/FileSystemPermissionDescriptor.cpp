@@ -1,15 +1,17 @@
 #include <webbind/FileSystemPermissionDescriptor.hpp>
 #include <webbind/FileSystemHandle.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FileSystemPermissionDescriptor::FileSystemPermissionDescriptor(Handle h) noexcept : PermissionDescriptor(emlite::Val::take_ownership(h)) {}
 FileSystemPermissionDescriptor FileSystemPermissionDescriptor::take_ownership(Handle h) noexcept {
-        return FileSystemPermissionDescriptor(h);
-    }
+    return FileSystemPermissionDescriptor(h);
+}
+
 FileSystemPermissionDescriptor::FileSystemPermissionDescriptor(const emlite::Val &val) noexcept: PermissionDescriptor(val) {}
+
 FileSystemPermissionDescriptor::FileSystemPermissionDescriptor() noexcept: PermissionDescriptor(emlite::Val::object()) {}
+
 FileSystemPermissionDescriptor FileSystemPermissionDescriptor::clone() const noexcept { return *this; }
 
 FileSystemHandle FileSystemPermissionDescriptor::handle() const {

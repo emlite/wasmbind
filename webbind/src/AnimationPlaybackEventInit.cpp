@@ -1,14 +1,16 @@
 #include <webbind/AnimationPlaybackEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AnimationPlaybackEventInit::AnimationPlaybackEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 AnimationPlaybackEventInit AnimationPlaybackEventInit::take_ownership(Handle h) noexcept {
-        return AnimationPlaybackEventInit(h);
-    }
+    return AnimationPlaybackEventInit(h);
+}
+
 AnimationPlaybackEventInit::AnimationPlaybackEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 AnimationPlaybackEventInit::AnimationPlaybackEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 AnimationPlaybackEventInit AnimationPlaybackEventInit::clone() const noexcept { return *this; }
 
 jsbind::Any AnimationPlaybackEventInit::currentTime() const {

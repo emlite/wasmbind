@@ -22,7 +22,7 @@ public:
     static SVGGraphicsElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGGraphicsElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `transform` attribute.
+    /// [`SVGGraphicsElement.transform`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/transform)
     /// [`SVGGraphicsElement.transform`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/transform)
     [[nodiscard]] SVGAnimatedTransformList transform() const;
     /// The getBBox method.
@@ -37,10 +37,10 @@ public:
     /// The getScreenCTM method.
     /// [`SVGGraphicsElement.getScreenCTM`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/getScreenCTM)
     DOMMatrix getScreenCTM();
-    /// Getter of the `requiredExtensions` attribute.
+    /// [`SVGGraphicsElement.requiredExtensions`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/requiredExtensions)
     /// [`SVGGraphicsElement.requiredExtensions`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/requiredExtensions)
     [[nodiscard]] SVGStringList requiredExtensions() const;
-    /// Getter of the `systemLanguage` attribute.
+    /// [`SVGGraphicsElement.systemLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/systemLanguage)
     /// [`SVGGraphicsElement.systemLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement/systemLanguage)
     [[nodiscard]] SVGStringList systemLanguage() const;
 };

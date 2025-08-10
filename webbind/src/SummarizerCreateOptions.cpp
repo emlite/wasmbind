@@ -1,15 +1,17 @@
 #include <webbind/SummarizerCreateOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SummarizerCreateOptions::SummarizerCreateOptions(Handle h) noexcept : SummarizerCreateCoreOptions(emlite::Val::take_ownership(h)) {}
 SummarizerCreateOptions SummarizerCreateOptions::take_ownership(Handle h) noexcept {
-        return SummarizerCreateOptions(h);
-    }
+    return SummarizerCreateOptions(h);
+}
+
 SummarizerCreateOptions::SummarizerCreateOptions(const emlite::Val &val) noexcept: SummarizerCreateCoreOptions(val) {}
+
 SummarizerCreateOptions::SummarizerCreateOptions() noexcept: SummarizerCreateCoreOptions(emlite::Val::object()) {}
+
 SummarizerCreateOptions SummarizerCreateOptions::clone() const noexcept { return *this; }
 
 AbortSignal SummarizerCreateOptions::signal() const {

@@ -1,15 +1,17 @@
 #include <webbind/UADataValues.hpp>
 #include <webbind/NavigatorUABrandVersion.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 UADataValues::UADataValues(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 UADataValues UADataValues::take_ownership(Handle h) noexcept {
-        return UADataValues(h);
-    }
+    return UADataValues(h);
+}
+
 UADataValues::UADataValues(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 UADataValues::UADataValues() noexcept: emlite::Val(emlite::Val::object()) {}
+
 UADataValues UADataValues::clone() const noexcept { return *this; }
 
 jsbind::String UADataValues::architecture() const {

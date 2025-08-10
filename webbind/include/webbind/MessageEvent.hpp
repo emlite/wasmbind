@@ -23,19 +23,19 @@ public:
     MessageEvent(const jsbind::String& type);
     /// The `new MessageEvent(..)` constructor, creating a new MessageEvent instance
     MessageEvent(const jsbind::String& type, const MessageEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`MessageEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/data)
     /// [`MessageEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/data)
     [[nodiscard]] jsbind::Any data() const;
-    /// Getter of the `origin` attribute.
+    /// [`MessageEvent.origin`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/origin)
     /// [`MessageEvent.origin`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/origin)
     [[nodiscard]] jsbind::String origin() const;
-    /// Getter of the `lastEventId` attribute.
+    /// [`MessageEvent.lastEventId`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/lastEventId)
     /// [`MessageEvent.lastEventId`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/lastEventId)
     [[nodiscard]] jsbind::String lastEventId() const;
-    /// Getter of the `source` attribute.
+    /// [`MessageEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source)
     /// [`MessageEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source)
     [[nodiscard]] jsbind::Any source() const;
-    /// Getter of the `ports` attribute.
+    /// [`MessageEvent.ports`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/ports)
     /// [`MessageEvent.ports`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/ports)
     [[nodiscard]] jsbind::TypedArray<MessagePort> ports() const;
     /// The initMessageEvent method.

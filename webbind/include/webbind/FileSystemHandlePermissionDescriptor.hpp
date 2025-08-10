@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FileSystemHandlePermissionDescriptor
-/// [`FileSystemHandlePermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandlePermissionDescriptor)
 class FileSystemHandlePermissionDescriptor : public emlite::Val {
   explicit FileSystemHandlePermissionDescriptor(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit FileSystemHandlePermissionDescriptor(const emlite::Val &val) noexcept;
     FileSystemHandlePermissionDescriptor() noexcept;
     [[nodiscard]] FileSystemHandlePermissionDescriptor clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] FileSystemPermissionMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const FileSystemPermissionMode& value);
 };
 

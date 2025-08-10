@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PromiseRejectionEventInit
-/// [`PromiseRejectionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEventInit)
 class PromiseRejectionEventInit : public EventInit {
   explicit PromiseRejectionEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit PromiseRejectionEventInit(const emlite::Val &val) noexcept;
     PromiseRejectionEventInit() noexcept;
     [[nodiscard]] PromiseRejectionEventInit clone() const noexcept;
+    /// Getter of the `promise` attribute.
     [[nodiscard]] jsbind::Object promise() const;
+    /// Setter of the `promise` attribute.
     void promise(const jsbind::Object& value);
+    /// Getter of the `reason` attribute.
     [[nodiscard]] jsbind::Any reason() const;
+    /// Setter of the `reason` attribute.
     void reason(const jsbind::Any& value);
 };
 

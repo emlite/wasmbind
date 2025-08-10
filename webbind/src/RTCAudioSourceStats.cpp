@@ -1,14 +1,16 @@
 #include <webbind/RTCAudioSourceStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCAudioSourceStats::RTCAudioSourceStats(Handle h) noexcept : RTCMediaSourceStats(emlite::Val::take_ownership(h)) {}
 RTCAudioSourceStats RTCAudioSourceStats::take_ownership(Handle h) noexcept {
-        return RTCAudioSourceStats(h);
-    }
+    return RTCAudioSourceStats(h);
+}
+
 RTCAudioSourceStats::RTCAudioSourceStats(const emlite::Val &val) noexcept: RTCMediaSourceStats(val) {}
+
 RTCAudioSourceStats::RTCAudioSourceStats() noexcept: RTCMediaSourceStats(emlite::Val::object()) {}
+
 RTCAudioSourceStats RTCAudioSourceStats::clone() const noexcept { return *this; }
 
 double RTCAudioSourceStats::audioLevel() const {

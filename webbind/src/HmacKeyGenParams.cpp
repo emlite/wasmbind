@@ -1,14 +1,16 @@
 #include <webbind/HmacKeyGenParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HmacKeyGenParams::HmacKeyGenParams(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 HmacKeyGenParams HmacKeyGenParams::take_ownership(Handle h) noexcept {
-        return HmacKeyGenParams(h);
-    }
+    return HmacKeyGenParams(h);
+}
+
 HmacKeyGenParams::HmacKeyGenParams(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 HmacKeyGenParams::HmacKeyGenParams() noexcept: Algorithm(emlite::Val::object()) {}
+
 HmacKeyGenParams HmacKeyGenParams::clone() const noexcept { return *this; }
 
 jsbind::Any HmacKeyGenParams::hash() const {

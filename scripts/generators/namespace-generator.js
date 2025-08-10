@@ -56,8 +56,6 @@ export function generateNamespace(ns, dependencies) {
 
   src.push(
     "",
-    "using emlite::Val;",
-    "",
     "namespace webbind {",
     "",
     `namespace ${ns.name} {`,

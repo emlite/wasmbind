@@ -2,15 +2,17 @@
 #include <webbind/DOMRectReadOnly.hpp>
 #include <webbind/Point2D.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DetectedText::DetectedText(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DetectedText DetectedText::take_ownership(Handle h) noexcept {
-        return DetectedText(h);
-    }
+    return DetectedText(h);
+}
+
 DetectedText::DetectedText(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DetectedText::DetectedText() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DetectedText DetectedText::clone() const noexcept { return *this; }
 
 DOMRectReadOnly DetectedText::boundingBox() const {

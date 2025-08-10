@@ -1,14 +1,16 @@
 #include <webbind/FocusableAreasOption.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FocusableAreasOption::FocusableAreasOption(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FocusableAreasOption FocusableAreasOption::take_ownership(Handle h) noexcept {
-        return FocusableAreasOption(h);
-    }
+    return FocusableAreasOption(h);
+}
+
 FocusableAreasOption::FocusableAreasOption(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FocusableAreasOption::FocusableAreasOption() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FocusableAreasOption FocusableAreasOption::clone() const noexcept { return *this; }
 
 FocusableAreaSearchMode FocusableAreasOption::mode() const {

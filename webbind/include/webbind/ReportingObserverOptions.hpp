@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ReportingObserverOptions
-/// [`ReportingObserverOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ReportingObserverOptions)
 class ReportingObserverOptions : public emlite::Val {
   explicit ReportingObserverOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ReportingObserverOptions(const emlite::Val &val) noexcept;
     ReportingObserverOptions() noexcept;
     [[nodiscard]] ReportingObserverOptions clone() const noexcept;
+    /// Getter of the `types` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> types() const;
+    /// Setter of the `types` attribute.
     void types(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `buffered` attribute.
     [[nodiscard]] bool buffered() const;
+    /// Setter of the `buffered` attribute.
     void buffered(bool value);
 };
 

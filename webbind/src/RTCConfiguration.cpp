@@ -2,15 +2,17 @@
 #include <webbind/RTCIceServer.hpp>
 #include <webbind/RTCCertificate.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCConfiguration::RTCConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCConfiguration RTCConfiguration::take_ownership(Handle h) noexcept {
-        return RTCConfiguration(h);
-    }
+    return RTCConfiguration(h);
+}
+
 RTCConfiguration::RTCConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCConfiguration::RTCConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCConfiguration RTCConfiguration::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<RTCIceServer> RTCConfiguration::iceServers() const {

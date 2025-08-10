@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type TaskPriorityChangeEventInit
-/// [`TaskPriorityChangeEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/TaskPriorityChangeEventInit)
 class TaskPriorityChangeEventInit : public EventInit {
   explicit TaskPriorityChangeEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit TaskPriorityChangeEventInit(const emlite::Val &val) noexcept;
     TaskPriorityChangeEventInit() noexcept;
     [[nodiscard]] TaskPriorityChangeEventInit clone() const noexcept;
+    /// Getter of the `previousPriority` attribute.
     [[nodiscard]] TaskPriority previousPriority() const;
+    /// Setter of the `previousPriority` attribute.
     void previousPriority(const TaskPriority& value);
 };
 

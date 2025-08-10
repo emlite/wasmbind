@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCOfferAnswerOptions
-/// [`RTCOfferAnswerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RTCOfferAnswerOptions)
 class RTCOfferAnswerOptions : public emlite::Val {
   explicit RTCOfferAnswerOptions(Handle h) noexcept;
 public:

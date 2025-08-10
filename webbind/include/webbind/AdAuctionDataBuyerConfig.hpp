@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AdAuctionDataBuyerConfig
-/// [`AdAuctionDataBuyerConfig`](https://developer.mozilla.org/en-US/docs/Web/API/AdAuctionDataBuyerConfig)
 class AdAuctionDataBuyerConfig : public emlite::Val {
   explicit AdAuctionDataBuyerConfig(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit AdAuctionDataBuyerConfig(const emlite::Val &val) noexcept;
     AdAuctionDataBuyerConfig() noexcept;
     [[nodiscard]] AdAuctionDataBuyerConfig clone() const noexcept;
+    /// Getter of the `targetSize` attribute.
     [[nodiscard]] unsigned long targetSize() const;
+    /// Setter of the `targetSize` attribute.
     void targetSize(unsigned long value);
 };
 

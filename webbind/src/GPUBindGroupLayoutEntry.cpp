@@ -5,15 +5,17 @@
 #include <webbind/GPUStorageTextureBindingLayout.hpp>
 #include <webbind/GPUExternalTextureBindingLayout.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUBindGroupLayoutEntry::GPUBindGroupLayoutEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUBindGroupLayoutEntry GPUBindGroupLayoutEntry::take_ownership(Handle h) noexcept {
-        return GPUBindGroupLayoutEntry(h);
-    }
+    return GPUBindGroupLayoutEntry(h);
+}
+
 GPUBindGroupLayoutEntry::GPUBindGroupLayoutEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUBindGroupLayoutEntry::GPUBindGroupLayoutEntry() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUBindGroupLayoutEntry GPUBindGroupLayoutEntry::clone() const noexcept { return *this; }
 
 jsbind::Any GPUBindGroupLayoutEntry::binding() const {

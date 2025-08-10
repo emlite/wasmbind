@@ -10,7 +10,6 @@ class Highlight;
 class AbstractRange;
 
 /// Dictionary type HighlightHitResult
-/// [`HighlightHitResult`](https://developer.mozilla.org/en-US/docs/Web/API/HighlightHitResult)
 class HighlightHitResult : public emlite::Val {
   explicit HighlightHitResult(Handle h) noexcept;
 public:
@@ -18,9 +17,13 @@ public:
     explicit HighlightHitResult(const emlite::Val &val) noexcept;
     HighlightHitResult() noexcept;
     [[nodiscard]] HighlightHitResult clone() const noexcept;
+    /// Getter of the `highlight` attribute.
     [[nodiscard]] Highlight highlight() const;
+    /// Setter of the `highlight` attribute.
     void highlight(const Highlight& value);
+    /// Getter of the `ranges` attribute.
     [[nodiscard]] jsbind::TypedArray<AbstractRange> ranges() const;
+    /// Setter of the `ranges` attribute.
     void ranges(const jsbind::TypedArray<AbstractRange>& value);
 };
 

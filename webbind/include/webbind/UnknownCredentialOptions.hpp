@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type UnknownCredentialOptions
-/// [`UnknownCredentialOptions`](https://developer.mozilla.org/en-US/docs/Web/API/UnknownCredentialOptions)
 class UnknownCredentialOptions : public emlite::Val {
   explicit UnknownCredentialOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit UnknownCredentialOptions(const emlite::Val &val) noexcept;
     UnknownCredentialOptions() noexcept;
     [[nodiscard]] UnknownCredentialOptions clone() const noexcept;
+    /// Getter of the `rpId` attribute.
     [[nodiscard]] jsbind::String rpId() const;
+    /// Setter of the `rpId` attribute.
     void rpId(const jsbind::String& value);
+    /// Getter of the `credentialId` attribute.
     [[nodiscard]] jsbind::Any credentialId() const;
+    /// Setter of the `credentialId` attribute.
     void credentialId(const jsbind::Any& value);
 };
 

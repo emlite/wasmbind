@@ -1,14 +1,16 @@
 #include <webbind/RTCIdentityProviderOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCIdentityProviderOptions::RTCIdentityProviderOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCIdentityProviderOptions RTCIdentityProviderOptions::take_ownership(Handle h) noexcept {
-        return RTCIdentityProviderOptions(h);
-    }
+    return RTCIdentityProviderOptions(h);
+}
+
 RTCIdentityProviderOptions::RTCIdentityProviderOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCIdentityProviderOptions::RTCIdentityProviderOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCIdentityProviderOptions RTCIdentityProviderOptions::clone() const noexcept { return *this; }
 
 jsbind::String RTCIdentityProviderOptions::protocol() const {

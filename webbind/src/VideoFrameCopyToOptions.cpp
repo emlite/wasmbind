@@ -2,15 +2,17 @@
 #include <webbind/DOMRectInit.hpp>
 #include <webbind/PlaneLayout.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoFrameCopyToOptions::VideoFrameCopyToOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoFrameCopyToOptions VideoFrameCopyToOptions::take_ownership(Handle h) noexcept {
-        return VideoFrameCopyToOptions(h);
-    }
+    return VideoFrameCopyToOptions(h);
+}
+
 VideoFrameCopyToOptions::VideoFrameCopyToOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoFrameCopyToOptions::VideoFrameCopyToOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoFrameCopyToOptions VideoFrameCopyToOptions::clone() const noexcept { return *this; }
 
 DOMRectInit VideoFrameCopyToOptions::rect() const {

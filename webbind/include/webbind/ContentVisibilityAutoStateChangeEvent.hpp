@@ -21,7 +21,7 @@ public:
     ContentVisibilityAutoStateChangeEvent(const jsbind::String& type);
     /// The `new ContentVisibilityAutoStateChangeEvent(..)` constructor, creating a new ContentVisibilityAutoStateChangeEvent instance
     ContentVisibilityAutoStateChangeEvent(const jsbind::String& type, const ContentVisibilityAutoStateChangeEventInit& eventInitDict);
-    /// Getter of the `skipped` attribute.
+    /// [`ContentVisibilityAutoStateChangeEvent.skipped`](https://developer.mozilla.org/en-US/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped)
     /// [`ContentVisibilityAutoStateChangeEvent.skipped`](https://developer.mozilla.org/en-US/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped)
     [[nodiscard]] bool skipped() const;
 };

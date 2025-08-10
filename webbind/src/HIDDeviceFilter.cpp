@@ -1,14 +1,16 @@
 #include <webbind/HIDDeviceFilter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HIDDeviceFilter::HIDDeviceFilter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HIDDeviceFilter HIDDeviceFilter::take_ownership(Handle h) noexcept {
-        return HIDDeviceFilter(h);
-    }
+    return HIDDeviceFilter(h);
+}
+
 HIDDeviceFilter::HIDDeviceFilter(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HIDDeviceFilter::HIDDeviceFilter() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HIDDeviceFilter HIDDeviceFilter::clone() const noexcept { return *this; }
 
 unsigned long HIDDeviceFilter::vendorId() const {

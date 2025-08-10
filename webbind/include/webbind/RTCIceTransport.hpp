@@ -23,16 +23,16 @@ public:
     static RTCIceTransport take_ownership(Handle h) noexcept;
     [[nodiscard]] RTCIceTransport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `role` attribute.
+    /// [`RTCIceTransport.role`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/role)
     /// [`RTCIceTransport.role`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/role)
     [[nodiscard]] RTCIceRole role() const;
-    /// Getter of the `component` attribute.
+    /// [`RTCIceTransport.component`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/component)
     /// [`RTCIceTransport.component`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/component)
     [[nodiscard]] RTCIceComponent component() const;
-    /// Getter of the `state` attribute.
+    /// [`RTCIceTransport.state`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/state)
     /// [`RTCIceTransport.state`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/state)
     [[nodiscard]] RTCIceTransportState state() const;
-    /// Getter of the `gatheringState` attribute.
+    /// [`RTCIceTransport.gatheringState`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/gatheringState)
     /// [`RTCIceTransport.gatheringState`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/gatheringState)
     [[nodiscard]] RTCIceGathererState gatheringState() const;
     /// The getLocalCandidates method.
@@ -50,19 +50,19 @@ public:
     /// The getRemoteParameters method.
     /// [`RTCIceTransport.getRemoteParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/getRemoteParameters)
     RTCIceParameters getRemoteParameters();
-    /// Getter of the `onstatechange` attribute.
+    /// [`RTCIceTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onstatechange)
     /// [`RTCIceTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onstatechange)
     [[nodiscard]] jsbind::Any onstatechange() const;
     /// Setter of the `onstatechange` attribute.
     /// [`RTCIceTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onstatechange)
     void onstatechange(const jsbind::Any& value);
-    /// Getter of the `ongatheringstatechange` attribute.
+    /// [`RTCIceTransport.ongatheringstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/ongatheringstatechange)
     /// [`RTCIceTransport.ongatheringstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/ongatheringstatechange)
     [[nodiscard]] jsbind::Any ongatheringstatechange() const;
     /// Setter of the `ongatheringstatechange` attribute.
     /// [`RTCIceTransport.ongatheringstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/ongatheringstatechange)
     void ongatheringstatechange(const jsbind::Any& value);
-    /// Getter of the `onselectedcandidatepairchange` attribute.
+    /// [`RTCIceTransport.onselectedcandidatepairchange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onselectedcandidatepairchange)
     /// [`RTCIceTransport.onselectedcandidatepairchange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onselectedcandidatepairchange)
     [[nodiscard]] jsbind::Any onselectedcandidatepairchange() const;
     /// Setter of the `onselectedcandidatepairchange` attribute.
@@ -94,13 +94,13 @@ public:
     /// The addRemoteCandidate method.
     /// [`RTCIceTransport.addRemoteCandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/addRemoteCandidate)
     jsbind::Undefined addRemoteCandidate(const RTCIceCandidateInit& remoteCandidate);
-    /// Getter of the `onerror` attribute.
+    /// [`RTCIceTransport.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onerror)
     /// [`RTCIceTransport.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.
     /// [`RTCIceTransport.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onerror)
     void onerror(const jsbind::Any& value);
-    /// Getter of the `onicecandidate` attribute.
+    /// [`RTCIceTransport.onicecandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onicecandidate)
     /// [`RTCIceTransport.onicecandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onicecandidate)
     [[nodiscard]] jsbind::Any onicecandidate() const;
     /// Setter of the `onicecandidate` attribute.

@@ -1,15 +1,17 @@
 #include <webbind/AuthenticationExtensionsPRFInputs.hpp>
 #include <webbind/AuthenticationExtensionsPRFValues.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticationExtensionsPRFInputs::AuthenticationExtensionsPRFInputs(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticationExtensionsPRFInputs AuthenticationExtensionsPRFInputs::take_ownership(Handle h) noexcept {
-        return AuthenticationExtensionsPRFInputs(h);
-    }
+    return AuthenticationExtensionsPRFInputs(h);
+}
+
 AuthenticationExtensionsPRFInputs::AuthenticationExtensionsPRFInputs(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticationExtensionsPRFInputs::AuthenticationExtensionsPRFInputs() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticationExtensionsPRFInputs AuthenticationExtensionsPRFInputs::clone() const noexcept { return *this; }
 
 AuthenticationExtensionsPRFValues AuthenticationExtensionsPRFInputs::eval() const {

@@ -18,13 +18,13 @@ public:
     static CharacterData take_ownership(Handle h) noexcept;
     [[nodiscard]] CharacterData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `data` attribute.
+    /// [`CharacterData.data`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/data)
     /// [`CharacterData.data`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/data)
     [[nodiscard]] jsbind::String data() const;
     /// Setter of the `data` attribute.
     /// [`CharacterData.data`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/data)
     void data(const jsbind::String& value);
-    /// Getter of the `length` attribute.
+    /// [`CharacterData.length`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/length)
     /// [`CharacterData.length`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/length)
     [[nodiscard]] unsigned long length() const;
     /// The substringData method.
@@ -42,10 +42,10 @@ public:
     /// The replaceData method.
     /// [`CharacterData.replaceData`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/replaceData)
     jsbind::Undefined replaceData(unsigned long offset, unsigned long count, const jsbind::String& data);
-    /// Getter of the `previousElementSibling` attribute.
+    /// [`CharacterData.previousElementSibling`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/previousElementSibling)
     /// [`CharacterData.previousElementSibling`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/previousElementSibling)
     [[nodiscard]] Element previousElementSibling() const;
-    /// Getter of the `nextElementSibling` attribute.
+    /// [`CharacterData.nextElementSibling`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/nextElementSibling)
     /// [`CharacterData.nextElementSibling`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/nextElementSibling)
     [[nodiscard]] Element nextElementSibling() const;
     /// The before method.

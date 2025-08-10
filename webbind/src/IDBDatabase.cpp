@@ -8,11 +8,15 @@
 namespace webbind {
 
 IDBDatabase IDBDatabase::take_ownership(Handle h) noexcept {
-        return IDBDatabase(h);
-    }
+    return IDBDatabase(h);
+}
+
 IDBDatabase IDBDatabase::clone() const noexcept { return *this; }
+
 emlite::Val IDBDatabase::instance() noexcept { return emlite::Val::global("IDBDatabase"); }
+
 IDBDatabase::IDBDatabase(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 IDBDatabase::IDBDatabase(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::String IDBDatabase::name() const {

@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type GPUFragmentState
-/// [`GPUFragmentState`](https://developer.mozilla.org/en-US/docs/Web/API/GPUFragmentState)
 class GPUFragmentState : public GPUProgrammableStage {
   explicit GPUFragmentState(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit GPUFragmentState(const emlite::Val &val) noexcept;
     GPUFragmentState() noexcept;
     [[nodiscard]] GPUFragmentState clone() const noexcept;
+    /// Getter of the `targets` attribute.
     [[nodiscard]] jsbind::TypedArray<GPUColorTargetState> targets() const;
+    /// Setter of the `targets` attribute.
     void targets(const jsbind::TypedArray<GPUColorTargetState>& value);
 };
 

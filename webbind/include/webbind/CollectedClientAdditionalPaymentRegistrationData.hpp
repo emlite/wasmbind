@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CollectedClientAdditionalPaymentRegistrationData
-/// [`CollectedClientAdditionalPaymentRegistrationData`](https://developer.mozilla.org/en-US/docs/Web/API/CollectedClientAdditionalPaymentRegistrationData)
 class CollectedClientAdditionalPaymentRegistrationData : public emlite::Val {
   explicit CollectedClientAdditionalPaymentRegistrationData(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit CollectedClientAdditionalPaymentRegistrationData(const emlite::Val &val) noexcept;
     CollectedClientAdditionalPaymentRegistrationData() noexcept;
     [[nodiscard]] CollectedClientAdditionalPaymentRegistrationData clone() const noexcept;
+    /// Getter of the `browserBoundPublicKey` attribute.
     [[nodiscard]] jsbind::String browserBoundPublicKey() const;
+    /// Setter of the `browserBoundPublicKey` attribute.
     void browserBoundPublicKey(const jsbind::String& value);
 };
 

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PictureInPictureEvent(..)` constructor, creating a new PictureInPictureEvent instance
     PictureInPictureEvent(const jsbind::String& type, const PictureInPictureEventInit& eventInitDict);
-    /// Getter of the `pictureInPictureWindow` attribute.
+    /// [`PictureInPictureEvent.pictureInPictureWindow`](https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow)
     /// [`PictureInPictureEvent.pictureInPictureWindow`](https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow)
     [[nodiscard]] PictureInPictureWindow pictureInPictureWindow() const;
 };

@@ -10,7 +10,6 @@ namespace webbind {
 class USBDevice;
 
 /// Dictionary type USBConnectionEventInit
-/// [`USBConnectionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/USBConnectionEventInit)
 class USBConnectionEventInit : public EventInit {
   explicit USBConnectionEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit USBConnectionEventInit(const emlite::Val &val) noexcept;
     USBConnectionEventInit() noexcept;
     [[nodiscard]] USBConnectionEventInit clone() const noexcept;
+    /// Getter of the `device` attribute.
     [[nodiscard]] USBDevice device() const;
+    /// Setter of the `device` attribute.
     void device(const USBDevice& value);
 };
 

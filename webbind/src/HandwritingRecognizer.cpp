@@ -5,11 +5,15 @@
 namespace webbind {
 
 HandwritingRecognizer HandwritingRecognizer::take_ownership(Handle h) noexcept {
-        return HandwritingRecognizer(h);
-    }
+    return HandwritingRecognizer(h);
+}
+
 HandwritingRecognizer HandwritingRecognizer::clone() const noexcept { return *this; }
+
 emlite::Val HandwritingRecognizer::instance() noexcept { return emlite::Val::global("HandwritingRecognizer"); }
+
 HandwritingRecognizer::HandwritingRecognizer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 HandwritingRecognizer::HandwritingRecognizer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 HandwritingDrawing HandwritingRecognizer::startDrawing() {

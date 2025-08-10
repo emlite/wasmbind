@@ -1,14 +1,16 @@
 #include <webbind/BiquadFilterOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BiquadFilterOptions::BiquadFilterOptions(Handle h) noexcept : AudioNodeOptions(emlite::Val::take_ownership(h)) {}
 BiquadFilterOptions BiquadFilterOptions::take_ownership(Handle h) noexcept {
-        return BiquadFilterOptions(h);
-    }
+    return BiquadFilterOptions(h);
+}
+
 BiquadFilterOptions::BiquadFilterOptions(const emlite::Val &val) noexcept: AudioNodeOptions(val) {}
+
 BiquadFilterOptions::BiquadFilterOptions() noexcept: AudioNodeOptions(emlite::Val::object()) {}
+
 BiquadFilterOptions BiquadFilterOptions::clone() const noexcept { return *this; }
 
 BiquadFilterType BiquadFilterOptions::type() const {

@@ -23,10 +23,10 @@ public:
     CommandEvent(const jsbind::String& type);
     /// The `new CommandEvent(..)` constructor, creating a new CommandEvent instance
     CommandEvent(const jsbind::String& type, const CommandEventInit& eventInitDict);
-    /// Getter of the `source` attribute.
+    /// [`CommandEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent/source)
     /// [`CommandEvent.source`](https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent/source)
     [[nodiscard]] Element source() const;
-    /// Getter of the `command` attribute.
+    /// [`CommandEvent.command`](https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent/command)
     /// [`CommandEvent.command`](https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent/command)
     [[nodiscard]] jsbind::String command() const;
 };

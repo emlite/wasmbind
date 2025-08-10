@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IDBDatabaseInfo
-/// [`IDBDatabaseInfo`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabaseInfo)
 class IDBDatabaseInfo : public emlite::Val {
   explicit IDBDatabaseInfo(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit IDBDatabaseInfo(const emlite::Val &val) noexcept;
     IDBDatabaseInfo() noexcept;
     [[nodiscard]] IDBDatabaseInfo clone() const noexcept;
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
+    /// Getter of the `version` attribute.
     [[nodiscard]] long long version() const;
+    /// Setter of the `version` attribute.
     void version(long long value);
 };
 

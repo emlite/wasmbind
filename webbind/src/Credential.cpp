@@ -3,11 +3,15 @@
 namespace webbind {
 
 Credential Credential::take_ownership(Handle h) noexcept {
-        return Credential(h);
-    }
+    return Credential(h);
+}
+
 Credential Credential::clone() const noexcept { return *this; }
+
 emlite::Val Credential::instance() noexcept { return emlite::Val::global("Credential"); }
+
 Credential::Credential(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Credential::Credential(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String Credential::id() const {

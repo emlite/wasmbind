@@ -1,14 +1,16 @@
 #include <webbind/PASignalValue.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PASignalValue::PASignalValue(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PASignalValue PASignalValue::take_ownership(Handle h) noexcept {
-        return PASignalValue(h);
-    }
+    return PASignalValue(h);
+}
+
 PASignalValue::PASignalValue(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PASignalValue::PASignalValue() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PASignalValue PASignalValue::clone() const noexcept { return *this; }
 
 jsbind::String PASignalValue::baseValue() const {

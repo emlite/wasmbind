@@ -3,11 +3,15 @@
 namespace webbind {
 
 TextMetrics TextMetrics::take_ownership(Handle h) noexcept {
-        return TextMetrics(h);
-    }
+    return TextMetrics(h);
+}
+
 TextMetrics TextMetrics::clone() const noexcept { return *this; }
+
 emlite::Val TextMetrics::instance() noexcept { return emlite::Val::global("TextMetrics"); }
+
 TextMetrics::TextMetrics(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 TextMetrics::TextMetrics(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 double TextMetrics::width() const {

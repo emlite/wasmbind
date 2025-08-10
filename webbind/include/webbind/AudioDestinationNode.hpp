@@ -16,7 +16,7 @@ public:
     static AudioDestinationNode take_ownership(Handle h) noexcept;
     [[nodiscard]] AudioDestinationNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `maxChannelCount` attribute.
+    /// [`AudioDestinationNode.maxChannelCount`](https://developer.mozilla.org/en-US/docs/Web/API/AudioDestinationNode/maxChannelCount)
     /// [`AudioDestinationNode.maxChannelCount`](https://developer.mozilla.org/en-US/docs/Web/API/AudioDestinationNode/maxChannelCount)
     [[nodiscard]] unsigned long maxChannelCount() const;
 };

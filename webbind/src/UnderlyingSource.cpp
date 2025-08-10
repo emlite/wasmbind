@@ -1,14 +1,16 @@
 #include <webbind/UnderlyingSource.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 UnderlyingSource::UnderlyingSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 UnderlyingSource UnderlyingSource::take_ownership(Handle h) noexcept {
-        return UnderlyingSource(h);
-    }
+    return UnderlyingSource(h);
+}
+
 UnderlyingSource::UnderlyingSource(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 UnderlyingSource::UnderlyingSource() noexcept: emlite::Val(emlite::Val::object()) {}
+
 UnderlyingSource UnderlyingSource::clone() const noexcept { return *this; }
 
 jsbind::Function UnderlyingSource::start() const {

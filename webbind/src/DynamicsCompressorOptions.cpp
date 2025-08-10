@@ -1,14 +1,16 @@
 #include <webbind/DynamicsCompressorOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DynamicsCompressorOptions::DynamicsCompressorOptions(Handle h) noexcept : AudioNodeOptions(emlite::Val::take_ownership(h)) {}
 DynamicsCompressorOptions DynamicsCompressorOptions::take_ownership(Handle h) noexcept {
-        return DynamicsCompressorOptions(h);
-    }
+    return DynamicsCompressorOptions(h);
+}
+
 DynamicsCompressorOptions::DynamicsCompressorOptions(const emlite::Val &val) noexcept: AudioNodeOptions(val) {}
+
 DynamicsCompressorOptions::DynamicsCompressorOptions() noexcept: AudioNodeOptions(emlite::Val::object()) {}
+
 DynamicsCompressorOptions DynamicsCompressorOptions::clone() const noexcept { return *this; }
 
 float DynamicsCompressorOptions::attack() const {

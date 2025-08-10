@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MediaConfiguration
-/// [`MediaConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaConfiguration)
 class MediaConfiguration : public emlite::Val {
   explicit MediaConfiguration(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit MediaConfiguration(const emlite::Val &val) noexcept;
     MediaConfiguration() noexcept;
     [[nodiscard]] MediaConfiguration clone() const noexcept;
+    /// Getter of the `video` attribute.
     [[nodiscard]] VideoConfiguration video() const;
+    /// Setter of the `video` attribute.
     void video(const VideoConfiguration& value);
+    /// Getter of the `audio` attribute.
     [[nodiscard]] AudioConfiguration audio() const;
+    /// Setter of the `audio` attribute.
     void audio(const AudioConfiguration& value);
 };
 

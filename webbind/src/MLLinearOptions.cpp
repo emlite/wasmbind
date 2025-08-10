@@ -1,14 +1,16 @@
 #include <webbind/MLLinearOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLLinearOptions::MLLinearOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLLinearOptions MLLinearOptions::take_ownership(Handle h) noexcept {
-        return MLLinearOptions(h);
-    }
+    return MLLinearOptions(h);
+}
+
 MLLinearOptions::MLLinearOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLLinearOptions::MLLinearOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLLinearOptions MLLinearOptions::clone() const noexcept { return *this; }
 
 double MLLinearOptions::alpha() const {

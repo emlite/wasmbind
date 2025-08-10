@@ -17,13 +17,13 @@ public:
     static PermissionStatus take_ownership(Handle h) noexcept;
     [[nodiscard]] PermissionStatus clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `state` attribute.
+    /// [`PermissionStatus.state`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state)
     /// [`PermissionStatus.state`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state)
     [[nodiscard]] PermissionState state() const;
-    /// Getter of the `name` attribute.
+    /// [`PermissionStatus.name`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/name)
     /// [`PermissionStatus.name`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `onchange` attribute.
+    /// [`PermissionStatus.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/onchange)
     /// [`PermissionStatus.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

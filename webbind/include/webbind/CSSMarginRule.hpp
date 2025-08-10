@@ -18,10 +18,10 @@ public:
     static CSSMarginRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSMarginRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`CSSMarginRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMarginRule/name)
     /// [`CSSMarginRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMarginRule/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `style` attribute.
+    /// [`CSSMarginRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMarginRule/style)
     /// [`CSSMarginRule.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMarginRule/style)
     [[nodiscard]] CSSStyleDeclaration style() const;
 };

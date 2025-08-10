@@ -23,22 +23,22 @@ public:
     IntersectionObserver(const jsbind::Function& callback);
     /// The `new IntersectionObserver(..)` constructor, creating a new IntersectionObserver instance
     IntersectionObserver(const jsbind::Function& callback, const IntersectionObserverInit& options);
-    /// Getter of the `root` attribute.
+    /// [`IntersectionObserver.root`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root)
     /// [`IntersectionObserver.root`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root)
     [[nodiscard]] jsbind::Any root() const;
-    /// Getter of the `rootMargin` attribute.
+    /// [`IntersectionObserver.rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin)
     /// [`IntersectionObserver.rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin)
     [[nodiscard]] jsbind::String rootMargin() const;
-    /// Getter of the `scrollMargin` attribute.
+    /// [`IntersectionObserver.scrollMargin`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/scrollMargin)
     /// [`IntersectionObserver.scrollMargin`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/scrollMargin)
     [[nodiscard]] jsbind::String scrollMargin() const;
-    /// Getter of the `thresholds` attribute.
+    /// [`IntersectionObserver.thresholds`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds)
     /// [`IntersectionObserver.thresholds`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds)
     [[nodiscard]] jsbind::TypedArray<double> thresholds() const;
-    /// Getter of the `delay` attribute.
+    /// [`IntersectionObserver.delay`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/delay)
     /// [`IntersectionObserver.delay`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/delay)
     [[nodiscard]] long delay() const;
-    /// Getter of the `trackVisibility` attribute.
+    /// [`IntersectionObserver.trackVisibility`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/trackVisibility)
     /// [`IntersectionObserver.trackVisibility`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/trackVisibility)
     [[nodiscard]] bool trackVisibility() const;
     /// The observe method.

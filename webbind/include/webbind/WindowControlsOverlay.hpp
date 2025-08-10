@@ -18,13 +18,13 @@ public:
     static WindowControlsOverlay take_ownership(Handle h) noexcept;
     [[nodiscard]] WindowControlsOverlay clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `visible` attribute.
+    /// [`WindowControlsOverlay.visible`](https://developer.mozilla.org/en-US/docs/Web/API/WindowControlsOverlay/visible)
     /// [`WindowControlsOverlay.visible`](https://developer.mozilla.org/en-US/docs/Web/API/WindowControlsOverlay/visible)
     [[nodiscard]] bool visible() const;
     /// The getTitlebarAreaRect method.
     /// [`WindowControlsOverlay.getTitlebarAreaRect`](https://developer.mozilla.org/en-US/docs/Web/API/WindowControlsOverlay/getTitlebarAreaRect)
     DOMRect getTitlebarAreaRect();
-    /// Getter of the `ongeometrychange` attribute.
+    /// [`WindowControlsOverlay.ongeometrychange`](https://developer.mozilla.org/en-US/docs/Web/API/WindowControlsOverlay/ongeometrychange)
     /// [`WindowControlsOverlay.ongeometrychange`](https://developer.mozilla.org/en-US/docs/Web/API/WindowControlsOverlay/ongeometrychange)
     [[nodiscard]] jsbind::Any ongeometrychange() const;
     /// Setter of the `ongeometrychange` attribute.

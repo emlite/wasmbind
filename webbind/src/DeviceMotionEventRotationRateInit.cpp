@@ -1,14 +1,16 @@
 #include <webbind/DeviceMotionEventRotationRateInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DeviceMotionEventRotationRateInit::DeviceMotionEventRotationRateInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DeviceMotionEventRotationRateInit DeviceMotionEventRotationRateInit::take_ownership(Handle h) noexcept {
-        return DeviceMotionEventRotationRateInit(h);
-    }
+    return DeviceMotionEventRotationRateInit(h);
+}
+
 DeviceMotionEventRotationRateInit::DeviceMotionEventRotationRateInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DeviceMotionEventRotationRateInit::DeviceMotionEventRotationRateInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DeviceMotionEventRotationRateInit DeviceMotionEventRotationRateInit::clone() const noexcept { return *this; }
 
 double DeviceMotionEventRotationRateInit::alpha() const {

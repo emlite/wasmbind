@@ -1,14 +1,16 @@
 #include <webbind/WorkerOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WorkerOptions::WorkerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WorkerOptions WorkerOptions::take_ownership(Handle h) noexcept {
-        return WorkerOptions(h);
-    }
+    return WorkerOptions(h);
+}
+
 WorkerOptions::WorkerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WorkerOptions::WorkerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WorkerOptions WorkerOptions::clone() const noexcept { return *this; }
 
 WorkerType WorkerOptions::type() const {

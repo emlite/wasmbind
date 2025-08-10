@@ -1,14 +1,16 @@
 #include <webbind/ObservableInspector.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ObservableInspector::ObservableInspector(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ObservableInspector ObservableInspector::take_ownership(Handle h) noexcept {
-        return ObservableInspector(h);
-    }
+    return ObservableInspector(h);
+}
+
 ObservableInspector::ObservableInspector(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ObservableInspector::ObservableInspector() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ObservableInspector ObservableInspector::clone() const noexcept { return *this; }
 
 jsbind::Function ObservableInspector::next() const {

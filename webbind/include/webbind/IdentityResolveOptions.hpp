@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityResolveOptions
-/// [`IdentityResolveOptions`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityResolveOptions)
 class IdentityResolveOptions : public emlite::Val {
   explicit IdentityResolveOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit IdentityResolveOptions(const emlite::Val &val) noexcept;
     IdentityResolveOptions() noexcept;
     [[nodiscard]] IdentityResolveOptions clone() const noexcept;
+    /// Getter of the `accountId` attribute.
     [[nodiscard]] jsbind::String accountId() const;
+    /// Setter of the `accountId` attribute.
     void accountId(const jsbind::String& value);
 };
 

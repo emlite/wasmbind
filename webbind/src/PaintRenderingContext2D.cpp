@@ -8,11 +8,15 @@
 namespace webbind {
 
 PaintRenderingContext2D PaintRenderingContext2D::take_ownership(Handle h) noexcept {
-        return PaintRenderingContext2D(h);
-    }
+    return PaintRenderingContext2D(h);
+}
+
 PaintRenderingContext2D PaintRenderingContext2D::clone() const noexcept { return *this; }
+
 emlite::Val PaintRenderingContext2D::instance() noexcept { return emlite::Val::global("PaintRenderingContext2D"); }
+
 PaintRenderingContext2D::PaintRenderingContext2D(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PaintRenderingContext2D::PaintRenderingContext2D(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined PaintRenderingContext2D::save() {

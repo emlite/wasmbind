@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCRtpCodingParameters
-/// [`RTCRtpCodingParameters`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpCodingParameters)
 class RTCRtpCodingParameters : public emlite::Val {
   explicit RTCRtpCodingParameters(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit RTCRtpCodingParameters(const emlite::Val &val) noexcept;
     RTCRtpCodingParameters() noexcept;
     [[nodiscard]] RTCRtpCodingParameters clone() const noexcept;
+    /// Getter of the `rid` attribute.
     [[nodiscard]] jsbind::String rid() const;
+    /// Setter of the `rid` attribute.
     void rid(const jsbind::String& value);
 };
 

@@ -11,11 +11,15 @@
 namespace webbind {
 
 Navigation Navigation::take_ownership(Handle h) noexcept {
-        return Navigation(h);
-    }
+    return Navigation(h);
+}
+
 Navigation Navigation::clone() const noexcept { return *this; }
+
 emlite::Val Navigation::instance() noexcept { return emlite::Val::global("Navigation"); }
+
 Navigation::Navigation(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 Navigation::Navigation(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::TypedArray<NavigationHistoryEntry> Navigation::entries() {

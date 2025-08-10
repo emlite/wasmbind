@@ -1,14 +1,16 @@
 #include <webbind/PublicKeyCredentialDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PublicKeyCredentialDescriptor::PublicKeyCredentialDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PublicKeyCredentialDescriptor PublicKeyCredentialDescriptor::take_ownership(Handle h) noexcept {
-        return PublicKeyCredentialDescriptor(h);
-    }
+    return PublicKeyCredentialDescriptor(h);
+}
+
 PublicKeyCredentialDescriptor::PublicKeyCredentialDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PublicKeyCredentialDescriptor::PublicKeyCredentialDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PublicKeyCredentialDescriptor PublicKeyCredentialDescriptor::clone() const noexcept { return *this; }
 
 jsbind::String PublicKeyCredentialDescriptor::type() const {

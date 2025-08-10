@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type NavigationPreloadState
-/// [`NavigationPreloadState`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadState)
 class NavigationPreloadState : public emlite::Val {
   explicit NavigationPreloadState(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit NavigationPreloadState(const emlite::Val &val) noexcept;
     NavigationPreloadState() noexcept;
     [[nodiscard]] NavigationPreloadState clone() const noexcept;
+    /// Getter of the `enabled` attribute.
     [[nodiscard]] bool enabled() const;
+    /// Setter of the `enabled` attribute.
     void enabled(bool value);
+    /// Getter of the `headerValue` attribute.
     [[nodiscard]] jsbind::String headerValue() const;
+    /// Setter of the `headerValue` attribute.
     void headerValue(const jsbind::String& value);
 };
 

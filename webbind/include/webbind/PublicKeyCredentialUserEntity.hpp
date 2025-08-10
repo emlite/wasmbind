@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PublicKeyCredentialUserEntity
-/// [`PublicKeyCredentialUserEntity`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialUserEntity)
 class PublicKeyCredentialUserEntity : public PublicKeyCredentialEntity {
   explicit PublicKeyCredentialUserEntity(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit PublicKeyCredentialUserEntity(const emlite::Val &val) noexcept;
     PublicKeyCredentialUserEntity() noexcept;
     [[nodiscard]] PublicKeyCredentialUserEntity clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::Any id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::Any& value);
+    /// Getter of the `displayName` attribute.
     [[nodiscard]] jsbind::String displayName() const;
+    /// Setter of the `displayName` attribute.
     void displayName(const jsbind::String& value);
 };
 

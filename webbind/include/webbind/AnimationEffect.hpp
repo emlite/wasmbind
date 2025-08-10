@@ -33,13 +33,13 @@ public:
     /// The updateTiming method.
     /// [`AnimationEffect.updateTiming`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/updateTiming)
     jsbind::Undefined updateTiming(const OptionalEffectTiming& timing);
-    /// Getter of the `parent` attribute.
+    /// [`AnimationEffect.parent`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/parent)
     /// [`AnimationEffect.parent`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/parent)
     [[nodiscard]] GroupEffect parent() const;
-    /// Getter of the `previousSibling` attribute.
+    /// [`AnimationEffect.previousSibling`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/previousSibling)
     /// [`AnimationEffect.previousSibling`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/previousSibling)
     [[nodiscard]] AnimationEffect previousSibling() const;
-    /// Getter of the `nextSibling` attribute.
+    /// [`AnimationEffect.nextSibling`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/nextSibling)
     /// [`AnimationEffect.nextSibling`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/nextSibling)
     [[nodiscard]] AnimationEffect nextSibling() const;
     /// The before method.

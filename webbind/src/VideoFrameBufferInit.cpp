@@ -4,15 +4,17 @@
 #include <webbind/VideoColorSpaceInit.hpp>
 #include <webbind/VideoFrameMetadata.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoFrameBufferInit::VideoFrameBufferInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoFrameBufferInit VideoFrameBufferInit::take_ownership(Handle h) noexcept {
-        return VideoFrameBufferInit(h);
-    }
+    return VideoFrameBufferInit(h);
+}
+
 VideoFrameBufferInit::VideoFrameBufferInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoFrameBufferInit::VideoFrameBufferInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoFrameBufferInit VideoFrameBufferInit::clone() const noexcept { return *this; }
 
 VideoPixelFormat VideoFrameBufferInit::format() const {

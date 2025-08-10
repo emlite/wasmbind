@@ -20,7 +20,7 @@ public:
     /// The refresh method.
     /// [`PluginArray.refresh`](https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/refresh)
     jsbind::Undefined refresh();
-    /// Getter of the `length` attribute.
+    /// [`PluginArray.length`](https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/length)
     /// [`PluginArray.length`](https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.

@@ -28,22 +28,22 @@ public:
     /// The entries method.
     /// [`Navigation.entries`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/entries)
     jsbind::TypedArray<NavigationHistoryEntry> entries();
-    /// Getter of the `currentEntry` attribute.
+    /// [`Navigation.currentEntry`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/currentEntry)
     /// [`Navigation.currentEntry`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/currentEntry)
     [[nodiscard]] NavigationHistoryEntry currentEntry() const;
     /// The updateCurrentEntry method.
     /// [`Navigation.updateCurrentEntry`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/updateCurrentEntry)
     jsbind::Undefined updateCurrentEntry(const NavigationUpdateCurrentEntryOptions& options);
-    /// Getter of the `transition` attribute.
+    /// [`Navigation.transition`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/transition)
     /// [`Navigation.transition`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/transition)
     [[nodiscard]] NavigationTransition transition() const;
-    /// Getter of the `activation` attribute.
+    /// [`Navigation.activation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/activation)
     /// [`Navigation.activation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/activation)
     [[nodiscard]] NavigationActivation activation() const;
-    /// Getter of the `canGoBack` attribute.
+    /// [`Navigation.canGoBack`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/canGoBack)
     /// [`Navigation.canGoBack`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/canGoBack)
     [[nodiscard]] bool canGoBack() const;
-    /// Getter of the `canGoForward` attribute.
+    /// [`Navigation.canGoForward`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/canGoForward)
     /// [`Navigation.canGoForward`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/canGoForward)
     [[nodiscard]] bool canGoForward() const;
     /// The navigate method.
@@ -76,25 +76,25 @@ public:
     /// The forward method.
     /// [`Navigation.forward`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/forward)
     NavigationResult forward(const NavigationOptions& options);
-    /// Getter of the `onnavigate` attribute.
+    /// [`Navigation.onnavigate`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigate)
     /// [`Navigation.onnavigate`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigate)
     [[nodiscard]] jsbind::Any onnavigate() const;
     /// Setter of the `onnavigate` attribute.
     /// [`Navigation.onnavigate`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigate)
     void onnavigate(const jsbind::Any& value);
-    /// Getter of the `onnavigatesuccess` attribute.
+    /// [`Navigation.onnavigatesuccess`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigatesuccess)
     /// [`Navigation.onnavigatesuccess`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigatesuccess)
     [[nodiscard]] jsbind::Any onnavigatesuccess() const;
     /// Setter of the `onnavigatesuccess` attribute.
     /// [`Navigation.onnavigatesuccess`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigatesuccess)
     void onnavigatesuccess(const jsbind::Any& value);
-    /// Getter of the `onnavigateerror` attribute.
+    /// [`Navigation.onnavigateerror`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigateerror)
     /// [`Navigation.onnavigateerror`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigateerror)
     [[nodiscard]] jsbind::Any onnavigateerror() const;
     /// Setter of the `onnavigateerror` attribute.
     /// [`Navigation.onnavigateerror`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/onnavigateerror)
     void onnavigateerror(const jsbind::Any& value);
-    /// Getter of the `oncurrententrychange` attribute.
+    /// [`Navigation.oncurrententrychange`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/oncurrententrychange)
     /// [`Navigation.oncurrententrychange`](https://developer.mozilla.org/en-US/docs/Web/API/Navigation/oncurrententrychange)
     [[nodiscard]] jsbind::Any oncurrententrychange() const;
     /// Setter of the `oncurrententrychange` attribute.

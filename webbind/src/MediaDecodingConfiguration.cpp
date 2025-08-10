@@ -1,15 +1,17 @@
 #include <webbind/MediaDecodingConfiguration.hpp>
 #include <webbind/MediaCapabilitiesKeySystemConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaDecodingConfiguration::MediaDecodingConfiguration(Handle h) noexcept : MediaConfiguration(emlite::Val::take_ownership(h)) {}
 MediaDecodingConfiguration MediaDecodingConfiguration::take_ownership(Handle h) noexcept {
-        return MediaDecodingConfiguration(h);
-    }
+    return MediaDecodingConfiguration(h);
+}
+
 MediaDecodingConfiguration::MediaDecodingConfiguration(const emlite::Val &val) noexcept: MediaConfiguration(val) {}
+
 MediaDecodingConfiguration::MediaDecodingConfiguration() noexcept: MediaConfiguration(emlite::Val::object()) {}
+
 MediaDecodingConfiguration MediaDecodingConfiguration::clone() const noexcept { return *this; }
 
 MediaDecodingType MediaDecodingConfiguration::type() const {

@@ -29,19 +29,19 @@ public:
     /// The clear method.
     /// [`FontFaceSet.clear`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/clear)
     jsbind::Undefined clear();
-    /// Getter of the `onloading` attribute.
+    /// [`FontFaceSet.onloading`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloading)
     /// [`FontFaceSet.onloading`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloading)
     [[nodiscard]] jsbind::Any onloading() const;
     /// Setter of the `onloading` attribute.
     /// [`FontFaceSet.onloading`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloading)
     void onloading(const jsbind::Any& value);
-    /// Getter of the `onloadingdone` attribute.
+    /// [`FontFaceSet.onloadingdone`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloadingdone)
     /// [`FontFaceSet.onloadingdone`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloadingdone)
     [[nodiscard]] jsbind::Any onloadingdone() const;
     /// Setter of the `onloadingdone` attribute.
     /// [`FontFaceSet.onloadingdone`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloadingdone)
     void onloadingdone(const jsbind::Any& value);
-    /// Getter of the `onloadingerror` attribute.
+    /// [`FontFaceSet.onloadingerror`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloadingerror)
     /// [`FontFaceSet.onloadingerror`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/onloadingerror)
     [[nodiscard]] jsbind::Any onloadingerror() const;
     /// Setter of the `onloadingerror` attribute.
@@ -59,10 +59,10 @@ public:
     /// The check method.
     /// [`FontFaceSet.check`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/check)
     bool check(const jsbind::String& font, const jsbind::String& text);
-    /// Getter of the `ready` attribute.
+    /// [`FontFaceSet.ready`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/ready)
     /// [`FontFaceSet.ready`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/ready)
     [[nodiscard]] jsbind::Promise<FontFaceSet> ready() const;
-    /// Getter of the `status` attribute.
+    /// [`FontFaceSet.status`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/status)
     /// [`FontFaceSet.status`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/status)
     [[nodiscard]] FontFaceSetLoadStatus status() const;
 };

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GetRootNodeOptions
-/// [`GetRootNodeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/GetRootNodeOptions)
 class GetRootNodeOptions : public emlite::Val {
   explicit GetRootNodeOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit GetRootNodeOptions(const emlite::Val &val) noexcept;
     GetRootNodeOptions() noexcept;
     [[nodiscard]] GetRootNodeOptions clone() const noexcept;
+    /// Getter of the `composed` attribute.
     [[nodiscard]] bool composed() const;
+    /// Setter of the `composed` attribute.
     void composed(bool value);
 };
 

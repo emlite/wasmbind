@@ -1,14 +1,16 @@
 #include <webbind/VideoDecoderInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoDecoderInit::VideoDecoderInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoDecoderInit VideoDecoderInit::take_ownership(Handle h) noexcept {
-        return VideoDecoderInit(h);
-    }
+    return VideoDecoderInit(h);
+}
+
 VideoDecoderInit::VideoDecoderInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoDecoderInit::VideoDecoderInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoDecoderInit VideoDecoderInit::clone() const noexcept { return *this; }
 
 jsbind::Function VideoDecoderInit::output() const {

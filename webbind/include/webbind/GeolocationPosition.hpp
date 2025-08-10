@@ -17,10 +17,10 @@ public:
     static GeolocationPosition take_ownership(Handle h) noexcept;
     [[nodiscard]] GeolocationPosition clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `coords` attribute.
+    /// [`GeolocationPosition.coords`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition/coords)
     /// [`GeolocationPosition.coords`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition/coords)
     [[nodiscard]] GeolocationCoordinates coords() const;
-    /// Getter of the `timestamp` attribute.
+    /// [`GeolocationPosition.timestamp`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition/timestamp)
     /// [`GeolocationPosition.timestamp`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition/timestamp)
     [[nodiscard]] jsbind::Any timestamp() const;
     /// The toJSON method.

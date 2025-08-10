@@ -17,7 +17,7 @@ public:
     static XRSubImage take_ownership(Handle h) noexcept;
     [[nodiscard]] XRSubImage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `viewport` attribute.
+    /// [`XRSubImage.viewport`](https://developer.mozilla.org/en-US/docs/Web/API/XRSubImage/viewport)
     /// [`XRSubImage.viewport`](https://developer.mozilla.org/en-US/docs/Web/API/XRSubImage/viewport)
     [[nodiscard]] XRViewport viewport() const;
 };

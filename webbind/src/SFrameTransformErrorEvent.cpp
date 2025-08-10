@@ -4,11 +4,15 @@
 namespace webbind {
 
 SFrameTransformErrorEvent SFrameTransformErrorEvent::take_ownership(Handle h) noexcept {
-        return SFrameTransformErrorEvent(h);
-    }
+    return SFrameTransformErrorEvent(h);
+}
+
 SFrameTransformErrorEvent SFrameTransformErrorEvent::clone() const noexcept { return *this; }
+
 emlite::Val SFrameTransformErrorEvent::instance() noexcept { return emlite::Val::global("SFrameTransformErrorEvent"); }
+
 SFrameTransformErrorEvent::SFrameTransformErrorEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 SFrameTransformErrorEvent::SFrameTransformErrorEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 SFrameTransformErrorEvent::SFrameTransformErrorEvent(const jsbind::String& type, const SFrameTransformErrorEventInit& eventInitDict) : Event(emlite::Val::global("SFrameTransformErrorEvent").new_(type, eventInitDict)) {}

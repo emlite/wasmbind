@@ -1,14 +1,16 @@
 #include <webbind/ReportWinBrowserSignals.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ReportWinBrowserSignals::ReportWinBrowserSignals(Handle h) noexcept : ReportingBrowserSignals(emlite::Val::take_ownership(h)) {}
 ReportWinBrowserSignals ReportWinBrowserSignals::take_ownership(Handle h) noexcept {
-        return ReportWinBrowserSignals(h);
-    }
+    return ReportWinBrowserSignals(h);
+}
+
 ReportWinBrowserSignals::ReportWinBrowserSignals(const emlite::Val &val) noexcept: ReportingBrowserSignals(val) {}
+
 ReportWinBrowserSignals::ReportWinBrowserSignals() noexcept: ReportingBrowserSignals(emlite::Val::object()) {}
+
 ReportWinBrowserSignals ReportWinBrowserSignals::clone() const noexcept { return *this; }
 
 double ReportWinBrowserSignals::adCost() const {

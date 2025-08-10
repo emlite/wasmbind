@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSSkewX(..)` constructor, creating a new CSSSkewX instance
     CSSSkewX(const CSSNumericValue& ax);
-    /// Getter of the `ax` attribute.
+    /// [`CSSSkewX.ax`](https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewX/ax)
     /// [`CSSSkewX.ax`](https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewX/ax)
     [[nodiscard]] CSSNumericValue ax() const;
     /// Setter of the `ax` attribute.

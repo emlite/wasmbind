@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDListElement(..)` constructor, creating a new HTMLDListElement instance
     HTMLDListElement();
-    /// Getter of the `compact` attribute.
+    /// [`HTMLDListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDListElement/compact)
     /// [`HTMLDListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDListElement/compact)
     [[nodiscard]] bool compact() const;
     /// Setter of the `compact` attribute.

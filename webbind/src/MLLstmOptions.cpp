@@ -1,15 +1,17 @@
 #include <webbind/MLLstmOptions.hpp>
 #include <webbind/MLOperand.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLLstmOptions::MLLstmOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLLstmOptions MLLstmOptions::take_ownership(Handle h) noexcept {
-        return MLLstmOptions(h);
-    }
+    return MLLstmOptions(h);
+}
+
 MLLstmOptions::MLLstmOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLLstmOptions::MLLstmOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLLstmOptions MLLstmOptions::clone() const noexcept { return *this; }
 
 MLOperand MLLstmOptions::bias() const {

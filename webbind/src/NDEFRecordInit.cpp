@@ -1,14 +1,16 @@
 #include <webbind/NDEFRecordInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NDEFRecordInit::NDEFRecordInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NDEFRecordInit NDEFRecordInit::take_ownership(Handle h) noexcept {
-        return NDEFRecordInit(h);
-    }
+    return NDEFRecordInit(h);
+}
+
 NDEFRecordInit::NDEFRecordInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 NDEFRecordInit::NDEFRecordInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 NDEFRecordInit NDEFRecordInit::clone() const noexcept { return *this; }
 
 jsbind::String NDEFRecordInit::recordType() const {

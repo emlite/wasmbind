@@ -5,11 +5,15 @@
 namespace webbind {
 
 SequenceEffect SequenceEffect::take_ownership(Handle h) noexcept {
-        return SequenceEffect(h);
-    }
+    return SequenceEffect(h);
+}
+
 SequenceEffect SequenceEffect::clone() const noexcept { return *this; }
+
 emlite::Val SequenceEffect::instance() noexcept { return emlite::Val::global("SequenceEffect"); }
+
 SequenceEffect::SequenceEffect(Handle h) noexcept : GroupEffect(emlite::Val::take_ownership(h)) {}
+
 SequenceEffect::SequenceEffect(const emlite::Val &val) noexcept: GroupEffect(val) {}
 
 SequenceEffect::SequenceEffect(const jsbind::TypedArray<AnimationEffect>& children) : GroupEffect(emlite::Val::global("SequenceEffect").new_(children)) {}

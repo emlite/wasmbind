@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ClipboardPermissionDescriptor
-/// [`ClipboardPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardPermissionDescriptor)
 class ClipboardPermissionDescriptor : public PermissionDescriptor {
   explicit ClipboardPermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit ClipboardPermissionDescriptor(const emlite::Val &val) noexcept;
     ClipboardPermissionDescriptor() noexcept;
     [[nodiscard]] ClipboardPermissionDescriptor clone() const noexcept;
+    /// Getter of the `allowWithoutGesture` attribute.
     [[nodiscard]] bool allowWithoutGesture() const;
+    /// Setter of the `allowWithoutGesture` attribute.
     void allowWithoutGesture(bool value);
 };
 

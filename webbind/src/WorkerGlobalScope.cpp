@@ -8,11 +8,15 @@
 namespace webbind {
 
 WorkerGlobalScope WorkerGlobalScope::take_ownership(Handle h) noexcept {
-        return WorkerGlobalScope(h);
-    }
+    return WorkerGlobalScope(h);
+}
+
 WorkerGlobalScope WorkerGlobalScope::clone() const noexcept { return *this; }
+
 emlite::Val WorkerGlobalScope::instance() noexcept { return emlite::Val::global("WorkerGlobalScope"); }
+
 WorkerGlobalScope::WorkerGlobalScope(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 WorkerGlobalScope::WorkerGlobalScope(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 WorkerGlobalScope WorkerGlobalScope::self() const {

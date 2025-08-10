@@ -1,14 +1,16 @@
 #include <webbind/VideoColorSpaceInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoColorSpaceInit::VideoColorSpaceInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoColorSpaceInit VideoColorSpaceInit::take_ownership(Handle h) noexcept {
-        return VideoColorSpaceInit(h);
-    }
+    return VideoColorSpaceInit(h);
+}
+
 VideoColorSpaceInit::VideoColorSpaceInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoColorSpaceInit::VideoColorSpaceInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoColorSpaceInit VideoColorSpaceInit::clone() const noexcept { return *this; }
 
 VideoColorPrimaries VideoColorSpaceInit::primaries() const {

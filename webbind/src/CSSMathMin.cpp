@@ -4,11 +4,15 @@
 namespace webbind {
 
 CSSMathMin CSSMathMin::take_ownership(Handle h) noexcept {
-        return CSSMathMin(h);
-    }
+    return CSSMathMin(h);
+}
+
 CSSMathMin CSSMathMin::clone() const noexcept { return *this; }
+
 emlite::Val CSSMathMin::instance() noexcept { return emlite::Val::global("CSSMathMin"); }
+
 CSSMathMin::CSSMathMin(Handle h) noexcept : CSSMathValue(emlite::Val::take_ownership(h)) {}
+
 CSSMathMin::CSSMathMin(const emlite::Val &val) noexcept: CSSMathValue(val) {}
 
 CSSMathMin::CSSMathMin(const jsbind::Any& args) : CSSMathValue(emlite::Val::global("CSSMathMin").new_(args)) {}

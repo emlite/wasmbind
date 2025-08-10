@@ -4,11 +4,15 @@
 namespace webbind {
 
 PluginArray PluginArray::take_ownership(Handle h) noexcept {
-        return PluginArray(h);
-    }
+    return PluginArray(h);
+}
+
 PluginArray PluginArray::clone() const noexcept { return *this; }
+
 emlite::Val PluginArray::instance() noexcept { return emlite::Val::global("PluginArray"); }
+
 PluginArray::PluginArray(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PluginArray::PluginArray(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined PluginArray::refresh() {

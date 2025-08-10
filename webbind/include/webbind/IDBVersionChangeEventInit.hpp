@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type IDBVersionChangeEventInit
-/// [`IDBVersionChangeEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEventInit)
 class IDBVersionChangeEventInit : public EventInit {
   explicit IDBVersionChangeEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit IDBVersionChangeEventInit(const emlite::Val &val) noexcept;
     IDBVersionChangeEventInit() noexcept;
     [[nodiscard]] IDBVersionChangeEventInit clone() const noexcept;
+    /// Getter of the `oldVersion` attribute.
     [[nodiscard]] long long oldVersion() const;
+    /// Setter of the `oldVersion` attribute.
     void oldVersion(long long value);
+    /// Getter of the `newVersion` attribute.
     [[nodiscard]] long long newVersion() const;
+    /// Setter of the `newVersion` attribute.
     void newVersion(long long value);
 };
 

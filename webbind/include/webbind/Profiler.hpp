@@ -18,10 +18,10 @@ public:
     static Profiler take_ownership(Handle h) noexcept;
     [[nodiscard]] Profiler clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `sampleInterval` attribute.
+    /// [`Profiler.sampleInterval`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler/sampleInterval)
     /// [`Profiler.sampleInterval`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler/sampleInterval)
     [[nodiscard]] jsbind::Any sampleInterval() const;
-    /// Getter of the `stopped` attribute.
+    /// [`Profiler.stopped`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler/stopped)
     /// [`Profiler.stopped`](https://developer.mozilla.org/en-US/docs/Web/API/Profiler/stopped)
     [[nodiscard]] bool stopped() const;
     /// The `new Profiler(..)` constructor, creating a new Profiler instance

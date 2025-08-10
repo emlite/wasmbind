@@ -1,14 +1,16 @@
 #include <webbind/MLOperandDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLOperandDescriptor::MLOperandDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLOperandDescriptor MLOperandDescriptor::take_ownership(Handle h) noexcept {
-        return MLOperandDescriptor(h);
-    }
+    return MLOperandDescriptor(h);
+}
+
 MLOperandDescriptor::MLOperandDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MLOperandDescriptor::MLOperandDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MLOperandDescriptor MLOperandDescriptor::clone() const noexcept { return *this; }
 
 MLOperandDataType MLOperandDescriptor::dataType() const {

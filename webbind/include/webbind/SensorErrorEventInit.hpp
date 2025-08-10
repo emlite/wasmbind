@@ -10,7 +10,6 @@ namespace webbind {
 class DOMException;
 
 /// Dictionary type SensorErrorEventInit
-/// [`SensorErrorEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/SensorErrorEventInit)
 class SensorErrorEventInit : public EventInit {
   explicit SensorErrorEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit SensorErrorEventInit(const emlite::Val &val) noexcept;
     SensorErrorEventInit() noexcept;
     [[nodiscard]] SensorErrorEventInit clone() const noexcept;
+    /// Getter of the `error` attribute.
     [[nodiscard]] DOMException error() const;
+    /// Setter of the `error` attribute.
     void error(const DOMException& value);
 };
 

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new FormDataEvent(..)` constructor, creating a new FormDataEvent instance
     FormDataEvent(const jsbind::String& type, const FormDataEventInit& eventInitDict);
-    /// Getter of the `formData` attribute.
+    /// [`FormDataEvent.formData`](https://developer.mozilla.org/en-US/docs/Web/API/FormDataEvent/formData)
     /// [`FormDataEvent.formData`](https://developer.mozilla.org/en-US/docs/Web/API/FormDataEvent/formData)
     [[nodiscard]] FormData formData() const;
 };

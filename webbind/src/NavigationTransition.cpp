@@ -4,11 +4,15 @@
 namespace webbind {
 
 NavigationTransition NavigationTransition::take_ownership(Handle h) noexcept {
-        return NavigationTransition(h);
-    }
+    return NavigationTransition(h);
+}
+
 NavigationTransition NavigationTransition::clone() const noexcept { return *this; }
+
 emlite::Val NavigationTransition::instance() noexcept { return emlite::Val::global("NavigationTransition"); }
+
 NavigationTransition::NavigationTransition(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 NavigationTransition::NavigationTransition(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 NavigationType NavigationTransition::navigationType() const {

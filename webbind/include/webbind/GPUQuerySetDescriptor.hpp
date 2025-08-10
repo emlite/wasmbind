@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUQuerySetDescriptor
-/// [`GPUQuerySetDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySetDescriptor)
 class GPUQuerySetDescriptor : public GPUObjectDescriptorBase {
   explicit GPUQuerySetDescriptor(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit GPUQuerySetDescriptor(const emlite::Val &val) noexcept;
     GPUQuerySetDescriptor() noexcept;
     [[nodiscard]] GPUQuerySetDescriptor clone() const noexcept;
+    /// Getter of the `type` attribute.
     [[nodiscard]] GPUQueryType type() const;
+    /// Setter of the `type` attribute.
     void type(const GPUQueryType& value);
+    /// Getter of the `count` attribute.
     [[nodiscard]] jsbind::Any count() const;
+    /// Setter of the `count` attribute.
     void count(const jsbind::Any& value);
 };
 

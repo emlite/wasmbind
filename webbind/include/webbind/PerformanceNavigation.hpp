@@ -15,10 +15,10 @@ public:
     static PerformanceNavigation take_ownership(Handle h) noexcept;
     [[nodiscard]] PerformanceNavigation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `type` attribute.
+    /// [`PerformanceNavigation.type`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/type)
     /// [`PerformanceNavigation.type`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/type)
     [[nodiscard]] unsigned short type() const;
-    /// Getter of the `redirectCount` attribute.
+    /// [`PerformanceNavigation.redirectCount`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/redirectCount)
     /// [`PerformanceNavigation.redirectCount`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/redirectCount)
     [[nodiscard]] unsigned short redirectCount() const;
     /// The toJSON method.

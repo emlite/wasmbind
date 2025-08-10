@@ -3,11 +3,15 @@
 namespace webbind {
 
 PerformanceTiming PerformanceTiming::take_ownership(Handle h) noexcept {
-        return PerformanceTiming(h);
-    }
+    return PerformanceTiming(h);
+}
+
 PerformanceTiming PerformanceTiming::clone() const noexcept { return *this; }
+
 emlite::Val PerformanceTiming::instance() noexcept { return emlite::Val::global("PerformanceTiming"); }
+
 PerformanceTiming::PerformanceTiming(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PerformanceTiming::PerformanceTiming(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 long long PerformanceTiming::navigationStart() const {

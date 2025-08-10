@@ -1,14 +1,16 @@
 #include <webbind/ProgressEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ProgressEventInit::ProgressEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 ProgressEventInit ProgressEventInit::take_ownership(Handle h) noexcept {
-        return ProgressEventInit(h);
-    }
+    return ProgressEventInit(h);
+}
+
 ProgressEventInit::ProgressEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 ProgressEventInit::ProgressEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 ProgressEventInit ProgressEventInit::clone() const noexcept { return *this; }
 
 bool ProgressEventInit::lengthComputable() const {

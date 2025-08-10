@@ -1,14 +1,16 @@
 #include <webbind/FenceEvent.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FenceEvent::FenceEvent(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FenceEvent FenceEvent::take_ownership(Handle h) noexcept {
-        return FenceEvent(h);
-    }
+    return FenceEvent(h);
+}
+
 FenceEvent::FenceEvent(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FenceEvent::FenceEvent() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FenceEvent FenceEvent::clone() const noexcept { return *this; }
 
 jsbind::String FenceEvent::eventType() const {

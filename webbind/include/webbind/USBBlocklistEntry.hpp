@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type USBBlocklistEntry
-/// [`USBBlocklistEntry`](https://developer.mozilla.org/en-US/docs/Web/API/USBBlocklistEntry)
 class USBBlocklistEntry : public emlite::Val {
   explicit USBBlocklistEntry(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit USBBlocklistEntry(const emlite::Val &val) noexcept;
     USBBlocklistEntry() noexcept;
     [[nodiscard]] USBBlocklistEntry clone() const noexcept;
+    /// Getter of the `idVendor` attribute.
     [[nodiscard]] unsigned short idVendor() const;
+    /// Setter of the `idVendor` attribute.
     void idVendor(unsigned short value);
+    /// Getter of the `idProduct` attribute.
     [[nodiscard]] unsigned short idProduct() const;
+    /// Setter of the `idProduct` attribute.
     void idProduct(unsigned short value);
+    /// Getter of the `bcdDevice` attribute.
     [[nodiscard]] unsigned short bcdDevice() const;
+    /// Setter of the `bcdDevice` attribute.
     void bcdDevice(unsigned short value);
 };
 

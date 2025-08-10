@@ -3,11 +3,15 @@
 namespace webbind {
 
 USBIsochronousOutTransferPacket USBIsochronousOutTransferPacket::take_ownership(Handle h) noexcept {
-        return USBIsochronousOutTransferPacket(h);
-    }
+    return USBIsochronousOutTransferPacket(h);
+}
+
 USBIsochronousOutTransferPacket USBIsochronousOutTransferPacket::clone() const noexcept { return *this; }
+
 emlite::Val USBIsochronousOutTransferPacket::instance() noexcept { return emlite::Val::global("USBIsochronousOutTransferPacket"); }
+
 USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 USBIsochronousOutTransferPacket::USBIsochronousOutTransferPacket(const USBTransferStatus& status) : emlite::Val(emlite::Val::global("USBIsochronousOutTransferPacket").new_(status)) {}

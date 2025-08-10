@@ -1,14 +1,16 @@
 #include <webbind/CharacterBoundsUpdateEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CharacterBoundsUpdateEventInit::CharacterBoundsUpdateEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 CharacterBoundsUpdateEventInit CharacterBoundsUpdateEventInit::take_ownership(Handle h) noexcept {
-        return CharacterBoundsUpdateEventInit(h);
-    }
+    return CharacterBoundsUpdateEventInit(h);
+}
+
 CharacterBoundsUpdateEventInit::CharacterBoundsUpdateEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 CharacterBoundsUpdateEventInit::CharacterBoundsUpdateEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 CharacterBoundsUpdateEventInit CharacterBoundsUpdateEventInit::clone() const noexcept { return *this; }
 
 unsigned long CharacterBoundsUpdateEventInit::rangeStart() const {

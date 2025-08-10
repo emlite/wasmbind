@@ -7,11 +7,15 @@
 namespace webbind {
 
 SVGFEColorMatrixElement SVGFEColorMatrixElement::take_ownership(Handle h) noexcept {
-        return SVGFEColorMatrixElement(h);
-    }
+    return SVGFEColorMatrixElement(h);
+}
+
 SVGFEColorMatrixElement SVGFEColorMatrixElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFEColorMatrixElement::instance() noexcept { return emlite::Val::global("SVGFEColorMatrixElement"); }
+
 SVGFEColorMatrixElement::SVGFEColorMatrixElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFEColorMatrixElement::SVGFEColorMatrixElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedString SVGFEColorMatrixElement::in1() const {

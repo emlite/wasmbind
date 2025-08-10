@@ -1,14 +1,16 @@
 #include <webbind/ProfilerSample.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ProfilerSample::ProfilerSample(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ProfilerSample ProfilerSample::take_ownership(Handle h) noexcept {
-        return ProfilerSample(h);
-    }
+    return ProfilerSample(h);
+}
+
 ProfilerSample::ProfilerSample(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ProfilerSample::ProfilerSample() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ProfilerSample ProfilerSample::clone() const noexcept { return *this; }
 
 jsbind::Any ProfilerSample::timestamp() const {

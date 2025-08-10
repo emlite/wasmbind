@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ProfilerStack
-/// [`ProfilerStack`](https://developer.mozilla.org/en-US/docs/Web/API/ProfilerStack)
 class ProfilerStack : public emlite::Val {
   explicit ProfilerStack(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ProfilerStack(const emlite::Val &val) noexcept;
     ProfilerStack() noexcept;
     [[nodiscard]] ProfilerStack clone() const noexcept;
+    /// Getter of the `parentId` attribute.
     [[nodiscard]] long long parentId() const;
+    /// Setter of the `parentId` attribute.
     void parentId(long long value);
+    /// Getter of the `frameId` attribute.
     [[nodiscard]] long long frameId() const;
+    /// Setter of the `frameId` attribute.
     void frameId(long long value);
 };
 

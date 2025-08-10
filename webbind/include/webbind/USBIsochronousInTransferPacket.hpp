@@ -20,10 +20,10 @@ public:
     USBIsochronousInTransferPacket(const USBTransferStatus& status);
     /// The `new USBIsochronousInTransferPacket(..)` constructor, creating a new USBIsochronousInTransferPacket instance
     USBIsochronousInTransferPacket(const USBTransferStatus& status, const jsbind::DataView& data);
-    /// Getter of the `data` attribute.
+    /// [`USBIsochronousInTransferPacket.data`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousInTransferPacket/data)
     /// [`USBIsochronousInTransferPacket.data`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousInTransferPacket/data)
     [[nodiscard]] jsbind::DataView data() const;
-    /// Getter of the `status` attribute.
+    /// [`USBIsochronousInTransferPacket.status`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousInTransferPacket/status)
     /// [`USBIsochronousInTransferPacket.status`](https://developer.mozilla.org/en-US/docs/Web/API/USBIsochronousInTransferPacket/status)
     [[nodiscard]] USBTransferStatus status() const;
 };

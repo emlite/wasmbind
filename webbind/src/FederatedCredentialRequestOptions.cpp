@@ -1,14 +1,16 @@
 #include <webbind/FederatedCredentialRequestOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FederatedCredentialRequestOptions::FederatedCredentialRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FederatedCredentialRequestOptions FederatedCredentialRequestOptions::take_ownership(Handle h) noexcept {
-        return FederatedCredentialRequestOptions(h);
-    }
+    return FederatedCredentialRequestOptions(h);
+}
+
 FederatedCredentialRequestOptions::FederatedCredentialRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FederatedCredentialRequestOptions::FederatedCredentialRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FederatedCredentialRequestOptions FederatedCredentialRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::String> FederatedCredentialRequestOptions::providers() const {

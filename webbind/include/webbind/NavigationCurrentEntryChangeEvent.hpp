@@ -22,10 +22,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NavigationCurrentEntryChangeEvent(..)` constructor, creating a new NavigationCurrentEntryChangeEvent instance
     NavigationCurrentEntryChangeEvent(const jsbind::String& type, const NavigationCurrentEntryChangeEventInit& eventInitDict);
-    /// Getter of the `navigationType` attribute.
+    /// [`NavigationCurrentEntryChangeEvent.navigationType`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/navigationType)
     /// [`NavigationCurrentEntryChangeEvent.navigationType`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/navigationType)
     [[nodiscard]] NavigationType navigationType() const;
-    /// Getter of the `from` attribute.
+    /// [`NavigationCurrentEntryChangeEvent.from`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/from)
     /// [`NavigationCurrentEntryChangeEvent.from`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/from)
     [[nodiscard]] NavigationHistoryEntry from() const;
 };

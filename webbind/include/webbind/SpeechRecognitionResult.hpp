@@ -17,13 +17,13 @@ public:
     static SpeechRecognitionResult take_ownership(Handle h) noexcept;
     [[nodiscard]] SpeechRecognitionResult clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`SpeechRecognitionResult.length`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/length)
     /// [`SpeechRecognitionResult.length`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.
     /// [`SpeechRecognitionResult.item`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/item)
     SpeechRecognitionAlternative item(unsigned long index);
-    /// Getter of the `isFinal` attribute.
+    /// [`SpeechRecognitionResult.isFinal`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/isFinal)
     /// [`SpeechRecognitionResult.isFinal`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/isFinal)
     [[nodiscard]] bool isFinal() const;
 };

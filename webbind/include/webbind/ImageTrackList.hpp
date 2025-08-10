@@ -17,16 +17,16 @@ public:
     static ImageTrackList take_ownership(Handle h) noexcept;
     [[nodiscard]] ImageTrackList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `ready` attribute.
+    /// [`ImageTrackList.ready`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/ready)
     /// [`ImageTrackList.ready`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/ready)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> ready() const;
-    /// Getter of the `length` attribute.
+    /// [`ImageTrackList.length`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/length)
     /// [`ImageTrackList.length`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `selectedIndex` attribute.
+    /// [`ImageTrackList.selectedIndex`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/selectedIndex)
     /// [`ImageTrackList.selectedIndex`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/selectedIndex)
     [[nodiscard]] long selectedIndex() const;
-    /// Getter of the `selectedTrack` attribute.
+    /// [`ImageTrackList.selectedTrack`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/selectedTrack)
     /// [`ImageTrackList.selectedTrack`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/selectedTrack)
     [[nodiscard]] ImageTrack selectedTrack() const;
 };

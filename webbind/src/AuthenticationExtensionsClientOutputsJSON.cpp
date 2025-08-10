@@ -1,15 +1,17 @@
 #include <webbind/AuthenticationExtensionsClientOutputsJSON.hpp>
 #include <webbind/AuthenticationExtensionsLargeBlobOutputsJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticationExtensionsClientOutputsJSON::AuthenticationExtensionsClientOutputsJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticationExtensionsClientOutputsJSON AuthenticationExtensionsClientOutputsJSON::take_ownership(Handle h) noexcept {
-        return AuthenticationExtensionsClientOutputsJSON(h);
-    }
+    return AuthenticationExtensionsClientOutputsJSON(h);
+}
+
 AuthenticationExtensionsClientOutputsJSON::AuthenticationExtensionsClientOutputsJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticationExtensionsClientOutputsJSON::AuthenticationExtensionsClientOutputsJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticationExtensionsClientOutputsJSON AuthenticationExtensionsClientOutputsJSON::clone() const noexcept { return *this; }
 
 AuthenticationExtensionsLargeBlobOutputsJSON AuthenticationExtensionsClientOutputsJSON::largeBlob() const {

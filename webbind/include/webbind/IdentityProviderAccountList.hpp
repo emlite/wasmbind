@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityProviderAccountList
-/// [`IdentityProviderAccountList`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProviderAccountList)
 class IdentityProviderAccountList : public emlite::Val {
   explicit IdentityProviderAccountList(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit IdentityProviderAccountList(const emlite::Val &val) noexcept;
     IdentityProviderAccountList() noexcept;
     [[nodiscard]] IdentityProviderAccountList clone() const noexcept;
+    /// Getter of the `accounts` attribute.
     [[nodiscard]] jsbind::TypedArray<IdentityProviderAccount> accounts() const;
+    /// Setter of the `accounts` attribute.
     void accounts(const jsbind::TypedArray<IdentityProviderAccount>& value);
 };
 

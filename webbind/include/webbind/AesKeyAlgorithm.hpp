@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AesKeyAlgorithm
-/// [`AesKeyAlgorithm`](https://developer.mozilla.org/en-US/docs/Web/API/AesKeyAlgorithm)
 class AesKeyAlgorithm : public KeyAlgorithm {
   explicit AesKeyAlgorithm(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit AesKeyAlgorithm(const emlite::Val &val) noexcept;
     AesKeyAlgorithm() noexcept;
     [[nodiscard]] AesKeyAlgorithm clone() const noexcept;
+    /// Getter of the `length` attribute.
     [[nodiscard]] unsigned short length() const;
+    /// Setter of the `length` attribute.
     void length(unsigned short value);
 };
 

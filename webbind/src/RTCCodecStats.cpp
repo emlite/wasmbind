@@ -1,14 +1,16 @@
 #include <webbind/RTCCodecStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCCodecStats::RTCCodecStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCCodecStats RTCCodecStats::take_ownership(Handle h) noexcept {
-        return RTCCodecStats(h);
-    }
+    return RTCCodecStats(h);
+}
+
 RTCCodecStats::RTCCodecStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCCodecStats::RTCCodecStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCCodecStats RTCCodecStats::clone() const noexcept { return *this; }
 
 unsigned long RTCCodecStats::payloadType() const {

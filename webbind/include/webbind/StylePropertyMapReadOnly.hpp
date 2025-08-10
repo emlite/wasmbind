@@ -26,7 +26,7 @@ public:
     /// The has method.
     /// [`StylePropertyMapReadOnly.has`](https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/has)
     bool has(const jsbind::String& property);
-    /// Getter of the `size` attribute.
+    /// [`StylePropertyMapReadOnly.size`](https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/size)
     /// [`StylePropertyMapReadOnly.size`](https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/size)
     [[nodiscard]] unsigned long size() const;
 };

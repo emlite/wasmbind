@@ -1,14 +1,16 @@
 #include <webbind/IDBObjectStoreParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IDBObjectStoreParameters::IDBObjectStoreParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IDBObjectStoreParameters IDBObjectStoreParameters::take_ownership(Handle h) noexcept {
-        return IDBObjectStoreParameters(h);
-    }
+    return IDBObjectStoreParameters(h);
+}
+
 IDBObjectStoreParameters::IDBObjectStoreParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IDBObjectStoreParameters::IDBObjectStoreParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IDBObjectStoreParameters IDBObjectStoreParameters::clone() const noexcept { return *this; }
 
 jsbind::Any IDBObjectStoreParameters::keyPath() const {

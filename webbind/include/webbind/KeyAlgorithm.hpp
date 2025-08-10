@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type KeyAlgorithm
-/// [`KeyAlgorithm`](https://developer.mozilla.org/en-US/docs/Web/API/KeyAlgorithm)
 class KeyAlgorithm : public emlite::Val {
   explicit KeyAlgorithm(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit KeyAlgorithm(const emlite::Val &val) noexcept;
     KeyAlgorithm() noexcept;
     [[nodiscard]] KeyAlgorithm clone() const noexcept;
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
 };
 

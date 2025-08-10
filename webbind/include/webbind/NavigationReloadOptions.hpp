@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type NavigationReloadOptions
-/// [`NavigationReloadOptions`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationReloadOptions)
 class NavigationReloadOptions : public NavigationOptions {
   explicit NavigationReloadOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit NavigationReloadOptions(const emlite::Val &val) noexcept;
     NavigationReloadOptions() noexcept;
     [[nodiscard]] NavigationReloadOptions clone() const noexcept;
+    /// Getter of the `state` attribute.
     [[nodiscard]] jsbind::Any state() const;
+    /// Setter of the `state` attribute.
     void state(const jsbind::Any& value);
 };
 

@@ -6,11 +6,15 @@
 namespace webbind {
 
 XRInputSourcesChangeEvent XRInputSourcesChangeEvent::take_ownership(Handle h) noexcept {
-        return XRInputSourcesChangeEvent(h);
-    }
+    return XRInputSourcesChangeEvent(h);
+}
+
 XRInputSourcesChangeEvent XRInputSourcesChangeEvent::clone() const noexcept { return *this; }
+
 emlite::Val XRInputSourcesChangeEvent::instance() noexcept { return emlite::Val::global("XRInputSourcesChangeEvent"); }
+
 XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 XRInputSourcesChangeEvent::XRInputSourcesChangeEvent(const jsbind::String& type, const XRInputSourcesChangeEventInit& eventInitDict) : Event(emlite::Val::global("XRInputSourcesChangeEvent").new_(type, eventInitDict)) {}

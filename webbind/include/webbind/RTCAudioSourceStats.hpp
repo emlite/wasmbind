@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCAudioSourceStats
-/// [`RTCAudioSourceStats`](https://developer.mozilla.org/en-US/docs/Web/API/RTCAudioSourceStats)
 class RTCAudioSourceStats : public RTCMediaSourceStats {
   explicit RTCAudioSourceStats(Handle h) noexcept;
 public:
@@ -16,15 +15,25 @@ public:
     explicit RTCAudioSourceStats(const emlite::Val &val) noexcept;
     RTCAudioSourceStats() noexcept;
     [[nodiscard]] RTCAudioSourceStats clone() const noexcept;
+    /// Getter of the `audioLevel` attribute.
     [[nodiscard]] double audioLevel() const;
+    /// Setter of the `audioLevel` attribute.
     void audioLevel(double value);
+    /// Getter of the `totalAudioEnergy` attribute.
     [[nodiscard]] double totalAudioEnergy() const;
+    /// Setter of the `totalAudioEnergy` attribute.
     void totalAudioEnergy(double value);
+    /// Getter of the `totalSamplesDuration` attribute.
     [[nodiscard]] double totalSamplesDuration() const;
+    /// Setter of the `totalSamplesDuration` attribute.
     void totalSamplesDuration(double value);
+    /// Getter of the `echoReturnLoss` attribute.
     [[nodiscard]] double echoReturnLoss() const;
+    /// Setter of the `echoReturnLoss` attribute.
     void echoReturnLoss(double value);
+    /// Getter of the `echoReturnLossEnhancement` attribute.
     [[nodiscard]] double echoReturnLossEnhancement() const;
+    /// Setter of the `echoReturnLossEnhancement` attribute.
     void echoReturnLossEnhancement(double value);
 };
 

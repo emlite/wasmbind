@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MLRankRange
-/// [`MLRankRange`](https://developer.mozilla.org/en-US/docs/Web/API/MLRankRange)
 class MLRankRange : public emlite::Val {
   explicit MLRankRange(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit MLRankRange(const emlite::Val &val) noexcept;
     MLRankRange() noexcept;
     [[nodiscard]] MLRankRange clone() const noexcept;
+    /// Getter of the `min` attribute.
     [[nodiscard]] unsigned long min() const;
+    /// Setter of the `min` attribute.
     void min(unsigned long value);
+    /// Getter of the `max` attribute.
     [[nodiscard]] unsigned long max() const;
+    /// Setter of the `max` attribute.
     void max(unsigned long value);
 };
 

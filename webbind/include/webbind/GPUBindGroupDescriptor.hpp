@@ -11,7 +11,6 @@ namespace webbind {
 class GPUBindGroupLayout;
 
 /// Dictionary type GPUBindGroupDescriptor
-/// [`GPUBindGroupDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroupDescriptor)
 class GPUBindGroupDescriptor : public GPUObjectDescriptorBase {
   explicit GPUBindGroupDescriptor(Handle h) noexcept;
 public:
@@ -19,9 +18,13 @@ public:
     explicit GPUBindGroupDescriptor(const emlite::Val &val) noexcept;
     GPUBindGroupDescriptor() noexcept;
     [[nodiscard]] GPUBindGroupDescriptor clone() const noexcept;
+    /// Getter of the `layout` attribute.
     [[nodiscard]] GPUBindGroupLayout layout() const;
+    /// Setter of the `layout` attribute.
     void layout(const GPUBindGroupLayout& value);
+    /// Getter of the `entries` attribute.
     [[nodiscard]] jsbind::TypedArray<GPUBindGroupEntry> entries() const;
+    /// Setter of the `entries` attribute.
     void entries(const jsbind::TypedArray<GPUBindGroupEntry>& value);
 };
 

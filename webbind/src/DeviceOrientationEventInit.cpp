@@ -1,14 +1,16 @@
 #include <webbind/DeviceOrientationEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DeviceOrientationEventInit::DeviceOrientationEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 DeviceOrientationEventInit DeviceOrientationEventInit::take_ownership(Handle h) noexcept {
-        return DeviceOrientationEventInit(h);
-    }
+    return DeviceOrientationEventInit(h);
+}
+
 DeviceOrientationEventInit::DeviceOrientationEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 DeviceOrientationEventInit::DeviceOrientationEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 DeviceOrientationEventInit DeviceOrientationEventInit::clone() const noexcept { return *this; }
 
 double DeviceOrientationEventInit::alpha() const {

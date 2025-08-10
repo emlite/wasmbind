@@ -2,15 +2,17 @@
 #include <webbind/GPUDevice.hpp>
 #include <webbind/GPUCanvasToneMapping.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUCanvasConfiguration::GPUCanvasConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUCanvasConfiguration GPUCanvasConfiguration::take_ownership(Handle h) noexcept {
-        return GPUCanvasConfiguration(h);
-    }
+    return GPUCanvasConfiguration(h);
+}
+
 GPUCanvasConfiguration::GPUCanvasConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUCanvasConfiguration::GPUCanvasConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUCanvasConfiguration GPUCanvasConfiguration::clone() const noexcept { return *this; }
 
 GPUDevice GPUCanvasConfiguration::device() const {

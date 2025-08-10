@@ -18,10 +18,10 @@ public:
     static CSSMediaRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSMediaRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `media` attribute.
+    /// [`CSSMediaRule.media`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/media)
     /// [`CSSMediaRule.media`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/media)
     [[nodiscard]] MediaList media() const;
-    /// Getter of the `matches` attribute.
+    /// [`CSSMediaRule.matches`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/matches)
     /// [`CSSMediaRule.matches`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/matches)
     [[nodiscard]] bool matches() const;
 };

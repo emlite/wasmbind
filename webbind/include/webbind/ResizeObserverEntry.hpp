@@ -19,19 +19,19 @@ public:
     static ResizeObserverEntry take_ownership(Handle h) noexcept;
     [[nodiscard]] ResizeObserverEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `target` attribute.
+    /// [`ResizeObserverEntry.target`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/target)
     /// [`ResizeObserverEntry.target`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/target)
     [[nodiscard]] Element target() const;
-    /// Getter of the `contentRect` attribute.
+    /// [`ResizeObserverEntry.contentRect`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentRect)
     /// [`ResizeObserverEntry.contentRect`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentRect)
     [[nodiscard]] DOMRectReadOnly contentRect() const;
-    /// Getter of the `borderBoxSize` attribute.
+    /// [`ResizeObserverEntry.borderBoxSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/borderBoxSize)
     /// [`ResizeObserverEntry.borderBoxSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/borderBoxSize)
     [[nodiscard]] jsbind::TypedArray<ResizeObserverSize> borderBoxSize() const;
-    /// Getter of the `contentBoxSize` attribute.
+    /// [`ResizeObserverEntry.contentBoxSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentBoxSize)
     /// [`ResizeObserverEntry.contentBoxSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentBoxSize)
     [[nodiscard]] jsbind::TypedArray<ResizeObserverSize> contentBoxSize() const;
-    /// Getter of the `devicePixelContentBoxSize` attribute.
+    /// [`ResizeObserverEntry.devicePixelContentBoxSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/devicePixelContentBoxSize)
     /// [`ResizeObserverEntry.devicePixelContentBoxSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/devicePixelContentBoxSize)
     [[nodiscard]] jsbind::TypedArray<ResizeObserverSize> devicePixelContentBoxSize() const;
 };

@@ -22,22 +22,22 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioData(..)` constructor, creating a new AudioData instance
     AudioData(const AudioDataInit& init);
-    /// Getter of the `format` attribute.
+    /// [`AudioData.format`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/format)
     /// [`AudioData.format`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/format)
     [[nodiscard]] AudioSampleFormat format() const;
-    /// Getter of the `sampleRate` attribute.
+    /// [`AudioData.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/sampleRate)
     /// [`AudioData.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/sampleRate)
     [[nodiscard]] float sampleRate() const;
-    /// Getter of the `numberOfFrames` attribute.
+    /// [`AudioData.numberOfFrames`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/numberOfFrames)
     /// [`AudioData.numberOfFrames`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/numberOfFrames)
     [[nodiscard]] unsigned long numberOfFrames() const;
-    /// Getter of the `numberOfChannels` attribute.
+    /// [`AudioData.numberOfChannels`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/numberOfChannels)
     /// [`AudioData.numberOfChannels`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/numberOfChannels)
     [[nodiscard]] unsigned long numberOfChannels() const;
-    /// Getter of the `duration` attribute.
+    /// [`AudioData.duration`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/duration)
     /// [`AudioData.duration`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/duration)
     [[nodiscard]] long long duration() const;
-    /// Getter of the `timestamp` attribute.
+    /// [`AudioData.timestamp`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/timestamp)
     /// [`AudioData.timestamp`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData/timestamp)
     [[nodiscard]] long long timestamp() const;
     /// The allocationSize method.

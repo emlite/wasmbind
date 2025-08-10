@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type HandwritingPoint
-/// [`HandwritingPoint`](https://developer.mozilla.org/en-US/docs/Web/API/HandwritingPoint)
 class HandwritingPoint : public emlite::Val {
   explicit HandwritingPoint(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit HandwritingPoint(const emlite::Val &val) noexcept;
     HandwritingPoint() noexcept;
     [[nodiscard]] HandwritingPoint clone() const noexcept;
+    /// Getter of the `x` attribute.
     [[nodiscard]] double x() const;
+    /// Setter of the `x` attribute.
     void x(double value);
+    /// Getter of the `y` attribute.
     [[nodiscard]] double y() const;
+    /// Setter of the `y` attribute.
     void y(double value);
+    /// Getter of the `t` attribute.
     [[nodiscard]] jsbind::Any t() const;
+    /// Setter of the `t` attribute.
     void t(const jsbind::Any& value);
 };
 

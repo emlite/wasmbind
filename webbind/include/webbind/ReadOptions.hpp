@@ -10,7 +10,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type ReadOptions
-/// [`ReadOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ReadOptions)
 class ReadOptions : public GeolocationSensorOptions {
   explicit ReadOptions(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit ReadOptions(const emlite::Val &val) noexcept;
     ReadOptions() noexcept;
     [[nodiscard]] ReadOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

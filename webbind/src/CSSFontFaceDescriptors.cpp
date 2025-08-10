@@ -3,11 +3,15 @@
 namespace webbind {
 
 CSSFontFaceDescriptors CSSFontFaceDescriptors::take_ownership(Handle h) noexcept {
-        return CSSFontFaceDescriptors(h);
-    }
+    return CSSFontFaceDescriptors(h);
+}
+
 CSSFontFaceDescriptors CSSFontFaceDescriptors::clone() const noexcept { return *this; }
+
 emlite::Val CSSFontFaceDescriptors::instance() noexcept { return emlite::Val::global("CSSFontFaceDescriptors"); }
+
 CSSFontFaceDescriptors::CSSFontFaceDescriptors(Handle h) noexcept : CSSStyleDeclaration(emlite::Val::take_ownership(h)) {}
+
 CSSFontFaceDescriptors::CSSFontFaceDescriptors(const emlite::Val &val) noexcept: CSSStyleDeclaration(val) {}
 
 jsbind::String CSSFontFaceDescriptors::src() const {

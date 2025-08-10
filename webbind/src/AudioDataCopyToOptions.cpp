@@ -1,14 +1,16 @@
 #include <webbind/AudioDataCopyToOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioDataCopyToOptions::AudioDataCopyToOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioDataCopyToOptions AudioDataCopyToOptions::take_ownership(Handle h) noexcept {
-        return AudioDataCopyToOptions(h);
-    }
+    return AudioDataCopyToOptions(h);
+}
+
 AudioDataCopyToOptions::AudioDataCopyToOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioDataCopyToOptions::AudioDataCopyToOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioDataCopyToOptions AudioDataCopyToOptions::clone() const noexcept { return *this; }
 
 unsigned long AudioDataCopyToOptions::planeIndex() const {

@@ -1,14 +1,16 @@
 #include <webbind/SFrameTransformErrorEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SFrameTransformErrorEventInit::SFrameTransformErrorEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 SFrameTransformErrorEventInit SFrameTransformErrorEventInit::take_ownership(Handle h) noexcept {
-        return SFrameTransformErrorEventInit(h);
-    }
+    return SFrameTransformErrorEventInit(h);
+}
+
 SFrameTransformErrorEventInit::SFrameTransformErrorEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 SFrameTransformErrorEventInit::SFrameTransformErrorEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 SFrameTransformErrorEventInit SFrameTransformErrorEventInit::clone() const noexcept { return *this; }
 
 SFrameTransformErrorEventType SFrameTransformErrorEventInit::errorType() const {

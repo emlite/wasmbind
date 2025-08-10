@@ -4,11 +4,15 @@
 namespace webbind {
 
 ImageData ImageData::take_ownership(Handle h) noexcept {
-        return ImageData(h);
-    }
+    return ImageData(h);
+}
+
 ImageData ImageData::clone() const noexcept { return *this; }
+
 emlite::Val ImageData::instance() noexcept { return emlite::Val::global("ImageData"); }
+
 ImageData::ImageData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ImageData::ImageData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 ImageData::ImageData(const jsbind::Any& data, unsigned long sw) : emlite::Val(emlite::Val::global("ImageData").new_(data, sw)) {}

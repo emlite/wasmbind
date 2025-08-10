@@ -3,11 +3,15 @@
 namespace webbind {
 
 Sensor Sensor::take_ownership(Handle h) noexcept {
-        return Sensor(h);
-    }
+    return Sensor(h);
+}
+
 Sensor Sensor::clone() const noexcept { return *this; }
+
 emlite::Val Sensor::instance() noexcept { return emlite::Val::global("Sensor"); }
+
 Sensor::Sensor(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 Sensor::Sensor(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 bool Sensor::activated() const {

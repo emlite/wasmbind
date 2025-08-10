@@ -20,13 +20,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLMapElement(..)` constructor, creating a new HTMLMapElement instance
     HTMLMapElement();
-    /// Getter of the `name` attribute.
+    /// [`HTMLMapElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement/name)
     /// [`HTMLMapElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.
     /// [`HTMLMapElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement/name)
     void name(const jsbind::String& value);
-    /// Getter of the `areas` attribute.
+    /// [`HTMLMapElement.areas`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement/areas)
     /// [`HTMLMapElement.areas`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement/areas)
     [[nodiscard]] HTMLCollection areas() const;
 };

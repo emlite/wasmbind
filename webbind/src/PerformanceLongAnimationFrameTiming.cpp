@@ -4,11 +4,15 @@
 namespace webbind {
 
 PerformanceLongAnimationFrameTiming PerformanceLongAnimationFrameTiming::take_ownership(Handle h) noexcept {
-        return PerformanceLongAnimationFrameTiming(h);
-    }
+    return PerformanceLongAnimationFrameTiming(h);
+}
+
 PerformanceLongAnimationFrameTiming PerformanceLongAnimationFrameTiming::clone() const noexcept { return *this; }
+
 emlite::Val PerformanceLongAnimationFrameTiming::instance() noexcept { return emlite::Val::global("PerformanceLongAnimationFrameTiming"); }
+
 PerformanceLongAnimationFrameTiming::PerformanceLongAnimationFrameTiming(Handle h) noexcept : PerformanceEntry(emlite::Val::take_ownership(h)) {}
+
 PerformanceLongAnimationFrameTiming::PerformanceLongAnimationFrameTiming(const emlite::Val &val) noexcept: PerformanceEntry(val) {}
 
 jsbind::Any PerformanceLongAnimationFrameTiming::startTime() const {

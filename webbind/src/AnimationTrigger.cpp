@@ -5,11 +5,15 @@
 namespace webbind {
 
 AnimationTrigger AnimationTrigger::take_ownership(Handle h) noexcept {
-        return AnimationTrigger(h);
-    }
+    return AnimationTrigger(h);
+}
+
 AnimationTrigger AnimationTrigger::clone() const noexcept { return *this; }
+
 emlite::Val AnimationTrigger::instance() noexcept { return emlite::Val::global("AnimationTrigger"); }
+
 AnimationTrigger::AnimationTrigger(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 AnimationTrigger::AnimationTrigger(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 AnimationTrigger::AnimationTrigger() : emlite::Val(emlite::Val::global("AnimationTrigger").new_()) {}

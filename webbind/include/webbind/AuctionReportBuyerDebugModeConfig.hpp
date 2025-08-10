@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AuctionReportBuyerDebugModeConfig
-/// [`AuctionReportBuyerDebugModeConfig`](https://developer.mozilla.org/en-US/docs/Web/API/AuctionReportBuyerDebugModeConfig)
 class AuctionReportBuyerDebugModeConfig : public emlite::Val {
   explicit AuctionReportBuyerDebugModeConfig(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit AuctionReportBuyerDebugModeConfig(const emlite::Val &val) noexcept;
     AuctionReportBuyerDebugModeConfig() noexcept;
     [[nodiscard]] AuctionReportBuyerDebugModeConfig clone() const noexcept;
+    /// Getter of the `enabled` attribute.
     [[nodiscard]] bool enabled() const;
+    /// Setter of the `enabled` attribute.
     void enabled(bool value);
+    /// Getter of the `debugKey` attribute.
     [[nodiscard]] long long debugKey() const;
+    /// Setter of the `debugKey` attribute.
     void debugKey(long long value);
 };
 

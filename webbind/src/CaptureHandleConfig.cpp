@@ -1,14 +1,16 @@
 #include <webbind/CaptureHandleConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CaptureHandleConfig::CaptureHandleConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CaptureHandleConfig CaptureHandleConfig::take_ownership(Handle h) noexcept {
-        return CaptureHandleConfig(h);
-    }
+    return CaptureHandleConfig(h);
+}
+
 CaptureHandleConfig::CaptureHandleConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CaptureHandleConfig::CaptureHandleConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CaptureHandleConfig CaptureHandleConfig::clone() const noexcept { return *this; }
 
 bool CaptureHandleConfig::exposeOrigin() const {

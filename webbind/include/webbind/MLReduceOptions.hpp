@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLReduceOptions
-/// [`MLReduceOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLReduceOptions)
 class MLReduceOptions : public MLOperatorOptions {
   explicit MLReduceOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MLReduceOptions(const emlite::Val &val) noexcept;
     MLReduceOptions() noexcept;
     [[nodiscard]] MLReduceOptions clone() const noexcept;
+    /// Getter of the `axes` attribute.
     [[nodiscard]] jsbind::TypedArray<unsigned long> axes() const;
+    /// Setter of the `axes` attribute.
     void axes(jsbind::TypedArray<unsigned long> value);
+    /// Getter of the `keepDimensions` attribute.
     [[nodiscard]] bool keepDimensions() const;
+    /// Setter of the `keepDimensions` attribute.
     void keepDimensions(bool value);
 };
 

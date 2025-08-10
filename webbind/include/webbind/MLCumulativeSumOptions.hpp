@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLCumulativeSumOptions
-/// [`MLCumulativeSumOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLCumulativeSumOptions)
 class MLCumulativeSumOptions : public MLOperatorOptions {
   explicit MLCumulativeSumOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MLCumulativeSumOptions(const emlite::Val &val) noexcept;
     MLCumulativeSumOptions() noexcept;
     [[nodiscard]] MLCumulativeSumOptions clone() const noexcept;
+    /// Getter of the `exclusive` attribute.
     [[nodiscard]] bool exclusive() const;
+    /// Setter of the `exclusive` attribute.
     void exclusive(bool value);
+    /// Getter of the `reversed` attribute.
     [[nodiscard]] bool reversed() const;
+    /// Setter of the `reversed` attribute.
     void reversed(bool value);
 };
 

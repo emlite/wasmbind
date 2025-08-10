@@ -1,14 +1,16 @@
 #include <webbind/KeyboardEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 KeyboardEventInit::KeyboardEventInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 KeyboardEventInit KeyboardEventInit::take_ownership(Handle h) noexcept {
-        return KeyboardEventInit(h);
-    }
+    return KeyboardEventInit(h);
+}
+
 KeyboardEventInit::KeyboardEventInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 KeyboardEventInit::KeyboardEventInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 KeyboardEventInit KeyboardEventInit::clone() const noexcept { return *this; }
 
 unsigned long KeyboardEventInit::charCode() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type SanitizerElementNamespaceWithAttributes
-/// [`SanitizerElementNamespaceWithAttributes`](https://developer.mozilla.org/en-US/docs/Web/API/SanitizerElementNamespaceWithAttributes)
 class SanitizerElementNamespaceWithAttributes : public SanitizerElementNamespace {
   explicit SanitizerElementNamespaceWithAttributes(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit SanitizerElementNamespaceWithAttributes(const emlite::Val &val) noexcept;
     SanitizerElementNamespaceWithAttributes() noexcept;
     [[nodiscard]] SanitizerElementNamespaceWithAttributes clone() const noexcept;
+    /// Getter of the `attributes` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::Any> attributes() const;
+    /// Setter of the `attributes` attribute.
     void attributes(const jsbind::TypedArray<jsbind::Any>& value);
+    /// Getter of the `removeAttributes` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::Any> removeAttributes() const;
+    /// Setter of the `removeAttributes` attribute.
     void removeAttributes(const jsbind::TypedArray<jsbind::Any>& value);
 };
 

@@ -4,11 +4,15 @@
 namespace webbind {
 
 CustomEvent CustomEvent::take_ownership(Handle h) noexcept {
-        return CustomEvent(h);
-    }
+    return CustomEvent(h);
+}
+
 CustomEvent CustomEvent::clone() const noexcept { return *this; }
+
 emlite::Val CustomEvent::instance() noexcept { return emlite::Val::global("CustomEvent"); }
+
 CustomEvent::CustomEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 CustomEvent::CustomEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 CustomEvent::CustomEvent(const jsbind::String& type) : Event(emlite::Val::global("CustomEvent").new_(type)) {}

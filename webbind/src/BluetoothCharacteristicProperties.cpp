@@ -3,11 +3,15 @@
 namespace webbind {
 
 BluetoothCharacteristicProperties BluetoothCharacteristicProperties::take_ownership(Handle h) noexcept {
-        return BluetoothCharacteristicProperties(h);
-    }
+    return BluetoothCharacteristicProperties(h);
+}
+
 BluetoothCharacteristicProperties BluetoothCharacteristicProperties::clone() const noexcept { return *this; }
+
 emlite::Val BluetoothCharacteristicProperties::instance() noexcept { return emlite::Val::global("BluetoothCharacteristicProperties"); }
+
 BluetoothCharacteristicProperties::BluetoothCharacteristicProperties(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 BluetoothCharacteristicProperties::BluetoothCharacteristicProperties(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 bool BluetoothCharacteristicProperties::broadcast() const {

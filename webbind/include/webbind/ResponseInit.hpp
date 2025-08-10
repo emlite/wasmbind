@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ResponseInit
-/// [`ResponseInit`](https://developer.mozilla.org/en-US/docs/Web/API/ResponseInit)
 class ResponseInit : public emlite::Val {
   explicit ResponseInit(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit ResponseInit(const emlite::Val &val) noexcept;
     ResponseInit() noexcept;
     [[nodiscard]] ResponseInit clone() const noexcept;
+    /// Getter of the `status` attribute.
     [[nodiscard]] unsigned short status() const;
+    /// Setter of the `status` attribute.
     void status(unsigned short value);
+    /// Getter of the `statusText` attribute.
     [[nodiscard]] jsbind::String statusText() const;
+    /// Setter of the `statusText` attribute.
     void statusText(const jsbind::String& value);
+    /// Getter of the `headers` attribute.
     [[nodiscard]] jsbind::Any headers() const;
+    /// Setter of the `headers` attribute.
     void headers(const jsbind::Any& value);
 };
 

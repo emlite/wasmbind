@@ -5,11 +5,15 @@
 namespace webbind {
 
 PushSubscription PushSubscription::take_ownership(Handle h) noexcept {
-        return PushSubscription(h);
-    }
+    return PushSubscription(h);
+}
+
 PushSubscription PushSubscription::clone() const noexcept { return *this; }
+
 emlite::Val PushSubscription::instance() noexcept { return emlite::Val::global("PushSubscription"); }
+
 PushSubscription::PushSubscription(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PushSubscription::PushSubscription(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String PushSubscription::endpoint() const {

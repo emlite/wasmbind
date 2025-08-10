@@ -2,15 +2,17 @@
 #include <webbind/LayoutFragment.hpp>
 #include <webbind/BreakTokenOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FragmentResultOptions::FragmentResultOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FragmentResultOptions FragmentResultOptions::take_ownership(Handle h) noexcept {
-        return FragmentResultOptions(h);
-    }
+    return FragmentResultOptions(h);
+}
+
 FragmentResultOptions::FragmentResultOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FragmentResultOptions::FragmentResultOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FragmentResultOptions FragmentResultOptions::clone() const noexcept { return *this; }
 
 double FragmentResultOptions::inlineSize() const {

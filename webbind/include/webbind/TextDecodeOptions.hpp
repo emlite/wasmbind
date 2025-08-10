@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type TextDecodeOptions
-/// [`TextDecodeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecodeOptions)
 class TextDecodeOptions : public emlite::Val {
   explicit TextDecodeOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit TextDecodeOptions(const emlite::Val &val) noexcept;
     TextDecodeOptions() noexcept;
     [[nodiscard]] TextDecodeOptions clone() const noexcept;
+    /// Getter of the `stream` attribute.
     [[nodiscard]] bool stream() const;
+    /// Setter of the `stream` attribute.
     void stream(bool value);
 };
 

@@ -5,11 +5,15 @@
 namespace webbind {
 
 SVGFEComponentTransferElement SVGFEComponentTransferElement::take_ownership(Handle h) noexcept {
-        return SVGFEComponentTransferElement(h);
-    }
+    return SVGFEComponentTransferElement(h);
+}
+
 SVGFEComponentTransferElement SVGFEComponentTransferElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFEComponentTransferElement::instance() noexcept { return emlite::Val::global("SVGFEComponentTransferElement"); }
+
 SVGFEComponentTransferElement::SVGFEComponentTransferElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFEComponentTransferElement::SVGFEComponentTransferElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedString SVGFEComponentTransferElement::in1() const {

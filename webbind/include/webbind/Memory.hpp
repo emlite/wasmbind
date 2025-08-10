@@ -27,7 +27,7 @@ public:
     /// The toResizableBuffer method.
     /// [`Memory.toResizableBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/Memory/toResizableBuffer)
     jsbind::ArrayBuffer toResizableBuffer();
-    /// Getter of the `buffer` attribute.
+    /// [`Memory.buffer`](https://developer.mozilla.org/en-US/docs/Web/API/Memory/buffer)
     /// [`Memory.buffer`](https://developer.mozilla.org/en-US/docs/Web/API/Memory/buffer)
     [[nodiscard]] jsbind::ArrayBuffer buffer() const;
 };

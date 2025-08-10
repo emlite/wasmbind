@@ -24,16 +24,16 @@ public:
     /// The hide method.
     /// [`VirtualKeyboard.hide`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/hide)
     jsbind::Undefined hide();
-    /// Getter of the `boundingRect` attribute.
+    /// [`VirtualKeyboard.boundingRect`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/boundingRect)
     /// [`VirtualKeyboard.boundingRect`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/boundingRect)
     [[nodiscard]] DOMRect boundingRect() const;
-    /// Getter of the `overlaysContent` attribute.
+    /// [`VirtualKeyboard.overlaysContent`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/overlaysContent)
     /// [`VirtualKeyboard.overlaysContent`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/overlaysContent)
     [[nodiscard]] bool overlaysContent() const;
     /// Setter of the `overlaysContent` attribute.
     /// [`VirtualKeyboard.overlaysContent`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/overlaysContent)
     void overlaysContent(bool value);
-    /// Getter of the `ongeometrychange` attribute.
+    /// [`VirtualKeyboard.ongeometrychange`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/ongeometrychange)
     /// [`VirtualKeyboard.ongeometrychange`](https://developer.mozilla.org/en-US/docs/Web/API/VirtualKeyboard/ongeometrychange)
     [[nodiscard]] jsbind::Any ongeometrychange() const;
     /// Setter of the `ongeometrychange` attribute.

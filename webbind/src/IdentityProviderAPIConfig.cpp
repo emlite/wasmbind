@@ -1,15 +1,17 @@
 #include <webbind/IdentityProviderAPIConfig.hpp>
 #include <webbind/IdentityProviderBranding.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityProviderAPIConfig::IdentityProviderAPIConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityProviderAPIConfig IdentityProviderAPIConfig::take_ownership(Handle h) noexcept {
-        return IdentityProviderAPIConfig(h);
-    }
+    return IdentityProviderAPIConfig(h);
+}
+
 IdentityProviderAPIConfig::IdentityProviderAPIConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityProviderAPIConfig::IdentityProviderAPIConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityProviderAPIConfig IdentityProviderAPIConfig::clone() const noexcept { return *this; }
 
 jsbind::String IdentityProviderAPIConfig::accounts_endpoint() const {

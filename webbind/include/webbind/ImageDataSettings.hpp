@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ImageDataSettings
-/// [`ImageDataSettings`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDataSettings)
 class ImageDataSettings : public emlite::Val {
   explicit ImageDataSettings(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ImageDataSettings(const emlite::Val &val) noexcept;
     ImageDataSettings() noexcept;
     [[nodiscard]] ImageDataSettings clone() const noexcept;
+    /// Getter of the `colorSpace` attribute.
     [[nodiscard]] PredefinedColorSpace colorSpace() const;
+    /// Setter of the `colorSpace` attribute.
     void colorSpace(const PredefinedColorSpace& value);
+    /// Getter of the `pixelFormat` attribute.
     [[nodiscard]] ImageDataPixelFormat pixelFormat() const;
+    /// Setter of the `pixelFormat` attribute.
     void pixelFormat(const ImageDataPixelFormat& value);
 };
 

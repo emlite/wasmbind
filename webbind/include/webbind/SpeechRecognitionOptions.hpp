@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SpeechRecognitionOptions
-/// [`SpeechRecognitionOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionOptions)
 class SpeechRecognitionOptions : public emlite::Val {
   explicit SpeechRecognitionOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit SpeechRecognitionOptions(const emlite::Val &val) noexcept;
     SpeechRecognitionOptions() noexcept;
     [[nodiscard]] SpeechRecognitionOptions clone() const noexcept;
+    /// Getter of the `langs` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> langs() const;
+    /// Setter of the `langs` attribute.
     void langs(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `processLocally` attribute.
     [[nodiscard]] bool processLocally() const;
+    /// Setter of the `processLocally` attribute.
     void processLocally(bool value);
 };
 

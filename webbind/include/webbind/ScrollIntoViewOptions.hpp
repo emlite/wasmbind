@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ScrollIntoViewOptions
-/// [`ScrollIntoViewOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ScrollIntoViewOptions)
 class ScrollIntoViewOptions : public ScrollOptions {
   explicit ScrollIntoViewOptions(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit ScrollIntoViewOptions(const emlite::Val &val) noexcept;
     ScrollIntoViewOptions() noexcept;
     [[nodiscard]] ScrollIntoViewOptions clone() const noexcept;
+    /// Getter of the `block` attribute.
     [[nodiscard]] ScrollLogicalPosition block() const;
+    /// Setter of the `block` attribute.
     void block(const ScrollLogicalPosition& value);
+    /// Getter of the `inline` attribute.
     [[nodiscard]] ScrollLogicalPosition inline_() const;
+    /// Setter of the `inline` attribute.
     void inline_(const ScrollLogicalPosition& value);
+    /// Getter of the `container` attribute.
     [[nodiscard]] ScrollIntoViewContainer container() const;
+    /// Setter of the `container` attribute.
     void container(const ScrollIntoViewContainer& value);
 };
 

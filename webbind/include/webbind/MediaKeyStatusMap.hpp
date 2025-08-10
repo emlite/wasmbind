@@ -15,7 +15,7 @@ public:
     static MediaKeyStatusMap take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaKeyStatusMap clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `size` attribute.
+    /// [`MediaKeyStatusMap.size`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/size)
     /// [`MediaKeyStatusMap.size`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/size)
     [[nodiscard]] unsigned long size() const;
     /// The has method.

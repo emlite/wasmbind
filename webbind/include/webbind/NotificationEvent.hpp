@@ -21,10 +21,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NotificationEvent(..)` constructor, creating a new NotificationEvent instance
     NotificationEvent(const jsbind::String& type, const NotificationEventInit& eventInitDict);
-    /// Getter of the `notification` attribute.
+    /// [`NotificationEvent.notification`](https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/notification)
     /// [`NotificationEvent.notification`](https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/notification)
     [[nodiscard]] Notification notification() const;
-    /// Getter of the `action` attribute.
+    /// [`NotificationEvent.action`](https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/action)
     /// [`NotificationEvent.action`](https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/action)
     [[nodiscard]] jsbind::String action() const;
 };

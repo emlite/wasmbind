@@ -6,11 +6,15 @@
 namespace webbind {
 
 TransformStream TransformStream::take_ownership(Handle h) noexcept {
-        return TransformStream(h);
-    }
+    return TransformStream(h);
+}
+
 TransformStream TransformStream::clone() const noexcept { return *this; }
+
 emlite::Val TransformStream::instance() noexcept { return emlite::Val::global("TransformStream"); }
+
 TransformStream::TransformStream(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 TransformStream::TransformStream(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 TransformStream::TransformStream() : emlite::Val(emlite::Val::global("TransformStream").new_()) {}

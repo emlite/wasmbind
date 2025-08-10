@@ -16,13 +16,13 @@ public:
     static ScriptProcessorNode take_ownership(Handle h) noexcept;
     [[nodiscard]] ScriptProcessorNode clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `onaudioprocess` attribute.
+    /// [`ScriptProcessorNode.onaudioprocess`](https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/onaudioprocess)
     /// [`ScriptProcessorNode.onaudioprocess`](https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/onaudioprocess)
     [[nodiscard]] jsbind::Any onaudioprocess() const;
     /// Setter of the `onaudioprocess` attribute.
     /// [`ScriptProcessorNode.onaudioprocess`](https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/onaudioprocess)
     void onaudioprocess(const jsbind::Any& value);
-    /// Getter of the `bufferSize` attribute.
+    /// [`ScriptProcessorNode.bufferSize`](https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/bufferSize)
     /// [`ScriptProcessorNode.bufferSize`](https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/bufferSize)
     [[nodiscard]] long bufferSize() const;
 };

@@ -1,15 +1,17 @@
 #include <webbind/MLGemmOptions.hpp>
 #include <webbind/MLOperand.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLGemmOptions::MLGemmOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLGemmOptions MLGemmOptions::take_ownership(Handle h) noexcept {
-        return MLGemmOptions(h);
-    }
+    return MLGemmOptions(h);
+}
+
 MLGemmOptions::MLGemmOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLGemmOptions::MLGemmOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLGemmOptions MLGemmOptions::clone() const noexcept { return *this; }
 
 MLOperand MLGemmOptions::c() const {

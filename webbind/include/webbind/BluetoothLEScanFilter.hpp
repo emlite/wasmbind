@@ -23,19 +23,19 @@ public:
     BluetoothLEScanFilter();
     /// The `new BluetoothLEScanFilter(..)` constructor, creating a new BluetoothLEScanFilter instance
     BluetoothLEScanFilter(const BluetoothLEScanFilterInit& init);
-    /// Getter of the `name` attribute.
+    /// [`BluetoothLEScanFilter.name`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/name)
     /// [`BluetoothLEScanFilter.name`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `namePrefix` attribute.
+    /// [`BluetoothLEScanFilter.namePrefix`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/namePrefix)
     /// [`BluetoothLEScanFilter.namePrefix`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/namePrefix)
     [[nodiscard]] jsbind::String namePrefix() const;
-    /// Getter of the `services` attribute.
+    /// [`BluetoothLEScanFilter.services`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/services)
     /// [`BluetoothLEScanFilter.services`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/services)
     [[nodiscard]] jsbind::TypedArray<jsbind::Any> services() const;
-    /// Getter of the `manufacturerData` attribute.
+    /// [`BluetoothLEScanFilter.manufacturerData`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/manufacturerData)
     /// [`BluetoothLEScanFilter.manufacturerData`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/manufacturerData)
     [[nodiscard]] BluetoothManufacturerDataFilter manufacturerData() const;
-    /// Getter of the `serviceData` attribute.
+    /// [`BluetoothLEScanFilter.serviceData`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/serviceData)
     /// [`BluetoothLEScanFilter.serviceData`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScanFilter/serviceData)
     [[nodiscard]] BluetoothServiceDataFilter serviceData() const;
 };

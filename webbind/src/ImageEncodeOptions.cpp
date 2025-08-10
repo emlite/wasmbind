@@ -1,14 +1,16 @@
 #include <webbind/ImageEncodeOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ImageEncodeOptions::ImageEncodeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageEncodeOptions ImageEncodeOptions::take_ownership(Handle h) noexcept {
-        return ImageEncodeOptions(h);
-    }
+    return ImageEncodeOptions(h);
+}
+
 ImageEncodeOptions::ImageEncodeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ImageEncodeOptions::ImageEncodeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ImageEncodeOptions ImageEncodeOptions::clone() const noexcept { return *this; }
 
 jsbind::String ImageEncodeOptions::type() const {

@@ -10,7 +10,6 @@ namespace webbind {
 class GPUError;
 
 /// Dictionary type GPUUncapturedErrorEventInit
-/// [`GPUUncapturedErrorEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/GPUUncapturedErrorEventInit)
 class GPUUncapturedErrorEventInit : public EventInit {
   explicit GPUUncapturedErrorEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit GPUUncapturedErrorEventInit(const emlite::Val &val) noexcept;
     GPUUncapturedErrorEventInit() noexcept;
     [[nodiscard]] GPUUncapturedErrorEventInit clone() const noexcept;
+    /// Getter of the `error` attribute.
     [[nodiscard]] GPUError error() const;
+    /// Setter of the `error` attribute.
     void error(const GPUError& value);
 };
 

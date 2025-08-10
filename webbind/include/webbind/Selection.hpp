@@ -20,28 +20,28 @@ public:
     static Selection take_ownership(Handle h) noexcept;
     [[nodiscard]] Selection clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `anchorNode` attribute.
+    /// [`Selection.anchorNode`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/anchorNode)
     /// [`Selection.anchorNode`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/anchorNode)
     [[nodiscard]] Node anchorNode() const;
-    /// Getter of the `anchorOffset` attribute.
+    /// [`Selection.anchorOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/anchorOffset)
     /// [`Selection.anchorOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/anchorOffset)
     [[nodiscard]] unsigned long anchorOffset() const;
-    /// Getter of the `focusNode` attribute.
+    /// [`Selection.focusNode`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/focusNode)
     /// [`Selection.focusNode`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/focusNode)
     [[nodiscard]] Node focusNode() const;
-    /// Getter of the `focusOffset` attribute.
+    /// [`Selection.focusOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/focusOffset)
     /// [`Selection.focusOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/focusOffset)
     [[nodiscard]] unsigned long focusOffset() const;
-    /// Getter of the `isCollapsed` attribute.
+    /// [`Selection.isCollapsed`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/isCollapsed)
     /// [`Selection.isCollapsed`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/isCollapsed)
     [[nodiscard]] bool isCollapsed() const;
-    /// Getter of the `rangeCount` attribute.
+    /// [`Selection.rangeCount`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/rangeCount)
     /// [`Selection.rangeCount`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/rangeCount)
     [[nodiscard]] unsigned long rangeCount() const;
-    /// Getter of the `type` attribute.
+    /// [`Selection.type`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/type)
     /// [`Selection.type`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/type)
     [[nodiscard]] jsbind::String type() const;
-    /// Getter of the `direction` attribute.
+    /// [`Selection.direction`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/direction)
     /// [`Selection.direction`](https://developer.mozilla.org/en-US/docs/Web/API/Selection/direction)
     [[nodiscard]] jsbind::String direction() const;
     /// The getRangeAt method.

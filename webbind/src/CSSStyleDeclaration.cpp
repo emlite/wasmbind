@@ -4,11 +4,15 @@
 namespace webbind {
 
 CSSStyleDeclaration CSSStyleDeclaration::take_ownership(Handle h) noexcept {
-        return CSSStyleDeclaration(h);
-    }
+    return CSSStyleDeclaration(h);
+}
+
 CSSStyleDeclaration CSSStyleDeclaration::clone() const noexcept { return *this; }
+
 emlite::Val CSSStyleDeclaration::instance() noexcept { return emlite::Val::global("CSSStyleDeclaration"); }
+
 CSSStyleDeclaration::CSSStyleDeclaration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 CSSStyleDeclaration::CSSStyleDeclaration(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String CSSStyleDeclaration::cssText() const {

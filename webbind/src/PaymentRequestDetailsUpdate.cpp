@@ -4,15 +4,17 @@
 #include <webbind/PaymentShippingOption.hpp>
 #include <webbind/AddressErrors.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentRequestDetailsUpdate::PaymentRequestDetailsUpdate(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentRequestDetailsUpdate PaymentRequestDetailsUpdate::take_ownership(Handle h) noexcept {
-        return PaymentRequestDetailsUpdate(h);
-    }
+    return PaymentRequestDetailsUpdate(h);
+}
+
 PaymentRequestDetailsUpdate::PaymentRequestDetailsUpdate(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentRequestDetailsUpdate::PaymentRequestDetailsUpdate() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentRequestDetailsUpdate PaymentRequestDetailsUpdate::clone() const noexcept { return *this; }
 
 jsbind::String PaymentRequestDetailsUpdate::error() const {

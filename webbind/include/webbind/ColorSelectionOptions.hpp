@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type ColorSelectionOptions
-/// [`ColorSelectionOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ColorSelectionOptions)
 class ColorSelectionOptions : public emlite::Val {
   explicit ColorSelectionOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit ColorSelectionOptions(const emlite::Val &val) noexcept;
     ColorSelectionOptions() noexcept;
     [[nodiscard]] ColorSelectionOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

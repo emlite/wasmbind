@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GainOptions
-/// [`GainOptions`](https://developer.mozilla.org/en-US/docs/Web/API/GainOptions)
 class GainOptions : public AudioNodeOptions {
   explicit GainOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit GainOptions(const emlite::Val &val) noexcept;
     GainOptions() noexcept;
     [[nodiscard]] GainOptions clone() const noexcept;
+    /// Getter of the `gain` attribute.
     [[nodiscard]] float gain() const;
+    /// Setter of the `gain` attribute.
     void gain(float value);
 };
 

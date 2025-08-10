@@ -12,11 +12,15 @@
 namespace webbind {
 
 WebTransport WebTransport::take_ownership(Handle h) noexcept {
-        return WebTransport(h);
-    }
+    return WebTransport(h);
+}
+
 WebTransport WebTransport::clone() const noexcept { return *this; }
+
 emlite::Val WebTransport::instance() noexcept { return emlite::Val::global("WebTransport"); }
+
 WebTransport::WebTransport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 WebTransport::WebTransport(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 WebTransport::WebTransport(const jsbind::String& url) : emlite::Val(emlite::Val::global("WebTransport").new_(url)) {}

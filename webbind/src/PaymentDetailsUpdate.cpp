@@ -3,15 +3,17 @@
 #include <webbind/AddressErrors.hpp>
 #include <webbind/PayerErrors.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentDetailsUpdate::PaymentDetailsUpdate(Handle h) noexcept : PaymentDetailsBase(emlite::Val::take_ownership(h)) {}
 PaymentDetailsUpdate PaymentDetailsUpdate::take_ownership(Handle h) noexcept {
-        return PaymentDetailsUpdate(h);
-    }
+    return PaymentDetailsUpdate(h);
+}
+
 PaymentDetailsUpdate::PaymentDetailsUpdate(const emlite::Val &val) noexcept: PaymentDetailsBase(val) {}
+
 PaymentDetailsUpdate::PaymentDetailsUpdate() noexcept: PaymentDetailsBase(emlite::Val::object()) {}
+
 PaymentDetailsUpdate PaymentDetailsUpdate::clone() const noexcept { return *this; }
 
 jsbind::String PaymentDetailsUpdate::error() const {

@@ -11,11 +11,15 @@
 namespace webbind {
 
 XRMediaBinding XRMediaBinding::take_ownership(Handle h) noexcept {
-        return XRMediaBinding(h);
-    }
+    return XRMediaBinding(h);
+}
+
 XRMediaBinding XRMediaBinding::clone() const noexcept { return *this; }
+
 emlite::Val XRMediaBinding::instance() noexcept { return emlite::Val::global("XRMediaBinding"); }
+
 XRMediaBinding::XRMediaBinding(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 XRMediaBinding::XRMediaBinding(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 XRMediaBinding::XRMediaBinding(const XRSession& session) : emlite::Val(emlite::Val::global("XRMediaBinding").new_(session)) {}

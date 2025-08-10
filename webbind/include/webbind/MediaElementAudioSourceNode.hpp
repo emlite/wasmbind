@@ -22,7 +22,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaElementAudioSourceNode(..)` constructor, creating a new MediaElementAudioSourceNode instance
     MediaElementAudioSourceNode(const AudioContext& context, const MediaElementAudioSourceOptions& options);
-    /// Getter of the `mediaElement` attribute.
+    /// [`MediaElementAudioSourceNode.mediaElement`](https://developer.mozilla.org/en-US/docs/Web/API/MediaElementAudioSourceNode/mediaElement)
     /// [`MediaElementAudioSourceNode.mediaElement`](https://developer.mozilla.org/en-US/docs/Web/API/MediaElementAudioSourceNode/mediaElement)
     [[nodiscard]] HTMLMediaElement mediaElement() const;
 };

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStreamTrackEvent(..)` constructor, creating a new MediaStreamTrackEvent instance
     MediaStreamTrackEvent(const jsbind::String& type, const MediaStreamTrackEventInit& eventInitDict);
-    /// Getter of the `track` attribute.
+    /// [`MediaStreamTrackEvent.track`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackEvent/track)
     /// [`MediaStreamTrackEvent.track`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackEvent/track)
     [[nodiscard]] MediaStreamTrack track() const;
 };

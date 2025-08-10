@@ -1,14 +1,16 @@
 #include <webbind/GPUStorageTextureBindingLayout.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUStorageTextureBindingLayout::GPUStorageTextureBindingLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUStorageTextureBindingLayout GPUStorageTextureBindingLayout::take_ownership(Handle h) noexcept {
-        return GPUStorageTextureBindingLayout(h);
-    }
+    return GPUStorageTextureBindingLayout(h);
+}
+
 GPUStorageTextureBindingLayout::GPUStorageTextureBindingLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUStorageTextureBindingLayout::GPUStorageTextureBindingLayout() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUStorageTextureBindingLayout GPUStorageTextureBindingLayout::clone() const noexcept { return *this; }
 
 GPUStorageTextureAccess GPUStorageTextureBindingLayout::access() const {

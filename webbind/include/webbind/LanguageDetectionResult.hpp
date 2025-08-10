@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type LanguageDetectionResult
-/// [`LanguageDetectionResult`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetectionResult)
 class LanguageDetectionResult : public emlite::Val {
   explicit LanguageDetectionResult(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit LanguageDetectionResult(const emlite::Val &val) noexcept;
     LanguageDetectionResult() noexcept;
     [[nodiscard]] LanguageDetectionResult clone() const noexcept;
+    /// Getter of the `detectedLanguage` attribute.
     [[nodiscard]] jsbind::String detectedLanguage() const;
+    /// Setter of the `detectedLanguage` attribute.
     void detectedLanguage(const jsbind::String& value);
+    /// Getter of the `confidence` attribute.
     [[nodiscard]] double confidence() const;
+    /// Setter of the `confidence` attribute.
     void confidence(double value);
 };
 

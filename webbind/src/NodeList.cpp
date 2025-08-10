@@ -4,11 +4,15 @@
 namespace webbind {
 
 NodeList NodeList::take_ownership(Handle h) noexcept {
-        return NodeList(h);
-    }
+    return NodeList(h);
+}
+
 NodeList NodeList::clone() const noexcept { return *this; }
+
 emlite::Val NodeList::instance() noexcept { return emlite::Val::global("NodeList"); }
+
 NodeList::NodeList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 NodeList::NodeList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Node NodeList::item(unsigned long index) {

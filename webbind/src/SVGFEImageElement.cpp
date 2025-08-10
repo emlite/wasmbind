@@ -6,11 +6,15 @@
 namespace webbind {
 
 SVGFEImageElement SVGFEImageElement::take_ownership(Handle h) noexcept {
-        return SVGFEImageElement(h);
-    }
+    return SVGFEImageElement(h);
+}
+
 SVGFEImageElement SVGFEImageElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFEImageElement::instance() noexcept { return emlite::Val::global("SVGFEImageElement"); }
+
 SVGFEImageElement::SVGFEImageElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFEImageElement::SVGFEImageElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedPreserveAspectRatio SVGFEImageElement::preserveAspectRatio() const {

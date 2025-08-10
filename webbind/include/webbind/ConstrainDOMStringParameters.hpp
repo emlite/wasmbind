@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ConstrainDOMStringParameters
-/// [`ConstrainDOMStringParameters`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMStringParameters)
 class ConstrainDOMStringParameters : public emlite::Val {
   explicit ConstrainDOMStringParameters(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ConstrainDOMStringParameters(const emlite::Val &val) noexcept;
     ConstrainDOMStringParameters() noexcept;
     [[nodiscard]] ConstrainDOMStringParameters clone() const noexcept;
+    /// Getter of the `exact` attribute.
     [[nodiscard]] jsbind::Any exact() const;
+    /// Setter of the `exact` attribute.
     void exact(const jsbind::Any& value);
+    /// Getter of the `ideal` attribute.
     [[nodiscard]] jsbind::Any ideal() const;
+    /// Setter of the `ideal` attribute.
     void ideal(const jsbind::Any& value);
 };
 

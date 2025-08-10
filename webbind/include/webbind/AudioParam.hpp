@@ -18,25 +18,25 @@ public:
     static AudioParam take_ownership(Handle h) noexcept;
     [[nodiscard]] AudioParam clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `value` attribute.
+    /// [`AudioParam.value`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/value)
     /// [`AudioParam.value`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/value)
     [[nodiscard]] float value() const;
     /// Setter of the `value` attribute.
     /// [`AudioParam.value`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/value)
     void value(float value);
-    /// Getter of the `automationRate` attribute.
+    /// [`AudioParam.automationRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/automationRate)
     /// [`AudioParam.automationRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/automationRate)
     [[nodiscard]] AutomationRate automationRate() const;
     /// Setter of the `automationRate` attribute.
     /// [`AudioParam.automationRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/automationRate)
     void automationRate(const AutomationRate& value);
-    /// Getter of the `defaultValue` attribute.
+    /// [`AudioParam.defaultValue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/defaultValue)
     /// [`AudioParam.defaultValue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/defaultValue)
     [[nodiscard]] float defaultValue() const;
-    /// Getter of the `minValue` attribute.
+    /// [`AudioParam.minValue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/minValue)
     /// [`AudioParam.minValue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/minValue)
     [[nodiscard]] float minValue() const;
-    /// Getter of the `maxValue` attribute.
+    /// [`AudioParam.maxValue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/maxValue)
     /// [`AudioParam.maxValue`](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/maxValue)
     [[nodiscard]] float maxValue() const;
     /// The setValueAtTime method.

@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ShadowAnimation(..)` constructor, creating a new ShadowAnimation instance
     ShadowAnimation(const Animation& source, const jsbind::Any& newTarget);
-    /// Getter of the `sourceAnimation` attribute.
+    /// [`ShadowAnimation.sourceAnimation`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowAnimation/sourceAnimation)
     /// [`ShadowAnimation.sourceAnimation`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowAnimation/sourceAnimation)
     [[nodiscard]] Animation sourceAnimation() const;
 };

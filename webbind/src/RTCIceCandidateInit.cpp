@@ -1,14 +1,16 @@
 #include <webbind/RTCIceCandidateInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCIceCandidateInit::RTCIceCandidateInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCIceCandidateInit RTCIceCandidateInit::take_ownership(Handle h) noexcept {
-        return RTCIceCandidateInit(h);
-    }
+    return RTCIceCandidateInit(h);
+}
+
 RTCIceCandidateInit::RTCIceCandidateInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCIceCandidateInit::RTCIceCandidateInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCIceCandidateInit RTCIceCandidateInit::clone() const noexcept { return *this; }
 
 jsbind::String RTCIceCandidateInit::candidate() const {

@@ -1,14 +1,16 @@
 #include <webbind/Pbkdf2Params.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 Pbkdf2Params::Pbkdf2Params(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 Pbkdf2Params Pbkdf2Params::take_ownership(Handle h) noexcept {
-        return Pbkdf2Params(h);
-    }
+    return Pbkdf2Params(h);
+}
+
 Pbkdf2Params::Pbkdf2Params(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 Pbkdf2Params::Pbkdf2Params() noexcept: Algorithm(emlite::Val::object()) {}
+
 Pbkdf2Params Pbkdf2Params::clone() const noexcept { return *this; }
 
 jsbind::Any Pbkdf2Params::salt() const {

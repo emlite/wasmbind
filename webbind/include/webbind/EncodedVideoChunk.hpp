@@ -19,16 +19,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new EncodedVideoChunk(..)` constructor, creating a new EncodedVideoChunk instance
     EncodedVideoChunk(const EncodedVideoChunkInit& init);
-    /// Getter of the `type` attribute.
+    /// [`EncodedVideoChunk.type`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/type)
     /// [`EncodedVideoChunk.type`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/type)
     [[nodiscard]] EncodedVideoChunkType type() const;
-    /// Getter of the `timestamp` attribute.
+    /// [`EncodedVideoChunk.timestamp`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/timestamp)
     /// [`EncodedVideoChunk.timestamp`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/timestamp)
     [[nodiscard]] long long timestamp() const;
-    /// Getter of the `duration` attribute.
+    /// [`EncodedVideoChunk.duration`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/duration)
     /// [`EncodedVideoChunk.duration`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/duration)
     [[nodiscard]] long long duration() const;
-    /// Getter of the `byteLength` attribute.
+    /// [`EncodedVideoChunk.byteLength`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/byteLength)
     /// [`EncodedVideoChunk.byteLength`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/byteLength)
     [[nodiscard]] unsigned long byteLength() const;
     /// The copyTo method.

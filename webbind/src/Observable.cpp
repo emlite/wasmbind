@@ -5,11 +5,15 @@
 namespace webbind {
 
 Observable Observable::take_ownership(Handle h) noexcept {
-        return Observable(h);
-    }
+    return Observable(h);
+}
+
 Observable Observable::clone() const noexcept { return *this; }
+
 emlite::Val Observable::instance() noexcept { return emlite::Val::global("Observable"); }
+
 Observable::Observable(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Observable::Observable(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Observable::Observable(const jsbind::Function& callback) : emlite::Val(emlite::Val::global("Observable").new_(callback)) {}

@@ -24,13 +24,13 @@ public:
     /// The getAvailability method.
     /// [`Bluetooth.getAvailability`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/getAvailability)
     jsbind::Promise<bool> getAvailability();
-    /// Getter of the `onavailabilitychanged` attribute.
+    /// [`Bluetooth.onavailabilitychanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onavailabilitychanged)
     /// [`Bluetooth.onavailabilitychanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onavailabilitychanged)
     [[nodiscard]] jsbind::Any onavailabilitychanged() const;
     /// Setter of the `onavailabilitychanged` attribute.
     /// [`Bluetooth.onavailabilitychanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onavailabilitychanged)
     void onavailabilitychanged(const jsbind::Any& value);
-    /// Getter of the `referringDevice` attribute.
+    /// [`Bluetooth.referringDevice`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/referringDevice)
     /// [`Bluetooth.referringDevice`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/referringDevice)
     [[nodiscard]] BluetoothDevice referringDevice() const;
     /// The getDevices method.
@@ -48,37 +48,37 @@ public:
     /// The requestLEScan method.
     /// [`Bluetooth.requestLEScan`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/requestLEScan)
     jsbind::Promise<BluetoothLEScan> requestLEScan(const BluetoothLEScanOptions& options);
-    /// Getter of the `onadvertisementreceived` attribute.
+    /// [`Bluetooth.onadvertisementreceived`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onadvertisementreceived)
     /// [`Bluetooth.onadvertisementreceived`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onadvertisementreceived)
     [[nodiscard]] jsbind::Any onadvertisementreceived() const;
     /// Setter of the `onadvertisementreceived` attribute.
     /// [`Bluetooth.onadvertisementreceived`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onadvertisementreceived)
     void onadvertisementreceived(const jsbind::Any& value);
-    /// Getter of the `ongattserverdisconnected` attribute.
+    /// [`Bluetooth.ongattserverdisconnected`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/ongattserverdisconnected)
     /// [`Bluetooth.ongattserverdisconnected`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/ongattserverdisconnected)
     [[nodiscard]] jsbind::Any ongattserverdisconnected() const;
     /// Setter of the `ongattserverdisconnected` attribute.
     /// [`Bluetooth.ongattserverdisconnected`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/ongattserverdisconnected)
     void ongattserverdisconnected(const jsbind::Any& value);
-    /// Getter of the `oncharacteristicvaluechanged` attribute.
+    /// [`Bluetooth.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/oncharacteristicvaluechanged)
     /// [`Bluetooth.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/oncharacteristicvaluechanged)
     [[nodiscard]] jsbind::Any oncharacteristicvaluechanged() const;
     /// Setter of the `oncharacteristicvaluechanged` attribute.
     /// [`Bluetooth.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/oncharacteristicvaluechanged)
     void oncharacteristicvaluechanged(const jsbind::Any& value);
-    /// Getter of the `onserviceadded` attribute.
+    /// [`Bluetooth.onserviceadded`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onserviceadded)
     /// [`Bluetooth.onserviceadded`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onserviceadded)
     [[nodiscard]] jsbind::Any onserviceadded() const;
     /// Setter of the `onserviceadded` attribute.
     /// [`Bluetooth.onserviceadded`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onserviceadded)
     void onserviceadded(const jsbind::Any& value);
-    /// Getter of the `onservicechanged` attribute.
+    /// [`Bluetooth.onservicechanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onservicechanged)
     /// [`Bluetooth.onservicechanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onservicechanged)
     [[nodiscard]] jsbind::Any onservicechanged() const;
     /// Setter of the `onservicechanged` attribute.
     /// [`Bluetooth.onservicechanged`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onservicechanged)
     void onservicechanged(const jsbind::Any& value);
-    /// Getter of the `onserviceremoved` attribute.
+    /// [`Bluetooth.onserviceremoved`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onserviceremoved)
     /// [`Bluetooth.onserviceremoved`](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/onserviceremoved)
     [[nodiscard]] jsbind::Any onserviceremoved() const;
     /// Setter of the `onserviceremoved` attribute.

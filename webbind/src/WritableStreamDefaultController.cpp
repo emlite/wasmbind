@@ -4,11 +4,15 @@
 namespace webbind {
 
 WritableStreamDefaultController WritableStreamDefaultController::take_ownership(Handle h) noexcept {
-        return WritableStreamDefaultController(h);
-    }
+    return WritableStreamDefaultController(h);
+}
+
 WritableStreamDefaultController WritableStreamDefaultController::clone() const noexcept { return *this; }
+
 emlite::Val WritableStreamDefaultController::instance() noexcept { return emlite::Val::global("WritableStreamDefaultController"); }
+
 WritableStreamDefaultController::WritableStreamDefaultController(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 WritableStreamDefaultController::WritableStreamDefaultController(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 AbortSignal WritableStreamDefaultController::signal() const {

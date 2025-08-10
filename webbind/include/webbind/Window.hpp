@@ -53,52 +53,52 @@ public:
     static Window take_ownership(Handle h) noexcept;
     [[nodiscard]] Window clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `window` attribute.
+    /// [`Window.window`](https://developer.mozilla.org/en-US/docs/Web/API/Window/window)
     /// [`Window.window`](https://developer.mozilla.org/en-US/docs/Web/API/Window/window)
     [[nodiscard]] jsbind::Any window() const;
-    /// Getter of the `self` attribute.
+    /// [`Window.self`](https://developer.mozilla.org/en-US/docs/Web/API/Window/self)
     /// [`Window.self`](https://developer.mozilla.org/en-US/docs/Web/API/Window/self)
     [[nodiscard]] jsbind::Any self() const;
-    /// Getter of the `document` attribute.
+    /// [`Window.document`](https://developer.mozilla.org/en-US/docs/Web/API/Window/document)
     /// [`Window.document`](https://developer.mozilla.org/en-US/docs/Web/API/Window/document)
     [[nodiscard]] Document document() const;
-    /// Getter of the `name` attribute.
+    /// [`Window.name`](https://developer.mozilla.org/en-US/docs/Web/API/Window/name)
     /// [`Window.name`](https://developer.mozilla.org/en-US/docs/Web/API/Window/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.
     /// [`Window.name`](https://developer.mozilla.org/en-US/docs/Web/API/Window/name)
     void name(const jsbind::String& value);
-    /// Getter of the `location` attribute.
+    /// [`Window.location`](https://developer.mozilla.org/en-US/docs/Web/API/Window/location)
     /// [`Window.location`](https://developer.mozilla.org/en-US/docs/Web/API/Window/location)
     [[nodiscard]] Location location() const;
-    /// Getter of the `history` attribute.
+    /// [`Window.history`](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
     /// [`Window.history`](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
     [[nodiscard]] History history() const;
-    /// Getter of the `navigation` attribute.
+    /// [`Window.navigation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/navigation)
     /// [`Window.navigation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/navigation)
     [[nodiscard]] Navigation navigation() const;
-    /// Getter of the `customElements` attribute.
+    /// [`Window.customElements`](https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements)
     /// [`Window.customElements`](https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements)
     [[nodiscard]] CustomElementRegistry customElements() const;
-    /// Getter of the `locationbar` attribute.
+    /// [`Window.locationbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/locationbar)
     /// [`Window.locationbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/locationbar)
     [[nodiscard]] BarProp locationbar() const;
-    /// Getter of the `menubar` attribute.
+    /// [`Window.menubar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/menubar)
     /// [`Window.menubar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/menubar)
     [[nodiscard]] BarProp menubar() const;
-    /// Getter of the `personalbar` attribute.
+    /// [`Window.personalbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/personalbar)
     /// [`Window.personalbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/personalbar)
     [[nodiscard]] BarProp personalbar() const;
-    /// Getter of the `scrollbars` attribute.
+    /// [`Window.scrollbars`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollbars)
     /// [`Window.scrollbars`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollbars)
     [[nodiscard]] BarProp scrollbars() const;
-    /// Getter of the `statusbar` attribute.
+    /// [`Window.statusbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/statusbar)
     /// [`Window.statusbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/statusbar)
     [[nodiscard]] BarProp statusbar() const;
-    /// Getter of the `toolbar` attribute.
+    /// [`Window.toolbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/toolbar)
     /// [`Window.toolbar`](https://developer.mozilla.org/en-US/docs/Web/API/Window/toolbar)
     [[nodiscard]] BarProp toolbar() const;
-    /// Getter of the `status` attribute.
+    /// [`Window.status`](https://developer.mozilla.org/en-US/docs/Web/API/Window/status)
     /// [`Window.status`](https://developer.mozilla.org/en-US/docs/Web/API/Window/status)
     [[nodiscard]] jsbind::String status() const;
     /// Setter of the `status` attribute.
@@ -107,7 +107,7 @@ public:
     /// The close method.
     /// [`Window.close`](https://developer.mozilla.org/en-US/docs/Web/API/Window/close)
     jsbind::Undefined close();
-    /// Getter of the `closed` attribute.
+    /// [`Window.closed`](https://developer.mozilla.org/en-US/docs/Web/API/Window/closed)
     /// [`Window.closed`](https://developer.mozilla.org/en-US/docs/Web/API/Window/closed)
     [[nodiscard]] bool closed() const;
     /// The stop method.
@@ -119,25 +119,25 @@ public:
     /// The blur method.
     /// [`Window.blur`](https://developer.mozilla.org/en-US/docs/Web/API/Window/blur)
     jsbind::Undefined blur();
-    /// Getter of the `frames` attribute.
+    /// [`Window.frames`](https://developer.mozilla.org/en-US/docs/Web/API/Window/frames)
     /// [`Window.frames`](https://developer.mozilla.org/en-US/docs/Web/API/Window/frames)
     [[nodiscard]] jsbind::Any frames() const;
-    /// Getter of the `length` attribute.
+    /// [`Window.length`](https://developer.mozilla.org/en-US/docs/Web/API/Window/length)
     /// [`Window.length`](https://developer.mozilla.org/en-US/docs/Web/API/Window/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `top` attribute.
+    /// [`Window.top`](https://developer.mozilla.org/en-US/docs/Web/API/Window/top)
     /// [`Window.top`](https://developer.mozilla.org/en-US/docs/Web/API/Window/top)
     [[nodiscard]] jsbind::Any top() const;
-    /// Getter of the `opener` attribute.
+    /// [`Window.opener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener)
     /// [`Window.opener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener)
     [[nodiscard]] jsbind::Any opener() const;
     /// Setter of the `opener` attribute.
     /// [`Window.opener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener)
     void opener(const jsbind::Any& value);
-    /// Getter of the `parent` attribute.
+    /// [`Window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent)
     /// [`Window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent)
     [[nodiscard]] jsbind::Any parent() const;
-    /// Getter of the `frameElement` attribute.
+    /// [`Window.frameElement`](https://developer.mozilla.org/en-US/docs/Web/API/Window/frameElement)
     /// [`Window.frameElement`](https://developer.mozilla.org/en-US/docs/Web/API/Window/frameElement)
     [[nodiscard]] Element frameElement() const;
     /// The open method.
@@ -152,13 +152,13 @@ public:
     /// The open method.
     /// [`Window.open`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
     jsbind::Any open(const jsbind::String& url, const jsbind::String& target, const jsbind::String& features);
-    /// Getter of the `navigator` attribute.
+    /// [`Window.navigator`](https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator)
     /// [`Window.navigator`](https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator)
     [[nodiscard]] Navigator navigator() const;
-    /// Getter of the `clientInformation` attribute.
+    /// [`Window.clientInformation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/clientInformation)
     /// [`Window.clientInformation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/clientInformation)
     [[nodiscard]] Navigator clientInformation() const;
-    /// Getter of the `originAgentCluster` attribute.
+    /// [`Window.originAgentCluster`](https://developer.mozilla.org/en-US/docs/Web/API/Window/originAgentCluster)
     /// [`Window.originAgentCluster`](https://developer.mozilla.org/en-US/docs/Web/API/Window/originAgentCluster)
     [[nodiscard]] bool originAgentCluster() const;
     /// The alert method.
@@ -188,34 +188,34 @@ public:
     /// The postMessage method.
     /// [`Window.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message, const WindowPostMessageOptions& options);
-    /// Getter of the `credentialless` attribute.
+    /// [`Window.credentialless`](https://developer.mozilla.org/en-US/docs/Web/API/Window/credentialless)
     /// [`Window.credentialless`](https://developer.mozilla.org/en-US/docs/Web/API/Window/credentialless)
     [[nodiscard]] bool credentialless() const;
-    /// Getter of the `orientation` attribute.
+    /// [`Window.orientation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation)
     /// [`Window.orientation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation)
     [[nodiscard]] short orientation() const;
-    /// Getter of the `onorientationchange` attribute.
+    /// [`Window.onorientationchange`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onorientationchange)
     /// [`Window.onorientationchange`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onorientationchange)
     [[nodiscard]] jsbind::Any onorientationchange() const;
     /// Setter of the `onorientationchange` attribute.
     /// [`Window.onorientationchange`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onorientationchange)
     void onorientationchange(const jsbind::Any& value);
-    /// Getter of the `cookieStore` attribute.
+    /// [`Window.cookieStore`](https://developer.mozilla.org/en-US/docs/Web/API/Window/cookieStore)
     /// [`Window.cookieStore`](https://developer.mozilla.org/en-US/docs/Web/API/Window/cookieStore)
     [[nodiscard]] CookieStore cookieStore() const;
     /// The navigate method.
     /// [`Window.navigate`](https://developer.mozilla.org/en-US/docs/Web/API/Window/navigate)
     jsbind::Undefined navigate(const SpatialNavigationDirection& dir);
-    /// Getter of the `viewport` attribute.
+    /// [`Window.viewport`](https://developer.mozilla.org/en-US/docs/Web/API/Window/viewport)
     /// [`Window.viewport`](https://developer.mozilla.org/en-US/docs/Web/API/Window/viewport)
     [[nodiscard]] Viewport viewport() const;
     /// The matchMedia method.
     /// [`Window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
     MediaQueryList matchMedia(const jsbind::String& query);
-    /// Getter of the `screen` attribute.
+    /// [`Window.screen`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screen)
     /// [`Window.screen`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screen)
     [[nodiscard]] Screen screen() const;
-    /// Getter of the `visualViewport` attribute.
+    /// [`Window.visualViewport`](https://developer.mozilla.org/en-US/docs/Web/API/Window/visualViewport)
     /// [`Window.visualViewport`](https://developer.mozilla.org/en-US/docs/Web/API/Window/visualViewport)
     [[nodiscard]] VisualViewport visualViewport() const;
     /// The moveTo method.
@@ -230,22 +230,22 @@ public:
     /// The resizeBy method.
     /// [`Window.resizeBy`](https://developer.mozilla.org/en-US/docs/Web/API/Window/resizeBy)
     jsbind::Undefined resizeBy(long x, long y);
-    /// Getter of the `innerWidth` attribute.
+    /// [`Window.innerWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
     /// [`Window.innerWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
     [[nodiscard]] long innerWidth() const;
-    /// Getter of the `innerHeight` attribute.
+    /// [`Window.innerHeight`](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight)
     /// [`Window.innerHeight`](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight)
     [[nodiscard]] long innerHeight() const;
-    /// Getter of the `scrollX` attribute.
+    /// [`Window.scrollX`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX)
     /// [`Window.scrollX`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX)
     [[nodiscard]] double scrollX() const;
-    /// Getter of the `pageXOffset` attribute.
+    /// [`Window.pageXOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageXOffset)
     /// [`Window.pageXOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageXOffset)
     [[nodiscard]] double pageXOffset() const;
-    /// Getter of the `scrollY` attribute.
+    /// [`Window.scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)
     /// [`Window.scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)
     [[nodiscard]] double scrollY() const;
-    /// Getter of the `pageYOffset` attribute.
+    /// [`Window.pageYOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset)
     /// [`Window.pageYOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset)
     [[nodiscard]] double pageYOffset() const;
     /// The scroll method.
@@ -257,25 +257,25 @@ public:
     /// The scrollBy method.
     /// [`Window.scrollBy`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy)
     jsbind::Undefined scrollBy(double x, double y);
-    /// Getter of the `screenX` attribute.
+    /// [`Window.screenX`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenX)
     /// [`Window.screenX`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenX)
     [[nodiscard]] long screenX() const;
-    /// Getter of the `screenLeft` attribute.
+    /// [`Window.screenLeft`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenLeft)
     /// [`Window.screenLeft`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenLeft)
     [[nodiscard]] long screenLeft() const;
-    /// Getter of the `screenY` attribute.
+    /// [`Window.screenY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenY)
     /// [`Window.screenY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenY)
     [[nodiscard]] long screenY() const;
-    /// Getter of the `screenTop` attribute.
+    /// [`Window.screenTop`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenTop)
     /// [`Window.screenTop`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screenTop)
     [[nodiscard]] long screenTop() const;
-    /// Getter of the `outerWidth` attribute.
+    /// [`Window.outerWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth)
     /// [`Window.outerWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth)
     [[nodiscard]] long outerWidth() const;
-    /// Getter of the `outerHeight` attribute.
+    /// [`Window.outerHeight`](https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight)
     /// [`Window.outerHeight`](https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight)
     [[nodiscard]] long outerHeight() const;
-    /// Getter of the `devicePixelRatio` attribute.
+    /// [`Window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio)
     /// [`Window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio)
     [[nodiscard]] double devicePixelRatio() const;
     /// The getComputedStyle method.
@@ -287,13 +287,13 @@ public:
     /// The getDigitalGoodsService method.
     /// [`Window.getDigitalGoodsService`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getDigitalGoodsService)
     jsbind::Promise<DigitalGoodsService> getDigitalGoodsService(const jsbind::String& serviceProvider);
-    /// Getter of the `documentPictureInPicture` attribute.
+    /// [`Window.documentPictureInPicture`](https://developer.mozilla.org/en-US/docs/Web/API/Window/documentPictureInPicture)
     /// [`Window.documentPictureInPicture`](https://developer.mozilla.org/en-US/docs/Web/API/Window/documentPictureInPicture)
     [[nodiscard]] DocumentPictureInPicture documentPictureInPicture() const;
-    /// Getter of the `event` attribute.
+    /// [`Window.event`](https://developer.mozilla.org/en-US/docs/Web/API/Window/event)
     /// [`Window.event`](https://developer.mozilla.org/en-US/docs/Web/API/Window/event)
     [[nodiscard]] jsbind::Any event() const;
-    /// Getter of the `fence` attribute.
+    /// [`Window.fence`](https://developer.mozilla.org/en-US/docs/Web/API/Window/fence)
     /// [`Window.fence`](https://developer.mozilla.org/en-US/docs/Web/API/Window/fence)
     [[nodiscard]] Fence fence() const;
     /// The showOpenFilePicker method.
@@ -320,7 +320,7 @@ public:
     /// The releaseEvents method.
     /// [`Window.releaseEvents`](https://developer.mozilla.org/en-US/docs/Web/API/Window/releaseEvents)
     jsbind::Undefined releaseEvents();
-    /// Getter of the `external` attribute.
+    /// [`Window.external`](https://developer.mozilla.org/en-US/docs/Web/API/Window/external)
     /// [`Window.external`](https://developer.mozilla.org/en-US/docs/Web/API/Window/external)
     [[nodiscard]] External external() const;
     /// The queryLocalFonts method.
@@ -329,37 +329,37 @@ public:
     /// The queryLocalFonts method.
     /// [`Window.queryLocalFonts`](https://developer.mozilla.org/en-US/docs/Web/API/Window/queryLocalFonts)
     jsbind::Promise<jsbind::TypedArray<FontData>> queryLocalFonts(const QueryOptions& options);
-    /// Getter of the `onappinstalled` attribute.
+    /// [`Window.onappinstalled`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onappinstalled)
     /// [`Window.onappinstalled`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onappinstalled)
     [[nodiscard]] jsbind::Any onappinstalled() const;
     /// Setter of the `onappinstalled` attribute.
     /// [`Window.onappinstalled`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onappinstalled)
     void onappinstalled(const jsbind::Any& value);
-    /// Getter of the `onbeforeinstallprompt` attribute.
+    /// [`Window.onbeforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt)
     /// [`Window.onbeforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt)
     [[nodiscard]] jsbind::Any onbeforeinstallprompt() const;
     /// Setter of the `onbeforeinstallprompt` attribute.
     /// [`Window.onbeforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt)
     void onbeforeinstallprompt(const jsbind::Any& value);
-    /// Getter of the `ondeviceorientation` attribute.
+    /// [`Window.ondeviceorientation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientation)
     /// [`Window.ondeviceorientation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientation)
     [[nodiscard]] jsbind::Any ondeviceorientation() const;
     /// Setter of the `ondeviceorientation` attribute.
     /// [`Window.ondeviceorientation`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientation)
     void ondeviceorientation(const jsbind::Any& value);
-    /// Getter of the `ondeviceorientationabsolute` attribute.
+    /// [`Window.ondeviceorientationabsolute`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientationabsolute)
     /// [`Window.ondeviceorientationabsolute`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientationabsolute)
     [[nodiscard]] jsbind::Any ondeviceorientationabsolute() const;
     /// Setter of the `ondeviceorientationabsolute` attribute.
     /// [`Window.ondeviceorientationabsolute`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientationabsolute)
     void ondeviceorientationabsolute(const jsbind::Any& value);
-    /// Getter of the `ondevicemotion` attribute.
+    /// [`Window.ondevicemotion`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicemotion)
     /// [`Window.ondevicemotion`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicemotion)
     [[nodiscard]] jsbind::Any ondevicemotion() const;
     /// Setter of the `ondevicemotion` attribute.
     /// [`Window.ondevicemotion`](https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicemotion)
     void ondevicemotion(const jsbind::Any& value);
-    /// Getter of the `portalHost` attribute.
+    /// [`Window.portalHost`](https://developer.mozilla.org/en-US/docs/Web/API/Window/portalHost)
     /// [`Window.portalHost`](https://developer.mozilla.org/en-US/docs/Web/API/Window/portalHost)
     [[nodiscard]] PortalHost portalHost() const;
     /// The requestIdleCallback method.
@@ -374,31 +374,31 @@ public:
     /// The getSelection method.
     /// [`Window.getSelection`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getSelection)
     Selection getSelection();
-    /// Getter of the `sharedStorage` attribute.
+    /// [`Window.sharedStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sharedStorage)
     /// [`Window.sharedStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sharedStorage)
     [[nodiscard]] SharedStorage sharedStorage() const;
-    /// Getter of the `speechSynthesis` attribute.
+    /// [`Window.speechSynthesis`](https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis)
     /// [`Window.speechSynthesis`](https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis)
     [[nodiscard]] SpeechSynthesis speechSynthesis() const;
-    /// Getter of the `launchQueue` attribute.
+    /// [`Window.launchQueue`](https://developer.mozilla.org/en-US/docs/Web/API/Window/launchQueue)
     /// [`Window.launchQueue`](https://developer.mozilla.org/en-US/docs/Web/API/Window/launchQueue)
     [[nodiscard]] LaunchQueue launchQueue() const;
     /// The getScreenDetails method.
     /// [`Window.getScreenDetails`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getScreenDetails)
     jsbind::Promise<ScreenDetails> getScreenDetails();
-    /// Getter of the `onbeforexrselect` attribute.
+    /// [`Window.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforexrselect)
     /// [`Window.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforexrselect)
     [[nodiscard]] jsbind::Any onbeforexrselect() const;
     /// Setter of the `onbeforexrselect` attribute.
     /// [`Window.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforexrselect)
     void onbeforexrselect(const jsbind::Any& value);
-    /// Getter of the `onportalactivate` attribute.
+    /// [`Window.onportalactivate`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onportalactivate)
     /// [`Window.onportalactivate`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onportalactivate)
     [[nodiscard]] jsbind::Any onportalactivate() const;
     /// Setter of the `onportalactivate` attribute.
     /// [`Window.onportalactivate`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onportalactivate)
     void onportalactivate(const jsbind::Any& value);
-    /// Getter of the `crypto` attribute.
+    /// [`Window.crypto`](https://developer.mozilla.org/en-US/docs/Web/API/Window/crypto)
     /// [`Window.crypto`](https://developer.mozilla.org/en-US/docs/Web/API/Window/crypto)
     [[nodiscard]] Crypto crypto() const;
     /// The requestAnimationFrame method.
@@ -407,10 +407,10 @@ public:
     /// The cancelAnimationFrame method.
     /// [`Window.cancelAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame)
     jsbind::Undefined cancelAnimationFrame(unsigned long handle);
-    /// Getter of the `sessionStorage` attribute.
+    /// [`Window.sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
     /// [`Window.sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
     [[nodiscard]] Storage sessionStorage() const;
-    /// Getter of the `localStorage` attribute.
+    /// [`Window.localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
     /// [`Window.localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
     [[nodiscard]] Storage localStorage() const;
 };

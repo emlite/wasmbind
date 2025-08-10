@@ -19,19 +19,19 @@ public:
     static XRCubeLayer take_ownership(Handle h) noexcept;
     [[nodiscard]] XRCubeLayer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `space` attribute.
+    /// [`XRCubeLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/space)
     /// [`XRCubeLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/space)
     [[nodiscard]] XRSpace space() const;
     /// Setter of the `space` attribute.
     /// [`XRCubeLayer.space`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/space)
     void space(const XRSpace& value);
-    /// Getter of the `orientation` attribute.
+    /// [`XRCubeLayer.orientation`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/orientation)
     /// [`XRCubeLayer.orientation`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/orientation)
     [[nodiscard]] DOMPointReadOnly orientation() const;
     /// Setter of the `orientation` attribute.
     /// [`XRCubeLayer.orientation`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/orientation)
     void orientation(const DOMPointReadOnly& value);
-    /// Getter of the `onredraw` attribute.
+    /// [`XRCubeLayer.onredraw`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/onredraw)
     /// [`XRCubeLayer.onredraw`](https://developer.mozilla.org/en-US/docs/Web/API/XRCubeLayer/onredraw)
     [[nodiscard]] jsbind::Any onredraw() const;
     /// Setter of the `onredraw` attribute.

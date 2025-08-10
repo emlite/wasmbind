@@ -24,10 +24,10 @@ public:
     WebTransportError(const jsbind::String& message);
     /// The `new WebTransportError(..)` constructor, creating a new WebTransportError instance
     WebTransportError(const jsbind::String& message, const WebTransportErrorOptions& options);
-    /// Getter of the `source` attribute.
+    /// [`WebTransportError.source`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportError/source)
     /// [`WebTransportError.source`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportError/source)
     [[nodiscard]] WebTransportErrorSource source() const;
-    /// Getter of the `streamErrorCode` attribute.
+    /// [`WebTransportError.streamErrorCode`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportError/streamErrorCode)
     /// [`WebTransportError.streamErrorCode`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportError/streamErrorCode)
     [[nodiscard]] unsigned long streamErrorCode() const;
 };

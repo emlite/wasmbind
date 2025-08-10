@@ -1,14 +1,16 @@
 #include <webbind/PAExtendedHistogramContribution.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PAExtendedHistogramContribution::PAExtendedHistogramContribution(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PAExtendedHistogramContribution PAExtendedHistogramContribution::take_ownership(Handle h) noexcept {
-        return PAExtendedHistogramContribution(h);
-    }
+    return PAExtendedHistogramContribution(h);
+}
+
 PAExtendedHistogramContribution::PAExtendedHistogramContribution(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PAExtendedHistogramContribution::PAExtendedHistogramContribution() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PAExtendedHistogramContribution PAExtendedHistogramContribution::clone() const noexcept { return *this; }
 
 jsbind::Any PAExtendedHistogramContribution::bucket() const {

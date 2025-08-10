@@ -24,10 +24,10 @@ public:
     ScrollTimeline();
     /// The `new ScrollTimeline(..)` constructor, creating a new ScrollTimeline instance
     ScrollTimeline(const ScrollTimelineOptions& options);
-    /// Getter of the `source` attribute.
+    /// [`ScrollTimeline.source`](https://developer.mozilla.org/en-US/docs/Web/API/ScrollTimeline/source)
     /// [`ScrollTimeline.source`](https://developer.mozilla.org/en-US/docs/Web/API/ScrollTimeline/source)
     [[nodiscard]] Element source() const;
-    /// Getter of the `axis` attribute.
+    /// [`ScrollTimeline.axis`](https://developer.mozilla.org/en-US/docs/Web/API/ScrollTimeline/axis)
     /// [`ScrollTimeline.axis`](https://developer.mozilla.org/en-US/docs/Web/API/ScrollTimeline/axis)
     [[nodiscard]] ScrollAxis axis() const;
 };

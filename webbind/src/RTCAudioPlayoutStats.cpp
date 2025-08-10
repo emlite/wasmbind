@@ -1,14 +1,16 @@
 #include <webbind/RTCAudioPlayoutStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCAudioPlayoutStats::RTCAudioPlayoutStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCAudioPlayoutStats RTCAudioPlayoutStats::take_ownership(Handle h) noexcept {
-        return RTCAudioPlayoutStats(h);
-    }
+    return RTCAudioPlayoutStats(h);
+}
+
 RTCAudioPlayoutStats::RTCAudioPlayoutStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCAudioPlayoutStats::RTCAudioPlayoutStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCAudioPlayoutStats RTCAudioPlayoutStats::clone() const noexcept { return *this; }
 
 jsbind::String RTCAudioPlayoutStats::kind() const {

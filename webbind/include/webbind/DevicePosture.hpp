@@ -17,10 +17,10 @@ public:
     static DevicePosture take_ownership(Handle h) noexcept;
     [[nodiscard]] DevicePosture clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `type` attribute.
+    /// [`DevicePosture.type`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/type)
     /// [`DevicePosture.type`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/type)
     [[nodiscard]] DevicePostureType type() const;
-    /// Getter of the `onchange` attribute.
+    /// [`DevicePosture.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/onchange)
     /// [`DevicePosture.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

@@ -1,15 +1,17 @@
 #include <webbind/JsonWebKey.hpp>
 #include <webbind/RsaOtherPrimesInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 JsonWebKey::JsonWebKey(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 JsonWebKey JsonWebKey::take_ownership(Handle h) noexcept {
-        return JsonWebKey(h);
-    }
+    return JsonWebKey(h);
+}
+
 JsonWebKey::JsonWebKey(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 JsonWebKey::JsonWebKey() noexcept: emlite::Val(emlite::Val::object()) {}
+
 JsonWebKey JsonWebKey::clone() const noexcept { return *this; }
 
 jsbind::String JsonWebKey::kty() const {

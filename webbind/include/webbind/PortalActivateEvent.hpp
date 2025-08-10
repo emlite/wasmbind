@@ -23,7 +23,7 @@ public:
     PortalActivateEvent(const jsbind::String& type);
     /// The `new PortalActivateEvent(..)` constructor, creating a new PortalActivateEvent instance
     PortalActivateEvent(const jsbind::String& type, const PortalActivateEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`PortalActivateEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/PortalActivateEvent/data)
     /// [`PortalActivateEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/PortalActivateEvent/data)
     [[nodiscard]] jsbind::Any data() const;
     /// The adoptPredecessor method.

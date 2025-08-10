@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type TokenBinding
-/// [`TokenBinding`](https://developer.mozilla.org/en-US/docs/Web/API/TokenBinding)
 class TokenBinding : public emlite::Val {
   explicit TokenBinding(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit TokenBinding(const emlite::Val &val) noexcept;
     TokenBinding() noexcept;
     [[nodiscard]] TokenBinding clone() const noexcept;
+    /// Getter of the `status` attribute.
     [[nodiscard]] jsbind::String status() const;
+    /// Setter of the `status` attribute.
     void status(const jsbind::String& value);
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::String& value);
 };
 

@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLParagraphElement(..)` constructor, creating a new HTMLParagraphElement instance
     HTMLParagraphElement();
-    /// Getter of the `align` attribute.
+    /// [`HTMLParagraphElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement/align)
     /// [`HTMLParagraphElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement/align)
     [[nodiscard]] jsbind::String align() const;
     /// Setter of the `align` attribute.

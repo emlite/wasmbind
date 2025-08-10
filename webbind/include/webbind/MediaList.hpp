@@ -15,13 +15,13 @@ public:
     static MediaList take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `mediaText` attribute.
+    /// [`MediaList.mediaText`](https://developer.mozilla.org/en-US/docs/Web/API/MediaList/mediaText)
     /// [`MediaList.mediaText`](https://developer.mozilla.org/en-US/docs/Web/API/MediaList/mediaText)
     [[nodiscard]] jsbind::String mediaText() const;
     /// Setter of the `mediaText` attribute.
     /// [`MediaList.mediaText`](https://developer.mozilla.org/en-US/docs/Web/API/MediaList/mediaText)
     void mediaText(const jsbind::String& value);
-    /// Getter of the `length` attribute.
+    /// [`MediaList.length`](https://developer.mozilla.org/en-US/docs/Web/API/MediaList/length)
     /// [`MediaList.length`](https://developer.mozilla.org/en-US/docs/Web/API/MediaList/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.

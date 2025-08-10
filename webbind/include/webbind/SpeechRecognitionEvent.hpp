@@ -21,10 +21,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionEvent(..)` constructor, creating a new SpeechRecognitionEvent instance
     SpeechRecognitionEvent(const jsbind::String& type, const SpeechRecognitionEventInit& eventInitDict);
-    /// Getter of the `resultIndex` attribute.
+    /// [`SpeechRecognitionEvent.resultIndex`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/resultIndex)
     /// [`SpeechRecognitionEvent.resultIndex`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/resultIndex)
     [[nodiscard]] unsigned long resultIndex() const;
-    /// Getter of the `results` attribute.
+    /// [`SpeechRecognitionEvent.results`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/results)
     /// [`SpeechRecognitionEvent.results`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/results)
     [[nodiscard]] SpeechRecognitionResultList results() const;
 };

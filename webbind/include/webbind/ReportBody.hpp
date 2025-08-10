@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ReportBody
-/// [`ReportBody`](https://developer.mozilla.org/en-US/docs/Web/API/ReportBody)
 class ReportBody : public emlite::Val {
   explicit ReportBody(Handle h) noexcept;
 public:

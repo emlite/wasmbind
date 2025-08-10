@@ -1,14 +1,16 @@
 #include <webbind/FlacEncoderConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FlacEncoderConfig::FlacEncoderConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FlacEncoderConfig FlacEncoderConfig::take_ownership(Handle h) noexcept {
-        return FlacEncoderConfig(h);
-    }
+    return FlacEncoderConfig(h);
+}
+
 FlacEncoderConfig::FlacEncoderConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FlacEncoderConfig::FlacEncoderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FlacEncoderConfig FlacEncoderConfig::clone() const noexcept { return *this; }
 
 unsigned long FlacEncoderConfig::blockSize() const {

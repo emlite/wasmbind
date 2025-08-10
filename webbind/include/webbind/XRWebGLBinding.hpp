@@ -38,10 +38,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRWebGLBinding(..)` constructor, creating a new XRWebGLBinding instance
     XRWebGLBinding(const XRSession& session, const jsbind::Any& context);
-    /// Getter of the `nativeProjectionScaleFactor` attribute.
+    /// [`XRWebGLBinding.nativeProjectionScaleFactor`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/nativeProjectionScaleFactor)
     /// [`XRWebGLBinding.nativeProjectionScaleFactor`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/nativeProjectionScaleFactor)
     [[nodiscard]] double nativeProjectionScaleFactor() const;
-    /// Getter of the `usesDepthValues` attribute.
+    /// [`XRWebGLBinding.usesDepthValues`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/usesDepthValues)
     /// [`XRWebGLBinding.usesDepthValues`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/usesDepthValues)
     [[nodiscard]] bool usesDepthValues() const;
     /// The createProjectionLayer method.

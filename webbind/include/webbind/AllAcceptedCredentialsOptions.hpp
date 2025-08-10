@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AllAcceptedCredentialsOptions
-/// [`AllAcceptedCredentialsOptions`](https://developer.mozilla.org/en-US/docs/Web/API/AllAcceptedCredentialsOptions)
 class AllAcceptedCredentialsOptions : public emlite::Val {
   explicit AllAcceptedCredentialsOptions(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit AllAcceptedCredentialsOptions(const emlite::Val &val) noexcept;
     AllAcceptedCredentialsOptions() noexcept;
     [[nodiscard]] AllAcceptedCredentialsOptions clone() const noexcept;
+    /// Getter of the `rpId` attribute.
     [[nodiscard]] jsbind::String rpId() const;
+    /// Setter of the `rpId` attribute.
     void rpId(const jsbind::String& value);
+    /// Getter of the `userId` attribute.
     [[nodiscard]] jsbind::Any userId() const;
+    /// Setter of the `userId` attribute.
     void userId(const jsbind::Any& value);
+    /// Getter of the `allAcceptedCredentialIds` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::Any> allAcceptedCredentialIds() const;
+    /// Setter of the `allAcceptedCredentialIds` attribute.
     void allAcceptedCredentialIds(const jsbind::TypedArray<jsbind::Any>& value);
 };
 

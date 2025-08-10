@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RTCCertificateExpiration
-/// [`RTCCertificateExpiration`](https://developer.mozilla.org/en-US/docs/Web/API/RTCCertificateExpiration)
 class RTCCertificateExpiration : public emlite::Val {
   explicit RTCCertificateExpiration(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit RTCCertificateExpiration(const emlite::Val &val) noexcept;
     RTCCertificateExpiration() noexcept;
     [[nodiscard]] RTCCertificateExpiration clone() const noexcept;
+    /// Getter of the `expires` attribute.
     [[nodiscard]] long long expires() const;
+    /// Setter of the `expires` attribute.
     void expires(long long value);
 };
 

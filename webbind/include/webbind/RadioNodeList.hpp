@@ -16,7 +16,7 @@ public:
     static RadioNodeList take_ownership(Handle h) noexcept;
     [[nodiscard]] RadioNodeList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `value` attribute.
+    /// [`RadioNodeList.value`](https://developer.mozilla.org/en-US/docs/Web/API/RadioNodeList/value)
     /// [`RadioNodeList.value`](https://developer.mozilla.org/en-US/docs/Web/API/RadioNodeList/value)
     [[nodiscard]] jsbind::String value() const;
     /// Setter of the `value` attribute.

@@ -1,14 +1,16 @@
 #include <webbind/NavigationInterceptOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NavigationInterceptOptions::NavigationInterceptOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigationInterceptOptions NavigationInterceptOptions::take_ownership(Handle h) noexcept {
-        return NavigationInterceptOptions(h);
-    }
+    return NavigationInterceptOptions(h);
+}
+
 NavigationInterceptOptions::NavigationInterceptOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 NavigationInterceptOptions::NavigationInterceptOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 NavigationInterceptOptions NavigationInterceptOptions::clone() const noexcept { return *this; }
 
 jsbind::Function NavigationInterceptOptions::handler() const {

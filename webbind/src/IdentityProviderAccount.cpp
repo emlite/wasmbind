@@ -1,14 +1,16 @@
 #include <webbind/IdentityProviderAccount.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityProviderAccount::IdentityProviderAccount(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityProviderAccount IdentityProviderAccount::take_ownership(Handle h) noexcept {
-        return IdentityProviderAccount(h);
-    }
+    return IdentityProviderAccount(h);
+}
+
 IdentityProviderAccount::IdentityProviderAccount(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityProviderAccount::IdentityProviderAccount() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityProviderAccount IdentityProviderAccount::clone() const noexcept { return *this; }
 
 jsbind::String IdentityProviderAccount::id() const {

@@ -1,14 +1,16 @@
 #include <webbind/MLPool2dOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLPool2dOptions::MLPool2dOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLPool2dOptions MLPool2dOptions::take_ownership(Handle h) noexcept {
-        return MLPool2dOptions(h);
-    }
+    return MLPool2dOptions(h);
+}
+
 MLPool2dOptions::MLPool2dOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLPool2dOptions::MLPool2dOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLPool2dOptions MLPool2dOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<unsigned long> MLPool2dOptions::windowDimensions() const {

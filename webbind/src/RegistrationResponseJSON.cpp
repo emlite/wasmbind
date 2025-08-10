@@ -2,15 +2,17 @@
 #include <webbind/AuthenticatorAttestationResponseJSON.hpp>
 #include <webbind/AuthenticationExtensionsClientOutputsJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RegistrationResponseJSON::RegistrationResponseJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RegistrationResponseJSON RegistrationResponseJSON::take_ownership(Handle h) noexcept {
-        return RegistrationResponseJSON(h);
-    }
+    return RegistrationResponseJSON(h);
+}
+
 RegistrationResponseJSON::RegistrationResponseJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RegistrationResponseJSON::RegistrationResponseJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RegistrationResponseJSON RegistrationResponseJSON::clone() const noexcept { return *this; }
 
 jsbind::String RegistrationResponseJSON::id() const {

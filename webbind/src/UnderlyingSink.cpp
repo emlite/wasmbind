@@ -1,14 +1,16 @@
 #include <webbind/UnderlyingSink.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 UnderlyingSink::UnderlyingSink(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 UnderlyingSink UnderlyingSink::take_ownership(Handle h) noexcept {
-        return UnderlyingSink(h);
-    }
+    return UnderlyingSink(h);
+}
+
 UnderlyingSink::UnderlyingSink(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 UnderlyingSink::UnderlyingSink() noexcept: emlite::Val(emlite::Val::object()) {}
+
 UnderlyingSink UnderlyingSink::clone() const noexcept { return *this; }
 
 jsbind::Function UnderlyingSink::start() const {

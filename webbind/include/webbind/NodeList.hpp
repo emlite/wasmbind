@@ -20,7 +20,7 @@ public:
     /// The item method.
     /// [`NodeList.item`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item)
     Node item(unsigned long index);
-    /// Getter of the `length` attribute.
+    /// [`NodeList.length`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/length)
     /// [`NodeList.length`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/length)
     [[nodiscard]] unsigned long length() const;
 };

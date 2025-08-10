@@ -19,25 +19,25 @@ public:
     static MediaKeySession take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaKeySession clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `sessionId` attribute.
+    /// [`MediaKeySession.sessionId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/sessionId)
     /// [`MediaKeySession.sessionId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/sessionId)
     [[nodiscard]] jsbind::String sessionId() const;
-    /// Getter of the `expiration` attribute.
+    /// [`MediaKeySession.expiration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/expiration)
     /// [`MediaKeySession.expiration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/expiration)
     [[nodiscard]] double expiration() const;
-    /// Getter of the `closed` attribute.
+    /// [`MediaKeySession.closed`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/closed)
     /// [`MediaKeySession.closed`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/closed)
     [[nodiscard]] jsbind::Promise<MediaKeySessionClosedReason> closed() const;
-    /// Getter of the `keyStatuses` attribute.
+    /// [`MediaKeySession.keyStatuses`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/keyStatuses)
     /// [`MediaKeySession.keyStatuses`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/keyStatuses)
     [[nodiscard]] MediaKeyStatusMap keyStatuses() const;
-    /// Getter of the `onkeystatuseschange` attribute.
+    /// [`MediaKeySession.onkeystatuseschange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/onkeystatuseschange)
     /// [`MediaKeySession.onkeystatuseschange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/onkeystatuseschange)
     [[nodiscard]] jsbind::Any onkeystatuseschange() const;
     /// Setter of the `onkeystatuseschange` attribute.
     /// [`MediaKeySession.onkeystatuseschange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/onkeystatuseschange)
     void onkeystatuseschange(const jsbind::Any& value);
-    /// Getter of the `onmessage` attribute.
+    /// [`MediaKeySession.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/onmessage)
     /// [`MediaKeySession.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.

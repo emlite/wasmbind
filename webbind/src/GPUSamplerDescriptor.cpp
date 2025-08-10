@@ -1,14 +1,16 @@
 #include <webbind/GPUSamplerDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUSamplerDescriptor::GPUSamplerDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPUSamplerDescriptor GPUSamplerDescriptor::take_ownership(Handle h) noexcept {
-        return GPUSamplerDescriptor(h);
-    }
+    return GPUSamplerDescriptor(h);
+}
+
 GPUSamplerDescriptor::GPUSamplerDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPUSamplerDescriptor::GPUSamplerDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPUSamplerDescriptor GPUSamplerDescriptor::clone() const noexcept { return *this; }
 
 GPUAddressMode GPUSamplerDescriptor::addressModeU() const {

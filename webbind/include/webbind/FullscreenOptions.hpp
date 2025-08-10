@@ -9,7 +9,6 @@ namespace webbind {
 class ScreenDetailed;
 
 /// Dictionary type FullscreenOptions
-/// [`FullscreenOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions)
 class FullscreenOptions : public emlite::Val {
   explicit FullscreenOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit FullscreenOptions(const emlite::Val &val) noexcept;
     FullscreenOptions() noexcept;
     [[nodiscard]] FullscreenOptions clone() const noexcept;
+    /// Getter of the `screen` attribute.
     [[nodiscard]] ScreenDetailed screen() const;
+    /// Setter of the `screen` attribute.
     void screen(const ScreenDetailed& value);
 };
 

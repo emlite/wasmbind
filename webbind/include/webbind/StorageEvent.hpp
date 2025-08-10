@@ -23,19 +23,19 @@ public:
     StorageEvent(const jsbind::String& type);
     /// The `new StorageEvent(..)` constructor, creating a new StorageEvent instance
     StorageEvent(const jsbind::String& type, const StorageEventInit& eventInitDict);
-    /// Getter of the `key` attribute.
+    /// [`StorageEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/key)
     /// [`StorageEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/key)
     [[nodiscard]] jsbind::String key() const;
-    /// Getter of the `oldValue` attribute.
+    /// [`StorageEvent.oldValue`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/oldValue)
     /// [`StorageEvent.oldValue`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/oldValue)
     [[nodiscard]] jsbind::String oldValue() const;
-    /// Getter of the `newValue` attribute.
+    /// [`StorageEvent.newValue`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/newValue)
     /// [`StorageEvent.newValue`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/newValue)
     [[nodiscard]] jsbind::String newValue() const;
-    /// Getter of the `url` attribute.
+    /// [`StorageEvent.url`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/url)
     /// [`StorageEvent.url`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/url)
     [[nodiscard]] jsbind::String url() const;
-    /// Getter of the `storageArea` attribute.
+    /// [`StorageEvent.storageArea`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/storageArea)
     /// [`StorageEvent.storageArea`](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/storageArea)
     [[nodiscard]] Storage storageArea() const;
     /// The initStorageEvent method.

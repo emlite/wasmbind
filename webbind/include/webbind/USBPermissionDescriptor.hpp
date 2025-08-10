@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type USBPermissionDescriptor
-/// [`USBPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/USBPermissionDescriptor)
 class USBPermissionDescriptor : public PermissionDescriptor {
   explicit USBPermissionDescriptor(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit USBPermissionDescriptor(const emlite::Val &val) noexcept;
     USBPermissionDescriptor() noexcept;
     [[nodiscard]] USBPermissionDescriptor clone() const noexcept;
+    /// Getter of the `filters` attribute.
     [[nodiscard]] jsbind::TypedArray<USBDeviceFilter> filters() const;
+    /// Setter of the `filters` attribute.
     void filters(const jsbind::TypedArray<USBDeviceFilter>& value);
+    /// Getter of the `exclusionFilters` attribute.
     [[nodiscard]] jsbind::TypedArray<USBDeviceFilter> exclusionFilters() const;
+    /// Setter of the `exclusionFilters` attribute.
     void exclusionFilters(const jsbind::TypedArray<USBDeviceFilter>& value);
 };
 

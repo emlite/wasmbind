@@ -26,13 +26,13 @@ public:
     static CSSPseudoElement take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSPseudoElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `type` attribute.
+    /// [`CSSPseudoElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/type)
     /// [`CSSPseudoElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/type)
     [[nodiscard]] jsbind::String type() const;
-    /// Getter of the `element` attribute.
+    /// [`CSSPseudoElement.element`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/element)
     /// [`CSSPseudoElement.element`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/element)
     [[nodiscard]] Element element() const;
-    /// Getter of the `parent` attribute.
+    /// [`CSSPseudoElement.parent`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/parent)
     /// [`CSSPseudoElement.parent`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/parent)
     [[nodiscard]] jsbind::Any parent() const;
     /// The pseudo method.

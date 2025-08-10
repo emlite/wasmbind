@@ -15,7 +15,7 @@ public:
     static Storage take_ownership(Handle h) noexcept;
     [[nodiscard]] Storage clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`Storage.length`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/length)
     /// [`Storage.length`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/length)
     [[nodiscard]] unsigned long length() const;
     /// The key method.

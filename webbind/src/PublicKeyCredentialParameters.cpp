@@ -1,14 +1,16 @@
 #include <webbind/PublicKeyCredentialParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PublicKeyCredentialParameters::PublicKeyCredentialParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PublicKeyCredentialParameters PublicKeyCredentialParameters::take_ownership(Handle h) noexcept {
-        return PublicKeyCredentialParameters(h);
-    }
+    return PublicKeyCredentialParameters(h);
+}
+
 PublicKeyCredentialParameters::PublicKeyCredentialParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PublicKeyCredentialParameters::PublicKeyCredentialParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PublicKeyCredentialParameters PublicKeyCredentialParameters::clone() const noexcept { return *this; }
 
 jsbind::String PublicKeyCredentialParameters::type() const {

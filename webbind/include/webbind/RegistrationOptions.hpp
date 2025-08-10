@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type RegistrationOptions
-/// [`RegistrationOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RegistrationOptions)
 class RegistrationOptions : public emlite::Val {
   explicit RegistrationOptions(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit RegistrationOptions(const emlite::Val &val) noexcept;
     RegistrationOptions() noexcept;
     [[nodiscard]] RegistrationOptions clone() const noexcept;
+    /// Getter of the `scope` attribute.
     [[nodiscard]] jsbind::String scope() const;
+    /// Setter of the `scope` attribute.
     void scope(const jsbind::String& value);
+    /// Getter of the `type` attribute.
     [[nodiscard]] WorkerType type() const;
+    /// Setter of the `type` attribute.
     void type(const WorkerType& value);
+    /// Getter of the `updateViaCache` attribute.
     [[nodiscard]] ServiceWorkerUpdateViaCache updateViaCache() const;
+    /// Setter of the `updateViaCache` attribute.
     void updateViaCache(const ServiceWorkerUpdateViaCache& value);
 };
 

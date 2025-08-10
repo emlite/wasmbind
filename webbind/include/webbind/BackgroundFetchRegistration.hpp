@@ -20,31 +20,31 @@ public:
     static BackgroundFetchRegistration take_ownership(Handle h) noexcept;
     [[nodiscard]] BackgroundFetchRegistration clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `id` attribute.
+    /// [`BackgroundFetchRegistration.id`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/id)
     /// [`BackgroundFetchRegistration.id`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/id)
     [[nodiscard]] jsbind::String id() const;
-    /// Getter of the `uploadTotal` attribute.
+    /// [`BackgroundFetchRegistration.uploadTotal`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/uploadTotal)
     /// [`BackgroundFetchRegistration.uploadTotal`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/uploadTotal)
     [[nodiscard]] long long uploadTotal() const;
-    /// Getter of the `uploaded` attribute.
+    /// [`BackgroundFetchRegistration.uploaded`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/uploaded)
     /// [`BackgroundFetchRegistration.uploaded`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/uploaded)
     [[nodiscard]] long long uploaded() const;
-    /// Getter of the `downloadTotal` attribute.
+    /// [`BackgroundFetchRegistration.downloadTotal`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/downloadTotal)
     /// [`BackgroundFetchRegistration.downloadTotal`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/downloadTotal)
     [[nodiscard]] long long downloadTotal() const;
-    /// Getter of the `downloaded` attribute.
+    /// [`BackgroundFetchRegistration.downloaded`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/downloaded)
     /// [`BackgroundFetchRegistration.downloaded`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/downloaded)
     [[nodiscard]] long long downloaded() const;
-    /// Getter of the `result` attribute.
+    /// [`BackgroundFetchRegistration.result`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/result)
     /// [`BackgroundFetchRegistration.result`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/result)
     [[nodiscard]] BackgroundFetchResult result() const;
-    /// Getter of the `failureReason` attribute.
+    /// [`BackgroundFetchRegistration.failureReason`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/failureReason)
     /// [`BackgroundFetchRegistration.failureReason`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/failureReason)
     [[nodiscard]] BackgroundFetchFailureReason failureReason() const;
-    /// Getter of the `recordsAvailable` attribute.
+    /// [`BackgroundFetchRegistration.recordsAvailable`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/recordsAvailable)
     /// [`BackgroundFetchRegistration.recordsAvailable`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/recordsAvailable)
     [[nodiscard]] bool recordsAvailable() const;
-    /// Getter of the `onprogress` attribute.
+    /// [`BackgroundFetchRegistration.onprogress`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/onprogress)
     /// [`BackgroundFetchRegistration.onprogress`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/onprogress)
     [[nodiscard]] jsbind::Any onprogress() const;
     /// Setter of the `onprogress` attribute.

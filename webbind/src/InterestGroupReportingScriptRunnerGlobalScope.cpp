@@ -3,11 +3,15 @@
 namespace webbind {
 
 InterestGroupReportingScriptRunnerGlobalScope InterestGroupReportingScriptRunnerGlobalScope::take_ownership(Handle h) noexcept {
-        return InterestGroupReportingScriptRunnerGlobalScope(h);
-    }
+    return InterestGroupReportingScriptRunnerGlobalScope(h);
+}
+
 InterestGroupReportingScriptRunnerGlobalScope InterestGroupReportingScriptRunnerGlobalScope::clone() const noexcept { return *this; }
+
 emlite::Val InterestGroupReportingScriptRunnerGlobalScope::instance() noexcept { return emlite::Val::global("InterestGroupReportingScriptRunnerGlobalScope"); }
+
 InterestGroupReportingScriptRunnerGlobalScope::InterestGroupReportingScriptRunnerGlobalScope(Handle h) noexcept : InterestGroupScriptRunnerGlobalScope(emlite::Val::take_ownership(h)) {}
+
 InterestGroupReportingScriptRunnerGlobalScope::InterestGroupReportingScriptRunnerGlobalScope(const emlite::Val &val) noexcept: InterestGroupScriptRunnerGlobalScope(val) {}
 
 jsbind::Undefined InterestGroupReportingScriptRunnerGlobalScope::sendReportTo(const jsbind::String& url) {

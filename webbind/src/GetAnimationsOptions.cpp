@@ -1,14 +1,16 @@
 #include <webbind/GetAnimationsOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GetAnimationsOptions::GetAnimationsOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GetAnimationsOptions GetAnimationsOptions::take_ownership(Handle h) noexcept {
-        return GetAnimationsOptions(h);
-    }
+    return GetAnimationsOptions(h);
+}
+
 GetAnimationsOptions::GetAnimationsOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GetAnimationsOptions::GetAnimationsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GetAnimationsOptions GetAnimationsOptions::clone() const noexcept { return *this; }
 
 bool GetAnimationsOptions::subtree() const {

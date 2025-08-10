@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ClipboardUnsanitizedFormats
-/// [`ClipboardUnsanitizedFormats`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardUnsanitizedFormats)
 class ClipboardUnsanitizedFormats : public emlite::Val {
   explicit ClipboardUnsanitizedFormats(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ClipboardUnsanitizedFormats(const emlite::Val &val) noexcept;
     ClipboardUnsanitizedFormats() noexcept;
     [[nodiscard]] ClipboardUnsanitizedFormats clone() const noexcept;
+    /// Getter of the `unsanitized` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> unsanitized() const;
+    /// Setter of the `unsanitized` attribute.
     void unsanitized(const jsbind::TypedArray<jsbind::String>& value);
 };
 

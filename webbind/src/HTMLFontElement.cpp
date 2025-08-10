@@ -3,11 +3,15 @@
 namespace webbind {
 
 HTMLFontElement HTMLFontElement::take_ownership(Handle h) noexcept {
-        return HTMLFontElement(h);
-    }
+    return HTMLFontElement(h);
+}
+
 HTMLFontElement HTMLFontElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLFontElement::instance() noexcept { return emlite::Val::global("HTMLFontElement"); }
+
 HTMLFontElement::HTMLFontElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLFontElement::HTMLFontElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLFontElement::HTMLFontElement() : HTMLElement(emlite::Val::global("HTMLFontElement").new_()) {}

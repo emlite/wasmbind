@@ -1,14 +1,16 @@
 #include <webbind/SetHTMLOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SetHTMLOptions::SetHTMLOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SetHTMLOptions SetHTMLOptions::take_ownership(Handle h) noexcept {
-        return SetHTMLOptions(h);
-    }
+    return SetHTMLOptions(h);
+}
+
 SetHTMLOptions::SetHTMLOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SetHTMLOptions::SetHTMLOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SetHTMLOptions SetHTMLOptions::clone() const noexcept { return *this; }
 
 jsbind::Any SetHTMLOptions::sanitizer() const {

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CacheQueryOptions
-/// [`CacheQueryOptions`](https://developer.mozilla.org/en-US/docs/Web/API/CacheQueryOptions)
 class CacheQueryOptions : public emlite::Val {
   explicit CacheQueryOptions(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit CacheQueryOptions(const emlite::Val &val) noexcept;
     CacheQueryOptions() noexcept;
     [[nodiscard]] CacheQueryOptions clone() const noexcept;
+    /// Getter of the `ignoreSearch` attribute.
     [[nodiscard]] bool ignoreSearch() const;
+    /// Setter of the `ignoreSearch` attribute.
     void ignoreSearch(bool value);
+    /// Getter of the `ignoreMethod` attribute.
     [[nodiscard]] bool ignoreMethod() const;
+    /// Setter of the `ignoreMethod` attribute.
     void ignoreMethod(bool value);
+    /// Getter of the `ignoreVary` attribute.
     [[nodiscard]] bool ignoreVary() const;
+    /// Setter of the `ignoreVary` attribute.
     void ignoreVary(bool value);
 };
 

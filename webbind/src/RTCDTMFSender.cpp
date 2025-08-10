@@ -3,11 +3,15 @@
 namespace webbind {
 
 RTCDTMFSender RTCDTMFSender::take_ownership(Handle h) noexcept {
-        return RTCDTMFSender(h);
-    }
+    return RTCDTMFSender(h);
+}
+
 RTCDTMFSender RTCDTMFSender::clone() const noexcept { return *this; }
+
 emlite::Val RTCDTMFSender::instance() noexcept { return emlite::Val::global("RTCDTMFSender"); }
+
 RTCDTMFSender::RTCDTMFSender(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 RTCDTMFSender::RTCDTMFSender(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Undefined RTCDTMFSender::insertDTMF(const jsbind::String& tones) {

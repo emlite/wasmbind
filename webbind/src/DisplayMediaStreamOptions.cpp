@@ -1,15 +1,17 @@
 #include <webbind/DisplayMediaStreamOptions.hpp>
 #include <webbind/CaptureController.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DisplayMediaStreamOptions::DisplayMediaStreamOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DisplayMediaStreamOptions DisplayMediaStreamOptions::take_ownership(Handle h) noexcept {
-        return DisplayMediaStreamOptions(h);
-    }
+    return DisplayMediaStreamOptions(h);
+}
+
 DisplayMediaStreamOptions::DisplayMediaStreamOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DisplayMediaStreamOptions::DisplayMediaStreamOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DisplayMediaStreamOptions DisplayMediaStreamOptions::clone() const noexcept { return *this; }
 
 jsbind::Any DisplayMediaStreamOptions::video() const {

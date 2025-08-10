@@ -18,13 +18,13 @@ public:
     static SVGTransform take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGTransform clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `type` attribute.
+    /// [`SVGTransform.type`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform/type)
     /// [`SVGTransform.type`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform/type)
     [[nodiscard]] unsigned short type() const;
-    /// Getter of the `matrix` attribute.
+    /// [`SVGTransform.matrix`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform/matrix)
     /// [`SVGTransform.matrix`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform/matrix)
     [[nodiscard]] DOMMatrix matrix() const;
-    /// Getter of the `angle` attribute.
+    /// [`SVGTransform.angle`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform/angle)
     /// [`SVGTransform.angle`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTransform/angle)
     [[nodiscard]] float angle() const;
     /// The setMatrix method.

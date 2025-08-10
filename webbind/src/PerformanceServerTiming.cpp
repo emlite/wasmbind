@@ -3,11 +3,15 @@
 namespace webbind {
 
 PerformanceServerTiming PerformanceServerTiming::take_ownership(Handle h) noexcept {
-        return PerformanceServerTiming(h);
-    }
+    return PerformanceServerTiming(h);
+}
+
 PerformanceServerTiming PerformanceServerTiming::clone() const noexcept { return *this; }
+
 emlite::Val PerformanceServerTiming::instance() noexcept { return emlite::Val::global("PerformanceServerTiming"); }
+
 PerformanceServerTiming::PerformanceServerTiming(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 PerformanceServerTiming::PerformanceServerTiming(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String PerformanceServerTiming::name() const {

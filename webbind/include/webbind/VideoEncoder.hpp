@@ -25,13 +25,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoEncoder(..)` constructor, creating a new VideoEncoder instance
     VideoEncoder(const VideoEncoderInit& init);
-    /// Getter of the `state` attribute.
+    /// [`VideoEncoder.state`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoder/state)
     /// [`VideoEncoder.state`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoder/state)
     [[nodiscard]] CodecState state() const;
-    /// Getter of the `encodeQueueSize` attribute.
+    /// [`VideoEncoder.encodeQueueSize`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoder/encodeQueueSize)
     /// [`VideoEncoder.encodeQueueSize`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoder/encodeQueueSize)
     [[nodiscard]] unsigned long encodeQueueSize() const;
-    /// Getter of the `ondequeue` attribute.
+    /// [`VideoEncoder.ondequeue`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoder/ondequeue)
     /// [`VideoEncoder.ondequeue`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoder/ondequeue)
     [[nodiscard]] jsbind::Any ondequeue() const;
     /// Setter of the `ondequeue` attribute.

@@ -8,7 +8,7 @@ int main() {
     emlite::init();
     AudioContext context;
     OscillatorNode oscillator(context);
-    oscillator.type(OscillatorType::triangle());
+    oscillator.type(OscillatorType::TRIANGLE);
     oscillator.frequency().value(261.63); // Middle C
 
     auto document = window().document();

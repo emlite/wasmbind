@@ -17,10 +17,10 @@ public:
     static FileSystem take_ownership(Handle h) noexcept;
     [[nodiscard]] FileSystem clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`FileSystem.name`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/name)
     /// [`FileSystem.name`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `root` attribute.
+    /// [`FileSystem.root`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/root)
     /// [`FileSystem.root`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/root)
     [[nodiscard]] FileSystemDirectoryEntry root() const;
 };

@@ -21,7 +21,7 @@ public:
     CompositionEvent(const jsbind::String& type);
     /// The `new CompositionEvent(..)` constructor, creating a new CompositionEvent instance
     CompositionEvent(const jsbind::String& type, const CompositionEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`CompositionEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/data)
     /// [`CompositionEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/data)
     [[nodiscard]] jsbind::String data() const;
     /// The initCompositionEvent method.

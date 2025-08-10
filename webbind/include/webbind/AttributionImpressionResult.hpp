@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AttributionImpressionResult
-/// [`AttributionImpressionResult`](https://developer.mozilla.org/en-US/docs/Web/API/AttributionImpressionResult)
 class AttributionImpressionResult : public emlite::Val {
   explicit AttributionImpressionResult(Handle h) noexcept;
 public:

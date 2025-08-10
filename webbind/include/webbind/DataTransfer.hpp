@@ -21,25 +21,25 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new DataTransfer(..)` constructor, creating a new DataTransfer instance
     DataTransfer();
-    /// Getter of the `dropEffect` attribute.
+    /// [`DataTransfer.dropEffect`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect)
     /// [`DataTransfer.dropEffect`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect)
     [[nodiscard]] jsbind::String dropEffect() const;
     /// Setter of the `dropEffect` attribute.
     /// [`DataTransfer.dropEffect`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect)
     void dropEffect(const jsbind::String& value);
-    /// Getter of the `effectAllowed` attribute.
+    /// [`DataTransfer.effectAllowed`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed)
     /// [`DataTransfer.effectAllowed`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed)
     [[nodiscard]] jsbind::String effectAllowed() const;
     /// Setter of the `effectAllowed` attribute.
     /// [`DataTransfer.effectAllowed`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed)
     void effectAllowed(const jsbind::String& value);
-    /// Getter of the `items` attribute.
+    /// [`DataTransfer.items`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items)
     /// [`DataTransfer.items`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items)
     [[nodiscard]] DataTransferItemList items() const;
     /// The setDragImage method.
     /// [`DataTransfer.setDragImage`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setDragImage)
     jsbind::Undefined setDragImage(const Element& image, long x, long y);
-    /// Getter of the `types` attribute.
+    /// [`DataTransfer.types`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types)
     /// [`DataTransfer.types`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> types() const;
     /// The getData method.
@@ -54,7 +54,7 @@ public:
     /// The clearData method.
     /// [`DataTransfer.clearData`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/clearData)
     jsbind::Undefined clearData(const jsbind::String& format);
-    /// Getter of the `files` attribute.
+    /// [`DataTransfer.files`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/files)
     /// [`DataTransfer.files`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/files)
     [[nodiscard]] FileList files() const;
 };

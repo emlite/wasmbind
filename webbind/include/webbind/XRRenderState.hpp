@@ -18,22 +18,22 @@ public:
     static XRRenderState take_ownership(Handle h) noexcept;
     [[nodiscard]] XRRenderState clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `depthNear` attribute.
+    /// [`XRRenderState.depthNear`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/depthNear)
     /// [`XRRenderState.depthNear`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/depthNear)
     [[nodiscard]] double depthNear() const;
-    /// Getter of the `depthFar` attribute.
+    /// [`XRRenderState.depthFar`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/depthFar)
     /// [`XRRenderState.depthFar`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/depthFar)
     [[nodiscard]] double depthFar() const;
-    /// Getter of the `passthroughFullyObscured` attribute.
+    /// [`XRRenderState.passthroughFullyObscured`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/passthroughFullyObscured)
     /// [`XRRenderState.passthroughFullyObscured`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/passthroughFullyObscured)
     [[nodiscard]] bool passthroughFullyObscured() const;
-    /// Getter of the `inlineVerticalFieldOfView` attribute.
+    /// [`XRRenderState.inlineVerticalFieldOfView`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/inlineVerticalFieldOfView)
     /// [`XRRenderState.inlineVerticalFieldOfView`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/inlineVerticalFieldOfView)
     [[nodiscard]] double inlineVerticalFieldOfView() const;
-    /// Getter of the `baseLayer` attribute.
+    /// [`XRRenderState.baseLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/baseLayer)
     /// [`XRRenderState.baseLayer`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/baseLayer)
     [[nodiscard]] XRWebGLLayer baseLayer() const;
-    /// Getter of the `layers` attribute.
+    /// [`XRRenderState.layers`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/layers)
     /// [`XRRenderState.layers`](https://developer.mozilla.org/en-US/docs/Web/API/XRRenderState/layers)
     [[nodiscard]] jsbind::TypedArray<XRLayer> layers() const;
 };

@@ -1,14 +1,16 @@
 #include <webbind/TextDecoderOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TextDecoderOptions::TextDecoderOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TextDecoderOptions TextDecoderOptions::take_ownership(Handle h) noexcept {
-        return TextDecoderOptions(h);
-    }
+    return TextDecoderOptions(h);
+}
+
 TextDecoderOptions::TextDecoderOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 TextDecoderOptions::TextDecoderOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 TextDecoderOptions TextDecoderOptions::clone() const noexcept { return *this; }
 
 bool TextDecoderOptions::fatal() const {

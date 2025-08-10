@@ -21,16 +21,16 @@ public:
     WheelEvent(const jsbind::String& type);
     /// The `new WheelEvent(..)` constructor, creating a new WheelEvent instance
     WheelEvent(const jsbind::String& type, const WheelEventInit& eventInitDict);
-    /// Getter of the `deltaX` attribute.
+    /// [`WheelEvent.deltaX`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaX)
     /// [`WheelEvent.deltaX`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaX)
     [[nodiscard]] double deltaX() const;
-    /// Getter of the `deltaY` attribute.
+    /// [`WheelEvent.deltaY`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaY)
     /// [`WheelEvent.deltaY`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaY)
     [[nodiscard]] double deltaY() const;
-    /// Getter of the `deltaZ` attribute.
+    /// [`WheelEvent.deltaZ`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaZ)
     /// [`WheelEvent.deltaZ`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaZ)
     [[nodiscard]] double deltaZ() const;
-    /// Getter of the `deltaMode` attribute.
+    /// [`WheelEvent.deltaMode`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaMode)
     /// [`WheelEvent.deltaMode`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaMode)
     [[nodiscard]] unsigned long deltaMode() const;
 };

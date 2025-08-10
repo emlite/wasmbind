@@ -5,11 +5,15 @@
 namespace webbind {
 
 NavigationEvent NavigationEvent::take_ownership(Handle h) noexcept {
-        return NavigationEvent(h);
-    }
+    return NavigationEvent(h);
+}
+
 NavigationEvent NavigationEvent::clone() const noexcept { return *this; }
+
 emlite::Val NavigationEvent::instance() noexcept { return emlite::Val::global("NavigationEvent"); }
+
 NavigationEvent::NavigationEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
+
 NavigationEvent::NavigationEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 NavigationEvent::NavigationEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("NavigationEvent").new_(type)) {}

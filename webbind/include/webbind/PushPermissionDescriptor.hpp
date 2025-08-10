@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PushPermissionDescriptor
-/// [`PushPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/PushPermissionDescriptor)
 class PushPermissionDescriptor : public PermissionDescriptor {
   explicit PushPermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit PushPermissionDescriptor(const emlite::Val &val) noexcept;
     PushPermissionDescriptor() noexcept;
     [[nodiscard]] PushPermissionDescriptor clone() const noexcept;
+    /// Getter of the `userVisibleOnly` attribute.
     [[nodiscard]] bool userVisibleOnly() const;
+    /// Setter of the `userVisibleOnly` attribute.
     void userVisibleOnly(bool value);
 };
 

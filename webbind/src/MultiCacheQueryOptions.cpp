@@ -1,14 +1,16 @@
 #include <webbind/MultiCacheQueryOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MultiCacheQueryOptions::MultiCacheQueryOptions(Handle h) noexcept : CacheQueryOptions(emlite::Val::take_ownership(h)) {}
 MultiCacheQueryOptions MultiCacheQueryOptions::take_ownership(Handle h) noexcept {
-        return MultiCacheQueryOptions(h);
-    }
+    return MultiCacheQueryOptions(h);
+}
+
 MultiCacheQueryOptions::MultiCacheQueryOptions(const emlite::Val &val) noexcept: CacheQueryOptions(val) {}
+
 MultiCacheQueryOptions::MultiCacheQueryOptions() noexcept: CacheQueryOptions(emlite::Val::object()) {}
+
 MultiCacheQueryOptions MultiCacheQueryOptions::clone() const noexcept { return *this; }
 
 jsbind::String MultiCacheQueryOptions::cacheName() const {

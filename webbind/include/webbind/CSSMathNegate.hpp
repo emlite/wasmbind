@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathNegate(..)` constructor, creating a new CSSMathNegate instance
     CSSMathNegate(const jsbind::Any& arg);
-    /// Getter of the `value` attribute.
+    /// [`CSSMathNegate.value`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathNegate/value)
     /// [`CSSMathNegate.value`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathNegate/value)
     [[nodiscard]] CSSNumericValue value() const;
 };

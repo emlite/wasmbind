@@ -39,46 +39,46 @@ public:
     /// The abort method.
     /// [`FileReader.abort`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/abort)
     jsbind::Undefined abort();
-    /// Getter of the `readyState` attribute.
+    /// [`FileReader.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readyState)
     /// [`FileReader.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readyState)
     [[nodiscard]] unsigned short readyState() const;
-    /// Getter of the `result` attribute.
+    /// [`FileReader.result`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result)
     /// [`FileReader.result`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result)
     [[nodiscard]] jsbind::Any result() const;
-    /// Getter of the `error` attribute.
+    /// [`FileReader.error`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/error)
     /// [`FileReader.error`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/error)
     [[nodiscard]] DOMException error() const;
-    /// Getter of the `onloadstart` attribute.
+    /// [`FileReader.onloadstart`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onloadstart)
     /// [`FileReader.onloadstart`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onloadstart)
     [[nodiscard]] jsbind::Any onloadstart() const;
     /// Setter of the `onloadstart` attribute.
     /// [`FileReader.onloadstart`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onloadstart)
     void onloadstart(const jsbind::Any& value);
-    /// Getter of the `onprogress` attribute.
+    /// [`FileReader.onprogress`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onprogress)
     /// [`FileReader.onprogress`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onprogress)
     [[nodiscard]] jsbind::Any onprogress() const;
     /// Setter of the `onprogress` attribute.
     /// [`FileReader.onprogress`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onprogress)
     void onprogress(const jsbind::Any& value);
-    /// Getter of the `onload` attribute.
+    /// [`FileReader.onload`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload)
     /// [`FileReader.onload`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload)
     [[nodiscard]] jsbind::Any onload() const;
     /// Setter of the `onload` attribute.
     /// [`FileReader.onload`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload)
     void onload(const jsbind::Any& value);
-    /// Getter of the `onabort` attribute.
+    /// [`FileReader.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onabort)
     /// [`FileReader.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onabort)
     [[nodiscard]] jsbind::Any onabort() const;
     /// Setter of the `onabort` attribute.
     /// [`FileReader.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onabort)
     void onabort(const jsbind::Any& value);
-    /// Getter of the `onerror` attribute.
+    /// [`FileReader.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onerror)
     /// [`FileReader.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.
     /// [`FileReader.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onerror)
     void onerror(const jsbind::Any& value);
-    /// Getter of the `onloadend` attribute.
+    /// [`FileReader.onloadend`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onloadend)
     /// [`FileReader.onloadend`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onloadend)
     [[nodiscard]] jsbind::Any onloadend() const;
     /// Setter of the `onloadend` attribute.

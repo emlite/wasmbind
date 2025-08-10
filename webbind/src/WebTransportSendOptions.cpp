@@ -1,15 +1,17 @@
 #include <webbind/WebTransportSendOptions.hpp>
 #include <webbind/WebTransportSendGroup.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WebTransportSendOptions::WebTransportSendOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransportSendOptions WebTransportSendOptions::take_ownership(Handle h) noexcept {
-        return WebTransportSendOptions(h);
-    }
+    return WebTransportSendOptions(h);
+}
+
 WebTransportSendOptions::WebTransportSendOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WebTransportSendOptions::WebTransportSendOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WebTransportSendOptions WebTransportSendOptions::clone() const noexcept { return *this; }
 
 WebTransportSendGroup WebTransportSendOptions::sendGroup() const {

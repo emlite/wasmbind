@@ -4,11 +4,15 @@
 namespace webbind {
 
 CSSMediaRule CSSMediaRule::take_ownership(Handle h) noexcept {
-        return CSSMediaRule(h);
-    }
+    return CSSMediaRule(h);
+}
+
 CSSMediaRule CSSMediaRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSMediaRule::instance() noexcept { return emlite::Val::global("CSSMediaRule"); }
+
 CSSMediaRule::CSSMediaRule(Handle h) noexcept : CSSConditionRule(emlite::Val::take_ownership(h)) {}
+
 CSSMediaRule::CSSMediaRule(const emlite::Val &val) noexcept: CSSConditionRule(val) {}
 
 MediaList CSSMediaRule::media() const {

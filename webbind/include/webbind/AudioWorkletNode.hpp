@@ -25,13 +25,13 @@ public:
     AudioWorkletNode(const BaseAudioContext& context, const jsbind::String& name);
     /// The `new AudioWorkletNode(..)` constructor, creating a new AudioWorkletNode instance
     AudioWorkletNode(const BaseAudioContext& context, const jsbind::String& name, const AudioWorkletNodeOptions& options);
-    /// Getter of the `parameters` attribute.
+    /// [`AudioWorkletNode.parameters`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/parameters)
     /// [`AudioWorkletNode.parameters`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/parameters)
     [[nodiscard]] AudioParamMap parameters() const;
-    /// Getter of the `port` attribute.
+    /// [`AudioWorkletNode.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/port)
     /// [`AudioWorkletNode.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/port)
     [[nodiscard]] MessagePort port() const;
-    /// Getter of the `onprocessorerror` attribute.
+    /// [`AudioWorkletNode.onprocessorerror`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/onprocessorerror)
     /// [`AudioWorkletNode.onprocessorerror`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/onprocessorerror)
     [[nodiscard]] jsbind::Any onprocessorerror() const;
     /// Setter of the `onprocessorerror` attribute.

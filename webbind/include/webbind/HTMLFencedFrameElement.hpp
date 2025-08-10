@@ -21,28 +21,28 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLFencedFrameElement(..)` constructor, creating a new HTMLFencedFrameElement instance
     HTMLFencedFrameElement();
-    /// Getter of the `config` attribute.
+    /// [`HTMLFencedFrameElement.config`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/config)
     /// [`HTMLFencedFrameElement.config`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/config)
     [[nodiscard]] FencedFrameConfig config() const;
     /// Setter of the `config` attribute.
     /// [`HTMLFencedFrameElement.config`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/config)
     void config(const FencedFrameConfig& value);
-    /// Getter of the `width` attribute.
+    /// [`HTMLFencedFrameElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/width)
     /// [`HTMLFencedFrameElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/width)
     [[nodiscard]] jsbind::String width() const;
     /// Setter of the `width` attribute.
     /// [`HTMLFencedFrameElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/width)
     void width(const jsbind::String& value);
-    /// Getter of the `height` attribute.
+    /// [`HTMLFencedFrameElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/height)
     /// [`HTMLFencedFrameElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/height)
     [[nodiscard]] jsbind::String height() const;
     /// Setter of the `height` attribute.
     /// [`HTMLFencedFrameElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/height)
     void height(const jsbind::String& value);
-    /// Getter of the `sandbox` attribute.
+    /// [`HTMLFencedFrameElement.sandbox`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/sandbox)
     /// [`HTMLFencedFrameElement.sandbox`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/sandbox)
     [[nodiscard]] DOMTokenList sandbox() const;
-    /// Getter of the `allow` attribute.
+    /// [`HTMLFencedFrameElement.allow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/allow)
     /// [`HTMLFencedFrameElement.allow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/allow)
     [[nodiscard]] jsbind::String allow() const;
     /// Setter of the `allow` attribute.

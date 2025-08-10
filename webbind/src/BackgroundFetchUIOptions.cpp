@@ -1,15 +1,17 @@
 #include <webbind/BackgroundFetchUIOptions.hpp>
 #include <webbind/ImageResource.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BackgroundFetchUIOptions::BackgroundFetchUIOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BackgroundFetchUIOptions BackgroundFetchUIOptions::take_ownership(Handle h) noexcept {
-        return BackgroundFetchUIOptions(h);
-    }
+    return BackgroundFetchUIOptions(h);
+}
+
 BackgroundFetchUIOptions::BackgroundFetchUIOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BackgroundFetchUIOptions::BackgroundFetchUIOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BackgroundFetchUIOptions BackgroundFetchUIOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<ImageResource> BackgroundFetchUIOptions::icons() const {

@@ -1,14 +1,16 @@
 #include <webbind/MLTriangularOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLTriangularOptions::MLTriangularOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLTriangularOptions MLTriangularOptions::take_ownership(Handle h) noexcept {
-        return MLTriangularOptions(h);
-    }
+    return MLTriangularOptions(h);
+}
+
 MLTriangularOptions::MLTriangularOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLTriangularOptions::MLTriangularOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLTriangularOptions MLTriangularOptions::clone() const noexcept { return *this; }
 
 bool MLTriangularOptions::upper() const {

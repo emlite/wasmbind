@@ -1,15 +1,17 @@
 #include <webbind/IdentityProviderBranding.hpp>
 #include <webbind/IdentityProviderIcon.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityProviderBranding::IdentityProviderBranding(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityProviderBranding IdentityProviderBranding::take_ownership(Handle h) noexcept {
-        return IdentityProviderBranding(h);
-    }
+    return IdentityProviderBranding(h);
+}
+
 IdentityProviderBranding::IdentityProviderBranding(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityProviderBranding::IdentityProviderBranding() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityProviderBranding IdentityProviderBranding::clone() const noexcept { return *this; }
 
 jsbind::String IdentityProviderBranding::background_color() const {

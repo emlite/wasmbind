@@ -1,14 +1,16 @@
 #include <webbind/MediaPositionState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaPositionState::MediaPositionState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaPositionState MediaPositionState::take_ownership(Handle h) noexcept {
-        return MediaPositionState(h);
-    }
+    return MediaPositionState(h);
+}
+
 MediaPositionState::MediaPositionState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaPositionState::MediaPositionState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaPositionState MediaPositionState::clone() const noexcept { return *this; }
 
 double MediaPositionState::duration() const {

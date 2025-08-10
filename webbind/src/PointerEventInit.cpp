@@ -1,15 +1,17 @@
 #include <webbind/PointerEventInit.hpp>
 #include <webbind/PointerEvent.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PointerEventInit::PointerEventInit(Handle h) noexcept : MouseEventInit(emlite::Val::take_ownership(h)) {}
 PointerEventInit PointerEventInit::take_ownership(Handle h) noexcept {
-        return PointerEventInit(h);
-    }
+    return PointerEventInit(h);
+}
+
 PointerEventInit::PointerEventInit(const emlite::Val &val) noexcept: MouseEventInit(val) {}
+
 PointerEventInit::PointerEventInit() noexcept: MouseEventInit(emlite::Val::object()) {}
+
 PointerEventInit PointerEventInit::clone() const noexcept { return *this; }
 
 long PointerEventInit::pointerId() const {

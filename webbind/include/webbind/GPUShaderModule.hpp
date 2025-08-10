@@ -20,7 +20,7 @@ public:
     /// The getCompilationInfo method.
     /// [`GPUShaderModule.getCompilationInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/getCompilationInfo)
     jsbind::Promise<GPUCompilationInfo> getCompilationInfo();
-    /// Getter of the `label` attribute.
+    /// [`GPUShaderModule.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/label)
     /// [`GPUShaderModule.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

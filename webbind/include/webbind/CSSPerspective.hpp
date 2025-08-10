@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSPerspective(..)` constructor, creating a new CSSPerspective instance
     CSSPerspective(const jsbind::Any& length);
-    /// Getter of the `length` attribute.
+    /// [`CSSPerspective.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPerspective/length)
     /// [`CSSPerspective.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSPerspective/length)
     [[nodiscard]] jsbind::Any length() const;
     /// Setter of the `length` attribute.

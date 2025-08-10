@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PeriodicSyncEventInit
-/// [`PeriodicSyncEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncEventInit)
 class PeriodicSyncEventInit : public ExtendableEventInit {
   explicit PeriodicSyncEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit PeriodicSyncEventInit(const emlite::Val &val) noexcept;
     PeriodicSyncEventInit() noexcept;
     [[nodiscard]] PeriodicSyncEventInit clone() const noexcept;
+    /// Getter of the `tag` attribute.
     [[nodiscard]] jsbind::String tag() const;
+    /// Setter of the `tag` attribute.
     void tag(const jsbind::String& value);
 };
 

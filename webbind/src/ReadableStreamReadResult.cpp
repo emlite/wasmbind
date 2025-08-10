@@ -1,14 +1,16 @@
 #include <webbind/ReadableStreamReadResult.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ReadableStreamReadResult::ReadableStreamReadResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ReadableStreamReadResult ReadableStreamReadResult::take_ownership(Handle h) noexcept {
-        return ReadableStreamReadResult(h);
-    }
+    return ReadableStreamReadResult(h);
+}
+
 ReadableStreamReadResult::ReadableStreamReadResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ReadableStreamReadResult::ReadableStreamReadResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ReadableStreamReadResult ReadableStreamReadResult::clone() const noexcept { return *this; }
 
 jsbind::Any ReadableStreamReadResult::value() const {

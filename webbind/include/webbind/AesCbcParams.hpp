@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AesCbcParams
-/// [`AesCbcParams`](https://developer.mozilla.org/en-US/docs/Web/API/AesCbcParams)
 class AesCbcParams : public Algorithm {
   explicit AesCbcParams(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit AesCbcParams(const emlite::Val &val) noexcept;
     AesCbcParams() noexcept;
     [[nodiscard]] AesCbcParams clone() const noexcept;
+    /// Getter of the `iv` attribute.
     [[nodiscard]] jsbind::Any iv() const;
+    /// Setter of the `iv` attribute.
     void iv(const jsbind::Any& value);
 };
 

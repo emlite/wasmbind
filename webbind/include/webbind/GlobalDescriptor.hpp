@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GlobalDescriptor
-/// [`GlobalDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalDescriptor)
 class GlobalDescriptor : public emlite::Val {
   explicit GlobalDescriptor(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit GlobalDescriptor(const emlite::Val &val) noexcept;
     GlobalDescriptor() noexcept;
     [[nodiscard]] GlobalDescriptor clone() const noexcept;
+    /// Getter of the `value` attribute.
     [[nodiscard]] ValueType value() const;
+    /// Setter of the `value` attribute.
     void value(const ValueType& value);
+    /// Getter of the `mutable` attribute.
     [[nodiscard]] bool mutable_() const;
+    /// Setter of the `mutable` attribute.
     void mutable_(bool value);
 };
 

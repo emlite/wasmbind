@@ -7,11 +7,15 @@
 namespace webbind {
 
 SVGFECompositeElement SVGFECompositeElement::take_ownership(Handle h) noexcept {
-        return SVGFECompositeElement(h);
-    }
+    return SVGFECompositeElement(h);
+}
+
 SVGFECompositeElement SVGFECompositeElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFECompositeElement::instance() noexcept { return emlite::Val::global("SVGFECompositeElement"); }
+
 SVGFECompositeElement::SVGFECompositeElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFECompositeElement::SVGFECompositeElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedString SVGFECompositeElement::in1() const {

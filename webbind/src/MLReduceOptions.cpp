@@ -1,14 +1,16 @@
 #include <webbind/MLReduceOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLReduceOptions::MLReduceOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLReduceOptions MLReduceOptions::take_ownership(Handle h) noexcept {
-        return MLReduceOptions(h);
-    }
+    return MLReduceOptions(h);
+}
+
 MLReduceOptions::MLReduceOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLReduceOptions::MLReduceOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLReduceOptions MLReduceOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<unsigned long> MLReduceOptions::axes() const {

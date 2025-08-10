@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type BluetoothPermissionStorage
-/// [`BluetoothPermissionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothPermissionStorage)
 class BluetoothPermissionStorage : public emlite::Val {
   explicit BluetoothPermissionStorage(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit BluetoothPermissionStorage(const emlite::Val &val) noexcept;
     BluetoothPermissionStorage() noexcept;
     [[nodiscard]] BluetoothPermissionStorage clone() const noexcept;
+    /// Getter of the `allowedDevices` attribute.
     [[nodiscard]] jsbind::TypedArray<AllowedBluetoothDevice> allowedDevices() const;
+    /// Setter of the `allowedDevices` attribute.
     void allowedDevices(const jsbind::TypedArray<AllowedBluetoothDevice>& value);
 };
 

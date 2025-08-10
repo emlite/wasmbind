@@ -21,19 +21,19 @@ public:
     /// The registerProcessor method.
     /// [`AudioWorkletGlobalScope.registerProcessor`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)
     jsbind::Undefined registerProcessor(const jsbind::String& name, const jsbind::Function& processorCtor);
-    /// Getter of the `currentFrame` attribute.
+    /// [`AudioWorkletGlobalScope.currentFrame`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/currentFrame)
     /// [`AudioWorkletGlobalScope.currentFrame`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/currentFrame)
     [[nodiscard]] long long currentFrame() const;
-    /// Getter of the `currentTime` attribute.
+    /// [`AudioWorkletGlobalScope.currentTime`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/currentTime)
     /// [`AudioWorkletGlobalScope.currentTime`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/currentTime)
     [[nodiscard]] double currentTime() const;
-    /// Getter of the `sampleRate` attribute.
+    /// [`AudioWorkletGlobalScope.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/sampleRate)
     /// [`AudioWorkletGlobalScope.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/sampleRate)
     [[nodiscard]] float sampleRate() const;
-    /// Getter of the `renderQuantumSize` attribute.
+    /// [`AudioWorkletGlobalScope.renderQuantumSize`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/renderQuantumSize)
     /// [`AudioWorkletGlobalScope.renderQuantumSize`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/renderQuantumSize)
     [[nodiscard]] unsigned long renderQuantumSize() const;
-    /// Getter of the `port` attribute.
+    /// [`AudioWorkletGlobalScope.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/port)
     /// [`AudioWorkletGlobalScope.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/port)
     [[nodiscard]] MessagePort port() const;
 };

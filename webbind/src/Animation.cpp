@@ -7,11 +7,15 @@
 namespace webbind {
 
 Animation Animation::take_ownership(Handle h) noexcept {
-        return Animation(h);
-    }
+    return Animation(h);
+}
+
 Animation Animation::clone() const noexcept { return *this; }
+
 emlite::Val Animation::instance() noexcept { return emlite::Val::global("Animation"); }
+
 Animation::Animation(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 Animation::Animation(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 Animation::Animation() : EventTarget(emlite::Val::global("Animation").new_()) {}

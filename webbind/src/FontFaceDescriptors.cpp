@@ -1,14 +1,16 @@
 #include <webbind/FontFaceDescriptors.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FontFaceDescriptors::FontFaceDescriptors(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FontFaceDescriptors FontFaceDescriptors::take_ownership(Handle h) noexcept {
-        return FontFaceDescriptors(h);
-    }
+    return FontFaceDescriptors(h);
+}
+
 FontFaceDescriptors::FontFaceDescriptors(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FontFaceDescriptors::FontFaceDescriptors() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FontFaceDescriptors FontFaceDescriptors::clone() const noexcept { return *this; }
 
 jsbind::String FontFaceDescriptors::style() const {

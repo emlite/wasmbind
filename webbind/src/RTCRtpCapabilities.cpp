@@ -2,15 +2,17 @@
 #include <webbind/RTCRtpCodec.hpp>
 #include <webbind/RTCRtpHeaderExtensionCapability.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpCapabilities::RTCRtpCapabilities(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpCapabilities RTCRtpCapabilities::take_ownership(Handle h) noexcept {
-        return RTCRtpCapabilities(h);
-    }
+    return RTCRtpCapabilities(h);
+}
+
 RTCRtpCapabilities::RTCRtpCapabilities(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCRtpCapabilities::RTCRtpCapabilities() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCRtpCapabilities RTCRtpCapabilities::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<RTCRtpCodec> RTCRtpCapabilities::codecs() const {

@@ -21,10 +21,10 @@ public:
     CharacterBoundsUpdateEvent(const jsbind::String& type);
     /// The `new CharacterBoundsUpdateEvent(..)` constructor, creating a new CharacterBoundsUpdateEvent instance
     CharacterBoundsUpdateEvent(const jsbind::String& type, const CharacterBoundsUpdateEventInit& options);
-    /// Getter of the `rangeStart` attribute.
+    /// [`CharacterBoundsUpdateEvent.rangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeStart)
     /// [`CharacterBoundsUpdateEvent.rangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeStart)
     [[nodiscard]] unsigned long rangeStart() const;
-    /// Getter of the `rangeEnd` attribute.
+    /// [`CharacterBoundsUpdateEvent.rangeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeEnd)
     /// [`CharacterBoundsUpdateEvent.rangeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeEnd)
     [[nodiscard]] unsigned long rangeEnd() const;
 };

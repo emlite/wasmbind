@@ -1,15 +1,17 @@
 #include <webbind/TouchInit.hpp>
 #include <webbind/EventTarget.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TouchInit::TouchInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TouchInit TouchInit::take_ownership(Handle h) noexcept {
-        return TouchInit(h);
-    }
+    return TouchInit(h);
+}
+
 TouchInit::TouchInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 TouchInit::TouchInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 TouchInit TouchInit::clone() const noexcept { return *this; }
 
 long TouchInit::identifier() const {

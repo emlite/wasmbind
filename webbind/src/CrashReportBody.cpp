@@ -1,14 +1,16 @@
 #include <webbind/CrashReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CrashReportBody::CrashReportBody(Handle h) noexcept : ReportBody(emlite::Val::take_ownership(h)) {}
 CrashReportBody CrashReportBody::take_ownership(Handle h) noexcept {
-        return CrashReportBody(h);
-    }
+    return CrashReportBody(h);
+}
+
 CrashReportBody::CrashReportBody(const emlite::Val &val) noexcept: ReportBody(val) {}
+
 CrashReportBody::CrashReportBody() noexcept: ReportBody(emlite::Val::object()) {}
+
 CrashReportBody CrashReportBody::clone() const noexcept { return *this; }
 
 jsbind::String CrashReportBody::reason() const {

@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathProduct(..)` constructor, creating a new CSSMathProduct instance
     CSSMathProduct(const jsbind::Any& args);
-    /// Getter of the `values` attribute.
+    /// [`CSSMathProduct.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathProduct/values)
     /// [`CSSMathProduct.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathProduct/values)
     [[nodiscard]] CSSNumericArray values() const;
 };

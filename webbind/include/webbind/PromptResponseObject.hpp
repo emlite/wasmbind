@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PromptResponseObject
-/// [`PromptResponseObject`](https://developer.mozilla.org/en-US/docs/Web/API/PromptResponseObject)
 class PromptResponseObject : public emlite::Val {
   explicit PromptResponseObject(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PromptResponseObject(const emlite::Val &val) noexcept;
     PromptResponseObject() noexcept;
     [[nodiscard]] PromptResponseObject clone() const noexcept;
+    /// Getter of the `userChoice` attribute.
     [[nodiscard]] AppBannerPromptOutcome userChoice() const;
+    /// Setter of the `userChoice` attribute.
     void userChoice(const AppBannerPromptOutcome& value);
 };
 

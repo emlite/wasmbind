@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type LanguageDetectorDetectOptions
-/// [`LanguageDetectorDetectOptions`](https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetectorDetectOptions)
 class LanguageDetectorDetectOptions : public emlite::Val {
   explicit LanguageDetectorDetectOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit LanguageDetectorDetectOptions(const emlite::Val &val) noexcept;
     LanguageDetectorDetectOptions() noexcept;
     [[nodiscard]] LanguageDetectorDetectOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

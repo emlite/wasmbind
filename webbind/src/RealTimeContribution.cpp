@@ -1,14 +1,16 @@
 #include <webbind/RealTimeContribution.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RealTimeContribution::RealTimeContribution(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RealTimeContribution RealTimeContribution::take_ownership(Handle h) noexcept {
-        return RealTimeContribution(h);
-    }
+    return RealTimeContribution(h);
+}
+
 RealTimeContribution::RealTimeContribution(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RealTimeContribution::RealTimeContribution() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RealTimeContribution RealTimeContribution::clone() const noexcept { return *this; }
 
 long RealTimeContribution::bucket() const {

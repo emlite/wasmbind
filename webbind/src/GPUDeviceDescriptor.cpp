@@ -1,15 +1,17 @@
 #include <webbind/GPUDeviceDescriptor.hpp>
 #include <webbind/GPUQueueDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUDeviceDescriptor::GPUDeviceDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPUDeviceDescriptor GPUDeviceDescriptor::take_ownership(Handle h) noexcept {
-        return GPUDeviceDescriptor(h);
-    }
+    return GPUDeviceDescriptor(h);
+}
+
 GPUDeviceDescriptor::GPUDeviceDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPUDeviceDescriptor::GPUDeviceDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPUDeviceDescriptor GPUDeviceDescriptor::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<GPUFeatureName> GPUDeviceDescriptor::requiredFeatures() const {

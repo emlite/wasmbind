@@ -3,11 +3,15 @@
 namespace webbind {
 
 External External::take_ownership(Handle h) noexcept {
-        return External(h);
-    }
+    return External(h);
+}
+
 External External::clone() const noexcept { return *this; }
+
 emlite::Val External::instance() noexcept { return emlite::Val::global("External"); }
+
 External::External(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 External::External(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined External::AddSearchProvider() {

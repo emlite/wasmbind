@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type DisconnectedAccount
-/// [`DisconnectedAccount`](https://developer.mozilla.org/en-US/docs/Web/API/DisconnectedAccount)
 class DisconnectedAccount : public emlite::Val {
   explicit DisconnectedAccount(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit DisconnectedAccount(const emlite::Val &val) noexcept;
     DisconnectedAccount() noexcept;
     [[nodiscard]] DisconnectedAccount clone() const noexcept;
+    /// Getter of the `account_id` attribute.
     [[nodiscard]] jsbind::String account_id() const;
+    /// Setter of the `account_id` attribute.
     void account_id(const jsbind::String& value);
 };
 

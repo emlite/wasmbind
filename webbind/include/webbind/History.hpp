@@ -16,16 +16,16 @@ public:
     static History take_ownership(Handle h) noexcept;
     [[nodiscard]] History clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`History.length`](https://developer.mozilla.org/en-US/docs/Web/API/History/length)
     /// [`History.length`](https://developer.mozilla.org/en-US/docs/Web/API/History/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `scrollRestoration` attribute.
+    /// [`History.scrollRestoration`](https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration)
     /// [`History.scrollRestoration`](https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration)
     [[nodiscard]] ScrollRestoration scrollRestoration() const;
     /// Setter of the `scrollRestoration` attribute.
     /// [`History.scrollRestoration`](https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration)
     void scrollRestoration(const ScrollRestoration& value);
-    /// Getter of the `state` attribute.
+    /// [`History.state`](https://developer.mozilla.org/en-US/docs/Web/API/History/state)
     /// [`History.state`](https://developer.mozilla.org/en-US/docs/Web/API/History/state)
     [[nodiscard]] jsbind::Any state() const;
     /// The go method.

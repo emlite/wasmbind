@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PaymentRequestUpdateEventInit
-/// [`PaymentRequestUpdateEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestUpdateEventInit)
 class PaymentRequestUpdateEventInit : public EventInit {
   explicit PaymentRequestUpdateEventInit(Handle h) noexcept;
 public:

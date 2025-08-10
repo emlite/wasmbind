@@ -9,7 +9,6 @@ namespace webbind {
 class Node;
 
 /// Dictionary type SpatialNavigationSearchOptions
-/// [`SpatialNavigationSearchOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SpatialNavigationSearchOptions)
 class SpatialNavigationSearchOptions : public emlite::Val {
   explicit SpatialNavigationSearchOptions(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit SpatialNavigationSearchOptions(const emlite::Val &val) noexcept;
     SpatialNavigationSearchOptions() noexcept;
     [[nodiscard]] SpatialNavigationSearchOptions clone() const noexcept;
+    /// Getter of the `candidates` attribute.
     [[nodiscard]] jsbind::TypedArray<Node> candidates() const;
+    /// Setter of the `candidates` attribute.
     void candidates(const jsbind::TypedArray<Node>& value);
+    /// Getter of the `container` attribute.
     [[nodiscard]] Node container() const;
+    /// Setter of the `container` attribute.
     void container(const Node& value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/XRRayDirectionInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRRayDirectionInit::XRRayDirectionInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRRayDirectionInit XRRayDirectionInit::take_ownership(Handle h) noexcept {
-        return XRRayDirectionInit(h);
-    }
+    return XRRayDirectionInit(h);
+}
+
 XRRayDirectionInit::XRRayDirectionInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRRayDirectionInit::XRRayDirectionInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRRayDirectionInit XRRayDirectionInit::clone() const noexcept { return *this; }
 
 double XRRayDirectionInit::x() const {

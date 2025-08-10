@@ -72,7 +72,7 @@ public:
     static Navigator take_ownership(Handle h) noexcept;
     [[nodiscard]] Navigator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `audioSession` attribute.
+    /// [`Navigator.audioSession`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/audioSession)
     /// [`Navigator.audioSession`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/audioSession)
     [[nodiscard]] AudioSession audioSession() const;
     /// The getAutoplayPolicy method.
@@ -87,16 +87,16 @@ public:
     /// The sendBeacon method.
     /// [`Navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
     bool sendBeacon(const jsbind::String& url, const jsbind::Any& data);
-    /// Getter of the `clipboard` attribute.
+    /// [`Navigator.clipboard`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard)
     /// [`Navigator.clipboard`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard)
     [[nodiscard]] Clipboard clipboard() const;
-    /// Getter of the `contacts` attribute.
+    /// [`Navigator.contacts`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/contacts)
     /// [`Navigator.contacts`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/contacts)
     [[nodiscard]] ContactsManager contacts() const;
-    /// Getter of the `credentials` attribute.
+    /// [`Navigator.credentials`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/credentials)
     /// [`Navigator.credentials`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/credentials)
     [[nodiscard]] CredentialsContainer credentials() const;
-    /// Getter of the `devicePosture` attribute.
+    /// [`Navigator.devicePosture`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/devicePosture)
     /// [`Navigator.devicePosture`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/devicePosture)
     [[nodiscard]] DevicePosture devicePosture() const;
     /// The requestMediaKeySystemAccess method.
@@ -117,7 +117,7 @@ public:
     /// The getGamepads method.
     /// [`Navigator.getGamepads`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getGamepads)
     jsbind::TypedArray<Gamepad> getGamepads();
-    /// Getter of the `geolocation` attribute.
+    /// [`Navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)
     /// [`Navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)
     [[nodiscard]] Geolocation geolocation() const;
     /// The getInstalledRelatedApps method.
@@ -129,55 +129,55 @@ public:
     /// The createHandwritingRecognizer method.
     /// [`Navigator.createHandwritingRecognizer`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/createHandwritingRecognizer)
     jsbind::Promise<HandwritingRecognizer> createHandwritingRecognizer(const HandwritingModelConstraint& constraint);
-    /// Getter of the `userActivation` attribute.
+    /// [`Navigator.userActivation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userActivation)
     /// [`Navigator.userActivation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userActivation)
     [[nodiscard]] UserActivation userActivation() const;
-    /// Getter of the `ink` attribute.
+    /// [`Navigator.ink`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/ink)
     /// [`Navigator.ink`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/ink)
     [[nodiscard]] Ink ink() const;
-    /// Getter of the `scheduling` attribute.
+    /// [`Navigator.scheduling`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/scheduling)
     /// [`Navigator.scheduling`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/scheduling)
     [[nodiscard]] Scheduling scheduling() const;
-    /// Getter of the `keyboard` attribute.
+    /// [`Navigator.keyboard`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/keyboard)
     /// [`Navigator.keyboard`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/keyboard)
     [[nodiscard]] Keyboard keyboard() const;
-    /// Getter of the `login` attribute.
+    /// [`Navigator.login`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/login)
     /// [`Navigator.login`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/login)
     [[nodiscard]] NavigatorLogin login() const;
-    /// Getter of the `managed` attribute.
+    /// [`Navigator.managed`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/managed)
     /// [`Navigator.managed`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/managed)
     [[nodiscard]] NavigatorManagedData managed() const;
-    /// Getter of the `mediaCapabilities` attribute.
+    /// [`Navigator.mediaCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaCapabilities)
     /// [`Navigator.mediaCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaCapabilities)
     [[nodiscard]] MediaCapabilities mediaCapabilities() const;
-    /// Getter of the `mediaDevices` attribute.
+    /// [`Navigator.mediaDevices`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices)
     /// [`Navigator.mediaDevices`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices)
     [[nodiscard]] MediaDevices mediaDevices() const;
-    /// Getter of the `preferences` attribute.
+    /// [`Navigator.preferences`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/preferences)
     /// [`Navigator.preferences`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/preferences)
     [[nodiscard]] PreferenceManager preferences() const;
-    /// Getter of the `mediaSession` attribute.
+    /// [`Navigator.mediaSession`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaSession)
     /// [`Navigator.mediaSession`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaSession)
     [[nodiscard]] MediaSession mediaSession() const;
-    /// Getter of the `permissions` attribute.
+    /// [`Navigator.permissions`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/permissions)
     /// [`Navigator.permissions`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/permissions)
     [[nodiscard]] Permissions permissions() const;
-    /// Getter of the `maxTouchPoints` attribute.
+    /// [`Navigator.maxTouchPoints`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/maxTouchPoints)
     /// [`Navigator.maxTouchPoints`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/maxTouchPoints)
     [[nodiscard]] long maxTouchPoints() const;
-    /// Getter of the `presentation` attribute.
+    /// [`Navigator.presentation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/presentation)
     /// [`Navigator.presentation`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/presentation)
     [[nodiscard]] Presentation presentation() const;
-    /// Getter of the `attribution` attribute.
+    /// [`Navigator.attribution`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/attribution)
     /// [`Navigator.attribution`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/attribution)
     [[nodiscard]] Attribution attribution() const;
-    /// Getter of the `wakeLock` attribute.
+    /// [`Navigator.wakeLock`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/wakeLock)
     /// [`Navigator.wakeLock`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/wakeLock)
     [[nodiscard]] WakeLock wakeLock() const;
-    /// Getter of the `serial` attribute.
+    /// [`Navigator.serial`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serial)
     /// [`Navigator.serial`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serial)
     [[nodiscard]] Serial serial() const;
-    /// Getter of the `serviceWorker` attribute.
+    /// [`Navigator.serviceWorker`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker)
     /// [`Navigator.serviceWorker`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker)
     [[nodiscard]] ServiceWorkerContainer serviceWorker() const;
     /// The joinAdInterestGroup method.
@@ -198,7 +198,7 @@ public:
     /// The runAdAuction method.
     /// [`Navigator.runAdAuction`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/runAdAuction)
     jsbind::Promise<jsbind::Any> runAdAuction(const AuctionAdConfig& config);
-    /// Getter of the `deprecatedRunAdAuctionEnforcesKAnonymity` attribute.
+    /// [`Navigator.deprecatedRunAdAuctionEnforcesKAnonymity`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deprecatedRunAdAuctionEnforcesKAnonymity)
     /// [`Navigator.deprecatedRunAdAuctionEnforcesKAnonymity`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deprecatedRunAdAuctionEnforcesKAnonymity)
     [[nodiscard]] bool deprecatedRunAdAuctionEnforcesKAnonymity() const;
     /// The canLoadAdAuctionFencedFrame method.
@@ -216,16 +216,16 @@ public:
     /// The updateAdInterestGroups method.
     /// [`Navigator.updateAdInterestGroups`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/updateAdInterestGroups)
     jsbind::Undefined updateAdInterestGroups();
-    /// Getter of the `protectedAudience` attribute.
+    /// [`Navigator.protectedAudience`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/protectedAudience)
     /// [`Navigator.protectedAudience`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/protectedAudience)
     [[nodiscard]] ProtectedAudience protectedAudience() const;
     /// The vibrate method.
     /// [`Navigator.vibrate`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate)
     bool vibrate(const jsbind::Any& pattern);
-    /// Getter of the `virtualKeyboard` attribute.
+    /// [`Navigator.virtualKeyboard`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/virtualKeyboard)
     /// [`Navigator.virtualKeyboard`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/virtualKeyboard)
     [[nodiscard]] VirtualKeyboard virtualKeyboard() const;
-    /// Getter of the `bluetooth` attribute.
+    /// [`Navigator.bluetooth`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/bluetooth)
     /// [`Navigator.bluetooth`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/bluetooth)
     [[nodiscard]] Bluetooth bluetooth() const;
     /// The share method.
@@ -240,7 +240,7 @@ public:
     /// The canShare method.
     /// [`Navigator.canShare`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare)
     bool canShare(const ShareData& data);
-    /// Getter of the `hid` attribute.
+    /// [`Navigator.hid`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hid)
     /// [`Navigator.hid`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hid)
     [[nodiscard]] HID hid() const;
     /// The requestMIDIAccess method.
@@ -249,13 +249,13 @@ public:
     /// The requestMIDIAccess method.
     /// [`Navigator.requestMIDIAccess`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/requestMIDIAccess)
     jsbind::Promise<MIDIAccess> requestMIDIAccess(const MIDIOptions& options);
-    /// Getter of the `usb` attribute.
+    /// [`Navigator.usb`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/usb)
     /// [`Navigator.usb`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/usb)
     [[nodiscard]] USB usb() const;
-    /// Getter of the `xr` attribute.
+    /// [`Navigator.xr`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/xr)
     /// [`Navigator.xr`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/xr)
     [[nodiscard]] XRSystem xr() const;
-    /// Getter of the `windowControlsOverlay` attribute.
+    /// [`Navigator.windowControlsOverlay`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/windowControlsOverlay)
     /// [`Navigator.windowControlsOverlay`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/windowControlsOverlay)
     [[nodiscard]] WindowControlsOverlay windowControlsOverlay() const;
     /// The setAppBadge method.
@@ -267,25 +267,25 @@ public:
     /// The clearAppBadge method.
     /// [`Navigator.clearAppBadge`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clearAppBadge)
     jsbind::Promise<jsbind::Undefined> clearAppBadge();
-    /// Getter of the `deviceMemory` attribute.
+    /// [`Navigator.deviceMemory`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory)
     /// [`Navigator.deviceMemory`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory)
     [[nodiscard]] double deviceMemory() const;
-    /// Getter of the `globalPrivacyControl` attribute.
+    /// [`Navigator.globalPrivacyControl`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/globalPrivacyControl)
     /// [`Navigator.globalPrivacyControl`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/globalPrivacyControl)
     [[nodiscard]] bool globalPrivacyControl() const;
     /// The taintEnabled method.
     /// [`Navigator.taintEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/taintEnabled)
     bool taintEnabled();
-    /// Getter of the `oscpu` attribute.
+    /// [`Navigator.oscpu`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/oscpu)
     /// [`Navigator.oscpu`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/oscpu)
     [[nodiscard]] jsbind::String oscpu() const;
-    /// Getter of the `language` attribute.
+    /// [`Navigator.language`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language)
     /// [`Navigator.language`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language)
     [[nodiscard]] jsbind::String language() const;
-    /// Getter of the `languages` attribute.
+    /// [`Navigator.languages`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/languages)
     /// [`Navigator.languages`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/languages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> languages() const;
-    /// Getter of the `onLine` attribute.
+    /// [`Navigator.onLine`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)
     /// [`Navigator.onLine`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)
     [[nodiscard]] bool onLine() const;
     /// The registerProtocolHandler method.
@@ -294,46 +294,46 @@ public:
     /// The unregisterProtocolHandler method.
     /// [`Navigator.unregisterProtocolHandler`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/unregisterProtocolHandler)
     jsbind::Undefined unregisterProtocolHandler(const jsbind::String& scheme, const jsbind::String& url);
-    /// Getter of the `cookieEnabled` attribute.
+    /// [`Navigator.cookieEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled)
     /// [`Navigator.cookieEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled)
     [[nodiscard]] bool cookieEnabled() const;
-    /// Getter of the `plugins` attribute.
+    /// [`Navigator.plugins`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins)
     /// [`Navigator.plugins`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins)
     [[nodiscard]] PluginArray plugins() const;
-    /// Getter of the `mimeTypes` attribute.
+    /// [`Navigator.mimeTypes`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mimeTypes)
     /// [`Navigator.mimeTypes`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mimeTypes)
     [[nodiscard]] MimeTypeArray mimeTypes() const;
     /// The javaEnabled method.
     /// [`Navigator.javaEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/javaEnabled)
     bool javaEnabled();
-    /// Getter of the `pdfViewerEnabled` attribute.
+    /// [`Navigator.pdfViewerEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/pdfViewerEnabled)
     /// [`Navigator.pdfViewerEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/pdfViewerEnabled)
     [[nodiscard]] bool pdfViewerEnabled() const;
-    /// Getter of the `hardwareConcurrency` attribute.
+    /// [`Navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency)
     /// [`Navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency)
     [[nodiscard]] long long hardwareConcurrency() const;
-    /// Getter of the `connection` attribute.
+    /// [`Navigator.connection`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection)
     /// [`Navigator.connection`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection)
     [[nodiscard]] NetworkInformation connection() const;
-    /// Getter of the `storageBuckets` attribute.
+    /// [`Navigator.storageBuckets`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/storageBuckets)
     /// [`Navigator.storageBuckets`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/storageBuckets)
     [[nodiscard]] StorageBucketManager storageBuckets() const;
-    /// Getter of the `storage` attribute.
+    /// [`Navigator.storage`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/storage)
     /// [`Navigator.storage`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/storage)
     [[nodiscard]] StorageManager storage() const;
-    /// Getter of the `userAgentData` attribute.
+    /// [`Navigator.userAgentData`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgentData)
     /// [`Navigator.userAgentData`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgentData)
     [[nodiscard]] NavigatorUAData userAgentData() const;
-    /// Getter of the `locks` attribute.
+    /// [`Navigator.locks`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/locks)
     /// [`Navigator.locks`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/locks)
     [[nodiscard]] LockManager locks() const;
-    /// Getter of the `webdriver` attribute.
+    /// [`Navigator.webdriver`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/webdriver)
     /// [`Navigator.webdriver`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/webdriver)
     [[nodiscard]] bool webdriver() const;
-    /// Getter of the `gpu` attribute.
+    /// [`Navigator.gpu`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/gpu)
     /// [`Navigator.gpu`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/gpu)
     [[nodiscard]] GPU gpu() const;
-    /// Getter of the `ml` attribute.
+    /// [`Navigator.ml`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/ml)
     /// [`Navigator.ml`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/ml)
     [[nodiscard]] ML ml() const;
 };

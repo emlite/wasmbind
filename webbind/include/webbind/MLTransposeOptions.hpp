@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLTransposeOptions
-/// [`MLTransposeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLTransposeOptions)
 class MLTransposeOptions : public MLOperatorOptions {
   explicit MLTransposeOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MLTransposeOptions(const emlite::Val &val) noexcept;
     MLTransposeOptions() noexcept;
     [[nodiscard]] MLTransposeOptions clone() const noexcept;
+    /// Getter of the `permutation` attribute.
     [[nodiscard]] jsbind::TypedArray<unsigned long> permutation() const;
+    /// Setter of the `permutation` attribute.
     void permutation(jsbind::TypedArray<unsigned long> value);
 };
 

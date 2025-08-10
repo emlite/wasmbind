@@ -1,14 +1,16 @@
 #include <webbind/ReportResultBrowserSignals.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ReportResultBrowserSignals::ReportResultBrowserSignals(Handle h) noexcept : ReportingBrowserSignals(emlite::Val::take_ownership(h)) {}
 ReportResultBrowserSignals ReportResultBrowserSignals::take_ownership(Handle h) noexcept {
-        return ReportResultBrowserSignals(h);
-    }
+    return ReportResultBrowserSignals(h);
+}
+
 ReportResultBrowserSignals::ReportResultBrowserSignals(const emlite::Val &val) noexcept: ReportingBrowserSignals(val) {}
+
 ReportResultBrowserSignals::ReportResultBrowserSignals() noexcept: ReportingBrowserSignals(emlite::Val::object()) {}
+
 ReportResultBrowserSignals ReportResultBrowserSignals::clone() const noexcept { return *this; }
 
 double ReportResultBrowserSignals::desirability() const {

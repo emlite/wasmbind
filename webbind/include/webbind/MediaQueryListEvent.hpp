@@ -21,10 +21,10 @@ public:
     MediaQueryListEvent(const jsbind::String& type);
     /// The `new MediaQueryListEvent(..)` constructor, creating a new MediaQueryListEvent instance
     MediaQueryListEvent(const jsbind::String& type, const MediaQueryListEventInit& eventInitDict);
-    /// Getter of the `media` attribute.
+    /// [`MediaQueryListEvent.media`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/media)
     /// [`MediaQueryListEvent.media`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/media)
     [[nodiscard]] jsbind::String media() const;
-    /// Getter of the `matches` attribute.
+    /// [`MediaQueryListEvent.matches`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/matches)
     /// [`MediaQueryListEvent.matches`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/matches)
     [[nodiscard]] bool matches() const;
 };

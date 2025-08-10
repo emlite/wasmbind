@@ -1,14 +1,16 @@
 #include <webbind/PermissionsPolicyViolationReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PermissionsPolicyViolationReportBody::PermissionsPolicyViolationReportBody(Handle h) noexcept : ReportBody(emlite::Val::take_ownership(h)) {}
 PermissionsPolicyViolationReportBody PermissionsPolicyViolationReportBody::take_ownership(Handle h) noexcept {
-        return PermissionsPolicyViolationReportBody(h);
-    }
+    return PermissionsPolicyViolationReportBody(h);
+}
+
 PermissionsPolicyViolationReportBody::PermissionsPolicyViolationReportBody(const emlite::Val &val) noexcept: ReportBody(val) {}
+
 PermissionsPolicyViolationReportBody::PermissionsPolicyViolationReportBody() noexcept: ReportBody(emlite::Val::object()) {}
+
 PermissionsPolicyViolationReportBody PermissionsPolicyViolationReportBody::clone() const noexcept { return *this; }
 
 jsbind::String PermissionsPolicyViolationReportBody::featureId() const {

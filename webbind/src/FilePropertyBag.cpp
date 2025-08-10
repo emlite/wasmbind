@@ -1,14 +1,16 @@
 #include <webbind/FilePropertyBag.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FilePropertyBag::FilePropertyBag(Handle h) noexcept : BlobPropertyBag(emlite::Val::take_ownership(h)) {}
 FilePropertyBag FilePropertyBag::take_ownership(Handle h) noexcept {
-        return FilePropertyBag(h);
-    }
+    return FilePropertyBag(h);
+}
+
 FilePropertyBag::FilePropertyBag(const emlite::Val &val) noexcept: BlobPropertyBag(val) {}
+
 FilePropertyBag::FilePropertyBag() noexcept: BlobPropertyBag(emlite::Val::object()) {}
+
 FilePropertyBag FilePropertyBag::clone() const noexcept { return *this; }
 
 long long FilePropertyBag::lastModified() const {

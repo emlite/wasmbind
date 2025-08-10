@@ -8,11 +8,15 @@
 namespace webbind {
 
 LanguageDetector LanguageDetector::take_ownership(Handle h) noexcept {
-        return LanguageDetector(h);
-    }
+    return LanguageDetector(h);
+}
+
 LanguageDetector LanguageDetector::clone() const noexcept { return *this; }
+
 emlite::Val LanguageDetector::instance() noexcept { return emlite::Val::global("LanguageDetector"); }
+
 LanguageDetector::LanguageDetector(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 LanguageDetector::LanguageDetector(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<LanguageDetector> LanguageDetector::create() {

@@ -20,16 +20,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new USBInterface(..)` constructor, creating a new USBInterface instance
     USBInterface(const USBConfiguration& configuration, unsigned char interfaceNumber);
-    /// Getter of the `interfaceNumber` attribute.
+    /// [`USBInterface.interfaceNumber`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/interfaceNumber)
     /// [`USBInterface.interfaceNumber`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/interfaceNumber)
     [[nodiscard]] unsigned char interfaceNumber() const;
-    /// Getter of the `alternate` attribute.
+    /// [`USBInterface.alternate`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/alternate)
     /// [`USBInterface.alternate`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/alternate)
     [[nodiscard]] USBAlternateInterface alternate() const;
-    /// Getter of the `alternates` attribute.
+    /// [`USBInterface.alternates`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/alternates)
     /// [`USBInterface.alternates`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/alternates)
     [[nodiscard]] jsbind::TypedArray<USBAlternateInterface> alternates() const;
-    /// Getter of the `claimed` attribute.
+    /// [`USBInterface.claimed`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/claimed)
     /// [`USBInterface.claimed`](https://developer.mozilla.org/en-US/docs/Web/API/USBInterface/claimed)
     [[nodiscard]] bool claimed() const;
 };

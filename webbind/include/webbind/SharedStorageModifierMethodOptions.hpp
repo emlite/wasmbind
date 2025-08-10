@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SharedStorageModifierMethodOptions
-/// [`SharedStorageModifierMethodOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageModifierMethodOptions)
 class SharedStorageModifierMethodOptions : public emlite::Val {
   explicit SharedStorageModifierMethodOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit SharedStorageModifierMethodOptions(const emlite::Val &val) noexcept;
     SharedStorageModifierMethodOptions() noexcept;
     [[nodiscard]] SharedStorageModifierMethodOptions clone() const noexcept;
+    /// Getter of the `withLock` attribute.
     [[nodiscard]] jsbind::String withLock() const;
+    /// Setter of the `withLock` attribute.
     void withLock(const jsbind::String& value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/MLCumulativeSumOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLCumulativeSumOptions::MLCumulativeSumOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLCumulativeSumOptions MLCumulativeSumOptions::take_ownership(Handle h) noexcept {
-        return MLCumulativeSumOptions(h);
-    }
+    return MLCumulativeSumOptions(h);
+}
+
 MLCumulativeSumOptions::MLCumulativeSumOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLCumulativeSumOptions::MLCumulativeSumOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLCumulativeSumOptions MLCumulativeSumOptions::clone() const noexcept { return *this; }
 
 bool MLCumulativeSumOptions::exclusive() const {

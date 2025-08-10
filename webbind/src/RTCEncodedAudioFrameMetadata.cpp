@@ -1,14 +1,16 @@
 #include <webbind/RTCEncodedAudioFrameMetadata.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCEncodedAudioFrameMetadata::RTCEncodedAudioFrameMetadata(Handle h) noexcept : RTCEncodedFrameMetadata(emlite::Val::take_ownership(h)) {}
 RTCEncodedAudioFrameMetadata RTCEncodedAudioFrameMetadata::take_ownership(Handle h) noexcept {
-        return RTCEncodedAudioFrameMetadata(h);
-    }
+    return RTCEncodedAudioFrameMetadata(h);
+}
+
 RTCEncodedAudioFrameMetadata::RTCEncodedAudioFrameMetadata(const emlite::Val &val) noexcept: RTCEncodedFrameMetadata(val) {}
+
 RTCEncodedAudioFrameMetadata::RTCEncodedAudioFrameMetadata() noexcept: RTCEncodedFrameMetadata(emlite::Val::object()) {}
+
 RTCEncodedAudioFrameMetadata RTCEncodedAudioFrameMetadata::clone() const noexcept { return *this; }
 
 short RTCEncodedAudioFrameMetadata::sequenceNumber() const {

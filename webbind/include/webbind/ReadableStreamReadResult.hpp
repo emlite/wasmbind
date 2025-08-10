@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ReadableStreamReadResult
-/// [`ReadableStreamReadResult`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamReadResult)
 class ReadableStreamReadResult : public emlite::Val {
   explicit ReadableStreamReadResult(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ReadableStreamReadResult(const emlite::Val &val) noexcept;
     ReadableStreamReadResult() noexcept;
     [[nodiscard]] ReadableStreamReadResult clone() const noexcept;
+    /// Getter of the `value` attribute.
     [[nodiscard]] jsbind::Any value() const;
+    /// Setter of the `value` attribute.
     void value(const jsbind::Any& value);
+    /// Getter of the `done` attribute.
     [[nodiscard]] bool done() const;
+    /// Setter of the `done` attribute.
     void done(bool value);
 };
 

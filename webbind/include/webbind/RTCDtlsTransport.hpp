@@ -19,22 +19,22 @@ public:
     static RTCDtlsTransport take_ownership(Handle h) noexcept;
     [[nodiscard]] RTCDtlsTransport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `iceTransport` attribute.
+    /// [`RTCDtlsTransport.iceTransport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/iceTransport)
     /// [`RTCDtlsTransport.iceTransport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/iceTransport)
     [[nodiscard]] RTCIceTransport iceTransport() const;
-    /// Getter of the `state` attribute.
+    /// [`RTCDtlsTransport.state`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/state)
     /// [`RTCDtlsTransport.state`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/state)
     [[nodiscard]] RTCDtlsTransportState state() const;
     /// The getRemoteCertificates method.
     /// [`RTCDtlsTransport.getRemoteCertificates`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/getRemoteCertificates)
     jsbind::TypedArray<jsbind::ArrayBuffer> getRemoteCertificates();
-    /// Getter of the `onstatechange` attribute.
+    /// [`RTCDtlsTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/onstatechange)
     /// [`RTCDtlsTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/onstatechange)
     [[nodiscard]] jsbind::Any onstatechange() const;
     /// Setter of the `onstatechange` attribute.
     /// [`RTCDtlsTransport.onstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/onstatechange)
     void onstatechange(const jsbind::Any& value);
-    /// Getter of the `onerror` attribute.
+    /// [`RTCDtlsTransport.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/onerror)
     /// [`RTCDtlsTransport.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.

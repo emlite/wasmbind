@@ -9,11 +9,15 @@
 namespace webbind {
 
 HTMLSelectElement HTMLSelectElement::take_ownership(Handle h) noexcept {
-        return HTMLSelectElement(h);
-    }
+    return HTMLSelectElement(h);
+}
+
 HTMLSelectElement HTMLSelectElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLSelectElement::instance() noexcept { return emlite::Val::global("HTMLSelectElement"); }
+
 HTMLSelectElement::HTMLSelectElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLSelectElement::HTMLSelectElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLSelectElement::HTMLSelectElement() : HTMLElement(emlite::Val::global("HTMLSelectElement").new_()) {}

@@ -5,11 +5,15 @@
 namespace webbind {
 
 SVGViewElement SVGViewElement::take_ownership(Handle h) noexcept {
-        return SVGViewElement(h);
-    }
+    return SVGViewElement(h);
+}
+
 SVGViewElement SVGViewElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGViewElement::instance() noexcept { return emlite::Val::global("SVGViewElement"); }
+
 SVGViewElement::SVGViewElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGViewElement::SVGViewElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedRect SVGViewElement::viewBox() const {

@@ -1,15 +1,17 @@
 #include <webbind/MouseEventInit.hpp>
 #include <webbind/EventTarget.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MouseEventInit::MouseEventInit(Handle h) noexcept : EventModifierInit(emlite::Val::take_ownership(h)) {}
 MouseEventInit MouseEventInit::take_ownership(Handle h) noexcept {
-        return MouseEventInit(h);
-    }
+    return MouseEventInit(h);
+}
+
 MouseEventInit::MouseEventInit(const emlite::Val &val) noexcept: EventModifierInit(val) {}
+
 MouseEventInit::MouseEventInit() noexcept: EventModifierInit(emlite::Val::object()) {}
+
 MouseEventInit MouseEventInit::clone() const noexcept { return *this; }
 
 long MouseEventInit::screenX() const {

@@ -21,6 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// Getter of the `supportedContentEncodings` static attribute.
     /// [`PushManager.supportedContentEncodings`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/supportedContentEncodings)
+    /// [`PushManager.supportedContentEncodings`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/supportedContentEncodings)
     [[nodiscard]] static jsbind::TypedArray<jsbind::String> supportedContentEncodings();
     /// The subscribe method.
     /// [`PushManager.subscribe`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe)

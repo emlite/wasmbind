@@ -24,7 +24,7 @@ public:
     ConstantSourceNode(const BaseAudioContext& context);
     /// The `new ConstantSourceNode(..)` constructor, creating a new ConstantSourceNode instance
     ConstantSourceNode(const BaseAudioContext& context, const ConstantSourceOptions& options);
-    /// Getter of the `offset` attribute.
+    /// [`ConstantSourceNode.offset`](https://developer.mozilla.org/en-US/docs/Web/API/ConstantSourceNode/offset)
     /// [`ConstantSourceNode.offset`](https://developer.mozilla.org/en-US/docs/Web/API/ConstantSourceNode/offset)
     [[nodiscard]] AudioParam offset() const;
 };

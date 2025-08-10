@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AccelerometerSensorOptions
-/// [`AccelerometerSensorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/AccelerometerSensorOptions)
 class AccelerometerSensorOptions : public SensorOptions {
   explicit AccelerometerSensorOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit AccelerometerSensorOptions(const emlite::Val &val) noexcept;
     AccelerometerSensorOptions() noexcept;
     [[nodiscard]] AccelerometerSensorOptions clone() const noexcept;
+    /// Getter of the `referenceFrame` attribute.
     [[nodiscard]] AccelerometerLocalCoordinateSystem referenceFrame() const;
+    /// Setter of the `referenceFrame` attribute.
     void referenceFrame(const AccelerometerLocalCoordinateSystem& value);
 };
 

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type XRSessionSupportedPermissionDescriptor
-/// [`XRSessionSupportedPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/XRSessionSupportedPermissionDescriptor)
 class XRSessionSupportedPermissionDescriptor : public PermissionDescriptor {
   explicit XRSessionSupportedPermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit XRSessionSupportedPermissionDescriptor(const emlite::Val &val) noexcept;
     XRSessionSupportedPermissionDescriptor() noexcept;
     [[nodiscard]] XRSessionSupportedPermissionDescriptor clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] XRSessionMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const XRSessionMode& value);
 };
 

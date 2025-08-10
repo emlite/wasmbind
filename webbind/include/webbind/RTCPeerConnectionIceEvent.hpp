@@ -23,10 +23,10 @@ public:
     RTCPeerConnectionIceEvent(const jsbind::String& type);
     /// The `new RTCPeerConnectionIceEvent(..)` constructor, creating a new RTCPeerConnectionIceEvent instance
     RTCPeerConnectionIceEvent(const jsbind::String& type, const RTCPeerConnectionIceEventInit& eventInitDict);
-    /// Getter of the `candidate` attribute.
+    /// [`RTCPeerConnectionIceEvent.candidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceEvent/candidate)
     /// [`RTCPeerConnectionIceEvent.candidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceEvent/candidate)
     [[nodiscard]] RTCIceCandidate candidate() const;
-    /// Getter of the `url` attribute.
+    /// [`RTCPeerConnectionIceEvent.url`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceEvent/url)
     /// [`RTCPeerConnectionIceEvent.url`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceEvent/url)
     [[nodiscard]] jsbind::String url() const;
 };

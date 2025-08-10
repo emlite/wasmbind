@@ -1,15 +1,17 @@
 #include <webbind/RewriterRewriteOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RewriterRewriteOptions::RewriterRewriteOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RewriterRewriteOptions RewriterRewriteOptions::take_ownership(Handle h) noexcept {
-        return RewriterRewriteOptions(h);
-    }
+    return RewriterRewriteOptions(h);
+}
+
 RewriterRewriteOptions::RewriterRewriteOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RewriterRewriteOptions::RewriterRewriteOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RewriterRewriteOptions RewriterRewriteOptions::clone() const noexcept { return *this; }
 
 jsbind::String RewriterRewriteOptions::context() const {

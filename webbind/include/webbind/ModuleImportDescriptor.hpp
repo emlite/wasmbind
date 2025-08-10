@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ModuleImportDescriptor
-/// [`ModuleImportDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/ModuleImportDescriptor)
 class ModuleImportDescriptor : public emlite::Val {
   explicit ModuleImportDescriptor(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit ModuleImportDescriptor(const emlite::Val &val) noexcept;
     ModuleImportDescriptor() noexcept;
     [[nodiscard]] ModuleImportDescriptor clone() const noexcept;
+    /// Getter of the `module` attribute.
     [[nodiscard]] jsbind::String module_() const;
+    /// Setter of the `module` attribute.
     void module_(const jsbind::String& value);
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
+    /// Getter of the `kind` attribute.
     [[nodiscard]] ImportExportKind kind() const;
+    /// Setter of the `kind` attribute.
     void kind(const ImportExportKind& value);
 };
 

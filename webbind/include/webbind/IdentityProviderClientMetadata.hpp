@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityProviderClientMetadata
-/// [`IdentityProviderClientMetadata`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProviderClientMetadata)
 class IdentityProviderClientMetadata : public emlite::Val {
   explicit IdentityProviderClientMetadata(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit IdentityProviderClientMetadata(const emlite::Val &val) noexcept;
     IdentityProviderClientMetadata() noexcept;
     [[nodiscard]] IdentityProviderClientMetadata clone() const noexcept;
+    /// Getter of the `privacy_policy_url` attribute.
     [[nodiscard]] jsbind::String privacy_policy_url() const;
+    /// Setter of the `privacy_policy_url` attribute.
     void privacy_policy_url(const jsbind::String& value);
+    /// Getter of the `terms_of_service_url` attribute.
     [[nodiscard]] jsbind::String terms_of_service_url() const;
+    /// Setter of the `terms_of_service_url` attribute.
     void terms_of_service_url(const jsbind::String& value);
 };
 

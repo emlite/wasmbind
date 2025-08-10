@@ -1,14 +1,16 @@
 #include <webbind/AllowedBluetoothDevice.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AllowedBluetoothDevice::AllowedBluetoothDevice(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AllowedBluetoothDevice AllowedBluetoothDevice::take_ownership(Handle h) noexcept {
-        return AllowedBluetoothDevice(h);
-    }
+    return AllowedBluetoothDevice(h);
+}
+
 AllowedBluetoothDevice::AllowedBluetoothDevice(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AllowedBluetoothDevice::AllowedBluetoothDevice() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AllowedBluetoothDevice AllowedBluetoothDevice::clone() const noexcept { return *this; }
 
 jsbind::String AllowedBluetoothDevice::deviceId() const {

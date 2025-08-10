@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RouterRule
-/// [`RouterRule`](https://developer.mozilla.org/en-US/docs/Web/API/RouterRule)
 class RouterRule : public emlite::Val {
   explicit RouterRule(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit RouterRule(const emlite::Val &val) noexcept;
     RouterRule() noexcept;
     [[nodiscard]] RouterRule clone() const noexcept;
+    /// Getter of the `condition` attribute.
     [[nodiscard]] RouterCondition condition() const;
+    /// Setter of the `condition` attribute.
     void condition(const RouterCondition& value);
+    /// Getter of the `source` attribute.
     [[nodiscard]] jsbind::Any source() const;
+    /// Setter of the `source` attribute.
     void source(const jsbind::Any& value);
 };
 

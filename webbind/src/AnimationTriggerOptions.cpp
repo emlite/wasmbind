@@ -1,15 +1,17 @@
 #include <webbind/AnimationTriggerOptions.hpp>
 #include <webbind/AnimationTimeline.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AnimationTriggerOptions::AnimationTriggerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AnimationTriggerOptions AnimationTriggerOptions::take_ownership(Handle h) noexcept {
-        return AnimationTriggerOptions(h);
-    }
+    return AnimationTriggerOptions(h);
+}
+
 AnimationTriggerOptions::AnimationTriggerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AnimationTriggerOptions::AnimationTriggerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AnimationTriggerOptions AnimationTriggerOptions::clone() const noexcept { return *this; }
 
 AnimationTimeline AnimationTriggerOptions::timeline() const {

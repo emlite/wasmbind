@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new RTCErrorEvent(..)` constructor, creating a new RTCErrorEvent instance
     RTCErrorEvent(const jsbind::String& type, const RTCErrorEventInit& eventInitDict);
-    /// Getter of the `error` attribute.
+    /// [`RTCErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/RTCErrorEvent/error)
     /// [`RTCErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/RTCErrorEvent/error)
     [[nodiscard]] RTCError error() const;
 };

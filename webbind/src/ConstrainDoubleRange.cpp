@@ -1,14 +1,16 @@
 #include <webbind/ConstrainDoubleRange.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ConstrainDoubleRange::ConstrainDoubleRange(Handle h) noexcept : DoubleRange(emlite::Val::take_ownership(h)) {}
 ConstrainDoubleRange ConstrainDoubleRange::take_ownership(Handle h) noexcept {
-        return ConstrainDoubleRange(h);
-    }
+    return ConstrainDoubleRange(h);
+}
+
 ConstrainDoubleRange::ConstrainDoubleRange(const emlite::Val &val) noexcept: DoubleRange(val) {}
+
 ConstrainDoubleRange::ConstrainDoubleRange() noexcept: DoubleRange(emlite::Val::object()) {}
+
 ConstrainDoubleRange ConstrainDoubleRange::clone() const noexcept { return *this; }
 
 double ConstrainDoubleRange::exact() const {

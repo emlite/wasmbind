@@ -4,11 +4,15 @@
 namespace webbind {
 
 CloseWatcher CloseWatcher::take_ownership(Handle h) noexcept {
-        return CloseWatcher(h);
-    }
+    return CloseWatcher(h);
+}
+
 CloseWatcher CloseWatcher::clone() const noexcept { return *this; }
+
 emlite::Val CloseWatcher::instance() noexcept { return emlite::Val::global("CloseWatcher"); }
+
 CloseWatcher::CloseWatcher(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 CloseWatcher::CloseWatcher(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 CloseWatcher::CloseWatcher() : EventTarget(emlite::Val::global("CloseWatcher").new_()) {}

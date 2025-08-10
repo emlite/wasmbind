@@ -1,14 +1,16 @@
 #include <webbind/GPUExternalTextureDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUExternalTextureDescriptor::GPUExternalTextureDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPUExternalTextureDescriptor GPUExternalTextureDescriptor::take_ownership(Handle h) noexcept {
-        return GPUExternalTextureDescriptor(h);
-    }
+    return GPUExternalTextureDescriptor(h);
+}
+
 GPUExternalTextureDescriptor::GPUExternalTextureDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPUExternalTextureDescriptor::GPUExternalTextureDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPUExternalTextureDescriptor GPUExternalTextureDescriptor::clone() const noexcept { return *this; }
 
 jsbind::Any GPUExternalTextureDescriptor::source() const {

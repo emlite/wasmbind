@@ -3,11 +3,15 @@
 namespace webbind {
 
 CSSPositionTryDescriptors CSSPositionTryDescriptors::take_ownership(Handle h) noexcept {
-        return CSSPositionTryDescriptors(h);
-    }
+    return CSSPositionTryDescriptors(h);
+}
+
 CSSPositionTryDescriptors CSSPositionTryDescriptors::clone() const noexcept { return *this; }
+
 emlite::Val CSSPositionTryDescriptors::instance() noexcept { return emlite::Val::global("CSSPositionTryDescriptors"); }
+
 CSSPositionTryDescriptors::CSSPositionTryDescriptors(Handle h) noexcept : CSSStyleDeclaration(emlite::Val::take_ownership(h)) {}
+
 CSSPositionTryDescriptors::CSSPositionTryDescriptors(const emlite::Val &val) noexcept: CSSStyleDeclaration(val) {}
 
 jsbind::String CSSPositionTryDescriptors::margin() const {

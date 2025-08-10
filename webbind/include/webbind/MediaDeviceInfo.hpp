@@ -16,16 +16,16 @@ public:
     static MediaDeviceInfo take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaDeviceInfo clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `deviceId` attribute.
+    /// [`MediaDeviceInfo.deviceId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/deviceId)
     /// [`MediaDeviceInfo.deviceId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/deviceId)
     [[nodiscard]] jsbind::String deviceId() const;
-    /// Getter of the `kind` attribute.
+    /// [`MediaDeviceInfo.kind`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/kind)
     /// [`MediaDeviceInfo.kind`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/kind)
     [[nodiscard]] MediaDeviceKind kind() const;
-    /// Getter of the `label` attribute.
+    /// [`MediaDeviceInfo.label`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/label)
     /// [`MediaDeviceInfo.label`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/label)
     [[nodiscard]] jsbind::String label() const;
-    /// Getter of the `groupId` attribute.
+    /// [`MediaDeviceInfo.groupId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/groupId)
     /// [`MediaDeviceInfo.groupId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/groupId)
     [[nodiscard]] jsbind::String groupId() const;
     /// The toJSON method.

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type SharedWorkerOptions
-/// [`SharedWorkerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorkerOptions)
 class SharedWorkerOptions : public WorkerOptions {
   explicit SharedWorkerOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit SharedWorkerOptions(const emlite::Val &val) noexcept;
     SharedWorkerOptions() noexcept;
     [[nodiscard]] SharedWorkerOptions clone() const noexcept;
+    /// Getter of the `sameSiteCookies` attribute.
     [[nodiscard]] SameSiteCookiesType sameSiteCookies() const;
+    /// Setter of the `sameSiteCookies` attribute.
     void sameSiteCookies(const SameSiteCookiesType& value);
 };
 

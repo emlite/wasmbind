@@ -1,14 +1,16 @@
 #include <webbind/OfflineAudioContextOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 OfflineAudioContextOptions::OfflineAudioContextOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 OfflineAudioContextOptions OfflineAudioContextOptions::take_ownership(Handle h) noexcept {
-        return OfflineAudioContextOptions(h);
-    }
+    return OfflineAudioContextOptions(h);
+}
+
 OfflineAudioContextOptions::OfflineAudioContextOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 OfflineAudioContextOptions::OfflineAudioContextOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 OfflineAudioContextOptions OfflineAudioContextOptions::clone() const noexcept { return *this; }
 
 unsigned long OfflineAudioContextOptions::numberOfChannels() const {

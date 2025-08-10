@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type TaskControllerInit
-/// [`TaskControllerInit`](https://developer.mozilla.org/en-US/docs/Web/API/TaskControllerInit)
 class TaskControllerInit : public emlite::Val {
   explicit TaskControllerInit(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit TaskControllerInit(const emlite::Val &val) noexcept;
     TaskControllerInit() noexcept;
     [[nodiscard]] TaskControllerInit clone() const noexcept;
+    /// Getter of the `priority` attribute.
     [[nodiscard]] TaskPriority priority() const;
+    /// Setter of the `priority` attribute.
     void priority(const TaskPriority& value);
 };
 

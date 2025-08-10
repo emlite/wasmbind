@@ -28,31 +28,31 @@ public:
     /// The destroy method.
     /// [`GPUTexture.destroy`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/destroy)
     jsbind::Undefined destroy();
-    /// Getter of the `width` attribute.
+    /// [`GPUTexture.width`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/width)
     /// [`GPUTexture.width`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/width)
     [[nodiscard]] jsbind::Any width() const;
-    /// Getter of the `height` attribute.
+    /// [`GPUTexture.height`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/height)
     /// [`GPUTexture.height`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/height)
     [[nodiscard]] jsbind::Any height() const;
-    /// Getter of the `depthOrArrayLayers` attribute.
+    /// [`GPUTexture.depthOrArrayLayers`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/depthOrArrayLayers)
     /// [`GPUTexture.depthOrArrayLayers`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/depthOrArrayLayers)
     [[nodiscard]] jsbind::Any depthOrArrayLayers() const;
-    /// Getter of the `mipLevelCount` attribute.
+    /// [`GPUTexture.mipLevelCount`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/mipLevelCount)
     /// [`GPUTexture.mipLevelCount`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/mipLevelCount)
     [[nodiscard]] jsbind::Any mipLevelCount() const;
-    /// Getter of the `sampleCount` attribute.
+    /// [`GPUTexture.sampleCount`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/sampleCount)
     /// [`GPUTexture.sampleCount`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/sampleCount)
     [[nodiscard]] jsbind::Any sampleCount() const;
-    /// Getter of the `dimension` attribute.
+    /// [`GPUTexture.dimension`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/dimension)
     /// [`GPUTexture.dimension`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/dimension)
     [[nodiscard]] GPUTextureDimension dimension() const;
-    /// Getter of the `format` attribute.
+    /// [`GPUTexture.format`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/format)
     /// [`GPUTexture.format`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/format)
     [[nodiscard]] GPUTextureFormat format() const;
-    /// Getter of the `usage` attribute.
+    /// [`GPUTexture.usage`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/usage)
     /// [`GPUTexture.usage`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/usage)
     [[nodiscard]] jsbind::Any usage() const;
-    /// Getter of the `label` attribute.
+    /// [`GPUTexture.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/label)
     /// [`GPUTexture.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

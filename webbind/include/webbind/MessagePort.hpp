@@ -29,19 +29,19 @@ public:
     /// The close method.
     /// [`MessagePort.close`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/close)
     jsbind::Undefined close();
-    /// Getter of the `onclose` attribute.
+    /// [`MessagePort.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onclose)
     /// [`MessagePort.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onclose)
     [[nodiscard]] jsbind::Any onclose() const;
     /// Setter of the `onclose` attribute.
     /// [`MessagePort.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onclose)
     void onclose(const jsbind::Any& value);
-    /// Getter of the `onmessage` attribute.
+    /// [`MessagePort.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onmessage)
     /// [`MessagePort.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.
     /// [`MessagePort.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onmessage)
     void onmessage(const jsbind::Any& value);
-    /// Getter of the `onmessageerror` attribute.
+    /// [`MessagePort.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onmessageerror)
     /// [`MessagePort.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onmessageerror)
     [[nodiscard]] jsbind::Any onmessageerror() const;
     /// Setter of the `onmessageerror` attribute.

@@ -24,10 +24,10 @@ public:
     PageSwapEvent(const jsbind::String& type);
     /// The `new PageSwapEvent(..)` constructor, creating a new PageSwapEvent instance
     PageSwapEvent(const jsbind::String& type, const PageSwapEventInit& eventInitDict);
-    /// Getter of the `activation` attribute.
+    /// [`PageSwapEvent.activation`](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent/activation)
     /// [`PageSwapEvent.activation`](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent/activation)
     [[nodiscard]] NavigationActivation activation() const;
-    /// Getter of the `viewTransition` attribute.
+    /// [`PageSwapEvent.viewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent/viewTransition)
     /// [`PageSwapEvent.viewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent/viewTransition)
     [[nodiscard]] ViewTransition viewTransition() const;
 };

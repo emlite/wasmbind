@@ -21,7 +21,7 @@ public:
     Instance(const Module& module_);
     /// The `new Instance(..)` constructor, creating a new Instance instance
     Instance(const Module& module_, const jsbind::Object& importObject);
-    /// Getter of the `exports` attribute.
+    /// [`Instance.exports`](https://developer.mozilla.org/en-US/docs/Web/API/Instance/exports)
     /// [`Instance.exports`](https://developer.mozilla.org/en-US/docs/Web/API/Instance/exports)
     [[nodiscard]] jsbind::Object exports() const;
 };

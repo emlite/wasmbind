@@ -5,11 +5,15 @@
 namespace webbind {
 
 AudioNode AudioNode::take_ownership(Handle h) noexcept {
-        return AudioNode(h);
-    }
+    return AudioNode(h);
+}
+
 AudioNode AudioNode::clone() const noexcept { return *this; }
+
 emlite::Val AudioNode::instance() noexcept { return emlite::Val::global("AudioNode"); }
+
 AudioNode::AudioNode(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 AudioNode::AudioNode(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Undefined AudioNode::connect(const AudioParam& destinationParam) {

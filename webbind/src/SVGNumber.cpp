@@ -3,11 +3,15 @@
 namespace webbind {
 
 SVGNumber SVGNumber::take_ownership(Handle h) noexcept {
-        return SVGNumber(h);
-    }
+    return SVGNumber(h);
+}
+
 SVGNumber SVGNumber::clone() const noexcept { return *this; }
+
 emlite::Val SVGNumber::instance() noexcept { return emlite::Val::global("SVGNumber"); }
+
 SVGNumber::SVGNumber(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 SVGNumber::SVGNumber(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 float SVGNumber::value() const {

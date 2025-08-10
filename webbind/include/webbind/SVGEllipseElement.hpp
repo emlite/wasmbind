@@ -18,16 +18,16 @@ public:
     static SVGEllipseElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGEllipseElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `cx` attribute.
+    /// [`SVGEllipseElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/cx)
     /// [`SVGEllipseElement.cx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/cx)
     [[nodiscard]] SVGAnimatedLength cx() const;
-    /// Getter of the `cy` attribute.
+    /// [`SVGEllipseElement.cy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/cy)
     /// [`SVGEllipseElement.cy`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/cy)
     [[nodiscard]] SVGAnimatedLength cy() const;
-    /// Getter of the `rx` attribute.
+    /// [`SVGEllipseElement.rx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/rx)
     /// [`SVGEllipseElement.rx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/rx)
     [[nodiscard]] SVGAnimatedLength rx() const;
-    /// Getter of the `ry` attribute.
+    /// [`SVGEllipseElement.ry`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/ry)
     /// [`SVGEllipseElement.ry`](https://developer.mozilla.org/en-US/docs/Web/API/SVGEllipseElement/ry)
     [[nodiscard]] SVGAnimatedLength ry() const;
 };

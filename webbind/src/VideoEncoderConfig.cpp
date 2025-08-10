@@ -1,14 +1,16 @@
 #include <webbind/VideoEncoderConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoEncoderConfig::VideoEncoderConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoEncoderConfig VideoEncoderConfig::take_ownership(Handle h) noexcept {
-        return VideoEncoderConfig(h);
-    }
+    return VideoEncoderConfig(h);
+}
+
 VideoEncoderConfig::VideoEncoderConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoEncoderConfig::VideoEncoderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoEncoderConfig VideoEncoderConfig::clone() const noexcept { return *this; }
 
 jsbind::String VideoEncoderConfig::codec() const {

@@ -6,11 +6,15 @@
 namespace webbind {
 
 Module Module::take_ownership(Handle h) noexcept {
-        return Module(h);
-    }
+    return Module(h);
+}
+
 Module Module::clone() const noexcept { return *this; }
+
 emlite::Val Module::instance() noexcept { return emlite::Val::global("Module"); }
+
 Module::Module(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Module::Module(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Module::Module(const jsbind::Any& bytes) : emlite::Val(emlite::Val::global("Module").new_(bytes)) {}

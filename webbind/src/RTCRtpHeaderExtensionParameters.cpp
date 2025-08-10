@@ -1,14 +1,16 @@
 #include <webbind/RTCRtpHeaderExtensionParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpHeaderExtensionParameters::RTCRtpHeaderExtensionParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpHeaderExtensionParameters RTCRtpHeaderExtensionParameters::take_ownership(Handle h) noexcept {
-        return RTCRtpHeaderExtensionParameters(h);
-    }
+    return RTCRtpHeaderExtensionParameters(h);
+}
+
 RTCRtpHeaderExtensionParameters::RTCRtpHeaderExtensionParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCRtpHeaderExtensionParameters::RTCRtpHeaderExtensionParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCRtpHeaderExtensionParameters RTCRtpHeaderExtensionParameters::clone() const noexcept { return *this; }
 
 jsbind::String RTCRtpHeaderExtensionParameters::uri() const {

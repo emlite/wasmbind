@@ -25,10 +25,10 @@ public:
     /// The requestWindow method.
     /// [`DocumentPictureInPicture.requestWindow`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/requestWindow)
     jsbind::Promise<Window> requestWindow(const DocumentPictureInPictureOptions& options);
-    /// Getter of the `window` attribute.
+    /// [`DocumentPictureInPicture.window`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/window)
     /// [`DocumentPictureInPicture.window`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/window)
     [[nodiscard]] Window window() const;
-    /// Getter of the `onenter` attribute.
+    /// [`DocumentPictureInPicture.onenter`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/onenter)
     /// [`DocumentPictureInPicture.onenter`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/onenter)
     [[nodiscard]] jsbind::Any onenter() const;
     /// Setter of the `onenter` attribute.

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MLContextOptions
-/// [`MLContextOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLContextOptions)
 class MLContextOptions : public emlite::Val {
   explicit MLContextOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit MLContextOptions(const emlite::Val &val) noexcept;
     MLContextOptions() noexcept;
     [[nodiscard]] MLContextOptions clone() const noexcept;
+    /// Getter of the `powerPreference` attribute.
     [[nodiscard]] MLPowerPreference powerPreference() const;
+    /// Setter of the `powerPreference` attribute.
     void powerPreference(const MLPowerPreference& value);
 };
 

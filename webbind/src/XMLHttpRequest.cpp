@@ -7,11 +7,15 @@
 namespace webbind {
 
 XMLHttpRequest XMLHttpRequest::take_ownership(Handle h) noexcept {
-        return XMLHttpRequest(h);
-    }
+    return XMLHttpRequest(h);
+}
+
 XMLHttpRequest XMLHttpRequest::clone() const noexcept { return *this; }
+
 emlite::Val XMLHttpRequest::instance() noexcept { return emlite::Val::global("XMLHttpRequest"); }
+
 XMLHttpRequest::XMLHttpRequest(Handle h) noexcept : XMLHttpRequestEventTarget(emlite::Val::take_ownership(h)) {}
+
 XMLHttpRequest::XMLHttpRequest(const emlite::Val &val) noexcept: XMLHttpRequestEventTarget(val) {}
 
 XMLHttpRequest::XMLHttpRequest() : XMLHttpRequestEventTarget(emlite::Val::global("XMLHttpRequest").new_()) {}

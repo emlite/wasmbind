@@ -20,13 +20,13 @@ public:
     DataCue(double startTime, double endTime, const jsbind::Any& value);
     /// The `new DataCue(..)` constructor, creating a new DataCue instance
     DataCue(double startTime, double endTime, const jsbind::Any& value, const jsbind::String& type);
-    /// Getter of the `value` attribute.
+    /// [`DataCue.value`](https://developer.mozilla.org/en-US/docs/Web/API/DataCue/value)
     /// [`DataCue.value`](https://developer.mozilla.org/en-US/docs/Web/API/DataCue/value)
     [[nodiscard]] jsbind::Any value() const;
     /// Setter of the `value` attribute.
     /// [`DataCue.value`](https://developer.mozilla.org/en-US/docs/Web/API/DataCue/value)
     void value(const jsbind::Any& value);
-    /// Getter of the `type` attribute.
+    /// [`DataCue.type`](https://developer.mozilla.org/en-US/docs/Web/API/DataCue/type)
     /// [`DataCue.type`](https://developer.mozilla.org/en-US/docs/Web/API/DataCue/type)
     [[nodiscard]] jsbind::String type() const;
 };

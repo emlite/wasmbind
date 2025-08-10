@@ -43,7 +43,7 @@ public:
     /// The destroy method.
     /// [`MLContext.destroy`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/destroy)
     jsbind::Undefined destroy();
-    /// Getter of the `lost` attribute.
+    /// [`MLContext.lost`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/lost)
     /// [`MLContext.lost`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/lost)
     [[nodiscard]] jsbind::Promise<MLContextLostInfo> lost() const;
 };

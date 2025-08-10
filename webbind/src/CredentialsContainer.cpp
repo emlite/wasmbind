@@ -6,11 +6,15 @@
 namespace webbind {
 
 CredentialsContainer CredentialsContainer::take_ownership(Handle h) noexcept {
-        return CredentialsContainer(h);
-    }
+    return CredentialsContainer(h);
+}
+
 CredentialsContainer CredentialsContainer::clone() const noexcept { return *this; }
+
 emlite::Val CredentialsContainer::instance() noexcept { return emlite::Val::global("CredentialsContainer"); }
+
 CredentialsContainer::CredentialsContainer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 CredentialsContainer::CredentialsContainer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<Credential> CredentialsContainer::get() {

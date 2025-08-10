@@ -1,14 +1,16 @@
 #include <webbind/GPUPrimitiveState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUPrimitiveState::GPUPrimitiveState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUPrimitiveState GPUPrimitiveState::take_ownership(Handle h) noexcept {
-        return GPUPrimitiveState(h);
-    }
+    return GPUPrimitiveState(h);
+}
+
 GPUPrimitiveState::GPUPrimitiveState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUPrimitiveState::GPUPrimitiveState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUPrimitiveState GPUPrimitiveState::clone() const noexcept { return *this; }
 
 GPUPrimitiveTopology GPUPrimitiveState::topology() const {

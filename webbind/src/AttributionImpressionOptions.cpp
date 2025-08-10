@@ -1,14 +1,16 @@
 #include <webbind/AttributionImpressionOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AttributionImpressionOptions::AttributionImpressionOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AttributionImpressionOptions AttributionImpressionOptions::take_ownership(Handle h) noexcept {
-        return AttributionImpressionOptions(h);
-    }
+    return AttributionImpressionOptions(h);
+}
+
 AttributionImpressionOptions::AttributionImpressionOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AttributionImpressionOptions::AttributionImpressionOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AttributionImpressionOptions AttributionImpressionOptions::clone() const noexcept { return *this; }
 
 unsigned long AttributionImpressionOptions::histogramIndex() const {

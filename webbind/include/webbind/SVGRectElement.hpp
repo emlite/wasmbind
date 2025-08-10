@@ -18,22 +18,22 @@ public:
     static SVGRectElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGRectElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `x` attribute.
+    /// [`SVGRectElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/x)
     /// [`SVGRectElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;
-    /// Getter of the `y` attribute.
+    /// [`SVGRectElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/y)
     /// [`SVGRectElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/y)
     [[nodiscard]] SVGAnimatedLength y() const;
-    /// Getter of the `width` attribute.
+    /// [`SVGRectElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/width)
     /// [`SVGRectElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/width)
     [[nodiscard]] SVGAnimatedLength width() const;
-    /// Getter of the `height` attribute.
+    /// [`SVGRectElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/height)
     /// [`SVGRectElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/height)
     [[nodiscard]] SVGAnimatedLength height() const;
-    /// Getter of the `rx` attribute.
+    /// [`SVGRectElement.rx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/rx)
     /// [`SVGRectElement.rx`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/rx)
     [[nodiscard]] SVGAnimatedLength rx() const;
-    /// Getter of the `ry` attribute.
+    /// [`SVGRectElement.ry`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/ry)
     /// [`SVGRectElement.ry`](https://developer.mozilla.org/en-US/docs/Web/API/SVGRectElement/ry)
     [[nodiscard]] SVGAnimatedLength ry() const;
 };

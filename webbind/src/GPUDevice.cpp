@@ -35,11 +35,15 @@
 namespace webbind {
 
 GPUDevice GPUDevice::take_ownership(Handle h) noexcept {
-        return GPUDevice(h);
-    }
+    return GPUDevice(h);
+}
+
 GPUDevice GPUDevice::clone() const noexcept { return *this; }
+
 emlite::Val GPUDevice::instance() noexcept { return emlite::Val::global("GPUDevice"); }
+
 GPUDevice::GPUDevice(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 GPUDevice::GPUDevice(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 GPUSupportedFeatures GPUDevice::features() const {

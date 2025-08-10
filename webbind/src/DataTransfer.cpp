@@ -6,11 +6,15 @@
 namespace webbind {
 
 DataTransfer DataTransfer::take_ownership(Handle h) noexcept {
-        return DataTransfer(h);
-    }
+    return DataTransfer(h);
+}
+
 DataTransfer DataTransfer::clone() const noexcept { return *this; }
+
 emlite::Val DataTransfer::instance() noexcept { return emlite::Val::global("DataTransfer"); }
+
 DataTransfer::DataTransfer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 DataTransfer::DataTransfer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 DataTransfer::DataTransfer() : emlite::Val(emlite::Val::global("DataTransfer").new_()) {}

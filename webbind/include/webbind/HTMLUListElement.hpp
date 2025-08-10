@@ -18,13 +18,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLUListElement(..)` constructor, creating a new HTMLUListElement instance
     HTMLUListElement();
-    /// Getter of the `compact` attribute.
+    /// [`HTMLUListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/compact)
     /// [`HTMLUListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/compact)
     [[nodiscard]] bool compact() const;
     /// Setter of the `compact` attribute.
     /// [`HTMLUListElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/compact)
     void compact(bool value);
-    /// Getter of the `type` attribute.
+    /// [`HTMLUListElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/type)
     /// [`HTMLUListElement.type`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement/type)
     [[nodiscard]] jsbind::String type() const;
     /// Setter of the `type` attribute.

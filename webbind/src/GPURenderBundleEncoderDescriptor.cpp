@@ -1,14 +1,16 @@
 #include <webbind/GPURenderBundleEncoderDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPURenderBundleEncoderDescriptor::GPURenderBundleEncoderDescriptor(Handle h) noexcept : GPURenderPassLayout(emlite::Val::take_ownership(h)) {}
 GPURenderBundleEncoderDescriptor GPURenderBundleEncoderDescriptor::take_ownership(Handle h) noexcept {
-        return GPURenderBundleEncoderDescriptor(h);
-    }
+    return GPURenderBundleEncoderDescriptor(h);
+}
+
 GPURenderBundleEncoderDescriptor::GPURenderBundleEncoderDescriptor(const emlite::Val &val) noexcept: GPURenderPassLayout(val) {}
+
 GPURenderBundleEncoderDescriptor::GPURenderBundleEncoderDescriptor() noexcept: GPURenderPassLayout(emlite::Val::object()) {}
+
 GPURenderBundleEncoderDescriptor GPURenderBundleEncoderDescriptor::clone() const noexcept { return *this; }
 
 bool GPURenderBundleEncoderDescriptor::depthReadOnly() const {

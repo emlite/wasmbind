@@ -6,11 +6,15 @@
 namespace webbind {
 
 ShadowRoot ShadowRoot::take_ownership(Handle h) noexcept {
-        return ShadowRoot(h);
-    }
+    return ShadowRoot(h);
+}
+
 ShadowRoot ShadowRoot::clone() const noexcept { return *this; }
+
 emlite::Val ShadowRoot::instance() noexcept { return emlite::Val::global("ShadowRoot"); }
+
 ShadowRoot::ShadowRoot(Handle h) noexcept : DocumentFragment(emlite::Val::take_ownership(h)) {}
+
 ShadowRoot::ShadowRoot(const emlite::Val &val) noexcept: DocumentFragment(val) {}
 
 ShadowRootMode ShadowRoot::mode() const {

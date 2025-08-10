@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AuthenticationExtensionsClientInputs
-/// [`AuthenticationExtensionsClientInputs`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticationExtensionsClientInputs)
 class AuthenticationExtensionsClientInputs : public emlite::Val {
   explicit AuthenticationExtensionsClientInputs(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit AuthenticationExtensionsClientInputs(const emlite::Val &val) noexcept;
     AuthenticationExtensionsClientInputs() noexcept;
     [[nodiscard]] AuthenticationExtensionsClientInputs clone() const noexcept;
+    /// Getter of the `largeBlob` attribute.
     [[nodiscard]] AuthenticationExtensionsLargeBlobInputs largeBlob() const;
+    /// Setter of the `largeBlob` attribute.
     void largeBlob(const AuthenticationExtensionsLargeBlobInputs& value);
 };
 

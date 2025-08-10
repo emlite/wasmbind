@@ -1,14 +1,16 @@
 #include <webbind/InterventionReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 InterventionReportBody::InterventionReportBody(Handle h) noexcept : ReportBody(emlite::Val::take_ownership(h)) {}
 InterventionReportBody InterventionReportBody::take_ownership(Handle h) noexcept {
-        return InterventionReportBody(h);
-    }
+    return InterventionReportBody(h);
+}
+
 InterventionReportBody::InterventionReportBody(const emlite::Val &val) noexcept: ReportBody(val) {}
+
 InterventionReportBody::InterventionReportBody() noexcept: ReportBody(emlite::Val::object()) {}
+
 InterventionReportBody InterventionReportBody::clone() const noexcept { return *this; }
 
 jsbind::String InterventionReportBody::id() const {

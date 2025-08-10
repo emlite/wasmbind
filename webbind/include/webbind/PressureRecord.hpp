@@ -16,13 +16,13 @@ public:
     static PressureRecord take_ownership(Handle h) noexcept;
     [[nodiscard]] PressureRecord clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `source` attribute.
+    /// [`PressureRecord.source`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/source)
     /// [`PressureRecord.source`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/source)
     [[nodiscard]] PressureSource source() const;
-    /// Getter of the `state` attribute.
+    /// [`PressureRecord.state`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/state)
     /// [`PressureRecord.state`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/state)
     [[nodiscard]] PressureState state() const;
-    /// Getter of the `time` attribute.
+    /// [`PressureRecord.time`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/time)
     /// [`PressureRecord.time`](https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/time)
     [[nodiscard]] jsbind::Any time() const;
     /// The toJSON method.

@@ -1,14 +1,16 @@
 #include <webbind/DigitalCredentialCreateRequest.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DigitalCredentialCreateRequest::DigitalCredentialCreateRequest(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DigitalCredentialCreateRequest DigitalCredentialCreateRequest::take_ownership(Handle h) noexcept {
-        return DigitalCredentialCreateRequest(h);
-    }
+    return DigitalCredentialCreateRequest(h);
+}
+
 DigitalCredentialCreateRequest::DigitalCredentialCreateRequest(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DigitalCredentialCreateRequest::DigitalCredentialCreateRequest() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DigitalCredentialCreateRequest DigitalCredentialCreateRequest::clone() const noexcept { return *this; }
 
 jsbind::String DigitalCredentialCreateRequest::protocol() const {

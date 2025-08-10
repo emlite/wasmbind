@@ -1,15 +1,17 @@
 #include <webbind/NDEFReadingEventInit.hpp>
 #include <webbind/NDEFMessageInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NDEFReadingEventInit::NDEFReadingEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 NDEFReadingEventInit NDEFReadingEventInit::take_ownership(Handle h) noexcept {
-        return NDEFReadingEventInit(h);
-    }
+    return NDEFReadingEventInit(h);
+}
+
 NDEFReadingEventInit::NDEFReadingEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 NDEFReadingEventInit::NDEFReadingEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 NDEFReadingEventInit NDEFReadingEventInit::clone() const noexcept { return *this; }
 
 jsbind::String NDEFReadingEventInit::serialNumber() const {

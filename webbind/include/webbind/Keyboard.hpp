@@ -30,7 +30,7 @@ public:
     /// The getLayoutMap method.
     /// [`Keyboard.getLayoutMap`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/getLayoutMap)
     jsbind::Promise<KeyboardLayoutMap> getLayoutMap();
-    /// Getter of the `onlayoutchange` attribute.
+    /// [`Keyboard.onlayoutchange`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/onlayoutchange)
     /// [`Keyboard.onlayoutchange`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/onlayoutchange)
     [[nodiscard]] jsbind::Any onlayoutchange() const;
     /// Setter of the `onlayoutchange` attribute.

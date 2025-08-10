@@ -15,7 +15,7 @@ public:
     static NotRestoredReasonDetails take_ownership(Handle h) noexcept;
     [[nodiscard]] NotRestoredReasonDetails clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `reason` attribute.
+    /// [`NotRestoredReasonDetails.reason`](https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasonDetails/reason)
     /// [`NotRestoredReasonDetails.reason`](https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasonDetails/reason)
     [[nodiscard]] jsbind::String reason() const;
     /// The toJSON method.

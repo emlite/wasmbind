@@ -1,14 +1,16 @@
 #include <webbind/WriterCreateCoreOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WriterCreateCoreOptions::WriterCreateCoreOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WriterCreateCoreOptions WriterCreateCoreOptions::take_ownership(Handle h) noexcept {
-        return WriterCreateCoreOptions(h);
-    }
+    return WriterCreateCoreOptions(h);
+}
+
 WriterCreateCoreOptions::WriterCreateCoreOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WriterCreateCoreOptions::WriterCreateCoreOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WriterCreateCoreOptions WriterCreateCoreOptions::clone() const noexcept { return *this; }
 
 WriterTone WriterCreateCoreOptions::tone() const {

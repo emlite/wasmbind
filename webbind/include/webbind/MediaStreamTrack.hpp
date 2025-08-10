@@ -23,40 +23,40 @@ public:
     static MediaStreamTrack take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaStreamTrack clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `kind` attribute.
+    /// [`MediaStreamTrack.kind`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/kind)
     /// [`MediaStreamTrack.kind`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/kind)
     [[nodiscard]] jsbind::String kind() const;
-    /// Getter of the `id` attribute.
+    /// [`MediaStreamTrack.id`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/id)
     /// [`MediaStreamTrack.id`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/id)
     [[nodiscard]] jsbind::String id() const;
-    /// Getter of the `label` attribute.
+    /// [`MediaStreamTrack.label`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/label)
     /// [`MediaStreamTrack.label`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/label)
     [[nodiscard]] jsbind::String label() const;
-    /// Getter of the `enabled` attribute.
+    /// [`MediaStreamTrack.enabled`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/enabled)
     /// [`MediaStreamTrack.enabled`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/enabled)
     [[nodiscard]] bool enabled() const;
     /// Setter of the `enabled` attribute.
     /// [`MediaStreamTrack.enabled`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/enabled)
     void enabled(bool value);
-    /// Getter of the `muted` attribute.
+    /// [`MediaStreamTrack.muted`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/muted)
     /// [`MediaStreamTrack.muted`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/muted)
     [[nodiscard]] bool muted() const;
-    /// Getter of the `onmute` attribute.
+    /// [`MediaStreamTrack.onmute`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onmute)
     /// [`MediaStreamTrack.onmute`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onmute)
     [[nodiscard]] jsbind::Any onmute() const;
     /// Setter of the `onmute` attribute.
     /// [`MediaStreamTrack.onmute`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onmute)
     void onmute(const jsbind::Any& value);
-    /// Getter of the `onunmute` attribute.
+    /// [`MediaStreamTrack.onunmute`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onunmute)
     /// [`MediaStreamTrack.onunmute`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onunmute)
     [[nodiscard]] jsbind::Any onunmute() const;
     /// Setter of the `onunmute` attribute.
     /// [`MediaStreamTrack.onunmute`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onunmute)
     void onunmute(const jsbind::Any& value);
-    /// Getter of the `readyState` attribute.
+    /// [`MediaStreamTrack.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/readyState)
     /// [`MediaStreamTrack.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/readyState)
     [[nodiscard]] MediaStreamTrackState readyState() const;
-    /// Getter of the `onended` attribute.
+    /// [`MediaStreamTrack.onended`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onended)
     /// [`MediaStreamTrack.onended`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onended)
     [[nodiscard]] jsbind::Any onended() const;
     /// Setter of the `onended` attribute.
@@ -86,7 +86,7 @@ public:
     /// The getCaptureHandle method.
     /// [`MediaStreamTrack.getCaptureHandle`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCaptureHandle)
     CaptureHandle getCaptureHandle();
-    /// Getter of the `oncapturehandlechange` attribute.
+    /// [`MediaStreamTrack.oncapturehandlechange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/oncapturehandlechange)
     /// [`MediaStreamTrack.oncapturehandlechange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/oncapturehandlechange)
     [[nodiscard]] jsbind::Any oncapturehandlechange() const;
     /// Setter of the `oncapturehandlechange` attribute.
@@ -98,16 +98,16 @@ public:
     /// The sendCaptureAction method.
     /// [`MediaStreamTrack.sendCaptureAction`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/sendCaptureAction)
     jsbind::Promise<jsbind::Undefined> sendCaptureAction(const CaptureAction& action);
-    /// Getter of the `contentHint` attribute.
+    /// [`MediaStreamTrack.contentHint`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/contentHint)
     /// [`MediaStreamTrack.contentHint`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/contentHint)
     [[nodiscard]] jsbind::String contentHint() const;
     /// Setter of the `contentHint` attribute.
     /// [`MediaStreamTrack.contentHint`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/contentHint)
     void contentHint(const jsbind::String& value);
-    /// Getter of the `isolated` attribute.
+    /// [`MediaStreamTrack.isolated`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/isolated)
     /// [`MediaStreamTrack.isolated`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/isolated)
     [[nodiscard]] bool isolated() const;
-    /// Getter of the `onisolationchange` attribute.
+    /// [`MediaStreamTrack.onisolationchange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onisolationchange)
     /// [`MediaStreamTrack.onisolationchange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onisolationchange)
     [[nodiscard]] jsbind::Any onisolationchange() const;
     /// Setter of the `onisolationchange` attribute.

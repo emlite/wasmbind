@@ -4,11 +4,15 @@
 namespace webbind {
 
 HTMLLegendElement HTMLLegendElement::take_ownership(Handle h) noexcept {
-        return HTMLLegendElement(h);
-    }
+    return HTMLLegendElement(h);
+}
+
 HTMLLegendElement HTMLLegendElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLLegendElement::instance() noexcept { return emlite::Val::global("HTMLLegendElement"); }
+
 HTMLLegendElement::HTMLLegendElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLLegendElement::HTMLLegendElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLLegendElement::HTMLLegendElement() : HTMLElement(emlite::Val::global("HTMLLegendElement").new_()) {}

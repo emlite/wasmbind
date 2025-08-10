@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type GPUShaderModuleDescriptor
-/// [`GPUShaderModuleDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModuleDescriptor)
 class GPUShaderModuleDescriptor : public GPUObjectDescriptorBase {
   explicit GPUShaderModuleDescriptor(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit GPUShaderModuleDescriptor(const emlite::Val &val) noexcept;
     GPUShaderModuleDescriptor() noexcept;
     [[nodiscard]] GPUShaderModuleDescriptor clone() const noexcept;
+    /// Getter of the `code` attribute.
     [[nodiscard]] jsbind::String code() const;
+    /// Setter of the `code` attribute.
     void code(const jsbind::String& value);
+    /// Getter of the `compilationHints` attribute.
     [[nodiscard]] jsbind::TypedArray<GPUShaderModuleCompilationHint> compilationHints() const;
+    /// Setter of the `compilationHints` attribute.
     void compilationHints(const jsbind::TypedArray<GPUShaderModuleCompilationHint>& value);
 };
 

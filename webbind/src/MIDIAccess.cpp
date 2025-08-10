@@ -5,11 +5,15 @@
 namespace webbind {
 
 MIDIAccess MIDIAccess::take_ownership(Handle h) noexcept {
-        return MIDIAccess(h);
-    }
+    return MIDIAccess(h);
+}
+
 MIDIAccess MIDIAccess::clone() const noexcept { return *this; }
+
 emlite::Val MIDIAccess::instance() noexcept { return emlite::Val::global("MIDIAccess"); }
+
 MIDIAccess::MIDIAccess(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 MIDIAccess::MIDIAccess(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 MIDIInputMap MIDIAccess::inputs() const {

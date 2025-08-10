@@ -1,14 +1,16 @@
 #include <webbind/NavigatorUABrandVersion.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NavigatorUABrandVersion::NavigatorUABrandVersion(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NavigatorUABrandVersion NavigatorUABrandVersion::take_ownership(Handle h) noexcept {
-        return NavigatorUABrandVersion(h);
-    }
+    return NavigatorUABrandVersion(h);
+}
+
 NavigatorUABrandVersion::NavigatorUABrandVersion(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 NavigatorUABrandVersion::NavigatorUABrandVersion() noexcept: emlite::Val(emlite::Val::object()) {}
+
 NavigatorUABrandVersion NavigatorUABrandVersion::clone() const noexcept { return *this; }
 
 jsbind::String NavigatorUABrandVersion::brand() const {

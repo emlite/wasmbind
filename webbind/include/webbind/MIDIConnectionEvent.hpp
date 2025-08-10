@@ -23,7 +23,7 @@ public:
     MIDIConnectionEvent(const jsbind::String& type);
     /// The `new MIDIConnectionEvent(..)` constructor, creating a new MIDIConnectionEvent instance
     MIDIConnectionEvent(const jsbind::String& type, const MIDIConnectionEventInit& eventInitDict);
-    /// Getter of the `port` attribute.
+    /// [`MIDIConnectionEvent.port`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEvent/port)
     /// [`MIDIConnectionEvent.port`](https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEvent/port)
     [[nodiscard]] MIDIPort port() const;
 };

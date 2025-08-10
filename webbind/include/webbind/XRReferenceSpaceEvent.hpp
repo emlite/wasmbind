@@ -22,10 +22,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRReferenceSpaceEvent(..)` constructor, creating a new XRReferenceSpaceEvent instance
     XRReferenceSpaceEvent(const jsbind::String& type, const XRReferenceSpaceEventInit& eventInitDict);
-    /// Getter of the `referenceSpace` attribute.
+    /// [`XRReferenceSpaceEvent.referenceSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceEvent/referenceSpace)
     /// [`XRReferenceSpaceEvent.referenceSpace`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceEvent/referenceSpace)
     [[nodiscard]] XRReferenceSpace referenceSpace() const;
-    /// Getter of the `transform` attribute.
+    /// [`XRReferenceSpaceEvent.transform`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceEvent/transform)
     /// [`XRReferenceSpaceEvent.transform`](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceEvent/transform)
     [[nodiscard]] XRRigidTransform transform() const;
 };

@@ -17,13 +17,13 @@ public:
     static PresentationConnection take_ownership(Handle h) noexcept;
     [[nodiscard]] PresentationConnection clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `id` attribute.
+    /// [`PresentationConnection.id`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/id)
     /// [`PresentationConnection.id`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/id)
     [[nodiscard]] jsbind::String id() const;
-    /// Getter of the `url` attribute.
+    /// [`PresentationConnection.url`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/url)
     /// [`PresentationConnection.url`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/url)
     [[nodiscard]] jsbind::String url() const;
-    /// Getter of the `state` attribute.
+    /// [`PresentationConnection.state`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/state)
     /// [`PresentationConnection.state`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/state)
     [[nodiscard]] PresentationConnectionState state() const;
     /// The close method.
@@ -32,31 +32,31 @@ public:
     /// The terminate method.
     /// [`PresentationConnection.terminate`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/terminate)
     jsbind::Undefined terminate();
-    /// Getter of the `onconnect` attribute.
+    /// [`PresentationConnection.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onconnect)
     /// [`PresentationConnection.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;
     /// Setter of the `onconnect` attribute.
     /// [`PresentationConnection.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onconnect)
     void onconnect(const jsbind::Any& value);
-    /// Getter of the `onclose` attribute.
+    /// [`PresentationConnection.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onclose)
     /// [`PresentationConnection.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onclose)
     [[nodiscard]] jsbind::Any onclose() const;
     /// Setter of the `onclose` attribute.
     /// [`PresentationConnection.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onclose)
     void onclose(const jsbind::Any& value);
-    /// Getter of the `onterminate` attribute.
+    /// [`PresentationConnection.onterminate`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onterminate)
     /// [`PresentationConnection.onterminate`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onterminate)
     [[nodiscard]] jsbind::Any onterminate() const;
     /// Setter of the `onterminate` attribute.
     /// [`PresentationConnection.onterminate`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onterminate)
     void onterminate(const jsbind::Any& value);
-    /// Getter of the `binaryType` attribute.
+    /// [`PresentationConnection.binaryType`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/binaryType)
     /// [`PresentationConnection.binaryType`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/binaryType)
     [[nodiscard]] BinaryType binaryType() const;
     /// Setter of the `binaryType` attribute.
     /// [`PresentationConnection.binaryType`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/binaryType)
     void binaryType(const BinaryType& value);
-    /// Getter of the `onmessage` attribute.
+    /// [`PresentationConnection.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onmessage)
     /// [`PresentationConnection.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.

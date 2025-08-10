@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CompositionEventInit
-/// [`CompositionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEventInit)
 class CompositionEventInit : public UIEventInit {
   explicit CompositionEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit CompositionEventInit(const emlite::Val &val) noexcept;
     CompositionEventInit() noexcept;
     [[nodiscard]] CompositionEventInit clone() const noexcept;
+    /// Getter of the `data` attribute.
     [[nodiscard]] jsbind::String data() const;
+    /// Setter of the `data` attribute.
     void data(const jsbind::String& value);
 };
 

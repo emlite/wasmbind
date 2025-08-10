@@ -30,7 +30,7 @@ public:
     /// The getAvailability method.
     /// [`PresentationRequest.getAvailability`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/getAvailability)
     jsbind::Promise<PresentationAvailability> getAvailability();
-    /// Getter of the `onconnectionavailable` attribute.
+    /// [`PresentationRequest.onconnectionavailable`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/onconnectionavailable)
     /// [`PresentationRequest.onconnectionavailable`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/onconnectionavailable)
     [[nodiscard]] jsbind::Any onconnectionavailable() const;
     /// Setter of the `onconnectionavailable` attribute.

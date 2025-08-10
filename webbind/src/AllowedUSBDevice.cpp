@@ -1,14 +1,16 @@
 #include <webbind/AllowedUSBDevice.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AllowedUSBDevice::AllowedUSBDevice(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AllowedUSBDevice AllowedUSBDevice::take_ownership(Handle h) noexcept {
-        return AllowedUSBDevice(h);
-    }
+    return AllowedUSBDevice(h);
+}
+
 AllowedUSBDevice::AllowedUSBDevice(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AllowedUSBDevice::AllowedUSBDevice() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AllowedUSBDevice AllowedUSBDevice::clone() const noexcept { return *this; }
 
 unsigned char AllowedUSBDevice::vendorId() const {

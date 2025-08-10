@@ -10,11 +10,15 @@
 namespace webbind {
 
 VideoFrame VideoFrame::take_ownership(Handle h) noexcept {
-        return VideoFrame(h);
-    }
+    return VideoFrame(h);
+}
+
 VideoFrame VideoFrame::clone() const noexcept { return *this; }
+
 emlite::Val VideoFrame::instance() noexcept { return emlite::Val::global("VideoFrame"); }
+
 VideoFrame::VideoFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 VideoFrame::VideoFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 VideoFrame::VideoFrame(const jsbind::Any& data, const VideoFrameBufferInit& init) : emlite::Val(emlite::Val::global("VideoFrame").new_(data, init)) {}

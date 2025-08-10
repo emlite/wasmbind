@@ -2,15 +2,17 @@
 #include <webbind/MediaImage.hpp>
 #include <webbind/ChapterInformationInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaMetadataInit::MediaMetadataInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaMetadataInit MediaMetadataInit::take_ownership(Handle h) noexcept {
-        return MediaMetadataInit(h);
-    }
+    return MediaMetadataInit(h);
+}
+
 MediaMetadataInit::MediaMetadataInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaMetadataInit::MediaMetadataInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaMetadataInit MediaMetadataInit::clone() const noexcept { return *this; }
 
 jsbind::String MediaMetadataInit::title() const {

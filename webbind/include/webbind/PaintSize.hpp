@@ -15,10 +15,10 @@ public:
     static PaintSize take_ownership(Handle h) noexcept;
     [[nodiscard]] PaintSize clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `width` attribute.
+    /// [`PaintSize.width`](https://developer.mozilla.org/en-US/docs/Web/API/PaintSize/width)
     /// [`PaintSize.width`](https://developer.mozilla.org/en-US/docs/Web/API/PaintSize/width)
     [[nodiscard]] double width() const;
-    /// Getter of the `height` attribute.
+    /// [`PaintSize.height`](https://developer.mozilla.org/en-US/docs/Web/API/PaintSize/height)
     /// [`PaintSize.height`](https://developer.mozilla.org/en-US/docs/Web/API/PaintSize/height)
     [[nodiscard]] double height() const;
 };

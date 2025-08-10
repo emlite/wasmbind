@@ -1,15 +1,17 @@
 #include <webbind/XRMediaEquirectLayerInit.hpp>
 #include <webbind/XRRigidTransform.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRMediaEquirectLayerInit::XRMediaEquirectLayerInit(Handle h) noexcept : XRMediaLayerInit(emlite::Val::take_ownership(h)) {}
 XRMediaEquirectLayerInit XRMediaEquirectLayerInit::take_ownership(Handle h) noexcept {
-        return XRMediaEquirectLayerInit(h);
-    }
+    return XRMediaEquirectLayerInit(h);
+}
+
 XRMediaEquirectLayerInit::XRMediaEquirectLayerInit(const emlite::Val &val) noexcept: XRMediaLayerInit(val) {}
+
 XRMediaEquirectLayerInit::XRMediaEquirectLayerInit() noexcept: XRMediaLayerInit(emlite::Val::object()) {}
+
 XRMediaEquirectLayerInit XRMediaEquirectLayerInit::clone() const noexcept { return *this; }
 
 XRRigidTransform XRMediaEquirectLayerInit::transform() const {

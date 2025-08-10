@@ -7,11 +7,15 @@
 namespace webbind {
 
 SVGFEDisplacementMapElement SVGFEDisplacementMapElement::take_ownership(Handle h) noexcept {
-        return SVGFEDisplacementMapElement(h);
-    }
+    return SVGFEDisplacementMapElement(h);
+}
+
 SVGFEDisplacementMapElement SVGFEDisplacementMapElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGFEDisplacementMapElement::instance() noexcept { return emlite::Val::global("SVGFEDisplacementMapElement"); }
+
 SVGFEDisplacementMapElement::SVGFEDisplacementMapElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGFEDisplacementMapElement::SVGFEDisplacementMapElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedString SVGFEDisplacementMapElement::in1() const {

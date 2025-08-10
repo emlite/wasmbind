@@ -9,7 +9,6 @@ namespace webbind {
 class HTMLElement;
 
 /// Dictionary type ShowPopoverOptions
-/// [`ShowPopoverOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ShowPopoverOptions)
 class ShowPopoverOptions : public emlite::Val {
   explicit ShowPopoverOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit ShowPopoverOptions(const emlite::Val &val) noexcept;
     ShowPopoverOptions() noexcept;
     [[nodiscard]] ShowPopoverOptions clone() const noexcept;
+    /// Getter of the `source` attribute.
     [[nodiscard]] HTMLElement source() const;
+    /// Setter of the `source` attribute.
     void source(const HTMLElement& value);
 };
 

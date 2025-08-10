@@ -1,14 +1,16 @@
 #include <webbind/IIRFilterOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IIRFilterOptions::IIRFilterOptions(Handle h) noexcept : AudioNodeOptions(emlite::Val::take_ownership(h)) {}
 IIRFilterOptions IIRFilterOptions::take_ownership(Handle h) noexcept {
-        return IIRFilterOptions(h);
-    }
+    return IIRFilterOptions(h);
+}
+
 IIRFilterOptions::IIRFilterOptions(const emlite::Val &val) noexcept: AudioNodeOptions(val) {}
+
 IIRFilterOptions::IIRFilterOptions() noexcept: AudioNodeOptions(emlite::Val::object()) {}
+
 IIRFilterOptions IIRFilterOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<double> IIRFilterOptions::feedforward() const {

@@ -17,13 +17,13 @@ public:
     static XRLightEstimate take_ownership(Handle h) noexcept;
     [[nodiscard]] XRLightEstimate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `sphericalHarmonicsCoefficients` attribute.
+    /// [`XRLightEstimate.sphericalHarmonicsCoefficients`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate/sphericalHarmonicsCoefficients)
     /// [`XRLightEstimate.sphericalHarmonicsCoefficients`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate/sphericalHarmonicsCoefficients)
     [[nodiscard]] jsbind::Float32Array sphericalHarmonicsCoefficients() const;
-    /// Getter of the `primaryLightDirection` attribute.
+    /// [`XRLightEstimate.primaryLightDirection`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate/primaryLightDirection)
     /// [`XRLightEstimate.primaryLightDirection`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate/primaryLightDirection)
     [[nodiscard]] DOMPointReadOnly primaryLightDirection() const;
-    /// Getter of the `primaryLightIntensity` attribute.
+    /// [`XRLightEstimate.primaryLightIntensity`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate/primaryLightIntensity)
     /// [`XRLightEstimate.primaryLightIntensity`](https://developer.mozilla.org/en-US/docs/Web/API/XRLightEstimate/primaryLightIntensity)
     [[nodiscard]] DOMPointReadOnly primaryLightIntensity() const;
 };

@@ -1,14 +1,16 @@
 #include <webbind/MockCaptureDeviceConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MockCaptureDeviceConfiguration::MockCaptureDeviceConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MockCaptureDeviceConfiguration MockCaptureDeviceConfiguration::take_ownership(Handle h) noexcept {
-        return MockCaptureDeviceConfiguration(h);
-    }
+    return MockCaptureDeviceConfiguration(h);
+}
+
 MockCaptureDeviceConfiguration::MockCaptureDeviceConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MockCaptureDeviceConfiguration::MockCaptureDeviceConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MockCaptureDeviceConfiguration MockCaptureDeviceConfiguration::clone() const noexcept { return *this; }
 
 jsbind::String MockCaptureDeviceConfiguration::label() const {

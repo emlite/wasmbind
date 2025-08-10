@@ -15,10 +15,10 @@ public:
     static SpeechRecognitionAlternative take_ownership(Handle h) noexcept;
     [[nodiscard]] SpeechRecognitionAlternative clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `transcript` attribute.
+    /// [`SpeechRecognitionAlternative.transcript`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/transcript)
     /// [`SpeechRecognitionAlternative.transcript`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/transcript)
     [[nodiscard]] jsbind::String transcript() const;
-    /// Getter of the `confidence` attribute.
+    /// [`SpeechRecognitionAlternative.confidence`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/confidence)
     /// [`SpeechRecognitionAlternative.confidence`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/confidence)
     [[nodiscard]] float confidence() const;
 };

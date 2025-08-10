@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type SerialPortRequestOptions
-/// [`SerialPortRequestOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SerialPortRequestOptions)
 class SerialPortRequestOptions : public emlite::Val {
   explicit SerialPortRequestOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit SerialPortRequestOptions(const emlite::Val &val) noexcept;
     SerialPortRequestOptions() noexcept;
     [[nodiscard]] SerialPortRequestOptions clone() const noexcept;
+    /// Getter of the `filters` attribute.
     [[nodiscard]] jsbind::TypedArray<SerialPortFilter> filters() const;
+    /// Setter of the `filters` attribute.
     void filters(const jsbind::TypedArray<SerialPortFilter>& value);
+    /// Getter of the `allowedBluetoothServiceClassIds` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::Any> allowedBluetoothServiceClassIds() const;
+    /// Setter of the `allowedBluetoothServiceClassIds` attribute.
     void allowedBluetoothServiceClassIds(const jsbind::TypedArray<jsbind::Any>& value);
 };
 

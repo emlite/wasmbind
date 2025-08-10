@@ -1,15 +1,17 @@
 #include <webbind/MLGruOptions.hpp>
 #include <webbind/MLOperand.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLGruOptions::MLGruOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLGruOptions MLGruOptions::take_ownership(Handle h) noexcept {
-        return MLGruOptions(h);
-    }
+    return MLGruOptions(h);
+}
+
 MLGruOptions::MLGruOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLGruOptions::MLGruOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLGruOptions MLGruOptions::clone() const noexcept { return *this; }
 
 MLOperand MLGruOptions::bias() const {

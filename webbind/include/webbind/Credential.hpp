@@ -15,10 +15,10 @@ public:
     static Credential take_ownership(Handle h) noexcept;
     [[nodiscard]] Credential clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `id` attribute.
+    /// [`Credential.id`](https://developer.mozilla.org/en-US/docs/Web/API/Credential/id)
     /// [`Credential.id`](https://developer.mozilla.org/en-US/docs/Web/API/Credential/id)
     [[nodiscard]] jsbind::String id() const;
-    /// Getter of the `type` attribute.
+    /// [`Credential.type`](https://developer.mozilla.org/en-US/docs/Web/API/Credential/type)
     /// [`Credential.type`](https://developer.mozilla.org/en-US/docs/Web/API/Credential/type)
     [[nodiscard]] jsbind::String type() const;
     /// The isConditionalMediationAvailable method.

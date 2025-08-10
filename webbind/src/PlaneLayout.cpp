@@ -1,14 +1,16 @@
 #include <webbind/PlaneLayout.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PlaneLayout::PlaneLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PlaneLayout PlaneLayout::take_ownership(Handle h) noexcept {
-        return PlaneLayout(h);
-    }
+    return PlaneLayout(h);
+}
+
 PlaneLayout::PlaneLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PlaneLayout::PlaneLayout() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PlaneLayout PlaneLayout::clone() const noexcept { return *this; }
 
 unsigned long PlaneLayout::offset() const {

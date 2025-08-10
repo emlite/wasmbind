@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FileSystemGetFileOptions
-/// [`FileSystemGetFileOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemGetFileOptions)
 class FileSystemGetFileOptions : public emlite::Val {
   explicit FileSystemGetFileOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit FileSystemGetFileOptions(const emlite::Val &val) noexcept;
     FileSystemGetFileOptions() noexcept;
     [[nodiscard]] FileSystemGetFileOptions clone() const noexcept;
+    /// Getter of the `create` attribute.
     [[nodiscard]] bool create() const;
+    /// Setter of the `create` attribute.
     void create(bool value);
 };
 

@@ -17,19 +17,19 @@ public:
     static NodeIterator take_ownership(Handle h) noexcept;
     [[nodiscard]] NodeIterator clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `root` attribute.
+    /// [`NodeIterator.root`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root)
     /// [`NodeIterator.root`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root)
     [[nodiscard]] Node root() const;
-    /// Getter of the `referenceNode` attribute.
+    /// [`NodeIterator.referenceNode`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode)
     /// [`NodeIterator.referenceNode`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode)
     [[nodiscard]] Node referenceNode() const;
-    /// Getter of the `pointerBeforeReferenceNode` attribute.
+    /// [`NodeIterator.pointerBeforeReferenceNode`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/pointerBeforeReferenceNode)
     /// [`NodeIterator.pointerBeforeReferenceNode`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/pointerBeforeReferenceNode)
     [[nodiscard]] bool pointerBeforeReferenceNode() const;
-    /// Getter of the `whatToShow` attribute.
+    /// [`NodeIterator.whatToShow`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/whatToShow)
     /// [`NodeIterator.whatToShow`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/whatToShow)
     [[nodiscard]] unsigned long whatToShow() const;
-    /// Getter of the `filter` attribute.
+    /// [`NodeIterator.filter`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter)
     /// [`NodeIterator.filter`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter)
     [[nodiscard]] jsbind::Function filter() const;
     /// The nextNode method.

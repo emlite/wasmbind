@@ -22,10 +22,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRInputSourceEvent(..)` constructor, creating a new XRInputSourceEvent instance
     XRInputSourceEvent(const jsbind::String& type, const XRInputSourceEventInit& eventInitDict);
-    /// Getter of the `frame` attribute.
+    /// [`XRInputSourceEvent.frame`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceEvent/frame)
     /// [`XRInputSourceEvent.frame`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceEvent/frame)
     [[nodiscard]] XRFrame frame() const;
-    /// Getter of the `inputSource` attribute.
+    /// [`XRInputSourceEvent.inputSource`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceEvent/inputSource)
     /// [`XRInputSourceEvent.inputSource`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceEvent/inputSource)
     [[nodiscard]] XRInputSource inputSource() const;
 };

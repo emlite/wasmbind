@@ -1,14 +1,16 @@
 #include <webbind/InputDeviceCapabilitiesInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 InputDeviceCapabilitiesInit::InputDeviceCapabilitiesInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 InputDeviceCapabilitiesInit InputDeviceCapabilitiesInit::take_ownership(Handle h) noexcept {
-        return InputDeviceCapabilitiesInit(h);
-    }
+    return InputDeviceCapabilitiesInit(h);
+}
+
 InputDeviceCapabilitiesInit::InputDeviceCapabilitiesInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 InputDeviceCapabilitiesInit::InputDeviceCapabilitiesInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 InputDeviceCapabilitiesInit InputDeviceCapabilitiesInit::clone() const noexcept { return *this; }
 
 bool InputDeviceCapabilitiesInit::firesTouchEvents() const {

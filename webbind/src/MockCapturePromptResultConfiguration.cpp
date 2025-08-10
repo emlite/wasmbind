@@ -1,14 +1,16 @@
 #include <webbind/MockCapturePromptResultConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MockCapturePromptResultConfiguration::MockCapturePromptResultConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MockCapturePromptResultConfiguration MockCapturePromptResultConfiguration::take_ownership(Handle h) noexcept {
-        return MockCapturePromptResultConfiguration(h);
-    }
+    return MockCapturePromptResultConfiguration(h);
+}
+
 MockCapturePromptResultConfiguration::MockCapturePromptResultConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MockCapturePromptResultConfiguration::MockCapturePromptResultConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MockCapturePromptResultConfiguration MockCapturePromptResultConfiguration::clone() const noexcept { return *this; }
 
 MockCapturePromptResult MockCapturePromptResultConfiguration::getUserMedia() const {

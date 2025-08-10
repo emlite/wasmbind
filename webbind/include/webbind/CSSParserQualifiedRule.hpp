@@ -22,10 +22,10 @@ public:
     CSSParserQualifiedRule(const jsbind::TypedArray<jsbind::Any>& prelude);
     /// The `new CSSParserQualifiedRule(..)` constructor, creating a new CSSParserQualifiedRule instance
     CSSParserQualifiedRule(const jsbind::TypedArray<jsbind::Any>& prelude, const jsbind::TypedArray<CSSParserRule>& body);
-    /// Getter of the `prelude` attribute.
+    /// [`CSSParserQualifiedRule.prelude`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule/prelude)
     /// [`CSSParserQualifiedRule.prelude`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule/prelude)
     [[nodiscard]] jsbind::TypedArray<CSSParserValue> prelude() const;
-    /// Getter of the `body` attribute.
+    /// [`CSSParserQualifiedRule.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule/body)
     /// [`CSSParserQualifiedRule.body`](https://developer.mozilla.org/en-US/docs/Web/API/CSSParserQualifiedRule/body)
     [[nodiscard]] jsbind::TypedArray<CSSParserRule> body() const;
 };

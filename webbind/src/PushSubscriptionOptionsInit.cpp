@@ -1,14 +1,16 @@
 #include <webbind/PushSubscriptionOptionsInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PushSubscriptionOptionsInit::PushSubscriptionOptionsInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PushSubscriptionOptionsInit PushSubscriptionOptionsInit::take_ownership(Handle h) noexcept {
-        return PushSubscriptionOptionsInit(h);
-    }
+    return PushSubscriptionOptionsInit(h);
+}
+
 PushSubscriptionOptionsInit::PushSubscriptionOptionsInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PushSubscriptionOptionsInit::PushSubscriptionOptionsInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PushSubscriptionOptionsInit PushSubscriptionOptionsInit::clone() const noexcept { return *this; }
 
 bool PushSubscriptionOptionsInit::userVisibleOnly() const {

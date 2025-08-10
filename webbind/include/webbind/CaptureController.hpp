@@ -24,7 +24,7 @@ public:
     /// The setFocusBehavior method.
     /// [`CaptureController.setFocusBehavior`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/setFocusBehavior)
     jsbind::Undefined setFocusBehavior(const CaptureStartFocusBehavior& focusBehavior);
-    /// Getter of the `oncapturedmousechange` attribute.
+    /// [`CaptureController.oncapturedmousechange`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/oncapturedmousechange)
     /// [`CaptureController.oncapturedmousechange`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/oncapturedmousechange)
     [[nodiscard]] jsbind::Any oncapturedmousechange() const;
     /// Setter of the `oncapturedmousechange` attribute.
@@ -33,7 +33,7 @@ public:
     /// The getSupportedZoomLevels method.
     /// [`CaptureController.getSupportedZoomLevels`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/getSupportedZoomLevels)
     jsbind::TypedArray<long> getSupportedZoomLevels();
-    /// Getter of the `zoomLevel` attribute.
+    /// [`CaptureController.zoomLevel`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/zoomLevel)
     /// [`CaptureController.zoomLevel`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/zoomLevel)
     [[nodiscard]] long zoomLevel() const;
     /// The increaseZoomLevel method.
@@ -45,7 +45,7 @@ public:
     /// The resetZoomLevel method.
     /// [`CaptureController.resetZoomLevel`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/resetZoomLevel)
     jsbind::Promise<jsbind::Undefined> resetZoomLevel();
-    /// Getter of the `onzoomlevelchange` attribute.
+    /// [`CaptureController.onzoomlevelchange`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/onzoomlevelchange)
     /// [`CaptureController.onzoomlevelchange`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/onzoomlevelchange)
     [[nodiscard]] jsbind::Any onzoomlevelchange() const;
     /// Setter of the `onzoomlevelchange` attribute.

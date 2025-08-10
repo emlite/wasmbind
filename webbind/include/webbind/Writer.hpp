@@ -46,25 +46,25 @@ public:
     /// The writeStreaming method.
     /// [`Writer.writeStreaming`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/writeStreaming)
     ReadableStream writeStreaming(const jsbind::String& input, const WriterWriteOptions& options);
-    /// Getter of the `sharedContext` attribute.
+    /// [`Writer.sharedContext`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/sharedContext)
     /// [`Writer.sharedContext`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/sharedContext)
     [[nodiscard]] jsbind::String sharedContext() const;
-    /// Getter of the `tone` attribute.
+    /// [`Writer.tone`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/tone)
     /// [`Writer.tone`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/tone)
     [[nodiscard]] WriterTone tone() const;
-    /// Getter of the `format` attribute.
+    /// [`Writer.format`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/format)
     /// [`Writer.format`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/format)
     [[nodiscard]] WriterFormat format() const;
-    /// Getter of the `length` attribute.
+    /// [`Writer.length`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/length)
     /// [`Writer.length`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/length)
     [[nodiscard]] WriterLength length() const;
-    /// Getter of the `expectedInputLanguages` attribute.
+    /// [`Writer.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/expectedInputLanguages)
     /// [`Writer.expectedInputLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/expectedInputLanguages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedInputLanguages() const;
-    /// Getter of the `expectedContextLanguages` attribute.
+    /// [`Writer.expectedContextLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/expectedContextLanguages)
     /// [`Writer.expectedContextLanguages`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/expectedContextLanguages)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> expectedContextLanguages() const;
-    /// Getter of the `outputLanguage` attribute.
+    /// [`Writer.outputLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/outputLanguage)
     /// [`Writer.outputLanguage`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/outputLanguage)
     [[nodiscard]] jsbind::String outputLanguage() const;
     /// The measureInputUsage method.
@@ -73,7 +73,7 @@ public:
     /// The measureInputUsage method.
     /// [`Writer.measureInputUsage`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/measureInputUsage)
     jsbind::Promise<double> measureInputUsage(const jsbind::String& input, const WriterWriteOptions& options);
-    /// Getter of the `inputQuota` attribute.
+    /// [`Writer.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/inputQuota)
     /// [`Writer.inputQuota`](https://developer.mozilla.org/en-US/docs/Web/API/Writer/inputQuota)
     [[nodiscard]] double inputQuota() const;
     /// The destroy method.

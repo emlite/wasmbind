@@ -19,7 +19,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SpeechRecognitionPhraseList(..)` constructor, creating a new SpeechRecognitionPhraseList instance
     SpeechRecognitionPhraseList(const jsbind::TypedArray<SpeechRecognitionPhrase>& phrases);
-    /// Getter of the `length` attribute.
+    /// [`SpeechRecognitionPhraseList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionPhraseList/length)
     /// [`SpeechRecognitionPhraseList.length`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionPhraseList/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.

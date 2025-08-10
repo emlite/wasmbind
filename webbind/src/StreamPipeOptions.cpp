@@ -1,15 +1,17 @@
 #include <webbind/StreamPipeOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StreamPipeOptions::StreamPipeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StreamPipeOptions StreamPipeOptions::take_ownership(Handle h) noexcept {
-        return StreamPipeOptions(h);
-    }
+    return StreamPipeOptions(h);
+}
+
 StreamPipeOptions::StreamPipeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 StreamPipeOptions::StreamPipeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 StreamPipeOptions StreamPipeOptions::clone() const noexcept { return *this; }
 
 bool StreamPipeOptions::preventClose() const {

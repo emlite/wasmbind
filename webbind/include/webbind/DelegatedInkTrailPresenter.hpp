@@ -19,7 +19,7 @@ public:
     static DelegatedInkTrailPresenter take_ownership(Handle h) noexcept;
     [[nodiscard]] DelegatedInkTrailPresenter clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `presentationArea` attribute.
+    /// [`DelegatedInkTrailPresenter.presentationArea`](https://developer.mozilla.org/en-US/docs/Web/API/DelegatedInkTrailPresenter/presentationArea)
     /// [`DelegatedInkTrailPresenter.presentationArea`](https://developer.mozilla.org/en-US/docs/Web/API/DelegatedInkTrailPresenter/presentationArea)
     [[nodiscard]] Element presentationArea() const;
     /// The updateInkTrailStartPoint method.

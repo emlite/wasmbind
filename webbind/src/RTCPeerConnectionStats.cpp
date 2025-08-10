@@ -1,14 +1,16 @@
 #include <webbind/RTCPeerConnectionStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCPeerConnectionStats::RTCPeerConnectionStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCPeerConnectionStats RTCPeerConnectionStats::take_ownership(Handle h) noexcept {
-        return RTCPeerConnectionStats(h);
-    }
+    return RTCPeerConnectionStats(h);
+}
+
 RTCPeerConnectionStats::RTCPeerConnectionStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCPeerConnectionStats::RTCPeerConnectionStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCPeerConnectionStats RTCPeerConnectionStats::clone() const noexcept { return *this; }
 
 unsigned long RTCPeerConnectionStats::dataChannelsOpened() const {

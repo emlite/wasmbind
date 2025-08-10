@@ -1,15 +1,17 @@
 #include <webbind/MemoryAttribution.hpp>
 #include <webbind/MemoryAttributionContainer.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MemoryAttribution::MemoryAttribution(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MemoryAttribution MemoryAttribution::take_ownership(Handle h) noexcept {
-        return MemoryAttribution(h);
-    }
+    return MemoryAttribution(h);
+}
+
 MemoryAttribution::MemoryAttribution(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MemoryAttribution::MemoryAttribution() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MemoryAttribution MemoryAttribution::clone() const noexcept { return *this; }
 
 jsbind::String MemoryAttribution::url() const {

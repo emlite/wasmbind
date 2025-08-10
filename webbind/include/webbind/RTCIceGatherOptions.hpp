@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCIceGatherOptions
-/// [`RTCIceGatherOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceGatherOptions)
 class RTCIceGatherOptions : public emlite::Val {
   explicit RTCIceGatherOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit RTCIceGatherOptions(const emlite::Val &val) noexcept;
     RTCIceGatherOptions() noexcept;
     [[nodiscard]] RTCIceGatherOptions clone() const noexcept;
+    /// Getter of the `gatherPolicy` attribute.
     [[nodiscard]] RTCIceTransportPolicy gatherPolicy() const;
+    /// Setter of the `gatherPolicy` attribute.
     void gatherPolicy(const RTCIceTransportPolicy& value);
+    /// Getter of the `iceServers` attribute.
     [[nodiscard]] jsbind::TypedArray<RTCIceServer> iceServers() const;
+    /// Setter of the `iceServers` attribute.
     void iceServers(const jsbind::TypedArray<RTCIceServer>& value);
 };
 

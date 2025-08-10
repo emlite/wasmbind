@@ -1,15 +1,17 @@
 #include <webbind/AuthenticationExtensionsPRFInputsJSON.hpp>
 #include <webbind/AuthenticationExtensionsPRFValuesJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticationExtensionsPRFInputsJSON::AuthenticationExtensionsPRFInputsJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticationExtensionsPRFInputsJSON AuthenticationExtensionsPRFInputsJSON::take_ownership(Handle h) noexcept {
-        return AuthenticationExtensionsPRFInputsJSON(h);
-    }
+    return AuthenticationExtensionsPRFInputsJSON(h);
+}
+
 AuthenticationExtensionsPRFInputsJSON::AuthenticationExtensionsPRFInputsJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticationExtensionsPRFInputsJSON::AuthenticationExtensionsPRFInputsJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticationExtensionsPRFInputsJSON AuthenticationExtensionsPRFInputsJSON::clone() const noexcept { return *this; }
 
 AuthenticationExtensionsPRFValuesJSON AuthenticationExtensionsPRFInputsJSON::eval() const {

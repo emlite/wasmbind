@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCPeerConnectionStats
-/// [`RTCPeerConnectionStats`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionStats)
 class RTCPeerConnectionStats : public RTCStats {
   explicit RTCPeerConnectionStats(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit RTCPeerConnectionStats(const emlite::Val &val) noexcept;
     RTCPeerConnectionStats() noexcept;
     [[nodiscard]] RTCPeerConnectionStats clone() const noexcept;
+    /// Getter of the `dataChannelsOpened` attribute.
     [[nodiscard]] unsigned long dataChannelsOpened() const;
+    /// Setter of the `dataChannelsOpened` attribute.
     void dataChannelsOpened(unsigned long value);
+    /// Getter of the `dataChannelsClosed` attribute.
     [[nodiscard]] unsigned long dataChannelsClosed() const;
+    /// Setter of the `dataChannelsClosed` attribute.
     void dataChannelsClosed(unsigned long value);
 };
 

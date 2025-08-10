@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AudioNodeOptions
-/// [`AudioNodeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNodeOptions)
 class AudioNodeOptions : public emlite::Val {
   explicit AudioNodeOptions(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit AudioNodeOptions(const emlite::Val &val) noexcept;
     AudioNodeOptions() noexcept;
     [[nodiscard]] AudioNodeOptions clone() const noexcept;
+    /// Getter of the `channelCount` attribute.
     [[nodiscard]] unsigned long channelCount() const;
+    /// Setter of the `channelCount` attribute.
     void channelCount(unsigned long value);
+    /// Getter of the `channelCountMode` attribute.
     [[nodiscard]] ChannelCountMode channelCountMode() const;
+    /// Setter of the `channelCountMode` attribute.
     void channelCountMode(const ChannelCountMode& value);
+    /// Getter of the `channelInterpretation` attribute.
     [[nodiscard]] ChannelInterpretation channelInterpretation() const;
+    /// Setter of the `channelInterpretation` attribute.
     void channelInterpretation(const ChannelInterpretation& value);
 };
 

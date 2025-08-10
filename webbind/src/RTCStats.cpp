@@ -1,14 +1,16 @@
 #include <webbind/RTCStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCStats::RTCStats(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCStats RTCStats::take_ownership(Handle h) noexcept {
-        return RTCStats(h);
-    }
+    return RTCStats(h);
+}
+
 RTCStats::RTCStats(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCStats::RTCStats() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCStats RTCStats::clone() const noexcept { return *this; }
 
 jsbind::Any RTCStats::timestamp() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type FilePropertyBag
-/// [`FilePropertyBag`](https://developer.mozilla.org/en-US/docs/Web/API/FilePropertyBag)
 class FilePropertyBag : public BlobPropertyBag {
   explicit FilePropertyBag(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit FilePropertyBag(const emlite::Val &val) noexcept;
     FilePropertyBag() noexcept;
     [[nodiscard]] FilePropertyBag clone() const noexcept;
+    /// Getter of the `lastModified` attribute.
     [[nodiscard]] long long lastModified() const;
+    /// Setter of the `lastModified` attribute.
     void lastModified(long long value);
 };
 

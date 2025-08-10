@@ -1,15 +1,17 @@
 #include <webbind/MLConv2dOptions.hpp>
 #include <webbind/MLOperand.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLConv2dOptions::MLConv2dOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLConv2dOptions MLConv2dOptions::take_ownership(Handle h) noexcept {
-        return MLConv2dOptions(h);
-    }
+    return MLConv2dOptions(h);
+}
+
 MLConv2dOptions::MLConv2dOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLConv2dOptions::MLConv2dOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLConv2dOptions MLConv2dOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<unsigned long> MLConv2dOptions::padding() const {

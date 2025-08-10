@@ -18,16 +18,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new AudioBuffer(..)` constructor, creating a new AudioBuffer instance
     AudioBuffer(const AudioBufferOptions& options);
-    /// Getter of the `sampleRate` attribute.
+    /// [`AudioBuffer.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/sampleRate)
     /// [`AudioBuffer.sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/sampleRate)
     [[nodiscard]] float sampleRate() const;
-    /// Getter of the `length` attribute.
+    /// [`AudioBuffer.length`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/length)
     /// [`AudioBuffer.length`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `duration` attribute.
+    /// [`AudioBuffer.duration`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/duration)
     /// [`AudioBuffer.duration`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/duration)
     [[nodiscard]] double duration() const;
-    /// Getter of the `numberOfChannels` attribute.
+    /// [`AudioBuffer.numberOfChannels`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/numberOfChannels)
     /// [`AudioBuffer.numberOfChannels`](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/numberOfChannels)
     [[nodiscard]] unsigned long numberOfChannels() const;
     /// The getChannelData method.

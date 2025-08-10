@@ -37,7 +37,7 @@ public:
     /// The end method.
     /// [`GPUComputePassEncoder.end`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/end)
     jsbind::Undefined end();
-    /// Getter of the `label` attribute.
+    /// [`GPUComputePassEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/label)
     /// [`GPUComputePassEncoder.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

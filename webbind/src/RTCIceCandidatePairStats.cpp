@@ -1,14 +1,16 @@
 #include <webbind/RTCIceCandidatePairStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCIceCandidatePairStats::RTCIceCandidatePairStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCIceCandidatePairStats RTCIceCandidatePairStats::take_ownership(Handle h) noexcept {
-        return RTCIceCandidatePairStats(h);
-    }
+    return RTCIceCandidatePairStats(h);
+}
+
 RTCIceCandidatePairStats::RTCIceCandidatePairStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCIceCandidatePairStats::RTCIceCandidatePairStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCIceCandidatePairStats RTCIceCandidatePairStats::clone() const noexcept { return *this; }
 
 jsbind::String RTCIceCandidatePairStats::transportId() const {

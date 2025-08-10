@@ -19,10 +19,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new SyncEvent(..)` constructor, creating a new SyncEvent instance
     SyncEvent(const jsbind::String& type, const SyncEventInit& init);
-    /// Getter of the `tag` attribute.
+    /// [`SyncEvent.tag`](https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent/tag)
     /// [`SyncEvent.tag`](https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent/tag)
     [[nodiscard]] jsbind::String tag() const;
-    /// Getter of the `lastChance` attribute.
+    /// [`SyncEvent.lastChance`](https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent/lastChance)
     /// [`SyncEvent.lastChance`](https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent/lastChance)
     [[nodiscard]] bool lastChance() const;
 };

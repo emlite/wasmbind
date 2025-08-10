@@ -1,14 +1,16 @@
 #include <webbind/MediaKeysPolicy.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaKeysPolicy::MediaKeysPolicy(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaKeysPolicy MediaKeysPolicy::take_ownership(Handle h) noexcept {
-        return MediaKeysPolicy(h);
-    }
+    return MediaKeysPolicy(h);
+}
+
 MediaKeysPolicy::MediaKeysPolicy(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaKeysPolicy::MediaKeysPolicy() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaKeysPolicy MediaKeysPolicy::clone() const noexcept { return *this; }
 
 jsbind::String MediaKeysPolicy::minHdcpVersion() const {

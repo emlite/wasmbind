@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ChannelMergerOptions
-/// [`ChannelMergerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ChannelMergerOptions)
 class ChannelMergerOptions : public AudioNodeOptions {
   explicit ChannelMergerOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit ChannelMergerOptions(const emlite::Val &val) noexcept;
     ChannelMergerOptions() noexcept;
     [[nodiscard]] ChannelMergerOptions clone() const noexcept;
+    /// Getter of the `numberOfInputs` attribute.
     [[nodiscard]] unsigned long numberOfInputs() const;
+    /// Setter of the `numberOfInputs` attribute.
     void numberOfInputs(unsigned long value);
 };
 

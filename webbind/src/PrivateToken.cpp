@@ -1,14 +1,16 @@
 #include <webbind/PrivateToken.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PrivateToken::PrivateToken(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PrivateToken PrivateToken::take_ownership(Handle h) noexcept {
-        return PrivateToken(h);
-    }
+    return PrivateToken(h);
+}
+
 PrivateToken::PrivateToken(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PrivateToken::PrivateToken() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PrivateToken PrivateToken::clone() const noexcept { return *this; }
 
 TokenVersion PrivateToken::version() const {

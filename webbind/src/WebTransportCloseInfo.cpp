@@ -1,14 +1,16 @@
 #include <webbind/WebTransportCloseInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WebTransportCloseInfo::WebTransportCloseInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransportCloseInfo WebTransportCloseInfo::take_ownership(Handle h) noexcept {
-        return WebTransportCloseInfo(h);
-    }
+    return WebTransportCloseInfo(h);
+}
+
 WebTransportCloseInfo::WebTransportCloseInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WebTransportCloseInfo::WebTransportCloseInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WebTransportCloseInfo WebTransportCloseInfo::clone() const noexcept { return *this; }
 
 unsigned long WebTransportCloseInfo::closeCode() const {

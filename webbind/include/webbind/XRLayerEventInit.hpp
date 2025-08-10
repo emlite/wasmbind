@@ -10,7 +10,6 @@ namespace webbind {
 class XRLayer;
 
 /// Dictionary type XRLayerEventInit
-/// [`XRLayerEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRLayerEventInit)
 class XRLayerEventInit : public EventInit {
   explicit XRLayerEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit XRLayerEventInit(const emlite::Val &val) noexcept;
     XRLayerEventInit() noexcept;
     [[nodiscard]] XRLayerEventInit clone() const noexcept;
+    /// Getter of the `layer` attribute.
     [[nodiscard]] XRLayer layer() const;
+    /// Setter of the `layer` attribute.
     void layer(const XRLayer& value);
 };
 

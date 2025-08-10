@@ -17,7 +17,7 @@ public:
     static TextTrackCueList take_ownership(Handle h) noexcept;
     [[nodiscard]] TextTrackCueList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`TextTrackCueList.length`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCueList/length)
     /// [`TextTrackCueList.length`](https://developer.mozilla.org/en-US/docs/Web/API/TextTrackCueList/length)
     [[nodiscard]] unsigned long length() const;
     /// The getCueById method.

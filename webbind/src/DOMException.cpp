@@ -3,11 +3,15 @@
 namespace webbind {
 
 DOMException DOMException::take_ownership(Handle h) noexcept {
-        return DOMException(h);
-    }
+    return DOMException(h);
+}
+
 DOMException DOMException::clone() const noexcept { return *this; }
+
 emlite::Val DOMException::instance() noexcept { return emlite::Val::global("DOMException"); }
+
 DOMException::DOMException(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 DOMException::DOMException(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 DOMException::DOMException() : emlite::Val(emlite::Val::global("DOMException").new_()) {}

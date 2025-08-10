@@ -1,14 +1,16 @@
 #include <webbind/DirectFromSellerSignalsForBuyer.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DirectFromSellerSignalsForBuyer::DirectFromSellerSignalsForBuyer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DirectFromSellerSignalsForBuyer DirectFromSellerSignalsForBuyer::take_ownership(Handle h) noexcept {
-        return DirectFromSellerSignalsForBuyer(h);
-    }
+    return DirectFromSellerSignalsForBuyer(h);
+}
+
 DirectFromSellerSignalsForBuyer::DirectFromSellerSignalsForBuyer(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DirectFromSellerSignalsForBuyer::DirectFromSellerSignalsForBuyer() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DirectFromSellerSignalsForBuyer DirectFromSellerSignalsForBuyer::clone() const noexcept { return *this; }
 
 jsbind::Any DirectFromSellerSignalsForBuyer::auctionSignals() const {

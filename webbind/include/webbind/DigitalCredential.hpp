@@ -19,10 +19,10 @@ public:
     /// The toJSON method.
     /// [`DigitalCredential.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalCredential/toJSON)
     jsbind::Object toJSON();
-    /// Getter of the `protocol` attribute.
+    /// [`DigitalCredential.protocol`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalCredential/protocol)
     /// [`DigitalCredential.protocol`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalCredential/protocol)
     [[nodiscard]] jsbind::String protocol() const;
-    /// Getter of the `data` attribute.
+    /// [`DigitalCredential.data`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalCredential/data)
     /// [`DigitalCredential.data`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalCredential/data)
     [[nodiscard]] jsbind::Object data() const;
     /// The userAgentAllowsProtocol method.

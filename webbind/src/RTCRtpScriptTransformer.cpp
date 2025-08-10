@@ -5,11 +5,15 @@
 namespace webbind {
 
 RTCRtpScriptTransformer RTCRtpScriptTransformer::take_ownership(Handle h) noexcept {
-        return RTCRtpScriptTransformer(h);
-    }
+    return RTCRtpScriptTransformer(h);
+}
+
 RTCRtpScriptTransformer RTCRtpScriptTransformer::clone() const noexcept { return *this; }
+
 emlite::Val RTCRtpScriptTransformer::instance() noexcept { return emlite::Val::global("RTCRtpScriptTransformer"); }
+
 RTCRtpScriptTransformer::RTCRtpScriptTransformer(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 RTCRtpScriptTransformer::RTCRtpScriptTransformer(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 ReadableStream RTCRtpScriptTransformer::readable() const {

@@ -4,11 +4,15 @@
 namespace webbind {
 
 Clipboard Clipboard::take_ownership(Handle h) noexcept {
-        return Clipboard(h);
-    }
+    return Clipboard(h);
+}
+
 Clipboard Clipboard::clone() const noexcept { return *this; }
+
 emlite::Val Clipboard::instance() noexcept { return emlite::Val::global("Clipboard"); }
+
 Clipboard::Clipboard(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 Clipboard::Clipboard(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Promise<jsbind::Any> Clipboard::read() {

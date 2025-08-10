@@ -1,14 +1,16 @@
 #include <webbind/IdentityProviderClientMetadata.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IdentityProviderClientMetadata::IdentityProviderClientMetadata(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 IdentityProviderClientMetadata IdentityProviderClientMetadata::take_ownership(Handle h) noexcept {
-        return IdentityProviderClientMetadata(h);
-    }
+    return IdentityProviderClientMetadata(h);
+}
+
 IdentityProviderClientMetadata::IdentityProviderClientMetadata(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 IdentityProviderClientMetadata::IdentityProviderClientMetadata() noexcept: emlite::Val(emlite::Val::object()) {}
+
 IdentityProviderClientMetadata IdentityProviderClientMetadata::clone() const noexcept { return *this; }
 
 jsbind::String IdentityProviderClientMetadata::privacy_policy_url() const {

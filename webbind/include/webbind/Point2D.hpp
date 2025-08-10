@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type Point2D
-/// [`Point2D`](https://developer.mozilla.org/en-US/docs/Web/API/Point2D)
 class Point2D : public emlite::Val {
   explicit Point2D(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit Point2D(const emlite::Val &val) noexcept;
     Point2D() noexcept;
     [[nodiscard]] Point2D clone() const noexcept;
+    /// Getter of the `x` attribute.
     [[nodiscard]] double x() const;
+    /// Setter of the `x` attribute.
     void x(double value);
+    /// Getter of the `y` attribute.
     [[nodiscard]] double y() const;
+    /// Setter of the `y` attribute.
     void y(double value);
 };
 

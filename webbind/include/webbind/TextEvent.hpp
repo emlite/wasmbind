@@ -18,7 +18,7 @@ public:
     static TextEvent take_ownership(Handle h) noexcept;
     [[nodiscard]] TextEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `data` attribute.
+    /// [`TextEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/TextEvent/data)
     /// [`TextEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/TextEvent/data)
     [[nodiscard]] jsbind::String data() const;
     /// The initTextEvent method.

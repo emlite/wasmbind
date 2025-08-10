@@ -3,11 +3,15 @@
 namespace webbind {
 
 SyncManager SyncManager::take_ownership(Handle h) noexcept {
-        return SyncManager(h);
-    }
+    return SyncManager(h);
+}
+
 SyncManager SyncManager::clone() const noexcept { return *this; }
+
 emlite::Val SyncManager::instance() noexcept { return emlite::Val::global("SyncManager"); }
+
 SyncManager::SyncManager(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 SyncManager::SyncManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::Undefined> SyncManager::register_(const jsbind::String& tag) {

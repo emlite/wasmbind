@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type KeyframeEffectOptions
-/// [`KeyframeEffectOptions`](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffectOptions)
 class KeyframeEffectOptions : public EffectTiming {
   explicit KeyframeEffectOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit KeyframeEffectOptions(const emlite::Val &val) noexcept;
     KeyframeEffectOptions() noexcept;
     [[nodiscard]] KeyframeEffectOptions clone() const noexcept;
+    /// Getter of the `composite` attribute.
     [[nodiscard]] CompositeOperation composite() const;
+    /// Setter of the `composite` attribute.
     void composite(const CompositeOperation& value);
+    /// Getter of the `pseudoElement` attribute.
     [[nodiscard]] jsbind::String pseudoElement() const;
+    /// Setter of the `pseudoElement` attribute.
     void pseudoElement(const jsbind::String& value);
 };
 

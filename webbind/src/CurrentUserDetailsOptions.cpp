@@ -1,14 +1,16 @@
 #include <webbind/CurrentUserDetailsOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CurrentUserDetailsOptions::CurrentUserDetailsOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CurrentUserDetailsOptions CurrentUserDetailsOptions::take_ownership(Handle h) noexcept {
-        return CurrentUserDetailsOptions(h);
-    }
+    return CurrentUserDetailsOptions(h);
+}
+
 CurrentUserDetailsOptions::CurrentUserDetailsOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CurrentUserDetailsOptions::CurrentUserDetailsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CurrentUserDetailsOptions CurrentUserDetailsOptions::clone() const noexcept { return *this; }
 
 jsbind::String CurrentUserDetailsOptions::rpId() const {

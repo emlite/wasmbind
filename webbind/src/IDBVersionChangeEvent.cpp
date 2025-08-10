@@ -4,11 +4,15 @@
 namespace webbind {
 
 IDBVersionChangeEvent IDBVersionChangeEvent::take_ownership(Handle h) noexcept {
-        return IDBVersionChangeEvent(h);
-    }
+    return IDBVersionChangeEvent(h);
+}
+
 IDBVersionChangeEvent IDBVersionChangeEvent::clone() const noexcept { return *this; }
+
 emlite::Val IDBVersionChangeEvent::instance() noexcept { return emlite::Val::global("IDBVersionChangeEvent"); }
+
 IDBVersionChangeEvent::IDBVersionChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 IDBVersionChangeEvent::IDBVersionChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 IDBVersionChangeEvent::IDBVersionChangeEvent(const jsbind::String& type) : Event(emlite::Val::global("IDBVersionChangeEvent").new_(type)) {}

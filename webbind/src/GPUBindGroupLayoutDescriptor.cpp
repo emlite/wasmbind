@@ -1,15 +1,17 @@
 #include <webbind/GPUBindGroupLayoutDescriptor.hpp>
 #include <webbind/GPUBindGroupLayoutEntry.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUBindGroupLayoutDescriptor::GPUBindGroupLayoutDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPUBindGroupLayoutDescriptor GPUBindGroupLayoutDescriptor::take_ownership(Handle h) noexcept {
-        return GPUBindGroupLayoutDescriptor(h);
-    }
+    return GPUBindGroupLayoutDescriptor(h);
+}
+
 GPUBindGroupLayoutDescriptor::GPUBindGroupLayoutDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPUBindGroupLayoutDescriptor::GPUBindGroupLayoutDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPUBindGroupLayoutDescriptor GPUBindGroupLayoutDescriptor::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<GPUBindGroupLayoutEntry> GPUBindGroupLayoutDescriptor::entries() const {

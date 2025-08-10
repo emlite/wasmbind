@@ -20,25 +20,25 @@ public:
     static SVGUseElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGUseElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `x` attribute.
+    /// [`SVGUseElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/x)
     /// [`SVGUseElement.x`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/x)
     [[nodiscard]] SVGAnimatedLength x() const;
-    /// Getter of the `y` attribute.
+    /// [`SVGUseElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/y)
     /// [`SVGUseElement.y`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/y)
     [[nodiscard]] SVGAnimatedLength y() const;
-    /// Getter of the `width` attribute.
+    /// [`SVGUseElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/width)
     /// [`SVGUseElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/width)
     [[nodiscard]] SVGAnimatedLength width() const;
-    /// Getter of the `height` attribute.
+    /// [`SVGUseElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/height)
     /// [`SVGUseElement.height`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/height)
     [[nodiscard]] SVGAnimatedLength height() const;
-    /// Getter of the `instanceRoot` attribute.
+    /// [`SVGUseElement.instanceRoot`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/instanceRoot)
     /// [`SVGUseElement.instanceRoot`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/instanceRoot)
     [[nodiscard]] SVGElement instanceRoot() const;
-    /// Getter of the `animatedInstanceRoot` attribute.
+    /// [`SVGUseElement.animatedInstanceRoot`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/animatedInstanceRoot)
     /// [`SVGUseElement.animatedInstanceRoot`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/animatedInstanceRoot)
     [[nodiscard]] SVGElement animatedInstanceRoot() const;
-    /// Getter of the `href` attribute.
+    /// [`SVGUseElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/href)
     /// [`SVGUseElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement/href)
     [[nodiscard]] SVGAnimatedString href() const;
 };

@@ -4,11 +4,15 @@
 namespace webbind {
 
 FontData FontData::take_ownership(Handle h) noexcept {
-        return FontData(h);
-    }
+    return FontData(h);
+}
+
 FontData FontData::clone() const noexcept { return *this; }
+
 emlite::Val FontData::instance() noexcept { return emlite::Val::global("FontData"); }
+
 FontData::FontData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 FontData::FontData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<Blob> FontData::blob() {

@@ -1,14 +1,16 @@
 #include <webbind/GPUBindGroupEntry.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUBindGroupEntry::GPUBindGroupEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUBindGroupEntry GPUBindGroupEntry::take_ownership(Handle h) noexcept {
-        return GPUBindGroupEntry(h);
-    }
+    return GPUBindGroupEntry(h);
+}
+
 GPUBindGroupEntry::GPUBindGroupEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUBindGroupEntry::GPUBindGroupEntry() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUBindGroupEntry GPUBindGroupEntry::clone() const noexcept { return *this; }
 
 jsbind::Any GPUBindGroupEntry::binding() const {

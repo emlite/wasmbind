@@ -19,13 +19,13 @@ public:
     static MediaSession take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaSession clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `metadata` attribute.
+    /// [`MediaSession.metadata`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/metadata)
     /// [`MediaSession.metadata`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/metadata)
     [[nodiscard]] MediaMetadata metadata() const;
     /// Setter of the `metadata` attribute.
     /// [`MediaSession.metadata`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/metadata)
     void metadata(const MediaMetadata& value);
-    /// Getter of the `playbackState` attribute.
+    /// [`MediaSession.playbackState`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/playbackState)
     /// [`MediaSession.playbackState`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/playbackState)
     [[nodiscard]] MediaSessionPlaybackState playbackState() const;
     /// Setter of the `playbackState` attribute.

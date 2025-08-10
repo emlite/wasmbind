@@ -35,133 +35,133 @@ public:
     /// The fromFloat64Array method.
     /// [`DOMMatrix.fromFloat64Array`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/fromFloat64Array)
     static DOMMatrix fromFloat64Array(const jsbind::Float64Array& array64);
-    /// Getter of the `a` attribute.
+    /// [`DOMMatrix.a`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/a)
     /// [`DOMMatrix.a`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/a)
     [[nodiscard]] double a() const;
     /// Setter of the `a` attribute.
     /// [`DOMMatrix.a`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/a)
     void a(double value);
-    /// Getter of the `b` attribute.
+    /// [`DOMMatrix.b`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/b)
     /// [`DOMMatrix.b`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/b)
     [[nodiscard]] double b() const;
     /// Setter of the `b` attribute.
     /// [`DOMMatrix.b`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/b)
     void b(double value);
-    /// Getter of the `c` attribute.
+    /// [`DOMMatrix.c`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/c)
     /// [`DOMMatrix.c`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/c)
     [[nodiscard]] double c() const;
     /// Setter of the `c` attribute.
     /// [`DOMMatrix.c`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/c)
     void c(double value);
-    /// Getter of the `d` attribute.
+    /// [`DOMMatrix.d`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/d)
     /// [`DOMMatrix.d`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/d)
     [[nodiscard]] double d() const;
     /// Setter of the `d` attribute.
     /// [`DOMMatrix.d`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/d)
     void d(double value);
-    /// Getter of the `e` attribute.
+    /// [`DOMMatrix.e`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/e)
     /// [`DOMMatrix.e`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/e)
     [[nodiscard]] double e() const;
     /// Setter of the `e` attribute.
     /// [`DOMMatrix.e`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/e)
     void e(double value);
-    /// Getter of the `f` attribute.
+    /// [`DOMMatrix.f`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/f)
     /// [`DOMMatrix.f`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/f)
     [[nodiscard]] double f() const;
     /// Setter of the `f` attribute.
     /// [`DOMMatrix.f`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/f)
     void f(double value);
-    /// Getter of the `m11` attribute.
+    /// [`DOMMatrix.m11`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m11)
     /// [`DOMMatrix.m11`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m11)
     [[nodiscard]] double m11() const;
     /// Setter of the `m11` attribute.
     /// [`DOMMatrix.m11`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m11)
     void m11(double value);
-    /// Getter of the `m12` attribute.
+    /// [`DOMMatrix.m12`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m12)
     /// [`DOMMatrix.m12`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m12)
     [[nodiscard]] double m12() const;
     /// Setter of the `m12` attribute.
     /// [`DOMMatrix.m12`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m12)
     void m12(double value);
-    /// Getter of the `m13` attribute.
+    /// [`DOMMatrix.m13`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m13)
     /// [`DOMMatrix.m13`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m13)
     [[nodiscard]] double m13() const;
     /// Setter of the `m13` attribute.
     /// [`DOMMatrix.m13`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m13)
     void m13(double value);
-    /// Getter of the `m14` attribute.
+    /// [`DOMMatrix.m14`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m14)
     /// [`DOMMatrix.m14`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m14)
     [[nodiscard]] double m14() const;
     /// Setter of the `m14` attribute.
     /// [`DOMMatrix.m14`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m14)
     void m14(double value);
-    /// Getter of the `m21` attribute.
+    /// [`DOMMatrix.m21`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m21)
     /// [`DOMMatrix.m21`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m21)
     [[nodiscard]] double m21() const;
     /// Setter of the `m21` attribute.
     /// [`DOMMatrix.m21`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m21)
     void m21(double value);
-    /// Getter of the `m22` attribute.
+    /// [`DOMMatrix.m22`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m22)
     /// [`DOMMatrix.m22`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m22)
     [[nodiscard]] double m22() const;
     /// Setter of the `m22` attribute.
     /// [`DOMMatrix.m22`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m22)
     void m22(double value);
-    /// Getter of the `m23` attribute.
+    /// [`DOMMatrix.m23`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m23)
     /// [`DOMMatrix.m23`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m23)
     [[nodiscard]] double m23() const;
     /// Setter of the `m23` attribute.
     /// [`DOMMatrix.m23`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m23)
     void m23(double value);
-    /// Getter of the `m24` attribute.
+    /// [`DOMMatrix.m24`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m24)
     /// [`DOMMatrix.m24`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m24)
     [[nodiscard]] double m24() const;
     /// Setter of the `m24` attribute.
     /// [`DOMMatrix.m24`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m24)
     void m24(double value);
-    /// Getter of the `m31` attribute.
+    /// [`DOMMatrix.m31`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m31)
     /// [`DOMMatrix.m31`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m31)
     [[nodiscard]] double m31() const;
     /// Setter of the `m31` attribute.
     /// [`DOMMatrix.m31`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m31)
     void m31(double value);
-    /// Getter of the `m32` attribute.
+    /// [`DOMMatrix.m32`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m32)
     /// [`DOMMatrix.m32`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m32)
     [[nodiscard]] double m32() const;
     /// Setter of the `m32` attribute.
     /// [`DOMMatrix.m32`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m32)
     void m32(double value);
-    /// Getter of the `m33` attribute.
+    /// [`DOMMatrix.m33`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m33)
     /// [`DOMMatrix.m33`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m33)
     [[nodiscard]] double m33() const;
     /// Setter of the `m33` attribute.
     /// [`DOMMatrix.m33`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m33)
     void m33(double value);
-    /// Getter of the `m34` attribute.
+    /// [`DOMMatrix.m34`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m34)
     /// [`DOMMatrix.m34`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m34)
     [[nodiscard]] double m34() const;
     /// Setter of the `m34` attribute.
     /// [`DOMMatrix.m34`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m34)
     void m34(double value);
-    /// Getter of the `m41` attribute.
+    /// [`DOMMatrix.m41`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m41)
     /// [`DOMMatrix.m41`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m41)
     [[nodiscard]] double m41() const;
     /// Setter of the `m41` attribute.
     /// [`DOMMatrix.m41`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m41)
     void m41(double value);
-    /// Getter of the `m42` attribute.
+    /// [`DOMMatrix.m42`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m42)
     /// [`DOMMatrix.m42`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m42)
     [[nodiscard]] double m42() const;
     /// Setter of the `m42` attribute.
     /// [`DOMMatrix.m42`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m42)
     void m42(double value);
-    /// Getter of the `m43` attribute.
+    /// [`DOMMatrix.m43`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m43)
     /// [`DOMMatrix.m43`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m43)
     [[nodiscard]] double m43() const;
     /// Setter of the `m43` attribute.
     /// [`DOMMatrix.m43`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m43)
     void m43(double value);
-    /// Getter of the `m44` attribute.
+    /// [`DOMMatrix.m44`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m44)
     /// [`DOMMatrix.m44`](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/m44)
     [[nodiscard]] double m44() const;
     /// Setter of the `m44` attribute.

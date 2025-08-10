@@ -1,14 +1,16 @@
 #include <webbind/GPUOrigin3DDict.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUOrigin3DDict::GPUOrigin3DDict(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUOrigin3DDict GPUOrigin3DDict::take_ownership(Handle h) noexcept {
-        return GPUOrigin3DDict(h);
-    }
+    return GPUOrigin3DDict(h);
+}
+
 GPUOrigin3DDict::GPUOrigin3DDict(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUOrigin3DDict::GPUOrigin3DDict() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUOrigin3DDict GPUOrigin3DDict::clone() const noexcept { return *this; }
 
 jsbind::Any GPUOrigin3DDict::x() const {

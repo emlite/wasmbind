@@ -23,7 +23,7 @@ public:
     /// The getComputedTiming method.
     /// [`WorkletAnimationEffect.getComputedTiming`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/getComputedTiming)
     ComputedEffectTiming getComputedTiming();
-    /// Getter of the `localTime` attribute.
+    /// [`WorkletAnimationEffect.localTime`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/localTime)
     /// [`WorkletAnimationEffect.localTime`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletAnimationEffect/localTime)
     [[nodiscard]] double localTime() const;
     /// Setter of the `localTime` attribute.

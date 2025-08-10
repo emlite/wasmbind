@@ -24,7 +24,7 @@ public:
     WritableStream(const jsbind::Object& underlyingSink);
     /// The `new WritableStream(..)` constructor, creating a new WritableStream instance
     WritableStream(const jsbind::Object& underlyingSink, const QueuingStrategy& strategy);
-    /// Getter of the `locked` attribute.
+    /// [`WritableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/locked)
     /// [`WritableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/locked)
     [[nodiscard]] bool locked() const;
     /// The abort method.

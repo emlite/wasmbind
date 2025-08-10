@@ -4,11 +4,15 @@
 namespace webbind {
 
 HTMLAllCollection HTMLAllCollection::take_ownership(Handle h) noexcept {
-        return HTMLAllCollection(h);
-    }
+    return HTMLAllCollection(h);
+}
+
 HTMLAllCollection HTMLAllCollection::clone() const noexcept { return *this; }
+
 emlite::Val HTMLAllCollection::instance() noexcept { return emlite::Val::global("HTMLAllCollection"); }
+
 HTMLAllCollection::HTMLAllCollection(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 HTMLAllCollection::HTMLAllCollection(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned long HTMLAllCollection::length() const {

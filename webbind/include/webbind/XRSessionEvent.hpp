@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRSessionEvent(..)` constructor, creating a new XRSessionEvent instance
     XRSessionEvent(const jsbind::String& type, const XRSessionEventInit& eventInitDict);
-    /// Getter of the `session` attribute.
+    /// [`XRSessionEvent.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRSessionEvent/session)
     /// [`XRSessionEvent.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRSessionEvent/session)
     [[nodiscard]] XRSession session() const;
 };

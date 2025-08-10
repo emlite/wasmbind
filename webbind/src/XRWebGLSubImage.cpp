@@ -4,11 +4,15 @@
 namespace webbind {
 
 XRWebGLSubImage XRWebGLSubImage::take_ownership(Handle h) noexcept {
-        return XRWebGLSubImage(h);
-    }
+    return XRWebGLSubImage(h);
+}
+
 XRWebGLSubImage XRWebGLSubImage::clone() const noexcept { return *this; }
+
 emlite::Val XRWebGLSubImage::instance() noexcept { return emlite::Val::global("XRWebGLSubImage"); }
+
 XRWebGLSubImage::XRWebGLSubImage(Handle h) noexcept : XRSubImage(emlite::Val::take_ownership(h)) {}
+
 XRWebGLSubImage::XRWebGLSubImage(const emlite::Val &val) noexcept: XRSubImage(val) {}
 
 WebGLTexture XRWebGLSubImage::colorTexture() const {

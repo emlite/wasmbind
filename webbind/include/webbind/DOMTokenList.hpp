@@ -15,7 +15,7 @@ public:
     static DOMTokenList take_ownership(Handle h) noexcept;
     [[nodiscard]] DOMTokenList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`DOMTokenList.length`](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length)
     /// [`DOMTokenList.length`](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.
@@ -42,7 +42,7 @@ public:
     /// The supports method.
     /// [`DOMTokenList.supports`](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/supports)
     bool supports(const jsbind::String& token);
-    /// Getter of the `value` attribute.
+    /// [`DOMTokenList.value`](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/value)
     /// [`DOMTokenList.value`](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/value)
     [[nodiscard]] jsbind::String value() const;
     /// Setter of the `value` attribute.

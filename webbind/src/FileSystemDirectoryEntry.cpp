@@ -5,11 +5,15 @@
 namespace webbind {
 
 FileSystemDirectoryEntry FileSystemDirectoryEntry::take_ownership(Handle h) noexcept {
-        return FileSystemDirectoryEntry(h);
-    }
+    return FileSystemDirectoryEntry(h);
+}
+
 FileSystemDirectoryEntry FileSystemDirectoryEntry::clone() const noexcept { return *this; }
+
 emlite::Val FileSystemDirectoryEntry::instance() noexcept { return emlite::Val::global("FileSystemDirectoryEntry"); }
+
 FileSystemDirectoryEntry::FileSystemDirectoryEntry(Handle h) noexcept : FileSystemEntry(emlite::Val::take_ownership(h)) {}
+
 FileSystemDirectoryEntry::FileSystemDirectoryEntry(const emlite::Val &val) noexcept: FileSystemEntry(val) {}
 
 FileSystemDirectoryReader FileSystemDirectoryEntry::createReader() {

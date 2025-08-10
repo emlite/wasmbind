@@ -1,14 +1,16 @@
 #include <webbind/AuthenticatorAssertionResponseJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticatorAssertionResponseJSON::AuthenticatorAssertionResponseJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticatorAssertionResponseJSON AuthenticatorAssertionResponseJSON::take_ownership(Handle h) noexcept {
-        return AuthenticatorAssertionResponseJSON(h);
-    }
+    return AuthenticatorAssertionResponseJSON(h);
+}
+
 AuthenticatorAssertionResponseJSON::AuthenticatorAssertionResponseJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticatorAssertionResponseJSON::AuthenticatorAssertionResponseJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticatorAssertionResponseJSON AuthenticatorAssertionResponseJSON::clone() const noexcept { return *this; }
 
 jsbind::Any AuthenticatorAssertionResponseJSON::clientDataJSON() const {

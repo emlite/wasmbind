@@ -4,11 +4,15 @@
 namespace webbind {
 
 CSSParserDeclaration CSSParserDeclaration::take_ownership(Handle h) noexcept {
-        return CSSParserDeclaration(h);
-    }
+    return CSSParserDeclaration(h);
+}
+
 CSSParserDeclaration CSSParserDeclaration::clone() const noexcept { return *this; }
+
 emlite::Val CSSParserDeclaration::instance() noexcept { return emlite::Val::global("CSSParserDeclaration"); }
+
 CSSParserDeclaration::CSSParserDeclaration(Handle h) noexcept : CSSParserRule(emlite::Val::take_ownership(h)) {}
+
 CSSParserDeclaration::CSSParserDeclaration(const emlite::Val &val) noexcept: CSSParserRule(val) {}
 
 CSSParserDeclaration::CSSParserDeclaration(const jsbind::String& name) : CSSParserRule(emlite::Val::global("CSSParserDeclaration").new_(name)) {}

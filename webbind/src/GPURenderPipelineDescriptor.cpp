@@ -5,15 +5,17 @@
 #include <webbind/GPUMultisampleState.hpp>
 #include <webbind/GPUFragmentState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPURenderPipelineDescriptor::GPURenderPipelineDescriptor(Handle h) noexcept : GPUPipelineDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPURenderPipelineDescriptor GPURenderPipelineDescriptor::take_ownership(Handle h) noexcept {
-        return GPURenderPipelineDescriptor(h);
-    }
+    return GPURenderPipelineDescriptor(h);
+}
+
 GPURenderPipelineDescriptor::GPURenderPipelineDescriptor(const emlite::Val &val) noexcept: GPUPipelineDescriptorBase(val) {}
+
 GPURenderPipelineDescriptor::GPURenderPipelineDescriptor() noexcept: GPUPipelineDescriptorBase(emlite::Val::object()) {}
+
 GPURenderPipelineDescriptor GPURenderPipelineDescriptor::clone() const noexcept { return *this; }
 
 GPUVertexState GPURenderPipelineDescriptor::vertex() const {

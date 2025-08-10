@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CSSMatrixComponentOptions
-/// [`CSSMatrixComponentOptions`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMatrixComponentOptions)
 class CSSMatrixComponentOptions : public emlite::Val {
   explicit CSSMatrixComponentOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit CSSMatrixComponentOptions(const emlite::Val &val) noexcept;
     CSSMatrixComponentOptions() noexcept;
     [[nodiscard]] CSSMatrixComponentOptions clone() const noexcept;
+    /// Getter of the `is2D` attribute.
     [[nodiscard]] bool is2D() const;
+    /// Setter of the `is2D` attribute.
     void is2D(bool value);
 };
 

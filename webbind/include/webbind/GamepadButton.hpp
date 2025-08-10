@@ -15,13 +15,13 @@ public:
     static GamepadButton take_ownership(Handle h) noexcept;
     [[nodiscard]] GamepadButton clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `pressed` attribute.
+    /// [`GamepadButton.pressed`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/pressed)
     /// [`GamepadButton.pressed`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/pressed)
     [[nodiscard]] bool pressed() const;
-    /// Getter of the `touched` attribute.
+    /// [`GamepadButton.touched`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/touched)
     /// [`GamepadButton.touched`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/touched)
     [[nodiscard]] bool touched() const;
-    /// Getter of the `value` attribute.
+    /// [`GamepadButton.value`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/value)
     /// [`GamepadButton.value`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/value)
     [[nodiscard]] double value() const;
 };

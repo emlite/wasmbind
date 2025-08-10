@@ -1,14 +1,16 @@
 #include <webbind/ScrollIntoViewOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ScrollIntoViewOptions::ScrollIntoViewOptions(Handle h) noexcept : ScrollOptions(emlite::Val::take_ownership(h)) {}
 ScrollIntoViewOptions ScrollIntoViewOptions::take_ownership(Handle h) noexcept {
-        return ScrollIntoViewOptions(h);
-    }
+    return ScrollIntoViewOptions(h);
+}
+
 ScrollIntoViewOptions::ScrollIntoViewOptions(const emlite::Val &val) noexcept: ScrollOptions(val) {}
+
 ScrollIntoViewOptions::ScrollIntoViewOptions() noexcept: ScrollOptions(emlite::Val::object()) {}
+
 ScrollIntoViewOptions ScrollIntoViewOptions::clone() const noexcept { return *this; }
 
 ScrollLogicalPosition ScrollIntoViewOptions::block() const {

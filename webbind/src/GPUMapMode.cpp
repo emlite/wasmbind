@@ -1,7 +1,5 @@
 #include <webbind/GPUMapMode.hpp>
 
-using emlite::Val;
-
 namespace webbind {
 
 namespace GPUMapMode {

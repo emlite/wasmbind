@@ -16,7 +16,7 @@ public:
     static XRCPUDepthInformation take_ownership(Handle h) noexcept;
     [[nodiscard]] XRCPUDepthInformation clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `data` attribute.
+    /// [`XRCPUDepthInformation.data`](https://developer.mozilla.org/en-US/docs/Web/API/XRCPUDepthInformation/data)
     /// [`XRCPUDepthInformation.data`](https://developer.mozilla.org/en-US/docs/Web/API/XRCPUDepthInformation/data)
     [[nodiscard]] jsbind::ArrayBuffer data() const;
     /// The getDepthInMeters method.

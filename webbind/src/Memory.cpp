@@ -4,11 +4,15 @@
 namespace webbind {
 
 Memory Memory::take_ownership(Handle h) noexcept {
-        return Memory(h);
-    }
+    return Memory(h);
+}
+
 Memory Memory::clone() const noexcept { return *this; }
+
 emlite::Val Memory::instance() noexcept { return emlite::Val::global("Memory"); }
+
 Memory::Memory(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Memory::Memory(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Memory::Memory(const MemoryDescriptor& descriptor) : emlite::Val(emlite::Val::global("Memory").new_(descriptor)) {}

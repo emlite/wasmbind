@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RsaOaepParams
-/// [`RsaOaepParams`](https://developer.mozilla.org/en-US/docs/Web/API/RsaOaepParams)
 class RsaOaepParams : public Algorithm {
   explicit RsaOaepParams(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit RsaOaepParams(const emlite::Val &val) noexcept;
     RsaOaepParams() noexcept;
     [[nodiscard]] RsaOaepParams clone() const noexcept;
+    /// Getter of the `label` attribute.
     [[nodiscard]] jsbind::Any label() const;
+    /// Setter of the `label` attribute.
     void label(const jsbind::Any& value);
 };
 

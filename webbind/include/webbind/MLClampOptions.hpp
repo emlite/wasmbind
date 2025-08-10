@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MLClampOptions
-/// [`MLClampOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLClampOptions)
 class MLClampOptions : public MLOperatorOptions {
   explicit MLClampOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MLClampOptions(const emlite::Val &val) noexcept;
     MLClampOptions() noexcept;
     [[nodiscard]] MLClampOptions clone() const noexcept;
+    /// Getter of the `minValue` attribute.
     [[nodiscard]] jsbind::Any minValue() const;
+    /// Setter of the `minValue` attribute.
     void minValue(const jsbind::Any& value);
+    /// Getter of the `maxValue` attribute.
     [[nodiscard]] jsbind::Any maxValue() const;
+    /// Setter of the `maxValue` attribute.
     void maxValue(const jsbind::Any& value);
 };
 

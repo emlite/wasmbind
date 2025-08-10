@@ -21,13 +21,13 @@ public:
     static GPUAdapter take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUAdapter clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `features` attribute.
+    /// [`GPUAdapter.features`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/features)
     /// [`GPUAdapter.features`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/features)
     [[nodiscard]] GPUSupportedFeatures features() const;
-    /// Getter of the `limits` attribute.
+    /// [`GPUAdapter.limits`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/limits)
     /// [`GPUAdapter.limits`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/limits)
     [[nodiscard]] GPUSupportedLimits limits() const;
-    /// Getter of the `info` attribute.
+    /// [`GPUAdapter.info`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/info)
     /// [`GPUAdapter.info`](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/info)
     [[nodiscard]] GPUAdapterInfo info() const;
     /// The requestDevice method.

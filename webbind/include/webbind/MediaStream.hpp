@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new MediaStream(..)` constructor, creating a new MediaStream instance
     MediaStream(const jsbind::TypedArray<MediaStreamTrack>& tracks);
-    /// Getter of the `id` attribute.
+    /// [`MediaStream.id`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/id)
     /// [`MediaStream.id`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/id)
     [[nodiscard]] jsbind::String id() const;
     /// The getAudioTracks method.
@@ -45,16 +45,16 @@ public:
     /// The clone method.
     /// [`MediaStream.clone`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/clone)
     MediaStream clone();
-    /// Getter of the `active` attribute.
+    /// [`MediaStream.active`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/active)
     /// [`MediaStream.active`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/active)
     [[nodiscard]] bool active() const;
-    /// Getter of the `onaddtrack` attribute.
+    /// [`MediaStream.onaddtrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack)
     /// [`MediaStream.onaddtrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack)
     [[nodiscard]] jsbind::Any onaddtrack() const;
     /// Setter of the `onaddtrack` attribute.
     /// [`MediaStream.onaddtrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack)
     void onaddtrack(const jsbind::Any& value);
-    /// Getter of the `onremovetrack` attribute.
+    /// [`MediaStream.onremovetrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onremovetrack)
     /// [`MediaStream.onremovetrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onremovetrack)
     [[nodiscard]] jsbind::Any onremovetrack() const;
     /// Setter of the `onremovetrack` attribute.

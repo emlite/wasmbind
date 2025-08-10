@@ -16,16 +16,16 @@ public:
     static VisibilityStateEntry take_ownership(Handle h) noexcept;
     [[nodiscard]] VisibilityStateEntry clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`VisibilityStateEntry.name`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/name)
     /// [`VisibilityStateEntry.name`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `entryType` attribute.
+    /// [`VisibilityStateEntry.entryType`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/entryType)
     /// [`VisibilityStateEntry.entryType`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/entryType)
     [[nodiscard]] jsbind::String entryType() const;
-    /// Getter of the `startTime` attribute.
+    /// [`VisibilityStateEntry.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/startTime)
     /// [`VisibilityStateEntry.startTime`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/startTime)
     [[nodiscard]] jsbind::Any startTime() const;
-    /// Getter of the `duration` attribute.
+    /// [`VisibilityStateEntry.duration`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/duration)
     /// [`VisibilityStateEntry.duration`](https://developer.mozilla.org/en-US/docs/Web/API/VisibilityStateEntry/duration)
     [[nodiscard]] unsigned long duration() const;
 };

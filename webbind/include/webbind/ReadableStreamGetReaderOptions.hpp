@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ReadableStreamGetReaderOptions
-/// [`ReadableStreamGetReaderOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamGetReaderOptions)
 class ReadableStreamGetReaderOptions : public emlite::Val {
   explicit ReadableStreamGetReaderOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ReadableStreamGetReaderOptions(const emlite::Val &val) noexcept;
     ReadableStreamGetReaderOptions() noexcept;
     [[nodiscard]] ReadableStreamGetReaderOptions clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] ReadableStreamReaderMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const ReadableStreamReaderMode& value);
 };
 

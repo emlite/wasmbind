@@ -1,14 +1,16 @@
 #include <webbind/BlobPropertyBag.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BlobPropertyBag::BlobPropertyBag(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BlobPropertyBag BlobPropertyBag::take_ownership(Handle h) noexcept {
-        return BlobPropertyBag(h);
-    }
+    return BlobPropertyBag(h);
+}
+
 BlobPropertyBag::BlobPropertyBag(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BlobPropertyBag::BlobPropertyBag() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BlobPropertyBag BlobPropertyBag::clone() const noexcept { return *this; }
 
 jsbind::String BlobPropertyBag::type() const {

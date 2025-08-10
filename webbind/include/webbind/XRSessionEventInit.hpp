@@ -10,7 +10,6 @@ namespace webbind {
 class XRSession;
 
 /// Dictionary type XRSessionEventInit
-/// [`XRSessionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/XRSessionEventInit)
 class XRSessionEventInit : public EventInit {
   explicit XRSessionEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit XRSessionEventInit(const emlite::Val &val) noexcept;
     XRSessionEventInit() noexcept;
     [[nodiscard]] XRSessionEventInit clone() const noexcept;
+    /// Getter of the `session` attribute.
     [[nodiscard]] XRSession session() const;
+    /// Setter of the `session` attribute.
     void session(const XRSession& value);
 };
 

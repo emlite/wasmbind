@@ -23,7 +23,7 @@ public:
     /// The valueOf method.
     /// [`Global.valueOf`](https://developer.mozilla.org/en-US/docs/Web/API/Global/valueOf)
     jsbind::Any valueOf();
-    /// Getter of the `value` attribute.
+    /// [`Global.value`](https://developer.mozilla.org/en-US/docs/Web/API/Global/value)
     /// [`Global.value`](https://developer.mozilla.org/en-US/docs/Web/API/Global/value)
     [[nodiscard]] jsbind::Any value() const;
     /// Setter of the `value` attribute.

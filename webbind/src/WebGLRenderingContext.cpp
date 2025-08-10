@@ -4,11 +4,15 @@
 namespace webbind {
 
 WebGLRenderingContext WebGLRenderingContext::take_ownership(Handle h) noexcept {
-        return WebGLRenderingContext(h);
-    }
+    return WebGLRenderingContext(h);
+}
+
 WebGLRenderingContext WebGLRenderingContext::clone() const noexcept { return *this; }
+
 emlite::Val WebGLRenderingContext::instance() noexcept { return emlite::Val::global("WebGLRenderingContext"); }
+
 WebGLRenderingContext::WebGLRenderingContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 WebGLRenderingContext::WebGLRenderingContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::Undefined> WebGLRenderingContext::makeXRCompatible() {

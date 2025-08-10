@@ -16,7 +16,7 @@ public:
     static PerformanceMeasure take_ownership(Handle h) noexcept;
     [[nodiscard]] PerformanceMeasure clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `detail` attribute.
+    /// [`PerformanceMeasure.detail`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure/detail)
     /// [`PerformanceMeasure.detail`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure/detail)
     [[nodiscard]] jsbind::Any detail() const;
 };

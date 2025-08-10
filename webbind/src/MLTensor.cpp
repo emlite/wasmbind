@@ -3,11 +3,15 @@
 namespace webbind {
 
 MLTensor MLTensor::take_ownership(Handle h) noexcept {
-        return MLTensor(h);
-    }
+    return MLTensor(h);
+}
+
 MLTensor MLTensor::clone() const noexcept { return *this; }
+
 emlite::Val MLTensor::instance() noexcept { return emlite::Val::global("MLTensor"); }
+
 MLTensor::MLTensor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 MLTensor::MLTensor(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 MLOperandDataType MLTensor::dataType() const {

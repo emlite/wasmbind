@@ -9,7 +9,6 @@ namespace webbind {
 class MediaStreamTrack;
 
 /// Dictionary type MediaStreamTrackProcessorInit
-/// [`MediaStreamTrackProcessorInit`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackProcessorInit)
 class MediaStreamTrackProcessorInit : public emlite::Val {
   explicit MediaStreamTrackProcessorInit(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit MediaStreamTrackProcessorInit(const emlite::Val &val) noexcept;
     MediaStreamTrackProcessorInit() noexcept;
     [[nodiscard]] MediaStreamTrackProcessorInit clone() const noexcept;
+    /// Getter of the `track` attribute.
     [[nodiscard]] MediaStreamTrack track() const;
+    /// Setter of the `track` attribute.
     void track(const MediaStreamTrack& value);
+    /// Getter of the `maxBufferSize` attribute.
     [[nodiscard]] unsigned short maxBufferSize() const;
+    /// Setter of the `maxBufferSize` attribute.
     void maxBufferSize(unsigned short value);
 };
 

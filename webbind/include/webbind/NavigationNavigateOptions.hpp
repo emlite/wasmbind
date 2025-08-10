@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type NavigationNavigateOptions
-/// [`NavigationNavigateOptions`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationNavigateOptions)
 class NavigationNavigateOptions : public NavigationOptions {
   explicit NavigationNavigateOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit NavigationNavigateOptions(const emlite::Val &val) noexcept;
     NavigationNavigateOptions() noexcept;
     [[nodiscard]] NavigationNavigateOptions clone() const noexcept;
+    /// Getter of the `state` attribute.
     [[nodiscard]] jsbind::Any state() const;
+    /// Setter of the `state` attribute.
     void state(const jsbind::Any& value);
+    /// Getter of the `history` attribute.
     [[nodiscard]] NavigationHistoryBehavior history() const;
+    /// Setter of the `history` attribute.
     void history(const NavigationHistoryBehavior& value);
 };
 

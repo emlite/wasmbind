@@ -1,14 +1,16 @@
 #include <webbind/RTCPeerConnectionIceErrorEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCPeerConnectionIceErrorEventInit::RTCPeerConnectionIceErrorEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 RTCPeerConnectionIceErrorEventInit RTCPeerConnectionIceErrorEventInit::take_ownership(Handle h) noexcept {
-        return RTCPeerConnectionIceErrorEventInit(h);
-    }
+    return RTCPeerConnectionIceErrorEventInit(h);
+}
+
 RTCPeerConnectionIceErrorEventInit::RTCPeerConnectionIceErrorEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 RTCPeerConnectionIceErrorEventInit::RTCPeerConnectionIceErrorEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 RTCPeerConnectionIceErrorEventInit RTCPeerConnectionIceErrorEventInit::clone() const noexcept { return *this; }
 
 jsbind::String RTCPeerConnectionIceErrorEventInit::address() const {

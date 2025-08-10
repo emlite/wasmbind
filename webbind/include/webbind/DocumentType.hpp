@@ -16,13 +16,13 @@ public:
     static DocumentType take_ownership(Handle h) noexcept;
     [[nodiscard]] DocumentType clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`DocumentType.name`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/name)
     /// [`DocumentType.name`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `publicId` attribute.
+    /// [`DocumentType.publicId`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/publicId)
     /// [`DocumentType.publicId`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/publicId)
     [[nodiscard]] jsbind::String publicId() const;
-    /// Getter of the `systemId` attribute.
+    /// [`DocumentType.systemId`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/systemId)
     /// [`DocumentType.systemId`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/systemId)
     [[nodiscard]] jsbind::String systemId() const;
     /// The before method.

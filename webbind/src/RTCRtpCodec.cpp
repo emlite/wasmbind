@@ -1,14 +1,16 @@
 #include <webbind/RTCRtpCodec.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpCodec::RTCRtpCodec(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpCodec RTCRtpCodec::take_ownership(Handle h) noexcept {
-        return RTCRtpCodec(h);
-    }
+    return RTCRtpCodec(h);
+}
+
 RTCRtpCodec::RTCRtpCodec(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCRtpCodec::RTCRtpCodec() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCRtpCodec RTCRtpCodec::clone() const noexcept { return *this; }
 
 jsbind::String RTCRtpCodec::mimeType() const {

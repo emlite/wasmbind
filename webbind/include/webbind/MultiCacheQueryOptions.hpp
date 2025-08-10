@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MultiCacheQueryOptions
-/// [`MultiCacheQueryOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MultiCacheQueryOptions)
 class MultiCacheQueryOptions : public CacheQueryOptions {
   explicit MultiCacheQueryOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MultiCacheQueryOptions(const emlite::Val &val) noexcept;
     MultiCacheQueryOptions() noexcept;
     [[nodiscard]] MultiCacheQueryOptions clone() const noexcept;
+    /// Getter of the `cacheName` attribute.
     [[nodiscard]] jsbind::String cacheName() const;
+    /// Setter of the `cacheName` attribute.
     void cacheName(const jsbind::String& value);
 };
 

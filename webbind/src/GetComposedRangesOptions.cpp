@@ -1,15 +1,17 @@
 #include <webbind/GetComposedRangesOptions.hpp>
 #include <webbind/ShadowRoot.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GetComposedRangesOptions::GetComposedRangesOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GetComposedRangesOptions GetComposedRangesOptions::take_ownership(Handle h) noexcept {
-        return GetComposedRangesOptions(h);
-    }
+    return GetComposedRangesOptions(h);
+}
+
 GetComposedRangesOptions::GetComposedRangesOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GetComposedRangesOptions::GetComposedRangesOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GetComposedRangesOptions GetComposedRangesOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<ShadowRoot> GetComposedRangesOptions::shadowRoots() const {

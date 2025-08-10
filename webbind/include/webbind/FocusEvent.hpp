@@ -23,7 +23,7 @@ public:
     FocusEvent(const jsbind::String& type);
     /// The `new FocusEvent(..)` constructor, creating a new FocusEvent instance
     FocusEvent(const jsbind::String& type, const FocusEventInit& eventInitDict);
-    /// Getter of the `relatedTarget` attribute.
+    /// [`FocusEvent.relatedTarget`](https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent/relatedTarget)
     /// [`FocusEvent.relatedTarget`](https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent/relatedTarget)
     [[nodiscard]] EventTarget relatedTarget() const;
 };

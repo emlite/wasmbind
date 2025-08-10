@@ -22,13 +22,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new XRInputSourcesChangeEvent(..)` constructor, creating a new XRInputSourcesChangeEvent instance
     XRInputSourcesChangeEvent(const jsbind::String& type, const XRInputSourcesChangeEventInit& eventInitDict);
-    /// Getter of the `session` attribute.
+    /// [`XRInputSourcesChangeEvent.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourcesChangeEvent/session)
     /// [`XRInputSourcesChangeEvent.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourcesChangeEvent/session)
     [[nodiscard]] XRSession session() const;
-    /// Getter of the `added` attribute.
+    /// [`XRInputSourcesChangeEvent.added`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourcesChangeEvent/added)
     /// [`XRInputSourcesChangeEvent.added`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourcesChangeEvent/added)
     [[nodiscard]] jsbind::TypedArray<XRInputSource> added() const;
-    /// Getter of the `removed` attribute.
+    /// [`XRInputSourcesChangeEvent.removed`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourcesChangeEvent/removed)
     /// [`XRInputSourcesChangeEvent.removed`](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourcesChangeEvent/removed)
     [[nodiscard]] jsbind::TypedArray<XRInputSource> removed() const;
 };

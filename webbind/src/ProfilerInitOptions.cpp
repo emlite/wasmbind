@@ -1,14 +1,16 @@
 #include <webbind/ProfilerInitOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ProfilerInitOptions::ProfilerInitOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ProfilerInitOptions ProfilerInitOptions::take_ownership(Handle h) noexcept {
-        return ProfilerInitOptions(h);
-    }
+    return ProfilerInitOptions(h);
+}
+
 ProfilerInitOptions::ProfilerInitOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ProfilerInitOptions::ProfilerInitOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ProfilerInitOptions ProfilerInitOptions::clone() const noexcept { return *this; }
 
 jsbind::Any ProfilerInitOptions::sampleInterval() const {

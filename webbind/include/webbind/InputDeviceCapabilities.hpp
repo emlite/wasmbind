@@ -20,10 +20,10 @@ public:
     InputDeviceCapabilities();
     /// The `new InputDeviceCapabilities(..)` constructor, creating a new InputDeviceCapabilities instance
     InputDeviceCapabilities(const InputDeviceCapabilitiesInit& deviceInitDict);
-    /// Getter of the `firesTouchEvents` attribute.
+    /// [`InputDeviceCapabilities.firesTouchEvents`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/firesTouchEvents)
     /// [`InputDeviceCapabilities.firesTouchEvents`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/firesTouchEvents)
     [[nodiscard]] bool firesTouchEvents() const;
-    /// Getter of the `pointerMovementScrolls` attribute.
+    /// [`InputDeviceCapabilities.pointerMovementScrolls`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/pointerMovementScrolls)
     /// [`InputDeviceCapabilities.pointerMovementScrolls`](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/pointerMovementScrolls)
     [[nodiscard]] bool pointerMovementScrolls() const;
 };

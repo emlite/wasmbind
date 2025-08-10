@@ -5,11 +5,15 @@
 namespace webbind {
 
 SVGClipPathElement SVGClipPathElement::take_ownership(Handle h) noexcept {
-        return SVGClipPathElement(h);
-    }
+    return SVGClipPathElement(h);
+}
+
 SVGClipPathElement SVGClipPathElement::clone() const noexcept { return *this; }
+
 emlite::Val SVGClipPathElement::instance() noexcept { return emlite::Val::global("SVGClipPathElement"); }
+
 SVGClipPathElement::SVGClipPathElement(Handle h) noexcept : SVGElement(emlite::Val::take_ownership(h)) {}
+
 SVGClipPathElement::SVGClipPathElement(const emlite::Val &val) noexcept: SVGElement(val) {}
 
 SVGAnimatedEnumeration SVGClipPathElement::clipPathUnits() const {

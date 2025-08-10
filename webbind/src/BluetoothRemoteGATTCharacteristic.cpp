@@ -7,11 +7,15 @@
 namespace webbind {
 
 BluetoothRemoteGATTCharacteristic BluetoothRemoteGATTCharacteristic::take_ownership(Handle h) noexcept {
-        return BluetoothRemoteGATTCharacteristic(h);
-    }
+    return BluetoothRemoteGATTCharacteristic(h);
+}
+
 BluetoothRemoteGATTCharacteristic BluetoothRemoteGATTCharacteristic::clone() const noexcept { return *this; }
+
 emlite::Val BluetoothRemoteGATTCharacteristic::instance() noexcept { return emlite::Val::global("BluetoothRemoteGATTCharacteristic"); }
+
 BluetoothRemoteGATTCharacteristic::BluetoothRemoteGATTCharacteristic(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 BluetoothRemoteGATTCharacteristic::BluetoothRemoteGATTCharacteristic(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 BluetoothRemoteGATTService BluetoothRemoteGATTCharacteristic::service() const {

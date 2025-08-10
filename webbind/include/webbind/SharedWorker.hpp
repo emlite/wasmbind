@@ -22,10 +22,10 @@ public:
     SharedWorker(const jsbind::Any& scriptURL);
     /// The `new SharedWorker(..)` constructor, creating a new SharedWorker instance
     SharedWorker(const jsbind::Any& scriptURL, const jsbind::Any& options);
-    /// Getter of the `port` attribute.
+    /// [`SharedWorker.port`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/port)
     /// [`SharedWorker.port`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/port)
     [[nodiscard]] MessagePort port() const;
-    /// Getter of the `onerror` attribute.
+    /// [`SharedWorker.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/onerror)
     /// [`SharedWorker.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.

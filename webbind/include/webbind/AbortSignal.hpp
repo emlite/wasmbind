@@ -30,16 +30,16 @@ public:
     /// The any method.
     /// [`AbortSignal.any`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/any)
     static AbortSignal any(const jsbind::TypedArray<AbortSignal>& signals);
-    /// Getter of the `aborted` attribute.
+    /// [`AbortSignal.aborted`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/aborted)
     /// [`AbortSignal.aborted`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/aborted)
     [[nodiscard]] bool aborted() const;
-    /// Getter of the `reason` attribute.
+    /// [`AbortSignal.reason`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/reason)
     /// [`AbortSignal.reason`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/reason)
     [[nodiscard]] jsbind::Any reason() const;
     /// The throwIfAborted method.
     /// [`AbortSignal.throwIfAborted`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/throwIfAborted)
     jsbind::Undefined throwIfAborted();
-    /// Getter of the `onabort` attribute.
+    /// [`AbortSignal.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/onabort)
     /// [`AbortSignal.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/onabort)
     [[nodiscard]] jsbind::Any onabort() const;
     /// Setter of the `onabort` attribute.

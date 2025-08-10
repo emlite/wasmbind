@@ -1,14 +1,16 @@
 #include <webbind/SharedStoragePrivateAggregationConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SharedStoragePrivateAggregationConfig::SharedStoragePrivateAggregationConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SharedStoragePrivateAggregationConfig SharedStoragePrivateAggregationConfig::take_ownership(Handle h) noexcept {
-        return SharedStoragePrivateAggregationConfig(h);
-    }
+    return SharedStoragePrivateAggregationConfig(h);
+}
+
 SharedStoragePrivateAggregationConfig::SharedStoragePrivateAggregationConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SharedStoragePrivateAggregationConfig::SharedStoragePrivateAggregationConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SharedStoragePrivateAggregationConfig SharedStoragePrivateAggregationConfig::clone() const noexcept { return *this; }
 
 jsbind::String SharedStoragePrivateAggregationConfig::aggregationCoordinatorOrigin() const {

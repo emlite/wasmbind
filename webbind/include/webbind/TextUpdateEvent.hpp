@@ -21,19 +21,19 @@ public:
     TextUpdateEvent(const jsbind::String& type);
     /// The `new TextUpdateEvent(..)` constructor, creating a new TextUpdateEvent instance
     TextUpdateEvent(const jsbind::String& type, const TextUpdateEventInit& options);
-    /// Getter of the `updateRangeStart` attribute.
+    /// [`TextUpdateEvent.updateRangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/updateRangeStart)
     /// [`TextUpdateEvent.updateRangeStart`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/updateRangeStart)
     [[nodiscard]] unsigned long updateRangeStart() const;
-    /// Getter of the `updateRangeEnd` attribute.
+    /// [`TextUpdateEvent.updateRangeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/updateRangeEnd)
     /// [`TextUpdateEvent.updateRangeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/updateRangeEnd)
     [[nodiscard]] unsigned long updateRangeEnd() const;
-    /// Getter of the `text` attribute.
+    /// [`TextUpdateEvent.text`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/text)
     /// [`TextUpdateEvent.text`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/text)
     [[nodiscard]] jsbind::String text() const;
-    /// Getter of the `selectionStart` attribute.
+    /// [`TextUpdateEvent.selectionStart`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/selectionStart)
     /// [`TextUpdateEvent.selectionStart`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/selectionStart)
     [[nodiscard]] unsigned long selectionStart() const;
-    /// Getter of the `selectionEnd` attribute.
+    /// [`TextUpdateEvent.selectionEnd`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/selectionEnd)
     /// [`TextUpdateEvent.selectionEnd`](https://developer.mozilla.org/en-US/docs/Web/API/TextUpdateEvent/selectionEnd)
     [[nodiscard]] unsigned long selectionEnd() const;
 };

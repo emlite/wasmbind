@@ -1,14 +1,16 @@
 #include <webbind/TokenBinding.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TokenBinding::TokenBinding(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TokenBinding TokenBinding::take_ownership(Handle h) noexcept {
-        return TokenBinding(h);
-    }
+    return TokenBinding(h);
+}
+
 TokenBinding::TokenBinding(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 TokenBinding::TokenBinding() noexcept: emlite::Val(emlite::Val::object()) {}
+
 TokenBinding TokenBinding::clone() const noexcept { return *this; }
 
 jsbind::String TokenBinding::status() const {

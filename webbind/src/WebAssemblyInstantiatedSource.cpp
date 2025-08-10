@@ -2,15 +2,17 @@
 #include <webbind/Module.hpp>
 #include <webbind/Instance.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WebAssemblyInstantiatedSource::WebAssemblyInstantiatedSource(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebAssemblyInstantiatedSource WebAssemblyInstantiatedSource::take_ownership(Handle h) noexcept {
-        return WebAssemblyInstantiatedSource(h);
-    }
+    return WebAssemblyInstantiatedSource(h);
+}
+
 WebAssemblyInstantiatedSource::WebAssemblyInstantiatedSource(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WebAssemblyInstantiatedSource::WebAssemblyInstantiatedSource() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WebAssemblyInstantiatedSource WebAssemblyInstantiatedSource::clone() const noexcept { return *this; }
 
 Module WebAssemblyInstantiatedSource::module_() const {

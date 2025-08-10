@@ -1,14 +1,16 @@
 #include <webbind/ProfilerFrame.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ProfilerFrame::ProfilerFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ProfilerFrame ProfilerFrame::take_ownership(Handle h) noexcept {
-        return ProfilerFrame(h);
-    }
+    return ProfilerFrame(h);
+}
+
 ProfilerFrame::ProfilerFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ProfilerFrame::ProfilerFrame() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ProfilerFrame ProfilerFrame::clone() const noexcept { return *this; }
 
 jsbind::String ProfilerFrame::name() const {

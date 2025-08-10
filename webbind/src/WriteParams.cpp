@@ -1,14 +1,16 @@
 #include <webbind/WriteParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WriteParams::WriteParams(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WriteParams WriteParams::take_ownership(Handle h) noexcept {
-        return WriteParams(h);
-    }
+    return WriteParams(h);
+}
+
 WriteParams::WriteParams(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WriteParams::WriteParams() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WriteParams WriteParams::clone() const noexcept { return *this; }
 
 WriteCommandType WriteParams::type() const {

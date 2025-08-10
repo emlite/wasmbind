@@ -29,10 +29,10 @@ public:
     /// The suspend method.
     /// [`OfflineAudioContext.suspend`](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/suspend)
     jsbind::Promise<jsbind::Undefined> suspend(double suspendTime);
-    /// Getter of the `length` attribute.
+    /// [`OfflineAudioContext.length`](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/length)
     /// [`OfflineAudioContext.length`](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/length)
     [[nodiscard]] unsigned long length() const;
-    /// Getter of the `oncomplete` attribute.
+    /// [`OfflineAudioContext.oncomplete`](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/oncomplete)
     /// [`OfflineAudioContext.oncomplete`](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/oncomplete)
     [[nodiscard]] jsbind::Any oncomplete() const;
     /// Setter of the `oncomplete` attribute.

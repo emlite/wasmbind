@@ -6,11 +6,15 @@
 namespace webbind {
 
 IdentityProvider IdentityProvider::take_ownership(Handle h) noexcept {
-        return IdentityProvider(h);
-    }
+    return IdentityProvider(h);
+}
+
 IdentityProvider IdentityProvider::clone() const noexcept { return *this; }
+
 emlite::Val IdentityProvider::instance() noexcept { return emlite::Val::global("IdentityProvider"); }
+
 IdentityProvider::IdentityProvider(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 IdentityProvider::IdentityProvider(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined IdentityProvider::close() {

@@ -5,11 +5,15 @@
 namespace webbind {
 
 GPUCanvasContext GPUCanvasContext::take_ownership(Handle h) noexcept {
-        return GPUCanvasContext(h);
-    }
+    return GPUCanvasContext(h);
+}
+
 GPUCanvasContext GPUCanvasContext::clone() const noexcept { return *this; }
+
 emlite::Val GPUCanvasContext::instance() noexcept { return emlite::Val::global("GPUCanvasContext"); }
+
 GPUCanvasContext::GPUCanvasContext(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUCanvasContext::GPUCanvasContext(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Any GPUCanvasContext::canvas() const {

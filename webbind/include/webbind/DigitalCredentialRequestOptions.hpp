@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type DigitalCredentialRequestOptions
-/// [`DigitalCredentialRequestOptions`](https://developer.mozilla.org/en-US/docs/Web/API/DigitalCredentialRequestOptions)
 class DigitalCredentialRequestOptions : public emlite::Val {
   explicit DigitalCredentialRequestOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit DigitalCredentialRequestOptions(const emlite::Val &val) noexcept;
     DigitalCredentialRequestOptions() noexcept;
     [[nodiscard]] DigitalCredentialRequestOptions clone() const noexcept;
+    /// Getter of the `requests` attribute.
     [[nodiscard]] jsbind::TypedArray<DigitalCredentialGetRequest> requests() const;
+    /// Setter of the `requests` attribute.
     void requests(const jsbind::TypedArray<DigitalCredentialGetRequest>& value);
 };
 

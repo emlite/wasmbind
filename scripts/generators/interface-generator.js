@@ -122,16 +122,16 @@ export function generateInterface(interfaceName, interfaceRec, dependencies) {
 
   // Add basic interface implementation
   src.push(`${interfaceName} ${interfaceName}::take_ownership(Handle h) noexcept {
-        return ${interfaceName}(h);
-    }`);
+    return ${interfaceName}(h);
+}`, "");
   src.push(
-    `${interfaceName} ${interfaceName}::clone() const noexcept { return *this; }`
+    `${interfaceName} ${interfaceName}::clone() const noexcept { return *this; }`, ""
   );
   src.push(
-    `emlite::Val ${interfaceName}::instance() noexcept { return emlite::Val::global("${interfaceName}"); }`
+    `emlite::Val ${interfaceName}::instance() noexcept { return emlite::Val::global("${interfaceName}"); }`, ""
   );
   src.push(
-    `${interfaceName}::${interfaceName}(Handle h) noexcept : ${parent}(emlite::Val::take_ownership(h)) {}`
+    `${interfaceName}::${interfaceName}(Handle h) noexcept : ${parent}(emlite::Val::take_ownership(h)) {}`, ""
   );
   src.push(
     `${interfaceName}::${interfaceName}(const emlite::Val &val) noexcept: ${parent}(val) {}`,

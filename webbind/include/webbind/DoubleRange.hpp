@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type DoubleRange
-/// [`DoubleRange`](https://developer.mozilla.org/en-US/docs/Web/API/DoubleRange)
 class DoubleRange : public emlite::Val {
   explicit DoubleRange(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit DoubleRange(const emlite::Val &val) noexcept;
     DoubleRange() noexcept;
     [[nodiscard]] DoubleRange clone() const noexcept;
+    /// Getter of the `max` attribute.
     [[nodiscard]] double max() const;
+    /// Setter of the `max` attribute.
     void max(double value);
+    /// Getter of the `min` attribute.
     [[nodiscard]] double min() const;
+    /// Setter of the `min` attribute.
     void min(double value);
 };
 

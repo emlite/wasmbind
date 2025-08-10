@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PaymentItem
-/// [`PaymentItem`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentItem)
 class PaymentItem : public emlite::Val {
   explicit PaymentItem(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit PaymentItem(const emlite::Val &val) noexcept;
     PaymentItem() noexcept;
     [[nodiscard]] PaymentItem clone() const noexcept;
+    /// Getter of the `label` attribute.
     [[nodiscard]] jsbind::String label() const;
+    /// Setter of the `label` attribute.
     void label(const jsbind::String& value);
+    /// Getter of the `amount` attribute.
     [[nodiscard]] PaymentCurrencyAmount amount() const;
+    /// Setter of the `amount` attribute.
     void amount(const PaymentCurrencyAmount& value);
+    /// Getter of the `pending` attribute.
     [[nodiscard]] bool pending() const;
+    /// Setter of the `pending` attribute.
     void pending(bool value);
 };
 

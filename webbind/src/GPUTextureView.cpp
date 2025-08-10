@@ -3,11 +3,15 @@
 namespace webbind {
 
 GPUTextureView GPUTextureView::take_ownership(Handle h) noexcept {
-        return GPUTextureView(h);
-    }
+    return GPUTextureView(h);
+}
+
 GPUTextureView GPUTextureView::clone() const noexcept { return *this; }
+
 emlite::Val GPUTextureView::instance() noexcept { return emlite::Val::global("GPUTextureView"); }
+
 GPUTextureView::GPUTextureView(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUTextureView::GPUTextureView(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String GPUTextureView::label() const {

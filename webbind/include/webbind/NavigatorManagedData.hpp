@@ -19,7 +19,7 @@ public:
     /// The getManagedConfiguration method.
     /// [`NavigatorManagedData.getManagedConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorManagedData/getManagedConfiguration)
     jsbind::Promise<jsbind::Record<jsbind::String, jsbind::Object>> getManagedConfiguration(const jsbind::TypedArray<jsbind::String>& keys);
-    /// Getter of the `onmanagedconfigurationchange` attribute.
+    /// [`NavigatorManagedData.onmanagedconfigurationchange`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorManagedData/onmanagedconfigurationchange)
     /// [`NavigatorManagedData.onmanagedconfigurationchange`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorManagedData/onmanagedconfigurationchange)
     [[nodiscard]] jsbind::Any onmanagedconfigurationchange() const;
     /// Setter of the `onmanagedconfigurationchange` attribute.

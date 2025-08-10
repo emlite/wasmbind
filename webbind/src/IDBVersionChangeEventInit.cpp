@@ -1,14 +1,16 @@
 #include <webbind/IDBVersionChangeEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 IDBVersionChangeEventInit::IDBVersionChangeEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 IDBVersionChangeEventInit IDBVersionChangeEventInit::take_ownership(Handle h) noexcept {
-        return IDBVersionChangeEventInit(h);
-    }
+    return IDBVersionChangeEventInit(h);
+}
+
 IDBVersionChangeEventInit::IDBVersionChangeEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 IDBVersionChangeEventInit::IDBVersionChangeEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 IDBVersionChangeEventInit IDBVersionChangeEventInit::clone() const noexcept { return *this; }
 
 long long IDBVersionChangeEventInit::oldVersion() const {

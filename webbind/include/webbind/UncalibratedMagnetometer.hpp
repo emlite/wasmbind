@@ -21,22 +21,22 @@ public:
     UncalibratedMagnetometer();
     /// The `new UncalibratedMagnetometer(..)` constructor, creating a new UncalibratedMagnetometer instance
     UncalibratedMagnetometer(const MagnetometerSensorOptions& sensorOptions);
-    /// Getter of the `x` attribute.
+    /// [`UncalibratedMagnetometer.x`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/x)
     /// [`UncalibratedMagnetometer.x`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/x)
     [[nodiscard]] double x() const;
-    /// Getter of the `y` attribute.
+    /// [`UncalibratedMagnetometer.y`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/y)
     /// [`UncalibratedMagnetometer.y`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/y)
     [[nodiscard]] double y() const;
-    /// Getter of the `z` attribute.
+    /// [`UncalibratedMagnetometer.z`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/z)
     /// [`UncalibratedMagnetometer.z`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/z)
     [[nodiscard]] double z() const;
-    /// Getter of the `xBias` attribute.
+    /// [`UncalibratedMagnetometer.xBias`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/xBias)
     /// [`UncalibratedMagnetometer.xBias`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/xBias)
     [[nodiscard]] double xBias() const;
-    /// Getter of the `yBias` attribute.
+    /// [`UncalibratedMagnetometer.yBias`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/yBias)
     /// [`UncalibratedMagnetometer.yBias`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/yBias)
     [[nodiscard]] double yBias() const;
-    /// Getter of the `zBias` attribute.
+    /// [`UncalibratedMagnetometer.zBias`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/zBias)
     /// [`UncalibratedMagnetometer.zBias`](https://developer.mozilla.org/en-US/docs/Web/API/UncalibratedMagnetometer/zBias)
     [[nodiscard]] double zBias() const;
 };

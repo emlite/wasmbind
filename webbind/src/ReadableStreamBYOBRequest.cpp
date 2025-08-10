@@ -3,11 +3,15 @@
 namespace webbind {
 
 ReadableStreamBYOBRequest ReadableStreamBYOBRequest::take_ownership(Handle h) noexcept {
-        return ReadableStreamBYOBRequest(h);
-    }
+    return ReadableStreamBYOBRequest(h);
+}
+
 ReadableStreamBYOBRequest ReadableStreamBYOBRequest::clone() const noexcept { return *this; }
+
 emlite::Val ReadableStreamBYOBRequest::instance() noexcept { return emlite::Val::global("ReadableStreamBYOBRequest"); }
+
 ReadableStreamBYOBRequest::ReadableStreamBYOBRequest(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 ReadableStreamBYOBRequest::ReadableStreamBYOBRequest(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Any ReadableStreamBYOBRequest::view() const {

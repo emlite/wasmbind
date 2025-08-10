@@ -3,15 +3,17 @@
 #include <webbind/RTCRtcpParameters.hpp>
 #include <webbind/RTCRtpCodecParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpParameters::RTCRtpParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCRtpParameters RTCRtpParameters::take_ownership(Handle h) noexcept {
-        return RTCRtpParameters(h);
-    }
+    return RTCRtpParameters(h);
+}
+
 RTCRtpParameters::RTCRtpParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCRtpParameters::RTCRtpParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCRtpParameters RTCRtpParameters::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<RTCRtpHeaderExtensionParameters> RTCRtpParameters::headerExtensions() const {

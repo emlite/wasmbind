@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type USBPermissionStorage
-/// [`USBPermissionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/USBPermissionStorage)
 class USBPermissionStorage : public emlite::Val {
   explicit USBPermissionStorage(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit USBPermissionStorage(const emlite::Val &val) noexcept;
     USBPermissionStorage() noexcept;
     [[nodiscard]] USBPermissionStorage clone() const noexcept;
+    /// Getter of the `allowedDevices` attribute.
     [[nodiscard]] jsbind::TypedArray<AllowedUSBDevice> allowedDevices() const;
+    /// Setter of the `allowedDevices` attribute.
     void allowedDevices(const jsbind::TypedArray<AllowedUSBDevice>& value);
 };
 

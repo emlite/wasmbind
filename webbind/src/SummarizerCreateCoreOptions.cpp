@@ -1,14 +1,16 @@
 #include <webbind/SummarizerCreateCoreOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SummarizerCreateCoreOptions::SummarizerCreateCoreOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SummarizerCreateCoreOptions SummarizerCreateCoreOptions::take_ownership(Handle h) noexcept {
-        return SummarizerCreateCoreOptions(h);
-    }
+    return SummarizerCreateCoreOptions(h);
+}
+
 SummarizerCreateCoreOptions::SummarizerCreateCoreOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SummarizerCreateCoreOptions::SummarizerCreateCoreOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SummarizerCreateCoreOptions SummarizerCreateCoreOptions::clone() const noexcept { return *this; }
 
 SummarizerType SummarizerCreateCoreOptions::type() const {

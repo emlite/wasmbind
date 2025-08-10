@@ -20,10 +20,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLLegendElement(..)` constructor, creating a new HTMLLegendElement instance
     HTMLLegendElement();
-    /// Getter of the `form` attribute.
+    /// [`HTMLLegendElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLegendElement/form)
     /// [`HTMLLegendElement.form`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLegendElement/form)
     [[nodiscard]] HTMLFormElement form() const;
-    /// Getter of the `align` attribute.
+    /// [`HTMLLegendElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLegendElement/align)
     /// [`HTMLLegendElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLegendElement/align)
     [[nodiscard]] jsbind::String align() const;
     /// Setter of the `align` attribute.

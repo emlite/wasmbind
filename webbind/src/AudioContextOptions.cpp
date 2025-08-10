@@ -1,14 +1,16 @@
 #include <webbind/AudioContextOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioContextOptions::AudioContextOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioContextOptions AudioContextOptions::take_ownership(Handle h) noexcept {
-        return AudioContextOptions(h);
-    }
+    return AudioContextOptions(h);
+}
+
 AudioContextOptions::AudioContextOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioContextOptions::AudioContextOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioContextOptions AudioContextOptions::clone() const noexcept { return *this; }
 
 jsbind::Any AudioContextOptions::latencyHint() const {

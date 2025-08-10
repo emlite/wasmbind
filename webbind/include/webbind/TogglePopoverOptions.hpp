@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type TogglePopoverOptions
-/// [`TogglePopoverOptions`](https://developer.mozilla.org/en-US/docs/Web/API/TogglePopoverOptions)
 class TogglePopoverOptions : public ShowPopoverOptions {
   explicit TogglePopoverOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit TogglePopoverOptions(const emlite::Val &val) noexcept;
     TogglePopoverOptions() noexcept;
     [[nodiscard]] TogglePopoverOptions clone() const noexcept;
+    /// Getter of the `force` attribute.
     [[nodiscard]] bool force() const;
+    /// Setter of the `force` attribute.
     void force(bool value);
 };
 

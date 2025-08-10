@@ -17,7 +17,6 @@ export function embedDict(dict, hdr, src, ownerName) {
 
   hdr.push(
     `/// Dictionary type ${dict.name}`,
-    `/// [\`${dict.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${dict.name})`,
     `class ${dict.name} : public ${parentClass} {`,
     `  explicit ${dict.name}(Handle h) noexcept;`,
     "public:",
@@ -33,10 +32,13 @@ export function embedDict(dict, hdr, src, ownerName) {
   src.push(
     `${dict.name}::${dict.name}(Handle h) noexcept : ${parentInit}(emlite::Val::take_ownership(h)) {}`,
     `${dict.name} ${dict.name}::take_ownership(Handle h) noexcept {
-        return ${dict.name}(h);
-    }`,
+    return ${dict.name}(h);
+}`,
+    "",
     `${dict.name}::${dict.name}(const emlite::Val &val) noexcept: ${parentInit}(val) {}`,
+    "",
     `${dict.name}::${dict.name}() noexcept: ${parentInit}(emlite::Val::object()) {}`,
+    "",
     `${dict.name} ${dict.name}::clone() const noexcept { return *this; }`,
     ""
   );
@@ -173,7 +175,7 @@ export function generateDictionary(dictName, dict, dependencies = null) {
   srcInc.forEach((inc) => {
     src.push(`#include <webbind/${inc}>`);
   });
-  src.push("", "using emlite::Val;", "namespace webbind {", "");
+  src.push("", "namespace webbind {", "");
 
   // Add dictionary implementation
   src.push(...dictSrc);

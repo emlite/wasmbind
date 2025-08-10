@@ -22,22 +22,22 @@ public:
     static IDBObjectStore take_ownership(Handle h) noexcept;
     [[nodiscard]] IDBObjectStore clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`IDBObjectStore.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/name)
     /// [`IDBObjectStore.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.
     /// [`IDBObjectStore.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/name)
     void name(const jsbind::String& value);
-    /// Getter of the `keyPath` attribute.
+    /// [`IDBObjectStore.keyPath`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/keyPath)
     /// [`IDBObjectStore.keyPath`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/keyPath)
     [[nodiscard]] jsbind::Any keyPath() const;
-    /// Getter of the `indexNames` attribute.
+    /// [`IDBObjectStore.indexNames`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/indexNames)
     /// [`IDBObjectStore.indexNames`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/indexNames)
     [[nodiscard]] DOMStringList indexNames() const;
-    /// Getter of the `transaction` attribute.
+    /// [`IDBObjectStore.transaction`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/transaction)
     /// [`IDBObjectStore.transaction`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/transaction)
     [[nodiscard]] IDBTransaction transaction() const;
-    /// Getter of the `autoIncrement` attribute.
+    /// [`IDBObjectStore.autoIncrement`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement)
     /// [`IDBObjectStore.autoIncrement`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement)
     [[nodiscard]] bool autoIncrement() const;
     /// The put method.

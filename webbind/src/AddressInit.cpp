@@ -1,14 +1,16 @@
 #include <webbind/AddressInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AddressInit::AddressInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AddressInit AddressInit::take_ownership(Handle h) noexcept {
-        return AddressInit(h);
-    }
+    return AddressInit(h);
+}
+
 AddressInit::AddressInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AddressInit::AddressInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AddressInit AddressInit::clone() const noexcept { return *this; }
 
 jsbind::String AddressInit::country() const {

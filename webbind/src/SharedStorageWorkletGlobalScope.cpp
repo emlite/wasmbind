@@ -7,11 +7,15 @@
 namespace webbind {
 
 SharedStorageWorkletGlobalScope SharedStorageWorkletGlobalScope::take_ownership(Handle h) noexcept {
-        return SharedStorageWorkletGlobalScope(h);
-    }
+    return SharedStorageWorkletGlobalScope(h);
+}
+
 SharedStorageWorkletGlobalScope SharedStorageWorkletGlobalScope::clone() const noexcept { return *this; }
+
 emlite::Val SharedStorageWorkletGlobalScope::instance() noexcept { return emlite::Val::global("SharedStorageWorkletGlobalScope"); }
+
 SharedStorageWorkletGlobalScope::SharedStorageWorkletGlobalScope(Handle h) noexcept : WorkletGlobalScope(emlite::Val::take_ownership(h)) {}
+
 SharedStorageWorkletGlobalScope::SharedStorageWorkletGlobalScope(const emlite::Val &val) noexcept: WorkletGlobalScope(val) {}
 
 jsbind::Undefined SharedStorageWorkletGlobalScope::register_(const jsbind::String& name, const jsbind::Function& operationCtor) {

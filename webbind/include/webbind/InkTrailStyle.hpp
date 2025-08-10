@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type InkTrailStyle
-/// [`InkTrailStyle`](https://developer.mozilla.org/en-US/docs/Web/API/InkTrailStyle)
 class InkTrailStyle : public emlite::Val {
   explicit InkTrailStyle(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit InkTrailStyle(const emlite::Val &val) noexcept;
     InkTrailStyle() noexcept;
     [[nodiscard]] InkTrailStyle clone() const noexcept;
+    /// Getter of the `color` attribute.
     [[nodiscard]] jsbind::String color() const;
+    /// Setter of the `color` attribute.
     void color(const jsbind::String& value);
+    /// Getter of the `diameter` attribute.
     [[nodiscard]] double diameter() const;
+    /// Setter of the `diameter` attribute.
     void diameter(double value);
 };
 

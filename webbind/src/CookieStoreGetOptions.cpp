@@ -1,14 +1,16 @@
 #include <webbind/CookieStoreGetOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CookieStoreGetOptions::CookieStoreGetOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CookieStoreGetOptions CookieStoreGetOptions::take_ownership(Handle h) noexcept {
-        return CookieStoreGetOptions(h);
-    }
+    return CookieStoreGetOptions(h);
+}
+
 CookieStoreGetOptions::CookieStoreGetOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CookieStoreGetOptions::CookieStoreGetOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CookieStoreGetOptions CookieStoreGetOptions::clone() const noexcept { return *this; }
 
 jsbind::String CookieStoreGetOptions::name() const {

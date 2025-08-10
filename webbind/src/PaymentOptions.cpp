@@ -1,14 +1,16 @@
 #include <webbind/PaymentOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentOptions::PaymentOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentOptions PaymentOptions::take_ownership(Handle h) noexcept {
-        return PaymentOptions(h);
-    }
+    return PaymentOptions(h);
+}
+
 PaymentOptions::PaymentOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentOptions::PaymentOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentOptions PaymentOptions::clone() const noexcept { return *this; }
 
 bool PaymentOptions::requestPayerName() const {

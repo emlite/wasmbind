@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ContentVisibilityAutoStateChangeEventInit
-/// [`ContentVisibilityAutoStateChangeEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/ContentVisibilityAutoStateChangeEventInit)
 class ContentVisibilityAutoStateChangeEventInit : public EventInit {
   explicit ContentVisibilityAutoStateChangeEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit ContentVisibilityAutoStateChangeEventInit(const emlite::Val &val) noexcept;
     ContentVisibilityAutoStateChangeEventInit() noexcept;
     [[nodiscard]] ContentVisibilityAutoStateChangeEventInit clone() const noexcept;
+    /// Getter of the `skipped` attribute.
     [[nodiscard]] bool skipped() const;
+    /// Setter of the `skipped` attribute.
     void skipped(bool value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/LockInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 LockInfo::LockInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LockInfo LockInfo::take_ownership(Handle h) noexcept {
-        return LockInfo(h);
-    }
+    return LockInfo(h);
+}
+
 LockInfo::LockInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 LockInfo::LockInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 LockInfo LockInfo::clone() const noexcept { return *this; }
 
 jsbind::String LockInfo::name() const {

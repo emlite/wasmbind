@@ -4,11 +4,15 @@
 namespace webbind {
 
 Permissions Permissions::take_ownership(Handle h) noexcept {
-        return Permissions(h);
-    }
+    return Permissions(h);
+}
+
 Permissions Permissions::clone() const noexcept { return *this; }
+
 emlite::Val Permissions::instance() noexcept { return emlite::Val::global("Permissions"); }
+
 Permissions::Permissions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Permissions::Permissions(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<PermissionStatus> Permissions::query(const jsbind::Object& permissionDesc) {

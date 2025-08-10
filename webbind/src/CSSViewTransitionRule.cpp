@@ -3,11 +3,15 @@
 namespace webbind {
 
 CSSViewTransitionRule CSSViewTransitionRule::take_ownership(Handle h) noexcept {
-        return CSSViewTransitionRule(h);
-    }
+    return CSSViewTransitionRule(h);
+}
+
 CSSViewTransitionRule CSSViewTransitionRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSViewTransitionRule::instance() noexcept { return emlite::Val::global("CSSViewTransitionRule"); }
+
 CSSViewTransitionRule::CSSViewTransitionRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
+
 CSSViewTransitionRule::CSSViewTransitionRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 jsbind::String CSSViewTransitionRule::navigation() const {

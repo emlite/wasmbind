@@ -19,13 +19,13 @@ public:
     static WindowClient take_ownership(Handle h) noexcept;
     [[nodiscard]] WindowClient clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `visibilityState` attribute.
+    /// [`WindowClient.visibilityState`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/visibilityState)
     /// [`WindowClient.visibilityState`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/visibilityState)
     [[nodiscard]] DocumentVisibilityState visibilityState() const;
-    /// Getter of the `focused` attribute.
+    /// [`WindowClient.focused`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/focused)
     /// [`WindowClient.focused`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/focused)
     [[nodiscard]] bool focused() const;
-    /// Getter of the `ancestorOrigins` attribute.
+    /// [`WindowClient.ancestorOrigins`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/ancestorOrigins)
     /// [`WindowClient.ancestorOrigins`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/ancestorOrigins)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> ancestorOrigins() const;
     /// The focus method.

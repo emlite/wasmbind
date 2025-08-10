@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MLLogicalNotSupportLimits
-/// [`MLLogicalNotSupportLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLLogicalNotSupportLimits)
 class MLLogicalNotSupportLimits : public emlite::Val {
   explicit MLLogicalNotSupportLimits(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit MLLogicalNotSupportLimits(const emlite::Val &val) noexcept;
     MLLogicalNotSupportLimits() noexcept;
     [[nodiscard]] MLLogicalNotSupportLimits clone() const noexcept;
+    /// Getter of the `a` attribute.
     [[nodiscard]] MLTensorLimits a() const;
+    /// Setter of the `a` attribute.
     void a(const MLTensorLimits& value);
+    /// Getter of the `output` attribute.
     [[nodiscard]] MLDataTypeLimits output() const;
+    /// Setter of the `output` attribute.
     void output(const MLDataTypeLimits& value);
 };
 

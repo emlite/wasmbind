@@ -1,14 +1,16 @@
 #include <webbind/RegistrationOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RegistrationOptions::RegistrationOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RegistrationOptions RegistrationOptions::take_ownership(Handle h) noexcept {
-        return RegistrationOptions(h);
-    }
+    return RegistrationOptions(h);
+}
+
 RegistrationOptions::RegistrationOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RegistrationOptions::RegistrationOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RegistrationOptions RegistrationOptions::clone() const noexcept { return *this; }
 
 jsbind::String RegistrationOptions::scope() const {

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ColorSelectionResult
-/// [`ColorSelectionResult`](https://developer.mozilla.org/en-US/docs/Web/API/ColorSelectionResult)
 class ColorSelectionResult : public emlite::Val {
   explicit ColorSelectionResult(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ColorSelectionResult(const emlite::Val &val) noexcept;
     ColorSelectionResult() noexcept;
     [[nodiscard]] ColorSelectionResult clone() const noexcept;
+    /// Getter of the `sRGBHex` attribute.
     [[nodiscard]] jsbind::String sRGBHex() const;
+    /// Setter of the `sRGBHex` attribute.
     void sRGBHex(const jsbind::String& value);
 };
 

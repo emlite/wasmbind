@@ -1,14 +1,16 @@
 #include <webbind/OpusEncoderConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 OpusEncoderConfig::OpusEncoderConfig(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 OpusEncoderConfig OpusEncoderConfig::take_ownership(Handle h) noexcept {
-        return OpusEncoderConfig(h);
-    }
+    return OpusEncoderConfig(h);
+}
+
 OpusEncoderConfig::OpusEncoderConfig(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 OpusEncoderConfig::OpusEncoderConfig() noexcept: emlite::Val(emlite::Val::object()) {}
+
 OpusEncoderConfig OpusEncoderConfig::clone() const noexcept { return *this; }
 
 OpusBitstreamFormat OpusEncoderConfig::format() const {

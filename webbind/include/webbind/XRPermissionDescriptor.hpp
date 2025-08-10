@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type XRPermissionDescriptor
-/// [`XRPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/XRPermissionDescriptor)
 class XRPermissionDescriptor : public PermissionDescriptor {
   explicit XRPermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit XRPermissionDescriptor(const emlite::Val &val) noexcept;
     XRPermissionDescriptor() noexcept;
     [[nodiscard]] XRPermissionDescriptor clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] XRSessionMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const XRSessionMode& value);
+    /// Getter of the `requiredFeatures` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> requiredFeatures() const;
+    /// Setter of the `requiredFeatures` attribute.
     void requiredFeatures(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `optionalFeatures` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> optionalFeatures() const;
+    /// Setter of the `optionalFeatures` attribute.
     void optionalFeatures(const jsbind::TypedArray<jsbind::String>& value);
 };
 

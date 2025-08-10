@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type TranslatorTranslateOptions
-/// [`TranslatorTranslateOptions`](https://developer.mozilla.org/en-US/docs/Web/API/TranslatorTranslateOptions)
 class TranslatorTranslateOptions : public emlite::Val {
   explicit TranslatorTranslateOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit TranslatorTranslateOptions(const emlite::Val &val) noexcept;
     TranslatorTranslateOptions() noexcept;
     [[nodiscard]] TranslatorTranslateOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

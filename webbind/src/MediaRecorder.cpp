@@ -5,11 +5,15 @@
 namespace webbind {
 
 MediaRecorder MediaRecorder::take_ownership(Handle h) noexcept {
-        return MediaRecorder(h);
-    }
+    return MediaRecorder(h);
+}
+
 MediaRecorder MediaRecorder::clone() const noexcept { return *this; }
+
 emlite::Val MediaRecorder::instance() noexcept { return emlite::Val::global("MediaRecorder"); }
+
 MediaRecorder::MediaRecorder(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 MediaRecorder::MediaRecorder(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 MediaRecorder::MediaRecorder(const MediaStream& stream) : EventTarget(emlite::Val::global("MediaRecorder").new_(stream)) {}

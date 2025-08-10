@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type HevcEncoderConfig
-/// [`HevcEncoderConfig`](https://developer.mozilla.org/en-US/docs/Web/API/HevcEncoderConfig)
 class HevcEncoderConfig : public emlite::Val {
   explicit HevcEncoderConfig(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit HevcEncoderConfig(const emlite::Val &val) noexcept;
     HevcEncoderConfig() noexcept;
     [[nodiscard]] HevcEncoderConfig clone() const noexcept;
+    /// Getter of the `format` attribute.
     [[nodiscard]] HevcBitstreamFormat format() const;
+    /// Setter of the `format` attribute.
     void format(const HevcBitstreamFormat& value);
 };
 

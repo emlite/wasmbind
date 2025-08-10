@@ -9,7 +9,6 @@ namespace webbind {
 class Element;
 
 /// Dictionary type InkPresenterParam
-/// [`InkPresenterParam`](https://developer.mozilla.org/en-US/docs/Web/API/InkPresenterParam)
 class InkPresenterParam : public emlite::Val {
   explicit InkPresenterParam(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit InkPresenterParam(const emlite::Val &val) noexcept;
     InkPresenterParam() noexcept;
     [[nodiscard]] InkPresenterParam clone() const noexcept;
+    /// Getter of the `presentationArea` attribute.
     [[nodiscard]] Element presentationArea() const;
+    /// Setter of the `presentationArea` attribute.
     void presentationArea(const Element& value);
 };
 

@@ -1,15 +1,17 @@
 #include <webbind/MLInstanceNormalizationOptions.hpp>
 #include <webbind/MLOperand.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLInstanceNormalizationOptions::MLInstanceNormalizationOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLInstanceNormalizationOptions MLInstanceNormalizationOptions::take_ownership(Handle h) noexcept {
-        return MLInstanceNormalizationOptions(h);
-    }
+    return MLInstanceNormalizationOptions(h);
+}
+
 MLInstanceNormalizationOptions::MLInstanceNormalizationOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLInstanceNormalizationOptions::MLInstanceNormalizationOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLInstanceNormalizationOptions MLInstanceNormalizationOptions::clone() const noexcept { return *this; }
 
 MLOperand MLInstanceNormalizationOptions::scale() const {

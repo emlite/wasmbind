@@ -25,16 +25,16 @@ public:
     DeviceMotionEvent(const jsbind::String& type);
     /// The `new DeviceMotionEvent(..)` constructor, creating a new DeviceMotionEvent instance
     DeviceMotionEvent(const jsbind::String& type, const DeviceMotionEventInit& eventInitDict);
-    /// Getter of the `acceleration` attribute.
+    /// [`DeviceMotionEvent.acceleration`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/acceleration)
     /// [`DeviceMotionEvent.acceleration`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/acceleration)
     [[nodiscard]] DeviceMotionEventAcceleration acceleration() const;
-    /// Getter of the `accelerationIncludingGravity` attribute.
+    /// [`DeviceMotionEvent.accelerationIncludingGravity`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/accelerationIncludingGravity)
     /// [`DeviceMotionEvent.accelerationIncludingGravity`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/accelerationIncludingGravity)
     [[nodiscard]] DeviceMotionEventAcceleration accelerationIncludingGravity() const;
-    /// Getter of the `rotationRate` attribute.
+    /// [`DeviceMotionEvent.rotationRate`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/rotationRate)
     /// [`DeviceMotionEvent.rotationRate`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/rotationRate)
     [[nodiscard]] DeviceMotionEventRotationRate rotationRate() const;
-    /// Getter of the `interval` attribute.
+    /// [`DeviceMotionEvent.interval`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/interval)
     /// [`DeviceMotionEvent.interval`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/interval)
     [[nodiscard]] double interval() const;
     /// The requestPermission method.

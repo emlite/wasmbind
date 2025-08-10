@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PublicKeyCredentialUserEntityJSON
-/// [`PublicKeyCredentialUserEntityJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialUserEntityJSON)
 class PublicKeyCredentialUserEntityJSON : public emlite::Val {
   explicit PublicKeyCredentialUserEntityJSON(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit PublicKeyCredentialUserEntityJSON(const emlite::Val &val) noexcept;
     PublicKeyCredentialUserEntityJSON() noexcept;
     [[nodiscard]] PublicKeyCredentialUserEntityJSON clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::Any id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::Any& value);
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
+    /// Getter of the `displayName` attribute.
     [[nodiscard]] jsbind::String displayName() const;
+    /// Setter of the `displayName` attribute.
     void displayName(const jsbind::String& value);
 };
 

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PaymentMethodData
-/// [`PaymentMethodData`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodData)
 class PaymentMethodData : public emlite::Val {
   explicit PaymentMethodData(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit PaymentMethodData(const emlite::Val &val) noexcept;
     PaymentMethodData() noexcept;
     [[nodiscard]] PaymentMethodData clone() const noexcept;
+    /// Getter of the `supportedMethods` attribute.
     [[nodiscard]] jsbind::String supportedMethods() const;
+    /// Setter of the `supportedMethods` attribute.
     void supportedMethods(const jsbind::String& value);
+    /// Getter of the `data` attribute.
     [[nodiscard]] jsbind::Object data() const;
+    /// Setter of the `data` attribute.
     void data(const jsbind::Object& value);
 };
 

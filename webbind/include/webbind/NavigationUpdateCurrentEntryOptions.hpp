@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type NavigationUpdateCurrentEntryOptions
-/// [`NavigationUpdateCurrentEntryOptions`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationUpdateCurrentEntryOptions)
 class NavigationUpdateCurrentEntryOptions : public emlite::Val {
   explicit NavigationUpdateCurrentEntryOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit NavigationUpdateCurrentEntryOptions(const emlite::Val &val) noexcept;
     NavigationUpdateCurrentEntryOptions() noexcept;
     [[nodiscard]] NavigationUpdateCurrentEntryOptions clone() const noexcept;
+    /// Getter of the `state` attribute.
     [[nodiscard]] jsbind::Any state() const;
+    /// Setter of the `state` attribute.
     void state(const jsbind::Any& value);
 };
 

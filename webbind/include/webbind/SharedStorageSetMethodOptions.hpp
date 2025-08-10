@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type SharedStorageSetMethodOptions
-/// [`SharedStorageSetMethodOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageSetMethodOptions)
 class SharedStorageSetMethodOptions : public SharedStorageModifierMethodOptions {
   explicit SharedStorageSetMethodOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit SharedStorageSetMethodOptions(const emlite::Val &val) noexcept;
     SharedStorageSetMethodOptions() noexcept;
     [[nodiscard]] SharedStorageSetMethodOptions clone() const noexcept;
+    /// Getter of the `ignoreIfPresent` attribute.
     [[nodiscard]] bool ignoreIfPresent() const;
+    /// Setter of the `ignoreIfPresent` attribute.
     void ignoreIfPresent(bool value);
 };
 

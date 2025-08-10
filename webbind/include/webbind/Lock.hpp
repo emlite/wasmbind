@@ -16,10 +16,10 @@ public:
     static Lock take_ownership(Handle h) noexcept;
     [[nodiscard]] Lock clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`Lock.name`](https://developer.mozilla.org/en-US/docs/Web/API/Lock/name)
     /// [`Lock.name`](https://developer.mozilla.org/en-US/docs/Web/API/Lock/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `mode` attribute.
+    /// [`Lock.mode`](https://developer.mozilla.org/en-US/docs/Web/API/Lock/mode)
     /// [`Lock.mode`](https://developer.mozilla.org/en-US/docs/Web/API/Lock/mode)
     [[nodiscard]] LockMode mode() const;
 };

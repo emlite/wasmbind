@@ -24,43 +24,43 @@ public:
     static SVGElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `className` attribute.
+    /// [`SVGElement.className`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/className)
     /// [`SVGElement.className`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/className)
     [[nodiscard]] SVGAnimatedString className() const;
-    /// Getter of the `ownerSVGElement` attribute.
+    /// [`SVGElement.ownerSVGElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/ownerSVGElement)
     /// [`SVGElement.ownerSVGElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/ownerSVGElement)
     [[nodiscard]] SVGSVGElement ownerSVGElement() const;
-    /// Getter of the `viewportElement` attribute.
+    /// [`SVGElement.viewportElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/viewportElement)
     /// [`SVGElement.viewportElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/viewportElement)
     [[nodiscard]] SVGElement viewportElement() const;
-    /// Getter of the `onbeforexrselect` attribute.
+    /// [`SVGElement.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/onbeforexrselect)
     /// [`SVGElement.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/onbeforexrselect)
     [[nodiscard]] jsbind::Any onbeforexrselect() const;
     /// Setter of the `onbeforexrselect` attribute.
     /// [`SVGElement.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/onbeforexrselect)
     void onbeforexrselect(const jsbind::Any& value);
-    /// Getter of the `correspondingElement` attribute.
+    /// [`SVGElement.correspondingElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/correspondingElement)
     /// [`SVGElement.correspondingElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/correspondingElement)
     [[nodiscard]] SVGElement correspondingElement() const;
-    /// Getter of the `correspondingUseElement` attribute.
+    /// [`SVGElement.correspondingUseElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/correspondingUseElement)
     /// [`SVGElement.correspondingUseElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/correspondingUseElement)
     [[nodiscard]] SVGUseElement correspondingUseElement() const;
-    /// Getter of the `dataset` attribute.
+    /// [`SVGElement.dataset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/dataset)
     /// [`SVGElement.dataset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/dataset)
     [[nodiscard]] DOMStringMap dataset() const;
-    /// Getter of the `nonce` attribute.
+    /// [`SVGElement.nonce`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/nonce)
     /// [`SVGElement.nonce`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/nonce)
     [[nodiscard]] jsbind::String nonce() const;
     /// Setter of the `nonce` attribute.
     /// [`SVGElement.nonce`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/nonce)
     void nonce(const jsbind::String& value);
-    /// Getter of the `autofocus` attribute.
+    /// [`SVGElement.autofocus`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/autofocus)
     /// [`SVGElement.autofocus`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/autofocus)
     [[nodiscard]] bool autofocus() const;
     /// Setter of the `autofocus` attribute.
     /// [`SVGElement.autofocus`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/autofocus)
     void autofocus(bool value);
-    /// Getter of the `tabIndex` attribute.
+    /// [`SVGElement.tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/tabIndex)
     /// [`SVGElement.tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/tabIndex)
     [[nodiscard]] long tabIndex() const;
     /// Setter of the `tabIndex` attribute.
@@ -75,7 +75,7 @@ public:
     /// The blur method.
     /// [`SVGElement.blur`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/blur)
     jsbind::Undefined blur();
-    /// Getter of the `style` attribute.
+    /// [`SVGElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/style)
     /// [`SVGElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/style)
     [[nodiscard]] CSSStyleDeclaration style() const;
 };

@@ -1,14 +1,16 @@
 #include <webbind/GPUCopyExternalImageSourceInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUCopyExternalImageSourceInfo::GPUCopyExternalImageSourceInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUCopyExternalImageSourceInfo GPUCopyExternalImageSourceInfo::take_ownership(Handle h) noexcept {
-        return GPUCopyExternalImageSourceInfo(h);
-    }
+    return GPUCopyExternalImageSourceInfo(h);
+}
+
 GPUCopyExternalImageSourceInfo::GPUCopyExternalImageSourceInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUCopyExternalImageSourceInfo::GPUCopyExternalImageSourceInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUCopyExternalImageSourceInfo GPUCopyExternalImageSourceInfo::clone() const noexcept { return *this; }
 
 jsbind::Any GPUCopyExternalImageSourceInfo::source() const {

@@ -38,6 +38,7 @@ public:
     jsbind::TypedArray<PressureRecord> takeRecords();
     /// Getter of the `knownSources` static attribute.
     /// [`PressureObserver.knownSources`](https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver/knownSources)
+    /// [`PressureObserver.knownSources`](https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver/knownSources)
     [[nodiscard]] static jsbind::TypedArray<PressureSource> knownSources();
 };
 

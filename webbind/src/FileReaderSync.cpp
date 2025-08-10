@@ -4,11 +4,15 @@
 namespace webbind {
 
 FileReaderSync FileReaderSync::take_ownership(Handle h) noexcept {
-        return FileReaderSync(h);
-    }
+    return FileReaderSync(h);
+}
+
 FileReaderSync FileReaderSync::clone() const noexcept { return *this; }
+
 emlite::Val FileReaderSync::instance() noexcept { return emlite::Val::global("FileReaderSync"); }
+
 FileReaderSync::FileReaderSync(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 FileReaderSync::FileReaderSync(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 FileReaderSync::FileReaderSync() : emlite::Val(emlite::Val::global("FileReaderSync").new_()) {}

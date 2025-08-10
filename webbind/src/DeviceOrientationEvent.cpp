@@ -4,11 +4,15 @@
 namespace webbind {
 
 DeviceOrientationEvent DeviceOrientationEvent::take_ownership(Handle h) noexcept {
-        return DeviceOrientationEvent(h);
-    }
+    return DeviceOrientationEvent(h);
+}
+
 DeviceOrientationEvent DeviceOrientationEvent::clone() const noexcept { return *this; }
+
 emlite::Val DeviceOrientationEvent::instance() noexcept { return emlite::Val::global("DeviceOrientationEvent"); }
+
 DeviceOrientationEvent::DeviceOrientationEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 DeviceOrientationEvent::DeviceOrientationEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 DeviceOrientationEvent::DeviceOrientationEvent(const jsbind::String& type) : Event(emlite::Val::global("DeviceOrientationEvent").new_(type)) {}

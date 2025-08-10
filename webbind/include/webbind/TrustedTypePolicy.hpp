@@ -19,7 +19,7 @@ public:
     static TrustedTypePolicy take_ownership(Handle h) noexcept;
     [[nodiscard]] TrustedTypePolicy clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`TrustedTypePolicy.name`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicy/name)
     /// [`TrustedTypePolicy.name`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicy/name)
     [[nodiscard]] jsbind::String name() const;
     /// The createHTML method.

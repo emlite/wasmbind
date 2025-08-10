@@ -23,13 +23,13 @@ public:
     /// The unlock method.
     /// [`ScreenOrientation.unlock`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/unlock)
     jsbind::Undefined unlock();
-    /// Getter of the `type` attribute.
+    /// [`ScreenOrientation.type`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/type)
     /// [`ScreenOrientation.type`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/type)
     [[nodiscard]] OrientationType type() const;
-    /// Getter of the `angle` attribute.
+    /// [`ScreenOrientation.angle`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/angle)
     /// [`ScreenOrientation.angle`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/angle)
     [[nodiscard]] unsigned short angle() const;
-    /// Getter of the `onchange` attribute.
+    /// [`ScreenOrientation.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/onchange)
     /// [`ScreenOrientation.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

@@ -10,7 +10,6 @@ namespace webbind {
 class HIDDevice;
 
 /// Dictionary type HIDConnectionEventInit
-/// [`HIDConnectionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/HIDConnectionEventInit)
 class HIDConnectionEventInit : public EventInit {
   explicit HIDConnectionEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit HIDConnectionEventInit(const emlite::Val &val) noexcept;
     HIDConnectionEventInit() noexcept;
     [[nodiscard]] HIDConnectionEventInit clone() const noexcept;
+    /// Getter of the `device` attribute.
     [[nodiscard]] HIDDevice device() const;
+    /// Setter of the `device` attribute.
     void device(const HIDDevice& value);
 };
 

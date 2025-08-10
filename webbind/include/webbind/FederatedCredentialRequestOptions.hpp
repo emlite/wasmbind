@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FederatedCredentialRequestOptions
-/// [`FederatedCredentialRequestOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredentialRequestOptions)
 class FederatedCredentialRequestOptions : public emlite::Val {
   explicit FederatedCredentialRequestOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit FederatedCredentialRequestOptions(const emlite::Val &val) noexcept;
     FederatedCredentialRequestOptions() noexcept;
     [[nodiscard]] FederatedCredentialRequestOptions clone() const noexcept;
+    /// Getter of the `providers` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> providers() const;
+    /// Setter of the `providers` attribute.
     void providers(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `protocols` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> protocols() const;
+    /// Setter of the `protocols` attribute.
     void protocols(const jsbind::TypedArray<jsbind::String>& value);
 };
 

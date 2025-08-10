@@ -5,15 +5,17 @@
 #include <webbind/PaymentOptions.hpp>
 #include <webbind/PaymentShippingOption.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentRequestEventInit::PaymentRequestEventInit(Handle h) noexcept : ExtendableEventInit(emlite::Val::take_ownership(h)) {}
 PaymentRequestEventInit PaymentRequestEventInit::take_ownership(Handle h) noexcept {
-        return PaymentRequestEventInit(h);
-    }
+    return PaymentRequestEventInit(h);
+}
+
 PaymentRequestEventInit::PaymentRequestEventInit(const emlite::Val &val) noexcept: ExtendableEventInit(val) {}
+
 PaymentRequestEventInit::PaymentRequestEventInit() noexcept: ExtendableEventInit(emlite::Val::object()) {}
+
 PaymentRequestEventInit PaymentRequestEventInit::clone() const noexcept { return *this; }
 
 jsbind::String PaymentRequestEventInit::topOrigin() const {

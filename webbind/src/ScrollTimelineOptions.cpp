@@ -1,15 +1,17 @@
 #include <webbind/ScrollTimelineOptions.hpp>
 #include <webbind/Element.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ScrollTimelineOptions::ScrollTimelineOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ScrollTimelineOptions ScrollTimelineOptions::take_ownership(Handle h) noexcept {
-        return ScrollTimelineOptions(h);
-    }
+    return ScrollTimelineOptions(h);
+}
+
 ScrollTimelineOptions::ScrollTimelineOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ScrollTimelineOptions::ScrollTimelineOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ScrollTimelineOptions ScrollTimelineOptions::clone() const noexcept { return *this; }
 
 Element ScrollTimelineOptions::source() const {

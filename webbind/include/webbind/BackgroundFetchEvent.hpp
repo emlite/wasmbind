@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new BackgroundFetchEvent(..)` constructor, creating a new BackgroundFetchEvent instance
     BackgroundFetchEvent(const jsbind::String& type, const BackgroundFetchEventInit& init);
-    /// Getter of the `registration` attribute.
+    /// [`BackgroundFetchEvent.registration`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEvent/registration)
     /// [`BackgroundFetchEvent.registration`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEvent/registration)
     [[nodiscard]] BackgroundFetchRegistration registration() const;
 };

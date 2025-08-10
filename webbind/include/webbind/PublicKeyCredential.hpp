@@ -26,13 +26,13 @@ public:
     static PublicKeyCredential take_ownership(Handle h) noexcept;
     [[nodiscard]] PublicKeyCredential clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `rawId` attribute.
+    /// [`PublicKeyCredential.rawId`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/rawId)
     /// [`PublicKeyCredential.rawId`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/rawId)
     [[nodiscard]] jsbind::ArrayBuffer rawId() const;
-    /// Getter of the `response` attribute.
+    /// [`PublicKeyCredential.response`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/response)
     /// [`PublicKeyCredential.response`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/response)
     [[nodiscard]] AuthenticatorResponse response() const;
-    /// Getter of the `authenticatorAttachment` attribute.
+    /// [`PublicKeyCredential.authenticatorAttachment`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/authenticatorAttachment)
     /// [`PublicKeyCredential.authenticatorAttachment`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/authenticatorAttachment)
     [[nodiscard]] jsbind::String authenticatorAttachment() const;
     /// The getClientExtensionResults method.

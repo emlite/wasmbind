@@ -1,15 +1,17 @@
 #include <webbind/NDEFWriteOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 NDEFWriteOptions::NDEFWriteOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 NDEFWriteOptions NDEFWriteOptions::take_ownership(Handle h) noexcept {
-        return NDEFWriteOptions(h);
-    }
+    return NDEFWriteOptions(h);
+}
+
 NDEFWriteOptions::NDEFWriteOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 NDEFWriteOptions::NDEFWriteOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 NDEFWriteOptions NDEFWriteOptions::clone() const noexcept { return *this; }
 
 bool NDEFWriteOptions::overwrite() const {

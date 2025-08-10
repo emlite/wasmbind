@@ -6,11 +6,15 @@
 namespace webbind {
 
 ConstantSourceNode ConstantSourceNode::take_ownership(Handle h) noexcept {
-        return ConstantSourceNode(h);
-    }
+    return ConstantSourceNode(h);
+}
+
 ConstantSourceNode ConstantSourceNode::clone() const noexcept { return *this; }
+
 emlite::Val ConstantSourceNode::instance() noexcept { return emlite::Val::global("ConstantSourceNode"); }
+
 ConstantSourceNode::ConstantSourceNode(Handle h) noexcept : AudioScheduledSourceNode(emlite::Val::take_ownership(h)) {}
+
 ConstantSourceNode::ConstantSourceNode(const emlite::Val &val) noexcept: AudioScheduledSourceNode(val) {}
 
 ConstantSourceNode::ConstantSourceNode(const BaseAudioContext& context) : AudioScheduledSourceNode(emlite::Val::global("ConstantSourceNode").new_(context)) {}

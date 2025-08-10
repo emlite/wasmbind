@@ -4,11 +4,15 @@
 namespace webbind {
 
 FileSystemEntry FileSystemEntry::take_ownership(Handle h) noexcept {
-        return FileSystemEntry(h);
-    }
+    return FileSystemEntry(h);
+}
+
 FileSystemEntry FileSystemEntry::clone() const noexcept { return *this; }
+
 emlite::Val FileSystemEntry::instance() noexcept { return emlite::Val::global("FileSystemEntry"); }
+
 FileSystemEntry::FileSystemEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 FileSystemEntry::FileSystemEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 bool FileSystemEntry::isFile() const {

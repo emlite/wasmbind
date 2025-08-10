@@ -1,15 +1,17 @@
 #include <webbind/PaymentHandlerResponse.hpp>
 #include <webbind/AddressInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentHandlerResponse::PaymentHandlerResponse(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentHandlerResponse PaymentHandlerResponse::take_ownership(Handle h) noexcept {
-        return PaymentHandlerResponse(h);
-    }
+    return PaymentHandlerResponse(h);
+}
+
 PaymentHandlerResponse::PaymentHandlerResponse(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentHandlerResponse::PaymentHandlerResponse() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentHandlerResponse PaymentHandlerResponse::clone() const noexcept { return *this; }
 
 jsbind::String PaymentHandlerResponse::methodName() const {

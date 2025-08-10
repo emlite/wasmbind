@@ -1,14 +1,16 @@
 #include <webbind/AttributionAggregationService.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AttributionAggregationService::AttributionAggregationService(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AttributionAggregationService AttributionAggregationService::take_ownership(Handle h) noexcept {
-        return AttributionAggregationService(h);
-    }
+    return AttributionAggregationService(h);
+}
+
 AttributionAggregationService::AttributionAggregationService(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AttributionAggregationService::AttributionAggregationService() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AttributionAggregationService AttributionAggregationService::clone() const noexcept { return *this; }
 
 jsbind::String AttributionAggregationService::protocol() const {

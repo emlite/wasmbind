@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SFrameTransformOptions
-/// [`SFrameTransformOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformOptions)
 class SFrameTransformOptions : public emlite::Val {
   explicit SFrameTransformOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit SFrameTransformOptions(const emlite::Val &val) noexcept;
     SFrameTransformOptions() noexcept;
     [[nodiscard]] SFrameTransformOptions clone() const noexcept;
+    /// Getter of the `role` attribute.
     [[nodiscard]] SFrameTransformRole role() const;
+    /// Setter of the `role` attribute.
     void role(const SFrameTransformRole& value);
 };
 

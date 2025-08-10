@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ReadableStreamIteratorOptions
-/// [`ReadableStreamIteratorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamIteratorOptions)
 class ReadableStreamIteratorOptions : public emlite::Val {
   explicit ReadableStreamIteratorOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ReadableStreamIteratorOptions(const emlite::Val &val) noexcept;
     ReadableStreamIteratorOptions() noexcept;
     [[nodiscard]] ReadableStreamIteratorOptions clone() const noexcept;
+    /// Getter of the `preventCancel` attribute.
     [[nodiscard]] bool preventCancel() const;
+    /// Setter of the `preventCancel` attribute.
     void preventCancel(bool value);
 };
 

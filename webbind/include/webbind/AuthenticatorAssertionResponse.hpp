@@ -16,13 +16,13 @@ public:
     static AuthenticatorAssertionResponse take_ownership(Handle h) noexcept;
     [[nodiscard]] AuthenticatorAssertionResponse clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `authenticatorData` attribute.
+    /// [`AuthenticatorAssertionResponse.authenticatorData`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/authenticatorData)
     /// [`AuthenticatorAssertionResponse.authenticatorData`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/authenticatorData)
     [[nodiscard]] jsbind::ArrayBuffer authenticatorData() const;
-    /// Getter of the `signature` attribute.
+    /// [`AuthenticatorAssertionResponse.signature`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/signature)
     /// [`AuthenticatorAssertionResponse.signature`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/signature)
     [[nodiscard]] jsbind::ArrayBuffer signature() const;
-    /// Getter of the `userHandle` attribute.
+    /// [`AuthenticatorAssertionResponse.userHandle`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/userHandle)
     /// [`AuthenticatorAssertionResponse.userHandle`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/userHandle)
     [[nodiscard]] jsbind::ArrayBuffer userHandle() const;
 };

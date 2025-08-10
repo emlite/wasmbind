@@ -3,11 +3,15 @@
 namespace webbind {
 
 CSSLCH CSSLCH::take_ownership(Handle h) noexcept {
-        return CSSLCH(h);
-    }
+    return CSSLCH(h);
+}
+
 CSSLCH CSSLCH::clone() const noexcept { return *this; }
+
 emlite::Val CSSLCH::instance() noexcept { return emlite::Val::global("CSSLCH"); }
+
 CSSLCH::CSSLCH(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
+
 CSSLCH::CSSLCH(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 CSSLCH::CSSLCH(const jsbind::Any& l, const jsbind::Any& c, const jsbind::Any& h) : CSSColorValue(emlite::Val::global("CSSLCH").new_(l, c, h)) {}

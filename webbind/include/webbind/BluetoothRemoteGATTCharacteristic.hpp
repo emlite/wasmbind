@@ -21,16 +21,16 @@ public:
     static BluetoothRemoteGATTCharacteristic take_ownership(Handle h) noexcept;
     [[nodiscard]] BluetoothRemoteGATTCharacteristic clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `service` attribute.
+    /// [`BluetoothRemoteGATTCharacteristic.service`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/service)
     /// [`BluetoothRemoteGATTCharacteristic.service`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/service)
     [[nodiscard]] BluetoothRemoteGATTService service() const;
-    /// Getter of the `uuid` attribute.
+    /// [`BluetoothRemoteGATTCharacteristic.uuid`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid)
     /// [`BluetoothRemoteGATTCharacteristic.uuid`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid)
     [[nodiscard]] jsbind::Any uuid() const;
-    /// Getter of the `properties` attribute.
+    /// [`BluetoothRemoteGATTCharacteristic.properties`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties)
     /// [`BluetoothRemoteGATTCharacteristic.properties`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties)
     [[nodiscard]] BluetoothCharacteristicProperties properties() const;
-    /// Getter of the `value` attribute.
+    /// [`BluetoothRemoteGATTCharacteristic.value`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/value)
     /// [`BluetoothRemoteGATTCharacteristic.value`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/value)
     [[nodiscard]] jsbind::DataView value() const;
     /// The getDescriptor method.
@@ -60,7 +60,7 @@ public:
     /// The stopNotifications method.
     /// [`BluetoothRemoteGATTCharacteristic.stopNotifications`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications)
     jsbind::Promise<BluetoothRemoteGATTCharacteristic> stopNotifications();
-    /// Getter of the `oncharacteristicvaluechanged` attribute.
+    /// [`BluetoothRemoteGATTCharacteristic.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/oncharacteristicvaluechanged)
     /// [`BluetoothRemoteGATTCharacteristic.oncharacteristicvaluechanged`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/oncharacteristicvaluechanged)
     [[nodiscard]] jsbind::Any oncharacteristicvaluechanged() const;
     /// Setter of the `oncharacteristicvaluechanged` attribute.

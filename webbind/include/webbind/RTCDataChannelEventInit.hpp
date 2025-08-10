@@ -10,7 +10,6 @@ namespace webbind {
 class RTCDataChannel;
 
 /// Dictionary type RTCDataChannelEventInit
-/// [`RTCDataChannelEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannelEventInit)
 class RTCDataChannelEventInit : public EventInit {
   explicit RTCDataChannelEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit RTCDataChannelEventInit(const emlite::Val &val) noexcept;
     RTCDataChannelEventInit() noexcept;
     [[nodiscard]] RTCDataChannelEventInit clone() const noexcept;
+    /// Getter of the `channel` attribute.
     [[nodiscard]] RTCDataChannel channel() const;
+    /// Setter of the `channel` attribute.
     void channel(const RTCDataChannel& value);
 };
 

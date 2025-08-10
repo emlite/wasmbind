@@ -31,19 +31,19 @@ public:
     /// The postMessage method.
     /// [`Worker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message, const StructuredSerializeOptions& options);
-    /// Getter of the `onerror` attribute.
+    /// [`Worker.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onerror)
     /// [`Worker.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.
     /// [`Worker.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onerror)
     void onerror(const jsbind::Any& value);
-    /// Getter of the `onmessage` attribute.
+    /// [`Worker.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onmessage)
     /// [`Worker.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.
     /// [`Worker.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onmessage)
     void onmessage(const jsbind::Any& value);
-    /// Getter of the `onmessageerror` attribute.
+    /// [`Worker.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onmessageerror)
     /// [`Worker.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/onmessageerror)
     [[nodiscard]] jsbind::Any onmessageerror() const;
     /// Setter of the `onmessageerror` attribute.

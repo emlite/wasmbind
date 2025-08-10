@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ConvertCoordinateOptions
-/// [`ConvertCoordinateOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ConvertCoordinateOptions)
 class ConvertCoordinateOptions : public emlite::Val {
   explicit ConvertCoordinateOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ConvertCoordinateOptions(const emlite::Val &val) noexcept;
     ConvertCoordinateOptions() noexcept;
     [[nodiscard]] ConvertCoordinateOptions clone() const noexcept;
+    /// Getter of the `fromBox` attribute.
     [[nodiscard]] CSSBoxType fromBox() const;
+    /// Setter of the `fromBox` attribute.
     void fromBox(const CSSBoxType& value);
+    /// Getter of the `toBox` attribute.
     [[nodiscard]] CSSBoxType toBox() const;
+    /// Setter of the `toBox` attribute.
     void toBox(const CSSBoxType& value);
 };
 

@@ -10,7 +10,6 @@ namespace webbind {
 class FormData;
 
 /// Dictionary type FormDataEventInit
-/// [`FormDataEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/FormDataEventInit)
 class FormDataEventInit : public EventInit {
   explicit FormDataEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit FormDataEventInit(const emlite::Val &val) noexcept;
     FormDataEventInit() noexcept;
     [[nodiscard]] FormDataEventInit clone() const noexcept;
+    /// Getter of the `formData` attribute.
     [[nodiscard]] FormData formData() const;
+    /// Setter of the `formData` attribute.
     void formData(const FormData& value);
 };
 

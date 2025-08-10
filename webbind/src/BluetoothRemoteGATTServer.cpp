@@ -6,11 +6,15 @@
 namespace webbind {
 
 BluetoothRemoteGATTServer BluetoothRemoteGATTServer::take_ownership(Handle h) noexcept {
-        return BluetoothRemoteGATTServer(h);
-    }
+    return BluetoothRemoteGATTServer(h);
+}
+
 BluetoothRemoteGATTServer BluetoothRemoteGATTServer::clone() const noexcept { return *this; }
+
 emlite::Val BluetoothRemoteGATTServer::instance() noexcept { return emlite::Val::global("BluetoothRemoteGATTServer"); }
+
 BluetoothRemoteGATTServer::BluetoothRemoteGATTServer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 BluetoothRemoteGATTServer::BluetoothRemoteGATTServer(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 BluetoothDevice BluetoothRemoteGATTServer::device() const {

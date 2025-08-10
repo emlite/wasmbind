@@ -17,10 +17,10 @@ public:
     static ReadableByteStreamController take_ownership(Handle h) noexcept;
     [[nodiscard]] ReadableByteStreamController clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `byobRequest` attribute.
+    /// [`ReadableByteStreamController.byobRequest`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/byobRequest)
     /// [`ReadableByteStreamController.byobRequest`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/byobRequest)
     [[nodiscard]] ReadableStreamBYOBRequest byobRequest() const;
-    /// Getter of the `desiredSize` attribute.
+    /// [`ReadableByteStreamController.desiredSize`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/desiredSize)
     /// [`ReadableByteStreamController.desiredSize`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/desiredSize)
     [[nodiscard]] double desiredSize() const;
     /// The close method.

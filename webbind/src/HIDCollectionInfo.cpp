@@ -1,15 +1,17 @@
 #include <webbind/HIDCollectionInfo.hpp>
 #include <webbind/HIDReportInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HIDCollectionInfo::HIDCollectionInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HIDCollectionInfo HIDCollectionInfo::take_ownership(Handle h) noexcept {
-        return HIDCollectionInfo(h);
-    }
+    return HIDCollectionInfo(h);
+}
+
 HIDCollectionInfo::HIDCollectionInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HIDCollectionInfo::HIDCollectionInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HIDCollectionInfo HIDCollectionInfo::clone() const noexcept { return *this; }
 
 unsigned short HIDCollectionInfo::usagePage() const {

@@ -17,10 +17,10 @@ public:
     static SVGAnimatedLength take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGAnimatedLength clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `baseVal` attribute.
+    /// [`SVGAnimatedLength.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLength/baseVal)
     /// [`SVGAnimatedLength.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLength/baseVal)
     [[nodiscard]] SVGLength baseVal() const;
-    /// Getter of the `animVal` attribute.
+    /// [`SVGAnimatedLength.animVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLength/animVal)
     /// [`SVGAnimatedLength.animVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedLength/animVal)
     [[nodiscard]] SVGLength animVal() const;
 };

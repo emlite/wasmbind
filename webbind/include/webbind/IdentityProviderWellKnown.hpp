@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityProviderWellKnown
-/// [`IdentityProviderWellKnown`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProviderWellKnown)
 class IdentityProviderWellKnown : public emlite::Val {
   explicit IdentityProviderWellKnown(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit IdentityProviderWellKnown(const emlite::Val &val) noexcept;
     IdentityProviderWellKnown() noexcept;
     [[nodiscard]] IdentityProviderWellKnown clone() const noexcept;
+    /// Getter of the `provider_urls` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> provider_urls() const;
+    /// Setter of the `provider_urls` attribute.
     void provider_urls(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `accounts_endpoint` attribute.
     [[nodiscard]] jsbind::String accounts_endpoint() const;
+    /// Setter of the `accounts_endpoint` attribute.
     void accounts_endpoint(const jsbind::String& value);
+    /// Getter of the `login_url` attribute.
     [[nodiscard]] jsbind::String login_url() const;
+    /// Setter of the `login_url` attribute.
     void login_url(const jsbind::String& value);
 };
 

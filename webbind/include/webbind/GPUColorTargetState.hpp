@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUColorTargetState
-/// [`GPUColorTargetState`](https://developer.mozilla.org/en-US/docs/Web/API/GPUColorTargetState)
 class GPUColorTargetState : public emlite::Val {
   explicit GPUColorTargetState(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit GPUColorTargetState(const emlite::Val &val) noexcept;
     GPUColorTargetState() noexcept;
     [[nodiscard]] GPUColorTargetState clone() const noexcept;
+    /// Getter of the `format` attribute.
     [[nodiscard]] GPUTextureFormat format() const;
+    /// Setter of the `format` attribute.
     void format(const GPUTextureFormat& value);
+    /// Getter of the `blend` attribute.
     [[nodiscard]] GPUBlendState blend() const;
+    /// Setter of the `blend` attribute.
     void blend(const GPUBlendState& value);
+    /// Getter of the `writeMask` attribute.
     [[nodiscard]] jsbind::Any writeMask() const;
+    /// Setter of the `writeMask` attribute.
     void writeMask(const jsbind::Any& value);
 };
 

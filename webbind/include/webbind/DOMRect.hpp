@@ -35,25 +35,25 @@ public:
     /// The fromRect method.
     /// [`DOMRect.fromRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/fromRect)
     static DOMRect fromRect(const DOMRectInit& other);
-    /// Getter of the `x` attribute.
+    /// [`DOMRect.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/x)
     /// [`DOMRect.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/x)
     [[nodiscard]] double x() const;
     /// Setter of the `x` attribute.
     /// [`DOMRect.x`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/x)
     void x(double value);
-    /// Getter of the `y` attribute.
+    /// [`DOMRect.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/y)
     /// [`DOMRect.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/y)
     [[nodiscard]] double y() const;
     /// Setter of the `y` attribute.
     /// [`DOMRect.y`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/y)
     void y(double value);
-    /// Getter of the `width` attribute.
+    /// [`DOMRect.width`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/width)
     /// [`DOMRect.width`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/width)
     [[nodiscard]] double width() const;
     /// Setter of the `width` attribute.
     /// [`DOMRect.width`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/width)
     void width(double value);
-    /// Getter of the `height` attribute.
+    /// [`DOMRect.height`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/height)
     /// [`DOMRect.height`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/height)
     [[nodiscard]] double height() const;
     /// Setter of the `height` attribute.

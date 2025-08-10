@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type EcKeyAlgorithm
-/// [`EcKeyAlgorithm`](https://developer.mozilla.org/en-US/docs/Web/API/EcKeyAlgorithm)
 class EcKeyAlgorithm : public KeyAlgorithm {
   explicit EcKeyAlgorithm(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit EcKeyAlgorithm(const emlite::Val &val) noexcept;
     EcKeyAlgorithm() noexcept;
     [[nodiscard]] EcKeyAlgorithm clone() const noexcept;
+    /// Getter of the `namedCurve` attribute.
     [[nodiscard]] jsbind::Any namedCurve() const;
+    /// Setter of the `namedCurve` attribute.
     void namedCurve(const jsbind::Any& value);
 };
 

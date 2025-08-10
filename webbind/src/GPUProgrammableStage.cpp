@@ -1,15 +1,17 @@
 #include <webbind/GPUProgrammableStage.hpp>
 #include <webbind/GPUShaderModule.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUProgrammableStage::GPUProgrammableStage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUProgrammableStage GPUProgrammableStage::take_ownership(Handle h) noexcept {
-        return GPUProgrammableStage(h);
-    }
+    return GPUProgrammableStage(h);
+}
+
 GPUProgrammableStage::GPUProgrammableStage(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUProgrammableStage::GPUProgrammableStage() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUProgrammableStage GPUProgrammableStage::clone() const noexcept { return *this; }
 
 GPUShaderModule GPUProgrammableStage::module_() const {

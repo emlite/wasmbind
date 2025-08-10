@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PaintRenderingContext2DSettings
-/// [`PaintRenderingContext2DSettings`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2DSettings)
 class PaintRenderingContext2DSettings : public emlite::Val {
   explicit PaintRenderingContext2DSettings(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PaintRenderingContext2DSettings(const emlite::Val &val) noexcept;
     PaintRenderingContext2DSettings() noexcept;
     [[nodiscard]] PaintRenderingContext2DSettings clone() const noexcept;
+    /// Getter of the `alpha` attribute.
     [[nodiscard]] bool alpha() const;
+    /// Setter of the `alpha` attribute.
     void alpha(bool value);
 };
 

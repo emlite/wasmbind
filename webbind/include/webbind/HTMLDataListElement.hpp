@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDataListElement(..)` constructor, creating a new HTMLDataListElement instance
     HTMLDataListElement();
-    /// Getter of the `options` attribute.
+    /// [`HTMLDataListElement.options`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataListElement/options)
     /// [`HTMLDataListElement.options`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataListElement/options)
     [[nodiscard]] HTMLCollection options() const;
 };

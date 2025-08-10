@@ -6,11 +6,15 @@
 namespace webbind {
 
 HTMLFieldSetElement HTMLFieldSetElement::take_ownership(Handle h) noexcept {
-        return HTMLFieldSetElement(h);
-    }
+    return HTMLFieldSetElement(h);
+}
+
 HTMLFieldSetElement HTMLFieldSetElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLFieldSetElement::instance() noexcept { return emlite::Val::global("HTMLFieldSetElement"); }
+
 HTMLFieldSetElement::HTMLFieldSetElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLFieldSetElement::HTMLFieldSetElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLFieldSetElement::HTMLFieldSetElement() : HTMLElement(emlite::Val::global("HTMLFieldSetElement").new_()) {}

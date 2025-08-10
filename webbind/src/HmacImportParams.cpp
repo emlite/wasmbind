@@ -1,14 +1,16 @@
 #include <webbind/HmacImportParams.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HmacImportParams::HmacImportParams(Handle h) noexcept : Algorithm(emlite::Val::take_ownership(h)) {}
 HmacImportParams HmacImportParams::take_ownership(Handle h) noexcept {
-        return HmacImportParams(h);
-    }
+    return HmacImportParams(h);
+}
+
 HmacImportParams::HmacImportParams(const emlite::Val &val) noexcept: Algorithm(val) {}
+
 HmacImportParams::HmacImportParams() noexcept: Algorithm(emlite::Val::object()) {}
+
 HmacImportParams HmacImportParams::clone() const noexcept { return *this; }
 
 jsbind::Any HmacImportParams::hash() const {

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ContactsSelectOptions
-/// [`ContactsSelectOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ContactsSelectOptions)
 class ContactsSelectOptions : public emlite::Val {
   explicit ContactsSelectOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ContactsSelectOptions(const emlite::Val &val) noexcept;
     ContactsSelectOptions() noexcept;
     [[nodiscard]] ContactsSelectOptions clone() const noexcept;
+    /// Getter of the `multiple` attribute.
     [[nodiscard]] bool multiple() const;
+    /// Setter of the `multiple` attribute.
     void multiple(bool value);
 };
 

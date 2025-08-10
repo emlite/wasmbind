@@ -1,15 +1,17 @@
 #include <webbind/FilePickerOptions.hpp>
 #include <webbind/FilePickerAcceptType.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FilePickerOptions::FilePickerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FilePickerOptions FilePickerOptions::take_ownership(Handle h) noexcept {
-        return FilePickerOptions(h);
-    }
+    return FilePickerOptions(h);
+}
+
 FilePickerOptions::FilePickerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FilePickerOptions::FilePickerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FilePickerOptions FilePickerOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<FilePickerAcceptType> FilePickerOptions::types() const {

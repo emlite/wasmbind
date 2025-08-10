@@ -1,15 +1,17 @@
 #include <webbind/PushSubscriptionChangeEventInit.hpp>
 #include <webbind/PushSubscription.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PushSubscriptionChangeEventInit::PushSubscriptionChangeEventInit(Handle h) noexcept : ExtendableEventInit(emlite::Val::take_ownership(h)) {}
 PushSubscriptionChangeEventInit PushSubscriptionChangeEventInit::take_ownership(Handle h) noexcept {
-        return PushSubscriptionChangeEventInit(h);
-    }
+    return PushSubscriptionChangeEventInit(h);
+}
+
 PushSubscriptionChangeEventInit::PushSubscriptionChangeEventInit(const emlite::Val &val) noexcept: ExtendableEventInit(val) {}
+
 PushSubscriptionChangeEventInit::PushSubscriptionChangeEventInit() noexcept: ExtendableEventInit(emlite::Val::object()) {}
+
 PushSubscriptionChangeEventInit PushSubscriptionChangeEventInit::clone() const noexcept { return *this; }
 
 PushSubscription PushSubscriptionChangeEventInit::newSubscription() const {

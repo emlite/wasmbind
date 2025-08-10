@@ -1,15 +1,17 @@
 #include <webbind/MediaKeySystemConfiguration.hpp>
 #include <webbind/MediaKeySystemMediaCapability.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaKeySystemConfiguration::MediaKeySystemConfiguration(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaKeySystemConfiguration MediaKeySystemConfiguration::take_ownership(Handle h) noexcept {
-        return MediaKeySystemConfiguration(h);
-    }
+    return MediaKeySystemConfiguration(h);
+}
+
 MediaKeySystemConfiguration::MediaKeySystemConfiguration(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaKeySystemConfiguration::MediaKeySystemConfiguration() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaKeySystemConfiguration MediaKeySystemConfiguration::clone() const noexcept { return *this; }
 
 jsbind::String MediaKeySystemConfiguration::label() const {

@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type WriterWriteOptions
-/// [`WriterWriteOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WriterWriteOptions)
 class WriterWriteOptions : public emlite::Val {
   explicit WriterWriteOptions(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit WriterWriteOptions(const emlite::Val &val) noexcept;
     WriterWriteOptions() noexcept;
     [[nodiscard]] WriterWriteOptions clone() const noexcept;
+    /// Getter of the `context` attribute.
     [[nodiscard]] jsbind::String context() const;
+    /// Setter of the `context` attribute.
     void context(const jsbind::String& value);
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

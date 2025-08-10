@@ -1,14 +1,16 @@
 #include <webbind/WebTransportSendStreamStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WebTransportSendStreamStats::WebTransportSendStreamStats(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransportSendStreamStats WebTransportSendStreamStats::take_ownership(Handle h) noexcept {
-        return WebTransportSendStreamStats(h);
-    }
+    return WebTransportSendStreamStats(h);
+}
+
 WebTransportSendStreamStats::WebTransportSendStreamStats(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WebTransportSendStreamStats::WebTransportSendStreamStats() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WebTransportSendStreamStats WebTransportSendStreamStats::clone() const noexcept { return *this; }
 
 long long WebTransportSendStreamStats::bytesWritten() const {

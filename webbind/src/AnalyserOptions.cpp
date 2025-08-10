@@ -1,14 +1,16 @@
 #include <webbind/AnalyserOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AnalyserOptions::AnalyserOptions(Handle h) noexcept : AudioNodeOptions(emlite::Val::take_ownership(h)) {}
 AnalyserOptions AnalyserOptions::take_ownership(Handle h) noexcept {
-        return AnalyserOptions(h);
-    }
+    return AnalyserOptions(h);
+}
+
 AnalyserOptions::AnalyserOptions(const emlite::Val &val) noexcept: AudioNodeOptions(val) {}
+
 AnalyserOptions::AnalyserOptions() noexcept: AudioNodeOptions(emlite::Val::object()) {}
+
 AnalyserOptions AnalyserOptions::clone() const noexcept { return *this; }
 
 unsigned long AnalyserOptions::fftSize() const {

@@ -1,14 +1,16 @@
 #include <webbind/BaseComputedKeyframe.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BaseComputedKeyframe::BaseComputedKeyframe(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BaseComputedKeyframe BaseComputedKeyframe::take_ownership(Handle h) noexcept {
-        return BaseComputedKeyframe(h);
-    }
+    return BaseComputedKeyframe(h);
+}
+
 BaseComputedKeyframe::BaseComputedKeyframe(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BaseComputedKeyframe::BaseComputedKeyframe() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BaseComputedKeyframe BaseComputedKeyframe::clone() const noexcept { return *this; }
 
 double BaseComputedKeyframe::offset() const {

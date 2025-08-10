@@ -1,14 +1,16 @@
 #include <webbind/MIDIOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MIDIOptions::MIDIOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MIDIOptions MIDIOptions::take_ownership(Handle h) noexcept {
-        return MIDIOptions(h);
-    }
+    return MIDIOptions(h);
+}
+
 MIDIOptions::MIDIOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MIDIOptions::MIDIOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MIDIOptions MIDIOptions::clone() const noexcept { return *this; }
 
 bool MIDIOptions::sysex() const {

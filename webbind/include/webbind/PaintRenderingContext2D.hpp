@@ -58,37 +58,37 @@ public:
     /// The resetTransform method.
     /// [`PaintRenderingContext2D.resetTransform`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/resetTransform)
     jsbind::Undefined resetTransform();
-    /// Getter of the `globalAlpha` attribute.
+    /// [`PaintRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/globalAlpha)
     /// [`PaintRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/globalAlpha)
     [[nodiscard]] double globalAlpha() const;
     /// Setter of the `globalAlpha` attribute.
     /// [`PaintRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/globalAlpha)
     void globalAlpha(double value);
-    /// Getter of the `globalCompositeOperation` attribute.
+    /// [`PaintRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/globalCompositeOperation)
     /// [`PaintRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/globalCompositeOperation)
     [[nodiscard]] jsbind::String globalCompositeOperation() const;
     /// Setter of the `globalCompositeOperation` attribute.
     /// [`PaintRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/globalCompositeOperation)
     void globalCompositeOperation(const jsbind::String& value);
-    /// Getter of the `imageSmoothingEnabled` attribute.
+    /// [`PaintRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/imageSmoothingEnabled)
     /// [`PaintRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/imageSmoothingEnabled)
     [[nodiscard]] bool imageSmoothingEnabled() const;
     /// Setter of the `imageSmoothingEnabled` attribute.
     /// [`PaintRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/imageSmoothingEnabled)
     void imageSmoothingEnabled(bool value);
-    /// Getter of the `imageSmoothingQuality` attribute.
+    /// [`PaintRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/imageSmoothingQuality)
     /// [`PaintRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/imageSmoothingQuality)
     [[nodiscard]] ImageSmoothingQuality imageSmoothingQuality() const;
     /// Setter of the `imageSmoothingQuality` attribute.
     /// [`PaintRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/imageSmoothingQuality)
     void imageSmoothingQuality(const ImageSmoothingQuality& value);
-    /// Getter of the `strokeStyle` attribute.
+    /// [`PaintRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/strokeStyle)
     /// [`PaintRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/strokeStyle)
     [[nodiscard]] jsbind::Any strokeStyle() const;
     /// Setter of the `strokeStyle` attribute.
     /// [`PaintRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/strokeStyle)
     void strokeStyle(const jsbind::Any& value);
-    /// Getter of the `fillStyle` attribute.
+    /// [`PaintRenderingContext2D.fillStyle`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/fillStyle)
     /// [`PaintRenderingContext2D.fillStyle`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/fillStyle)
     [[nodiscard]] jsbind::Any fillStyle() const;
     /// Setter of the `fillStyle` attribute.
@@ -106,25 +106,25 @@ public:
     /// The createPattern method.
     /// [`PaintRenderingContext2D.createPattern`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/createPattern)
     CanvasPattern createPattern(const jsbind::Any& image, const jsbind::String& repetition);
-    /// Getter of the `shadowOffsetX` attribute.
+    /// [`PaintRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowOffsetX)
     /// [`PaintRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowOffsetX)
     [[nodiscard]] double shadowOffsetX() const;
     /// Setter of the `shadowOffsetX` attribute.
     /// [`PaintRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowOffsetX)
     void shadowOffsetX(double value);
-    /// Getter of the `shadowOffsetY` attribute.
+    /// [`PaintRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowOffsetY)
     /// [`PaintRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowOffsetY)
     [[nodiscard]] double shadowOffsetY() const;
     /// Setter of the `shadowOffsetY` attribute.
     /// [`PaintRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowOffsetY)
     void shadowOffsetY(double value);
-    /// Getter of the `shadowBlur` attribute.
+    /// [`PaintRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowBlur)
     /// [`PaintRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowBlur)
     [[nodiscard]] double shadowBlur() const;
     /// Setter of the `shadowBlur` attribute.
     /// [`PaintRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowBlur)
     void shadowBlur(double value);
-    /// Getter of the `shadowColor` attribute.
+    /// [`PaintRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowColor)
     /// [`PaintRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/shadowColor)
     [[nodiscard]] jsbind::String shadowColor() const;
     /// Setter of the `shadowColor` attribute.
@@ -169,25 +169,25 @@ public:
     /// The drawImage method.
     /// [`PaintRenderingContext2D.drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/drawImage)
     jsbind::Undefined drawImage(const jsbind::Any& image, double sx, double sy, double sw, double sh, double dx, double dy, double dw, double dh);
-    /// Getter of the `lineWidth` attribute.
+    /// [`PaintRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineWidth)
     /// [`PaintRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineWidth)
     [[nodiscard]] double lineWidth() const;
     /// Setter of the `lineWidth` attribute.
     /// [`PaintRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineWidth)
     void lineWidth(double value);
-    /// Getter of the `lineCap` attribute.
+    /// [`PaintRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineCap)
     /// [`PaintRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineCap)
     [[nodiscard]] CanvasLineCap lineCap() const;
     /// Setter of the `lineCap` attribute.
     /// [`PaintRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineCap)
     void lineCap(const CanvasLineCap& value);
-    /// Getter of the `lineJoin` attribute.
+    /// [`PaintRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineJoin)
     /// [`PaintRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineJoin)
     [[nodiscard]] CanvasLineJoin lineJoin() const;
     /// Setter of the `lineJoin` attribute.
     /// [`PaintRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineJoin)
     void lineJoin(const CanvasLineJoin& value);
-    /// Getter of the `miterLimit` attribute.
+    /// [`PaintRenderingContext2D.miterLimit`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/miterLimit)
     /// [`PaintRenderingContext2D.miterLimit`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/miterLimit)
     [[nodiscard]] double miterLimit() const;
     /// Setter of the `miterLimit` attribute.
@@ -199,7 +199,7 @@ public:
     /// The getLineDash method.
     /// [`PaintRenderingContext2D.getLineDash`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/getLineDash)
     jsbind::TypedArray<double> getLineDash();
-    /// Getter of the `lineDashOffset` attribute.
+    /// [`PaintRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineDashOffset)
     /// [`PaintRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/lineDashOffset)
     [[nodiscard]] double lineDashOffset() const;
     /// Setter of the `lineDashOffset` attribute.

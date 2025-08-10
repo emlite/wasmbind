@@ -21,7 +21,7 @@ public:
     AmbientLightSensor();
     /// The `new AmbientLightSensor(..)` constructor, creating a new AmbientLightSensor instance
     AmbientLightSensor(const SensorOptions& sensorOptions);
-    /// Getter of the `illuminance` attribute.
+    /// [`AmbientLightSensor.illuminance`](https://developer.mozilla.org/en-US/docs/Web/API/AmbientLightSensor/illuminance)
     /// [`AmbientLightSensor.illuminance`](https://developer.mozilla.org/en-US/docs/Web/API/AmbientLightSensor/illuminance)
     [[nodiscard]] double illuminance() const;
 };

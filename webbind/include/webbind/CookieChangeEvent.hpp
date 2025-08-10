@@ -22,10 +22,10 @@ public:
     CookieChangeEvent(const jsbind::String& type);
     /// The `new CookieChangeEvent(..)` constructor, creating a new CookieChangeEvent instance
     CookieChangeEvent(const jsbind::String& type, const CookieChangeEventInit& eventInitDict);
-    /// Getter of the `changed` attribute.
+    /// [`CookieChangeEvent.changed`](https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEvent/changed)
     /// [`CookieChangeEvent.changed`](https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEvent/changed)
     [[nodiscard]] jsbind::TypedArray<CookieListItem> changed() const;
-    /// Getter of the `deleted` attribute.
+    /// [`CookieChangeEvent.deleted`](https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEvent/deleted)
     /// [`CookieChangeEvent.deleted`](https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEvent/deleted)
     [[nodiscard]] jsbind::TypedArray<CookieListItem> deleted() const;
 };

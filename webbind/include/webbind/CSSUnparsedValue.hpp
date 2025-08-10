@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSUnparsedValue(..)` constructor, creating a new CSSUnparsedValue instance
     CSSUnparsedValue(const jsbind::TypedArray<jsbind::Any>& members);
-    /// Getter of the `length` attribute.
+    /// [`CSSUnparsedValue.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/length)
     /// [`CSSUnparsedValue.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/length)
     [[nodiscard]] unsigned long length() const;
 };

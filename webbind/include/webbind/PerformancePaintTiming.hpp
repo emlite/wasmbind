@@ -19,10 +19,10 @@ public:
     /// The toJSON method.
     /// [`PerformancePaintTiming.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/toJSON)
     jsbind::Object toJSON();
-    /// Getter of the `paintTime` attribute.
+    /// [`PerformancePaintTiming.paintTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/paintTime)
     /// [`PerformancePaintTiming.paintTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/paintTime)
     [[nodiscard]] jsbind::Any paintTime() const;
-    /// Getter of the `presentationTime` attribute.
+    /// [`PerformancePaintTiming.presentationTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/presentationTime)
     /// [`PerformancePaintTiming.presentationTime`](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/presentationTime)
     [[nodiscard]] jsbind::Any presentationTime() const;
 };

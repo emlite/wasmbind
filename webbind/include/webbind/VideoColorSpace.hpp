@@ -21,16 +21,16 @@ public:
     VideoColorSpace();
     /// The `new VideoColorSpace(..)` constructor, creating a new VideoColorSpace instance
     VideoColorSpace(const VideoColorSpaceInit& init);
-    /// Getter of the `primaries` attribute.
+    /// [`VideoColorSpace.primaries`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/primaries)
     /// [`VideoColorSpace.primaries`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/primaries)
     [[nodiscard]] VideoColorPrimaries primaries() const;
-    /// Getter of the `transfer` attribute.
+    /// [`VideoColorSpace.transfer`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/transfer)
     /// [`VideoColorSpace.transfer`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/transfer)
     [[nodiscard]] VideoTransferCharacteristics transfer() const;
-    /// Getter of the `matrix` attribute.
+    /// [`VideoColorSpace.matrix`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/matrix)
     /// [`VideoColorSpace.matrix`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/matrix)
     [[nodiscard]] VideoMatrixCoefficients matrix() const;
-    /// Getter of the `fullRange` attribute.
+    /// [`VideoColorSpace.fullRange`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/fullRange)
     /// [`VideoColorSpace.fullRange`](https://developer.mozilla.org/en-US/docs/Web/API/VideoColorSpace/fullRange)
     [[nodiscard]] bool fullRange() const;
     /// The toJSON method.

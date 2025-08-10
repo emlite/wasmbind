@@ -1,14 +1,16 @@
 #include <webbind/DirectoryPickerOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DirectoryPickerOptions::DirectoryPickerOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DirectoryPickerOptions DirectoryPickerOptions::take_ownership(Handle h) noexcept {
-        return DirectoryPickerOptions(h);
-    }
+    return DirectoryPickerOptions(h);
+}
+
 DirectoryPickerOptions::DirectoryPickerOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DirectoryPickerOptions::DirectoryPickerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DirectoryPickerOptions DirectoryPickerOptions::clone() const noexcept { return *this; }
 
 jsbind::String DirectoryPickerOptions::id() const {

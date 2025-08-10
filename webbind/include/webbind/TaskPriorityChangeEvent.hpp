@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new TaskPriorityChangeEvent(..)` constructor, creating a new TaskPriorityChangeEvent instance
     TaskPriorityChangeEvent(const jsbind::String& type, const TaskPriorityChangeEventInit& priorityChangeEventInitDict);
-    /// Getter of the `previousPriority` attribute.
+    /// [`TaskPriorityChangeEvent.previousPriority`](https://developer.mozilla.org/en-US/docs/Web/API/TaskPriorityChangeEvent/previousPriority)
     /// [`TaskPriorityChangeEvent.previousPriority`](https://developer.mozilla.org/en-US/docs/Web/API/TaskPriorityChangeEvent/previousPriority)
     [[nodiscard]] TaskPriority previousPriority() const;
 };

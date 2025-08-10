@@ -18,13 +18,13 @@ public:
     static LayoutShiftAttribution take_ownership(Handle h) noexcept;
     [[nodiscard]] LayoutShiftAttribution clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `node` attribute.
+    /// [`LayoutShiftAttribution.node`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/node)
     /// [`LayoutShiftAttribution.node`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/node)
     [[nodiscard]] Node node() const;
-    /// Getter of the `previousRect` attribute.
+    /// [`LayoutShiftAttribution.previousRect`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/previousRect)
     /// [`LayoutShiftAttribution.previousRect`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/previousRect)
     [[nodiscard]] DOMRectReadOnly previousRect() const;
-    /// Getter of the `currentRect` attribute.
+    /// [`LayoutShiftAttribution.currentRect`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/currentRect)
     /// [`LayoutShiftAttribution.currentRect`](https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/currentRect)
     [[nodiscard]] DOMRectReadOnly currentRect() const;
 };

@@ -21,13 +21,13 @@ public:
     Gyroscope();
     /// The `new Gyroscope(..)` constructor, creating a new Gyroscope instance
     Gyroscope(const GyroscopeSensorOptions& sensorOptions);
-    /// Getter of the `x` attribute.
+    /// [`Gyroscope.x`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/x)
     /// [`Gyroscope.x`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/x)
     [[nodiscard]] double x() const;
-    /// Getter of the `y` attribute.
+    /// [`Gyroscope.y`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/y)
     /// [`Gyroscope.y`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/y)
     [[nodiscard]] double y() const;
-    /// Getter of the `z` attribute.
+    /// [`Gyroscope.z`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/z)
     /// [`Gyroscope.z`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/z)
     [[nodiscard]] double z() const;
 };

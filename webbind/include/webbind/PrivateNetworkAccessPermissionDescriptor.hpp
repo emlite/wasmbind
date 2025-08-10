@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PrivateNetworkAccessPermissionDescriptor
-/// [`PrivateNetworkAccessPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/PrivateNetworkAccessPermissionDescriptor)
 class PrivateNetworkAccessPermissionDescriptor : public PermissionDescriptor {
   explicit PrivateNetworkAccessPermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit PrivateNetworkAccessPermissionDescriptor(const emlite::Val &val) noexcept;
     PrivateNetworkAccessPermissionDescriptor() noexcept;
     [[nodiscard]] PrivateNetworkAccessPermissionDescriptor clone() const noexcept;
+    /// Getter of the `id` attribute.
     [[nodiscard]] jsbind::String id() const;
+    /// Setter of the `id` attribute.
     void id(const jsbind::String& value);
 };
 

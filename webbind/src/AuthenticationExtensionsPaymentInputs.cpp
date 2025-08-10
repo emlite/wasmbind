@@ -4,15 +4,17 @@
 #include <webbind/PaymentCurrencyAmount.hpp>
 #include <webbind/PaymentCredentialInstrument.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticationExtensionsPaymentInputs::AuthenticationExtensionsPaymentInputs(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticationExtensionsPaymentInputs AuthenticationExtensionsPaymentInputs::take_ownership(Handle h) noexcept {
-        return AuthenticationExtensionsPaymentInputs(h);
-    }
+    return AuthenticationExtensionsPaymentInputs(h);
+}
+
 AuthenticationExtensionsPaymentInputs::AuthenticationExtensionsPaymentInputs(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticationExtensionsPaymentInputs::AuthenticationExtensionsPaymentInputs() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticationExtensionsPaymentInputs AuthenticationExtensionsPaymentInputs::clone() const noexcept { return *this; }
 
 bool AuthenticationExtensionsPaymentInputs::isPayment() const {

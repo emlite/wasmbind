@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ClipboardItemOptions
-/// [`ClipboardItemOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItemOptions)
 class ClipboardItemOptions : public emlite::Val {
   explicit ClipboardItemOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ClipboardItemOptions(const emlite::Val &val) noexcept;
     ClipboardItemOptions() noexcept;
     [[nodiscard]] ClipboardItemOptions clone() const noexcept;
+    /// Getter of the `presentationStyle` attribute.
     [[nodiscard]] PresentationStyle presentationStyle() const;
+    /// Setter of the `presentationStyle` attribute.
     void presentationStyle(const PresentationStyle& value);
 };
 

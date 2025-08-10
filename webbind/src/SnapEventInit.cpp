@@ -1,15 +1,17 @@
 #include <webbind/SnapEventInit.hpp>
 #include <webbind/Node.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SnapEventInit::SnapEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 SnapEventInit SnapEventInit::take_ownership(Handle h) noexcept {
-        return SnapEventInit(h);
-    }
+    return SnapEventInit(h);
+}
+
 SnapEventInit::SnapEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 SnapEventInit::SnapEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 SnapEventInit SnapEventInit::clone() const noexcept { return *this; }
 
 Node SnapEventInit::snapTargetBlock() const {

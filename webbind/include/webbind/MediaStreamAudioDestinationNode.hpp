@@ -24,7 +24,7 @@ public:
     MediaStreamAudioDestinationNode(const AudioContext& context);
     /// The `new MediaStreamAudioDestinationNode(..)` constructor, creating a new MediaStreamAudioDestinationNode instance
     MediaStreamAudioDestinationNode(const AudioContext& context, const AudioNodeOptions& options);
-    /// Getter of the `stream` attribute.
+    /// [`MediaStreamAudioDestinationNode.stream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioDestinationNode/stream)
     /// [`MediaStreamAudioDestinationNode.stream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioDestinationNode/stream)
     [[nodiscard]] MediaStream stream() const;
 };

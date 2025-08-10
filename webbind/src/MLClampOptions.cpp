@@ -1,14 +1,16 @@
 #include <webbind/MLClampOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLClampOptions::MLClampOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLClampOptions MLClampOptions::take_ownership(Handle h) noexcept {
-        return MLClampOptions(h);
-    }
+    return MLClampOptions(h);
+}
+
 MLClampOptions::MLClampOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLClampOptions::MLClampOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLClampOptions MLClampOptions::clone() const noexcept { return *this; }
 
 jsbind::Any MLClampOptions::minValue() const {

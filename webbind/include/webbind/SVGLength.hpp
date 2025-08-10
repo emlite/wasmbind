@@ -15,22 +15,22 @@ public:
     static SVGLength take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGLength clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `unitType` attribute.
+    /// [`SVGLength.unitType`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/unitType)
     /// [`SVGLength.unitType`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/unitType)
     [[nodiscard]] unsigned short unitType() const;
-    /// Getter of the `value` attribute.
+    /// [`SVGLength.value`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/value)
     /// [`SVGLength.value`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/value)
     [[nodiscard]] float value() const;
     /// Setter of the `value` attribute.
     /// [`SVGLength.value`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/value)
     void value(float value);
-    /// Getter of the `valueInSpecifiedUnits` attribute.
+    /// [`SVGLength.valueInSpecifiedUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/valueInSpecifiedUnits)
     /// [`SVGLength.valueInSpecifiedUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/valueInSpecifiedUnits)
     [[nodiscard]] float valueInSpecifiedUnits() const;
     /// Setter of the `valueInSpecifiedUnits` attribute.
     /// [`SVGLength.valueInSpecifiedUnits`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/valueInSpecifiedUnits)
     void valueInSpecifiedUnits(float value);
-    /// Getter of the `valueAsString` attribute.
+    /// [`SVGLength.valueAsString`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/valueAsString)
     /// [`SVGLength.valueAsString`](https://developer.mozilla.org/en-US/docs/Web/API/SVGLength/valueAsString)
     [[nodiscard]] jsbind::String valueAsString() const;
     /// Setter of the `valueAsString` attribute.

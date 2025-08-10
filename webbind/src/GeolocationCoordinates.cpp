@@ -3,11 +3,15 @@
 namespace webbind {
 
 GeolocationCoordinates GeolocationCoordinates::take_ownership(Handle h) noexcept {
-        return GeolocationCoordinates(h);
-    }
+    return GeolocationCoordinates(h);
+}
+
 GeolocationCoordinates GeolocationCoordinates::clone() const noexcept { return *this; }
+
 emlite::Val GeolocationCoordinates::instance() noexcept { return emlite::Val::global("GeolocationCoordinates"); }
+
 GeolocationCoordinates::GeolocationCoordinates(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GeolocationCoordinates::GeolocationCoordinates(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 double GeolocationCoordinates::accuracy() const {

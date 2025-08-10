@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type QueuingStrategyInit
-/// [`QueuingStrategyInit`](https://developer.mozilla.org/en-US/docs/Web/API/QueuingStrategyInit)
 class QueuingStrategyInit : public emlite::Val {
   explicit QueuingStrategyInit(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit QueuingStrategyInit(const emlite::Val &val) noexcept;
     QueuingStrategyInit() noexcept;
     [[nodiscard]] QueuingStrategyInit clone() const noexcept;
+    /// Getter of the `highWaterMark` attribute.
     [[nodiscard]] double highWaterMark() const;
+    /// Setter of the `highWaterMark` attribute.
     void highWaterMark(double value);
 };
 

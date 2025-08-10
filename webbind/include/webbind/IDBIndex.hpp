@@ -19,22 +19,22 @@ public:
     static IDBIndex take_ownership(Handle h) noexcept;
     [[nodiscard]] IDBIndex clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`IDBIndex.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/name)
     /// [`IDBIndex.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.
     /// [`IDBIndex.name`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/name)
     void name(const jsbind::String& value);
-    /// Getter of the `objectStore` attribute.
+    /// [`IDBIndex.objectStore`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/objectStore)
     /// [`IDBIndex.objectStore`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/objectStore)
     [[nodiscard]] IDBObjectStore objectStore() const;
-    /// Getter of the `keyPath` attribute.
+    /// [`IDBIndex.keyPath`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/keyPath)
     /// [`IDBIndex.keyPath`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/keyPath)
     [[nodiscard]] jsbind::Any keyPath() const;
-    /// Getter of the `multiEntry` attribute.
+    /// [`IDBIndex.multiEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/multiEntry)
     /// [`IDBIndex.multiEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/multiEntry)
     [[nodiscard]] bool multiEntry() const;
-    /// Getter of the `unique` attribute.
+    /// [`IDBIndex.unique`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/unique)
     /// [`IDBIndex.unique`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/unique)
     [[nodiscard]] bool unique() const;
     /// The get method.

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ExtendableEventInit
-/// [`ExtendableEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEventInit)
 class ExtendableEventInit : public EventInit {
   explicit ExtendableEventInit(Handle h) noexcept;
 public:

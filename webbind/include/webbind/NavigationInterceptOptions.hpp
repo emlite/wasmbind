@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type NavigationInterceptOptions
-/// [`NavigationInterceptOptions`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationInterceptOptions)
 class NavigationInterceptOptions : public emlite::Val {
   explicit NavigationInterceptOptions(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit NavigationInterceptOptions(const emlite::Val &val) noexcept;
     NavigationInterceptOptions() noexcept;
     [[nodiscard]] NavigationInterceptOptions clone() const noexcept;
+    /// Getter of the `handler` attribute.
     [[nodiscard]] jsbind::Function handler() const;
+    /// Setter of the `handler` attribute.
     void handler(const jsbind::Function& value);
+    /// Getter of the `focusReset` attribute.
     [[nodiscard]] NavigationFocusReset focusReset() const;
+    /// Setter of the `focusReset` attribute.
     void focusReset(const NavigationFocusReset& value);
+    /// Getter of the `scroll` attribute.
     [[nodiscard]] NavigationScrollBehavior scroll() const;
+    /// Setter of the `scroll` attribute.
     void scroll(const NavigationScrollBehavior& value);
 };
 

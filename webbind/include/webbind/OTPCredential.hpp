@@ -16,7 +16,7 @@ public:
     static OTPCredential take_ownership(Handle h) noexcept;
     [[nodiscard]] OTPCredential clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `code` attribute.
+    /// [`OTPCredential.code`](https://developer.mozilla.org/en-US/docs/Web/API/OTPCredential/code)
     /// [`OTPCredential.code`](https://developer.mozilla.org/en-US/docs/Web/API/OTPCredential/code)
     [[nodiscard]] jsbind::String code() const;
 };

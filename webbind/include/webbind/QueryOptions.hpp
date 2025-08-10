@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type QueryOptions
-/// [`QueryOptions`](https://developer.mozilla.org/en-US/docs/Web/API/QueryOptions)
 class QueryOptions : public emlite::Val {
   explicit QueryOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit QueryOptions(const emlite::Val &val) noexcept;
     QueryOptions() noexcept;
     [[nodiscard]] QueryOptions clone() const noexcept;
+    /// Getter of the `postscriptNames` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> postscriptNames() const;
+    /// Setter of the `postscriptNames` attribute.
     void postscriptNames(const jsbind::TypedArray<jsbind::String>& value);
 };
 

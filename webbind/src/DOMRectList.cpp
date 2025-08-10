@@ -4,11 +4,15 @@
 namespace webbind {
 
 DOMRectList DOMRectList::take_ownership(Handle h) noexcept {
-        return DOMRectList(h);
-    }
+    return DOMRectList(h);
+}
+
 DOMRectList DOMRectList::clone() const noexcept { return *this; }
+
 emlite::Val DOMRectList::instance() noexcept { return emlite::Val::global("DOMRectList"); }
+
 DOMRectList::DOMRectList(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 DOMRectList::DOMRectList(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned long DOMRectList::length() const {

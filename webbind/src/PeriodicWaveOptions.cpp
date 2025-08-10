@@ -1,14 +1,16 @@
 #include <webbind/PeriodicWaveOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PeriodicWaveOptions::PeriodicWaveOptions(Handle h) noexcept : PeriodicWaveConstraints(emlite::Val::take_ownership(h)) {}
 PeriodicWaveOptions PeriodicWaveOptions::take_ownership(Handle h) noexcept {
-        return PeriodicWaveOptions(h);
-    }
+    return PeriodicWaveOptions(h);
+}
+
 PeriodicWaveOptions::PeriodicWaveOptions(const emlite::Val &val) noexcept: PeriodicWaveConstraints(val) {}
+
 PeriodicWaveOptions::PeriodicWaveOptions() noexcept: PeriodicWaveConstraints(emlite::Val::object()) {}
+
 PeriodicWaveOptions PeriodicWaveOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<float> PeriodicWaveOptions::real() const {

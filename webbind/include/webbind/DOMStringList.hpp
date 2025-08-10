@@ -15,7 +15,7 @@ public:
     static DOMStringList take_ownership(Handle h) noexcept;
     [[nodiscard]] DOMStringList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`DOMStringList.length`](https://developer.mozilla.org/en-US/docs/Web/API/DOMStringList/length)
     /// [`DOMStringList.length`](https://developer.mozilla.org/en-US/docs/Web/API/DOMStringList/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.

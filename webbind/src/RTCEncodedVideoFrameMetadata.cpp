@@ -1,14 +1,16 @@
 #include <webbind/RTCEncodedVideoFrameMetadata.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCEncodedVideoFrameMetadata::RTCEncodedVideoFrameMetadata(Handle h) noexcept : RTCEncodedFrameMetadata(emlite::Val::take_ownership(h)) {}
 RTCEncodedVideoFrameMetadata RTCEncodedVideoFrameMetadata::take_ownership(Handle h) noexcept {
-        return RTCEncodedVideoFrameMetadata(h);
-    }
+    return RTCEncodedVideoFrameMetadata(h);
+}
+
 RTCEncodedVideoFrameMetadata::RTCEncodedVideoFrameMetadata(const emlite::Val &val) noexcept: RTCEncodedFrameMetadata(val) {}
+
 RTCEncodedVideoFrameMetadata::RTCEncodedVideoFrameMetadata() noexcept: RTCEncodedFrameMetadata(emlite::Val::object()) {}
+
 RTCEncodedVideoFrameMetadata RTCEncodedVideoFrameMetadata::clone() const noexcept { return *this; }
 
 long long RTCEncodedVideoFrameMetadata::frameId() const {

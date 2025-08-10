@@ -1,15 +1,17 @@
 #include <webbind/ContentDescription.hpp>
 #include <webbind/ImageResource.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ContentDescription::ContentDescription(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ContentDescription ContentDescription::take_ownership(Handle h) noexcept {
-        return ContentDescription(h);
-    }
+    return ContentDescription(h);
+}
+
 ContentDescription::ContentDescription(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ContentDescription::ContentDescription() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ContentDescription ContentDescription::clone() const noexcept { return *this; }
 
 jsbind::String ContentDescription::id() const {

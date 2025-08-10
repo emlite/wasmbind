@@ -1,15 +1,17 @@
 #include <webbind/LockOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 LockOptions::LockOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LockOptions LockOptions::take_ownership(Handle h) noexcept {
-        return LockOptions(h);
-    }
+    return LockOptions(h);
+}
+
 LockOptions::LockOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 LockOptions::LockOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 LockOptions LockOptions::clone() const noexcept { return *this; }
 
 LockMode LockOptions::mode() const {

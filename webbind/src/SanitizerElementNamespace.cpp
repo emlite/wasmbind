@@ -1,14 +1,16 @@
 #include <webbind/SanitizerElementNamespace.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SanitizerElementNamespace::SanitizerElementNamespace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SanitizerElementNamespace SanitizerElementNamespace::take_ownership(Handle h) noexcept {
-        return SanitizerElementNamespace(h);
-    }
+    return SanitizerElementNamespace(h);
+}
+
 SanitizerElementNamespace::SanitizerElementNamespace(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SanitizerElementNamespace::SanitizerElementNamespace() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SanitizerElementNamespace SanitizerElementNamespace::clone() const noexcept { return *this; }
 
 jsbind::String SanitizerElementNamespace::name() const {

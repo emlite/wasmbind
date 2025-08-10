@@ -1,14 +1,16 @@
 #include <webbind/AuthenticationExtensionsLargeBlobOutputs.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticationExtensionsLargeBlobOutputs::AuthenticationExtensionsLargeBlobOutputs(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticationExtensionsLargeBlobOutputs AuthenticationExtensionsLargeBlobOutputs::take_ownership(Handle h) noexcept {
-        return AuthenticationExtensionsLargeBlobOutputs(h);
-    }
+    return AuthenticationExtensionsLargeBlobOutputs(h);
+}
+
 AuthenticationExtensionsLargeBlobOutputs::AuthenticationExtensionsLargeBlobOutputs(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticationExtensionsLargeBlobOutputs::AuthenticationExtensionsLargeBlobOutputs() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticationExtensionsLargeBlobOutputs AuthenticationExtensionsLargeBlobOutputs::clone() const noexcept { return *this; }
 
 bool AuthenticationExtensionsLargeBlobOutputs::supported() const {

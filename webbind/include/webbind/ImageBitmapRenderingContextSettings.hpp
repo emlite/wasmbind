@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ImageBitmapRenderingContextSettings
-/// [`ImageBitmapRenderingContextSettings`](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmapRenderingContextSettings)
 class ImageBitmapRenderingContextSettings : public emlite::Val {
   explicit ImageBitmapRenderingContextSettings(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit ImageBitmapRenderingContextSettings(const emlite::Val &val) noexcept;
     ImageBitmapRenderingContextSettings() noexcept;
     [[nodiscard]] ImageBitmapRenderingContextSettings clone() const noexcept;
+    /// Getter of the `alpha` attribute.
     [[nodiscard]] bool alpha() const;
+    /// Setter of the `alpha` attribute.
     void alpha(bool value);
 };
 

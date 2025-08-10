@@ -15,13 +15,13 @@ public:
     static SVGAnimatedBoolean take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGAnimatedBoolean clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `baseVal` attribute.
+    /// [`SVGAnimatedBoolean.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedBoolean/baseVal)
     /// [`SVGAnimatedBoolean.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedBoolean/baseVal)
     [[nodiscard]] bool baseVal() const;
     /// Setter of the `baseVal` attribute.
     /// [`SVGAnimatedBoolean.baseVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedBoolean/baseVal)
     void baseVal(bool value);
-    /// Getter of the `animVal` attribute.
+    /// [`SVGAnimatedBoolean.animVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedBoolean/animVal)
     /// [`SVGAnimatedBoolean.animVal`](https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedBoolean/animVal)
     [[nodiscard]] bool animVal() const;
 };

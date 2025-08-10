@@ -1,14 +1,16 @@
 #include <webbind/LayoutConstraintsOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 LayoutConstraintsOptions::LayoutConstraintsOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 LayoutConstraintsOptions LayoutConstraintsOptions::take_ownership(Handle h) noexcept {
-        return LayoutConstraintsOptions(h);
-    }
+    return LayoutConstraintsOptions(h);
+}
+
 LayoutConstraintsOptions::LayoutConstraintsOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 LayoutConstraintsOptions::LayoutConstraintsOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 LayoutConstraintsOptions LayoutConstraintsOptions::clone() const noexcept { return *this; }
 
 double LayoutConstraintsOptions::availableInlineSize() const {

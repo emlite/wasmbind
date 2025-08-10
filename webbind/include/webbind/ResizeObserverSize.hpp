@@ -15,10 +15,10 @@ public:
     static ResizeObserverSize take_ownership(Handle h) noexcept;
     [[nodiscard]] ResizeObserverSize clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `inlineSize` attribute.
+    /// [`ResizeObserverSize.inlineSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverSize/inlineSize)
     /// [`ResizeObserverSize.inlineSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverSize/inlineSize)
     [[nodiscard]] double inlineSize() const;
-    /// Getter of the `blockSize` attribute.
+    /// [`ResizeObserverSize.blockSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverSize/blockSize)
     /// [`ResizeObserverSize.blockSize`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverSize/blockSize)
     [[nodiscard]] double blockSize() const;
 };

@@ -16,13 +16,13 @@ public:
     static PreferenceObject take_ownership(Handle h) noexcept;
     [[nodiscard]] PreferenceObject clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `override` attribute.
+    /// [`PreferenceObject.override`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/override)
     /// [`PreferenceObject.override`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/override)
     [[nodiscard]] jsbind::String override() const;
-    /// Getter of the `value` attribute.
+    /// [`PreferenceObject.value`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/value)
     /// [`PreferenceObject.value`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/value)
     [[nodiscard]] jsbind::String value() const;
-    /// Getter of the `validValues` attribute.
+    /// [`PreferenceObject.validValues`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/validValues)
     /// [`PreferenceObject.validValues`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/validValues)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> validValues() const;
     /// The clearOverride method.
@@ -31,7 +31,7 @@ public:
     /// The requestOverride method.
     /// [`PreferenceObject.requestOverride`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/requestOverride)
     jsbind::Promise<jsbind::Undefined> requestOverride(const jsbind::String& value);
-    /// Getter of the `onchange` attribute.
+    /// [`PreferenceObject.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/onchange)
     /// [`PreferenceObject.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/onchange)
     [[nodiscard]] jsbind::Any onchange() const;
     /// Setter of the `onchange` attribute.

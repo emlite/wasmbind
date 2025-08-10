@@ -1,14 +1,16 @@
 #include <webbind/PaymentCredentialInstrument.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentCredentialInstrument::PaymentCredentialInstrument(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentCredentialInstrument PaymentCredentialInstrument::take_ownership(Handle h) noexcept {
-        return PaymentCredentialInstrument(h);
-    }
+    return PaymentCredentialInstrument(h);
+}
+
 PaymentCredentialInstrument::PaymentCredentialInstrument(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentCredentialInstrument::PaymentCredentialInstrument() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentCredentialInstrument PaymentCredentialInstrument::clone() const noexcept { return *this; }
 
 jsbind::String PaymentCredentialInstrument::displayName() const {

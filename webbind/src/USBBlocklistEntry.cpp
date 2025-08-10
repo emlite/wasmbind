@@ -1,14 +1,16 @@
 #include <webbind/USBBlocklistEntry.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 USBBlocklistEntry::USBBlocklistEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBBlocklistEntry USBBlocklistEntry::take_ownership(Handle h) noexcept {
-        return USBBlocklistEntry(h);
-    }
+    return USBBlocklistEntry(h);
+}
+
 USBBlocklistEntry::USBBlocklistEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 USBBlocklistEntry::USBBlocklistEntry() noexcept: emlite::Val(emlite::Val::object()) {}
+
 USBBlocklistEntry USBBlocklistEntry::clone() const noexcept { return *this; }
 
 unsigned short USBBlocklistEntry::idVendor() const {

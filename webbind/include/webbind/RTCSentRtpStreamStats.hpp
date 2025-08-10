@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCSentRtpStreamStats
-/// [`RTCSentRtpStreamStats`](https://developer.mozilla.org/en-US/docs/Web/API/RTCSentRtpStreamStats)
 class RTCSentRtpStreamStats : public RTCRtpStreamStats {
   explicit RTCSentRtpStreamStats(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit RTCSentRtpStreamStats(const emlite::Val &val) noexcept;
     RTCSentRtpStreamStats() noexcept;
     [[nodiscard]] RTCSentRtpStreamStats clone() const noexcept;
+    /// Getter of the `packetsSent` attribute.
     [[nodiscard]] long long packetsSent() const;
+    /// Setter of the `packetsSent` attribute.
     void packetsSent(long long value);
+    /// Getter of the `bytesSent` attribute.
     [[nodiscard]] long long bytesSent() const;
+    /// Setter of the `bytesSent` attribute.
     void bytesSent(long long value);
+    /// Getter of the `packetsSentWithEct1` attribute.
     [[nodiscard]] long long packetsSentWithEct1() const;
+    /// Setter of the `packetsSentWithEct1` attribute.
     void packetsSentWithEct1(long long value);
 };
 

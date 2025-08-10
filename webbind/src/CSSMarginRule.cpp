@@ -4,11 +4,15 @@
 namespace webbind {
 
 CSSMarginRule CSSMarginRule::take_ownership(Handle h) noexcept {
-        return CSSMarginRule(h);
-    }
+    return CSSMarginRule(h);
+}
+
 CSSMarginRule CSSMarginRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSMarginRule::instance() noexcept { return emlite::Val::global("CSSMarginRule"); }
+
 CSSMarginRule::CSSMarginRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
+
 CSSMarginRule::CSSMarginRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 jsbind::String CSSMarginRule::name() const {

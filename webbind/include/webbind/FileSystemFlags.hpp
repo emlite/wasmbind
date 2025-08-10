@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FileSystemFlags
-/// [`FileSystemFlags`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFlags)
 class FileSystemFlags : public emlite::Val {
   explicit FileSystemFlags(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit FileSystemFlags(const emlite::Val &val) noexcept;
     FileSystemFlags() noexcept;
     [[nodiscard]] FileSystemFlags clone() const noexcept;
+    /// Getter of the `create` attribute.
     [[nodiscard]] bool create() const;
+    /// Setter of the `create` attribute.
     void create(bool value);
+    /// Getter of the `exclusive` attribute.
     [[nodiscard]] bool exclusive() const;
+    /// Setter of the `exclusive` attribute.
     void exclusive(bool value);
 };
 

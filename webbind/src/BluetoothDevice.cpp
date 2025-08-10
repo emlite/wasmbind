@@ -5,11 +5,15 @@
 namespace webbind {
 
 BluetoothDevice BluetoothDevice::take_ownership(Handle h) noexcept {
-        return BluetoothDevice(h);
-    }
+    return BluetoothDevice(h);
+}
+
 BluetoothDevice BluetoothDevice::clone() const noexcept { return *this; }
+
 emlite::Val BluetoothDevice::instance() noexcept { return emlite::Val::global("BluetoothDevice"); }
+
 BluetoothDevice::BluetoothDevice(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 BluetoothDevice::BluetoothDevice(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::String BluetoothDevice::id() const {

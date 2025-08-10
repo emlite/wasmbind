@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MediaKeysPolicy
-/// [`MediaKeysPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeysPolicy)
 class MediaKeysPolicy : public emlite::Val {
   explicit MediaKeysPolicy(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit MediaKeysPolicy(const emlite::Val &val) noexcept;
     MediaKeysPolicy() noexcept;
     [[nodiscard]] MediaKeysPolicy clone() const noexcept;
+    /// Getter of the `minHdcpVersion` attribute.
     [[nodiscard]] jsbind::String minHdcpVersion() const;
+    /// Setter of the `minHdcpVersion` attribute.
     void minHdcpVersion(const jsbind::String& value);
 };
 

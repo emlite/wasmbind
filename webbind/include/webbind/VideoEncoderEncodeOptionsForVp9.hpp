@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type VideoEncoderEncodeOptionsForVp9
-/// [`VideoEncoderEncodeOptionsForVp9`](https://developer.mozilla.org/en-US/docs/Web/API/VideoEncoderEncodeOptionsForVp9)
 class VideoEncoderEncodeOptionsForVp9 : public emlite::Val {
   explicit VideoEncoderEncodeOptionsForVp9(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit VideoEncoderEncodeOptionsForVp9(const emlite::Val &val) noexcept;
     VideoEncoderEncodeOptionsForVp9() noexcept;
     [[nodiscard]] VideoEncoderEncodeOptionsForVp9 clone() const noexcept;
+    /// Getter of the `quantizer` attribute.
     [[nodiscard]] unsigned short quantizer() const;
+    /// Setter of the `quantizer` attribute.
     void quantizer(unsigned short value);
 };
 

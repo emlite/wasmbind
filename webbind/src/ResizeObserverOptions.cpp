@@ -1,14 +1,16 @@
 #include <webbind/ResizeObserverOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ResizeObserverOptions::ResizeObserverOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ResizeObserverOptions ResizeObserverOptions::take_ownership(Handle h) noexcept {
-        return ResizeObserverOptions(h);
-    }
+    return ResizeObserverOptions(h);
+}
+
 ResizeObserverOptions::ResizeObserverOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ResizeObserverOptions::ResizeObserverOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ResizeObserverOptions ResizeObserverOptions::clone() const noexcept { return *this; }
 
 ResizeObserverBoxOptions ResizeObserverOptions::box() const {

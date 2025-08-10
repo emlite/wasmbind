@@ -5,11 +5,15 @@
 namespace webbind {
 
 USB USB::take_ownership(Handle h) noexcept {
-        return USB(h);
-    }
+    return USB(h);
+}
+
 USB USB::clone() const noexcept { return *this; }
+
 emlite::Val USB::instance() noexcept { return emlite::Val::global("USB"); }
+
 USB::USB(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 USB::USB(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::Any USB::onconnect() const {

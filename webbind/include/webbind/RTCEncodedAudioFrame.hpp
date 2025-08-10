@@ -23,7 +23,7 @@ public:
     RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame);
     /// The `new RTCEncodedAudioFrame(..)` constructor, creating a new RTCEncodedAudioFrame instance
     RTCEncodedAudioFrame(const RTCEncodedAudioFrame& originalFrame, const RTCEncodedAudioFrameOptions& options);
-    /// Getter of the `data` attribute.
+    /// [`RTCEncodedAudioFrame.data`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedAudioFrame/data)
     /// [`RTCEncodedAudioFrame.data`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedAudioFrame/data)
     [[nodiscard]] jsbind::ArrayBuffer data() const;
     /// Setter of the `data` attribute.

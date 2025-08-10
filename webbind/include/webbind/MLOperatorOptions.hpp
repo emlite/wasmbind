@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MLOperatorOptions
-/// [`MLOperatorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/MLOperatorOptions)
 class MLOperatorOptions : public emlite::Val {
   explicit MLOperatorOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit MLOperatorOptions(const emlite::Val &val) noexcept;
     MLOperatorOptions() noexcept;
     [[nodiscard]] MLOperatorOptions clone() const noexcept;
+    /// Getter of the `label` attribute.
     [[nodiscard]] jsbind::String label() const;
+    /// Setter of the `label` attribute.
     void label(const jsbind::String& value);
 };
 

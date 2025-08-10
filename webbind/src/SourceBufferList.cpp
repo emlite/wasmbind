@@ -4,11 +4,15 @@
 namespace webbind {
 
 SourceBufferList SourceBufferList::take_ownership(Handle h) noexcept {
-        return SourceBufferList(h);
-    }
+    return SourceBufferList(h);
+}
+
 SourceBufferList SourceBufferList::clone() const noexcept { return *this; }
+
 emlite::Val SourceBufferList::instance() noexcept { return emlite::Val::global("SourceBufferList"); }
+
 SourceBufferList::SourceBufferList(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 SourceBufferList::SourceBufferList(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 unsigned long SourceBufferList::length() const {

@@ -1,14 +1,16 @@
 #include <webbind/TextEncoderEncodeIntoResult.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TextEncoderEncodeIntoResult::TextEncoderEncodeIntoResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TextEncoderEncodeIntoResult TextEncoderEncodeIntoResult::take_ownership(Handle h) noexcept {
-        return TextEncoderEncodeIntoResult(h);
-    }
+    return TextEncoderEncodeIntoResult(h);
+}
+
 TextEncoderEncodeIntoResult::TextEncoderEncodeIntoResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 TextEncoderEncodeIntoResult::TextEncoderEncodeIntoResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 TextEncoderEncodeIntoResult TextEncoderEncodeIntoResult::clone() const noexcept { return *this; }
 
 long long TextEncoderEncodeIntoResult::read() const {

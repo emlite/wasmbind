@@ -1,15 +1,17 @@
 #include <webbind/XRMediaCylinderLayerInit.hpp>
 #include <webbind/XRRigidTransform.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRMediaCylinderLayerInit::XRMediaCylinderLayerInit(Handle h) noexcept : XRMediaLayerInit(emlite::Val::take_ownership(h)) {}
 XRMediaCylinderLayerInit XRMediaCylinderLayerInit::take_ownership(Handle h) noexcept {
-        return XRMediaCylinderLayerInit(h);
-    }
+    return XRMediaCylinderLayerInit(h);
+}
+
 XRMediaCylinderLayerInit::XRMediaCylinderLayerInit(const emlite::Val &val) noexcept: XRMediaLayerInit(val) {}
+
 XRMediaCylinderLayerInit::XRMediaCylinderLayerInit() noexcept: XRMediaLayerInit(emlite::Val::object()) {}
+
 XRMediaCylinderLayerInit XRMediaCylinderLayerInit::clone() const noexcept { return *this; }
 
 XRRigidTransform XRMediaCylinderLayerInit::transform() const {

@@ -10,7 +10,6 @@ namespace webbind {
 class DOMRectReadOnly;
 
 /// Dictionary type DetectedText
-/// [`DetectedText`](https://developer.mozilla.org/en-US/docs/Web/API/DetectedText)
 class DetectedText : public emlite::Val {
   explicit DetectedText(Handle h) noexcept;
 public:
@@ -18,11 +17,17 @@ public:
     explicit DetectedText(const emlite::Val &val) noexcept;
     DetectedText() noexcept;
     [[nodiscard]] DetectedText clone() const noexcept;
+    /// Getter of the `boundingBox` attribute.
     [[nodiscard]] DOMRectReadOnly boundingBox() const;
+    /// Setter of the `boundingBox` attribute.
     void boundingBox(const DOMRectReadOnly& value);
+    /// Getter of the `rawValue` attribute.
     [[nodiscard]] jsbind::String rawValue() const;
+    /// Setter of the `rawValue` attribute.
     void rawValue(const jsbind::String& value);
+    /// Getter of the `cornerPoints` attribute.
     [[nodiscard]] jsbind::TypedArray<Point2D> cornerPoints() const;
+    /// Setter of the `cornerPoints` attribute.
     void cornerPoints(const jsbind::TypedArray<Point2D>& value);
 };
 

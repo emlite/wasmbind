@@ -24,10 +24,10 @@ public:
     NavigationEvent(const jsbind::String& type);
     /// The `new NavigationEvent(..)` constructor, creating a new NavigationEvent instance
     NavigationEvent(const jsbind::String& type, const NavigationEventInit& eventInitDict);
-    /// Getter of the `dir` attribute.
+    /// [`NavigationEvent.dir`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationEvent/dir)
     /// [`NavigationEvent.dir`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationEvent/dir)
     [[nodiscard]] SpatialNavigationDirection dir() const;
-    /// Getter of the `relatedTarget` attribute.
+    /// [`NavigationEvent.relatedTarget`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationEvent/relatedTarget)
     /// [`NavigationEvent.relatedTarget`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationEvent/relatedTarget)
     [[nodiscard]] EventTarget relatedTarget() const;
 };

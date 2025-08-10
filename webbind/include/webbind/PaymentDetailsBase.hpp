@@ -10,7 +10,6 @@
 namespace webbind {
 
 /// Dictionary type PaymentDetailsBase
-/// [`PaymentDetailsBase`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentDetailsBase)
 class PaymentDetailsBase : public emlite::Val {
   explicit PaymentDetailsBase(Handle h) noexcept;
 public:
@@ -18,11 +17,17 @@ public:
     explicit PaymentDetailsBase(const emlite::Val &val) noexcept;
     PaymentDetailsBase() noexcept;
     [[nodiscard]] PaymentDetailsBase clone() const noexcept;
+    /// Getter of the `displayItems` attribute.
     [[nodiscard]] jsbind::TypedArray<PaymentItem> displayItems() const;
+    /// Setter of the `displayItems` attribute.
     void displayItems(const jsbind::TypedArray<PaymentItem>& value);
+    /// Getter of the `shippingOptions` attribute.
     [[nodiscard]] jsbind::TypedArray<PaymentShippingOption> shippingOptions() const;
+    /// Setter of the `shippingOptions` attribute.
     void shippingOptions(const jsbind::TypedArray<PaymentShippingOption>& value);
+    /// Getter of the `modifiers` attribute.
     [[nodiscard]] jsbind::TypedArray<PaymentDetailsModifier> modifiers() const;
+    /// Setter of the `modifiers` attribute.
     void modifiers(const jsbind::TypedArray<PaymentDetailsModifier>& value);
 };
 

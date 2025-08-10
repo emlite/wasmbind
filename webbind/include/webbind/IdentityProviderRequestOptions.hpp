@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type IdentityProviderRequestOptions
-/// [`IdentityProviderRequestOptions`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProviderRequestOptions)
 class IdentityProviderRequestOptions : public IdentityProviderConfig {
   explicit IdentityProviderRequestOptions(Handle h) noexcept;
 public:
@@ -16,15 +15,25 @@ public:
     explicit IdentityProviderRequestOptions(const emlite::Val &val) noexcept;
     IdentityProviderRequestOptions() noexcept;
     [[nodiscard]] IdentityProviderRequestOptions clone() const noexcept;
+    /// Getter of the `nonce` attribute.
     [[nodiscard]] jsbind::String nonce() const;
+    /// Setter of the `nonce` attribute.
     void nonce(const jsbind::String& value);
+    /// Getter of the `loginHint` attribute.
     [[nodiscard]] jsbind::String loginHint() const;
+    /// Setter of the `loginHint` attribute.
     void loginHint(const jsbind::String& value);
+    /// Getter of the `domainHint` attribute.
     [[nodiscard]] jsbind::String domainHint() const;
+    /// Setter of the `domainHint` attribute.
     void domainHint(const jsbind::String& value);
+    /// Getter of the `fields` attribute.
     [[nodiscard]] jsbind::TypedArray<jsbind::String> fields() const;
+    /// Setter of the `fields` attribute.
     void fields(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `params` attribute.
     [[nodiscard]] jsbind::Any params() const;
+    /// Setter of the `params` attribute.
     void params(const jsbind::Any& value);
 };
 

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GPUSamplerBindingLayout
-/// [`GPUSamplerBindingLayout`](https://developer.mozilla.org/en-US/docs/Web/API/GPUSamplerBindingLayout)
 class GPUSamplerBindingLayout : public emlite::Val {
   explicit GPUSamplerBindingLayout(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit GPUSamplerBindingLayout(const emlite::Val &val) noexcept;
     GPUSamplerBindingLayout() noexcept;
     [[nodiscard]] GPUSamplerBindingLayout clone() const noexcept;
+    /// Getter of the `type` attribute.
     [[nodiscard]] GPUSamplerBindingType type() const;
+    /// Setter of the `type` attribute.
     void type(const GPUSamplerBindingType& value);
 };
 

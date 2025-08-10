@@ -3,11 +3,15 @@
 namespace webbind {
 
 WebSocket WebSocket::take_ownership(Handle h) noexcept {
-        return WebSocket(h);
-    }
+    return WebSocket(h);
+}
+
 WebSocket WebSocket::clone() const noexcept { return *this; }
+
 emlite::Val WebSocket::instance() noexcept { return emlite::Val::global("WebSocket"); }
+
 WebSocket::WebSocket(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 WebSocket::WebSocket(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 WebSocket::WebSocket(const jsbind::String& url) : EventTarget(emlite::Val::global("WebSocket").new_(url)) {}

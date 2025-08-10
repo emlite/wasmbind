@@ -30,7 +30,7 @@ public:
     /// The releaseLock method.
     /// [`ReadableStreamBYOBReader.releaseLock`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
     jsbind::Undefined releaseLock();
-    /// Getter of the `closed` attribute.
+    /// [`ReadableStreamBYOBReader.closed`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/closed)
     /// [`ReadableStreamBYOBReader.closed`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/closed)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> closed() const;
     /// The cancel method.

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new GamepadEvent(..)` constructor, creating a new GamepadEvent instance
     GamepadEvent(const jsbind::String& type, const GamepadEventInit& eventInitDict);
-    /// Getter of the `gamepad` attribute.
+    /// [`GamepadEvent.gamepad`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadEvent/gamepad)
     /// [`GamepadEvent.gamepad`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadEvent/gamepad)
     [[nodiscard]] Gamepad gamepad() const;
 };

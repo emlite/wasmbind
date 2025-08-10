@@ -26,37 +26,37 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NavigateEvent(..)` constructor, creating a new NavigateEvent instance
     NavigateEvent(const jsbind::String& type, const NavigateEventInit& eventInitDict);
-    /// Getter of the `navigationType` attribute.
+    /// [`NavigateEvent.navigationType`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/navigationType)
     /// [`NavigateEvent.navigationType`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/navigationType)
     [[nodiscard]] NavigationType navigationType() const;
-    /// Getter of the `destination` attribute.
+    /// [`NavigateEvent.destination`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/destination)
     /// [`NavigateEvent.destination`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/destination)
     [[nodiscard]] NavigationDestination destination() const;
-    /// Getter of the `canIntercept` attribute.
+    /// [`NavigateEvent.canIntercept`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/canIntercept)
     /// [`NavigateEvent.canIntercept`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/canIntercept)
     [[nodiscard]] bool canIntercept() const;
-    /// Getter of the `userInitiated` attribute.
+    /// [`NavigateEvent.userInitiated`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/userInitiated)
     /// [`NavigateEvent.userInitiated`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/userInitiated)
     [[nodiscard]] bool userInitiated() const;
-    /// Getter of the `hashChange` attribute.
+    /// [`NavigateEvent.hashChange`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/hashChange)
     /// [`NavigateEvent.hashChange`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/hashChange)
     [[nodiscard]] bool hashChange() const;
-    /// Getter of the `signal` attribute.
+    /// [`NavigateEvent.signal`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/signal)
     /// [`NavigateEvent.signal`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/signal)
     [[nodiscard]] AbortSignal signal() const;
-    /// Getter of the `formData` attribute.
+    /// [`NavigateEvent.formData`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/formData)
     /// [`NavigateEvent.formData`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/formData)
     [[nodiscard]] FormData formData() const;
-    /// Getter of the `downloadRequest` attribute.
+    /// [`NavigateEvent.downloadRequest`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/downloadRequest)
     /// [`NavigateEvent.downloadRequest`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/downloadRequest)
     [[nodiscard]] jsbind::String downloadRequest() const;
-    /// Getter of the `info` attribute.
+    /// [`NavigateEvent.info`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/info)
     /// [`NavigateEvent.info`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/info)
     [[nodiscard]] jsbind::Any info() const;
-    /// Getter of the `hasUAVisualTransition` attribute.
+    /// [`NavigateEvent.hasUAVisualTransition`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/hasUAVisualTransition)
     /// [`NavigateEvent.hasUAVisualTransition`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/hasUAVisualTransition)
     [[nodiscard]] bool hasUAVisualTransition() const;
-    /// Getter of the `sourceElement` attribute.
+    /// [`NavigateEvent.sourceElement`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/sourceElement)
     /// [`NavigateEvent.sourceElement`](https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/sourceElement)
     [[nodiscard]] Element sourceElement() const;
     /// The intercept method.

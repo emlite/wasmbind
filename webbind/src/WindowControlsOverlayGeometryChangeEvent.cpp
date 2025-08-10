@@ -5,11 +5,15 @@
 namespace webbind {
 
 WindowControlsOverlayGeometryChangeEvent WindowControlsOverlayGeometryChangeEvent::take_ownership(Handle h) noexcept {
-        return WindowControlsOverlayGeometryChangeEvent(h);
-    }
+    return WindowControlsOverlayGeometryChangeEvent(h);
+}
+
 WindowControlsOverlayGeometryChangeEvent WindowControlsOverlayGeometryChangeEvent::clone() const noexcept { return *this; }
+
 emlite::Val WindowControlsOverlayGeometryChangeEvent::instance() noexcept { return emlite::Val::global("WindowControlsOverlayGeometryChangeEvent"); }
+
 WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 WindowControlsOverlayGeometryChangeEvent::WindowControlsOverlayGeometryChangeEvent(const jsbind::String& type, const WindowControlsOverlayGeometryChangeEventInit& eventInitDict) : Event(emlite::Val::global("WindowControlsOverlayGeometryChangeEvent").new_(type, eventInitDict)) {}

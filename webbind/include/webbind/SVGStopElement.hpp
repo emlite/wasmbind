@@ -18,7 +18,7 @@ public:
     static SVGStopElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGStopElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `offset` attribute.
+    /// [`SVGStopElement.offset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStopElement/offset)
     /// [`SVGStopElement.offset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGStopElement/offset)
     [[nodiscard]] SVGAnimatedNumber offset() const;
 };

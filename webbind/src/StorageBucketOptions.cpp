@@ -1,14 +1,16 @@
 #include <webbind/StorageBucketOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StorageBucketOptions::StorageBucketOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageBucketOptions StorageBucketOptions::take_ownership(Handle h) noexcept {
-        return StorageBucketOptions(h);
-    }
+    return StorageBucketOptions(h);
+}
+
 StorageBucketOptions::StorageBucketOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 StorageBucketOptions::StorageBucketOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 StorageBucketOptions StorageBucketOptions::clone() const noexcept { return *this; }
 
 bool StorageBucketOptions::persisted() const {

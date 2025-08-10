@@ -1,14 +1,16 @@
 #include <webbind/URLPatternInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 URLPatternInit::URLPatternInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 URLPatternInit URLPatternInit::take_ownership(Handle h) noexcept {
-        return URLPatternInit(h);
-    }
+    return URLPatternInit(h);
+}
+
 URLPatternInit::URLPatternInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 URLPatternInit::URLPatternInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 URLPatternInit URLPatternInit::clone() const noexcept { return *this; }
 
 jsbind::String URLPatternInit::protocol() const {

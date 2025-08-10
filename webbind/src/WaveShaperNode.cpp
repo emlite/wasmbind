@@ -5,11 +5,15 @@
 namespace webbind {
 
 WaveShaperNode WaveShaperNode::take_ownership(Handle h) noexcept {
-        return WaveShaperNode(h);
-    }
+    return WaveShaperNode(h);
+}
+
 WaveShaperNode WaveShaperNode::clone() const noexcept { return *this; }
+
 emlite::Val WaveShaperNode::instance() noexcept { return emlite::Val::global("WaveShaperNode"); }
+
 WaveShaperNode::WaveShaperNode(Handle h) noexcept : AudioNode(emlite::Val::take_ownership(h)) {}
+
 WaveShaperNode::WaveShaperNode(const emlite::Val &val) noexcept: AudioNode(val) {}
 
 WaveShaperNode::WaveShaperNode(const BaseAudioContext& context) : AudioNode(emlite::Val::global("WaveShaperNode").new_(context)) {}

@@ -29,10 +29,10 @@ public:
     /// The addTeardown method.
     /// [`Subscriber.addTeardown`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/addTeardown)
     jsbind::Undefined addTeardown(const jsbind::Function& teardown);
-    /// Getter of the `active` attribute.
+    /// [`Subscriber.active`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/active)
     /// [`Subscriber.active`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/active)
     [[nodiscard]] bool active() const;
-    /// Getter of the `signal` attribute.
+    /// [`Subscriber.signal`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/signal)
     /// [`Subscriber.signal`](https://developer.mozilla.org/en-US/docs/Web/API/Subscriber/signal)
     [[nodiscard]] AbortSignal signal() const;
 };

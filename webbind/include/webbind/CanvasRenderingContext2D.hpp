@@ -28,7 +28,7 @@ public:
     static CanvasRenderingContext2D take_ownership(Handle h) noexcept;
     [[nodiscard]] CanvasRenderingContext2D clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `canvas` attribute.
+    /// [`CanvasRenderingContext2D.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas)
     /// [`CanvasRenderingContext2D.canvas`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas)
     [[nodiscard]] HTMLCanvasElement canvas() const;
     /// The getContextAttributes method.
@@ -70,37 +70,37 @@ public:
     /// The resetTransform method.
     /// [`CanvasRenderingContext2D.resetTransform`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/resetTransform)
     jsbind::Undefined resetTransform();
-    /// Getter of the `globalAlpha` attribute.
+    /// [`CanvasRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalAlpha)
     /// [`CanvasRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalAlpha)
     [[nodiscard]] double globalAlpha() const;
     /// Setter of the `globalAlpha` attribute.
     /// [`CanvasRenderingContext2D.globalAlpha`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalAlpha)
     void globalAlpha(double value);
-    /// Getter of the `globalCompositeOperation` attribute.
+    /// [`CanvasRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
     /// [`CanvasRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
     [[nodiscard]] jsbind::String globalCompositeOperation() const;
     /// Setter of the `globalCompositeOperation` attribute.
     /// [`CanvasRenderingContext2D.globalCompositeOperation`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
     void globalCompositeOperation(const jsbind::String& value);
-    /// Getter of the `imageSmoothingEnabled` attribute.
+    /// [`CanvasRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled)
     /// [`CanvasRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled)
     [[nodiscard]] bool imageSmoothingEnabled() const;
     /// Setter of the `imageSmoothingEnabled` attribute.
     /// [`CanvasRenderingContext2D.imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled)
     void imageSmoothingEnabled(bool value);
-    /// Getter of the `imageSmoothingQuality` attribute.
+    /// [`CanvasRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality)
     /// [`CanvasRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality)
     [[nodiscard]] ImageSmoothingQuality imageSmoothingQuality() const;
     /// Setter of the `imageSmoothingQuality` attribute.
     /// [`CanvasRenderingContext2D.imageSmoothingQuality`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality)
     void imageSmoothingQuality(const ImageSmoothingQuality& value);
-    /// Getter of the `strokeStyle` attribute.
+    /// [`CanvasRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
     /// [`CanvasRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
     [[nodiscard]] jsbind::Any strokeStyle() const;
     /// Setter of the `strokeStyle` attribute.
     /// [`CanvasRenderingContext2D.strokeStyle`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
     void strokeStyle(const jsbind::Any& value);
-    /// Getter of the `fillStyle` attribute.
+    /// [`CanvasRenderingContext2D.fillStyle`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle)
     /// [`CanvasRenderingContext2D.fillStyle`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle)
     [[nodiscard]] jsbind::Any fillStyle() const;
     /// Setter of the `fillStyle` attribute.
@@ -118,31 +118,31 @@ public:
     /// The createPattern method.
     /// [`CanvasRenderingContext2D.createPattern`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createPattern)
     CanvasPattern createPattern(const jsbind::Any& image, const jsbind::String& repetition);
-    /// Getter of the `shadowOffsetX` attribute.
+    /// [`CanvasRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX)
     /// [`CanvasRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX)
     [[nodiscard]] double shadowOffsetX() const;
     /// Setter of the `shadowOffsetX` attribute.
     /// [`CanvasRenderingContext2D.shadowOffsetX`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX)
     void shadowOffsetX(double value);
-    /// Getter of the `shadowOffsetY` attribute.
+    /// [`CanvasRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY)
     /// [`CanvasRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY)
     [[nodiscard]] double shadowOffsetY() const;
     /// Setter of the `shadowOffsetY` attribute.
     /// [`CanvasRenderingContext2D.shadowOffsetY`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY)
     void shadowOffsetY(double value);
-    /// Getter of the `shadowBlur` attribute.
+    /// [`CanvasRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur)
     /// [`CanvasRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur)
     [[nodiscard]] double shadowBlur() const;
     /// Setter of the `shadowBlur` attribute.
     /// [`CanvasRenderingContext2D.shadowBlur`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur)
     void shadowBlur(double value);
-    /// Getter of the `shadowColor` attribute.
+    /// [`CanvasRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor)
     /// [`CanvasRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor)
     [[nodiscard]] jsbind::String shadowColor() const;
     /// Setter of the `shadowColor` attribute.
     /// [`CanvasRenderingContext2D.shadowColor`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor)
     void shadowColor(const jsbind::String& value);
-    /// Getter of the `filter` attribute.
+    /// [`CanvasRenderingContext2D.filter`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter)
     /// [`CanvasRenderingContext2D.filter`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter)
     [[nodiscard]] jsbind::String filter() const;
     /// Setter of the `filter` attribute.
@@ -217,25 +217,25 @@ public:
     /// The putImageData method.
     /// [`CanvasRenderingContext2D.putImageData`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData)
     jsbind::Undefined putImageData(const ImageData& imageData, long dx, long dy, long dirtyX, long dirtyY, long dirtyWidth, long dirtyHeight);
-    /// Getter of the `lineWidth` attribute.
+    /// [`CanvasRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth)
     /// [`CanvasRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth)
     [[nodiscard]] double lineWidth() const;
     /// Setter of the `lineWidth` attribute.
     /// [`CanvasRenderingContext2D.lineWidth`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth)
     void lineWidth(double value);
-    /// Getter of the `lineCap` attribute.
+    /// [`CanvasRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap)
     /// [`CanvasRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap)
     [[nodiscard]] CanvasLineCap lineCap() const;
     /// Setter of the `lineCap` attribute.
     /// [`CanvasRenderingContext2D.lineCap`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap)
     void lineCap(const CanvasLineCap& value);
-    /// Getter of the `lineJoin` attribute.
+    /// [`CanvasRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin)
     /// [`CanvasRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin)
     [[nodiscard]] CanvasLineJoin lineJoin() const;
     /// Setter of the `lineJoin` attribute.
     /// [`CanvasRenderingContext2D.lineJoin`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin)
     void lineJoin(const CanvasLineJoin& value);
-    /// Getter of the `miterLimit` attribute.
+    /// [`CanvasRenderingContext2D.miterLimit`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/miterLimit)
     /// [`CanvasRenderingContext2D.miterLimit`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/miterLimit)
     [[nodiscard]] double miterLimit() const;
     /// Setter of the `miterLimit` attribute.
@@ -247,73 +247,73 @@ public:
     /// The getLineDash method.
     /// [`CanvasRenderingContext2D.getLineDash`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getLineDash)
     jsbind::TypedArray<double> getLineDash();
-    /// Getter of the `lineDashOffset` attribute.
+    /// [`CanvasRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
     /// [`CanvasRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
     [[nodiscard]] double lineDashOffset() const;
     /// Setter of the `lineDashOffset` attribute.
     /// [`CanvasRenderingContext2D.lineDashOffset`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
     void lineDashOffset(double value);
-    /// Getter of the `lang` attribute.
+    /// [`CanvasRenderingContext2D.lang`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lang)
     /// [`CanvasRenderingContext2D.lang`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lang)
     [[nodiscard]] jsbind::String lang() const;
     /// Setter of the `lang` attribute.
     /// [`CanvasRenderingContext2D.lang`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lang)
     void lang(const jsbind::String& value);
-    /// Getter of the `font` attribute.
+    /// [`CanvasRenderingContext2D.font`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font)
     /// [`CanvasRenderingContext2D.font`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font)
     [[nodiscard]] jsbind::String font() const;
     /// Setter of the `font` attribute.
     /// [`CanvasRenderingContext2D.font`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font)
     void font(const jsbind::String& value);
-    /// Getter of the `textAlign` attribute.
+    /// [`CanvasRenderingContext2D.textAlign`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textAlign)
     /// [`CanvasRenderingContext2D.textAlign`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textAlign)
     [[nodiscard]] CanvasTextAlign textAlign() const;
     /// Setter of the `textAlign` attribute.
     /// [`CanvasRenderingContext2D.textAlign`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textAlign)
     void textAlign(const CanvasTextAlign& value);
-    /// Getter of the `textBaseline` attribute.
+    /// [`CanvasRenderingContext2D.textBaseline`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textBaseline)
     /// [`CanvasRenderingContext2D.textBaseline`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textBaseline)
     [[nodiscard]] CanvasTextBaseline textBaseline() const;
     /// Setter of the `textBaseline` attribute.
     /// [`CanvasRenderingContext2D.textBaseline`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textBaseline)
     void textBaseline(const CanvasTextBaseline& value);
-    /// Getter of the `direction` attribute.
+    /// [`CanvasRenderingContext2D.direction`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/direction)
     /// [`CanvasRenderingContext2D.direction`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/direction)
     [[nodiscard]] CanvasDirection direction() const;
     /// Setter of the `direction` attribute.
     /// [`CanvasRenderingContext2D.direction`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/direction)
     void direction(const CanvasDirection& value);
-    /// Getter of the `letterSpacing` attribute.
+    /// [`CanvasRenderingContext2D.letterSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/letterSpacing)
     /// [`CanvasRenderingContext2D.letterSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/letterSpacing)
     [[nodiscard]] jsbind::String letterSpacing() const;
     /// Setter of the `letterSpacing` attribute.
     /// [`CanvasRenderingContext2D.letterSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/letterSpacing)
     void letterSpacing(const jsbind::String& value);
-    /// Getter of the `fontKerning` attribute.
+    /// [`CanvasRenderingContext2D.fontKerning`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontKerning)
     /// [`CanvasRenderingContext2D.fontKerning`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontKerning)
     [[nodiscard]] CanvasFontKerning fontKerning() const;
     /// Setter of the `fontKerning` attribute.
     /// [`CanvasRenderingContext2D.fontKerning`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontKerning)
     void fontKerning(const CanvasFontKerning& value);
-    /// Getter of the `fontStretch` attribute.
+    /// [`CanvasRenderingContext2D.fontStretch`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontStretch)
     /// [`CanvasRenderingContext2D.fontStretch`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontStretch)
     [[nodiscard]] CanvasFontStretch fontStretch() const;
     /// Setter of the `fontStretch` attribute.
     /// [`CanvasRenderingContext2D.fontStretch`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontStretch)
     void fontStretch(const CanvasFontStretch& value);
-    /// Getter of the `fontVariantCaps` attribute.
+    /// [`CanvasRenderingContext2D.fontVariantCaps`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps)
     /// [`CanvasRenderingContext2D.fontVariantCaps`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps)
     [[nodiscard]] CanvasFontVariantCaps fontVariantCaps() const;
     /// Setter of the `fontVariantCaps` attribute.
     /// [`CanvasRenderingContext2D.fontVariantCaps`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps)
     void fontVariantCaps(const CanvasFontVariantCaps& value);
-    /// Getter of the `textRendering` attribute.
+    /// [`CanvasRenderingContext2D.textRendering`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textRendering)
     /// [`CanvasRenderingContext2D.textRendering`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textRendering)
     [[nodiscard]] CanvasTextRendering textRendering() const;
     /// Setter of the `textRendering` attribute.
     /// [`CanvasRenderingContext2D.textRendering`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textRendering)
     void textRendering(const CanvasTextRendering& value);
-    /// Getter of the `wordSpacing` attribute.
+    /// [`CanvasRenderingContext2D.wordSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/wordSpacing)
     /// [`CanvasRenderingContext2D.wordSpacing`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/wordSpacing)
     [[nodiscard]] jsbind::String wordSpacing() const;
     /// Setter of the `wordSpacing` attribute.

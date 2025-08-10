@@ -23,7 +23,7 @@ public:
     SubmitEvent(const jsbind::String& type);
     /// The `new SubmitEvent(..)` constructor, creating a new SubmitEvent instance
     SubmitEvent(const jsbind::String& type, const SubmitEventInit& eventInitDict);
-    /// Getter of the `submitter` attribute.
+    /// [`SubmitEvent.submitter`](https://developer.mozilla.org/en-US/docs/Web/API/SubmitEvent/submitter)
     /// [`SubmitEvent.submitter`](https://developer.mozilla.org/en-US/docs/Web/API/SubmitEvent/submitter)
     [[nodiscard]] HTMLElement submitter() const;
 };

@@ -4,11 +4,15 @@
 namespace webbind {
 
 WindowControlsOverlay WindowControlsOverlay::take_ownership(Handle h) noexcept {
-        return WindowControlsOverlay(h);
-    }
+    return WindowControlsOverlay(h);
+}
+
 WindowControlsOverlay WindowControlsOverlay::clone() const noexcept { return *this; }
+
 emlite::Val WindowControlsOverlay::instance() noexcept { return emlite::Val::global("WindowControlsOverlay"); }
+
 WindowControlsOverlay::WindowControlsOverlay(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 WindowControlsOverlay::WindowControlsOverlay(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 bool WindowControlsOverlay::visible() const {

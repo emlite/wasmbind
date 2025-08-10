@@ -20,13 +20,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new Highlight(..)` constructor, creating a new Highlight instance
     Highlight(const AbstractRange& initialRanges);
-    /// Getter of the `priority` attribute.
+    /// [`Highlight.priority`](https://developer.mozilla.org/en-US/docs/Web/API/Highlight/priority)
     /// [`Highlight.priority`](https://developer.mozilla.org/en-US/docs/Web/API/Highlight/priority)
     [[nodiscard]] long priority() const;
     /// Setter of the `priority` attribute.
     /// [`Highlight.priority`](https://developer.mozilla.org/en-US/docs/Web/API/Highlight/priority)
     void priority(long value);
-    /// Getter of the `type` attribute.
+    /// [`Highlight.type`](https://developer.mozilla.org/en-US/docs/Web/API/Highlight/type)
     /// [`Highlight.type`](https://developer.mozilla.org/en-US/docs/Web/API/Highlight/type)
     [[nodiscard]] HighlightType type() const;
     /// Setter of the `type` attribute.

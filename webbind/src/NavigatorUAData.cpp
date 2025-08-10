@@ -6,11 +6,15 @@
 namespace webbind {
 
 NavigatorUAData NavigatorUAData::take_ownership(Handle h) noexcept {
-        return NavigatorUAData(h);
-    }
+    return NavigatorUAData(h);
+}
+
 NavigatorUAData NavigatorUAData::clone() const noexcept { return *this; }
+
 emlite::Val NavigatorUAData::instance() noexcept { return emlite::Val::global("NavigatorUAData"); }
+
 NavigatorUAData::NavigatorUAData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 NavigatorUAData::NavigatorUAData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::TypedArray<NavigatorUABrandVersion> NavigatorUAData::brands() const {

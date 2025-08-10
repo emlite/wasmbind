@@ -21,10 +21,10 @@ public:
     AnimationPlaybackEvent(const jsbind::String& type);
     /// The `new AnimationPlaybackEvent(..)` constructor, creating a new AnimationPlaybackEvent instance
     AnimationPlaybackEvent(const jsbind::String& type, const AnimationPlaybackEventInit& eventInitDict);
-    /// Getter of the `currentTime` attribute.
+    /// [`AnimationPlaybackEvent.currentTime`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/currentTime)
     /// [`AnimationPlaybackEvent.currentTime`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/currentTime)
     [[nodiscard]] jsbind::Any currentTime() const;
-    /// Getter of the `timelineTime` attribute.
+    /// [`AnimationPlaybackEvent.timelineTime`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/timelineTime)
     /// [`AnimationPlaybackEvent.timelineTime`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/timelineTime)
     [[nodiscard]] jsbind::Any timelineTime() const;
 };

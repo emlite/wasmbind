@@ -1,15 +1,17 @@
 #include <webbind/WebTransportOptions.hpp>
 #include <webbind/WebTransportHash.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WebTransportOptions::WebTransportOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 WebTransportOptions WebTransportOptions::take_ownership(Handle h) noexcept {
-        return WebTransportOptions(h);
-    }
+    return WebTransportOptions(h);
+}
+
 WebTransportOptions::WebTransportOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 WebTransportOptions::WebTransportOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 WebTransportOptions WebTransportOptions::clone() const noexcept { return *this; }
 
 bool WebTransportOptions::allowPooling() const {

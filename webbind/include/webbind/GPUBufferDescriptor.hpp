@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUBufferDescriptor
-/// [`GPUBufferDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUBufferDescriptor)
 class GPUBufferDescriptor : public GPUObjectDescriptorBase {
   explicit GPUBufferDescriptor(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit GPUBufferDescriptor(const emlite::Val &val) noexcept;
     GPUBufferDescriptor() noexcept;
     [[nodiscard]] GPUBufferDescriptor clone() const noexcept;
+    /// Getter of the `size` attribute.
     [[nodiscard]] jsbind::Any size() const;
+    /// Setter of the `size` attribute.
     void size(const jsbind::Any& value);
+    /// Getter of the `usage` attribute.
     [[nodiscard]] jsbind::Any usage() const;
+    /// Setter of the `usage` attribute.
     void usage(const jsbind::Any& value);
+    /// Getter of the `mappedAtCreation` attribute.
     [[nodiscard]] bool mappedAtCreation() const;
+    /// Setter of the `mappedAtCreation` attribute.
     void mappedAtCreation(bool value);
 };
 

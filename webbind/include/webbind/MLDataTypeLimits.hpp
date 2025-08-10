@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MLDataTypeLimits
-/// [`MLDataTypeLimits`](https://developer.mozilla.org/en-US/docs/Web/API/MLDataTypeLimits)
 class MLDataTypeLimits : public emlite::Val {
   explicit MLDataTypeLimits(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit MLDataTypeLimits(const emlite::Val &val) noexcept;
     MLDataTypeLimits() noexcept;
     [[nodiscard]] MLDataTypeLimits clone() const noexcept;
+    /// Getter of the `dataTypes` attribute.
     [[nodiscard]] jsbind::Any dataTypes() const;
+    /// Setter of the `dataTypes` attribute.
     void dataTypes(const jsbind::Any& value);
 };
 

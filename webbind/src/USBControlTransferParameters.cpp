@@ -1,14 +1,16 @@
 #include <webbind/USBControlTransferParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 USBControlTransferParameters::USBControlTransferParameters(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 USBControlTransferParameters USBControlTransferParameters::take_ownership(Handle h) noexcept {
-        return USBControlTransferParameters(h);
-    }
+    return USBControlTransferParameters(h);
+}
+
 USBControlTransferParameters::USBControlTransferParameters(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 USBControlTransferParameters::USBControlTransferParameters() noexcept: emlite::Val(emlite::Val::object()) {}
+
 USBControlTransferParameters USBControlTransferParameters::clone() const noexcept { return *this; }
 
 USBRequestType USBControlTransferParameters::requestType() const {

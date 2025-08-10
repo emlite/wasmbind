@@ -8,11 +8,15 @@
 namespace webbind {
 
 GPUAdapter GPUAdapter::take_ownership(Handle h) noexcept {
-        return GPUAdapter(h);
-    }
+    return GPUAdapter(h);
+}
+
 GPUAdapter GPUAdapter::clone() const noexcept { return *this; }
+
 emlite::Val GPUAdapter::instance() noexcept { return emlite::Val::global("GPUAdapter"); }
+
 GPUAdapter::GPUAdapter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUAdapter::GPUAdapter(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 GPUSupportedFeatures GPUAdapter::features() const {

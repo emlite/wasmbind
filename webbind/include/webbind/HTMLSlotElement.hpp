@@ -22,7 +22,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLSlotElement(..)` constructor, creating a new HTMLSlotElement instance
     HTMLSlotElement();
-    /// Getter of the `name` attribute.
+    /// [`HTMLSlotElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/name)
     /// [`HTMLSlotElement.name`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.

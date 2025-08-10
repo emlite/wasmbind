@@ -1,15 +1,17 @@
 #include <webbind/WindowControlsOverlayGeometryChangeEventInit.hpp>
 #include <webbind/DOMRect.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 WindowControlsOverlayGeometryChangeEventInit::WindowControlsOverlayGeometryChangeEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 WindowControlsOverlayGeometryChangeEventInit WindowControlsOverlayGeometryChangeEventInit::take_ownership(Handle h) noexcept {
-        return WindowControlsOverlayGeometryChangeEventInit(h);
-    }
+    return WindowControlsOverlayGeometryChangeEventInit(h);
+}
+
 WindowControlsOverlayGeometryChangeEventInit::WindowControlsOverlayGeometryChangeEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 WindowControlsOverlayGeometryChangeEventInit::WindowControlsOverlayGeometryChangeEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 WindowControlsOverlayGeometryChangeEventInit WindowControlsOverlayGeometryChangeEventInit::clone() const noexcept { return *this; }
 
 DOMRect WindowControlsOverlayGeometryChangeEventInit::titlebarAreaRect() const {

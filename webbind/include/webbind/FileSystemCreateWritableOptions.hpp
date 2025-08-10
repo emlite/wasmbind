@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type FileSystemCreateWritableOptions
-/// [`FileSystemCreateWritableOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemCreateWritableOptions)
 class FileSystemCreateWritableOptions : public emlite::Val {
   explicit FileSystemCreateWritableOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit FileSystemCreateWritableOptions(const emlite::Val &val) noexcept;
     FileSystemCreateWritableOptions() noexcept;
     [[nodiscard]] FileSystemCreateWritableOptions clone() const noexcept;
+    /// Getter of the `keepExistingData` attribute.
     [[nodiscard]] bool keepExistingData() const;
+    /// Setter of the `keepExistingData` attribute.
     void keepExistingData(bool value);
 };
 

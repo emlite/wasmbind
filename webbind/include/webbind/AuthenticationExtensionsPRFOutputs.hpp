@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AuthenticationExtensionsPRFOutputs
-/// [`AuthenticationExtensionsPRFOutputs`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticationExtensionsPRFOutputs)
 class AuthenticationExtensionsPRFOutputs : public emlite::Val {
   explicit AuthenticationExtensionsPRFOutputs(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit AuthenticationExtensionsPRFOutputs(const emlite::Val &val) noexcept;
     AuthenticationExtensionsPRFOutputs() noexcept;
     [[nodiscard]] AuthenticationExtensionsPRFOutputs clone() const noexcept;
+    /// Getter of the `enabled` attribute.
     [[nodiscard]] bool enabled() const;
+    /// Setter of the `enabled` attribute.
     void enabled(bool value);
+    /// Getter of the `results` attribute.
     [[nodiscard]] AuthenticationExtensionsPRFValues results() const;
+    /// Setter of the `results` attribute.
     void results(const AuthenticationExtensionsPRFValues& value);
 };
 

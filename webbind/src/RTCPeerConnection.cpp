@@ -22,11 +22,15 @@
 namespace webbind {
 
 RTCPeerConnection RTCPeerConnection::take_ownership(Handle h) noexcept {
-        return RTCPeerConnection(h);
-    }
+    return RTCPeerConnection(h);
+}
+
 RTCPeerConnection RTCPeerConnection::clone() const noexcept { return *this; }
+
 emlite::Val RTCPeerConnection::instance() noexcept { return emlite::Val::global("RTCPeerConnection"); }
+
 RTCPeerConnection::RTCPeerConnection(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 RTCPeerConnection::RTCPeerConnection(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 RTCPeerConnection::RTCPeerConnection() : EventTarget(emlite::Val::global("RTCPeerConnection").new_()) {}

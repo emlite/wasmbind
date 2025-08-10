@@ -4,11 +4,15 @@
 namespace webbind {
 
 OES_vertex_array_object OES_vertex_array_object::take_ownership(Handle h) noexcept {
-        return OES_vertex_array_object(h);
-    }
+    return OES_vertex_array_object(h);
+}
+
 OES_vertex_array_object OES_vertex_array_object::clone() const noexcept { return *this; }
+
 emlite::Val OES_vertex_array_object::instance() noexcept { return emlite::Val::global("OES_vertex_array_object"); }
+
 OES_vertex_array_object::OES_vertex_array_object(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 OES_vertex_array_object::OES_vertex_array_object(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 WebGLVertexArrayObjectOES OES_vertex_array_object::createVertexArrayOES() {

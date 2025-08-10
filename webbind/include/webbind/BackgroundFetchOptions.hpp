@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type BackgroundFetchOptions
-/// [`BackgroundFetchOptions`](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchOptions)
 class BackgroundFetchOptions : public BackgroundFetchUIOptions {
   explicit BackgroundFetchOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit BackgroundFetchOptions(const emlite::Val &val) noexcept;
     BackgroundFetchOptions() noexcept;
     [[nodiscard]] BackgroundFetchOptions clone() const noexcept;
+    /// Getter of the `downloadTotal` attribute.
     [[nodiscard]] long long downloadTotal() const;
+    /// Setter of the `downloadTotal` attribute.
     void downloadTotal(long long value);
 };
 

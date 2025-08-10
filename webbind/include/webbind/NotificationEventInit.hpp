@@ -10,7 +10,6 @@ namespace webbind {
 class Notification;
 
 /// Dictionary type NotificationEventInit
-/// [`NotificationEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/NotificationEventInit)
 class NotificationEventInit : public ExtendableEventInit {
   explicit NotificationEventInit(Handle h) noexcept;
 public:
@@ -18,9 +17,13 @@ public:
     explicit NotificationEventInit(const emlite::Val &val) noexcept;
     NotificationEventInit() noexcept;
     [[nodiscard]] NotificationEventInit clone() const noexcept;
+    /// Getter of the `notification` attribute.
     [[nodiscard]] Notification notification() const;
+    /// Setter of the `notification` attribute.
     void notification(const Notification& value);
+    /// Getter of the `action` attribute.
     [[nodiscard]] jsbind::String action() const;
+    /// Setter of the `action` attribute.
     void action(const jsbind::String& value);
 };
 

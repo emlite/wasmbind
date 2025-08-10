@@ -1,14 +1,16 @@
 #include <webbind/ScriptingPolicyReportBody.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ScriptingPolicyReportBody::ScriptingPolicyReportBody(Handle h) noexcept : ReportBody(emlite::Val::take_ownership(h)) {}
 ScriptingPolicyReportBody ScriptingPolicyReportBody::take_ownership(Handle h) noexcept {
-        return ScriptingPolicyReportBody(h);
-    }
+    return ScriptingPolicyReportBody(h);
+}
+
 ScriptingPolicyReportBody::ScriptingPolicyReportBody(const emlite::Val &val) noexcept: ReportBody(val) {}
+
 ScriptingPolicyReportBody::ScriptingPolicyReportBody() noexcept: ReportBody(emlite::Val::object()) {}
+
 ScriptingPolicyReportBody ScriptingPolicyReportBody::clone() const noexcept { return *this; }
 
 jsbind::String ScriptingPolicyReportBody::violationType() const {

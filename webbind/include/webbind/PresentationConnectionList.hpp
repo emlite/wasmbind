@@ -18,10 +18,10 @@ public:
     static PresentationConnectionList take_ownership(Handle h) noexcept;
     [[nodiscard]] PresentationConnectionList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `connections` attribute.
+    /// [`PresentationConnectionList.connections`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionList/connections)
     /// [`PresentationConnectionList.connections`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionList/connections)
     [[nodiscard]] jsbind::TypedArray<PresentationConnection> connections() const;
-    /// Getter of the `onconnectionavailable` attribute.
+    /// [`PresentationConnectionList.onconnectionavailable`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionList/onconnectionavailable)
     /// [`PresentationConnectionList.onconnectionavailable`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionList/onconnectionavailable)
     [[nodiscard]] jsbind::Any onconnectionavailable() const;
     /// Setter of the `onconnectionavailable` attribute.

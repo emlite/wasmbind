@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PointerLockOptions
-/// [`PointerLockOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PointerLockOptions)
 class PointerLockOptions : public emlite::Val {
   explicit PointerLockOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PointerLockOptions(const emlite::Val &val) noexcept;
     PointerLockOptions() noexcept;
     [[nodiscard]] PointerLockOptions clone() const noexcept;
+    /// Getter of the `unadjustedMovement` attribute.
     [[nodiscard]] bool unadjustedMovement() const;
+    /// Setter of the `unadjustedMovement` attribute.
     void unadjustedMovement(bool value);
 };
 

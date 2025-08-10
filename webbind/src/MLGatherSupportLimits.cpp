@@ -2,15 +2,17 @@
 #include <webbind/MLTensorLimits.hpp>
 #include <webbind/MLDataTypeLimits.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLGatherSupportLimits::MLGatherSupportLimits(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLGatherSupportLimits MLGatherSupportLimits::take_ownership(Handle h) noexcept {
-        return MLGatherSupportLimits(h);
-    }
+    return MLGatherSupportLimits(h);
+}
+
 MLGatherSupportLimits::MLGatherSupportLimits(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MLGatherSupportLimits::MLGatherSupportLimits() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MLGatherSupportLimits MLGatherSupportLimits::clone() const noexcept { return *this; }
 
 MLTensorLimits MLGatherSupportLimits::input() const {

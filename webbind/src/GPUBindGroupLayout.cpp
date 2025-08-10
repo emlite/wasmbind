@@ -3,11 +3,15 @@
 namespace webbind {
 
 GPUBindGroupLayout GPUBindGroupLayout::take_ownership(Handle h) noexcept {
-        return GPUBindGroupLayout(h);
-    }
+    return GPUBindGroupLayout(h);
+}
+
 GPUBindGroupLayout GPUBindGroupLayout::clone() const noexcept { return *this; }
+
 emlite::Val GPUBindGroupLayout::instance() noexcept { return emlite::Val::global("GPUBindGroupLayout"); }
+
 GPUBindGroupLayout::GPUBindGroupLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUBindGroupLayout::GPUBindGroupLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String GPUBindGroupLayout::label() const {

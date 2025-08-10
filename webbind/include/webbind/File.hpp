@@ -21,13 +21,13 @@ public:
     File(const jsbind::TypedArray<jsbind::Any>& fileBits, const jsbind::String& fileName);
     /// The `new File(..)` constructor, creating a new File instance
     File(const jsbind::TypedArray<jsbind::Any>& fileBits, const jsbind::String& fileName, const FilePropertyBag& options);
-    /// Getter of the `name` attribute.
+    /// [`File.name`](https://developer.mozilla.org/en-US/docs/Web/API/File/name)
     /// [`File.name`](https://developer.mozilla.org/en-US/docs/Web/API/File/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `lastModified` attribute.
+    /// [`File.lastModified`](https://developer.mozilla.org/en-US/docs/Web/API/File/lastModified)
     /// [`File.lastModified`](https://developer.mozilla.org/en-US/docs/Web/API/File/lastModified)
     [[nodiscard]] long long lastModified() const;
-    /// Getter of the `webkitRelativePath` attribute.
+    /// [`File.webkitRelativePath`](https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath)
     /// [`File.webkitRelativePath`](https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath)
     [[nodiscard]] jsbind::String webkitRelativePath() const;
 };

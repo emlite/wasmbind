@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCAnswerOptions
-/// [`RTCAnswerOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RTCAnswerOptions)
 class RTCAnswerOptions : public RTCOfferAnswerOptions {
   explicit RTCAnswerOptions(Handle h) noexcept;
 public:

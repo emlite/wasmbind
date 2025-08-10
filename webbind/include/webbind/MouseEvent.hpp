@@ -24,70 +24,70 @@ public:
     MouseEvent(const jsbind::String& type);
     /// The `new MouseEvent(..)` constructor, creating a new MouseEvent instance
     MouseEvent(const jsbind::String& type, const MouseEventInit& eventInitDict);
-    /// Getter of the `screenX` attribute.
+    /// [`MouseEvent.screenX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX)
     /// [`MouseEvent.screenX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX)
     [[nodiscard]] long screenX() const;
-    /// Getter of the `screenY` attribute.
+    /// [`MouseEvent.screenY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenY)
     /// [`MouseEvent.screenY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenY)
     [[nodiscard]] long screenY() const;
-    /// Getter of the `clientX` attribute.
+    /// [`MouseEvent.clientX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX)
     /// [`MouseEvent.clientX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX)
     [[nodiscard]] long clientX() const;
-    /// Getter of the `clientY` attribute.
+    /// [`MouseEvent.clientY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientY)
     /// [`MouseEvent.clientY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientY)
     [[nodiscard]] long clientY() const;
-    /// Getter of the `layerX` attribute.
+    /// [`MouseEvent.layerX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/layerX)
     /// [`MouseEvent.layerX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/layerX)
     [[nodiscard]] long layerX() const;
-    /// Getter of the `layerY` attribute.
+    /// [`MouseEvent.layerY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/layerY)
     /// [`MouseEvent.layerY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/layerY)
     [[nodiscard]] long layerY() const;
-    /// Getter of the `ctrlKey` attribute.
+    /// [`MouseEvent.ctrlKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/ctrlKey)
     /// [`MouseEvent.ctrlKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/ctrlKey)
     [[nodiscard]] bool ctrlKey() const;
-    /// Getter of the `shiftKey` attribute.
+    /// [`MouseEvent.shiftKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey)
     /// [`MouseEvent.shiftKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey)
     [[nodiscard]] bool shiftKey() const;
-    /// Getter of the `altKey` attribute.
+    /// [`MouseEvent.altKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/altKey)
     /// [`MouseEvent.altKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/altKey)
     [[nodiscard]] bool altKey() const;
-    /// Getter of the `metaKey` attribute.
+    /// [`MouseEvent.metaKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/metaKey)
     /// [`MouseEvent.metaKey`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/metaKey)
     [[nodiscard]] bool metaKey() const;
-    /// Getter of the `button` attribute.
+    /// [`MouseEvent.button`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button)
     /// [`MouseEvent.button`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button)
     [[nodiscard]] short button() const;
-    /// Getter of the `buttons` attribute.
+    /// [`MouseEvent.buttons`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/buttons)
     /// [`MouseEvent.buttons`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/buttons)
     [[nodiscard]] unsigned short buttons() const;
-    /// Getter of the `relatedTarget` attribute.
+    /// [`MouseEvent.relatedTarget`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/relatedTarget)
     /// [`MouseEvent.relatedTarget`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/relatedTarget)
     [[nodiscard]] EventTarget relatedTarget() const;
     /// The getModifierState method.
     /// [`MouseEvent.getModifierState`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/getModifierState)
     bool getModifierState(const jsbind::String& keyArg);
-    /// Getter of the `pageX` attribute.
+    /// [`MouseEvent.pageX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX)
     /// [`MouseEvent.pageX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX)
     [[nodiscard]] double pageX() const;
-    /// Getter of the `pageY` attribute.
+    /// [`MouseEvent.pageY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY)
     /// [`MouseEvent.pageY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY)
     [[nodiscard]] double pageY() const;
-    /// Getter of the `x` attribute.
+    /// [`MouseEvent.x`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x)
     /// [`MouseEvent.x`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x)
     [[nodiscard]] double x() const;
-    /// Getter of the `y` attribute.
+    /// [`MouseEvent.y`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y)
     /// [`MouseEvent.y`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y)
     [[nodiscard]] double y() const;
-    /// Getter of the `offsetX` attribute.
+    /// [`MouseEvent.offsetX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX)
     /// [`MouseEvent.offsetX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX)
     [[nodiscard]] double offsetX() const;
-    /// Getter of the `offsetY` attribute.
+    /// [`MouseEvent.offsetY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetY)
     /// [`MouseEvent.offsetY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetY)
     [[nodiscard]] double offsetY() const;
-    /// Getter of the `movementX` attribute.
+    /// [`MouseEvent.movementX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementX)
     /// [`MouseEvent.movementX`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementX)
     [[nodiscard]] double movementX() const;
-    /// Getter of the `movementY` attribute.
+    /// [`MouseEvent.movementY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementY)
     /// [`MouseEvent.movementY`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementY)
     [[nodiscard]] double movementY() const;
     /// The initMouseEvent method.

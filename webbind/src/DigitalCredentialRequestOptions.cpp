@@ -1,15 +1,17 @@
 #include <webbind/DigitalCredentialRequestOptions.hpp>
 #include <webbind/DigitalCredentialGetRequest.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DigitalCredentialRequestOptions::DigitalCredentialRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DigitalCredentialRequestOptions DigitalCredentialRequestOptions::take_ownership(Handle h) noexcept {
-        return DigitalCredentialRequestOptions(h);
-    }
+    return DigitalCredentialRequestOptions(h);
+}
+
 DigitalCredentialRequestOptions::DigitalCredentialRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DigitalCredentialRequestOptions::DigitalCredentialRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DigitalCredentialRequestOptions DigitalCredentialRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<DigitalCredentialGetRequest> DigitalCredentialRequestOptions::requests() const {

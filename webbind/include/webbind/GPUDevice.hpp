@@ -50,16 +50,16 @@ public:
     static GPUDevice take_ownership(Handle h) noexcept;
     [[nodiscard]] GPUDevice clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `features` attribute.
+    /// [`GPUDevice.features`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/features)
     /// [`GPUDevice.features`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/features)
     [[nodiscard]] GPUSupportedFeatures features() const;
-    /// Getter of the `limits` attribute.
+    /// [`GPUDevice.limits`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/limits)
     /// [`GPUDevice.limits`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/limits)
     [[nodiscard]] GPUSupportedLimits limits() const;
-    /// Getter of the `adapterInfo` attribute.
+    /// [`GPUDevice.adapterInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/adapterInfo)
     /// [`GPUDevice.adapterInfo`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/adapterInfo)
     [[nodiscard]] GPUAdapterInfo adapterInfo() const;
-    /// Getter of the `queue` attribute.
+    /// [`GPUDevice.queue`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/queue)
     /// [`GPUDevice.queue`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/queue)
     [[nodiscard]] GPUQueue queue() const;
     /// The destroy method.
@@ -116,7 +116,7 @@ public:
     /// The createQuerySet method.
     /// [`GPUDevice.createQuerySet`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createQuerySet)
     GPUQuerySet createQuerySet(const GPUQuerySetDescriptor& descriptor);
-    /// Getter of the `lost` attribute.
+    /// [`GPUDevice.lost`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/lost)
     /// [`GPUDevice.lost`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/lost)
     [[nodiscard]] jsbind::Promise<GPUDeviceLostInfo> lost() const;
     /// The pushErrorScope method.
@@ -125,13 +125,13 @@ public:
     /// The popErrorScope method.
     /// [`GPUDevice.popErrorScope`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/popErrorScope)
     jsbind::Promise<GPUError> popErrorScope();
-    /// Getter of the `onuncapturederror` attribute.
+    /// [`GPUDevice.onuncapturederror`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/onuncapturederror)
     /// [`GPUDevice.onuncapturederror`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/onuncapturederror)
     [[nodiscard]] jsbind::Any onuncapturederror() const;
     /// Setter of the `onuncapturederror` attribute.
     /// [`GPUDevice.onuncapturederror`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/onuncapturederror)
     void onuncapturederror(const jsbind::Any& value);
-    /// Getter of the `label` attribute.
+    /// [`GPUDevice.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/label)
     /// [`GPUDevice.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

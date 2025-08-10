@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type TransitionEventInit
-/// [`TransitionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/TransitionEventInit)
 class TransitionEventInit : public EventInit {
   explicit TransitionEventInit(Handle h) noexcept;
 public:
@@ -16,11 +15,17 @@ public:
     explicit TransitionEventInit(const emlite::Val &val) noexcept;
     TransitionEventInit() noexcept;
     [[nodiscard]] TransitionEventInit clone() const noexcept;
+    /// Getter of the `propertyName` attribute.
     [[nodiscard]] jsbind::String propertyName() const;
+    /// Setter of the `propertyName` attribute.
     void propertyName(const jsbind::String& value);
+    /// Getter of the `elapsedTime` attribute.
     [[nodiscard]] double elapsedTime() const;
+    /// Setter of the `elapsedTime` attribute.
     void elapsedTime(double value);
+    /// Getter of the `pseudoElement` attribute.
     [[nodiscard]] jsbind::String pseudoElement() const;
+    /// Setter of the `pseudoElement` attribute.
     void pseudoElement(const jsbind::String& value);
 };
 

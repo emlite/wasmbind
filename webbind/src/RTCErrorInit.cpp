@@ -1,14 +1,16 @@
 #include <webbind/RTCErrorInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCErrorInit::RTCErrorInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCErrorInit RTCErrorInit::take_ownership(Handle h) noexcept {
-        return RTCErrorInit(h);
-    }
+    return RTCErrorInit(h);
+}
+
 RTCErrorInit::RTCErrorInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCErrorInit::RTCErrorInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCErrorInit RTCErrorInit::clone() const noexcept { return *this; }
 
 RTCErrorDetailType RTCErrorInit::errorDetail() const {

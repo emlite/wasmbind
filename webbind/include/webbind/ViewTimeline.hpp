@@ -24,13 +24,13 @@ public:
     ViewTimeline();
     /// The `new ViewTimeline(..)` constructor, creating a new ViewTimeline instance
     ViewTimeline(const ViewTimelineOptions& options);
-    /// Getter of the `subject` attribute.
+    /// [`ViewTimeline.subject`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline/subject)
     /// [`ViewTimeline.subject`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline/subject)
     [[nodiscard]] Element subject() const;
-    /// Getter of the `startOffset` attribute.
+    /// [`ViewTimeline.startOffset`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline/startOffset)
     /// [`ViewTimeline.startOffset`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline/startOffset)
     [[nodiscard]] CSSNumericValue startOffset() const;
-    /// Getter of the `endOffset` attribute.
+    /// [`ViewTimeline.endOffset`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline/endOffset)
     /// [`ViewTimeline.endOffset`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTimeline/endOffset)
     [[nodiscard]] CSSNumericValue endOffset() const;
 };

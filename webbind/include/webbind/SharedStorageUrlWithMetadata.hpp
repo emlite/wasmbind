@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SharedStorageUrlWithMetadata
-/// [`SharedStorageUrlWithMetadata`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageUrlWithMetadata)
 class SharedStorageUrlWithMetadata : public emlite::Val {
   explicit SharedStorageUrlWithMetadata(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit SharedStorageUrlWithMetadata(const emlite::Val &val) noexcept;
     SharedStorageUrlWithMetadata() noexcept;
     [[nodiscard]] SharedStorageUrlWithMetadata clone() const noexcept;
+    /// Getter of the `url` attribute.
     [[nodiscard]] jsbind::String url() const;
+    /// Setter of the `url` attribute.
     void url(const jsbind::String& value);
+    /// Getter of the `reportingMetadata` attribute.
     [[nodiscard]] jsbind::Object reportingMetadata() const;
+    /// Setter of the `reportingMetadata` attribute.
     void reportingMetadata(const jsbind::Object& value);
 };
 

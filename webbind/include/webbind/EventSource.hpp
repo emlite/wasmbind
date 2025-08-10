@@ -21,28 +21,28 @@ public:
     EventSource(const jsbind::String& url);
     /// The `new EventSource(..)` constructor, creating a new EventSource instance
     EventSource(const jsbind::String& url, const EventSourceInit& eventSourceInitDict);
-    /// Getter of the `url` attribute.
+    /// [`EventSource.url`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/url)
     /// [`EventSource.url`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/url)
     [[nodiscard]] jsbind::String url() const;
-    /// Getter of the `withCredentials` attribute.
+    /// [`EventSource.withCredentials`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/withCredentials)
     /// [`EventSource.withCredentials`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/withCredentials)
     [[nodiscard]] bool withCredentials() const;
-    /// Getter of the `readyState` attribute.
+    /// [`EventSource.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/readyState)
     /// [`EventSource.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/readyState)
     [[nodiscard]] unsigned short readyState() const;
-    /// Getter of the `onopen` attribute.
+    /// [`EventSource.onopen`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onopen)
     /// [`EventSource.onopen`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onopen)
     [[nodiscard]] jsbind::Any onopen() const;
     /// Setter of the `onopen` attribute.
     /// [`EventSource.onopen`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onopen)
     void onopen(const jsbind::Any& value);
-    /// Getter of the `onmessage` attribute.
+    /// [`EventSource.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onmessage)
     /// [`EventSource.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.
     /// [`EventSource.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onmessage)
     void onmessage(const jsbind::Any& value);
-    /// Getter of the `onerror` attribute.
+    /// [`EventSource.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onerror)
     /// [`EventSource.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.

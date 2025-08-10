@@ -1,14 +1,16 @@
 #include <webbind/FocusOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FocusOptions::FocusOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FocusOptions FocusOptions::take_ownership(Handle h) noexcept {
-        return FocusOptions(h);
-    }
+    return FocusOptions(h);
+}
+
 FocusOptions::FocusOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FocusOptions::FocusOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FocusOptions FocusOptions::clone() const noexcept { return *this; }
 
 bool FocusOptions::preventScroll() const {

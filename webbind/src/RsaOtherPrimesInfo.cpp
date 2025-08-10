@@ -1,14 +1,16 @@
 #include <webbind/RsaOtherPrimesInfo.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RsaOtherPrimesInfo::RsaOtherPrimesInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RsaOtherPrimesInfo RsaOtherPrimesInfo::take_ownership(Handle h) noexcept {
-        return RsaOtherPrimesInfo(h);
-    }
+    return RsaOtherPrimesInfo(h);
+}
+
 RsaOtherPrimesInfo::RsaOtherPrimesInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RsaOtherPrimesInfo::RsaOtherPrimesInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RsaOtherPrimesInfo RsaOtherPrimesInfo::clone() const noexcept { return *this; }
 
 jsbind::String RsaOtherPrimesInfo::r() const {

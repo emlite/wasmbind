@@ -19,7 +19,7 @@ public:
     /// The registerPaint method.
     /// [`PaintWorkletGlobalScope.registerPaint`](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/registerPaint)
     jsbind::Undefined registerPaint(const jsbind::String& name, const jsbind::Function& paintCtor);
-    /// Getter of the `devicePixelRatio` attribute.
+    /// [`PaintWorkletGlobalScope.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/devicePixelRatio)
     /// [`PaintWorkletGlobalScope.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/devicePixelRatio)
     [[nodiscard]] double devicePixelRatio() const;
 };

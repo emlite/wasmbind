@@ -1,15 +1,17 @@
 #include <webbind/HIDDeviceRequestOptions.hpp>
 #include <webbind/HIDDeviceFilter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HIDDeviceRequestOptions::HIDDeviceRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HIDDeviceRequestOptions HIDDeviceRequestOptions::take_ownership(Handle h) noexcept {
-        return HIDDeviceRequestOptions(h);
-    }
+    return HIDDeviceRequestOptions(h);
+}
+
 HIDDeviceRequestOptions::HIDDeviceRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HIDDeviceRequestOptions::HIDDeviceRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HIDDeviceRequestOptions HIDDeviceRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<HIDDeviceFilter> HIDDeviceRequestOptions::filters() const {

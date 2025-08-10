@@ -1,14 +1,16 @@
 #include <webbind/StorageEstimate.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StorageEstimate::StorageEstimate(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageEstimate StorageEstimate::take_ownership(Handle h) noexcept {
-        return StorageEstimate(h);
-    }
+    return StorageEstimate(h);
+}
+
 StorageEstimate::StorageEstimate(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 StorageEstimate::StorageEstimate() noexcept: emlite::Val(emlite::Val::object()) {}
+
 StorageEstimate StorageEstimate::clone() const noexcept { return *this; }
 
 long long StorageEstimate::usage() const {

@@ -6,11 +6,15 @@
 namespace webbind {
 
 InputEvent InputEvent::take_ownership(Handle h) noexcept {
-        return InputEvent(h);
-    }
+    return InputEvent(h);
+}
+
 InputEvent InputEvent::clone() const noexcept { return *this; }
+
 emlite::Val InputEvent::instance() noexcept { return emlite::Val::global("InputEvent"); }
+
 InputEvent::InputEvent(Handle h) noexcept : UIEvent(emlite::Val::take_ownership(h)) {}
+
 InputEvent::InputEvent(const emlite::Val &val) noexcept: UIEvent(val) {}
 
 InputEvent::InputEvent(const jsbind::String& type) : UIEvent(emlite::Val::global("InputEvent").new_(type)) {}

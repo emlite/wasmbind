@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type SubscribeOptions
-/// [`SubscribeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SubscribeOptions)
 class SubscribeOptions : public emlite::Val {
   explicit SubscribeOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit SubscribeOptions(const emlite::Val &val) noexcept;
     SubscribeOptions() noexcept;
     [[nodiscard]] SubscribeOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

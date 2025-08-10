@@ -1,15 +1,17 @@
 #include <webbind/RTCRtpSendParameters.hpp>
 #include <webbind/RTCRtpEncodingParameters.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpSendParameters::RTCRtpSendParameters(Handle h) noexcept : RTCRtpParameters(emlite::Val::take_ownership(h)) {}
 RTCRtpSendParameters RTCRtpSendParameters::take_ownership(Handle h) noexcept {
-        return RTCRtpSendParameters(h);
-    }
+    return RTCRtpSendParameters(h);
+}
+
 RTCRtpSendParameters::RTCRtpSendParameters(const emlite::Val &val) noexcept: RTCRtpParameters(val) {}
+
 RTCRtpSendParameters::RTCRtpSendParameters() noexcept: RTCRtpParameters(emlite::Val::object()) {}
+
 RTCRtpSendParameters RTCRtpSendParameters::clone() const noexcept { return *this; }
 
 jsbind::String RTCRtpSendParameters::transactionId() const {

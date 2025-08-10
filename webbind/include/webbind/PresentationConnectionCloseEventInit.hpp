@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type PresentationConnectionCloseEventInit
-/// [`PresentationConnectionCloseEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionCloseEventInit)
 class PresentationConnectionCloseEventInit : public EventInit {
   explicit PresentationConnectionCloseEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit PresentationConnectionCloseEventInit(const emlite::Val &val) noexcept;
     PresentationConnectionCloseEventInit() noexcept;
     [[nodiscard]] PresentationConnectionCloseEventInit clone() const noexcept;
+    /// Getter of the `reason` attribute.
     [[nodiscard]] PresentationConnectionCloseReason reason() const;
+    /// Setter of the `reason` attribute.
     void reason(const PresentationConnectionCloseReason& value);
+    /// Getter of the `message` attribute.
     [[nodiscard]] jsbind::String message() const;
+    /// Setter of the `message` attribute.
     void message(const jsbind::String& value);
 };
 

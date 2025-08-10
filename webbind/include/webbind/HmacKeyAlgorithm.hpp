@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type HmacKeyAlgorithm
-/// [`HmacKeyAlgorithm`](https://developer.mozilla.org/en-US/docs/Web/API/HmacKeyAlgorithm)
 class HmacKeyAlgorithm : public KeyAlgorithm {
   explicit HmacKeyAlgorithm(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit HmacKeyAlgorithm(const emlite::Val &val) noexcept;
     HmacKeyAlgorithm() noexcept;
     [[nodiscard]] HmacKeyAlgorithm clone() const noexcept;
+    /// Getter of the `hash` attribute.
     [[nodiscard]] KeyAlgorithm hash() const;
+    /// Setter of the `hash` attribute.
     void hash(const KeyAlgorithm& value);
+    /// Getter of the `length` attribute.
     [[nodiscard]] unsigned long length() const;
+    /// Setter of the `length` attribute.
     void length(unsigned long value);
 };
 

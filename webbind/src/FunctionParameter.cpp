@@ -1,14 +1,16 @@
 #include <webbind/FunctionParameter.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FunctionParameter::FunctionParameter(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 FunctionParameter FunctionParameter::take_ownership(Handle h) noexcept {
-        return FunctionParameter(h);
-    }
+    return FunctionParameter(h);
+}
+
 FunctionParameter::FunctionParameter(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 FunctionParameter::FunctionParameter() noexcept: emlite::Val(emlite::Val::object()) {}
+
 FunctionParameter FunctionParameter::clone() const noexcept { return *this; }
 
 jsbind::String FunctionParameter::name() const {

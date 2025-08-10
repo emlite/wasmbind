@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GPUTextureBindingLayout
-/// [`GPUTextureBindingLayout`](https://developer.mozilla.org/en-US/docs/Web/API/GPUTextureBindingLayout)
 class GPUTextureBindingLayout : public emlite::Val {
   explicit GPUTextureBindingLayout(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit GPUTextureBindingLayout(const emlite::Val &val) noexcept;
     GPUTextureBindingLayout() noexcept;
     [[nodiscard]] GPUTextureBindingLayout clone() const noexcept;
+    /// Getter of the `sampleType` attribute.
     [[nodiscard]] GPUTextureSampleType sampleType() const;
+    /// Setter of the `sampleType` attribute.
     void sampleType(const GPUTextureSampleType& value);
+    /// Getter of the `viewDimension` attribute.
     [[nodiscard]] GPUTextureViewDimension viewDimension() const;
+    /// Setter of the `viewDimension` attribute.
     void viewDimension(const GPUTextureViewDimension& value);
+    /// Getter of the `multisampled` attribute.
     [[nodiscard]] bool multisampled() const;
+    /// Setter of the `multisampled` attribute.
     void multisampled(bool value);
 };
 

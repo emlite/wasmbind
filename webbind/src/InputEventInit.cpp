@@ -1,14 +1,16 @@
 #include <webbind/InputEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 InputEventInit::InputEventInit(Handle h) noexcept : UIEventInit(emlite::Val::take_ownership(h)) {}
 InputEventInit InputEventInit::take_ownership(Handle h) noexcept {
-        return InputEventInit(h);
-    }
+    return InputEventInit(h);
+}
+
 InputEventInit::InputEventInit(const emlite::Val &val) noexcept: UIEventInit(val) {}
+
 InputEventInit::InputEventInit() noexcept: UIEventInit(emlite::Val::object()) {}
+
 InputEventInit InputEventInit::clone() const noexcept { return *this; }
 
 jsbind::String InputEventInit::data() const {

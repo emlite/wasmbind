@@ -24,16 +24,16 @@ public:
     /// The register method.
     /// [`SharedStorageWorkletGlobalScope.register`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/register)
     jsbind::Undefined register_(const jsbind::String& name, const jsbind::Function& operationCtor);
-    /// Getter of the `sharedStorage` attribute.
+    /// [`SharedStorageWorkletGlobalScope.sharedStorage`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/sharedStorage)
     /// [`SharedStorageWorkletGlobalScope.sharedStorage`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/sharedStorage)
     [[nodiscard]] SharedStorage sharedStorage() const;
-    /// Getter of the `privateAggregation` attribute.
+    /// [`SharedStorageWorkletGlobalScope.privateAggregation`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/privateAggregation)
     /// [`SharedStorageWorkletGlobalScope.privateAggregation`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/privateAggregation)
     [[nodiscard]] PrivateAggregation privateAggregation() const;
     /// The interestGroups method.
     /// [`SharedStorageWorkletGlobalScope.interestGroups`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/interestGroups)
     jsbind::Promise<jsbind::TypedArray<StorageInterestGroup>> interestGroups();
-    /// Getter of the `navigator` attribute.
+    /// [`SharedStorageWorkletGlobalScope.navigator`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/navigator)
     /// [`SharedStorageWorkletGlobalScope.navigator`](https://developer.mozilla.org/en-US/docs/Web/API/SharedStorageWorkletGlobalScope/navigator)
     [[nodiscard]] SharedStorageWorkletNavigator navigator() const;
 };

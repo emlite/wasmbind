@@ -1,14 +1,16 @@
 #include <webbind/GPUColorDict.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUColorDict::GPUColorDict(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUColorDict GPUColorDict::take_ownership(Handle h) noexcept {
-        return GPUColorDict(h);
-    }
+    return GPUColorDict(h);
+}
+
 GPUColorDict::GPUColorDict(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUColorDict::GPUColorDict() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUColorDict GPUColorDict::clone() const noexcept { return *this; }
 
 double GPUColorDict::r() const {

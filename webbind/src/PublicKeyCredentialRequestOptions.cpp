@@ -2,15 +2,17 @@
 #include <webbind/PublicKeyCredentialDescriptor.hpp>
 #include <webbind/AuthenticationExtensionsClientInputs.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PublicKeyCredentialRequestOptions::PublicKeyCredentialRequestOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PublicKeyCredentialRequestOptions PublicKeyCredentialRequestOptions::take_ownership(Handle h) noexcept {
-        return PublicKeyCredentialRequestOptions(h);
-    }
+    return PublicKeyCredentialRequestOptions(h);
+}
+
 PublicKeyCredentialRequestOptions::PublicKeyCredentialRequestOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PublicKeyCredentialRequestOptions::PublicKeyCredentialRequestOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PublicKeyCredentialRequestOptions PublicKeyCredentialRequestOptions::clone() const noexcept { return *this; }
 
 jsbind::Any PublicKeyCredentialRequestOptions::challenge() const {

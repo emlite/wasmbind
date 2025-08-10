@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type MediaCapabilitiesEncodingInfo
-/// [`MediaCapabilitiesEncodingInfo`](https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilitiesEncodingInfo)
 class MediaCapabilitiesEncodingInfo : public MediaCapabilitiesInfo {
   explicit MediaCapabilitiesEncodingInfo(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit MediaCapabilitiesEncodingInfo(const emlite::Val &val) noexcept;
     MediaCapabilitiesEncodingInfo() noexcept;
     [[nodiscard]] MediaCapabilitiesEncodingInfo clone() const noexcept;
+    /// Getter of the `configuration` attribute.
     [[nodiscard]] MediaEncodingConfiguration configuration() const;
+    /// Setter of the `configuration` attribute.
     void configuration(const MediaEncodingConfiguration& value);
 };
 

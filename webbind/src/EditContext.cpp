@@ -6,11 +6,15 @@
 namespace webbind {
 
 EditContext EditContext::take_ownership(Handle h) noexcept {
-        return EditContext(h);
-    }
+    return EditContext(h);
+}
+
 EditContext EditContext::clone() const noexcept { return *this; }
+
 emlite::Val EditContext::instance() noexcept { return emlite::Val::global("EditContext"); }
+
 EditContext::EditContext(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 EditContext::EditContext(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 EditContext::EditContext() : EventTarget(emlite::Val::global("EditContext").new_()) {}

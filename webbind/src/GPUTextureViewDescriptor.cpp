@@ -1,14 +1,16 @@
 #include <webbind/GPUTextureViewDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUTextureViewDescriptor::GPUTextureViewDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPUTextureViewDescriptor GPUTextureViewDescriptor::take_ownership(Handle h) noexcept {
-        return GPUTextureViewDescriptor(h);
-    }
+    return GPUTextureViewDescriptor(h);
+}
+
 GPUTextureViewDescriptor::GPUTextureViewDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPUTextureViewDescriptor::GPUTextureViewDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPUTextureViewDescriptor GPUTextureViewDescriptor::clone() const noexcept { return *this; }
 
 GPUTextureFormat GPUTextureViewDescriptor::format() const {

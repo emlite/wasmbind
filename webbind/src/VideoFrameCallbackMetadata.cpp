@@ -1,14 +1,16 @@
 #include <webbind/VideoFrameCallbackMetadata.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 VideoFrameCallbackMetadata::VideoFrameCallbackMetadata(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 VideoFrameCallbackMetadata VideoFrameCallbackMetadata::take_ownership(Handle h) noexcept {
-        return VideoFrameCallbackMetadata(h);
-    }
+    return VideoFrameCallbackMetadata(h);
+}
+
 VideoFrameCallbackMetadata::VideoFrameCallbackMetadata(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 VideoFrameCallbackMetadata::VideoFrameCallbackMetadata() noexcept: emlite::Val(emlite::Val::object()) {}
+
 VideoFrameCallbackMetadata VideoFrameCallbackMetadata::clone() const noexcept { return *this; }
 
 jsbind::Any VideoFrameCallbackMetadata::presentationTime() const {

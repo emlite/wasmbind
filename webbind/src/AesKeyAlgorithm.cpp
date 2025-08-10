@@ -1,14 +1,16 @@
 #include <webbind/AesKeyAlgorithm.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AesKeyAlgorithm::AesKeyAlgorithm(Handle h) noexcept : KeyAlgorithm(emlite::Val::take_ownership(h)) {}
 AesKeyAlgorithm AesKeyAlgorithm::take_ownership(Handle h) noexcept {
-        return AesKeyAlgorithm(h);
-    }
+    return AesKeyAlgorithm(h);
+}
+
 AesKeyAlgorithm::AesKeyAlgorithm(const emlite::Val &val) noexcept: KeyAlgorithm(val) {}
+
 AesKeyAlgorithm::AesKeyAlgorithm() noexcept: KeyAlgorithm(emlite::Val::object()) {}
+
 AesKeyAlgorithm AesKeyAlgorithm::clone() const noexcept { return *this; }
 
 unsigned short AesKeyAlgorithm::length() const {

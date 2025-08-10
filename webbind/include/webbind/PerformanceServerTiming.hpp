@@ -15,13 +15,13 @@ public:
     static PerformanceServerTiming take_ownership(Handle h) noexcept;
     [[nodiscard]] PerformanceServerTiming clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`PerformanceServerTiming.name`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/name)
     /// [`PerformanceServerTiming.name`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `duration` attribute.
+    /// [`PerformanceServerTiming.duration`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/duration)
     /// [`PerformanceServerTiming.duration`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/duration)
     [[nodiscard]] jsbind::Any duration() const;
-    /// Getter of the `description` attribute.
+    /// [`PerformanceServerTiming.description`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/description)
     /// [`PerformanceServerTiming.description`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/description)
     [[nodiscard]] jsbind::String description() const;
     /// The toJSON method.

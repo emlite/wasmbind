@@ -9,7 +9,6 @@
 namespace webbind {
 
 /// Dictionary type GPUComputePipelineDescriptor
-/// [`GPUComputePipelineDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipelineDescriptor)
 class GPUComputePipelineDescriptor : public GPUPipelineDescriptorBase {
   explicit GPUComputePipelineDescriptor(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit GPUComputePipelineDescriptor(const emlite::Val &val) noexcept;
     GPUComputePipelineDescriptor() noexcept;
     [[nodiscard]] GPUComputePipelineDescriptor clone() const noexcept;
+    /// Getter of the `compute` attribute.
     [[nodiscard]] GPUProgrammableStage compute() const;
+    /// Setter of the `compute` attribute.
     void compute(const GPUProgrammableStage& value);
 };
 

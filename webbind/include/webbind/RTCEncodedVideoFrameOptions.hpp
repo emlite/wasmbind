@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCEncodedVideoFrameOptions
-/// [`RTCEncodedVideoFrameOptions`](https://developer.mozilla.org/en-US/docs/Web/API/RTCEncodedVideoFrameOptions)
 class RTCEncodedVideoFrameOptions : public emlite::Val {
   explicit RTCEncodedVideoFrameOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit RTCEncodedVideoFrameOptions(const emlite::Val &val) noexcept;
     RTCEncodedVideoFrameOptions() noexcept;
     [[nodiscard]] RTCEncodedVideoFrameOptions clone() const noexcept;
+    /// Getter of the `metadata` attribute.
     [[nodiscard]] RTCEncodedVideoFrameMetadata metadata() const;
+    /// Setter of the `metadata` attribute.
     void metadata(const RTCEncodedVideoFrameMetadata& value);
 };
 

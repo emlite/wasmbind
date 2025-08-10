@@ -3,15 +3,17 @@
 #include <webbind/PaymentShippingOption.hpp>
 #include <webbind/PaymentDetailsModifier.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentDetailsBase::PaymentDetailsBase(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentDetailsBase PaymentDetailsBase::take_ownership(Handle h) noexcept {
-        return PaymentDetailsBase(h);
-    }
+    return PaymentDetailsBase(h);
+}
+
 PaymentDetailsBase::PaymentDetailsBase(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentDetailsBase::PaymentDetailsBase() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentDetailsBase PaymentDetailsBase::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<PaymentItem> PaymentDetailsBase::displayItems() const {

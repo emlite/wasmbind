@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AacEncoderConfig
-/// [`AacEncoderConfig`](https://developer.mozilla.org/en-US/docs/Web/API/AacEncoderConfig)
 class AacEncoderConfig : public emlite::Val {
   explicit AacEncoderConfig(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit AacEncoderConfig(const emlite::Val &val) noexcept;
     AacEncoderConfig() noexcept;
     [[nodiscard]] AacEncoderConfig clone() const noexcept;
+    /// Getter of the `format` attribute.
     [[nodiscard]] AacBitstreamFormat format() const;
+    /// Setter of the `format` attribute.
     void format(const AacBitstreamFormat& value);
 };
 

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type AttributionReportingRequestOptions
-/// [`AttributionReportingRequestOptions`](https://developer.mozilla.org/en-US/docs/Web/API/AttributionReportingRequestOptions)
 class AttributionReportingRequestOptions : public emlite::Val {
   explicit AttributionReportingRequestOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit AttributionReportingRequestOptions(const emlite::Val &val) noexcept;
     AttributionReportingRequestOptions() noexcept;
     [[nodiscard]] AttributionReportingRequestOptions clone() const noexcept;
+    /// Getter of the `eventSourceEligible` attribute.
     [[nodiscard]] bool eventSourceEligible() const;
+    /// Setter of the `eventSourceEligible` attribute.
     void eventSourceEligible(bool value);
+    /// Getter of the `triggerEligible` attribute.
     [[nodiscard]] bool triggerEligible() const;
+    /// Setter of the `triggerEligible` attribute.
     void triggerEligible(bool value);
 };
 

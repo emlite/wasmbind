@@ -44,16 +44,16 @@ public:
     /// The fromQuad method.
     /// [`DOMQuad.fromQuad`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/fromQuad)
     static DOMQuad fromQuad(const DOMQuadInit& other);
-    /// Getter of the `p1` attribute.
+    /// [`DOMQuad.p1`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p1)
     /// [`DOMQuad.p1`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p1)
     [[nodiscard]] DOMPoint p1() const;
-    /// Getter of the `p2` attribute.
+    /// [`DOMQuad.p2`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p2)
     /// [`DOMQuad.p2`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p2)
     [[nodiscard]] DOMPoint p2() const;
-    /// Getter of the `p3` attribute.
+    /// [`DOMQuad.p3`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p3)
     /// [`DOMQuad.p3`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p3)
     [[nodiscard]] DOMPoint p3() const;
-    /// Getter of the `p4` attribute.
+    /// [`DOMQuad.p4`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p4)
     /// [`DOMQuad.p4`](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p4)
     [[nodiscard]] DOMPoint p4() const;
     /// The getBounds method.

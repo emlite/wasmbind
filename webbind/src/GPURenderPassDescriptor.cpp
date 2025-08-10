@@ -4,15 +4,17 @@
 #include <webbind/GPUQuerySet.hpp>
 #include <webbind/GPURenderPassTimestampWrites.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPURenderPassDescriptor::GPURenderPassDescriptor(Handle h) noexcept : GPUObjectDescriptorBase(emlite::Val::take_ownership(h)) {}
 GPURenderPassDescriptor GPURenderPassDescriptor::take_ownership(Handle h) noexcept {
-        return GPURenderPassDescriptor(h);
-    }
+    return GPURenderPassDescriptor(h);
+}
+
 GPURenderPassDescriptor::GPURenderPassDescriptor(const emlite::Val &val) noexcept: GPUObjectDescriptorBase(val) {}
+
 GPURenderPassDescriptor::GPURenderPassDescriptor() noexcept: GPUObjectDescriptorBase(emlite::Val::object()) {}
+
 GPURenderPassDescriptor GPURenderPassDescriptor::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<GPURenderPassColorAttachment> GPURenderPassDescriptor::colorAttachments() const {

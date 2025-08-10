@@ -4,11 +4,15 @@
 namespace webbind {
 
 Subscriber Subscriber::take_ownership(Handle h) noexcept {
-        return Subscriber(h);
-    }
+    return Subscriber(h);
+}
+
 Subscriber Subscriber::clone() const noexcept { return *this; }
+
 emlite::Val Subscriber::instance() noexcept { return emlite::Val::global("Subscriber"); }
+
 Subscriber::Subscriber(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Subscriber::Subscriber(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Undefined Subscriber::next(const jsbind::Any& value) {

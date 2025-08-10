@@ -24,10 +24,10 @@ public:
     static RTCRtpSender take_ownership(Handle h) noexcept;
     [[nodiscard]] RTCRtpSender clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `track` attribute.
+    /// [`RTCRtpSender.track`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/track)
     /// [`RTCRtpSender.track`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/track)
     [[nodiscard]] MediaStreamTrack track() const;
-    /// Getter of the `transport` attribute.
+    /// [`RTCRtpSender.transport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/transport)
     /// [`RTCRtpSender.transport`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/transport)
     [[nodiscard]] RTCDtlsTransport transport() const;
     /// The getCapabilities method.
@@ -51,7 +51,7 @@ public:
     /// The getStats method.
     /// [`RTCRtpSender.getStats`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/getStats)
     jsbind::Promise<RTCStatsReport> getStats();
-    /// Getter of the `transform` attribute.
+    /// [`RTCRtpSender.transform`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/transform)
     /// [`RTCRtpSender.transform`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/transform)
     [[nodiscard]] jsbind::Any transform() const;
     /// Setter of the `transform` attribute.
@@ -63,7 +63,7 @@ public:
     /// The generateKeyFrame method.
     /// [`RTCRtpSender.generateKeyFrame`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/generateKeyFrame)
     jsbind::Promise<jsbind::Undefined> generateKeyFrame(const jsbind::TypedArray<jsbind::String>& rids);
-    /// Getter of the `dtmf` attribute.
+    /// [`RTCRtpSender.dtmf`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/dtmf)
     /// [`RTCRtpSender.dtmf`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/dtmf)
     [[nodiscard]] RTCDTMFSender dtmf() const;
 };

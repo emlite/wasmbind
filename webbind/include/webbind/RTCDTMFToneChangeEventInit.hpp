@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type RTCDTMFToneChangeEventInit
-/// [`RTCDTMFToneChangeEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFToneChangeEventInit)
 class RTCDTMFToneChangeEventInit : public EventInit {
   explicit RTCDTMFToneChangeEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit RTCDTMFToneChangeEventInit(const emlite::Val &val) noexcept;
     RTCDTMFToneChangeEventInit() noexcept;
     [[nodiscard]] RTCDTMFToneChangeEventInit clone() const noexcept;
+    /// Getter of the `tone` attribute.
     [[nodiscard]] jsbind::String tone() const;
+    /// Setter of the `tone` attribute.
     void tone(const jsbind::String& value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/RTCRtpStreamStats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpStreamStats::RTCRtpStreamStats(Handle h) noexcept : RTCStats(emlite::Val::take_ownership(h)) {}
 RTCRtpStreamStats RTCRtpStreamStats::take_ownership(Handle h) noexcept {
-        return RTCRtpStreamStats(h);
-    }
+    return RTCRtpStreamStats(h);
+}
+
 RTCRtpStreamStats::RTCRtpStreamStats(const emlite::Val &val) noexcept: RTCStats(val) {}
+
 RTCRtpStreamStats::RTCRtpStreamStats() noexcept: RTCStats(emlite::Val::object()) {}
+
 RTCRtpStreamStats RTCRtpStreamStats::clone() const noexcept { return *this; }
 
 unsigned long RTCRtpStreamStats::ssrc() const {

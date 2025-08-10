@@ -10,7 +10,6 @@ class DOMPointReadOnly;
 class DOMRectReadOnly;
 
 /// Dictionary type GamepadTouch
-/// [`GamepadTouch`](https://developer.mozilla.org/en-US/docs/Web/API/GamepadTouch)
 class GamepadTouch : public emlite::Val {
   explicit GamepadTouch(Handle h) noexcept;
 public:
@@ -18,13 +17,21 @@ public:
     explicit GamepadTouch(const emlite::Val &val) noexcept;
     GamepadTouch() noexcept;
     [[nodiscard]] GamepadTouch clone() const noexcept;
+    /// Getter of the `touchId` attribute.
     [[nodiscard]] unsigned long touchId() const;
+    /// Setter of the `touchId` attribute.
     void touchId(unsigned long value);
+    /// Getter of the `surfaceId` attribute.
     [[nodiscard]] unsigned char surfaceId() const;
+    /// Setter of the `surfaceId` attribute.
     void surfaceId(unsigned char value);
+    /// Getter of the `position` attribute.
     [[nodiscard]] DOMPointReadOnly position() const;
+    /// Setter of the `position` attribute.
     void position(const DOMPointReadOnly& value);
+    /// Getter of the `surfaceDimensions` attribute.
     [[nodiscard]] DOMRectReadOnly surfaceDimensions() const;
+    /// Setter of the `surfaceDimensions` attribute.
     void surfaceDimensions(const DOMRectReadOnly& value);
 };
 

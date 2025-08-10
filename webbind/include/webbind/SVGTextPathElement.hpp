@@ -20,16 +20,16 @@ public:
     static SVGTextPathElement take_ownership(Handle h) noexcept;
     [[nodiscard]] SVGTextPathElement clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `startOffset` attribute.
+    /// [`SVGTextPathElement.startOffset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/startOffset)
     /// [`SVGTextPathElement.startOffset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/startOffset)
     [[nodiscard]] SVGAnimatedLength startOffset() const;
-    /// Getter of the `method` attribute.
+    /// [`SVGTextPathElement.method`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/method)
     /// [`SVGTextPathElement.method`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/method)
     [[nodiscard]] SVGAnimatedEnumeration method() const;
-    /// Getter of the `spacing` attribute.
+    /// [`SVGTextPathElement.spacing`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/spacing)
     /// [`SVGTextPathElement.spacing`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/spacing)
     [[nodiscard]] SVGAnimatedEnumeration spacing() const;
-    /// Getter of the `href` attribute.
+    /// [`SVGTextPathElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/href)
     /// [`SVGTextPathElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGTextPathElement/href)
     [[nodiscard]] SVGAnimatedString href() const;
 };

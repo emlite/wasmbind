@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ChannelSplitterOptions
-/// [`ChannelSplitterOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ChannelSplitterOptions)
 class ChannelSplitterOptions : public AudioNodeOptions {
   explicit ChannelSplitterOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit ChannelSplitterOptions(const emlite::Val &val) noexcept;
     ChannelSplitterOptions() noexcept;
     [[nodiscard]] ChannelSplitterOptions clone() const noexcept;
+    /// Getter of the `numberOfOutputs` attribute.
     [[nodiscard]] unsigned long numberOfOutputs() const;
+    /// Setter of the `numberOfOutputs` attribute.
     void numberOfOutputs(unsigned long value);
 };
 

@@ -1,14 +1,16 @@
 #include <webbind/CSSStyleSheetInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CSSStyleSheetInit::CSSStyleSheetInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSStyleSheetInit CSSStyleSheetInit::take_ownership(Handle h) noexcept {
-        return CSSStyleSheetInit(h);
-    }
+    return CSSStyleSheetInit(h);
+}
+
 CSSStyleSheetInit::CSSStyleSheetInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CSSStyleSheetInit::CSSStyleSheetInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CSSStyleSheetInit CSSStyleSheetInit::clone() const noexcept { return *this; }
 
 jsbind::String CSSStyleSheetInit::baseURL() const {

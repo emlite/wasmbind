@@ -1,15 +1,17 @@
 #include <webbind/BreakTokenOptions.hpp>
 #include <webbind/ChildBreakToken.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BreakTokenOptions::BreakTokenOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 BreakTokenOptions BreakTokenOptions::take_ownership(Handle h) noexcept {
-        return BreakTokenOptions(h);
-    }
+    return BreakTokenOptions(h);
+}
+
 BreakTokenOptions::BreakTokenOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 BreakTokenOptions::BreakTokenOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 BreakTokenOptions BreakTokenOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<ChildBreakToken> BreakTokenOptions::childBreakTokens() const {

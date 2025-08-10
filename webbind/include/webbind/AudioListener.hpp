@@ -17,31 +17,31 @@ public:
     static AudioListener take_ownership(Handle h) noexcept;
     [[nodiscard]] AudioListener clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `positionX` attribute.
+    /// [`AudioListener.positionX`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionX)
     /// [`AudioListener.positionX`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionX)
     [[nodiscard]] AudioParam positionX() const;
-    /// Getter of the `positionY` attribute.
+    /// [`AudioListener.positionY`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionY)
     /// [`AudioListener.positionY`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionY)
     [[nodiscard]] AudioParam positionY() const;
-    /// Getter of the `positionZ` attribute.
+    /// [`AudioListener.positionZ`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionZ)
     /// [`AudioListener.positionZ`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionZ)
     [[nodiscard]] AudioParam positionZ() const;
-    /// Getter of the `forwardX` attribute.
+    /// [`AudioListener.forwardX`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardX)
     /// [`AudioListener.forwardX`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardX)
     [[nodiscard]] AudioParam forwardX() const;
-    /// Getter of the `forwardY` attribute.
+    /// [`AudioListener.forwardY`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardY)
     /// [`AudioListener.forwardY`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardY)
     [[nodiscard]] AudioParam forwardY() const;
-    /// Getter of the `forwardZ` attribute.
+    /// [`AudioListener.forwardZ`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardZ)
     /// [`AudioListener.forwardZ`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardZ)
     [[nodiscard]] AudioParam forwardZ() const;
-    /// Getter of the `upX` attribute.
+    /// [`AudioListener.upX`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upX)
     /// [`AudioListener.upX`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upX)
     [[nodiscard]] AudioParam upX() const;
-    /// Getter of the `upY` attribute.
+    /// [`AudioListener.upY`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upY)
     /// [`AudioListener.upY`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upY)
     [[nodiscard]] AudioParam upY() const;
-    /// Getter of the `upZ` attribute.
+    /// [`AudioListener.upZ`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upZ)
     /// [`AudioListener.upZ`](https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upZ)
     [[nodiscard]] AudioParam upZ() const;
     /// The setPosition method.

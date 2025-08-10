@@ -20,10 +20,10 @@ public:
     USBInTransferResult(const USBTransferStatus& status);
     /// The `new USBInTransferResult(..)` constructor, creating a new USBInTransferResult instance
     USBInTransferResult(const USBTransferStatus& status, const jsbind::DataView& data);
-    /// Getter of the `data` attribute.
+    /// [`USBInTransferResult.data`](https://developer.mozilla.org/en-US/docs/Web/API/USBInTransferResult/data)
     /// [`USBInTransferResult.data`](https://developer.mozilla.org/en-US/docs/Web/API/USBInTransferResult/data)
     [[nodiscard]] jsbind::DataView data() const;
-    /// Getter of the `status` attribute.
+    /// [`USBInTransferResult.status`](https://developer.mozilla.org/en-US/docs/Web/API/USBInTransferResult/status)
     /// [`USBInTransferResult.status`](https://developer.mozilla.org/en-US/docs/Web/API/USBInTransferResult/status)
     [[nodiscard]] USBTransferStatus status() const;
 };

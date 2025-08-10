@@ -1,15 +1,17 @@
 #include <webbind/RTCIdentityAssertionResult.hpp>
 #include <webbind/RTCIdentityProviderDetails.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCIdentityAssertionResult::RTCIdentityAssertionResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCIdentityAssertionResult RTCIdentityAssertionResult::take_ownership(Handle h) noexcept {
-        return RTCIdentityAssertionResult(h);
-    }
+    return RTCIdentityAssertionResult(h);
+}
+
 RTCIdentityAssertionResult::RTCIdentityAssertionResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCIdentityAssertionResult::RTCIdentityAssertionResult() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCIdentityAssertionResult RTCIdentityAssertionResult::clone() const noexcept { return *this; }
 
 RTCIdentityProviderDetails RTCIdentityAssertionResult::idp() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GPUPipelineDescriptorBase
-/// [`GPUPipelineDescriptorBase`](https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineDescriptorBase)
 class GPUPipelineDescriptorBase : public GPUObjectDescriptorBase {
   explicit GPUPipelineDescriptorBase(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit GPUPipelineDescriptorBase(const emlite::Val &val) noexcept;
     GPUPipelineDescriptorBase() noexcept;
     [[nodiscard]] GPUPipelineDescriptorBase clone() const noexcept;
+    /// Getter of the `layout` attribute.
     [[nodiscard]] jsbind::Any layout() const;
+    /// Setter of the `layout` attribute.
     void layout(const jsbind::Any& value);
 };
 

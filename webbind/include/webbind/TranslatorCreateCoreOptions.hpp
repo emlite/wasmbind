@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type TranslatorCreateCoreOptions
-/// [`TranslatorCreateCoreOptions`](https://developer.mozilla.org/en-US/docs/Web/API/TranslatorCreateCoreOptions)
 class TranslatorCreateCoreOptions : public emlite::Val {
   explicit TranslatorCreateCoreOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit TranslatorCreateCoreOptions(const emlite::Val &val) noexcept;
     TranslatorCreateCoreOptions() noexcept;
     [[nodiscard]] TranslatorCreateCoreOptions clone() const noexcept;
+    /// Getter of the `sourceLanguage` attribute.
     [[nodiscard]] jsbind::String sourceLanguage() const;
+    /// Setter of the `sourceLanguage` attribute.
     void sourceLanguage(const jsbind::String& value);
+    /// Getter of the `targetLanguage` attribute.
     [[nodiscard]] jsbind::String targetLanguage() const;
+    /// Setter of the `targetLanguage` attribute.
     void targetLanguage(const jsbind::String& value);
 };
 

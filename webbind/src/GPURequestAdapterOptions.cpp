@@ -1,14 +1,16 @@
 #include <webbind/GPURequestAdapterOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPURequestAdapterOptions::GPURequestAdapterOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPURequestAdapterOptions GPURequestAdapterOptions::take_ownership(Handle h) noexcept {
-        return GPURequestAdapterOptions(h);
-    }
+    return GPURequestAdapterOptions(h);
+}
+
 GPURequestAdapterOptions::GPURequestAdapterOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPURequestAdapterOptions::GPURequestAdapterOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPURequestAdapterOptions GPURequestAdapterOptions::clone() const noexcept { return *this; }
 
 jsbind::String GPURequestAdapterOptions::featureLevel() const {

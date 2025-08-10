@@ -1,14 +1,16 @@
 #include <webbind/ConvertCoordinateOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ConvertCoordinateOptions::ConvertCoordinateOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ConvertCoordinateOptions ConvertCoordinateOptions::take_ownership(Handle h) noexcept {
-        return ConvertCoordinateOptions(h);
-    }
+    return ConvertCoordinateOptions(h);
+}
+
 ConvertCoordinateOptions::ConvertCoordinateOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ConvertCoordinateOptions::ConvertCoordinateOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ConvertCoordinateOptions ConvertCoordinateOptions::clone() const noexcept { return *this; }
 
 CSSBoxType ConvertCoordinateOptions::fromBox() const {

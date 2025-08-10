@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type WebTransportSendStreamOptions
-/// [`WebTransportSendStreamOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStreamOptions)
 class WebTransportSendStreamOptions : public WebTransportSendOptions {
   explicit WebTransportSendStreamOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit WebTransportSendStreamOptions(const emlite::Val &val) noexcept;
     WebTransportSendStreamOptions() noexcept;
     [[nodiscard]] WebTransportSendStreamOptions clone() const noexcept;
+    /// Getter of the `waitUntilAvailable` attribute.
     [[nodiscard]] bool waitUntilAvailable() const;
+    /// Setter of the `waitUntilAvailable` attribute.
     void waitUntilAvailable(bool value);
 };
 

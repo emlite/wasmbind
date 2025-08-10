@@ -20,7 +20,7 @@ public:
     static StorageBucket take_ownership(Handle h) noexcept;
     [[nodiscard]] StorageBucket clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`StorageBucket.name`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/name)
     /// [`StorageBucket.name`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/name)
     [[nodiscard]] jsbind::String name() const;
     /// The persist method.
@@ -38,10 +38,10 @@ public:
     /// The expires method.
     /// [`StorageBucket.expires`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/expires)
     jsbind::Promise<jsbind::Any> expires();
-    /// Getter of the `indexedDB` attribute.
+    /// [`StorageBucket.indexedDB`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/indexedDB)
     /// [`StorageBucket.indexedDB`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/indexedDB)
     [[nodiscard]] IDBFactory indexedDB() const;
-    /// Getter of the `caches` attribute.
+    /// [`StorageBucket.caches`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/caches)
     /// [`StorageBucket.caches`](https://developer.mozilla.org/en-US/docs/Web/API/StorageBucket/caches)
     [[nodiscard]] CacheStorage caches() const;
     /// The getDirectory method.

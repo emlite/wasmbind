@@ -20,10 +20,10 @@ public:
     USBOutTransferResult(const USBTransferStatus& status);
     /// The `new USBOutTransferResult(..)` constructor, creating a new USBOutTransferResult instance
     USBOutTransferResult(const USBTransferStatus& status, unsigned long bytesWritten);
-    /// Getter of the `bytesWritten` attribute.
+    /// [`USBOutTransferResult.bytesWritten`](https://developer.mozilla.org/en-US/docs/Web/API/USBOutTransferResult/bytesWritten)
     /// [`USBOutTransferResult.bytesWritten`](https://developer.mozilla.org/en-US/docs/Web/API/USBOutTransferResult/bytesWritten)
     [[nodiscard]] unsigned long bytesWritten() const;
-    /// Getter of the `status` attribute.
+    /// [`USBOutTransferResult.status`](https://developer.mozilla.org/en-US/docs/Web/API/USBOutTransferResult/status)
     /// [`USBOutTransferResult.status`](https://developer.mozilla.org/en-US/docs/Web/API/USBOutTransferResult/status)
     [[nodiscard]] USBTransferStatus status() const;
 };

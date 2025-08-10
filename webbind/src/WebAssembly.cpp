@@ -3,8 +3,6 @@
 #include <webbind/Response.hpp>
 #include <webbind/WebAssemblyInstantiatedSource.hpp>
 
-using emlite::Val;
-
 namespace webbind {
 
 namespace WebAssembly {

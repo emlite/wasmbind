@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MediaQueryListEventInit
-/// [`MediaQueryListEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEventInit)
 class MediaQueryListEventInit : public EventInit {
   explicit MediaQueryListEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MediaQueryListEventInit(const emlite::Val &val) noexcept;
     MediaQueryListEventInit() noexcept;
     [[nodiscard]] MediaQueryListEventInit clone() const noexcept;
+    /// Getter of the `media` attribute.
     [[nodiscard]] jsbind::String media() const;
+    /// Setter of the `media` attribute.
     void media(const jsbind::String& value);
+    /// Getter of the `matches` attribute.
     [[nodiscard]] bool matches() const;
+    /// Setter of the `matches` attribute.
     void matches(bool value);
 };
 

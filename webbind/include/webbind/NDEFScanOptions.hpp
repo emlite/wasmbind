@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type NDEFScanOptions
-/// [`NDEFScanOptions`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFScanOptions)
 class NDEFScanOptions : public emlite::Val {
   explicit NDEFScanOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit NDEFScanOptions(const emlite::Val &val) noexcept;
     NDEFScanOptions() noexcept;
     [[nodiscard]] NDEFScanOptions clone() const noexcept;
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

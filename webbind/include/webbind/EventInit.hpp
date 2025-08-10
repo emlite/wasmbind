@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type EventInit
-/// [`EventInit`](https://developer.mozilla.org/en-US/docs/Web/API/EventInit)
 class EventInit : public emlite::Val {
   explicit EventInit(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit EventInit(const emlite::Val &val) noexcept;
     EventInit() noexcept;
     [[nodiscard]] EventInit clone() const noexcept;
+    /// Getter of the `bubbles` attribute.
     [[nodiscard]] bool bubbles() const;
+    /// Setter of the `bubbles` attribute.
     void bubbles(bool value);
+    /// Getter of the `cancelable` attribute.
     [[nodiscard]] bool cancelable() const;
+    /// Setter of the `cancelable` attribute.
     void cancelable(bool value);
+    /// Getter of the `composed` attribute.
     [[nodiscard]] bool composed() const;
+    /// Setter of the `composed` attribute.
     void composed(bool value);
 };
 

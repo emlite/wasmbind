@@ -2,15 +2,17 @@
 #include <webbind/MediaKeySystemAccess.hpp>
 #include <webbind/MediaDecodingConfiguration.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaCapabilitiesDecodingInfo::MediaCapabilitiesDecodingInfo(Handle h) noexcept : MediaCapabilitiesInfo(emlite::Val::take_ownership(h)) {}
 MediaCapabilitiesDecodingInfo MediaCapabilitiesDecodingInfo::take_ownership(Handle h) noexcept {
-        return MediaCapabilitiesDecodingInfo(h);
-    }
+    return MediaCapabilitiesDecodingInfo(h);
+}
+
 MediaCapabilitiesDecodingInfo::MediaCapabilitiesDecodingInfo(const emlite::Val &val) noexcept: MediaCapabilitiesInfo(val) {}
+
 MediaCapabilitiesDecodingInfo::MediaCapabilitiesDecodingInfo() noexcept: MediaCapabilitiesInfo(emlite::Val::object()) {}
+
 MediaCapabilitiesDecodingInfo MediaCapabilitiesDecodingInfo::clone() const noexcept { return *this; }
 
 MediaKeySystemAccess MediaCapabilitiesDecodingInfo::keySystemAccess() const {

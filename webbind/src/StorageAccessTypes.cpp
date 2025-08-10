@@ -1,14 +1,16 @@
 #include <webbind/StorageAccessTypes.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StorageAccessTypes::StorageAccessTypes(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StorageAccessTypes StorageAccessTypes::take_ownership(Handle h) noexcept {
-        return StorageAccessTypes(h);
-    }
+    return StorageAccessTypes(h);
+}
+
 StorageAccessTypes::StorageAccessTypes(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 StorageAccessTypes::StorageAccessTypes() noexcept: emlite::Val(emlite::Val::object()) {}
+
 StorageAccessTypes StorageAccessTypes::clone() const noexcept { return *this; }
 
 bool StorageAccessTypes::all() const {

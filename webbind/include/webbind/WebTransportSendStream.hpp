@@ -20,13 +20,13 @@ public:
     static WebTransportSendStream take_ownership(Handle h) noexcept;
     [[nodiscard]] WebTransportSendStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `sendGroup` attribute.
+    /// [`WebTransportSendStream.sendGroup`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStream/sendGroup)
     /// [`WebTransportSendStream.sendGroup`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStream/sendGroup)
     [[nodiscard]] WebTransportSendGroup sendGroup() const;
     /// Setter of the `sendGroup` attribute.
     /// [`WebTransportSendStream.sendGroup`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStream/sendGroup)
     void sendGroup(const WebTransportSendGroup& value);
-    /// Getter of the `sendOrder` attribute.
+    /// [`WebTransportSendStream.sendOrder`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStream/sendOrder)
     /// [`WebTransportSendStream.sendOrder`](https://developer.mozilla.org/en-US/docs/Web/API/WebTransportSendStream/sendOrder)
     [[nodiscard]] long long sendOrder() const;
     /// Setter of the `sendOrder` attribute.

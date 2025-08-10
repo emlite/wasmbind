@@ -1,14 +1,16 @@
 #include <webbind/CookieChangeEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CookieChangeEventInit::CookieChangeEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 CookieChangeEventInit CookieChangeEventInit::take_ownership(Handle h) noexcept {
-        return CookieChangeEventInit(h);
-    }
+    return CookieChangeEventInit(h);
+}
+
 CookieChangeEventInit::CookieChangeEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 CookieChangeEventInit::CookieChangeEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 CookieChangeEventInit CookieChangeEventInit::clone() const noexcept { return *this; }
 
 jsbind::Any CookieChangeEventInit::changed() const {

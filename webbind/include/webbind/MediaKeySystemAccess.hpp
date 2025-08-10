@@ -18,7 +18,7 @@ public:
     static MediaKeySystemAccess take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaKeySystemAccess clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `keySystem` attribute.
+    /// [`MediaKeySystemAccess.keySystem`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess/keySystem)
     /// [`MediaKeySystemAccess.keySystem`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess/keySystem)
     [[nodiscard]] jsbind::String keySystem() const;
     /// The getConfiguration method.

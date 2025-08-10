@@ -1,14 +1,16 @@
 #include <webbind/ImageBitmapOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ImageBitmapOptions::ImageBitmapOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ImageBitmapOptions ImageBitmapOptions::take_ownership(Handle h) noexcept {
-        return ImageBitmapOptions(h);
-    }
+    return ImageBitmapOptions(h);
+}
+
 ImageBitmapOptions::ImageBitmapOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ImageBitmapOptions::ImageBitmapOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ImageBitmapOptions ImageBitmapOptions::clone() const noexcept { return *this; }
 
 ImageOrientation ImageBitmapOptions::imageOrientation() const {

@@ -16,10 +16,10 @@ public:
     static CSSScopeRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSScopeRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `start` attribute.
+    /// [`CSSScopeRule.start`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/start)
     /// [`CSSScopeRule.start`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/start)
     [[nodiscard]] jsbind::String start() const;
-    /// Getter of the `end` attribute.
+    /// [`CSSScopeRule.end`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/end)
     /// [`CSSScopeRule.end`](https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/end)
     [[nodiscard]] jsbind::String end() const;
 };

@@ -23,7 +23,7 @@ public:
     DragEvent(const jsbind::String& type);
     /// The `new DragEvent(..)` constructor, creating a new DragEvent instance
     DragEvent(const jsbind::String& type, const DragEventInit& eventInitDict);
-    /// Getter of the `dataTransfer` attribute.
+    /// [`DragEvent.dataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer)
     /// [`DragEvent.dataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer)
     [[nodiscard]] DataTransfer dataTransfer() const;
 };

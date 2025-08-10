@@ -9,7 +9,6 @@ namespace webbind {
 class AbortSignal;
 
 /// Dictionary type LockOptions
-/// [`LockOptions`](https://developer.mozilla.org/en-US/docs/Web/API/LockOptions)
 class LockOptions : public emlite::Val {
   explicit LockOptions(Handle h) noexcept;
 public:
@@ -17,13 +16,21 @@ public:
     explicit LockOptions(const emlite::Val &val) noexcept;
     LockOptions() noexcept;
     [[nodiscard]] LockOptions clone() const noexcept;
+    /// Getter of the `mode` attribute.
     [[nodiscard]] LockMode mode() const;
+    /// Setter of the `mode` attribute.
     void mode(const LockMode& value);
+    /// Getter of the `ifAvailable` attribute.
     [[nodiscard]] bool ifAvailable() const;
+    /// Setter of the `ifAvailable` attribute.
     void ifAvailable(bool value);
+    /// Getter of the `steal` attribute.
     [[nodiscard]] bool steal() const;
+    /// Setter of the `steal` attribute.
     void steal(bool value);
+    /// Getter of the `signal` attribute.
     [[nodiscard]] AbortSignal signal() const;
+    /// Setter of the `signal` attribute.
     void signal(const AbortSignal& value);
 };
 

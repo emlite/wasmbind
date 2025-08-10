@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type TopLevelStorageAccessPermissionDescriptor
-/// [`TopLevelStorageAccessPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/TopLevelStorageAccessPermissionDescriptor)
 class TopLevelStorageAccessPermissionDescriptor : public PermissionDescriptor {
   explicit TopLevelStorageAccessPermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit TopLevelStorageAccessPermissionDescriptor(const emlite::Val &val) noexcept;
     TopLevelStorageAccessPermissionDescriptor() noexcept;
     [[nodiscard]] TopLevelStorageAccessPermissionDescriptor clone() const noexcept;
+    /// Getter of the `requestedOrigin` attribute.
     [[nodiscard]] jsbind::String requestedOrigin() const;
+    /// Setter of the `requestedOrigin` attribute.
     void requestedOrigin(const jsbind::String& value);
 };
 

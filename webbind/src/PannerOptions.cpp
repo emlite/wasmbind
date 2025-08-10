@@ -1,14 +1,16 @@
 #include <webbind/PannerOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PannerOptions::PannerOptions(Handle h) noexcept : AudioNodeOptions(emlite::Val::take_ownership(h)) {}
 PannerOptions PannerOptions::take_ownership(Handle h) noexcept {
-        return PannerOptions(h);
-    }
+    return PannerOptions(h);
+}
+
 PannerOptions::PannerOptions(const emlite::Val &val) noexcept: AudioNodeOptions(val) {}
+
 PannerOptions::PannerOptions() noexcept: AudioNodeOptions(emlite::Val::object()) {}
+
 PannerOptions PannerOptions::clone() const noexcept { return *this; }
 
 PanningModelType PannerOptions::panningModel() const {

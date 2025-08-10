@@ -1,14 +1,16 @@
 #include <webbind/HIDReportItem.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HIDReportItem::HIDReportItem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HIDReportItem HIDReportItem::take_ownership(Handle h) noexcept {
-        return HIDReportItem(h);
-    }
+    return HIDReportItem(h);
+}
+
 HIDReportItem::HIDReportItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HIDReportItem::HIDReportItem() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HIDReportItem HIDReportItem::clone() const noexcept { return *this; }
 
 bool HIDReportItem::isAbsolute() const {

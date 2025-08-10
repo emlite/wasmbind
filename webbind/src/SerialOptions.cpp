@@ -1,14 +1,16 @@
 #include <webbind/SerialOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SerialOptions::SerialOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SerialOptions SerialOptions::take_ownership(Handle h) noexcept {
-        return SerialOptions(h);
-    }
+    return SerialOptions(h);
+}
+
 SerialOptions::SerialOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SerialOptions::SerialOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SerialOptions SerialOptions::clone() const noexcept { return *this; }
 
 unsigned long SerialOptions::baudRate() const {

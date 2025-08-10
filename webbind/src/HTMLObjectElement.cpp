@@ -6,11 +6,15 @@
 namespace webbind {
 
 HTMLObjectElement HTMLObjectElement::take_ownership(Handle h) noexcept {
-        return HTMLObjectElement(h);
-    }
+    return HTMLObjectElement(h);
+}
+
 HTMLObjectElement HTMLObjectElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLObjectElement::instance() noexcept { return emlite::Val::global("HTMLObjectElement"); }
+
 HTMLObjectElement::HTMLObjectElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLObjectElement::HTMLObjectElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLObjectElement::HTMLObjectElement() : HTMLElement(emlite::Val::global("HTMLObjectElement").new_()) {}

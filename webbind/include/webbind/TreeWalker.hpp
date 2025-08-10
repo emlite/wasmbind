@@ -17,16 +17,16 @@ public:
     static TreeWalker take_ownership(Handle h) noexcept;
     [[nodiscard]] TreeWalker clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `root` attribute.
+    /// [`TreeWalker.root`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root)
     /// [`TreeWalker.root`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root)
     [[nodiscard]] Node root() const;
-    /// Getter of the `whatToShow` attribute.
+    /// [`TreeWalker.whatToShow`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/whatToShow)
     /// [`TreeWalker.whatToShow`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/whatToShow)
     [[nodiscard]] unsigned long whatToShow() const;
-    /// Getter of the `filter` attribute.
+    /// [`TreeWalker.filter`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter)
     /// [`TreeWalker.filter`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter)
     [[nodiscard]] jsbind::Function filter() const;
-    /// Getter of the `currentNode` attribute.
+    /// [`TreeWalker.currentNode`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode)
     /// [`TreeWalker.currentNode`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode)
     [[nodiscard]] Node currentNode() const;
     /// Setter of the `currentNode` attribute.

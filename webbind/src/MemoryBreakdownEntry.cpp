@@ -1,15 +1,17 @@
 #include <webbind/MemoryBreakdownEntry.hpp>
 #include <webbind/MemoryAttribution.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MemoryBreakdownEntry::MemoryBreakdownEntry(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MemoryBreakdownEntry MemoryBreakdownEntry::take_ownership(Handle h) noexcept {
-        return MemoryBreakdownEntry(h);
-    }
+    return MemoryBreakdownEntry(h);
+}
+
 MemoryBreakdownEntry::MemoryBreakdownEntry(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MemoryBreakdownEntry::MemoryBreakdownEntry() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MemoryBreakdownEntry MemoryBreakdownEntry::clone() const noexcept { return *this; }
 
 long long MemoryBreakdownEntry::bytes() const {

@@ -1,14 +1,16 @@
 #include <webbind/MediaKeyMessageEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaKeyMessageEventInit::MediaKeyMessageEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 MediaKeyMessageEventInit MediaKeyMessageEventInit::take_ownership(Handle h) noexcept {
-        return MediaKeyMessageEventInit(h);
-    }
+    return MediaKeyMessageEventInit(h);
+}
+
 MediaKeyMessageEventInit::MediaKeyMessageEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 MediaKeyMessageEventInit::MediaKeyMessageEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 MediaKeyMessageEventInit MediaKeyMessageEventInit::clone() const noexcept { return *this; }
 
 MediaKeyMessageType MediaKeyMessageEventInit::messageType() const {

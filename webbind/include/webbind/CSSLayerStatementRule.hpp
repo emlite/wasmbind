@@ -16,7 +16,7 @@ public:
     static CSSLayerStatementRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSLayerStatementRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `nameList` attribute.
+    /// [`CSSLayerStatementRule.nameList`](https://developer.mozilla.org/en-US/docs/Web/API/CSSLayerStatementRule/nameList)
     /// [`CSSLayerStatementRule.nameList`](https://developer.mozilla.org/en-US/docs/Web/API/CSSLayerStatementRule/nameList)
     [[nodiscard]] jsbind::TypedArray<jsbind::String> nameList() const;
 };

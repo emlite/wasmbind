@@ -16,7 +16,7 @@ public:
     static RTCCertificate take_ownership(Handle h) noexcept;
     [[nodiscard]] RTCCertificate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `expires` attribute.
+    /// [`RTCCertificate.expires`](https://developer.mozilla.org/en-US/docs/Web/API/RTCCertificate/expires)
     /// [`RTCCertificate.expires`](https://developer.mozilla.org/en-US/docs/Web/API/RTCCertificate/expires)
     [[nodiscard]] jsbind::Any expires() const;
     /// The getFingerprints method.

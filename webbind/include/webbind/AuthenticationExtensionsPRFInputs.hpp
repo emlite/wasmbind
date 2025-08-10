@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type AuthenticationExtensionsPRFInputs
-/// [`AuthenticationExtensionsPRFInputs`](https://developer.mozilla.org/en-US/docs/Web/API/AuthenticationExtensionsPRFInputs)
 class AuthenticationExtensionsPRFInputs : public emlite::Val {
   explicit AuthenticationExtensionsPRFInputs(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit AuthenticationExtensionsPRFInputs(const emlite::Val &val) noexcept;
     AuthenticationExtensionsPRFInputs() noexcept;
     [[nodiscard]] AuthenticationExtensionsPRFInputs clone() const noexcept;
+    /// Getter of the `eval` attribute.
     [[nodiscard]] AuthenticationExtensionsPRFValues eval() const;
+    /// Setter of the `eval` attribute.
     void eval(const AuthenticationExtensionsPRFValues& value);
+    /// Getter of the `evalByCredential` attribute.
     [[nodiscard]] jsbind::Record<jsbind::String, AuthenticationExtensionsPRFValues> evalByCredential() const;
+    /// Setter of the `evalByCredential` attribute.
     void evalByCredential(const jsbind::Record<jsbind::String, AuthenticationExtensionsPRFValues>& value);
 };
 

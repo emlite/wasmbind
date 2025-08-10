@@ -1,14 +1,16 @@
 #include <webbind/PermissionDescriptor.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PermissionDescriptor::PermissionDescriptor(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PermissionDescriptor PermissionDescriptor::take_ownership(Handle h) noexcept {
-        return PermissionDescriptor(h);
-    }
+    return PermissionDescriptor(h);
+}
+
 PermissionDescriptor::PermissionDescriptor(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PermissionDescriptor::PermissionDescriptor() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PermissionDescriptor PermissionDescriptor::clone() const noexcept { return *this; }
 
 jsbind::String PermissionDescriptor::name() const {

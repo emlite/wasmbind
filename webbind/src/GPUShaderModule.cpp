@@ -4,11 +4,15 @@
 namespace webbind {
 
 GPUShaderModule GPUShaderModule::take_ownership(Handle h) noexcept {
-        return GPUShaderModule(h);
-    }
+    return GPUShaderModule(h);
+}
+
 GPUShaderModule GPUShaderModule::clone() const noexcept { return *this; }
+
 emlite::Val GPUShaderModule::instance() noexcept { return emlite::Val::global("GPUShaderModule"); }
+
 GPUShaderModule::GPUShaderModule(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 GPUShaderModule::GPUShaderModule(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<GPUCompilationInfo> GPUShaderModule::getCompilationInfo() {

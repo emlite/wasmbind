@@ -6,11 +6,15 @@
 namespace webbind {
 
 AudioData AudioData::take_ownership(Handle h) noexcept {
-        return AudioData(h);
-    }
+    return AudioData(h);
+}
+
 AudioData AudioData::clone() const noexcept { return *this; }
+
 emlite::Val AudioData::instance() noexcept { return emlite::Val::global("AudioData"); }
+
 AudioData::AudioData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 AudioData::AudioData(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 AudioData::AudioData(const AudioDataInit& init) : emlite::Val(emlite::Val::global("AudioData").new_(init)) {}

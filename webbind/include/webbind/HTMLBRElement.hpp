@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLBRElement(..)` constructor, creating a new HTMLBRElement instance
     HTMLBRElement();
-    /// Getter of the `clear` attribute.
+    /// [`HTMLBRElement.clear`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBRElement/clear)
     /// [`HTMLBRElement.clear`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBRElement/clear)
     [[nodiscard]] jsbind::String clear() const;
     /// Setter of the `clear` attribute.

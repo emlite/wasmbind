@@ -17,16 +17,16 @@ public:
     static BluetoothLEScan take_ownership(Handle h) noexcept;
     [[nodiscard]] BluetoothLEScan clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `filters` attribute.
+    /// [`BluetoothLEScan.filters`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/filters)
     /// [`BluetoothLEScan.filters`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/filters)
     [[nodiscard]] jsbind::TypedArray<BluetoothLEScanFilter> filters() const;
-    /// Getter of the `keepRepeatedDevices` attribute.
+    /// [`BluetoothLEScan.keepRepeatedDevices`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/keepRepeatedDevices)
     /// [`BluetoothLEScan.keepRepeatedDevices`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/keepRepeatedDevices)
     [[nodiscard]] bool keepRepeatedDevices() const;
-    /// Getter of the `acceptAllAdvertisements` attribute.
+    /// [`BluetoothLEScan.acceptAllAdvertisements`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/acceptAllAdvertisements)
     /// [`BluetoothLEScan.acceptAllAdvertisements`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/acceptAllAdvertisements)
     [[nodiscard]] bool acceptAllAdvertisements() const;
-    /// Getter of the `active` attribute.
+    /// [`BluetoothLEScan.active`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/active)
     /// [`BluetoothLEScan.active`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothLEScan/active)
     [[nodiscard]] bool active() const;
     /// The stop method.

@@ -1,15 +1,17 @@
 #include <webbind/StaticRangeInit.hpp>
 #include <webbind/Node.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 StaticRangeInit::StaticRangeInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 StaticRangeInit StaticRangeInit::take_ownership(Handle h) noexcept {
-        return StaticRangeInit(h);
-    }
+    return StaticRangeInit(h);
+}
+
 StaticRangeInit::StaticRangeInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 StaticRangeInit::StaticRangeInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 StaticRangeInit StaticRangeInit::clone() const noexcept { return *this; }
 
 Node StaticRangeInit::startContainer() const {

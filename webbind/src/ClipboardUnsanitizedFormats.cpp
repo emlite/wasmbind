@@ -1,14 +1,16 @@
 #include <webbind/ClipboardUnsanitizedFormats.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ClipboardUnsanitizedFormats ClipboardUnsanitizedFormats::take_ownership(Handle h) noexcept {
-        return ClipboardUnsanitizedFormats(h);
-    }
+    return ClipboardUnsanitizedFormats(h);
+}
+
 ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ClipboardUnsanitizedFormats::ClipboardUnsanitizedFormats() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ClipboardUnsanitizedFormats ClipboardUnsanitizedFormats::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::String> ClipboardUnsanitizedFormats::unsanitized() const {

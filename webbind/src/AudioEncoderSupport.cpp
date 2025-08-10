@@ -1,15 +1,17 @@
 #include <webbind/AudioEncoderSupport.hpp>
 #include <webbind/AudioEncoderConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioEncoderSupport::AudioEncoderSupport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioEncoderSupport AudioEncoderSupport::take_ownership(Handle h) noexcept {
-        return AudioEncoderSupport(h);
-    }
+    return AudioEncoderSupport(h);
+}
+
 AudioEncoderSupport::AudioEncoderSupport(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioEncoderSupport::AudioEncoderSupport() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioEncoderSupport AudioEncoderSupport::clone() const noexcept { return *this; }
 
 bool AudioEncoderSupport::supported() const {

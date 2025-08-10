@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type URLPatternOptions
-/// [`URLPatternOptions`](https://developer.mozilla.org/en-US/docs/Web/API/URLPatternOptions)
 class URLPatternOptions : public emlite::Val {
   explicit URLPatternOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit URLPatternOptions(const emlite::Val &val) noexcept;
     URLPatternOptions() noexcept;
     [[nodiscard]] URLPatternOptions clone() const noexcept;
+    /// Getter of the `ignoreCase` attribute.
     [[nodiscard]] bool ignoreCase() const;
+    /// Setter of the `ignoreCase` attribute.
     void ignoreCase(bool value);
 };
 

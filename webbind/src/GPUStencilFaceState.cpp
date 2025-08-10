@@ -1,14 +1,16 @@
 #include <webbind/GPUStencilFaceState.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUStencilFaceState::GPUStencilFaceState(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUStencilFaceState GPUStencilFaceState::take_ownership(Handle h) noexcept {
-        return GPUStencilFaceState(h);
-    }
+    return GPUStencilFaceState(h);
+}
+
 GPUStencilFaceState::GPUStencilFaceState(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUStencilFaceState::GPUStencilFaceState() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUStencilFaceState GPUStencilFaceState::clone() const noexcept { return *this; }
 
 GPUCompareFunction GPUStencilFaceState::compare() const {

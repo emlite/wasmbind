@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CaptureHandle
-/// [`CaptureHandle`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureHandle)
 class CaptureHandle : public emlite::Val {
   explicit CaptureHandle(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit CaptureHandle(const emlite::Val &val) noexcept;
     CaptureHandle() noexcept;
     [[nodiscard]] CaptureHandle clone() const noexcept;
+    /// Getter of the `origin` attribute.
     [[nodiscard]] jsbind::String origin() const;
+    /// Setter of the `origin` attribute.
     void origin(const jsbind::String& value);
+    /// Getter of the `handle` attribute.
     [[nodiscard]] jsbind::String handle() const;
+    /// Setter of the `handle` attribute.
     void handle(const jsbind::String& value);
 };
 

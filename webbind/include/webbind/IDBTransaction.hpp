@@ -22,19 +22,19 @@ public:
     static IDBTransaction take_ownership(Handle h) noexcept;
     [[nodiscard]] IDBTransaction clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `objectStoreNames` attribute.
+    /// [`IDBTransaction.objectStoreNames`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/objectStoreNames)
     /// [`IDBTransaction.objectStoreNames`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/objectStoreNames)
     [[nodiscard]] DOMStringList objectStoreNames() const;
-    /// Getter of the `mode` attribute.
+    /// [`IDBTransaction.mode`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/mode)
     /// [`IDBTransaction.mode`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/mode)
     [[nodiscard]] IDBTransactionMode mode() const;
-    /// Getter of the `durability` attribute.
+    /// [`IDBTransaction.durability`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/durability)
     /// [`IDBTransaction.durability`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/durability)
     [[nodiscard]] IDBTransactionDurability durability() const;
-    /// Getter of the `db` attribute.
+    /// [`IDBTransaction.db`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/db)
     /// [`IDBTransaction.db`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/db)
     [[nodiscard]] IDBDatabase db() const;
-    /// Getter of the `error` attribute.
+    /// [`IDBTransaction.error`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/error)
     /// [`IDBTransaction.error`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/error)
     [[nodiscard]] DOMException error() const;
     /// The objectStore method.
@@ -46,19 +46,19 @@ public:
     /// The abort method.
     /// [`IDBTransaction.abort`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/abort)
     jsbind::Undefined abort();
-    /// Getter of the `onabort` attribute.
+    /// [`IDBTransaction.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/onabort)
     /// [`IDBTransaction.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/onabort)
     [[nodiscard]] jsbind::Any onabort() const;
     /// Setter of the `onabort` attribute.
     /// [`IDBTransaction.onabort`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/onabort)
     void onabort(const jsbind::Any& value);
-    /// Getter of the `oncomplete` attribute.
+    /// [`IDBTransaction.oncomplete`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/oncomplete)
     /// [`IDBTransaction.oncomplete`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/oncomplete)
     [[nodiscard]] jsbind::Any oncomplete() const;
     /// Setter of the `oncomplete` attribute.
     /// [`IDBTransaction.oncomplete`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/oncomplete)
     void oncomplete(const jsbind::Any& value);
-    /// Getter of the `onerror` attribute.
+    /// [`IDBTransaction.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/onerror)
     /// [`IDBTransaction.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/onerror)
     [[nodiscard]] jsbind::Any onerror() const;
     /// Setter of the `onerror` attribute.

@@ -4,11 +4,15 @@
 namespace webbind {
 
 WheelEvent WheelEvent::take_ownership(Handle h) noexcept {
-        return WheelEvent(h);
-    }
+    return WheelEvent(h);
+}
+
 WheelEvent WheelEvent::clone() const noexcept { return *this; }
+
 emlite::Val WheelEvent::instance() noexcept { return emlite::Val::global("WheelEvent"); }
+
 WheelEvent::WheelEvent(Handle h) noexcept : MouseEvent(emlite::Val::take_ownership(h)) {}
+
 WheelEvent::WheelEvent(const emlite::Val &val) noexcept: MouseEvent(val) {}
 
 WheelEvent::WheelEvent(const jsbind::String& type) : MouseEvent(emlite::Val::global("WheelEvent").new_(type)) {}

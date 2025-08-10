@@ -19,7 +19,7 @@ public:
     URLSearchParams();
     /// The `new URLSearchParams(..)` constructor, creating a new URLSearchParams instance
     URLSearchParams(const jsbind::Any& init);
-    /// Getter of the `size` attribute.
+    /// [`URLSearchParams.size`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/size)
     /// [`URLSearchParams.size`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/size)
     [[nodiscard]] unsigned long size() const;
     /// The append method.

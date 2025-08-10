@@ -4,11 +4,15 @@
 namespace webbind {
 
 SpeechRecognitionResult SpeechRecognitionResult::take_ownership(Handle h) noexcept {
-        return SpeechRecognitionResult(h);
-    }
+    return SpeechRecognitionResult(h);
+}
+
 SpeechRecognitionResult SpeechRecognitionResult::clone() const noexcept { return *this; }
+
 emlite::Val SpeechRecognitionResult::instance() noexcept { return emlite::Val::global("SpeechRecognitionResult"); }
+
 SpeechRecognitionResult::SpeechRecognitionResult(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 SpeechRecognitionResult::SpeechRecognitionResult(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 unsigned long SpeechRecognitionResult::length() const {

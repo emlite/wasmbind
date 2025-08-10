@@ -4,11 +4,15 @@
 namespace webbind {
 
 HTMLAnchorElement HTMLAnchorElement::take_ownership(Handle h) noexcept {
-        return HTMLAnchorElement(h);
-    }
+    return HTMLAnchorElement(h);
+}
+
 HTMLAnchorElement HTMLAnchorElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLAnchorElement::instance() noexcept { return emlite::Val::global("HTMLAnchorElement"); }
+
 HTMLAnchorElement::HTMLAnchorElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLAnchorElement::HTMLAnchorElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLAnchorElement::HTMLAnchorElement() : HTMLElement(emlite::Val::global("HTMLAnchorElement").new_()) {}

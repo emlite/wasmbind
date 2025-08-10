@@ -23,10 +23,10 @@ public:
     IdentityCredentialError(const jsbind::String& message);
     /// The `new IdentityCredentialError(..)` constructor, creating a new IdentityCredentialError instance
     IdentityCredentialError(const jsbind::String& message, const IdentityCredentialErrorInit& options);
-    /// Getter of the `error` attribute.
+    /// [`IdentityCredentialError.error`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/error)
     /// [`IdentityCredentialError.error`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/error)
     [[nodiscard]] jsbind::String error() const;
-    /// Getter of the `url` attribute.
+    /// [`IdentityCredentialError.url`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/url)
     /// [`IdentityCredentialError.url`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/url)
     [[nodiscard]] jsbind::String url() const;
 };

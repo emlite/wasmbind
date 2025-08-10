@@ -6,11 +6,15 @@
 namespace webbind {
 
 Cache Cache::take_ownership(Handle h) noexcept {
-        return Cache(h);
-    }
+    return Cache(h);
+}
+
 Cache Cache::clone() const noexcept { return *this; }
+
 emlite::Val Cache::instance() noexcept { return emlite::Val::global("Cache"); }
+
 Cache::Cache(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Cache::Cache(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::Any> Cache::match(const jsbind::Any& request) {

@@ -1,14 +1,16 @@
 #include <webbind/XRProjectionLayerInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRProjectionLayerInit::XRProjectionLayerInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 XRProjectionLayerInit XRProjectionLayerInit::take_ownership(Handle h) noexcept {
-        return XRProjectionLayerInit(h);
-    }
+    return XRProjectionLayerInit(h);
+}
+
 XRProjectionLayerInit::XRProjectionLayerInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 XRProjectionLayerInit::XRProjectionLayerInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 XRProjectionLayerInit XRProjectionLayerInit::clone() const noexcept { return *this; }
 
 XRTextureType XRProjectionLayerInit::textureType() const {

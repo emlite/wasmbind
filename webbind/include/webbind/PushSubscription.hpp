@@ -19,13 +19,13 @@ public:
     static PushSubscription take_ownership(Handle h) noexcept;
     [[nodiscard]] PushSubscription clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `endpoint` attribute.
+    /// [`PushSubscription.endpoint`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/endpoint)
     /// [`PushSubscription.endpoint`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/endpoint)
     [[nodiscard]] jsbind::String endpoint() const;
-    /// Getter of the `expirationTime` attribute.
+    /// [`PushSubscription.expirationTime`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/expirationTime)
     /// [`PushSubscription.expirationTime`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/expirationTime)
     [[nodiscard]] jsbind::Any expirationTime() const;
-    /// Getter of the `options` attribute.
+    /// [`PushSubscription.options`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/options)
     /// [`PushSubscription.options`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/options)
     [[nodiscard]] PushSubscriptionOptions options() const;
     /// The getKey method.

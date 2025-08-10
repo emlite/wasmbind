@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type WorkletOptions
-/// [`WorkletOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WorkletOptions)
 class WorkletOptions : public emlite::Val {
   explicit WorkletOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit WorkletOptions(const emlite::Val &val) noexcept;
     WorkletOptions() noexcept;
     [[nodiscard]] WorkletOptions clone() const noexcept;
+    /// Getter of the `credentials` attribute.
     [[nodiscard]] RequestCredentials credentials() const;
+    /// Setter of the `credentials` attribute.
     void credentials(const RequestCredentials& value);
 };
 

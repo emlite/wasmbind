@@ -5,11 +5,15 @@
 namespace webbind {
 
 URLPattern URLPattern::take_ownership(Handle h) noexcept {
-        return URLPattern(h);
-    }
+    return URLPattern(h);
+}
+
 URLPattern URLPattern::clone() const noexcept { return *this; }
+
 emlite::Val URLPattern::instance() noexcept { return emlite::Val::global("URLPattern"); }
+
 URLPattern::URLPattern(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 URLPattern::URLPattern(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 URLPattern::URLPattern() : emlite::Val(emlite::Val::global("URLPattern").new_()) {}

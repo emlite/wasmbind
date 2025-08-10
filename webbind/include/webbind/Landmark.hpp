@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type Landmark
-/// [`Landmark`](https://developer.mozilla.org/en-US/docs/Web/API/Landmark)
 class Landmark : public emlite::Val {
   explicit Landmark(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit Landmark(const emlite::Val &val) noexcept;
     Landmark() noexcept;
     [[nodiscard]] Landmark clone() const noexcept;
+    /// Getter of the `locations` attribute.
     [[nodiscard]] jsbind::TypedArray<Point2D> locations() const;
+    /// Setter of the `locations` attribute.
     void locations(const jsbind::TypedArray<Point2D>& value);
+    /// Getter of the `type` attribute.
     [[nodiscard]] LandmarkType type() const;
+    /// Setter of the `type` attribute.
     void type(const LandmarkType& value);
 };
 

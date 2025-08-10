@@ -5,11 +5,15 @@
 namespace webbind {
 
 HTMLVideoElement HTMLVideoElement::take_ownership(Handle h) noexcept {
-        return HTMLVideoElement(h);
-    }
+    return HTMLVideoElement(h);
+}
+
 HTMLVideoElement HTMLVideoElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLVideoElement::instance() noexcept { return emlite::Val::global("HTMLVideoElement"); }
+
 HTMLVideoElement::HTMLVideoElement(Handle h) noexcept : HTMLMediaElement(emlite::Val::take_ownership(h)) {}
+
 HTMLVideoElement::HTMLVideoElement(const emlite::Val &val) noexcept: HTMLMediaElement(val) {}
 
 HTMLVideoElement::HTMLVideoElement() : HTMLMediaElement(emlite::Val::global("HTMLVideoElement").new_()) {}

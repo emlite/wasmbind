@@ -9,7 +9,6 @@ namespace webbind {
 class GPUQuerySet;
 
 /// Dictionary type GPURenderPassTimestampWrites
-/// [`GPURenderPassTimestampWrites`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassTimestampWrites)
 class GPURenderPassTimestampWrites : public emlite::Val {
   explicit GPURenderPassTimestampWrites(Handle h) noexcept;
 public:
@@ -17,11 +16,17 @@ public:
     explicit GPURenderPassTimestampWrites(const emlite::Val &val) noexcept;
     GPURenderPassTimestampWrites() noexcept;
     [[nodiscard]] GPURenderPassTimestampWrites clone() const noexcept;
+    /// Getter of the `querySet` attribute.
     [[nodiscard]] GPUQuerySet querySet() const;
+    /// Setter of the `querySet` attribute.
     void querySet(const GPUQuerySet& value);
+    /// Getter of the `beginningOfPassWriteIndex` attribute.
     [[nodiscard]] jsbind::Any beginningOfPassWriteIndex() const;
+    /// Setter of the `beginningOfPassWriteIndex` attribute.
     void beginningOfPassWriteIndex(const jsbind::Any& value);
+    /// Getter of the `endOfPassWriteIndex` attribute.
     [[nodiscard]] jsbind::Any endOfPassWriteIndex() const;
+    /// Setter of the `endOfPassWriteIndex` attribute.
     void endOfPassWriteIndex(const jsbind::Any& value);
 };
 

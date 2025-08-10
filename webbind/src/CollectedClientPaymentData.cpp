@@ -1,14 +1,16 @@
 #include <webbind/CollectedClientPaymentData.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CollectedClientPaymentData::CollectedClientPaymentData(Handle h) noexcept : CollectedClientData(emlite::Val::take_ownership(h)) {}
 CollectedClientPaymentData CollectedClientPaymentData::take_ownership(Handle h) noexcept {
-        return CollectedClientPaymentData(h);
-    }
+    return CollectedClientPaymentData(h);
+}
+
 CollectedClientPaymentData::CollectedClientPaymentData(const emlite::Val &val) noexcept: CollectedClientData(val) {}
+
 CollectedClientPaymentData::CollectedClientPaymentData() noexcept: CollectedClientData(emlite::Val::object()) {}
+
 CollectedClientPaymentData CollectedClientPaymentData::clone() const noexcept { return *this; }
 
 jsbind::Any CollectedClientPaymentData::payment() const {

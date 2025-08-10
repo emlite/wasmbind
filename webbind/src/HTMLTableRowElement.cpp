@@ -5,11 +5,15 @@
 namespace webbind {
 
 HTMLTableRowElement HTMLTableRowElement::take_ownership(Handle h) noexcept {
-        return HTMLTableRowElement(h);
-    }
+    return HTMLTableRowElement(h);
+}
+
 HTMLTableRowElement HTMLTableRowElement::clone() const noexcept { return *this; }
+
 emlite::Val HTMLTableRowElement::instance() noexcept { return emlite::Val::global("HTMLTableRowElement"); }
+
 HTMLTableRowElement::HTMLTableRowElement(Handle h) noexcept : HTMLElement(emlite::Val::take_ownership(h)) {}
+
 HTMLTableRowElement::HTMLTableRowElement(const emlite::Val &val) noexcept: HTMLElement(val) {}
 
 HTMLTableRowElement::HTMLTableRowElement() : HTMLElement(emlite::Val::global("HTMLTableRowElement").new_()) {}

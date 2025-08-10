@@ -15,16 +15,16 @@ public:
     static ImageTrack take_ownership(Handle h) noexcept;
     [[nodiscard]] ImageTrack clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `animated` attribute.
+    /// [`ImageTrack.animated`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/animated)
     /// [`ImageTrack.animated`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/animated)
     [[nodiscard]] bool animated() const;
-    /// Getter of the `frameCount` attribute.
+    /// [`ImageTrack.frameCount`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/frameCount)
     /// [`ImageTrack.frameCount`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/frameCount)
     [[nodiscard]] unsigned long frameCount() const;
-    /// Getter of the `repetitionCount` attribute.
+    /// [`ImageTrack.repetitionCount`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/repetitionCount)
     /// [`ImageTrack.repetitionCount`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/repetitionCount)
     [[nodiscard]] float repetitionCount() const;
-    /// Getter of the `selected` attribute.
+    /// [`ImageTrack.selected`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/selected)
     /// [`ImageTrack.selected`](https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/selected)
     [[nodiscard]] bool selected() const;
     /// Setter of the `selected` attribute.

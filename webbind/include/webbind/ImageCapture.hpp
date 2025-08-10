@@ -38,7 +38,7 @@ public:
     /// The grabFrame method.
     /// [`ImageCapture.grabFrame`](https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/grabFrame)
     jsbind::Promise<ImageBitmap> grabFrame();
-    /// Getter of the `track` attribute.
+    /// [`ImageCapture.track`](https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/track)
     /// [`ImageCapture.track`](https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/track)
     [[nodiscard]] MediaStreamTrack track() const;
 };

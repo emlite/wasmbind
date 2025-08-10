@@ -3,11 +3,15 @@
 namespace webbind {
 
 PresentationConnection PresentationConnection::take_ownership(Handle h) noexcept {
-        return PresentationConnection(h);
-    }
+    return PresentationConnection(h);
+}
+
 PresentationConnection PresentationConnection::clone() const noexcept { return *this; }
+
 emlite::Val PresentationConnection::instance() noexcept { return emlite::Val::global("PresentationConnection"); }
+
 PresentationConnection::PresentationConnection(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
+
 PresentationConnection::PresentationConnection(const emlite::Val &val) noexcept: EventTarget(val) {}
 
 jsbind::String PresentationConnection::id() const {

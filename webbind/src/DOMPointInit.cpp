@@ -1,14 +1,16 @@
 #include <webbind/DOMPointInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DOMPointInit::DOMPointInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 DOMPointInit DOMPointInit::take_ownership(Handle h) noexcept {
-        return DOMPointInit(h);
-    }
+    return DOMPointInit(h);
+}
+
 DOMPointInit::DOMPointInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 DOMPointInit::DOMPointInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 DOMPointInit DOMPointInit::clone() const noexcept { return *this; }
 
 double DOMPointInit::x() const {

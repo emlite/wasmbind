@@ -5,11 +5,15 @@
 namespace webbind {
 
 DOMRectReadOnly DOMRectReadOnly::take_ownership(Handle h) noexcept {
-        return DOMRectReadOnly(h);
-    }
+    return DOMRectReadOnly(h);
+}
+
 DOMRectReadOnly DOMRectReadOnly::clone() const noexcept { return *this; }
+
 emlite::Val DOMRectReadOnly::instance() noexcept { return emlite::Val::global("DOMRectReadOnly"); }
+
 DOMRectReadOnly::DOMRectReadOnly(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 DOMRectReadOnly::DOMRectReadOnly(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 DOMRectReadOnly::DOMRectReadOnly() : emlite::Val(emlite::Val::global("DOMRectReadOnly").new_()) {}

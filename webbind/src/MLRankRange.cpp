@@ -1,14 +1,16 @@
 #include <webbind/MLRankRange.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLRankRange::MLRankRange(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MLRankRange MLRankRange::take_ownership(Handle h) noexcept {
-        return MLRankRange(h);
-    }
+    return MLRankRange(h);
+}
+
 MLRankRange::MLRankRange(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MLRankRange::MLRankRange() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MLRankRange MLRankRange::clone() const noexcept { return *this; }
 
 unsigned long MLRankRange::min() const {

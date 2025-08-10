@@ -3,11 +3,15 @@
 namespace webbind {
 
 CSSLab CSSLab::take_ownership(Handle h) noexcept {
-        return CSSLab(h);
-    }
+    return CSSLab(h);
+}
+
 CSSLab CSSLab::clone() const noexcept { return *this; }
+
 emlite::Val CSSLab::instance() noexcept { return emlite::Val::global("CSSLab"); }
+
 CSSLab::CSSLab(Handle h) noexcept : CSSColorValue(emlite::Val::take_ownership(h)) {}
+
 CSSLab::CSSLab(const emlite::Val &val) noexcept: CSSColorValue(val) {}
 
 CSSLab::CSSLab(const jsbind::Any& l, const jsbind::Any& a, const jsbind::Any& b) : CSSColorValue(emlite::Val::global("CSSLab").new_(l, a, b)) {}

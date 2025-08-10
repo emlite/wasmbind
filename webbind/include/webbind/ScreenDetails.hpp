@@ -18,19 +18,19 @@ public:
     static ScreenDetails take_ownership(Handle h) noexcept;
     [[nodiscard]] ScreenDetails clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `screens` attribute.
+    /// [`ScreenDetails.screens`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/screens)
     /// [`ScreenDetails.screens`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/screens)
     [[nodiscard]] jsbind::TypedArray<ScreenDetailed> screens() const;
-    /// Getter of the `currentScreen` attribute.
+    /// [`ScreenDetails.currentScreen`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/currentScreen)
     /// [`ScreenDetails.currentScreen`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/currentScreen)
     [[nodiscard]] ScreenDetailed currentScreen() const;
-    /// Getter of the `onscreenschange` attribute.
+    /// [`ScreenDetails.onscreenschange`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/onscreenschange)
     /// [`ScreenDetails.onscreenschange`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/onscreenschange)
     [[nodiscard]] jsbind::Any onscreenschange() const;
     /// Setter of the `onscreenschange` attribute.
     /// [`ScreenDetails.onscreenschange`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/onscreenschange)
     void onscreenschange(const jsbind::Any& value);
-    /// Getter of the `oncurrentscreenchange` attribute.
+    /// [`ScreenDetails.oncurrentscreenchange`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/oncurrentscreenchange)
     /// [`ScreenDetails.oncurrentscreenchange`](https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetails/oncurrentscreenchange)
     [[nodiscard]] jsbind::Any oncurrentscreenchange() const;
     /// Setter of the `oncurrentscreenchange` attribute.

@@ -2,15 +2,17 @@
 #include <webbind/XRSession.hpp>
 #include <webbind/XRInputSource.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 XRInputSourcesChangeEventInit::XRInputSourcesChangeEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 XRInputSourcesChangeEventInit XRInputSourcesChangeEventInit::take_ownership(Handle h) noexcept {
-        return XRInputSourcesChangeEventInit(h);
-    }
+    return XRInputSourcesChangeEventInit(h);
+}
+
 XRInputSourcesChangeEventInit::XRInputSourcesChangeEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 XRInputSourcesChangeEventInit::XRInputSourcesChangeEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 XRInputSourcesChangeEventInit XRInputSourcesChangeEventInit::clone() const noexcept { return *this; }
 
 XRSession XRInputSourcesChangeEventInit::session() const {

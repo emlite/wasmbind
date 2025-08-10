@@ -1,14 +1,16 @@
 #include <webbind/RTCLocalSessionDescriptionInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCLocalSessionDescriptionInit::RTCLocalSessionDescriptionInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCLocalSessionDescriptionInit RTCLocalSessionDescriptionInit::take_ownership(Handle h) noexcept {
-        return RTCLocalSessionDescriptionInit(h);
-    }
+    return RTCLocalSessionDescriptionInit(h);
+}
+
 RTCLocalSessionDescriptionInit::RTCLocalSessionDescriptionInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCLocalSessionDescriptionInit::RTCLocalSessionDescriptionInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCLocalSessionDescriptionInit RTCLocalSessionDescriptionInit::clone() const noexcept { return *this; }
 
 RTCSdpType RTCLocalSessionDescriptionInit::type() const {

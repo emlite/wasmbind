@@ -1,15 +1,17 @@
 #include <webbind/RequestDeviceOptions.hpp>
 #include <webbind/BluetoothLEScanFilterInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RequestDeviceOptions::RequestDeviceOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RequestDeviceOptions RequestDeviceOptions::take_ownership(Handle h) noexcept {
-        return RequestDeviceOptions(h);
-    }
+    return RequestDeviceOptions(h);
+}
+
 RequestDeviceOptions::RequestDeviceOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RequestDeviceOptions::RequestDeviceOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RequestDeviceOptions RequestDeviceOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<BluetoothLEScanFilterInit> RequestDeviceOptions::filters() const {

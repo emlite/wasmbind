@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MediaStreamConstraints
-/// [`MediaStreamConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamConstraints)
 class MediaStreamConstraints : public emlite::Val {
   explicit MediaStreamConstraints(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit MediaStreamConstraints(const emlite::Val &val) noexcept;
     MediaStreamConstraints() noexcept;
     [[nodiscard]] MediaStreamConstraints clone() const noexcept;
+    /// Getter of the `peerIdentity` attribute.
     [[nodiscard]] jsbind::String peerIdentity() const;
+    /// Setter of the `peerIdentity` attribute.
     void peerIdentity(const jsbind::String& value);
 };
 

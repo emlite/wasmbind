@@ -1,14 +1,16 @@
 #include <webbind/FederatedCredentialInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 FederatedCredentialInit::FederatedCredentialInit(Handle h) noexcept : CredentialData(emlite::Val::take_ownership(h)) {}
 FederatedCredentialInit FederatedCredentialInit::take_ownership(Handle h) noexcept {
-        return FederatedCredentialInit(h);
-    }
+    return FederatedCredentialInit(h);
+}
+
 FederatedCredentialInit::FederatedCredentialInit(const emlite::Val &val) noexcept: CredentialData(val) {}
+
 FederatedCredentialInit::FederatedCredentialInit() noexcept: CredentialData(emlite::Val::object()) {}
+
 FederatedCredentialInit FederatedCredentialInit::clone() const noexcept { return *this; }
 
 jsbind::String FederatedCredentialInit::name() const {

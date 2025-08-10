@@ -6,11 +6,15 @@
 namespace webbind {
 
 BrowserCaptureMediaStreamTrack BrowserCaptureMediaStreamTrack::take_ownership(Handle h) noexcept {
-        return BrowserCaptureMediaStreamTrack(h);
-    }
+    return BrowserCaptureMediaStreamTrack(h);
+}
+
 BrowserCaptureMediaStreamTrack BrowserCaptureMediaStreamTrack::clone() const noexcept { return *this; }
+
 emlite::Val BrowserCaptureMediaStreamTrack::instance() noexcept { return emlite::Val::global("BrowserCaptureMediaStreamTrack"); }
+
 BrowserCaptureMediaStreamTrack::BrowserCaptureMediaStreamTrack(Handle h) noexcept : MediaStreamTrack(emlite::Val::take_ownership(h)) {}
+
 BrowserCaptureMediaStreamTrack::BrowserCaptureMediaStreamTrack(const emlite::Val &val) noexcept: MediaStreamTrack(val) {}
 
 jsbind::Promise<jsbind::Undefined> BrowserCaptureMediaStreamTrack::cropTo(const CropTarget& cropTarget) {

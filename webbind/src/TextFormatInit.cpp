@@ -1,14 +1,16 @@
 #include <webbind/TextFormatInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TextFormatInit::TextFormatInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 TextFormatInit TextFormatInit::take_ownership(Handle h) noexcept {
-        return TextFormatInit(h);
-    }
+    return TextFormatInit(h);
+}
+
 TextFormatInit::TextFormatInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 TextFormatInit::TextFormatInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 TextFormatInit TextFormatInit::clone() const noexcept { return *this; }
 
 unsigned long TextFormatInit::rangeStart() const {

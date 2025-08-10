@@ -1,15 +1,17 @@
 #include <webbind/ItemDetails.hpp>
 #include <webbind/PaymentCurrencyAmount.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ItemDetails::ItemDetails(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ItemDetails ItemDetails::take_ownership(Handle h) noexcept {
-        return ItemDetails(h);
-    }
+    return ItemDetails(h);
+}
+
 ItemDetails::ItemDetails(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ItemDetails::ItemDetails() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ItemDetails ItemDetails::clone() const noexcept { return *this; }
 
 jsbind::String ItemDetails::itemId() const {

@@ -1,14 +1,16 @@
 #include <webbind/ProfilerStack.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ProfilerStack::ProfilerStack(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ProfilerStack ProfilerStack::take_ownership(Handle h) noexcept {
-        return ProfilerStack(h);
-    }
+    return ProfilerStack(h);
+}
+
 ProfilerStack::ProfilerStack(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ProfilerStack::ProfilerStack() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ProfilerStack ProfilerStack::clone() const noexcept { return *this; }
 
 long long ProfilerStack::parentId() const {

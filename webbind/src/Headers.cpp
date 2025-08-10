@@ -3,11 +3,15 @@
 namespace webbind {
 
 Headers Headers::take_ownership(Handle h) noexcept {
-        return Headers(h);
-    }
+    return Headers(h);
+}
+
 Headers Headers::clone() const noexcept { return *this; }
+
 emlite::Val Headers::instance() noexcept { return emlite::Val::global("Headers"); }
+
 Headers::Headers(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Headers::Headers(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Headers::Headers() : emlite::Val(emlite::Val::global("Headers").new_()) {}

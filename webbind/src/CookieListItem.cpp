@@ -1,14 +1,16 @@
 #include <webbind/CookieListItem.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CookieListItem::CookieListItem(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CookieListItem CookieListItem::take_ownership(Handle h) noexcept {
-        return CookieListItem(h);
-    }
+    return CookieListItem(h);
+}
+
 CookieListItem::CookieListItem(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CookieListItem::CookieListItem() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CookieListItem CookieListItem::clone() const noexcept { return *this; }
 
 jsbind::String CookieListItem::name() const {

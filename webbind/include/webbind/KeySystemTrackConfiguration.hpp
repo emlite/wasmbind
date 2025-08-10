@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type KeySystemTrackConfiguration
-/// [`KeySystemTrackConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/KeySystemTrackConfiguration)
 class KeySystemTrackConfiguration : public emlite::Val {
   explicit KeySystemTrackConfiguration(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit KeySystemTrackConfiguration(const emlite::Val &val) noexcept;
     KeySystemTrackConfiguration() noexcept;
     [[nodiscard]] KeySystemTrackConfiguration clone() const noexcept;
+    /// Getter of the `robustness` attribute.
     [[nodiscard]] jsbind::String robustness() const;
+    /// Setter of the `robustness` attribute.
     void robustness(const jsbind::String& value);
+    /// Getter of the `encryptionScheme` attribute.
     [[nodiscard]] jsbind::String encryptionScheme() const;
+    /// Setter of the `encryptionScheme` attribute.
     void encryptionScheme(const jsbind::String& value);
 };
 

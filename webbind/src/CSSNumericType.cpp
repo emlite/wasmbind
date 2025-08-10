@@ -1,14 +1,16 @@
 #include <webbind/CSSNumericType.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CSSNumericType::CSSNumericType(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CSSNumericType CSSNumericType::take_ownership(Handle h) noexcept {
-        return CSSNumericType(h);
-    }
+    return CSSNumericType(h);
+}
+
 CSSNumericType::CSSNumericType(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CSSNumericType::CSSNumericType() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CSSNumericType CSSNumericType::clone() const noexcept { return *this; }
 
 long CSSNumericType::length() const {

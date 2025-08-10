@@ -1,14 +1,16 @@
 #include <webbind/EventModifierInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 EventModifierInit::EventModifierInit(Handle h) noexcept : UIEventInit(emlite::Val::take_ownership(h)) {}
 EventModifierInit EventModifierInit::take_ownership(Handle h) noexcept {
-        return EventModifierInit(h);
-    }
+    return EventModifierInit(h);
+}
+
 EventModifierInit::EventModifierInit(const emlite::Val &val) noexcept: UIEventInit(val) {}
+
 EventModifierInit::EventModifierInit() noexcept: UIEventInit(emlite::Val::object()) {}
+
 EventModifierInit EventModifierInit::clone() const noexcept { return *this; }
 
 bool EventModifierInit::ctrlKey() const {

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type DirectFromSellerSignalsForBuyer
-/// [`DirectFromSellerSignalsForBuyer`](https://developer.mozilla.org/en-US/docs/Web/API/DirectFromSellerSignalsForBuyer)
 class DirectFromSellerSignalsForBuyer : public emlite::Val {
   explicit DirectFromSellerSignalsForBuyer(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit DirectFromSellerSignalsForBuyer(const emlite::Val &val) noexcept;
     DirectFromSellerSignalsForBuyer() noexcept;
     [[nodiscard]] DirectFromSellerSignalsForBuyer clone() const noexcept;
+    /// Getter of the `auctionSignals` attribute.
     [[nodiscard]] jsbind::Any auctionSignals() const;
+    /// Setter of the `auctionSignals` attribute.
     void auctionSignals(const jsbind::Any& value);
+    /// Getter of the `perBuyerSignals` attribute.
     [[nodiscard]] jsbind::Any perBuyerSignals() const;
+    /// Setter of the `perBuyerSignals` attribute.
     void perBuyerSignals(const jsbind::Any& value);
 };
 

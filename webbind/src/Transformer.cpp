@@ -1,14 +1,16 @@
 #include <webbind/Transformer.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 Transformer::Transformer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 Transformer Transformer::take_ownership(Handle h) noexcept {
-        return Transformer(h);
-    }
+    return Transformer(h);
+}
+
 Transformer::Transformer(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 Transformer::Transformer() noexcept: emlite::Val(emlite::Val::object()) {}
+
 Transformer Transformer::clone() const noexcept { return *this; }
 
 jsbind::Function Transformer::start() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CameraDevicePermissionDescriptor
-/// [`CameraDevicePermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/CameraDevicePermissionDescriptor)
 class CameraDevicePermissionDescriptor : public PermissionDescriptor {
   explicit CameraDevicePermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit CameraDevicePermissionDescriptor(const emlite::Val &val) noexcept;
     CameraDevicePermissionDescriptor() noexcept;
     [[nodiscard]] CameraDevicePermissionDescriptor clone() const noexcept;
+    /// Getter of the `panTiltZoom` attribute.
     [[nodiscard]] bool panTiltZoom() const;
+    /// Setter of the `panTiltZoom` attribute.
     void panTiltZoom(bool value);
 };
 

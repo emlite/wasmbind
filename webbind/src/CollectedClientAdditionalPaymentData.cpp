@@ -3,15 +3,17 @@
 #include <webbind/PaymentCurrencyAmount.hpp>
 #include <webbind/PaymentCredentialInstrument.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 CollectedClientAdditionalPaymentData::CollectedClientAdditionalPaymentData(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 CollectedClientAdditionalPaymentData CollectedClientAdditionalPaymentData::take_ownership(Handle h) noexcept {
-        return CollectedClientAdditionalPaymentData(h);
-    }
+    return CollectedClientAdditionalPaymentData(h);
+}
+
 CollectedClientAdditionalPaymentData::CollectedClientAdditionalPaymentData(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 CollectedClientAdditionalPaymentData::CollectedClientAdditionalPaymentData() noexcept: emlite::Val(emlite::Val::object()) {}
+
 CollectedClientAdditionalPaymentData CollectedClientAdditionalPaymentData::clone() const noexcept { return *this; }
 
 jsbind::String CollectedClientAdditionalPaymentData::rpId() const {

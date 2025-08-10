@@ -19,16 +19,16 @@ public:
     static CSSKeyframesRule take_ownership(Handle h) noexcept;
     [[nodiscard]] CSSKeyframesRule clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`CSSKeyframesRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/name)
     /// [`CSSKeyframesRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/name)
     [[nodiscard]] jsbind::String name() const;
     /// Setter of the `name` attribute.
     /// [`CSSKeyframesRule.name`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/name)
     void name(const jsbind::String& value);
-    /// Getter of the `cssRules` attribute.
+    /// [`CSSKeyframesRule.cssRules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/cssRules)
     /// [`CSSKeyframesRule.cssRules`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/cssRules)
     [[nodiscard]] CSSRuleList cssRules() const;
-    /// Getter of the `length` attribute.
+    /// [`CSSKeyframesRule.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/length)
     /// [`CSSKeyframesRule.length`](https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/length)
     [[nodiscard]] unsigned long length() const;
     /// The appendRule method.

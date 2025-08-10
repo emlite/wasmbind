@@ -20,16 +20,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new VideoTrackGenerator(..)` constructor, creating a new VideoTrackGenerator instance
     VideoTrackGenerator();
-    /// Getter of the `writable` attribute.
+    /// [`VideoTrackGenerator.writable`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator/writable)
     /// [`VideoTrackGenerator.writable`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator/writable)
     [[nodiscard]] WritableStream writable() const;
-    /// Getter of the `muted` attribute.
+    /// [`VideoTrackGenerator.muted`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator/muted)
     /// [`VideoTrackGenerator.muted`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator/muted)
     [[nodiscard]] bool muted() const;
     /// Setter of the `muted` attribute.
     /// [`VideoTrackGenerator.muted`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator/muted)
     void muted(bool value);
-    /// Getter of the `track` attribute.
+    /// [`VideoTrackGenerator.track`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator/track)
     /// [`VideoTrackGenerator.track`](https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackGenerator/track)
     [[nodiscard]] MediaStreamTrack track() const;
 };

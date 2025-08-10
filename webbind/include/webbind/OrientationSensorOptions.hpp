@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type OrientationSensorOptions
-/// [`OrientationSensorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensorOptions)
 class OrientationSensorOptions : public SensorOptions {
   explicit OrientationSensorOptions(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit OrientationSensorOptions(const emlite::Val &val) noexcept;
     OrientationSensorOptions() noexcept;
     [[nodiscard]] OrientationSensorOptions clone() const noexcept;
+    /// Getter of the `referenceFrame` attribute.
     [[nodiscard]] OrientationSensorLocalCoordinateSystem referenceFrame() const;
+    /// Setter of the `referenceFrame` attribute.
     void referenceFrame(const OrientationSensorLocalCoordinateSystem& value);
 };
 

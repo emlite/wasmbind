@@ -24,7 +24,7 @@ public:
     GainNode(const BaseAudioContext& context);
     /// The `new GainNode(..)` constructor, creating a new GainNode instance
     GainNode(const BaseAudioContext& context, const GainOptions& options);
-    /// Getter of the `gain` attribute.
+    /// [`GainNode.gain`](https://developer.mozilla.org/en-US/docs/Web/API/GainNode/gain)
     /// [`GainNode.gain`](https://developer.mozilla.org/en-US/docs/Web/API/GainNode/gain)
     [[nodiscard]] AudioParam gain() const;
 };

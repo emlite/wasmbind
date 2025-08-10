@@ -4,11 +4,15 @@
 namespace webbind {
 
 CSSRotate CSSRotate::take_ownership(Handle h) noexcept {
-        return CSSRotate(h);
-    }
+    return CSSRotate(h);
+}
+
 CSSRotate CSSRotate::clone() const noexcept { return *this; }
+
 emlite::Val CSSRotate::instance() noexcept { return emlite::Val::global("CSSRotate"); }
+
 CSSRotate::CSSRotate(Handle h) noexcept : CSSTransformComponent(emlite::Val::take_ownership(h)) {}
+
 CSSRotate::CSSRotate(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
 CSSRotate::CSSRotate(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& z, const CSSNumericValue& angle) : CSSTransformComponent(emlite::Val::global("CSSRotate").new_(x, y, z, angle)) {}

@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SubscriptionObserver
-/// [`SubscriptionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/SubscriptionObserver)
 class SubscriptionObserver : public emlite::Val {
   explicit SubscriptionObserver(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit SubscriptionObserver(const emlite::Val &val) noexcept;
     SubscriptionObserver() noexcept;
     [[nodiscard]] SubscriptionObserver clone() const noexcept;
+    /// Getter of the `next` attribute.
     [[nodiscard]] jsbind::Function next() const;
+    /// Setter of the `next` attribute.
     void next(const jsbind::Function& value);
+    /// Getter of the `error` attribute.
     [[nodiscard]] jsbind::Function error() const;
+    /// Setter of the `error` attribute.
     void error(const jsbind::Function& value);
+    /// Getter of the `complete` attribute.
     [[nodiscard]] jsbind::Function complete() const;
+    /// Setter of the `complete` attribute.
     void complete(const jsbind::Function& value);
 };
 

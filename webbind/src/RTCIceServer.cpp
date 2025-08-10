@@ -1,14 +1,16 @@
 #include <webbind/RTCIceServer.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCIceServer::RTCIceServer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RTCIceServer RTCIceServer::take_ownership(Handle h) noexcept {
-        return RTCIceServer(h);
-    }
+    return RTCIceServer(h);
+}
+
 RTCIceServer::RTCIceServer(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RTCIceServer::RTCIceServer() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RTCIceServer RTCIceServer::clone() const noexcept { return *this; }
 
 jsbind::Any RTCIceServer::urls() const {

@@ -18,13 +18,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLOptGroupElement(..)` constructor, creating a new HTMLOptGroupElement instance
     HTMLOptGroupElement();
-    /// Getter of the `disabled` attribute.
+    /// [`HTMLOptGroupElement.disabled`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement/disabled)
     /// [`HTMLOptGroupElement.disabled`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement/disabled)
     [[nodiscard]] bool disabled() const;
     /// Setter of the `disabled` attribute.
     /// [`HTMLOptGroupElement.disabled`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement/disabled)
     void disabled(bool value);
-    /// Getter of the `label` attribute.
+    /// [`HTMLOptGroupElement.label`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement/label)
     /// [`HTMLOptGroupElement.label`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

@@ -1,14 +1,16 @@
 #include <webbind/MediaImage.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaImage::MediaImage(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaImage MediaImage::take_ownership(Handle h) noexcept {
-        return MediaImage(h);
-    }
+    return MediaImage(h);
+}
+
 MediaImage::MediaImage(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaImage::MediaImage() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaImage MediaImage::clone() const noexcept { return *this; }
 
 jsbind::String MediaImage::src() const {

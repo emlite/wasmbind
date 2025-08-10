@@ -2,15 +2,17 @@
 #include <webbind/AuctionAd.hpp>
 #include <webbind/AuctionAdInterestGroupSize.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GenerateBidInterestGroup::GenerateBidInterestGroup(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GenerateBidInterestGroup GenerateBidInterestGroup::take_ownership(Handle h) noexcept {
-        return GenerateBidInterestGroup(h);
-    }
+    return GenerateBidInterestGroup(h);
+}
+
 GenerateBidInterestGroup::GenerateBidInterestGroup(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GenerateBidInterestGroup::GenerateBidInterestGroup() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GenerateBidInterestGroup GenerateBidInterestGroup::clone() const noexcept { return *this; }
 
 jsbind::String GenerateBidInterestGroup::owner() const {

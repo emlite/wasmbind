@@ -10,7 +10,6 @@ namespace webbind {
 class DOMRectReadOnly;
 
 /// Dictionary type DetectedFace
-/// [`DetectedFace`](https://developer.mozilla.org/en-US/docs/Web/API/DetectedFace)
 class DetectedFace : public emlite::Val {
   explicit DetectedFace(Handle h) noexcept;
 public:
@@ -18,9 +17,13 @@ public:
     explicit DetectedFace(const emlite::Val &val) noexcept;
     DetectedFace() noexcept;
     [[nodiscard]] DetectedFace clone() const noexcept;
+    /// Getter of the `boundingBox` attribute.
     [[nodiscard]] DOMRectReadOnly boundingBox() const;
+    /// Setter of the `boundingBox` attribute.
     void boundingBox(const DOMRectReadOnly& value);
+    /// Getter of the `landmarks` attribute.
     [[nodiscard]] jsbind::TypedArray<Landmark> landmarks() const;
+    /// Setter of the `landmarks` attribute.
     void landmarks(const jsbind::TypedArray<Landmark>& value);
 };
 

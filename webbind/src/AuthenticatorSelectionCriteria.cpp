@@ -1,14 +1,16 @@
 #include <webbind/AuthenticatorSelectionCriteria.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AuthenticatorSelectionCriteria::AuthenticatorSelectionCriteria(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AuthenticatorSelectionCriteria AuthenticatorSelectionCriteria::take_ownership(Handle h) noexcept {
-        return AuthenticatorSelectionCriteria(h);
-    }
+    return AuthenticatorSelectionCriteria(h);
+}
+
 AuthenticatorSelectionCriteria::AuthenticatorSelectionCriteria(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AuthenticatorSelectionCriteria::AuthenticatorSelectionCriteria() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AuthenticatorSelectionCriteria AuthenticatorSelectionCriteria::clone() const noexcept { return *this; }
 
 jsbind::String AuthenticatorSelectionCriteria::authenticatorAttachment() const {

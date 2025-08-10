@@ -1,14 +1,16 @@
 #include <webbind/RTCLocalIceCandidateInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCLocalIceCandidateInit::RTCLocalIceCandidateInit(Handle h) noexcept : RTCIceCandidateInit(emlite::Val::take_ownership(h)) {}
 RTCLocalIceCandidateInit RTCLocalIceCandidateInit::take_ownership(Handle h) noexcept {
-        return RTCLocalIceCandidateInit(h);
-    }
+    return RTCLocalIceCandidateInit(h);
+}
+
 RTCLocalIceCandidateInit::RTCLocalIceCandidateInit(const emlite::Val &val) noexcept: RTCIceCandidateInit(val) {}
+
 RTCLocalIceCandidateInit::RTCLocalIceCandidateInit() noexcept: RTCIceCandidateInit(emlite::Val::object()) {}
+
 RTCLocalIceCandidateInit RTCLocalIceCandidateInit::clone() const noexcept { return *this; }
 
 RTCIceServerTransportProtocol RTCLocalIceCandidateInit::relayProtocol() const {

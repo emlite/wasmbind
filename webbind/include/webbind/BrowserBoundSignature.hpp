@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type BrowserBoundSignature
-/// [`BrowserBoundSignature`](https://developer.mozilla.org/en-US/docs/Web/API/BrowserBoundSignature)
 class BrowserBoundSignature : public emlite::Val {
   explicit BrowserBoundSignature(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit BrowserBoundSignature(const emlite::Val &val) noexcept;
     BrowserBoundSignature() noexcept;
     [[nodiscard]] BrowserBoundSignature clone() const noexcept;
+    /// Getter of the `signature` attribute.
     [[nodiscard]] jsbind::ArrayBuffer signature() const;
+    /// Setter of the `signature` attribute.
     void signature(const jsbind::ArrayBuffer& value);
 };
 

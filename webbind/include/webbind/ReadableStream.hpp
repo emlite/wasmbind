@@ -31,7 +31,7 @@ public:
     /// The from method.
     /// [`ReadableStream.from`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/from)
     static ReadableStream from(const jsbind::Any& asyncIterable);
-    /// Getter of the `locked` attribute.
+    /// [`ReadableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/locked)
     /// [`ReadableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/locked)
     [[nodiscard]] bool locked() const;
     /// The cancel method.

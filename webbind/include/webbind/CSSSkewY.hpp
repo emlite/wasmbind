@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSSkewY(..)` constructor, creating a new CSSSkewY instance
     CSSSkewY(const CSSNumericValue& ay);
-    /// Getter of the `ay` attribute.
+    /// [`CSSSkewY.ay`](https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewY/ay)
     /// [`CSSSkewY.ay`](https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewY/ay)
     [[nodiscard]] CSSNumericValue ay() const;
     /// Setter of the `ay` attribute.

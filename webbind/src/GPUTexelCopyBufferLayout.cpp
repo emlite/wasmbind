@@ -1,14 +1,16 @@
 #include <webbind/GPUTexelCopyBufferLayout.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUTexelCopyBufferLayout::GPUTexelCopyBufferLayout(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUTexelCopyBufferLayout GPUTexelCopyBufferLayout::take_ownership(Handle h) noexcept {
-        return GPUTexelCopyBufferLayout(h);
-    }
+    return GPUTexelCopyBufferLayout(h);
+}
+
 GPUTexelCopyBufferLayout::GPUTexelCopyBufferLayout(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUTexelCopyBufferLayout::GPUTexelCopyBufferLayout() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUTexelCopyBufferLayout GPUTexelCopyBufferLayout::clone() const noexcept { return *this; }
 
 jsbind::Any GPUTexelCopyBufferLayout::offset() const {

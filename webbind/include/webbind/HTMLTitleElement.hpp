@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLTitleElement(..)` constructor, creating a new HTMLTitleElement instance
     HTMLTitleElement();
-    /// Getter of the `text` attribute.
+    /// [`HTMLTitleElement.text`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTitleElement/text)
     /// [`HTMLTitleElement.text`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTitleElement/text)
     [[nodiscard]] jsbind::String text() const;
     /// Setter of the `text` attribute.

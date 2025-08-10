@@ -7,11 +7,15 @@
 namespace webbind {
 
 CSSNumericValue CSSNumericValue::take_ownership(Handle h) noexcept {
-        return CSSNumericValue(h);
-    }
+    return CSSNumericValue(h);
+}
+
 CSSNumericValue CSSNumericValue::clone() const noexcept { return *this; }
+
 emlite::Val CSSNumericValue::instance() noexcept { return emlite::Val::global("CSSNumericValue"); }
+
 CSSNumericValue::CSSNumericValue(Handle h) noexcept : CSSStyleValue(emlite::Val::take_ownership(h)) {}
+
 CSSNumericValue::CSSNumericValue(const emlite::Val &val) noexcept: CSSStyleValue(val) {}
 
 CSSNumericValue CSSNumericValue::add(const jsbind::Any& values) {

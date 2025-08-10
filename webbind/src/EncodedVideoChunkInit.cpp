@@ -1,14 +1,16 @@
 #include <webbind/EncodedVideoChunkInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 EncodedVideoChunkInit::EncodedVideoChunkInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 EncodedVideoChunkInit EncodedVideoChunkInit::take_ownership(Handle h) noexcept {
-        return EncodedVideoChunkInit(h);
-    }
+    return EncodedVideoChunkInit(h);
+}
+
 EncodedVideoChunkInit::EncodedVideoChunkInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 EncodedVideoChunkInit::EncodedVideoChunkInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 EncodedVideoChunkInit EncodedVideoChunkInit::clone() const noexcept { return *this; }
 
 EncodedVideoChunkType EncodedVideoChunkInit::type() const {

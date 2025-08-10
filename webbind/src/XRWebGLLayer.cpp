@@ -8,11 +8,15 @@
 namespace webbind {
 
 XRWebGLLayer XRWebGLLayer::take_ownership(Handle h) noexcept {
-        return XRWebGLLayer(h);
-    }
+    return XRWebGLLayer(h);
+}
+
 XRWebGLLayer XRWebGLLayer::clone() const noexcept { return *this; }
+
 emlite::Val XRWebGLLayer::instance() noexcept { return emlite::Val::global("XRWebGLLayer"); }
+
 XRWebGLLayer::XRWebGLLayer(Handle h) noexcept : XRLayer(emlite::Val::take_ownership(h)) {}
+
 XRWebGLLayer::XRWebGLLayer(const emlite::Val &val) noexcept: XRLayer(val) {}
 
 XRWebGLLayer::XRWebGLLayer(const XRSession& session, const jsbind::Any& context) : XRLayer(emlite::Val::global("XRWebGLLayer").new_(session, context)) {}

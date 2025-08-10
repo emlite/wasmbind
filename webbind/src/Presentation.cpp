@@ -5,11 +5,15 @@
 namespace webbind {
 
 Presentation Presentation::take_ownership(Handle h) noexcept {
-        return Presentation(h);
-    }
+    return Presentation(h);
+}
+
 Presentation Presentation::clone() const noexcept { return *this; }
+
 emlite::Val Presentation::instance() noexcept { return emlite::Val::global("Presentation"); }
+
 Presentation::Presentation(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Presentation::Presentation(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 PresentationRequest Presentation::defaultRequest() const {

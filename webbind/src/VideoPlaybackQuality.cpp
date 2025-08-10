@@ -3,11 +3,15 @@
 namespace webbind {
 
 VideoPlaybackQuality VideoPlaybackQuality::take_ownership(Handle h) noexcept {
-        return VideoPlaybackQuality(h);
-    }
+    return VideoPlaybackQuality(h);
+}
+
 VideoPlaybackQuality VideoPlaybackQuality::clone() const noexcept { return *this; }
+
 emlite::Val VideoPlaybackQuality::instance() noexcept { return emlite::Val::global("VideoPlaybackQuality"); }
+
 VideoPlaybackQuality::VideoPlaybackQuality(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 VideoPlaybackQuality::VideoPlaybackQuality(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Any VideoPlaybackQuality::creationTime() const {

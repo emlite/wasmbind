@@ -9,7 +9,6 @@ namespace webbind {
 class ShadowRoot;
 
 /// Dictionary type CaretPositionFromPointOptions
-/// [`CaretPositionFromPointOptions`](https://developer.mozilla.org/en-US/docs/Web/API/CaretPositionFromPointOptions)
 class CaretPositionFromPointOptions : public emlite::Val {
   explicit CaretPositionFromPointOptions(Handle h) noexcept;
 public:
@@ -17,7 +16,9 @@ public:
     explicit CaretPositionFromPointOptions(const emlite::Val &val) noexcept;
     CaretPositionFromPointOptions() noexcept;
     [[nodiscard]] CaretPositionFromPointOptions clone() const noexcept;
+    /// Getter of the `shadowRoots` attribute.
     [[nodiscard]] jsbind::TypedArray<ShadowRoot> shadowRoots() const;
+    /// Setter of the `shadowRoots` attribute.
     void shadowRoots(const jsbind::TypedArray<ShadowRoot>& value);
 };
 

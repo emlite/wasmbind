@@ -3,15 +3,17 @@
 #include <webbind/ProfilerStack.hpp>
 #include <webbind/ProfilerSample.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ProfilerTrace::ProfilerTrace(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ProfilerTrace ProfilerTrace::take_ownership(Handle h) noexcept {
-        return ProfilerTrace(h);
-    }
+    return ProfilerTrace(h);
+}
+
 ProfilerTrace::ProfilerTrace(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ProfilerTrace::ProfilerTrace() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ProfilerTrace ProfilerTrace::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::Any> ProfilerTrace::resources() const {

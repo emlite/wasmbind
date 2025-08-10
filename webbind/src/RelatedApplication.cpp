@@ -1,14 +1,16 @@
 #include <webbind/RelatedApplication.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RelatedApplication::RelatedApplication(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 RelatedApplication RelatedApplication::take_ownership(Handle h) noexcept {
-        return RelatedApplication(h);
-    }
+    return RelatedApplication(h);
+}
+
 RelatedApplication::RelatedApplication(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 RelatedApplication::RelatedApplication() noexcept: emlite::Val(emlite::Val::object()) {}
+
 RelatedApplication RelatedApplication::clone() const noexcept { return *this; }
 
 jsbind::String RelatedApplication::platform() const {

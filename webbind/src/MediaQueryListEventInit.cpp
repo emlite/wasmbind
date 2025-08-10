@@ -1,14 +1,16 @@
 #include <webbind/MediaQueryListEventInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaQueryListEventInit::MediaQueryListEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 MediaQueryListEventInit MediaQueryListEventInit::take_ownership(Handle h) noexcept {
-        return MediaQueryListEventInit(h);
-    }
+    return MediaQueryListEventInit(h);
+}
+
 MediaQueryListEventInit::MediaQueryListEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 MediaQueryListEventInit::MediaQueryListEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 MediaQueryListEventInit MediaQueryListEventInit::clone() const noexcept { return *this; }
 
 jsbind::String MediaQueryListEventInit::media() const {

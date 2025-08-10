@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type EventSourceInit
-/// [`EventSourceInit`](https://developer.mozilla.org/en-US/docs/Web/API/EventSourceInit)
 class EventSourceInit : public emlite::Val {
   explicit EventSourceInit(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit EventSourceInit(const emlite::Val &val) noexcept;
     EventSourceInit() noexcept;
     [[nodiscard]] EventSourceInit clone() const noexcept;
+    /// Getter of the `withCredentials` attribute.
     [[nodiscard]] bool withCredentials() const;
+    /// Setter of the `withCredentials` attribute.
     void withCredentials(bool value);
 };
 

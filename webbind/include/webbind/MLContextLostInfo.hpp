@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type MLContextLostInfo
-/// [`MLContextLostInfo`](https://developer.mozilla.org/en-US/docs/Web/API/MLContextLostInfo)
 class MLContextLostInfo : public emlite::Val {
   explicit MLContextLostInfo(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit MLContextLostInfo(const emlite::Val &val) noexcept;
     MLContextLostInfo() noexcept;
     [[nodiscard]] MLContextLostInfo clone() const noexcept;
+    /// Getter of the `message` attribute.
     [[nodiscard]] jsbind::String message() const;
+    /// Setter of the `message` attribute.
     void message(const jsbind::String& value);
 };
 

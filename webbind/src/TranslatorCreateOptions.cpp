@@ -1,15 +1,17 @@
 #include <webbind/TranslatorCreateOptions.hpp>
 #include <webbind/AbortSignal.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 TranslatorCreateOptions::TranslatorCreateOptions(Handle h) noexcept : TranslatorCreateCoreOptions(emlite::Val::take_ownership(h)) {}
 TranslatorCreateOptions TranslatorCreateOptions::take_ownership(Handle h) noexcept {
-        return TranslatorCreateOptions(h);
-    }
+    return TranslatorCreateOptions(h);
+}
+
 TranslatorCreateOptions::TranslatorCreateOptions(const emlite::Val &val) noexcept: TranslatorCreateCoreOptions(val) {}
+
 TranslatorCreateOptions::TranslatorCreateOptions() noexcept: TranslatorCreateCoreOptions(emlite::Val::object()) {}
+
 TranslatorCreateOptions TranslatorCreateOptions::clone() const noexcept { return *this; }
 
 AbortSignal TranslatorCreateOptions::signal() const {

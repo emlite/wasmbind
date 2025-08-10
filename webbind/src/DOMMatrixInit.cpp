@@ -1,14 +1,16 @@
 #include <webbind/DOMMatrixInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 DOMMatrixInit::DOMMatrixInit(Handle h) noexcept : DOMMatrix2DInit(emlite::Val::take_ownership(h)) {}
 DOMMatrixInit DOMMatrixInit::take_ownership(Handle h) noexcept {
-        return DOMMatrixInit(h);
-    }
+    return DOMMatrixInit(h);
+}
+
 DOMMatrixInit::DOMMatrixInit(const emlite::Val &val) noexcept: DOMMatrix2DInit(val) {}
+
 DOMMatrixInit::DOMMatrixInit() noexcept: DOMMatrix2DInit(emlite::Val::object()) {}
+
 DOMMatrixInit DOMMatrixInit::clone() const noexcept { return *this; }
 
 double DOMMatrixInit::m13() const {

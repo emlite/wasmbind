@@ -5,11 +5,15 @@
 namespace webbind {
 
 CSSKeyframesRule CSSKeyframesRule::take_ownership(Handle h) noexcept {
-        return CSSKeyframesRule(h);
-    }
+    return CSSKeyframesRule(h);
+}
+
 CSSKeyframesRule CSSKeyframesRule::clone() const noexcept { return *this; }
+
 emlite::Val CSSKeyframesRule::instance() noexcept { return emlite::Val::global("CSSKeyframesRule"); }
+
 CSSKeyframesRule::CSSKeyframesRule(Handle h) noexcept : CSSRule(emlite::Val::take_ownership(h)) {}
+
 CSSKeyframesRule::CSSKeyframesRule(const emlite::Val &val) noexcept: CSSRule(val) {}
 
 jsbind::String CSSKeyframesRule::name() const {

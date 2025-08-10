@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type PermissionDescriptor
-/// [`PermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionDescriptor)
 class PermissionDescriptor : public emlite::Val {
   explicit PermissionDescriptor(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit PermissionDescriptor(const emlite::Val &val) noexcept;
     PermissionDescriptor() noexcept;
     [[nodiscard]] PermissionDescriptor clone() const noexcept;
+    /// Getter of the `name` attribute.
     [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
     void name(const jsbind::String& value);
 };
 

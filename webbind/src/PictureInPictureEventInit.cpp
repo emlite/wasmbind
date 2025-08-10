@@ -1,15 +1,17 @@
 #include <webbind/PictureInPictureEventInit.hpp>
 #include <webbind/PictureInPictureWindow.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PictureInPictureEventInit::PictureInPictureEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 PictureInPictureEventInit PictureInPictureEventInit::take_ownership(Handle h) noexcept {
-        return PictureInPictureEventInit(h);
-    }
+    return PictureInPictureEventInit(h);
+}
+
 PictureInPictureEventInit::PictureInPictureEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 PictureInPictureEventInit::PictureInPictureEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 PictureInPictureEventInit PictureInPictureEventInit::clone() const noexcept { return *this; }
 
 PictureInPictureWindow PictureInPictureEventInit::pictureInPictureWindow() const {

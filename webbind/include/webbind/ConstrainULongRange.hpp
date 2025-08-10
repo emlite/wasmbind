@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type ConstrainULongRange
-/// [`ConstrainULongRange`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainULongRange)
 class ConstrainULongRange : public ULongRange {
   explicit ConstrainULongRange(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit ConstrainULongRange(const emlite::Val &val) noexcept;
     ConstrainULongRange() noexcept;
     [[nodiscard]] ConstrainULongRange clone() const noexcept;
+    /// Getter of the `exact` attribute.
     [[nodiscard]] unsigned long exact() const;
+    /// Setter of the `exact` attribute.
     void exact(unsigned long value);
+    /// Getter of the `ideal` attribute.
     [[nodiscard]] unsigned long ideal() const;
+    /// Setter of the `ideal` attribute.
     void ideal(unsigned long value);
 };
 

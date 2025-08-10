@@ -4,11 +4,15 @@
 namespace webbind {
 
 Location Location::take_ownership(Handle h) noexcept {
-        return Location(h);
-    }
+    return Location(h);
+}
+
 Location Location::clone() const noexcept { return *this; }
+
 emlite::Val Location::instance() noexcept { return emlite::Val::global("Location"); }
+
 Location::Location(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 Location::Location(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::String Location::href() const {

@@ -21,19 +21,19 @@ public:
     ErrorEvent(const jsbind::String& type);
     /// The `new ErrorEvent(..)` constructor, creating a new ErrorEvent instance
     ErrorEvent(const jsbind::String& type, const ErrorEventInit& eventInitDict);
-    /// Getter of the `message` attribute.
+    /// [`ErrorEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/message)
     /// [`ErrorEvent.message`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/message)
     [[nodiscard]] jsbind::String message() const;
-    /// Getter of the `filename` attribute.
+    /// [`ErrorEvent.filename`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/filename)
     /// [`ErrorEvent.filename`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/filename)
     [[nodiscard]] jsbind::String filename() const;
-    /// Getter of the `lineno` attribute.
+    /// [`ErrorEvent.lineno`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/lineno)
     /// [`ErrorEvent.lineno`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/lineno)
     [[nodiscard]] unsigned long lineno() const;
-    /// Getter of the `colno` attribute.
+    /// [`ErrorEvent.colno`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/colno)
     /// [`ErrorEvent.colno`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/colno)
     [[nodiscard]] unsigned long colno() const;
-    /// Getter of the `error` attribute.
+    /// [`ErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/error)
     /// [`ErrorEvent.error`](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/error)
     [[nodiscard]] jsbind::Any error() const;
 };

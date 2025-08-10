@@ -4,11 +4,15 @@
 namespace webbind {
 
 File File::take_ownership(Handle h) noexcept {
-        return File(h);
-    }
+    return File(h);
+}
+
 File File::clone() const noexcept { return *this; }
+
 emlite::Val File::instance() noexcept { return emlite::Val::global("File"); }
+
 File::File(Handle h) noexcept : Blob(emlite::Val::take_ownership(h)) {}
+
 File::File(const emlite::Val &val) noexcept: Blob(val) {}
 
 File::File(const jsbind::TypedArray<jsbind::Any>& fileBits, const jsbind::String& fileName) : Blob(emlite::Val::global("File").new_(fileBits, fileName)) {}

@@ -18,19 +18,19 @@ public:
     static IDBCursor take_ownership(Handle h) noexcept;
     [[nodiscard]] IDBCursor clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `source` attribute.
+    /// [`IDBCursor.source`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/source)
     /// [`IDBCursor.source`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/source)
     [[nodiscard]] jsbind::Any source() const;
-    /// Getter of the `direction` attribute.
+    /// [`IDBCursor.direction`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/direction)
     /// [`IDBCursor.direction`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/direction)
     [[nodiscard]] IDBCursorDirection direction() const;
-    /// Getter of the `key` attribute.
+    /// [`IDBCursor.key`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/key)
     /// [`IDBCursor.key`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/key)
     [[nodiscard]] jsbind::Any key() const;
-    /// Getter of the `primaryKey` attribute.
+    /// [`IDBCursor.primaryKey`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/primaryKey)
     /// [`IDBCursor.primaryKey`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/primaryKey)
     [[nodiscard]] jsbind::Any primaryKey() const;
-    /// Getter of the `request` attribute.
+    /// [`IDBCursor.request`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/request)
     /// [`IDBCursor.request`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/request)
     [[nodiscard]] IDBRequest request() const;
     /// The advance method.

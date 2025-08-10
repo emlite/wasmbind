@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type CredentialPropertiesOutput
-/// [`CredentialPropertiesOutput`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialPropertiesOutput)
 class CredentialPropertiesOutput : public emlite::Val {
   explicit CredentialPropertiesOutput(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit CredentialPropertiesOutput(const emlite::Val &val) noexcept;
     CredentialPropertiesOutput() noexcept;
     [[nodiscard]] CredentialPropertiesOutput clone() const noexcept;
+    /// Getter of the `rk` attribute.
     [[nodiscard]] bool rk() const;
+    /// Setter of the `rk` attribute.
     void rk(bool value);
 };
 

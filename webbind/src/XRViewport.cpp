@@ -3,11 +3,15 @@
 namespace webbind {
 
 XRViewport XRViewport::take_ownership(Handle h) noexcept {
-        return XRViewport(h);
-    }
+    return XRViewport(h);
+}
+
 XRViewport XRViewport::clone() const noexcept { return *this; }
+
 emlite::Val XRViewport::instance() noexcept { return emlite::Val::global("XRViewport"); }
+
 XRViewport::XRViewport(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 XRViewport::XRViewport(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 long XRViewport::x() const {

@@ -20,10 +20,10 @@ public:
     static ServiceWorkerContainer take_ownership(Handle h) noexcept;
     [[nodiscard]] ServiceWorkerContainer clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `controller` attribute.
+    /// [`ServiceWorkerContainer.controller`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/controller)
     /// [`ServiceWorkerContainer.controller`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/controller)
     [[nodiscard]] ServiceWorker controller() const;
-    /// Getter of the `ready` attribute.
+    /// [`ServiceWorkerContainer.ready`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)
     /// [`ServiceWorkerContainer.ready`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)
     [[nodiscard]] jsbind::Promise<ServiceWorkerRegistration> ready() const;
     /// The register method.
@@ -44,19 +44,19 @@ public:
     /// The startMessages method.
     /// [`ServiceWorkerContainer.startMessages`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/startMessages)
     jsbind::Undefined startMessages();
-    /// Getter of the `oncontrollerchange` attribute.
+    /// [`ServiceWorkerContainer.oncontrollerchange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/oncontrollerchange)
     /// [`ServiceWorkerContainer.oncontrollerchange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/oncontrollerchange)
     [[nodiscard]] jsbind::Any oncontrollerchange() const;
     /// Setter of the `oncontrollerchange` attribute.
     /// [`ServiceWorkerContainer.oncontrollerchange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/oncontrollerchange)
     void oncontrollerchange(const jsbind::Any& value);
-    /// Getter of the `onmessage` attribute.
+    /// [`ServiceWorkerContainer.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/onmessage)
     /// [`ServiceWorkerContainer.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.
     /// [`ServiceWorkerContainer.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/onmessage)
     void onmessage(const jsbind::Any& value);
-    /// Getter of the `onmessageerror` attribute.
+    /// [`ServiceWorkerContainer.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/onmessageerror)
     /// [`ServiceWorkerContainer.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/onmessageerror)
     [[nodiscard]] jsbind::Any onmessageerror() const;
     /// Setter of the `onmessageerror` attribute.

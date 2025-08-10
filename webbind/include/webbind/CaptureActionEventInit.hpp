@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type CaptureActionEventInit
-/// [`CaptureActionEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/CaptureActionEventInit)
 class CaptureActionEventInit : public EventInit {
   explicit CaptureActionEventInit(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit CaptureActionEventInit(const emlite::Val &val) noexcept;
     CaptureActionEventInit() noexcept;
     [[nodiscard]] CaptureActionEventInit clone() const noexcept;
+    /// Getter of the `action` attribute.
     [[nodiscard]] jsbind::String action() const;
+    /// Setter of the `action` attribute.
     void action(const jsbind::String& value);
 };
 

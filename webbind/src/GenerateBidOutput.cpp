@@ -1,14 +1,16 @@
 #include <webbind/GenerateBidOutput.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GenerateBidOutput::GenerateBidOutput(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GenerateBidOutput GenerateBidOutput::take_ownership(Handle h) noexcept {
-        return GenerateBidOutput(h);
-    }
+    return GenerateBidOutput(h);
+}
+
 GenerateBidOutput::GenerateBidOutput(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GenerateBidOutput::GenerateBidOutput() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GenerateBidOutput GenerateBidOutput::clone() const noexcept { return *this; }
 
 double GenerateBidOutput::bid() const {

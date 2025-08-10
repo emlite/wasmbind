@@ -1,15 +1,17 @@
 #include <webbind/BlobEventInit.hpp>
 #include <webbind/Blob.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 BlobEventInit::BlobEventInit(Handle h) noexcept : EventInit(emlite::Val::take_ownership(h)) {}
 BlobEventInit BlobEventInit::take_ownership(Handle h) noexcept {
-        return BlobEventInit(h);
-    }
+    return BlobEventInit(h);
+}
+
 BlobEventInit::BlobEventInit(const emlite::Val &val) noexcept: EventInit(val) {}
+
 BlobEventInit::BlobEventInit() noexcept: EventInit(emlite::Val::object()) {}
+
 BlobEventInit BlobEventInit::clone() const noexcept { return *this; }
 
 Blob BlobEventInit::data() const {

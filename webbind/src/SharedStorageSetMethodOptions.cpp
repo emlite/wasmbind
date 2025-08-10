@@ -1,14 +1,16 @@
 #include <webbind/SharedStorageSetMethodOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SharedStorageSetMethodOptions::SharedStorageSetMethodOptions(Handle h) noexcept : SharedStorageModifierMethodOptions(emlite::Val::take_ownership(h)) {}
 SharedStorageSetMethodOptions SharedStorageSetMethodOptions::take_ownership(Handle h) noexcept {
-        return SharedStorageSetMethodOptions(h);
-    }
+    return SharedStorageSetMethodOptions(h);
+}
+
 SharedStorageSetMethodOptions::SharedStorageSetMethodOptions(const emlite::Val &val) noexcept: SharedStorageModifierMethodOptions(val) {}
+
 SharedStorageSetMethodOptions::SharedStorageSetMethodOptions() noexcept: SharedStorageModifierMethodOptions(emlite::Val::object()) {}
+
 SharedStorageSetMethodOptions SharedStorageSetMethodOptions::clone() const noexcept { return *this; }
 
 bool SharedStorageSetMethodOptions::ignoreIfPresent() const {

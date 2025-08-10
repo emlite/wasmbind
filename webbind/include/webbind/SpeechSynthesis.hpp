@@ -19,16 +19,16 @@ public:
     static SpeechSynthesis take_ownership(Handle h) noexcept;
     [[nodiscard]] SpeechSynthesis clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `pending` attribute.
+    /// [`SpeechSynthesis.pending`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/pending)
     /// [`SpeechSynthesis.pending`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/pending)
     [[nodiscard]] bool pending() const;
-    /// Getter of the `speaking` attribute.
+    /// [`SpeechSynthesis.speaking`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speaking)
     /// [`SpeechSynthesis.speaking`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speaking)
     [[nodiscard]] bool speaking() const;
-    /// Getter of the `paused` attribute.
+    /// [`SpeechSynthesis.paused`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/paused)
     /// [`SpeechSynthesis.paused`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/paused)
     [[nodiscard]] bool paused() const;
-    /// Getter of the `onvoiceschanged` attribute.
+    /// [`SpeechSynthesis.onvoiceschanged`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/onvoiceschanged)
     /// [`SpeechSynthesis.onvoiceschanged`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/onvoiceschanged)
     [[nodiscard]] jsbind::Any onvoiceschanged() const;
     /// Setter of the `onvoiceschanged` attribute.

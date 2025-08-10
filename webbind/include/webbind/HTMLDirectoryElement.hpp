@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLDirectoryElement(..)` constructor, creating a new HTMLDirectoryElement instance
     HTMLDirectoryElement();
-    /// Getter of the `compact` attribute.
+    /// [`HTMLDirectoryElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDirectoryElement/compact)
     /// [`HTMLDirectoryElement.compact`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDirectoryElement/compact)
     [[nodiscard]] bool compact() const;
     /// Setter of the `compact` attribute.

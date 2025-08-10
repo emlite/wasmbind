@@ -1,14 +1,16 @@
 #include <webbind/MediaSettingsRange.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MediaSettingsRange::MediaSettingsRange(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 MediaSettingsRange MediaSettingsRange::take_ownership(Handle h) noexcept {
-        return MediaSettingsRange(h);
-    }
+    return MediaSettingsRange(h);
+}
+
 MediaSettingsRange::MediaSettingsRange(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 MediaSettingsRange::MediaSettingsRange() noexcept: emlite::Val(emlite::Val::object()) {}
+
 MediaSettingsRange MediaSettingsRange::clone() const noexcept { return *this; }
 
 double MediaSettingsRange::max() const {

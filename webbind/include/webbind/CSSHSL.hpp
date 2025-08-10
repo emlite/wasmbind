@@ -20,25 +20,25 @@ public:
     CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l);
     /// The `new CSSHSL(..)` constructor, creating a new CSSHSL instance
     CSSHSL(const jsbind::Any& h, const jsbind::Any& s, const jsbind::Any& l, const jsbind::Any& alpha);
-    /// Getter of the `h` attribute.
+    /// [`CSSHSL.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/h)
     /// [`CSSHSL.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/h)
     [[nodiscard]] jsbind::Any h() const;
     /// Setter of the `h` attribute.
     /// [`CSSHSL.h`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/h)
     void h(const jsbind::Any& value);
-    /// Getter of the `s` attribute.
+    /// [`CSSHSL.s`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/s)
     /// [`CSSHSL.s`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/s)
     [[nodiscard]] jsbind::Any s() const;
     /// Setter of the `s` attribute.
     /// [`CSSHSL.s`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/s)
     void s(const jsbind::Any& value);
-    /// Getter of the `l` attribute.
+    /// [`CSSHSL.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/l)
     /// [`CSSHSL.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/l)
     [[nodiscard]] jsbind::Any l() const;
     /// Setter of the `l` attribute.
     /// [`CSSHSL.l`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/l)
     void l(const jsbind::Any& value);
-    /// Getter of the `alpha` attribute.
+    /// [`CSSHSL.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/alpha)
     /// [`CSSHSL.alpha`](https://developer.mozilla.org/en-US/docs/Web/API/CSSHSL/alpha)
     [[nodiscard]] jsbind::Any alpha() const;
     /// Setter of the `alpha` attribute.

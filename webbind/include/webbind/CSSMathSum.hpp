@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathSum(..)` constructor, creating a new CSSMathSum instance
     CSSMathSum(const jsbind::Any& args);
-    /// Getter of the `values` attribute.
+    /// [`CSSMathSum.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathSum/values)
     /// [`CSSMathSum.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathSum/values)
     [[nodiscard]] CSSNumericArray values() const;
 };

@@ -36,10 +36,10 @@ public:
     static XRFrame take_ownership(Handle h) noexcept;
     [[nodiscard]] XRFrame clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `session` attribute.
+    /// [`XRFrame.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session)
     /// [`XRFrame.session`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session)
     [[nodiscard]] XRSession session() const;
-    /// Getter of the `predictedDisplayTime` attribute.
+    /// [`XRFrame.predictedDisplayTime`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/predictedDisplayTime)
     /// [`XRFrame.predictedDisplayTime`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/predictedDisplayTime)
     [[nodiscard]] jsbind::Any predictedDisplayTime() const;
     /// The getViewerPose method.
@@ -51,10 +51,10 @@ public:
     /// The createAnchor method.
     /// [`XRFrame.createAnchor`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/createAnchor)
     jsbind::Promise<XRAnchor> createAnchor(const XRRigidTransform& pose, const XRSpace& space);
-    /// Getter of the `trackedAnchors` attribute.
+    /// [`XRFrame.trackedAnchors`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/trackedAnchors)
     /// [`XRFrame.trackedAnchors`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/trackedAnchors)
     [[nodiscard]] XRAnchorSet trackedAnchors() const;
-    /// Getter of the `detectedMeshes` attribute.
+    /// [`XRFrame.detectedMeshes`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/detectedMeshes)
     /// [`XRFrame.detectedMeshes`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/detectedMeshes)
     [[nodiscard]] XRMeshSet detectedMeshes() const;
     /// The getDepthInformation method.
@@ -78,7 +78,7 @@ public:
     /// The getLightEstimate method.
     /// [`XRFrame.getLightEstimate`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getLightEstimate)
     XRLightEstimate getLightEstimate(const XRLightProbe& lightProbe);
-    /// Getter of the `detectedPlanes` attribute.
+    /// [`XRFrame.detectedPlanes`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/detectedPlanes)
     /// [`XRFrame.detectedPlanes`](https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/detectedPlanes)
     [[nodiscard]] XRPlaneSet detectedPlanes() const;
 };

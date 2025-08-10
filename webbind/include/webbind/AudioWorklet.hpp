@@ -18,7 +18,7 @@ public:
     static AudioWorklet take_ownership(Handle h) noexcept;
     [[nodiscard]] AudioWorklet clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `port` attribute.
+    /// [`AudioWorklet.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet/port)
     /// [`AudioWorklet.port`](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet/port)
     [[nodiscard]] MessagePort port() const;
 };

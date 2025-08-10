@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MidiPermissionDescriptor
-/// [`MidiPermissionDescriptor`](https://developer.mozilla.org/en-US/docs/Web/API/MidiPermissionDescriptor)
 class MidiPermissionDescriptor : public PermissionDescriptor {
   explicit MidiPermissionDescriptor(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MidiPermissionDescriptor(const emlite::Val &val) noexcept;
     MidiPermissionDescriptor() noexcept;
     [[nodiscard]] MidiPermissionDescriptor clone() const noexcept;
+    /// Getter of the `sysex` attribute.
     [[nodiscard]] bool sysex() const;
+    /// Setter of the `sysex` attribute.
     void sysex(bool value);
 };
 

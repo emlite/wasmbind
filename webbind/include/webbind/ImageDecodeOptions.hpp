@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type ImageDecodeOptions
-/// [`ImageDecodeOptions`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecodeOptions)
 class ImageDecodeOptions : public emlite::Val {
   explicit ImageDecodeOptions(Handle h) noexcept;
 public:
@@ -15,9 +14,13 @@ public:
     explicit ImageDecodeOptions(const emlite::Val &val) noexcept;
     ImageDecodeOptions() noexcept;
     [[nodiscard]] ImageDecodeOptions clone() const noexcept;
+    /// Getter of the `frameIndex` attribute.
     [[nodiscard]] unsigned long frameIndex() const;
+    /// Setter of the `frameIndex` attribute.
     void frameIndex(unsigned long value);
+    /// Getter of the `completeFramesOnly` attribute.
     [[nodiscard]] bool completeFramesOnly() const;
+    /// Setter of the `completeFramesOnly` attribute.
     void completeFramesOnly(bool value);
 };
 

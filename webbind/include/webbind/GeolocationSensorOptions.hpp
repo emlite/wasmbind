@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type GeolocationSensorOptions
-/// [`GeolocationSensorOptions`](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationSensorOptions)
 class GeolocationSensorOptions : public SensorOptions {
   explicit GeolocationSensorOptions(Handle h) noexcept;
 public:

@@ -1,15 +1,17 @@
 #include <webbind/ShadowRootInit.hpp>
 #include <webbind/CustomElementRegistry.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ShadowRootInit::ShadowRootInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ShadowRootInit ShadowRootInit::take_ownership(Handle h) noexcept {
-        return ShadowRootInit(h);
-    }
+    return ShadowRootInit(h);
+}
+
 ShadowRootInit::ShadowRootInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ShadowRootInit::ShadowRootInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ShadowRootInit ShadowRootInit::clone() const noexcept { return *this; }
 
 ShadowRootMode ShadowRootInit::mode() const {

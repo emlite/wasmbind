@@ -4,11 +4,15 @@
 namespace webbind {
 
 Accelerometer Accelerometer::take_ownership(Handle h) noexcept {
-        return Accelerometer(h);
-    }
+    return Accelerometer(h);
+}
+
 Accelerometer Accelerometer::clone() const noexcept { return *this; }
+
 emlite::Val Accelerometer::instance() noexcept { return emlite::Val::global("Accelerometer"); }
+
 Accelerometer::Accelerometer(Handle h) noexcept : Sensor(emlite::Val::take_ownership(h)) {}
+
 Accelerometer::Accelerometer(const emlite::Val &val) noexcept: Sensor(val) {}
 
 Accelerometer::Accelerometer() : Sensor(emlite::Val::global("Accelerometer").new_()) {}

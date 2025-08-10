@@ -4,11 +4,15 @@
 namespace webbind {
 
 PresentationConnectionCloseEvent PresentationConnectionCloseEvent::take_ownership(Handle h) noexcept {
-        return PresentationConnectionCloseEvent(h);
-    }
+    return PresentationConnectionCloseEvent(h);
+}
+
 PresentationConnectionCloseEvent PresentationConnectionCloseEvent::clone() const noexcept { return *this; }
+
 emlite::Val PresentationConnectionCloseEvent::instance() noexcept { return emlite::Val::global("PresentationConnectionCloseEvent"); }
+
 PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 PresentationConnectionCloseEvent::PresentationConnectionCloseEvent(const jsbind::String& type, const PresentationConnectionCloseEventInit& eventInitDict) : Event(emlite::Val::global("PresentationConnectionCloseEvent").new_(type, eventInitDict)) {}

@@ -23,7 +23,7 @@ public:
     PushEvent(const jsbind::String& type);
     /// The `new PushEvent(..)` constructor, creating a new PushEvent instance
     PushEvent(const jsbind::String& type, const PushEventInit& eventInitDict);
-    /// Getter of the `data` attribute.
+    /// [`PushEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/data)
     /// [`PushEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/data)
     [[nodiscard]] PushMessageData data() const;
 };

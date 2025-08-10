@@ -17,7 +17,7 @@ public:
     static DedicatedWorkerGlobalScope take_ownership(Handle h) noexcept;
     [[nodiscard]] DedicatedWorkerGlobalScope clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`DedicatedWorkerGlobalScope.name`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/name)
     /// [`DedicatedWorkerGlobalScope.name`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/name)
     [[nodiscard]] jsbind::String name() const;
     /// The postMessage method.
@@ -29,7 +29,7 @@ public:
     /// The close method.
     /// [`DedicatedWorkerGlobalScope.close`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/close)
     jsbind::Undefined close();
-    /// Getter of the `onrtctransform` attribute.
+    /// [`DedicatedWorkerGlobalScope.onrtctransform`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/onrtctransform)
     /// [`DedicatedWorkerGlobalScope.onrtctransform`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/onrtctransform)
     [[nodiscard]] jsbind::Any onrtctransform() const;
     /// Setter of the `onrtctransform` attribute.
@@ -41,13 +41,13 @@ public:
     /// The cancelAnimationFrame method.
     /// [`DedicatedWorkerGlobalScope.cancelAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/cancelAnimationFrame)
     jsbind::Undefined cancelAnimationFrame(unsigned long handle);
-    /// Getter of the `onmessage` attribute.
+    /// [`DedicatedWorkerGlobalScope.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/onmessage)
     /// [`DedicatedWorkerGlobalScope.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/onmessage)
     [[nodiscard]] jsbind::Any onmessage() const;
     /// Setter of the `onmessage` attribute.
     /// [`DedicatedWorkerGlobalScope.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/onmessage)
     void onmessage(const jsbind::Any& value);
-    /// Getter of the `onmessageerror` attribute.
+    /// [`DedicatedWorkerGlobalScope.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/onmessageerror)
     /// [`DedicatedWorkerGlobalScope.onmessageerror`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/onmessageerror)
     [[nodiscard]] jsbind::Any onmessageerror() const;
     /// Setter of the `onmessageerror` attribute.

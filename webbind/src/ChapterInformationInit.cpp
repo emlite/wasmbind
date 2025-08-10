@@ -1,15 +1,17 @@
 #include <webbind/ChapterInformationInit.hpp>
 #include <webbind/MediaImage.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ChapterInformationInit::ChapterInformationInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ChapterInformationInit ChapterInformationInit::take_ownership(Handle h) noexcept {
-        return ChapterInformationInit(h);
-    }
+    return ChapterInformationInit(h);
+}
+
 ChapterInformationInit::ChapterInformationInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ChapterInformationInit::ChapterInformationInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ChapterInformationInit ChapterInformationInit::clone() const noexcept { return *this; }
 
 jsbind::String ChapterInformationInit::title() const {

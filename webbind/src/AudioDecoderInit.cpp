@@ -1,14 +1,16 @@
 #include <webbind/AudioDecoderInit.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 AudioDecoderInit::AudioDecoderInit(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 AudioDecoderInit AudioDecoderInit::take_ownership(Handle h) noexcept {
-        return AudioDecoderInit(h);
-    }
+    return AudioDecoderInit(h);
+}
+
 AudioDecoderInit::AudioDecoderInit(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 AudioDecoderInit::AudioDecoderInit() noexcept: emlite::Val(emlite::Val::object()) {}
+
 AudioDecoderInit AudioDecoderInit::clone() const noexcept { return *this; }
 
 jsbind::Function AudioDecoderInit::output() const {

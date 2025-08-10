@@ -43,7 +43,7 @@ public:
     /// The copyExternalImageToTexture method.
     /// [`GPUQueue.copyExternalImageToTexture`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/copyExternalImageToTexture)
     jsbind::Undefined copyExternalImageToTexture(const GPUCopyExternalImageSourceInfo& source, const GPUCopyExternalImageDestInfo& destination, const jsbind::Any& copySize);
-    /// Getter of the `label` attribute.
+    /// [`GPUQueue.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/label)
     /// [`GPUQueue.label`](https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/label)
     [[nodiscard]] jsbind::String label() const;
     /// Setter of the `label` attribute.

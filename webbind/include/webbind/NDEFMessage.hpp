@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new NDEFMessage(..)` constructor, creating a new NDEFMessage instance
     NDEFMessage(const NDEFMessageInit& messageInit);
-    /// Getter of the `records` attribute.
+    /// [`NDEFMessage.records`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFMessage/records)
     /// [`NDEFMessage.records`](https://developer.mozilla.org/en-US/docs/Web/API/NDEFMessage/records)
     [[nodiscard]] jsbind::TypedArray<NDEFRecord> records() const;
 };

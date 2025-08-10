@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type GetNotificationOptions
-/// [`GetNotificationOptions`](https://developer.mozilla.org/en-US/docs/Web/API/GetNotificationOptions)
 class GetNotificationOptions : public emlite::Val {
   explicit GetNotificationOptions(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit GetNotificationOptions(const emlite::Val &val) noexcept;
     GetNotificationOptions() noexcept;
     [[nodiscard]] GetNotificationOptions clone() const noexcept;
+    /// Getter of the `tag` attribute.
     [[nodiscard]] jsbind::String tag() const;
+    /// Setter of the `tag` attribute.
     void tag(const jsbind::String& value);
 };
 

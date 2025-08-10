@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type NotificationAction
-/// [`NotificationAction`](https://developer.mozilla.org/en-US/docs/Web/API/NotificationAction)
 class NotificationAction : public emlite::Val {
   explicit NotificationAction(Handle h) noexcept;
 public:
@@ -15,11 +14,17 @@ public:
     explicit NotificationAction(const emlite::Val &val) noexcept;
     NotificationAction() noexcept;
     [[nodiscard]] NotificationAction clone() const noexcept;
+    /// Getter of the `action` attribute.
     [[nodiscard]] jsbind::String action() const;
+    /// Setter of the `action` attribute.
     void action(const jsbind::String& value);
+    /// Getter of the `title` attribute.
     [[nodiscard]] jsbind::String title() const;
+    /// Setter of the `title` attribute.
     void title(const jsbind::String& value);
+    /// Getter of the `icon` attribute.
     [[nodiscard]] jsbind::String icon() const;
+    /// Setter of the `icon` attribute.
     void icon(const jsbind::String& value);
 };
 

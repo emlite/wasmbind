@@ -17,7 +17,7 @@ public:
     static DOMRectList take_ownership(Handle h) noexcept;
     [[nodiscard]] DOMRectList clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `length` attribute.
+    /// [`DOMRectList.length`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectList/length)
     /// [`DOMRectList.length`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectList/length)
     [[nodiscard]] unsigned long length() const;
     /// The item method.

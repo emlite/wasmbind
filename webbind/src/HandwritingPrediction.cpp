@@ -1,15 +1,17 @@
 #include <webbind/HandwritingPrediction.hpp>
 #include <webbind/HandwritingSegment.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 HandwritingPrediction::HandwritingPrediction(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 HandwritingPrediction HandwritingPrediction::take_ownership(Handle h) noexcept {
-        return HandwritingPrediction(h);
-    }
+    return HandwritingPrediction(h);
+}
+
 HandwritingPrediction::HandwritingPrediction(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 HandwritingPrediction::HandwritingPrediction() noexcept: emlite::Val(emlite::Val::object()) {}
+
 HandwritingPrediction HandwritingPrediction::clone() const noexcept { return *this; }
 
 jsbind::String HandwritingPrediction::text() const {

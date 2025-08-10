@@ -1,14 +1,16 @@
 #include <webbind/MLHardSigmoidOptions.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 MLHardSigmoidOptions::MLHardSigmoidOptions(Handle h) noexcept : MLOperatorOptions(emlite::Val::take_ownership(h)) {}
 MLHardSigmoidOptions MLHardSigmoidOptions::take_ownership(Handle h) noexcept {
-        return MLHardSigmoidOptions(h);
-    }
+    return MLHardSigmoidOptions(h);
+}
+
 MLHardSigmoidOptions::MLHardSigmoidOptions(const emlite::Val &val) noexcept: MLOperatorOptions(val) {}
+
 MLHardSigmoidOptions::MLHardSigmoidOptions() noexcept: MLOperatorOptions(emlite::Val::object()) {}
+
 MLHardSigmoidOptions MLHardSigmoidOptions::clone() const noexcept { return *this; }
 
 double MLHardSigmoidOptions::alpha() const {

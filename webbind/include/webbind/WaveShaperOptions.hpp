@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type WaveShaperOptions
-/// [`WaveShaperOptions`](https://developer.mozilla.org/en-US/docs/Web/API/WaveShaperOptions)
 class WaveShaperOptions : public AudioNodeOptions {
   explicit WaveShaperOptions(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit WaveShaperOptions(const emlite::Val &val) noexcept;
     WaveShaperOptions() noexcept;
     [[nodiscard]] WaveShaperOptions clone() const noexcept;
+    /// Getter of the `curve` attribute.
     [[nodiscard]] jsbind::TypedArray<float> curve() const;
+    /// Setter of the `curve` attribute.
     void curve(jsbind::TypedArray<float> value);
+    /// Getter of the `oversample` attribute.
     [[nodiscard]] OverSampleType oversample() const;
+    /// Setter of the `oversample` attribute.
     void oversample(const OverSampleType& value);
 };
 

@@ -23,7 +23,7 @@ public:
     FontFaceSetLoadEvent(const jsbind::String& type);
     /// The `new FontFaceSetLoadEvent(..)` constructor, creating a new FontFaceSetLoadEvent instance
     FontFaceSetLoadEvent(const jsbind::String& type, const FontFaceSetLoadEventInit& eventInitDict);
-    /// Getter of the `fontfaces` attribute.
+    /// [`FontFaceSetLoadEvent.fontfaces`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSetLoadEvent/fontfaces)
     /// [`FontFaceSetLoadEvent.fontfaces`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSetLoadEvent/fontfaces)
     [[nodiscard]] jsbind::TypedArray<FontFace> fontfaces() const;
 };

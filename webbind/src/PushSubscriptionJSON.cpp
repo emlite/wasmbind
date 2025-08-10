@@ -1,14 +1,16 @@
 #include <webbind/PushSubscriptionJSON.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PushSubscriptionJSON::PushSubscriptionJSON(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PushSubscriptionJSON PushSubscriptionJSON::take_ownership(Handle h) noexcept {
-        return PushSubscriptionJSON(h);
-    }
+    return PushSubscriptionJSON(h);
+}
+
 PushSubscriptionJSON::PushSubscriptionJSON(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PushSubscriptionJSON::PushSubscriptionJSON() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PushSubscriptionJSON PushSubscriptionJSON::clone() const noexcept { return *this; }
 
 jsbind::String PushSubscriptionJSON::endpoint() const {

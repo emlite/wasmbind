@@ -1,15 +1,17 @@
 #include <webbind/SharedStorageRunOperationMethodOptions.hpp>
 #include <webbind/SharedStoragePrivateAggregationConfig.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SharedStorageRunOperationMethodOptions::SharedStorageRunOperationMethodOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SharedStorageRunOperationMethodOptions SharedStorageRunOperationMethodOptions::take_ownership(Handle h) noexcept {
-        return SharedStorageRunOperationMethodOptions(h);
-    }
+    return SharedStorageRunOperationMethodOptions(h);
+}
+
 SharedStorageRunOperationMethodOptions::SharedStorageRunOperationMethodOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SharedStorageRunOperationMethodOptions::SharedStorageRunOperationMethodOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SharedStorageRunOperationMethodOptions SharedStorageRunOperationMethodOptions::clone() const noexcept { return *this; }
 
 jsbind::Object SharedStorageRunOperationMethodOptions::data() const {

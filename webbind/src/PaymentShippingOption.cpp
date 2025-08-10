@@ -1,15 +1,17 @@
 #include <webbind/PaymentShippingOption.hpp>
 #include <webbind/PaymentCurrencyAmount.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentShippingOption::PaymentShippingOption(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentShippingOption PaymentShippingOption::take_ownership(Handle h) noexcept {
-        return PaymentShippingOption(h);
-    }
+    return PaymentShippingOption(h);
+}
+
 PaymentShippingOption::PaymentShippingOption(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentShippingOption::PaymentShippingOption() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentShippingOption PaymentShippingOption::clone() const noexcept { return *this; }
 
 jsbind::String PaymentShippingOption::id() const {

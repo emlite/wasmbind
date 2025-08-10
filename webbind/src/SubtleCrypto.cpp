@@ -4,11 +4,15 @@
 namespace webbind {
 
 SubtleCrypto SubtleCrypto::take_ownership(Handle h) noexcept {
-        return SubtleCrypto(h);
-    }
+    return SubtleCrypto(h);
+}
+
 SubtleCrypto SubtleCrypto::clone() const noexcept { return *this; }
+
 emlite::Val SubtleCrypto::instance() noexcept { return emlite::Val::global("SubtleCrypto"); }
+
 SubtleCrypto::SubtleCrypto(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 SubtleCrypto::SubtleCrypto(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 jsbind::Promise<jsbind::ArrayBuffer> SubtleCrypto::encrypt(const jsbind::Any& algorithm, const CryptoKey& key, const jsbind::Any& data) {

@@ -21,13 +21,13 @@ public:
     ProximitySensor();
     /// The `new ProximitySensor(..)` constructor, creating a new ProximitySensor instance
     ProximitySensor(const SensorOptions& sensorOptions);
-    /// Getter of the `distance` attribute.
+    /// [`ProximitySensor.distance`](https://developer.mozilla.org/en-US/docs/Web/API/ProximitySensor/distance)
     /// [`ProximitySensor.distance`](https://developer.mozilla.org/en-US/docs/Web/API/ProximitySensor/distance)
     [[nodiscard]] double distance() const;
-    /// Getter of the `max` attribute.
+    /// [`ProximitySensor.max`](https://developer.mozilla.org/en-US/docs/Web/API/ProximitySensor/max)
     /// [`ProximitySensor.max`](https://developer.mozilla.org/en-US/docs/Web/API/ProximitySensor/max)
     [[nodiscard]] double max() const;
-    /// Getter of the `near` attribute.
+    /// [`ProximitySensor.near`](https://developer.mozilla.org/en-US/docs/Web/API/ProximitySensor/near)
     /// [`ProximitySensor.near`](https://developer.mozilla.org/en-US/docs/Web/API/ProximitySensor/near)
     [[nodiscard]] bool near() const;
 };

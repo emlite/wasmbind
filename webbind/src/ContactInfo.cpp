@@ -2,15 +2,17 @@
 #include <webbind/ContactAddress.hpp>
 #include <webbind/Blob.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 ContactInfo::ContactInfo(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 ContactInfo ContactInfo::take_ownership(Handle h) noexcept {
-        return ContactInfo(h);
-    }
+    return ContactInfo(h);
+}
+
 ContactInfo::ContactInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 ContactInfo::ContactInfo() noexcept: emlite::Val(emlite::Val::object()) {}
+
 ContactInfo ContactInfo::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<ContactAddress> ContactInfo::address() const {

@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MediaKeyMessageEventInit
-/// [`MediaKeyMessageEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEventInit)
 class MediaKeyMessageEventInit : public EventInit {
   explicit MediaKeyMessageEventInit(Handle h) noexcept;
 public:
@@ -16,9 +15,13 @@ public:
     explicit MediaKeyMessageEventInit(const emlite::Val &val) noexcept;
     MediaKeyMessageEventInit() noexcept;
     [[nodiscard]] MediaKeyMessageEventInit clone() const noexcept;
+    /// Getter of the `messageType` attribute.
     [[nodiscard]] MediaKeyMessageType messageType() const;
+    /// Setter of the `messageType` attribute.
     void messageType(const MediaKeyMessageType& value);
+    /// Getter of the `message` attribute.
     [[nodiscard]] jsbind::ArrayBuffer message() const;
+    /// Setter of the `message` attribute.
     void message(const jsbind::ArrayBuffer& value);
 };
 

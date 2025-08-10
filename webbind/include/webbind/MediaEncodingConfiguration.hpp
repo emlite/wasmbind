@@ -8,7 +8,6 @@
 namespace webbind {
 
 /// Dictionary type MediaEncodingConfiguration
-/// [`MediaEncodingConfiguration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaEncodingConfiguration)
 class MediaEncodingConfiguration : public MediaConfiguration {
   explicit MediaEncodingConfiguration(Handle h) noexcept;
 public:
@@ -16,7 +15,9 @@ public:
     explicit MediaEncodingConfiguration(const emlite::Val &val) noexcept;
     MediaEncodingConfiguration() noexcept;
     [[nodiscard]] MediaEncodingConfiguration clone() const noexcept;
+    /// Getter of the `type` attribute.
     [[nodiscard]] MediaEncodingType type() const;
+    /// Setter of the `type` attribute.
     void type(const MediaEncodingType& value);
 };
 

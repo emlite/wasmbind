@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSMathMin(..)` constructor, creating a new CSSMathMin instance
     CSSMathMin(const jsbind::Any& args);
-    /// Getter of the `values` attribute.
+    /// [`CSSMathMin.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMin/values)
     /// [`CSSMathMin.values`](https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMin/values)
     [[nodiscard]] CSSNumericArray values() const;
 };

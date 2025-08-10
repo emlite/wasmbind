@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type XRDOMOverlayState
-/// [`XRDOMOverlayState`](https://developer.mozilla.org/en-US/docs/Web/API/XRDOMOverlayState)
 class XRDOMOverlayState : public emlite::Val {
   explicit XRDOMOverlayState(Handle h) noexcept;
 public:
@@ -15,7 +14,9 @@ public:
     explicit XRDOMOverlayState(const emlite::Val &val) noexcept;
     XRDOMOverlayState() noexcept;
     [[nodiscard]] XRDOMOverlayState clone() const noexcept;
+    /// Getter of the `type` attribute.
     [[nodiscard]] XRDOMOverlayType type() const;
+    /// Setter of the `type` attribute.
     void type(const XRDOMOverlayType& value);
 };
 

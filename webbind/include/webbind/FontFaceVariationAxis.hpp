@@ -15,19 +15,19 @@ public:
     static FontFaceVariationAxis take_ownership(Handle h) noexcept;
     [[nodiscard]] FontFaceVariationAxis clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `name` attribute.
+    /// [`FontFaceVariationAxis.name`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/name)
     /// [`FontFaceVariationAxis.name`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/name)
     [[nodiscard]] jsbind::String name() const;
-    /// Getter of the `axisTag` attribute.
+    /// [`FontFaceVariationAxis.axisTag`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/axisTag)
     /// [`FontFaceVariationAxis.axisTag`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/axisTag)
     [[nodiscard]] jsbind::String axisTag() const;
-    /// Getter of the `minimumValue` attribute.
+    /// [`FontFaceVariationAxis.minimumValue`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/minimumValue)
     /// [`FontFaceVariationAxis.minimumValue`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/minimumValue)
     [[nodiscard]] double minimumValue() const;
-    /// Getter of the `maximumValue` attribute.
+    /// [`FontFaceVariationAxis.maximumValue`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/maximumValue)
     /// [`FontFaceVariationAxis.maximumValue`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/maximumValue)
     [[nodiscard]] double maximumValue() const;
-    /// Getter of the `defaultValue` attribute.
+    /// [`FontFaceVariationAxis.defaultValue`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/defaultValue)
     /// [`FontFaceVariationAxis.defaultValue`](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceVariationAxis/defaultValue)
     [[nodiscard]] double defaultValue() const;
 };

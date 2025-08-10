@@ -7,7 +7,6 @@
 namespace webbind {
 
 /// Dictionary type SVGBoundingBoxOptions
-/// [`SVGBoundingBoxOptions`](https://developer.mozilla.org/en-US/docs/Web/API/SVGBoundingBoxOptions)
 class SVGBoundingBoxOptions : public emlite::Val {
   explicit SVGBoundingBoxOptions(Handle h) noexcept;
 public:
@@ -15,13 +14,21 @@ public:
     explicit SVGBoundingBoxOptions(const emlite::Val &val) noexcept;
     SVGBoundingBoxOptions() noexcept;
     [[nodiscard]] SVGBoundingBoxOptions clone() const noexcept;
+    /// Getter of the `fill` attribute.
     [[nodiscard]] bool fill() const;
+    /// Setter of the `fill` attribute.
     void fill(bool value);
+    /// Getter of the `stroke` attribute.
     [[nodiscard]] bool stroke() const;
+    /// Setter of the `stroke` attribute.
     void stroke(bool value);
+    /// Getter of the `markers` attribute.
     [[nodiscard]] bool markers() const;
+    /// Setter of the `markers` attribute.
     void markers(bool value);
+    /// Getter of the `clipped` attribute.
     [[nodiscard]] bool clipped() const;
+    /// Setter of the `clipped` attribute.
     void clipped(bool value);
 };
 

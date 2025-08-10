@@ -19,13 +19,13 @@ public:
     static Serial take_ownership(Handle h) noexcept;
     [[nodiscard]] Serial clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `onconnect` attribute.
+    /// [`Serial.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/Serial/onconnect)
     /// [`Serial.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/Serial/onconnect)
     [[nodiscard]] jsbind::Any onconnect() const;
     /// Setter of the `onconnect` attribute.
     /// [`Serial.onconnect`](https://developer.mozilla.org/en-US/docs/Web/API/Serial/onconnect)
     void onconnect(const jsbind::Any& value);
-    /// Getter of the `ondisconnect` attribute.
+    /// [`Serial.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/Serial/ondisconnect)
     /// [`Serial.ondisconnect`](https://developer.mozilla.org/en-US/docs/Web/API/Serial/ondisconnect)
     [[nodiscard]] jsbind::Any ondisconnect() const;
     /// Setter of the `ondisconnect` attribute.

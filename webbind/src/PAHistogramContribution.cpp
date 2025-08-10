@@ -1,14 +1,16 @@
 #include <webbind/PAHistogramContribution.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PAHistogramContribution::PAHistogramContribution(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PAHistogramContribution PAHistogramContribution::take_ownership(Handle h) noexcept {
-        return PAHistogramContribution(h);
-    }
+    return PAHistogramContribution(h);
+}
+
 PAHistogramContribution::PAHistogramContribution(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PAHistogramContribution::PAHistogramContribution() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PAHistogramContribution PAHistogramContribution::clone() const noexcept { return *this; }
 
 long long PAHistogramContribution::bucket() const {

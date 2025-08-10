@@ -15,16 +15,16 @@ public:
     static XRViewport take_ownership(Handle h) noexcept;
     [[nodiscard]] XRViewport clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `x` attribute.
+    /// [`XRViewport.x`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/x)
     /// [`XRViewport.x`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/x)
     [[nodiscard]] long x() const;
-    /// Getter of the `y` attribute.
+    /// [`XRViewport.y`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/y)
     /// [`XRViewport.y`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/y)
     [[nodiscard]] long y() const;
-    /// Getter of the `width` attribute.
+    /// [`XRViewport.width`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/width)
     /// [`XRViewport.width`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/width)
     [[nodiscard]] long width() const;
-    /// Getter of the `height` attribute.
+    /// [`XRViewport.height`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/height)
     /// [`XRViewport.height`](https://developer.mozilla.org/en-US/docs/Web/API/XRViewport/height)
     [[nodiscard]] long height() const;
 };

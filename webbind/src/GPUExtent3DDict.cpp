@@ -1,14 +1,16 @@
 #include <webbind/GPUExtent3DDict.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 GPUExtent3DDict::GPUExtent3DDict(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 GPUExtent3DDict GPUExtent3DDict::take_ownership(Handle h) noexcept {
-        return GPUExtent3DDict(h);
-    }
+    return GPUExtent3DDict(h);
+}
+
 GPUExtent3DDict::GPUExtent3DDict(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 GPUExtent3DDict::GPUExtent3DDict() noexcept: emlite::Val(emlite::Val::object()) {}
+
 GPUExtent3DDict GPUExtent3DDict::clone() const noexcept { return *this; }
 
 jsbind::Any GPUExtent3DDict::width() const {

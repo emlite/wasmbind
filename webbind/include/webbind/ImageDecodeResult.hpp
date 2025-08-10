@@ -9,7 +9,6 @@ namespace webbind {
 class VideoFrame;
 
 /// Dictionary type ImageDecodeResult
-/// [`ImageDecodeResult`](https://developer.mozilla.org/en-US/docs/Web/API/ImageDecodeResult)
 class ImageDecodeResult : public emlite::Val {
   explicit ImageDecodeResult(Handle h) noexcept;
 public:
@@ -17,9 +16,13 @@ public:
     explicit ImageDecodeResult(const emlite::Val &val) noexcept;
     ImageDecodeResult() noexcept;
     [[nodiscard]] ImageDecodeResult clone() const noexcept;
+    /// Getter of the `image` attribute.
     [[nodiscard]] VideoFrame image() const;
+    /// Setter of the `image` attribute.
     void image(const VideoFrame& value);
+    /// Getter of the `complete` attribute.
     [[nodiscard]] bool complete() const;
+    /// Setter of the `complete` attribute.
     void complete(bool value);
 };
 

@@ -41,31 +41,31 @@ public:
     /// The exec method.
     /// [`URLPattern.exec`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/exec)
     URLPatternResult exec(const jsbind::Any& input, const jsbind::String& baseURL);
-    /// Getter of the `protocol` attribute.
+    /// [`URLPattern.protocol`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/protocol)
     /// [`URLPattern.protocol`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/protocol)
     [[nodiscard]] jsbind::String protocol() const;
-    /// Getter of the `username` attribute.
+    /// [`URLPattern.username`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/username)
     /// [`URLPattern.username`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/username)
     [[nodiscard]] jsbind::String username() const;
-    /// Getter of the `password` attribute.
+    /// [`URLPattern.password`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/password)
     /// [`URLPattern.password`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/password)
     [[nodiscard]] jsbind::String password() const;
-    /// Getter of the `hostname` attribute.
+    /// [`URLPattern.hostname`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/hostname)
     /// [`URLPattern.hostname`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/hostname)
     [[nodiscard]] jsbind::String hostname() const;
-    /// Getter of the `port` attribute.
+    /// [`URLPattern.port`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/port)
     /// [`URLPattern.port`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/port)
     [[nodiscard]] jsbind::String port() const;
-    /// Getter of the `pathname` attribute.
+    /// [`URLPattern.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/pathname)
     /// [`URLPattern.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/pathname)
     [[nodiscard]] jsbind::String pathname() const;
-    /// Getter of the `search` attribute.
+    /// [`URLPattern.search`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/search)
     /// [`URLPattern.search`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/search)
     [[nodiscard]] jsbind::String search() const;
-    /// Getter of the `hash` attribute.
+    /// [`URLPattern.hash`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/hash)
     /// [`URLPattern.hash`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/hash)
     [[nodiscard]] jsbind::String hash() const;
-    /// Getter of the `hasRegExpGroups` attribute.
+    /// [`URLPattern.hasRegExpGroups`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/hasRegExpGroups)
     /// [`URLPattern.hasRegExpGroups`](https://developer.mozilla.org/en-US/docs/Web/API/URLPattern/hasRegExpGroups)
     [[nodiscard]] bool hasRegExpGroups() const;
 };

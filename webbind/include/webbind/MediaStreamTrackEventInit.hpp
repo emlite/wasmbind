@@ -10,7 +10,6 @@ namespace webbind {
 class MediaStreamTrack;
 
 /// Dictionary type MediaStreamTrackEventInit
-/// [`MediaStreamTrackEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackEventInit)
 class MediaStreamTrackEventInit : public EventInit {
   explicit MediaStreamTrackEventInit(Handle h) noexcept;
 public:
@@ -18,7 +17,9 @@ public:
     explicit MediaStreamTrackEventInit(const emlite::Val &val) noexcept;
     MediaStreamTrackEventInit() noexcept;
     [[nodiscard]] MediaStreamTrackEventInit clone() const noexcept;
+    /// Getter of the `track` attribute.
     [[nodiscard]] MediaStreamTrack track() const;
+    /// Setter of the `track` attribute.
     void track(const MediaStreamTrack& value);
 };
 

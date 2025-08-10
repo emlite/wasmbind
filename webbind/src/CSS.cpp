@@ -1,7 +1,5 @@
 #include <webbind/CSS.hpp>
 
-using emlite::Val;
-
 namespace webbind {
 
 namespace CSS {

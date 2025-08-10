@@ -4,11 +4,15 @@
 namespace webbind {
 
 TextUpdateEvent TextUpdateEvent::take_ownership(Handle h) noexcept {
-        return TextUpdateEvent(h);
-    }
+    return TextUpdateEvent(h);
+}
+
 TextUpdateEvent TextUpdateEvent::clone() const noexcept { return *this; }
+
 emlite::Val TextUpdateEvent::instance() noexcept { return emlite::Val::global("TextUpdateEvent"); }
+
 TextUpdateEvent::TextUpdateEvent(Handle h) noexcept : Event(emlite::Val::take_ownership(h)) {}
+
 TextUpdateEvent::TextUpdateEvent(const emlite::Val &val) noexcept: Event(val) {}
 
 TextUpdateEvent::TextUpdateEvent(const jsbind::String& type) : Event(emlite::Val::global("TextUpdateEvent").new_(type)) {}

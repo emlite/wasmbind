@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLPreElement(..)` constructor, creating a new HTMLPreElement instance
     HTMLPreElement();
-    /// Getter of the `width` attribute.
+    /// [`HTMLPreElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPreElement/width)
     /// [`HTMLPreElement.width`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLPreElement/width)
     [[nodiscard]] long width() const;
     /// Setter of the `width` attribute.

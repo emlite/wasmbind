@@ -1,15 +1,17 @@
 #include <webbind/PaymentDetailsModifier.hpp>
 #include <webbind/PaymentItem.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 PaymentDetailsModifier::PaymentDetailsModifier(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 PaymentDetailsModifier PaymentDetailsModifier::take_ownership(Handle h) noexcept {
-        return PaymentDetailsModifier(h);
-    }
+    return PaymentDetailsModifier(h);
+}
+
 PaymentDetailsModifier::PaymentDetailsModifier(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 PaymentDetailsModifier::PaymentDetailsModifier() noexcept: emlite::Val(emlite::Val::object()) {}
+
 PaymentDetailsModifier PaymentDetailsModifier::clone() const noexcept { return *this; }
 
 jsbind::String PaymentDetailsModifier::supportedMethods() const {

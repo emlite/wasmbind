@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLHeadingElement(..)` constructor, creating a new HTMLHeadingElement instance
     HTMLHeadingElement();
-    /// Getter of the `align` attribute.
+    /// [`HTMLHeadingElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadingElement/align)
     /// [`HTMLHeadingElement.align`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadingElement/align)
     [[nodiscard]] jsbind::String align() const;
     /// Setter of the `align` attribute.

@@ -1,15 +1,17 @@
 #include <webbind/SpatialNavigationSearchOptions.hpp>
 #include <webbind/Node.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 SpatialNavigationSearchOptions::SpatialNavigationSearchOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 SpatialNavigationSearchOptions SpatialNavigationSearchOptions::take_ownership(Handle h) noexcept {
-        return SpatialNavigationSearchOptions(h);
-    }
+    return SpatialNavigationSearchOptions(h);
+}
+
 SpatialNavigationSearchOptions::SpatialNavigationSearchOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
 SpatialNavigationSearchOptions::SpatialNavigationSearchOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+
 SpatialNavigationSearchOptions SpatialNavigationSearchOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<Node> SpatialNavigationSearchOptions::candidates() const {

@@ -10,7 +10,6 @@ class Module;
 class Instance;
 
 /// Dictionary type WebAssemblyInstantiatedSource
-/// [`WebAssemblyInstantiatedSource`](https://developer.mozilla.org/en-US/docs/Web/API/WebAssemblyInstantiatedSource)
 class WebAssemblyInstantiatedSource : public emlite::Val {
   explicit WebAssemblyInstantiatedSource(Handle h) noexcept;
 public:
@@ -18,9 +17,13 @@ public:
     explicit WebAssemblyInstantiatedSource(const emlite::Val &val) noexcept;
     WebAssemblyInstantiatedSource() noexcept;
     [[nodiscard]] WebAssemblyInstantiatedSource clone() const noexcept;
+    /// Getter of the `module` attribute.
     [[nodiscard]] Module module_() const;
+    /// Setter of the `module` attribute.
     void module_(const Module& value);
+    /// Getter of the `instance` attribute.
     [[nodiscard]] Instance instance() const;
+    /// Setter of the `instance` attribute.
     void instance(const Instance& value);
 };
 

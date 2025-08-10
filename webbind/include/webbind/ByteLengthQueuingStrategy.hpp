@@ -18,10 +18,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ByteLengthQueuingStrategy(..)` constructor, creating a new ByteLengthQueuingStrategy instance
     ByteLengthQueuingStrategy(const QueuingStrategyInit& init);
-    /// Getter of the `highWaterMark` attribute.
+    /// [`ByteLengthQueuingStrategy.highWaterMark`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
     /// [`ByteLengthQueuingStrategy.highWaterMark`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
     [[nodiscard]] double highWaterMark() const;
-    /// Getter of the `size` attribute.
+    /// [`ByteLengthQueuingStrategy.size`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy/size)
     /// [`ByteLengthQueuingStrategy.size`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy/size)
     [[nodiscard]] jsbind::Function size() const;
 };

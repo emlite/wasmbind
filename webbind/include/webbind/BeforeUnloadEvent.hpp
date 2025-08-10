@@ -16,7 +16,7 @@ public:
     static BeforeUnloadEvent take_ownership(Handle h) noexcept;
     [[nodiscard]] BeforeUnloadEvent clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
-    /// Getter of the `returnValue` attribute.
+    /// [`BeforeUnloadEvent.returnValue`](https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent/returnValue)
     /// [`BeforeUnloadEvent.returnValue`](https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent/returnValue)
     [[nodiscard]] jsbind::String returnValue() const;
     /// Setter of the `returnValue` attribute.

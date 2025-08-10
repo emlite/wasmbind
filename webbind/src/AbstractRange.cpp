@@ -4,11 +4,15 @@
 namespace webbind {
 
 AbstractRange AbstractRange::take_ownership(Handle h) noexcept {
-        return AbstractRange(h);
-    }
+    return AbstractRange(h);
+}
+
 AbstractRange AbstractRange::clone() const noexcept { return *this; }
+
 emlite::Val AbstractRange::instance() noexcept { return emlite::Val::global("AbstractRange"); }
+
 AbstractRange::AbstractRange(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
 AbstractRange::AbstractRange(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 Node AbstractRange::startContainer() const {

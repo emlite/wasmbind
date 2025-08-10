@@ -18,7 +18,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new HTMLQuoteElement(..)` constructor, creating a new HTMLQuoteElement instance
     HTMLQuoteElement();
-    /// Getter of the `cite` attribute.
+    /// [`HTMLQuoteElement.cite`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLQuoteElement/cite)
     /// [`HTMLQuoteElement.cite`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLQuoteElement/cite)
     [[nodiscard]] jsbind::String cite() const;
     /// Setter of the `cite` attribute.

@@ -1,15 +1,17 @@
 #include <webbind/RTCRtpEncodingParameters.hpp>
 #include <webbind/RTCRtpCodec.hpp>
 
-using emlite::Val;
 namespace webbind {
 
 RTCRtpEncodingParameters::RTCRtpEncodingParameters(Handle h) noexcept : RTCRtpCodingParameters(emlite::Val::take_ownership(h)) {}
 RTCRtpEncodingParameters RTCRtpEncodingParameters::take_ownership(Handle h) noexcept {
-        return RTCRtpEncodingParameters(h);
-    }
+    return RTCRtpEncodingParameters(h);
+}
+
 RTCRtpEncodingParameters::RTCRtpEncodingParameters(const emlite::Val &val) noexcept: RTCRtpCodingParameters(val) {}
+
 RTCRtpEncodingParameters::RTCRtpEncodingParameters() noexcept: RTCRtpCodingParameters(emlite::Val::object()) {}
+
 RTCRtpEncodingParameters RTCRtpEncodingParameters::clone() const noexcept { return *this; }
 
 bool RTCRtpEncodingParameters::active() const {
