@@ -1,4 +1,4 @@
-import { parseSpecs, processInterfaces } from "./parsers/spec-parser.js";
+import { parseSpecs, processInterfaces, processNamespaces } from "./parsers/spec-parser.js";
 import { DependencyResolver } from "./parsers/dependency-resolver.js";
 import { generateEnums } from "./generators/enum-generator.js";
 import { generateNamespace } from "./generators/namespace-generator.js";
@@ -17,6 +17,9 @@ export function generate(specAst) {
 
   // Process interfaces (merge partials, includes, etc.)
   const processedInterfaces = processInterfaces(interfaces, mixins, includeRel);
+
+  // Process namespaces (merge partials)
+  const processedNamespaces = processNamespaces(namespaces);
 
   // Create dependency resolver
   const resolver = new DependencyResolver(processedInterfaces, dicts, enums);
@@ -58,8 +61,8 @@ export function generate(specAst) {
   }
 
   // Generate namespaces
-  for (const ns of namespaces) {
-    const dependencies = resolver.resolveNamespaceDependencies(ns);
-    generateNamespace(ns, dependencies);
+  for (const [nsName, nsRec] of processedNamespaces) {
+    const dependencies = resolver.resolveNamespaceDependencies(nsRec);
+    generateNamespace(nsRec, dependencies);
   }
 }
