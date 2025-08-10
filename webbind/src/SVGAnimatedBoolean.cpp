@@ -1,4 +1,4 @@
-#include "webbind/SVGAnimatedBoolean.hpp"
+#include <webbind/SVGAnimatedBoolean.hpp>
 
 namespace webbind {
 

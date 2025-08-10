@@ -1,4 +1,4 @@
-#include "webbind/ScreenDetailed.hpp"
+#include <webbind/ScreenDetailed.hpp>
 
 namespace webbind {
 

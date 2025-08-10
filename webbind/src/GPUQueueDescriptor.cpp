@@ -1,4 +1,4 @@
-#include "webbind/GPUQueueDescriptor.hpp"
+#include <webbind/GPUQueueDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

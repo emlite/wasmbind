@@ -1,4 +1,4 @@
-#include "webbind/GPUSampler.hpp"
+#include <webbind/GPUSampler.hpp>
 
 namespace webbind {
 

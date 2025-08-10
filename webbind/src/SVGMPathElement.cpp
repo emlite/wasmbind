@@ -1,5 +1,5 @@
-#include "webbind/SVGMPathElement.hpp"
-#include "webbind/SVGAnimatedString.hpp"
+#include <webbind/SVGMPathElement.hpp>
+#include <webbind/SVGAnimatedString.hpp>
 
 namespace webbind {
 

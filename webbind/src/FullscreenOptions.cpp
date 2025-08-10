@@ -1,5 +1,5 @@
-#include "webbind/FullscreenOptions.hpp"
-#include "webbind/ScreenDetailed.hpp"
+#include <webbind/FullscreenOptions.hpp>
+#include <webbind/ScreenDetailed.hpp>
 
 using emlite::Val;
 namespace webbind {

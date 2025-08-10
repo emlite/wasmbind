@@ -1,4 +1,4 @@
-#include "webbind/GPUStorageTextureBindingLayout.hpp"
+#include <webbind/GPUStorageTextureBindingLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

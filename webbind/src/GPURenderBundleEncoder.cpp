@@ -1,9 +1,9 @@
-#include "webbind/GPURenderBundleEncoder.hpp"
-#include "webbind/GPURenderBundle.hpp"
-#include "webbind/GPURenderBundleDescriptor.hpp"
-#include "webbind/GPUBindGroup.hpp"
-#include "webbind/GPURenderPipeline.hpp"
-#include "webbind/GPUBuffer.hpp"
+#include <webbind/GPURenderBundleEncoder.hpp>
+#include <webbind/GPURenderBundle.hpp>
+#include <webbind/GPURenderBundleDescriptor.hpp>
+#include <webbind/GPUBindGroup.hpp>
+#include <webbind/GPURenderPipeline.hpp>
+#include <webbind/GPUBuffer.hpp>
 
 namespace webbind {
 

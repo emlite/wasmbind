@@ -1,4 +1,4 @@
-#include "webbind/XRCPUDepthInformation.hpp"
+#include <webbind/XRCPUDepthInformation.hpp>
 
 namespace webbind {
 

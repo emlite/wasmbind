@@ -1,5 +1,5 @@
-#include "webbind/GPUComputePipelineDescriptor.hpp"
-#include "webbind/GPUProgrammableStage.hpp"
+#include <webbind/GPUComputePipelineDescriptor.hpp>
+#include <webbind/GPUProgrammableStage.hpp>
 
 using emlite::Val;
 namespace webbind {

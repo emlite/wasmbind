@@ -1,9 +1,9 @@
-#include "webbind/Translator.hpp"
-#include "webbind/Translator.hpp"
-#include "webbind/TranslatorCreateOptions.hpp"
-#include "webbind/TranslatorCreateCoreOptions.hpp"
-#include "webbind/TranslatorTranslateOptions.hpp"
-#include "webbind/ReadableStream.hpp"
+#include <webbind/Translator.hpp>
+#include <webbind/Translator.hpp>
+#include <webbind/TranslatorCreateOptions.hpp>
+#include <webbind/TranslatorCreateCoreOptions.hpp>
+#include <webbind/TranslatorTranslateOptions.hpp>
+#include <webbind/ReadableStream.hpp>
 
 namespace webbind {
 

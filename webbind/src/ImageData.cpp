@@ -1,5 +1,5 @@
-#include "webbind/ImageData.hpp"
-#include "webbind/ImageDataSettings.hpp"
+#include <webbind/ImageData.hpp>
+#include <webbind/ImageDataSettings.hpp>
 
 namespace webbind {
 

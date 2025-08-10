@@ -1,6 +1,6 @@
-#include "webbind/GPUBindGroupDescriptor.hpp"
-#include "webbind/GPUBindGroupLayout.hpp"
-#include "webbind/GPUBindGroupEntry.hpp"
+#include <webbind/GPUBindGroupDescriptor.hpp>
+#include <webbind/GPUBindGroupLayout.hpp>
+#include <webbind/GPUBindGroupEntry.hpp>
 
 using emlite::Val;
 namespace webbind {

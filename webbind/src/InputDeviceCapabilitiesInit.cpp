@@ -1,4 +1,4 @@
-#include "webbind/InputDeviceCapabilitiesInit.hpp"
+#include <webbind/InputDeviceCapabilitiesInit.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,5 +1,5 @@
-#include "webbind/GPUTexelCopyBufferInfo.hpp"
-#include "webbind/GPUBuffer.hpp"
+#include <webbind/GPUTexelCopyBufferInfo.hpp>
+#include <webbind/GPUBuffer.hpp>
 
 using emlite::Val;
 namespace webbind {

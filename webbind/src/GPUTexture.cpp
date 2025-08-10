@@ -1,6 +1,6 @@
-#include "webbind/GPUTexture.hpp"
-#include "webbind/GPUTextureView.hpp"
-#include "webbind/GPUTextureViewDescriptor.hpp"
+#include <webbind/GPUTexture.hpp>
+#include <webbind/GPUTextureView.hpp>
+#include <webbind/GPUTextureViewDescriptor.hpp>
 
 namespace webbind {
 

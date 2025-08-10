@@ -1,5 +1,5 @@
-#include "webbind/USBDeviceRequestOptions.hpp"
-#include "webbind/USBDeviceFilter.hpp"
+#include <webbind/USBDeviceRequestOptions.hpp>
+#include <webbind/USBDeviceFilter.hpp>
 
 using emlite::Val;
 namespace webbind {

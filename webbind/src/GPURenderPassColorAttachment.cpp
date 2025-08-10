@@ -1,5 +1,5 @@
-#include "webbind/GPURenderPassColorAttachment.hpp"
-#include "webbind/GPUTextureView.hpp"
+#include <webbind/GPURenderPassColorAttachment.hpp>
+#include <webbind/GPUTextureView.hpp>
 
 using emlite::Val;
 namespace webbind {

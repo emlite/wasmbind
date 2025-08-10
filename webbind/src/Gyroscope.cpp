@@ -1,5 +1,5 @@
-#include "webbind/Gyroscope.hpp"
-#include "webbind/GyroscopeSensorOptions.hpp"
+#include <webbind/Gyroscope.hpp>
+#include <webbind/GyroscopeSensorOptions.hpp>
 
 namespace webbind {
 

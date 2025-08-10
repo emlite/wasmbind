@@ -1,4 +1,4 @@
-#include "webbind/WebGLQuery.hpp"
+#include <webbind/WebGLQuery.hpp>
 
 namespace webbind {
 

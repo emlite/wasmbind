@@ -1,4 +1,4 @@
-#include "webbind/WebGLSync.hpp"
+#include <webbind/WebGLSync.hpp>
 
 namespace webbind {
 

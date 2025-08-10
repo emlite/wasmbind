@@ -1,4 +1,4 @@
-#include "webbind/OpusEncoderConfig.hpp"
+#include <webbind/OpusEncoderConfig.hpp>
 
 using emlite::Val;
 namespace webbind {

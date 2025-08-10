@@ -1,4 +1,4 @@
-#include "webbind/SVGStringList.hpp"
+#include <webbind/SVGStringList.hpp>
 
 namespace webbind {
 

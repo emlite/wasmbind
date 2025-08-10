@@ -1,4 +1,4 @@
-#include "webbind/GPUOutOfMemoryError.hpp"
+#include <webbind/GPUOutOfMemoryError.hpp>
 
 namespace webbind {
 

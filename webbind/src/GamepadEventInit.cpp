@@ -1,5 +1,5 @@
-#include "webbind/GamepadEventInit.hpp"
-#include "webbind/Gamepad.hpp"
+#include <webbind/GamepadEventInit.hpp>
+#include <webbind/Gamepad.hpp>
 
 using emlite::Val;
 namespace webbind {

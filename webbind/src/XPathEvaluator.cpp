@@ -1,7 +1,7 @@
-#include "webbind/XPathEvaluator.hpp"
-#include "webbind/XPathExpression.hpp"
-#include "webbind/Node.hpp"
-#include "webbind/XPathResult.hpp"
+#include <webbind/XPathEvaluator.hpp>
+#include <webbind/XPathExpression.hpp>
+#include <webbind/Node.hpp>
+#include <webbind/XPathResult.hpp>
 
 namespace webbind {
 

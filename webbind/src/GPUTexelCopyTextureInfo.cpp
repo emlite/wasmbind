@@ -1,5 +1,5 @@
-#include "webbind/GPUTexelCopyTextureInfo.hpp"
-#include "webbind/GPUTexture.hpp"
+#include <webbind/GPUTexelCopyTextureInfo.hpp>
+#include <webbind/GPUTexture.hpp>
 
 using emlite::Val;
 namespace webbind {

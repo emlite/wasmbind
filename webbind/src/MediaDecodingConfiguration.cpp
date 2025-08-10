@@ -1,5 +1,5 @@
-#include "webbind/MediaDecodingConfiguration.hpp"
-#include "webbind/MediaCapabilitiesKeySystemConfiguration.hpp"
+#include <webbind/MediaDecodingConfiguration.hpp>
+#include <webbind/MediaCapabilitiesKeySystemConfiguration.hpp>
 
 using emlite::Val;
 namespace webbind {

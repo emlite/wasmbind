@@ -1,5 +1,5 @@
-#include "webbind/IdleDetector.hpp"
-#include "webbind/IdleOptions.hpp"
+#include <webbind/IdleDetector.hpp>
+#include <webbind/IdleOptions.hpp>
 
 namespace webbind {
 

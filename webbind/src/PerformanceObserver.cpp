@@ -1,5 +1,5 @@
-#include "webbind/PerformanceObserver.hpp"
-#include "webbind/PerformanceObserverInit.hpp"
+#include <webbind/PerformanceObserver.hpp>
+#include <webbind/PerformanceObserverInit.hpp>
 
 namespace webbind {
 

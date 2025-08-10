@@ -1,5 +1,5 @@
-#include "webbind/TaskPriorityChangeEvent.hpp"
-#include "webbind/TaskPriorityChangeEventInit.hpp"
+#include <webbind/TaskPriorityChangeEvent.hpp>
+#include <webbind/TaskPriorityChangeEventInit.hpp>
 
 namespace webbind {
 

@@ -1,6 +1,6 @@
-#include "webbind/MIDIAccess.hpp"
-#include "webbind/MIDIInputMap.hpp"
-#include "webbind/MIDIOutputMap.hpp"
+#include <webbind/MIDIAccess.hpp>
+#include <webbind/MIDIInputMap.hpp>
+#include <webbind/MIDIOutputMap.hpp>
 
 namespace webbind {
 

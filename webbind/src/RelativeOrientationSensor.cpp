@@ -1,5 +1,5 @@
-#include "webbind/RelativeOrientationSensor.hpp"
-#include "webbind/OrientationSensorOptions.hpp"
+#include <webbind/RelativeOrientationSensor.hpp>
+#include <webbind/OrientationSensorOptions.hpp>
 
 namespace webbind {
 

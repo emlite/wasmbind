@@ -1,5 +1,5 @@
-#include "webbind/NamedNodeMap.hpp"
-#include "webbind/Attr.hpp"
+#include <webbind/NamedNodeMap.hpp>
+#include <webbind/Attr.hpp>
 
 namespace webbind {
 

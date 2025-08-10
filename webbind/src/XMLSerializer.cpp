@@ -1,5 +1,5 @@
-#include "webbind/XMLSerializer.hpp"
-#include "webbind/Node.hpp"
+#include <webbind/XMLSerializer.hpp>
+#include <webbind/Node.hpp>
 
 namespace webbind {
 

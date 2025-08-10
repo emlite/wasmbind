@@ -1,4 +1,4 @@
-#include "webbind/MIDIOutputMap.hpp"
+#include <webbind/MIDIOutputMap.hpp>
 
 namespace webbind {
 

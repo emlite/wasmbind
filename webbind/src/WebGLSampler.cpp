@@ -1,4 +1,4 @@
-#include "webbind/WebGLSampler.hpp"
+#include <webbind/WebGLSampler.hpp>
 
 namespace webbind {
 

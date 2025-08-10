@@ -1,4 +1,4 @@
-#include "webbind/FlacEncoderConfig.hpp"
+#include <webbind/FlacEncoderConfig.hpp>
 
 using emlite::Val;
 namespace webbind {

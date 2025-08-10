@@ -1,4 +1,4 @@
-#include "webbind/TrustedScriptURL.hpp"
+#include <webbind/TrustedScriptURL.hpp>
 
 namespace webbind {
 

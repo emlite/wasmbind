@@ -1,5 +1,5 @@
-#include "webbind/EventSource.hpp"
-#include "webbind/EventSourceInit.hpp"
+#include <webbind/EventSource.hpp>
+#include <webbind/EventSourceInit.hpp>
 
 namespace webbind {
 

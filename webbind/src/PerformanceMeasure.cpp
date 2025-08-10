@@ -1,4 +1,4 @@
-#include "webbind/PerformanceMeasure.hpp"
+#include <webbind/PerformanceMeasure.hpp>
 
 namespace webbind {
 

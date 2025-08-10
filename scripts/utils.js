@@ -1,4 +1,3 @@
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import {
@@ -20,21 +19,6 @@ const __dirname = path.dirname(__filename);
 
 export const OUT_INC = path.resolve(__dirname, "../webbind/include/webbind");
 export const OUT_SRC = path.resolve(__dirname, "../webbind/src");
-
-function pair(name) {
-  return {
-    h: path.join(OUT_INC, `${name}.hpp`),
-    c: path.join(OUT_SRC, `${name}.cpp`),
-  };
-}
-
-export function writePair(name, hdrLines, srcLines) {
-  const header = hdrLines.join("\n");
-  const { h, c } = pair(name);
-  fs.appendFileSync(h, header + "\n", "utf8");
-  fs.appendFileSync(c, srcLines.join("\n") + "\n", "utf8");
-  //   console.log(`Parsed ${name}`);
-}
 
 export function flat(t) {
   if (!t) return { n: "__unk", unsigned: false };
@@ -133,7 +117,7 @@ export function cpp(idlType) {
   if (enums.has(n)) return n;
   if (callbacks.has(n)) return "jsbind::Function";
   if (typedefs.has(n) || n === "__union") return "jsbind::Any";
-  
+
   // Check if it's a dictionary type
   if (dictionaryRegistry && dictionaryRegistry.has(n)) {
     return n;

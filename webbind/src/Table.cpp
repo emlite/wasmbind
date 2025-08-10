@@ -1,5 +1,5 @@
-#include "webbind/Table.hpp"
-#include "webbind/TableDescriptor.hpp"
+#include <webbind/Table.hpp>
+#include <webbind/TableDescriptor.hpp>
 
 namespace webbind {
 

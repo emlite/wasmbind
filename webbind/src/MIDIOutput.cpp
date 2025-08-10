@@ -1,4 +1,4 @@
-#include "webbind/MIDIOutput.hpp"
+#include <webbind/MIDIOutput.hpp>
 
 namespace webbind {
 

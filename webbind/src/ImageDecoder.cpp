@@ -1,8 +1,8 @@
-#include "webbind/ImageDecoder.hpp"
-#include "webbind/ImageDecoderInit.hpp"
-#include "webbind/ImageTrackList.hpp"
-#include "webbind/ImageDecodeResult.hpp"
-#include "webbind/ImageDecodeOptions.hpp"
+#include <webbind/ImageDecoder.hpp>
+#include <webbind/ImageDecoderInit.hpp>
+#include <webbind/ImageTrackList.hpp>
+#include <webbind/ImageDecodeResult.hpp>
+#include <webbind/ImageDecodeOptions.hpp>
 
 namespace webbind {
 

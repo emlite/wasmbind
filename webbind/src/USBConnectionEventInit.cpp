@@ -1,5 +1,5 @@
-#include "webbind/USBConnectionEventInit.hpp"
-#include "webbind/USBDevice.hpp"
+#include <webbind/USBConnectionEventInit.hpp>
+#include <webbind/USBDevice.hpp>
 
 using emlite::Val;
 namespace webbind {

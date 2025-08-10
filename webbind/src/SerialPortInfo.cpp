@@ -1,4 +1,4 @@
-#include "webbind/SerialPortInfo.hpp"
+#include <webbind/SerialPortInfo.hpp>
 
 using emlite::Val;
 namespace webbind {

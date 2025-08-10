@@ -1,5 +1,5 @@
-#include "webbind/Sanitizer.hpp"
-#include "webbind/SanitizerConfig.hpp"
+#include <webbind/Sanitizer.hpp>
+#include <webbind/SanitizerConfig.hpp>
 
 namespace webbind {
 

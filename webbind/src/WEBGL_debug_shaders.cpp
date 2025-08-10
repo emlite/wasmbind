@@ -1,5 +1,5 @@
-#include "webbind/WEBGL_debug_shaders.hpp"
-#include "webbind/WebGLShader.hpp"
+#include <webbind/WEBGL_debug_shaders.hpp>
+#include <webbind/WebGLShader.hpp>
 
 namespace webbind {
 

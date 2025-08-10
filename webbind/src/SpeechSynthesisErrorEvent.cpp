@@ -1,5 +1,5 @@
-#include "webbind/SpeechSynthesisErrorEvent.hpp"
-#include "webbind/SpeechSynthesisErrorEventInit.hpp"
+#include <webbind/SpeechSynthesisErrorEvent.hpp>
+#include <webbind/SpeechSynthesisErrorEventInit.hpp>
 
 namespace webbind {
 

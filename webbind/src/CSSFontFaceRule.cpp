@@ -1,5 +1,5 @@
-#include "webbind/CSSFontFaceRule.hpp"
-#include "webbind/CSSFontFaceDescriptors.hpp"
+#include <webbind/CSSFontFaceRule.hpp>
+#include <webbind/CSSFontFaceDescriptors.hpp>
 
 namespace webbind {
 

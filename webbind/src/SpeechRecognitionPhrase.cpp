@@ -1,4 +1,4 @@
-#include "webbind/SpeechRecognitionPhrase.hpp"
+#include <webbind/SpeechRecognitionPhrase.hpp>
 
 namespace webbind {
 

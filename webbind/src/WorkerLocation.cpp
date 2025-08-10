@@ -1,4 +1,4 @@
-#include "webbind/WorkerLocation.hpp"
+#include <webbind/WorkerLocation.hpp>
 
 namespace webbind {
 

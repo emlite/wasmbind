@@ -1,9 +1,9 @@
-#include "webbind/GPURenderPipelineDescriptor.hpp"
-#include "webbind/GPUVertexState.hpp"
-#include "webbind/GPUPrimitiveState.hpp"
-#include "webbind/GPUDepthStencilState.hpp"
-#include "webbind/GPUMultisampleState.hpp"
-#include "webbind/GPUFragmentState.hpp"
+#include <webbind/GPURenderPipelineDescriptor.hpp>
+#include <webbind/GPUVertexState.hpp>
+#include <webbind/GPUPrimitiveState.hpp>
+#include <webbind/GPUDepthStencilState.hpp>
+#include <webbind/GPUMultisampleState.hpp>
+#include <webbind/GPUFragmentState.hpp>
 
 using emlite::Val;
 namespace webbind {

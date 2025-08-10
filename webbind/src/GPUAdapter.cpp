@@ -1,9 +1,9 @@
-#include "webbind/GPUAdapter.hpp"
-#include "webbind/GPUSupportedFeatures.hpp"
-#include "webbind/GPUSupportedLimits.hpp"
-#include "webbind/GPUAdapterInfo.hpp"
-#include "webbind/GPUDevice.hpp"
-#include "webbind/GPUDeviceDescriptor.hpp"
+#include <webbind/GPUAdapter.hpp>
+#include <webbind/GPUSupportedFeatures.hpp>
+#include <webbind/GPUSupportedLimits.hpp>
+#include <webbind/GPUAdapterInfo.hpp>
+#include <webbind/GPUDevice.hpp>
+#include <webbind/GPUDeviceDescriptor.hpp>
 
 namespace webbind {
 

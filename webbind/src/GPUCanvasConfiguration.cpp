@@ -1,6 +1,6 @@
-#include "webbind/GPUCanvasConfiguration.hpp"
-#include "webbind/GPUDevice.hpp"
-#include "webbind/GPUCanvasToneMapping.hpp"
+#include <webbind/GPUCanvasConfiguration.hpp>
+#include <webbind/GPUDevice.hpp>
+#include <webbind/GPUCanvasToneMapping.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,4 +1,4 @@
-#include "webbind/HTMLHRElement.hpp"
+#include <webbind/HTMLHRElement.hpp>
 
 namespace webbind {
 

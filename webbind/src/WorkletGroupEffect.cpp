@@ -1,5 +1,5 @@
-#include "webbind/WorkletGroupEffect.hpp"
-#include "webbind/WorkletAnimationEffect.hpp"
+#include <webbind/WorkletGroupEffect.hpp>
+#include <webbind/WorkletAnimationEffect.hpp>
 
 namespace webbind {
 

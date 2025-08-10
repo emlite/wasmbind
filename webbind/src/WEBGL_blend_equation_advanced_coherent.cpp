@@ -1,4 +1,4 @@
-#include "webbind/WEBGL_blend_equation_advanced_coherent.hpp"
+#include <webbind/WEBGL_blend_equation_advanced_coherent.hpp>
 
 namespace webbind {
 

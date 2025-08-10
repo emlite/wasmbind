@@ -1,4 +1,4 @@
-#include "webbind/WebGLProgram.hpp"
+#include <webbind/WebGLProgram.hpp>
 
 namespace webbind {
 

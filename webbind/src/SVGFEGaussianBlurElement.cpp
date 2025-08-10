@@ -1,8 +1,8 @@
-#include "webbind/SVGFEGaussianBlurElement.hpp"
-#include "webbind/SVGAnimatedString.hpp"
-#include "webbind/SVGAnimatedNumber.hpp"
-#include "webbind/SVGAnimatedEnumeration.hpp"
-#include "webbind/SVGAnimatedLength.hpp"
+#include <webbind/SVGFEGaussianBlurElement.hpp>
+#include <webbind/SVGAnimatedString.hpp>
+#include <webbind/SVGAnimatedNumber.hpp>
+#include <webbind/SVGAnimatedEnumeration.hpp>
+#include <webbind/SVGAnimatedLength.hpp>
 
 namespace webbind {
 

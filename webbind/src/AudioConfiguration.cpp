@@ -1,4 +1,4 @@
-#include "webbind/AudioConfiguration.hpp"
+#include <webbind/AudioConfiguration.hpp>
 
 using emlite::Val;
 namespace webbind {

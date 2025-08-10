@@ -1,4 +1,4 @@
-#include "webbind/MediaEncodingConfiguration.hpp"
+#include <webbind/MediaEncodingConfiguration.hpp>
 
 using emlite::Val;
 namespace webbind {

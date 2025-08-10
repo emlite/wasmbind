@@ -1,4 +1,4 @@
-#include "webbind/CSSScopeRule.hpp"
+#include <webbind/CSSScopeRule.hpp>
 
 namespace webbind {
 

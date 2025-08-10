@@ -1,5 +1,5 @@
-#include "webbind/OscillatorOptions.hpp"
-#include "webbind/PeriodicWave.hpp"
+#include <webbind/OscillatorOptions.hpp>
+#include <webbind/PeriodicWave.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,5 +1,5 @@
-#include "webbind/XREquirectLayerInit.hpp"
-#include "webbind/XRRigidTransform.hpp"
+#include <webbind/XREquirectLayerInit.hpp>
+#include <webbind/XRRigidTransform.hpp>
 
 using emlite::Val;
 namespace webbind {

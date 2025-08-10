@@ -1,4 +1,4 @@
-#include "webbind/GPUBufferBindingLayout.hpp"
+#include <webbind/GPUBufferBindingLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

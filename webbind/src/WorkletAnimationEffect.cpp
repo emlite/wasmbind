@@ -1,6 +1,6 @@
-#include "webbind/WorkletAnimationEffect.hpp"
-#include "webbind/EffectTiming.hpp"
-#include "webbind/ComputedEffectTiming.hpp"
+#include <webbind/WorkletAnimationEffect.hpp>
+#include <webbind/EffectTiming.hpp>
+#include <webbind/ComputedEffectTiming.hpp>
 
 namespace webbind {
 

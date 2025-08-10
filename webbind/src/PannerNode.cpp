@@ -1,7 +1,7 @@
-#include "webbind/PannerNode.hpp"
-#include "webbind/BaseAudioContext.hpp"
-#include "webbind/PannerOptions.hpp"
-#include "webbind/AudioParam.hpp"
+#include <webbind/PannerNode.hpp>
+#include <webbind/BaseAudioContext.hpp>
+#include <webbind/PannerOptions.hpp>
+#include <webbind/AudioParam.hpp>
 
 namespace webbind {
 

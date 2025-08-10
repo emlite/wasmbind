@@ -1,7 +1,7 @@
-#include "webbind/DOMImplementation.hpp"
-#include "webbind/DocumentType.hpp"
-#include "webbind/XMLDocument.hpp"
-#include "webbind/Document.hpp"
+#include <webbind/DOMImplementation.hpp>
+#include <webbind/DocumentType.hpp>
+#include <webbind/XMLDocument.hpp>
+#include <webbind/Document.hpp>
 
 namespace webbind {
 

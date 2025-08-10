@@ -1,6 +1,6 @@
-#include "webbind/DocumentPictureInPicture.hpp"
-#include "webbind/Window.hpp"
-#include "webbind/DocumentPictureInPictureOptions.hpp"
+#include <webbind/DocumentPictureInPicture.hpp>
+#include <webbind/Window.hpp>
+#include <webbind/DocumentPictureInPictureOptions.hpp>
 
 namespace webbind {
 

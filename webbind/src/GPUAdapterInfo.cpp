@@ -1,4 +1,4 @@
-#include "webbind/GPUAdapterInfo.hpp"
+#include <webbind/GPUAdapterInfo.hpp>
 
 namespace webbind {
 

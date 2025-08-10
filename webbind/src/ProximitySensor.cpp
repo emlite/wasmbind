@@ -1,5 +1,5 @@
-#include "webbind/ProximitySensor.hpp"
-#include "webbind/SensorOptions.hpp"
+#include <webbind/ProximitySensor.hpp>
+#include <webbind/SensorOptions.hpp>
 
 namespace webbind {
 

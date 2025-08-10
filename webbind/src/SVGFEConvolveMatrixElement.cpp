@@ -1,11 +1,11 @@
-#include "webbind/SVGFEConvolveMatrixElement.hpp"
-#include "webbind/SVGAnimatedString.hpp"
-#include "webbind/SVGAnimatedInteger.hpp"
-#include "webbind/SVGAnimatedNumberList.hpp"
-#include "webbind/SVGAnimatedNumber.hpp"
-#include "webbind/SVGAnimatedEnumeration.hpp"
-#include "webbind/SVGAnimatedBoolean.hpp"
-#include "webbind/SVGAnimatedLength.hpp"
+#include <webbind/SVGFEConvolveMatrixElement.hpp>
+#include <webbind/SVGAnimatedString.hpp>
+#include <webbind/SVGAnimatedInteger.hpp>
+#include <webbind/SVGAnimatedNumberList.hpp>
+#include <webbind/SVGAnimatedNumber.hpp>
+#include <webbind/SVGAnimatedEnumeration.hpp>
+#include <webbind/SVGAnimatedBoolean.hpp>
+#include <webbind/SVGAnimatedLength.hpp>
 
 namespace webbind {
 

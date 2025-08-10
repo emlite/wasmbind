@@ -1,5 +1,5 @@
-#include "webbind/HTMLCollection.hpp"
-#include "webbind/Element.hpp"
+#include <webbind/HTMLCollection.hpp>
+#include <webbind/Element.hpp>
 
 namespace webbind {
 

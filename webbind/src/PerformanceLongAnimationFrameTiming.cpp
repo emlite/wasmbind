@@ -1,5 +1,5 @@
-#include "webbind/PerformanceLongAnimationFrameTiming.hpp"
-#include "webbind/PerformanceScriptTiming.hpp"
+#include <webbind/PerformanceLongAnimationFrameTiming.hpp>
+#include <webbind/PerformanceScriptTiming.hpp>
 
 namespace webbind {
 

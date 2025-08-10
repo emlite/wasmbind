@@ -1,10 +1,10 @@
-#include "webbind/USBDevice.hpp"
-#include "webbind/USBConfiguration.hpp"
-#include "webbind/USBInTransferResult.hpp"
-#include "webbind/USBControlTransferParameters.hpp"
-#include "webbind/USBOutTransferResult.hpp"
-#include "webbind/USBIsochronousInTransferResult.hpp"
-#include "webbind/USBIsochronousOutTransferResult.hpp"
+#include <webbind/USBDevice.hpp>
+#include <webbind/USBConfiguration.hpp>
+#include <webbind/USBInTransferResult.hpp>
+#include <webbind/USBControlTransferParameters.hpp>
+#include <webbind/USBOutTransferResult.hpp>
+#include <webbind/USBIsochronousInTransferResult.hpp>
+#include <webbind/USBIsochronousOutTransferResult.hpp>
 
 namespace webbind {
 

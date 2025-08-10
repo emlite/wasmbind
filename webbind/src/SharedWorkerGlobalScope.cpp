@@ -1,4 +1,4 @@
-#include "webbind/SharedWorkerGlobalScope.hpp"
+#include <webbind/SharedWorkerGlobalScope.hpp>
 
 namespace webbind {
 

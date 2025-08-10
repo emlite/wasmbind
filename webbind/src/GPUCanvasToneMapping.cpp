@@ -1,4 +1,4 @@
-#include "webbind/GPUCanvasToneMapping.hpp"
+#include <webbind/GPUCanvasToneMapping.hpp>
 
 using emlite::Val;
 namespace webbind {

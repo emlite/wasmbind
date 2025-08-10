@@ -1,4 +1,4 @@
-#include "webbind/GPUCommandBufferDescriptor.hpp"
+#include <webbind/GPUCommandBufferDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

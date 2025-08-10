@@ -1,4 +1,4 @@
-#include "webbind/WebGLActiveInfo.hpp"
+#include <webbind/WebGLActiveInfo.hpp>
 
 namespace webbind {
 

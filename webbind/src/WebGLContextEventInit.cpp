@@ -1,4 +1,4 @@
-#include "webbind/WebGLContextEventInit.hpp"
+#include <webbind/WebGLContextEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

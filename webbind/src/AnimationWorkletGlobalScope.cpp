@@ -1,4 +1,4 @@
-#include "webbind/AnimationWorkletGlobalScope.hpp"
+#include <webbind/AnimationWorkletGlobalScope.hpp>
 
 namespace webbind {
 

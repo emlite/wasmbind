@@ -1,4 +1,4 @@
-#include "webbind/GPUError.hpp"
+#include <webbind/GPUError.hpp>
 
 namespace webbind {
 

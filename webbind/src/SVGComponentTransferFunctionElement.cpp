@@ -1,7 +1,7 @@
-#include "webbind/SVGComponentTransferFunctionElement.hpp"
-#include "webbind/SVGAnimatedEnumeration.hpp"
-#include "webbind/SVGAnimatedNumberList.hpp"
-#include "webbind/SVGAnimatedNumber.hpp"
+#include <webbind/SVGComponentTransferFunctionElement.hpp>
+#include <webbind/SVGAnimatedEnumeration.hpp>
+#include <webbind/SVGAnimatedNumberList.hpp>
+#include <webbind/SVGAnimatedNumber.hpp>
 
 namespace webbind {
 

@@ -1,5 +1,5 @@
-#include "webbind/GPUUncapturedErrorEventInit.hpp"
-#include "webbind/GPUError.hpp"
+#include <webbind/GPUUncapturedErrorEventInit.hpp>
+#include <webbind/GPUError.hpp>
 
 using emlite::Val;
 namespace webbind {

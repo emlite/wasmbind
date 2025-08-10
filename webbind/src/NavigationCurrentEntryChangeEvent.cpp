@@ -1,6 +1,6 @@
-#include "webbind/NavigationCurrentEntryChangeEvent.hpp"
-#include "webbind/NavigationCurrentEntryChangeEventInit.hpp"
-#include "webbind/NavigationHistoryEntry.hpp"
+#include <webbind/NavigationCurrentEntryChangeEvent.hpp>
+#include <webbind/NavigationCurrentEntryChangeEventInit.hpp>
+#include <webbind/NavigationHistoryEntry.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/WebGLVertexArrayObjectOES.hpp"
+#include <webbind/WebGLVertexArrayObjectOES.hpp>
 
 namespace webbind {
 

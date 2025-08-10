@@ -1,4 +1,4 @@
-#include "webbind/ContentVisibilityAutoStateChangeEventInit.hpp"
+#include <webbind/ContentVisibilityAutoStateChangeEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

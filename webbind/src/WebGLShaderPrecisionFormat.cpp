@@ -1,4 +1,4 @@
-#include "webbind/WebGLShaderPrecisionFormat.hpp"
+#include <webbind/WebGLShaderPrecisionFormat.hpp>
 
 namespace webbind {
 

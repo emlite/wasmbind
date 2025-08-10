@@ -1,4 +1,4 @@
-#include "webbind/SVGSwitchElement.hpp"
+#include <webbind/SVGSwitchElement.hpp>
 
 namespace webbind {
 

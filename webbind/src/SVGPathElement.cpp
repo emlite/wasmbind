@@ -1,8 +1,8 @@
-#include "webbind/SVGPathElement.hpp"
-#include "webbind/SVGAnimatedNumber.hpp"
-#include "webbind/DOMPoint.hpp"
-#include "webbind/SVGPathSegment.hpp"
-#include "webbind/SVGPathDataSettings.hpp"
+#include <webbind/SVGPathElement.hpp>
+#include <webbind/SVGAnimatedNumber.hpp>
+#include <webbind/DOMPoint.hpp>
+#include <webbind/SVGPathSegment.hpp>
+#include <webbind/SVGPathDataSettings.hpp>
 
 namespace webbind {
 

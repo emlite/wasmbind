@@ -1,6 +1,6 @@
-#include "webbind/SpeechSynthesis.hpp"
-#include "webbind/SpeechSynthesisUtterance.hpp"
-#include "webbind/SpeechSynthesisVoice.hpp"
+#include <webbind/SpeechSynthesis.hpp>
+#include <webbind/SpeechSynthesisUtterance.hpp>
+#include <webbind/SpeechSynthesisVoice.hpp>
 
 namespace webbind {
 

@@ -1,5 +1,5 @@
-#include "webbind/CSSStyleDeclaration.hpp"
-#include "webbind/CSSRule.hpp"
+#include <webbind/CSSStyleDeclaration.hpp>
+#include <webbind/CSSRule.hpp>
 
 namespace webbind {
 

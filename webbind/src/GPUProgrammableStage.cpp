@@ -1,5 +1,5 @@
-#include "webbind/GPUProgrammableStage.hpp"
-#include "webbind/GPUShaderModule.hpp"
+#include <webbind/GPUProgrammableStage.hpp>
+#include <webbind/GPUShaderModule.hpp>
 
 using emlite::Val;
 namespace webbind {

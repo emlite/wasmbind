@@ -1,6 +1,6 @@
-#include "webbind/GPUCanvasContext.hpp"
-#include "webbind/GPUCanvasConfiguration.hpp"
-#include "webbind/GPUTexture.hpp"
+#include <webbind/GPUCanvasContext.hpp>
+#include <webbind/GPUCanvasConfiguration.hpp>
+#include <webbind/GPUTexture.hpp>
 
 namespace webbind {
 

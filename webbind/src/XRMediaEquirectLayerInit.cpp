@@ -1,5 +1,5 @@
-#include "webbind/XRMediaEquirectLayerInit.hpp"
-#include "webbind/XRRigidTransform.hpp"
+#include <webbind/XRMediaEquirectLayerInit.hpp>
+#include <webbind/XRRigidTransform.hpp>
 
 using emlite::Val;
 namespace webbind {

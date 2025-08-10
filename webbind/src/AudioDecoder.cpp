@@ -1,8 +1,8 @@
-#include "webbind/AudioDecoder.hpp"
-#include "webbind/AudioDecoderInit.hpp"
-#include "webbind/AudioDecoderConfig.hpp"
-#include "webbind/EncodedAudioChunk.hpp"
-#include "webbind/AudioDecoderSupport.hpp"
+#include <webbind/AudioDecoder.hpp>
+#include <webbind/AudioDecoderInit.hpp>
+#include <webbind/AudioDecoderConfig.hpp>
+#include <webbind/EncodedAudioChunk.hpp>
+#include <webbind/AudioDecoderSupport.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/InterestGroupReportingScriptRunnerGlobalScope.hpp"
+#include <webbind/InterestGroupReportingScriptRunnerGlobalScope.hpp>
 
 namespace webbind {
 

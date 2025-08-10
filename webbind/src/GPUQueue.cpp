@@ -1,10 +1,10 @@
-#include "webbind/GPUQueue.hpp"
-#include "webbind/GPUCommandBuffer.hpp"
-#include "webbind/GPUBuffer.hpp"
-#include "webbind/GPUTexelCopyTextureInfo.hpp"
-#include "webbind/GPUTexelCopyBufferLayout.hpp"
-#include "webbind/GPUCopyExternalImageSourceInfo.hpp"
-#include "webbind/GPUCopyExternalImageDestInfo.hpp"
+#include <webbind/GPUQueue.hpp>
+#include <webbind/GPUCommandBuffer.hpp>
+#include <webbind/GPUBuffer.hpp>
+#include <webbind/GPUTexelCopyTextureInfo.hpp>
+#include <webbind/GPUTexelCopyBufferLayout.hpp>
+#include <webbind/GPUCopyExternalImageSourceInfo.hpp>
+#include <webbind/GPUCopyExternalImageDestInfo.hpp>
 
 namespace webbind {
 

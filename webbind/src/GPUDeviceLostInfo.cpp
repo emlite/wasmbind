@@ -1,4 +1,4 @@
-#include "webbind/GPUDeviceLostInfo.hpp"
+#include <webbind/GPUDeviceLostInfo.hpp>
 
 namespace webbind {
 

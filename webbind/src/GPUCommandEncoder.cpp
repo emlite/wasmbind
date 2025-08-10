@@ -1,14 +1,14 @@
-#include "webbind/GPUCommandEncoder.hpp"
-#include "webbind/GPURenderPassEncoder.hpp"
-#include "webbind/GPURenderPassDescriptor.hpp"
-#include "webbind/GPUComputePassEncoder.hpp"
-#include "webbind/GPUComputePassDescriptor.hpp"
-#include "webbind/GPUBuffer.hpp"
-#include "webbind/GPUTexelCopyBufferInfo.hpp"
-#include "webbind/GPUTexelCopyTextureInfo.hpp"
-#include "webbind/GPUQuerySet.hpp"
-#include "webbind/GPUCommandBuffer.hpp"
-#include "webbind/GPUCommandBufferDescriptor.hpp"
+#include <webbind/GPUCommandEncoder.hpp>
+#include <webbind/GPURenderPassEncoder.hpp>
+#include <webbind/GPURenderPassDescriptor.hpp>
+#include <webbind/GPUComputePassEncoder.hpp>
+#include <webbind/GPUComputePassDescriptor.hpp>
+#include <webbind/GPUBuffer.hpp>
+#include <webbind/GPUTexelCopyBufferInfo.hpp>
+#include <webbind/GPUTexelCopyTextureInfo.hpp>
+#include <webbind/GPUQuerySet.hpp>
+#include <webbind/GPUCommandBuffer.hpp>
+#include <webbind/GPUCommandBufferDescriptor.hpp>
 
 namespace webbind {
 

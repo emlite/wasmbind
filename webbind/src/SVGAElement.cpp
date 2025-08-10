@@ -1,6 +1,6 @@
-#include "webbind/SVGAElement.hpp"
-#include "webbind/SVGAnimatedString.hpp"
-#include "webbind/DOMTokenList.hpp"
+#include <webbind/SVGAElement.hpp>
+#include <webbind/SVGAnimatedString.hpp>
+#include <webbind/DOMTokenList.hpp>
 
 namespace webbind {
 

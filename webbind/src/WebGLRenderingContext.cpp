@@ -1,5 +1,5 @@
-#include "webbind/WebGLRenderingContext.hpp"
-#include "webbind/WebGLUniformLocation.hpp"
+#include <webbind/WebGLRenderingContext.hpp>
+#include <webbind/WebGLUniformLocation.hpp>
 
 namespace webbind {
 

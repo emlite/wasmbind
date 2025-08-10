@@ -1,4 +1,4 @@
-#include "webbind/PeriodicSyncEventInit.hpp"
+#include <webbind/PeriodicSyncEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

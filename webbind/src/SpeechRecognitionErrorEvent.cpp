@@ -1,5 +1,5 @@
-#include "webbind/SpeechRecognitionErrorEvent.hpp"
-#include "webbind/SpeechRecognitionErrorEventInit.hpp"
+#include <webbind/SpeechRecognitionErrorEvent.hpp>
+#include <webbind/SpeechRecognitionErrorEventInit.hpp>
 
 namespace webbind {
 

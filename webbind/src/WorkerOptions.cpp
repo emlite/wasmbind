@@ -1,4 +1,4 @@
-#include "webbind/WorkerOptions.hpp"
+#include <webbind/WorkerOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

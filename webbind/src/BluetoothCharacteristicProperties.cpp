@@ -1,4 +1,4 @@
-#include "webbind/BluetoothCharacteristicProperties.hpp"
+#include <webbind/BluetoothCharacteristicProperties.hpp>
 
 namespace webbind {
 

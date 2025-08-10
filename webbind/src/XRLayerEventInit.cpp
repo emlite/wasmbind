@@ -1,5 +1,5 @@
-#include "webbind/XRLayerEventInit.hpp"
-#include "webbind/XRLayer.hpp"
+#include <webbind/XRLayerEventInit.hpp>
+#include <webbind/XRLayer.hpp>
 
 using emlite::Val;
 namespace webbind {

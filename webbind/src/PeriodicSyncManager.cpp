@@ -1,5 +1,5 @@
-#include "webbind/PeriodicSyncManager.hpp"
-#include "webbind/BackgroundSyncOptions.hpp"
+#include <webbind/PeriodicSyncManager.hpp>
+#include <webbind/BackgroundSyncOptions.hpp>
 
 namespace webbind {
 

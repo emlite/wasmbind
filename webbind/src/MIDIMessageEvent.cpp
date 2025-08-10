@@ -1,5 +1,5 @@
-#include "webbind/MIDIMessageEvent.hpp"
-#include "webbind/MIDIMessageEventInit.hpp"
+#include <webbind/MIDIMessageEvent.hpp>
+#include <webbind/MIDIMessageEventInit.hpp>
 
 namespace webbind {
 

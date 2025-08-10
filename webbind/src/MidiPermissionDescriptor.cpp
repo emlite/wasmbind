@@ -1,4 +1,4 @@
-#include "webbind/MidiPermissionDescriptor.hpp"
+#include <webbind/MidiPermissionDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

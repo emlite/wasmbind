@@ -1,5 +1,5 @@
-#include "webbind/EXT_disjoint_timer_query_webgl2.hpp"
-#include "webbind/WebGLQuery.hpp"
+#include <webbind/EXT_disjoint_timer_query_webgl2.hpp>
+#include <webbind/WebGLQuery.hpp>
 
 namespace webbind {
 

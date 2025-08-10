@@ -1,6 +1,6 @@
-#include "webbind/SequenceEffect.hpp"
-#include "webbind/AnimationEffect.hpp"
-#include "webbind/SequenceEffect.hpp"
+#include <webbind/SequenceEffect.hpp>
+#include <webbind/AnimationEffect.hpp>
+#include <webbind/SequenceEffect.hpp>
 
 namespace webbind {
 

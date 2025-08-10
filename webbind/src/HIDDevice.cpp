@@ -1,5 +1,5 @@
-#include "webbind/HIDDevice.hpp"
-#include "webbind/HIDCollectionInfo.hpp"
+#include <webbind/HIDDevice.hpp>
+#include <webbind/HIDCollectionInfo.hpp>
 
 namespace webbind {
 

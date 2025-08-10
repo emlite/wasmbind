@@ -1,4 +1,4 @@
-#include "webbind/GPUExtent3DDict.hpp"
+#include <webbind/GPUExtent3DDict.hpp>
 
 using emlite::Val;
 namespace webbind {

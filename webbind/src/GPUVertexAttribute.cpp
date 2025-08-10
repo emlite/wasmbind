@@ -1,4 +1,4 @@
-#include "webbind/GPUVertexAttribute.hpp"
+#include <webbind/GPUVertexAttribute.hpp>
 
 using emlite::Val;
 namespace webbind {

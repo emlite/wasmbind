@@ -1,4 +1,4 @@
-#include "webbind/GPUSamplerDescriptor.hpp"
+#include <webbind/GPUSamplerDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,5 +1,5 @@
-#include "webbind/GPUCompilationInfo.hpp"
-#include "webbind/GPUCompilationMessage.hpp"
+#include <webbind/GPUCompilationInfo.hpp>
+#include <webbind/GPUCompilationMessage.hpp>
 
 namespace webbind {
 

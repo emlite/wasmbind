@@ -1,8 +1,8 @@
-#include "webbind/GPURenderPassDescriptor.hpp"
-#include "webbind/GPURenderPassColorAttachment.hpp"
-#include "webbind/GPURenderPassDepthStencilAttachment.hpp"
-#include "webbind/GPUQuerySet.hpp"
-#include "webbind/GPURenderPassTimestampWrites.hpp"
+#include <webbind/GPURenderPassDescriptor.hpp>
+#include <webbind/GPURenderPassColorAttachment.hpp>
+#include <webbind/GPURenderPassDepthStencilAttachment.hpp>
+#include <webbind/GPUQuerySet.hpp>
+#include <webbind/GPURenderPassTimestampWrites.hpp>
 
 using emlite::Val;
 namespace webbind {

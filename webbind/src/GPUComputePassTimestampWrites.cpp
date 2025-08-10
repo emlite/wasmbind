@@ -1,5 +1,5 @@
-#include "webbind/GPUComputePassTimestampWrites.hpp"
-#include "webbind/GPUQuerySet.hpp"
+#include <webbind/GPUComputePassTimestampWrites.hpp>
+#include <webbind/GPUQuerySet.hpp>
 
 using emlite::Val;
 namespace webbind {

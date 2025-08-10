@@ -1,4 +1,4 @@
-#include "webbind/WebGLShader.hpp"
+#include <webbind/WebGLShader.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/GPUTextureBindingLayout.hpp"
+#include <webbind/GPUTextureBindingLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

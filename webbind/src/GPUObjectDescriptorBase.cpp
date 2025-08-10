@@ -1,4 +1,4 @@
-#include "webbind/GPUObjectDescriptorBase.hpp"
+#include <webbind/GPUObjectDescriptorBase.hpp>
 
 using emlite::Val;
 namespace webbind {

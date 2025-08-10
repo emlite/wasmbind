@@ -1,4 +1,4 @@
-#include "webbind/WEBGL_provoking_vertex.hpp"
+#include <webbind/WEBGL_provoking_vertex.hpp>
 
 namespace webbind {
 

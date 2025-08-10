@@ -32,14 +32,12 @@ export function refNames(member) {
   else if (member.type === "operation") {
     scan(member.idlType);
     member.arguments.forEach((a) => scan(a.idlType));
-  }
-  else if (member.type === "constructor") {
+  } else if (member.type === "constructor") {
     scan(member.idlType);
     if (member.arguments) {
       member.arguments.forEach((a) => scan(a.idlType));
     }
-  }
-  else if (member.type === "field") {
+  } else if (member.type === "field") {
     scan(member.idlType);
   }
   return out;

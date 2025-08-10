@@ -1,8 +1,8 @@
-#include "webbind/SVGFEColorMatrixElement.hpp"
-#include "webbind/SVGAnimatedString.hpp"
-#include "webbind/SVGAnimatedEnumeration.hpp"
-#include "webbind/SVGAnimatedNumberList.hpp"
-#include "webbind/SVGAnimatedLength.hpp"
+#include <webbind/SVGFEColorMatrixElement.hpp>
+#include <webbind/SVGAnimatedString.hpp>
+#include <webbind/SVGAnimatedEnumeration.hpp>
+#include <webbind/SVGAnimatedNumberList.hpp>
+#include <webbind/SVGAnimatedLength.hpp>
 
 namespace webbind {
 

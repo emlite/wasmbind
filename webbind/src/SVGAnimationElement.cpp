@@ -1,5 +1,5 @@
-#include "webbind/SVGAnimationElement.hpp"
-#include "webbind/SVGStringList.hpp"
+#include <webbind/SVGAnimationElement.hpp>
+#include <webbind/SVGStringList.hpp>
 
 namespace webbind {
 

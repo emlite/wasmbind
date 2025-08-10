@@ -1,14 +1,14 @@
-#include "webbind/WebGL2RenderingContext.hpp"
-#include "webbind/WebGLTexture.hpp"
-#include "webbind/WebGLProgram.hpp"
-#include "webbind/WebGLUniformLocation.hpp"
-#include "webbind/WebGLQuery.hpp"
-#include "webbind/WebGLSampler.hpp"
-#include "webbind/WebGLSync.hpp"
-#include "webbind/WebGLTransformFeedback.hpp"
-#include "webbind/WebGLActiveInfo.hpp"
-#include "webbind/WebGLBuffer.hpp"
-#include "webbind/WebGLVertexArrayObject.hpp"
+#include <webbind/WebGL2RenderingContext.hpp>
+#include <webbind/WebGLTexture.hpp>
+#include <webbind/WebGLProgram.hpp>
+#include <webbind/WebGLUniformLocation.hpp>
+#include <webbind/WebGLQuery.hpp>
+#include <webbind/WebGLSampler.hpp>
+#include <webbind/WebGLSync.hpp>
+#include <webbind/WebGLTransformFeedback.hpp>
+#include <webbind/WebGLActiveInfo.hpp>
+#include <webbind/WebGLBuffer.hpp>
+#include <webbind/WebGLVertexArrayObject.hpp>
 
 namespace webbind {
 

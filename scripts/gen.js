@@ -9,14 +9,15 @@ import { setDictionaryRegistry } from "./utils.js";
 
 export function generate(specAst) {
   // Parse the WebIDL specifications
-  const { interfaces, mixins, includeRel, dicts, namespaces } = parseSpecs(specAst);
-  
+  const { interfaces, mixins, includeRel, dicts, namespaces } =
+    parseSpecs(specAst);
+
   // Register dictionaries for the cpp() function
   setDictionaryRegistry(dicts);
-  
+
   // Process interfaces (merge partials, includes, etc.)
   const processedInterfaces = processInterfaces(interfaces, mixins, includeRel);
-  
+
   // Create dependency resolver
   const resolver = new DependencyResolver(processedInterfaces, dicts, enums);
   resolver.prepare();
@@ -33,7 +34,10 @@ export function generate(specAst) {
   for (const dictName of resolver.dictOrdered) {
     const dict = dicts.get(dictName);
     if (dict) {
-      const dependencies = resolver.resolveDictionaryDependencies(dictName, dict);
+      const dependencies = resolver.resolveDictionaryDependencies(
+        dictName,
+        dict
+      );
       generateDictionary(dictName, dict, dependencies);
     }
   }
@@ -46,10 +50,10 @@ export function generate(specAst) {
     }
 
     const dependencies = resolver.resolveInterfaceDependencies(
-      interfaceName, 
+      interfaceName,
       interfaceRec.members
     );
-    
+
     generateInterface(interfaceName, interfaceRec, dependencies);
   }
 

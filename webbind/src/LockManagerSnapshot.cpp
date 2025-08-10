@@ -1,5 +1,5 @@
-#include "webbind/LockManagerSnapshot.hpp"
-#include "webbind/LockInfo.hpp"
+#include <webbind/LockManagerSnapshot.hpp>
+#include <webbind/LockInfo.hpp>
 
 using emlite::Val;
 namespace webbind {

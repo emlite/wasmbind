@@ -1,4 +1,4 @@
-#include "webbind/GlobalDescriptor.hpp"
+#include <webbind/GlobalDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

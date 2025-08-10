@@ -1,7 +1,7 @@
-#include "webbind/GPUComputePassEncoder.hpp"
-#include "webbind/GPUComputePipeline.hpp"
-#include "webbind/GPUBuffer.hpp"
-#include "webbind/GPUBindGroup.hpp"
+#include <webbind/GPUComputePassEncoder.hpp>
+#include <webbind/GPUComputePipeline.hpp>
+#include <webbind/GPUBuffer.hpp>
+#include <webbind/GPUBindGroup.hpp>
 
 namespace webbind {
 

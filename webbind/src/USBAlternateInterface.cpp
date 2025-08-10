@@ -1,6 +1,6 @@
-#include "webbind/USBAlternateInterface.hpp"
-#include "webbind/USBInterface.hpp"
-#include "webbind/USBEndpoint.hpp"
+#include <webbind/USBAlternateInterface.hpp>
+#include <webbind/USBInterface.hpp>
+#include <webbind/USBEndpoint.hpp>
 
 namespace webbind {
 

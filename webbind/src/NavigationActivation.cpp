@@ -1,5 +1,5 @@
-#include "webbind/NavigationActivation.hpp"
-#include "webbind/NavigationHistoryEntry.hpp"
+#include <webbind/NavigationActivation.hpp>
+#include <webbind/NavigationHistoryEntry.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/SVGPathSegment.hpp"
+#include <webbind/SVGPathSegment.hpp>
 
 namespace webbind {
 

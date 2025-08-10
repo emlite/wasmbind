@@ -1,5 +1,5 @@
-#include "webbind/GPUPipelineError.hpp"
-#include "webbind/GPUPipelineErrorInit.hpp"
+#include <webbind/GPUPipelineError.hpp>
+#include <webbind/GPUPipelineErrorInit.hpp>
 
 namespace webbind {
 

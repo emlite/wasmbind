@@ -1,4 +1,4 @@
-#include "webbind/PAHistogramContribution.hpp"
+#include <webbind/PAHistogramContribution.hpp>
 
 using emlite::Val;
 namespace webbind {

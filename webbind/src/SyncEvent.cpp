@@ -1,5 +1,5 @@
-#include "webbind/SyncEvent.hpp"
-#include "webbind/SyncEventInit.hpp"
+#include <webbind/SyncEvent.hpp>
+#include <webbind/SyncEventInit.hpp>
 
 namespace webbind {
 

@@ -1,5 +1,5 @@
-#include "webbind/NavigationEventInit.hpp"
-#include "webbind/EventTarget.hpp"
+#include <webbind/NavigationEventInit.hpp>
+#include <webbind/EventTarget.hpp>
 
 using emlite::Val;
 namespace webbind {

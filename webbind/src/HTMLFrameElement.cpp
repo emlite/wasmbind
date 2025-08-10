@@ -1,5 +1,5 @@
-#include "webbind/HTMLFrameElement.hpp"
-#include "webbind/Document.hpp"
+#include <webbind/HTMLFrameElement.hpp>
+#include <webbind/Document.hpp>
 
 namespace webbind {
 

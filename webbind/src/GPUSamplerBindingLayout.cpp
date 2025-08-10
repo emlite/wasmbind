@@ -1,4 +1,4 @@
-#include "webbind/GPUSamplerBindingLayout.hpp"
+#include <webbind/GPUSamplerBindingLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

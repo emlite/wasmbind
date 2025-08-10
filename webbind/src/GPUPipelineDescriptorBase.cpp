@@ -1,4 +1,4 @@
-#include "webbind/GPUPipelineDescriptorBase.hpp"
+#include <webbind/GPUPipelineDescriptorBase.hpp>
 
 using emlite::Val;
 namespace webbind {

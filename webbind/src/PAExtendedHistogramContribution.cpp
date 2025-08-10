@@ -1,4 +1,4 @@
-#include "webbind/PAExtendedHistogramContribution.hpp"
+#include <webbind/PAExtendedHistogramContribution.hpp>
 
 using emlite::Val;
 namespace webbind {

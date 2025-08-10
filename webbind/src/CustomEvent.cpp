@@ -1,5 +1,5 @@
-#include "webbind/CustomEvent.hpp"
-#include "webbind/CustomEventInit.hpp"
+#include <webbind/CustomEvent.hpp>
+#include <webbind/CustomEventInit.hpp>
 
 namespace webbind {
 

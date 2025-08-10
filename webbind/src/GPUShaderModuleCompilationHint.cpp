@@ -1,4 +1,4 @@
-#include "webbind/GPUShaderModuleCompilationHint.hpp"
+#include <webbind/GPUShaderModuleCompilationHint.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,4 +1,4 @@
-#include "webbind/VideoConfiguration.hpp"
+#include <webbind/VideoConfiguration.hpp>
 
 using emlite::Val;
 namespace webbind {

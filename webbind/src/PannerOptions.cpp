@@ -1,4 +1,4 @@
-#include "webbind/PannerOptions.hpp"
+#include <webbind/PannerOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

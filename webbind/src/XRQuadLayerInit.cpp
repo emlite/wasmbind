@@ -1,5 +1,5 @@
-#include "webbind/XRQuadLayerInit.hpp"
-#include "webbind/XRRigidTransform.hpp"
+#include <webbind/XRQuadLayerInit.hpp>
+#include <webbind/XRRigidTransform.hpp>
 
 using emlite::Val;
 namespace webbind {

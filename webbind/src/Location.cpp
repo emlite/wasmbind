@@ -1,5 +1,5 @@
-#include "webbind/Location.hpp"
-#include "webbind/DOMStringList.hpp"
+#include <webbind/Location.hpp>
+#include <webbind/DOMStringList.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/LanguageDetectorCreateCoreOptions.hpp"
+#include <webbind/LanguageDetectorCreateCoreOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

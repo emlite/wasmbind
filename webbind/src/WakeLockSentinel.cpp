@@ -1,4 +1,4 @@
-#include "webbind/WakeLockSentinel.hpp"
+#include <webbind/WakeLockSentinel.hpp>
 
 namespace webbind {
 

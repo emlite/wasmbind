@@ -1,4 +1,4 @@
-#include "webbind/VideoPlaybackQuality.hpp"
+#include <webbind/VideoPlaybackQuality.hpp>
 
 namespace webbind {
 

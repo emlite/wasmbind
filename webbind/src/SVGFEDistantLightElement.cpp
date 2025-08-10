@@ -1,5 +1,5 @@
-#include "webbind/SVGFEDistantLightElement.hpp"
-#include "webbind/SVGAnimatedNumber.hpp"
+#include <webbind/SVGFEDistantLightElement.hpp>
+#include <webbind/SVGAnimatedNumber.hpp>
 
 namespace webbind {
 

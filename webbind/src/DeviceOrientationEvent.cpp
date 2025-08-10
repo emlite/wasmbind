@@ -1,5 +1,5 @@
-#include "webbind/DeviceOrientationEvent.hpp"
-#include "webbind/DeviceOrientationEventInit.hpp"
+#include <webbind/DeviceOrientationEvent.hpp>
+#include <webbind/DeviceOrientationEventInit.hpp>
 
 namespace webbind {
 

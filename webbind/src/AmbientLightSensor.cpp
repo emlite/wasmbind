@@ -1,5 +1,5 @@
-#include "webbind/AmbientLightSensor.hpp"
-#include "webbind/SensorOptions.hpp"
+#include <webbind/AmbientLightSensor.hpp>
+#include <webbind/SensorOptions.hpp>
 
 namespace webbind {
 

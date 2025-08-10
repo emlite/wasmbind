@@ -1,4 +1,4 @@
-#include "webbind/WEBGL_depth_texture.hpp"
+#include <webbind/WEBGL_depth_texture.hpp>
 
 namespace webbind {
 

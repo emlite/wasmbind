@@ -1,5 +1,5 @@
-#include "webbind/ErrorEvent.hpp"
-#include "webbind/ErrorEventInit.hpp"
+#include <webbind/ErrorEvent.hpp>
+#include <webbind/ErrorEventInit.hpp>
 
 namespace webbind {
 

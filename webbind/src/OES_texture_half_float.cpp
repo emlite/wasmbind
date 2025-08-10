@@ -1,4 +1,4 @@
-#include "webbind/OES_texture_half_float.hpp"
+#include <webbind/OES_texture_half_float.hpp>
 
 namespace webbind {
 

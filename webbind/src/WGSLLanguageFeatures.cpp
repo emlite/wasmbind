@@ -1,4 +1,4 @@
-#include "webbind/WGSLLanguageFeatures.hpp"
+#include <webbind/WGSLLanguageFeatures.hpp>
 
 namespace webbind {
 

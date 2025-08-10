@@ -1,4 +1,4 @@
-#include "webbind/SVGAnimatedInteger.hpp"
+#include <webbind/SVGAnimatedInteger.hpp>
 
 namespace webbind {
 

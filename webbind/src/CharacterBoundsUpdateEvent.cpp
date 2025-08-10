@@ -1,5 +1,5 @@
-#include "webbind/CharacterBoundsUpdateEvent.hpp"
-#include "webbind/CharacterBoundsUpdateEventInit.hpp"
+#include <webbind/CharacterBoundsUpdateEvent.hpp>
+#include <webbind/CharacterBoundsUpdateEventInit.hpp>
 
 namespace webbind {
 

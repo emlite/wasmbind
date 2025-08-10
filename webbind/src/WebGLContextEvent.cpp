@@ -1,5 +1,5 @@
-#include "webbind/WebGLContextEvent.hpp"
-#include "webbind/WebGLContextEventInit.hpp"
+#include <webbind/WebGLContextEvent.hpp>
+#include <webbind/WebGLContextEventInit.hpp>
 
 namespace webbind {
 

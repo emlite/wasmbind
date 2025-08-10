@@ -6,9 +6,9 @@ import { embedLocalDictionaries } from "./dictionary-generator.js";
 
 export function generateInterface(interfaceName, interfaceRec, dependencies) {
   const { fwd, srcInc, hdrInc, localEnums, localDicts } = dependencies;
-  
+
   let parent = interfaceRec.base?.inheritance || null;
-  
+
   // Build header file
   const hdr = [];
   hdr.push(
@@ -16,35 +16,35 @@ export function generateInterface(interfaceName, interfaceRec, dependencies) {
     "",
     "#include <emlite/emlite.hpp>",
     "#include <jsbind/jsbind.hpp>",
-    "#include \"enums.hpp\"",
+    '#include "enums.hpp"'
   );
-  
+
   // Add parent include if needed
   if (parent) {
     hdr.push(`#include "${parent}.hpp"`);
   }
-  
+
   // Add other header includes
-  hdrInc.forEach(inc => {
+  hdrInc.forEach((inc) => {
     if (inc !== `"${parent}.hpp"`) {
       hdr.push(`#include ${inc}`);
     }
   });
-  
+
   // Add enums include if needed
   const usesEnums = localEnums.size > 0;
   if (usesEnums) {
     hdr.push('#include "enums.hpp"');
   }
-  
+
   hdr.push("", "namespace webbind {", "");
-  
+
   // Forward declarations
-  fwd.forEach(type => {
+  fwd.forEach((type) => {
     hdr.push(`class ${type};`);
   });
   if (fwd.size > 0) hdr.push("");
-  
+
   // Embed local dictionaries first (they might be referenced by the interface)
   const dictHdr = [];
   const dictSrc = [];
@@ -82,7 +82,7 @@ export function generateInterface(interfaceName, interfaceRec, dependencies) {
 
   // Collect member implementations for source file
   const memberSrc = [];
-  
+
   // Generate members (attributes, operations, constructors)
   interfaceRec.members.forEach((m) => {
     const isStatic = m.static === true || m.special === "static";
@@ -103,35 +103,33 @@ export function generateInterface(interfaceName, interfaceRec, dependencies) {
       memberSrc.push(...S);
     }
   });
-  
+
   hdr.push("};", "", "} // namespace webbind");
-  
+
   // Build source file
   const src = [];
-  src.push(
-    `#include "webbind/${interfaceName}.hpp"`
-  );
-  
+  src.push(`#include <webbind/${interfaceName}.hpp>`);
+
   // Add source includes
-  srcInc.forEach(inc => {
-    src.push(`#include "webbind/${inc}"`);
+  srcInc.forEach((inc) => {
+    src.push(`#include <webbind/${inc}>`);
   });
-  
-  src.push(
-    "",
-    "namespace webbind {", 
-    ""
-  );
-  
+
+  src.push("", "namespace webbind {", "");
+
   // Add dictionary implementations
   src.push(...dictSrc);
-  
+
   // Add basic interface implementation
   src.push(`${interfaceName} ${interfaceName}::take_ownership(Handle h) noexcept {
         return ${interfaceName}(h);
     }`);
-  src.push(`${interfaceName} ${interfaceName}::clone() const noexcept { return *this; }`);
-  src.push(`emlite::Val ${interfaceName}::instance() noexcept { return emlite::Val::global("${interfaceName}"); }`);
+  src.push(
+    `${interfaceName} ${interfaceName}::clone() const noexcept { return *this; }`
+  );
+  src.push(
+    `emlite::Val ${interfaceName}::instance() noexcept { return emlite::Val::global("${interfaceName}"); }`
+  );
   src.push(
     `${interfaceName}::${interfaceName}(Handle h) noexcept : ${parent}(emlite::Val::take_ownership(h)) {}`
   );
@@ -139,19 +137,19 @@ export function generateInterface(interfaceName, interfaceRec, dependencies) {
     `${interfaceName}::${interfaceName}(const emlite::Val &val) noexcept: ${parent}(val) {}`,
     ""
   );
-  
+
   // Add member implementations
   src.push(...memberSrc);
-  
+
   src.push("", "} // namespace webbind");
-  
+
   // Ensure directories exist
   mkdirSync(OUT_INC, { recursive: true });
   mkdirSync(OUT_SRC, { recursive: true });
-  
+
   // Write the files
   writeFileSync(path.join(OUT_INC, `${interfaceName}.hpp`), hdr.join("\n"));
   writeFileSync(path.join(OUT_SRC, `${interfaceName}.cpp`), src.join("\n"));
-  
+
   console.log(`Generated interface: ${interfaceName}`);
 }

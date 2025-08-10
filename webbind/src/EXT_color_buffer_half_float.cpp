@@ -1,4 +1,4 @@
-#include "webbind/EXT_color_buffer_half_float.hpp"
+#include <webbind/EXT_color_buffer_half_float.hpp>
 
 namespace webbind {
 

@@ -1,5 +1,5 @@
-#include "webbind/Magnetometer.hpp"
-#include "webbind/MagnetometerSensorOptions.hpp"
+#include <webbind/Magnetometer.hpp>
+#include <webbind/MagnetometerSensorOptions.hpp>
 
 namespace webbind {
 

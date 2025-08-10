@@ -1,5 +1,5 @@
-#include "webbind/HIDConnectionEventInit.hpp"
-#include "webbind/HIDDevice.hpp"
+#include <webbind/HIDConnectionEventInit.hpp>
+#include <webbind/HIDDevice.hpp>
 
 using emlite::Val;
 namespace webbind {

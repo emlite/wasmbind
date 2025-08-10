@@ -1,4 +1,4 @@
-#include "webbind/GPUTextureView.hpp"
+#include <webbind/GPUTextureView.hpp>
 
 namespace webbind {
 

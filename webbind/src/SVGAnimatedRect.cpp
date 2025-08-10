@@ -1,6 +1,6 @@
-#include "webbind/SVGAnimatedRect.hpp"
-#include "webbind/DOMRect.hpp"
-#include "webbind/DOMRectReadOnly.hpp"
+#include <webbind/SVGAnimatedRect.hpp>
+#include <webbind/DOMRect.hpp>
+#include <webbind/DOMRectReadOnly.hpp>
 
 namespace webbind {
 

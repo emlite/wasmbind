@@ -1,4 +1,4 @@
-#include "webbind/HTMLDetailsElement.hpp"
+#include <webbind/HTMLDetailsElement.hpp>
 
 namespace webbind {
 

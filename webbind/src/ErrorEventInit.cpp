@@ -1,4 +1,4 @@
-#include "webbind/ErrorEventInit.hpp"
+#include <webbind/ErrorEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

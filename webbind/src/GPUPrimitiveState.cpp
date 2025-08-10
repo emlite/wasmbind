@@ -1,4 +1,4 @@
-#include "webbind/GPUPrimitiveState.hpp"
+#include <webbind/GPUPrimitiveState.hpp>
 
 using emlite::Val;
 namespace webbind {

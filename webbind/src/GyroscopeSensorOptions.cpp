@@ -1,4 +1,4 @@
-#include "webbind/GyroscopeSensorOptions.hpp"
+#include <webbind/GyroscopeSensorOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

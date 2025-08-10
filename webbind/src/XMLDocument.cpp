@@ -1,4 +1,4 @@
-#include "webbind/XMLDocument.hpp"
+#include <webbind/XMLDocument.hpp>
 
 namespace webbind {
 

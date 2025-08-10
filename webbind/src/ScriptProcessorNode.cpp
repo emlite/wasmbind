@@ -1,4 +1,4 @@
-#include "webbind/ScriptProcessorNode.hpp"
+#include <webbind/ScriptProcessorNode.hpp>
 
 namespace webbind {
 

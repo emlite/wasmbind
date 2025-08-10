@@ -1,4 +1,4 @@
-#include "webbind/EXT_texture_compression_rgtc.hpp"
+#include <webbind/EXT_texture_compression_rgtc.hpp>
 
 namespace webbind {
 

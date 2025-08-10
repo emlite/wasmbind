@@ -1,4 +1,4 @@
-#include "webbind/GPUQuerySet.hpp"
+#include <webbind/GPUQuerySet.hpp>
 
 namespace webbind {
 

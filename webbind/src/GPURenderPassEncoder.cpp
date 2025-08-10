@@ -1,8 +1,8 @@
-#include "webbind/GPURenderPassEncoder.hpp"
-#include "webbind/GPURenderBundle.hpp"
-#include "webbind/GPUBindGroup.hpp"
-#include "webbind/GPURenderPipeline.hpp"
-#include "webbind/GPUBuffer.hpp"
+#include <webbind/GPURenderPassEncoder.hpp>
+#include <webbind/GPURenderBundle.hpp>
+#include <webbind/GPUBindGroup.hpp>
+#include <webbind/GPURenderPipeline.hpp>
+#include <webbind/GPUBuffer.hpp>
 
 namespace webbind {
 

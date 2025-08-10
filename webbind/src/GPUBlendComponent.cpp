@@ -1,4 +1,4 @@
-#include "webbind/GPUBlendComponent.hpp"
+#include <webbind/GPUBlendComponent.hpp>
 
 using emlite::Val;
 namespace webbind {

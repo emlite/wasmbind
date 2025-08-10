@@ -1,4 +1,4 @@
-#include "webbind/SyncManager.hpp"
+#include <webbind/SyncManager.hpp>
 
 namespace webbind {
 

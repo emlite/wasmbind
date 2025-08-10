@@ -1,5 +1,5 @@
-#include "webbind/MediaEncryptedEvent.hpp"
-#include "webbind/MediaEncryptedEventInit.hpp"
+#include <webbind/MediaEncryptedEvent.hpp>
+#include <webbind/MediaEncryptedEventInit.hpp>
 
 namespace webbind {
 

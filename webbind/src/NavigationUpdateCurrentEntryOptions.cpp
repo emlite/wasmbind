@@ -1,4 +1,4 @@
-#include "webbind/NavigationUpdateCurrentEntryOptions.hpp"
+#include <webbind/NavigationUpdateCurrentEntryOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

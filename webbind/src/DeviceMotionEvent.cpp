@@ -1,7 +1,7 @@
-#include "webbind/DeviceMotionEvent.hpp"
-#include "webbind/DeviceMotionEventInit.hpp"
-#include "webbind/DeviceMotionEventAcceleration.hpp"
-#include "webbind/DeviceMotionEventRotationRate.hpp"
+#include <webbind/DeviceMotionEvent.hpp>
+#include <webbind/DeviceMotionEventInit.hpp>
+#include <webbind/DeviceMotionEventAcceleration.hpp>
+#include <webbind/DeviceMotionEventRotationRate.hpp>
 
 namespace webbind {
 

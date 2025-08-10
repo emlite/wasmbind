@@ -1,9 +1,9 @@
-#include "webbind/LanguageDetector.hpp"
-#include "webbind/LanguageDetector.hpp"
-#include "webbind/LanguageDetectorCreateOptions.hpp"
-#include "webbind/LanguageDetectorCreateCoreOptions.hpp"
-#include "webbind/LanguageDetectionResult.hpp"
-#include "webbind/LanguageDetectorDetectOptions.hpp"
+#include <webbind/LanguageDetector.hpp>
+#include <webbind/LanguageDetector.hpp>
+#include <webbind/LanguageDetectorCreateOptions.hpp>
+#include <webbind/LanguageDetectorCreateCoreOptions.hpp>
+#include <webbind/LanguageDetectionResult.hpp>
+#include <webbind/LanguageDetectorDetectOptions.hpp>
 
 namespace webbind {
 

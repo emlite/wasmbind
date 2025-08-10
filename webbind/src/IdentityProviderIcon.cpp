@@ -1,4 +1,4 @@
-#include "webbind/IdentityProviderIcon.hpp"
+#include <webbind/IdentityProviderIcon.hpp>
 
 using emlite::Val;
 namespace webbind {

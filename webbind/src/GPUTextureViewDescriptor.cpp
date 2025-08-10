@@ -1,4 +1,4 @@
-#include "webbind/GPUTextureViewDescriptor.hpp"
+#include <webbind/GPUTextureViewDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,8 +1,8 @@
-#include "webbind/Animation.hpp"
-#include "webbind/AnimationEffect.hpp"
-#include "webbind/AnimationTimeline.hpp"
-#include "webbind/Animation.hpp"
-#include "webbind/AnimationTrigger.hpp"
+#include <webbind/Animation.hpp>
+#include <webbind/AnimationEffect.hpp>
+#include <webbind/AnimationTimeline.hpp>
+#include <webbind/Animation.hpp>
+#include <webbind/AnimationTrigger.hpp>
 
 namespace webbind {
 

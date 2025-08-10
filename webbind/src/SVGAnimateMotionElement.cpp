@@ -1,4 +1,4 @@
-#include "webbind/SVGAnimateMotionElement.hpp"
+#include <webbind/SVGAnimateMotionElement.hpp>
 
 namespace webbind {
 

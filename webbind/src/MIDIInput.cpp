@@ -1,4 +1,4 @@
-#include "webbind/MIDIInput.hpp"
+#include <webbind/MIDIInput.hpp>
 
 namespace webbind {
 

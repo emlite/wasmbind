@@ -1,4 +1,4 @@
-#include "webbind/GPUCopyExternalImageSourceInfo.hpp"
+#include <webbind/GPUCopyExternalImageSourceInfo.hpp>
 
 using emlite::Val;
 namespace webbind {

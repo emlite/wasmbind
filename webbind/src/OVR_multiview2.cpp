@@ -1,5 +1,5 @@
-#include "webbind/OVR_multiview2.hpp"
-#include "webbind/WebGLTexture.hpp"
+#include <webbind/OVR_multiview2.hpp>
+#include <webbind/WebGLTexture.hpp>
 
 namespace webbind {
 

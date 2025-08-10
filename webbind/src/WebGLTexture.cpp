@@ -1,4 +1,4 @@
-#include "webbind/WebGLTexture.hpp"
+#include <webbind/WebGLTexture.hpp>
 
 namespace webbind {
 

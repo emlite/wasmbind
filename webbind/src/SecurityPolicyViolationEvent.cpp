@@ -1,5 +1,5 @@
-#include "webbind/SecurityPolicyViolationEvent.hpp"
-#include "webbind/SecurityPolicyViolationEventInit.hpp"
+#include <webbind/SecurityPolicyViolationEvent.hpp>
+#include <webbind/SecurityPolicyViolationEventInit.hpp>
 
 namespace webbind {
 

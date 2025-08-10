@@ -1,4 +1,4 @@
-#include "webbind/WEBGL_lose_context.hpp"
+#include <webbind/WEBGL_lose_context.hpp>
 
 namespace webbind {
 

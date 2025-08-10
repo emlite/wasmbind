@@ -1,4 +1,4 @@
-#include "webbind/ObservableInspector.hpp"
+#include <webbind/ObservableInspector.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,4 +1,4 @@
-#include "webbind/ContentIndexEventInit.hpp"
+#include <webbind/ContentIndexEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

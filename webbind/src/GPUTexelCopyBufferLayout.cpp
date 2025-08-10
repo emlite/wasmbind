@@ -1,4 +1,4 @@
-#include "webbind/GPUTexelCopyBufferLayout.hpp"
+#include <webbind/GPUTexelCopyBufferLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

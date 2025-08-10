@@ -1,4 +1,4 @@
-#include "webbind/GPUExternalTextureDescriptor.hpp"
+#include <webbind/GPUExternalTextureDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

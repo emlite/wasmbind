@@ -1,4 +1,4 @@
-#include "webbind/XRLightProbeInit.hpp"
+#include <webbind/XRLightProbeInit.hpp>
 
 using emlite::Val;
 namespace webbind {

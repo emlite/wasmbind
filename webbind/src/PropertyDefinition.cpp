@@ -1,4 +1,4 @@
-#include "webbind/PropertyDefinition.hpp"
+#include <webbind/PropertyDefinition.hpp>
 
 using emlite::Val;
 namespace webbind {

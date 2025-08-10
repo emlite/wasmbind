@@ -1,4 +1,4 @@
-#include "webbind/GPUBindGroup.hpp"
+#include <webbind/GPUBindGroup.hpp>
 
 namespace webbind {
 

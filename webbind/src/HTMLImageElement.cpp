@@ -1,4 +1,4 @@
-#include "webbind/HTMLImageElement.hpp"
+#include <webbind/HTMLImageElement.hpp>
 
 namespace webbind {
 

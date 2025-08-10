@@ -1,9 +1,9 @@
-#include "webbind/GPUBindGroupLayoutEntry.hpp"
-#include "webbind/GPUBufferBindingLayout.hpp"
-#include "webbind/GPUSamplerBindingLayout.hpp"
-#include "webbind/GPUTextureBindingLayout.hpp"
-#include "webbind/GPUStorageTextureBindingLayout.hpp"
-#include "webbind/GPUExternalTextureBindingLayout.hpp"
+#include <webbind/GPUBindGroupLayoutEntry.hpp>
+#include <webbind/GPUBufferBindingLayout.hpp>
+#include <webbind/GPUSamplerBindingLayout.hpp>
+#include <webbind/GPUTextureBindingLayout.hpp>
+#include <webbind/GPUStorageTextureBindingLayout.hpp>
+#include <webbind/GPUExternalTextureBindingLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,5 +1,5 @@
-#include "webbind/DOMQuadInit.hpp"
-#include "webbind/DOMPointInit.hpp"
+#include <webbind/DOMQuadInit.hpp>
+#include <webbind/DOMPointInit.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,4 +1,4 @@
-#include "webbind/EXT_texture_compression_bptc.hpp"
+#include <webbind/EXT_texture_compression_bptc.hpp>
 
 namespace webbind {
 

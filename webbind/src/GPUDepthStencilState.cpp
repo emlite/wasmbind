@@ -1,5 +1,5 @@
-#include "webbind/GPUDepthStencilState.hpp"
-#include "webbind/GPUStencilFaceState.hpp"
+#include <webbind/GPUDepthStencilState.hpp>
+#include <webbind/GPUStencilFaceState.hpp>
 
 using emlite::Val;
 namespace webbind {

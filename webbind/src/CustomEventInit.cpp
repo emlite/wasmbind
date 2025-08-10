@@ -1,4 +1,4 @@
-#include "webbind/CustomEventInit.hpp"
+#include <webbind/CustomEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

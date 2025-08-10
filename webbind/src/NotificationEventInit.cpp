@@ -1,5 +1,5 @@
-#include "webbind/NotificationEventInit.hpp"
-#include "webbind/Notification.hpp"
+#include <webbind/NotificationEventInit.hpp>
+#include <webbind/Notification.hpp>
 
 using emlite::Val;
 namespace webbind {

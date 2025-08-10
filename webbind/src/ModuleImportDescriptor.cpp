@@ -1,4 +1,4 @@
-#include "webbind/ModuleImportDescriptor.hpp"
+#include <webbind/ModuleImportDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

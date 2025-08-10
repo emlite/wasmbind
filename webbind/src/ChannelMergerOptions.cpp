@@ -1,4 +1,4 @@
-#include "webbind/ChannelMergerOptions.hpp"
+#include <webbind/ChannelMergerOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

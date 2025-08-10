@@ -1,6 +1,4 @@
-export const builtinNominals = new Set([
-  "WindowProxy",
-]);
+export const builtinNominals = new Set(["WindowProxy"]);
 
 export const missingDictFallback = new Set([]);
 

@@ -1,4 +1,4 @@
-#include "webbind/OES_texture_float.hpp"
+#include <webbind/OES_texture_float.hpp>
 
 namespace webbind {
 

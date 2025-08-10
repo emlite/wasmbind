@@ -1,4 +1,4 @@
-#include "webbind/PerformanceEntry.hpp"
+#include <webbind/PerformanceEntry.hpp>
 
 namespace webbind {
 

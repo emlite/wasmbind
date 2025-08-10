@@ -1,4 +1,4 @@
-#include "webbind/WebGLContextAttributes.hpp"
+#include <webbind/WebGLContextAttributes.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,5 +1,5 @@
-#include "webbind/USBIsochronousInTransferResult.hpp"
-#include "webbind/USBIsochronousInTransferPacket.hpp"
+#include <webbind/USBIsochronousInTransferResult.hpp>
+#include <webbind/USBIsochronousInTransferPacket.hpp>
 
 namespace webbind {
 

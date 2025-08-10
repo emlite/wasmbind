@@ -1,6 +1,6 @@
-#include "webbind/GamepadEvent.hpp"
-#include "webbind/GamepadEventInit.hpp"
-#include "webbind/Gamepad.hpp"
+#include <webbind/GamepadEvent.hpp>
+#include <webbind/GamepadEventInit.hpp>
+#include <webbind/Gamepad.hpp>
 
 namespace webbind {
 

@@ -1,5 +1,5 @@
-#include "webbind/OES_vertex_array_object.hpp"
-#include "webbind/WebGLVertexArrayObjectOES.hpp"
+#include <webbind/OES_vertex_array_object.hpp>
+#include <webbind/WebGLVertexArrayObjectOES.hpp>
 
 namespace webbind {
 

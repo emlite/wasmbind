@@ -1,6 +1,6 @@
-#include "webbind/DeviceMotionEventInit.hpp"
-#include "webbind/DeviceMotionEventAccelerationInit.hpp"
-#include "webbind/DeviceMotionEventRotationRateInit.hpp"
+#include <webbind/DeviceMotionEventInit.hpp>
+#include <webbind/DeviceMotionEventAccelerationInit.hpp>
+#include <webbind/DeviceMotionEventRotationRateInit.hpp>
 
 using emlite::Val;
 namespace webbind {

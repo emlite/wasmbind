@@ -1,4 +1,4 @@
-#include "webbind/GPUMapMode.hpp"
+#include <webbind/GPUMapMode.hpp>
 
 using emlite::Val;
 

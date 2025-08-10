@@ -1,5 +1,5 @@
-#include "webbind/MediaKeyMessageEvent.hpp"
-#include "webbind/MediaKeyMessageEventInit.hpp"
+#include <webbind/MediaKeyMessageEvent.hpp>
+#include <webbind/MediaKeyMessageEventInit.hpp>
 
 namespace webbind {
 

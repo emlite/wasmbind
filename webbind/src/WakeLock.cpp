@@ -1,5 +1,5 @@
-#include "webbind/WakeLock.hpp"
-#include "webbind/WakeLockSentinel.hpp"
+#include <webbind/WakeLock.hpp>
+#include <webbind/WakeLockSentinel.hpp>
 
 namespace webbind {
 

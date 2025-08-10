@@ -1,4 +1,4 @@
-#include "webbind/ImageResource.hpp"
+#include <webbind/ImageResource.hpp>
 
 using emlite::Val;
 namespace webbind {

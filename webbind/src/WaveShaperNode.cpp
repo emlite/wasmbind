@@ -1,6 +1,6 @@
-#include "webbind/WaveShaperNode.hpp"
-#include "webbind/BaseAudioContext.hpp"
-#include "webbind/WaveShaperOptions.hpp"
+#include <webbind/WaveShaperNode.hpp>
+#include <webbind/BaseAudioContext.hpp>
+#include <webbind/WaveShaperOptions.hpp>
 
 namespace webbind {
 

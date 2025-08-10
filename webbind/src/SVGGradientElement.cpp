@@ -1,7 +1,7 @@
-#include "webbind/SVGGradientElement.hpp"
-#include "webbind/SVGAnimatedEnumeration.hpp"
-#include "webbind/SVGAnimatedTransformList.hpp"
-#include "webbind/SVGAnimatedString.hpp"
+#include <webbind/SVGGradientElement.hpp>
+#include <webbind/SVGAnimatedEnumeration.hpp>
+#include <webbind/SVGAnimatedTransformList.hpp>
+#include <webbind/SVGAnimatedString.hpp>
 
 namespace webbind {
 

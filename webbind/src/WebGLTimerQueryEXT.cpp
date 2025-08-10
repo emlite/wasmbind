@@ -1,4 +1,4 @@
-#include "webbind/WebGLTimerQueryEXT.hpp"
+#include <webbind/WebGLTimerQueryEXT.hpp>
 
 namespace webbind {
 

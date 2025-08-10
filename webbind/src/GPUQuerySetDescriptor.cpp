@@ -1,4 +1,4 @@
-#include "webbind/GPUQuerySetDescriptor.hpp"
+#include <webbind/GPUQuerySetDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

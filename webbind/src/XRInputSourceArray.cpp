@@ -1,5 +1,5 @@
-#include "webbind/XRInputSourceArray.hpp"
-#include "webbind/XRInputSource.hpp"
+#include <webbind/XRInputSourceArray.hpp>
+#include <webbind/XRInputSource.hpp>
 
 namespace webbind {
 

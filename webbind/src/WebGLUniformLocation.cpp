@@ -1,4 +1,4 @@
-#include "webbind/WebGLUniformLocation.hpp"
+#include <webbind/WebGLUniformLocation.hpp>
 
 namespace webbind {
 

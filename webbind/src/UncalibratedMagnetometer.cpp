@@ -1,5 +1,5 @@
-#include "webbind/UncalibratedMagnetometer.hpp"
-#include "webbind/MagnetometerSensorOptions.hpp"
+#include <webbind/UncalibratedMagnetometer.hpp>
+#include <webbind/MagnetometerSensorOptions.hpp>
 
 namespace webbind {
 

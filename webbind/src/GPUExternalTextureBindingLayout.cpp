@@ -1,4 +1,4 @@
-#include "webbind/GPUExternalTextureBindingLayout.hpp"
+#include <webbind/GPUExternalTextureBindingLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

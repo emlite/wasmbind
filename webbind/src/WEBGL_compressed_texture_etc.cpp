@@ -1,4 +1,4 @@
-#include "webbind/WEBGL_compressed_texture_etc.hpp"
+#include <webbind/WEBGL_compressed_texture_etc.hpp>
 
 namespace webbind {
 

@@ -49,9 +49,9 @@ export function parseSpecs(specAst) {
   return {
     interfaces,
     mixins,
-    includeRel, 
+    includeRel,
     dicts,
-    namespaces
+    namespaces,
   };
 }
 

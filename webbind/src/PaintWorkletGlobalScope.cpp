@@ -1,4 +1,4 @@
-#include "webbind/PaintWorkletGlobalScope.hpp"
+#include <webbind/PaintWorkletGlobalScope.hpp>
 
 namespace webbind {
 

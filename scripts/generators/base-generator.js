@@ -1,6 +1,12 @@
 import { cpp, fixIdent, argtypeFix, variantsOf, argDecl } from "../utils.js";
 
-export function emitAttr(attr, owner, isStatic = false, parent0, isInterface = false) {
+export function emitAttr(
+  attr,
+  owner,
+  isStatic = false,
+  parent0,
+  isInterface = false
+) {
   const H = [],
     S = [];
   const type = cpp(attr.idlType);
@@ -21,7 +27,9 @@ export function emitAttr(attr, owner, isStatic = false, parent0, isInterface = f
         `    /// [\`${owner}.${attr.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${attr.name})`
       );
   }
-  H.push(`    [[nodiscard]] ${staticKw}${type} ${fixIdent(attr.name)}()${constQual};`);
+  H.push(
+    `    [[nodiscard]] ${staticKw}${type} ${fixIdent(attr.name)}()${constQual};`
+  );
 
   if (isStatic) {
     S.push(
@@ -79,9 +87,9 @@ export function emitOp(op, owner, isStatic = false, parent0) {
       : `${parent}::call("${op.name}"${callArgs ? ", " + callArgs : ""})`;
 
     H.push(
-        `    /// The ${op.name} method.`,
-        `    /// [\`${owner}.${op.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${op.name})`
-      );
+      `    /// The ${op.name} method.`,
+      `    /// [\`${owner}.${op.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${owner}/${op.name})`
+    );
     H.push(`    ${staticKw}${ret} ${cppName}(${declHdr});`);
 
     S.push(
@@ -105,7 +113,8 @@ export function emitCtor(ctor, owner, parent) {
     const callArgs = v.map((a) => fixIdent(a.name)).join(", ");
 
     H.push(
-      `    /// The \`new ${owner}(..)\` constructor, creating a new ${owner} instance`);
+      `    /// The \`new ${owner}(..)\` constructor, creating a new ${owner} instance`
+    );
     H.push(`    ${owner}(${declHdr});`);
 
     S.push(

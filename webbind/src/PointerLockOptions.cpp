@@ -1,4 +1,4 @@
-#include "webbind/PointerLockOptions.hpp"
+#include <webbind/PointerLockOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

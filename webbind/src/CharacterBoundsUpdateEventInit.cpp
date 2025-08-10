@@ -1,4 +1,4 @@
-#include "webbind/CharacterBoundsUpdateEventInit.hpp"
+#include <webbind/CharacterBoundsUpdateEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

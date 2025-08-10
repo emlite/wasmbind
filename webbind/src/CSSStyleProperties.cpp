@@ -1,4 +1,4 @@
-#include "webbind/CSSStyleProperties.hpp"
+#include <webbind/CSSStyleProperties.hpp>
 
 namespace webbind {
 

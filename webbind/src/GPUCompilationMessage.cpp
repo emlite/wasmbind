@@ -1,4 +1,4 @@
-#include "webbind/GPUCompilationMessage.hpp"
+#include <webbind/GPUCompilationMessage.hpp>
 
 namespace webbind {
 

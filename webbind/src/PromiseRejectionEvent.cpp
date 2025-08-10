@@ -1,5 +1,5 @@
-#include "webbind/PromiseRejectionEvent.hpp"
-#include "webbind/PromiseRejectionEventInit.hpp"
+#include <webbind/PromiseRejectionEvent.hpp>
+#include <webbind/PromiseRejectionEventInit.hpp>
 
 namespace webbind {
 

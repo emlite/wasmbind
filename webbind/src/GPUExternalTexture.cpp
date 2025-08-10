@@ -1,4 +1,4 @@
-#include "webbind/GPUExternalTexture.hpp"
+#include <webbind/GPUExternalTexture.hpp>
 
 namespace webbind {
 

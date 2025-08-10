@@ -1,5 +1,5 @@
-#include "webbind/XPathResult.hpp"
-#include "webbind/Node.hpp"
+#include <webbind/XPathResult.hpp>
+#include <webbind/Node.hpp>
 
 namespace webbind {
 

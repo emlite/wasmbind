@@ -1,5 +1,5 @@
-#include "webbind/DedicatedWorkerGlobalScope.hpp"
-#include "webbind/StructuredSerializeOptions.hpp"
+#include <webbind/DedicatedWorkerGlobalScope.hpp>
+#include <webbind/StructuredSerializeOptions.hpp>
 
 namespace webbind {
 

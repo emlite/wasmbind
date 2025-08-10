@@ -1,4 +1,4 @@
-#include "webbind/CSSParserRule.hpp"
+#include <webbind/CSSParserRule.hpp>
 
 namespace webbind {
 

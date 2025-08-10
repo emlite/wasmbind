@@ -1,6 +1,6 @@
-#include "webbind/BarcodeDetector.hpp"
-#include "webbind/BarcodeDetectorOptions.hpp"
-#include "webbind/DetectedBarcode.hpp"
+#include <webbind/BarcodeDetector.hpp>
+#include <webbind/BarcodeDetectorOptions.hpp>
+#include <webbind/DetectedBarcode.hpp>
 
 namespace webbind {
 

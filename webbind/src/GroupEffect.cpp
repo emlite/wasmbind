@@ -1,7 +1,7 @@
-#include "webbind/GroupEffect.hpp"
-#include "webbind/AnimationEffect.hpp"
-#include "webbind/AnimationNodeList.hpp"
-#include "webbind/GroupEffect.hpp"
+#include <webbind/GroupEffect.hpp>
+#include <webbind/AnimationEffect.hpp>
+#include <webbind/AnimationNodeList.hpp>
+#include <webbind/GroupEffect.hpp>
 
 namespace webbind {
 

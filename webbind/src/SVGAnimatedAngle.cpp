@@ -1,5 +1,5 @@
-#include "webbind/SVGAnimatedAngle.hpp"
-#include "webbind/SVGAngle.hpp"
+#include <webbind/SVGAnimatedAngle.hpp>
+#include <webbind/SVGAngle.hpp>
 
 namespace webbind {
 

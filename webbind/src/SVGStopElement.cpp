@@ -1,5 +1,5 @@
-#include "webbind/SVGStopElement.hpp"
-#include "webbind/SVGAnimatedNumber.hpp"
+#include <webbind/SVGStopElement.hpp>
+#include <webbind/SVGAnimatedNumber.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/AuctionReportBuyerDebugModeConfig.hpp"
+#include <webbind/AuctionReportBuyerDebugModeConfig.hpp>
 
 using emlite::Val;
 namespace webbind {

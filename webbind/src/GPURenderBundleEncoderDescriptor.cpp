@@ -1,4 +1,4 @@
-#include "webbind/GPURenderBundleEncoderDescriptor.hpp"
+#include <webbind/GPURenderBundleEncoderDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

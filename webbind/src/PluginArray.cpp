@@ -1,5 +1,5 @@
-#include "webbind/PluginArray.hpp"
-#include "webbind/Plugin.hpp"
+#include <webbind/PluginArray.hpp>
+#include <webbind/Plugin.hpp>
 
 namespace webbind {
 

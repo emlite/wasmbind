@@ -18,27 +18,29 @@ export function generateEnums() {
 
   for (const e of enums.values()) {
     hdr.push(`/// Enum type ${e.name}`);
-    hdr.push(`/// [\`${e.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${e.name})`);
+    hdr.push(
+      `/// [\`${e.name}\`](https://developer.mozilla.org/en-US/docs/Web/API/${e.name})`
+    );
     hdr.push(`class ${e.name} : public emlite::Val {`);
     hdr.push(`  explicit ${e.name}(Handle h) noexcept;`);
     hdr.push("public:");
     hdr.push(`   explicit ${e.name}(const emlite::Val &v) noexcept;`);
     hdr.push(`  static ${e.name} take_ownership(Handle h) noexcept;`);
     hdr.push(`    [[nodiscard]] ${e.name} clone() const noexcept;`);
-    
+
     // Generate enum values
     for (const v of e.values) {
       hdr.push(`  static const ${e.name} ${fixIdent(v.value)}();`);
     }
     hdr.push("};", "");
   }
-  
+
   hdr.push("} // namespace webbind");
 
   // Build source file
   const src = [];
   src.push(
-    "#include \"webbind/enums.hpp\"",
+    '#include <webbind/enums.hpp>',
     "",
     "using emlite::Val;",
     "",
@@ -71,16 +73,16 @@ export function generateEnums() {
     }
     src.push("");
   }
-  
+
   src.push("} // namespace webbind");
 
   // Ensure directories exist
   mkdirSync(OUT_INC, { recursive: true });
   mkdirSync(OUT_SRC, { recursive: true });
-  
+
   // Write the files
   writeFileSync(path.join(OUT_INC, "enums.hpp"), hdr.join("\n"));
   writeFileSync(path.join(OUT_SRC, "enums.cpp"), src.join("\n"));
-  
+
   console.log("Generated enums");
 }

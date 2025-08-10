@@ -1,10 +1,10 @@
-#include "webbind/SVGPatternElement.hpp"
-#include "webbind/SVGAnimatedEnumeration.hpp"
-#include "webbind/SVGAnimatedTransformList.hpp"
-#include "webbind/SVGAnimatedLength.hpp"
-#include "webbind/SVGAnimatedRect.hpp"
-#include "webbind/SVGAnimatedPreserveAspectRatio.hpp"
-#include "webbind/SVGAnimatedString.hpp"
+#include <webbind/SVGPatternElement.hpp>
+#include <webbind/SVGAnimatedEnumeration.hpp>
+#include <webbind/SVGAnimatedTransformList.hpp>
+#include <webbind/SVGAnimatedLength.hpp>
+#include <webbind/SVGAnimatedRect.hpp>
+#include <webbind/SVGAnimatedPreserveAspectRatio.hpp>
+#include <webbind/SVGAnimatedString.hpp>
 
 namespace webbind {
 

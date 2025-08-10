@@ -1,6 +1,6 @@
-#include "webbind/WebAssemblyInstantiatedSource.hpp"
-#include "webbind/Module.hpp"
-#include "webbind/Instance.hpp"
+#include <webbind/WebAssemblyInstantiatedSource.hpp>
+#include <webbind/Module.hpp>
+#include <webbind/Instance.hpp>
 
 using emlite::Val;
 namespace webbind {

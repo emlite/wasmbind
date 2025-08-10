@@ -1,5 +1,5 @@
-#include "webbind/USBPermissionResult.hpp"
-#include "webbind/USBDevice.hpp"
+#include <webbind/USBPermissionResult.hpp>
+#include <webbind/USBDevice.hpp>
 
 namespace webbind {
 

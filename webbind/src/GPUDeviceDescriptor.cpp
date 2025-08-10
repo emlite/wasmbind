@@ -1,5 +1,5 @@
-#include "webbind/GPUDeviceDescriptor.hpp"
-#include "webbind/GPUQueueDescriptor.hpp"
+#include <webbind/GPUDeviceDescriptor.hpp>
+#include <webbind/GPUQueueDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

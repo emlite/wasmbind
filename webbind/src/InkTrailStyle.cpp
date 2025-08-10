@@ -1,4 +1,4 @@
-#include "webbind/InkTrailStyle.hpp"
+#include <webbind/InkTrailStyle.hpp>
 
 using emlite::Val;
 namespace webbind {

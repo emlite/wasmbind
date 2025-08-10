@@ -1,4 +1,4 @@
-#include "webbind/BarProp.hpp"
+#include <webbind/BarProp.hpp>
 
 namespace webbind {
 

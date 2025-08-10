@@ -1,4 +1,4 @@
-#include "webbind/InterestGroupScoringScriptRunnerGlobalScope.hpp"
+#include <webbind/InterestGroupScoringScriptRunnerGlobalScope.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/EXT_texture_norm16.hpp"
+#include <webbind/EXT_texture_norm16.hpp>
 
 namespace webbind {
 

@@ -1,5 +1,5 @@
-#include "webbind/GPUComputePipeline.hpp"
-#include "webbind/GPUBindGroupLayout.hpp"
+#include <webbind/GPUComputePipeline.hpp>
+#include <webbind/GPUBindGroupLayout.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/GPUBufferDescriptor.hpp"
+#include <webbind/GPUBufferDescriptor.hpp>
 
 using emlite::Val;
 namespace webbind {

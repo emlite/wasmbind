@@ -1,4 +1,4 @@
-#include "webbind/MockCameraConfiguration.hpp"
+#include <webbind/MockCameraConfiguration.hpp>
 
 using emlite::Val;
 namespace webbind {

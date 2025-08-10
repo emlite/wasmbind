@@ -1,4 +1,4 @@
-#include "webbind/KHR_parallel_shader_compile.hpp"
+#include <webbind/KHR_parallel_shader_compile.hpp>
 
 namespace webbind {
 

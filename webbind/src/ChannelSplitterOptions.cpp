@@ -1,4 +1,4 @@
-#include "webbind/ChannelSplitterOptions.hpp"
+#include <webbind/ChannelSplitterOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

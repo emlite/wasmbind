@@ -1,4 +1,4 @@
-#include "webbind/NavigationHistoryEntry.hpp"
+#include <webbind/NavigationHistoryEntry.hpp>
 
 namespace webbind {
 

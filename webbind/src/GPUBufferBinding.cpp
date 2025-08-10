@@ -1,5 +1,5 @@
-#include "webbind/GPUBufferBinding.hpp"
-#include "webbind/GPUBuffer.hpp"
+#include <webbind/GPUBufferBinding.hpp>
+#include <webbind/GPUBuffer.hpp>
 
 using emlite::Val;
 namespace webbind {

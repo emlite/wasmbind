@@ -1,4 +1,4 @@
-#include "webbind/CapturedMouseEventInit.hpp"
+#include <webbind/CapturedMouseEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

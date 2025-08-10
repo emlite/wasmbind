@@ -1,4 +1,4 @@
-#include "webbind/MagnetometerSensorOptions.hpp"
+#include <webbind/MagnetometerSensorOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,4 +1,4 @@
-#include "webbind/GPUInternalError.hpp"
+#include <webbind/GPUInternalError.hpp>
 
 namespace webbind {
 

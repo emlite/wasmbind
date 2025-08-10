@@ -1,5 +1,5 @@
-#include "webbind/GamepadHapticActuator.hpp"
-#include "webbind/GamepadEffectParameters.hpp"
+#include <webbind/GamepadHapticActuator.hpp>
+#include <webbind/GamepadEffectParameters.hpp>
 
 namespace webbind {
 

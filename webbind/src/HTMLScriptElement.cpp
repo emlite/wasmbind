@@ -1,5 +1,5 @@
-#include "webbind/HTMLScriptElement.hpp"
-#include "webbind/DOMTokenList.hpp"
+#include <webbind/HTMLScriptElement.hpp>
+#include <webbind/DOMTokenList.hpp>
 
 namespace webbind {
 

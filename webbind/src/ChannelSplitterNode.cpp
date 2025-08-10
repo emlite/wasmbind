@@ -1,6 +1,6 @@
-#include "webbind/ChannelSplitterNode.hpp"
-#include "webbind/BaseAudioContext.hpp"
-#include "webbind/ChannelSplitterOptions.hpp"
+#include <webbind/ChannelSplitterNode.hpp>
+#include <webbind/BaseAudioContext.hpp>
+#include <webbind/ChannelSplitterOptions.hpp>
 
 namespace webbind {
 

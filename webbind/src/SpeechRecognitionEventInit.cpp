@@ -1,5 +1,5 @@
-#include "webbind/SpeechRecognitionEventInit.hpp"
-#include "webbind/SpeechRecognitionResultList.hpp"
+#include <webbind/SpeechRecognitionEventInit.hpp>
+#include <webbind/SpeechRecognitionResultList.hpp>
 
 using emlite::Val;
 namespace webbind {

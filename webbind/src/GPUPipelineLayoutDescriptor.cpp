@@ -1,5 +1,5 @@
-#include "webbind/GPUPipelineLayoutDescriptor.hpp"
-#include "webbind/GPUBindGroupLayout.hpp"
+#include <webbind/GPUPipelineLayoutDescriptor.hpp>
+#include <webbind/GPUBindGroupLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

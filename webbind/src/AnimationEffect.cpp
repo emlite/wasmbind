@@ -1,9 +1,9 @@
-#include "webbind/AnimationEffect.hpp"
-#include "webbind/EffectTiming.hpp"
-#include "webbind/ComputedEffectTiming.hpp"
-#include "webbind/OptionalEffectTiming.hpp"
-#include "webbind/GroupEffect.hpp"
-#include "webbind/AnimationEffect.hpp"
+#include <webbind/AnimationEffect.hpp>
+#include <webbind/EffectTiming.hpp>
+#include <webbind/ComputedEffectTiming.hpp>
+#include <webbind/OptionalEffectTiming.hpp>
+#include <webbind/GroupEffect.hpp>
+#include <webbind/AnimationEffect.hpp>
 
 namespace webbind {
 

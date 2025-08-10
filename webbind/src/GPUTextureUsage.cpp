@@ -1,4 +1,4 @@
-#include "webbind/GPUTextureUsage.hpp"
+#include <webbind/GPUTextureUsage.hpp>
 
 using emlite::Val;
 

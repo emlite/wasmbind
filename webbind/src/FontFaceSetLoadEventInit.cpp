@@ -1,5 +1,5 @@
-#include "webbind/FontFaceSetLoadEventInit.hpp"
-#include "webbind/FontFace.hpp"
+#include <webbind/FontFaceSetLoadEventInit.hpp>
+#include <webbind/FontFace.hpp>
 
 using emlite::Val;
 namespace webbind {

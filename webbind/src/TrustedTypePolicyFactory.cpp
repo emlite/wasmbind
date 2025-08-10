@@ -1,8 +1,8 @@
-#include "webbind/TrustedTypePolicyFactory.hpp"
-#include "webbind/TrustedTypePolicy.hpp"
-#include "webbind/TrustedTypePolicyOptions.hpp"
-#include "webbind/TrustedHTML.hpp"
-#include "webbind/TrustedScript.hpp"
+#include <webbind/TrustedTypePolicyFactory.hpp>
+#include <webbind/TrustedTypePolicy.hpp>
+#include <webbind/TrustedTypePolicyOptions.hpp>
+#include <webbind/TrustedHTML.hpp>
+#include <webbind/TrustedScript.hpp>
 
 namespace webbind {
 

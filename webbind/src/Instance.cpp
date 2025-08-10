@@ -1,5 +1,5 @@
-#include "webbind/Instance.hpp"
-#include "webbind/Module.hpp"
+#include <webbind/Instance.hpp>
+#include <webbind/Module.hpp>
 
 namespace webbind {
 

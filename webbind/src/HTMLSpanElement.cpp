@@ -1,4 +1,4 @@
-#include "webbind/HTMLSpanElement.hpp"
+#include <webbind/HTMLSpanElement.hpp>
 
 namespace webbind {
 

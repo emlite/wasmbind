@@ -1,5 +1,5 @@
-#include "webbind/XRWebGLDepthInformation.hpp"
-#include "webbind/WebGLTexture.hpp"
+#include <webbind/XRWebGLDepthInformation.hpp>
+#include <webbind/WebGLTexture.hpp>
 
 namespace webbind {
 

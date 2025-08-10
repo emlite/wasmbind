@@ -1,9 +1,9 @@
-#include "webbind/ImageCapture.hpp"
-#include "webbind/MediaStreamTrack.hpp"
-#include "webbind/Blob.hpp"
-#include "webbind/PhotoSettings.hpp"
-#include "webbind/PhotoCapabilities.hpp"
-#include "webbind/ImageBitmap.hpp"
+#include <webbind/ImageCapture.hpp>
+#include <webbind/MediaStreamTrack.hpp>
+#include <webbind/Blob.hpp>
+#include <webbind/PhotoSettings.hpp>
+#include <webbind/PhotoCapabilities.hpp>
+#include <webbind/ImageBitmap.hpp>
 
 namespace webbind {
 

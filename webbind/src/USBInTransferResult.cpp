@@ -1,4 +1,4 @@
-#include "webbind/USBInTransferResult.hpp"
+#include <webbind/USBInTransferResult.hpp>
 
 namespace webbind {
 

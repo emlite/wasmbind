@@ -1,5 +1,5 @@
-#include "webbind/TextDetector.hpp"
-#include "webbind/DetectedText.hpp"
+#include <webbind/TextDetector.hpp>
+#include <webbind/DetectedText.hpp>
 
 namespace webbind {
 

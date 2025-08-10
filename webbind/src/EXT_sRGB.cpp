@@ -1,4 +1,4 @@
-#include "webbind/EXT_sRGB.hpp"
+#include <webbind/EXT_sRGB.hpp>
 
 namespace webbind {
 

@@ -1,4 +1,4 @@
-#include "webbind/SVGTextElement.hpp"
+#include <webbind/SVGTextElement.hpp>
 
 namespace webbind {
 

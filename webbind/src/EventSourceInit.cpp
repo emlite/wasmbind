@@ -1,4 +1,4 @@
-#include "webbind/EventSourceInit.hpp"
+#include <webbind/EventSourceInit.hpp>
 
 using emlite::Val;
 namespace webbind {

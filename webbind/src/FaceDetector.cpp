@@ -1,6 +1,6 @@
-#include "webbind/FaceDetector.hpp"
-#include "webbind/FaceDetectorOptions.hpp"
-#include "webbind/DetectedFace.hpp"
+#include <webbind/FaceDetector.hpp>
+#include <webbind/FaceDetectorOptions.hpp>
+#include <webbind/DetectedFace.hpp>
 
 namespace webbind {
 

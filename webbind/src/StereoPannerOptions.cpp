@@ -1,4 +1,4 @@
-#include "webbind/StereoPannerOptions.hpp"
+#include <webbind/StereoPannerOptions.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,5 +1,5 @@
-#include "webbind/LinearAccelerationSensor.hpp"
-#include "webbind/AccelerometerSensorOptions.hpp"
+#include <webbind/LinearAccelerationSensor.hpp>
+#include <webbind/AccelerometerSensorOptions.hpp>
 
 namespace webbind {
 

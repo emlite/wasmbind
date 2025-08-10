@@ -1,4 +1,4 @@
-#include "webbind/NetworkInformation.hpp"
+#include <webbind/NetworkInformation.hpp>
 
 namespace webbind {
 

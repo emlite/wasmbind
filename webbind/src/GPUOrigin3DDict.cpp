@@ -1,4 +1,4 @@
-#include "webbind/GPUOrigin3DDict.hpp"
+#include <webbind/GPUOrigin3DDict.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,5 +1,5 @@
-#include "webbind/GPUShaderModule.hpp"
-#include "webbind/GPUCompilationInfo.hpp"
+#include <webbind/GPUShaderModule.hpp>
+#include <webbind/GPUCompilationInfo.hpp>
 
 namespace webbind {
 

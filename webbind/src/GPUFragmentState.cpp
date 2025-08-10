@@ -1,5 +1,5 @@
-#include "webbind/GPUFragmentState.hpp"
-#include "webbind/GPUColorTargetState.hpp"
+#include <webbind/GPUFragmentState.hpp>
+#include <webbind/GPUColorTargetState.hpp>
 
 using emlite::Val;
 namespace webbind {

@@ -1,4 +1,4 @@
-#include "webbind/PaintSize.hpp"
+#include <webbind/PaintSize.hpp>
 
 namespace webbind {
 

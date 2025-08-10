@@ -1,5 +1,5 @@
-#include "webbind/GPURenderPipeline.hpp"
-#include "webbind/GPUBindGroupLayout.hpp"
+#include <webbind/GPURenderPipeline.hpp>
+#include <webbind/GPUBindGroupLayout.hpp>
 
 namespace webbind {
 

@@ -1,8 +1,8 @@
-#include "webbind/VideoDecoder.hpp"
-#include "webbind/VideoDecoderInit.hpp"
-#include "webbind/VideoDecoderConfig.hpp"
-#include "webbind/EncodedVideoChunk.hpp"
-#include "webbind/VideoDecoderSupport.hpp"
+#include <webbind/VideoDecoder.hpp>
+#include <webbind/VideoDecoderInit.hpp>
+#include <webbind/VideoDecoderConfig.hpp>
+#include <webbind/EncodedVideoChunk.hpp>
+#include <webbind/VideoDecoderSupport.hpp>
 
 namespace webbind {
 

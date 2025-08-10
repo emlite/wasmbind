@@ -1,5 +1,5 @@
-#include "webbind/ScreenDetails.hpp"
-#include "webbind/ScreenDetailed.hpp"
+#include <webbind/ScreenDetails.hpp>
+#include <webbind/ScreenDetailed.hpp>
 
 namespace webbind {
 

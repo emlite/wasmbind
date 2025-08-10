@@ -1,5 +1,5 @@
-#include "webbind/XRSessionEventInit.hpp"
-#include "webbind/XRSession.hpp"
+#include <webbind/XRSessionEventInit.hpp>
+#include <webbind/XRSession.hpp>
 
 using emlite::Val;
 namespace webbind {

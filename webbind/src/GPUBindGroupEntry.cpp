@@ -1,4 +1,4 @@
-#include "webbind/GPUBindGroupEntry.hpp"
+#include <webbind/GPUBindGroupEntry.hpp>
 
 using emlite::Val;
 namespace webbind {

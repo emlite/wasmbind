@@ -1,4 +1,4 @@
-#include "webbind/WEBGL_compressed_texture_s3tc_srgb.hpp"
+#include <webbind/WEBGL_compressed_texture_s3tc_srgb.hpp>
 
 namespace webbind {
 

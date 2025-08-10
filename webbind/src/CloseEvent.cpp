@@ -1,5 +1,5 @@
-#include "webbind/CloseEvent.hpp"
-#include "webbind/CloseEventInit.hpp"
+#include <webbind/CloseEvent.hpp>
+#include <webbind/CloseEventInit.hpp>
 
 namespace webbind {
 

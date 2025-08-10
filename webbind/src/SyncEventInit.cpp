@@ -1,4 +1,4 @@
-#include "webbind/SyncEventInit.hpp"
+#include <webbind/SyncEventInit.hpp>
 
 using emlite::Val;
 namespace webbind {

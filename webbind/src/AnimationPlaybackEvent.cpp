@@ -1,5 +1,5 @@
-#include "webbind/AnimationPlaybackEvent.hpp"
-#include "webbind/AnimationPlaybackEventInit.hpp"
+#include <webbind/AnimationPlaybackEvent.hpp>
+#include <webbind/AnimationPlaybackEventInit.hpp>
 
 namespace webbind {
 

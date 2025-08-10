@@ -1,5 +1,5 @@
-#include "webbind/PhotoCapabilities.hpp"
-#include "webbind/MediaSettingsRange.hpp"
+#include <webbind/PhotoCapabilities.hpp>
+#include <webbind/MediaSettingsRange.hpp>
 
 using emlite::Val;
 namespace webbind {

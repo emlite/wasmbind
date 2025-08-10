@@ -1,4 +1,4 @@
-#include "webbind/BroadcastChannel.hpp"
+#include <webbind/BroadcastChannel.hpp>
 
 namespace webbind {
 

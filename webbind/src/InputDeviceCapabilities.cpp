@@ -1,5 +1,5 @@
-#include "webbind/InputDeviceCapabilities.hpp"
-#include "webbind/InputDeviceCapabilitiesInit.hpp"
+#include <webbind/InputDeviceCapabilities.hpp>
+#include <webbind/InputDeviceCapabilitiesInit.hpp>
 
 namespace webbind {
 

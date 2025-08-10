@@ -1,10 +1,10 @@
-#include "webbind/SerialPort.hpp"
-#include "webbind/ReadableStream.hpp"
-#include "webbind/WritableStream.hpp"
-#include "webbind/SerialPortInfo.hpp"
-#include "webbind/SerialOptions.hpp"
-#include "webbind/SerialOutputSignals.hpp"
-#include "webbind/SerialInputSignals.hpp"
+#include <webbind/SerialPort.hpp>
+#include <webbind/ReadableStream.hpp>
+#include <webbind/WritableStream.hpp>
+#include <webbind/SerialPortInfo.hpp>
+#include <webbind/SerialOptions.hpp>
+#include <webbind/SerialOutputSignals.hpp>
+#include <webbind/SerialInputSignals.hpp>
 
 namespace webbind {
 

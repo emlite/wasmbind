@@ -1,5 +1,5 @@
-#include "webbind/HIDCollectionInfo.hpp"
-#include "webbind/HIDReportInfo.hpp"
+#include <webbind/HIDCollectionInfo.hpp>
+#include <webbind/HIDReportInfo.hpp>
 
 using emlite::Val;
 namespace webbind {

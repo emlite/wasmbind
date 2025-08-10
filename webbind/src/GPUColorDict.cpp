@@ -1,4 +1,4 @@
-#include "webbind/GPUColorDict.hpp"
+#include <webbind/GPUColorDict.hpp>
 
 using emlite::Val;
 namespace webbind {

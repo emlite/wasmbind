@@ -1,12 +1,12 @@
-#include "webbind/XRMediaBinding.hpp"
-#include "webbind/XRSession.hpp"
-#include "webbind/XRQuadLayer.hpp"
-#include "webbind/HTMLVideoElement.hpp"
-#include "webbind/XRMediaQuadLayerInit.hpp"
-#include "webbind/XRCylinderLayer.hpp"
-#include "webbind/XRMediaCylinderLayerInit.hpp"
-#include "webbind/XREquirectLayer.hpp"
-#include "webbind/XRMediaEquirectLayerInit.hpp"
+#include <webbind/XRMediaBinding.hpp>
+#include <webbind/XRSession.hpp>
+#include <webbind/XRQuadLayer.hpp>
+#include <webbind/HTMLVideoElement.hpp>
+#include <webbind/XRMediaQuadLayerInit.hpp>
+#include <webbind/XRCylinderLayer.hpp>
+#include <webbind/XRMediaCylinderLayerInit.hpp>
+#include <webbind/XREquirectLayer.hpp>
+#include <webbind/XRMediaEquirectLayerInit.hpp>
 
 namespace webbind {
 

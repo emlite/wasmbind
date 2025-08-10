@@ -1,8 +1,8 @@
-#include "webbind/MediaCapabilities.hpp"
-#include "webbind/MediaCapabilitiesDecodingInfo.hpp"
-#include "webbind/MediaDecodingConfiguration.hpp"
-#include "webbind/MediaCapabilitiesEncodingInfo.hpp"
-#include "webbind/MediaEncodingConfiguration.hpp"
+#include <webbind/MediaCapabilities.hpp>
+#include <webbind/MediaCapabilitiesDecodingInfo.hpp>
+#include <webbind/MediaDecodingConfiguration.hpp>
+#include <webbind/MediaCapabilitiesEncodingInfo.hpp>
+#include <webbind/MediaEncodingConfiguration.hpp>
 
 namespace webbind {
 

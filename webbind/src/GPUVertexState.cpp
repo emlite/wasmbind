@@ -1,5 +1,5 @@
-#include "webbind/GPUVertexState.hpp"
-#include "webbind/GPUVertexBufferLayout.hpp"
+#include <webbind/GPUVertexState.hpp>
+#include <webbind/GPUVertexBufferLayout.hpp>
 
 using emlite::Val;
 namespace webbind {

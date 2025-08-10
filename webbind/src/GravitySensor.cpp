@@ -1,5 +1,5 @@
-#include "webbind/GravitySensor.hpp"
-#include "webbind/AccelerometerSensorOptions.hpp"
+#include <webbind/GravitySensor.hpp>
+#include <webbind/AccelerometerSensorOptions.hpp>
 
 namespace webbind {
 

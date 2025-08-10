@@ -1,4 +1,4 @@
-#include "webbind/GPUBuffer.hpp"
+#include <webbind/GPUBuffer.hpp>
 
 namespace webbind {
 

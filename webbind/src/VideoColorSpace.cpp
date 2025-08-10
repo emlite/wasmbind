@@ -1,5 +1,5 @@
-#include "webbind/VideoColorSpace.hpp"
-#include "webbind/VideoColorSpaceInit.hpp"
+#include <webbind/VideoColorSpace.hpp>
+#include <webbind/VideoColorSpaceInit.hpp>
 
 namespace webbind {
 

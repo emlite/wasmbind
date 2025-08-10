@@ -1,5 +1,5 @@
-#include "webbind/HTMLProgressElement.hpp"
-#include "webbind/NodeList.hpp"
+#include <webbind/HTMLProgressElement.hpp>
+#include <webbind/NodeList.hpp>
 
 namespace webbind {
 

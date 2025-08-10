@@ -1,4 +1,4 @@
-#include "webbind/CSSNamespaceRule.hpp"
+#include <webbind/CSSNamespaceRule.hpp>
 
 namespace webbind {
 

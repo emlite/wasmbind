@@ -1,5 +1,5 @@
-#include "webbind/ContentVisibilityAutoStateChangeEvent.hpp"
-#include "webbind/ContentVisibilityAutoStateChangeEventInit.hpp"
+#include <webbind/ContentVisibilityAutoStateChangeEvent.hpp>
+#include <webbind/ContentVisibilityAutoStateChangeEventInit.hpp>
 
 namespace webbind {
 
