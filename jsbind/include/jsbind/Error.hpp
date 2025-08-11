@@ -27,6 +27,9 @@ class Error : public emlite::Val {
     /// @param msg error message string
     Error(const char *msg) noexcept;
 
+    /// Creates an "anonymous" error
+    Error() noexcept;
+
     /// Gets the Error constructor function
     /// @returns emlite::Val representing the Error constructor
     static emlite::Val instance() noexcept;

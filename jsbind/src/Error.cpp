@@ -10,6 +10,8 @@ Error::Error(const emlite::Val &val) noexcept : emlite::Val(val) {}
 
 Error::Error(const char *msg) noexcept : emlite::Val(emlite::Val::global("Error").new_(msg)) {}
 
+Error::Error() noexcept : emlite::Val(emlite::Val::global("Error").new_()) {}
+
 emlite::Val Error::instance() noexcept { return emlite::Val::global("Error"); }
 
 String Error::message() const { return get("message").template as<String>(); }

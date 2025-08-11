@@ -4,6 +4,22 @@
 #include "Function.hpp"
 #include <emlite/emlite.hpp>
 
+// C++20 coroutine support
+#if __cplusplus >= 202002L && __has_include(<coroutine>)
+#include <coroutine>
+#define JSBIND_COROUTINE_SUPPORT 1
+#elif __has_include(<experimental/coroutine>)
+#include <experimental/coroutine>
+namespace std {
+using experimental::coroutine_handle;
+using experimental::suspend_always;
+using experimental::suspend_never;
+} // namespace std
+#define JSBIND_COROUTINE_SUPPORT 1
+#else
+#define JSBIND_COROUTINE_SUPPORT 0
+#endif
+
 namespace jsbind {
 
 /// Wrapper for JavaScript Promise objects
@@ -75,6 +91,68 @@ class Promise : public emlite::Val {
     /// Creates a copy of this Promise
     /// @returns cloned Promise
     Promise clone() const noexcept { return *this; }
+
+#if JSBIND_COROUTINE_SUPPORT
+    /// C++20 coroutine awaitable interface
+    /// This allows using co_await with Promise objects
+    struct awaitable {
+        Promise<T> promise_;
+        bool ready_     = false;
+        bool has_error_ = false;
+        T result_;
+        Error error_;
+
+        explicit awaitable(const Promise<T> &p) : promise_(p) {}
+
+        /// Check if the promise is ready immediately
+        bool await_ready() const noexcept {
+            // JavaScript promises are always asynchronous
+            return false;
+        }
+
+        /// Suspend and wait for promise resolution
+        void await_suspend(std::coroutine_handle<> handle) {
+            // Use JavaScript .then() to resume the coroutine when promise resolves
+            promise_.then(
+                Function::Fn<void(Any)>([this, handle](Any result) mutable {
+                    if constexpr (std::is_same_v<T, Any>) {
+                        result_ = result;
+                    } else {
+                        result_ = result.as<T>();
+                    }
+                    ready_     = true;
+                    has_error_ = false;
+                    handle.resume();
+                }),
+                Function::Fn<void(Any)>([handle](Any error) mutable {
+                    // Store the error to be thrown in await_resume
+                    error_ = error;
+                    // Convert the rejection reason to an Error object
+                    if (error.instanceof (Error::instance())) {
+                        error_ = Error(error);
+                    } else {
+                        // Wrap non-Error values in a generic Error
+                        error_ = Error("Promise rejected");
+                        error_.set("reason", error);
+                    }
+                    has_error_ = true;
+                    ready_     = true;
+                    handle.resume();
+                })
+            );
+        }
+
+        /// Return the result when the coroutine resumes
+        T await_resume() const {
+            if (has_error_)
+                emlite::Val::throw_(error_);
+            return result_;
+        }
+    };
+
+    /// Enable co_await operator for Promise
+    awaitable operator co_await() const { return awaitable(*this); }
+#endif
 };
 
 } // namespace jsbind
