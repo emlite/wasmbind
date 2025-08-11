@@ -74,18 +74,6 @@ export function generateEnums() {
   const src = [];
   src.push("#include <webbind/enums.hpp>", "", "namespace webbind {", "");
 
-  // Helper function to compare C strings without std lib
-  src.push(
-    "// Helper function to compare C strings",
-    "static bool str_equal(const char* a, const char* b) noexcept {",
-    "    if (a == b) return true;",
-    "    if (!a || !b) return false;",
-    "    while (*a && *b && *a == *b) { ++a; ++b; }",
-    "    return *a == *b;",
-    "}",
-    ""
-  );
-
   for (const e of enums.values()) {
     // Generate C string constructor with pattern matching (no std lib)
     src.push(
@@ -94,7 +82,7 @@ export function generateEnums() {
     for (let i = 0; i < e.values.length; i++) {
       const v = e.values[i];
       const condition = i === 0 ? "if" : "else if";
-      src.push(`    ${condition} (str_equal(str, "${v.value}")) {`);
+      src.push(`    ${condition} (__builtin_strncmp(str, "${v.value}", strlen("${v.value}"))) {`);
       src.push(`        return ${fixIdent(v.value).toUpperCase()};`);
       src.push(`    }`);
     }

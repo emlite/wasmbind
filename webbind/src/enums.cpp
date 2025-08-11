@@ -2,19 +2,11 @@
 
 namespace webbind {
 
-// Helper function to compare C strings
-static bool str_equal(const char* a, const char* b) noexcept {
-    if (a == b) return true;
-    if (!a || !b) return false;
-    while (*a && *b && *a == *b) { ++a; ++b; }
-    return *a == *b;
-}
-
 SecurityPolicyViolationEventDisposition::Value SecurityPolicyViolationEventDisposition::from_string(const char* str) noexcept {
-    if (str_equal(str, "enforce")) {
+    if (__builtin_strncmp(str, "enforce", strlen("enforce"))) {
         return ENFORCE;
     }
-    else if (str_equal(str, "report")) {
+    else if (__builtin_strncmp(str, "report", strlen("report"))) {
         return REPORT;
     }
     else {
@@ -46,10 +38,10 @@ const char* SecurityPolicyViolationEventDisposition::to_string(SecurityPolicyVio
 }
 
 EndingType::Value EndingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "transparent")) {
+    if (__builtin_strncmp(str, "transparent", strlen("transparent"))) {
         return TRANSPARENT;
     }
-    else if (str_equal(str, "native")) {
+    else if (__builtin_strncmp(str, "native", strlen("native"))) {
         return NATIVE;
     }
     else {
@@ -81,10 +73,10 @@ const char* EndingType::to_string(EndingType::Value value_) noexcept {
 }
 
 IDBRequestReadyState::Value IDBRequestReadyState::from_string(const char* str) noexcept {
-    if (str_equal(str, "pending")) {
+    if (__builtin_strncmp(str, "pending", strlen("pending"))) {
         return PENDING;
     }
-    else if (str_equal(str, "done")) {
+    else if (__builtin_strncmp(str, "done", strlen("done"))) {
         return DONE;
     }
     else {
@@ -116,13 +108,13 @@ const char* IDBRequestReadyState::to_string(IDBRequestReadyState::Value value_) 
 }
 
 IDBTransactionDurability::Value IDBTransactionDurability::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "strict")) {
+    else if (__builtin_strncmp(str, "strict", strlen("strict"))) {
         return STRICT;
     }
-    else if (str_equal(str, "relaxed")) {
+    else if (__builtin_strncmp(str, "relaxed", strlen("relaxed"))) {
         return RELAXED;
     }
     else {
@@ -156,16 +148,16 @@ const char* IDBTransactionDurability::to_string(IDBTransactionDurability::Value 
 }
 
 IDBCursorDirection::Value IDBCursorDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "next")) {
+    if (__builtin_strncmp(str, "next", strlen("next"))) {
         return NEXT;
     }
-    else if (str_equal(str, "nextunique")) {
+    else if (__builtin_strncmp(str, "nextunique", strlen("nextunique"))) {
         return NEXTUNIQUE;
     }
-    else if (str_equal(str, "prev")) {
+    else if (__builtin_strncmp(str, "prev", strlen("prev"))) {
         return PREV;
     }
-    else if (str_equal(str, "prevunique")) {
+    else if (__builtin_strncmp(str, "prevunique", strlen("prevunique"))) {
         return PREVUNIQUE;
     }
     else {
@@ -201,13 +193,13 @@ const char* IDBCursorDirection::to_string(IDBCursorDirection::Value value_) noex
 }
 
 IDBTransactionMode::Value IDBTransactionMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "readonly")) {
+    if (__builtin_strncmp(str, "readonly", strlen("readonly"))) {
         return READONLY;
     }
-    else if (str_equal(str, "readwrite")) {
+    else if (__builtin_strncmp(str, "readwrite", strlen("readwrite"))) {
         return READWRITE;
     }
-    else if (str_equal(str, "versionchange")) {
+    else if (__builtin_strncmp(str, "versionchange", strlen("versionchange"))) {
         return VERSIONCHANGE;
     }
     else {
@@ -241,10 +233,10 @@ const char* IDBTransactionMode::to_string(IDBTransactionMode::Value value_) noex
 }
 
 AccelerometerLocalCoordinateSystem::Value AccelerometerLocalCoordinateSystem::from_string(const char* str) noexcept {
-    if (str_equal(str, "device")) {
+    if (__builtin_strncmp(str, "device", strlen("device"))) {
         return DEVICE;
     }
-    else if (str_equal(str, "screen")) {
+    else if (__builtin_strncmp(str, "screen", strlen("screen"))) {
         return SCREEN;
     }
     else {
@@ -276,22 +268,22 @@ const char* AccelerometerLocalCoordinateSystem::to_string(AccelerometerLocalCoor
 }
 
 AudioSessionType::Value AudioSessionType::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "playback")) {
+    else if (__builtin_strncmp(str, "playback", strlen("playback"))) {
         return PLAYBACK;
     }
-    else if (str_equal(str, "transient")) {
+    else if (__builtin_strncmp(str, "transient", strlen("transient"))) {
         return TRANSIENT;
     }
-    else if (str_equal(str, "transient-solo")) {
+    else if (__builtin_strncmp(str, "transient-solo", strlen("transient-solo"))) {
         return TRANSIENT_SOLO;
     }
-    else if (str_equal(str, "ambient")) {
+    else if (__builtin_strncmp(str, "ambient", strlen("ambient"))) {
         return AMBIENT;
     }
-    else if (str_equal(str, "play-and-record")) {
+    else if (__builtin_strncmp(str, "play-and-record", strlen("play-and-record"))) {
         return PLAY_AND_RECORD;
     }
     else {
@@ -331,13 +323,13 @@ const char* AudioSessionType::to_string(AudioSessionType::Value value_) noexcept
 }
 
 AudioSessionState::Value AudioSessionState::from_string(const char* str) noexcept {
-    if (str_equal(str, "inactive")) {
+    if (__builtin_strncmp(str, "inactive", strlen("inactive"))) {
         return INACTIVE;
     }
-    else if (str_equal(str, "active")) {
+    else if (__builtin_strncmp(str, "active", strlen("active"))) {
         return ACTIVE;
     }
-    else if (str_equal(str, "interrupted")) {
+    else if (__builtin_strncmp(str, "interrupted", strlen("interrupted"))) {
         return INTERRUPTED;
     }
     else {
@@ -371,13 +363,13 @@ const char* AudioSessionState::to_string(AudioSessionState::Value value_) noexce
 }
 
 AutoplayPolicy::Value AutoplayPolicy::from_string(const char* str) noexcept {
-    if (str_equal(str, "allowed")) {
+    if (__builtin_strncmp(str, "allowed", strlen("allowed"))) {
         return ALLOWED;
     }
-    else if (str_equal(str, "allowed-muted")) {
+    else if (__builtin_strncmp(str, "allowed-muted", strlen("allowed-muted"))) {
         return ALLOWED_MUTED;
     }
-    else if (str_equal(str, "disallowed")) {
+    else if (__builtin_strncmp(str, "disallowed", strlen("disallowed"))) {
         return DISALLOWED;
     }
     else {
@@ -411,10 +403,10 @@ const char* AutoplayPolicy::to_string(AutoplayPolicy::Value value_) noexcept {
 }
 
 AutoplayPolicyMediaType::Value AutoplayPolicyMediaType::from_string(const char* str) noexcept {
-    if (str_equal(str, "mediaelement")) {
+    if (__builtin_strncmp(str, "mediaelement", strlen("mediaelement"))) {
         return MEDIAELEMENT;
     }
-    else if (str_equal(str, "audiocontext")) {
+    else if (__builtin_strncmp(str, "audiocontext", strlen("audiocontext"))) {
         return AUDIOCONTEXT;
     }
     else {
@@ -446,13 +438,13 @@ const char* AutoplayPolicyMediaType::to_string(AutoplayPolicyMediaType::Value va
 }
 
 BackgroundFetchResult::Value BackgroundFetchResult::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "success")) {
+    else if (__builtin_strncmp(str, "success", strlen("success"))) {
         return SUCCESS;
     }
-    else if (str_equal(str, "failure")) {
+    else if (__builtin_strncmp(str, "failure", strlen("failure"))) {
         return FAILURE;
     }
     else {
@@ -486,22 +478,22 @@ const char* BackgroundFetchResult::to_string(BackgroundFetchResult::Value value_
 }
 
 BackgroundFetchFailureReason::Value BackgroundFetchFailureReason::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "aborted")) {
+    else if (__builtin_strncmp(str, "aborted", strlen("aborted"))) {
         return ABORTED;
     }
-    else if (str_equal(str, "bad-status")) {
+    else if (__builtin_strncmp(str, "bad-status", strlen("bad-status"))) {
         return BAD_STATUS;
     }
-    else if (str_equal(str, "fetch-error")) {
+    else if (__builtin_strncmp(str, "fetch-error", strlen("fetch-error"))) {
         return FETCH_ERROR;
     }
-    else if (str_equal(str, "quota-exceeded")) {
+    else if (__builtin_strncmp(str, "quota-exceeded", strlen("quota-exceeded"))) {
         return QUOTA_EXCEEDED;
     }
-    else if (str_equal(str, "download-total-exceeded")) {
+    else if (__builtin_strncmp(str, "download-total-exceeded", strlen("download-total-exceeded"))) {
         return DOWNLOAD_TOTAL_EXCEEDED;
     }
     else {
@@ -541,13 +533,13 @@ const char* BackgroundFetchFailureReason::to_string(BackgroundFetchFailureReason
 }
 
 PresentationStyle::Value PresentationStyle::from_string(const char* str) noexcept {
-    if (str_equal(str, "unspecified")) {
+    if (__builtin_strncmp(str, "unspecified", strlen("unspecified"))) {
         return UNSPECIFIED;
     }
-    else if (str_equal(str, "inline")) {
+    else if (__builtin_strncmp(str, "inline", strlen("inline"))) {
         return INLINE_;
     }
-    else if (str_equal(str, "attachment")) {
+    else if (__builtin_strncmp(str, "attachment", strlen("attachment"))) {
         return ATTACHMENT;
     }
     else {
@@ -581,13 +573,13 @@ const char* PresentationStyle::to_string(PresentationStyle::Value value_) noexce
 }
 
 CompressionFormat::Value CompressionFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "deflate")) {
+    if (__builtin_strncmp(str, "deflate", strlen("deflate"))) {
         return DEFLATE;
     }
-    else if (str_equal(str, "deflate-raw")) {
+    else if (__builtin_strncmp(str, "deflate-raw", strlen("deflate-raw"))) {
         return DEFLATE_RAW;
     }
-    else if (str_equal(str, "gzip")) {
+    else if (__builtin_strncmp(str, "gzip", strlen("gzip"))) {
         return GZIP;
     }
     else {
@@ -621,7 +613,7 @@ const char* CompressionFormat::to_string(CompressionFormat::Value value_) noexce
 }
 
 PressureSource::Value PressureSource::from_string(const char* str) noexcept {
-    if (str_equal(str, "cpu")) {
+    if (__builtin_strncmp(str, "cpu", strlen("cpu"))) {
         return CPU;
     }
     else {
@@ -651,16 +643,16 @@ const char* PressureSource::to_string(PressureSource::Value value_) noexcept {
 }
 
 PressureState::Value PressureState::from_string(const char* str) noexcept {
-    if (str_equal(str, "nominal")) {
+    if (__builtin_strncmp(str, "nominal", strlen("nominal"))) {
         return NOMINAL;
     }
-    else if (str_equal(str, "fair")) {
+    else if (__builtin_strncmp(str, "fair", strlen("fair"))) {
         return FAIR;
     }
-    else if (str_equal(str, "serious")) {
+    else if (__builtin_strncmp(str, "serious", strlen("serious"))) {
         return SERIOUS;
     }
-    else if (str_equal(str, "critical")) {
+    else if (__builtin_strncmp(str, "critical", strlen("critical"))) {
         return CRITICAL;
     }
     else {
@@ -696,19 +688,19 @@ const char* PressureState::to_string(PressureState::Value value_) noexcept {
 }
 
 ContactProperty::Value ContactProperty::from_string(const char* str) noexcept {
-    if (str_equal(str, "address")) {
+    if (__builtin_strncmp(str, "address", strlen("address"))) {
         return ADDRESS;
     }
-    else if (str_equal(str, "email")) {
+    else if (__builtin_strncmp(str, "email", strlen("email"))) {
         return EMAIL;
     }
-    else if (str_equal(str, "icon")) {
+    else if (__builtin_strncmp(str, "icon", strlen("icon"))) {
         return ICON;
     }
-    else if (str_equal(str, "name")) {
+    else if (__builtin_strncmp(str, "name", strlen("name"))) {
         return NAME;
     }
-    else if (str_equal(str, "tel")) {
+    else if (__builtin_strncmp(str, "tel", strlen("tel"))) {
         return TEL;
     }
     else {
@@ -746,19 +738,19 @@ const char* ContactProperty::to_string(ContactProperty::Value value_) noexcept {
 }
 
 ContentCategory::Value ContentCategory::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "homepage")) {
+    else if (__builtin_strncmp(str, "homepage", strlen("homepage"))) {
         return HOMEPAGE;
     }
-    else if (str_equal(str, "article")) {
+    else if (__builtin_strncmp(str, "article", strlen("article"))) {
         return ARTICLE;
     }
-    else if (str_equal(str, "video")) {
+    else if (__builtin_strncmp(str, "video", strlen("video"))) {
         return VIDEO;
     }
-    else if (str_equal(str, "audio")) {
+    else if (__builtin_strncmp(str, "audio", strlen("audio"))) {
         return AUDIO;
     }
     else {
@@ -796,13 +788,13 @@ const char* ContentCategory::to_string(ContentCategory::Value value_) noexcept {
 }
 
 CookieSameSite::Value CookieSameSite::from_string(const char* str) noexcept {
-    if (str_equal(str, "strict")) {
+    if (__builtin_strncmp(str, "strict", strlen("strict"))) {
         return STRICT;
     }
-    else if (str_equal(str, "lax")) {
+    else if (__builtin_strncmp(str, "lax", strlen("lax"))) {
         return LAX;
     }
-    else if (str_equal(str, "none")) {
+    else if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
     else {
@@ -836,16 +828,16 @@ const char* CookieSameSite::to_string(CookieSameSite::Value value_) noexcept {
 }
 
 CredentialMediationRequirement::Value CredentialMediationRequirement::from_string(const char* str) noexcept {
-    if (str_equal(str, "silent")) {
+    if (__builtin_strncmp(str, "silent", strlen("silent"))) {
         return SILENT;
     }
-    else if (str_equal(str, "optional")) {
+    else if (__builtin_strncmp(str, "optional", strlen("optional"))) {
         return OPTIONAL;
     }
-    else if (str_equal(str, "conditional")) {
+    else if (__builtin_strncmp(str, "conditional", strlen("conditional"))) {
         return CONDITIONAL;
     }
-    else if (str_equal(str, "required")) {
+    else if (__builtin_strncmp(str, "required", strlen("required"))) {
         return REQUIRED;
     }
     else {
@@ -881,16 +873,16 @@ const char* CredentialMediationRequirement::to_string(CredentialMediationRequire
 }
 
 ScriptingPolicyViolationType::Value ScriptingPolicyViolationType::from_string(const char* str) noexcept {
-    if (str_equal(str, "externalScript")) {
+    if (__builtin_strncmp(str, "externalScript", strlen("externalScript"))) {
         return EXTERNALSCRIPT;
     }
-    else if (str_equal(str, "inlineScript")) {
+    else if (__builtin_strncmp(str, "inlineScript", strlen("inlineScript"))) {
         return INLINESCRIPT;
     }
-    else if (str_equal(str, "inlineEventHandler")) {
+    else if (__builtin_strncmp(str, "inlineEventHandler", strlen("inlineEventHandler"))) {
         return INLINEEVENTHANDLER;
     }
-    else if (str_equal(str, "eval")) {
+    else if (__builtin_strncmp(str, "eval", strlen("eval"))) {
         return EVAL;
     }
     else {
@@ -926,16 +918,16 @@ const char* ScriptingPolicyViolationType::to_string(ScriptingPolicyViolationType
 }
 
 FontFaceLoadStatus::Value FontFaceLoadStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "unloaded")) {
+    if (__builtin_strncmp(str, "unloaded", strlen("unloaded"))) {
         return UNLOADED;
     }
-    else if (str_equal(str, "loading")) {
+    else if (__builtin_strncmp(str, "loading", strlen("loading"))) {
         return LOADING;
     }
-    else if (str_equal(str, "loaded")) {
+    else if (__builtin_strncmp(str, "loaded", strlen("loaded"))) {
         return LOADED;
     }
-    else if (str_equal(str, "error")) {
+    else if (__builtin_strncmp(str, "error", strlen("error"))) {
         return ERROR;
     }
     else {
@@ -971,10 +963,10 @@ const char* FontFaceLoadStatus::to_string(FontFaceLoadStatus::Value value_) noex
 }
 
 FontFaceSetLoadStatus::Value FontFaceSetLoadStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "loading")) {
+    if (__builtin_strncmp(str, "loading", strlen("loading"))) {
         return LOADING;
     }
-    else if (str_equal(str, "loaded")) {
+    else if (__builtin_strncmp(str, "loaded", strlen("loaded"))) {
         return LOADED;
     }
     else {
@@ -1006,13 +998,13 @@ const char* FontFaceSetLoadStatus::to_string(FontFaceSetLoadStatus::Value value_
 }
 
 HighlightType::Value HighlightType::from_string(const char* str) noexcept {
-    if (str_equal(str, "highlight")) {
+    if (__builtin_strncmp(str, "highlight", strlen("highlight"))) {
         return HIGHLIGHT;
     }
-    else if (str_equal(str, "spelling-error")) {
+    else if (__builtin_strncmp(str, "spelling-error", strlen("spelling-error"))) {
         return SPELLING_ERROR;
     }
-    else if (str_equal(str, "grammar-error")) {
+    else if (__builtin_strncmp(str, "grammar-error", strlen("grammar-error"))) {
         return GRAMMAR_ERROR;
     }
     else {
@@ -1046,10 +1038,10 @@ const char* HighlightType::to_string(HighlightType::Value value_) noexcept {
 }
 
 ChildDisplayType::Value ChildDisplayType::from_string(const char* str) noexcept {
-    if (str_equal(str, "block")) {
+    if (__builtin_strncmp(str, "block", strlen("block"))) {
         return BLOCK;
     }
-    else if (str_equal(str, "normal")) {
+    else if (__builtin_strncmp(str, "normal", strlen("normal"))) {
         return NORMAL;
     }
     else {
@@ -1081,10 +1073,10 @@ const char* ChildDisplayType::to_string(ChildDisplayType::Value value_) noexcept
 }
 
 LayoutSizingMode::Value LayoutSizingMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "block-like")) {
+    if (__builtin_strncmp(str, "block-like", strlen("block-like"))) {
         return BLOCK_LIKE;
     }
-    else if (str_equal(str, "manual")) {
+    else if (__builtin_strncmp(str, "manual", strlen("manual"))) {
         return MANUAL;
     }
     else {
@@ -1116,16 +1108,16 @@ const char* LayoutSizingMode::to_string(LayoutSizingMode::Value value_) noexcept
 }
 
 BlockFragmentationType::Value BlockFragmentationType::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "page")) {
+    else if (__builtin_strncmp(str, "page", strlen("page"))) {
         return PAGE;
     }
-    else if (str_equal(str, "column")) {
+    else if (__builtin_strncmp(str, "column", strlen("column"))) {
         return COLUMN;
     }
-    else if (str_equal(str, "region")) {
+    else if (__builtin_strncmp(str, "region", strlen("region"))) {
         return REGION;
     }
     else {
@@ -1161,19 +1153,19 @@ const char* BlockFragmentationType::to_string(BlockFragmentationType::Value valu
 }
 
 BreakType::Value BreakType::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "line")) {
+    else if (__builtin_strncmp(str, "line", strlen("line"))) {
         return LINE;
     }
-    else if (str_equal(str, "column")) {
+    else if (__builtin_strncmp(str, "column", strlen("column"))) {
         return COLUMN;
     }
-    else if (str_equal(str, "page")) {
+    else if (__builtin_strncmp(str, "page", strlen("page"))) {
         return PAGE;
     }
-    else if (str_equal(str, "region")) {
+    else if (__builtin_strncmp(str, "region", strlen("region"))) {
         return REGION;
     }
     else {
@@ -1211,16 +1203,16 @@ const char* BreakType::to_string(BreakType::Value value_) noexcept {
 }
 
 SpatialNavigationDirection::Value SpatialNavigationDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "up")) {
+    if (__builtin_strncmp(str, "up", strlen("up"))) {
         return UP;
     }
-    else if (str_equal(str, "down")) {
+    else if (__builtin_strncmp(str, "down", strlen("down"))) {
         return DOWN;
     }
-    else if (str_equal(str, "left")) {
+    else if (__builtin_strncmp(str, "left", strlen("left"))) {
         return LEFT;
     }
-    else if (str_equal(str, "right")) {
+    else if (__builtin_strncmp(str, "right", strlen("right"))) {
         return RIGHT;
     }
     else {
@@ -1256,10 +1248,10 @@ const char* SpatialNavigationDirection::to_string(SpatialNavigationDirection::Va
 }
 
 FocusableAreaSearchMode::Value FocusableAreaSearchMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "visible")) {
+    if (__builtin_strncmp(str, "visible", strlen("visible"))) {
         return VISIBLE;
     }
-    else if (str_equal(str, "all")) {
+    else if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
     else {
@@ -1291,25 +1283,25 @@ const char* FocusableAreaSearchMode::to_string(FocusableAreaSearchMode::Value va
 }
 
 CSSNumericBaseType::Value CSSNumericBaseType::from_string(const char* str) noexcept {
-    if (str_equal(str, "length")) {
+    if (__builtin_strncmp(str, "length", strlen("length"))) {
         return LENGTH;
     }
-    else if (str_equal(str, "angle")) {
+    else if (__builtin_strncmp(str, "angle", strlen("angle"))) {
         return ANGLE;
     }
-    else if (str_equal(str, "time")) {
+    else if (__builtin_strncmp(str, "time", strlen("time"))) {
         return TIME;
     }
-    else if (str_equal(str, "frequency")) {
+    else if (__builtin_strncmp(str, "frequency", strlen("frequency"))) {
         return FREQUENCY;
     }
-    else if (str_equal(str, "resolution")) {
+    else if (__builtin_strncmp(str, "resolution", strlen("resolution"))) {
         return RESOLUTION;
     }
-    else if (str_equal(str, "flex")) {
+    else if (__builtin_strncmp(str, "flex", strlen("flex"))) {
         return FLEX;
     }
-    else if (str_equal(str, "percent")) {
+    else if (__builtin_strncmp(str, "percent", strlen("percent"))) {
         return PERCENT;
     }
     else {
@@ -1351,25 +1343,25 @@ const char* CSSNumericBaseType::to_string(CSSNumericBaseType::Value value_) noex
 }
 
 CSSMathOperator::Value CSSMathOperator::from_string(const char* str) noexcept {
-    if (str_equal(str, "sum")) {
+    if (__builtin_strncmp(str, "sum", strlen("sum"))) {
         return SUM;
     }
-    else if (str_equal(str, "product")) {
+    else if (__builtin_strncmp(str, "product", strlen("product"))) {
         return PRODUCT;
     }
-    else if (str_equal(str, "negate")) {
+    else if (__builtin_strncmp(str, "negate", strlen("negate"))) {
         return NEGATE;
     }
-    else if (str_equal(str, "invert")) {
+    else if (__builtin_strncmp(str, "invert", strlen("invert"))) {
         return INVERT;
     }
-    else if (str_equal(str, "min")) {
+    else if (__builtin_strncmp(str, "min", strlen("min"))) {
         return MIN;
     }
-    else if (str_equal(str, "max")) {
+    else if (__builtin_strncmp(str, "max", strlen("max"))) {
         return MAX;
     }
-    else if (str_equal(str, "clamp")) {
+    else if (__builtin_strncmp(str, "clamp", strlen("clamp"))) {
         return CLAMP;
     }
     else {
@@ -1411,13 +1403,13 @@ const char* CSSMathOperator::to_string(CSSMathOperator::Value value_) noexcept {
 }
 
 ScrollBehavior::Value ScrollBehavior::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "instant")) {
+    else if (__builtin_strncmp(str, "instant", strlen("instant"))) {
         return INSTANT;
     }
-    else if (str_equal(str, "smooth")) {
+    else if (__builtin_strncmp(str, "smooth", strlen("smooth"))) {
         return SMOOTH;
     }
     else {
@@ -1451,16 +1443,16 @@ const char* ScrollBehavior::to_string(ScrollBehavior::Value value_) noexcept {
 }
 
 ScrollLogicalPosition::Value ScrollLogicalPosition::from_string(const char* str) noexcept {
-    if (str_equal(str, "start")) {
+    if (__builtin_strncmp(str, "start", strlen("start"))) {
         return START;
     }
-    else if (str_equal(str, "center")) {
+    else if (__builtin_strncmp(str, "center", strlen("center"))) {
         return CENTER;
     }
-    else if (str_equal(str, "end")) {
+    else if (__builtin_strncmp(str, "end", strlen("end"))) {
         return END;
     }
-    else if (str_equal(str, "nearest")) {
+    else if (__builtin_strncmp(str, "nearest", strlen("nearest"))) {
         return NEAREST;
     }
     else {
@@ -1496,10 +1488,10 @@ const char* ScrollLogicalPosition::to_string(ScrollLogicalPosition::Value value_
 }
 
 ScrollIntoViewContainer::Value ScrollIntoViewContainer::from_string(const char* str) noexcept {
-    if (str_equal(str, "all")) {
+    if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
-    else if (str_equal(str, "nearest")) {
+    else if (__builtin_strncmp(str, "nearest", strlen("nearest"))) {
         return NEAREST;
     }
     else {
@@ -1531,16 +1523,16 @@ const char* ScrollIntoViewContainer::to_string(ScrollIntoViewContainer::Value va
 }
 
 CSSBoxType::Value CSSBoxType::from_string(const char* str) noexcept {
-    if (str_equal(str, "margin")) {
+    if (__builtin_strncmp(str, "margin", strlen("margin"))) {
         return MARGIN;
     }
-    else if (str_equal(str, "border")) {
+    else if (__builtin_strncmp(str, "border", strlen("border"))) {
         return BORDER;
     }
-    else if (str_equal(str, "padding")) {
+    else if (__builtin_strncmp(str, "padding", strlen("padding"))) {
         return PADDING;
     }
-    else if (str_equal(str, "content")) {
+    else if (__builtin_strncmp(str, "content", strlen("content"))) {
         return CONTENT;
     }
     else {
@@ -1576,10 +1568,10 @@ const char* CSSBoxType::to_string(CSSBoxType::Value value_) noexcept {
 }
 
 DevicePostureType::Value DevicePostureType::from_string(const char* str) noexcept {
-    if (str_equal(str, "continuous")) {
+    if (__builtin_strncmp(str, "continuous", strlen("continuous"))) {
         return CONTINUOUS;
     }
-    else if (str_equal(str, "folded")) {
+    else if (__builtin_strncmp(str, "folded", strlen("folded"))) {
         return FOLDED;
     }
     else {
@@ -1611,10 +1603,10 @@ const char* DevicePostureType::to_string(DevicePostureType::Value value_) noexce
 }
 
 ItemType::Value ItemType::from_string(const char* str) noexcept {
-    if (str_equal(str, "product")) {
+    if (__builtin_strncmp(str, "product", strlen("product"))) {
         return PRODUCT;
     }
-    else if (str_equal(str, "subscription")) {
+    else if (__builtin_strncmp(str, "subscription", strlen("subscription"))) {
         return SUBSCRIPTION;
     }
     else {
@@ -1646,10 +1638,10 @@ const char* ItemType::to_string(ItemType::Value value_) noexcept {
 }
 
 ShadowRootMode::Value ShadowRootMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "open")) {
+    if (__builtin_strncmp(str, "open", strlen("open"))) {
         return OPEN;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
     else {
@@ -1681,10 +1673,10 @@ const char* ShadowRootMode::to_string(ShadowRootMode::Value value_) noexcept {
 }
 
 SlotAssignmentMode::Value SlotAssignmentMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "manual")) {
+    if (__builtin_strncmp(str, "manual", strlen("manual"))) {
         return MANUAL;
     }
-    else if (str_equal(str, "named")) {
+    else if (__builtin_strncmp(str, "named", strlen("named"))) {
         return NAMED;
     }
     else {
@@ -1716,19 +1708,19 @@ const char* SlotAssignmentMode::to_string(SlotAssignmentMode::Value value_) noex
 }
 
 UnderlineStyle::Value UnderlineStyle::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "solid")) {
+    else if (__builtin_strncmp(str, "solid", strlen("solid"))) {
         return SOLID;
     }
-    else if (str_equal(str, "dotted")) {
+    else if (__builtin_strncmp(str, "dotted", strlen("dotted"))) {
         return DOTTED;
     }
-    else if (str_equal(str, "dashed")) {
+    else if (__builtin_strncmp(str, "dashed", strlen("dashed"))) {
         return DASHED;
     }
-    else if (str_equal(str, "wavy")) {
+    else if (__builtin_strncmp(str, "wavy", strlen("wavy"))) {
         return WAVY;
     }
     else {
@@ -1766,13 +1758,13 @@ const char* UnderlineStyle::to_string(UnderlineStyle::Value value_) noexcept {
 }
 
 UnderlineThickness::Value UnderlineThickness::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "thin")) {
+    else if (__builtin_strncmp(str, "thin", strlen("thin"))) {
         return THIN;
     }
-    else if (str_equal(str, "thick")) {
+    else if (__builtin_strncmp(str, "thick", strlen("thick"))) {
         return THICK;
     }
     else {
@@ -1806,13 +1798,13 @@ const char* UnderlineThickness::to_string(UnderlineThickness::Value value_) noex
 }
 
 MediaKeysRequirement::Value MediaKeysRequirement::from_string(const char* str) noexcept {
-    if (str_equal(str, "required")) {
+    if (__builtin_strncmp(str, "required", strlen("required"))) {
         return REQUIRED;
     }
-    else if (str_equal(str, "optional")) {
+    else if (__builtin_strncmp(str, "optional", strlen("optional"))) {
         return OPTIONAL;
     }
-    else if (str_equal(str, "not-allowed")) {
+    else if (__builtin_strncmp(str, "not-allowed", strlen("not-allowed"))) {
         return NOT_ALLOWED;
     }
     else {
@@ -1846,10 +1838,10 @@ const char* MediaKeysRequirement::to_string(MediaKeysRequirement::Value value_) 
 }
 
 MediaKeySessionType::Value MediaKeySessionType::from_string(const char* str) noexcept {
-    if (str_equal(str, "temporary")) {
+    if (__builtin_strncmp(str, "temporary", strlen("temporary"))) {
         return TEMPORARY;
     }
-    else if (str_equal(str, "persistent-license")) {
+    else if (__builtin_strncmp(str, "persistent-license", strlen("persistent-license"))) {
         return PERSISTENT_LICENSE;
     }
     else {
@@ -1881,19 +1873,19 @@ const char* MediaKeySessionType::to_string(MediaKeySessionType::Value value_) no
 }
 
 MediaKeySessionClosedReason::Value MediaKeySessionClosedReason::from_string(const char* str) noexcept {
-    if (str_equal(str, "internal-error")) {
+    if (__builtin_strncmp(str, "internal-error", strlen("internal-error"))) {
         return INTERNAL_ERROR;
     }
-    else if (str_equal(str, "closed-by-application")) {
+    else if (__builtin_strncmp(str, "closed-by-application", strlen("closed-by-application"))) {
         return CLOSED_BY_APPLICATION;
     }
-    else if (str_equal(str, "release-acknowledged")) {
+    else if (__builtin_strncmp(str, "release-acknowledged", strlen("release-acknowledged"))) {
         return RELEASE_ACKNOWLEDGED;
     }
-    else if (str_equal(str, "hardware-context-reset")) {
+    else if (__builtin_strncmp(str, "hardware-context-reset", strlen("hardware-context-reset"))) {
         return HARDWARE_CONTEXT_RESET;
     }
-    else if (str_equal(str, "resource-evicted")) {
+    else if (__builtin_strncmp(str, "resource-evicted", strlen("resource-evicted"))) {
         return RESOURCE_EVICTED;
     }
     else {
@@ -1931,28 +1923,28 @@ const char* MediaKeySessionClosedReason::to_string(MediaKeySessionClosedReason::
 }
 
 MediaKeyStatus::Value MediaKeyStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "usable")) {
+    if (__builtin_strncmp(str, "usable", strlen("usable"))) {
         return USABLE;
     }
-    else if (str_equal(str, "expired")) {
+    else if (__builtin_strncmp(str, "expired", strlen("expired"))) {
         return EXPIRED;
     }
-    else if (str_equal(str, "released")) {
+    else if (__builtin_strncmp(str, "released", strlen("released"))) {
         return RELEASED;
     }
-    else if (str_equal(str, "output-restricted")) {
+    else if (__builtin_strncmp(str, "output-restricted", strlen("output-restricted"))) {
         return OUTPUT_RESTRICTED;
     }
-    else if (str_equal(str, "output-downscaled")) {
+    else if (__builtin_strncmp(str, "output-downscaled", strlen("output-downscaled"))) {
         return OUTPUT_DOWNSCALED;
     }
-    else if (str_equal(str, "usable-in-future")) {
+    else if (__builtin_strncmp(str, "usable-in-future", strlen("usable-in-future"))) {
         return USABLE_IN_FUTURE;
     }
-    else if (str_equal(str, "status-pending")) {
+    else if (__builtin_strncmp(str, "status-pending", strlen("status-pending"))) {
         return STATUS_PENDING;
     }
-    else if (str_equal(str, "internal-error")) {
+    else if (__builtin_strncmp(str, "internal-error", strlen("internal-error"))) {
         return INTERNAL_ERROR;
     }
     else {
@@ -1996,16 +1988,16 @@ const char* MediaKeyStatus::to_string(MediaKeyStatus::Value value_) noexcept {
 }
 
 MediaKeyMessageType::Value MediaKeyMessageType::from_string(const char* str) noexcept {
-    if (str_equal(str, "license-request")) {
+    if (__builtin_strncmp(str, "license-request", strlen("license-request"))) {
         return LICENSE_REQUEST;
     }
-    else if (str_equal(str, "license-renewal")) {
+    else if (__builtin_strncmp(str, "license-renewal", strlen("license-renewal"))) {
         return LICENSE_RENEWAL;
     }
-    else if (str_equal(str, "license-release")) {
+    else if (__builtin_strncmp(str, "license-release", strlen("license-release"))) {
         return LICENSE_RELEASE;
     }
-    else if (str_equal(str, "individualization-request")) {
+    else if (__builtin_strncmp(str, "individualization-request", strlen("individualization-request"))) {
         return INDIVIDUALIZATION_REQUEST;
     }
     else {
@@ -2041,16 +2033,16 @@ const char* MediaKeyMessageType::to_string(MediaKeyMessageType::Value value_) no
 }
 
 IdentityCredentialRequestOptionsContext::Value IdentityCredentialRequestOptionsContext::from_string(const char* str) noexcept {
-    if (str_equal(str, "signin")) {
+    if (__builtin_strncmp(str, "signin", strlen("signin"))) {
         return SIGNIN;
     }
-    else if (str_equal(str, "signup")) {
+    else if (__builtin_strncmp(str, "signup", strlen("signup"))) {
         return SIGNUP;
     }
-    else if (str_equal(str, "use")) {
+    else if (__builtin_strncmp(str, "use", strlen("use"))) {
         return USE;
     }
-    else if (str_equal(str, "continue")) {
+    else if (__builtin_strncmp(str, "continue", strlen("continue"))) {
         return CONTINUE_;
     }
     else {
@@ -2086,10 +2078,10 @@ const char* IdentityCredentialRequestOptionsContext::to_string(IdentityCredentia
 }
 
 IdentityCredentialRequestOptionsMode::Value IdentityCredentialRequestOptionsMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "active")) {
+    if (__builtin_strncmp(str, "active", strlen("active"))) {
         return ACTIVE;
     }
-    else if (str_equal(str, "passive")) {
+    else if (__builtin_strncmp(str, "passive", strlen("passive"))) {
         return PASSIVE;
     }
     else {
@@ -2121,7 +2113,7 @@ const char* IdentityCredentialRequestOptionsMode::to_string(IdentityCredentialRe
 }
 
 OpaqueProperty::Value OpaqueProperty::from_string(const char* str) noexcept {
-    if (str_equal(str, "opaque")) {
+    if (__builtin_strncmp(str, "opaque", strlen("opaque"))) {
         return OPAQUE;
     }
     else {
@@ -2151,19 +2143,19 @@ const char* OpaqueProperty::to_string(OpaqueProperty::Value value_) noexcept {
 }
 
 FenceReportingDestination::Value FenceReportingDestination::from_string(const char* str) noexcept {
-    if (str_equal(str, "buyer")) {
+    if (__builtin_strncmp(str, "buyer", strlen("buyer"))) {
         return BUYER;
     }
-    else if (str_equal(str, "seller")) {
+    else if (__builtin_strncmp(str, "seller", strlen("seller"))) {
         return SELLER;
     }
-    else if (str_equal(str, "component-seller")) {
+    else if (__builtin_strncmp(str, "component-seller", strlen("component-seller"))) {
         return COMPONENT_SELLER;
     }
-    else if (str_equal(str, "direct-seller")) {
+    else if (__builtin_strncmp(str, "direct-seller", strlen("direct-seller"))) {
         return DIRECT_SELLER;
     }
-    else if (str_equal(str, "shared-storage-select-url")) {
+    else if (__builtin_strncmp(str, "shared-storage-select-url", strlen("shared-storage-select-url"))) {
         return SHARED_STORAGE_SELECT_URL;
     }
     else {
@@ -2201,67 +2193,67 @@ const char* FenceReportingDestination::to_string(FenceReportingDestination::Valu
 }
 
 RequestDestination::Value RequestDestination::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "audio")) {
+    else if (__builtin_strncmp(str, "audio", strlen("audio"))) {
         return AUDIO;
     }
-    else if (str_equal(str, "audioworklet")) {
+    else if (__builtin_strncmp(str, "audioworklet", strlen("audioworklet"))) {
         return AUDIOWORKLET;
     }
-    else if (str_equal(str, "document")) {
+    else if (__builtin_strncmp(str, "document", strlen("document"))) {
         return DOCUMENT;
     }
-    else if (str_equal(str, "embed")) {
+    else if (__builtin_strncmp(str, "embed", strlen("embed"))) {
         return EMBED;
     }
-    else if (str_equal(str, "font")) {
+    else if (__builtin_strncmp(str, "font", strlen("font"))) {
         return FONT;
     }
-    else if (str_equal(str, "frame")) {
+    else if (__builtin_strncmp(str, "frame", strlen("frame"))) {
         return FRAME;
     }
-    else if (str_equal(str, "iframe")) {
+    else if (__builtin_strncmp(str, "iframe", strlen("iframe"))) {
         return IFRAME;
     }
-    else if (str_equal(str, "image")) {
+    else if (__builtin_strncmp(str, "image", strlen("image"))) {
         return IMAGE;
     }
-    else if (str_equal(str, "json")) {
+    else if (__builtin_strncmp(str, "json", strlen("json"))) {
         return JSON;
     }
-    else if (str_equal(str, "manifest")) {
+    else if (__builtin_strncmp(str, "manifest", strlen("manifest"))) {
         return MANIFEST;
     }
-    else if (str_equal(str, "object")) {
+    else if (__builtin_strncmp(str, "object", strlen("object"))) {
         return OBJECT;
     }
-    else if (str_equal(str, "paintworklet")) {
+    else if (__builtin_strncmp(str, "paintworklet", strlen("paintworklet"))) {
         return PAINTWORKLET;
     }
-    else if (str_equal(str, "report")) {
+    else if (__builtin_strncmp(str, "report", strlen("report"))) {
         return REPORT;
     }
-    else if (str_equal(str, "script")) {
+    else if (__builtin_strncmp(str, "script", strlen("script"))) {
         return SCRIPT;
     }
-    else if (str_equal(str, "sharedworker")) {
+    else if (__builtin_strncmp(str, "sharedworker", strlen("sharedworker"))) {
         return SHAREDWORKER;
     }
-    else if (str_equal(str, "style")) {
+    else if (__builtin_strncmp(str, "style", strlen("style"))) {
         return STYLE;
     }
-    else if (str_equal(str, "track")) {
+    else if (__builtin_strncmp(str, "track", strlen("track"))) {
         return TRACK;
     }
-    else if (str_equal(str, "video")) {
+    else if (__builtin_strncmp(str, "video", strlen("video"))) {
         return VIDEO;
     }
-    else if (str_equal(str, "worker")) {
+    else if (__builtin_strncmp(str, "worker", strlen("worker"))) {
         return WORKER;
     }
-    else if (str_equal(str, "xslt")) {
+    else if (__builtin_strncmp(str, "xslt", strlen("xslt"))) {
         return XSLT;
     }
     else {
@@ -2331,16 +2323,16 @@ const char* RequestDestination::to_string(RequestDestination::Value value_) noex
 }
 
 RequestMode::Value RequestMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "navigate")) {
+    if (__builtin_strncmp(str, "navigate", strlen("navigate"))) {
         return NAVIGATE;
     }
-    else if (str_equal(str, "same-origin")) {
+    else if (__builtin_strncmp(str, "same-origin", strlen("same-origin"))) {
         return SAME_ORIGIN;
     }
-    else if (str_equal(str, "no-cors")) {
+    else if (__builtin_strncmp(str, "no-cors", strlen("no-cors"))) {
         return NO_CORS;
     }
-    else if (str_equal(str, "cors")) {
+    else if (__builtin_strncmp(str, "cors", strlen("cors"))) {
         return CORS;
     }
     else {
@@ -2376,13 +2368,13 @@ const char* RequestMode::to_string(RequestMode::Value value_) noexcept {
 }
 
 RequestCredentials::Value RequestCredentials::from_string(const char* str) noexcept {
-    if (str_equal(str, "omit")) {
+    if (__builtin_strncmp(str, "omit", strlen("omit"))) {
         return OMIT;
     }
-    else if (str_equal(str, "same-origin")) {
+    else if (__builtin_strncmp(str, "same-origin", strlen("same-origin"))) {
         return SAME_ORIGIN;
     }
-    else if (str_equal(str, "include")) {
+    else if (__builtin_strncmp(str, "include", strlen("include"))) {
         return INCLUDE;
     }
     else {
@@ -2416,22 +2408,22 @@ const char* RequestCredentials::to_string(RequestCredentials::Value value_) noex
 }
 
 RequestCache::Value RequestCache::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "no-store")) {
+    else if (__builtin_strncmp(str, "no-store", strlen("no-store"))) {
         return NO_STORE;
     }
-    else if (str_equal(str, "reload")) {
+    else if (__builtin_strncmp(str, "reload", strlen("reload"))) {
         return RELOAD;
     }
-    else if (str_equal(str, "no-cache")) {
+    else if (__builtin_strncmp(str, "no-cache", strlen("no-cache"))) {
         return NO_CACHE;
     }
-    else if (str_equal(str, "force-cache")) {
+    else if (__builtin_strncmp(str, "force-cache", strlen("force-cache"))) {
         return FORCE_CACHE;
     }
-    else if (str_equal(str, "only-if-cached")) {
+    else if (__builtin_strncmp(str, "only-if-cached", strlen("only-if-cached"))) {
         return ONLY_IF_CACHED;
     }
     else {
@@ -2471,13 +2463,13 @@ const char* RequestCache::to_string(RequestCache::Value value_) noexcept {
 }
 
 RequestRedirect::Value RequestRedirect::from_string(const char* str) noexcept {
-    if (str_equal(str, "follow")) {
+    if (__builtin_strncmp(str, "follow", strlen("follow"))) {
         return FOLLOW;
     }
-    else if (str_equal(str, "error")) {
+    else if (__builtin_strncmp(str, "error", strlen("error"))) {
         return ERROR;
     }
-    else if (str_equal(str, "manual")) {
+    else if (__builtin_strncmp(str, "manual", strlen("manual"))) {
         return MANUAL;
     }
     else {
@@ -2511,7 +2503,7 @@ const char* RequestRedirect::to_string(RequestRedirect::Value value_) noexcept {
 }
 
 RequestDuplex::Value RequestDuplex::from_string(const char* str) noexcept {
-    if (str_equal(str, "half")) {
+    if (__builtin_strncmp(str, "half", strlen("half"))) {
         return HALF;
     }
     else {
@@ -2541,13 +2533,13 @@ const char* RequestDuplex::to_string(RequestDuplex::Value value_) noexcept {
 }
 
 RequestPriority::Value RequestPriority::from_string(const char* str) noexcept {
-    if (str_equal(str, "high")) {
+    if (__builtin_strncmp(str, "high", strlen("high"))) {
         return HIGH;
     }
-    else if (str_equal(str, "low")) {
+    else if (__builtin_strncmp(str, "low", strlen("low"))) {
         return LOW;
     }
-    else if (str_equal(str, "auto")) {
+    else if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
     else {
@@ -2581,22 +2573,22 @@ const char* RequestPriority::to_string(RequestPriority::Value value_) noexcept {
 }
 
 ResponseType::Value ResponseType::from_string(const char* str) noexcept {
-    if (str_equal(str, "basic")) {
+    if (__builtin_strncmp(str, "basic", strlen("basic"))) {
         return BASIC;
     }
-    else if (str_equal(str, "cors")) {
+    else if (__builtin_strncmp(str, "cors", strlen("cors"))) {
         return CORS;
     }
-    else if (str_equal(str, "default")) {
+    else if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "error")) {
+    else if (__builtin_strncmp(str, "error", strlen("error"))) {
         return ERROR;
     }
-    else if (str_equal(str, "opaque")) {
+    else if (__builtin_strncmp(str, "opaque", strlen("opaque"))) {
         return OPAQUE;
     }
-    else if (str_equal(str, "opaqueredirect")) {
+    else if (__builtin_strncmp(str, "opaqueredirect", strlen("opaqueredirect"))) {
         return OPAQUEREDIRECT;
     }
     else {
@@ -2636,10 +2628,10 @@ const char* ResponseType::to_string(ResponseType::Value value_) noexcept {
 }
 
 FileSystemPermissionMode::Value FileSystemPermissionMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "read")) {
+    if (__builtin_strncmp(str, "read", strlen("read"))) {
         return READ;
     }
-    else if (str_equal(str, "readwrite")) {
+    else if (__builtin_strncmp(str, "readwrite", strlen("readwrite"))) {
         return READWRITE;
     }
     else {
@@ -2671,22 +2663,22 @@ const char* FileSystemPermissionMode::to_string(FileSystemPermissionMode::Value 
 }
 
 WellKnownDirectory::Value WellKnownDirectory::from_string(const char* str) noexcept {
-    if (str_equal(str, "desktop")) {
+    if (__builtin_strncmp(str, "desktop", strlen("desktop"))) {
         return DESKTOP;
     }
-    else if (str_equal(str, "documents")) {
+    else if (__builtin_strncmp(str, "documents", strlen("documents"))) {
         return DOCUMENTS;
     }
-    else if (str_equal(str, "downloads")) {
+    else if (__builtin_strncmp(str, "downloads", strlen("downloads"))) {
         return DOWNLOADS;
     }
-    else if (str_equal(str, "music")) {
+    else if (__builtin_strncmp(str, "music", strlen("music"))) {
         return MUSIC;
     }
-    else if (str_equal(str, "pictures")) {
+    else if (__builtin_strncmp(str, "pictures", strlen("pictures"))) {
         return PICTURES;
     }
-    else if (str_equal(str, "videos")) {
+    else if (__builtin_strncmp(str, "videos", strlen("videos"))) {
         return VIDEOS;
     }
     else {
@@ -2726,10 +2718,10 @@ const char* WellKnownDirectory::to_string(WellKnownDirectory::Value value_) noex
 }
 
 FileSystemHandleKind::Value FileSystemHandleKind::from_string(const char* str) noexcept {
-    if (str_equal(str, "file")) {
+    if (__builtin_strncmp(str, "file", strlen("file"))) {
         return FILE;
     }
-    else if (str_equal(str, "directory")) {
+    else if (__builtin_strncmp(str, "directory", strlen("directory"))) {
         return DIRECTORY;
     }
     else {
@@ -2761,13 +2753,13 @@ const char* FileSystemHandleKind::to_string(FileSystemHandleKind::Value value_) 
 }
 
 WriteCommandType::Value WriteCommandType::from_string(const char* str) noexcept {
-    if (str_equal(str, "write")) {
+    if (__builtin_strncmp(str, "write", strlen("write"))) {
         return WRITE;
     }
-    else if (str_equal(str, "seek")) {
+    else if (__builtin_strncmp(str, "seek", strlen("seek"))) {
         return SEEK;
     }
-    else if (str_equal(str, "truncate")) {
+    else if (__builtin_strncmp(str, "truncate", strlen("truncate"))) {
         return TRUNCATE;
     }
     else {
@@ -2801,13 +2793,13 @@ const char* WriteCommandType::to_string(WriteCommandType::Value value_) noexcept
 }
 
 FullscreenNavigationUI::Value FullscreenNavigationUI::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "show")) {
+    else if (__builtin_strncmp(str, "show", strlen("show"))) {
         return SHOW;
     }
-    else if (str_equal(str, "hide")) {
+    else if (__builtin_strncmp(str, "hide", strlen("hide"))) {
         return HIDE;
     }
     else {
@@ -2841,13 +2833,13 @@ const char* FullscreenNavigationUI::to_string(FullscreenNavigationUI::Value valu
 }
 
 GamepadHand::Value GamepadHand::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "left")) {
+    else if (__builtin_strncmp(str, "left", strlen("left"))) {
         return LEFT;
     }
-    else if (str_equal(str, "right")) {
+    else if (__builtin_strncmp(str, "right", strlen("right"))) {
         return RIGHT;
     }
     else {
@@ -2881,13 +2873,13 @@ const char* GamepadHand::to_string(GamepadHand::Value value_) noexcept {
 }
 
 GamepadMappingType::Value GamepadMappingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "standard")) {
+    else if (__builtin_strncmp(str, "standard", strlen("standard"))) {
         return STANDARD;
     }
-    else if (str_equal(str, "xr-standard")) {
+    else if (__builtin_strncmp(str, "xr-standard", strlen("xr-standard"))) {
         return XR_STANDARD;
     }
     else {
@@ -2921,10 +2913,10 @@ const char* GamepadMappingType::to_string(GamepadMappingType::Value value_) noex
 }
 
 GamepadHapticsResult::Value GamepadHapticsResult::from_string(const char* str) noexcept {
-    if (str_equal(str, "complete")) {
+    if (__builtin_strncmp(str, "complete", strlen("complete"))) {
         return COMPLETE;
     }
-    else if (str_equal(str, "preempted")) {
+    else if (__builtin_strncmp(str, "preempted", strlen("preempted"))) {
         return PREEMPTED;
     }
     else {
@@ -2956,10 +2948,10 @@ const char* GamepadHapticsResult::to_string(GamepadHapticsResult::Value value_) 
 }
 
 GamepadHapticEffectType::Value GamepadHapticEffectType::from_string(const char* str) noexcept {
-    if (str_equal(str, "dual-rumble")) {
+    if (__builtin_strncmp(str, "dual-rumble", strlen("dual-rumble"))) {
         return DUAL_RUMBLE;
     }
-    else if (str_equal(str, "trigger-rumble")) {
+    else if (__builtin_strncmp(str, "trigger-rumble", strlen("trigger-rumble"))) {
         return TRIGGER_RUMBLE;
     }
     else {
@@ -2991,10 +2983,10 @@ const char* GamepadHapticEffectType::to_string(GamepadHapticEffectType::Value va
 }
 
 GyroscopeLocalCoordinateSystem::Value GyroscopeLocalCoordinateSystem::from_string(const char* str) noexcept {
-    if (str_equal(str, "device")) {
+    if (__builtin_strncmp(str, "device", strlen("device"))) {
         return DEVICE;
     }
-    else if (str_equal(str, "screen")) {
+    else if (__builtin_strncmp(str, "screen", strlen("screen"))) {
         return SCREEN;
     }
     else {
@@ -3026,10 +3018,10 @@ const char* GyroscopeLocalCoordinateSystem::to_string(GyroscopeLocalCoordinateSy
 }
 
 HandwritingRecognitionType::Value HandwritingRecognitionType::from_string(const char* str) noexcept {
-    if (str_equal(str, "text")) {
+    if (__builtin_strncmp(str, "text", strlen("text"))) {
         return TEXT;
     }
-    else if (str_equal(str, "per-character")) {
+    else if (__builtin_strncmp(str, "per-character", strlen("per-character"))) {
         return PER_CHARACTER;
     }
     else {
@@ -3061,13 +3053,13 @@ const char* HandwritingRecognitionType::to_string(HandwritingRecognitionType::Va
 }
 
 HandwritingInputType::Value HandwritingInputType::from_string(const char* str) noexcept {
-    if (str_equal(str, "mouse")) {
+    if (__builtin_strncmp(str, "mouse", strlen("mouse"))) {
         return MOUSE;
     }
-    else if (str_equal(str, "stylus")) {
+    else if (__builtin_strncmp(str, "stylus", strlen("stylus"))) {
         return STYLUS;
     }
-    else if (str_equal(str, "touch")) {
+    else if (__builtin_strncmp(str, "touch", strlen("touch"))) {
         return TOUCH;
     }
     else {
@@ -3101,13 +3093,13 @@ const char* HandwritingInputType::to_string(HandwritingInputType::Value value_) 
 }
 
 DocumentReadyState::Value DocumentReadyState::from_string(const char* str) noexcept {
-    if (str_equal(str, "loading")) {
+    if (__builtin_strncmp(str, "loading", strlen("loading"))) {
         return LOADING;
     }
-    else if (str_equal(str, "interactive")) {
+    else if (__builtin_strncmp(str, "interactive", strlen("interactive"))) {
         return INTERACTIVE;
     }
-    else if (str_equal(str, "complete")) {
+    else if (__builtin_strncmp(str, "complete", strlen("complete"))) {
         return COMPLETE;
     }
     else {
@@ -3141,10 +3133,10 @@ const char* DocumentReadyState::to_string(DocumentReadyState::Value value_) noex
 }
 
 DocumentVisibilityState::Value DocumentVisibilityState::from_string(const char* str) noexcept {
-    if (str_equal(str, "visible")) {
+    if (__builtin_strncmp(str, "visible", strlen("visible"))) {
         return VISIBLE;
     }
-    else if (str_equal(str, "hidden")) {
+    else if (__builtin_strncmp(str, "hidden", strlen("hidden"))) {
         return HIDDEN;
     }
     else {
@@ -3176,13 +3168,13 @@ const char* DocumentVisibilityState::to_string(DocumentVisibilityState::Value va
 }
 
 CanPlayTypeResult::Value CanPlayTypeResult::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "maybe")) {
+    else if (__builtin_strncmp(str, "maybe", strlen("maybe"))) {
         return MAYBE;
     }
-    else if (str_equal(str, "probably")) {
+    else if (__builtin_strncmp(str, "probably", strlen("probably"))) {
         return PROBABLY;
     }
     else {
@@ -3216,13 +3208,13 @@ const char* CanPlayTypeResult::to_string(CanPlayTypeResult::Value value_) noexce
 }
 
 TextTrackMode::Value TextTrackMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "disabled")) {
+    if (__builtin_strncmp(str, "disabled", strlen("disabled"))) {
         return DISABLED;
     }
-    else if (str_equal(str, "hidden")) {
+    else if (__builtin_strncmp(str, "hidden", strlen("hidden"))) {
         return HIDDEN;
     }
-    else if (str_equal(str, "showing")) {
+    else if (__builtin_strncmp(str, "showing", strlen("showing"))) {
         return SHOWING;
     }
     else {
@@ -3256,19 +3248,19 @@ const char* TextTrackMode::to_string(TextTrackMode::Value value_) noexcept {
 }
 
 TextTrackKind::Value TextTrackKind::from_string(const char* str) noexcept {
-    if (str_equal(str, "subtitles")) {
+    if (__builtin_strncmp(str, "subtitles", strlen("subtitles"))) {
         return SUBTITLES;
     }
-    else if (str_equal(str, "captions")) {
+    else if (__builtin_strncmp(str, "captions", strlen("captions"))) {
         return CAPTIONS;
     }
-    else if (str_equal(str, "descriptions")) {
+    else if (__builtin_strncmp(str, "descriptions", strlen("descriptions"))) {
         return DESCRIPTIONS;
     }
-    else if (str_equal(str, "chapters")) {
+    else if (__builtin_strncmp(str, "chapters", strlen("chapters"))) {
         return CHAPTERS;
     }
-    else if (str_equal(str, "metadata")) {
+    else if (__builtin_strncmp(str, "metadata", strlen("metadata"))) {
         return METADATA;
     }
     else {
@@ -3306,16 +3298,16 @@ const char* TextTrackKind::to_string(TextTrackKind::Value value_) noexcept {
 }
 
 SelectionMode::Value SelectionMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "select")) {
+    if (__builtin_strncmp(str, "select", strlen("select"))) {
         return SELECT;
     }
-    else if (str_equal(str, "start")) {
+    else if (__builtin_strncmp(str, "start", strlen("start"))) {
         return START;
     }
-    else if (str_equal(str, "end")) {
+    else if (__builtin_strncmp(str, "end", strlen("end"))) {
         return END;
     }
-    else if (str_equal(str, "preserve")) {
+    else if (__builtin_strncmp(str, "preserve", strlen("preserve"))) {
         return PRESERVE;
     }
     else {
@@ -3351,10 +3343,10 @@ const char* SelectionMode::to_string(SelectionMode::Value value_) noexcept {
 }
 
 PredefinedColorSpace::Value PredefinedColorSpace::from_string(const char* str) noexcept {
-    if (str_equal(str, "srgb")) {
+    if (__builtin_strncmp(str, "srgb", strlen("srgb"))) {
         return SRGB;
     }
-    else if (str_equal(str, "display-p3")) {
+    else if (__builtin_strncmp(str, "display-p3", strlen("display-p3"))) {
         return DISPLAY_P3;
     }
     else {
@@ -3386,10 +3378,10 @@ const char* PredefinedColorSpace::to_string(PredefinedColorSpace::Value value_) 
 }
 
 CanvasColorType::Value CanvasColorType::from_string(const char* str) noexcept {
-    if (str_equal(str, "unorm8")) {
+    if (__builtin_strncmp(str, "unorm8", strlen("unorm8"))) {
         return UNORM8;
     }
-    else if (str_equal(str, "float16")) {
+    else if (__builtin_strncmp(str, "float16", strlen("float16"))) {
         return FLOAT16;
     }
     else {
@@ -3421,10 +3413,10 @@ const char* CanvasColorType::to_string(CanvasColorType::Value value_) noexcept {
 }
 
 CanvasFillRule::Value CanvasFillRule::from_string(const char* str) noexcept {
-    if (str_equal(str, "nonzero")) {
+    if (__builtin_strncmp(str, "nonzero", strlen("nonzero"))) {
         return NONZERO;
     }
-    else if (str_equal(str, "evenodd")) {
+    else if (__builtin_strncmp(str, "evenodd", strlen("evenodd"))) {
         return EVENODD;
     }
     else {
@@ -3456,13 +3448,13 @@ const char* CanvasFillRule::to_string(CanvasFillRule::Value value_) noexcept {
 }
 
 ImageSmoothingQuality::Value ImageSmoothingQuality::from_string(const char* str) noexcept {
-    if (str_equal(str, "low")) {
+    if (__builtin_strncmp(str, "low", strlen("low"))) {
         return LOW;
     }
-    else if (str_equal(str, "medium")) {
+    else if (__builtin_strncmp(str, "medium", strlen("medium"))) {
         return MEDIUM;
     }
-    else if (str_equal(str, "high")) {
+    else if (__builtin_strncmp(str, "high", strlen("high"))) {
         return HIGH;
     }
     else {
@@ -3496,13 +3488,13 @@ const char* ImageSmoothingQuality::to_string(ImageSmoothingQuality::Value value_
 }
 
 CanvasLineCap::Value CanvasLineCap::from_string(const char* str) noexcept {
-    if (str_equal(str, "butt")) {
+    if (__builtin_strncmp(str, "butt", strlen("butt"))) {
         return BUTT;
     }
-    else if (str_equal(str, "round")) {
+    else if (__builtin_strncmp(str, "round", strlen("round"))) {
         return ROUND;
     }
-    else if (str_equal(str, "square")) {
+    else if (__builtin_strncmp(str, "square", strlen("square"))) {
         return SQUARE;
     }
     else {
@@ -3536,13 +3528,13 @@ const char* CanvasLineCap::to_string(CanvasLineCap::Value value_) noexcept {
 }
 
 CanvasLineJoin::Value CanvasLineJoin::from_string(const char* str) noexcept {
-    if (str_equal(str, "round")) {
+    if (__builtin_strncmp(str, "round", strlen("round"))) {
         return ROUND;
     }
-    else if (str_equal(str, "bevel")) {
+    else if (__builtin_strncmp(str, "bevel", strlen("bevel"))) {
         return BEVEL;
     }
-    else if (str_equal(str, "miter")) {
+    else if (__builtin_strncmp(str, "miter", strlen("miter"))) {
         return MITER;
     }
     else {
@@ -3576,19 +3568,19 @@ const char* CanvasLineJoin::to_string(CanvasLineJoin::Value value_) noexcept {
 }
 
 CanvasTextAlign::Value CanvasTextAlign::from_string(const char* str) noexcept {
-    if (str_equal(str, "start")) {
+    if (__builtin_strncmp(str, "start", strlen("start"))) {
         return START;
     }
-    else if (str_equal(str, "end")) {
+    else if (__builtin_strncmp(str, "end", strlen("end"))) {
         return END;
     }
-    else if (str_equal(str, "left")) {
+    else if (__builtin_strncmp(str, "left", strlen("left"))) {
         return LEFT;
     }
-    else if (str_equal(str, "right")) {
+    else if (__builtin_strncmp(str, "right", strlen("right"))) {
         return RIGHT;
     }
-    else if (str_equal(str, "center")) {
+    else if (__builtin_strncmp(str, "center", strlen("center"))) {
         return CENTER;
     }
     else {
@@ -3626,22 +3618,22 @@ const char* CanvasTextAlign::to_string(CanvasTextAlign::Value value_) noexcept {
 }
 
 CanvasTextBaseline::Value CanvasTextBaseline::from_string(const char* str) noexcept {
-    if (str_equal(str, "top")) {
+    if (__builtin_strncmp(str, "top", strlen("top"))) {
         return TOP;
     }
-    else if (str_equal(str, "hanging")) {
+    else if (__builtin_strncmp(str, "hanging", strlen("hanging"))) {
         return HANGING;
     }
-    else if (str_equal(str, "middle")) {
+    else if (__builtin_strncmp(str, "middle", strlen("middle"))) {
         return MIDDLE;
     }
-    else if (str_equal(str, "alphabetic")) {
+    else if (__builtin_strncmp(str, "alphabetic", strlen("alphabetic"))) {
         return ALPHABETIC;
     }
-    else if (str_equal(str, "ideographic")) {
+    else if (__builtin_strncmp(str, "ideographic", strlen("ideographic"))) {
         return IDEOGRAPHIC;
     }
-    else if (str_equal(str, "bottom")) {
+    else if (__builtin_strncmp(str, "bottom", strlen("bottom"))) {
         return BOTTOM;
     }
     else {
@@ -3681,13 +3673,13 @@ const char* CanvasTextBaseline::to_string(CanvasTextBaseline::Value value_) noex
 }
 
 CanvasDirection::Value CanvasDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "ltr")) {
+    if (__builtin_strncmp(str, "ltr", strlen("ltr"))) {
         return LTR;
     }
-    else if (str_equal(str, "rtl")) {
+    else if (__builtin_strncmp(str, "rtl", strlen("rtl"))) {
         return RTL;
     }
-    else if (str_equal(str, "inherit")) {
+    else if (__builtin_strncmp(str, "inherit", strlen("inherit"))) {
         return INHERIT;
     }
     else {
@@ -3721,13 +3713,13 @@ const char* CanvasDirection::to_string(CanvasDirection::Value value_) noexcept {
 }
 
 CanvasFontKerning::Value CanvasFontKerning::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "normal")) {
+    else if (__builtin_strncmp(str, "normal", strlen("normal"))) {
         return NORMAL;
     }
-    else if (str_equal(str, "none")) {
+    else if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
     else {
@@ -3761,31 +3753,31 @@ const char* CanvasFontKerning::to_string(CanvasFontKerning::Value value_) noexce
 }
 
 CanvasFontStretch::Value CanvasFontStretch::from_string(const char* str) noexcept {
-    if (str_equal(str, "ultra-condensed")) {
+    if (__builtin_strncmp(str, "ultra-condensed", strlen("ultra-condensed"))) {
         return ULTRA_CONDENSED;
     }
-    else if (str_equal(str, "extra-condensed")) {
+    else if (__builtin_strncmp(str, "extra-condensed", strlen("extra-condensed"))) {
         return EXTRA_CONDENSED;
     }
-    else if (str_equal(str, "condensed")) {
+    else if (__builtin_strncmp(str, "condensed", strlen("condensed"))) {
         return CONDENSED;
     }
-    else if (str_equal(str, "semi-condensed")) {
+    else if (__builtin_strncmp(str, "semi-condensed", strlen("semi-condensed"))) {
         return SEMI_CONDENSED;
     }
-    else if (str_equal(str, "normal")) {
+    else if (__builtin_strncmp(str, "normal", strlen("normal"))) {
         return NORMAL;
     }
-    else if (str_equal(str, "semi-expanded")) {
+    else if (__builtin_strncmp(str, "semi-expanded", strlen("semi-expanded"))) {
         return SEMI_EXPANDED;
     }
-    else if (str_equal(str, "expanded")) {
+    else if (__builtin_strncmp(str, "expanded", strlen("expanded"))) {
         return EXPANDED;
     }
-    else if (str_equal(str, "extra-expanded")) {
+    else if (__builtin_strncmp(str, "extra-expanded", strlen("extra-expanded"))) {
         return EXTRA_EXPANDED;
     }
-    else if (str_equal(str, "ultra-expanded")) {
+    else if (__builtin_strncmp(str, "ultra-expanded", strlen("ultra-expanded"))) {
         return ULTRA_EXPANDED;
     }
     else {
@@ -3831,25 +3823,25 @@ const char* CanvasFontStretch::to_string(CanvasFontStretch::Value value_) noexce
 }
 
 CanvasFontVariantCaps::Value CanvasFontVariantCaps::from_string(const char* str) noexcept {
-    if (str_equal(str, "normal")) {
+    if (__builtin_strncmp(str, "normal", strlen("normal"))) {
         return NORMAL;
     }
-    else if (str_equal(str, "small-caps")) {
+    else if (__builtin_strncmp(str, "small-caps", strlen("small-caps"))) {
         return SMALL_CAPS;
     }
-    else if (str_equal(str, "all-small-caps")) {
+    else if (__builtin_strncmp(str, "all-small-caps", strlen("all-small-caps"))) {
         return ALL_SMALL_CAPS;
     }
-    else if (str_equal(str, "petite-caps")) {
+    else if (__builtin_strncmp(str, "petite-caps", strlen("petite-caps"))) {
         return PETITE_CAPS;
     }
-    else if (str_equal(str, "all-petite-caps")) {
+    else if (__builtin_strncmp(str, "all-petite-caps", strlen("all-petite-caps"))) {
         return ALL_PETITE_CAPS;
     }
-    else if (str_equal(str, "unicase")) {
+    else if (__builtin_strncmp(str, "unicase", strlen("unicase"))) {
         return UNICASE;
     }
-    else if (str_equal(str, "titling-caps")) {
+    else if (__builtin_strncmp(str, "titling-caps", strlen("titling-caps"))) {
         return TITLING_CAPS;
     }
     else {
@@ -3891,16 +3883,16 @@ const char* CanvasFontVariantCaps::to_string(CanvasFontVariantCaps::Value value_
 }
 
 CanvasTextRendering::Value CanvasTextRendering::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "optimizeSpeed")) {
+    else if (__builtin_strncmp(str, "optimizeSpeed", strlen("optimizeSpeed"))) {
         return OPTIMIZESPEED;
     }
-    else if (str_equal(str, "optimizeLegibility")) {
+    else if (__builtin_strncmp(str, "optimizeLegibility", strlen("optimizeLegibility"))) {
         return OPTIMIZELEGIBILITY;
     }
-    else if (str_equal(str, "geometricPrecision")) {
+    else if (__builtin_strncmp(str, "geometricPrecision", strlen("geometricPrecision"))) {
         return GEOMETRICPRECISION;
     }
     else {
@@ -3936,19 +3928,19 @@ const char* CanvasTextRendering::to_string(CanvasTextRendering::Value value_) no
 }
 
 OffscreenRenderingContextId::Value OffscreenRenderingContextId::from_string(const char* str) noexcept {
-    if (str_equal(str, "2d")) {
+    if (__builtin_strncmp(str, "2d", strlen("2d"))) {
         return _2D;
     }
-    else if (str_equal(str, "bitmaprenderer")) {
+    else if (__builtin_strncmp(str, "bitmaprenderer", strlen("bitmaprenderer"))) {
         return BITMAPRENDERER;
     }
-    else if (str_equal(str, "webgl")) {
+    else if (__builtin_strncmp(str, "webgl", strlen("webgl"))) {
         return WEBGL;
     }
-    else if (str_equal(str, "webgl2")) {
+    else if (__builtin_strncmp(str, "webgl2", strlen("webgl2"))) {
         return WEBGL2;
     }
-    else if (str_equal(str, "webgpu")) {
+    else if (__builtin_strncmp(str, "webgpu", strlen("webgpu"))) {
         return WEBGPU;
     }
     else {
@@ -3986,10 +3978,10 @@ const char* OffscreenRenderingContextId::to_string(OffscreenRenderingContextId::
 }
 
 ScrollRestoration::Value ScrollRestoration::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "manual")) {
+    else if (__builtin_strncmp(str, "manual", strlen("manual"))) {
         return MANUAL;
     }
     else {
@@ -4021,13 +4013,13 @@ const char* ScrollRestoration::to_string(ScrollRestoration::Value value_) noexce
 }
 
 NavigationHistoryBehavior::Value NavigationHistoryBehavior::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "push")) {
+    else if (__builtin_strncmp(str, "push", strlen("push"))) {
         return PUSH;
     }
-    else if (str_equal(str, "replace")) {
+    else if (__builtin_strncmp(str, "replace", strlen("replace"))) {
         return REPLACE;
     }
     else {
@@ -4061,16 +4053,16 @@ const char* NavigationHistoryBehavior::to_string(NavigationHistoryBehavior::Valu
 }
 
 NavigationType::Value NavigationType::from_string(const char* str) noexcept {
-    if (str_equal(str, "push")) {
+    if (__builtin_strncmp(str, "push", strlen("push"))) {
         return PUSH;
     }
-    else if (str_equal(str, "replace")) {
+    else if (__builtin_strncmp(str, "replace", strlen("replace"))) {
         return REPLACE;
     }
-    else if (str_equal(str, "reload")) {
+    else if (__builtin_strncmp(str, "reload", strlen("reload"))) {
         return RELOAD;
     }
-    else if (str_equal(str, "traverse")) {
+    else if (__builtin_strncmp(str, "traverse", strlen("traverse"))) {
         return TRAVERSE;
     }
     else {
@@ -4106,10 +4098,10 @@ const char* NavigationType::to_string(NavigationType::Value value_) noexcept {
 }
 
 NavigationFocusReset::Value NavigationFocusReset::from_string(const char* str) noexcept {
-    if (str_equal(str, "after-transition")) {
+    if (__builtin_strncmp(str, "after-transition", strlen("after-transition"))) {
         return AFTER_TRANSITION;
     }
-    else if (str_equal(str, "manual")) {
+    else if (__builtin_strncmp(str, "manual", strlen("manual"))) {
         return MANUAL;
     }
     else {
@@ -4141,10 +4133,10 @@ const char* NavigationFocusReset::to_string(NavigationFocusReset::Value value_) 
 }
 
 NavigationScrollBehavior::Value NavigationScrollBehavior::from_string(const char* str) noexcept {
-    if (str_equal(str, "after-transition")) {
+    if (__builtin_strncmp(str, "after-transition", strlen("after-transition"))) {
         return AFTER_TRANSITION;
     }
-    else if (str_equal(str, "manual")) {
+    else if (__builtin_strncmp(str, "manual", strlen("manual"))) {
         return MANUAL;
     }
     else {
@@ -4176,19 +4168,19 @@ const char* NavigationScrollBehavior::to_string(NavigationScrollBehavior::Value 
 }
 
 DOMParserSupportedType::Value DOMParserSupportedType::from_string(const char* str) noexcept {
-    if (str_equal(str, "text/html")) {
+    if (__builtin_strncmp(str, "text/html", strlen("text/html"))) {
         return TEXT_HTML;
     }
-    else if (str_equal(str, "text/xml")) {
+    else if (__builtin_strncmp(str, "text/xml", strlen("text/xml"))) {
         return TEXT_XML;
     }
-    else if (str_equal(str, "application/xml")) {
+    else if (__builtin_strncmp(str, "application/xml", strlen("application/xml"))) {
         return APPLICATION_XML;
     }
-    else if (str_equal(str, "application/xhtml+xml")) {
+    else if (__builtin_strncmp(str, "application/xhtml+xml", strlen("application/xhtml+xml"))) {
         return APPLICATION_XHTML_XML;
     }
-    else if (str_equal(str, "image/svg+xml")) {
+    else if (__builtin_strncmp(str, "image/svg+xml", strlen("image/svg+xml"))) {
         return IMAGE_SVG_XML;
     }
     else {
@@ -4226,10 +4218,10 @@ const char* DOMParserSupportedType::to_string(DOMParserSupportedType::Value valu
 }
 
 ImageDataPixelFormat::Value ImageDataPixelFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "rgba-unorm8")) {
+    if (__builtin_strncmp(str, "rgba-unorm8", strlen("rgba-unorm8"))) {
         return RGBA_UNORM8;
     }
-    else if (str_equal(str, "rgba-float16")) {
+    else if (__builtin_strncmp(str, "rgba-float16", strlen("rgba-float16"))) {
         return RGBA_FLOAT16;
     }
     else {
@@ -4261,10 +4253,10 @@ const char* ImageDataPixelFormat::to_string(ImageDataPixelFormat::Value value_) 
 }
 
 ImageOrientation::Value ImageOrientation::from_string(const char* str) noexcept {
-    if (str_equal(str, "from-image")) {
+    if (__builtin_strncmp(str, "from-image", strlen("from-image"))) {
         return FROM_IMAGE;
     }
-    else if (str_equal(str, "flipY")) {
+    else if (__builtin_strncmp(str, "flipY", strlen("flipY"))) {
         return FLIPY;
     }
     else {
@@ -4296,13 +4288,13 @@ const char* ImageOrientation::to_string(ImageOrientation::Value value_) noexcept
 }
 
 PremultiplyAlpha::Value PremultiplyAlpha::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "premultiply")) {
+    else if (__builtin_strncmp(str, "premultiply", strlen("premultiply"))) {
         return PREMULTIPLY;
     }
-    else if (str_equal(str, "default")) {
+    else if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
     else {
@@ -4336,10 +4328,10 @@ const char* PremultiplyAlpha::to_string(PremultiplyAlpha::Value value_) noexcept
 }
 
 ColorSpaceConversion::Value ColorSpaceConversion::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "default")) {
+    else if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
     else {
@@ -4371,16 +4363,16 @@ const char* ColorSpaceConversion::to_string(ColorSpaceConversion::Value value_) 
 }
 
 ResizeQuality::Value ResizeQuality::from_string(const char* str) noexcept {
-    if (str_equal(str, "pixelated")) {
+    if (__builtin_strncmp(str, "pixelated", strlen("pixelated"))) {
         return PIXELATED;
     }
-    else if (str_equal(str, "low")) {
+    else if (__builtin_strncmp(str, "low", strlen("low"))) {
         return LOW;
     }
-    else if (str_equal(str, "medium")) {
+    else if (__builtin_strncmp(str, "medium", strlen("medium"))) {
         return MEDIUM;
     }
-    else if (str_equal(str, "high")) {
+    else if (__builtin_strncmp(str, "high", strlen("high"))) {
         return HIGH;
     }
     else {
@@ -4416,10 +4408,10 @@ const char* ResizeQuality::to_string(ResizeQuality::Value value_) noexcept {
 }
 
 WorkerType::Value WorkerType::from_string(const char* str) noexcept {
-    if (str_equal(str, "classic")) {
+    if (__builtin_strncmp(str, "classic", strlen("classic"))) {
         return CLASSIC;
     }
-    else if (str_equal(str, "module")) {
+    else if (__builtin_strncmp(str, "module", strlen("module"))) {
         return MODULE_;
     }
     else {
@@ -4451,10 +4443,10 @@ const char* WorkerType::to_string(WorkerType::Value value_) noexcept {
 }
 
 UserIdleState::Value UserIdleState::from_string(const char* str) noexcept {
-    if (str_equal(str, "active")) {
+    if (__builtin_strncmp(str, "active", strlen("active"))) {
         return ACTIVE;
     }
-    else if (str_equal(str, "idle")) {
+    else if (__builtin_strncmp(str, "idle", strlen("idle"))) {
         return IDLE;
     }
     else {
@@ -4486,10 +4478,10 @@ const char* UserIdleState::to_string(UserIdleState::Value value_) noexcept {
 }
 
 ScreenIdleState::Value ScreenIdleState::from_string(const char* str) noexcept {
-    if (str_equal(str, "locked")) {
+    if (__builtin_strncmp(str, "locked", strlen("locked"))) {
         return LOCKED;
     }
-    else if (str_equal(str, "unlocked")) {
+    else if (__builtin_strncmp(str, "unlocked", strlen("unlocked"))) {
         return UNLOCKED;
     }
     else {
@@ -4521,13 +4513,13 @@ const char* ScreenIdleState::to_string(ScreenIdleState::Value value_) noexcept {
 }
 
 RedEyeReduction::Value RedEyeReduction::from_string(const char* str) noexcept {
-    if (str_equal(str, "never")) {
+    if (__builtin_strncmp(str, "never", strlen("never"))) {
         return NEVER;
     }
-    else if (str_equal(str, "always")) {
+    else if (__builtin_strncmp(str, "always", strlen("always"))) {
         return ALWAYS;
     }
-    else if (str_equal(str, "controllable")) {
+    else if (__builtin_strncmp(str, "controllable", strlen("controllable"))) {
         return CONTROLLABLE;
     }
     else {
@@ -4561,13 +4553,13 @@ const char* RedEyeReduction::to_string(RedEyeReduction::Value value_) noexcept {
 }
 
 FillLightMode::Value FillLightMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "off")) {
+    else if (__builtin_strncmp(str, "off", strlen("off"))) {
         return OFF;
     }
-    else if (str_equal(str, "flash")) {
+    else if (__builtin_strncmp(str, "flash", strlen("flash"))) {
         return FLASH;
     }
     else {
@@ -4601,16 +4593,16 @@ const char* FillLightMode::to_string(FillLightMode::Value value_) noexcept {
 }
 
 MeteringMode::Value MeteringMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "manual")) {
+    else if (__builtin_strncmp(str, "manual", strlen("manual"))) {
         return MANUAL;
     }
-    else if (str_equal(str, "single-shot")) {
+    else if (__builtin_strncmp(str, "single-shot", strlen("single-shot"))) {
         return SINGLE_SHOT;
     }
-    else if (str_equal(str, "continuous")) {
+    else if (__builtin_strncmp(str, "continuous", strlen("continuous"))) {
         return CONTINUOUS;
     }
     else {
@@ -4646,10 +4638,10 @@ const char* MeteringMode::to_string(MeteringMode::Value value_) noexcept {
 }
 
 LoginStatus::Value LoginStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "logged-in")) {
+    if (__builtin_strncmp(str, "logged-in", strlen("logged-in"))) {
         return LOGGED_IN;
     }
-    else if (str_equal(str, "logged-out")) {
+    else if (__builtin_strncmp(str, "logged-out", strlen("logged-out"))) {
         return LOGGED_OUT;
     }
     else {
@@ -4681,22 +4673,22 @@ const char* LoginStatus::to_string(LoginStatus::Value value_) noexcept {
 }
 
 ScriptInvokerType::Value ScriptInvokerType::from_string(const char* str) noexcept {
-    if (str_equal(str, "classic-script")) {
+    if (__builtin_strncmp(str, "classic-script", strlen("classic-script"))) {
         return CLASSIC_SCRIPT;
     }
-    else if (str_equal(str, "module-script")) {
+    else if (__builtin_strncmp(str, "module-script", strlen("module-script"))) {
         return MODULE_SCRIPT;
     }
-    else if (str_equal(str, "event-listener")) {
+    else if (__builtin_strncmp(str, "event-listener", strlen("event-listener"))) {
         return EVENT_LISTENER;
     }
-    else if (str_equal(str, "user-callback")) {
+    else if (__builtin_strncmp(str, "user-callback", strlen("user-callback"))) {
         return USER_CALLBACK;
     }
-    else if (str_equal(str, "resolve-promise")) {
+    else if (__builtin_strncmp(str, "resolve-promise", strlen("resolve-promise"))) {
         return RESOLVE_PROMISE;
     }
-    else if (str_equal(str, "reject-promise")) {
+    else if (__builtin_strncmp(str, "reject-promise", strlen("reject-promise"))) {
         return REJECT_PROMISE;
     }
     else {
@@ -4736,19 +4728,19 @@ const char* ScriptInvokerType::to_string(ScriptInvokerType::Value value_) noexce
 }
 
 ScriptWindowAttribution::Value ScriptWindowAttribution::from_string(const char* str) noexcept {
-    if (str_equal(str, "self")) {
+    if (__builtin_strncmp(str, "self", strlen("self"))) {
         return SELF;
     }
-    else if (str_equal(str, "descendant")) {
+    else if (__builtin_strncmp(str, "descendant", strlen("descendant"))) {
         return DESCENDANT;
     }
-    else if (str_equal(str, "ancestor")) {
+    else if (__builtin_strncmp(str, "ancestor", strlen("ancestor"))) {
         return ANCESTOR;
     }
-    else if (str_equal(str, "same-page")) {
+    else if (__builtin_strncmp(str, "same-page", strlen("same-page"))) {
         return SAME_PAGE;
     }
-    else if (str_equal(str, "other")) {
+    else if (__builtin_strncmp(str, "other", strlen("other"))) {
         return OTHER;
     }
     else {
@@ -4786,10 +4778,10 @@ const char* ScriptWindowAttribution::to_string(ScriptWindowAttribution::Value va
 }
 
 MagnetometerLocalCoordinateSystem::Value MagnetometerLocalCoordinateSystem::from_string(const char* str) noexcept {
-    if (str_equal(str, "device")) {
+    if (__builtin_strncmp(str, "device", strlen("device"))) {
         return DEVICE;
     }
-    else if (str_equal(str, "screen")) {
+    else if (__builtin_strncmp(str, "screen", strlen("screen"))) {
         return SCREEN;
     }
     else {
@@ -4821,10 +4813,10 @@ const char* MagnetometerLocalCoordinateSystem::to_string(MagnetometerLocalCoordi
 }
 
 AppBannerPromptOutcome::Value AppBannerPromptOutcome::from_string(const char* str) noexcept {
-    if (str_equal(str, "accepted")) {
+    if (__builtin_strncmp(str, "accepted", strlen("accepted"))) {
         return ACCEPTED;
     }
-    else if (str_equal(str, "dismissed")) {
+    else if (__builtin_strncmp(str, "dismissed", strlen("dismissed"))) {
         return DISMISSED;
     }
     else {
@@ -4856,13 +4848,13 @@ const char* AppBannerPromptOutcome::to_string(AppBannerPromptOutcome::Value valu
 }
 
 MediaDecodingType::Value MediaDecodingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "file")) {
+    if (__builtin_strncmp(str, "file", strlen("file"))) {
         return FILE;
     }
-    else if (str_equal(str, "media-source")) {
+    else if (__builtin_strncmp(str, "media-source", strlen("media-source"))) {
         return MEDIA_SOURCE;
     }
-    else if (str_equal(str, "webrtc")) {
+    else if (__builtin_strncmp(str, "webrtc", strlen("webrtc"))) {
         return WEBRTC;
     }
     else {
@@ -4896,10 +4888,10 @@ const char* MediaDecodingType::to_string(MediaDecodingType::Value value_) noexce
 }
 
 MediaEncodingType::Value MediaEncodingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "record")) {
+    if (__builtin_strncmp(str, "record", strlen("record"))) {
         return RECORD;
     }
-    else if (str_equal(str, "webrtc")) {
+    else if (__builtin_strncmp(str, "webrtc", strlen("webrtc"))) {
         return WEBRTC;
     }
     else {
@@ -4931,13 +4923,13 @@ const char* MediaEncodingType::to_string(MediaEncodingType::Value value_) noexce
 }
 
 HdrMetadataType::Value HdrMetadataType::from_string(const char* str) noexcept {
-    if (str_equal(str, "smpteSt2086")) {
+    if (__builtin_strncmp(str, "smpteSt2086", strlen("smpteSt2086"))) {
         return SMPTEST2086;
     }
-    else if (str_equal(str, "smpteSt2094-10")) {
+    else if (__builtin_strncmp(str, "smpteSt2094-10", strlen("smpteSt2094-10"))) {
         return SMPTEST2094_10;
     }
-    else if (str_equal(str, "smpteSt2094-40")) {
+    else if (__builtin_strncmp(str, "smpteSt2094-40", strlen("smpteSt2094-40"))) {
         return SMPTEST2094_40;
     }
     else {
@@ -4971,13 +4963,13 @@ const char* HdrMetadataType::to_string(HdrMetadataType::Value value_) noexcept {
 }
 
 ColorGamut::Value ColorGamut::from_string(const char* str) noexcept {
-    if (str_equal(str, "srgb")) {
+    if (__builtin_strncmp(str, "srgb", strlen("srgb"))) {
         return SRGB;
     }
-    else if (str_equal(str, "p3")) {
+    else if (__builtin_strncmp(str, "p3", strlen("p3"))) {
         return P3;
     }
-    else if (str_equal(str, "rec2020")) {
+    else if (__builtin_strncmp(str, "rec2020", strlen("rec2020"))) {
         return REC2020;
     }
     else {
@@ -5011,13 +5003,13 @@ const char* ColorGamut::to_string(ColorGamut::Value value_) noexcept {
 }
 
 TransferFunction::Value TransferFunction::from_string(const char* str) noexcept {
-    if (str_equal(str, "srgb")) {
+    if (__builtin_strncmp(str, "srgb", strlen("srgb"))) {
         return SRGB;
     }
-    else if (str_equal(str, "pq")) {
+    else if (__builtin_strncmp(str, "pq", strlen("pq"))) {
         return PQ;
     }
-    else if (str_equal(str, "hlg")) {
+    else if (__builtin_strncmp(str, "hlg", strlen("hlg"))) {
         return HLG;
     }
     else {
@@ -5051,13 +5043,13 @@ const char* TransferFunction::to_string(TransferFunction::Value value_) noexcept
 }
 
 ReadyState::Value ReadyState::from_string(const char* str) noexcept {
-    if (str_equal(str, "closed")) {
+    if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "open")) {
+    else if (__builtin_strncmp(str, "open", strlen("open"))) {
         return OPEN;
     }
-    else if (str_equal(str, "ended")) {
+    else if (__builtin_strncmp(str, "ended", strlen("ended"))) {
         return ENDED;
     }
     else {
@@ -5091,10 +5083,10 @@ const char* ReadyState::to_string(ReadyState::Value value_) noexcept {
 }
 
 EndOfStreamError::Value EndOfStreamError::from_string(const char* str) noexcept {
-    if (str_equal(str, "network")) {
+    if (__builtin_strncmp(str, "network", strlen("network"))) {
         return NETWORK;
     }
-    else if (str_equal(str, "decode")) {
+    else if (__builtin_strncmp(str, "decode", strlen("decode"))) {
         return DECODE;
     }
     else {
@@ -5126,10 +5118,10 @@ const char* EndOfStreamError::to_string(EndOfStreamError::Value value_) noexcept
 }
 
 AppendMode::Value AppendMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "segments")) {
+    if (__builtin_strncmp(str, "segments", strlen("segments"))) {
         return SEGMENTS;
     }
-    else if (str_equal(str, "sequence")) {
+    else if (__builtin_strncmp(str, "sequence", strlen("sequence"))) {
         return SEQUENCE;
     }
     else {
@@ -5161,10 +5153,10 @@ const char* AppendMode::to_string(AppendMode::Value value_) noexcept {
 }
 
 MockCapturePromptResult::Value MockCapturePromptResult::from_string(const char* str) noexcept {
-    if (str_equal(str, "granted")) {
+    if (__builtin_strncmp(str, "granted", strlen("granted"))) {
         return GRANTED;
     }
-    else if (str_equal(str, "denied")) {
+    else if (__builtin_strncmp(str, "denied", strlen("denied"))) {
         return DENIED;
     }
     else {
@@ -5196,16 +5188,16 @@ const char* MockCapturePromptResult::to_string(MockCapturePromptResult::Value va
 }
 
 CaptureAction::Value CaptureAction::from_string(const char* str) noexcept {
-    if (str_equal(str, "next")) {
+    if (__builtin_strncmp(str, "next", strlen("next"))) {
         return NEXT;
     }
-    else if (str_equal(str, "previous")) {
+    else if (__builtin_strncmp(str, "previous", strlen("previous"))) {
         return PREVIOUS;
     }
-    else if (str_equal(str, "first")) {
+    else if (__builtin_strncmp(str, "first", strlen("first"))) {
         return FIRST;
     }
-    else if (str_equal(str, "last")) {
+    else if (__builtin_strncmp(str, "last", strlen("last"))) {
         return LAST;
     }
     else {
@@ -5241,10 +5233,10 @@ const char* CaptureAction::to_string(CaptureAction::Value value_) noexcept {
 }
 
 MediaStreamTrackState::Value MediaStreamTrackState::from_string(const char* str) noexcept {
-    if (str_equal(str, "live")) {
+    if (__builtin_strncmp(str, "live", strlen("live"))) {
         return LIVE;
     }
-    else if (str_equal(str, "ended")) {
+    else if (__builtin_strncmp(str, "ended", strlen("ended"))) {
         return ENDED;
     }
     else {
@@ -5276,16 +5268,16 @@ const char* MediaStreamTrackState::to_string(MediaStreamTrackState::Value value_
 }
 
 VideoFacingModeEnum::Value VideoFacingModeEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "user")) {
+    if (__builtin_strncmp(str, "user", strlen("user"))) {
         return USER;
     }
-    else if (str_equal(str, "environment")) {
+    else if (__builtin_strncmp(str, "environment", strlen("environment"))) {
         return ENVIRONMENT;
     }
-    else if (str_equal(str, "left")) {
+    else if (__builtin_strncmp(str, "left", strlen("left"))) {
         return LEFT;
     }
-    else if (str_equal(str, "right")) {
+    else if (__builtin_strncmp(str, "right", strlen("right"))) {
         return RIGHT;
     }
     else {
@@ -5321,10 +5313,10 @@ const char* VideoFacingModeEnum::to_string(VideoFacingModeEnum::Value value_) no
 }
 
 VideoResizeModeEnum::Value VideoResizeModeEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "crop-and-scale")) {
+    else if (__builtin_strncmp(str, "crop-and-scale", strlen("crop-and-scale"))) {
         return CROP_AND_SCALE;
     }
     else {
@@ -5356,10 +5348,10 @@ const char* VideoResizeModeEnum::to_string(VideoResizeModeEnum::Value value_) no
 }
 
 EchoCancellationModeEnum::Value EchoCancellationModeEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "all")) {
+    if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
-    else if (str_equal(str, "remote-only")) {
+    else if (__builtin_strncmp(str, "remote-only", strlen("remote-only"))) {
         return REMOTE_ONLY;
     }
     else {
@@ -5391,13 +5383,13 @@ const char* EchoCancellationModeEnum::to_string(EchoCancellationModeEnum::Value 
 }
 
 MediaDeviceKind::Value MediaDeviceKind::from_string(const char* str) noexcept {
-    if (str_equal(str, "audioinput")) {
+    if (__builtin_strncmp(str, "audioinput", strlen("audioinput"))) {
         return AUDIOINPUT;
     }
-    else if (str_equal(str, "audiooutput")) {
+    else if (__builtin_strncmp(str, "audiooutput", strlen("audiooutput"))) {
         return AUDIOOUTPUT;
     }
-    else if (str_equal(str, "videoinput")) {
+    else if (__builtin_strncmp(str, "videoinput", strlen("videoinput"))) {
         return VIDEOINPUT;
     }
     else {
@@ -5431,13 +5423,13 @@ const char* MediaDeviceKind::to_string(MediaDeviceKind::Value value_) noexcept {
 }
 
 MediaSessionPlaybackState::Value MediaSessionPlaybackState::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "paused")) {
+    else if (__builtin_strncmp(str, "paused", strlen("paused"))) {
         return PAUSED;
     }
-    else if (str_equal(str, "playing")) {
+    else if (__builtin_strncmp(str, "playing", strlen("playing"))) {
         return PLAYING;
     }
     else {
@@ -5471,55 +5463,55 @@ const char* MediaSessionPlaybackState::to_string(MediaSessionPlaybackState::Valu
 }
 
 MediaSessionAction::Value MediaSessionAction::from_string(const char* str) noexcept {
-    if (str_equal(str, "play")) {
+    if (__builtin_strncmp(str, "play", strlen("play"))) {
         return PLAY;
     }
-    else if (str_equal(str, "pause")) {
+    else if (__builtin_strncmp(str, "pause", strlen("pause"))) {
         return PAUSE;
     }
-    else if (str_equal(str, "seekbackward")) {
+    else if (__builtin_strncmp(str, "seekbackward", strlen("seekbackward"))) {
         return SEEKBACKWARD;
     }
-    else if (str_equal(str, "seekforward")) {
+    else if (__builtin_strncmp(str, "seekforward", strlen("seekforward"))) {
         return SEEKFORWARD;
     }
-    else if (str_equal(str, "previoustrack")) {
+    else if (__builtin_strncmp(str, "previoustrack", strlen("previoustrack"))) {
         return PREVIOUSTRACK;
     }
-    else if (str_equal(str, "nexttrack")) {
+    else if (__builtin_strncmp(str, "nexttrack", strlen("nexttrack"))) {
         return NEXTTRACK;
     }
-    else if (str_equal(str, "skipad")) {
+    else if (__builtin_strncmp(str, "skipad", strlen("skipad"))) {
         return SKIPAD;
     }
-    else if (str_equal(str, "stop")) {
+    else if (__builtin_strncmp(str, "stop", strlen("stop"))) {
         return STOP;
     }
-    else if (str_equal(str, "seekto")) {
+    else if (__builtin_strncmp(str, "seekto", strlen("seekto"))) {
         return SEEKTO;
     }
-    else if (str_equal(str, "togglemicrophone")) {
+    else if (__builtin_strncmp(str, "togglemicrophone", strlen("togglemicrophone"))) {
         return TOGGLEMICROPHONE;
     }
-    else if (str_equal(str, "togglecamera")) {
+    else if (__builtin_strncmp(str, "togglecamera", strlen("togglecamera"))) {
         return TOGGLECAMERA;
     }
-    else if (str_equal(str, "togglescreenshare")) {
+    else if (__builtin_strncmp(str, "togglescreenshare", strlen("togglescreenshare"))) {
         return TOGGLESCREENSHARE;
     }
-    else if (str_equal(str, "hangup")) {
+    else if (__builtin_strncmp(str, "hangup", strlen("hangup"))) {
         return HANGUP;
     }
-    else if (str_equal(str, "previousslide")) {
+    else if (__builtin_strncmp(str, "previousslide", strlen("previousslide"))) {
         return PREVIOUSSLIDE;
     }
-    else if (str_equal(str, "nextslide")) {
+    else if (__builtin_strncmp(str, "nextslide", strlen("nextslide"))) {
         return NEXTSLIDE;
     }
-    else if (str_equal(str, "enterpictureinpicture")) {
+    else if (__builtin_strncmp(str, "enterpictureinpicture", strlen("enterpictureinpicture"))) {
         return ENTERPICTUREINPICTURE;
     }
-    else if (str_equal(str, "voiceactivity")) {
+    else if (__builtin_strncmp(str, "voiceactivity", strlen("voiceactivity"))) {
         return VOICEACTIVITY;
     }
     else {
@@ -5581,10 +5573,10 @@ const char* MediaSessionAction::to_string(MediaSessionAction::Value value_) noex
 }
 
 BitrateMode::Value BitrateMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "constant")) {
+    if (__builtin_strncmp(str, "constant", strlen("constant"))) {
         return CONSTANT;
     }
-    else if (str_equal(str, "variable")) {
+    else if (__builtin_strncmp(str, "variable", strlen("variable"))) {
         return VARIABLE;
     }
     else {
@@ -5616,13 +5608,13 @@ const char* BitrateMode::to_string(BitrateMode::Value value_) noexcept {
 }
 
 RecordingState::Value RecordingState::from_string(const char* str) noexcept {
-    if (str_equal(str, "inactive")) {
+    if (__builtin_strncmp(str, "inactive", strlen("inactive"))) {
         return INACTIVE;
     }
-    else if (str_equal(str, "recording")) {
+    else if (__builtin_strncmp(str, "recording", strlen("recording"))) {
         return RECORDING;
     }
-    else if (str_equal(str, "paused")) {
+    else if (__builtin_strncmp(str, "paused", strlen("paused"))) {
         return PAUSED;
     }
     else {
@@ -5656,13 +5648,13 @@ const char* RecordingState::to_string(RecordingState::Value value_) noexcept {
 }
 
 RTCDegradationPreference::Value RTCDegradationPreference::from_string(const char* str) noexcept {
-    if (str_equal(str, "maintain-framerate")) {
+    if (__builtin_strncmp(str, "maintain-framerate", strlen("maintain-framerate"))) {
         return MAINTAIN_FRAMERATE;
     }
-    else if (str_equal(str, "maintain-resolution")) {
+    else if (__builtin_strncmp(str, "maintain-resolution", strlen("maintain-resolution"))) {
         return MAINTAIN_RESOLUTION;
     }
-    else if (str_equal(str, "balanced")) {
+    else if (__builtin_strncmp(str, "balanced", strlen("balanced"))) {
         return BALANCED;
     }
     else {
@@ -5696,16 +5688,16 @@ const char* RTCDegradationPreference::to_string(RTCDegradationPreference::Value 
 }
 
 NavigationTimingType::Value NavigationTimingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "navigate")) {
+    if (__builtin_strncmp(str, "navigate", strlen("navigate"))) {
         return NAVIGATE;
     }
-    else if (str_equal(str, "reload")) {
+    else if (__builtin_strncmp(str, "reload", strlen("reload"))) {
         return RELOAD;
     }
-    else if (str_equal(str, "back_forward")) {
+    else if (__builtin_strncmp(str, "back_forward", strlen("back_forward"))) {
         return BACK_FORWARD;
     }
-    else if (str_equal(str, "prerender")) {
+    else if (__builtin_strncmp(str, "prerender", strlen("prerender"))) {
         return PRERENDER;
     }
     else {
@@ -5741,31 +5733,31 @@ const char* NavigationTimingType::to_string(NavigationTimingType::Value value_) 
 }
 
 ConnectionType::Value ConnectionType::from_string(const char* str) noexcept {
-    if (str_equal(str, "bluetooth")) {
+    if (__builtin_strncmp(str, "bluetooth", strlen("bluetooth"))) {
         return BLUETOOTH;
     }
-    else if (str_equal(str, "cellular")) {
+    else if (__builtin_strncmp(str, "cellular", strlen("cellular"))) {
         return CELLULAR;
     }
-    else if (str_equal(str, "ethernet")) {
+    else if (__builtin_strncmp(str, "ethernet", strlen("ethernet"))) {
         return ETHERNET;
     }
-    else if (str_equal(str, "mixed")) {
+    else if (__builtin_strncmp(str, "mixed", strlen("mixed"))) {
         return MIXED;
     }
-    else if (str_equal(str, "none")) {
+    else if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "other")) {
+    else if (__builtin_strncmp(str, "other", strlen("other"))) {
         return OTHER;
     }
-    else if (str_equal(str, "unknown")) {
+    else if (__builtin_strncmp(str, "unknown", strlen("unknown"))) {
         return UNKNOWN;
     }
-    else if (str_equal(str, "wifi")) {
+    else if (__builtin_strncmp(str, "wifi", strlen("wifi"))) {
         return WIFI;
     }
-    else if (str_equal(str, "wimax")) {
+    else if (__builtin_strncmp(str, "wimax", strlen("wimax"))) {
         return WIMAX;
     }
     else {
@@ -5811,16 +5803,16 @@ const char* ConnectionType::to_string(ConnectionType::Value value_) noexcept {
 }
 
 EffectiveConnectionType::Value EffectiveConnectionType::from_string(const char* str) noexcept {
-    if (str_equal(str, "2g")) {
+    if (__builtin_strncmp(str, "2g", strlen("2g"))) {
         return _2G;
     }
-    else if (str_equal(str, "3g")) {
+    else if (__builtin_strncmp(str, "3g", strlen("3g"))) {
         return _3G;
     }
-    else if (str_equal(str, "4g")) {
+    else if (__builtin_strncmp(str, "4g", strlen("4g"))) {
         return _4G;
     }
-    else if (str_equal(str, "slow-2g")) {
+    else if (__builtin_strncmp(str, "slow-2g", strlen("slow-2g"))) {
         return SLOW_2G;
     }
     else {
@@ -5856,13 +5848,13 @@ const char* EffectiveConnectionType::to_string(EffectiveConnectionType::Value va
 }
 
 NotificationPermission::Value NotificationPermission::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "denied")) {
+    else if (__builtin_strncmp(str, "denied", strlen("denied"))) {
         return DENIED;
     }
-    else if (str_equal(str, "granted")) {
+    else if (__builtin_strncmp(str, "granted", strlen("granted"))) {
         return GRANTED;
     }
     else {
@@ -5896,13 +5888,13 @@ const char* NotificationPermission::to_string(NotificationPermission::Value valu
 }
 
 NotificationDirection::Value NotificationDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "ltr")) {
+    else if (__builtin_strncmp(str, "ltr", strlen("ltr"))) {
         return LTR;
     }
-    else if (str_equal(str, "rtl")) {
+    else if (__builtin_strncmp(str, "rtl", strlen("rtl"))) {
         return RTL;
     }
     else {
@@ -5936,10 +5928,10 @@ const char* NotificationDirection::to_string(NotificationDirection::Value value_
 }
 
 OrientationSensorLocalCoordinateSystem::Value OrientationSensorLocalCoordinateSystem::from_string(const char* str) noexcept {
-    if (str_equal(str, "device")) {
+    if (__builtin_strncmp(str, "device", strlen("device"))) {
         return DEVICE;
     }
-    else if (str_equal(str, "screen")) {
+    else if (__builtin_strncmp(str, "screen", strlen("screen"))) {
         return SCREEN;
     }
     else {
@@ -5971,10 +5963,10 @@ const char* OrientationSensorLocalCoordinateSystem::to_string(OrientationSensorL
 }
 
 ClientLifecycleState::Value ClientLifecycleState::from_string(const char* str) noexcept {
-    if (str_equal(str, "active")) {
+    if (__builtin_strncmp(str, "active", strlen("active"))) {
         return ACTIVE;
     }
-    else if (str_equal(str, "frozen")) {
+    else if (__builtin_strncmp(str, "frozen", strlen("frozen"))) {
         return FROZEN;
     }
     else {
@@ -6006,16 +5998,16 @@ const char* ClientLifecycleState::to_string(ClientLifecycleState::Value value_) 
 }
 
 PaymentDelegation::Value PaymentDelegation::from_string(const char* str) noexcept {
-    if (str_equal(str, "shippingAddress")) {
+    if (__builtin_strncmp(str, "shippingAddress", strlen("shippingAddress"))) {
         return SHIPPINGADDRESS;
     }
-    else if (str_equal(str, "payerName")) {
+    else if (__builtin_strncmp(str, "payerName", strlen("payerName"))) {
         return PAYERNAME;
     }
-    else if (str_equal(str, "payerPhone")) {
+    else if (__builtin_strncmp(str, "payerPhone", strlen("payerPhone"))) {
         return PAYERPHONE;
     }
-    else if (str_equal(str, "payerEmail")) {
+    else if (__builtin_strncmp(str, "payerEmail", strlen("payerEmail"))) {
         return PAYEREMAIL;
     }
     else {
@@ -6051,13 +6043,13 @@ const char* PaymentDelegation::to_string(PaymentDelegation::Value value_) noexce
 }
 
 PaymentShippingType::Value PaymentShippingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "shipping")) {
+    if (__builtin_strncmp(str, "shipping", strlen("shipping"))) {
         return SHIPPING;
     }
-    else if (str_equal(str, "delivery")) {
+    else if (__builtin_strncmp(str, "delivery", strlen("delivery"))) {
         return DELIVERY;
     }
-    else if (str_equal(str, "pickup")) {
+    else if (__builtin_strncmp(str, "pickup", strlen("pickup"))) {
         return PICKUP;
     }
     else {
@@ -6091,13 +6083,13 @@ const char* PaymentShippingType::to_string(PaymentShippingType::Value value_) no
 }
 
 PaymentComplete::Value PaymentComplete::from_string(const char* str) noexcept {
-    if (str_equal(str, "fail")) {
+    if (__builtin_strncmp(str, "fail", strlen("fail"))) {
         return FAIL;
     }
-    else if (str_equal(str, "success")) {
+    else if (__builtin_strncmp(str, "success", strlen("success"))) {
         return SUCCESS;
     }
-    else if (str_equal(str, "unknown")) {
+    else if (__builtin_strncmp(str, "unknown", strlen("unknown"))) {
         return UNKNOWN;
     }
     else {
@@ -6131,13 +6123,13 @@ const char* PaymentComplete::to_string(PaymentComplete::Value value_) noexcept {
 }
 
 PermissionState::Value PermissionState::from_string(const char* str) noexcept {
-    if (str_equal(str, "granted")) {
+    if (__builtin_strncmp(str, "granted", strlen("granted"))) {
         return GRANTED;
     }
-    else if (str_equal(str, "denied")) {
+    else if (__builtin_strncmp(str, "denied", strlen("denied"))) {
         return DENIED;
     }
-    else if (str_equal(str, "prompt")) {
+    else if (__builtin_strncmp(str, "prompt", strlen("prompt"))) {
         return PROMPT;
     }
     else {
@@ -6171,16 +6163,16 @@ const char* PermissionState::to_string(PermissionState::Value value_) noexcept {
 }
 
 PointerAxis::Value PointerAxis::from_string(const char* str) noexcept {
-    if (str_equal(str, "block")) {
+    if (__builtin_strncmp(str, "block", strlen("block"))) {
         return BLOCK;
     }
-    else if (str_equal(str, "inline")) {
+    else if (__builtin_strncmp(str, "inline", strlen("inline"))) {
         return INLINE_;
     }
-    else if (str_equal(str, "x")) {
+    else if (__builtin_strncmp(str, "x", strlen("x"))) {
         return X;
     }
-    else if (str_equal(str, "y")) {
+    else if (__builtin_strncmp(str, "y", strlen("y"))) {
         return Y;
     }
     else {
@@ -6216,16 +6208,16 @@ const char* PointerAxis::to_string(PointerAxis::Value value_) noexcept {
 }
 
 PresentationConnectionState::Value PresentationConnectionState::from_string(const char* str) noexcept {
-    if (str_equal(str, "connecting")) {
+    if (__builtin_strncmp(str, "connecting", strlen("connecting"))) {
         return CONNECTING;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "terminated")) {
+    else if (__builtin_strncmp(str, "terminated", strlen("terminated"))) {
         return TERMINATED;
     }
     else {
@@ -6261,13 +6253,13 @@ const char* PresentationConnectionState::to_string(PresentationConnectionState::
 }
 
 PresentationConnectionCloseReason::Value PresentationConnectionCloseReason::from_string(const char* str) noexcept {
-    if (str_equal(str, "error")) {
+    if (__builtin_strncmp(str, "error", strlen("error"))) {
         return ERROR;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "wentaway")) {
+    else if (__builtin_strncmp(str, "wentaway", strlen("wentaway"))) {
         return WENTAWAY;
     }
     else {
@@ -6301,10 +6293,10 @@ const char* PresentationConnectionCloseReason::to_string(PresentationConnectionC
 }
 
 PrivateAttributionAggregationProtocol::Value PrivateAttributionAggregationProtocol::from_string(const char* str) noexcept {
-    if (str_equal(str, "dap-12-histogram")) {
+    if (__builtin_strncmp(str, "dap-12-histogram", strlen("dap-12-histogram"))) {
         return DAP_12_HISTOGRAM;
     }
-    else if (str_equal(str, "tee-00")) {
+    else if (__builtin_strncmp(str, "tee-00", strlen("tee-00"))) {
         return TEE_00;
     }
     else {
@@ -6336,7 +6328,7 @@ const char* PrivateAttributionAggregationProtocol::to_string(PrivateAttributionA
 }
 
 AttributionLogic::Value AttributionLogic::from_string(const char* str) noexcept {
-    if (str_equal(str, "last-touch")) {
+    if (__builtin_strncmp(str, "last-touch", strlen("last-touch"))) {
         return LAST_TOUCH;
     }
     else {
@@ -6366,13 +6358,13 @@ const char* AttributionLogic::to_string(AttributionLogic::Value value_) noexcept
 }
 
 IPAddressSpace::Value IPAddressSpace::from_string(const char* str) noexcept {
-    if (str_equal(str, "public")) {
+    if (__builtin_strncmp(str, "public", strlen("public"))) {
         return PUBLIC_;
     }
-    else if (str_equal(str, "private")) {
+    else if (__builtin_strncmp(str, "private", strlen("private"))) {
         return PRIVATE_;
     }
-    else if (str_equal(str, "local")) {
+    else if (__builtin_strncmp(str, "local", strlen("local"))) {
         return LOCAL;
     }
     else {
@@ -6406,10 +6398,10 @@ const char* IPAddressSpace::to_string(IPAddressSpace::Value value_) noexcept {
 }
 
 PushEncryptionKeyName::Value PushEncryptionKeyName::from_string(const char* str) noexcept {
-    if (str_equal(str, "p256dh")) {
+    if (__builtin_strncmp(str, "p256dh", strlen("p256dh"))) {
         return P256DH;
     }
-    else if (str_equal(str, "auth")) {
+    else if (__builtin_strncmp(str, "auth", strlen("auth"))) {
         return AUTH;
     }
     else {
@@ -6441,31 +6433,31 @@ const char* PushEncryptionKeyName::to_string(PushEncryptionKeyName::Value value_
 }
 
 ReferrerPolicy::Value ReferrerPolicy::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "no-referrer")) {
+    else if (__builtin_strncmp(str, "no-referrer", strlen("no-referrer"))) {
         return NO_REFERRER;
     }
-    else if (str_equal(str, "no-referrer-when-downgrade")) {
+    else if (__builtin_strncmp(str, "no-referrer-when-downgrade", strlen("no-referrer-when-downgrade"))) {
         return NO_REFERRER_WHEN_DOWNGRADE;
     }
-    else if (str_equal(str, "same-origin")) {
+    else if (__builtin_strncmp(str, "same-origin", strlen("same-origin"))) {
         return SAME_ORIGIN;
     }
-    else if (str_equal(str, "origin")) {
+    else if (__builtin_strncmp(str, "origin", strlen("origin"))) {
         return ORIGIN;
     }
-    else if (str_equal(str, "strict-origin")) {
+    else if (__builtin_strncmp(str, "strict-origin", strlen("strict-origin"))) {
         return STRICT_ORIGIN;
     }
-    else if (str_equal(str, "origin-when-cross-origin")) {
+    else if (__builtin_strncmp(str, "origin-when-cross-origin", strlen("origin-when-cross-origin"))) {
         return ORIGIN_WHEN_CROSS_ORIGIN;
     }
-    else if (str_equal(str, "strict-origin-when-cross-origin")) {
+    else if (__builtin_strncmp(str, "strict-origin-when-cross-origin", strlen("strict-origin-when-cross-origin"))) {
         return STRICT_ORIGIN_WHEN_CROSS_ORIGIN;
     }
-    else if (str_equal(str, "unsafe-url")) {
+    else if (__builtin_strncmp(str, "unsafe-url", strlen("unsafe-url"))) {
         return UNSAFE_URL;
     }
     else {
@@ -6511,13 +6503,13 @@ const char* ReferrerPolicy::to_string(ReferrerPolicy::Value value_) noexcept {
 }
 
 RemotePlaybackState::Value RemotePlaybackState::from_string(const char* str) noexcept {
-    if (str_equal(str, "connecting")) {
+    if (__builtin_strncmp(str, "connecting", strlen("connecting"))) {
         return CONNECTING;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
-    else if (str_equal(str, "disconnected")) {
+    else if (__builtin_strncmp(str, "disconnected", strlen("disconnected"))) {
         return DISCONNECTED;
     }
     else {
@@ -6551,13 +6543,13 @@ const char* RemotePlaybackState::to_string(RemotePlaybackState::Value value_) no
 }
 
 ResizeObserverBoxOptions::Value ResizeObserverBoxOptions::from_string(const char* str) noexcept {
-    if (str_equal(str, "border-box")) {
+    if (__builtin_strncmp(str, "border-box", strlen("border-box"))) {
         return BORDER_BOX;
     }
-    else if (str_equal(str, "content-box")) {
+    else if (__builtin_strncmp(str, "content-box", strlen("content-box"))) {
         return CONTENT_BOX;
     }
-    else if (str_equal(str, "device-pixel-content-box")) {
+    else if (__builtin_strncmp(str, "device-pixel-content-box", strlen("device-pixel-content-box"))) {
         return DEVICE_PIXEL_CONTENT_BOX;
     }
     else {
@@ -6591,10 +6583,10 @@ const char* ResizeObserverBoxOptions::to_string(ResizeObserverBoxOptions::Value 
 }
 
 RenderBlockingStatusType::Value RenderBlockingStatusType::from_string(const char* str) noexcept {
-    if (str_equal(str, "blocking")) {
+    if (__builtin_strncmp(str, "blocking", strlen("blocking"))) {
         return BLOCKING;
     }
-    else if (str_equal(str, "non-blocking")) {
+    else if (__builtin_strncmp(str, "non-blocking", strlen("non-blocking"))) {
         return NON_BLOCKING;
     }
     else {
@@ -6626,10 +6618,10 @@ const char* RenderBlockingStatusType::to_string(RenderBlockingStatusType::Value 
 }
 
 SameSiteCookiesType::Value SameSiteCookiesType::from_string(const char* str) noexcept {
-    if (str_equal(str, "all")) {
+    if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
-    else if (str_equal(str, "none")) {
+    else if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
     else {
@@ -6661,7 +6653,7 @@ const char* SameSiteCookiesType::to_string(SameSiteCookiesType::Value value_) no
 }
 
 SanitizerPresets::Value SanitizerPresets::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
     else {
@@ -6691,13 +6683,13 @@ const char* SanitizerPresets::to_string(SanitizerPresets::Value value_) noexcept
 }
 
 TaskPriority::Value TaskPriority::from_string(const char* str) noexcept {
-    if (str_equal(str, "user-blocking")) {
+    if (__builtin_strncmp(str, "user-blocking", strlen("user-blocking"))) {
         return USER_BLOCKING;
     }
-    else if (str_equal(str, "user-visible")) {
+    else if (__builtin_strncmp(str, "user-visible", strlen("user-visible"))) {
         return USER_VISIBLE;
     }
-    else if (str_equal(str, "background")) {
+    else if (__builtin_strncmp(str, "background", strlen("background"))) {
         return BACKGROUND;
     }
     else {
@@ -6731,13 +6723,13 @@ const char* TaskPriority::to_string(TaskPriority::Value value_) noexcept {
 }
 
 CaptureStartFocusBehavior::Value CaptureStartFocusBehavior::from_string(const char* str) noexcept {
-    if (str_equal(str, "focus-capturing-application")) {
+    if (__builtin_strncmp(str, "focus-capturing-application", strlen("focus-capturing-application"))) {
         return FOCUS_CAPTURING_APPLICATION;
     }
-    else if (str_equal(str, "focus-captured-surface")) {
+    else if (__builtin_strncmp(str, "focus-captured-surface", strlen("focus-captured-surface"))) {
         return FOCUS_CAPTURED_SURFACE;
     }
-    else if (str_equal(str, "no-focus-change")) {
+    else if (__builtin_strncmp(str, "no-focus-change", strlen("no-focus-change"))) {
         return NO_FOCUS_CHANGE;
     }
     else {
@@ -6771,10 +6763,10 @@ const char* CaptureStartFocusBehavior::to_string(CaptureStartFocusBehavior::Valu
 }
 
 SelfCapturePreferenceEnum::Value SelfCapturePreferenceEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "include")) {
+    if (__builtin_strncmp(str, "include", strlen("include"))) {
         return INCLUDE;
     }
-    else if (str_equal(str, "exclude")) {
+    else if (__builtin_strncmp(str, "exclude", strlen("exclude"))) {
         return EXCLUDE;
     }
     else {
@@ -6806,10 +6798,10 @@ const char* SelfCapturePreferenceEnum::to_string(SelfCapturePreferenceEnum::Valu
 }
 
 SystemAudioPreferenceEnum::Value SystemAudioPreferenceEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "include")) {
+    if (__builtin_strncmp(str, "include", strlen("include"))) {
         return INCLUDE;
     }
-    else if (str_equal(str, "exclude")) {
+    else if (__builtin_strncmp(str, "exclude", strlen("exclude"))) {
         return EXCLUDE;
     }
     else {
@@ -6841,13 +6833,13 @@ const char* SystemAudioPreferenceEnum::to_string(SystemAudioPreferenceEnum::Valu
 }
 
 WindowAudioPreferenceEnum::Value WindowAudioPreferenceEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "system")) {
+    if (__builtin_strncmp(str, "system", strlen("system"))) {
         return SYSTEM;
     }
-    else if (str_equal(str, "window")) {
+    else if (__builtin_strncmp(str, "window", strlen("window"))) {
         return WINDOW;
     }
-    else if (str_equal(str, "exclude")) {
+    else if (__builtin_strncmp(str, "exclude", strlen("exclude"))) {
         return EXCLUDE;
     }
     else {
@@ -6881,10 +6873,10 @@ const char* WindowAudioPreferenceEnum::to_string(WindowAudioPreferenceEnum::Valu
 }
 
 SurfaceSwitchingPreferenceEnum::Value SurfaceSwitchingPreferenceEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "include")) {
+    if (__builtin_strncmp(str, "include", strlen("include"))) {
         return INCLUDE;
     }
-    else if (str_equal(str, "exclude")) {
+    else if (__builtin_strncmp(str, "exclude", strlen("exclude"))) {
         return EXCLUDE;
     }
     else {
@@ -6916,10 +6908,10 @@ const char* SurfaceSwitchingPreferenceEnum::to_string(SurfaceSwitchingPreference
 }
 
 MonitorTypeSurfacesEnum::Value MonitorTypeSurfacesEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "include")) {
+    if (__builtin_strncmp(str, "include", strlen("include"))) {
         return INCLUDE;
     }
-    else if (str_equal(str, "exclude")) {
+    else if (__builtin_strncmp(str, "exclude", strlen("exclude"))) {
         return EXCLUDE;
     }
     else {
@@ -6951,13 +6943,13 @@ const char* MonitorTypeSurfacesEnum::to_string(MonitorTypeSurfacesEnum::Value va
 }
 
 DisplayCaptureSurfaceType::Value DisplayCaptureSurfaceType::from_string(const char* str) noexcept {
-    if (str_equal(str, "monitor")) {
+    if (__builtin_strncmp(str, "monitor", strlen("monitor"))) {
         return MONITOR;
     }
-    else if (str_equal(str, "window")) {
+    else if (__builtin_strncmp(str, "window", strlen("window"))) {
         return WINDOW;
     }
-    else if (str_equal(str, "browser")) {
+    else if (__builtin_strncmp(str, "browser", strlen("browser"))) {
         return BROWSER;
     }
     else {
@@ -6991,13 +6983,13 @@ const char* DisplayCaptureSurfaceType::to_string(DisplayCaptureSurfaceType::Valu
 }
 
 CursorCaptureConstraint::Value CursorCaptureConstraint::from_string(const char* str) noexcept {
-    if (str_equal(str, "never")) {
+    if (__builtin_strncmp(str, "never", strlen("never"))) {
         return NEVER;
     }
-    else if (str_equal(str, "always")) {
+    else if (__builtin_strncmp(str, "always", strlen("always"))) {
         return ALWAYS;
     }
-    else if (str_equal(str, "motion")) {
+    else if (__builtin_strncmp(str, "motion", strlen("motion"))) {
         return MOTION;
     }
     else {
@@ -7031,28 +7023,28 @@ const char* CursorCaptureConstraint::to_string(CursorCaptureConstraint::Value va
 }
 
 OrientationLockType::Value OrientationLockType::from_string(const char* str) noexcept {
-    if (str_equal(str, "any")) {
+    if (__builtin_strncmp(str, "any", strlen("any"))) {
         return ANY;
     }
-    else if (str_equal(str, "natural")) {
+    else if (__builtin_strncmp(str, "natural", strlen("natural"))) {
         return NATURAL;
     }
-    else if (str_equal(str, "landscape")) {
+    else if (__builtin_strncmp(str, "landscape", strlen("landscape"))) {
         return LANDSCAPE;
     }
-    else if (str_equal(str, "portrait")) {
+    else if (__builtin_strncmp(str, "portrait", strlen("portrait"))) {
         return PORTRAIT;
     }
-    else if (str_equal(str, "portrait-primary")) {
+    else if (__builtin_strncmp(str, "portrait-primary", strlen("portrait-primary"))) {
         return PORTRAIT_PRIMARY;
     }
-    else if (str_equal(str, "portrait-secondary")) {
+    else if (__builtin_strncmp(str, "portrait-secondary", strlen("portrait-secondary"))) {
         return PORTRAIT_SECONDARY;
     }
-    else if (str_equal(str, "landscape-primary")) {
+    else if (__builtin_strncmp(str, "landscape-primary", strlen("landscape-primary"))) {
         return LANDSCAPE_PRIMARY;
     }
-    else if (str_equal(str, "landscape-secondary")) {
+    else if (__builtin_strncmp(str, "landscape-secondary", strlen("landscape-secondary"))) {
         return LANDSCAPE_SECONDARY;
     }
     else {
@@ -7096,16 +7088,16 @@ const char* OrientationLockType::to_string(OrientationLockType::Value value_) no
 }
 
 OrientationType::Value OrientationType::from_string(const char* str) noexcept {
-    if (str_equal(str, "portrait-primary")) {
+    if (__builtin_strncmp(str, "portrait-primary", strlen("portrait-primary"))) {
         return PORTRAIT_PRIMARY;
     }
-    else if (str_equal(str, "portrait-secondary")) {
+    else if (__builtin_strncmp(str, "portrait-secondary", strlen("portrait-secondary"))) {
         return PORTRAIT_SECONDARY;
     }
-    else if (str_equal(str, "landscape-primary")) {
+    else if (__builtin_strncmp(str, "landscape-primary", strlen("landscape-primary"))) {
         return LANDSCAPE_PRIMARY;
     }
-    else if (str_equal(str, "landscape-secondary")) {
+    else if (__builtin_strncmp(str, "landscape-secondary", strlen("landscape-secondary"))) {
         return LANDSCAPE_SECONDARY;
     }
     else {
@@ -7141,7 +7133,7 @@ const char* OrientationType::to_string(OrientationType::Value value_) noexcept {
 }
 
 WakeLockType::Value WakeLockType::from_string(const char* str) noexcept {
-    if (str_equal(str, "screen")) {
+    if (__builtin_strncmp(str, "screen", strlen("screen"))) {
         return SCREEN;
     }
     else {
@@ -7171,16 +7163,16 @@ const char* WakeLockType::to_string(WakeLockType::Value value_) noexcept {
 }
 
 ScrollAxis::Value ScrollAxis::from_string(const char* str) noexcept {
-    if (str_equal(str, "block")) {
+    if (__builtin_strncmp(str, "block", strlen("block"))) {
         return BLOCK;
     }
-    else if (str_equal(str, "inline")) {
+    else if (__builtin_strncmp(str, "inline", strlen("inline"))) {
         return INLINE_;
     }
-    else if (str_equal(str, "x")) {
+    else if (__builtin_strncmp(str, "x", strlen("x"))) {
         return X;
     }
-    else if (str_equal(str, "y")) {
+    else if (__builtin_strncmp(str, "y", strlen("y"))) {
         return Y;
     }
     else {
@@ -7216,19 +7208,19 @@ const char* ScrollAxis::to_string(ScrollAxis::Value value_) noexcept {
 }
 
 SecurePaymentConfirmationAvailability::Value SecurePaymentConfirmationAvailability::from_string(const char* str) noexcept {
-    if (str_equal(str, "available")) {
+    if (__builtin_strncmp(str, "available", strlen("available"))) {
         return AVAILABLE;
     }
-    else if (str_equal(str, "unavailable-unknown-reason")) {
+    else if (__builtin_strncmp(str, "unavailable-unknown-reason", strlen("unavailable-unknown-reason"))) {
         return UNAVAILABLE_UNKNOWN_REASON;
     }
-    else if (str_equal(str, "unavailable-feature-not-enabled")) {
+    else if (__builtin_strncmp(str, "unavailable-feature-not-enabled", strlen("unavailable-feature-not-enabled"))) {
         return UNAVAILABLE_FEATURE_NOT_ENABLED;
     }
-    else if (str_equal(str, "unavailable-no-permission-policy")) {
+    else if (__builtin_strncmp(str, "unavailable-no-permission-policy", strlen("unavailable-no-permission-policy"))) {
         return UNAVAILABLE_NO_PERMISSION_POLICY;
     }
-    else if (str_equal(str, "unavailable-no-user-verifying-platform-authenticator")) {
+    else if (__builtin_strncmp(str, "unavailable-no-user-verifying-platform-authenticator", strlen("unavailable-no-user-verifying-platform-authenticator"))) {
         return UNAVAILABLE_NO_USER_VERIFYING_PLATFORM_AUTHENTICATOR;
     }
     else {
@@ -7266,13 +7258,13 @@ const char* SecurePaymentConfirmationAvailability::to_string(SecurePaymentConfir
 }
 
 ParityType::Value ParityType::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "even")) {
+    else if (__builtin_strncmp(str, "even", strlen("even"))) {
         return EVEN;
     }
-    else if (str_equal(str, "odd")) {
+    else if (__builtin_strncmp(str, "odd", strlen("odd"))) {
         return ODD;
     }
     else {
@@ -7306,10 +7298,10 @@ const char* ParityType::to_string(ParityType::Value value_) noexcept {
 }
 
 FlowControlType::Value FlowControlType::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "hardware")) {
+    else if (__builtin_strncmp(str, "hardware", strlen("hardware"))) {
         return HARDWARE;
     }
     else {
@@ -7341,22 +7333,22 @@ const char* FlowControlType::to_string(FlowControlType::Value value_) noexcept {
 }
 
 ServiceWorkerState::Value ServiceWorkerState::from_string(const char* str) noexcept {
-    if (str_equal(str, "parsed")) {
+    if (__builtin_strncmp(str, "parsed", strlen("parsed"))) {
         return PARSED;
     }
-    else if (str_equal(str, "installing")) {
+    else if (__builtin_strncmp(str, "installing", strlen("installing"))) {
         return INSTALLING;
     }
-    else if (str_equal(str, "installed")) {
+    else if (__builtin_strncmp(str, "installed", strlen("installed"))) {
         return INSTALLED;
     }
-    else if (str_equal(str, "activating")) {
+    else if (__builtin_strncmp(str, "activating", strlen("activating"))) {
         return ACTIVATING;
     }
-    else if (str_equal(str, "activated")) {
+    else if (__builtin_strncmp(str, "activated", strlen("activated"))) {
         return ACTIVATED;
     }
-    else if (str_equal(str, "redundant")) {
+    else if (__builtin_strncmp(str, "redundant", strlen("redundant"))) {
         return REDUNDANT;
     }
     else {
@@ -7396,13 +7388,13 @@ const char* ServiceWorkerState::to_string(ServiceWorkerState::Value value_) noex
 }
 
 ServiceWorkerUpdateViaCache::Value ServiceWorkerUpdateViaCache::from_string(const char* str) noexcept {
-    if (str_equal(str, "imports")) {
+    if (__builtin_strncmp(str, "imports", strlen("imports"))) {
         return IMPORTS;
     }
-    else if (str_equal(str, "all")) {
+    else if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
-    else if (str_equal(str, "none")) {
+    else if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
     else {
@@ -7436,16 +7428,16 @@ const char* ServiceWorkerUpdateViaCache::to_string(ServiceWorkerUpdateViaCache::
 }
 
 FrameType::Value FrameType::from_string(const char* str) noexcept {
-    if (str_equal(str, "auxiliary")) {
+    if (__builtin_strncmp(str, "auxiliary", strlen("auxiliary"))) {
         return AUXILIARY;
     }
-    else if (str_equal(str, "top-level")) {
+    else if (__builtin_strncmp(str, "top-level", strlen("top-level"))) {
         return TOP_LEVEL;
     }
-    else if (str_equal(str, "nested")) {
+    else if (__builtin_strncmp(str, "nested", strlen("nested"))) {
         return NESTED;
     }
-    else if (str_equal(str, "none")) {
+    else if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
     else {
@@ -7481,16 +7473,16 @@ const char* FrameType::to_string(FrameType::Value value_) noexcept {
 }
 
 ClientType::Value ClientType::from_string(const char* str) noexcept {
-    if (str_equal(str, "window")) {
+    if (__builtin_strncmp(str, "window", strlen("window"))) {
         return WINDOW;
     }
-    else if (str_equal(str, "worker")) {
+    else if (__builtin_strncmp(str, "worker", strlen("worker"))) {
         return WORKER;
     }
-    else if (str_equal(str, "sharedworker")) {
+    else if (__builtin_strncmp(str, "sharedworker", strlen("sharedworker"))) {
         return SHAREDWORKER;
     }
-    else if (str_equal(str, "all")) {
+    else if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
     else {
@@ -7526,10 +7518,10 @@ const char* ClientType::to_string(ClientType::Value value_) noexcept {
 }
 
 RunningStatus::Value RunningStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "running")) {
+    if (__builtin_strncmp(str, "running", strlen("running"))) {
         return RUNNING;
     }
-    else if (str_equal(str, "not-running")) {
+    else if (__builtin_strncmp(str, "not-running", strlen("not-running"))) {
         return NOT_RUNNING;
     }
     else {
@@ -7561,16 +7553,16 @@ const char* RunningStatus::to_string(RunningStatus::Value value_) noexcept {
 }
 
 RouterSourceEnum::Value RouterSourceEnum::from_string(const char* str) noexcept {
-    if (str_equal(str, "cache")) {
+    if (__builtin_strncmp(str, "cache", strlen("cache"))) {
         return CACHE;
     }
-    else if (str_equal(str, "fetch-event")) {
+    else if (__builtin_strncmp(str, "fetch-event", strlen("fetch-event"))) {
         return FETCH_EVENT;
     }
-    else if (str_equal(str, "network")) {
+    else if (__builtin_strncmp(str, "network", strlen("network"))) {
         return NETWORK;
     }
-    else if (str_equal(str, "race-network-and-fetch-handler")) {
+    else if (__builtin_strncmp(str, "race-network-and-fetch-handler", strlen("race-network-and-fetch-handler"))) {
         return RACE_NETWORK_AND_FETCH_HANDLER;
     }
     else {
@@ -7606,13 +7598,13 @@ const char* RouterSourceEnum::to_string(RouterSourceEnum::Value value_) noexcept
 }
 
 LandmarkType::Value LandmarkType::from_string(const char* str) noexcept {
-    if (str_equal(str, "mouth")) {
+    if (__builtin_strncmp(str, "mouth", strlen("mouth"))) {
         return MOUTH;
     }
-    else if (str_equal(str, "eye")) {
+    else if (__builtin_strncmp(str, "eye", strlen("eye"))) {
         return EYE;
     }
-    else if (str_equal(str, "nose")) {
+    else if (__builtin_strncmp(str, "nose", strlen("nose"))) {
         return NOSE;
     }
     else {
@@ -7646,46 +7638,46 @@ const char* LandmarkType::to_string(LandmarkType::Value value_) noexcept {
 }
 
 BarcodeFormat::Value BarcodeFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "aztec")) {
+    if (__builtin_strncmp(str, "aztec", strlen("aztec"))) {
         return AZTEC;
     }
-    else if (str_equal(str, "code_128")) {
+    else if (__builtin_strncmp(str, "code_128", strlen("code_128"))) {
         return CODE_128;
     }
-    else if (str_equal(str, "code_39")) {
+    else if (__builtin_strncmp(str, "code_39", strlen("code_39"))) {
         return CODE_39;
     }
-    else if (str_equal(str, "code_93")) {
+    else if (__builtin_strncmp(str, "code_93", strlen("code_93"))) {
         return CODE_93;
     }
-    else if (str_equal(str, "codabar")) {
+    else if (__builtin_strncmp(str, "codabar", strlen("codabar"))) {
         return CODABAR;
     }
-    else if (str_equal(str, "data_matrix")) {
+    else if (__builtin_strncmp(str, "data_matrix", strlen("data_matrix"))) {
         return DATA_MATRIX;
     }
-    else if (str_equal(str, "ean_13")) {
+    else if (__builtin_strncmp(str, "ean_13", strlen("ean_13"))) {
         return EAN_13;
     }
-    else if (str_equal(str, "ean_8")) {
+    else if (__builtin_strncmp(str, "ean_8", strlen("ean_8"))) {
         return EAN_8;
     }
-    else if (str_equal(str, "itf")) {
+    else if (__builtin_strncmp(str, "itf", strlen("itf"))) {
         return ITF;
     }
-    else if (str_equal(str, "pdf417")) {
+    else if (__builtin_strncmp(str, "pdf417", strlen("pdf417"))) {
         return PDF417;
     }
-    else if (str_equal(str, "qr_code")) {
+    else if (__builtin_strncmp(str, "qr_code", strlen("qr_code"))) {
         return QR_CODE;
     }
-    else if (str_equal(str, "unknown")) {
+    else if (__builtin_strncmp(str, "unknown", strlen("unknown"))) {
         return UNKNOWN;
     }
-    else if (str_equal(str, "upc_a")) {
+    else if (__builtin_strncmp(str, "upc_a", strlen("upc_a"))) {
         return UPC_A;
     }
-    else if (str_equal(str, "upc_e")) {
+    else if (__builtin_strncmp(str, "upc_e", strlen("upc_e"))) {
         return UPC_E;
     }
     else {
@@ -7741,28 +7733,28 @@ const char* BarcodeFormat::to_string(BarcodeFormat::Value value_) noexcept {
 }
 
 SpeechRecognitionErrorCode::Value SpeechRecognitionErrorCode::from_string(const char* str) noexcept {
-    if (str_equal(str, "no-speech")) {
+    if (__builtin_strncmp(str, "no-speech", strlen("no-speech"))) {
         return NO_SPEECH;
     }
-    else if (str_equal(str, "aborted")) {
+    else if (__builtin_strncmp(str, "aborted", strlen("aborted"))) {
         return ABORTED;
     }
-    else if (str_equal(str, "audio-capture")) {
+    else if (__builtin_strncmp(str, "audio-capture", strlen("audio-capture"))) {
         return AUDIO_CAPTURE;
     }
-    else if (str_equal(str, "network")) {
+    else if (__builtin_strncmp(str, "network", strlen("network"))) {
         return NETWORK;
     }
-    else if (str_equal(str, "not-allowed")) {
+    else if (__builtin_strncmp(str, "not-allowed", strlen("not-allowed"))) {
         return NOT_ALLOWED;
     }
-    else if (str_equal(str, "service-not-allowed")) {
+    else if (__builtin_strncmp(str, "service-not-allowed", strlen("service-not-allowed"))) {
         return SERVICE_NOT_ALLOWED;
     }
-    else if (str_equal(str, "language-not-supported")) {
+    else if (__builtin_strncmp(str, "language-not-supported", strlen("language-not-supported"))) {
         return LANGUAGE_NOT_SUPPORTED;
     }
-    else if (str_equal(str, "phrases-not-supported")) {
+    else if (__builtin_strncmp(str, "phrases-not-supported", strlen("phrases-not-supported"))) {
         return PHRASES_NOT_SUPPORTED;
     }
     else {
@@ -7806,16 +7798,16 @@ const char* SpeechRecognitionErrorCode::to_string(SpeechRecognitionErrorCode::Va
 }
 
 AvailabilityStatus::Value AvailabilityStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "unavailable")) {
+    if (__builtin_strncmp(str, "unavailable", strlen("unavailable"))) {
         return UNAVAILABLE;
     }
-    else if (str_equal(str, "downloadable")) {
+    else if (__builtin_strncmp(str, "downloadable", strlen("downloadable"))) {
         return DOWNLOADABLE;
     }
-    else if (str_equal(str, "downloading")) {
+    else if (__builtin_strncmp(str, "downloading", strlen("downloading"))) {
         return DOWNLOADING;
     }
-    else if (str_equal(str, "available")) {
+    else if (__builtin_strncmp(str, "available", strlen("available"))) {
         return AVAILABLE;
     }
     else {
@@ -7851,40 +7843,40 @@ const char* AvailabilityStatus::to_string(AvailabilityStatus::Value value_) noex
 }
 
 SpeechSynthesisErrorCode::Value SpeechSynthesisErrorCode::from_string(const char* str) noexcept {
-    if (str_equal(str, "canceled")) {
+    if (__builtin_strncmp(str, "canceled", strlen("canceled"))) {
         return CANCELED;
     }
-    else if (str_equal(str, "interrupted")) {
+    else if (__builtin_strncmp(str, "interrupted", strlen("interrupted"))) {
         return INTERRUPTED;
     }
-    else if (str_equal(str, "audio-busy")) {
+    else if (__builtin_strncmp(str, "audio-busy", strlen("audio-busy"))) {
         return AUDIO_BUSY;
     }
-    else if (str_equal(str, "audio-hardware")) {
+    else if (__builtin_strncmp(str, "audio-hardware", strlen("audio-hardware"))) {
         return AUDIO_HARDWARE;
     }
-    else if (str_equal(str, "network")) {
+    else if (__builtin_strncmp(str, "network", strlen("network"))) {
         return NETWORK;
     }
-    else if (str_equal(str, "synthesis-unavailable")) {
+    else if (__builtin_strncmp(str, "synthesis-unavailable", strlen("synthesis-unavailable"))) {
         return SYNTHESIS_UNAVAILABLE;
     }
-    else if (str_equal(str, "synthesis-failed")) {
+    else if (__builtin_strncmp(str, "synthesis-failed", strlen("synthesis-failed"))) {
         return SYNTHESIS_FAILED;
     }
-    else if (str_equal(str, "language-unavailable")) {
+    else if (__builtin_strncmp(str, "language-unavailable", strlen("language-unavailable"))) {
         return LANGUAGE_UNAVAILABLE;
     }
-    else if (str_equal(str, "voice-unavailable")) {
+    else if (__builtin_strncmp(str, "voice-unavailable", strlen("voice-unavailable"))) {
         return VOICE_UNAVAILABLE;
     }
-    else if (str_equal(str, "text-too-long")) {
+    else if (__builtin_strncmp(str, "text-too-long", strlen("text-too-long"))) {
         return TEXT_TOO_LONG;
     }
-    else if (str_equal(str, "invalid-argument")) {
+    else if (__builtin_strncmp(str, "invalid-argument", strlen("invalid-argument"))) {
         return INVALID_ARGUMENT;
     }
-    else if (str_equal(str, "not-allowed")) {
+    else if (__builtin_strncmp(str, "not-allowed", strlen("not-allowed"))) {
         return NOT_ALLOWED;
     }
     else {
@@ -7936,7 +7928,7 @@ const char* SpeechSynthesisErrorCode::to_string(SpeechSynthesisErrorCode::Value 
 }
 
 ReadableStreamReaderMode::Value ReadableStreamReaderMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "byob")) {
+    if (__builtin_strncmp(str, "byob", strlen("byob"))) {
         return BYOB;
     }
     else {
@@ -7966,7 +7958,7 @@ const char* ReadableStreamReaderMode::to_string(ReadableStreamReaderMode::Value 
 }
 
 ReadableStreamType::Value ReadableStreamType::from_string(const char* str) noexcept {
-    if (str_equal(str, "bytes")) {
+    if (__builtin_strncmp(str, "bytes", strlen("bytes"))) {
         return BYTES;
     }
     else {
@@ -7996,10 +7988,10 @@ const char* ReadableStreamType::to_string(ReadableStreamType::Value value_) noex
 }
 
 TouchType::Value TouchType::from_string(const char* str) noexcept {
-    if (str_equal(str, "direct")) {
+    if (__builtin_strncmp(str, "direct", strlen("direct"))) {
         return DIRECT;
     }
-    else if (str_equal(str, "stylus")) {
+    else if (__builtin_strncmp(str, "stylus", strlen("stylus"))) {
         return STYLUS;
     }
     else {
@@ -8031,10 +8023,10 @@ const char* TouchType::to_string(TouchType::Value value_) noexcept {
 }
 
 RefreshPolicy::Value RefreshPolicy::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "refresh")) {
+    else if (__builtin_strncmp(str, "refresh", strlen("refresh"))) {
         return REFRESH;
     }
     else {
@@ -8066,7 +8058,7 @@ const char* RefreshPolicy::to_string(RefreshPolicy::Value value_) noexcept {
 }
 
 TokenVersion::Value TokenVersion::from_string(const char* str) noexcept {
-    if (str_equal(str, "1")) {
+    if (__builtin_strncmp(str, "1", strlen("1"))) {
         return _1;
     }
     else {
@@ -8096,13 +8088,13 @@ const char* TokenVersion::to_string(TokenVersion::Value value_) noexcept {
 }
 
 OperationType::Value OperationType::from_string(const char* str) noexcept {
-    if (str_equal(str, "token-request")) {
+    if (__builtin_strncmp(str, "token-request", strlen("token-request"))) {
         return TOKEN_REQUEST;
     }
-    else if (str_equal(str, "send-redemption-record")) {
+    else if (__builtin_strncmp(str, "send-redemption-record", strlen("send-redemption-record"))) {
         return SEND_REDEMPTION_RECORD;
     }
-    else if (str_equal(str, "token-redemption")) {
+    else if (__builtin_strncmp(str, "token-redemption", strlen("token-redemption"))) {
         return TOKEN_REDEMPTION;
     }
     else {
@@ -8136,16 +8128,16 @@ const char* OperationType::to_string(OperationType::Value value_) noexcept {
 }
 
 KAnonStatus::Value KAnonStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "passedAndEnforced")) {
+    if (__builtin_strncmp(str, "passedAndEnforced", strlen("passedAndEnforced"))) {
         return PASSEDANDENFORCED;
     }
-    else if (str_equal(str, "passedNotEnforced")) {
+    else if (__builtin_strncmp(str, "passedNotEnforced", strlen("passedNotEnforced"))) {
         return PASSEDNOTENFORCED;
     }
-    else if (str_equal(str, "belowThreshold")) {
+    else if (__builtin_strncmp(str, "belowThreshold", strlen("belowThreshold"))) {
         return BELOWTHRESHOLD;
     }
-    else if (str_equal(str, "notCalculated")) {
+    else if (__builtin_strncmp(str, "notCalculated", strlen("notCalculated"))) {
         return NOTCALCULATED;
     }
     else {
@@ -8181,16 +8173,16 @@ const char* KAnonStatus::to_string(KAnonStatus::Value value_) noexcept {
 }
 
 ImportExportKind::Value ImportExportKind::from_string(const char* str) noexcept {
-    if (str_equal(str, "function")) {
+    if (__builtin_strncmp(str, "function", strlen("function"))) {
         return FUNCTION;
     }
-    else if (str_equal(str, "table")) {
+    else if (__builtin_strncmp(str, "table", strlen("table"))) {
         return TABLE;
     }
-    else if (str_equal(str, "memory")) {
+    else if (__builtin_strncmp(str, "memory", strlen("memory"))) {
         return MEMORY;
     }
-    else if (str_equal(str, "global")) {
+    else if (__builtin_strncmp(str, "global", strlen("global"))) {
         return GLOBAL;
     }
     else {
@@ -8226,10 +8218,10 @@ const char* ImportExportKind::to_string(ImportExportKind::Value value_) noexcept
 }
 
 TableKind::Value TableKind::from_string(const char* str) noexcept {
-    if (str_equal(str, "externref")) {
+    if (__builtin_strncmp(str, "externref", strlen("externref"))) {
         return EXTERNREF;
     }
-    else if (str_equal(str, "anyfunc")) {
+    else if (__builtin_strncmp(str, "anyfunc", strlen("anyfunc"))) {
         return ANYFUNC;
     }
     else {
@@ -8261,25 +8253,25 @@ const char* TableKind::to_string(TableKind::Value value_) noexcept {
 }
 
 ValueType::Value ValueType::from_string(const char* str) noexcept {
-    if (str_equal(str, "i32")) {
+    if (__builtin_strncmp(str, "i32", strlen("i32"))) {
         return I32;
     }
-    else if (str_equal(str, "i64")) {
+    else if (__builtin_strncmp(str, "i64", strlen("i64"))) {
         return I64;
     }
-    else if (str_equal(str, "f32")) {
+    else if (__builtin_strncmp(str, "f32", strlen("f32"))) {
         return F32;
     }
-    else if (str_equal(str, "f64")) {
+    else if (__builtin_strncmp(str, "f64", strlen("f64"))) {
         return F64;
     }
-    else if (str_equal(str, "v128")) {
+    else if (__builtin_strncmp(str, "v128", strlen("v128"))) {
         return V128;
     }
-    else if (str_equal(str, "externref")) {
+    else if (__builtin_strncmp(str, "externref", strlen("externref"))) {
         return EXTERNREF;
     }
-    else if (str_equal(str, "anyfunc")) {
+    else if (__builtin_strncmp(str, "anyfunc", strlen("anyfunc"))) {
         return ANYFUNC;
     }
     else {
@@ -8321,10 +8313,10 @@ const char* ValueType::to_string(ValueType::Value value_) noexcept {
 }
 
 IterationCompositeOperation::Value IterationCompositeOperation::from_string(const char* str) noexcept {
-    if (str_equal(str, "replace")) {
+    if (__builtin_strncmp(str, "replace", strlen("replace"))) {
         return REPLACE;
     }
-    else if (str_equal(str, "accumulate")) {
+    else if (__builtin_strncmp(str, "accumulate", strlen("accumulate"))) {
         return ACCUMULATE;
     }
     else {
@@ -8356,16 +8348,16 @@ const char* IterationCompositeOperation::to_string(IterationCompositeOperation::
 }
 
 AnimationTriggerBehavior::Value AnimationTriggerBehavior::from_string(const char* str) noexcept {
-    if (str_equal(str, "once")) {
+    if (__builtin_strncmp(str, "once", strlen("once"))) {
         return ONCE;
     }
-    else if (str_equal(str, "repeat")) {
+    else if (__builtin_strncmp(str, "repeat", strlen("repeat"))) {
         return REPEAT;
     }
-    else if (str_equal(str, "alternate")) {
+    else if (__builtin_strncmp(str, "alternate", strlen("alternate"))) {
         return ALTERNATE;
     }
-    else if (str_equal(str, "state")) {
+    else if (__builtin_strncmp(str, "state", strlen("state"))) {
         return STATE;
     }
     else {
@@ -8401,16 +8393,16 @@ const char* AnimationTriggerBehavior::to_string(AnimationTriggerBehavior::Value 
 }
 
 AnimationPlayState::Value AnimationPlayState::from_string(const char* str) noexcept {
-    if (str_equal(str, "idle")) {
+    if (__builtin_strncmp(str, "idle", strlen("idle"))) {
         return IDLE;
     }
-    else if (str_equal(str, "running")) {
+    else if (__builtin_strncmp(str, "running", strlen("running"))) {
         return RUNNING;
     }
-    else if (str_equal(str, "paused")) {
+    else if (__builtin_strncmp(str, "paused", strlen("paused"))) {
         return PAUSED;
     }
-    else if (str_equal(str, "finished")) {
+    else if (__builtin_strncmp(str, "finished", strlen("finished"))) {
         return FINISHED;
     }
     else {
@@ -8446,13 +8438,13 @@ const char* AnimationPlayState::to_string(AnimationPlayState::Value value_) noex
 }
 
 AnimationReplaceState::Value AnimationReplaceState::from_string(const char* str) noexcept {
-    if (str_equal(str, "active")) {
+    if (__builtin_strncmp(str, "active", strlen("active"))) {
         return ACTIVE;
     }
-    else if (str_equal(str, "removed")) {
+    else if (__builtin_strncmp(str, "removed", strlen("removed"))) {
         return REMOVED;
     }
-    else if (str_equal(str, "persisted")) {
+    else if (__builtin_strncmp(str, "persisted", strlen("persisted"))) {
         return PERSISTED;
     }
     else {
@@ -8486,19 +8478,19 @@ const char* AnimationReplaceState::to_string(AnimationReplaceState::Value value_
 }
 
 FillMode::Value FillMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "forwards")) {
+    else if (__builtin_strncmp(str, "forwards", strlen("forwards"))) {
         return FORWARDS;
     }
-    else if (str_equal(str, "backwards")) {
+    else if (__builtin_strncmp(str, "backwards", strlen("backwards"))) {
         return BACKWARDS;
     }
-    else if (str_equal(str, "both")) {
+    else if (__builtin_strncmp(str, "both", strlen("both"))) {
         return BOTH;
     }
-    else if (str_equal(str, "auto")) {
+    else if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
     else {
@@ -8536,16 +8528,16 @@ const char* FillMode::to_string(FillMode::Value value_) noexcept {
 }
 
 PlaybackDirection::Value PlaybackDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "normal")) {
+    if (__builtin_strncmp(str, "normal", strlen("normal"))) {
         return NORMAL;
     }
-    else if (str_equal(str, "reverse")) {
+    else if (__builtin_strncmp(str, "reverse", strlen("reverse"))) {
         return REVERSE;
     }
-    else if (str_equal(str, "alternate")) {
+    else if (__builtin_strncmp(str, "alternate", strlen("alternate"))) {
         return ALTERNATE;
     }
-    else if (str_equal(str, "alternate-reverse")) {
+    else if (__builtin_strncmp(str, "alternate-reverse", strlen("alternate-reverse"))) {
         return ALTERNATE_REVERSE;
     }
     else {
@@ -8581,13 +8573,13 @@ const char* PlaybackDirection::to_string(PlaybackDirection::Value value_) noexce
 }
 
 CompositeOperation::Value CompositeOperation::from_string(const char* str) noexcept {
-    if (str_equal(str, "replace")) {
+    if (__builtin_strncmp(str, "replace", strlen("replace"))) {
         return REPLACE;
     }
-    else if (str_equal(str, "add")) {
+    else if (__builtin_strncmp(str, "add", strlen("add"))) {
         return ADD;
     }
-    else if (str_equal(str, "accumulate")) {
+    else if (__builtin_strncmp(str, "accumulate", strlen("accumulate"))) {
         return ACCUMULATE;
     }
     else {
@@ -8621,16 +8613,16 @@ const char* CompositeOperation::to_string(CompositeOperation::Value value_) noex
 }
 
 CompositeOperationOrAuto::Value CompositeOperationOrAuto::from_string(const char* str) noexcept {
-    if (str_equal(str, "replace")) {
+    if (__builtin_strncmp(str, "replace", strlen("replace"))) {
         return REPLACE;
     }
-    else if (str_equal(str, "add")) {
+    else if (__builtin_strncmp(str, "add", strlen("add"))) {
         return ADD;
     }
-    else if (str_equal(str, "accumulate")) {
+    else if (__builtin_strncmp(str, "accumulate", strlen("accumulate"))) {
         return ACCUMULATE;
     }
-    else if (str_equal(str, "auto")) {
+    else if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
     else {
@@ -8666,10 +8658,10 @@ const char* CompositeOperationOrAuto::to_string(CompositeOperationOrAuto::Value 
 }
 
 LockMode::Value LockMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "shared")) {
+    if (__builtin_strncmp(str, "shared", strlen("shared"))) {
         return SHARED;
     }
-    else if (str_equal(str, "exclusive")) {
+    else if (__builtin_strncmp(str, "exclusive", strlen("exclusive"))) {
         return EXCLUSIVE;
     }
     else {
@@ -8701,7 +8693,7 @@ const char* LockMode::to_string(LockMode::Value value_) noexcept {
 }
 
 OTPCredentialTransportType::Value OTPCredentialTransportType::from_string(const char* str) noexcept {
-    if (str_equal(str, "sms")) {
+    if (__builtin_strncmp(str, "sms", strlen("sms"))) {
         return SMS;
     }
     else {
@@ -8731,16 +8723,16 @@ const char* OTPCredentialTransportType::to_string(OTPCredentialTransportType::Va
 }
 
 AudioContextState::Value AudioContextState::from_string(const char* str) noexcept {
-    if (str_equal(str, "suspended")) {
+    if (__builtin_strncmp(str, "suspended", strlen("suspended"))) {
         return SUSPENDED;
     }
-    else if (str_equal(str, "running")) {
+    else if (__builtin_strncmp(str, "running", strlen("running"))) {
         return RUNNING;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "interrupted")) {
+    else if (__builtin_strncmp(str, "interrupted", strlen("interrupted"))) {
         return INTERRUPTED;
     }
     else {
@@ -8776,10 +8768,10 @@ const char* AudioContextState::to_string(AudioContextState::Value value_) noexce
 }
 
 AudioContextRenderSizeCategory::Value AudioContextRenderSizeCategory::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "hardware")) {
+    else if (__builtin_strncmp(str, "hardware", strlen("hardware"))) {
         return HARDWARE;
     }
     else {
@@ -8811,13 +8803,13 @@ const char* AudioContextRenderSizeCategory::to_string(AudioContextRenderSizeCate
 }
 
 AudioContextLatencyCategory::Value AudioContextLatencyCategory::from_string(const char* str) noexcept {
-    if (str_equal(str, "balanced")) {
+    if (__builtin_strncmp(str, "balanced", strlen("balanced"))) {
         return BALANCED;
     }
-    else if (str_equal(str, "interactive")) {
+    else if (__builtin_strncmp(str, "interactive", strlen("interactive"))) {
         return INTERACTIVE;
     }
-    else if (str_equal(str, "playback")) {
+    else if (__builtin_strncmp(str, "playback", strlen("playback"))) {
         return PLAYBACK;
     }
     else {
@@ -8851,7 +8843,7 @@ const char* AudioContextLatencyCategory::to_string(AudioContextLatencyCategory::
 }
 
 AudioSinkType::Value AudioSinkType::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
     else {
@@ -8881,13 +8873,13 @@ const char* AudioSinkType::to_string(AudioSinkType::Value value_) noexcept {
 }
 
 ChannelCountMode::Value ChannelCountMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "max")) {
+    if (__builtin_strncmp(str, "max", strlen("max"))) {
         return MAX;
     }
-    else if (str_equal(str, "clamped-max")) {
+    else if (__builtin_strncmp(str, "clamped-max", strlen("clamped-max"))) {
         return CLAMPED_MAX;
     }
-    else if (str_equal(str, "explicit")) {
+    else if (__builtin_strncmp(str, "explicit", strlen("explicit"))) {
         return EXPLICIT_;
     }
     else {
@@ -8921,10 +8913,10 @@ const char* ChannelCountMode::to_string(ChannelCountMode::Value value_) noexcept
 }
 
 ChannelInterpretation::Value ChannelInterpretation::from_string(const char* str) noexcept {
-    if (str_equal(str, "speakers")) {
+    if (__builtin_strncmp(str, "speakers", strlen("speakers"))) {
         return SPEAKERS;
     }
-    else if (str_equal(str, "discrete")) {
+    else if (__builtin_strncmp(str, "discrete", strlen("discrete"))) {
         return DISCRETE;
     }
     else {
@@ -8956,10 +8948,10 @@ const char* ChannelInterpretation::to_string(ChannelInterpretation::Value value_
 }
 
 AutomationRate::Value AutomationRate::from_string(const char* str) noexcept {
-    if (str_equal(str, "a-rate")) {
+    if (__builtin_strncmp(str, "a-rate", strlen("a-rate"))) {
         return A_RATE;
     }
-    else if (str_equal(str, "k-rate")) {
+    else if (__builtin_strncmp(str, "k-rate", strlen("k-rate"))) {
         return K_RATE;
     }
     else {
@@ -8991,28 +8983,28 @@ const char* AutomationRate::to_string(AutomationRate::Value value_) noexcept {
 }
 
 BiquadFilterType::Value BiquadFilterType::from_string(const char* str) noexcept {
-    if (str_equal(str, "lowpass")) {
+    if (__builtin_strncmp(str, "lowpass", strlen("lowpass"))) {
         return LOWPASS;
     }
-    else if (str_equal(str, "highpass")) {
+    else if (__builtin_strncmp(str, "highpass", strlen("highpass"))) {
         return HIGHPASS;
     }
-    else if (str_equal(str, "bandpass")) {
+    else if (__builtin_strncmp(str, "bandpass", strlen("bandpass"))) {
         return BANDPASS;
     }
-    else if (str_equal(str, "lowshelf")) {
+    else if (__builtin_strncmp(str, "lowshelf", strlen("lowshelf"))) {
         return LOWSHELF;
     }
-    else if (str_equal(str, "highshelf")) {
+    else if (__builtin_strncmp(str, "highshelf", strlen("highshelf"))) {
         return HIGHSHELF;
     }
-    else if (str_equal(str, "peaking")) {
+    else if (__builtin_strncmp(str, "peaking", strlen("peaking"))) {
         return PEAKING;
     }
-    else if (str_equal(str, "notch")) {
+    else if (__builtin_strncmp(str, "notch", strlen("notch"))) {
         return NOTCH;
     }
-    else if (str_equal(str, "allpass")) {
+    else if (__builtin_strncmp(str, "allpass", strlen("allpass"))) {
         return ALLPASS;
     }
     else {
@@ -9056,19 +9048,19 @@ const char* BiquadFilterType::to_string(BiquadFilterType::Value value_) noexcept
 }
 
 OscillatorType::Value OscillatorType::from_string(const char* str) noexcept {
-    if (str_equal(str, "sine")) {
+    if (__builtin_strncmp(str, "sine", strlen("sine"))) {
         return SINE;
     }
-    else if (str_equal(str, "square")) {
+    else if (__builtin_strncmp(str, "square", strlen("square"))) {
         return SQUARE;
     }
-    else if (str_equal(str, "sawtooth")) {
+    else if (__builtin_strncmp(str, "sawtooth", strlen("sawtooth"))) {
         return SAWTOOTH;
     }
-    else if (str_equal(str, "triangle")) {
+    else if (__builtin_strncmp(str, "triangle", strlen("triangle"))) {
         return TRIANGLE;
     }
-    else if (str_equal(str, "custom")) {
+    else if (__builtin_strncmp(str, "custom", strlen("custom"))) {
         return CUSTOM;
     }
     else {
@@ -9106,10 +9098,10 @@ const char* OscillatorType::to_string(OscillatorType::Value value_) noexcept {
 }
 
 PanningModelType::Value PanningModelType::from_string(const char* str) noexcept {
-    if (str_equal(str, "equalpower")) {
+    if (__builtin_strncmp(str, "equalpower", strlen("equalpower"))) {
         return EQUALPOWER;
     }
-    else if (str_equal(str, "HRTF")) {
+    else if (__builtin_strncmp(str, "HRTF", strlen("HRTF"))) {
         return HRTF;
     }
     else {
@@ -9141,13 +9133,13 @@ const char* PanningModelType::to_string(PanningModelType::Value value_) noexcept
 }
 
 DistanceModelType::Value DistanceModelType::from_string(const char* str) noexcept {
-    if (str_equal(str, "linear")) {
+    if (__builtin_strncmp(str, "linear", strlen("linear"))) {
         return LINEAR;
     }
-    else if (str_equal(str, "inverse")) {
+    else if (__builtin_strncmp(str, "inverse", strlen("inverse"))) {
         return INVERSE;
     }
-    else if (str_equal(str, "exponential")) {
+    else if (__builtin_strncmp(str, "exponential", strlen("exponential"))) {
         return EXPONENTIAL;
     }
     else {
@@ -9181,13 +9173,13 @@ const char* DistanceModelType::to_string(DistanceModelType::Value value_) noexce
 }
 
 OverSampleType::Value OverSampleType::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "2x")) {
+    else if (__builtin_strncmp(str, "2x", strlen("2x"))) {
         return _2X;
     }
-    else if (str_equal(str, "4x")) {
+    else if (__builtin_strncmp(str, "4x", strlen("4x"))) {
         return _4X;
     }
     else {
@@ -9221,10 +9213,10 @@ const char* OverSampleType::to_string(OverSampleType::Value value_) noexcept {
 }
 
 AuthenticatorAttachment::Value AuthenticatorAttachment::from_string(const char* str) noexcept {
-    if (str_equal(str, "platform")) {
+    if (__builtin_strncmp(str, "platform", strlen("platform"))) {
         return PLATFORM;
     }
-    else if (str_equal(str, "cross-platform")) {
+    else if (__builtin_strncmp(str, "cross-platform", strlen("cross-platform"))) {
         return CROSS_PLATFORM;
     }
     else {
@@ -9256,13 +9248,13 @@ const char* AuthenticatorAttachment::to_string(AuthenticatorAttachment::Value va
 }
 
 ResidentKeyRequirement::Value ResidentKeyRequirement::from_string(const char* str) noexcept {
-    if (str_equal(str, "discouraged")) {
+    if (__builtin_strncmp(str, "discouraged", strlen("discouraged"))) {
         return DISCOURAGED;
     }
-    else if (str_equal(str, "preferred")) {
+    else if (__builtin_strncmp(str, "preferred", strlen("preferred"))) {
         return PREFERRED;
     }
-    else if (str_equal(str, "required")) {
+    else if (__builtin_strncmp(str, "required", strlen("required"))) {
         return REQUIRED;
     }
     else {
@@ -9296,16 +9288,16 @@ const char* ResidentKeyRequirement::to_string(ResidentKeyRequirement::Value valu
 }
 
 AttestationConveyancePreference::Value AttestationConveyancePreference::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "indirect")) {
+    else if (__builtin_strncmp(str, "indirect", strlen("indirect"))) {
         return INDIRECT;
     }
-    else if (str_equal(str, "direct")) {
+    else if (__builtin_strncmp(str, "direct", strlen("direct"))) {
         return DIRECT;
     }
-    else if (str_equal(str, "enterprise")) {
+    else if (__builtin_strncmp(str, "enterprise", strlen("enterprise"))) {
         return ENTERPRISE;
     }
     else {
@@ -9341,10 +9333,10 @@ const char* AttestationConveyancePreference::to_string(AttestationConveyancePref
 }
 
 TokenBindingStatus::Value TokenBindingStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "present")) {
+    if (__builtin_strncmp(str, "present", strlen("present"))) {
         return PRESENT;
     }
-    else if (str_equal(str, "supported")) {
+    else if (__builtin_strncmp(str, "supported", strlen("supported"))) {
         return SUPPORTED;
     }
     else {
@@ -9376,7 +9368,7 @@ const char* TokenBindingStatus::to_string(TokenBindingStatus::Value value_) noex
 }
 
 PublicKeyCredentialType::Value PublicKeyCredentialType::from_string(const char* str) noexcept {
-    if (str_equal(str, "public-key")) {
+    if (__builtin_strncmp(str, "public-key", strlen("public-key"))) {
         return PUBLIC_KEY;
     }
     else {
@@ -9406,22 +9398,22 @@ const char* PublicKeyCredentialType::to_string(PublicKeyCredentialType::Value va
 }
 
 AuthenticatorTransport::Value AuthenticatorTransport::from_string(const char* str) noexcept {
-    if (str_equal(str, "usb")) {
+    if (__builtin_strncmp(str, "usb", strlen("usb"))) {
         return USB;
     }
-    else if (str_equal(str, "nfc")) {
+    else if (__builtin_strncmp(str, "nfc", strlen("nfc"))) {
         return NFC;
     }
-    else if (str_equal(str, "ble")) {
+    else if (__builtin_strncmp(str, "ble", strlen("ble"))) {
         return BLE;
     }
-    else if (str_equal(str, "smart-card")) {
+    else if (__builtin_strncmp(str, "smart-card", strlen("smart-card"))) {
         return SMART_CARD;
     }
-    else if (str_equal(str, "hybrid")) {
+    else if (__builtin_strncmp(str, "hybrid", strlen("hybrid"))) {
         return HYBRID;
     }
-    else if (str_equal(str, "internal")) {
+    else if (__builtin_strncmp(str, "internal", strlen("internal"))) {
         return INTERNAL;
     }
     else {
@@ -9461,13 +9453,13 @@ const char* AuthenticatorTransport::to_string(AuthenticatorTransport::Value valu
 }
 
 UserVerificationRequirement::Value UserVerificationRequirement::from_string(const char* str) noexcept {
-    if (str_equal(str, "required")) {
+    if (__builtin_strncmp(str, "required", strlen("required"))) {
         return REQUIRED;
     }
-    else if (str_equal(str, "preferred")) {
+    else if (__builtin_strncmp(str, "preferred", strlen("preferred"))) {
         return PREFERRED;
     }
-    else if (str_equal(str, "discouraged")) {
+    else if (__builtin_strncmp(str, "discouraged", strlen("discouraged"))) {
         return DISCOURAGED;
     }
     else {
@@ -9501,31 +9493,31 @@ const char* UserVerificationRequirement::to_string(UserVerificationRequirement::
 }
 
 ClientCapability::Value ClientCapability::from_string(const char* str) noexcept {
-    if (str_equal(str, "conditionalCreate")) {
+    if (__builtin_strncmp(str, "conditionalCreate", strlen("conditionalCreate"))) {
         return CONDITIONALCREATE;
     }
-    else if (str_equal(str, "conditionalGet")) {
+    else if (__builtin_strncmp(str, "conditionalGet", strlen("conditionalGet"))) {
         return CONDITIONALGET;
     }
-    else if (str_equal(str, "hybridTransport")) {
+    else if (__builtin_strncmp(str, "hybridTransport", strlen("hybridTransport"))) {
         return HYBRIDTRANSPORT;
     }
-    else if (str_equal(str, "passkeyPlatformAuthenticator")) {
+    else if (__builtin_strncmp(str, "passkeyPlatformAuthenticator", strlen("passkeyPlatformAuthenticator"))) {
         return PASSKEYPLATFORMAUTHENTICATOR;
     }
-    else if (str_equal(str, "userVerifyingPlatformAuthenticator")) {
+    else if (__builtin_strncmp(str, "userVerifyingPlatformAuthenticator", strlen("userVerifyingPlatformAuthenticator"))) {
         return USERVERIFYINGPLATFORMAUTHENTICATOR;
     }
-    else if (str_equal(str, "relatedOrigins")) {
+    else if (__builtin_strncmp(str, "relatedOrigins", strlen("relatedOrigins"))) {
         return RELATEDORIGINS;
     }
-    else if (str_equal(str, "signalAllAcceptedCredentials")) {
+    else if (__builtin_strncmp(str, "signalAllAcceptedCredentials", strlen("signalAllAcceptedCredentials"))) {
         return SIGNALALLACCEPTEDCREDENTIALS;
     }
-    else if (str_equal(str, "signalCurrentUserDetails")) {
+    else if (__builtin_strncmp(str, "signalCurrentUserDetails", strlen("signalCurrentUserDetails"))) {
         return SIGNALCURRENTUSERDETAILS;
     }
-    else if (str_equal(str, "signalUnknownCredential")) {
+    else if (__builtin_strncmp(str, "signalUnknownCredential", strlen("signalUnknownCredential"))) {
         return SIGNALUNKNOWNCREDENTIAL;
     }
     else {
@@ -9571,13 +9563,13 @@ const char* ClientCapability::to_string(ClientCapability::Value value_) noexcept
 }
 
 PublicKeyCredentialHint::Value PublicKeyCredentialHint::from_string(const char* str) noexcept {
-    if (str_equal(str, "security-key")) {
+    if (__builtin_strncmp(str, "security-key", strlen("security-key"))) {
         return SECURITY_KEY;
     }
-    else if (str_equal(str, "client-device")) {
+    else if (__builtin_strncmp(str, "client-device", strlen("client-device"))) {
         return CLIENT_DEVICE;
     }
-    else if (str_equal(str, "hybrid")) {
+    else if (__builtin_strncmp(str, "hybrid", strlen("hybrid"))) {
         return HYBRID;
     }
     else {
@@ -9611,10 +9603,10 @@ const char* PublicKeyCredentialHint::to_string(PublicKeyCredentialHint::Value va
 }
 
 LargeBlobSupport::Value LargeBlobSupport::from_string(const char* str) noexcept {
-    if (str_equal(str, "required")) {
+    if (__builtin_strncmp(str, "required", strlen("required"))) {
         return REQUIRED;
     }
-    else if (str_equal(str, "preferred")) {
+    else if (__builtin_strncmp(str, "preferred", strlen("preferred"))) {
         return PREFERRED;
     }
     else {
@@ -9646,10 +9638,10 @@ const char* LargeBlobSupport::to_string(LargeBlobSupport::Value value_) noexcept
 }
 
 AacBitstreamFormat::Value AacBitstreamFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "aac")) {
+    if (__builtin_strncmp(str, "aac", strlen("aac"))) {
         return AAC;
     }
-    else if (str_equal(str, "adts")) {
+    else if (__builtin_strncmp(str, "adts", strlen("adts"))) {
         return ADTS;
     }
     else {
@@ -9681,10 +9673,10 @@ const char* AacBitstreamFormat::to_string(AacBitstreamFormat::Value value_) noex
 }
 
 AvcBitstreamFormat::Value AvcBitstreamFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "annexb")) {
+    if (__builtin_strncmp(str, "annexb", strlen("annexb"))) {
         return ANNEXB;
     }
-    else if (str_equal(str, "avc")) {
+    else if (__builtin_strncmp(str, "avc", strlen("avc"))) {
         return AVC;
     }
     else {
@@ -9716,10 +9708,10 @@ const char* AvcBitstreamFormat::to_string(AvcBitstreamFormat::Value value_) noex
 }
 
 HevcBitstreamFormat::Value HevcBitstreamFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "annexb")) {
+    if (__builtin_strncmp(str, "annexb", strlen("annexb"))) {
         return ANNEXB;
     }
-    else if (str_equal(str, "hevc")) {
+    else if (__builtin_strncmp(str, "hevc", strlen("hevc"))) {
         return HEVC;
     }
     else {
@@ -9751,10 +9743,10 @@ const char* HevcBitstreamFormat::to_string(HevcBitstreamFormat::Value value_) no
 }
 
 OpusBitstreamFormat::Value OpusBitstreamFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "opus")) {
+    if (__builtin_strncmp(str, "opus", strlen("opus"))) {
         return OPUS;
     }
-    else if (str_equal(str, "ogg")) {
+    else if (__builtin_strncmp(str, "ogg", strlen("ogg"))) {
         return OGG;
     }
     else {
@@ -9786,13 +9778,13 @@ const char* OpusBitstreamFormat::to_string(OpusBitstreamFormat::Value value_) no
 }
 
 OpusSignal::Value OpusSignal::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
-    else if (str_equal(str, "music")) {
+    else if (__builtin_strncmp(str, "music", strlen("music"))) {
         return MUSIC;
     }
-    else if (str_equal(str, "voice")) {
+    else if (__builtin_strncmp(str, "voice", strlen("voice"))) {
         return VOICE;
     }
     else {
@@ -9826,13 +9818,13 @@ const char* OpusSignal::to_string(OpusSignal::Value value_) noexcept {
 }
 
 OpusApplication::Value OpusApplication::from_string(const char* str) noexcept {
-    if (str_equal(str, "voip")) {
+    if (__builtin_strncmp(str, "voip", strlen("voip"))) {
         return VOIP;
     }
-    else if (str_equal(str, "audio")) {
+    else if (__builtin_strncmp(str, "audio", strlen("audio"))) {
         return AUDIO;
     }
-    else if (str_equal(str, "lowdelay")) {
+    else if (__builtin_strncmp(str, "lowdelay", strlen("lowdelay"))) {
         return LOWDELAY;
     }
     else {
@@ -9866,13 +9858,13 @@ const char* OpusApplication::to_string(OpusApplication::Value value_) noexcept {
 }
 
 HardwareAcceleration::Value HardwareAcceleration::from_string(const char* str) noexcept {
-    if (str_equal(str, "no-preference")) {
+    if (__builtin_strncmp(str, "no-preference", strlen("no-preference"))) {
         return NO_PREFERENCE;
     }
-    else if (str_equal(str, "prefer-hardware")) {
+    else if (__builtin_strncmp(str, "prefer-hardware", strlen("prefer-hardware"))) {
         return PREFER_HARDWARE;
     }
-    else if (str_equal(str, "prefer-software")) {
+    else if (__builtin_strncmp(str, "prefer-software", strlen("prefer-software"))) {
         return PREFER_SOFTWARE;
     }
     else {
@@ -9906,10 +9898,10 @@ const char* HardwareAcceleration::to_string(HardwareAcceleration::Value value_) 
 }
 
 AlphaOption::Value AlphaOption::from_string(const char* str) noexcept {
-    if (str_equal(str, "keep")) {
+    if (__builtin_strncmp(str, "keep", strlen("keep"))) {
         return KEEP;
     }
-    else if (str_equal(str, "discard")) {
+    else if (__builtin_strncmp(str, "discard", strlen("discard"))) {
         return DISCARD;
     }
     else {
@@ -9941,10 +9933,10 @@ const char* AlphaOption::to_string(AlphaOption::Value value_) noexcept {
 }
 
 LatencyMode::Value LatencyMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "quality")) {
+    if (__builtin_strncmp(str, "quality", strlen("quality"))) {
         return QUALITY;
     }
-    else if (str_equal(str, "realtime")) {
+    else if (__builtin_strncmp(str, "realtime", strlen("realtime"))) {
         return REALTIME;
     }
     else {
@@ -9976,13 +9968,13 @@ const char* LatencyMode::to_string(LatencyMode::Value value_) noexcept {
 }
 
 VideoEncoderBitrateMode::Value VideoEncoderBitrateMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "constant")) {
+    if (__builtin_strncmp(str, "constant", strlen("constant"))) {
         return CONSTANT;
     }
-    else if (str_equal(str, "variable")) {
+    else if (__builtin_strncmp(str, "variable", strlen("variable"))) {
         return VARIABLE;
     }
-    else if (str_equal(str, "quantizer")) {
+    else if (__builtin_strncmp(str, "quantizer", strlen("quantizer"))) {
         return QUANTIZER;
     }
     else {
@@ -10016,13 +10008,13 @@ const char* VideoEncoderBitrateMode::to_string(VideoEncoderBitrateMode::Value va
 }
 
 CodecState::Value CodecState::from_string(const char* str) noexcept {
-    if (str_equal(str, "unconfigured")) {
+    if (__builtin_strncmp(str, "unconfigured", strlen("unconfigured"))) {
         return UNCONFIGURED;
     }
-    else if (str_equal(str, "configured")) {
+    else if (__builtin_strncmp(str, "configured", strlen("configured"))) {
         return CONFIGURED;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
     else {
@@ -10056,10 +10048,10 @@ const char* CodecState::to_string(CodecState::Value value_) noexcept {
 }
 
 EncodedAudioChunkType::Value EncodedAudioChunkType::from_string(const char* str) noexcept {
-    if (str_equal(str, "key")) {
+    if (__builtin_strncmp(str, "key", strlen("key"))) {
         return KEY;
     }
-    else if (str_equal(str, "delta")) {
+    else if (__builtin_strncmp(str, "delta", strlen("delta"))) {
         return DELTA;
     }
     else {
@@ -10091,10 +10083,10 @@ const char* EncodedAudioChunkType::to_string(EncodedAudioChunkType::Value value_
 }
 
 EncodedVideoChunkType::Value EncodedVideoChunkType::from_string(const char* str) noexcept {
-    if (str_equal(str, "key")) {
+    if (__builtin_strncmp(str, "key", strlen("key"))) {
         return KEY;
     }
-    else if (str_equal(str, "delta")) {
+    else if (__builtin_strncmp(str, "delta", strlen("delta"))) {
         return DELTA;
     }
     else {
@@ -10126,28 +10118,28 @@ const char* EncodedVideoChunkType::to_string(EncodedVideoChunkType::Value value_
 }
 
 AudioSampleFormat::Value AudioSampleFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "u8")) {
+    if (__builtin_strncmp(str, "u8", strlen("u8"))) {
         return U8;
     }
-    else if (str_equal(str, "s16")) {
+    else if (__builtin_strncmp(str, "s16", strlen("s16"))) {
         return S16;
     }
-    else if (str_equal(str, "s32")) {
+    else if (__builtin_strncmp(str, "s32", strlen("s32"))) {
         return S32;
     }
-    else if (str_equal(str, "f32")) {
+    else if (__builtin_strncmp(str, "f32", strlen("f32"))) {
         return F32;
     }
-    else if (str_equal(str, "u8-planar")) {
+    else if (__builtin_strncmp(str, "u8-planar", strlen("u8-planar"))) {
         return U8_PLANAR;
     }
-    else if (str_equal(str, "s16-planar")) {
+    else if (__builtin_strncmp(str, "s16-planar", strlen("s16-planar"))) {
         return S16_PLANAR;
     }
-    else if (str_equal(str, "s32-planar")) {
+    else if (__builtin_strncmp(str, "s32-planar", strlen("s32-planar"))) {
         return S32_PLANAR;
     }
-    else if (str_equal(str, "f32-planar")) {
+    else if (__builtin_strncmp(str, "f32-planar", strlen("f32-planar"))) {
         return F32_PLANAR;
     }
     else {
@@ -10191,73 +10183,73 @@ const char* AudioSampleFormat::to_string(AudioSampleFormat::Value value_) noexce
 }
 
 VideoPixelFormat::Value VideoPixelFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "I420")) {
+    if (__builtin_strncmp(str, "I420", strlen("I420"))) {
         return I420;
     }
-    else if (str_equal(str, "I420P10")) {
+    else if (__builtin_strncmp(str, "I420P10", strlen("I420P10"))) {
         return I420P10;
     }
-    else if (str_equal(str, "I420P12")) {
+    else if (__builtin_strncmp(str, "I420P12", strlen("I420P12"))) {
         return I420P12;
     }
-    else if (str_equal(str, "I420A")) {
+    else if (__builtin_strncmp(str, "I420A", strlen("I420A"))) {
         return I420A;
     }
-    else if (str_equal(str, "I420AP10")) {
+    else if (__builtin_strncmp(str, "I420AP10", strlen("I420AP10"))) {
         return I420AP10;
     }
-    else if (str_equal(str, "I420AP12")) {
+    else if (__builtin_strncmp(str, "I420AP12", strlen("I420AP12"))) {
         return I420AP12;
     }
-    else if (str_equal(str, "I422")) {
+    else if (__builtin_strncmp(str, "I422", strlen("I422"))) {
         return I422;
     }
-    else if (str_equal(str, "I422P10")) {
+    else if (__builtin_strncmp(str, "I422P10", strlen("I422P10"))) {
         return I422P10;
     }
-    else if (str_equal(str, "I422P12")) {
+    else if (__builtin_strncmp(str, "I422P12", strlen("I422P12"))) {
         return I422P12;
     }
-    else if (str_equal(str, "I422A")) {
+    else if (__builtin_strncmp(str, "I422A", strlen("I422A"))) {
         return I422A;
     }
-    else if (str_equal(str, "I422AP10")) {
+    else if (__builtin_strncmp(str, "I422AP10", strlen("I422AP10"))) {
         return I422AP10;
     }
-    else if (str_equal(str, "I422AP12")) {
+    else if (__builtin_strncmp(str, "I422AP12", strlen("I422AP12"))) {
         return I422AP12;
     }
-    else if (str_equal(str, "I444")) {
+    else if (__builtin_strncmp(str, "I444", strlen("I444"))) {
         return I444;
     }
-    else if (str_equal(str, "I444P10")) {
+    else if (__builtin_strncmp(str, "I444P10", strlen("I444P10"))) {
         return I444P10;
     }
-    else if (str_equal(str, "I444P12")) {
+    else if (__builtin_strncmp(str, "I444P12", strlen("I444P12"))) {
         return I444P12;
     }
-    else if (str_equal(str, "I444A")) {
+    else if (__builtin_strncmp(str, "I444A", strlen("I444A"))) {
         return I444A;
     }
-    else if (str_equal(str, "I444AP10")) {
+    else if (__builtin_strncmp(str, "I444AP10", strlen("I444AP10"))) {
         return I444AP10;
     }
-    else if (str_equal(str, "I444AP12")) {
+    else if (__builtin_strncmp(str, "I444AP12", strlen("I444AP12"))) {
         return I444AP12;
     }
-    else if (str_equal(str, "NV12")) {
+    else if (__builtin_strncmp(str, "NV12", strlen("NV12"))) {
         return NV12;
     }
-    else if (str_equal(str, "RGBA")) {
+    else if (__builtin_strncmp(str, "RGBA", strlen("RGBA"))) {
         return RGBA;
     }
-    else if (str_equal(str, "RGBX")) {
+    else if (__builtin_strncmp(str, "RGBX", strlen("RGBX"))) {
         return RGBX;
     }
-    else if (str_equal(str, "BGRA")) {
+    else if (__builtin_strncmp(str, "BGRA", strlen("BGRA"))) {
         return BGRA;
     }
-    else if (str_equal(str, "BGRX")) {
+    else if (__builtin_strncmp(str, "BGRX", strlen("BGRX"))) {
         return BGRX;
     }
     else {
@@ -10331,19 +10323,19 @@ const char* VideoPixelFormat::to_string(VideoPixelFormat::Value value_) noexcept
 }
 
 VideoColorPrimaries::Value VideoColorPrimaries::from_string(const char* str) noexcept {
-    if (str_equal(str, "bt709")) {
+    if (__builtin_strncmp(str, "bt709", strlen("bt709"))) {
         return BT709;
     }
-    else if (str_equal(str, "bt470bg")) {
+    else if (__builtin_strncmp(str, "bt470bg", strlen("bt470bg"))) {
         return BT470BG;
     }
-    else if (str_equal(str, "smpte170m")) {
+    else if (__builtin_strncmp(str, "smpte170m", strlen("smpte170m"))) {
         return SMPTE170M;
     }
-    else if (str_equal(str, "bt2020")) {
+    else if (__builtin_strncmp(str, "bt2020", strlen("bt2020"))) {
         return BT2020;
     }
-    else if (str_equal(str, "smpte432")) {
+    else if (__builtin_strncmp(str, "smpte432", strlen("smpte432"))) {
         return SMPTE432;
     }
     else {
@@ -10381,22 +10373,22 @@ const char* VideoColorPrimaries::to_string(VideoColorPrimaries::Value value_) no
 }
 
 VideoTransferCharacteristics::Value VideoTransferCharacteristics::from_string(const char* str) noexcept {
-    if (str_equal(str, "bt709")) {
+    if (__builtin_strncmp(str, "bt709", strlen("bt709"))) {
         return BT709;
     }
-    else if (str_equal(str, "smpte170m")) {
+    else if (__builtin_strncmp(str, "smpte170m", strlen("smpte170m"))) {
         return SMPTE170M;
     }
-    else if (str_equal(str, "iec61966-2-1")) {
+    else if (__builtin_strncmp(str, "iec61966-2-1", strlen("iec61966-2-1"))) {
         return IEC61966_2_1;
     }
-    else if (str_equal(str, "linear")) {
+    else if (__builtin_strncmp(str, "linear", strlen("linear"))) {
         return LINEAR;
     }
-    else if (str_equal(str, "pq")) {
+    else if (__builtin_strncmp(str, "pq", strlen("pq"))) {
         return PQ;
     }
-    else if (str_equal(str, "hlg")) {
+    else if (__builtin_strncmp(str, "hlg", strlen("hlg"))) {
         return HLG;
     }
     else {
@@ -10436,19 +10428,19 @@ const char* VideoTransferCharacteristics::to_string(VideoTransferCharacteristics
 }
 
 VideoMatrixCoefficients::Value VideoMatrixCoefficients::from_string(const char* str) noexcept {
-    if (str_equal(str, "rgb")) {
+    if (__builtin_strncmp(str, "rgb", strlen("rgb"))) {
         return RGB;
     }
-    else if (str_equal(str, "bt709")) {
+    else if (__builtin_strncmp(str, "bt709", strlen("bt709"))) {
         return BT709;
     }
-    else if (str_equal(str, "bt470bg")) {
+    else if (__builtin_strncmp(str, "bt470bg", strlen("bt470bg"))) {
         return BT470BG;
     }
-    else if (str_equal(str, "smpte170m")) {
+    else if (__builtin_strncmp(str, "smpte170m", strlen("smpte170m"))) {
         return SMPTE170M;
     }
-    else if (str_equal(str, "bt2020-ncl")) {
+    else if (__builtin_strncmp(str, "bt2020-ncl", strlen("bt2020-ncl"))) {
         return BT2020_NCL;
     }
     else {
@@ -10486,13 +10478,13 @@ const char* VideoMatrixCoefficients::to_string(VideoMatrixCoefficients::Value va
 }
 
 KeyType::Value KeyType::from_string(const char* str) noexcept {
-    if (str_equal(str, "public")) {
+    if (__builtin_strncmp(str, "public", strlen("public"))) {
         return PUBLIC_;
     }
-    else if (str_equal(str, "private")) {
+    else if (__builtin_strncmp(str, "private", strlen("private"))) {
         return PRIVATE_;
     }
-    else if (str_equal(str, "secret")) {
+    else if (__builtin_strncmp(str, "secret", strlen("secret"))) {
         return SECRET;
     }
     else {
@@ -10526,28 +10518,28 @@ const char* KeyType::to_string(KeyType::Value value_) noexcept {
 }
 
 KeyUsage::Value KeyUsage::from_string(const char* str) noexcept {
-    if (str_equal(str, "encrypt")) {
+    if (__builtin_strncmp(str, "encrypt", strlen("encrypt"))) {
         return ENCRYPT;
     }
-    else if (str_equal(str, "decrypt")) {
+    else if (__builtin_strncmp(str, "decrypt", strlen("decrypt"))) {
         return DECRYPT;
     }
-    else if (str_equal(str, "sign")) {
+    else if (__builtin_strncmp(str, "sign", strlen("sign"))) {
         return SIGN;
     }
-    else if (str_equal(str, "verify")) {
+    else if (__builtin_strncmp(str, "verify", strlen("verify"))) {
         return VERIFY;
     }
-    else if (str_equal(str, "deriveKey")) {
+    else if (__builtin_strncmp(str, "deriveKey", strlen("deriveKey"))) {
         return DERIVEKEY;
     }
-    else if (str_equal(str, "deriveBits")) {
+    else if (__builtin_strncmp(str, "deriveBits", strlen("deriveBits"))) {
         return DERIVEBITS;
     }
-    else if (str_equal(str, "wrapKey")) {
+    else if (__builtin_strncmp(str, "wrapKey", strlen("wrapKey"))) {
         return WRAPKEY;
     }
-    else if (str_equal(str, "unwrapKey")) {
+    else if (__builtin_strncmp(str, "unwrapKey", strlen("unwrapKey"))) {
         return UNWRAPKEY;
     }
     else {
@@ -10591,16 +10583,16 @@ const char* KeyUsage::to_string(KeyUsage::Value value_) noexcept {
 }
 
 KeyFormat::Value KeyFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "raw")) {
+    if (__builtin_strncmp(str, "raw", strlen("raw"))) {
         return RAW;
     }
-    else if (str_equal(str, "spki")) {
+    else if (__builtin_strncmp(str, "spki", strlen("spki"))) {
         return SPKI;
     }
-    else if (str_equal(str, "pkcs8")) {
+    else if (__builtin_strncmp(str, "pkcs8", strlen("pkcs8"))) {
         return PKCS8;
     }
-    else if (str_equal(str, "jwk")) {
+    else if (__builtin_strncmp(str, "jwk", strlen("jwk"))) {
         return JWK;
     }
     else {
@@ -10636,13 +10628,13 @@ const char* KeyFormat::to_string(KeyFormat::Value value_) noexcept {
 }
 
 WebGLPowerPreference::Value WebGLPowerPreference::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "low-power")) {
+    else if (__builtin_strncmp(str, "low-power", strlen("low-power"))) {
         return LOW_POWER;
     }
-    else if (str_equal(str, "high-performance")) {
+    else if (__builtin_strncmp(str, "high-performance", strlen("high-performance"))) {
         return HIGH_PERFORMANCE;
     }
     else {
@@ -10676,10 +10668,10 @@ const char* WebGLPowerPreference::to_string(WebGLPowerPreference::Value value_) 
 }
 
 GPUPowerPreference::Value GPUPowerPreference::from_string(const char* str) noexcept {
-    if (str_equal(str, "low-power")) {
+    if (__builtin_strncmp(str, "low-power", strlen("low-power"))) {
         return LOW_POWER;
     }
-    else if (str_equal(str, "high-performance")) {
+    else if (__builtin_strncmp(str, "high-performance", strlen("high-performance"))) {
         return HIGH_PERFORMANCE;
     }
     else {
@@ -10711,64 +10703,64 @@ const char* GPUPowerPreference::to_string(GPUPowerPreference::Value value_) noex
 }
 
 GPUFeatureName::Value GPUFeatureName::from_string(const char* str) noexcept {
-    if (str_equal(str, "core-features-and-limits")) {
+    if (__builtin_strncmp(str, "core-features-and-limits", strlen("core-features-and-limits"))) {
         return CORE_FEATURES_AND_LIMITS;
     }
-    else if (str_equal(str, "depth-clip-control")) {
+    else if (__builtin_strncmp(str, "depth-clip-control", strlen("depth-clip-control"))) {
         return DEPTH_CLIP_CONTROL;
     }
-    else if (str_equal(str, "depth32float-stencil8")) {
+    else if (__builtin_strncmp(str, "depth32float-stencil8", strlen("depth32float-stencil8"))) {
         return DEPTH32FLOAT_STENCIL8;
     }
-    else if (str_equal(str, "texture-compression-bc")) {
+    else if (__builtin_strncmp(str, "texture-compression-bc", strlen("texture-compression-bc"))) {
         return TEXTURE_COMPRESSION_BC;
     }
-    else if (str_equal(str, "texture-compression-bc-sliced-3d")) {
+    else if (__builtin_strncmp(str, "texture-compression-bc-sliced-3d", strlen("texture-compression-bc-sliced-3d"))) {
         return TEXTURE_COMPRESSION_BC_SLICED_3D;
     }
-    else if (str_equal(str, "texture-compression-etc2")) {
+    else if (__builtin_strncmp(str, "texture-compression-etc2", strlen("texture-compression-etc2"))) {
         return TEXTURE_COMPRESSION_ETC2;
     }
-    else if (str_equal(str, "texture-compression-astc")) {
+    else if (__builtin_strncmp(str, "texture-compression-astc", strlen("texture-compression-astc"))) {
         return TEXTURE_COMPRESSION_ASTC;
     }
-    else if (str_equal(str, "texture-compression-astc-sliced-3d")) {
+    else if (__builtin_strncmp(str, "texture-compression-astc-sliced-3d", strlen("texture-compression-astc-sliced-3d"))) {
         return TEXTURE_COMPRESSION_ASTC_SLICED_3D;
     }
-    else if (str_equal(str, "timestamp-query")) {
+    else if (__builtin_strncmp(str, "timestamp-query", strlen("timestamp-query"))) {
         return TIMESTAMP_QUERY;
     }
-    else if (str_equal(str, "indirect-first-instance")) {
+    else if (__builtin_strncmp(str, "indirect-first-instance", strlen("indirect-first-instance"))) {
         return INDIRECT_FIRST_INSTANCE;
     }
-    else if (str_equal(str, "shader-f16")) {
+    else if (__builtin_strncmp(str, "shader-f16", strlen("shader-f16"))) {
         return SHADER_F16;
     }
-    else if (str_equal(str, "rg11b10ufloat-renderable")) {
+    else if (__builtin_strncmp(str, "rg11b10ufloat-renderable", strlen("rg11b10ufloat-renderable"))) {
         return RG11B10UFLOAT_RENDERABLE;
     }
-    else if (str_equal(str, "bgra8unorm-storage")) {
+    else if (__builtin_strncmp(str, "bgra8unorm-storage", strlen("bgra8unorm-storage"))) {
         return BGRA8UNORM_STORAGE;
     }
-    else if (str_equal(str, "float32-filterable")) {
+    else if (__builtin_strncmp(str, "float32-filterable", strlen("float32-filterable"))) {
         return FLOAT32_FILTERABLE;
     }
-    else if (str_equal(str, "float32-blendable")) {
+    else if (__builtin_strncmp(str, "float32-blendable", strlen("float32-blendable"))) {
         return FLOAT32_BLENDABLE;
     }
-    else if (str_equal(str, "clip-distances")) {
+    else if (__builtin_strncmp(str, "clip-distances", strlen("clip-distances"))) {
         return CLIP_DISTANCES;
     }
-    else if (str_equal(str, "dual-source-blending")) {
+    else if (__builtin_strncmp(str, "dual-source-blending", strlen("dual-source-blending"))) {
         return DUAL_SOURCE_BLENDING;
     }
-    else if (str_equal(str, "subgroups")) {
+    else if (__builtin_strncmp(str, "subgroups", strlen("subgroups"))) {
         return SUBGROUPS;
     }
-    else if (str_equal(str, "texture-formats-tier1")) {
+    else if (__builtin_strncmp(str, "texture-formats-tier1", strlen("texture-formats-tier1"))) {
         return TEXTURE_FORMATS_TIER1;
     }
-    else if (str_equal(str, "texture-formats-tier2")) {
+    else if (__builtin_strncmp(str, "texture-formats-tier2", strlen("texture-formats-tier2"))) {
         return TEXTURE_FORMATS_TIER2;
     }
     else {
@@ -10836,13 +10828,13 @@ const char* GPUFeatureName::to_string(GPUFeatureName::Value value_) noexcept {
 }
 
 GPUBufferMapState::Value GPUBufferMapState::from_string(const char* str) noexcept {
-    if (str_equal(str, "unmapped")) {
+    if (__builtin_strncmp(str, "unmapped", strlen("unmapped"))) {
         return UNMAPPED;
     }
-    else if (str_equal(str, "pending")) {
+    else if (__builtin_strncmp(str, "pending", strlen("pending"))) {
         return PENDING;
     }
-    else if (str_equal(str, "mapped")) {
+    else if (__builtin_strncmp(str, "mapped", strlen("mapped"))) {
         return MAPPED;
     }
     else {
@@ -10876,13 +10868,13 @@ const char* GPUBufferMapState::to_string(GPUBufferMapState::Value value_) noexce
 }
 
 GPUTextureDimension::Value GPUTextureDimension::from_string(const char* str) noexcept {
-    if (str_equal(str, "1d")) {
+    if (__builtin_strncmp(str, "1d", strlen("1d"))) {
         return _1D;
     }
-    else if (str_equal(str, "2d")) {
+    else if (__builtin_strncmp(str, "2d", strlen("2d"))) {
         return _2D;
     }
-    else if (str_equal(str, "3d")) {
+    else if (__builtin_strncmp(str, "3d", strlen("3d"))) {
         return _3D;
     }
     else {
@@ -10916,22 +10908,22 @@ const char* GPUTextureDimension::to_string(GPUTextureDimension::Value value_) no
 }
 
 GPUTextureViewDimension::Value GPUTextureViewDimension::from_string(const char* str) noexcept {
-    if (str_equal(str, "1d")) {
+    if (__builtin_strncmp(str, "1d", strlen("1d"))) {
         return _1D;
     }
-    else if (str_equal(str, "2d")) {
+    else if (__builtin_strncmp(str, "2d", strlen("2d"))) {
         return _2D;
     }
-    else if (str_equal(str, "2d-array")) {
+    else if (__builtin_strncmp(str, "2d-array", strlen("2d-array"))) {
         return _2D_ARRAY;
     }
-    else if (str_equal(str, "cube")) {
+    else if (__builtin_strncmp(str, "cube", strlen("cube"))) {
         return CUBE;
     }
-    else if (str_equal(str, "cube-array")) {
+    else if (__builtin_strncmp(str, "cube-array", strlen("cube-array"))) {
         return CUBE_ARRAY;
     }
-    else if (str_equal(str, "3d")) {
+    else if (__builtin_strncmp(str, "3d", strlen("3d"))) {
         return _3D;
     }
     else {
@@ -10971,13 +10963,13 @@ const char* GPUTextureViewDimension::to_string(GPUTextureViewDimension::Value va
 }
 
 GPUTextureAspect::Value GPUTextureAspect::from_string(const char* str) noexcept {
-    if (str_equal(str, "all")) {
+    if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
-    else if (str_equal(str, "stencil-only")) {
+    else if (__builtin_strncmp(str, "stencil-only", strlen("stencil-only"))) {
         return STENCIL_ONLY;
     }
-    else if (str_equal(str, "depth-only")) {
+    else if (__builtin_strncmp(str, "depth-only", strlen("depth-only"))) {
         return DEPTH_ONLY;
     }
     else {
@@ -11011,307 +11003,307 @@ const char* GPUTextureAspect::to_string(GPUTextureAspect::Value value_) noexcept
 }
 
 GPUTextureFormat::Value GPUTextureFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "r8unorm")) {
+    if (__builtin_strncmp(str, "r8unorm", strlen("r8unorm"))) {
         return R8UNORM;
     }
-    else if (str_equal(str, "r8snorm")) {
+    else if (__builtin_strncmp(str, "r8snorm", strlen("r8snorm"))) {
         return R8SNORM;
     }
-    else if (str_equal(str, "r8uint")) {
+    else if (__builtin_strncmp(str, "r8uint", strlen("r8uint"))) {
         return R8UINT;
     }
-    else if (str_equal(str, "r8sint")) {
+    else if (__builtin_strncmp(str, "r8sint", strlen("r8sint"))) {
         return R8SINT;
     }
-    else if (str_equal(str, "r16unorm")) {
+    else if (__builtin_strncmp(str, "r16unorm", strlen("r16unorm"))) {
         return R16UNORM;
     }
-    else if (str_equal(str, "r16snorm")) {
+    else if (__builtin_strncmp(str, "r16snorm", strlen("r16snorm"))) {
         return R16SNORM;
     }
-    else if (str_equal(str, "r16uint")) {
+    else if (__builtin_strncmp(str, "r16uint", strlen("r16uint"))) {
         return R16UINT;
     }
-    else if (str_equal(str, "r16sint")) {
+    else if (__builtin_strncmp(str, "r16sint", strlen("r16sint"))) {
         return R16SINT;
     }
-    else if (str_equal(str, "r16float")) {
+    else if (__builtin_strncmp(str, "r16float", strlen("r16float"))) {
         return R16FLOAT;
     }
-    else if (str_equal(str, "rg8unorm")) {
+    else if (__builtin_strncmp(str, "rg8unorm", strlen("rg8unorm"))) {
         return RG8UNORM;
     }
-    else if (str_equal(str, "rg8snorm")) {
+    else if (__builtin_strncmp(str, "rg8snorm", strlen("rg8snorm"))) {
         return RG8SNORM;
     }
-    else if (str_equal(str, "rg8uint")) {
+    else if (__builtin_strncmp(str, "rg8uint", strlen("rg8uint"))) {
         return RG8UINT;
     }
-    else if (str_equal(str, "rg8sint")) {
+    else if (__builtin_strncmp(str, "rg8sint", strlen("rg8sint"))) {
         return RG8SINT;
     }
-    else if (str_equal(str, "r32uint")) {
+    else if (__builtin_strncmp(str, "r32uint", strlen("r32uint"))) {
         return R32UINT;
     }
-    else if (str_equal(str, "r32sint")) {
+    else if (__builtin_strncmp(str, "r32sint", strlen("r32sint"))) {
         return R32SINT;
     }
-    else if (str_equal(str, "r32float")) {
+    else if (__builtin_strncmp(str, "r32float", strlen("r32float"))) {
         return R32FLOAT;
     }
-    else if (str_equal(str, "rg16unorm")) {
+    else if (__builtin_strncmp(str, "rg16unorm", strlen("rg16unorm"))) {
         return RG16UNORM;
     }
-    else if (str_equal(str, "rg16snorm")) {
+    else if (__builtin_strncmp(str, "rg16snorm", strlen("rg16snorm"))) {
         return RG16SNORM;
     }
-    else if (str_equal(str, "rg16uint")) {
+    else if (__builtin_strncmp(str, "rg16uint", strlen("rg16uint"))) {
         return RG16UINT;
     }
-    else if (str_equal(str, "rg16sint")) {
+    else if (__builtin_strncmp(str, "rg16sint", strlen("rg16sint"))) {
         return RG16SINT;
     }
-    else if (str_equal(str, "rg16float")) {
+    else if (__builtin_strncmp(str, "rg16float", strlen("rg16float"))) {
         return RG16FLOAT;
     }
-    else if (str_equal(str, "rgba8unorm")) {
+    else if (__builtin_strncmp(str, "rgba8unorm", strlen("rgba8unorm"))) {
         return RGBA8UNORM;
     }
-    else if (str_equal(str, "rgba8unorm-srgb")) {
+    else if (__builtin_strncmp(str, "rgba8unorm-srgb", strlen("rgba8unorm-srgb"))) {
         return RGBA8UNORM_SRGB;
     }
-    else if (str_equal(str, "rgba8snorm")) {
+    else if (__builtin_strncmp(str, "rgba8snorm", strlen("rgba8snorm"))) {
         return RGBA8SNORM;
     }
-    else if (str_equal(str, "rgba8uint")) {
+    else if (__builtin_strncmp(str, "rgba8uint", strlen("rgba8uint"))) {
         return RGBA8UINT;
     }
-    else if (str_equal(str, "rgba8sint")) {
+    else if (__builtin_strncmp(str, "rgba8sint", strlen("rgba8sint"))) {
         return RGBA8SINT;
     }
-    else if (str_equal(str, "bgra8unorm")) {
+    else if (__builtin_strncmp(str, "bgra8unorm", strlen("bgra8unorm"))) {
         return BGRA8UNORM;
     }
-    else if (str_equal(str, "bgra8unorm-srgb")) {
+    else if (__builtin_strncmp(str, "bgra8unorm-srgb", strlen("bgra8unorm-srgb"))) {
         return BGRA8UNORM_SRGB;
     }
-    else if (str_equal(str, "rgb9e5ufloat")) {
+    else if (__builtin_strncmp(str, "rgb9e5ufloat", strlen("rgb9e5ufloat"))) {
         return RGB9E5UFLOAT;
     }
-    else if (str_equal(str, "rgb10a2uint")) {
+    else if (__builtin_strncmp(str, "rgb10a2uint", strlen("rgb10a2uint"))) {
         return RGB10A2UINT;
     }
-    else if (str_equal(str, "rgb10a2unorm")) {
+    else if (__builtin_strncmp(str, "rgb10a2unorm", strlen("rgb10a2unorm"))) {
         return RGB10A2UNORM;
     }
-    else if (str_equal(str, "rg11b10ufloat")) {
+    else if (__builtin_strncmp(str, "rg11b10ufloat", strlen("rg11b10ufloat"))) {
         return RG11B10UFLOAT;
     }
-    else if (str_equal(str, "rg32uint")) {
+    else if (__builtin_strncmp(str, "rg32uint", strlen("rg32uint"))) {
         return RG32UINT;
     }
-    else if (str_equal(str, "rg32sint")) {
+    else if (__builtin_strncmp(str, "rg32sint", strlen("rg32sint"))) {
         return RG32SINT;
     }
-    else if (str_equal(str, "rg32float")) {
+    else if (__builtin_strncmp(str, "rg32float", strlen("rg32float"))) {
         return RG32FLOAT;
     }
-    else if (str_equal(str, "rgba16unorm")) {
+    else if (__builtin_strncmp(str, "rgba16unorm", strlen("rgba16unorm"))) {
         return RGBA16UNORM;
     }
-    else if (str_equal(str, "rgba16snorm")) {
+    else if (__builtin_strncmp(str, "rgba16snorm", strlen("rgba16snorm"))) {
         return RGBA16SNORM;
     }
-    else if (str_equal(str, "rgba16uint")) {
+    else if (__builtin_strncmp(str, "rgba16uint", strlen("rgba16uint"))) {
         return RGBA16UINT;
     }
-    else if (str_equal(str, "rgba16sint")) {
+    else if (__builtin_strncmp(str, "rgba16sint", strlen("rgba16sint"))) {
         return RGBA16SINT;
     }
-    else if (str_equal(str, "rgba16float")) {
+    else if (__builtin_strncmp(str, "rgba16float", strlen("rgba16float"))) {
         return RGBA16FLOAT;
     }
-    else if (str_equal(str, "rgba32uint")) {
+    else if (__builtin_strncmp(str, "rgba32uint", strlen("rgba32uint"))) {
         return RGBA32UINT;
     }
-    else if (str_equal(str, "rgba32sint")) {
+    else if (__builtin_strncmp(str, "rgba32sint", strlen("rgba32sint"))) {
         return RGBA32SINT;
     }
-    else if (str_equal(str, "rgba32float")) {
+    else if (__builtin_strncmp(str, "rgba32float", strlen("rgba32float"))) {
         return RGBA32FLOAT;
     }
-    else if (str_equal(str, "stencil8")) {
+    else if (__builtin_strncmp(str, "stencil8", strlen("stencil8"))) {
         return STENCIL8;
     }
-    else if (str_equal(str, "depth16unorm")) {
+    else if (__builtin_strncmp(str, "depth16unorm", strlen("depth16unorm"))) {
         return DEPTH16UNORM;
     }
-    else if (str_equal(str, "depth24plus")) {
+    else if (__builtin_strncmp(str, "depth24plus", strlen("depth24plus"))) {
         return DEPTH24PLUS;
     }
-    else if (str_equal(str, "depth24plus-stencil8")) {
+    else if (__builtin_strncmp(str, "depth24plus-stencil8", strlen("depth24plus-stencil8"))) {
         return DEPTH24PLUS_STENCIL8;
     }
-    else if (str_equal(str, "depth32float")) {
+    else if (__builtin_strncmp(str, "depth32float", strlen("depth32float"))) {
         return DEPTH32FLOAT;
     }
-    else if (str_equal(str, "depth32float-stencil8")) {
+    else if (__builtin_strncmp(str, "depth32float-stencil8", strlen("depth32float-stencil8"))) {
         return DEPTH32FLOAT_STENCIL8;
     }
-    else if (str_equal(str, "bc1-rgba-unorm")) {
+    else if (__builtin_strncmp(str, "bc1-rgba-unorm", strlen("bc1-rgba-unorm"))) {
         return BC1_RGBA_UNORM;
     }
-    else if (str_equal(str, "bc1-rgba-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "bc1-rgba-unorm-srgb", strlen("bc1-rgba-unorm-srgb"))) {
         return BC1_RGBA_UNORM_SRGB;
     }
-    else if (str_equal(str, "bc2-rgba-unorm")) {
+    else if (__builtin_strncmp(str, "bc2-rgba-unorm", strlen("bc2-rgba-unorm"))) {
         return BC2_RGBA_UNORM;
     }
-    else if (str_equal(str, "bc2-rgba-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "bc2-rgba-unorm-srgb", strlen("bc2-rgba-unorm-srgb"))) {
         return BC2_RGBA_UNORM_SRGB;
     }
-    else if (str_equal(str, "bc3-rgba-unorm")) {
+    else if (__builtin_strncmp(str, "bc3-rgba-unorm", strlen("bc3-rgba-unorm"))) {
         return BC3_RGBA_UNORM;
     }
-    else if (str_equal(str, "bc3-rgba-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "bc3-rgba-unorm-srgb", strlen("bc3-rgba-unorm-srgb"))) {
         return BC3_RGBA_UNORM_SRGB;
     }
-    else if (str_equal(str, "bc4-r-unorm")) {
+    else if (__builtin_strncmp(str, "bc4-r-unorm", strlen("bc4-r-unorm"))) {
         return BC4_R_UNORM;
     }
-    else if (str_equal(str, "bc4-r-snorm")) {
+    else if (__builtin_strncmp(str, "bc4-r-snorm", strlen("bc4-r-snorm"))) {
         return BC4_R_SNORM;
     }
-    else if (str_equal(str, "bc5-rg-unorm")) {
+    else if (__builtin_strncmp(str, "bc5-rg-unorm", strlen("bc5-rg-unorm"))) {
         return BC5_RG_UNORM;
     }
-    else if (str_equal(str, "bc5-rg-snorm")) {
+    else if (__builtin_strncmp(str, "bc5-rg-snorm", strlen("bc5-rg-snorm"))) {
         return BC5_RG_SNORM;
     }
-    else if (str_equal(str, "bc6h-rgb-ufloat")) {
+    else if (__builtin_strncmp(str, "bc6h-rgb-ufloat", strlen("bc6h-rgb-ufloat"))) {
         return BC6H_RGB_UFLOAT;
     }
-    else if (str_equal(str, "bc6h-rgb-float")) {
+    else if (__builtin_strncmp(str, "bc6h-rgb-float", strlen("bc6h-rgb-float"))) {
         return BC6H_RGB_FLOAT;
     }
-    else if (str_equal(str, "bc7-rgba-unorm")) {
+    else if (__builtin_strncmp(str, "bc7-rgba-unorm", strlen("bc7-rgba-unorm"))) {
         return BC7_RGBA_UNORM;
     }
-    else if (str_equal(str, "bc7-rgba-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "bc7-rgba-unorm-srgb", strlen("bc7-rgba-unorm-srgb"))) {
         return BC7_RGBA_UNORM_SRGB;
     }
-    else if (str_equal(str, "etc2-rgb8unorm")) {
+    else if (__builtin_strncmp(str, "etc2-rgb8unorm", strlen("etc2-rgb8unorm"))) {
         return ETC2_RGB8UNORM;
     }
-    else if (str_equal(str, "etc2-rgb8unorm-srgb")) {
+    else if (__builtin_strncmp(str, "etc2-rgb8unorm-srgb", strlen("etc2-rgb8unorm-srgb"))) {
         return ETC2_RGB8UNORM_SRGB;
     }
-    else if (str_equal(str, "etc2-rgb8a1unorm")) {
+    else if (__builtin_strncmp(str, "etc2-rgb8a1unorm", strlen("etc2-rgb8a1unorm"))) {
         return ETC2_RGB8A1UNORM;
     }
-    else if (str_equal(str, "etc2-rgb8a1unorm-srgb")) {
+    else if (__builtin_strncmp(str, "etc2-rgb8a1unorm-srgb", strlen("etc2-rgb8a1unorm-srgb"))) {
         return ETC2_RGB8A1UNORM_SRGB;
     }
-    else if (str_equal(str, "etc2-rgba8unorm")) {
+    else if (__builtin_strncmp(str, "etc2-rgba8unorm", strlen("etc2-rgba8unorm"))) {
         return ETC2_RGBA8UNORM;
     }
-    else if (str_equal(str, "etc2-rgba8unorm-srgb")) {
+    else if (__builtin_strncmp(str, "etc2-rgba8unorm-srgb", strlen("etc2-rgba8unorm-srgb"))) {
         return ETC2_RGBA8UNORM_SRGB;
     }
-    else if (str_equal(str, "eac-r11unorm")) {
+    else if (__builtin_strncmp(str, "eac-r11unorm", strlen("eac-r11unorm"))) {
         return EAC_R11UNORM;
     }
-    else if (str_equal(str, "eac-r11snorm")) {
+    else if (__builtin_strncmp(str, "eac-r11snorm", strlen("eac-r11snorm"))) {
         return EAC_R11SNORM;
     }
-    else if (str_equal(str, "eac-rg11unorm")) {
+    else if (__builtin_strncmp(str, "eac-rg11unorm", strlen("eac-rg11unorm"))) {
         return EAC_RG11UNORM;
     }
-    else if (str_equal(str, "eac-rg11snorm")) {
+    else if (__builtin_strncmp(str, "eac-rg11snorm", strlen("eac-rg11snorm"))) {
         return EAC_RG11SNORM;
     }
-    else if (str_equal(str, "astc-4x4-unorm")) {
+    else if (__builtin_strncmp(str, "astc-4x4-unorm", strlen("astc-4x4-unorm"))) {
         return ASTC_4X4_UNORM;
     }
-    else if (str_equal(str, "astc-4x4-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-4x4-unorm-srgb", strlen("astc-4x4-unorm-srgb"))) {
         return ASTC_4X4_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-5x4-unorm")) {
+    else if (__builtin_strncmp(str, "astc-5x4-unorm", strlen("astc-5x4-unorm"))) {
         return ASTC_5X4_UNORM;
     }
-    else if (str_equal(str, "astc-5x4-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-5x4-unorm-srgb", strlen("astc-5x4-unorm-srgb"))) {
         return ASTC_5X4_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-5x5-unorm")) {
+    else if (__builtin_strncmp(str, "astc-5x5-unorm", strlen("astc-5x5-unorm"))) {
         return ASTC_5X5_UNORM;
     }
-    else if (str_equal(str, "astc-5x5-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-5x5-unorm-srgb", strlen("astc-5x5-unorm-srgb"))) {
         return ASTC_5X5_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-6x5-unorm")) {
+    else if (__builtin_strncmp(str, "astc-6x5-unorm", strlen("astc-6x5-unorm"))) {
         return ASTC_6X5_UNORM;
     }
-    else if (str_equal(str, "astc-6x5-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-6x5-unorm-srgb", strlen("astc-6x5-unorm-srgb"))) {
         return ASTC_6X5_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-6x6-unorm")) {
+    else if (__builtin_strncmp(str, "astc-6x6-unorm", strlen("astc-6x6-unorm"))) {
         return ASTC_6X6_UNORM;
     }
-    else if (str_equal(str, "astc-6x6-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-6x6-unorm-srgb", strlen("astc-6x6-unorm-srgb"))) {
         return ASTC_6X6_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-8x5-unorm")) {
+    else if (__builtin_strncmp(str, "astc-8x5-unorm", strlen("astc-8x5-unorm"))) {
         return ASTC_8X5_UNORM;
     }
-    else if (str_equal(str, "astc-8x5-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-8x5-unorm-srgb", strlen("astc-8x5-unorm-srgb"))) {
         return ASTC_8X5_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-8x6-unorm")) {
+    else if (__builtin_strncmp(str, "astc-8x6-unorm", strlen("astc-8x6-unorm"))) {
         return ASTC_8X6_UNORM;
     }
-    else if (str_equal(str, "astc-8x6-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-8x6-unorm-srgb", strlen("astc-8x6-unorm-srgb"))) {
         return ASTC_8X6_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-8x8-unorm")) {
+    else if (__builtin_strncmp(str, "astc-8x8-unorm", strlen("astc-8x8-unorm"))) {
         return ASTC_8X8_UNORM;
     }
-    else if (str_equal(str, "astc-8x8-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-8x8-unorm-srgb", strlen("astc-8x8-unorm-srgb"))) {
         return ASTC_8X8_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-10x5-unorm")) {
+    else if (__builtin_strncmp(str, "astc-10x5-unorm", strlen("astc-10x5-unorm"))) {
         return ASTC_10X5_UNORM;
     }
-    else if (str_equal(str, "astc-10x5-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-10x5-unorm-srgb", strlen("astc-10x5-unorm-srgb"))) {
         return ASTC_10X5_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-10x6-unorm")) {
+    else if (__builtin_strncmp(str, "astc-10x6-unorm", strlen("astc-10x6-unorm"))) {
         return ASTC_10X6_UNORM;
     }
-    else if (str_equal(str, "astc-10x6-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-10x6-unorm-srgb", strlen("astc-10x6-unorm-srgb"))) {
         return ASTC_10X6_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-10x8-unorm")) {
+    else if (__builtin_strncmp(str, "astc-10x8-unorm", strlen("astc-10x8-unorm"))) {
         return ASTC_10X8_UNORM;
     }
-    else if (str_equal(str, "astc-10x8-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-10x8-unorm-srgb", strlen("astc-10x8-unorm-srgb"))) {
         return ASTC_10X8_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-10x10-unorm")) {
+    else if (__builtin_strncmp(str, "astc-10x10-unorm", strlen("astc-10x10-unorm"))) {
         return ASTC_10X10_UNORM;
     }
-    else if (str_equal(str, "astc-10x10-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-10x10-unorm-srgb", strlen("astc-10x10-unorm-srgb"))) {
         return ASTC_10X10_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-12x10-unorm")) {
+    else if (__builtin_strncmp(str, "astc-12x10-unorm", strlen("astc-12x10-unorm"))) {
         return ASTC_12X10_UNORM;
     }
-    else if (str_equal(str, "astc-12x10-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-12x10-unorm-srgb", strlen("astc-12x10-unorm-srgb"))) {
         return ASTC_12X10_UNORM_SRGB;
     }
-    else if (str_equal(str, "astc-12x12-unorm")) {
+    else if (__builtin_strncmp(str, "astc-12x12-unorm", strlen("astc-12x12-unorm"))) {
         return ASTC_12X12_UNORM;
     }
-    else if (str_equal(str, "astc-12x12-unorm-srgb")) {
+    else if (__builtin_strncmp(str, "astc-12x12-unorm-srgb", strlen("astc-12x12-unorm-srgb"))) {
         return ASTC_12X12_UNORM_SRGB;
     }
     else {
@@ -11541,13 +11533,13 @@ const char* GPUTextureFormat::to_string(GPUTextureFormat::Value value_) noexcept
 }
 
 GPUAddressMode::Value GPUAddressMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "clamp-to-edge")) {
+    if (__builtin_strncmp(str, "clamp-to-edge", strlen("clamp-to-edge"))) {
         return CLAMP_TO_EDGE;
     }
-    else if (str_equal(str, "repeat")) {
+    else if (__builtin_strncmp(str, "repeat", strlen("repeat"))) {
         return REPEAT;
     }
-    else if (str_equal(str, "mirror-repeat")) {
+    else if (__builtin_strncmp(str, "mirror-repeat", strlen("mirror-repeat"))) {
         return MIRROR_REPEAT;
     }
     else {
@@ -11581,10 +11573,10 @@ const char* GPUAddressMode::to_string(GPUAddressMode::Value value_) noexcept {
 }
 
 GPUFilterMode::Value GPUFilterMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "nearest")) {
+    if (__builtin_strncmp(str, "nearest", strlen("nearest"))) {
         return NEAREST;
     }
-    else if (str_equal(str, "linear")) {
+    else if (__builtin_strncmp(str, "linear", strlen("linear"))) {
         return LINEAR;
     }
     else {
@@ -11616,10 +11608,10 @@ const char* GPUFilterMode::to_string(GPUFilterMode::Value value_) noexcept {
 }
 
 GPUMipmapFilterMode::Value GPUMipmapFilterMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "nearest")) {
+    if (__builtin_strncmp(str, "nearest", strlen("nearest"))) {
         return NEAREST;
     }
-    else if (str_equal(str, "linear")) {
+    else if (__builtin_strncmp(str, "linear", strlen("linear"))) {
         return LINEAR;
     }
     else {
@@ -11651,28 +11643,28 @@ const char* GPUMipmapFilterMode::to_string(GPUMipmapFilterMode::Value value_) no
 }
 
 GPUCompareFunction::Value GPUCompareFunction::from_string(const char* str) noexcept {
-    if (str_equal(str, "never")) {
+    if (__builtin_strncmp(str, "never", strlen("never"))) {
         return NEVER;
     }
-    else if (str_equal(str, "less")) {
+    else if (__builtin_strncmp(str, "less", strlen("less"))) {
         return LESS;
     }
-    else if (str_equal(str, "equal")) {
+    else if (__builtin_strncmp(str, "equal", strlen("equal"))) {
         return EQUAL;
     }
-    else if (str_equal(str, "less-equal")) {
+    else if (__builtin_strncmp(str, "less-equal", strlen("less-equal"))) {
         return LESS_EQUAL;
     }
-    else if (str_equal(str, "greater")) {
+    else if (__builtin_strncmp(str, "greater", strlen("greater"))) {
         return GREATER;
     }
-    else if (str_equal(str, "not-equal")) {
+    else if (__builtin_strncmp(str, "not-equal", strlen("not-equal"))) {
         return NOT_EQUAL;
     }
-    else if (str_equal(str, "greater-equal")) {
+    else if (__builtin_strncmp(str, "greater-equal", strlen("greater-equal"))) {
         return GREATER_EQUAL;
     }
-    else if (str_equal(str, "always")) {
+    else if (__builtin_strncmp(str, "always", strlen("always"))) {
         return ALWAYS;
     }
     else {
@@ -11716,13 +11708,13 @@ const char* GPUCompareFunction::to_string(GPUCompareFunction::Value value_) noex
 }
 
 GPUBufferBindingType::Value GPUBufferBindingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "uniform")) {
+    if (__builtin_strncmp(str, "uniform", strlen("uniform"))) {
         return UNIFORM;
     }
-    else if (str_equal(str, "storage")) {
+    else if (__builtin_strncmp(str, "storage", strlen("storage"))) {
         return STORAGE;
     }
-    else if (str_equal(str, "read-only-storage")) {
+    else if (__builtin_strncmp(str, "read-only-storage", strlen("read-only-storage"))) {
         return READ_ONLY_STORAGE;
     }
     else {
@@ -11756,13 +11748,13 @@ const char* GPUBufferBindingType::to_string(GPUBufferBindingType::Value value_) 
 }
 
 GPUSamplerBindingType::Value GPUSamplerBindingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "filtering")) {
+    if (__builtin_strncmp(str, "filtering", strlen("filtering"))) {
         return FILTERING;
     }
-    else if (str_equal(str, "non-filtering")) {
+    else if (__builtin_strncmp(str, "non-filtering", strlen("non-filtering"))) {
         return NON_FILTERING;
     }
-    else if (str_equal(str, "comparison")) {
+    else if (__builtin_strncmp(str, "comparison", strlen("comparison"))) {
         return COMPARISON;
     }
     else {
@@ -11796,19 +11788,19 @@ const char* GPUSamplerBindingType::to_string(GPUSamplerBindingType::Value value_
 }
 
 GPUTextureSampleType::Value GPUTextureSampleType::from_string(const char* str) noexcept {
-    if (str_equal(str, "float")) {
+    if (__builtin_strncmp(str, "float", strlen("float"))) {
         return FLOAT_;
     }
-    else if (str_equal(str, "unfilterable-float")) {
+    else if (__builtin_strncmp(str, "unfilterable-float", strlen("unfilterable-float"))) {
         return UNFILTERABLE_FLOAT;
     }
-    else if (str_equal(str, "depth")) {
+    else if (__builtin_strncmp(str, "depth", strlen("depth"))) {
         return DEPTH;
     }
-    else if (str_equal(str, "sint")) {
+    else if (__builtin_strncmp(str, "sint", strlen("sint"))) {
         return SINT;
     }
-    else if (str_equal(str, "uint")) {
+    else if (__builtin_strncmp(str, "uint", strlen("uint"))) {
         return UINT;
     }
     else {
@@ -11846,13 +11838,13 @@ const char* GPUTextureSampleType::to_string(GPUTextureSampleType::Value value_) 
 }
 
 GPUStorageTextureAccess::Value GPUStorageTextureAccess::from_string(const char* str) noexcept {
-    if (str_equal(str, "write-only")) {
+    if (__builtin_strncmp(str, "write-only", strlen("write-only"))) {
         return WRITE_ONLY;
     }
-    else if (str_equal(str, "read-only")) {
+    else if (__builtin_strncmp(str, "read-only", strlen("read-only"))) {
         return READ_ONLY;
     }
-    else if (str_equal(str, "read-write")) {
+    else if (__builtin_strncmp(str, "read-write", strlen("read-write"))) {
         return READ_WRITE;
     }
     else {
@@ -11886,13 +11878,13 @@ const char* GPUStorageTextureAccess::to_string(GPUStorageTextureAccess::Value va
 }
 
 GPUCompilationMessageType::Value GPUCompilationMessageType::from_string(const char* str) noexcept {
-    if (str_equal(str, "error")) {
+    if (__builtin_strncmp(str, "error", strlen("error"))) {
         return ERROR;
     }
-    else if (str_equal(str, "warning")) {
+    else if (__builtin_strncmp(str, "warning", strlen("warning"))) {
         return WARNING;
     }
-    else if (str_equal(str, "info")) {
+    else if (__builtin_strncmp(str, "info", strlen("info"))) {
         return INFO;
     }
     else {
@@ -11926,10 +11918,10 @@ const char* GPUCompilationMessageType::to_string(GPUCompilationMessageType::Valu
 }
 
 GPUPipelineErrorReason::Value GPUPipelineErrorReason::from_string(const char* str) noexcept {
-    if (str_equal(str, "validation")) {
+    if (__builtin_strncmp(str, "validation", strlen("validation"))) {
         return VALIDATION;
     }
-    else if (str_equal(str, "internal")) {
+    else if (__builtin_strncmp(str, "internal", strlen("internal"))) {
         return INTERNAL;
     }
     else {
@@ -11961,7 +11953,7 @@ const char* GPUPipelineErrorReason::to_string(GPUPipelineErrorReason::Value valu
 }
 
 GPUAutoLayoutMode::Value GPUAutoLayoutMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
     else {
@@ -11991,19 +11983,19 @@ const char* GPUAutoLayoutMode::to_string(GPUAutoLayoutMode::Value value_) noexce
 }
 
 GPUPrimitiveTopology::Value GPUPrimitiveTopology::from_string(const char* str) noexcept {
-    if (str_equal(str, "point-list")) {
+    if (__builtin_strncmp(str, "point-list", strlen("point-list"))) {
         return POINT_LIST;
     }
-    else if (str_equal(str, "line-list")) {
+    else if (__builtin_strncmp(str, "line-list", strlen("line-list"))) {
         return LINE_LIST;
     }
-    else if (str_equal(str, "line-strip")) {
+    else if (__builtin_strncmp(str, "line-strip", strlen("line-strip"))) {
         return LINE_STRIP;
     }
-    else if (str_equal(str, "triangle-list")) {
+    else if (__builtin_strncmp(str, "triangle-list", strlen("triangle-list"))) {
         return TRIANGLE_LIST;
     }
-    else if (str_equal(str, "triangle-strip")) {
+    else if (__builtin_strncmp(str, "triangle-strip", strlen("triangle-strip"))) {
         return TRIANGLE_STRIP;
     }
     else {
@@ -12041,10 +12033,10 @@ const char* GPUPrimitiveTopology::to_string(GPUPrimitiveTopology::Value value_) 
 }
 
 GPUFrontFace::Value GPUFrontFace::from_string(const char* str) noexcept {
-    if (str_equal(str, "ccw")) {
+    if (__builtin_strncmp(str, "ccw", strlen("ccw"))) {
         return CCW;
     }
-    else if (str_equal(str, "cw")) {
+    else if (__builtin_strncmp(str, "cw", strlen("cw"))) {
         return CW;
     }
     else {
@@ -12076,13 +12068,13 @@ const char* GPUFrontFace::to_string(GPUFrontFace::Value value_) noexcept {
 }
 
 GPUCullMode::Value GPUCullMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "front")) {
+    else if (__builtin_strncmp(str, "front", strlen("front"))) {
         return FRONT;
     }
-    else if (str_equal(str, "back")) {
+    else if (__builtin_strncmp(str, "back", strlen("back"))) {
         return BACK;
     }
     else {
@@ -12116,55 +12108,55 @@ const char* GPUCullMode::to_string(GPUCullMode::Value value_) noexcept {
 }
 
 GPUBlendFactor::Value GPUBlendFactor::from_string(const char* str) noexcept {
-    if (str_equal(str, "zero")) {
+    if (__builtin_strncmp(str, "zero", strlen("zero"))) {
         return ZERO;
     }
-    else if (str_equal(str, "one")) {
+    else if (__builtin_strncmp(str, "one", strlen("one"))) {
         return ONE;
     }
-    else if (str_equal(str, "src")) {
+    else if (__builtin_strncmp(str, "src", strlen("src"))) {
         return SRC;
     }
-    else if (str_equal(str, "one-minus-src")) {
+    else if (__builtin_strncmp(str, "one-minus-src", strlen("one-minus-src"))) {
         return ONE_MINUS_SRC;
     }
-    else if (str_equal(str, "src-alpha")) {
+    else if (__builtin_strncmp(str, "src-alpha", strlen("src-alpha"))) {
         return SRC_ALPHA;
     }
-    else if (str_equal(str, "one-minus-src-alpha")) {
+    else if (__builtin_strncmp(str, "one-minus-src-alpha", strlen("one-minus-src-alpha"))) {
         return ONE_MINUS_SRC_ALPHA;
     }
-    else if (str_equal(str, "dst")) {
+    else if (__builtin_strncmp(str, "dst", strlen("dst"))) {
         return DST;
     }
-    else if (str_equal(str, "one-minus-dst")) {
+    else if (__builtin_strncmp(str, "one-minus-dst", strlen("one-minus-dst"))) {
         return ONE_MINUS_DST;
     }
-    else if (str_equal(str, "dst-alpha")) {
+    else if (__builtin_strncmp(str, "dst-alpha", strlen("dst-alpha"))) {
         return DST_ALPHA;
     }
-    else if (str_equal(str, "one-minus-dst-alpha")) {
+    else if (__builtin_strncmp(str, "one-minus-dst-alpha", strlen("one-minus-dst-alpha"))) {
         return ONE_MINUS_DST_ALPHA;
     }
-    else if (str_equal(str, "src-alpha-saturated")) {
+    else if (__builtin_strncmp(str, "src-alpha-saturated", strlen("src-alpha-saturated"))) {
         return SRC_ALPHA_SATURATED;
     }
-    else if (str_equal(str, "constant")) {
+    else if (__builtin_strncmp(str, "constant", strlen("constant"))) {
         return CONSTANT;
     }
-    else if (str_equal(str, "one-minus-constant")) {
+    else if (__builtin_strncmp(str, "one-minus-constant", strlen("one-minus-constant"))) {
         return ONE_MINUS_CONSTANT;
     }
-    else if (str_equal(str, "src1")) {
+    else if (__builtin_strncmp(str, "src1", strlen("src1"))) {
         return SRC1;
     }
-    else if (str_equal(str, "one-minus-src1")) {
+    else if (__builtin_strncmp(str, "one-minus-src1", strlen("one-minus-src1"))) {
         return ONE_MINUS_SRC1;
     }
-    else if (str_equal(str, "src1-alpha")) {
+    else if (__builtin_strncmp(str, "src1-alpha", strlen("src1-alpha"))) {
         return SRC1_ALPHA;
     }
-    else if (str_equal(str, "one-minus-src1-alpha")) {
+    else if (__builtin_strncmp(str, "one-minus-src1-alpha", strlen("one-minus-src1-alpha"))) {
         return ONE_MINUS_SRC1_ALPHA;
     }
     else {
@@ -12226,19 +12218,19 @@ const char* GPUBlendFactor::to_string(GPUBlendFactor::Value value_) noexcept {
 }
 
 GPUBlendOperation::Value GPUBlendOperation::from_string(const char* str) noexcept {
-    if (str_equal(str, "add")) {
+    if (__builtin_strncmp(str, "add", strlen("add"))) {
         return ADD;
     }
-    else if (str_equal(str, "subtract")) {
+    else if (__builtin_strncmp(str, "subtract", strlen("subtract"))) {
         return SUBTRACT;
     }
-    else if (str_equal(str, "reverse-subtract")) {
+    else if (__builtin_strncmp(str, "reverse-subtract", strlen("reverse-subtract"))) {
         return REVERSE_SUBTRACT;
     }
-    else if (str_equal(str, "min")) {
+    else if (__builtin_strncmp(str, "min", strlen("min"))) {
         return MIN;
     }
-    else if (str_equal(str, "max")) {
+    else if (__builtin_strncmp(str, "max", strlen("max"))) {
         return MAX;
     }
     else {
@@ -12276,28 +12268,28 @@ const char* GPUBlendOperation::to_string(GPUBlendOperation::Value value_) noexce
 }
 
 GPUStencilOperation::Value GPUStencilOperation::from_string(const char* str) noexcept {
-    if (str_equal(str, "keep")) {
+    if (__builtin_strncmp(str, "keep", strlen("keep"))) {
         return KEEP;
     }
-    else if (str_equal(str, "zero")) {
+    else if (__builtin_strncmp(str, "zero", strlen("zero"))) {
         return ZERO;
     }
-    else if (str_equal(str, "replace")) {
+    else if (__builtin_strncmp(str, "replace", strlen("replace"))) {
         return REPLACE;
     }
-    else if (str_equal(str, "invert")) {
+    else if (__builtin_strncmp(str, "invert", strlen("invert"))) {
         return INVERT;
     }
-    else if (str_equal(str, "increment-clamp")) {
+    else if (__builtin_strncmp(str, "increment-clamp", strlen("increment-clamp"))) {
         return INCREMENT_CLAMP;
     }
-    else if (str_equal(str, "decrement-clamp")) {
+    else if (__builtin_strncmp(str, "decrement-clamp", strlen("decrement-clamp"))) {
         return DECREMENT_CLAMP;
     }
-    else if (str_equal(str, "increment-wrap")) {
+    else if (__builtin_strncmp(str, "increment-wrap", strlen("increment-wrap"))) {
         return INCREMENT_WRAP;
     }
-    else if (str_equal(str, "decrement-wrap")) {
+    else if (__builtin_strncmp(str, "decrement-wrap", strlen("decrement-wrap"))) {
         return DECREMENT_WRAP;
     }
     else {
@@ -12341,10 +12333,10 @@ const char* GPUStencilOperation::to_string(GPUStencilOperation::Value value_) no
 }
 
 GPUIndexFormat::Value GPUIndexFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "uint16")) {
+    if (__builtin_strncmp(str, "uint16", strlen("uint16"))) {
         return UINT16;
     }
-    else if (str_equal(str, "uint32")) {
+    else if (__builtin_strncmp(str, "uint32", strlen("uint32"))) {
         return UINT32;
     }
     else {
@@ -12376,127 +12368,127 @@ const char* GPUIndexFormat::to_string(GPUIndexFormat::Value value_) noexcept {
 }
 
 GPUVertexFormat::Value GPUVertexFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "uint8")) {
+    if (__builtin_strncmp(str, "uint8", strlen("uint8"))) {
         return UINT8;
     }
-    else if (str_equal(str, "uint8x2")) {
+    else if (__builtin_strncmp(str, "uint8x2", strlen("uint8x2"))) {
         return UINT8X2;
     }
-    else if (str_equal(str, "uint8x4")) {
+    else if (__builtin_strncmp(str, "uint8x4", strlen("uint8x4"))) {
         return UINT8X4;
     }
-    else if (str_equal(str, "sint8")) {
+    else if (__builtin_strncmp(str, "sint8", strlen("sint8"))) {
         return SINT8;
     }
-    else if (str_equal(str, "sint8x2")) {
+    else if (__builtin_strncmp(str, "sint8x2", strlen("sint8x2"))) {
         return SINT8X2;
     }
-    else if (str_equal(str, "sint8x4")) {
+    else if (__builtin_strncmp(str, "sint8x4", strlen("sint8x4"))) {
         return SINT8X4;
     }
-    else if (str_equal(str, "unorm8")) {
+    else if (__builtin_strncmp(str, "unorm8", strlen("unorm8"))) {
         return UNORM8;
     }
-    else if (str_equal(str, "unorm8x2")) {
+    else if (__builtin_strncmp(str, "unorm8x2", strlen("unorm8x2"))) {
         return UNORM8X2;
     }
-    else if (str_equal(str, "unorm8x4")) {
+    else if (__builtin_strncmp(str, "unorm8x4", strlen("unorm8x4"))) {
         return UNORM8X4;
     }
-    else if (str_equal(str, "snorm8")) {
+    else if (__builtin_strncmp(str, "snorm8", strlen("snorm8"))) {
         return SNORM8;
     }
-    else if (str_equal(str, "snorm8x2")) {
+    else if (__builtin_strncmp(str, "snorm8x2", strlen("snorm8x2"))) {
         return SNORM8X2;
     }
-    else if (str_equal(str, "snorm8x4")) {
+    else if (__builtin_strncmp(str, "snorm8x4", strlen("snorm8x4"))) {
         return SNORM8X4;
     }
-    else if (str_equal(str, "uint16")) {
+    else if (__builtin_strncmp(str, "uint16", strlen("uint16"))) {
         return UINT16;
     }
-    else if (str_equal(str, "uint16x2")) {
+    else if (__builtin_strncmp(str, "uint16x2", strlen("uint16x2"))) {
         return UINT16X2;
     }
-    else if (str_equal(str, "uint16x4")) {
+    else if (__builtin_strncmp(str, "uint16x4", strlen("uint16x4"))) {
         return UINT16X4;
     }
-    else if (str_equal(str, "sint16")) {
+    else if (__builtin_strncmp(str, "sint16", strlen("sint16"))) {
         return SINT16;
     }
-    else if (str_equal(str, "sint16x2")) {
+    else if (__builtin_strncmp(str, "sint16x2", strlen("sint16x2"))) {
         return SINT16X2;
     }
-    else if (str_equal(str, "sint16x4")) {
+    else if (__builtin_strncmp(str, "sint16x4", strlen("sint16x4"))) {
         return SINT16X4;
     }
-    else if (str_equal(str, "unorm16")) {
+    else if (__builtin_strncmp(str, "unorm16", strlen("unorm16"))) {
         return UNORM16;
     }
-    else if (str_equal(str, "unorm16x2")) {
+    else if (__builtin_strncmp(str, "unorm16x2", strlen("unorm16x2"))) {
         return UNORM16X2;
     }
-    else if (str_equal(str, "unorm16x4")) {
+    else if (__builtin_strncmp(str, "unorm16x4", strlen("unorm16x4"))) {
         return UNORM16X4;
     }
-    else if (str_equal(str, "snorm16")) {
+    else if (__builtin_strncmp(str, "snorm16", strlen("snorm16"))) {
         return SNORM16;
     }
-    else if (str_equal(str, "snorm16x2")) {
+    else if (__builtin_strncmp(str, "snorm16x2", strlen("snorm16x2"))) {
         return SNORM16X2;
     }
-    else if (str_equal(str, "snorm16x4")) {
+    else if (__builtin_strncmp(str, "snorm16x4", strlen("snorm16x4"))) {
         return SNORM16X4;
     }
-    else if (str_equal(str, "float16")) {
+    else if (__builtin_strncmp(str, "float16", strlen("float16"))) {
         return FLOAT16;
     }
-    else if (str_equal(str, "float16x2")) {
+    else if (__builtin_strncmp(str, "float16x2", strlen("float16x2"))) {
         return FLOAT16X2;
     }
-    else if (str_equal(str, "float16x4")) {
+    else if (__builtin_strncmp(str, "float16x4", strlen("float16x4"))) {
         return FLOAT16X4;
     }
-    else if (str_equal(str, "float32")) {
+    else if (__builtin_strncmp(str, "float32", strlen("float32"))) {
         return FLOAT32;
     }
-    else if (str_equal(str, "float32x2")) {
+    else if (__builtin_strncmp(str, "float32x2", strlen("float32x2"))) {
         return FLOAT32X2;
     }
-    else if (str_equal(str, "float32x3")) {
+    else if (__builtin_strncmp(str, "float32x3", strlen("float32x3"))) {
         return FLOAT32X3;
     }
-    else if (str_equal(str, "float32x4")) {
+    else if (__builtin_strncmp(str, "float32x4", strlen("float32x4"))) {
         return FLOAT32X4;
     }
-    else if (str_equal(str, "uint32")) {
+    else if (__builtin_strncmp(str, "uint32", strlen("uint32"))) {
         return UINT32;
     }
-    else if (str_equal(str, "uint32x2")) {
+    else if (__builtin_strncmp(str, "uint32x2", strlen("uint32x2"))) {
         return UINT32X2;
     }
-    else if (str_equal(str, "uint32x3")) {
+    else if (__builtin_strncmp(str, "uint32x3", strlen("uint32x3"))) {
         return UINT32X3;
     }
-    else if (str_equal(str, "uint32x4")) {
+    else if (__builtin_strncmp(str, "uint32x4", strlen("uint32x4"))) {
         return UINT32X4;
     }
-    else if (str_equal(str, "sint32")) {
+    else if (__builtin_strncmp(str, "sint32", strlen("sint32"))) {
         return SINT32;
     }
-    else if (str_equal(str, "sint32x2")) {
+    else if (__builtin_strncmp(str, "sint32x2", strlen("sint32x2"))) {
         return SINT32X2;
     }
-    else if (str_equal(str, "sint32x3")) {
+    else if (__builtin_strncmp(str, "sint32x3", strlen("sint32x3"))) {
         return SINT32X3;
     }
-    else if (str_equal(str, "sint32x4")) {
+    else if (__builtin_strncmp(str, "sint32x4", strlen("sint32x4"))) {
         return SINT32X4;
     }
-    else if (str_equal(str, "unorm10-10-10-2")) {
+    else if (__builtin_strncmp(str, "unorm10-10-10-2", strlen("unorm10-10-10-2"))) {
         return UNORM10_10_10_2;
     }
-    else if (str_equal(str, "unorm8x4-bgra")) {
+    else if (__builtin_strncmp(str, "unorm8x4-bgra", strlen("unorm8x4-bgra"))) {
         return UNORM8X4_BGRA;
     }
     else {
@@ -12606,10 +12598,10 @@ const char* GPUVertexFormat::to_string(GPUVertexFormat::Value value_) noexcept {
 }
 
 GPUVertexStepMode::Value GPUVertexStepMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "vertex")) {
+    if (__builtin_strncmp(str, "vertex", strlen("vertex"))) {
         return VERTEX;
     }
-    else if (str_equal(str, "instance")) {
+    else if (__builtin_strncmp(str, "instance", strlen("instance"))) {
         return INSTANCE;
     }
     else {
@@ -12641,10 +12633,10 @@ const char* GPUVertexStepMode::to_string(GPUVertexStepMode::Value value_) noexce
 }
 
 GPULoadOp::Value GPULoadOp::from_string(const char* str) noexcept {
-    if (str_equal(str, "load")) {
+    if (__builtin_strncmp(str, "load", strlen("load"))) {
         return LOAD;
     }
-    else if (str_equal(str, "clear")) {
+    else if (__builtin_strncmp(str, "clear", strlen("clear"))) {
         return CLEAR;
     }
     else {
@@ -12676,10 +12668,10 @@ const char* GPULoadOp::to_string(GPULoadOp::Value value_) noexcept {
 }
 
 GPUStoreOp::Value GPUStoreOp::from_string(const char* str) noexcept {
-    if (str_equal(str, "store")) {
+    if (__builtin_strncmp(str, "store", strlen("store"))) {
         return STORE;
     }
-    else if (str_equal(str, "discard")) {
+    else if (__builtin_strncmp(str, "discard", strlen("discard"))) {
         return DISCARD;
     }
     else {
@@ -12711,10 +12703,10 @@ const char* GPUStoreOp::to_string(GPUStoreOp::Value value_) noexcept {
 }
 
 GPUQueryType::Value GPUQueryType::from_string(const char* str) noexcept {
-    if (str_equal(str, "occlusion")) {
+    if (__builtin_strncmp(str, "occlusion", strlen("occlusion"))) {
         return OCCLUSION;
     }
-    else if (str_equal(str, "timestamp")) {
+    else if (__builtin_strncmp(str, "timestamp", strlen("timestamp"))) {
         return TIMESTAMP;
     }
     else {
@@ -12746,10 +12738,10 @@ const char* GPUQueryType::to_string(GPUQueryType::Value value_) noexcept {
 }
 
 GPUCanvasAlphaMode::Value GPUCanvasAlphaMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "opaque")) {
+    if (__builtin_strncmp(str, "opaque", strlen("opaque"))) {
         return OPAQUE;
     }
-    else if (str_equal(str, "premultiplied")) {
+    else if (__builtin_strncmp(str, "premultiplied", strlen("premultiplied"))) {
         return PREMULTIPLIED;
     }
     else {
@@ -12781,10 +12773,10 @@ const char* GPUCanvasAlphaMode::to_string(GPUCanvasAlphaMode::Value value_) noex
 }
 
 GPUCanvasToneMappingMode::Value GPUCanvasToneMappingMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "standard")) {
+    if (__builtin_strncmp(str, "standard", strlen("standard"))) {
         return STANDARD;
     }
-    else if (str_equal(str, "extended")) {
+    else if (__builtin_strncmp(str, "extended", strlen("extended"))) {
         return EXTENDED;
     }
     else {
@@ -12816,10 +12808,10 @@ const char* GPUCanvasToneMappingMode::to_string(GPUCanvasToneMappingMode::Value 
 }
 
 GPUDeviceLostReason::Value GPUDeviceLostReason::from_string(const char* str) noexcept {
-    if (str_equal(str, "unknown")) {
+    if (__builtin_strncmp(str, "unknown", strlen("unknown"))) {
         return UNKNOWN;
     }
-    else if (str_equal(str, "destroyed")) {
+    else if (__builtin_strncmp(str, "destroyed", strlen("destroyed"))) {
         return DESTROYED;
     }
     else {
@@ -12851,13 +12843,13 @@ const char* GPUDeviceLostReason::to_string(GPUDeviceLostReason::Value value_) no
 }
 
 GPUErrorFilter::Value GPUErrorFilter::from_string(const char* str) noexcept {
-    if (str_equal(str, "validation")) {
+    if (__builtin_strncmp(str, "validation", strlen("validation"))) {
         return VALIDATION;
     }
-    else if (str_equal(str, "out-of-memory")) {
+    else if (__builtin_strncmp(str, "out-of-memory", strlen("out-of-memory"))) {
         return OUT_OF_MEMORY;
     }
-    else if (str_equal(str, "internal")) {
+    else if (__builtin_strncmp(str, "internal", strlen("internal"))) {
         return INTERNAL;
     }
     else {
@@ -12891,25 +12883,25 @@ const char* GPUErrorFilter::to_string(GPUErrorFilter::Value value_) noexcept {
 }
 
 HIDUnitSystem::Value HIDUnitSystem::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "si-linear")) {
+    else if (__builtin_strncmp(str, "si-linear", strlen("si-linear"))) {
         return SI_LINEAR;
     }
-    else if (str_equal(str, "si-rotation")) {
+    else if (__builtin_strncmp(str, "si-rotation", strlen("si-rotation"))) {
         return SI_ROTATION;
     }
-    else if (str_equal(str, "english-linear")) {
+    else if (__builtin_strncmp(str, "english-linear", strlen("english-linear"))) {
         return ENGLISH_LINEAR;
     }
-    else if (str_equal(str, "english-rotation")) {
+    else if (__builtin_strncmp(str, "english-rotation", strlen("english-rotation"))) {
         return ENGLISH_ROTATION;
     }
-    else if (str_equal(str, "vendor-defined")) {
+    else if (__builtin_strncmp(str, "vendor-defined", strlen("vendor-defined"))) {
         return VENDOR_DEFINED;
     }
-    else if (str_equal(str, "reserved")) {
+    else if (__builtin_strncmp(str, "reserved", strlen("reserved"))) {
         return RESERVED;
     }
     else {
@@ -12951,10 +12943,10 @@ const char* HIDUnitSystem::to_string(HIDUnitSystem::Value value_) noexcept {
 }
 
 MIDIPortType::Value MIDIPortType::from_string(const char* str) noexcept {
-    if (str_equal(str, "input")) {
+    if (__builtin_strncmp(str, "input", strlen("input"))) {
         return INPUT;
     }
-    else if (str_equal(str, "output")) {
+    else if (__builtin_strncmp(str, "output", strlen("output"))) {
         return OUTPUT;
     }
     else {
@@ -12986,10 +12978,10 @@ const char* MIDIPortType::to_string(MIDIPortType::Value value_) noexcept {
 }
 
 MIDIPortDeviceState::Value MIDIPortDeviceState::from_string(const char* str) noexcept {
-    if (str_equal(str, "disconnected")) {
+    if (__builtin_strncmp(str, "disconnected", strlen("disconnected"))) {
         return DISCONNECTED;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
     else {
@@ -13021,13 +13013,13 @@ const char* MIDIPortDeviceState::to_string(MIDIPortDeviceState::Value value_) no
 }
 
 MIDIPortConnectionState::Value MIDIPortConnectionState::from_string(const char* str) noexcept {
-    if (str_equal(str, "open")) {
+    if (__builtin_strncmp(str, "open", strlen("open"))) {
         return OPEN;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "pending")) {
+    else if (__builtin_strncmp(str, "pending", strlen("pending"))) {
         return PENDING;
     }
     else {
@@ -13061,13 +13053,13 @@ const char* MIDIPortConnectionState::to_string(MIDIPortConnectionState::Value va
 }
 
 MLPowerPreference::Value MLPowerPreference::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "high-performance")) {
+    else if (__builtin_strncmp(str, "high-performance", strlen("high-performance"))) {
         return HIGH_PERFORMANCE;
     }
-    else if (str_equal(str, "low-power")) {
+    else if (__builtin_strncmp(str, "low-power", strlen("low-power"))) {
         return LOW_POWER;
     }
     else {
@@ -13101,10 +13093,10 @@ const char* MLPowerPreference::to_string(MLPowerPreference::Value value_) noexce
 }
 
 MLInputOperandLayout::Value MLInputOperandLayout::from_string(const char* str) noexcept {
-    if (str_equal(str, "nchw")) {
+    if (__builtin_strncmp(str, "nchw", strlen("nchw"))) {
         return NCHW;
     }
-    else if (str_equal(str, "nhwc")) {
+    else if (__builtin_strncmp(str, "nhwc", strlen("nhwc"))) {
         return NHWC;
     }
     else {
@@ -13136,28 +13128,28 @@ const char* MLInputOperandLayout::to_string(MLInputOperandLayout::Value value_) 
 }
 
 MLOperandDataType::Value MLOperandDataType::from_string(const char* str) noexcept {
-    if (str_equal(str, "float32")) {
+    if (__builtin_strncmp(str, "float32", strlen("float32"))) {
         return FLOAT32;
     }
-    else if (str_equal(str, "float16")) {
+    else if (__builtin_strncmp(str, "float16", strlen("float16"))) {
         return FLOAT16;
     }
-    else if (str_equal(str, "int32")) {
+    else if (__builtin_strncmp(str, "int32", strlen("int32"))) {
         return INT32;
     }
-    else if (str_equal(str, "uint32")) {
+    else if (__builtin_strncmp(str, "uint32", strlen("uint32"))) {
         return UINT32;
     }
-    else if (str_equal(str, "int64")) {
+    else if (__builtin_strncmp(str, "int64", strlen("int64"))) {
         return INT64;
     }
-    else if (str_equal(str, "uint64")) {
+    else if (__builtin_strncmp(str, "uint64", strlen("uint64"))) {
         return UINT64;
     }
-    else if (str_equal(str, "int8")) {
+    else if (__builtin_strncmp(str, "int8", strlen("int8"))) {
         return INT8;
     }
-    else if (str_equal(str, "uint8")) {
+    else if (__builtin_strncmp(str, "uint8", strlen("uint8"))) {
         return UINT8;
     }
     else {
@@ -13201,16 +13193,16 @@ const char* MLOperandDataType::to_string(MLOperandDataType::Value value_) noexce
 }
 
 MLConv2dFilterOperandLayout::Value MLConv2dFilterOperandLayout::from_string(const char* str) noexcept {
-    if (str_equal(str, "oihw")) {
+    if (__builtin_strncmp(str, "oihw", strlen("oihw"))) {
         return OIHW;
     }
-    else if (str_equal(str, "hwio")) {
+    else if (__builtin_strncmp(str, "hwio", strlen("hwio"))) {
         return HWIO;
     }
-    else if (str_equal(str, "ohwi")) {
+    else if (__builtin_strncmp(str, "ohwi", strlen("ohwi"))) {
         return OHWI;
     }
-    else if (str_equal(str, "ihwo")) {
+    else if (__builtin_strncmp(str, "ihwo", strlen("ihwo"))) {
         return IHWO;
     }
     else {
@@ -13246,13 +13238,13 @@ const char* MLConv2dFilterOperandLayout::to_string(MLConv2dFilterOperandLayout::
 }
 
 MLConvTranspose2dFilterOperandLayout::Value MLConvTranspose2dFilterOperandLayout::from_string(const char* str) noexcept {
-    if (str_equal(str, "iohw")) {
+    if (__builtin_strncmp(str, "iohw", strlen("iohw"))) {
         return IOHW;
     }
-    else if (str_equal(str, "hwoi")) {
+    else if (__builtin_strncmp(str, "hwoi", strlen("hwoi"))) {
         return HWOI;
     }
-    else if (str_equal(str, "ohwi")) {
+    else if (__builtin_strncmp(str, "ohwi", strlen("ohwi"))) {
         return OHWI;
     }
     else {
@@ -13286,10 +13278,10 @@ const char* MLConvTranspose2dFilterOperandLayout::to_string(MLConvTranspose2dFil
 }
 
 MLGruWeightLayout::Value MLGruWeightLayout::from_string(const char* str) noexcept {
-    if (str_equal(str, "zrn")) {
+    if (__builtin_strncmp(str, "zrn", strlen("zrn"))) {
         return ZRN;
     }
-    else if (str_equal(str, "rzn")) {
+    else if (__builtin_strncmp(str, "rzn", strlen("rzn"))) {
         return RZN;
     }
     else {
@@ -13321,13 +13313,13 @@ const char* MLGruWeightLayout::to_string(MLGruWeightLayout::Value value_) noexce
 }
 
 MLRecurrentNetworkActivation::Value MLRecurrentNetworkActivation::from_string(const char* str) noexcept {
-    if (str_equal(str, "relu")) {
+    if (__builtin_strncmp(str, "relu", strlen("relu"))) {
         return RELU;
     }
-    else if (str_equal(str, "sigmoid")) {
+    else if (__builtin_strncmp(str, "sigmoid", strlen("sigmoid"))) {
         return SIGMOID;
     }
-    else if (str_equal(str, "tanh")) {
+    else if (__builtin_strncmp(str, "tanh", strlen("tanh"))) {
         return TANH;
     }
     else {
@@ -13361,13 +13353,13 @@ const char* MLRecurrentNetworkActivation::to_string(MLRecurrentNetworkActivation
 }
 
 MLRecurrentNetworkDirection::Value MLRecurrentNetworkDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "forward")) {
+    if (__builtin_strncmp(str, "forward", strlen("forward"))) {
         return FORWARD;
     }
-    else if (str_equal(str, "backward")) {
+    else if (__builtin_strncmp(str, "backward", strlen("backward"))) {
         return BACKWARD;
     }
-    else if (str_equal(str, "both")) {
+    else if (__builtin_strncmp(str, "both", strlen("both"))) {
         return BOTH;
     }
     else {
@@ -13401,10 +13393,10 @@ const char* MLRecurrentNetworkDirection::to_string(MLRecurrentNetworkDirection::
 }
 
 MLLstmWeightLayout::Value MLLstmWeightLayout::from_string(const char* str) noexcept {
-    if (str_equal(str, "iofg")) {
+    if (__builtin_strncmp(str, "iofg", strlen("iofg"))) {
         return IOFG;
     }
-    else if (str_equal(str, "ifgo")) {
+    else if (__builtin_strncmp(str, "ifgo", strlen("ifgo"))) {
         return IFGO;
     }
     else {
@@ -13436,13 +13428,13 @@ const char* MLLstmWeightLayout::to_string(MLLstmWeightLayout::Value value_) noex
 }
 
 MLPaddingMode::Value MLPaddingMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "constant")) {
+    if (__builtin_strncmp(str, "constant", strlen("constant"))) {
         return CONSTANT;
     }
-    else if (str_equal(str, "edge")) {
+    else if (__builtin_strncmp(str, "edge", strlen("edge"))) {
         return EDGE;
     }
-    else if (str_equal(str, "reflection")) {
+    else if (__builtin_strncmp(str, "reflection", strlen("reflection"))) {
         return REFLECTION;
     }
     else {
@@ -13476,10 +13468,10 @@ const char* MLPaddingMode::to_string(MLPaddingMode::Value value_) noexcept {
 }
 
 MLRoundingType::Value MLRoundingType::from_string(const char* str) noexcept {
-    if (str_equal(str, "floor")) {
+    if (__builtin_strncmp(str, "floor", strlen("floor"))) {
         return FLOOR;
     }
-    else if (str_equal(str, "ceil")) {
+    else if (__builtin_strncmp(str, "ceil", strlen("ceil"))) {
         return CEIL;
     }
     else {
@@ -13511,10 +13503,10 @@ const char* MLRoundingType::to_string(MLRoundingType::Value value_) noexcept {
 }
 
 MLInterpolationMode::Value MLInterpolationMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "nearest-neighbor")) {
+    if (__builtin_strncmp(str, "nearest-neighbor", strlen("nearest-neighbor"))) {
         return NEAREST_NEIGHBOR;
     }
-    else if (str_equal(str, "linear")) {
+    else if (__builtin_strncmp(str, "linear", strlen("linear"))) {
         return LINEAR;
     }
     else {
@@ -13546,10 +13538,10 @@ const char* MLInterpolationMode::to_string(MLInterpolationMode::Value value_) no
 }
 
 SFrameTransformRole::Value SFrameTransformRole::from_string(const char* str) noexcept {
-    if (str_equal(str, "encrypt")) {
+    if (__builtin_strncmp(str, "encrypt", strlen("encrypt"))) {
         return ENCRYPT;
     }
-    else if (str_equal(str, "decrypt")) {
+    else if (__builtin_strncmp(str, "decrypt", strlen("decrypt"))) {
         return DECRYPT;
     }
     else {
@@ -13581,13 +13573,13 @@ const char* SFrameTransformRole::to_string(SFrameTransformRole::Value value_) no
 }
 
 SFrameTransformErrorEventType::Value SFrameTransformErrorEventType::from_string(const char* str) noexcept {
-    if (str_equal(str, "authentication")) {
+    if (__builtin_strncmp(str, "authentication", strlen("authentication"))) {
         return AUTHENTICATION;
     }
-    else if (str_equal(str, "keyID")) {
+    else if (__builtin_strncmp(str, "keyID", strlen("keyID"))) {
         return KEYID;
     }
-    else if (str_equal(str, "syntax")) {
+    else if (__builtin_strncmp(str, "syntax", strlen("syntax"))) {
         return SYNTAX;
     }
     else {
@@ -13621,13 +13613,13 @@ const char* SFrameTransformErrorEventType::to_string(SFrameTransformErrorEventTy
 }
 
 RTCEncodedVideoFrameType::Value RTCEncodedVideoFrameType::from_string(const char* str) noexcept {
-    if (str_equal(str, "empty")) {
+    if (__builtin_strncmp(str, "empty", strlen("empty"))) {
         return EMPTY;
     }
-    else if (str_equal(str, "key")) {
+    else if (__builtin_strncmp(str, "key", strlen("key"))) {
         return KEY;
     }
-    else if (str_equal(str, "delta")) {
+    else if (__builtin_strncmp(str, "delta", strlen("delta"))) {
         return DELTA;
     }
     else {
@@ -13661,28 +13653,28 @@ const char* RTCEncodedVideoFrameType::to_string(RTCEncodedVideoFrameType::Value 
 }
 
 RTCErrorDetailTypeIdp::Value RTCErrorDetailTypeIdp::from_string(const char* str) noexcept {
-    if (str_equal(str, "idp-bad-script-failure")) {
+    if (__builtin_strncmp(str, "idp-bad-script-failure", strlen("idp-bad-script-failure"))) {
         return IDP_BAD_SCRIPT_FAILURE;
     }
-    else if (str_equal(str, "idp-execution-failure")) {
+    else if (__builtin_strncmp(str, "idp-execution-failure", strlen("idp-execution-failure"))) {
         return IDP_EXECUTION_FAILURE;
     }
-    else if (str_equal(str, "idp-load-failure")) {
+    else if (__builtin_strncmp(str, "idp-load-failure", strlen("idp-load-failure"))) {
         return IDP_LOAD_FAILURE;
     }
-    else if (str_equal(str, "idp-need-login")) {
+    else if (__builtin_strncmp(str, "idp-need-login", strlen("idp-need-login"))) {
         return IDP_NEED_LOGIN;
     }
-    else if (str_equal(str, "idp-timeout")) {
+    else if (__builtin_strncmp(str, "idp-timeout", strlen("idp-timeout"))) {
         return IDP_TIMEOUT;
     }
-    else if (str_equal(str, "idp-tls-failure")) {
+    else if (__builtin_strncmp(str, "idp-tls-failure", strlen("idp-tls-failure"))) {
         return IDP_TLS_FAILURE;
     }
-    else if (str_equal(str, "idp-token-expired")) {
+    else if (__builtin_strncmp(str, "idp-token-expired", strlen("idp-token-expired"))) {
         return IDP_TOKEN_EXPIRED;
     }
-    else if (str_equal(str, "idp-token-invalid")) {
+    else if (__builtin_strncmp(str, "idp-token-invalid", strlen("idp-token-invalid"))) {
         return IDP_TOKEN_INVALID;
     }
     else {
@@ -13726,16 +13718,16 @@ const char* RTCErrorDetailTypeIdp::to_string(RTCErrorDetailTypeIdp::Value value_
 }
 
 RTCPriorityType::Value RTCPriorityType::from_string(const char* str) noexcept {
-    if (str_equal(str, "very-low")) {
+    if (__builtin_strncmp(str, "very-low", strlen("very-low"))) {
         return VERY_LOW;
     }
-    else if (str_equal(str, "low")) {
+    else if (__builtin_strncmp(str, "low", strlen("low"))) {
         return LOW;
     }
-    else if (str_equal(str, "medium")) {
+    else if (__builtin_strncmp(str, "medium", strlen("medium"))) {
         return MEDIUM;
     }
-    else if (str_equal(str, "high")) {
+    else if (__builtin_strncmp(str, "high", strlen("high"))) {
         return HIGH;
     }
     else {
@@ -13771,46 +13763,46 @@ const char* RTCPriorityType::to_string(RTCPriorityType::Value value_) noexcept {
 }
 
 RTCStatsType::Value RTCStatsType::from_string(const char* str) noexcept {
-    if (str_equal(str, "codec")) {
+    if (__builtin_strncmp(str, "codec", strlen("codec"))) {
         return CODEC;
     }
-    else if (str_equal(str, "inbound-rtp")) {
+    else if (__builtin_strncmp(str, "inbound-rtp", strlen("inbound-rtp"))) {
         return INBOUND_RTP;
     }
-    else if (str_equal(str, "outbound-rtp")) {
+    else if (__builtin_strncmp(str, "outbound-rtp", strlen("outbound-rtp"))) {
         return OUTBOUND_RTP;
     }
-    else if (str_equal(str, "remote-inbound-rtp")) {
+    else if (__builtin_strncmp(str, "remote-inbound-rtp", strlen("remote-inbound-rtp"))) {
         return REMOTE_INBOUND_RTP;
     }
-    else if (str_equal(str, "remote-outbound-rtp")) {
+    else if (__builtin_strncmp(str, "remote-outbound-rtp", strlen("remote-outbound-rtp"))) {
         return REMOTE_OUTBOUND_RTP;
     }
-    else if (str_equal(str, "media-source")) {
+    else if (__builtin_strncmp(str, "media-source", strlen("media-source"))) {
         return MEDIA_SOURCE;
     }
-    else if (str_equal(str, "media-playout")) {
+    else if (__builtin_strncmp(str, "media-playout", strlen("media-playout"))) {
         return MEDIA_PLAYOUT;
     }
-    else if (str_equal(str, "peer-connection")) {
+    else if (__builtin_strncmp(str, "peer-connection", strlen("peer-connection"))) {
         return PEER_CONNECTION;
     }
-    else if (str_equal(str, "data-channel")) {
+    else if (__builtin_strncmp(str, "data-channel", strlen("data-channel"))) {
         return DATA_CHANNEL;
     }
-    else if (str_equal(str, "transport")) {
+    else if (__builtin_strncmp(str, "transport", strlen("transport"))) {
         return TRANSPORT;
     }
-    else if (str_equal(str, "candidate-pair")) {
+    else if (__builtin_strncmp(str, "candidate-pair", strlen("candidate-pair"))) {
         return CANDIDATE_PAIR;
     }
-    else if (str_equal(str, "local-candidate")) {
+    else if (__builtin_strncmp(str, "local-candidate", strlen("local-candidate"))) {
         return LOCAL_CANDIDATE;
     }
-    else if (str_equal(str, "remote-candidate")) {
+    else if (__builtin_strncmp(str, "remote-candidate", strlen("remote-candidate"))) {
         return REMOTE_CANDIDATE;
     }
-    else if (str_equal(str, "certificate")) {
+    else if (__builtin_strncmp(str, "certificate", strlen("certificate"))) {
         return CERTIFICATE;
     }
     else {
@@ -13866,16 +13858,16 @@ const char* RTCStatsType::to_string(RTCStatsType::Value value_) noexcept {
 }
 
 RTCQualityLimitationReason::Value RTCQualityLimitationReason::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "cpu")) {
+    else if (__builtin_strncmp(str, "cpu", strlen("cpu"))) {
         return CPU;
     }
-    else if (str_equal(str, "bandwidth")) {
+    else if (__builtin_strncmp(str, "bandwidth", strlen("bandwidth"))) {
         return BANDWIDTH;
     }
-    else if (str_equal(str, "other")) {
+    else if (__builtin_strncmp(str, "other", strlen("other"))) {
         return OTHER;
     }
     else {
@@ -13911,13 +13903,13 @@ const char* RTCQualityLimitationReason::to_string(RTCQualityLimitationReason::Va
 }
 
 RTCDtlsRole::Value RTCDtlsRole::from_string(const char* str) noexcept {
-    if (str_equal(str, "client")) {
+    if (__builtin_strncmp(str, "client", strlen("client"))) {
         return CLIENT;
     }
-    else if (str_equal(str, "server")) {
+    else if (__builtin_strncmp(str, "server", strlen("server"))) {
         return SERVER;
     }
-    else if (str_equal(str, "unknown")) {
+    else if (__builtin_strncmp(str, "unknown", strlen("unknown"))) {
         return UNKNOWN;
     }
     else {
@@ -13951,19 +13943,19 @@ const char* RTCDtlsRole::to_string(RTCDtlsRole::Value value_) noexcept {
 }
 
 RTCStatsIceCandidatePairState::Value RTCStatsIceCandidatePairState::from_string(const char* str) noexcept {
-    if (str_equal(str, "frozen")) {
+    if (__builtin_strncmp(str, "frozen", strlen("frozen"))) {
         return FROZEN;
     }
-    else if (str_equal(str, "waiting")) {
+    else if (__builtin_strncmp(str, "waiting", strlen("waiting"))) {
         return WAITING;
     }
-    else if (str_equal(str, "in-progress")) {
+    else if (__builtin_strncmp(str, "in-progress", strlen("in-progress"))) {
         return IN_PROGRESS;
     }
-    else if (str_equal(str, "failed")) {
+    else if (__builtin_strncmp(str, "failed", strlen("failed"))) {
         return FAILED;
     }
-    else if (str_equal(str, "succeeded")) {
+    else if (__builtin_strncmp(str, "succeeded", strlen("succeeded"))) {
         return SUCCEEDED;
     }
     else {
@@ -14001,10 +13993,10 @@ const char* RTCStatsIceCandidatePairState::to_string(RTCStatsIceCandidatePairSta
 }
 
 RTCIceTransportPolicy::Value RTCIceTransportPolicy::from_string(const char* str) noexcept {
-    if (str_equal(str, "relay")) {
+    if (__builtin_strncmp(str, "relay", strlen("relay"))) {
         return RELAY;
     }
-    else if (str_equal(str, "all")) {
+    else if (__builtin_strncmp(str, "all", strlen("all"))) {
         return ALL;
     }
     else {
@@ -14036,13 +14028,13 @@ const char* RTCIceTransportPolicy::to_string(RTCIceTransportPolicy::Value value_
 }
 
 RTCBundlePolicy::Value RTCBundlePolicy::from_string(const char* str) noexcept {
-    if (str_equal(str, "balanced")) {
+    if (__builtin_strncmp(str, "balanced", strlen("balanced"))) {
         return BALANCED;
     }
-    else if (str_equal(str, "max-compat")) {
+    else if (__builtin_strncmp(str, "max-compat", strlen("max-compat"))) {
         return MAX_COMPAT;
     }
-    else if (str_equal(str, "max-bundle")) {
+    else if (__builtin_strncmp(str, "max-bundle", strlen("max-bundle"))) {
         return MAX_BUNDLE;
     }
     else {
@@ -14076,7 +14068,7 @@ const char* RTCBundlePolicy::to_string(RTCBundlePolicy::Value value_) noexcept {
 }
 
 RTCRtcpMuxPolicy::Value RTCRtcpMuxPolicy::from_string(const char* str) noexcept {
-    if (str_equal(str, "require")) {
+    if (__builtin_strncmp(str, "require", strlen("require"))) {
         return REQUIRE;
     }
     else {
@@ -14106,22 +14098,22 @@ const char* RTCRtcpMuxPolicy::to_string(RTCRtcpMuxPolicy::Value value_) noexcept
 }
 
 RTCSignalingState::Value RTCSignalingState::from_string(const char* str) noexcept {
-    if (str_equal(str, "stable")) {
+    if (__builtin_strncmp(str, "stable", strlen("stable"))) {
         return STABLE;
     }
-    else if (str_equal(str, "have-local-offer")) {
+    else if (__builtin_strncmp(str, "have-local-offer", strlen("have-local-offer"))) {
         return HAVE_LOCAL_OFFER;
     }
-    else if (str_equal(str, "have-remote-offer")) {
+    else if (__builtin_strncmp(str, "have-remote-offer", strlen("have-remote-offer"))) {
         return HAVE_REMOTE_OFFER;
     }
-    else if (str_equal(str, "have-local-pranswer")) {
+    else if (__builtin_strncmp(str, "have-local-pranswer", strlen("have-local-pranswer"))) {
         return HAVE_LOCAL_PRANSWER;
     }
-    else if (str_equal(str, "have-remote-pranswer")) {
+    else if (__builtin_strncmp(str, "have-remote-pranswer", strlen("have-remote-pranswer"))) {
         return HAVE_REMOTE_PRANSWER;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
     else {
@@ -14161,13 +14153,13 @@ const char* RTCSignalingState::to_string(RTCSignalingState::Value value_) noexce
 }
 
 RTCIceGatheringState::Value RTCIceGatheringState::from_string(const char* str) noexcept {
-    if (str_equal(str, "new")) {
+    if (__builtin_strncmp(str, "new", strlen("new"))) {
         return NEW_;
     }
-    else if (str_equal(str, "gathering")) {
+    else if (__builtin_strncmp(str, "gathering", strlen("gathering"))) {
         return GATHERING;
     }
-    else if (str_equal(str, "complete")) {
+    else if (__builtin_strncmp(str, "complete", strlen("complete"))) {
         return COMPLETE;
     }
     else {
@@ -14201,22 +14193,22 @@ const char* RTCIceGatheringState::to_string(RTCIceGatheringState::Value value_) 
 }
 
 RTCPeerConnectionState::Value RTCPeerConnectionState::from_string(const char* str) noexcept {
-    if (str_equal(str, "closed")) {
+    if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "failed")) {
+    else if (__builtin_strncmp(str, "failed", strlen("failed"))) {
         return FAILED;
     }
-    else if (str_equal(str, "disconnected")) {
+    else if (__builtin_strncmp(str, "disconnected", strlen("disconnected"))) {
         return DISCONNECTED;
     }
-    else if (str_equal(str, "new")) {
+    else if (__builtin_strncmp(str, "new", strlen("new"))) {
         return NEW_;
     }
-    else if (str_equal(str, "connecting")) {
+    else if (__builtin_strncmp(str, "connecting", strlen("connecting"))) {
         return CONNECTING;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
     else {
@@ -14256,25 +14248,25 @@ const char* RTCPeerConnectionState::to_string(RTCPeerConnectionState::Value valu
 }
 
 RTCIceConnectionState::Value RTCIceConnectionState::from_string(const char* str) noexcept {
-    if (str_equal(str, "closed")) {
+    if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "failed")) {
+    else if (__builtin_strncmp(str, "failed", strlen("failed"))) {
         return FAILED;
     }
-    else if (str_equal(str, "disconnected")) {
+    else if (__builtin_strncmp(str, "disconnected", strlen("disconnected"))) {
         return DISCONNECTED;
     }
-    else if (str_equal(str, "new")) {
+    else if (__builtin_strncmp(str, "new", strlen("new"))) {
         return NEW_;
     }
-    else if (str_equal(str, "checking")) {
+    else if (__builtin_strncmp(str, "checking", strlen("checking"))) {
         return CHECKING;
     }
-    else if (str_equal(str, "completed")) {
+    else if (__builtin_strncmp(str, "completed", strlen("completed"))) {
         return COMPLETED;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
     else {
@@ -14316,16 +14308,16 @@ const char* RTCIceConnectionState::to_string(RTCIceConnectionState::Value value_
 }
 
 RTCSdpType::Value RTCSdpType::from_string(const char* str) noexcept {
-    if (str_equal(str, "offer")) {
+    if (__builtin_strncmp(str, "offer", strlen("offer"))) {
         return OFFER;
     }
-    else if (str_equal(str, "pranswer")) {
+    else if (__builtin_strncmp(str, "pranswer", strlen("pranswer"))) {
         return PRANSWER;
     }
-    else if (str_equal(str, "answer")) {
+    else if (__builtin_strncmp(str, "answer", strlen("answer"))) {
         return ANSWER;
     }
-    else if (str_equal(str, "rollback")) {
+    else if (__builtin_strncmp(str, "rollback", strlen("rollback"))) {
         return ROLLBACK;
     }
     else {
@@ -14361,10 +14353,10 @@ const char* RTCSdpType::to_string(RTCSdpType::Value value_) noexcept {
 }
 
 RTCIceProtocol::Value RTCIceProtocol::from_string(const char* str) noexcept {
-    if (str_equal(str, "udp")) {
+    if (__builtin_strncmp(str, "udp", strlen("udp"))) {
         return UDP;
     }
-    else if (str_equal(str, "tcp")) {
+    else if (__builtin_strncmp(str, "tcp", strlen("tcp"))) {
         return TCP;
     }
     else {
@@ -14396,13 +14388,13 @@ const char* RTCIceProtocol::to_string(RTCIceProtocol::Value value_) noexcept {
 }
 
 RTCIceTcpCandidateType::Value RTCIceTcpCandidateType::from_string(const char* str) noexcept {
-    if (str_equal(str, "active")) {
+    if (__builtin_strncmp(str, "active", strlen("active"))) {
         return ACTIVE;
     }
-    else if (str_equal(str, "passive")) {
+    else if (__builtin_strncmp(str, "passive", strlen("passive"))) {
         return PASSIVE;
     }
-    else if (str_equal(str, "so")) {
+    else if (__builtin_strncmp(str, "so", strlen("so"))) {
         return SO;
     }
     else {
@@ -14436,16 +14428,16 @@ const char* RTCIceTcpCandidateType::to_string(RTCIceTcpCandidateType::Value valu
 }
 
 RTCIceCandidateType::Value RTCIceCandidateType::from_string(const char* str) noexcept {
-    if (str_equal(str, "host")) {
+    if (__builtin_strncmp(str, "host", strlen("host"))) {
         return HOST;
     }
-    else if (str_equal(str, "srflx")) {
+    else if (__builtin_strncmp(str, "srflx", strlen("srflx"))) {
         return SRFLX;
     }
-    else if (str_equal(str, "prflx")) {
+    else if (__builtin_strncmp(str, "prflx", strlen("prflx"))) {
         return PRFLX;
     }
-    else if (str_equal(str, "relay")) {
+    else if (__builtin_strncmp(str, "relay", strlen("relay"))) {
         return RELAY;
     }
     else {
@@ -14481,13 +14473,13 @@ const char* RTCIceCandidateType::to_string(RTCIceCandidateType::Value value_) no
 }
 
 RTCIceServerTransportProtocol::Value RTCIceServerTransportProtocol::from_string(const char* str) noexcept {
-    if (str_equal(str, "udp")) {
+    if (__builtin_strncmp(str, "udp", strlen("udp"))) {
         return UDP;
     }
-    else if (str_equal(str, "tcp")) {
+    else if (__builtin_strncmp(str, "tcp", strlen("tcp"))) {
         return TCP;
     }
-    else if (str_equal(str, "tls")) {
+    else if (__builtin_strncmp(str, "tls", strlen("tls"))) {
         return TLS;
     }
     else {
@@ -14521,19 +14513,19 @@ const char* RTCIceServerTransportProtocol::to_string(RTCIceServerTransportProtoc
 }
 
 RTCRtpTransceiverDirection::Value RTCRtpTransceiverDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "sendrecv")) {
+    if (__builtin_strncmp(str, "sendrecv", strlen("sendrecv"))) {
         return SENDRECV;
     }
-    else if (str_equal(str, "sendonly")) {
+    else if (__builtin_strncmp(str, "sendonly", strlen("sendonly"))) {
         return SENDONLY;
     }
-    else if (str_equal(str, "recvonly")) {
+    else if (__builtin_strncmp(str, "recvonly", strlen("recvonly"))) {
         return RECVONLY;
     }
-    else if (str_equal(str, "inactive")) {
+    else if (__builtin_strncmp(str, "inactive", strlen("inactive"))) {
         return INACTIVE;
     }
-    else if (str_equal(str, "stopped")) {
+    else if (__builtin_strncmp(str, "stopped", strlen("stopped"))) {
         return STOPPED;
     }
     else {
@@ -14571,19 +14563,19 @@ const char* RTCRtpTransceiverDirection::to_string(RTCRtpTransceiverDirection::Va
 }
 
 RTCDtlsTransportState::Value RTCDtlsTransportState::from_string(const char* str) noexcept {
-    if (str_equal(str, "new")) {
+    if (__builtin_strncmp(str, "new", strlen("new"))) {
         return NEW_;
     }
-    else if (str_equal(str, "connecting")) {
+    else if (__builtin_strncmp(str, "connecting", strlen("connecting"))) {
         return CONNECTING;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "failed")) {
+    else if (__builtin_strncmp(str, "failed", strlen("failed"))) {
         return FAILED;
     }
     else {
@@ -14621,13 +14613,13 @@ const char* RTCDtlsTransportState::to_string(RTCDtlsTransportState::Value value_
 }
 
 RTCIceGathererState::Value RTCIceGathererState::from_string(const char* str) noexcept {
-    if (str_equal(str, "new")) {
+    if (__builtin_strncmp(str, "new", strlen("new"))) {
         return NEW_;
     }
-    else if (str_equal(str, "gathering")) {
+    else if (__builtin_strncmp(str, "gathering", strlen("gathering"))) {
         return GATHERING;
     }
-    else if (str_equal(str, "complete")) {
+    else if (__builtin_strncmp(str, "complete", strlen("complete"))) {
         return COMPLETE;
     }
     else {
@@ -14661,25 +14653,25 @@ const char* RTCIceGathererState::to_string(RTCIceGathererState::Value value_) no
 }
 
 RTCIceTransportState::Value RTCIceTransportState::from_string(const char* str) noexcept {
-    if (str_equal(str, "closed")) {
+    if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
-    else if (str_equal(str, "failed")) {
+    else if (__builtin_strncmp(str, "failed", strlen("failed"))) {
         return FAILED;
     }
-    else if (str_equal(str, "disconnected")) {
+    else if (__builtin_strncmp(str, "disconnected", strlen("disconnected"))) {
         return DISCONNECTED;
     }
-    else if (str_equal(str, "new")) {
+    else if (__builtin_strncmp(str, "new", strlen("new"))) {
         return NEW_;
     }
-    else if (str_equal(str, "checking")) {
+    else if (__builtin_strncmp(str, "checking", strlen("checking"))) {
         return CHECKING;
     }
-    else if (str_equal(str, "completed")) {
+    else if (__builtin_strncmp(str, "completed", strlen("completed"))) {
         return COMPLETED;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
     else {
@@ -14721,13 +14713,13 @@ const char* RTCIceTransportState::to_string(RTCIceTransportState::Value value_) 
 }
 
 RTCIceRole::Value RTCIceRole::from_string(const char* str) noexcept {
-    if (str_equal(str, "unknown")) {
+    if (__builtin_strncmp(str, "unknown", strlen("unknown"))) {
         return UNKNOWN;
     }
-    else if (str_equal(str, "controlling")) {
+    else if (__builtin_strncmp(str, "controlling", strlen("controlling"))) {
         return CONTROLLING;
     }
-    else if (str_equal(str, "controlled")) {
+    else if (__builtin_strncmp(str, "controlled", strlen("controlled"))) {
         return CONTROLLED;
     }
     else {
@@ -14761,10 +14753,10 @@ const char* RTCIceRole::to_string(RTCIceRole::Value value_) noexcept {
 }
 
 RTCIceComponent::Value RTCIceComponent::from_string(const char* str) noexcept {
-    if (str_equal(str, "rtp")) {
+    if (__builtin_strncmp(str, "rtp", strlen("rtp"))) {
         return RTP;
     }
-    else if (str_equal(str, "rtcp")) {
+    else if (__builtin_strncmp(str, "rtcp", strlen("rtcp"))) {
         return RTCP;
     }
     else {
@@ -14796,13 +14788,13 @@ const char* RTCIceComponent::to_string(RTCIceComponent::Value value_) noexcept {
 }
 
 RTCSctpTransportState::Value RTCSctpTransportState::from_string(const char* str) noexcept {
-    if (str_equal(str, "connecting")) {
+    if (__builtin_strncmp(str, "connecting", strlen("connecting"))) {
         return CONNECTING;
     }
-    else if (str_equal(str, "connected")) {
+    else if (__builtin_strncmp(str, "connected", strlen("connected"))) {
         return CONNECTED;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
     else {
@@ -14836,16 +14828,16 @@ const char* RTCSctpTransportState::to_string(RTCSctpTransportState::Value value_
 }
 
 RTCDataChannelState::Value RTCDataChannelState::from_string(const char* str) noexcept {
-    if (str_equal(str, "connecting")) {
+    if (__builtin_strncmp(str, "connecting", strlen("connecting"))) {
         return CONNECTING;
     }
-    else if (str_equal(str, "open")) {
+    else if (__builtin_strncmp(str, "open", strlen("open"))) {
         return OPEN;
     }
-    else if (str_equal(str, "closing")) {
+    else if (__builtin_strncmp(str, "closing", strlen("closing"))) {
         return CLOSING;
     }
-    else if (str_equal(str, "closed")) {
+    else if (__builtin_strncmp(str, "closed", strlen("closed"))) {
         return CLOSED;
     }
     else {
@@ -14881,25 +14873,25 @@ const char* RTCDataChannelState::to_string(RTCDataChannelState::Value value_) no
 }
 
 RTCErrorDetailType::Value RTCErrorDetailType::from_string(const char* str) noexcept {
-    if (str_equal(str, "data-channel-failure")) {
+    if (__builtin_strncmp(str, "data-channel-failure", strlen("data-channel-failure"))) {
         return DATA_CHANNEL_FAILURE;
     }
-    else if (str_equal(str, "dtls-failure")) {
+    else if (__builtin_strncmp(str, "dtls-failure", strlen("dtls-failure"))) {
         return DTLS_FAILURE;
     }
-    else if (str_equal(str, "fingerprint-failure")) {
+    else if (__builtin_strncmp(str, "fingerprint-failure", strlen("fingerprint-failure"))) {
         return FINGERPRINT_FAILURE;
     }
-    else if (str_equal(str, "sctp-failure")) {
+    else if (__builtin_strncmp(str, "sctp-failure", strlen("sctp-failure"))) {
         return SCTP_FAILURE;
     }
-    else if (str_equal(str, "sdp-syntax-error")) {
+    else if (__builtin_strncmp(str, "sdp-syntax-error", strlen("sdp-syntax-error"))) {
         return SDP_SYNTAX_ERROR;
     }
-    else if (str_equal(str, "hardware-encoder-not-available")) {
+    else if (__builtin_strncmp(str, "hardware-encoder-not-available", strlen("hardware-encoder-not-available"))) {
         return HARDWARE_ENCODER_NOT_AVAILABLE;
     }
-    else if (str_equal(str, "hardware-encoder-error")) {
+    else if (__builtin_strncmp(str, "hardware-encoder-error", strlen("hardware-encoder-error"))) {
         return HARDWARE_ENCODER_ERROR;
     }
     else {
@@ -14941,10 +14933,10 @@ const char* RTCErrorDetailType::to_string(RTCErrorDetailType::Value value_) noex
 }
 
 BinaryType::Value BinaryType::from_string(const char* str) noexcept {
-    if (str_equal(str, "blob")) {
+    if (__builtin_strncmp(str, "blob", strlen("blob"))) {
         return BLOB;
     }
-    else if (str_equal(str, "arraybuffer")) {
+    else if (__builtin_strncmp(str, "arraybuffer", strlen("arraybuffer"))) {
         return ARRAYBUFFER;
     }
     else {
@@ -14976,13 +14968,13 @@ const char* BinaryType::to_string(BinaryType::Value value_) noexcept {
 }
 
 WebTransportReliabilityMode::Value WebTransportReliabilityMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "pending")) {
+    if (__builtin_strncmp(str, "pending", strlen("pending"))) {
         return PENDING;
     }
-    else if (str_equal(str, "reliable-only")) {
+    else if (__builtin_strncmp(str, "reliable-only", strlen("reliable-only"))) {
         return RELIABLE_ONLY;
     }
-    else if (str_equal(str, "supports-unreliable")) {
+    else if (__builtin_strncmp(str, "supports-unreliable", strlen("supports-unreliable"))) {
         return SUPPORTS_UNRELIABLE;
     }
     else {
@@ -15016,13 +15008,13 @@ const char* WebTransportReliabilityMode::to_string(WebTransportReliabilityMode::
 }
 
 WebTransportCongestionControl::Value WebTransportCongestionControl::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "throughput")) {
+    else if (__builtin_strncmp(str, "throughput", strlen("throughput"))) {
         return THROUGHPUT;
     }
-    else if (str_equal(str, "low-latency")) {
+    else if (__builtin_strncmp(str, "low-latency", strlen("low-latency"))) {
         return LOW_LATENCY;
     }
     else {
@@ -15056,10 +15048,10 @@ const char* WebTransportCongestionControl::to_string(WebTransportCongestionContr
 }
 
 WebTransportErrorSource::Value WebTransportErrorSource::from_string(const char* str) noexcept {
-    if (str_equal(str, "stream")) {
+    if (__builtin_strncmp(str, "stream", strlen("stream"))) {
         return STREAM;
     }
-    else if (str_equal(str, "session")) {
+    else if (__builtin_strncmp(str, "session", strlen("session"))) {
         return SESSION;
     }
     else {
@@ -15091,13 +15083,13 @@ const char* WebTransportErrorSource::to_string(WebTransportErrorSource::Value va
 }
 
 USBTransferStatus::Value USBTransferStatus::from_string(const char* str) noexcept {
-    if (str_equal(str, "ok")) {
+    if (__builtin_strncmp(str, "ok", strlen("ok"))) {
         return OK;
     }
-    else if (str_equal(str, "stall")) {
+    else if (__builtin_strncmp(str, "stall", strlen("stall"))) {
         return STALL;
     }
-    else if (str_equal(str, "babble")) {
+    else if (__builtin_strncmp(str, "babble", strlen("babble"))) {
         return BABBLE;
     }
     else {
@@ -15131,13 +15123,13 @@ const char* USBTransferStatus::to_string(USBTransferStatus::Value value_) noexce
 }
 
 USBRequestType::Value USBRequestType::from_string(const char* str) noexcept {
-    if (str_equal(str, "standard")) {
+    if (__builtin_strncmp(str, "standard", strlen("standard"))) {
         return STANDARD;
     }
-    else if (str_equal(str, "class")) {
+    else if (__builtin_strncmp(str, "class", strlen("class"))) {
         return CLASS_;
     }
-    else if (str_equal(str, "vendor")) {
+    else if (__builtin_strncmp(str, "vendor", strlen("vendor"))) {
         return VENDOR;
     }
     else {
@@ -15171,16 +15163,16 @@ const char* USBRequestType::to_string(USBRequestType::Value value_) noexcept {
 }
 
 USBRecipient::Value USBRecipient::from_string(const char* str) noexcept {
-    if (str_equal(str, "device")) {
+    if (__builtin_strncmp(str, "device", strlen("device"))) {
         return DEVICE;
     }
-    else if (str_equal(str, "interface")) {
+    else if (__builtin_strncmp(str, "interface", strlen("interface"))) {
         return INTERFACE;
     }
-    else if (str_equal(str, "endpoint")) {
+    else if (__builtin_strncmp(str, "endpoint", strlen("endpoint"))) {
         return ENDPOINT;
     }
-    else if (str_equal(str, "other")) {
+    else if (__builtin_strncmp(str, "other", strlen("other"))) {
         return OTHER;
     }
     else {
@@ -15216,10 +15208,10 @@ const char* USBRecipient::to_string(USBRecipient::Value value_) noexcept {
 }
 
 USBDirection::Value USBDirection::from_string(const char* str) noexcept {
-    if (str_equal(str, "in")) {
+    if (__builtin_strncmp(str, "in", strlen("in"))) {
         return IN;
     }
-    else if (str_equal(str, "out")) {
+    else if (__builtin_strncmp(str, "out", strlen("out"))) {
         return OUT;
     }
     else {
@@ -15251,13 +15243,13 @@ const char* USBDirection::to_string(USBDirection::Value value_) noexcept {
 }
 
 USBEndpointType::Value USBEndpointType::from_string(const char* str) noexcept {
-    if (str_equal(str, "bulk")) {
+    if (__builtin_strncmp(str, "bulk", strlen("bulk"))) {
         return BULK;
     }
-    else if (str_equal(str, "interrupt")) {
+    else if (__builtin_strncmp(str, "interrupt", strlen("interrupt"))) {
         return INTERRUPT;
     }
-    else if (str_equal(str, "isochronous")) {
+    else if (__builtin_strncmp(str, "isochronous", strlen("isochronous"))) {
         return ISOCHRONOUS;
     }
     else {
@@ -15291,7 +15283,7 @@ const char* USBEndpointType::to_string(USBEndpointType::Value value_) noexcept {
 }
 
 AutoKeyword::Value AutoKeyword::from_string(const char* str) noexcept {
-    if (str_equal(str, "auto")) {
+    if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
     else {
@@ -15321,13 +15313,13 @@ const char* AutoKeyword::to_string(AutoKeyword::Value value_) noexcept {
 }
 
 DirectionSetting::Value DirectionSetting::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "rl")) {
+    else if (__builtin_strncmp(str, "rl", strlen("rl"))) {
         return RL;
     }
-    else if (str_equal(str, "lr")) {
+    else if (__builtin_strncmp(str, "lr", strlen("lr"))) {
         return LR;
     }
     else {
@@ -15361,13 +15353,13 @@ const char* DirectionSetting::to_string(DirectionSetting::Value value_) noexcept
 }
 
 LineAlignSetting::Value LineAlignSetting::from_string(const char* str) noexcept {
-    if (str_equal(str, "start")) {
+    if (__builtin_strncmp(str, "start", strlen("start"))) {
         return START;
     }
-    else if (str_equal(str, "center")) {
+    else if (__builtin_strncmp(str, "center", strlen("center"))) {
         return CENTER;
     }
-    else if (str_equal(str, "end")) {
+    else if (__builtin_strncmp(str, "end", strlen("end"))) {
         return END;
     }
     else {
@@ -15401,16 +15393,16 @@ const char* LineAlignSetting::to_string(LineAlignSetting::Value value_) noexcept
 }
 
 PositionAlignSetting::Value PositionAlignSetting::from_string(const char* str) noexcept {
-    if (str_equal(str, "line-left")) {
+    if (__builtin_strncmp(str, "line-left", strlen("line-left"))) {
         return LINE_LEFT;
     }
-    else if (str_equal(str, "center")) {
+    else if (__builtin_strncmp(str, "center", strlen("center"))) {
         return CENTER;
     }
-    else if (str_equal(str, "line-right")) {
+    else if (__builtin_strncmp(str, "line-right", strlen("line-right"))) {
         return LINE_RIGHT;
     }
-    else if (str_equal(str, "auto")) {
+    else if (__builtin_strncmp(str, "auto", strlen("auto"))) {
         return AUTO_;
     }
     else {
@@ -15446,19 +15438,19 @@ const char* PositionAlignSetting::to_string(PositionAlignSetting::Value value_) 
 }
 
 AlignSetting::Value AlignSetting::from_string(const char* str) noexcept {
-    if (str_equal(str, "start")) {
+    if (__builtin_strncmp(str, "start", strlen("start"))) {
         return START;
     }
-    else if (str_equal(str, "center")) {
+    else if (__builtin_strncmp(str, "center", strlen("center"))) {
         return CENTER;
     }
-    else if (str_equal(str, "end")) {
+    else if (__builtin_strncmp(str, "end", strlen("end"))) {
         return END;
     }
-    else if (str_equal(str, "left")) {
+    else if (__builtin_strncmp(str, "left", strlen("left"))) {
         return LEFT;
     }
-    else if (str_equal(str, "right")) {
+    else if (__builtin_strncmp(str, "right", strlen("right"))) {
         return RIGHT;
     }
     else {
@@ -15496,10 +15488,10 @@ const char* AlignSetting::to_string(AlignSetting::Value value_) noexcept {
 }
 
 ScrollSetting::Value ScrollSetting::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "up")) {
+    else if (__builtin_strncmp(str, "up", strlen("up"))) {
         return UP;
     }
     else {
@@ -15531,13 +15523,13 @@ const char* ScrollSetting::to_string(ScrollSetting::Value value_) noexcept {
 }
 
 XREnvironmentBlendMode::Value XREnvironmentBlendMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "opaque")) {
+    if (__builtin_strncmp(str, "opaque", strlen("opaque"))) {
         return OPAQUE;
     }
-    else if (str_equal(str, "alpha-blend")) {
+    else if (__builtin_strncmp(str, "alpha-blend", strlen("alpha-blend"))) {
         return ALPHA_BLEND;
     }
-    else if (str_equal(str, "additive")) {
+    else if (__builtin_strncmp(str, "additive", strlen("additive"))) {
         return ADDITIVE;
     }
     else {
@@ -15571,10 +15563,10 @@ const char* XREnvironmentBlendMode::to_string(XREnvironmentBlendMode::Value valu
 }
 
 XRInteractionMode::Value XRInteractionMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "screen-space")) {
+    if (__builtin_strncmp(str, "screen-space", strlen("screen-space"))) {
         return SCREEN_SPACE;
     }
-    else if (str_equal(str, "world-space")) {
+    else if (__builtin_strncmp(str, "world-space", strlen("world-space"))) {
         return WORLD_SPACE;
     }
     else {
@@ -15606,10 +15598,10 @@ const char* XRInteractionMode::to_string(XRInteractionMode::Value value_) noexce
 }
 
 XRDepthType::Value XRDepthType::from_string(const char* str) noexcept {
-    if (str_equal(str, "raw")) {
+    if (__builtin_strncmp(str, "raw", strlen("raw"))) {
         return RAW;
     }
-    else if (str_equal(str, "smooth")) {
+    else if (__builtin_strncmp(str, "smooth", strlen("smooth"))) {
         return SMOOTH;
     }
     else {
@@ -15641,10 +15633,10 @@ const char* XRDepthType::to_string(XRDepthType::Value value_) noexcept {
 }
 
 XRDepthUsage::Value XRDepthUsage::from_string(const char* str) noexcept {
-    if (str_equal(str, "cpu-optimized")) {
+    if (__builtin_strncmp(str, "cpu-optimized", strlen("cpu-optimized"))) {
         return CPU_OPTIMIZED;
     }
-    else if (str_equal(str, "gpu-optimized")) {
+    else if (__builtin_strncmp(str, "gpu-optimized", strlen("gpu-optimized"))) {
         return GPU_OPTIMIZED;
     }
     else {
@@ -15676,13 +15668,13 @@ const char* XRDepthUsage::to_string(XRDepthUsage::Value value_) noexcept {
 }
 
 XRDepthDataFormat::Value XRDepthDataFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "luminance-alpha")) {
+    if (__builtin_strncmp(str, "luminance-alpha", strlen("luminance-alpha"))) {
         return LUMINANCE_ALPHA;
     }
-    else if (str_equal(str, "float32")) {
+    else if (__builtin_strncmp(str, "float32", strlen("float32"))) {
         return FLOAT32;
     }
-    else if (str_equal(str, "unsigned-short")) {
+    else if (__builtin_strncmp(str, "unsigned-short", strlen("unsigned-short"))) {
         return UNSIGNED_SHORT;
     }
     else {
@@ -15716,13 +15708,13 @@ const char* XRDepthDataFormat::to_string(XRDepthDataFormat::Value value_) noexce
 }
 
 XRDOMOverlayType::Value XRDOMOverlayType::from_string(const char* str) noexcept {
-    if (str_equal(str, "screen")) {
+    if (__builtin_strncmp(str, "screen", strlen("screen"))) {
         return SCREEN;
     }
-    else if (str_equal(str, "floating")) {
+    else if (__builtin_strncmp(str, "floating", strlen("floating"))) {
         return FLOATING;
     }
-    else if (str_equal(str, "head-locked")) {
+    else if (__builtin_strncmp(str, "head-locked", strlen("head-locked"))) {
         return HEAD_LOCKED;
     }
     else {
@@ -15756,79 +15748,79 @@ const char* XRDOMOverlayType::to_string(XRDOMOverlayType::Value value_) noexcept
 }
 
 XRHandJoint::Value XRHandJoint::from_string(const char* str) noexcept {
-    if (str_equal(str, "wrist")) {
+    if (__builtin_strncmp(str, "wrist", strlen("wrist"))) {
         return WRIST;
     }
-    else if (str_equal(str, "thumb-metacarpal")) {
+    else if (__builtin_strncmp(str, "thumb-metacarpal", strlen("thumb-metacarpal"))) {
         return THUMB_METACARPAL;
     }
-    else if (str_equal(str, "thumb-phalanx-proximal")) {
+    else if (__builtin_strncmp(str, "thumb-phalanx-proximal", strlen("thumb-phalanx-proximal"))) {
         return THUMB_PHALANX_PROXIMAL;
     }
-    else if (str_equal(str, "thumb-phalanx-distal")) {
+    else if (__builtin_strncmp(str, "thumb-phalanx-distal", strlen("thumb-phalanx-distal"))) {
         return THUMB_PHALANX_DISTAL;
     }
-    else if (str_equal(str, "thumb-tip")) {
+    else if (__builtin_strncmp(str, "thumb-tip", strlen("thumb-tip"))) {
         return THUMB_TIP;
     }
-    else if (str_equal(str, "index-finger-metacarpal")) {
+    else if (__builtin_strncmp(str, "index-finger-metacarpal", strlen("index-finger-metacarpal"))) {
         return INDEX_FINGER_METACARPAL;
     }
-    else if (str_equal(str, "index-finger-phalanx-proximal")) {
+    else if (__builtin_strncmp(str, "index-finger-phalanx-proximal", strlen("index-finger-phalanx-proximal"))) {
         return INDEX_FINGER_PHALANX_PROXIMAL;
     }
-    else if (str_equal(str, "index-finger-phalanx-intermediate")) {
+    else if (__builtin_strncmp(str, "index-finger-phalanx-intermediate", strlen("index-finger-phalanx-intermediate"))) {
         return INDEX_FINGER_PHALANX_INTERMEDIATE;
     }
-    else if (str_equal(str, "index-finger-phalanx-distal")) {
+    else if (__builtin_strncmp(str, "index-finger-phalanx-distal", strlen("index-finger-phalanx-distal"))) {
         return INDEX_FINGER_PHALANX_DISTAL;
     }
-    else if (str_equal(str, "index-finger-tip")) {
+    else if (__builtin_strncmp(str, "index-finger-tip", strlen("index-finger-tip"))) {
         return INDEX_FINGER_TIP;
     }
-    else if (str_equal(str, "middle-finger-metacarpal")) {
+    else if (__builtin_strncmp(str, "middle-finger-metacarpal", strlen("middle-finger-metacarpal"))) {
         return MIDDLE_FINGER_METACARPAL;
     }
-    else if (str_equal(str, "middle-finger-phalanx-proximal")) {
+    else if (__builtin_strncmp(str, "middle-finger-phalanx-proximal", strlen("middle-finger-phalanx-proximal"))) {
         return MIDDLE_FINGER_PHALANX_PROXIMAL;
     }
-    else if (str_equal(str, "middle-finger-phalanx-intermediate")) {
+    else if (__builtin_strncmp(str, "middle-finger-phalanx-intermediate", strlen("middle-finger-phalanx-intermediate"))) {
         return MIDDLE_FINGER_PHALANX_INTERMEDIATE;
     }
-    else if (str_equal(str, "middle-finger-phalanx-distal")) {
+    else if (__builtin_strncmp(str, "middle-finger-phalanx-distal", strlen("middle-finger-phalanx-distal"))) {
         return MIDDLE_FINGER_PHALANX_DISTAL;
     }
-    else if (str_equal(str, "middle-finger-tip")) {
+    else if (__builtin_strncmp(str, "middle-finger-tip", strlen("middle-finger-tip"))) {
         return MIDDLE_FINGER_TIP;
     }
-    else if (str_equal(str, "ring-finger-metacarpal")) {
+    else if (__builtin_strncmp(str, "ring-finger-metacarpal", strlen("ring-finger-metacarpal"))) {
         return RING_FINGER_METACARPAL;
     }
-    else if (str_equal(str, "ring-finger-phalanx-proximal")) {
+    else if (__builtin_strncmp(str, "ring-finger-phalanx-proximal", strlen("ring-finger-phalanx-proximal"))) {
         return RING_FINGER_PHALANX_PROXIMAL;
     }
-    else if (str_equal(str, "ring-finger-phalanx-intermediate")) {
+    else if (__builtin_strncmp(str, "ring-finger-phalanx-intermediate", strlen("ring-finger-phalanx-intermediate"))) {
         return RING_FINGER_PHALANX_INTERMEDIATE;
     }
-    else if (str_equal(str, "ring-finger-phalanx-distal")) {
+    else if (__builtin_strncmp(str, "ring-finger-phalanx-distal", strlen("ring-finger-phalanx-distal"))) {
         return RING_FINGER_PHALANX_DISTAL;
     }
-    else if (str_equal(str, "ring-finger-tip")) {
+    else if (__builtin_strncmp(str, "ring-finger-tip", strlen("ring-finger-tip"))) {
         return RING_FINGER_TIP;
     }
-    else if (str_equal(str, "pinky-finger-metacarpal")) {
+    else if (__builtin_strncmp(str, "pinky-finger-metacarpal", strlen("pinky-finger-metacarpal"))) {
         return PINKY_FINGER_METACARPAL;
     }
-    else if (str_equal(str, "pinky-finger-phalanx-proximal")) {
+    else if (__builtin_strncmp(str, "pinky-finger-phalanx-proximal", strlen("pinky-finger-phalanx-proximal"))) {
         return PINKY_FINGER_PHALANX_PROXIMAL;
     }
-    else if (str_equal(str, "pinky-finger-phalanx-intermediate")) {
+    else if (__builtin_strncmp(str, "pinky-finger-phalanx-intermediate", strlen("pinky-finger-phalanx-intermediate"))) {
         return PINKY_FINGER_PHALANX_INTERMEDIATE;
     }
-    else if (str_equal(str, "pinky-finger-phalanx-distal")) {
+    else if (__builtin_strncmp(str, "pinky-finger-phalanx-distal", strlen("pinky-finger-phalanx-distal"))) {
         return PINKY_FINGER_PHALANX_DISTAL;
     }
-    else if (str_equal(str, "pinky-finger-tip")) {
+    else if (__builtin_strncmp(str, "pinky-finger-tip", strlen("pinky-finger-tip"))) {
         return PINKY_FINGER_TIP;
     }
     else {
@@ -15906,13 +15898,13 @@ const char* XRHandJoint::to_string(XRHandJoint::Value value_) noexcept {
 }
 
 XRHitTestTrackableType::Value XRHitTestTrackableType::from_string(const char* str) noexcept {
-    if (str_equal(str, "point")) {
+    if (__builtin_strncmp(str, "point", strlen("point"))) {
         return POINT;
     }
-    else if (str_equal(str, "plane")) {
+    else if (__builtin_strncmp(str, "plane", strlen("plane"))) {
         return PLANE;
     }
-    else if (str_equal(str, "mesh")) {
+    else if (__builtin_strncmp(str, "mesh", strlen("mesh"))) {
         return MESH;
     }
     else {
@@ -15946,10 +15938,10 @@ const char* XRHitTestTrackableType::to_string(XRHitTestTrackableType::Value valu
 }
 
 XRReflectionFormat::Value XRReflectionFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "srgba8")) {
+    if (__builtin_strncmp(str, "srgba8", strlen("srgba8"))) {
         return SRGBA8;
     }
-    else if (str_equal(str, "rgba16f")) {
+    else if (__builtin_strncmp(str, "rgba16f", strlen("rgba16f"))) {
         return RGBA16F;
     }
     else {
@@ -15981,10 +15973,10 @@ const char* XRReflectionFormat::to_string(XRReflectionFormat::Value value_) noex
 }
 
 XRPlaneOrientation::Value XRPlaneOrientation::from_string(const char* str) noexcept {
-    if (str_equal(str, "horizontal")) {
+    if (__builtin_strncmp(str, "horizontal", strlen("horizontal"))) {
         return HORIZONTAL;
     }
-    else if (str_equal(str, "vertical")) {
+    else if (__builtin_strncmp(str, "vertical", strlen("vertical"))) {
         return VERTICAL;
     }
     else {
@@ -16016,13 +16008,13 @@ const char* XRPlaneOrientation::to_string(XRPlaneOrientation::Value value_) noex
 }
 
 XRSessionMode::Value XRSessionMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "inline")) {
+    if (__builtin_strncmp(str, "inline", strlen("inline"))) {
         return INLINE_;
     }
-    else if (str_equal(str, "immersive-vr")) {
+    else if (__builtin_strncmp(str, "immersive-vr", strlen("immersive-vr"))) {
         return IMMERSIVE_VR;
     }
-    else if (str_equal(str, "immersive-ar")) {
+    else if (__builtin_strncmp(str, "immersive-ar", strlen("immersive-ar"))) {
         return IMMERSIVE_AR;
     }
     else {
@@ -16056,13 +16048,13 @@ const char* XRSessionMode::to_string(XRSessionMode::Value value_) noexcept {
 }
 
 XRVisibilityState::Value XRVisibilityState::from_string(const char* str) noexcept {
-    if (str_equal(str, "visible")) {
+    if (__builtin_strncmp(str, "visible", strlen("visible"))) {
         return VISIBLE;
     }
-    else if (str_equal(str, "visible-blurred")) {
+    else if (__builtin_strncmp(str, "visible-blurred", strlen("visible-blurred"))) {
         return VISIBLE_BLURRED;
     }
-    else if (str_equal(str, "hidden")) {
+    else if (__builtin_strncmp(str, "hidden", strlen("hidden"))) {
         return HIDDEN;
     }
     else {
@@ -16096,19 +16088,19 @@ const char* XRVisibilityState::to_string(XRVisibilityState::Value value_) noexce
 }
 
 XRReferenceSpaceType::Value XRReferenceSpaceType::from_string(const char* str) noexcept {
-    if (str_equal(str, "viewer")) {
+    if (__builtin_strncmp(str, "viewer", strlen("viewer"))) {
         return VIEWER;
     }
-    else if (str_equal(str, "local")) {
+    else if (__builtin_strncmp(str, "local", strlen("local"))) {
         return LOCAL;
     }
-    else if (str_equal(str, "local-floor")) {
+    else if (__builtin_strncmp(str, "local-floor", strlen("local-floor"))) {
         return LOCAL_FLOOR;
     }
-    else if (str_equal(str, "bounded-floor")) {
+    else if (__builtin_strncmp(str, "bounded-floor", strlen("bounded-floor"))) {
         return BOUNDED_FLOOR;
     }
-    else if (str_equal(str, "unbounded")) {
+    else if (__builtin_strncmp(str, "unbounded", strlen("unbounded"))) {
         return UNBOUNDED;
     }
     else {
@@ -16146,13 +16138,13 @@ const char* XRReferenceSpaceType::to_string(XRReferenceSpaceType::Value value_) 
 }
 
 XREye::Value XREye::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "left")) {
+    else if (__builtin_strncmp(str, "left", strlen("left"))) {
         return LEFT;
     }
-    else if (str_equal(str, "right")) {
+    else if (__builtin_strncmp(str, "right", strlen("right"))) {
         return RIGHT;
     }
     else {
@@ -16186,13 +16178,13 @@ const char* XREye::to_string(XREye::Value value_) noexcept {
 }
 
 XRHandedness::Value XRHandedness::from_string(const char* str) noexcept {
-    if (str_equal(str, "none")) {
+    if (__builtin_strncmp(str, "none", strlen("none"))) {
         return NONE;
     }
-    else if (str_equal(str, "left")) {
+    else if (__builtin_strncmp(str, "left", strlen("left"))) {
         return LEFT;
     }
-    else if (str_equal(str, "right")) {
+    else if (__builtin_strncmp(str, "right", strlen("right"))) {
         return RIGHT;
     }
     else {
@@ -16226,16 +16218,16 @@ const char* XRHandedness::to_string(XRHandedness::Value value_) noexcept {
 }
 
 XRTargetRayMode::Value XRTargetRayMode::from_string(const char* str) noexcept {
-    if (str_equal(str, "gaze")) {
+    if (__builtin_strncmp(str, "gaze", strlen("gaze"))) {
         return GAZE;
     }
-    else if (str_equal(str, "tracked-pointer")) {
+    else if (__builtin_strncmp(str, "tracked-pointer", strlen("tracked-pointer"))) {
         return TRACKED_POINTER;
     }
-    else if (str_equal(str, "screen")) {
+    else if (__builtin_strncmp(str, "screen", strlen("screen"))) {
         return SCREEN;
     }
-    else if (str_equal(str, "transient-pointer")) {
+    else if (__builtin_strncmp(str, "transient-pointer", strlen("transient-pointer"))) {
         return TRANSIENT_POINTER;
     }
     else {
@@ -16271,19 +16263,19 @@ const char* XRTargetRayMode::to_string(XRTargetRayMode::Value value_) noexcept {
 }
 
 XRLayerLayout::Value XRLayerLayout::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "mono")) {
+    else if (__builtin_strncmp(str, "mono", strlen("mono"))) {
         return MONO;
     }
-    else if (str_equal(str, "stereo")) {
+    else if (__builtin_strncmp(str, "stereo", strlen("stereo"))) {
         return STEREO;
     }
-    else if (str_equal(str, "stereo-left-right")) {
+    else if (__builtin_strncmp(str, "stereo-left-right", strlen("stereo-left-right"))) {
         return STEREO_LEFT_RIGHT;
     }
-    else if (str_equal(str, "stereo-top-bottom")) {
+    else if (__builtin_strncmp(str, "stereo-top-bottom", strlen("stereo-top-bottom"))) {
         return STEREO_TOP_BOTTOM;
     }
     else {
@@ -16321,13 +16313,13 @@ const char* XRLayerLayout::to_string(XRLayerLayout::Value value_) noexcept {
 }
 
 XRLayerQuality::Value XRLayerQuality::from_string(const char* str) noexcept {
-    if (str_equal(str, "default")) {
+    if (__builtin_strncmp(str, "default", strlen("default"))) {
         return DEFAULT_;
     }
-    else if (str_equal(str, "text-optimized")) {
+    else if (__builtin_strncmp(str, "text-optimized", strlen("text-optimized"))) {
         return TEXT_OPTIMIZED;
     }
-    else if (str_equal(str, "graphics-optimized")) {
+    else if (__builtin_strncmp(str, "graphics-optimized", strlen("graphics-optimized"))) {
         return GRAPHICS_OPTIMIZED;
     }
     else {
@@ -16361,10 +16353,10 @@ const char* XRLayerQuality::to_string(XRLayerQuality::Value value_) noexcept {
 }
 
 XRTextureType::Value XRTextureType::from_string(const char* str) noexcept {
-    if (str_equal(str, "texture")) {
+    if (__builtin_strncmp(str, "texture", strlen("texture"))) {
         return TEXTURE;
     }
-    else if (str_equal(str, "texture-array")) {
+    else if (__builtin_strncmp(str, "texture-array", strlen("texture-array"))) {
         return TEXTURE_ARRAY;
     }
     else {
@@ -16396,16 +16388,16 @@ const char* XRTextureType::to_string(XRTextureType::Value value_) noexcept {
 }
 
 SummarizerType::Value SummarizerType::from_string(const char* str) noexcept {
-    if (str_equal(str, "tldr")) {
+    if (__builtin_strncmp(str, "tldr", strlen("tldr"))) {
         return TLDR;
     }
-    else if (str_equal(str, "teaser")) {
+    else if (__builtin_strncmp(str, "teaser", strlen("teaser"))) {
         return TEASER;
     }
-    else if (str_equal(str, "key-points")) {
+    else if (__builtin_strncmp(str, "key-points", strlen("key-points"))) {
         return KEY_POINTS;
     }
-    else if (str_equal(str, "headline")) {
+    else if (__builtin_strncmp(str, "headline", strlen("headline"))) {
         return HEADLINE;
     }
     else {
@@ -16441,10 +16433,10 @@ const char* SummarizerType::to_string(SummarizerType::Value value_) noexcept {
 }
 
 SummarizerFormat::Value SummarizerFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "plain-text")) {
+    if (__builtin_strncmp(str, "plain-text", strlen("plain-text"))) {
         return PLAIN_TEXT;
     }
-    else if (str_equal(str, "markdown")) {
+    else if (__builtin_strncmp(str, "markdown", strlen("markdown"))) {
         return MARKDOWN;
     }
     else {
@@ -16476,13 +16468,13 @@ const char* SummarizerFormat::to_string(SummarizerFormat::Value value_) noexcept
 }
 
 SummarizerLength::Value SummarizerLength::from_string(const char* str) noexcept {
-    if (str_equal(str, "short")) {
+    if (__builtin_strncmp(str, "short", strlen("short"))) {
         return SHORT_;
     }
-    else if (str_equal(str, "medium")) {
+    else if (__builtin_strncmp(str, "medium", strlen("medium"))) {
         return MEDIUM;
     }
-    else if (str_equal(str, "long")) {
+    else if (__builtin_strncmp(str, "long", strlen("long"))) {
         return LONG_;
     }
     else {
@@ -16516,13 +16508,13 @@ const char* SummarizerLength::to_string(SummarizerLength::Value value_) noexcept
 }
 
 WriterTone::Value WriterTone::from_string(const char* str) noexcept {
-    if (str_equal(str, "formal")) {
+    if (__builtin_strncmp(str, "formal", strlen("formal"))) {
         return FORMAL;
     }
-    else if (str_equal(str, "neutral")) {
+    else if (__builtin_strncmp(str, "neutral", strlen("neutral"))) {
         return NEUTRAL;
     }
-    else if (str_equal(str, "casual")) {
+    else if (__builtin_strncmp(str, "casual", strlen("casual"))) {
         return CASUAL;
     }
     else {
@@ -16556,10 +16548,10 @@ const char* WriterTone::to_string(WriterTone::Value value_) noexcept {
 }
 
 WriterFormat::Value WriterFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "plain-text")) {
+    if (__builtin_strncmp(str, "plain-text", strlen("plain-text"))) {
         return PLAIN_TEXT;
     }
-    else if (str_equal(str, "markdown")) {
+    else if (__builtin_strncmp(str, "markdown", strlen("markdown"))) {
         return MARKDOWN;
     }
     else {
@@ -16591,13 +16583,13 @@ const char* WriterFormat::to_string(WriterFormat::Value value_) noexcept {
 }
 
 WriterLength::Value WriterLength::from_string(const char* str) noexcept {
-    if (str_equal(str, "short")) {
+    if (__builtin_strncmp(str, "short", strlen("short"))) {
         return SHORT_;
     }
-    else if (str_equal(str, "medium")) {
+    else if (__builtin_strncmp(str, "medium", strlen("medium"))) {
         return MEDIUM;
     }
-    else if (str_equal(str, "long")) {
+    else if (__builtin_strncmp(str, "long", strlen("long"))) {
         return LONG_;
     }
     else {
@@ -16631,13 +16623,13 @@ const char* WriterLength::to_string(WriterLength::Value value_) noexcept {
 }
 
 RewriterTone::Value RewriterTone::from_string(const char* str) noexcept {
-    if (str_equal(str, "as-is")) {
+    if (__builtin_strncmp(str, "as-is", strlen("as-is"))) {
         return AS_IS;
     }
-    else if (str_equal(str, "more-formal")) {
+    else if (__builtin_strncmp(str, "more-formal", strlen("more-formal"))) {
         return MORE_FORMAL;
     }
-    else if (str_equal(str, "more-casual")) {
+    else if (__builtin_strncmp(str, "more-casual", strlen("more-casual"))) {
         return MORE_CASUAL;
     }
     else {
@@ -16671,13 +16663,13 @@ const char* RewriterTone::to_string(RewriterTone::Value value_) noexcept {
 }
 
 RewriterFormat::Value RewriterFormat::from_string(const char* str) noexcept {
-    if (str_equal(str, "as-is")) {
+    if (__builtin_strncmp(str, "as-is", strlen("as-is"))) {
         return AS_IS;
     }
-    else if (str_equal(str, "plain-text")) {
+    else if (__builtin_strncmp(str, "plain-text", strlen("plain-text"))) {
         return PLAIN_TEXT;
     }
-    else if (str_equal(str, "markdown")) {
+    else if (__builtin_strncmp(str, "markdown", strlen("markdown"))) {
         return MARKDOWN;
     }
     else {
@@ -16711,13 +16703,13 @@ const char* RewriterFormat::to_string(RewriterFormat::Value value_) noexcept {
 }
 
 RewriterLength::Value RewriterLength::from_string(const char* str) noexcept {
-    if (str_equal(str, "as-is")) {
+    if (__builtin_strncmp(str, "as-is", strlen("as-is"))) {
         return AS_IS;
     }
-    else if (str_equal(str, "shorter")) {
+    else if (__builtin_strncmp(str, "shorter", strlen("shorter"))) {
         return SHORTER;
     }
-    else if (str_equal(str, "longer")) {
+    else if (__builtin_strncmp(str, "longer", strlen("longer"))) {
         return LONGER;
     }
     else {
@@ -16751,16 +16743,16 @@ const char* RewriterLength::to_string(RewriterLength::Value value_) noexcept {
 }
 
 Availability::Value Availability::from_string(const char* str) noexcept {
-    if (str_equal(str, "unavailable")) {
+    if (__builtin_strncmp(str, "unavailable", strlen("unavailable"))) {
         return UNAVAILABLE;
     }
-    else if (str_equal(str, "downloadable")) {
+    else if (__builtin_strncmp(str, "downloadable", strlen("downloadable"))) {
         return DOWNLOADABLE;
     }
-    else if (str_equal(str, "downloading")) {
+    else if (__builtin_strncmp(str, "downloading", strlen("downloading"))) {
         return DOWNLOADING;
     }
-    else if (str_equal(str, "available")) {
+    else if (__builtin_strncmp(str, "available", strlen("available"))) {
         return AVAILABLE;
     }
     else {
@@ -16796,22 +16788,22 @@ const char* Availability::to_string(Availability::Value value_) noexcept {
 }
 
 XMLHttpRequestResponseType::Value XMLHttpRequestResponseType::from_string(const char* str) noexcept {
-    if (str_equal(str, "")) {
+    if (__builtin_strncmp(str, "", strlen(""))) {
         return NONE;
     }
-    else if (str_equal(str, "arraybuffer")) {
+    else if (__builtin_strncmp(str, "arraybuffer", strlen("arraybuffer"))) {
         return ARRAYBUFFER;
     }
-    else if (str_equal(str, "blob")) {
+    else if (__builtin_strncmp(str, "blob", strlen("blob"))) {
         return BLOB;
     }
-    else if (str_equal(str, "document")) {
+    else if (__builtin_strncmp(str, "document", strlen("document"))) {
         return DOCUMENT;
     }
-    else if (str_equal(str, "json")) {
+    else if (__builtin_strncmp(str, "json", strlen("json"))) {
         return JSON;
     }
-    else if (str_equal(str, "text")) {
+    else if (__builtin_strncmp(str, "text", strlen("text"))) {
         return TEXT;
     }
     else {

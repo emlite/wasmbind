@@ -2,6 +2,8 @@
 
 using namespace jsbind;
 
+emlite::Val Any::instance() noexcept { return emlite::Val::global("Any"); }
+
 Any::Any(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 
 Any Any::take_ownership(Handle h) noexcept { return Any(h); }

@@ -23,6 +23,8 @@ class Any : public emlite::Val {
     /// @param v emlite::Val to wrap
     Any(const emlite::Val &v) noexcept;
 
+    emlite::Val instance() noexcept;
+
     /// Creates Any from any type T
     /// @param v value to wrap in Any
     template <typename T>
