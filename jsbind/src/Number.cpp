@@ -212,16 +212,7 @@ Result<BigInt, Error> Number::toBigInt() const noexcept {
     if (!isFinite()) {
         return err<BigInt, Error>(Error("Cannot convert non-finite value to BigInt"));
     }
-    
-    try {
-        auto bigint_ctor = emlite::Val::global("BigInt");
-        auto result = bigint_ctor.call("BigInt", *this);
-        BigInt bigint;
-        bigint.emlite::Val::operator=(result);
-        return ok<BigInt, Error>(emlite::detail::move(bigint));
-    } catch (...) {
-        return err<BigInt, Error>(Error("Failed to convert to BigInt"));
-    }
+    return emlite::Val::global("BigInt")(*this).as<Result<BigInt, Error>>();
 }
 
 Number Number::fromBigInt(const BigInt &bigint) noexcept {

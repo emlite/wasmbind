@@ -45,12 +45,11 @@ int main() {
     console.log(str.call("toUpperCase"));
 
     // Error handling
-    try {
-        Any bad = obj["missing"];
-        console.log(bad);
-    } catch (const Error& e) {
+    Any bad = obj["missing"];
+    console.log(bad);
+    if (bad.is_error()) {
         console.log("Caught error:");
-        console.log(e.message());
+        console.log(bad.as<Error>().message());
     }
 
     // Multiple arguments
