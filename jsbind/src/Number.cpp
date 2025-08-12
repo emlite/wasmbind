@@ -216,8 +216,7 @@ Result<BigInt, Error> Number::toBigInt() const noexcept {
 }
 
 Number Number::fromBigInt(const BigInt &bigint) noexcept {
-    Number num;
-    num.emlite::Val::operator=(emlite::Val::global("Number").call("Number", bigint));
+    Number num = emlite::Val::global("Number")(bigint).as<Number>();
     return num;
 }
 
@@ -245,13 +244,12 @@ bool Number::fitsInUint64() const noexcept {
 
 // Static utility methods
 Result<Number, Error> Number::parse(const String &str) noexcept {
-    auto result = emlite::Val::global("Number").call("Number", str);
+    auto result = emlite::Val::global("Number")(str);
     Number num(result);
     if (num.isNaN()) {
         return err<Number, Error>(Error("Failed to parse number from string"));
     }
-    Number number;
-    number.emlite::Val::operator=(num);
+    auto number = num.as<Number>();
     return ok<Number, Error>(emlite::detail::move(number));
 }
 

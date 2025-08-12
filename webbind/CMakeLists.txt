@@ -109,6 +109,7 @@ target_link_libraries(webbind PUBLIC emlite::emlite jsbind::jsbind)
 target_compile_features(webbind PUBLIC cxx_std_20)
 target_precompile_headers(webbind PRIVATE
     <jsbind/jsbind.hpp>
+    <webbind/enums.hpp>
 )
 add_library(webbind::webbind ALIAS webbind)
 

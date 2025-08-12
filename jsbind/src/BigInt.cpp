@@ -67,114 +67,110 @@ String BigInt::valueOf() const noexcept { return call("valueOf").as<String>(); }
 String BigInt::toLocaleString() const noexcept { return call("toLocaleString").as<String>(); }
 
 BigInt BigInt::operator+(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " + " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) + EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator-(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " - " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) - EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator*(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " * " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) * EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator/(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " / " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) / EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator%(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " % " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) %% EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::pow(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " ** " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) ** EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator&(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " & " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) & EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator|(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " | " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) | EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator^(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " ^ " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) ^ EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator<<(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " << " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) << EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator>>(const BigInt &other) const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(
-            String((toString().toString() + " >> " + other.toString().toString()).c_str())
-        )
-            .as_handle()
-    );
+    return emlite::emlite_eval_cpp(
+               "(EMLITE_VALMAP.toValue(%d) >> EMLITE_VALMAP.toValue(%d))",
+               as_handle(),
+               other.as_handle()
+    )
+        .as<BigInt>();
 }
 
 BigInt BigInt::operator-() const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(String(("-" + toString().toString()).c_str())).as_handle()
-    );
+    return emlite::emlite_eval_cpp("(-EMLITE_VALMAP.toValue(%d))", as_handle()).as<BigInt>();
 }
 
 BigInt BigInt::operator~() const noexcept {
-    return BigInt::take_ownership(
-        emlite::Val::global("eval")(String(("~" + toString().toString()).c_str())).as_handle()
-    );
+    return emlite::emlite_eval_cpp("(~EMLITE_VALMAP.toValue(%d))", as_handle()).as<BigInt>();
 }
 
 BigInt &BigInt::operator+=(const BigInt &other) noexcept {
@@ -227,33 +223,13 @@ BigInt &BigInt::operator>>=(const BigInt &other) noexcept {
     return *this;
 }
 
-bool BigInt::operator<(const BigInt &other) const noexcept {
-    return emlite::Val::global("eval")(
-               String((toString().toString() + " < " + other.toString().toString()).c_str())
-    )
-        .as<bool>();
-}
+bool BigInt::operator<(const BigInt &other) const noexcept { return *this < other; }
 
-bool BigInt::operator>(const BigInt &other) const noexcept {
-    return emlite::Val::global("eval")(
-               String((toString().toString() + " > " + other.toString().toString()).c_str())
-    )
-        .as<bool>();
-}
+bool BigInt::operator>(const BigInt &other) const noexcept { return *this > other; }
 
-bool BigInt::operator<=(const BigInt &other) const noexcept {
-    return emlite::Val::global("eval")(
-               String((toString().toString() + " <= " + other.toString().toString()).c_str())
-    )
-        .as<bool>();
-}
+bool BigInt::operator<=(const BigInt &other) const noexcept { return *this <= other; }
 
-bool BigInt::operator>=(const BigInt &other) const noexcept {
-    return emlite::Val::global("eval")(
-               String((toString().toString() + " >= " + other.toString().toString()).c_str())
-    )
-        .as<bool>();
-}
+bool BigInt::operator>=(const BigInt &other) const noexcept { return *this <= other; }
 
 BigInt BigInt::asIntN(int width, const BigInt &bigint) noexcept {
     return BigInt::take_ownership(
