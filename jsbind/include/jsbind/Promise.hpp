@@ -124,7 +124,7 @@ class Promise : public emlite::Val {
                     has_error_ = false;
                     handle.resume();
                 }),
-                Function::Fn<void(Any)>([handle](Any error) mutable {
+                Function::Fn<void(Any)>([this, handle](Any error) mutable {
                     // Store the error to be thrown in await_resume
                     error_ = error;
                     // Convert the rejection reason to an Error object
