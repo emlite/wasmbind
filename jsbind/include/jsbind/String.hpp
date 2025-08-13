@@ -98,8 +98,8 @@ class String : public emlite::Val {
     [[nodiscard]] String charAt(size_t i) const noexcept;
 
     /// Converts string to C string
-    /// @returns pointer to null-terminated C string
-    [[nodiscard]] char *c_str() const noexcept;
+    /// @returns owned pointer to null-terminated C string
+    [[nodiscard]] emlite::Uniq<char[]> c_str() const noexcept;
 
     /// Gets the length of the string
     /// @returns number of characters

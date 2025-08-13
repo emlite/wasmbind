@@ -40,7 +40,7 @@ Option<std::string> String::str() const {
 Option<std::u16string> String::u16str() const {
     auto temp = as<Uniq<char16_t[]>>();
     if (temp.get())
-        return std::u16string(temp.release());
+        return std::u16string(temp.get());
     else
         return nullopt;
 }
@@ -48,11 +48,16 @@ Option<std::u16string> String::u16str() const {
 
 size_t String::size() const { return length(); }
 bool String::empty() const noexcept { return length() == 0; }
-char String::operator[](size_t i) const { return as<Uniq<char[]>>().get()[i]; }
+char String::operator[](size_t i) const { 
+    auto ptr = as<Uniq<char[]>>().get();
+    if (!ptr || i >= length()) return '\0';
+    return ptr[i]; 
+}
 
 size_t String::byteLen() const noexcept {
-    const char *str = c_str();
-    size_t len      = 0;
+    auto str_ptr = c_str();
+    const char *str = str_ptr.get();
+    size_t len = 0;
     while (str && str[len] != '\0')
         ++len;
     return len;
@@ -64,15 +69,14 @@ String String::charAt(size_t i) const noexcept {
     return String(this->call("charAt", i));
 }
 
-char *String::c_str() const noexcept {
-    // Assumes emlite::Val provides a way to get a C string
-    // view
-    return as<Uniq<char[]>>().release();
+emlite::Uniq<char[]> String::c_str() const noexcept {
+    // Returns owned C string data
+    return as<emlite::Uniq<char[]>>();
 }
 
 size_t String::length() const noexcept {
     // JS: String.length is number of UTF-16 code units
-    return this->get("length").as<size_t>();
+    return emlite::Val::get("length").as<size_t>();
 }
 
 int String::charCodeAt(size_t idx) const noexcept {
@@ -82,7 +86,9 @@ int String::charCodeAt(size_t idx) const noexcept {
     return v.as<int>();
 }
 
-void String::set(size_t idx, char val) noexcept { this->set(idx, val); }
+void String::set(size_t idx, char val) noexcept { 
+    emlite::Val::set(idx, emlite::Val(val)); 
+}
 
 String String::at(int idx) const noexcept {
     // JS: String.prototype.at returns a string (possibly

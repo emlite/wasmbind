@@ -361,7 +361,7 @@ class TypedArray : public emlite::Val {
     std::vector<T> to_vector() const {
         std::vector<T> vec;
         for (size_t i = 0; i < this->size(); i++) {
-            vec.push_back(this->get(i).template as<T>());
+            vec.push_back(emlite::Val::get(i).template as<T>());
         }
         return vec;
     }

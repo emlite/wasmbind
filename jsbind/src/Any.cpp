@@ -16,9 +16,9 @@ Any Any::undefined() noexcept { return Any{emlite::Val::undefined()}; }
 
 Any Any::null() noexcept { return Any{emlite::Val::null()}; }
 
-[[nodiscard]] bool Any::isUndefined() const { return as_handle() == 1; }
-[[nodiscard]] bool Any::isNull() const { return as_handle() == 0; }
+[[nodiscard]] bool Any::isUndefined() const { return is_undefined(); }
+[[nodiscard]] bool Any::isNull() const { return is_null(); }
 
-Any::operator bool() const { return as_handle() > 3; }
+Any::operator bool() const { return !is_null() && !is_undefined() && !operator!(); }
 
 DEFINE_CLONE(Any)
