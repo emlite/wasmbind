@@ -25,6 +25,25 @@ bool ArrayBuffer::isView(const emlite::Val &v) {
     return emlite::Val::global("ArrayBuffer").call("isView", v).as<bool>();
 }
 
+SharedArrayBuffer::SharedArrayBuffer(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
+
+SharedArrayBuffer SharedArrayBuffer::take_ownership(Handle h) noexcept { return SharedArrayBuffer(h); }
+
+SharedArrayBuffer::SharedArrayBuffer(size_t byteLen)
+    : emlite::Val(emlite::Val::global("SharedArrayBuffer").new_(byteLen)) {}
+
+emlite::Val SharedArrayBuffer::instance() noexcept { return emlite::Val::global("SharedArrayBuffer"); }
+
+size_t SharedArrayBuffer::byteLength() const { return emlite::Val::get("byteLength").as<size_t>(); }
+
+SharedArrayBuffer SharedArrayBuffer::slice(size_t begin, size_t end) const {
+    return emlite::Val::call("slice", begin, end).as<SharedArrayBuffer>();
+}
+
+bool SharedArrayBuffer::isView(const emlite::Val &v) {
+    return emlite::Val::global("SharedArrayBuffer").call("isView", v).as<bool>();
+}
+
 DEFINE_ARRAY(Uint8Array, uint8_t)
 
 DEFINE_ARRAY(Int8Array, int8_t)

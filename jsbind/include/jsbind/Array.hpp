@@ -63,6 +63,48 @@ class ArrayBuffer : public emlite::Val {
     [[nodiscard]] ArrayBuffer slice(size_t begin, size_t end = SIZE_MAX) const;
 };
 
+/// Wrapper for JavaScript SharedArrayBuffer objects
+///
+/// SharedArrayBuffer represents a raw binary data buffer, used as the backing
+/// store for TypedArray views. It provides methods for creating buffers,
+/// checking buffer properties, and creating slices.
+class SharedArrayBuffer : public emlite::Val {
+    explicit SharedArrayBuffer(Handle h) noexcept;
+
+  public:
+    /// Creates SharedArrayBuffer from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns SharedArrayBuffer wrapper object
+    static SharedArrayBuffer take_ownership(Handle h) noexcept;
+
+    /// Creates SharedArrayBuffer from an emlite::Val
+    /// @param v emlite::Val to wrap
+    explicit SharedArrayBuffer(const emlite::Val &v) noexcept;
+
+    /// Gets the SharedArrayBuffer constructor function
+    /// @returns emlite::Val representing the SharedArrayBuffer constructor
+    static emlite::Val instance() noexcept;
+
+    /// Creates SharedArrayBuffer with specified byte length
+    /// @param byteLen size in bytes
+    explicit SharedArrayBuffer(size_t byteLen);
+
+    /// Checks if a value is an SharedArrayBuffer view
+    /// @param v value to check
+    /// @returns true if value is a TypedArray or DataView
+    static bool isView(const emlite::Val &v);
+
+    /// Gets the byte length of the buffer
+    /// @returns buffer size in bytes
+    [[nodiscard]] size_t byteLength() const;
+
+    /// Creates a slice of the buffer
+    /// @param begin start byte offset
+    /// @param end end byte offset (SIZE_MAX for end of buffer)
+    /// @returns new SharedArrayBuffer containing the slice
+    [[nodiscard]] SharedArrayBuffer slice(size_t begin, size_t end = SIZE_MAX) const;
+};
+
 /// Generic wrapper for JavaScript TypedArray objects
 ///
 /// TypedArray provides a C++ interface for JavaScript typed arrays like
