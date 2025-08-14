@@ -28,6 +28,10 @@ public:
     [[nodiscard]] jsbind::String body() const;
     /// Setter of the `body` attribute.
     void body(const jsbind::String& value);
+    /// Getter of the `navigate` attribute.
+    [[nodiscard]] jsbind::String navigate() const;
+    /// Setter of the `navigate` attribute.
+    void navigate(const jsbind::String& value);
     /// Getter of the `tag` attribute.
     [[nodiscard]] jsbind::String tag() const;
     /// Setter of the `tag` attribute.

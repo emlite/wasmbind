@@ -18,6 +18,10 @@ public:
     [[nodiscard]] SFrameTransformRole role() const;
     /// Setter of the `role` attribute.
     void role(const SFrameTransformRole& value);
+    /// Getter of the `cipherSuite` attribute.
+    [[nodiscard]] SFrameCipherSuite cipherSuite() const;
+    /// Setter of the `cipherSuite` attribute.
+    void cipherSuite(const SFrameCipherSuite& value);
 };
 
 } // namespace webbind

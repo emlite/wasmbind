@@ -1,6 +1,6 @@
 #include <webbind/SpeechRecognition.hpp>
 #include <webbind/SpeechGrammarList.hpp>
-#include <webbind/SpeechRecognitionPhraseList.hpp>
+#include <webbind/SpeechRecognitionPhrase.hpp>
 #include <webbind/MediaStreamTrack.hpp>
 #include <webbind/SpeechRecognitionOptions.hpp>
 
@@ -68,11 +68,11 @@ void SpeechRecognition::processLocally(bool value) {
     EventTarget::set("processLocally", value);
 }
 
-SpeechRecognitionPhraseList SpeechRecognition::phrases() const {
-    return EventTarget::get("phrases").as<SpeechRecognitionPhraseList>();
+jsbind::TypedArray<SpeechRecognitionPhrase> SpeechRecognition::phrases() const {
+    return EventTarget::get("phrases").as<jsbind::TypedArray<SpeechRecognitionPhrase>>();
 }
 
-void SpeechRecognition::phrases(const SpeechRecognitionPhraseList& value) {
+void SpeechRecognition::phrases(const jsbind::TypedArray<SpeechRecognitionPhrase>& value) {
     EventTarget::set("phrases", value);
 }
 

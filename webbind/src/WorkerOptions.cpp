@@ -13,6 +13,14 @@ WorkerOptions::WorkerOptions() noexcept: emlite::Val(emlite::Val::object()) {}
 
 WorkerOptions WorkerOptions::clone() const noexcept { return *this; }
 
+jsbind::String WorkerOptions::name() const {
+    return emlite::Val::get("name").as<jsbind::String>();
+}
+
+void WorkerOptions::name(const jsbind::String& value) {
+    emlite::Val::set("name", value);
+}
+
 WorkerType WorkerOptions::type() const {
     return emlite::Val::get("type").as<WorkerType>();
 }
@@ -27,14 +35,6 @@ RequestCredentials WorkerOptions::credentials() const {
 
 void WorkerOptions::credentials(const RequestCredentials& value) {
     emlite::Val::set("credentials", value);
-}
-
-jsbind::String WorkerOptions::name() const {
-    return emlite::Val::get("name").as<jsbind::String>();
-}
-
-void WorkerOptions::name(const jsbind::String& value) {
-    emlite::Val::set("name", value);
 }
 
 

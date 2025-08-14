@@ -84,6 +84,10 @@ jsbind::String Notification::body() const {
     return EventTarget::get("body").as<jsbind::String>();
 }
 
+jsbind::String Notification::navigate() const {
+    return EventTarget::get("navigate").as<jsbind::String>();
+}
+
 jsbind::String Notification::tag() const {
     return EventTarget::get("tag").as<jsbind::String>();
 }

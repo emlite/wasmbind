@@ -22,10 +22,12 @@ class Viewport;
 class MediaQueryList;
 class Screen;
 class VisualViewport;
-class CSSStyleDeclaration;
+class CSSStyleProperties;
 class DigitalGoodsService;
 class DocumentPictureInPicture;
 class Fence;
+class FetchLaterResult;
+class DeferredRequestInit;
 class FileSystemFileHandle;
 class OpenFilePickerOptions;
 class SaveFilePickerOptions;
@@ -280,10 +282,10 @@ public:
     [[nodiscard]] double devicePixelRatio() const;
     /// The getComputedStyle method.
     /// [`Window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
-    CSSStyleDeclaration getComputedStyle(const Element& elt);
+    CSSStyleProperties getComputedStyle(const Element& elt);
     /// The getComputedStyle method.
     /// [`Window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
-    CSSStyleDeclaration getComputedStyle(const Element& elt, const jsbind::String& pseudoElt);
+    CSSStyleProperties getComputedStyle(const Element& elt, const jsbind::String& pseudoElt);
     /// The getDigitalGoodsService method.
     /// [`Window.getDigitalGoodsService`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getDigitalGoodsService)
     jsbind::Promise<DigitalGoodsService> getDigitalGoodsService(const jsbind::String& serviceProvider);
@@ -296,6 +298,12 @@ public:
     /// [`Window.fence`](https://developer.mozilla.org/en-US/docs/Web/API/Window/fence)
     /// [`Window.fence`](https://developer.mozilla.org/en-US/docs/Web/API/Window/fence)
     [[nodiscard]] Fence fence() const;
+    /// The fetchLater method.
+    /// [`Window.fetchLater`](https://developer.mozilla.org/en-US/docs/Web/API/Window/fetchLater)
+    FetchLaterResult fetchLater(const jsbind::Any& input);
+    /// The fetchLater method.
+    /// [`Window.fetchLater`](https://developer.mozilla.org/en-US/docs/Web/API/Window/fetchLater)
+    FetchLaterResult fetchLater(const jsbind::Any& input, const DeferredRequestInit& init);
     /// The showOpenFilePicker method.
     /// [`Window.showOpenFilePicker`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker)
     jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>> showOpenFilePicker();

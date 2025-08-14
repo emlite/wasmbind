@@ -9,6 +9,7 @@ namespace webbind {
 
 class IDBObjectStore;
 class IDBRequest;
+class IDBGetAllOptions;
 
 /// Interface IDBIndex
 /// [`IDBIndex`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex)
@@ -48,19 +49,25 @@ public:
     IDBRequest getAll();
     /// The getAll method.
     /// [`IDBIndex.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAll)
-    IDBRequest getAll(const jsbind::Any& query);
+    IDBRequest getAll(const jsbind::Any& queryOrOptions);
     /// The getAll method.
     /// [`IDBIndex.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAll)
-    IDBRequest getAll(const jsbind::Any& query, unsigned long count);
+    IDBRequest getAll(const jsbind::Any& queryOrOptions, unsigned long count);
     /// The getAllKeys method.
     /// [`IDBIndex.getAllKeys`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllKeys)
     IDBRequest getAllKeys();
     /// The getAllKeys method.
     /// [`IDBIndex.getAllKeys`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllKeys)
-    IDBRequest getAllKeys(const jsbind::Any& query);
+    IDBRequest getAllKeys(const jsbind::Any& queryOrOptions);
     /// The getAllKeys method.
     /// [`IDBIndex.getAllKeys`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllKeys)
-    IDBRequest getAllKeys(const jsbind::Any& query, unsigned long count);
+    IDBRequest getAllKeys(const jsbind::Any& queryOrOptions, unsigned long count);
+    /// The getAllRecords method.
+    /// [`IDBIndex.getAllRecords`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllRecords)
+    IDBRequest getAllRecords();
+    /// The getAllRecords method.
+    /// [`IDBIndex.getAllRecords`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllRecords)
+    IDBRequest getAllRecords(const IDBGetAllOptions& options);
     /// The count method.
     /// [`IDBIndex.count`](https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/count)
     IDBRequest count();

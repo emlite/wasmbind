@@ -10,7 +10,7 @@ namespace webbind {
 class ElementInternals;
 class ShowPopoverOptions;
 class EditContext;
-class CSSStyleDeclaration;
+class CSSStyleProperties;
 class DOMStringMap;
 class FocusOptions;
 
@@ -165,7 +165,7 @@ public:
     void editContext(const EditContext& value);
     /// [`HTMLElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
     /// [`HTMLElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
-    [[nodiscard]] CSSStyleDeclaration style() const;
+    [[nodiscard]] CSSStyleProperties style() const;
     /// [`HTMLElement.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/onbeforexrselect)
     /// [`HTMLElement.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/onbeforexrselect)
     [[nodiscard]] jsbind::Any onbeforexrselect() const;

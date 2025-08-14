@@ -1,4 +1,5 @@
 #include <webbind/AttributionConversionOptions.hpp>
+#include <webbind/AttributionLogicOptions.hpp>
 
 namespace webbind {
 
@@ -75,6 +76,14 @@ AttributionLogic AttributionConversionOptions::logic() const {
 
 void AttributionConversionOptions::logic(const AttributionLogic& value) {
     emlite::Val::set("logic", value);
+}
+
+AttributionLogicOptions AttributionConversionOptions::logicOptions() const {
+    return emlite::Val::get("logicOptions").as<AttributionLogicOptions>();
+}
+
+void AttributionConversionOptions::logicOptions(const AttributionLogicOptions& value) {
+    emlite::Val::set("logicOptions", value);
 }
 
 unsigned long AttributionConversionOptions::value() const {

@@ -1,5 +1,5 @@
 #include <webbind/MathMLElement.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
+#include <webbind/CSSStyleProperties.hpp>
 #include <webbind/DOMStringMap.hpp>
 #include <webbind/FocusOptions.hpp>
 
@@ -17,8 +17,8 @@ MathMLElement::MathMLElement(Handle h) noexcept : Element(emlite::Val::take_owne
 
 MathMLElement::MathMLElement(const emlite::Val &val) noexcept: Element(val) {}
 
-CSSStyleDeclaration MathMLElement::style() const {
-    return Element::get("style").as<CSSStyleDeclaration>();
+CSSStyleProperties MathMLElement::style() const {
+    return Element::get("style").as<CSSStyleProperties>();
 }
 
 jsbind::Any MathMLElement::onbeforexrselect() const {

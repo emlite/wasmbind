@@ -21,5 +21,13 @@ void SFrameTransformOptions::role(const SFrameTransformRole& value) {
     emlite::Val::set("role", value);
 }
 
+SFrameCipherSuite SFrameTransformOptions::cipherSuite() const {
+    return emlite::Val::get("cipherSuite").as<SFrameCipherSuite>();
+}
+
+void SFrameTransformOptions::cipherSuite(const SFrameCipherSuite& value) {
+    emlite::Val::set("cipherSuite", value);
+}
+
 
 } // namespace webbind

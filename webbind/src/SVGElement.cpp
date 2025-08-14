@@ -5,7 +5,7 @@
 #include <webbind/SVGUseElement.hpp>
 #include <webbind/DOMStringMap.hpp>
 #include <webbind/FocusOptions.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
+#include <webbind/CSSStyleProperties.hpp>
 
 namespace webbind {
 
@@ -89,8 +89,8 @@ jsbind::Undefined SVGElement::blur() {
     return Element::call("blur").as<jsbind::Undefined>();
 }
 
-CSSStyleDeclaration SVGElement::style() const {
-    return Element::get("style").as<CSSStyleDeclaration>();
+CSSStyleProperties SVGElement::style() const {
+    return Element::get("style").as<CSSStyleProperties>();
 }
 
 

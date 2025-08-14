@@ -2,7 +2,7 @@
 #include <webbind/ElementInternals.hpp>
 #include <webbind/ShowPopoverOptions.hpp>
 #include <webbind/EditContext.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
+#include <webbind/CSSStyleProperties.hpp>
 #include <webbind/DOMStringMap.hpp>
 #include <webbind/FocusOptions.hpp>
 
@@ -206,8 +206,8 @@ void HTMLElement::editContext(const EditContext& value) {
     Element::set("editContext", value);
 }
 
-CSSStyleDeclaration HTMLElement::style() const {
-    return Element::get("style").as<CSSStyleDeclaration>();
+CSSStyleProperties HTMLElement::style() const {
+    return Element::get("style").as<CSSStyleProperties>();
 }
 
 jsbind::Any HTMLElement::onbeforexrselect() const {

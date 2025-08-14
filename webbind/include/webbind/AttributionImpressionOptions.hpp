@@ -34,6 +34,10 @@ public:
     [[nodiscard]] unsigned long lifetimeDays() const;
     /// Setter of the `lifetimeDays` attribute.
     void lifetimeDays(unsigned long value);
+    /// Getter of the `priority` attribute.
+    [[nodiscard]] long priority() const;
+    /// Setter of the `priority` attribute.
+    void priority(long value);
 };
 
 } // namespace webbind

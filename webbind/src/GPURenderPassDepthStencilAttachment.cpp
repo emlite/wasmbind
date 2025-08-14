@@ -1,5 +1,4 @@
 #include <webbind/GPURenderPassDepthStencilAttachment.hpp>
-#include <webbind/GPUTextureView.hpp>
 
 namespace webbind {
 
@@ -14,11 +13,11 @@ GPURenderPassDepthStencilAttachment::GPURenderPassDepthStencilAttachment() noexc
 
 GPURenderPassDepthStencilAttachment GPURenderPassDepthStencilAttachment::clone() const noexcept { return *this; }
 
-GPUTextureView GPURenderPassDepthStencilAttachment::view() const {
-    return emlite::Val::get("view").as<GPUTextureView>();
+jsbind::Any GPURenderPassDepthStencilAttachment::view() const {
+    return emlite::Val::get("view").as<jsbind::Any>();
 }
 
-void GPURenderPassDepthStencilAttachment::view(const GPUTextureView& value) {
+void GPURenderPassDepthStencilAttachment::view(const jsbind::Any& value) {
     emlite::Val::set("view", value);
 }
 

@@ -38,6 +38,14 @@ void NotificationOptions::body(const jsbind::String& value) {
     emlite::Val::set("body", value);
 }
 
+jsbind::String NotificationOptions::navigate() const {
+    return emlite::Val::get("navigate").as<jsbind::String>();
+}
+
+void NotificationOptions::navigate(const jsbind::String& value) {
+    emlite::Val::set("navigate", value);
+}
+
 jsbind::String NotificationOptions::tag() const {
     return emlite::Val::get("tag").as<jsbind::String>();
 }

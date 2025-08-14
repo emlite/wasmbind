@@ -74,6 +74,9 @@ public:
     /// [`Notification.body`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/body)
     /// [`Notification.body`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/body)
     [[nodiscard]] jsbind::String body() const;
+    /// [`Notification.navigate`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/navigate)
+    /// [`Notification.navigate`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/navigate)
+    [[nodiscard]] jsbind::String navigate() const;
     /// [`Notification.tag`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/tag)
     /// [`Notification.tag`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/tag)
     [[nodiscard]] jsbind::String tag() const;

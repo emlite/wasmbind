@@ -350,6 +350,14 @@ MLOperand MLGraphBuilder::reciprocal(const MLOperand& input, const MLOperatorOpt
     return emlite::Val::call("reciprocal", input, options).as<MLOperand>();
 }
 
+MLOperand MLGraphBuilder::roundEven(const MLOperand& input) {
+    return emlite::Val::call("roundEven", input).as<MLOperand>();
+}
+
+MLOperand MLGraphBuilder::roundEven(const MLOperand& input, const MLOperatorOptions& options) {
+    return emlite::Val::call("roundEven", input, options).as<MLOperand>();
+}
+
 MLOperand MLGraphBuilder::sin(const MLOperand& input) {
     return emlite::Val::call("sin", input).as<MLOperand>();
 }

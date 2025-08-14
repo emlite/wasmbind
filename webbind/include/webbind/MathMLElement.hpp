@@ -7,7 +7,7 @@
 
 namespace webbind {
 
-class CSSStyleDeclaration;
+class CSSStyleProperties;
 class DOMStringMap;
 class FocusOptions;
 
@@ -22,7 +22,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// [`MathMLElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/style)
     /// [`MathMLElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/style)
-    [[nodiscard]] CSSStyleDeclaration style() const;
+    [[nodiscard]] CSSStyleProperties style() const;
     /// [`MathMLElement.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/onbeforexrselect)
     /// [`MathMLElement.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/onbeforexrselect)
     [[nodiscard]] jsbind::Any onbeforexrselect() const;

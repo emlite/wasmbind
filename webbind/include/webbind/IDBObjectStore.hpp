@@ -10,6 +10,7 @@ namespace webbind {
 class DOMStringList;
 class IDBTransaction;
 class IDBRequest;
+class IDBGetAllOptions;
 class IDBIndex;
 class IDBIndexParameters;
 
@@ -69,19 +70,25 @@ public:
     IDBRequest getAll();
     /// The getAll method.
     /// [`IDBObjectStore.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll)
-    IDBRequest getAll(const jsbind::Any& query);
+    IDBRequest getAll(const jsbind::Any& queryOrOptions);
     /// The getAll method.
     /// [`IDBObjectStore.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll)
-    IDBRequest getAll(const jsbind::Any& query, unsigned long count);
+    IDBRequest getAll(const jsbind::Any& queryOrOptions, unsigned long count);
     /// The getAllKeys method.
     /// [`IDBObjectStore.getAllKeys`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys)
     IDBRequest getAllKeys();
     /// The getAllKeys method.
     /// [`IDBObjectStore.getAllKeys`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys)
-    IDBRequest getAllKeys(const jsbind::Any& query);
+    IDBRequest getAllKeys(const jsbind::Any& queryOrOptions);
     /// The getAllKeys method.
     /// [`IDBObjectStore.getAllKeys`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys)
-    IDBRequest getAllKeys(const jsbind::Any& query, unsigned long count);
+    IDBRequest getAllKeys(const jsbind::Any& queryOrOptions, unsigned long count);
+    /// The getAllRecords method.
+    /// [`IDBObjectStore.getAllRecords`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllRecords)
+    IDBRequest getAllRecords();
+    /// The getAllRecords method.
+    /// [`IDBObjectStore.getAllRecords`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllRecords)
+    IDBRequest getAllRecords(const IDBGetAllOptions& options);
     /// The count method.
     /// [`IDBObjectStore.count`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/count)
     IDBRequest count();

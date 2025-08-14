@@ -13,10 +13,12 @@
 #include <webbind/MediaQueryList.hpp>
 #include <webbind/Screen.hpp>
 #include <webbind/VisualViewport.hpp>
-#include <webbind/CSSStyleDeclaration.hpp>
+#include <webbind/CSSStyleProperties.hpp>
 #include <webbind/DigitalGoodsService.hpp>
 #include <webbind/DocumentPictureInPicture.hpp>
 #include <webbind/Fence.hpp>
+#include <webbind/FetchLaterResult.hpp>
+#include <webbind/DeferredRequestInit.hpp>
 #include <webbind/FileSystemFileHandle.hpp>
 #include <webbind/OpenFilePickerOptions.hpp>
 #include <webbind/SaveFilePickerOptions.hpp>
@@ -349,12 +351,12 @@ double Window::devicePixelRatio() const {
     return EventTarget::get("devicePixelRatio").as<double>();
 }
 
-CSSStyleDeclaration Window::getComputedStyle(const Element& elt) {
-    return EventTarget::call("getComputedStyle", elt).as<CSSStyleDeclaration>();
+CSSStyleProperties Window::getComputedStyle(const Element& elt) {
+    return EventTarget::call("getComputedStyle", elt).as<CSSStyleProperties>();
 }
 
-CSSStyleDeclaration Window::getComputedStyle(const Element& elt, const jsbind::String& pseudoElt) {
-    return EventTarget::call("getComputedStyle", elt, pseudoElt).as<CSSStyleDeclaration>();
+CSSStyleProperties Window::getComputedStyle(const Element& elt, const jsbind::String& pseudoElt) {
+    return EventTarget::call("getComputedStyle", elt, pseudoElt).as<CSSStyleProperties>();
 }
 
 jsbind::Promise<DigitalGoodsService> Window::getDigitalGoodsService(const jsbind::String& serviceProvider) {
@@ -371,6 +373,14 @@ jsbind::Any Window::event() const {
 
 Fence Window::fence() const {
     return EventTarget::get("fence").as<Fence>();
+}
+
+FetchLaterResult Window::fetchLater(const jsbind::Any& input) {
+    return EventTarget::call("fetchLater", input).as<FetchLaterResult>();
+}
+
+FetchLaterResult Window::fetchLater(const jsbind::Any& input, const DeferredRequestInit& init) {
+    return EventTarget::call("fetchLater", input, init).as<FetchLaterResult>();
 }
 
 jsbind::Promise<jsbind::TypedArray<FileSystemFileHandle>> Window::showOpenFilePicker() {

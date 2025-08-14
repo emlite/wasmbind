@@ -13,7 +13,7 @@ class SVGElement;
 class SVGUseElement;
 class DOMStringMap;
 class FocusOptions;
-class CSSStyleDeclaration;
+class CSSStyleProperties;
 
 /// Interface SVGElement
 /// [`SVGElement`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement)
@@ -77,7 +77,7 @@ public:
     jsbind::Undefined blur();
     /// [`SVGElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/style)
     /// [`SVGElement.style`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/style)
-    [[nodiscard]] CSSStyleDeclaration style() const;
+    [[nodiscard]] CSSStyleProperties style() const;
 };
 
 } // namespace webbind

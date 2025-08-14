@@ -44,6 +44,10 @@ public:
     [[nodiscard]] jsbind::TypedArray<jsbind::String> protocols() const;
     /// Setter of the `protocols` attribute.
     void protocols(const jsbind::TypedArray<jsbind::String>& value);
+    /// Getter of the `datagramsReadableMode` attribute.
+    [[nodiscard]] DatagramsReadableMode datagramsReadableMode() const;
+    /// Setter of the `datagramsReadableMode` attribute.
+    void datagramsReadableMode(const DatagramsReadableMode& value);
 };
 
 } // namespace webbind

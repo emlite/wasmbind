@@ -165,6 +165,22 @@ void RTCOutboundRtpStreamStats::qpSum(long long value) {
     emlite::Val::set("qpSum", value);
 }
 
+jsbind::Record<jsbind::String, double> RTCOutboundRtpStreamStats::psnrSum() const {
+    return emlite::Val::get("psnrSum").as<jsbind::Record<jsbind::String, double>>();
+}
+
+void RTCOutboundRtpStreamStats::psnrSum(jsbind::Record<jsbind::String, double> value) {
+    emlite::Val::set("psnrSum", value);
+}
+
+long long RTCOutboundRtpStreamStats::psnrMeasurements() const {
+    return emlite::Val::get("psnrMeasurements").as<long long>();
+}
+
+void RTCOutboundRtpStreamStats::psnrMeasurements(long long value) {
+    emlite::Val::set("psnrMeasurements", value);
+}
+
 double RTCOutboundRtpStreamStats::totalEncodeTime() const {
     return emlite::Val::get("totalEncodeTime").as<double>();
 }
@@ -259,6 +275,14 @@ jsbind::String RTCOutboundRtpStreamStats::scalabilityMode() const {
 
 void RTCOutboundRtpStreamStats::scalabilityMode(const jsbind::String& value) {
     emlite::Val::set("scalabilityMode", value);
+}
+
+long long RTCOutboundRtpStreamStats::packetsSentWithEct1() const {
+    return emlite::Val::get("packetsSentWithEct1").as<long long>();
+}
+
+void RTCOutboundRtpStreamStats::packetsSentWithEct1(long long value) {
+    emlite::Val::set("packetsSentWithEct1", value);
 }
 
 

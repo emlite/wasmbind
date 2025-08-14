@@ -6,6 +6,8 @@
 
 namespace webbind {
 
+class AttributionLogicOptions;
+
 /// Dictionary type AttributionConversionOptions
 class AttributionConversionOptions : public emlite::Val {
   explicit AttributionConversionOptions(Handle h) noexcept;
@@ -46,6 +48,10 @@ public:
     [[nodiscard]] AttributionLogic logic() const;
     /// Setter of the `logic` attribute.
     void logic(const AttributionLogic& value);
+    /// Getter of the `logicOptions` attribute.
+    [[nodiscard]] AttributionLogicOptions logicOptions() const;
+    /// Setter of the `logicOptions` attribute.
+    void logicOptions(const AttributionLogicOptions& value);
     /// Getter of the `value` attribute.
     [[nodiscard]] unsigned long value() const;
     /// Setter of the `value` attribute.

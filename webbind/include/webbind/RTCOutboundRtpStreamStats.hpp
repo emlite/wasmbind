@@ -91,6 +91,14 @@ public:
     [[nodiscard]] long long qpSum() const;
     /// Setter of the `qpSum` attribute.
     void qpSum(long long value);
+    /// Getter of the `psnrSum` attribute.
+    [[nodiscard]] jsbind::Record<jsbind::String, double> psnrSum() const;
+    /// Setter of the `psnrSum` attribute.
+    void psnrSum(jsbind::Record<jsbind::String, double> value);
+    /// Getter of the `psnrMeasurements` attribute.
+    [[nodiscard]] long long psnrMeasurements() const;
+    /// Setter of the `psnrMeasurements` attribute.
+    void psnrMeasurements(long long value);
     /// Getter of the `totalEncodeTime` attribute.
     [[nodiscard]] double totalEncodeTime() const;
     /// Setter of the `totalEncodeTime` attribute.
@@ -139,6 +147,10 @@ public:
     [[nodiscard]] jsbind::String scalabilityMode() const;
     /// Setter of the `scalabilityMode` attribute.
     void scalabilityMode(const jsbind::String& value);
+    /// Getter of the `packetsSentWithEct1` attribute.
+    [[nodiscard]] long long packetsSentWithEct1() const;
+    /// Setter of the `packetsSentWithEct1` attribute.
+    void packetsSentWithEct1(long long value);
 };
 
 } // namespace webbind

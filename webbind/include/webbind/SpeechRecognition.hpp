@@ -9,7 +9,7 @@
 namespace webbind {
 
 class SpeechGrammarList;
-class SpeechRecognitionPhraseList;
+class SpeechRecognitionPhrase;
 class MediaStreamTrack;
 class SpeechRecognitionOptions;
 
@@ -62,10 +62,10 @@ public:
     void processLocally(bool value);
     /// [`SpeechRecognition.phrases`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/phrases)
     /// [`SpeechRecognition.phrases`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/phrases)
-    [[nodiscard]] SpeechRecognitionPhraseList phrases() const;
+    [[nodiscard]] jsbind::TypedArray<SpeechRecognitionPhrase> phrases() const;
     /// Setter of the `phrases` attribute.
     /// [`SpeechRecognition.phrases`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/phrases)
-    void phrases(const SpeechRecognitionPhraseList& value);
+    void phrases(const jsbind::TypedArray<SpeechRecognitionPhrase>& value);
     /// The start method.
     /// [`SpeechRecognition.start`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/start)
     jsbind::Undefined start(const MediaStreamTrack& audioTrack);

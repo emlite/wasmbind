@@ -4963,13 +4963,13 @@ public:
 
 };
 
-/// Enum type PrivateAttributionAggregationProtocol
-/// [`PrivateAttributionAggregationProtocol`](https://developer.mozilla.org/en-US/docs/Web/API/PrivateAttributionAggregationProtocol)
-class PrivateAttributionAggregationProtocol: public emlite::Val {
-  explicit PrivateAttributionAggregationProtocol(Handle h) noexcept;
+/// Enum type AttributionAggregationProtocol
+/// [`AttributionAggregationProtocol`](https://developer.mozilla.org/en-US/docs/Web/API/AttributionAggregationProtocol)
+class AttributionAggregationProtocol: public emlite::Val {
+  explicit AttributionAggregationProtocol(Handle h) noexcept;
 public:
     enum Value {
-        DAP_12_HISTOGRAM,
+        DAP_15_HISTOGRAM,
         TEE_00,
     };
 
@@ -4977,19 +4977,19 @@ private:
     Value value_;
 
 public:
-    PrivateAttributionAggregationProtocol() noexcept = delete;
-    PrivateAttributionAggregationProtocol(Value v) noexcept;
-    explicit PrivateAttributionAggregationProtocol(const emlite::Val& val) noexcept;
-    static PrivateAttributionAggregationProtocol take_ownership(Handle h) noexcept;
-    [[nodiscard]] PrivateAttributionAggregationProtocol clone() const noexcept;
+    AttributionAggregationProtocol() noexcept = delete;
+    AttributionAggregationProtocol(Value v) noexcept;
+    explicit AttributionAggregationProtocol(const emlite::Val& val) noexcept;
+    static AttributionAggregationProtocol take_ownership(Handle h) noexcept;
+    [[nodiscard]] AttributionAggregationProtocol clone() const noexcept;
 
     [[nodiscard]] constexpr Value value() const noexcept { return value_; }
     [[nodiscard]] static Value from_string(const char *str) noexcept;
     [[nodiscard]] static const char* to_string(Value value_) noexcept;
 
     /// Comparison operators
-    [[nodiscard]] constexpr bool operator==(const PrivateAttributionAggregationProtocol& other) const noexcept { return value_ == other.value_; }
-    [[nodiscard]] constexpr bool operator!=(const PrivateAttributionAggregationProtocol& other) const noexcept { return value_ != other.value_; }
+    [[nodiscard]] constexpr bool operator==(const AttributionAggregationProtocol& other) const noexcept { return value_ == other.value_; }
+    [[nodiscard]] constexpr bool operator!=(const AttributionAggregationProtocol& other) const noexcept { return value_ != other.value_; }
     [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
     [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
 
@@ -5001,7 +5001,7 @@ class AttributionLogic: public emlite::Val {
   explicit AttributionLogic(Handle h) noexcept;
 public:
     enum Value {
-        LAST_TOUCH,
+        LAST_N_TOUCH,
     };
 
 private:
@@ -10219,6 +10219,41 @@ public:
 
 };
 
+/// Enum type SFrameCipherSuite
+/// [`SFrameCipherSuite`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameCipherSuite)
+class SFrameCipherSuite: public emlite::Val {
+  explicit SFrameCipherSuite(Handle h) noexcept;
+public:
+    enum Value {
+        AES_128_CTR_HMAC_SHA256_80,
+        AES_128_CTR_HMAC_SHA256_64,
+        AES_128_CTR_HMAC_SHA256_32,
+        AES_128_GCM_SHA256_128,
+        AES_256_GCM_SHA512_128,
+    };
+
+private:
+    Value value_;
+
+public:
+    SFrameCipherSuite() noexcept = delete;
+    SFrameCipherSuite(Value v) noexcept;
+    explicit SFrameCipherSuite(const emlite::Val& val) noexcept;
+    static SFrameCipherSuite take_ownership(Handle h) noexcept;
+    [[nodiscard]] SFrameCipherSuite clone() const noexcept;
+
+    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
+    [[nodiscard]] static Value from_string(const char *str) noexcept;
+    [[nodiscard]] static const char* to_string(Value value_) noexcept;
+
+    /// Comparison operators
+    [[nodiscard]] constexpr bool operator==(const SFrameCipherSuite& other) const noexcept { return value_ == other.value_; }
+    [[nodiscard]] constexpr bool operator!=(const SFrameCipherSuite& other) const noexcept { return value_ != other.value_; }
+    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
+    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
+
+};
+
 /// Enum type SFrameTransformErrorEventType
 /// [`SFrameTransformErrorEventType`](https://developer.mozilla.org/en-US/docs/Web/API/SFrameTransformErrorEventType)
 class SFrameTransformErrorEventType: public emlite::Val {
@@ -11309,6 +11344,37 @@ public:
     /// Comparison operators
     [[nodiscard]] constexpr bool operator==(const WebTransportCongestionControl& other) const noexcept { return value_ == other.value_; }
     [[nodiscard]] constexpr bool operator!=(const WebTransportCongestionControl& other) const noexcept { return value_ != other.value_; }
+    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
+    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
+
+};
+
+/// Enum type DatagramsReadableMode
+/// [`DatagramsReadableMode`](https://developer.mozilla.org/en-US/docs/Web/API/DatagramsReadableMode)
+class DatagramsReadableMode: public emlite::Val {
+  explicit DatagramsReadableMode(Handle h) noexcept;
+public:
+    enum Value {
+        BYTES,
+    };
+
+private:
+    Value value_;
+
+public:
+    DatagramsReadableMode() noexcept = delete;
+    DatagramsReadableMode(Value v) noexcept;
+    explicit DatagramsReadableMode(const emlite::Val& val) noexcept;
+    static DatagramsReadableMode take_ownership(Handle h) noexcept;
+    [[nodiscard]] DatagramsReadableMode clone() const noexcept;
+
+    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
+    [[nodiscard]] static Value from_string(const char *str) noexcept;
+    [[nodiscard]] static const char* to_string(Value value_) noexcept;
+
+    /// Comparison operators
+    [[nodiscard]] constexpr bool operator==(const DatagramsReadableMode& other) const noexcept { return value_ == other.value_; }
+    [[nodiscard]] constexpr bool operator!=(const DatagramsReadableMode& other) const noexcept { return value_ != other.value_; }
     [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
     [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
 

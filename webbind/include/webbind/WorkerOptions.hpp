@@ -14,6 +14,10 @@ public:
     explicit WorkerOptions(const emlite::Val &val) noexcept;
     WorkerOptions() noexcept;
     [[nodiscard]] WorkerOptions clone() const noexcept;
+    /// Getter of the `name` attribute.
+    [[nodiscard]] jsbind::String name() const;
+    /// Setter of the `name` attribute.
+    void name(const jsbind::String& value);
     /// Getter of the `type` attribute.
     [[nodiscard]] WorkerType type() const;
     /// Setter of the `type` attribute.
@@ -22,10 +26,6 @@ public:
     [[nodiscard]] RequestCredentials credentials() const;
     /// Setter of the `credentials` attribute.
     void credentials(const RequestCredentials& value);
-    /// Getter of the `name` attribute.
-    [[nodiscard]] jsbind::String name() const;
-    /// Setter of the `name` attribute.
-    void name(const jsbind::String& value);
 };
 
 } // namespace webbind

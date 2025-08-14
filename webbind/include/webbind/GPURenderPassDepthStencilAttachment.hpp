@@ -6,8 +6,6 @@
 
 namespace webbind {
 
-class GPUTextureView;
-
 /// Dictionary type GPURenderPassDepthStencilAttachment
 class GPURenderPassDepthStencilAttachment : public emlite::Val {
   explicit GPURenderPassDepthStencilAttachment(Handle h) noexcept;
@@ -17,9 +15,9 @@ public:
     GPURenderPassDepthStencilAttachment() noexcept;
     [[nodiscard]] GPURenderPassDepthStencilAttachment clone() const noexcept;
     /// Getter of the `view` attribute.
-    [[nodiscard]] GPUTextureView view() const;
+    [[nodiscard]] jsbind::Any view() const;
     /// Setter of the `view` attribute.
-    void view(const GPUTextureView& value);
+    void view(const jsbind::Any& value);
     /// Getter of the `depthClearValue` attribute.
     [[nodiscard]] float depthClearValue() const;
     /// Setter of the `depthClearValue` attribute.

@@ -1,5 +1,4 @@
 #include <webbind/GPURenderPassColorAttachment.hpp>
-#include <webbind/GPUTextureView.hpp>
 
 namespace webbind {
 
@@ -14,11 +13,11 @@ GPURenderPassColorAttachment::GPURenderPassColorAttachment() noexcept: emlite::V
 
 GPURenderPassColorAttachment GPURenderPassColorAttachment::clone() const noexcept { return *this; }
 
-GPUTextureView GPURenderPassColorAttachment::view() const {
-    return emlite::Val::get("view").as<GPUTextureView>();
+jsbind::Any GPURenderPassColorAttachment::view() const {
+    return emlite::Val::get("view").as<jsbind::Any>();
 }
 
-void GPURenderPassColorAttachment::view(const GPUTextureView& value) {
+void GPURenderPassColorAttachment::view(const jsbind::Any& value) {
     emlite::Val::set("view", value);
 }
 
@@ -30,11 +29,11 @@ void GPURenderPassColorAttachment::depthSlice(const jsbind::Any& value) {
     emlite::Val::set("depthSlice", value);
 }
 
-GPUTextureView GPURenderPassColorAttachment::resolveTarget() const {
-    return emlite::Val::get("resolveTarget").as<GPUTextureView>();
+jsbind::Any GPURenderPassColorAttachment::resolveTarget() const {
+    return emlite::Val::get("resolveTarget").as<jsbind::Any>();
 }
 
-void GPURenderPassColorAttachment::resolveTarget(const GPUTextureView& value) {
+void GPURenderPassColorAttachment::resolveTarget(const jsbind::Any& value) {
     emlite::Val::set("resolveTarget", value);
 }
 

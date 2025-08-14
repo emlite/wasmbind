@@ -70,5 +70,13 @@ void WebTransportOptions::protocols(const jsbind::TypedArray<jsbind::String>& va
     emlite::Val::set("protocols", value);
 }
 
+DatagramsReadableMode WebTransportOptions::datagramsReadableMode() const {
+    return emlite::Val::get("datagramsReadableMode").as<DatagramsReadableMode>();
+}
+
+void WebTransportOptions::datagramsReadableMode(const DatagramsReadableMode& value) {
+    emlite::Val::set("datagramsReadableMode", value);
+}
+
 
 } // namespace webbind

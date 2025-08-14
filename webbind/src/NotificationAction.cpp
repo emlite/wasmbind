@@ -29,6 +29,14 @@ void NotificationAction::title(const jsbind::String& value) {
     emlite::Val::set("title", value);
 }
 
+jsbind::String NotificationAction::navigate() const {
+    return emlite::Val::get("navigate").as<jsbind::String>();
+}
+
+void NotificationAction::navigate(const jsbind::String& value) {
+    emlite::Val::set("navigate", value);
+}
+
 jsbind::String NotificationAction::icon() const {
     return emlite::Val::get("icon").as<jsbind::String>();
 }

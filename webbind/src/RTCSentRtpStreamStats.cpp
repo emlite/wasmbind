@@ -29,13 +29,5 @@ void RTCSentRtpStreamStats::bytesSent(long long value) {
     emlite::Val::set("bytesSent", value);
 }
 
-long long RTCSentRtpStreamStats::packetsSentWithEct1() const {
-    return emlite::Val::get("packetsSentWithEct1").as<long long>();
-}
-
-void RTCSentRtpStreamStats::packetsSentWithEct1(long long value) {
-    emlite::Val::set("packetsSentWithEct1", value);
-}
-
 
 } // namespace webbind

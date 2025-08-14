@@ -6,8 +6,6 @@
 
 namespace webbind {
 
-class GPUTextureView;
-
 /// Dictionary type GPURenderPassColorAttachment
 class GPURenderPassColorAttachment : public emlite::Val {
   explicit GPURenderPassColorAttachment(Handle h) noexcept;
@@ -17,17 +15,17 @@ public:
     GPURenderPassColorAttachment() noexcept;
     [[nodiscard]] GPURenderPassColorAttachment clone() const noexcept;
     /// Getter of the `view` attribute.
-    [[nodiscard]] GPUTextureView view() const;
+    [[nodiscard]] jsbind::Any view() const;
     /// Setter of the `view` attribute.
-    void view(const GPUTextureView& value);
+    void view(const jsbind::Any& value);
     /// Getter of the `depthSlice` attribute.
     [[nodiscard]] jsbind::Any depthSlice() const;
     /// Setter of the `depthSlice` attribute.
     void depthSlice(const jsbind::Any& value);
     /// Getter of the `resolveTarget` attribute.
-    [[nodiscard]] GPUTextureView resolveTarget() const;
+    [[nodiscard]] jsbind::Any resolveTarget() const;
     /// Setter of the `resolveTarget` attribute.
-    void resolveTarget(const GPUTextureView& value);
+    void resolveTarget(const jsbind::Any& value);
     /// Getter of the `clearValue` attribute.
     [[nodiscard]] jsbind::Any clearValue() const;
     /// Setter of the `clearValue` attribute.

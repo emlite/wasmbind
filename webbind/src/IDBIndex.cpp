@@ -1,6 +1,7 @@
 #include <webbind/IDBIndex.hpp>
 #include <webbind/IDBObjectStore.hpp>
 #include <webbind/IDBRequest.hpp>
+#include <webbind/IDBGetAllOptions.hpp>
 
 namespace webbind {
 
@@ -52,24 +53,32 @@ IDBRequest IDBIndex::getAll() {
     return emlite::Val::call("getAll").as<IDBRequest>();
 }
 
-IDBRequest IDBIndex::getAll(const jsbind::Any& query) {
-    return emlite::Val::call("getAll", query).as<IDBRequest>();
+IDBRequest IDBIndex::getAll(const jsbind::Any& queryOrOptions) {
+    return emlite::Val::call("getAll", queryOrOptions).as<IDBRequest>();
 }
 
-IDBRequest IDBIndex::getAll(const jsbind::Any& query, unsigned long count) {
-    return emlite::Val::call("getAll", query, count).as<IDBRequest>();
+IDBRequest IDBIndex::getAll(const jsbind::Any& queryOrOptions, unsigned long count) {
+    return emlite::Val::call("getAll", queryOrOptions, count).as<IDBRequest>();
 }
 
 IDBRequest IDBIndex::getAllKeys() {
     return emlite::Val::call("getAllKeys").as<IDBRequest>();
 }
 
-IDBRequest IDBIndex::getAllKeys(const jsbind::Any& query) {
-    return emlite::Val::call("getAllKeys", query).as<IDBRequest>();
+IDBRequest IDBIndex::getAllKeys(const jsbind::Any& queryOrOptions) {
+    return emlite::Val::call("getAllKeys", queryOrOptions).as<IDBRequest>();
 }
 
-IDBRequest IDBIndex::getAllKeys(const jsbind::Any& query, unsigned long count) {
-    return emlite::Val::call("getAllKeys", query, count).as<IDBRequest>();
+IDBRequest IDBIndex::getAllKeys(const jsbind::Any& queryOrOptions, unsigned long count) {
+    return emlite::Val::call("getAllKeys", queryOrOptions, count).as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::getAllRecords() {
+    return emlite::Val::call("getAllRecords").as<IDBRequest>();
+}
+
+IDBRequest IDBIndex::getAllRecords(const IDBGetAllOptions& options) {
+    return emlite::Val::call("getAllRecords", options).as<IDBRequest>();
 }
 
 IDBRequest IDBIndex::count() {

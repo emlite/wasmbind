@@ -53,5 +53,13 @@ void AttributionImpressionOptions::lifetimeDays(unsigned long value) {
     emlite::Val::set("lifetimeDays", value);
 }
 
+long AttributionImpressionOptions::priority() const {
+    return emlite::Val::get("priority").as<long>();
+}
+
+void AttributionImpressionOptions::priority(long value) {
+    emlite::Val::set("priority", value);
+}
+
 
 } // namespace webbind

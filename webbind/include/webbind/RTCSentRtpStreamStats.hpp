@@ -23,10 +23,6 @@ public:
     [[nodiscard]] long long bytesSent() const;
     /// Setter of the `bytesSent` attribute.
     void bytesSent(long long value);
-    /// Getter of the `packetsSentWithEct1` attribute.
-    [[nodiscard]] long long packetsSentWithEct1() const;
-    /// Setter of the `packetsSentWithEct1` attribute.
-    void packetsSentWithEct1(long long value);
 };
 
 } // namespace webbind

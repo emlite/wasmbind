@@ -6292,48 +6292,48 @@ const char* PresentationConnectionCloseReason::to_string(PresentationConnectionC
     }
 }
 
-PrivateAttributionAggregationProtocol::Value PrivateAttributionAggregationProtocol::from_string(const char* str) noexcept {
-    if (__builtin_strncmp(str, "dap-12-histogram", strlen("dap-12-histogram"))) {
-        return DAP_12_HISTOGRAM;
+AttributionAggregationProtocol::Value AttributionAggregationProtocol::from_string(const char* str) noexcept {
+    if (__builtin_strncmp(str, "dap-15-histogram", strlen("dap-15-histogram"))) {
+        return DAP_15_HISTOGRAM;
     }
     else if (__builtin_strncmp(str, "tee-00", strlen("tee-00"))) {
         return TEE_00;
     }
     else {
         // Default to first value for invalid input
-        return DAP_12_HISTOGRAM;
+        return DAP_15_HISTOGRAM;
     }
 }
 
-PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(Value v) noexcept : emlite::Val(PrivateAttributionAggregationProtocol::to_string(v)), value_(v) {}
-PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(Handle h) noexcept: emlite::Val(h) {
-    value_ = PrivateAttributionAggregationProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+AttributionAggregationProtocol::AttributionAggregationProtocol(Value v) noexcept : emlite::Val(AttributionAggregationProtocol::to_string(v)), value_(v) {}
+AttributionAggregationProtocol::AttributionAggregationProtocol(Handle h) noexcept: emlite::Val(h) {
+    value_ = AttributionAggregationProtocol::from_string(as<emlite::Uniq<char[]>>().get());
 }
 
-PrivateAttributionAggregationProtocol::PrivateAttributionAggregationProtocol(const emlite::Val& val) noexcept: emlite::Val(val) {
-    value_ = PrivateAttributionAggregationProtocol::from_string(as<emlite::Uniq<char[]>>().get());
+AttributionAggregationProtocol::AttributionAggregationProtocol(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = AttributionAggregationProtocol::from_string(as<emlite::Uniq<char[]>>().get());
 }
 
-PrivateAttributionAggregationProtocol PrivateAttributionAggregationProtocol::take_ownership(Handle h) noexcept { return PrivateAttributionAggregationProtocol(h); }
-PrivateAttributionAggregationProtocol PrivateAttributionAggregationProtocol::clone() const noexcept { return *this; }
-const char* PrivateAttributionAggregationProtocol::to_string(PrivateAttributionAggregationProtocol::Value value_) noexcept {
+AttributionAggregationProtocol AttributionAggregationProtocol::take_ownership(Handle h) noexcept { return AttributionAggregationProtocol(h); }
+AttributionAggregationProtocol AttributionAggregationProtocol::clone() const noexcept { return *this; }
+const char* AttributionAggregationProtocol::to_string(AttributionAggregationProtocol::Value value_) noexcept {
     switch (value_) {
-        case DAP_12_HISTOGRAM:
-            return "dap-12-histogram";
+        case DAP_15_HISTOGRAM:
+            return "dap-15-histogram";
         case TEE_00:
             return "tee-00";
         default:
-            return "dap-12-histogram"; // fallback to first value
+            return "dap-15-histogram"; // fallback to first value
     }
 }
 
 AttributionLogic::Value AttributionLogic::from_string(const char* str) noexcept {
-    if (__builtin_strncmp(str, "last-touch", strlen("last-touch"))) {
-        return LAST_TOUCH;
+    if (__builtin_strncmp(str, "last-n-touch", strlen("last-n-touch"))) {
+        return LAST_N_TOUCH;
     }
     else {
         // Default to first value for invalid input
-        return LAST_TOUCH;
+        return LAST_N_TOUCH;
     }
 }
 
@@ -6350,10 +6350,10 @@ AttributionLogic AttributionLogic::take_ownership(Handle h) noexcept { return At
 AttributionLogic AttributionLogic::clone() const noexcept { return *this; }
 const char* AttributionLogic::to_string(AttributionLogic::Value value_) noexcept {
     switch (value_) {
-        case LAST_TOUCH:
-            return "last-touch";
+        case LAST_N_TOUCH:
+            return "last-n-touch";
         default:
-            return "last-touch"; // fallback to first value
+            return "last-n-touch"; // fallback to first value
     }
 }
 
@@ -13572,6 +13572,56 @@ const char* SFrameTransformRole::to_string(SFrameTransformRole::Value value_) no
     }
 }
 
+SFrameCipherSuite::Value SFrameCipherSuite::from_string(const char* str) noexcept {
+    if (__builtin_strncmp(str, "AES_128_CTR_HMAC_SHA256_80", strlen("AES_128_CTR_HMAC_SHA256_80"))) {
+        return AES_128_CTR_HMAC_SHA256_80;
+    }
+    else if (__builtin_strncmp(str, "AES_128_CTR_HMAC_SHA256_64", strlen("AES_128_CTR_HMAC_SHA256_64"))) {
+        return AES_128_CTR_HMAC_SHA256_64;
+    }
+    else if (__builtin_strncmp(str, "AES_128_CTR_HMAC_SHA256_32", strlen("AES_128_CTR_HMAC_SHA256_32"))) {
+        return AES_128_CTR_HMAC_SHA256_32;
+    }
+    else if (__builtin_strncmp(str, "AES_128_GCM_SHA256_128", strlen("AES_128_GCM_SHA256_128"))) {
+        return AES_128_GCM_SHA256_128;
+    }
+    else if (__builtin_strncmp(str, "AES_256_GCM_SHA512_128", strlen("AES_256_GCM_SHA512_128"))) {
+        return AES_256_GCM_SHA512_128;
+    }
+    else {
+        // Default to first value for invalid input
+        return AES_128_CTR_HMAC_SHA256_80;
+    }
+}
+
+SFrameCipherSuite::SFrameCipherSuite(Value v) noexcept : emlite::Val(SFrameCipherSuite::to_string(v)), value_(v) {}
+SFrameCipherSuite::SFrameCipherSuite(Handle h) noexcept: emlite::Val(h) {
+    value_ = SFrameCipherSuite::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SFrameCipherSuite::SFrameCipherSuite(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = SFrameCipherSuite::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+SFrameCipherSuite SFrameCipherSuite::take_ownership(Handle h) noexcept { return SFrameCipherSuite(h); }
+SFrameCipherSuite SFrameCipherSuite::clone() const noexcept { return *this; }
+const char* SFrameCipherSuite::to_string(SFrameCipherSuite::Value value_) noexcept {
+    switch (value_) {
+        case AES_128_CTR_HMAC_SHA256_80:
+            return "AES_128_CTR_HMAC_SHA256_80";
+        case AES_128_CTR_HMAC_SHA256_64:
+            return "AES_128_CTR_HMAC_SHA256_64";
+        case AES_128_CTR_HMAC_SHA256_32:
+            return "AES_128_CTR_HMAC_SHA256_32";
+        case AES_128_GCM_SHA256_128:
+            return "AES_128_GCM_SHA256_128";
+        case AES_256_GCM_SHA512_128:
+            return "AES_256_GCM_SHA512_128";
+        default:
+            return "AES_128_CTR_HMAC_SHA256_80"; // fallback to first value
+    }
+}
+
 SFrameTransformErrorEventType::Value SFrameTransformErrorEventType::from_string(const char* str) noexcept {
     if (__builtin_strncmp(str, "authentication", strlen("authentication"))) {
         return AUTHENTICATION;
@@ -15044,6 +15094,36 @@ const char* WebTransportCongestionControl::to_string(WebTransportCongestionContr
             return "low-latency";
         default:
             return "default"; // fallback to first value
+    }
+}
+
+DatagramsReadableMode::Value DatagramsReadableMode::from_string(const char* str) noexcept {
+    if (__builtin_strncmp(str, "bytes", strlen("bytes"))) {
+        return BYTES;
+    }
+    else {
+        // Default to first value for invalid input
+        return BYTES;
+    }
+}
+
+DatagramsReadableMode::DatagramsReadableMode(Value v) noexcept : emlite::Val(DatagramsReadableMode::to_string(v)), value_(v) {}
+DatagramsReadableMode::DatagramsReadableMode(Handle h) noexcept: emlite::Val(h) {
+    value_ = DatagramsReadableMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DatagramsReadableMode::DatagramsReadableMode(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = DatagramsReadableMode::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+DatagramsReadableMode DatagramsReadableMode::take_ownership(Handle h) noexcept { return DatagramsReadableMode(h); }
+DatagramsReadableMode DatagramsReadableMode::clone() const noexcept { return *this; }
+const char* DatagramsReadableMode::to_string(DatagramsReadableMode::Value value_) noexcept {
+    switch (value_) {
+        case BYTES:
+            return "bytes";
+        default:
+            return "bytes"; // fallback to first value
     }
 }
 

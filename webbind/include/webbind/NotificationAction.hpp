@@ -22,6 +22,10 @@ public:
     [[nodiscard]] jsbind::String title() const;
     /// Setter of the `title` attribute.
     void title(const jsbind::String& value);
+    /// Getter of the `navigate` attribute.
+    [[nodiscard]] jsbind::String navigate() const;
+    /// Setter of the `navigate` attribute.
+    void navigate(const jsbind::String& value);
     /// Getter of the `icon` attribute.
     [[nodiscard]] jsbind::String icon() const;
     /// Setter of the `icon` attribute.

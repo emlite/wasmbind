@@ -278,6 +278,12 @@ public:
     /// The reciprocal method.
     /// [`MLGraphBuilder.reciprocal`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/reciprocal)
     MLOperand reciprocal(const MLOperand& input, const MLOperatorOptions& options);
+    /// The roundEven method.
+    /// [`MLGraphBuilder.roundEven`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/roundEven)
+    MLOperand roundEven(const MLOperand& input);
+    /// The roundEven method.
+    /// [`MLGraphBuilder.roundEven`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/roundEven)
+    MLOperand roundEven(const MLOperand& input, const MLOperatorOptions& options);
     /// The sin method.
     /// [`MLGraphBuilder.sin`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/sin)
     MLOperand sin(const MLOperand& input);
