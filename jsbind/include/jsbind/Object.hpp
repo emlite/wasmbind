@@ -76,6 +76,88 @@ class Record : public emlite::Val {
     [[nodiscard]] bool isUndefined() const noexcept { return emlite::Val::is_undefined(); }
 };
 
-/// Type alias for generic JavaScript objects with Any keys and values
-using Object = Record<Any, Any>;
+/// JavaScript Object wrapper class
+///
+/// Object provides access to JavaScript Object static methods and
+/// prototypal inheritance functionality.
+class Object : public emlite::Val {
+    explicit Object(Handle h) noexcept;
+
+  public:
+    /// Creates Object from a raw handle
+    /// @param h raw JavaScript handle
+    /// @returns Object wrapper object
+    static Object take_ownership(Handle h) noexcept;
+
+    /// Creates Object from an emlite::Val
+    /// @param val emlite::Val to wrap
+    explicit Object(const emlite::Val &val);
+
+    /// Creates a copy of this Object
+    /// @returns cloned Object
+    [[nodiscard]] Object clone() const noexcept;
+
+    /// Creates empty Object
+    Object() noexcept;
+
+    /// Sets property value
+    /// @param prop property key
+    /// @param val property value
+    template <typename K, typename V>
+    void set(const K &prop, const V &val) noexcept {
+        emlite::Val::set(prop, val);
+    }
+
+    /// Gets property value
+    /// @param prop property key
+    /// @returns property value
+    template <typename K, typename V>
+    Result<V, Error> get(const K &prop) const noexcept {
+        return emlite::Val::get(prop).template as<Result<V, Error>>();
+    }
+
+    /// Checks if object has property (including inherited)
+    /// @param prop property key to check
+    /// @returns true if property exists
+    template <typename K>
+    bool has(const K &prop) const noexcept {
+        return emlite::Val::has(prop);
+    }
+
+    /// Checks if object has own (non-inherited) property
+    /// @param prop property name to check
+    /// @returns true if object has own property
+    bool hasOwnProperty(const char *prop) noexcept;
+
+    /// Checks if the value is null (=== null)
+    /// @returns true if value is null
+    [[nodiscard]] bool isNull() const noexcept;
+
+    /// Checks if the value is undefined (=== undefined)
+    /// @returns true if value is undefined
+    [[nodiscard]] bool isUndefined() const noexcept;
+
+    /// Gets the Object constructor function
+    /// @returns emlite::Val representing the Object constructor
+    static emlite::Val instance() noexcept;
+
+    /// Creates an object with the specified prototype object and properties
+    /// @param prototype the object to use as the prototype, or null for no prototype
+    /// @returns a new object with the specified prototype
+    static emlite::Val create(const emlite::Val &prototype) noexcept;
+
+    /// Creates an object with the specified prototype object and properties
+    /// @param prototype the object to use as the prototype, or null for no prototype
+    /// @param properties an object whose enumerable own properties specify property descriptors
+    /// @returns a new object with the specified prototype and properties
+    static emlite::Val create(const emlite::Val &prototype, const emlite::Val &properties) noexcept;
+
+    /// Sets the prototype (i.e., the internal [[Prototype]] property) of a specified object
+    /// @param obj the object which is to have its prototype set
+    /// @param prototype the object's new prototype (an object or null)
+    /// @returns the specified object
+    static emlite::Val setPrototypeOf(
+        const emlite::Val &obj, const emlite::Val &prototype
+    ) noexcept;
+};
 } // namespace jsbind

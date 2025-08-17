@@ -4,9 +4,14 @@ namespace jsbind {
 
 template <typename T>
 class TypedArray;
+
 template <typename K, typename V>
 class Record;
-using Object = Record<Any, Any>;
+
+class Object;
+
+template <typename T>
+class Promise;
 
 class Function;
 
@@ -44,6 +49,21 @@ bool isNaN(const T &t) {
 /// Queues a microtask to be executed
 /// @param callback function to execute as microtask
 void queueMicrotask(const jsbind::Function &callback);
+
+/// Dynamically imports a module
+/// @param specifier module specifier to import
+/// @returns Promise that resolves to Result containing the module namespace object
+Promise<Result<Object, Error>> import(const String &specifier);
+
+/// Requires a CommonJS module
+/// @param specifier module specifier to require
+/// @returns Result containing the module exports
+Result<Object, Error> require(const String &specifier);
+
+/// Creates a require function using import.meta.url
+/// @param importMetaUrl the import.meta.url value (e.g., import.meta.url)
+/// @returns Result containing require function for CommonJS module loading
+Result<Function, Error> createRequire(const emlite::Val &importMetaUrl);
 
 class JsStructuredSerializeOptions : public emlite::Val {
     explicit JsStructuredSerializeOptions(Handle h) noexcept;

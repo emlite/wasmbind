@@ -1,8 +1,9 @@
 #include <emlite/emlite.hpp>
+#include <jsbind/Function.hpp>
+#include <jsbind/Object.hpp>
+#include <jsbind/Promise.hpp>
 #include <jsbind/global.hpp>
 #include <jsbind/utils.hpp>
-#include <jsbind/Object.hpp>
-#include <jsbind/Function.hpp>
 
 namespace jsbind {
 
@@ -61,20 +62,52 @@ void queueMicrotask(const jsbind::Function &callback) {
     emlite::Val::global("queueMicrotask")(callback);
 }
 
+Promise<Result<Object, Error>> import(const String &specifier) {
+    auto importPromise = emlite::Val::global("import")(specifier);
+    return Promise<Result<Object, Error>>::take_ownership(importPromise.as_handle());
+}
 
-JsStructuredSerializeOptions::JsStructuredSerializeOptions(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
-JsStructuredSerializeOptions JsStructuredSerializeOptions::take_ownership(Handle h) noexcept {
-        return JsStructuredSerializeOptions(h);
+Result<Object, Error> require(const String &specifier) {
+    auto requireFn = emlite::Val::global("require");
+    if (requireFn.is_undefined()) {
+        return err<Object, Error>(Error("require is not available in this environment"));
     }
-JsStructuredSerializeOptions::JsStructuredSerializeOptions(const emlite::Val &val) noexcept: emlite::Val(val) {}
-JsStructuredSerializeOptions::JsStructuredSerializeOptions() noexcept: emlite::Val(emlite::Val::object()) {}
+    
+    auto moduleExports = requireFn(specifier);
+    return ok<Object, Error>(Object(moduleExports));
+}
+
+Result<Function, Error> createRequire(const emlite::Val &importMetaUrl) {
+    auto moduleObj = emlite::Val::global("module");
+    if (moduleObj.is_undefined()) {
+        return err<Function, Error>(Error("module.createRequire not supported in this environment"));
+    }
+
+    auto createRequireFn = moduleObj.get("createRequire");
+    if (createRequireFn.is_undefined()) {
+        return err<Function, Error>(Error("module.createRequire not available"));
+    }
+
+    auto requireFn = createRequireFn(importMetaUrl);
+    return ok<Function, Error>(Function(requireFn));
+}
+
+JsStructuredSerializeOptions::JsStructuredSerializeOptions(Handle h) noexcept
+    : emlite::Val(emlite::Val::take_ownership(h)) {}
+JsStructuredSerializeOptions JsStructuredSerializeOptions::take_ownership(Handle h) noexcept {
+    return JsStructuredSerializeOptions(h);
+}
+JsStructuredSerializeOptions::JsStructuredSerializeOptions(const emlite::Val &val) noexcept
+    : emlite::Val(val) {}
+JsStructuredSerializeOptions::JsStructuredSerializeOptions() noexcept
+    : emlite::Val(emlite::Val::object()) {}
 JsStructuredSerializeOptions JsStructuredSerializeOptions::clone() const noexcept { return *this; }
 
 jsbind::TypedArray<jsbind::Object> JsStructuredSerializeOptions::transfer() const {
     return emlite::Val::get("transfer").as<jsbind::TypedArray<jsbind::Object>>();
 }
 
-void JsStructuredSerializeOptions::transfer(const jsbind::TypedArray<jsbind::Object>& value) {
+void JsStructuredSerializeOptions::transfer(const jsbind::TypedArray<jsbind::Object> &value) {
     emlite::Val::set("transfer", value);
 }
 
