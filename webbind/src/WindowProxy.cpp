@@ -1,5 +1,5 @@
 #include <webbind/Window.hpp>
-#include <webbind/window.hpp>
+#include <webbind/WindowProxy.hpp>
 #include <webbind/CacheStorage.hpp>
 #include <webbind/Crypto.hpp>
 #include <webbind/IDBFactory.hpp>

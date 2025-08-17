@@ -1129,4 +1129,4 @@ using jsbind::none;
 #include "XSLTProcessor.hpp"
 #include "console.hpp"
 #include "enums.hpp"
-#include "window.hpp"
+#include "WindowProxy.hpp"
