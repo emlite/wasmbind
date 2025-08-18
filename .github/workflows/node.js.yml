@@ -27,4 +27,4 @@ jobs:
     - name: npm install
       run: npm install
     - name: build tests for freestanding
-      run: npm run test:all
+      run: git submodule update --init --recursive && npm run test:all
