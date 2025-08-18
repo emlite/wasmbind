@@ -1,0 +1,3 @@
+[submodule "emlite-cpp"]
+	path = emlite-cpp
+	url = https://github.com/emlite/emlite-cpp
