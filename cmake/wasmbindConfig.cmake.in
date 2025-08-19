@@ -1,0 +1,8 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(emlite REQUIRED)
+
+include("${CMAKE_CURRENT_LIST_DIR}/wasmbindTargets.cmake")
+
+set(wasmbind_VERSION "@PACKAGE_VERSION@")

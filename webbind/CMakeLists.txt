@@ -33,25 +33,19 @@ target_sources(webbind
         FILES ${WEBBIND_HEADERS}
 )
 
-target_link_libraries(webbind PUBLIC emlite::emlite jsbind::jsbind)
+target_link_libraries(webbind PUBLIC emlite::emlite wasmbind::jsbind)
 target_compile_features(webbind PUBLIC cxx_std_20)
 target_precompile_headers(webbind PRIVATE
     <jsbind/jsbind.hpp>
     <webbind/enums.hpp>
 )
-add_library(webbind::webbind ALIAS webbind)
+add_library(wasmbind::webbind ALIAS webbind)
 
 include(GNUInstallDirs)
 
 install(
     TARGETS   webbind
-    EXPORT    webbindTargets
+    EXPORT    wasmbindTargets
     FILE_SET  HEADERS
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-
-install(EXPORT webbindTargets
-    FILE webbindTargets.cmake
-    NAMESPACE webbind::
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/webbind
 )

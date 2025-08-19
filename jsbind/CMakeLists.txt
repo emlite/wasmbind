@@ -67,19 +67,13 @@ target_sources(jsbind
 target_compile_features(jsbind PUBLIC cxx_std_20)
 target_link_libraries(jsbind PUBLIC emlite::emlite)
 
-add_library(jsbind::jsbind ALIAS jsbind)
+add_library(wasmbind::jsbind ALIAS jsbind)
 
 include(GNUInstallDirs)
 
 install(
     TARGETS   jsbind
-    EXPORT    jsbindTargets
+    EXPORT    wasmbindTargets
     FILE_SET  HEADERS
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-
-install(EXPORT jsbindTargets
-    FILE jsbindTargets.cmake
-    NAMESPACE jsbind::
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/jsbind
 )
