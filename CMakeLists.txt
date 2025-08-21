@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(wasmbind VERSION 0.1.0 LANGUAGES CXX)
+project(wasmbind VERSION 0.1.2 LANGUAGES CXX)
 
 find_package(emlite CONFIG QUIET)
 if (NOT emlite_FOUND)
