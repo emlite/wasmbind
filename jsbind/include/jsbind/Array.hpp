@@ -7,14 +7,6 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#if __has_include(<span>)
-#include <span>
-#include <vector>
-#define EM_HAVE_STD_SPAN 1
-#else
-#define EM_HAVE_STD_SPAN 0
-#endif
-
 namespace jsbind {
 
 class Function;
@@ -350,7 +342,7 @@ class TypedArray : public emlite::Val {
     /// @returns iterator object for values
     [[nodiscard]] Any values() noexcept { return this->call("values").template as<Any>(); }
 
-#if EM_HAVE_STD_SPAN
+#if JSBIND_HAVE_SPAN
     /// Creates TypedArray from std::span
     /// @param s span containing data
     /// @returns new TypedArray with span data

@@ -32,21 +32,41 @@ Promise<Result<ArrayBuffer, Error>> Response::arrayBuffer() const {
 }
 
 Promise<Result<Response, Error>> fetch(const char *input) {
-    return emlite::Val::global("fetch")(emlite::Val(input))
-        .template as<Promise<Result<Response, Error>>>();
+    auto f = emlite::Val::global("fetch");
+    if (!f.is_function()) {
+        return Promise<Result<Response, Error>>::reject(Error("globalThis.fetch is not available"));
+    }
+    return f(emlite::Val(input)).template as<Promise<Result<Response, Error>>>();
 }
 
 Promise<Result<Response, Error>> fetch(const char *input, const Any &init) {
-    return emlite::Val::global("fetch")(emlite::Val(input), init)
-        .template as<Promise<Result<Response, Error>>>();
+    auto f = emlite::Val::global("fetch");
+    if (!f.is_function()) {
+        return Promise<Result<Response, Error>>::reject(Error("globalThis.fetch is not available"));
+    }
+    return f(emlite::Val(input), init).template as<Promise<Result<Response, Error>>>();
 }
 
 Promise<Result<Response, Error>> fetch(const Any &input) {
-    return emlite::Val::global("fetch")(input).template as<Promise<Result<Response, Error>>>();
+    auto f = emlite::Val::global("fetch");
+    if (!f.is_function()) {
+        return Promise<Result<Response, Error>>::reject(Error("globalThis.fetch is not available"));
+    }
+    return f(input).template as<Promise<Result<Response, Error>>>();
 }
 
 Promise<Result<Response, Error>> fetch(const Any &input, const Any &init) {
-    return emlite::Val::global("fetch")(input, init)
-        .template as<Promise<Result<Response, Error>>>();
+    auto f = emlite::Val::global("fetch");
+    if (!f.is_function()) {
+        return Promise<Result<Response, Error>>::reject(Error("globalThis.fetch is not available"));
+    }
+    return f(input, init).template as<Promise<Result<Response, Error>>>();
+}
+
+// Header declares fetchVal; provide thin wrappers to unify naming
+Promise<Result<Response, Error>> fetchVal(const Any &input) { return fetch(input); }
+
+Promise<Result<Response, Error>> fetchVal(const Any &input, const Any &init) {
+    return fetch(input, init);
 }
 }

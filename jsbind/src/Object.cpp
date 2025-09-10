@@ -45,4 +45,20 @@ emlite::Val Object::setPrototypeOf(const emlite::Val &obj, const emlite::Val &pr
     return emlite::Val::global("Object").call("setPrototypeOf", obj, prototype);
 }
 
+Result<Any, Error> Object::tryCreate(const emlite::Val &prototype) noexcept {
+    return emlite::Val::global("Object").call("create", prototype).as<Result<Any, Error>>();
+}
+
+Result<Any, Error> Object::tryCreate(
+    const emlite::Val &prototype, const emlite::Val &properties
+) noexcept {
+    return emlite::Val::global("Object").call("create", prototype, properties).as<Result<Any, Error>>();
+}
+
+Result<Any, Error> Object::trySetPrototypeOf(
+    const emlite::Val &obj, const emlite::Val &prototype
+) noexcept {
+    return emlite::Val::global("Object").call("setPrototypeOf", obj, prototype).as<Result<Any, Error>>();
+}
+
 } // namespace jsbind

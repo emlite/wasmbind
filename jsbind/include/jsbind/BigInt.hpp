@@ -222,6 +222,12 @@ class BigInt : public emlite::Val {
     /// @returns n-bit unsigned result
     static BigInt asUintN(int width, const BigInt &bigint) noexcept;
 
+    // Narrowing helpers for common integral widths
+    static int32_t toInt32(const BigInt &bigint) noexcept;
+    static uint32_t toUint32(const BigInt &bigint) noexcept;
+    static int64_t toInt64(const BigInt &bigint) noexcept;
+    static uint64_t toUint64(const BigInt &bigint) noexcept;
+
     // Utility methods
     /// Gets hash code for BigInt
     /// @returns hash value

@@ -251,13 +251,13 @@ bool isFinite(const Number &num) noexcept;
 
 /// Parses floating point number from string
 /// @param str string to parse
-/// @returns parsed Number value
-Number parseFloat(const String &str) noexcept;
+/// @returns Result containing Number or Error
+Result<Number, Error> parseFloat(const String &str) noexcept;
 
 /// Parses integer from string with radix
 /// @param str string to parse
 /// @param radix number base (2-36, default 10)
-/// @returns parsed Number value
-Number parseInt(const String &str, int radix = 10) noexcept;
+/// @returns Result containing Number or Error
+Result<Number, Error> parseInt(const String &str, int radix = 10) noexcept;
 
 } // namespace jsbind

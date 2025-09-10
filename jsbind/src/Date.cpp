@@ -44,6 +44,19 @@ String Date::toLocaleString(const Any &locales, const Any &opts) const {
     return this->call("toLocaleString", locales, opts).template as<String>();
 }
 
+Result<String, Error> Date::toLocaleStringSafe(const Any &locales, const Any &opts) const {
+    if (!locales && !opts) {
+        return this->call("toLocaleString").template as<Result<String, Error>>();
+    }
+    if (locales && !opts) {
+        return this->call("toLocaleString", locales).template as<Result<String, Error>>();
+    }
+    if (!locales && opts) {
+        return this->call("toLocaleString", opts).template as<Result<String, Error>>();
+    }
+    return this->call("toLocaleString", locales, opts).template as<Result<String, Error>>();
+}
+
 /// Return **new** Date advanced by `delta` milliseconds
 Date Date::addMillis(int64_t delta) const { return fromEpochMillis(valueOf() + delta); }
 

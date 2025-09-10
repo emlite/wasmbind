@@ -6,11 +6,12 @@
 
 namespace jsbind {
 
-/// Generic wrapper for JavaScript Record/Object types
+/// Generic wrapper for JavaScript Record/Object types.
 ///
 /// Record provides a type-safe interface for JavaScript objects with
-/// specific key and value types. It supports property access, modification,
-/// and checking for property existence.
+/// specific key and value types. Methods forward to the underlying
+/// `emlite::Val` operations; this wrapper only constrains key/value types
+/// at the C++ level.
 template <typename K, typename V>
 class Record : public emlite::Val {
     explicit Record(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
@@ -41,19 +42,19 @@ class Record : public emlite::Val {
     /// @returns true if object has own property
     bool hasOwnProperty(const char *prop) noexcept { return has_own_property(prop); }
 
-    /// Sets property value
+    /// Sets property value (forwards to base `Val::set`).
     /// @param prop property key
     /// @param val property value
     void set(const K &prop, const V &val) noexcept { return emlite::Val::set(prop, val); }
 
-    /// Gets property value
+    /// Gets property value (forwards to base `Val::get`).
     /// @param prop property key
     /// @returns property value converted to type V
     Result<V, Error> get(const K &prop) const noexcept {
         return emlite::Val::get(prop).template as<Result<V, Error>>();
     }
 
-    /// Checks if object has property (including inherited)
+    /// Checks if object has property (including inherited) (forwards to `Val::has`).
     /// @param prop property key to check
     /// @returns true if property exists
     bool has(const K &prop) const noexcept { return emlite::Val::has(prop); }
@@ -76,10 +77,11 @@ class Record : public emlite::Val {
     [[nodiscard]] bool isUndefined() const noexcept { return emlite::Val::is_undefined(); }
 };
 
-/// JavaScript Object wrapper class
+/// JavaScript Object wrapper class.
 ///
 /// Object provides access to JavaScript Object static methods and
-/// prototypal inheritance functionality.
+/// prototypal inheritance functionality. Templated `set/get/has` forward
+/// to the corresponding `emlite::Val` methods on the base class.
 class Object : public emlite::Val {
     explicit Object(Handle h) noexcept;
 
@@ -100,7 +102,7 @@ class Object : public emlite::Val {
     /// Creates empty Object
     Object() noexcept;
 
-    /// Sets property value
+    /// Sets property value (forwards to base `Val::set`).
     /// @param prop property key
     /// @param val property value
     template <typename K, typename V>
@@ -108,7 +110,7 @@ class Object : public emlite::Val {
         emlite::Val::set(prop, val);
     }
 
-    /// Gets property value
+    /// Gets property value (forwards to base `Val::get`).
     /// @param prop property key
     /// @returns property value
     template <typename K, typename V>
@@ -116,7 +118,7 @@ class Object : public emlite::Val {
         return emlite::Val::get(prop).template as<Result<V, Error>>();
     }
 
-    /// Checks if object has property (including inherited)
+    /// Checks if object has property (including inherited) (forwards to `Val::has`).
     /// @param prop property key to check
     /// @returns true if property exists
     template <typename K>
@@ -157,6 +159,16 @@ class Object : public emlite::Val {
     /// @param prototype the object's new prototype (an object or null)
     /// @returns the specified object
     static emlite::Val setPrototypeOf(
+        const emlite::Val &obj, const emlite::Val &prototype
+    ) noexcept;
+
+    /// Safe variants that return Result for operations that can throw
+    /// in the JavaScript environment (invalid descriptors, prototypes, etc.).
+    static Result<Any, Error> tryCreate(const emlite::Val &prototype) noexcept;
+    static Result<Any, Error> tryCreate(
+        const emlite::Val &prototype, const emlite::Val &properties
+    ) noexcept;
+    static Result<Any, Error> trySetPrototypeOf(
         const emlite::Val &obj, const emlite::Val &prototype
     ) noexcept;
 };

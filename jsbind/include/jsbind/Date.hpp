@@ -38,6 +38,12 @@ class Date : public emlite::Val {
         const Any &locales = Undefined::value, const Any &opts = Undefined::value
     ) const;
 
+    /// Safe variant of `toLocaleString` that returns Result
+    /// for environments that may throw on invalid locales/options.
+    [[nodiscard]] Result<String, Error> toLocaleStringSafe(
+        const Any &locales = Undefined::value, const Any &opts = Undefined::value
+    ) const;
+
     /// Return **new** Date advanced by `delta` milliseconds
     [[nodiscard]] Date addMillis(int64_t delta) const;
 

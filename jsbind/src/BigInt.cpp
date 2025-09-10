@@ -243,6 +243,24 @@ BigInt BigInt::asUintN(int width, const BigInt &bigint) noexcept {
     );
 }
 
+int32_t BigInt::toInt32(const BigInt &bigint) noexcept {
+    return emlite::Val::global("BigInt").call("asIntN", 32, bigint).template as<int32_t>();
+}
+
+uint32_t BigInt::toUint32(const BigInt &bigint) noexcept {
+    return emlite::Val::global("BigInt").call("asUintN", 32, bigint).template as<uint32_t>();
+}
+
+int64_t BigInt::toInt64(const BigInt &bigint) noexcept {
+    // Either direct conversion or via asIntN(64) — both yield signed 64-bit
+    return bigint.template as<int64_t>();
+}
+
+uint64_t BigInt::toUint64(const BigInt &bigint) noexcept {
+    // Use unsigned path to avoid negative values
+    return bigint.template as<uint64_t>();
+}
+
 size_t BigInt::hash() const noexcept {
     // Simple hash based on handle value (no std library)
     return static_cast<size_t>(as_handle());

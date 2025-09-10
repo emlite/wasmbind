@@ -275,6 +275,13 @@ Result<Number, Error> Number::parseInt(const String &str, int radix) noexcept {
     return ok<Number, Error>(emlite::detail::move(number));
 }
 
+// Global helpers mirroring JavaScript parseFloat/parseInt returning Result
+Result<Number, Error> jsbind::parseFloat(const String &str) noexcept { return Number::parseFloat(str); }
+
+Result<Number, Error> jsbind::parseInt(const String &str, int radix) noexcept {
+    return Number::parseInt(str, radix);
+}
+
 // Constants
 Number Number::epsilon() noexcept {
     Number num;
@@ -336,14 +343,4 @@ bool jsbind::isNaN(const Number &num) noexcept {
 
 bool jsbind::isFinite(const Number &num) noexcept {
     return num.isFinite();
-}
-
-Number jsbind::parseFloat(const String &str) noexcept {
-    auto result = Number::parseFloat(str);
-    return result.has_value() ? result.unwrap() : Number::nan();
-}
-
-Number jsbind::parseInt(const String &str, int radix) noexcept {
-    auto result = Number::parseInt(str, radix);
-    return result.has_value() ? result.unwrap() : Number::nan();
 }

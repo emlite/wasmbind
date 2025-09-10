@@ -2,6 +2,17 @@
 
 #include <emlite/emlite.hpp>
 
+#if __has_include(<span>)
+// Assume we also have vector for to_vector()
+#include <vector>
+#include <span>
+#define JSBIND_HAVE_SPAN 1
+#define JSBIND_USE_SPAN(x) x
+#else
+#define JSBIND_HAVE_SPAN 0
+#define JSBIND_USE_SPAN(x)
+#endif
+
 #define DECLARE_CLONE(x) x clone() const noexcept;
 
 #define DEFINE_CLONE(x)                                                                            \
@@ -19,6 +30,8 @@
         static emlite::Val instance() noexcept;                                                    \
         [[nodiscard]] name subarray(size_t begin, size_t end = SIZE_MAX) const;                    \
         static name from(int_ty *arr, size_t len);                                                 \
+        static name from(const int_ty *arr, size_t len);                                           \
+        JSBIND_USE_SPAN(static name from(std::span<const int_ty> arr));                            \
         DECLARE_CLONE(name)                                                                        \
     };
 
@@ -31,14 +44,18 @@
         return TypedArray<int_ty>::call("subarray", begin, end).as<name>();                        \
     }                                                                                              \
     name name::from(int_ty *arr, size_t len) {                                                     \
-        auto temp = emlite::Val::array();                                                          \
-        for (auto i = 0; i < len; i++) {                                                           \
-            emlite::Val num(arr[i]);                                                               \
-            temp.call("push", num);                                                                \
-        }                                                                                          \
+        auto temp = emlite::Val::from_span(arr, len);                                              \
+        return name(emlite::Val::global(#name).call("from", temp));                                \
+    }                                                                                              \
+    name name::from(const int_ty *arr, size_t len) {                                               \
+        auto temp = emlite::Val::from_span(arr, len);                                              \
         return name(emlite::Val::global(#name).call("from", temp));                                \
     }                                                                                              \
     emlite::Val name::instance() noexcept { return emlite::Val::global(#name); }                   \
+    JSBIND_USE_SPAN(name name::from(std::span<const int_ty> arr) {                                 \
+        auto temp = emlite::Val::from_span(arr.data(), arr.size());                                \
+        return name(emlite::Val::global(#name).call("from", temp));                                \
+    })                                                                                             \
     DEFINE_CLONE(name)
 
 namespace jsbind {
