@@ -437,6 +437,11 @@ DECLARE_ARRAY(Uint16Array, uint16_t)
 
 DECLARE_ARRAY(Int16Array, int16_t)
 
+// Note: Float16Array is represented with 16-bit storage; values are treated
+// as raw 16-bit units at the C++ boundary. Conversions to/from JS happen via
+// the runtime.
+DECLARE_ARRAY(Float16Array, uint16_t)
+
 DECLARE_ARRAY(Uint32Array, uint32_t)
 
 DECLARE_ARRAY(Int32Array, int32_t)
@@ -444,6 +449,8 @@ DECLARE_ARRAY(Int32Array, int32_t)
 DECLARE_ARRAY(Float32Array, float)
 
 DECLARE_ARRAY(Float64Array, double)
+
+DECLARE_ARRAY(Uint8ClampedArray, uint8_t)
 
 // Note: BigInt arrays work with JavaScript BigInt, not C++ int64_t
 // They need special handling since BigInt is a JavaScript object type

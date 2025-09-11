@@ -46,7 +46,8 @@
 
 #include "BigIntArray.hpp"
 
+#include "ArrayBufferView.hpp"
+
 #include "utils.hpp"
 
 #include "global.hpp"
-

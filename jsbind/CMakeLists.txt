@@ -51,6 +51,7 @@ set(JSBIND_HEADERS
     include/jsbind/Symbol.hpp
     include/jsbind/BigInt.hpp
     include/jsbind/BigIntArray.hpp
+    include/jsbind/ArrayBufferView.hpp
     include/jsbind/global.hpp
     include/jsbind/Number.hpp
 )

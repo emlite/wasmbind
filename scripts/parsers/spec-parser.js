@@ -70,7 +70,25 @@ export function processInterfaces(interfaces, mixins, includeRel) {
   for (const [name, rec] of interfaces) {
     const mem = new Map();
     const cons = new Map();
-    const addM = (m) => mem.set(`${m.type}:${m.name}`, m);
+    // Build a stable key; for operations/constructors include signature to keep overloads
+    const memberKey = (m) => {
+      if (m.type === "operation" || m.type === "constructor") {
+        const isStatic =
+          m.static === true || m.special === "static" ? "static:" : "";
+        const ret = m.idlType ? JSON.stringify(m.idlType) : "undefined";
+        const args = (m.arguments || [])
+          .map(
+            (a) =>
+              `${a.optional ? "?" : ""}${JSON.stringify(a.idlType)}:${a.name}`
+          )
+          .join(",");
+        // Use name when available (constructors may have empty name)
+        const nm = m.name || "<ctor>";
+        return `${m.type}:${nm}:${isStatic}${ret}(${args})`;
+      }
+      return `${m.type}:${m.name}`;
+    };
+    const addM = (m) => mem.set(memberKey(m), m);
     const addC = (c) => cons.set(c.name, c);
 
     if (rec.base) {
