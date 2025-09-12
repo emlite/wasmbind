@@ -8,6 +8,7 @@
 namespace webbind {
 
 class AudioSession;
+class HTMLMediaElement;
 class AudioContext;
 class BatteryManager;
 class Clipboard;
@@ -75,6 +76,12 @@ public:
     /// [`Navigator.audioSession`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/audioSession)
     /// [`Navigator.audioSession`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/audioSession)
     [[nodiscard]] AudioSession audioSession() const;
+    /// The getAutoplayPolicy method.
+    /// [`Navigator.getAutoplayPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getAutoplayPolicy)
+    AutoplayPolicy getAutoplayPolicy(const AutoplayPolicyMediaType& type);
+    /// The getAutoplayPolicy method.
+    /// [`Navigator.getAutoplayPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getAutoplayPolicy)
+    AutoplayPolicy getAutoplayPolicy(const HTMLMediaElement& element);
     /// The getAutoplayPolicy method.
     /// [`Navigator.getAutoplayPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getAutoplayPolicy)
     AutoplayPolicy getAutoplayPolicy(const AudioContext& context);

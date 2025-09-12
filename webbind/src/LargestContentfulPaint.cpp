@@ -19,6 +19,10 @@ jsbind::Any LargestContentfulPaint::loadTime() const {
     return PerformanceEntry::get("loadTime").as<jsbind::Any>();
 }
 
+jsbind::Any LargestContentfulPaint::renderTime() const {
+    return PerformanceEntry::get("renderTime").as<jsbind::Any>();
+}
+
 unsigned long LargestContentfulPaint::size() const {
     return PerformanceEntry::get("size").as<unsigned long>();
 }

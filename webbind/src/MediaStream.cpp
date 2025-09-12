@@ -1,6 +1,6 @@
 #include <webbind/MediaStream.hpp>
-#include <webbind/MediaStreamTrack.hpp>
 #include <webbind/MediaStream.hpp>
+#include <webbind/MediaStreamTrack.hpp>
 
 namespace webbind {
 
@@ -15,6 +15,10 @@ emlite::Val MediaStream::instance() noexcept { return emlite::Val::global("Media
 MediaStream::MediaStream(Handle h) noexcept : EventTarget(emlite::Val::take_ownership(h)) {}
 
 MediaStream::MediaStream(const emlite::Val &val) noexcept: EventTarget(val) {}
+
+MediaStream::MediaStream() : EventTarget(emlite::Val::global("MediaStream").new_()) {}
+
+MediaStream::MediaStream(const MediaStream& stream) : EventTarget(emlite::Val::global("MediaStream").new_(stream)) {}
 
 MediaStream::MediaStream(const jsbind::TypedArray<MediaStreamTrack>& tracks) : EventTarget(emlite::Val::global("MediaStream").new_(tracks)) {}
 

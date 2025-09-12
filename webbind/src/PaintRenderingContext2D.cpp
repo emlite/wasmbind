@@ -55,6 +55,10 @@ DOMMatrix PaintRenderingContext2D::getTransform() {
     return emlite::Val::call("getTransform").as<DOMMatrix>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::setTransform(double a, double b, double c, double d, double e, double f) {
+    return emlite::Val::call("setTransform", a, b, c, d, e, f).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::setTransform() {
     return emlite::Val::call("setTransform").as<jsbind::Undefined>();
 }
@@ -179,6 +183,14 @@ jsbind::Undefined PaintRenderingContext2D::beginPath() {
     return emlite::Val::call("beginPath").as<jsbind::Undefined>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::fill() {
+    return emlite::Val::call("fill").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PaintRenderingContext2D::fill(const CanvasFillRule& fillRule) {
+    return emlite::Val::call("fill", fillRule).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::fill(const Path2D& path) {
     return emlite::Val::call("fill", path).as<jsbind::Undefined>();
 }
@@ -187,8 +199,20 @@ jsbind::Undefined PaintRenderingContext2D::fill(const Path2D& path, const Canvas
     return emlite::Val::call("fill", path, fillRule).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined PaintRenderingContext2D::stroke() {
+    return emlite::Val::call("stroke").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined PaintRenderingContext2D::stroke(const Path2D& path) {
     return emlite::Val::call("stroke", path).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PaintRenderingContext2D::clip() {
+    return emlite::Val::call("clip").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PaintRenderingContext2D::clip(const CanvasFillRule& fillRule) {
+    return emlite::Val::call("clip", fillRule).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined PaintRenderingContext2D::clip(const Path2D& path) {
@@ -199,6 +223,14 @@ jsbind::Undefined PaintRenderingContext2D::clip(const Path2D& path, const Canvas
     return emlite::Val::call("clip", path, fillRule).as<jsbind::Undefined>();
 }
 
+bool PaintRenderingContext2D::isPointInPath(double x, double y) {
+    return emlite::Val::call("isPointInPath", x, y).as<bool>();
+}
+
+bool PaintRenderingContext2D::isPointInPath(double x, double y, const CanvasFillRule& fillRule) {
+    return emlite::Val::call("isPointInPath", x, y, fillRule).as<bool>();
+}
+
 bool PaintRenderingContext2D::isPointInPath(const Path2D& path, double x, double y) {
     return emlite::Val::call("isPointInPath", path, x, y).as<bool>();
 }
@@ -207,8 +239,20 @@ bool PaintRenderingContext2D::isPointInPath(const Path2D& path, double x, double
     return emlite::Val::call("isPointInPath", path, x, y, fillRule).as<bool>();
 }
 
+bool PaintRenderingContext2D::isPointInStroke(double x, double y) {
+    return emlite::Val::call("isPointInStroke", x, y).as<bool>();
+}
+
 bool PaintRenderingContext2D::isPointInStroke(const Path2D& path, double x, double y) {
     return emlite::Val::call("isPointInStroke", path, x, y).as<bool>();
+}
+
+jsbind::Undefined PaintRenderingContext2D::drawImage(const jsbind::Any& image, double dx, double dy) {
+    return emlite::Val::call("drawImage", image, dx, dy).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PaintRenderingContext2D::drawImage(const jsbind::Any& image, double dx, double dy, double dw, double dh) {
+    return emlite::Val::call("drawImage", image, dx, dy, dw, dh).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined PaintRenderingContext2D::drawImage(const jsbind::Any& image, double sx, double sy, double sw, double sh, double dx, double dy, double dw, double dh) {

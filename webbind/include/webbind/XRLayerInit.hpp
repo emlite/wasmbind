@@ -21,13 +21,13 @@ public:
     /// Setter of the `space` attribute.
     void space(const XRSpace& value);
     /// Getter of the `colorFormat` attribute.
-    [[nodiscard]] jsbind::Any colorFormat() const;
+    [[nodiscard]] uint32_t colorFormat() const;
     /// Setter of the `colorFormat` attribute.
-    void colorFormat(const jsbind::Any& value);
+    void colorFormat(const uint32_t& value);
     /// Getter of the `depthFormat` attribute.
-    [[nodiscard]] jsbind::Any depthFormat() const;
+    [[nodiscard]] uint32_t depthFormat() const;
     /// Setter of the `depthFormat` attribute.
-    void depthFormat(const jsbind::Any& value);
+    void depthFormat(const uint32_t& value);
     /// Getter of the `mipLevels` attribute.
     [[nodiscard]] unsigned long mipLevels() const;
     /// Setter of the `mipLevels` attribute.

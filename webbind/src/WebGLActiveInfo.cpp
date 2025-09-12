@@ -14,12 +14,12 @@ WebGLActiveInfo::WebGLActiveInfo(Handle h) noexcept : emlite::Val(emlite::Val::t
 
 WebGLActiveInfo::WebGLActiveInfo(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-jsbind::Any WebGLActiveInfo::size() const {
-    return emlite::Val::get("size").as<jsbind::Any>();
+int WebGLActiveInfo::size() const {
+    return emlite::Val::get("size").as<int>();
 }
 
-jsbind::Any WebGLActiveInfo::type() const {
-    return emlite::Val::get("type").as<jsbind::Any>();
+uint32_t WebGLActiveInfo::type() const {
+    return emlite::Val::get("type").as<uint32_t>();
 }
 
 jsbind::String WebGLActiveInfo::name() const {

@@ -19,6 +19,8 @@ public:
     [[nodiscard]] CSSRotate clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new CSSRotate(..)` constructor, creating a new CSSRotate instance
+    CSSRotate(const CSSNumericValue& angle);
+    /// The `new CSSRotate(..)` constructor, creating a new CSSRotate instance
     CSSRotate(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& z, const CSSNumericValue& angle);
     /// [`CSSRotate.x`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate/x)
     /// [`CSSRotate.x`](https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate/x)

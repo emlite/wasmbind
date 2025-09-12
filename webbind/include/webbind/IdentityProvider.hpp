@@ -24,10 +24,10 @@ public:
     static jsbind::Undefined close();
     /// The resolve method.
     /// [`IdentityProvider.resolve`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider/resolve)
-    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::String& token);
+    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::Any& token);
     /// The resolve method.
     /// [`IdentityProvider.resolve`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider/resolve)
-    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::String& token, const IdentityResolveOptions& options);
+    static jsbind::Promise<jsbind::Undefined> resolve(const jsbind::Any& token, const IdentityResolveOptions& options);
     /// The getUserInfo method.
     /// [`IdentityProvider.getUserInfo`](https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider/getUserInfo)
     static jsbind::Promise<jsbind::TypedArray<IdentityUserInfo>> getUserInfo(const IdentityProviderConfig& config);

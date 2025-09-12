@@ -35,6 +35,9 @@ public:
     [[nodiscard]] unsigned short readyState() const;
     /// The open method.
     /// [`XMLHttpRequest.open`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open)
+    jsbind::Undefined open(const jsbind::String& method, const jsbind::String& url);
+    /// The open method.
+    /// [`XMLHttpRequest.open`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open)
     jsbind::Undefined open(const jsbind::String& method, const jsbind::String& url, bool async);
     /// The open method.
     /// [`XMLHttpRequest.open`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open)

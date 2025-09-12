@@ -23,8 +23,8 @@ jsbind::Undefined OES_vertex_array_object::deleteVertexArrayOES(const WebGLVerte
     return emlite::Val::call("deleteVertexArrayOES", arrayObject).as<jsbind::Undefined>();
 }
 
-jsbind::Any OES_vertex_array_object::isVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject) {
-    return emlite::Val::call("isVertexArrayOES", arrayObject).as<jsbind::Any>();
+bool OES_vertex_array_object::isVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject) {
+    return emlite::Val::call("isVertexArrayOES", arrayObject).as<bool>();
 }
 
 jsbind::Undefined OES_vertex_array_object::bindVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject) {

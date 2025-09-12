@@ -54,6 +54,14 @@ MLOperand MLGraphBuilder::input(const jsbind::String& name, const MLOperandDescr
     return emlite::Val::call("input", name, descriptor).as<MLOperand>();
 }
 
+MLOperand MLGraphBuilder::constant(const MLOperandDescriptor& descriptor, const jsbind::Any& buffer) {
+    return emlite::Val::call("constant", descriptor, buffer).as<MLOperand>();
+}
+
+MLOperand MLGraphBuilder::constant(const MLOperandDataType& type, const jsbind::Any& value) {
+    return emlite::Val::call("constant", type, value).as<MLOperand>();
+}
+
 MLOperand MLGraphBuilder::constant(const MLTensor& tensor) {
     return emlite::Val::call("constant", tensor).as<MLOperand>();
 }
@@ -268,6 +276,22 @@ MLOperand MLGraphBuilder::logicalXor(const MLOperand& a, const MLOperand& b) {
 
 MLOperand MLGraphBuilder::logicalXor(const MLOperand& a, const MLOperand& b, const MLOperatorOptions& options) {
     return emlite::Val::call("logicalXor", a, b, options).as<MLOperand>();
+}
+
+MLOperand MLGraphBuilder::isNaN(const MLOperand& a) {
+    return emlite::Val::call("isNaN", a).as<MLOperand>();
+}
+
+MLOperand MLGraphBuilder::isNaN(const MLOperand& a, const MLOperatorOptions& options) {
+    return emlite::Val::call("isNaN", a, options).as<MLOperand>();
+}
+
+MLOperand MLGraphBuilder::isInfinite(const MLOperand& a) {
+    return emlite::Val::call("isInfinite", a).as<MLOperand>();
+}
+
+MLOperand MLGraphBuilder::isInfinite(const MLOperand& a, const MLOperatorOptions& options) {
+    return emlite::Val::call("isInfinite", a, options).as<MLOperand>();
 }
 
 MLOperand MLGraphBuilder::abs(const MLOperand& input) {

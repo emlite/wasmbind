@@ -1,4 +1,5 @@
 #include <webbind/VideoFrame.hpp>
+#include <webbind/VideoFrameInit.hpp>
 #include <webbind/VideoFrameBufferInit.hpp>
 #include <webbind/DOMRectReadOnly.hpp>
 #include <webbind/VideoColorSpace.hpp>
@@ -20,6 +21,10 @@ emlite::Val VideoFrame::instance() noexcept { return emlite::Val::global("VideoF
 VideoFrame::VideoFrame(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 
 VideoFrame::VideoFrame(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+VideoFrame::VideoFrame(const jsbind::Any& image) : emlite::Val(emlite::Val::global("VideoFrame").new_(image)) {}
+
+VideoFrame::VideoFrame(const jsbind::Any& image, const VideoFrameInit& init) : emlite::Val(emlite::Val::global("VideoFrame").new_(image, init)) {}
 
 VideoFrame::VideoFrame(const jsbind::Any& data, const VideoFrameBufferInit& init) : emlite::Val(emlite::Val::global("VideoFrame").new_(data, init)) {}
 

@@ -18,12 +18,20 @@ CookieStore::CookieStore(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 
 CookieStore::CookieStore(const emlite::Val &val) noexcept: EventTarget(val) {}
 
+jsbind::Promise<CookieListItem> CookieStore::get(const jsbind::String& name) {
+    return EventTarget::call("get", name).as<jsbind::Promise<CookieListItem>>();
+}
+
 jsbind::Promise<CookieListItem> CookieStore::get() {
     return EventTarget::call("get").as<jsbind::Promise<CookieListItem>>();
 }
 
 jsbind::Promise<CookieListItem> CookieStore::get(const CookieStoreGetOptions& options) {
     return EventTarget::call("get", options).as<jsbind::Promise<CookieListItem>>();
+}
+
+jsbind::Promise<jsbind::Any> CookieStore::getAll(const jsbind::String& name) {
+    return EventTarget::call("getAll", name).as<jsbind::Promise<jsbind::Any>>();
 }
 
 jsbind::Promise<jsbind::Any> CookieStore::getAll() {
@@ -34,8 +42,16 @@ jsbind::Promise<jsbind::Any> CookieStore::getAll(const CookieStoreGetOptions& op
     return EventTarget::call("getAll", options).as<jsbind::Promise<jsbind::Any>>();
 }
 
+jsbind::Promise<jsbind::Undefined> CookieStore::set(const jsbind::String& name, const jsbind::String& value) {
+    return EventTarget::call("set", name, value).as<jsbind::Promise<jsbind::Undefined>>();
+}
+
 jsbind::Promise<jsbind::Undefined> CookieStore::set(const CookieInit& options) {
     return EventTarget::call("set", options).as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> CookieStore::delete_(const jsbind::String& name) {
+    return EventTarget::call("delete", name).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Promise<jsbind::Undefined> CookieStore::delete_(const CookieStoreDeleteOptions& options) {

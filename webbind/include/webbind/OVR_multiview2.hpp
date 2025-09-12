@@ -19,7 +19,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The framebufferTextureMultiviewOVR method.
     /// [`OVR_multiview2.framebufferTextureMultiviewOVR`](https://developer.mozilla.org/en-US/docs/Web/API/OVR_multiview2/framebufferTextureMultiviewOVR)
-    jsbind::Undefined framebufferTextureMultiviewOVR(const jsbind::Any& target, const jsbind::Any& attachment, const WebGLTexture& texture, const jsbind::Any& level, const jsbind::Any& baseViewIndex, const jsbind::Any& numViews);
+    jsbind::Undefined framebufferTextureMultiviewOVR(const uint32_t& target, const uint32_t& attachment, const WebGLTexture& texture, int level, int baseViewIndex, int numViews);
 };
 
 } // namespace webbind

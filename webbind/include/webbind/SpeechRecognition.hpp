@@ -68,6 +68,9 @@ public:
     void phrases(const jsbind::TypedArray<SpeechRecognitionPhrase>& value);
     /// The start method.
     /// [`SpeechRecognition.start`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/start)
+    jsbind::Undefined start();
+    /// The start method.
+    /// [`SpeechRecognition.start`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/start)
     jsbind::Undefined start(const MediaStreamTrack& audioTrack);
     /// The stop method.
     /// [`SpeechRecognition.stop`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/stop)

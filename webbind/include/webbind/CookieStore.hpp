@@ -23,10 +23,16 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The get method.
     /// [`CookieStore.get`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get)
+    jsbind::Promise<CookieListItem> get(const jsbind::String& name);
+    /// The get method.
+    /// [`CookieStore.get`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get)
     jsbind::Promise<CookieListItem> get();
     /// The get method.
     /// [`CookieStore.get`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get)
     jsbind::Promise<CookieListItem> get(const CookieStoreGetOptions& options);
+    /// The getAll method.
+    /// [`CookieStore.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll)
+    jsbind::Promise<jsbind::Any> getAll(const jsbind::String& name);
     /// The getAll method.
     /// [`CookieStore.getAll`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll)
     jsbind::Promise<jsbind::Any> getAll();
@@ -35,7 +41,13 @@ public:
     jsbind::Promise<jsbind::Any> getAll(const CookieStoreGetOptions& options);
     /// The set method.
     /// [`CookieStore.set`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set)
+    jsbind::Promise<jsbind::Undefined> set(const jsbind::String& name, const jsbind::String& value);
+    /// The set method.
+    /// [`CookieStore.set`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set)
     jsbind::Promise<jsbind::Undefined> set(const CookieInit& options);
+    /// The delete method.
+    /// [`CookieStore.delete`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete)
+    jsbind::Promise<jsbind::Undefined> delete_(const jsbind::String& name);
     /// The delete method.
     /// [`CookieStore.delete`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete)
     jsbind::Promise<jsbind::Undefined> delete_(const CookieStoreDeleteOptions& options);

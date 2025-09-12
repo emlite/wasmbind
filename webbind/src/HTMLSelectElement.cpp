@@ -106,6 +106,10 @@ jsbind::Undefined HTMLSelectElement::add(const jsbind::Any& element, const jsbin
     return HTMLElement::call("add", element, before).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined HTMLSelectElement::remove() {
+    return HTMLElement::call("remove").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined HTMLSelectElement::remove(long index) {
     return HTMLElement::call("remove", index).as<jsbind::Undefined>();
 }

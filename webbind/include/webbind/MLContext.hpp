@@ -33,6 +33,9 @@ public:
     jsbind::Promise<MLTensor> createConstantTensor(const MLOperandDescriptor& descriptor, const jsbind::Any& inputData);
     /// The readTensor method.
     /// [`MLContext.readTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/readTensor)
+    jsbind::Promise<jsbind::ArrayBuffer> readTensor(const MLTensor& tensor);
+    /// The readTensor method.
+    /// [`MLContext.readTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/readTensor)
     jsbind::Promise<jsbind::Undefined> readTensor(const MLTensor& tensor, const jsbind::Any& outputData);
     /// The writeTensor method.
     /// [`MLContext.writeTensor`](https://developer.mozilla.org/en-US/docs/Web/API/MLContext/writeTensor)

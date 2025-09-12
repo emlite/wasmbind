@@ -23,6 +23,7 @@ class StylePropertyMapReadOnly;
 class DOMRectList;
 class DOMRect;
 class CheckVisibilityOptions;
+class ScrollToOptions;
 class FullscreenOptions;
 class GetHTMLOptions;
 class PointerLockOptions;
@@ -212,10 +213,28 @@ public:
     jsbind::Undefined scrollIntoView(const jsbind::Any& arg);
     /// The scroll method.
     /// [`Element.scroll`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll)
+    jsbind::Undefined scroll();
+    /// The scroll method.
+    /// [`Element.scroll`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll)
+    jsbind::Undefined scroll(const ScrollToOptions& options);
+    /// The scroll method.
+    /// [`Element.scroll`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll)
     jsbind::Undefined scroll(double x, double y);
     /// The scrollTo method.
     /// [`Element.scrollTo`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo)
+    jsbind::Undefined scrollTo();
+    /// The scrollTo method.
+    /// [`Element.scrollTo`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo)
+    jsbind::Undefined scrollTo(const ScrollToOptions& options);
+    /// The scrollTo method.
+    /// [`Element.scrollTo`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo)
     jsbind::Undefined scrollTo(double x, double y);
+    /// The scrollBy method.
+    /// [`Element.scrollBy`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy)
+    jsbind::Undefined scrollBy();
+    /// The scrollBy method.
+    /// [`Element.scrollBy`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy)
+    jsbind::Undefined scrollBy(const ScrollToOptions& options);
     /// The scrollBy method.
     /// [`Element.scrollBy`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy)
     jsbind::Undefined scrollBy(double x, double y);

@@ -1,4 +1,5 @@
 #include <webbind/AudioNode.hpp>
+#include <webbind/AudioNode.hpp>
 #include <webbind/AudioParam.hpp>
 #include <webbind/BaseAudioContext.hpp>
 
@@ -16,12 +17,48 @@ AudioNode::AudioNode(Handle h) noexcept : EventTarget(emlite::Val::take_ownershi
 
 AudioNode::AudioNode(const emlite::Val &val) noexcept: EventTarget(val) {}
 
+AudioNode AudioNode::connect(const AudioNode& destinationNode) {
+    return EventTarget::call("connect", destinationNode).as<AudioNode>();
+}
+
+AudioNode AudioNode::connect(const AudioNode& destinationNode, unsigned long output) {
+    return EventTarget::call("connect", destinationNode, output).as<AudioNode>();
+}
+
+AudioNode AudioNode::connect(const AudioNode& destinationNode, unsigned long output, unsigned long input) {
+    return EventTarget::call("connect", destinationNode, output, input).as<AudioNode>();
+}
+
 jsbind::Undefined AudioNode::connect(const AudioParam& destinationParam) {
     return EventTarget::call("connect", destinationParam).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined AudioNode::connect(const AudioParam& destinationParam, unsigned long output) {
     return EventTarget::call("connect", destinationParam, output).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioNode::disconnect() {
+    return EventTarget::call("disconnect").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioNode::disconnect(unsigned long output) {
+    return EventTarget::call("disconnect", output).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioNode::disconnect(const AudioNode& destinationNode) {
+    return EventTarget::call("disconnect", destinationNode).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioNode::disconnect(const AudioNode& destinationNode, unsigned long output) {
+    return EventTarget::call("disconnect", destinationNode, output).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioNode::disconnect(const AudioNode& destinationNode, unsigned long output, unsigned long input) {
+    return EventTarget::call("disconnect", destinationNode, output, input).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined AudioNode::disconnect(const AudioParam& destinationParam) {
+    return EventTarget::call("disconnect", destinationParam).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined AudioNode::disconnect(const AudioParam& destinationParam, unsigned long output) {

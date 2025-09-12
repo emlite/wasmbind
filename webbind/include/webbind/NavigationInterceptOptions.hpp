@@ -14,6 +14,10 @@ public:
     explicit NavigationInterceptOptions(const emlite::Val &val) noexcept;
     NavigationInterceptOptions() noexcept;
     [[nodiscard]] NavigationInterceptOptions clone() const noexcept;
+    /// Getter of the `precommitHandler` attribute.
+    [[nodiscard]] jsbind::Function precommitHandler() const;
+    /// Setter of the `precommitHandler` attribute.
+    void precommitHandler(const jsbind::Function& value);
     /// Getter of the `handler` attribute.
     [[nodiscard]] jsbind::Function handler() const;
     /// Setter of the `handler` attribute.

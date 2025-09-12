@@ -16,6 +16,10 @@ LockManager::LockManager(Handle h) noexcept : emlite::Val(emlite::Val::take_owne
 
 LockManager::LockManager(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
+jsbind::Promise<jsbind::Any> LockManager::request(const jsbind::String& name, const jsbind::Function& callback) {
+    return emlite::Val::call("request", name, callback).as<jsbind::Promise<jsbind::Any>>();
+}
+
 jsbind::Promise<jsbind::Any> LockManager::request(const jsbind::String& name, const LockOptions& options, const jsbind::Function& callback) {
     return emlite::Val::call("request", name, options, callback).as<jsbind::Promise<jsbind::Any>>();
 }

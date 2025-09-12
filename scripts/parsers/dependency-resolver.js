@@ -1,5 +1,5 @@
 import { getAllTypeRefs } from "./type-analyzer.js";
-import { dictOwner } from "../globals.js";
+import { dictOwner, typedefs } from "../globals.js";
 
 export class DependencyResolver {
   constructor(interfaces, dicts, enums) {
@@ -177,6 +177,9 @@ export class DependencyResolver {
       if (this.dicts.has(ref) && ref !== dictName) {
         fwd.add(ref);
         srcInc.add(`${ref}.hpp`);
+        return;
+      }
+      if (typedefs.has(ref)) {
         return;
       }
       // Debugging: Log if a dictionary reference is not handled

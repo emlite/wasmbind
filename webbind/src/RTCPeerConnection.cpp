@@ -1,9 +1,10 @@
 #include <webbind/RTCPeerConnection.hpp>
 #include <webbind/RTCConfiguration.hpp>
+#include <webbind/RTCSessionDescriptionInit.hpp>
 #include <webbind/RTCOfferOptions.hpp>
+#include <webbind/RTCAnswerOptions.hpp>
 #include <webbind/RTCLocalSessionDescriptionInit.hpp>
 #include <webbind/RTCSessionDescription.hpp>
-#include <webbind/RTCSessionDescriptionInit.hpp>
 #include <webbind/RTCIceCandidateInit.hpp>
 #include <webbind/RTCIdentityProviderOptions.hpp>
 #include <webbind/RTCIdentityAssertion.hpp>
@@ -37,20 +38,28 @@ RTCPeerConnection::RTCPeerConnection() : EventTarget(emlite::Val::global("RTCPee
 
 RTCPeerConnection::RTCPeerConnection(const RTCConfiguration& configuration) : EventTarget(emlite::Val::global("RTCPeerConnection").new_(configuration)) {}
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
-    return EventTarget::call("createOffer", successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+jsbind::Promise<RTCSessionDescriptionInit> RTCPeerConnection::createOffer() {
+    return EventTarget::call("createOffer").as<jsbind::Promise<RTCSessionDescriptionInit>>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback, const RTCOfferOptions& options) {
-    return EventTarget::call("createOffer", successCallback, failureCallback, options).as<jsbind::Promise<jsbind::Undefined>>();
+jsbind::Promise<RTCSessionDescriptionInit> RTCPeerConnection::createOffer(const RTCOfferOptions& options) {
+    return EventTarget::call("createOffer", options).as<jsbind::Promise<RTCSessionDescriptionInit>>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::createAnswer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
-    return EventTarget::call("createAnswer", successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+jsbind::Promise<RTCSessionDescriptionInit> RTCPeerConnection::createAnswer() {
+    return EventTarget::call("createAnswer").as<jsbind::Promise<RTCSessionDescriptionInit>>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
-    return EventTarget::call("setLocalDescription", description, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+jsbind::Promise<RTCSessionDescriptionInit> RTCPeerConnection::createAnswer(const RTCAnswerOptions& options) {
+    return EventTarget::call("createAnswer", options).as<jsbind::Promise<RTCSessionDescriptionInit>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setLocalDescription() {
+    return EventTarget::call("setLocalDescription").as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setLocalDescription(const RTCLocalSessionDescriptionInit& description) {
+    return EventTarget::call("setLocalDescription", description).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 RTCSessionDescription RTCPeerConnection::localDescription() const {
@@ -65,8 +74,8 @@ RTCSessionDescription RTCPeerConnection::pendingLocalDescription() const {
     return EventTarget::get("pendingLocalDescription").as<RTCSessionDescription>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
-    return EventTarget::call("setRemoteDescription", description, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setRemoteDescription(const RTCSessionDescriptionInit& description) {
+    return EventTarget::call("setRemoteDescription", description).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 RTCSessionDescription RTCPeerConnection::remoteDescription() const {
@@ -81,8 +90,12 @@ RTCSessionDescription RTCPeerConnection::pendingRemoteDescription() const {
     return EventTarget::get("pendingRemoteDescription").as<RTCSessionDescription>();
 }
 
-jsbind::Promise<jsbind::Undefined> RTCPeerConnection::addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
-    return EventTarget::call("addIceCandidate", candidate, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::addIceCandidate() {
+    return EventTarget::call("addIceCandidate").as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::addIceCandidate(const RTCIceCandidateInit& candidate) {
+    return EventTarget::call("addIceCandidate", candidate).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 RTCSignalingState RTCPeerConnection::signalingState() const {
@@ -179,6 +192,30 @@ jsbind::Any RTCPeerConnection::onconnectionstatechange() const {
 
 void RTCPeerConnection::onconnectionstatechange(const jsbind::Any& value) {
     EventTarget::set("onconnectionstatechange", value);
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
+    return EventTarget::call("createOffer", successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback, const RTCOfferOptions& options) {
+    return EventTarget::call("createOffer", successCallback, failureCallback, options).as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
+    return EventTarget::call("setLocalDescription", description, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::createAnswer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
+    return EventTarget::call("createAnswer", successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
+    return EventTarget::call("setRemoteDescription", description, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
+}
+
+jsbind::Promise<jsbind::Undefined> RTCPeerConnection::addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Function& successCallback, const jsbind::Function& failureCallback) {
+    return EventTarget::call("addIceCandidate", candidate, successCallback, failureCallback).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
 jsbind::Undefined RTCPeerConnection::setIdentityProvider(const jsbind::String& provider) {

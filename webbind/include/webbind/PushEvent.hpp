@@ -9,6 +9,7 @@ namespace webbind {
 
 class PushEventInit;
 class PushMessageData;
+class Notification;
 
 /// Interface PushEvent
 /// [`PushEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent)
@@ -26,6 +27,9 @@ public:
     /// [`PushEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/data)
     /// [`PushEvent.data`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/data)
     [[nodiscard]] PushMessageData data() const;
+    /// [`PushEvent.notification`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/notification)
+    /// [`PushEvent.notification`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/notification)
+    [[nodiscard]] Notification notification() const;
 };
 
 } // namespace webbind

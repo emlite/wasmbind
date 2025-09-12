@@ -17,9 +17,9 @@ public:
     IdentityAssertionResponse() noexcept;
     [[nodiscard]] IdentityAssertionResponse clone() const noexcept;
     /// Getter of the `token` attribute.
-    [[nodiscard]] jsbind::String token() const;
+    [[nodiscard]] jsbind::Any token() const;
     /// Setter of the `token` attribute.
-    void token(const jsbind::String& value);
+    void token(const jsbind::Any& value);
     /// Getter of the `continue_on` attribute.
     [[nodiscard]] jsbind::String continue_on() const;
     /// Setter of the `continue_on` attribute.

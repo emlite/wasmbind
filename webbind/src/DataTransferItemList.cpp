@@ -20,6 +20,10 @@ unsigned long DataTransferItemList::length() const {
     return emlite::Val::get("length").as<unsigned long>();
 }
 
+DataTransferItem DataTransferItemList::add(const jsbind::String& data, const jsbind::String& type) {
+    return emlite::Val::call("add", data, type).as<DataTransferItem>();
+}
+
 DataTransferItem DataTransferItemList::add(const File& data) {
     return emlite::Val::call("add", data).as<DataTransferItem>();
 }

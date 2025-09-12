@@ -160,6 +160,9 @@ public:
     void selectionDirection(const jsbind::String& value);
     /// The setRangeText method.
     /// [`HTMLTextAreaElement.setRangeText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/setRangeText)
+    jsbind::Undefined setRangeText(const jsbind::String& replacement);
+    /// The setRangeText method.
+    /// [`HTMLTextAreaElement.setRangeText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/setRangeText)
     jsbind::Undefined setRangeText(const jsbind::String& replacement, unsigned long start, unsigned long end);
     /// The setRangeText method.
     /// [`HTMLTextAreaElement.setRangeText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/setRangeText)

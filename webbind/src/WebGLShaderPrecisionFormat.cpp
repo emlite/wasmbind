@@ -14,16 +14,16 @@ WebGLShaderPrecisionFormat::WebGLShaderPrecisionFormat(Handle h) noexcept : emli
 
 WebGLShaderPrecisionFormat::WebGLShaderPrecisionFormat(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-jsbind::Any WebGLShaderPrecisionFormat::rangeMin() const {
-    return emlite::Val::get("rangeMin").as<jsbind::Any>();
+int WebGLShaderPrecisionFormat::rangeMin() const {
+    return emlite::Val::get("rangeMin").as<int>();
 }
 
-jsbind::Any WebGLShaderPrecisionFormat::rangeMax() const {
-    return emlite::Val::get("rangeMax").as<jsbind::Any>();
+int WebGLShaderPrecisionFormat::rangeMax() const {
+    return emlite::Val::get("rangeMax").as<int>();
 }
 
-jsbind::Any WebGLShaderPrecisionFormat::precision() const {
-    return emlite::Val::get("precision").as<jsbind::Any>();
+int WebGLShaderPrecisionFormat::precision() const {
+    return emlite::Val::get("precision").as<int>();
 }
 
 

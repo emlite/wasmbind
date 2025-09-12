@@ -1,4 +1,6 @@
 #include <webbind/XRRay.hpp>
+#include <webbind/DOMPointInit.hpp>
+#include <webbind/XRRayDirectionInit.hpp>
 #include <webbind/XRRigidTransform.hpp>
 #include <webbind/DOMPointReadOnly.hpp>
 
@@ -15,6 +17,12 @@ emlite::Val XRRay::instance() noexcept { return emlite::Val::global("XRRay"); }
 XRRay::XRRay(Handle h) noexcept : emlite::Val(emlite::Val::take_ownership(h)) {}
 
 XRRay::XRRay(const emlite::Val &val) noexcept: emlite::Val(val) {}
+
+XRRay::XRRay() : emlite::Val(emlite::Val::global("XRRay").new_()) {}
+
+XRRay::XRRay(const DOMPointInit& origin) : emlite::Val(emlite::Val::global("XRRay").new_(origin)) {}
+
+XRRay::XRRay(const DOMPointInit& origin, const XRRayDirectionInit& direction) : emlite::Val(emlite::Val::global("XRRay").new_(origin, direction)) {}
 
 XRRay::XRRay(const XRRigidTransform& transform) : emlite::Val(emlite::Val::global("XRRay").new_(transform)) {}
 

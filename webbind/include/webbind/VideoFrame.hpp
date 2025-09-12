@@ -7,6 +7,7 @@
 
 namespace webbind {
 
+class VideoFrameInit;
 class VideoFrameBufferInit;
 class DOMRectReadOnly;
 class VideoColorSpace;
@@ -24,6 +25,10 @@ public:
     static VideoFrame take_ownership(Handle h) noexcept;
     [[nodiscard]] VideoFrame clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
+    /// The `new VideoFrame(..)` constructor, creating a new VideoFrame instance
+    VideoFrame(const jsbind::Any& image);
+    /// The `new VideoFrame(..)` constructor, creating a new VideoFrame instance
+    VideoFrame(const jsbind::Any& image, const VideoFrameInit& init);
     /// The `new VideoFrame(..)` constructor, creating a new VideoFrame instance
     VideoFrame(const jsbind::Any& data, const VideoFrameBufferInit& init);
     /// [`VideoFrame.format`](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame/format)

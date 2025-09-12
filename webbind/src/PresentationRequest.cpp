@@ -16,6 +16,8 @@ PresentationRequest::PresentationRequest(Handle h) noexcept : EventTarget(emlite
 
 PresentationRequest::PresentationRequest(const emlite::Val &val) noexcept: EventTarget(val) {}
 
+PresentationRequest::PresentationRequest(const jsbind::String& url) : EventTarget(emlite::Val::global("PresentationRequest").new_(url)) {}
+
 PresentationRequest::PresentationRequest(const jsbind::TypedArray<jsbind::String>& urls) : EventTarget(emlite::Val::global("PresentationRequest").new_(urls)) {}
 
 jsbind::Promise<PresentationConnection> PresentationRequest::start() {

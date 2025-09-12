@@ -27,6 +27,9 @@ public:
     [[nodiscard]] ServiceWorkerState state() const;
     /// The postMessage method.
     /// [`ServiceWorker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/postMessage)
+    jsbind::Undefined postMessage(const jsbind::Any& message, const jsbind::TypedArray<jsbind::Object>& transfer);
+    /// The postMessage method.
+    /// [`ServiceWorker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);
     /// The postMessage method.
     /// [`ServiceWorker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/postMessage)

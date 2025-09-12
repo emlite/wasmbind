@@ -15,6 +15,10 @@ MessagePort::MessagePort(Handle h) noexcept : EventTarget(emlite::Val::take_owne
 
 MessagePort::MessagePort(const emlite::Val &val) noexcept: EventTarget(val) {}
 
+jsbind::Undefined MessagePort::postMessage(const jsbind::Any& message, const jsbind::TypedArray<jsbind::Object>& transfer) {
+    return EventTarget::call("postMessage", message, transfer).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined MessagePort::postMessage(const jsbind::Any& message) {
     return EventTarget::call("postMessage", message).as<jsbind::Undefined>();
 }

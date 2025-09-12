@@ -8,6 +8,8 @@
 namespace webbind {
 
 class CryptoKey;
+class EncapsulatedKey;
+class EncapsulatedBits;
 
 /// Interface SubtleCrypto
 /// [`SubtleCrypto`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
@@ -57,6 +59,30 @@ public:
     /// The unwrapKey method.
     /// [`SubtleCrypto.unwrapKey`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/unwrapKey)
     jsbind::Promise<CryptoKey> unwrapKey(const KeyFormat& format, const jsbind::Any& wrappedKey, const CryptoKey& unwrappingKey, const jsbind::Any& unwrapAlgorithm, const jsbind::Any& unwrappedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages);
+    /// The encapsulateKey method.
+    /// [`SubtleCrypto.encapsulateKey`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encapsulateKey)
+    jsbind::Promise<EncapsulatedKey> encapsulateKey(const jsbind::Any& encapsulationAlgorithm, const CryptoKey& encapsulationKey, const jsbind::Any& sharedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages);
+    /// The encapsulateBits method.
+    /// [`SubtleCrypto.encapsulateBits`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encapsulateBits)
+    jsbind::Promise<EncapsulatedBits> encapsulateBits(const jsbind::Any& encapsulationAlgorithm, const CryptoKey& encapsulationKey);
+    /// The decapsulateKey method.
+    /// [`SubtleCrypto.decapsulateKey`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/decapsulateKey)
+    jsbind::Promise<CryptoKey> decapsulateKey(const jsbind::Any& decapsulationAlgorithm, const CryptoKey& decapsulationKey, const jsbind::Any& ciphertext, const jsbind::Any& sharedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages);
+    /// The decapsulateBits method.
+    /// [`SubtleCrypto.decapsulateBits`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/decapsulateBits)
+    jsbind::Promise<jsbind::ArrayBuffer> decapsulateBits(const jsbind::Any& decapsulationAlgorithm, const CryptoKey& decapsulationKey, const jsbind::Any& ciphertext);
+    /// The getPublicKey method.
+    /// [`SubtleCrypto.getPublicKey`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/getPublicKey)
+    jsbind::Promise<CryptoKey> getPublicKey(const CryptoKey& key, const jsbind::TypedArray<KeyUsage>& keyUsages);
+    /// The supports method.
+    /// [`SubtleCrypto.supports`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/supports)
+    static bool supports(const jsbind::String& operation, const jsbind::Any& algorithm);
+    /// The supports method.
+    /// [`SubtleCrypto.supports`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/supports)
+    static bool supports(const jsbind::String& operation, const jsbind::Any& algorithm, unsigned long length);
+    /// The supports method.
+    /// [`SubtleCrypto.supports`](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/supports)
+    static bool supports(const jsbind::String& operation, const jsbind::Any& algorithm, const jsbind::Any& additionalAlgorithm);
 };
 
 } // namespace webbind

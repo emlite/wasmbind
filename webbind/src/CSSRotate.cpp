@@ -15,6 +15,8 @@ CSSRotate::CSSRotate(Handle h) noexcept : CSSTransformComponent(emlite::Val::tak
 
 CSSRotate::CSSRotate(const emlite::Val &val) noexcept: CSSTransformComponent(val) {}
 
+CSSRotate::CSSRotate(const CSSNumericValue& angle) : CSSTransformComponent(emlite::Val::global("CSSRotate").new_(angle)) {}
+
 CSSRotate::CSSRotate(const jsbind::Any& x, const jsbind::Any& y, const jsbind::Any& z, const CSSNumericValue& angle) : CSSTransformComponent(emlite::Val::global("CSSRotate").new_(x, y, z, angle)) {}
 
 jsbind::Any CSSRotate::x() const {

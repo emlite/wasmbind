@@ -20,6 +20,9 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The request method.
     /// [`LockManager.request`](https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
+    jsbind::Promise<jsbind::Any> request(const jsbind::String& name, const jsbind::Function& callback);
+    /// The request method.
+    /// [`LockManager.request`](https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
     jsbind::Promise<jsbind::Any> request(const jsbind::String& name, const LockOptions& options, const jsbind::Function& callback);
     /// The query method.
     /// [`LockManager.query`](https://developer.mozilla.org/en-US/docs/Web/API/LockManager/query)

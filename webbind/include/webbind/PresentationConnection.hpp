@@ -8,6 +8,8 @@
 
 namespace webbind {
 
+class Blob;
+
 /// Interface PresentationConnection
 /// [`PresentationConnection`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection)
 class PresentationConnection : public EventTarget {
@@ -64,7 +66,16 @@ public:
     void onmessage(const jsbind::Any& value);
     /// The send method.
     /// [`PresentationConnection.send`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/send)
-    jsbind::Undefined send(const jsbind::Any& data);
+    jsbind::Undefined send(const jsbind::String& message);
+    /// The send method.
+    /// [`PresentationConnection.send`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/send)
+    jsbind::Undefined send(const Blob& data);
+    /// The send method.
+    /// [`PresentationConnection.send`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/send)
+    jsbind::Undefined send(const jsbind::ArrayBuffer& data);
+    /// The send method.
+    /// [`PresentationConnection.send`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/send)
+    jsbind::Undefined send(const jsbind::ArrayBufferView& data);
 };
 
 } // namespace webbind

@@ -15,7 +15,7 @@ OVR_multiview2::OVR_multiview2(Handle h) noexcept : emlite::Val(emlite::Val::tak
 
 OVR_multiview2::OVR_multiview2(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-jsbind::Undefined OVR_multiview2::framebufferTextureMultiviewOVR(const jsbind::Any& target, const jsbind::Any& attachment, const WebGLTexture& texture, const jsbind::Any& level, const jsbind::Any& baseViewIndex, const jsbind::Any& numViews) {
+jsbind::Undefined OVR_multiview2::framebufferTextureMultiviewOVR(const uint32_t& target, const uint32_t& attachment, const WebGLTexture& texture, int level, int baseViewIndex, int numViews) {
     return emlite::Val::call("framebufferTextureMultiviewOVR", target, attachment, texture, level, baseViewIndex, numViews).as<jsbind::Undefined>();
 }
 

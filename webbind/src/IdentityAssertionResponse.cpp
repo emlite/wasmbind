@@ -14,11 +14,11 @@ IdentityAssertionResponse::IdentityAssertionResponse() noexcept: emlite::Val(eml
 
 IdentityAssertionResponse IdentityAssertionResponse::clone() const noexcept { return *this; }
 
-jsbind::String IdentityAssertionResponse::token() const {
-    return emlite::Val::get("token").as<jsbind::String>();
+jsbind::Any IdentityAssertionResponse::token() const {
+    return emlite::Val::get("token").as<jsbind::Any>();
 }
 
-void IdentityAssertionResponse::token(const jsbind::String& value) {
+void IdentityAssertionResponse::token(const jsbind::Any& value) {
     emlite::Val::set("token", value);
 }
 

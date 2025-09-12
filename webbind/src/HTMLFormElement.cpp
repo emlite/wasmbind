@@ -1,6 +1,7 @@
 #include <webbind/HTMLFormElement.hpp>
 #include <webbind/DOMTokenList.hpp>
 #include <webbind/HTMLFormControlsCollection.hpp>
+#include <webbind/Element.hpp>
 
 namespace webbind {
 

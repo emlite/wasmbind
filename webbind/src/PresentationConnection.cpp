@@ -1,4 +1,5 @@
 #include <webbind/PresentationConnection.hpp>
+#include <webbind/Blob.hpp>
 
 namespace webbind {
 
@@ -74,7 +75,19 @@ void PresentationConnection::onmessage(const jsbind::Any& value) {
     EventTarget::set("onmessage", value);
 }
 
-jsbind::Undefined PresentationConnection::send(const jsbind::Any& data) {
+jsbind::Undefined PresentationConnection::send(const jsbind::String& message) {
+    return EventTarget::call("send", message).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PresentationConnection::send(const Blob& data) {
+    return EventTarget::call("send", data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PresentationConnection::send(const jsbind::ArrayBuffer& data) {
+    return EventTarget::call("send", data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined PresentationConnection::send(const jsbind::ArrayBufferView& data) {
     return EventTarget::call("send", data).as<jsbind::Undefined>();
 }
 

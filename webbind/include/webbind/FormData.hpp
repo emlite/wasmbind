@@ -27,6 +27,9 @@ public:
     FormData(const HTMLFormElement& form, const HTMLElement& submitter);
     /// The append method.
     /// [`FormData.append`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append)
+    jsbind::Undefined append(const jsbind::String& name, const jsbind::String& value);
+    /// The append method.
+    /// [`FormData.append`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append)
     jsbind::Undefined append(const jsbind::String& name, const Blob& blobValue);
     /// The append method.
     /// [`FormData.append`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append)
@@ -43,6 +46,9 @@ public:
     /// The has method.
     /// [`FormData.has`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/has)
     bool has(const jsbind::String& name);
+    /// The set method.
+    /// [`FormData.set`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/set)
+    jsbind::Undefined set(const jsbind::String& name, const jsbind::String& value);
     /// The set method.
     /// [`FormData.set`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/set)
     jsbind::Undefined set(const jsbind::String& name, const Blob& blobValue);

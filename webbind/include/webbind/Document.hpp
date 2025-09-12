@@ -179,6 +179,9 @@ public:
     /// The startViewTransition method.
     /// [`Document.startViewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition)
     ViewTransition startViewTransition(const jsbind::Any& callbackOptions);
+    /// [`Document.activeViewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/Document/activeViewTransition)
+    /// [`Document.activeViewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/Document/activeViewTransition)
+    [[nodiscard]] ViewTransition activeViewTransition() const;
     /// The elementFromPoint method.
     /// [`Document.elementFromPoint`](https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint)
     Element elementFromPoint(double x, double y);
@@ -293,6 +296,15 @@ public:
     /// [`Document.currentScript`](https://developer.mozilla.org/en-US/docs/Web/API/Document/currentScript)
     /// [`Document.currentScript`](https://developer.mozilla.org/en-US/docs/Web/API/Document/currentScript)
     [[nodiscard]] jsbind::Any currentScript() const;
+    /// The open method.
+    /// [`Document.open`](https://developer.mozilla.org/en-US/docs/Web/API/Document/open)
+    Document open();
+    /// The open method.
+    /// [`Document.open`](https://developer.mozilla.org/en-US/docs/Web/API/Document/open)
+    Document open(const jsbind::String& unused1);
+    /// The open method.
+    /// [`Document.open`](https://developer.mozilla.org/en-US/docs/Web/API/Document/open)
+    Document open(const jsbind::String& unused1, const jsbind::String& unused2);
     /// The open method.
     /// [`Document.open`](https://developer.mozilla.org/en-US/docs/Web/API/Document/open)
     jsbind::Any open(const jsbind::String& url, const jsbind::String& name, const jsbind::String& features);

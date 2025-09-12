@@ -19,13 +19,13 @@ public:
     /// Setter of the `textureType` attribute.
     void textureType(const XRTextureType& value);
     /// Getter of the `colorFormat` attribute.
-    [[nodiscard]] jsbind::Any colorFormat() const;
+    [[nodiscard]] uint32_t colorFormat() const;
     /// Setter of the `colorFormat` attribute.
-    void colorFormat(const jsbind::Any& value);
+    void colorFormat(const uint32_t& value);
     /// Getter of the `depthFormat` attribute.
-    [[nodiscard]] jsbind::Any depthFormat() const;
+    [[nodiscard]] uint32_t depthFormat() const;
     /// Setter of the `depthFormat` attribute.
-    void depthFormat(const jsbind::Any& value);
+    void depthFormat(const uint32_t& value);
     /// Getter of the `scaleFactor` attribute.
     [[nodiscard]] double scaleFactor() const;
     /// Setter of the `scaleFactor` attribute.

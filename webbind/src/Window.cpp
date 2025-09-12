@@ -13,6 +13,7 @@
 #include <webbind/MediaQueryList.hpp>
 #include <webbind/Screen.hpp>
 #include <webbind/VisualViewport.hpp>
+#include <webbind/ScrollToOptions.hpp>
 #include <webbind/CSSStyleProperties.hpp>
 #include <webbind/DigitalGoodsService.hpp>
 #include <webbind/DocumentPictureInPicture.hpp>
@@ -195,6 +196,10 @@ bool Window::originAgentCluster() const {
     return EventTarget::get("originAgentCluster").as<bool>();
 }
 
+jsbind::Undefined Window::alert() {
+    return EventTarget::call("alert").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Window::alert(const jsbind::String& message) {
     return EventTarget::call("alert", message).as<jsbind::Undefined>();
 }
@@ -221,6 +226,14 @@ jsbind::String Window::prompt(const jsbind::String& message, const jsbind::Strin
 
 jsbind::Undefined Window::print() {
     return EventTarget::call("print").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Window::postMessage(const jsbind::Any& message, const jsbind::String& targetOrigin) {
+    return EventTarget::call("postMessage", message, targetOrigin).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Window::postMessage(const jsbind::Any& message, const jsbind::String& targetOrigin, const jsbind::TypedArray<jsbind::Object>& transfer) {
+    return EventTarget::call("postMessage", message, targetOrigin, transfer).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Window::postMessage(const jsbind::Any& message) {
@@ -311,12 +324,36 @@ double Window::pageYOffset() const {
     return EventTarget::get("pageYOffset").as<double>();
 }
 
+jsbind::Undefined Window::scroll() {
+    return EventTarget::call("scroll").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Window::scroll(const ScrollToOptions& options) {
+    return EventTarget::call("scroll", options).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Window::scroll(double x, double y) {
     return EventTarget::call("scroll", x, y).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined Window::scrollTo() {
+    return EventTarget::call("scrollTo").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Window::scrollTo(const ScrollToOptions& options) {
+    return EventTarget::call("scrollTo", options).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Window::scrollTo(double x, double y) {
     return EventTarget::call("scrollTo", x, y).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Window::scrollBy() {
+    return EventTarget::call("scrollBy").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Window::scrollBy(const ScrollToOptions& options) {
+    return EventTarget::call("scrollBy", options).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Window::scrollBy(double x, double y) {

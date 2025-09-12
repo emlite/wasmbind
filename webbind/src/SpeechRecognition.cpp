@@ -76,6 +76,10 @@ void SpeechRecognition::phrases(const jsbind::TypedArray<SpeechRecognitionPhrase
     EventTarget::set("phrases", value);
 }
 
+jsbind::Undefined SpeechRecognition::start() {
+    return EventTarget::call("start").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined SpeechRecognition::start(const MediaStreamTrack& audioTrack) {
     return EventTarget::call("start", audioTrack).as<jsbind::Undefined>();
 }

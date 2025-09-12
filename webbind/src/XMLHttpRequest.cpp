@@ -32,6 +32,10 @@ unsigned short XMLHttpRequest::readyState() const {
     return XMLHttpRequestEventTarget::get("readyState").as<unsigned short>();
 }
 
+jsbind::Undefined XMLHttpRequest::open(const jsbind::String& method, const jsbind::String& url) {
+    return XMLHttpRequestEventTarget::call("open", method, url).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined XMLHttpRequest::open(const jsbind::String& method, const jsbind::String& url, bool async) {
     return XMLHttpRequestEventTarget::call("open", method, url, async).as<jsbind::Undefined>();
 }

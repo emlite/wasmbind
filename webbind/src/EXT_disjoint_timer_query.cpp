@@ -27,23 +27,23 @@ bool EXT_disjoint_timer_query::isQueryEXT(const WebGLTimerQueryEXT& query) {
     return emlite::Val::call("isQueryEXT", query).as<bool>();
 }
 
-jsbind::Undefined EXT_disjoint_timer_query::beginQueryEXT(const jsbind::Any& target, const WebGLTimerQueryEXT& query) {
+jsbind::Undefined EXT_disjoint_timer_query::beginQueryEXT(const uint32_t& target, const WebGLTimerQueryEXT& query) {
     return emlite::Val::call("beginQueryEXT", target, query).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EXT_disjoint_timer_query::endQueryEXT(const jsbind::Any& target) {
+jsbind::Undefined EXT_disjoint_timer_query::endQueryEXT(const uint32_t& target) {
     return emlite::Val::call("endQueryEXT", target).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EXT_disjoint_timer_query::queryCounterEXT(const WebGLTimerQueryEXT& query, const jsbind::Any& target) {
+jsbind::Undefined EXT_disjoint_timer_query::queryCounterEXT(const WebGLTimerQueryEXT& query, const uint32_t& target) {
     return emlite::Val::call("queryCounterEXT", query, target).as<jsbind::Undefined>();
 }
 
-jsbind::Any EXT_disjoint_timer_query::getQueryEXT(const jsbind::Any& target, const jsbind::Any& pname) {
+jsbind::Any EXT_disjoint_timer_query::getQueryEXT(const uint32_t& target, const uint32_t& pname) {
     return emlite::Val::call("getQueryEXT", target, pname).as<jsbind::Any>();
 }
 
-jsbind::Any EXT_disjoint_timer_query::getQueryObjectEXT(const WebGLTimerQueryEXT& query, const jsbind::Any& pname) {
+jsbind::Any EXT_disjoint_timer_query::getQueryObjectEXT(const WebGLTimerQueryEXT& query, const uint32_t& pname) {
     return emlite::Val::call("getQueryObjectEXT", query, pname).as<jsbind::Any>();
 }
 

@@ -38,8 +38,12 @@ Response Response::redirect(const jsbind::String& url, unsigned short status) {
     return emlite::Val::global("response").call("redirect", url, status).as<Response>();
 }
 
-jsbind::Promise<jsbind::Any> Response::json() {
-    return emlite::Val::call("json").as<jsbind::Promise<jsbind::Any>>();
+Response Response::json(const jsbind::Any& data) {
+    return emlite::Val::global("response").call("json", data).as<Response>();
+}
+
+Response Response::json(const jsbind::Any& data, const ResponseInit& init) {
+    return emlite::Val::global("response").call("json", data, init).as<Response>();
 }
 
 ResponseType Response::type() const {
@@ -96,6 +100,10 @@ jsbind::Promise<jsbind::Uint8Array> Response::bytes() {
 
 jsbind::Promise<FormData> Response::formData() {
     return emlite::Val::call("formData").as<jsbind::Promise<FormData>>();
+}
+
+jsbind::Promise<jsbind::Any> Response::json() {
+    return emlite::Val::call("json").as<jsbind::Promise<jsbind::Any>>();
 }
 
 jsbind::Promise<jsbind::String> Response::text() {

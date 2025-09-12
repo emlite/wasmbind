@@ -1,5 +1,56 @@
 import { enums, typedefs, callbacks } from "../globals.js";
 
+// Expand typedefs eagerly, preserving generic wrappers by mutating idlType in place
+function expandTypedefs(t, seen = new Set()) {
+  if (!t) return t;
+
+  if (typeof t === "string") {
+    if (typedefs.has(t) && !seen.has(t)) {
+      const next = typedefs.get(t);
+      const nextSeen = new Set(seen).add(t);
+      return expandTypedefs(next, nextSeen);
+    }
+    return t;
+  }
+
+  if (Array.isArray(t)) {
+    // Union members
+    return t.map((x) => expandTypedefs(x, seen));
+  }
+
+  if (typeof t === "object") {
+    // Generic wrapper (sequence/Promise/record/FrozenArray/ObservableArray)
+    if (t.generic && t.idlType != null) {
+      const inner = Array.isArray(t.idlType)
+        ? t.idlType.map((x) => expandTypedefs(x, seen))
+        : expandTypedefs(t.idlType, seen);
+      return { generic: t.generic, idlType: inner };
+    }
+    // Other wrappers with nested idlType
+    if (Object.prototype.hasOwnProperty.call(t, "idlType")) {
+      const inner = expandTypedefs(t.idlType, seen);
+      const out = { idlType: inner };
+      if (Object.prototype.hasOwnProperty.call(t, "unsigned")) out.unsigned = t.unsigned;
+      return out;
+    }
+  }
+  return t;
+}
+
+function resolveTypedefsInMember(m) {
+  if (!m) return;
+  if (Object.prototype.hasOwnProperty.call(m, "idlType")) {
+    m.idlType = expandTypedefs(m.idlType);
+  }
+  if (Array.isArray(m.arguments)) {
+    m.arguments.forEach((a) => {
+      if (a && Object.prototype.hasOwnProperty.call(a, "idlType")) {
+        a.idlType = expandTypedefs(a.idlType);
+      }
+    });
+  }
+}
+
 export function parseSpecs(specAst) {
   const interfaces = new Map();
   const mixins = new Map();
@@ -49,6 +100,17 @@ export function parseSpecs(specAst) {
           typedefs.set(def.name, def.idlType);
           break;
       }
+    }
+  }
+
+  // Eagerly resolve typedefs within dictionaries so dependency/fwd-decls see concrete types
+  for (const [, def] of dicts) {
+    if (Array.isArray(def.members)) {
+      def.members.forEach((m) => {
+        if (m && Object.prototype.hasOwnProperty.call(m, "idlType")) {
+          m.idlType = expandTypedefs(m.idlType);
+        }
+      });
     }
   }
 
@@ -109,6 +171,13 @@ export function processInterfaces(interfaces, mixins, includeRel) {
 
     rec.members = [...mem.values()];
     rec.consts = [...cons.values()];
+    // Resolve typedefs after merging to avoid collapsing distinct overload signatures
+    rec.members.forEach((m) => resolveTypedefsInMember(m));
+    rec.consts.forEach((c) => {
+      if (c && Object.prototype.hasOwnProperty.call(c, "idlType")) {
+        c.idlType = expandTypedefs(c.idlType);
+      }
+    });
     interfaces.set(name, rec);
   }
 
@@ -128,6 +197,8 @@ export function processNamespaces(namespaces) {
     });
 
     rec.members = [...mem.values()];
+    // Resolve typedefs in namespace members after merging
+    rec.members.forEach((m) => resolveTypedefsInMember(m));
     rec.name = name;
     namespaces.set(name, rec);
   }

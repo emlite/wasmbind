@@ -16,6 +16,10 @@ URLPattern::URLPattern(Handle h) noexcept : emlite::Val(emlite::Val::take_owners
 
 URLPattern::URLPattern(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
+URLPattern::URLPattern(const jsbind::Any& input, const jsbind::String& baseURL) : emlite::Val(emlite::Val::global("URLPattern").new_(input, baseURL)) {}
+
+URLPattern::URLPattern(const jsbind::Any& input, const jsbind::String& baseURL, const URLPatternOptions& options) : emlite::Val(emlite::Val::global("URLPattern").new_(input, baseURL, options)) {}
+
 URLPattern::URLPattern() : emlite::Val(emlite::Val::global("URLPattern").new_()) {}
 
 URLPattern::URLPattern(const jsbind::Any& input) : emlite::Val(emlite::Val::global("URLPattern").new_(input)) {}

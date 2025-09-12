@@ -214,6 +214,10 @@ ViewTransition Document::startViewTransition(const jsbind::Any& callbackOptions)
     return Node::call("startViewTransition", callbackOptions).as<ViewTransition>();
 }
 
+ViewTransition Document::activeViewTransition() const {
+    return Node::get("activeViewTransition").as<ViewTransition>();
+}
+
 Element Document::elementFromPoint(double x, double y) {
     return Node::call("elementFromPoint", x, y).as<Element>();
 }
@@ -364,6 +368,18 @@ NodeList Document::getElementsByName(const jsbind::String& elementName) {
 
 jsbind::Any Document::currentScript() const {
     return Node::get("currentScript").as<jsbind::Any>();
+}
+
+Document Document::open() {
+    return Node::call("open").as<Document>();
+}
+
+Document Document::open(const jsbind::String& unused1) {
+    return Node::call("open", unused1).as<Document>();
+}
+
+Document Document::open(const jsbind::String& unused1, const jsbind::String& unused2) {
+    return Node::call("open", unused1, unused2).as<Document>();
 }
 
 jsbind::Any Document::open(const jsbind::String& url, const jsbind::String& name, const jsbind::String& features) {

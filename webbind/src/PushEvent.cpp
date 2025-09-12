@@ -1,6 +1,7 @@
 #include <webbind/PushEvent.hpp>
 #include <webbind/PushEventInit.hpp>
 #include <webbind/PushMessageData.hpp>
+#include <webbind/Notification.hpp>
 
 namespace webbind {
 
@@ -22,6 +23,10 @@ PushEvent::PushEvent(const jsbind::String& type, const PushEventInit& eventInitD
 
 PushMessageData PushEvent::data() const {
     return ExtendableEvent::get("data").as<PushMessageData>();
+}
+
+Notification PushEvent::notification() const {
+    return ExtendableEvent::get("notification").as<Notification>();
 }
 
 

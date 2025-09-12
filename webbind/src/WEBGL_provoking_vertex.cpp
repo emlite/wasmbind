@@ -14,7 +14,7 @@ WEBGL_provoking_vertex::WEBGL_provoking_vertex(Handle h) noexcept : emlite::Val(
 
 WEBGL_provoking_vertex::WEBGL_provoking_vertex(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-jsbind::Undefined WEBGL_provoking_vertex::provokingVertexWEBGL(const jsbind::Any& provokeMode) {
+jsbind::Undefined WEBGL_provoking_vertex::provokingVertexWEBGL(const uint32_t& provokeMode) {
     return emlite::Val::call("provokingVertexWEBGL", provokeMode).as<jsbind::Undefined>();
 }
 

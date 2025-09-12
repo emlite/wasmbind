@@ -391,6 +391,10 @@ void HTMLInputElement::selectionDirection(const jsbind::String& value) {
     HTMLElement::set("selectionDirection", value);
 }
 
+jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::String& replacement) {
+    return HTMLElement::call("setRangeText", replacement).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined HTMLInputElement::setRangeText(const jsbind::String& replacement, unsigned long start, unsigned long end) {
     return HTMLElement::call("setRangeText", replacement, start, end).as<jsbind::Undefined>();
 }

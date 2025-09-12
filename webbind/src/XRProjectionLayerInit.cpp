@@ -21,19 +21,19 @@ void XRProjectionLayerInit::textureType(const XRTextureType& value) {
     emlite::Val::set("textureType", value);
 }
 
-jsbind::Any XRProjectionLayerInit::colorFormat() const {
-    return emlite::Val::get("colorFormat").as<jsbind::Any>();
+uint32_t XRProjectionLayerInit::colorFormat() const {
+    return emlite::Val::get("colorFormat").as<uint32_t>();
 }
 
-void XRProjectionLayerInit::colorFormat(const jsbind::Any& value) {
+void XRProjectionLayerInit::colorFormat(const uint32_t& value) {
     emlite::Val::set("colorFormat", value);
 }
 
-jsbind::Any XRProjectionLayerInit::depthFormat() const {
-    return emlite::Val::get("depthFormat").as<jsbind::Any>();
+uint32_t XRProjectionLayerInit::depthFormat() const {
+    return emlite::Val::get("depthFormat").as<uint32_t>();
 }
 
-void XRProjectionLayerInit::depthFormat(const jsbind::Any& value) {
+void XRProjectionLayerInit::depthFormat(const uint32_t& value) {
     emlite::Val::set("depthFormat", value);
 }
 

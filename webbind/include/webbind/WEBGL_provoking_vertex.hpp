@@ -17,7 +17,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The provokingVertexWEBGL method.
     /// [`WEBGL_provoking_vertex.provokingVertexWEBGL`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_provoking_vertex/provokingVertexWEBGL)
-    jsbind::Undefined provokingVertexWEBGL(const jsbind::Any& provokeMode);
+    jsbind::Undefined provokingVertexWEBGL(const uint32_t& provokeMode);
 };
 
 } // namespace webbind

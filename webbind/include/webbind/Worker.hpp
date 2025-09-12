@@ -28,6 +28,9 @@ public:
     jsbind::Undefined terminate();
     /// The postMessage method.
     /// [`Worker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage)
+    jsbind::Undefined postMessage(const jsbind::Any& message, const jsbind::TypedArray<jsbind::Object>& transfer);
+    /// The postMessage method.
+    /// [`Worker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);
     /// The postMessage method.
     /// [`Worker.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage)

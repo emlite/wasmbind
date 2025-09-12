@@ -7,6 +7,7 @@
 namespace webbind {
 
 class MLContext;
+class MLContextOptions;
 class GPUDevice;
 
 /// Interface ML
@@ -18,6 +19,12 @@ public:
     static ML take_ownership(Handle h) noexcept;
     [[nodiscard]] ML clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
+    /// The createContext method.
+    /// [`ML.createContext`](https://developer.mozilla.org/en-US/docs/Web/API/ML/createContext)
+    jsbind::Promise<MLContext> createContext();
+    /// The createContext method.
+    /// [`ML.createContext`](https://developer.mozilla.org/en-US/docs/Web/API/ML/createContext)
+    jsbind::Promise<MLContext> createContext(const MLContextOptions& options);
     /// The createContext method.
     /// [`ML.createContext`](https://developer.mozilla.org/en-US/docs/Web/API/ML/createContext)
     jsbind::Promise<MLContext> createContext(const GPUDevice& gpuDevice);

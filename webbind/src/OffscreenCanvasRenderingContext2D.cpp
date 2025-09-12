@@ -68,6 +68,10 @@ DOMMatrix OffscreenCanvasRenderingContext2D::getTransform() {
     return emlite::Val::call("getTransform").as<DOMMatrix>();
 }
 
+jsbind::Undefined OffscreenCanvasRenderingContext2D::setTransform(double a, double b, double c, double d, double e, double f) {
+    return emlite::Val::call("setTransform", a, b, c, d, e, f).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined OffscreenCanvasRenderingContext2D::setTransform() {
     return emlite::Val::call("setTransform").as<jsbind::Undefined>();
 }
@@ -200,6 +204,14 @@ jsbind::Undefined OffscreenCanvasRenderingContext2D::beginPath() {
     return emlite::Val::call("beginPath").as<jsbind::Undefined>();
 }
 
+jsbind::Undefined OffscreenCanvasRenderingContext2D::fill() {
+    return emlite::Val::call("fill").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined OffscreenCanvasRenderingContext2D::fill(const CanvasFillRule& fillRule) {
+    return emlite::Val::call("fill", fillRule).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined OffscreenCanvasRenderingContext2D::fill(const Path2D& path) {
     return emlite::Val::call("fill", path).as<jsbind::Undefined>();
 }
@@ -208,8 +220,20 @@ jsbind::Undefined OffscreenCanvasRenderingContext2D::fill(const Path2D& path, co
     return emlite::Val::call("fill", path, fillRule).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined OffscreenCanvasRenderingContext2D::stroke() {
+    return emlite::Val::call("stroke").as<jsbind::Undefined>();
+}
+
 jsbind::Undefined OffscreenCanvasRenderingContext2D::stroke(const Path2D& path) {
     return emlite::Val::call("stroke", path).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined OffscreenCanvasRenderingContext2D::clip() {
+    return emlite::Val::call("clip").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined OffscreenCanvasRenderingContext2D::clip(const CanvasFillRule& fillRule) {
+    return emlite::Val::call("clip", fillRule).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined OffscreenCanvasRenderingContext2D::clip(const Path2D& path) {
@@ -220,12 +244,24 @@ jsbind::Undefined OffscreenCanvasRenderingContext2D::clip(const Path2D& path, co
     return emlite::Val::call("clip", path, fillRule).as<jsbind::Undefined>();
 }
 
+bool OffscreenCanvasRenderingContext2D::isPointInPath(double x, double y) {
+    return emlite::Val::call("isPointInPath", x, y).as<bool>();
+}
+
+bool OffscreenCanvasRenderingContext2D::isPointInPath(double x, double y, const CanvasFillRule& fillRule) {
+    return emlite::Val::call("isPointInPath", x, y, fillRule).as<bool>();
+}
+
 bool OffscreenCanvasRenderingContext2D::isPointInPath(const Path2D& path, double x, double y) {
     return emlite::Val::call("isPointInPath", path, x, y).as<bool>();
 }
 
 bool OffscreenCanvasRenderingContext2D::isPointInPath(const Path2D& path, double x, double y, const CanvasFillRule& fillRule) {
     return emlite::Val::call("isPointInPath", path, x, y, fillRule).as<bool>();
+}
+
+bool OffscreenCanvasRenderingContext2D::isPointInStroke(double x, double y) {
+    return emlite::Val::call("isPointInStroke", x, y).as<bool>();
 }
 
 bool OffscreenCanvasRenderingContext2D::isPointInStroke(const Path2D& path, double x, double y) {
@@ -252,8 +288,24 @@ TextMetrics OffscreenCanvasRenderingContext2D::measureText(const jsbind::String&
     return emlite::Val::call("measureText", text).as<TextMetrics>();
 }
 
+jsbind::Undefined OffscreenCanvasRenderingContext2D::drawImage(const jsbind::Any& image, double dx, double dy) {
+    return emlite::Val::call("drawImage", image, dx, dy).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined OffscreenCanvasRenderingContext2D::drawImage(const jsbind::Any& image, double dx, double dy, double dw, double dh) {
+    return emlite::Val::call("drawImage", image, dx, dy, dw, dh).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined OffscreenCanvasRenderingContext2D::drawImage(const jsbind::Any& image, double sx, double sy, double sw, double sh, double dx, double dy, double dw, double dh) {
     return emlite::Val::call("drawImage", image, sx, sy, sw, sh, dx, dy, dw, dh).as<jsbind::Undefined>();
+}
+
+ImageData OffscreenCanvasRenderingContext2D::createImageData(long sw, long sh) {
+    return emlite::Val::call("createImageData", sw, sh).as<ImageData>();
+}
+
+ImageData OffscreenCanvasRenderingContext2D::createImageData(long sw, long sh, const ImageDataSettings& settings) {
+    return emlite::Val::call("createImageData", sw, sh, settings).as<ImageData>();
 }
 
 ImageData OffscreenCanvasRenderingContext2D::createImageData(const ImageData& imageData) {
@@ -266,6 +318,10 @@ ImageData OffscreenCanvasRenderingContext2D::getImageData(long sx, long sy, long
 
 ImageData OffscreenCanvasRenderingContext2D::getImageData(long sx, long sy, long sw, long sh, const ImageDataSettings& settings) {
     return emlite::Val::call("getImageData", sx, sy, sw, sh, settings).as<ImageData>();
+}
+
+jsbind::Undefined OffscreenCanvasRenderingContext2D::putImageData(const ImageData& imageData, long dx, long dy) {
+    return emlite::Val::call("putImageData", imageData, dx, dy).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined OffscreenCanvasRenderingContext2D::putImageData(const ImageData& imageData, long dx, long dy, long dirtyX, long dirtyY, long dirtyWidth, long dirtyHeight) {

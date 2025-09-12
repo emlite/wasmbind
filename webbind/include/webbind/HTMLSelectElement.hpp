@@ -90,6 +90,9 @@ public:
     jsbind::Undefined add(const jsbind::Any& element, const jsbind::Any& before);
     /// The remove method.
     /// [`HTMLSelectElement.remove`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/remove)
+    jsbind::Undefined remove();
+    /// The remove method.
+    /// [`HTMLSelectElement.remove`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/remove)
     jsbind::Undefined remove(long index);
     /// [`HTMLSelectElement.selectedOptions`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions)
     /// [`HTMLSelectElement.selectedOptions`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions)

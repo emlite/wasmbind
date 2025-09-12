@@ -51,6 +51,9 @@ public:
     DOMMatrix getTransform();
     /// The setTransform method.
     /// [`PaintRenderingContext2D.setTransform`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/setTransform)
+    jsbind::Undefined setTransform(double a, double b, double c, double d, double e, double f);
+    /// The setTransform method.
+    /// [`PaintRenderingContext2D.setTransform`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/setTransform)
     jsbind::Undefined setTransform();
     /// The setTransform method.
     /// [`PaintRenderingContext2D.setTransform`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/setTransform)
@@ -144,13 +147,28 @@ public:
     jsbind::Undefined beginPath();
     /// The fill method.
     /// [`PaintRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/fill)
+    jsbind::Undefined fill();
+    /// The fill method.
+    /// [`PaintRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/fill)
+    jsbind::Undefined fill(const CanvasFillRule& fillRule);
+    /// The fill method.
+    /// [`PaintRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/fill)
     jsbind::Undefined fill(const Path2D& path);
     /// The fill method.
     /// [`PaintRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/fill)
     jsbind::Undefined fill(const Path2D& path, const CanvasFillRule& fillRule);
     /// The stroke method.
     /// [`PaintRenderingContext2D.stroke`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/stroke)
+    jsbind::Undefined stroke();
+    /// The stroke method.
+    /// [`PaintRenderingContext2D.stroke`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/stroke)
     jsbind::Undefined stroke(const Path2D& path);
+    /// The clip method.
+    /// [`PaintRenderingContext2D.clip`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/clip)
+    jsbind::Undefined clip();
+    /// The clip method.
+    /// [`PaintRenderingContext2D.clip`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/clip)
+    jsbind::Undefined clip(const CanvasFillRule& fillRule);
     /// The clip method.
     /// [`PaintRenderingContext2D.clip`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/clip)
     jsbind::Undefined clip(const Path2D& path);
@@ -159,13 +177,28 @@ public:
     jsbind::Undefined clip(const Path2D& path, const CanvasFillRule& fillRule);
     /// The isPointInPath method.
     /// [`PaintRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/isPointInPath)
+    bool isPointInPath(double x, double y);
+    /// The isPointInPath method.
+    /// [`PaintRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/isPointInPath)
+    bool isPointInPath(double x, double y, const CanvasFillRule& fillRule);
+    /// The isPointInPath method.
+    /// [`PaintRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/isPointInPath)
     bool isPointInPath(const Path2D& path, double x, double y);
     /// The isPointInPath method.
     /// [`PaintRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/isPointInPath)
     bool isPointInPath(const Path2D& path, double x, double y, const CanvasFillRule& fillRule);
     /// The isPointInStroke method.
     /// [`PaintRenderingContext2D.isPointInStroke`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/isPointInStroke)
+    bool isPointInStroke(double x, double y);
+    /// The isPointInStroke method.
+    /// [`PaintRenderingContext2D.isPointInStroke`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/isPointInStroke)
     bool isPointInStroke(const Path2D& path, double x, double y);
+    /// The drawImage method.
+    /// [`PaintRenderingContext2D.drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/drawImage)
+    jsbind::Undefined drawImage(const jsbind::Any& image, double dx, double dy);
+    /// The drawImage method.
+    /// [`PaintRenderingContext2D.drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/drawImage)
+    jsbind::Undefined drawImage(const jsbind::Any& image, double dx, double dy, double dw, double dh);
     /// The drawImage method.
     /// [`PaintRenderingContext2D.drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/PaintRenderingContext2D/drawImage)
     jsbind::Undefined drawImage(const jsbind::Any& image, double sx, double sy, double sw, double sh, double dx, double dy, double dw, double dh);

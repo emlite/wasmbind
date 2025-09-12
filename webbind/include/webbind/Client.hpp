@@ -32,6 +32,9 @@ public:
     [[nodiscard]] ClientType type() const;
     /// The postMessage method.
     /// [`Client.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage)
+    jsbind::Undefined postMessage(const jsbind::Any& message, const jsbind::TypedArray<jsbind::Object>& transfer);
+    /// The postMessage method.
+    /// [`Client.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);
     /// The postMessage method.
     /// [`Client.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage)

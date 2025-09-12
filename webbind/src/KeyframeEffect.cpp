@@ -1,6 +1,6 @@
 #include <webbind/KeyframeEffect.hpp>
-#include <webbind/KeyframeEffect.hpp>
 #include <webbind/Element.hpp>
+#include <webbind/KeyframeEffect.hpp>
 
 namespace webbind {
 
@@ -15,6 +15,10 @@ emlite::Val KeyframeEffect::instance() noexcept { return emlite::Val::global("Ke
 KeyframeEffect::KeyframeEffect(Handle h) noexcept : AnimationEffect(emlite::Val::take_ownership(h)) {}
 
 KeyframeEffect::KeyframeEffect(const emlite::Val &val) noexcept: AnimationEffect(val) {}
+
+KeyframeEffect::KeyframeEffect(const Element& target, const jsbind::Object& keyframes) : AnimationEffect(emlite::Val::global("KeyframeEffect").new_(target, keyframes)) {}
+
+KeyframeEffect::KeyframeEffect(const Element& target, const jsbind::Object& keyframes, const jsbind::Any& options) : AnimationEffect(emlite::Val::global("KeyframeEffect").new_(target, keyframes, options)) {}
 
 KeyframeEffect::KeyframeEffect(const KeyframeEffect& source) : AnimationEffect(emlite::Val::global("KeyframeEffect").new_(source)) {}
 

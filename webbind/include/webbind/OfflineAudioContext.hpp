@@ -7,6 +7,7 @@
 
 namespace webbind {
 
+class OfflineAudioContextOptions;
 class AudioBuffer;
 
 /// Interface OfflineAudioContext
@@ -18,6 +19,8 @@ public:
     static OfflineAudioContext take_ownership(Handle h) noexcept;
     [[nodiscard]] OfflineAudioContext clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
+    /// The `new OfflineAudioContext(..)` constructor, creating a new OfflineAudioContext instance
+    OfflineAudioContext(const OfflineAudioContextOptions& contextOptions);
     /// The `new OfflineAudioContext(..)` constructor, creating a new OfflineAudioContext instance
     OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate);
     /// The startRendering method.

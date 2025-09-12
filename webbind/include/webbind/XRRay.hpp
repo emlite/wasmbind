@@ -6,6 +6,8 @@
 
 namespace webbind {
 
+class DOMPointInit;
+class XRRayDirectionInit;
 class XRRigidTransform;
 class DOMPointReadOnly;
 
@@ -18,6 +20,12 @@ public:
     static XRRay take_ownership(Handle h) noexcept;
     [[nodiscard]] XRRay clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
+    /// The `new XRRay(..)` constructor, creating a new XRRay instance
+    XRRay();
+    /// The `new XRRay(..)` constructor, creating a new XRRay instance
+    XRRay(const DOMPointInit& origin);
+    /// The `new XRRay(..)` constructor, creating a new XRRay instance
+    XRRay(const DOMPointInit& origin, const XRRayDirectionInit& direction);
     /// The `new XRRay(..)` constructor, creating a new XRRay instance
     XRRay(const XRRigidTransform& transform);
     /// [`XRRay.origin`](https://developer.mozilla.org/en-US/docs/Web/API/XRRay/origin)

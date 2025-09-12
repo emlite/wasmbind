@@ -20,6 +20,8 @@ public:
     [[nodiscard]] PresentationRequest clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new PresentationRequest(..)` constructor, creating a new PresentationRequest instance
+    PresentationRequest(const jsbind::String& url);
+    /// The `new PresentationRequest(..)` constructor, creating a new PresentationRequest instance
     PresentationRequest(const jsbind::TypedArray<jsbind::String>& urls);
     /// The start method.
     /// [`PresentationRequest.start`](https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/start)

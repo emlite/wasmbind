@@ -14,11 +14,11 @@ ANGLE_instanced_arrays::ANGLE_instanced_arrays(Handle h) noexcept : emlite::Val(
 
 ANGLE_instanced_arrays::ANGLE_instanced_arrays(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
-jsbind::Undefined ANGLE_instanced_arrays::drawArraysInstancedANGLE(const jsbind::Any& mode, const jsbind::Any& first, const jsbind::Any& count, const jsbind::Any& primcount) {
+jsbind::Undefined ANGLE_instanced_arrays::drawArraysInstancedANGLE(const uint32_t& mode, int first, int count, int primcount) {
     return emlite::Val::call("drawArraysInstancedANGLE", mode, first, count, primcount).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined ANGLE_instanced_arrays::drawElementsInstancedANGLE(const jsbind::Any& mode, const jsbind::Any& count, const jsbind::Any& type, const jsbind::Any& offset, const jsbind::Any& primcount) {
+jsbind::Undefined ANGLE_instanced_arrays::drawElementsInstancedANGLE(const uint32_t& mode, int count, const uint32_t& type, const intptr_t& offset, int primcount) {
     return emlite::Val::call("drawElementsInstancedANGLE", mode, count, type, offset, primcount).as<jsbind::Undefined>();
 }
 

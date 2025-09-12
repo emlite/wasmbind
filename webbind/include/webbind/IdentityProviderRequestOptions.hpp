@@ -15,10 +15,6 @@ public:
     explicit IdentityProviderRequestOptions(const emlite::Val &val) noexcept;
     IdentityProviderRequestOptions() noexcept;
     [[nodiscard]] IdentityProviderRequestOptions clone() const noexcept;
-    /// Getter of the `nonce` attribute.
-    [[nodiscard]] jsbind::String nonce() const;
-    /// Setter of the `nonce` attribute.
-    void nonce(const jsbind::String& value);
     /// Getter of the `loginHint` attribute.
     [[nodiscard]] jsbind::String loginHint() const;
     /// Setter of the `loginHint` attribute.

@@ -25,7 +25,7 @@ public:
     jsbind::Undefined deleteVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject);
     /// The isVertexArrayOES method.
     /// [`OES_vertex_array_object.isVertexArrayOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/isVertexArrayOES)
-    jsbind::Any isVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject);
+    bool isVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject);
     /// The bindVertexArrayOES method.
     /// [`OES_vertex_array_object.bindVertexArrayOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/bindVertexArrayOES)
     jsbind::Undefined bindVertexArrayOES(const WebGLVertexArrayObjectOES& arrayObject);

@@ -17,7 +17,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The drawBuffersWEBGL method.
     /// [`WEBGL_draw_buffers.drawBuffersWEBGL`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_draw_buffers/drawBuffersWEBGL)
-    jsbind::Undefined drawBuffersWEBGL(const jsbind::TypedArray<jsbind::Any>& buffers);
+    jsbind::Undefined drawBuffersWEBGL(const jsbind::TypedArray<uint32_t>& buffers);
 };
 
 } // namespace webbind

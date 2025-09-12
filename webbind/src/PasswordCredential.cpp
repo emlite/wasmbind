@@ -1,4 +1,5 @@
 #include <webbind/PasswordCredential.hpp>
+#include <webbind/HTMLFormElement.hpp>
 #include <webbind/PasswordCredentialData.hpp>
 
 namespace webbind {
@@ -14,6 +15,8 @@ emlite::Val PasswordCredential::instance() noexcept { return emlite::Val::global
 PasswordCredential::PasswordCredential(Handle h) noexcept : Credential(emlite::Val::take_ownership(h)) {}
 
 PasswordCredential::PasswordCredential(const emlite::Val &val) noexcept: Credential(val) {}
+
+PasswordCredential::PasswordCredential(const HTMLFormElement& form) : Credential(emlite::Val::global("PasswordCredential").new_(form)) {}
 
 PasswordCredential::PasswordCredential(const PasswordCredentialData& data) : Credential(emlite::Val::global("PasswordCredential").new_(data)) {}
 

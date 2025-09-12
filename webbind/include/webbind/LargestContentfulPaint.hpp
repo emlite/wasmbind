@@ -21,6 +21,9 @@ public:
     /// [`LargestContentfulPaint.loadTime`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/loadTime)
     /// [`LargestContentfulPaint.loadTime`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/loadTime)
     [[nodiscard]] jsbind::Any loadTime() const;
+    /// [`LargestContentfulPaint.renderTime`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/renderTime)
+    /// [`LargestContentfulPaint.renderTime`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/renderTime)
+    [[nodiscard]] jsbind::Any renderTime() const;
     /// [`LargestContentfulPaint.size`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/size)
     /// [`LargestContentfulPaint.size`](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/size)
     [[nodiscard]] unsigned long size() const;

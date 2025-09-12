@@ -1,4 +1,5 @@
 #include <webbind/PushEventInit.hpp>
+#include <webbind/Notification.hpp>
 
 namespace webbind {
 
@@ -19,6 +20,14 @@ jsbind::Any PushEventInit::data() const {
 
 void PushEventInit::data(const jsbind::Any& value) {
     emlite::Val::set("data", value);
+}
+
+Notification PushEventInit::notification() const {
+    return emlite::Val::get("notification").as<Notification>();
+}
+
+void PushEventInit::notification(const Notification& value) {
+    emlite::Val::set("notification", value);
 }
 
 

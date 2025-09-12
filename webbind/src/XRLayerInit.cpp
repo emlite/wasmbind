@@ -22,19 +22,19 @@ void XRLayerInit::space(const XRSpace& value) {
     emlite::Val::set("space", value);
 }
 
-jsbind::Any XRLayerInit::colorFormat() const {
-    return emlite::Val::get("colorFormat").as<jsbind::Any>();
+uint32_t XRLayerInit::colorFormat() const {
+    return emlite::Val::get("colorFormat").as<uint32_t>();
 }
 
-void XRLayerInit::colorFormat(const jsbind::Any& value) {
+void XRLayerInit::colorFormat(const uint32_t& value) {
     emlite::Val::set("colorFormat", value);
 }
 
-jsbind::Any XRLayerInit::depthFormat() const {
-    return emlite::Val::get("depthFormat").as<jsbind::Any>();
+uint32_t XRLayerInit::depthFormat() const {
+    return emlite::Val::get("depthFormat").as<uint32_t>();
 }
 
-void XRLayerInit::depthFormat(const jsbind::Any& value) {
+void XRLayerInit::depthFormat(const uint32_t& value) {
     emlite::Val::set("depthFormat", value);
 }
 

@@ -19,8 +19,8 @@ SubtleCrypto Crypto::subtle() const {
     return emlite::Val::get("subtle").as<SubtleCrypto>();
 }
 
-jsbind::Any Crypto::getRandomValues(const jsbind::Any& array) {
-    return emlite::Val::call("getRandomValues", array).as<jsbind::Any>();
+jsbind::ArrayBufferView Crypto::getRandomValues(const jsbind::ArrayBufferView& array) {
+    return emlite::Val::call("getRandomValues", array).as<jsbind::ArrayBufferView>();
 }
 
 jsbind::String Crypto::randomUUID() {

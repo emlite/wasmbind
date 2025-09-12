@@ -72,6 +72,23 @@ export function cpp(idlType) {
     Float64Array: "jsbind::Float64Array",
     ArrayBuffer: "jsbind::ArrayBuffer",
     DataView: "jsbind::DataView",
+    ArrayBufferView: "jsbind::ArrayBufferView",
+    GLSLuint: "unsigned int",
+    GLSLint: "int",
+    GLboolean: "bool",
+    void: "void",
+    GLsizei: "int",
+    GLenum: "uint32_t",
+    GLfloat: "float",
+    GLclampf: "float",
+    GLint: "int",
+    GLbitfield: "uint32_t",
+    GLbyte: "char",
+    GLshort: "int16_t",
+    GLubyte: "uint8_t",
+    GLushort: "uint16_t",
+    GLintptr: "intptr_t",
+    GLsizeiptr: "intptr_t",
   };
 
   if (missingDictFallback.has(n) || builtinNominals.has(n))

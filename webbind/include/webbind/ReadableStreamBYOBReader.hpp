@@ -23,10 +23,10 @@ public:
     ReadableStreamBYOBReader(const ReadableStream& stream);
     /// The read method.
     /// [`ReadableStreamBYOBReader.read`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/read)
-    jsbind::Promise<ReadableStreamReadResult> read(const jsbind::Any& view);
+    jsbind::Promise<ReadableStreamReadResult> read(const jsbind::ArrayBufferView& view);
     /// The read method.
     /// [`ReadableStreamBYOBReader.read`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/read)
-    jsbind::Promise<ReadableStreamReadResult> read(const jsbind::Any& view, const ReadableStreamBYOBReaderReadOptions& options);
+    jsbind::Promise<ReadableStreamReadResult> read(const jsbind::ArrayBufferView& view, const ReadableStreamBYOBReaderReadOptions& options);
     /// The releaseLock method.
     /// [`ReadableStreamBYOBReader.releaseLock`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
     jsbind::Undefined releaseLock();

@@ -23,6 +23,9 @@ public:
     [[nodiscard]] unsigned long length() const;
     /// The add method.
     /// [`DataTransferItemList.add`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/add)
+    DataTransferItem add(const jsbind::String& data, const jsbind::String& type);
+    /// The add method.
+    /// [`DataTransferItemList.add`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/add)
     DataTransferItem add(const File& data);
     /// The remove method.
     /// [`DataTransferItemList.remove`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/remove)

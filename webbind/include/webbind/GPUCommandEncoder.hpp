@@ -37,6 +37,12 @@ public:
     GPUComputePassEncoder beginComputePass(const GPUComputePassDescriptor& descriptor);
     /// The copyBufferToBuffer method.
     /// [`GPUCommandEncoder.copyBufferToBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer)
+    jsbind::Undefined copyBufferToBuffer(const GPUBuffer& source, const GPUBuffer& destination);
+    /// The copyBufferToBuffer method.
+    /// [`GPUCommandEncoder.copyBufferToBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer)
+    jsbind::Undefined copyBufferToBuffer(const GPUBuffer& source, const GPUBuffer& destination, const jsbind::Any& size);
+    /// The copyBufferToBuffer method.
+    /// [`GPUCommandEncoder.copyBufferToBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer)
     jsbind::Undefined copyBufferToBuffer(const GPUBuffer& source, const jsbind::Any& sourceOffset, const GPUBuffer& destination, const jsbind::Any& destinationOffset);
     /// The copyBufferToBuffer method.
     /// [`GPUCommandEncoder.copyBufferToBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer)

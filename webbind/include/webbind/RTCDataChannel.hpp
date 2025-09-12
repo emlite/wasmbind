@@ -8,6 +8,8 @@
 
 namespace webbind {
 
+class Blob;
+
 /// Interface RTCDataChannel
 /// [`RTCDataChannel`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel)
 class RTCDataChannel : public EventTarget {
@@ -97,7 +99,16 @@ public:
     void binaryType(const BinaryType& value);
     /// The send method.
     /// [`RTCDataChannel.send`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/send)
-    jsbind::Undefined send(const jsbind::Any& data);
+    jsbind::Undefined send(const jsbind::String& data);
+    /// The send method.
+    /// [`RTCDataChannel.send`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/send)
+    jsbind::Undefined send(const Blob& data);
+    /// The send method.
+    /// [`RTCDataChannel.send`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/send)
+    jsbind::Undefined send(const jsbind::ArrayBuffer& data);
+    /// The send method.
+    /// [`RTCDataChannel.send`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/send)
+    jsbind::Undefined send(const jsbind::ArrayBufferView& data);
     /// [`RTCDataChannel.priority`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/priority)
     /// [`RTCDataChannel.priority`](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/priority)
     [[nodiscard]] RTCPriorityType priority() const;

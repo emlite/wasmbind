@@ -17,10 +17,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// [`WebGLActiveInfo.size`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/size)
     /// [`WebGLActiveInfo.size`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/size)
-    [[nodiscard]] jsbind::Any size() const;
+    [[nodiscard]] int size() const;
     /// [`WebGLActiveInfo.type`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/type)
     /// [`WebGLActiveInfo.type`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/type)
-    [[nodiscard]] jsbind::Any type() const;
+    [[nodiscard]] uint32_t type() const;
     /// [`WebGLActiveInfo.name`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/name)
     /// [`WebGLActiveInfo.name`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/name)
     [[nodiscard]] jsbind::String name() const;

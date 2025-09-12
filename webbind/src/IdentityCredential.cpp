@@ -19,8 +19,8 @@ jsbind::Promise<jsbind::Undefined> IdentityCredential::disconnect(const Identity
     return emlite::Val::global("identitycredential").call("disconnect", options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::String IdentityCredential::token() const {
-    return Credential::get("token").as<jsbind::String>();
+jsbind::Any IdentityCredential::token() const {
+    return Credential::get("token").as<jsbind::Any>();
 }
 
 bool IdentityCredential::isAutoSelected() const {

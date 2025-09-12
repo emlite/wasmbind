@@ -36,6 +36,14 @@ GPUComputePassEncoder GPUCommandEncoder::beginComputePass(const GPUComputePassDe
     return emlite::Val::call("beginComputePass", descriptor).as<GPUComputePassEncoder>();
 }
 
+jsbind::Undefined GPUCommandEncoder::copyBufferToBuffer(const GPUBuffer& source, const GPUBuffer& destination) {
+    return emlite::Val::call("copyBufferToBuffer", source, destination).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined GPUCommandEncoder::copyBufferToBuffer(const GPUBuffer& source, const GPUBuffer& destination, const jsbind::Any& size) {
+    return emlite::Val::call("copyBufferToBuffer", source, destination, size).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined GPUCommandEncoder::copyBufferToBuffer(const GPUBuffer& source, const jsbind::Any& sourceOffset, const GPUBuffer& destination, const jsbind::Any& destinationOffset) {
     return emlite::Val::call("copyBufferToBuffer", source, sourceOffset, destination, destinationOffset).as<jsbind::Undefined>();
 }

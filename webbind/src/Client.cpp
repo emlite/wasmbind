@@ -31,6 +31,10 @@ ClientType Client::type() const {
     return emlite::Val::get("type").as<ClientType>();
 }
 
+jsbind::Undefined Client::postMessage(const jsbind::Any& message, const jsbind::TypedArray<jsbind::Object>& transfer) {
+    return emlite::Val::call("postMessage", message, transfer).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Client::postMessage(const jsbind::Any& message) {
     return emlite::Val::call("postMessage", message).as<jsbind::Undefined>();
 }

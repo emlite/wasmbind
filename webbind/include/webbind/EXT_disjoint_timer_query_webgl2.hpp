@@ -19,7 +19,7 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The queryCounterEXT method.
     /// [`EXT_disjoint_timer_query_webgl2.queryCounterEXT`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query_webgl2/queryCounterEXT)
-    jsbind::Undefined queryCounterEXT(const WebGLQuery& query, const jsbind::Any& target);
+    jsbind::Undefined queryCounterEXT(const WebGLQuery& query, const uint32_t& target);
 };
 
 } // namespace webbind

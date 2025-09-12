@@ -40,7 +40,10 @@ public:
     static Response redirect(const jsbind::String& url, unsigned short status);
     /// The json method.
     /// [`Response.json`](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
-    jsbind::Promise<jsbind::Any> json();
+    static Response json(const jsbind::Any& data);
+    /// The json method.
+    /// [`Response.json`](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
+    static Response json(const jsbind::Any& data, const ResponseInit& init);
     /// [`Response.type`](https://developer.mozilla.org/en-US/docs/Web/API/Response/type)
     /// [`Response.type`](https://developer.mozilla.org/en-US/docs/Web/API/Response/type)
     [[nodiscard]] ResponseType type() const;
@@ -83,6 +86,9 @@ public:
     /// The formData method.
     /// [`Response.formData`](https://developer.mozilla.org/en-US/docs/Web/API/Response/formData)
     jsbind::Promise<FormData> formData();
+    /// The json method.
+    /// [`Response.json`](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
+    jsbind::Promise<jsbind::Any> json();
     /// The text method.
     /// [`Response.text`](https://developer.mozilla.org/en-US/docs/Web/API/Response/text)
     jsbind::Promise<jsbind::String> text();

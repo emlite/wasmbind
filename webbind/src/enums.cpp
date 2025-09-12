@@ -4637,6 +4637,46 @@ const char* MeteringMode::to_string(MeteringMode::Value value_) noexcept {
     }
 }
 
+IPAddressSpace::Value IPAddressSpace::from_string(const char* str) noexcept {
+    if (__builtin_strncmp(str, "public", strlen("public"))) {
+        return PUBLIC_;
+    }
+    else if (__builtin_strncmp(str, "local", strlen("local"))) {
+        return LOCAL;
+    }
+    else if (__builtin_strncmp(str, "loopback", strlen("loopback"))) {
+        return LOOPBACK;
+    }
+    else {
+        // Default to first value for invalid input
+        return PUBLIC_;
+    }
+}
+
+IPAddressSpace::IPAddressSpace(Value v) noexcept : emlite::Val(IPAddressSpace::to_string(v)), value_(v) {}
+IPAddressSpace::IPAddressSpace(Handle h) noexcept: emlite::Val(h) {
+    value_ = IPAddressSpace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IPAddressSpace::IPAddressSpace(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = IPAddressSpace::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+IPAddressSpace IPAddressSpace::take_ownership(Handle h) noexcept { return IPAddressSpace(h); }
+IPAddressSpace IPAddressSpace::clone() const noexcept { return *this; }
+const char* IPAddressSpace::to_string(IPAddressSpace::Value value_) noexcept {
+    switch (value_) {
+        case PUBLIC_:
+            return "public";
+        case LOCAL:
+            return "local";
+        case LOOPBACK:
+            return "loopback";
+        default:
+            return "public"; // fallback to first value
+    }
+}
+
 LoginStatus::Value LoginStatus::from_string(const char* str) noexcept {
     if (__builtin_strncmp(str, "logged-in", strlen("logged-in"))) {
         return LOGGED_IN;
@@ -6354,46 +6394,6 @@ const char* AttributionLogic::to_string(AttributionLogic::Value value_) noexcept
             return "last-n-touch";
         default:
             return "last-n-touch"; // fallback to first value
-    }
-}
-
-IPAddressSpace::Value IPAddressSpace::from_string(const char* str) noexcept {
-    if (__builtin_strncmp(str, "public", strlen("public"))) {
-        return PUBLIC_;
-    }
-    else if (__builtin_strncmp(str, "private", strlen("private"))) {
-        return PRIVATE_;
-    }
-    else if (__builtin_strncmp(str, "local", strlen("local"))) {
-        return LOCAL;
-    }
-    else {
-        // Default to first value for invalid input
-        return PUBLIC_;
-    }
-}
-
-IPAddressSpace::IPAddressSpace(Value v) noexcept : emlite::Val(IPAddressSpace::to_string(v)), value_(v) {}
-IPAddressSpace::IPAddressSpace(Handle h) noexcept: emlite::Val(h) {
-    value_ = IPAddressSpace::from_string(as<emlite::Uniq<char[]>>().get());
-}
-
-IPAddressSpace::IPAddressSpace(const emlite::Val& val) noexcept: emlite::Val(val) {
-    value_ = IPAddressSpace::from_string(as<emlite::Uniq<char[]>>().get());
-}
-
-IPAddressSpace IPAddressSpace::take_ownership(Handle h) noexcept { return IPAddressSpace(h); }
-IPAddressSpace IPAddressSpace::clone() const noexcept { return *this; }
-const char* IPAddressSpace::to_string(IPAddressSpace::Value value_) noexcept {
-    switch (value_) {
-        case PUBLIC_:
-            return "public";
-        case PRIVATE_:
-            return "private";
-        case LOCAL:
-            return "local";
-        default:
-            return "public"; // fallback to first value
     }
 }
 
@@ -10477,6 +10477,156 @@ const char* VideoMatrixCoefficients::to_string(VideoMatrixCoefficients::Value va
     }
 }
 
+KeyFormat::Value KeyFormat::from_string(const char* str) noexcept {
+    if (__builtin_strncmp(str, "raw-public", strlen("raw-public"))) {
+        return RAW_PUBLIC;
+    }
+    else if (__builtin_strncmp(str, "raw-private", strlen("raw-private"))) {
+        return RAW_PRIVATE;
+    }
+    else if (__builtin_strncmp(str, "raw-seed", strlen("raw-seed"))) {
+        return RAW_SEED;
+    }
+    else if (__builtin_strncmp(str, "raw-secret", strlen("raw-secret"))) {
+        return RAW_SECRET;
+    }
+    else if (__builtin_strncmp(str, "raw", strlen("raw"))) {
+        return RAW;
+    }
+    else if (__builtin_strncmp(str, "spki", strlen("spki"))) {
+        return SPKI;
+    }
+    else if (__builtin_strncmp(str, "pkcs8", strlen("pkcs8"))) {
+        return PKCS8;
+    }
+    else if (__builtin_strncmp(str, "jwk", strlen("jwk"))) {
+        return JWK;
+    }
+    else {
+        // Default to first value for invalid input
+        return RAW_PUBLIC;
+    }
+}
+
+KeyFormat::KeyFormat(Value v) noexcept : emlite::Val(KeyFormat::to_string(v)), value_(v) {}
+KeyFormat::KeyFormat(Handle h) noexcept: emlite::Val(h) {
+    value_ = KeyFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KeyFormat::KeyFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = KeyFormat::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KeyFormat KeyFormat::take_ownership(Handle h) noexcept { return KeyFormat(h); }
+KeyFormat KeyFormat::clone() const noexcept { return *this; }
+const char* KeyFormat::to_string(KeyFormat::Value value_) noexcept {
+    switch (value_) {
+        case RAW_PUBLIC:
+            return "raw-public";
+        case RAW_PRIVATE:
+            return "raw-private";
+        case RAW_SEED:
+            return "raw-seed";
+        case RAW_SECRET:
+            return "raw-secret";
+        case RAW:
+            return "raw";
+        case SPKI:
+            return "spki";
+        case PKCS8:
+            return "pkcs8";
+        case JWK:
+            return "jwk";
+        default:
+            return "raw-public"; // fallback to first value
+    }
+}
+
+KeyUsage::Value KeyUsage::from_string(const char* str) noexcept {
+    if (__builtin_strncmp(str, "encrypt", strlen("encrypt"))) {
+        return ENCRYPT;
+    }
+    else if (__builtin_strncmp(str, "decrypt", strlen("decrypt"))) {
+        return DECRYPT;
+    }
+    else if (__builtin_strncmp(str, "sign", strlen("sign"))) {
+        return SIGN;
+    }
+    else if (__builtin_strncmp(str, "verify", strlen("verify"))) {
+        return VERIFY;
+    }
+    else if (__builtin_strncmp(str, "deriveKey", strlen("deriveKey"))) {
+        return DERIVEKEY;
+    }
+    else if (__builtin_strncmp(str, "deriveBits", strlen("deriveBits"))) {
+        return DERIVEBITS;
+    }
+    else if (__builtin_strncmp(str, "wrapKey", strlen("wrapKey"))) {
+        return WRAPKEY;
+    }
+    else if (__builtin_strncmp(str, "unwrapKey", strlen("unwrapKey"))) {
+        return UNWRAPKEY;
+    }
+    else if (__builtin_strncmp(str, "encapsulateKey", strlen("encapsulateKey"))) {
+        return ENCAPSULATEKEY;
+    }
+    else if (__builtin_strncmp(str, "encapsulateBits", strlen("encapsulateBits"))) {
+        return ENCAPSULATEBITS;
+    }
+    else if (__builtin_strncmp(str, "decapsulateKey", strlen("decapsulateKey"))) {
+        return DECAPSULATEKEY;
+    }
+    else if (__builtin_strncmp(str, "decapsulateBits", strlen("decapsulateBits"))) {
+        return DECAPSULATEBITS;
+    }
+    else {
+        // Default to first value for invalid input
+        return ENCRYPT;
+    }
+}
+
+KeyUsage::KeyUsage(Value v) noexcept : emlite::Val(KeyUsage::to_string(v)), value_(v) {}
+KeyUsage::KeyUsage(Handle h) noexcept: emlite::Val(h) {
+    value_ = KeyUsage::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KeyUsage::KeyUsage(const emlite::Val& val) noexcept: emlite::Val(val) {
+    value_ = KeyUsage::from_string(as<emlite::Uniq<char[]>>().get());
+}
+
+KeyUsage KeyUsage::take_ownership(Handle h) noexcept { return KeyUsage(h); }
+KeyUsage KeyUsage::clone() const noexcept { return *this; }
+const char* KeyUsage::to_string(KeyUsage::Value value_) noexcept {
+    switch (value_) {
+        case ENCRYPT:
+            return "encrypt";
+        case DECRYPT:
+            return "decrypt";
+        case SIGN:
+            return "sign";
+        case VERIFY:
+            return "verify";
+        case DERIVEKEY:
+            return "deriveKey";
+        case DERIVEBITS:
+            return "deriveBits";
+        case WRAPKEY:
+            return "wrapKey";
+        case UNWRAPKEY:
+            return "unwrapKey";
+        case ENCAPSULATEKEY:
+            return "encapsulateKey";
+        case ENCAPSULATEBITS:
+            return "encapsulateBits";
+        case DECAPSULATEKEY:
+            return "decapsulateKey";
+        case DECAPSULATEBITS:
+            return "decapsulateBits";
+        default:
+            return "encrypt"; // fallback to first value
+    }
+}
+
 KeyType::Value KeyType::from_string(const char* str) noexcept {
     if (__builtin_strncmp(str, "public", strlen("public"))) {
         return PUBLIC_;
@@ -10514,116 +10664,6 @@ const char* KeyType::to_string(KeyType::Value value_) noexcept {
             return "secret";
         default:
             return "public"; // fallback to first value
-    }
-}
-
-KeyUsage::Value KeyUsage::from_string(const char* str) noexcept {
-    if (__builtin_strncmp(str, "encrypt", strlen("encrypt"))) {
-        return ENCRYPT;
-    }
-    else if (__builtin_strncmp(str, "decrypt", strlen("decrypt"))) {
-        return DECRYPT;
-    }
-    else if (__builtin_strncmp(str, "sign", strlen("sign"))) {
-        return SIGN;
-    }
-    else if (__builtin_strncmp(str, "verify", strlen("verify"))) {
-        return VERIFY;
-    }
-    else if (__builtin_strncmp(str, "deriveKey", strlen("deriveKey"))) {
-        return DERIVEKEY;
-    }
-    else if (__builtin_strncmp(str, "deriveBits", strlen("deriveBits"))) {
-        return DERIVEBITS;
-    }
-    else if (__builtin_strncmp(str, "wrapKey", strlen("wrapKey"))) {
-        return WRAPKEY;
-    }
-    else if (__builtin_strncmp(str, "unwrapKey", strlen("unwrapKey"))) {
-        return UNWRAPKEY;
-    }
-    else {
-        // Default to first value for invalid input
-        return ENCRYPT;
-    }
-}
-
-KeyUsage::KeyUsage(Value v) noexcept : emlite::Val(KeyUsage::to_string(v)), value_(v) {}
-KeyUsage::KeyUsage(Handle h) noexcept: emlite::Val(h) {
-    value_ = KeyUsage::from_string(as<emlite::Uniq<char[]>>().get());
-}
-
-KeyUsage::KeyUsage(const emlite::Val& val) noexcept: emlite::Val(val) {
-    value_ = KeyUsage::from_string(as<emlite::Uniq<char[]>>().get());
-}
-
-KeyUsage KeyUsage::take_ownership(Handle h) noexcept { return KeyUsage(h); }
-KeyUsage KeyUsage::clone() const noexcept { return *this; }
-const char* KeyUsage::to_string(KeyUsage::Value value_) noexcept {
-    switch (value_) {
-        case ENCRYPT:
-            return "encrypt";
-        case DECRYPT:
-            return "decrypt";
-        case SIGN:
-            return "sign";
-        case VERIFY:
-            return "verify";
-        case DERIVEKEY:
-            return "deriveKey";
-        case DERIVEBITS:
-            return "deriveBits";
-        case WRAPKEY:
-            return "wrapKey";
-        case UNWRAPKEY:
-            return "unwrapKey";
-        default:
-            return "encrypt"; // fallback to first value
-    }
-}
-
-KeyFormat::Value KeyFormat::from_string(const char* str) noexcept {
-    if (__builtin_strncmp(str, "raw", strlen("raw"))) {
-        return RAW;
-    }
-    else if (__builtin_strncmp(str, "spki", strlen("spki"))) {
-        return SPKI;
-    }
-    else if (__builtin_strncmp(str, "pkcs8", strlen("pkcs8"))) {
-        return PKCS8;
-    }
-    else if (__builtin_strncmp(str, "jwk", strlen("jwk"))) {
-        return JWK;
-    }
-    else {
-        // Default to first value for invalid input
-        return RAW;
-    }
-}
-
-KeyFormat::KeyFormat(Value v) noexcept : emlite::Val(KeyFormat::to_string(v)), value_(v) {}
-KeyFormat::KeyFormat(Handle h) noexcept: emlite::Val(h) {
-    value_ = KeyFormat::from_string(as<emlite::Uniq<char[]>>().get());
-}
-
-KeyFormat::KeyFormat(const emlite::Val& val) noexcept: emlite::Val(val) {
-    value_ = KeyFormat::from_string(as<emlite::Uniq<char[]>>().get());
-}
-
-KeyFormat KeyFormat::take_ownership(Handle h) noexcept { return KeyFormat(h); }
-KeyFormat KeyFormat::clone() const noexcept { return *this; }
-const char* KeyFormat::to_string(KeyFormat::Value value_) noexcept {
-    switch (value_) {
-        case RAW:
-            return "raw";
-        case SPKI:
-            return "spki";
-        case PKCS8:
-            return "pkcs8";
-        case JWK:
-            return "jwk";
-        default:
-            return "raw"; // fallback to first value
     }
 }
 
@@ -10763,6 +10803,9 @@ GPUFeatureName::Value GPUFeatureName::from_string(const char* str) noexcept {
     else if (__builtin_strncmp(str, "texture-formats-tier2", strlen("texture-formats-tier2"))) {
         return TEXTURE_FORMATS_TIER2;
     }
+    else if (__builtin_strncmp(str, "primitive-index", strlen("primitive-index"))) {
+        return PRIMITIVE_INDEX;
+    }
     else {
         // Default to first value for invalid input
         return CORE_FEATURES_AND_LIMITS;
@@ -10822,6 +10865,8 @@ const char* GPUFeatureName::to_string(GPUFeatureName::Value value_) noexcept {
             return "texture-formats-tier1";
         case TEXTURE_FORMATS_TIER2:
             return "texture-formats-tier2";
+        case PRIMITIVE_INDEX:
+            return "primitive-index";
         default:
             return "core-features-and-limits"; // fallback to first value
     }

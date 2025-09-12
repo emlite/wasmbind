@@ -7,6 +7,7 @@
 
 namespace webbind {
 
+class HTMLFormElement;
 class PasswordCredentialData;
 
 /// Interface PasswordCredential
@@ -18,6 +19,8 @@ public:
     static PasswordCredential take_ownership(Handle h) noexcept;
     [[nodiscard]] PasswordCredential clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
+    /// The `new PasswordCredential(..)` constructor, creating a new PasswordCredential instance
+    PasswordCredential(const HTMLFormElement& form);
     /// The `new PasswordCredential(..)` constructor, creating a new PasswordCredential instance
     PasswordCredential(const PasswordCredentialData& data);
     /// [`PasswordCredential.password`](https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/password)

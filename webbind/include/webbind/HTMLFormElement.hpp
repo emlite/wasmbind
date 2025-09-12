@@ -9,6 +9,7 @@ namespace webbind {
 
 class DOMTokenList;
 class HTMLFormControlsCollection;
+class Element;
 
 /// Interface HTMLFormElement
 /// [`HTMLFormElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement)

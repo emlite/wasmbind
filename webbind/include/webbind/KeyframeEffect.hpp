@@ -8,8 +8,8 @@
 
 namespace webbind {
 
-class KeyframeEffect;
 class Element;
+class KeyframeEffect;
 
 /// Interface KeyframeEffect
 /// [`KeyframeEffect`](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect)
@@ -20,6 +20,10 @@ public:
     static KeyframeEffect take_ownership(Handle h) noexcept;
     [[nodiscard]] KeyframeEffect clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
+    /// The `new KeyframeEffect(..)` constructor, creating a new KeyframeEffect instance
+    KeyframeEffect(const Element& target, const jsbind::Object& keyframes);
+    /// The `new KeyframeEffect(..)` constructor, creating a new KeyframeEffect instance
+    KeyframeEffect(const Element& target, const jsbind::Object& keyframes, const jsbind::Any& options);
     /// The `new KeyframeEffect(..)` constructor, creating a new KeyframeEffect instance
     KeyframeEffect(const KeyframeEffect& source);
     /// [`KeyframeEffect.target`](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/target)

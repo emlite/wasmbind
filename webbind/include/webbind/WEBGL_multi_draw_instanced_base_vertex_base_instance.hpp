@@ -17,10 +17,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The multiDrawArraysInstancedBaseInstanceWEBGL method.
     /// [`WEBGL_multi_draw_instanced_base_vertex_base_instance.multiDrawArraysInstancedBaseInstanceWEBGL`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_multi_draw_instanced_base_vertex_base_instance/multiDrawArraysInstancedBaseInstanceWEBGL)
-    jsbind::Undefined multiDrawArraysInstancedBaseInstanceWEBGL(const jsbind::Any& mode, const jsbind::Any& firstsList, long long firstsOffset, const jsbind::Any& countsList, long long countsOffset, const jsbind::Any& instanceCountsList, long long instanceCountsOffset, const jsbind::Any& baseInstancesList, long long baseInstancesOffset, const jsbind::Any& drawcount);
+    jsbind::Undefined multiDrawArraysInstancedBaseInstanceWEBGL(const uint32_t& mode, const jsbind::Any& firstsList, long long firstsOffset, const jsbind::Any& countsList, long long countsOffset, const jsbind::Any& instanceCountsList, long long instanceCountsOffset, const jsbind::Any& baseInstancesList, long long baseInstancesOffset, int drawcount);
     /// The multiDrawElementsInstancedBaseVertexBaseInstanceWEBGL method.
     /// [`WEBGL_multi_draw_instanced_base_vertex_base_instance.multiDrawElementsInstancedBaseVertexBaseInstanceWEBGL`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_multi_draw_instanced_base_vertex_base_instance/multiDrawElementsInstancedBaseVertexBaseInstanceWEBGL)
-    jsbind::Undefined multiDrawElementsInstancedBaseVertexBaseInstanceWEBGL(const jsbind::Any& mode, const jsbind::Any& countsList, long long countsOffset, const jsbind::Any& type, const jsbind::Any& offsetsList, long long offsetsOffset, const jsbind::Any& instanceCountsList, long long instanceCountsOffset, const jsbind::Any& baseVerticesList, long long baseVerticesOffset, const jsbind::Any& baseInstancesList, long long baseInstancesOffset, const jsbind::Any& drawcount);
+    jsbind::Undefined multiDrawElementsInstancedBaseVertexBaseInstanceWEBGL(const uint32_t& mode, const jsbind::Any& countsList, long long countsOffset, const uint32_t& type, const jsbind::Any& offsetsList, long long offsetsOffset, const jsbind::Any& instanceCountsList, long long instanceCountsOffset, const jsbind::Any& baseVerticesList, long long baseVerticesOffset, const jsbind::Any& baseInstancesList, long long baseInstancesOffset, int drawcount);
 };
 
 } // namespace webbind

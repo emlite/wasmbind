@@ -32,6 +32,10 @@ jsbind::Promise<MLTensor> MLContext::createConstantTensor(const MLOperandDescrip
     return emlite::Val::call("createConstantTensor", descriptor, inputData).as<jsbind::Promise<MLTensor>>();
 }
 
+jsbind::Promise<jsbind::ArrayBuffer> MLContext::readTensor(const MLTensor& tensor) {
+    return emlite::Val::call("readTensor", tensor).as<jsbind::Promise<jsbind::ArrayBuffer>>();
+}
+
 jsbind::Promise<jsbind::Undefined> MLContext::readTensor(const MLTensor& tensor, const jsbind::Any& outputData) {
     return emlite::Val::call("readTensor", tensor, outputData).as<jsbind::Promise<jsbind::Undefined>>();
 }

@@ -9,10 +9,11 @@
 namespace webbind {
 
 class RTCConfiguration;
+class RTCSessionDescriptionInit;
 class RTCOfferOptions;
+class RTCAnswerOptions;
 class RTCLocalSessionDescriptionInit;
 class RTCSessionDescription;
-class RTCSessionDescriptionInit;
 class RTCIceCandidateInit;
 class RTCIdentityProviderOptions;
 class RTCIdentityAssertion;
@@ -43,16 +44,22 @@ public:
     RTCPeerConnection(const RTCConfiguration& configuration);
     /// The createOffer method.
     /// [`RTCPeerConnection.createOffer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createOffer)
-    jsbind::Promise<jsbind::Undefined> createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<RTCSessionDescriptionInit> createOffer();
     /// The createOffer method.
     /// [`RTCPeerConnection.createOffer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createOffer)
-    jsbind::Promise<jsbind::Undefined> createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback, const RTCOfferOptions& options);
+    jsbind::Promise<RTCSessionDescriptionInit> createOffer(const RTCOfferOptions& options);
     /// The createAnswer method.
     /// [`RTCPeerConnection.createAnswer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createAnswer)
-    jsbind::Promise<jsbind::Undefined> createAnswer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<RTCSessionDescriptionInit> createAnswer();
+    /// The createAnswer method.
+    /// [`RTCPeerConnection.createAnswer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createAnswer)
+    jsbind::Promise<RTCSessionDescriptionInit> createAnswer(const RTCAnswerOptions& options);
     /// The setLocalDescription method.
     /// [`RTCPeerConnection.setLocalDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setLocalDescription)
-    jsbind::Promise<jsbind::Undefined> setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<jsbind::Undefined> setLocalDescription();
+    /// The setLocalDescription method.
+    /// [`RTCPeerConnection.setLocalDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setLocalDescription)
+    jsbind::Promise<jsbind::Undefined> setLocalDescription(const RTCLocalSessionDescriptionInit& description);
     /// [`RTCPeerConnection.localDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/localDescription)
     /// [`RTCPeerConnection.localDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/localDescription)
     [[nodiscard]] RTCSessionDescription localDescription() const;
@@ -64,7 +71,7 @@ public:
     [[nodiscard]] RTCSessionDescription pendingLocalDescription() const;
     /// The setRemoteDescription method.
     /// [`RTCPeerConnection.setRemoteDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setRemoteDescription)
-    jsbind::Promise<jsbind::Undefined> setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<jsbind::Undefined> setRemoteDescription(const RTCSessionDescriptionInit& description);
     /// [`RTCPeerConnection.remoteDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/remoteDescription)
     /// [`RTCPeerConnection.remoteDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/remoteDescription)
     [[nodiscard]] RTCSessionDescription remoteDescription() const;
@@ -76,7 +83,10 @@ public:
     [[nodiscard]] RTCSessionDescription pendingRemoteDescription() const;
     /// The addIceCandidate method.
     /// [`RTCPeerConnection.addIceCandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate)
-    jsbind::Promise<jsbind::Undefined> addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    jsbind::Promise<jsbind::Undefined> addIceCandidate();
+    /// The addIceCandidate method.
+    /// [`RTCPeerConnection.addIceCandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate)
+    jsbind::Promise<jsbind::Undefined> addIceCandidate(const RTCIceCandidateInit& candidate);
     /// [`RTCPeerConnection.signalingState`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/signalingState)
     /// [`RTCPeerConnection.signalingState`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/signalingState)
     [[nodiscard]] RTCSignalingState signalingState() const;
@@ -149,6 +159,24 @@ public:
     /// Setter of the `onconnectionstatechange` attribute.
     /// [`RTCPeerConnection.onconnectionstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onconnectionstatechange)
     void onconnectionstatechange(const jsbind::Any& value);
+    /// The createOffer method.
+    /// [`RTCPeerConnection.createOffer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createOffer)
+    jsbind::Promise<jsbind::Undefined> createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    /// The createOffer method.
+    /// [`RTCPeerConnection.createOffer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createOffer)
+    jsbind::Promise<jsbind::Undefined> createOffer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback, const RTCOfferOptions& options);
+    /// The setLocalDescription method.
+    /// [`RTCPeerConnection.setLocalDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setLocalDescription)
+    jsbind::Promise<jsbind::Undefined> setLocalDescription(const RTCLocalSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    /// The createAnswer method.
+    /// [`RTCPeerConnection.createAnswer`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createAnswer)
+    jsbind::Promise<jsbind::Undefined> createAnswer(const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    /// The setRemoteDescription method.
+    /// [`RTCPeerConnection.setRemoteDescription`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setRemoteDescription)
+    jsbind::Promise<jsbind::Undefined> setRemoteDescription(const RTCSessionDescriptionInit& description, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
+    /// The addIceCandidate method.
+    /// [`RTCPeerConnection.addIceCandidate`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate)
+    jsbind::Promise<jsbind::Undefined> addIceCandidate(const RTCIceCandidateInit& candidate, const jsbind::Function& successCallback, const jsbind::Function& failureCallback);
     /// The setIdentityProvider method.
     /// [`RTCPeerConnection.setIdentityProvider`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setIdentityProvider)
     jsbind::Undefined setIdentityProvider(const jsbind::String& provider);

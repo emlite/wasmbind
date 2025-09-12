@@ -8,6 +8,7 @@
 
 namespace webbind {
 
+class AudioNode;
 class AudioParam;
 class BaseAudioContext;
 
@@ -22,10 +23,37 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The connect method.
     /// [`AudioNode.connect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect)
+    AudioNode connect(const AudioNode& destinationNode);
+    /// The connect method.
+    /// [`AudioNode.connect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect)
+    AudioNode connect(const AudioNode& destinationNode, unsigned long output);
+    /// The connect method.
+    /// [`AudioNode.connect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect)
+    AudioNode connect(const AudioNode& destinationNode, unsigned long output, unsigned long input);
+    /// The connect method.
+    /// [`AudioNode.connect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect)
     jsbind::Undefined connect(const AudioParam& destinationParam);
     /// The connect method.
     /// [`AudioNode.connect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect)
     jsbind::Undefined connect(const AudioParam& destinationParam, unsigned long output);
+    /// The disconnect method.
+    /// [`AudioNode.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect)
+    jsbind::Undefined disconnect();
+    /// The disconnect method.
+    /// [`AudioNode.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect)
+    jsbind::Undefined disconnect(unsigned long output);
+    /// The disconnect method.
+    /// [`AudioNode.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect)
+    jsbind::Undefined disconnect(const AudioNode& destinationNode);
+    /// The disconnect method.
+    /// [`AudioNode.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect)
+    jsbind::Undefined disconnect(const AudioNode& destinationNode, unsigned long output);
+    /// The disconnect method.
+    /// [`AudioNode.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect)
+    jsbind::Undefined disconnect(const AudioNode& destinationNode, unsigned long output, unsigned long input);
+    /// The disconnect method.
+    /// [`AudioNode.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect)
+    jsbind::Undefined disconnect(const AudioParam& destinationParam);
     /// The disconnect method.
     /// [`AudioNode.disconnect`](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect)
     jsbind::Undefined disconnect(const AudioParam& destinationParam, unsigned long output);

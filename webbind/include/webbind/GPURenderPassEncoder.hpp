@@ -62,6 +62,12 @@ public:
     jsbind::Undefined insertDebugMarker(const jsbind::String& markerLabel);
     /// The setBindGroup method.
     /// [`GPURenderPassEncoder.setBindGroup`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBindGroup)
+    jsbind::Undefined setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup);
+    /// The setBindGroup method.
+    /// [`GPURenderPassEncoder.setBindGroup`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBindGroup)
+    jsbind::Undefined setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup, const jsbind::TypedArray<jsbind::Any>& dynamicOffsets);
+    /// The setBindGroup method.
+    /// [`GPURenderPassEncoder.setBindGroup`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBindGroup)
     jsbind::Undefined setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup, const jsbind::Uint32Array& dynamicOffsetsData, const jsbind::Any& dynamicOffsetsDataStart, const jsbind::Any& dynamicOffsetsDataLength);
     /// The setPipeline method.
     /// [`GPURenderPassEncoder.setPipeline`](https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setPipeline)

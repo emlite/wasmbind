@@ -17,13 +17,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// [`WebGLShaderPrecisionFormat.rangeMin`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMin)
     /// [`WebGLShaderPrecisionFormat.rangeMin`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMin)
-    [[nodiscard]] jsbind::Any rangeMin() const;
+    [[nodiscard]] int rangeMin() const;
     /// [`WebGLShaderPrecisionFormat.rangeMax`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMax)
     /// [`WebGLShaderPrecisionFormat.rangeMax`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMax)
-    [[nodiscard]] jsbind::Any rangeMax() const;
+    [[nodiscard]] int rangeMax() const;
     /// [`WebGLShaderPrecisionFormat.precision`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/precision)
     /// [`WebGLShaderPrecisionFormat.precision`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/precision)
-    [[nodiscard]] jsbind::Any precision() const;
+    [[nodiscard]] int precision() const;
 };
 
 } // namespace webbind

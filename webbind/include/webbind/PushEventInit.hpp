@@ -7,6 +7,8 @@
 
 namespace webbind {
 
+class Notification;
+
 /// Dictionary type PushEventInit
 class PushEventInit : public ExtendableEventInit {
   explicit PushEventInit(Handle h) noexcept;
@@ -19,6 +21,10 @@ public:
     [[nodiscard]] jsbind::Any data() const;
     /// Setter of the `data` attribute.
     void data(const jsbind::Any& value);
+    /// Getter of the `notification` attribute.
+    [[nodiscard]] Notification notification() const;
+    /// Setter of the `notification` attribute.
+    void notification(const Notification& value);
 };
 
 } // namespace webbind

@@ -85,7 +85,7 @@ public:
     XRWebGLSubImage getViewSubImage(const XRProjectionLayer& layer, const XRView& view);
     /// The foveateBoundTexture method.
     /// [`XRWebGLBinding.foveateBoundTexture`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/foveateBoundTexture)
-    jsbind::Undefined foveateBoundTexture(const jsbind::Any& target, float fixed_foveation);
+    jsbind::Undefined foveateBoundTexture(const uint32_t& target, float fixed_foveation);
     /// The getCameraImage method.
     /// [`XRWebGLBinding.getCameraImage`](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLBinding/getCameraImage)
     WebGLTexture getCameraImage(const XRCamera& camera);

@@ -17,25 +17,25 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The enableiOES method.
     /// [`OES_draw_buffers_indexed.enableiOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/enableiOES)
-    jsbind::Undefined enableiOES(const jsbind::Any& target, const jsbind::Any& index);
+    jsbind::Undefined enableiOES(const uint32_t& target, const jsbind::Any& index);
     /// The disableiOES method.
     /// [`OES_draw_buffers_indexed.disableiOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/disableiOES)
-    jsbind::Undefined disableiOES(const jsbind::Any& target, const jsbind::Any& index);
+    jsbind::Undefined disableiOES(const uint32_t& target, const jsbind::Any& index);
     /// The blendEquationiOES method.
     /// [`OES_draw_buffers_indexed.blendEquationiOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/blendEquationiOES)
-    jsbind::Undefined blendEquationiOES(const jsbind::Any& buf, const jsbind::Any& mode);
+    jsbind::Undefined blendEquationiOES(const jsbind::Any& buf, const uint32_t& mode);
     /// The blendEquationSeparateiOES method.
     /// [`OES_draw_buffers_indexed.blendEquationSeparateiOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/blendEquationSeparateiOES)
-    jsbind::Undefined blendEquationSeparateiOES(const jsbind::Any& buf, const jsbind::Any& modeRGB, const jsbind::Any& modeAlpha);
+    jsbind::Undefined blendEquationSeparateiOES(const jsbind::Any& buf, const uint32_t& modeRGB, const uint32_t& modeAlpha);
     /// The blendFunciOES method.
     /// [`OES_draw_buffers_indexed.blendFunciOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/blendFunciOES)
-    jsbind::Undefined blendFunciOES(const jsbind::Any& buf, const jsbind::Any& src, const jsbind::Any& dst);
+    jsbind::Undefined blendFunciOES(const jsbind::Any& buf, const uint32_t& src, const uint32_t& dst);
     /// The blendFuncSeparateiOES method.
     /// [`OES_draw_buffers_indexed.blendFuncSeparateiOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/blendFuncSeparateiOES)
-    jsbind::Undefined blendFuncSeparateiOES(const jsbind::Any& buf, const jsbind::Any& srcRGB, const jsbind::Any& dstRGB, const jsbind::Any& srcAlpha, const jsbind::Any& dstAlpha);
+    jsbind::Undefined blendFuncSeparateiOES(const jsbind::Any& buf, const uint32_t& srcRGB, const uint32_t& dstRGB, const uint32_t& srcAlpha, const uint32_t& dstAlpha);
     /// The colorMaskiOES method.
     /// [`OES_draw_buffers_indexed.colorMaskiOES`](https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/colorMaskiOES)
-    jsbind::Undefined colorMaskiOES(const jsbind::Any& buf, const jsbind::Any& r, const jsbind::Any& g, const jsbind::Any& b, const jsbind::Any& a);
+    jsbind::Undefined colorMaskiOES(const jsbind::Any& buf, bool r, bool g, bool b, bool a);
 };
 
 } // namespace webbind

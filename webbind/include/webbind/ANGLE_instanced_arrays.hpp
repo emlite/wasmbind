@@ -17,10 +17,10 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The drawArraysInstancedANGLE method.
     /// [`ANGLE_instanced_arrays.drawArraysInstancedANGLE`](https://developer.mozilla.org/en-US/docs/Web/API/ANGLE_instanced_arrays/drawArraysInstancedANGLE)
-    jsbind::Undefined drawArraysInstancedANGLE(const jsbind::Any& mode, const jsbind::Any& first, const jsbind::Any& count, const jsbind::Any& primcount);
+    jsbind::Undefined drawArraysInstancedANGLE(const uint32_t& mode, int first, int count, int primcount);
     /// The drawElementsInstancedANGLE method.
     /// [`ANGLE_instanced_arrays.drawElementsInstancedANGLE`](https://developer.mozilla.org/en-US/docs/Web/API/ANGLE_instanced_arrays/drawElementsInstancedANGLE)
-    jsbind::Undefined drawElementsInstancedANGLE(const jsbind::Any& mode, const jsbind::Any& count, const jsbind::Any& type, const jsbind::Any& offset, const jsbind::Any& primcount);
+    jsbind::Undefined drawElementsInstancedANGLE(const uint32_t& mode, int count, const uint32_t& type, const intptr_t& offset, int primcount);
     /// The vertexAttribDivisorANGLE method.
     /// [`ANGLE_instanced_arrays.vertexAttribDivisorANGLE`](https://developer.mozilla.org/en-US/docs/Web/API/ANGLE_instanced_arrays/vertexAttribDivisorANGLE)
     jsbind::Undefined vertexAttribDivisorANGLE(const jsbind::Any& index, const jsbind::Any& divisor);

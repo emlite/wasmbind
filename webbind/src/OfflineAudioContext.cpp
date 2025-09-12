@@ -1,4 +1,5 @@
 #include <webbind/OfflineAudioContext.hpp>
+#include <webbind/OfflineAudioContextOptions.hpp>
 #include <webbind/AudioBuffer.hpp>
 
 namespace webbind {
@@ -14,6 +15,8 @@ emlite::Val OfflineAudioContext::instance() noexcept { return emlite::Val::globa
 OfflineAudioContext::OfflineAudioContext(Handle h) noexcept : BaseAudioContext(emlite::Val::take_ownership(h)) {}
 
 OfflineAudioContext::OfflineAudioContext(const emlite::Val &val) noexcept: BaseAudioContext(val) {}
+
+OfflineAudioContext::OfflineAudioContext(const OfflineAudioContextOptions& contextOptions) : BaseAudioContext(emlite::Val::global("OfflineAudioContext").new_(contextOptions)) {}
 
 OfflineAudioContext::OfflineAudioContext(unsigned long numberOfChannels, unsigned long length, float sampleRate) : BaseAudioContext(emlite::Val::global("OfflineAudioContext").new_(numberOfChannels, length, sampleRate)) {}
 

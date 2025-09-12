@@ -23,6 +23,10 @@ NavigationHistoryEntry NavigationTransition::from() const {
     return emlite::Val::get("from").as<NavigationHistoryEntry>();
 }
 
+jsbind::Promise<jsbind::Undefined> NavigationTransition::committed() const {
+    return emlite::Val::get("committed").as<jsbind::Promise<jsbind::Undefined>>();
+}
+
 jsbind::Promise<jsbind::Undefined> NavigationTransition::finished() const {
     return emlite::Val::get("finished").as<jsbind::Promise<jsbind::Undefined>>();
 }

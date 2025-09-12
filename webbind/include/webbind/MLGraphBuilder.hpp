@@ -58,6 +58,12 @@ public:
     MLOperand input(const jsbind::String& name, const MLOperandDescriptor& descriptor);
     /// The constant method.
     /// [`MLGraphBuilder.constant`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/constant)
+    MLOperand constant(const MLOperandDescriptor& descriptor, const jsbind::Any& buffer);
+    /// The constant method.
+    /// [`MLGraphBuilder.constant`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/constant)
+    MLOperand constant(const MLOperandDataType& type, const jsbind::Any& value);
+    /// The constant method.
+    /// [`MLGraphBuilder.constant`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/constant)
     MLOperand constant(const MLTensor& tensor);
     /// The build method.
     /// [`MLGraphBuilder.build`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/build)
@@ -218,6 +224,18 @@ public:
     /// The logicalXor method.
     /// [`MLGraphBuilder.logicalXor`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/logicalXor)
     MLOperand logicalXor(const MLOperand& a, const MLOperand& b, const MLOperatorOptions& options);
+    /// The isNaN method.
+    /// [`MLGraphBuilder.isNaN`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/isNaN)
+    MLOperand isNaN(const MLOperand& a);
+    /// The isNaN method.
+    /// [`MLGraphBuilder.isNaN`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/isNaN)
+    MLOperand isNaN(const MLOperand& a, const MLOperatorOptions& options);
+    /// The isInfinite method.
+    /// [`MLGraphBuilder.isInfinite`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/isInfinite)
+    MLOperand isInfinite(const MLOperand& a);
+    /// The isInfinite method.
+    /// [`MLGraphBuilder.isInfinite`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/isInfinite)
+    MLOperand isInfinite(const MLOperand& a, const MLOperatorOptions& options);
     /// The abs method.
     /// [`MLGraphBuilder.abs`](https://developer.mozilla.org/en-US/docs/Web/API/MLGraphBuilder/abs)
     MLOperand abs(const MLOperand& input);

@@ -24,6 +24,9 @@ public:
     /// [`NavigationTransition.from`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/from)
     /// [`NavigationTransition.from`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/from)
     [[nodiscard]] NavigationHistoryEntry from() const;
+    /// [`NavigationTransition.committed`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/committed)
+    /// [`NavigationTransition.committed`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/committed)
+    [[nodiscard]] jsbind::Promise<jsbind::Undefined> committed() const;
     /// [`NavigationTransition.finished`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/finished)
     /// [`NavigationTransition.finished`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/finished)
     [[nodiscard]] jsbind::Promise<jsbind::Undefined> finished() const;

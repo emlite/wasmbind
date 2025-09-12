@@ -3657,6 +3657,39 @@ public:
 
 };
 
+/// Enum type IPAddressSpace
+/// [`IPAddressSpace`](https://developer.mozilla.org/en-US/docs/Web/API/IPAddressSpace)
+class IPAddressSpace: public emlite::Val {
+  explicit IPAddressSpace(Handle h) noexcept;
+public:
+    enum Value {
+        PUBLIC_,
+        LOCAL,
+        LOOPBACK,
+    };
+
+private:
+    Value value_;
+
+public:
+    IPAddressSpace() noexcept = delete;
+    IPAddressSpace(Value v) noexcept;
+    explicit IPAddressSpace(const emlite::Val& val) noexcept;
+    static IPAddressSpace take_ownership(Handle h) noexcept;
+    [[nodiscard]] IPAddressSpace clone() const noexcept;
+
+    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
+    [[nodiscard]] static Value from_string(const char *str) noexcept;
+    [[nodiscard]] static const char* to_string(Value value_) noexcept;
+
+    /// Comparison operators
+    [[nodiscard]] constexpr bool operator==(const IPAddressSpace& other) const noexcept { return value_ == other.value_; }
+    [[nodiscard]] constexpr bool operator!=(const IPAddressSpace& other) const noexcept { return value_ != other.value_; }
+    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
+    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
+
+};
+
 /// Enum type LoginStatus
 /// [`LoginStatus`](https://developer.mozilla.org/en-US/docs/Web/API/LoginStatus)
 class LoginStatus: public emlite::Val {
@@ -5021,39 +5054,6 @@ public:
     /// Comparison operators
     [[nodiscard]] constexpr bool operator==(const AttributionLogic& other) const noexcept { return value_ == other.value_; }
     [[nodiscard]] constexpr bool operator!=(const AttributionLogic& other) const noexcept { return value_ != other.value_; }
-    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
-    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
-
-};
-
-/// Enum type IPAddressSpace
-/// [`IPAddressSpace`](https://developer.mozilla.org/en-US/docs/Web/API/IPAddressSpace)
-class IPAddressSpace: public emlite::Val {
-  explicit IPAddressSpace(Handle h) noexcept;
-public:
-    enum Value {
-        PUBLIC_,
-        PRIVATE_,
-        LOCAL,
-    };
-
-private:
-    Value value_;
-
-public:
-    IPAddressSpace() noexcept = delete;
-    IPAddressSpace(Value v) noexcept;
-    explicit IPAddressSpace(const emlite::Val& val) noexcept;
-    static IPAddressSpace take_ownership(Handle h) noexcept;
-    [[nodiscard]] IPAddressSpace clone() const noexcept;
-
-    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
-    [[nodiscard]] static Value from_string(const char *str) noexcept;
-    [[nodiscard]] static const char* to_string(Value value_) noexcept;
-
-    /// Comparison operators
-    [[nodiscard]] constexpr bool operator==(const IPAddressSpace& other) const noexcept { return value_ == other.value_; }
-    [[nodiscard]] constexpr bool operator!=(const IPAddressSpace& other) const noexcept { return value_ != other.value_; }
     [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
     [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
 
@@ -8225,6 +8225,86 @@ public:
 
 };
 
+/// Enum type KeyFormat
+/// [`KeyFormat`](https://developer.mozilla.org/en-US/docs/Web/API/KeyFormat)
+class KeyFormat: public emlite::Val {
+  explicit KeyFormat(Handle h) noexcept;
+public:
+    enum Value {
+        RAW_PUBLIC,
+        RAW_PRIVATE,
+        RAW_SEED,
+        RAW_SECRET,
+        RAW,
+        SPKI,
+        PKCS8,
+        JWK,
+    };
+
+private:
+    Value value_;
+
+public:
+    KeyFormat() noexcept = delete;
+    KeyFormat(Value v) noexcept;
+    explicit KeyFormat(const emlite::Val& val) noexcept;
+    static KeyFormat take_ownership(Handle h) noexcept;
+    [[nodiscard]] KeyFormat clone() const noexcept;
+
+    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
+    [[nodiscard]] static Value from_string(const char *str) noexcept;
+    [[nodiscard]] static const char* to_string(Value value_) noexcept;
+
+    /// Comparison operators
+    [[nodiscard]] constexpr bool operator==(const KeyFormat& other) const noexcept { return value_ == other.value_; }
+    [[nodiscard]] constexpr bool operator!=(const KeyFormat& other) const noexcept { return value_ != other.value_; }
+    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
+    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
+
+};
+
+/// Enum type KeyUsage
+/// [`KeyUsage`](https://developer.mozilla.org/en-US/docs/Web/API/KeyUsage)
+class KeyUsage: public emlite::Val {
+  explicit KeyUsage(Handle h) noexcept;
+public:
+    enum Value {
+        ENCRYPT,
+        DECRYPT,
+        SIGN,
+        VERIFY,
+        DERIVEKEY,
+        DERIVEBITS,
+        WRAPKEY,
+        UNWRAPKEY,
+        ENCAPSULATEKEY,
+        ENCAPSULATEBITS,
+        DECAPSULATEKEY,
+        DECAPSULATEBITS,
+    };
+
+private:
+    Value value_;
+
+public:
+    KeyUsage() noexcept = delete;
+    KeyUsage(Value v) noexcept;
+    explicit KeyUsage(const emlite::Val& val) noexcept;
+    static KeyUsage take_ownership(Handle h) noexcept;
+    [[nodiscard]] KeyUsage clone() const noexcept;
+
+    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
+    [[nodiscard]] static Value from_string(const char *str) noexcept;
+    [[nodiscard]] static const char* to_string(Value value_) noexcept;
+
+    /// Comparison operators
+    [[nodiscard]] constexpr bool operator==(const KeyUsage& other) const noexcept { return value_ == other.value_; }
+    [[nodiscard]] constexpr bool operator!=(const KeyUsage& other) const noexcept { return value_ != other.value_; }
+    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
+    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
+
+};
+
 /// Enum type KeyType
 /// [`KeyType`](https://developer.mozilla.org/en-US/docs/Web/API/KeyType)
 class KeyType: public emlite::Val {
@@ -8253,78 +8333,6 @@ public:
     /// Comparison operators
     [[nodiscard]] constexpr bool operator==(const KeyType& other) const noexcept { return value_ == other.value_; }
     [[nodiscard]] constexpr bool operator!=(const KeyType& other) const noexcept { return value_ != other.value_; }
-    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
-    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
-
-};
-
-/// Enum type KeyUsage
-/// [`KeyUsage`](https://developer.mozilla.org/en-US/docs/Web/API/KeyUsage)
-class KeyUsage: public emlite::Val {
-  explicit KeyUsage(Handle h) noexcept;
-public:
-    enum Value {
-        ENCRYPT,
-        DECRYPT,
-        SIGN,
-        VERIFY,
-        DERIVEKEY,
-        DERIVEBITS,
-        WRAPKEY,
-        UNWRAPKEY,
-    };
-
-private:
-    Value value_;
-
-public:
-    KeyUsage() noexcept = delete;
-    KeyUsage(Value v) noexcept;
-    explicit KeyUsage(const emlite::Val& val) noexcept;
-    static KeyUsage take_ownership(Handle h) noexcept;
-    [[nodiscard]] KeyUsage clone() const noexcept;
-
-    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
-    [[nodiscard]] static Value from_string(const char *str) noexcept;
-    [[nodiscard]] static const char* to_string(Value value_) noexcept;
-
-    /// Comparison operators
-    [[nodiscard]] constexpr bool operator==(const KeyUsage& other) const noexcept { return value_ == other.value_; }
-    [[nodiscard]] constexpr bool operator!=(const KeyUsage& other) const noexcept { return value_ != other.value_; }
-    [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
-    [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
-
-};
-
-/// Enum type KeyFormat
-/// [`KeyFormat`](https://developer.mozilla.org/en-US/docs/Web/API/KeyFormat)
-class KeyFormat: public emlite::Val {
-  explicit KeyFormat(Handle h) noexcept;
-public:
-    enum Value {
-        RAW,
-        SPKI,
-        PKCS8,
-        JWK,
-    };
-
-private:
-    Value value_;
-
-public:
-    KeyFormat() noexcept = delete;
-    KeyFormat(Value v) noexcept;
-    explicit KeyFormat(const emlite::Val& val) noexcept;
-    static KeyFormat take_ownership(Handle h) noexcept;
-    [[nodiscard]] KeyFormat clone() const noexcept;
-
-    [[nodiscard]] constexpr Value value() const noexcept { return value_; }
-    [[nodiscard]] static Value from_string(const char *str) noexcept;
-    [[nodiscard]] static const char* to_string(Value value_) noexcept;
-
-    /// Comparison operators
-    [[nodiscard]] constexpr bool operator==(const KeyFormat& other) const noexcept { return value_ == other.value_; }
-    [[nodiscard]] constexpr bool operator!=(const KeyFormat& other) const noexcept { return value_ != other.value_; }
     [[nodiscard]] constexpr bool operator==(Value v) const noexcept { return value_ == v; }
     [[nodiscard]] constexpr bool operator!=(Value v) const noexcept { return value_ != v; }
 
@@ -8421,6 +8429,7 @@ public:
         SUBGROUPS,
         TEXTURE_FORMATS_TIER1,
         TEXTURE_FORMATS_TIER2,
+        PRIMITIVE_INDEX,
     };
 
 private:

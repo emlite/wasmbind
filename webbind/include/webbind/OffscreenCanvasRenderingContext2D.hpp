@@ -62,6 +62,9 @@ public:
     DOMMatrix getTransform();
     /// The setTransform method.
     /// [`OffscreenCanvasRenderingContext2D.setTransform`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/setTransform)
+    jsbind::Undefined setTransform(double a, double b, double c, double d, double e, double f);
+    /// The setTransform method.
+    /// [`OffscreenCanvasRenderingContext2D.setTransform`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/setTransform)
     jsbind::Undefined setTransform();
     /// The setTransform method.
     /// [`OffscreenCanvasRenderingContext2D.setTransform`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/setTransform)
@@ -161,13 +164,28 @@ public:
     jsbind::Undefined beginPath();
     /// The fill method.
     /// [`OffscreenCanvasRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fill)
+    jsbind::Undefined fill();
+    /// The fill method.
+    /// [`OffscreenCanvasRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fill)
+    jsbind::Undefined fill(const CanvasFillRule& fillRule);
+    /// The fill method.
+    /// [`OffscreenCanvasRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fill)
     jsbind::Undefined fill(const Path2D& path);
     /// The fill method.
     /// [`OffscreenCanvasRenderingContext2D.fill`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/fill)
     jsbind::Undefined fill(const Path2D& path, const CanvasFillRule& fillRule);
     /// The stroke method.
     /// [`OffscreenCanvasRenderingContext2D.stroke`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/stroke)
+    jsbind::Undefined stroke();
+    /// The stroke method.
+    /// [`OffscreenCanvasRenderingContext2D.stroke`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/stroke)
     jsbind::Undefined stroke(const Path2D& path);
+    /// The clip method.
+    /// [`OffscreenCanvasRenderingContext2D.clip`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/clip)
+    jsbind::Undefined clip();
+    /// The clip method.
+    /// [`OffscreenCanvasRenderingContext2D.clip`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/clip)
+    jsbind::Undefined clip(const CanvasFillRule& fillRule);
     /// The clip method.
     /// [`OffscreenCanvasRenderingContext2D.clip`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/clip)
     jsbind::Undefined clip(const Path2D& path);
@@ -176,10 +194,19 @@ public:
     jsbind::Undefined clip(const Path2D& path, const CanvasFillRule& fillRule);
     /// The isPointInPath method.
     /// [`OffscreenCanvasRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/isPointInPath)
+    bool isPointInPath(double x, double y);
+    /// The isPointInPath method.
+    /// [`OffscreenCanvasRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/isPointInPath)
+    bool isPointInPath(double x, double y, const CanvasFillRule& fillRule);
+    /// The isPointInPath method.
+    /// [`OffscreenCanvasRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/isPointInPath)
     bool isPointInPath(const Path2D& path, double x, double y);
     /// The isPointInPath method.
     /// [`OffscreenCanvasRenderingContext2D.isPointInPath`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/isPointInPath)
     bool isPointInPath(const Path2D& path, double x, double y, const CanvasFillRule& fillRule);
+    /// The isPointInStroke method.
+    /// [`OffscreenCanvasRenderingContext2D.isPointInStroke`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/isPointInStroke)
+    bool isPointInStroke(double x, double y);
     /// The isPointInStroke method.
     /// [`OffscreenCanvasRenderingContext2D.isPointInStroke`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/isPointInStroke)
     bool isPointInStroke(const Path2D& path, double x, double y);
@@ -200,7 +227,19 @@ public:
     TextMetrics measureText(const jsbind::String& text);
     /// The drawImage method.
     /// [`OffscreenCanvasRenderingContext2D.drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/drawImage)
+    jsbind::Undefined drawImage(const jsbind::Any& image, double dx, double dy);
+    /// The drawImage method.
+    /// [`OffscreenCanvasRenderingContext2D.drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/drawImage)
+    jsbind::Undefined drawImage(const jsbind::Any& image, double dx, double dy, double dw, double dh);
+    /// The drawImage method.
+    /// [`OffscreenCanvasRenderingContext2D.drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/drawImage)
     jsbind::Undefined drawImage(const jsbind::Any& image, double sx, double sy, double sw, double sh, double dx, double dy, double dw, double dh);
+    /// The createImageData method.
+    /// [`OffscreenCanvasRenderingContext2D.createImageData`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/createImageData)
+    ImageData createImageData(long sw, long sh);
+    /// The createImageData method.
+    /// [`OffscreenCanvasRenderingContext2D.createImageData`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/createImageData)
+    ImageData createImageData(long sw, long sh, const ImageDataSettings& settings);
     /// The createImageData method.
     /// [`OffscreenCanvasRenderingContext2D.createImageData`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/createImageData)
     ImageData createImageData(const ImageData& imageData);
@@ -210,6 +249,9 @@ public:
     /// The getImageData method.
     /// [`OffscreenCanvasRenderingContext2D.getImageData`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/getImageData)
     ImageData getImageData(long sx, long sy, long sw, long sh, const ImageDataSettings& settings);
+    /// The putImageData method.
+    /// [`OffscreenCanvasRenderingContext2D.putImageData`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/putImageData)
+    jsbind::Undefined putImageData(const ImageData& imageData, long dx, long dy);
     /// The putImageData method.
     /// [`OffscreenCanvasRenderingContext2D.putImageData`](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/putImageData)
     jsbind::Undefined putImageData(const ImageData& imageData, long dx, long dy, long dirtyX, long dirtyY, long dirtyWidth, long dirtyHeight);

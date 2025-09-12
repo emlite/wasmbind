@@ -28,7 +28,7 @@ public:
     jsbind::Undefined close();
     /// The enqueue method.
     /// [`ReadableByteStreamController.enqueue`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/enqueue)
-    jsbind::Undefined enqueue(const jsbind::Any& chunk);
+    jsbind::Undefined enqueue(const jsbind::ArrayBufferView& chunk);
     /// The error method.
     /// [`ReadableByteStreamController.error`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/error)
     jsbind::Undefined error();

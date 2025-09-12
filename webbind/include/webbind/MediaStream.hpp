@@ -7,8 +7,8 @@
 
 namespace webbind {
 
-class MediaStreamTrack;
 class MediaStream;
+class MediaStreamTrack;
 
 /// Interface MediaStream
 /// [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
@@ -19,6 +19,10 @@ public:
     static MediaStream take_ownership(Handle h) noexcept;
     [[nodiscard]] MediaStream clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
+    /// The `new MediaStream(..)` constructor, creating a new MediaStream instance
+    MediaStream();
+    /// The `new MediaStream(..)` constructor, creating a new MediaStream instance
+    MediaStream(const MediaStream& stream);
     /// The `new MediaStream(..)` constructor, creating a new MediaStream instance
     MediaStream(const jsbind::TypedArray<MediaStreamTrack>& tracks);
     /// [`MediaStream.id`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/id)

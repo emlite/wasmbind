@@ -21,11 +21,11 @@ jsbind::Undefined IdentityProvider::close() {
     return emlite::Val::global("identityprovider").call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::String& token) {
+jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::Any& token) {
     return emlite::Val::global("identityprovider").call("resolve", token).as<jsbind::Promise<jsbind::Undefined>>();
 }
 
-jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::String& token, const IdentityResolveOptions& options) {
+jsbind::Promise<jsbind::Undefined> IdentityProvider::resolve(const jsbind::Any& token, const IdentityResolveOptions& options) {
     return emlite::Val::global("identityprovider").call("resolve", token, options).as<jsbind::Promise<jsbind::Undefined>>();
 }
 

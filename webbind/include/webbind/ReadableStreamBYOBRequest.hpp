@@ -17,13 +17,13 @@ public:
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// [`ReadableStreamBYOBRequest.view`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest/view)
     /// [`ReadableStreamBYOBRequest.view`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest/view)
-    [[nodiscard]] jsbind::Any view() const;
+    [[nodiscard]] jsbind::ArrayBufferView view() const;
     /// The respond method.
     /// [`ReadableStreamBYOBRequest.respond`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest/respond)
     jsbind::Undefined respond(long long bytesWritten);
     /// The respondWithNewView method.
     /// [`ReadableStreamBYOBRequest.respondWithNewView`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView)
-    jsbind::Undefined respondWithNewView(const jsbind::Any& view);
+    jsbind::Undefined respondWithNewView(const jsbind::ArrayBufferView& view);
 };
 
 } // namespace webbind

@@ -22,7 +22,7 @@ public:
     [[nodiscard]] SubtleCrypto subtle() const;
     /// The getRandomValues method.
     /// [`Crypto.getRandomValues`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)
-    jsbind::Any getRandomValues(const jsbind::Any& array);
+    jsbind::ArrayBufferView getRandomValues(const jsbind::ArrayBufferView& array);
     /// The randomUUID method.
     /// [`Crypto.randomUUID`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID)
     jsbind::String randomUUID();

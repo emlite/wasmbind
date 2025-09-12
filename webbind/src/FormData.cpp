@@ -23,6 +23,10 @@ FormData::FormData(const HTMLFormElement& form) : emlite::Val(emlite::Val::globa
 
 FormData::FormData(const HTMLFormElement& form, const HTMLElement& submitter) : emlite::Val(emlite::Val::global("FormData").new_(form, submitter)) {}
 
+jsbind::Undefined FormData::append(const jsbind::String& name, const jsbind::String& value) {
+    return emlite::Val::call("append", name, value).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined FormData::append(const jsbind::String& name, const Blob& blobValue) {
     return emlite::Val::call("append", name, blobValue).as<jsbind::Undefined>();
 }
@@ -45,6 +49,10 @@ jsbind::TypedArray<jsbind::Any> FormData::getAll(const jsbind::String& name) {
 
 bool FormData::has(const jsbind::String& name) {
     return emlite::Val::call("has", name).as<bool>();
+}
+
+jsbind::Undefined FormData::set(const jsbind::String& name, const jsbind::String& value) {
+    return emlite::Val::call("set", name, value).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined FormData::set(const jsbind::String& name, const Blob& blobValue) {

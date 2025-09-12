@@ -24,10 +24,10 @@ public:
     [[nodiscard]] ReadableStream readable() const;
     /// The generateKeyFrame method.
     /// [`RTCRtpScriptTransformer.generateKeyFrame`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
-    jsbind::Promise<long long> generateKeyFrame();
+    jsbind::Promise<jsbind::Undefined> generateKeyFrame();
     /// The generateKeyFrame method.
     /// [`RTCRtpScriptTransformer.generateKeyFrame`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
-    jsbind::Promise<long long> generateKeyFrame(const jsbind::String& rid);
+    jsbind::Promise<jsbind::Undefined> generateKeyFrame(const jsbind::String& rid);
     /// The sendKeyFrameRequest method.
     /// [`RTCRtpScriptTransformer.sendKeyFrameRequest`](https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
     jsbind::Promise<jsbind::Undefined> sendKeyFrameRequest();

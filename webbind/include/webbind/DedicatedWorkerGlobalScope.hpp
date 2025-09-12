@@ -23,6 +23,9 @@ public:
     [[nodiscard]] jsbind::String name() const;
     /// The postMessage method.
     /// [`DedicatedWorkerGlobalScope.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
+    jsbind::Undefined postMessage(const jsbind::Any& message, const jsbind::TypedArray<jsbind::Object>& transfer);
+    /// The postMessage method.
+    /// [`DedicatedWorkerGlobalScope.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);
     /// The postMessage method.
     /// [`DedicatedWorkerGlobalScope.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)

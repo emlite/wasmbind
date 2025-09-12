@@ -13,6 +13,14 @@ NavigationInterceptOptions::NavigationInterceptOptions() noexcept: emlite::Val(e
 
 NavigationInterceptOptions NavigationInterceptOptions::clone() const noexcept { return *this; }
 
+jsbind::Function NavigationInterceptOptions::precommitHandler() const {
+    return emlite::Val::get("precommitHandler").as<jsbind::Function>();
+}
+
+void NavigationInterceptOptions::precommitHandler(const jsbind::Function& value) {
+    emlite::Val::set("precommitHandler", value);
+}
+
 jsbind::Function NavigationInterceptOptions::handler() const {
     return emlite::Val::get("handler").as<jsbind::Function>();
 }

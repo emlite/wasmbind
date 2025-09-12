@@ -19,6 +19,10 @@ public:
     [[nodiscard]] ImageData clone() const noexcept;
     [[nodiscard]] static emlite::Val instance() noexcept;
     /// The `new ImageData(..)` constructor, creating a new ImageData instance
+    ImageData(unsigned long sw, unsigned long sh);
+    /// The `new ImageData(..)` constructor, creating a new ImageData instance
+    ImageData(unsigned long sw, unsigned long sh, const ImageDataSettings& settings);
+    /// The `new ImageData(..)` constructor, creating a new ImageData instance
     ImageData(const jsbind::Any& data, unsigned long sw);
     /// The `new ImageData(..)` constructor, creating a new ImageData instance
     ImageData(const jsbind::Any& data, unsigned long sw, unsigned long sh);

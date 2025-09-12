@@ -1,5 +1,7 @@
 #include <webbind/SubtleCrypto.hpp>
 #include <webbind/CryptoKey.hpp>
+#include <webbind/EncapsulatedKey.hpp>
+#include <webbind/EncapsulatedBits.hpp>
 
 namespace webbind {
 
@@ -65,6 +67,38 @@ jsbind::Promise<jsbind::ArrayBuffer> SubtleCrypto::wrapKey(const KeyFormat& form
 
 jsbind::Promise<CryptoKey> SubtleCrypto::unwrapKey(const KeyFormat& format, const jsbind::Any& wrappedKey, const CryptoKey& unwrappingKey, const jsbind::Any& unwrapAlgorithm, const jsbind::Any& unwrappedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages) {
     return emlite::Val::call("unwrapKey", format, wrappedKey, unwrappingKey, unwrapAlgorithm, unwrappedKeyAlgorithm, extractable, keyUsages).as<jsbind::Promise<CryptoKey>>();
+}
+
+jsbind::Promise<EncapsulatedKey> SubtleCrypto::encapsulateKey(const jsbind::Any& encapsulationAlgorithm, const CryptoKey& encapsulationKey, const jsbind::Any& sharedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages) {
+    return emlite::Val::call("encapsulateKey", encapsulationAlgorithm, encapsulationKey, sharedKeyAlgorithm, extractable, keyUsages).as<jsbind::Promise<EncapsulatedKey>>();
+}
+
+jsbind::Promise<EncapsulatedBits> SubtleCrypto::encapsulateBits(const jsbind::Any& encapsulationAlgorithm, const CryptoKey& encapsulationKey) {
+    return emlite::Val::call("encapsulateBits", encapsulationAlgorithm, encapsulationKey).as<jsbind::Promise<EncapsulatedBits>>();
+}
+
+jsbind::Promise<CryptoKey> SubtleCrypto::decapsulateKey(const jsbind::Any& decapsulationAlgorithm, const CryptoKey& decapsulationKey, const jsbind::Any& ciphertext, const jsbind::Any& sharedKeyAlgorithm, bool extractable, const jsbind::TypedArray<KeyUsage>& keyUsages) {
+    return emlite::Val::call("decapsulateKey", decapsulationAlgorithm, decapsulationKey, ciphertext, sharedKeyAlgorithm, extractable, keyUsages).as<jsbind::Promise<CryptoKey>>();
+}
+
+jsbind::Promise<jsbind::ArrayBuffer> SubtleCrypto::decapsulateBits(const jsbind::Any& decapsulationAlgorithm, const CryptoKey& decapsulationKey, const jsbind::Any& ciphertext) {
+    return emlite::Val::call("decapsulateBits", decapsulationAlgorithm, decapsulationKey, ciphertext).as<jsbind::Promise<jsbind::ArrayBuffer>>();
+}
+
+jsbind::Promise<CryptoKey> SubtleCrypto::getPublicKey(const CryptoKey& key, const jsbind::TypedArray<KeyUsage>& keyUsages) {
+    return emlite::Val::call("getPublicKey", key, keyUsages).as<jsbind::Promise<CryptoKey>>();
+}
+
+bool SubtleCrypto::supports(const jsbind::String& operation, const jsbind::Any& algorithm) {
+    return emlite::Val::global("subtlecrypto").call("supports", operation, algorithm).as<bool>();
+}
+
+bool SubtleCrypto::supports(const jsbind::String& operation, const jsbind::Any& algorithm, unsigned long length) {
+    return emlite::Val::global("subtlecrypto").call("supports", operation, algorithm, length).as<bool>();
+}
+
+bool SubtleCrypto::supports(const jsbind::String& operation, const jsbind::Any& algorithm, const jsbind::Any& additionalAlgorithm) {
+    return emlite::Val::global("subtlecrypto").call("supports", operation, algorithm, additionalAlgorithm).as<bool>();
 }
 
 

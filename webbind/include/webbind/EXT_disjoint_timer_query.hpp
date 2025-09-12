@@ -28,19 +28,19 @@ public:
     bool isQueryEXT(const WebGLTimerQueryEXT& query);
     /// The beginQueryEXT method.
     /// [`EXT_disjoint_timer_query.beginQueryEXT`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/beginQueryEXT)
-    jsbind::Undefined beginQueryEXT(const jsbind::Any& target, const WebGLTimerQueryEXT& query);
+    jsbind::Undefined beginQueryEXT(const uint32_t& target, const WebGLTimerQueryEXT& query);
     /// The endQueryEXT method.
     /// [`EXT_disjoint_timer_query.endQueryEXT`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/endQueryEXT)
-    jsbind::Undefined endQueryEXT(const jsbind::Any& target);
+    jsbind::Undefined endQueryEXT(const uint32_t& target);
     /// The queryCounterEXT method.
     /// [`EXT_disjoint_timer_query.queryCounterEXT`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/queryCounterEXT)
-    jsbind::Undefined queryCounterEXT(const WebGLTimerQueryEXT& query, const jsbind::Any& target);
+    jsbind::Undefined queryCounterEXT(const WebGLTimerQueryEXT& query, const uint32_t& target);
     /// The getQueryEXT method.
     /// [`EXT_disjoint_timer_query.getQueryEXT`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryEXT)
-    jsbind::Any getQueryEXT(const jsbind::Any& target, const jsbind::Any& pname);
+    jsbind::Any getQueryEXT(const uint32_t& target, const uint32_t& pname);
     /// The getQueryObjectEXT method.
     /// [`EXT_disjoint_timer_query.getQueryObjectEXT`](https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryObjectEXT)
-    jsbind::Any getQueryObjectEXT(const WebGLTimerQueryEXT& query, const jsbind::Any& pname);
+    jsbind::Any getQueryObjectEXT(const WebGLTimerQueryEXT& query, const uint32_t& pname);
 };
 
 } // namespace webbind

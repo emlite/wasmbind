@@ -22,6 +22,7 @@ class Viewport;
 class MediaQueryList;
 class Screen;
 class VisualViewport;
+class ScrollToOptions;
 class CSSStyleProperties;
 class DigitalGoodsService;
 class DocumentPictureInPicture;
@@ -165,6 +166,9 @@ public:
     [[nodiscard]] bool originAgentCluster() const;
     /// The alert method.
     /// [`Window.alert`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
+    jsbind::Undefined alert();
+    /// The alert method.
+    /// [`Window.alert`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
     jsbind::Undefined alert(const jsbind::String& message);
     /// The confirm method.
     /// [`Window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
@@ -184,6 +188,12 @@ public:
     /// The print method.
     /// [`Window.print`](https://developer.mozilla.org/en-US/docs/Web/API/Window/print)
     jsbind::Undefined print();
+    /// The postMessage method.
+    /// [`Window.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+    jsbind::Undefined postMessage(const jsbind::Any& message, const jsbind::String& targetOrigin);
+    /// The postMessage method.
+    /// [`Window.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+    jsbind::Undefined postMessage(const jsbind::Any& message, const jsbind::String& targetOrigin, const jsbind::TypedArray<jsbind::Object>& transfer);
     /// The postMessage method.
     /// [`Window.postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
     jsbind::Undefined postMessage(const jsbind::Any& message);
@@ -252,10 +262,28 @@ public:
     [[nodiscard]] double pageYOffset() const;
     /// The scroll method.
     /// [`Window.scroll`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll)
+    jsbind::Undefined scroll();
+    /// The scroll method.
+    /// [`Window.scroll`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll)
+    jsbind::Undefined scroll(const ScrollToOptions& options);
+    /// The scroll method.
+    /// [`Window.scroll`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll)
     jsbind::Undefined scroll(double x, double y);
     /// The scrollTo method.
     /// [`Window.scrollTo`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo)
+    jsbind::Undefined scrollTo();
+    /// The scrollTo method.
+    /// [`Window.scrollTo`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo)
+    jsbind::Undefined scrollTo(const ScrollToOptions& options);
+    /// The scrollTo method.
+    /// [`Window.scrollTo`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo)
     jsbind::Undefined scrollTo(double x, double y);
+    /// The scrollBy method.
+    /// [`Window.scrollBy`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy)
+    jsbind::Undefined scrollBy();
+    /// The scrollBy method.
+    /// [`Window.scrollBy`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy)
+    jsbind::Undefined scrollBy(const ScrollToOptions& options);
     /// The scrollBy method.
     /// [`Window.scrollBy`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy)
     jsbind::Undefined scrollBy(double x, double y);

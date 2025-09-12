@@ -14,6 +14,7 @@
 #include <webbind/DOMRectList.hpp>
 #include <webbind/DOMRect.hpp>
 #include <webbind/CheckVisibilityOptions.hpp>
+#include <webbind/ScrollToOptions.hpp>
 #include <webbind/FullscreenOptions.hpp>
 #include <webbind/GetHTMLOptions.hpp>
 #include <webbind/PointerLockOptions.hpp>
@@ -260,12 +261,36 @@ jsbind::Undefined Element::scrollIntoView(const jsbind::Any& arg) {
     return Node::call("scrollIntoView", arg).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined Element::scroll() {
+    return Node::call("scroll").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Element::scroll(const ScrollToOptions& options) {
+    return Node::call("scroll", options).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Element::scroll(double x, double y) {
     return Node::call("scroll", x, y).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined Element::scrollTo() {
+    return Node::call("scrollTo").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Element::scrollTo(const ScrollToOptions& options) {
+    return Node::call("scrollTo", options).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined Element::scrollTo(double x, double y) {
     return Node::call("scrollTo", x, y).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Element::scrollBy() {
+    return Node::call("scrollBy").as<jsbind::Undefined>();
+}
+
+jsbind::Undefined Element::scrollBy(const ScrollToOptions& options) {
+    return Node::call("scrollBy", options).as<jsbind::Undefined>();
 }
 
 jsbind::Undefined Element::scrollBy(double x, double y) {

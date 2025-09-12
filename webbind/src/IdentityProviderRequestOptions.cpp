@@ -13,14 +13,6 @@ IdentityProviderRequestOptions::IdentityProviderRequestOptions() noexcept: Ident
 
 IdentityProviderRequestOptions IdentityProviderRequestOptions::clone() const noexcept { return *this; }
 
-jsbind::String IdentityProviderRequestOptions::nonce() const {
-    return emlite::Val::get("nonce").as<jsbind::String>();
-}
-
-void IdentityProviderRequestOptions::nonce(const jsbind::String& value) {
-    emlite::Val::set("nonce", value);
-}
-
 jsbind::String IdentityProviderRequestOptions::loginHint() const {
     return emlite::Val::get("loginHint").as<jsbind::String>();
 }

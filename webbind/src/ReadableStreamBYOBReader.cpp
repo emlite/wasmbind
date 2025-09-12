@@ -19,11 +19,11 @@ ReadableStreamBYOBReader::ReadableStreamBYOBReader(const emlite::Val &val) noexc
 
 ReadableStreamBYOBReader::ReadableStreamBYOBReader(const ReadableStream& stream) : emlite::Val(emlite::Val::global("ReadableStreamBYOBReader").new_(stream)) {}
 
-jsbind::Promise<ReadableStreamReadResult> ReadableStreamBYOBReader::read(const jsbind::Any& view) {
+jsbind::Promise<ReadableStreamReadResult> ReadableStreamBYOBReader::read(const jsbind::ArrayBufferView& view) {
     return emlite::Val::call("read", view).as<jsbind::Promise<ReadableStreamReadResult>>();
 }
 
-jsbind::Promise<ReadableStreamReadResult> ReadableStreamBYOBReader::read(const jsbind::Any& view, const ReadableStreamBYOBReaderReadOptions& options) {
+jsbind::Promise<ReadableStreamReadResult> ReadableStreamBYOBReader::read(const jsbind::ArrayBufferView& view, const ReadableStreamBYOBReaderReadOptions& options) {
     return emlite::Val::call("read", view, options).as<jsbind::Promise<ReadableStreamReadResult>>();
 }
 

@@ -27,7 +27,7 @@ jsbind::Undefined ReadableByteStreamController::close() {
     return emlite::Val::call("close").as<jsbind::Undefined>();
 }
 
-jsbind::Undefined ReadableByteStreamController::enqueue(const jsbind::Any& chunk) {
+jsbind::Undefined ReadableByteStreamController::enqueue(const jsbind::ArrayBufferView& chunk) {
     return emlite::Val::call("enqueue", chunk).as<jsbind::Undefined>();
 }
 

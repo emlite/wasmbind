@@ -1,5 +1,6 @@
 #include <webbind/Navigator.hpp>
 #include <webbind/AudioSession.hpp>
+#include <webbind/HTMLMediaElement.hpp>
 #include <webbind/AudioContext.hpp>
 #include <webbind/BatteryManager.hpp>
 #include <webbind/Clipboard.hpp>
@@ -71,6 +72,14 @@ Navigator::Navigator(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 AudioSession Navigator::audioSession() const {
     return emlite::Val::get("audioSession").as<AudioSession>();
+}
+
+AutoplayPolicy Navigator::getAutoplayPolicy(const AutoplayPolicyMediaType& type) {
+    return emlite::Val::call("getAutoplayPolicy", type).as<AutoplayPolicy>();
+}
+
+AutoplayPolicy Navigator::getAutoplayPolicy(const HTMLMediaElement& element) {
+    return emlite::Val::call("getAutoplayPolicy", element).as<AutoplayPolicy>();
 }
 
 AutoplayPolicy Navigator::getAutoplayPolicy(const AudioContext& context) {

@@ -70,6 +70,14 @@ jsbind::Undefined GPURenderPassEncoder::insertDebugMarker(const jsbind::String& 
     return emlite::Val::call("insertDebugMarker", markerLabel).as<jsbind::Undefined>();
 }
 
+jsbind::Undefined GPURenderPassEncoder::setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup) {
+    return emlite::Val::call("setBindGroup", index, bindGroup).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined GPURenderPassEncoder::setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup, const jsbind::TypedArray<jsbind::Any>& dynamicOffsets) {
+    return emlite::Val::call("setBindGroup", index, bindGroup, dynamicOffsets).as<jsbind::Undefined>();
+}
+
 jsbind::Undefined GPURenderPassEncoder::setBindGroup(const jsbind::Any& index, const GPUBindGroup& bindGroup, const jsbind::Uint32Array& dynamicOffsetsData, const jsbind::Any& dynamicOffsetsDataStart, const jsbind::Any& dynamicOffsetsDataLength) {
     return emlite::Val::call("setBindGroup", index, bindGroup, dynamicOffsetsData, dynamicOffsetsDataStart, dynamicOffsetsDataLength).as<jsbind::Undefined>();
 }

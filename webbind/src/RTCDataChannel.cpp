@@ -1,4 +1,5 @@
 #include <webbind/RTCDataChannel.hpp>
+#include <webbind/Blob.hpp>
 
 namespace webbind {
 
@@ -118,7 +119,19 @@ void RTCDataChannel::binaryType(const BinaryType& value) {
     EventTarget::set("binaryType", value);
 }
 
-jsbind::Undefined RTCDataChannel::send(const jsbind::Any& data) {
+jsbind::Undefined RTCDataChannel::send(const jsbind::String& data) {
+    return EventTarget::call("send", data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined RTCDataChannel::send(const Blob& data) {
+    return EventTarget::call("send", data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined RTCDataChannel::send(const jsbind::ArrayBuffer& data) {
+    return EventTarget::call("send", data).as<jsbind::Undefined>();
+}
+
+jsbind::Undefined RTCDataChannel::send(const jsbind::ArrayBufferView& data) {
     return EventTarget::call("send", data).as<jsbind::Undefined>();
 }
 

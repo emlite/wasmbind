@@ -95,7 +95,7 @@ XRWebGLSubImage XRWebGLBinding::getViewSubImage(const XRProjectionLayer& layer, 
     return emlite::Val::call("getViewSubImage", layer, view).as<XRWebGLSubImage>();
 }
 
-jsbind::Undefined XRWebGLBinding::foveateBoundTexture(const jsbind::Any& target, float fixed_foveation) {
+jsbind::Undefined XRWebGLBinding::foveateBoundTexture(const uint32_t& target, float fixed_foveation) {
     return emlite::Val::call("foveateBoundTexture", target, fixed_foveation).as<jsbind::Undefined>();
 }
 
