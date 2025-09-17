@@ -7,6 +7,8 @@
 
 namespace webbind {
 
+class EventListener;
+
 /// Interface MediaQueryList
 /// [`MediaQueryList`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList)
 class MediaQueryList : public EventTarget {
@@ -24,10 +26,10 @@ public:
     [[nodiscard]] bool matches() const;
     /// The addListener method.
     /// [`MediaQueryList.addListener`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener)
-    jsbind::Undefined addListener(const jsbind::Function& callback);
+    jsbind::Undefined addListener(const EventListener& callback);
     /// The removeListener method.
     /// [`MediaQueryList.removeListener`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/removeListener)
-    jsbind::Undefined removeListener(const jsbind::Function& callback);
+    jsbind::Undefined removeListener(const EventListener& callback);
     /// [`MediaQueryList.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/onchange)
     /// [`MediaQueryList.onchange`](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/onchange)
     [[nodiscard]] jsbind::Any onchange() const;

@@ -1,4 +1,5 @@
 #include <webbind/EventTarget.hpp>
+#include <webbind/EventListener.hpp>
 #include <webbind/Event.hpp>
 #include <webbind/Observable.hpp>
 #include <webbind/ObservableEventListenerOptions.hpp>
@@ -19,19 +20,19 @@ EventTarget::EventTarget(const emlite::Val &val) noexcept: emlite::Val(val) {}
 
 EventTarget::EventTarget() : emlite::Val(emlite::Val::global("EventTarget").new_()) {}
 
-jsbind::Undefined EventTarget::addEventListener(const jsbind::String& type, const jsbind::Function& callback) {
+jsbind::Undefined EventTarget::addEventListener(const jsbind::String& type, const EventListener& callback) {
     return emlite::Val::call("addEventListener", type, callback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EventTarget::addEventListener(const jsbind::String& type, const jsbind::Function& callback, const jsbind::Any& options) {
+jsbind::Undefined EventTarget::addEventListener(const jsbind::String& type, const EventListener& callback, const jsbind::Any& options) {
     return emlite::Val::call("addEventListener", type, callback, options).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EventTarget::removeEventListener(const jsbind::String& type, const jsbind::Function& callback) {
+jsbind::Undefined EventTarget::removeEventListener(const jsbind::String& type, const EventListener& callback) {
     return emlite::Val::call("removeEventListener", type, callback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined EventTarget::removeEventListener(const jsbind::String& type, const jsbind::Function& callback, const jsbind::Any& options) {
+jsbind::Undefined EventTarget::removeEventListener(const jsbind::String& type, const EventListener& callback, const jsbind::Any& options) {
     return emlite::Val::call("removeEventListener", type, callback, options).as<jsbind::Undefined>();
 }
 

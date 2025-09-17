@@ -1,5 +1,6 @@
 #include <webbind/NodeIterator.hpp>
 #include <webbind/Node.hpp>
+#include <webbind/NodeFilter.hpp>
 
 namespace webbind {
 
@@ -31,8 +32,8 @@ unsigned long NodeIterator::whatToShow() const {
     return emlite::Val::get("whatToShow").as<unsigned long>();
 }
 
-jsbind::Function NodeIterator::filter() const {
-    return emlite::Val::get("filter").as<jsbind::Function>();
+NodeFilter NodeIterator::filter() const {
+    return emlite::Val::get("filter").as<NodeFilter>();
 }
 
 Node NodeIterator::nextNode() {

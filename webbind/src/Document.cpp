@@ -12,6 +12,7 @@
 #include <webbind/Event.hpp>
 #include <webbind/Range.hpp>
 #include <webbind/NodeIterator.hpp>
+#include <webbind/NodeFilter.hpp>
 #include <webbind/TreeWalker.hpp>
 #include <webbind/SVGSVGElement.hpp>
 #include <webbind/NamedFlowMap.hpp>
@@ -40,6 +41,7 @@
 #include <webbind/DOMPointInit.hpp>
 #include <webbind/Animation.hpp>
 #include <webbind/XPathExpression.hpp>
+#include <webbind/XPathNSResolver.hpp>
 #include <webbind/XPathResult.hpp>
 
 namespace webbind {
@@ -182,7 +184,7 @@ NodeIterator Document::createNodeIterator(const Node& root, unsigned long whatTo
     return Node::call("createNodeIterator", root, whatToShow).as<NodeIterator>();
 }
 
-NodeIterator Document::createNodeIterator(const Node& root, unsigned long whatToShow, const jsbind::Function& filter) {
+NodeIterator Document::createNodeIterator(const Node& root, unsigned long whatToShow, const NodeFilter& filter) {
     return Node::call("createNodeIterator", root, whatToShow, filter).as<NodeIterator>();
 }
 
@@ -194,7 +196,7 @@ TreeWalker Document::createTreeWalker(const Node& root, unsigned long whatToShow
     return Node::call("createTreeWalker", root, whatToShow).as<TreeWalker>();
 }
 
-TreeWalker Document::createTreeWalker(const Node& root, unsigned long whatToShow, const jsbind::Function& filter) {
+TreeWalker Document::createTreeWalker(const Node& root, unsigned long whatToShow, const NodeFilter& filter) {
     return Node::call("createTreeWalker", root, whatToShow, filter).as<TreeWalker>();
 }
 
@@ -722,7 +724,7 @@ XPathExpression Document::createExpression(const jsbind::String& expression) {
     return Node::call("createExpression", expression).as<XPathExpression>();
 }
 
-XPathExpression Document::createExpression(const jsbind::String& expression, const jsbind::Function& resolver) {
+XPathExpression Document::createExpression(const jsbind::String& expression, const XPathNSResolver& resolver) {
     return Node::call("createExpression", expression, resolver).as<XPathExpression>();
 }
 
@@ -734,15 +736,15 @@ XPathResult Document::evaluate(const jsbind::String& expression, const Node& con
     return Node::call("evaluate", expression, contextNode).as<XPathResult>();
 }
 
-XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver) {
+XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver) {
     return Node::call("evaluate", expression, contextNode, resolver).as<XPathResult>();
 }
 
-XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type) {
+XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type) {
     return Node::call("evaluate", expression, contextNode, resolver, type).as<XPathResult>();
 }
 
-XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result) {
+XPathResult Document::evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type, const XPathResult& result) {
     return Node::call("evaluate", expression, contextNode, resolver, type, result).as<XPathResult>();
 }
 

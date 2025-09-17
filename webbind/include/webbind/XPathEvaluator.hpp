@@ -7,6 +7,7 @@
 namespace webbind {
 
 class XPathExpression;
+class XPathNSResolver;
 class Node;
 class XPathResult;
 
@@ -26,7 +27,7 @@ public:
     XPathExpression createExpression(const jsbind::String& expression);
     /// The createExpression method.
     /// [`XPathEvaluator.createExpression`](https://developer.mozilla.org/en-US/docs/Web/API/XPathEvaluator/createExpression)
-    XPathExpression createExpression(const jsbind::String& expression, const jsbind::Function& resolver);
+    XPathExpression createExpression(const jsbind::String& expression, const XPathNSResolver& resolver);
     /// The createNSResolver method.
     /// [`XPathEvaluator.createNSResolver`](https://developer.mozilla.org/en-US/docs/Web/API/XPathEvaluator/createNSResolver)
     Node createNSResolver(const Node& nodeResolver);
@@ -35,13 +36,13 @@ public:
     XPathResult evaluate(const jsbind::String& expression, const Node& contextNode);
     /// The evaluate method.
     /// [`XPathEvaluator.evaluate`](https://developer.mozilla.org/en-US/docs/Web/API/XPathEvaluator/evaluate)
-    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver);
+    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver);
     /// The evaluate method.
     /// [`XPathEvaluator.evaluate`](https://developer.mozilla.org/en-US/docs/Web/API/XPathEvaluator/evaluate)
-    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type);
+    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type);
     /// The evaluate method.
     /// [`XPathEvaluator.evaluate`](https://developer.mozilla.org/en-US/docs/Web/API/XPathEvaluator/evaluate)
-    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result);
+    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type, const XPathResult& result);
 };
 
 } // namespace webbind

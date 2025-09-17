@@ -7,6 +7,7 @@
 namespace webbind {
 
 class Node;
+class NodeFilter;
 
 /// Interface NodeIterator
 /// [`NodeIterator`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator)
@@ -31,7 +32,7 @@ public:
     [[nodiscard]] unsigned long whatToShow() const;
     /// [`NodeIterator.filter`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter)
     /// [`NodeIterator.filter`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter)
-    [[nodiscard]] jsbind::Function filter() const;
+    [[nodiscard]] NodeFilter filter() const;
     /// The nextNode method.
     /// [`NodeIterator.nextNode`](https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/nextNode)
     Node nextNode();

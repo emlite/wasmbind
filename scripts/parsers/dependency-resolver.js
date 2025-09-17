@@ -2,10 +2,11 @@ import { getAllTypeRefs } from "./type-analyzer.js";
 import { dictOwner, typedefs } from "../globals.js";
 
 export class DependencyResolver {
-  constructor(interfaces, dicts, enums) {
+  constructor(interfaces, dicts, enums, callbackInterfaces) {
     this.interfaces = interfaces;
     this.dicts = dicts;
     this.enums = enums;
+    this.callbackInterfaces = callbackInterfaces;
     this.dictDepGraph = new Map();
     this.dictOrdered = [];
   }
@@ -95,6 +96,13 @@ export class DependencyResolver {
 
       // Handle interface references
       if (this.interfaces.has(ref) && ref !== parent) {
+        fwd.add(ref);
+        srcInc.add(`${ref}.hpp`);
+        return;
+      }
+
+      // Handle callback interface references
+      if (this.callbackInterfaces && this.callbackInterfaces.has(ref)) {
         fwd.add(ref);
         srcInc.add(`${ref}.hpp`);
       }
@@ -201,6 +209,13 @@ export class DependencyResolver {
       if (this.interfaces.has(ref)) {
         fwd.add(ref);
         srcInc.add(`${ref}.hpp`);
+        return;
+      }
+
+      // Handle callback interface references
+      if (this.callbackInterfaces && this.callbackInterfaces.has(ref)) {
+        fwd.add(ref);
+        srcInc.add(`${ref}.hpp`);
       }
     });
 
@@ -235,6 +250,13 @@ export class DependencyResolver {
 
       // Handle interface references
       if (this.interfaces.has(ref)) {
+        fwd.add(ref);
+        srcInc.add(`${ref}.hpp`);
+        return;
+      }
+
+      // Handle callback interface references
+      if (this.callbackInterfaces && this.callbackInterfaces.has(ref)) {
         fwd.add(ref);
         srcInc.add(`${ref}.hpp`);
       }

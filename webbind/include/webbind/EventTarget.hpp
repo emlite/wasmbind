@@ -6,6 +6,7 @@
 
 namespace webbind {
 
+class EventListener;
 class Event;
 class Observable;
 class ObservableEventListenerOptions;
@@ -23,16 +24,16 @@ public:
     EventTarget();
     /// The addEventListener method.
     /// [`EventTarget.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-    jsbind::Undefined addEventListener(const jsbind::String& type, const jsbind::Function& callback);
+    jsbind::Undefined addEventListener(const jsbind::String& type, const EventListener& callback);
     /// The addEventListener method.
     /// [`EventTarget.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-    jsbind::Undefined addEventListener(const jsbind::String& type, const jsbind::Function& callback, const jsbind::Any& options);
+    jsbind::Undefined addEventListener(const jsbind::String& type, const EventListener& callback, const jsbind::Any& options);
     /// The removeEventListener method.
     /// [`EventTarget.removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
-    jsbind::Undefined removeEventListener(const jsbind::String& type, const jsbind::Function& callback);
+    jsbind::Undefined removeEventListener(const jsbind::String& type, const EventListener& callback);
     /// The removeEventListener method.
     /// [`EventTarget.removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
-    jsbind::Undefined removeEventListener(const jsbind::String& type, const jsbind::Function& callback, const jsbind::Any& options);
+    jsbind::Undefined removeEventListener(const jsbind::String& type, const EventListener& callback, const jsbind::Any& options);
     /// The dispatchEvent method.
     /// [`EventTarget.dispatchEvent`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent)
     bool dispatchEvent(const Event& event);

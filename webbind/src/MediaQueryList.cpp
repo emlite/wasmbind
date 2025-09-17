@@ -1,4 +1,5 @@
 #include <webbind/MediaQueryList.hpp>
+#include <webbind/EventListener.hpp>
 
 namespace webbind {
 
@@ -22,11 +23,11 @@ bool MediaQueryList::matches() const {
     return EventTarget::get("matches").as<bool>();
 }
 
-jsbind::Undefined MediaQueryList::addListener(const jsbind::Function& callback) {
+jsbind::Undefined MediaQueryList::addListener(const EventListener& callback) {
     return EventTarget::call("addListener", callback).as<jsbind::Undefined>();
 }
 
-jsbind::Undefined MediaQueryList::removeListener(const jsbind::Function& callback) {
+jsbind::Undefined MediaQueryList::removeListener(const EventListener& callback) {
     return EventTarget::call("removeListener", callback).as<jsbind::Undefined>();
 }
 

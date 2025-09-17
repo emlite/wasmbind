@@ -5,7 +5,7 @@ import {
   cppKeywords,
   missingDictFallback,
 } from "./ignored.js";
-import { enums, typedefs, callbacks } from "./globals.js";
+import { enums, typedefs, callbacks, callbackInterfaces } from "./globals.js";
 
 // Global dictionary registry for cpp() function
 let dictionaryRegistry = null;
@@ -132,6 +132,9 @@ export function cpp(idlType) {
 
   if (n === "double" || n === "float") return n;
   if (enums.has(n)) return n;
+  // WebIDL callback interface (e.g., EventListener) is emitted as a concrete type
+  if (callbackInterfaces.has(n)) return n;
+  // Plain callback typedefs are still represented as jsbind::Function
   if (callbacks.has(n)) return "jsbind::Function";
   if (typedefs.has(n) || n === "__union") return "jsbind::Any";
 

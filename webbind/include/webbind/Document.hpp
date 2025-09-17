@@ -21,6 +21,7 @@ class Attr;
 class Event;
 class Range;
 class NodeIterator;
+class NodeFilter;
 class TreeWalker;
 class SVGSVGElement;
 class NamedFlowMap;
@@ -49,6 +50,7 @@ class DOMPoint;
 class DOMPointInit;
 class Animation;
 class XPathExpression;
+class XPathNSResolver;
 class XPathResult;
 
 /// Interface Document
@@ -157,7 +159,7 @@ public:
     NodeIterator createNodeIterator(const Node& root, unsigned long whatToShow);
     /// The createNodeIterator method.
     /// [`Document.createNodeIterator`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createNodeIterator)
-    NodeIterator createNodeIterator(const Node& root, unsigned long whatToShow, const jsbind::Function& filter);
+    NodeIterator createNodeIterator(const Node& root, unsigned long whatToShow, const NodeFilter& filter);
     /// The createTreeWalker method.
     /// [`Document.createTreeWalker`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTreeWalker)
     TreeWalker createTreeWalker(const Node& root);
@@ -166,7 +168,7 @@ public:
     TreeWalker createTreeWalker(const Node& root, unsigned long whatToShow);
     /// The createTreeWalker method.
     /// [`Document.createTreeWalker`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTreeWalker)
-    TreeWalker createTreeWalker(const Node& root, unsigned long whatToShow, const jsbind::Function& filter);
+    TreeWalker createTreeWalker(const Node& root, unsigned long whatToShow, const NodeFilter& filter);
     /// [`Document.rootElement`](https://developer.mozilla.org/en-US/docs/Web/API/Document/rootElement)
     /// [`Document.rootElement`](https://developer.mozilla.org/en-US/docs/Web/API/Document/rootElement)
     [[nodiscard]] SVGSVGElement rootElement() const;
@@ -562,7 +564,7 @@ public:
     XPathExpression createExpression(const jsbind::String& expression);
     /// The createExpression method.
     /// [`Document.createExpression`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createExpression)
-    XPathExpression createExpression(const jsbind::String& expression, const jsbind::Function& resolver);
+    XPathExpression createExpression(const jsbind::String& expression, const XPathNSResolver& resolver);
     /// The createNSResolver method.
     /// [`Document.createNSResolver`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createNSResolver)
     Node createNSResolver(const Node& nodeResolver);
@@ -571,13 +573,13 @@ public:
     XPathResult evaluate(const jsbind::String& expression, const Node& contextNode);
     /// The evaluate method.
     /// [`Document.evaluate`](https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate)
-    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver);
+    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver);
     /// The evaluate method.
     /// [`Document.evaluate`](https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate)
-    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type);
+    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type);
     /// The evaluate method.
     /// [`Document.evaluate`](https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate)
-    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result);
+    XPathResult evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type, const XPathResult& result);
     /// [`Document.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/Document/onbeforexrselect)
     /// [`Document.onbeforexrselect`](https://developer.mozilla.org/en-US/docs/Web/API/Document/onbeforexrselect)
     [[nodiscard]] jsbind::Any onbeforexrselect() const;

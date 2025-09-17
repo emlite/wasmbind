@@ -4,12 +4,13 @@ import { generateEnums } from "./generators/enum-generator.js";
 import { generateNamespace } from "./generators/namespace-generator.js";
 import { generateInterface } from "./generators/interface-generator.js";
 import { generateDictionary } from "./generators/dictionary-generator.js";
+import { generateCallbackInterface } from "./generators/callback-interface-generator.js";
 import { enums, dictOwner } from "./globals.js";
 import { setDictionaryRegistry } from "./utils.js";
 
 export function generate(specAst) {
   // Parse the WebIDL specifications
-  const { interfaces, mixins, includeRel, dicts, namespaces } =
+  const { interfaces, mixins, includeRel, dicts, namespaces, callbackInterfaces } =
     parseSpecs(specAst);
 
   // Register dictionaries for the cpp() function
@@ -22,7 +23,12 @@ export function generate(specAst) {
   const processedNamespaces = processNamespaces(namespaces);
 
   // Create dependency resolver
-  const resolver = new DependencyResolver(processedInterfaces, dicts, enums);
+  const resolver = new DependencyResolver(
+    processedInterfaces,
+    dicts,
+    enums,
+    callbackInterfaces
+  );
   resolver.prepare();
 
   // Generate enums first (they're referenced by other types)
@@ -58,6 +64,15 @@ export function generate(specAst) {
     );
 
     generateInterface(interfaceName, interfaceRec, dependencies);
+  }
+
+  // Generate callback interfaces
+  for (const [cbName, cbDef] of callbackInterfaces) {
+    const dependencies = resolver.resolveInterfaceDependencies(
+      cbName,
+      cbDef.members || []
+    );
+    generateCallbackInterface(cbName, cbDef, dependencies);
   }
 
   // Generate namespaces

@@ -1,5 +1,6 @@
 #include <webbind/TreeWalker.hpp>
 #include <webbind/Node.hpp>
+#include <webbind/NodeFilter.hpp>
 
 namespace webbind {
 
@@ -23,8 +24,8 @@ unsigned long TreeWalker::whatToShow() const {
     return emlite::Val::get("whatToShow").as<unsigned long>();
 }
 
-jsbind::Function TreeWalker::filter() const {
-    return emlite::Val::get("filter").as<jsbind::Function>();
+NodeFilter TreeWalker::filter() const {
+    return emlite::Val::get("filter").as<NodeFilter>();
 }
 
 Node TreeWalker::currentNode() const {

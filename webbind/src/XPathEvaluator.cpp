@@ -1,5 +1,6 @@
 #include <webbind/XPathEvaluator.hpp>
 #include <webbind/XPathExpression.hpp>
+#include <webbind/XPathNSResolver.hpp>
 #include <webbind/Node.hpp>
 #include <webbind/XPathResult.hpp>
 
@@ -23,7 +24,7 @@ XPathExpression XPathEvaluator::createExpression(const jsbind::String& expressio
     return emlite::Val::call("createExpression", expression).as<XPathExpression>();
 }
 
-XPathExpression XPathEvaluator::createExpression(const jsbind::String& expression, const jsbind::Function& resolver) {
+XPathExpression XPathEvaluator::createExpression(const jsbind::String& expression, const XPathNSResolver& resolver) {
     return emlite::Val::call("createExpression", expression, resolver).as<XPathExpression>();
 }
 
@@ -35,15 +36,15 @@ XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Nod
     return emlite::Val::call("evaluate", expression, contextNode).as<XPathResult>();
 }
 
-XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver) {
+XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver) {
     return emlite::Val::call("evaluate", expression, contextNode, resolver).as<XPathResult>();
 }
 
-XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type) {
+XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type) {
     return emlite::Val::call("evaluate", expression, contextNode, resolver, type).as<XPathResult>();
 }
 
-XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const jsbind::Function& resolver, unsigned short type, const XPathResult& result) {
+XPathResult XPathEvaluator::evaluate(const jsbind::String& expression, const Node& contextNode, const XPathNSResolver& resolver, unsigned short type, const XPathResult& result) {
     return emlite::Val::call("evaluate", expression, contextNode, resolver, type, result).as<XPathResult>();
 }
 

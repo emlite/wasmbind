@@ -20,8 +20,8 @@ int main() {
     button.textContent("Click me");
     button.addEventListener(
         "click",
-        Function::Fn<void(PointerEvent)>([=](auto e) {
-            con.log(e.clientX());
+        Function::Fn<jsbind::Undefined(Event)>([=](auto e) {
+            con.log(e.template as<PointerEvent>().clientX());
         })
     );
     body.appendChild(button);

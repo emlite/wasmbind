@@ -7,6 +7,7 @@
 namespace webbind {
 
 class Node;
+class NodeFilter;
 
 /// Interface TreeWalker
 /// [`TreeWalker`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker)
@@ -25,7 +26,7 @@ public:
     [[nodiscard]] unsigned long whatToShow() const;
     /// [`TreeWalker.filter`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter)
     /// [`TreeWalker.filter`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter)
-    [[nodiscard]] jsbind::Function filter() const;
+    [[nodiscard]] NodeFilter filter() const;
     /// [`TreeWalker.currentNode`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode)
     /// [`TreeWalker.currentNode`](https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode)
     [[nodiscard]] Node currentNode() const;
