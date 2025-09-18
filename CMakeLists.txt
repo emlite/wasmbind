@@ -7,19 +7,12 @@ if (NOT emlite_FOUND)
 endif()
 
 option(WASMBIND_BUILD_WEBBIND  "Build webbind library"  ON)
-
-if (PROJECT_IS_TOP_LEVEL)
-  option(WASMBIND_BUILD_EXAMPLES "Build examples" OFF)
-endif()
+option(WASMBIND_BUILD_EXAMPLES "Build examples" OFF)
 
 add_subdirectory(jsbind)
 
 if (WASMBIND_BUILD_WEBBIND)
     add_subdirectory(webbind)
-endif()
-
-if (WASMBIND_BUILD_EXAMPLES)
-    add_subdirectory(examples)
 endif()
 
 include(GNUInstallDirs)

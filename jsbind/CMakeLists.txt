@@ -70,6 +70,10 @@ target_link_libraries(jsbind PUBLIC emlite::emlite)
 
 add_library(wasmbind::jsbind ALIAS jsbind)
 
+if (WASMBIND_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
+
 include(GNUInstallDirs)
 
 install(

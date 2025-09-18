@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script type="module">
-        import { Emlite } from "https://unpkg.com/emlite";
-
-        window.onload = async () => {
-            const emlite = new Emlite();
-            const bytes = await emlite.readFile(new URL("./bin/examples/button.wasm", import.meta.url));
-            let wasm = await WebAssembly.compile(bytes);
-            let inst = await WebAssembly.instantiate(wasm, {
-                "env": {...emlite.env },
-            });
-            emlite.setExports(inst.exports);
-            inst.exports.main();
-        };
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "emlite": "./node_modules/emlite/src/emlite.js",
+          "@bjorn3/browser_wasi_shim": "./node_modules/@bjorn3/browser_wasi_shim/dist/index.js"
+        }
+      }
     </script>
-</body>
+    <script type="module">
+      import { Emlite } from "emlite";
+      import {
+        WASI,
+        File,
+        OpenFile,
+        ConsoleStdout,
+      } from "@bjorn3/browser_wasi_shim";
+
+      window.onload = async () => {
+        let fds = [
+          new OpenFile(new File([])), // 0, stdin
+          ConsoleStdout.lineBuffered((msg) =>
+            console.log(`[WASI stdout] ${msg}`)
+          ), // 1, stdout
+          ConsoleStdout.lineBuffered((msg) =>
+            console.warn(`[WASI stderr] ${msg}`)
+          ), // 2, stderr
+        ];
+        let wasi = new WASI([], [], fds);
+        const emlite = new Emlite();
+        const bytes = await emlite.readFile(
+          new URL(
+            "./bin3/webbind/examples/button.wasm",
+            import.meta.url
+          )
+        );
+        let wasm = await WebAssembly.compile(bytes);
+        let inst = await WebAssembly.instantiate(wasm, {
+          wasi_snapshot_preview1: wasi.wasiImport,
+          env: { ...emlite.env },
+        });
+        emlite.setExports(inst.exports);
+        inst.exports.main();
+      };
+    </script>
+  </body>
 </html>

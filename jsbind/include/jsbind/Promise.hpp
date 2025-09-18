@@ -93,6 +93,52 @@ class Promise : public emlite::Val {
     Promise clone() const noexcept { return *this; }
 
 #if JSBIND_COROUTINE_SUPPORT
+    /// C++20 coroutine return support
+    ///
+    /// This nested promise_type enables using `jsbind::Promise<T>`
+    /// as the return type of a C++20 coroutine. The coroutine's
+    /// completion resolves or rejects a real JavaScript Promise.
+    struct promise_type {
+        emlite::Val js_promise_; // The JavaScript Promise instance
+        emlite::Val resolver_;   // resolve function
+        emlite::Val rejecter_;   // reject function
+
+        promise_type()
+            : js_promise_(emlite::Val::undefined())
+            , resolver_(emlite::Val::undefined())
+            , rejecter_(emlite::Val::undefined()) {
+            // Construct a new JS Promise and capture its resolve/reject
+            auto executor = Function::Fn<void(Function, Function)>(
+                [this](Function resolve, Function reject) {
+                    resolver_ = resolve;
+                    rejecter_ = reject;
+                }
+            );
+            js_promise_ = emlite::Val::global("Promise").new_(Function(executor));
+        }
+
+        // The coroutine's return object is the JS Promise wrapper
+        Promise get_return_object() { return Promise(js_promise_); }
+
+        // Run coroutine body immediately and finish without suspension
+        std::suspend_never initial_suspend() noexcept { return {}; }
+        std::suspend_never final_suspend() noexcept { return {}; }
+
+        // Resolve with a value (accepts T or any Val-like type)
+        template <typename U>
+        void return_value(U &&value) noexcept {
+            // If value is another jsbind::Promise/thenable, JS Promise
+            // resolution will adopt it automatically when passed to resolve
+            resolver_(emlite::Val(emlite::detail::forward<U>(value)));
+        }
+
+        // Reject on unhandled exception
+        void unhandled_exception() noexcept {
+            // Best-effort: surface a generic Error into JS
+            rejecter_(Error("Unhandled exception in coroutine"));
+        }
+    };
+
     /// C++20 coroutine awaitable interface
     /// This allows using co_await with Promise objects
     struct awaitable {
@@ -114,7 +160,7 @@ class Promise : public emlite::Val {
         void await_suspend(std::coroutine_handle<> handle) {
             // Use JavaScript .then() to resume the coroutine when promise resolves
             promise_.then(
-                Function::Fn<void(Any)>([this, handle](Any result) mutable {
+                Function::Fn<void(Any)>([this, handle](Any result) {
                     if constexpr (std::is_same_v<T, Any>) {
                         result_ = result;
                     } else {
@@ -124,7 +170,7 @@ class Promise : public emlite::Val {
                     has_error_ = false;
                     handle.resume();
                 }),
-                Function::Fn<void(Any)>([this, handle](Any error) mutable {
+                Function::Fn<void(Any)>([this, handle](Any error) {
                     // Store the error to be thrown in await_resume
                     error_ = error;
                     // Convert the rejection reason to an Error object

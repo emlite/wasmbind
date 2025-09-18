@@ -27,14 +27,6 @@ int main() {
     }
 #endif
 
-#if __has_include(<initializer_list>)
-    // initializer_list (if available)
-    {
-        auto f32 = Float32Array::from({1.0f, 2.5f, 3.25f});
-        (void)f32;
-    }
-#endif
-
 #if __has_include(<span>)
     // std::span (if available)
     {
