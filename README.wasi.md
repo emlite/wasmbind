@@ -24,7 +24,7 @@ set_target_properties(main PROPERTIES LINKER_LANGUAGE CXX SUFFIX .wasm LINK_FLAG
 ```
 We remove the EMLITE_USE_DLMALLOC since the wasi toolchain provides an allocator.
 
-Invoke the build using an approprate toolchain file `-DCMAKE_TOOLCHAIN_FILE=~/wasi-sdk-25.0-x86_64-linux/share/cmake/wasi-sdk.cmake`.
+Invoke the build using an approprate toolchain file `-DCMAKE_TOOLCHAIN_FILE=$WASI_SDK/share/cmake/wasi-sdk.cmake`.
 
 In your index.html, you will need a wasi shim:
 ```html
