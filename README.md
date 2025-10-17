@@ -1,6 +1,6 @@
 # Wasmbind
 
-Wasmbind is a C++ projects that offers bindings to Web APIs for use with wasm. It's backend agnostic, and should work with wasm32-unknown-unknown, wasm32-wasi, wasm32-wasip1 and emscripten. It depends on the [emlite](https://github.com/emlite/emlite-cpp) library to make this happen.
+Wasmbind is a C++ project that offers bindings to Web APIs for use with wasm. It's backend agnostic, and should work with wasm32-unknown-unknown, wasm32-wasi, wasm32-wasip1 and emscripten. It depends on the [emlite](https://github.com/emlite/emlite-cpp) library to make this happen.
 Wasmbind consists of 2 sub-libraries:
 - jsbind
 - webbind
